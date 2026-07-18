@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-label="Simple Plan · Sheets Gantt chart template preview">
+  <rect width="480" height="300" fill="#ffffff"/>
+  <rect x="0" y="46" width="480" height="254" fill="#f8fafc"/>
+  <rect x="0" y="46" width="156" height="254" fill="#ffffff"/>
+  <line x1="224.0" y1="46" x2="224.0" y2="292" stroke="#eef1f6" stroke-width="1"/><line x1="284.0" y1="46" x2="284.0" y2="292" stroke="#eef1f6" stroke-width="1"/><line x1="344.0" y1="46" x2="344.0" y2="292" stroke="#eef1f6" stroke-width="1"/><line x1="404.0" y1="46" x2="404.0" y2="292" stroke="#eef1f6" stroke-width="1"/>
+  <line x1="156" y1="46" x2="156" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+  <rect width="480" height="46" fill="#047857"/>
+  <text x="16" y="29" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">Simple Plan · Sheets</text>
+  <text x="464" y="28" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" fill="#ffffffcc">gantts.app</text>
+  <text x="14" y="78.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#334155">Plan the work</text><rect x="164.0" y="68.0" width="75.0" height="14" rx="4" fill="#2563EB"/><rect x="164.0" y="68.0" width="75.0" height="14" rx="4" fill="#000" opacity="0.17"/><text x="14" y="108.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#334155">Do the work</text><rect x="239.0" y="98.0" width="150.0" height="14" rx="4" fill="#0EA5E9"/><rect x="239.0" y="98.0" width="60.0" height="14" rx="4" fill="#000" opacity="0.17"/><text x="14" y="138.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#334155">Review</text><rect x="389.0" y="128.0" width="56.3" height="14" rx="4" fill="#F59E0B"/><text x="14" y="168.5" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#334155">Done</text><rect x="439.3" y="159.0" width="12" height="12" rx="2.5" transform="rotate(45 445.3 165.0)" fill="#047857"/>
+</svg>

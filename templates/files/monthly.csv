@@ -1,0 +1,10 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Week 1 — Plan,group,2026-08-02,2026-08-06,5,100,,,
+1.1,  Scope & goals,task,2026-08-02,2026-08-04,3,100,Lead,,
+2,Week 2 — Build,group,2026-08-09,2026-08-13,5,40,,,
+2.1,  Core work,task,2026-08-09,2026-08-13,5,40,Team,Scope & goals,
+3,Week 3 — Build & test,group,2026-08-16,2026-08-20,5,0,,,
+3.1,  Finish & QA,task,2026-08-16,2026-08-20,5,0,Team,Core work,
+4,Week 4 — Launch,group,2026-08-23,2026-08-27,5,0,,,
+4.1,  Review & ship,task,2026-08-23,2026-08-25,3,0,Team,Finish & QA,
+5,Month-end milestone,milestone,2026-08-29,2026-08-29,0,0,,,

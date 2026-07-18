@@ -1,0 +1,11 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Q1,group,2026-08-02,2026-10-30,90,60,,,
+1.1,  Initiative 1,task,2026-08-02,2026-09-30,60,70,Team,,
+2,Q2,group,2026-10-31,2027-01-28,90,20,,,
+2.1,  Initiative 2,task,2026-10-31,2027-01-13,75,25,Team,,
+3,Mid-year review,milestone,2027-01-29,2027-01-29,0,0,,,
+4,Q3,group,2027-01-29,2027-04-28,90,0,,,
+4.1,  Initiative 3,task,2027-01-29,2027-04-08,70,0,Team,,
+5,Q4,group,2027-04-29,2027-07-27,90,0,,,
+5.1,  Initiative 4 & close-out,task,2027-04-29,2027-07-17,80,0,Team,,
+6,Year-end milestone,milestone,2027-07-26,2027-07-26,0,0,,,

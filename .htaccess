@@ -1,0 +1,68 @@
+# ==========================================================================
+# gantt.design — Apache config for Namecheap / cPanel shared hosting
+# Upload alongside index.html in public_html.
+# ==========================================================================
+
+DirectoryIndex index.html
+
+# ---- Correct MIME types ----
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddType text/javascript .js
+  AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx
+  AddType application/vnd.openxmlformats-officedocument.presentationml.presentation .pptx
+</IfModule>
+
+# ---- Gzip / compression ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/manifest+json image/svg+xml text/xml application/xml
+</IfModule>
+
+# ---- Caching: long for static assets, none for HTML ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css               "access plus 7 days"
+  ExpiresByType text/javascript        "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml          "access plus 30 days"
+  ExpiresByType image/png              "access plus 30 days"
+  ExpiresByType image/jpeg             "access plus 30 days"
+  ExpiresByType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet "access plus 30 days"
+  ExpiresByType application/vnd.openxmlformats-officedocument.presentationml.presentation "access plus 30 days"
+  ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
+
+# The service worker must always revalidate so updates ship promptly.
+<Files "sw.js">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache"
+  </IfModule>
+</Files>
+
+# ---- Security headers ----
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- Force HTTPS + non-www (uncomment once SSL/AutoSSL is active) ----
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#   # canonical to non-www (or swap for www if you prefer)
+#   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ---- Pretty error page ----
+ErrorDocument 404 /404.html
+
+# Don't serve build/dev files
+<FilesMatch "(package(-lock)?\.json|BUILD-SPEC\.md)">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /node_modules/
+RedirectMatch 404 /scripts/

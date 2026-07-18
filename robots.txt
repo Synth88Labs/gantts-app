@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+Disallow: /scripts/
+Disallow: /node_modules/
+
+Sitemap: https://gantts.app/sitemap.xml

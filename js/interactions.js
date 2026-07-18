@@ -1,0 +1,194 @@
+/* ============================================================
+   interactions.js — bar drag/resize/progress, dependency drawing,
+   row drag-to-reorder. Exposes global `Interactions`.
+   ============================================================ */
+(function () {
+  let drag = null; // active gesture
+
+  const Interactions = {
+    wireBar(barEl, task) {
+      barEl.addEventListener('mousedown', (e) => this.onBarDown(e, barEl, task));
+      // click select handled via mousedown (no move => select)
+    },
+
+    onBarDown(e, barEl, task) {
+      if (e.button !== 0) return;
+      const t = e.target;
+      let mode = 'move';
+      if (t.classList.contains('bar-handle')) mode = t.classList.contains('l') ? 'resize-l' : 'resize-r';
+      else if (t.classList.contains('bar-progress-handle')) mode = 'progress';
+      else if (t.classList.contains('bar-dep-dot')) mode = 'dep';
+      if (task.type === 'group') mode = 'move-group-block';
+      if (task.type === 'milestone' && (mode === 'resize-l' || mode === 'resize-r' || mode === 'progress')) mode = 'move';
+
+      e.preventDefault();
+      const fromSide = t.classList.contains('r') ? 'r' : 'l';
+      Model.select(task.id);
+      // selecting re-renders the chart, which replaces this bar's DOM node —
+      // re-acquire the live element so geometry (ghost line, progress) is correct
+      const fresh = Render.els.barsLayer.querySelector('.bar[data-id="' + (window.CSS && CSS.escape ? CSS.escape(task.id) : task.id) + '"]');
+      if (fresh) barEl = fresh;
+
+      const dayW = Render.rs.dayW;
+      drag = {
+        mode, task, barEl, startX: e.clientX, startY: e.clientY,
+        origStart: task.start, origEnd: task.end, origProgress: task.progress || 0,
+        dayW, moved: false, snapshotTaken: false,
+      };
+
+      if (mode === 'dep') {
+        drag.depFromSide = fromSide;
+        // link hit-paths must not swallow elementFromPoint while we hunt for a target bar
+        document.body.classList.add('dragging-dep');
+        drag.depGhost = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        drag.depGhost.setAttribute('class', 'dep-drag');
+        Render.els.chartSvg.appendChild(drag.depGhost);
+      }
+
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('mouseup', onUp);
+    },
+
+    wireRowDrag(row, id) {
+      row.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', id);
+        e.dataTransfer.effectAllowed = 'move';
+        row._dragId = id;
+      });
+      row.addEventListener('dragover', (e) => { e.preventDefault(); row.classList.add('dragover'); });
+      row.addEventListener('dragleave', () => row.classList.remove('dragover'));
+      row.addEventListener('drop', (e) => {
+        e.preventDefault(); row.classList.remove('dragover');
+        const dragId = e.dataTransfer.getData('text/plain');
+        if (dragId && dragId !== id) Model.reorderBefore(dragId, id);
+      });
+    },
+  };
+
+  function daysDelta(e) {
+    return Math.round((e.clientX - drag.startX) / drag.dayW);
+  }
+
+  function onMove(e) {
+    if (!drag) return;
+    const dx = e.clientX - drag.startX;
+    if (Math.abs(dx) > 2 || Math.abs(e.clientY - drag.startY) > 2) drag.moved = true;
+    if (!drag.moved) return;
+
+    if (!drag.snapshotTaken && drag.mode !== 'dep') { Model.snapshot(); drag.snapshotTaken = true; }
+
+    const task = drag.task;
+
+    if (drag.mode === 'dep') {
+      drawDepGhost(e);
+      return;
+    }
+
+    if (drag.mode === 'progress') {
+      const rect = drag.barEl.getBoundingClientRect();
+      let pct = Math.round(((e.clientX - rect.left) / rect.width) * 100);
+      pct = Math.max(0, Math.min(100, pct));
+      Model.liveUpdate(task.id, { progress: pct });
+      Render.render();
+      return;
+    }
+
+    const dd = daysDelta(e);
+
+    if (drag.mode === 'move' || drag.mode === 'move-group-block') {
+      const newStart = U.addDays(drag.origStart, dd);
+      const dur = U.duration(drag.origStart, drag.origEnd);
+      if (drag.mode === 'move-group-block') {
+        moveGroupBlock(task, dd);
+      } else {
+        Model.liveUpdate(task.id, { start: newStart, end: task.type === 'milestone' ? newStart : U.endFrom(newStart, dur) });
+      }
+    } else if (drag.mode === 'resize-l') {
+      let newStart = U.addDays(drag.origStart, dd);
+      if (U.parse(newStart) > U.parse(drag.origEnd)) newStart = drag.origEnd;
+      Model.liveUpdate(task.id, { start: newStart });
+    } else if (drag.mode === 'resize-r') {
+      let newEnd = U.addDays(drag.origEnd, dd);
+      if (U.parse(newEnd) < U.parse(drag.origStart)) newEnd = drag.origStart;
+      Model.liveUpdate(task.id, { end: newEnd });
+    }
+    Render.render();
+  }
+
+  function moveGroupBlock(group, dd) {
+    if (dd === 0) return;
+    // move group and all descendants
+    const ids = new Set([group.id]);
+    let changed = true;
+    while (changed) {
+      changed = false;
+      Model.tasks().forEach(t => { if (t.parentId && ids.has(t.parentId) && !ids.has(t.id)) { ids.add(t.id); changed = true; } });
+    }
+    ids.forEach(id => {
+      const t = Model.get(id);
+      if (t.type === 'group') return; // recalced
+      const os = drag._orig ? drag._orig[id].start : t.start;
+      // store originals once
+    });
+    // simpler: compute from stored originals
+    if (!drag._orig) {
+      drag._orig = {};
+      ids.forEach(id => { const t = Model.get(id); drag._orig[id] = { start: t.start, end: t.end }; });
+    }
+    ids.forEach(id => {
+      const t = Model.get(id);
+      if (t.type === 'group') return;
+      const o = drag._orig[id];
+      t.start = U.addDays(o.start, dd);
+      t.end = t.type === 'milestone' ? t.start : U.addDays(o.end, dd);
+    });
+    Model._recalcGroups();
+    Model.emit('change', Model.project);
+  }
+
+  function drawDepGhost(e) {
+    const g = drag.barEl.getBoundingClientRect();
+    const canvasRect = Render.els.chartCanvas.getBoundingClientRect();
+    const sx = (drag.depFromSide === 'r' ? g.right : g.left) - canvasRect.left;
+    const sy = g.top + g.height / 2 - canvasRect.top;
+    const ex = e.clientX - canvasRect.left;
+    const ey = e.clientY - canvasRect.top;
+    drag.depGhost.setAttribute('d', `M ${sx} ${sy} C ${sx + 40} ${sy}, ${ex - 40} ${ey}, ${ex} ${ey}`);
+    // highlight potential target
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const targetBar = el && el.closest ? el.closest('.bar') : null;
+    document.querySelectorAll('.bar.dep-target').forEach(b => b.classList.remove('dep-target'));
+    if (targetBar && targetBar !== drag.barEl) targetBar.classList.add('dep-target');
+  }
+
+  function onUp(e) {
+    window.removeEventListener('mousemove', onMove);
+    window.removeEventListener('mouseup', onUp);
+    if (!drag) return;
+
+    if (drag.mode === 'dep') {
+      document.body.classList.remove('dragging-dep');
+      if (drag.depGhost) drag.depGhost.remove();
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const targetBar = el && el.closest ? el.closest('.bar') : null;
+      document.querySelectorAll('.bar.dep-target').forEach(b => b.classList.remove('dep-target'));
+      if (targetBar) {
+        const targetId = targetBar.getAttribute('data-id');
+        if (targetId && targetId !== drag.task.id) {
+          const ok = Model.addDep(drag.task.id, targetId, 'FS');
+          if (!ok) App.toast('Could not add dependency (would create a loop)');
+        }
+      }
+      Render.render();
+    } else if (!drag.moved) {
+      // pure click on a bar (no drag): open the task card next to it
+      App.openDrawer(drag.task.id, 'bar');
+    } else {
+      Model.save();
+      Model.emit('change', Model.project);
+    }
+    drag = null;
+  }
+
+  window.Interactions = Interactions;
+})();

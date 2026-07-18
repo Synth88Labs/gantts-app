@@ -1,0 +1,15 @@
+{
+  "name": "gantts.app — Free Gantt Chart Maker",
+  "short_name": "gantts.app",
+  "description": "Free online Gantt chart maker. No sign up. Dependencies, critical path, export to PDF, PNG, Excel & PowerPoint.",
+  "start_url": "/app.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1120",
+  "theme_color": "#3b82f6",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

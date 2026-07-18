@@ -1,0 +1,5 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Plan the work,task,2026-08-02,2026-08-05,4,100,You,,
+2,Do the work,task,2026-08-06,2026-08-13,8,40,Team,Plan the work,
+3,Review,task,2026-08-14,2026-08-16,3,0,You,Do the work,
+4,Done,milestone,2026-08-17,2026-08-17,0,0,,Review,

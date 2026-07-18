@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# deploy artifacts (regenerate with: node scripts/build-deploy.js)
+deploy/
+deploy-gantts-app.zip
+.zip-bundle.ps1
+
+# local tool state
+.claude/settings.local.json

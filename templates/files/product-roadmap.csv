@@ -1,0 +1,12 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Q1 — Foundation,group,2026-08-02,2026-09-30,60,40,,,
+1.1,  Discovery & research,task,2026-08-02,2026-08-21,20,80,Product,,
+1.2,  Feature A: design & build,task,2026-08-17,2026-09-30,45,30,Eng,,
+2,Q1 release,milestone,2026-10-01,2026-10-01,0,0,,,
+3,Q2 — Growth,group,2026-10-01,2026-12-29,90,0,,,
+3.1,  Feature B: build,task,2026-10-01,2026-11-24,55,0,Eng,,
+3.2,  Feature C: beta,task,2026-10-31,2026-12-09,40,0,Eng,,
+4,Q2 release,milestone,2026-12-30,2026-12-30,0,0,,,
+5,Q3 — Scale,group,2026-12-30,2027-03-29,90,0,,,
+5.1,  Platform & performance,task,2026-12-30,2027-02-27,60,0,Eng,,
+5.2,  Integrations,task,2027-01-29,2027-03-19,50,0,Eng,,

@@ -1,0 +1,11 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Strategy & ideation,group,2026-08-02,2026-08-05,4,100,,,
+1.1,  Plan topics & keywords,task,2026-08-02,2026-08-05,4,100,Editor,,
+2,Blog post,group,2026-08-06,2026-08-15,10,40,,Plan topics & keywords,
+2.1,  Draft,task,2026-08-06,2026-08-09,4,60,Writer,,
+2.2,  Edit & design,task,2026-08-10,2026-08-12,3,20,Editor,Draft,
+2.3,  Publish blog,milestone,2026-08-14,2026-08-14,0,0,,Edit & design,
+3,Email newsletter,group,2026-08-08,2026-08-15,8,20,,,
+3.1,  Write & schedule,task,2026-08-08,2026-08-13,6,25,Writer,,
+4,Social promotion,group,2026-08-14,2026-08-19,6,0,,,
+4.1,  Schedule posts,task,2026-08-14,2026-08-17,4,0,Social,Publish blog,

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="gantts.app">
+  <defs>
+    <linearGradient id="gm" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="0.55" stop-color="#6c4cf1"/>
+      <stop offset="1" stop-color="#5a3ce6"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="19" fill="url(#gm)"/>
+  <rect x="0" y="0" width="64" height="30" rx="19" fill="#ffffff" opacity="0.08"/>
+  <!-- mini timeline: task bars leading to a milestone -->
+  <rect x="12" y="17" width="20" height="6" rx="3" fill="#ffffff" opacity="0.62"/>
+  <rect x="12" y="29" width="26" height="6" rx="3" fill="#ffffff"/>
+  <rect x="12" y="41" width="15" height="6" rx="3" fill="#ffffff" opacity="0.62"/>
+  <!-- coral milestone diamond (signature) -->
+  <rect x="40" y="24" width="17" height="17" rx="3.5" transform="rotate(45 48.5 32)" fill="#ff6a3d"/>
+  <circle cx="48.5" cy="32" r="3" fill="#ffffff"/>
+</svg>

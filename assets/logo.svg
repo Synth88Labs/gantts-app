@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 64" width="236" height="64" role="img" aria-label="gantts.app">
+  <defs>
+    <linearGradient id="lm" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.55" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="16" fill="url(#lm)"/>
+  <rect x="14" y="17" width="26" height="8" rx="4" fill="#ffffff"/>
+  <rect x="22" y="28" width="28" height="8" rx="4" fill="#ffffff" opacity="0.92"/>
+  <rect x="14" y="39" width="20" height="8" rx="4" fill="#ffffff" opacity="0.78"/>
+  <circle cx="46" cy="43" r="4.5" fill="#a7f3d0"/>
+  <text x="80" y="41" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="26" font-weight="800" letter-spacing="-0.5"><tspan fill="#0f172a">gantt</tspan><tspan fill="#3b82f6">.design</tspan></text>
+</svg>
