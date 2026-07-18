@@ -42,7 +42,10 @@
     "check:seo-i18n": "node scripts/check-seo-i18n.js",
     "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js",
     "deploy:check": "node scripts/deploy-ftp.js --dry",
-    "deploy": "npm run deploy:bundle && node scripts/deploy-ftp.js --yes"
+    "deploy": "npm run preflight && npm run deploy:bundle && node scripts/deploy-ftp.js --yes",
+    "preflight": "node scripts/preflight.js",
+    "ship": "npm run build && npm run push && npm run deploy && npm run indexnow",
+    "push": "git push origin main"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
