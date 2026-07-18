@@ -433,3 +433,28 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 .checks li::before { content: ""; position: absolute; left: 0; top: 1px; width: 23px; height: 23px; border-radius: 7px; background: color-mix(in srgb, var(--accent) 16%, transparent); }
 .checks li::after { content: "✓"; position: absolute; left: 6px; top: 1px; color: var(--accent); font-weight: 800; font-size: 14px; }
 .checks li code { background: var(--bg-softer); padding: 1px 6px; border-radius: 5px; font-family: var(--font-mono); font-size: .85em; }
+
+/* ---------- guide figures (inline SVG diagrams) ---------- */
+/* The SVGs use currentColor for labels so they stay legible in both
+   themes; the card gives them a light surface in dark mode too, since
+   the neutral greys inside them are tuned for a light background. */
+.fig {
+  margin: 26px 0 30px;
+  padding: 20px 20px 8px;
+  background: var(--card, #fff);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  overflow-x: auto;
+}
+.fig figcaption {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.fig svg { display: block; max-width: 100%; height: auto; min-width: 460px; }
+:root[data-theme="dark"] .fig { background: #f8fafc; color: #16151d; }
+:root[data-theme="dark"] .fig figcaption { color: #475569; }
+
+.post-meta { font-size: 14px; color: var(--ink-soft); margin-top: -6px; }

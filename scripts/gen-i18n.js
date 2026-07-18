@@ -30,7 +30,7 @@ const {
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=15';
+const CSS_V = 'v=16';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

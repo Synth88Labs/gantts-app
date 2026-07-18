@@ -25,6 +25,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gantts.app/blog/gantt-baseline-variance.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/blog/gantt-chart-dependencies.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/blog/gantt-chart-examples.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -49,6 +61,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gantts.app/blog/gantt-chart-mistakes.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/blog/how-to-make-a-gantt-chart.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -63,6 +81,12 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/index.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/blog/milestones-vs-tasks.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
