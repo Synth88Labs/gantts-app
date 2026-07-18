@@ -236,4 +236,156 @@ const HOME = {
   },
 };
 
-module.exports = { LOCALES, CHROME, HOME };
+/* ---------------- Shared catalogue ----------------
+   Slugs are the English detail pages. Only the card label and blurb
+   are translated; the detail pages themselves are English for now, so
+   the hub links out to them rather than to URLs that do not exist. */
+const TEMPLATE_SLUGS = [
+  'project-management', 'construction', 'software-development', 'marketing',
+  'product-launch', 'event-planning', 'agile', 'sprint', 'product-roadmap',
+  'content-calendar', 'employee-onboarding', '30-60-90-day-plan', 'research',
+  'home-renovation', 'wedding-planning', 'weekly', 'monthly', 'annual',
+  'simple', 'excel', 'google-sheets', 'powerpoint',
+];
+
+const BLOG_SLUGS = [
+  'what-is-a-gantt-chart', 'how-to-make-a-gantt-chart', 'critical-path-method',
+  'gantt-chart-examples', 'gantt-chart-in-excel', 'gantt-chart-in-google-sheets',
+  'gantt-chart-in-powerpoint', 'best-free-gantt-chart-software',
+];
+
+// ---------------- Templates hub ----------------
+const TEMPLATES = {
+  es: {
+    title: 'Plantillas de diagrama de Gantt gratis | gantts.app',
+    description: 'Descarga plantillas de diagrama de Gantt gratis para Excel, PowerPoint y CSV, o edítalas online. Construcción, marketing, software, eventos y más.',
+    h1: 'Plantillas de diagrama de Gantt gratis',
+    lead: 'Cada plantilla se abre directamente en el editor y también se descarga en Excel, PowerPoint o CSV. Sin registro y sin marcas de agua.',
+    intro: 'Elige un punto de partida cercano a tu proyecto: las fases y tareas ya vienen rellenadas, así que solo tienes que ajustar los nombres y las fechas.',
+    catTypes: 'Por tipo de proyecto', catIndustry: 'Por sector', catTeam: 'Por equipo y función',
+    catTime: 'Por periodo', catAgile: 'Ágil y sprints', catFormat: 'Por formato',
+    ctaH2: 'Empieza con una plantilla gratis', ctaP: 'Ábrela, edítala y expórtala. Sin cuenta.', ctaBtn: 'Abrir el editor',
+    noteEn: 'La ficha de cada plantilla está en inglés por ahora.',
+  },
+  fr: {
+    title: 'Modèles de diagramme de Gantt gratuits | gantts.app',
+    description: 'Modèles de diagramme de Gantt gratuits pour Excel, PowerPoint et CSV, ou à modifier en ligne. BTP, marketing, logiciel, événementiel.',
+    h1: 'Modèles de diagramme de Gantt gratuits',
+    lead: 'Chaque modèle s’ouvre directement dans l’éditeur et se télécharge aussi en Excel, PowerPoint ou CSV. Sans inscription ni filigrane.',
+    intro: 'Choisissez un point de départ proche de votre projet : les phases et les tâches sont déjà remplies, il ne reste qu’à ajuster les intitulés et les dates.',
+    catTypes: 'Par type de projet', catIndustry: 'Par secteur', catTeam: 'Par équipe et fonction',
+    catTime: 'Par période', catAgile: 'Agile et sprints', catFormat: 'Par format',
+    ctaH2: 'Commencez avec un modèle gratuit', ctaP: 'Ouvrez, modifiez, exportez. Sans compte.', ctaBtn: 'Ouvrir l’éditeur',
+    noteEn: 'La fiche de chaque modèle est en anglais pour le moment.',
+  },
+  de: {
+    title: 'Kostenlose Gantt-Diagramm-Vorlagen | gantts.app',
+    description: 'Kostenlose Gantt-Diagramm-Vorlagen für Excel, PowerPoint und CSV herunterladen oder online bearbeiten. Bau, Marketing, Software, Events und mehr.',
+    h1: 'Kostenlose Gantt-Diagramm-Vorlagen',
+    lead: 'Jede Vorlage öffnet sich direkt im Editor und lässt sich zusätzlich als Excel, PowerPoint oder CSV herunterladen. Ohne Anmeldung, ohne Wasserzeichen.',
+    intro: 'Wählen Sie einen Startpunkt, der Ihrem Projekt nahekommt: Phasen und Aufgaben sind bereits gefüllt — Sie passen nur noch Bezeichnungen und Termine an.',
+    catTypes: 'Nach Projektart', catIndustry: 'Nach Branche', catTeam: 'Nach Team und Funktion',
+    catTime: 'Nach Zeitraum', catAgile: 'Agile und Sprints', catFormat: 'Nach Format',
+    ctaH2: 'Mit einer kostenlosen Vorlage starten', ctaP: 'Öffnen, anpassen, exportieren. Ohne Konto.', ctaBtn: 'Editor öffnen',
+    noteEn: 'Die Detailseiten der Vorlagen sind derzeit auf Englisch.',
+  },
+  pt: {
+    title: 'Modelos de gráfico de Gantt grátis | gantts.app',
+    description: 'Baixe modelos de gráfico de Gantt grátis para Excel, PowerPoint e CSV, ou edite online. Construção, marketing, software, eventos e muito mais.',
+    h1: 'Modelos de gráfico de Gantt grátis',
+    lead: 'Cada modelo abre direto no editor e também pode ser baixado em Excel, PowerPoint ou CSV. Sem cadastro e sem marca d’água.',
+    intro: 'Escolha um ponto de partida próximo do seu projeto: as fases e tarefas já vêm preenchidas, então basta ajustar os nomes e as datas.',
+    catTypes: 'Por tipo de projeto', catIndustry: 'Por setor', catTeam: 'Por equipe e função',
+    catTime: 'Por período', catAgile: 'Ágil e sprints', catFormat: 'Por formato',
+    ctaH2: 'Comece com um modelo grátis', ctaP: 'Abra, edite e exporte. Sem conta.', ctaBtn: 'Abrir o editor',
+    noteEn: 'A página de cada modelo está em inglês por enquanto.',
+  },
+  zh: {
+    title: '免费甘特图模板 | gantts.app',
+    description: '免费下载 Excel、PowerPoint 和 CSV 格式的甘特图模板，也可直接在线编辑。涵盖工程、市场、软件、活动等多种场景。',
+    h1: '免费甘特图模板',
+    lead: '每个模板都能直接在编辑器中打开，也可下载为 Excel、PowerPoint 或 CSV。无需注册，没有水印。',
+    intro: '挑选一个与你的项目最接近的起点：阶段和任务都已填好，你只需要改一下名称和日期。',
+    catTypes: '按项目类型', catIndustry: '按行业', catTeam: '按团队与职能',
+    catTime: '按周期', catAgile: '敏捷与冲刺', catFormat: '按格式',
+    ctaH2: '从免费模板开始', ctaP: '打开、编辑、导出。无需账号。', ctaBtn: '打开编辑器',
+    noteEn: '模板详情页目前为英文。',
+  },
+};
+
+// Card labels per locale, keyed by slug.
+const TEMPLATE_LABELS = {
+  es: { 'project-management': 'Gestión de proyectos', construction: 'Construcción', 'software-development': 'Desarrollo de software', marketing: 'Marketing', 'product-launch': 'Lanzamiento de producto', 'event-planning': 'Organización de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Hoja de ruta de producto', 'content-calendar': 'Calendario de contenidos', 'employee-onboarding': 'Incorporación de empleados', '30-60-90-day-plan': 'Plan de 30-60-90 días', research: 'Investigación', 'home-renovation': 'Reforma del hogar', 'wedding-planning': 'Organización de bodas', weekly: 'Semanal', monthly: 'Mensual', annual: 'Anual', simple: 'Sencilla', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
+  fr: { 'project-management': 'Gestion de projet', construction: 'BTP / Construction', 'software-development': 'Développement logiciel', marketing: 'Marketing', 'product-launch': 'Lancement de produit', 'event-planning': 'Organisation d’événement', agile: 'Agile', sprint: 'Sprint', 'product-roadmap': 'Feuille de route produit', 'content-calendar': 'Calendrier éditorial', 'employee-onboarding': 'Intégration des employés', '30-60-90-day-plan': 'Plan 30-60-90 jours', research: 'Recherche', 'home-renovation': 'Rénovation', 'wedding-planning': 'Organisation de mariage', weekly: 'Hebdomadaire', monthly: 'Mensuel', annual: 'Annuel', simple: 'Simple', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
+  de: { 'project-management': 'Projektmanagement', construction: 'Bauwesen', 'software-development': 'Softwareentwicklung', marketing: 'Marketing', 'product-launch': 'Produkteinführung', 'event-planning': 'Eventplanung', agile: 'Agil', sprint: 'Sprint', 'product-roadmap': 'Produkt-Roadmap', 'content-calendar': 'Redaktionsplan', 'employee-onboarding': 'Mitarbeiter-Onboarding', '30-60-90-day-plan': '30-60-90-Tage-Plan', research: 'Forschung', 'home-renovation': 'Renovierung', 'wedding-planning': 'Hochzeitsplanung', weekly: 'Wöchentlich', monthly: 'Monatlich', annual: 'Jährlich', simple: 'Einfach', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
+  pt: { 'project-management': 'Gestão de projetos', construction: 'Construção', 'software-development': 'Desenvolvimento de software', marketing: 'Marketing', 'product-launch': 'Lançamento de produto', 'event-planning': 'Planejamento de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Roadmap de produto', 'content-calendar': 'Calendário de conteúdo', 'employee-onboarding': 'Integração de funcionários', '30-60-90-day-plan': 'Plano de 30-60-90 dias', research: 'Pesquisa', 'home-renovation': 'Reforma residencial', 'wedding-planning': 'Planejamento de casamento', weekly: 'Semanal', monthly: 'Mensal', annual: 'Anual', simple: 'Simples', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
+  zh: { 'project-management': '项目管理', construction: '工程施工', 'software-development': '软件开发', marketing: '市场营销', 'product-launch': '产品发布', 'event-planning': '活动策划', agile: '敏捷开发', sprint: '冲刺 Sprint', 'product-roadmap': '产品路线图', 'content-calendar': '内容日历', 'employee-onboarding': '员工入职', '30-60-90-day-plan': '30-60-90 天计划', research: '研究计划', 'home-renovation': '房屋装修', 'wedding-planning': '婚礼筹备', weekly: '周计划', monthly: '月计划', annual: '年度计划', simple: '简易模板', excel: 'Excel 模板', 'google-sheets': 'Google Sheets 模板', powerpoint: 'PowerPoint 模板' },
+};
+
+// Which slugs sit under which category heading.
+const TEMPLATE_GROUPS = [
+  { key: 'catTypes', slugs: ['project-management', 'product-launch', 'event-planning', 'research', 'simple'] },
+  { key: 'catIndustry', slugs: ['construction', 'software-development', 'home-renovation', 'wedding-planning'] },
+  { key: 'catTeam', slugs: ['marketing', 'content-calendar', 'employee-onboarding', '30-60-90-day-plan', 'product-roadmap'] },
+  { key: 'catTime', slugs: ['weekly', 'monthly', 'annual'] },
+  { key: 'catAgile', slugs: ['agile', 'sprint'] },
+  { key: 'catFormat', slugs: ['excel', 'google-sheets', 'powerpoint'] },
+];
+
+// ---------------- Blog / guides index ----------------
+const BLOG = {
+  es: {
+    title: 'Guías de diagramas de Gantt | gantts.app',
+    description: 'Guías claras sobre diagramas de Gantt: qué son, cómo crearlos, la ruta crítica y cómo hacerlos en Excel, Google Sheets y PowerPoint.',
+    h1: 'Guías de diagramas de Gantt',
+    lead: 'Explicaciones prácticas, sin jerga: qué es un diagrama de Gantt, cómo montar uno y cómo leer la ruta crítica.',
+    readMore: 'Leer la guía',
+    noteEn: 'Las guías completas están en inglés por ahora.',
+  },
+  fr: {
+    title: 'Guides sur les diagrammes de Gantt | gantts.app',
+    description: 'Des guides clairs sur les diagrammes de Gantt : définition, création, chemin critique, et comment en faire dans Excel, Google Sheets et PowerPoint.',
+    h1: 'Guides sur les diagrammes de Gantt',
+    lead: 'Des explications concrètes et sans jargon : ce qu’est un diagramme de Gantt, comment en construire un, et comment lire le chemin critique.',
+    readMore: 'Lire le guide',
+    noteEn: 'Les guides complets sont en anglais pour le moment.',
+  },
+  de: {
+    title: 'Gantt-Diagramm-Ratgeber | gantts.app',
+    description: 'Verständliche Ratgeber zu Gantt-Diagrammen: was sie sind, wie man sie erstellt, der kritische Pfad und die Umsetzung in Excel, Google Sheets und PowerPoint.',
+    h1: 'Gantt-Diagramm-Ratgeber',
+    lead: 'Praxisnah und ohne Fachjargon erklärt: was ein Gantt-Diagramm ist, wie Sie eines aufbauen und wie Sie den kritischen Pfad lesen.',
+    readMore: 'Ratgeber lesen',
+    noteEn: 'Die vollständigen Ratgeber sind derzeit auf Englisch.',
+  },
+  pt: {
+    title: 'Guias de gráfico de Gantt | gantts.app',
+    description: 'Guias claros sobre gráficos de Gantt: o que são, como criar, caminho crítico e como fazer no Excel, Google Sheets e PowerPoint.',
+    h1: 'Guias de gráfico de Gantt',
+    lead: 'Explicações práticas e sem jargão: o que é um gráfico de Gantt, como montar um e como ler o caminho crítico.',
+    readMore: 'Ler o guia',
+    noteEn: 'Os guias completos estão em inglês por enquanto.',
+  },
+  zh: {
+    title: '甘特图指南 | gantts.app',
+    description: '清晰易懂的甘特图指南：什么是甘特图、如何制作、关键路径，以及如何在 Excel、Google Sheets 和 PowerPoint 中绘制。',
+    h1: '甘特图指南',
+    lead: '不讲术语的实用讲解：什么是甘特图、怎样从零搭一个，以及如何看懂关键路径。',
+    readMore: '阅读指南',
+    noteEn: '完整指南目前为英文。',
+  },
+};
+
+const BLOG_LABELS = {
+  es: { 'what-is-a-gantt-chart': '¿Qué es un diagrama de Gantt?', 'how-to-make-a-gantt-chart': 'Cómo hacer un diagrama de Gantt', 'critical-path-method': 'El método de la ruta crítica (CPM)', 'gantt-chart-examples': 'Ejemplos de diagramas de Gantt', 'gantt-chart-in-excel': 'Diagrama de Gantt en Excel', 'gantt-chart-in-google-sheets': 'Diagrama de Gantt en Google Sheets', 'gantt-chart-in-powerpoint': 'Diagrama de Gantt en PowerPoint', 'best-free-gantt-chart-software': 'Mejores programas de Gantt gratuitos' },
+  fr: { 'what-is-a-gantt-chart': 'Qu’est-ce qu’un diagramme de Gantt ?', 'how-to-make-a-gantt-chart': 'Comment faire un diagramme de Gantt', 'critical-path-method': 'La méthode du chemin critique (CPM)', 'gantt-chart-examples': 'Exemples de diagrammes de Gantt', 'gantt-chart-in-excel': 'Diagramme de Gantt dans Excel', 'gantt-chart-in-google-sheets': 'Diagramme de Gantt dans Google Sheets', 'gantt-chart-in-powerpoint': 'Diagramme de Gantt dans PowerPoint', 'best-free-gantt-chart-software': 'Meilleurs logiciels de Gantt gratuits' },
+  de: { 'what-is-a-gantt-chart': 'Was ist ein Gantt-Diagramm?', 'how-to-make-a-gantt-chart': 'Ein Gantt-Diagramm erstellen', 'critical-path-method': 'Die Methode des kritischen Pfads (CPM)', 'gantt-chart-examples': 'Beispiele für Gantt-Diagramme', 'gantt-chart-in-excel': 'Gantt-Diagramm in Excel', 'gantt-chart-in-google-sheets': 'Gantt-Diagramm in Google Sheets', 'gantt-chart-in-powerpoint': 'Gantt-Diagramm in PowerPoint', 'best-free-gantt-chart-software': 'Beste kostenlose Gantt-Software' },
+  pt: { 'what-is-a-gantt-chart': 'O que é um gráfico de Gantt?', 'how-to-make-a-gantt-chart': 'Como fazer um gráfico de Gantt', 'critical-path-method': 'O método do caminho crítico (CPM)', 'gantt-chart-examples': 'Exemplos de gráficos de Gantt', 'gantt-chart-in-excel': 'Gráfico de Gantt no Excel', 'gantt-chart-in-google-sheets': 'Gráfico de Gantt no Google Sheets', 'gantt-chart-in-powerpoint': 'Gráfico de Gantt no PowerPoint', 'best-free-gantt-chart-software': 'Melhores softwares de Gantt gratuitos' },
+  zh: { 'what-is-a-gantt-chart': '什么是甘特图？', 'how-to-make-a-gantt-chart': '如何制作甘特图', 'critical-path-method': '关键路径法（CPM）', 'gantt-chart-examples': '甘特图示例', 'gantt-chart-in-excel': '用 Excel 制作甘特图', 'gantt-chart-in-google-sheets': '用 Google Sheets 制作甘特图', 'gantt-chart-in-powerpoint': '用 PowerPoint 制作甘特图', 'best-free-gantt-chart-software': '最好用的免费甘特图软件' },
+};
+
+module.exports = {
+  LOCALES, CHROME, HOME,
+  TEMPLATES, TEMPLATE_SLUGS, TEMPLATE_LABELS, TEMPLATE_GROUPS,
+  BLOG, BLOG_SLUGS, BLOG_LABELS,
+};

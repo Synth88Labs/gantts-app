@@ -22,7 +22,11 @@
    ============================================================ */
 const fs = require('fs');
 const path = require('path');
-const { LOCALES, CHROME, HOME } = require('../i18n/content.js');
+const {
+  LOCALES, CHROME, HOME,
+  TEMPLATES, TEMPLATE_LABELS, TEMPLATE_GROUPS,
+  BLOG, BLOG_SLUGS, BLOG_LABELS,
+} = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -33,7 +37,7 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 /* Which sub-pages exist in a given locale. Until templates.html and
    blog/ are localized, their nav links must fall back to English —
    linking to a 404 is worse than linking across languages. */
-const LOCALIZED_PAGES = { '': true };
+const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true };
 function localHref(code, sub) {
   return LOCALIZED_PAGES[sub] ? `/${code}/${sub}` : `/${sub}`;
 }
@@ -246,16 +250,155 @@ ${footer(code)}
 `;
 }
 
+/* Shared shell so the hub pages cannot drift from the homepage's head. */
+function shell(loc, sub, meta, bodyHtml, ldJson) {
+  const url = `${ORIGIN}/${loc.code}/${sub}`;
+  return `<!DOCTYPE html>
+<html lang="${loc.hreflang}" dir="${loc.dir}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${esc(meta.title)}</title>
+  <meta name="description" content="${esc(meta.description)}" />
+  <link rel="canonical" href="${url}" />
+${hreflangTags(sub)}
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="${loc.ogLocale}" />
+  <meta property="og:title" content="${esc(meta.title)}" />
+  <meta property="og:description" content="${esc(meta.description)}" />
+  <meta property="og:url" content="${url}" />
+  <meta property="og:image" content="${ORIGIN}/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="/css/site.css?${CSS_V}" />
+${ldJson ? '  <script type="application/ld+json">' + ldJson + '</script>\n' : ''}</head>
+<body>
+${header(loc.code, sub)}
+
+${bodyHtml}
+
+${footer(loc.code)}
+  <script src="/js/site.js?${CSS_V}"></script>
+</body>
+</html>
+`;
+}
+
+/* Templates hub. CollectionPage + ItemList mirrors the English hub's
+   schema role — the localized page is the same kind of thing. */
+function renderTemplates(loc) {
+  const code = loc.code;
+  const t = TEMPLATES[code];
+  const labels = TEMPLATE_LABELS[code];
+  const sub = 'templates.html';
+
+  const groups = TEMPLATE_GROUPS.map(g => {
+    const cards = g.slugs.map(s => `          <a class="tpl-card" href="/templates/${s}.html">
+            <img src="/templates/img/${s}.svg" alt="" width="240" height="130" loading="lazy" />
+            <h3>${esc(labels[s])}</h3>
+          </a>`).join('\n');
+    return `      <section class="section">
+        <h2>${esc(t[g.key])}</h2>
+        <div class="tpl-grid">
+${cards}
+        </div>
+      </section>`;
+  }).join('\n');
+
+  const allSlugs = TEMPLATE_GROUPS.flatMap(g => g.slugs);
+  const ld = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: t.h1,
+    url: `${ORIGIN}/${code}/${sub}`,
+    description: t.description,
+    inLanguage: loc.hreflang,
+    isPartOf: { '@type': 'WebSite', name: 'gantts.app', url: ORIGIN + '/' },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: allSlugs.length,
+      itemListElement: allSlugs.map((s, i) => ({
+        '@type': 'ListItem', position: i + 1,
+        name: labels[s], url: `${ORIGIN}/templates/${s}.html`,
+      })),
+    },
+  });
+
+  const body = `  <article class="container" style="padding-top:44px">
+    <h1>${esc(t.h1)}</h1>
+    <p class="lead">${esc(t.lead)}</p>
+    <p>${esc(t.intro)}</p>
+    <p class="crumbs"><small>${esc(t.noteEn)}</small></p>
+${groups}
+    <section class="cta-band">
+      <h2>${esc(t.ctaH2)}</h2>
+      <p>${esc(t.ctaP)}</p>
+      <a class="btn btn-primary btn-lg" href="/app.html">${esc(t.ctaBtn)}</a>
+    </section>
+  </article>`;
+
+  return shell(loc, sub, t, body, ld);
+}
+
+/* Guides index — a list of English articles with localized labels. */
+function renderBlogIndex(loc) {
+  const code = loc.code;
+  const b = BLOG[code];
+  const labels = BLOG_LABELS[code];
+  const sub = 'blog/index.html';
+
+  const items = BLOG_SLUGS.map(s => `        <a class="card card-link" href="/blog/${s}.html">
+          <h3>${esc(labels[s])}</h3>
+          <span class="eyebrow">${esc(b.readMore)} →</span>
+        </a>`).join('\n');
+
+  const ld = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: b.h1,
+    url: `${ORIGIN}/${code}/${sub}`,
+    description: b.description,
+    inLanguage: loc.hreflang,
+    isPartOf: { '@type': 'WebSite', name: 'gantts.app', url: ORIGIN + '/' },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: BLOG_SLUGS.length,
+      itemListElement: BLOG_SLUGS.map((s, i) => ({
+        '@type': 'ListItem', position: i + 1,
+        name: labels[s], url: `${ORIGIN}/blog/${s}.html`,
+      })),
+    },
+  });
+
+  const body = `  <article class="container narrow" style="padding-top:44px">
+    <h1>${esc(b.h1)}</h1>
+    <p class="lead">${esc(b.lead)}</p>
+    <p class="crumbs"><small>${esc(b.noteEn)}</small></p>
+    <div class="grid grid-3">
+${items}
+    </div>
+  </article>`;
+
+  return shell(loc, sub, b, body, ld);
+}
+
 // ---- build ----
 let written = 0;
 for (const loc of LOCALES) {
   const dir = path.join(ROOT, loc.code);
-  fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(path.join(dir, 'blog'), { recursive: true });
+
   fs.writeFileSync(path.join(dir, 'index.html'), renderHome(loc), 'utf8');
-  written++;
-  console.log(`  ✓ /${loc.code}/index.html   ${HOME[loc.code].title.slice(0, 52)}…`);
+  fs.writeFileSync(path.join(dir, 'templates.html'), renderTemplates(loc), 'utf8');
+  fs.writeFileSync(path.join(dir, 'blog', 'index.html'), renderBlogIndex(loc), 'utf8');
+  written += 3;
+  console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
 }
 
 console.log(`\n✓ Rendered ${written} localized page(s) across ${LOCALES.length} locales.`);
 console.log('  English pages at the site root were not touched.');
-console.log('  Next: node scripts/gen-sitemap.js && node scripts/check-links.js\n');
+console.log('  Next: node scripts/gen-sitemap.js && node scripts/check-hreflang.js\n');

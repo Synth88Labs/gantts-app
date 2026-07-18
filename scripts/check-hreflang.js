@@ -43,7 +43,11 @@ function readAlternates(file) {
 }
 
 // Pages that form a cluster: English original + each localized variant.
-const CLUSTERS = [{ sub: '', en: 'index.html' }];
+const CLUSTERS = [
+  { sub: '', en: 'index.html' },
+  { sub: 'templates.html', en: 'templates.html' },
+  { sub: 'blog/index.html', en: 'blog/index.html' },
+];
 
 let errors = 0, warnings = 0, checked = 0;
 const err = (m) => { console.error('  ✗ ' + m); errors++; };
