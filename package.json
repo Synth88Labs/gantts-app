@@ -31,7 +31,7 @@
     "gen:assets": "node scripts/gen-assets.js",
     "gen:i18n": "node scripts/gen-i18n.js",
     "gen:sitemap": "node scripts/gen-sitemap.js",
-    "build": "npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run gen:sitemap && npm run check",
+    "build": "npm run gen:favicon && npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run gen:sitemap && npm run check",
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
@@ -45,7 +45,8 @@
     "deploy": "npm run preflight && npm run deploy:bundle && node scripts/deploy-ftp.js --yes",
     "preflight": "node scripts/preflight.js",
     "ship": "npm run build && npm run push && npm run deploy && npm run indexnow",
-    "push": "git push origin main"
+    "push": "git push origin main",
+    "gen:favicon": "node scripts/gen-favicon.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

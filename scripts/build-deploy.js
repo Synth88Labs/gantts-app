@@ -26,6 +26,9 @@ const INCLUDE_FILES = [
   '404.html', 'about.html', 'app.html', 'index.html', 'privacy.html', 'templates.html',
   'contact.html', 'terms.html',
   'robots.txt', 'sitemap.xml', 'site.webmanifest', 'sw.js',
+  // Google's favicon crawler and many older clients only ever request
+  // the root path, ignoring <link rel="icon">. Rebuild: npm run gen:favicon
+  'favicon.ico',
   // IndexNow ownership proof — must be reachable at the site root
   'b7dddc1da15c113759ec72b4e49e446c.txt',
 ];
