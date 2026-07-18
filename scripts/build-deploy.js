@@ -24,6 +24,8 @@ const INCLUDE_FILES = [
   '.htaccess',
   '404.html', 'about.html', 'app.html', 'index.html', 'privacy.html', 'templates.html',
   'robots.txt', 'sitemap.xml', 'site.webmanifest', 'sw.js',
+  // IndexNow ownership proof — must be reachable at the site root
+  'b7dddc1da15c113759ec72b4e49e446c.txt',
 ];
 
 function rimraf(p) { if (fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); }
