@@ -10,3 +10,9 @@ deploy-gantts-app.zip
 
 # local tool state
 .claude/settings.local.json
+
+# Generated download artefacts (~9 MB of .xlsx/.pptx binaries).
+# Rebuild with: npm run gen:templates
+# Kept out of git because binaries diff poorly and every regeneration
+# would store a whole new copy in history forever.
+templates/files/

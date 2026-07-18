@@ -31,15 +31,16 @@
     "gen:assets": "node scripts/gen-assets.js",
     "gen:i18n": "node scripts/gen-i18n.js",
     "gen:sitemap": "node scripts/gen-sitemap.js",
-    "build": "npm run gen:i18n && npm run gen:sitemap && npm run check",
+    "build": "npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run gen:sitemap && npm run check",
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
     "check": "npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n",
-    "deploy:bundle": "node scripts/build-deploy.js",
+    "deploy:bundle": "npm run gen:templates --silent && node scripts/build-deploy.js",
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
-    "check:seo-i18n": "node scripts/check-seo-i18n.js"
+    "check:seo-i18n": "node scripts/check-seo-i18n.js",
+    "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

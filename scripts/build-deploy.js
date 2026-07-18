@@ -76,6 +76,20 @@ if (missing.length) {
   process.exit(1);
 }
 
+// templates/files holds generated .xlsx/.pptx/.csv and is NOT in git —
+// they are build artefacts. A fresh clone therefore has none, and without
+// this guard the bundle would ship happily with every download 404ing.
+const filesDir = path.join(OUT, 'templates', 'files');
+const dl = fs.existsSync(filesDir) ? fs.readdirSync(filesDir) : [];
+// three downloads per template: .xlsx, .pptx, .csv
+const expectedDl = Object.keys(require('./gen-templates.js').SLUGS).length * 3;
+if (dl.length < expectedDl) {
+  console.error(`✗ templates/files has ${dl.length} file(s), expected ${expectedDl}.`);
+  console.error('  These are generated artefacts and are not tracked in git.');
+  console.error('  Run:  npm run gen:templates\n');
+  process.exit(1);
+}
+
 // ---- safety net: nothing private should have slipped in ----
 const files = walk(OUT);
 const forbidden = files.filter(f => {

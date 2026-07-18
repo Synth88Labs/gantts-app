@@ -124,3 +124,21 @@ No framework, no build step. Plain HTML/CSS/JS on purpose — runs anywhere.
 
 No backend, no accounts. Projects are saved in the browser's localStorage.
 Shareable links encode data in the URL (nothing stored on a server).
+
+## 📄 Licensing
+
+Two licences, deliberately split:
+
+| | Licence |
+|---|---|
+| **Source code** — `js/`, `css/`, `sw.js`, `scripts/` (build & checks) | [MIT](LICENSE) |
+| **Site content** — template pages & files, guides, translations, content models, brand assets | [All rights reserved](LICENSE-CONTENT.md) |
+
+The code is open because the product's core claim is that your project data
+never leaves your browser — publishing the source is how that gets verified
+rather than just asserted.
+
+The downloadable `.xlsx` / `.pptx` / `.csv` templates are free to use in your
+own projects, commercial ones included. The written content and content
+models are not licensed for republication. See
+[LICENSE-CONTENT.md](LICENSE-CONTENT.md) for the specifics.

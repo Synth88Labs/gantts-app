@@ -1,3 +1,11 @@
+Scope: this MIT licence covers the SOURCE CODE of gantts.app only --
+the application, stylesheets, service worker, and the build and check
+scripts. Site content (template pages and files, guides, translated
+copy, content models and brand assets) is all rights reserved; see
+LICENSE-CONTENT.md.
+
+----------------------------------------------------------------------
+
 MIT License
 
 Copyright (c) 2026 Synth88Labs

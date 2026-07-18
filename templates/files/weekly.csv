@@ -1,7 +1,0 @@
-﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
-1,Monday — kickoff & planning,task,2026-08-02,2026-08-02,1,100,You,,
-2,Tuesday — deep work,task,2026-08-03,2026-08-03,1,60,You,,
-3,Wednesday — build,task,2026-08-04,2026-08-05,2,30,Team,,
-4,Thursday — review,task,2026-08-05,2026-08-05,1,0,Team,,
-5,Friday — ship & wrap-up,task,2026-08-06,2026-08-06,1,0,You,,
-6,Week complete,milestone,2026-08-06,2026-08-06,0,0,,,
