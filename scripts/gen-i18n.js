@@ -30,7 +30,7 @@ const {
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=12';
+const CSS_V = 'v=15';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -66,13 +66,17 @@ function langSwitcher(currentCode, sub) {
   return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}" onchange="if(this.value)location.href=this.value">${opts}</select>`;
 }
 
+/* Markup must mirror the English pages exactly — site.css styles
+   .nav / .nav-inner / .nav-logo. Using invented class names here left
+   the header as a non-flex block, stacking brand, links and buttons
+   into three rows at 124px tall. */
 function header(code, sub) {
   const c = CHROME[code];
   const p = '/' + code;
-  return `  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="${p}/" aria-label="gantts.app">
-        <img src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+  return `  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="${p}/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
         <span class="brand-word">gantts<b>.app</b></span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -94,11 +98,15 @@ function header(code, sub) {
 function footer(code) {
   const c = CHROME[code];
   const p = '/' + code;
-  return `  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <span class="brand-word">gantts<b>.app</b></span>
-        <p class="footer-tag">${esc(c.footer.tagline)}</p>
+  return `  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="${p}/" aria-label="gantts.app">
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+          <span class="brand-word">gantts<b>.app</b></span>
+        </a>
+        <p style="margin-top:12px">${esc(c.footer.tagline)}</p>
       </div>
       <div>
         <h4>${esc(c.footer.product)}</h4>
@@ -112,11 +120,15 @@ function footer(code) {
       <div>
         <h4>${esc(c.footer.company)}</h4>
         <a href="/about.html">${esc(c.footer.about)}</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/terms.html">Terms</a>
         <a href="/privacy.html">${esc(c.footer.privacy)}</a>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span class="year">2026</span> gantts.app · ${esc(c.footer.rights)}</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · ${esc(c.footer.rights)}</span>
+        <span><a href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a></span>
+      </div>
     </div>
   </footer>`;
 }

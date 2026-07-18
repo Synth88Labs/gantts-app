@@ -27,14 +27,14 @@
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/site.css?v=12" />
+  <link rel="stylesheet" href="/css/site.css?v=15" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"真的完全免费吗？","acceptedAnswer":{"@type":"Answer","text":"是的。没有账号、没有试用期、没有付费功能。所有运算都在浏览器中完成，因此没有服务器成本。"}},{"@type":"Question","name":"需要注册账号吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。打开应用即可开始规划，项目会自动保存在浏览器中。"}},{"@type":"Question","name":"我的数据保存在哪里？","acceptedAnswer":{"@type":"Answer","text":"保存在你自己的浏览器中（localStorage），不会上传到任何服务器。你也可以把 .gantts 文件保存到电脑上。"}},{"@type":"Question","name":"可以导出到 Excel 或 PowerPoint 吗？","acceptedAnswer":{"@type":"Answer","text":"可以，还支持 PDF、PNG 和 CSV。导出的是可编辑的真实文件，而不是图片。"}}]}</script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/zh/" aria-label="gantts.app">
-        <img src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
         <span class="brand-word">gantts<b>.app</b></span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -149,11 +149,15 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <span class="brand-word">gantts<b>.app</b></span>
-        <p class="footer-tag">免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+          <span class="brand-word">gantts<b>.app</b></span>
+        </a>
+        <p style="margin-top:12px">免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
       </div>
       <div>
         <h4>产品</h4>
@@ -167,13 +171,17 @@
       <div>
         <h4>关于</h4>
         <a href="/about.html">关于我们</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/terms.html">Terms</a>
         <a href="/privacy.html">隐私政策</a>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span><a href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a></span>
+      </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=12"></script>
+  <script src="/js/site.js?v=15"></script>
 </body>
 </html>

@@ -27,14 +27,14 @@
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/site.css?v=12" />
+  <link rel="stylesheet" href="/css/site.css?v=15" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Est-ce vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Aucun compte, aucune période d’essai, aucune fonction payante. Tout s’exécute dans votre navigateur, il n’y a donc aucun serveur à financer."}},{"@type":"Question","name":"Dois-je créer un compte ?","acceptedAnswer":{"@type":"Answer","text":"Non. Ouvrez l’application et commencez. Votre projet est enregistré automatiquement dans votre navigateur."}},{"@type":"Question","name":"Où mes données sont-elles stockées ?","acceptedAnswer":{"@type":"Answer","text":"Dans votre navigateur (localStorage). Rien n’est envoyé à un serveur. Vous pouvez aussi enregistrer un fichier .gantts sur votre ordinateur."}},{"@type":"Question","name":"Puis-je exporter vers Excel ou PowerPoint ?","acceptedAnswer":{"@type":"Answer","text":"Oui, ainsi qu’en PDF, PNG et CSV. Ce sont de vrais fichiers modifiables, pas des images."}}]}</script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/fr/" aria-label="gantts.app">
-        <img src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
         <span class="brand-word">gantts<b>.app</b></span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -149,11 +149,15 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <span class="brand-word">gantts<b>.app</b></span>
-        <p class="footer-tag">Créateur de diagrammes de Gantt gratuit. Sans compte ni téléversement : vos données restent dans votre navigateur.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+          <span class="brand-word">gantts<b>.app</b></span>
+        </a>
+        <p style="margin-top:12px">Créateur de diagrammes de Gantt gratuit. Sans compte ni téléversement : vos données restent dans votre navigateur.</p>
       </div>
       <div>
         <h4>Produit</h4>
@@ -167,13 +171,17 @@
       <div>
         <h4>Entreprise</h4>
         <a href="/about.html">À propos</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/terms.html">Terms</a>
         <a href="/privacy.html">Confidentialité</a>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span class="year">2026</span> gantts.app · Tous droits réservés.</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Tous droits réservés.</span>
+        <span><a href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a></span>
+      </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=12"></script>
+  <script src="/js/site.js?v=15"></script>
 </body>
 </html>

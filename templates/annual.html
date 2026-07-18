@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yearly Gantt Chart Template — 12 Months, Free" />
   <meta name="twitter:description" content="A 12-month yearly gantt chart template split into four quarters. Download or edit online free." />
-  <link rel="stylesheet" href="/css/site.css?v=12" />
+  <link rel="stylesheet" href="/css/site.css?v=15" />
 
   <script type="application/ld+json">
   {
@@ -72,7 +72,14 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" aria-label="Language" title="Language / Idioma"></select>
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+          <option value="/templates/annual.html" selected>English</option>
+          <option value="/es/">Español</option>
+          <option value="/fr/">Français</option>
+          <option value="/de/">Deutsch</option>
+          <option value="/pt/">Português</option>
+          <option value="/zh/">简体中文</option>
+        </select>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html" data-i18n="nav.open">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
@@ -187,7 +194,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/i18n.js?v=12"></script>
-  <script src="/js/site.js?v=12"></script>
+  <script src="/js/site.js?v=15"></script>
 </body>
 </html>
