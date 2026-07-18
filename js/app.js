@@ -21,6 +21,9 @@
       Model.on('select', () => { this.render(); this.refreshDrawer(); });
       Model.on('history', () => this.syncHistoryButtons());
       Model.on('saved', () => this.flashSaved());
+      // A save that did not happen must never be silent — this is the
+      // only warning a user gets before they lose work.
+      Model.on('savefailed', (info) => this.showSaveError(info));
 
       this.render();
       this.syncControls();
@@ -562,6 +565,10 @@
           list.appendChild(row);
         });
         body.appendChild(list);
+
+        const meter = U.el('p', { class: 'storage-meter' }, 'Storage: checking…');
+        body.appendChild(meter);
+        this.refreshStorageMeter(meter);
       });
     },
 
@@ -571,6 +578,51 @@
       t.textContent = msg; t.hidden = false;
       clearTimeout(this._toastT);
       this._toastT = setTimeout(() => t.hidden = true, 2200);
+    },
+
+    /* Storage failure banner.
+
+       Deliberately NOT a toast. A toast disappears after two seconds and
+       the user carries on typing into a plan that is not being saved —
+       which is exactly the failure this replaces. It stays until the
+       user acts, and it offers the one action that actually rescues the
+       work: download the file. */
+    showSaveError(info) {
+      if (this._saveErrShown) return;   // one banner, not one per keystroke
+      this._saveErrShown = true;
+
+      const quota = info && info.quota;
+      const bar = U.el('div', { class: 'save-error', role: 'alert' }, [
+        U.el('div', { class: 'save-error-text' }, [
+          U.el('strong', {}, quota ? 'Your browser storage is full.' : 'Your plan could not be saved.'),
+          U.el('span', {}, quota
+            ? ' This plan is NOT being saved. Download it now so you do not lose it, then delete old projects to free space.'
+            : ' This plan is NOT being saved. Download it now so you do not lose it.'),
+        ]),
+        U.el('button', {
+          class: 'btn btn-primary', onclick: () => { Exports.json(); },
+        }, '⬇ Download my plan'),
+        U.el('button', {
+          class: 'btn', onclick: () => { this.openProjects(); },
+        }, 'Manage projects'),
+        U.el('button', {
+          class: 'save-error-x icon-btn', 'aria-label': 'Dismiss',
+          onclick: () => { bar.remove(); this._saveErrShown = false; },
+        }, '✕'),
+      ]);
+      document.body.appendChild(bar);
+    },
+
+    /* Storage meter — so "full" is something you can see coming rather
+       than discover at the moment it breaks. */
+    async refreshStorageMeter(el) {
+      if (!el) return;
+      const est = await Store.estimate();
+      const mode = Store.mode() === 'idb' ? 'IndexedDB' : 'localStorage (limited)';
+      if (!est) { el.textContent = 'Storage: ' + mode; return; }
+      const mb = (n) => (n / 1048576).toFixed(1) + ' MB';
+      el.textContent = `Storage: ${mb(est.usage)} used of ${mb(est.quota)} available (${est.pct}%) · ${mode}`;
+      el.classList.toggle('is-tight', est.pct >= 80);
     },
   };
 

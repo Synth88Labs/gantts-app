@@ -49,13 +49,39 @@
 
     // ---------- init / persistence ----------
     init() {
+      // Boot synchronously so the first paint never waits on storage.
+      // Legacy localStorage is read first because on an existing install
+      // that is where the project still lives; Store.init() migrates it
+      // to IndexedDB in the background and re-emits 'load' if the durable
+      // copy turns out to be newer.
       let loaded = null;
       try { loaded = JSON.parse(localStorage.getItem(LS_KEY)); } catch (e) {}
-      // URL share import wins
+
+      // URL share import wins over anything stored
       const shared = this._readShareLink();
       if (shared) loaded = shared;
+
       this.project = loaded && loaded.tasks ? this._migrate(loaded) : blankProject();
       this.emit('load', this.project);
+
+      if (window.Store) {
+        Store.onFail((info) => this.emit('savefailed', info));
+        Store.init().then(async () => {
+          if (shared) return;                       // a shared link must not be overwritten
+          const id = Store.currentId() || (loaded && loaded.id);
+          if (!id) return;
+          const durable = await Store.load(id);
+          // Only adopt the stored copy if we booted blank or it is newer.
+          const mine = this.project;
+          const blankBoot = !loaded || !loaded.tasks;
+          if (durable && durable.tasks && (blankBoot || (durable.updated || 0) > (mine.updated || 0))) {
+            this.project = this._migrate(durable);
+            this._undo = []; this._redo = [];
+            this.emit('load', this.project);
+          }
+          this.emit('storeready', Store.mode());
+        });
+      }
       return this;
     },
 
@@ -75,36 +101,52 @@
 
     save: U.debounce(function () { Model._persist(); }, 400),
 
+    /* A failed save is never silent. The previous version logged to the
+       console and returned, so a user past the quota kept editing a plan
+       that was no longer being written anywhere. */
     _persist() {
       this.project.updated = Date.now();
-      try {
-        localStorage.setItem(LS_KEY, JSON.stringify(this.project));
-        this._touchProjectIndex();
-        this.emit('saved');
-      } catch (e) { console.warn('save failed', e); }
+      Store.setCurrentId(this.project.id);
+
+      // Snapshot now: the project keeps mutating while the write is in flight.
+      const snapshot = JSON.parse(JSON.stringify(this.project));
+      Store.save(snapshot)
+        .then(() => {
+          // Index is written only AFTER the blob lands, so the task counts
+          // and timestamps in the project list always describe what is
+          // actually stored. Writing it first meant a failed save left the
+          // list advertising work that was never persisted.
+          this._touchProjectIndex(snapshot);
+          this._saveBroken = false;
+          this.emit('saved');
+        })
+        .catch((info) => {
+          this._saveBroken = true;
+          this.emit('savefailed', info || { op: 'save', quota: true });
+        });
     },
 
-    _touchProjectIndex() {
-      let idx = this._projectIndex();
-      const rec = { id: this.project.id, name: this.project.name, updated: this.project.updated, count: this.project.tasks.length };
+    _touchProjectIndex(saved) {
+      const p = saved || this.project;
+      const idx = this._projectIndex();
+      const rec = { id: p.id, name: p.name, updated: p.updated, count: p.tasks.length };
       const i = idx.findIndex(r => r.id === this.project.id);
       if (i >= 0) idx[i] = rec; else idx.push(rec);
-      // store each project blob under its own key
-      try {
-        localStorage.setItem('gantts.p.' + this.project.id, JSON.stringify(this.project));
-        localStorage.setItem(LS_PROJECTS, JSON.stringify(idx));
-      } catch (e) {}
+      // Index only — a few hundred bytes. Project blobs live in Store.
+      if (!Store.setIndex(idx)) this.emit('savefailed', { op: 'index', quota: true });
     },
-    _projectIndex() {
-      try { return JSON.parse(localStorage.getItem(LS_PROJECTS)) || []; } catch (e) { return []; }
-    },
+    _projectIndex() { return Store.index(); },
     listProjects() { return this._projectIndex().sort((a, b) => b.updated - a.updated); },
 
     openProject(id) {
-      try {
-        const p = JSON.parse(localStorage.getItem('gantts.p.' + id));
-        if (p) { this.project = this._migrate(p); this.selectedId = null; this._undo = []; this._redo = []; this._persist(); this.emit('load', this.project); }
-      } catch (e) {}
+      return Store.load(id).then((p) => {
+        if (!p) return false;
+        this.project = this._migrate(p); this.selectedId = null;
+        this._undo = []; this._redo = [];
+        Store.setCurrentId(id);
+        this.emit('load', this.project);
+        return true;
+      });
     },
     newProject(name) {
       this.project = blankProject(name); this.selectedId = null; this._undo = []; this._redo = [];
@@ -112,8 +154,8 @@
     },
     deleteProject(id) {
       const idx = this._projectIndex().filter(r => r.id !== id);
-      localStorage.setItem(LS_PROJECTS, JSON.stringify(idx));
-      localStorage.removeItem('gantts.p.' + id);
+      Store.setIndex(idx);
+      Store.remove(id);
       if (this.project.id === id) {
         const first = idx[0];
         if (first) this.openProject(first.id); else this.newProject();

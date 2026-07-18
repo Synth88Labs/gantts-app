@@ -546,3 +546,31 @@ body.presenting .today-line { width: 3px; }
   .gantt { overflow: visible; }
   .chart-scroll { overflow: visible; }
 }
+
+/* ---- storage failure banner ----
+   Sits above everything and does not auto-dismiss. A toast was wrong
+   here: it vanishes in two seconds and the user keeps editing a plan
+   that is no longer being saved. */
+.save-error {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 200;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 14px 18px;
+  background: #7f1d1d; color: #fff;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.28);
+  font-size: 14px; line-height: 1.45;
+}
+/* Deliberately NOT animated into position. A slide-up via transform
+   leaves the banner below the fold until the animation completes, and
+   animations do not advance in a throttled or unpainted tab — which
+   would hide the one warning standing between the user and lost work.
+   It appears instantly, in place. */
+.save-error-text { flex: 1 1 320px; min-width: 0; }
+.save-error-text strong { display: inline; }
+.save-error .btn { flex: 0 0 auto; }
+.save-error .btn-primary { background: #fff; color: #7f1d1d; border-color: #fff; }
+.save-error .btn:not(.btn-primary) { background: transparent; color: #fff; border-color: rgba(255,255,255,.55); }
+.save-error-x { color: #fff; background: transparent; border: 0; font-size: 16px; cursor: pointer; }
+@media (max-width: 560px) { .save-error { font-size: 13px; padding: 12px 14px; } }
+
+.storage-meter { margin-top: 14px; font-size: 12px; color: var(--muted); }
+.storage-meter.is-tight { color: #b91c1c; font-weight: 600; }
