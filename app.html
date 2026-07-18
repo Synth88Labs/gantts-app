@@ -6,6 +6,13 @@
   <title>Gantt Chart Maker — Create a Gantt Chart Online Free</title>
   <meta name="description" content="Open the free Gantt chart creator. Drag tasks, set dependencies, auto-calc the critical path, and export to PDF, PNG, Excel & PPT. No account required." />
   <link rel="canonical" href="https://gantts.app/app.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/app.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/app.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/app.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/app.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/app.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/app.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/app.html" />
   <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -16,7 +23,7 @@
   <meta property="og:url" content="https://gantts.app/app.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=22" />
+  <link rel="stylesheet" href="/css/styles.css?v=25" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -44,7 +51,14 @@
     <div class="topbar-actions">
       <a class="btn btn-home" id="homeBtn" data-i18n="app.home" href="/index.html" title="Back to gantts.app website">← Home</a>
       <button class="btn" id="cmdkBtn" title="Command palette (Ctrl/⌘ K)">⌘K</button>
-      <select class="lang-select" aria-label="Language" title="Language / Idioma"></select>
+      <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+        <option value="/app.html" selected>English</option>
+        <option value="/es/app.html">Español</option>
+        <option value="/fr/app.html">Français</option>
+        <option value="/de/app.html">Deutsch</option>
+        <option value="/pt/app.html">Português</option>
+        <option value="/zh/app.html">简体中文</option>
+      </select>
       <button class="btn" id="themeBtn" title="Toggle dark mode">🌙</button>
       <button class="btn" id="presentBtn" data-i18n="app.present" title="Present mode (F)">▶ Present</button>
       <div class="menu">
@@ -251,16 +265,16 @@
   <div class="toast" id="toast" hidden></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=22"></script>
-  <script src="/js/util.js?v=22"></script>
-  <script src="/js/model.js?v=22"></script>
-  <script src="/js/schedule.js?v=22"></script>
-  <script src="/js/render.js?v=22"></script>
-  <script src="/js/interactions.js?v=22"></script>
-  <script src="/js/exports.js?v=22"></script>
-  <script src="/js/templates.js?v=22"></script>
-  <script src="/js/features.js?v=22"></script>
-  <script src="/js/app.js?v=22"></script>
+  <script src="/js/i18n.js?v=25"></script>
+  <script src="/js/util.js?v=25"></script>
+  <script src="/js/model.js?v=25"></script>
+  <script src="/js/schedule.js?v=25"></script>
+  <script src="/js/render.js?v=25"></script>
+  <script src="/js/interactions.js?v=25"></script>
+  <script src="/js/exports.js?v=25"></script>
+  <script src="/js/templates.js?v=25"></script>
+  <script src="/js/features.js?v=25"></script>
+  <script src="/js/app.js?v=25"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

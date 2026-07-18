@@ -28,10 +28,11 @@ const {
   BLOG, BLOG_SLUGS, BLOG_LABELS,
 } = require('../i18n/content.js');
 const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
+const { APP } = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=19';
+const CSS_V = 'v=20';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -493,6 +494,79 @@ ${d.body.map(([h, html]) => `      <h2>${esc(h)}</h2>\n      ${html}`).join('\n'
   return shell(loc, sub, d, body, ld);
 }
 
+
+/* The app, per locale.
+   Transforms the hand-authored app.html rather than duplicating it, so the
+   editor itself can never drift between languages. Only the head, the
+   <html> element, the home links and the language switcher change — the
+   application markup is untouched. */
+function renderApp(loc) {
+  const code = loc.code;
+  const a = APP[code];
+  const sub = 'app.html';
+  const url = `${ORIGIN}/${code}/${sub}`;
+  let h = fs.readFileSync(path.join(ROOT, 'app.html'), 'utf8');
+
+  // data-app-lang tells js/i18n.js which language to boot in; it takes
+  // precedence over localStorage so the URL decides.
+  h = h.replace('<html lang="en">', `<html lang="${loc.hreflang}" data-app-lang="${code}">`);
+  h = h.replace(/<title>[^<]*<\/title>/, `<title>${esc(a.title)}</title>`);
+  h = h.replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${esc(a.description)}" />`);
+  // Strip the English page's own hreflang block first — otherwise the
+  // locale copy carries two full sets and two x-default tags, which
+  // invalidates the whole cluster.
+  h = h.replace(/^\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>\r?\n/gm, "");
+  h = h.replace(/<link rel="canonical" href="[^"]*" \/>/,
+    `<link rel="canonical" href="${url}" />
+${hreflangTags(sub)}`);
+
+  // og/twitter should describe this locale's page
+  h = h.replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${esc(a.title)}" />`);
+  h = h.replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${esc(a.description)}" />`);
+  h = h.replace(/<meta property="og:url" content="[^"]*" \/>/,
+    `<meta property="og:url" content="${url}" />
+  <meta property="og:locale" content="${loc.ogLocale}" />`);
+
+  // home links stay inside the locale
+  h = h.split('href="/index.html"').join(`href="/${code}/"`);
+
+  // The hand-authored app.html predates the localized-page SEO standard,
+  // so bring the copies up to it: robots, twitter card, og:locale
+  // alternates, and the shared entity graph with inLanguage.
+  const ld = graph(loc, [
+    {
+      '@type': 'WebPage', '@id': url + '#webpage',
+      name: a.title, url, description: a.description,
+      inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      about: { '@id': ORIGIN + '/#software' },
+    },
+    {
+      '@type': 'SoftwareApplication', '@id': ORIGIN + '/#software',
+      name: 'gantts.app', applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web browser', url: ORIGIN + '/app.html',
+      inLanguage: loc.hreflang,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      publisher: { '@id': ORG_ID },
+    },
+  ]);
+  h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+    `<script type="application/ld+json">${ld}</script>`);
+
+  const extra = [
+    `  <meta name="robots" content="index,follow,max-image-preview:large" />`,
+    ogLocaleAlternates(loc),
+    `  <meta name="twitter:title" content="${esc(a.title)}" />`,
+    `  <meta name="twitter:description" content="${esc(a.description)}" />`,
+    `  <meta name="twitter:image" content="${ORIGIN}/assets/og-image.png" />`,
+  ].join('\n');
+  h = h.replace('</head>', extra + '\n</head>');
+
+  // navigating switcher, consistent with every other page on the site
+  h = h.replace(/<select class="lang-select"[^>]*><\/select>/, langSwitcher(code, sub));
+
+  return h;
+}
+
 // ---- build ----
 let written = 0;
 for (const loc of LOCALES) {
@@ -505,7 +579,8 @@ for (const loc of LOCALES) {
   for (const key of ['about', 'contact', 'terms', 'privacy']) {
     fs.writeFileSync(path.join(dir, key + '.html'), renderSitePage(loc, key), 'utf8');
   }
-  written += 7;
+  fs.writeFileSync(path.join(dir, 'app.html'), renderApp(loc), 'utf8');
+  written += 8;
   console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
 }
 

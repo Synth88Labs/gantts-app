@@ -51,6 +51,7 @@ const CLUSTERS = [
   { sub: 'contact.html', en: 'contact.html' },
   { sub: 'terms.html', en: 'terms.html' },
   { sub: 'privacy.html', en: 'privacy.html' },
+  { sub: 'app.html', en: 'app.html' },
 ];
 
 let errors = 0, warnings = 0, checked = 0;

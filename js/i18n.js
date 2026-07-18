@@ -184,9 +184,17 @@
 
   function normalize(l) { l = (l || '').slice(0, 2).toLowerCase(); return D[l] ? l : 'en'; }
   function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  /* A localized app page (/es/app.html) declares its language on <html>.
+     That wins over localStorage: the URL you are on is an explicit choice,
+     and letting a stale stored preference override it would mean /es/app.html
+     could open in German. One URL, one language — the same rule the content
+     pages follow. */
+  function declared() {
+    try { return document.documentElement.getAttribute('data-app-lang'); } catch (e) { return null; }
+  }
 
   var I18N = {
-    lang: normalize(stored() || (navigator.language || 'en')),
+    lang: normalize(declared() || stored() || (navigator.language || 'en')),
     t: function (k) { return (D[I18N.lang] && D[I18N.lang][k]) || D.en[k] || k; },
     set: function (l) { I18N.lang = normalize(l); try { localStorage.setItem(KEY, I18N.lang); } catch (e) {} I18N.apply(); },
     apply: function () {
@@ -196,7 +204,12 @@
       q('[data-i18n-html]').forEach(function (el) { var v = I18N.t(el.getAttribute('data-i18n-html')); if (v != null) el.innerHTML = v; });
       q('[data-i18n-ph]').forEach(function (el) { var v = I18N.t(el.getAttribute('data-i18n-ph')); if (v != null) el.setAttribute('placeholder', v); });
       q('[data-i18n-title]').forEach(function (el) { var v = I18N.t(el.getAttribute('data-i18n-title')); if (v != null) el.setAttribute('title', v); });
-      q('.lang-select').forEach(function (s) { if (s.value !== I18N.lang) s.value = I18N.lang; });
+      // Navigating switchers hold URLs, not language codes. Assigning a
+      // code to one clears its value and the control renders blank.
+      q('.lang-select').forEach(function (s) {
+        if (s.hasAttribute('data-lang-nav')) return;
+        if (s.value !== I18N.lang) s.value = I18N.lang;
+      });
     },
     langs: LANGS,
   };

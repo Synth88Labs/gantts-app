@@ -401,8 +401,27 @@ const BLOG_LABELS = {
   zh: { 'what-is-a-gantt-chart': '什么是甘特图？', 'how-to-make-a-gantt-chart': '如何制作甘特图', 'critical-path-method': '关键路径法（CPM）', 'gantt-chart-examples': '甘特图示例', 'gantt-chart-in-excel': '用 Excel 制作甘特图', 'gantt-chart-in-google-sheets': '用 Google Sheets 制作甘特图', 'gantt-chart-in-powerpoint': '用 PowerPoint 制作甘特图', 'best-free-gantt-chart-software': '最好用的免费甘特图软件', 'gantt-chart-dependencies': '依赖关系：FS、SS、FF、SF', 'gantt-baseline-variance': '基线与进度偏差', 'gantt-chart-mistakes': '九个常见错误', 'milestones-vs-tasks': '里程碑与任务' },
 };
 
+
+/* ---------------- The app itself ----------------
+   app.html keeps runtime i18n (it is an application UI), but each locale
+   gets its own URL so the language is decided by where you are, not by
+   what happens to be in localStorage. */
+const APP = {
+  es: { title: 'Crear diagrama de Gantt online gratis | gantts.app',
+        description: 'Editor de diagramas de Gantt gratuito en tu navegador. Arrastra tareas, enlaza dependencias, ve la ruta crítica y exporta a PDF, Excel o PowerPoint.' },
+  fr: { title: 'Créer un diagramme de Gantt en ligne | gantts.app',
+        description: 'Éditeur de diagrammes de Gantt gratuit dans votre navigateur. Déplacez les tâches, liez les dépendances, voyez le chemin critique, exportez en PDF ou Excel.' },
+  de: { title: 'Gantt-Diagramm online erstellen | gantts.app',
+        description: 'Kostenloser Gantt-Editor im Browser. Vorgänge verschieben, Abhängigkeiten verknüpfen, kritischen Pfad sehen und nach PDF, Excel oder PowerPoint exportieren.' },
+  pt: { title: 'Criar gráfico de Gantt online grátis | gantts.app',
+        description: 'Editor de gráfico de Gantt gratuito no navegador. Arraste tarefas, ligue dependências, veja o caminho crítico e exporte para PDF, Excel ou PowerPoint.' },
+  zh: { title: '在线制作甘特图 — 免费 | gantts.app',
+        description: '在浏览器中免费使用的甘特图编辑器。拖动任务、关联依赖、查看关键路径，并导出为 PDF、Excel 或 PowerPoint。' },
+};
+
 module.exports = {
   LOCALES, CHROME, HOME,
   TEMPLATES, TEMPLATE_SLUGS, TEMPLATE_LABELS, TEMPLATE_GROUPS,
   BLOG, BLOG_SLUGS, BLOG_LABELS,
+  APP,
 };

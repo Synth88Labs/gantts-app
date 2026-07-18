@@ -16,7 +16,7 @@ const { FOOTER } = require('./footer.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=19';
+const V = 'v=20';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');

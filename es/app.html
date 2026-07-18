@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" data-app-lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear diagrama de Gantt online gratis | gantts.app</title>
+  <meta name="description" content="Editor de diagramas de Gantt gratuito en tu navegador. Arrastra tareas, enlaza dependencias, ve la ruta crítica y exporta a PDF, Excel o PowerPoint." />
+  <link rel="canonical" href="https://gantts.app/es/app.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/app.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/app.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/app.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/app.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/app.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/app.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/app.html" />  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:title" content="Crear diagrama de Gantt online gratis | gantts.app" />
+  <meta property="og:description" content="Editor de diagramas de Gantt gratuito en tu navegador. Arrastra tareas, enlaza dependencias, ve la ruta crítica y exporta a PDF, Excel o PowerPoint." />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:url" content="https://gantts.app/es/app.html" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="/css/styles.css?v=25" />
+
+  <!-- Export libraries (CDN). Vendor locally for full offline export. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"]},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/es/app.html#webpage","name":"Crear diagrama de Gantt online gratis | gantts.app","url":"https://gantts.app/es/app.html","description":"Editor de diagramas de Gantt gratuito en tu navegador. Arrastra tareas, enlaza dependencias, ve la ruta crítica y exporta a PDF, Excel o PowerPoint.","inLanguage":"es","isPartOf":{"@id":"https://gantts.app/#website"},"about":{"@id":"https://gantts.app/#software"}},{"@type":"SoftwareApplication","@id":"https://gantts.app/#software","name":"gantts.app","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","url":"https://gantts.app/app.html","inLanguage":"es","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://gantts.app/#org"}}]}</script>
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:title" content="Crear diagrama de Gantt online gratis | gantts.app" />
+  <meta name="twitter:description" content="Editor de diagramas de Gantt gratuito en tu navegador. Arrastra tareas, enlaza dependencias, ve la ruta crítica y exporta a PDF, Excel o PowerPoint." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+</head>
+<body class="app-body">
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <a class="brand-home" href="/es/" title="gantts.app home" aria-label="Home">
+        <img src="/assets/logo-mark.svg" width="28" height="28" alt="gantts.app home" />
+      </a>
+      <div class="brand-text">
+        <input id="projectName" class="project-name" value="Untitled Project" spellcheck="false" aria-label="Project name" />
+        <span class="brand-tag">gantts.app · free gantt chart maker</span>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <a class="btn btn-home" id="homeBtn" data-i18n="app.home" href="/es/" title="Back to gantts.app website">← Home</a>
+      <button class="btn" id="cmdkBtn" title="Command palette (Ctrl/⌘ K)">⌘K</button>
+      <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+        <option value="/app.html" selected>English</option>
+        <option value="/es/app.html">Español</option>
+        <option value="/fr/app.html">Français</option>
+        <option value="/de/app.html">Deutsch</option>
+        <option value="/pt/app.html">Português</option>
+        <option value="/zh/app.html">简体中文</option>
+      </select>
+      <button class="btn" id="themeBtn" title="Toggle dark mode">🌙</button>
+      <button class="btn" id="presentBtn" data-i18n="app.present" title="Present mode (F)">▶ Present</button>
+      <div class="menu">
+        <button class="btn" id="projectsBtn" data-i18n="app.projects">📁 Projects</button>
+        <div class="menu-panel" id="projectsMenu" hidden></div>
+      </div>
+      <button class="btn" id="saveBtn" data-i18n="app.save" title="Save this project to a file on your computer">💾 Save</button>
+      <button class="btn" id="importBtn" data-i18n="app.open" title="Open a saved .gantts, .json or .csv file">📂 Open</button>
+      <div class="menu">
+        <button class="btn btn-primary" id="exportBtn" data-i18n="app.export">⬇ Export</button>
+        <div class="menu-panel" id="exportMenu" hidden>
+          <button data-export="save" data-i18n="exp.save">💾 Save project file (.gantts)</button>
+          <button data-export="png" data-i18n="exp.png">🖼 PNG image</button>
+          <button data-export="pdf" data-i18n="exp.pdf">📄 PDF document</button>
+          <button data-export="xlsx" data-i18n="exp.xlsx">📊 Excel (.xlsx)</button>
+          <button data-export="pptx" data-i18n="exp.pptx">📽 PowerPoint (.pptx)</button>
+          <button data-export="csv" data-i18n="exp.csv">📑 CSV (spreadsheet)</button>
+          <button data-export="json" data-i18n="exp.json">{ } JSON (raw)</button>
+          <button data-export="print" data-i18n="exp.print">🖨 Print</button>
+          <button data-export="link" data-i18n="exp.link">🔗 Shareable link</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TOOLBAR ============ -->
+  <div class="toolbar">
+    <div class="tgroup">
+      <button class="btn" id="addTaskBtn" data-i18n="app.task" title="Add task (Insert)">＋ Task</button>
+      <button class="btn" id="addMilestoneBtn" data-i18n="app.milestone" title="Add milestone">◆ Milestone</button>
+      <button class="btn" id="addGroupBtn" data-i18n="app.group" title="Add group/phase">▣ Group</button>
+      <button class="btn" id="indentBtn" title="Indent (make subtask)">→|</button>
+      <button class="btn" id="outdentBtn" title="Outdent">|←</button>
+      <button class="btn btn-danger-ghost" id="deleteTaskBtn" title="Delete selected (Del)">🗑</button>
+    </div>
+
+    <div class="tgroup">
+      <button class="btn" id="undoBtn" title="Undo (Ctrl+Z)" disabled>↶</button>
+      <button class="btn" id="redoBtn" title="Redo (Ctrl+Y)" disabled>↷</button>
+    </div>
+
+    <div class="tgroup">
+      <button class="btn btn-accent" id="pasteBtn" data-i18n="app.paste" title="Generate tasks from text">✨ Paste to Gantt</button>
+    </div>
+
+    <div class="tgroup">
+      <div class="menu">
+        <button class="btn" id="columnsBtn" title="Show / hide columns">▦ Columns</button>
+        <div class="menu-panel" id="columnsMenu" hidden></div>
+      </div>
+      <div class="menu">
+        <button class="btn" id="baselineBtn" title="Freeze the current plan and track slippage against it">◳ Baseline</button>
+        <div class="menu-panel" id="baselineMenu" hidden></div>
+      </div>
+    </div>
+
+    <div class="tgroup">
+      <label class="tlabel" data-i18n="app.zoom">Zoom</label>
+      <select id="zoomSelect" class="select">
+        <option value="day">Day</option>
+        <option value="week" selected>Week</option>
+        <option value="month">Month</option>
+        <option value="quarter">Quarter</option>
+      </select>
+    </div>
+
+    <div class="tgroup">
+      <label class="tlabel" data-i18n="app.font">Font</label>
+      <select id="fontSelect" class="select" title="Chart font">
+        <option value="var(--font)">Inter (default)</option>
+        <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+        <option value="'Bricolage', sans-serif">Bricolage</option>
+        <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+        <option value="Georgia, 'Times New Roman', serif">Serif</option>
+        <option value="system-ui, sans-serif">System UI</option>
+        <option value="Arial, Helvetica, sans-serif">Arial</option>
+      </select>
+    </div>
+
+    <div class="tgroup">
+      <label class="chk chk-critical"><input type="checkbox" id="toggleCritical" /> <span data-i18n="app.critical">Critical path</span></label>
+      <span class="crit-legend" data-i18n="app.critlegend" title="The critical path is the sequence of tasks that determines your finish date">⬤ orange = critical path</span>
+      <label class="chk"><input type="checkbox" id="toggleWeekends" checked /> <span data-i18n="app.weekends">Weekends</span></label>
+      <label class="chk"><input type="checkbox" id="toggleProgress" checked /> <span data-i18n="app.progress">Progress</span></label>
+      <label class="chk"><input type="checkbox" id="toggleToday" checked /> <span data-i18n="app.today">Today</span></label>
+    </div>
+
+    <div class="tgroup grow"></div>
+
+    <div class="tgroup">
+      <button class="btn" id="templatesBtn" data-i18n="app.templates">✨ Templates</button>
+      <button class="btn" id="fitBtn" data-i18n="app.fit" title="Fit to screen">⤢ Fit</button>
+      <button class="btn" id="todayBtn" data-i18n="app.todaybtn" title="Scroll to today">◎ Today</button>
+      <span class="autosave" id="autosaveNote">Saved</span>
+    </div>
+  </div>
+
+  <!-- ============ MAIN GANTT ============ -->
+  <main class="gantt" id="gantt">
+    <div class="grid-pane" id="gridPane">
+      <div class="grid-head" id="gridHead"></div>
+      <div class="grid-body" id="gridBody"></div>
+    </div>
+
+    <div class="splitter" id="splitter" title="Drag to resize"></div>
+
+    <div class="chart-pane" id="chartPane">
+      <div class="chart-head" id="chartHead"></div>
+      <div class="chart-scroll" id="chartScroll">
+        <div class="chart-canvas" id="chartCanvas">
+          <svg class="chart-svg" id="chartSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="bars-layer" id="barsLayer"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- subtle sponsor / banner slot -->
+  <div class="ad-slot" id="adSlot" aria-label="Advertisement slot">
+    <span>Place your banner here</span>
+    <span class="ad-dot">·</span>
+    <a href="mailto:synth88labs@gmail.com?subject=Banner%20enquiry%20%E2%80%94%20gantts.app">Contact us</a>
+  </div>
+
+  <!-- empty state -->
+  <div class="empty-state" id="emptyState" hidden>
+    <div class="empty-card">
+      <div class="empty-ic" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="46" height="46"><rect x="6" y="10" width="26" height="6" rx="3" fill="#6c4cf1"/><rect x="12" y="21" width="28" height="6" rx="3" fill="#8b5cf6"/><rect x="6" y="32" width="18" height="6" rx="3" fill="#a78bfa"/><rect x="30" y="29" width="12" height="12" rx="3" transform="rotate(45 36 35)" fill="#ff6a3d"/></svg>
+      </div>
+      <h2 data-i18n="empty.title">Start your Gantt chart</h2>
+      <p data-i18n="empty.sub">Add your first task, paste a task list, or pick a template.</p>
+      <div class="empty-actions">
+        <button class="btn btn-primary" id="emptyAddTask" data-i18n="empty.add">＋ Add first task</button>
+        <button class="btn" id="emptyPaste" data-i18n="empty.paste">✨ Paste to Gantt</button>
+        <button class="btn" id="emptyTemplates" data-i18n="empty.templates">Browse templates</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- present-mode exit + presenter tools -->
+  <button class="present-exit" id="presentExit" hidden>✕ Exit present (Esc)</button>
+  <div class="present-tools" id="presentTools" hidden>
+    <button class="pt-btn" id="laserBtn" title="Laser pointer (L)" data-i18n="pt.laser">🔴 Laser</button>
+    <button class="pt-btn" id="spotlightBtn" title="Spotlight (S)" data-i18n="pt.spotlight">🔦 Spotlight</button>
+    <span class="pt-sep"></span>
+    <button class="pt-btn pt-ico" id="zoomOutBtn" title="Zoom out (−)">－</button>
+    <span class="pt-zoom" id="zoomLabel">100%</span>
+    <button class="pt-btn pt-ico" id="zoomInBtn" title="Zoom in (+)">＋</button>
+    <button class="pt-btn" id="zoomResetBtn" title="Reset zoom (0)" data-i18n="pt.reset">Reset</button>
+    <span class="pt-sep"></span>
+    <button class="pt-btn pt-exit" id="presentExit2" title="Exit (Esc)" data-i18n="pt.exit">✕ Exit</button>
+  </div>
+  <div class="laser" id="laser" hidden></div>
+  <div class="spotlight" id="spotlight" hidden></div>
+
+  <!-- ============ TASK CARD (anchored popover editor) ============ -->
+  <aside class="drawer" id="taskDrawer" hidden>
+    <div class="drawer-head">
+      <h3 id="drawerTitle">Task</h3>
+      <button class="icon-btn" id="closeDrawer" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="modal">
+      <div class="modal-head">
+        <h3 id="modalTitle">Templates</h3>
+        <button class="icon-btn" id="closeModal" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============ COMMAND PALETTE ============ -->
+  <div class="cmdk-backdrop" id="cmdkBackdrop" hidden>
+    <div class="cmdk" role="dialog" aria-label="Command palette">
+      <input id="cmdkInput" class="cmdk-input" placeholder="Type a command… (e.g. add task, export PDF, dark mode)" autocomplete="off" />
+      <div class="cmdk-list" id="cmdkList"></div>
+      <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ run</span><span>esc close</span></div>
+    </div>
+  </div>
+
+  <!-- ============ TIPS / COACH MARK ============ -->
+  <div class="coach" id="coach" hidden>
+    <div class="coach-card">
+      <div class="coach-body" id="coachBody"></div>
+      <div class="coach-foot">
+        <span class="coach-progress" id="coachProgress"></span>
+        <div>
+          <button class="btn" id="coachSkip">Skip</button>
+          <button class="btn btn-primary" id="coachNext">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating tips button -->
+  <button class="tips-fab" id="tipsFab" title="Tips & tricks" aria-label="Tips and tricks">💡</button>
+
+  <input type="file" id="fileInput" accept=".gantts,.gantt,.json,.csv" hidden />
+  <div class="toast" id="toast" hidden></div>
+
+  <!-- App scripts (bump ?v= on release to bust caches) -->
+  <script src="/js/i18n.js?v=25"></script>
+  <script src="/js/util.js?v=25"></script>
+  <script src="/js/model.js?v=25"></script>
+  <script src="/js/schedule.js?v=25"></script>
+  <script src="/js/render.js?v=25"></script>
+  <script src="/js/interactions.js?v=25"></script>
+  <script src="/js/exports.js?v=25"></script>
+  <script src="/js/templates.js?v=25"></script>
+  <script src="/js/features.js?v=25"></script>
+  <script src="/js/app.js?v=25"></script>
+  <script>
+    if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
+  </script>
+</body>
+</html>
