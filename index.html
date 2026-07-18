@@ -6,6 +6,16 @@
   <title>Free Online Gantt Chart Maker — No Sign Up | gantts.app</title>
   <meta name="description" content="Make a Gantt chart free in your browser. No login, no download. Add tasks, dependencies & critical path, then export to PDF, PNG, Excel or PPT." />
   <link rel="canonical" href="https://gantts.app/" />
+  <!-- hreflang must be reciprocal: each localized page names this one,
+       so this one must name every localized page back. Validate with
+       node scripts/check-hreflang.js -->
+  <link rel="alternate" hreflang="en" href="https://gantts.app/" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/" />
   <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -62,7 +72,16 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" aria-label="Language" title="Language / Idioma"></select>
+        <!-- Navigates to real localized URLs rather than swapping text in
+             place; see scripts/gen-i18n.js for why that matters for SEO. -->
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language / Idioma" onchange="if(this.value)location.href=this.value">
+          <option value="/" selected>English</option>
+          <option value="/es/">Español</option>
+          <option value="/fr/">Français</option>
+          <option value="/de/">Deutsch</option>
+          <option value="/pt/">Português</option>
+          <option value="/zh/">简体中文</option>
+        </select>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html" data-i18n="nav.open">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>

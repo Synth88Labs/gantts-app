@@ -203,6 +203,11 @@
 
   function initSelects() {
     Array.prototype.slice.call(document.querySelectorAll('.lang-select')).forEach(function (sel) {
+      // Content pages use a navigating switcher (real localized URLs, see
+      // scripts/gen-i18n.js). Runtime text-swapping must not touch those —
+      // it would overwrite the option values with language codes and break
+      // navigation. Only the app's own switcher is handled here.
+      if (sel.hasAttribute('data-lang-nav')) return;
       if (!sel.options.length) {
         LANGS.forEach(function (L) { var o = document.createElement('option'); o.value = L[0]; o.textContent = L[1]; sel.appendChild(o); });
       }

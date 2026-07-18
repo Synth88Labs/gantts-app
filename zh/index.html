@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>免费在线甘特图制作工具 — 无需注册 | gantts.app</title>
+  <meta name="description" content="在浏览器中免费制作甘特图。无需注册，无需下载。支持任务、依赖关系与关键路径，并可导出为 PDF、Excel 和 PowerPoint。" />
+  <link rel="canonical" href="https://gantts.app/zh/" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="免费在线甘特图制作工具 — 无需注册" />
+  <meta property="og:description" content="在浏览器中免费制作甘特图。无需注册，无需下载。支持任务、依赖关系与关键路径，并可导出为 PDF、Excel 和 PowerPoint。" />
+  <meta property="og:url" content="https://gantts.app/zh/" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="/css/site.css?v=11" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"真的完全免费吗？","acceptedAnswer":{"@type":"Answer","text":"是的。没有账号、没有试用期、没有付费功能。所有运算都在浏览器中完成，因此没有服务器成本。"}},{"@type":"Question","name":"需要注册账号吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。打开应用即可开始规划，项目会自动保存在浏览器中。"}},{"@type":"Question","name":"我的数据保存在哪里？","acceptedAnswer":{"@type":"Answer","text":"保存在你自己的浏览器中（localStorage），不会上传到任何服务器。你也可以把 .gantts 文件保存到电脑上。"}},{"@type":"Question","name":"可以导出到 Excel 或 PowerPoint 吗？","acceptedAnswer":{"@type":"Answer","text":"可以，还支持 PDF、PNG 和 CSV。导出的是可编辑的真实文件，而不是图片。"}}]}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/zh/" aria-label="gantts.app">
+        <img src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/app.html">甘特图制作</a>
+        <a href="/templates.html">模板</a>
+        <a href="/blog/index.html">指南</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/">English</option><option value="/es/">Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero3">
+    <div class="hero3-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero3-head">
+        <span class="kicker"><i></i> <span>免费 · 无需注册 · 在浏览器中运行</span></span>
+        <h1>打开即用的免费<span class="grad">甘特图制作工具</span>。</h1>
+        <p class="hero3-sub">输入或粘贴任务，它们会自动排成清晰、可交互的时间线。支持依赖关系、关键路径和里程碑，并可导出为 PDF、Excel 或 PowerPoint。始终无需账号。</p>
+        <div class="hero3-cta">
+          <a class="btn btn-primary btn-lg" href="/app.html">开始规划 — 免费</a>
+          <a class="hero3-link" href="/templates.html">或打开一个模板 →</a>
+        </div>
+      </div>
+
+      <div class="hero3-bars" role="img" aria-label="项目计划所需的一切，没有任何功能被锁住">
+        <div class="hero3-today" aria-hidden="true"></div>
+        <div class="fbar v r1" style="--s:1;--w:5"><span>添加并拖动任务</span></div>
+        <div class="fbar i r2" style="--s:4;--w:6"><span>关联依赖关系</span></div>
+        <div class="fbar o r3" style="--s:8;--w:5"><span>查看关键路径</span></div>
+        <div class="fbar p r4" style="--s:6;--w:4"><span>里程碑与阶段</span></div>
+        <div class="fmile r4" style="--s:10" aria-hidden="true"></div>
+        <div class="fbar g r5" style="--s:9;--w:6"><span>导出为 PDF · Excel · PPT</span></div>
+      </div>
+
+      <p class="hero3-meta">无需账号 · 任务数量不限 · 支持离线使用 · 数据只保留在浏览器中</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="head-l">
+        <div>
+          <span class="label">功能一览</span>
+          <h2>项目计划所需的一切，没有任何功能被锁住</h2>
+        </div>
+        <p class="head-l-note">其他工具需要付费的功能——关键路径、导出、无限任务——在这里全部免费提供。</p>
+      </div>
+      <div class="bento">
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>自动计算关键路径</h3>
+            <p>清楚看到决定项目完成日期的任务链条，日期一变即刻高亮。无需手动计算，也不必升级付费版。</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>拖放式排程</h3>
+            <p>在时间线上拖动和缩放任务条，设置完成百分比，随时调整任务顺序。计划随你而动。</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>真正的依赖关系</h3>
+            <p>用「完成—开始」以及另外三种类型关联任务。调整日期时，箭头会自动重新绘制。</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>可直接汇报的导出效果</h3>
+            <p>一键导出为 PDF、PNG、Excel 或 PowerPoint，可直接发给客户或管理层。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container narrow">
+      <h2>常见问题</h2>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>真的完全免费吗？</summary>
+          <p>是的。没有账号、没有试用期、没有付费功能。所有运算都在浏览器中完成，因此没有服务器成本。</p>
+        </details>
+        <details class="faq-item">
+          <summary>需要注册账号吗？</summary>
+          <p>不需要。打开应用即可开始规划，项目会自动保存在浏览器中。</p>
+        </details>
+        <details class="faq-item">
+          <summary>我的数据保存在哪里？</summary>
+          <p>保存在你自己的浏览器中（localStorage），不会上传到任何服务器。你也可以把 .gantts 文件保存到电脑上。</p>
+        </details>
+        <details class="faq-item">
+          <summary>可以导出到 Excel 或 PowerPoint 吗？</summary>
+          <p>可以，还支持 PDF、PNG 和 CSV。导出的是可编辑的真实文件，而不是图片。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>准备好规划你的项目了吗？</h2>
+      <p>无需注册，无需信用卡。打开应用即可开始。</p>
+      <a class="btn btn-primary btn-lg" href="/app.html">打开甘特图工具</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-word">gantts<b>.app</b></span>
+        <p class="footer-tag">免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <a href="/app.html">甘特图制作</a>
+        <a href="/templates.html">模板</a>
+      </div>
+      <div>
+        <h4>资源</h4>
+        <a href="/blog/index.html">指南</a>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <a href="/about.html">关于我们</a>
+        <a href="/privacy.html">隐私政策</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=11"></script>
+</body>
+</html>

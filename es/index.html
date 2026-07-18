@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagrama de Gantt online gratis — sin registro | gantts.app</title>
+  <meta name="description" content="Crea un diagrama de Gantt gratis en tu navegador. Sin registro. Tareas, dependencias y ruta crítica, con exportación a PDF, Excel y PowerPoint." />
+  <link rel="canonical" href="https://gantts.app/es/" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Creador de diagramas de Gantt gratis — sin registro" />
+  <meta property="og:description" content="Crea un diagrama de Gantt gratis en tu navegador. Sin registro. Tareas, dependencias y ruta crítica, con exportación a PDF, Excel y PowerPoint." />
+  <meta property="og:url" content="https://gantts.app/es/" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="/css/site.css?v=11" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Es realmente gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. No hay cuentas, pruebas ni funciones de pago. Todo se ejecuta en tu navegador, así que no hay servidores que mantener."}},{"@type":"Question","name":"¿Necesito crear una cuenta?","acceptedAnswer":{"@type":"Answer","text":"No. Abre la aplicación y empieza a planificar. Tu proyecto se guarda automáticamente en tu navegador."}},{"@type":"Question","name":"¿Dónde se guardan mis datos?","acceptedAnswer":{"@type":"Answer","text":"En tu propio navegador (localStorage). Nada se sube a ningún servidor. También puedes guardar un archivo .gantts en tu equipo."}},{"@type":"Question","name":"¿Puedo exportar a Excel o PowerPoint?","acceptedAnswer":{"@type":"Answer","text":"Sí, además de PDF, PNG y CSV. Las exportaciones son archivos reales y editables, no imágenes."}}]}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/es/" aria-label="gantts.app">
+        <img src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/app.html">Crear diagrama</a>
+        <a href="/templates.html">Plantillas</a>
+        <a href="/blog/index.html">Guías</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/">English</option><option value="/es/" selected>Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero3">
+    <div class="hero3-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero3-head">
+        <span class="kicker"><i></i> <span>Gratis · sin registro · funciona en tu navegador</span></span>
+        <h1>El <span class="grad">creador de diagramas de Gantt</span> gratuito que simplemente se abre y funciona.</h1>
+        <p class="hero3-sub">Escribe o pega tus tareas y míralas convertirse en una línea de tiempo clara e interactiva. Dependencias, ruta crítica e hitos; después exporta a PDF, Excel o PowerPoint. Sin cuenta, nunca.</p>
+        <div class="hero3-cta">
+          <a class="btn btn-primary btn-lg" href="/app.html">Empezar a planificar — gratis</a>
+          <a class="hero3-link" href="/templates.html">o abre una plantilla →</a>
+        </div>
+      </div>
+
+      <div class="hero3-bars" role="img" aria-label="Todo lo que necesita un plan, sin nada bajo llave">
+        <div class="hero3-today" aria-hidden="true"></div>
+        <div class="fbar v r1" style="--s:1;--w:5"><span>Añadir y arrastrar tareas</span></div>
+        <div class="fbar i r2" style="--s:4;--w:6"><span>Enlazar dependencias</span></div>
+        <div class="fbar o r3" style="--s:8;--w:5"><span>Ver la ruta crítica</span></div>
+        <div class="fbar p r4" style="--s:6;--w:4"><span>Hitos y fases</span></div>
+        <div class="fmile r4" style="--s:10" aria-hidden="true"></div>
+        <div class="fbar g r5" style="--s:9;--w:6"><span>Exportar a PDF · Excel · PPT</span></div>
+      </div>
+
+      <p class="hero3-meta">Sin cuenta · tareas ilimitadas · funciona sin conexión · tus datos no salen del navegador</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="head-l">
+        <div>
+          <span class="label">Qué incluye</span>
+          <h2>Todo lo que necesita un plan, sin nada bajo llave</h2>
+        </div>
+        <p class="head-l-note">Las funciones por las que otras herramientas cobran —ruta crítica, exportación, tareas ilimitadas— están aquí y son gratuitas.</p>
+      </div>
+      <div class="bento">
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>Ruta crítica automática</h3>
+            <p>Descubre la cadena exacta de tareas que determina tu fecha de entrega, resaltada en cuanto cambian las fechas. Sin cálculos manuales ni versiones de pago.</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>Programación con arrastrar y soltar</h3>
+            <p>Mueve y redimensiona las barras en la línea de tiempo, marca el porcentaje completado y reordena tareas. El plan sigue tu ritmo.</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>Dependencias reales</h3>
+            <p>Enlaza tareas con fin-inicio y otros tres tipos. Las flechas se redibujan solas cuando cambias las fechas.</p>
+          </div>
+        </article>
+        <article class="bento-item">
+          <div class="bento-txt">
+            <h3>Exportación profesional</h3>
+            <p>Descarga en PDF, PNG, Excel o PowerPoint con un clic, listo para enviar a tu cliente o dirección.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container narrow">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>¿Es realmente gratis?</summary>
+          <p>Sí. No hay cuentas, pruebas ni funciones de pago. Todo se ejecuta en tu navegador, así que no hay servidores que mantener.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Necesito crear una cuenta?</summary>
+          <p>No. Abre la aplicación y empieza a planificar. Tu proyecto se guarda automáticamente en tu navegador.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Dónde se guardan mis datos?</summary>
+          <p>En tu propio navegador (localStorage). Nada se sube a ningún servidor. También puedes guardar un archivo .gantts en tu equipo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo exportar a Excel o PowerPoint?</summary>
+          <p>Sí, además de PDF, PNG y CSV. Las exportaciones son archivos reales y editables, no imágenes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>¿Listo para planificar tu proyecto?</h2>
+      <p>Sin registro, sin tarjeta de crédito. Abre la aplicación y empieza.</p>
+      <a class="btn btn-primary btn-lg" href="/app.html">Abrir el creador de Gantt</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-word">gantts<b>.app</b></span>
+        <p class="footer-tag">Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <a href="/app.html">Crear diagrama</a>
+        <a href="/templates.html">Plantillas</a>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <a href="/blog/index.html">Guías</a>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <a href="/about.html">Acerca de</a>
+        <a href="/privacy.html">Privacidad</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=11"></script>
+</body>
+</html>
