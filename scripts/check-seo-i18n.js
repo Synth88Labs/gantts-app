@@ -29,7 +29,7 @@ const { LOCALES } = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const SUBS = ['', 'templates.html', 'blog/index.html'];
+const SUBS = ['', 'templates.html', 'blog/index.html', 'about.html', 'contact.html', 'terms.html', 'privacy.html'];
 // Limits are in Latin-equivalent units, not raw characters. Google
 // truncates by pixel width, and a CJK glyph occupies roughly two Latin
 // character widths — so counting characters flags perfectly good

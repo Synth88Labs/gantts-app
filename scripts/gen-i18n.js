@@ -27,6 +27,7 @@ const {
   TEMPLATES, TEMPLATE_LABELS, TEMPLATE_GROUPS,
   BLOG, BLOG_SLUGS, BLOG_LABELS,
 } = require('../i18n/content.js');
+const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -37,7 +38,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 /* Which sub-pages exist in a given locale. Until templates.html and
    blog/ are localized, their nav links must fall back to English —
    linking to a 404 is worse than linking across languages. */
-const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true };
+const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true,
+  'about.html': true, 'contact.html': true, 'terms.html': true, 'privacy.html': true };
 function localHref(code, sub) {
   return LOCALIZED_PAGES[sub] ? `/${code}/${sub}` : `/${sub}`;
 }
@@ -119,10 +121,10 @@ function footer(code) {
       </div>
       <div>
         <h4>${esc(c.footer.company)}</h4>
-        <a href="/about.html">${esc(c.footer.about)}</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/privacy.html">${esc(c.footer.privacy)}</a>
+        <a href="${localHref(code, 'about.html')}">${esc(c.footer.about)}</a>
+        <a href="${localHref(code, 'contact.html')}">Contact</a>
+        <a href="${localHref(code, 'terms.html')}">Terms</a>
+        <a href="${localHref(code, 'privacy.html')}">${esc(c.footer.privacy)}</a>
       </div>
       </div>
       <div class="footer-bottom">
@@ -451,6 +453,39 @@ ${items}
   return shell(loc, sub, b, body, ld);
 }
 
+
+/* Trust pages. Terms and privacy carry a localized note saying the
+   English text governs — see i18n/site-pages.js for why. */
+function renderSitePage(loc, key) {
+  const code = loc.code;
+  const d = SITE[code][key];
+  const sub = key + '.html';
+  const url = `${ORIGIN}/${code}/${sub}`;
+  const isLegal = key === 'terms' || key === 'privacy';
+  const type = key === 'about' ? 'AboutPage' : key === 'contact' ? 'ContactPage' : 'WebPage';
+
+  const ld = graph(loc, [{
+    '@type': type, '@id': url + '#webpage',
+    name: d.title, url, description: d.description,
+    inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+    breadcrumb: breadcrumb(loc, [
+      { name: 'gantts.app', url: `${ORIGIN}/${code}/` },
+      { name: d.h1, url },
+    ]),
+  }]);
+
+  const body = `  <article class="container narrow" style="padding-top:44px">
+    <div class="crumbs"><a href="/${code}/">gantts.app</a> › ${esc(d.h1)}</div>
+    <h1>${esc(d.h1)}</h1>
+    <p class="lead">${esc(d.lead)}</p>
+${isLegal ? '    <p class="crumbs"><small>' + esc(SITE[code].legalNote) + '</small></p>\n' : ''}    <div class="prose">
+${d.body.map(([h, html]) => `      <h2>${esc(h)}</h2>\n      ${html}`).join('\n')}
+    </div>
+  </article>`;
+
+  return shell(loc, sub, d, body, ld);
+}
+
 // ---- build ----
 let written = 0;
 for (const loc of LOCALES) {
@@ -460,7 +495,10 @@ for (const loc of LOCALES) {
   fs.writeFileSync(path.join(dir, 'index.html'), renderHome(loc), 'utf8');
   fs.writeFileSync(path.join(dir, 'templates.html'), renderTemplates(loc), 'utf8');
   fs.writeFileSync(path.join(dir, 'blog', 'index.html'), renderBlogIndex(loc), 'utf8');
-  written += 3;
+  for (const key of ['about', 'contact', 'terms', 'privacy']) {
+    fs.writeFileSync(path.join(dir, key + '.html'), renderSitePage(loc, key), 'utf8');
+  }
+  written += 7;
   console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
 }
 

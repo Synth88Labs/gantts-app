@@ -47,6 +47,10 @@ const CLUSTERS = [
   { sub: '', en: 'index.html' },
   { sub: 'templates.html', en: 'templates.html' },
   { sub: 'blog/index.html', en: 'blog/index.html' },
+  { sub: 'about.html', en: 'about.html' },
+  { sub: 'contact.html', en: 'contact.html' },
+  { sub: 'terms.html', en: 'terms.html' },
+  { sub: 'privacy.html', en: 'privacy.html' },
 ];
 
 let errors = 0, warnings = 0, checked = 0;

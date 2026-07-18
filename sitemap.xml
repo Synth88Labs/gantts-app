@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gantts.app/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -99,6 +106,26 @@
   </url>
   <url>
     <loc>https://gantts.app/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -117,6 +144,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/de/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/de/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -130,6 +170,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://gantts.app/de/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/de/templates.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates.html"/>
@@ -138,6 +191,32 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -156,6 +235,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/es/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -169,6 +261,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://gantts.app/es/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/es/templates.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates.html"/>
@@ -177,6 +282,32 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -195,6 +326,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/fr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -208,6 +352,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://gantts.app/fr/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/fr/templates.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates.html"/>
@@ -216,6 +373,19 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/fr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -235,6 +405,26 @@
   </url>
   <url>
     <loc>https://gantts.app/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/pt/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -253,6 +443,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/pt/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/pt/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -266,6 +469,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://gantts.app/pt/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/pt/templates.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates.html"/>
@@ -274,6 +490,19 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/pt/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -503,6 +732,26 @@
   </url>
   <url>
     <loc>https://gantts.app/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/zh/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/about.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/about.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -521,6 +770,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/zh/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/zh/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -534,6 +796,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://gantts.app/zh/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/zh/templates.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates.html"/>
@@ -542,6 +817,19 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/zh/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
