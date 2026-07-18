@@ -35,10 +35,11 @@
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
-    "check": "npm run check:links && npm run check:seo && npm run check:hreflang",
+    "check": "npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n",
     "deploy:bundle": "node scripts/build-deploy.js",
     "indexnow": "node scripts/indexnow.js",
-    "test": "npm run check"
+    "test": "npm run check",
+    "check:seo-i18n": "node scripts/check-seo-i18n.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

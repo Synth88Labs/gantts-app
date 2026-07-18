@@ -133,18 +133,93 @@ function footer(code) {
   </footer>`;
 }
 
-/* FAQPage schema in the page's own language — these are eligible for
-   rich results per-locale, so it is worth emitting for each. */
-function faqSchema(faq) {
-  return JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faq.map(f => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+/* ---------------- SEO ----------------
+   Localized pages get the same depth of markup as the English ones,
+   not a stripped-down head. Two things matter especially here:
+
+   - The Organization/WebSite entity graph must be present per locale
+     with stable @ids, so every language resolves to ONE brand entity
+     rather than five unrelated ones.
+   - og:locale:alternate lists the sibling languages, which is what
+     social platforms use to pick a localized preview.
+*/
+const ORG_ID = ORIGIN + '/#org';
+const SITE_ID = ORIGIN + '/#website';
+
+function orgNode() {
+  return {
+    '@type': 'Organization', '@id': ORG_ID,
+    name: 'gantts.app', url: ORIGIN + '/',
+    logo: ORIGIN + '/assets/logo-mark.svg',
+    email: 'synth88labs@gmail.com',
+    sameAs: ['https://github.com/Synth88Labs/gantts-app'],
+  };
+}
+function siteNode(loc) {
+  return {
+    '@type': 'WebSite', '@id': SITE_ID,
+    url: ORIGIN + '/', name: 'gantts.app',
+    inLanguage: loc.hreflang,
+    publisher: { '@id': ORG_ID },
+  };
+}
+function breadcrumb(loc, trail) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({
+      '@type': 'ListItem', position: i + 1, name: t.name, item: t.url,
     })),
-  });
+  };
+}
+/* Wraps page-specific nodes in the shared entity graph. */
+function graph(loc, nodes) {
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': [orgNode(), siteNode(loc), ...nodes] });
+}
+
+function ogLocaleAlternates(loc) {
+  return LOCALES.filter(l => l.code !== loc.code)
+    .map(l => `  <meta property="og:locale:alternate" content="${l.ogLocale}" />`)
+    .concat([`  <meta property="og:locale:alternate" content="en_US" />`])
+    .join('\n');
+}
+
+/* One head builder for every localized page, so a hub can never drift
+   into having thinner metadata than the homepage. */
+function seoHead(loc, sub, meta, ldJson) {
+  const url = sub === '' ? `${ORIGIN}/${loc.code}/` : `${ORIGIN}/${loc.code}/${sub}`;
+  return `  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${esc(meta.title)}</title>
+  <meta name="description" content="${esc(meta.description)}" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="${url}" />
+${hreflangTags(sub)}
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="${loc.ogLocale}" />
+${ogLocaleAlternates(loc)}
+  <meta property="og:title" content="${esc(meta.ogTitle || meta.title)}" />
+  <meta property="og:description" content="${esc(meta.description)}" />
+  <meta property="og:url" content="${url}" />
+  <meta property="og:image" content="${ORIGIN}/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="${esc(meta.h1 || meta.title)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${esc(meta.ogTitle || meta.title)}" />
+  <meta name="twitter:description" content="${esc(meta.description)}" />
+  <meta name="twitter:image" content="${ORIGIN}/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?${CSS_V}" />
+  <script type="application/ld+json">${ldJson}</script>
+`;
 }
 
 function renderHome(loc) {
@@ -173,36 +248,31 @@ function renderHome(loc) {
           <p>${esc(f.a)}</p>
         </details>`).join('\n');
 
-  return `<!DOCTYPE html>
-<html lang="${loc.hreflang}" dir="${loc.dir}">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${esc(t.title)}</title>
-  <meta name="description" content="${esc(t.description)}" />
-  <link rel="canonical" href="${url}" />
-${hreflangTags(sub)}
-  <meta name="theme-color" content="#6c4cf1" />
-  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  const ld = graph(loc, [
+    {
+      '@type': 'WebPage', '@id': `${ORIGIN}/${code}/#webpage`,
+      url: `${ORIGIN}/${code}/`, name: t.title, description: t.description,
+      inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      about: { '@id': ORIGIN + '/#software' },
+    },
+    {
+      '@type': 'SoftwareApplication', '@id': ORIGIN + '/#software',
+      name: 'gantts.app', applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web browser', url: ORIGIN + '/app.html',
+      inLanguage: loc.hreflang,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      publisher: { '@id': ORG_ID },
+    },
+    {
+      '@type': 'FAQPage', '@id': `${ORIGIN}/${code}/#faq`, inLanguage: loc.hreflang,
+      mainEntity: t.faq.map(f => ({
+        '@type': 'Question', name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]);
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="gantts.app" />
-  <meta property="og:locale" content="${loc.ogLocale}" />
-  <meta property="og:title" content="${esc(t.ogTitle)}" />
-  <meta property="og:description" content="${esc(t.description)}" />
-  <meta property="og:url" content="${url}" />
-  <meta property="og:image" content="${ORIGIN}/assets/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="stylesheet" href="/css/site.css?${CSS_V}" />
-  <script type="application/ld+json">${faqSchema(t.faq)}</script>
-</head>
-<body>
-${header(code, sub)}
-
-  <section class="hero3">
+  const body = `  <section class="hero3">
     <div class="hero3-bg" aria-hidden="true"></div>
     <div class="container">
       <div class="hero3-head">
@@ -253,41 +323,18 @@ ${faq}
       <p>${esc(t.ctaP)}</p>
       <a class="btn btn-primary btn-lg" href="/app.html">${esc(t.ctaBtn)}</a>
     </div>
-  </section>
+  </section>`;
 
-${footer(code)}
-  <script src="/js/site.js?${CSS_V}"></script>
-</body>
-</html>
-`;
+  return shell(loc, '', t, body, ld);
 }
 
-/* Shared shell so the hub pages cannot drift from the homepage's head. */
+/* Every localized page routes through here, so none can end up with a
+   thinner head than another. */
 function shell(loc, sub, meta, bodyHtml, ldJson) {
-  const url = `${ORIGIN}/${loc.code}/${sub}`;
   return `<!DOCTYPE html>
 <html lang="${loc.hreflang}" dir="${loc.dir}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${esc(meta.title)}</title>
-  <meta name="description" content="${esc(meta.description)}" />
-  <link rel="canonical" href="${url}" />
-${hreflangTags(sub)}
-  <meta name="theme-color" content="#6c4cf1" />
-  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="gantts.app" />
-  <meta property="og:locale" content="${loc.ogLocale}" />
-  <meta property="og:title" content="${esc(meta.title)}" />
-  <meta property="og:description" content="${esc(meta.description)}" />
-  <meta property="og:url" content="${url}" />
-  <meta property="og:image" content="${ORIGIN}/assets/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="/css/site.css?${CSS_V}" />
-${ldJson ? '  <script type="application/ld+json">' + ldJson + '</script>\n' : ''}</head>
+${seoHead(loc, sub, meta, ldJson)}</head>
 <body>
 ${header(loc.code, sub)}
 
@@ -322,23 +369,26 @@ ${cards}
   }).join('\n');
 
   const allSlugs = TEMPLATE_GROUPS.flatMap(g => g.slugs);
-  const ld = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: t.h1,
-    url: `${ORIGIN}/${code}/${sub}`,
-    description: t.description,
-    inLanguage: loc.hreflang,
-    isPartOf: { '@type': 'WebSite', name: 'gantts.app', url: ORIGIN + '/' },
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: allSlugs.length,
-      itemListElement: allSlugs.map((s, i) => ({
-        '@type': 'ListItem', position: i + 1,
-        name: labels[s], url: `${ORIGIN}/templates/${s}.html`,
-      })),
+  const url = `${ORIGIN}/${code}/${sub}`;
+  const ld = graph(loc, [
+    {
+      '@type': 'CollectionPage', '@id': url + '#webpage',
+      name: t.h1, url, description: t.description,
+      inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      breadcrumb: breadcrumb(loc, [
+        { name: 'gantts.app', url: `${ORIGIN}/${code}/` },
+        { name: t.h1, url },
+      ]),
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: allSlugs.length,
+        itemListElement: allSlugs.map((s, i) => ({
+          '@type': 'ListItem', position: i + 1,
+          name: labels[s], url: `${ORIGIN}/templates/${s}.html`,
+        })),
+      },
     },
-  });
+  ]);
 
   const body = `  <article class="container" style="padding-top:44px">
     <h1>${esc(t.h1)}</h1>
@@ -368,23 +418,26 @@ function renderBlogIndex(loc) {
           <span class="eyebrow">${esc(b.readMore)} →</span>
         </a>`).join('\n');
 
-  const ld = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: b.h1,
-    url: `${ORIGIN}/${code}/${sub}`,
-    description: b.description,
-    inLanguage: loc.hreflang,
-    isPartOf: { '@type': 'WebSite', name: 'gantts.app', url: ORIGIN + '/' },
-    mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: BLOG_SLUGS.length,
-      itemListElement: BLOG_SLUGS.map((s, i) => ({
-        '@type': 'ListItem', position: i + 1,
-        name: labels[s], url: `${ORIGIN}/blog/${s}.html`,
-      })),
+  const url = `${ORIGIN}/${code}/${sub}`;
+  const ld = graph(loc, [
+    {
+      '@type': 'CollectionPage', '@id': url + '#webpage',
+      name: b.h1, url, description: b.description,
+      inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      breadcrumb: breadcrumb(loc, [
+        { name: 'gantts.app', url: `${ORIGIN}/${code}/` },
+        { name: b.h1, url },
+      ]),
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: BLOG_SLUGS.length,
+        itemListElement: BLOG_SLUGS.map((s, i) => ({
+          '@type': 'ListItem', position: i + 1,
+          name: labels[s], url: `${ORIGIN}/blog/${s}.html`,
+        })),
+      },
     },
-  });
+  ]);
 
   const body = `  <article class="container narrow" style="padding-top:44px">
     <h1>${esc(b.h1)}</h1>

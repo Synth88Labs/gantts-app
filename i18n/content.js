@@ -172,7 +172,7 @@ const HOME = {
   },
   pt: {
     slug: '',
-    title: 'Criador de gráfico de Gantt grátis — sem cadastro | gantts.app',
+    title: 'Gráfico de Gantt online grátis | gantts.app',
     description: 'Crie um gráfico de Gantt grátis no navegador, sem cadastro. Tarefas, dependências, caminho crítico e exportação para PDF, Excel e PowerPoint.',
     ogTitle: 'Criador de gráfico de Gantt grátis — sem cadastro',
     kicker: 'Grátis · sem cadastro · funciona no navegador',
