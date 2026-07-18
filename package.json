@@ -40,11 +40,16 @@
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
     "check:seo-i18n": "node scripts/check-seo-i18n.js",
-    "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js"
+    "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js",
+    "deploy:check": "node scripts/deploy-ftp.js --dry",
+    "deploy": "npm run deploy:bundle && node scripts/deploy-ftp.js --yes"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
     "pptxgenjs": "^4.0.1",
     "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "basic-ftp": "^6.0.1"
   }
 }

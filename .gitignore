@@ -16,3 +16,6 @@ deploy-gantts-app.zip
 # Kept out of git because binaries diff poorly and every regeneration
 # would store a whole new copy in history forever.
 templates/files/
+
+# FTP credentials — never commit
+.env
