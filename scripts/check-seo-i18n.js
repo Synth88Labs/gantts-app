@@ -26,6 +26,7 @@
 const fs = require('fs');
 const path = require('path');
 const { LOCALES } = require('../i18n/content.js');
+const { BY_LOCALE: TPL_I18N, localesFor } = require('../i18n/template-locales.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -63,7 +64,11 @@ for (const sub of SUBS) {
 console.log('\nLocalized SEO check\n');
 
 for (const loc of LOCALES) {
-  for (const sub of SUBS) {
+  // Template detail pages are translated one at a time, so each locale
+  // checks the shared page set plus whatever it has actually localized.
+  const tplSubs = Object.keys(TPL_I18N[loc.code] || {}).map((s) => `templates/${s}.html`);
+  for (const sub of SUBS.concat(tplSubs)) {
+    const partial = sub.startsWith('templates/');
     const rel = `${loc.code}/${sub || 'index.html'}`;
     const abs = path.join(ROOT, rel);
     if (!fs.existsSync(abs)) { err(rel, 'file missing'); continue; }
@@ -106,8 +111,11 @@ for (const loc of LOCALES) {
     if (ogLocale && ogLocale !== loc.ogLocale) err(rel, `og:locale is ${ogLocale}, expected ${loc.ogLocale}`);
     const ogUrl = meta(html, 'property', 'og:url');
     if (ogUrl && ogUrl !== expectUrl) err(rel, `og:url is ${ogUrl}, expected ${expectUrl}`);
+    // A partial cluster legitimately lists fewer siblings than there
+    // are locales — flagging that would just train us to ignore it.
     const alts = metaAll(html, 'property', 'og:locale:alternate');
-    if (alts.length < LOCALES.length) warn(rel, `only ${alts.length} og:locale:alternate tag(s)`);
+    const wantAlts = partial ? localesFor(sub.slice(10, -5)).length : LOCALES.length;
+    if (alts.length < wantAlts) warn(rel, `only ${alts.length} og:locale:alternate tag(s)`);
 
     // structured data
     const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => m[1]);

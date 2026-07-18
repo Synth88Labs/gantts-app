@@ -29,6 +29,8 @@ const {
 } = require('../i18n/content.js');
 const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 const { APP } = require('../i18n/content.js');
+const { BY_LOCALE: TPL_I18N, UI: TPL_UI, localesFor } = require('../i18n/template-locales.js');
+const { T: TPL_EN } = require('./new-templates.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -47,24 +49,33 @@ function localHref(code, sub) {
 
 /* Every language variant of one logical page, for hreflang.
    `enPath` is the English URL; localized live under /<code>/<sub>. */
-function altUrls(sub) {
+/* `only` narrows the cluster to locales that actually have the page.
+   Template detail pages are translated one at a time, and naming a URL
+   that does not exist invalidates the entire cluster, not just that
+   row. Defaults to every locale, which is right for the hubs. */
+function altUrls(sub, only) {
+  const codes = only || LOCALES.map(l => l.code);
   const alts = [{ hreflang: 'en', url: ORIGIN + '/' + sub }];
-  LOCALES.forEach(l => alts.push({ hreflang: l.hreflang, url: `${ORIGIN}/${l.code}/${sub}` }));
+  LOCALES.filter(l => codes.includes(l.code))
+    .forEach(l => alts.push({ hreflang: l.hreflang, url: `${ORIGIN}/${l.code}/${sub}` }));
   alts.push({ hreflang: 'x-default', url: ORIGIN + '/' + sub });
   return alts;
 }
 
-function hreflangTags(sub) {
-  return altUrls(sub).map(a => `  <link rel="alternate" hreflang="${a.hreflang}" href="${a.url}" />`).join('\n');
+function hreflangTags(sub, only) {
+  return altUrls(sub, only).map(a => `  <link rel="alternate" hreflang="${a.hreflang}" href="${a.url}" />`).join('\n');
 }
 
 /* Switcher is a <select> of real links — changing it navigates.
    Keeping it a form control matches the existing site chrome. */
-function langSwitcher(currentCode, sub) {
+function langSwitcher(currentCode, sub, only) {
   const opt = (code, label, url) =>
     `<option value="${url}"${code === currentCode ? ' selected' : ''}>${esc(label)}</option>`;
+  // Locales without this page send the reader to their own home page
+  // instead of a 404 — see altUrls().
+  const has = (code) => !only || only.includes(code);
   const opts = [opt('en', 'English', '/' + sub)]
-    .concat(LOCALES.map(l => opt(l.code, l.name, `/${l.code}/${sub}`)))
+    .concat(LOCALES.map(l => opt(l.code, l.name, has(l.code) ? `/${l.code}/${sub}` : `/${l.code}/`)))
     .join('');
   return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}" onchange="if(this.value)location.href=this.value">${opts}</select>`;
 }
@@ -73,7 +84,7 @@ function langSwitcher(currentCode, sub) {
    .nav / .nav-inner / .nav-logo. Using invented class names here left
    the header as a non-flex block, stacking brand, links and buttons
    into three rows at 124px tall. */
-function header(code, sub) {
+function header(code, sub, only) {
   const c = CHROME[code];
   const p = '/' + code;
   return `  <header class="nav">
@@ -89,7 +100,7 @@ function header(code, sub) {
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        ${langSwitcher(code, sub)}
+        ${langSwitcher(code, sub, only)}
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html">${esc(c.nav.open)}</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
@@ -195,8 +206,8 @@ function graph(loc, nodes) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': [orgNode(), siteNode(loc), ...nodes] });
 }
 
-function ogLocaleAlternates(loc) {
-  return LOCALES.filter(l => l.code !== loc.code)
+function ogLocaleAlternates(loc, only) {
+  return LOCALES.filter(l => l.code !== loc.code && (!only || only.includes(l.code)))
     .map(l => `  <meta property="og:locale:alternate" content="${l.ogLocale}" />`)
     .concat([`  <meta property="og:locale:alternate" content="en_US" />`])
     .join('\n');
@@ -204,7 +215,7 @@ function ogLocaleAlternates(loc) {
 
 /* One head builder for every localized page, so a hub can never drift
    into having thinner metadata than the homepage. */
-function seoHead(loc, sub, meta, ldJson) {
+function seoHead(loc, sub, meta, ldJson, only) {
   const url = sub === '' ? `${ORIGIN}/${loc.code}/` : `${ORIGIN}/${loc.code}/${sub}`;
   return `  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -212,7 +223,7 @@ function seoHead(loc, sub, meta, ldJson) {
   <meta name="description" content="${esc(meta.description)}" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="${url}" />
-${hreflangTags(sub)}
+${hreflangTags(sub, only)}
   <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
@@ -223,7 +234,7 @@ ${hreflangTags(sub)}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="gantts.app" />
   <meta property="og:locale" content="${loc.ogLocale}" />
-${ogLocaleAlternates(loc)}
+${ogLocaleAlternates(loc, only)}
   <meta property="og:title" content="${esc(meta.ogTitle || meta.title)}" />
   <meta property="og:description" content="${esc(meta.description)}" />
   <meta property="og:url" content="${url}" />
@@ -349,13 +360,13 @@ ${faq}
 
 /* Every localized page routes through here, so none can end up with a
    thinner head than another. */
-function shell(loc, sub, meta, bodyHtml, ldJson) {
+function shell(loc, sub, meta, bodyHtml, ldJson, only) {
   return `<!DOCTYPE html>
 <html lang="${loc.hreflang}" dir="${loc.dir}">
 <head>
-${seoHead(loc, sub, meta, ldJson)}</head>
+${seoHead(loc, sub, meta, ldJson, only)}</head>
 <body>
-${header(loc.code, sub)}
+${header(loc.code, sub, only)}
 
 ${bodyHtml}
 
@@ -374,8 +385,13 @@ function renderTemplates(loc) {
   const labels = TEMPLATE_LABELS[code];
   const sub = 'templates.html';
 
+  // Card links land on the localized detail page where one exists —
+  // that is the whole point of translating them. The rest stay English.
+  const cardHref = (s) => localesFor(s).includes(code)
+    ? `/${code}/templates/${s}.html` : `/templates/${s}.html`;
+
   const groups = TEMPLATE_GROUPS.map(g => {
-    const cards = g.slugs.map(s => `          <a class="tpl-card" href="/templates/${s}.html">
+    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}">
             <img src="/templates/img/${s}.svg" alt="" width="240" height="130" loading="lazy" />
             <h3>${esc(labels[s])}</h3>
           </a>`).join('\n');
@@ -403,7 +419,7 @@ ${cards}
         numberOfItems: allSlugs.length,
         itemListElement: allSlugs.map((s, i) => ({
           '@type': 'ListItem', position: i + 1,
-          name: labels[s], url: `${ORIGIN}/templates/${s}.html`,
+          name: labels[s], url: ORIGIN + cardHref(s),
         })),
       },
     },
@@ -423,6 +439,128 @@ ${groups}
   </article>`;
 
   return shell(loc, sub, t, body, ld);
+}
+
+/* ---------------- Localized template detail pages ----------------
+
+   Same schema role as the English page (BreadcrumbList + HowTo +
+   FAQPage), same layout, translated copy. The schedule data, preview
+   image and download files are language-independent and shared with
+   the English page — only the prose differs, so a Spanish reader gets
+   the same spreadsheet, described in Spanish.
+
+   Rendered only for slugs with a real translation in
+   i18n/template-locales.js. */
+function renderTemplateDetail(loc, slug) {
+  const code = loc.code;
+  const d = TPL_I18N[code][slug];
+  const en = TPL_EN[slug];
+  const ui = TPL_UI[code];
+  const sub = `templates/${slug}.html`;
+  const url = `${ORIGIN}/${code}/${sub}`;
+  const only = localesFor(slug);
+  const strip = (s) => String(s).replace(/<[^>]+>/g, '');
+
+  const phases = d.phases.map(([h, p]) => `        <li><strong>${h}</strong> — ${p}</li>`).join('\n');
+  const custom = d.customize.map(c => `        <li>${c}</li>`).join('\n');
+  const tips = d.tips.map(t => `        <li>${t}</li>`).join('\n');
+  const faq = d.faq.map(([q, a], i) =>
+    `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n');
+
+  // Related pages resolve to the localized version when it exists,
+  // and fall back to English rather than being dropped — a cross-link
+  // in the wrong language still beats no cross-link.
+  const related = (en.related || []).map(r => {
+    const localized = TPL_I18N[code][r];
+    return `        <li><a href="${localized ? `/${code}/templates/${r}.html` : `/templates/${r}.html`}">${esc(localized ? localized.h1 : (TPL_EN[r] ? TPL_EN[r].h1 : r))}</a></li>`;
+  }).join('\n');
+
+  const ld = graph(loc, [
+    {
+      '@type': 'WebPage', '@id': url + '#webpage',
+      name: d.metaTitle, url, description: d.metaDesc,
+      inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      breadcrumb: breadcrumb(loc, [
+        { name: ui.home, url: `${ORIGIN}/${code}/` },
+        { name: ui.templates, url: `${ORIGIN}/${code}/templates.html` },
+        { name: d.h1, url },
+      ]),
+    },
+    {
+      '@type': 'HowTo',
+      name: ui.howTo(d.h1),
+      description: strip(d.metaDesc),
+      inLanguage: loc.hreflang,
+      step: d.customize.slice(0, 5).map((c, i) => ({
+        '@type': 'HowToStep', position: i + 1, name: strip(c).slice(0, 70), text: strip(c),
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      inLanguage: loc.hreflang,
+      mainEntity: d.faq.map(([q, a]) => ({
+        '@type': 'Question', name: strip(q),
+        acceptedAnswer: { '@type': 'Answer', text: strip(a) },
+      })),
+    },
+  ]);
+
+  const body = `  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/templates.html">${esc(ui.templates)}</a> › ${esc(d.h1)}</div>
+    <h1>${esc(d.h1)}</h1>
+    <p class="lead">${d.lead}</p>
+
+    <p><img src="/templates/img/${slug}.svg" alt="${esc(ui.imgAlt)}" style="width:100%;height:auto;margin:20px 0" /></p>
+
+    <div class="dl-row">
+      <a class="btn btn-primary" href="/templates/files/${slug}.xlsx" download>⬇ ${esc(ui.xlsx)}</a>
+      <a class="btn" href="/templates/files/${slug}.pptx" download>⬇ ${esc(ui.pptx)}</a>
+      <a class="btn" href="/templates/files/${slug}.csv" download>⬇ ${esc(ui.csv)}</a>
+      <a class="btn btn-primary" href="/${code}/app.html?csv=${slug}">✎ ${esc(ui.edit)}</a>
+    </div>
+
+    <div class="prose">
+      <h2 id="whats-included">${esc(ui.included)}</h2>
+      <p>${d.intro}</p>
+      <ul>
+${phases}
+      </ul>
+
+      <div class="callout">${d.callout}</div>
+
+      <h2 id="customize">${esc(ui.customize)}</h2>
+      <ol>
+${custom}
+      </ol>
+
+      <h2 id="tips">${esc(ui.tips)}</h2>
+      <ul>
+${tips}
+      </ul>
+
+      <h2 id="related">${esc(ui.related)}</h2>
+      <ul>
+${related}
+        <li><a href="/${code}/templates.html">${esc(ui.browseAll)}</a></li>
+      </ul>
+      <p class="crumbs"><small>${esc(ui.enNote)}</small></p>
+
+      <h2 id="faq">${esc(ui.faq)}</h2>
+      <div class="faq">
+${faq}
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>${esc(ui.ctaH2)}</h2>
+      <p>${esc(ui.ctaP)}</p>
+      <a class="btn btn-white btn-lg" href="/${code}/app.html?csv=${slug}">${esc(ui.ctaBtn)}</a>
+    </div>
+  </section>`;
+
+  return shell(loc, sub, { title: `${d.metaTitle} | gantts.app`, description: d.metaDesc, h1: d.h1 }, body, ld, only);
 }
 
 /* Guides index — a list of English articles with localized labels. */
@@ -591,6 +729,16 @@ for (const loc of LOCALES) {
   fs.writeFileSync(path.join(dir, 'app.html'), renderApp(loc), 'utf8');
   written += 8;
   console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
+
+  const slugs = Object.keys(TPL_I18N[loc.code] || {});
+  if (slugs.length) {
+    fs.mkdirSync(path.join(dir, 'templates'), { recursive: true });
+    for (const slug of slugs) {
+      fs.writeFileSync(path.join(dir, 'templates', slug + '.html'), renderTemplateDetail(loc, slug), 'utf8');
+      written++;
+    }
+    console.log(`    + ${slugs.length} translated template page(s) under /${loc.code}/templates/`);
+  }
 }
 
 console.log(`\n✓ Rendered ${written} localized page(s) across ${LOCALES.length} locales.`);

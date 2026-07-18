@@ -14,6 +14,8 @@ const fs = require('fs');
 const path = require('path');
 const { T } = require('./new-templates.js');
 const { FOOTER } = require('./footer.js');
+const { localesFor } = require('../i18n/template-locales.js');
+const { LOCALES } = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
@@ -39,12 +41,32 @@ function relatedLabel(slug) {
   return m ? m[1].trim() : titleCase(slug) + ' template';
 }
 
+/* Languages that have this exact page go straight to it; the rest send
+   the reader to their localized home rather than to a 404. */
 function langSwitcher(slug) {
   const sub = `templates/${slug}.html`;
+  const here = new Set(localesFor(slug));
   const opts = [`<option value="/${sub}" selected>English</option>`]
-    .concat(['es', 'fr', 'de', 'pt', 'zh'].map((c, i) =>
-      `<option value="/${c}/">${['Español', 'Français', 'Deutsch', 'Português', '简体中文'][i]}</option>`));
+    .concat(LOCALES.map(l =>
+      `<option value="${here.has(l.code) ? `/${l.code}/${sub}` : `/${l.code}/`}">${l.name}</option>`));
   return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">\n          ${opts.join('\n          ')}\n        </select>`;
+}
+
+/* Reciprocal hreflang, emitted only for locales that really have the
+   page. A cluster that names a missing URL is ignored wholesale, so
+   this is deliberately driven off i18n/template-locales.js and not off
+   the full LOCALES list. */
+function hreflangTags(slug) {
+  const codes = localesFor(slug);
+  if (!codes.length) return '';
+  const en = `${ORIGIN}/templates/${slug}.html`;
+  const rows = [`  <link rel="alternate" hreflang="en" href="${en}" />`];
+  for (const code of codes) {
+    const l = LOCALES.find(x => x.code === code);
+    rows.push(`  <link rel="alternate" hreflang="${l.hreflang}" href="${ORIGIN}/${code}/templates/${slug}.html" />`);
+  }
+  rows.push(`  <link rel="alternate" hreflang="x-default" href="${en}" />`);
+  return '\n' + rows.join('\n');
 }
 
 function nav(slug) {
@@ -124,7 +146,7 @@ function page(slug, d) {
   <title>${attr(d.metaTitle)} | gantts.app</title>
   <meta name="description" content="${attr(d.metaDesc)}" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="${url}" />
+  <link rel="canonical" href="${url}" />${hreflangTags(slug)}
   <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />

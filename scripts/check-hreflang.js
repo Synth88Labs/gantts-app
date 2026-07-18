@@ -19,6 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 const { LOCALES } = require('../i18n/content.js');
+const { localesFor, translatedSlugs } = require('../i18n/template-locales.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -43,6 +44,9 @@ function readAlternates(file) {
 }
 
 // Pages that form a cluster: English original + each localized variant.
+// `codes` narrows a cluster to the locales that really have the page —
+// template detail pages are translated one at a time, so their clusters
+// are partial by design and must not be flagged as missing files.
 const CLUSTERS = [
   { sub: '', en: 'index.html' },
   { sub: 'templates.html', en: 'templates.html' },
@@ -54,6 +58,14 @@ const CLUSTERS = [
   { sub: 'app.html', en: 'app.html' },
 ];
 
+for (const slug of translatedSlugs()) {
+  CLUSTERS.push({
+    sub: `templates/${slug}.html`,
+    en: `templates/${slug}.html`,
+    codes: localesFor(slug),
+  });
+}
+
 let errors = 0, warnings = 0, checked = 0;
 const err = (m) => { console.error('  ✗ ' + m); errors++; };
 const warn = (m) => { console.warn('  ⚠ ' + m); warnings++; };
@@ -62,7 +74,7 @@ console.log('\nhreflang cluster check\n');
 
 for (const cluster of CLUSTERS) {
   const members = [{ code: 'en', file: cluster.en, url: ORIGIN + '/' + cluster.sub }];
-  for (const l of LOCALES) {
+  for (const l of LOCALES.filter(l => !cluster.codes || cluster.codes.includes(l.code))) {
     members.push({ code: l.code, hreflang: l.hreflang, file: `${l.code}/${cluster.sub || 'index.html'}`, url: `${ORIGIN}/${l.code}/${cluster.sub}` });
   }
 

@@ -320,6 +320,42 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://gantts.app/es/templates/dissertation-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/dissertation-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/dissertation-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/dissertation-gantt-chart.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/templates/hotel-pre-opening-critical-path.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/hotel-pre-opening-critical-path.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/hotel-pre-opening-critical-path.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/hotel-pre-opening-critical-path.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/templates/refinery-turnaround-schedule.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/refinery-turnaround-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/refinery-turnaround-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/refinery-turnaround-schedule.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/templates/solar-farm-construction-schedule.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/solar-farm-construction-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/solar-farm-construction-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/solar-farm-construction-schedule.html"/>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/es/terms.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
@@ -617,6 +653,9 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/dissertation-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/dissertation-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/dissertation-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/dissertation-gantt-chart.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -665,6 +704,9 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/hotel-pre-opening-critical-path.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/hotel-pre-opening-critical-path.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/hotel-pre-opening-critical-path.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/hotel-pre-opening-critical-path.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -731,6 +773,9 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/refinery-turnaround-schedule.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/refinery-turnaround-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/refinery-turnaround-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/refinery-turnaround-schedule.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -761,6 +806,9 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/solar-farm-construction-schedule.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/solar-farm-construction-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/solar-farm-construction-schedule.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/solar-farm-construction-schedule.html"/>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
