@@ -640,6 +640,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/clinical-trial-gantt-chart.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/construction.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -647,6 +653,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/content-calendar.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/data-center-build-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -662,6 +674,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/employee-onboarding.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/erp-implementation-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -730,6 +748,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/office-relocation-project-plan.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/one-page-gantt-chart.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -737,6 +761,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/phd-research-gantt-chart.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/post-merger-integration-plan.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -782,6 +812,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/research.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/restaurant-opening-timeline.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

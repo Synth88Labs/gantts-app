@@ -426,6 +426,7 @@ const T = {
 /* Batch 2 lives in its own file for readability; merged here so every
    consumer (downloads, thumbnails, pages, hub) sees one catalogue. */
 const B = require('./new-templates-b.js').T;
-Object.assign(T, B);
+const C = require('./new-templates-c.js').T;
+Object.assign(T, B, C);
 
 module.exports = { T, SLUGS: Object.keys(T) };

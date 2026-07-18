@@ -414,12 +414,31 @@
       if (c) {
         const slug = c[1];
         history.replaceState(null, '', location.pathname);
-        if (!Model.project.tasks.length) {
-          fetch('/templates/files/' + slug + '.csv').then(r => r.ok ? r.text() : Promise.reject())
-            .then(txt => {
-              try { Templates.importCSV(txt); Model.project.name = prettyName(slug); Model.save(); if (window.App) App.render(); } catch (e) {}
-            }).catch(() => {});
-        }
+        // Arriving here means the reader clicked "Edit online free" on a
+        // template page, so the template must actually open. The old
+        // guard bailed out whenever a saved chart existed, which made
+        // the button silently do nothing for every returning visitor.
+        // Load into a NEW project instead: the request is honoured and
+        // their existing plan is untouched and still in the project list.
+        // importCSV goes through Model.loadProjectData, which mints a new
+        // project id — so an existing plan is left intact in the project
+        // list rather than overwritten. No extra newProject() call: that
+        // would leave an empty duplicate behind in the list.
+        const fresh = !Model.project.tasks.length;
+        fetch('/templates/files/' + slug + '.csv')
+          .then(r => (r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status))))
+          .then(txt => {
+            Templates.importCSV(txt);
+            Model.project.name = prettyName(slug);
+            Model.save();
+            if (window.App) {
+              App.render();
+              App.toast(fresh
+                ? 'Template loaded — drag the bars to fit your dates'
+                : 'Opened “' + Model.project.name + '” as a new project');
+            }
+          })
+          .catch(() => { if (window.App) App.toast('Could not load that template — starting from a blank chart'); });
       }
       function prettyName(s) { return s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()); }
     },
