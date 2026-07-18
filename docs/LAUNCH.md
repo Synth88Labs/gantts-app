@@ -145,18 +145,38 @@ Re-run this after publishing new template or guide pages.
 
 ## 6. After every content update
 
+The order is **develop locally → push to GitHub → deploy to server**, so
+the live site always corresponds to a commit you can find and roll back to.
+
 ```bash
-npm run build        # regenerate everything + run all checks
-npm run deploy       # bundle + upload over FTPS
-npm run indexnow     # ping Bing, Yandex, Seznam, Naver
+npm run ship
 ```
 
-`npm run build` runs the template, thumbnail, page, i18n and sitemap
-generators, then link, SEO, hreflang and localized-SEO checks.
+That runs the whole loop:
+
+| Step | What it does |
+|---|---|
+| `build` | regenerate templates, thumbnails, pages, i18n, sitemap, then run every check |
+| `push` | `git push origin main` |
+| `preflight` | refuses to deploy if the tree is dirty or the branch is out of sync with origin |
+| `deploy:bundle` | assemble `deploy/`, including the download artefacts that are not in git |
+| upload | incremental FTPS — only sends changed files, reconnects if the socket drops |
+| `indexnow` | ping Bing, Yandex, Seznam and Naver |
+
+Run the steps individually when you want to inspect between them:
+
+```bash
+npm run build          # generate + validate, changes nothing remote
+npm run deploy:check   # connect and list, writes nothing
+npm run deploy         # preflight + bundle + upload
+```
+
+`preflight` is the piece that enforces the order. It blocks on uncommitted
+changes, unpushed commits, and commits on origin you do not have — the last
+one catching the case where the site was deployed from somewhere else since.
+`--force` overrides it deliberately, e.g. when origin is unreachable.
 
 In Search Console, resubmit the sitemap after large batches.
-
----
 
 ## Reference
 
