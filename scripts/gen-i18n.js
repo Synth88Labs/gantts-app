@@ -26,7 +26,7 @@ const { LOCALES, CHROME, HOME } = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=11';
+const CSS_V = 'v=12';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

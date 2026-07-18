@@ -21,7 +21,7 @@ You are building static HTML pages for **gantts.app**, a free, no-login, browser
   <title>TITLE_UNDER_60_CHARS</title>
   <meta name="description" content="META_DESCRIPTION_UNDER_155" />
   <link rel="canonical" href="https://gantts.app/CANONICAL_PATH" />
-  <meta name="theme-color" content="#3b82f6" />
+  <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <meta property="og:type" content="OG_TYPE" /> <!-- "article" for blog, "website" otherwise -->

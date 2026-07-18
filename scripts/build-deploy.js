@@ -18,11 +18,13 @@ const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'deploy');
 const ZIP = path.join(ROOT, 'deploy-gantts-app.zip');
 
-// Everything the live site serves.
-const INCLUDE_DIRS = ['assets', 'blog', 'css', 'js', 'templates'];
+// Everything the live site serves. Locale dirs are listed explicitly so a
+// new language cannot be silently left out of the upload.
+const INCLUDE_DIRS = ['assets', 'blog', 'css', 'js', 'templates', 'es', 'fr', 'de', 'pt', 'zh'];
 const INCLUDE_FILES = [
   '.htaccess',
   '404.html', 'about.html', 'app.html', 'index.html', 'privacy.html', 'templates.html',
+  'contact.html', 'terms.html',
   'robots.txt', 'sitemap.xml', 'site.webmanifest', 'sw.js',
   // IndexNow ownership proof — must be reachable at the site root
   'b7dddc1da15c113759ec72b4e49e446c.txt',

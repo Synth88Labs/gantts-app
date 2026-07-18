@@ -3,8 +3,8 @@
    Exposes a global `Model` (event-emitting store).
    ============================================================ */
 (function () {
-  const LS_KEY = 'swiftgantt.v1';
-  const LS_PROJECTS = 'swiftgantt.projects.v1';
+  const LS_KEY = 'gantts.project.v1';
+  const LS_PROJECTS = 'gantts.projects.v1';
 
   function blankProject(name) {
     return {
@@ -91,7 +91,7 @@
       if (i >= 0) idx[i] = rec; else idx.push(rec);
       // store each project blob under its own key
       try {
-        localStorage.setItem('swiftgantt.p.' + this.project.id, JSON.stringify(this.project));
+        localStorage.setItem('gantts.p.' + this.project.id, JSON.stringify(this.project));
         localStorage.setItem(LS_PROJECTS, JSON.stringify(idx));
       } catch (e) {}
     },
@@ -102,7 +102,7 @@
 
     openProject(id) {
       try {
-        const p = JSON.parse(localStorage.getItem('swiftgantt.p.' + id));
+        const p = JSON.parse(localStorage.getItem('gantts.p.' + id));
         if (p) { this.project = this._migrate(p); this.selectedId = null; this._undo = []; this._redo = []; this._persist(); this.emit('load', this.project); }
       } catch (e) {}
     },
@@ -113,7 +113,7 @@
     deleteProject(id) {
       const idx = this._projectIndex().filter(r => r.id !== id);
       localStorage.setItem(LS_PROJECTS, JSON.stringify(idx));
-      localStorage.removeItem('swiftgantt.p.' + id);
+      localStorage.removeItem('gantts.p.' + id);
       if (this.project.id === id) {
         const first = idx[0];
         if (first) this.openProject(first.id); else this.newProject();

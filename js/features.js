@@ -4,8 +4,8 @@
    Exposes global `Features`. Initialized by App.init().
    ============================================================ */
 (function () {
-  const THEME_KEY = 'ganttdesign.theme';
-  const TOUR_KEY = 'ganttdesign.tourDone';
+  const THEME_KEY = 'gantts.theme';
+  const TOUR_KEY = 'gantts.tourDone';
 
   const Features = {
     init() {

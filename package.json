@@ -1,15 +1,45 @@
 {
-  "name": "gantt-chart-site",
+  "name": "gantts-app",
   "version": "1.0.0",
-  "description": "A **100% browser-based, no-login, no-signup** interactive Gantt chart maker. Everything runs client-side — no server, no database, no accounts. Your data lives in the browser (localStorage) and can be exported or shared via a link.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "gantts.app — a free, no-login, 100% client-side Gantt chart maker, plus its static SEO content site. Vanilla HTML/CSS/JS with no backend and no build step.",
+  "private": true,
   "type": "commonjs",
+  "license": "MIT",
+  "author": "Synth88Labs",
+  "homepage": "https://gantts.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Synth88Labs/gantts-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Synth88Labs/gantts-app/issues"
+  },
+  "keywords": [
+    "gantt",
+    "gantt-chart",
+    "project-management",
+    "critical-path",
+    "wbs",
+    "static-site",
+    "vanilla-javascript",
+    "no-backend",
+    "pwa"
+  ],
+  "scripts": {
+    "gen:templates": "node scripts/gen-templates.js",
+    "gen:thumbs": "node scripts/gen-thumbs.js",
+    "gen:assets": "node scripts/gen-assets.js",
+    "gen:i18n": "node scripts/gen-i18n.js",
+    "gen:sitemap": "node scripts/gen-sitemap.js",
+    "build": "npm run gen:i18n && npm run gen:sitemap && npm run check",
+    "check:links": "node scripts/check-links.js",
+    "check:seo": "node scripts/check-seo.js",
+    "check:hreflang": "node scripts/check-hreflang.js",
+    "check": "npm run check:links && npm run check:seo && npm run check:hreflang",
+    "deploy:bundle": "node scripts/build-deploy.js",
+    "indexnow": "node scripts/indexnow.js",
+    "test": "npm run check"
+  },
   "dependencies": {
     "exceljs": "^4.4.0",
     "pptxgenjs": "^4.0.1",

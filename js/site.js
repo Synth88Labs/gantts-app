@@ -1,7 +1,7 @@
 /* site.js — shared behavior for marketing/content pages */
 (function () {
   // theme
-  var KEY = 'ganttdesign.theme';
+  var KEY = 'gantts.theme';
   var root = document.documentElement;
   try { var saved = localStorage.getItem(KEY); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
   function currentTheme() {
