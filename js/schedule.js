@@ -19,7 +19,20 @@
         if (byId[d.from]) edges.push({ from: d.from, to: n.id, type: d.type || 'FS', lag: d.lag || 0 });
       }));
 
-      const dur = n => Math.max(n.type === 'milestone' ? 0 : 1, U.duration(n.start, n.end));
+      /* When a working calendar is active the whole CPM runs in
+         WORKING-DAY ordinals rather than calendar days. That keeps the
+         classic integer algorithm below completely unchanged — an
+         offset of 5 means "5 working days", so weekends and holidays
+         simply do not exist in this number space. Converting back at
+         the end is what makes successors land on a Monday instead of a
+         Sunday. */
+      const cal = window.Cal ? Cal.of(Model.project) : null;
+      const calOn = !!(cal && Cal.active(cal));
+
+      const dur = n => Math.max(
+        n.type === 'milestone' ? 0 : 1,
+        calOn ? Cal.duration(n.start, n.end, cal) : U.duration(n.start, n.end)
+      );
 
       // topological order
       const indeg = {}; nodes.forEach(n => indeg[n.id] = 0);
@@ -40,7 +53,48 @@
       let origin = null;
       nodes.forEach(n => { if (!origin || U.parse(n.start) < U.parse(origin)) origin = n.start; });
       origin = origin || U.today();
-      const off = iso => U.diffDays(origin, iso);
+
+      /* Build the working-day ordinal space once: an array of working
+         dates from the origin, plus the reverse lookup. The span covers
+         the furthest task end with headroom, because auto-scheduling
+         can push work past the current end date. */
+      let wdList = null, wdIdx = null;
+      if (calOn) {
+        let last = origin;
+        nodes.forEach(n => { if (U.parse(n.end) > U.parse(last)) last = n.end; });
+        const span = Math.max(370, U.diffDays(origin, last) + 370);
+        wdList = []; wdIdx = Object.create(null);
+        let d = origin;
+        for (let i = 0; i <= span; i++) {
+          if (Cal.isWorking(d, cal)) { wdIdx[d] = wdList.length; wdList.push(d); }
+          d = U.addDays(d, 1);
+        }
+        if (!wdList.length) { wdList = null; wdIdx = null; }   // pathological calendar
+      }
+
+      // Date -> ordinal. A task sitting on a weekend (legacy data, or a
+      // hand-typed date) rolls forward to the next working day rather
+      // than being dropped from the schedule.
+      const off = (wdIdx)
+        ? (iso) => {
+            if (wdIdx[iso] != null) return wdIdx[iso];
+            const rolled = Cal.nextWorking(iso, cal, 1);
+            if (wdIdx[rolled] != null) return wdIdx[rolled];
+            // outside the precomputed span: approximate by working ratio
+            const ratio = wdList.length / (U.diffDays(origin, wdList[wdList.length - 1]) + 1 || 1);
+            return Math.round(U.diffDays(origin, iso) * ratio);
+          }
+        : (iso) => U.diffDays(origin, iso);
+
+      // Ordinal -> date, for turning CPM results back into real dates.
+      const dateAt = (wdList)
+        ? (n) => {
+            if (n < 0) return wdList[0];
+            if (n < wdList.length) return wdList[n];
+            // past the span: step forward from the last known working day
+            return Cal.shift(wdList[wdList.length - 1], n - (wdList.length - 1), cal);
+          }
+        : (n) => U.addDays(origin, n);
 
       const ES = {}, EF = {}, LS = {}, LF = {};
       const inEdges = {}; nodes.forEach(n => inEdges[n.id] = []);
@@ -102,7 +156,10 @@
       edges.forEach(e => { if (critical.has(e.from) && critical.has(e.to)) critEdges.add(e.from + '>' + e.to); });
 
       return { critical, slack, edges, critEdges, projectEnd, origin,
-        ES, EF, LS, LF, dur: id => dur(byId[id]) };
+        ES, EF, LS, LF, dur: id => dur(byId[id]),
+        // Exposed so callers convert ordinals back the same way the
+        // forward pass created them — calendar-aware or not.
+        dateAt, calOn, cal };
     },
 
     // apply auto-scheduling: shift tasks to satisfy dependencies (respects lags)
@@ -113,10 +170,12 @@
       const byId = {}; tasks.forEach(t => byId[t.id] = t);
       Object.keys(info.ES).forEach(id => {
         const t = byId[id]; if (!t) return;
-        const newStart = U.addDays(info.origin, info.ES[id]);
-        const d = U.duration(t.start, t.end);
+        const newStart = info.dateAt(info.ES[id]);
+        const d = info.calOn ? Cal.duration(t.start, t.end, info.cal) : U.duration(t.start, t.end);
         t.start = newStart;
-        t.end = t.type === 'milestone' ? newStart : U.endFrom(newStart, d);
+        t.end = t.type === 'milestone'
+          ? newStart
+          : (info.calOn ? Cal.endFrom(newStart, Math.max(1, d), info.cal) : U.endFrom(newStart, d));
       });
       Model._recalcGroups();
       Model._afterChange();

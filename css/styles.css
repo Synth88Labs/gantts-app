@@ -574,3 +574,25 @@ body.presenting .today-line { width: 3px; }
 
 .storage-meter { margin-top: 14px; font-size: 12px; color: var(--muted); }
 .storage-meter.is-tight { color: #b91c1c; font-weight: 600; }
+
+/* Holidays are shaded like weekends but tinted, so a non-working day the
+   user configured is visibly different from a plain weekend. */
+.col-holiday { background: color-mix(in srgb, var(--accent, #ff6a3d) 13%, transparent); }
+
+/* ---- working calendar modal ---- */
+.cal-enable { font-weight: 600; font-size: 13px; }
+.cal-note { font-size: 11.5px; color: var(--ink-soft); margin: 6px 0 12px; line-height: 1.5; }
+.cal-warn { font-size: 12px; color: var(--danger); margin: 8px 0 0; }
+.cal-h { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 18px 0 8px; }
+.cal-days { display: flex; gap: 6px; flex-wrap: wrap; }
+.cal-day { display: flex; align-items: center; gap: 5px; border: 1px solid var(--line-strong);
+  border-radius: 7px; padding: 6px 9px; font-size: 12px; cursor: pointer; user-select: none; }
+.cal-day.is-on { background: var(--brand-soft); border-color: var(--brand); font-weight: 600; }
+.cal-add { display: flex; gap: 6px; margin: 10px 0; flex-wrap: wrap; }
+.cal-add .cell-input { flex: 1 1 140px; border: 1px solid var(--line-strong); border-radius: 7px; padding: 6px 8px; }
+.cal-list { max-height: 210px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
+.cal-list:empty { display: none; }
+.cal-row { display: flex; align-items: center; gap: 10px; padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+.cal-row:last-child { border-bottom: 0; }
+.cal-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-soft); flex: none; }
+.cal-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

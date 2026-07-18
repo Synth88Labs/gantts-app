@@ -96,12 +96,19 @@
     const dd = daysDelta(e);
 
     if (drag.mode === 'move' || drag.mode === 'move-group-block') {
-      const newStart = U.addDays(drag.origStart, dd);
-      const dur = U.duration(drag.origStart, drag.origEnd);
+      const cal = Cal.of(Model.project);
+      let newStart = U.addDays(drag.origStart, dd);
       if (drag.mode === 'move-group-block') {
         moveGroupBlock(task, dd);
+      } else if (task.type === 'milestone') {
+        // A milestone dropped on a weekend snaps to the next working day
+        newStart = Cal.nextWorking(newStart, cal, 1);
+        Model.liveUpdate(task.id, { start: newStart, end: newStart });
       } else {
-        Model.liveUpdate(task.id, { start: newStart, end: task.type === 'milestone' ? newStart : U.endFrom(newStart, dur) });
+        // Dragging keeps the task's working length: drop a 10-working-day
+        // bar anywhere and it is still ten days of work, not ten dates.
+        const moved = Cal.moveKeepingDuration({ start: drag.origStart, end: drag.origEnd }, newStart, cal);
+        Model.liveUpdate(task.id, moved);
       }
     } else if (drag.mode === 'resize-l') {
       let newStart = U.addDays(drag.origStart, dd);

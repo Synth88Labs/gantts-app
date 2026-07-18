@@ -257,10 +257,18 @@
       return U.el('div', { class: 'grow-cell col-' + (which === 'start' ? 'start' : 'end') }, input);
     },
     _durCell(t) {
+      // Duration is expressed in WORKING days when a calendar is active,
+      // so typing "10" gives ten days of work rather than ten dates.
+      const cal = Cal.of(Model.project);
+      const shown = t.type === 'milestone' ? '' : Cal.duration(t.start, t.end, cal);
       const input = U.el('input', {
-        class: 'cell-input', type: 'number', min: '1', value: t.type === 'milestone' ? '' : U.duration(t.start, t.end),
+        class: 'cell-input', type: 'number', min: '1', value: shown,
+        title: Cal.active(cal) ? 'Working days (weekends and holidays excluded)' : 'Calendar days',
         disabled: t.type === 'milestone' || t.type === 'group',
-        onchange: (e) => { const d = Math.max(1, +e.target.value || 1); Model.update(t.id, { end: U.endFrom(t.start, d) }); },
+        onchange: (e) => {
+          const d = Math.max(1, +e.target.value || 1);
+          Model.update(t.id, { end: Cal.endFrom(t.start, d, cal) });
+        },
       });
       return U.el('div', { class: 'grow-cell col-dur' }, input);
     },
@@ -346,10 +354,11 @@
     _editDate(t, which, val) {
       if (!val) return;
       if (which === 'start') {
-        const dur = U.duration(t.start, t.end);
+        const cal = Cal.of(Model.project);
+        const dur = Cal.duration(t.start, t.end, cal);
         const patch = { start: val };
         if (t.type === 'milestone') patch.end = val;
-        else patch.end = U.endFrom(val, dur);
+        else patch.end = Cal.endFrom(val, Math.max(1, dur), cal);
         Model.update(t.id, patch);
       } else {
         if (U.parse(val) < U.parse(t.start)) val = t.start;
@@ -470,13 +479,23 @@
       const frag = document.createDocumentFragment();
       const settings = Model.project.settings;
 
-      // weekend + column shading (only for day/week zoom to avoid clutter)
+      /* Non-working column shading (day/week zoom only, to avoid clutter).
+         When a working calendar is active this follows the calendar —
+         a Saturday that the user marked as a working day is no longer
+         shaded, and a holiday is, with its name on hover. */
+      const shadeCal = Cal.of(Model.project);
+      const calShading = Cal.active(shadeCal);
       if (settings.showWeekends && (rs.zoom === 'day' || rs.zoom === 'week')) {
         for (let i = 0; i < rs.totalDays; i++) {
           const iso = U.addDays(rs.origin, i);
-          if (U.isWeekend(iso)) {
-            frag.appendChild(U.el('div', { class: 'col-weekend', style: { left: (i * rs.dayW) + 'px', width: rs.dayW + 'px', height: rs.height + 'px' } }));
-          }
+          const off = calShading ? !Cal.isWorking(iso, shadeCal) : U.isWeekend(iso);
+          if (!off) continue;
+          const holiday = calShading && Cal.isHoliday(iso, shadeCal);
+          frag.appendChild(U.el('div', {
+            class: 'col-weekend' + (holiday ? ' col-holiday' : ''),
+            title: holiday ? shadeCal.holidays[iso] : null,
+            style: { left: (i * rs.dayW) + 'px', width: rs.dayW + 'px', height: rs.height + 'px' },
+          }));
         }
       }
       // vertical grid lines (weekly)

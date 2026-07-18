@@ -100,6 +100,8 @@
       tog('#toggleToday', 'showToday');
 
       U.$('#templatesBtn').addEventListener('click', () => this.openTemplates());
+      const calBtn = U.$('#calendarBtn');
+      if (calBtn) calBtn.addEventListener('click', () => this.openCalendar());
       U.$('#fitBtn').addEventListener('click', () => this.fit());
       U.$('#todayBtn').addEventListener('click', () => this.scrollToToday());
 
@@ -491,6 +493,137 @@
       U.$('#closeModal').addEventListener('click', () => this.closeModal());
       U.$('#modalBackdrop').addEventListener('click', (e) => { if (e.target.id === 'modalBackdrop') this.closeModal(); });
     },
+    /* Working calendar editor.
+
+       The reflow button is separate and explicit on purpose: turning the
+       calendar on changes what a duration MEANS, and silently rewriting
+       every date in someone's saved plan the moment they tick a box
+       would be worse than the scheduling bug it fixes. */
+    openCalendar() {
+      this.openModal('Working calendar', (body) => {
+        const cal = U.clone(Cal.of(Model.project));
+        const persist = () => {
+          Model.snapshot();
+          Model.project.settings.calendar = cal;
+          Model._afterChange();
+          this.render();
+        };
+
+        const enable = U.el('input', {
+          type: 'checkbox', checked: cal.enabled ? 'checked' : null,
+          onchange: (e) => { cal.enabled = e.target.checked; persist(); this.openCalendar(); },
+        });
+        body.appendChild(U.el('label', { class: 'chk cal-enable' }, [enable,
+          U.el('span', {}, 'Skip non-working days when scheduling')]));
+        body.appendChild(U.el('p', { class: 'cal-note' },
+          'Durations count working days only, and dependencies push work to the next working day.'));
+
+        if (!cal.enabled) return;
+
+        // --- working days of the week ---
+        body.appendChild(U.el('h4', { class: 'cal-h' }, 'Working days'));
+        const days = U.el('div', { class: 'cal-days' });
+        ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach((label, dow) => {
+          const on = cal.workdays.indexOf(dow) >= 0;
+          days.appendChild(U.el('label', { class: 'cal-day' + (on ? ' is-on' : '') }, [
+            U.el('input', {
+              type: 'checkbox', checked: on ? 'checked' : null,
+              onchange: (e) => {
+                if (e.target.checked) { if (cal.workdays.indexOf(dow) < 0) cal.workdays.push(dow); }
+                else cal.workdays = cal.workdays.filter(d => d !== dow);
+                cal.workdays.sort();
+                persist(); this.openCalendar();
+              },
+            }),
+            U.el('span', {}, label),
+          ]));
+        });
+        body.appendChild(days);
+        if (!cal.workdays.length) {
+          body.appendChild(U.el('p', { class: 'cal-warn' },
+            'No working days selected — scheduling will treat every day as a working day.'));
+        }
+
+        // --- holidays ---
+        body.appendChild(U.el('h4', { class: 'cal-h' }, 'Holidays and days off'));
+
+        const picker = U.el('select', { class: 'select' },
+          [U.el('option', { value: '' }, 'Add common public holidays…')].concat(
+            Cal.COUNTRIES.map(c => U.el('option', { value: c.code }, c.name))));
+        const yearNow = new Date(U.today().slice(0, 4) + '-01-01').getFullYear();
+        picker.addEventListener('change', () => {
+          if (!picker.value) return;
+          Object.assign(cal.holidays, Cal.presetRange(picker.value, yearNow, yearNow + 3));
+          picker.value = '';
+          persist(); this.openCalendar();
+        });
+        body.appendChild(picker);
+        body.appendChild(U.el('p', { class: 'cal-note' },
+          'Presets cover ' + yearNow + '–' + (yearNow + 3) + ' and are a starting point — regional and ' +
+          'substitute-day rules vary, so check them against your local calendar. Every date can be edited or removed.'));
+
+        const addRow = U.el('div', { class: 'cal-add' });
+        const dateIn = U.el('input', { type: 'date', class: 'cell-input' });
+        const nameIn = U.el('input', { type: 'text', class: 'cell-input', placeholder: 'Name (e.g. Company shutdown)' });
+        addRow.appendChild(dateIn); addRow.appendChild(nameIn);
+        addRow.appendChild(U.el('button', {
+          class: 'btn', onclick: () => {
+            if (!dateIn.value) return;
+            cal.holidays[dateIn.value] = nameIn.value || 'Day off';
+            persist(); this.openCalendar();
+          },
+        }, '＋ Add'));
+        body.appendChild(addRow);
+
+        const list = U.el('div', { class: 'cal-list' });
+        const isos = Object.keys(cal.holidays).sort();
+        if (!isos.length) list.appendChild(U.el('p', { class: 'cal-note' }, 'No holidays yet.'));
+        isos.forEach(iso => {
+          list.appendChild(U.el('div', { class: 'cal-row' }, [
+            U.el('span', { class: 'cal-date' }, iso),
+            U.el('span', { class: 'cal-name' }, cal.holidays[iso]),
+            U.el('button', {
+              class: 'icon-btn', 'aria-label': 'Remove ' + cal.holidays[iso],
+              onclick: () => { delete cal.holidays[iso]; persist(); this.openCalendar(); },
+            }, '🗑'),
+          ]));
+        });
+        body.appendChild(list);
+
+        // --- explicit, reversible reflow ---
+        body.appendChild(U.el('div', { class: 'menu-sep' }));
+        body.appendChild(U.el('button', {
+          class: 'btn btn-primary', onclick: () => {
+            const moved = this.reflowToWorkingDays();
+            this.closeModal();
+            this.toast(moved
+              ? 'Moved ' + moved + ' task(s) onto working days — undo if that is not what you wanted'
+              : 'Every task already starts on a working day');
+          },
+        }, '↻ Reflow existing tasks onto working days'));
+        body.appendChild(U.el('p', { class: 'cal-note' },
+          'Existing dates are never changed automatically. This rewrites them in one step, and Ctrl+Z undoes it.'));
+      });
+    },
+
+    /** Move any task starting or ending on a non-working day. Undoable. */
+    reflowToWorkingDays() {
+      const cal = Cal.of(Model.project);
+      if (!Cal.active(cal)) return 0;
+      Model.snapshot();
+      let moved = 0;
+      Model.project.tasks.forEach(t => {
+        if (t.type === 'group') return;
+        const days = Math.max(1, Cal.duration(t.start, t.end, cal));
+        const start = Cal.nextWorking(t.start, cal, 1);
+        const end = t.type === 'milestone' ? start : Cal.endFrom(start, days, cal);
+        if (start !== t.start || end !== t.end) { t.start = start; t.end = end; moved++; }
+      });
+      Model._recalcGroups();
+      Model._afterChange();
+      return moved;
+    },
+
     openModal(title, builder) {
       U.$('#modalTitle').textContent = title;
       const body = U.$('#modalBody'); U.clear(body);

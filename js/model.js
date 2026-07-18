@@ -23,6 +23,9 @@
         columns: ['id', 'wbs', 'name', 'start', 'end', 'duration', 'progress', 'predecessors', 'assignee'],
         colWidths: {}, // key -> px, set by dragging a header edge or auto-fit
         showBaseline: true,
+        // Working calendar. New projects skip weekends by default; see
+        // _migrate for why existing projects do not silently change.
+        calendar: { enabled: true, workdays: [1, 2, 3, 4, 5], holidays: {} },
       },
       // Frozen copy of the plan, for tracking slippage. null until the user sets one.
       // { savedAt, tasks: { [id]: { start, end, progress } } }
@@ -86,7 +89,14 @@
     },
 
     _migrate(p) {
+      const hadCalendar = !!(p.settings && p.settings.calendar);
       p.settings = Object.assign(blankProject().settings, p.settings || {});
+      /* A project saved before working calendars existed has dates that
+         were laid out in calendar days. Switching it on automatically
+         would change what every duration means and make the plan look
+         wrong the first time it was reopened, so existing projects keep
+         the old behaviour until the user turns it on themselves. */
+      if (!hadCalendar) p.settings.calendar = { enabled: false, workdays: [1, 2, 3, 4, 5], holidays: {} };
       if (!Array.isArray(p.settings.columns) || !p.settings.columns.length) p.settings.columns = blankProject().settings.columns.slice();
       p.tasks = (p.tasks || []).map(t => Object.assign({
         progress: 0, color: U.PALETTE[0], assignee: '', type: 'task',
