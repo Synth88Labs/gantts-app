@@ -246,6 +246,10 @@ const TEMPLATE_SLUGS = [
   'content-calendar', 'employee-onboarding', '30-60-90-day-plan', 'research',
   'home-renovation', 'wedding-planning', 'weekly', 'monthly', 'annual',
   'simple', 'excel', 'google-sheets', 'powerpoint',
+  // generated sector + academic templates (see scripts/new-templates.js)
+  'refinery-turnaround-schedule', 'solar-farm-construction-schedule',
+  'ev-charging-installation-schedule', 'hotel-pre-opening-critical-path',
+  'dissertation-gantt-chart', 'phd-research-gantt-chart',
 ];
 
 const BLOG_SLUGS = [
@@ -263,7 +267,7 @@ const TEMPLATES = {
     lead: 'Cada plantilla se abre directamente en el editor y también se descarga en Excel, PowerPoint o CSV. Sin registro y sin marcas de agua.',
     intro: 'Elige un punto de partida cercano a tu proyecto: las fases y tareas ya vienen rellenadas, así que solo tienes que ajustar los nombres y las fechas.',
     catTypes: 'Por tipo de proyecto', catIndustry: 'Por sector', catTeam: 'Por equipo y función',
-    catTime: 'Por periodo', catAgile: 'Ágil y sprints', catFormat: 'Por formato',
+    catTime: 'Por periodo', catAgile: 'Ágil y sprints', catSector: 'Energía y hostelería', catAcademic: 'Investigación y estudios', catFormat: 'Por formato',
     ctaH2: 'Empieza con una plantilla gratis', ctaP: 'Ábrela, edítala y expórtala. Sin cuenta.', ctaBtn: 'Abrir el editor',
     noteEn: 'La ficha de cada plantilla está en inglés por ahora.',
   },
@@ -274,7 +278,7 @@ const TEMPLATES = {
     lead: 'Chaque modèle s’ouvre directement dans l’éditeur et se télécharge aussi en Excel, PowerPoint ou CSV. Sans inscription ni filigrane.',
     intro: 'Choisissez un point de départ proche de votre projet : les phases et les tâches sont déjà remplies, il ne reste qu’à ajuster les intitulés et les dates.',
     catTypes: 'Par type de projet', catIndustry: 'Par secteur', catTeam: 'Par équipe et fonction',
-    catTime: 'Par période', catAgile: 'Agile et sprints', catFormat: 'Par format',
+    catTime: 'Par période', catAgile: 'Agile et sprints', catSector: 'Énergie et hôtellerie', catAcademic: 'Recherche et études', catFormat: 'Par format',
     ctaH2: 'Commencez avec un modèle gratuit', ctaP: 'Ouvrez, modifiez, exportez. Sans compte.', ctaBtn: 'Ouvrir l’éditeur',
     noteEn: 'La fiche de chaque modèle est en anglais pour le moment.',
   },
@@ -285,7 +289,7 @@ const TEMPLATES = {
     lead: 'Jede Vorlage öffnet sich direkt im Editor und lässt sich zusätzlich als Excel, PowerPoint oder CSV herunterladen. Ohne Anmeldung, ohne Wasserzeichen.',
     intro: 'Wählen Sie einen Startpunkt, der Ihrem Projekt nahekommt: Phasen und Aufgaben sind bereits gefüllt — Sie passen nur noch Bezeichnungen und Termine an.',
     catTypes: 'Nach Projektart', catIndustry: 'Nach Branche', catTeam: 'Nach Team und Funktion',
-    catTime: 'Nach Zeitraum', catAgile: 'Agile und Sprints', catFormat: 'Nach Format',
+    catTime: 'Nach Zeitraum', catAgile: 'Agile und Sprints', catSector: 'Energie und Hotellerie', catAcademic: 'Forschung und Studium', catFormat: 'Nach Format',
     ctaH2: 'Mit einer kostenlosen Vorlage starten', ctaP: 'Öffnen, anpassen, exportieren. Ohne Konto.', ctaBtn: 'Editor öffnen',
     noteEn: 'Die Detailseiten der Vorlagen sind derzeit auf Englisch.',
   },
@@ -296,7 +300,7 @@ const TEMPLATES = {
     lead: 'Cada modelo abre direto no editor e também pode ser baixado em Excel, PowerPoint ou CSV. Sem cadastro e sem marca d’água.',
     intro: 'Escolha um ponto de partida próximo do seu projeto: as fases e tarefas já vêm preenchidas, então basta ajustar os nomes e as datas.',
     catTypes: 'Por tipo de projeto', catIndustry: 'Por setor', catTeam: 'Por equipe e função',
-    catTime: 'Por período', catAgile: 'Ágil e sprints', catFormat: 'Por formato',
+    catTime: 'Por período', catAgile: 'Ágil e sprints', catSector: 'Energia e hotelaria', catAcademic: 'Pesquisa e estudos', catFormat: 'Por formato',
     ctaH2: 'Comece com um modelo grátis', ctaP: 'Abra, edite e exporte. Sem conta.', ctaBtn: 'Abrir o editor',
     noteEn: 'A página de cada modelo está em inglês por enquanto.',
   },
@@ -307,7 +311,7 @@ const TEMPLATES = {
     lead: '每个模板都能直接在编辑器中打开，也可下载为 Excel、PowerPoint 或 CSV。无需注册，没有水印。',
     intro: '挑选一个与你的项目最接近的起点：阶段和任务都已填好，你只需要改一下名称和日期。',
     catTypes: '按项目类型', catIndustry: '按行业', catTeam: '按团队与职能',
-    catTime: '按周期', catAgile: '敏捷与冲刺', catFormat: '按格式',
+    catTime: '按周期', catAgile: '敏捷与冲刺', catSector: '能源与酒店', catAcademic: '科研与学业', catFormat: '按格式',
     ctaH2: '从免费模板开始', ctaP: '打开、编辑、导出。无需账号。', ctaBtn: '打开编辑器',
     noteEn: '模板详情页目前为英文。',
   },
@@ -315,11 +319,11 @@ const TEMPLATES = {
 
 // Card labels per locale, keyed by slug.
 const TEMPLATE_LABELS = {
-  es: { 'project-management': 'Gestión de proyectos', construction: 'Construcción', 'software-development': 'Desarrollo de software', marketing: 'Marketing', 'product-launch': 'Lanzamiento de producto', 'event-planning': 'Organización de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Hoja de ruta de producto', 'content-calendar': 'Calendario de contenidos', 'employee-onboarding': 'Incorporación de empleados', '30-60-90-day-plan': 'Plan de 30-60-90 días', research: 'Investigación', 'home-renovation': 'Reforma del hogar', 'wedding-planning': 'Organización de bodas', weekly: 'Semanal', monthly: 'Mensual', annual: 'Anual', simple: 'Sencilla', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
-  fr: { 'project-management': 'Gestion de projet', construction: 'BTP / Construction', 'software-development': 'Développement logiciel', marketing: 'Marketing', 'product-launch': 'Lancement de produit', 'event-planning': 'Organisation d’événement', agile: 'Agile', sprint: 'Sprint', 'product-roadmap': 'Feuille de route produit', 'content-calendar': 'Calendrier éditorial', 'employee-onboarding': 'Intégration des employés', '30-60-90-day-plan': 'Plan 30-60-90 jours', research: 'Recherche', 'home-renovation': 'Rénovation', 'wedding-planning': 'Organisation de mariage', weekly: 'Hebdomadaire', monthly: 'Mensuel', annual: 'Annuel', simple: 'Simple', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
-  de: { 'project-management': 'Projektmanagement', construction: 'Bauwesen', 'software-development': 'Softwareentwicklung', marketing: 'Marketing', 'product-launch': 'Produkteinführung', 'event-planning': 'Eventplanung', agile: 'Agil', sprint: 'Sprint', 'product-roadmap': 'Produkt-Roadmap', 'content-calendar': 'Redaktionsplan', 'employee-onboarding': 'Mitarbeiter-Onboarding', '30-60-90-day-plan': '30-60-90-Tage-Plan', research: 'Forschung', 'home-renovation': 'Renovierung', 'wedding-planning': 'Hochzeitsplanung', weekly: 'Wöchentlich', monthly: 'Monatlich', annual: 'Jährlich', simple: 'Einfach', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
-  pt: { 'project-management': 'Gestão de projetos', construction: 'Construção', 'software-development': 'Desenvolvimento de software', marketing: 'Marketing', 'product-launch': 'Lançamento de produto', 'event-planning': 'Planejamento de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Roadmap de produto', 'content-calendar': 'Calendário de conteúdo', 'employee-onboarding': 'Integração de funcionários', '30-60-90-day-plan': 'Plano de 30-60-90 dias', research: 'Pesquisa', 'home-renovation': 'Reforma residencial', 'wedding-planning': 'Planejamento de casamento', weekly: 'Semanal', monthly: 'Mensal', annual: 'Anual', simple: 'Simples', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint' },
-  zh: { 'project-management': '项目管理', construction: '工程施工', 'software-development': '软件开发', marketing: '市场营销', 'product-launch': '产品发布', 'event-planning': '活动策划', agile: '敏捷开发', sprint: '冲刺 Sprint', 'product-roadmap': '产品路线图', 'content-calendar': '内容日历', 'employee-onboarding': '员工入职', '30-60-90-day-plan': '30-60-90 天计划', research: '研究计划', 'home-renovation': '房屋装修', 'wedding-planning': '婚礼筹备', weekly: '周计划', monthly: '月计划', annual: '年度计划', simple: '简易模板', excel: 'Excel 模板', 'google-sheets': 'Google Sheets 模板', powerpoint: 'PowerPoint 模板' },
+  es: { 'project-management': 'Gestión de proyectos', construction: 'Construcción', 'software-development': 'Desarrollo de software', marketing: 'Marketing', 'product-launch': 'Lanzamiento de producto', 'event-planning': 'Organización de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Hoja de ruta de producto', 'content-calendar': 'Calendario de contenidos', 'employee-onboarding': 'Incorporación de empleados', '30-60-90-day-plan': 'Plan de 30-60-90 días', research: 'Investigación', 'home-renovation': 'Reforma del hogar', 'wedding-planning': 'Organización de bodas', weekly: 'Semanal', monthly: 'Mensual', annual: 'Anual', simple: 'Sencilla', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint', 'refinery-turnaround-schedule': 'Parada de refinería', 'solar-farm-construction-schedule': 'Planta solar', 'ev-charging-installation-schedule': 'Puntos de recarga para VE', 'hotel-pre-opening-critical-path': 'Apertura de hotel', 'dissertation-gantt-chart': 'Tesis de máster', 'phd-research-gantt-chart': 'Investigación doctoral' },
+  fr: { 'project-management': 'Gestion de projet', construction: 'BTP / Construction', 'software-development': 'Développement logiciel', marketing: 'Marketing', 'product-launch': 'Lancement de produit', 'event-planning': 'Organisation d’événement', agile: 'Agile', sprint: 'Sprint', 'product-roadmap': 'Feuille de route produit', 'content-calendar': 'Calendrier éditorial', 'employee-onboarding': 'Intégration des employés', '30-60-90-day-plan': 'Plan 30-60-90 jours', research: 'Recherche', 'home-renovation': 'Rénovation', 'wedding-planning': 'Organisation de mariage', weekly: 'Hebdomadaire', monthly: 'Mensuel', annual: 'Annuel', simple: 'Simple', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint', 'refinery-turnaround-schedule': 'Arrêt de raffinerie', 'solar-farm-construction-schedule': 'Ferme solaire', 'ev-charging-installation-schedule': 'Bornes de recharge', 'hotel-pre-opening-critical-path': 'Ouverture d’hôtel', 'dissertation-gantt-chart': 'Mémoire', 'phd-research-gantt-chart': 'Recherche doctorale' },
+  de: { 'project-management': 'Projektmanagement', construction: 'Bauwesen', 'software-development': 'Softwareentwicklung', marketing: 'Marketing', 'product-launch': 'Produkteinführung', 'event-planning': 'Eventplanung', agile: 'Agil', sprint: 'Sprint', 'product-roadmap': 'Produkt-Roadmap', 'content-calendar': 'Redaktionsplan', 'employee-onboarding': 'Mitarbeiter-Onboarding', '30-60-90-day-plan': '30-60-90-Tage-Plan', research: 'Forschung', 'home-renovation': 'Renovierung', 'wedding-planning': 'Hochzeitsplanung', weekly: 'Wöchentlich', monthly: 'Monatlich', annual: 'Jährlich', simple: 'Einfach', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint', 'refinery-turnaround-schedule': 'Raffinerie-Stillstand', 'solar-farm-construction-schedule': 'Solarpark', 'ev-charging-installation-schedule': 'Ladeinfrastruktur', 'hotel-pre-opening-critical-path': 'Hoteleröffnung', 'dissertation-gantt-chart': 'Masterarbeit', 'phd-research-gantt-chart': 'Promotionsplan' },
+  pt: { 'project-management': 'Gestão de projetos', construction: 'Construção', 'software-development': 'Desenvolvimento de software', marketing: 'Marketing', 'product-launch': 'Lançamento de produto', 'event-planning': 'Planejamento de eventos', agile: 'Ágil', sprint: 'Sprint', 'product-roadmap': 'Roadmap de produto', 'content-calendar': 'Calendário de conteúdo', 'employee-onboarding': 'Integração de funcionários', '30-60-90-day-plan': 'Plano de 30-60-90 dias', research: 'Pesquisa', 'home-renovation': 'Reforma residencial', 'wedding-planning': 'Planejamento de casamento', weekly: 'Semanal', monthly: 'Mensal', annual: 'Anual', simple: 'Simples', excel: 'Excel', 'google-sheets': 'Google Sheets', powerpoint: 'PowerPoint', 'refinery-turnaround-schedule': 'Parada de refinaria', 'solar-farm-construction-schedule': 'Usina solar', 'ev-charging-installation-schedule': 'Recarga de veículos elétricos', 'hotel-pre-opening-critical-path': 'Abertura de hotel', 'dissertation-gantt-chart': 'Dissertação', 'phd-research-gantt-chart': 'Pesquisa de doutorado' },
+  zh: { 'project-management': '项目管理', construction: '工程施工', 'software-development': '软件开发', marketing: '市场营销', 'product-launch': '产品发布', 'event-planning': '活动策划', agile: '敏捷开发', sprint: '冲刺 Sprint', 'product-roadmap': '产品路线图', 'content-calendar': '内容日历', 'employee-onboarding': '员工入职', '30-60-90-day-plan': '30-60-90 天计划', research: '研究计划', 'home-renovation': '房屋装修', 'wedding-planning': '婚礼筹备', weekly: '周计划', monthly: '月计划', annual: '年度计划', simple: '简易模板', excel: 'Excel 模板', 'google-sheets': 'Google Sheets 模板', powerpoint: 'PowerPoint 模板', 'refinery-turnaround-schedule': '炼油厂检修', 'solar-farm-construction-schedule': '光伏电站建设', 'ev-charging-installation-schedule': '充电桩安装', 'hotel-pre-opening-critical-path': '酒店开业筹备', 'dissertation-gantt-chart': '硕士论文', 'phd-research-gantt-chart': '博士研究计划' },
 };
 
 // Which slugs sit under which category heading.
@@ -329,6 +333,9 @@ const TEMPLATE_GROUPS = [
   { key: 'catTeam', slugs: ['marketing', 'content-calendar', 'employee-onboarding', '30-60-90-day-plan', 'product-roadmap'] },
   { key: 'catTime', slugs: ['weekly', 'monthly', 'annual'] },
   { key: 'catAgile', slugs: ['agile', 'sprint'] },
+  { key: 'catSector', slugs: ['refinery-turnaround-schedule', 'solar-farm-construction-schedule',
+      'ev-charging-installation-schedule', 'hotel-pre-opening-critical-path'] },
+  { key: 'catAcademic', slugs: ['dissertation-gantt-chart', 'phd-research-gantt-chart', 'research'] },
   { key: 'catFormat', slugs: ['excel', 'google-sheets', 'powerpoint'] },
 ];
 

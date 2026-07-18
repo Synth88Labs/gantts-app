@@ -9,6 +9,7 @@ const OUT = path.join(__dirname, '..', 'templates', 'img');
 fs.mkdirSync(OUT, { recursive: true });
 
 // per-slug header title + accent colour
+const NEW_T = require('./new-templates.js').T;
 const META = {
   'excel':            { title: 'Project Plan · Excel',  accent: '#15803d' },
   'powerpoint':       { title: 'Project Plan · PPT',    accent: '#c2410c' },
@@ -96,6 +97,11 @@ function svgFor(slug) {
   <text x="${W - 16}" y="28" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" fill="#ffffffcc">gantts.app</text>
   ${bars}
 </svg>`;
+}
+
+// generated templates get a header title + accent from their own module
+for (const [slug, def] of Object.entries(NEW_T)) {
+  META[slug] = { title: def.title, accent: '#' + def.accent.toLowerCase() };
 }
 
 Object.keys(META).forEach(slug => {

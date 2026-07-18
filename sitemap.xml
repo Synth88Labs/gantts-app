@@ -298,7 +298,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/dissertation-gantt-chart.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/employee-onboarding.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/ev-charging-installation-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -328,6 +340,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/hotel-pre-opening-critical-path.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/marketing.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -335,6 +353,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/monthly.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/phd-research-gantt-chart.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -364,6 +388,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/refinery-turnaround-schedule.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/research.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -377,6 +407,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/software-development.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/solar-farm-construction-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

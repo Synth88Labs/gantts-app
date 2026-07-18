@@ -462,6 +462,15 @@ async function writePPTX(slug, def) {
   fs.writeFileSync(path.join(OUT, slug + '.pptx'), buf);
 }
 
+/* Generated templates live in their own module so the content model and
+   the landing-page copy stay together. Merged in here so the download
+   pipeline treats them identically to the hand-authored ones. */
+const NEW = require('./new-templates.js');
+for (const [slug, def] of Object.entries(NEW.T)) {
+  C[slug] = { title: def.title, accent: def.accent, tasks: def.tasks };
+  SLUGS[slug] = slug;
+}
+
 // expose the template data so gen-thumbs.js can render real, per-template previews
 module.exports = { C, SLUGS, rows, BASE, addDays, iso, fmt, diffDays };
 
