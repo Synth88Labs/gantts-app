@@ -49,7 +49,7 @@ const T = {
       '<strong>Run the start-up sequence as its own mini-project.</strong> Return to service has dependencies as tight as the mechanical work and is often under-planned.',
       '<strong>Keep a daily percent-complete during execution</strong> and re-export the chart for the morning meeting so every contractor works from the same picture.',
     ],
-    related: ['oil-and-gas', 'construction', 'project-management'],
+    related: ['mining-project-schedule', 'construction', 'project-management'],
     faq: [
       ['How far in advance should a refinery turnaround be planned?', 'Long-range planning for a major turnaround typically begins 18–24 months before the execution window, with scope freeze commonly 8–12 weeks out. The template lays those stages out on a timeline so you can see whether your runway is realistic.'],
       ['What is a scope freeze and why is it on the schedule?', 'The scope freeze is the point after which no new work is added to the turnaround worklist. It appears as a milestone because late scope is the most common cause of overrun — everything after it depends on the worklist being stable.'],
@@ -422,5 +422,10 @@ const T = {
   },
 
 };
+
+/* Batch 2 lives in its own file for readability; merged here so every
+   consumer (downloads, thumbnails, pages, hub) sees one catalogue. */
+const B = require('./new-templates-b.js').T;
+Object.assign(T, B);
 
 module.exports = { T, SLUGS: Object.keys(T) };

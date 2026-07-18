@@ -25,16 +25,18 @@ const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 
-// titles for cross-links to the hand-authored templates
-const KNOWN = {
-  'project-management': 'Project management template',
-  construction: 'Construction schedule template',
-  research: 'Research / thesis template',
-  monthly: 'Monthly plan template',
-  annual: 'Yearly plan template',
-  'employee-onboarding': 'Employee onboarding template',
-  'oil-and-gas': null, // not built yet — filtered out below
-};
+/* Related links resolve against what is actually on disk rather than a
+   hardcoded list. The hardcoded version silently dropped valid
+   cross-links (content-calendar, product-launch...), quietly thinning
+   internal linking on every generated page. */
+const titleCase = (slug) => slug.replace(/-/g, ' ').replace(/\w/g, c => c.toUpperCase());
+function relatedLabel(slug) {
+  if (T[slug]) return T[slug].h1;
+  const f = path.join(OUT, slug + '.html');
+  if (!fs.existsSync(f)) return null;
+  const m = fs.readFileSync(f, 'utf8').match(/<h1>([^<]+)<\/h1>/i);
+  return m ? m[1].trim() : titleCase(slug) + ' template';
+}
 
 function langSwitcher(slug) {
   const sub = `templates/${slug}.html`;
@@ -127,11 +129,9 @@ function page(slug, d) {
   const custom = d.customize.map(c => `        <li>${c}</li>`).join('\n');
   const tips = d.tips.map(t => `        <li>${t}</li>`).join('\n');
   const related = d.related
-    .filter(r => T[r] || KNOWN[r])
-    .map(r => {
-      const label = T[r] ? T[r].h1 : KNOWN[r];
-      return `        <li><a href="/templates/${r}.html">${label}</a></li>`;
-    }).join('\n');
+    .map(r => ({ r, label: relatedLabel(r) }))
+    .filter(x => x.label)
+    .map(x => `        <li><a href="/templates/${x.r}.html">${x.label}</a></li>`).join('\n');
   const faq = d.faq.map(([q, a], i) =>
     `        <details${i === 0 ? ' open' : ''}><summary>${q}</summary><p>${a}</p></details>`).join('\n');
 

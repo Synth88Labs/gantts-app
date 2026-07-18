@@ -286,6 +286,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/apparel-production-calendar.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/construction.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -334,6 +340,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/grant-proposal-gantt-chart.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/home-renovation.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -352,7 +364,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gantts.app/templates/mining-project-schedule.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gantts.app/templates/monthly.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/one-page-gantt-chart.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -365,6 +389,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/powerpoint.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/printable-gantt-chart.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -395,6 +425,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/research.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/shipbuilding-project-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -431,6 +467,12 @@
   </url>
   <url>
     <loc>https://gantts.app/templates/weekly.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/wind-farm-construction-schedule.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

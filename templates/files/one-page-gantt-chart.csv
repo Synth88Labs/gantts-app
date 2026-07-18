@@ -1,0 +1,12 @@
+﻿WBS,Task,Type,Start,End,Days,Progress %,Assignee,Dependencies,Notes
+1,Discovery,group,2026-08-02,2026-09-15,45,100,,,
+2,Design,group,2026-09-11,2026-11-09,60,70,,Discovery,
+3,Design sign-off,milestone,2026-11-10,2026-11-10,0,0,,Design,
+4,Build — workstream A,group,2026-11-05,2027-03-04,120,30,,Design,
+5,Build — workstream B,group,2026-11-20,2027-03-04,105,20,,,
+6,Integration,group,2027-02-18,2027-04-08,50,0,,Build — workstream A,
+7,Test & UAT,group,2027-03-30,2027-05-23,55,0,,Integration,
+8,Go / no-go,milestone,2027-05-24,2027-05-24,0,0,,Test & UAT,
+9,Launch,group,2027-05-24,2027-06-22,30,0,,Test & UAT,
+10,Go live,milestone,2027-06-23,2027-06-23,0,0,,Launch,
+11,Hypercare,group,2027-06-23,2027-08-06,45,0,,Launch,
