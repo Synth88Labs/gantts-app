@@ -19,3 +19,6 @@ templates/files/
 
 # FTP credentials — never commit
 .env
+
+# Deploy state: which file hashes were last uploaded (per machine)
+.deploy-manifest.json

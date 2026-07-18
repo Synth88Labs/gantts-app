@@ -27,9 +27,22 @@
 const fs = require('fs');
 const path = require('path');
 const ftp = require('basic-ftp');
+const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const LOCAL = path.join(ROOT, 'deploy');
+
+/* Record of what was last uploaded, keyed by path -> sha1. Lives at the
+   repo root rather than inside deploy/, which build-deploy.js wipes and
+   regenerates on every run. Gitignored: it describes one machine's view
+   of one server, not the project. */
+const MANIFEST = path.join(ROOT, '.deploy-manifest.json');
+function readManifest() {
+  try { return JSON.parse(fs.readFileSync(MANIFEST, 'utf8')); } catch (e) { return {}; }
+}
+function writeManifest(m) {
+  try { fs.writeFileSync(MANIFEST, JSON.stringify(m, null, 0)); } catch (e) {}
+}
 
 // ---- tiny .env reader (no dependency, no surprises) ----
 function loadEnv() {
@@ -197,9 +210,27 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
     await indexRemote('');
     console.log(remoteSizes.size + ' file(s) already there');
 
+    /* Size alone is NOT enough to decide a file is unchanged. sw.js sat
+       stale on the server for several deploys because bumping
+       'gantts-v27' -> 'gantts-v28' and '?v=25' -> '?v=26' keeps the byte
+       count identical, so the size check skipped exactly the file that
+       controls cache-busting for every visitor.
+
+       So: hash the local file and compare against a manifest of what was
+       last uploaded. Remote size is still checked, which catches files
+       missing or truncated on the server and re-syncs if someone edits
+       it out of band. */
+    const manifest = readManifest();
+    const localHash = (rel) =>
+      crypto.createHash('sha1').update(fs.readFileSync(path.join(LOCAL, rel))).digest('hex');
+
+    const hashes = new Map();
     const todo = files.filter(function (rel) {
+      const h = localHash(rel);
+      hashes.set(rel, h);
       const localSize = fs.statSync(path.join(LOCAL, rel)).size;
-      return remoteSizes.get(rel) !== localSize;
+      if (remoteSizes.get(rel) !== localSize) return true;   // missing or different size
+      return manifest[rel] !== h;                            // same size, different content
     });
     console.log('  ' + todo.length + ' to upload, ' + (files.length - todo.length) + ' unchanged');
 
@@ -231,9 +262,13 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
           try { await reconnect(); } catch (e2) {}
         }
       }
-      if (ok) done++;
+      if (ok) { done++; manifest[rel] = hashes.get(rel); }
       if (done && done % 20 === 0) console.log('  ' + done + '/' + todo.length + ' uploaded');
     }
+    // Only files that actually landed are recorded, so a failed upload is
+    // retried on the next run rather than being remembered as done.
+    for (const rel of files) if (!todo.includes(rel)) manifest[rel] = hashes.get(rel);
+    writeManifest(manifest);
     console.log('  ' + done + '/' + todo.length + ' uploaded');
     if (failed.length) {
       console.warn('! ' + failed.length + ' file(s) failed after 3 attempts:');
