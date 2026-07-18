@@ -31,7 +31,7 @@ const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=16';
+const CSS_V = 'v=17';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

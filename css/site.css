@@ -380,7 +380,9 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 /* ---- FAQ two-column ---- */
 .faq2 { display: grid; grid-template-columns: .82fr 1.18fr; gap: 46px; align-items: start; }
 @media (max-width: 820px) { .faq2 { grid-template-columns: 1fr; gap: 22px; } }
-.faq2-side { position: sticky; top: 88px; }
+/* .faq2-side is deliberately NOT sticky — pinning the heading left it
+   hanging under the nav for the whole section while the answers
+   scrolled past it. */
 .faq2-side h2 { font-size: clamp(24px, 2.7vw, 32px); margin: 12px 0 10px; }
 .faq2-side p { color: var(--ink-soft); margin: 0 0 16px; }
 .faq2-list { max-width: none; margin: 0; }
