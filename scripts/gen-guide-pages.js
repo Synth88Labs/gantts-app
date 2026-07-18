@@ -11,11 +11,12 @@
 const fs = require('fs');
 const path = require('path');
 const { G } = require('./new-guides.js');
+const { FOOTER } = require('./footer.js');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=17';
+const V = 'v=19';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -63,26 +64,6 @@ const nav = (slug) => `  <header class="nav">
     </div>
   </header>`;
 
-const FOOTER = `  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="nav-logo" href="/index.html" aria-label="gantts.app home">
-            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
-            <span class="brand-word">gantts<b>.app</b></span>
-          </a>
-          <p style="margin-top:12px">The free, no-login Gantt chart maker. Plan projects, see the critical path, and export to PDF, PNG, Excel &amp; PowerPoint — right in your browser.</p>
-        </div>
-        <div><h4>Product</h4><a href="/app.html">Gantt Chart Maker</a><a href="/templates.html">Templates</a><a href="/app.html">Import CSV / JSON</a><a href="/app.html">Export PDF / Excel / PPT</a></div>
-        <div><h4>Guides</h4><a href="/blog/what-is-a-gantt-chart.html">What is a Gantt chart?</a><a href="/blog/how-to-make-a-gantt-chart.html">How to make one</a><a href="/blog/gantt-chart-in-excel.html">Gantt chart in Excel</a><a href="/blog/critical-path-method.html">Critical path method</a></div>
-        <div><h4>Templates</h4><a href="/templates/excel.html">Excel template</a><a href="/templates/powerpoint.html">PowerPoint template</a><a href="/templates/construction.html">Construction</a><a href="/templates/marketing.html">Marketing</a></div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span class="year">2026</span> gantts.app · Free forever, no sign up.</span>
-        <span><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="${GH}" rel="noopener">GitHub</a></span>
-      </div>
-    </div>
-  </footer>`;
 
 function schema(slug, d) {
   const url = `${ORIGIN}/blog/${slug}.html`;

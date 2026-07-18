@@ -31,7 +31,7 @@ const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=17';
+const CSS_V = 'v=19';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -100,36 +100,43 @@ function header(code, sub) {
 function footer(code) {
   const c = CHROME[code];
   const p = '/' + code;
+  const L = (sub, label) => `<a href="${localHref(code, sub)}">${esc(label)}</a>`;
   return `  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="nav-logo" href="${p}/" aria-label="gantts.app">
-          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
-          <span class="brand-word">gantts<b>.app</b></span>
-        </a>
-        <p style="margin-top:12px">${esc(c.footer.tagline)}</p>
-      </div>
-      <div>
-        <h4>${esc(c.footer.product)}</h4>
-        <a href="/app.html">${esc(c.nav.maker)}</a>
-        <a href="${localHref(code, "templates.html")}">${esc(c.nav.templates)}</a>
-      </div>
-      <div>
-        <h4>${esc(c.footer.resources)}</h4>
-        <a href="${localHref(code, "blog/index.html")}">${esc(c.nav.guides)}</a>
-      </div>
-      <div>
-        <h4>${esc(c.footer.company)}</h4>
-        <a href="${localHref(code, 'about.html')}">${esc(c.footer.about)}</a>
-        <a href="${localHref(code, 'contact.html')}">Contact</a>
-        <a href="${localHref(code, 'terms.html')}">Terms</a>
-        <a href="${localHref(code, 'privacy.html')}">${esc(c.footer.privacy)}</a>
-      </div>
+        <div class="footer-brand">
+          <a class="nav-logo" href="${p}/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>${esc(c.footer.tagline)}</p>
+          <a class="footer-cta" href="/app.html">${esc(c.nav.open)} →</a>
+        </div>
+        <div>
+          <h4>${esc(c.nav.templates)}</h4>
+          ${L('templates.html', c.footer.allTemplates)}
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">${esc(c.footer.construction)}</a>
+        </div>
+        <div>
+          <h4>${esc(c.nav.guides)}</h4>
+          ${L('blog/index.html', c.footer.allGuides)}
+          <a href="/blog/what-is-a-gantt-chart.html">${esc(c.nav.what)}</a>
+          <a href="/blog/critical-path-method.html">${esc(c.footer.cpm)}</a>
+        </div>
+        <div>
+          <h4>${esc(c.footer.company)}</h4>
+          ${L('about.html', c.footer.about)}
+          ${L('contact.html', c.footer.contact)}
+          ${L('terms.html', c.footer.terms)}
+          ${L('privacy.html', c.footer.privacy)}
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>© <span class="year">2026</span> gantts.app · ${esc(c.footer.rights)}</span>
-        <span><a href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a></span>
+        <span>${esc(c.footer.staticNote)}</span>
       </div>
     </div>
   </footer>`;
