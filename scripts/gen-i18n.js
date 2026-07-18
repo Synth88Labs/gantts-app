@@ -42,7 +42,12 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
    blog/ are localized, their nav links must fall back to English —
    linking to a 404 is worse than linking across languages. */
 const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true,
-  'about.html': true, 'contact.html': true, 'terms.html': true, 'privacy.html': true };
+  'about.html': true, 'contact.html': true, 'terms.html': true, 'privacy.html': true,
+  // renderApp() writes /<code>/app.html for every locale, so the nav and
+  // every CTA must send readers there. Omitting it meant a Spanish page
+  // showed "Abrir la aplicación" and then dropped the reader into the
+  // English editor — the single most visited link on the site.
+  'app.html': true };
 function localHref(code, sub) {
   return LOCALIZED_PAGES[sub] ? `/${code}/${sub}` : `/${sub}`;
 }
@@ -94,7 +99,7 @@ function header(code, sub, only) {
         <span class="brand-word">gantts<b>.app</b></span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <a href="/app.html">${esc(c.nav.maker)}</a>
+        <a href="${localHref(code, 'app.html')}">${esc(c.nav.maker)}</a>
         <a href="${localHref(code, "templates.html")}">${esc(c.nav.templates)}</a>
         <a href="${localHref(code, "blog/index.html")}">${esc(c.nav.guides)}</a>
       </nav>
@@ -102,7 +107,7 @@ function header(code, sub, only) {
       <div class="nav-cta">
         ${langSwitcher(code, sub, only)}
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-        <a class="btn btn-primary" href="/app.html">${esc(c.nav.open)}</a>
+        <a class="btn btn-primary" href="${localHref(code, 'app.html')}">${esc(c.nav.open)}</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -122,7 +127,7 @@ function footer(code) {
             <span class="brand-word">gantts<b>.app</b></span>
           </a>
           <p>${esc(c.footer.tagline)}</p>
-          <a class="footer-cta" href="/app.html">${esc(c.nav.open)} →</a>
+          <a class="footer-cta" href="${localHref(code, 'app.html')}">${esc(c.nav.open)} →</a>
           <p class="footer-byline">${esc(c.footer.byline).replace('Synth88 Labs', '<a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a>')}</p>
         </div>
         <div>
@@ -310,7 +315,7 @@ function renderHome(loc) {
         <h1>${t.h1}</h1>
         <p class="hero3-sub">${esc(t.sub)}</p>
         <div class="hero3-cta">
-          <a class="btn btn-primary btn-lg" href="/app.html">${esc(t.cta1)}</a>
+          <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(t.cta1)}</a>
           <a class="hero3-link" href="${localHref(code, 'templates.html')}">${esc(t.cta2)}</a>
         </div>
       </div>
@@ -351,7 +356,7 @@ ${faq}
     <div class="container">
       <h2>${esc(t.ctaH2)}</h2>
       <p>${esc(t.ctaP)}</p>
-      <a class="btn btn-primary btn-lg" href="/app.html">${esc(t.ctaBtn)}</a>
+      <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
     </div>
   </section>`;
 
@@ -434,7 +439,7 @@ ${groups}
     <section class="cta-band">
       <h2>${esc(t.ctaH2)}</h2>
       <p>${esc(t.ctaP)}</p>
-      <a class="btn btn-primary btn-lg" href="/app.html">${esc(t.ctaBtn)}</a>
+      <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
     </section>
   </article>`;
 
