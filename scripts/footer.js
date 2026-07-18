@@ -29,6 +29,7 @@ const FOOTER = `  <footer class="footer">
           </a>
           <p>The free Gantt chart maker that runs in your browser. No account, no upload — your plan stays on your machine.</p>
           <a class="footer-cta" href="/app.html">Open the Gantt maker →</a>
+          <p class="footer-byline">A project by <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
         </div>
         <div>
           <h4>Templates</h4>

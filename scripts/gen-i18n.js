@@ -32,7 +32,7 @@ const { APP } = require('../i18n/content.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=20';
+const CSS_V = 'v=22';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -112,6 +112,7 @@ function footer(code) {
           </a>
           <p>${esc(c.footer.tagline)}</p>
           <a class="footer-cta" href="/app.html">${esc(c.nav.open)} →</a>
+          <p class="footer-byline">${esc(c.footer.byline).replace('Synth88 Labs', '<a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a>')}</p>
         </div>
         <div>
           <h4>${esc(c.nav.templates)}</h4>
@@ -163,6 +164,14 @@ function orgNode() {
     logo: ORIGIN + '/assets/logo-mark.svg',
     email: 'synth88labs@gmail.com',
     sameAs: ['https://github.com/Synth88Labs/gantts-app'],
+    // Ties gantts.app to its parent brand as one entity graph, so signals
+    // earned by either accrue to a recognisable organisation rather than
+    // two unrelated names that happen to share a footer link.
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Synth88 Labs',
+      url: 'https://synth88.com',
+    },
   };
 }
 function siteNode(loc) {

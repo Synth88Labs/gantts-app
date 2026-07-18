@@ -272,6 +272,15 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 .footer-cta { display: inline-flex !important; align-items: center; gap: 6px; margin-top: 16px; color: var(--brand-ink) !important; font-weight: 600; font-size: 15px; padding: 0 !important; }
 .footer-cta:hover { gap: 9px; }
 .footer-ext::after { content: " ↗"; color: var(--ink-faint); font-size: 12px; }
+/* Parent-brand attribution. Deliberately quiet — it should read as
+   provenance, not as a second call to action competing with the CTA
+   directly above it. */
+/* .footer-brand p is class+element (0,1,1) and would otherwise win over
+   a lone .footer-byline class (0,1,0), leaving the byline the same
+   weight as the tagline above it. */
+.footer-brand p.footer-byline { margin: 18px 0 0; font-size: 13px; color: var(--ink-faint); }
+.footer-byline a { display: inline; padding: 0; font-size: inherit; color: var(--ink-soft); font-weight: 600; }
+.footer-byline a:hover { color: var(--brand-ink); }
 
 .footer-bottom { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 20px; color: var(--ink-faint); font-size: 13.5px; }
 .footer-bottom a { display: inline; padding: 0; font-size: inherit; color: var(--ink-faint); }

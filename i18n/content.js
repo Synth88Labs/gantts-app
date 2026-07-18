@@ -25,6 +25,7 @@ const CHROME = {
   en: {
     nav: { maker: 'Gantt Maker', templates: 'Templates', guides: 'Guides', what: 'What is a Gantt chart?', open: 'Open the app' },
     footer: { tagline: 'Free online Gantt chart maker. No account, no upload — your data stays in your browser.',
+      byline: 'A project by Synth88 Labs',
       allTemplates: 'All templates', allGuides: 'All guides', construction: 'Construction', cpm: 'Critical path method', contact: 'Contact', terms: 'Terms of use', staticNote: 'Built as a static site — nothing you plan leaves your browser.',
       product: 'Product', resources: 'Resources', company: 'Company',
       privacy: 'Privacy', about: 'About', rights: 'All rights reserved.' },
@@ -34,6 +35,7 @@ const CHROME = {
   es: {
     nav: { maker: 'Crear diagrama', templates: 'Plantillas', guides: 'Guías', what: '¿Qué es un diagrama de Gantt?', open: 'Abrir la aplicación' },
     footer: { tagline: 'Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.',
+      byline: 'Un proyecto de Synth88 Labs',
       allTemplates: 'Todas las plantillas', allGuides: 'Todas las guías', construction: 'Construcción', cpm: 'Método de la ruta crítica', contact: 'Contacto', terms: 'Términos de uso', staticNote: 'Sitio estático: nada de lo que planificas sale de tu navegador.',
       product: 'Producto', resources: 'Recursos', company: 'Empresa',
       privacy: 'Privacidad', about: 'Acerca de', rights: 'Todos los derechos reservados.' },
@@ -43,6 +45,7 @@ const CHROME = {
   fr: {
     nav: { maker: 'Créer un diagramme', templates: 'Modèles', guides: 'Guides', what: 'Qu’est-ce qu’un diagramme de Gantt ?', open: 'Ouvrir l’application' },
     footer: { tagline: 'Créateur de diagrammes de Gantt gratuit. Sans compte ni téléversement : vos données restent dans votre navigateur.',
+      byline: 'Un projet de Synth88 Labs',
       allTemplates: 'Tous les modèles', allGuides: 'Tous les guides', construction: 'BTP', cpm: 'Méthode du chemin critique', contact: 'Contact', terms: 'Conditions d’utilisation', staticNote: 'Site statique : rien de ce que vous planifiez ne quitte votre navigateur.',
       product: 'Produit', resources: 'Ressources', company: 'Entreprise',
       privacy: 'Confidentialité', about: 'À propos', rights: 'Tous droits réservés.' },
@@ -52,6 +55,7 @@ const CHROME = {
   de: {
     nav: { maker: 'Gantt-Diagramm erstellen', templates: 'Vorlagen', guides: 'Ratgeber', what: 'Was ist ein Gantt-Diagramm?', open: 'App öffnen' },
     footer: { tagline: 'Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.',
+      byline: 'Ein Projekt von Synth88 Labs',
       allTemplates: 'Alle Vorlagen', allGuides: 'Alle Ratgeber', construction: 'Bauwesen', cpm: 'Methode des kritischen Pfads', contact: 'Kontakt', terms: 'Nutzungsbedingungen', staticNote: 'Statische Website — nichts, was Sie planen, verlässt Ihren Browser.',
       product: 'Produkt', resources: 'Ressourcen', company: 'Unternehmen',
       privacy: 'Datenschutz', about: 'Über uns', rights: 'Alle Rechte vorbehalten.' },
@@ -61,6 +65,7 @@ const CHROME = {
   pt: {
     nav: { maker: 'Criar gráfico', templates: 'Modelos', guides: 'Guias', what: 'O que é um gráfico de Gantt?', open: 'Abrir o aplicativo' },
     footer: { tagline: 'Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.',
+      byline: 'Um projeto da Synth88 Labs',
       allTemplates: 'Todos os modelos', allGuides: 'Todos os guias', construction: 'Construção', cpm: 'Método do caminho crítico', contact: 'Contato', terms: 'Termos de uso', staticNote: 'Site estático — nada do que você planeja sai do seu navegador.',
       product: 'Produto', resources: 'Recursos', company: 'Empresa',
       privacy: 'Privacidade', about: 'Sobre', rights: 'Todos os direitos reservados.' },
@@ -70,6 +75,7 @@ const CHROME = {
   zh: {
     nav: { maker: '甘特图制作', templates: '模板', guides: '指南', what: '什么是甘特图？', open: '打开应用' },
     footer: { tagline: '免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。',
+      byline: 'Synth88 Labs 出品',
       allTemplates: '全部模板', allGuides: '全部指南', construction: '工程施工', cpm: '关键路径法', contact: '联系我们', terms: '使用条款', staticNote: '纯静态网站——你规划的内容不会离开浏览器。',
       product: '产品', resources: '资源', company: '关于',
       privacy: '隐私政策', about: '关于我们', rights: '保留所有权利。' },
