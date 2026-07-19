@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagrama de Gantt en Google Sheets: 3 métodos | gantts.app</title>
+  <meta name="description" content="Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/blog/gantt-chart-in-google-sheets.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-google-sheets.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-in-google-sheets.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-in-google-sheets.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Diagrama de Gantt en Google Sheets: 3 métodos | gantts.app" />
+  <meta property="og:description" content="Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas." />
+  <meta property="og:url" content="https://gantts.app/es/blog/gantt-chart-in-google-sheets.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cómo hacer un diagrama de Gantt en Google Sheets" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diagrama de Gantt en Google Sheets: 3 métodos | gantts.app" />
+  <meta name="twitter:description" content="Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html#post","headline":"Cómo hacer un diagrama de Gantt en Google Sheets","description":"Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas.","url":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Cómo hacer un diagrama de Gantt en Google Sheets","item":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Google Sheets puede hacer diagramas de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla."}},{"@type":"Question","name":"¿La función Cronograma admite dependencias?","acceptedAnswer":{"@type":"Answer","text":"No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica."}},{"@type":"Question","name":"¿Puedo pasar mi hoja a una herramienta de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí. Exporta la hoja como CSV e impórtala; el editor gratuito acepta CSV con columnas de tarea, inicio y fin."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/index.html">Guías</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-in-google-sheets.html">English</option><option value="/es/blog/gantt-chart-in-google-sheets.html" selected>Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a></div>
+    <h1>Cómo hacer un diagrama de Gantt en Google Sheets</h1>
+    <p class="lead">Google Sheets permite hacer un <strong>diagrama de Gantt</strong> de tres formas distintas, y la mejor depende de para qué lo necesites. Una es nativa, otra es el clásico truco de barras apiladas y la tercera es no construirlo.</p>
+    <p class="crumbs"><small>Actualizado el 2026-07-19</small></p>
+
+
+
+    <div class="prose">
+      <h2 id="s1">Método 1: la función Cronograma (Insertar → Cronograma)</h2>
+<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos: seleccionas el rango, insertas el cronograma y eliges qué columnas son inicio, fin y título.</p>
+        <p>A cambio, el control visual es limitado y no hay dependencias ni ruta crítica.</p>
+      <h2 id="s2">Método 2: gráfico de barras apiladas</h2>
+<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible. Da más control sobre colores y ejes, a cambio de bastante más configuración manual.</p>
+        <p>Recuerda invertir el orden del eje de categorías para que la primera tarea salga arriba.</p>
+      <h2 id="s3">Método 3: usar una plantilla</h2>
+<p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>
+      <h2 id="s4">Personalizar la vista y añadir dependencias</h2>
+<p>Puedes ajustar el rango de fechas, agrupar por fases con formato condicional y marcar hitos con una fila de duración cero. Las dependencias, en cambio, no existen en Sheets: si mueves una tarea, ninguna otra se entera.</p>
+      <h2 id="s5">Los límites de Sheets, y una alternativa gratuita</h2>
+<p>Sheets es excelente para colaborar sobre datos y mediocre para planificar calendarios: sin dependencias, sin ruta crítica y sin días laborables, cada cambio obliga a recalcular a mano. Para un plan de veinte tareas eso se aguanta; para sesenta, no.</p>
+        <p>La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: importas el CSV que ya tienes en Sheets, enlazas las dependencias y exportas cuando lo necesites.</p>
+
+      <div class="callout">Si tu plan va a cambiar más de una vez, elige el método por el coste de mantenerlo, no por lo rápido que es montarlo. La función Cronograma se hace en dos minutos; un gráfico de barras apiladas con veinte tareas se rehace en veinte cada vez que se mueve una fecha.</div>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Google Sheets puede hacer diagramas de Gantt?</summary><p>Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla.</p></details>
+        <details><summary>¿La función Cronograma admite dependencias?</summary><p>No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica.</p></details>
+        <details><summary>¿Puedo pasar mi hoja a una herramienta de Gantt?</summary><p>Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin.</p></details>
+      </div>
+
+      <h2 id="related">Seguir leyendo</h2>
+      <ul>
+        <li><a href="/es/blog/gantt-chart-in-excel.html">Cómo hacerlo en Excel</a></li>
+        <li><a href="/es/blog/gantt-chart-in-powerpoint.html">Cómo hacerlo en PowerPoint</a></li>
+        <li><a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a></li>
+        <li><a href="/es/blog/">Ver todas las guías</a></li>
+      </ul>
+      <p class="crumbs"><small>Las guías que aún no se han traducido se abren en inglés.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Pruébalo en el editor gratuito</h2>
+      <p>Abre gantts.app, arrastra las barras y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/index.html">Todas las guías</a>
+          <a href="/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

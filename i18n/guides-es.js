@@ -174,6 +174,312 @@ const G = {
     ],
   },
 
+  'gantt-chart-examples': {
+    h1: 'Ejemplos de diagramas de Gantt para cada tipo de proyecto',
+    metaTitle: 'Ejemplos de diagramas de Gantt (8 casos reales)',
+    metaDesc: 'Ocho ejemplos de diagramas de Gantt —obra, software, marketing, eventos, lanzamiento, tesis, pequeña empresa y plan semanal— con las fases de cada uno.',
+    date: '2026-07-19',
+    lead: 'La forma más rápida de entender un <strong>diagrama de Gantt</strong> es ver uno de tu propio sector. Aquí van ocho ejemplos con las fases que realmente usa cada tipo de proyecto, y qué es lo que conviene mirar en cada uno.',
+    figIntro: 'Los mismos elementos, secuenciados de forma distinta según el proyecto:',
+    sections: [
+      ['1. Proyecto de construcción',
+        `<p>Movilización, cimentación, estructura, cerramiento, instalaciones, acabados y recepción. La secuencia es rígida: no se levanta estructura sobre hormigón sin curar, y eso convierte casi todas las relaciones en fin-inicio con desfase.</p>
+        <p>Qué mirar: los permisos y las inspecciones. Son barreras de terceros y suelen determinar la fecha real de entrega más que la propia obra.</p>`],
+      ['2. Desarrollo de software / ágil',
+        `<p>Descubrimiento, diseño, sprints de desarrollo, integración, pruebas y despliegue. Los sprints se representan como barras de duración fija y repetida; el valor del Gantt aquí no es planificar dentro del sprint sino mostrar cómo encajan releases, dependencias externas y fechas comprometidas.</p>`],
+      ['3. Campaña de marketing',
+        `<p>Estrategia, creatividades, producción, aprobaciones, lanzamiento y medición. La fase que siempre se subestima es la de aprobaciones: esperar la respuesta de un cliente es tiempo transcurrido real y merece su propia barra.</p>`],
+      ['4. Organización de eventos',
+        `<p>Fecha y sede, proveedores, comunicación, inscripciones, montaje, evento y desmontaje. Es un proyecto con una fecha inamovible, así que se planifica hacia atrás desde el día del evento.</p>`],
+      ['5. Lanzamiento de producto',
+        `<p>Preparación, beta, materiales de venta, formación comercial, lanzamiento y seguimiento. Conviene marcar como hitos los puntos de no retorno: fabricación comprometida, embargo de prensa, apertura de pedidos.</p>`],
+      ['6. Tesis o investigación',
+        `<p>Propuesta, revisión bibliográfica, metodología y ética, recogida de datos, análisis, redacción y entrega. La aprobación ética es una dependencia dura: la recogida de datos no puede empezar antes.</p>`],
+      ['7. Proyecto de pequeña empresa',
+        `<p>Cuatro o cinco fases, veinte tareas, un responsable por línea. El error más común aquí es el contrario al de las grandes obras: demasiado poco detalle, hasta el punto de que una barra de «poner en marcha la tienda» no dice nada útil.</p>`],
+      ['8. Plan semanal sencillo',
+        `<p>Una rejilla de cinco días con las tareas de la semana. No necesita dependencias ni ruta crítica: es una herramienta de foco, no de planificación. Es el formato que mejor funciona pegado en una pared.</p>`],
+    ],
+    callout: 'Fíjate en lo que tienen en común: todos empiezan por fases, no por tareas sueltas. Un diagrama que arranca con cuarenta filas al mismo nivel es ilegible independientemente del sector. Agrupa primero en cinco o seis fases y despliega solo lo que necesites mirar.',
+    faq: [
+      ['¿Cuál es el mejor ejemplo para empezar?', 'El más cercano a tu proyecto. Si ninguno encaja del todo, el de gestión de proyectos genérica sirve como esqueleto: fases, hitos y dependencias son iguales en todos los sectores.'],
+      ['¿Puedo descargar estos ejemplos?', 'Sí, cada tipo tiene su plantilla con las tareas ya cargadas, en Excel, PowerPoint y CSV, además de edición online gratuita.'],
+      ['¿Cuántas tareas debería tener mi diagrama?', 'Las que puedas mantener actualizadas. Entre veinte y sesenta filas es el rango cómodo; por encima, agrupa en fases.'],
+    ],
+    related: [
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+      ['how-to-make-a-gantt-chart', 'Cómo hacer un diagrama de Gantt paso a paso'],
+      ['gantt-chart-mistakes', 'Errores habituales al planificar'],
+    ],
+  },
+
+  'gantt-chart-in-excel': {
+    h1: 'Cómo hacer un diagrama de Gantt en Excel',
+    metaTitle: 'Cómo hacer un diagrama de Gantt en Excel',
+    metaDesc: 'Guía paso a paso para crear un diagrama de Gantt en Excel con un gráfico de barras apiladas, más cómo añadir dependencias y porcentaje completado.',
+    date: '2026-07-19',
+    lead: 'Excel no tiene un tipo de gráfico «Gantt», pero se puede construir uno con un <strong>gráfico de barras apiladas</strong> al que se le oculta la primera serie. Estos son los cinco pasos, y también dónde está el límite de este método.',
+    figIntro: 'El truco central: la barra de inicio existe pero es invisible.',
+    sections: [
+      ['¿Excel tiene diagramas de Gantt?',
+        `<p>No como tal. Lo que se usa es un gráfico de barras apiladas en horizontal: la primera serie es la fecha de inicio, la segunda la duración. Dejando la primera sin relleno, lo único que se ve es la duración, desplazada hasta donde empieza la tarea. Eso es visualmente un Gantt.</p>`],
+      ['Paso 1: tabla con tarea, inicio, fin y duración',
+        `<p>Cuatro columnas: nombre de la tarea, fecha de inicio, fecha de fin y duración calculada como <code>=fin − inicio</code>. Mantén las fechas como fechas reales, no como texto, o el gráfico no las situará bien.</p>`],
+      ['Paso 2: insertar un gráfico de barras apiladas',
+        `<p>Selecciona tarea e inicio, inserta un gráfico de barras apiladas y añade después la serie de duración. Excel casi siempre coloca las series en el orden equivocado la primera vez; se corrige en «Seleccionar datos».</p>`],
+      ['Paso 3: dejar la serie de inicio sin relleno',
+        `<p>Haz clic sobre las barras de inicio, y en formato de serie elige «Sin relleno». Ahí aparece el Gantt: las duraciones quedan flotando en la posición correcta.</p>`],
+      ['Paso 4: invertir el orden de las tareas',
+        `<p>Excel dibuja la primera tarea abajo. En el formato del eje vertical, activa «Categorías en orden inverso» para que el plan se lea de arriba abajo como es habitual.</p>`],
+      ['Paso 5: formatear fechas y colores',
+        `<p>Fija el mínimo del eje horizontal en tu fecha de inicio (Excel usa números de serie, así que conviene escribirlo como fecha y dejar que lo convierta) y da color por fase. Con eso el gráfico ya es presentable.</p>`],
+      ['Dependencias y porcentaje completado',
+        `<p>Aquí está el límite. Excel no conoce las dependencias: si una tarea se retrasa, tienes que mover a mano todas las siguientes. El porcentaje completado se puede simular con una tercera serie superpuesta, pero se vuelve frágil en cuanto el plan crece.</p>
+        <p>Si tu proyecto tiene más de una decena de tareas enlazadas, el mantenimiento del gráfico acaba costando más que la planificación. Ese es el momento de usar una herramienta que recalcule sola — puedes <a href="/es/app.html">abrir el editor gratuito</a> o descargar una plantilla ya montada.</p>`],
+    ],
+    callout: 'El método de barras apiladas funciona y no requiere complementos, pero produce un dibujo, no un modelo. En cuanto necesites que al mover una tarea se muevan las siguientes, Excel deja de ayudarte: no hay dependencias que recalcular.',
+    faq: [
+      ['¿Excel tiene una plantilla de Gantt integrada?', 'Algunas versiones incluyen plantillas de proyecto, pero varían según la versión y la región. El método de barras apiladas funciona en cualquier Excel moderno, y también puedes descargar una plantilla lista.'],
+      ['¿Cómo añado dependencias en Excel?', 'No hay soporte nativo. Se pueden dibujar flechas manualmente sobre el gráfico, pero no se recalculan al mover tareas — que es precisamente para lo que sirven las dependencias.'],
+      ['¿Es mejor Excel o una herramienta específica?', 'Excel va bien para un plan corto y estático que ya vas a compartir en una hoja de cálculo. Para planes con dependencias, ruta crítica o actualizaciones frecuentes, una herramienta específica ahorra mucho mantenimiento manual.'],
+    ],
+    related: [
+      ['gantt-chart-in-google-sheets', 'Cómo hacerlo en Google Sheets'],
+      ['gantt-chart-in-powerpoint', 'Cómo hacerlo en PowerPoint'],
+      ['how-to-make-a-gantt-chart', 'Cómo hacer un diagrama de Gantt paso a paso'],
+    ],
+  },
+
+  'gantt-chart-in-google-sheets': {
+    h1: 'Cómo hacer un diagrama de Gantt en Google Sheets',
+    metaTitle: 'Diagrama de Gantt en Google Sheets: 3 métodos',
+    metaDesc: 'Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas.',
+    date: '2026-07-19',
+    lead: 'Google Sheets permite hacer un <strong>diagrama de Gantt</strong> de tres formas distintas, y la mejor depende de para qué lo necesites. Una es nativa, otra es el clásico truco de barras apiladas y la tercera es no construirlo.',
+    figIntro: 'Los tres caminos, de menos a más control:',
+    sections: [
+      ['Método 1: la función Cronograma (Insertar → Cronograma)',
+        `<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos: seleccionas el rango, insertas el cronograma y eliges qué columnas son inicio, fin y título.</p>
+        <p>A cambio, el control visual es limitado y no hay dependencias ni ruta crítica.</p>`],
+      ['Método 2: gráfico de barras apiladas',
+        `<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible. Da más control sobre colores y ejes, a cambio de bastante más configuración manual.</p>
+        <p>Recuerda invertir el orden del eje de categorías para que la primera tarea salga arriba.</p>`],
+      ['Método 3: usar una plantilla',
+        `<p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>`],
+      ['Personalizar la vista y añadir dependencias',
+        `<p>Puedes ajustar el rango de fechas, agrupar por fases con formato condicional y marcar hitos con una fila de duración cero. Las dependencias, en cambio, no existen en Sheets: si mueves una tarea, ninguna otra se entera.</p>`],
+      ['Los límites de Sheets, y una alternativa gratuita',
+        `<p>Sheets es excelente para colaborar sobre datos y mediocre para planificar calendarios: sin dependencias, sin ruta crítica y sin días laborables, cada cambio obliga a recalcular a mano. Para un plan de veinte tareas eso se aguanta; para sesenta, no.</p>
+        <p>La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: importas el CSV que ya tienes en Sheets, enlazas las dependencias y exportas cuando lo necesites.</p>`],
+    ],
+    callout: 'Si tu plan va a cambiar más de una vez, elige el método por el coste de mantenerlo, no por lo rápido que es montarlo. La función Cronograma se hace en dos minutos; un gráfico de barras apiladas con veinte tareas se rehace en veinte cada vez que se mueve una fecha.',
+    faq: [
+      ['¿Google Sheets puede hacer diagramas de Gantt?', 'Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla.'],
+      ['¿La función Cronograma admite dependencias?', 'No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica.'],
+      ['¿Puedo pasar mi hoja a una herramienta de Gantt?', 'Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin.'],
+    ],
+    related: [
+      ['gantt-chart-in-excel', 'Cómo hacerlo en Excel'],
+      ['gantt-chart-in-powerpoint', 'Cómo hacerlo en PowerPoint'],
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+    ],
+  },
+
+  'gantt-chart-in-powerpoint': {
+    h1: 'Cómo hacer un diagrama de Gantt en PowerPoint',
+    metaTitle: 'Cómo hacer un diagrama de Gantt en PowerPoint',
+    metaDesc: 'Dos formas de crear un diagrama de Gantt en PowerPoint —gráfico de barras apiladas o formas manuales— y cómo prepararlo para presentar.',
+    date: '2026-07-19',
+    lead: 'En PowerPoint un <strong>diagrama de Gantt</strong> casi nunca es una herramienta de planificación: es una diapositiva. Eso cambia las prioridades — importa que se lea desde el fondo de la sala más que que sea exacto al día.',
+    figIntro: 'Dos caminos según cuánto control visual necesites:',
+    sections: [
+      ['Dos formas de construirlo',
+        `<p>La primera es insertar un gráfico de barras apiladas y ocultar la serie de inicio, igual que en Excel. La segunda es dibujar rectángulos a mano. La primera mantiene los datos; la segunda da control total sobre el aspecto.</p>
+        <p>Para una diapositiva de dirección, la segunda suele ganar. Para algo que vas a actualizar cada mes, la primera.</p>`],
+      ['Método 1: gráfico de barras apiladas, paso a paso',
+        `<p>Insertar → Gráfico → Barra apilada. En la hoja de datos que abre PowerPoint, pon tarea, inicio y duración. Deja la serie de inicio sin relleno, invierte el orden de las categorías y ajusta el eje de fechas.</p>`],
+      ['Método 2: formas o SmartArt',
+        `<p>Dibuja un rectángulo por tarea sobre una rejilla de meses. Es más trabajo la primera vez y mucho más rápido de retocar después, y permite cosas que el gráfico no da: barras redondeadas, iconos, anotaciones, colores por equipo.</p>
+        <p>Alinea con las guías inteligentes y agrupa cada fase para poder moverla entera.</p>`],
+      ['Plantilla de PowerPoint gratuita',
+        `<p>Si prefieres no empezar de cero, cada plantilla del catálogo incluye una versión .pptx con las fases ya dibujadas y editables como formas nativas.</p>`],
+      ['La vía rápida: diseñar online y exportar a PowerPoint',
+        `<p>La alternativa que ahorra más tiempo es montar el plan donde las dependencias se recalculan solas y exportar la diapositiva al final. Desde <a href="/es/app.html">el editor</a> puedes exportar directamente a .pptx y seguir editando las formas en PowerPoint.</p>`],
+      ['Consejos para presentar',
+        `<p>Menos filas de las que crees: ocho o diez barras es lo máximo que se lee de un vistazo, así que agrupa por fases. Usa un solo color de acento para lo crítico y grises para el resto. Marca los hitos como rombos con la fecha escrita al lado — es lo que la audiencia va a fotografiar.</p>`],
+    ],
+    callout: 'Una diapositiva de Gantt no es tu plan, es un resumen de tu plan. Si estás intentando meter cuarenta tareas en una lámina, el problema no es PowerPoint: la audiencia necesita las fases y los hitos, y el detalle vive en otro documento.',
+    faq: [
+      ['¿PowerPoint tiene plantillas de Gantt?', 'Incluye plantillas de línea de tiempo, aunque varían según la versión. También puedes descargar una plantilla .pptx ya montada con fases editables.'],
+      ['¿Qué método es mejor?', 'Formas si la diapositiva es para presentar y quieres control visual; gráfico de barras apiladas si vas a actualizar los datos periódicamente.'],
+      ['¿Puedo exportar mi plan a PowerPoint?', 'Sí. Desde el <a href="/es/app.html">editor gratuito</a> se exporta a .pptx, y las barras llegan como formas editables, no como una imagen.'],
+    ],
+    related: [
+      ['gantt-chart-in-excel', 'Cómo hacerlo en Excel'],
+      ['gantt-chart-examples', 'Ejemplos por tipo de proyecto'],
+      ['how-to-make-a-gantt-chart', 'Cómo hacer un diagrama de Gantt paso a paso'],
+    ],
+  },
+
+  'best-free-gantt-chart-software': {
+    h1: 'Los mejores programas gratuitos de diagramas de Gantt (2026)',
+    metaTitle: 'Diagramas de Gantt gratis: 9 programas (2026)',
+    metaDesc: 'Comparativa honesta de nueve herramientas de Gantt: qué es gratis de verdad, qué es freemium, qué exige registro y cuáles incluyen ruta crítica.',
+    date: '2026-07-19',
+    lead: '«Gratis» es la palabra más maltratada del software de proyectos. Muchas herramientas que aparecen buscando «diagrama de Gantt gratis» son en realidad freemium o una prueba de 14 días. Esta es una comparación honesta de nueve opciones: qué es gratuito de verdad, qué exige registro y cuáles incluyen exportación y ruta crítica. Nosotros desarrollamos una de estas herramientas, así que lo señalamos con claridad y hemos procurado describir el resto con exactitud.',
+    figIntro: 'Tres modelos de negocio que se anuncian igual y funcionan de forma muy distinta:',
+    sections: [
+      ['Qué significa «gratis» realmente',
+        `<p>Antes de comparar conviene separar tres modelos que se presentan todos como gratuitos:</p>
+        <p><strong>Gratuito.</strong> Sin coste, sin caducidad y sin funciones retenidas. Aquí entran las aplicaciones de código abierto y las herramientas web realmente libres.</p>
+        <p><strong>Freemium.</strong> Un plan limitado gratuito para siempre, pero con un tope —proyectos, tareas, colaboradores— o con funciones clave de pago, como la exportación o la ruta crítica. Sirve para trabajo real solo si te mantienes dentro de los límites.</p>
+        <p><strong>Prueba gratuita.</strong> Acceso completo durante un plazo fijo, normalmente de 14 a 30 días, tras el cual hay que pagar. Útil para evaluar, no como solución permanente.</p>
+        <p>Los tres modelos son legítimos. El problema aparece solo cuando una prueba o un plan muy limitado se presenta simplemente como «gratis».</p>`],
+      ['Comparativa rápida',
+        `<p>Los límites de los planes cambian con el tiempo, así que trata estas cifras como orientativas y confírmalas en la página de precios de cada fabricante.</p>
+        <p><strong>gantts.app</strong> — totalmente gratuito, tareas y proyectos ilimitados, sin registro. Exporta a PDF, PNG, Excel y PowerPoint. Ruta crítica incluida y gratuita. <em>(Es nuestra herramienta.)</em></p>
+        <p><strong>GanttProject</strong> — gratuito y de código abierto, de escritorio. No requiere cuenta, solo descarga. Exporta a PDF, PNG y CSV, con ruta crítica.</p>
+        <p><strong>OnlineGantt y otras herramientas web pequeñas</strong> — funciones básicas gratuitas, registro variable y a menudo innecesario, exportación a imagen o PDF. La ruta crítica depende de la herramienta.</p>
+        <p><strong>TeamGantt (plan gratuito)</strong> — aproximadamente un proyecto, unas 60 tareas y un equipo reducido. Requiere registro y la exportación es limitada en el plan gratuito; la ruta crítica es de pago.</p>
+        <p><strong>GanttPRO</strong> — prueba gratuita y después de pago, con registro. Exportación y ruta crítica en los planes de pago.</p>
+        <p><strong>Instagantt</strong> — freemium con capa gratuita limitada y registro obligatorio. Exportación en planes superiores; ruta crítica de pago.</p>
+        <p><strong>Canva</strong> — capa gratuita de diseño con registro. Exporta a PNG y PDF, pero el resultado es estático: no hay ruta crítica porque no hay motor de planificación.</p>
+        <p><strong>Microsoft Project</strong> — de pago, sin plan gratuito. Exportación y ruta crítica completas.</p>`],
+      ['Herramientas gratuitas que no piden registro',
+        `<p>Es una categoría corta. La mayoría de las opciones web exigen cuenta antes de dejarte exportar, que es justo el momento en el que necesitas el archivo. Las que no la piden son las herramientas de escritorio de código abierto y unas pocas aplicaciones web que funcionan íntegramente en el navegador.</p>
+        <p>Si el requisito es «hoy, sin dar mi correo, y con el archivo en la mano», ese es el filtro que más reduce la lista.</p>`],
+      ['Cómo elegir',
+        `<p>Responde tres preguntas y la elección se resuelve sola. ¿Necesitas <em>dependencias y ruta crítica</em>, o solo un dibujo? ¿Necesitas <em>exportar</em> a un formato concreto para un cliente o un comité? ¿Vas a <em>colaborar en tiempo real</em>, o el plan lo mantiene una persona?</p>
+        <p>La colaboración en vivo es lo único de esta lista que obliga de verdad a un servicio de pago, porque requiere servidores y cuentas. Todo lo demás —dependencias, ruta crítica, línea base, exportación— existe gratis si sabes dónde mirar.</p>`],
+    ],
+    callout: 'Antes de invertir horas en una herramienta, comprueba dónde está el muro. Suele estar en la exportación: puedes construir el plan entero y descubrir al final que descargar el PDF exige una suscripción. Prueba a exportar en los primeros cinco minutos, no en los últimos.',
+    faq: [
+      ['¿Cuál es el mejor programa gratuito de diagramas de Gantt?', 'Depende de si necesitas escritorio o navegador. GanttProject es la opción de escritorio de código abierto más sólida; entre las web, busca las que no exijan cuenta y permitan exportar sin pagar.'],
+      ['¿Los planes gratuitos incluyen la ruta crítica?', 'Muchos no. Es una de las funciones que más se reserva a los planes de pago, junto con la exportación y las líneas base. Conviene confirmarlo antes de empezar.'],
+      ['¿Puedo usar una herramienta gratuita para trabajo profesional?', 'Sí, siempre que la exportación no esté limitada y el plan no tenga topes de tareas. Lo que rara vez es gratuito es la colaboración en tiempo real.'],
+      ['¿gantts.app es gratis de verdad?', 'Sí: sin cuenta, sin límite de tareas ni proyectos, con ruta crítica y exportación a PDF, PNG, Excel y PowerPoint. El plan se guarda en tu navegador y no se sube a ningún servidor.'],
+    ],
+    related: [
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+      ['gantt-chart-in-excel', 'Cómo hacerlo en Excel'],
+      ['how-to-make-a-gantt-chart', 'Cómo hacer un diagrama de Gantt paso a paso'],
+    ],
+  },
+
+  'gantt-baseline-variance': {
+    h1: 'Línea base y desviación: medir el retraso en un diagrama de Gantt',
+    metaTitle: 'Línea base y desviación en un diagrama de Gantt',
+    metaDesc: 'Qué es una línea base, cuándo fijarla, cómo leer la desviación de inicio y de fin, y cuándo tiene sentido volver a establecerla.',
+    date: '2026-07-19',
+    lead: 'Una <strong>línea base</strong> es una foto congelada del plan aprobado. Sin ella, «vamos con retraso» es una impresión; con ella, es una cifra: esta tarea empezó seis días tarde y terminará cuatro tarde. Esa diferencia es lo que convierte el seguimiento en una conversación con datos.',
+    figIntro: 'Plan congelado arriba, realidad debajo, y la diferencia entre ambos:',
+    sections: [
+      ['Qué es exactamente una línea base',
+        `<p>Es una copia de las fechas —y opcionalmente del avance— en el momento en que el plan se aprueba. No cambia cuando cambias el plan: precisamente por eso sirve de referencia. Todo lo que ocurra después se mide contra ella.</p>
+        <p>Sin línea base, cada vez que arrastras una barra el plan «siempre ha sido así». Es el equivalente a borrar el punto de partida.</p>`],
+      ['Cuándo fijarla, y cuándo no',
+        `<p>Fíjala cuando el plan esté acordado y no antes: una línea base sobre un borrador solo genera desviaciones falsas. En la práctica, el momento suele ser el cierre del diseño, la firma del contrato o la concesión del permiso — el punto en el que las estimaciones dejan de ser conjeturas.</p>
+        <p>No la fijes mientras el alcance siga en discusión. Estarás midiendo contra una hipótesis.</p>`],
+      ['Leer la desviación de inicio y de fin',
+        `<p>La desviación de inicio dice si la tarea arrancó cuando debía; la de fin, si terminó cuando debía. No siempre coinciden, y la combinación es informativa: empezar tarde y terminar a tiempo significa que se recuperó; empezar a tiempo y terminar tarde significa que la estimación era mala.</p>
+        <p>Un signo positivo indica retraso respecto a la línea base; uno negativo, adelanto.</p>`],
+      ['La desviación que importa es la de la ruta crítica',
+        `<p>Una tarea con quince días de holgura que se retrasa tres días no ha hecho nada al proyecto. Una tarea crítica que se retrasa un día ha retrasado la entrega un día. Mirar la lista de desviaciones sin cruzarla con la ruta crítica lleva a gastar energía en el sitio equivocado.</p>`],
+      ['Cuándo volver a fijar la línea base',
+        `<p>Cuando el plan original deja de ser una referencia útil: un cambio de alcance aprobado, una parada larga, una replanificación formal. Rehacerla porque vamos con retraso es tentador y destruye la única evidencia de que hubo retraso.</p>
+        <p>Si vuelves a fijarla, deja constancia de por qué y de cuándo. Una línea base sin historia es tan poco fiable como no tenerla.</p>`],
+      ['Cómo se hace en gantts.app',
+        `<p>Desde el menú de línea base puedes fijarla con el plan actual, mostrar las columnas de línea base y desviación, o borrarla. Las barras de línea base se dibujan bajo las reales, así que el desfase se ve sin leer números. <a href="/es/app.html">Abrir el editor</a>.</p>`],
+    ],
+    callout: 'Volver a fijar la línea base cada vez que el plan se desvía equivale a no tener línea base. El objetivo no es que la desviación sea cero: es saber cuánta hay, dónde está y si toca la ruta crítica.',
+    faq: [
+      ['¿Qué diferencia hay entre línea base y plan actual?', 'La línea base son las fechas aprobadas y congeladas; el plan actual son las fechas vigentes, con los cambios ya aplicados. La desviación es la resta entre ambas.'],
+      ['¿Cuándo debo fijar la línea base?', 'Cuando el plan esté aprobado y el alcance estable — típicamente al cierre del diseño, la firma del contrato o la concesión del permiso.'],
+      ['¿Puedo tener varias líneas base?', 'En herramientas de gestión formal, sí. En gantts.app se mantiene una, que puedes actualizar o borrar; lo importante es registrar por qué cambió.'],
+      ['¿Qué es una desviación aceptable?', 'Depende del proyecto, pero la pregunta útil no es el tamaño sino la ubicación: cualquier desviación sobre la ruta crítica se traslada directamente a la fecha de entrega.'],
+    ],
+    related: [
+      ['critical-path-method', 'Cómo se calcula la ruta crítica'],
+      ['gantt-chart-mistakes', 'Errores habituales al planificar'],
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+    ],
+  },
+
+  'gantt-chart-mistakes': {
+    h1: 'Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)',
+    metaTitle: 'Nueve errores en diagramas de Gantt',
+    metaDesc: 'Exceso de detalle, falta de dependencias, estimaciones tratadas como compromisos, cero holgura, ruta crítica ignorada y otros errores frecuentes.',
+    date: '2026-07-19',
+    lead: 'Casi todos los diagramas de Gantt que fallan lo hacen por las mismas razones, y ninguna tiene que ver con la herramienta. Estos son los nueve errores que más se repiten y qué hacer en cada caso.',
+    figIntro: 'El mismo plan, antes y después de corregir lo esencial:',
+    sections: [
+      ['1. Exceso de detalle',
+        `<p>Un diagrama con doscientas filas no se mantiene: se abandona. Si una tarea dura menos de un día, probablemente pertenece a la lista de alguien, no al plan del proyecto. Agrupa en fases y despliega solo lo que estés mirando.</p>`],
+      ['2. Sin dependencias',
+        `<p>El error más caro. Sin flechas, el diagrama es una lista de fechas que hay que reajustar a mano en cada cambio, no tiene ruta crítica y no avisa de nada. Enlazar las tareas es lo que convierte el dibujo en un modelo.</p>`],
+      ['3. Tratar las estimaciones como compromisos',
+        `<p>«Dos semanas» es una estimación con incertidumbre; en cuanto entra en el gráfico se lee como una promesa. Deja explícito qué duraciones son firmes y cuáles son aproximadas, y reserva holgura donde la incertidumbre es alta.</p>`],
+      ['4. Cero holgura en todo el plan',
+        `<p>Si ninguna tarea tiene margen, todas son críticas y cualquier imprevisto mueve la entrega. Un plan sin holgura no es ambicioso: es frágil. La holgura se planifica, no se improvisa.</p>`],
+      ['5. Ignorar la ruta crítica',
+        `<p>Optimizar tareas que no están en la ruta crítica se siente productivo y no adelanta el proyecto ni un día. Antes de acelerar nada, comprueba si está en la cadena que fija la fecha de fin.</p>`],
+      ['6. Tareas sin responsable',
+        `<p>Una tarea sin nombre al lado es una tarea que nadie va a actualizar. Además, sin responsables no puedes ver que la misma persona está en cuatro tareas simultáneas en marzo — un problema invisible en las barras.</p>`],
+      ['7. Dejar que se quede obsoleto',
+        `<p>Un Gantt que no se actualiza deja de ser un plan y pasa a ser un documento histórico. Si actualizarlo cuesta demasiado, casi siempre es por el error número 1 o el número 2.</p>`],
+      ['8. Sin hitos',
+        `<p>Los hitos son lo que dirección lee y lo que impide que el plan avance fuera de secuencia. Sin ellos, no hay puntos de control y todo se convierte en una masa continua de barras.</p>`],
+      ['9. Confundir duración con esfuerzo',
+        `<p>Una tarea de diez días que ocupa a media persona sigue midiendo diez días en el calendario, pero solo cinco de trabajo. Mezclar ambas cosas produce planes que parecen razonables y equipos que no dan abasto.</p>`],
+    ],
+    callout: 'Si solo vas a corregir uno, corrige el segundo. Casi todos los demás problemas —el mantenimiento imposible, la ruta crítica inexistente, el plan obsoleto— son consecuencias de no haber enlazado las tareas.',
+    faq: [
+      ['¿Cuál es el error más común en un diagrama de Gantt?', 'No poner dependencias. Sin ellas no hay ruta crítica, nada se recalcula solo y cada cambio obliga a reajustar fechas a mano.'],
+      ['¿Cuántas tareas son demasiadas?', 'No hay una cifra exacta, pero por encima de unas sesenta filas visibles el mantenimiento suele superar al beneficio. Agrupa en fases y despliega bajo demanda.'],
+      ['¿Cómo evito que el diagrama se quede desactualizado?', 'Reduce el detalle, enlaza las dependencias para que los cambios se propaguen solos y actualiza el porcentaje completado en vez de redibujar barras.'],
+    ],
+    related: [
+      ['critical-path-method', 'Cómo se calcula la ruta crítica'],
+      ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
+      ['milestones-vs-tasks', 'Hitos y tareas: en qué se diferencian'],
+    ],
+  },
+
+  'milestones-vs-tasks': {
+    h1: 'Hitos y tareas en un diagrama de Gantt: en qué se diferencian',
+    metaTitle: 'Hitos y tareas en un diagrama de Gantt',
+    metaDesc: 'Diferencia entre hito y tarea, para qué sirven realmente los hitos, cuántos debería tener un proyecto y los errores más frecuentes.',
+    date: '2026-07-19',
+    lead: 'Una <strong>tarea</strong> ocupa tiempo; un <strong>hito</strong> marca un momento. Esa es toda la diferencia técnica, y sin embargo usar mal los hitos es una de las formas más rápidas de que un plan deje de comunicar nada.',
+    figIntro: 'Barras para el trabajo, rombos para los momentos que importan:',
+    sections: [
+      ['La diferencia en una línea',
+        `<p>Una tarea tiene duración: empieza un día y termina otro. Un hito tiene duración cero y se dibuja como un rombo. «Redactar el contrato» es una tarea; «contrato firmado» es un hito.</p>`],
+      ['Para qué sirven realmente los hitos',
+        `<p>Para tres cosas. Son <em>puntos de control</em>: momentos en los que se decide si se sigue. Son <em>lenguaje de dirección</em>: lo que un comité recuerda de tu plan son cinco fechas, no cincuenta barras. Y son <em>barreras de secuencia</em>: enlazando el trabajo posterior a un hito, evitas que avance antes de que se cumpla la condición.</p>`],
+      ['¿Cuántos debería tener un proyecto?',
+        `<p>Los suficientes para contar la historia y no tantos como para diluirla. Entre cinco y diez para un proyecto de varios meses suele funcionar. Si tienes un hito por semana, has convertido el plan en un calendario y los hitos ya no señalan nada.</p>`],
+      ['Errores frecuentes',
+        `<p><strong>Hitos que son tareas disfrazadas.</strong> Si tiene duración, no es un hito. «Fase de pruebas» no es un hito; «pruebas aprobadas» sí.</p>
+        <p><strong>Hitos sin dependencias.</strong> Un rombo suelto en el calendario es decorativo. Su valor está en que el trabajo posterior dependa de él.</p>
+        <p><strong>Hitos que nadie decide.</strong> Si al llegar la fecha no ocurre ninguna aprobación ni ninguna decisión, probablemente no era un hito.</p>`],
+      ['Barras resumen y jerarquía',
+        `<p>Además de tareas e hitos existe un tercer tipo: la barra resumen o fase, que agrupa a sus hijas y toma automáticamente la fecha de inicio de la primera y la de fin de la última. No se edita directamente — se mueve sola cuando se mueve su contenido.</p>
+        <p>Esa jerarquía de tres niveles (fase, tarea, hito) es la que hace legible un plan grande.</p>`],
+    ],
+    callout: 'Un hito no es una tarea corta: es una tarea de duración cero que representa una decisión o una condición cumplida. Si al llegar la fecha nadie tiene que aprobar, firmar o verificar nada, probablemente estás marcando un recordatorio, no un hito.',
+    faq: [
+      ['¿Qué es un hito en un diagrama de Gantt?', 'Un punto de duración cero que marca un momento significativo: una aprobación, una entrega o el inicio de una fase. Se representa con un rombo en lugar de una barra.'],
+      ['¿Cuántos hitos debe tener un proyecto?', 'Entre cinco y diez para un proyecto de varios meses. Demasiados diluyen su función de punto de control.'],
+      ['¿Puede un hito tener duración?', 'Por definición no. Si necesitas representar un periodo —una ventana de revisión, por ejemplo— eso es una tarea, aunque termine en un hito.'],
+      ['¿Cuál es la diferencia entre un hito y una fase?', 'Una fase es una barra resumen que agrupa tareas y toma sus fechas automáticamente; un hito es un instante sin duración. Suelen usarse juntos: la fase termina y el hito confirma que se cerró.'],
+    ],
+    related: [
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+      ['gantt-chart-mistakes', 'Errores habituales al planificar'],
+      ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
+    ],
+  },
 };
 
 /* Chrome for the guide pages themselves. Kept beside the copy so a new
