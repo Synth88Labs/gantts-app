@@ -427,6 +427,8 @@ const T = {
    consumer (downloads, thumbnails, pages, hub) sees one catalogue. */
 const B = require('./new-templates-b.js').T;
 const C = require('./new-templates-c.js').T;
-Object.assign(T, B, C);
+const D = require('./new-templates-d.js').T;
+const E = require('./new-templates-e.js').T;
+Object.assign(T, B, C, D, E);
 
 module.exports = { T, SLUGS: Object.keys(T) };

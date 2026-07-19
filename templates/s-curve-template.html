@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S-Curve Template: Planned vs Actual | gantts.app</title>
+  <meta name="description" content="Free S-curve template for planned vs actual progress. Load it, set a baseline and read PV, EV, SV and SPI from the built-in S-curve panel." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/templates/s-curve-template.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:title" content="S-Curve Template: Planned vs Actual" />
+  <meta property="og:description" content="Free S-curve template for planned vs actual progress. Load it, set a baseline and read PV, EV, SV and SPI from the built-in S-curve panel." />
+  <meta property="og:url" content="https://gantts.app/templates/s-curve-template.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="S-Curve Template: Planned vs Actual" />
+  <meta name="twitter:description" content="Free S-curve template for planned vs actual progress. Load it, set a baseline and read PV, EV, SV and SPI from the built-in S-curve panel." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Templates","item":"https://gantts.app/templates.html"},{"@type":"ListItem","position":3,"name":"S-Curve Template (Planned vs Actual)","item":"https://gantts.app/templates/s-curve-template.html"}]},{"@type":"HowTo","name":"How to use the s-curve progress tracking template","description":"Free S-curve template for planned vs actual progress. Load it, set a baseline and read PV, EV, SV and SPI from the built-in S-curve panel.","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"name":"Set a baseline as soon as the plan is agreed — without one there is no","text":"Set a baseline as soon as the plan is agreed — without one there is no planned curve, and the S-curve panel has nothing to compare against."},{"@type":"HowToStep","position":2,"name":"Keep percent-complete honest and current; the actual curve is only as ","text":"Keep percent-complete honest and current; the actual curve is only as good as the last update."},{"@type":"HowToStep","position":3,"name":"Weight the middle phases heavily. If your durations are evenly spread ","text":"Weight the middle phases heavily. If your durations are evenly spread the curve comes out as a straight line, which usually means the plan is not detailed enough."},{"@type":"HowToStep","position":4,"name":"Add cost or man-hour values per task if you want a cost-loaded curve r","text":"Add cost or man-hour values per task if you want a cost-loaded curve rather than a duration-weighted one."},{"@type":"HowToStep","position":5,"name":"Re-baseline only on a formal change. Re-baselining to hide variance is","text":"Re-baseline only on a formal change. Re-baselining to hide variance is how a project loses the only warning system it had."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an S-curve in project management?","acceptedAnswer":{"@type":"Answer","text":"A plot of cumulative planned progress against cumulative actual progress over time. It is S-shaped because work ramps up slowly, peaks in the middle and tapers at the end. Our S-curve guide explains how to build and read one."}},{"@type":"Question","name":"Does gantts.app draw the S-curve for me?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set a baseline, then open the 📈 S-curve panel in the free editor. It computes planned value, earned value, schedule variance and the schedule performance index from your tasks and updates as you change percent-complete."}},{"@type":"Question","name":"What are PV, EV, SV and SPI?","acceptedAnswer":{"@type":"Answer","text":"Planned value is the work you said you would have done by now, earned value is what you actually have done, schedule variance is EV minus PV, and SPI is EV divided by PV. Above 1.0 is ahead of plan, below 1.0 is behind."}},{"@type":"Question","name":"Why does my curve look like a straight line?","acceptedAnswer":{"@type":"Answer","text":"Usually because every task has a similar duration and weight, so progress accrues evenly. Break the middle phases into more detailed tasks, or load the tasks with cost or man-hours, and the S-shape appears."}},{"@type":"Question","name":"Do I need a baseline to use this?","acceptedAnswer":{"@type":"Answer","text":"Yes for planned versus actual. Without a baseline you can still see cumulative actual progress, but there is nothing to compare it against and no SPI."}},{"@type":"Question","name":"Is the S-curve template free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="gantts.app home">
+        <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/app.html">Gantt Maker</a>
+        <a href="/templates.html">Templates</a>
+        <a href="/blog/">Guides</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+          <option value="/templates/s-curve-template.html" selected>English</option>
+          <option value="/es/">Español</option>
+          <option value="/fr/">Français</option>
+          <option value="/de/">Deutsch</option>
+          <option value="/pt/">Português</option>
+          <option value="/zh/">简体中文</option>
+        </select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/app.html">Open the app</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Masthead at the full site width, preview beside the copy. The page
+       used to run everything down a 724px column while the nav and CTA sat
+       at 1200px, so it stepped in and back out; and the 480px preview was
+       upscaled to fill a column still too narrow for it. Prose stays
+       narrow below — 1200px of running text is ~113 characters. -->
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/">Home</a> › <a href="/templates.html">Templates</a> › S-Curve Template (Planned vs Actual)</div>
+        <h1>S-Curve Template (Planned vs Actual)</h1>
+        <p class="lead">A free <strong>S-curve template</strong> — a project shaped so the planned-versus-actual curve actually means something, with a slow start, a heavy middle and a long tail. Download it for a progress report, or open it in the <a href="/app.html">free editor</a>, set a baseline and open the <strong>📈 S-curve</strong> panel to read planned value, earned value, schedule variance and SPI straight off your own dates and percent-complete.</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/s-curve-template.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/s-curve-template.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/s-curve-template.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/app.html?csv=s-curve-template">✎ Edit online free</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/s-curve-template.svg" alt="Preview of the s-curve progress tracking template showing phases across a timeline" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">What's included</h2>
+      <p>An S-curve is just cumulative progress plotted over time. It is S-shaped because projects ramp slowly, run hot in the middle and taper through commissioning. The template gives you a schedule with that shape built in:</p>
+      <ul>
+        <li><strong>Initiation &amp; baseline</strong> — Charter, scope, budget and the baseline itself — the flat foot of the curve, where a lot of calendar passes and very little value is earned. <em>Milestone: baseline set.</em></li>
+        <li><strong>Design &amp; engineering</strong> — Concept through detailed design. Progress starts to accumulate but spend still outruns delivered value.</li>
+        <li><strong>Procurement</strong> — Orders placed, long-lead items tracked, deliveries received. Commitment rises sharply here even though physical progress does not.</li>
+        <li><strong>Construction &amp; build</strong> — The steep centre of the curve, where most of the earned value is generated and where SPI is worth watching weekly.</li>
+        <li><strong>Testing &amp; commissioning</strong> — The taper. Remaining work is small in value but stubborn in duration, which is why curves flatten before they finish. <em>Milestone: commissioning complete.</em></li>
+        <li><strong>Handover &amp; close-out</strong> — Documentation, snagging, final account and lessons learned — the last few percent that always takes longer than it should.</li>
+      </ul>
+
+      <div class="callout">A single curve tells you nothing. The value is in the gap between the planned curve and the actual one: if actual sits below planned, you are behind, and the vertical distance is your schedule variance in value terms while the horizontal distance is roughly your delay in time. Our <a href="/blog/s-curve-project-management.html">S-curve guide</a> works through reading PV, EV, SV and SPI off the chart.</div>
+
+      <h2 id="customize">How to customize it</h2>
+      <ol>
+        <li>Set a baseline as soon as the plan is agreed — without one there is no planned curve, and the S-curve panel has nothing to compare against.</li>
+        <li>Keep percent-complete honest and current; the actual curve is only as good as the last update.</li>
+        <li>Weight the middle phases heavily. If your durations are evenly spread the curve comes out as a straight line, which usually means the plan is not detailed enough.</li>
+        <li>Add cost or man-hour values per task if you want a cost-loaded curve rather than a duration-weighted one.</li>
+        <li>Re-baseline only on a formal change. Re-baselining to hide variance is how a project loses the only warning system it had.</li>
+      </ol>
+
+      <h2 id="tips">Scheduling tips</h2>
+      <ul>
+        <li><strong>Read SPI, not the shape.</strong> An SPI below 1.0 means you have earned less value than planned by today. The trend over four or five updates matters far more than any single reading.</li>
+        <li><strong>Expect a slow start.</strong> A curve that rises steeply from day one is almost always measuring spend or effort rather than delivered progress.</li>
+        <li><strong>Watch the flattening point.</strong> Curves that flatten early at 85–90 percent are the classic signature of a project full of nearly-finished work.</li>
+        <li><strong>Update on a fixed cadence.</strong> Weekly or fortnightly, always on the same day — irregular updates make the curve unreadable.</li>
+        <li><strong>Pair the curve with the Gantt.</strong> The curve tells you that you are behind; the bar chart tells you which tasks did it. Keep both in the report.</li>
+      </ul>
+
+      <h2 id="related">Related templates</h2>
+      <ul>
+        <li><a href="/templates/project-management.html">Project Management Gantt Chart Template</a></li>
+        <li><a href="/templates/construction.html">Free Construction Gantt Chart Template</a></li>
+        <li><a href="/templates/annual.html">Free Yearly (12-Month) Gantt Chart Template</a></li>
+        <li><a href="/templates.html">Browse all Gantt chart templates</a></li>
+      </ul>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq">
+        <details open><summary>What is an S-curve in project management?</summary><p>A plot of cumulative planned progress against cumulative actual progress over time. It is S-shaped because work ramps up slowly, peaks in the middle and tapers at the end. Our <a href="/blog/s-curve-project-management.html">S-curve guide</a> explains how to build and read one.</p></details>
+        <details><summary>Does gantts.app draw the S-curve for me?</summary><p>Yes. Set a baseline, then open the <strong>📈 S-curve</strong> panel in the <a href="/app.html">free editor</a>. It computes planned value, earned value, schedule variance and the schedule performance index from your tasks and updates as you change percent-complete.</p></details>
+        <details><summary>What are PV, EV, SV and SPI?</summary><p>Planned value is the work you said you would have done by now, earned value is what you actually have done, schedule variance is EV minus PV, and SPI is EV divided by PV. Above 1.0 is ahead of plan, below 1.0 is behind.</p></details>
+        <details><summary>Why does my curve look like a straight line?</summary><p>Usually because every task has a similar duration and weight, so progress accrues evenly. Break the middle phases into more detailed tasks, or load the tasks with cost or man-hours, and the S-shape appears.</p></details>
+        <details><summary>Do I need a baseline to use this?</summary><p>Yes for planned versus actual. Without a baseline you can still see cumulative actual progress, but there is nothing to compare it against and no SPI.</p></details>
+        <details><summary>Is the S-curve template free?</summary><p>Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Plan it online — free</h2>
+      <p>Open this template in the editor, drag the bars to fit your dates, and export to PDF, Excel or PowerPoint. No account, no watermark.</p>
+      <a class="btn btn-white btn-lg" href="/app.html?csv=s-curve-template">Open the free editor</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/" aria-label="gantts.app home">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>The free Gantt chart maker that runs in your browser. No account, no upload — your plan stays on your machine.</p>
+          <a class="footer-cta" href="/app.html">Open the Gantt maker →</a>
+          <p class="footer-byline">A project by <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Templates</h4>
+          <a href="/templates.html">All templates</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construction</a>
+          <a href="/templates/project-management.html">Project management</a>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/blog/">All guides</a>
+          <a href="/blog/what-is-a-gantt-chart.html">What is a Gantt chart?</a>
+          <a href="/blog/critical-path-method.html">Critical path method</a>
+          <a href="/blog/gantt-chart-dependencies.html">Dependency types</a>
+          <a href="/blog/gantt-chart-mistakes.html">Common mistakes</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/terms.html">Terms of use</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/accessibility.html">Accessibility</a>
+          <a href="https://github.com/Synth88Labs/gantts-app" class="footer-ext">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Free forever, no sign up.</span>
+        <span>Built as a static site — nothing you plan leaves your browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>
