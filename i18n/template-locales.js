@@ -15,9 +15,10 @@
    ============================================================ */
 const es = require('./templates-es.js');
 const de = require('./templates-de.js');
+const fr = require('./templates-fr.js');
 
-const BY_LOCALE = { es: es.T, de: de.T };
-const UI = { es: es.UI, de: de.UI };
+const BY_LOCALE = { es: es.T, de: de.T, fr: fr.T };
+const UI = { es: es.UI, de: de.UI, fr: fr.UI };
 
 /** Locale codes that have a real translation of this template. */
 function localesFor(slug) {
