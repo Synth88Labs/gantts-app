@@ -35,7 +35,7 @@
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
-    "check": "npm run check:resources && npm run check:calendar && npm run check:assets && npm run check:urls && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap && npm run check:design",
+    "check": "npm run check:resources && npm run check:calendar && npm run check:msproject && npm run check:assets && npm run check:urls && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap && npm run check:design",
     "deploy:bundle": "npm run gen:templates --silent && node scripts/build-deploy.js",
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
@@ -53,7 +53,8 @@
     "check:design": "node scripts/check-design-parity.js",
     "fix:switchers": "node scripts/fix-lang-switcher.js",
     "check:urls": "node scripts/check-clean-urls.js",
-    "check:assets": "node scripts/check-asset-version.js"
+    "check:assets": "node scripts/check-asset-version.js",
+    "check:msproject": "node test/msproject.test.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

@@ -15,6 +15,7 @@
           case 'pptx': return this.pptx();
           case 'csv': return this.csv();
           case 'json': return this.json();
+          case 'mspdi': return this.mspdi();
           case 'print': return this.print();
           case 'link': return this.link();
         }
@@ -171,6 +172,16 @@
     save() {
       U.download(this.safeName('gantts'), JSON.stringify(Model.project), 'application/json');
       App.toast('Saved to ' + this.safeName('gantts') + ' — reopen it any time with “Open”');
+    },
+
+    /* MS Project XML. Not .mpp: that format is undocumented and every
+       browser route to it uploads the user's file to a third-party
+       service, which this app does not do. MSPDI is Microsoft's own
+       published schema and opens natively via File > Open. */
+    mspdi() {
+      if (!window.MSProject) throw new Error('MS Project export is unavailable.');
+      U.download(this.safeName('xml'), MSProject.export(Model.project), 'application/xml');
+      App.toast('MS Project XML downloaded — open it in MS Project with File › Open');
     },
 
     json() {

@@ -196,10 +196,30 @@
         try {
           const name = file.name.toLowerCase();
           if (name.endsWith('.json') || name.endsWith('.gantts') || name.endsWith('.gantt')) this.importJSON(text);
+          else if (name.endsWith('.xml')) this.importMSProject(text);
           else this.importCSV(text);
         } catch (err) { App.toast('Import failed: ' + err.message); }
       };
       reader.readAsText(file);
+    },
+
+    /* MS Project XML (MSPDI). Anything the importer could not honour
+       comes back as warnings rather than being dropped in silence — a
+       plan that lost a dependency looks fine and schedules wrongly. */
+    importMSProject(text) {
+      if (!window.MSProject) throw new Error('MS Project import is unavailable.');
+      const res = MSProject.import(text);
+      Model.loadProjectData({
+        name: res.name,
+        tasks: res.tasks,
+        settings: Object.assign({}, Model.project.settings),
+      });
+      if (res.warnings.length) {
+        console.warn('MS Project import warnings:', res.warnings);
+        App.toast(`Imported with ${res.warnings.length} warning${res.warnings.length > 1 ? 's' : ''} — see the console`);
+      } else {
+        App.toast(`Imported ${res.tasks.length} tasks from MS Project`);
+      }
     },
 
     importJSON(text) {
