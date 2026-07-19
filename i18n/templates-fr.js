@@ -2249,6 +2249,760 @@ const T = {
       ["simple", "Modèle simple"]
     ]
   },
+
+  '3-week-lookahead-template': {
+    card: "Planning glissant à trois semaines : travaux, contraintes et inspections.",
+    h1: "Planning glissant à 3 semaines",
+    metaTitle: "Planning à 3 semaines — modèle",
+    metaDesc: "Modèle gratuit de planning glissant à 3 semaines : corps d’état, inspections, contraintes et délais d’approvisionnement, semaine par semaine.",
+    lead: 'Un <strong>planning glissant à 3 semaines</strong> présenté comme se tient réellement la réunion de chantier du lundi : cette semaine, la suivante, celle d’après, avec les corps d’état, les inspections, les contraintes et les articles à long délai visibles sur chacune. Téléchargez-le pour l’afficher à la base vie, ou ouvrez-le dans l’<a href="/app.html">éditeur gratuit</a> et utilisez <strong>Vue ▸ Semaines à venir</strong> pour extraire la fenêtre directement de votre planning directeur, plutôt que de la ressaisir chaque semaine dans un tableur.',
+    intro: "Un planning glissant n’est pas un plan séparé : c’est une tranche de trois semaines du planning directeur, assortie de ses contraintes et rafraîchie chaque semaine. Le modèle est organisé ainsi :",
+    phases: [
+      [
+        "Semaine 1 — travaux engagés",
+        "Travaux entièrement libérés de contraintes, exécutés cette semaine. Équipes, matériaux et accès sont confirmés. <em>Jalon : inspection avant coulage.</em>"
+      ],
+      [
+        "Semaine 2 — travaux prêts",
+        "Travaux dont les contraintes sont levées mais qui n’ont pas démarré. C’est le matelas qui occupe les équipes quand la semaine 1 dérape."
+      ],
+      [
+        "Semaine 3 — travaux prévus",
+        "Travaux encore en cours de préparation. Toute ligne portant une contrainte ouverte est la raison d’être de la réunion."
+      ],
+      [
+        "Contraintes et délais d’approvisionnement",
+        "Plans d’exécution à viser, validations, livraisons et autorisations qui conditionnent les travaux qu’ils bloquent. Ils courent sur les trois semaines au lieu d’être noyés dans une seule."
+      ],
+      [
+        "Inspections et points d’arrêt",
+        "Visas de tiers qui arrêtent les travaux s’ils sont manqués — ferraillage, réseaux enterrés, structure. Chacun est un jalon, pas une tâche."
+      ],
+      [
+        "Actualisation hebdomadaire",
+        "Le planning avance chaque lundi : on saisit l’avancement, la fenêtre glisse d’une semaine, le registre des contraintes est repassé en revue."
+      ]
+    ],
+    callout: 'L’objet du planning glissant est la levée des contraintes, pas le reporting. Si une tâche de la semaine 3 attend un plan visé ou une livraison, c’est la seule chose qui mérite d’être discutée le lundi — le reste est déjà prêt. Notre <a href="/fr/blog/3-week-lookahead-schedule.html">guide du planning glissant à 3 semaines</a> explique comment mener la réunion à partir du diagramme.',
+    customize: [
+      "Caler la fenêtre sur votre lundi de départ : la vue Semaines à venir s’ancre au lundi et accepte une fenêtre de 1 à 8 semaines.",
+      "Une ligne par équipe ou par sous-traitant plutôt que par activité si le chantier est organisé par corps d’état : chaque chef d’équipe doit retrouver sa ligne.",
+      "Garder les contraintes sous forme de vraies barres avec de vraies durées. Un visa affiché en durée nulle passe inaperçu.",
+      "Marquer chaque inspection comme jalon pour qu’aucune tâche aval ne soit planifiée à travers un point d’arrêt.",
+      "Faire glisser l’ensemble d’une semaine chaque lundi plutôt que de le reconstruire : le planning directeur est la source, le glissant n’en est qu’une vue."
+    ],
+    tips: [
+      "<strong>Générez-le, ne le ressaisissez pas.</strong> Tenu à part du planning directeur, il s’en écarte en un mois. Ouvrez le directeur dans l’éditeur et passez par <strong>Vue ▸ Semaines à venir</strong>.",
+      "<strong>La semaine 1 ne doit contenir aucune contrainte.</strong> S’il en reste, le travail n’est pas engagé : il relève de la semaine 2.",
+      "<strong>Suivez le taux de réalisation des engagements.</strong> Compter les tâches de semaine 1 réellement achevées est le chiffre le plus utile que produit un planning glissant.",
+      "<strong>Inscrivez les articles à long délai des mois à l’avance.</strong> Charpente métallique, tableaux électriques et ascenseurs ignorent votre fenêtre de trois semaines : ils doivent y apparaître à la date de livraison et être commandés bien avant.",
+      "<strong>Imprimez-le au format qu’exige le mur de la base vie.</strong> Un planning illisible à un mètre ne change le lundi de personne."
+    ],
+    faq: [
+      [
+        "Qu’est-ce qu’un planning glissant à 3 semaines ?",
+        'Un plan à court terme, extrait du planning directeur, qui montre les trois prochaines semaines de travaux avec leurs contraintes et leurs inspections. Il est rafraîchi chaque semaine, en général à la réunion de coordination du lundi. Voir notre <a href="/fr/blog/3-week-lookahead-schedule.html">guide du planning glissant</a>.'
+      ],
+      [
+        "gantts.app peut-il générer la fenêtre depuis mon planning ?",
+        'Oui. Ouvrez votre planning dans l’<a href="/app.html">éditeur gratuit</a> et choisissez <strong>Vue ▸ Semaines à venir</strong>. La vue s’ancre au lundi et accepte une fenêtre de une à huit semaines : le glissant reste une vue du planning vivant, pas une seconde copie.'
+      ],
+      [
+        "Pourquoi trois semaines plutôt que quatre ou six ?",
+        "Trois semaines suffisent pour lever l’essentiel des contraintes tout en gardant des dates crédibles. Les chantiers à longs délais travaillent souvent sur six semaines ; la vue en accepte huit, adaptez-la à votre cycle de préparation."
+      ],
+      [
+        "Qu’y a-t-il dans le glissant qui n’est pas dans le planning directeur ?",
+        "Les contraintes : visas, questions techniques, livraisons, autorisations, inspections et disponibilité des équipes. Le directeur porte les travaux ; le glissant porte les raisons pour lesquelles ils pourraient ne pas se faire."
+      ],
+      [
+        "Le modèle est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  's-curve-template': {
+    card: "Avancement cumulé prévu contre réel, du démarrage à la clôture.",
+    h1: "Modèle de courbe en S (prévu vs réel)",
+    metaTitle: "Courbe en S — prévu vs réel",
+    metaDesc: "Modèle gratuit de courbe en S : posez une référence et lisez la valeur planifiée, la valeur acquise, l’écart de délai et l’IPD (SPI) intégrés.",
+    lead: 'Un <strong>modèle de courbe en S</strong> gratuit — un projet dont la forme rend la comparaison prévu / réel réellement parlante : démarrage lent, milieu chargé, longue traîne finale. Téléchargez-le pour un rapport d’avancement, ou ouvrez-le dans l’<a href="/app.html">éditeur gratuit</a>, posez une référence et ouvrez le panneau <strong>📈 Courbe en S</strong> pour lire la valeur planifiée, la valeur acquise, l’écart de délai et l’IPD à partir de vos propres dates et pourcentages d’avancement.',
+    intro: "Une courbe en S n’est rien d’autre que l’avancement cumulé tracé dans le temps. Elle prend cette forme parce qu’un projet monte lentement, chauffe au milieu et s’étire en phase d’essais. Le modèle fournit un planning qui a déjà cette allure :",
+    phases: [
+      [
+        "Lancement et référence",
+        "Note de cadrage, périmètre, budget et pose de la référence — le pied plat de la courbe, où beaucoup de calendrier s’écoule pour très peu de valeur acquise. <em>Jalon : référence posée.</em>"
+      ],
+      [
+        "Conception et études",
+        "De l’avant-projet aux études d’exécution. L’avancement commence à s’accumuler mais la dépense va encore plus vite que la valeur produite."
+      ],
+      [
+        "Approvisionnements",
+        "Commandes passées, articles à long délai suivis, réceptions. L’engagement grimpe fortement ici alors que l’avancement physique, lui, ne bouge presque pas."
+      ],
+      [
+        "Travaux et réalisation",
+        "Le centre raide de la courbe, où se produit l’essentiel de la valeur acquise et où l’IPD mérite un suivi hebdomadaire."
+      ],
+      [
+        "Essais et mise en service",
+        "La traîne. Le reste à faire pèse peu en valeur mais s’étire en durée, d’où l’aplatissement des courbes avant la fin. <em>Jalon : mise en service achevée.</em>"
+      ],
+      [
+        "Réception et clôture",
+        "Dossier des ouvrages exécutés, levée des réserves, décompte final et retour d’expérience — les derniers pour-cent, toujours plus longs que prévu."
+      ]
+    ],
+    callout: 'Une courbe seule ne dit rien. Tout est dans l’écart entre la courbe prévue et la courbe réelle : si le réel passe sous le prévu, vous êtes en retard, la distance verticale étant l’écart de délai exprimé en valeur et la distance horizontale, approximativement, le retard en temps. Notre <a href="/fr/blog/s-curve-project-management.html">guide de la courbe en S</a> détaille la lecture de la valeur planifiée, de la valeur acquise, de l’écart et de l’IPD.',
+    customize: [
+      "Poser une référence dès le plan validé : sans elle, pas de courbe prévue, et le panneau Courbe en S n’a rien à comparer.",
+      "Tenir l’avancement à jour et honnête : la courbe réelle ne vaut que la dernière mise à jour.",
+      "Charger fortement les phases centrales. Des durées réparties uniformément donnent une droite, ce qui signale en général un plan trop peu détaillé.",
+      "Ajouter des montants ou des heures par tâche pour obtenir une courbe valorisée plutôt que pondérée par les durées.",
+      "Ne repositionner la référence que sur un avenant formel. Re-référencer pour masquer un écart, c’est supprimer le seul système d’alerte du projet."
+    ],
+    tips: [
+      "<strong>Lisez l’IPD, pas la silhouette.</strong> Un IPD inférieur à 1,0 signifie que vous avez acquis moins de valeur que prévu à ce jour. La tendance sur quatre ou cinq relevés compte bien plus qu’une valeur isolée.",
+      "<strong>Attendez-vous à un démarrage lent.</strong> Une courbe qui monte franchement dès le premier jour mesure presque toujours la dépense ou la charge, pas l’avancement produit.",
+      "<strong>Surveillez le point d’aplatissement.</strong> Les courbes qui s’aplatissent dès 85–90 % signent un projet plein de travaux presque terminés.",
+      "<strong>Mettez à jour à rythme fixe.</strong> Chaque semaine ou tous les quinze jours, toujours le même jour : des relevés irréguliers rendent la courbe illisible.",
+      "<strong>Associez la courbe au diagramme de Gantt.</strong> La courbe dit que vous êtes en retard ; les barres disent quelles tâches en sont responsables. Gardez les deux dans le rapport."
+    ],
+    faq: [
+      [
+        "Qu’est-ce qu’une courbe en S en gestion de projet ?",
+        'Le tracé de l’avancement cumulé prévu comparé à l’avancement cumulé réel dans le temps. Sa forme en S vient de la montée lente, du pic central et de la traîne finale. Notre <a href="/fr/blog/s-curve-project-management.html">guide de la courbe en S</a> explique comment la construire et la lire.'
+      ],
+      [
+        "gantts.app trace-t-il la courbe automatiquement ?",
+        'Oui. Posez une référence, puis ouvrez le panneau <strong>📈 Courbe en S</strong> dans l’<a href="/app.html">éditeur gratuit</a>. Il calcule la valeur planifiée, la valeur acquise, l’écart de délai et l’indice de performance des délais à partir de vos tâches, et se met à jour quand vous modifiez l’avancement.'
+      ],
+      [
+        "Que signifient VP, VA, écart de délai et IPD ?",
+        "La valeur planifiée (VP) est le travail que vous deviez avoir fait à ce jour, la valeur acquise (VA) celui que vous avez réellement fait ; l’écart de délai vaut VA moins VP, et l’IPD (SPI) vaut VA divisé par VP. Au-dessus de 1,0 vous êtes en avance, en dessous vous êtes en retard."
+      ],
+      [
+        "Pourquoi ma courbe ressemble-t-elle à une droite ?",
+        "En général parce que toutes les tâches ont une durée et un poids voisins, donc l’avancement s’accumule linéairement. Détaillez davantage les phases centrales, ou valorisez les tâches en coût ou en heures, et le S apparaît."
+      ],
+      [
+        "Faut-il une référence pour s’en servir ?",
+        "Oui pour comparer prévu et réel. Sans référence, vous voyez encore l’avancement cumulé réel, mais il n’y a rien à quoi le comparer et pas d’IPD."
+      ],
+      [
+        "Le modèle de courbe en S est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'cloud-migration-project-plan': {
+    card: "Cadrage, socle cloud, vagues de migration, bascule et décommissionnement.",
+    h1: "Plan de projet de migration vers le cloud",
+    metaTitle: "Migration cloud — planning type",
+    metaDesc: "Modèle gratuit de plan de migration cloud : cadrage, socle (landing zone), vagues, bascule, hypercare et décommissionnement du centre de données.",
+    lead: "Un <strong>plan de migration vers le cloud</strong> gratuit couvrant le déplacement des applications de bout en bout — inventaire et évaluation, construction du socle (landing zone), découpage en vagues, vague pilote puis vagues de production, bascule, période de support renforcé (hypercare) et décommissionnement de ce que vous laissez derrière vous. Téléchargez-le pour le comité de pilotage, ou ouvrez-le en ligne pour lier les vagues afin qu’un glissement sur l’une ne dévore pas silencieusement la suivante.",
+    intro: "Une migration cloud n’est pas un projet unique : c’est un socle à construire, puis une vague qui se répète. Le modèle sépare les deux pour que le socle soit terminé avant que les vagues n’en dépendent :",
+    phases: [
+      [
+        "Inventaire et évaluation",
+        "Inventaire applicatif, cartographie des dépendances, criticité métier et choix de trajectoire par application selon les 7R — rehost, replatform, refactor, repurchase, relocate, retire, retain. <em>Jalon : trajectoires arbitrées.</em>"
+      ],
+      [
+        "Socle cloud (landing zone)",
+        "Comptes et abonnements, réseau et connectivité, identités, garde-fous de sécurité, journalisation et modèle de coûts. Tout l’aval en dépend. <em>Jalon : socle en service.</em>"
+      ],
+      [
+        "Découpage en vagues et pilote",
+        "Regroupement des applications par dépendance plutôt que par direction, puis validation du mode opératoire sur une vague pilote à faible risque."
+      ],
+      [
+        "Vagues de migration",
+        "Cycles répétés de construction, migration, tests et bascule par vague. Le schéma est identique à chaque fois ; seul le profil de risque change."
+      ],
+      [
+        "Bascule et hypercare",
+        "Bascules en production, bascule DNS et du trafic, fenêtres de retour arrière et période de support renforcé après chaque vague. <em>Jalon : bascule de production terminée.</em>"
+      ],
+      [
+        "Décommissionnement et optimisation",
+        "Extinction du parc source, sortie du centre de données ou du contrat d’hébergement, puis redimensionnement et engagements de capacité réservée. C’est là que le retour sur investissement se concrétise vraiment."
+      ]
+    ],
+    callout: "Le gain n’est acquis que lorsque l’ancien est éteint. Les migrations s’arrêtent régulièrement après la dernière bascule, laissant les deux parcs en fonctionnement et les économies sur le papier. Inscrivez le décommissionnement comme un travail daté avec un responsable, et posez à côté la date de sortie du contrat d’hébergement comme jalon fixe.",
+    customize: [
+      "Fixer d’abord la date de sortie du centre de données ou du contrat d’hébergement et travailler à rebours : cette date est en général contractuelle et non négociable.",
+      "Ajouter une ligne par application une fois l’inventaire terminé, regroupée sous la vague qui la porte.",
+      "Dupliquer la phase de vague autant de fois que nécessaire : sa structure interne reste identique.",
+      "Sortir les candidats au refactoring du plan de vagues : ce sont des projets de développement, pas des migrations, et les mélanger casse le rythme des vagues.",
+      "Marquer en jalons la mise en service du socle, la fin du pilote, chaque bascule de production et le décommissionnement de la source."
+    ],
+    tips: [
+      "<strong>Ne lancez pas les vagues avant que le socle soit terminé.</strong> Migrer vers une fondation encore mouvante oblige à remigrer, et c’est la première source de reprise sur ces programmes.",
+      "<strong>Groupez les vagues par dépendance, pas par service.</strong> Les applications qui se parlent doivent bouger ensemble, sinon vous paierez la latence entre deux parcs pendant toute la séparation.",
+      "<strong>Faites une vraie vague pilote.</strong> Son but est de valider le mode opératoire et de faire sortir les surprises : choisissez des applications peu risquées mais réellement représentatives, pas les trois plus faciles.",
+      "<strong>Budgétez le fonctionnement en parallèle.</strong> Les deux parcs tournent en même temps pendant toute la migration ; ce coût de recouvrement est réel et doit figurer dans le dossier dès le départ.",
+      "<strong>Prévoyez une fenêtre de retour arrière à chaque bascule.</strong> Une bascule sans retour arrière documenté et répété est une porte à sens unique franchie sans l’avoir décidé."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une migration vers le cloud ?",
+        "Couramment 9 à 24 mois pour un parc de taille moyenne, selon le nombre d’applications, la complexité des dépendances et la part de refactoring. Le modèle propose un planning d’environ quinze mois, à comprimer ou étendre."
+      ],
+      [
+        "Que sont les 7R de la migration cloud ?",
+        "Rehost, replatform, refactor, repurchase, relocate, retire et retain — les trajectoires possibles attribuées à chaque application lors de l’évaluation. Les arbitrer tôt est ce qui rend le découpage en vagues possible."
+      ],
+      [
+        "Comment ordonner les vagues de migration ?",
+        "Par groupe de dépendances d’abord, puis par risque. Les applications qui partagent des données ou s’appellent entre elles doivent migrer dans la même vague, et la vague pilote doit rester peu risquée tout en étant représentative."
+      ],
+      [
+        "Le décommissionnement de l’ancien environnement est-il couvert ?",
+        "Oui, c’est une phase entière, parce que c’est là que les économies annoncées se matérialisent et que c’est la phase le plus souvent abandonnée une fois la dernière bascule faite."
+      ],
+      [
+        "Le modèle de migration cloud est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'new-product-development-plan': {
+    card: "Programme à jalons de décision, du concept à la mise en production.",
+    h1: "Plan de développement d’un nouveau produit",
+    metaTitle: "Développement produit — planning",
+    metaDesc: "Modèle gratuit de plan de développement produit : concept, faisabilité, conception, prototypes, validation, outillage, série pilote et lancement.",
+    lead: 'Un <strong>plan de développement de produit nouveau</strong> gratuit, construit comme un programme à jalons de décision — concept, faisabilité, conception détaillée, prototypage, validation et essais, outillage, série pilote et transfert au lancement. C’est la chaîne d’ingénierie qui produit quelque chose à vendre ; pour le volet commercial du même programme, voir le <a href="/templates/product-launch.html">plan de lancement produit</a>, et pour l’horizon long la <a href="/templates/product-roadmap.html">feuille de route produit</a>.',
+    intro: "Les plannings de développement produit dérapent aux jalons, pas dans les tâches. Le modèle isole chaque étape pour qu’un jalon soit une décision étayée par des preuves plutôt qu’une date qui passe discrètement :",
+    phases: [
+      [
+        "Concept",
+        "Définition de l’opportunité, besoins clients et exigences, esquisses de concept, premier dossier économique. <em>Jalon 1 : concept validé.</em>"
+      ],
+      [
+        "Faisabilité",
+        "Études de faisabilité technique, analyse faire ou faire faire, revue réglementaire, modèle de coût et analyse de risques. <em>Jalon 2 : faisabilité confirmée.</em>"
+      ],
+      [
+        "Conception détaillée",
+        "Architecture et conception de détail, conception pour la fabrication et l’assemblage, nomenclature, implication des fournisseurs et revue de conception. <em>Jalon 3 : gel de la conception.</em>"
+      ],
+      [
+        "Prototypage",
+        "Prototype alpha, évaluation en ingénierie, itérations de conception et prototype bêta utilisé pour la validation."
+      ],
+      [
+        "Validation et essais",
+        "Vérification de conception, essais climatiques et essais d’endurance, dossiers de certification et essais utilisateurs. <em>Jalon 4 : conception validée.</em>"
+      ],
+      [
+        "Outillage et industrialisation",
+        "Conception et réalisation des outillages, contrôle du premier article, mise au point des procédés, montages et qualification des fournisseurs."
+      ],
+      [
+        "Série pilote et transfert",
+        "Série pilote, accord sur les pièces de série, plan de montée en cadence, dossier documentaire et transfert à la production et à l’équipe de lancement. <em>Jalon 5 : mise en production.</em>"
+      ]
+    ],
+    callout: "Le gel de la conception est le jalon coûteux. Chaque modification après lui se paie en outillage, et chaque modification après le contrôle du premier article se paie deux fois. Faire du gel un véritable jalon — adossé à des résultats d’essais et non à une date optimiste — est la décision qui préserve le budget de développement.",
+    customize: [
+      "Fixer la date de mise en production exigée et remonter à rebours : le délai d’outillage détermine souvent si le plan est simplement possible.",
+      "Commander les outillages à long délai sur les délais réellement cotés, et placer la commande avant le gel de conception seulement si vous prenez ce risque en connaissance de cause.",
+      "Ajouter une ligne par organisme de certification si le produit en exige plusieurs : ils travaillent en parallèle, chacun avec sa file d’attente.",
+      "Prévoir autant de prototypes que nécessaire ; deux est optimiste dès qu’il y a des pièces en mouvement.",
+      "Garder la qualification fournisseur visible : une pièce conforme issue d’un fournisseur non qualifié n’est pas une pièce livrable.",
+      "Marquer les cinq jalons comme jalons pour que le comité voie des décisions plutôt que des barres d’avancement."
+    ],
+    tips: [
+      "<strong>Ne recouvrez pas l’outillage avec des modifications de conception.</strong> Tailler l’acier avant le gel est la façon la plus courante de consommer toute la provision pour aléas en une semaine.",
+      "<strong>Lancez la certification tôt.</strong> Les files des laboratoires et l’instruction réglementaire sont des durées de tiers qu’aucun effort ne comprime : réservez les créneaux dès qu’un prototype testable existe.",
+      "<strong>Donnez une barre propre à la validation.</strong> Le temps d’essai est du temps réel : les essais d’endurance durent des semaines, quel que soit le nombre d’ingénieurs affectés.",
+      "<strong>Impliquez les fournisseurs pendant la conception, pas après.</strong> Un retour de fabricabilité arrivant après le gel devient une demande de modification, plus une donnée d’entrée.",
+      "<strong>Séparez ce plan du plan de lancement.</strong> Les dates marketing doivent s’accrocher à la mise en production, pas à une estimation d’ingénierie faite au stade du concept.",
+      "<strong>Posez la référence au gel de conception.</strong> Suivez l’écart depuis la conception gelée pour que les modifications tardives se lisent comme un coût de délai, et non comme un glissement absorbé en silence."
+    ],
+    faq: [
+      [
+        "En quoi est-ce différent du plan de lancement produit ?",
+        'Celui-ci est la chaîne d’ingénierie qui s’achève à la mise en production — du concept à l’outillage et à la série pilote. Le <a href="/templates/product-launch.html">plan de lancement produit</a> démarre à peu près là où celui-ci finit et couvre le positionnement, le prix, la préparation des canaux et la campagne commerciale.'
+      ],
+      [
+        "Combien de temps dure un développement de produit nouveau ?",
+        "Cela dépend de la complexité : un accessoire grand public simple peut tenir en 6 à 9 mois, tandis qu’un produit réglementé ou fortement outillé demande couramment 18 à 36 mois. Le modèle propose un programme de dix-huit mois."
+      ],
+      [
+        "Quels sont les jalons de décision du modèle ?",
+        "Concept validé, faisabilité confirmée, gel de la conception, conception validée et mise en production. Chacun est un jalon dont les tâches productrices de preuves sont les antériorités."
+      ],
+      [
+        "Peut-on l’utiliser pour un produit logiciel ?",
+        'En partie : les phases concept, faisabilité, conception et validation se transposent bien, mais l’outillage et la série pilote disparaissent. Pour du logiciel, le <a href="/templates/software-development.html">plan de projet logiciel</a> convient mieux.'
+      ],
+      [
+        "Le modèle de développement produit est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'retail-store-opening-timeline': {
+    card: "Du bail à l’inauguration : travaux, licences, stock et recrutement.",
+    h1: "Planning d’ouverture d’un magasin",
+    metaTitle: "Ouverture de magasin — planning",
+    metaDesc: "Modèle gratuit de planning d’ouverture de magasin : bail, agencement, licences, caisse, marchandisage, recrutement et inauguration.",
+    lead: "Un <strong>planning d’ouverture de magasin</strong> gratuit, du choix de l’emplacement à l’inauguration — bail et accords du bailleur, conception et agencement, licences et visites de conformité, caisse et systèmes, commande d’ouverture et marchandisage, recrutement et formation, puis les journées d’ouverture discrète et le week-end d’inauguration.",
+    intro: "Une ouverture de magasin, c’est un chantier, un recrutement et un cycle d’achat menés en même temps, tous pointés vers une date que le bailleur a déjà annoncée. Le modèle les traite comme des chemins parallèles :",
+    phases: [
+      [
+        "Emplacement et bail",
+        "Étude de zone de chalandise et de flux, sélection des sites, prévision de chiffre d’affaires, négociation du bail et conditions d’aménagement du bailleur. <em>Jalon : bail signé.</em>"
+      ],
+      [
+        "Conception et autorisations",
+        "Plan d’aménagement au standard de l’enseigne, conception de la devanture et de l’enseigne, accord du bailleur et de la gestion du centre, autorisations d’urbanisme."
+      ],
+      [
+        "Travaux d’agencement",
+        "Mise à disposition du local, agencement, sols et éclairage, mobilier et rayonnages, pose de la devanture et de l’enseigne, puis levée des réserves."
+      ],
+      [
+        "Licences, systèmes et démarque",
+        "Autorisation d’exploitation, visites sécurité incendie et accessibilité, caisse et terminaux de paiement, réseau, vidéosurveillance et antivol. <em>Jalon : autorisation d’ouverture.</em>"
+      ],
+      [
+        "Stock et marchandisage",
+        "Commande d’ouverture passée selon les délais fournisseurs, réception et organisation de la réserve, construction des planogrammes et implantation du merchandising visuel."
+      ],
+      [
+        "Recrutement, formation et ouverture",
+        "Le directeur de magasin d’abord, puis l’équipe de vente, formation produit et caisse, journées d’ouverture discrète et inauguration. <em>Jalon : inauguration.</em>"
+      ]
+    ],
+    callout: "La commande d’ouverture est la seule qu’on ne peut pas accélérer. Le mobilier peut être livré en urgence et une équipe peut être formée en une semaine, mais une première commande passée tard arrive tard, et un magasin qui ouvre avec des trous dans les linéaires passe son week-end d’inauguration à s’excuser. Passez l’achat sur les vrais délais fournisseurs et traitez la date de livraison comme une antériorité dure du marchandisage.",
+    customize: [
+      "Caler le plan sur la date de mise à disposition du local par le bailleur : c’est là que démarrent vos travaux et souvent votre loyer.",
+      "Ajouter une ligne par lot de mobilier si l’agencement est expédié depuis un fournisseur central plutôt que construit sur place.",
+      "Allonger la phase licences si vous vendez des produits réglementés : alcool, pharmacie, tabac ou armes ont chacun leurs propres délais.",
+      "Séparer la construction des planogrammes de l’implantation en magasin : ce sont deux travaux différents, faits par des personnes différentes.",
+      "Garder l’ouverture discrète comme de vraies journées de vente avec de vrais clients, pas comme une visite d’équipe."
+    ],
+    tips: [
+      "<strong>Lisez les conditions d’aménagement du bailleur avant de concevoir.</strong> Accords de la gestion du centre, horaires de travaux autorisés et règles d’accès livraison remodèlent le planning ; les découvrir pendant la pose coûte des semaines.",
+      "<strong>Commandez la devanture et l’enseigne tôt.</strong> Une enseigne sur mesure a un long délai et se pose en dernier, ce qui la place directement sur le chemin critique de l’ouverture.",
+      "<strong>Recrutez le directeur bien avant l’équipe.</strong> Il porte le recrutement, la formation et la validation de la commande d’ouverture : c’est une antériorité, pas une ligne d’effectif.",
+      "<strong>Testez la caisse avec de vraies transactions.</strong> Terminaux de paiement, fichiers de prix et suivi de stock ne se valident qu’en journée réelle : c’est à cela que sert l’ouverture discrète.",
+      "<strong>Protégez la fenêtre de marchandisage.</strong> L’implantation visuelle est ce qu’on comprime en dernier et ce que les clients voient en premier ; la réduire à moins de quelques jours se voit en rayon."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour ouvrir un magasin ?",
+        "Couramment 4 à 9 mois entre le choix du site et l’ouverture pour un local de centre commercial ou de centre-ville, la négociation du bail et les travaux pesant le plus lourd. Le modèle propose un planning d’environ sept mois."
+      ],
+      [
+        "Qu’est-ce qui retarde le plus une ouverture ?",
+        "Les accords du bailleur et de la gestion du centre, les autorisations et l’enseigne livrée tard. Ce sont trois durées de tiers, d’où le choix de traiter autorisations et licences comme des chemins propres plutôt que dans les travaux."
+      ],
+      [
+        "Quand passer la commande d’ouverture ?",
+        "Assez tôt pour que la livraison précède le marchandisage, en remontant depuis les délais annoncés par vos fournisseurs. Le modèle lie l’implantation à la livraison pour que l’antériorité reste visible."
+      ],
+      [
+        "Est-ce utilisable pour un éphémère ou un corner ?",
+        "Oui. Supprimez les lignes d’autorisation et de devanture pour un corner installé dans un magasin hôte, et comprimez la phase travaux — licences, systèmes, stock et recrutement restent identiques."
+      ],
+      [
+        "Le modèle d’ouverture de magasin est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'film-production-schedule': {
+    card: "Développement, préparation, tournage, post-production et livraison.",
+    h1: "Planning de production d’un film",
+    metaTitle: "Production d’un film — planning",
+    metaDesc: "Modèle gratuit de planning de film : développement, préparation, tournage, post-production, son, étalonnage et livraison des masters.",
+    lead: "Un <strong>planning de production de film</strong> gratuit couvrant tout le film — développement et financement, préparation et distribution artistique, le tournage lui-même, le montage jusqu’à l’image définitive, le son et l’étalonnage, puis le dossier de livraison réellement exigé par le distributeur. Téléchargez-le pour un dossier de financement, ou ouvrez-le en ligne pour lier les antériorités qui décident si votre date de livraison tient.",
+    intro: "Tous les départements travaillent pour les dates de tournage, et tout ce qui suit le tournage travaille pour la date de livraison. Le modèle pose ces deux points fixes sur le planning et laisse le reste s’organiser autour :",
+    phases: [
+      [
+        "Développement",
+        "Versions du scénario, droits et options, dépouillement budget et plan de travail, financement et décision de mise en production. <em>Jalon : feu vert.</em>"
+      ],
+      [
+        "Préparation",
+        "Distribution artistique, chefs de poste, repérages et autorisations de tournage, décors et construction, costumes, essais caméra et matériel, et le plan de travail lui-même."
+      ],
+      [
+        "Tournage",
+        "Le tournage, découpé en blocs de studio et de décors naturels, avec la date de fin comme centre immuable de tout le plan. <em>Jalon : fin de tournage.</em>"
+      ],
+      [
+        "Post-production — image",
+        "Rushes et bout-à-bout pendant le tournage, montage monteur, montage réalisateur, retours et image définitive. <em>Jalon : image verrouillée.</em>"
+      ],
+      [
+        "Post-production — son et finition image",
+        "Postsynchronisation, bruitage, création sonore, musique, mixage, livraison des plans truqués, étalonnage et conformation."
+      ],
+      [
+        "Livraison et distribution",
+        "DCP et masters, contrôle qualité, sous-titres et versions, matériel promotionnel, inscriptions en festivals et dossier de livraison. <em>Jalon : livraison acceptée.</em>"
+      ]
+    ],
+    callout: "Le tournage est la seule phase qu’on ne peut pas allonger sans dépenser de l’argent réel chaque jour. Tout ce qui précède existe pour le rendre possible, tout ce qui suit hérite de ce qu’il a produit. Fixez d’abord les dates de tournage, puis vérifiez que la préparation dispose d’assez de marge en amont — et non l’inverse.",
+    customize: [
+      "Poser d’abord le début et la fin de tournage, et faire remonter la préparation à rebours.",
+      "Une ligne par bloc de tournage ou par décor, pour rendre visibles les journées de déplacement : les changements de lieu non prévus mangent des jours de tournage.",
+      "Allonger et avancer les lignes d’effets visuels si le nombre de plans est significatif : les VFX courent souvent du tournage au mixage final.",
+      "Inscrire les dates limites d’inscription en festival comme jalons : ce sont des dates fixes qui tirent tout le calendrier de post-production vers l’avant.",
+      "Garder les journées de marge à l’intérieur du tournage plutôt qu’à la fin, où elles ne se distinguent plus d’un retard."
+    ],
+    tips: [
+      "<strong>Commencez rushes et bout-à-bout pendant le tournage.</strong> Un monteur qui travaille en parallèle fait exister le bout-à-bout le jour de la fin de tournage, au lieu de commencer ce jour-là.",
+      "<strong>Verrouillez l’image avant d’engager le son et l’étalonnage.</strong> Remonter après le début du mixage est l’erreur évitable la plus chère de la post-production.",
+      "<strong>Traitez repérages et autorisations comme des articles à long délai.</strong> Autorisations, fermetures de rue et conventions de lieu ont des durées de tiers qu’on ne comprime pas en travaillant plus.",
+      "<strong>Distribuez les rôles principaux avant d’arrêter le plan de travail.</strong> La disponibilité des comédiens réécrit le plan : c’est une antériorité, pas une tâche parallèle.",
+      "<strong>Lisez les exigences de livraison au début, pas à la fin.</strong> Les listes d’éléments à livrer sont longues, précises et non négociables ; les découvrir le dernier mois ajoute des semaines."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une production de film ?",
+        "Pour un long métrage indépendant, couramment 12 à 18 mois entre le feu vert et la livraison — environ deux à trois mois de préparation, quatre à huit semaines de tournage et six à neuf mois de post-production et de livraison. Le modèle se situe dans cette fourchette."
+      ],
+      [
+        "Quelles sont les phases d’une production ?",
+        "Développement, préparation, tournage, post-production et livraison. Ce modèle scinde la post-production en image d’une part, son et finition de l’autre, parce que l’image verrouillée est le jalon qui les sépare."
+      ],
+      [
+        "Combien de temps de préparation faut-il ?",
+        "Assez pour distribuer, repérer, autoriser et construire avant le premier jour. Huit à douze semaines est courant sur un long métrage modeste ; raccourcir se paie en jours perdus au tournage, pas en économies."
+      ],
+      [
+        "Les effets visuels sont-ils inclus ?",
+        "Oui : la livraison des plans truqués figure dans la phase de finition et démarre pendant la post-production. Si votre nombre de plans est important, avancez ces lignes pour que le travail du prestataire recouvre le montage."
+      ],
+      [
+        "Le modèle de production de film est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'bridge-construction-schedule': {
+    card: "Reconnaissance, autorisations, fondations, appuis, tablier et mise en service.",
+    h1: "Planning de construction d’un pont",
+    metaTitle: "Construction d’un pont — planning",
+    metaDesc: "Modèle gratuit de planning d’ouvrage d’art : reconnaissance, autorisations, pieux, appuis, tablier, revêtement, épreuves et mise en service.",
+    lead: "Un <strong>planning de construction de pont</strong> gratuit, déroulé comme un vrai programme de travaux d’art — reconnaissance des sols et études, autorisations administratives, pieux et fondations, appuis, pose du tablier, étanchéité et dispositifs de retenue, épreuves de chargement et mise en service. Téléchargez-le pour une remise d’offre ou un point d’avancement client, ou ouvrez-le en ligne pour lier les fenêtres de coupure et les opérations soumises aux conditions météo qui commandent réellement la date.",
+    intro: "Un programme d’ouvrage d’art est gouverné par ce que vous ne maîtrisez pas : la rivière, la voie en dessous, la météo et l’autorité qui approuve. Le modèle donne à chacun une place visible plutôt que de les enfouir dans une barre de travaux :",
+    phases: [
+      [
+        "Reconnaissance et études de sol",
+        "Levés topographiques et bathymétriques, sondages et interprétation géotechnique, recherche de réseaux et état initial environnemental. <em>Jalon : rapport géotechnique remis.</em>"
+      ],
+      [
+        "Conception et autorisations",
+        "Avant-projet et projet, études des ouvrages provisoires, approbation technique par le gestionnaire routier ou ferroviaire, autorisations environnementales et loi sur l’eau. <em>Jalon : approbation technique.</em>"
+      ],
+      [
+        "Travaux préparatoires et fenêtres de coupure",
+        "Installation de chantier, accès et pistes, déviations de réseaux, batardeau ou estacade, et les fenêtres de coupure routières ou fluviales réservées."
+      ],
+      [
+        "Pieux et fondations",
+        "Pieux sous chaque appui et culée, essais de pieux, semelles et bétonnage des fondations — l’opération la plus exposée au risque géotechnique et au niveau de la rivière."
+      ],
+      [
+        "Appuis",
+        "Culées, murs en retour, piles et chevêtres, bossages et pose des appareils d’appui. <em>Jalon : appuis terminés.</em>"
+      ],
+      [
+        "Tablier et superstructure",
+        "Fabrication et livraison des poutres, mise en place au grue ou par lançage pendant la coupure, coffrage, ferraillage et bétonnage du hourdis."
+      ],
+      [
+        "Revêtement, épreuves et mise en service",
+        "Étanchéité, couche de roulement, corniches et dispositifs de retenue, assainissement, épreuves de chargement, levée des réserves et ouverture à la circulation. <em>Jalon : ouverture à la circulation.</em>"
+      ]
+    ],
+    callout: "La fenêtre de coupure est le planning. Le levage des poutres au-dessus d’une route en service, d’une voie ferrée ou d’un fleuve navigable se fait presque toujours dans une coupure réservée des mois à l’avance et impossible à déplacer. Inscrivez la demande, la confirmation et la fenêtre elle-même comme trois tâches distinctes : tout ce qui est en amont n’existe que pour rendre ce week-end réalisable.",
+    customize: [
+      "Saisir d’abord les dates de coupure confirmées et remonter à rebours : presque toutes les autres dates d’un ouvrage d’art se négocient autour d’elles.",
+      "Ajouter une ligne par pile et par culée dès que la séquence des appuis est connue, pour suivre individuellement pieux et bétonnages.",
+      "Signaler les opérations soumises aux conditions météo — bétonnage du hourdis, étanchéité et couche de roulement ont tous des limites de température ou de pluviométrie.",
+      "Étendre la barre d’approbation technique au délai réel d’instruction de votre gestionnaire, boucle de réponse aux observations comprise.",
+      "Garder les études d’ouvrages provisoires comme tâche propre : l’approbation des étaiements, du batardeau et du dispositif de lançage conditionne les ouvrages définitifs.",
+      "Insérer les périodes d’exclusion — crues saisonnières ou migration piscicole — sous forme de barres bloquées si vous intervenez en lit de cours d’eau."
+    ],
+    tips: [
+      "<strong>Demandez les coupures avant la fin des études.</strong> Les délais d’obtention pour une fermeture de route ou une coupure ferroviaire se comptent en mois, et les créneaux vont au premier qui réserve.",
+      "<strong>Traitez les ouvrages provisoires comme des ouvrages définitifs.</strong> Étaiements, batardeaux et dispositifs de lançage demandent étude, contrôle et approbation, et ils sont directement sur le chemin critique du tablier.",
+      "<strong>Ne programmez pas de bétonnage que vous ne pouvez ni chauffer ni refroidir.</strong> Les gros bétonnages de hourdis repoussés en plein hiver sont régulièrement annulés le matin même ; placez-les dans une saison praticable.",
+      "<strong>Modélisez la rivière, pas la moyenne.</strong> Les fondations en lit de cours d’eau se planifient autour de la période historique de hautes eaux, avec une marge d’un mois perdu plutôt que d’une semaine.",
+      "<strong>Laissez du temps réel aux épreuves de chargement.</strong> Les essais, l’instrumentation et la certification qui suit sont une condition d’ouverture, pas une inspection de fin de chantier.",
+      "<strong>Posez la référence à l’approbation technique.</strong> Tout ce qui précède relève de l’estimation ; après, suivez l’écart pour rendre visibles les modifications demandées par l’autorité."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire un pont ?",
+        "Un petit ouvrage routier à travée unique tient couramment en 9 à 18 mois à compter du démarrage du chantier ; un grand franchissement demande plusieurs années. Ce modèle propose un programme d’environ deux ans, à comprimer ou étendre en déplaçant la date d’ouverture."
+      ],
+      [
+        "Qu’est-ce qui retarde le plus un ouvrage d’art ?",
+        "Les conditions de sol découvertes au forage des pieux, les boucles d’approbation technique avec le gestionnaire routier ou ferroviaire, et les fenêtres de coupure manquées. Les trois sont ici des chemins distincts, pour que l’exposition soit visible avant de coûter cher."
+      ],
+      [
+        "Comment représenter une coupure routière ou ferroviaire ?",
+        "En ajoutant la demande, la confirmation et la fenêtre comme trois tâches, et en faisant dépendre le levage du tablier de la fenêtre. Une activité amont qui glisse menace alors visiblement une date que vous ne pouvez pas déplacer."
+      ],
+      [
+        "Est-ce adapté à une passerelle ou au remplacement d’un ouvrage hydraulique ?",
+        "Oui. Gardez les phases reconnaissance, autorisations, fondations et superstructure et retirez les lignes de piles : la séquence est la même à plus petite échelle."
+      ],
+      [
+        "Le modèle de construction de pont est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'trade-show-planning-timeline': {
+    card: "Rétroplanning de salon : stand, logistique, équipe et relance des contacts.",
+    h1: "Rétroplanning d’un salon professionnel",
+    metaTitle: "Salon professionnel — rétroplanning",
+    metaDesc: "Modèle gratuit de rétroplanning de salon : réservation, stand, logistique, marketing amont, équipe, jours de salon et relance des contacts.",
+    lead: 'Un <strong>rétroplanning de salon professionnel</strong> gratuit, construit en compte à rebours — choix et contrat de l’emplacement, conception et construction du stand, dates limites de transport et de manutention, marketing amont et prise de rendez-vous, équipe et briefing, les jours de salon eux-mêmes, puis la relance des contacts qui décide si l’opération s’est payée. Pour un événement qui n’est pas un salon, voir le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a>.',
+    intro: "Exposer relève du compte à rebours plus que du projet. Trois ou quatre dates sont réellement immuables et tout le reste s’organise autour : le modèle les affiche donc en jalons plutôt qu’en tâches :",
+    phases: [
+      [
+        "Emplacement et contrat",
+        "Choix du salon, validation du budget, examen du plan de halle, sélection de l’emplacement à la date d’ancienneté et signature du contrat. <em>Jalon : emplacement contractualisé.</em>"
+      ],
+      [
+        "Conception et construction du stand",
+        "Brief, avant-projet, choix du standiste, validation du projet par l’organisateur, fabrication, graphisme et pré-montage."
+      ],
+      [
+        "Prestations et logistique",
+        "Commande d’électricité, d’accroche, d’internet et de mobilier au tarif anticipé, réservation du transport, date limite d’expédition et créneau de montage attribué. <em>Jalon : date limite d’expédition.</em>"
+      ],
+      [
+        "Marketing amont",
+        "Liste de comptes cibles, campagne d’invitation, prise de rendez-vous, relations presse et créneaux de conférence, activité sociale et web dans les dernières semaines."
+      ],
+      [
+        "Équipe et préparation",
+        "Planning de présence sur le stand, déplacements et hébergement, briefing produit et discours, formation à la collecte de contacts et répétition de la démonstration."
+      ],
+      [
+        "Jours de salon",
+        "Montage, ouverture du stand, rendez-vous et démonstrations, revue quotidienne des contacts, démontage et transport retour. <em>Jalon : ouverture du salon.</em>"
+      ],
+      [
+        "Relance et bilan",
+        "Intégration des contacts en quelques jours et non en semaines, relance par niveau de priorité, attribution du pipeline, bilan des coûts et décision pour l’édition suivante."
+      ]
+    ],
+    callout: "Trois échéances de ce planning ne bougent pas : la date de sélection des emplacements, qui détermine où vous serez l’an prochain ; la date limite des commandes au tarif anticipé, après laquelle chaque prestation coûte plus cher ; et la date limite d’expédition, après laquelle votre stand arrive en retard ou pas du tout. Tout le reste est négociable. Marquez ces trois-là et faites tenir le plan autour.",
+    customize: [
+      "Poser la date d’ouverture du salon et faire remonter tout le plan à rebours : c’est ainsi que se prépare réellement une participation.",
+      "Remplacer les échéances génériques par les vraies dates du guide de l’exposant dès sa parution.",
+      "Ajouter une ligne par expédition si stand, produits et documentation partent séparément : leurs dates limites diffèrent.",
+      "Allonger la barre de marketing amont si vous comptez sur des rendez-vous pris à l’avance : l’agenda se remplit six à huit semaines avant, pas la semaine précédente.",
+      "Ajouter une tâche douane et carnet ATA pour un salon à l’étranger : elle a son propre délai et peut immobiliser un stand à la frontière.",
+      "Garder la relance sur le planning avec des tâches datées : les contacts se périment vite et une relance sans date n’est pas un plan."
+    ],
+    tips: [
+      "<strong>Réservez l’an prochain pendant le salon de cette année.</strong> La sélection des emplacements se fait généralement sur place, à l’ancienneté et au budget : c’est pourquoi elle ouvre ce modèle au lieu de le clore.",
+      "<strong>Commandez les prestations au tarif anticipé.</strong> Électricité, accroche et internet commandés après la date limite coûtent régulièrement bien plus cher pour exactement la même chose.",
+      "<strong>Tenez la date limite d’expédition avec de la marge.</strong> Les envois tardifs passent en fin de file de manutention, et votre créneau de montage ne les attend pas.",
+      "<strong>Faites valider le projet de stand tôt par l’organisateur.</strong> Hauteurs, enseignes suspendues et structures à étage exigent une approbation et seront refusées sur place si rien n’a été déposé.",
+      "<strong>Répétez la démonstration avant de partir.</strong> Découvrir sur place qu’une démo réclame une bande passante non commandée est un problème sans solution sur place.",
+      "<strong>Relancez sous 48 heures.</strong> Le premier facteur de rentabilité d’un salon est la rapidité de la relance : programmez-la avant de partir, pas au retour."
+    ],
+    faq: [
+      [
+        "Combien de temps à l’avance préparer un salon ?",
+        "Six à neuf mois pour un grand salon, davantage si vous visez un bon emplacement — l’espace de l’édition suivante se choisit souvent pendant l’édition en cours. Ce modèle couvre environ huit mois jusqu’à l’ouverture."
+      ],
+      [
+        "En quoi diffère-t-il du modèle d’organisation d’événement ?",
+        'Celui-ci est propre à l’exposition : contrat d’emplacement, construction du stand, transport et manutention, commandes au tarif anticipé et relance des contacts. Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> couvre votre propre événement — lieu, programme, intervenants, participants.'
+      ],
+      [
+        "Quelles sont les échéances immuables quand on expose ?",
+        "La sélection de l’emplacement, la date limite des commandes au tarif anticipé figurant au guide de l’exposant, la date limite de transport et de manutention, et votre créneau de montage. Les quatre apparaissent ici en jalons."
+      ],
+      [
+        "Est-ce utilisable pour un simple stand de conférence ?",
+        "Oui. Gardez la structure et retirez les lignes de construction si vous prenez un stand équipé ou une simple table."
+      ],
+      [
+        "Le modèle de salon professionnel est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'recruitment-hiring-plan': {
+    card: "D’une ouverture de poste à l’arrivée : sourcing, entretiens, offre, préavis.",
+    h1: "Plan de recrutement",
+    metaTitle: "Plan de recrutement — modèle",
+    metaDesc: "Modèle gratuit de plan de recrutement : validation du poste, sourcing, présélection, entretiens, offre, préavis et date d’arrivée.",
+    lead: 'Un <strong>plan de recrutement</strong> gratuit couvrant un poste de bout en bout — définition du besoin et validation de l’effectif, sourcing, présélection, cycle d’entretiens, évaluation et références, offre et négociation, préavis du candidat, puis la date d’arrivée. Il s’arrête exactement là où commence l’<a href="/templates/employee-onboarding.html">intégration d’un nouveau collaborateur</a>.',
+    intro: "La plupart des plans de recrutement sous-estiment les deux mêmes choses : la durée de la validation au départ et celle du préavis à l’arrivée. Le modèle donne à chacune une vraie barre, pour que la date d’arrivée soit honnête :",
+    phases: [
+      [
+        "Définition du poste et validation",
+        "Argumentaire, fiche de poste, positionnement et fourchette salariale, validation de l’effectif et ouverture du poste. <em>Jalon : poste validé.</em>"
+      ],
+      [
+        "Sourcing",
+        "Publication de l’annonce, cooptation, approche directe, briefing du cabinet le cas échéant, et constitution d’un vivier jusqu’à un nombre cible de candidats."
+      ],
+      [
+        "Présélection",
+        "Tri des candidatures, entretiens de préqualification, entretiens du manager et arrêt de la liste courte. <em>Jalon : liste courte arrêtée.</em>"
+      ],
+      [
+        "Cycle d’entretiens",
+        "Entretiens structurés avec le jury, exercice technique ou métier, logistique de planification et séances de débriefing."
+      ],
+      [
+        "Évaluation et décision",
+        "Étude de cas ou travail témoin, jury final, consolidation des grilles, prise de références et vérifications. <em>Jalon : décision d’embauche.</em>"
+      ],
+      [
+        "Offre et négociation",
+        "Validation de la rémunération, proposition orale, contrat écrit, négociation et signature. <em>Jalon : offre acceptée.</em>"
+      ],
+      [
+        "Préavis et pré-intégration",
+        "Démission et préavis du candidat, maintien du lien, préparation du matériel et des accès, et le premier jour. <em>Jalon : date d’arrivée.</em>"
+      ]
+    ],
+    callout: "Le préavis n’est pas de l’administratif : c’est souvent la plus longue barre du planning. Un cadre soumis à trois mois de préavis signifie que le poste validé aujourd’hui produit une personne opérationnelle dans cinq ou six mois. Les plans qui s’arrêtent à « offre acceptée » promettent systématiquement une capacité un trimestre avant qu’elle n’existe.",
+    customize: [
+      "Remonter à rebours depuis le moment où vous avez besoin d’une personne productive, pas depuis celui où vous voulez une signature.",
+      "Caler la barre de préavis sur l’usage réel du poste et du pays : un mois, trois mois ou six mois donnent des plans très différents.",
+      "Dupliquer les phases sourcing à offre par poste si vous recrutez une équipe, et les décaler selon la disponibilité des jurys.",
+      "Ajouter un chemin cabinet ou chasse avec ses propres jalons le cas échéant : les dates de briefing et de liste courte sont contractuelles.",
+      "Insérer les démarches de visa ou d’autorisation de travail comme tâches propres quand elles s’appliquent : elles peuvent dépasser le préavis.",
+      "Garder les tâches de maintien du lien : c’est entre la signature et l’arrivée que les candidats acceptés se font reprendre par une contre-offre."
+    ],
+    tips: [
+      "<strong>Faites valider l’effectif avant de publier.</strong> Un poste qui atteint le jury final sans accord budgétaire gâche le temps du candidat et votre crédibilité.",
+      "<strong>Réservez à l’avance le temps du jury.</strong> La planification, et non la décision, est la première source de retard dans la plupart des processus.",
+      "<strong>Comprimez le cycle d’entretiens, pas la présélection.</strong> Les bons candidats sont généralement dans plusieurs processus ; un cycle qui dépasse trois semaines les perd au profit du plus rapide.",
+      "<strong>Lancez les références avant la décision finale quand c’est possible.</strong> Elles demandent régulièrement une semaine de relances et se placent pile entre la décision et l’offre.",
+      "<strong>Traitez l’offre comme une négociation qui a une durée.</strong> Prévoir quelques jours pour une contre-proposition et une réponse est plus réaliste qu’une acceptation le jour même.",
+      "<strong>Passez la main à l’intégration à la signature, pas au premier jour.</strong> Matériel, comptes et plan de première semaine demandent du délai, pris pendant le préavis."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour recruter ?",
+        "Couramment 6 à 12 semaines entre le poste validé et l’offre signée, plus le préavis. Ce modèle couvre environ cinq mois entre l’argumentaire et la date d’arrivée, ce qui est réaliste pour un préavis de un à trois mois."
+      ],
+      [
+        "Comment s’articule-t-il avec le modèle d’intégration ?",
+        'Ce plan s’arrête à la date d’arrivée ; le <a href="/templates/employee-onboarding.html">modèle d’intégration</a> prend le relais du premier jour aux quatre-vingt-dix premiers jours. Enchaînez-les pour la vue complète.'
+      ],
+      [
+        "Quelle est la cause la plus fréquente d’un recrutement lent ?",
+        "La planification des entretiens et la lenteur des décisions internes, pas le sourcing. C’est pourquoi le cycle d’entretiens et le débriefing sont ici des tâches distinctes plutôt qu’un bloc unique."
+      ],
+      [
+        "Peut-on planifier plusieurs recrutements à la fois ?",
+        "Oui : dupliquez les phases sourcing à offre par poste et décalez les cycles d’entretiens pour ne pas mobiliser deux fois le même jury la même semaine."
+      ],
+      [
+        "Le modèle de plan de recrutement est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'internal-audit-plan': {
+    card: "Cycle complet : risques, cadrage, travaux de terrain, constats et suivi.",
+    h1: "Plan d’audit interne",
+    metaTitle: "Plan d’audit interne — modèle",
+    metaDesc: "Modèle gratuit de plan d’audit interne : évaluation des risques, cadrage, travaux de terrain, constats, réponse de la direction, rapport et suivi.",
+    lead: "Un <strong>plan d’audit interne</strong> gratuit couvrant un cycle complet — évaluation annuelle des risques et univers d’audit, approbation du plan par le comité, cadrage et préparation de la mission, travaux de terrain et tests de contrôle, constats et réponse de la direction, émission du rapport, puis suivi des recommandations. Téléchargez-le pour le dossier du comité d’audit, ou ouvrez-le en ligne pour étaler plusieurs missions sur une année.",
+    intro: "Un plan d’audit a deux niveaux : le programme annuel et la mission qui s’y loge. Le modèle montre les deux, pour que le comité voie la couverture pendant que l’équipe voit le travail :",
+    phases: [
+      [
+        "Planification annuelle",
+        "Évaluation des risques, mise à jour de l’univers d’audit, entretiens avec les parties prenantes, plan de charge et de budget, projet de plan annuel. <em>Jalon : plan approuvé par le comité.</em>"
+      ],
+      [
+        "Cadrage de la mission",
+        "Note de lancement, recherche documentaire, revues de processus, matrice risques-contrôles, périmètre et lettre de mission validés."
+      ],
+      [
+        "Travaux de terrain et tests",
+        "Évaluation de la conception des contrôles, sélection des échantillons, revues de processus et tests substantifs, collecte des preuves et dossiers de travail."
+      ],
+      [
+        "Constats et validation",
+        "Projet de constats, vérification de l’exactitude des faits avec les propriétaires de processus, cotation et hiérarchisation, réunion de clôture. <em>Jalon : réunion de clôture tenue.</em>"
+      ],
+      [
+        "Réponse de la direction",
+        "Accord sur les actions, responsables nommés et dates cibles, et escalade de tout risque que la direction choisit d’accepter."
+      ],
+      [
+        "Rapport",
+        "Projet de rapport, revue qualité, émission du rapport définitif et présentation au comité d’audit. <em>Jalon : rapport émis.</em>"
+      ],
+      [
+        "Suivi des recommandations",
+        "Suivi de la mise en œuvre par rapport aux dates convenues, tests de vérification des actions clôturées et remontée des retards au comité."
+      ]
+    ],
+    callout: "Le suivi est là où la valeur de l’audit se réalise, et là où les plans s’arrêtent d’ordinaire. Un rapport émis sans tâche de vérification datée derrière lui est une opinion ; une date de mise en œuvre suivie, assortie d’un test de contrôle sur le planning, est un dispositif qui a réellement changé. Gardez les barres de suivi dans le plan et affectez-y des ressources.",
+    customize: [
+      "Étaler plusieurs missions côte à côte sur l’année pour vérifier que l’équipe est réellement disponible pour toutes.",
+      "Poser d’abord les dates de comité d’audit : elles sont fixes, et chaque date de rapport remonte depuis l’une d’elles.",
+      "Ajouter une ligne par entité auditable si vous rendez compte au comité de la couverture de l’univers d’audit.",
+      "Allonger les travaux de terrain pour les missions demandant des déplacements ou des extractions de données : les deux prennent plus de temps qu’un test sur pièces.",
+      "Prévoir une réserve pour missions non planifiées ou investigations spéciales : l’imprévu est normal, et l’imprévu non budgété détruit le plan.",
+      "Suivre la date de mise en œuvre de chaque constat comme une tâche propre une fois le rapport émis, plutôt que dans un tableur à part."
+    ],
+    tips: [
+      "<strong>Bâtissez le plan sur le risque, puis vérifiez la couverture.</strong> Un plan hiérarchisé par les risques qui ignore discrètement toute une entité pendant trois ans, c’est le constat que les auditeurs externes feront sur vous.",
+      "<strong>Annoncez tôt et faites poser les rendez-vous de revue.</strong> La disponibilité des audités est la première cause de dépassement des travaux de terrain, et elle est entièrement prévisible.",
+      "<strong>Validez les faits avant de coter les constats.</strong> Une erreur factuelle découverte après cotation coûte au rapport son autorité et ajoute un cycle de revue complet.",
+      "<strong>Ne laissez pas filer la réponse de la direction.</strong> Donnez-lui une barre bornée avec une échéance : les délais de réponse ouverts sont la façon dont les rapports ratent les dates de comité.",
+      "<strong>Retestez plutôt que de redemander.</strong> Vérifier une action clôturée suppose des preuves, donc du temps sur le planning, pas un simple courriel de confirmation.",
+      "<strong>Posez la référence à l’approbation du plan.</strong> Suivez l’écart au plan approuvé pour que le travail non planifié se lise comme un déplacement, et non comme un glissement absorbé en silence."
+    ],
+    faq: [
+      [
+        "Que doit contenir un plan d’audit interne ?",
+        "Une évaluation des risques et un univers d’audit, une liste hiérarchisée de missions avec leurs ressources, et pour chaque mission le cadrage, les travaux de terrain, les constats, la réponse de la direction, le rapport et le suivi. Les sept phases sont préchargées."
+      ],
+      [
+        "Combien de temps dure une mission d’audit interne ?",
+        "Couramment 6 à 12 semaines entre l’annonce et le rapport émis pour une mission de taille moyenne, le suivi courant ensuite sur plusieurs mois. La mission de ce modèle s’étale sur environ quatre mois."
+      ],
+      [
+        "À quelle fréquence actualiser le plan annuel ?",
+        "La plupart des directions d’audit font approuver le plan chaque année et le réexaminent au moins tous les six mois, puisque les profils de risque et l’imprévu évoluent. C’est la réserve inscrite au plan qui rend ce réexamen tenable."
+      ],
+      [
+        "Est-ce utilisable pour un audit externe ou de certification ?",
+        "En partie. Cadrage, travaux de terrain, constats et suivi se transposent bien ; vous remplaceriez la planification annuelle par le cycle d’audit propre à l’organisme certificateur."
+      ],
+      [
+        "Le modèle de plan d’audit interne est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
 };
 
 const UI = {

@@ -278,7 +278,7 @@
       App.toast(App.T('tp.projectImported', 'Project imported'));
     },
 
-    importCSV(text) {
+    importCSV(text, csvName) {
       const rows = parseCSV(text);
       if (rows.length < 2) throw new Error('empty CSV');
       const header = rows[0].map(h => h.trim().toLowerCase());
@@ -292,6 +292,12 @@
         who: col(['assignee', 'owner', 'resource']),
         type: col(['type']),
         notes: col(['notes']),
+        /* Our own CSV exports carry these two, and the importer used to
+           ignore both — so every "edit this template online" link served
+           a flat list with no phases and no dependency arrows. The data
+           was in the file the whole time. */
+        wbs: col(['wbs', 'id', '#']),
+        deps: col(['dependencies', 'predecessors', 'runs after', 'depends on']),
       };
       if (ci.name < 0) throw new Error('CSV needs a Task/Name column');
       const tasks = [];
@@ -302,16 +308,66 @@
         let end = ci.end >= 0 && r[ci.end] ? normDate(r[ci.end]) : null;
         const dur = ci.dur >= 0 ? parseInt(r[ci.dur]) : null;
         if (!end) end = dur ? U.endFrom(start, dur) : U.endFrom(start, 3);
-        const type = ci.type >= 0 && /mile/i.test(r[ci.type] || '') ? 'milestone' : 'task';
+        const rawType = ci.type >= 0 ? (r[ci.type] || '') : '';
+        const type = /mile/i.test(rawType) ? 'milestone'
+          : /group|phase|summary/i.test(rawType) ? 'group' : 'task';
+
+        /* Indentation in the Task column is presentational — the real
+           hierarchy is the WBS number. Leading spaces would otherwise
+           end up inside the name and then be indented AGAIN on render. */
+        const name = String(r[ci.name]).replace(/^[\s\u00a0]+/, '').trim();
+        const wbs = ci.wbs >= 0 ? String(r[ci.wbs] || '').trim() : '';
+
         tasks.push({
-          id: U.uid('t'), name: r[ci.name], start, end: type === 'milestone' ? start : end,
+          id: U.uid('t'), name, start, end: type === 'milestone' ? start : end,
           progress: ci.prog >= 0 ? Math.max(0, Math.min(100, parseInt(r[ci.prog]) || 0)) : 0,
           color: U.PALETTE[tasks.length % U.PALETTE.length], assignee: ci.who >= 0 ? (r[ci.who] || '') : '',
           type, parentId: null, collapsed: false, notes: ci.notes >= 0 ? (r[ci.notes] || '') : '', deps: [],
+          _wbs: wbs,
+          _deps: ci.deps >= 0 ? String(r[ci.deps] || '').trim() : '',
         });
       });
+
+      /* ---- rebuild the hierarchy from the WBS numbers ----
+         "1.2.1" is a child of "1.2". Rows without a WBS stay top-level,
+         which is right for a hand-made CSV that has no such column. */
+      const byWbs = {};
+      tasks.forEach(t => { if (t._wbs) byWbs[t._wbs] = t; });
+      tasks.forEach(t => {
+        if (!t._wbs) return;
+        const cut = t._wbs.lastIndexOf('.');
+        if (cut < 0) return;
+        const parent = byWbs[t._wbs.slice(0, cut)];
+        if (parent && parent !== t) t.parentId = parent.id;
+      });
+
+      /* ---- resolve dependencies, which are written by NAME ----
+         Matching is case- and space-insensitive because the exported
+         name may carry the indentation we just stripped. A reference
+         that does not resolve is dropped rather than guessed at: a
+         wrong arrow is worse than a missing one. */
+      const byName = {};
+      tasks.forEach(t => { byName[t.name.toLowerCase()] = t; });
+      let linked = 0, unresolved = 0;
+      tasks.forEach(t => {
+        if (!t._deps) return;
+        for (const ref of t._deps.split(/[;,]/)) {
+          const key = ref.replace(/\s+/g, ' ').trim().toLowerCase();
+          if (!key) continue;
+          const from = byName[key];
+          if (from && from !== t) { t.deps.push({ from: from.id, type: 'FS', lag: 0 }); linked++; }
+          else unresolved++;
+        }
+      });
+      if (unresolved) console.warn('CSV import: ' + unresolved + ' dependency reference(s) did not match a task name');
+
+      // Scratch fields must not reach the saved project.
+      tasks.forEach(t => { delete t._wbs; delete t._deps; });
       if (!tasks.length) throw new Error('no valid rows');
-      Model.loadProjectData({ name: 'Imported project', tasks });
+      /* A CSV that came from one of our own template pages knows what it
+         is; "Imported project" told the user nothing and had to be
+         retyped every time. */
+      Model.loadProjectData({ name: csvName || App.T('tp.projectImported', 'Imported project'), tasks });
       App.toast(App.Tn('tp.importedCsvN', 'Imported {n} tasks from CSV', { n: tasks.length }));
     },
   };

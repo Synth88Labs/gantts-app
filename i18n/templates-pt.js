@@ -2244,6 +2244,760 @@ const T = {
       ["simple", "Modelo simples"]
     ]
   },
+
+  '3-week-lookahead-template': {
+    card: "As três próximas semanas de obra, com restrições e inspeções.",
+    h1: "Programação de três semanas (lookahead)",
+    metaTitle: "Programação de 3 semanas — modelo",
+    metaDesc: "Modelo gratuito de programação de 3 semanas para obra: equipes, inspeções, restrições e prazos de suprimento por semana.",
+    lead: `Um modelo gratuito de <strong>programação de três semanas</strong> montado do jeito que a obra roda a reunião de segunda-feira — esta semana, a próxima e a seguinte, com equipes, inspeções, restrições e itens de prazo longo à vista em cada uma. Baixe para o quadro do canteiro ou abra no <a href="/pt/app.html">editor gratuito</a> e use <strong>Exibição ▸ Próximas semanas</strong> para recortar a janela direto do cronograma mestre, em vez de redigitá-la numa planilha toda semana.`,
+    intro: "Um lookahead não é um plano à parte. É uma fatia de três semanas do cronograma mestre com as restrições anexadas, atualizada semanalmente. O modelo segue exatamente essa lógica:",
+    phases: [
+      [
+        "Semana 1 — trabalho comprometido",
+        "Serviço livre de restrições, que será executado nesta semana: equipe, material e acesso já confirmados. <em>Marco: liberação da armação antes da concretagem.</em>"
+      ],
+      [
+        "Semana 2 — trabalho liberado",
+        "Serviço com restrições removidas, mas ainda não iniciado. É o pulmão que mantém as equipes ocupadas quando a semana 1 escorrega."
+      ],
+      [
+        "Semana 3 — trabalho previsto",
+        "Serviço ainda em preparação. Qualquer item aqui com restrição em aberto é justamente a razão de a reunião existir."
+      ],
+      [
+        "Restrições e prazos de suprimento",
+        "Aprovações de projeto, submissões, entregas e licenças que precisam chegar antes do serviço que travam. Correm ao longo das três semanas, não dentro de uma delas."
+      ],
+      [
+        "Inspeções e pontos de parada",
+        "Liberações de terceiros que interrompem o serviço se forem perdidas — armação, enterrado, estrutura. Cada uma é um marco, não uma tarefa."
+      ],
+      [
+        "Atualização semanal",
+        "O gráfico gira toda segunda-feira: entra o percentual concluído, a janela avança uma semana e o registro de restrições é revisto."
+      ]
+    ],
+    callout: `O objetivo do lookahead é remover restrições, não gerar relatório. Se uma tarefa da semana 3 tem uma aprovação pendente ou um material não entregue, é só disso que vale falar na segunda-feira — o resto já está preparado. Nosso <a href="/pt/blog/3-week-lookahead-schedule.html">guia da programação de três semanas</a> mostra como conduzir a reunião a partir do gráfico.`,
+    customize: [
+      "Ajuste a janela para a sua segunda-feira de início — a exibição Próximas semanas ancora na segunda e aceita de 1 a 8 semanas.",
+      "Use uma linha por equipe ou subempreiteira, em vez de por atividade, se a obra é organizada por frente de serviço; cada encarregado precisa enxergar a própria linha.",
+      "Mantenha as restrições como barras reais, com duração real. Uma aprovação registrada como nota de zero dia simplesmente é ignorada.",
+      "Marque toda inspeção como marco, para que nada a jusante seja programado atravessando um ponto de parada.",
+      "Gire o gráfico inteiro uma semana a cada segunda-feira em vez de refazê-lo — o cronograma mestre é a fonte, o lookahead é a exibição."
+    ],
+    tips: [
+      "<strong>Gere, não redigite.</strong> Lookahead mantido à parte do cronograma mestre diverge dele em menos de um mês. Abra o mestre no editor e use <strong>Exibição ▸ Próximas semanas</strong> para recortar a janela.",
+      "<strong>A semana 1 não deve ter restrição alguma.</strong> Se tiver, o serviço não está comprometido: é intenção, e o lugar dele é na semana 2.",
+      "<strong>Meça o PPC (percentual do plano concluído).</strong> Contar quantos compromissos da semana 1 realmente terminaram é o número mais útil que um lookahead produz.",
+      "<strong>Coloque os itens de prazo longo no gráfico com meses de antecedência.</strong> Estrutura metálica, painéis elétricos e elevadores não respeitam sua janela de três semanas: precisam aparecer nela na data de chegada e ser comprados muito antes.",
+      "<strong>Imprima no tamanho que o quadro do canteiro exige.</strong> Um lookahead que ninguém lê a um metro de distância não muda a segunda-feira de ninguém."
+    ],
+    faq: [
+      [
+        "O que é uma programação de três semanas?",
+        `É um planejamento de curto prazo, móvel, que mostra as próximas três semanas de serviço extraídas do cronograma mestre, com restrições e inspeções anexadas. É atualizado toda semana, em geral na reunião de coordenação de segunda-feira. Veja nosso <a href="/pt/blog/3-week-lookahead-schedule.html">guia da programação de três semanas</a>.`
+      ],
+      [
+        "O gantts.app gera o lookahead a partir do meu cronograma?",
+        `Sim. Abra seu cronograma no <a href="/pt/app.html">editor gratuito</a> e escolha <strong>Exibição ▸ Próximas semanas</strong>. A janela ancora na segunda-feira e vai de uma a oito semanas, de modo que o lookahead é sempre uma exibição do cronograma vivo, e não uma segunda cópia dele.`
+      ],
+      [
+        "Por que três semanas, e não quatro ou seis?",
+        "Três semanas é prazo suficiente para remover a maior parte das restrições e curto o bastante para que as datas ainda sejam críveis. Obras com suprimentos de prazo longo costumam usar seis; a exibição aceita até oito, então use o que o seu ciclo de preparação exigir."
+      ],
+      [
+        "O que entra no lookahead e não está no cronograma mestre?",
+        "As restrições — aprovações de projeto, esclarecimentos técnicos, entregas, licenças, inspeções e disponibilidade de equipe. O mestre carrega o serviço; o lookahead carrega os motivos pelos quais ele pode não acontecer."
+      ],
+      [
+        "O modelo de programação de três semanas é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, além de edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  's-curve-template': {
+    card: "Avanço acumulado planejado vs real, com VP, VA e IDP.",
+    h1: "Modelo de curva S (planejado vs real)",
+    metaTitle: "Curva S — modelo planejado vs real",
+    metaDesc: "Modelo gratuito de curva S: defina a linha de base e leia VP, VA, VPR e IDP no painel Curva S do editor.",
+    lead: `Um modelo gratuito de <strong>curva S</strong> — um projeto desenhado para que a curva de planejado contra real signifique alguma coisa, com partida lenta, meio pesado e cauda longa. Baixe para o relatório de avanço ou abra no <a href="/pt/app.html">editor gratuito</a>, defina uma linha de base e abra o painel <strong>📈 Curva S</strong> para ler valor planejado, valor agregado, variação de prazo e IDP a partir das suas próprias datas e percentuais.`,
+    intro: "A curva S é apenas o avanço acumulado ao longo do tempo. Ela tem esse formato porque projetos sobem devagar, aceleram no meio e desaceleram no comissionamento. O modelo já vem com um cronograma nesse formato:",
+    phases: [
+      [
+        "Início e linha de base",
+        "Termo de abertura, escopo, orçamento e a própria linha de base — o pé achatado da curva, em que passa muito calendário e se agrega muito pouco valor. <em>Marco: linha de base definida.</em>"
+      ],
+      [
+        "Projeto e engenharia",
+        "Do conceito ao projeto executivo. O avanço começa a acumular, mas o desembolso ainda corre à frente do valor entregue."
+      ],
+      [
+        "Suprimentos",
+        "Pedidos colocados, itens de prazo longo acompanhados, entregas recebidas. O comprometido sobe forte aqui, mesmo sem avanço físico correspondente."
+      ],
+      [
+        "Construção e montagem",
+        "O centro íngreme da curva, onde se gera a maior parte do valor agregado e onde vale acompanhar o IDP semanalmente."
+      ],
+      [
+        "Testes e comissionamento",
+        "A desaceleração. O que resta vale pouco em valor e é teimoso em duração — daí as curvas achatarem antes de terminar. <em>Marco: comissionamento concluído.</em>"
+      ],
+      [
+        "Entrega e encerramento",
+        "Documentação, pendências, conta final e lições aprendidas — os últimos pontos percentuais, que sempre levam mais do que deveriam."
+      ]
+    ],
+    callout: `Uma curva sozinha não diz nada. O valor está na distância entre a curva planejada e a real: se a real está abaixo, você está atrasado, e a distância vertical é a variação de prazo em valor, enquanto a horizontal é aproximadamente o atraso em tempo. Nosso <a href="/pt/blog/s-curve-project-management.html">guia da curva S</a> mostra como ler VP, VA, VPR e IDP no gráfico.`,
+    customize: [
+      "Defina a linha de base assim que o plano for aprovado — sem ela não existe curva planejada, e o painel Curva S não tem contra o que comparar.",
+      "Mantenha o percentual concluído honesto e atualizado; a curva real vale exatamente o que valer a última atualização.",
+      "Dê peso ao miolo do cronograma. Se as durações estão distribuídas de forma uniforme, a curva sai como uma reta — sinal de que o plano ainda não está detalhado o bastante.",
+      "Informe custo ou homem-hora por tarefa se você quiser uma curva carregada por custo, e não ponderada por duração.",
+      "Só refaça a linha de base em mudança formal. Refazer para esconder variação é como um projeto perde o único sistema de alerta que tinha."
+    ],
+    tips: [
+      "<strong>Leia o IDP, não o desenho.</strong> IDP abaixo de 1,0 significa que você agregou menos valor do que o planejado até hoje. A tendência ao longo de quatro ou cinco medições importa muito mais do que qualquer leitura isolada.",
+      "<strong>Espere uma partida lenta.</strong> Curva que sobe forte desde o primeiro dia quase sempre está medindo desembolso ou esforço, e não avanço entregue.",
+      "<strong>Observe o ponto de achatamento.</strong> Curvas que estacionam em 85–90 por cento são a assinatura clássica do projeto cheio de serviço quase pronto.",
+      "<strong>Atualize em cadência fixa.</strong> Semanal ou quinzenal, sempre no mesmo dia — atualizações irregulares deixam a curva ilegível.",
+      "<strong>Apresente a curva junto do Gantt.</strong> A curva diz que você está atrasado; o gráfico de barras diz quais tarefas causaram isso. Mantenha os dois no relatório."
+    ],
+    faq: [
+      [
+        "O que é uma curva S em gestão de projetos?",
+        `É o gráfico do avanço acumulado planejado contra o avanço acumulado real ao longo do tempo. Tem forma de S porque o trabalho sobe devagar, atinge o pico no meio e desacelera no fim. Nosso <a href="/pt/blog/s-curve-project-management.html">guia da curva S</a> explica como montar e ler uma.`
+      ],
+      [
+        "O gantts.app desenha a curva S para mim?",
+        `Sim. Defina a linha de base e abra o painel <strong>📈 Curva S</strong> no <a href="/pt/app.html">editor gratuito</a>. Ele calcula valor planejado, valor agregado, variação de prazo e o índice de desempenho de prazo a partir das suas tarefas, e atualiza conforme você muda o percentual concluído.`
+      ],
+      [
+        "O que são VP, VA, VPR e IDP?",
+        "Valor planejado é o trabalho que você disse que já teria feito até agora; valor agregado é o que de fato foi feito; a variação de prazo é VA menos VP; e o IDP é VA dividido por VP. Acima de 1,0 é adiantado, abaixo de 1,0 é atrasado."
+      ],
+      [
+        "Por que minha curva parece uma reta?",
+        "Em geral porque todas as tarefas têm duração e peso parecidos, então o avanço acumula de forma uniforme. Detalhe mais as fases centrais, ou carregue as tarefas com custo ou homem-hora, e o formato em S aparece."
+      ],
+      [
+        "Preciso de linha de base para usar isto?",
+        "Para planejado contra real, sim. Sem linha de base você ainda vê o avanço real acumulado, mas não há contra o que compará-lo e não existe IDP."
+      ],
+      [
+        "O modelo de curva S é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'cloud-migration-project-plan': {
+    card: "Descoberta, landing zone, ondas de migração, virada e desativação.",
+    h1: "Plano de projeto de migração para nuvem",
+    metaTitle: "Migração para nuvem — plano",
+    metaDesc: "Modelo gratuito de plano de migração para nuvem: descoberta, landing zone, ondas, virada, hypercare e desativação do legado.",
+    lead: "Um modelo gratuito de <strong>plano de migração para nuvem</strong> cobrindo a mudança de aplicações e cargas de trabalho de ponta a ponta — descoberta e avaliação do parque, construção da <em>landing zone</em> (a base de nuvem), planejamento de ondas, onda piloto e ondas produtivas, virada, hypercare (suporte reforçado) e desativação do que ficou para trás.",
+    intro: "Migração para nuvem não é um projeto só: é a construção de uma base mais uma onda que se repete. O modelo separa as duas coisas, para que a landing zone esteja pronta antes que as ondas dependam dela:",
+    phases: [
+      [
+        "Descoberta e avaliação",
+        "Inventário de aplicações, mapeamento de dependências, criticidade para o negócio e uma decisão dos 7Rs por carga — <em>rehost</em>, <em>replatform</em>, <em>refactor</em>, <em>repurchase</em>, <em>relocate</em>, aposentar ou manter. <em>Marco: destino das aplicações acordado.</em>"
+      ],
+      [
+        "Landing zone e fundação",
+        "Contas e assinaturas, rede e conectividade híbrida, identidade, guardrails de segurança, observabilidade e modelo de custos. Tudo a jusante depende disso. <em>Marco: landing zone em operação.</em>"
+      ],
+      [
+        "Planejamento de ondas e piloto",
+        "Agrupar aplicações em ondas por dependência, e não por área, e comprovar o runbook numa onda piloto de baixo risco."
+      ],
+      [
+        "Ondas de migração",
+        "Ciclos repetidos de preparação, migração, teste e virada por onda. O padrão é o mesmo a cada vez; o que muda é o perfil de risco."
+      ],
+      [
+        "Virada e hypercare",
+        "Viradas produtivas, troca de DNS e de tráfego, janelas de rollback e o período de suporte reforçado após cada onda. <em>Marco: virada produtiva concluída.</em>"
+      ],
+      [
+        "Desativação e otimização",
+        "Desligar o ambiente de origem, encerrar o contrato de data center ou hospedagem e então dimensionar recursos e contratar capacidade reservada. É aqui que o business case realmente se realiza."
+      ]
+    ],
+    callout: "O business case só se realiza quando o ambiente antigo é desligado. Migrações param rotineiramente depois da última virada, deixando os dois ambientes ligados e a economia só no papel. Coloque a desativação no gráfico como trabalho datado e com responsável, e ponha a data de saída do contrato de hospedagem ao lado dela como marco fixo.",
+    customize: [
+      "Fixe primeiro a data de saída do data center ou do contrato de hospedagem e trabalhe de trás para frente — essa data costuma ser contratual e inegociável.",
+      "Acrescente uma linha por aplicação quando o inventário estiver pronto, agrupada sob a onda que a carrega.",
+      "Duplique a fase de onda para cada onda adicional; a estrutura interna permanece idêntica.",
+      "Tire os candidatos a refactor do plano de ondas: são projetos de desenvolvimento, não migrações, e misturá-los destrói a cadência das ondas.",
+      "Marque landing zone em operação, piloto concluído, cada virada produtiva e a desativação da origem como marcos."
+    ],
+    tips: [
+      "<strong>Não inicie ondas antes de a landing zone estar concluída.</strong> Migrar para uma fundação que ainda muda significa migrar duas vezes, e é a maior fonte de retrabalho nesses programas.",
+      "<strong>Agrupe ondas por dependência, não por departamento.</strong> Aplicações que conversam entre si devem migrar juntas, ou você pagará pela latência entre dois ambientes enquanto estiverem separadas.",
+      "<strong>Faça uma onda piloto de verdade.</strong> A função dela é comprovar o runbook e expor as surpresas, então escolha aplicações de baixo risco mas genuinamente representativas, não as três mais fáceis da lista.",
+      "<strong>Preveja orçamento para operação em paralelo.</strong> Os dois ambientes rodam juntos durante toda a migração; esse custo de sobreposição é real e pertence ao business case desde o primeiro dia.",
+      "<strong>Mantenha janela de rollback em toda virada.</strong> Virada sem rollback documentado e ensaiado é uma porta de mão única atravessada sem que ninguém tenha decidido atravessá-la."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma migração para nuvem?",
+        "Em geral de 9 a 24 meses para um parque de porte médio, dependendo sobretudo do número de aplicações, da complexidade das dependências e de quanto refactor está no escopo. O modelo usa um cronograma de cerca de quinze meses, que você pode comprimir ou estender."
+      ],
+      [
+        "O que são os 7Rs da migração para nuvem?",
+        "Rehost (mover como está), replatform (ajustar), refactor (reescrever), repurchase (trocar por SaaS), relocate (transferir a plataforma), retire (aposentar) e retain (manter). São as opções de destino atribuídas a cada aplicação durante a avaliação, e defini-las cedo é o que torna o planejamento de ondas possível."
+      ],
+      [
+        "Como sequenciar as ondas de migração?",
+        "Primeiro por grupo de dependência, depois por risco. Aplicações que compartilham dados ou se chamam entre si devem migrar na mesma onda, e a onda piloto deve ser de baixo risco mas representativa o bastante para comprovar o runbook."
+      ],
+      [
+        "O plano cobre a desativação do ambiente antigo?",
+        "Sim — é uma fase inteira, porque é onde a economia prevista no business case efetivamente aparece, e é a fase mais frequentemente abandonada depois da última virada."
+      ],
+      [
+        "O modelo de migração para nuvem é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'retail-store-opening-timeline': {
+    card: "Da locação à inauguração: obra, licenças, estoque e equipe.",
+    h1: "Cronograma de abertura de loja",
+    metaTitle: "Abertura de loja — cronograma",
+    metaDesc: "Modelo gratuito de cronograma de abertura de loja: locação, obra, licenças, PDV, estoque, visual merchandising e inauguração.",
+    lead: "Um modelo gratuito de <strong>cronograma de abertura de loja</strong> que vai da escolha do ponto à inauguração — locação e aprovações do locador, projeto e obra, licenças e vistorias, PDV e sistemas, pedido inicial e visual merchandising, contratação e treinamento, e então o soft opening e o fim de semana de inauguração.",
+    intro: "Uma abertura de loja é uma obra, um processo seletivo e um ciclo de compras acontecendo ao mesmo tempo, todos apontando para uma data que o shopping já anunciou. O modelo os organiza como frentes paralelas:",
+    phases: [
+      [
+        "Ponto e locação",
+        "Análise de área de influência e fluxo, lista curta de pontos, projeção de vendas, negociação da locação e condições de obra do locador. <em>Marco: contrato assinado.</em>"
+      ],
+      [
+        "Projeto e aprovações",
+        "Layout dentro do padrão da marca, projeto de fachada e comunicação visual, aprovação da administração do shopping e alvarás de obra."
+      ],
+      [
+        "Obra e instalação",
+        "Entrega da unidade pelo locador, marcenaria e divisórias, piso e iluminação, mobiliário e prateleiras, instalação da fachada e da comunicação visual e, por fim, as pendências."
+      ],
+      [
+        "Licenças, sistemas e prevenção de perdas",
+        "Alvará de funcionamento, vistorias de bombeiros e acessibilidade, PDV e maquininhas, rede, CFTV e etiquetas antifurto. <em>Marco: liberada para operar.</em>"
+      ],
+      [
+        "Estoque e visual merchandising",
+        "Pedido de abertura colocado contra o prazo real dos fornecedores, recebimento e organização da retaguarda, montagem do planograma e instalação do visual merchandising."
+      ],
+      [
+        "Contratação, treinamento e inauguração",
+        "Primeiro o gerente da loja, depois a equipe de vendas, treinamento de produto e de PDV, os dias de soft opening e a inauguração. <em>Marco: inauguração.</em>"
+      ]
+    ],
+    callout: "O pedido de abertura é o que não dá para apressar. Mobiliário se acelera e equipe se treina em uma semana, mas uma primeira entrega comprada em cima da hora chega atrasada, e uma loja que abre com vãos na parede passa o fim de semana de inauguração pedindo desculpas. Coloque a compra contra os prazos reais dos fornecedores e trate a data de entrega como precedência rígida do visual merchandising.",
+    customize: [
+      "Ancore na data de entrega da unidade pelo locador — é quando começa o seu prazo de obra e, muitas vezes, o aluguel.",
+      "Acrescente uma linha por pacote de mobiliário se a marcenaria vem de um fornecedor central em vez de ser feita no local.",
+      "Estenda a fase de licenças se você vende algo regulado: bebidas, farmácia e tabaco têm cada um o seu próprio prazo.",
+      "Separe o visual merchandising em montagem do planograma e instalação em loja; são trabalhos diferentes, feitos por pessoas diferentes.",
+      "Mantenha o soft opening como dias reais de venda com clientes reais, não como um passeio da equipe."
+    ],
+    tips: [
+      "<strong>Leia as condições de obra do locador antes de projetar.</strong> Aprovações da administração, horários permitidos e regras de acesso para entregas reorganizam o cronograma, e descobrir isso durante a instalação custa semanas.",
+      "<strong>Compre fachada e comunicação visual cedo.</strong> Letreiro sob medida tem prazo longo e costuma ser a última coisa instalada, o que o coloca direto no caminho crítico da inauguração.",
+      "<strong>Contrate o gerente bem antes da equipe.</strong> É ele que conduz seleção, treinamento e a aprovação do pedido de abertura, então essa contratação é uma dependência, e não apenas uma linha de quadro de pessoal.",
+      "<strong>Teste o PDV com vendas reais.</strong> Maquininhas, tabela de preços e estoque só se comprovam num dia de operação de verdade — que é justamente para isso que serve o soft opening.",
+      "<strong>Proteja a janela de visual merchandising.</strong> É o último trabalho a ser espremido e a primeira coisa que o cliente vê; comprimi-lo abaixo de alguns dias aparece na loja."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para abrir uma loja?",
+        "Em geral de 4 a 9 meses da escolha do ponto à inauguração para uma unidade de shopping ou de rua, com a negociação da locação e a obra ocupando a maior parte. O modelo usa um cronograma de cerca de sete meses, que você pode comprimir ou estender."
+      ],
+      [
+        "O que costuma atrasar a abertura de uma loja?",
+        "Aprovações do locador e da administração do shopping, licenças e comunicação visual entregue tarde. Os três são durações de terceiros, e por isso o modelo trata aprovações e licenças como frentes próprias, e não como parte da obra."
+      ],
+      [
+        "Quando devo comprar o estoque de abertura?",
+        "Cedo o bastante para que a entrega chegue antes de começar o visual merchandising, contando de trás para frente a partir do prazo informado pelos fornecedores. O modelo liga a instalação do visual à entrega, para que a dependência fique visível."
+      ],
+      [
+        "Dá para usar em quiosque ou corner?",
+        "Sim. Tire as linhas de alvará e fachada no caso de um corner dentro de outra loja e comprima a fase de obra — as frentes de licenças, sistemas, estoque e contratação continuam iguais."
+      ],
+      [
+        "O modelo de abertura de loja é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'film-production-schedule': {
+    card: "Desenvolvimento, pré, filmagem, montagem, som, cor e entrega.",
+    h1: "Cronograma de produção de filme",
+    metaTitle: "Produção de filme — cronograma",
+    metaDesc: "Modelo gratuito de cronograma de produção de filme: desenvolvimento, pré-produção, filmagem, pós, som, cor e entrega.",
+    lead: "Um modelo gratuito de <strong>cronograma de produção de filme</strong> cobrindo o filme inteiro — desenvolvimento e financiamento, pré-produção e elenco, a filmagem em si, a pós até o corte travado, som e cor, e o pacote de entrega que o distribuidor efetivamente exige. Baixe para o dossiê de financiamento ou abra online para ligar as dependências que decidem se a sua data de entrega sobrevive.",
+    intro: "Todo departamento trabalha em função das datas de filmagem, e tudo que vem depois trabalha em função da data de entrega. O modelo coloca os dois pontos fixos no gráfico e deixa o resto se arrumar em volta:",
+    phases: [
+      [
+        "Desenvolvimento",
+        "Versões de roteiro, direitos e opção, orçamento e decupagem, captação e a decisão de sinal verde. <em>Marco: sinal verde.</em>"
+      ],
+      [
+        "Pré-produção",
+        "Elenco, chefes de equipe, locações e autorizações, direção de arte e construção de cenário, figurino, testes de câmera e equipamento, e o próprio plano de filmagem."
+      ],
+      [
+        "Filmagem",
+        "As diárias, divididas em blocos de estúdio e de locação, com a data de encerramento como o centro imóvel de todo o plano. <em>Marco: encerramento das filmagens.</em>"
+      ],
+      [
+        "Pós-produção — imagem",
+        "Copiões e primeira montagem durante a filmagem, corte do montador, corte do diretor, notas e travamento do corte. <em>Marco: corte travado.</em>"
+      ],
+      [
+        "Pós-produção — som e finalização de imagem",
+        "Dublagem (ADR), foley, desenho de som, trilha, mixagem, entrega dos planos de VFX, correção de cor e conformação."
+      ],
+      [
+        "Entrega e distribuição",
+        "DCP e masters, controle de qualidade, legendas e localização, materiais de divulgação, inscrições em festivais e o pacote de entrega. <em>Marco: entrega aceita.</em>"
+      ]
+    ],
+    callout: "A filmagem é a única fase que não se estica sem gastar dinheiro real por dia. Tudo que vem antes existe para tornar a filmagem possível, e tudo que vem depois herda o que a filmagem produziu. Fixe primeiro as datas de filmagem e depois verifique se a pré-produção tem prazo suficiente atrás delas — não o contrário.",
+    customize: [
+      "Defina as datas de início e de encerramento das filmagens primeiro e deixe a pré-produção contar de trás para frente a partir delas.",
+      "Use uma linha por bloco de filmagem ou locação, para que as diárias de mudança fiquem visíveis; mudanças de locação não previstas comem diárias.",
+      "Estenda as linhas de VFX e comece-as mais cedo se o número de planos for relevante — VFX costuma correr da filmagem até a mixagem final.",
+      "Coloque os prazos de inscrição em festivais no gráfico como marcos; são datas fixas que puxam todo o cronograma de pós para a frente.",
+      "Mantenha as diárias de contingência dentro da filmagem, e não no fim, onde ficam indistinguíveis de atraso."
+    ],
+    tips: [
+      "<strong>Comece copiões e montagem durante a filmagem.</strong> Um montador trabalhando em paralelo faz com que a primeira montagem exista no dia do encerramento, em vez de começar ali.",
+      "<strong>Trave o corte antes de contratar som e cor.</strong> Remontar depois de a mixagem ter começado é o erro evitável mais caro da pós-produção.",
+      "<strong>Trate locações e autorizações como itens de prazo longo.</strong> Licenças, interdições de via e contratos de locação têm durações de terceiros que não se comprimem com esforço.",
+      "<strong>Feche o elenco principal antes de fechar o plano de filmagem.</strong> A disponibilidade dos atores reescreve o plano, então é uma dependência da programação, e não uma tarefa paralela.",
+      "<strong>Leia a lista de entrega no começo, não no fim.</strong> As exigências de entrega são longas, específicas e inegociáveis, e descobri-las no último mês acrescenta semanas."
+    ],
+    faq: [
+      [
+        "Quanto dura um cronograma de produção de filme?",
+        "Num longa independente, em geral de 12 a 18 meses do sinal verde à entrega — cerca de dois a três meses de pré-produção, de quatro a oito semanas de filmagem e de seis a nove meses de pós e entrega. O modelo usa um cronograma nessa faixa."
+      ],
+      [
+        "Quais são as fases de uma produção audiovisual?",
+        "Desenvolvimento, pré-produção, filmagem, pós-produção e entrega. Este modelo divide a pós em imagem e som/finalização, porque o travamento do corte é o portão que separa as duas."
+      ],
+      [
+        "De quanta pré-produção eu preciso?",
+        "Do suficiente para escalar elenco, prospectar locações, obter autorizações e construir cenários antes da primeira diária. De oito a doze semanas é comum num longa modesto, e encurtar isso aparece como diárias perdidas na filmagem, não como economia."
+      ],
+      [
+        "O modelo inclui VFX?",
+        "Sim — a entrega dos planos de VFX fica na fase de finalização e começa durante a pós. Se o número de planos for grande, antecipe essas linhas para que o trabalho do fornecedor se sobreponha à montagem."
+      ],
+      [
+        "O modelo de produção de filme é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'bridge-construction-schedule': {
+    card: "Sondagem, aprovações, estacas, mesoestrutura, tabuleiro e liberação.",
+    h1: "Cronograma de construção de ponte",
+    metaTitle: "Construção de ponte — cronograma",
+    metaDesc: "Modelo gratuito de cronograma de ponte: sondagem, aprovações, estacas, mesoestrutura, tabuleiro, prova de carga e liberação.",
+    lead: "Um modelo gratuito de <strong>cronograma de construção de ponte</strong> montado sobre um programa de obra de arte especial real — investigação geotécnica e projeto, licenciamento e aprovações, estaqueamento e fundações, mesoestrutura, montagem do tabuleiro, pavimentação e defensas, prova de carga e liberação ao tráfego. Baixe para uma proposta de licitação ou para o relatório ao cliente, ou abra online para ligar as janelas de interdição e as operações condicionadas ao clima que de fato mandam na data.",
+    intro: "Um programa de ponte é governado por coisas que não são suas: o rio, a via abaixo, o clima e o órgão aprovador. O modelo dá a cada uma delas um lugar visível, em vez de enterrá-las dentro de uma barra de construção:",
+    phases: [
+      [
+        "Levantamento e investigação geotécnica",
+        "Levantamento topográfico e batimétrico, sondagens e interpretação geotécnica, pesquisa de interferências e diagnóstico ambiental. <em>Marco: relatório de sondagem emitido.</em>"
+      ],
+      [
+        "Projeto e aprovações",
+        "Projeto básico e executivo, projeto das obras provisórias, aprovação técnica pelo órgão rodoviário ou ferroviário, licenças ambientais e outorga para intervenção no curso d'água. <em>Marco: aprovação técnica.</em>"
+      ],
+      [
+        "Serviços preliminares e interdições",
+        "Instalação do canteiro, acessos e caminhos de serviço, remanejamento de interferências, ensecadeira ou aterro provisório, e as janelas de interdição de via ou de navegação já reservadas."
+      ],
+      [
+        "Fundações e estaqueamento",
+        "Estacas em cada pilar e encontro, ensaios em estacas, blocos de coroamento e concretagem das fundações — a operação mais exposta ao risco geotécnico e ao nível do rio."
+      ],
+      [
+        "Mesoestrutura",
+        "Encontros e alas, pilares e travessas, berços e instalação dos aparelhos de apoio. <em>Marco: mesoestrutura concluída.</em>"
+      ],
+      [
+        "Superestrutura e tabuleiro",
+        "Fabricação e transporte das vigas, lançamento com guindaste ou por deslocamento dentro da interdição, fôrmas, armação e concretagem do tabuleiro."
+      ],
+      [
+        "Pavimentação, ensaios e liberação",
+        "Impermeabilização, pavimentação, guarda-corpos e defensas, drenagem, prova de carga, pendências e liberação ao tráfego. <em>Marco: liberada ao tráfego.</em>"
+      ]
+    ],
+    callout: "A janela de interdição é o cronograma. O lançamento das vigas sobre via em operação, ferrovia ou rio navegável quase sempre acontece dentro de uma interdição solicitada meses antes e que não se muda. Coloque a solicitação, a confirmação e a própria janela no gráfico como tarefas separadas — tudo a montante existe para tornar aquele fim de semana viável.",
+    customize: [
+      "Lance primeiro as datas de interdição já confirmadas e trabalhe de trás para frente; quase todas as outras datas de uma ponte negociam em torno delas.",
+      "Acrescente uma linha por pilar e por encontro quando a sequência da mesoestrutura estiver definida, para acompanhar estacas e concretagens individualmente.",
+      "Sinalize as operações condicionadas ao clima — concretagem do tabuleiro, impermeabilização e pavimentação têm limites de temperatura ou de chuva que vale mostrar.",
+      "Estenda a barra de aprovação técnica para o prazo real de análise do seu órgão, incluindo o ciclo de resposta a comentários.",
+      "Mantenha o projeto das obras provisórias como tarefa própria; cimbramento, ensecadeira e esquema de lançamento aprovados condicionam a obra definitiva.",
+      "Insira o período de cheia ou a piracema como barras de bloqueio, se você está intervindo em curso d'água."
+    ],
+    tips: [
+      "<strong>Solicite as interdições antes de terminar o projeto.</strong> Os prazos para interdição de via e de ferrovia se contam em meses, e as janelas vão para quem reservou primeiro.",
+      "<strong>Trate obra provisória como obra definitiva.</strong> Cimbramento, ensecadeira e sistemas de lançamento precisam de projeto, verificação e aprovação, e ficam diretamente no caminho crítico do tabuleiro.",
+      "<strong>Não programe concretagem que você não consegue controlar termicamente.</strong> Grandes concretagens de tabuleiro empurradas para o pico do frio ou do calor são abandonadas na manhã do dia; planeje-as para uma janela climática viável.",
+      "<strong>Modele o rio, não a média.</strong> Fundação em curso d'água deve ser programada em torno do período histórico de cheia, com folga para perder um mês, e não uma semana.",
+      "<strong>Reserve prazo real para a prova de carga.</strong> Ensaio, instrumentação e a certificação que vem depois são um portão para a liberação, não uma vistoria de fim de obra.",
+      "<strong>Estabeleça a linha de base na aprovação técnica.</strong> Tudo antes disso é estimativa; depois, acompanhe a variação para que mudanças de escopo pedidas pelo órgão fiquem visíveis."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para construir uma ponte?",
+        "Uma ponte rodoviária pequena, de vão único, costuma levar de 9 a 18 meses a partir do início da obra; uma travessia importante leva anos. Este modelo usa um programa de cerca de dois anos, que você comprime ou estica movendo a data de liberação."
+      ],
+      [
+        "O que costuma atrasar uma obra de ponte?",
+        "As condições de solo encontradas no estaqueamento, os ciclos de aprovação técnica com o órgão rodoviário ou ferroviário e as janelas de interdição perdidas. As três são frentes separadas aqui, para que a exposição fique visível antes de doer."
+      ],
+      [
+        "Como represento uma interdição de via ou de ferrovia no gráfico?",
+        "Coloque a solicitação, a confirmação e a própria janela como três tarefas, e faça o lançamento das vigas depender da janela. Assim, qualquer atraso a montante ameaça visivelmente uma data que você não pode mudar."
+      ],
+      [
+        "Serve para uma passarela ou a substituição de um bueiro?",
+        "Sim. Mantenha as fases de levantamento, aprovações, fundações e superestrutura e reduza as linhas de pilar — a sequência é a mesma em escala menor."
+      ],
+      [
+        "O modelo de construção de ponte é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, além de edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'new-product-development-plan': {
+    card: "Conceito, viabilidade, protótipo, validação, ferramental e piloto.",
+    h1: "Plano de desenvolvimento de novo produto",
+    metaTitle: "Desenvolvimento de produto — plano",
+    metaDesc: "Modelo gratuito de plano de desenvolvimento de produto: conceito, viabilidade, protótipos, validação, ferramental e piloto.",
+    lead: "Um modelo gratuito de <strong>plano de desenvolvimento de novo produto</strong> montado como um programa de portões de decisão — conceito, viabilidade, projeto detalhado, prototipagem, validação e ensaios, ferramental, produção piloto e passagem para o lançamento. É a linha de engenharia que produz algo para vender; para o lado comercial do mesmo programa há o plano de lançamento de produto, e para o horizonte mais longo, o roadmap de produto.",
+    intro: "Cronogramas de desenvolvimento não erram nas tarefas: erram nos portões. O modelo separa cada etapa para que um portão seja uma decisão com evidência atrás dela, e não uma data que passa em silêncio:",
+    phases: [
+      [
+        "Conceito",
+        "Definição da oportunidade, necessidades e requisitos do cliente, esboços de conceito, business case inicial e o portão de conceito. <em>Portão 1: conceito aprovado.</em>"
+      ],
+      [
+        "Viabilidade",
+        "Estudos de viabilidade técnica, análise de fazer ou comprar, varredura regulatória, modelo de custo e avaliação de riscos. <em>Portão 2: viabilidade aprovada.</em>"
+      ],
+      [
+        "Projeto detalhado",
+        "Arquitetura e detalhamento, projeto voltado à manufatura e à montagem (DFMA), lista de materiais, engajamento de fornecedores e a análise crítica de projeto. <em>Portão 3: congelamento do projeto.</em>"
+      ],
+      [
+        "Prototipagem",
+        "Construção alfa, avaliação de engenharia, iterações de projeto e a construção beta usada na validação."
+      ],
+      [
+        "Validação e ensaios",
+        "Verificação de projeto, ensaios ambientais e de vida, submissões de certificação e conformidade, e testes com usuários. <em>Portão 4: projeto validado.</em>"
+      ],
+      [
+        "Ferramental e industrialização",
+        "Projeto e fabricação de ferramental, inspeção da primeira peça, desenvolvimento de processo, dispositivos e qualificação de fornecedores."
+      ],
+      [
+        "Produção piloto e passagem",
+        "Lote piloto, aprovação de peça de produção, plano de rampa, pacote de documentação e passagem para operações e para o time de lançamento. <em>Portão 5: liberação para produção.</em>"
+      ]
+    ],
+    callout: "O congelamento do projeto é o marco caro. Toda mudança depois dele custa dinheiro de ferramental, e toda mudança depois da inspeção da primeira peça custa dinheiro de ferramental duas vezes. Fazer do congelamento um portão de verdade — com evidência de ensaio atrás dele, e não uma data otimista — é a decisão isolada que preserva o orçamento do programa.",
+    customize: [
+      "Defina a data exigida de liberação para produção e trabalhe de trás para frente; o prazo de ferramental costuma decidir se o plano é sequer possível.",
+      "Compre o ferramental de prazo longo contra prazos realmente cotados, e coloque a tarefa de pedido antes do congelamento do projeto se você estiver assumindo esse risco de forma deliberada.",
+      "Acrescente uma linha por organismo certificador se o produto exige várias aprovações — elas correm em paralelo e cada uma tem a sua própria fila.",
+      "Expanda a prototipagem para quantas construções você realmente precisa; duas é otimismo para qualquer coisa com peça móvel.",
+      "Mantenha a qualificação de fornecedores visível — uma peça qualificada vinda de fornecedor não qualificado não é uma peça liberável.",
+      "Marque os cinco portões como marcos, para que o comitê veja decisões, e não barras de avanço."
+    ],
+    tips: [
+      "<strong>Não sobreponha ferramental a mudanças de projeto.</strong> Abrir molde antes do congelamento é a forma mais comum de um programa gastar toda a contingência em uma semana.",
+      "<strong>Comece a certificação cedo.</strong> Fila de laboratório e análise regulatória são durações de terceiros que não se comprimem com esforço, então reserve as vagas assim que existir uma amostra ensaiável.",
+      "<strong>Dê barra própria à validação.</strong> Tempo de ensaio é tempo decorrido real — ensaio de vida, em especial, roda por semanas independentemente de quantos engenheiros você alocar.",
+      "<strong>Engaje fornecedores durante o projeto, não depois.</strong> Retorno de manufaturabilidade que chega depois do congelamento vira pedido de mudança, e não entrada de projeto.",
+      "<strong>Separe este plano do plano de lançamento.</strong> As datas de marketing devem pender da liberação para produção, e não de uma estimativa de engenharia feita na fase de conceito.",
+      "<strong>Estabeleça a linha de base no congelamento do projeto.</strong> Acompanhe a variação a partir do projeto congelado, para que mudanças tardias apareçam como custo de prazo, e não sejam absorvidas em silêncio."
+    ],
+    faq: [
+      [
+        "Qual a diferença entre este modelo e o de lançamento de produto?",
+        "Este é a linha de engenharia, que termina na liberação para produção — do conceito ao ferramental e à produção piloto. O plano de lançamento de produto começa mais ou menos onde este termina e cobre posicionamento, preço, prontidão de canal e a campanha de entrada no mercado."
+      ],
+      [
+        "Quanto tempo leva desenvolver um produto novo?",
+        "Varia com a complexidade: um acessório de consumo simples pode levar de 6 a 9 meses, enquanto um produto regulado ou com muito ferramental costuma levar de 18 a 36. O modelo usa um programa de dezoito meses, que você pode comprimir ou estender."
+      ],
+      [
+        "Quais são os portões deste modelo?",
+        "Conceito aprovado, viabilidade aprovada, congelamento do projeto, projeto validado e liberação para produção. Cada um é um marco, com as tarefas que produzem a evidência como precedências."
+      ],
+      [
+        "Dá para usar em produto de software?",
+        "Em parte — as fases de conceito, viabilidade, projeto e validação transferem bem, mas você tiraria ferramental e produção piloto. Para software, o modelo de projeto de software é mais adequado."
+      ],
+      [
+        "O modelo de desenvolvimento de produto é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'trade-show-planning-timeline': {
+    card: "Contratação de área, estande, frete, equipe e follow-up de leads.",
+    h1: "Cronograma de planejamento de feira",
+    metaTitle: "Participação em feira — cronograma",
+    metaDesc: "Modelo gratuito de cronograma de feira: contratação de área, estande, frete, marketing pré-feira, equipe, dias de feira e follow-up.",
+    lead: "Um modelo gratuito de <strong>cronograma de participação em feira</strong> em contagem regressiva até o evento — escolha e contratação da área, projeto e montagem do estande, prazos de frete e de despacho, marketing pré-feira e agendamento de reuniões, escala e briefing da equipe, os dias de feira e o follow-up dos leads, que é o que decide se tudo aquilo se pagou. Para eventos que não são feiras, use o modelo geral de planejamento de eventos.",
+    intro: "Expor é uma contagem regressiva, não um projeto. Três ou quatro datas são realmente imóveis e todo o resto se organiza em volta delas, por isso o modelo as mostra como marcos, e não como tarefas:",
+    phases: [
+      [
+        "Escolha e contratação da área",
+        "Seleção da feira, aprovação de orçamento, análise da planta, escolha da área na data de prioridade e assinatura do contrato. <em>Marco: área contratada.</em>"
+      ],
+      [
+        "Projeto e montagem do estande",
+        "Briefing, projeto conceitual, escolha da montadora, aprovação do projeto pela organização da feira, fabricação, comunicação visual e pré-montagem."
+      ],
+      [
+        "Serviços do evento e logística",
+        "Pedido de energia, rigging, internet e mobiliário na tarifa antecipada, contratação de frete, o prazo de embarque e o horário de montagem atribuído. <em>Marco: prazo de embarque.</em>"
+      ],
+      [
+        "Marketing pré-feira",
+        "Lista de contas-alvo, campanha de convites, agendamento de reuniões, assessoria de imprensa e vagas de palestra, e redes sociais e site nas últimas semanas."
+      ],
+      [
+        "Equipe e treinamento",
+        "Escala do estande, passagens e hospedagem, briefing de produto e de mensagem, treinamento de captura de leads e ensaio da demonstração."
+      ],
+      [
+        "Dias de feira",
+        "Montagem, abertura, reuniões e demonstrações, revisão diária de leads, desmontagem e frete de retorno. <em>Marco: abertura da feira.</em>"
+      ],
+      [
+        "Follow-up e avaliação",
+        "Carga dos leads em dias, não semanas, follow-up por prioridade, atribuição de pipeline, análise de custo e a decisão sobre a próxima edição."
+      ]
+    ],
+    callout: "Três prazos deste gráfico não se movem: a data de escolha de área, que define onde você fica na próxima edição; o prazo da tarifa antecipada, depois do qual todo serviço custa mais; e o prazo de embarque, depois do qual o seu estande chega tarde ou não chega. Todo o resto é negociável. Marque os três e faça o plano caber em volta deles.",
+    customize: [
+      "Defina a data de abertura da feira e deixe o plano inteiro contar de trás para frente — é assim que o planejamento de feira funciona de fato.",
+      "Substitua os prazos genéricos pelas datas reais do manual do expositor assim que ele for publicado.",
+      "Acrescente linhas por embarque se você envia estande, produto e material impresso separadamente; os prazos são diferentes.",
+      "Estenda a barra de marketing pré-feira se você depende de reuniões agendadas; a agenda enche de seis a oito semanas antes, não na semana anterior.",
+      "Inclua uma tarefa de despacho aduaneiro e carnê ATA em feiras internacionais — tem prazo próprio e pode deixar o estande parado na alfândega.",
+      "Mantenha o follow-up no gráfico com tarefas datadas; lead perde valor rápido, e plano de follow-up sem data não é plano."
+    ],
+    tips: [
+      "<strong>Contrate a próxima edição durante a feira atual.</strong> A escolha de área costuma acontecer no local, com prioridade por tempo de casa e investimento, e é por isso que ela abre este modelo em vez de fechá-lo.",
+      "<strong>Peça os serviços na tarifa antecipada.</strong> Energia, rigging e internet pedidos depois do prazo custam sistematicamente muito mais pela mesma coisa.",
+      "<strong>Cumpra o prazo de embarque com folga.</strong> Cargas atrasadas vão para o fim da fila de descarga, e o seu horário de montagem não espera por elas.",
+      "<strong>Aprove o projeto do estande com a organização cedo.</strong> Altura, placas suspensas e estruturas de dois pisos exigem aprovação e são barrados no local se nunca foram submetidos.",
+      "<strong>Ensaie a demonstração antes de viajar.</strong> Descobrir que a demo precisa de uma banda que você não contratou é um problema de piso de feira sem solução no piso da feira.",
+      "<strong>Faça o follow-up em até 48 horas.</strong> O maior fator isolado de retorno em feiras é a velocidade do follow-up, então programe-o antes de viajar, não depois de voltar."
+    ],
+    faq: [
+      [
+        "Com quanta antecedência começar o planejamento de uma feira?",
+        "De seis a nove meses para uma feira grande, e mais ainda se você quer boa posição na planta — a área da próxima edição costuma ser escolhida durante a atual. Este modelo cobre cerca de oito meses até a abertura."
+      ],
+      [
+        "Qual a diferença para o modelo de planejamento de eventos?",
+        "Este é específico de exposição: contrato de área, montagem de estande, prazos de frete e despacho, pedidos na tarifa antecipada e follow-up de leads. O modelo de planejamento de eventos cobre a realização do seu próprio evento — local, programação, palestrantes e público."
+      ],
+      [
+        "Quais são os prazos imóveis de quem expõe?",
+        "A escolha de área, o prazo da tarifa antecipada no manual do expositor, o prazo de frete e despacho, e o horário de montagem atribuído. Os quatro aparecem aqui como marcos."
+      ],
+      [
+        "Serve tanto para um estande de congresso quanto para uma feira grande?",
+        "Sim. Mantenha a estrutura e reduza as linhas de montagem se você vai usar estande básico da organização ou apenas uma mesa."
+      ],
+      [
+        "O modelo de feira é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'recruitment-hiring-plan': {
+    card: "Da requisição de vaga ao aviso prévio e à data de início.",
+    h1: "Plano de recrutamento e seleção",
+    metaTitle: "Recrutamento e seleção — plano",
+    metaDesc: "Modelo gratuito de plano de recrutamento e seleção: aprovação da vaga, divulgação, triagem, entrevistas, proposta e aviso prévio.",
+    lead: "Um modelo gratuito de <strong>plano de recrutamento e seleção</strong> cobrindo uma vaga de ponta a ponta — definição do cargo e aprovação de quadro, divulgação, triagem, o ciclo de entrevistas, avaliação e referências, proposta e negociação, o aviso prévio do candidato e a data de início. Ele termina exatamente onde começa a integração de novos colaboradores.",
+    intro: "A maioria dos planos de contratação subestima as mesmas duas coisas: quanto tempo leva a aprovação no começo e quanto leva o aviso prévio no fim. O modelo dá barra real às duas, para que a data de início seja honesta:",
+    phases: [
+      [
+        "Definição do cargo e aprovação",
+        "Justificativa, descrição da vaga, nível e faixa salarial, aprovação de quadro e abertura da requisição. <em>Marco: requisição aprovada.</em>"
+      ],
+      [
+        "Divulgação e captação",
+        "Publicação do anúncio, campanha de indicações, busca ativa e abordagem direta, briefing de consultoria quando houver, e formação do funil até o número-alvo de candidatos."
+      ],
+      [
+        "Triagem",
+        "Análise de currículos, entrevistas de triagem com o recrutador, conversas com o gestor e a definição da lista curta. <em>Marco: lista curta definida.</em>"
+      ],
+      [
+        "Ciclo de entrevistas",
+        "Entrevistas estruturadas com o painel, exercício técnico ou funcional, logística de agendamento e as reuniões de alinhamento após cada rodada."
+      ],
+      [
+        "Avaliação e decisão",
+        "Estudo de caso ou amostra de trabalho, painel final, consolidação das avaliações, referências e verificações. <em>Marco: decisão de contratação.</em>"
+      ],
+      [
+        "Proposta e negociação",
+        "Aprovação da remuneração, proposta verbal, contrato por escrito, negociação e assinatura. <em>Marco: proposta aceita.</em>"
+      ],
+      [
+        "Aviso prévio e pré-início",
+        "Pedido de demissão e aviso prévio do candidato, contato de manutenção do vínculo, equipamento e acessos, e o primeiro dia. <em>Marco: data de início.</em>"
+      ]
+    ],
+    callout: "O aviso prévio não é burocracia — muitas vezes é a barra mais longa do gráfico. Uma contratação sênior com três meses de aviso significa que a requisição aprovada hoje só produz alguém trabalhando daqui a cinco ou seis meses. Planos que param em \"proposta aceita\" prometem capacidade um trimestre antes de ela existir.",
+    customize: [
+      "Trabalhe de trás para frente a partir de quando você precisa da pessoa produtiva, e não de quando quer que ela assine.",
+      "Ajuste a barra de aviso prévio à norma real do cargo e do país — um mês, três meses e seis meses produzem planos muito diferentes.",
+      "Duplique as fases de divulgação até proposta por vaga se você está contratando um time, e escalone-as contra a disponibilidade dos entrevistadores.",
+      "Acrescente uma frente de consultoria ou headhunter com marcos próprios, se houver; as datas de briefing e de lista curta são contratuais.",
+      "Insira etapas de visto ou de autorização de trabalho como tarefas próprias quando aplicável — podem passar do aviso prévio.",
+      "Mantenha no gráfico as tarefas de manutenção do vínculo. É entre a assinatura e o início que candidatos aceitos recebem contraproposta e somem."
+    ],
+    tips: [
+      "<strong>Aprove o quadro antes de publicar a vaga.</strong> Uma requisição que chega ao painel final sem orçamento aprovado desperdiça o tempo do candidato e a sua credibilidade.",
+      "<strong>Reserve a agenda do painel com antecedência.</strong> O agendamento, e não a decisão, é a maior fonte de atraso na maioria dos processos.",
+      "<strong>Comprima o ciclo, não a triagem.</strong> Bons candidatos costumam estar em mais de um processo; um ciclo que passa de três semanas os perde para quem foi mais rápido.",
+      "<strong>Peça referências antes da decisão final quando puder.</strong> Elas exigem uma semana de cobrança e ficam exatamente entre a decisão e a proposta.",
+      "<strong>Trate a proposta como negociação com duração.</strong> Prever alguns dias para contraproposta e resposta é mais realista do que supor aceite no mesmo dia.",
+      "<strong>Passe para a integração na assinatura, não no primeiro dia.</strong> Equipamento, acessos e o plano da primeira semana precisam de prazo dentro do aviso prévio."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para contratar alguém?",
+        "Em geral de 6 a 12 semanas da requisição aprovada até a proposta assinada, mais o aviso prévio por cima. Este modelo cobre cerca de cinco meses da justificativa à data de início, o que é realista para um cargo com aviso de um a três meses."
+      ],
+      [
+        "Como isso se encaixa com o modelo de integração?",
+        "Este plano termina na data de início; o modelo de integração de novos colaboradores parte do primeiro dia e vai até os noventa dias. Use os dois em sequência para ter o quadro completo."
+      ],
+      [
+        "Qual a causa mais comum de um processo lento?",
+        "O agendamento de entrevistas e as decisões internas lentas, e não a captação. Por isso o ciclo de entrevistas e as reuniões de alinhamento são tarefas separadas aqui, em vez de um bloco único."
+      ],
+      [
+        "Dá para planejar várias contratações ao mesmo tempo?",
+        "Sim — duplique as fases de divulgação até proposta por vaga e escalone os ciclos de entrevista para não agendar o mesmo painel duas vezes na mesma semana."
+      ],
+      [
+        "O modelo de recrutamento é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'internal-audit-plan': {
+    card: "Plano anual, escopo, trabalho de campo, achados e acompanhamento.",
+    h1: "Plano de auditoria interna",
+    metaTitle: "Auditoria interna — plano",
+    metaDesc: "Modelo gratuito de plano de auditoria interna: avaliação de riscos, escopo, trabalho de campo, achados, resposta e acompanhamento.",
+    lead: "Um modelo gratuito de <strong>plano de auditoria interna</strong> cobrindo um ciclo completo — avaliação anual de riscos e universo auditável, aprovação do plano pelo comitê, escopo e planejamento do trabalho, trabalho de campo e testes de controles, achados e resposta da administração, emissão do relatório e acompanhamento da remediação. Baixe para o material do comitê de auditoria ou abra online para distribuir vários trabalhos ao longo do ano.",
+    intro: "Um plano de auditoria tem duas camadas: o programa anual e o trabalho individual dentro dele. O modelo mostra as duas, para que o comitê veja cobertura enquanto a equipe vê o trabalho:",
+    phases: [
+      [
+        "Planejamento anual",
+        "Avaliação de riscos, atualização do universo auditável, entrevistas com partes interessadas, plano de recursos e orçamento e a minuta do plano anual. <em>Marco: plano aprovado pelo comitê.</em>"
+      ],
+      [
+        "Escopo do trabalho",
+        "Comunicação de abertura, pesquisa prévia, entendimento dos processos, matriz de riscos e controles e o escopo acordado no termo de referência."
+      ],
+      [
+        "Trabalho de campo e testes",
+        "Avaliação do desenho dos controles, seleção de amostras, testes de efetividade e substantivos, coleta de evidências e papéis de trabalho."
+      ],
+      [
+        "Achados e validação",
+        "Minuta das constatações, verificação de exatidão factual com os donos do processo, classificação e priorização, e a reunião de encerramento. <em>Marco: reunião de encerramento realizada.</em>"
+      ],
+      [
+        "Resposta da administração",
+        "Acordo dos planos de ação, responsáveis nomeados e prazos, e escalonamento de tudo que a administração optar por não aceitar."
+      ],
+      [
+        "Relatório",
+        "Minuta do relatório, revisão de qualidade, emissão da versão final e apresentação ao comitê de auditoria. <em>Marco: relatório emitido.</em>"
+      ],
+      [
+        "Acompanhamento",
+        "Monitoramento da remediação contra os prazos acordados, reteste das ações encerradas e reporte dos itens vencidos de volta ao comitê."
+      ]
+    ],
+    callout: "O acompanhamento é onde o valor da auditoria se realiza e é justamente onde os planos costumam parar. Um relatório emitido sem tarefa datada de verificação atrás dele é uma opinião; um prazo de remediação monitorado com reteste no gráfico é um controle que de fato mudou. Mantenha as barras de acompanhamento no plano e dimensione equipe para elas.",
+    customize: [
+      "Coloque vários trabalhos lado a lado ao longo do ano para ver se a equipe está realmente disponível para todos eles.",
+      "Fixe primeiro as datas das reuniões do comitê de auditoria — elas são imóveis, e toda data de relatório conta de trás para frente a partir de uma delas.",
+      "Acrescente uma linha por entidade auditável se você reporta ao comitê a cobertura do universo auditável.",
+      "Estenda o trabalho de campo em auditorias com visitas a unidades ou extrações de dados; ambas levam mais tempo que o teste de escritório.",
+      "Inclua uma reserva para contingência ou investigações especiais; trabalho não planejado é normal, e trabalho não planejado sem orçamento destrói o plano.",
+      "Acompanhe o prazo de remediação de cada achado como tarefa própria depois da emissão do relatório, em vez de numa planilha à parte."
+    ],
+    tips: [
+      "<strong>Construa o plano sobre risco e depois confira a cobertura.</strong> Um plano priorizado por risco que deixa uma unidade inteira de fora por três anos é exatamente o achado que a auditoria externa fará sobre você.",
+      "<strong>Comunique cedo e agende os entendimentos de processo.</strong> A disponibilidade do auditado é a causa mais comum de estouro no trabalho de campo, e é inteiramente previsível.",
+      "<strong>Valide os fatos antes de classificar os achados.</strong> Um erro factual descoberto depois da classificação custa a autoridade do relatório e acrescenta um ciclo inteiro de revisão.",
+      "<strong>Não deixe a resposta da administração se arrastar.</strong> Dê a ela uma barra delimitada, com prazo; períodos de resposta em aberto são como relatórios perdem a data do comitê.",
+      "<strong>Retestar, não perguntar de novo.</strong> A verificação de uma ação encerrada exige evidência, o que pede tempo no cronograma, e não apenas um e-mail de confirmação.",
+      "<strong>Estabeleça a linha de base na aprovação do plano.</strong> Acompanhe a variação contra o plano aprovado, para que o trabalho não planejado apareça como deslocamento, e não seja absorvido em silêncio."
+    ],
+    faq: [
+      [
+        "O que deve conter um plano de auditoria interna?",
+        "Uma avaliação de riscos e o universo auditável, uma lista priorizada de trabalhos com os recursos correspondentes e, para cada trabalho, escopo, trabalho de campo, achados, resposta da administração, relatório e acompanhamento. As sete fases já vêm prontas."
+      ],
+      [
+        "Quanto tempo leva um trabalho de auditoria interna?",
+        "Em geral de 6 a 12 semanas da comunicação de abertura à emissão do relatório numa revisão de porte médio, com o acompanhamento correndo por meses depois. O trabalho deste modelo leva cerca de quatro meses de ponta a ponta."
+      ],
+      [
+        "Com que frequência revisar o plano anual?",
+        "A maioria das áreas aprova o plano anualmente e o revisita ao menos semestralmente, já que os perfis de risco e o trabalho não planejado mudam. Deixar contingência no plano é o que torna essa revisão administrável."
+      ],
+      [
+        "Serve para uma auditoria externa ou de certificação?",
+        "Em parte. Escopo, trabalho de campo, achados e acompanhamento transferem bem; você substituiria a fase de planejamento anual pelo ciclo de auditoria do próprio organismo certificador."
+      ],
+      [
+        "O modelo de plano de auditoria interna é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

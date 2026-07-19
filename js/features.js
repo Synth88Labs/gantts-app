@@ -444,8 +444,10 @@
         fetch('/templates/files/' + slug + '.csv')
           .then(r => (r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status))))
           .then(txt => {
-            Templates.importCSV(txt);
-            Model.project.name = prettyName(slug);
+            // Pass the name in so the project is never briefly called
+            // "Imported project" — loadProjectData emits 'load', and a
+            // listener that read the name saw the placeholder.
+            Templates.importCSV(txt, prettyName(slug));
             Model.save();
             if (window.App) {
               App.render();
@@ -456,7 +458,17 @@
           })
           .catch(() => { if (window.App) App.toast(App.T('ft.tplFailed', 'Could not load that template — starting from a blank chart')); });
       }
-      function prettyName(s) { return s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()); }
+      /* Title-case the slug, but leave acronyms alone. Blind
+         capitalisation produced "Erp Implementation Schedule" and
+         "Ev Charging" — which is the first thing a user sees after
+         clicking "edit online" from a template page. */
+      function prettyName(s) {
+        const ACRONYM = { erp: 'ERP', ev: 'EV', phd: 'PhD', mep: 'MEP', it: 'IT',
+                          npd: 'NPD', pdf: 'PDF', csv: 'CSV', hr: 'HR', qa: 'QA' };
+        return s.split('-')
+          .map((w) => ACRONYM[w] || (w.charAt(0).toUpperCase() + w.slice(1)))
+          .join(' ');
+      }
     },
   };
 

@@ -2229,6 +2229,760 @@ const T = {
       ["powerpoint", "PowerPoint-Vorlage"]
     ]
   },
+
+  '3-week-lookahead-template': {
+    card: "Rollierende Drei-Wochen-Vorschau mit Gewerken, Abnahmen und Randbedingungen.",
+    h1: "3-Wochen-Vorschau — Vorlage für die Bauablaufplanung",
+    metaTitle: "3-Wochen-Vorschau — Terminplan-Vorlage",
+    metaDesc: "Kostenlose Vorlage für die 3-Wochen-Vorschau: Gewerke, Abnahmen, Randbedingungen und Lieferfristen je Woche. Als Excel oder online.",
+    lead: `Eine kostenlose <strong>Vorlage für die 3-Wochen-Vorschau</strong>, aufgebaut wie die Montagsbesprechung auf der Baustelle tatsächlich läuft: diese Woche, nächste Woche, übernächste Woche — mit Gewerken, Abnahmen, Randbedingungen und Langläufern auf jeder davon. Laden Sie sie für die Wand im Baucontainer herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a> und erzeugen Sie das Zeitfenster über <strong>Ansicht ▸ Vorschau</strong> direkt aus Ihrem Rahmenterminplan, statt es jede Woche neu in eine Tabelle zu tippen.`,
+    intro: "Eine Vorschau ist kein zweiter Plan. Sie ist ein Drei-Wochen-Ausschnitt des Rahmenterminplans, versehen mit den Randbedingungen und wöchentlich fortgeschrieben. Genau so ist die Vorlage gegliedert:",
+    phases: [
+      [
+        "Woche 1 — zugesagte Arbeiten",
+        "Vorgänge ohne offene Randbedingung, die in dieser Woche ausgeführt werden. Kolonnen, Material und Zugang sind bestätigt. <em>Meilenstein: Bewehrungsabnahme vor dem Betonieren.</em>"
+      ],
+      [
+        "Woche 2 — vorbereitete Arbeiten",
+        "Vorgänge, deren Randbedingungen erledigt sind, die aber noch nicht begonnen haben. Dieser Vorrat hält die Kolonnen beschäftigt, wenn Woche 1 kippt."
+      ],
+      [
+        "Woche 3 — geplante Arbeiten",
+        "Vorgänge, die noch arbeitsreif gemacht werden. Alles, was hier eine offene Randbedingung hat, ist der eigentliche Grund für die Besprechung."
+      ],
+      [
+        "Randbedingungen und Lieferfristen",
+        "Freigaben, Planlieferungen, Materiallieferungen und Genehmigungen, die vor dem Vorgang liegen müssen, den sie sperren. Sie laufen quer über alle drei Wochen und nicht innerhalb einer einzelnen."
+      ],
+      [
+        "Abnahmen und Haltepunkte",
+        "Prüfungen Dritter, die den Bauablauf stoppen, wenn sie ausbleiben — Bewehrung, Leitungen im Erdreich, Tragwerk. Jede davon ist ein Meilenstein, kein Vorgang."
+      ],
+      [
+        "Wöchentliche Fortschreibung",
+        "Der Plan rollt jeden Montag eine Woche weiter. Fertigstellungsgrade werden eingetragen, das Fenster verschiebt sich, die Liste der Randbedingungen wird erneut durchgegangen."
+      ]
+    ],
+    callout: `Sinn der Vorschau ist das Ausräumen von Randbedingungen, nicht das Berichten. Wenn ein Vorgang in Woche 3 auf eine ausstehende Freigabe oder eine nicht gelieferte Lieferung wartet, ist das am Montag das Einzige, worüber zu reden sich lohnt — alles Übrige ist bereits arbeitsreif. Unser <a href="/de/blog/3-week-lookahead-schedule.html">Leitfaden zur 3-Wochen-Vorschau</a> zeigt, wie Sie die Besprechung anhand des Plans führen.`,
+    customize: [
+      "Legen Sie den Startmontag selbst fest — die Ansicht Vorschau verankert am Montag und lässt Fenster von einer bis acht Wochen zu.",
+      "Führen Sie bei gewerkeorientierten Baustellen eine Zeile je Kolonne oder Nachunternehmer statt je Vorgang; die Poliere müssen ihre eigene Zeile sehen.",
+      "Bilden Sie Randbedingungen als echte Balken mit echter Dauer ab. Eine Freigabe als Notiz ohne Dauer wird schlicht übersehen.",
+      "Setzen Sie jede Abnahme als Meilenstein, damit kein nachfolgender Vorgang über einen Haltepunkt hinweg geplant wird.",
+      "Rollen Sie den Plan jeden Montag eine Woche weiter, statt ihn neu zu bauen — der Rahmenterminplan ist die Quelle, die Vorschau nur die Sicht darauf."
+    ],
+    tips: [
+      "<strong>Erzeugen statt abtippen.</strong> Wird die Vorschau getrennt vom Rahmenterminplan gepflegt, laufen beide binnen eines Monats auseinander. Öffnen Sie den Rahmenterminplan im Editor und schneiden Sie das Fenster über <strong>Ansicht ▸ Vorschau</strong> heraus.",
+      "<strong>Woche 1 enthält keine offenen Randbedingungen.</strong> Tut sie es doch, ist der Vorgang nicht zugesagt, sondern erhofft — und gehört in Woche 2.",
+      "<strong>Messen Sie die Zusageerfüllung.</strong> Wie viele der Zusagen aus Woche 1 tatsächlich fertig wurden, ist die nützlichste Kennzahl, die eine Vorschau liefert.",
+      "<strong>Langläufer gehören Monate früher auf den Plan.</strong> Stahlbau, Schaltanlagen und Aufzüge kümmert Ihr Drei-Wochen-Fenster nicht; sie müssen darin zum Liefertermin auftauchen und lange vorher bestellt sein.",
+      "<strong>Drucken Sie den Plan in der Größe, die die Containerwand verlangt.</strong> Eine Vorschau, die man aus einem Meter Entfernung nicht lesen kann, ändert niemandes Montag."
+    ],
+    faq: [
+      [
+        "Was ist eine 3-Wochen-Vorschau?",
+        `Ein rollierender Kurzfristplan, der die nächsten drei Wochen aus dem Rahmenterminplan herausschneidet und um Randbedingungen und Abnahmen ergänzt. Er wird wöchentlich fortgeschrieben, meist in der Montagsbesprechung. Unser <a href="/de/blog/3-week-lookahead-schedule.html">Leitfaden zur 3-Wochen-Vorschau</a> erklärt das Zusammenspiel mit der Taktplanung.`
+      ],
+      [
+        "Kann gantts.app die Vorschau aus meinem Plan erzeugen?",
+        `Ja. Öffnen Sie Ihren Terminplan im <a href="/de/app.html">kostenlosen Editor</a> und wählen Sie <strong>Ansicht ▸ Vorschau</strong>. Die Ansicht verankert am Montag und lässt Fenster von einer bis acht Wochen zu — die Vorschau bleibt damit eine Sicht auf den laufenden Plan und wird nicht zur zweiten Fassung davon.`
+      ],
+      [
+        "Warum drei Wochen und nicht vier oder sechs?",
+        "Drei Wochen reichen, um die meisten Randbedingungen auszuräumen, und sind kurz genug, dass die Termine noch belastbar sind. Baustellen mit langen Lieferfristen fahren oft sechs Wochen; die Ansicht Vorschau erlaubt bis zu acht — nehmen Sie, was Ihr Vorlauf braucht."
+      ],
+      [
+        "Was steht in der Vorschau, das nicht im Rahmenterminplan steht?",
+        "Die Randbedingungen: Freigaben, Planabfragen, Lieferungen, Genehmigungen, Abnahmen und die Verfügbarkeit der Kolonnen. Der Rahmenterminplan trägt die Arbeit, die Vorschau trägt die Gründe, warum sie ausfallen könnte."
+      ],
+      [
+        "Ist die Vorlage für die 3-Wochen-Vorschau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  's-curve-template': {
+    card: "Plan gegen Ist als S-Kurve: Basisplan setzen, PV, EV, SV und SPI ablesen.",
+    h1: "S-Kurven-Vorlage (Plan gegen Ist)",
+    metaTitle: "S-Kurve — Vorlage Plan gegen Ist",
+    metaDesc: "Kostenlose S-Kurven-Vorlage für Plan- und Ist-Fortschritt: Basisplan setzen und PV, EV, SV sowie SPI im S-Kurven-Panel ablesen.",
+    lead: `Eine kostenlose <strong>S-Kurven-Vorlage</strong> — ein Projekt, das so geschnitten ist, dass die Kurve aus Plan und Ist überhaupt etwas aussagt: langsamer Anlauf, schwere Mitte, langer Auslauf. Laden Sie sie für den Fortschrittsbericht herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a>, setzen Sie einen Basisplan und lesen Sie im Panel <strong>📈 S-Kurve</strong> Plankosten, Fertigstellungswert, Terminabweichung und SPI direkt aus Ihren eigenen Terminen und Fertigstellungsgraden ab.`,
+    intro: "Eine S-Kurve ist nichts weiter als der kumulierte Fortschritt über die Zeit. S-förmig wird sie, weil Projekte langsam anlaufen, in der Mitte heiß laufen und über die Inbetriebnahme auslaufen. Die Vorlage liefert einen Terminplan mit genau dieser Form:",
+    phases: [
+      [
+        "Start und Basisplan",
+        "Projektauftrag, Leistungsumfang, Budget und der Basisplan selbst — der flache Fuß der Kurve, auf dem viel Kalender vergeht und wenig Wert entsteht. <em>Meilenstein: Basisplan gesetzt.</em>"
+      ],
+      [
+        "Planung und Engineering",
+        "Vorentwurf bis Ausführungsplanung. Der Fortschritt beginnt zu laufen, die Ausgaben eilen dem gelieferten Wert aber noch voraus."
+      ],
+      [
+        "Beschaffung",
+        "Bestellungen, Verfolgung der Langläufer, Wareneingänge. Die Mittelbindung steigt hier steil, der physische Fortschritt nicht."
+      ],
+      [
+        "Ausführung",
+        "Die steile Mitte der Kurve, in der der größte Teil des Fertigstellungswerts entsteht und in der sich ein wöchentlicher Blick auf den SPI lohnt."
+      ],
+      [
+        "Test und Inbetriebnahme",
+        "Der Auslauf. Die Restleistung ist wertmäßig klein, dauert aber hartnäckig lange — deshalb flachen Kurven ab, bevor sie enden. <em>Meilenstein: Inbetriebnahme abgeschlossen.</em>"
+      ],
+      [
+        "Übergabe und Abschluss",
+        "Dokumentation, Restpunkte, Schlussrechnung und Lessons Learned — die letzten Prozente, die immer länger dauern als vorgesehen."
+      ]
+    ],
+    callout: `Eine einzelne Kurve sagt nichts. Der Wert liegt im Abstand zwischen Plan- und Ist-Kurve: Liegt die Ist-Kurve darunter, sind Sie im Verzug, und der senkrechte Abstand ist Ihre Terminabweichung in Wertgrößen, während der waagerechte Abstand grob Ihrem Zeitverzug entspricht. Unser <a href="/de/blog/s-curve-project-management.html">Leitfaden zur S-Kurve</a> arbeitet durch, wie Sie PV, EV, SV und SPI ablesen.`,
+    customize: [
+      "Setzen Sie den Basisplan, sobald der Plan abgestimmt ist — ohne ihn gibt es keine Plankurve, und das S-Kurven-Panel hat keinen Vergleichsmaßstab.",
+      "Halten Sie die Fertigstellungsgrade ehrlich und aktuell; die Ist-Kurve ist nur so gut wie die letzte Rückmeldung.",
+      "Gewichten Sie die mittleren Phasen deutlich. Bei gleichmäßig verteilten Dauern wird die Kurve zur Geraden, was meist heißt, dass der Plan zu grob ist.",
+      "Hinterlegen Sie je Vorgang Kosten oder Personenstunden, wenn Sie eine kostenbewertete statt einer dauerbewerteten Kurve wollen.",
+      "Setzen Sie einen neuen Basisplan nur bei einer formalen Änderung. Neu zu basieren, um Abweichungen verschwinden zu lassen, kostet das Projekt sein einziges Frühwarnsystem."
+    ],
+    tips: [
+      "<strong>Lesen Sie den SPI, nicht die Form.</strong> Ein SPI unter 1,0 heißt, dass bis heute weniger Wert erbracht wurde als geplant. Der Trend über vier oder fünf Stichtage sagt weit mehr als ein einzelner Wert.",
+      "<strong>Rechnen Sie mit langsamem Anlauf.</strong> Eine Kurve, die ab Tag eins steil steigt, misst fast immer Ausgaben oder Aufwand statt gelieferten Fortschritt.",
+      "<strong>Achten Sie auf den Knick.</strong> Kurven, die schon bei 85 bis 90 Prozent abflachen, sind das klassische Bild eines Projekts voller fast fertiger Arbeit.",
+      "<strong>Schreiben Sie in festem Takt fort.</strong> Wöchentlich oder vierzehntägig, immer am selben Tag — unregelmäßige Stichtage machen die Kurve unlesbar.",
+      "<strong>Zeigen Sie Kurve und Balkenplan zusammen.</strong> Die Kurve sagt, dass Sie im Verzug sind; der Balkenplan sagt, welche Vorgänge ihn verursacht haben. Beides gehört in den Bericht."
+    ],
+    faq: [
+      [
+        "Was ist eine S-Kurve im Projektmanagement?",
+        `Die Darstellung des kumulierten geplanten gegen den kumulierten tatsächlichen Fortschritt über die Zeit. S-förmig ist sie, weil die Arbeit langsam anläuft, in der Mitte ihren Höhepunkt hat und am Ende ausläuft. Unser <a href="/de/blog/s-curve-project-management.html">Leitfaden zur S-Kurve</a> erklärt, wie Sie eine aufbauen und lesen.`
+      ],
+      [
+        "Zeichnet gantts.app die S-Kurve selbst?",
+        `Ja. Setzen Sie einen Basisplan und öffnen Sie im <a href="/de/app.html">kostenlosen Editor</a> das Panel <strong>📈 S-Kurve</strong>. Es berechnet Plankosten, Fertigstellungswert, Terminabweichung und den Termin-Leistungsindex aus Ihren Vorgängen und rechnet bei jeder Änderung des Fertigstellungsgrads neu.`
+      ],
+      [
+        "Wofür stehen PV, EV, SV und SPI?",
+        "PV ist die Leistung, die bis heute geplant war, EV die tatsächlich erbrachte Leistung, SV die Differenz EV minus PV und SPI der Quotient EV geteilt durch PV. Über 1,0 heißt vor Plan, unter 1,0 heißt im Verzug."
+      ],
+      [
+        "Warum sieht meine Kurve aus wie eine Gerade?",
+        "Meist, weil alle Vorgänge ähnlich lang und ähnlich schwer sind und der Fortschritt deshalb gleichmäßig anfällt. Gliedern Sie die mittleren Phasen feiner oder hinterlegen Sie Kosten beziehungsweise Personenstunden — dann erscheint die S-Form."
+      ],
+      [
+        "Brauche ich dafür einen Basisplan?",
+        "Für Plan gegen Ist ja. Ohne Basisplan sehen Sie zwar den kumulierten Ist-Fortschritt, haben aber keinen Vergleichsmaßstab und keinen SPI."
+      ],
+      [
+        "Ist die S-Kurven-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'cloud-migration-project-plan': {
+    card: "Analyse, Landing Zone, Migrationswellen, Cutover, Hypercare und Rückbau.",
+    h1: "Projektplan für die Cloud-Migration",
+    metaTitle: "Cloud-Migration — Projektplan-Vorlage",
+    metaDesc: "Kostenloser Projektplan für die Cloud-Migration: Analyse, Landing Zone, Migrationswellen, Cutover, Hypercare und Rückbau. Excel oder online.",
+    lead: "Eine kostenlose <strong>Vorlage für den Cloud-Migrationsplan</strong>, die den Umzug von Anwendungen und Workloads durchgehend abbildet — Bestandsaufnahme und Anwendungsbewertung, Aufbau der Landing Zone, Wellenplanung, Pilot- und Produktionswellen, Cutover, Hypercare und der Rückbau dessen, was zurückbleibt. Laden Sie sie für die Lenkungsausschussunterlage herunter oder verknüpfen Sie die Wellen online, damit ein Verzug in der einen nicht stillschweigend die nächste auffrisst.",
+    intro: "Eine Cloud-Migration ist kein einzelnes Projekt, sondern ein Fundamentbau plus eine sich wiederholende Welle. Die Vorlage trennt beides, damit die Landing Zone fertig ist, bevor die Wellen darauf aufsetzen:",
+    phases: [
+      [
+        "Bestandsaufnahme und Bewertung",
+        "Anwendungsinventar, Abhängigkeitsanalyse, Geschäftskritikalität und je Workload eine Entscheidung nach den 7 R — Rehost, Replatform, Refactor, Repurchase, Relocate, Retire, Retain. <em>Meilenstein: Zuordnung der Anwendungen abgestimmt.</em>"
+      ],
+      [
+        "Landing Zone und Fundament",
+        "Konten und Subscriptions, Netz und Anbindung, Identitäten, Sicherheitsleitplanken, Protokollierung und das Kostenmodell. Alles Nachfolgende hängt daran. <em>Meilenstein: Landing Zone produktiv.</em>"
+      ],
+      [
+        "Wellenplanung und Pilot",
+        "Bündelung der Anwendungen zu Wellen nach Abhängigkeit statt nach Zuständigkeit, dann der Nachweis des Runbooks an einer risikoarmen Pilotwelle."
+      ],
+      [
+        "Migrationswellen",
+        "Wiederkehrende Zyklen aus Aufbau, Migration, Test und Cutover je Welle. Das Muster bleibt gleich, was sich ändert, ist das Risikoprofil."
+      ],
+      [
+        "Cutover und Hypercare",
+        "Produktive Umstellungen, Umschalten von DNS und Datenverkehr, Rückfallfenster und die verstärkte Betreuung nach jeder Welle. <em>Meilenstein: Produktiv-Cutover abgeschlossen.</em>"
+      ],
+      [
+        "Rückbau und Optimierung",
+        "Abschalten der Altumgebung, Ausstieg aus Rechenzentrum oder Hosting-Vertrag, danach Right-Sizing und reservierte Kapazitäten. Hier wird der Business Case tatsächlich eingelöst."
+      ]
+    ],
+    callout: "Der Business Case ist erst eingelöst, wenn das Alte abgeschaltet ist. Migrationen enden regelmäßig nach dem letzten Cutover — beide Umgebungen laufen weiter und die Einsparung existiert nur auf dem Papier. Setzen Sie den Rückbau als datierten Vorgang mit Verantwortlichem auf den Plan und stellen Sie das Vertragsende des Hostings als festen Meilenstein daneben.",
+    customize: [
+      "Legen Sie zuerst das Ende des Rechenzentrums- oder Hosting-Vertrags fest und rechnen Sie rückwärts; dieser Termin ist meist vertraglich und nicht verhandelbar.",
+      "Ergänzen Sie nach der Bestandsaufnahme eine Zeile je Anwendung, gruppiert unter der Welle, die sie trägt.",
+      "Duplizieren Sie die Wellenphase für jede weitere Welle; der innere Aufbau bleibt identisch.",
+      "Nehmen Sie Refactor-Kandidaten ganz aus der Wellenplanung heraus — das sind Entwicklungsprojekte, keine Migrationen, und sie zerstören den Takt der Wellen.",
+      "Setzen Sie Landing Zone produktiv, Pilotwelle abgeschlossen, jeden Produktiv-Cutover und den Rückbau als Meilensteine."
+    ],
+    tips: [
+      "<strong>Keine Welle vor fertiger Landing Zone.</strong> In ein Fundament zu migrieren, das sich noch ändert, heißt zweimal zu migrieren — die häufigste Quelle von Nacharbeit in solchen Programmen.",
+      "<strong>Bündeln Sie nach Abhängigkeit, nicht nach Abteilung.</strong> Anwendungen, die miteinander sprechen, sollten gemeinsam ziehen, sonst bezahlen Sie die Latenz zwischen zwei Umgebungen, solange sie getrennt sind.",
+      "<strong>Fahren Sie eine echte Pilotwelle.</strong> Sie soll das Runbook belegen und die Überraschungen zutage fördern; wählen Sie also risikoarme, aber wirklich repräsentative Anwendungen — nicht die drei einfachsten.",
+      "<strong>Kalkulieren Sie den Parallelbetrieb.</strong> Beide Umgebungen laufen für die Dauer der Migration gleichzeitig; diese Doppelkosten sind real und gehören vom ersten Tag an in den Business Case.",
+      "<strong>Halten Sie bei jedem Cutover ein Rückfallfenster offen.</strong> Ein Cutover ohne dokumentierten und geprobten Rückfall ist eine Einbahnstraße, die man betritt, ohne sich dafür entschieden zu haben."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Cloud-Migration?",
+        "Für eine mittelgroße Landschaft üblicherweise 9 bis 24 Monate, bestimmt vor allem durch die Zahl der Anwendungen, die Abhängigkeitsdichte und den Anteil an Refactoring. Die Vorlage nutzt einen Plan von rund fünfzehn Monaten, den Sie stauchen oder strecken können."
+      ],
+      [
+        "Was sind die 7 R der Cloud-Migration?",
+        "Rehost, Replatform, Refactor, Repurchase, Relocate, Retire und Retain — die Handlungsoptionen, die jeder Anwendung in der Bewertung zugeordnet werden. Erst wenn sie feststehen, ist eine Wellenplanung überhaupt möglich."
+      ],
+      [
+        "Wie sollten die Migrationswellen geschnitten sein?",
+        "Zuerst nach Abhängigkeitsgruppen, dann nach Risiko. Anwendungen, die Daten teilen oder einander aufrufen, gehören in dieselbe Welle, und die Pilotwelle sollte risikoarm, aber repräsentativ genug für den Nachweis des Runbooks sein."
+      ],
+      [
+        "Deckt die Vorlage den Rückbau der Altumgebung ab?",
+        "Ja — als vollwertige Phase, denn dort landen die Einsparungen des Business Case, und genau diese Phase wird nach dem letzten Cutover am häufigsten liegen gelassen."
+      ],
+      [
+        "Ist die Vorlage für die Cloud-Migration kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'new-product-development-plan': {
+    card: "Stage-Gate von der Idee über Prototyp und Werkzeugbau bis zur Serienfreigabe.",
+    h1: "Projektplan für die Produktentwicklung",
+    metaTitle: "Produktentwicklung — Projektplan-Vorlage",
+    metaDesc: "Kostenloser Produktentwicklungsplan: Konzept, Machbarkeit, Konstruktion, Prototypen, Validierung, Werkzeugbau, Nullserie und Serienfreigabe.",
+    lead: `Eine kostenlose <strong>Vorlage für den Produktentwicklungsplan</strong>, aufgebaut als Stage-Gate-Programm: Konzept, Machbarkeit, Konstruktion, Prototypenbau, Validierung und Erprobung, Werkzeugbau, Nullserie und Übergabe an den Markteintritt. Das ist die technische Kette, an deren Ende etwas Verkäufliches steht; für die Marktseite desselben Vorhabens siehe den <a href="/de/templates/product-launch.html">Produkteinführungsplan</a>, für den längeren Horizont die <a href="/de/templates/product-roadmap.html">Produkt-Roadmap</a>.`,
+    intro: "Entwicklungspläne scheitern an den Gates, nicht an den Vorgängen. Die Vorlage trennt die Stufen sauber, damit ein Gate eine Entscheidung mit Nachweisen dahinter ist und nicht bloß ein Termin, der still verstreicht:",
+    phases: [
+      [
+        "Konzept",
+        "Chancenbeschreibung, Kundenbedarf und Anforderungen, Konzeptskizzen, erster Business Case und das Konzept-Gate. <em>Gate 1: Konzept freigegeben.</em>"
+      ],
+      [
+        "Machbarkeit",
+        "Technische Machbarkeitsuntersuchungen, Make-or-Buy-Analyse, regulatorische Vorprüfung, Kostenmodell und Risikobewertung. <em>Gate 2: Machbarkeit bestätigt.</em>"
+      ],
+      [
+        "Konstruktion",
+        "System- und Detailkonstruktion, fertigungs- und montagegerechte Gestaltung, Stückliste, Lieferantenanbindung und die Konstruktionsprüfung. <em>Gate 3: Konstruktionsstand eingefroren.</em>"
+      ],
+      [
+        "Prototypenbau",
+        "Alpha-Aufbau, technische Bewertung, Konstruktionsschleifen und der Beta-Aufbau, der in die Validierung geht."
+      ],
+      [
+        "Validierung und Erprobung",
+        "Konstruktionsverifikation, Umwelt- und Dauererprobung, Zulassungs- und Konformitätsverfahren sowie Anwendertests. <em>Gate 4: Konstruktion validiert.</em>"
+      ],
+      [
+        "Werkzeugbau und Industrialisierung",
+        "Werkzeugkonstruktion und -herstellung, Erstmusterprüfung, Prozessentwicklung, Vorrichtungen und Lieferantenfreigabe."
+      ],
+      [
+        "Nullserie und Übergabe",
+        "Nullserienlauf, Serienteilfreigabe, Hochlaufplan, Dokumentationspaket und Übergabe an Produktion und Markteinführung. <em>Gate 5: Serienfreigabe.</em>"
+      ]
+    ],
+    callout: "Das Einfrieren des Konstruktionsstands ist der teure Meilenstein. Jede Änderung danach kostet Werkzeuggeld, und jede Änderung nach der Erstmusterprüfung kostet es zweimal. Dieses Gate zu einem echten Gate zu machen — mit Erprobungsnachweisen statt einem optimistischen Termin —, ist die eine Entscheidung, die ein Entwicklungsbudget zusammenhält.",
+    customize: [
+      "Setzen Sie den geforderten Termin der Serienfreigabe und rechnen Sie rückwärts; die Lieferzeit der Werkzeuge entscheidet meist, ob der Plan überhaupt aufgeht.",
+      "Bestellen Sie Langläufer-Werkzeuge gegen echte Angebotslieferzeiten und legen Sie den Bestellvorgang vor das Einfrieren, wenn Sie dieses Risiko bewusst eingehen.",
+      "Ergänzen Sie eine Zeile je Zulassungsstelle, wenn Ihr Produkt mehrere Zulassungen braucht — sie laufen parallel und jede hat ihre eigene Warteschlange.",
+      "Erweitern Sie den Prototypenbau auf so viele Aufbauten, wie Sie wirklich brauchen; zwei sind für alles mit beweglichen Teilen optimistisch.",
+      "Halten Sie die Lieferantenfreigabe sichtbar — ein freigegebenes Teil von einem nicht freigegebenen Lieferanten ist kein serienfähiges Teil.",
+      "Setzen Sie alle fünf Gates als Meilensteine, damit der Lenkungsausschuss Entscheidungen sieht und nicht Fortschrittsbalken."
+    ],
+    tips: [
+      "<strong>Werkzeugbau und Konstruktionsänderungen nicht überlappen.</strong> Stahl zu schneiden, bevor der Konstruktionsstand eingefroren ist, verbrennt die Reserve eines Entwicklungsprogramms schneller als alles andere.",
+      "<strong>Beginnen Sie früh mit der Zulassung.</strong> Prüfhauswarteschlangen und Behördenverfahren sind Fremddauern, die sich durch mehr Einsatz nicht verkürzen lassen — buchen Sie Termine, sobald ein prüffähiger Aufbau existiert.",
+      "<strong>Geben Sie der Validierung einen eigenen Balken.</strong> Prüfzeit ist echte Kalenderzeit; Dauererprobungen laufen über Wochen, gleichgültig wie viele Ingenieure daran sitzen.",
+      "<strong>Binden Sie Lieferanten während der Konstruktion ein, nicht danach.</strong> Fertigungshinweise, die nach dem Einfrieren eintreffen, werden zum Änderungsantrag statt zur Konstruktionsvorgabe.",
+      "<strong>Trennen Sie diesen Plan vom Markteinführungsplan.</strong> Marketingtermine hängen an der Serienfreigabe, nicht an einer Schätzung aus der Konzeptphase.",
+      "<strong>Setzen Sie den Basisplan beim Einfrieren.</strong> Messen Sie die Abweichung gegen den eingefrorenen Stand, damit späte Änderungen als Terminkosten sichtbar werden statt lautlos aufgesogen zu werden."
+    ],
+    faq: [
+      [
+        "Worin unterscheidet sich diese Vorlage vom Produkteinführungsplan?",
+        `Diese hier ist die technische Kette bis zur Serienfreigabe — Konzept bis Werkzeugbau und Nullserie. Der <a href="/de/templates/product-launch.html">Produkteinführungsplan</a> setzt ungefähr dort an, wo diese endet, und behandelt Positionierung, Preis, Kanalvorbereitung und die Markteinführungskampagne.`
+      ],
+      [
+        "Wie lange dauert eine Produktentwicklung?",
+        "Das hängt an der Komplexität: Ein einfaches Consumer-Zubehör läuft in 6 bis 9 Monaten, ein reguliertes oder werkzeugintensives Produkt üblicherweise 18 bis 36. Die Vorlage nutzt ein Programm über achtzehn Monate, das Sie stauchen oder strecken können."
+      ],
+      [
+        "Welche Gates enthält die Vorlage?",
+        "Konzept freigegeben, Machbarkeit bestätigt, Konstruktionsstand eingefroren, Konstruktion validiert und Serienfreigabe. Jedes ist ein Meilenstein mit den nachweisliefernden Vorgängen als Vorgänger."
+      ],
+      [
+        "Passt die Vorlage auch für ein Softwareprodukt?",
+        `Teilweise — Konzept, Machbarkeit, Design und Validierung lassen sich gut übertragen, Werkzeugbau und Nullserie entfallen dagegen. Für Software passt der <a href="/de/templates/software-development.html">Projektplan für Softwareentwicklung</a> besser.`
+      ],
+      [
+        "Ist die Vorlage für die Produktentwicklung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'retail-store-opening-timeline': {
+    card: "Von Standortsuche und Mietvertrag über Ladenbau bis zur Eröffnung.",
+    h1: "Zeitplan für die Ladeneröffnung",
+    metaTitle: "Ladeneröffnung — Zeitplan-Vorlage",
+    metaDesc: "Kostenlose Vorlage für die Ladeneröffnung: Mietvertrag, Ladenbau, Genehmigungen, Kasse, Ware, Personal, Soft Opening und Eröffnung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Ladeneröffnung</strong>, von der Standortsuche bis zur Eröffnungsfeier — Mietvertrag und Zustimmung des Vermieters, Ladenplanung und Ladenbau, Genehmigungen und Abnahmen, Kassensystem und IT, Erstorder und Warenpräsentation, Personalsuche und Schulung, dann Soft Opening und Eröffnungswochenende.",
+    intro: "Eine Ladeneröffnung ist ein Bauprojekt, ein Einstellungsprojekt und ein Einkaufszyklus gleichzeitig — und alle drei zielen auf einen Termin, den der Vermieter längst beworben hat. Die Vorlage führt sie als parallele Stränge:",
+    phases: [
+      [
+        "Standort und Mietvertrag",
+        "Einzugsgebiets- und Passantenanalyse, Standortauswahl, Umsatzprognose, Mietvertragsverhandlung und die Ausbaubedingungen des Vermieters. <em>Meilenstein: Mietvertrag unterschrieben.</em>"
+      ],
+      [
+        "Planung und Zustimmungen",
+        "Grundriss nach Markenstandard, Gestaltung von Fassade und Beschilderung, Zustimmung von Vermieter und Centermanagement sowie die Baugenehmigung."
+      ],
+      [
+        "Ladenbau",
+        "Übergabe der Fläche durch den Vermieter, Ladenbau, Boden und Beleuchtung, Möblierung und Regale, Montage von Fassade und Beschilderung, dann die Restpunkte."
+      ],
+      [
+        "Genehmigungen, IT und Sicherung",
+        "Gewerbeanmeldung, Brandschutz- und Barrierefreiheitsabnahme, Kassensystem und Zahlungsterminals, Netzwerk, Videoüberwachung und Warensicherung. <em>Meilenstein: Verkaufsfreigabe erteilt.</em>"
+      ],
+      [
+        "Ware und Warenpräsentation",
+        "Erstorder gegen die Lieferzeiten der Lieferanten, Wareneingang und Einrichtung des Lagers, Aufbau der Platzierungspläne und die Umsetzung der Warenpräsentation."
+      ],
+      [
+        "Personal, Schulung und Eröffnung",
+        "Zuerst die Filialleitung, dann das Verkaufsteam, Produkt- und Kassenschulung, die Soft-Opening-Verkaufstage und die offizielle Eröffnung. <em>Meilenstein: Eröffnung.</em>"
+      ]
+    ],
+    callout: "Die Erstorder ist der Vorgang, den man nicht beschleunigen kann. Ladenbauteile lassen sich per Express besorgen und Personal in einer Woche schulen, aber eine zu spät bestellte Erstlieferung kommt zu spät — und ein Laden, der mit Lücken an der Wand öffnet, verbringt sein Eröffnungswochenende mit Entschuldigungen. Bestellen Sie gegen echte Lieferzeiten und behandeln Sie den Liefertermin als harten Vorgänger der Warenpräsentation.",
+    customize: [
+      "Verankern Sie den Plan am Übergabetermin des Vermieters — dann beginnt Ihre Ausbaufrist und häufig auch die Miete.",
+      "Ergänzen Sie eine Zeile je Möblierungspaket, wenn die Ladeneinrichtung zentral geliefert und nicht vor Ort gebaut wird.",
+      "Verlängern Sie die Genehmigungsphase, wenn Sie Reglementiertes verkaufen — Alkohol, Apothekenware, Tabak und Waffen haben jeweils eigene Fristen.",
+      "Trennen Sie Platzierungsplan und Flächenumsetzung; das sind unterschiedliche Arbeiten von unterschiedlichen Leuten.",
+      "Halten Sie das Soft Opening als echte Verkaufstage mit echten Kundinnen und Kunden, nicht als Rundgang für die Belegschaft."
+    ],
+    tips: [
+      "<strong>Lesen Sie die Ausbaubedingungen des Vermieters vor der Planung.</strong> Zustimmungen des Centermanagements, zulässige Arbeitszeiten und Anlieferregeln stellen den Terminplan um, und das erst bei der Montage zu merken kostet Wochen.",
+      "<strong>Bestellen Sie Fassade und Beschilderung früh.</strong> Individuelle Beschilderung hat lange Lieferzeiten und wird zuletzt montiert — sie liegt damit direkt auf dem kritischen Pfad zur Eröffnung.",
+      "<strong>Stellen Sie die Filialleitung deutlich vor dem Team ein.</strong> Sie verantwortet Personalsuche, Schulung und die Freigabe der Erstorder; die Besetzung ist damit eine Abhängigkeit und keine Kopfzahl.",
+      "<strong>Testen Sie die Kasse mit echten Vorgängen.</strong> Zahlungsterminals, Preisdaten und Bestandsführung brauchen einen echten Verkaufstag als Nachweis — genau dafür gibt es das Soft Opening.",
+      "<strong>Schützen Sie das Zeitfenster für die Warenpräsentation.</strong> Sie wird als Letztes zusammengedrückt und von den Kundinnen und Kunden als Erstes gesehen; unter ein paar Tagen sieht man das auf der Fläche."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Eröffnung eines Ladens?",
+        "Von der Standortsuche bis zur Eröffnung üblicherweise 4 bis 9 Monate für eine Fläche im Center oder in der Innenstadt, wobei Mietvertragsverhandlung und Ladenbau den größten Anteil haben. Die Vorlage nutzt rund sieben Monate."
+      ],
+      [
+        "Was verzögert eine Ladeneröffnung am häufigsten?",
+        "Zustimmungen von Vermieter und Centermanagement, Genehmigungen und zu späte Beschilderung. Alle drei sind Fremddauern — deshalb führt die Vorlage Zustimmungen und Genehmigungen als eigene Stränge und nicht innerhalb des Ladenbaus."
+      ],
+      [
+        "Wann sollte die Erstorder platziert werden?",
+        "Früh genug, dass die Lieferung vor Beginn der Warenpräsentation eintrifft, gerechnet rückwärts ab den zugesagten Lieferzeiten. Die Vorlage verknüpft die Präsentation mit dem Wareneingang, damit die Abhängigkeit sichtbar bleibt."
+      ],
+      [
+        "Passt die Vorlage auch für einen Pop-up-Store oder eine Shop-in-Shop-Fläche?",
+        "Ja. Lassen Sie bei einer Fläche innerhalb eines fremden Hauses die Zeilen für Genehmigung und Fassade weg und stauchen Sie den Ladenbau — Genehmigungen, IT, Ware und Personal bleiben gleich."
+      ],
+      [
+        "Ist die Vorlage für die Ladeneröffnung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'film-production-schedule': {
+    card: "Stoffentwicklung, Vorbereitung, Dreh, Postproduktion und Auslieferung.",
+    h1: "Produktionszeitplan für einen Film",
+    metaTitle: "Filmproduktion — Zeitplan-Vorlage",
+    metaDesc: "Kostenloser Produktionszeitplan für Filme: Stoffentwicklung, Vorbereitung, Dreharbeiten, Postproduktion, Ton, Farbe und Auslieferung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Produktionszeitplan eines Films</strong> über das ganze Vorhaben — Stoffentwicklung und Finanzierung, Vorbereitung und Besetzung, die Dreharbeiten selbst, die Postproduktion bis zum Schnittabschluss, Ton und Farbkorrektur sowie das Auslieferungspaket, das der Verleih tatsächlich verlangt. Laden Sie sie für die Finanzierungsunterlage herunter oder verknüpfen Sie die Abhängigkeiten online, die darüber entscheiden, ob Ihr Auslieferungstermin hält.",
+    intro: "Jedes Department arbeitet auf die Drehtermine hin, und alles nach dem Dreh arbeitet auf den Auslieferungstermin hin. Die Vorlage setzt beide Fixpunkte auf den Plan und lässt sich den Rest darum herum ordnen:",
+    phases: [
+      [
+        "Stoffentwicklung",
+        "Drehbuchfassungen, Rechte und Optionen, Kalkulation und Drehplanauszug, Finanzierung und die Produktionsentscheidung. <em>Meilenstein: Produktionsfreigabe.</em>"
+      ],
+      [
+        "Vorbereitung",
+        "Besetzung, Departmentleitungen, Motive und Drehgenehmigungen, Szenenbild und Bauten, Kostüm, Kamera- und Technikproben sowie der Drehplan selbst."
+      ],
+      [
+        "Dreharbeiten",
+        "Der Dreh, gegliedert in Motiv- und Studioblöcke, mit dem Drehschluss als unverrückbarem Zentrum der gesamten Planung. <em>Meilenstein: Drehschluss.</em>"
+      ],
+      [
+        "Postproduktion — Bild",
+        "Musterbetrachtung und Rohschnitt während des Drehs, Editor-Fassung, Regiefassung, Anmerkungen und Schnittabschluss. <em>Meilenstein: Schnittabschluss.</em>"
+      ],
+      [
+        "Postproduktion — Ton und Bildfinish",
+        "Nachsynchronisation, Geräusche, Sounddesign, Musik, Mischung, Lieferung der VFX-Einstellungen, Farbkorrektur und Conforming."
+      ],
+      [
+        "Auslieferung und Auswertung",
+        "DCP und Masterfassungen, technische Prüfung, Untertitel und Fassungen, Werbematerial, Festivaleinreichungen und das Auslieferungspaket. <em>Meilenstein: Auslieferung abgenommen.</em>"
+      ]
+    ],
+    callout: "Die Dreharbeiten sind die einzige Phase, die sich nicht verlängern lässt, ohne pro Tag echtes Geld zu kosten. Alles davor existiert, um den Dreh möglich zu machen, und alles danach erbt, was der Dreh hergegeben hat. Legen Sie also zuerst die Drehtermine fest und prüfen Sie dann, ob die Vorbereitung genug Vorlauf davor hat — nicht umgekehrt.",
+    customize: [
+      "Setzen Sie Drehbeginn und Drehschluss zuerst und lassen Sie die Vorbereitung rückwärts davon rechnen.",
+      "Führen Sie eine Zeile je Drehblock oder Motiv, damit die Umzugstage sichtbar werden; ungeplante Motivwechsel fressen Drehtage.",
+      "Verlängern Sie die VFX-Zeilen und beginnen Sie sie früher, wenn Sie nennenswert viele Einstellungen haben — VFX läuft oft vom Dreh bis zur Endmischung.",
+      "Setzen Sie Einreichfristen für Festivals als Meilensteine; das sind feste Termine, die den ganzen Postproduktionsplan nach vorne ziehen.",
+      "Halten Sie Reservetage innerhalb der Dreharbeiten statt am Ende, wo sie von einem Verzug nicht mehr zu unterscheiden sind."
+    ],
+    tips: [
+      "<strong>Beginnen Sie mit Muster und Rohschnitt schon während des Drehs.</strong> Wenn parallel geschnitten wird, existiert am Drehschluss bereits eine Rohfassung, statt dass sie dort erst beginnt.",
+      "<strong>Schließen Sie den Schnitt ab, bevor Sie Ton und Farbe binden.</strong> Nach begonnener Mischung noch umzuschneiden ist der teuerste vermeidbare Fehler der Postproduktion.",
+      "<strong>Behandeln Sie Motive und Genehmigungen als Langläufer.</strong> Drehgenehmigungen, Straßensperrungen und Motivverträge haben Fremddauern, die sich durch mehr Einsatz nicht verkürzen.",
+      "<strong>Besetzen Sie die Hauptrollen vor dem endgültigen Drehplan.</strong> Die Verfügbarkeit der Darstellerinnen und Darsteller schreibt den Drehplan um; sie ist damit eine Abhängigkeit und kein Parallelvorgang.",
+      "<strong>Lesen Sie die Lieferbedingungen am Anfang, nicht am Ende.</strong> Auslieferungslisten sind lang, präzise und nicht verhandelbar — sie erst im letzten Monat zu entdecken kostet Wochen."
+    ],
+    faq: [
+      [
+        "Wie lange läuft ein Produktionszeitplan für einen Film?",
+        "Bei einem unabhängigen Spielfilm üblicherweise 12 bis 18 Monate von der Produktionsfreigabe bis zur Auslieferung — grob zwei bis drei Monate Vorbereitung, vier bis acht Wochen Dreh und sechs bis neun Monate Postproduktion und Auslieferung. Die Vorlage liegt in diesem Bereich."
+      ],
+      [
+        "Welche Phasen hat eine Filmproduktion?",
+        "Stoffentwicklung, Vorbereitung, Dreharbeiten, Postproduktion und Auslieferung. Die Vorlage teilt die Postproduktion in Bild sowie Ton und Bildfinish, weil der Schnittabschluss die Grenze zwischen beiden ist."
+      ],
+      [
+        "Wie viel Vorbereitungszeit brauche ich?",
+        "Genug, um vor dem ersten Drehtag zu besetzen, Motive zu finden, Genehmigungen zu holen und zu bauen. Acht bis zwölf Wochen sind bei einem überschaubaren Spielfilm üblich; Kürzungen zeigen sich später als verlorene Drehtage und nicht als Ersparnis."
+      ],
+      [
+        "Sind VFX enthalten?",
+        "Ja — die Lieferung der VFX-Einstellungen liegt im Bildfinish und beginnt während der Postproduktion. Bei hoher Einstellungszahl ziehen Sie diese Zeilen nach vorne, damit die Dienstleisterarbeit den Schnitt überlappt."
+      ],
+      [
+        "Ist die Vorlage für die Filmproduktion kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'bridge-construction-schedule': {
+    card: "Baugrund, Genehmigungen, Gründung, Unterbau, Überbau und Verkehrsfreigabe.",
+    h1: "Bauzeitenplan für den Brückenbau",
+    metaTitle: "Brückenbau — Bauzeitenplan-Vorlage",
+    metaDesc: "Kostenloser Bauzeitenplan für den Brückenbau: Baugrund, Genehmigungen, Gründung, Unterbau, Überbau, Belag, Probebelastung, Freigabe.",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan einer Brücke</strong> entlang eines echten Ingenieurbauvorhabens — Baugrunduntersuchung und Planung, öffentlich-rechtliche Genehmigungen, Gründung und Pfähle, Unterbau, Überbaumontage, Belag und Kappen, Probebelastung und Verkehrsfreigabe. Laden Sie sie für ein Angebot oder den Bericht an den Bauherrn herunter oder verknüpfen Sie online die Sperrpausen und witterungsabhängigen Arbeiten, die den Termin tatsächlich bestimmen.",
+    intro: "Ein Brückenbauvorhaben wird von Dingen bestimmt, die Ihnen nicht gehören: dem Fluss, der Straße darunter, dem Wetter und der Genehmigungsbehörde. Die Vorlage gibt jedem davon einen sichtbaren Platz, statt es in einem Bauabschnittsbalken zu vergraben:",
+    phases: [
+      [
+        "Vermessung und Baugrunduntersuchung",
+        "Topografische und hydrografische Aufnahme, Bohrungen und geotechnische Auswertung, Leitungsauskünfte und die umweltfachliche Bestandsaufnahme. <em>Meilenstein: Baugrundgutachten vorgelegt.</em>"
+      ],
+      [
+        "Planung und Genehmigungen",
+        "Vorentwurf und Ausführungsplanung, Planung der Behelfsbauwerke und temporären Konstruktionen, Prüfung und Zustimmung durch Straßen- oder Bahnbaulastträger, wasserrechtliche und naturschutzrechtliche Erlaubnisse. <em>Meilenstein: Zustimmung im Einzelfall erteilt.</em>"
+      ],
+      [
+        "Baustelleneinrichtung und Sperrpausen",
+        "Einrichtung, Baustraßen und Zuwegung, Leitungsumlegungen, Baugrubenverbau oder Arbeitsinsel im Gewässer sowie die beantragten Gleissperrungen beziehungsweise Vollsperrungen der Straße."
+      ],
+      [
+        "Gründung",
+        "Bohrpfähle an Widerlagern und Pfeilern, Pfahlprüfungen, Pfahlkopfplatten und Fundamentbeton — der Abschnitt mit dem größten Baugrund- und Hochwasserrisiko."
+      ],
+      [
+        "Unterbau",
+        "Widerlager und Flügelwände, Pfeiler und Pfeilerkopf, Lagersockel und Einbau der Brückenlager. <em>Meilenstein: Unterbau fertiggestellt.</em>"
+      ],
+      [
+        "Überbau",
+        "Trägerfertigung und Anlieferung, Einhub per Kran oder Taktschiebeverfahren innerhalb der Sperrpause, Schalung und Bewehrung der Fahrbahnplatte sowie die Betonage."
+      ],
+      [
+        "Belag, Prüfung und Freigabe",
+        "Abdichtung, Fahrbahnbelag, Geländer und Schutzeinrichtungen, Entwässerung, Probebelastung, Restpunkte und Freigabe für den Verkehr. <em>Meilenstein: Verkehrsfreigabe.</em>"
+      ]
+    ],
+    callout: "Die Sperrpause ist der Terminplan. Der Einhub über eine befahrene Straße, eine Bahnstrecke oder eine Wasserstraße findet in aller Regel innerhalb einer Monate vorher beantragten Sperrung statt, die sich nicht verschieben lässt. Setzen Sie Antrag, Zusage und das Zeitfenster selbst als drei getrennte Vorgänge auf den Plan — alles davor existiert nur, um dieses Wochenende möglich zu machen.",
+    customize: [
+      "Tragen Sie zuerst die bestätigten Sperrpausen ein und rechnen Sie rückwärts; fast jeder andere Termin eines Brückenbauvorhabens ordnet sich ihnen unter.",
+      "Ergänzen Sie eine Zeile je Pfeiler und Widerlager, sobald die Bauabfolge des Unterbaus feststeht, damit Bohrpfähle und Betonagen einzeln verfolgt werden.",
+      "Kennzeichnen Sie witterungsabhängige Arbeiten — Betonagen der Fahrbahnplatte, Abdichtung und Belagseinbau haben Temperatur- und Niederschlagsgrenzen, die auf den Plan gehören.",
+      "Ziehen Sie den Balken für die behördliche Zustimmung auf die tatsächliche Prüfdauer Ihrer Behörde, einschließlich der Schleife für die Erwiderung auf die Prüfbemerkungen.",
+      "Führen Sie die Planung der Behelfsbauwerke als eigenen Vorgang; Traggerüst, Verbau und Einhubkonzept müssen geprüft und freigegeben sein, bevor das Bauwerk selbst entsteht.",
+      "Legen Sie Hochwasserzeiten oder Laichschonzeiten als gesperrte Balken ein, wenn Sie im Gewässer arbeiten."
+    ],
+    tips: [
+      "<strong>Beantragen Sie Sperrpausen, bevor die Planung fertig ist.</strong> Vorlaufzeiten für Straßenvollsperrungen und Gleissperrungen liegen im Bereich von Monaten, und die Fenster gehen an den, der zuerst gebucht hat.",
+      "<strong>Behandeln Sie Behelfsbauwerke wie das Bauwerk selbst.</strong> Traggerüst, Verbau und Einhubsysteme brauchen Planung, Prüfung und Freigabe — und sie liegen direkt auf dem kritischen Pfad zum Überbau.",
+      "<strong>Planen Sie keine Betonage, die Sie weder heizen noch kühlen können.</strong> Große Betonagen der Fahrbahnplatte, die in den tiefen Winter rutschen, werden regelmäßig am Morgen abgesagt; legen Sie sie in eine machbare Jahreszeit.",
+      "<strong>Rechnen Sie mit dem Fluss, nicht mit dem Mittelwert.</strong> Arbeiten im Gewässer gehören um die historischen Hochwasserzeiten herum geplant, mit Puffer für einen verlorenen Monat statt für eine verlorene Woche.",
+      "<strong>Lassen Sie echte Zeit für die Probebelastung.</strong> Belastungsversuch, Messtechnik und die anschließende Bescheinigung sind ein Tor zur Freigabe und keine Sichtkontrolle am Ende.",
+      "<strong>Setzen Sie den Basisplan mit der behördlichen Zustimmung.</strong> Alles davor ist Schätzung; danach verfolgen Sie die Abweichung, damit Änderungen der Behörde sichtbar bleiben."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau einer Brücke?",
+        "Ein kleines einfeldriges Straßenbauwerk läuft üblicherweise 9 bis 18 Monate ab Baubeginn, eine große Flussquerung mehrere Jahre. Die Vorlage nutzt ein Programm von rund zwei Jahren, das Sie über den Freigabetermin stauchen oder strecken."
+      ],
+      [
+        "Was verzögert Brückenbauvorhaben am häufigsten?",
+        "Baugrundverhältnisse, die erst beim Bohren auftauchen, Prüfschleifen mit dem Baulastträger und verpasste Sperrpausen. Alle drei laufen hier als eigene Stränge, damit das Risiko sichtbar ist, bevor es zuschlägt."
+      ],
+      [
+        "Wie stelle ich eine Sperrpause im Plan dar?",
+        "Als drei Vorgänge: Antrag, Zusage und das Zeitfenster selbst — und der Einhub hängt vom Zeitfenster ab. So bedroht ein Verzug weiter vorne sichtbar einen Termin, den Sie nicht verschieben können."
+      ],
+      [
+        "Passt die Vorlage auch für eine Fußgängerbrücke oder einen Durchlass?",
+        "Ja. Behalten Sie Baugrund, Genehmigungen, Gründung und Überbau bei und kürzen Sie die Pfeilerzeilen — die Abfolge bleibt im kleineren Maßstab dieselbe."
+      ],
+      [
+        "Ist die Vorlage für den Brückenbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'trade-show-planning-timeline': {
+    card: "Countdown zur Messe: Standfläche, Standbau, Logistik, Messetage, Leads.",
+    h1: "Zeitplan für die Messeplanung",
+    metaTitle: "Messeplanung — Zeitplan-Vorlage",
+    metaDesc: "Kostenlose Vorlage für die Messeplanung: Standfläche, Standbau, Logistik, Vorab-Marketing, Personal, Messetage und Leadnachverfolgung.",
+    lead: `Eine kostenlose <strong>Vorlage für den Zeitplan der Messeplanung</strong> als Countdown zur Messe — Flächenauswahl und Vertrag, Standgestaltung und Standbau, Fristen für Spedition und Standmontage, Vorab-Marketing und Terminvereinbarung, Personalplanung und Briefing, die Messetage selbst und die Leadnachverfolgung, die darüber entscheidet, ob sich das Ganze gerechnet hat. Für Veranstaltungen ohne Ausstellung siehe die allgemeine <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a>.`,
+    intro: "Ausstellen ist ein Countdown, kein Projekt. Drei oder vier Termine sind wirklich unverrückbar und alles andere ordnet sich darum herum — deshalb zeigt die Vorlage sie als Meilensteine und nicht als Vorgänge:",
+    phases: [
+      [
+        "Flächenauswahl und Vertrag",
+        "Messeauswahl, Budgetfreigabe, Sichtung des Hallenplans, Flächenauswahl zum Stichtag der Platzvergabe und Vertragsunterzeichnung. <em>Meilenstein: Fläche vertraglich gesichert.</em>"
+      ],
+      [
+        "Standgestaltung und Standbau",
+        "Briefing, Entwurf, Auswahl des Standbauers, Genehmigung des Entwurfs durch die Messegesellschaft, Fertigung, Grafik und Probeaufbau."
+      ],
+      [
+        "Messeleistungen und Logistik",
+        "Bestellung von Strom, Abhängungen, Internet und Mobiliar zum Frühbuchertarif, Speditionsauftrag, Anlieferfrist und das zugewiesene Aufbaufenster. <em>Meilenstein: Anlieferfrist.</em>"
+      ],
+      [
+        "Vorab-Marketing",
+        "Zielkundenliste, Einladungskampagne, Terminvereinbarung, Presse- und Vortragsslots sowie Social Media und Website in den letzten Wochen."
+      ],
+      [
+        "Personal und Schulung",
+        "Standbesetzungsplan, Reise und Übernachtung, Produkt- und Argumentationsbriefing, Schulung zur Leaderfassung und die Generalprobe der Vorführung."
+      ],
+      [
+        "Messetage",
+        "Aufbau, Standeröffnung, Gespräche und Vorführungen, tägliche Leadbesprechung, Abbau und Rückversand. <em>Meilenstein: Messebeginn.</em>"
+      ],
+      [
+        "Leadnachverfolgung und Auswertung",
+        "Leaderfassung in Tagen statt Wochen, gestufte Nachfassaktionen, Zuordnung zur Pipeline, Kostenauswertung und die Entscheidung über die nächste Messe."
+      ]
+    ],
+    callout: "Drei Termine auf diesem Plan lassen sich nicht verschieben: der Stichtag der Flächenauswahl, der über Ihren Platz auf der nächsten Messe entscheidet, die Frist für den Frühbuchertarif, nach der jede Leistung mehr kostet, und die Anlieferfrist, nach der Ihr Stand zu spät oder gar nicht ankommt. Alles Übrige ist verhandelbar. Markieren Sie diese drei und lassen Sie den Rest der Planung sich darum herum ordnen.",
+    customize: [
+      "Setzen Sie den Messebeginn und lassen Sie den gesamten Plan rückwärts davon zählen — so funktioniert Messeplanung tatsächlich.",
+      "Ersetzen Sie die allgemeinen Fristen durch die echten Termine aus dem Ausstellerhandbuch, sobald es veröffentlicht ist.",
+      "Ergänzen Sie eine Zeile je Sendung, wenn Stand, Exponate und Drucksachen getrennt versandt werden; sie haben unterschiedliche Fristen.",
+      "Verlängern Sie den Balken für das Vorab-Marketing, wenn Sie auf vereinbarte Termine setzen; die Kalender füllen sich sechs bis acht Wochen vorher, nicht in der Woche davor.",
+      "Ergänzen Sie bei internationalen Messen einen Vorgang für Zoll und Carnet — er hat eine eigene Vorlaufzeit und kann einen Stand an der Grenze festsetzen.",
+      "Halten Sie die Nachverfolgung mit datierten Vorgängen im Plan; Leads verlieren schnell an Wert, und ein undatierter Nachfassplan ist keiner."
+    ],
+    tips: [
+      "<strong>Buchen Sie das nächste Jahr auf der laufenden Messe.</strong> Die Flächenvergabe findet meist vor Ort statt und richtet sich nach Teilnahmedauer und Umsatz — deshalb steht sie in dieser Vorlage vorn und nicht am Ende.",
+      "<strong>Bestellen Sie zum Frühbuchertarif.</strong> Strom, Abhängungen und Internet nach der Frist bestellt kosten für exakt dieselbe Leistung regelmäßig deutlich mehr.",
+      "<strong>Halten Sie die Anlieferfrist mit Reserve ein.</strong> Verspätete Sendungen landen hinten in der Warteschlange des Verkehrsleitsystems, und Ihr Aufbaufenster wartet nicht auf sie.",
+      "<strong>Lassen Sie den Standentwurf früh von der Messegesellschaft genehmigen.</strong> Bauhöhe, Abhängungen und zweigeschossige Stände brauchen eine Genehmigung und werden vor Ort abgelehnt, wenn sie nie eingereicht wurden.",
+      "<strong>Proben Sie die Vorführung vor der Abreise.</strong> Erst auf dem Messestand zu merken, dass die Demo eine Bandbreite braucht, die Sie nicht bestellt haben, ist ein Problem ohne Lösung vor Ort.",
+      "<strong>Fassen Sie innerhalb von 48 Stunden nach.</strong> Die Geschwindigkeit der Nachverfolgung ist der größte Hebel für den Messeerfolg — planen Sie sie vor der Abreise ein, nicht nach der Rückkehr."
+    ],
+    faq: [
+      [
+        "Wie früh sollte die Messeplanung beginnen?",
+        "Sechs bis neun Monate vor einer großen Messe, und früher, wenn Sie eine gute Lage in der Halle wollen — die Fläche für die nächste Ausgabe wird oft schon auf der laufenden vergeben. Diese Vorlage läuft rund acht Monate bis zum Messebeginn."
+      ],
+      [
+        "Worin unterscheidet sich die Vorlage von der Veranstaltungsplanung?",
+        `Diese hier ist auf das Ausstellen zugeschnitten: Flächenverträge, Standbau, Speditions- und Anlieferfristen, Frühbucherbestellungen und Leadnachverfolgung. Die <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a> deckt die eigene Veranstaltung ab — Location, Programm, Referenten und Gäste.`
+      ],
+      [
+        "Welche Termine sind beim Ausstellen unverrückbar?",
+        "Die Flächenauswahl, die Frist für den Frühbuchertarif aus dem Ausstellerhandbuch, die Speditions- und Anlieferfrist sowie Ihr zugewiesenes Aufbaufenster. Alle vier erscheinen hier als Meilensteine."
+      ],
+      [
+        "Passt die Vorlage auch für einen kleinen Kongressstand?",
+        "Ja. Behalten Sie den Aufbau bei und kürzen Sie die Zeilen zum Standbau, wenn Sie einen Systemstand oder nur einen Tisch nutzen."
+      ],
+      [
+        "Ist die Vorlage für die Messeplanung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'recruitment-hiring-plan': {
+    card: "Eine Stelle von der Freigabe über Interviews und Angebot bis zum Eintritt.",
+    h1: "Vorlage für den Recruiting- und Einstellungsplan",
+    metaTitle: "Recruiting — Vorlage Einstellungsplan",
+    metaDesc: "Kostenloser Recruiting- und Einstellungsplan: Stellenfreigabe, Sourcing, Screening, Interviews, Auswahl, Angebot, Kündigungsfrist, Eintritt.",
+    lead: `Eine kostenlose <strong>Vorlage für den Recruiting- und Einstellungsplan</strong> für eine einzelne Stelle von Anfang bis Ende — Stellenbeschreibung und Freigabe der Stelle, Sourcing, Screening, die Interviewrunden, Auswahl und Referenzen, Angebot und Verhandlung, die Kündigungsfrist der Kandidatin oder des Kandidaten und der Eintrittstermin. Sie endet genau dort, wo das <a href="/de/templates/employee-onboarding.html">Onboarding neuer Mitarbeitender</a> beginnt.`,
+    intro: "Die meisten Einstellungspläne unterschätzen dieselben zwei Dinge: wie lange die Freigabe am Anfang dauert und wie lange die Kündigungsfrist am Ende. Die Vorlage gibt beiden einen echten Balken, damit der Eintrittstermin ehrlich ist:",
+    phases: [
+      [
+        "Stellenprofil und Freigabe",
+        "Begründung, Stellenbeschreibung, Einstufung und Gehaltsband, Freigabe der Stelle und Eröffnung der Vakanz. <em>Meilenstein: Stelle freigegeben.</em>"
+      ],
+      [
+        "Sourcing",
+        "Stellenanzeige, Aufruf zu Empfehlungen, Direktansprache, Briefing des Personaldienstleisters falls genutzt, und der Aufbau der Pipeline auf eine Zielzahl an Kandidaturen."
+      ],
+      [
+        "Screening",
+        "Sichtung der Bewerbungen, Gespräche mit dem Recruiting, Gespräche mit der Fachabteilung und die Entscheidung über die Shortlist. <em>Meilenstein: Shortlist abgestimmt.</em>"
+      ],
+      [
+        "Interviewrunden",
+        "Strukturierte Interviews im Panel, fachliche Fallaufgabe, Terminkoordination und die Auswertungsrunden."
+      ],
+      [
+        "Auswahl und Entscheidung",
+        "Arbeitsprobe oder Fallbesprechung, Abschlusspanel, Zusammenführung der Bewertungsbögen, Referenzen und Hintergrundprüfungen. <em>Meilenstein: Einstellungsentscheidung.</em>"
+      ],
+      [
+        "Angebot und Verhandlung",
+        "Freigabe der Vergütung, mündliches Angebot, Vertragsentwurf, Verhandlung und Unterschrift. <em>Meilenstein: Angebot angenommen.</em>"
+      ],
+      [
+        "Kündigungsfrist und Vorbereitung",
+        "Kündigung beim bisherigen Arbeitgeber, Kontakthalten bis zum Eintritt, Ausstattung und Zugänge, dann der erste Tag. <em>Meilenstein: Eintrittstermin.</em>"
+      ]
+    ],
+    callout: "Die Kündigungsfrist ist keine Formalie — sie ist oft der längste einzelne Balken im Plan. Bei einer Führungsposition mit drei Monaten Frist bringt die heute freigegebene Stelle erst in fünf oder sechs Monaten einen arbeitenden Menschen. Pläne, die bei „Angebot angenommen“ enden, versprechen die Kapazität regelmäßig ein Quartal zu früh.",
+    customize: [
+      "Rechnen Sie rückwärts ab dem Zeitpunkt, an dem die Person produktiv sein soll, nicht ab dem Zeitpunkt der Unterschrift.",
+      "Setzen Sie den Balken für die Kündigungsfrist auf das reale Maß für Rolle und Land — ein Monat, drei Monate und sechs Monate ergeben völlig unterschiedliche Pläne.",
+      "Duplizieren Sie die Phasen von Sourcing bis Angebot je Stelle, wenn Sie ein Team aufbauen, und staffeln Sie sie gegen die Kapazität der Interviewenden.",
+      "Ergänzen Sie einen eigenen Strang mit Meilensteinen, wenn Sie mit Personalberatung arbeiten; Briefing- und Shortlist-Termine sind vertraglich vereinbart.",
+      "Nehmen Sie Visum und Arbeitserlaubnis als eigene Vorgänge auf, wo relevant — sie können die Kündigungsfrist übersteigen.",
+      "Behalten Sie die Vorgänge zum Kontakthalten im Plan. Zwischen Unterschrift und Eintritt werden zugesagte Kandidaturen abgeworben."
+    ],
+    tips: [
+      "<strong>Holen Sie die Freigabe vor der Ausschreibung.</strong> Eine Vakanz, die ohne Budgetfreigabe bis ins Abschlusspanel läuft, verbrennt die Zeit der Kandidatin und Ihre Glaubwürdigkeit.",
+      "<strong>Blocken Sie die Zeit des Interviewpanels im Voraus.</strong> Die Terminfindung, nicht die Entscheidung, ist in den meisten Verfahren die größte Verzögerungsquelle.",
+      "<strong>Straffen Sie die Interviewrunden, nicht das Screening.</strong> Gute Kandidaturen laufen meist in mehreren Verfahren; ein Prozess über drei Wochen verliert sie an den, der schneller war.",
+      "<strong>Starten Sie Referenzen vor der endgültigen Entscheidung, wo möglich.</strong> Sie kosten regelmäßig eine Woche Hinterhertelefonieren und liegen genau zwischen Entscheidung und Angebot.",
+      "<strong>Planen Sie das Angebot als Verhandlung mit Dauer ein.</strong> Ein paar Tage für Gegenangebot und Rückmeldung sind realistischer als die Annahme einer Zusage am selben Tag.",
+      "<strong>Übergeben Sie bei Unterschrift ans Onboarding, nicht am ersten Tag.</strong> Ausstattung, Konten und der Plan für die erste Woche brauchen Vorlauf innerhalb der Kündigungsfrist."
+    ],
+    faq: [
+      [
+        "Wie lange dauert es, jemanden einzustellen?",
+        "Von der freigegebenen Stelle bis zur Unterschrift üblicherweise 6 bis 12 Wochen, zuzüglich der Kündigungsfrist. Diese Vorlage läuft rund fünf Monate von der Begründung bis zum Eintritt, was für eine Stelle mit ein bis drei Monaten Frist realistisch ist."
+      ],
+      [
+        "Wie passt die Vorlage zum Onboarding?",
+        `Dieser Plan endet am Eintrittstermin; die <a href="/de/templates/employee-onboarding.html">Onboarding-Vorlage</a> setzt am ersten Tag an und läuft über die ersten neunzig Tage. Nacheinander ergeben beide das vollständige Bild.`
+      ],
+      [
+        "Was macht ein Einstellungsverfahren am häufigsten langsam?",
+        "Die Terminfindung für Interviews und langsame interne Entscheidungen, nicht das Sourcing. Deshalb stehen Interviewrunden und Auswertung hier als getrennte Vorgänge und nicht als ein Block."
+      ],
+      [
+        "Kann ich damit mehrere Stellen gleichzeitig planen?",
+        "Ja — duplizieren Sie die Phasen von Sourcing bis Angebot je Stelle und staffeln Sie die Interviewrunden, damit dasselbe Panel nicht zweimal in derselben Woche gebucht ist."
+      ],
+      [
+        "Ist die Vorlage für den Einstellungsplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'internal-audit-plan': {
+    card: "Jahresplanung, Prüfungshandlungen, Feststellungen, Bericht und Nachverfolgung.",
+    h1: "Prüfungsplan der Internen Revision",
+    metaTitle: "Interne Revision — Prüfungsplan-Vorlage",
+    metaDesc: "Kostenlose Vorlage für den Prüfungsplan der Internen Revision: Risikoanalyse, Prüfungshandlungen, Feststellungen, Bericht, Nachverfolgung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Prüfungsplan der Internen Revision</strong> über einen vollständigen Zyklus — jährliche Risikoanalyse und Prüfungsuniversum, Genehmigung des Plans durch den Prüfungsausschuss, Prüfungsplanung und Abgrenzung der Einzelprüfung, Prüfungshandlungen vor Ort, Feststellungen und Stellungnahme der Geschäftsführung, Berichtserteilung und Nachverfolgung der Maßnahmen. Laden Sie sie für die Ausschussunterlage herunter oder legen Sie online mehrere Prüfungen über ein Jahr nebeneinander.",
+    intro: "Ein Prüfungsplan hat zwei Ebenen: das Jahresprogramm und die einzelne Prüfung darin. Die Vorlage zeigt beide, damit der Ausschuss die Abdeckung sieht und das Team die Arbeit:",
+    phases: [
+      [
+        "Jahresplanung",
+        "Risikoanalyse, Aktualisierung des Prüfungsuniversums, Gespräche mit den Verantwortlichen, Ressourcen- und Budgetplanung sowie der Entwurf des Jahresplans. <em>Meilenstein: Plan vom Ausschuss genehmigt.</em>"
+      ],
+      [
+        "Prüfungsplanung der Einzelprüfung",
+        "Ankündigung, Vorbereitung und Unterlagenanforderung, Prozessaufnahmen, Risiko-Kontroll-Matrix und die abgestimmte Auftragsbeschreibung."
+      ],
+      [
+        "Prüfungshandlungen",
+        "Beurteilung der Kontrollkonzeption, Stichprobenauswahl, Funktionsprüfungen und aussagebezogene Prüfungshandlungen, Nachweiserhebung und Arbeitspapiere."
+      ],
+      [
+        "Feststellungen und Abstimmung",
+        "Entwurf der Feststellungen, Abstimmung der Sachverhalte mit den Prozessverantwortlichen, Einstufung und Priorisierung sowie die Schlussbesprechung. <em>Meilenstein: Schlussbesprechung geführt.</em>"
+      ],
+      [
+        "Stellungnahme der Geschäftsführung",
+        "Vereinbarung der Maßnahmen, benannte Verantwortliche und Umsetzungstermine sowie die Eskalation dessen, was die Geschäftsführung als Restrisiko bewusst hinnimmt."
+      ],
+      [
+        "Berichterstattung",
+        "Berichtsentwurf, Qualitätsdurchsicht, Erteilung des endgültigen Berichts und Vortrag im Prüfungsausschuss. <em>Meilenstein: Bericht erteilt.</em>"
+      ],
+      [
+        "Nachverfolgung",
+        "Verfolgung der Umsetzung gegen die vereinbarten Termine, Nachprüfung der als erledigt gemeldeten Maßnahmen und Meldung überfälliger Punkte an den Ausschuss."
+      ]
+    ],
+    callout: "In der Nachverfolgung entsteht der Nutzen der Revision — und genau dort hören Prüfungspläne meist auf. Ein erteilter Bericht ohne datierte Nachprüfung ist eine Meinung; ein verfolgter Umsetzungstermin mit einer Nachprüfung im Plan ist eine Kontrolle, die sich tatsächlich verändert hat. Lassen Sie die Balken für die Nachverfolgung im Plan und hinterlegen Sie Kapazität dafür.",
+    customize: [
+      "Legen Sie mehrere Prüfungen über das Jahr nebeneinander, um zu sehen, ob Ihr Team für alle tatsächlich verfügbar ist.",
+      "Tragen Sie zuerst die Sitzungstermine des Prüfungsausschusses ein — sie liegen fest, und jeder Berichtstermin rechnet von einem davon rückwärts.",
+      "Ergänzen Sie eine Zeile je Prüfungsobjekt, wenn Sie dem Ausschuss die Abdeckung des Prüfungsuniversums berichten.",
+      "Verlängern Sie die Prüfungshandlungen bei Prüfungen mit Vor-Ort-Terminen oder Datenauszügen; beides dauert länger als Schreibtischprüfung.",
+      "Sehen Sie eine Reserve für Sonderprüfungen vor; ungeplante Aufträge sind normal, und ungeplante Aufträge ohne Reserve zerlegen den Plan.",
+      "Führen Sie den Umsetzungstermin jeder Feststellung nach Berichtserteilung als eigenen Vorgang statt in einer Tabelle daneben."
+    ],
+    tips: [
+      "<strong>Bauen Sie den Plan auf Risiko und prüfen Sie danach die Abdeckung.</strong> Ein risikoorientierter Plan, der einen ganzen Bereich drei Jahre lang stillschweigend auslässt, ist die Feststellung, die die Abschlussprüfer über Sie treffen werden.",
+      "<strong>Kündigen Sie früh an und vereinbaren Sie die Prozessaufnahmen.</strong> Die Verfügbarkeit der Geprüften ist der häufigste Grund für überzogene Prüfungshandlungen — und vollständig vorhersehbar.",
+      "<strong>Stimmen Sie Sachverhalte ab, bevor Sie Feststellungen einstufen.</strong> Ein Sachverhaltsfehler, der nach der Einstufung auffällt, kostet den Bericht seine Autorität und eine ganze Durchsichtsschleife.",
+      "<strong>Lassen Sie die Stellungnahme nicht ausufern.</strong> Geben Sie ihr einen begrenzten Balken mit Frist; offene Rückmeldefristen sind der Weg, wie Berichte Ausschusstermine verpassen.",
+      "<strong>Nachprüfen statt nachfragen.</strong> Die Verifikation einer erledigten Maßnahme braucht Nachweise, und die brauchen Zeit im Plan — nicht nur eine Bestätigung per E-Mail.",
+      "<strong>Setzen Sie den Basisplan mit der Plangenehmigung.</strong> Verfolgen Sie die Abweichung gegen den genehmigten Plan, damit ungeplante Arbeit als Verdrängung sichtbar wird und nicht lautlos aufgesogen."
+    ],
+    faq: [
+      [
+        "Was gehört in einen Prüfungsplan der Internen Revision?",
+        "Eine Risikoanalyse und ein Prüfungsuniversum, eine nach Risiko geordnete Liste der Prüfungen mit Ressourcen und je Prüfung Planung, Prüfungshandlungen, Feststellungen, Stellungnahme, Bericht und Nachverfolgung. Alle sieben Phasen sind hinterlegt."
+      ],
+      [
+        "Wie lange dauert eine einzelne Prüfung?",
+        "Von der Ankündigung bis zum erteilten Bericht üblicherweise 6 bis 12 Wochen für eine mittelgroße Prüfung, mit einer Nachverfolgung, die danach über Monate läuft. Die Prüfung in dieser Vorlage läuft rund vier Monate."
+      ],
+      [
+        "Wie oft sollte der Jahresplan aktualisiert werden?",
+        "Die meisten Revisionsfunktionen lassen den Plan jährlich genehmigen und sehen ihn mindestens halbjährlich erneut durch, da sich Risikoprofile und ungeplante Aufträge beide bewegen. Eine Reserve im Plan macht diese Durchsicht überhaupt handhabbar."
+      ],
+      [
+        "Passt die Vorlage auch für eine externe Prüfung oder ein Zertifizierungsaudit?",
+        "Teilweise. Planung, Prüfungshandlungen, Feststellungen und Nachverfolgung lassen sich gut übertragen; die Jahresplanung würden Sie durch den Auditzyklus der Zertifizierungsstelle ersetzen."
+      ],
+      [
+        "Ist die Vorlage für den Prüfungsplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish
