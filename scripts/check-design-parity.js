@@ -105,6 +105,45 @@ for (const l of LOCALES) {
   });
 }
 
+/* THE HOMEPAGE.
+
+   Previously exempt, and that exemption is exactly why the localized
+   homepages went months with no feature icons, no template cards and
+   four of six feature cells — nobody was checking.
+
+   It is not enforced identically, because the English homepage really
+   does carry bespoke sections the localized pages deliberately do not
+   copy. But "some divergence is legitimate" is not a licence for any
+   divergence, so the accepted set is written down here and everything
+   else fails. A new gap cannot hide behind the old ones.
+
+   To adopt one of these, build it in renderHome and delete the entry. */
+const ACCEPTED_HOMEPAGE_DIVERGENCE = new Set([
+  // hero illustration internals — bespoke to the English page
+  'hero3-ruler', 'on-today', 'bento-visual',
+  // the designed how-it-works flow; localized uses a plain ordered list
+  'flow', 'flow-n',
+  // split feature section with tick list
+  'split', 'split-copy', 'checks',
+  // two-column FAQ layout; localized uses the single-column .faq
+  'faq2', 'faq2-side', 'faq2-list',
+  // alternate CTA treatment and section-header link variants
+  'cta2', 'band', 'head-l-cta', 'head-l-link',
+]);
+
+for (const l of LOCALES) {
+  const loc = `${l.code}/index.html`;
+  if (!fs.existsSync(path.join(ROOT, loc))) continue;
+  const have = classesIn(loc);
+  const missing = [...classesIn('index.html')]
+    .filter(c => !have.has(c) && !ACCEPTED_HOMEPAGE_DIVERGENCE.has(c));
+  if (missing.length) {
+    console.error(`  ✗ ${loc} — homepage missing vs English: ${missing.join(', ')}`);
+    console.error('    Either build it in renderHome, or add it to ACCEPTED_HOMEPAGE_DIVERGENCE with a reason.');
+    errors++;
+  }
+}
+
 /* Compare every localized detail page against its English original. */
 const T = require('../i18n/template-locales.js');
 const G = require('../i18n/guide-locales.js');
