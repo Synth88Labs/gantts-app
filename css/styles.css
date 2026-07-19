@@ -596,3 +596,18 @@ body.presenting .today-line { width: 3px; }
 .cal-row:last-child { border-bottom: 0; }
 .cal-date { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-soft); flex: none; }
 .cal-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- PDF export dialog ---- */
+.pdf-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 10px 0; }
+.pdf-row > label { font-size: 12.5px; color: var(--ink-soft); flex: none; }
+.pdf-row .select, .pdf-row > div { flex: 1 1 auto; max-width: 260px; }
+.pdf-scale { display: flex; align-items: center; gap: 10px; }
+.pdf-scale input[type=range] { flex: 1; }
+.pdf-scaleval { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-soft); min-width: 40px; text-align: right; }
+.pdf-range { display: flex; align-items: center; gap: 6px; }
+.pdf-range .cell-input { flex: 1; border: 1px solid var(--line-strong); border-radius: 7px; padding: 5px 7px; min-width: 0; }
+.pdf-summary { margin: 16px 0 12px; padding: 10px 12px; background: var(--brand-soft);
+  border-radius: 8px; font-size: 12.5px; color: var(--ink); line-height: 1.5; }
+.pdf-go { width: 100%; padding: 10px; }
+.pdf-auto { flex: none; font-size: 11.5px; gap: 4px; }
+.pdf-scale input[type=range]:disabled { opacity: .45; }

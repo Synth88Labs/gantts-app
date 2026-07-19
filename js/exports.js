@@ -9,7 +9,8 @@
         switch (kind) {
           case 'save': return this.save();
           case 'png': return this.png();
-          case 'pdf': return this.pdf();
+          case 'pdf': return (window.ExportPdf ? ExportPdf.open() : this.pdf());
+          case 'pdf-quick': return this.pdf();
           case 'xlsx': return this.xlsx();
           case 'pptx': return this.pptx();
           case 'csv': return this.csv();
