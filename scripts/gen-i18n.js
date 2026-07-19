@@ -873,7 +873,7 @@ ${hreflangTags(sub)}`);
   <meta property="og:locale" content="${loc.ogLocale}" />`);
 
   // home links stay inside the locale
-  h = h.split('href="/index.html"').join(`href="/${code}/"`);
+  h = h.split('href="/"').join(`href="/${code}/"`);
 
   // The hand-authored app.html predates the localized-page SEO standard,
   // so bring the copies up to it: robots, twitter card, og:locale

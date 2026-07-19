@@ -38,5 +38,27 @@ pages.forEach(page => {
 });
 
 console.log('\nChecked ' + checked + ' local links across ' + pages.length + ' pages.');
+
+/* Canonical homepage form.
+
+   / and /index.html served identical content, and every internal link
+   pointed at the second while the canonical tag and the sitemap both
+   named the first — the site contradicted itself 366 times. Links are
+   fixed and a 301 now makes the duplicate unreachable, so this keeps a
+   regenerated page from quietly reintroducing it. */
+const badHome = [];
+for (const f of pages) {
+  const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  for (const m of html.matchAll(/href="(\/(?:[a-z]{2}\/)?index\.html)"/g)) {
+    badHome.push(`${f} -> ${m[1]}`);
+  }
+}
+if (badHome.length) {
+  console.error(`\n✗ ${badHome.length} link(s) use the non-canonical homepage form:`);
+  badHome.slice(0, 8).forEach(l => console.error('   ' + l));
+  console.error('  Use "/" and "/<lang>/" instead.\n');
+  process.exitCode = 1;
+}
+
 console.log(problems === 0 ? '✓ All local links resolve.' : ('✗ ' + problems + ' broken link(s).'));
 process.exit(problems ? 1 : 0);

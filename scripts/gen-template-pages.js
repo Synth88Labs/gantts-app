@@ -72,7 +72,7 @@ function hreflangTags(slug) {
 function nav(slug) {
   return `  <header class="nav">
     <div class="container nav-inner">
-      <a class="nav-logo" href="/index.html" aria-label="gantts.app home">
+      <a class="nav-logo" href="/" aria-label="gantts.app home">
         <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
         <span class="brand-word">gantts<b>.app</b></span>
       </a>
@@ -170,7 +170,7 @@ function page(slug, d) {
 ${nav(slug)}
 
   <article class="container narrow" style="padding-top:40px">
-    <div class="crumbs"><a href="/index.html">Home</a> › <a href="/templates.html">Templates</a> › ${esc(d.h1)}</div>
+    <div class="crumbs"><a href="/">Home</a> › <a href="/templates.html">Templates</a> › ${esc(d.h1)}</div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${d.lead}</p>
 

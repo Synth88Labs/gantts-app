@@ -23,7 +23,7 @@ const FOOTER = `  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="nav-logo" href="/index.html" aria-label="gantts.app home">
+          <a class="nav-logo" href="/" aria-label="gantts.app home">
             <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
             <span class="brand-word">gantts<b>.app</b></span>
           </a>
