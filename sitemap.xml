@@ -207,6 +207,70 @@
     <lastmod>2026-07-19</lastmod>
   </url>
   <url>
+    <loc>https://gantts.app/de/templates/construction.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/construction.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/construction.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/construction.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/construction.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/event-planning.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/event-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/event-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/event-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/event-planning.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/excel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/excel.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/excel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/excel.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/excel.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/marketing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/marketing.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/project-management.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/project-management.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/project-management.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/project-management.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/project-management.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/simple.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/simple.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/simple.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/simple.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/simple.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/software-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/software-development.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/software-development.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/software-development.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/software-development.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/weekly.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/weekly.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/weekly.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/weekly.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/weekly.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
     <loc>https://gantts.app/de/terms.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/terms.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/terms.html"/>
@@ -417,6 +481,7 @@
     <loc>https://gantts.app/es/templates/construction.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/construction.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/construction.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -466,6 +531,7 @@
     <loc>https://gantts.app/es/templates/event-planning.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/event-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/event-planning.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -473,6 +539,7 @@
     <loc>https://gantts.app/es/templates/excel.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/excel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/excel.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -508,6 +575,7 @@
     <loc>https://gantts.app/es/templates/marketing.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/marketing.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -585,6 +653,7 @@
     <loc>https://gantts.app/es/templates/project-management.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/project-management.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/project-management.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -620,6 +689,7 @@
     <loc>https://gantts.app/es/templates/simple.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/simple.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/simple.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -627,6 +697,7 @@
     <loc>https://gantts.app/es/templates/software-development.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/software-development.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/software-development.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -655,6 +726,7 @@
     <loc>https://gantts.app/es/templates/weekly.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/weekly.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/weekly.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -924,6 +996,7 @@
     <loc>https://gantts.app/templates/construction.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/construction.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/construction.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -973,6 +1046,7 @@
     <loc>https://gantts.app/templates/event-planning.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/event-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/event-planning.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -980,6 +1054,7 @@
     <loc>https://gantts.app/templates/excel.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/excel.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/excel.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -1015,6 +1090,7 @@
     <loc>https://gantts.app/templates/marketing.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/marketing.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/marketing.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -1092,6 +1168,7 @@
     <loc>https://gantts.app/templates/project-management.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/project-management.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/project-management.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -1127,6 +1204,7 @@
     <loc>https://gantts.app/templates/simple.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/simple.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/simple.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -1134,6 +1212,7 @@
     <loc>https://gantts.app/templates/software-development.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/software-development.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/software-development.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>
@@ -1162,6 +1241,7 @@
     <loc>https://gantts.app/templates/weekly.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/weekly.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/weekly.html"/>
     <lastmod>2026-07-19</lastmod>
   </url>

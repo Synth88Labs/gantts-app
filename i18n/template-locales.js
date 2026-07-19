@@ -14,9 +14,10 @@
    pointing at pages that do not exist is not.
    ============================================================ */
 const es = require('./templates-es.js');
+const de = require('./templates-de.js');
 
-const BY_LOCALE = { es: es.T };
-const UI = { es: es.UI };
+const BY_LOCALE = { es: es.T, de: de.T };
+const UI = { es: es.UI, de: de.UI };
 
 /** Locale codes that have a real translation of this template. */
 function localesFor(slug) {
