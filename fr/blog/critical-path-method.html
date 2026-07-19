@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemin critique : calcul et exemple | gantts.app</title>
-  <meta name="description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et un exemple résolu à quatre tâches." />
+  <meta name="description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et libre, avec un exemple résolu à six tâches." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/fr/blog/critical-path-method.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Chemin critique : calcul et exemple | gantts.app" />
-  <meta property="og:description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et un exemple résolu à quatre tâches." />
+  <meta property="og:description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et libre, avec un exemple résolu à six tâches." />
   <meta property="og:url" content="https://gantts.app/fr/blog/critical-path-method.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="Chemin critique : méthode, calcul et exemple résolu" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Chemin critique : calcul et exemple | gantts.app" />
-  <meta name="twitter:description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et un exemple résolu à quatre tâches." />
+  <meta name="twitter:description" content="Le chemin critique expliqué : passe avant, passe arrière, marge totale et libre, avec un exemple résolu à six tâches." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/critical-path-method.html#post","headline":"Chemin critique : méthode, calcul et exemple résolu","description":"Le chemin critique expliqué : passe avant, passe arrière, marge totale et un exemple résolu à quatre tâches.","url":"https://gantts.app/fr/blog/critical-path-method.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Chemin critique : méthode, calcul et exemple résolu","item":"https://gantts.app/fr/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce que le chemin critique ?","acceptedAnswer":{"@type":"Answer","text":"La plus longue chaîne de tâches liées. Sa durée correspond à la durée minimale du projet, et ses tâches n’ont aucune marge."}},{"@type":"Question","name":"Comment calculer le chemin critique ?","acceptedAnswer":{"@type":"Answer","text":"Passe avant pour les dates au plus tôt, passe arrière pour les dates au plus tard. Les tâches où les deux coïncident — marge nulle — forment le chemin critique."}},{"@type":"Question","name":"Qu’est-ce que la marge totale ?","acceptedAnswer":{"@type":"Answer","text":"Le temps dont une tâche peut glisser sans décaler la fin du projet : début au plus tard moins début au plus tôt."}},{"@type":"Question","name":"Peut-il y avoir plusieurs chemins critiques ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Dans un plan très lié, plusieurs chemins parallèles peuvent avoir la même longueur et sont alors tous critiques, ce qui augmente nettement le risque."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/critical-path-method.html#post","headline":"Chemin critique : méthode, calcul et exemple résolu","description":"Le chemin critique expliqué : passe avant, passe arrière, marge totale et libre, avec un exemple résolu à six tâches.","url":"https://gantts.app/fr/blog/critical-path-method.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Chemin critique : méthode, calcul et exemple résolu","item":"https://gantts.app/fr/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce que le chemin critique ?","acceptedAnswer":{"@type":"Answer","text":"La plus longue chaîne de tâches liées d’un projet. Sa durée correspond à la durée minimale du projet, et ses tâches n’ont aucune marge : chaque jour perdu sur l’une d’elles est un jour perdu sur la livraison. Un retard sur une tâche hors chemin critique, en revanche, peut n’avoir aucune conséquence."}},{"@type":"Question","name":"Comment calculer le chemin critique ?","acceptedAnswer":{"@type":"Answer","text":"En deux passes. La passe avant part du début et calcule pour chaque tâche le début et la fin au plus tôt, le début étant la plus tardive des fins de ses antécédents. La passe arrière repart de la fin et calcule les dates au plus tard. La marge totale vaut ensuite début au plus tard moins début au plus tôt, et les tâches à marge nulle forment le chemin critique."}},{"@type":"Question","name":"Quelle différence entre marge totale et marge libre ?","acceptedAnswer":{"@type":"Answer","text":"La marge totale est le retard qu’une tâche peut prendre sans décaler la fin du projet. La marge libre est le retard qu’elle peut prendre sans décaler la tâche suivante. Une tâche peut avoir trois jours de marge totale et zéro marge libre : la décaler ne met pas le projet en danger, mais oblige immédiatement son successeur à bouger."}},{"@type":"Question","name":"Peut-il y avoir plusieurs chemins critiques ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Dans un plan très lié, plusieurs chaînes parallèles peuvent avoir exactement la même longueur et sont alors toutes critiques. Le risque augmente nettement, puisqu’un retard sur n’importe laquelle d’entre elles décale la fin, et qu’aucune ne peut absorber celui des autres."}},{"@type":"Question","name":"Quelle différence entre CPM et PERT ?","acceptedAnswer":{"@type":"Answer","text":"CPM travaille avec une durée unique par tâche et cherche le chemin critique et les marges. PERT utilise trois estimations — optimiste, probable, pessimiste — pondérées par la formule (O + 4M + P) / 6 pour tenir compte de l’incertitude. Les deux se combinent très bien : on estime en PERT, on ordonnance en CPM."}},{"@type":"Question","name":"Pourquoi mon chemin critique s’arrête-t-il au milieu du plan ?","acceptedAnswer":{"@type":"Answer","text":"Presque toujours à cause d’une date imposée ou d’une tâche sans successeur. Une contrainte de date fixe remplace le calcul et rompt la chaîne ; une tâche qui ne mène nulle part reçoit une marge fictive. Vérifiez que chaque tâche possède au moins un antécédent et un successeur, et supprimez les dates saisies à la main."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,15 +81,20 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>3 min de lecture</span></p>
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>9 min de lecture</span></p>
     <div class="toc"><strong>Sommaire</strong>
       <ol>
         <li><a href="#s1">L’idée de départ</a></li>
-        <li><a href="#s2">Passe avant : les dates au plus tôt</a></li>
-        <li><a href="#s3">Passe arrière : les dates au plus tard</a></li>
-        <li><a href="#s4">Marge et chemin critique</a></li>
-        <li><a href="#s5">Un exemple à quatre tâches</a></li>
-        <li><a href="#s6">Ce que cela change en pratique</a></li>
+        <li><a href="#s2">Le vocabulaire en six termes</a></li>
+        <li><a href="#s3">Passe avant : les dates au plus tôt</a></li>
+        <li><a href="#s4">Passe arrière : les dates au plus tard</a></li>
+        <li><a href="#s5">Marge totale et marge libre</a></li>
+        <li><a href="#s6">Un exemple résolu : six tâches, quinze jours</a></li>
+        <li><a href="#s7">Le tableau des marges</a></li>
+        <li><a href="#s8">Ce que cela change en pratique</a></li>
+        <li><a href="#s9">CPM, PERT et chaîne critique</a></li>
+        <li><a href="#s10">Les erreurs qui faussent le calcul</a></li>
+        <li><a href="#s11">Le calculer sans le calculer</a></li>
       </ol>
     </div>
 
@@ -100,32 +105,104 @@
 
     <div class="prose">
       <h2 id="s1">L’idée de départ</h2>
-<p>Toutes les tâches ne pèsent pas également sur l’échéance. Certaines disposent de jeu : elles peuvent glisser sans décaler la fin. D’autres n’en ont aucun — elles forment le chemin critique.</p>
-        <p>La méthode s’appelle Critical Path Method, CPM, et date de la fin des années 1950. Elle répond à deux questions : combien de temps le projet dure-t-il au minimum, et quelles tâches ne doivent en aucun cas glisser ?</p>
-      <h2 id="s2">Passe avant : les dates au plus tôt</h2>
-<p>Partez du début et avancez. Pour chaque tâche : la date de début au plus tôt est la plus tardive des fins au plus tôt de ses antécédents ; la fin au plus tôt vaut le début au plus tôt plus la durée.</p>
-        <p>À l’issue de la passe avant, vous obtenez la durée minimale du projet.</p>
-      <h2 id="s3">Passe arrière : les dates au plus tard</h2>
-<p>Repartez de la fin. La fin au plus tard est la plus précoce des débuts au plus tard des successeurs ; le début au plus tard vaut la fin au plus tard moins la durée.</p>
-      <h2 id="s4">Marge et chemin critique</h2>
-<p>La marge totale d’une tâche vaut début au plus tard moins début au plus tôt. Les tâches à marge nulle forment le chemin critique. Il en existe toujours au moins un, et souvent plusieurs en parallèle dans les plans très liés.</p>
-      <h2 id="s5">Un exemple à quatre tâches</h2>
-<p>A dure 3 jours, B dure 5 et suit A, C dure 2 et suit également A, D dure 4 et suit B et C.</p>
-        <p><strong>Passe avant :</strong> A va du jour 0 au jour 3. B de 3 à 8, C de 3 à 5. D attend les deux, commence donc à 8 et finit à 12. Durée du projet : 12 jours.</p>
-        <p><strong>Passe arrière :</strong> D doit commencer à 8. B doit donc être finie à 8 — début au plus tard 3, marge 0. C doit aussi être finie à 8, mais ne dure que 2 jours : début au plus tard 6, début au plus tôt réel 3, <em>marge de 3 jours</em>.</p>
-        <p>Le chemin critique est A → B → D. C peut glisser de trois jours sans retarder le projet.</p>
-      <h2 id="s6">Ce que cela change en pratique</h2>
-<p>Cela indique où l’effort porte. Ajouter des moyens sur C n’avance pas l’échéance. Gagner un jour sur B en gagne un sur la fin du projet.</p>
-        <p>Et cela signale un piège : si C glisse de quatre jours, C devient critique à son tour. Le chemin critique n’est pas une propriété figée du plan, c’est un instantané — il se déplace dès que quelque chose bouge.</p>
+<p>Toutes les tâches ne pèsent pas également sur l’échéance. Certaines disposent de jeu : elles peuvent glisser de quelques jours sans décaler la fin du projet. D’autres n’en ont aucun — elles forment le chemin critique. Sur un plan de soixante lignes, une dizaine de tâches seulement commandent la date de livraison. Le calcul sert exactement à distinguer les dix des cinquante.</p>
+        <p>La méthode s’appelle Critical Path Method, CPM en abrégé. Elle a été formalisée à la fin des années 1950 par Morgan Walker et James Kelley, pour ordonnancer des arrêts de maintenance d’usines chimiques où chaque jour coûtait cher. Soixante-dix ans plus tard, le calcul est le même et répond aux deux mêmes questions : combien de temps le projet dure-t-il au minimum, et quelles tâches ne doivent en aucun cas glisser ?</p>
+      <h2 id="s2">Le vocabulaire en six termes</h2>
+<p>Le calcul manipule six grandeurs par tâche, toujours les mêmes, et il vaut mieux les fixer avant de commencer :</p>
+        <ul>
+        <li><strong>Début au plus tôt</strong> : la date la plus précoce à laquelle la tâche peut démarrer, compte tenu de ses antécédents.</li>
+        <li><strong>Fin au plus tôt</strong> : début au plus tôt + durée.</li>
+        <li><strong>Fin au plus tard</strong> : la date la plus tardive à laquelle la tâche peut se terminer sans décaler la fin du projet.</li>
+        <li><strong>Début au plus tard</strong> : fin au plus tard − durée.</li>
+        <li><strong>Marge totale</strong> : début au plus tard − début au plus tôt. Le jeu dont dispose la tâche vis-à-vis de la fin du projet.</li>
+        <li><strong>Marge libre</strong> : le jeu dont elle dispose sans décaler <em>la tâche suivante</em>.</li>
+        </ul>
+        <p><strong>Marge totale = début au plus tard − début au plus tôt = fin au plus tard − fin au plus tôt.</strong> Quand elle vaut zéro, la tâche est critique.</p>
+      <h2 id="s3">Passe avant : les dates au plus tôt</h2>
+<p>Partez du début du projet et avancez tâche par tâche, dans l’ordre des antériorités. La première tâche démarre au jour 0. Pour chacune des suivantes : le <strong>début au plus tôt</strong> est la <em>plus tardive</em> des fins au plus tôt de ses antécédents, et la <strong>fin au plus tôt</strong> vaut ce début plus la durée.</p>
+        <p>Le mot important est « plus tardive » : une tâche qui attend deux prédécesseurs n’attend pas le premier fini, mais le dernier.</p>
+        <p>La plus grande fin au plus tôt obtenue à la dernière tâche est la <strong>durée minimale du projet</strong> : aucune bonne volonté ne la raccourcit tant que durées et liens restent identiques.</p>
+      <h2 id="s4">Passe arrière : les dates au plus tard</h2>
+<p>Repartez maintenant de la fin, en sens inverse. On pose la fin au plus tard de la dernière tâche égale à la durée du projet trouvée par la passe avant — autrement dit, on s’interdit de rallonger le projet. Puis, pour chaque tâche en remontant : la <strong>fin au plus tard</strong> est le <em>plus précoce</em> des débuts au plus tard de ses successeurs, et le <strong>début au plus tard</strong> vaut cette fin moins la durée.</p>
+        <p>Ici le mot important est l’inverse du précédent : « plus précoce ». Une tâche qui alimente deux successeurs doit être prête pour le plus pressé des deux. Confondre les deux extremums est la seule vraie difficulté du calcul manuel.</p>
+      <h2 id="s5">Marge totale et marge libre</h2>
+<p>La marge totale se lit directement : début au plus tard moins début au plus tôt. Les tâches à marge nulle, mises bout à bout du début à la fin du projet, forment le chemin critique. Il en existe toujours au moins un, et souvent plusieurs en parallèle dans les plans très liés.</p>
+        <p>La marge libre est plus fine et bien plus utile au quotidien. Elle vaut le début au plus tôt du successeur moins la fin au plus tôt de la tâche. Elle répond à « puis-je décaler cette tâche sans déranger personne ? » Une tâche peut avoir trois jours de marge totale et aucune marge libre : la décaler d’un jour ne retarde pas le projet, mais oblige son successeur à bouger.</p>
+      <h2 id="s6">Un exemple résolu : six tâches, quinze jours</h2>
+<p>Prenons un projet d’installation qui démarre le lundi 7 septembre 2026, en jours ouvrés.</p>
+        <table><thead><tr><th>Tâche</th><th>Durée</th><th>Antécédents</th></tr></thead><tbody>
+        <tr><td>A — Cadrage</td><td>3 j</td><td>—</td></tr>
+        <tr><td>B — Conception</td><td>4 j</td><td>A</td></tr>
+        <tr><td>C — Achats</td><td>2 j</td><td>A</td></tr>
+        <tr><td>D — Réalisation</td><td>5 j</td><td>B</td></tr>
+        <tr><td>E — Préparation du site</td><td>6 j</td><td>C</td></tr>
+        <tr><td>F — Installation et essais</td><td>3 j</td><td>D et E</td></tr>
+        </tbody></table>
+        <p>Deux chemins mènent du début à la fin : A → B → D → F, soit 3 + 4 + 5 + 3 = <strong>15 jours</strong>, et A → C → E → F, soit 3 + 2 + 6 + 3 = <strong>14 jours</strong>. Le plus long l’emporte : le projet dure 15 jours ouvrés, du lundi 7 au vendredi 25 septembre. Vérifions-le par le calcul complet, qui donne en prime la marge de chaque tâche.</p>
+        <p><strong>Passe avant</strong> (début au plus tôt, puis fin au plus tôt = début + durée) :</p>
+        <ul>
+        <li>A : 0 → 3 (lundi 7 au mercredi 9 septembre)</li>
+        <li>B : 3 → 7, après A (jeudi 10 au mardi 15)</li>
+        <li>C : 3 → 5, après A (jeudi 10 au vendredi 11)</li>
+        <li>D : 7 → 12, après B (mercredi 16 au mardi 22)</li>
+        <li>E : 5 → 11, après C (lundi 14 au lundi 21)</li>
+        <li>F : 12 → 15, car F attend le plus tardif de D (12) et E (11) — mercredi 23 au vendredi 25</li>
+        </ul>
+        <p><strong>Passe arrière</strong> (fin au plus tard, puis début au plus tard = fin − durée), en partant de la fin au plus tard de F fixée à 15 :</p>
+        <ul>
+        <li>F : fin 15, début 12</li>
+        <li>D : fin 12 (début au plus tard de F), début 7</li>
+        <li>E : fin 12 (début au plus tard de F), début 6</li>
+        <li>B : fin 7 (début au plus tard de D), début 3</li>
+        <li>C : fin 6 (début au plus tard de E), début 4</li>
+        <li>A : fin 3, car A alimente B (début au plus tard 3) et C (4) et doit satisfaire le plus précoce des deux ; début 0</li>
+        </ul>
+      <h2 id="s7">Le tableau des marges</h2>
+<p>Il ne reste qu’à soustraire, ligne à ligne :</p>
+        <table><thead><tr><th>Tâche</th><th>Début tôt</th><th>Fin tôt</th><th>Début tard</th><th>Fin tard</th><th>Marge totale</th><th>Critique ?</th></tr></thead><tbody>
+        <tr><td>A</td><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>oui</td></tr>
+        <tr><td>B</td><td>3</td><td>7</td><td>3</td><td>7</td><td>0</td><td>oui</td></tr>
+        <tr><td>C</td><td>3</td><td>5</td><td>4</td><td>6</td><td>1</td><td>non</td></tr>
+        <tr><td>D</td><td>7</td><td>12</td><td>7</td><td>12</td><td>0</td><td>oui</td></tr>
+        <tr><td>E</td><td>5</td><td>11</td><td>6</td><td>12</td><td>1</td><td>non</td></tr>
+        <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td>0</td><td>oui</td></tr>
+        </tbody></table>
+        <p>Les quatre tâches à marge nulle — A, B, D, F — forment le chemin critique, celui que la comparaison des chemins laissait deviner. C et E ont chacune un jour de marge totale.</p>
+        <p>La marge libre affine la lecture. Pour C : début au plus tôt de son successeur E (5) moins fin au plus tôt de C (5) = <strong>0</strong>. Décaler C d’un seul jour ne retarde pas le projet, mais décale bel et bien E. Pour E : début au plus tôt de F (12) moins fin au plus tôt de E (11) = <strong>1</strong>. E peut glisser d’un jour sans gêner personne. Même marge totale, deux conversations très différentes.</p>
+      <h2 id="s8">Ce que cela change en pratique</h2>
+<p>Le tableau dit où l’effort porte. Ajouter une personne sur C n’avance pas l’échéance d’une heure : C a déjà fini avant que le projet ne l’attende. Gagner un jour sur B en gagne un sur la fin du projet, parce que B est sur le chemin critique. C’est la seule information qui permette d’arbitrer une demande de renfort.</p>
+        <p>Il signale aussi un piège. Si C glisse de deux jours, A → C → E → F passe à 16 jours et devient critique à son tour, tandis que l’ancien chemin reste à 15. Le chemin critique est un instantané, pas une propriété figée : calculé une fois au lancement et jamais depuis, il désigne six semaines plus tard les mauvaises tâches.</p>
+        <p>Il change enfin la manière de rendre compte : « trois tâches en retard » ne veut rien dire tant qu’on ignore si elles sont critiques.</p>
+      <h2 id="s9">CPM, PERT et chaîne critique</h2>
+<p>Trois méthodes voisines se confondent facilement :</p>
+        <ul>
+        <li><strong>CPM</strong> retient une durée unique et ferme par tâche, et se concentre sur le chemin critique et les marges. À privilégier quand les durées sont raisonnablement connues.</li>
+        <li><strong>PERT</strong> retient trois estimations par tâche — optimiste (O), probable (M), pessimiste (P) — et calcule une durée pondérée, généralement (O + 4M + P) / 6. Une tâche estimée 2 / 4 / 12 jours donne (2 + 16 + 12) / 6 = 5 jours, et non 4 : l’asymétrie devient visible. En pratique, on estime en PERT et on ordonnance en CPM.</li>
+        <li><strong>La chaîne critique</strong>, issue de la théorie des contraintes, ajoute la contrainte de ressources : deux tâches indépendantes confiées à la même personne ne peuvent pas se dérouler en parallèle, même si aucun lien ne les relie. Elle regroupe la marge cachée dans chaque tâche en tampons visibles, placés en fin de chaîne et devant les jonctions.</li>
+        </ul>
+      <h2 id="s10">Les erreurs qui faussent le calcul</h2>
+<p>Quatre causes expliquent la quasi-totalité des chemins critiques faux :</p>
+        <ul>
+        <li><strong>Des dates fixées à la main.</strong> Une contrainte « doit commencer le 12 » écrase le calcul et rompt la chaîne.</li>
+        <li><strong>Des tâches sans successeur.</strong> Elle reçoit une fin au plus tard égale à celle du projet, donc une marge fictive. Chaque tâche doit mener à une autre ou à la fin.</li>
+        <li><strong>Des liens décoratifs.</strong> Relier deux tâches parce qu’elles se suivent dans le tableur, et non parce que l’une attend l’autre, allonge artificiellement le chemin critique. Le test : si A finit plus tôt, B peut-elle commencer plus tôt ?</li>
+        <li><strong>Des durées gonflées tâche par tâche.</strong> Chacun ajoute 20 % de sécurité, la marge devient invisible et se consomme sans alerte. Mieux vaut des durées nues et une marge groupée en fin de chaîne.</li>
+        </ul>
+      <h2 id="s11">Le calculer sans le calculer</h2>
+<p>Faire les deux passes à la main une fois est le meilleur moyen de comprendre la méthode — mais personne ne recommence à chaque estimation modifiée. Un calcul manuel est juste le jour où on le fait, et faux le lendemain.</p>
+        <p><a href="/fr/app.html">gantts.app</a> recalcule le chemin critique et les marges à chaque frappe, dès que les tâches et les <a href="/fr/blog/gantt-chart-dependencies.html">liens d’antériorité</a> sont saisis, et met le chemin en évidence sur le diagramme. Modifiez une durée ou un lien : le nouveau chemin apparaît immédiatement. Le tout dans le navigateur, sans compte ni installation, avec export Excel, PowerPoint, PDF ou PNG.</p>
+        <p>Vous débutez ? Commencez par <a href="/fr/blog/what-is-a-gantt-chart.html">ce qu’est un diagramme de Gantt</a>, puis la <a href="/fr/blog/how-to-make-a-gantt-chart.html">méthode en sept étapes</a>.</p>
 
       <div class="callout">Le chemin critique change pendant le projet. Une tâche disposant de trois jours de marge qui en perd quatre devient critique. C’est pourquoi on ne le calcule pas une fois au lancement, mais à chaque mise à jour.</div>
 
       <h2 id="faq">Questions fréquentes</h2>
       <div class="faq">
-        <details open><summary>Qu’est-ce que le chemin critique ?</summary><p>La plus longue chaîne de tâches liées. Sa durée correspond à la durée minimale du projet, et ses tâches n’ont aucune marge.</p></details>
-        <details><summary>Comment calculer le chemin critique ?</summary><p>Passe avant pour les dates au plus tôt, passe arrière pour les dates au plus tard. Les tâches où les deux coïncident — marge nulle — forment le chemin critique.</p></details>
-        <details><summary>Qu’est-ce que la marge totale ?</summary><p>Le temps dont une tâche peut glisser sans décaler la fin du projet : début au plus tard moins début au plus tôt.</p></details>
-        <details><summary>Peut-il y avoir plusieurs chemins critiques ?</summary><p>Oui. Dans un plan très lié, plusieurs chemins parallèles peuvent avoir la même longueur et sont alors tous critiques, ce qui augmente nettement le risque.</p></details>
+        <details open><summary>Qu’est-ce que le chemin critique ?</summary><p>La plus longue chaîne de tâches liées d’un projet. Sa durée correspond à la durée minimale du projet, et ses tâches n’ont aucune marge : chaque jour perdu sur l’une d’elles est un jour perdu sur la livraison. Un retard sur une tâche hors chemin critique, en revanche, peut n’avoir aucune conséquence.</p></details>
+        <details><summary>Comment calculer le chemin critique ?</summary><p>En deux passes. La passe avant part du début et calcule pour chaque tâche le début et la fin au plus tôt, le début étant la plus tardive des fins de ses antécédents. La passe arrière repart de la fin et calcule les dates au plus tard. La marge totale vaut ensuite début au plus tard moins début au plus tôt, et les tâches à marge nulle forment le chemin critique.</p></details>
+        <details><summary>Quelle différence entre marge totale et marge libre ?</summary><p>La marge totale est le retard qu’une tâche peut prendre sans décaler la fin du projet. La marge libre est le retard qu’elle peut prendre sans décaler la tâche suivante. Une tâche peut avoir trois jours de marge totale et zéro marge libre : la décaler ne met pas le projet en danger, mais oblige immédiatement son successeur à bouger.</p></details>
+        <details><summary>Peut-il y avoir plusieurs chemins critiques ?</summary><p>Oui. Dans un plan très lié, plusieurs chaînes parallèles peuvent avoir exactement la même longueur et sont alors toutes critiques. Le risque augmente nettement, puisqu’un retard sur n’importe laquelle d’entre elles décale la fin, et qu’aucune ne peut absorber celui des autres.</p></details>
+        <details><summary>Quelle différence entre CPM et PERT ?</summary><p>CPM travaille avec une durée unique par tâche et cherche le chemin critique et les marges. PERT utilise trois estimations — optimiste, probable, pessimiste — pondérées par la formule (O + 4M + P) / 6 pour tenir compte de l’incertitude. Les deux se combinent très bien : on estime en PERT, on ordonnance en CPM.</p></details>
+        <details><summary>Pourquoi mon chemin critique s’arrête-t-il au milieu du plan ?</summary><p>Presque toujours à cause d’une date imposée ou d’une tâche sans successeur. Une contrainte de date fixe remplace le calcul et rompt la chaîne ; une tâche qui ne mène nulle part reçoit une marge fictive. Vérifiez que chaque tâche possède au moins un antécédent et un successeur, et supprimez les dates saisies à la main.</p></details>
       </div>
 
       <aside class="promo">

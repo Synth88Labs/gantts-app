@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>关键路径怎么算（CPM） | gantts.app</title>
-  <meta name="description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta name="description" content="关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/zh/blog/critical-path-method.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="pt_BR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="关键路径怎么算（CPM） | gantts.app" />
-  <meta property="og:description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta property="og:description" content="关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。" />
   <meta property="og:url" content="https://gantts.app/zh/blog/critical-path-method.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="关键路径法：算法、公式与算例" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="关键路径怎么算（CPM） | gantts.app" />
-  <meta name="twitter:description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta name="twitter:description" content="关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先正推求最早时间，再逆推求最晚时间。两者相同、即浮动时间为零的任务，构成关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间：最晚开始减最早开始。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径，风险随之显著上升。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间，因此其中任何一项延误一天，完工就晚一天。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先列出所有任务的工期和前置任务，再正推求最早开始与最早完成（汇合处取最大值），然后从项目工期逆推求最晚完成与最晚开始（分叉处取最小值），最后用最晚开始减最早开始得到浮动时间。浮动时间为零的任务首尾相连，就是关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间，等于最晚开始减最早开始，也等于最晚完成减最早完成。注意它由整条支路共享：前面的任务用掉了，后面就没有了。"}},{"@type":"Question","name":"正推和逆推有什么区别？","acceptedAnswer":{"@type":"Answer","text":"正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。"}},{"@type":"Question","name":"CPM 和 PERT 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -88,8 +88,10 @@
         <li><a href="#s2">正推：最早时间</a></li>
         <li><a href="#s3">逆推：最晚时间</a></li>
         <li><a href="#s4">浮动时间与关键路径</a></li>
-        <li><a href="#s5">一个四任务算例</a></li>
-        <li><a href="#s6">这在实际中意味着什么</a></li>
+        <li><a href="#s5">一个六任务算例</a></li>
+        <li><a href="#s6">读懂这张表</a></li>
+        <li><a href="#s7">CPM、PERT 与关键链</a></li>
+        <li><a href="#s8">这在实际中意味着什么</a></li>
       </ol>
     </div>
 
@@ -100,32 +102,63 @@
 
     <div class="prose">
       <h2 id="s1">基本想法</h2>
-<p>并非每项任务对工期的影响都一样。有些有余量：可以推迟而不影响完工。有些一点余量都没有——这些构成关键路径。</p>
-        <p>这个方法叫关键路径法（Critical Path Method，CPM），源自 1950 年代末。它回答两个问题：项目最少要多久，以及哪些任务绝对不能拖。</p>
+<p>并非每项任务对工期的影响都一样。有些有余量，可以推迟而不影响完工；有些一点余量都没有——这些构成关键路径。</p>
+      <p>关键路径法（Critical Path Method，CPM）出自 1950 年代末的工厂检修排期。它的价值是聚焦：几十项任务里，直接指出卡住完工日期的那几项。两条基本公式是<strong>最早完成 = 最早开始 + 工期</strong>与<strong>最晚开始 = 最晚完成 − 工期</strong>。</p>
       <h2 id="s2">正推：最早时间</h2>
-<p>从项目开始向前推算。对每项任务：最早开始时间取所有前置任务最早完成时间中的最大值；最早完成时间等于最早开始加工期。</p>
-        <p>正推结束时，就得到了项目的最短可能工期。</p>
+<p>从项目开始向前推算，约定第一项任务的最早开始为第 0 天。每项任务的最早开始取所有前置任务最早完成中的<em>最大值</em>——只要还有一个前置没完成，它就动不了；最早完成等于最早开始加工期。走到最后一项，得到的就是项目最短可能工期。汇合处务必取最大值，这是手算最常出错的一步。</p>
       <h2 id="s3">逆推：最晚时间</h2>
-<p>再从项目结束往回推。最晚完成时间取所有后续任务最晚开始时间中的最小值；最晚开始时间等于最晚完成减工期。</p>
+<p>再从项目结束往回推。把最后一项任务的最晚完成设为刚算出的项目工期，然后逐项前推：最晚完成取所有后续任务最晚开始中的<em>最小值</em>——它必须赶在最早需要它的后续任务之前完成；最晚开始等于最晚完成减工期。正推取最大值、逆推取最小值，这一对相反的规则就是全部机关。</p>
       <h2 id="s4">浮动时间与关键路径</h2>
-<p>某任务的总浮动时间 = 最晚开始 − 最早开始。浮动时间为零的任务构成关键路径。关键路径至少存在一条，在依赖密集的计划中往往有多条并行。</p>
-      <h2 id="s5">一个四任务算例</h2>
-<p>A 工期 3 天；B 工期 5 天，紧接 A；C 工期 2 天，同样紧接 A；D 工期 4 天，等 B 和 C 都完成。</p>
-        <p><strong>正推：</strong>A 从第 0 天到第 3 天。B 从 3 到 8，C 从 3 到 5。D 要等两者，因此从 8 开始，到 12 结束。项目工期：12 天。</p>
-        <p><strong>逆推：</strong>D 必须在第 8 天开始，所以 B 必须在 8 完成——最晚开始为 3，浮动时间 0。C 也必须在 8 完成，但只需 2 天：最晚开始为 6，而实际最早开始是 3，<em>浮动时间 3 天</em>。</p>
-        <p>关键路径是 A → B → D。C 可以推迟三天而不影响完工。</p>
-      <h2 id="s6">这在实际中意味着什么</h2>
-<p>它告诉你精力花在哪里有效。给 C 加人对工期毫无帮助；在 B 上省下一天，项目就早一天完工。</p>
-        <p>它还提示一个陷阱：如果 C 推迟四天，C 自己就变成关键任务。关键路径不是计划的固有属性，而是某一时刻的快照——只要有变动，它就会转移。</p>
+<p>总浮动时间 = 最晚开始 − 最早开始 = 最晚完成 − 最早完成，两种算法结果必然相同，可互相校验。浮动时间为零的任务首尾相连，构成关键路径。</p>
+      <p>注意总浮动时间由整条支路<em>共享</em>：前面的任务把三天用完，后面就一天不剩。</p>
+      <h2 id="s5">一个六任务算例</h2>
+<p>工期单位是工作日。设第 0 天为 3 月 2 日（周一），则第 15 个工作日是 3 月 20 日（周五）。</p>
+      <table>
+        <thead><tr><th>任务</th><th>工期（天）</th><th>前置任务</th></tr></thead>
+        <tbody>
+          <tr><td>A — 立项</td><td>3</td><td>—</td></tr>
+          <tr><td>B — 设计</td><td>4</td><td>A</td></tr>
+          <tr><td>C — 采购</td><td>2</td><td>A</td></tr>
+          <tr><td>D — 施工</td><td>5</td><td>B</td></tr>
+          <tr><td>E — 场地准备</td><td>6</td><td>C</td></tr>
+          <tr><td>F — 安装与测试</td><td>3</td><td>D、E</td></tr>
+        </tbody>
+      </table>
+      <p>两条路径：A → B → D → F ＝ 3 + 4 + 5 + 3 ＝ 15 天，A → C → E → F ＝ 3 + 2 + 6 + 3 ＝ 14 天。较长的 15 天就是关键路径。下面用完整的正推和逆推验证。</p>
+      <p><strong>正推：</strong>A 从 0 到 3。B 接 A，3 到 7；C 也接 A，3 到 5。D 接 B，7 到 12；E 接 C，5 到 11。F 等 D 和 E，取 max(12, 11) ＝ 12 开始，到 15 结束。<strong>项目工期 15 天。</strong></p>
+      <p><strong>逆推：</strong>F 最晚完成 15、最晚开始 12。D 最晚完成取 F 的最晚开始 12，最晚开始 7；E 最晚完成同为 12，只要 6 天，最晚开始 6。B 最晚完成取 7，最晚开始 3；C 最晚完成取 6，最晚开始 4。A 最晚完成取 min(3, 4) ＝ 3，最晚开始 0。</p>
+      <table>
+        <thead><tr><th>任务</th><th>最早开始</th><th>最早完成</th><th>最晚开始</th><th>最晚完成</th><th>总浮动时间</th><th>关键？</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>是</td></tr>
+          <tr><td>B</td><td>3</td><td>7</td><td>3</td><td>7</td><td>0</td><td>是</td></tr>
+          <tr><td>C</td><td>3</td><td>5</td><td>4</td><td>6</td><td>1</td><td>否</td></tr>
+          <tr><td>D</td><td>7</td><td>12</td><td>7</td><td>12</td><td>0</td><td>是</td></tr>
+          <tr><td>E</td><td>5</td><td>11</td><td>6</td><td>12</td><td>1</td><td>否</td></tr>
+          <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td>0</td><td>是</td></tr>
+        </tbody>
+      </table>
+      <h2 id="s6">读懂这张表</h2>
+<p>浮动时间为零的 A、B、D、F 构成关键路径，与一开始数出的最长路径吻合。C 和 E 各有 1 天浮动时间，任一项推迟一天，15 天的完工日期不变。</p>
+      <p>但这 1 天由支路共享：C 用掉了，E 就没有了。若 C 推迟两天，A → C → E → F 变成 16 天，反过来成为新的关键路径，完工日期后移一天。</p>
+      <h2 id="s7">CPM、PERT 与关键链</h2>
+<p><strong>CPM</strong> 每项任务只用一个确定工期，输出关键路径和浮动时间，适合估算比较可靠的场合。</p>
+      <p><strong>PERT</strong> 给三个估计——乐观 O、最可能 M、悲观 P——按 (O + 4M + P) / 6 加权。设计任务估 2、4、12 天，期望工期就是 (2 + 16 + 12) / 6 ＝ 5 天，比"最可能"的 4 天多一天，这一天正是长尾风险的定价。常见做法是用 PERT 估工期，再拿它跑 CPM。</p>
+      <p><strong>关键链</strong>来自约束理论，在 CPM 之上加入资源约束，把各任务里分散的余量集中成放在链尾的缓冲。当决定进度的是共用资源时更合适。</p>
+      <h2 id="s8">这在实际中意味着什么</h2>
+<p>它告诉你精力花在哪里有效：给 C 加人对完工毫无帮助；在 B 上省一天，项目就真的早一天完工。</p>
+      <p>关键路径不是计划的固有属性，而是某一时刻的快照，每周更新后都要重算——手算六项尚可，六十项就不现实。<a href="/zh/app.html">gantts.app</a> 在浏览器里边输入边算，改一个工期或一条依赖关系，关键路径立刻重新高亮，随后可导出 PDF、PNG、Excel 或 PowerPoint。</p>
 
       <div class="callout">关键路径在项目过程中会变。一项有三天浮动时间的任务若延误四天，它自己就成了关键任务。因此关键路径不是开工时算一次，而是每次更新都要重算。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>什么是关键路径？</summary><p>相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间。</p></details>
-        <details><summary>关键路径怎么计算？</summary><p>先正推求最早时间，再逆推求最晚时间。两者相同、即浮动时间为零的任务，构成关键路径。</p></details>
-        <details><summary>什么是总浮动时间？</summary><p>一项任务在不推迟项目完工的前提下可以推迟的时间：最晚开始减最早开始。</p></details>
-        <details><summary>关键路径可能有多条吗？</summary><p>可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径，风险随之显著上升。</p></details>
+        <details open><summary>什么是关键路径？</summary><p>相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间，因此其中任何一项延误一天，完工就晚一天。</p></details>
+        <details><summary>关键路径怎么计算？</summary><p>先列出所有任务的工期和前置任务，再正推求最早开始与最早完成（汇合处取最大值），然后从项目工期逆推求最晚完成与最晚开始（分叉处取最小值），最后用最晚开始减最早开始得到浮动时间。浮动时间为零的任务首尾相连，就是关键路径。</p></details>
+        <details><summary>什么是总浮动时间？</summary><p>一项任务在不推迟项目完工的前提下可以推迟的时间，等于最晚开始减最早开始，也等于最晚完成减最早完成。注意它由整条支路共享：前面的任务用掉了，后面就没有了。</p></details>
+        <details><summary>正推和逆推有什么区别？</summary><p>正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。</p></details>
+        <details><summary>CPM 和 PERT 有什么区别？</summary><p>CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。</p></details>
+        <details><summary>关键路径可能有多条吗？</summary><p>可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。</p></details>
       </div>
 
       <aside class="promo">

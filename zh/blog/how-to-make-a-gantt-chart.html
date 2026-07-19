@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>甘特图怎么做（七步法） | gantts.app</title>
-  <meta name="description" content="甘特图怎么做：列任务、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步完成。" />
+  <meta name="description" content="甘特图怎么做：列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步走完，附一个网站改版项目的完整示例。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="pt_BR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="甘特图怎么做（七步法） | gantts.app" />
-  <meta property="og:description" content="甘特图怎么做：列任务、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步完成。" />
+  <meta property="og:description" content="甘特图怎么做：列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步走完，附一个网站改版项目的完整示例。" />
   <meta property="og:url" content="https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="甘特图怎么做：七个步骤" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="甘特图怎么做（七步法） | gantts.app" />
-  <meta name="twitter:description" content="甘特图怎么做：列任务、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步完成。" />
+  <meta name="twitter:description" content="甘特图怎么做：列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步走完，附一个网站改版项目的完整示例。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html#post","headline":"甘特图怎么做：七个步骤","description":"甘特图怎么做：列任务、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步完成。","url":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"甘特图怎么做：七个步骤","item":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图怎么做？","acceptedAnswer":{"@type":"Answer","text":"列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间。日期由此得出。"}},{"@type":"Question","name":"怎样免费做甘特图？","acceptedAnswer":{"@type":"Answer","text":"在浏览器里做，无需注册和安装，例如用 gantts.app；也可以用电子表格，但超过二十项任务就会很吃力。"}},{"@type":"Question","name":"一张甘特图放多少任务合适？","acceptedAnswer":{"@type":"Answer","text":"越少越好，够用即可。20 到 60 行仍然可读；超过 150 行就没人维护了。"}},{"@type":"Question","name":"单个任务多长合适？","acceptedAnswer":{"@type":"Answer","text":"一天到一个月之间。更短属于待办清单，更长是阶段，应当拆开。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html#post","headline":"甘特图怎么做：七个步骤","description":"甘特图怎么做：列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间与评审，七步走完，附一个网站改版项目的完整示例。","url":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"甘特图怎么做：七个步骤","item":"https://gantts.app/zh/blog/how-to-make-a-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图怎么做？","acceptedAnswer":{"@type":"Answer","text":"列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间并评审。日期由前面几步自然得出，不需要一开始就定。"}},{"@type":"Question","name":"动手之前需要准备什么？","acceptedAnswer":{"@type":"Answer","text":"三样：明确的目标和交付期、达成目标所需的任务清单、每项任务大概多久以及谁等谁。有这三样，几十分钟就能把图搭起来，之后再逐步修正。"}},{"@type":"Question","name":"怎样免费做甘特图？","acceptedAnswer":{"@type":"Answer","text":"在浏览器里做，无需注册和安装，例如用 gantts.app，依赖关系、关键路径和导出都免费；也可以用 Excel 或 Google Sheets 的堆积条形图，但超过二十项任务就会很吃力。"}},{"@type":"Question","name":"依赖关系怎么加？","acceptedAnswer":{"@type":"Answer","text":"在两条横条之间画一条连线即可，最常用的是完成-开始：前一项完成后一项才开始。加上之后，前置任务一移动，后面的日期会自动跟着重排，不需要手工改。"}},{"@type":"Question","name":"一张甘特图放多少任务合适？","acceptedAnswer":{"@type":"Answer","text":"越少越好，够用即可。20 到 60 行仍然可读；超过 150 行就没人维护了，这时应该按阶段汇总，再给每个阶段拆一张明细计划。"}},{"@type":"Question","name":"单个任务多长合适？","acceptedAnswer":{"@type":"Answer","text":"一天到一个月之间。更短属于待办清单，更长是阶段，应当拆开。判断标准是能指定唯一负责人，并用一句话说清什么算做完。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -84,16 +84,17 @@
     <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
     <div class="toc"><strong>本页内容</strong>
       <ol>
-        <li><a href="#s1">1. 先列任务，不写日期</a></li>
-        <li><a href="#s2">2. 归入阶段</a></li>
-        <li><a href="#s3">3. 估算工期</a></li>
-        <li><a href="#s4">4. 连接依赖关系</a></li>
-        <li><a href="#s5">5. 设置里程碑</a></li>
-        <li><a href="#s6">6. 分配资源并检查负荷</a></li>
-        <li><a href="#s7">7. 预留浮动时间并评审</a></li>
-        <li><a href="#s8">用什么工具</a></li>
-        <li><a href="#s9">最常见的错误</a></li>
-        <li><a href="#s10">然后呢？</a></li>
+        <li><a href="#s1">动手之前先弄清三件事</a></li>
+        <li><a href="#s2">1. 先列任务，不写日期</a></li>
+        <li><a href="#s3">2. 归入阶段</a></li>
+        <li><a href="#s4">3. 估算工期</a></li>
+        <li><a href="#s5">4. 连接依赖关系</a></li>
+        <li><a href="#s6">5. 设置里程碑</a></li>
+        <li><a href="#s7">6. 分配资源并检查负荷</a></li>
+        <li><a href="#s8">7. 预留浮动时间、看关键路径并导出</a></li>
+        <li><a href="#s9">用什么工具</a></li>
+        <li><a href="#s10">最常见的错误</a></li>
+        <li><a href="#s11">然后呢？</a></li>
       </ol>
     </div>
 
@@ -103,39 +104,52 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">1. 先列任务，不写日期</h2>
-<p>先写清楚要做什么。不写日期、不排顺序、不指定负责人，只写工作本身。</p>
-        <p>合适的粒度在一天到一个月之间。更短的属于待办清单，更长的不是任务而是阶段。</p>
-      <h2 id="s2">2. 归入阶段</h2>
-<p>把任务归成四到八个阶段。正是这个分组决定了计划好不好读——对你自己，也对你要展示的人。</p>
-      <h2 id="s3">3. 估算工期</h2>
-<p>按工作日估，不按自然日；并且估纯工作时间——等待时间应当作为独立任务写进计划，而不是塞进工期里撑大。</p>
-        <p>一个可靠的做法：分别估乐观、最可能、悲观三个值再加权。只给一个数字的人，给的几乎总是乐观值。</p>
-      <h2 id="s4">4. 连接依赖关系</h2>
-<p>只连接真正存在等待关系的任务。检验方法：如果 A 提前完成，B 能否提前开始？能，就是真的依赖；不能，你只是把清单顺序照抄了一遍。</p>
-        <p>不要把所有任务都连起来。每项都依赖前一项的计划毫无并行度，通常也不现实。</p>
-      <h2 id="s5">5. 设置里程碑</h2>
-<p>数月量级的项目设五到十个。里程碑标记的是决策、审批或某个条件达成，而不是随便某项任务的结束。</p>
-      <h2 id="s6">6. 分配资源并检查负荷</h2>
-<p>到这一步才安排人——然后检查是否有人被安排在同一周同时做三项任务。这种超负荷，正是"纸面上算得通的计划实际执行不了"最常见的原因。</p>
-      <h2 id="s7">7. 预留浮动时间并评审</h2>
-<p>把浮动时间放在不确定的地方——里程碑之前和关键路径末端，而不是每项任务上。分散的浮动时间会在无人察觉中被吃掉；集中起来才看得见。</p>
-        <p>最后与执行者一起过一遍。只有一个人知道的计划不是计划，是意见。</p>
-      <h2 id="s8">用什么工具</h2>
-<p>小项目用电子表格够用，但超过二十行就吃力，因为依赖关系不会自动重算。专用工具可以接手这件事——<a href="/zh/app.html">gantts.app</a> 直接在浏览器里运行，无需注册，数据保存在你自己的设备上。</p>
-      <h2 id="s9">最常见的错误</h2>
-<p>规划得太细。300 行的计划不会有人维护，而过期的计划比没有计划更糟，因为人们仍然相信它。</p>
-      <h2 id="s10">然后呢？</h2>
-<p>计划是工具，不是文档。每周更新进度，与基准对照，把变化的部分调整过来。</p>
+      <h2 id="s1">动手之前先弄清三件事</h2>
+<p>第一，目标和交付期。第二，任务清单。第三，每项大致要多久、谁等谁。估算不必准确，有个起点就够。</p>
+      <p>下面七步用同一个例子贯穿：一个网站改版项目，3 月 2 日（周一）开工，希望 5 月前上线。</p>
+      <h2 id="s2">1. 先列任务，不写日期</h2>
+<p>先写清楚要做什么，不写日期、不排顺序、不指定负责人，动词开头："整理内容清单""设计首页""法务审核""上线"。</p>
+      <p>合适的粒度在一天到一个月之间：更短属于待办清单，更长是阶段。检验方法是能说出唯一负责人，并用一句话讲清"做完"什么样。</p>
+      <h2 id="s3">2. 归入阶段</h2>
+<p>把任务归成四到八个阶段——本例为调研、设计、开发、内容、上线。阶段是摘要行，起止日期由下属任务自动汇总，汇报时可整段折叠。</p>
+      <p>正是这个分组决定了计划好不好读。多数工具还会自动编号。</p>
+      <h2 id="s4">3. 估算工期</h2>
+<p>按工作日估，不按自然日，否则周末假期会把进度算歪。并且估纯工作时间——审批、养护、采购这类等待应作为独立任务，而不是塞进工期里撑大。</p>
+      <p>可靠的做法是估乐观、最可能、悲观三个值再加权："设计首页"估 3、5、13 天，按 (3 + 20 + 13) / 6 得 6 天。只给一个数字的人，给的几乎总是乐观值。</p>
+      <h2 id="s5">4. 连接依赖关系</h2>
+<p>只连真正存在等待关系的任务。检验方法：如果 A 提前完成，B 能否提前开始？能就是真依赖；不能，你只是把清单顺序照抄了一遍。</p>
+      <p>九成的连线是完成-开始：设计定稿后开发才动。另有开始-开始、完成-完成和极少用到的开始-完成，先只用第一种即可。关键是别写死日期——本例"上线部署"挂在"法务审核"之后，审核晚三天，上线就自动后移三天。</p>
+      <h2 id="s6">5. 设置里程碑</h2>
+<p>里程碑工期为零，图上是一个菱形。数月量级的项目设五到十个：本例为设计定稿、开发完成、内容冻结、上线。</p>
+      <p>它标记决策、审批或条件达成，而不是随便某项任务的结束。习惯做法是每个阶段末尾放一个、交付期再放一个——它也是最好的依赖挂载点。</p>
+      <h2 id="s7">6. 分配资源并检查负荷</h2>
+<p>到这一步才安排人，每项任务只写一个负责人，然后检查有没有人在同一周被排了三项——这种超负荷正是"纸面算得通、实际做不完"最常见的原因。</p>
+      <p>执行期间每周更新完成百分比：今天线越过一条还停在 0% 的横条，就是要处理的偏差信号。</p>
+      <h2 id="s8">7. 预留浮动时间、看关键路径并导出</h2>
+<p>把浮动时间放在不确定的地方——里程碑之前和关键路径末端，而不是每项任务上。分散的浮动会在无人察觉中被吃掉，集中起来才看得见。</p>
+      <p>然后打开关键路径：本例是调研 → 设计 → 开发 → 法务审核 → 上线，任一项延误一天，上线就晚一天。确认日期现实后与执行者一起过一遍——只有一个人知道的计划是意见，不是计划——再导出 PDF、PNG、Excel 或 PowerPoint。</p>
+      <h2 id="s9">用什么工具</h2>
+<p>二十行以内电子表格够用，再多就吃力，因为依赖不会自动重算。<a href="/zh/app.html">gantts.app</a> 直接在浏览器里运行，无需注册，输入任务、连上依赖关系后关键路径自动高亮，可一键导出 PDF、PNG、Excel 或 PowerPoint，数据留在本地。</p>
+      <h2 id="s10">最常见的错误</h2>
+<ul>
+        <li>一上来就规划得太细。300 行的计划没人维护，而过期的计划比没有计划更糟。</li>
+        <li>用固定日期代替依赖关系，前置任务延误时日期不动，计划从那一刻起就在说谎。</li>
+        <li>整份计划没有任何余量，第一次延误就崩了。</li>
+        <li>从不更新进度，或不看关键路径——不知道哪几项决定完工，就无从保护它。</li>
+      </ul>
+      <h2 id="s11">然后呢？</h2>
+<p>计划是工具，不是文档。开工前把当前版本存为基准，之后每周更新进度并与基准对照。</p>
 
       <div class="callout">永远不要从日期开始。任务、工期和依赖关系会自己推出日期——这样得到的计划经得起追问。从一个期望完工日倒推出来的计划，撑不过第一个问题。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>甘特图怎么做？</summary><p>列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间。日期由此得出。</p></details>
-        <details><summary>怎样免费做甘特图？</summary><p>在浏览器里做，无需注册和安装，例如用 gantts.app；也可以用电子表格，但超过二十项任务就会很吃力。</p></details>
-        <details><summary>一张甘特图放多少任务合适？</summary><p>越少越好，够用即可。20 到 60 行仍然可读；超过 150 行就没人维护了。</p></details>
-        <details><summary>单个任务多长合适？</summary><p>一天到一个月之间。更短属于待办清单，更长是阶段，应当拆开。</p></details>
+        <details open><summary>甘特图怎么做？</summary><p>列任务、归阶段、估工期、连依赖、设里程碑、配资源、留浮动时间并评审。日期由前面几步自然得出，不需要一开始就定。</p></details>
+        <details><summary>动手之前需要准备什么？</summary><p>三样：明确的目标和交付期、达成目标所需的任务清单、每项任务大概多久以及谁等谁。有这三样，几十分钟就能把图搭起来，之后再逐步修正。</p></details>
+        <details><summary>怎样免费做甘特图？</summary><p>在浏览器里做，无需注册和安装，例如用 gantts.app，依赖关系、关键路径和导出都免费；也可以用 Excel 或 Google Sheets 的堆积条形图，但超过二十项任务就会很吃力。</p></details>
+        <details><summary>依赖关系怎么加？</summary><p>在两条横条之间画一条连线即可，最常用的是完成-开始：前一项完成后一项才开始。加上之后，前置任务一移动，后面的日期会自动跟着重排，不需要手工改。</p></details>
+        <details><summary>一张甘特图放多少任务合适？</summary><p>越少越好，够用即可。20 到 60 行仍然可读；超过 150 行就没人维护了，这时应该按阶段汇总，再给每个阶段拆一张明细计划。</p></details>
+        <details><summary>单个任务多长合适？</summary><p>一天到一个月之间。更短属于待办清单，更长是阶段，应当拆开。判断标准是能指定唯一负责人，并用一句话说清什么算做完。</p></details>
       </div>
 
       <aside class="promo">

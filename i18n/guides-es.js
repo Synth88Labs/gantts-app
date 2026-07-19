@@ -35,43 +35,58 @@ const G = {
     sections: [
       ['Definición de diagrama de Gantt',
         `<p>Un diagrama de Gantt es un gráfico de barras horizontales que representa un calendario de proyecto. Cada barra es una tarea: su posición sobre el eje temporal indica cuándo empieza y cuándo termina, y su longitud indica cuánto dura.</p>
-        <p>Esa definición parece trivial y no lo es. La clave está en que muestra <em>duración</em> y <em>solapamiento</em> a la vez, algo que ninguna lista de tareas consigue: en una lista, «diseño» y «desarrollo» son dos líneas consecutivas; en un Gantt se ve que se pisan tres semanas.</p>`],
+        <p>Esa definición parece trivial y no lo es. La clave está en que muestra <em>duración</em> y <em>solapamiento</em> a la vez, algo que ninguna lista de tareas consigue: en una lista, «diseño» y «desarrollo» son dos líneas consecutivas; en un Gantt se ve que se pisan tres semanas.</p>
+        <p>En términos de gestión de proyectos es una herramienta de programación, y responde cuatro preguntas a la vez: qué hay que hacer (la lista de tareas), cuándo ocurre cada cosa (la posición de las barras), en qué orden (las dependencias) y cómo va (el avance sombreado). Esa combinación explica por qué un formato de hace más de un siglo sigue siendo la vista por defecto de prácticamente todas las herramientas de planificación.</p>`],
       ['¿Qué aspecto tiene?',
-        `<p>A la izquierda, una tabla con los nombres de las tareas, sus fechas y su responsable. A la derecha, la línea de tiempo con las barras. Entre ellas, flechas que conectan las tareas dependientes.</p>
-        <p>Los elementos que aparecen prácticamente siempre son cuatro. Las <strong>barras</strong>, una por tarea. Los <strong>hitos</strong>, rombos sin duración que marcan fechas señaladas. Las <strong>dependencias</strong>, flechas que dicen qué va antes de qué. Y la <strong>ruta crítica</strong>, la cadena resaltada que determina la fecha de fin.</p>
-        <p>Muchas herramientas añaden además una línea vertical de «hoy», sombreado de fines de semana y una barra de progreso dentro de cada tarea.</p>`],
+        `<p>Imagina una rejilla de hoja de cálculo. A la izquierda, una tabla con los nombres de las tareas, sus fechas, su duración y su responsable. A la derecha, las columnas se convierten en un calendario —días, semanas o meses— y para cada tarea una barra de color se extiende sobre las celdas que corresponden a sus fechas. Una tarea corta es una barra corta; una que dura tres semanas es una barra de tres semanas de ancho. Se lee de arriba abajo para ver todo el trabajo y de izquierda a derecha para ver el paso del tiempo.</p>
+        <p>Los elementos que aparecen prácticamente siempre son seis. La <strong>lista de tareas</strong>, agrupada en fases o en una estructura de desglose. El <strong>eje temporal</strong>, que fija la escala. Las <strong>barras</strong>, una por tarea, cuya posición dice cuándo y cuya longitud dice cuánto. Los <strong>hitos</strong>, rombos sin duración que marcan fechas señaladas. Las <strong>dependencias</strong>, flechas que dicen qué va antes de qué. Y el <strong>avance</strong>, un sombreado dentro de cada barra que permite comparar lo planificado con lo real.</p>
+        <p>A eso muchas herramientas añaden una línea vertical de «hoy», sombreado de fines de semana, etiquetas de responsable y la <strong>ruta crítica</strong> resaltada: la cadena de tareas sin holgura que determina la fecha de fin. Ninguno de esos extras es imprescindible, pero la línea de hoy y la ruta crítica son los dos que más cambian lo que el gráfico comunica de un vistazo.</p>`],
       ['¿Para qué sirve un diagrama de Gantt?',
         `<p><strong>Para planificar.</strong> Obliga a decidir el orden del trabajo y a comprobar si las fechas se sostienen. La mayoría de los problemas de un plan aparecen al dibujarlo, no al ejecutarlo.</p>
         <p><strong>Para comunicar.</strong> Es el formato que entiende un cliente, un comité o un financiador sin explicación previa. Por eso se pide en propuestas de subvención, en informes de obra y en presentaciones de dirección.</p>
-        <p><strong>Para hacer seguimiento.</strong> Con una línea base guardada, el gráfico deja de ser un plan y pasa a ser una medida: cuánto nos hemos desviado, dónde y si afecta a la entrega.</p>
-        <p><strong>Para coordinar.</strong> Cuando varias personas dependen unas de otras, el gráfico responde «¿puedo empezar ya?» sin necesidad de preguntarlo.</p>`],
+        <p><strong>Para hacer seguimiento.</strong> Con una línea base guardada, el gráfico deja de ser un plan y pasa a ser una medida: cuánto nos hemos desviado, dónde y si afecta a la entrega. Sin línea base solo puedes responder «qué toca ahora», nunca «vamos tarde», porque el plan actual siempre parece coherente consigo mismo.</p>
+        <p><strong>Para gestionar dependencias.</strong> Deja evidente lo que en una lista se pierde: que las pruebas no pueden empezar hasta que el desarrollo termine, que la campaña no sale sin la aprobación legal, que la mudanza no se hace sin los circuitos de datos. Lo encontrarás en obra, software, marketing, eventos, fabricación, consultoría, investigación y lanzamientos de producto — esencialmente, en cualquier trabajo con principio, final y pasos intermedios que dependen unos de otros.</p>
+        <p><strong>Para coordinar.</strong> Cuando varias personas dependen unas de otras, el gráfico responde «¿puedo empezar ya?» sin necesidad de preguntarlo. Y responde también la pregunta contraria, que es la que se olvida: si esta tarea se retrasa dos días, ¿a quién dejo parado?</p>
+        <p><strong>Para gestionar recursos.</strong> Con responsables asignados se ve de un vistazo si la misma persona está en cuatro tareas la misma semana, un solapamiento que en una lista de tareas es sencillamente invisible.</p>`],
       ['Ejemplos por tipo de proyecto',
         `<p>La secuencia cambia mucho según el sector, aunque los elementos sean los mismos.</p>
-        <p>En <strong>construcción</strong> el orden es rígido: permisos, cimentación, estructura, cerramiento, instalaciones y acabados, con inspecciones como barreras. En <strong>software</strong> los sprints se repiten como barras de duración fija y el valor está en mostrar releases y dependencias externas. En <strong>marketing</strong>, la fase que decide el calendario suele ser la de aprobaciones. En <strong>investigación</strong>, la aprobación ética bloquea la recogida de datos. En <strong>eventos</strong> y <strong>bodas</strong>, la fecha es fija y todo se planifica hacia atrás.</p>
+        <p>En <strong>construcción</strong> el orden es rígido: permisos, cimentación, estructura, cerramiento, instalaciones y acabados, con inspecciones como barreras y desfases físicos —curado, secado— entre fases. Es donde la ruta crítica más se gana el sueldo, porque casi todo va en serie y un solo retraso mueve la entrega.</p>
+        <p>En <strong>software</strong> los sprints se repiten como barras de duración fija y el valor no está en planificar dentro del sprint, sino en mostrar releases, congelaciones y dependencias externas a quien vive fuera del backlog. En <strong>marketing</strong>, la fase que decide el calendario suele ser la de aprobaciones, y las pistas paralelas —contenido, diseño, medios— piden agrupar por flujo de trabajo. En <strong>investigación</strong>, la aprobación ética bloquea la recogida de datos y las esperas ajenas pesan más que el trabajo propio. En <strong>eventos</strong> y <strong>bodas</strong>, la fecha es inamovible y todo se planifica hacia atrás desde ella, lo que revela el primer día si hay margen suficiente o ya se va tarde.</p>
         <p>Si quieres verlos con las fases ya cargadas, hay <a href="/es/blog/gantt-chart-examples.html">ocho ejemplos comentados</a> y más de cuarenta <a href="/es/templates.html">plantillas listas</a>.</p>`],
       ['Ventajas e inconvenientes',
-        `<p><strong>A favor:</strong> muestra secuencia y solapamiento en una sola vista; hace visible la fecha de fin y qué la determina; es universalmente comprensible; y con dependencias se recalcula solo.</p>
-        <p><strong>En contra:</strong> envejece rápido si el trabajo se reprioriza cada semana; tiende al exceso de detalle, que es la causa número uno de que se abandone; no muestra bien la carga de trabajo por persona sin una vista adicional; y da una impresión de precisión que las estimaciones no siempre respaldan.</p>
-        <p>La conclusión práctica: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>`],
+        `<p><strong>A favor:</strong> muestra secuencia y solapamiento en una sola vista, algo que ninguna tabla de fechas consigue. Hace visible la fecha de fin y, con dependencias, <em>qué</em> la determina. Es universalmente comprensible: un cliente o un comité lo entienden sin formación previa. Y se recalcula solo cuando algo se mueve, en lugar de obligar a redibujar.</p>
+        <p><strong>En contra:</strong> envejece rápido si el trabajo se reprioriza cada semana, y un gráfico desactualizado es peor que ninguno porque la gente sigue confiando en él. Tiende al exceso de detalle, que es la causa número uno de que se abandone: doscientas filas no se mantienen. No muestra esfuerzo ni coste —la longitud de una barra es tiempo transcurrido, no horas de trabajo—, y eso se malinterpreta con frecuencia. Y da una impresión de precisión que las estimaciones no siempre respaldan: una barra dibujada al día parece un compromiso aunque sea una conjetura.</p>
+        <p>Casi todos esos inconvenientes tienen la misma respuesta práctica: mantener el gráfico al nivel de fase y dejar que una herramienta recalcule las fechas, en lugar de sostener a mano una imagen estática. La excepción real es el trabajo continuo y muy cambiante, donde un tablero encaja mejor. La regla de decisión: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>`],
       ['¿Quién inventó el diagrama de Gantt?',
         `<p>Lleva el nombre de Henry Gantt, ingeniero mecánico y consultor estadounidense que lo popularizó entre 1910 y 1915 para planificar producción industrial y construcción naval. No fue del todo el primero: el polaco Karol Adamiecki había desarrollado un gráfico equivalente, el harmonograma, unos quince años antes, pero lo publicó en polaco y en ruso, y el trabajo apenas circuló fuera de Europa del Este.</p>
+        <p>Los gráficos de Gantt se usaron para programar producción industrial y, de forma célebre, la construcción naval durante la Primera Guerra Mundial, y contribuyeron a establecer la programación visual como disciplina de gestión. Como la versión de Gantt fue la que circuló por la industria estadounidense y europea, el formato se quedó con su nombre.</p>
         <p>Que un formato de hace un siglo siga en uso dice algo: resolvió bien un problema que no ha cambiado.</p>`],
       ['Gantt, línea de tiempo y Kanban: en qué se diferencian',
         `<p>Una <strong>línea de tiempo</strong> muestra cuándo ocurren las cosas, pero normalmente sin duración ni dependencias: sirve para comunicar, no para planificar.</p>
         <p>Un <strong>tablero Kanban</strong> muestra el estado del trabajo —pendiente, en curso, hecho— y es excelente para flujo continuo. Lo que no muestra es el calendario: un tablero no te dice si llegas a marzo.</p>
         <p>Un <strong>diagrama de Gantt</strong> muestra duración, solapamiento y dependencia. Es la herramienta adecuada cuando el trabajo tiene un orden y un plazo, y la equivocada cuando se reprioriza constantemente.</p>
-        <p>No compiten: muchos equipos usan tablero para el día a día y Gantt para las fechas comprometidas y las dependencias externas.</p>`],
+        <p>Una regla rápida para elegir: Gantt cuando hay un plazo y una secuencia definida, tablero cuando el trabajo fluye de forma continua sin fechas fijas, y línea de tiempo cuando solo necesitas enseñar media docena de fechas clave. Todo diagrama de Gantt contiene una línea de tiempo, pero una línea de tiempo no es un Gantt.</p>
+        <p>No compiten: muchos equipos usan tablero para el día a día y Gantt para las fechas comprometidas y las dependencias externas, y esa combinación suele funcionar mejor que forzar una sola herramienta.</p>`],
       ['Cómo hacer uno gratis',
-        `<p>Necesitas tres cosas: la lista de tareas, una duración estimada para cada una y saber qué depende de qué. Con eso, el gráfico sale prácticamente solo.</p>
-        <p>Puedes construirlo en Excel con un gráfico de barras apiladas, en Google Sheets con la función Cronograma, o directamente en el <a href="/es/app.html">editor de gantts.app</a>, que enlaza dependencias, calcula la ruta crítica y exporta a PDF, Excel y PowerPoint sin cuenta y sin marca de agua.</p>
-        <p>La guía paso a paso está en <a href="/es/blog/how-to-make-a-gantt-chart.html">cómo hacer un diagrama de Gantt</a>.</p>`],
+        `<p>Necesitas tres cosas: la lista de tareas, una duración estimada para cada una y saber qué depende de qué. Con eso, el gráfico sale prácticamente solo. El recorrido, resumido:</p>
+        <ul>
+          <li>Lista las tareas y agrúpalas en cinco o seis fases.</li>
+          <li>Pon una duración a cada una, en días laborables, sin fijar fechas todavía.</li>
+          <li>Enlaza las dependencias y deja que las fechas se calculen solas.</li>
+          <li>Marca los hitos que importan y activa la ruta crítica.</li>
+          <li>Asigna responsables, guarda una línea base y exporta.</li>
+        </ul>
+        <p>Puedes construirlo en Excel con un gráfico de barras apiladas, en Google Sheets con la función Cronograma, o directamente en el <a href="/es/app.html">editor de gantts.app</a>, que enlaza dependencias, calcula la ruta crítica y exporta a PDF, PNG, Excel y PowerPoint sin cuenta y sin marca de agua. La diferencia entre las dos primeras vías y la tercera no está en dibujar las barras, que es fácil en cualquier sitio, sino en quién recalcula el plan cuando algo se mueve.</p>
+        <p>La guía paso a paso está en <a href="/es/blog/how-to-make-a-gantt-chart.html">cómo hacer un diagrama de Gantt</a>, y si trabajas en hoja de cálculo, en <a href="/es/blog/gantt-chart-in-excel.html">cómo hacerlo en Excel</a>.</p>`],
     ],
     callout: 'El error más común no es dibujar mal las barras: es dibujarlas sin dependencias. Un Gantt sin flechas es una lista de fechas bonita que hay que actualizar a mano cada vez que algo cambia. Con dependencias, mueves una tarea y el plan se recalcula solo — y solo entonces la ruta crítica significa algo.',
     faq: [
       ['¿Qué es exactamente un diagrama de Gantt?', 'Es un gráfico de barras horizontales sobre una línea de tiempo: cada barra representa una tarea, su posición indica cuándo ocurre y su longitud cuánto dura. Añadiendo dependencias e hitos se convierte en un modelo del calendario, no solo en un dibujo.'],
       ['¿Para qué sirve un diagrama de Gantt?', 'Para ver secuencia, solapamiento y fecha de fin en una sola vista. Es la herramienta adecuada cuando el trabajo tiene un orden y un plazo, y sirve además como documento de comunicación con clientes, dirección o financiadores.'],
       ['¿Cuál es la diferencia entre un Gantt y un cronograma?', 'Un cronograma es cualquier calendario de actividades; el diagrama de Gantt es una forma concreta de representarlo, con barras en una línea de tiempo. Todo diagrama de Gantt es un cronograma, pero no al revés.'],
-      ['¿Necesito software para hacer uno?', 'No necesariamente, pero a mano se vuelve insostenible en cuanto hay dependencias: cada cambio obliga a recalcular todo. Puedes hacerlo gratis en el <a href="/es/app.html">editor de gantts.app</a>, sin cuenta y sin que el plan salga de tu navegador.'],
+      ['¿Cuáles son las partes de un diagrama de Gantt?', 'Seis: la lista de tareas a la izquierda, el eje temporal arriba, las barras que representan cada tarea, los hitos dibujados como rombos sin duración, las flechas de dependencia que enlazan tareas relacionadas y el sombreado de avance que indica el porcentaje completado. A eso suelen sumarse una línea vertical de hoy y la ruta crítica resaltada.'],
+      ['¿Quién inventó el diagrama de Gantt?', 'Lleva el nombre de Henry L. Gantt (1861-1919), ingeniero mecánico y consultor estadounidense que lo desarrolló y popularizó entre 1910 y 1915 para programar producción industrial y construcción naval. En los años noventa del siglo XIX el ingeniero polaco Karol Adamiecki había diseñado un gráfico muy similar, el harmonograma, pero lo publicó en polaco y en ruso y apenas circuló fuera de Europa del Este.'],
+      ['¿Necesito software para hacer uno?', 'No necesariamente, pero a mano se vuelve insostenible en cuanto hay dependencias: cada cambio obliga a recalcular todo. Puedes hacerlo gratis en el <a href="/es/app.html">editor de gantts.app</a>, sin cuenta y sin que el plan salga de tu navegador, con dependencias, ruta crítica automática y exportación a PDF, PNG, Excel y PowerPoint.'],
     ],
     related: [
       ['how-to-make-a-gantt-chart', 'Cómo hacer un diagrama de Gantt paso a paso'],
@@ -91,24 +106,35 @@ const G = {
       ['Lo que necesitas antes de empezar',
         `<p>Tres cosas, y ninguna es software. La <strong>lista de tareas</strong>, aunque esté desordenada. Una <strong>duración estimada</strong> para cada una. Y saber <strong>qué depende de qué</strong>.</p>
         <p>Si tienes esas tres, el gráfico sale en veinte minutos. Si no las tienes, ninguna herramienta te va a salvar: estarás dibujando barras bonitas sobre un plan que no existe.</p>
-        <p>Lo que <em>no</em> necesitas al empezar son fechas. Salen solas al enlazar las dependencias, y fijarlas antes es la forma más rápida de construir un calendario que habrá que rehacer.</p>`],
+        <p>Lo que <em>no</em> necesitas al empezar son fechas. Salen solas al enlazar las dependencias, y fijarlas antes es la forma más rápida de construir un calendario que habrá que rehacer.</p>
+        <p>Sí conviene tener claras dos cosas más: qué significa exactamente «terminado» para este proyecto y si hay alguna fecha impuesta desde fuera —una feria, un cierre contable, el arranque de un curso—. Un plan que termina cuando termina es distinto de uno que tiene que llegar al 15 de octubre, y esa diferencia decide si planificas hacia adelante o hacia atrás.</p>`],
       ['1. Lista el trabajo antes de pensar en fechas',
         `<p>Escribe todas las tareas sin preocuparte del calendario. Mezclar «qué hay que hacer» con «cuándo» es lo que produce planes optimistas: en cuanto ves una fecha, empiezas a ajustar el alcance para que quepa.</p>
-        <p>Agrupa después en fases. Una fase con quince tareas dentro se lee mejor que un listado plano de cuarenta.</p>`],
+        <p>El tamaño correcto de una tarea se comprueba con dos preguntas. ¿Puedes nombrar a una sola persona responsable? ¿Puedes describir en una frase qué significa que esté hecha? Si la respuesta a alguna es no, la tarea es demasiado grande —divídela— o demasiado vaga —defínela—. En la práctica, el rango cómodo va de medio día a dos semanas: por debajo ensucia el gráfico, por encima esconde el riesgo.</p>
+        <p>Escribe en verbo y concreto: «Redactar textos de la página de inicio», «Revisar con asesoría jurídica», «Desplegar en producción». Y agrupa después en fases. Una fase con quince tareas dentro se lee mejor que un listado plano de cuarenta, y permite enseñar el plan plegado a quien solo quiere ver el mes.</p>`],
       ['2. Estima duraciones, no fechas',
         `<p>Para cada tarea, cuánto tiempo lleva hacerla. Nada más. Las fechas saldrán solas cuando enlaces las dependencias — y si las fijas ahora, estarás inventando un calendario que tendrás que rehacer.</p>
-        <p>Estima en días laborables si tu herramienta los distingue. Diez días que cruzan dos fines de semana son catorce días de calendario, y esa diferencia se acumula rápido.</p>`],
+        <p>Estima en días laborables si tu herramienta los distingue. Diez días laborables que cruzan dos fines de semana son catorce de calendario; encadena cuatro tareas así y el desfase acumulado supera la semana. Con festivos locales o vacaciones de agosto la diferencia crece todavía más, y es la causa más habitual de que un plan «cuadrado» llegue tarde sin que nadie haya fallado.</p>
+        <p>Distingue también entre esfuerzo y tiempo transcurrido. Una revisión legal puede ser media hora de trabajo y cinco días de espera; lo que va en la barra son los cinco días. Y no rellenes cada tarea con un día de más «por si acaso»: ese margen repartido desaparece sin que nadie lo note. Es mejor estimar honestamente y poner un colchón visible antes de la entrega, que es el que sí se puede defender.</p>`],
       ['3. Enlaza las dependencias',
         `<p>Este es el paso que la mayoría se salta y el que convierte el dibujo en un modelo. Para cada tarea pregunta: ¿qué tiene que estar terminado antes de poder empezar esto?</p>
-        <p>La mayoría serán fin-inicio. Usa inicio-inicio cuando dos cosas arrancan juntas y fin-fin cuando deben terminar a la vez. Si te encuentras escribiendo fechas a mano para que las barras «queden bien», te falta una dependencia.</p>`],
+        <p>La mayoría serán fin-inicio: probar no empieza hasta que desarrollar termina. Usa inicio-inicio cuando dos cosas arrancan juntas —control de calidad en cuanto arranca producción— y fin-fin cuando deben cerrarse a la vez, como la documentación con el desarrollo. La cuarta, inicio-fin, es legítima pero rara; si la usas mucho, revisa el modelo.</p>
+        <p>Los desfases son parte de esto y se olvidan siempre. Tres días de secado antes de pintar, cinco días de plazo de imprenta, dos semanas de espera de un permiso: son desfases sobre la relación, no tareas. Modelarlos como tarea ensucia el plan con barras que nadie ejecuta.</p>
+        <p>La señal de que falta una dependencia es inconfundible: si te encuentras escribiendo fechas a mano para que las barras «queden bien», o si cada vez que mueves una tarea tienes que arreglar tres más, es que la relación no está puesta. Con ella, esas tres se mueven solas.</p>`],
       ['4. Marca los hitos que importan',
-        `<p>Un hito es una fecha sin duración: aprobación concedida, contrato firmado, entrega realizada. Sirven para dos cosas: son lo que dirección mira primero, y son barreras naturales que impiden que el plan avance fuera de secuencia.</p>`],
+        `<p>Un hito es una fecha sin duración: aprobación concedida, contrato firmado, entrega realizada. Sirven para dos cosas: son lo que dirección mira primero, y son barreras naturales que impiden que el plan avance fuera de secuencia.</p>
+        <p>La regla de dosificación es sencilla: uno al final de cada fase y uno en la fecha de entrega, más los puntos de no retorno propios del proyecto —congelación de alcance, compromiso de fabricación, apertura de inscripciones—. Entre cinco y diez para un proyecto de varios meses. Un hito por semana no señala nada, porque cuando todo es un hito nada destaca.</p>
+        <p>Enlaza dependencias a los hitos, no solo a las tareas. Un hito de «licencia concedida» con tres tareas colgando deja clarísimo, para cualquiera que mire el gráfico, qué se para si el ayuntamiento tarda.</p>`],
       ['5. Mira la ruta crítica',
-        `<p>Con las dependencias puestas, la ruta crítica aparece sola: la cadena que determina tu fecha de fin. Si no te gusta esa fecha, solo tienes tres opciones reales — acortar una tarea crítica, solaparla con la siguiente, o mover la fecha. Recortar tareas que no están en la ruta crítica no adelanta nada.</p>`],
+        `<p>Con las dependencias puestas, la ruta crítica aparece sola: la cadena de tareas con holgura cero que determina tu fecha de fin. Si no te gusta esa fecha, solo tienes tres opciones reales — acortar una tarea crítica, solaparla con la siguiente mediante un desfase negativo, o mover la fecha. Recortar tareas que no están en la ruta crítica no adelanta absolutamente nada, por mucho esfuerzo que se le ponga.</p>
+        <p>Mira también la columna de holgura, no solo la cadena resaltada. Una tarea con un día de margen es casi crítica y se convertirá en crítica al primer contratiempo; una con quince días de margen puede esperar sin que nadie se preocupe. Esa cifra es la que de verdad usas para decidir a qué llamada respondes primero. El detalle del cálculo está en <a href="/es/blog/critical-path-method.html">la guía del método de la ruta crítica</a>.</p>`],
       ['6. Asigna responsables y comprueba la carga',
-        `<p>Pon un nombre en cada tarea y mira dónde se apilan. Un plan que parece impecable en el gráfico puede tener a la misma persona en cuatro tareas simultáneas en marzo. Ese solapamiento es invisible en las barras y evidente en una vista de carga.</p>`],
+        `<p>Pon un nombre en cada tarea y mira dónde se apilan. Un plan que parece impecable en el gráfico puede tener a la misma persona en cuatro tareas simultáneas en marzo. Ese solapamiento es invisible en las barras y evidente en una vista de carga.</p>
+        <p>Una fila sin responsable es una fila que nadie va a actualizar, y basta con tres o cuatro para que el gráfico deje de reflejar la realidad. Si una tarea tiene dos nombres, en la práctica no tiene ninguno: pon un responsable único y añade a los demás como participantes.</p>
+        <p>Cuando detectes un apilamiento, las salidas son las de siempre: mover la tarea al margen que le dé su holgura, reasignarla o reducir el alcance. Lo que no funciona es dejarlo y confiar en que esa semana la persona rinda por dos.</p>`],
       ['7. Fija línea base y publica',
-        `<p>Cuando el plan esté acordado, guarda una línea base: la foto congelada contra la que medirás la desviación. A partir de ahí, exporta a PDF o PowerPoint para compartirlo, y actualiza el porcentaje completado en lugar de redibujar.</p>`],
+        `<p>Cuando el plan esté acordado, guarda una línea base: la foto congelada contra la que medirás la desviación. Sin ella no puedes responder a «¿vamos tarde?», solo a «¿qué toca ahora?», porque el plan actual siempre parece coherente consigo mismo.</p>
+        <p>A partir de ahí, exporta a PDF o PowerPoint para compartirlo, y mantén el gráfico vivo actualizando el porcentaje completado en lugar de redibujar. Una revisión semanal de quince minutos —avances, fechas movidas, dependencias nuevas— es lo que separa un plan útil de un diagrama que la gente sigue mirando cuando ya no es cierto, que es peor que no tener ninguno.</p>`],
       ['Errores que conviene evitar',
         `<p><strong>Demasiado detalle.</strong> Si una tarea dura menos de un día, pertenece a la lista de alguien, no al plan del proyecto. Doscientas filas no se mantienen: se abandonan.</p>
         <p><strong>Fechas escritas a mano en lugar de dependencias.</strong> Funciona hasta el primer cambio, y a partir de ahí cada movimiento obliga a reajustar tres tareas más.</p>
@@ -125,7 +151,9 @@ const G = {
       ['¿Cuánto se tarda en hacer un diagrama de Gantt?', 'Con una plantilla, entre quince minutos y una hora para un proyecto normal. Lo que lleva tiempo no es dibujar: es decidir el orden del trabajo y estimar duraciones con honestidad.'],
       ['¿Puedo hacer un diagrama de Gantt en Excel?', 'Sí, con un gráfico de barras apiladas, aunque las dependencias hay que mantenerlas a mano y esa es justamente la parte que se rompe. Puedes descargar plantillas listas de Excel o editarlo online sin fórmulas.'],
       ['¿Cuántas tareas debe tener?', 'Las que puedas seguir de verdad. Entre veinte y sesenta filas es el rango cómodo para un proyecto único; por encima, agrupa en fases y despliega solo lo que necesites mirar.'],
-      ['¿Es gratis hacerlo en gantts.app?', 'Sí. El <a href="/es/app.html">editor</a> es gratuito, sin registro y sin marca de agua, y el plan se queda en tu navegador.'],
+      ['¿Cómo añado dependencias y por qué importan tanto?', 'Se traza un enlace entre dos barras y la herramienta recalcula las fechas de la que va detrás. Importan porque son lo que convierte el dibujo en un modelo: sin ellas no hay ruta crítica que calcular y cada retraso obliga a reajustar el plan a mano. La relación más habitual es fin-inicio, y con ella se cubre la gran mayoría de los casos reales.'],
+      ['¿Debo estimar en días laborables o naturales?', 'En días laborables siempre que la herramienta los distinga, porque es como se trabaja. La trampa es que diez días laborables son catorce de calendario, y encadenando varias tareas la diferencia supera fácilmente la semana. Si además hay festivos o vacaciones, conviene cargarlos en el calendario del proyecto en lugar de compensarlos a ojo alargando duraciones.'],
+      ['¿Es gratis hacerlo en gantts.app?', 'Sí. El <a href="/es/app.html">editor</a> es gratuito, sin registro y sin marca de agua, y el plan se queda en tu navegador. Incluye dependencias, hitos, ruta crítica automática y exportación a PDF, PNG, Excel y PowerPoint, sin límite de tareas.'],
     ],
     related: [
       ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
@@ -143,41 +171,80 @@ const G = {
     figIntro: 'Pasada adelante, pasada atrás y la holgura que sale de restarlas:',
     sections: [
       ['¿Qué es el método de la ruta crítica?',
-        `<p>El método de la ruta crítica (CPM, <em>critical path method</em>) es una técnica para calcular la duración mínima de un proyecto a partir de las duraciones de sus tareas y de las dependencias entre ellas.</p>
-        <p>Su resultado más útil es una lista corta: qué tareas no admiten ningún retraso. Todo lo demás tiene margen, y saber cuál es cuál cambia por completo dónde pones la atención.</p>
-        <p>Se desarrolló a finales de los años cincuenta en DuPont, para planificar paradas de planta química, en paralelo al método PERT que la Marina estadounidense creó para el programa Polaris.</p>`],
+        `<p>El método de la ruta crítica (CPM, <em>critical path method</em>) es una técnica para calcular la duración mínima de un proyecto a partir de las duraciones de sus tareas y de las dependencias entre ellas. La idea de fondo es sencilla: entre el inicio y el fin de un proyecto hay varios caminos posibles, y la duración del proyecto no es la suma de todas las tareas, sino la longitud del camino más largo. Ese camino es la ruta crítica.</p>
+        <p>Su resultado más útil es una lista corta: qué tareas no admiten ningún retraso. En un plan de cuarenta tareas suele haber ocho o diez críticas; las otras treinta tienen margen. Saber cuáles son cambia por completo dónde pones la atención, a quién llamas cuando algo se tuerce y qué recursos mueves si hay que recuperar tiempo.</p>
+        <p>Se desarrolló a finales de los años cincuenta en DuPont —Morgan Walker y James Kelley, planificando paradas de planta química— en paralelo al método PERT que la Marina estadounidense creó para el programa Polaris. Que siga enseñándose sesenta años después responde a que el problema que resuelve no ha cambiado: en cualquier plan con dependencias, la mayoría de las tareas no controlan la fecha de entrega, y sin hacer el cálculo no hay forma de distinguir cuáles sí.</p>`],
       ['Términos que necesitas',
-        `<p><strong>Inicio temprano (ES)</strong> y <strong>fin temprano (EF):</strong> lo más pronto que una tarea puede empezar y terminar respetando sus predecesoras.</p>
-        <p><strong>Inicio tardío (LS)</strong> y <strong>fin tardío (LF):</strong> lo más tarde que puede empezar y terminar sin retrasar el proyecto.</p>
-        <p><strong>Holgura total:</strong> LS − ES, es decir, cuánto puedes retrasar la tarea sin mover la fecha de entrega.</p>
-        <p><strong>Holgura libre:</strong> cuánto puedes retrasarla sin mover la tarea siguiente. Siempre es menor o igual que la total.</p>
-        <p><strong>Ruta crítica:</strong> la cadena de tareas con holgura total cero.</p>`],
+        `<p><strong>Inicio temprano (ES)</strong> y <strong>fin temprano (EF):</strong> lo más pronto que una tarea puede empezar y terminar respetando sus predecesoras. EF = ES + duración.</p>
+        <p><strong>Inicio tardío (LS)</strong> y <strong>fin tardío (LF):</strong> lo más tarde que puede empezar y terminar sin retrasar el proyecto. LS = LF − duración.</p>
+        <p><strong>Holgura total:</strong> LS − ES (equivalentemente, LF − EF). Cuánto puedes retrasar la tarea sin mover la fecha de entrega.</p>
+        <p><strong>Holgura libre:</strong> cuánto puedes retrasarla sin mover la tarea siguiente. Siempre es menor o igual que la total. La distinción importa cuando varias tareas comparten holgura: si dos tareas encadenadas tienen 3 días de holgura total, no tienen 3 días cada una, tienen 3 entre las dos, y la primera que los gaste deja a la segunda sin margen.</p>
+        <p><strong>Ruta crítica:</strong> la cadena de tareas con holgura total cero, desde el inicio hasta el fin.</p>
+        <p>Una convención que ahorra confusiones: cuenta en días transcurridos desde el arranque, con el proyecto empezando en el día 0. Así el ES de la primera tarea es 0, no 1, y las restas salen limpias. Al pasar a fechas de calendario, el día 0 es la mañana del primer día laborable.</p>`],
       ['Cómo se calcula, paso a paso',
-        `<p><strong>1. Dibuja la red.</strong> Lista las tareas con su duración y sus predecesoras inmediatas.</p>
-        <p><strong>2. Pasada adelante.</strong> Empieza en cero. Para cada tarea, ES es el mayor EF de sus predecesoras; EF = ES + duración. Al llegar al final, el mayor EF es la duración del proyecto.</p>
-        <p><strong>3. Pasada atrás.</strong> Empieza por el final con LF igual a la duración total. Para cada tarea, LF es el menor LS de sus sucesoras; LS = LF − duración.</p>
-        <p><strong>4. Calcula la holgura.</strong> Holgura total = LS − ES. Las tareas con holgura cero forman la ruta crítica.</p>
-        <p>Con desfases (lag) el procedimiento es el mismo: el desfase se suma en la pasada adelante y se resta en la de atrás.</p>`],
+        `<p><strong>1. Lista actividades y dependencias.</strong> Cada tarea con su duración y sus predecesoras inmediatas. Este paso es el que de verdad cuesta: si una predecesora falta, todo el cálculo posterior es correcto sobre una red equivocada.</p>
+        <p><strong>2. Dibuja la red.</strong> Conecta las tareas desde un único inicio hasta un único fin. Con eso quedan a la vista todos los caminos posibles, que es lo que vas a comparar.</p>
+        <p><strong>3. Pasada adelante.</strong> De izquierda a derecha. La primera tarea tiene ES = 0. Para cada tarea siguiente, ES es el <em>mayor</em> EF de sus predecesoras —mayor, porque hay que esperar a la última— y EF = ES + duración. El mayor EF del final es la duración del proyecto.</p>
+        <p><strong>4. Pasada atrás.</strong> De derecha a izquierda. La última tarea tiene LF igual a la duración total. Para cada tarea anterior, LF es el <em>menor</em> LS de sus sucesoras —menor, porque no puedes hacer esperar a ninguna— y LS = LF − duración.</p>
+        <p><strong>5. Calcula la holgura e identifica la ruta.</strong> Holgura total = LS − ES para cada tarea. Las de holgura cero, encadenadas de principio a fin, son la ruta crítica.</p>
+        <p>Dos matices habituales. Con <strong>desfases</strong> (lag) el procedimiento no cambia: el desfase se suma en la pasada adelante y se resta en la de atrás. Y si el proyecto tiene una fecha de entrega impuesta anterior a la duración calculada, la pasada atrás arranca en esa fecha y aparecen holguras negativas: no es un error de cálculo, es el plan diciéndote cuántos días te faltan.</p>`],
       ['Un ejemplo resuelto',
-        `<p>Cuatro tareas. A dura 3 días y no tiene predecesoras. B dura 4 y depende de A. C dura 2 y también depende de A. D dura 3 y depende de B y de C.</p>
-        <p><em>Pasada adelante:</em> A va de 0 a 3. B de 3 a 7. C de 3 a 5. D no puede empezar hasta que ambas terminen, así que arranca en 7 y termina en 10. El proyecto dura 10 días.</p>
-        <p><em>Pasada atrás:</em> D va de 7 a 10. B debe terminar en 7, luego va de 3 a 7. C debe terminar en 7, luego va de 5 a 7. A de 0 a 3.</p>
-        <p><em>Holguras:</em> A, B y D tienen holgura cero — son críticas. C tiene 2 días de holgura: puede retrasarse dos días sin afectar a nada.</p>
-        <p>Observa la consecuencia práctica: acelerar C no adelanta el proyecto ni un día. Solo mover A, B o D lo hace.</p>`],
+        `<p>Seis actividades, duraciones en días laborables, arranque en el día 0:</p>
+        <ul>
+          <li><strong>A — Planificar:</strong> 3 días, sin predecesoras</li>
+          <li><strong>B — Diseñar:</strong> 4 días, tras A</li>
+          <li><strong>C — Comprar materiales:</strong> 2 días, tras A</li>
+          <li><strong>D — Construir:</strong> 5 días, tras B</li>
+          <li><strong>E — Preparar el emplazamiento:</strong> 6 días, tras C</li>
+          <li><strong>F — Instalar y probar:</strong> 3 días, tras D y E</li>
+        </ul>
+        <p>Hay dos caminos: A → B → D → F suma 3 + 4 + 5 + 3 = 15 días, y A → C → E → F suma 3 + 2 + 6 + 3 = 14. El más largo es 15, así que esa es la duración mínima. Confirmémoslo con las dos pasadas, que además nos dan la holgura de cada tarea.</p>
+        <p><strong>Pasada adelante</strong> (ES, y EF = ES + duración):</p>
+        <ul>
+          <li>A: ES 0 → EF 3</li>
+          <li>B: ES 3 (tras A) → EF 7</li>
+          <li>C: ES 3 (tras A) → EF 5</li>
+          <li>D: ES 7 (tras B) → EF 12</li>
+          <li>E: ES 5 (tras C) → EF 11</li>
+          <li>F: ES 12 (el mayor entre el EF 12 de D y el EF 11 de E) → EF 15. <strong>Proyecto: 15 días.</strong></li>
+        </ul>
+        <p><strong>Pasada atrás</strong> (LF, y LS = LF − duración), partiendo de LF = 15 en F:</p>
+        <ul>
+          <li>F: LF 15 → LS 12</li>
+          <li>D: LF 12 (el LS de F) → LS 7</li>
+          <li>E: LF 12 (el LS de F) → LS 6</li>
+          <li>B: LF 7 (el LS de D) → LS 3</li>
+          <li>C: LF 6 (el LS de E) → LS 4</li>
+          <li>A: LF 3 (el menor entre el LS 3 de B y el LS 4 de C) → LS 0</li>
+        </ul>
+        <p><strong>Holgura total = LS − ES</strong>, tarea por tarea:</p>
+        <ul>
+          <li>A: 0 − 0 = <strong>0</strong> — crítica</li>
+          <li>B: 3 − 3 = <strong>0</strong> — crítica</li>
+          <li>C: 4 − 3 = <strong>1 día</strong></li>
+          <li>D: 7 − 7 = <strong>0</strong> — crítica</li>
+          <li>E: 6 − 5 = <strong>1 día</strong></li>
+          <li>F: 12 − 12 = <strong>0</strong> — crítica</li>
+        </ul>
+        <p>La ruta crítica es A → B → D → F, exactamente el camino largo que habíamos localizado a ojo. C y E tienen un día de holgura cada una, pero —y esto es lo que el cálculo a ojo no da— comparten esa holgura: si C se retrasa un día, E pasa a tener cero y su cadena se vuelve crítica también. Retrasa C dos días y el proyecto se va a 16.</p>
+        <p>La lectura práctica: acelerar C o E no adelanta la entrega ni un día, porque su camino ya es más corto. Si necesitas terminar en 13 días en lugar de 15, las únicas palancas reales son acortar A, B, D o F, o solaparlas con desfases negativos. Cualquier esfuerzo puesto en las otras dos es esfuerzo que no se convierte en fecha.</p>`],
       ['CPM, PERT y cadena crítica',
-        `<p><strong>CPM</strong> usa una duración única por tarea y es determinista. Es lo que usan la mayoría de las herramientas.</p>
-        <p><strong>PERT</strong> usa tres estimaciones —optimista, más probable y pesimista— y calcula una duración esperada ponderada. Sirve cuando la incertidumbre es alta y quieres hablar de probabilidad en lugar de una fecha única.</p>
-        <p><strong>Cadena crítica</strong> parte del CPM pero retira los márgenes individuales de cada tarea y los agrupa en un colchón al final del proyecto, para evitar que la holgura se consuma tarea a tarea. Es la respuesta de la teoría de restricciones al problema de que el margen repartido siempre desaparece.</p>`],
+        `<p><strong>CPM</strong> usa una duración única por tarea y es determinista. Es lo que calculan casi todas las herramientas cuando resaltan la ruta crítica, y funciona bien cuando las estimaciones son razonablemente conocidas.</p>
+        <p><strong>PERT</strong> usa tres estimaciones —optimista (O), más probable (M) y pesimista (P)— y calcula una duración esperada ponderada con la fórmula (O + 4M + P) / 6. Si una tarea se estima en 4, 6 y 14 días, PERT da (4 + 24 + 14) / 6 = 7 días, no los 6 que habrías escrito de memoria: la cola pesimista pesa. Sirve cuando la incertidumbre es alta y quieres hablar de probabilidad en vez de una fecha única. En la práctica lo habitual es alimentar el CPM con duraciones obtenidas por PERT.</p>
+        <p><strong>Cadena crítica</strong> parte del CPM pero añade la restricción de recursos y retira los márgenes individuales de cada tarea para agruparlos en un colchón compartido al final del proyecto. La razón es conductual: el margen repartido tarea a tarea siempre se consume —el trabajo se expande hasta llenar el tiempo disponible— mientras que un colchón único es visible y se defiende. Es la respuesta de la teoría de restricciones al problema, y encaja cuando lo que manda no son las dependencias sino que varias tareas compiten por la misma persona o la misma máquina.</p>`],
       ['Verla automáticamente',
-        `<p>Calcular esto a mano funciona con cuatro tareas y es inviable con cuarenta, sobre todo porque la ruta crítica cambia cada vez que ajustas una duración.</p>
-        <p>En el <a href="/es/app.html">editor gratuito</a>, enlaza las dependencias y activa la ruta crítica: se resalta sola y se recalcula al instante con cada cambio. La columna de holgura muestra además cuántos días de margen tiene cada tarea, que es la cifra que de verdad usas para decidir prioridades.</p>`],
+        `<p>Hacer las dos pasadas a mano es la mejor forma de entender el método, y también la peor forma de mantener un plan. Con seis tareas es un ejercicio de diez minutos; con cuarenta es inviable, sobre todo porque la ruta crítica no es estable: cambia cada vez que ajustas una duración, añades una dependencia o alguien reporta un retraso. Recalcularla a mano cada semana no lo hace nadie, y un plan cuya ruta crítica está desactualizada es peor que no tener ninguna, porque protege las tareas equivocadas.</p>
+        <p>En el <a href="/es/app.html">editor gratuito</a>, enlaza las dependencias y activa la ruta crítica: se resalta sola y se recalcula al instante con cada cambio. La columna de holgura muestra además cuántos días de margen tiene cada tarea, que es la cifra que de verdad usas para decidir prioridades — y la que te avisa cuando una tarea que ayer tenía tres días de margen hoy tiene cero.</p>
+        <p>Si estás empezando, conviene leer antes <a href="/es/blog/what-is-a-gantt-chart.html">qué es un diagrama de Gantt</a> y <a href="/es/blog/gantt-chart-dependencies.html">los cuatro tipos de dependencia</a>: sin dependencias bien puestas, el cálculo de la ruta crítica no tiene sobre qué trabajar.</p>`],
     ],
     callout: 'La ruta crítica solo existe si has puesto dependencias. Un diagrama con fechas escritas a mano no tiene red que recorrer, así que cualquier herramienta te dirá que todo es crítico o que nada lo es. Enlazar las tareas es el requisito previo, no un adorno.',
     faq: [
       ['¿Qué es la ruta crítica en un proyecto?', 'La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega.'],
       ['¿Qué diferencia hay entre holgura total y holgura libre?', 'La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre.'],
-      ['¿Puede haber más de una ruta crítica?', 'Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas — y el proyecto se vuelve más frágil, porque hay más tareas sin margen.'],
-      ['¿Cómo veo la ruta crítica de mi plan?', 'Enlaza las dependencias y activa la ruta crítica en el <a href="/es/app.html">editor gratuito</a>: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración.'],
+      ['¿Puede haber más de una ruta crítica?', 'Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas, y el proyecto se vuelve más frágil porque hay más tareas sin margen. También ocurre de forma sobrevenida: una cadena con un día de holgura pasa a ser crítica en cuanto ese día se consume, así que conviene vigilar las tareas de holgura muy baja, no solo las de holgura cero.'],
+      ['¿Qué diferencia hay entre la pasada adelante y la pasada atrás?', 'La pasada adelante recorre la red de izquierda a derecha y calcula lo más pronto que cada tarea puede empezar y terminar; su resultado es la duración mínima del proyecto. La pasada atrás la recorre de derecha a izquierda partiendo de esa duración y calcula lo más tarde que cada tarea puede empezar y terminar sin mover la entrega. La holgura sale de restar una de otra.'],
+      ['¿Qué pasa si la holgura sale negativa?', 'Significa que has fijado una fecha de entrega anterior a la duración que el propio plan necesita. No es un error de cálculo: la holgura negativa te dice exactamente cuántos días faltan. Las salidas son acortar tareas críticas, solaparlas con desfases negativos, añadir recursos o mover la fecha, y solo la última es gratis.'],
+      ['¿Cómo veo la ruta crítica de mi plan?', 'Enlaza las dependencias y activa la ruta crítica en el <a href="/es/app.html">editor gratuito</a>: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración. La columna de holgura indica además el margen de cada tarea no crítica, que es lo que necesitas para priorizar.'],
     ],
     related: [
       ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
@@ -232,38 +299,64 @@ const G = {
     sections: [
       ['1. Proyecto de construcción',
         `<p>Movilización, cimentación, estructura, cerramiento, instalaciones, acabados y recepción. La secuencia es rígida: no se levanta estructura sobre hormigón sin curar, y eso convierte casi todas las relaciones en fin-inicio con desfase.</p>
-        <p>Qué mirar: los permisos y las inspecciones. Son barreras de terceros y suelen determinar la fecha real de entrega más que la propia obra.</p>`],
+        <p>Un esqueleto realista para una nave de 800 m², en días laborables desde el 2 de marzo:</p>
+        <ul>
+          <li>Movilización y replanteo — 5 días (2 → 6 mar)</li>
+          <li>Excavación y cimentación — 15 días (9 → 27 mar)</li>
+          <li>Curado — <em>no es una tarea</em>: es un desfase de 7 días naturales</li>
+          <li>Estructura — 20 días (6 abr → 1 may)</li>
+          <li>Cerramiento y cubierta — 18 días (4 → 27 may)</li>
+          <li>Instalaciones — 25 días (18 may → 19 jun), inicio-inicio con cerramiento y 10 días de desfase</li>
+          <li>Acabados — 20 días (22 jun → 17 jul); recepción — hito, 20 de julio</li>
+        </ul>
+        <p>Ese desfase de curado es la pieza que más se modela mal: como tarea de siete días ensucia el plan con una barra que nadie ejecuta; como desfase, empuja la estructura sin ocupar fila.</p>
+        <p>Qué mirar: permisos e inspecciones, barreras de terceros que determinan la entrega más que la propia obra. El error típico es meter la licencia como tarea de 30 días fijos: no es duración, es espera con varianza, y lo honesto es dejar holgura detrás.</p>`],
       ['2. Desarrollo de software / ágil',
-        `<p>Descubrimiento, diseño, sprints de desarrollo, integración, pruebas y despliegue. Los sprints se representan como barras de duración fija y repetida; el valor del Gantt aquí no es planificar dentro del sprint sino mostrar cómo encajan releases, dependencias externas y fechas comprometidas.</p>`],
+        `<p>Descubrimiento, diseño, sprints de desarrollo, integración, pruebas y despliegue. Los sprints se representan como barras de duración fija y repetida; el valor del Gantt aquí no es planificar dentro del sprint sino mostrar cómo encajan releases, dependencias externas y fechas comprometidas.</p>
+        <p>La regla es de altitud: un sprint de dos semanas es <em>una</em> barra de 10 días con un hito de revisión al final, no treinta barras de historia. Un trimestre son seis barras de sprint encadenadas fin-inicio, precedidas de 10 días de descubrimiento y seguidas de 8 días de integración (inicio-inicio con −5 de desfase), 7 de UAT y dos hitos: congelación y despliegue.</p>
+        <p>Lo distintivo es que la ruta crítica casi nunca pasa por el código: pasa por lo que no controlas. La revisión de seguridad, el alta de un entorno o la firma del cliente en UAT son las tareas de holgura cero. Modélalas con responsable externo y barra propia, o el plan mentirá justo donde importa.</p>`],
       ['3. Campaña de marketing',
-        `<p>Estrategia, creatividades, producción, aprobaciones, lanzamiento y medición. La fase que siempre se subestima es la de aprobaciones: esperar la respuesta de un cliente es tiempo transcurrido real y merece su propia barra.</p>`],
+        `<p>Estrategia, creatividades, producción, aprobaciones, lanzamiento y medición. La fase que siempre se subestima es la de aprobaciones: esperar la respuesta de un cliente es tiempo transcurrido real y merece su propia barra.</p>
+        <p>Una campaña con lanzamiento el 15 de mayo se lee hacia atrás: medición (2 semanas después), lanzamiento, montaje de canales 5 días antes, aprobación final 3 días antes, producción de piezas 10 días, creatividades 8 días, estrategia y mensajes 5 días. Sumando: hay que empezar el 30 de marzo, no en abril.</p>
+        <p>Las pistas corren en paralelo —contenido, diseño, medios de pago, correo— y conviene agruparlas por flujo de trabajo, no por fecha. Y cada ronda de revisión es una espera: dos rondas de dos días hábiles son cuatro días que nadie apunta y que siempre aparecen. Ponles barra, responsable y fecha límite.</p>`],
       ['4. Organización de eventos',
-        `<p>Fecha y sede, proveedores, comunicación, inscripciones, montaje, evento y desmontaje. Es un proyecto con una fecha inamovible, así que se planifica hacia atrás desde el día del evento.</p>`],
+        `<p>Fecha y sede, proveedores, comunicación, inscripciones, montaje, evento y desmontaje. Es un proyecto con una fecha inamovible, así que se planifica hacia atrás desde el día del evento.</p>
+        <p>Con un congreso de 300 personas el 10 de octubre, la cadena inversa queda: desmontaje (11 oct), evento (10 oct), montaje y ensayo (8 → 9 oct), impresión de materiales (cierre 1 oct, la imprenta pide 5 días), cierre de inscripciones (3 oct), campaña de captación (6 semanas: 25 ago → 3 oct), confirmación de ponentes (fin 20 ago), catering (fin 10 ago), reserva de sede (fin 20 jun).</p>
+        <p>Planificar al revés tiene una virtud diagnóstica: si la reserva de sede cae en una fecha ya pasada, no vas justo, vas tarde, y lo sabes el primer día. Y la holgura no se reparte: se concentra en los tres días previos.</p>`],
       ['5. Lanzamiento de producto',
-        `<p>Preparación, beta, materiales de venta, formación comercial, lanzamiento y seguimiento. Conviene marcar como hitos los puntos de no retorno: fabricación comprometida, embargo de prensa, apertura de pedidos.</p>`],
+        `<p>Preparación, beta, materiales de venta, formación comercial, lanzamiento y seguimiento. Conviene marcar como hitos los puntos de no retorno: fabricación comprometida, embargo de prensa, apertura de pedidos.</p>
+        <p>Lo distintivo es que cuatro equipos convergen en una fecha, cada uno con su cadena. Producto: QA final (10 días) → congelación (hito) → documentación (8). Marketing: mensajes (5) → página de destino (10) → embargo de prensa (hito, 48 h antes). Ventas: formación comercial (3, no arranca sin documentación). Soporte: guiones (5, fin-fin con formación).</p>
+        <p>Esa dependencia cruzada —formación necesita documentación, que necesita congelación— suele ser la ruta crítica real y casi nunca la que se vigila.</p>`],
       ['6. Tesis o investigación',
-        `<p>Propuesta, revisión bibliográfica, metodología y ética, recogida de datos, análisis, redacción y entrega. La aprobación ética es una dependencia dura: la recogida de datos no puede empezar antes.</p>`],
+        `<p>Propuesta, revisión bibliográfica, metodología y ética, recogida de datos, análisis, redacción y entrega. La aprobación ética es una dependencia dura: la recogida de datos no puede empezar antes.</p>
+        <p>Doce meses reparten así: propuesta (4 semanas), revisión bibliográfica (8, solapada con inicio-inicio), diseño metodológico (4), envío al comité de ética (hito) y espera de dictamen (6 a 10 semanas fuera de tu control), recogida de datos (12), análisis (8), redacción (10) y revisión del director (3, en dos rondas).</p>
+        <p>Lo distintivo es el peso de las esperas ajenas: entre dictamen y revisiones hay casi cuatro meses que no dependen de tu ritmo. Por eso redactar solo cuando el análisis está cerrado sale tan caro: metodología y revisión bibliográfica se escriben mientras esperas.</p>`],
       ['7. Proyecto de pequeña empresa',
-        `<p>Cuatro o cinco fases, veinte tareas, un responsable por línea. El error más común aquí es el contrario al de las grandes obras: demasiado poco detalle, hasta el punto de que una barra de «poner en marcha la tienda» no dice nada útil.</p>`],
+        `<p>Cuatro o cinco fases, veinte tareas, un responsable por línea. El error más común aquí es el contrario al de las grandes obras: demasiado poco detalle, hasta el punto de que una barra de «poner en marcha la tienda» no dice nada útil.</p>
+        <p>La apertura de un local en ocho semanas, desglosada de forma utilizable: financiación (hito), contrato de alquiler (2 semanas), licencia de actividad (4 a 6, en paralelo), obra y mobiliario (3), alta de suministros y datáfono (1, pero se pide el primer día), pedido inicial de stock (3 de plazo del proveedor), web y redes (1), contratación y formación (2) y apertura como hito.</p>
+        <p>Aquí la ruta crítica rara vez es la obra: son la licencia y el plazo de stock, dos cosas que se piden con un correo el primer día y que, si se olvidan, se pagan con semanas.</p>`],
       ['8. Plan semanal sencillo',
-        `<p>Una rejilla de cinco días con las tareas de la semana. No necesita dependencias ni ruta crítica: es una herramienta de foco, no de planificación. Es el formato que mejor funciona pegado en una pared.</p>`],
+        `<p>Una rejilla de cinco días con las tareas de la semana. No necesita dependencias ni ruta crítica: es una herramienta de foco, no de planificación. Es el formato que mejor funciona pegado en una pared.</p>
+        <p>Cambia el eje: columnas de lunes a viernes y barras de medio día o de un día, diez o quince como máximo, agrupadas por persona o por bloque. Con más de veinte vuelve a ser una lista de tareas disfrazada. Es la mejor puerta de entrada al formato: se construye en cinco minutos y muestra de golpe el problema típico de una semana mal planificada, que es tener tres cosas «importantes» a la vez el martes.</p>`],
       ['Cuatro ejemplos rápidos más',
-        `<p><strong>Reforma de vivienda.</strong> Demoler, instalar, cerrar, alicatar, pintar y montar. El orden de los gremios es lo único que importa: alterarlo obliga a rehacer trabajo.</p>
-        <p><strong>Incorporación de un empleado.</strong> Preincorporación, primer día, primera semana y revisiones a 30, 60 y 90 días. Lo que decide la experiencia es la fase previa, no la bienvenida.</p>
-        <p><strong>Implantación de un ERP.</strong> Análisis, diseño, configuración, migración de datos, pruebas y arranque. Los datos y las pruebas necesitan carril propio: son los que retrasan el arranque.</p>
-        <p><strong>Traslado de oficina.</strong> Búsqueda, contrato, obra, telecomunicaciones y mudanza. El plazo largo casi nunca es la obra: son los circuitos de datos.</p>`],
+        `<p><strong>Reforma de vivienda.</strong> Demoler (4 días), instalaciones vistas (6), cerrar y enlucir (5, con 3 días de desfase de secado antes de pintar), alicatar (4), pintar (3) y montar cocina (4). El orden de los gremios es lo único que importa, y el secado es la causa número uno de que el plan se vaya una semana.</p>
+        <p><strong>Incorporación de un empleado.</strong> Preincorporación (equipo, accesos y contrato, 2 semanas antes), primer día, primera semana y revisiones a 30, 60 y 90 días como hitos. Lo decide la fase previa: si los accesos no se piden con diez días de antelación, la primera semana se gasta esperando contraseñas.</p>
+        <p><strong>Implantación de un ERP.</strong> Análisis (4 semanas), diseño (4), configuración (8), migración de datos (6, solapada), pruebas de usuario (4) y arranque. Datos y pruebas necesitan carril y responsable propios: la calidad de los datos de origen nunca es la que se supuso en el análisis.</p>
+        <p><strong>Traslado de oficina.</strong> Búsqueda (6 semanas), contrato (3), adecuación (6), telecomunicaciones (8 a 12 de plazo del operador) y mudanza (un fin de semana). El plazo largo casi nunca es la obra: son los circuitos de datos, que hay que pedir antes incluso de firmar.</p>`],
       ['Qué tienen en común los buenos diagramas',
-        `<p><strong>Empiezan por fases, no por tareas.</strong> Todos los ejemplos anteriores agrupan en cinco o seis bloques. Un listado plano de cuarenta filas es ilegible en cualquier sector.</p>
-        <p><strong>Tienen dependencias, no solo fechas.</strong> Es lo que convierte el dibujo en un modelo: mueves una tarea y las siguientes se recolocan solas.</p>
-        <p><strong>Marcan pocos hitos y bien elegidos.</strong> Entre cinco y diez para un proyecto de varios meses. Uno por semana no señala nada.</p>
-        <p><strong>Dejan holgura donde la estimación es débil</strong>, en lugar de repartirla por igual o no dejarla en absoluto.</p>
-        <p><strong>Caben en una pantalla</strong> al nivel de fase, y se despliegan solo cuando hace falta mirar el detalle.</p>`],
+        `<p><strong>Empiezan por fases, no por tareas.</strong> Todos los ejemplos anteriores agrupan en cinco o seis bloques. La fase permite presentar el plan plegado a dirección y desplegado al equipo sin mantener dos documentos.</p>
+        <p><strong>Tienen dependencias, no solo fechas.</strong> Es lo que convierte el dibujo en un modelo: mueves una tarea y las siguientes se recolocan solas. Los desfases —curado, secado, plazo de imprenta— solo se pueden expresar como relación entre tareas.</p>
+        <p><strong>Marcan pocos hitos y bien elegidos.</strong> Entre cinco y diez, siempre en los puntos de no retorno: aprobación, congelación, apertura de pedidos. Un hito por semana no señala nada.</p>
+        <p><strong>Dejan holgura donde la estimación es débil</strong>, no repartida por igual: en obra detrás de los permisos, en eventos en los tres días previos. Repartir dos días a cada tarea hace que desaparezca sin que nadie note dónde.</p>
+        <p><strong>Caben en una pantalla</strong> al nivel de fase —entre diez y treinta barras visibles—. El resto vive en la lista de tareas de cada persona, que es donde debe vivir.</p>`],
     ],
     callout: 'Fíjate en lo que tienen en común: todos empiezan por fases, no por tareas sueltas. Un diagrama que arranca con cuarenta filas al mismo nivel es ilegible independientemente del sector. Agrupa primero en cinco o seis fases y despliega solo lo que necesites mirar.',
     faq: [
-      ['¿Cuál es el mejor ejemplo para empezar?', 'El más cercano a tu proyecto. Si ninguno encaja del todo, el de gestión de proyectos genérica sirve como esqueleto: fases, hitos y dependencias son iguales en todos los sectores.'],
-      ['¿Puedo descargar estos ejemplos?', 'Sí, cada tipo tiene su plantilla con las tareas ya cargadas, en Excel, PowerPoint y CSV, además de edición online gratuita.'],
-      ['¿Cuántas tareas debería tener mi diagrama?', 'Las que puedas mantener actualizadas. Entre veinte y sesenta filas es el rango cómodo; por encima, agrupa en fases.'],
+      ['¿Cuál es el mejor ejemplo para empezar?', 'El más cercano a tu proyecto, porque lo que cambia entre sectores no es la estructura sino qué tareas se suelen olvidar. Si ninguno encaja del todo, el de gestión de proyectos genérica sirve como esqueleto: fases, hitos y dependencias funcionan igual en obra que en investigación. Lo que sí conviene copiar del ejemplo de tu sector es la lista de esperas ajenas —permisos, dictámenes, plazos de proveedor—, que es donde se pierden las semanas.'],
+      ['¿Puedo descargar estos ejemplos?', 'Sí, cada tipo tiene su plantilla con las tareas y las fases ya cargadas, en Excel, PowerPoint y CSV, además de edición online gratuita. Lo habitual es abrir la más parecida, borrar lo que no aplica y renombrar el resto: se tarda menos que partir de cero y evita olvidar tareas estándar del sector.'],
+      ['¿Cuántas tareas debería tener mi diagrama?', 'Las que puedas mantener actualizadas. Entre veinte y sesenta filas es el rango cómodo para un proyecto único, con diez a treinta barras visibles a la vez; por encima, agrupa en fases y despliega solo lo que necesites mirar. La regla útil es que si una tarea dura menos de un día, pertenece a la lista de alguien, no al plan del proyecto.'],
+      ['¿Qué diferencia a un diagrama de obra de uno de software?', 'La rigidez de la secuencia y de dónde viene el riesgo. En obra casi todo es fin-inicio con desfases físicos —curado, secado— y la ruta crítica pasa por permisos e inspecciones. En software las fases se solapan mucho más y la ruta crítica suele pasar por dependencias externas: revisiones de seguridad, altas de entorno, firma de UAT. Los elementos del gráfico son los mismos; lo que cambia es qué conviene vigilar.'],
+      ['¿Sirve un diagrama de Gantt para un proyecto ágil?', 'Sí, siempre que se use a la altitud correcta. No sirve para planificar dentro del sprint, que es trabajo del backlog, pero sí para mostrar a quien está fuera del equipo cómo encajan releases, dependencias externas y fechas comprometidas. Un sprint de dos semanas se representa como una sola barra con un hito de revisión al final, nunca como treinta barras de historia.'],
     ],
     related: [
       ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],

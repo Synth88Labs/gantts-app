@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caminho crítico: cálculo e exemplo | gantts.app</title>
-  <meta name="description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta name="description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/pt/blog/critical-path-method.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Caminho crítico: cálculo e exemplo | gantts.app" />
-  <meta property="og:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta property="og:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa." />
   <meta property="og:url" content="https://gantts.app/pt/blog/critical-path-method.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="Caminho crítico: método, cálculo e exemplo resolvido" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Caminho crítico: cálculo e exemplo | gantts.app" />
-  <meta name="twitter:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta name="twitter:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/critical-path-method.html#post","headline":"Caminho crítico: método, cálculo e exemplo resolvido","description":"Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas.","url":"https://gantts.app/pt/blog/critical-path-method.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Caminho crítico: método, cálculo e exemplo resolvido","item":"https://gantts.app/pt/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"O que é o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"A cadeia mais longa de tarefas ligadas. A duração dela é a menor duração possível do projeto, e suas tarefas não têm folga."}},{"@type":"Question","name":"Como calcular o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Cálculo para frente para as datas mais cedo, para trás para as mais tarde. As tarefas em que as duas coincidem — folga zero — formam o caminho crítico."}},{"@type":"Question","name":"O que é folga total?","acceptedAnswer":{"@type":"Answer","text":"O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo."}},{"@type":"Question","name":"Pode haver mais de um caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos, o que aumenta bastante o risco."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/critical-path-method.html#post","headline":"Caminho crítico: método, cálculo e exemplo resolvido","description":"Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa.","url":"https://gantts.app/pt/blog/critical-path-method.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Caminho crítico: método, cálculo e exemplo resolvido","item":"https://gantts.app/pt/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"O que é o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"A cadeia mais longa de tarefas ligadas do início ao fim do projeto. A duração dela é a menor duração possível do projeto, e todas as suas tarefas têm folga zero: cada dia de atraso em qualquer uma delas é um dia de atraso na entrega."}},{"@type":"Question","name":"Como calcular o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Faça o cálculo para frente, tomando sempre o maior término mais cedo das predecessoras, para obter as datas mais cedo e a duração do projeto. Depois o cálculo para trás, tomando sempre o menor início mais tarde das sucessoras. As tarefas em que as duas datas coincidem — folga zero — formam o caminho crítico."}},{"@type":"Question","name":"O que é folga total?","acceptedAnswer":{"@type":"Answer","text":"O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo. Atenção porque ela costuma ser compartilhada por uma cadeia inteira — três tarefas com cinco dias de folga total não somam quinze dias, são os mesmos cinco."}},{"@type":"Question","name":"Qual a diferença entre folga total e folga livre?","acceptedAnswer":{"@type":"Answer","text":"A folga total mede o atraso possível sem mover o fim do projeto; a folga livre mede o atraso possível sem mover a sucessora imediata. A folga livre é sempre menor ou igual à total, e é a única que se pode prometer com segurança a quem executa a tarefa."}},{"@type":"Question","name":"Pode haver mais de um caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos. Isso aumenta bastante o risco, porque um atraso em qualquer um deles empurra a entrega e não há folga em lugar nenhum para absorver."}},{"@type":"Question","name":"Qual a diferença entre CPM e PERT?","acceptedAnswer":{"@type":"Answer","text":"O CPM usa uma duração única por tarefa e se concentra em caminho crítico e folga. O PERT usa três estimativas — otimista, provável e pessimista — ponderadas para lidar com incerteza. Na prática muita equipe estima as durações em PERT e calcula o caminho em CPM."}},{"@type":"Question","name":"Por que o caminho crítico do meu cronograma parece errado?","acceptedAnswer":{"@type":"Answer","text":"Quase sempre por uma destas quatro causas: datas fixas digitadas à mão, tarefas sem nenhuma ligação, folga inflada dentro das durações ou esperas escondidas em retardos em vez de tarefas visíveis. Qualquer uma delas quebra o cálculo sem gerar aviso."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,15 +81,19 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>3 min de leitura</span></p>
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>9 min de leitura</span></p>
     <div class="toc"><strong>Nesta página</strong>
       <ol>
         <li><a href="#s1">A ideia central</a></li>
-        <li><a href="#s2">Cálculo para frente: as datas mais cedo</a></li>
-        <li><a href="#s3">Cálculo para trás: as datas mais tarde</a></li>
-        <li><a href="#s4">Folga e caminho crítico</a></li>
-        <li><a href="#s5">Um exemplo com quatro tarefas</a></li>
-        <li><a href="#s6">O que isso muda na prática</a></li>
+        <li><a href="#s2">O vocabulário mínimo</a></li>
+        <li><a href="#s3">Cálculo para frente: as datas mais cedo</a></li>
+        <li><a href="#s4">Cálculo para trás: as datas mais tarde</a></li>
+        <li><a href="#s5">Folga total e folga livre</a></li>
+        <li><a href="#s6">Um exemplo resolvido com seis tarefas</a></li>
+        <li><a href="#s7">O que isso muda na prática</a></li>
+        <li><a href="#s8">CPM, PERT e corrente crítica</a></li>
+        <li><a href="#s9">Os erros que invalidam o cálculo</a></li>
+        <li><a href="#s10">Calcular sem fazer as passagens à mão</a></li>
       </ol>
     </div>
 
@@ -100,32 +104,107 @@
 
     <div class="prose">
       <h2 id="s1">A ideia central</h2>
-<p>Nem toda tarefa pesa igual no prazo. Algumas têm sobra: podem escorregar sem mover o fim. Outras não têm nenhuma — e são elas que formam o caminho crítico.</p>
-        <p>O método se chama Critical Path Method, ou CPM, e vem do fim dos anos 1950. Ele responde a duas perguntas: quanto tempo o projeto leva no mínimo, e quais tarefas não podem atrasar de jeito nenhum.</p>
-      <h2 id="s2">Cálculo para frente: as datas mais cedo</h2>
-<p>Comece no início e avance. Para cada tarefa: o início mais cedo é o maior dos términos mais cedo das predecessoras; o término mais cedo é o início mais cedo somado à duração.</p>
-        <p>Ao fim desse cálculo, você tem a menor duração possível do projeto.</p>
-      <h2 id="s3">Cálculo para trás: as datas mais tarde</h2>
-<p>Agora parta do fim. O término mais tarde é o menor dos inícios mais tarde das sucessoras; o início mais tarde é o término mais tarde menos a duração.</p>
-      <h2 id="s4">Folga e caminho crítico</h2>
-<p>A folga total de uma tarefa é o início mais tarde menos o início mais cedo. Tarefas com folga zero formam o caminho crítico. Sempre existe pelo menos um, e em cronogramas muito ligados costuma haver vários em paralelo.</p>
-      <h2 id="s5">Um exemplo com quatro tarefas</h2>
-<p>A dura 3 dias, B dura 5 e vem depois de A, C dura 2 e também vem depois de A, D dura 4 e vem depois de B e C.</p>
-        <p><strong>Para frente:</strong> A vai do dia 0 ao 3. B de 3 a 8, C de 3 a 5. D espera as duas, começa em 8 e termina em 12. Duração do projeto: 12 dias.</p>
-        <p><strong>Para trás:</strong> D precisa começar em 8. Logo B precisa terminar em 8 — início mais tarde 3, folga 0. C também precisa terminar em 8, mas dura só 2 dias: início mais tarde 6, início mais cedo real 3, <em>folga de 3 dias</em>.</p>
-        <p>O caminho crítico é A → B → D. C pode atrasar três dias sem afetar o fim.</p>
-      <h2 id="s6">O que isso muda na prática</h2>
-<p>Mostra onde o esforço rende. Colocar mais gente em C não antecipa nada. Ganhar um dia em B ganha um dia no fim do projeto.</p>
-        <p>E alerta para uma armadilha: se C atrasar quatro dias, C vira crítica. O caminho crítico não é propriedade fixa do cronograma, é um retrato do momento — ele se desloca assim que algo muda.</p>
+<p>Nem toda tarefa pesa igual no prazo. Algumas têm sobra: podem escorregar uma semana sem que a data de entrega se mexa. Outras não têm nenhuma — e são exatamente essas que formam o caminho crítico.</p>
+        <p>O método se chama Critical Path Method, ou CPM, e foi formalizado no fim dos anos 1950 por Morgan Walker e James Kelley, que planejavam paradas de manutenção industrial. Ele responde a duas perguntas objetivas: qual a menor duração possível do projeto, e quais tarefas não podem atrasar de jeito nenhum.</p>
+        <p>O valor prático está no recorte. Num cronograma de 60 tarefas, talvez 12 sejam críticas. As outras 48 têm folga e não merecem a mesma vigilância. Sem esse recorte, a atenção se distribui por igual entre todas — e acaba faltando justamente onde o prazo é decidido.</p>
+      <h2 id="s2">O vocabulário mínimo</h2>
+<p>São seis termos, e o cálculo inteiro sai deles:</p>
+        <ul>
+          <li><strong>Duração</strong> — quantos dias úteis a tarefa consome.</li>
+          <li><strong>Início mais cedo</strong> e <strong>término mais cedo</strong> — o mais adiantado que a tarefa pode começar e terminar. <code>término mais cedo = início mais cedo + duração</code>.</li>
+          <li><strong>Início mais tarde</strong> e <strong>término mais tarde</strong> — o mais tardar que ela pode começar e terminar sem empurrar o fim do projeto. <code>início mais tarde = término mais tarde − duração</code>.</li>
+          <li><strong>Folga total</strong> — <code>início mais tarde − início mais cedo</code>, que dá no mesmo que <code>término mais tarde − término mais cedo</code>.</li>
+          <li><strong>Caminho crítico</strong> — a cadeia de tarefas com folga total zero, ligada do início ao fim.</li>
+        </ul>
+        <p>Uma convenção evita metade da confusão: conte em dias decorridos a partir do dia 0. O projeto começa no instante 0, uma tarefa de 3 dias termina no instante 3, e a seguinte começa no instante 3. As datas reais entram só no fim. Misturar as duas contagens durante o cálculo é a origem do clássico erro de um dia.</p>
+      <h2 id="s3">Cálculo para frente: as datas mais cedo</h2>
+<p>Comece no início e avance da esquerda para a direita. A primeira tarefa tem início mais cedo 0. Para cada tarefa seguinte, o início mais cedo é o <strong>maior</strong> dos términos mais cedo das predecessoras — a tarefa espera a última que chegar, não a primeira — e o término mais cedo é o início mais cedo somado à duração.</p>
+        <p>Esse "maior" é o ponto em que quase todo cálculo manual erra. Se uma tarefa depende de duas outras que terminam nos dias 11 e 8, ela começa no dia 11. Usar a média, ou simplesmente a primeira que aparece na lista, produz um cronograma otimista que não sobrevive à primeira semana.</p>
+        <p>Ao terminar essa varredura, o maior término mais cedo de todo o cronograma é a duração mínima do projeto. Não é uma meta nem uma estimativa: é o que as durações e as precedências que você digitou implicam. Se esse número não cabe no prazo prometido, o problema está no escopo ou nas durações, não na disposição da equipe.</p>
+      <h2 id="s4">Cálculo para trás: as datas mais tarde</h2>
+<p>Agora parta do fim e volte da direita para a esquerda. A última tarefa recebe término mais tarde igual à duração do projeto — o mesmo número que o cálculo para frente produziu. O início mais tarde dela é o término mais tarde menos a duração.</p>
+        <p>Para as demais, o término mais tarde é o <strong>menor</strong> dos inícios mais tarde das sucessoras. A lógica é espelhada: uma tarefa que alimenta duas outras precisa estar pronta a tempo da mais apertada das duas. Onde no cálculo para frente você toma o máximo, aqui toma o mínimo — trocar os dois é o segundo erro clássico.</p>
+        <p>Se em alguma tarefa o início mais tarde sair menor que o início mais cedo, o cronograma tem folga negativa: existe uma data fixa em algum lugar exigindo algo aritmeticamente impossível. Não é um detalhe para corrigir depois; é o cronograma avisando que a promessa e a conta não fecham.</p>
+      <h2 id="s5">Folga total e folga livre</h2>
+<p>A folga total de uma tarefa é o início mais tarde menos o início mais cedo: quanto ela pode atrasar sem mover o fim do projeto. Tarefas com folga zero formam o caminho crítico. Sempre existe pelo menos um caminho, e em cronogramas muito ligados costuma haver vários em paralelo.</p>
+        <p>Existe uma segunda folga, menos citada e mais útil no dia a dia: a <strong>folga livre</strong>, que é quanto a tarefa pode atrasar sem mover a <em>sucessora imediata</em>. Ela é sempre menor ou igual à folga total. A diferença importa porque a folga total costuma ser compartilhada: se três tarefas em sequência têm 5 dias de folga total cada, não são 15 dias disponíveis — são os mesmos 5 dias, e quem gastar primeiro deixa as outras em zero.</p>
+        <p>Daí a regra prática: folga total é um número para quem cuida do cronograma inteiro; folga livre é o número que se pode prometer a quem executa uma tarefa específica.</p>
+      <h2 id="s6">Um exemplo resolvido com seis tarefas</h2>
+<p>Um projeto pequeno, seis tarefas, durações em dias úteis. As predecessoras indicam o que precisa terminar antes.</p>
+        <table>
+          <thead><tr><th>Tarefa</th><th>Duração</th><th>Predecessoras</th></tr></thead>
+          <tbody>
+            <tr><td>A — Levantamento</td><td>3</td><td>—</td></tr>
+            <tr><td>B — Projeto detalhado</td><td>4</td><td>A</td></tr>
+            <tr><td>C — Compras</td><td>2</td><td>A</td></tr>
+            <tr><td>D — Execução</td><td>5</td><td>B</td></tr>
+            <tr><td>E — Preparação do local</td><td>6</td><td>C</td></tr>
+            <tr><td>F — Instalação e testes</td><td>3</td><td>D, E</td></tr>
+          </tbody>
+        </table>
+        <p>Há dois caminhos do início ao fim: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 dias</strong>, e <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 dias</strong>. O mais longo dá o prazo. Mas o valor do método não é achar o maior número: é saber quanta folga cada tarefa fora dele realmente tem.</p>
+        <p><strong>Cálculo para frente</strong> (início mais cedo, depois término mais cedo):</p>
+        <ul>
+          <li>A: começa em 0, termina em 3.</li>
+          <li>B: começa em 3, termina em 7. C: começa em 3, termina em 5.</li>
+          <li>D: começa em 7, termina em 12. E: começa em 5, termina em 11.</li>
+          <li>F: espera D (12) e E (11); começa no maior dos dois, 12, e termina em 15. <strong>Duração do projeto: 15 dias.</strong></li>
+        </ul>
+        <p><strong>Cálculo para trás</strong> (término mais tarde, depois início mais tarde), partindo de F com término mais tarde 15:</p>
+        <ul>
+          <li>F: termina em 15, começa em 12.</li>
+          <li>D: precisa terminar em 12, o início de F, então começa em 7. E: também precisa terminar em 12, e dura 6, então começa em 6.</li>
+          <li>B: precisa terminar em 7, o início de D, então começa em 3. C: precisa terminar em 6, o início de E, então começa em 4.</li>
+          <li>A: alimenta B (que começa em 3) e C (que começa em 4); toma o menor, 3, e começa em 0.</li>
+        </ul>
+        <p>A folga total sai da subtração <code>início mais tarde − início mais cedo</code>:</p>
+        <table>
+          <thead><tr><th>Tarefa</th><th>Mais cedo</th><th>Mais tarde</th><th>Folga</th><th>Crítica?</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>0 → 3</td><td>0 → 3</td><td><strong>0</strong></td><td>sim</td></tr>
+            <tr><td>B</td><td>3 → 7</td><td>3 → 7</td><td><strong>0</strong></td><td>sim</td></tr>
+            <tr><td>C</td><td>3 → 5</td><td>4 → 6</td><td>1</td><td>não</td></tr>
+            <tr><td>D</td><td>7 → 12</td><td>7 → 12</td><td><strong>0</strong></td><td>sim</td></tr>
+            <tr><td>E</td><td>5 → 11</td><td>6 → 12</td><td>1</td><td>não</td></tr>
+            <tr><td>F</td><td>12 → 15</td><td>12 → 15</td><td><strong>0</strong></td><td>sim</td></tr>
+          </tbody>
+        </table>
+        <p>O caminho crítico é <strong>A → B → D → F</strong>, exatamente o caminho de 15 dias. C e E têm <strong>um dia de folga cada</strong> — e é um dia só, compartilhado pela cadeia inteira: se C atrasar um dia, E perde a folga dela na mesma hora.</p>
+        <p>Traduzindo para o calendário, com início na segunda-feira 3 de agosto de 2026 e semana de cinco dias úteis: A vai de 3 a 5 de agosto, B de 6 a 11, D de 12 a 18 e F de 19 a 21. Entrega na sexta-feira, 21 de agosto. C ocupa 6 e 7 de agosto e E vai de 10 a 17 — um dia antes do que seria estritamente necessário.</p>
+      <h2 id="s7">O que isso muda na prática</h2>
+<p>Mostra onde o esforço rende. Colocar mais duas pessoas em E não antecipa nada: E já tem folga e terminaria antes de F começar de qualquer jeito. Ganhar um dia em D ganha um dia no fim do projeto. É a mesma quantidade de esforço com resultados completamente diferentes.</p>
+        <p>Muda também o acompanhamento: em vez de percorrer todas as tarefas, basta perguntar se as quatro críticas estão no prazo e quanto da folga de C e E já foi consumido.</p>
+        <p>E alerta para a armadilha central: se C atrasar dois dias, o caminho A → C → E → F passa a durar 16 dias e se torna o novo caminho crítico, enquanto B e D ganham folga. O caminho crítico não é propriedade fixa do cronograma, é um retrato do momento — ele se desloca assim que alguma duração muda.</p>
+      <h2 id="s8">CPM, PERT e corrente crítica</h2>
+<p>Três métodos que se confundem com frequência:</p>
+        <ul>
+          <li><strong>CPM</strong> usa uma duração única por tarefa e se concentra em caminho crítico e folga. Adequado quando as durações são razoavelmente conhecidas.</li>
+          <li><strong>PERT</strong> usa três estimativas por tarefa — otimista, provável e pessimista — e as pondera, normalmente por (otimista + 4 × provável + pessimista) dividido por 6. Serve para incerteza alta: uma tarefa estimada em 4, 6 e 14 dias tem média ponderada 7, não 6. Na prática, muita equipe estima em PERT e calcula o caminho em CPM.</li>
+          <li><strong>Corrente crítica</strong> acrescenta a restrição de recursos e junta as folgas individuais num único pulmão no fim da cadeia. Faz sentido quando o que limita o cronograma não é a precedência, mas a mesma equipe disputada por três frentes ao mesmo tempo.</li>
+        </ul>
+      <h2 id="s9">Os erros que invalidam o cálculo</h2>
+<p>Quatro coisas fazem o caminho crítico sair errado sem nenhum aviso na tela:</p>
+        <ul>
+          <li><strong>Datas fixas digitadas à mão.</strong> Uma tarefa com data travada não se move e mascara a folga real de tudo que vem antes dela.</li>
+          <li><strong>Tarefas soltas.</strong> Uma tarefa sem predecessora e sem sucessora fica fora de qualquer caminho e nunca aparece como crítica, por mais essencial que seja para a entrega.</li>
+          <li><strong>Folga escondida dentro da duração.</strong> Inflar cada tarefa em 30% para se proteger destrói o cálculo: todas as folgas ficam invisíveis e o caminho crítico deixa de significar alguma coisa.</li>
+          <li><strong>Esperas embutidas em retardos.</strong> Cura de concreto e prazo de aprovação consomem calendário. Como tarefas visíveis, entram no cálculo e aparecem no desenho; como retardo dentro de uma caixa de diálogo, ninguém encontra depois.</li>
+        </ul>
+      <h2 id="s10">Calcular sem fazer as passagens à mão</h2>
+<p>Fazer as duas passagens no papel uma vez é o melhor jeito de entender o método. Refazer a cada mudança de estimativa é inviável: seis tarefas cabem numa folha, sessenta não.</p>
+        <p>O <a href="/pt/app.html">gantts.app</a> marca o caminho crítico sozinho assim que existem tarefas e precedências, roda no navegador sem cadastro e exporta em PDF, PNG, XLSX e PPTX. Mude uma duração e o caminho se redesenha na hora — inclusive quando ele muda de lugar. Se as precedências ainda não estão claras, comece pelos <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a>.</p>
 
-      <div class="callout">O caminho crítico muda durante o projeto. Uma tarefa com três dias de folga que atrasa quatro passa a ser crítica. Por isso ele não se calcula uma vez no início, mas a cada atualização.</div>
+      <div class="callout">O caminho crítico muda durante o projeto. Uma tarefa com três dias de folga que atrasa quatro passa a ser crítica, e outra que era crítica ganha folga. Por isso ele não se calcula uma vez no início, mas a cada atualização do cronograma.</div>
 
       <h2 id="faq">Perguntas frequentes</h2>
       <div class="faq">
-        <details open><summary>O que é o caminho crítico?</summary><p>A cadeia mais longa de tarefas ligadas. A duração dela é a menor duração possível do projeto, e suas tarefas não têm folga.</p></details>
-        <details><summary>Como calcular o caminho crítico?</summary><p>Cálculo para frente para as datas mais cedo, para trás para as mais tarde. As tarefas em que as duas coincidem — folga zero — formam o caminho crítico.</p></details>
-        <details><summary>O que é folga total?</summary><p>O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo.</p></details>
-        <details><summary>Pode haver mais de um caminho crítico?</summary><p>Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos, o que aumenta bastante o risco.</p></details>
+        <details open><summary>O que é o caminho crítico?</summary><p>A cadeia mais longa de tarefas ligadas do início ao fim do projeto. A duração dela é a menor duração possível do projeto, e todas as suas tarefas têm folga zero: cada dia de atraso em qualquer uma delas é um dia de atraso na entrega.</p></details>
+        <details><summary>Como calcular o caminho crítico?</summary><p>Faça o cálculo para frente, tomando sempre o maior término mais cedo das predecessoras, para obter as datas mais cedo e a duração do projeto. Depois o cálculo para trás, tomando sempre o menor início mais tarde das sucessoras. As tarefas em que as duas datas coincidem — folga zero — formam o caminho crítico.</p></details>
+        <details><summary>O que é folga total?</summary><p>O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo. Atenção porque ela costuma ser compartilhada por uma cadeia inteira — três tarefas com cinco dias de folga total não somam quinze dias, são os mesmos cinco.</p></details>
+        <details><summary>Qual a diferença entre folga total e folga livre?</summary><p>A folga total mede o atraso possível sem mover o fim do projeto; a folga livre mede o atraso possível sem mover a sucessora imediata. A folga livre é sempre menor ou igual à total, e é a única que se pode prometer com segurança a quem executa a tarefa.</p></details>
+        <details><summary>Pode haver mais de um caminho crítico?</summary><p>Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos. Isso aumenta bastante o risco, porque um atraso em qualquer um deles empurra a entrega e não há folga em lugar nenhum para absorver.</p></details>
+        <details><summary>Qual a diferença entre CPM e PERT?</summary><p>O CPM usa uma duração única por tarefa e se concentra em caminho crítico e folga. O PERT usa três estimativas — otimista, provável e pessimista — ponderadas para lidar com incerteza. Na prática muita equipe estima as durações em PERT e calcula o caminho em CPM.</p></details>
+        <details><summary>Por que o caminho crítico do meu cronograma parece errado?</summary><p>Quase sempre por uma destas quatro causas: datas fixas digitadas à mão, tarefas sem nenhuma ligação, folga inflada dentro das durações ou esperas escondidas em retardos em vez de tarefas visíveis. Qualquer uma delas quebra o cálculo sem gerar aviso.</p></details>
       </div>
 
       <aside class="promo">

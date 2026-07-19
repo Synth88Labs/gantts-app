@@ -24,21 +24,67 @@ const G = {
   lead: 'Ein <strong>Gantt-Diagramm</strong> ist ein Balkendiagramm, das Vorgänge auf einer Zeitachse darstellt: jede Zeile eine Aufgabe, jeder Balken ihre Dauer. Es beantwortet zwei Fragen, die eine Aufgabenliste nicht beantworten kann — was läuft gleichzeitig, und was verschiebt sich, wenn etwas später fertig wird.',
   figIntro: 'Vier Bausteine, aus denen jedes Gantt-Diagramm besteht:',
   sections: [
-    ['Die vier Bausteine', '<p><strong>Vorgänge</strong> sind das Arbeitspaket selbst und haben eine Dauer. <strong>Meilensteine</strong> haben die Dauer null und markieren einen Zeitpunkt: eine Freigabe, eine Übergabe, eine Entscheidung. <strong>Abhängigkeiten</strong> verbinden Vorgänge und legen fest, was worauf wartet. <strong>Sammelbalken</strong> fassen Vorgänge zu Phasen zusammen und übernehmen deren Termine automatisch.</p>\n        <p>Wer diese vier Elemente sauber trennt, hat bereits den Großteil eines belastbaren Plans.</p>'],
-    ['Warum die Zeitachse den Unterschied macht', '<p>Eine Aufgabenliste sagt, <em>was</em> zu tun ist. Ein Gantt-Diagramm sagt zusätzlich <em>wann</em> und <em>in welcher Reihenfolge</em>. Damit wird sichtbar, was in einer Liste unsichtbar bleibt: dass drei Aufgaben in derselben Woche liegen und alle dieselbe Person brauchen, oder dass eine Verzögerung am Anfang das Ende um zwei Wochen verschiebt.</p>'],
-    ['Abhängigkeiten: der eigentliche Wert', '<p>Der Nutzen eines Gantt-Diagramms steht und fällt mit den Verknüpfungen. Ein Diagramm ohne Abhängigkeiten ist eine bunte Tabelle: Verschiebt sich ein Vorgang, muss alles Nachfolgende von Hand angepasst werden — und genau das passiert in der Praxis nie.</p>\n        <p>Mit Verknüpfungen rechnet der Plan selbst. Sie verschieben einen Balken, und alles, was davon abhängt, rückt mit. Das ist der Unterschied zwischen einem Plan, der lebt, und einem, der nach drei Wochen veraltet in der Ablage liegt.</p>'],
-    ['Der kritische Pfad', '<p>Der kritische Pfad ist die längste Kette voneinander abhängiger Vorgänge. Ihre Gesamtdauer bestimmt die Projektdauer. Jeder Verzug auf diesem Pfad verschiebt das Projektende um genau denselben Betrag — Verzögerungen abseits davon oft gar nicht.</p>\n        <p>Das ist die praktisch wichtigste Kennzahl eines Plans: Sie zeigt, wo Aufmerksamkeit wirkt und wo sie verpufft.</p>'],
-    ['Wofür sich ein Gantt-Diagramm eignet', '<p>Für Vorhaben mit einem Ende, einer Reihenfolge und mehreren Beteiligten: Bauprojekte, Produkteinführungen, Veranstaltungen, Umzüge, Studien, Einführungen von Software. Überall dort, wo die Frage „was hängt woran" wichtiger ist als „was mache ich als Nächstes".</p>'],
-    ['Wo seine Grenzen liegen', '<p>Für laufenden, wiederkehrenden Betrieb ist ein Gantt-Diagramm das falsche Werkzeug — dafür gibt es Kanban. Für ein Team, das in zweiwöchigen Sprints arbeitet und den Umfang bewusst offen hält, ebenfalls.</p>\n        <p>Und es wird unbrauchbar, wenn es zu fein wird: Ein Plan mit 400 Zeilen ist keine Planung mehr, sondern Buchhaltung. Als Faustregel gilt: kein Vorgang kürzer als ein Tag, keiner länger als ein Monat.</p>'],
-    ['Woher der Name kommt', '<p>Benannt nach Henry Gantt, der die Darstellung um 1910 populär machte. Entwickelt hatte eine ähnliche Form bereits zwei Jahrzehnte zuvor der Pole Karol Adamiecki, dessen Arbeit im Westen lange unbekannt blieb. Die Darstellung hat also über hundert Jahre überdauert — was selten für eine Methode spricht, die nur Mode wäre.</p>'],
-    ['So fangen Sie an', '<p>Schreiben Sie erst alle Vorgänge auf, ohne Termine. Schätzen Sie dann die Dauern. Verknüpfen Sie danach, was wirklich aufeinander wartet — nicht, was zufällig nacheinander im Kalender steht. Setzen Sie zuletzt fünf bis zehn Meilensteine. Termine ergeben sich aus diesen drei Schritten von selbst.</p>'],
+    ['Wie ein Gantt-Diagramm aufgebaut ist', `<p>Stellen Sie sich ein Tabellenblatt vor, das in der Mitte die Form wechselt. Links stehen Spalten mit Vorgangsname, Start, Ende, Dauer und Verantwortlichem. Rechts davon werden aus den Spalten Kalendertage, -wochen oder -monate. Für jeden Vorgang zieht sich ein farbiger Balken über genau die Spalten, die seinem Zeitraum entsprechen: ein zweitägiger Vorgang ist ein kurzer Balken, ein dreiwöchiger ein dreimal so langer.</p>
+        <p>Von oben nach unten lesen Sie die Arbeit, von links nach rechts die Zeit. Diese eine Drehung ist der ganze Unterschied zwischen einer Terminliste und einem Terminplan — und der Grund, warum das Format seit über hundert Jahren überlebt.</p>
+        <p>Fast jedes Gantt-Diagramm enthält zusätzlich eine senkrechte <strong>Heute-Linie</strong>, einen hervorgehobenen <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> und einen Fortschrittsbalken innerhalb jedes Vorgangsbalkens. Alles andere ist Ausstattung.</p>`],
+    ['Die vier Bausteine', `<p><strong>Vorgänge</strong> sind das Arbeitspaket selbst und haben eine Dauer. Sie tragen einen Namen mit Verb — „Rohbau abnehmen“, nicht „Rohbau“ —, einen Verantwortlichen und einen Fertigstellungsgrad.</p>
+        <p><strong>Meilensteine</strong> haben die Dauer null und markieren einen Zeitpunkt: eine Freigabe, eine Übergabe, eine Entscheidung. Sie erscheinen als Raute statt als Balken. Fünf bis zehn genügen für ein mehrmonatiges Projekt; wer jeden Vorgangsabschluss zum Meilenstein erklärt, entwertet sie alle.</p>
+        <p><strong>Abhängigkeiten</strong> verbinden Vorgänge und legen fest, was worauf wartet. Die weit überwiegende Mehrheit ist vom Typ Ende-Anfang: B beginnt, wenn A fertig ist. Drei weitere Arten gibt es für Sonderfälle, sie sind in den <a href="/de/blog/gantt-chart-dependencies.html">vier Verknüpfungsarten</a> beschrieben.</p>
+        <p><strong>Sammelbalken</strong> fassen Vorgänge zu Phasen zusammen und übernehmen deren Termine automatisch: Der Phasenbalken beginnt mit dem frühesten und endet mit dem spätesten Vorgang darunter. Man setzt seine Termine nie von Hand — sie sind ein Ergebnis, keine Eingabe. Wer diese vier Elemente sauber trennt, hat bereits den Großteil eines belastbaren Plans.</p>`],
+    ['Warum die Zeitachse den Unterschied macht', `<p>Eine Aufgabenliste sagt, <em>was</em> zu tun ist. Ein Gantt-Diagramm sagt zusätzlich <em>wann</em> und <em>in welcher Reihenfolge</em>. Damit wird sichtbar, was in einer Liste unsichtbar bleibt: dass drei Vorgänge in derselben Woche liegen und alle dieselbe Person brauchen, oder dass eine Verzögerung am Anfang das Ende um zwei Wochen verschiebt.</p>
+        <p>Ein konkretes Beispiel: In einer Liste stehen „Texte schreiben“, „Bilder erstellen“ und „Layout setzen“ untereinander und wirken gleichwertig. Im Diagramm sieht man, dass Texte und Bilder parallel in Kalenderwoche 12 laufen, beide bei derselben Person liegen und das Layout erst danach beginnen kann. Die Liste ist erfüllbar, der Plan nicht — und diesen Unterschied erkennt man nur auf einer Zeitachse.</p>
+        <p>Die Wahl der Zeiteinheit entscheidet dabei mit über die Lesbarkeit. Tagesspalten eignen sich für Vorhaben bis etwa acht Wochen, Wochenspalten für ein halbes bis ganzes Jahr, Monatsspalten für alles darüber. Wer ein zweijähriges Bauvorhaben in Tagesspalten darstellt, erzeugt ein Blatt, das niemand ausdruckt.</p>`],
+    ['Abhängigkeiten: der eigentliche Wert', `<p>Der Nutzen eines Gantt-Diagramms steht und fällt mit den Verknüpfungen. Ein Diagramm ohne Abhängigkeiten ist eine bunte Tabelle: Verschiebt sich ein Vorgang, muss alles Nachfolgende von Hand angepasst werden — und genau das passiert in der Praxis nie.</p>
+        <p>Mit Verknüpfungen rechnet der Plan selbst. Sie verschieben einen Balken, und alles, was davon abhängt, rückt mit. Das ist der Unterschied zwischen einem Plan, der lebt, und einem, der nach drei Wochen veraltet in der Ablage liegt.</p>
+        <p>Der Test für eine echte Abhängigkeit ist einfach: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort ja, verknüpfen Sie. Lautet sie nein, haben Sie nur die Reihenfolge nachgezeichnet, in der Sie die Vorgänge aufgeschrieben haben. Verknüpfen Sie nicht alles mit allem — ein Plan, in dem jeder Vorgang an seinem Vorgänger hängt, hat keine Parallelität mehr und reagiert auf jede kleine Verschiebung übertrieben.</p>`],
+    ['Der kritische Pfad', `<p>Der kritische Pfad ist die längste Kette voneinander abhängiger Vorgänge. Ihre Gesamtdauer bestimmt die Projektdauer. Jeder Verzug auf diesem Pfad verschiebt das Projektende um genau denselben Betrag — Verzögerungen abseits davon oft gar nicht.</p>
+        <p>Ein Zahlenbeispiel: Läuft ein Zweig über Konzept, Entwurf, Umsetzung und Test in 15 Arbeitstagen und ein zweiter über Beschaffung und Vorbereitung in 14, dann ist der erste kritisch. Zwei zusätzliche Personen in der Beschaffung ändern am Endtermin nichts. Ein gesparter Tag im Entwurf verschiebt ihn um einen Tag nach vorn.</p>
+        <p>Das ist die praktisch wichtigste Kennzahl eines Plans: Sie zeigt, wo Aufmerksamkeit wirkt und wo sie verpufft. Sie ist außerdem beweglich — verspätet sich der zweite Zweig um zwei Tage, ist er mit 16 Tagen der neue kritische Pfad.</p>`],
+    ['Wofür sich ein Gantt-Diagramm eignet', `<p>Für Vorhaben mit einem Ende, einer Reihenfolge und mehreren Beteiligten. Überall dort, wo die Frage „was hängt woran“ wichtiger ist als „was mache ich als Nächstes“. Die typischen Einsatzzwecke:</p>
+        <ul>
+          <li><strong>Terminplanung</strong> — Vorgänge, Dauern und Reihenfolge vom Start bis zur Abnahme festlegen.</li>
+          <li><strong>Abstimmung im Team</strong> — sichtbar machen, wer wann was übernimmt und wie die Arbeitspakete ineinandergreifen.</li>
+          <li><strong>Abhängigkeiten steuern</strong> — offensichtlich machen, dass der Test nicht vor dem Ende der Umsetzung beginnen kann.</li>
+          <li><strong>Fortschritt verfolgen</strong> — Soll und Ist vergleichen und Verzug erkennen, solange er noch klein ist.</li>
+          <li><strong>Berichten</strong> — Auftraggebern, Lenkungskreisen und Geschäftsführung den Stand auf einer Seite zeigen.</li>
+          <li><strong>Auslastung prüfen</strong> — sehen, ob dieselbe Person in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll.</li>
+        </ul>
+        <p>Verbreitet ist das Format im Bauwesen, in der Softwareentwicklung, im Marketing, in der Veranstaltungsplanung, in Fertigung, Beratung, Forschung und bei Produkteinführungen.</p>`],
+    ['Beispiele nach Projektart', `<p>Die Darstellung bleibt gleich, die Gliederung ändert sich mit der Branche:</p>
+        <ul>
+          <li><strong>Softwareentwicklung</strong> — Anforderungen, Architektur, Iterationen, Integration, Test, Inbetriebnahme, mit einer Raute am Tag der Freischaltung. Die Testphase wird fast immer zu kurz geplant.</li>
+          <li><strong>Bauprojekt</strong> — Genehmigung, Erdarbeiten, Rohbau, Gebäudehülle, Ausbau, Haustechnik, Abnahme. Stark verkettet, weil jede Phase auf dem Abschluss der vorherigen aufsetzt; auf dem kritischen Pfad liegt meist die Genehmigung, nicht das Bauen.</li>
+          <li><strong>Marketingkampagne</strong> — Strategie, Konzept, Produktion, Freigaben, Ausspielung, Auswertung, häufig mit mehreren parallelen Spuren je Kanal. Engpass sind die Freigaben.</li>
+          <li><strong>Veranstaltung</strong> — Location, Dienstleister, Programm, Anmeldung, Aufbau, Durchführung. Der Termin steht fest, also wird rückwärts geplant.</li>
+          <li><strong>Produkteinführung</strong> — Entwicklung, Zulassung, Vertriebsvorbereitung, Kampagne, Markteintritt. Zertifizierungen werden regelmäßig unterschätzt.</li>
+        </ul>
+        <p>Ausführlicher stehen diese und drei weitere Fälle in den <a href="/de/blog/gantt-chart-examples.html">Beispielen aus acht Branchen</a>; fertige Startpunkte finden Sie in den <a href="/de/templates.html">Vorlagen</a>.</p>`],
+    ['Vorteile und Grenzen im Überblick', `<p>Die Stärken sind schnell benannt: Der gesamte Terminplan passt auf ein Bild, Abhängigkeiten und ihre Folgewirkungen werden sichtbar, Überschneidungen und Überlastung fallen ins Auge, und selbst Beteiligte ohne Projekterfahrung verstehen die Darstellung ohne Erklärung. Dazu kommt die Verbindung mit der Berechnung des kritischen Pfads, die aus dem Bild ein Steuerungsinstrument macht.</p>
+        <p>Die Schwächen ebenso: Ein Plan mit Hunderten Zeilen wird unlesbar. Ohne Pflege veraltet er und wird dadurch gefährlicher als gar kein Plan, weil ihm weiter vertraut wird. Die Balkenlänge zeigt Dauer, nicht Aufwand — ein vierwöchiger Balken kann zwei Personentage bedeuten, was regelmäßig falsch gelesen wird. Und für stark iterative Arbeit mit bewusst offenem Umfang ist die Darstellung schlicht das falsche Werkzeug.</p>`],
+    ['Wo seine Grenzen liegen', `<p>Für laufenden, wiederkehrenden Betrieb ist ein Gantt-Diagramm das falsche Werkzeug — dafür gibt es Kanban. Für ein Team, das in zweiwöchigen Sprints arbeitet und den Umfang bewusst offen hält, ebenfalls.</p>
+        <p>Und es wird unbrauchbar, wenn es zu fein wird: Ein Plan mit 400 Zeilen ist keine Planung mehr, sondern Buchhaltung. Als Faustregel gilt: kein Vorgang kürzer als ein Tag, keiner länger als ein Monat, insgesamt 20 bis 60 Zeilen. Was feiner ist, gehört in eine Aufgabenliste oder ein Ticketsystem — das Gantt-Diagramm ist ein Kommunikationsmittel, keine Aufgabendatenbank.</p>`],
+    ['Gantt-Diagramm, Zeitstrahl und Kanban', `<p>Drei Darstellungen werden häufig verwechselt, obwohl jede eine andere Aufgabe hat:</p>
+        <ul>
+          <li><strong>Gantt-Diagramm</strong> — Vorgänge mit Dauern, Abhängigkeiten, Verantwortlichen und Fortschritt. Passend, wenn Reihenfolge und Termine zählen und ein Plan über Wochen gesteuert werden muss.</li>
+          <li><strong>Zeitstrahl</strong> — eine Folge datierter Ereignisse auf einer Linie, ohne Dauern und ohne Verknüpfungen. Passend, um wenige Eckpunkte zu illustrieren. Jedes Gantt-Diagramm enthält einen Zeitstrahl, aber ein Zeitstrahl ist noch lange kein Gantt-Diagramm.</li>
+          <li><strong>Kanban-Board</strong> — Spalten wie Offen, In Arbeit und Erledigt, durch die Karten wandern. Passend für kontinuierliche Arbeit, bei der wichtiger ist, <em>was als Nächstes</em> kommt, als <em>an welchem Datum</em>. Ein Board zeigt Zustand, keinen Kalender.</li>
+        </ul>
+        <p>Als Faustregel: Gantt bei festem Termin und definierter Reihenfolge, Kanban bei laufendem Fluss ohne feste Daten, Zeitstrahl, wenn nur eine Handvoll Eckdaten kommuniziert werden soll.</p>`],
+    ['Woher der Name kommt', `<p>Benannt nach Henry L. Gantt (1861–1919), einem amerikanischen Maschinenbauingenieur und Berater, der die Darstellung zwischen etwa 1910 und 1915 populär machte — unter anderem für Produktionsplanung und den Schiffbau im Ersten Weltkrieg.</p>
+        <p>Entwickelt hatte eine sehr ähnliche Form bereits in den 1890er-Jahren der polnische Ingenieur Karol Adamiecki, der sie <em>Harmonogramm</em> nannte. Weil seine Arbeiten überwiegend auf Polnisch und Russisch erschienen, blieben sie im Westen lange unbekannt, und der Name blieb bei Gantt hängen. Die Darstellung hat damit über hundert Jahre überdauert — was selten für eine Methode spricht, die nur Mode wäre.</p>`],
+    ['So fangen Sie an', `<p>Schreiben Sie erst alle Vorgänge auf, ohne Termine. Schätzen Sie dann die Dauern in Arbeitstagen. Verknüpfen Sie danach, was wirklich aufeinander wartet — nicht, was zufällig nacheinander im Kalender steht. Setzen Sie zuletzt fünf bis zehn Meilensteine. Termine ergeben sich aus diesen drei Schritten von selbst.</p>
+        <p>Sie brauchen dafür weder teure Software noch ein Tabellenblatt voller Formeln. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Konto und ohne Installation: Vorgänge eintippen, Balken ziehen, Abhängigkeiten verknüpfen, kritischen Pfad einblenden und das Ergebnis als PDF, PNG, XLSX oder PPTX exportieren. Der Plan bleibt dabei lokal auf Ihrem Gerät.</p>
+        <p>Ausführlich Schritt für Schritt steht das in der <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a>; wer lieber in Tabellen arbeitet, findet den Weg über <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> beschrieben.</p>`],
   ],
   callout: 'Ein Gantt-Diagramm ohne Abhängigkeiten ist nur eine Tabelle mit Farbe. Der gesamte Nutzen entsteht dadurch, dass der Plan selbst rechnet, wenn sich etwas verschiebt — und in jedem echten Projekt verschiebt sich etwas.',
   faq: [
-    ['Was ist ein Gantt-Diagramm einfach erklärt?', 'Ein Balkendiagramm auf einer Zeitachse: Jede Zeile ist ein Vorgang, die Länge des Balkens seine Dauer. Verbindungen zwischen den Balken zeigen, was worauf wartet.'],
-    ['Wofür wird ein Gantt-Diagramm verwendet?', 'Für Projekte mit festem Ende, mehreren Beteiligten und Abhängigkeiten zwischen den Arbeitsschritten — Bau, Produkteinführungen, Veranstaltungen, Studien, Softwareeinführungen.'],
-    ['Was ist der Unterschied zwischen Gantt-Diagramm und Projektplan?', 'Der Projektplan umfasst Umfang, Budget, Risiken und Ressourcen. Das Gantt-Diagramm ist seine zeitliche Darstellung — ein Teil des Plans, nicht der ganze.'],
-    ['Ist ein Gantt-Diagramm noch zeitgemäß?', 'Für Vorhaben mit Reihenfolge und Termin ja. Für laufenden Betrieb oder bewusst offenen Umfang ist Kanban oder ein Sprintboard passender.'],
+    ['Was ist ein Gantt-Diagramm einfach erklärt?', 'Ein Balkendiagramm auf einer Zeitachse: Links stehen die Vorgänge untereinander, oben läuft ein Kalender, und jeder Vorgang wird als waagerechter Balken gezeichnet. Die Position zeigt, wann er stattfindet, die Länge, wie lange er dauert. Verbindungen zwischen den Balken zeigen, was worauf wartet.'],
+    ['Wofür wird ein Gantt-Diagramm verwendet?', 'Für Projekte mit festem Ende, mehreren Beteiligten und Abhängigkeiten zwischen den Arbeitsschritten — Bau, Produkteinführungen, Veranstaltungen, Studien, Softwareeinführungen. Es dient gleichzeitig der Planung, der Fortschrittsverfolgung und der Berichterstattung an Auftraggeber und Lenkungskreise.'],
+    ['Aus welchen Teilen besteht ein Gantt-Diagramm?', 'Aus Vorgängen mit Dauer, Meilensteinen ohne Dauer, Abhängigkeiten zwischen den Vorgängen und Sammelbalken für Phasen. Dazu kommen üblicherweise eine Zeitachse mit Tages-, Wochen- oder Monatsspalten, ein Fortschrittsbalken je Vorgang, eine Heute-Linie und der hervorgehobene kritische Pfad.'],
+    ['Was ist der Unterschied zwischen Gantt-Diagramm und Projektplan?', 'Der Projektplan umfasst Umfang, Budget, Risiken, Qualität und Ressourcen. Das Gantt-Diagramm ist seine zeitliche Darstellung — ein Teil des Plans, nicht der ganze. Wer beide gleichsetzt, plant Termine ohne Mittel und Risiken.'],
+    ['Was ist der Unterschied zwischen Gantt-Diagramm und Zeitstrahl?', 'Ein Zeitstrahl ist eine einfache Folge datierter Ereignisse auf einer Linie. Ein Gantt-Diagramm ist deutlich reicher: viele parallele Vorgänge mit Dauern, Abhängigkeiten, Verantwortlichen und Fortschritt. Damit lässt sich Arbeit steuern, nicht nur illustrieren.'],
+    ['Ist ein Gantt-Diagramm noch zeitgemäß?', 'Für Vorhaben mit Reihenfolge und Termin ja — Bau, Zulassungen, Veranstaltungen und Einführungen haben unverändert harte Abhängigkeiten. Für laufenden Betrieb oder bewusst offenen Umfang ist Kanban oder ein Sprintboard passender. Viele Teams nutzen beides: das Board für die Woche, das Gantt-Diagramm für den Termin.'],
+    ['Wie viele Vorgänge gehören in ein Gantt-Diagramm?', '20 bis 60 Zeilen sind für die meisten Projekte gut lesbar, gegliedert in vier bis acht Phasen. Kein Vorgang sollte kürzer als ein Tag oder länger als ein Monat sein. Ab etwa 150 Zeilen pflegt den Plan niemand mehr, und ein ungepflegter Plan ist schlechter als gar keiner.'],
   ],
   related: [['how-to-make-a-gantt-chart', 'Gantt-Diagramm erstellen'], ['critical-path-method', 'Der kritische Pfad'], ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten']],
 },
@@ -51,23 +97,48 @@ const G = {
   lead: 'Ein <strong>Gantt-Diagramm zu erstellen</strong> dauert weniger lang, als die meisten erwarten — vorausgesetzt, man geht in der richtigen Reihenfolge vor. Der häufigste Fehler ist, mit Terminen anzufangen. Termine sind das Ergebnis, nicht der Anfang.',
   figIntro: 'Die Reihenfolge, in der ein Plan tatsächlich entsteht:',
   sections: [
-    ['1. Vorgänge sammeln — ohne Termine', '<p>Schreiben Sie zuerst auf, was zu tun ist. Noch keine Daten, keine Reihenfolge, keine Zuständigkeiten. Nur die Arbeit.</p>\n        <p>Die richtige Granularität liegt zwischen einem Tag und einem Monat je Vorgang. Alles Kürzere gehört auf eine Aufgabenliste, alles Längere ist noch keine Aufgabe, sondern eine Phase.</p>'],
-    ['2. In Phasen gruppieren', '<p>Fassen Sie die Vorgänge zu vier bis acht Phasen zusammen. Diese Gliederung ist es, die den Plan später lesbar macht — für Sie und für alle, denen Sie ihn zeigen.</p>'],
-    ['3. Dauern schätzen', '<p>Schätzen Sie in Arbeitstagen, nicht in Kalendertagen, und schätzen Sie die reine Arbeitszeit — Wartezeiten gehören als eigener Vorgang in den Plan, nicht in die Dauer.</p>\n        <p>Ein bewährter Ansatz: optimistisch, wahrscheinlich und pessimistisch schätzen, dann gewichten. Wer nur einen Wert nennt, nennt fast immer den optimistischen.</p>'],
-    ['4. Abhängigkeiten verknüpfen', '<p>Verbinden Sie, was wirklich aufeinander wartet. Der Test: Kann Vorgang B früher beginnen, wenn A schneller fertig wird? Wenn ja, ist die Verknüpfung echt. Wenn nein, haben Sie nur die Reihenfolge im Kalender nachgezeichnet.</p>\n        <p>Verknüpfen Sie nicht alles mit allem. Ein Plan, in dem jeder Vorgang von seinem Vorgänger abhängt, ist eine Kette ohne Parallelität — und meist unrealistisch.</p>'],
-    ['5. Meilensteine setzen', '<p>Fünf bis zehn für ein mehrmonatiges Projekt. Ein Meilenstein markiert eine Entscheidung, eine Freigabe oder eine erfüllte Bedingung, nicht das Ende einer beliebigen Aufgabe.</p>'],
-    ['6. Ressourcen zuordnen und Auslastung prüfen', '<p>Erst jetzt ordnen Sie Personen zu — und prüfen dann, ob jemand in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll. Diese Überlastung ist der häufigste Grund, warum ein rechnerisch korrekter Plan in der Praxis nicht hält.</p>'],
-    ['7. Puffer einplanen und freigeben', '<p>Setzen Sie Puffer dorthin, wo Unsicherheit ist — vor Meilensteine und an das Ende des kritischen Pfads, nicht auf jeden einzelnen Vorgang. Verteilte Puffer verschwinden nach dem Parkinsonschen Prinzip; gebündelte bleiben sichtbar.</p>\n        <p>Zum Schluss gehen Sie den Plan mit den Beteiligten durch. Ein Plan, den nur eine Person kennt, ist kein Plan, sondern eine Meinung.</p>'],
-    ['Womit erstellen?', '<p>Für kleine Vorhaben reicht eine Tabellenkalkulation, wird aber ab etwa zwanzig Zeilen mühsam, weil Abhängigkeiten nicht automatisch rechnen. Spezialisierte Werkzeuge nehmen Ihnen das ab — <a href="/de/app.html">gantts.app</a> etwa läuft direkt im Browser, ohne Anmeldung, und speichert lokal auf Ihrem Gerät.</p>'],
-    ['Häufigster Fehler zum Schluss', '<p>Zu detailliert planen. Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist schlechter als gar keiner, weil ihm noch vertraut wird.</p>'],
-    ['Und dann?', '<p>Ein Plan ist kein Dokument, sondern ein Werkzeug. Aktualisieren Sie ihn wöchentlich mit dem Fortschritt, vergleichen Sie ihn mit dem ursprünglichen Stand und passen Sie an, was sich geändert hat.</p>'],
+    ['Was Sie vorher brauchen', `<p>Drei Dinge sollten geklärt sein, bevor Sie den ersten Balken zeichnen. Erstens das <strong>Ziel und der Endtermin</strong> — woran genau erkennen Sie, dass das Projekt fertig ist, und bis wann muss das der Fall sein. Zweitens eine <strong>Liste der Vorgänge</strong>, die dorthin führen. Drittens eine grobe Vorstellung davon, <strong>wie lange jeder Vorgang dauert und was worauf wartet</strong>.</p>
+        <p>Perfekte Schätzungen brauchen Sie nicht. Sie brauchen einen Ausgangspunkt, den Sie verfeinern können — und den bekommen Sie in einer Stunde mit zwei Beteiligten an einem Whiteboard. Wenn Ihnen die Grundbegriffe fehlen, lesen Sie zuerst, <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>.</p>
+        <p>Als durchgehendes Beispiel dient hier ein Website-Relaunch mit Projektstart am Montag, 6. Juli 2026 und gewünschtem Start der neuen Seite Anfang Oktober.</p>`],
+    ['1. Vorgänge sammeln — ohne Termine', `<p>Schreiben Sie zuerst auf, was zu tun ist. Noch keine Daten, keine Reihenfolge, keine Zuständigkeiten. Nur die Arbeit. Formulieren Sie mit Verb und Objekt: „Startseitentext schreiben“, „Rechtstexte prüfen lassen“, „Auf Produktivsystem veröffentlichen“ — nicht „Texte“ und nicht „Rechtliches“.</p>
+        <p>Die richtige Granularität liegt zwischen einem Tag und einem Monat je Vorgang. Alles Kürzere gehört auf eine Aufgabenliste, alles Längere ist noch keine Aufgabe, sondern eine Phase. Ein guter Prüfsatz: Sie sollten eine einzige verantwortliche Person nennen und in einem Satz beschreiben können, woran man die Fertigstellung erkennt. Geht das nicht, ist der Vorgang entweder zu groß (teilen) oder zu unklar (definieren).</p>
+        <p>Es lohnt sich, dabei von einer Vorlage für Ihre Projektart auszugehen, damit die branchenüblichen Selbstverständlichkeiten nicht fehlen — Zulassungen, Abnahmen, Übergabefristen. Unsere <a href="/de/templates.html">Vorlagen</a> decken Bau, Marketing, Softwareentwicklung und Veranstaltungen ab.</p>`],
+    ['2. In Phasen gruppieren', `<p>Fassen Sie die Vorgänge zu vier bis acht Phasen zusammen. Für den Relaunch etwa: Analyse, Konzept, Gestaltung, Umsetzung, Inhalte, Test, Umstellung. Eine Phase ist eine Sammelzeile, deren Balken automatisch beim frühesten Vorgang darunter beginnt und beim spätesten endet.</p>
+        <p>Diese Gliederung ist es, die den Plan später lesbar macht — für Sie und für alle, denen Sie ihn zeigen. Sie erlaubt außerdem, im Gespräch mit der Geschäftsführung die Phasen zusammenzuklappen und nur sieben Balken zu zeigen, während das Team dieselbe Datei mit allen 45 Zeilen benutzt.</p>
+        <p>Setzen Sie die Termine eines Sammelbalkens nie von Hand. Sie sind ein Ergebnis der darunterliegenden Vorgänge; ein manuell eingetragenes Phasenende ist eine Behauptung, die beim ersten Verzug still falsch wird. Viele Werkzeuge nummerieren die Gliederung automatisch als Projektstrukturplan (1, 1.1, 1.2), was in Protokollen eine eindeutige Referenz gibt.</p>`],
+    ['3. Dauern schätzen', `<p>Schätzen Sie in Arbeitstagen, nicht in Kalendertagen, damit Wochenenden und Feiertage den Plan nicht verzerren. Schätzen Sie außerdem die reine Arbeitszeit — Wartezeiten gehören als eigener Vorgang in den Plan, nicht in die Dauer. „Rechtsprüfung: 2 Tage“ plus „Wartezeit auf Rückmeldung: 5 Tage“ ist ehrlicher und steuerbarer als „Rechtsprüfung: 7 Tage“.</p>
+        <p>Ein bewährter Ansatz ist die Dreipunktschätzung: optimistisch, wahrscheinlich und pessimistisch schätzen, dann mit der Formel <code>(O + 4W + P) / 6</code> gewichten. Bei 3, 5 und 13 Tagen ergibt das 6 Tage — deutlich mehr als die 5, die man aus dem Bauch genannt hätte, und genau das ist der Punkt. Wer nur einen Wert nennt, nennt fast immer den optimistischen.</p>
+        <p>Trennen Sie beim Schätzen Aufwand und Dauer. Zwei Personentage Arbeit einer Person, die nur halbtags verfügbar ist, sind vier Tage Dauer. Der Balken zeigt die Dauer, nicht den Aufwand — und diese Verwechslung ist die häufigste Ursache für Pläne, die auf dem Papier passen und in der Praxis reißen.</p>`],
+    ['4. Abhängigkeiten verknüpfen', `<p>Verbinden Sie, was wirklich aufeinander wartet. Der Test: Kann Vorgang B früher beginnen, wenn A schneller fertig wird? Wenn ja, ist die Verknüpfung echt. Wenn nein, haben Sie nur die Reihenfolge im Kalender nachgezeichnet.</p>
+        <p>Die mit Abstand häufigste Art ist <strong>Ende-Anfang</strong>: B beginnt, wenn A fertig ist — der Test beginnt, wenn die Umsetzung steht. Drei weitere Arten gibt es für Sonderfälle: Anfang-Anfang für gemeinsam anlaufende Arbeiten, Ende-Ende für begleitende Tätigkeiten wie die Dokumentation, und das seltene Anfang-Ende für Übergaben. Beginnen Sie mit Ende-Anfang und greifen Sie nur dann zu einer anderen, wenn der Vorgang sich tatsächlich so verhält; alle vier stehen in den <a href="/de/blog/gantt-chart-dependencies.html">Verknüpfungsarten</a>.</p>
+        <p>Verknüpfen Sie nicht alles mit allem. Ein Plan, in dem jeder Vorgang von seinem Vorgänger abhängt, ist eine Kette ohne Parallelität — und meist unrealistisch. Und tragen Sie keine festen Termine dort ein, wo eine Verknüpfung die Berechnung übernehmen sollte: Ein hart gesetztes Datum übersteuert die Neuberechnung und macht aus dem Plan wieder ein Bild.</p>`],
+    ['5. Meilensteine setzen', `<p>Fünf bis zehn für ein mehrmonatiges Projekt. Ein Meilenstein hat die Dauer null, erscheint als Raute und markiert eine Entscheidung, eine Freigabe oder eine erfüllte Bedingung — nicht das Ende einer beliebigen Aufgabe. Für den Relaunch also: Konzept freigegeben, Gestaltung abgenommen, Inhalte vollständig, Rechtsfreigabe erteilt, neue Seite live.</p>
+        <p>Meilensteine leisten zweierlei. Sie geben Beteiligten außerhalb des Teams greifbare Kontrollpunkte, und sie sind Ankerpunkte, an die sich Abhängigkeiten sauber knüpfen lassen. Eine gute Gewohnheit ist ein Meilenstein am Ende jeder Phase und einer am Endtermin, damit die Ziellinie im Plan immer sichtbar ist.</p>`],
+    ['6. Ressourcen zuordnen und Auslastung prüfen', `<p>Erst jetzt ordnen Sie Personen zu — und prüfen dann, ob jemand in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll. Diese Überlastung ist der häufigste Grund, warum ein rechnerisch korrekter Plan in der Praxis nicht hält.</p>
+        <p>Gehen Sie den Plan spaltenweise durch, Woche für Woche, und addieren Sie je Person die parallel laufenden Vorgänge. Wer in Kalenderwoche 33 gleichzeitig Texte schreiben, Bilder abnehmen und den Test begleiten soll, wird alle drei verspäten. Die Gegenmittel sind dieselben wie immer: Vorgänge zeitlich versetzen, wo Puffer vorhanden ist, umverteilen oder den Umfang kürzen.</p>
+        <p>Halten Sie anschließend den Fortschritt in Prozent je Vorgang nach. Der Vergleich von Heute-Linie und Fortschrittsbalken ist die schnellste Statusaussage, die es gibt: Steht ein Balken links der Heute-Linie noch bei 0 Prozent, haben Sie Verzug — und zwar sichtbar, bevor jemand ihn meldet.</p>`],
+    ['7. Puffer einplanen, kritischen Pfad prüfen und freigeben', `<p>Setzen Sie Puffer dorthin, wo Unsicherheit ist — vor Meilensteine und an das Ende des kritischen Pfads, nicht auf jeden einzelnen Vorgang. Verteilte Puffer verschwinden nach dem Parkinsonschen Prinzip; gebündelte bleiben sichtbar und lassen sich bewusst vergeben.</p>
+        <p>Schalten Sie dann den <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> ein, also die längste Kette abhängiger Vorgänge, die den Endtermin bestimmt. Prüfen Sie, ob er dort verläuft, wo Sie ihn erwarten. Läuft er durch einen Vorgang, den Sie für nebensächlich hielten, fehlt entweder eine Verknüpfung oder eine Dauer ist falsch geschätzt. Passt der Endtermin nicht, wirken nur zwei Hebel, und beide ausschließlich auf diesem Pfad: mehr Mittel auf kritische Vorgänge oder bisher aufeinanderfolgende Vorgänge überlappen lassen.</p>
+        <p>Zum Schluss gehen Sie den Plan mit den Beteiligten durch. Ein Plan, den nur eine Person kennt, ist kein Plan, sondern eine Meinung. Frieren Sie danach den Stand als <strong>Basisplan</strong> ein — ohne diesen Vergleichsstand lässt sich später nicht mehr belegen, wo und wann die Abweichung entstanden ist.</p>`],
+    ['Womit erstellen?', `<p>Für kleine Vorhaben reicht eine Tabellenkalkulation, wird aber ab etwa zwanzig Zeilen mühsam, weil Abhängigkeiten nicht automatisch rechnen: Jede Verschiebung müssen Sie durch alle Nachfolger von Hand tragen, und nach der zweiten Änderung unterbleibt das. Wie es trotzdem geht, steht in der Anleitung zu <a href="/de/blog/gantt-chart-in-excel.html">Gantt-Diagrammen in Excel</a>.</p>
+        <p>Spezialisierte Werkzeuge nehmen Ihnen das ab. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Anmeldung und ohne Installation: Vorgänge eintippen, Dauern setzen, Balken ziehen, Verknüpfungen als Pfeile zeichnen. Der kritische Pfad hebt sich automatisch hervor und rechnet sich bei jeder Änderung neu. Exportiert wird nach PDF, PNG, XLSX oder PPTX, und der Plan bleibt lokal auf Ihrem Gerät.</p>`],
+    ['Die fünf häufigsten Fehler', `<p><strong>Zu detailliert planen.</strong> Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist schlechter als gar keiner, weil ihm noch vertraut wird. Beginnen Sie auf Phasenebene und gehen Sie nur dort ins Detail, wo es hilft.</p>
+        <p><strong>Feste Termine statt Verknüpfungen.</strong> Wenn Daten sich nicht bewegen, sobald ein Vorgänger sich verspätet, lügt der Plan ab der ersten Änderung.</p>
+        <p><strong>Gar kein Puffer.</strong> Ein Plan ohne jede Reserve bricht bei der ersten Verzögerung. Realistisch schätzen und eine sichtbare Reserve vor den Endtermin legen.</p>
+        <p><strong>Fortschritt nie nachtragen.</strong> Ein Bild, dem alle vertrauen und das nicht mehr stimmt, richtet mehr Schaden an als eine leere Wand.</p>
+        <p><strong>Den kritischen Pfad ignorieren.</strong> Wer nicht weiß, welche Vorgänge den Termin bestimmen, kann den Termin nicht schützen.</p>`],
+    ['Und dann?', `<p>Ein Plan ist kein Dokument, sondern ein Werkzeug. Aktualisieren Sie ihn wöchentlich mit dem Fortschritt, vergleichen Sie ihn mit dem Basisplan und passen Sie an, was sich geändert hat. Fünfzehn Minuten in einem festen Termin genügen dafür in den meisten Projekten.</p>
+        <p>Zwei Fragen tragen diese Viertelstunde: Was hat sich seit der letzten Woche verschoben, und läuft der kritische Pfad noch dort, wo er letzte Woche lief? Wandert er, ändert sich damit auch, worauf Sie in der kommenden Woche achten müssen.</p>`],
   ],
   callout: 'Beginnen Sie nie mit Terminen. Vorgänge, Dauern und Abhängigkeiten ergeben die Termine von selbst — und ein so entstandener Plan lässt sich verteidigen. Ein Plan, der rückwärts von einem Wunschtermin gebaut wurde, hält der ersten Rückfrage nicht stand.',
   faq: [
-    ['Wie erstellt man ein Gantt-Diagramm?', 'Vorgänge sammeln, in Phasen gruppieren, Dauern schätzen, Abhängigkeiten verknüpfen, Meilensteine setzen, Ressourcen zuordnen, Puffer einplanen. Termine ergeben sich daraus.'],
-    ['Wie erstelle ich ein Gantt-Diagramm kostenlos?', 'Im Browser, ohne Anmeldung und ohne Installation — etwa mit gantts.app. Alternativ mit einer Tabellenkalkulation, was aber ab etwa zwanzig Vorgängen unhandlich wird.'],
-    ['Wie viele Vorgänge sollte ein Gantt-Diagramm haben?', 'So wenige wie möglich, so viele wie nötig. 20 bis 60 Zeilen sind für die meisten Projekte gut lesbar; ab etwa 150 pflegt den Plan niemand mehr.'],
-    ['Wie lang sollte ein einzelner Vorgang sein?', 'Zwischen einem Tag und einem Monat. Kürzeres gehört auf eine Aufgabenliste, Längeres ist eine Phase und sollte unterteilt werden.'],
+    ['Wie erstellt man ein Gantt-Diagramm?', 'In sieben Schritten: Vorgänge sammeln, in vier bis acht Phasen gruppieren, Dauern in Arbeitstagen schätzen, echte Abhängigkeiten verknüpfen, fünf bis zehn Meilensteine setzen, Verantwortliche zuordnen und die Auslastung prüfen, Puffer bündeln und den kritischen Pfad kontrollieren. Die Termine ergeben sich aus diesen Schritten von selbst.'],
+    ['Was brauche ich, bevor ich anfange?', 'Drei Dinge: ein klares Ziel mit Endtermin, eine Liste der Vorgänge, die dorthin führen, und eine grobe Vorstellung von Dauern und Abhängigkeiten. Perfekte Schätzungen sind nicht nötig — ein Ausgangspunkt, den Sie verfeinern können, reicht völlig aus.'],
+    ['Wie erstelle ich ein Gantt-Diagramm kostenlos?', 'Im Browser, ohne Anmeldung und ohne Installation — etwa mit gantts.app, inklusive Abhängigkeiten, kritischem Pfad und Export nach PDF, PNG, XLSX und PPTX. Alternativ mit einer Tabellenkalkulation, was aber ab etwa zwanzig Vorgängen unhandlich wird, weil Verschiebungen nicht automatisch durchgerechnet werden.'],
+    ['Wie füge ich Abhängigkeiten hinzu?', 'Sie verknüpfen zwei Balken miteinander, damit ihre Termine zusammenhängen. Die häufigste Art ist Ende-Anfang: Ein Vorgang beginnt erst, wenn der vorherige abgeschlossen ist. Verschiebt sich der Vorgänger, rücken alle Nachfolger automatisch nach — vorausgesetzt, Sie haben keinen festen Termin eingetragen, der die Berechnung übersteuert.'],
+    ['Wie viele Vorgänge sollte ein Gantt-Diagramm haben?', 'So wenige wie möglich, so viele wie nötig. 20 bis 60 Zeilen sind für die meisten Projekte gut lesbar; ab etwa 150 pflegt den Plan niemand mehr. Größere Vorhaben zerlegt man besser in einen Rahmenplan auf Phasenebene und je einen Detailplan pro Phase.'],
+    ['Wie lang sollte ein einzelner Vorgang sein?', 'Zwischen einem Tag und einem Monat. Kürzeres gehört auf eine Aufgabenliste, Längeres ist eine Phase und sollte unterteilt werden. Als Prüfsatz: Es muss genau eine verantwortliche Person geben, und in einem Satz sagbar sein, woran man die Fertigstellung erkennt.'],
+    ['Wie viel Puffer sollte ich einplanen?', 'Nicht auf jeden Vorgang, sondern gebündelt vor Meilensteinen und am Ende des kritischen Pfads. Verteilte Puffer werden nach dem Parkinsonschen Prinzip stillschweigend aufgebraucht; ein sichtbarer Reservevorgang von zehn bis fünfzehn Prozent der Projektdauer lässt sich dagegen bewusst vergeben und nachverfolgen.'],
   ],
   related: [['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'], ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'], ['gantt-chart-mistakes', 'Häufige Planungsfehler']],
 },
@@ -80,19 +151,106 @@ const G = {
   lead: 'Der <strong>kritische Pfad</strong> ist die längste Kette voneinander abhängiger Vorgänge in einem Projekt. Seine Länge ist die kürzestmögliche Projektdauer — und jeder Tag Verzug auf diesem Pfad ist ein Tag Verzug am Projektende.',
   figIntro: 'Vorwärts rechnen, rückwärts rechnen, Puffer ablesen:',
   sections: [
-    ['Die Grundidee', '<p>Nicht alle Vorgänge sind gleich wichtig für den Termin. Manche haben Luft: Sie können sich verschieben, ohne dass das Projektende wandert. Andere haben keine — und die bilden den kritischen Pfad.</p>\n        <p>Die Methode heißt Critical Path Method, kurz CPM, und stammt aus den späten 1950er-Jahren. Sie beantwortet zwei Fragen: Wie lange dauert das Projekt mindestens, und welche Vorgänge dürfen sich auf keinen Fall verzögern?</p>'],
-    ['Vorwärtsrechnung: die frühesten Termine', '<p>Beginnen Sie am Projektstart und gehen Sie vorwärts. Für jeden Vorgang gilt: frühester Anfang (FAZ) ist der späteste frühestmögliche Endtermin aller Vorgänger; frühestes Ende (FEZ) ist FAZ plus Dauer.</p>\n        <p>Am Ende der Vorwärtsrechnung steht die frühestmögliche Projektdauer.</p>'],
-    ['Rückwärtsrechnung: die spätesten Termine', '<p>Jetzt gehen Sie vom Projektende zurück. Spätestes Ende (SEZ) ist der früheste spätestmögliche Anfang aller Nachfolger; spätester Anfang (SAZ) ist SEZ minus Dauer.</p>'],
-    ['Puffer und der kritische Pfad', '<p>Die Pufferzeit eines Vorgangs ist SAZ minus FAZ. Vorgänge mit Puffer null bilden den kritischen Pfad. Es gibt immer mindestens einen solchen Pfad, und in stark verketteten Plänen häufig mehrere parallele.</p>'],
-    ['Ein Beispiel mit vier Vorgängen', '<p>A dauert 3 Tage, B dauert 5 und folgt auf A, C dauert 2 und folgt ebenfalls auf A, D dauert 4 und folgt auf B und C.</p>\n        <p><strong>Vorwärts:</strong> A läuft von Tag 0 bis 3. B von 3 bis 8, C von 3 bis 5. D wartet auf beide, beginnt also bei 8 und endet bei 12. Projektdauer: 12 Tage.</p>\n        <p><strong>Rückwärts:</strong> D muss bei 8 beginnen. B muss also bei 8 fertig sein — spätester Anfang 3, Puffer 0. C muss ebenfalls bei 8 fertig sein, hat aber nur 2 Tage Dauer: spätester Anfang 6, tatsächlicher frühester Anfang 3, <em>Puffer 3 Tage</em>.</p>\n        <p>Der kritische Pfad ist A → B → D. C darf sich um drei Tage verspäten, ohne dass das Projekt später fertig wird.</p>'],
-    ['Was das praktisch bedeutet', '<p>Es sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf C zu setzen bringt für den Termin nichts. Einen Tag auf B zu sparen bringt einen Tag am Projektende.</p>\n        <p>Und es warnt vor einer Falle: Wenn C sich um vier Tage verspätet, wird C selbst kritisch. Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme — er wandert, sobald sich etwas verschiebt.</p>'],
+    ['Die Grundidee', `<p>Nicht alle Vorgänge sind gleich wichtig für den Termin. Manche haben Luft: Sie können sich verschieben, ohne dass das Projektende wandert. Andere haben keine — und die bilden den kritischen Pfad.</p>
+        <p>Die Methode heißt Critical Path Method, kurz CPM, und stammt aus den späten 1950er-Jahren. Morgan Walker und James Kelley entwickelten sie ursprünglich für die Planung von Instandhaltungsstillständen in Chemieanlagen, wo jeder Stillstandstag unmittelbar Geld kostete. Sie beantwortet zwei Fragen: Wie lange dauert das Projekt mindestens, und welche Vorgänge dürfen sich auf keinen Fall verzögern?</p>
+        <p>Der praktische Nutzen liegt in der Fokussierung. Ein Plan mit sechzig Vorgängen wirkt so, als müsse man auf alle sechzig gleich genau achten. Die Berechnung zeigt, dass typischerweise nur zwölf bis zwanzig davon den Endtermin tatsächlich bestimmen. Diese Vorgänge bekommen die erfahrensten Leute, die engmaschigste Nachverfolgung und die Reserven. Für den Rest genügt eine wöchentliche Statusabfrage.</p>`],
+    ['Die Begriffe: FAZ, FEZ, SAZ, SEZ', `<p>Die Rechnung arbeitet mit vier Terminen je Vorgang. Die deutschen Kürzel sind seit der Netzplantechnik nach DIN 69900 gebräuchlich und lohnen sich zu merken, weil jede Projektsoftware sie in irgendeiner Form anzeigt:</p>
+        <ul>
+          <li><strong>FAZ</strong> — frühester Anfangszeitpunkt: der früheste Moment, an dem der Vorgang beginnen kann, ohne dass ein Vorgänger noch läuft.</li>
+          <li><strong>FEZ</strong> — frühester Endzeitpunkt: <code>FEZ = FAZ + Dauer</code>.</li>
+          <li><strong>SEZ</strong> — spätester Endzeitpunkt: der späteste Moment, an dem der Vorgang enden darf, ohne den Projekttermin zu verschieben.</li>
+          <li><strong>SAZ</strong> — spätester Anfangszeitpunkt: <code>SAZ = SEZ − Dauer</code>.</li>
+        </ul>
+        <p>Daraus folgt die einzige Formel, die man wirklich braucht: <strong>Gesamtpuffer = SAZ − FAZ = SEZ − FEZ</strong>. Ist dieser Wert null, liegt der Vorgang auf dem kritischen Pfad. Alle Rechnungen laufen in Arbeitstagen, und die Zeitachse beginnt bei null — der erste Vorgang hat also FAZ 0, nicht FAZ 1. Das erspart die klassische Verwirrung um einen Tag am Ende.</p>`],
+    ['Vorwärtsrechnung: die frühesten Termine', `<p>Beginnen Sie am Projektstart und gehen Sie vorwärts durch das Netz. Für jeden Vorgang gilt: der FAZ ist der <em>größte</em> FEZ aller seiner Vorgänger; der FEZ ist FAZ plus Dauer.</p>
+        <p>Das Wort <em>größte</em> ist der ganze Trick. Hat ein Vorgang zwei Vorgänger, von denen einer nach 11 Tagen und der andere nach 12 Tagen fertig ist, kann er nicht nach 11 Tagen beginnen — er wartet auf den langsameren. Wer hier versehentlich den kleineren Wert nimmt, erhält eine Projektdauer, die zu kurz ist, und einen kritischen Pfad, der durch den falschen Zweig läuft. Das ist der mit Abstand häufigste Rechenfehler bei der Handrechnung.</p>
+        <p>Am Ende der Vorwärtsrechnung steht der größte FEZ überhaupt — und das ist die frühestmögliche Projektdauer.</p>`],
+    ['Rückwärtsrechnung: die spätesten Termine', `<p>Jetzt gehen Sie vom Projektende zurück. Setzen Sie den SEZ des letzten Vorgangs gleich der eben ermittelten Projektdauer — nicht gleich einem Wunschtermin — und rechnen Sie <code>SAZ = SEZ − Dauer</code>. Für jeden weiter links liegenden Vorgang gilt: der SEZ ist der <em>kleinste</em> SAZ aller seiner Nachfolger.</p>
+        <p>Hier ist es genau umgekehrt zur Vorwärtsrechnung: Es zählt der engste Nachfolger. Wenn ein Vorgang zwei Nachfolger hat, von denen einer am Tag 6 und der andere am Tag 7 beginnen muss, dann muss er am Tag 6 fertig sein. Der spätere Nachfolger ist keine Erlaubnis, sich Zeit zu lassen.</p>
+        <p>Ein Hinweis, der viel Ärger spart: Wenn Sie den SEZ des letzten Vorgangs auf einen vertraglich zugesagten Termin setzen, der früher liegt als die berechnete Dauer, entstehen <strong>negative Puffer</strong>. Das ist kein Rechenfehler, sondern eine Aussage — der Plan ist in dieser Form nicht haltbar, und die Zahl sagt Ihnen um wie viele Tage.</p>`],
+    ['Puffer und der kritische Pfad', `<p>Die Pufferzeit eines Vorgangs ist SAZ minus FAZ. Vorgänge mit Puffer null bilden den kritischen Pfad. Es gibt immer mindestens einen solchen Pfad, und in stark verketteten Plänen häufig mehrere parallele — was das Risiko erhöht, weil dann zwei unabhängige Ketten gleichzeitig gut gehen müssen.</p>
+        <p>Zu unterscheiden sind zwei Arten von Puffer, und die Verwechslung führt regelmäßig zu falscher Sicherheit:</p>
+        <ul>
+          <li><strong>Gesamtpuffer</strong> — um wie viel sich ein Vorgang verschieben darf, ohne das <em>Projektende</em> zu verschieben. Er wird über alle Vorgänge eines Zweigs geteilt: Verbraucht der erste ihn ganz, hat der zweite keinen mehr.</li>
+          <li><strong>Freier Puffer</strong> — um wie viel sich ein Vorgang verschieben darf, ohne den <em>FAZ seines Nachfolgers</em> zu verschieben. Dieser Puffer gehört dem Vorgang allein.</li>
+        </ul>
+        <p>Praktisch heißt das: Wenn drei Vorgänge in einem Zweig je acht Tage Gesamtpuffer ausgewiesen bekommen, gibt es nicht 24 Tage Luft, sondern acht — einmal, für den ganzen Zweig.</p>`],
+    ['Ein durchgerechnetes Beispiel', `<p>Sechs Vorgänge, Dauern in Arbeitstagen, Projektstart Montag, 6. Juli 2026.</p>
+        <table>
+          <thead><tr><th>Vorgang</th><th>Dauer</th><th>Vorgänger</th></tr></thead>
+          <tbody>
+            <tr><td>A — Konzept</td><td>3</td><td>—</td></tr>
+            <tr><td>B — Entwurf</td><td>4</td><td>A</td></tr>
+            <tr><td>C — Beschaffung</td><td>2</td><td>A</td></tr>
+            <tr><td>D — Umsetzung</td><td>5</td><td>B</td></tr>
+            <tr><td>E — Baustelle vorbereiten</td><td>6</td><td>C</td></tr>
+            <tr><td>F — Montage und Test</td><td>3</td><td>D, E</td></tr>
+          </tbody>
+        </table>
+        <p>Es gibt zwei Wege durch das Netz: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 Tage</strong> und <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 Tage</strong>. Der längere Weg ist der kritische. Rechnen wir es sauber durch.</p>
+        <p><strong>Vorwärtsrechnung</strong> (FAZ, dann FEZ = FAZ + Dauer):</p>
+        <ul>
+          <li>A: FAZ 0, FEZ 3</li>
+          <li>B: FAZ 3 (nach A), FEZ 7</li>
+          <li>C: FAZ 3 (nach A), FEZ 5</li>
+          <li>D: FAZ 7 (nach B), FEZ 12</li>
+          <li>E: FAZ 5 (nach C), FEZ 11</li>
+          <li>F: FAZ 12 — der größere Wert aus D mit 12 und E mit 11 —, FEZ 15</li>
+        </ul>
+        <p>Die Projektdauer beträgt also <strong>15 Arbeitstage</strong>. Ab Montag, 6. Juli gerechnet, endet das Projekt am Freitag, 24. Juli 2026.</p>
+        <p><strong>Rückwärtsrechnung</strong> (SEZ, dann SAZ = SEZ − Dauer), beginnend mit F und SEZ 15:</p>
+        <ul>
+          <li>F: SEZ 15, SAZ 12</li>
+          <li>D: SEZ 12 (SAZ von F), SAZ 7</li>
+          <li>E: SEZ 12 (SAZ von F), SAZ 6</li>
+          <li>B: SEZ 7 (SAZ von D), SAZ 3</li>
+          <li>C: SEZ 6 (SAZ von E), SAZ 4</li>
+          <li>A: SEZ 3 — der kleinere Wert aus B mit 3 und C mit 4 —, SAZ 0</li>
+        </ul>
+        <p><strong>Puffer = SAZ − FAZ</strong> für jeden Vorgang:</p>
+        <table>
+          <thead><tr><th>Vorgang</th><th>FAZ</th><th>FEZ</th><th>SAZ</th><th>SEZ</th><th>Puffer</th><th>Kritisch?</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>0</td><td>3</td><td>0</td><td>3</td><td><strong>0</strong></td><td>ja</td></tr>
+            <tr><td>B</td><td>3</td><td>7</td><td>3</td><td>7</td><td><strong>0</strong></td><td>ja</td></tr>
+            <tr><td>C</td><td>3</td><td>5</td><td>4</td><td>6</td><td>1</td><td>nein</td></tr>
+            <tr><td>D</td><td>7</td><td>12</td><td>7</td><td>12</td><td><strong>0</strong></td><td>ja</td></tr>
+            <tr><td>E</td><td>5</td><td>11</td><td>6</td><td>12</td><td>1</td><td>nein</td></tr>
+            <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td><strong>0</strong></td><td>ja</td></tr>
+          </tbody>
+        </table>
+        <p>Die Vorgänge mit Puffer null — <strong>A, B, D, F</strong> — bilden den kritischen Pfad, genau der Weg, den wir vorher schon als den längeren erkannt hatten. In Kalenderterminen: A läuft von Montag, 6. bis Mittwoch, 8. Juli, B von Donnerstag, 9. bis Dienstag, 14. Juli, D von Mittwoch, 15. bis Dienstag, 21. Juli und F von Mittwoch, 22. bis Freitag, 24. Juli.</p>
+        <p>C und E haben je <strong>einen Arbeitstag Puffer</strong> — aber es ist derselbe Tag, denn beide liegen auf demselben Zweig. Verschiebt sich die Beschaffung um einen Tag, hat die Baustellenvorbereitung anschließend null Puffer, und der zweite Zweig ist ebenfalls kritisch. Verschiebt sie sich um zwei Tage, ist der Endtermin weg.</p>`],
+    ['Was das praktisch bedeutet', `<p>Die Rechnung sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf die Baustellenvorbereitung zu setzen bringt für den Endtermin nichts — der Vorgang wird früher fertig und wartet dann länger auf F. Einen Tag beim Entwurf zu sparen bringt dagegen einen Tag am Projektende, eins zu eins.</p>
+        <p>Dasselbe gilt für die Nachverfolgung im Betrieb. Bei der wöchentlichen Statusrunde ist die Frage nach den kritischen Vorgängen die einzige, die den Termin bewegt. Ein Vorgang mit zwölf Tagen Puffer, der drei Tage im Rückstand ist, ist eine Notiz. Ein kritischer Vorgang, der einen halben Tag im Rückstand ist, ist ein Thema.</p>
+        <p>Und es warnt vor einer Falle: Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme. Er wandert, sobald sich etwas verschiebt. Deshalb wird er nicht einmal zu Projektbeginn berechnet, sondern bei jeder Fortschreibung neu — sonst schützen Sie einen Pfad, der seit drei Wochen nicht mehr der kritische ist.</p>`],
+    ['Wenn der Termin nicht reicht', `<p>Ergibt die Rechnung 15 Tage, der Kunde erwartet aber 12, gibt es genau zwei seriöse Hebel — und beide wirken ausschließlich auf dem kritischen Pfad:</p>
+        <ul>
+          <li><strong>Verkürzen</strong> (Crashing): mehr Mittel auf kritische Vorgänge. Kostet Geld, und der Ertrag sinkt schnell — zwei Personen halbieren die Dauer selten, vier vervierteln sie nie.</li>
+          <li><strong>Parallelisieren</strong> (Fast Tracking): Vorgänge, die bisher nacheinander liefen, überlappen lassen, etwa indem die Umsetzung nach 70 Prozent des Entwurfs beginnt. Kostet kein Geld, erhöht aber das Risiko von Nacharbeit.</li>
+        </ul>
+        <p>Nach jedem Eingriff neu rechnen. Verkürzen Sie den Entwurf um zwei Tage, ist der Weg über A, B, D und F nur noch 13 Tage lang — und der andere Weg mit 14 Tagen wird zum kritischen Pfad. Weitere Tage beim Entwurf einzusparen bringt ab dann nichts mehr.</p>`],
+    ['CPM, PERT und kritische Kette', `<p>Drei Verfahren werden regelmäßig verwechselt:</p>
+        <ul>
+          <li><strong>CPM</strong> arbeitet mit einer festen Dauer je Vorgang und liefert kritischen Pfad und Puffer. Geeignet, wenn die Dauern einigermaßen bekannt sind.</li>
+          <li><strong>PERT</strong> nutzt drei Schätzwerte je Vorgang — optimistisch (O), wahrscheinlich (W) und pessimistisch (P) — und gewichtet sie mit <code>(O + 4W + P) / 6</code>. Bei 4, 6 und 14 Tagen ergibt das 7 Tage statt der 6, die man aus dem Bauch genannt hätte. Geeignet bei unsicheren Dauern; in der Praxis rechnet man CPM anschließend mit den PERT-Werten.</li>
+          <li><strong>Kritische Kette</strong> ergänzt CPM um Ressourcenengpässe und bündelt die Einzelpuffer zu einem sichtbaren Projektpuffer am Kettenende. Geeignet, wenn nicht die Reihenfolge, sondern geteilte Personen der Engpass sind.</li>
+        </ul>`],
+    ['Die drei häufigsten Fehler', `<p><strong>Feste Termine statt Verknüpfungen.</strong> Ein hart eingetragenes Startdatum übersteuert die Berechnung. Der Vorgang wandert nicht mehr mit, der Puffer wird falsch ausgewiesen, und der kritische Pfad läuft an ihm vorbei. Feste Termine gehören nur dorthin, wo sie real sind — ein Messetermin, ein Gerichtstermin.</p>
+        <p><strong>Fehlende Verknüpfungen.</strong> Ohne Vorgänger hat jeder Vorgang scheinbar Puffer bis zum Projektende, und die Software meldet einen unrealistisch kurzen kritischen Pfad. Wenn Ihr Plan verdächtig entspannt aussieht, fehlen meist Verknüpfungen.</p>
+        <p><strong>Puffer in die Dauern gerechnet.</strong> Wer auf jede Dauer 20 Prozent aufschlägt, bekommt einen Plan, in dem der Puffer unsichtbar ist und nach dem Parkinsonschen Prinzip verbraucht wird. Schätzen Sie realistisch und setzen Sie den Puffer als eigenen Vorgang ans Ende des kritischen Pfads, wo man ihn sieht.</p>`],
+    ['Automatisch statt von Hand', `<p>Die Rechnung einmal von Hand durchzuführen lohnt sich, weil man danach versteht, was die Software tut. Wiederholen möchte man sie nach jeder Schätzungsänderung nicht. <a href="/de/app.html">gantts.app</a> berechnet den kritischen Pfad, sobald Vorgänge und Abhängigkeiten stehen, hebt ihn farblich hervor und rechnet ihn bei jeder Änderung neu — kostenlos im Browser, ohne Konto und ohne Installation. Der fertige Plan lässt sich als PDF, PNG, XLSX oder PPTX exportieren.</p>
+        <p>Wenn Ihnen die Grundlagen noch fehlen, beginnen Sie mit <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>, gehen dann zur <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a> und vertiefen die <a href="/de/blog/gantt-chart-dependencies.html">vier Verknüpfungsarten</a>, ohne die es keinen kritischen Pfad gibt.</p>`],
   ],
   callout: 'Der kritische Pfad ändert sich während des Projekts. Ein Vorgang mit drei Tagen Puffer, der sich um vier verspätet, wird selbst kritisch. Deshalb rechnet man den Pfad nicht einmal zu Projektbeginn, sondern bei jeder Aktualisierung neu.',
   faq: [
-    ['Was ist der kritische Pfad?', 'Die längste Kette abhängiger Vorgänge. Ihre Dauer entspricht der kürzestmöglichen Projektdauer; ihre Vorgänge haben keinen Puffer.'],
-    ['Wie berechnet man den kritischen Pfad?', 'Vorwärtsrechnung für die frühesten Termine, Rückwärtsrechnung für die spätesten. Vorgänge, bei denen beide übereinstimmen — Puffer null — bilden den kritischen Pfad.'],
-    ['Was ist Pufferzeit?', 'Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang.'],
-    ['Kann es mehrere kritische Pfade geben?', 'Ja. In stark verketteten Plänen sind mehrere parallele Pfade gleich lang und damit alle kritisch — was das Risiko deutlich erhöht.'],
+    ['Was ist der kritische Pfad?', 'Die längste Kette abhängiger Vorgänge von Projektstart bis Projektende. Ihre Dauer entspricht der kürzestmöglichen Projektdauer, und ihre Vorgänge haben keinen Puffer. Verzögert sich einer davon um einen Tag, verschiebt sich der Endtermin um genau einen Tag.'],
+    ['Wie berechnet man den kritischen Pfad?', 'In vier Schritten: alle Vorgänge mit Dauer und Vorgängern auflisten, Vorwärtsrechnung für die frühesten Termine (FAZ, FEZ), Rückwärtsrechnung für die spätesten (SAZ, SEZ) und schließlich Puffer = SAZ − FAZ. Alle Vorgänge mit Puffer null, durchgehend verkettet, bilden den kritischen Pfad.'],
+    ['Was ist Pufferzeit?', 'Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang. Der Gesamtpuffer gilt für einen ganzen Zweig und wird von allen Vorgängen darin geteilt; der freie Puffer betrifft nur den Abstand zum unmittelbaren Nachfolger.'],
+    ['Kann es mehrere kritische Pfade geben?', 'Ja. In stark verketteten Plänen sind mehrere parallele Wege gleich lang und damit alle kritisch. Das erhöht das Risiko deutlich, weil dann zwei oder mehr unabhängige Ketten gleichzeitig störungsfrei laufen müssen, damit der Termin hält.'],
+    ['Was ist der Unterschied zwischen CPM und PERT?', 'CPM rechnet mit einer festen Dauer je Vorgang und liefert Pfad und Puffer. PERT arbeitet mit drei Schätzwerten — optimistisch, wahrscheinlich, pessimistisch — und gewichtet sie als (O + 4W + P) / 6, um Unsicherheit abzubilden. In der Praxis werden beide kombiniert: PERT für die Dauern, CPM für den Pfad.'],
+    ['Was bedeutet ein negativer Puffer?', 'Dass der geforderte Endtermin früher liegt als das rechnerisch mögliche Ende. Ein Puffer von minus drei Tagen heißt: Der Plan ist drei Tage zu lang. Das ist kein Rechenfehler, sondern die klare Aussage, dass Umfang, Termin oder Mittel angepasst werden müssen.'],
+    ['Wie verkürze ich den kritischen Pfad?', 'Entweder durch Verkürzen — mehr Mittel auf kritische Vorgänge, was Geld kostet — oder durch Parallelisieren, also das Überlappen bisher aufeinanderfolgender Vorgänge, was das Risiko von Nacharbeit erhöht. Beides wirkt nur auf dem kritischen Pfad, und nach jedem Eingriff muss neu gerechnet werden, weil ein anderer Weg kritisch werden kann.'],
   ],
   related: [['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'], ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'], ['gantt-baseline-variance', 'Basisplan und Abweichung']],
 },
@@ -105,7 +263,7 @@ const G = {
   lead: 'Eine <strong>Abhängigkeit</strong> legt fest, was worauf wartet. Es gibt vier Arten, aber in der Praxis brauchen die meisten Pläne fast nur eine — und der Rest richtet häufiger Schaden an, als er nützt.',
   figIntro: 'Die vier Verknüpfungsarten im Vergleich:',
   sections: [
-    ['Ende-Anfang (EA)', '<p>Der Standardfall: B beginnt, wenn A fertig ist. „Streichen" beginnt, wenn „Spachteln" abgeschlossen ist. Rund 90 Prozent aller Verknüpfungen in realen Plänen sind von diesem Typ, und das ist gut so — sie ist die einzige Art, die jeder auf Anhieb richtig liest.</p>'],
+    ['Ende-Anfang (EA)', '<p>Der Standardfall: B beginnt, wenn A fertig ist. „Streichen“ beginnt, wenn „Spachteln“ abgeschlossen ist. Rund 90 Prozent aller Verknüpfungen in realen Plänen sind von diesem Typ, und das ist gut so — sie ist die einzige Art, die jeder auf Anhieb richtig liest.</p>'],
     ['Anfang-Anfang (AA)', '<p>B beginnt, wenn A beginnt. Nützlich für Arbeiten, die gemeinsam anlaufen: Bauleitung startet mit dem Rohbau, Qualitätssicherung mit der Entwicklung. Häufig kombiniert mit einem Zeitabstand — QS beginnt drei Tage nach Entwicklungsbeginn.</p>'],
     ['Ende-Ende (EE)', '<p>B endet, wenn A endet. Typisch für begleitende Tätigkeiten: Die Dokumentation ist fertig, wenn die Entwicklung fertig ist. Sie legt kein Startdatum fest, sondern nur einen gemeinsamen Schlusspunkt.</p>'],
     ['Anfang-Ende (AE)', '<p>B endet, wenn A beginnt. Der seltenste Fall, vor allem für Übergaben: Die alte Schicht endet, wenn die neue beginnt; das Altsystem wird abgeschaltet, wenn das neue in Betrieb geht. Wenn Sie diese Verknüpfung häufig einsetzen, ist der Plan meistens falsch herum gedacht.</p>'],
@@ -131,58 +289,94 @@ const G = {
   sections: [
     [
       "Bauprojekt",
-      "<p>Phasen: Planung und Genehmigung, Erdarbeiten, Rohbau, Gebäudehülle, Ausbau, Haustechnik, Abnahme.</p>\n        <p>Auf dem kritischen Pfad liegt fast immer die Genehmigung — nicht das Bauen. Wetterabhängige Vorgänge gehören mit Puffer versehen, und der Innenausbau kann erst beginnen, wenn das Gebäude dicht ist.</p>"
+      `<p>Phasen: Planung und Genehmigung, Erdarbeiten, Rohbau, Gebäudehülle, Ausbau, Haustechnik, Abnahme. Zeitachse in Wochen, Laufzeit typischerweise neun bis achtzehn Monate, 40 bis 70 Vorgänge.</p>
+        <p>Kein anderes Beispiel ist so stark verkettet. Fundamente vor dem Aushub gibt es nicht, Trockenbau vor der bestandenen Rohinstallationsabnahme auch nicht — hier arbeiten Ende-Anfang-Verknüpfungen und der <a href="/de/blog/critical-path-method.html">kritische Pfad</a> wirklich. Meilensteine sind Baugenehmigung erteilt, Fundament abgenommen, Gebäude dicht, Schlussabnahme.</p>
+        <p>Auf dem kritischen Pfad liegt fast immer die Genehmigung, nicht das Bauen: Sechs Wochen Behördenlauf verschieben den Bezugstermin um sechs Wochen, während drei zusätzliche Personen im Innenausbau daran nichts ändern. Wetterabhängige Vorgänge — Erdarbeiten, Beton, Dach — gehören mit eigenem Puffer versehen. Und Aushärtezeiten stehen besser als eigener Vorgang „Beton aushärten, 7 Tage“ im Plan als versteckt in einer Verzögerung im Verknüpfungsdialog, wo sie niemand wiederfindet. Ausgangspunkt: die <a href="/de/templates/construction.html">Bauvorlage</a>.</p>`
     ],
     [
       "Softwareentwicklung",
-      "<p>Phasen: Anforderungen, Architektur, Entwicklung in Iterationen, Integration, Test, Migration, Inbetriebnahme.</p>\n        <p>Hier ist die Falle die Testphase: Sie wird regelmäßig als letzter kurzer Balken geplant und dauert dann doppelt so lang. Test und Fehlerbehebung gehören als Schleife abgebildet, nicht als Einbahnstraße.</p>"
+      `<p>Phasen: Anforderungen, Architektur, Entwicklung in Iterationen, Integration, Test, Migration, Inbetriebnahme. Zeitachse in Wochen, Laufzeit drei bis neun Monate.</p>
+        <p>Der entscheidende Kunstgriff ist die Flughöhe: Halten Sie den Plan auf Ebene der Epics und Iterationen und lassen Sie die tägliche Arbeit im Ticketsystem. Eine zweiwöchige Iteration ist ein einziger Sammelbalken mit einem Meilenstein am Ende, nicht dreißig einzelne Storybalken. So bleibt der Plan für Auftraggeber lesbar, die nicht im Backlog leben.</p>
+        <p>Hier ist die Falle die Testphase: Sie wird regelmäßig als letzter kurzer Balken geplant und dauert dann doppelt so lang. Test und Fehlerbehebung gehören als Schleife abgebildet — „Testdurchlauf 1“, „Fehler beheben“, „Testdurchlauf 2“ —, nicht als Einbahnstraße. Zweiter Klassiker: die Datenmigration, die als Nebensatz auftaucht und in Wahrheit vier Wochen Probeläufe braucht. Meilensteine: Anforderungen freigegeben, funktional vollständig, Code-Freeze, Produktivstart.</p>`
     ],
     [
       "Marketingkampagne",
-      "<p>Phasen: Strategie, Konzept, Produktion, Freigaben, Ausspielung, Auswertung.</p>\n        <p>Der Engpass sind die Freigaben. Zwischen fertigem Entwurf und Veröffentlichung liegen in größeren Organisationen regelmäßig zwei Wochen, die niemand einplant.</p>"
+      `<p>Phasen: Strategie, Konzept, Produktion, Freigaben, Ausspielung, Auswertung. Mehrere Spuren laufen parallel — Text, Gestaltung, E-Mail-Strecke, bezahlte Anzeigen, Social Media —, deshalb empfiehlt sich eine Gruppierung nach Arbeitsstrang statt nach Zeit.</p>
+        <p>Der Engpass sind die Freigaben. Zwischen fertigem Entwurf und Veröffentlichung liegen in größeren Organisationen regelmäßig zwei Wochen für Fachbereich, Rechtsabteilung und Markenprüfung, die niemand einplant. Machen Sie daraus einen sichtbaren Vorgang mit realistischer Dauer statt einer stillen Annahme — das ist der einzige Weg, die Diskussion vor dem Kampagnenstart zu führen statt danach.</p>
+        <p>Rechnen Sie außerdem rückwärts von den Kanalvorlaufzeiten: Druckerzeugnisse brauchen zehn Werktage, Anzeigenprüfungen der Plattformen ein bis drei Tage, eine E-Mail-Strecke einen vollständigen Testversand mindestens 48 Stunden vor dem Versandtermin. Diese Fristen sind fest und lassen sich nicht durch mehr Personal verkürzen — sie gehören deshalb als eigene Vorgänge in den Plan.</p>
+        <p>Meilensteine: Konzept freigegeben, Motive abgenommen, Kampagnenstart, Abschlussauswertung. Ausgangspunkt: die <a href="/de/templates/marketing.html">Marketingvorlage</a>.</p>`
     ],
     [
       "Veranstaltung",
-      "<p>Phasen: Konzept, Location, Dienstleister, Programm, Anmeldung, Aufbau, Durchführung, Abbau.</p>\n        <p>Der Termin steht fest, also wird rückwärts geplant. Die Location ist der erste und einschränkendste Vorgang.</p>"
+      `<p>Phasen: Konzept, Location, Dienstleister, Programm, Anmeldung, Aufbau, Durchführung, Abbau. Zeitachse in Wochen, für die letzten zehn Tage in Tagen.</p>
+        <p>Der Termin steht fest, also wird rückwärts geplant: Man beginnt beim Veranstaltungstag und arbeitet sich zurück, bis jeder Vorgang seinen spätesten Anfangstermin hat. Genau das macht die Methode hier so wertvoll — wenn die Rückwärtsrechnung „Location buchen“ in die vergangene Woche schiebt, sind Sie bereits im Verzug und wissen es am ersten Planungstag statt zwei Monate später.</p>
+        <p>Die Location ist der erste und einschränkendste Vorgang; Catering, Technik und Programm hängen alle an ihr. Rechnen Sie bei Einladungen mit Vorlauf: Save-the-date acht Wochen vorher, Anmeldeschluss zehn Tage vorher, endgültige Teilnehmerzahl an das Catering fünf Tage vorher. Meilensteine: Vertrag unterschrieben, Anmeldung offen, Regieablauf final, Veranstaltungstag.</p>`
     ],
     [
       "Büroumzug",
-      "<p>Phasen: Flächensuche, Mietvertrag, Planung, Ausbau, IT-Infrastruktur, Umzug am Wochenende, Nacharbeiten.</p>\n        <p>Die IT bestimmt den Termin, nicht die Möbel. Leitungen und Anschlüsse haben Vorlaufzeiten von Monaten.</p>"
+      `<p>Phasen: Flächensuche, Mietvertrag, Planung, Ausbau, IT-Infrastruktur, Umzug am Wochenende, Nacharbeiten. Laufzeit sechs bis zwölf Monate für den Vorlauf, 48 Stunden für den Umzug selbst.</p>
+        <p>Die IT bestimmt den Termin, nicht die Möbel. Geschäftskundenanschlüsse haben Vorlaufzeiten von zwei bis vier Monaten, und ohne Leitung nützt der schönste Ausbau nichts. Der Anschlussauftrag gehört deshalb an den Anfang des Plans, nicht neben den Möbelkauf.</p>
+        <p>Der Umzug selbst ist ein Vorgang von wenigen Tagen mit stundenweiser Zeitachse: Freitagabend abbauen, Samstag transportieren und aufbauen, Sonntag Systeme prüfen, Montagfrüh arbeitsfähig. Dieses Wochenende verträgt keinerlei Verzug, weshalb alle Vorbereitungen einen Puffer von mindestens einer Woche davor bekommen sollten.</p>
+        <p>Der Mietvertrag ist der zweite harte Ankerpunkt: Er legt Übergabe- und Kündigungstermine der alten Fläche fest, und eine Überschneidung von vier bis sechs Wochen doppelter Miete ist keine Verschwendung, sondern der Puffer, der den Plan überhaupt erst tragfähig macht. Planen Sie außerdem explizit eine Nacharbeitsphase von zwei Wochen ein — Restarbeiten, fehlende Möbel, Mängelrügen fallen in jedem Umzug an und stehen in fast keinem Plan. Meilensteine: Vertrag unterschrieben, Ausbau abgenommen, Anschluss geschaltet, erster Arbeitstag am neuen Standort.</p>`
     ],
     [
       "Dissertation",
-      "<p>Phasen: Exposé, Literatur, Methodik, Erhebung, Auswertung, Kapitel, Korrektur, Verteidigung.</p>\n        <p>Läuft über Jahre statt Wochen, deshalb Meilensteine alle sechs bis acht Wochen. Ohne sie merkt niemand den Verzug.</p>"
+      `<p>Phasen: Exposé, Literatur, Methodik, Erhebung, Auswertung, Kapitel, Korrektur, Verteidigung. Zeitachse in Monaten, Laufzeit drei bis fünf Jahre.</p>
+        <p>Läuft über Jahre statt Wochen, deshalb Meilensteine alle sechs bis acht Wochen. Ohne sie merkt niemand den Verzug — und bei einem Vorhaben ohne Vorgesetzten, der wöchentlich nachfragt, ist genau das die eigentliche Gefahr.</p>
+        <p>Systematisch unterschätzt werden die Abhängigkeiten von Dritten: das Votum der Ethikkommission, die Rückmeldung der Betreuung zu einem Kapitel, die Verfügbarkeit von Probandinnen und Probanden. Diese Wartezeiten gehören als eigene Vorgänge mit realistischer Dauer in den Plan, denn sie liegen fast immer auf dem kritischen Pfad. Meilensteine: Exposé angenommen, Erhebung abgeschlossen, Rohfassung fertig, Einreichung, Verteidigung.</p>`
     ],
     [
       "Produkteinführung",
-      "<p>Phasen: Marktanalyse, Entwicklung, Verpackung und Zulassung, Vertriebsvorbereitung, Kampagne, Markteintritt, Nachbereitung.</p>\n        <p>Zulassungen und Zertifizierungen liegen häufig auf dem kritischen Pfad und werden fast immer zu kurz geschätzt.</p>"
+      `<p>Phasen: Marktanalyse, Entwicklung, Verpackung und Zulassung, Vertriebsvorbereitung, Kampagne, Markteintritt, Nachbereitung. Der Plan führt Produkt, Marketing, Vertrieb und Support auf einen gemeinsamen Termin zu.</p>
+        <p>Zulassungen und Zertifizierungen liegen häufig auf dem kritischen Pfad und werden fast immer zu kurz geschätzt. Eine CE-Kennzeichnung, eine Lebensmittelzulassung oder eine Prüfung durch eine benannte Stelle dauert Wochen bis Monate und lässt sich weder beschleunigen noch parallelisieren — sie gehört als erster Vorgang in den Plan, nicht als vorletzter.</p>
+        <p>Wegen der vielen bereichsübergreifenden Abhängigkeiten zeigt der kritische Pfad hier besonders deutlich, welche einzelne Verzögerung den Markteintritt verschiebt. Meilensteine: Funktionsumfang eingefroren, Zulassung erteilt, Vertrieb geschult, Markteintritt, Rückblick nach 30 Tagen.</p>`
     ],
     [
       "Einarbeitung neuer Mitarbeitender",
-      "<p>Phasen: Vorbereitung vor dem ersten Tag, Woche eins, erster Monat, erste 90 Tage.</p>\n        <p>Ein kurzer Plan, aber einer mit hoher Wirkung — Arbeitsmittel und Zugänge müssen vor dem ersten Tag fertig sein, nicht an ihm.</p>"
+      `<p>Phasen: Vorbereitung vor dem ersten Tag, Woche eins, erster Monat, erste 90 Tage. Zeitachse in Tagen für den ersten Monat, danach in Wochen; insgesamt selten mehr als 25 Vorgänge.</p>
+        <p>Ein kurzer Plan, aber einer mit hoher Wirkung — Arbeitsmittel, Zugänge und Konten müssen vor dem ersten Tag fertig sein, nicht an ihm. Der Vorgang „IT-Zugänge einrichten“ hat einen Vorlauf von fünf bis zehn Tagen und ist der einzige echte kritische Pfad dieses Plans.</p>
+        <p>Weil sich dieselbe Struktur bei jeder Einstellung wiederholt, lohnt sich hier eine Vorlage besonders: einmal sauber gebaut, danach nur das Startdatum ändern. Meilensteine: Arbeitsplatz bereit, erster Tag, erste eigenständige Aufgabe abgeschlossen, Rückmeldegespräch nach 90 Tagen.</p>`
     ],
     [
       "Was allen gemeinsam ist",
-      "<p>Vier bis acht Phasen, zwischen 20 und 60 Vorgänge, fünf bis zehn Meilensteine. Die Branche ändert die Inhalte, nicht die Struktur.</p>"
+      `<p>Vier bis acht Phasen, zwischen 20 und 60 Vorgänge, fünf bis zehn Meilensteine. Die Branche ändert die Inhalte, nicht die Struktur. Was ein gutes Gantt-Diagramm über alle acht Beispiele hinweg auszeichnet:</p>
+        <ul>
+          <li><strong>Klare Phasen.</strong> Zusammengehörige Vorgänge gruppieren, damit der Plan sich wie eine Erzählung liest und nicht wie eine Wand aus Balken.</li>
+          <li><strong>Echte Abhängigkeiten.</strong> Nur verknüpfen, was tatsächlich wartet — dann rückt bei einer Verschiebung alles Übrige von selbst mit.</li>
+          <li><strong>Sichtbare Meilensteine.</strong> Freigaben, Übergaben und Termine als eigene Punkte, an denen sich alle orientieren können.</li>
+          <li><strong>Hervorgehobener kritischer Pfad.</strong> Damit klar ist, welche Vorgänge den Endtermin bestimmen und welche nur beschäftigt aussehen.</li>
+          <li><strong>Lesbare Dichte.</strong> Etwa 20 bis 60 Balken je Ansicht; größere Vorhaben in einen Rahmenplan und Detailpläne je Phase zerlegen.</li>
+          <li><strong>Status auf einen Blick.</strong> Heute-Linie und Fertigstellungsgrad machen aus der Planung einen laufenden Bericht.</li>
+        </ul>
+        <p>Ebenso wichtig ist, was weggelassen wird. Ein Gantt-Diagramm ist ein Kommunikationsmittel, keine Aufgabendatenbank — Kleinteiliges gehört in eine Checkliste oder ein Ticketsystem, damit der Plan in einem Blick erfassbar bleibt.</p>`
     ],
     [
       "Womit anfangen",
-      "<p>Nehmen Sie das nächstliegende Beispiel als Ausgangspunkt und passen Sie es an, statt mit einem leeren Blatt zu beginnen. Unsere <a href=\"/de/templates.html\">Vorlagen</a> decken alle acht Fälle ab und lassen sich direkt im Browser öffnen.</p>"
+      `<p>Nehmen Sie das nächstliegende Beispiel als Ausgangspunkt und passen Sie es an, statt mit einem leeren Blatt zu beginnen. Unsere <a href="/de/templates.html">Vorlagen</a> decken alle acht Fälle ab und lassen sich direkt im Browser öffnen: Vorgänge austauschen, Dauern anpassen, Verknüpfungen setzen, kritischen Pfad einblenden und als PDF, PNG, XLSX oder PPTX exportieren — ohne Konto.</p>
+        <p>Wenn Ihnen die Grundlagen fehlen, beginnen Sie mit <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>; für den Aufbau von Grund auf führt die <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a> durch den gesamten Weg.</p>`
     ]
   ],
   callout: "Kopieren Sie die Phasengliederung, nicht die Termine. Die Phasen einer Branche sind über Projekte hinweg stabil — die Dauern sind es nie. Ein übernommener Zeitplan aus einem fremden Projekt ist die häufigste Ursache für einen Plan, der von Anfang an nicht stimmt.",
   faq: [
     [
       "Wie sieht ein gutes Gantt-Diagramm aus?",
-      "Vier bis acht Phasen, 20 bis 60 Vorgänge, fünf bis zehn Meilensteine und echte Abhängigkeiten. Es passt auf eine Seite und lässt sich in einer Minute erklären."
+      "Vier bis acht Phasen, 20 bis 60 Vorgänge, fünf bis zehn Meilensteine und echte Abhängigkeiten. Der kritische Pfad ist hervorgehoben, eine Heute-Linie zeigt den Stand, und der Fertigstellungsgrad ist aktuell. Es passt auf eine Seite und lässt sich in einer Minute erklären."
+    ],
+    [
+      "Welche Gantt-Diagramm-Beispiele gibt es?",
+      "Typisch sind Bauzeitenpläne, Release-Pläne in der Softwareentwicklung, Kampagnenpläne im Marketing, Veranstaltungsplanungen, Büroumzüge, Dissertationszeitpläne, Produkteinführungen und Einarbeitungspläne. Alle stellen Vorgänge auf einer Zeitachse dar und unterscheiden sich nur in Phasengliederung, Zeiteinheit und Dichte."
     ],
     [
       "Wie viele Vorgänge sind zu viele?",
-      "Ab etwa 150 pflegt den Plan niemand mehr. Dann besser in Teilpläne zerlegen."
+      "Ab etwa 150 pflegt den Plan niemand mehr. Dann besser in Teilpläne zerlegen: einen Rahmenplan auf Phasenebene für die Berichterstattung und je einen Detailplan pro Phase für das Team, das daran arbeitet."
     ],
     [
       "Kann man ein fremdes Gantt-Diagramm übernehmen?",
-      "Die Gliederung ja, die Dauern nein. Phasen sind übertragbar, Zeitschätzungen sind es nicht."
+      "Die Gliederung ja, die Dauern nein. Phasen sind über Projekte hinweg erstaunlich stabil, Zeitschätzungen dagegen hängen an Team, Umfang und Rahmenbedingungen. Ein übernommener Zeitplan ist die häufigste Ursache für einen Plan, der von Anfang an nicht stimmt."
+    ],
+    [
+      "Welche Zeiteinheit sollte die Achse haben?",
+      "Tagesspalten für Vorhaben bis etwa acht Wochen, Wochenspalten für ein halbes bis ganzes Jahr, Monatsspalten für alles darüber. Manche Pläne mischen beides — eine Veranstaltung läuft in Wochen und schaltet für die letzten zehn Tage auf Tage um."
     ]
   ],
   related: [
@@ -672,7 +866,7 @@ const G = {
     ],
     [
       "Fortschritt richtig erfassen",
-      "<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig\" ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>"
+      "<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig“ ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>"
     ],
     [
       "Wann neu basiert wird",
@@ -739,7 +933,7 @@ const G = {
     ],
     [
       "6. Meilensteine mit Dauer",
-      "<p>Ein Meilenstein hat die Dauer null. „Testphase\" ist kein Meilenstein, „Tests abgenommen\" schon. <strong>Korrektur:</strong> Meilensteine als Ergebnis formulieren, nicht als Tätigkeit.</p>"
+      "<p>Ein Meilenstein hat die Dauer null. „Testphase“ ist kein Meilenstein, „Tests abgenommen“ schon. <strong>Korrektur:</strong> Meilensteine als Ergebnis formulieren, nicht als Tätigkeit.</p>"
     ],
     [
       "7. Rückwärts vom Wunschtermin geplant",
@@ -790,7 +984,7 @@ const G = {
   sections: [
     [
       "Der Unterschied in einem Satz",
-      "<p>Ein Vorgang hat eine Dauer: Er beginnt an einem Tag und endet an einem anderen. Ein Meilenstein hat die Dauer null und wird als Raute dargestellt. „Vertrag aufsetzen\" ist ein Vorgang; „Vertrag unterzeichnet\" ist ein Meilenstein.</p>"
+      "<p>Ein Vorgang hat eine Dauer: Er beginnt an einem Tag und endet an einem anderen. Ein Meilenstein hat die Dauer null und wird als Raute dargestellt. „Vertrag aufsetzen“ ist ein Vorgang; „Vertrag unterzeichnet“ ist ein Meilenstein.</p>"
     ],
     [
       "Wozu Meilensteine wirklich dienen",
@@ -840,7 +1034,7 @@ const G = {
   metaTitle: 'S-Kurve im Projektmanagement erstellen',
   metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht.',
   date: '2026-07-19',
-  lead: 'Eine Prozentangabe allein sagt fast nichts. Sechzig Prozent fertig ist in Woche zwei hervorragend und in Woche neun eine Katastrophe. Eine <strong>S-Kurve</strong> behebt das, indem sie die kumulierte Planleistung über die Zeit aufträgt: Aus „wie weit sind wir" wird „wie weit hätten wir <em>sein sollen</em>" — und der Abstand zwischen den beiden Linien ist die Antwort.',
+  lead: 'Eine Prozentangabe allein sagt fast nichts. Sechzig Prozent fertig ist in Woche zwei hervorragend und in Woche neun eine Katastrophe. Eine <strong>S-Kurve</strong> behebt das, indem sie die kumulierte Planleistung über die Zeit aufträgt: Aus „wie weit sind wir“ wird „wie weit hätten wir <em>sein sollen</em>“ — und der Abstand zwischen den beiden Linien ist die Antwort.',
   figIntro: 'Plan gegen Ist — und was der Abstand zwischen beiden bedeutet:',
   sections: [
     ['Warum die Kurve S-förmig ist', `<p>Projekte leisten ihre Arbeit nicht gleichmäßig. Die ersten Wochen laufen langsam an — Mobilisierung, Abstimmung des Umfangs, Warten auf Freigaben —, dann beschleunigt die Mitte, weil vieles parallel läuft, und am Ende wird es wieder zäh, weil die letzten Punkte auf Abnahmen und Restarbeiten warten.</p>
@@ -873,16 +1067,16 @@ const G = {
 
     ['Warum unser Werkzeug manchmal keinen CPI anzeigt', `<p>Das sei deutlich gesagt, weil die meisten kostenlosen EVM-Rechner es genau umgekehrt handhaben.</p>
         <p>Die Ist-Kosten sind der einzige Wert, der sich nicht aus einem Terminplan ableiten lässt. Er muss aus Ihrer Buchhaltung kommen. Die verlockende Abkürzung lautet, einem zu 40 % erledigten Vorgang einfach 40 % seines Budgets als Kosten zuzuschreiben — und dann ist AC per Konstruktion gleich EV, sodass <strong>der CPI für jedes Projekt der Geschichte exakt 1,00 beträgt</strong>. Die Zahl sieht seriös aus, reagiert auf nichts und würde einem entgleisenden Budget bescheinigen, alles sei in Ordnung.</p>
-        <p>Deshalb lässt gantts.app die Kostenkennzahlen leer, bis Sie einen echten Wert unter „Ausgegeben" eintragen. Die Terminkennzahlen — SV und SPI — funktionieren weiterhin, denn dafür genügen Termine und Fortschritt. Eine fehlende Zahl ist ehrlich. Eine selbstbewusst falsche ist es nicht.</p>
+        <p>Deshalb lässt gantts.app die Kostenkennzahlen leer, bis Sie einen echten Wert unter „Ausgegeben“ eintragen. Die Terminkennzahlen — SV und SPI — funktionieren weiterhin, denn dafür genügen Termine und Fortschritt. Eine fehlende Zahl ist ehrlich. Eine selbstbewusst falsche ist es nicht.</p>
         <p>Aus demselben Grund wird die Ist-Kurve für die Vergangenheit rekonstruiert statt aufgezeichnet: Das Werkzeug speichert Ihren Fortschritt so, wie er heute ist, nicht die Historie jeder früheren Meldung. Für den heutigen Tag, an dem die Zahlen abgelesen werden, ist sie exakt, dahinter näherungsweise — und sie sagt das in der Ansicht selbst, nicht in einer Fußnote.</p>`],
 
     ['Ein Budget ist keine Voraussetzung', `<p>Die meisten Pläne enthalten überhaupt keine Kosten, und eine S-Kurve, die welche verlangt, ist eine S-Kurve, die niemand zeichnet.</p>
         <p>Ist bei keinem Vorgang ein Betrag hinterlegt, gewichtet gantts.app jeden Vorgang stattdessen nach seiner Dauer in Arbeitstagen. Die Form bleibt dieselbe, die Achse liest sich in Prozent statt in Euro — eine reine Fortschrittskurve. Tragen Sie später Kosten nach, wird ohne weiteres Zutun eine Wertkurve daraus.</p>
-        <p>Eines ist allerdings entscheidend: <strong>Setzen Sie einen Basisplan</strong>. Ohne ihn kann „geplant" nur Ihre aktuellen Termine bedeuten, und die enthalten bereits jeden bisherigen Verzug. Die Terminabweichung stünde dauerhaft auf null — eine sehr beruhigende und vollkommen nutzlose Auskunft. Basisplan ▸ Basisplan setzen, einmal, sobald der Plan freigegeben ist.</p>`],
+        <p>Eines ist allerdings entscheidend: <strong>Setzen Sie einen Basisplan</strong>. Ohne ihn kann „geplant“ nur Ihre aktuellen Termine bedeuten, und die enthalten bereits jeden bisherigen Verzug. Die Terminabweichung stünde dauerhaft auf null — eine sehr beruhigende und vollkommen nutzlose Auskunft. Basisplan ▸ Basisplan setzen, einmal, sobald der Plan freigegeben ist.</p>`],
 
     ['So erstellen Sie eine S-Kurve hier', `<ol>
           <li>Bauen oder importieren Sie Ihren Terminplan und bringen Sie die Termine grob in Ordnung.</li>
-          <li><strong>Basisplan ▸ Basisplan setzen</strong>, sobald der Plan freigegeben ist. Das friert die Bedeutung von „geplant" ein.</li>
+          <li><strong>Basisplan ▸ Basisplan setzen</strong>, sobald der Plan freigegeben ist. Das friert die Bedeutung von „geplant“ ein.</li>
           <li>Geben Sie den Vorgängen optional ein <strong>Budget</strong>, damit die Kurve in Euro statt in Tagen rechnet.</li>
           <li>Pflegen Sie den <strong>Fortschritt in Prozent</strong> — daraus entsteht die Ist-Kurve.</li>
           <li>Tragen Sie optional je Vorgang <strong>Ausgegeben</strong> ein, um CPI, Kostenabweichung und die Kostenprognose freizuschalten.</li>
@@ -895,7 +1089,7 @@ const G = {
     ['Was unterscheidet die S-Kurve von der Fertigstellungswert-Analyse?', 'Die S-Kurve ist das Bild, die Fertigstellungswert-Analyse die Rechnung dahinter. EVM beziffert den Abstand mit SV, SPI, CV und CPI; die Kurve zeigt seine Form und Richtung.'],
     ['Was bedeutet ein SPI von 0,9?', 'Sie haben 90 Prozent des Werts erwirtschaftet, den der Plan bis heute vorsah — Sie liegen also rund 10 Prozent hinter dem Termin. Unter 1,0 heißt Verzug, über 1,0 Vorsprung.'],
     ['Brauche ich Kostendaten für eine S-Kurve?', 'Nein. Ohne Kosten werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine Fortschrittskurve — dieselbe Form, abgelesen in Prozent. Kosten machen daraus eine Wertkurve und schalten die Kostenkennzahlen frei.'],
-    ['Warum wird kein CPI angezeigt?', 'Weil keine Ist-Kosten erfasst sind. Der CPI braucht echte Ausgaben; würde man ihn aus dem Fortschritt ableiten, ergäbe er für jedes Projekt exakt 1,00. Tragen Sie bei den Vorgängen „Ausgegeben" ein, und er erscheint.'],
+    ['Warum wird kein CPI angezeigt?', 'Weil keine Ist-Kosten erfasst sind. Der CPI braucht echte Ausgaben; würde man ihn aus dem Fortschritt ableiten, ergäbe er für jedes Projekt exakt 1,00. Tragen Sie bei den Vorgängen „Ausgegeben“ ein, und er erscheint.'],
     ['Kann man eine S-Kurve in Excel erstellen?', 'Ja, und die meisten tun es — um den Preis einer von Hand gepflegten Summenspalte samt Diagramm, die bei jeder Terminverschiebung neu gemacht werden muss. Wird die Kurve aus dem Terminplan erzeugt, entfällt dieser Schritt.'],
   ],
   related: [['gantt-baseline-variance', 'Basisplan und Abweichung'], ['critical-path-method', 'Der kritische Pfad'], ['3-week-lookahead-schedule', 'Die 3-Wochen-Vorschau']],
@@ -910,7 +1104,7 @@ const G = {
   figIntro: 'Derselbe Terminplan, gefiltert auf die Arbeit, die das Fenster berührt:',
   sections: [
     ['Was eine Vorschau eigentlich ist', `<p>Eine Vorschau ist ein kurzer, rollierender Auszug aus dem Gesamtterminplan — meist drei Wochen, manchmal zwei, vier oder sechs — und zeigt nur die Arbeit, die dieses Fenster berührt. Sie rollt jede Woche weiter, sodass derselbe Vorgang in mehreren aufeinanderfolgenden Vorschauen auftaucht, während er näher rückt und besser verstanden wird.</p>
-        <p>Es gibt sie, weil Gesamtterminplan und Arbeitsplanung zwei verschiedene Dokumente mit zwei verschiedenen Aufgaben sind. Der Terminplan beantwortet „werden wir rechtzeitig fertig", die Vorschau beantwortet „was passiert am Dienstag, und hat jemand den Stahl bestellt". Der Versuch, eine Baubesprechung mit einem zweihundertzeiligen Programm zu führen, ist der Grund, warum es in A0 gedruckt und danach ignoriert wird.</p>
+        <p>Es gibt sie, weil Gesamtterminplan und Arbeitsplanung zwei verschiedene Dokumente mit zwei verschiedenen Aufgaben sind. Der Terminplan beantwortet „werden wir rechtzeitig fertig“, die Vorschau beantwortet „was passiert am Dienstag, und hat jemand den Stahl bestellt“. Der Versuch, eine Baubesprechung mit einem zweihundertzeiligen Programm zu führen, ist der Grund, warum es in A0 gedruckt und danach ignoriert wird.</p>
         <p>In der Sprache des Last Planner Systems ist die Vorschau der Ort, an dem <em>Randbedingungen</em> auffallen: Die Arbeit ist nah genug, dass man fragen kann, ob Genehmigung, Material, Kolonne und Vorgewerk tatsächlich da sein werden.</p>`],
 
     ['Überlappung statt Enthaltensein — das Detail, das fast alle falsch machen', `<p>Hier ist die Regel, die eine Vorschau richtig macht, und genau die, an der von Hand gebaute Tabellen am häufigsten scheitern.</p>
@@ -920,7 +1114,7 @@ const G = {
         <p>Das ist die ganze Regel, und gantts.app wendet exakt sie an.</p>`],
 
     ['Warum das Fenster auf Montag liegt', `<p>Die Vorschau ist ein wöchentliches Ritual an einer wöchentlichen Besprechung. Ein Fenster von Donnerstag bis Donnerstag würde die Arbeitswoche mitten durchschneiden und wäre für jeden Leser wertlos.</p>
-        <p>Deshalb rastet das Fenster immer auf den Wochenanfang zurück. Öffnen Sie das Werkzeug an einem Mittwoch, erhalten Sie das Fenster, das am Montag begonnen hat, und keinen Dreiwochenblock ab Wochenmitte. Die Pfeile schieben es wochenweise weiter, wenn Sie länger vorausschauen wollen, und „Diese Woche" bringt es zurück.</p>`],
+        <p>Deshalb rastet das Fenster immer auf den Wochenanfang zurück. Öffnen Sie das Werkzeug an einem Mittwoch, erhalten Sie das Fenster, das am Montag begonnen hat, und keinen Dreiwochenblock ab Wochenmitte. Die Pfeile schieben es wochenweise weiter, wenn Sie länger vorausschauen wollen, und „Diese Woche“ bringt es zurück.</p>`],
 
     ['Erzeugen statt abtippen', `<p>An Vorlagen für die 3-Wochen-Vorschau herrscht kein Mangel — Smartsheet veröffentlicht eine, ein halbes Dutzend anderer ebenfalls, und für Bauvorhaben der US Navy gibt es sogar ein Standardformat. Jede einzelne davon ist ein leeres Raster, das Sie von Hand ausfüllen.</p>
         <p>Das ist das eigentliche Problem. Die Antwort steckt bereits im Terminplan; die wöchentliche Arbeit besteht im Abschreiben, und aus dem Abschreiben kommen die Fehler und die Veralterung. Ein Vorgang wird vergessen, oder der Gesamtplan wird geändert und die Vorschau nicht — und schon widersprechen sich beide Dokumente stillschweigend.</p>
@@ -928,7 +1122,7 @@ const G = {
         <ol>
           <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Vorschau</strong>.</li>
           <li>Wählen Sie das Fenster — 1, 2, 3, 4, 6 oder 8 Wochen.</li>
-          <li>Schieben Sie es mit den Pfeilen weiter oder springen Sie mit „Diese Woche" zu heute zurück.</li>
+          <li>Schieben Sie es mit den Pfeilen weiter oder springen Sie mit „Diese Woche“ zu heute zurück.</li>
           <li>Exportieren Sie als PDF oder PNG für die Wand, oder als Excel für die Besprechung.</li>
         </ol>
         <p>Das Diagramm zoomt auf das Fenster, sodass drei Wochen lesbar sind statt zu einem Streifen auf einer Achse über achtzehn Monate zusammengedrückt. Ein Band am oberen Rand nennt das gewählte Fenster und die Zahl der ausgeblendeten Vorgänge, denn ein gefiltertes Diagramm, das seine Filterung nicht ausweist, liest sich wie ein Plan mit fehlenden Vorgängen.</p>
@@ -936,7 +1130,7 @@ const G = {
 
     ['Ein brauchbares Dokument, nicht nur ein Filter', `<ul>
           <li><strong>Auf jede Zeile gehört ein Name.</strong> Eine Vorschau ohne Verantwortliche je Vorgang ist eine Liste von Hoffnungen. Schalten Sie die Spalte für die Zuständigkeit ein.</li>
-          <li><strong>Gliedern Sie die nahe Arbeit feiner als die ferne.</strong> Ein Vorgang „Ausbau erstes Obergeschoss — 6 Wochen" ist im Terminplan in Ordnung und in einer Vorschau nutzlos. Teilen Sie ihn auf, während er näher rückt.</li>
+          <li><strong>Gliedern Sie die nahe Arbeit feiner als die ferne.</strong> Ein Vorgang „Ausbau erstes Obergeschoss — 6 Wochen“ ist im Terminplan in Ordnung und in einer Vorschau nutzlos. Teilen Sie ihn auf, während er näher rückt.</li>
           <li><strong>Prüfen Sie Randbedingungen, nicht nur Termine.</strong> Der Wert des Blicks drei Wochen nach vorn liegt darin, dass noch Zeit bleibt, Fehlendes zu beschaffen.</li>
           <li><strong>Halten Sie sie kurz.</strong> Umfasst die Vorschau sechzig Zeilen, ist entweder das Fenster zu lang oder der Plan für diese Besprechung zu fein.</li>
         </ul>`],
@@ -978,7 +1172,7 @@ const G = {
 
     ['Was Mermaid nicht ausdrücken kann', `<p>Es ist ein Diagrammformat, keine Terminplanungsmaschine, und die Lücken zählen, sobald man hin und zurück konvertiert:</p>
         <ul>
-          <li><strong>Kein Fortschritt in Prozent.</strong> Nur <code>done</code> und <code>active</code>. Ein Vorgang mit 40 Prozent und einer mit 90 Prozent sind beide schlicht „active".</li>
+          <li><strong>Kein Fortschritt in Prozent.</strong> Nur <code>done</code> und <code>active</code>. Ein Vorgang mit 40 Prozent und einer mit 90 Prozent sind beide schlicht „active“.</li>
           <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende und Abstände haben keinen Platz.</li>
           <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen.</li>
           <li><strong>Keine Ressourcen, Kosten oder Basispläne.</strong></li>
@@ -995,9 +1189,9 @@ const G = {
         <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>`],
   ],
   faq: [
-    ['Wie schreibt man ein Gantt-Diagramm in Mermaid?', 'Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer" — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d".'],
+    ['Wie schreibt man ein Gantt-Diagramm in Mermaid?', 'Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“.'],
     ['Schließt 5d in Mermaid den Starttag ein?', 'Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag.'],
-    ['Wie funktionieren Abhängigkeiten in Mermaid gantt?', 'Über „after eineId" im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken.'],
+    ['Wie funktionieren Abhängigkeiten in Mermaid gantt?', 'Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken.'],
     ['Kann Mermaid den Fortschritt in Prozent zeigen?', 'Nein. Es gibt nur die Tags done und active. Beim Import ist jeder Prozentwert eine Schätzung; gantts.app setzt 50 Prozent und weist darauf hin.'],
     ['Wo werden Mermaid-Gantt-Diagramme dargestellt?', 'GitHub, GitLab, Notion und Obsidian rendern sie direkt in Markdown, und mermaid.live zeigt sie im Browser.'],
     ['Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?', 'Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und kopieren Sie die aktualisierte Syntax über Export ▸ Mermaid gantt wieder heraus.'],

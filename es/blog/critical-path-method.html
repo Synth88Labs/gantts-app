@@ -45,7 +45,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/critical-path-method.html#post","headline":"El método de la ruta crítica (CPM), explicado","description":"Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar.","url":"https://gantts.app/es/blog/critical-path-method.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"El método de la ruta crítica (CPM), explicado","item":"https://gantts.app/es/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Qué es la ruta crítica en un proyecto?","acceptedAnswer":{"@type":"Answer","text":"La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega."}},{"@type":"Question","name":"¿Qué diferencia hay entre holgura total y holgura libre?","acceptedAnswer":{"@type":"Answer","text":"La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre."}},{"@type":"Question","name":"¿Puede haber más de una ruta crítica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas — y el proyecto se vuelve más frágil, porque hay más tareas sin margen."}},{"@type":"Question","name":"¿Cómo veo la ruta crítica de mi plan?","acceptedAnswer":{"@type":"Answer","text":"Enlaza las dependencias y activa la ruta crítica en el editor gratuito: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/critical-path-method.html#post","headline":"El método de la ruta crítica (CPM), explicado","description":"Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar.","url":"https://gantts.app/es/blog/critical-path-method.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"El método de la ruta crítica (CPM), explicado","item":"https://gantts.app/es/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Qué es la ruta crítica en un proyecto?","acceptedAnswer":{"@type":"Answer","text":"La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega."}},{"@type":"Question","name":"¿Qué diferencia hay entre holgura total y holgura libre?","acceptedAnswer":{"@type":"Answer","text":"La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre."}},{"@type":"Question","name":"¿Puede haber más de una ruta crítica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas, y el proyecto se vuelve más frágil porque hay más tareas sin margen. También ocurre de forma sobrevenida: una cadena con un día de holgura pasa a ser crítica en cuanto ese día se consume, así que conviene vigilar las tareas de holgura muy baja, no solo las de holgura cero."}},{"@type":"Question","name":"¿Qué diferencia hay entre la pasada adelante y la pasada atrás?","acceptedAnswer":{"@type":"Answer","text":"La pasada adelante recorre la red de izquierda a derecha y calcula lo más pronto que cada tarea puede empezar y terminar; su resultado es la duración mínima del proyecto. La pasada atrás la recorre de derecha a izquierda partiendo de esa duración y calcula lo más tarde que cada tarea puede empezar y terminar sin mover la entrega. La holgura sale de restar una de otra."}},{"@type":"Question","name":"¿Qué pasa si la holgura sale negativa?","acceptedAnswer":{"@type":"Answer","text":"Significa que has fijado una fecha de entrega anterior a la duración que el propio plan necesita. No es un error de cálculo: la holgura negativa te dice exactamente cuántos días faltan. Las salidas son acortar tareas críticas, solaparlas con desfases negativos, añadir recursos o mover la fecha, y solo la última es gratis."}},{"@type":"Question","name":"¿Cómo veo la ruta crítica de mi plan?","acceptedAnswer":{"@type":"Answer","text":"Enlaza las dependencias y activa la ruta crítica en el editor gratuito: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración. La columna de holgura indica además el margen de cada tarea no crítica, que es lo que necesitas para priorizar."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,7 +81,7 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>3 min de lectura</span></p>
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>8 min de lectura</span></p>
     <div class="toc"><strong>En esta página</strong>
       <ol>
         <li><a href="#s1">¿Qué es el método de la ruta crítica?</a></li>
@@ -100,34 +100,71 @@
 
     <div class="prose">
       <h2 id="s1">¿Qué es el método de la ruta crítica?</h2>
-<p>El método de la ruta crítica (CPM, <em>critical path method</em>) es una técnica para calcular la duración mínima de un proyecto a partir de las duraciones de sus tareas y de las dependencias entre ellas.</p>
-        <p>Su resultado más útil es una lista corta: qué tareas no admiten ningún retraso. Todo lo demás tiene margen, y saber cuál es cuál cambia por completo dónde pones la atención.</p>
-        <p>Se desarrolló a finales de los años cincuenta en DuPont, para planificar paradas de planta química, en paralelo al método PERT que la Marina estadounidense creó para el programa Polaris.</p>
+<p>El método de la ruta crítica (CPM, <em>critical path method</em>) es una técnica para calcular la duración mínima de un proyecto a partir de las duraciones de sus tareas y de las dependencias entre ellas. La idea de fondo es sencilla: entre el inicio y el fin de un proyecto hay varios caminos posibles, y la duración del proyecto no es la suma de todas las tareas, sino la longitud del camino más largo. Ese camino es la ruta crítica.</p>
+        <p>Su resultado más útil es una lista corta: qué tareas no admiten ningún retraso. En un plan de cuarenta tareas suele haber ocho o diez críticas; las otras treinta tienen margen. Saber cuáles son cambia por completo dónde pones la atención, a quién llamas cuando algo se tuerce y qué recursos mueves si hay que recuperar tiempo.</p>
+        <p>Se desarrolló a finales de los años cincuenta en DuPont —Morgan Walker y James Kelley, planificando paradas de planta química— en paralelo al método PERT que la Marina estadounidense creó para el programa Polaris. Que siga enseñándose sesenta años después responde a que el problema que resuelve no ha cambiado: en cualquier plan con dependencias, la mayoría de las tareas no controlan la fecha de entrega, y sin hacer el cálculo no hay forma de distinguir cuáles sí.</p>
       <h2 id="s2">Términos que necesitas</h2>
-<p><strong>Inicio temprano (ES)</strong> y <strong>fin temprano (EF):</strong> lo más pronto que una tarea puede empezar y terminar respetando sus predecesoras.</p>
-        <p><strong>Inicio tardío (LS)</strong> y <strong>fin tardío (LF):</strong> lo más tarde que puede empezar y terminar sin retrasar el proyecto.</p>
-        <p><strong>Holgura total:</strong> LS − ES, es decir, cuánto puedes retrasar la tarea sin mover la fecha de entrega.</p>
-        <p><strong>Holgura libre:</strong> cuánto puedes retrasarla sin mover la tarea siguiente. Siempre es menor o igual que la total.</p>
-        <p><strong>Ruta crítica:</strong> la cadena de tareas con holgura total cero.</p>
+<p><strong>Inicio temprano (ES)</strong> y <strong>fin temprano (EF):</strong> lo más pronto que una tarea puede empezar y terminar respetando sus predecesoras. EF = ES + duración.</p>
+        <p><strong>Inicio tardío (LS)</strong> y <strong>fin tardío (LF):</strong> lo más tarde que puede empezar y terminar sin retrasar el proyecto. LS = LF − duración.</p>
+        <p><strong>Holgura total:</strong> LS − ES (equivalentemente, LF − EF). Cuánto puedes retrasar la tarea sin mover la fecha de entrega.</p>
+        <p><strong>Holgura libre:</strong> cuánto puedes retrasarla sin mover la tarea siguiente. Siempre es menor o igual que la total. La distinción importa cuando varias tareas comparten holgura: si dos tareas encadenadas tienen 3 días de holgura total, no tienen 3 días cada una, tienen 3 entre las dos, y la primera que los gaste deja a la segunda sin margen.</p>
+        <p><strong>Ruta crítica:</strong> la cadena de tareas con holgura total cero, desde el inicio hasta el fin.</p>
+        <p>Una convención que ahorra confusiones: cuenta en días transcurridos desde el arranque, con el proyecto empezando en el día 0. Así el ES de la primera tarea es 0, no 1, y las restas salen limpias. Al pasar a fechas de calendario, el día 0 es la mañana del primer día laborable.</p>
       <h2 id="s3">Cómo se calcula, paso a paso</h2>
-<p><strong>1. Dibuja la red.</strong> Lista las tareas con su duración y sus predecesoras inmediatas.</p>
-        <p><strong>2. Pasada adelante.</strong> Empieza en cero. Para cada tarea, ES es el mayor EF de sus predecesoras; EF = ES + duración. Al llegar al final, el mayor EF es la duración del proyecto.</p>
-        <p><strong>3. Pasada atrás.</strong> Empieza por el final con LF igual a la duración total. Para cada tarea, LF es el menor LS de sus sucesoras; LS = LF − duración.</p>
-        <p><strong>4. Calcula la holgura.</strong> Holgura total = LS − ES. Las tareas con holgura cero forman la ruta crítica.</p>
-        <p>Con desfases (lag) el procedimiento es el mismo: el desfase se suma en la pasada adelante y se resta en la de atrás.</p>
+<p><strong>1. Lista actividades y dependencias.</strong> Cada tarea con su duración y sus predecesoras inmediatas. Este paso es el que de verdad cuesta: si una predecesora falta, todo el cálculo posterior es correcto sobre una red equivocada.</p>
+        <p><strong>2. Dibuja la red.</strong> Conecta las tareas desde un único inicio hasta un único fin. Con eso quedan a la vista todos los caminos posibles, que es lo que vas a comparar.</p>
+        <p><strong>3. Pasada adelante.</strong> De izquierda a derecha. La primera tarea tiene ES = 0. Para cada tarea siguiente, ES es el <em>mayor</em> EF de sus predecesoras —mayor, porque hay que esperar a la última— y EF = ES + duración. El mayor EF del final es la duración del proyecto.</p>
+        <p><strong>4. Pasada atrás.</strong> De derecha a izquierda. La última tarea tiene LF igual a la duración total. Para cada tarea anterior, LF es el <em>menor</em> LS de sus sucesoras —menor, porque no puedes hacer esperar a ninguna— y LS = LF − duración.</p>
+        <p><strong>5. Calcula la holgura e identifica la ruta.</strong> Holgura total = LS − ES para cada tarea. Las de holgura cero, encadenadas de principio a fin, son la ruta crítica.</p>
+        <p>Dos matices habituales. Con <strong>desfases</strong> (lag) el procedimiento no cambia: el desfase se suma en la pasada adelante y se resta en la de atrás. Y si el proyecto tiene una fecha de entrega impuesta anterior a la duración calculada, la pasada atrás arranca en esa fecha y aparecen holguras negativas: no es un error de cálculo, es el plan diciéndote cuántos días te faltan.</p>
       <h2 id="s4">Un ejemplo resuelto</h2>
-<p>Cuatro tareas. A dura 3 días y no tiene predecesoras. B dura 4 y depende de A. C dura 2 y también depende de A. D dura 3 y depende de B y de C.</p>
-        <p><em>Pasada adelante:</em> A va de 0 a 3. B de 3 a 7. C de 3 a 5. D no puede empezar hasta que ambas terminen, así que arranca en 7 y termina en 10. El proyecto dura 10 días.</p>
-        <p><em>Pasada atrás:</em> D va de 7 a 10. B debe terminar en 7, luego va de 3 a 7. C debe terminar en 7, luego va de 5 a 7. A de 0 a 3.</p>
-        <p><em>Holguras:</em> A, B y D tienen holgura cero — son críticas. C tiene 2 días de holgura: puede retrasarse dos días sin afectar a nada.</p>
-        <p>Observa la consecuencia práctica: acelerar C no adelanta el proyecto ni un día. Solo mover A, B o D lo hace.</p>
+<p>Seis actividades, duraciones en días laborables, arranque en el día 0:</p>
+        <ul>
+          <li><strong>A — Planificar:</strong> 3 días, sin predecesoras</li>
+          <li><strong>B — Diseñar:</strong> 4 días, tras A</li>
+          <li><strong>C — Comprar materiales:</strong> 2 días, tras A</li>
+          <li><strong>D — Construir:</strong> 5 días, tras B</li>
+          <li><strong>E — Preparar el emplazamiento:</strong> 6 días, tras C</li>
+          <li><strong>F — Instalar y probar:</strong> 3 días, tras D y E</li>
+        </ul>
+        <p>Hay dos caminos: A → B → D → F suma 3 + 4 + 5 + 3 = 15 días, y A → C → E → F suma 3 + 2 + 6 + 3 = 14. El más largo es 15, así que esa es la duración mínima. Confirmémoslo con las dos pasadas, que además nos dan la holgura de cada tarea.</p>
+        <p><strong>Pasada adelante</strong> (ES, y EF = ES + duración):</p>
+        <ul>
+          <li>A: ES 0 → EF 3</li>
+          <li>B: ES 3 (tras A) → EF 7</li>
+          <li>C: ES 3 (tras A) → EF 5</li>
+          <li>D: ES 7 (tras B) → EF 12</li>
+          <li>E: ES 5 (tras C) → EF 11</li>
+          <li>F: ES 12 (el mayor entre el EF 12 de D y el EF 11 de E) → EF 15. <strong>Proyecto: 15 días.</strong></li>
+        </ul>
+        <p><strong>Pasada atrás</strong> (LF, y LS = LF − duración), partiendo de LF = 15 en F:</p>
+        <ul>
+          <li>F: LF 15 → LS 12</li>
+          <li>D: LF 12 (el LS de F) → LS 7</li>
+          <li>E: LF 12 (el LS de F) → LS 6</li>
+          <li>B: LF 7 (el LS de D) → LS 3</li>
+          <li>C: LF 6 (el LS de E) → LS 4</li>
+          <li>A: LF 3 (el menor entre el LS 3 de B y el LS 4 de C) → LS 0</li>
+        </ul>
+        <p><strong>Holgura total = LS − ES</strong>, tarea por tarea:</p>
+        <ul>
+          <li>A: 0 − 0 = <strong>0</strong> — crítica</li>
+          <li>B: 3 − 3 = <strong>0</strong> — crítica</li>
+          <li>C: 4 − 3 = <strong>1 día</strong></li>
+          <li>D: 7 − 7 = <strong>0</strong> — crítica</li>
+          <li>E: 6 − 5 = <strong>1 día</strong></li>
+          <li>F: 12 − 12 = <strong>0</strong> — crítica</li>
+        </ul>
+        <p>La ruta crítica es A → B → D → F, exactamente el camino largo que habíamos localizado a ojo. C y E tienen un día de holgura cada una, pero —y esto es lo que el cálculo a ojo no da— comparten esa holgura: si C se retrasa un día, E pasa a tener cero y su cadena se vuelve crítica también. Retrasa C dos días y el proyecto se va a 16.</p>
+        <p>La lectura práctica: acelerar C o E no adelanta la entrega ni un día, porque su camino ya es más corto. Si necesitas terminar en 13 días en lugar de 15, las únicas palancas reales son acortar A, B, D o F, o solaparlas con desfases negativos. Cualquier esfuerzo puesto en las otras dos es esfuerzo que no se convierte en fecha.</p>
       <h2 id="s5">CPM, PERT y cadena crítica</h2>
-<p><strong>CPM</strong> usa una duración única por tarea y es determinista. Es lo que usan la mayoría de las herramientas.</p>
-        <p><strong>PERT</strong> usa tres estimaciones —optimista, más probable y pesimista— y calcula una duración esperada ponderada. Sirve cuando la incertidumbre es alta y quieres hablar de probabilidad en lugar de una fecha única.</p>
-        <p><strong>Cadena crítica</strong> parte del CPM pero retira los márgenes individuales de cada tarea y los agrupa en un colchón al final del proyecto, para evitar que la holgura se consuma tarea a tarea. Es la respuesta de la teoría de restricciones al problema de que el margen repartido siempre desaparece.</p>
+<p><strong>CPM</strong> usa una duración única por tarea y es determinista. Es lo que calculan casi todas las herramientas cuando resaltan la ruta crítica, y funciona bien cuando las estimaciones son razonablemente conocidas.</p>
+        <p><strong>PERT</strong> usa tres estimaciones —optimista (O), más probable (M) y pesimista (P)— y calcula una duración esperada ponderada con la fórmula (O + 4M + P) / 6. Si una tarea se estima en 4, 6 y 14 días, PERT da (4 + 24 + 14) / 6 = 7 días, no los 6 que habrías escrito de memoria: la cola pesimista pesa. Sirve cuando la incertidumbre es alta y quieres hablar de probabilidad en vez de una fecha única. En la práctica lo habitual es alimentar el CPM con duraciones obtenidas por PERT.</p>
+        <p><strong>Cadena crítica</strong> parte del CPM pero añade la restricción de recursos y retira los márgenes individuales de cada tarea para agruparlos en un colchón compartido al final del proyecto. La razón es conductual: el margen repartido tarea a tarea siempre se consume —el trabajo se expande hasta llenar el tiempo disponible— mientras que un colchón único es visible y se defiende. Es la respuesta de la teoría de restricciones al problema, y encaja cuando lo que manda no son las dependencias sino que varias tareas compiten por la misma persona o la misma máquina.</p>
       <h2 id="s6">Verla automáticamente</h2>
-<p>Calcular esto a mano funciona con cuatro tareas y es inviable con cuarenta, sobre todo porque la ruta crítica cambia cada vez que ajustas una duración.</p>
-        <p>En el <a href="/es/app.html">editor gratuito</a>, enlaza las dependencias y activa la ruta crítica: se resalta sola y se recalcula al instante con cada cambio. La columna de holgura muestra además cuántos días de margen tiene cada tarea, que es la cifra que de verdad usas para decidir prioridades.</p>
+<p>Hacer las dos pasadas a mano es la mejor forma de entender el método, y también la peor forma de mantener un plan. Con seis tareas es un ejercicio de diez minutos; con cuarenta es inviable, sobre todo porque la ruta crítica no es estable: cambia cada vez que ajustas una duración, añades una dependencia o alguien reporta un retraso. Recalcularla a mano cada semana no lo hace nadie, y un plan cuya ruta crítica está desactualizada es peor que no tener ninguna, porque protege las tareas equivocadas.</p>
+        <p>En el <a href="/es/app.html">editor gratuito</a>, enlaza las dependencias y activa la ruta crítica: se resalta sola y se recalcula al instante con cada cambio. La columna de holgura muestra además cuántos días de margen tiene cada tarea, que es la cifra que de verdad usas para decidir prioridades — y la que te avisa cuando una tarea que ayer tenía tres días de margen hoy tiene cero.</p>
+        <p>Si estás empezando, conviene leer antes <a href="/es/blog/what-is-a-gantt-chart.html">qué es un diagrama de Gantt</a> y <a href="/es/blog/gantt-chart-dependencies.html">los cuatro tipos de dependencia</a>: sin dependencias bien puestas, el cálculo de la ruta crítica no tiene sobre qué trabajar.</p>
 
       <div class="callout">La ruta crítica solo existe si has puesto dependencias. Un diagrama con fechas escritas a mano no tiene red que recorrer, así que cualquier herramienta te dirá que todo es crítico o que nada lo es. Enlazar las tareas es el requisito previo, no un adorno.</div>
 
@@ -135,8 +172,10 @@
       <div class="faq">
         <details open><summary>¿Qué es la ruta crítica en un proyecto?</summary><p>La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega.</p></details>
         <details><summary>¿Qué diferencia hay entre holgura total y holgura libre?</summary><p>La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre.</p></details>
-        <details><summary>¿Puede haber más de una ruta crítica?</summary><p>Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas — y el proyecto se vuelve más frágil, porque hay más tareas sin margen.</p></details>
-        <details><summary>¿Cómo veo la ruta crítica de mi plan?</summary><p>Enlaza las dependencias y activa la ruta crítica en el <a href="/es/app.html">editor gratuito</a>: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración.</p></details>
+        <details><summary>¿Puede haber más de una ruta crítica?</summary><p>Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas, y el proyecto se vuelve más frágil porque hay más tareas sin margen. También ocurre de forma sobrevenida: una cadena con un día de holgura pasa a ser crítica en cuanto ese día se consume, así que conviene vigilar las tareas de holgura muy baja, no solo las de holgura cero.</p></details>
+        <details><summary>¿Qué diferencia hay entre la pasada adelante y la pasada atrás?</summary><p>La pasada adelante recorre la red de izquierda a derecha y calcula lo más pronto que cada tarea puede empezar y terminar; su resultado es la duración mínima del proyecto. La pasada atrás la recorre de derecha a izquierda partiendo de esa duración y calcula lo más tarde que cada tarea puede empezar y terminar sin mover la entrega. La holgura sale de restar una de otra.</p></details>
+        <details><summary>¿Qué pasa si la holgura sale negativa?</summary><p>Significa que has fijado una fecha de entrega anterior a la duración que el propio plan necesita. No es un error de cálculo: la holgura negativa te dice exactamente cuántos días faltan. Las salidas son acortar tareas críticas, solaparlas con desfases negativos, añadir recursos o mover la fecha, y solo la última es gratis.</p></details>
+        <details><summary>¿Cómo veo la ruta crítica de mi plan?</summary><p>Enlaza las dependencias y activa la ruta crítica en el <a href="/es/app.html">editor gratuito</a>: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración. La columna de holgura indica además el margen de cada tarea no crítica, que es lo que necesitas para priorizar.</p></details>
       </div>
 
       <aside class="promo">
