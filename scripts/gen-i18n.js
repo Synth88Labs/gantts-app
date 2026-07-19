@@ -49,7 +49,15 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
    blog/ are localized, their nav links must fall back to English —
    linking to a 404 is worse than linking across languages. */
 const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true,
-  'about.html': true, 'contact.html': true, 'terms.html': true, 'privacy.html': true,
+  /* Site pages come from SITE_PAGES rather than being repeated here.
+     They were repeated, and drifted: accessibility.html was generated
+     into all five locales while this map still listed only four pages,
+     so localHref fell back to the English URL and every localized
+     footer sent German, Spanish, French, Portuguese and Chinese
+     readers to the English statement. Silent, because falling back to
+     English is the DESIGNED behaviour for a page a locale does not
+     have — it just was not true here. */
+  ...Object.fromEntries(SITE_PAGES.map((p) => [p, true])),
   // renderApp() writes /<code>/app.html for every locale, so the nav and
   // every CTA must send readers there. Omitting it meant a Spanish page
   // showed "Abrir la aplicación" and then dropped the reader into the
