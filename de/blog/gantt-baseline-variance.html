@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basisplan und Abweichung im Gantt | gantts.app</title>
+  <meta name="description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Basisplan und Abweichung im Gantt | gantts.app" />
+  <meta property="og:description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta property="og:url" content="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Basisplan und Abweichung: Plan gegen Wirklichkeit" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Basisplan und Abweichung im Gantt | gantts.app" />
+  <meta name="twitter:description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-baseline-variance.html#post","headline":"Basisplan und Abweichung: Plan gegen Wirklichkeit","description":"Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen.","url":"https://gantts.app/de/blog/gantt-baseline-variance.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Basisplan und Abweichung: Plan gegen Wirklichkeit","item":"https://gantts.app/de/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist ein Basisplan?","acceptedAnswer":{"@type":"Answer","text":"Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen."}},{"@type":"Question","name":"Wann setzt man den Basisplan?","acceptedAnswer":{"@type":"Answer","text":"Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft."}},{"@type":"Question","name":"Wann sollte man neu basieren?","acceptedAnswer":{"@type":"Answer","text":"Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug."}},{"@type":"Question","name":"Was ist Terminabweichung?","acceptedAnswer":{"@type":"Answer","text":"Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/de/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/de/app.html">Gantt-Diagramm erstellen</a>
+        <a href="/de/templates.html">Vorlagen</a>
+        <a href="/de/blog/">Ratgeber</a>
+        <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-baseline-variance.html">English</option><option value="/es/blog/gantt-baseline-variance.html">Español</option><option value="/fr/">Français</option><option value="/de/blog/gantt-baseline-variance.html" selected>Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <h1>Basisplan und Abweichung: Plan gegen Wirklichkeit</h1>
+    <p class="lead">Ein <strong>Basisplan</strong> ist der eingefrorene Stand Ihres Terminplans zum Zeitpunkt der Freigabe. Ohne ihn lässt sich später nicht sagen, ob ein Projekt im Verzug ist — nur, wann es voraussichtlich fertig wird.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <div class="toc"><strong>Inhalt</strong>
+      <ol>
+        <li><a href="#s1">Was ein Basisplan ist</a></li>
+        <li><a href="#s2">Wann eingefroren wird</a></li>
+        <li><a href="#s3">Abweichung lesen</a></li>
+        <li><a href="#s4">Fortschritt richtig erfassen</a></li>
+        <li><a href="#s5">Wann neu basiert wird</a></li>
+        <li><a href="#s6">Was man daraus lernt</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>Zwei Balken je Vorgang: der Plan von damals, der Stand von heute.</p>
+      <svg viewBox="0 0 620 210" width="100%" role="img" aria-label="Diagram showing baseline bars beneath actual task bars, with the difference marked as schedule variance">
+      <line x1="0" y1="24" x2="470" y2="24" stroke="#cbd5e1" stroke-width="1"/><text x="4" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 1</text><line x1="0" y1="24" x2="0" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="98" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 2</text><line x1="94" y1="24" x2="94" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="192" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 3</text><line x1="188" y1="24" x2="188" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="286" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 4</text><line x1="282" y1="24" x2="282" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="380" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 5</text><line x1="376" y1="24" x2="376" y2="164" stroke="#eef2f7" stroke-width="1"/>
+      <rect x="0" y="34" width="180" height="14" rx="4" fill="#6c4cf1"/>
+      <rect x="0" y="50" width="180" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="196" y="46" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Design — on plan (0d)</text>
+
+      <rect x="96" y="76" width="190" height="14" rx="4" fill="#ea580c"/>
+      <rect x="96" y="92" width="120" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <line x1="216" y1="95" x2="286" y2="95" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="300" y="88" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Build — <tspan fill="#dc2626" font-weight="700">+7d late</tspan></text>
+
+      <rect x="286" y="118" width="96" height="14" rx="4" fill="#0d9488"/>
+      <rect x="310" y="134" width="96" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="396" y="130" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Test — <tspan fill="#157f4a" font-weight="700">2d early</tspan></text>
+
+      <rect x="0" y="168" width="14" height="8" rx="3" fill="#6c4cf1"/>
+      <text x="22" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">actual</text>
+      <rect x="80" y="170" width="14" height="5" rx="2.5" fill="#94a3b8" opacity="0.75"/>
+      <text x="102" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">baseline</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">Was ein Basisplan ist</h2>
+<p>Eine Kopie der Termine zum Zeitpunkt der Freigabe. Der aktuelle Plan verändert sich weiter, der Basisplan bleibt stehen. Die Differenz zwischen beiden ist die Abweichung.</p>
+        <p>Ohne Basisplan gibt es keinen Verzug — es gibt nur immer wieder ein neues Enddatum, und niemand kann sagen, wie es dorthin gekommen ist.</p>
+      <h2 id="s2">Wann eingefroren wird</h2>
+<p>Nach der Freigabe und bevor die Arbeit beginnt. Ein Basisplan, der erst gesetzt wird, wenn das Projekt schon zwei Wochen läuft, misst nichts mehr.</p>
+      <h2 id="s3">Abweichung lesen</h2>
+<p>Terminabweichung ist Ist-Ende minus Plan-Ende, in Tagen. Positiv heißt später als geplant. Interessant ist dabei nicht die Abweichung eines einzelnen Vorgangs, sondern ob sie auf dem kritischen Pfad liegt — dort schlägt sie voll auf das Projektende durch, anderswo möglicherweise gar nicht.</p>
+      <h2 id="s4">Fortschritt richtig erfassen</h2>
+<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig" ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>
+      <h2 id="s5">Wann neu basiert wird</h2>
+<p>Nur bei einer genehmigten Änderung von Umfang, Budget oder Termin — nicht, weil der alte Plan unangenehm aussieht. Wer bei jedem Verzug neu basiert, hat am Ende ein Projekt ohne Abweichungen und ohne jede Aussage.</p>
+        <p>Bewahren Sie alte Basispläne auf. Die Abfolge zeigt, wie oft und aus welchen Gründen umgeplant wurde — häufig die aufschlussreichste Information im ganzen Projekt.</p>
+      <h2 id="s6">Was man daraus lernt</h2>
+<p>Nach Projektende ist der Vergleich von Basisplan und Ist die beste verfügbare Grundlage für die nächste Schätzung. Wenn Ihre Vorgänge systematisch 30 Prozent länger dauern als geplant, ist das keine Pannenserie, sondern ein Schätzfehler mit bekanntem Faktor.</p>
+
+      <div class="callout">Basieren Sie nicht neu, weil der Plan schlecht aussieht. Ein Basisplan, der bei jedem Verzug nachgezogen wird, zeigt dauerhaft null Abweichung und erklärt am Ende nichts — er ist dann kein Messinstrument mehr, sondern eine Beschönigung.</div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details open><summary>Was ist ein Basisplan?</summary><p>Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen.</p></details>
+        <details><summary>Wann setzt man den Basisplan?</summary><p>Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft.</p></details>
+        <details><summary>Wann sollte man neu basieren?</summary><p>Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug.</p></details>
+        <details><summary>Was ist Terminabweichung?</summary><p>Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende.</p></details>
+      </div>
+
+      <h2 id="related">Passend dazu</h2>
+      <ul>
+        <li><a href="/de/blog/critical-path-method.html">Der kritische Pfad</a></li>
+        <li><a href="/de/blog/gantt-chart-mistakes.html">Häufige Planungsfehler</a></li>
+        <li><a href="/de/blog/milestones-vs-tasks.html">Meilensteine und Vorgänge</a></li>
+        <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
+      </ul>
+      <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
+      <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/de/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <a class="footer-cta" href="/de/app.html">App öffnen →</a>
+          <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Vorlagen</h4>
+          <a href="/de/templates.html">Alle Vorlagen</a>
+          <a href="/de/templates/excel.html">Excel</a>
+          <a href="/de/templates/powerpoint.html">PowerPoint</a>
+          <a href="/de/templates/construction.html">Bauwesen</a>
+        </div>
+        <div>
+          <h4>Ratgeber</h4>
+          <a href="/de/blog/">Alle Ratgeber</a>
+          <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+          <a href="/de/blog/critical-path-method.html">Methode des kritischen Pfads</a>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <a href="/de/about.html">Über uns</a>
+          <a href="/de/contact.html">Kontakt</a>
+          <a href="/de/terms.html">Nutzungsbedingungen</a>
+          <a href="/de/privacy.html">Datenschutz</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
+        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

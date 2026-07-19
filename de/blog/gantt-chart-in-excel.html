@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gantt-Diagramm in Excel erstellen | gantts.app</title>
+  <meta name="description" content="Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/de/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-in-excel.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Gantt-Diagramm in Excel erstellen | gantts.app" />
+  <meta property="og:description" content="Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt." />
+  <meta property="og:url" content="https://gantts.app/de/blog/gantt-chart-in-excel.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gantt-Diagramm in Excel erstellen | gantts.app" />
+  <meta name="twitter:description" content="Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-chart-in-excel.html#post","headline":"Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen","description":"Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt.","url":"https://gantts.app/de/blog/gantt-chart-in-excel.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen","item":"https://gantts.app/de/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Hat Excel einen Gantt-Diagrammtyp?","acceptedAnswer":{"@type":"Answer","text":"Nein. Man erstellt ihn mit einem gestapelten Balkendiagramm, dessen erste Datenreihe unsichtbar formatiert wird."}},{"@type":"Question","name":"Kann Excel Abhängigkeiten abbilden?","acceptedAnswer":{"@type":"Answer","text":"Nicht automatisch. Verschiebungen müssen für jeden Nachfolger von Hand nachgetragen werden."}},{"@type":"Question","name":"Bis zu welcher Größe eignet sich Excel?","acceptedAnswer":{"@type":"Answer","text":"Bis etwa zwanzig Vorgänge. Darüber übersteigt der Pflegeaufwand den Nutzen deutlich."}},{"@type":"Question","name":"Gibt es eine Gantt-Vorlage für Excel?","acceptedAnswer":{"@type":"Answer","text":"Ja — unsere Vorlagen lassen sich als XLSX herunterladen und enthalten die Hilfsspalten bereits."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/de/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/de/app.html">Gantt-Diagramm erstellen</a>
+        <a href="/de/templates.html">Vorlagen</a>
+        <a href="/de/blog/">Ratgeber</a>
+        <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-in-excel.html">English</option><option value="/es/blog/gantt-chart-in-excel.html">Español</option><option value="/fr/">Français</option><option value="/de/blog/gantt-chart-in-excel.html" selected>Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <h1>Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen</h1>
+    <p class="lead">Excel hat keinen Gantt-Diagrammtyp. Man baut ihn mit einem Trick: einem <strong>gestapelten Balkendiagramm</strong>, dessen erste Reihe unsichtbar gemacht wird. Das funktioniert und ist in zehn Minuten erledigt — hat aber eine klare Grenze.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <div class="toc"><strong>Inhalt</strong>
+      <ol>
+        <li><a href="#s1">Die Daten vorbereiten</a></li>
+        <li><a href="#s2">Das gestapelte Balkendiagramm einfügen</a></li>
+        <li><a href="#s3">Die erste Reihe unsichtbar machen</a></li>
+        <li><a href="#s4">Die Reihenfolge umkehren</a></li>
+        <li><a href="#s5">Datumsachse korrigieren</a></li>
+        <li><a href="#s6">Feinschliff</a></li>
+        <li><a href="#s7">Wo die Methode endet</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">Die Daten vorbereiten</h2>
+<p>Drei Spalten genügen: Vorgang, Startdatum, Dauer in Tagen. Legen Sie zusätzlich eine Hilfsspalte an, die den Abstand vom Projektstart berechnet — also Startdatum minus frühestes Startdatum.</p>
+      <h2 id="s2">Das gestapelte Balkendiagramm einfügen</h2>
+<p>Markieren Sie Vorgang, Abstand und Dauer. Einfügen → Diagramm → Balken → Gestapelte Balken. Sie erhalten zwei Reihen pro Zeile: den Abstand und die Dauer.</p>
+      <h2 id="s3">Die erste Reihe unsichtbar machen</h2>
+<p>Klicken Sie die Abstandsreihe an, dann Füllung → Keine Füllung und Rahmen → Keine Linie. Was übrig bleibt, sieht aus wie ein Gantt-Balken, der an der richtigen Stelle beginnt.</p>
+      <h2 id="s4">Die Reihenfolge umkehren</h2>
+<p>Excel stellt die erste Zeile unten dar. Achse formatieren → Kategorien in umgekehrter Reihenfolge. Damit steht der erste Vorgang oben, wie man es erwartet.</p>
+      <h2 id="s5">Datumsachse korrigieren</h2>
+<p>Die horizontale Achse zeigt zunächst Zahlen. Setzen Sie Minimum und Maximum auf die seriellen Datumswerte von Projektstart und -ende und formatieren Sie die Achse als Datum.</p>
+      <h2 id="s6">Feinschliff</h2>
+<p>Balkenabstand auf etwa 20 Prozent reduzieren, Gitternetzlinien dezent halten, Phasen farblich gruppieren. Meilensteine lassen sich als zusätzliche Datenreihe mit Rautenmarkierung ergänzen.</p>
+      <h2 id="s7">Wo die Methode endet</h2>
+<p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung.</p>
+        <p>Ebenfalls nicht vorhanden: kritischer Pfad, Ressourcenauslastung, Prozentangaben zum Fortschritt. Bis etwa zwanzig Vorgänge ist Excel eine vernünftige Wahl. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart — <a href="/de/app.html">gantts.app</a> rechnet die Verschiebungen selbst und läuft ebenfalls ohne Installation.</p>
+
+      <div class="callout">Der entscheidende Unterschied ist nicht das Aussehen, sondern das Rechnen. Ein Excel-Gantt sieht richtig aus, aktualisiert sich aber nicht. Sobald sich Termine ändern — und sie ändern sich immer — wird aus einem Plan eine Zeichnung.</div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details open><summary>Hat Excel einen Gantt-Diagrammtyp?</summary><p>Nein. Man erstellt ihn mit einem gestapelten Balkendiagramm, dessen erste Datenreihe unsichtbar formatiert wird.</p></details>
+        <details><summary>Kann Excel Abhängigkeiten abbilden?</summary><p>Nicht automatisch. Verschiebungen müssen für jeden Nachfolger von Hand nachgetragen werden.</p></details>
+        <details><summary>Bis zu welcher Größe eignet sich Excel?</summary><p>Bis etwa zwanzig Vorgänge. Darüber übersteigt der Pflegeaufwand den Nutzen deutlich.</p></details>
+        <details><summary>Gibt es eine Gantt-Vorlage für Excel?</summary><p>Ja — unsere Vorlagen lassen sich als XLSX herunterladen und enthalten die Hilfsspalten bereits.</p></details>
+      </div>
+
+      <h2 id="related">Passend dazu</h2>
+      <ul>
+        <li><a href="/de/blog/gantt-chart-in-google-sheets.html">Gantt in Google Sheets</a></li>
+        <li><a href="/de/blog/gantt-chart-in-powerpoint.html">Gantt in PowerPoint</a></li>
+        <li><a href="/de/blog/how-to-make-a-gantt-chart.html">Gantt-Diagramm erstellen</a></li>
+        <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
+      </ul>
+      <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
+      <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/de/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <a class="footer-cta" href="/de/app.html">App öffnen →</a>
+          <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Vorlagen</h4>
+          <a href="/de/templates.html">Alle Vorlagen</a>
+          <a href="/de/templates/excel.html">Excel</a>
+          <a href="/de/templates/powerpoint.html">PowerPoint</a>
+          <a href="/de/templates/construction.html">Bauwesen</a>
+        </div>
+        <div>
+          <h4>Ratgeber</h4>
+          <a href="/de/blog/">Alle Ratgeber</a>
+          <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+          <a href="/de/blog/critical-path-method.html">Methode des kritischen Pfads</a>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <a href="/de/about.html">Über uns</a>
+          <a href="/de/contact.html">Kontakt</a>
+          <a href="/de/terms.html">Nutzungsbedingungen</a>
+          <a href="/de/privacy.html">Datenschutz</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
+        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

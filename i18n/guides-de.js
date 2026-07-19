@@ -121,6 +121,481 @@ const G = {
   related: [['critical-path-method', 'Der kritische Pfad'], ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'], ['gantt-chart-mistakes', 'Häufige Planungsfehler']],
 },
 
+'gantt-chart-examples': {
+  h1: "Gantt-Diagramm Beispiele aus acht Branchen",
+  metaTitle: "Gantt-Diagramm: Beispiele aus der Praxis",
+  metaDesc: "Acht Gantt-Diagramm-Beispiele: Bau, Softwareentwicklung, Marketing, Veranstaltung, Umzug, Dissertation, Produkteinführung und Einarbeitung.",
+  date: "2026-07-19",
+  lead: "Ein <strong>Gantt-Diagramm</strong> sieht in jeder Branche anders aus — nicht in der Darstellung, sondern in der Gliederung. Acht Beispiele, jeweils mit den Phasen, die dort tatsächlich verwendet werden, und dem Vorgang, der typischerweise auf dem kritischen Pfad liegt.",
+  figIntro: "Dieselbe Darstellung, acht sehr unterschiedliche Gliederungen:",
+  sections: [
+    [
+      "Bauprojekt",
+      "<p>Phasen: Planung und Genehmigung, Erdarbeiten, Rohbau, Gebäudehülle, Ausbau, Haustechnik, Abnahme.</p>\n        <p>Auf dem kritischen Pfad liegt fast immer die Genehmigung — nicht das Bauen. Wetterabhängige Vorgänge gehören mit Puffer versehen, und der Innenausbau kann erst beginnen, wenn das Gebäude dicht ist.</p>"
+    ],
+    [
+      "Softwareentwicklung",
+      "<p>Phasen: Anforderungen, Architektur, Entwicklung in Iterationen, Integration, Test, Migration, Inbetriebnahme.</p>\n        <p>Hier ist die Falle die Testphase: Sie wird regelmäßig als letzter kurzer Balken geplant und dauert dann doppelt so lang. Test und Fehlerbehebung gehören als Schleife abgebildet, nicht als Einbahnstraße.</p>"
+    ],
+    [
+      "Marketingkampagne",
+      "<p>Phasen: Strategie, Konzept, Produktion, Freigaben, Ausspielung, Auswertung.</p>\n        <p>Der Engpass sind die Freigaben. Zwischen fertigem Entwurf und Veröffentlichung liegen in größeren Organisationen regelmäßig zwei Wochen, die niemand einplant.</p>"
+    ],
+    [
+      "Veranstaltung",
+      "<p>Phasen: Konzept, Location, Dienstleister, Programm, Anmeldung, Aufbau, Durchführung, Abbau.</p>\n        <p>Der Termin steht fest, also wird rückwärts geplant. Die Location ist der erste und einschränkendste Vorgang.</p>"
+    ],
+    [
+      "Büroumzug",
+      "<p>Phasen: Flächensuche, Mietvertrag, Planung, Ausbau, IT-Infrastruktur, Umzug am Wochenende, Nacharbeiten.</p>\n        <p>Die IT bestimmt den Termin, nicht die Möbel. Leitungen und Anschlüsse haben Vorlaufzeiten von Monaten.</p>"
+    ],
+    [
+      "Dissertation",
+      "<p>Phasen: Exposé, Literatur, Methodik, Erhebung, Auswertung, Kapitel, Korrektur, Verteidigung.</p>\n        <p>Läuft über Jahre statt Wochen, deshalb Meilensteine alle sechs bis acht Wochen. Ohne sie merkt niemand den Verzug.</p>"
+    ],
+    [
+      "Produkteinführung",
+      "<p>Phasen: Marktanalyse, Entwicklung, Verpackung und Zulassung, Vertriebsvorbereitung, Kampagne, Markteintritt, Nachbereitung.</p>\n        <p>Zulassungen und Zertifizierungen liegen häufig auf dem kritischen Pfad und werden fast immer zu kurz geschätzt.</p>"
+    ],
+    [
+      "Einarbeitung neuer Mitarbeitender",
+      "<p>Phasen: Vorbereitung vor dem ersten Tag, Woche eins, erster Monat, erste 90 Tage.</p>\n        <p>Ein kurzer Plan, aber einer mit hoher Wirkung — Arbeitsmittel und Zugänge müssen vor dem ersten Tag fertig sein, nicht an ihm.</p>"
+    ],
+    [
+      "Was allen gemeinsam ist",
+      "<p>Vier bis acht Phasen, zwischen 20 und 60 Vorgänge, fünf bis zehn Meilensteine. Die Branche ändert die Inhalte, nicht die Struktur.</p>"
+    ],
+    [
+      "Womit anfangen",
+      "<p>Nehmen Sie das nächstliegende Beispiel als Ausgangspunkt und passen Sie es an, statt mit einem leeren Blatt zu beginnen. Unsere <a href=\"/de/templates.html\">Vorlagen</a> decken alle acht Fälle ab und lassen sich direkt im Browser öffnen.</p>"
+    ]
+  ],
+  callout: "Kopieren Sie die Phasengliederung, nicht die Termine. Die Phasen einer Branche sind über Projekte hinweg stabil — die Dauern sind es nie. Ein übernommener Zeitplan aus einem fremden Projekt ist die häufigste Ursache für einen Plan, der von Anfang an nicht stimmt.",
+  faq: [
+    [
+      "Wie sieht ein gutes Gantt-Diagramm aus?",
+      "Vier bis acht Phasen, 20 bis 60 Vorgänge, fünf bis zehn Meilensteine und echte Abhängigkeiten. Es passt auf eine Seite und lässt sich in einer Minute erklären."
+    ],
+    [
+      "Wie viele Vorgänge sind zu viele?",
+      "Ab etwa 150 pflegt den Plan niemand mehr. Dann besser in Teilpläne zerlegen."
+    ],
+    [
+      "Kann man ein fremdes Gantt-Diagramm übernehmen?",
+      "Die Gliederung ja, die Dauern nein. Phasen sind übertragbar, Zeitschätzungen sind es nicht."
+    ]
+  ],
+  related: [
+    ["what-is-a-gantt-chart", "Was ist ein Gantt-Diagramm?"],
+    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"],
+    ["gantt-chart-mistakes", "Häufige Planungsfehler"]
+  ]
+},
+
+'gantt-chart-in-excel': {
+  h1: "Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen",
+  metaTitle: "Gantt-Diagramm in Excel erstellen",
+  metaDesc: "Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt.",
+  date: "2026-07-19",
+  lead: "Excel hat keinen Gantt-Diagrammtyp. Man baut ihn mit einem Trick: einem <strong>gestapelten Balkendiagramm</strong>, dessen erste Reihe unsichtbar gemacht wird. Das funktioniert und ist in zehn Minuten erledigt — hat aber eine klare Grenze.",
+  figIntro: "Der Trick in einem Bild: unsichtbarer Vorlauf plus sichtbare Dauer.",
+  sections: [
+    [
+      "Die Daten vorbereiten",
+      "<p>Drei Spalten genügen: Vorgang, Startdatum, Dauer in Tagen. Legen Sie zusätzlich eine Hilfsspalte an, die den Abstand vom Projektstart berechnet — also Startdatum minus frühestes Startdatum.</p>"
+    ],
+    [
+      "Das gestapelte Balkendiagramm einfügen",
+      "<p>Markieren Sie Vorgang, Abstand und Dauer. Einfügen → Diagramm → Balken → Gestapelte Balken. Sie erhalten zwei Reihen pro Zeile: den Abstand und die Dauer.</p>"
+    ],
+    [
+      "Die erste Reihe unsichtbar machen",
+      "<p>Klicken Sie die Abstandsreihe an, dann Füllung → Keine Füllung und Rahmen → Keine Linie. Was übrig bleibt, sieht aus wie ein Gantt-Balken, der an der richtigen Stelle beginnt.</p>"
+    ],
+    [
+      "Die Reihenfolge umkehren",
+      "<p>Excel stellt die erste Zeile unten dar. Achse formatieren → Kategorien in umgekehrter Reihenfolge. Damit steht der erste Vorgang oben, wie man es erwartet.</p>"
+    ],
+    [
+      "Datumsachse korrigieren",
+      "<p>Die horizontale Achse zeigt zunächst Zahlen. Setzen Sie Minimum und Maximum auf die seriellen Datumswerte von Projektstart und -ende und formatieren Sie die Achse als Datum.</p>"
+    ],
+    [
+      "Feinschliff",
+      "<p>Balkenabstand auf etwa 20 Prozent reduzieren, Gitternetzlinien dezent halten, Phasen farblich gruppieren. Meilensteine lassen sich als zusätzliche Datenreihe mit Rautenmarkierung ergänzen.</p>"
+    ],
+    [
+      "Wo die Methode endet",
+      "<p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung.</p>\n        <p>Ebenfalls nicht vorhanden: kritischer Pfad, Ressourcenauslastung, Prozentangaben zum Fortschritt. Bis etwa zwanzig Vorgänge ist Excel eine vernünftige Wahl. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart — <a href=\"/de/app.html\">gantts.app</a> rechnet die Verschiebungen selbst und läuft ebenfalls ohne Installation.</p>"
+    ]
+  ],
+  callout: "Der entscheidende Unterschied ist nicht das Aussehen, sondern das Rechnen. Ein Excel-Gantt sieht richtig aus, aktualisiert sich aber nicht. Sobald sich Termine ändern — und sie ändern sich immer — wird aus einem Plan eine Zeichnung.",
+  faq: [
+    [
+      "Hat Excel einen Gantt-Diagrammtyp?",
+      "Nein. Man erstellt ihn mit einem gestapelten Balkendiagramm, dessen erste Datenreihe unsichtbar formatiert wird."
+    ],
+    [
+      "Kann Excel Abhängigkeiten abbilden?",
+      "Nicht automatisch. Verschiebungen müssen für jeden Nachfolger von Hand nachgetragen werden."
+    ],
+    [
+      "Bis zu welcher Größe eignet sich Excel?",
+      "Bis etwa zwanzig Vorgänge. Darüber übersteigt der Pflegeaufwand den Nutzen deutlich."
+    ],
+    [
+      "Gibt es eine Gantt-Vorlage für Excel?",
+      "Ja — unsere Vorlagen lassen sich als XLSX herunterladen und enthalten die Hilfsspalten bereits."
+    ]
+  ],
+  related: [
+    ["gantt-chart-in-google-sheets", "Gantt in Google Sheets"],
+    ["gantt-chart-in-powerpoint", "Gantt in PowerPoint"],
+    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"]
+  ]
+},
+
+'gantt-chart-in-google-sheets': {
+  h1: "Gantt-Diagramm in Google Sheets: drei Wege",
+  metaTitle: "Gantt-Diagramm in Google Sheets",
+  metaDesc: "Drei Wege zum Gantt-Diagramm in Google Sheets: gestapelte Balken, die native Zeitachsen-Ansicht und bedingte Formatierung.",
+  date: "2026-07-19",
+  lead: "Google Sheets bietet drei Wege zu einem <strong>Gantt-Diagramm</strong>, und sie unterscheiden sich stärker, als man erwartet: einen Diagramm-Trick, eine eingebaute Zeitachsen-Ansicht und eine Variante ganz ohne Diagramm.",
+  figIntro: "Drei Wege, je nach dem, was Sie brauchen:",
+  sections: [
+    [
+      "Weg 1: gestapeltes Balkendiagramm",
+      "<p>Dasselbe Prinzip wie in Excel. Spalten für Vorgang, Abstand zum Projektstart und Dauer; dann Einfügen → Diagramm → Gestapeltes Balkendiagramm und die Abstandsreihe auf transparent setzen.</p>\n        <p>Vorteil: Es ist ein echtes Diagramm und lässt sich exportieren. Nachteil: keine Abhängigkeiten, wie überall in Tabellenkalkulationen.</p>"
+    ],
+    [
+      "Weg 2: die native Zeitachsen-Ansicht",
+      "<p>Seit einiger Zeit gibt es in Google Sheets unter Einfügen → Zeitachse eine eingebaute Ansicht. Sie erwartet Spalten mit Startdatum, Enddatum und Bezeichnung und erzeugt daraus eine interaktive Zeitleiste mit Karten.</p>\n        <p>Das ist der bequemste Weg für einen groben Überblick und braucht keinerlei Tricks. Für einen Projektplan mit Abhängigkeiten und kritischem Pfad ist es allerdings nicht gedacht.</p>"
+    ],
+    [
+      "Weg 3: bedingte Formatierung",
+      "<p>Ohne Diagramm: Legen Sie eine Spalte je Tag oder Woche an und färben Sie die Zellen per bedingter Formatierung ein, wenn das Datum zwischen Start und Ende liegt. Das Ergebnis ist ein Raster, das sich wie ein Gantt liest und direkt in der Tabelle lebt.</p>\n        <p>Praktisch für kurze Zeiträume, unübersichtlich ab etwa einem Quartal.</p>"
+    ],
+    [
+      "Welcher Weg wofür",
+      "<p>Zeitachsen-Ansicht für den schnellen Überblick, gestapelte Balken für ein Diagramm zum Weitergeben, bedingte Formatierung für einen Plan, der in der Tabelle bleibt.</p>"
+    ],
+    [
+      "Die gemeinsame Grenze",
+      "<p>Keiner der drei Wege kennt Abhängigkeiten. Der Vorteil von Sheets ist die gemeinsame Bearbeitung in Echtzeit — wenn Sie die brauchen und der Plan klein ist, ist Sheets eine gute Wahl. Sobald der Plan selbst rechnen soll, brauchen Sie ein Planungswerkzeug.</p>"
+    ]
+  ],
+  callout: "Die native Zeitachsen-Ansicht ist kein Gantt-Diagramm, auch wenn sie so aussieht. Sie stellt Zeiträume dar, kennt aber weder Verknüpfungen noch einen kritischen Pfad. Für eine Übersicht reicht das; für einen Terminplan, der Verschiebungen selbst nachzieht, nicht.",
+  faq: [
+    [
+      "Hat Google Sheets eine Gantt-Funktion?",
+      "Es gibt eine eingebaute Zeitachsen-Ansicht unter Einfügen → Zeitachse. Sie zeigt Zeiträume, unterstützt aber keine Abhängigkeiten."
+    ],
+    [
+      "Wie erstelle ich ein Gantt-Diagramm in Google Sheets?",
+      "Am flexibelsten mit einem gestapelten Balkendiagramm, dessen erste Datenreihe transparent formatiert wird."
+    ],
+    [
+      "Kann man in Google Sheets gemeinsam am Plan arbeiten?",
+      "Ja, das ist der größte Vorteil gegenüber Excel — mehrere Personen bearbeiten dieselbe Datei in Echtzeit."
+    ]
+  ],
+  related: [
+    ["gantt-chart-in-excel", "Gantt in Excel"],
+    ["gantt-chart-in-powerpoint", "Gantt in PowerPoint"],
+    ["best-free-gantt-chart-software", "Kostenlose Werkzeuge im Vergleich"]
+  ]
+},
+
+'gantt-chart-in-powerpoint': {
+  h1: "Gantt-Diagramm in PowerPoint: Diagramm oder Formen",
+  metaTitle: "Gantt-Diagramm in PowerPoint erstellen",
+  metaDesc: "Gantt-Diagramm in PowerPoint auf zwei Wegen: als gestapeltes Balkendiagramm oder aus Formen — mit Vor- und Nachteilen beider Methoden.",
+  date: "2026-07-19",
+  lead: "In PowerPoint entsteht ein <strong>Gantt-Diagramm</strong> auf zwei Wegen: als Diagramm mit Datenblatt oder von Hand aus Rechtecken. Welcher richtig ist, hängt allein davon ab, ob sich die Daten noch ändern werden.",
+  figIntro: "Zwei Wege, zwei sehr unterschiedliche Arbeitsweisen:",
+  sections: [
+    [
+      "Weg 1: gestapeltes Balkendiagramm",
+      "<p>Einfügen → Diagramm → Balken → Gestapelte Balken. PowerPoint öffnet ein kleines Excel-Blatt. Tragen Sie dort Vorgang, Abstand und Dauer ein und formatieren Sie die Abstandsreihe transparent — dieselbe Technik wie in Excel.</p>\n        <p>Vorteil: Die Balken bleiben datengebunden. Ändert sich eine Dauer, ändert sich der Balken. Nachteil: Die gestalterische Freiheit ist begrenzt.</p>"
+    ],
+    [
+      "Weg 2: aus Formen bauen",
+      "<p>Zeichnen Sie eine Zeitachse und legen Sie je Vorgang ein abgerundetes Rechteck darauf. Verwenden Sie die Ausrichtungshilfen und ein Raster, damit die Balken exakt zur Achse passen.</p>\n        <p>Vorteil: volle Kontrolle über Gestaltung, Beschriftung und Animation. Nachteil: Jede Änderung ist Handarbeit, und die Balkenlängen stimmen nur so genau, wie Sie sie ziehen.</p>"
+    ],
+    [
+      "Wann welcher Weg",
+      "<p>Formen, wenn der Plan feststeht und die Folie einer Präsentation dient. Diagramm, wenn die Zahlen sich noch bewegen. Für eine Vorstandsfolie mit fünf Phasen ist der Formen-Weg fast immer der schnellere.</p>"
+    ],
+    [
+      "Gestaltung für die Leinwand",
+      "<p>Eine Folie verträgt sechs bis zehn Balken, nicht vierzig. Reduzieren Sie auf Phasenebene und heben Sie höchstens drei Meilensteine hervor. Was auf einer Projektionsfläche aus zehn Metern lesbar sein muss, verträgt keine Detailplanung.</p>"
+    ],
+    [
+      "Der praktische Weg",
+      "<p>Am schnellsten geht es, den Plan dort zu pflegen, wo er lebt, und ihn für die Folie zu exportieren. Unsere <a href=\"/de/templates/powerpoint.html\">PowerPoint-Vorlage</a> liefert eine fertig formatierte Folie, in die Sie nur noch Ihre Vorgänge eintragen.</p>"
+    ],
+    [
+      "Häufigster Fehler",
+      "<p>Den vollständigen Projektplan auf eine Folie zwingen. Präsentation und Planung haben unterschiedliche Detailgrade — die Folie zeigt die Geschichte, der Plan zeigt die Arbeit.</p>"
+    ]
+  ],
+  callout: "Eine Präsentationsfolie ist kein Projektplan. Zeigen Sie Phasen und die drei Meilensteine, auf die es ankommt. Wer vierzig Zeilen auf eine Folie presst, erreicht nur, dass niemand hinsieht.",
+  faq: [
+    [
+      "Wie erstelle ich ein Gantt-Diagramm in PowerPoint?",
+      "Entweder als gestapeltes Balkendiagramm mit transparenter erster Reihe oder von Hand aus Rechtecken auf einer gezeichneten Zeitachse."
+    ],
+    [
+      "Welcher Weg ist besser?",
+      "Formen für feststehende Pläne und volle Gestaltungsfreiheit, Diagramm für Daten, die sich noch ändern."
+    ],
+    [
+      "Wie viele Vorgänge passen auf eine Folie?",
+      "Sechs bis zehn. Alles darüber ist aus dem Publikum nicht mehr lesbar."
+    ]
+  ],
+  related: [
+    ["gantt-chart-in-excel", "Gantt in Excel"],
+    ["gantt-chart-examples", "Beispiele aus acht Branchen"],
+    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"]
+  ]
+},
+
+'best-free-gantt-chart-software': {
+  h1: "Kostenlose Gantt-Software im Vergleich: was wirklich gratis ist",
+  metaTitle: "Kostenlose Gantt-Software im Vergleich",
+  metaDesc: "Kostenlose Gantt-Software im Vergleich: was dauerhaft gratis ist, was Freemium mit Grenzen und worauf Sie vor der Auswahl achten sollten.",
+  date: "2026-07-19",
+  lead: "Der Begriff <strong>kostenlos</strong> bedeutet bei Projektsoftware dreierlei: dauerhaft gratis, gratis bis zu einer Grenze, oder gratis für eine Testphase. Der Unterschied fällt meistens erst auf, wenn das Projekt schon läuft.",
+  figIntro: "Drei Bedeutungen von „kostenlos\", die man vorher kennen sollte:",
+  sections: [
+    [
+      "Die drei Arten von „kostenlos\"",
+      "<p><strong>Dauerhaft kostenlos</strong> heißt: voller Funktionsumfang, keine Nutzerbegrenzung, kein Ablaufdatum. Selten, und meist bei Werkzeugen ohne Serverkosten — also solchen, die im Browser rechnen statt in der Cloud.</p>\n        <p><strong>Freemium</strong> heißt: kostenlos bis zu einer Grenze. Üblich sind drei bis fünf Nutzer, zwei Projekte oder eine Obergrenze an Vorgängen. Beim Überschreiten wird der Plan kostenpflichtig, und dann liegen die Daten bereits dort.</p>\n        <p><strong>Testphase</strong> heißt: alles frei für 14 oder 30 Tage. Das ist keine kostenlose Software, sondern eine Probe.</p>"
+    ],
+    [
+      "Worauf es bei der Auswahl ankommt",
+      "<p>Vier Fragen klären fast jede Entscheidung. <em>Rechnet das Werkzeug Abhängigkeiten?</em> Ohne das ist es ein Zeichenprogramm. <em>Zeigt es den kritischen Pfad?</em> <em>Kommen die Daten wieder heraus</em> — als CSV, XLSX oder Projektdatei? <em>Wo liegen die Daten?</em> Das ist bei personenbezogenen Projektdaten keine Nebenfrage.</p>"
+    ],
+    [
+      "Die Anmeldefrage",
+      "<p>Die meisten kostenlosen Werkzeuge verlangen ein Konto, bevor man den ersten Balken sieht. Das ist selten technisch nötig — es ist der Preis. Werkzeuge, die vollständig im Browser laufen und lokal speichern, brauchen weder Konto noch Server, weil nichts hochgeladen wird.</p>\n        <p><a href=\"/de/app.html\">gantts.app</a> arbeitet so: keine Anmeldung, keine Übertragung, der Plan bleibt auf Ihrem Gerät. Das ist zugleich die Antwort auf die Datenschutzfrage — was das Gerät nicht verlässt, muss auch nicht vertraglich geregelt werden.</p>"
+    ],
+    [
+      "Und wann sich Bezahlsoftware lohnt",
+      "<p>Wenn mehrere Personen gleichzeitig am selben Plan arbeiten, wenn Ressourcen über viele Projekte hinweg geplant werden oder wenn Berichtspflichten gegenüber Auftraggebern bestehen. Für einen einzelnen Plan mit dreißig Vorgängen ist bezahlte Projektsoftware fast immer überdimensioniert.</p>"
+    ]
+  ],
+  callout: "Prüfen Sie den Export, bevor Sie anfangen. Ein Werkzeug, aus dem die Daten nicht in einem offenen Format herauskommen, ist unabhängig vom Preis teuer — der Wechsel kostet dann die Arbeit, den Plan noch einmal zu bauen.",
+  faq: [
+    [
+      "Welche Gantt-Software ist wirklich kostenlos?",
+      "Werkzeuge ohne Serverkosten — solche, die im Browser rechnen und lokal speichern — können dauerhaft kostenlos sein. Cloud-Dienste sind fast immer Freemium."
+    ],
+    [
+      "Braucht kostenlose Gantt-Software eine Anmeldung?",
+      "Die meisten ja, technisch nötig ist es aber nur bei serverbasierten Diensten. Rein clientseitige Werkzeuge kommen ohne Konto aus."
+    ],
+    [
+      "Worauf sollte man bei der Auswahl achten?",
+      "Abhängigkeiten, kritischer Pfad, Exportformate und der Speicherort der Daten. Alles andere ist Komfort."
+    ],
+    [
+      "Ist kostenlose Software für Unternehmen geeignet?",
+      "Für einzelne Pläne ja. Für gemeinsame Bearbeitung, projektübergreifende Ressourcenplanung und Berichtspflichten meist nicht."
+    ]
+  ],
+  related: [
+    ["what-is-a-gantt-chart", "Was ist ein Gantt-Diagramm?"],
+    ["gantt-chart-in-excel", "Gantt in Excel"],
+    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"]
+  ]
+},
+
+'gantt-baseline-variance': {
+  h1: "Basisplan und Abweichung: Plan gegen Wirklichkeit",
+  metaTitle: "Basisplan und Abweichung im Gantt",
+  metaDesc: "Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen.",
+  date: "2026-07-19",
+  lead: "Ein <strong>Basisplan</strong> ist der eingefrorene Stand Ihres Terminplans zum Zeitpunkt der Freigabe. Ohne ihn lässt sich später nicht sagen, ob ein Projekt im Verzug ist — nur, wann es voraussichtlich fertig wird.",
+  figIntro: "Zwei Balken je Vorgang: der Plan von damals, der Stand von heute.",
+  sections: [
+    [
+      "Was ein Basisplan ist",
+      "<p>Eine Kopie der Termine zum Zeitpunkt der Freigabe. Der aktuelle Plan verändert sich weiter, der Basisplan bleibt stehen. Die Differenz zwischen beiden ist die Abweichung.</p>\n        <p>Ohne Basisplan gibt es keinen Verzug — es gibt nur immer wieder ein neues Enddatum, und niemand kann sagen, wie es dorthin gekommen ist.</p>"
+    ],
+    [
+      "Wann eingefroren wird",
+      "<p>Nach der Freigabe und bevor die Arbeit beginnt. Ein Basisplan, der erst gesetzt wird, wenn das Projekt schon zwei Wochen läuft, misst nichts mehr.</p>"
+    ],
+    [
+      "Abweichung lesen",
+      "<p>Terminabweichung ist Ist-Ende minus Plan-Ende, in Tagen. Positiv heißt später als geplant. Interessant ist dabei nicht die Abweichung eines einzelnen Vorgangs, sondern ob sie auf dem kritischen Pfad liegt — dort schlägt sie voll auf das Projektende durch, anderswo möglicherweise gar nicht.</p>"
+    ],
+    [
+      "Fortschritt richtig erfassen",
+      "<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig\" ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>"
+    ],
+    [
+      "Wann neu basiert wird",
+      "<p>Nur bei einer genehmigten Änderung von Umfang, Budget oder Termin — nicht, weil der alte Plan unangenehm aussieht. Wer bei jedem Verzug neu basiert, hat am Ende ein Projekt ohne Abweichungen und ohne jede Aussage.</p>\n        <p>Bewahren Sie alte Basispläne auf. Die Abfolge zeigt, wie oft und aus welchen Gründen umgeplant wurde — häufig die aufschlussreichste Information im ganzen Projekt.</p>"
+    ],
+    [
+      "Was man daraus lernt",
+      "<p>Nach Projektende ist der Vergleich von Basisplan und Ist die beste verfügbare Grundlage für die nächste Schätzung. Wenn Ihre Vorgänge systematisch 30 Prozent länger dauern als geplant, ist das keine Pannenserie, sondern ein Schätzfehler mit bekanntem Faktor.</p>"
+    ]
+  ],
+  callout: "Basieren Sie nicht neu, weil der Plan schlecht aussieht. Ein Basisplan, der bei jedem Verzug nachgezogen wird, zeigt dauerhaft null Abweichung und erklärt am Ende nichts — er ist dann kein Messinstrument mehr, sondern eine Beschönigung.",
+  faq: [
+    [
+      "Was ist ein Basisplan?",
+      "Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen."
+    ],
+    [
+      "Wann setzt man den Basisplan?",
+      "Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft."
+    ],
+    [
+      "Wann sollte man neu basieren?",
+      "Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug."
+    ],
+    [
+      "Was ist Terminabweichung?",
+      "Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende."
+    ]
+  ],
+  related: [
+    ["critical-path-method", "Der kritische Pfad"],
+    ["gantt-chart-mistakes", "Häufige Planungsfehler"],
+    ["milestones-vs-tasks", "Meilensteine und Vorgänge"]
+  ]
+},
+
+'gantt-chart-mistakes': {
+  h1: "Neun Fehler bei der Projektplanung — und wie man sie behebt",
+  metaTitle: "Häufige Fehler im Gantt-Diagramm",
+  metaDesc: "Neun typische Fehler in Gantt-Diagrammen: zu viel Detail, fehlende Abhängigkeiten, kein Puffer, überlastete Ressourcen — je mit Korrektur.",
+  date: "2026-07-19",
+  lead: "Die meisten Gantt-Diagramme scheitern nicht an der Software, sondern an neun immer gleichen Fehlern. Jeder davon lässt sich in wenigen Minuten beheben, wenn man ihn erkennt.",
+  figIntro: "Neun Fehler, in der Reihenfolge, in der sie auffallen:",
+  sections: [
+    [
+      "1. Zu viel Detail",
+      "<p>Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist gefährlicher als gar keiner, weil ihm noch geglaubt wird. <strong>Korrektur:</strong> kein Vorgang unter einem Tag, keiner über einem Monat.</p>"
+    ],
+    [
+      "2. Keine Abhängigkeiten",
+      "<p>Ohne Verknüpfungen rechnet nichts nach, wenn sich etwas verschiebt. <strong>Korrektur:</strong> Verknüpfen Sie zumindest die Vorgänge auf dem kritischen Pfad, auch wenn Sie nicht jeden einzelnen erfassen.</p>"
+    ],
+    [
+      "3. Alles miteinander verknüpft",
+      "<p>Das Gegenteil ist genauso falsch: Eine durchgehende Kette hat keine Parallelität und reagiert auf jede Kleinigkeit übertrieben. <strong>Korrektur:</strong> Nur verknüpfen, was tatsächlich wartet.</p>"
+    ],
+    [
+      "4. Kein Puffer",
+      "<p>Ein Plan ohne Puffer geht davon aus, dass nichts schiefgeht. <strong>Korrektur:</strong> Puffer gebündelt vor Meilensteine und ans Ende des kritischen Pfads legen, nicht verteilt auf jeden Vorgang — verteilte Puffer werden aufgebraucht, ohne dass es jemand merkt.</p>"
+    ],
+    [
+      "5. Ressourcen ignoriert",
+      "<p>Der Plan ist rechnerisch korrekt, aber eine Person soll in derselben Woche an drei Vorgängen arbeiten. <strong>Korrektur:</strong> Auslastung prüfen, nachdem die Termine stehen.</p>"
+    ],
+    [
+      "6. Meilensteine mit Dauer",
+      "<p>Ein Meilenstein hat die Dauer null. „Testphase\" ist kein Meilenstein, „Tests abgenommen\" schon. <strong>Korrektur:</strong> Meilensteine als Ergebnis formulieren, nicht als Tätigkeit.</p>"
+    ],
+    [
+      "7. Rückwärts vom Wunschtermin geplant",
+      "<p>Wenn das Enddatum feststeht und die Dauern danach passend gemacht werden, entsteht ein Plan, der niemanden überzeugt. <strong>Korrektur:</strong> vorwärts rechnen, die Lücke sichtbar machen und dann über Umfang oder Ressourcen sprechen.</p>"
+    ],
+    [
+      "8. Nie aktualisiert",
+      "<p>Ein Plan ist ein Werkzeug, kein Dokument. <strong>Korrektur:</strong> wöchentlich fortschreiben, mit dem Basisplan vergleichen, Abweichungen benennen.</p>"
+    ],
+    [
+      "9. Nur eine Person kennt ihn",
+      "<p>Ein Plan, der nicht besprochen wurde, ist eine Meinung über die Zukunft. <strong>Korrektur:</strong> mit den Beteiligten durchgehen, bevor er gilt — meist finden sich dabei zwei bis drei vergessene Vorgänge.</p>"
+    ]
+  ],
+  callout: "Die häufigsten zwei Fehler sind Gegenteile: zu viel Detail und zu wenig Struktur. Der eine macht den Plan unpflegbar, der andere unbrauchbar. Zwischen 20 und 60 Vorgängen in vier bis acht Phasen liegt für die meisten Projekte der Bereich, in dem beides funktioniert.",
+  faq: [
+    [
+      "Was ist der häufigste Fehler in Gantt-Diagrammen?",
+      "Zu viel Detail. Ein Plan mit dreihundert Zeilen wird nach zwei Wochen nicht mehr gepflegt."
+    ],
+    [
+      "Wie viel Puffer sollte man einplanen?",
+      "Zehn bis zwanzig Prozent, gebündelt vor Meilensteinen und am Ende des kritischen Pfads statt auf jeden Vorgang verteilt."
+    ],
+    [
+      "Warum stimmt mein Plan nie?",
+      "Meist wurde rückwärts von einem Wunschtermin geplant, oder die Ressourcenauslastung wurde nie geprüft."
+    ],
+    [
+      "Wie oft sollte ein Plan aktualisiert werden?",
+      "Wöchentlich. Seltener, und die Abweichung wird erst sichtbar, wenn sie nicht mehr aufzuholen ist."
+    ]
+  ],
+  related: [
+    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"],
+    ["gantt-baseline-variance", "Basisplan und Abweichung"],
+    ["milestones-vs-tasks", "Meilensteine und Vorgänge"]
+  ]
+},
+
+'milestones-vs-tasks': {
+  h1: "Meilensteine und Vorgänge: worin sie sich unterscheiden",
+  metaTitle: "Meilenstein oder Vorgang?",
+  metaDesc: "Unterschied zwischen Meilenstein und Vorgang, wozu Meilensteine wirklich dienen, wie viele ein Projekt braucht und typische Fehler.",
+  date: "2026-07-19",
+  lead: "Ein <strong>Vorgang</strong> braucht Zeit, ein <strong>Meilenstein</strong> markiert einen Zeitpunkt. Das ist der ganze technische Unterschied — und trotzdem ist der falsche Umgang mit Meilensteinen einer der schnellsten Wege, einen Plan unlesbar zu machen.",
+  figIntro: "Balken für die Arbeit, Rauten für die Momente, auf die es ankommt:",
+  sections: [
+    [
+      "Der Unterschied in einem Satz",
+      "<p>Ein Vorgang hat eine Dauer: Er beginnt an einem Tag und endet an einem anderen. Ein Meilenstein hat die Dauer null und wird als Raute dargestellt. „Vertrag aufsetzen\" ist ein Vorgang; „Vertrag unterzeichnet\" ist ein Meilenstein.</p>"
+    ],
+    [
+      "Wozu Meilensteine wirklich dienen",
+      "<p>Zu dreierlei. Sie sind <em>Kontrollpunkte</em>, an denen entschieden wird, ob es weitergeht. Sie sind <em>die Sprache der Leitungsebene</em> — was ein Gremium von Ihrem Plan behält, sind fünf Termine, nicht fünfzig Balken. Und sie sind <em>Sequenzsperren</em>: Wer nachfolgende Arbeit an einen Meilenstein hängt, verhindert, dass sie vor Erfüllung der Bedingung anläuft.</p>"
+    ],
+    [
+      "Wie viele braucht ein Projekt?",
+      "<p>Genug, um die Geschichte zu erzählen, und nicht so viele, dass sie verwässert. Fünf bis zehn für ein mehrmonatiges Vorhaben ist ein guter Bereich. Wer einen Meilenstein pro Woche setzt, hat aus dem Plan einen Kalender gemacht, und die Rauten zeigen nichts mehr an.</p>"
+    ],
+    [
+      "Typische Fehler",
+      "<p><strong>Meilensteine, die verkleidete Vorgänge sind.</strong> Was Dauer hat, ist kein Meilenstein.</p>\n        <p><strong>Meilensteine ohne Abhängigkeiten.</strong> Eine freistehende Raute im Kalender ist Dekoration. Ihr Wert entsteht erst dadurch, dass etwas von ihr abhängt.</p>\n        <p><strong>Meilensteine, über die niemand entscheidet.</strong> Wenn am Stichtag weder freigegeben noch geprüft noch unterschrieben wird, war es eine Erinnerung, kein Meilenstein.</p>"
+    ],
+    [
+      "Der dritte Typ: Sammelbalken",
+      "<p>Neben Vorgängen und Meilensteinen gibt es Sammelbalken oder Phasen. Sie fassen ihre untergeordneten Vorgänge zusammen und übernehmen automatisch den frühesten Start und das späteste Ende. Man bearbeitet sie nicht direkt — sie bewegen sich, wenn sich ihr Inhalt bewegt.</p>\n        <p>Diese Dreiteilung aus Phase, Vorgang und Meilenstein ist es, die einen großen Plan überhaupt lesbar hält.</p>"
+    ]
+  ],
+  callout: "Ein Meilenstein ist kein kurzer Vorgang, sondern ein Vorgang der Dauer null, der für eine Entscheidung oder eine erfüllte Bedingung steht. Muss am Stichtag niemand etwas freigeben, unterschreiben oder prüfen, markieren Sie eine Erinnerung — keinen Meilenstein.",
+  faq: [
+    [
+      "Was ist ein Meilenstein im Gantt-Diagramm?",
+      "Ein Punkt ohne Dauer, der einen bedeutsamen Moment markiert: eine Freigabe, eine Übergabe oder den Beginn einer Phase. Dargestellt als Raute statt als Balken."
+    ],
+    [
+      "Wie viele Meilensteine sollte ein Projekt haben?",
+      "Fünf bis zehn bei mehrmonatiger Laufzeit. Zu viele nehmen ihnen die Funktion als Kontrollpunkt."
+    ],
+    [
+      "Kann ein Meilenstein eine Dauer haben?",
+      "Definitionsgemäß nicht. Wenn Sie einen Zeitraum darstellen müssen — etwa ein Prüffenster — ist das ein Vorgang, der mit einem Meilenstein endet."
+    ],
+    [
+      "Was ist der Unterschied zwischen Meilenstein und Phase?",
+      "Eine Phase ist ein Sammelbalken, der Vorgänge gruppiert und deren Termine übernimmt; ein Meilenstein ist ein Zeitpunkt ohne Dauer. Meist genutzt im Paar: Die Phase endet, der Meilenstein bestätigt den Abschluss."
+    ]
+  ],
+  related: [
+    ["what-is-a-gantt-chart", "Was ist ein Gantt-Diagramm?"],
+    ["gantt-chart-mistakes", "Häufige Planungsfehler"],
+    ["gantt-chart-dependencies", "Die vier Abhängigkeitsarten"]
+  ]
+},
 };
 
 const UI = {
