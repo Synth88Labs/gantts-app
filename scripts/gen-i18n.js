@@ -1177,7 +1177,16 @@ function renderSitePage(loc, key) {
     ]),
   }]);
 
-  const body = `  <article class="container narrow" style="padding-top:44px">
+  /* About, contact, terms and privacy run at the full site width, like
+     every other page type. They were the last ones left on the 724px
+     reading measure after the template pages and guides were widened,
+     which made them the odd pages out.
+
+     Same tradeoff as the guides, recorded rather than hidden: at 1200px
+     a paragraph runs long, and the legal pages are dense prose. If that
+     reads badly the fix is to use the width — a defined-terms column
+     beside the text — rather than to narrow the page again. */
+  const body = `  <article class="container" style="padding-top:44px">
     <div class="crumbs"><a href="/${code}/">gantts.app</a> › ${esc(d.h1)}</div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${esc(d.lead)}</p>
