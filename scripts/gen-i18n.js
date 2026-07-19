@@ -614,9 +614,42 @@ function renderTemplateDetail(loc, slug) {
      hand-authored HTML with no entry in new-templates.js at all, so
      reading en.related unconditionally threw for exactly those pages. */
   const relatedSrc = d.related || (en && en.related) || [];
-  const related = relatedSrc.map(r => {
-    const slugRef = Array.isArray(r) ? r[0] : r;
-    const label = Array.isArray(r) ? r[1] : null;
+
+  /* Prefer a translated sibling over the declared one.
+     The declared related slugs are chosen for topical fit, but a locale
+     part-way through translation will not have all of them. Sending the
+     reader to the English page at that point ends their visit in the
+     wrong language, three clicks into a localized journey.
+     So: keep every declared link that exists in this locale, then top up
+     from the locale's other translated templates until there are three.
+     Only if the locale has fewer than three translations at all does the
+     English fallback still apply — with 24 German templates it no longer
+     fires, and it stops firing for each locale as coverage grows. */
+  const WANT = 3;
+  const picked = [];
+  const seen = new Set([slug]);
+  for (const r of relatedSrc) {
+    const s = Array.isArray(r) ? r[0] : r;
+    if (seen.has(s)) continue;
+    if (TPL_I18N[code][s]) { picked.push([s, Array.isArray(r) ? r[1] : null]); seen.add(s); }
+  }
+  if (picked.length < WANT) {
+    for (const s of Object.keys(TPL_I18N[code])) {
+      if (picked.length >= WANT) break;
+      if (seen.has(s)) continue;
+      picked.push([s, null]); seen.add(s);
+    }
+  }
+  // Locale too thin to fill the list from translations alone — keep the
+  // declared English targets rather than shipping a one-item section.
+  if (!picked.length) {
+    for (const r of relatedSrc) {
+      const s = Array.isArray(r) ? r[0] : r;
+      if (!seen.has(s)) { picked.push([s, Array.isArray(r) ? r[1] : null]); seen.add(s); }
+    }
+  }
+
+  const related = picked.map(([slugRef, label]) => {
     const localized = TPL_I18N[code][slugRef];
     const text = label || (localized ? localized.h1 : (TPL_EN[slugRef] ? TPL_EN[slugRef].h1 : slugRef));
     return `        <li><a href="${localized ? `/${code}/templates/${slugRef}.html` : `/templates/${slugRef}.html`}">${esc(text)}</a></li>`;

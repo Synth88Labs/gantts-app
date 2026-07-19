@@ -551,6 +551,585 @@ const T = {
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos und ohne Konto.'],
     ],
   },
+
+  'refinery-turnaround-schedule': {
+    card: "Stillstand, Entleerung, Inspektion, Reparatur und Anfahren — stundengenau geplant.",
+    h1: "Gantt-Vorlage für Raffinerie-Turnaround",
+    metaTitle: "Turnaround-Terminplan Raffinerie — Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Raffinerie-Turnarounds: Vorbereitung, Abfahren, Entleeren, Inspektion, Reparatur, Wiederanfahren.",
+    lead: "Ein <strong>Turnaround-Terminplan</strong> unterscheidet sich von jedem anderen Bauplan in einem Punkt: Die Anlage verdient währenddessen kein Geld. Jeder Tag Verzug kostet Produktionsausfall, deshalb wird hier in Schichten geplant, nicht in Wochen.",
+    intro: "Sechs Phasen vom Vorlauf bis zur Übergabe an den Betrieb:",
+    phases: [
+      [
+        "Vorbereitung (T-12 bis T-1 Monate)",
+        "Arbeitsumfang einfrieren, Material und Ersatzteile beschaffen, Fremdfirmen binden, Gerüste und Kräne disponieren. <em>Meilenstein: Scope Freeze.</em>"
+      ],
+      [
+        "Abfahren und Freigabe",
+        "Lastabsenkung, Abfahren, Entleeren, Spülen, Inertisieren und Freimessen. Erst danach darf Handwerk auf die Anlage."
+      ],
+      [
+        "Inspektion und Befundung",
+        "Öffnen, Reinigen, Prüfen. Hier entsteht der Zusatzumfang, den niemand vorher kannte."
+      ],
+      [
+        "Reparatur und Austausch",
+        "Katalysatorwechsel, Wärmetauscher, Ventile, Rohrleitungsarbeiten — der kritische Pfad liegt fast immer in einer einzigen Kolonne."
+      ],
+      [
+        "Dichtheitsprüfung und Wiederherstellung",
+        "Schließen, Druckprüfung, Kalibrierung, Isolierung. <em>Meilenstein: mechanisch fertig.</em>"
+      ],
+      [
+        "Anfahren",
+        "Inertisieren, Aufheizen, Einfahren, Spezifikation erreichen und Übergabe an den Betrieb."
+      ]
+    ],
+    callout: "Planen Sie den Zusatzumfang ein, bevor Sie ihn kennen. Zwischen 10 und 30 Prozent der Turnaround-Stunden entstehen aus Befunden, die erst beim Öffnen sichtbar werden. Ein Plan ohne diesen Puffer ist nicht optimistisch, sondern unvollständig.",
+    customize: [
+      "Auf Schichten umstellen, wenn rund um die Uhr gearbeitet wird — bei einem Turnaround ist die Tagesauflösung zu grob.",
+      "Je Anlagenteil oder Kolonne eine eigene Zeile führen; sie laufen parallel und konkurrieren um dieselben Gewerke.",
+      "Freimessung und Freigabe als eigene Vorgänge abbilden, nicht als Teil des Abfahrens — sie sind der häufigste Startverzug.",
+      "Eine Puffer-Zeile für Zusatzumfang je Phase einplanen und offen ausweisen."
+    ],
+    tips: [
+      "<strong>Der Scope Freeze ist der wichtigste Meilenstein.</strong> Was danach dazukommt, verschiebt das Anfahren.",
+      "<strong>Der kritische Pfad ist meist kurz.</strong> Wenige Vorgänge bestimmen die Dauer — schützen Sie genau diese.",
+      "<strong>Fremdfirmen sind eine Ressource, kein Vorgang.</strong> Prüfen Sie die Auslastung, nicht nur die Termine.",
+      "<strong>Das Anfahren gehört in den Plan.</strong> Ein Turnaround endet mit Produkt in Spezifikation, nicht mit dem letzten Schraubenschlüssel."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Raffinerie-Turnaround?",
+        "Üblich sind 20 bis 60 Tage Stillstand, je nach Umfang und Anlagengröße. Die Vorbereitung beginnt 12 bis 18 Monate vorher."
+      ],
+      [
+        "Warum wird in Schichten statt in Tagen geplant?",
+        "Weil in der Regel rund um die Uhr gearbeitet wird. Eine Tagesauflösung versteckt genau die Übergaben, an denen Zeit verloren geht."
+      ],
+      [
+        "Was ist der häufigste Grund für Verzug?",
+        "Zusatzumfang aus der Inspektion und verspätete Freigaben nach dem Entleeren. Beides lässt sich einplanen, aber nicht wegplanen."
+      ]
+    ],
+    related: [
+      ["construction", "Bauzeitenplan"],
+      ["project-management", "Projektmanagement"],
+      ["data-center-build-schedule", "Rechenzentrum"]
+    ]
+  },
+
+  'hotel-pre-opening-critical-path': {
+    card: "Von der Bauabnahme bis zum ersten Gast: Personal, Systeme, Lizenzen, Probebetrieb.",
+    h1: "Gantt-Vorlage für die Hotel-Eröffnung (Pre-Opening)",
+    metaTitle: "Pre-Opening-Terminplan Hotel — Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Hoteleröffnung: Lizenzen, Personal, Systeme, Warenwirtschaft, Probebetrieb und Soft Opening.",
+    lead: "Ein <strong>Pre-Opening-Plan</strong> beginnt dort, wo der Bauzeitenplan aufhört. Zwischen fertigem Gebäude und erstem zahlenden Gast liegen sechs bis neun Monate Arbeit, die mit dem Bau parallel laufen muss — sonst steht ein fertiges Haus leer.",
+    intro: "Sechs Stränge, die auf den Eröffnungstag zulaufen:",
+    phases: [
+      [
+        "Genehmigungen und Lizenzen",
+        "Betriebserlaubnis, Schankerlaubnis, Brandschutzabnahme, Hygienekonzept, Anmeldungen. <em>Der längste Vorlauf im gesamten Plan.</em>"
+      ],
+      [
+        "Personal",
+        "Führungsebene zuerst, dann Abteilungsleitung, dann Team. Rekrutierung, Verträge, Schulung, Einarbeitung."
+      ],
+      [
+        "Systeme und Technik",
+        "PMS, Kassensystem, Channel Manager, Schließanlage, WLAN, Telefonie — inklusive Schnittstellen und Testbuchungen."
+      ],
+      [
+        "Vertrieb und Distribution",
+        "Ratenstruktur, OTA-Anbindung, Website, Buchbarkeit, Fotoproduktion und erste Kampagnen. <em>Meilenstein: buchbar.</em>"
+      ],
+      [
+        "Warenwirtschaft und Ausstattung",
+        "Lieferanten, Erstbestückung Wäsche, Geschirr, F&B, Reinigung und Wareneingang."
+      ],
+      [
+        "Probebetrieb und Soft Opening",
+        "Testläufe je Abteilung, Freundeslauf, Mängelliste, Nacharbeit. <em>Meilenstein: erster Gast.</em>"
+      ]
+    ],
+    callout: "Buchbarkeit ist ein früher Meilenstein, kein später. Zimmer müssen Monate vor der Eröffnung verkäuflich sein, sonst startet das Haus mit leerem Belegungskalender in die erste Saison — der teuerste vermeidbare Fehler einer Neueröffnung.",
+    customize: [
+      "Eröffnungstermin ändern — alle Stränge rücken mit, die Lizenzkette zeigt sofort, ob der Termin trägt.",
+      "Je Abteilung eine Zeile für Schulung ergänzen: Rezeption, Housekeeping, Küche, Service, Technik.",
+      "Bauabnahme als Vorgänger für Probebetrieb setzen — ohne Abnahme kein Testlauf.",
+      "Ein Soft Opening mit reduzierter Kapazität als eigene Phase führen, nicht als Eröffnungstag."
+    ],
+    tips: [
+      "<strong>Lizenzen zuerst rückwärts rechnen.</strong> Behördenlaufzeiten verhandeln nicht.",
+      "<strong>Stellen Sie die Führungsebene früh ein.</strong> Sie baut das Team auf, das den Rest des Plans erledigt.",
+      "<strong>Testbuchungen sind echte Vorgänge.</strong> Eine ungetestete Schnittstelle fällt am Eröffnungstag auf.",
+      "<strong>Rechnen Sie mit Bauverzug.</strong> Halten Sie zwischen Abnahme und Eröffnung zwei bis vier Wochen Luft."
+    ],
+    faq: [
+      [
+        "Wann beginnt die Pre-Opening-Phase?",
+        "Sechs bis zwölf Monate vor Eröffnung, abhängig von Größe und Kategorie. Vertrieb und Lizenzen starten am frühesten."
+      ],
+      [
+        "Was liegt üblicherweise auf dem kritischen Pfad?",
+        "Meist die Genehmigungskette oder die Systemintegration — selten der Bau selbst, obwohl er am sichtbarsten ist."
+      ],
+      [
+        "Braucht es ein Soft Opening?",
+        "Es ist die günstigste Art, Fehler zu finden. Zwei bis vier Wochen reduzierter Betrieb ersparen Bewertungen, die jahrelang stehen bleiben."
+      ]
+    ],
+    related: [
+      ["construction", "Bauzeitenplan"],
+      ["restaurant-opening-timeline", "Restauranteröffnung"],
+      ["event-planning", "Eventplanung"]
+    ]
+  },
+
+  'solar-farm-construction-schedule': {
+    card: "Standortsicherung, Netzanschluss, Module, Inbetriebnahme — mit Wetter- und Netzpuffer.",
+    h1: "Gantt-Vorlage für den Bau einer Photovoltaik-Freiflächenanlage",
+    metaTitle: "Bauzeitenplan Solarpark — Gantt-Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Solarparks: Standortentwicklung, Genehmigung, Netzanschluss, Montage, Inbetriebnahme.",
+    lead: "Ein <strong>Bauzeitenplan für einen Solarpark</strong> wird selten von der Montage bestimmt. Module aufzustellen geht schnell; Genehmigung und Netzanschluss dauern Jahre — und genau dort liegt der kritische Pfad.",
+    intro: "Sechs Phasen von der Fläche bis zur Einspeisung:",
+    phases: [
+      [
+        "Standortentwicklung",
+        "Flächensicherung, Pachtverträge, Netzverträglichkeitsprüfung, Ertragsgutachten. <em>Meilenstein: Netzanschlusszusage.</em>"
+      ],
+      [
+        "Genehmigung",
+        "Bauleitplanung, Umweltprüfung, Artenschutz, Baugenehmigung — der längste und unsicherste Abschnitt."
+      ],
+      [
+        "Beschaffung und Finanzierung",
+        "Module, Wechselrichter, Trafostation, Unterkonstruktion, EPC-Vergabe. <em>Meilenstein: Financial Close.</em>"
+      ],
+      [
+        "Erschließung",
+        "Zuwegung, Baustelleneinrichtung, Kampfmittelsondierung, Rammarbeiten und Kabeltrassen."
+      ],
+      [
+        "Montage",
+        "Unterkonstruktion, Module, DC-Verkabelung, Wechselrichter, Trafostation und Zaunanlage."
+      ],
+      [
+        "Netzanschluss und Inbetriebnahme",
+        "Anschluss, Prüfungen, Zertifikate, Probebetrieb. <em>Meilenstein: erste Einspeisung.</em>"
+      ]
+    ],
+    callout: "Der Netzanschluss ist der Vorgang, der das Projekt terminiert. Die Zusage des Netzbetreibers und der Termin für den Anschluss liegen außerhalb Ihrer Kontrolle und häufig Jahre voraus — planen Sie alles andere rückwärts von diesem Datum.",
+    customize: [
+      "Je Bauabschnitt eine Zeile ergänzen, wenn der Park in Teilflächen errichtet wird.",
+      "Rammarbeiten und Kabeltrassen als wetterabhängige Vorgänge kennzeichnen und im Winter mit Puffer versehen.",
+      "Financial Close als harten Meilenstein setzen — ohne ihn beginnt keine Beschaffung.",
+      "Artenschutzfenster als nicht-verfügbare Zeiträume im Kalender hinterlegen (Brutzeiten)."
+    ],
+    tips: [
+      "<strong>Genehmigung und Netz laufen parallel</strong>, aber nur eines von beidem bestimmt am Ende den Termin.",
+      "<strong>Lieferzeiten für Trafostationen sind lang.</strong> Bestellen Sie sie vor den Modulen.",
+      "<strong>Rammen braucht tragfähigen Boden.</strong> Nasse Monate kosten Wochen, nicht Tage.",
+      "<strong>Die Inbetriebnahme ist kein Tag.</strong> Prüfungen und Zertifikate ziehen sich über Wochen."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Solarparks?",
+        "Die reine Bauzeit liegt bei drei bis neun Monaten. Von der Fläche bis zur Einspeisung vergehen aber typischerweise zwei bis fünf Jahre."
+      ],
+      [
+        "Was liegt auf dem kritischen Pfad?",
+        "Fast immer Genehmigung oder Netzanschluss. Die Montage ist der kürzeste und am besten planbare Abschnitt."
+      ],
+      [
+        "Wie geht man mit Artenschutzfristen um?",
+        "Als nicht-verfügbare Zeiträume im Kalender. Dann verschiebt der Plan die Erdarbeiten automatisch statt sie unrealistisch einzuplanen."
+      ]
+    ],
+    related: [
+      ["wind-farm-construction-schedule", "Windpark"],
+      ["construction", "Bauzeitenplan"],
+      ["ev-charging-installation-schedule", "Ladeinfrastruktur"]
+    ]
+  },
+
+  'dissertation-gantt-chart': {
+    card: "Exposé, Literatur, Empirie, Kapitel, Korrektur und Abgabe über mehrere Semester.",
+    h1: "Gantt-Diagramm-Vorlage für die Dissertation",
+    metaTitle: "Zeitplan Dissertation — Gantt-Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Dissertation: Exposé, Literaturarbeit, Datenerhebung, Auswertung, Kapitel, Korrektur, Abgabe.",
+    lead: "Ein <strong>Zeitplan für die Dissertation</strong> hat ein Problem, das kein Bauprojekt kennt: Sie sind die einzige Ressource, und der Abgabetermin liegt Jahre entfernt. Ohne Zwischenmeilensteine merkt man den Verzug erst, wenn er nicht mehr aufzuholen ist.",
+    intro: "Sechs Phasen über typischerweise drei bis vier Jahre:",
+    phases: [
+      [
+        "Exposé und Betreuung",
+        "Themenfindung, Forschungsfrage, Betreuungszusage, Exposé und Annahme. <em>Meilenstein: Annahme als Doktorand.</em>"
+      ],
+      [
+        "Literatur und Theorie",
+        "Systematische Recherche, Forschungsstand, theoretischer Rahmen — läuft im Hintergrund weiter."
+      ],
+      [
+        "Methodik und Feldzugang",
+        "Studiendesign, Ethikvotum, Instrumente, Pretest und Zugang zum Feld."
+      ],
+      [
+        "Datenerhebung",
+        "Erhebung, Aufbereitung, Bereinigung. <em>Der Abschnitt mit der geringsten Kontrolle über den Terminplan.</em>"
+      ],
+      [
+        "Auswertung und Kapitel",
+        "Analyse, Ergebniskapitel, Diskussion, Einleitung und Fazit zuletzt."
+      ],
+      [
+        "Korrektur und Abgabe",
+        "Lektorat, Formatierung, Plagiatsprüfung, Druck, Abgabe und Verteidigung. <em>Meilenstein: Disputation.</em>"
+      ]
+    ],
+    callout: "Setzen Sie Kapitelmeilensteine alle sechs bis acht Wochen. Eine Dissertation scheitert selten an einem großen Problem, sondern an vielen kleinen Verzögerungen, die niemand misst, weil erst in drei Jahren jemand hinsieht.",
+    customize: [
+      "Auf Semester statt Wochen umstellen, wenn die Arbeit vierjährig angelegt ist.",
+      "Lehrverpflichtungen und Konferenzen als eigene Zeilen führen — sie kosten reale Wochen.",
+      "Ethikvotum als Vorgänger der Datenerhebung setzen; es ist der häufigste unterschätzte Vorlauf.",
+      "Puffer vor der Abgabe einplanen: Korrektur und Formatierung dauern regelmäßig doppelt so lange wie geschätzt."
+    ],
+    tips: [
+      "<strong>Schreiben Sie früh, nicht am Ende.</strong> Ein Kapitel pro Phase schlägt ein Schreibjahr.",
+      "<strong>Die Datenerhebung ist der riskanteste Vorgang.</strong> Planen Sie einen zweiten Zugang zum Feld ein.",
+      "<strong>Einleitung zuletzt.</strong> Sie lässt sich erst schreiben, wenn die Ergebnisse stehen.",
+      "<strong>Rechnen Sie die Betreuung ein.</strong> Rückmeldungen brauchen Wochen, nicht Tage."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Dissertation?",
+        "Drei bis fünf Jahre in Vollzeit, je nach Fach und Finanzierung. Empirische Arbeiten liegen meist am oberen Ende."
+      ],
+      [
+        "Wie detailliert sollte der Plan sein?",
+        "Phasen über Jahre, Aufgaben über das laufende Semester. Alles darüber hinaus ist Fiktion und veraltet in Wochen."
+      ],
+      [
+        "Was tun, wenn die Datenerhebung scheitert?",
+        "Deshalb gehört sie früh in den Plan. Wer im zweiten Jahr merkt, dass der Feldzugang nicht trägt, hat noch Alternativen."
+      ]
+    ],
+    related: [
+      ["phd-research-gantt-chart", "Promotionsprojekt"],
+      ["research", "Forschungsprojekt"],
+      ["grant-proposal-gantt-chart", "Förderantrag"]
+    ]
+  },
+
+  'wedding-planning': {
+    card: "Location, Trauung, Dienstleister, Gästeliste und der Tagesablauf selbst.",
+    h1: "Gantt-Diagramm-Vorlage für die Hochzeitsplanung",
+    metaTitle: "Zeitplan Hochzeit — kostenlose Gantt-Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Hochzeitsplanung: Location, Trauung, Dienstleister, Einladungen, Kleidung, Tagesablauf.",
+    lead: "Eine <strong>Vorlage für die Hochzeitsplanung</strong> rechnet rückwärts von einem Datum, das feststeht. Zwölf bis achtzehn Monate klingen nach viel Zeit — bis man merkt, dass die guten Locations und Fotografen zwei Jahre im Voraus ausgebucht sind.",
+    intro: "Sechs Phasen vom Termin bis zum Tag danach:",
+    phases: [
+      [
+        "Rahmen setzen",
+        "Termin, Budget, Gästezahl, Stil und Location. <em>Meilenstein: Location gebucht.</em>"
+      ],
+      [
+        "Trauung",
+        "Standesamt anmelden, Unterlagen beschaffen, kirchliche oder freie Trauung, Traurednerin oder Pfarrer."
+      ],
+      [
+        "Dienstleister",
+        "Fotograf, Catering, Musik, Floristik, Torte, Transport — in der Reihenfolge, in der sie ausgebucht sind."
+      ],
+      [
+        "Gäste und Papeterie",
+        "Save the Date, Einladungen, Rückmeldungen, Sitzplan, Menüwahl. <em>Meilenstein: Zusagen vollständig.</em>"
+      ],
+      [
+        "Kleidung und Details",
+        "Kleid, Anzug, Anproben, Ringe, Dekoration, Gastgeschenke und Probe-Styling."
+      ],
+      [
+        "Endspurt und Tag",
+        "Ablaufplan, Bestätigungen, Aufbau, Hochzeitstag, Abbau und Rückgaben."
+      ]
+    ],
+    callout: "Der Hochzeitstag selbst braucht einen eigenen Stundenplan, getrennt vom Jahresplan. Ankunft der Floristik, Fototermin, Sektempfang und Essensausgabe hängen auf die Minute voneinander ab — ein Tagesplan in Wochenauflösung hilft niemandem.",
+    customize: [
+      "Termin ändern — alle Vorlaufzeiten rücken mit, ausgebuchte Dienstleister werden sofort sichtbar.",
+      "Eine Zeile je Dienstleister, mit Anzahlung und Restzahlung als Meilensteine.",
+      "RSVP-Frist als Vorgänger für Sitzplan und Catering-Endzahl setzen.",
+      "Den Tag selbst auf Stundenauflösung umstellen und als eigenen Abschnitt führen."
+    ],
+    tips: [
+      "<strong>Location und Fotograf zuerst.</strong> Sie sind am schnellsten ausgebucht und bestimmen alles Weitere.",
+      "<strong>Zusagen kommen spät und unvollständig.</strong> Setzen Sie die Frist zwei Wochen vor dem, was das Catering braucht.",
+      "<strong>Anproben brauchen Wiederholungen.</strong> Rechnen Sie mit drei Terminen, nicht mit einem.",
+      "<strong>Planen Sie den Tag danach.</strong> Abbau, Rückgaben und Leihgut vergisst fast jeder Plan."
+    ],
+    faq: [
+      [
+        "Wie früh beginnt man mit der Hochzeitsplanung?",
+        "Zwölf bis achtzehn Monate sind üblich. Wer eine bestimmte Location oder Saison möchte, sollte zwei Jahre rechnen."
+      ],
+      [
+        "Was gehört auf den kritischen Pfad?",
+        "Location, Trauungstermin und Fotograf. Fast alles andere lässt sich anpassen, diese drei nicht."
+      ],
+      [
+        "Wie viel Puffer braucht der Hochzeitstag?",
+        "Mindestens 30 Minuten zwischen den großen Blöcken. Der Tag verzögert sich immer, und der Puffer verhindert, dass sich das aufsummiert."
+      ]
+    ],
+    related: [
+      ["event-planning", "Eventplanung"],
+      ["monthly", "Monatsplan"],
+      ["project-management", "Projektmanagement"]
+    ]
+  },
+
+  'research': {
+    card: "Antrag, Ethik, Erhebung, Analyse und Publikation als ein zusammenhängender Plan.",
+    h1: "Gantt-Diagramm-Vorlage für Forschungsprojekte",
+    metaTitle: "Gantt-Vorlage für Forschungsprojekte",
+    metaDesc: "Kostenlose Gantt-Vorlage für Forschungsprojekte: Antrag, Ethikvotum, Datenerhebung, Auswertung, Publikation und Berichtspflichten.",
+    lead: "Eine <strong>Vorlage für Forschungsprojekte</strong> muss zwei Zeitpläne gleichzeitig abbilden: den wissenschaftlichen Ablauf und die Berichtspflichten des Mittelgebers. Der zweite ist unverhandelbar und wird regelmäßig vergessen.",
+    intro: "Sechs Arbeitspakete, wie sie auch ein Antrag verlangt:",
+    phases: [
+      [
+        "Konzeption und Antrag",
+        "Fragestellung, Stand der Forschung, Arbeitsplan, Budget und Einreichung. <em>Meilenstein: Bewilligung.</em>"
+      ],
+      [
+        "Projektaufbau",
+        "Personalrekrutierung, Ethikvotum, Datenschutzkonzept, Kooperationsverträge und Infrastruktur."
+      ],
+      [
+        "Erhebung",
+        "Instrumente, Pretest, Feldzugang und Datenerhebung — meist der längste Abschnitt."
+      ],
+      [
+        "Auswertung",
+        "Aufbereitung, Analyse, Validierung und Interpretation der Ergebnisse."
+      ],
+      [
+        "Publikation",
+        "Manuskripte, Einreichung, Peer Review, Überarbeitung. <em>Rechnen Sie mit mehreren Runden.</em>"
+      ],
+      [
+        "Berichtswesen und Abschluss",
+        "Zwischenberichte, Mittelabruf, Verwendungsnachweis, Datenarchivierung und Abschlussbericht."
+      ]
+    ],
+    callout: "Peer Review ist ein Vorgang mit Dauer, kein Ereignis. Zwischen Einreichung und Annahme liegen bei den meisten Zeitschriften sechs bis zwölf Monate mit ein bis drei Überarbeitungsrunden — ein Projektplan, der die Publikation als Endpunkt setzt, endet zu früh.",
+    customize: [
+      "Je Arbeitspaket eine Zeile, passend zur Gliederung des Antrags — dann dient derselbe Plan als Berichtsgrundlage.",
+      "Berichtstermine des Mittelgebers als Meilensteine eintragen und rückwärts planen.",
+      "Ethikvotum und Datenschutzfreigabe als Vorgänger der Erhebung setzen.",
+      "Personalzeilen ergänzen, wenn Stellen befristet auslaufen — das begrenzt den Plan härter als jede Frist."
+    ],
+    tips: [
+      "<strong>Der Antragszeitplan ist der spätere Projektplan.</strong> Bauen Sie ihn gleich so, dass er trägt.",
+      "<strong>Rekrutierung dauert.</strong> Drei bis sechs Monate zwischen Bewilligung und besetzter Stelle sind normal.",
+      "<strong>Publikationen laufen parallel zur Restlaufzeit</strong>, nicht danach.",
+      "<strong>Archivierung ist eine Aufgabe.</strong> Förderer verlangen sie zunehmend als Nachweis."
+    ],
+    faq: [
+      [
+        "Wie detailliert sollte ein Forschungsplan sein?",
+        "Arbeitspakete über die Gesamtlaufzeit, Aufgaben für die kommenden sechs Monate. Der Rest wird ohnehin überarbeitet."
+      ],
+      [
+        "Wie plant man Peer Review?",
+        "Als Vorgang mit sechs bis zwölf Monaten Dauer und mindestens einer Überarbeitungsrunde."
+      ],
+      [
+        "Was ist der häufigste Planungsfehler?",
+        "Die Erhebung wird zu spät begonnen und die Berichtspflichten gar nicht eingeplant."
+      ]
+    ],
+    related: [
+      ["dissertation-gantt-chart", "Dissertation"],
+      ["grant-proposal-gantt-chart", "Förderantrag"],
+      ["clinical-trial-gantt-chart", "Klinische Studie"]
+    ]
+  },
+
+  'content-calendar': {
+    card: "Themen, Produktion, Freigaben und Veröffentlichung über Kanäle hinweg.",
+    h1: "Gantt-Diagramm-Vorlage für den Redaktionsplan",
+    metaTitle: "Redaktionsplan Vorlage — Gantt-Diagramm",
+    metaDesc: "Kostenlose Gantt-Vorlage für den Redaktionsplan: Themenplanung, Produktion, Freigabe, Veröffentlichung und Auswertung.",
+    lead: "Ein <strong>Redaktionsplan</strong> als Gantt-Diagramm zeigt etwas, das eine Tabelle verbirgt: die Produktionszeit vor jedem Veröffentlichungstermin. Der Redaktionsschluss ist nicht der Tag der Veröffentlichung, sondern zwei Wochen davor.",
+    intro: "Fünf wiederkehrende Phasen je Ausspielung:",
+    phases: [
+      [
+        "Themenplanung",
+        "Recherche, Keyword-Auswahl, Themenkonferenz und Redaktionsplan für das Quartal. <em>Meilenstein: Plan freigegeben.</em>"
+      ],
+      [
+        "Produktion",
+        "Briefing, Text, Bild, Video oder Grafik — je Format eine eigene Vorlaufzeit."
+      ],
+      [
+        "Freigabe",
+        "Fachliche Prüfung, Lektorat, rechtliche Freigabe. <em>Der Vorgang, der am häufigsten unterschätzt wird.</em>"
+      ],
+      [
+        "Veröffentlichung",
+        "Einpflegen, Metadaten, Terminierung, Verteilung über Newsletter und soziale Kanäle."
+      ],
+      [
+        "Auswertung und Aktualisierung",
+        "Reichweite, Rankings, Nachbearbeitung und Aktualisierung älterer Beiträge."
+      ]
+    ],
+    callout: "Planen Sie die Freigabe als eigenen Balken. In den meisten Teams liegt der Text drei Tage fertig herum und wartet auf eine Unterschrift — das ist keine Produktionszeit, sondern Wartezeit, und sie gehört sichtbar in den Plan.",
+    customize: [
+      "Je Kanal eine Zeile: Blog, Newsletter, LinkedIn, Video. Sie haben unterschiedliche Vorlaufzeiten.",
+      "Wiederkehrende Formate als Serie anlegen und den Rhythmus im Kalender abbilden.",
+      "Redaktionsschluss als Meilenstein je Beitrag setzen, nicht das Veröffentlichungsdatum.",
+      "Kampagnentermine und Saisonthemen als feste Termine eintragen und rückwärts planen."
+    ],
+    tips: [
+      "<strong>Rückwärts vom Veröffentlichungstermin planen.</strong> Nur so wird die Vorlaufzeit sichtbar.",
+      "<strong>Bild und Video brauchen mehr Vorlauf als Text.</strong> Starten Sie sie parallel, nicht danach.",
+      "<strong>Aktualisierungen sind Produktion.</strong> Bestehende Beiträge zu überarbeiten bringt oft mehr als neue.",
+      "<strong>Halten Sie 20 Prozent frei</strong> für Aktuelles, das nicht im Quartalsplan stand."
+    ],
+    faq: [
+      [
+        "Wie weit im Voraus plant man einen Redaktionsplan?",
+        "Ein Quartal in Themen, vier bis sechs Wochen in konkreten Aufgaben. Weiter im Voraus veraltet der Plan schneller, als er nützt."
+      ],
+      [
+        "Warum ein Gantt-Diagramm statt einer Tabelle?",
+        "Weil es die Produktionszeit vor der Veröffentlichung zeigt und Engpässe sichtbar macht, wenn drei Beiträge dieselbe Woche brauchen."
+      ],
+      [
+        "Wie geht man mit kurzfristigen Themen um?",
+        "Puffer im Plan lassen. Ein zu 100 Prozent verplanter Redaktionsplan bricht bei der ersten aktuellen Meldung."
+      ]
+    ],
+    related: [
+      ["marketing", "Marketingplan"],
+      ["monthly", "Monatsplan"],
+      ["product-launch", "Produkteinführung"]
+    ]
+  },
+
+  '30-60-90-day-plan': {
+    card: "Einarbeitung in drei Etappen: verstehen, mitarbeiten, eigenständig liefern.",
+    h1: "30-60-90-Tage-Plan als Gantt-Diagramm",
+    metaTitle: "30-60-90-Tage-Plan — kostenlose Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für den 30-60-90-Tage-Plan: Einarbeitung, erste Beiträge und eigenständige Verantwortung.",
+    lead: "Ein <strong>30-60-90-Tage-Plan</strong> beantwortet eine Frage, die in jedem neuen Job gestellt wird: Was tun Sie zuerst? Als Gantt-Diagramm zeigt er nicht nur die Ziele, sondern auch, was parallel läuft und was aufeinander aufbaut.",
+    intro: "Drei Etappen mit klar unterschiedlichem Charakter:",
+    phases: [
+      [
+        "Tag 1–30: Verstehen",
+        "Einarbeitung, Gespräche mit Team und Schnittstellen, Produkt, Kunden, Zahlen und Prozesse. <em>Meilenstein: Bestandsaufnahme vorgestellt.</em>"
+      ],
+      [
+        "Tag 31–60: Mitarbeiten",
+        "Erste eigene Aufgaben, Übernahme laufender Themen, Verbesserungsvorschläge und erste sichtbare Ergebnisse."
+      ],
+      [
+        "Tag 61–90: Liefern",
+        "Eigenverantwortliche Themen, ein abgeschlossenes Vorhaben und ein Plan für die folgenden sechs Monate. <em>Meilenstein: Probezeitgespräch.</em>"
+      ]
+    ],
+    callout: "Widerstehen Sie dem Reflex, in den ersten 30 Tagen etwas zu verändern. Der häufigste Fehler neuer Führungskräfte ist eine Umstellung, die vor der Bestandsaufnahme beschlossen wurde — sie kostet mehr Vertrauen, als das schnelle Ergebnis wert ist.",
+    customize: [
+      "Je Etappe drei bis fünf Ziele statt einer langen Aufgabenliste — mehr wird in 30 Tagen nicht erreicht.",
+      "Gesprächstermine mit Schlüsselpersonen als eigene Vorgänge in den ersten zwei Wochen setzen.",
+      "Feedbackgespräche nach 30, 60 und 90 Tagen als Meilensteine eintragen.",
+      "Auf 100 Tage erweitern, wenn die Probezeit sechs Monate beträgt."
+    ],
+    tips: [
+      "<strong>Zuhören ist ein Vorgang.</strong> Planen Sie Gespräche ein, statt sie nebenbei zu führen.",
+      "<strong>Ein sichtbares Ergebnis bis Tag 60</strong> wiegt schwerer als fünf angefangene Themen.",
+      "<strong>Schreiben Sie auf, was Sie in Woche eins seltsam finden.</strong> Nach acht Wochen fällt es Ihnen nicht mehr auf.",
+      "<strong>Stimmen Sie den Plan mit der Führungskraft ab.</strong> Ein Plan, den nur Sie kennen, misst nichts."
+    ],
+    faq: [
+      [
+        "Für wen eignet sich ein 30-60-90-Tage-Plan?",
+        "Für neue Stellen, für Führungswechsel und als Vorbereitung auf das Vorstellungsgespräch, wenn danach gefragt wird."
+      ],
+      [
+        "Wie konkret sollten die Ziele sein?",
+        "Konkret genug, dass jemand anderes beurteilen kann, ob sie erreicht sind. „Team kennenlernen\" ist kein Ziel, „mit allen zwölf Teammitgliedern gesprochen\" schon."
+      ],
+      [
+        "Was, wenn die Realität den Plan überholt?",
+        "Dann passen Sie ihn an. Der Wert liegt in der Ausrichtung der ersten Wochen, nicht in der Einhaltung eines Balkens."
+      ]
+    ],
+    related: [
+      ["employee-onboarding", "Einarbeitung"],
+      ["project-management", "Projektmanagement"],
+      ["monthly", "Monatsplan"]
+    ]
+  },
+
+  'product-roadmap': {
+    card: "Themen, Releases und Abhängigkeiten über Quartale statt Wochen.",
+    h1: "Gantt-Diagramm-Vorlage für die Produkt-Roadmap",
+    metaTitle: "Produkt-Roadmap Vorlage — Gantt-Diagramm",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Produkt-Roadmap: Themen, Initiativen, Releases, Abhängigkeiten und Quartalsplanung.",
+    lead: "Eine <strong>Produkt-Roadmap</strong> ist kein Sprintplan. Sie arbeitet in Quartalen und Themen, nicht in Tickets — und ihr eigentlicher Wert liegt darin, Abhängigkeiten zwischen Initiativen zu zeigen, bevor sie zum Problem werden.",
+    intro: "Vier Ebenen, die eine Roadmap tragen:",
+    phases: [
+      [
+        "Themen",
+        "Die zwei bis vier strategischen Schwerpunkte des Jahres. Alles Weitere ordnet sich ihnen unter."
+      ],
+      [
+        "Initiativen",
+        "Größere Vorhaben je Thema, mit grober Dauer in Wochen und einem klaren Ergebnis. <em>Die eigentlichen Balken der Roadmap.</em>"
+      ],
+      [
+        "Releases",
+        "Termingebundene Auslieferungen, Betas und öffentliche Ankündigungen als Meilensteine."
+      ],
+      [
+        "Abhängigkeiten und Voraussetzungen",
+        "Plattformarbeit, Migrationen, externe Partner und alles, was andere Initiativen blockiert."
+      ]
+    ],
+    callout: "Setzen Sie keine Tagesgenauigkeit für das dritte und vierte Quartal. Eine Roadmap, die zwölf Monate im Voraus konkrete Termine zusagt, wird entweder gebrochen oder eingehalten, indem man den Umfang heimlich reduziert. Grobe Balken sind ehrlicher und halten länger.",
+    customize: [
+      "Je Thema eine Gruppe mit den zugehörigen Initiativen darunter.",
+      "Auf Quartalsauflösung umstellen — Wochen suggerieren eine Genauigkeit, die nicht besteht.",
+      "Abhängigkeiten zwischen Initiativen verknüpfen; sie sind der Hauptgrund für Verschiebungen.",
+      "Eine Zeile für Plattform- und Wartungsarbeit führen, sonst verschwindet sie und passiert trotzdem."
+    ],
+    tips: [
+      "<strong>Nicht mehr als vier Themen.</strong> Eine Roadmap mit zwölf Schwerpunkten hat keine.",
+      "<strong>Späte Quartale gröber halten.</strong> Genauigkeit ohne Grundlage ist ein Versprechen, kein Plan.",
+      "<strong>Zeigen Sie Abhängigkeiten offen.</strong> Sie erklären Verschiebungen, bevor sie erklärt werden müssen.",
+      "<strong>Reservieren Sie 20 Prozent Kapazität</strong> für Wartung, Fehler und Ungeplantes."
+    ],
+    faq: [
+      [
+        "Wie unterscheidet sich eine Roadmap vom Sprintplan?",
+        "Die Roadmap arbeitet in Quartalen und Themen, der Sprintplan in Tagen und Tickets. Sie beantworten unterschiedliche Fragen."
+      ],
+      [
+        "Sollte eine Roadmap Termine enthalten?",
+        "Für das laufende Quartal ja, für spätere nur grobe Zeiträume. Alles andere sind Zusagen ohne Grundlage."
+      ],
+      [
+        "Wie oft aktualisiert man sie?",
+        "Einmal je Quartal grundlegend, monatlich in kleinen Anpassungen."
+      ]
+    ],
+    related: [
+      ["sprint", "Sprintplan"],
+      ["software-development", "Softwareentwicklung"],
+      ["product-launch", "Produkteinführung"]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish
