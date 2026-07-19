@@ -85,6 +85,7 @@
         { icon: '🔗', name: 'Copy shareable link', run: () => E.run('link') },
         { icon: '🖨', name: 'Print', run: () => E.run('print') },
         { icon: '📈', name: 'S-curve — planned vs actual progress', run: () => App.openSCurve() },
+        { icon: '▤', name: 'View plan as a table (screen-reader friendly)', run: () => App.openTableView() },
         { icon: '📅', name: 'Lookahead — show only the next 3 weeks', run: () => App.setViewMode('lookahead') },
         { icon: '◆', name: 'Milestones only — executive view', run: () => App.setViewMode('milestones') },
         { icon: '▤', name: 'Show all tasks', run: () => App.setViewMode('all') },

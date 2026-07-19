@@ -12,6 +12,7 @@
 
   var D = {
     en: {
+      'app.tableview': 'Table view',
       'nav.maker': 'Gantt Maker', 'nav.templates': 'Templates', 'nav.guides': 'Guides',
       'nav.what': 'What is a Gantt chart?', 'nav.open': 'Open the app',
       'hero.kicker': 'Free · no sign-up · runs in your browser',
@@ -29,7 +30,7 @@
       'app.save': '💾 Save', 'app.open': '📂 Open', 'app.export': '⬇ Export',
       'app.task': '＋ Task', 'app.milestone': '◆ Milestone', 'app.group': '▣ Group',
       'app.paste': '✨ Paste to Gantt', 'app.zoom': 'Zoom', 'app.font': 'Font',
-      'app.critical': 'Critical path', 'app.critlegend': '⬤ orange = critical path',
+      'app.critical': 'Critical path', 'app.critlegend': 'striped = critical path',
       'app.weekends': 'Weekends', 'app.progress': 'Progress', 'app.today': 'Today',
       'app.templates': '✨ Templates', 'app.fit': '⤢ Fit', 'app.todaybtn': '◎ Today',
       'col.name': 'Task name', 'col.pred': 'Runs after', 'col.start': 'Start', 'col.end': 'End', 'col.days': 'Days', 'col.assignee': 'Assignee',
@@ -53,6 +54,7 @@
       'exp.ics': '📅 Calendar (.ics)',
     },
     es: {
+      'app.tableview': 'Tabla',
       'nav.maker': 'Crear Gantt', 'nav.templates': 'Plantillas', 'nav.guides': 'Guías',
       'nav.what': '¿Qué es un diagrama de Gantt?', 'nav.open': 'Abrir la app',
       'hero.kicker': 'Gratis · sin registro · funciona en tu navegador',
@@ -69,7 +71,7 @@
       'app.save': '💾 Guardar', 'app.open': '📂 Abrir', 'app.export': '⬇ Exportar',
       'app.task': '＋ Tarea', 'app.milestone': '◆ Hito', 'app.group': '▣ Grupo',
       'app.paste': '✨ Pegar a Gantt', 'app.zoom': 'Zoom', 'app.font': 'Fuente',
-      'app.critical': 'Ruta crítica', 'app.critlegend': '⬤ naranja = ruta crítica',
+      'app.critical': 'Ruta crítica', 'app.critlegend': 'rayado = ruta crítica',
       'app.weekends': 'Fines de semana', 'app.progress': 'Progreso', 'app.today': 'Hoy',
       'app.templates': '✨ Plantillas', 'app.fit': '⤢ Ajustar', 'app.todaybtn': '◎ Hoy',
       'col.name': 'Nombre de la tarea', 'col.pred': 'Después de', 'col.start': 'Inicio', 'col.end': 'Fin', 'col.days': 'Días', 'col.assignee': 'Responsable',
@@ -93,6 +95,7 @@
       'exp.ics': '📅 Calendario (.ics)',
     },
     fr: {
+      'app.tableview': 'Tableau',
       'nav.maker': 'Créer un Gantt', 'nav.templates': 'Modèles', 'nav.guides': 'Guides',
       'nav.what': "Qu'est-ce qu'un diagramme de Gantt ?", 'nav.open': "Ouvrir l'app",
       'hero.kicker': 'Gratuit · sans inscription · dans votre navigateur',
@@ -109,7 +112,7 @@
       'app.save': '💾 Enregistrer', 'app.open': '📂 Ouvrir', 'app.export': '⬇ Exporter',
       'app.task': '＋ Tâche', 'app.milestone': '◆ Jalon', 'app.group': '▣ Groupe',
       'app.paste': '✨ Coller vers Gantt', 'app.zoom': 'Zoom', 'app.font': 'Police',
-      'app.critical': 'Chemin critique', 'app.critlegend': '⬤ orange = chemin critique',
+      'app.critical': 'Chemin critique', 'app.critlegend': 'hachuré = chemin critique',
       'app.weekends': 'Week-ends', 'app.progress': 'Avancement', 'app.today': "Aujourd'hui",
       'app.templates': '✨ Modèles', 'app.fit': '⤢ Ajuster', 'app.todaybtn': "◎ Aujourd'hui",
       'col.name': 'Nom de la tâche', 'col.pred': 'Après', 'col.start': 'Début', 'col.end': 'Fin', 'col.days': 'Jours', 'col.assignee': 'Assigné à',
@@ -133,6 +136,7 @@
       'exp.ics': '📅 Calendrier (.ics)',
     },
     de: {
+      'app.tableview': 'Tabelle',
       'nav.maker': 'Gantt erstellen', 'nav.templates': 'Vorlagen', 'nav.guides': 'Ratgeber',
       'nav.what': 'Was ist ein Gantt-Diagramm?', 'nav.open': 'App öffnen',
       'hero.kicker': 'Kostenlos · ohne Anmeldung · im Browser',
@@ -149,7 +153,7 @@
       'app.save': '💾 Speichern', 'app.open': '📂 Öffnen', 'app.export': '⬇ Export',
       'app.task': '＋ Aufgabe', 'app.milestone': '◆ Meilenstein', 'app.group': '▣ Gruppe',
       'app.paste': '✨ In Gantt einfügen', 'app.zoom': 'Zoom', 'app.font': 'Schrift',
-      'app.critical': 'Kritischer Pfad', 'app.critlegend': '⬤ orange = kritischer Pfad',
+      'app.critical': 'Kritischer Pfad', 'app.critlegend': 'schraffiert = kritischer Pfad',
       'app.weekends': 'Wochenenden', 'app.progress': 'Fortschritt', 'app.today': 'Heute',
       'app.templates': '✨ Vorlagen', 'app.fit': '⤢ Anpassen', 'app.todaybtn': '◎ Heute',
       'col.name': 'Aufgabenname', 'col.pred': 'Nach', 'col.start': 'Start', 'col.end': 'Ende', 'col.days': 'Tage', 'col.assignee': 'Zuständig',
@@ -173,6 +177,7 @@
       'exp.ics': '📅 Kalender (.ics)',
     },
     pt: {
+      'app.tableview': 'Tabela',
       'nav.maker': 'Criar Gantt', 'nav.templates': 'Modelos', 'nav.guides': 'Guias',
       'nav.what': 'O que é um gráfico de Gantt?', 'nav.open': 'Abrir o app',
       'hero.kicker': 'Grátis · sem cadastro · funciona no navegador',
@@ -189,7 +194,7 @@
       'app.save': '💾 Salvar', 'app.open': '📂 Abrir', 'app.export': '⬇ Exportar',
       'app.task': '＋ Tarefa', 'app.milestone': '◆ Marco', 'app.group': '▣ Grupo',
       'app.paste': '✨ Colar no Gantt', 'app.zoom': 'Zoom', 'app.font': 'Fonte',
-      'app.critical': 'Caminho crítico', 'app.critlegend': '⬤ laranja = caminho crítico',
+      'app.critical': 'Caminho crítico', 'app.critlegend': 'listrado = caminho crítico',
       'app.weekends': 'Fins de semana', 'app.progress': 'Progresso', 'app.today': 'Hoje',
       'app.templates': '✨ Modelos', 'app.fit': '⤢ Ajustar', 'app.todaybtn': '◎ Hoje',
       'col.name': 'Nome da tarefa', 'col.pred': 'Depois de', 'col.start': 'Início', 'col.end': 'Fim', 'col.days': 'Dias', 'col.assignee': 'Responsável',
@@ -213,6 +218,7 @@
       'exp.ics': '📅 Calendário (.ics)',
     },
     zh: {
+      'app.tableview': '表格视图',
       'nav.maker': '甘特图工具', 'nav.templates': '模板', 'nav.guides': '指南',
       'nav.what': '什么是甘特图？', 'nav.open': '打开应用',
       'hero.kicker': '免费 · 无需注册 · 在浏览器中运行',
@@ -229,7 +235,7 @@
       'app.save': '💾 保存', 'app.open': '📂 打开', 'app.export': '⬇ 导出',
       'app.task': '＋ 任务', 'app.milestone': '◆ 里程碑', 'app.group': '▣ 分组',
       'app.paste': '✨ 粘贴生成甘特图', 'app.zoom': '缩放', 'app.font': '字体',
-      'app.critical': '关键路径', 'app.critlegend': '⬤ 橙色 = 关键路径',
+      'app.critical': '关键路径', 'app.critlegend': '斜纹 = 关键路径',
       'app.weekends': '周末', 'app.progress': '进度', 'app.today': '今天',
       'app.templates': '✨ 模板', 'app.fit': '⤢ 适应', 'app.todaybtn': '◎ 今天',
       'col.name': '任务名称', 'col.pred': '前置任务', 'col.start': '开始', 'col.end': '结束', 'col.days': '天数', 'col.assignee': '负责人',

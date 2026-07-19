@@ -27,7 +27,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=36" />
+  <link rel="stylesheet" href="/css/styles.css?v=37" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -155,13 +155,14 @@
 
     <div class="tgroup">
       <label class="chk chk-critical"><input type="checkbox" id="toggleCritical" /> <span data-i18n="app.critical">Critical path</span></label>
-      <span class="crit-legend" data-i18n="app.critlegend" title="The critical path is the sequence of tasks that determines your finish date">⬤ orange = critical path</span>
+      <span class="crit-legend" title="The critical path is the sequence of tasks that determines your finish date"><i class="crit-swatch" aria-hidden="true"></i><span data-i18n="app.critlegend">striped = critical path</span></span>
       <label class="chk"><input type="checkbox" id="toggleWeekends" checked /> <span data-i18n="app.weekends">Weekends</span></label>
       <label class="chk"><input type="checkbox" id="toggleProgress" checked /> <span data-i18n="app.progress">Progress</span></label>
       <label class="chk"><input type="checkbox" id="toggleToday" checked /> <span data-i18n="app.today">Today</span></label>
       <button class="btn" id="calendarBtn" title="Working days, weekends and holidays">📆 <span data-i18n="app.calendar">Calendar</span></button>
       <button class="btn" id="workloadBtn" title="Who is over-booked, and when">👥 <span data-i18n="app.workload">Workload</span></button>
       <button class="btn" id="scurveBtn" title="Planned vs actual progress over time">📈 <span data-i18n="app.scurve">S-curve</span></button>
+      <button class="btn" id="tableViewBtn" title="The whole plan as a plain table — readable, copyable, printable">▤ <span data-i18n="app.tableview">Table view</span></button>
     </div>
 
     <div class="tgroup">
@@ -211,6 +212,10 @@
     <div class="splitter" id="splitter" title="Drag to resize"></div>
 
     <div class="chart-pane" id="chartPane">
+      <!-- Orientation sentence for assistive tech. Without it, arriving
+           at a bar chart means exploring every bar to learn anything
+           about its overall shape. -->
+      <p class="sr-only" id="chartSummary"></p>
       <div class="chart-head" id="chartHead"></div>
       <div class="chart-scroll" id="chartScroll">
         <div class="chart-canvas" id="chartCanvas">
@@ -321,25 +326,25 @@
   <div class="sr-only" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=36"></script>
-  <script src="/js/util.js?v=36"></script>
-  <script src="/js/store.js?v=36"></script>
-  <script src="/js/calendar.js?v=36"></script>
-  <script src="/js/resources.js?v=36"></script>
-  <script src="/js/model.js?v=36"></script>
-  <script src="/js/schedule.js?v=36"></script>
-  <script src="/js/render.js?v=36"></script>
-  <script src="/js/interactions.js?v=36"></script>
-  <script src="/js/msproject.js?v=36"></script>
-  <script src="/js/mermaid-gantt.js?v=36"></script>
-  <script src="/js/ics.js?v=36"></script>
-  <script src="/js/evm.js?v=36"></script>
-  <script src="/js/views.js?v=36"></script>
-  <script src="/js/exports.js?v=36"></script>
-  <script src="/js/export-pdf.js?v=36"></script>
-  <script src="/js/templates.js?v=36"></script>
-  <script src="/js/features.js?v=36"></script>
-  <script src="/js/app.js?v=36"></script>
+  <script src="/js/i18n.js?v=37"></script>
+  <script src="/js/util.js?v=37"></script>
+  <script src="/js/store.js?v=37"></script>
+  <script src="/js/calendar.js?v=37"></script>
+  <script src="/js/resources.js?v=37"></script>
+  <script src="/js/model.js?v=37"></script>
+  <script src="/js/schedule.js?v=37"></script>
+  <script src="/js/render.js?v=37"></script>
+  <script src="/js/interactions.js?v=37"></script>
+  <script src="/js/msproject.js?v=37"></script>
+  <script src="/js/mermaid-gantt.js?v=37"></script>
+  <script src="/js/ics.js?v=37"></script>
+  <script src="/js/evm.js?v=37"></script>
+  <script src="/js/views.js?v=37"></script>
+  <script src="/js/exports.js?v=37"></script>
+  <script src="/js/export-pdf.js?v=37"></script>
+  <script src="/js/templates.js?v=37"></script>
+  <script src="/js/features.js?v=37"></script>
+  <script src="/js/app.js?v=37"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

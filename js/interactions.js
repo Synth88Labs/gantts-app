@@ -1,6 +1,35 @@
 /* ============================================================
    interactions.js — bar drag/resize/progress, dependency drawing,
    row drag-to-reorder. Exposes global `Interactions`.
+
+   POINTER EVENTS, NOT MOUSE EVENTS
+
+   This file listened for mousedown/mousemove/mouseup, which meant the
+   chart could not be operated at all on a phone or tablet: you could
+   read a plan and not touch a single bar. Pointer Events cover mouse,
+   touch and stylus through one path.
+
+   TWO THINGS MAKE THIS NON-OBVIOUS.
+
+   1. CAPTURE CANNOT LIVE ON THE BAR.
+
+      For touch, the browser implicitly captures the pointer to the
+      element that was first touched. Every mousemove here calls
+      Render.render(), which rebuilds the bars layer and DESTROYS that
+      element — so the implicit capture dies with it and the drag stops
+      after one frame. Mouse never showed this because the listeners
+      were on window.
+
+      So capture is taken explicitly on the chart canvas, which is a
+      container that survives a re-render, and the move/up listeners
+      live there too.
+
+   2. touch-action MUST BE none ON THE BAR.
+
+      Otherwise the browser treats the first few pixels of a drag as a
+      scroll gesture, steals the pointer and fires pointercancel. The
+      rule is in styles.css next to .bar; without it this file behaves
+      correctly and the browser overrules it.
    ============================================================ */
 (function () {
   let drag = null; // active gesture
@@ -77,12 +106,17 @@
 
     wireBar(barEl, task) {
       barEl.addEventListener('keydown', (e) => this.onBarKey(e, task));
-      barEl.addEventListener('mousedown', (e) => this.onBarDown(e, barEl, task));
-      // click select handled via mousedown (no move => select)
+      barEl.addEventListener('pointerdown', (e) => this.onBarDown(e, barEl, task));
+      // click-select is handled on pointerup when nothing moved
     },
 
     onBarDown(e, barEl, task) {
-      if (e.button !== 0) return;
+      /* button is 0 for touch and pen as well as a left click, so this
+         still rejects right/middle clicks. isPrimary drops the second
+         finger of a pinch, which would otherwise start a second drag
+         on top of the first. */
+      if (e.button !== 0 || e.isPrimary === false) return;
+      if (drag) return;                      // one gesture at a time
       const t = e.target;
       let mode = 'move';
       if (t.classList.contains('bar-handle')) mode = t.classList.contains('l') ? 'resize-l' : 'resize-r';
@@ -104,6 +138,7 @@
         mode, task, barEl, startX: e.clientX, startY: e.clientY,
         origStart: task.start, origEnd: task.end, origProgress: task.progress || 0,
         dayW, moved: false, snapshotTaken: false,
+        coarse: e.pointerType === 'touch',
       };
 
       if (mode === 'dep') {
@@ -115,8 +150,20 @@
         Render.els.chartSvg.appendChild(drag.depGhost);
       }
 
-      window.addEventListener('mousemove', onMove);
-      window.addEventListener('mouseup', onUp);
+      /* Capture on the canvas, not the bar — see the header. The bar is
+         about to be replaced by the first re-render of the drag. */
+      const cap = Render.els.chartCanvas;
+      drag.cap = cap;
+      drag.pointerId = e.pointerId;
+      try { cap.setPointerCapture(e.pointerId); } catch (err) { /* mouse pre-capture */ }
+      cap.addEventListener('pointermove', onMove);
+      cap.addEventListener('pointerup', onUp);
+      /* pointercancel fires when the browser takes the gesture over
+         (a scroll it decided to own, a system gesture, the pen leaving
+         range). Treating it as an "up" commits what the user had
+         already dragged instead of leaving `drag` dangling and the
+         chart wedged in a half-dragged state. */
+      cap.addEventListener('pointercancel', onUp);
     },
 
     wireRowDrag(row, id) {
@@ -141,8 +188,13 @@
 
   function onMove(e) {
     if (!drag) return;
+    if (e.pointerId != null && drag.pointerId != null && e.pointerId !== drag.pointerId) return;
     const dx = e.clientX - drag.startX;
-    if (Math.abs(dx) > 2 || Math.abs(e.clientY - drag.startY) > 2) drag.moved = true;
+    /* A finger never holds still. 2px was fine for a mouse and turns
+       every tap on a touchscreen into a drag, so a plain tap would
+       nudge the task by a day instead of opening it. */
+    const slop = drag.coarse ? 8 : 2;
+    if (Math.abs(dx) > slop || Math.abs(e.clientY - drag.startY) > slop) drag.moved = true;
     if (!drag.moved) return;
 
     if (!drag.snapshotTaken && drag.mode !== 'dep') { Model.snapshot(); drag.snapshotTaken = true; }
@@ -239,8 +291,12 @@
   }
 
   function onUp(e) {
-    window.removeEventListener('mousemove', onMove);
-    window.removeEventListener('mouseup', onUp);
+    if (drag && drag.cap) {
+      drag.cap.removeEventListener('pointermove', onMove);
+      drag.cap.removeEventListener('pointerup', onUp);
+      drag.cap.removeEventListener('pointercancel', onUp);
+      try { drag.cap.releasePointerCapture(drag.pointerId); } catch (err) { /* already gone */ }
+    }
     if (!drag) return;
 
     if (drag.mode === 'dep') {

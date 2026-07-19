@@ -740,3 +740,115 @@ body.presenting .today-line { width: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .bar, .bar * { transition: none !important; animation: none !important; }
 }
+
+/* ============================================================
+   Touch and pointer targets (WCAG 2.5.8, and basic usability).
+   ============================================================ */
+
+/* The other half of the Pointer Events migration in interactions.js.
+   Without this the browser claims the first few pixels of a drag as a
+   scroll, fires pointercancel and the bar never moves — the JS is
+   correct and the browser overrules it. */
+.bar,
+.bar-handle,
+.bar-progress-handle,
+.bar-dep-dot {
+  touch-action: none;
+}
+
+/* On a touch screen the 6px handles are unhittable. Grow the HIT AREA
+   with a transparent inset pseudo-element rather than the visible
+   handle, so the chart looks identical and the target reaches 24px+
+   (SC 2.5.8). Note the criterion is also satisfied for mouse users by
+   the "Equivalent" exception — the task drawer has real date fields —
+   but a target you cannot hit is a usability failure regardless. */
+@media (pointer: coarse) {
+  .bar-handle,
+  .bar-progress-handle,
+  .bar-dep-dot {
+    position: relative;
+  }
+  .bar-handle::after,
+  .bar-progress-handle::after,
+  .bar-dep-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 30px; height: 30px;
+    transform: translate(-50%, -50%);
+  }
+  /* A bar thin enough to be untappable gets a taller invisible target. */
+  .bar { min-height: 24px; }
+}
+
+/* The view strip's week arrows are real controls, not decoration. */
+.view-note .btn.btn-sm { min-height: 26px; min-width: 26px; }
+
+/* ============================================================
+   WCAG 1.4.1 Use of Color — the critical path was orange and
+   nothing else, so to a reader with deuteranopia, in greyscale, or
+   on a black-and-white printout it was simply not marked. The
+   toolbar legend even read "orange = critical path", which is the
+   criterion's exact failure case written out.
+
+   A diagonal hatch carries the same meaning with no colour in it.
+   ============================================================ */
+.bar.critical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .30) 0 3px,
+    rgba(255, 255, 255, 0) 3px 7px
+  );
+}
+:root[data-theme="dark"] .bar.critical::before {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, .34) 0 3px,
+    rgba(0, 0, 0, 0) 3px 7px
+  );
+}
+
+/* The legend must describe both cues, not just the colour. */
+.crit-legend .crit-swatch {
+  display: inline-block;
+  width: 15px; height: 11px;
+  vertical-align: -1px;
+  margin-right: 4px;
+  border-radius: 3px;
+  border: 1.5px solid var(--critical);
+  background-image: repeating-linear-gradient(135deg,
+    var(--critical) 0 2px, transparent 2px 5px);
+}
+
+/* Dependency arrows on the critical path get a dash pattern too. */
+.dep-path.critical { stroke-dasharray: 6 3; }
+
+@media print {
+  /* Printers drop background images by default, which would take the
+     hatch away and leave colour alone again — exactly the case this
+     exists for. */
+  .bar.critical::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ---- the plain-table view ---- */
+.table-scroll { overflow-x: auto; max-height: 55vh; overflow-y: auto; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.data-table caption {
+  text-align: left; font-weight: 600; padding: 0 0 8px;
+  color: var(--muted, #64748b); font-size: 12.5px;
+}
+.data-table th, .data-table td {
+  padding: 5px 8px; border-bottom: 1px solid var(--border, #e2e8f0);
+  text-align: left; white-space: nowrap;
+}
+.data-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--bg, #fff); font-weight: 600;
+}
+.data-table tbody th { font-weight: 600; }
+.data-table tbody tr:hover { background: var(--bg-soft, #f8fafc); }

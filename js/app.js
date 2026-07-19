@@ -47,6 +47,7 @@
       this.applyFont();
       this.renderWorkload();
       this.renderViewNote();
+      this.refreshChartSummary();
     },
 
     // ---------------- view modes ----------------
@@ -224,6 +225,9 @@
       const scBtn = U.$('#scurveBtn');
       if (scBtn) scBtn.addEventListener('click', () => this.openSCurve());
 
+      const tvBtn = U.$('#tableViewBtn');
+      if (tvBtn) tvBtn.addEventListener('click', () => this.openTableView());
+
       const asBtn = U.$('#autoScheduleBtn');
       if (asBtn) asBtn.addEventListener('click', () => this.autoSchedule());
 
@@ -328,6 +332,158 @@
       this.syncViewControls();
       this.applyGridWidth();
       this.applyFont();
+    },
+
+    // ---------------- accessible alternatives ----------------
+
+    /* A plain table of the plan.
+
+       This is the most useful accessibility feature in the app and the
+       cheapest. A bar chart is a spatial encoding; a screen reader
+       cannot convey position and length, so no amount of ARIA on the
+       bars makes the CHART readable — it makes the bars readable one at
+       a time. A table gives the same information in a form the reader
+       was designed for, and many users will work only from this.
+
+       It is also the honest print view and the thing people paste into
+       an email, so it earns its place twice over. */
+    openTableView() {
+      this.openModal('Plan as a table', (body) => {
+        const tasks = Model.tasks();
+        if (!tasks.length) {
+          body.appendChild(U.el('p', { class: 'muted' }, 'Nothing to show yet — add a task first.'));
+          return;
+        }
+
+        body.appendChild(U.el('p', { class: 'muted' }, this.chartSummary()));
+
+        const cal = Cal.of(Model.project);
+        let cpm = null;
+        try { cpm = Schedule.compute(); } catch (e) { cpm = null; }
+
+        const tbl = U.el('table', { class: 'data-table' });
+        tbl.appendChild(U.el('caption', {},
+          (Model.project.name || 'Project') + ' — every task, with dates and dependencies'));
+
+        const head = U.el('tr');
+        ['WBS', 'Task', 'Type', 'Start', 'Finish', 'Days', '%', 'Runs after', 'Assignee', 'Critical']
+          .forEach(h => head.appendChild(U.el('th', { scope: 'col' }, h)));
+        const thead = U.el('thead'); thead.appendChild(head);
+        tbl.appendChild(thead);
+
+        const tbody = U.el('tbody');
+        for (const t of tasks) {
+          const tr = U.el('tr');
+          /* The task name is the row header, so a screen reader reading
+             a cell announces which task it belongs to. Without this you
+             hear "12 March" with no idea what is on 12 March. */
+          tr.appendChild(U.el('td', {}, Render.wbs(t) || String(Model.number(t.id))));
+          tr.appendChild(U.el('th', { scope: 'row' }, t.name || 'Untitled'));
+          tr.appendChild(U.el('td', {}, t.type));
+          tr.appendChild(U.el('td', {}, t.start || ''));
+          tr.appendChild(U.el('td', {}, t.type === 'milestone' ? '' : (t.end || '')));
+          tr.appendChild(U.el('td', {}, t.type === 'milestone' ? '0'
+            : String(Cal.active(cal) ? Cal.duration(t.start, t.end, cal) : U.duration(t.start, t.end))));
+          tr.appendChild(U.el('td', {}, t.type === 'group' ? '' : String(Math.round(t.progress || 0))));
+          tr.appendChild(U.el('td', {}, (t.deps || [])
+            .map(d => { const f = Model.get(d.from); return f ? f.name : '?'; }).join(', ')));
+          tr.appendChild(U.el('td', {}, t.assignee || ''));
+          // A word, not a colour — the whole point of this column.
+          tr.appendChild(U.el('td', {}, cpm && cpm.critical.has(t.id) ? 'yes' : ''));
+          tbody.appendChild(tr);
+        }
+        tbl.appendChild(tbody);
+
+        const scroll = U.el('div', { class: 'table-scroll' });
+        scroll.appendChild(tbl);
+        body.appendChild(scroll);
+
+        const row = U.el('div', { class: 'modal-actions' });
+        row.appendChild(U.el('button', {
+          class: 'btn btn-primary',
+          onclick: () => {
+            const txt = this.tableAsText(tasks, cal, cpm);
+            const done = () => this.toast('Table copied to clipboard');
+            if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, done);
+            else done();
+          },
+        }, 'Copy as text'));
+        row.appendChild(U.el('button', {
+          class: 'btn', onclick: () => Exports.run('csv'),
+        }, 'Download CSV'));
+        body.appendChild(row);
+      });
+    },
+
+    /* Tab-separated, which is what spreadsheets and email clients
+       actually paste well. */
+    tableAsText(tasks, cal, cpm) {
+      const head = ['WBS', 'Task', 'Type', 'Start', 'Finish', 'Days', '%', 'Runs after', 'Assignee', 'Critical'];
+      const rows = [head.join('\t')];
+      for (const t of tasks) {
+        rows.push([
+          Render.wbs(t) || Model.number(t.id),
+          t.name || 'Untitled',
+          t.type,
+          t.start || '',
+          t.type === 'milestone' ? '' : (t.end || ''),
+          t.type === 'milestone' ? 0 : (Cal.active(cal) ? Cal.duration(t.start, t.end, cal) : U.duration(t.start, t.end)),
+          t.type === 'group' ? '' : Math.round(t.progress || 0),
+          (t.deps || []).map(d => { const f = Model.get(d.from); return f ? f.name : '?'; }).join('; '),
+          t.assignee || '',
+          cpm && cpm.critical.has(t.id) ? 'yes' : '',
+        ].join('\t'));
+      }
+      return rows.join('\n');
+    },
+
+    /* One sentence describing the chart as a whole.
+
+       A screen-reader user arriving at a bar chart otherwise has to
+       explore every bar to learn anything about its shape. This is the
+       orientation sentence that says whether it is worth exploring. */
+    chartSummary() {
+      const tasks = Model.tasks();
+      if (!tasks.length) return 'Empty plan — no tasks yet.';
+
+      const groups = tasks.filter(t => t.type === 'group').length;
+      const ms = tasks.filter(t => t.type === 'milestone').length;
+      const work = tasks.length - groups;
+
+      let min = null, max = null;
+      tasks.forEach(t => {
+        if (t.start && (!min || U.parse(t.start) < U.parse(min))) min = t.start;
+        if (t.end && (!max || U.parse(t.end) > U.parse(max))) max = t.end;
+      });
+
+      const parts = [`${work} task${work === 1 ? '' : 's'}`];
+      if (groups) parts.push(`${groups} group${groups === 1 ? '' : 's'}`);
+      if (ms) parts.push(`${ms} milestone${ms === 1 ? '' : 's'}`);
+
+      let out = `${Model.project.name || 'Project'}: ${parts.join(', ')}`;
+      if (min && max) out += `, from ${U.fmtShort(min)} to ${U.fmtShort(max)}`;
+      out += '.';
+
+      try {
+        const cpm = Schedule.compute();
+        if (cpm && cpm.critical && cpm.critical.size) {
+          out += ` The critical path contains ${cpm.critical.size} task${cpm.critical.size === 1 ? '' : 's'}.`;
+        }
+      } catch (e) { /* CPM is optional context, never a reason to fail */ }
+
+      const late = tasks.filter(t =>
+        t.type !== 'group' && t.end && (t.progress || 0) < 100 && U.parse(t.end) < U.parse(U.today())).length;
+      if (late) out += ` ${late} task${late === 1 ? ' is' : 's are'} past due.`;
+
+      return out;
+    },
+
+    /* Keep the always-present summary in sync so a screen reader
+       landing on the chart region gets an orientation sentence without
+       opening anything. */
+    refreshChartSummary() {
+      const el = U.$('#chartSummary');
+      if (el) el.textContent = this.chartSummary();
     },
 
     // ---------------- S-curve / earned value ----------------
