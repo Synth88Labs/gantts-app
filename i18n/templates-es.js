@@ -18,6 +18,7 @@
 const T = {
 
   'refinery-turnaround-schedule': {
+    card: 'Ciclo completo de parada: planificación, congelación del alcance, ejecución y arranque.',
     h1: 'Plantilla de cronograma de parada de refinería',
     metaTitle: 'Plantilla de cronograma de parada de refinería',
     metaDesc: 'Plantilla gratuita de parada de refinería: planificación, congelación del alcance, paquetes de trabajo, ejecución y arranque. Excel o edición online.',
@@ -55,6 +56,7 @@ const T = {
   },
 
   'hotel-pre-opening-critical-path': {
+    card: 'Cuenta atrás de seis meses por departamento: Pisos, A&amp;B, Ingeniería, RR. HH. y Comercial.',
     h1: 'Plantilla de ruta crítica de apertura de hotel',
     metaTitle: 'Plantilla de ruta crítica de apertura de hotel',
     metaDesc: 'Plantilla gratuita de preapertura de hotel organizada por departamento: Pisos, A&B, Ingeniería, RR. HH. y Comercial. Excel y PowerPoint, o edición online.',
@@ -92,6 +94,7 @@ const T = {
   },
 
   'solar-farm-construction-schedule': {
+    card: 'Viabilidad, conexión a red, permisos, estructura y puesta en marcha hasta la energización.',
     h1: 'Plantilla de cronograma de construcción de planta solar',
     metaTitle: 'Cronograma de construcción de planta solar',
     metaDesc: 'Plantilla gratuita de construcción de planta solar: viabilidad, conexión a red, permisos, compras, estructura y puesta en marcha. Excel o edición online.',
@@ -129,6 +132,7 @@ const T = {
   },
 
   'dissertation-gantt-chart': {
+    card: 'Doce meses: propuesta, revisión bibliográfica, ética, trabajo de campo, análisis y entrega.',
     h1: 'Plantilla de diagrama de Gantt para tesis',
     metaTitle: 'Diagrama de Gantt para tesis (plantilla gratis)',
     metaDesc: 'Plantilla gratuita de diagrama de Gantt para tesis: 12 meses de propuesta, revisión bibliográfica, ética, trabajo de campo, análisis y entrega.',
@@ -166,6 +170,7 @@ const T = {
   },
 
   'project-management': {
+    card: 'Plan genérico de cinco fases, del inicio al cierre, con hitos de aprobación.',
     h1: 'Plantilla de diagrama de Gantt para gestión de proyectos',
     metaTitle: 'Plantilla de Gantt para gestión de proyectos',
     metaDesc: 'Plantilla gratuita de gestión de proyectos con las cinco fases clásicas: inicio, planificación, ejecución, seguimiento y cierre. Excel o edición online.',
@@ -203,6 +208,7 @@ const T = {
   },
 
   'simple': {
+    card: 'Pocas filas, fechas claras y nada más. Para planes cortos que sí vas a mantener.',
     h1: 'Plantilla sencilla de diagrama de Gantt',
     metaTitle: 'Plantilla sencilla de diagrama de Gantt',
     metaDesc: 'Plantilla de Gantt sencilla y sin complicaciones: pocas filas, fechas claras y lista para usar. Descarga en Excel o edítala online gratis.',
@@ -238,6 +244,7 @@ const T = {
   },
 
   'construction': {
+    card: 'Permisos, cimentación, estructura, instalaciones y acabados con sus inspecciones.',
     h1: 'Plantilla de diagrama de Gantt para construcción',
     metaTitle: 'Plantilla de Gantt para construcción (gratis)',
     metaDesc: 'Plantilla gratuita de planificación de obra: permisos, movimiento de tierras, cimentación, estructura, instalaciones, acabados y recepción.',
@@ -276,6 +283,7 @@ const T = {
   },
 
   'software-development': {
+    card: 'Descubrimiento, diseño, sprints, integración, QA y despliegue a producción.',
     h1: 'Plantilla de diagrama de Gantt para desarrollo de software',
     metaTitle: 'Plantilla de Gantt para desarrollo de software',
     metaDesc: 'Plantilla gratuita para proyectos de software: descubrimiento, diseño, desarrollo por sprints, integración, QA, despliegue y estabilización.',
@@ -314,6 +322,7 @@ const T = {
   },
 
   'home-renovation': {
+    card: 'El orden real de los gremios, para no abrir dos veces la misma pared.',
     h1: 'Plantilla de diagrama de Gantt para reformas',
     metaTitle: 'Plantilla de Gantt para reforma del hogar',
     metaDesc: 'Plantilla gratuita para planificar una reforma: presupuesto, permisos, demolición, instalaciones, alicatados, carpintería, pintura y limpieza final.',
@@ -352,6 +361,7 @@ const T = {
   },
 
   'wedding-planning': {
+    card: 'Doce meses con las reservas ordenadas por lo que antes se agota.',
     h1: 'Plantilla de diagrama de Gantt para organizar una boda',
     metaTitle: 'Plantilla de Gantt para organizar una boda',
     metaDesc: 'Plantilla gratuita para planificar una boda de doce meses: presupuesto, lugar, proveedores, invitaciones, pruebas y semana del evento.',
@@ -389,6 +399,7 @@ const T = {
     ],
   },
   'product-launch': {
+    card: 'Producto, materiales, habilitación comercial y prensa convergiendo el mismo día.',
     h1: 'Plantilla de diagrama de Gantt para lanzamiento de producto',
     metaTitle: 'Plantilla de Gantt para lanzamiento de producto',
     metaDesc: 'Plantilla gratuita de lanzamiento de producto: preparación, beta, materiales de venta, formación comercial, lanzamiento y seguimiento posterior.',
@@ -424,6 +435,7 @@ const T = {
   },
 
   'event-planning': {
+    card: 'Sede, proveedores, inscripciones, montaje y desmontaje sobre una fecha fija.',
     h1: 'Plantilla de diagrama de Gantt para organizar eventos',
     metaTitle: 'Plantilla de Gantt para organización de eventos',
     metaDesc: 'Plantilla gratuita de organización de eventos: sede, proveedores, comunicación, inscripciones, montaje, evento y desmontaje.',
@@ -459,6 +471,7 @@ const T = {
   },
 
   'research': {
+    card: 'Revisión, diseño, ética, recogida de datos, análisis y publicación.',
     h1: 'Plantilla de diagrama de Gantt para proyectos de investigación',
     metaTitle: 'Plantilla de Gantt para investigación',
     metaDesc: 'Plantilla gratuita para proyectos de investigación: revisión bibliográfica, diseño, ética, recogida de datos, análisis y publicación.',
@@ -494,6 +507,7 @@ const T = {
   },
 
   'marketing': {
+    card: 'Estrategia, creatividad, aprobaciones, producción, lanzamiento y medición.',
     h1: 'Plantilla de diagrama de Gantt para campañas de marketing',
     metaTitle: 'Plantilla de Gantt para campañas de marketing',
     metaDesc: 'Plantilla gratuita de campaña de marketing: estrategia, creatividades, producción, aprobaciones, lanzamiento y medición de resultados.',
@@ -529,6 +543,7 @@ const T = {
   },
 
   'content-calendar': {
+    card: 'Cada pieza atraviesa redacción, edición, diseño y publicación, con responsable.',
     h1: 'Plantilla de calendario de contenidos',
     metaTitle: 'Plantilla de calendario de contenidos (Gantt)',
     metaDesc: 'Plantilla gratuita de calendario de contenidos para blog, email y redes: planificación, redacción, edición, diseño y publicación con responsables.',
@@ -563,6 +578,7 @@ const T = {
   },
 
   'employee-onboarding': {
+    card: 'Preincorporación, primer día, primera semana y revisiones a 30, 60 y 90 días.',
     h1: 'Plantilla de plan de incorporación de empleados',
     metaTitle: 'Plantilla de incorporación de empleados (Gantt)',
     metaDesc: 'Plantilla gratuita de onboarding: preincorporación, primer día, primera semana, primer mes y hitos a 30, 60 y 90 días.',
@@ -597,6 +613,7 @@ const T = {
   },
 
   '30-60-90-day-plan': {
+    card: 'Aprender, contribuir y liderar: los tres primeros meses en un puesto nuevo.',
     h1: 'Plantilla de plan de 30-60-90 días',
     metaTitle: 'Plantilla de plan de 30-60-90 días',
     metaDesc: 'Plantilla gratuita de plan 30-60-90 para un puesto nuevo: aprender, contribuir y liderar, con objetivos y revisiones por tramo.',
@@ -629,6 +646,7 @@ const T = {
   },
 
   'product-roadmap': {
+    card: 'Iniciativas por tema y trimestre, con releases y dependencias entre equipos.',
     h1: 'Plantilla de hoja de ruta de producto',
     metaTitle: 'Plantilla de hoja de ruta de producto (Gantt)',
     metaDesc: 'Plantilla gratuita de roadmap de producto por trimestres, con temas, iniciativas, releases y dependencias entre equipos.',
@@ -662,6 +680,7 @@ const T = {
   },
 
   'weekly': {
+    card: 'Cinco días a la vista. Una herramienta de foco, no de planificación.',
     h1: 'Plantilla de plan semanal en diagrama de Gantt',
     metaTitle: 'Plantilla de plan semanal (Gantt)',
     metaDesc: 'Plantilla gratuita de plan semanal: cinco días, tareas por responsable y una vista que cabe en una hoja. Excel o edición online.',
@@ -694,6 +713,7 @@ const T = {
   },
 
   'monthly': {
+    card: 'Cuatro semanas agrupadas por área, con las entregas marcadas como hitos.',
     h1: 'Plantilla de plan mensual en diagrama de Gantt',
     metaTitle: 'Plantilla de plan mensual (Gantt)',
     metaDesc: 'Plantilla gratuita de plan mensual: cuatro semanas, tareas agrupadas por área y hitos de entrega. Excel, PowerPoint o edición online.',
@@ -727,6 +747,7 @@ const T = {
   },
 
   'annual': {
+    card: 'Doce meses por trimestres, con los compromisos externos como hitos.',
     h1: 'Plantilla de plan anual en diagrama de Gantt',
     metaTitle: 'Plantilla de plan anual (Gantt)',
     metaDesc: 'Plantilla gratuita de plan anual por trimestres: iniciativas, hitos clave y dependencias a doce meses vista. Excel o edición online.',
@@ -759,6 +780,7 @@ const T = {
     ],
   },
   'agile': {
+    card: 'Épicas, sprints y releases en una línea de tiempo, sin sustituir al tablero.',
     h1: 'Plantilla de diagrama de Gantt para proyectos ágiles',
     metaTitle: 'Plantilla de Gantt para proyectos ágiles',
     metaDesc: 'Plantilla gratuita para equipos ágiles: épicas, sprints, releases y dependencias externas en una línea de tiempo, sin sustituir al tablero.',
@@ -793,6 +815,7 @@ const T = {
   },
 
   'sprint': {
+    card: 'Dos semanas con las ceremonias en su sitio y el QA solapado, no al final.',
     h1: 'Plantilla de planificación de sprint',
     metaTitle: 'Plantilla de planificación de sprint (Gantt)',
     metaDesc: 'Plantilla gratuita de sprint de dos semanas: planificación, desarrollo, pruebas, revisión y retrospectiva, con las ceremonias marcadas.',
@@ -826,6 +849,7 @@ const T = {
   },
 
   'wind-farm-construction-schedule': {
+    card: 'Medición de recurso, permisos, conexión, cimentaciones, montaje y primera energía.',
     h1: 'Plantilla de cronograma de construcción de parque eólico',
     metaTitle: 'Cronograma de construcción de parque eólico',
     metaDesc: 'Plantilla gratuita de parque eólico: medición de recurso, permisos, conexión a red, aerogeneradores, cimentaciones, montaje y puesta en marcha.',
@@ -862,6 +886,7 @@ const T = {
   },
 
   'ev-charging-installation-schedule': {
+    card: 'Evaluación, potencia con la distribuidora, obra, instalación y alta en red.',
     h1: 'Plantilla de cronograma de instalación de puntos de recarga',
     metaTitle: 'Cronograma de instalación de puntos de recarga',
     metaDesc: 'Plantilla gratuita para instalar cargadores de vehículo eléctrico: evaluación, coordinación con la distribuidora, obra, instalación y activación.',
@@ -898,6 +923,7 @@ const T = {
   },
 
   'mining-project-schedule': {
+    card: 'Exploración, sondeos, estudios de viabilidad, permisos y rampa de producción.',
     h1: 'Plantilla de cronograma de proyecto minero',
     metaTitle: 'Plantilla de cronograma de proyecto minero',
     metaDesc: 'Plantilla gratuita de proyecto minero: exploración, sondeos, estudios de viabilidad, permisos, desarrollo y rampa de producción.',
@@ -933,6 +959,7 @@ const T = {
   },
 
   'shipbuilding-project-schedule': {
+    card: 'Corte de chapa, puesta de quilla, botadura y entrega, con sus pagos asociados.',
     h1: 'Plantilla de cronograma de construcción naval',
     metaTitle: 'Plantilla de cronograma de construcción naval',
     metaDesc: 'Plantilla gratuita de construcción de buques: contrato, diseño, aprobación de clase, corte de chapa, puesta de quilla, botadura, armamento y entrega.',
@@ -968,6 +995,7 @@ const T = {
   },
 
   'apparel-production-calendar': {
+    card: 'Time and action: ficha técnica, muestras, tejido, corte, confección y ex-factory.',
     h1: 'Plantilla de calendario de producción textil',
     metaTitle: 'Calendario de producción textil',
     metaDesc: 'Plantilla gratuita de calendario time and action para moda: ficha técnica, muestras, tejido, corte, confección, control de calidad y salida de fábrica.',
@@ -1003,6 +1031,7 @@ const T = {
   },
 
   'phd-research-gantt-chart': {
+    card: 'Tres o cuatro años: propuesta, trabajo empírico, publicaciones, redacción y defensa.',
     h1: 'Plantilla de diagrama de Gantt para investigación doctoral',
     metaTitle: 'Plantilla de Gantt para tesis doctoral',
     metaDesc: 'Plantilla gratuita de doctorado a tres o cuatro años: propuesta, revisión, trabajo de campo, publicaciones, redacción, depósito y defensa.',
@@ -1039,6 +1068,7 @@ const T = {
   },
 
   'grant-proposal-gantt-chart': {
+    card: 'Paquetes de trabajo, entregables e hitos numerados, como los piden los evaluadores.',
     h1: 'Plantilla de diagrama de Gantt para propuestas de subvención',
     metaTitle: 'Plantilla de Gantt para propuesta de subvención',
     metaDesc: 'Plantilla gratuita para el cronograma de una propuesta de financiación: paquetes de trabajo, entregables, hitos e informes al financiador.',
@@ -1074,6 +1104,7 @@ const T = {
     ],
   },
   'erp-implementation-schedule': {
+    card: 'Análisis, diseño, configuración, migración, pruebas, arranque e hipercuidado.',
     h1: 'Plantilla de cronograma de implantación de ERP',
     metaTitle: 'Plantilla de implantación de ERP (cronograma)',
     metaDesc: 'Plantilla gratuita de implantación de ERP: análisis, diseño, configuración, migración de datos, pruebas, formación, arranque y hipercuidado.',
@@ -1110,6 +1141,7 @@ const T = {
   },
 
   'post-merger-integration-plan': {
+    card: 'Día uno, organización, finanzas, sistemas y seguimiento de sinergias.',
     h1: 'Plantilla de plan de integración tras una fusión',
     metaTitle: 'Plan de integración post-fusión (plantilla)',
     metaDesc: 'Plantilla gratuita de integración post-fusión: día uno, organización, finanzas, sistemas, clientes y seguimiento de sinergias durante el primer año.',
@@ -1146,6 +1178,7 @@ const T = {
   },
 
   'office-relocation-project-plan': {
+    card: 'Búsqueda, contrato, obra, circuitos, mudanza y devolución del local antiguo.',
     h1: 'Plantilla de plan de traslado de oficina',
     metaTitle: 'Plantilla de plan de traslado de oficina',
     metaDesc: 'Plantilla gratuita de mudanza de oficina: requisitos, búsqueda, contrato, obra, telecomunicaciones, fin de semana de mudanza y salida del local antiguo.',
@@ -1182,6 +1215,7 @@ const T = {
   },
 
   'data-center-build-schedule': {
+    card: 'Potencia, diseño, larga entrega, obra, instalaciones y comisionado de niveles 1 a 5.',
     h1: 'Plantilla de cronograma de construcción de centro de datos',
     metaTitle: 'Cronograma de construcción de centro de datos',
     metaDesc: 'Plantilla gratuita de centro de datos: emplazamiento y potencia, diseño, equipos de larga entrega, obra, instalaciones y comisionado de niveles 1 a 5.',
@@ -1218,6 +1252,7 @@ const T = {
   },
 
   'restaurant-opening-timeline': {
+    card: 'Alquiler, licencias, obra, equipamiento, contratación y apertura suave.',
     h1: 'Plantilla de cronograma de apertura de restaurante',
     metaTitle: 'Cronograma de apertura de restaurante',
     metaDesc: 'Plantilla gratuita de apertura de restaurante: alquiler, diseño, licencias, obra, equipamiento, contratación, carta y apertura suave.',
@@ -1254,6 +1289,7 @@ const T = {
   },
 
   'clinical-trial-gantt-chart': {
+    card: 'Protocolo, ética, inicio de centros, reclutamiento, cierre de datos y análisis.',
     h1: 'Plantilla de diagrama de Gantt para ensayos clínicos',
     metaTitle: 'Plantilla de Gantt para ensayo clínico',
     metaDesc: 'Plantilla gratuita de ensayo clínico: protocolo, aprobación del comité ético, inicio de centros, reclutamiento, cierre de base de datos y análisis.',
@@ -1290,6 +1326,7 @@ const T = {
   },
 
   'excel': {
+    card: 'Hoja y gráfico ya configurados: sustituye los datos y listo.',
     h1: 'Plantilla de diagrama de Gantt para Excel',
     metaTitle: 'Plantilla de diagrama de Gantt para Excel',
     metaDesc: 'Plantilla de diagrama de Gantt en Excel lista para usar: tareas, fechas, duración y porcentaje completado, sin fórmulas complicadas.',
@@ -1324,6 +1361,7 @@ const T = {
   },
 
   'google-sheets': {
+    card: 'CSV listo para importar, compatible con la función Cronograma.',
     h1: 'Plantilla de diagrama de Gantt para Google Sheets',
     metaTitle: 'Plantilla de Gantt para Google Sheets',
     metaDesc: 'Plantilla gratuita de diagrama de Gantt para Google Sheets: tareas, fechas y avance listos para copiar en tu unidad y editar.',
@@ -1357,6 +1395,7 @@ const T = {
   },
 
   'powerpoint': {
+    card: 'Barras como formas nativas y editables, pensadas para presentar.',
     h1: 'Plantilla de diagrama de Gantt para PowerPoint',
     metaTitle: 'Plantilla de diagrama de Gantt para PowerPoint',
     metaDesc: 'Plantilla gratuita de diagrama de Gantt en PowerPoint con formas editables, fases por color e hitos, lista para presentar.',
@@ -1390,6 +1429,7 @@ const T = {
   },
 
   'printable-gantt-chart': {
+    card: 'Rejilla limpia y alto contraste, para la pared o el tablón.',
     h1: 'Plantilla de diagrama de Gantt para imprimir',
     metaTitle: 'Diagrama de Gantt para imprimir (PDF gratis)',
     metaDesc: 'Plantilla de diagrama de Gantt para imprimir en A4 o A3: rejilla limpia, alto contraste y espacio para escribir a mano.',
@@ -1423,6 +1463,7 @@ const T = {
   },
 
   'one-page-gantt-chart': {
+    card: 'El plan entero resumido en fases e hitos, del tamaño de un folio.',
     h1: 'Plantilla de diagrama de Gantt en una página',
     metaTitle: 'Diagrama de Gantt en una página (plantilla)',
     metaDesc: 'Plantilla gratuita de plan en una sola página: fases, hitos y un resumen del proyecto que cabe entero en una diapositiva o en un A4.',

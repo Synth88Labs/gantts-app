@@ -360,6 +360,32 @@ ${features}
     </div>
   </section>
 
+  ${t.steps ? `<section class="section">
+    <div class="container narrow">
+      <h2>${esc(t.stepsH2)}</h2>
+      <ol class="how-steps">
+${t.steps.map(([h, p]) => `        <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
+      </ol>
+    </div>
+  </section>` : ''}
+
+  ${t.tplH2 ? `<section class="section section-alt">
+    <div class="container narrow">
+      <h2>${esc(t.tplH2)}</h2>
+      <p>${esc(t.tplP)}</p>
+      <a class="btn btn-primary" href="${localHref(code, 'templates.html')}">${esc(t.tplBtn)}</a>
+    </div>
+  </section>` : ''}
+
+  ${t.why ? `<section class="section">
+    <div class="container">
+      <h2>${esc(t.whyH2)}</h2>
+      <div class="grid grid-3">
+${t.why.map(([h, p]) => `        <div class="card"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('\n')}
+      </div>
+    </div>
+  </section>` : ''}
+
   <section class="section section-alt">
     <div class="container narrow">
       <h2>${esc(t.faqH2)}</h2>
@@ -412,13 +438,26 @@ function renderTemplates(loc) {
   const cardHref = (s) => localesFor(s).includes(code)
     ? `/${code}/templates/${s}.html` : `/templates/${s}.html`;
 
+  /* Card blurbs come from the translated template entry itself, so a
+     locale gets richer cards exactly as its translations land. The
+     English hub carries a one-line description under every card; without
+     this the localized hub was a wall of bare labels — 319 words against
+     the English 1,288, which is a materially worse page for the reader
+     and a thin one for Google. */
+  const blurb = (s) => {
+    const d = (TPL_I18N[code] || {})[s];
+    return d && d.card ? `
+            <p>${d.card}</p>` : '';
+  };
+
   const groups = TEMPLATE_GROUPS.map(g => {
     const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}">
             <img src="/templates/img/${s}.svg" alt="" width="240" height="130" loading="lazy" />
-            <h3>${esc(labels[s])}</h3>
+            <h3>${esc(labels[s])}</h3>${blurb(s)}
           </a>`).join('\n');
     return `      <section class="section">
         <h2>${esc(t[g.key])}</h2>
+        ${t.catNote ? `<p class="head-l-note">${esc(t.catNote)}</p>` : ''}
         <div class="tpl-grid">
 ${cards}
         </div>
@@ -427,6 +466,14 @@ ${cards}
 
   const allSlugs = TEMPLATE_GROUPS.flatMap(g => g.slugs);
   const url = `${ORIGIN}/${code}/${sub}`;
+  const ldNodes = [];
+  if (t.faq) ldNodes.push({
+    '@type': 'FAQPage', inLanguage: loc.hreflang,
+    mainEntity: t.faq.map(([q, a]) => ({
+      '@type': 'Question', name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  });
   const ld = graph(loc, [
     {
       '@type': 'CollectionPage', '@id': url + '#webpage',
@@ -445,7 +492,7 @@ ${cards}
         })),
       },
     },
-  ]);
+  ].concat(ldNodes));
 
   const body = `  <article class="container" style="padding-top:44px">
     <h1>${esc(t.h1)}</h1>
@@ -453,6 +500,20 @@ ${cards}
     <p>${esc(t.intro)}</p>
     <p class="crumbs"><small>${esc(t.noteEn)}</small></p>
 ${groups}
+    ${t.howSteps ? `<section class="section">
+      <h2>${esc(t.howH2)}</h2>
+      <ol class="how-steps">
+${t.howSteps.map(([h, p]) => `        <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
+      </ol>
+    </section>` : ''}
+
+    ${t.faq ? `<section class="section">
+      <h2>${esc(t.faqH2)}</h2>
+      <div class="faq">
+${t.faq.map(([q, a], i) => `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n')}
+      </div>
+    </section>` : ''}
+
     <section class="cta-band">
       <h2>${esc(t.ctaH2)}</h2>
       <p>${esc(t.ctaP)}</p>
