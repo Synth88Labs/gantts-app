@@ -75,9 +75,9 @@
         { icon: '📊', name: 'Export Excel (.xlsx)', run: () => E.run('xlsx') },
         { icon: '📽', name: 'Export PowerPoint (.pptx)', run: () => E.run('pptx') },
         { icon: '📑', name: 'Export CSV', run: () => E.run('csv') },
-        { icon: '◳', name: 'Set baseline from current plan', run: () => { Model.setBaseline(); App.toast('Baseline set'); } },
+        { icon: '◳', name: 'Set baseline from current plan', run: () => { Model.setBaseline(); App.toast(App.T('ft.baselineSet', 'Baseline set')); } },
         { icon: '▦', name: 'Show baseline & variance columns', run: () => App.showVarianceColumns() },
-        { icon: '✕', name: 'Clear baseline', run: () => { Model.clearBaseline(); App.toast('Baseline cleared'); } },
+        { icon: '✕', name: 'Clear baseline', run: () => { Model.clearBaseline(); App.toast(App.T('ft.baselineCleared', 'Baseline cleared')); } },
         { icon: '💾', name: 'Save project to a file (.gantts)', run: () => E.run('save') },
         { icon: '📂', name: 'Open a saved file (.gantts / .json / .csv / .xml)', run: () => U.$('#fileInput').click() },
         { icon: '📐', name: 'Export to MS Project (.xml)', run: () => E.run('mspdi') },
@@ -144,7 +144,7 @@
       if (e.key === 'Enter') { e.preventDefault(); const a = this._items[this._sel]; if (a) this.runAct(a); }
       function scrollActive() { const el = U.$('#cmdkList .cmdk-item.active'); if (el) el.scrollIntoView({ block: 'nearest' }); }
     },
-    runAct(a) { this.closeCmdk(); try { a.run(); } catch (e) { App.toast('Error: ' + e.message); } },
+    runAct(a) { this.closeCmdk(); try { a.run(); } catch (e) { App.toast(App.T('ft.error', 'Error') + ': ' + e.message); } },
 
     // ---------------- PRESENT MODE + presenter tools ----------------
     wirePresent() {
@@ -221,7 +221,7 @@
       const eb = U.$('#emptyPaste'); if (eb) eb.addEventListener('click', () => this.openPaste());
     },
     openPaste() {
-      App.openModal('✨ Paste to Gantt', (body) => {
+      App.openModal(App.T('ft.pasteTitle', '✨ Paste to Gantt'), (body) => {
         body.appendChild(U.el('p', { class: 'muted' }, 'Paste or type a task list — one per line. We detect durations, phases, milestones and dependencies automatically.'));
         const help = U.el('div', { class: 'paste-help' }, [
           syntax('Design homepage (3d)', 'duration in days (d) or weeks (w)'),
@@ -246,10 +246,10 @@
         function update() { const r = Features.parsePaste(ta.value); count.textContent = r.tasks.length ? (r.tasks.length + ' tasks · ' + r.deps + ' dependencies') : ''; }
         function doInsert() {
           const r = Features.parsePaste(ta.value);
-          if (!r.tasks.length) { App.toast('Nothing to insert — type some tasks first'); return; }
+          if (!r.tasks.length) { App.toast(App.T('ft.nothingToInsert', 'Nothing to insert — type some tasks first')); return; }
           Features.insertParsed(r);
           App.closeModal();
-          App.toast('Added ' + r.tasks.length + ' tasks');
+          App.toast(App.Tn('ft.addedN', 'Added {n} tasks', { n: r.tasks.length }));
         }
         setTimeout(() => ta.focus(), 30);
       });
@@ -451,7 +451,7 @@
                 : 'Opened “' + Model.project.name + '” as a new project');
             }
           })
-          .catch(() => { if (window.App) App.toast('Could not load that template — starting from a blank chart'); });
+          .catch(() => { if (window.App) App.toast(App.T('ft.tplFailed', 'Could not load that template — starting from a blank chart')); });
       }
       function prettyName(s) { return s.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()); }
     },

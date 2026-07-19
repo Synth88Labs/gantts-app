@@ -218,7 +218,7 @@
         pdf.addImage(this.encode(shrunk), this.FMT, o.margin, o.margin, outW, outH);
         this.footer(pdf, o, g, 1, 1);
         pdf.save(Exports.safeName('pdf'));
-        App.toast('PDF downloaded');
+        App.toast(App.T('ex.pdfDone', 'PDF downloaded'));
         return;
       }
 
@@ -341,7 +341,7 @@
 
     // ---------------- dialog ----------------
     open() {
-      App.openModal('Export PDF', (body) => {
+      App.openModal(App.T('ex.pdfTitle', 'Export PDF'), (body) => {
         const o = this.opts();
         const rerender = () => { this.setOpts(o); summary.textContent = this.summary(o); };
 
@@ -415,7 +415,7 @@
 
         body.appendChild(U.el('button', {
           class: 'btn btn-primary pdf-go',
-          onclick: () => { App.closeModal(); this.run().catch(e => App.toast('Export failed: ' + e.message)); },
+          onclick: () => { App.closeModal(); this.run().catch(e => App.toast(App.T('ex.failed', 'Export failed') + ': ' + e.message)); },
         }, '⬇ Export PDF'));
       });
     },

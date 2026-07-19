@@ -27,7 +27,7 @@
   <meta property="og:locale" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=45" />
+  <link rel="stylesheet" href="/css/styles.css?v=49" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -121,11 +121,11 @@
 
     <div class="tgroup">
       <div class="menu">
-        <button class="btn" id="columnsBtn" title="Show / hide columns">▦ Columns</button>
+        <button class="btn" id="columnsBtn" title="Show / hide columns">▦ <span data-i18n="app.columns">Columns</span></button>
         <div class="menu-panel" id="columnsMenu" hidden></div>
       </div>
       <div class="menu">
-        <button class="btn" id="baselineBtn" title="Freeze the current plan and track slippage against it">◳ Baseline</button>
+        <button class="btn" id="baselineBtn" title="Freeze the current plan and track slippage against it">◳ <span data-i18n="app.baseline">Baseline</span></button>
         <div class="menu-panel" id="baselineMenu" hidden></div>
       </div>
     </div>
@@ -188,7 +188,7 @@
       <button class="btn" id="templatesBtn" data-i18n="app.templates">✨ Templates</button>
       <button class="btn" id="fitBtn" data-i18n="app.fit" title="Fit to screen">⤢ Fit</button>
       <button class="btn" id="todayBtn" data-i18n="app.todaybtn" title="Scroll to today">◎ Today</button>
-      <span class="autosave" id="autosaveNote">Saved</span>
+      <span class="autosave" id="autosaveNote" data-i18n="ap.saved">Saved</span>
     </div>
   </div>
 
@@ -196,9 +196,9 @@
        obvious that this is an example and trivially replaceable, or the
        sample becomes an obstacle rather than a demonstration. -->
   <div class="sample-note" id="sampleNote" hidden>
-    <span>👋 This is a <strong>sample plan</strong> so you can see how it works. Edit anything, or start fresh.</span>
-    <button class="btn btn-sm btn-primary" id="sampleClear">Start a blank plan</button>
-    <button class="btn btn-sm" id="sampleTemplates">Pick a template</button>
+    <span>👋 <span data-i18n-html="smp.note">This is a <strong>sample plan</strong> so you can see how it works. Edit anything, or start fresh.</span></span>
+    <button class="btn btn-sm btn-primary" id="sampleClear" data-i18n="smp.blank">Start a blank plan</button>
+    <button class="btn btn-sm" id="sampleTemplates" data-i18n="smp.pick">Pick a template</button>
   </div>
 
   <!-- A filtered chart that does not say it is filtered reads as a plan
@@ -335,26 +335,26 @@
   <div class="sr-only" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=45"></script>
-  <script src="/js/util.js?v=45"></script>
-  <script src="/js/store.js?v=45"></script>
-  <script src="/js/calendar.js?v=45"></script>
-  <script src="/js/resources.js?v=45"></script>
-  <script src="/js/model.js?v=45"></script>
-  <script src="/js/schedule.js?v=45"></script>
-  <script src="/js/render.js?v=45"></script>
-  <script src="/js/interactions.js?v=45"></script>
-  <script src="/js/msproject.js?v=45"></script>
-  <script src="/js/mermaid-gantt.js?v=45"></script>
-  <script src="/js/ics.js?v=45"></script>
-  <script src="/js/evm.js?v=45"></script>
-  <script src="/js/views.js?v=45"></script>
-  <script src="/js/exports.js?v=45"></script>
-  <script src="/js/export-pdf.js?v=45"></script>
-  <script src="/js/template-i18n.js?v=45"></script>
-  <script src="/js/templates.js?v=45"></script>
-  <script src="/js/features.js?v=45"></script>
-  <script src="/js/app.js?v=45"></script>
+  <script src="/js/i18n.js?v=49"></script>
+  <script src="/js/util.js?v=49"></script>
+  <script src="/js/store.js?v=49"></script>
+  <script src="/js/calendar.js?v=49"></script>
+  <script src="/js/resources.js?v=49"></script>
+  <script src="/js/model.js?v=49"></script>
+  <script src="/js/schedule.js?v=49"></script>
+  <script src="/js/render.js?v=49"></script>
+  <script src="/js/interactions.js?v=49"></script>
+  <script src="/js/msproject.js?v=49"></script>
+  <script src="/js/mermaid-gantt.js?v=49"></script>
+  <script src="/js/ics.js?v=49"></script>
+  <script src="/js/evm.js?v=49"></script>
+  <script src="/js/views.js?v=49"></script>
+  <script src="/js/exports.js?v=49"></script>
+  <script src="/js/export-pdf.js?v=49"></script>
+  <script src="/js/template-i18n.js?v=49"></script>
+  <script src="/js/templates.js?v=49"></script>
+  <script src="/js/features.js?v=49"></script>
+  <script src="/js/app.js?v=49"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

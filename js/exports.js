@@ -16,13 +16,13 @@
         if (r && typeof r.then === 'function') {
           r.catch((e) => {
             console.error(e);
-            App.toast('Export failed: ' + (e && e.message ? e.message : e));
+            App.toast(App.T('ex.failed', 'Export failed') + ': ' + (e && e.message ? e.message : e));
           });
         }
         return r;
       } catch (e) {
         console.error(e);
-        App.toast('Export failed: ' + e.message);
+        App.toast(App.T('ex.failed', 'Export failed') + ': ' + e.message);
       }
     },
 
@@ -65,7 +65,7 @@
       } catch (e) { critical = null; }
 
       const text = MermaidGantt.export(Model.project, { critical });
-      App.openModal('Mermaid gantt', (body) => {
+      App.openModal(App.T('ex.mermaidTitle', 'Mermaid gantt'), (body) => {
         body.appendChild(U.el('p', { class: 'muted' },
           'Paste this into GitHub, GitLab, Notion or Obsidian — they render Mermaid natively.'));
 
@@ -78,15 +78,15 @@
           class: 'btn btn-primary',
           onclick: () => {
             ta.select();
-            const done = () => App.toast('Mermaid copied to clipboard');
+            const done = () => App.toast(App.T('ex.mermaidCopied', 'Mermaid copied to clipboard'));
             if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => document.execCommand('copy') && done());
             else { document.execCommand('copy'); done(); }
           },
-        }, 'Copy to clipboard'));
+        }, App.T('ex.copyClipboard', 'Copy to clipboard')));
         row.appendChild(U.el('button', {
           class: 'btn',
           onclick: () => { U.download(this.safeName('mmd'), text, 'text/plain;charset=utf-8'); },
-        }, 'Download .mmd'));
+        }, App.T('ex.downloadMmd', 'Download .mmd')));
         body.appendChild(row);
 
         body.appendChild(U.el('p', { class: 'muted small' },
@@ -101,7 +101,7 @@
       const { text, count } = ICS.build(Model.project, {});
       if (!count) throw new Error('Nothing to export — this plan has no dated tasks yet.');
       U.download(this.safeName('ics'), text, 'text/calendar;charset=utf-8');
-      App.toast(count + ' event(s) exported — import the file into your calendar');
+      App.toast(App.Tn('ex.icsDoneN', '{n} event(s) exported — import the file into your calendar', { n: count }));
     },
 
     // Build a full-size, unconstrained clone of the chart for image capture.
@@ -140,14 +140,14 @@
     },
 
     async png() {
-      App.toast('Rendering PNG…');
+      App.toast(App.T('ex.renderingPng', 'Rendering PNG…'));
       const canvas = await this.capture(2);
-      canvas.toBlob(b => { U.download(this.safeName('png'), b, 'image/png'); App.toast('PNG downloaded'); }, 'image/png');
+      canvas.toBlob(b => { U.download(this.safeName('png'), b, 'image/png'); App.toast(App.T('ex.pngDone', 'PNG downloaded')); }, 'image/png');
     },
 
     async pdf() {
       if (!window.jspdf) throw new Error('PDF library still loading — try again in a moment');
-      App.toast('Rendering PDF…');
+      App.toast(App.T('ex.renderingPdf', 'Rendering PDF…'));
       const canvas = await this.capture(2);
       const img = canvas.toDataURL('image/png');
       const { jsPDF } = window.jspdf;
@@ -161,7 +161,7 @@
       const w = canvas.width * ratio, h = canvas.height * ratio;
       pdf.addImage(img, 'PNG', (pw - w) / 2, margin, w, h);
       pdf.save(this.safeName('pdf'));
-      App.toast('PDF downloaded');
+      App.toast(App.T('ex.pdfDone', 'PDF downloaded'));
     },
 
     tableRows() {
@@ -190,12 +190,12 @@
       const meta = XLSX.utils.aoa_to_sheet([['Project', Model.project.name], ['Exported', new Date().toLocaleString()], ['Tasks', rows.length], ['Made with', 'gantts.app']]);
       XLSX.utils.book_append_sheet(wb, meta, 'Info');
       XLSX.writeFile(wb, this.safeName('xlsx'));
-      App.toast('Excel downloaded');
+      App.toast(App.T('ex.xlsxDone', 'Excel downloaded'));
     },
 
     async pptx() {
       if (!window.PptxGenJS) throw new Error('PowerPoint library still loading — try again in a moment');
-      App.toast('Building PowerPoint…');
+      App.toast(App.T('ex.buildingPptx', 'Building PowerPoint…'));
       const canvas = await this.capture(2);
       const data = canvas.toDataURL('image/png');
       const pptx = new PptxGenJS();
@@ -228,7 +228,7 @@
       // than pptx.writeFile (which can silently no-op in some sandboxed contexts).
       const blob = await pptx.write({ outputType: 'blob' });
       U.download(this.safeName('pptx'), blob, 'application/vnd.openxmlformats-officedocument.presentationml.presentation');
-      App.toast('PowerPoint downloaded');
+      App.toast(App.T('ex.pptxDone', 'PowerPoint downloaded'));
     },
 
     csv() {
@@ -237,7 +237,7 @@
       const esc = v => { v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
       const csv = [cols.join(',')].concat(rows.map(r => cols.map(c => esc(r[c])).join(','))).join('\n');
       U.download(this.safeName('csv'), '﻿' + csv, 'text/csv;charset=utf-8');
-      App.toast('CSV downloaded');
+      App.toast(App.T('ex.csvDone', 'CSV downloaded'));
     },
 
     // Save the whole project as a .gantts file (JSON inside). Re-open it later
@@ -245,7 +245,7 @@
     // Legacy .gantt files still open fine (see Templates.importFile).
     save() {
       U.download(this.safeName('gantts'), JSON.stringify(Model.project), 'application/json');
-      App.toast('Saved to ' + this.safeName('gantts') + ' — reopen it any time with “Open”');
+      App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”', { f: this.safeName('gantts') }));
     },
 
     /* MS Project XML. Not .mpp: that format is undocumented and every
@@ -255,16 +255,16 @@
     mspdi() {
       if (!window.MSProject) throw new Error('MS Project export is unavailable.');
       U.download(this.safeName('xml'), MSProject.export(Model.project), 'application/xml');
-      App.toast('MS Project XML downloaded — open it in MS Project with File › Open');
+      App.toast(App.T('ex.mspdiDone', 'MS Project XML downloaded — open it in MS Project with File › Open'));
     },
 
     json() {
       U.download(this.safeName('json'), JSON.stringify(Model.project, null, 2), 'application/json');
-      App.toast('JSON downloaded');
+      App.toast(App.T('ex.jsonDone', 'JSON downloaded'));
     },
 
     async print() {
-      App.toast('Preparing print…');
+      App.toast(App.T('ex.printing', 'Preparing print…'));
       const canvas = await this.capture(2);
       const img = canvas.toDataURL('image/png');
       const w = window.open('', '_blank');
@@ -282,7 +282,7 @@
          nothing. Say so and offer the file instead, rather than copying
          something that looks fine and is not. */
       if (r.tooLong) {
-        App.openModal('This plan is too big for a link', (body) => {
+        App.openModal(App.T('ex.tooBigTitle', 'This plan is too big for a link'), (body) => {
           body.appendChild(U.el('p', {},
             `The link would be ${r.length.toLocaleString()} characters. Mail clients, chat apps and `
             + `some proxies truncate long URLs, so the person you send it to would open an empty editor.`));
@@ -292,11 +292,11 @@
           row.appendChild(U.el('button', {
             class: 'btn btn-primary',
             onclick: () => { App.closeModal(); Exports.run('save'); },
-          }, 'Download the project file'));
+          }, App.T('ex.downloadFile', 'Download the project file')));
           row.appendChild(U.el('button', {
             class: 'btn',
             onclick: () => { App.closeModal(); Exports._showLink(r.url); },
-          }, 'Copy the long link anyway'));
+          }, App.T('ex.copyAnyway', 'Copy the long link anyway')));
           body.appendChild(row);
         });
         return;
@@ -304,7 +304,7 @@
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(r.url).then(
-          () => App.toast('Shareable link copied — anyone with it can open this plan'),
+          () => App.toast(App.T('ex.linkCopied', 'Shareable link copied — anyone with it can open this plan')),
           () => this._showLink(r.url)
         );
       } else {
@@ -312,7 +312,7 @@
       }
     },
     _showLink(url) {
-      App.openModal('Shareable link', (body) => {
+      App.openModal(App.T('ex.linkTitle', 'Shareable link'), (body) => {
         body.appendChild(U.el('p', {}, 'Copy this link — it contains your whole chart (no server needed):'));
         const ta = U.el('textarea', { style: { width: '100%', height: '90px' }, readonly: 'true' }, url);
         body.appendChild(ta); ta.select();

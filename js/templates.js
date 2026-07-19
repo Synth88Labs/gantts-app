@@ -218,7 +218,7 @@
              produces a plan full of garbage rows instead of an error. */
           else if (name.endsWith('.mmd') || name.endsWith('.mermaid') || /^\s*(```(mermaid)?\s*)?gantt/m.test(text)) this.importMermaid(text);
           else this.importCSV(text);
-        } catch (err) { App.toast('Import failed: ' + err.message); }
+        } catch (err) { App.toast(App.T('tp.importFailed', 'Import failed') + ': ' + err.message); }
       };
       reader.readAsText(file);
     },
@@ -248,7 +248,7 @@
         console.warn('Mermaid import warnings:', res.warnings);
         App.toast(`Imported with ${res.warnings.length} note${res.warnings.length > 1 ? 's' : ''} — see the console`);
       } else {
-        App.toast('Imported ' + res.tasks.filter(t => t.type !== 'group').length + ' task(s) from Mermaid');
+        App.toast(App.Tn('tp.importedMermaidN', 'Imported {n} task(s) from Mermaid', { n: res.tasks.filter(t => t.type !== 'group').length }));
       }
     },
 
@@ -275,7 +275,7 @@
       const data = JSON.parse(text);
       if (!data.tasks) throw new Error('no tasks in file');
       Model.loadProjectData(data);
-      App.toast('Project imported');
+      App.toast(App.T('tp.projectImported', 'Project imported'));
     },
 
     importCSV(text) {
@@ -312,7 +312,7 @@
       });
       if (!tasks.length) throw new Error('no valid rows');
       Model.loadProjectData({ name: 'Imported project', tasks });
-      App.toast('Imported ' + tasks.length + ' tasks from CSV');
+      App.toast(App.Tn('tp.importedCsvN', 'Imported {n} tasks from CSV', { n: tasks.length }));
     },
   };
 

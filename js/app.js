@@ -54,6 +54,18 @@
     /* Translate a chrome string. Falls back to the key's English text
        so a missing translation degrades to English rather than showing
        a raw key like "drawer.assignee" to the user. */
+    /* Interpolate counts into a translated clause rather than
+       concatenating fragments around them. Concatenation forces English
+       word order on every language and cannot express plural agreement —
+       it produced "Hinzugefügt: 1 Vorgänge" in German and "Added 1
+       tasks" in English. With the whole sentence in one key the
+       translator decides both. */
+    Tn(key, fallback, vars) {
+      let out = this.T(key, fallback);
+      for (const k in vars) out = out.split('{' + k + '}').join(String(vars[k]));
+      return out;
+    },
+
     T(key, fallback) {
       if (!window.I18N) return fallback;
       const v = I18N.t(key);
@@ -297,8 +309,8 @@
       });
       menu.appendChild(U.el('div', { class: 'menu-sep' }));
       menu.appendChild(U.el('div', { class: 'menu-title' }, 'Width'));
-      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { Render.autoFitAll(); this.toast('Columns fitted to contents'); } }, '↔ Fit all columns to contents'));
-      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { Render.resetColWidths(); this.toast('Column widths reset'); } }, '⟲ Reset column widths'));
+      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { Render.autoFitAll(); this.toast(this.T('ap.colsFitted', 'Columns fitted to contents')); } }, '↔ Fit all columns to contents'));
+      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { Render.resetColWidths(); this.toast(this.T('ap.colsReset', 'Column widths reset')); } }, '⟲ Reset column widths'));
       menu.appendChild(U.el('div', { class: 'menu-hint' }, 'Tip: drag a column edge to resize, or double-click it to fit.'));
     },
 
@@ -317,19 +329,19 @@
           U.el('span', {}, 'Show baseline on chart'),
         ]));
         menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => {
-          Model.setBaseline(); this.toast('Baseline updated to the current plan');
+          Model.setBaseline(); this.toast(this.T('ap.baselineUpdated', 'Baseline updated to the current plan'));
         } }, '⟳ Re-baseline to current plan'));
         menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => {
-          this.showVarianceColumns(); this.toast('Showing baseline & variance columns');
+          this.showVarianceColumns(); this.toast(this.T('ap.varianceCols', 'Showing baseline & variance columns'));
         } }, '▦ Show variance columns'));
         menu.appendChild(U.el('div', { class: 'menu-sep' }));
         menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => {
-          Model.clearBaseline(); this.toast('Baseline cleared');
+          Model.clearBaseline(); this.toast(this.T('ft.baselineCleared', 'Baseline cleared'));
         } }, '✕ Clear baseline'));
       } else {
         menu.appendChild(U.el('div', { class: 'menu-hint' }, 'Freeze today’s dates as the plan of record, then track how far each task drifts from it.'));
         menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => {
-          Model.setBaseline(); this.toast('Baseline set — slippage now tracked against this plan');
+          Model.setBaseline(); this.toast(this.T('ap.baselineSet', 'Baseline set — slippage now tracked against this plan'));
         } }, '◳ Set baseline from current plan'));
       }
     },
@@ -718,9 +730,9 @@
 
     flashSaved() {
       const n = U.$('#autosaveNote');
-      n.textContent = 'Saving…';
+      n.textContent = this.T('ap.saving', 'Saving…');
       clearTimeout(this._savedT);
-      this._savedT = setTimeout(() => n.textContent = 'Saved', 300);
+      this._savedT = setTimeout(() => n.textContent = this.T('ap.saved', 'Saved'), 300);
     },
 
     // ---------------- fit / scroll ----------------
@@ -804,7 +816,7 @@
         const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
         if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) { e.preventDefault(); Model.undo(); return; }
         if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.key.toLowerCase() === 'z' && e.shiftKey))) { e.preventDefault(); Model.redo(); return; }
-        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); Model._persist(); this.toast('Saved'); return; }
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); Model._persist(); this.toast(this.T('ap.saved', 'Saved')); return; }
         if (typing) return;
         if (e.key === 'Insert' || (e.key === 'Enter' && Model.selectedId)) { e.preventDefault(); Model.addTask({ type: 'task' }); }
         if (e.key === 'Delete' && Model.selectedId) { e.preventDefault(); Model.remove(Model.selectedId); }
@@ -1212,7 +1224,7 @@
         U.el('label', {}, ['Type', typeSel]),
         U.el('label', {}, ['Lag (days)', lagInput]),
       ]));
-      pop.appendChild(U.el('button', { class: 'de-del', onclick: () => { Model.removeDep(toId, fromId); this.closeDepEditor(); this.toast('Dependency removed'); } }, '🗑 Remove this link'));
+      pop.appendChild(U.el('button', { class: 'de-del', onclick: () => { Model.removeDep(toId, fromId); this.closeDepEditor(); this.toast(this.T('ap.depRemoved', 'Dependency removed')); } }, '🗑 Remove this link'));
       pop.hidden = false;
       const px = Math.max(8, Math.min(window.innerWidth - 248, x - 40));
       const py = Math.min(window.innerHeight - 150, y + 10);
