@@ -321,7 +321,15 @@
       const start = (sel && sel.start) || (this.project.tasks.length ? this._suggestStart() : U.today());
       const t = Object.assign({
         id: U.uid('t'),
-        name: partial && partial.type === 'milestone' ? 'New milestone' : partial && partial.type === 'group' ? 'New phase' : 'New task',
+        /* Seed name for a new row. The user overwrites it immediately,
+           but "New task" sitting in an otherwise German interface reads
+           as a half-translated product. */
+        name: (function (ty) {
+          const T = (k, f) => (window.I18N && I18N.t(k) !== k) ? I18N.t(k) : f;
+          if (ty === 'milestone') return T('new.milestone', 'New milestone');
+          if (ty === 'group') return T('new.group', 'New phase');
+          return T('new.task', 'New task');
+        })(partial && partial.type),
         start, end: partial && partial.type === 'milestone' ? start : U.endFrom(start, 3),
         progress: 0, color: U.PALETTE[this.project.tasks.length % U.PALETTE.length],
         assignee: '', type: 'task', parentId: sel ? sel.parentId : null, collapsed: false, notes: '', deps: [],

@@ -48,6 +48,15 @@
       if (window.Features) Features.init();
     },
 
+    /* Translate a chrome string. Falls back to the key's English text
+       so a missing translation degrades to English rather than showing
+       a raw key like "drawer.assignee" to the user. */
+    T(key, fallback) {
+      if (!window.I18N) return fallback;
+      const v = I18N.t(key);
+      return (v && v !== key) ? v : fallback;
+    },
+
     render() {
       Render.render();
       this.applyGridWidth();
@@ -369,7 +378,7 @@
        It is also the honest print view and the thing people paste into
        an email, so it earns its place twice over. */
     openTableView() {
-      this.openModal('Plan as a table', (body) => {
+      this.openModal(this.T('md.table', 'Plan as a table'), (body) => {
         const tasks = Model.tasks();
         if (!tasks.length) {
           body.appendChild(U.el('p', { class: 'muted' }, 'Nothing to show yet — add a task first.'));
@@ -384,10 +393,14 @@
 
         const tbl = U.el('table', { class: 'data-table' });
         tbl.appendChild(U.el('caption', {},
-          (Model.project.name || 'Project') + ' — every task, with dates and dependencies'));
+          (Model.project.name || 'Project') + ' — ' + this.T('tbl.caption', 'every task, with dates and dependencies')));
 
         const head = U.el('tr');
-        ['WBS', 'Task', 'Type', 'Start', 'Finish', 'Days', '%', 'Runs after', 'Assignee', 'Critical']
+        /* Reuse the grid's existing column keys rather than minting new
+           ones — the table is the same data, and two sets of keys for
+           the same columns would drift apart the first time one was
+           retranslated. */
+        this.tableHeadings()
           .forEach(h => head.appendChild(U.el('th', { scope: 'col' }, h)));
         const thead = U.el('thead'); thead.appendChild(head);
         tbl.appendChild(thead);
@@ -410,7 +423,7 @@
             .map(d => { const f = Model.get(d.from); return f ? f.name : '?'; }).join(', ')));
           tr.appendChild(U.el('td', {}, t.assignee || ''));
           // A word, not a colour — the whole point of this column.
-          tr.appendChild(U.el('td', {}, cpm && cpm.critical.has(t.id) ? 'yes' : ''));
+          tr.appendChild(U.el('td', {}, cpm && cpm.critical.has(t.id) ? this.T('tbl.yes', 'yes') : ''));
           tbody.appendChild(tr);
         }
         tbl.appendChild(tbody);
@@ -436,10 +449,25 @@
       });
     },
 
+    tableHeadings() {
+      return [
+        this.T('col.wbs', 'WBS'),
+        this.T('col.name', 'Task'),
+        this.T('dr.type', 'Type'),
+        this.T('col.start', 'Start'),
+        this.T('col.end', 'Finish'),
+        this.T('col.days', 'Days'),
+        '%',
+        this.T('col.pred', 'Runs after'),
+        this.T('col.assignee', 'Assignee'),
+        this.T('app.critical', 'Critical'),
+      ];
+    },
+
     /* Tab-separated, which is what spreadsheets and email clients
        actually paste well. */
     tableAsText(tasks, cal, cpm) {
-      const head = ['WBS', 'Task', 'Type', 'Start', 'Finish', 'Days', '%', 'Runs after', 'Assignee', 'Critical'];
+      const head = this.tableHeadings();
       const rows = [head.join('\t')];
       for (const t of tasks) {
         rows.push([
@@ -452,7 +480,7 @@
           t.type === 'group' ? '' : Math.round(t.progress || 0),
           (t.deps || []).map(d => { const f = Model.get(d.from); return f ? f.name : '?'; }).join('; '),
           t.assignee || '',
-          cpm && cpm.critical.has(t.id) ? 'yes' : '',
+          cpm && cpm.critical.has(t.id) ? this.T('tbl.yes', 'yes') : '',
         ].join('\t'));
       }
       return rows.join('\n');
@@ -513,7 +541,7 @@
        has no charting dependency and one would be ~50KB to draw three
        polylines. */
     openSCurve() {
-      this.openModal('S-curve - planned vs actual', (body) => {
+      this.openModal(this.T('md.scurve', 'S-curve — planned vs actual'), (body) => {
         const r = EVM.compute(Model.project, U.today());
 
         if (r.empty) {
@@ -902,12 +930,12 @@
       U.$('#drawerTitle').textContent = kind + ' · ' + (Render.wbs(t) || Model.number(t.id));
       const body = U.$('#drawerBody'); U.clear(body);
 
-      body.appendChild(field('Name', input(t.name, v => Model.update(id, { name: v }))));
+      body.appendChild(field(this.T('dr.name', 'Name'), input(t.name, v => Model.update(id, { name: v }))));
 
-      body.appendChild(field('Type', select(['task', 'milestone', 'group'], t.type, v => Model.update(id, { type: v }))));
+      body.appendChild(field(this.T('dr.type', 'Type'), select(['task', 'milestone', 'group'], t.type, v => Model.update(id, { type: v }))));
 
-      const startF = field('Start', input(t.start, v => Render._editDate(t, 'start', v), 'date'));
-      const endF = field('End', input(t.end, v => Render._editDate(t, 'end', v), 'date'));
+      const startF = field(this.T('dr.start', 'Start'), input(t.start, v => Render._editDate(t, 'start', v), 'date'));
+      const endF = field(this.T('dr.end', 'End'), input(t.end, v => Render._editDate(t, 'end', v), 'date'));
       if (t.type !== 'group') { const row = U.el('div', { class: 'field-row' }, [startF, endF]); body.appendChild(row); }
       else body.appendChild(startF);
 
@@ -940,36 +968,36 @@
         const b = (label, title, fn) => U.el('button', { class: 'btn', title, onclick: fn }, label);
 
         const moveRow = U.el('div', { class: 'nudge-row' }, [
-          U.el('span', { class: 'nudge-label' }, 'Move'),
-          b('◀◀', 'Back one week', () => nudge('move', -7)),
-          b('◀', 'Back one working day', () => nudge('move', -1)),
-          b('▶', 'Forward one working day', () => nudge('move', 1)),
-          b('▶▶', 'Forward one week', () => nudge('move', 7)),
+          U.el('span', { class: 'nudge-label' }, this.T('dr.move', 'Move')),
+          b('◀◀', this.T('dr.backWeek', 'Back one week'), () => nudge('move', -7)),
+          b('◀', this.T('dr.backDay', 'Back one working day'), () => nudge('move', -1)),
+          b('▶', this.T('dr.fwdDay', 'Forward one working day'), () => nudge('move', 1)),
+          b('▶▶', this.T('dr.fwdWeek', 'Forward one week'), () => nudge('move', 7)),
         ]);
-        body.appendChild(field('Nudge', moveRow));
+        body.appendChild(field(this.T('dr.nudge', 'Nudge'), moveRow));
 
         if (t.type !== 'milestone') {
           const sizeRow = U.el('div', { class: 'nudge-row' }, [
-            U.el('span', { class: 'nudge-label' }, 'Length'),
-            b('−', 'One working day shorter', () => nudge('resize', -1)),
-            b('+', 'One working day longer', () => nudge('resize', 1)),
+            U.el('span', { class: 'nudge-label' }, this.T('dr.length', 'Length')),
+            b('−', this.T('dr.shorter', 'One working day shorter'), () => nudge('resize', -1)),
+            b('+', this.T('dr.longer', 'One working day longer'), () => nudge('resize', 1)),
           ]);
-          body.appendChild(field('Duration', sizeRow));
+          body.appendChild(field(this.T('dr.duration', 'Duration'), sizeRow));
         }
       }
 
       if (t.type === 'task') {
-        body.appendChild(field('Progress: ' + (t.progress || 0) + '%', rangeInput(t.progress || 0, v => Model.update(id, { progress: v }))));
+        body.appendChild(field(this.T('dr.progress', 'Progress') + ': ' + (t.progress || 0) + '%', rangeInput(t.progress || 0, v => Model.update(id, { progress: v }))));
       }
-      body.appendChild(field('Assignee', input(t.assignee || '', v => Model.update(id, { assignee: v }))));
+      body.appendChild(field(this.T('dr.assignee', 'Assignee'), input(t.assignee || '', v => Model.update(id, { assignee: v }))));
 
       /* Budget and actual spend. Both feed the S-curve: cost switches
          it from a duration-weighted progress curve to a value curve,
          and spend is the ONLY source of CPI — evm.js reports it as null
          rather than inferring it from progress. */
       if (t.type !== 'group') {
-        const costF = field('Budget', input(t.cost || 0, v => Model.update(id, { cost: Number(v) || 0 }), 'number'));
-        const spentF = field('Spent', input(t.spent || 0, v => Model.update(id, { spent: Number(v) || 0 }), 'number'));
+        const costF = field(this.T('dr.budget', 'Budget'), input(t.cost || 0, v => Model.update(id, { cost: Number(v) || 0 }), 'number'));
+        const spentF = field(this.T('dr.spent', 'Spent'), input(t.spent || 0, v => Model.update(id, { spent: Number(v) || 0 }), 'number'));
         body.appendChild(U.el('div', { class: 'field-row' }, [costF, spentF]));
       }
 
@@ -979,7 +1007,7 @@
         const s = U.el('div', { class: 'swatch' + (c === t.color ? ' active' : ''), style: { background: c }, onclick: () => Model.update(id, { color: c }) });
         sw.appendChild(s);
       });
-      body.appendChild(field('Color', sw));
+      body.appendChild(field(this.T('dr.color', 'Color'), sw));
 
       // dependencies
       const depWrap = U.el('div', { class: 'dep-list' });
@@ -999,9 +1027,9 @@
         sel.addEventListener('change', () => { if (sel.value) { Model.addDep(sel.value, id, 'FS'); } });
         depWrap.appendChild(sel);
       }
-      body.appendChild(field('Runs after (predecessors)', depWrap));
+      body.appendChild(field(this.T('dr.pred', 'Runs after (predecessors)'), depWrap));
 
-      body.appendChild(field('Notes', textarea(t.notes || '', v => Model.update(id, { notes: v }))));
+      body.appendChild(field(this.T('dr.notes', 'Notes'), textarea(t.notes || '', v => Model.update(id, { notes: v }))));
 
       const del = U.el('button', { class: 'btn btn-danger-ghost', onclick: () => { Model.remove(id); this.closeDrawer(); } }, '🗑 Delete task');
       body.appendChild(del);
@@ -1022,7 +1050,7 @@
        every date in someone's saved plan the moment they tick a box
        would be worse than the scheduling bug it fixes. */
     openCalendar() {
-      this.openModal('Working calendar', (body) => {
+      this.openModal(this.T('md.calendar', 'Working calendar'), (body) => {
         const cal = U.clone(Cal.of(Model.project));
         const persist = () => {
           Model.snapshot();
@@ -1190,7 +1218,7 @@
     closeDepEditor() { const p = U.$('#depEditor'); if (p) p.hidden = true; },
 
     openTemplates() {
-      this.openModal('Start from a template', (body) => {
+      this.openModal(this.T('md.templates', 'Start from a template'), (body) => {
         const grid = U.el('div', { class: 'template-grid' });
         Templates.list.forEach(tpl => {
           const card = U.el('div', { class: 'template-card', onclick: () => { Templates.apply(tpl.key); this.closeModal(); } }, [
@@ -1205,7 +1233,7 @@
     },
 
     openProjects() {
-      this.openModal('Your projects', (body) => {
+      this.openModal(this.T('md.projects', 'Your projects'), (body) => {
         const newBtn = U.el('button', { class: 'btn btn-primary', style: { marginBottom: '12px' }, onclick: () => { Model.newProject(); this.closeModal(); } }, '＋ New project');
         body.appendChild(newBtn);
         const list = U.el('div', { class: 'projects-list' });

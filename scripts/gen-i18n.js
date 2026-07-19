@@ -1263,6 +1263,27 @@ ${hreflangTags(sub)}`);
   // home links stay inside the locale
   h = h.split('href="/"').join(`href="/${code}/"`);
 
+  /* Move `selected` onto this locale's option in the language switcher.
+
+     app.html is TRANSFORMED from the English source rather than
+     generated fresh like the content pages, so the switcher arrived
+     with `selected` hardcoded on the English option and every localized
+     copy inherited it. The result: /es/app.html showed a Spanish
+     interface with the switcher reading "English".
+
+     It could not self-correct at runtime either. This is a NAVIGATING
+     switcher (data-lang-nav) whose option values are URLs, not language
+     codes, so i18n.js deliberately leaves it alone — assigning a
+     language code to it would blank the control and break navigation.
+     The markup is the only place this can be right. */
+  h = h.replace(/(<option value="[^"]*")\s+selected(>)/g, '$1$2');
+  const selfHref = `/${code}/app.html`;
+  const before = h;
+  h = h.replace(new RegExp(`(<option value="${selfHref}")(>)`), '$1 selected$2');
+  if (h === before) {
+    throw new Error(`renderApp(${code}): no switcher option for ${selfHref} — the language selector would show the wrong language.`);
+  }
+
   // The hand-authored app.html predates the localized-page SEO standard,
   // so bring the copies up to it: robots, twitter card, og:locale
   // alternates, and the shared entity graph with inLanguage.
