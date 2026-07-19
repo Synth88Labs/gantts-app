@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');
-const ROOT=path.join(__dirname,'..');const SKIP=new Set(['node_modules','scripts','docs','.claude','.git','deploy','i18n']);
+const ROOT=path.join(__dirname,'..');const SKIP=new Set(['node_modules','scripts','docs','.git','deploy','i18n']);
 function html(d,b=''){let o=[];for(const n of fs.readdirSync(d)){if(SKIP.has(n))continue;const a=path.join(d,n);if(fs.statSync(a).isDirectory())o=o.concat(html(a,b+n+'/'));else if(n.endsWith('.html'))o.push(b+n);}return o;}
 let issues=0;
 html(ROOT).forEach(p=>{

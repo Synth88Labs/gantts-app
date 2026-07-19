@@ -26,7 +26,7 @@ const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 const EMAIL = 'synth88labs@gmail.com';
-const SKIP = new Set(['node_modules', 'scripts', 'docs', '.claude', '.git', 'deploy', 'i18n',
+const SKIP = new Set(['node_modules', 'scripts', 'docs', '.git', 'deploy', 'i18n',
   'es', 'fr', 'de', 'pt', 'zh', 'templates/files', 'templates/img']);
 
 function walk(dir, base = '') {

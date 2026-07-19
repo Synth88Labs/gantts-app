@@ -1,6 +1,6 @@
 # ==========================================================================
-# gantts.app — Apache config for Namecheap / cPanel shared hosting
-# Upload alongside index.html in public_html.
+# gantts.app — Apache config for the host / the hosting control panel shared hosting
+# Upload alongside index.html in <document-root>.
 # ==========================================================================
 
 DirectoryIndex index.html

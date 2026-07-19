@@ -29,7 +29,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const GH = 'https://github.com/Synth88Labs/gantts-app';
-const SKIP_DIRS = new Set(['node_modules', 'scripts', 'docs', '.claude', '.git', 'deploy',
+const SKIP_DIRS = new Set(['node_modules', 'scripts', 'docs', '.git', 'deploy',
   'i18n', 'es', 'fr', 'de', 'pt', 'zh', 'templates/files', 'templates/img']);
 const SKIP_FILES = new Set(['app.html', '404.html']);
 

@@ -14,7 +14,7 @@ for (const l of fs.readFileSync(path.join(ROOT, '.env'), 'utf8').split(/\r?\n/))
 }
 
 const paths = process.argv.slice(2).length ? process.argv.slice(2)
-  : ['/', '/public_html', '/home'];
+  : ['/', '/<document-root>', '/home'];
 
 (async () => {
   const c = new ftp.Client(30000);

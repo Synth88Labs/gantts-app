@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
-const SKIP_DIR = new Set(['node_modules', 'scripts', 'docs', '.claude', '.git', 'deploy', 'i18n']);
+const SKIP_DIR = new Set(['node_modules', 'scripts', 'docs', '.git', 'deploy', 'i18n']);
 
 function htmlFiles(dir, base = '') {
   let out = [];

@@ -41,7 +41,7 @@ const BASE = 'https://gantts.app';
 const LOCALE_RE = /^(es|fr|de|pt|zh)\//;
 // `deploy/` is a build artifact holding a full copy of the site —
 // walking it would list every URL twice.
-const SKIP = new Set(['node_modules', 'scripts', 'docs', '.claude', '.git', 'deploy',
+const SKIP = new Set(['node_modules', 'scripts', 'docs', '.git', 'deploy',
   'i18n', 'templates/files', 'templates/img', 'test']);
 
 /* Last commit date per file, in one pass.

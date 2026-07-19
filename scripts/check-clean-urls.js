@@ -33,7 +33,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', '.claude', 'scripts']);
+const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', 'scripts']);
 
 /* Anything that addresses a page. Deliberately broad: it is easier to
    add an exemption than to notice a form nobody thought to grep for. */

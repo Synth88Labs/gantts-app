@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /* ============================================================
-   build-deploy.js — assemble a clean upload bundle for Namecheap.
+   build-deploy.js — assemble a clean upload bundle for the host.
 
    Copies only what the live site needs into deploy/, then writes
-   deploy-gantts-app.zip for uploading via cPanel File Manager.
+   deploy-gantts-app.zip for uploading via the hosting control panel File Manager.
 
    Deliberately EXCLUDES node_modules, scripts, docs, package files
    and markdown — none of that should ever be publicly served.
@@ -114,7 +114,7 @@ const htmlCount = files.filter(f => f.endsWith('.html')).length;
 
 // ---- zip ----
 // NOT PowerShell's Compress-Archive: on Windows PowerShell 5.1 it writes entry
-// names with backslashes, which violates the ZIP spec. cPanel extracts on Linux
+// names with backslashes, which violates the ZIP spec. the hosting control panel extracts on Linux
 // and would create files literally named "assets\logo.svg" instead of folders.
 // Building the archive directly lets us force forward slashes.
 rimraf(ZIP);
@@ -147,6 +147,6 @@ console.log('  files  : ' + files.length + ' (' + htmlCount + ' HTML pages)');
 console.log('  size   : ' + human(totalBytes));
 if (zipped) console.log('  zip    : deploy-gantts-app.zip (' + human(fs.statSync(ZIP).size) + ')');
 console.log('');
-console.log('  Upload the ZIP into public_html via cPanel File Manager, then Extract.');
+console.log('  Upload the ZIP into <document-root> via the hosting control panel File Manager, then Extract.');
 console.log('  Make sure hidden files are visible so .htaccess lands too.');
 console.log('');

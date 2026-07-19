@@ -51,7 +51,7 @@ const sha = (p) => crypto.createHash('sha1')
    generator constant claims — the pages are what visitors fetch. */
 function versionInPages(queryName) {
   const seen = new Set();
-  const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', '.claude', 'scripts']);
+  const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', 'scripts']);
   const re = new RegExp(queryName.replace('.', '\\.') + '\\?v=(\\d+)', 'g');
   (function walk(dir) {
     for (const name of fs.readdirSync(dir)) {

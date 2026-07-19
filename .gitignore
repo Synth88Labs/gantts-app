@@ -9,7 +9,8 @@ deploy-gantts-app.zip
 .zip-bundle.ps1
 
 # local tool state
-.claude/settings.local.json
+# local editor/tool state
+.*/settings.local.json
 
 # Generated download artefacts (~9 MB of .xlsx/.pptx binaries).
 # Rebuild with: npm run gen:templates

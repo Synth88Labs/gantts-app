@@ -121,8 +121,8 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
       port: Number(env.FTP_PORT || 21),
       secure: env.FTP_INSECURE === '1' ? false : true,
       // Certificate verification is ON. It only passes if FTP_HOST is the
-      // server's real name (e.g. businessNNN-N.web-hosting.com) — the
-      // shared-hosting cert is issued for *.web-hosting.com, so aliases
+      // server's real name (e.g. businessNNN-N.the provider hostname) — the
+      // shared-hosting cert is issued for *.the provider hostname, so aliases
       // like ftp.gantts.app or ftp.cladd.store fail validation. Without
       // this, an attacker on the path could impersonate the server and
       // capture the FTP password. Set FTP_ALLOW_BAD_CERT=1 only if your
@@ -145,7 +145,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
       } catch (e) {
         console.error(`\n✗ ${env.FTP_DIR} does not exist on the server.`);
         console.error('  Not creating it — a document root you have to create is a sign');
-        console.error('  the FTP account is rooted elsewhere. Most cPanel FTP accounts are');
+        console.error('  the FTP account is rooted elsewhere. Most the hosting control panel FTP accounts are');
         console.error('  chrooted to the docroot already, in which case FTP_DIR should be "/".');
         console.error('  Run  node scripts/ftp-inspect.js  to see the real layout.\n');
         client.close();
@@ -175,7 +175,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
     }
     if (suspicious) {
       console.warn('\n⚠ The remote path looks like an FTP-account subfolder rather than');
-      console.warn('  a document root. In cPanel, check Domains → gantts.app and use the');
+      console.warn('  a document root. In the hosting control panel, check Domains → gantts.app and use the');
       console.warn('  "Document Root" it shows as FTP_DIR.');
     }
 
