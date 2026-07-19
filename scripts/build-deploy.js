@@ -21,10 +21,17 @@ const ZIP = path.join(ROOT, 'deploy-gantts-app.zip');
 // Everything the live site serves. Locale dirs are listed explicitly so a
 // new language cannot be silently left out of the upload.
 const INCLUDE_DIRS = ['assets', 'blog', 'css', 'js', 'templates', 'es', 'fr', 'de', 'pt', 'zh'];
+/* Site pages come from the SAME registry the generator and the sitemap
+   read. This list used to be hardcoded and had already drifted once:
+   accessibility.html existed, was translated into five languages and
+   listed in the sitemap, and was simply never uploaded — so the English
+   original 404'd while every translation of it was live. */
+const { SITE_PAGES } = require('../i18n/site-pages.js');
+
 const INCLUDE_FILES = [
   '.htaccess',
-  '404.html', 'about.html', 'app.html', 'index.html', 'privacy.html', 'templates.html',
-  'contact.html', 'terms.html',
+  '404.html', 'app.html', 'index.html', 'templates.html',
+  ...SITE_PAGES,
   'robots.txt', 'sitemap.xml', 'sitemap.xsl', 'site.webmanifest', 'sw.js',
   // Google's favicon crawler and many older clients only ever request
   // the root path, ignoring <link rel="icon">. Rebuild: npm run gen:favicon
