@@ -84,7 +84,29 @@ const req = https.request(ENDPOINT, {
       if (res.statusCode === 202) console.log('  202 means the key file is still being validated — normal on first run.');
     } else {
       console.error(`✗ HTTP ${res.statusCode}${body ? ' — ' + body.slice(0, 300) : ''}`);
-      if (res.statusCode === 403) console.error('  403 usually means the key file is not reachable at the keyLocation above.');
+
+      /* 403 has two very different causes and the advice for them is
+         opposite. Reading errorCode tells them apart instead of
+         guessing — the earlier version always blamed an unreachable key
+         file, which sent you checking a file that was serving fine. */
+      if (res.statusCode === 403) {
+        let code = '';
+        try { code = (JSON.parse(body) || {}).errorCode || ''; } catch { /* not JSON */ }
+
+        if (/SiteVerificationNotCompleted/i.test(code)) {
+          console.error('\n  The key file is fine — this is the search engine still verifying it.');
+          console.error('  A newly published key is not accepted immediately. Wait and re-run;');
+          console.error('  it usually clears within minutes to a few hours of the file going live.');
+          console.error('  Nothing to fix, and re-running is safe: submissions are idempotent.');
+        } else if (/KeyNotFound|InvalidKey|Forbidden/i.test(code)) {
+          console.error('\n  The key file could not be read, or its contents do not match KEY.');
+          console.error(`  Check that ${`https://${HOST}/${KEY}.txt`} returns exactly:`);
+          console.error('    ' + KEY);
+        } else {
+          console.error('\n  Check that the key file is reachable at the keyLocation above');
+          console.error('  and that its contents match the key exactly.');
+        }
+      }
       process.exitCode = 1;
     }
   });
