@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precedências no gráfico de Gantt | gantts.app</title>
+  <meta name="description" content="Término-Início, Início-Início, Término-Término e Início-Término explicados, com antecipação e retardo." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/pt/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Precedências no gráfico de Gantt | gantts.app" />
+  <meta property="og:description" content="Término-Início, Início-Início, Término-Término e Início-Término explicados, com antecipação e retardo." />
+  <meta property="og:url" content="https://gantts.app/pt/blog/gantt-chart-dependencies.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Precedências no gráfico de Gantt: os quatro tipos" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Precedências no gráfico de Gantt | gantts.app" />
+  <meta name="twitter:description" content="Término-Início, Início-Início, Término-Término e Início-Término explicados, com antecipação e retardo." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/gantt-chart-dependencies.html#post","headline":"Precedências no gráfico de Gantt: os quatro tipos","description":"Término-Início, Início-Início, Término-Término e Início-Término explicados, com antecipação e retardo.","url":"https://gantts.app/pt/blog/gantt-chart-dependencies.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Precedências no gráfico de Gantt: os quatro tipos","item":"https://gantts.app/pt/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"Quais são os tipos de precedência?","acceptedAnswer":{"@type":"Answer","text":"Quatro: Término-Início, Início-Início, Término-Término e Início-Término. O Término-Início cobre a grande maioria dos casos."}},{"@type":"Question","name":"Qual a diferença entre antecipação e retardo?","acceptedAnswer":{"@type":"Answer","text":"O retardo empurra a sucessora (tempo de cura); a antecipação faz começar antes que a predecessora termine por completo."}},{"@type":"Question","name":"Preciso ligar todas as tarefas?","acceptedAnswer":{"@type":"Answer","text":"Não, só as precedências reais. Um cronograma em que tudo se encadeia perde o paralelismo e reage demais a qualquer mudança."}},{"@type":"Question","name":"Por que minha tarefa não se desloca?","acceptedAnswer":{"@type":"Answer","text":"Normalmente falta a ligação, ou existe uma data fixa que sobrepõe o cálculo."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/pt/app.html">Criar gráfico</a>
+        <a href="/pt/templates.html">Modelos</a>
+        <a href="/pt/blog/">Guias</a>
+        <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-dependencies.html">English</option><option value="/es/blog/gantt-chart-dependencies.html">Español</option><option value="/fr/blog/gantt-chart-dependencies.html">Français</option><option value="/de/blog/gantt-chart-dependencies.html">Deutsch</option><option value="/pt/blog/gantt-chart-dependencies.html" selected>Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/blog/">Guias</a></div>
+    <h1>Precedências no gráfico de Gantt: os quatro tipos</h1>
+    <p class="lead">Uma <strong>precedência</strong> define o que espera o quê. Existem quatro tipos, mas a maioria dos cronogramas usa praticamente um só — e os outros costumam causar mais confusão do que ajuda.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>3 min de leitura</span></p>
+    <div class="toc"><strong>Nesta página</strong>
+      <ol>
+        <li><a href="#s1">Término-Início (TI)</a></li>
+        <li><a href="#s2">Início-Início (II)</a></li>
+        <li><a href="#s3">Término-Término (TT)</a></li>
+        <li><a href="#s4">Início-Término (IT)</a></li>
+        <li><a href="#s5">Antecipação e retardo</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>Os quatro tipos de ligação comparados:</p>
+      <svg viewBox="0 0 620 330" width="100%" role="img" aria-label="Diagram of the four Gantt dependency types: finish to start, start to start, finish to finish, and start to finish">
+      <text x="0" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Start (FS)</text>
+      <text x="0" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A finishes — the default</text>
+      <rect x="0" y="40" width="130" height="14" rx="4" fill="#6c4cf1"/><text x="138" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="160" y="66" width="130" height="14" rx="4" fill="#8b7bf5"/><text x="298" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 130 47 C 144 47, 146 73, 160 73" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="160,73 154,69 154,77" fill="#6c4cf1"/>
+
+      <text x="330" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Start (SS)</text>
+      <text x="330" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A starts</text>
+      <rect x="330" y="40" width="130" height="14" rx="4" fill="#0d9488"/><text x="468" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="66" width="150" height="14" rx="4" fill="#14b8a6"/><text x="488" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 332 47 C 346 47, 316 73, 330 73" fill="none" stroke="#0d9488" stroke-width="1.8"/><polygon points="330,73 324,69 324,77" fill="#0d9488"/>
+
+      <text x="0" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Finish (FF)</text>
+      <text x="0" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A finishes</text>
+      <rect x="0" y="206" width="150" height="14" rx="4" fill="#ea580c"/><text x="158" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="30" y="232" width="120" height="14" rx="4" fill="#f97316"/><text x="158" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 150 213 C 164 213, 136 239, 150 239" fill="none" stroke="#ea580c" stroke-width="1.8"/><polygon points="150,239 144,235 144,243" fill="#ea580c"/>
+
+      <text x="330" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Finish (SF)</text>
+      <text x="330" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A starts — rare</text>
+      <rect x="430" y="206" width="120" height="14" rx="4" fill="#9333ea"/><text x="558" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="232" width="110" height="14" rx="4" fill="#a855f7"/><text x="448" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 432 213 C 446 213, 426 239, 440 239" fill="none" stroke="#9333ea" stroke-width="1.8"/><polygon points="440,239 434,235 434,243" fill="#9333ea"/>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">Término-Início (TI)</h2>
+<p>O caso padrão: B começa quando A termina. "Pintar" começa quando "rebocar" acaba. Cerca de 90% das ligações em cronogramas reais são desse tipo, e ainda bem — é a única que todo mundo lê corretamente de primeira.</p>
+      <h2 id="s2">Início-Início (II)</h2>
+<p>B começa quando A começa. Útil para trabalhos que arrancam juntos: a fiscalização com a estrutura, o time de qualidade com o desenvolvimento. Frequentemente combinada com um retardo — a QA começa três dias após o início do desenvolvimento.</p>
+      <h2 id="s3">Término-Término (TT)</h2>
+<p>B termina quando A termina. Típico de atividades de apoio: a documentação fica pronta quando o desenvolvimento fica pronto. Não fixa data de início, apenas um fim comum.</p>
+      <h2 id="s4">Início-Término (IT)</h2>
+<p>B termina quando A começa. O caso mais raro, usado sobretudo em passagens de turno: a equipe anterior encerra quando a nova chega; o sistema antigo é desligado quando o novo entra. Se você usa muito, o cronograma costuma estar pensado ao contrário.</p>
+      <h2 id="s5">Antecipação e retardo</h2>
+<p>Toda ligação aceita um deslocamento. Um retardo empurra a sucessora — o concreto precisa curar sete dias antes de seguir. Uma antecipação faz começar antes — a segunda etapa começa quando a primeira está em 70%.</p>
+        <p>Uma observação sobre esperas: cura, secagem e prazos de aprovação ficam melhores como tarefas visíveis do que escondidos em um retardo. O que está na barra se vê; o que está na caixa de diálogo ninguém acha depois.</p>
+
+      <div class="callout">Ligue apenas o que realmente espera. O teste: se A terminar antes, B pode começar antes? Se a resposta for não, não é precedência — é só a ordem em que você escreveu.</div>
+
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>Quais são os tipos de precedência?</summary><p>Quatro: Término-Início, Início-Início, Término-Término e Início-Término. O Término-Início cobre a grande maioria dos casos.</p></details>
+        <details><summary>Qual a diferença entre antecipação e retardo?</summary><p>O retardo empurra a sucessora (tempo de cura); a antecipação faz começar antes que a predecessora termine por completo.</p></details>
+        <details><summary>Preciso ligar todas as tarefas?</summary><p>Não, só as precedências reais. Um cronograma em que tudo se encadeia perde o paralelismo e reage demais a qualquer mudança.</p></details>
+        <details><summary>Por que minha tarefa não se desloca?</summary><p>Normalmente falta a ligação, ou existe uma data fixa que sobrepõe o cálculo.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicidade</span>
+          <h3>Modelos de Gantt para Excel</h3>
+          <p>O ExcelGuru.io mantém uma biblioteca gratuita de planilhas de Gantt prontas, com as fórmulas já configuradas.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Ver os modelos →</a>
+      </aside>
+
+      <h2 id="related">Leia também</h2>
+      <ul>
+        <li><a href="/pt/blog/critical-path-method.html">O caminho crítico</a></li>
+        <li><a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a></li>
+        <li><a href="/pt/blog/gantt-chart-mistakes.html">Erros comuns de cronograma</a></li>
+        <li><a href="/pt/blog/">Voltar aos guias</a></li>
+      </ul>
+      <p class="crumbs"><small>Este artigo também está disponível em inglês.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Crie seu gráfico de Gantt — grátis</h2>
+      <p>No navegador, sem cadastro. Seus dados ficam no seu aparelho.</p>
+      <a class="btn btn-white btn-lg" href="/pt/app.html">Abrir o editor</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.</p>
+          <a class="footer-cta" href="/pt/app.html">Abrir o aplicativo →</a>
+          <p class="footer-byline">Um projeto da <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modelos</h4>
+          <a href="/pt/templates.html">Todos os modelos</a>
+          <a href="/pt/templates/excel.html">Excel</a>
+          <a href="/pt/templates/powerpoint.html">PowerPoint</a>
+          <a href="/pt/templates/construction.html">Construção</a>
+        </div>
+        <div>
+          <h4>Guias</h4>
+          <a href="/pt/blog/">Todos os guias</a>
+          <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+          <a href="/pt/blog/critical-path-method.html">Método do caminho crítico</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/pt/about.html">Sobre</a>
+          <a href="/pt/contact.html">Contato</a>
+          <a href="/pt/terms.html">Termos de uso</a>
+          <a href="/pt/privacy.html">Privacidade</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos os direitos reservados.</span>
+        <span>Site estático — nada do que você planeja sai do seu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

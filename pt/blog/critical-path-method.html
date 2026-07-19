@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caminho crítico: cálculo e exemplo | gantts.app</title>
+  <meta name="description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/pt/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Caminho crítico: cálculo e exemplo | gantts.app" />
+  <meta property="og:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta property="og:url" content="https://gantts.app/pt/blog/critical-path-method.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Caminho crítico: método, cálculo e exemplo resolvido" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Caminho crítico: cálculo e exemplo | gantts.app" />
+  <meta name="twitter:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/critical-path-method.html#post","headline":"Caminho crítico: método, cálculo e exemplo resolvido","description":"Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com quatro tarefas.","url":"https://gantts.app/pt/blog/critical-path-method.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Caminho crítico: método, cálculo e exemplo resolvido","item":"https://gantts.app/pt/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"O que é o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"A cadeia mais longa de tarefas ligadas. A duração dela é a menor duração possível do projeto, e suas tarefas não têm folga."}},{"@type":"Question","name":"Como calcular o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Cálculo para frente para as datas mais cedo, para trás para as mais tarde. As tarefas em que as duas coincidem — folga zero — formam o caminho crítico."}},{"@type":"Question","name":"O que é folga total?","acceptedAnswer":{"@type":"Answer","text":"O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo."}},{"@type":"Question","name":"Pode haver mais de um caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos, o que aumenta bastante o risco."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/pt/app.html">Criar gráfico</a>
+        <a href="/pt/templates.html">Modelos</a>
+        <a href="/pt/blog/">Guias</a>
+        <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html" selected>Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/blog/">Guias</a></div>
+    <h1>Caminho crítico: método, cálculo e exemplo resolvido</h1>
+    <p class="lead">O <strong>caminho crítico</strong> é a cadeia mais longa de tarefas ligadas de um projeto. O comprimento dele é a menor duração possível — e cada dia de atraso nesse caminho é um dia de atraso no fim.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>3 min de leitura</span></p>
+    <div class="toc"><strong>Nesta página</strong>
+      <ol>
+        <li><a href="#s1">A ideia central</a></li>
+        <li><a href="#s2">Cálculo para frente: as datas mais cedo</a></li>
+        <li><a href="#s3">Cálculo para trás: as datas mais tarde</a></li>
+        <li><a href="#s4">Folga e caminho crítico</a></li>
+        <li><a href="#s5">Um exemplo com quatro tarefas</a></li>
+        <li><a href="#s6">O que isso muda na prática</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">A ideia central</h2>
+<p>Nem toda tarefa pesa igual no prazo. Algumas têm sobra: podem escorregar sem mover o fim. Outras não têm nenhuma — e são elas que formam o caminho crítico.</p>
+        <p>O método se chama Critical Path Method, ou CPM, e vem do fim dos anos 1950. Ele responde a duas perguntas: quanto tempo o projeto leva no mínimo, e quais tarefas não podem atrasar de jeito nenhum.</p>
+      <h2 id="s2">Cálculo para frente: as datas mais cedo</h2>
+<p>Comece no início e avance. Para cada tarefa: o início mais cedo é o maior dos términos mais cedo das predecessoras; o término mais cedo é o início mais cedo somado à duração.</p>
+        <p>Ao fim desse cálculo, você tem a menor duração possível do projeto.</p>
+      <h2 id="s3">Cálculo para trás: as datas mais tarde</h2>
+<p>Agora parta do fim. O término mais tarde é o menor dos inícios mais tarde das sucessoras; o início mais tarde é o término mais tarde menos a duração.</p>
+      <h2 id="s4">Folga e caminho crítico</h2>
+<p>A folga total de uma tarefa é o início mais tarde menos o início mais cedo. Tarefas com folga zero formam o caminho crítico. Sempre existe pelo menos um, e em cronogramas muito ligados costuma haver vários em paralelo.</p>
+      <h2 id="s5">Um exemplo com quatro tarefas</h2>
+<p>A dura 3 dias, B dura 5 e vem depois de A, C dura 2 e também vem depois de A, D dura 4 e vem depois de B e C.</p>
+        <p><strong>Para frente:</strong> A vai do dia 0 ao 3. B de 3 a 8, C de 3 a 5. D espera as duas, começa em 8 e termina em 12. Duração do projeto: 12 dias.</p>
+        <p><strong>Para trás:</strong> D precisa começar em 8. Logo B precisa terminar em 8 — início mais tarde 3, folga 0. C também precisa terminar em 8, mas dura só 2 dias: início mais tarde 6, início mais cedo real 3, <em>folga de 3 dias</em>.</p>
+        <p>O caminho crítico é A → B → D. C pode atrasar três dias sem afetar o fim.</p>
+      <h2 id="s6">O que isso muda na prática</h2>
+<p>Mostra onde o esforço rende. Colocar mais gente em C não antecipa nada. Ganhar um dia em B ganha um dia no fim do projeto.</p>
+        <p>E alerta para uma armadilha: se C atrasar quatro dias, C vira crítica. O caminho crítico não é propriedade fixa do cronograma, é um retrato do momento — ele se desloca assim que algo muda.</p>
+
+      <div class="callout">O caminho crítico muda durante o projeto. Uma tarefa com três dias de folga que atrasa quatro passa a ser crítica. Por isso ele não se calcula uma vez no início, mas a cada atualização.</div>
+
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>O que é o caminho crítico?</summary><p>A cadeia mais longa de tarefas ligadas. A duração dela é a menor duração possível do projeto, e suas tarefas não têm folga.</p></details>
+        <details><summary>Como calcular o caminho crítico?</summary><p>Cálculo para frente para as datas mais cedo, para trás para as mais tarde. As tarefas em que as duas coincidem — folga zero — formam o caminho crítico.</p></details>
+        <details><summary>O que é folga total?</summary><p>O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo.</p></details>
+        <details><summary>Pode haver mais de um caminho crítico?</summary><p>Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos, o que aumenta bastante o risco.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicidade</span>
+          <h3>Modelos de Gantt para Excel</h3>
+          <p>O ExcelGuru.io mantém uma biblioteca gratuita de planilhas de Gantt prontas, com as fórmulas já configuradas.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Ver os modelos →</a>
+      </aside>
+
+      <h2 id="related">Leia também</h2>
+      <ul>
+        <li><a href="/pt/blog/gantt-chart-dependencies.html">Os quatro tipos de precedência</a></li>
+        <li><a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a></li>
+        <li><a href="/pt/blog/gantt-baseline-variance.html">Linha de base e desvios</a></li>
+        <li><a href="/pt/blog/">Voltar aos guias</a></li>
+      </ul>
+      <p class="crumbs"><small>Este artigo também está disponível em inglês.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Crie seu gráfico de Gantt — grátis</h2>
+      <p>No navegador, sem cadastro. Seus dados ficam no seu aparelho.</p>
+      <a class="btn btn-white btn-lg" href="/pt/app.html">Abrir o editor</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.</p>
+          <a class="footer-cta" href="/pt/app.html">Abrir o aplicativo →</a>
+          <p class="footer-byline">Um projeto da <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modelos</h4>
+          <a href="/pt/templates.html">Todos os modelos</a>
+          <a href="/pt/templates/excel.html">Excel</a>
+          <a href="/pt/templates/powerpoint.html">PowerPoint</a>
+          <a href="/pt/templates/construction.html">Construção</a>
+        </div>
+        <div>
+          <h4>Guias</h4>
+          <a href="/pt/blog/">Todos os guias</a>
+          <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+          <a href="/pt/blog/critical-path-method.html">Método do caminho crítico</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/pt/about.html">Sobre</a>
+          <a href="/pt/contact.html">Contato</a>
+          <a href="/pt/terms.html">Termos de uso</a>
+          <a href="/pt/privacy.html">Privacidade</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos os direitos reservados.</span>
+        <span>Site estático — nada do que você planeja sai do seu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

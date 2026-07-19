@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linha de base e desvios no Gantt | gantts.app</title>
+  <meta name="description" content="O que é linha de base, como ler desvios de prazo, quando refazer a linha de base e quais indicadores realmente ajudam." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/pt/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Linha de base e desvios no Gantt | gantts.app" />
+  <meta property="og:description" content="O que é linha de base, como ler desvios de prazo, quando refazer a linha de base e quais indicadores realmente ajudam." />
+  <meta property="og:url" content="https://gantts.app/pt/blog/gantt-baseline-variance.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Linha de base e desvios: o plano diante da realidade" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Linha de base e desvios no Gantt | gantts.app" />
+  <meta name="twitter:description" content="O que é linha de base, como ler desvios de prazo, quando refazer a linha de base e quais indicadores realmente ajudam." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/gantt-baseline-variance.html#post","headline":"Linha de base e desvios: o plano diante da realidade","description":"O que é linha de base, como ler desvios de prazo, quando refazer a linha de base e quais indicadores realmente ajudam.","url":"https://gantts.app/pt/blog/gantt-baseline-variance.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Linha de base e desvios: o plano diante da realidade","item":"https://gantts.app/pt/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"O que é linha de base do cronograma?","acceptedAnswer":{"@type":"Answer","text":"O cronograma congelado no momento da aprovação. Serve de referência para todos os desvios medidos depois."}},{"@type":"Question","name":"Quando definir a linha de base?","acceptedAnswer":{"@type":"Answer","text":"Após a aprovação e antes do início dos trabalhos. Definida depois, perde o valor."}},{"@type":"Question","name":"Quando refazer a linha de base?","acceptedAnswer":{"@type":"Answer","text":"Apenas em mudança aprovada de escopo, orçamento ou prazo — não a cada atraso."}},{"@type":"Question","name":"O que é desvio de prazo?","acceptedAnswer":{"@type":"Answer","text":"A diferença em dias entre a data real e a planejada. No caminho crítico, ela se transfere integralmente para o fim do projeto."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/pt/app.html">Criar gráfico</a>
+        <a href="/pt/templates.html">Modelos</a>
+        <a href="/pt/blog/">Guias</a>
+        <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-baseline-variance.html">English</option><option value="/es/blog/gantt-baseline-variance.html">Español</option><option value="/fr/blog/gantt-baseline-variance.html">Français</option><option value="/de/blog/gantt-baseline-variance.html">Deutsch</option><option value="/pt/blog/gantt-baseline-variance.html" selected>Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/blog/">Guias</a></div>
+    <h1>Linha de base e desvios: o plano diante da realidade</h1>
+    <p class="lead">A <strong>linha de base</strong> é o estado congelado do seu cronograma no momento da aprovação. Sem ela, não dá para dizer depois se o projeto está atrasado — só quando ele deve terminar.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>3 min de leitura</span></p>
+    <div class="toc"><strong>Nesta página</strong>
+      <ol>
+        <li><a href="#s1">O que é linha de base</a></li>
+        <li><a href="#s2">Quando congelar</a></li>
+        <li><a href="#s3">Ler os desvios</a></li>
+        <li><a href="#s4">Medir o avanço corretamente</a></li>
+        <li><a href="#s5">Quando refazer a linha de base</a></li>
+        <li><a href="#s6">O que se aprende</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>Duas barras por tarefa: o plano de então e a situação de hoje.</p>
+      <svg viewBox="0 0 620 210" width="100%" role="img" aria-label="Diagram showing baseline bars beneath actual task bars, with the difference marked as schedule variance">
+      <line x1="0" y1="24" x2="470" y2="24" stroke="#cbd5e1" stroke-width="1"/><text x="4" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 1</text><line x1="0" y1="24" x2="0" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="98" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 2</text><line x1="94" y1="24" x2="94" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="192" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 3</text><line x1="188" y1="24" x2="188" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="286" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 4</text><line x1="282" y1="24" x2="282" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="380" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 5</text><line x1="376" y1="24" x2="376" y2="164" stroke="#eef2f7" stroke-width="1"/>
+      <rect x="0" y="34" width="180" height="14" rx="4" fill="#6c4cf1"/>
+      <rect x="0" y="50" width="180" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="196" y="46" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Design — on plan (0d)</text>
+
+      <rect x="96" y="76" width="190" height="14" rx="4" fill="#ea580c"/>
+      <rect x="96" y="92" width="120" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <line x1="216" y1="95" x2="286" y2="95" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="300" y="88" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Build — <tspan fill="#dc2626" font-weight="700">+7d late</tspan></text>
+
+      <rect x="286" y="118" width="96" height="14" rx="4" fill="#0d9488"/>
+      <rect x="310" y="134" width="96" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="396" y="130" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Test — <tspan fill="#157f4a" font-weight="700">2d early</tspan></text>
+
+      <rect x="0" y="168" width="14" height="8" rx="3" fill="#6c4cf1"/>
+      <text x="22" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">actual</text>
+      <rect x="80" y="170" width="14" height="5" rx="2.5" fill="#94a3b8" opacity="0.75"/>
+      <text x="102" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">baseline</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">O que é linha de base</h2>
+<p>Uma cópia das datas no momento da aprovação. O cronograma atual continua mudando; a linha de base fica parada. A diferença entre as duas é o desvio.</p>
+        <p>Sem linha de base não existe atraso — existe apenas uma nova data de término a cada vez, sem que ninguém consiga explicar como se chegou ali.</p>
+      <h2 id="s2">Quando congelar</h2>
+<p>Depois da aprovação e antes de começar o trabalho. Uma linha de base definida com o projeto já rodando há duas semanas não mede mais nada.</p>
+      <h2 id="s3">Ler os desvios</h2>
+<p>O desvio de prazo é o término real menos o término planejado, em dias. Positivo significa mais tarde que o previsto. O que importa não é o desvio de uma tarefa isolada, mas se ele está no caminho crítico — ali ele se transfere integralmente para o fim; fora dele, às vezes não afeta nada.</p>
+      <h2 id="s4">Medir o avanço corretamente</h2>
+<p>Percentuais de avanço são notoriamente pouco confiáveis; "90% pronto" é a resposta mais comum de qualquer projeto e continua assim por semanas. Mais sólido é perguntar a duração restante: quantos dias ainda faltam? Esse número dá para conferir.</p>
+      <h2 id="s5">Quando refazer a linha de base</h2>
+<p>Somente diante de uma mudança aprovada de escopo, orçamento ou prazo — não porque o cronograma antigo ficou feio. Quem refaz a cada atraso termina com um projeto sem desvios e sem nenhuma informação.</p>
+        <p>Guarde as linhas de base anteriores. A sequência delas mostra quantas vezes e por que houve replanejamento — muitas vezes a informação mais reveladora do projeto.</p>
+      <h2 id="s6">O que se aprende</h2>
+<p>Depois do encerramento, comparar linha de base e realizado é a melhor base disponível para a próxima estimativa. Se suas tarefas levam sistematicamente 30% a mais, isso não é azar seguido, é um viés de estimativa com fator conhecido.</p>
+
+      <div class="callout">Não refaça a linha de base porque o cronograma parece ruim. Uma linha de base reajustada a cada atraso mostra permanentemente zero desvio e não explica nada — deixa de ser instrumento de medida e vira maquiagem.</div>
+
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>O que é linha de base do cronograma?</summary><p>O cronograma congelado no momento da aprovação. Serve de referência para todos os desvios medidos depois.</p></details>
+        <details><summary>Quando definir a linha de base?</summary><p>Após a aprovação e antes do início dos trabalhos. Definida depois, perde o valor.</p></details>
+        <details><summary>Quando refazer a linha de base?</summary><p>Apenas em mudança aprovada de escopo, orçamento ou prazo — não a cada atraso.</p></details>
+        <details><summary>O que é desvio de prazo?</summary><p>A diferença em dias entre a data real e a planejada. No caminho crítico, ela se transfere integralmente para o fim do projeto.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicidade</span>
+          <h3>Modelos de Gantt para Excel</h3>
+          <p>O ExcelGuru.io mantém uma biblioteca gratuita de planilhas de Gantt prontas, com as fórmulas já configuradas.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Ver os modelos →</a>
+      </aside>
+
+      <h2 id="related">Leia também</h2>
+      <ul>
+        <li><a href="/pt/blog/critical-path-method.html">O caminho crítico</a></li>
+        <li><a href="/pt/blog/gantt-chart-mistakes.html">Erros comuns de cronograma</a></li>
+        <li><a href="/pt/blog/milestones-vs-tasks.html">Marcos e tarefas</a></li>
+        <li><a href="/pt/blog/">Voltar aos guias</a></li>
+      </ul>
+      <p class="crumbs"><small>Este artigo também está disponível em inglês.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Crie seu gráfico de Gantt — grátis</h2>
+      <p>No navegador, sem cadastro. Seus dados ficam no seu aparelho.</p>
+      <a class="btn btn-white btn-lg" href="/pt/app.html">Abrir o editor</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.</p>
+          <a class="footer-cta" href="/pt/app.html">Abrir o aplicativo →</a>
+          <p class="footer-byline">Um projeto da <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modelos</h4>
+          <a href="/pt/templates.html">Todos os modelos</a>
+          <a href="/pt/templates/excel.html">Excel</a>
+          <a href="/pt/templates/powerpoint.html">PowerPoint</a>
+          <a href="/pt/templates/construction.html">Construção</a>
+        </div>
+        <div>
+          <h4>Guias</h4>
+          <a href="/pt/blog/">Todos os guias</a>
+          <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+          <a href="/pt/blog/critical-path-method.html">Método do caminho crítico</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/pt/about.html">Sobre</a>
+          <a href="/pt/contact.html">Contato</a>
+          <a href="/pt/terms.html">Termos de uso</a>
+          <a href="/pt/privacy.html">Privacidade</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos os direitos reservados.</span>
+        <span>Site estático — nada do que você planeja sai do seu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>
