@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gantt-Diagramm erstellen — Anleitung | gantts.app</title>
+  <meta name="description" content="Gantt-Diagramm erstellen in sieben Schritten: Vorgänge, Dauern, Abhängigkeiten, Meilensteine, Ressourcen, Puffer und Freigabe." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/de/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Gantt-Diagramm erstellen — Anleitung | gantts.app" />
+  <meta property="og:description" content="Gantt-Diagramm erstellen in sieben Schritten: Vorgänge, Dauern, Abhängigkeiten, Meilensteine, Ressourcen, Puffer und Freigabe." />
+  <meta property="og:url" content="https://gantts.app/de/blog/how-to-make-a-gantt-chart.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Gantt-Diagramm erstellen: Anleitung in sieben Schritten" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gantt-Diagramm erstellen — Anleitung | gantts.app" />
+  <meta name="twitter:description" content="Gantt-Diagramm erstellen in sieben Schritten: Vorgänge, Dauern, Abhängigkeiten, Meilensteine, Ressourcen, Puffer und Freigabe." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/how-to-make-a-gantt-chart.html#post","headline":"Gantt-Diagramm erstellen: Anleitung in sieben Schritten","description":"Gantt-Diagramm erstellen in sieben Schritten: Vorgänge, Dauern, Abhängigkeiten, Meilensteine, Ressourcen, Puffer und Freigabe.","url":"https://gantts.app/de/blog/how-to-make-a-gantt-chart.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/how-to-make-a-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Gantt-Diagramm erstellen: Anleitung in sieben Schritten","item":"https://gantts.app/de/blog/how-to-make-a-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Wie erstellt man ein Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Vorgänge sammeln, in Phasen gruppieren, Dauern schätzen, Abhängigkeiten verknüpfen, Meilensteine setzen, Ressourcen zuordnen, Puffer einplanen. Termine ergeben sich daraus."}},{"@type":"Question","name":"Wie erstelle ich ein Gantt-Diagramm kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Im Browser, ohne Anmeldung und ohne Installation — etwa mit gantts.app. Alternativ mit einer Tabellenkalkulation, was aber ab etwa zwanzig Vorgängen unhandlich wird."}},{"@type":"Question","name":"Wie viele Vorgänge sollte ein Gantt-Diagramm haben?","acceptedAnswer":{"@type":"Answer","text":"So wenige wie möglich, so viele wie nötig. 20 bis 60 Zeilen sind für die meisten Projekte gut lesbar; ab etwa 150 pflegt den Plan niemand mehr."}},{"@type":"Question","name":"Wie lang sollte ein einzelner Vorgang sein?","acceptedAnswer":{"@type":"Answer","text":"Zwischen einem Tag und einem Monat. Kürzeres gehört auf eine Aufgabenliste, Längeres ist eine Phase und sollte unterteilt werden."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/de/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/de/app.html">Gantt-Diagramm erstellen</a>
+        <a href="/de/templates.html">Vorlagen</a>
+        <a href="/de/blog/">Ratgeber</a>
+        <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/how-to-make-a-gantt-chart.html">English</option><option value="/es/blog/how-to-make-a-gantt-chart.html">Español</option><option value="/fr/">Français</option><option value="/de/blog/how-to-make-a-gantt-chart.html" selected>Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <h1>Gantt-Diagramm erstellen: Anleitung in sieben Schritten</h1>
+    <p class="lead">Ein <strong>Gantt-Diagramm zu erstellen</strong> dauert weniger lang, als die meisten erwarten — vorausgesetzt, man geht in der richtigen Reihenfolge vor. Der häufigste Fehler ist, mit Terminen anzufangen. Termine sind das Ergebnis, nicht der Anfang.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <div class="toc"><strong>Inhalt</strong>
+      <ol>
+        <li><a href="#s1">1. Vorgänge sammeln — ohne Termine</a></li>
+        <li><a href="#s2">2. In Phasen gruppieren</a></li>
+        <li><a href="#s3">3. Dauern schätzen</a></li>
+        <li><a href="#s4">4. Abhängigkeiten verknüpfen</a></li>
+        <li><a href="#s5">5. Meilensteine setzen</a></li>
+        <li><a href="#s6">6. Ressourcen zuordnen und Auslastung prüfen</a></li>
+        <li><a href="#s7">7. Puffer einplanen und freigeben</a></li>
+        <li><a href="#s8">Womit erstellen?</a></li>
+        <li><a href="#s9">Häufigster Fehler zum Schluss</a></li>
+        <li><a href="#s10">Und dann?</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">1. Vorgänge sammeln — ohne Termine</h2>
+<p>Schreiben Sie zuerst auf, was zu tun ist. Noch keine Daten, keine Reihenfolge, keine Zuständigkeiten. Nur die Arbeit.</p>
+        <p>Die richtige Granularität liegt zwischen einem Tag und einem Monat je Vorgang. Alles Kürzere gehört auf eine Aufgabenliste, alles Längere ist noch keine Aufgabe, sondern eine Phase.</p>
+      <h2 id="s2">2. In Phasen gruppieren</h2>
+<p>Fassen Sie die Vorgänge zu vier bis acht Phasen zusammen. Diese Gliederung ist es, die den Plan später lesbar macht — für Sie und für alle, denen Sie ihn zeigen.</p>
+      <h2 id="s3">3. Dauern schätzen</h2>
+<p>Schätzen Sie in Arbeitstagen, nicht in Kalendertagen, und schätzen Sie die reine Arbeitszeit — Wartezeiten gehören als eigener Vorgang in den Plan, nicht in die Dauer.</p>
+        <p>Ein bewährter Ansatz: optimistisch, wahrscheinlich und pessimistisch schätzen, dann gewichten. Wer nur einen Wert nennt, nennt fast immer den optimistischen.</p>
+      <h2 id="s4">4. Abhängigkeiten verknüpfen</h2>
+<p>Verbinden Sie, was wirklich aufeinander wartet. Der Test: Kann Vorgang B früher beginnen, wenn A schneller fertig wird? Wenn ja, ist die Verknüpfung echt. Wenn nein, haben Sie nur die Reihenfolge im Kalender nachgezeichnet.</p>
+        <p>Verknüpfen Sie nicht alles mit allem. Ein Plan, in dem jeder Vorgang von seinem Vorgänger abhängt, ist eine Kette ohne Parallelität — und meist unrealistisch.</p>
+      <h2 id="s5">5. Meilensteine setzen</h2>
+<p>Fünf bis zehn für ein mehrmonatiges Projekt. Ein Meilenstein markiert eine Entscheidung, eine Freigabe oder eine erfüllte Bedingung, nicht das Ende einer beliebigen Aufgabe.</p>
+      <h2 id="s6">6. Ressourcen zuordnen und Auslastung prüfen</h2>
+<p>Erst jetzt ordnen Sie Personen zu — und prüfen dann, ob jemand in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll. Diese Überlastung ist der häufigste Grund, warum ein rechnerisch korrekter Plan in der Praxis nicht hält.</p>
+      <h2 id="s7">7. Puffer einplanen und freigeben</h2>
+<p>Setzen Sie Puffer dorthin, wo Unsicherheit ist — vor Meilensteine und an das Ende des kritischen Pfads, nicht auf jeden einzelnen Vorgang. Verteilte Puffer verschwinden nach dem Parkinsonschen Prinzip; gebündelte bleiben sichtbar.</p>
+        <p>Zum Schluss gehen Sie den Plan mit den Beteiligten durch. Ein Plan, den nur eine Person kennt, ist kein Plan, sondern eine Meinung.</p>
+      <h2 id="s8">Womit erstellen?</h2>
+<p>Für kleine Vorhaben reicht eine Tabellenkalkulation, wird aber ab etwa zwanzig Zeilen mühsam, weil Abhängigkeiten nicht automatisch rechnen. Spezialisierte Werkzeuge nehmen Ihnen das ab — <a href="/de/app.html">gantts.app</a> etwa läuft direkt im Browser, ohne Anmeldung, und speichert lokal auf Ihrem Gerät.</p>
+      <h2 id="s9">Häufigster Fehler zum Schluss</h2>
+<p>Zu detailliert planen. Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist schlechter als gar keiner, weil ihm noch vertraut wird.</p>
+      <h2 id="s10">Und dann?</h2>
+<p>Ein Plan ist kein Dokument, sondern ein Werkzeug. Aktualisieren Sie ihn wöchentlich mit dem Fortschritt, vergleichen Sie ihn mit dem ursprünglichen Stand und passen Sie an, was sich geändert hat.</p>
+
+      <div class="callout">Beginnen Sie nie mit Terminen. Vorgänge, Dauern und Abhängigkeiten ergeben die Termine von selbst — und ein so entstandener Plan lässt sich verteidigen. Ein Plan, der rückwärts von einem Wunschtermin gebaut wurde, hält der ersten Rückfrage nicht stand.</div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details open><summary>Wie erstellt man ein Gantt-Diagramm?</summary><p>Vorgänge sammeln, in Phasen gruppieren, Dauern schätzen, Abhängigkeiten verknüpfen, Meilensteine setzen, Ressourcen zuordnen, Puffer einplanen. Termine ergeben sich daraus.</p></details>
+        <details><summary>Wie erstelle ich ein Gantt-Diagramm kostenlos?</summary><p>Im Browser, ohne Anmeldung und ohne Installation — etwa mit gantts.app. Alternativ mit einer Tabellenkalkulation, was aber ab etwa zwanzig Vorgängen unhandlich wird.</p></details>
+        <details><summary>Wie viele Vorgänge sollte ein Gantt-Diagramm haben?</summary><p>So wenige wie möglich, so viele wie nötig. 20 bis 60 Zeilen sind für die meisten Projekte gut lesbar; ab etwa 150 pflegt den Plan niemand mehr.</p></details>
+        <details><summary>Wie lang sollte ein einzelner Vorgang sein?</summary><p>Zwischen einem Tag und einem Monat. Kürzeres gehört auf eine Aufgabenliste, Längeres ist eine Phase und sollte unterteilt werden.</p></details>
+      </div>
+
+      <h2 id="related">Passend dazu</h2>
+      <ul>
+        <li><a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a></li>
+        <li><a href="/de/blog/gantt-chart-dependencies.html">Die vier Abhängigkeitsarten</a></li>
+        <li><a href="/de/blog/critical-path-method.html">null</a></li>
+        <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
+      </ul>
+      <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
+      <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/de/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <a class="footer-cta" href="/de/app.html">App öffnen →</a>
+          <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Vorlagen</h4>
+          <a href="/de/templates.html">Alle Vorlagen</a>
+          <a href="/de/templates/excel.html">Excel</a>
+          <a href="/de/templates/powerpoint.html">PowerPoint</a>
+          <a href="/de/templates/construction.html">Bauwesen</a>
+        </div>
+        <div>
+          <h4>Ratgeber</h4>
+          <a href="/de/blog/">Alle Ratgeber</a>
+          <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+          <a href="/de/blog/critical-path-method.html">Methode des kritischen Pfads</a>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <a href="/de/about.html">Über uns</a>
+          <a href="/de/contact.html">Kontakt</a>
+          <a href="/de/terms.html">Nutzungsbedingungen</a>
+          <a href="/de/privacy.html">Datenschutz</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
+        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

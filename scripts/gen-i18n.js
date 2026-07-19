@@ -124,6 +124,21 @@ function header(code, sub, only) {
   </header>`;
 }
 
+/* The English guide prints "Updated July 14, 2026". Every localized guide
+   was printing the raw ISO string instead — "Aktualisiert 2026-07-19" —
+   which reads as a machine artefact in any of the five languages and was
+   the single most visible untranslated element on the page.
+   Intl handles the per-locale ordering and separators: 19. Juli 2026,
+   19 de julio de 2026, 19 juillet 2026, 2026年7月19日. Parsed as UTC so a
+   date-only string cannot slip a day backwards in a negative offset. */
+const DATE_LOCALE = { es: 'es-ES', fr: 'fr-FR', de: 'de-DE', pt: 'pt-BR', zh: 'zh-CN' };
+function longDate(code, iso) {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  if (!y || !m || !d) return iso;
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(DATE_LOCALE[code] || 'en-US',
+    { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+
 /* Footer deep-links used to be hardcoded to the English pages. Once the
    Spanish translations existed, that left 300 links pointing out of the
    locale from inside the Spanish site — five targets repeated across
@@ -770,7 +785,28 @@ function renderGuide(loc, slug) {
   // Related guides resolve to the localized version when it exists and
   // fall back to English otherwise — a cross-link in the wrong language
   // still beats no cross-link.
-  const related = (d.related || []).map(([rslug, label]) => {
+  /* Same rule as the template related list: keep declared siblings that
+     exist in this locale, then top up from the locale's other translated
+     guides. A reader four clicks into the German site should not be
+     handed an English article because that particular guide is not
+     translated yet. Retires itself as each locale fills in. */
+  const gWant = 3;
+  const gPicked = [];
+  const gSeen = new Set([slug]);
+  for (const r of (d.related || [])) {
+    const s2 = Array.isArray(r) ? r[0] : r;
+    if (!gSeen.has(s2) && GUIDE_I18N[code][s2]) { gPicked.push([s2, Array.isArray(r) ? r[1] : null]); gSeen.add(s2); }
+  }
+  for (const s2 of Object.keys(GUIDE_I18N[code])) {
+    if (gPicked.length >= gWant) break;
+    if (!gSeen.has(s2)) { gPicked.push([s2, null]); gSeen.add(s2); }
+  }
+  if (!gPicked.length) for (const r of (d.related || [])) {
+    const s2 = Array.isArray(r) ? r[0] : r;
+    if (!gSeen.has(s2)) { gPicked.push([s2, Array.isArray(r) ? r[1] : null]); gSeen.add(s2); }
+  }
+
+  const related = gPicked.map(([rslug, label]) => {
     const localized = GUIDE_I18N[code][rslug];
     return `        <li><a href="${localized ? `/${code}/blog/${rslug}.html` : `/blog/${rslug}.html`}">${esc(label)}</a></li>`;
   }).join('\n');
@@ -812,7 +848,7 @@ function renderGuide(loc, slug) {
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>${esc(ui.byline || 'gantts.app')}</span><span>${esc(ui.updated)} ${esc(d.date)}</span><span>${Math.max(3, Math.round(d.sections.reduce((n, sx) => n + String(sx[1]).replace(/<[^>]+>/g, ' ').split(/\s+/).length, 0) / 200))} ${esc(ui.readingTime)}</span></p>
+    <p class="post-meta"><span>${esc(ui.byline || 'gantts.app')}</span><span>${esc(ui.updated)} ${esc(longDate(code, d.date))}</span><span>${Math.max(3, Math.round(d.sections.reduce((n, sx) => n + String(sx[1]).replace(/<[^>]+>/g, ' ').split(/\s+/).length, 0) / 200))} ${esc(ui.readingTime)}</span></p>
     <div class="toc"><strong>${esc(ui.onThisPage || ui.related)}</strong>
       <ol>
 ${d.sections.map(([h], i) => `        <li><a href="#s${i + 1}">${esc(h)}</a></li>`).join('\n')}

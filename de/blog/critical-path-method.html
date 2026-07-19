@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kritischer Pfad berechnen (CPM) | gantts.app</title>
+  <meta name="description" content="Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/de/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Kritischer Pfad berechnen (CPM) | gantts.app" />
+  <meta property="og:description" content="Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen." />
+  <meta property="og:url" content="https://gantts.app/de/blog/critical-path-method.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kritischer Pfad: Methode, Berechnung und ein Beispiel" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kritischer Pfad berechnen (CPM) | gantts.app" />
+  <meta name="twitter:description" content="Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/critical-path-method.html#post","headline":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","description":"Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen.","url":"https://gantts.app/de/blog/critical-path-method.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","item":"https://gantts.app/de/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist der kritische Pfad?","acceptedAnswer":{"@type":"Answer","text":"Die längste Kette abhängiger Vorgänge. Ihre Dauer entspricht der kürzestmöglichen Projektdauer; ihre Vorgänge haben keinen Puffer."}},{"@type":"Question","name":"Wie berechnet man den kritischen Pfad?","acceptedAnswer":{"@type":"Answer","text":"Vorwärtsrechnung für die frühesten Termine, Rückwärtsrechnung für die spätesten. Vorgänge, bei denen beide übereinstimmen — Puffer null — bilden den kritischen Pfad."}},{"@type":"Question","name":"Was ist Pufferzeit?","acceptedAnswer":{"@type":"Answer","text":"Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang."}},{"@type":"Question","name":"Kann es mehrere kritische Pfade geben?","acceptedAnswer":{"@type":"Answer","text":"Ja. In stark verketteten Plänen sind mehrere parallele Pfade gleich lang und damit alle kritisch — was das Risiko deutlich erhöht."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/de/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/de/app.html">Gantt-Diagramm erstellen</a>
+        <a href="/de/templates.html">Vorlagen</a>
+        <a href="/de/blog/">Ratgeber</a>
+        <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/">Français</option><option value="/de/blog/critical-path-method.html" selected>Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <h1>Kritischer Pfad: Methode, Berechnung und ein Beispiel</h1>
+    <p class="lead">Der <strong>kritische Pfad</strong> ist die längste Kette voneinander abhängiger Vorgänge in einem Projekt. Seine Länge ist die kürzestmögliche Projektdauer — und jeder Tag Verzug auf diesem Pfad ist ein Tag Verzug am Projektende.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <div class="toc"><strong>Inhalt</strong>
+      <ol>
+        <li><a href="#s1">Die Grundidee</a></li>
+        <li><a href="#s2">Vorwärtsrechnung: die frühesten Termine</a></li>
+        <li><a href="#s3">Rückwärtsrechnung: die spätesten Termine</a></li>
+        <li><a href="#s4">Puffer und der kritische Pfad</a></li>
+        <li><a href="#s5">Ein Beispiel mit vier Vorgängen</a></li>
+        <li><a href="#s6">Was das praktisch bedeutet</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">Die Grundidee</h2>
+<p>Nicht alle Vorgänge sind gleich wichtig für den Termin. Manche haben Luft: Sie können sich verschieben, ohne dass das Projektende wandert. Andere haben keine — und die bilden den kritischen Pfad.</p>
+        <p>Die Methode heißt Critical Path Method, kurz CPM, und stammt aus den späten 1950er-Jahren. Sie beantwortet zwei Fragen: Wie lange dauert das Projekt mindestens, und welche Vorgänge dürfen sich auf keinen Fall verzögern?</p>
+      <h2 id="s2">Vorwärtsrechnung: die frühesten Termine</h2>
+<p>Beginnen Sie am Projektstart und gehen Sie vorwärts. Für jeden Vorgang gilt: frühester Anfang (FAZ) ist der späteste frühestmögliche Endtermin aller Vorgänger; frühestes Ende (FEZ) ist FAZ plus Dauer.</p>
+        <p>Am Ende der Vorwärtsrechnung steht die frühestmögliche Projektdauer.</p>
+      <h2 id="s3">Rückwärtsrechnung: die spätesten Termine</h2>
+<p>Jetzt gehen Sie vom Projektende zurück. Spätestes Ende (SEZ) ist der früheste spätestmögliche Anfang aller Nachfolger; spätester Anfang (SAZ) ist SEZ minus Dauer.</p>
+      <h2 id="s4">Puffer und der kritische Pfad</h2>
+<p>Die Pufferzeit eines Vorgangs ist SAZ minus FAZ. Vorgänge mit Puffer null bilden den kritischen Pfad. Es gibt immer mindestens einen solchen Pfad, und in stark verketteten Plänen häufig mehrere parallele.</p>
+      <h2 id="s5">Ein Beispiel mit vier Vorgängen</h2>
+<p>A dauert 3 Tage, B dauert 5 und folgt auf A, C dauert 2 und folgt ebenfalls auf A, D dauert 4 und folgt auf B und C.</p>
+        <p><strong>Vorwärts:</strong> A läuft von Tag 0 bis 3. B von 3 bis 8, C von 3 bis 5. D wartet auf beide, beginnt also bei 8 und endet bei 12. Projektdauer: 12 Tage.</p>
+        <p><strong>Rückwärts:</strong> D muss bei 8 beginnen. B muss also bei 8 fertig sein — spätester Anfang 3, Puffer 0. C muss ebenfalls bei 8 fertig sein, hat aber nur 2 Tage Dauer: spätester Anfang 6, tatsächlicher frühester Anfang 3, <em>Puffer 3 Tage</em>.</p>
+        <p>Der kritische Pfad ist A → B → D. C darf sich um drei Tage verspäten, ohne dass das Projekt später fertig wird.</p>
+      <h2 id="s6">Was das praktisch bedeutet</h2>
+<p>Es sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf C zu setzen bringt für den Termin nichts. Einen Tag auf B zu sparen bringt einen Tag am Projektende.</p>
+        <p>Und es warnt vor einer Falle: Wenn C sich um vier Tage verspätet, wird C selbst kritisch. Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme — er wandert, sobald sich etwas verschiebt.</p>
+
+      <div class="callout">Der kritische Pfad ändert sich während des Projekts. Ein Vorgang mit drei Tagen Puffer, der sich um vier verspätet, wird selbst kritisch. Deshalb rechnet man den Pfad nicht einmal zu Projektbeginn, sondern bei jeder Aktualisierung neu.</div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details open><summary>Was ist der kritische Pfad?</summary><p>Die längste Kette abhängiger Vorgänge. Ihre Dauer entspricht der kürzestmöglichen Projektdauer; ihre Vorgänge haben keinen Puffer.</p></details>
+        <details><summary>Wie berechnet man den kritischen Pfad?</summary><p>Vorwärtsrechnung für die frühesten Termine, Rückwärtsrechnung für die spätesten. Vorgänge, bei denen beide übereinstimmen — Puffer null — bilden den kritischen Pfad.</p></details>
+        <details><summary>Was ist Pufferzeit?</summary><p>Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang.</p></details>
+        <details><summary>Kann es mehrere kritische Pfade geben?</summary><p>Ja. In stark verketteten Plänen sind mehrere parallele Pfade gleich lang und damit alle kritisch — was das Risiko deutlich erhöht.</p></details>
+      </div>
+
+      <h2 id="related">Passend dazu</h2>
+      <ul>
+        <li><a href="/de/blog/gantt-chart-dependencies.html">Die vier Abhängigkeitsarten</a></li>
+        <li><a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a></li>
+        <li><a href="/de/blog/how-to-make-a-gantt-chart.html">null</a></li>
+        <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
+      </ul>
+      <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
+      <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/de/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <a class="footer-cta" href="/de/app.html">App öffnen →</a>
+          <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Vorlagen</h4>
+          <a href="/de/templates.html">Alle Vorlagen</a>
+          <a href="/de/templates/excel.html">Excel</a>
+          <a href="/de/templates/powerpoint.html">PowerPoint</a>
+          <a href="/de/templates/construction.html">Bauwesen</a>
+        </div>
+        <div>
+          <h4>Ratgeber</h4>
+          <a href="/de/blog/">Alle Ratgeber</a>
+          <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+          <a href="/de/blog/critical-path-method.html">Methode des kritischen Pfads</a>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <a href="/de/about.html">Über uns</a>
+          <a href="/de/contact.html">Kontakt</a>
+          <a href="/de/terms.html">Nutzungsbedingungen</a>
+          <a href="/de/privacy.html">Datenschutz</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
+        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

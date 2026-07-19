@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhängigkeiten im Gantt-Diagramm | gantts.app</title>
+  <meta name="description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Abhängigkeiten im Gantt-Diagramm | gantts.app" />
+  <meta property="og:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta property="og:url" content="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Abhängigkeiten im Gantt-Diagramm | gantts.app" />
+  <meta name="twitter:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-chart-dependencies.html#post","headline":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","description":"Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken.","url":"https://gantts.app/de/blog/gantt-chart-dependencies.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","item":"https://gantts.app/de/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Welche Abhängigkeitstypen gibt es im Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Vier: Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende. Ende-Anfang deckt die weit überwiegende Mehrheit der Fälle ab."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Vorlauf und Verzögerung?","acceptedAnswer":{"@type":"Answer","text":"Eine Verzögerung schiebt den Nachfolger nach hinten (Aushärtezeit), ein Vorlauf lässt ihn früher beginnen, bevor der Vorgänger ganz fertig ist."}},{"@type":"Question","name":"Sollte man jeden Vorgang verknüpfen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Nur echte Abhängigkeiten. Ein Plan, in dem alles aneinanderhängt, verliert jede Parallelität und reagiert auf jede kleine Verschiebung übertrieben."}},{"@type":"Question","name":"Warum wird mein Vorgang nicht verschoben?","acceptedAnswer":{"@type":"Answer","text":"Meist fehlt die Verknüpfung, oder es ist ein fester Termin gesetzt, der die Berechnung übersteuert."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/de/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/de/app.html">Gantt-Diagramm erstellen</a>
+        <a href="/de/templates.html">Vorlagen</a>
+        <a href="/de/blog/">Ratgeber</a>
+        <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-dependencies.html">English</option><option value="/es/blog/gantt-chart-dependencies.html">Español</option><option value="/fr/">Français</option><option value="/de/blog/gantt-chart-dependencies.html" selected>Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <h1>Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten</h1>
+    <p class="lead">Eine <strong>Abhängigkeit</strong> legt fest, was worauf wartet. Es gibt vier Arten, aber in der Praxis brauchen die meisten Pläne fast nur eine — und der Rest richtet häufiger Schaden an, als er nützt.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <div class="toc"><strong>Inhalt</strong>
+      <ol>
+        <li><a href="#s1">Ende-Anfang (EA)</a></li>
+        <li><a href="#s2">Anfang-Anfang (AA)</a></li>
+        <li><a href="#s3">Ende-Ende (EE)</a></li>
+        <li><a href="#s4">Anfang-Ende (AE)</a></li>
+        <li><a href="#s5">Zeitabstände: Vorlauf und Verzögerung</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>Die vier Verknüpfungsarten im Vergleich:</p>
+      <svg viewBox="0 0 620 330" width="100%" role="img" aria-label="Diagram of the four Gantt dependency types: finish to start, start to start, finish to finish, and start to finish">
+      <text x="0" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Start (FS)</text>
+      <text x="0" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A finishes — the default</text>
+      <rect x="0" y="40" width="130" height="14" rx="4" fill="#6c4cf1"/><text x="138" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="160" y="66" width="130" height="14" rx="4" fill="#8b7bf5"/><text x="298" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 130 47 C 144 47, 146 73, 160 73" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="160,73 154,69 154,77" fill="#6c4cf1"/>
+
+      <text x="330" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Start (SS)</text>
+      <text x="330" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A starts</text>
+      <rect x="330" y="40" width="130" height="14" rx="4" fill="#0d9488"/><text x="468" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="66" width="150" height="14" rx="4" fill="#14b8a6"/><text x="488" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 332 47 C 346 47, 316 73, 330 73" fill="none" stroke="#0d9488" stroke-width="1.8"/><polygon points="330,73 324,69 324,77" fill="#0d9488"/>
+
+      <text x="0" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Finish (FF)</text>
+      <text x="0" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A finishes</text>
+      <rect x="0" y="206" width="150" height="14" rx="4" fill="#ea580c"/><text x="158" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="30" y="232" width="120" height="14" rx="4" fill="#f97316"/><text x="158" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 150 213 C 164 213, 136 239, 150 239" fill="none" stroke="#ea580c" stroke-width="1.8"/><polygon points="150,239 144,235 144,243" fill="#ea580c"/>
+
+      <text x="330" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Finish (SF)</text>
+      <text x="330" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A starts — rare</text>
+      <rect x="430" y="206" width="120" height="14" rx="4" fill="#9333ea"/><text x="558" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="232" width="110" height="14" rx="4" fill="#a855f7"/><text x="448" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 432 213 C 446 213, 426 239, 440 239" fill="none" stroke="#9333ea" stroke-width="1.8"/><polygon points="440,239 434,235 434,243" fill="#9333ea"/>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">Ende-Anfang (EA)</h2>
+<p>Der Standardfall: B beginnt, wenn A fertig ist. „Streichen" beginnt, wenn „Spachteln" abgeschlossen ist. Rund 90 Prozent aller Verknüpfungen in realen Plänen sind von diesem Typ, und das ist gut so — sie ist die einzige Art, die jeder auf Anhieb richtig liest.</p>
+      <h2 id="s2">Anfang-Anfang (AA)</h2>
+<p>B beginnt, wenn A beginnt. Nützlich für Arbeiten, die gemeinsam anlaufen: Bauleitung startet mit dem Rohbau, Qualitätssicherung mit der Entwicklung. Häufig kombiniert mit einem Zeitabstand — QS beginnt drei Tage nach Entwicklungsbeginn.</p>
+      <h2 id="s3">Ende-Ende (EE)</h2>
+<p>B endet, wenn A endet. Typisch für begleitende Tätigkeiten: Die Dokumentation ist fertig, wenn die Entwicklung fertig ist. Sie legt kein Startdatum fest, sondern nur einen gemeinsamen Schlusspunkt.</p>
+      <h2 id="s4">Anfang-Ende (AE)</h2>
+<p>B endet, wenn A beginnt. Der seltenste Fall, vor allem für Übergaben: Die alte Schicht endet, wenn die neue beginnt; das Altsystem wird abgeschaltet, wenn das neue in Betrieb geht. Wenn Sie diese Verknüpfung häufig einsetzen, ist der Plan meistens falsch herum gedacht.</p>
+      <h2 id="s5">Zeitabstände: Vorlauf und Verzögerung</h2>
+<p>Jede Verknüpfung lässt sich um einen Abstand ergänzen. Eine Verzögerung schiebt den Nachfolger nach hinten — Beton muss sieben Tage aushärten, bevor weitergebaut wird. Ein Vorlauf lässt ihn früher beginnen — der zweite Bauabschnitt startet, wenn der erste zu 70 Prozent fertig ist.</p>
+        <p>Ein Hinweis zur Wartezeit: Aushärten, Trocknen, Genehmigungsfristen sind besser als eigener Vorgang sichtbar als in einer Verzögerung versteckt. Was im Balken steht, sieht man; was im Verknüpfungsdialog steht, findet niemand wieder.</p>
+
+      <div class="callout">Verknüpfen Sie nur, was wirklich wartet. Der Test: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort nein, ist es keine Abhängigkeit, sondern nur die Reihenfolge, in der Sie es aufgeschrieben haben.</div>
+
+      <h2 id="faq">Häufige Fragen</h2>
+      <div class="faq">
+        <details open><summary>Welche Abhängigkeitstypen gibt es im Gantt-Diagramm?</summary><p>Vier: Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende. Ende-Anfang deckt die weit überwiegende Mehrheit der Fälle ab.</p></details>
+        <details><summary>Was ist der Unterschied zwischen Vorlauf und Verzögerung?</summary><p>Eine Verzögerung schiebt den Nachfolger nach hinten (Aushärtezeit), ein Vorlauf lässt ihn früher beginnen, bevor der Vorgänger ganz fertig ist.</p></details>
+        <details><summary>Sollte man jeden Vorgang verknüpfen?</summary><p>Nein. Nur echte Abhängigkeiten. Ein Plan, in dem alles aneinanderhängt, verliert jede Parallelität und reagiert auf jede kleine Verschiebung übertrieben.</p></details>
+        <details><summary>Warum wird mein Vorgang nicht verschoben?</summary><p>Meist fehlt die Verknüpfung, oder es ist ein fester Termin gesetzt, der die Berechnung übersteuert.</p></details>
+      </div>
+
+      <h2 id="related">Passend dazu</h2>
+      <ul>
+        <li><a href="/de/blog/critical-path-method.html">Der kritische Pfad</a></li>
+        <li><a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a></li>
+        <li><a href="/de/blog/how-to-make-a-gantt-chart.html">null</a></li>
+        <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
+      </ul>
+      <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
+      <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/de/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <a class="footer-cta" href="/de/app.html">App öffnen →</a>
+          <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Vorlagen</h4>
+          <a href="/de/templates.html">Alle Vorlagen</a>
+          <a href="/de/templates/excel.html">Excel</a>
+          <a href="/de/templates/powerpoint.html">PowerPoint</a>
+          <a href="/de/templates/construction.html">Bauwesen</a>
+        </div>
+        <div>
+          <h4>Ratgeber</h4>
+          <a href="/de/blog/">Alle Ratgeber</a>
+          <a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a>
+          <a href="/de/blog/critical-path-method.html">Methode des kritischen Pfads</a>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <a href="/de/about.html">Über uns</a>
+          <a href="/de/contact.html">Kontakt</a>
+          <a href="/de/terms.html">Nutzungsbedingungen</a>
+          <a href="/de/privacy.html">Datenschutz</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
+        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>
