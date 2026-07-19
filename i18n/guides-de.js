@@ -195,57 +195,115 @@ const G = {
 'gantt-chart-in-excel': {
   h1: "Gantt-Diagramm in Excel erstellen: Anleitung und Grenzen",
   metaTitle: "Gantt-Diagramm in Excel erstellen",
-  metaDesc: "Gantt-Diagramm in Excel mit gestapelten Balken: Schritt-für-Schritt-Anleitung, Formatierung und wo die Methode an ihre Grenze stößt.",
+  metaDesc: "Gantt-Diagramm in Excel mit gestapelten Balken: Schritt für Schritt, mit Achsenformatierung, Fortschrittsbalken und den Grenzen der Methode.",
   date: "2026-07-19",
   lead: "Excel hat keinen Gantt-Diagrammtyp. Man baut ihn mit einem Trick: einem <strong>gestapelten Balkendiagramm</strong>, dessen erste Reihe unsichtbar gemacht wird. Das funktioniert und ist in zehn Minuten erledigt — hat aber eine klare Grenze.",
   figIntro: "Der Trick in einem Bild: unsichtbarer Vorlauf plus sichtbare Dauer.",
   sections: [
     [
-      "Die Daten vorbereiten",
-      "<p>Drei Spalten genügen: Vorgang, Startdatum, Dauer in Tagen. Legen Sie zusätzlich eine Hilfsspalte an, die den Abstand vom Projektstart berechnet — also Startdatum minus frühestes Startdatum.</p>"
+      "Hat Excel einen Gantt-Diagrammtyp?",
+      `<p>Nein. Öffnen Sie <strong>Einfügen ▸ Diagramme</strong>, finden Sie Säulen, Balken, Linien, Kreise, Flächen und Punktwolken — aber nichts, was „Gantt“ heißt. Was stattdessen überall verwendet wird, ist ein <strong>gestapeltes Balkendiagramm</strong>, bei dem die erste gestapelte Datenreihe unsichtbar formatiert wird. Übrig bleibt pro Zeile ein schwebender Balken, der genau dort beginnt, wo der Vorgang beginnt — optisch ein Gantt-Diagramm, technisch ein Balkendiagramm mit einer versteckten Reihe.</p>
+        <p>Microsoft liefert unter <strong>Datei ▸ Neu</strong> mehrere herunterladbare Vorlagen mit Namen wie „Gantt-Projektplaner“. Auch die sind kein eigener Diagrammtyp: Sie verwenden entweder denselben Stapeltrick oder eine bedingte Formatierung über einem Kalenderraster. Beide Verfahren erklären wir hier — das erste ausführlich, das zweite als Alternative für alle, die lieber ohne Diagrammobjekt arbeiten.</p>
+        <p>Die folgenden sechs Schritte bauen das Diagramm von Grund auf. Das dauert beim ersten Mal etwa zehn Minuten und hat den Vorteil, dass Sie hinterher jedes Element verstehen — was wichtig ist, denn beim Ändern eines Excel-Gantt-Diagramms geht ohne dieses Verständnis regelmäßig etwas kaputt.</p>`
     ],
     [
-      "Das gestapelte Balkendiagramm einfügen",
-      "<p>Markieren Sie Vorgang, Abstand und Dauer. Einfügen → Diagramm → Balken → Gestapelte Balken. Sie erhalten zwei Reihen pro Zeile: den Abstand und die Dauer.</p>"
+      "Schritt 1: Die Daten vorbereiten",
+      `<p>Legen Sie auf einem leeren Blatt vier Spalten an: <strong>Vorgang</strong> (A), <strong>Start</strong> (B), <strong>Ende</strong> (C) und <strong>Dauer</strong> (D). Tragen Sie in B und C echte Datumswerte ein, nicht Text — Excel muss sie als Datum erkennen, sonst rechnet nichts.</p>
+        <ul>
+          <li><strong>Dauer</strong> berechnen Sie in D2 mit <code>=C2-B2</code> und ziehen die Formel nach unten. Excel speichert Datumswerte intern als fortlaufende Zahlen, die Subtraktion ergibt deshalb schlicht eine Anzahl Tage.</li>
+          <li><strong>Abstand zum Projektstart</strong> ist die zweite Hilfsspalte (E) und der eigentliche Kniff: <code>=B2-$B$2</code>, wenn in B2 der früheste Projekttermin steht. Sie gibt an, wie viele Tage nach Projektbeginn ein Vorgang startet.</li>
+        </ul>
+        <p>Der Fehler, der an dieser Stelle am häufigsten passiert: Excel übernimmt in die Hilfsspalten automatisch das Datumsformat der Ausgangszellen, und aus der Zahl 4 wird der 04.01.1900. Markieren Sie deshalb die Spalten <em>Dauer</em> und <em>Abstand</em> und stellen Sie unter <strong>Start ▸ Zahl</strong> das Format auf <strong>Standard</strong> oder <strong>Zahl</strong> um. Wenn Ihr Diagramm später unsinnige Balkenlängen zeigt, ist fast immer das die Ursache.</p>
+        <p>Für ein kleines Beispiel genügen fünf Zeilen: Recherche (1.–5. Juli, 4 Tage), Konzept (5.–12. Juli, 7 Tage), Umsetzung (12.–26. Juli, 14 Tage), Test (26. Juli–2. August, 7 Tage) und Freigabe (2.–4. August, 2 Tage). Der Abstand zum Projektstart lautet dafür 0, 4, 11, 25 und 32.</p>`
     ],
     [
-      "Die erste Reihe unsichtbar machen",
-      "<p>Klicken Sie die Abstandsreihe an, dann Füllung → Keine Füllung und Rahmen → Keine Linie. Was übrig bleibt, sieht aus wie ein Gantt-Balken, der an der richtigen Stelle beginnt.</p>"
+      "Schritt 2: Das gestapelte Balkendiagramm einfügen",
+      `<p>Markieren Sie zuerst die Spalte <strong>Vorgang</strong>, halten Sie dann die Strg-Taste gedrückt und markieren Sie zusätzlich <strong>Abstand</strong> und <strong>Dauer</strong>. Die Spalte <em>Ende</em> bleibt außen vor — das Diagramm braucht nur Startversatz und Länge.</p>
+        <p>Dann <strong>Einfügen ▸ Diagramme ▸ Balken ▸ Gestapelte Balken (2D)</strong>. Excel zeichnet pro Zeile zwei aneinandergesetzte Segmente: links den Abstand, rechts die Dauer. Das sieht noch nicht nach einem Terminplan aus, sondern nach einem gewöhnlichen Balkendiagramm — das ist an dieser Stelle richtig so.</p>
+        <p>Falls Excel die Spalten falsch zuordnet, öffnen Sie mit einem Rechtsklick auf das Diagramm den Dialog <strong>Daten auswählen</strong> und prüfen Sie: <em>Abstand</em> muss die erste, <em>Dauer</em> die zweite Datenreihe sein, und die Vorgangsnamen gehören auf die Achsenbeschriftung der Rubrikenachse. Die Reihenfolge der Reihen lässt sich dort mit den Pfeiltasten korrigieren.</p>`
     ],
     [
-      "Die Reihenfolge umkehren",
-      "<p>Excel stellt die erste Zeile unten dar. Achse formatieren → Kategorien in umgekehrter Reihenfolge. Damit steht der erste Vorgang oben, wie man es erwartet.</p>"
+      "Schritt 3: Die erste Reihe unsichtbar machen",
+      `<p>Das ist der entscheidende Handgriff. Klicken Sie einmal auf ein beliebiges Segment der Abstandsreihe — damit ist die gesamte Reihe markiert, nicht nur ein einzelner Punkt. Rechtsklick, <strong>Datenreihen formatieren</strong>, dann im Bereich <strong>Füllung und Linie</strong>:</p>
+        <ul>
+          <li><strong>Füllung ▸ Keine Füllung</strong></li>
+          <li><strong>Rahmen ▸ Keine Linie</strong></li>
+        </ul>
+        <p>Die vorderen Segmente verschwinden, und jeder Dauerbalken schwebt an der Stelle, die seinem Startdatum entspricht. Genau in diesem Moment wird aus dem Balkendiagramm ein Gantt-Diagramm. Vergessen Sie den Rahmen nicht: Bleibt er stehen, sieht man weiterhin die Umrisse der unsichtbaren Segmente, und das Ergebnis wirkt unsauber.</p>`
     ],
     [
-      "Datumsachse korrigieren",
-      "<p>Die horizontale Achse zeigt zunächst Zahlen. Setzen Sie Minimum und Maximum auf die seriellen Datumswerte von Projektstart und -ende und formatieren Sie die Achse als Datum.</p>"
+      "Schritt 4: Die Reihenfolge umkehren",
+      `<p>Excel zeichnet in Balkendiagrammen die erste Tabellenzeile ganz unten. Ihre Vorgangsliste steht also auf dem Kopf, und der letzte Vorgang steht oben.</p>
+        <p>Klicken Sie auf die <strong>vertikale Achse</strong> mit den Vorgangsnamen, Rechtsklick, <strong>Achse formatieren</strong>, und setzen Sie unter <strong>Achsenoptionen</strong> das Häkchen bei <strong>Kategorien in umgekehrter Reihenfolge</strong>. Der erste Vorgang springt nach oben, und die Liste liest sich wieder wie Ihre Tabelle.</p>
+        <p>Dadurch wandert allerdings die Datumsachse an den unteren Rand. Setzen Sie im selben Bereich zusätzlich <strong>Horizontale Achse schneidet: Beim Höchstwert der Kategorie</strong>, dann steht die Zeitachse wieder oben — dort, wo man sie in einem Terminplan erwartet.</p>`
     ],
     [
-      "Feinschliff",
-      "<p>Balkenabstand auf etwa 20 Prozent reduzieren, Gitternetzlinien dezent halten, Phasen farblich gruppieren. Meilensteine lassen sich als zusätzliche Datenreihe mit Rautenmarkierung ergänzen.</p>"
+      "Schritt 5: Datumsachse korrigieren",
+      `<p>Die horizontale Achse beginnt zunächst bei null, sodass links ein breiter leerer Streifen entsteht. Klicken Sie die Achse an, öffnen Sie <strong>Achse formatieren</strong> und setzen Sie unter <strong>Grenzen</strong> das <strong>Minimum</strong> auf den Projektstart und das <strong>Maximum</strong> auf das Projektende.</p>
+        <p>Excel erwartet hier serielle Zahlen, keine Datumsangaben. Der schnellste Weg dorthin: Schreiben Sie das gewünschte Datum in eine leere Zelle, formatieren Sie diese als <em>Standard</em> und lesen Sie die Zahl ab — der 1. Juli 2026 ist beispielsweise 46204. Diesen Wert tragen Sie als Grenze ein.</p>
+        <p>Setzen Sie anschließend die <strong>Haupteinheit</strong> auf 7, wenn Sie Wochenraster wollen, oder auf 14 für zweiwöchige Abstände. Unter <strong>Zahl</strong> stellen Sie das Format der Achse auf ein Datumsformat wie <code>TT.MM.</code>, damit statt der seriellen Zahlen lesbare Termine erscheinen.</p>`
+    ],
+    [
+      "Schritt 6: Feinschliff",
+      `<p>Vier kleine Eingriffe machen aus dem funktionierenden Diagramm ein vorzeigbares:</p>
+        <ul>
+          <li><strong>Abstandsbreite</strong> in <em>Datenreihen formatieren ▸ Reihenoptionen</em> auf etwa 30 bis 50 Prozent reduzieren. Die Balken werden dicker, das Diagramm wirkt kompakter.</li>
+          <li><strong>Legende löschen</strong> — sie zeigt nur noch „Abstand“ und „Dauer“ und erklärt nichts.</li>
+          <li><strong>Phasen farblich trennen</strong>: Einzelne Punkte der Dauerreihe lassen sich getrennt einfärben, indem Sie zweimal langsam auf einen Balken klicken und nur diesen formatieren.</li>
+          <li><strong>Meilensteine</strong> ergänzen Sie als zusätzliche Datenreihe mit dem Wert null, die Sie über <em>Diagrammtyp der Datenreihe ändern</em> in einen Punkt (XY) umwandeln und mit einer Rautenmarkierung versehen.</li>
+        </ul>`
+    ],
+    [
+      "Fortschritt und Abhängigkeiten nachrüsten",
+      `<p><strong>Fortschritt</strong> lässt sich mit einer weiteren Hilfsspalte darstellen. Legen Sie eine Spalte <em>Fertig in Prozent</em> an und daneben eine Spalte <em>Erledigt</em> mit <code>=Dauer*Prozent</code>. Diese neue Spalte fügen Sie über <em>Daten auswählen ▸ Hinzufügen</em> als dritte gestapelte Reihe ein und färben sie dunkler als die Dauerreihe. Damit die Summe stimmt, muss die Dauerreihe dann allerdings nur noch den Restanteil enthalten — andernfalls werden die Balken zu lang. Der praktikablere Weg ist deshalb, die Dauer in „Erledigt“ und „Rest“ aufzuteilen und beide zu stapeln.</p>
+        <p><strong>Abhängigkeiten</strong> kennt Excel nicht. Es gibt keine Pfeile zwischen Balken, und das Verschieben eines Vorgangs verschiebt keinen anderen. Der übliche Behelf ist, das Startdatum eines Nachfolgers als Formel auf das Ende des Vorgängers zu setzen — etwa <code>=C2</code> oder <code>=C2+1</code>. Damit läuft eine Änderung immerhin die Spalte hinunter. Sichtbare Verknüpfungen entstehen dadurch nicht, verzweigte Ketten mit mehreren Vorgängern werden schnell unlesbar, und Puffer oder ein kritischer Pfad lassen sich so nicht ermitteln.</p>`
+    ],
+    [
+      "Der Weg ohne Diagramm: bedingte Formatierung",
+      `<p>Wer sich mit Diagrammobjekten nicht anfreunden mag, baut das Gantt-Diagramm direkt in die Zellen. Legen Sie in der Kopfzeile ab Spalte F fortlaufende Datumswerte an — eine Spalte je Tag oder je Woche — und lassen Sie Vorgang, Start und Ende links stehen.</p>
+        <p>Markieren Sie anschließend das gesamte Kalenderraster und wählen Sie <strong>Start ▸ Bedingte Formatierung ▸ Neue Regel ▸ Formel zur Ermittlung der zu formatierenden Zellen verwenden</strong>. Als Formel dient <code>=UND(F$1&gt;=$B2; F$1&lt;=$C2)</code>, als Format eine Hintergrundfarbe. Jede Zelle, deren Datum in den Zeitraum des Vorgangs fällt, wird eingefärbt.</p>
+        <p>Der Vorteil: Das Raster aktualisiert sich bei jeder Terminänderung von selbst, es druckt sauber und lässt sich beliebig um Spalten erweitern. Der Nachteil: Bei mehr als einem Quartal in Tagesspalten wird das Blatt sehr breit, und Meilensteine, Fortschritt und Farbcodes brauchen jeweils eine eigene zusätzliche Regel.</p>`
+    ],
+    [
+      "Vorlage statt Selbstbau",
+      `<p>Wenn Sie nur eine funktionierende Datei brauchen, sparen Sie sich die sechs Schritte: Unsere <a href="/de/templates/excel.html">kostenlose Excel-Vorlage</a> enthält die Vorgangstabelle, die Hilfsspalten, das gestapelte Diagramm mit unsichtbarer erster Reihe, die umgekehrte Achsenreihenfolge und ein formatiertes Datumsraster bereits fertig eingerichtet. Sie tragen Vorgänge und Termine ein, das Diagramm folgt. In der <a href="/de/templates.html">Vorlagenübersicht</a> finden Sie außerdem branchenspezifische Varianten für Bau, Marketing und Softwareentwicklung.</p>`
     ],
     [
       "Wo die Methode endet",
-      "<p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung.</p>\n        <p>Ebenfalls nicht vorhanden: kritischer Pfad, Ressourcenauslastung, Prozentangaben zum Fortschritt. Bis etwa zwanzig Vorgänge ist Excel eine vernünftige Wahl. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart — <a href=\"/de/app.html\">gantts.app</a> rechnet die Verschiebungen selbst und läuft ebenfalls ohne Installation.</p>"
+      `<p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung. Ab da beschreibt die Datei einen Plan, den es nicht mehr gibt.</p>
+        <p>Ebenfalls nicht vorhanden: der <strong>kritische Pfad</strong>, die Berechnung von <strong>Puffer</strong>, ein echter <strong>Basisplan</strong> zum Vergleich von Soll und Ist sowie jede Form von Ressourcenauslastung. Dazu kommt der Pflegeaufwand am Diagramm selbst: Jeder neue Vorgang bedeutet, den Datenbereich zu erweitern und gegebenenfalls Farben nachzuziehen.</p>
+        <p>Bis etwa zwanzig Vorgänge und bei einem Plan, der sich kaum ändert, ist Excel eine vernünftige Wahl — besonders, wenn die Daten ohnehin schon in einer Tabelle liegen. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart. <a href="/de/app.html">gantts.app</a> rechnet Verschiebungen selbst, zeichnet Verknüpfungen als Pfeile, hebt den kritischen Pfad hervor und exportiert das Ergebnis auf Wunsch wieder als XLSX — ohne Konto und ohne Installation.</p>`
     ]
   ],
   callout: "Der entscheidende Unterschied ist nicht das Aussehen, sondern das Rechnen. Ein Excel-Gantt sieht richtig aus, aktualisiert sich aber nicht. Sobald sich Termine ändern — und sie ändern sich immer — wird aus einem Plan eine Zeichnung.",
   faq: [
     [
       "Hat Excel einen Gantt-Diagrammtyp?",
-      "Nein. Man erstellt ihn mit einem gestapelten Balkendiagramm, dessen erste Datenreihe unsichtbar formatiert wird."
+      "Nein. Im Menü Einfügen ▸ Diagramme gibt es keinen Eintrag „Gantt“. Man erstellt ihn aus einem gestapelten Balkendiagramm, dessen erste Datenreihe mit „Keine Füllung“ und „Keine Linie“ unsichtbar formatiert wird. Auch die von Microsoft angebotenen Gantt-Vorlagen verwenden intern genau diesen Trick oder eine bedingte Formatierung."
+    ],
+    [
+      "Warum sind meine Balken in der falschen Reihenfolge?",
+      "Excel zeichnet in Balkendiagrammen die erste Tabellenzeile unten. Markieren Sie die vertikale Achse, öffnen Sie „Achse formatieren“ und setzen Sie das Häkchen bei „Kategorien in umgekehrter Reihenfolge“. Zusätzlich empfiehlt sich „Horizontale Achse schneidet: Beim Höchstwert der Kategorie“, damit die Datumsachse oben bleibt."
+    ],
+    [
+      "Warum zeigt meine Hilfsspalte ein Datum statt einer Zahl?",
+      "Weil Excel das Datumsformat der Ausgangszellen auf die Ergebniszelle überträgt. Markieren Sie die Spalten „Dauer“ und „Abstand“ und stellen Sie das Zahlenformat auf „Standard“ oder „Zahl“. Das ist der mit Abstand häufigste Grund für unsinnige Balkenlängen."
+    ],
+    [
+      "Wie stelle ich den Fortschritt in Prozent dar?",
+      "Über eine zusätzliche Hilfsspalte: Dauer mal Fertigstellungsgrad ergibt den erledigten Anteil, die Restdauer den Rest. Beide werden als getrennte gestapelte Reihen eingefügt, der erledigte Teil dunkler eingefärbt. Der Balken zeigt damit sichtbar, wie weit der Vorgang gediehen ist."
     ],
     [
       "Kann Excel Abhängigkeiten abbilden?",
-      "Nicht automatisch. Verschiebungen müssen für jeden Nachfolger von Hand nachgetragen werden."
+      "Nicht automatisch. Es gibt keine Verknüpfungspfeile und keine Neuberechnung. Man kann das Startdatum eines Nachfolgers per Formel an das Ende des Vorgängers binden, sodass Änderungen die Spalte hinunterlaufen — verzweigte Ketten, Puffer und ein kritischer Pfad lassen sich so aber nicht abbilden."
     ],
     [
       "Bis zu welcher Größe eignet sich Excel?",
-      "Bis etwa zwanzig Vorgänge. Darüber übersteigt der Pflegeaufwand den Nutzen deutlich."
+      "Bis etwa zwanzig Vorgänge und bei einem Plan, der sich selten ändert. Darüber übersteigt der Pflegeaufwand den Nutzen deutlich, weil jede Terminverschiebung von Hand durch alle Nachfolger getragen werden muss."
     ],
     [
       "Gibt es eine Gantt-Vorlage für Excel?",
-      "Ja — unsere Vorlagen lassen sich als XLSX herunterladen und enthalten die Hilfsspalten bereits."
+      "Ja — unsere Vorlage lässt sich als XLSX herunterladen und enthält Hilfsspalten, unsichtbare erste Datenreihe, umgekehrte Achsenreihenfolge und formatierte Datumsachse bereits fertig eingerichtet."
     ]
   ],
   related: [
@@ -258,45 +316,111 @@ const G = {
 'gantt-chart-in-google-sheets': {
   h1: "Gantt-Diagramm in Google Sheets: drei Wege",
   metaTitle: "Gantt-Diagramm in Google Sheets",
-  metaDesc: "Drei Wege zum Gantt-Diagramm in Google Sheets: gestapelte Balken, die native Zeitachsen-Ansicht und bedingte Formatierung.",
+  metaDesc: "Drei Wege zum Gantt-Diagramm in Google Sheets: gestapelte Balken, die native Zeitachsen-Ansicht und bedingte Formatierung — Schritt für Schritt.",
   date: "2026-07-19",
   lead: "Google Sheets bietet drei Wege zu einem <strong>Gantt-Diagramm</strong>, und sie unterscheiden sich stärker, als man erwartet: einen Diagramm-Trick, eine eingebaute Zeitachsen-Ansicht und eine Variante ganz ohne Diagramm.",
   figIntro: "Drei Wege, je nach dem, was Sie brauchen:",
   sections: [
     [
+      "Kann Google Sheets Gantt-Diagramme?",
+      `<p>Einen eigenen Diagrammtyp „Gantt“ gibt es nicht, so wie es Kreis- oder Liniendiagramme gibt. Es gibt aber drei belastbare Wege zu einem Terminplan, und die Wahl zwischen ihnen entscheidet mehr über das Ergebnis als jede spätere Formatierung:</p>
+        <ul>
+          <li><strong>Gestapeltes Balkendiagramm</strong> — der klassische Tabellentrick mit zwei Hilfsspalten. Sie erhalten ein echtes Diagrammobjekt, das sich kopieren, umgestalten und weitergeben lässt.</li>
+          <li><strong>Zeitachsen-Ansicht</strong> — eine eingebaute Ansicht unter <strong>Einfügen ▸ Zeitachse</strong>, die aus einer Vorgangstabelle Karten auf einer Zeitleiste macht. Am schnellsten eingerichtet, aber kein Bild und kein Diagramm.</li>
+          <li><strong>Bedingte Formatierung</strong> — ein eingefärbtes Kalenderraster direkt in den Zellen, das sich bei jeder Terminänderung selbst aktualisiert.</li>
+        </ul>
+        <p>Keiner der drei Wege berechnet den <a href="/de/blog/critical-path-method.html">kritischen Pfad</a>, zeichnet Verknüpfungspfeile oder verschiebt Nachfolger, wenn ein Vorgang sich verspätet. Genau an dieser Stelle wechseln die meisten Teams irgendwann das Werkzeug. Zuerst aber die Wege im Einzelnen.</p>`
+    ],
+    [
       "Weg 1: gestapeltes Balkendiagramm",
-      "<p>Dasselbe Prinzip wie in Excel. Spalten für Vorgang, Abstand zum Projektstart und Dauer; dann Einfügen → Diagramm → Gestapeltes Balkendiagramm und die Abstandsreihe auf transparent setzen.</p>\n        <p>Vorteil: Es ist ein echtes Diagramm und lässt sich exportieren. Nachteil: keine Abhängigkeiten, wie überall in Tabellenkalkulationen.</p>"
+      `<p>Dasselbe Prinzip wie in Excel: Jeder Vorgang bekommt einen unsichtbaren Vorlaufbalken, der ihn an seine Startposition schiebt, gefolgt von einem sichtbaren Dauerbalken. Gestapelt ergibt das schwebende Balken, die sich wie ein Gantt-Diagramm lesen.</p>
+        <p>Legen Sie zunächst die Tabelle an — Vorgänge in Spalte A, Startdatum in B, Enddatum in C — und ergänzen Sie zwei berechnete Spalten:</p>
+        <ul>
+          <li><strong>Abstand zum Projektstart</strong> (Spalte D): <code>=B2-$B$2</code>, wenn in B2 der früheste Termin des Projekts steht.</li>
+          <li><strong>Dauer</strong> (Spalte E): <code>=C2-B2</code>.</li>
+        </ul>
+        <p>Beide Spalten müssen anschließend über <strong>Format ▸ Zahl ▸ Zahl</strong> als Zahl formatiert werden. Sheets übernimmt sonst das Datumsformat der Ausgangszellen, und aus einer Dauer von sieben Tagen wird der 7. Januar 1900. Das ist der Schritt, den fast alle beim ersten Versuch übersehen.</p>
+        <p>Dann markieren Sie die Spalten <em>Vorgang</em>, <em>Abstand</em> und <em>Dauer</em> — Strg beziehungsweise Cmd gedrückt halten, um nicht benachbarte Spalten zu wählen — und gehen auf <strong>Einfügen ▸ Diagramm</strong>. Im Diagrammeditor rechts stellen Sie unter <em>Einrichtung</em> den <strong>Diagrammtyp</strong> auf <strong>Gestapeltes Balkendiagramm</strong>. Danach:</p>
+        <ol>
+          <li>Wechseln Sie auf den Reiter <strong>Anpassen</strong> und öffnen Sie <strong>Serie</strong>. Wählen Sie oben die Serie <em>Abstand</em> und setzen Sie die <strong>Farbe</strong> auf <strong>Keine</strong>. Der Vorlauf verschwindet, die Dauerbalken rücken an ihre Position.</li>
+          <li>Öffnen Sie <strong>Vertikale Achse</strong> und aktivieren Sie die Option, welche die Achsenreihenfolge umkehrt. Damit steht der erste Vorgang oben statt unten.</li>
+          <li>Färben Sie die Serie <em>Dauer</em> passend ein, vergeben Sie unter <strong>Diagramm- und Achsentitel</strong> einen Titel und blenden Sie die Legende aus — sie erklärt an dieser Stelle nichts mehr.</li>
+        </ol>
+        <p>Das Ergebnis ist ein echtes Diagrammobjekt: Sie können es in Docs oder Präsentationen kopieren, als Bild herunterladen und jederzeit neu formatieren. Der Preis sind die Hilfsspalten, die bei jeder Terminänderung mitgepflegt werden wollen.</p>`
     ],
     [
       "Weg 2: die native Zeitachsen-Ansicht",
-      "<p>Seit einiger Zeit gibt es in Google Sheets unter Einfügen → Zeitachse eine eingebaute Ansicht. Sie erwartet Spalten mit Startdatum, Enddatum und Bezeichnung und erzeugt daraus eine interaktive Zeitleiste mit Karten.</p>\n        <p>Das ist der bequemste Weg für einen groben Überblick und braucht keinerlei Tricks. Für einen Projektplan mit Abhängigkeiten und kritischem Pfad ist es allerdings nicht gedacht.</p>"
+      `<p>Unter <strong>Einfügen ▸ Zeitachse</strong> gibt es eine eingebaute Ansicht, die ganz ohne Formeln auskommt. Sie erwartet eine schlichte Tabelle mit mindestens drei Spalten: einer Bezeichnung, einem Startdatum und einem Enddatum. Optionale Spalten wie Verantwortliche, Phase oder Fortschritt lassen sich zusätzlich anzeigen.</p>
+        <ol>
+          <li>Markieren Sie den Datenbereich einschließlich der Kopfzeile.</li>
+          <li><strong>Einfügen ▸ Zeitachse</strong>, den Bereich im Dialog bestätigen und auf <strong>Erstellen</strong> klicken.</li>
+          <li>Es entsteht ein neuer Tabellenblatt-Reiter mit der Zeitachse. Ordnen Sie im Einstellungsbereich rechts die Spalten zu: <em>Kartentitel</em>, <em>Startdatum</em>, <em>Enddatum</em>, <em>Kartenfarbe</em> und <em>Gruppieren nach</em>.</li>
+        </ol>
+        <p>Die Zoomstufe lässt sich zwischen Tagen, Wochen, Monaten, Quartalen und Jahren umschalten, die Ansicht seitlich verschieben, und ein Klick auf eine Karte führt zurück in die Ursprungszeile der Tabelle. Für Roadmaps und grobe Terminübersichten ist das der bequemste Weg überhaupt.</p>
+        <p>Zwei Einschränkungen sollten Sie vorher kennen. Erstens ist die Zeitachse eine <em>Ansicht</em>, kein Diagrammobjekt: Sie lässt sich nicht als Bild in eine Folie kopieren und nicht wie ein Diagramm umgestalten. Zweitens rechnet sie nichts — keine Verknüpfungen, kein kritischer Pfad, keine Verschiebung von Nachfolgern. Sie stellt Zeiträume dar, mehr nicht.</p>`
     ],
     [
       "Weg 3: bedingte Formatierung",
-      "<p>Ohne Diagramm: Legen Sie eine Spalte je Tag oder Woche an und färben Sie die Zellen per bedingter Formatierung ein, wenn das Datum zwischen Start und Ende liegt. Das Ergebnis ist ein Raster, das sich wie ein Gantt liest und direkt in der Tabelle lebt.</p>\n        <p>Praktisch für kurze Zeiträume, unübersichtlich ab etwa einem Quartal.</p>"
+      `<p>Ohne Diagramm: Legen Sie in der Kopfzeile eine Spalte je Tag oder je Woche an und lassen Sie Vorgang, Start und Ende links stehen. Markieren Sie dann das gesamte Kalenderraster und wählen Sie <strong>Format ▸ Bedingte Formatierung</strong>. Unter <em>Formatierungsregeln</em> stellen Sie auf <strong>Benutzerdefinierte Formel ist</strong> um und tragen ein: <code>=UND(F$1&gt;=$B2; F$1&lt;=$C2)</code>. Als Formatierung genügt eine Hintergrundfarbe.</p>
+        <p>Jede Zelle, deren Kopfdatum in den Zeitraum ihres Vorgangs fällt, färbt sich ein. Das Ergebnis ist ein Raster, das sich wie ein Gantt-Diagramm liest, in der Tabelle lebt und sich bei jeder Terminänderung sofort selbst aktualisiert.</p>
+        <p>Praktisch für kurze Zeiträume und für Pläne, die ohnehin in der Tabelle bearbeitet werden. Unübersichtlich wird es ab etwa einem Quartal in Tagesspalten — dann lohnt der Wechsel auf Wochenspalten mit <code>=UND($C2&gt;=F$1; $B2&lt;=F$1+6)</code>, damit auch Vorgänge erfasst werden, die eine Woche nur teilweise berühren.</p>`
+    ],
+    [
+      "Mit einer Vorlage starten",
+      `<p>Der schnellste Weg zu einem fertigen Diagramm ist, die Mechanik gar nicht erst selbst zu bauen. Unsere <a href="/de/templates/google-sheets.html">kostenlose Google-Sheets-Vorlage</a> enthält Hilfsspalten, Diagramm und Formatierung bereits fertig — Sie legen über <em>Datei ▸ Kopie erstellen</em> eine eigene Kopie in Ihrem Drive an und überschreiben die Beispielzeilen. In der <a href="/de/templates.html">Vorlagenübersicht</a> finden Sie außerdem Varianten für Excel, PowerPoint und einzelne Branchen.</p>`
     ],
     [
       "Welcher Weg wofür",
-      "<p>Zeitachsen-Ansicht für den schnellen Überblick, gestapelte Balken für ein Diagramm zum Weitergeben, bedingte Formatierung für einen Plan, der in der Tabelle bleibt.</p>"
+      `<p>Zeitachsen-Ansicht für den schnellen Überblick und für Roadmaps, die niemand exportieren muss. Gestapelte Balken für ein Diagramm, das in eine Präsentation oder einen Bericht wandern soll. Bedingte Formatierung für einen Plan, der in der Tabelle bleibt und häufig angefasst wird.</p>
+        <p>Als Faustregel: Wenn das Ergebnis das Dokument verlassen soll, brauchen Sie ein Diagrammobjekt — also Weg 1. Wenn es nur gelesen wird, ist Weg 2 in einem Bruchteil der Zeit fertig. Und wenn der Plan täglich angefasst wird, gewinnt Weg 3, weil er als einziger keinen zweiten Ort hat, an dem etwas veralten kann.</p>
+        <p>Die Wege lassen sich auch kombinieren, ohne dass Sie die Daten doppelt pflegen: Alle drei greifen auf dieselben Spalten für Vorgang, Start und Ende zu. Ein Plan kann also gleichzeitig eine Zeitachsen-Ansicht für die wöchentliche Abstimmung und ein Balkendiagramm für den Monatsbericht besitzen. Was Sie in beiden Fällen von Hand nachziehen müssen, sind allein die Hilfsspalten für Abstand und Dauer — und die nur, wenn Sie Weg 1 nutzen.</p>`
     ],
     [
-      "Die gemeinsame Grenze",
-      "<p>Keiner der drei Wege kennt Abhängigkeiten. Der Vorteil von Sheets ist die gemeinsame Bearbeitung in Echtzeit — wenn Sie die brauchen und der Plan klein ist, ist Sheets eine gute Wahl. Sobald der Plan selbst rechnen soll, brauchen Sie ein Planungswerkzeug.</p>"
+      "Die Ansicht verfeinern",
+      `<p>Ein paar Ergänzungen machen jedes Sheets-Gantt lesbarer:</p>
+        <ul>
+          <li><strong>Nach Phase gruppieren</strong> — eine Spalte „Phase“ ergänzen und entweder danach sortieren oder sie in der Zeitachsen-Ansicht als <em>Gruppieren nach</em> verwenden.</li>
+          <li><strong>Fortschritt zeigen</strong> — eine Spalte mit dem Fertigstellungsgrad anlegen und im Balkendiagramm die Dauer in „erledigt“ und „offen“ aufteilen. Zwei gestapelte Serien in zwei Tönen derselben Farbe genügen.</li>
+          <li><strong>Meilensteine markieren</strong> — Vorgänge mit der Dauer null in einer Signalfarbe einfärben, damit sie als Punkt und nicht als Balken gelesen werden.</li>
+          <li><strong>Heutiges Datum</strong> — in der bedingten Formatierung eine zweite Regel mit <code>=F$1=HEUTE()</code> anlegen, die die Tagesspalte farblich hervorhebt.</li>
+        </ul>`
+    ],
+    [
+      "Abhängigkeiten nachbilden — und die gemeinsame Grenze",
+      `<p>Abhängigkeiten sind die harte Grenze. Google Sheets kennt den Gedanken „Vorgang B beginnt, wenn Vorgang A endet“ nicht. Nachbilden lässt er sich per Formel, indem das Startdatum eines Nachfolgers auf das Ende seines Vorgängers verweist — etwa <code>=C2+1</code>. Eine Änderung läuft dann immerhin die Spalte hinunter.</p>
+        <p>Sichtbare Pfeile entstehen dadurch nicht, Vorgänge mit mehreren Vorgängern brauchen verschachtelte MAX-Formeln, und spätestens beim ersten Einfügen einer Zeile in der Mitte geraten die Bezüge durcheinander. Puffer, ein <a href="/de/blog/critical-path-method.html">kritischer Pfad</a> und ein <a href="/de/blog/gantt-baseline-variance.html">Basisplan</a> zum Soll-Ist-Vergleich sind auf diesem Weg nicht erreichbar.</p>
+        <p>Der echte Vorteil von Sheets ist die gemeinsame Bearbeitung in Echtzeit samt Versionsverlauf und Kommentaren. Wenn Sie die brauchen und der Plan überschaubar bleibt, ist Sheets eine gute Wahl. Sobald der Plan selbst rechnen soll, brauchen Sie ein Planungswerkzeug: <a href="/de/app.html">gantts.app</a> verknüpft Vorgänge, verschiebt Nachfolger automatisch, hebt den kritischen Pfad hervor und exportiert nach Excel, PowerPoint, PDF oder PNG — ohne Konto und ohne Installation.</p>`
     ]
   ],
   callout: "Die native Zeitachsen-Ansicht ist kein Gantt-Diagramm, auch wenn sie so aussieht. Sie stellt Zeiträume dar, kennt aber weder Verknüpfungen noch einen kritischen Pfad. Für eine Übersicht reicht das; für einen Terminplan, der Verschiebungen selbst nachzieht, nicht.",
   faq: [
     [
       "Hat Google Sheets eine Gantt-Funktion?",
-      "Es gibt eine eingebaute Zeitachsen-Ansicht unter Einfügen → Zeitachse. Sie zeigt Zeiträume, unterstützt aber keine Abhängigkeiten."
+      "Einen Diagrammtyp „Gantt“ gibt es nicht. Es gibt aber eine eingebaute Zeitachsen-Ansicht unter Einfügen ▸ Zeitachse, die aus Start- und Enddaten eine Zeitleiste mit Karten erzeugt, und den Umweg über ein gestapeltes Balkendiagramm. Abhängigkeiten oder einen kritischen Pfad unterstützt keiner der beiden Wege."
     ],
     [
       "Wie erstelle ich ein Gantt-Diagramm in Google Sheets?",
-      "Am flexibelsten mit einem gestapelten Balkendiagramm, dessen erste Datenreihe transparent formatiert wird."
+      "Am flexibelsten mit einem gestapelten Balkendiagramm: zwei Hilfsspalten für Abstand zum Projektstart und Dauer anlegen, Einfügen ▸ Diagramm, Diagrammtyp auf „Gestapeltes Balkendiagramm“ stellen, die Abstandsserie auf die Farbe „Keine“ setzen und die Reihenfolge der vertikalen Achse umkehren."
+    ],
+    [
+      "Warum sehen meine Hilfsspalten wie Datumsangaben aus?",
+      "Weil Sheets das Datumsformat der Ausgangszellen übernimmt. Markieren Sie die Spalten für Abstand und Dauer und setzen Sie über Format ▸ Zahl ▸ Zahl ein reines Zahlenformat. Ohne diesen Schritt zeichnet das Diagramm unsinnige Balkenlängen."
+    ],
+    [
+      "Was ist die Zeitachsen-Ansicht in Google Sheets?",
+      "Eine eingebaute Ansicht, die eine Tabelle mit Start- und Enddaten in Karten auf einer Zeitleiste verwandelt. Sie ist schnell eingerichtet und lässt sich zwischen Tagen und Jahren zoomen, ist aber ein Bildschirmwerkzeug und kein Diagrammobjekt — und sie rechnet weder Abhängigkeiten noch einen kritischen Pfad."
+    ],
+    [
+      "Wie füge ich Abhängigkeiten hinzu?",
+      "Nur behelfsweise. Sie können das Startdatum eines Nachfolgers per Formel an das Enddatum seines Vorgängers binden, sodass Änderungen die Spalte hinunterlaufen. Pfeile, verzweigte Ketten, Puffer und ein kritischer Pfad lassen sich so nicht abbilden — dafür braucht es ein Planungswerkzeug."
     ],
     [
       "Kann man in Google Sheets gemeinsam am Plan arbeiten?",
-      "Ja, das ist der größte Vorteil gegenüber Excel — mehrere Personen bearbeiten dieselbe Datei in Echtzeit."
+      "Ja, das ist der größte Vorteil gegenüber Excel — mehrere Personen bearbeiten dieselbe Datei in Echtzeit, mit Kommentaren und vollständigem Versionsverlauf."
+    ],
+    [
+      "Wie bekomme ich den Plan nach Excel oder PowerPoint?",
+      "Über Datei ▸ Herunterladen ▸ Microsoft Excel (.xlsx) laden Sie die Tabelle samt Diagramm herunter; für eine Folie kopieren Sie das Diagramm als Bild. Schneller ist es, den Plan in einem Gantt-Werkzeug zu bauen und direkt nach Excel, PowerPoint, PDF oder PNG zu exportieren."
     ]
   ],
   related: [
@@ -309,49 +433,104 @@ const G = {
 'gantt-chart-in-powerpoint': {
   h1: "Gantt-Diagramm in PowerPoint: Diagramm oder Formen",
   metaTitle: "Gantt-Diagramm in PowerPoint erstellen",
-  metaDesc: "Gantt-Diagramm in PowerPoint auf zwei Wegen: als gestapeltes Balkendiagramm oder aus Formen — mit Vor- und Nachteilen beider Methoden.",
+  metaDesc: "Gantt-Diagramm in PowerPoint auf zwei Wegen: als gestapeltes Balkendiagramm oder aus Formen — Schritt für Schritt, mit Vor- und Nachteilen.",
   date: "2026-07-19",
   lead: "In PowerPoint entsteht ein <strong>Gantt-Diagramm</strong> auf zwei Wegen: als Diagramm mit Datenblatt oder von Hand aus Rechtecken. Welcher richtig ist, hängt allein davon ab, ob sich die Daten noch ändern werden.",
   figIntro: "Zwei Wege, zwei sehr unterschiedliche Arbeitsweisen:",
   sections: [
     [
-      "Weg 1: gestapeltes Balkendiagramm",
-      "<p>Einfügen → Diagramm → Balken → Gestapelte Balken. PowerPoint öffnet ein kleines Excel-Blatt. Tragen Sie dort Vorgang, Abstand und Dauer ein und formatieren Sie die Abstandsreihe transparent — dieselbe Technik wie in Excel.</p>\n        <p>Vorteil: Die Balken bleiben datengebunden. Ändert sich eine Dauer, ändert sich der Balken. Nachteil: Die gestalterische Freiheit ist begrenzt.</p>"
+      "Zwei Wege — und wie man wählt",
+      `<p>Einen Objekttyp „Gantt-Diagramm“ gibt es in PowerPoint nicht. Jede Methode ist ein Umweg, und zwei davon lohnen sich:</p>
+        <ul>
+          <li><strong>Gestapeltes Balkendiagramm</strong> — das eingebaute Balkendiagramm mit versteckter erster Reihe. Es bleibt datengebunden: Wer das Datenblatt ändert, ändert das Bild.</li>
+          <li><strong>Formen oder SmartArt</strong> — jeder Balken ein Rechteck auf einem selbst gezogenen Raster. Volle Gestaltungsfreiheit, keinerlei Automatik.</li>
+        </ul>
+        <p>Die Entscheidung fällt an einer einzigen Frage: Werden sich die Termine noch ändern? Wenn ja, nehmen Sie das Diagramm — eine Zahl im Datenblatt zu korrigieren dauert Sekunden, ein Dutzend Rechtecke nachzuziehen zehn Minuten. Wenn der Plan feststeht und die Folie einem strengen Layout folgen muss, nehmen Sie Formen.</p>
+        <p>Beide Wege kennen weder Abhängigkeiten noch einen <a href="/de/blog/critical-path-method.html">kritischen Pfad</a>, und beide werden mühsam, sobald mehr als eine Handvoll Vorgänge darauf soll. Wenn Sie echte Verknüpfungen brauchen, wird keine Formatierung in PowerPoint einen Terminplan neu berechnen.</p>`
+    ],
+    [
+      "Weg 1: gestapeltes Balkendiagramm, Schritt für Schritt",
+      `<p>Es ist derselbe Trick wie in der Tabellenkalkulation, nur innerhalb der Diagramm-Engine von PowerPoint.</p>
+        <ol>
+          <li><strong>Einfügen ▸ Diagramm ▸ Balken ▸ Gestapelte Balken</strong> und mit <strong>OK</strong> bestätigen. Es öffnet sich ein kleines, mit der Folie verknüpftes Excel-Blatt.</li>
+          <li>Tragen Sie dort drei Spalten ein: <strong>Vorgang</strong>, <strong>Abstand</strong> (Tage seit Projektstart) und <strong>Dauer</strong> (Länge in Tagen). Löschen Sie die überzähligen Beispielspalten und ziehen Sie den blauen Datenbereich auf Ihre Zeilenzahl. Dann das Blatt schließen.</li>
+          <li>Klicken Sie auf einen Balken der Reihe <strong>Abstand</strong> und setzen Sie in <strong>Datenreihen formatieren</strong> die <strong>Füllung ▸ Keine Füllung</strong> und den <strong>Rahmen ▸ Keine Linie</strong>. Die Vorlaufsegmente verschwinden, die Dauerbalken schweben an ihrer Position.</li>
+          <li>Klicken Sie auf die vertikale Achse, öffnen Sie <strong>Achse formatieren</strong> und aktivieren Sie <strong>Kategorien in umgekehrter Reihenfolge</strong>, damit der erste Vorgang oben steht. Ergänzend <strong>Horizontale Achse schneidet: Beim Höchstwert der Kategorie</strong>, damit die Zeitachse oben bleibt.</li>
+          <li>Markieren Sie die horizontale Achse und setzen Sie unter <strong>Grenzen</strong> Minimum und Maximum auf den Tagesbereich Ihres Projekts, damit links und rechts keine leeren Flächen bleiben.</li>
+          <li>Dauerbalken einfärben, Titel setzen, Legende löschen. Fertig.</li>
+        </ol>
+        <p>Weil es ein echtes Diagramm ist, lassen sich die Werte später über Rechtsklick ▸ <strong>Daten bearbeiten</strong> anpassen. Die Abstände und Dauern bleiben allerdings Tageszahlen, die Sie selbst ausrechnen — PowerPoint kennt keine Datumsachse in diesem Diagrammtyp.</p>
+        <p>Zwei gängige Verfeinerungen: Ein <strong>Fortschrittsbalken</strong> entsteht, indem Sie die Dauer in zwei Spalten „erledigt“ und „offen“ aufteilen und beide gestapelt darstellen, den erledigten Teil dunkler. Ein <strong>Meilenstein</strong> ist eine Zeile mit einer Dauer nahe null in einer Signalfarbe — oder, sauberer, eine kleine Raute, die Sie als Form darüberlegen.</p>`
     ],
     [
       "Weg 2: aus Formen bauen",
-      "<p>Zeichnen Sie eine Zeitachse und legen Sie je Vorgang ein abgerundetes Rechteck darauf. Verwenden Sie die Ausrichtungshilfen und ein Raster, damit die Balken exakt zur Achse passen.</p>\n        <p>Vorteil: volle Kontrolle über Gestaltung, Beschriftung und Animation. Nachteil: Jede Änderung ist Handarbeit, und die Balkenlängen stimmen nur so genau, wie Sie sie ziehen.</p>"
+      `<p>Wenn die Folie einem Markenlayout folgen muss, bauen Sie das Diagramm aus Formen:</p>
+        <ol>
+          <li>Fügen Sie eine <strong>Tabelle</strong> ein oder ziehen Sie senkrechte Linien als Zeitachse — eine Spalte je Woche oder je Monat.</li>
+          <li>Schreiben Sie die Vorgangsnamen untereinander in die linke Spalte.</li>
+          <li>Zeichnen Sie je Vorgang über <strong>Einfügen ▸ Formen ▸ Rechteck: abgerundete Ecken</strong> einen Balken und ziehen Sie ihn über die Spalten, die seinem Zeitraum entsprechen.</li>
+          <li>Ergänzen Sie <strong>Rauten</strong> für Meilensteine und dünne Verbindungslinien, wo Sie eine Abhängigkeit andeuten wollen.</li>
+          <li>Richten Sie alles über <strong>Formformat ▸ Anordnen ▸ Ausrichten</strong> aus und verteilen Sie die Zeilen mit <em>Vertikal verteilen</em> gleichmäßig. Zum Schluss alles markieren und <strong>gruppieren</strong>, damit die Zeichnung als Einheit verschiebbar bleibt.</li>
+        </ol>
+        <p>Drei Gewohnheiten verhindern, dass daraus ein Flickenteppich wird. Erstens: eine einheitliche Balkenhöhe und ein gemeinsames Grundraster — schalten Sie unter <strong>Ansicht</strong> die Führungslinien ein und lassen Sie die Formen einrasten. Zweitens: der <strong>Auswahlbereich</strong> (Start ▸ Bearbeiten ▸ Markieren ▸ Auswahlbereich) — bei dreißig Formen ist er der einzige Weg, eine bestimmte wiederzufinden und sinnvoll zu benennen. Drittens: die fertige Gruppe duplizieren, bevor Sie eine Variante bauen, etwa „geplant“ gegen „aktuell“.</p>
+        <p>SmartArt-Grafiken aus den Kategorien <em>Prozess</em> und <em>Zeitachse</em> liefern schnell eine roadmap-artige Darstellung, sind aber keine maßstabsgetreuen Terminpläne — die Abstände folgen der Grafik, nicht dem Kalender. Für eine Phasenübersicht ist das in Ordnung, für einen Termin, über den diskutiert wird, nicht.</p>`
     ],
     [
       "Wann welcher Weg",
-      "<p>Formen, wenn der Plan feststeht und die Folie einer Präsentation dient. Diagramm, wenn die Zahlen sich noch bewegen. Für eine Vorstandsfolie mit fünf Phasen ist der Formen-Weg fast immer der schnellere.</p>"
+      `<p>Formen, wenn der Plan feststeht und die Folie einer Präsentation dient. Diagramm, wenn die Zahlen sich noch bewegen. Für eine Vorstandsfolie mit fünf Phasen ist der Formen-Weg fast immer der schnellere; für einen Statusbericht, der monatlich wiederkehrt, das Diagramm.</p>
+        <p>Ein praktischer Test hilft: Zählen Sie, wie oft die Folie voraussichtlich neu erstellt wird. Einmal für eine Entscheidungsvorlage — dann Formen. Zwölfmal für eine monatliche Runde — dann Diagramm, denn die Einrichtungszeit fällt einmal an, die Änderungszeit zwölfmal. Ab etwa zehn Vorgängen kippt die Rechnung ohnehin zugunsten des Diagramms, weil das Ausrichten der Rechtecke mit jeder Zeile länger dauert.</p>
+        <p>Und keiner von beiden, wenn der Plan tatsächlich gesteuert werden soll. Eine Folie ist ein Kommunikationsmittel, kein Arbeitsdokument — was auf ihr steht, ist eine Momentaufnahme des Plans, nicht der Plan selbst. Sobald jemand auf Grundlage der Folie Termine zusagt, ist das ein Zeichen, dass der Plan an einer anderen Stelle fehlt.</p>`
     ],
     [
       "Gestaltung für die Leinwand",
-      "<p>Eine Folie verträgt sechs bis zehn Balken, nicht vierzig. Reduzieren Sie auf Phasenebene und heben Sie höchstens drei Meilensteine hervor. Was auf einer Projektionsfläche aus zehn Metern lesbar sein muss, verträgt keine Detailplanung.</p>"
+      `<p>Eine Folie verträgt sechs bis zehn Balken, nicht vierzig. Reduzieren Sie auf Phasenebene und heben Sie höchstens drei Meilensteine hervor. Was aus zehn Metern Entfernung lesbar sein muss, verträgt keine Detailplanung. Darüber hinaus:</p>
+        <ul>
+          <li><strong>Nach Phase einfärben.</strong> Jede Phase ein Farbton, damit das Publikum die Struktur vor den Details erfasst.</li>
+          <li><strong>Meilensteine kontrastieren.</strong> Eine einzige Signalfarbe und eine Rautenform genügen; mehr Auszeichnung hebt nichts mehr hervor.</li>
+          <li><strong>Große Pläne aufteilen.</strong> Eine Übersichtsfolie mit den Phasen, dahinter je eine Detailfolie — statt einer unlesbaren Gesamtfolie.</li>
+          <li><strong>Heute-Linie einzeichnen.</strong> Eine senkrechte Linie am aktuellen Datum beantwortet die Statusfrage, bevor sie gestellt wird.</li>
+          <li><strong>Beschriftungen kürzen.</strong> Zwei bis drei Wörter je Balken; alles Weitere gehört in die Notizen.</li>
+          <li><strong>Farben an das Deck angleichen</strong>, damit das Diagramm wie ein Teil der Präsentation wirkt und nicht wie ein Fremdkörper.</li>
+        </ul>`
     ],
     [
       "Der praktische Weg",
-      "<p>Am schnellsten geht es, den Plan dort zu pflegen, wo er lebt, und ihn für die Folie zu exportieren. Unsere <a href=\"/de/templates/powerpoint.html\">PowerPoint-Vorlage</a> liefert eine fertig formatierte Folie, in die Sie nur noch Ihre Vorgänge eintragen.</p>"
+      `<p>Am schnellsten geht es, den Plan dort zu pflegen, wo er lebt, und ihn für die Folie zu exportieren. In <a href="/de/app.html">gantts.app</a> legen Sie Vorgänge an, ziehen die Balken auf ihre Termine, gruppieren nach Phasen und verknüpfen Abhängigkeiten; der Plan rechnet Verschiebungen selbst nach und hebt den kritischen Pfad hervor. Ein Klick auf <strong>Export ▸ PowerPoint</strong> erzeugt daraus eine PPTX-Datei mit dem Diagramm auf einer Folie.</p>
+        <p>Ändert sich der Plan, ändern Sie ihn einmal und exportieren neu — statt Rechtecke nachzuziehen. Wer lieber von einer fertigen Folie ausgeht, findet in unserer <a href="/de/templates/powerpoint.html">PowerPoint-Vorlage</a> ein formatiertes Layout mit Farbschema und Meilensteinmarkierungen, in das nur noch die eigenen Vorgänge eingetragen werden.</p>`
     ],
     [
       "Häufigster Fehler",
-      "<p>Den vollständigen Projektplan auf eine Folie zwingen. Präsentation und Planung haben unterschiedliche Detailgrade — die Folie zeigt die Geschichte, der Plan zeigt die Arbeit.</p>"
+      `<p>Den vollständigen Projektplan auf eine Folie zwingen. Präsentation und Planung haben unterschiedliche Detailgrade — die Folie zeigt die Geschichte, der Plan zeigt die Arbeit. Wer beides zusammenzwingt, erhält ein Dokument, das für die Besprechung zu klein gedruckt und für die Steuerung zu grob ist.</p>
+        <p>Der zweithäufigste Fehler ist verwandt: eine Folie zu bauen und sie danach als Plan zu behandeln. Sobald jemand fragt „und was passiert, wenn sich der Test um zwei Wochen verschiebt“, zeigt sich, dass die Rechtecke nichts wissen. Halten Sie den Plan an einer Stelle und die Folie als das, was sie ist — ein Auszug.</p>
+        <p>Ein dritter Fehler betrifft die Achse: Balken werden nach Augenmaß gezogen, statt sich am Raster zu orientieren. Ein Vorgang über sechs Wochen sieht dann so lang aus wie einer über vier, und in der Besprechung wird über Termine diskutiert, die nie so geplant waren. Wenn Sie mit Formen arbeiten, legen Sie deshalb zuerst das Raster fest und zeichnen Sie erst danach — nicht umgekehrt.</p>
+        <p>Und schließlich: Aktualisieren Sie die Folie nicht in der Datei des letzten Monats. Wer die alte Präsentation kopiert und einzelne Balken verschiebt, trägt jeden früheren Zeichenfehler weiter. Erzeugen Sie die Folie stattdessen jedes Mal neu aus dem Plan — beim Diagrammweg über <strong>Daten bearbeiten</strong>, beim Werkzeugweg über einen erneuten Export.</p>`
     ]
   ],
   callout: "Eine Präsentationsfolie ist kein Projektplan. Zeigen Sie Phasen und die drei Meilensteine, auf die es ankommt. Wer vierzig Zeilen auf eine Folie presst, erreicht nur, dass niemand hinsieht.",
   faq: [
     [
       "Wie erstelle ich ein Gantt-Diagramm in PowerPoint?",
-      "Entweder als gestapeltes Balkendiagramm mit transparenter erster Reihe oder von Hand aus Rechtecken auf einer gezeichneten Zeitachse."
+      "Entweder über Einfügen ▸ Diagramm ▸ Balken ▸ Gestapelte Balken, wobei die erste Datenreihe mit „Keine Füllung“ unsichtbar gemacht und die Achsenreihenfolge umgekehrt wird — oder von Hand aus abgerundeten Rechtecken auf einer selbst gezeichneten Zeitachse."
     ],
     [
       "Welcher Weg ist besser?",
-      "Formen für feststehende Pläne und volle Gestaltungsfreiheit, Diagramm für Daten, die sich noch ändern."
+      "Das Diagramm, wenn sich die Termine noch ändern: Eine Zahl im Datenblatt zu korrigieren dauert Sekunden. Die Formen, wenn der Plan feststeht und die Folie einem strengen Layout folgen muss."
+    ],
+    [
+      "Hat PowerPoint eine Gantt-Vorlage?",
+      "Einen eigenen Diagrammtyp gibt es nicht, wohl aber herunterladbare Foliensätze. Unsere kostenlose PowerPoint-Vorlage liefert eine fertig formatierte Zeitachsenfolie mit Farbschema und Meilensteinmarkierungen."
+    ],
+    [
+      "Wie zeige ich Meilensteine auf einer Folie?",
+      "Als Raute in einer Signalfarbe am jeweiligen Datum — im Diagrammweg als Datenreihe mit einer Dauer nahe null, im Formenweg als zusätzliche Form über dem Raster. Beschränken Sie sich auf höchstens drei, sonst hebt sich nichts mehr ab."
     ],
     [
       "Wie viele Vorgänge passen auf eine Folie?",
-      "Sechs bis zehn. Alles darüber ist aus dem Publikum nicht mehr lesbar."
+      "Sechs bis zehn. Alles darüber ist aus dem Publikum nicht mehr lesbar. Große Pläne teilt man in eine Übersichtsfolie auf Phasenebene und dahinter je eine Detailfolie."
+    ],
+    [
+      "Kann man ein Gantt-Diagramm automatisch nach PowerPoint exportieren?",
+      "Ja. gantts.app erzeugt aus dem Plan mit einem Klick eine PPTX-Datei mit dem Diagramm auf einer Folie — daneben stehen Exporte nach PDF, PNG und Excel zur Verfügung. Ändert sich der Plan, wird einfach neu exportiert."
     ]
   ],
   related: [
@@ -364,45 +543,104 @@ const G = {
 'best-free-gantt-chart-software': {
   h1: "Kostenlose Gantt-Software im Vergleich: was wirklich gratis ist",
   metaTitle: "Kostenlose Gantt-Software im Vergleich",
-  metaDesc: "Kostenlose Gantt-Software im Vergleich: was dauerhaft gratis ist, was Freemium mit Grenzen und worauf Sie vor der Auswahl achten sollten.",
+  metaDesc: "Kostenlose Gantt-Software im Vergleich: was dauerhaft gratis ist, was Freemium mit Grenzen — und worauf Sie vor der Auswahl achten sollten.",
   date: "2026-07-19",
   lead: "Der Begriff <strong>kostenlos</strong> bedeutet bei Projektsoftware dreierlei: dauerhaft gratis, gratis bis zu einer Grenze, oder gratis für eine Testphase. Der Unterschied fällt meistens erst auf, wenn das Projekt schon läuft.",
-  figIntro: "Drei Bedeutungen von „kostenlos\", die man vorher kennen sollte:",
+  figIntro: "Drei Bedeutungen von „kostenlos“, die man vorher kennen sollte:",
   sections: [
     [
-      "Die drei Arten von „kostenlos\"",
-      "<p><strong>Dauerhaft kostenlos</strong> heißt: voller Funktionsumfang, keine Nutzerbegrenzung, kein Ablaufdatum. Selten, und meist bei Werkzeugen ohne Serverkosten — also solchen, die im Browser rechnen statt in der Cloud.</p>\n        <p><strong>Freemium</strong> heißt: kostenlos bis zu einer Grenze. Üblich sind drei bis fünf Nutzer, zwei Projekte oder eine Obergrenze an Vorgängen. Beim Überschreiten wird der Plan kostenpflichtig, und dann liegen die Daten bereits dort.</p>\n        <p><strong>Testphase</strong> heißt: alles frei für 14 oder 30 Tage. Das ist keine kostenlose Software, sondern eine Probe.</p>"
+      "Die drei Arten von „kostenlos“",
+      `<p><strong>Dauerhaft kostenlos</strong> heißt: voller Funktionsumfang, keine Nutzerbegrenzung, kein Ablaufdatum. Selten, und meist bei Werkzeugen ohne Serverkosten — also solchen, die im Browser rechnen statt in der Cloud. Auch Open-Source-Programme, die man herunterlädt, gehören hierher.</p>
+        <p><strong>Freemium</strong> heißt: kostenlos bis zu einer Grenze. Üblich sind drei bis fünf Nutzer, ein bis zwei Projekte oder eine Obergrenze von etwa sechzig Vorgängen. Häufig sind zusätzlich einzelne Funktionen ausgenommen — der Export und der kritische Pfad sind die beiden Klassiker. Beim Überschreiten wird der Plan kostenpflichtig, und dann liegen die Daten bereits dort.</p>
+        <p><strong>Testphase</strong> heißt: alles frei für 14 oder 30 Tage. Das ist keine kostenlose Software, sondern eine Probe. Gegen alle drei Modelle ist nichts einzuwenden — problematisch wird es nur, wenn das zweite oder dritte als „kostenlos“ beworben wird.</p>`
+    ],
+    [
+      "Die Werkzeuge im Überblick",
+      `<p>Preismodelle und Grenzen ändern sich laufend; die Angaben sind deshalb Anhaltspunkte und keine Zusicherung. Prüfen Sie vor der Entscheidung die aktuelle Preisseite des jeweiligen Anbieters.</p>
+        <table>
+          <thead><tr><th>Werkzeug</th><th>Modell</th><th>Anmeldung</th><th>Export</th><th>Kritischer Pfad</th></tr></thead>
+          <tbody>
+            <tr><td><strong>gantts.app</strong></td><td>Dauerhaft kostenlos, unbegrenzt</td><td><strong>Nein</strong></td><td>PDF, PNG, Excel, PPTX</td><td><strong>Ja, kostenlos</strong></td></tr>
+            <tr><td>GanttProject</td><td>Open Source, Desktop</td><td>Nein (Download)</td><td>PDF, PNG, CSV</td><td>Ja</td></tr>
+            <tr><td>ProjectLibre</td><td>Open Source, Desktop</td><td>Nein (Download)</td><td>PDF, MS-Project-Formate</td><td>Ja</td></tr>
+            <tr><td>TeamGantt</td><td>Freemium, eng begrenzt</td><td>Ja</td><td>Eingeschränkt</td><td>Nur in Bezahltarifen</td></tr>
+            <tr><td>GanttPRO</td><td>Testphase, danach kostenpflichtig</td><td>Ja</td><td>Ja (kostenpflichtig)</td><td>Ja (kostenpflichtig)</td></tr>
+            <tr><td>Instagantt</td><td>Freemium</td><td>Ja</td><td>In höheren Tarifen</td><td>Ja (kostenpflichtig)</td></tr>
+            <tr><td>Canva</td><td>Kostenloser Design-Tarif</td><td>Ja</td><td>PNG, PDF</td><td>Nein (statisch)</td></tr>
+            <tr><td>MS Project</td><td>Kostenpflichtig</td><td>Ja</td><td>Ja</td><td>Ja</td></tr>
+            <tr><td>Excel / Sheets</td><td>Kostenlos, wenn vorhanden</td><td>Teils</td><td>Ja</td><td>Nein</td></tr>
+          </tbody>
+        </table>`
+    ],
+    [
+      "Was hinter den Zeilen steht",
+      `<p><strong>gantts.app</strong> — unser eigenes Werkzeug, das sei offengelegt. Es läuft im Browser, ohne Konto und ohne Übertragung, mit unbegrenzten Vorgängen, Abhängigkeiten, Meilensteinen, automatischem kritischem Pfad und Export nach PDF, PNG, Excel und PowerPoint. Der Verzicht liegt woanders: Es ist ein Planungs- und Exportwerkzeug, keine Arbeitsplattform mit Zeiterfassung, Chat und Abrechnung.</p>
+        <p><strong>GanttProject und ProjectLibre</strong> sind ausgereifte Open-Source-Programme für Windows, macOS und Linux. Beide beherrschen Abhängigkeiten, kritischen Pfad und Ressourcenzuordnung, ProjectLibre liest zusätzlich MS-Project-Dateien. Sie arbeiten offline und ohne Konto — dafür wirken die Oberflächen altbacken, und eine Synchronisation zwischen Geräten gibt es nicht.</p>
+        <p><strong>TeamGantt</strong> ist eine gepflegte Kollaborationslösung, deren kostenloser Tarif typischerweise auf ein Projekt und etwa sechzig Vorgänge für wenige Nutzer begrenzt ist; kritischer Pfad und der volle Export gehören zu den Bezahltarifen. <strong>GanttPRO</strong> bietet keine dauerhaft kostenlose Stufe, sondern eine Testphase. <strong>Instagantt</strong> ist Freemium und vor allem für Asana-Nutzer interessant, die eine Zeitachse zu ihren Aufgaben brauchen.</p>
+        <p><strong>Canva</strong> erzeugt aus Vorlagen eine ansehnliche Gantt-<em>Grafik</em> und exportiert sie im kostenlosen Tarif als PNG oder PDF. Es ist aber ein Gestaltungs- und kein Planungswerkzeug: Die Balken sind Formen, die Sie selbst positionieren — keine Verknüpfungen, keine Neuberechnung, kein kritischer Pfad. <strong>Microsoft Project</strong> ist umgekehrt das Schwergewicht mit Ressourcenausgleich, Basisplänen und tiefer Terminlogik, hat jedoch keinen kostenlosen Tarif. Und <strong>Excel oder Google Sheets</strong> haben Sie ohnehin: kostenlos, aber ohne Abhängigkeiten und mit viel Handarbeit — siehe die Anleitungen zu <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> und <a href="/de/blog/gantt-chart-in-google-sheets.html">Google Sheets</a>.</p>`
     ],
     [
       "Worauf es bei der Auswahl ankommt",
-      "<p>Vier Fragen klären fast jede Entscheidung. <em>Rechnet das Werkzeug Abhängigkeiten?</em> Ohne das ist es ein Zeichenprogramm. <em>Zeigt es den kritischen Pfad?</em> <em>Kommen die Daten wieder heraus</em> — als CSV, XLSX oder Projektdatei? <em>Wo liegen die Daten?</em> Das ist bei personenbezogenen Projektdaten keine Nebenfrage.</p>"
+      `<p>Vier Fragen klären fast jede Entscheidung.</p>
+        <p><em>Rechnet das Werkzeug Abhängigkeiten?</em> Ohne das ist es ein Zeichenprogramm — hübsch, aber es verschiebt keinen Nachfolger, wenn ein Vorgang sich verspätet. <em>Zeigt es den kritischen Pfad?</em> Das ist die Funktion, die bei Freemium-Tarifen am häufigsten hinter der Bezahlschranke liegt, und zugleich die einzige, die beantwortet, welche Verzögerungen den Endtermin wirklich bewegen.</p>
+        <p><em>Kommen die Daten wieder heraus</em> — als CSV, XLSX oder Projektdatei? Ein Werkzeug ohne offenen Export ist unabhängig vom Preis teuer, weil der Wechsel bedeutet, den Plan noch einmal zu bauen. <em>Wo liegen die Daten?</em> Das ist bei personenbezogenen Projektdaten keine Nebenfrage, sondern eine, die in vielen Organisationen vor der ersten Nutzung geklärt sein muss.</p>
+        <p>Prüfen Sie diese Punkte an einem echten kleinen Plan, nicht an der Beispielvorlage des Anbieters. Legen Sie zehn Vorgänge an, verknüpfen Sie fünf davon, verschieben Sie den ersten um eine Woche und sehen Sie nach, was passiert. Verschieben sich die Nachfolger nicht, ist die Frage nach dem kritischen Pfad bereits beantwortet. Exportieren Sie anschließend einmal und öffnen Sie die Datei — mancher „Export“ ist ein Screenshot mit anderem Dateiende.</p>
+        <p>Eine fünfte Frage lohnt sich, wenn ein Basisplan vorgesehen ist: Kann das Werkzeug einen <a href="/de/blog/gantt-baseline-variance.html">Basisplan</a> einfrieren und Soll gegen Ist stellen? Viele kostenlose Werkzeuge zeigen nur den aktuellen Stand — und der enthält jede bisherige Verschiebung bereits, sodass die Abweichung dauerhaft bei null steht.</p>`
     ],
     [
       "Die Anmeldefrage",
-      "<p>Die meisten kostenlosen Werkzeuge verlangen ein Konto, bevor man den ersten Balken sieht. Das ist selten technisch nötig — es ist der Preis. Werkzeuge, die vollständig im Browser laufen und lokal speichern, brauchen weder Konto noch Server, weil nichts hochgeladen wird.</p>\n        <p><a href=\"/de/app.html\">gantts.app</a> arbeitet so: keine Anmeldung, keine Übertragung, der Plan bleibt auf Ihrem Gerät. Das ist zugleich die Antwort auf die Datenschutzfrage — was das Gerät nicht verlässt, muss auch nicht vertraglich geregelt werden.</p>"
+      `<p>Die meisten kostenlosen Werkzeuge verlangen ein Konto, bevor man den ersten Balken sieht. Das ist selten technisch nötig — es ist der Preis. Werkzeuge, die vollständig im Browser laufen und lokal speichern, brauchen weder Konto noch Server, weil nichts hochgeladen wird.</p>
+        <p>Ohne Anmeldung nutzbar sind im Wesentlichen drei Gruppen: rein clientseitige Web-Werkzeuge wie <a href="/de/app.html">gantts.app</a>, heruntergeladene Open-Source-Programme wie GanttProject und ProjectLibre sowie einzelne kleine Web-Werkzeuge mit entsprechend eingeschränktem Funktionsumfang. Die gepflegten Plattformen — TeamGantt, GanttPRO, Instagantt, Canva — setzen durchweg ein Konto voraus.</p>
+        <p>Der Unterschied ist praktisch spürbar. Ohne Konto liegen zwischen dem Öffnen der Seite und dem ersten Balken keine Bestätigungsmail, keine Passwortregeln und keine Auswahl eines Tarifs. Das klingt nach einer Kleinigkeit, entscheidet aber häufig darüber, ob ein Plan überhaupt entsteht — besonders, wenn jemand nur schnell prüfen will, ob eine Idee terminlich aufgeht.</p>
+        <p>Ein Nachteil gehört dazu: Was lokal gespeichert wird, liegt in <em>einem</em> Browser auf <em>einem</em> Gerät. Wer den Plan auch morgen am anderen Rechner braucht, exportiert ihn und legt die Datei dorthin, wo Projektdateien ohnehin liegen. Das ist derselbe Umgang wie mit einer Tabellenkalkulation und für die meisten Vorhaben völlig ausreichend.</p>
+        <p>gantts.app arbeitet ohne Anmeldung, ohne Übertragung, der Plan bleibt auf Ihrem Gerät. Das ist zugleich die Antwort auf die Datenschutzfrage — was das Gerät nicht verlässt, muss auch nicht vertraglich geregelt werden.</p>`
+    ],
+    [
+      "Entscheidungshilfe",
+      `<ul>
+          <li><strong>Schnell ein Diagramm mit Export und kritischem Pfad?</strong> Ein clientseitiges Web-Werkzeug ohne Konto, etwa <a href="/de/app.html">gantts.app</a>.</li>
+          <li><strong>Lieber installiert, offline, Open Source?</strong> GanttProject oder ProjectLibre.</li>
+          <li><strong>Auf eine bezahlte Teamplattform hinarbeiten und innerhalb der Grenzen bleiben?</strong> Die kostenlosen Tarife von TeamGantt oder Instagantt.</li>
+          <li><strong>Programmsteuerung mit Ressourcenausgleich?</strong> Microsoft Project oder GanttPRO — beide kostenpflichtig.</li>
+          <li><strong>Nur ein Bild für eine Folie?</strong> Canva, oder ein PNG-Export aus einem Planungswerkzeug.</li>
+          <li><strong>Die Daten dürfen das Haus nicht verlassen?</strong> Ein clientseitiges Web-Werkzeug oder ein installiertes Open-Source-Programm — beides überträgt nichts an einen Server.</li>
+          <li><strong>Der Plan liegt schon in einer Tabelle?</strong> Bleiben Sie zunächst dort und wechseln Sie erst, wenn Abhängigkeiten ins Spiel kommen.</li>
+        </ul>
+        <p>Ein häufiger Irrtum ist, das größte Werkzeug für das sicherste zu halten. Für die meisten Vorhaben ist die entscheidende Größe nicht der Funktionsumfang, sondern die Wahrscheinlichkeit, dass der Plan nach vier Wochen noch gepflegt wird. Werkzeuge, die eine Anmeldung, eine Einführung und eine Freigabe der IT verlangen, verlieren genau an dieser Stelle — nicht weil sie schlechter sind, sondern weil sie zwischen dem Gedanken und dem ersten Balken zu viele Schritte legen.</p>
+        <p>Entscheiden Sie vorher, ob Sie <strong>Abhängigkeiten</strong>, einen <strong>kritischen Pfad</strong> und einen <strong>echten Export</strong> brauchen. Genau an diesen drei Punkten enttäuschen kostenlose Tarife am häufigsten.</p>`
     ],
     [
       "Und wann sich Bezahlsoftware lohnt",
-      "<p>Wenn mehrere Personen gleichzeitig am selben Plan arbeiten, wenn Ressourcen über viele Projekte hinweg geplant werden oder wenn Berichtspflichten gegenüber Auftraggebern bestehen. Für einen einzelnen Plan mit dreißig Vorgängen ist bezahlte Projektsoftware fast immer überdimensioniert.</p>"
+      `<p>Wenn mehrere Personen gleichzeitig am selben Plan arbeiten, wenn Ressourcen über viele Projekte hinweg geplant und ausgeglichen werden oder wenn Berichtspflichten gegenüber Auftraggebern bestehen, die ein bestimmtes Format verlangen. Auch die revisionssichere Ablage von Basisplänen ist ein guter Grund.</p>
+        <p>Für einen einzelnen Plan mit dreißig Vorgängen ist bezahlte Projektsoftware fast immer überdimensioniert — die Einrichtungszeit übersteigt den Nutzen, und die Mehrzahl der Funktionen wird nie angefasst. Beginnen Sie klein, prüfen Sie den Export, und wechseln Sie erst, wenn Sie an eine echte Grenze stoßen.</p>
+        <p>Rechnen Sie dabei die Wechselkosten mit ein, nicht nur den Lizenzpreis. Ein Umzug von einem Werkzeug ins nächste kostet die Zeit, den Plan zu übertragen, die Verknüpfungen neu zu setzen und den Basisplan neu zu vereinbaren — bei einem mittelgroßen Vorhaben leicht ein bis zwei Arbeitstage. Genau deshalb ist die Exportfrage keine Nebensache: Wer von Anfang an ein Werkzeug wählt, aus dem sich CSV oder XLSX herausholen lässt, hält diese Kosten klein.</p>`
     ]
   ],
   callout: "Prüfen Sie den Export, bevor Sie anfangen. Ein Werkzeug, aus dem die Daten nicht in einem offenen Format herauskommen, ist unabhängig vom Preis teuer — der Wechsel kostet dann die Arbeit, den Plan noch einmal zu bauen.",
   faq: [
     [
       "Welche Gantt-Software ist wirklich kostenlos?",
-      "Werkzeuge ohne Serverkosten — solche, die im Browser rechnen und lokal speichern — können dauerhaft kostenlos sein. Cloud-Dienste sind fast immer Freemium."
+      "Werkzeuge ohne Serverkosten — solche, die im Browser rechnen und lokal speichern — sowie Open-Source-Programme wie GanttProject und ProjectLibre können dauerhaft kostenlos sein. Cloud-Dienste sind fast immer Freemium, weil laufende Serverkosten irgendwie gedeckt werden müssen."
+    ],
+    [
+      "Was unterscheidet kostenlos, Freemium und Testphase?",
+      "Kostenlos heißt: voller Umfang, kein Ablaufdatum. Freemium heißt: dauerhaft gratis bis zu einer Grenze, etwa ein Projekt, sechzig Vorgänge oder fünf Nutzer, wobei oft Export und kritischer Pfad ausgenommen sind. Eine Testphase gibt vollen Zugriff für 14 oder 30 Tage und wird danach kostenpflichtig."
     ],
     [
       "Braucht kostenlose Gantt-Software eine Anmeldung?",
-      "Die meisten ja, technisch nötig ist es aber nur bei serverbasierten Diensten. Rein clientseitige Werkzeuge kommen ohne Konto aus."
+      "Die meisten ja, technisch nötig ist es aber nur bei serverbasierten Diensten. Rein clientseitige Werkzeuge speichern im Browser und kommen ohne Konto aus; heruntergeladene Desktop-Programme ebenfalls."
+    ],
+    [
+      "Welche kostenlosen Werkzeuge zeigen den kritischen Pfad?",
+      "gantts.app berechnet ihn kostenlos, GanttProject und ProjectLibre beherrschen ihn auf dem Desktop. In mehreren kommerziellen Werkzeugen ist er den Bezahltarifen vorbehalten — prüfen Sie das, bevor Sie sich darauf verlassen."
     ],
     [
       "Worauf sollte man bei der Auswahl achten?",
-      "Abhängigkeiten, kritischer Pfad, Exportformate und der Speicherort der Daten. Alles andere ist Komfort."
+      "Abhängigkeiten, kritischer Pfad, Exportformate und der Speicherort der Daten. Wer mit einem Basisplan arbeitet, prüft zusätzlich, ob sich Soll und Ist gegenüberstellen lassen. Alles andere ist Komfort."
     ],
     [
       "Ist kostenlose Software für Unternehmen geeignet?",
-      "Für einzelne Pläne ja. Für gemeinsame Bearbeitung, projektübergreifende Ressourcenplanung und Berichtspflichten meist nicht."
+      "Für einzelne Pläne ja. Für gemeinsame Bearbeitung in Echtzeit, projektübergreifende Ressourcenplanung und formale Berichtspflichten meist nicht — dort beginnt der Bereich, in dem sich Bezahlsoftware rechnet."
     ]
   ],
   related: [

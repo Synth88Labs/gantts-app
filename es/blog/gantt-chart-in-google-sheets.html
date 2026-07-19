@@ -45,7 +45,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html#post","headline":"Cómo hacer un diagrama de Gantt en Google Sheets","description":"Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas.","url":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Cómo hacer un diagrama de Gantt en Google Sheets","item":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Google Sheets puede hacer diagramas de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla."}},{"@type":"Question","name":"¿La función Cronograma admite dependencias?","acceptedAnswer":{"@type":"Answer","text":"No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica."}},{"@type":"Question","name":"¿Puedo pasar mi hoja a una herramienta de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí. Exporta la hoja como CSV e impórtala; el editor gratuito acepta CSV con columnas de tarea, inicio y fin."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html#post","headline":"Cómo hacer un diagrama de Gantt en Google Sheets","description":"Tres formas de hacer un diagrama de Gantt en Google Sheets: la función Cronograma, un gráfico de barras apiladas y las plantillas gratuitas.","url":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Cómo hacer un diagrama de Gantt en Google Sheets","item":"https://gantts.app/es/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Google Sheets puede hacer diagramas de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí, de tres formas: con la función Cronograma integrada (Insertar → Cronograma), con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla. Ninguna de las tres admite dependencias ni ruta crítica."}},{"@type":"Question","name":"¿Qué es exactamente la función Cronograma?","acceptedAnswer":{"@type":"Answer","text":"Es una vista que convierte una tabla con fechas de inicio y fin en tarjetas horizontales sobre un eje temporal, con zoom de días a años y agrupación por una columna. Se monta en dos minutos y va muy bien para hojas de ruta, pero no es una imagen editable ni calcula nada."}},{"@type":"Question","name":"¿La función Cronograma admite dependencias?","acceptedAnswer":{"@type":"Answer","text":"No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica. Tampoco la admite el método de barras apiladas: lo más parecido es encadenar fechas con fórmulas, y eso se rompe en cuanto una tarea tiene dos predecesoras."}},{"@type":"Question","name":"¿Por qué me salen las barras con longitudes absurdas?","acceptedAnswer":{"@type":"Answer","text":"Casi siempre porque las columnas auxiliares de «empieza el día» y «duración» han heredado formato de fecha. Selecciónalas y ponles Formato › Número › Número; el gráfico necesita días como cifras, no como fechas."}},{"@type":"Question","name":"¿Se puede hacer gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí. Google Sheets es gratuito con una cuenta de Google y los tres métodos no cuestan nada. El editor de gantts.app también es gratuito y además no pide ninguna cuenta."}},{"@type":"Question","name":"¿Puedo pasar mi hoja a una herramienta de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Sí. Exporta la hoja como CSV e impórtala; el editor gratuito acepta CSV con columnas de tarea, inicio y fin, y desde ahí puedes exportar a Excel, PowerPoint, PDF o PNG."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,14 +81,17 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>3 min de lectura</span></p>
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>7 min de lectura</span></p>
     <div class="toc"><strong>En esta página</strong>
       <ol>
-        <li><a href="#s1">Método 1: la función Cronograma (Insertar → Cronograma)</a></li>
-        <li><a href="#s2">Método 2: gráfico de barras apiladas</a></li>
-        <li><a href="#s3">Método 3: usar una plantilla</a></li>
-        <li><a href="#s4">Personalizar la vista y añadir dependencias</a></li>
-        <li><a href="#s5">Los límites de Sheets, y una alternativa gratuita</a></li>
+        <li><a href="#s1">¿Puede Google Sheets hacer un diagrama de Gantt?</a></li>
+        <li><a href="#s2">Método 1: la función Cronograma (Insertar → Cronograma)</a></li>
+        <li><a href="#s3">Método 2: gráfico de barras apiladas</a></li>
+        <li><a href="#s4">Las dos columnas auxiliares: «Empieza el día» y «Duración»</a></li>
+        <li><a href="#s5">Insertar y formatear el gráfico</a></li>
+        <li><a href="#s6">Método 3: usar una plantilla</a></li>
+        <li><a href="#s7">Personalizar la vista y añadir dependencias</a></li>
+        <li><a href="#s8">Los límites de Sheets, y una alternativa gratuita</a></li>
       </ol>
     </div>
 
@@ -98,31 +101,74 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">Método 1: la función Cronograma (Insertar → Cronograma)</h2>
-<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos.</p>
-        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Sheets abre un panel donde asignas qué columna es cada cosa; si tus encabezados son claros, suele acertar solo.</p>
-        <p>Desde ese panel puedes agrupar por una columna adicional —responsable, fase, cliente— y elegir qué campo se muestra sobre cada barra. El zoom se ajusta con el control de la esquina superior derecha, de días a trimestres.</p>
-        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, y sobre todo no hay dependencias ni ruta crítica. La vista es un reflejo de los datos, no un modelo del calendario.</p>
-      <h2 id="s2">Método 2: gráfico de barras apiladas</h2>
-<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible.</p>
-        <p>Monta cuatro columnas —tarea, inicio, fin y duración calculada como <code>=fin−inicio</code>— y selecciona tarea, inicio y duración. En <strong>Insertar → Gráfico</strong>, elige «Barras apiladas» en el selector de tipo. Sheets suele ordenar las series al revés la primera vez; se corrige en la pestaña Configuración del editor de gráficos.</p>
-        <p>Después, en Personalizar → Series, selecciona la serie de inicio y ponle <em>Ninguno</em> como color de relleno. Ahí aparece el Gantt. Por último, en Personalizar → Eje vertical, marca «Orden inverso» para que la primera tarea quede arriba, que es como se lee un plan.</p>
-        <p>Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración y de tener que repetirla si rehaces la hoja.</p>
-      <h2 id="s3">Método 3: usar una plantilla</h2>
-<p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>
-      <h2 id="s4">Personalizar la vista y añadir dependencias</h2>
-<p>Puedes ajustar el rango de fechas, agrupar por fases con formato condicional y marcar hitos con una fila de duración cero. Las dependencias, en cambio, no existen en Sheets: si mueves una tarea, ninguna otra se entera.</p>
-      <h2 id="s5">Los límites de Sheets, y una alternativa gratuita</h2>
-<p>Sheets es excelente para colaborar sobre datos y mediocre para planificar calendarios: sin dependencias, sin ruta crítica y sin días laborables, cada cambio obliga a recalcular a mano. Para un plan de veinte tareas eso se aguanta; para sesenta, no.</p>
-        <p>La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: importas el CSV que ya tienes en Sheets, enlazas las dependencias y exportas cuando lo necesites.</p>
+      <h2 id="s1">¿Puede Google Sheets hacer un diagrama de Gantt?</h2>
+<p>Google Sheets no ofrece un tipo de gráfico «Gantt» como ofrece uno de sectores o de líneas. Lo que sí ofrece son tres caminos legítimos hasta un cronograma que funciona, con compromisos distintos:</p>
+        <ul>
+          <li><strong>La función Cronograma</strong> (<em>Insertar › Cronograma</em>) — una vista nativa que convierte una tabla de tareas en tarjetas sobre un eje de fechas. Es lo más rápido de montar, pero es una vista, no un gráfico exportable, y no hace ningún cálculo de calendario.</li>
+          <li><strong>Un gráfico de barras apiladas</strong> — el truco clásico de hoja de cálculo. Dos columnas auxiliares y una serie invisible dejan la barra de duración flotando en su fecha. Más control y más trabajo manual.</li>
+          <li><strong>Una plantilla</strong> — abrir una hoja donde las fórmulas y el formato ya existen y escribir encima de los datos de ejemplo.</li>
+        </ul>
+        <p>Ninguno de los tres calcula la ruta crítica, dibuja flechas de dependencia ni recalcula las fechas siguientes cuando una tarea se retrasa. Esa carencia es la razón por la que la mayoría de los equipos acaban saliendo de la hoja de cálculo. Primero, los métodos.</p>
+      <h2 id="s2">Método 1: la función Cronograma (Insertar → Cronograma)</h2>
+<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como tarjetas sobre una línea de tiempo. Es la vía más rápida y no requiere ninguna fórmula.</p>
+        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin (o duración). Columnas opcionales como responsable, fase o porcentaje de avance pueden alimentar el detalle de cada tarjeta. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Confirma el rango en el cuadro de diálogo y acepta: Sheets crea una pestaña nueva con la vista.</p>
+        <p>En el panel de la derecha se asigna qué columna es cada cosa: <em>título de la tarjeta</em>, <em>fecha de inicio</em>, <em>fecha de finalización</em>, <em>color de la tarjeta</em> y <em>agrupar por</em>. Si tus encabezados son claros, suele acertar solo. Agrupar por fase o por responsable es, con diferencia, lo que más cambia la legibilidad de un plan mediano.</p>
+        <p>El zoom se ajusta entre días, semanas, meses, trimestres y años; se arrastra para desplazarse por el eje y, al hacer clic en una tarjeta, se abre su detalle y puedes saltar a la fila de origen. Para hojas de ruta y planes de alto nivel es genuinamente útil.</p>
+        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, la vista está atada a la tabla de origen y no es una imagen que puedas pegar en una diapositiva, y sobre todo no hay dependencias ni ruta crítica. Es un reflejo de los datos, no un modelo del calendario.</p>
+      <h2 id="s3">Método 2: gráfico de barras apiladas</h2>
+<p>Si lo que quieres es un objeto gráfico de verdad —uno que puedas copiar a Documentos o Presentaciones, reestilizar y exportar— el gráfico de barras apiladas es el clásico fiable. La idea es la misma que en Excel: cada tarea recibe una barra «espaciadora» transparente que la empuja hasta su posición de inicio, seguida de una barra visible con su duración. Apiladas, las visibles flotan en el sitio correcto y el conjunto se lee como un Gantt.</p>
+      <h2 id="s4">Las dos columnas auxiliares: «Empieza el día» y «Duración»</h2>
+<p>Monta la tabla con las tareas en la columna A y las fechas reales al lado, y añade dos columnas calculadas:</p>
+        <ul>
+          <li><strong>Inicio</strong> (columna B) y <strong>Fin</strong> (columna C) — fechas de calendario reales, escritas como fechas y no como texto.</li>
+          <li><strong>Empieza el día</strong> (columna D) — cuántos días después del arranque del proyecto empieza cada tarea. Si la fecha más temprana está en <code>$B$2</code>, escribe <code>=B2-$B$2</code>.</li>
+          <li><strong>Duración</strong> (columna E) — la longitud de la tarea en días: <code>=C2-B2</code>.</li>
+        </ul>
+        <p>Las dos columnas calculadas hay que formatearlas con <strong>Formato › Número › Número</strong>, no como fecha. Sheets hereda el formato de las celdas de origen y convierte el resultado en algo como «5/1/1900»; ese es el paso que más gente se salta, y el que hace que las barras salgan con longitudes imposibles.</p>
+        <p>A partir de aquí, «Empieza el día» es el espaciador invisible y «Duración» es la barra que se ve.</p>
+      <h2 id="s5">Insertar y formatear el gráfico</h2>
+<p>Selecciona las columnas <strong>Tarea</strong>, <strong>Empieza el día</strong> y <strong>Duración</strong> (A, D y E: mantén pulsado Ctrl o Cmd para seleccionar columnas no contiguas) y ve a <strong>Insertar → Gráfico</strong>.</p>
+        <ul>
+          <li>En el <em>editor de gráficos</em>, pestaña <strong>Configuración</strong>, pon el tipo en <strong>Gráfico de barras apiladas</strong>. Sheets suele ordenar mal las series la primera vez: «Empieza el día» debe ir antes que «Duración».</li>
+          <li>Pasa a <strong>Personalizar → Series</strong>, selecciona la serie <em>Empieza el día</em> y ponle <strong>Color de relleno → Ninguno</strong>. El espaciador desaparece y las barras de duración se colocan en su fecha. Ahí aparece el Gantt.</li>
+          <li>En <strong>Personalizar → Eje vertical</strong>, marca <strong>Orden inverso</strong> para que la primera tarea quede arriba, que es como se lee un plan.</li>
+          <li>Recolorea la serie de duración, pon un título y ajusta el eje horizontal para que muestre números de día o fechas legibles.</li>
+        </ul>
+        <p>Ya tienes un gráfico editable que puedes redimensionar, reestilizar y copiar a otro documento. Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración. Añadir hitos o agrupar por fase significa más columnas auxiliares y más mantenimiento a mano, que es donde este método empieza a pesar en proyectos reales.</p>
+      <h2 id="s6">Método 3: usar una plantilla</h2>
+<p>La forma más rápida de llegar a un gráfico terminado es no construir el mecanismo. Abre una hoja ya preparada, donde las fórmulas auxiliares, el formato condicional y el eje de fechas ya existen, y escribe encima de las filas de ejemplo.</p>
+        <p>Haz una copia a tu propio Drive con <strong>Archivo › Hacer una copia</strong> antes de editar nada, o descarga el CSV con las tareas ya estructuradas y ábrelo en Sheets. Las plantillas van bien cuando quieres un aspecto coherente entre proyectos, o cuando prefieres no depurar una serie de gráfico a las siete de la tarde. El catálogo cubre también versiones de Excel y de PowerPoint y planes por sector.</p>
+      <h2 id="s7">Personalizar la vista y añadir dependencias</h2>
+<p>Cuatro retoques mejoran la legibilidad de cualquier Gantt hecho en Sheets:</p>
+        <ul>
+          <li><strong>Agrupar por fase</strong> — añade una columna «Fase» y ordena por ella, o úsala en el campo <em>Agrupar por</em> del Cronograma.</li>
+          <li><strong>Mostrar el avance</strong> — con una columna de % completado y, en el método de barras apiladas, partiendo cada duración en dos segmentos, «hecho» y «pendiente».</li>
+          <li><strong>Marcar los hitos</strong> — filas de duración cero con un color propio, para que se lean como puntos y no como barras.</li>
+          <li><strong>Línea de hoy</strong> — una serie de un solo valor o una línea de referencia vertical; es lo que más rápido comunica el estado a quien mira el plan de pasada.</li>
+        </ul>
+        <p>Las dependencias son el límite duro. Google Sheets no tiene ningún concepto de «la tarea B empieza cuando termina la A». Se puede fingir con fórmulas —poner el inicio de una tarea como <code>=fin_de_la_predecesora + 1</code>— pero no hay flechas visibles, no hay holgura y las cadenas se vuelven frágiles enseguida: basta con que una tarea tenga dos predecesoras para que la fórmula deje de valer. Si las dependencias y el recálculo automático importan en tu proyecto, esa es la señal para cambiar de herramienta.</p>
+      <h2 id="s8">Los límites de Sheets, y una alternativa gratuita</h2>
+<p>Google Sheets es una hoja de cálculo excelente y un Gantt aceptable para salir del paso. Sus límites reales aparecen en cuanto el proyecto tiene piezas móviles:</p>
+        <ul>
+          <li>Sin flechas de dependencia y sin reprogramación automática cuando una tarea se retrasa.</li>
+          <li>Sin ruta crítica: no puedes ver qué tareas mandan de verdad sobre tu fecha de entrega.</li>
+          <li>Sin días laborables ni festivos: las duraciones son días naturales salvo que las calcules aparte, y entonces dejan de cuadrar con el eje.</li>
+          <li>Mantenimiento manual: cada cambio de fecha obliga a revisar a mano las columnas auxiliares.</li>
+          <li>Exportación incómoda: el Cronograma no es una imagen, y los gráficos de barras apiladas no siempre viajan bien a una diapositiva.</li>
+        </ul>
+        <p>Para un plan de veinte tareas eso se aguanta; para sesenta, no. La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: exporta la hoja como CSV, impórtala con sus columnas de tarea, inicio y fin, enlaza las dependencias y el calendario se reprograma solo, con la ruta crítica resaltada. Desde ahí se exporta a Excel, PowerPoint, PDF o PNG en un clic, sin cuenta y sin instalar nada.</p>
+        <p>Usa Google Sheets cuando el plan sea pequeño y estático, o cuando los datos ya vivan en una hoja compartida. Cambia de herramienta en cuanto necesites dependencias, ruta crítica o un gráfico que se mantenga al día sin vigilancia.</p>
 
       <div class="callout">Si tu plan va a cambiar más de una vez, elige el método por el coste de mantenerlo, no por lo rápido que es montarlo. La función Cronograma se hace en dos minutos; un gráfico de barras apiladas con veinte tareas se rehace en veinte cada vez que se mueve una fecha.</div>
 
       <h2 id="faq">Preguntas frecuentes</h2>
       <div class="faq">
-        <details open><summary>¿Google Sheets puede hacer diagramas de Gantt?</summary><p>Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla.</p></details>
-        <details><summary>¿La función Cronograma admite dependencias?</summary><p>No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica.</p></details>
-        <details><summary>¿Puedo pasar mi hoja a una herramienta de Gantt?</summary><p>Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin.</p></details>
+        <details open><summary>¿Google Sheets puede hacer diagramas de Gantt?</summary><p>Sí, de tres formas: con la función Cronograma integrada (Insertar → Cronograma), con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla. Ninguna de las tres admite dependencias ni ruta crítica.</p></details>
+        <details><summary>¿Qué es exactamente la función Cronograma?</summary><p>Es una vista que convierte una tabla con fechas de inicio y fin en tarjetas horizontales sobre un eje temporal, con zoom de días a años y agrupación por una columna. Se monta en dos minutos y va muy bien para hojas de ruta, pero no es una imagen editable ni calcula nada.</p></details>
+        <details><summary>¿La función Cronograma admite dependencias?</summary><p>No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica. Tampoco la admite el método de barras apiladas: lo más parecido es encadenar fechas con fórmulas, y eso se rompe en cuanto una tarea tiene dos predecesoras.</p></details>
+        <details><summary>¿Por qué me salen las barras con longitudes absurdas?</summary><p>Casi siempre porque las columnas auxiliares de «empieza el día» y «duración» han heredado formato de fecha. Selecciónalas y ponles Formato › Número › Número; el gráfico necesita días como cifras, no como fechas.</p></details>
+        <details><summary>¿Se puede hacer gratis?</summary><p>Sí. Google Sheets es gratuito con una cuenta de Google y los tres métodos no cuestan nada. El editor de gantts.app también es gratuito y además no pide ninguna cuenta.</p></details>
+        <details><summary>¿Puedo pasar mi hoja a una herramienta de Gantt?</summary><p>Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin, y desde ahí puedes exportar a Excel, PowerPoint, PDF o PNG.</p></details>
       </div>
 
       <aside class="promo">

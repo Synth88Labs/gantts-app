@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Excel 甘特图怎么做 | gantts.app</title>
-  <meta name="description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta name="description" content="用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/zh/blog/gantt-chart-in-excel.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-excel.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="pt_BR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Excel 甘特图怎么做 | gantts.app" />
-  <meta property="og:description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta property="og:description" content="用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。" />
   <meta property="og:url" content="https://gantts.app/zh/blog/gantt-chart-in-excel.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="用 Excel 做甘特图：步骤与局限" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Excel 甘特图怎么做 | gantts.app" />
-  <meta name="twitter:description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta name="twitter:description" content="用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-excel.html#post","headline":"用 Excel 做甘特图：步骤与局限","description":"用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。","url":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"用 Excel 做甘特图：步骤与局限","item":"https://gantts.app/zh/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Excel 有甘特图类型吗？","acceptedAnswer":{"@type":"Answer","text":"没有。它是用堆积条形图做出来的，把第一个数据系列设置为不可见。"}},{"@type":"Question","name":"Excel 能处理依赖关系吗？","acceptedAnswer":{"@type":"Answer","text":"不能自动处理。每次变动都要手工传递给所有后续任务。"}},{"@type":"Question","name":"Excel 适合多大的计划？","acceptedAnswer":{"@type":"Answer","text":"大约二十项任务以内。再多，维护的投入就明显超过收益。"}},{"@type":"Question","name":"有 Excel 版甘特图模板吗？","acceptedAnswer":{"@type":"Answer","text":"有，我们的模板可下载为 XLSX，辅助列已经建好。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-excel.html#post","headline":"用 Excel 做甘特图：步骤与局限","description":"用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"用 Excel 做甘特图：步骤与局限","item":"https://gantts.app/zh/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Excel 有内置的甘特图类型吗？","acceptedAnswer":{"@type":"Answer","text":"没有。插入图表菜单里只有柱形图、条形图、折线图和饼图。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。"}},{"@type":"Question","name":"为什么我的横条长度不对？","acceptedAnswer":{"@type":"Answer","text":"几乎都是因为偏移量或工期列还是日期格式。把这两列的数字格式改成\"常规\"或\"数值\"，横条长度就正常了。"}},{"@type":"Question","name":"为什么任务顺序是反的？","acceptedAnswer":{"@type":"Answer","text":"Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选\"逆序类别\"，第一项任务就回到顶部。"}},{"@type":"Question","name":"Excel 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"能，但要靠辅助列：工期乘以完成百分比，作为第三个堆积系列加入图表，用深一号的颜色。每新增任务都要手动扩大数据区域。"}},{"@type":"Question","name":"Excel 能处理依赖关系吗？","acceptedAnswer":{"@type":"Answer","text":"不能自动处理。可以用公式引用前置任务的结束日期做单链传递，但没有箭头，也没有关键路径，多分支的计划维护不下来。"}},{"@type":"Question","name":"有现成的 Excel 模板吗？","acceptedAnswer":{"@type":"Answer","text":"有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -89,8 +89,9 @@
         <li><a href="#s3">把第一个系列设为不可见</a></li>
         <li><a href="#s4">反转顺序</a></li>
         <li><a href="#s5">修正日期坐标轴</a></li>
-        <li><a href="#s6">细节调整</a></li>
-        <li><a href="#s7">这种做法的边界</a></li>
+        <li><a href="#s6">加进度与里程碑</a></li>
+        <li><a href="#s7">另一种做法：条件格式</a></li>
+        <li><a href="#s8">这种做法的边界</a></li>
       </ol>
     </div>
 
@@ -101,29 +102,41 @@
 
     <div class="prose">
       <h2 id="s1">准备数据</h2>
-<p>三列就够：任务、开始日期、工期（天）。再加一列辅助列，计算相对项目起点的偏移——即开始日期减去最早的开始日期。</p>
+<p>新建一张空白工作表，建四列：<strong>任务</strong>、<strong>开始日期</strong>、<strong>结束日期</strong>、<strong>工期</strong>。开始和结束填真实日期，工期用公式算：开始在 B2、结束在 C2，D2 输入 <code>=C2-B2</code> 向下填充。Excel 把日期存成序列号，相减得到的正是天数。</p>
+      <p>再加一列<strong>偏移量</strong>：本任务比项目最早开始日期晚几天，<code>=B2-$B$2</code>。</p>
+      <p>关键一步是把偏移量和工期两列的数字格式改成"常规"或"数值"。留成日期格式的话，7 天会被读成 1900 年 1 月 7 日，横条长度全错——这是最常见的翻车点。</p>
       <h2 id="s2">插入堆积条形图</h2>
-<p>选中任务、偏移量和工期三列。插入 → 图表 → 条形图 → 堆积条形图。每一行会得到两个系列：偏移量和工期。</p>
+<p>选中任务列，按住 Ctrl 再加选偏移量列和工期列——结束日期列不参与作图。然后走<strong>插入 › 图表 › 条形图 › 二维条形图 › 堆积条形图</strong>。</p>
+      <p>Excel 画出每行两段的横条：第一段是偏移量，第二段是工期。此刻它还不像甘特图，这是正常的。如果系列顺序颠倒，右键<strong>选择数据</strong>，确认偏移量是系列一、工期是系列二。</p>
       <h2 id="s3">把第一个系列设为不可见</h2>
-<p>点选偏移量系列，设置填充 → 无填充，边框 → 无线条。剩下的部分看起来就像一条从正确位置开始的甘特图横条。</p>
+<p>在任意一段偏移量上<em>单击一次</em>，选中的是整个系列；双击只会选中单独一条。右键<strong>设置数据系列格式</strong>，在<strong>填充</strong>里选<strong>无填充</strong>，再把<strong>边框</strong>设为<strong>无线条</strong>——否则会留下一圈轮廓，把本该看不见的偏移段暴露出来。</p>
+      <p>偏移量消失后，每条工期横条就浮到了正确的起始位置——到这一步它已经是甘特图了。</p>
       <h2 id="s4">反转顺序</h2>
-<p>Excel 会把第一行画在最下方。设置坐标轴格式 → 勾选"逆序类别"。第一项任务就回到最上面，符合阅读习惯。</p>
+<p>Excel 的条形图会把表格第一行画在最下面，任务顺序是倒的。点选纵轴，右键<strong>设置坐标轴格式</strong>，在<strong>坐标轴选项</strong>里勾选<strong>逆序类别</strong>。</p>
+      <p>勾完之后日期轴会跑到下方。在同一面板里把<strong>横坐标轴交叉</strong>设为<strong>最大分类</strong>，它就回到顶部。</p>
       <h2 id="s5">修正日期坐标轴</h2>
-<p>横轴一开始显示的是数字。把最小值和最大值设为项目起止日期对应的序列值，再把坐标轴格式设为日期。</p>
-      <h2 id="s6">细节调整</h2>
-<p>把分类间距缩到 20% 左右，弱化网格线，用颜色区分阶段。里程碑可以作为额外的数据系列，用菱形标记表示。</p>
-      <h2 id="s7">这种做法的边界</h2>
-<p>Excel 不理解依赖关系。某项任务一旦推迟，后面每个开始日期都得手工改——而实际上改到第二次就没人继续了。</p>
-        <p>同样缺失的还有：关键路径、资源负荷、完成百分比。二十项任务以内，Excel 是合理选择；再多，手工维护的代价就超过它带来的便利——<a href="/zh/app.html">gantts.app</a> 会自动重算，同样不需要安装。</p>
+<p>横轴默认从 0 开始，左边空出一大片。点选横轴，在<strong>设置坐标轴格式 › 边界</strong>里把<strong>最小值</strong>设为项目开始日期、<strong>最大值</strong>设为结束日期。这里只接受序列号：在空单元格输入日期、把格式改成"常规"，显示的数字就是要填的值。</p>
+      <p>再把<strong>单位 › 主要</strong>设为 7 得到按周的网格线，把<strong>分类间距</strong>压到 20% 左右让横条更粗，最后按阶段换色、删掉图例。</p>
+      <h2 id="s6">加进度与里程碑</h2>
+<p><strong>完成百分比</strong>靠辅助列："已完成工期"＝工期 × 完成百分比，作为第三个堆积系列加进图表，用深一号的同色系填充。代价是每新增一行都要回到<strong>选择数据</strong>里扩大数据区域。</p>
+      <p><strong>里程碑</strong>要单独建一个系列，只在里程碑日期上有值，改成散点图、标记选菱形——工期为零的任务在条形图里画不出可见形状。</p>
+      <h2 id="s7">另一种做法：条件格式</h2>
+<p>不想和图表工具较劲的话，还有一条路。顶部横排一行日期（一天或一周一列），左边保留任务和起止日期，选中整片网格后走<strong>条件格式 › 新建规则 › 使用公式确定要设置格式的单元格</strong>，公式写 <code>=AND(E$1&gt;=$B2, E$1&lt;=$C2)</code>。</p>
+      <p>日期一改格子自己重画，打印也干净。缺点是刻度只能靠列宽缩放，进度仍要另写公式。</p>
+      <h2 id="s8">这种做法的边界</h2>
+<p>Excel 不理解依赖关系，也画不出连线箭头。常见变通是把开始日期写成前置任务结束日期的引用（比如 <code>=C2</code>），改动能沿列往下传，但只对单链有效，一有分支就散架。</p>
+      <p>同样缺失的还有关键路径、总浮动时间和资源负荷。二十项任务以内 Excel 是合理选择；再多，手工维护的代价就超过它的便利。<a href="/zh/app.html">gantts.app</a> 在浏览器里直接做这些计算，也能一键导出回 XLSX。</p>
 
       <div class="callout">真正的差别不在外观，而在是否会计算。Excel 做的甘特图看上去没错，但不会自动更新。只要日期变动——而日期总会变动——计划就退化成一张图画。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>Excel 有甘特图类型吗？</summary><p>没有。它是用堆积条形图做出来的，把第一个数据系列设置为不可见。</p></details>
-        <details><summary>Excel 能处理依赖关系吗？</summary><p>不能自动处理。每次变动都要手工传递给所有后续任务。</p></details>
-        <details><summary>Excel 适合多大的计划？</summary><p>大约二十项任务以内。再多，维护的投入就明显超过收益。</p></details>
-        <details><summary>有 Excel 版甘特图模板吗？</summary><p>有，我们的模板可下载为 XLSX，辅助列已经建好。</p></details>
+        <details open><summary>Excel 有内置的甘特图类型吗？</summary><p>没有。插入图表菜单里只有柱形图、条形图、折线图和饼图。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。</p></details>
+        <details><summary>为什么我的横条长度不对？</summary><p>几乎都是因为偏移量或工期列还是日期格式。把这两列的数字格式改成"常规"或"数值"，横条长度就正常了。</p></details>
+        <details><summary>为什么任务顺序是反的？</summary><p>Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选"逆序类别"，第一项任务就回到顶部。</p></details>
+        <details><summary>Excel 能显示完成百分比吗？</summary><p>能，但要靠辅助列：工期乘以完成百分比，作为第三个堆积系列加入图表，用深一号的颜色。每新增任务都要手动扩大数据区域。</p></details>
+        <details><summary>Excel 能处理依赖关系吗？</summary><p>不能自动处理。可以用公式引用前置任务的结束日期做单链传递，但没有箭头，也没有关键路径，多分支的计划维护不下来。</p></details>
+        <details><summary>有现成的 Excel 模板吗？</summary><p>有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。</p></details>
       </div>
 
       <aside class="promo">

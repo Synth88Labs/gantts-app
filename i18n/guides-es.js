@@ -281,30 +281,57 @@ const G = {
     figIntro: 'El truco central: la barra de inicio existe pero es invisible.',
     sections: [
       ['¿Excel tiene diagramas de Gantt?',
-        `<p>No como tal. Lo que se usa es un gráfico de barras apiladas en horizontal: la primera serie es la fecha de inicio, la segunda la duración. Dejando la primera sin relleno, lo único que se ve es la duración, desplazada hasta donde empieza la tarea. Eso es visualmente un Gantt.</p>`],
+        `<p>No, no existe un tipo de gráfico llamado «Gantt». Si abres <strong>Insertar › Gráficos</strong> encontrarás columnas, barras, líneas, áreas y sectores, y nada más. Lo que se usa universalmente es un rodeo: un gráfico de <strong>barras apiladas</strong> en horizontal con dos series —la fecha de inicio y la duración— en el que la primera se deja invisible.</p>
+        <p>El truco funciona porque Excel guarda las fechas como números de serie: el 1 de julio de 2026 no es texto, es un número correlativo contado desde 1900. Al apilar «inicio» y «duración» dentro de la misma barra, el segmento invisible ocupa exactamente los días que van desde el origen del eje hasta el arranque de la tarea, y empuja al segmento visible hasta su sitio. Lo que ves es la duración, colocada en su fecha.</p>
+        <p>Microsoft distribuye además alguna plantilla del tipo «Planificador de proyectos Gantt» desde la pantalla de <em>Nuevo</em>, pero por dentro hacen esto mismo o pintan celdas con formato condicional. Construirlo una vez a mano compensa: cuando el gráfico se rompa —y se rompe— sabrás exactamente qué mirar.</p>`],
       ['Paso 1: tabla con tarea, inicio, fin y duración',
-        `<p>Cuatro columnas: nombre de la tarea, fecha de inicio, fecha de fin y duración calculada como <code>=fin − inicio</code>. Mantén las fechas como fechas reales, no como texto, o el gráfico no las situará bien.</p>`],
+        `<p>En una hoja limpia crea cuatro columnas: <strong>Tarea</strong>, <strong>Inicio</strong>, <strong>Fin</strong> y <strong>Duración</strong>. Escribe las fechas como fechas reales —si te aparecen alineadas a la izquierda es que Excel las ha tomado como texto y el gráfico no las situará— y calcula la duración con <code>=C2-B2</code>, arrastrando la fórmula hacia abajo.</p>
+        <p>Un ejemplo mínimo de cinco tareas:</p>
+        <ul>
+          <li>Investigación — 1 jul → 5 jul — 4 días</li>
+          <li>Diseño — 5 jul → 12 jul — 7 días</li>
+          <li>Desarrollo — 12 jul → 26 jul — 14 días</li>
+          <li>Pruebas — 26 jul → 2 ago — 7 días</li>
+          <li>Lanzamiento — 2 ago → 4 ago — 2 días</li>
+        </ul>
+        <p>Fíjate en que la duración tiene que salir como un número normal, no como una fecha. Si en D2 aparece algo parecido a «4 de enero de 1900», selecciona la columna y ponle <strong>Formato de número › General</strong>. Es el error más frecuente de todo el método y suele descubrirse tres pasos más tarde, cuando las barras salen con longitudes imposibles.</p>
+        <p>Si trabajas con días laborables, calcula la duración con <code>=DIAS.LAB(B2;C2)</code>, pero ten en cuenta que el eje del gráfico seguirá siendo de días naturales: barras y calendario dejarán de coincidir. En planes con festivos, ese desajuste es una de las razones de peso para no usar Excel.</p>`],
       ['Paso 2: insertar un gráfico de barras apiladas',
-        `<p>Selecciona la columna de tareas y la de inicio, y ve a <strong>Insertar → Gráfico de barras → Barra apilada</strong>. Después añade la serie de duración con clic derecho → <em>Seleccionar datos → Agregar</em>, poniendo la columna de duración como valores.</p>
-        <p>Excel casi siempre coloca las series en el orden equivocado la primera vez: la duración debe ir <em>después</em> del inicio en la lista de series, no antes. Se reordena con las flechas de esa misma ventana.</p>
-        <p>Si las tareas aparecen como números en lugar de nombres, es que Excel ha interpretado la columna de tareas como una serie más; quítala de «Entradas de leyenda» y añádela en «Etiquetas del eje horizontal».</p>`],
+        `<p>Selecciona la columna <strong>Tarea</strong> y la de <strong>Inicio</strong>, mantén pulsado Ctrl y añade también la de <strong>Duración</strong>. La columna <em>Fin</em> se queda fuera: el gráfico solo necesita saber dónde empieza cada tarea y cuánto dura. Ve a <strong>Insertar › Gráficos › Barras › Barra apilada</strong>.</p>
+        <p>Excel dibuja dos series apiladas por fila y todavía no se parece a nada. Es lo esperado. Antes de seguir, comprueba el orden con clic derecho › <em>Seleccionar datos</em>: en «Entradas de leyenda (Series)» debe aparecer primero Inicio y después Duración. Si están al revés, reordénalas con las flechas de esa misma ventana — la serie invisible tiene que quedar debajo para hacer de espaciador.</p>
+        <p>Si en el eje vertical ves 1, 2, 3… en lugar de los nombres de las tareas, Excel ha interpretado la columna de texto como una serie más. Quítala de «Entradas de leyenda» y añádela en <em>Etiquetas del eje horizontal (categoría)</em> con el botón Editar.</p>`],
       ['Paso 3: dejar la serie de inicio sin relleno',
-        `<p>Haz clic sobre cualquiera de las barras de inicio para seleccionar toda la serie, abre <em>Formato de serie de datos</em> y en Relleno elige <strong>Sin relleno</strong>. Quita también el borde, o quedará un rectángulo fantasma.</p>
-        <p>Ahí aparece el Gantt: las barras de duración quedan flotando exactamente donde empieza cada tarea, porque la barra invisible de debajo las empuja hasta su fecha.</p>
+        `<p>Este es el paso que convierte el gráfico. Haz un solo clic sobre cualquier segmento de la serie <strong>Inicio</strong> —un clic selecciona la serie entera; dos clics seleccionan un único punto, que no es lo que quieres— y abre <strong>Formato de serie de datos</strong> con clic derecho. En el icono del bote de pintura elige <strong>Relleno › Sin relleno</strong>.</p>
+        <p>Los segmentos de inicio desaparecen y cada barra de duración queda flotando exactamente en su fecha, porque la barra invisible de debajo la empuja hasta ahí. Ese es el instante en que el gráfico deja de ser un gráfico de barras y pasa a ser un Gantt.</p>
+        <p>En el mismo panel pon <strong>Borde › Sin línea</strong>. Si no lo haces queda el contorno del rectángulo invisible y se ve una caja fantasma desde el margen izquierdo hasta cada barra, que es peor que no haber tocado nada.</p>
         <p>Este es el truco entero. Todo lo demás —colores, orden, formato del eje— es acabado.</p>`],
       ['Paso 4: invertir el orden de las tareas',
-        `<p>Excel dibuja la primera tarea abajo. En el formato del eje vertical, activa «Categorías en orden inverso» para que el plan se lea de arriba abajo como es habitual.</p>`],
+        `<p>Excel dibuja la primera fila de la tabla abajo del todo, así que el plan sale del revés. Haz clic sobre el eje vertical (la lista de nombres), clic derecho › <strong>Formato de eje</strong>, y en Opciones del eje marca <strong>Categorías en orden inverso</strong>.</p>
+        <p>La primera tarea sube arriba y el plan se lee de arriba abajo en el mismo orden que la tabla. En ese mismo panel conviene marcar también <strong>«El eje horizontal cruza: en la categoría máxima»</strong>: si no, al invertir las categorías el eje de fechas se va al pie del gráfico y la referencia temporal queda lejos de las primeras tareas, que son las que más se miran.</p>`],
       ['Paso 5: formatear fechas y colores',
-        `<p>Fija el mínimo del eje horizontal en tu fecha de inicio (Excel usa números de serie, así que conviene escribirlo como fecha y dejar que lo convierta) y da color por fase. Con eso el gráfico ya es presentable.</p>`],
+        `<p>Faltan dos ajustes para que el resultado sea presentable.</p>
+        <p>El primero es el eje de fechas. Por defecto arranca en cero —es decir, en 1900— y deja un vacío enorme a la izquierda. Selecciona el <strong>eje horizontal</strong>, abre <strong>Formato de eje</strong> y fija los <strong>Límites</strong>: el mínimo en la fecha de inicio del proyecto y el máximo en la de fin. Excel espera números de serie, así que el atajo es escribir la fecha en una celda vacía, cambiarla a formato General para leer el número y copiarlo. En <strong>Unidades › Principal</strong> pon 7 para tener una división por semana, y dale al eje un formato de número de fecha corta para que se lean días y no números sueltos.</p>
+        <p>El segundo es el color. Selecciona la serie de <strong>Duración</strong> y dale un color por fase —se puede colorear una barra concreta haciendo doble clic solo sobre ella—, borra la leyenda, que a estas alturas ya no dice nada útil, y añade etiquetas de datos si quieres ver la duración escrita sobre cada barra.</p>`],
       ['Dependencias y porcentaje completado',
-        `<p>Aquí está el límite. Excel no conoce las dependencias: si una tarea se retrasa, tienes que mover a mano todas las siguientes. El porcentaje completado se puede simular con una tercera serie superpuesta, pero se vuelve frágil en cuanto el plan crece.</p>
-        <p>Si tu proyecto tiene más de una decena de tareas enlazadas, el mantenimiento del gráfico acaba costando más que la planificación. Ese es el momento de usar una herramienta que recalcule sola — puedes <a href="/es/app.html">abrir el editor gratuito</a> o descargar una plantilla ya montada.</p>`],
+        `<p>Aquí aparecen los límites de verdad. Excel no tiene ninguna noción de dependencia: no hay forma de dibujar una flecha fin-comienzo que signifique algo para el cálculo, y mover una tarea no mueve a las siguientes. El apaño habitual es hacer que el inicio de cada tarea sea una fórmula que apunte al fin de la anterior —<code>=C2</code>— de modo que un cambio se propague hacia abajo por la columna. Funciona para una cadena lineal y se rompe en cuanto una tarea tiene dos predecesoras, hay solapes o alguien necesita holgura.</p>
+        <p>El porcentaje completado se simula con una columna auxiliar: añade <strong>% completado</strong> y otra columna de <strong>Avance</strong> igual a <code>=Duración × %</code>. Incorpora esa columna como tercera serie apilada, ponle un tono más oscuro del mismo color y ordena las series para que el avance quede justo después del inicio invisible. Da el efecto de barra rellena a medias.</p>
+        <p>El coste de todo esto no está en montarlo, sino en mantenerlo: cada tarea nueva obliga a ampliar el rango de datos del gráfico y a recolorear las series, y nada avisa de que una fecha ha dejado de cuadrar. Con más de diez o quince tareas enlazadas, el mantenimiento del gráfico supera al de la propia planificación. Ese es el momento de <a href="/es/app.html">usar un editor que recalcule solo</a>.</p>`],
+      ['Gantt automático con formato condicional',
+        `<p>Hay un segundo método que evita los gráficos por completo y que a mucha gente le resulta más cómodo: pintar el Gantt directamente en las celdas.</p>
+        <p>Coloca un calendario en la fila de encabezados —una columna por día o por semana— y deja a la izquierda las columnas de tarea, inicio y fin. Selecciona toda la rejilla del calendario y ve a <strong>Inicio › Formato condicional › Nueva regla › Utilice una fórmula que determine las celdas para aplicar formato</strong>, con una condición del tipo <code>=Y(E$1&gt;=$B2; E$1&lt;=$C2)</code>, donde <code>E$1</code> es la primera fecha del calendario y <code>$B2</code>/<code>$C2</code> el inicio y el fin de la tarea. Elige un relleno y acepta.</p>
+        <p>Las celdas se colorean solas cuando su fecha cae dentro del rango de la tarea, y el «gráfico» se actualiza al cambiar cualquier fecha, sin ningún objeto gráfico de por medio. Imprime bien, se amplía copiando filas y admite reglas adicionales: una para los hitos y otra para marcar la columna de hoy con <code>=E$1=HOY()</code>. Sigue sin haber dependencias ni ruta crítica, pero como documento vivo aguanta bastante mejor que el gráfico de barras.</p>`],
+      ['Plantilla de Excel y la alternativa rápida',
+        `<p>Si lo único que quieres es el archivo funcionando, parte de una plantilla ya montada: la tabla, la serie oculta, el eje invertido y el formato de fechas vienen hechos, y solo escribes encima tus tareas. El catálogo incluye versiones por sector —obra, marketing, desarrollo— además de la genérica.</p>
+        <p>Y si lo que necesitas es el <em>archivo de Excel</em> pero no el trabajo manual, invierte el orden: monta el plan en <a href="/es/app.html">el editor gratuito</a>, donde escribes tareas, arrastras barras, enlazas dependencias y la ruta crítica se calcula sola, y expórtalo a .xlsx cuando esté listo (también sale a PowerPoint, PDF y PNG). Cuando el plan cambie, cambias el plan y vuelves a exportar, en lugar de reconstruir el gráfico entero.</p>`],
     ],
     callout: 'El método de barras apiladas funciona y no requiere complementos, pero produce un dibujo, no un modelo. En cuanto necesites que al mover una tarea se muevan las siguientes, Excel deja de ayudarte: no hay dependencias que recalcular.',
     faq: [
-      ['¿Excel tiene una plantilla de Gantt integrada?', 'Algunas versiones incluyen plantillas de proyecto, pero varían según la versión y la región. El método de barras apiladas funciona en cualquier Excel moderno, y también puedes descargar una plantilla lista.'],
-      ['¿Cómo añado dependencias en Excel?', 'No hay soporte nativo. Se pueden dibujar flechas manualmente sobre el gráfico, pero no se recalculan al mover tareas — que es precisamente para lo que sirven las dependencias.'],
-      ['¿Es mejor Excel o una herramienta específica?', 'Excel va bien para un plan corto y estático que ya vas a compartir en una hoja de cálculo. Para planes con dependencias, ruta crítica o actualizaciones frecuentes, una herramienta específica ahorra mucho mantenimiento manual.'],
+      ['¿Excel tiene una plantilla de Gantt integrada?', 'Algunas versiones incluyen plantillas del tipo «Planificador de proyectos Gantt» en la pantalla de Nuevo, pero varían según la versión y la región, y por dentro usan el mismo truco de barras apiladas o formato condicional. El método manual funciona en cualquier Excel moderno.'],
+      ['¿Cómo convierto un gráfico de barras apiladas en un Gantt?', 'Representa las columnas de inicio y duración como barra apilada, selecciona la serie de inicio y ponle Sin relleno. Los segmentos invisibles empujan cada barra de duración hasta su fecha correcta. Después invierte el eje vertical con «Categorías en orden inverso» para que la primera tarea quede arriba.'],
+      ['¿Cómo añado dependencias en Excel?', 'No hay soporte nativo. Puedes hacer que el inicio de cada tarea sea una fórmula que apunte al fin de la anterior, con lo que un cambio se propaga por la columna, o dibujar flechas a mano sobre el gráfico. Ni una cosa ni la otra recalculan nada cuando hay dos predecesoras o solapes.'],
+      ['¿Por qué mi Gantt de Excel sale en orden invertido?', 'Porque Excel dibuja la primera fila de la tabla en la parte inferior de un gráfico de barras. Selecciona el eje vertical, abre Formato de eje y marca «Categorías en orden inverso»; el plan pasará a leerse de arriba abajo igual que la tabla.'],
+      ['¿Cómo muestro el porcentaje completado?', 'Añade una columna de % completado y otra auxiliar que multiplique la duración por ese porcentaje. Incorpora la auxiliar como tercera serie apilada en un tono más oscuro: la parte rellena de cada barra indicará cuánto se ha avanzado.'],
+      ['¿Es mejor Excel o una herramienta específica?', 'Excel va bien para un plan corto y estático que ya vas a compartir en una hoja de cálculo. Para planes con dependencias, ruta crítica o actualizaciones frecuentes, una herramienta específica ahorra mucho mantenimiento manual — y sigues pudiendo exportar el .xlsx al final.'],
     ],
     related: [
       ['gantt-chart-in-google-sheets', 'Cómo hacerlo en Google Sheets'],
@@ -321,29 +348,72 @@ const G = {
     lead: 'Google Sheets permite hacer un <strong>diagrama de Gantt</strong> de tres formas distintas, y la mejor depende de para qué lo necesites. Una es nativa, otra es el clásico truco de barras apiladas y la tercera es no construirlo.',
     figIntro: 'Los tres caminos, de menos a más control:',
     sections: [
+      ['¿Puede Google Sheets hacer un diagrama de Gantt?',
+        `<p>Google Sheets no ofrece un tipo de gráfico «Gantt» como ofrece uno de sectores o de líneas. Lo que sí ofrece son tres caminos legítimos hasta un cronograma que funciona, con compromisos distintos:</p>
+        <ul>
+          <li><strong>La función Cronograma</strong> (<em>Insertar › Cronograma</em>) — una vista nativa que convierte una tabla de tareas en tarjetas sobre un eje de fechas. Es lo más rápido de montar, pero es una vista, no un gráfico exportable, y no hace ningún cálculo de calendario.</li>
+          <li><strong>Un gráfico de barras apiladas</strong> — el truco clásico de hoja de cálculo. Dos columnas auxiliares y una serie invisible dejan la barra de duración flotando en su fecha. Más control y más trabajo manual.</li>
+          <li><strong>Una plantilla</strong> — abrir una hoja donde las fórmulas y el formato ya existen y escribir encima de los datos de ejemplo.</li>
+        </ul>
+        <p>Ninguno de los tres calcula la ruta crítica, dibuja flechas de dependencia ni recalcula las fechas siguientes cuando una tarea se retrasa. Esa carencia es la razón por la que la mayoría de los equipos acaban saliendo de la hoja de cálculo. Primero, los métodos.</p>`],
       ['Método 1: la función Cronograma (Insertar → Cronograma)',
-        `<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos.</p>
-        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Sheets abre un panel donde asignas qué columna es cada cosa; si tus encabezados son claros, suele acertar solo.</p>
-        <p>Desde ese panel puedes agrupar por una columna adicional —responsable, fase, cliente— y elegir qué campo se muestra sobre cada barra. El zoom se ajusta con el control de la esquina superior derecha, de días a trimestres.</p>
-        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, y sobre todo no hay dependencias ni ruta crítica. La vista es un reflejo de los datos, no un modelo del calendario.</p>`],
+        `<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como tarjetas sobre una línea de tiempo. Es la vía más rápida y no requiere ninguna fórmula.</p>
+        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin (o duración). Columnas opcionales como responsable, fase o porcentaje de avance pueden alimentar el detalle de cada tarjeta. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Confirma el rango en el cuadro de diálogo y acepta: Sheets crea una pestaña nueva con la vista.</p>
+        <p>En el panel de la derecha se asigna qué columna es cada cosa: <em>título de la tarjeta</em>, <em>fecha de inicio</em>, <em>fecha de finalización</em>, <em>color de la tarjeta</em> y <em>agrupar por</em>. Si tus encabezados son claros, suele acertar solo. Agrupar por fase o por responsable es, con diferencia, lo que más cambia la legibilidad de un plan mediano.</p>
+        <p>El zoom se ajusta entre días, semanas, meses, trimestres y años; se arrastra para desplazarse por el eje y, al hacer clic en una tarjeta, se abre su detalle y puedes saltar a la fila de origen. Para hojas de ruta y planes de alto nivel es genuinamente útil.</p>
+        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, la vista está atada a la tabla de origen y no es una imagen que puedas pegar en una diapositiva, y sobre todo no hay dependencias ni ruta crítica. Es un reflejo de los datos, no un modelo del calendario.</p>`],
       ['Método 2: gráfico de barras apiladas',
-        `<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible.</p>
-        <p>Monta cuatro columnas —tarea, inicio, fin y duración calculada como <code>=fin−inicio</code>— y selecciona tarea, inicio y duración. En <strong>Insertar → Gráfico</strong>, elige «Barras apiladas» en el selector de tipo. Sheets suele ordenar las series al revés la primera vez; se corrige en la pestaña Configuración del editor de gráficos.</p>
-        <p>Después, en Personalizar → Series, selecciona la serie de inicio y ponle <em>Ninguno</em> como color de relleno. Ahí aparece el Gantt. Por último, en Personalizar → Eje vertical, marca «Orden inverso» para que la primera tarea quede arriba, que es como se lee un plan.</p>
-        <p>Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración y de tener que repetirla si rehaces la hoja.</p>`],
+        `<p>Si lo que quieres es un objeto gráfico de verdad —uno que puedas copiar a Documentos o Presentaciones, reestilizar y exportar— el gráfico de barras apiladas es el clásico fiable. La idea es la misma que en Excel: cada tarea recibe una barra «espaciadora» transparente que la empuja hasta su posición de inicio, seguida de una barra visible con su duración. Apiladas, las visibles flotan en el sitio correcto y el conjunto se lee como un Gantt.</p>`],
+      ['Las dos columnas auxiliares: «Empieza el día» y «Duración»',
+        `<p>Monta la tabla con las tareas en la columna A y las fechas reales al lado, y añade dos columnas calculadas:</p>
+        <ul>
+          <li><strong>Inicio</strong> (columna B) y <strong>Fin</strong> (columna C) — fechas de calendario reales, escritas como fechas y no como texto.</li>
+          <li><strong>Empieza el día</strong> (columna D) — cuántos días después del arranque del proyecto empieza cada tarea. Si la fecha más temprana está en <code>$B$2</code>, escribe <code>=B2-$B$2</code>.</li>
+          <li><strong>Duración</strong> (columna E) — la longitud de la tarea en días: <code>=C2-B2</code>.</li>
+        </ul>
+        <p>Las dos columnas calculadas hay que formatearlas con <strong>Formato › Número › Número</strong>, no como fecha. Sheets hereda el formato de las celdas de origen y convierte el resultado en algo como «5/1/1900»; ese es el paso que más gente se salta, y el que hace que las barras salgan con longitudes imposibles.</p>
+        <p>A partir de aquí, «Empieza el día» es el espaciador invisible y «Duración» es la barra que se ve.</p>`],
+      ['Insertar y formatear el gráfico',
+        `<p>Selecciona las columnas <strong>Tarea</strong>, <strong>Empieza el día</strong> y <strong>Duración</strong> (A, D y E: mantén pulsado Ctrl o Cmd para seleccionar columnas no contiguas) y ve a <strong>Insertar → Gráfico</strong>.</p>
+        <ul>
+          <li>En el <em>editor de gráficos</em>, pestaña <strong>Configuración</strong>, pon el tipo en <strong>Gráfico de barras apiladas</strong>. Sheets suele ordenar mal las series la primera vez: «Empieza el día» debe ir antes que «Duración».</li>
+          <li>Pasa a <strong>Personalizar → Series</strong>, selecciona la serie <em>Empieza el día</em> y ponle <strong>Color de relleno → Ninguno</strong>. El espaciador desaparece y las barras de duración se colocan en su fecha. Ahí aparece el Gantt.</li>
+          <li>En <strong>Personalizar → Eje vertical</strong>, marca <strong>Orden inverso</strong> para que la primera tarea quede arriba, que es como se lee un plan.</li>
+          <li>Recolorea la serie de duración, pon un título y ajusta el eje horizontal para que muestre números de día o fechas legibles.</li>
+        </ul>
+        <p>Ya tienes un gráfico editable que puedes redimensionar, reestilizar y copiar a otro documento. Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración. Añadir hitos o agrupar por fase significa más columnas auxiliares y más mantenimiento a mano, que es donde este método empieza a pesar en proyectos reales.</p>`],
       ['Método 3: usar una plantilla',
-        `<p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>`],
+        `<p>La forma más rápida de llegar a un gráfico terminado es no construir el mecanismo. Abre una hoja ya preparada, donde las fórmulas auxiliares, el formato condicional y el eje de fechas ya existen, y escribe encima de las filas de ejemplo.</p>
+        <p>Haz una copia a tu propio Drive con <strong>Archivo › Hacer una copia</strong> antes de editar nada, o descarga el CSV con las tareas ya estructuradas y ábrelo en Sheets. Las plantillas van bien cuando quieres un aspecto coherente entre proyectos, o cuando prefieres no depurar una serie de gráfico a las siete de la tarde. El catálogo cubre también versiones de Excel y de PowerPoint y planes por sector.</p>`],
       ['Personalizar la vista y añadir dependencias',
-        `<p>Puedes ajustar el rango de fechas, agrupar por fases con formato condicional y marcar hitos con una fila de duración cero. Las dependencias, en cambio, no existen en Sheets: si mueves una tarea, ninguna otra se entera.</p>`],
+        `<p>Cuatro retoques mejoran la legibilidad de cualquier Gantt hecho en Sheets:</p>
+        <ul>
+          <li><strong>Agrupar por fase</strong> — añade una columna «Fase» y ordena por ella, o úsala en el campo <em>Agrupar por</em> del Cronograma.</li>
+          <li><strong>Mostrar el avance</strong> — con una columna de % completado y, en el método de barras apiladas, partiendo cada duración en dos segmentos, «hecho» y «pendiente».</li>
+          <li><strong>Marcar los hitos</strong> — filas de duración cero con un color propio, para que se lean como puntos y no como barras.</li>
+          <li><strong>Línea de hoy</strong> — una serie de un solo valor o una línea de referencia vertical; es lo que más rápido comunica el estado a quien mira el plan de pasada.</li>
+        </ul>
+        <p>Las dependencias son el límite duro. Google Sheets no tiene ningún concepto de «la tarea B empieza cuando termina la A». Se puede fingir con fórmulas —poner el inicio de una tarea como <code>=fin_de_la_predecesora + 1</code>— pero no hay flechas visibles, no hay holgura y las cadenas se vuelven frágiles enseguida: basta con que una tarea tenga dos predecesoras para que la fórmula deje de valer. Si las dependencias y el recálculo automático importan en tu proyecto, esa es la señal para cambiar de herramienta.</p>`],
       ['Los límites de Sheets, y una alternativa gratuita',
-        `<p>Sheets es excelente para colaborar sobre datos y mediocre para planificar calendarios: sin dependencias, sin ruta crítica y sin días laborables, cada cambio obliga a recalcular a mano. Para un plan de veinte tareas eso se aguanta; para sesenta, no.</p>
-        <p>La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: importas el CSV que ya tienes en Sheets, enlazas las dependencias y exportas cuando lo necesites.</p>`],
+        `<p>Google Sheets es una hoja de cálculo excelente y un Gantt aceptable para salir del paso. Sus límites reales aparecen en cuanto el proyecto tiene piezas móviles:</p>
+        <ul>
+          <li>Sin flechas de dependencia y sin reprogramación automática cuando una tarea se retrasa.</li>
+          <li>Sin ruta crítica: no puedes ver qué tareas mandan de verdad sobre tu fecha de entrega.</li>
+          <li>Sin días laborables ni festivos: las duraciones son días naturales salvo que las calcules aparte, y entonces dejan de cuadrar con el eje.</li>
+          <li>Mantenimiento manual: cada cambio de fecha obliga a revisar a mano las columnas auxiliares.</li>
+          <li>Exportación incómoda: el Cronograma no es una imagen, y los gráficos de barras apiladas no siempre viajan bien a una diapositiva.</li>
+        </ul>
+        <p>Para un plan de veinte tareas eso se aguanta; para sesenta, no. La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: exporta la hoja como CSV, impórtala con sus columnas de tarea, inicio y fin, enlaza las dependencias y el calendario se reprograma solo, con la ruta crítica resaltada. Desde ahí se exporta a Excel, PowerPoint, PDF o PNG en un clic, sin cuenta y sin instalar nada.</p>
+        <p>Usa Google Sheets cuando el plan sea pequeño y estático, o cuando los datos ya vivan en una hoja compartida. Cambia de herramienta en cuanto necesites dependencias, ruta crítica o un gráfico que se mantenga al día sin vigilancia.</p>`],
     ],
     callout: 'Si tu plan va a cambiar más de una vez, elige el método por el coste de mantenerlo, no por lo rápido que es montarlo. La función Cronograma se hace en dos minutos; un gráfico de barras apiladas con veinte tareas se rehace en veinte cada vez que se mueve una fecha.',
     faq: [
-      ['¿Google Sheets puede hacer diagramas de Gantt?', 'Sí, de tres formas: con la función Cronograma integrada, con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla.'],
-      ['¿La función Cronograma admite dependencias?', 'No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica.'],
-      ['¿Puedo pasar mi hoja a una herramienta de Gantt?', 'Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin.'],
+      ['¿Google Sheets puede hacer diagramas de Gantt?', 'Sí, de tres formas: con la función Cronograma integrada (Insertar → Cronograma), con un gráfico de barras apiladas al que se oculta la serie de inicio, o partiendo de una plantilla. Ninguna de las tres admite dependencias ni ruta crítica.'],
+      ['¿Qué es exactamente la función Cronograma?', 'Es una vista que convierte una tabla con fechas de inicio y fin en tarjetas horizontales sobre un eje temporal, con zoom de días a años y agrupación por una columna. Se monta en dos minutos y va muy bien para hojas de ruta, pero no es una imagen editable ni calcula nada.'],
+      ['¿La función Cronograma admite dependencias?', 'No. Muestra las barras en la línea de tiempo, pero no enlaza tareas ni recalcula fechas, así que no hay ruta crítica. Tampoco la admite el método de barras apiladas: lo más parecido es encadenar fechas con fórmulas, y eso se rompe en cuanto una tarea tiene dos predecesoras.'],
+      ['¿Por qué me salen las barras con longitudes absurdas?', 'Casi siempre porque las columnas auxiliares de «empieza el día» y «duración» han heredado formato de fecha. Selecciónalas y ponles Formato › Número › Número; el gráfico necesita días como cifras, no como fechas.'],
+      ['¿Se puede hacer gratis?', 'Sí. Google Sheets es gratuito con una cuenta de Google y los tres métodos no cuestan nada. El editor de gantts.app también es gratuito y además no pide ninguna cuenta.'],
+      ['¿Puedo pasar mi hoja a una herramienta de Gantt?', 'Sí. Exporta la hoja como CSV e impórtala; el <a href="/es/app.html">editor gratuito</a> acepta CSV con columnas de tarea, inicio y fin, y desde ahí puedes exportar a Excel, PowerPoint, PDF o PNG.'],
     ],
     related: [
       ['gantt-chart-in-excel', 'Cómo hacerlo en Excel'],
@@ -361,28 +431,72 @@ const G = {
     figIntro: 'Dos caminos según cuánto control visual necesites:',
     sections: [
       ['Dos formas de construirlo',
-        `<p>La primera es insertar un gráfico de barras apiladas y ocultar la serie de inicio, igual que en Excel. La segunda es dibujar rectángulos a mano. La primera mantiene los datos; la segunda da control total sobre el aspecto.</p>
-        <p>Para una diapositiva de dirección, la segunda suele ganar. Para algo que vas a actualizar cada mes, la primera.</p>`],
+        `<p>PowerPoint no tiene ningún objeto «diagrama de Gantt», así que todo método es un rodeo. Dos merecen la pena:</p>
+        <ul>
+          <li><strong>Gráfico de barras apiladas</strong> — se reaprovecha el gráfico de barras integrado ocultando el primer segmento, con lo que queda una barra de duración flotando por tarea. Sigue gobernado por datos: al editar la tabla, las barras se redibujan solas.</li>
+          <li><strong>Formas o SmartArt</strong> — se dibuja cada tarea como un rectángulo sobre una rejilla manual. Control visual máximo, automatismo cero: cada cambio se hace a mano.</li>
+        </ul>
+        <p>¿Cuál elegir? El gráfico, cuando las fechas todavía pueden moverse y quieres que editar los datos actualice la imagen, o cuando la exactitud importa más que el acabado. Las formas, cuando la diapositiva tiene que respetar una identidad de marca estricta y el calendario está esencialmente cerrado.</p>
+        <p>Y ninguno de los dos si tienes dependencias reales que seguir: ningún formato de PowerPoint va a recalcular un calendario cuando una tarea se mueva. Para una lámina de dirección con ocho barras, cualquiera de los dos sirve; a partir de ahí, ambos duelen.</p>`],
       ['Método 1: gráfico de barras apiladas, paso a paso',
-        `<p><strong>Insertar → Gráfico → Barra apilada.</strong> PowerPoint abre una miniatura de Excel con datos de ejemplo: sustitúyelos por tres columnas —tarea, fecha de inicio y duración en días— y cierra la ventana.</p>
-        <p>Haz clic sobre las barras de inicio (las de abajo en cada pila) y en <em>Formato de serie de datos → Relleno</em> elige <strong>Sin relleno</strong>. Las barras de duración quedan flotando en la posición correcta: eso ya es un Gantt.</p>
-        <p>Después, clic derecho sobre el eje vertical, <em>Formato de eje</em>, y marca <strong>Categorías en orden inverso</strong> para que la primera tarea aparezca arriba. En el eje horizontal, fija el mínimo en tu fecha de inicio; si lo dejas en automático, PowerPoint arranca el eje en 1900 y todas las barras se apelotonan a la derecha.</p>
-        <p>La ventaja de este método es que los datos siguen ahí: cambias una duración en la tabla y el gráfico se redibuja. La desventaja es que el control estético es limitado y las barras no se pueden mover a mano.</p>`],
+        `<p>Es el mismo truco que en la hoja de cálculo, pero dentro del motor de gráficos de PowerPoint.</p>
+        <ol>
+          <li>En la diapositiva, <strong>Insertar → Gráfico → Barras → Barra apilada</strong> y acepta. Se abre una hoja de datos vinculada, en miniatura, con datos de ejemplo.</li>
+          <li>Sustitúyelos por tres columnas: <strong>Tarea</strong>, <strong>Inicio</strong> (días transcurridos desde el arranque del proyecto) y <strong>Duración</strong> (días). Trabajar con números de día en vez de con fechas evita que PowerPoint tenga que interpretar formatos. Cierra la ventana de datos.</li>
+          <li>Haz clic sobre cualquier barra de la serie <strong>Inicio</strong> —las de abajo de cada pila— y en <em>Formato de serie de datos → Relleno</em> elige <strong>Sin relleno</strong>. Quita también el borde con <em>Sin línea</em>. Las barras de duración quedan flotando en su posición: eso ya es un Gantt.</li>
+          <li>Clic derecho sobre el eje vertical, <strong>Formato de eje</strong>, y marca <strong>Categorías en orden inverso</strong> para que la primera tarea aparezca arriba.</li>
+          <li>Selecciona el eje horizontal y fija los <strong>Límites</strong>, mínimo y máximo, al rango de días de tu proyecto. Si lo dejas en automático, el eje arranca en cero y todas las barras se apelotonan a la derecha con media diapositiva vacía.</li>
+          <li>Recolorea la serie de duración, pon un título y borra la leyenda, que a estas alturas solo dice «Inicio» y «Duración».</li>
+        </ol>
+        <p>La ventaja de este método es que los datos siguen ahí: puedes volver con clic derecho → <strong>Modificar datos</strong>, cambiar una duración y ver el gráfico redibujarse. La desventaja es doble: el control estético es limitado, las barras no se pueden arrastrar, y los desplazamientos siguen siendo números de día que calculas tú.</p>
+        <p>Dos refinamientos habituales. Partir cada barra de duración en dos segmentos, «completado» y «pendiente», añadiendo una tercera columna y sombreando el primero más oscuro, con lo que obtienes una vista de avance integrada. Y representar un hito con una fila de duración casi cero y un relleno llamativo, para que se lea como una marca y no como una barra. Todo esto es manual, y si la fecha de una predecesora se mueve, hay que recalcular a mano los desplazamientos de todo lo que viene detrás.</p>`],
+      ['Convertir fechas reales en números de día',
+        `<p>El punto más incómodo del método del gráfico es que la hoja de datos incrustada de PowerPoint es una miniatura de Excel, sin sitio cómodo para columnas auxiliares. Conviene hacer las cuentas fuera.</p>
+        <p>Abre una hoja aparte con tarea, inicio y fin como fechas reales, calcula <code>=inicio − fecha_de_arranque</code> para el desplazamiento y <code>=fin − inicio</code> para la duración, y pega en PowerPoint solo esas tres columnas ya convertidas en números. Así el eje horizontal se comporta como una escala numérica de días, que es predecible, en vez de como un eje de fechas, que en PowerPoint tiende a arrancar en 1900 y a insertar divisiones mensuales que nadie ha pedido.</p>
+        <p>El precio es que el eje muestra «0, 7, 14, 21» en lugar de fechas. Dos soluciones: dejarlo así y titular la diapositiva con el rango («Programa · marzo–junio de 2026»), o borrar el eje numérico y colocar encima cuadros de texto con los nombres de los meses, alineados a la rejilla. En una diapositiva, lo segundo casi siempre se lee mejor.</p>
+        <p>Si además vas a mantener la lámina durante meses, guarda esa hoja auxiliar junto al .pptx. Sin ella, dentro de seis semanas nadie sabrá a qué fecha corresponde el día 34.</p>`],
       ['Método 2: formas o SmartArt',
-        `<p>Dibuja un rectángulo por tarea sobre una rejilla de meses. Es más trabajo la primera vez y mucho más rápido de retocar después, y permite cosas que el gráfico no da: barras redondeadas, iconos, anotaciones, colores por equipo.</p>
-        <p>Alinea con las guías inteligentes y agrupa cada fase para poder moverla entera.</p>`],
+        `<p>Cuando necesitas un acabado a medida y en la línea gráfica de la empresa, se construye con formas:</p>
+        <ul>
+          <li>Inserta una tabla o dibuja líneas verticales de rejilla como eje temporal: una columna por semana o por mes.</li>
+          <li>Lista los nombres de las tareas en la columna de la izquierda.</li>
+          <li>Para cada tarea, inserta un rectángulo redondeado y estíralo sobre las columnas que corresponden a su inicio y su duración.</li>
+          <li>Añade rombos para los hitos y líneas conectoras finas para sugerir dependencias.</li>
+          <li>Usa <strong>Formato de forma → Alinear</strong> (alinear y distribuir) para dejar las barras cuadradas, y agrupa el conjunto para moverlo como una sola pieza.</li>
+        </ul>
+        <p>Es más trabajo la primera vez y mucho más rápido de retocar después, y permite cosas que el gráfico no da: barras redondeadas, iconos, anotaciones, colores por equipo. Los gráficos de proceso y de escala temporal de <strong>SmartArt</strong> producen deprisa una versión simplificada, tipo hoja de ruta, pero no son Gantt a escala de fechas: sirven para un visual de «fases» de alto nivel, no para un calendario exacto.</p>
+        <p>Tres costumbres evitan que el método de formas acabe en desorden. Fija una altura de barra constante y ancla todo a la misma rejilla con las guías inteligentes, para que el resultado parezca dibujado por una máquina y no a pulso. Usa el <strong>Panel de selección</strong> (<em>Formato de forma → Panel de selección</em>) para nombrar y ordenar las decenas de formas que vas a acumular. Y construye el conjunto agrupado en un solo objeto, para poder duplicarlo y montar una comparación «previsto» frente a «actual».</p>
+        <p>Aun bien hecho, esto es un dibujo, no un calendario: trátalo como una pieza de comunicación de un plan cerrado, no como un documento de trabajo que vayas a revisar cada semana.</p>`],
       ['Plantilla de PowerPoint gratuita',
-        `<p>Si prefieres no empezar de cero, cada plantilla del catálogo incluye una versión .pptx con las fases ya dibujadas y editables como formas nativas.</p>`],
+        `<p>Si prefieres no empezar de cero, cada plantilla del catálogo incluye una versión .pptx con el eje temporal formateado, un esquema de color coherente y los marcadores de hito ya estilados. Las fases llegan dibujadas y editables como formas nativas, no como una imagen pegada.</p>
+        <p>¿Prefieres que la fuente de verdad sea una hoja de cálculo y la diapositiva solo el resultado? Empieza por la guía de Excel o por su plantilla, y trae a PowerPoint únicamente la imagen final. El catálogo completo cubre obra, marketing, desarrollo de software y más.</p>`],
       ['La vía rápida: diseñar online y exportar a PowerPoint',
-        `<p>La alternativa que ahorra más tiempo es montar el plan donde las dependencias se recalculan solas y exportar la diapositiva al final. Desde <a href="/es/app.html">el editor</a> puedes exportar directamente a .pptx y seguir editando las formas en PowerPoint.</p>`],
+        `<p>Aquí es donde el enfoque cambia de verdad. En lugar de empujar rectángulos o esconder series de un gráfico, construyes un plan de proyecto real y dejas que la herramienta produzca la diapositiva:</p>
+        <ol>
+          <li>Abre <a href="/es/app.html">el editor gratuito</a>: sin cuenta y sin instalar nada.</li>
+          <li>Añade tareas, arrastra las barras para fijar fechas, agrúpalas por fases y enlaza las dependencias. El calendario se reprograma solo y la ruta crítica se resalta automáticamente.</li>
+          <li>Pulsa <strong>Exportar → PowerPoint</strong>. Obtienes un .pptx con el Gantt en una diapositiva, listo para presentar o para entregar.</li>
+        </ol>
+        <p>Esa exportación a .pptx en un clic es la diferencia práctica: la mayoría de las herramientas gratuitas se quedan en un PNG o reservan la exportación para un plan de pago. Aquí es gratuita, y del mismo menú salen también PDF, PNG y Excel. Cuando el plan cambie, editas online y vuelves a exportar, en vez de rehacer la lámina a mano.</p>`],
       ['Consejos para presentar',
-        `<p>Menos filas de las que crees: ocho o diez barras es lo máximo que se lee de un vistazo, así que agrupa por fases. Usa un solo color de acento para lo crítico y grises para el resto. Marca los hitos como rombos con la fecha escrita al lado — es lo que la audiencia va a fotografiar.</p>`],
+        `<ul>
+          <li><strong>Agrupa por fase con color.</strong> Un tono por fase —Análisis, Ejecución, Cierre— hace que la audiencia lea la estructura antes que el detalle.</li>
+          <li><strong>Que los hitos destaquen.</strong> Un único color de contraste y un rombo bastan para separarlos de las barras; escribe la fecha al lado, que es lo que la sala va a fotografiar.</li>
+          <li><strong>Limita las filas.</strong> Entre ocho y doce barras por diapositiva; los planes grandes se parten en una lámina resumen más láminas de detalle por fase.</li>
+          <li><strong>Pon una línea de hoy.</strong> Una marca vertical en la fecha actual comunica el estado sin una sola palabra.</li>
+          <li><strong>Etiquetas cortas.</strong> Recorta los nombres a dos o tres palabras y deja el detalle en las notas del orador, no sobre la barra.</li>
+          <li><strong>Ajusta a tu marca.</strong> Recolorea las barras con la paleta de la presentación para que el gráfico no parezca traído de otro documento.</li>
+        </ul>
+        <p>Un solo color de acento para lo crítico y grises para el resto resuelve el 90 % de las decisiones de diseño de una lámina de calendario.</p>`],
     ],
     callout: 'Una diapositiva de Gantt no es tu plan, es un resumen de tu plan. Si estás intentando meter cuarenta tareas en una lámina, el problema no es PowerPoint: la audiencia necesita las fases y los hitos, y el detalle vive en otro documento.',
     faq: [
-      ['¿PowerPoint tiene plantillas de Gantt?', 'Incluye plantillas de línea de tiempo, aunque varían según la versión. También puedes descargar una plantilla .pptx ya montada con fases editables.'],
-      ['¿Qué método es mejor?', 'Formas si la diapositiva es para presentar y quieres control visual; gráfico de barras apiladas si vas a actualizar los datos periódicamente.'],
-      ['¿Puedo exportar mi plan a PowerPoint?', 'Sí. Desde el <a href="/es/app.html">editor gratuito</a> se exporta a .pptx, y las barras llegan como formas editables, no como una imagen.'],
+      ['¿PowerPoint tiene plantillas de Gantt?', 'No incluye un tipo de objeto «Gantt». Sí trae plantillas de línea de tiempo, aunque varían según la versión, y puedes descargar una plantilla .pptx ya montada con fases editables como formas nativas.'],
+      ['¿Qué método es mejor?', 'Formas si la diapositiva es para presentar y quieres control visual sobre cada detalle; gráfico de barras apiladas si vas a actualizar los datos periódicamente y prefieres que la imagen se redibuje sola al cambiar la tabla.'],
+      ['¿Cómo hago un Gantt con formas en PowerPoint?', 'Dibuja una tabla o unas líneas de rejilla como eje temporal, inserta un rectángulo redondeado por tarea y estíralo sobre las columnas que corresponden a su inicio y su duración. Da control total sobre el aspecto, pero hay que actualizarlo a mano cada vez que se mueve una fecha.'],
+      ['¿Por qué todas mis barras se amontonan a la derecha?', 'Porque el eje horizontal ha quedado en automático y arranca en cero. Selecciónalo, abre Formato de eje y fija los límites mínimo y máximo al rango de días real del proyecto.'],
+      ['¿Cómo represento los hitos?', 'Como rombos o marcas de longitud casi nula situados en la fecha del hito, con un color de contraste para que no se confundan con las barras. En el editor de gantts.app los hitos son un tipo de elemento propio y se exportan con el gráfico.'],
+      ['¿Puedo exportar mi plan a PowerPoint?', 'Sí. Desde el <a href="/es/app.html">editor gratuito</a> se exporta a .pptx en un clic, y las barras llegan como formas editables, no como una imagen. Del mismo menú salen PDF, PNG y Excel.'],
     ],
     related: [
       ['gantt-chart-in-excel', 'Cómo hacerlo en Excel'],
@@ -414,7 +528,18 @@ const G = {
         <p><strong>GanttPRO</strong> — prueba gratuita y después de pago, con registro. Exportación y ruta crítica en los planes de pago.</p>
         <p><strong>Instagantt</strong> — freemium con capa gratuita limitada y registro obligatorio. Exportación en planes superiores; ruta crítica de pago.</p>
         <p><strong>Canva</strong> — capa gratuita de diseño con registro. Exporta a PNG y PDF, pero el resultado es estático: no hay ruta crítica porque no hay motor de planificación.</p>
-        <p><strong>Microsoft Project</strong> — de pago, sin plan gratuito. Exportación y ruta crítica completas.</p>`],
+        <p><strong>Microsoft Project</strong> — de pago, sin plan gratuito. Exportación y ruta crítica completas.</p>
+        <p><strong>Excel y Google Sheets</strong> — gratuitas si ya pagas el software. Exportación nativa, pero sin dependencias ni ruta crítica.</p>`],
+      ['Las nueve herramientas, una a una',
+        `<p><strong>1. gantts.app — gratuita y sin cuenta.</strong> Aviso: es nuestra herramienta. Es un editor de Gantt que funciona en el navegador, totalmente gratuito, sin registro ni inicio de sesión, sin topes de tareas ni de proyectos, con dependencias, hitos, ruta crítica automática y exportación en un clic a PDF, PNG, Excel y PowerPoint. Los datos se quedan en tu navegador. La contrapartida es que está centrada en planificar y exportar: no es una suite de gestión del trabajo con imputación de horas, chat y facturación de recursos, y si necesitas eso, una plataforma más pesada te encajará mejor. <em>Ideal para</em> quien quiere un Gantt de verdad, rápido y sin cuenta.</p>
+        <p><strong>2. GanttProject — escritorio de código abierto.</strong> Aplicación de escritorio madura y gratuita para Windows, macOS y Linux. Soporta tareas, dependencias, ruta crítica, asignación de recursos y exportación a PDF, PNG y CSV. Al ser una descarga y no una web, funciona sin conexión y no pide cuenta; a cambio, la interfaz se nota anticuada y no trae sincronización en la nube. <em>Ideal para</em> quien prefiere software instalado y licencia libre.</p>
+        <p><strong>3. OnlineGantt y otras herramientas web pequeñas.</strong> Un puñado de sitios ligeros permiten bosquejar un Gantt en el navegador y exportar una imagen o un PDF. Sirven para un gráfico puntual y algunos no piden cuenta, pero la profundidad varía muchísimo: a muchos les faltan una ruta crítica fiable, dependencias sólidas o exportación a hoja de cálculo. <em>Ideal para</em> gráficos rápidos y desechables; comprueba los límites vigentes antes de depender de uno.</p>
+        <p><strong>4. TeamGantt — capaz, pero con el plan gratuito muy acotado.</strong> Herramienta pulida y orientada a la colaboración. Su plan gratuito es usable pero limitado: en torno a un proyecto y unas 60 tareas para pocos usuarios, con la ruta crítica y la exportación completa reservadas a los planes de pago. Exige cuenta. <em>Ideal para</em> equipos pequeños que están evaluando una herramienta de pago y caben dentro de los topes.</p>
+        <p><strong>5. GanttPRO — basada en prueba.</strong> Herramienta comercial bien diseñada, con planificación, carga de trabajo y colaboración potentes. Ofrece una prueba gratuita, no un plan gratuito: cuando el plazo termina hay que pagar, y requiere cuenta desde el primer minuto. <em>Ideal para</em> equipos con presupuesto que quieren probar una plataforma de Gantt antes de comprarla.</p>
+        <p><strong>6. Instagantt — freemium.</strong> Conocida por su integración con Asana y por unos cronogramas limpios. Tiene capa gratuita limitada y registro obligatorio; buena parte de las funciones —exportación avanzada, ruta crítica, más proyectos— vive en los planes de pago. <em>Ideal para</em> usuarios de Asana que quieren una vista de calendario conectada a sus tareas.</p>
+        <p><strong>7. Canva — primero el diseño.</strong> Canva produce un Gantt con muy buen aspecto a partir de sus plantillas, exportable a PNG o PDF en la capa gratuita (con cuenta). Pero es una herramienta de diseño, no un motor de planificación: no hay dependencias reales, ni reprogramación, ni ruta crítica; las barras son formas que colocas a mano. <em>Ideal para</em> un visual estático y cuidado para una diapositiva o un informe donde la exactitud del calendario no es el punto.</p>
+        <p><strong>8. Microsoft Project — potente y de pago.</strong> El estándar corporativo para planificación seria: lógica de dependencias profunda, nivelación de recursos, líneas base y ruta crítica. No tiene plan gratuito —es suscripción o licencia— y requiere cuenta Microsoft. <em>Ideal para</em> organizaciones grandes con programas complejos y presupuesto acorde.</p>
+        <p><strong>9. Excel y Google Sheets — la opción artesanal.</strong> Ya tienes la hoja de cálculo, y se puede doblar hasta convertirla en un Gantt con un gráfico de barras apiladas o con la función Cronograma de Sheets. Es gratis si ya pagas el software, pero no hay dependencias, no hay ruta crítica y el mantenimiento es todo manual. <em>Ideal para</em> planes pequeños y estáticos cuyos datos ya viven en una hoja compartida.</p>`],
       ['Herramientas gratuitas que no piden registro',
         `<p>Es una categoría corta, y conviene entender por qué. Pedir una cuenta no es un capricho: es el modelo de negocio. Un correo electrónico es un contacto comercial, y el momento en que más se necesita el archivo —justo al terminar el plan— es también el momento de máxima disposición a entregarlo.</p>
         <p>Por eso el muro casi nunca está al empezar, sino al exportar. Puedes construir el proyecto entero y descubrir al final que descargar el PDF exige una suscripción, o que la versión gratuita añade una marca de agua.</p>
@@ -431,6 +556,9 @@ const G = {
     faq: [
       ['¿Cuál es el mejor programa gratuito de diagramas de Gantt?', 'Depende de si necesitas escritorio o navegador. GanttProject es la opción de escritorio de código abierto más sólida; entre las web, busca las que no exijan cuenta y permitan exportar sin pagar.'],
       ['¿Los planes gratuitos incluyen la ruta crítica?', 'Muchos no. Es una de las funciones que más se reserva a los planes de pago, junto con la exportación y las líneas base. Conviene confirmarlo antes de empezar.'],
+      ['¿Puedo usar una herramienta gratuita para trabajo profesional?', 'Sí, siempre que la exportación no esté limitada y el plan no tenga topes de tareas. Lo que rara vez es gratuito es la colaboración en tiempo real.'],
+      ['¿Cuáles son gratuitas de verdad y no una prueba?', 'gantts.app (gratuita del todo y sin cuenta) y GanttProject (código abierto, de descarga) lo son. TeamGantt e Instagantt ofrecen planes gratuitos limitados. GanttPRO funciona con prueba y Microsoft Project es de pago: ninguna de las dos es gratuita a largo plazo.'],
+      ['¿Qué diferencia hay entre gratuito, freemium y prueba gratuita?', 'Gratuito es sin coste y sin caducidad. Freemium es un plan limitado gratis para siempre que cobra por subir los topes o por funciones clave. La prueba gratuita da acceso completo durante unos días y después hay que pagar. Muchas herramientas anunciadas como gratis son en realidad una de las dos últimas.'],
       ['¿Puedo usar una herramienta gratuita para trabajo profesional?', 'Sí, siempre que la exportación no esté limitada y el plan no tenga topes de tareas. Lo que rara vez es gratuito es la colaboración en tiempo real.'],
       ['¿gantts.app es gratis de verdad?', 'Sí: sin cuenta, sin límite de tareas ni proyectos, con ruta crítica y exportación a PDF, PNG, Excel y PowerPoint. El plan se guarda en tu navegador y no se sube a ningún servidor.'],
     ],

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google 表格甘特图做法 | gantts.app</title>
-  <meta name="description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图，以及条件格式。" />
+  <meta name="description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-google-sheets.html" />
@@ -33,7 +33,7 @@
   <meta property="og:locale:alternate" content="pt_BR" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Google 表格甘特图做法 | gantts.app" />
-  <meta property="og:description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图，以及条件格式。" />
+  <meta property="og:description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。" />
   <meta property="og:url" content="https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,11 +41,11 @@
   <meta property="og:image:alt" content="Google 表格做甘特图：三种方法" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Google 表格甘特图做法 | gantts.app" />
-  <meta name="twitter:description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图，以及条件格式。" />
+  <meta name="twitter:description" content="Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html#post","headline":"Google 表格做甘特图：三种方法","description":"Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图，以及条件格式。","url":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Google 表格做甘特图：三种方法","item":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Google 表格有甘特图功能吗？","acceptedAnswer":{"@type":"Answer","text":"有内置的「时间轴」视图（插入 → 时间轴）。它显示时间区间，但不支持依赖关系。"}},{"@type":"Question","name":"Google 表格怎么做甘特图？","acceptedAnswer":{"@type":"Answer","text":"最灵活的是堆积条形图，把第一个数据系列设为透明。"}},{"@type":"Question","name":"可以多人一起编辑计划吗？","acceptedAnswer":{"@type":"Answer","text":"可以，这正是它相对 Excel 的最大优势：多人实时编辑同一个文件。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html#post","headline":"Google 表格做甘特图：三种方法","description":"Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Google 表格做甘特图：三种方法","item":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Google 表格有内置的甘特图吗？","acceptedAnswer":{"@type":"Answer","text":"没有一键生成的甘特图类型，但有「时间轴」视图（插入 › 时间轴），能把带起止日期的表格变成时间轴上的卡片。真正的甘特图要用堆积条形图做，两者都不支持依赖关系和关键路径。"}},{"@type":"Question","name":"「时间轴」视图和甘特图有什么区别？","acceptedAnswer":{"@type":"Answer","text":"时间轴是绑定源表的交互式视图，缩放和分组都很方便，但它不是可编辑的图表对象，不能像图片一样插进幻灯片，也不计算依赖关系和关键路径。"}},{"@type":"Question","name":"怎么在 Google 表格里加依赖关系？","acceptedAnswer":{"@type":"Answer","text":"只能用公式手工模拟，比如把开始日期写成前置任务结束日期加一天。表格画不出箭头，也不会在任务延期时自动重排后续日期。"}},{"@type":"Question","name":"为什么我的横条从最左边开始？","acceptedAnswer":{"@type":"Answer","text":"通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为\"无\"。"}},{"@type":"Question","name":"用 Google 表格做甘特图要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"不用。有 Google 账号就能免费使用表格，三种方法都没有额外成本。gantts.app 同样免费，而且连账号都不需要。"}},{"@type":"Question","name":"怎么转成 Excel 或 PowerPoint？","acceptedAnswer":{"@type":"Answer","text":"整表可以用「文件 › 下载 › Microsoft Excel (.xlsx)」导出，图表可以复制成图片贴进幻灯片。更快的办法是在 gantts.app 里做好后一键导出。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -87,8 +87,9 @@
         <li><a href="#s1">方法一：堆积条形图</a></li>
         <li><a href="#s2">方法二：原生时间轴视图</a></li>
         <li><a href="#s3">方法三：条件格式</a></li>
-        <li><a href="#s4">各自适合什么场景</a></li>
-        <li><a href="#s5">共同的局限</a></li>
+        <li><a href="#s4">让图表更好读</a></li>
+        <li><a href="#s5">各自适合什么场景</a></li>
+        <li><a href="#s6">共同的局限</a></li>
       </ol>
     </div>
 
@@ -99,26 +100,35 @@
 
     <div class="prose">
       <h2 id="s1">方法一：堆积条形图</h2>
-<p>原理与 Excel 相同。设置任务、相对起点的偏移量、工期三列，然后"插入 → 图表 → 堆积条形图"，把偏移量系列设为透明。</p>
-        <p>优点：这是真正的图表，可以导出。缺点：没有依赖关系——所有电子表格都一样。</p>
+<p>原理与 Excel 相同，菜单不同。表里放任务、开始日期、结束日期三列，再加两列计算列——<strong>偏移量</strong>用 <code>=B2-$B$2</code>，<strong>工期</strong>用 <code>=C2-B2</code>。两列都要用<strong>格式 › 数字 › 数字</strong>改成纯数字，留成日期格式横条会全错。</p>
+      <p>按住 Ctrl 选中任务、偏移量、工期三列，点<strong>插入 › 图表</strong>。在右侧图表编辑器里把<strong>图表类型</strong>设为<strong>堆积条形图</strong>，再到<strong>自定义 › 系列</strong>里选中偏移量系列，把填充颜色设为<strong>无</strong>，工期横条就浮到了正确位置。</p>
+      <p>最后在<strong>自定义 › 纵轴</strong>里勾选<strong>反转轴顺序</strong>。这是真正的图表对象，可以复制进 Google 文档或幻灯片，也能下载成图片。</p>
       <h2 id="s2">方法二：原生时间轴视图</h2>
-<p>Google 表格现在提供"插入 → 时间轴"。该视图需要开始日期、结束日期和标签三列，会生成带卡片的交互式时间轴。</p>
-        <p>这是获得总览最省事的方式，完全不需要技巧。但它并非为带依赖关系和关键路径的进度计划设计。</p>
+<p>把数据整理成一张表：至少要有卡片标题、开始日期、结束日期三列，可选的负责人、分组、完成度会显示在卡片详情里。连表头一起选中，点<strong>插入 › 时间轴</strong>，确认数据区域后创建。</p>
+      <p>表格会新建一个时间轴标签页，右侧设置面板里逐项映射：卡片标题、开始日期、结束日期、卡片颜色、分组依据。缩放可在天、周、月、季度、年之间切换，点卡片能跳回源数据那一行。</p>
+      <p>这是获得总览最省事的方式，但它是一个绑定源表的<em>交互式视图</em>，不是能当图片插进幻灯片的图表对象，也没有依赖关系连线和关键路径。</p>
       <h2 id="s3">方法三：条件格式</h2>
-<p>不用图表：按天或按周各建一列，用条件格式在日期落在起止区间内时给单元格上色。结果是一张读起来像甘特图的网格，并且就活在表格里。</p>
-        <p>短周期很实用，超过一个季度就会难以阅读。</p>
-      <h2 id="s4">各自适合什么场景</h2>
-<p>时间轴视图用于快速总览；堆积条形图用于需要对外分发的图表；条件格式用于保持在表格内部的计划。</p>
-      <h2 id="s5">共同的局限</h2>
-<p>三种方法都不理解依赖关系。Google 表格的长处是多人实时协作：如果你需要协作而计划规模不大，它是不错的选择。一旦需要计划自己计算，就该换规划工具了。</p>
+<p>不用图表：顶部横排一行日期，一天一列或一周一列，左边保留任务和起止日期，选中整片网格后走<strong>格式 › 条件格式 › 自定义公式</strong>，写成 <code>=AND(D$1&gt;=$B2, D$1&lt;=$C2)</code>，再选填充色。日期落在任务区间内的格子就自动上色。</p>
+      <p>结果是一张读起来像甘特图、并且就活在表格里的网格，改日期立刻重绘。三个月以内很实用，超过一个季度列数太多就难以阅读了。</p>
+      <h2 id="s4">让图表更好读</h2>
+<p>几个小调整对三种做法都有效：加一列<strong>阶段</strong>并按它排序，或用时间轴视图的"分组依据"聚合相关任务；加一列完成百分比，在堆积条形图里把工期拆成"已完成"和"剩余"两段；把工期为零的<strong>里程碑</strong>换成对比色。</p>
+      <p>依赖关系是硬边界。Google 表格没有"任务 B 在任务 A 结束后开始"这个概念。可以用公式伪造——开始日期写成前置任务结束日期加一天——但没有可见的箭头，链条一长就很脆。</p>
+      <h2 id="s5">各自适合什么场景</h2>
+<p>时间轴视图用于快速总览和路线图，五分钟就能出结果；堆积条形图用于需要对外分发、插进文档或幻灯片的图表；条件格式用于希望计划始终留在表格里、和其他数据放在一起的场合。想更省事就直接从模板开始：复制一份到自己的云端硬盘，把示例数据覆盖掉即可。</p>
+      <h2 id="s6">共同的局限</h2>
+<p>三种方法都不计算依赖关系，也没有关键路径。任何一项任务延期都不会传导到后续任务，只能手工逐个改日期，而实际上改到第二次就没人继续了。导出也别扭：时间轴视图不是图片，条形图搬进幻灯片时样式经常走样；整表可以用<strong>文件 › 下载 › Microsoft Excel (.xlsx)</strong> 导出。</p>
+      <p>它真正的长处是多人实时协作。一旦需要计划自己会算，就该换工具了——<a href="/zh/app.html">gantts.app</a> 免费、无需注册，连上依赖关系后时间轴自动重排并高亮关键路径，再一键导出 Excel、PowerPoint、PDF 或 PNG。</p>
 
       <div class="callout">原生「时间轴」视图不是甘特图，尽管看起来像。它只呈现时间区间，不理解连线，也没有关键路径。做总览够用；做能自动传递延误的进度计划，不够。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>Google 表格有甘特图功能吗？</summary><p>有内置的「时间轴」视图（插入 → 时间轴）。它显示时间区间，但不支持依赖关系。</p></details>
-        <details><summary>Google 表格怎么做甘特图？</summary><p>最灵活的是堆积条形图，把第一个数据系列设为透明。</p></details>
-        <details><summary>可以多人一起编辑计划吗？</summary><p>可以，这正是它相对 Excel 的最大优势：多人实时编辑同一个文件。</p></details>
+        <details open><summary>Google 表格有内置的甘特图吗？</summary><p>没有一键生成的甘特图类型，但有「时间轴」视图（插入 › 时间轴），能把带起止日期的表格变成时间轴上的卡片。真正的甘特图要用堆积条形图做，两者都不支持依赖关系和关键路径。</p></details>
+        <details><summary>「时间轴」视图和甘特图有什么区别？</summary><p>时间轴是绑定源表的交互式视图，缩放和分组都很方便，但它不是可编辑的图表对象，不能像图片一样插进幻灯片，也不计算依赖关系和关键路径。</p></details>
+        <details><summary>怎么在 Google 表格里加依赖关系？</summary><p>只能用公式手工模拟，比如把开始日期写成前置任务结束日期加一天。表格画不出箭头，也不会在任务延期时自动重排后续日期。</p></details>
+        <details><summary>为什么我的横条从最左边开始？</summary><p>通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为"无"。</p></details>
+        <details><summary>用 Google 表格做甘特图要花钱吗？</summary><p>不用。有 Google 账号就能免费使用表格，三种方法都没有额外成本。gantts.app 同样免费，而且连账号都不需要。</p></details>
+        <details><summary>怎么转成 Excel 或 PowerPoint？</summary><p>整表可以用「文件 › 下载 › Microsoft Excel (.xlsx)」导出，图表可以复制成图片贴进幻灯片。更快的办法是在 gantts.app 里做好后一键导出。</p></details>
       </div>
 
       <aside class="promo">
