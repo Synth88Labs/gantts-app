@@ -25,7 +25,7 @@ const INCLUDE_FILES = [
   '.htaccess',
   '404.html', 'about.html', 'app.html', 'index.html', 'privacy.html', 'templates.html',
   'contact.html', 'terms.html',
-  'robots.txt', 'sitemap.xml', 'site.webmanifest', 'sw.js',
+  'robots.txt', 'sitemap.xml', 'sitemap.xsl', 'site.webmanifest', 'sw.js',
   // Google's favicon crawler and many older clients only ever request
   // the root path, ignoring <link rel="icon">. Rebuild: npm run gen:favicon
   'favicon.ico',
