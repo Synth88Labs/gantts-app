@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关键路径怎么算（CPM） | gantts.app</title>
+  <meta name="description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="关键路径怎么算（CPM） | gantts.app" />
+  <meta property="og:description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/critical-path-method.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="关键路径法：算法、公式与算例" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="关键路径怎么算（CPM） | gantts.app" />
+  <meta name="twitter:description" content="关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法讲清楚：正推求最早时间、逆推求最晚时间、总浮动时间怎么读，并附一个四任务的完整算例。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先正推求最早时间，再逆推求最晚时间。两者相同、即浮动时间为零的任务，构成关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间：最晚开始减最早开始。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径，风险随之显著上升。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html">Português</option><option value="/zh/blog/critical-path-method.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <h1>关键路径法：算法、公式与算例</h1>
+    <p class="lead"><strong>关键路径</strong>是项目中相互依赖的任务里最长的一条链。它的长度就是项目最短可能工期——这条链上每延误一天，完工就晚一天。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">基本想法</a></li>
+        <li><a href="#s2">正推：最早时间</a></li>
+        <li><a href="#s3">逆推：最晚时间</a></li>
+        <li><a href="#s4">浮动时间与关键路径</a></li>
+        <li><a href="#s5">一个四任务算例</a></li>
+        <li><a href="#s6">这在实际中意味着什么</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">基本想法</h2>
+<p>并非每项任务对工期的影响都一样。有些有余量：可以推迟而不影响完工。有些一点余量都没有——这些构成关键路径。</p>
+        <p>这个方法叫关键路径法（Critical Path Method，CPM），源自 1950 年代末。它回答两个问题：项目最少要多久，以及哪些任务绝对不能拖。</p>
+      <h2 id="s2">正推：最早时间</h2>
+<p>从项目开始向前推算。对每项任务：最早开始时间取所有前置任务最早完成时间中的最大值；最早完成时间等于最早开始加工期。</p>
+        <p>正推结束时，就得到了项目的最短可能工期。</p>
+      <h2 id="s3">逆推：最晚时间</h2>
+<p>再从项目结束往回推。最晚完成时间取所有后续任务最晚开始时间中的最小值；最晚开始时间等于最晚完成减工期。</p>
+      <h2 id="s4">浮动时间与关键路径</h2>
+<p>某任务的总浮动时间 = 最晚开始 − 最早开始。浮动时间为零的任务构成关键路径。关键路径至少存在一条，在依赖密集的计划中往往有多条并行。</p>
+      <h2 id="s5">一个四任务算例</h2>
+<p>A 工期 3 天；B 工期 5 天，紧接 A；C 工期 2 天，同样紧接 A；D 工期 4 天，等 B 和 C 都完成。</p>
+        <p><strong>正推：</strong>A 从第 0 天到第 3 天。B 从 3 到 8，C 从 3 到 5。D 要等两者，因此从 8 开始，到 12 结束。项目工期：12 天。</p>
+        <p><strong>逆推：</strong>D 必须在第 8 天开始，所以 B 必须在 8 完成——最晚开始为 3，浮动时间 0。C 也必须在 8 完成，但只需 2 天：最晚开始为 6，而实际最早开始是 3，<em>浮动时间 3 天</em>。</p>
+        <p>关键路径是 A → B → D。C 可以推迟三天而不影响完工。</p>
+      <h2 id="s6">这在实际中意味着什么</h2>
+<p>它告诉你精力花在哪里有效。给 C 加人对工期毫无帮助；在 B 上省下一天，项目就早一天完工。</p>
+        <p>它还提示一个陷阱：如果 C 推迟四天，C 自己就变成关键任务。关键路径不是计划的固有属性，而是某一时刻的快照——只要有变动，它就会转移。</p>
+
+      <div class="callout">关键路径在项目过程中会变。一项有三天浮动时间的任务若延误四天，它自己就成了关键任务。因此关键路径不是开工时算一次，而是每次更新都要重算。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>什么是关键路径？</summary><p>相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间。</p></details>
+        <details><summary>关键路径怎么计算？</summary><p>先正推求最早时间，再逆推求最晚时间。两者相同、即浮动时间为零的任务，构成关键路径。</p></details>
+        <details><summary>什么是总浮动时间？</summary><p>一项任务在不推迟项目完工的前提下可以推迟的时间：最晚开始减最早开始。</p></details>
+        <details><summary>关键路径可能有多条吗？</summary><p>可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径，风险随之显著上升。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/gantt-chart-dependencies.html">四种依赖关系</a></li>
+        <li><a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图</a></li>
+        <li><a href="/zh/blog/gantt-baseline-variance.html">基准与偏差</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

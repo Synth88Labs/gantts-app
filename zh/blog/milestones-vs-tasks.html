@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>里程碑和任务的区别 | gantts.app</title>
+  <meta name="description" content="里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/milestones-vs-tasks.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/milestones-vs-tasks.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="里程碑和任务的区别 | gantts.app" />
+  <meta property="og:description" content="里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/milestones-vs-tasks.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="里程碑与任务：区别在哪里" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="里程碑和任务的区别 | gantts.app" />
+  <meta name="twitter:description" content="里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/milestones-vs-tasks.html#post","headline":"里程碑与任务：区别在哪里","description":"里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。","url":"https://gantts.app/zh/blog/milestones-vs-tasks.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/milestones-vs-tasks.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"里程碑与任务：区别在哪里","item":"https://gantts.app/zh/blog/milestones-vs-tasks.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图里的里程碑是什么？","acceptedAnswer":{"@type":"Answer","text":"一个没有工期的节点，标记有意义的时刻：审批、交付或某个阶段的开始。用菱形而不是横条表示。"}},{"@type":"Question","name":"一个项目该设多少里程碑？","acceptedAnswer":{"@type":"Answer","text":"数月量级的项目设五到十个。设得太多，它们就失去了控制点的作用。"}},{"@type":"Question","name":"里程碑可以有工期吗？","acceptedAnswer":{"@type":"Answer","text":"按定义不可以。如果需要表示一段时间——比如评审窗口——那是任务，可以以一个里程碑收尾。"}},{"@type":"Question","name":"里程碑和阶段有什么区别？","acceptedAnswer":{"@type":"Answer","text":"阶段是归并下属任务并继承其日期的摘要任务；里程碑是没有工期的时点。两者常成对使用：阶段结束，里程碑确认收口。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/milestones-vs-tasks.html">English</option><option value="/es/blog/milestones-vs-tasks.html">Español</option><option value="/fr/blog/milestones-vs-tasks.html">Français</option><option value="/de/blog/milestones-vs-tasks.html">Deutsch</option><option value="/pt/blog/milestones-vs-tasks.html">Português</option><option value="/zh/blog/milestones-vs-tasks.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <h1>里程碑与任务：区别在哪里</h1>
+    <p class="lead"><strong>任务</strong>占用时间，<strong>里程碑</strong>标记时点。技术上的区别只有这一条——但里程碑用错，是让一份计划变得难读最快的方式之一。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">一句话说清区别</a></li>
+        <li><a href="#s2">里程碑真正的用途</a></li>
+        <li><a href="#s3">一个项目该设几个？</a></li>
+        <li><a href="#s4">常见错误</a></li>
+        <li><a href="#s5">第三种类型：摘要任务</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>横条表示工作，菱形表示真正重要的时刻：</p>
+      <svg viewBox="0 0 620 230" width="100%" role="img" aria-label="Legend of Gantt chart symbols: task bar, milestone diamond, summary bar, dependency arrow, progress fill and today line">
+      <rect x="0" y="14" width="120" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="136" y="25" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Task</tspan> — has duration</text>
+
+      <polygon points="52,56 62,66 52,76 42,66" fill="#10b981"/>
+      <text x="136" y="70" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Milestone</tspan> — zero duration, a moment</text>
+
+      <path d="M 0 104 h 120 v 10 l -6 -5 h -108 l -6 5 z" fill="#334155"/>
+      <text x="136" y="114" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Summary / phase</tspan> — rolls up its children</text>
+
+      <path d="M 0 152 C 14 152, 102 152, 116 152" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="116,152 110,148 110,156" fill="#6c4cf1"/>
+      <text x="136" y="157" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Dependency</tspan> — one task constrains another</text>
+
+      <rect x="0" y="188" width="120" height="14" rx="4" fill="#c7bdf9"/>
+      <rect x="0" y="188" width="74" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="136" y="199" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Progress</tspan> — the filled portion is % complete</text>
+
+      <line x1="480" y1="8" x2="480" y2="212" stroke="#ef4444" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <text x="488" y="20" font-size="11" fill="#ef4444" font-family="system-ui,sans-serif" font-weight="700">Today</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">一句话说清区别</h2>
+<p>任务有工期：某天开始，另一天结束。里程碑工期为零，画成菱形。"起草合同"是任务，"合同已签署"是里程碑。</p>
+      <h2 id="s2">里程碑真正的用途</h2>
+<p>有三个。它们是<em>控制点</em>，在这里决定是否继续；它们是<em>面向管理层的语言</em>——委员会从你的计划里记住的是五个日期，不是五十条横条；它们还是<em>顺序闸门</em>：把后续工作挂在里程碑之后，就能防止它在条件达成之前提前启动。</p>
+      <h2 id="s3">一个项目该设几个？</h2>
+<p>足以讲清脉络，又不至于稀释。数月量级的项目，五到十个通常合适。如果每周一个里程碑，计划就变成了日历，菱形也就不再指示任何东西。</p>
+      <h2 id="s4">常见错误</h2>
+<p><strong>披着里程碑外衣的任务。</strong>凡是有工期的，就不是里程碑。</p>
+        <p><strong>没有连线的里程碑。</strong>日历上孤立的一个菱形只是装饰。它的价值来自后续工作依赖于它。</p>
+        <p><strong>没有人做决定的里程碑。</strong>如果到了那一天没有任何审批、签署或验收，那它是一条提醒，不是里程碑。</p>
+      <h2 id="s5">第三种类型：摘要任务</h2>
+<p>除任务和里程碑之外还有摘要任务，也就是阶段。它把下属任务归并起来，自动取最早的开始和最晚的结束。它不能直接编辑——内容移动时它自己跟着动。</p>
+        <p>正是阶段、任务、里程碑这三层结构，让一份大计划仍然可读。</p>
+
+      <div class="callout">里程碑不是"很短的任务"，而是工期为零、代表某个决策或某项条件达成的节点。如果到了那一天没有人需要审批、签署或验收，你标注的是一条提醒，不是里程碑。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>甘特图里的里程碑是什么？</summary><p>一个没有工期的节点，标记有意义的时刻：审批、交付或某个阶段的开始。用菱形而不是横条表示。</p></details>
+        <details><summary>一个项目该设多少里程碑？</summary><p>数月量级的项目设五到十个。设得太多，它们就失去了控制点的作用。</p></details>
+        <details><summary>里程碑可以有工期吗？</summary><p>按定义不可以。如果需要表示一段时间——比如评审窗口——那是任务，可以以一个里程碑收尾。</p></details>
+        <details><summary>里程碑和阶段有什么区别？</summary><p>阶段是归并下属任务并继承其日期的摘要任务；里程碑是没有工期的时点。两者常成对使用：阶段结束，里程碑确认收口。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图</a></li>
+        <li><a href="/zh/blog/gantt-chart-mistakes.html">常见的计划错误</a></li>
+        <li><a href="/zh/blog/gantt-chart-dependencies.html">四种依赖关系</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

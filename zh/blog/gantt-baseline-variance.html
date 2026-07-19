@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>甘特图的基准与偏差 | gantts.app</title>
+  <meta name="description" content="什么是基准计划、如何读进度偏差、什么时候该重设基准，以及哪些指标真正有用。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="甘特图的基准与偏差 | gantts.app" />
+  <meta property="og:description" content="什么是基准计划、如何读进度偏差、什么时候该重设基准，以及哪些指标真正有用。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/gantt-baseline-variance.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="基准与偏差：计划对照现实" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="甘特图的基准与偏差 | gantts.app" />
+  <meta name="twitter:description" content="什么是基准计划、如何读进度偏差、什么时候该重设基准，以及哪些指标真正有用。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-baseline-variance.html#post","headline":"基准与偏差：计划对照现实","description":"什么是基准计划、如何读进度偏差、什么时候该重设基准，以及哪些指标真正有用。","url":"https://gantts.app/zh/blog/gantt-baseline-variance.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"基准与偏差：计划对照现实","item":"https://gantts.app/zh/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是基准计划？","acceptedAnswer":{"@type":"Answer","text":"在计划获批时点被冻结的进度计划，作为此后所有偏差的比较基准。"}},{"@type":"Question","name":"什么时候设置基准？","acceptedAnswer":{"@type":"Answer","text":"获批之后、开工之前。设得更晚就失去意义了。"}},{"@type":"Question","name":"什么时候该重设基准？","acceptedAnswer":{"@type":"Answer","text":"只有在范围、预算或工期发生经审批的变更时——不是每次延误都重设。"}},{"@type":"Question","name":"什么是进度偏差？","acceptedAnswer":{"@type":"Answer","text":"实际日期与计划日期之间的天数差。在关键路径上，它会完整传导到项目完工日期。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-baseline-variance.html">English</option><option value="/es/blog/gantt-baseline-variance.html">Español</option><option value="/fr/blog/gantt-baseline-variance.html">Français</option><option value="/de/blog/gantt-baseline-variance.html">Deutsch</option><option value="/pt/blog/gantt-baseline-variance.html">Português</option><option value="/zh/blog/gantt-baseline-variance.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <h1>基准与偏差：计划对照现实</h1>
+    <p class="lead"><strong>基准</strong>是计划获批那一刻被冻结下来的状态。没有它，后面就无法判断项目是否延误——只能不断得到一个新的完工日期。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">什么是基准</a></li>
+        <li><a href="#s2">什么时候冻结</a></li>
+        <li><a href="#s3">如何读偏差</a></li>
+        <li><a href="#s4">正确衡量进展</a></li>
+        <li><a href="#s5">什么时候重设基准</a></li>
+        <li><a href="#s6">能从中学到什么</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>每项任务两条横条：当初的计划，和今天的实际。</p>
+      <svg viewBox="0 0 620 210" width="100%" role="img" aria-label="Diagram showing baseline bars beneath actual task bars, with the difference marked as schedule variance">
+      <line x1="0" y1="24" x2="470" y2="24" stroke="#cbd5e1" stroke-width="1"/><text x="4" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 1</text><line x1="0" y1="24" x2="0" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="98" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 2</text><line x1="94" y1="24" x2="94" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="192" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 3</text><line x1="188" y1="24" x2="188" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="286" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 4</text><line x1="282" y1="24" x2="282" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="380" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 5</text><line x1="376" y1="24" x2="376" y2="164" stroke="#eef2f7" stroke-width="1"/>
+      <rect x="0" y="34" width="180" height="14" rx="4" fill="#6c4cf1"/>
+      <rect x="0" y="50" width="180" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="196" y="46" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Design — on plan (0d)</text>
+
+      <rect x="96" y="76" width="190" height="14" rx="4" fill="#ea580c"/>
+      <rect x="96" y="92" width="120" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <line x1="216" y1="95" x2="286" y2="95" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="300" y="88" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Build — <tspan fill="#dc2626" font-weight="700">+7d late</tspan></text>
+
+      <rect x="286" y="118" width="96" height="14" rx="4" fill="#0d9488"/>
+      <rect x="310" y="134" width="96" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="396" y="130" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Test — <tspan fill="#157f4a" font-weight="700">2d early</tspan></text>
+
+      <rect x="0" y="168" width="14" height="8" rx="3" fill="#6c4cf1"/>
+      <text x="22" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">actual</text>
+      <rect x="80" y="170" width="14" height="5" rx="2.5" fill="#94a3b8" opacity="0.75"/>
+      <text x="102" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">baseline</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">什么是基准</h2>
+<p>它是获批时点上日期的一份副本。当前计划继续变化，基准保持不动，两者的差就是偏差。</p>
+        <p>没有基准，就不存在"延误"——只有每次都换一个新的完工日期，而没人说得清是怎么走到那一步的。</p>
+      <h2 id="s2">什么时候冻结</h2>
+<p>在获批之后、开工之前。项目已经跑了两周才设的基准，已经什么都量不出来了。</p>
+      <h2 id="s3">如何读偏差</h2>
+<p>进度偏差＝实际完成日期减计划完成日期，以天计。为正表示晚于计划。真正要看的不是单项任务的偏差，而是它是否落在关键路径上——在关键路径上，偏差会完整传导到完工日期；不在的话，可能毫无影响。</p>
+      <h2 id="s4">正确衡量进展</h2>
+<p>完成百分比是出了名的不可靠；"完成 90%"是所有项目里最常见的回答，而且会保持好几周。更可靠的问法是剩余工期：还需要几天？这个数字可以核对。</p>
+      <h2 id="s5">什么时候重设基准</h2>
+<p>只有在范围、预算或工期发生经审批的变更时才重设——不能因为旧计划看起来不好看就重设。每次延误都重设基准的人，最终会得到一个没有偏差、也没有任何信息量的项目。</p>
+        <p>保留历次基准。它们的序列会显示重新规划发生过几次、为什么发生——往往是整个项目里最有价值的信息。</p>
+      <h2 id="s6">能从中学到什么</h2>
+<p>项目收尾后，把基准与实际对照，是下一次估算最好的依据。如果你的任务系统性地比计划多花 30%，那不是接连倒霉，而是一个系数已知的估算偏差。</p>
+
+      <div class="callout">不要因为计划看起来不好看就重设基准。每次延误都跟着调整的基准，会长期显示零偏差，也解释不了任何事——它就不再是度量工具，而成了粉饰。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>什么是基准计划？</summary><p>在计划获批时点被冻结的进度计划，作为此后所有偏差的比较基准。</p></details>
+        <details><summary>什么时候设置基准？</summary><p>获批之后、开工之前。设得更晚就失去意义了。</p></details>
+        <details><summary>什么时候该重设基准？</summary><p>只有在范围、预算或工期发生经审批的变更时——不是每次延误都重设。</p></details>
+        <details><summary>什么是进度偏差？</summary><p>实际日期与计划日期之间的天数差。在关键路径上，它会完整传导到项目完工日期。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/critical-path-method.html">关键路径</a></li>
+        <li><a href="/zh/blog/gantt-chart-mistakes.html">常见的计划错误</a></li>
+        <li><a href="/zh/blog/milestones-vs-tasks.html">里程碑与任务</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

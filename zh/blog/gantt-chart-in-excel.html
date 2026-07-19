@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel 甘特图怎么做 | gantts.app</title>
+  <meta name="description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/gantt-chart-in-excel.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-in-excel.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Excel 甘特图怎么做 | gantts.app" />
+  <meta property="og:description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/gantt-chart-in-excel.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="用 Excel 做甘特图：步骤与局限" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Excel 甘特图怎么做 | gantts.app" />
+  <meta name="twitter:description" content="用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-excel.html#post","headline":"用 Excel 做甘特图：步骤与局限","description":"用 Excel 的堆积条形图做甘特图：分步操作、格式设置，以及这种做法的局限在哪里。","url":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"用 Excel 做甘特图：步骤与局限","item":"https://gantts.app/zh/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Excel 有甘特图类型吗？","acceptedAnswer":{"@type":"Answer","text":"没有。它是用堆积条形图做出来的，把第一个数据系列设置为不可见。"}},{"@type":"Question","name":"Excel 能处理依赖关系吗？","acceptedAnswer":{"@type":"Answer","text":"不能自动处理。每次变动都要手工传递给所有后续任务。"}},{"@type":"Question","name":"Excel 适合多大的计划？","acceptedAnswer":{"@type":"Answer","text":"大约二十项任务以内。再多，维护的投入就明显超过收益。"}},{"@type":"Question","name":"有 Excel 版甘特图模板吗？","acceptedAnswer":{"@type":"Answer","text":"有，我们的模板可下载为 XLSX，辅助列已经建好。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-in-excel.html">English</option><option value="/es/blog/gantt-chart-in-excel.html">Español</option><option value="/fr/blog/gantt-chart-in-excel.html">Français</option><option value="/de/blog/gantt-chart-in-excel.html">Deutsch</option><option value="/pt/blog/gantt-chart-in-excel.html">Português</option><option value="/zh/blog/gantt-chart-in-excel.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <h1>用 Excel 做甘特图：步骤与局限</h1>
+    <p class="lead">Excel 没有"甘特图"这种图表类型。它是用一个技巧拼出来的：<strong>堆积条形图</strong>，把第一个数据系列设成透明。这招管用，十分钟就能完成——但有一条明确的边界。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">准备数据</a></li>
+        <li><a href="#s2">插入堆积条形图</a></li>
+        <li><a href="#s3">把第一个系列设为不可见</a></li>
+        <li><a href="#s4">反转顺序</a></li>
+        <li><a href="#s5">修正日期坐标轴</a></li>
+        <li><a href="#s6">细节调整</a></li>
+        <li><a href="#s7">这种做法的边界</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">准备数据</h2>
+<p>三列就够：任务、开始日期、工期（天）。再加一列辅助列，计算相对项目起点的偏移——即开始日期减去最早的开始日期。</p>
+      <h2 id="s2">插入堆积条形图</h2>
+<p>选中任务、偏移量和工期三列。插入 → 图表 → 条形图 → 堆积条形图。每一行会得到两个系列：偏移量和工期。</p>
+      <h2 id="s3">把第一个系列设为不可见</h2>
+<p>点选偏移量系列，设置填充 → 无填充，边框 → 无线条。剩下的部分看起来就像一条从正确位置开始的甘特图横条。</p>
+      <h2 id="s4">反转顺序</h2>
+<p>Excel 会把第一行画在最下方。设置坐标轴格式 → 勾选"逆序类别"。第一项任务就回到最上面，符合阅读习惯。</p>
+      <h2 id="s5">修正日期坐标轴</h2>
+<p>横轴一开始显示的是数字。把最小值和最大值设为项目起止日期对应的序列值，再把坐标轴格式设为日期。</p>
+      <h2 id="s6">细节调整</h2>
+<p>把分类间距缩到 20% 左右，弱化网格线，用颜色区分阶段。里程碑可以作为额外的数据系列，用菱形标记表示。</p>
+      <h2 id="s7">这种做法的边界</h2>
+<p>Excel 不理解依赖关系。某项任务一旦推迟，后面每个开始日期都得手工改——而实际上改到第二次就没人继续了。</p>
+        <p>同样缺失的还有：关键路径、资源负荷、完成百分比。二十项任务以内，Excel 是合理选择；再多，手工维护的代价就超过它带来的便利——<a href="/zh/app.html">gantts.app</a> 会自动重算，同样不需要安装。</p>
+
+      <div class="callout">真正的差别不在外观，而在是否会计算。Excel 做的甘特图看上去没错，但不会自动更新。只要日期变动——而日期总会变动——计划就退化成一张图画。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>Excel 有甘特图类型吗？</summary><p>没有。它是用堆积条形图做出来的，把第一个数据系列设置为不可见。</p></details>
+        <details><summary>Excel 能处理依赖关系吗？</summary><p>不能自动处理。每次变动都要手工传递给所有后续任务。</p></details>
+        <details><summary>Excel 适合多大的计划？</summary><p>大约二十项任务以内。再多，维护的投入就明显超过收益。</p></details>
+        <details><summary>有 Excel 版甘特图模板吗？</summary><p>有，我们的模板可下载为 XLSX，辅助列已经建好。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/gantt-chart-in-google-sheets.html">Google 表格甘特图</a></li>
+        <li><a href="/zh/blog/gantt-chart-in-powerpoint.html">PPT 甘特图</a></li>
+        <li><a href="/zh/blog/how-to-make-a-gantt-chart.html">甘特图怎么做</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

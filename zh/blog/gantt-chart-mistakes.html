@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>甘特图九个常见错误 | gantts.app</title>
+  <meta name="description" content="甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/gantt-chart-mistakes.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-mistakes.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="甘特图九个常见错误 | gantts.app" />
+  <meta property="og:description" content="甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/gantt-chart-mistakes.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="九个常见的计划错误，以及怎么改" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="甘特图九个常见错误 | gantts.app" />
+  <meta name="twitter:description" content="甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-mistakes.html#post","headline":"九个常见的计划错误，以及怎么改","description":"甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。","url":"https://gantts.app/zh/blog/gantt-chart-mistakes.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-mistakes.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"九个常见的计划错误，以及怎么改","item":"https://gantts.app/zh/blog/gantt-chart-mistakes.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图最常见的错误是什么？","acceptedAnswer":{"@type":"Answer","text":"过度细化。三百行的计划两周之后就不再更新了。"}},{"@type":"Question","name":"应该预留多少浮动时间？","acceptedAnswer":{"@type":"Answer","text":"百分之十到二十，集中在里程碑之前和关键路径末端，而不是分摊到每项任务。"}},{"@type":"Question","name":"为什么我的计划总是对不上？","acceptedAnswer":{"@type":"Answer","text":"通常是因为从期望的完工日期倒推，或者从来没有检查过资源负荷。"}},{"@type":"Question","name":"计划应该多久更新一次？","acceptedAnswer":{"@type":"Answer","text":"每周。频率再低，偏差往往要等到无法挽回时才显现。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-mistakes.html">English</option><option value="/es/blog/gantt-chart-mistakes.html">Español</option><option value="/fr/blog/gantt-chart-mistakes.html">Français</option><option value="/de/blog/gantt-chart-mistakes.html">Deutsch</option><option value="/pt/blog/gantt-chart-mistakes.html">Português</option><option value="/zh/blog/gantt-chart-mistakes.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <h1>九个常见的计划错误，以及怎么改</h1>
+    <p class="lead">多数甘特图不是败在工具上，而是败在九个总是重复的错误上。每一个在认出来之后，几分钟就能改掉。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">1. 过度细化</a></li>
+        <li><a href="#s2">2. 没有依赖关系</a></li>
+        <li><a href="#s3">3. 所有任务都连在一起</a></li>
+        <li><a href="#s4">4. 没有浮动时间</a></li>
+        <li><a href="#s5">5. 忽略资源</a></li>
+        <li><a href="#s6">6. 有工期的里程碑</a></li>
+        <li><a href="#s7">7. 从期望日期倒推</a></li>
+        <li><a href="#s8">8. 从不更新</a></li>
+        <li><a href="#s9">9. 只有一个人知道</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>九个错误，按通常被发现的顺序排列：</p>
+      <svg viewBox="0 0 620 250" width="100%" role="img" aria-label="Comparison of a cluttered over-detailed Gantt chart against a clean phase-level chart">
+      <text x="0" y="12" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">✗ Every task, no structure</text>
+      <rect x="8" y="26" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="19" y="38" width="62" height="7" rx="3" fill="#cbd5e1"/><rect x="30" y="50" width="80" height="7" rx="3" fill="#cbd5e1"/><rect x="41" y="62" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="52" y="74" width="62" height="7" rx="3" fill="#cbd5e1"/><rect x="63" y="86" width="80" height="7" rx="3" fill="#cbd5e1"/><rect x="74" y="98" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="85" y="110" width="62" height="7" rx="3" fill="#cbd5e1"/>
+      <text x="0" y="146" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">40+ rows, no phases, no milestones —</text>
+      <text x="0" y="160" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">unreadable and obsolete within a week.</text>
+
+      <line x1="290" y1="6" x2="290" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+
+      <text x="320" y="12" font-size="12" font-weight="700" fill="#157f4a" font-family="system-ui,sans-serif">✓ Phases, milestones, dependencies</text>
+      <rect x="320" y="26" width="110" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="438" y="37" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Discovery</text>
+      <rect x="346" y="52" width="130" height="14" rx="4" fill="#8b7bf5"/>
+      <text x="484" y="63" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Design</text>
+      <path d="M 430 33 C 444 33, 332 59, 346 59" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="346,59 340,55 340,63" fill="#6c4cf1"/>
+      <polygon points="480,74 488,82 480,90 472,82" fill="#10b981"/>
+      <text x="496" y="86" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Sign-off</text>
+      <rect x="400" y="100" width="150" height="14" rx="4" fill="#ea580c"/>
+      <text x="320" y="122" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Build</text>
+      <rect x="430" y="126" width="90" height="14" rx="4" fill="#0d9488"/>
+      <text x="320" y="148" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Test</text>
+      <text x="320" y="174" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">10 rows. Readable across a room,</text>
+      <text x="320" y="188" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">and cheap enough to keep current.</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">1. 过度细化</h2>
+<p>300 行的计划不会有人维护，而过期的计划比没有计划更危险，因为人们仍然相信它。<strong>改法：</strong>任务不短于一天，也不长于一个月。</p>
+      <h2 id="s2">2. 没有依赖关系</h2>
+<p>没有连线，任何变动都不会自动重算。<strong>改法：</strong>至少把关键路径上的任务连起来，即使不逐一录入其余部分。</p>
+      <h2 id="s3">3. 所有任务都连在一起</h2>
+<p>反过来同样有害：一条连续的链条没有并行度，对任何微小波动都反应过度。<strong>改法：</strong>只连接真正需要等待的任务。</p>
+      <h2 id="s4">4. 没有浮动时间</h2>
+<p>没有浮动时间的计划，假设了一切都不会出问题。<strong>改法：</strong>把浮动时间集中在里程碑之前和关键路径末端，而不是分摊到每项任务——分散之后会在无人察觉中被吃掉。</p>
+      <h2 id="s5">5. 忽略资源</h2>
+<p>计划在纸面上成立，但同一个人被安排在同一周做三项任务。<strong>改法：</strong>日期定下来之后再检查负荷。</p>
+      <h2 id="s6">6. 有工期的里程碑</h2>
+<p>里程碑工期为零。"测试阶段"不是里程碑，"测试通过"才是。<strong>改法：</strong>把里程碑写成结果，而不是活动。</p>
+      <h2 id="s7">7. 从期望日期倒推</h2>
+<p>先定完工日期、再把工期凑合上去，这样的计划说服不了任何人。<strong>改法：</strong>正推计算，把差距摆出来，然后讨论范围或资源。</p>
+      <h2 id="s8">8. 从不更新</h2>
+<p>计划是工具，不是文档。<strong>改法：</strong>每周更新，与基准对照，明确指出偏差。</p>
+      <h2 id="s9">9. 只有一个人知道</h2>
+<p>没有讨论过的计划，只是对未来的一种看法。<strong>改法：</strong>在它生效之前与执行者一起过一遍——通常会找出两三项被遗漏的任务。</p>
+
+      <div class="callout">最常见的两个错误恰好相反：过度细化，和结构不足。前者让计划无法维护，后者让计划毫无用处。对多数项目来说，四到八个阶段、20 到 60 项任务，就能同时避开这两点。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>甘特图最常见的错误是什么？</summary><p>过度细化。三百行的计划两周之后就不再更新了。</p></details>
+        <details><summary>应该预留多少浮动时间？</summary><p>百分之十到二十，集中在里程碑之前和关键路径末端，而不是分摊到每项任务。</p></details>
+        <details><summary>为什么我的计划总是对不上？</summary><p>通常是因为从期望的完工日期倒推，或者从来没有检查过资源负荷。</p></details>
+        <details><summary>计划应该多久更新一次？</summary><p>每周。频率再低，偏差往往要等到无法挽回时才显现。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/how-to-make-a-gantt-chart.html">甘特图怎么做</a></li>
+        <li><a href="/zh/blog/gantt-baseline-variance.html">基准与偏差</a></li>
+        <li><a href="/zh/blog/milestones-vs-tasks.html">里程碑与任务</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>
