@@ -31,7 +31,7 @@
     "gen:assets": "node scripts/gen-assets.js",
     "gen:i18n": "node scripts/gen-i18n.js",
     "gen:sitemap": "node scripts/gen-sitemap.js",
-    "build": "npm run gen:favicon && npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run fix:switchers && npm run gen:sitemap && npm run check",
+    "build": "npm run gen:favicon && npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run fix:switchers && npm run gen:sitemap && npm run analytics && npm run check",
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
@@ -62,7 +62,8 @@
     "check:tpl-i18n": "node scripts/check-template-i18n.js",
     "check:i18n-keys": "node scripts/check-i18n-keys.js",
     "check:depth": "node scripts/check-content-depth.js",
-    "check:svg": "node test/export-svg.test.js"
+    "check:svg": "node test/export-svg.test.js",
+    "analytics": "node scripts/add-analytics.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
