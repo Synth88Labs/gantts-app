@@ -29,6 +29,11 @@
       Model.on('change', () => this.render());
       // The banner disappears the moment the sample becomes their plan.
       Model.on('sampleadopted', () => this.syncSampleNote());
+      /* A share link that will not decode is almost always one that
+         got truncated in transit. Naming that is the difference
+         between blaming the link and blaming the tool. */
+      Model.on('sharefailed', () => this.toast(
+        'That shared link could not be opened — it was probably cut short when it was sent. Ask for the project file instead.'));
       Model.on('select', () => { this.render(); this.refreshDrawer(); });
       Model.on('history', () => this.syncHistoryButtons());
       Model.on('saved', () => this.flashSaved());

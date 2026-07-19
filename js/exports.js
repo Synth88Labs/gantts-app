@@ -6,7 +6,28 @@
   const Exports = {
     run(kind) {
       try {
-        switch (kind) {
+        /* Several of these are async (png, pdf, link). A sync try/catch
+           does not see a rejected promise, so a failure inside them
+           used to surface as an unhandled rejection in the console and
+           nothing at all in the interface — the user clicked Export and
+           watched it do nothing. Route any returned promise through the
+           same reporting path. */
+        const r = this._dispatch(kind);
+        if (r && typeof r.then === 'function') {
+          r.catch((e) => {
+            console.error(e);
+            App.toast('Export failed: ' + (e && e.message ? e.message : e));
+          });
+        }
+        return r;
+      } catch (e) {
+        console.error(e);
+        App.toast('Export failed: ' + e.message);
+      }
+    },
+
+    _dispatch(kind) {
+      switch (kind) {
           case 'save': return this.save();
           case 'png': return this.png();
           case 'pdf': return (window.ExportPdf ? ExportPdf.open() : this.pdf());
@@ -20,10 +41,6 @@
           case 'link': return this.link();
           case 'mermaid': return this.mermaid();
           case 'ics': return this.ics();
-        }
-      } catch (e) {
-        console.error(e);
-        App.toast('Export failed: ' + e.message);
       }
     },
 
@@ -257,13 +274,42 @@
       w.document.close();
     },
 
-    link() {
-      const url = Model.shareLink();
-      navigator.clipboard && navigator.clipboard.writeText(url).then(
-        () => App.toast('Shareable link copied to clipboard'),
-        () => this._showLink(url)
-      );
-      if (!navigator.clipboard) this._showLink(url);
+    async link() {
+      const r = await Model.shareLink();
+
+      /* Over the limit the link will be truncated somewhere between
+         here and the recipient, and they will open a page that does
+         nothing. Say so and offer the file instead, rather than copying
+         something that looks fine and is not. */
+      if (r.tooLong) {
+        App.openModal('This plan is too big for a link', (body) => {
+          body.appendChild(U.el('p', {},
+            `The link would be ${r.length.toLocaleString()} characters. Mail clients, chat apps and `
+            + `some proxies truncate long URLs, so the person you send it to would open an empty editor.`));
+          body.appendChild(U.el('p', { class: 'muted' },
+            'Send them the project file instead — it opens with the Open button and has no size limit.'));
+          const row = U.el('div', { class: 'modal-actions' });
+          row.appendChild(U.el('button', {
+            class: 'btn btn-primary',
+            onclick: () => { App.closeModal(); Exports.run('save'); },
+          }, 'Download the project file'));
+          row.appendChild(U.el('button', {
+            class: 'btn',
+            onclick: () => { App.closeModal(); Exports._showLink(r.url); },
+          }, 'Copy the long link anyway'));
+          body.appendChild(row);
+        });
+        return;
+      }
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(r.url).then(
+          () => App.toast('Shareable link copied — anyone with it can open this plan'),
+          () => this._showLink(r.url)
+        );
+      } else {
+        this._showLink(r.url);
+      }
     },
     _showLink(url) {
       App.openModal('Shareable link', (body) => {

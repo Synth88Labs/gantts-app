@@ -100,7 +100,7 @@
          ordinary project and saves like one. */
       if (!loaded || !loaded.tasks) {
         const hasParam = typeof location !== 'undefined' && /[?&](tpl|csv)=/.test(location.search || '');
-        if (!shared && !hasParam && window.Templates && Templates.sampleTasks) {
+        if (!shared && !hasParam && !this._pendingShare && window.Templates && Templates.sampleTasks) {
           try {
             this.project.name = 'Sample plan';
             this.project.tasks = Templates.sampleTasks();
@@ -112,10 +112,13 @@
 
       this.emit('load', this.project);
 
+      // A compressed share link resolves a tick later and replaces this.
+      if (this._pendingShare) this._readShareLinkAsync();
+
       if (window.Store) {
         Store.onFail((info) => this.emit('savefailed', info));
         Store.init().then(async () => {
-          if (shared) return;                       // a shared link must not be overwritten
+          if (shared || this._pendingShare) return;  // a shared link must not be overwritten
           const id = Store.currentId() || (loaded && loaded.id);
           if (!id) return;
           const durable = await Store.load(id);
@@ -525,13 +528,96 @@
     },
 
     // ---------- share link ----------
-    shareLink() {
-      const payload = { name: this.project.name, settings: this.project.settings, tasks: this.project.tasks };
-      const json = JSON.stringify(payload);
-      const b64 = btoa(unescape(encodeURIComponent(json)));
-      return location.origin + location.pathname + '#p=' + b64;
+    /* ---------------- share by URL ----------------
+
+       The payload lives in the FRAGMENT, never the query string.
+       Fragments are not sent to the server by the browser, so a shared
+       plan is never in anyone's access log — the same discipline
+       Excalidraw uses for its encryption key. Keep it that way.
+
+       Everything below exists because the first version base64'd raw
+       JSON with no compression and no length check. A real plan makes a
+       URL of tens of thousands of characters, and the failure mode is
+       not an error: mail clients and chat apps truncate it, and the
+       recipient opens a link that quietly does nothing. */
+
+    /** Roughly the longest URL that survives being pasted around.
+        Browsers cope with far more, but Outlook, Slack unfurls and
+        older proxies do not, and a truncated link fails silently. */
+    SHARE_LIMIT: 8000,
+
+    _sharePayload() {
+      const st = Object.assign({}, this.project.settings);
+      /* Purely local presentation. Carrying them makes the link longer
+         for no benefit to the person opening it. */
+      delete st.colWidths;
+      delete st.pdf;
+      delete st.gridWidth;
+      return { name: this.project.name, settings: st, tasks: this.project.tasks };
     },
+
+    /** Async because compression is. Resolves { url, length, compressed, tooLong }. */
+    async shareLink() {
+      const json = JSON.stringify(this._sharePayload());
+      const base = location.origin + location.pathname;
+
+      let url = null, compressed = false;
+      if (typeof CompressionStream !== 'undefined') {
+        try {
+          const packed = await this._deflate(json);
+          url = base + '#pz=' + packed;
+          compressed = true;
+        } catch (e) { url = null; }
+      }
+      if (!url) {
+        // Older browsers still get a working link, just a longer one.
+        url = base + '#p=' + btoa(unescape(encodeURIComponent(json)));
+      }
+
+      return { url, length: url.length, compressed, tooLong: url.length > this.SHARE_LIMIT };
+    },
+
+    async _deflate(str) {
+      const cs = new CompressionStream('deflate-raw');
+      const writer = cs.writable.getWriter();
+      writer.write(new TextEncoder().encode(str));
+      writer.close();
+      const buf = await new Response(cs.readable).arrayBuffer();
+      return this._b64url(new Uint8Array(buf));
+    },
+
+    async _inflate(b64) {
+      const bytes = this._unb64url(b64);
+      const ds = new DecompressionStream('deflate-raw');
+      const writer = ds.writable.getWriter();
+      writer.write(bytes);
+      writer.close();
+      const buf = await new Response(ds.readable).arrayBuffer();
+      return new TextDecoder().decode(buf);
+    },
+
+    /* base64url: '+' and '/' are legal in a fragment but get mangled by
+       enough link-rewriters and chat clients to be worth avoiding, and
+       '=' padding invites truncation. */
+    _b64url(bytes) {
+      let bin = '';
+      for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    },
+    _unb64url(s) {
+      const b64 = s.replace(/-/g, '+').replace(/_/g, '/');
+      const bin = atob(b64 + '==='.slice((b64.length + 3) % 4));
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out;
+    },
+    /* Legacy uncompressed links stay synchronous so boot is unchanged
+       for them. Compressed ones cannot be — DecompressionStream is
+       async — so they are handled separately in _readShareLinkAsync and
+       `_pendingShare` tells init() not to seed the sample over the top
+       of a plan that is about to arrive. */
     _readShareLink() {
+      if (/[#&]pz=/.test(location.hash)) { this._pendingShare = true; return null; }
       const m = location.hash.match(/[#&]p=([^&]+)/);
       if (!m) return null;
       try {
@@ -540,6 +626,29 @@
         history.replaceState(null, '', location.pathname);
         return this._migrate(Object.assign(blankProject(), data, { id: U.uid('p') }));
       } catch (e) { return null; }
+    },
+
+    _readShareLinkAsync() {
+      const m = location.hash.match(/[#&]pz=([^&]+)/);
+      if (!m) return;
+      const raw = m[1];
+      history.replaceState(null, '', location.pathname);
+      this._inflate(raw)
+        .then((json) => {
+          const data = JSON.parse(json);
+          this.project = this._migrate(Object.assign(blankProject(), data, { id: U.uid('p') }));
+          this._sample = false;
+          this._undo = []; this._redo = [];
+          this._pendingShare = false;
+          this.emit('load', this.project);
+        })
+        .catch(() => {
+          /* A truncated or corrupted link must say so. Silently showing
+             an empty editor is how the recipient concludes the tool is
+             broken rather than the link. */
+          this._pendingShare = false;
+          this.emit('sharefailed');
+        });
     },
   };
 
