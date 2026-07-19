@@ -77,6 +77,39 @@
       if (shared) loaded = shared;
 
       this.project = loaded && loaded.tasks ? this._migrate(loaded) : blankProject();
+
+      /* FIRST VISIT: show a real plan, not an empty grid.
+
+         An empty canvas is the most common silent drop-off there is —
+         the visitor has to invent a project before the tool shows them
+         anything, and a fair number simply leave. Landing on a small
+         worked example means the first frame already demonstrates
+         bars, a group, a dependency and a milestone, and the first
+         click is an edit rather than a decision.
+
+         Three conditions, all necessary:
+           - nothing stored, so a returning user never sees this
+           - no share link, which is somebody else's plan
+           - no ?tpl= / ?csv= parameter, which is an explicit request
+             for different content and is handled later in features.js
+
+         The sample is NOT persisted (see _persist). If it were, a
+         visitor who opened the tab and did nothing would come back to
+         find a project they never made sitting in their list. The flag
+         clears on the first real edit, at which point it becomes an
+         ordinary project and saves like one. */
+      if (!loaded || !loaded.tasks) {
+        const hasParam = typeof location !== 'undefined' && /[?&](tpl|csv)=/.test(location.search || '');
+        if (!shared && !hasParam && window.Templates && Templates.sampleTasks) {
+          try {
+            this.project.name = 'Sample plan';
+            this.project.tasks = Templates.sampleTasks();
+            this._recalcGroups();
+            this._sample = true;
+          } catch (e) { /* a broken sample must never block boot */ }
+        }
+      }
+
       this.emit('load', this.project);
 
       if (window.Store) {
@@ -92,6 +125,18 @@
           if (durable && durable.tasks && (blankBoot || (durable.updated || 0) > (mine.updated || 0))) {
             this.project = this._migrate(durable);
             this._undo = []; this._redo = [];
+            /* Adopting a real project ends the sample state.
+
+               Missing this was a data-loss bug, not a cosmetic one. A
+               returning visitor boots with no legacy localStorage, so
+               the sample is seeded and `_sample` set; the durable copy
+               then loads over it a moment later. With the flag left
+               standing, `_persist` kept returning early — the user saw
+               their own plan, edited it, and nothing was ever written.
+               The stale banner was the visible half of a silent
+               failure. */
+            this._sample = false;
+            this.emit('sampleadopted');
             this.emit('load', this.project);
           }
           this.emit('storeready', Store.mode());
@@ -132,6 +177,9 @@
        console and returned, so a user past the quota kept editing a plan
        that was no longer being written anywhere. */
     _persist() {
+      /* A sample nobody has touched is not the user's work and must not
+         end up in their project list. */
+      if (this._sample) return;
       this.project.updated = Date.now();
       Store.setCurrentId(this.project.id);
 
@@ -228,7 +276,20 @@
     canUndo() { return this._undo.length > 0; },
     canRedo() { return this._redo.length > 0; },
 
-    _afterChange() { this.save(); this.emit('change', this.project); },
+    _afterChange() {
+      /* The first edit turns the sample into the user's own project.
+         Done here rather than in each mutator because every committed
+         change funnels through this one place.
+
+         Rename it too: leaving it as "Sample plan" means the user's own
+         work sits in their project list under a name they never chose
+         and would reasonably assume is disposable. Only renamed if they
+         have not already titled it themselves. */
+      if (this._sample) {
+        this._sample = false;
+        if (this.project.name === 'Sample plan') this.project.name = 'Untitled Project';
+        this.emit('sampleadopted');
+      } this.save(); this.emit('change', this.project); },
 
     // ---------- task helpers ----------
     tasks() { return this.project.tasks; },

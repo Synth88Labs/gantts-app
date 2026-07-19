@@ -852,3 +852,13 @@ body.presenting .today-line { width: 3px; }
 }
 .data-table tbody th { font-weight: 600; }
 .data-table tbody tr:hover { background: var(--bg-soft, #f8fafc); }
+
+/* ---- first-visit sample banner ---- */
+.sample-note {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 8px 14px;
+  background: linear-gradient(90deg, rgba(108,76,241,.10), rgba(108,76,241,.04));
+  border-bottom: 1px solid var(--border, #e2e8f0);
+  font-size: 13px;
+}
+.sample-note > span { margin-right: auto; }

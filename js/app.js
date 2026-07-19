@@ -27,6 +27,8 @@
         this.render();
       });
       Model.on('change', () => this.render());
+      // The banner disappears the moment the sample becomes their plan.
+      Model.on('sampleadopted', () => this.syncSampleNote());
       Model.on('select', () => { this.render(); this.refreshDrawer(); });
       Model.on('history', () => this.syncHistoryButtons());
       Model.on('saved', () => this.flashSaved());
@@ -48,6 +50,12 @@
       this.renderWorkload();
       this.renderViewNote();
       this.refreshChartSummary();
+      this.syncSampleNote();
+    },
+
+    syncSampleNote() {
+      const n = U.$('#sampleNote');
+      if (n) n.hidden = !Model._sample;
     },
 
     // ---------------- view modes ----------------
@@ -227,6 +235,14 @@
 
       const tvBtn = U.$('#tableViewBtn');
       if (tvBtn) tvBtn.addEventListener('click', () => this.openTableView());
+
+      const sClear = U.$('#sampleClear');
+      if (sClear) sClear.addEventListener('click', () => {
+        Model.newProject('Untitled Project');
+        this.toast('Blank plan ready');
+      });
+      const sTpl = U.$('#sampleTemplates');
+      if (sTpl) sTpl.addEventListener('click', () => this.openTemplates());
 
       const asBtn = U.$('#autoScheduleBtn');
       if (asBtn) asBtn.addEventListener('click', () => this.autoSchedule());

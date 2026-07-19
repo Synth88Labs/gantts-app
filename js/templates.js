@@ -176,6 +176,16 @@
   const Templates = {
     list: TEMPLATES,
 
+    /* The plan a first-time visitor lands on. Reuses the Product Launch
+       starter rather than inventing a second sample to keep in sync —
+       it already has a group, a dependency chain, mixed progress and a
+       milestone, which is exactly the vocabulary the first frame needs
+       to demonstrate. */
+    sampleTasks() {
+      const tpl = TEMPLATES.find(t => t.key === 'product') || TEMPLATES[0];
+      return tpl.make();
+    },
+
     apply(key) {
       const tpl = TEMPLATES.find(t => t.key === key);
       if (!tpl) return;
