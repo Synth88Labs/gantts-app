@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qu’est-ce qu’un diagramme de Gantt ? | gantts.app</title>
+  <meta name="description" content="Ce qu’est un diagramme de Gantt, ses quatre composants, à quoi il sert vraiment et où sont ses limites." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/fr/blog/what-is-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/what-is-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/what-is-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/what-is-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/what-is-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/what-is-a-gantt-chart.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Qu’est-ce qu’un diagramme de Gantt ? | gantts.app" />
+  <meta property="og:description" content="Ce qu’est un diagramme de Gantt, ses quatre composants, à quoi il sert vraiment et où sont ses limites." />
+  <meta property="og:url" content="https://gantts.app/fr/blog/what-is-a-gantt-chart.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Qu’est-ce qu’un diagramme de Gantt ? Structure, usage et limites" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Qu’est-ce qu’un diagramme de Gantt ? | gantts.app" />
+  <meta name="twitter:description" content="Ce qu’est un diagramme de Gantt, ses quatre composants, à quoi il sert vraiment et où sont ses limites." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/what-is-a-gantt-chart.html#post","headline":"Qu’est-ce qu’un diagramme de Gantt ? Structure, usage et limites","description":"Ce qu’est un diagramme de Gantt, ses quatre composants, à quoi il sert vraiment et où sont ses limites.","url":"https://gantts.app/fr/blog/what-is-a-gantt-chart.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/what-is-a-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Qu’est-ce qu’un diagramme de Gantt ? Structure, usage et limites","item":"https://gantts.app/fr/blog/what-is-a-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce qu’un diagramme de Gantt simplement ?","acceptedAnswer":{"@type":"Answer","text":"Un diagramme à barres sur un axe de temps : chaque ligne est une tâche, la longueur de la barre sa durée. Les liens entre barres montrent ce qui attend quoi."}},{"@type":"Question","name":"À quoi sert un diagramme de Gantt ?","acceptedAnswer":{"@type":"Answer","text":"À piloter des projets avec une échéance, plusieurs intervenants et des dépendances : construction, lancements, événements, études, déploiements."}},{"@type":"Question","name":"Quelle différence avec un planning projet ?","acceptedAnswer":{"@type":"Answer","text":"Le planning projet couvre le périmètre, le budget, les risques et les ressources. Le Gantt en est la représentation temporelle — une partie, pas le tout."}},{"@type":"Question","name":"Le diagramme de Gantt est-il dépassé ?","acceptedAnswer":{"@type":"Answer","text":"Pour un projet avec un ordre et une échéance, non. Pour de l’activité continue ou un périmètre ouvert, le Kanban ou un tableau de sprint conviennent mieux."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/fr/app.html">Créer un diagramme</a>
+        <a href="/fr/templates.html">Modèles</a>
+        <a href="/fr/blog/">Guides</a>
+        <a href="/fr/blog/what-is-a-gantt-chart.html">Qu’est-ce qu’un diagramme de Gantt ?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="/blog/what-is-a-gantt-chart.html">English</option><option value="/es/blog/what-is-a-gantt-chart.html">Español</option><option value="/fr/blog/what-is-a-gantt-chart.html" selected>Français</option><option value="/de/blog/what-is-a-gantt-chart.html">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/fr/app.html">Ouvrir l’application</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a></div>
+    <h1>Qu’est-ce qu’un diagramme de Gantt ? Structure, usage et limites</h1>
+    <p class="lead">Un <strong>diagramme de Gantt</strong> est un diagramme à barres qui place les tâches sur un axe temporel : une ligne par tâche, une barre par durée. Il répond à deux questions qu’une liste de tâches ne peut pas traiter — ce qui se déroule en parallèle, et ce qui se décale quand une tâche prend du retard.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>3 min de lecture</span></p>
+    <div class="toc"><strong>Sommaire</strong>
+      <ol>
+        <li><a href="#s1">Les quatre composants</a></li>
+        <li><a href="#s2">Pourquoi l’axe temporel change tout</a></li>
+        <li><a href="#s3">Les liens d’antériorité : la vraie valeur</a></li>
+        <li><a href="#s4">Le chemin critique</a></li>
+        <li><a href="#s5">Quand l’utiliser</a></li>
+        <li><a href="#s6">Où sont ses limites</a></li>
+        <li><a href="#s7">D’où vient le nom</a></li>
+        <li><a href="#s8">Par où commencer</a></li>
+      </ol>
+    </div>
+
+
+
+    <div class="prose">
+      <h2 id="s1">Les quatre composants</h2>
+<p>Les <strong>tâches</strong> représentent le travail et ont une durée. Les <strong>jalons</strong> ont une durée nulle et marquent un instant : une validation, une livraison, une décision. Les <strong>liens d’antériorité</strong> relient les tâches et définissent ce qui attend quoi. Les <strong>tâches récapitulatives</strong> regroupent les tâches en phases et reprennent automatiquement leurs dates.</p>
+        <p>Distinguer proprement ces quatre éléments, c’est déjà l’essentiel d’un plan solide.</p>
+      <h2 id="s2">Pourquoi l’axe temporel change tout</h2>
+<p>Une liste dit <em>quoi</em> faire. Un diagramme de Gantt ajoute <em>quand</em> et <em>dans quel ordre</em>. Devient alors visible ce qu’une liste masque : que trois tâches tombent la même semaine et mobilisent la même personne, ou qu’un retard initial décale la fin de deux semaines.</p>
+      <h2 id="s3">Les liens d’antériorité : la vraie valeur</h2>
+<p>L’utilité d’un diagramme de Gantt tient à ses liens. Sans eux, c’est un tableau colorié : si une tâche glisse, il faut reprendre à la main toutes les suivantes — ce que personne ne fait en pratique.</p>
+        <p>Avec des liens, le plan recalcule seul. Vous déplacez une barre, tout ce qui en dépend suit. C’est la différence entre un plan vivant et un document périmé au bout de trois semaines.</p>
+      <h2 id="s4">Le chemin critique</h2>
+<p>Le chemin critique est la plus longue chaîne de tâches liées. Sa durée détermine celle du projet. Tout retard sur ce chemin décale la fin d’autant ; un retard ailleurs, souvent pas du tout.</p>
+        <p>C’est l’indicateur le plus utile d’un plan : il montre où l’attention produit un effet et où elle n’en produit aucun.</p>
+      <h2 id="s5">Quand l’utiliser</h2>
+<p>Pour tout projet avec une fin, un ordre et plusieurs intervenants : chantiers, lancements produit, événements, déménagements, thèses, déploiements logiciels. Partout où « qu’est-ce qui dépend de quoi » compte plus que « que fais-je ensuite ».</p>
+      <h2 id="s6">Où sont ses limites</h2>
+<p>Pour de l’activité récurrente, le Gantt est le mauvais outil — le Kanban lui convient mieux. Pour une équipe en sprints de deux semaines au périmètre volontairement ouvert, également.</p>
+        <p>Et il devient inutilisable s’il descend trop bas : un plan de 400 lignes n’est plus de la planification, c’est de la comptabilité. Règle simple : aucune tâche sous la journée, aucune au-dessus du mois.</p>
+      <h2 id="s7">D’où vient le nom</h2>
+<p>Du nom de Henry Gantt, qui a popularisé la représentation vers 1910. Une forme voisine avait été développée deux décennies plus tôt par le Polonais Karol Adamiecki, dont les travaux sont restés longtemps ignorés en Occident. La représentation a donc plus d’un siècle — rare pour une méthode qui ne serait qu’une mode.</p>
+      <h2 id="s8">Par où commencer</h2>
+<p>Listez d’abord les tâches, sans dates. Estimez ensuite les durées. Reliez après coup ce qui attend réellement — pas ce qui se suit par hasard dans le calendrier. Posez enfin cinq à dix jalons. Les dates découlent de ces trois étapes.</p>
+
+      <div class="callout">Un diagramme de Gantt sans liens d’antériorité n’est qu’un tableau en couleurs. Tout son intérêt vient de ce que le plan recalcule lui-même quand quelque chose bouge — et dans un vrai projet, quelque chose bouge toujours.</div>
+
+      <h2 id="faq">Questions fréquentes</h2>
+      <div class="faq">
+        <details open><summary>Qu’est-ce qu’un diagramme de Gantt simplement ?</summary><p>Un diagramme à barres sur un axe de temps : chaque ligne est une tâche, la longueur de la barre sa durée. Les liens entre barres montrent ce qui attend quoi.</p></details>
+        <details><summary>À quoi sert un diagramme de Gantt ?</summary><p>À piloter des projets avec une échéance, plusieurs intervenants et des dépendances : construction, lancements, événements, études, déploiements.</p></details>
+        <details><summary>Quelle différence avec un planning projet ?</summary><p>Le planning projet couvre le périmètre, le budget, les risques et les ressources. Le Gantt en est la représentation temporelle — une partie, pas le tout.</p></details>
+        <details><summary>Le diagramme de Gantt est-il dépassé ?</summary><p>Pour un projet avec un ordre et une échéance, non. Pour de l’activité continue ou un périmètre ouvert, le Kanban ou un tableau de sprint conviennent mieux.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicité</span>
+          <h3>Modèles de Gantt pour Excel</h3>
+          <p>ExcelGuru.io propose une bibliothèque gratuite de feuilles de calcul Gantt prêtes à l’emploi, formules déjà en place.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Voir les modèles →</a>
+      </aside>
+
+      <h2 id="related">À lire aussi</h2>
+      <ul>
+        <li><a href="/fr/blog/how-to-make-a-gantt-chart.html">Faire un diagramme de Gantt</a></li>
+        <li><a href="/fr/blog/critical-path-method.html">Le chemin critique</a></li>
+        <li><a href="/fr/blog/gantt-chart-dependencies.html">Les quatre types de liens</a></li>
+        <li><a href="/fr/blog/">Retour aux guides</a></li>
+      </ul>
+      <p class="crumbs"><small>Cet article est également disponible en anglais.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Créez votre diagramme de Gantt — gratuitement</h2>
+      <p>Dans le navigateur, sans inscription. Vos données restent sur votre appareil.</p>
+      <a class="btn btn-white btn-lg" href="/fr/app.html">Ouvrir l’outil</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Créateur de diagrammes de Gantt gratuit. Sans compte ni téléversement : vos données restent dans votre navigateur.</p>
+          <a class="footer-cta" href="/fr/app.html">Ouvrir l’application →</a>
+          <p class="footer-byline">Un projet de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modèles</h4>
+          <a href="/fr/templates.html">Tous les modèles</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">BTP</a>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/fr/blog/">Tous les guides</a>
+          <a href="/fr/blog/what-is-a-gantt-chart.html">Qu’est-ce qu’un diagramme de Gantt ?</a>
+          <a href="/fr/blog/critical-path-method.html">Méthode du chemin critique</a>
+        </div>
+        <div>
+          <h4>Entreprise</h4>
+          <a href="/fr/about.html">À propos</a>
+          <a href="/fr/contact.html">Contact</a>
+          <a href="/fr/terms.html">Conditions d’utilisation</a>
+          <a href="/fr/privacy.html">Confidentialité</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Tous droits réservés.</span>
+        <span>Site statique : rien de ce que vous planifiez ne quitte votre navigateur.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

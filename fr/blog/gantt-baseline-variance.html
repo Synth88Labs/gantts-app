@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Référence et écarts dans un Gantt | gantts.app</title>
+  <meta name="description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-baseline-variance.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Référence et écarts dans un Gantt | gantts.app" />
+  <meta property="og:description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta property="og:url" content="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Référence et écarts : le plan face au réel" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Référence et écarts dans un Gantt | gantts.app" />
+  <meta name="twitter:description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/gantt-baseline-variance.html#post","headline":"Référence et écarts : le plan face au réel","description":"Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment.","url":"https://gantts.app/fr/blog/gantt-baseline-variance.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Référence et écarts : le plan face au réel","item":"https://gantts.app/fr/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce qu’une référence de planning ?","acceptedAnswer":{"@type":"Answer","text":"Le planning figé au moment de la validation. Il sert de repère pour tous les écarts constatés ensuite."}},{"@type":"Question","name":"Quand poser la référence ?","acceptedAnswer":{"@type":"Answer","text":"Après validation et avant le début des travaux. Posée plus tard, elle perd sa valeur."}},{"@type":"Question","name":"Quand refaire la référence ?","acceptedAnswer":{"@type":"Answer","text":"Seulement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas à chaque retard."}},{"@type":"Question","name":"Qu’est-ce que l’écart de délai ?","acceptedAnswer":{"@type":"Answer","text":"La différence en jours entre date réelle et date planifiée. Sur le chemin critique, elle se répercute intégralement sur la fin du projet."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/fr/app.html">Créer un diagramme</a>
+        <a href="/fr/templates.html">Modèles</a>
+        <a href="/fr/blog/">Guides</a>
+        <a href="/fr/blog/what-is-a-gantt-chart.html">Qu’est-ce qu’un diagramme de Gantt ?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-baseline-variance.html">English</option><option value="/es/blog/gantt-baseline-variance.html">Español</option><option value="/fr/blog/gantt-baseline-variance.html" selected>Français</option><option value="/de/blog/gantt-baseline-variance.html">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/fr/app.html">Ouvrir l’application</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a></div>
+    <h1>Référence et écarts : le plan face au réel</h1>
+    <p class="lead">La <strong>référence</strong> est l’état figé de votre planning au moment de sa validation. Sans elle, impossible de dire plus tard si un projet est en retard — seulement quand il devrait finir.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>3 min de lecture</span></p>
+    <div class="toc"><strong>Sommaire</strong>
+      <ol>
+        <li><a href="#s1">Ce qu’est une référence</a></li>
+        <li><a href="#s2">Quand la figer</a></li>
+        <li><a href="#s3">Lire les écarts</a></li>
+        <li><a href="#s4">Mesurer l’avancement correctement</a></li>
+        <li><a href="#s5">Quand refaire la référence</a></li>
+        <li><a href="#s6">Ce qu’on en apprend</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <p>Deux barres par tâche : le plan d’alors, l’état d’aujourd’hui.</p>
+      <svg viewBox="0 0 620 210" width="100%" role="img" aria-label="Diagram showing baseline bars beneath actual task bars, with the difference marked as schedule variance">
+      <line x1="0" y1="24" x2="470" y2="24" stroke="#cbd5e1" stroke-width="1"/><text x="4" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 1</text><line x1="0" y1="24" x2="0" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="98" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 2</text><line x1="94" y1="24" x2="94" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="192" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 3</text><line x1="188" y1="24" x2="188" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="286" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 4</text><line x1="282" y1="24" x2="282" y2="164" stroke="#eef2f7" stroke-width="1"/><text x="380" y="18" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Week 5</text><line x1="376" y1="24" x2="376" y2="164" stroke="#eef2f7" stroke-width="1"/>
+      <rect x="0" y="34" width="180" height="14" rx="4" fill="#6c4cf1"/>
+      <rect x="0" y="50" width="180" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="196" y="46" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Design — on plan (0d)</text>
+
+      <rect x="96" y="76" width="190" height="14" rx="4" fill="#ea580c"/>
+      <rect x="96" y="92" width="120" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <line x1="216" y1="95" x2="286" y2="95" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="3 3"/>
+      <text x="300" y="88" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Build — <tspan fill="#dc2626" font-weight="700">+7d late</tspan></text>
+
+      <rect x="286" y="118" width="96" height="14" rx="4" fill="#0d9488"/>
+      <rect x="310" y="134" width="96" height="6" rx="3" fill="#94a3b8" opacity="0.75"/>
+      <text x="396" y="130" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">Test — <tspan fill="#157f4a" font-weight="700">2d early</tspan></text>
+
+      <rect x="0" y="168" width="14" height="8" rx="3" fill="#6c4cf1"/>
+      <text x="22" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">actual</text>
+      <rect x="80" y="170" width="14" height="5" rx="2.5" fill="#94a3b8" opacity="0.75"/>
+      <text x="102" y="176" font-size="11" fill="#94a3b8" font-family="system-ui,sans-serif">baseline</text>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">Ce qu’est une référence</h2>
+<p>Une copie des dates au moment de la validation. Le planning courant continue d’évoluer, la référence reste fixe. La différence entre les deux est l’écart.</p>
+        <p>Sans référence, il n’y a pas de retard — il n’y a qu’une nouvelle date de fin à chaque fois, sans que personne ne puisse expliquer comment on y est arrivé.</p>
+      <h2 id="s2">Quand la figer</h2>
+<p>Après la validation et avant le démarrage des travaux. Une référence posée alors que le projet tourne depuis deux semaines ne mesure plus rien.</p>
+      <h2 id="s3">Lire les écarts</h2>
+<p>L’écart de délai vaut fin réelle moins fin planifiée, en jours. Positif signifie plus tard que prévu. L’important n’est pas l’écart d’une tâche isolée, mais s’il se situe sur le chemin critique — là, il se répercute intégralement sur la fin ; ailleurs, parfois pas du tout.</p>
+      <h2 id="s4">Mesurer l’avancement correctement</h2>
+<p>Les pourcentages d’avancement sont notoirement peu fiables ; « 90 % fait » est la réponse la plus fréquente de tous les projets, et elle le reste des semaines. Plus solide : demander la durée restante. Combien de jours vous faut-il encore ? Ce chiffre-là se vérifie.</p>
+      <h2 id="s5">Quand refaire la référence</h2>
+<p>Uniquement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas parce que l’ancien plan est désagréable à regarder. Qui refait la référence à chaque retard obtient un projet sans écarts et sans aucune information.</p>
+        <p>Conservez les références successives. Leur suite montre combien de fois et pour quelles raisons le plan a été refait — souvent l’information la plus instructive du projet.</p>
+      <h2 id="s6">Ce qu’on en apprend</h2>
+<p>Après la clôture, la comparaison entre référence et réel est la meilleure base disponible pour la prochaine estimation. Si vos tâches durent systématiquement 30 % de plus que prévu, ce n’est pas une série de malchances, c’est un biais d’estimation dont vous connaissez désormais le facteur.</p>
+
+      <div class="callout">Ne refaites pas la référence parce que le plan a mauvaise mine. Une référence réalignée à chaque retard affiche durablement zéro écart et n’explique plus rien : ce n’est plus un instrument de mesure, c’est un maquillage.</div>
+
+      <h2 id="faq">Questions fréquentes</h2>
+      <div class="faq">
+        <details open><summary>Qu’est-ce qu’une référence de planning ?</summary><p>Le planning figé au moment de la validation. Il sert de repère pour tous les écarts constatés ensuite.</p></details>
+        <details><summary>Quand poser la référence ?</summary><p>Après validation et avant le début des travaux. Posée plus tard, elle perd sa valeur.</p></details>
+        <details><summary>Quand refaire la référence ?</summary><p>Seulement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas à chaque retard.</p></details>
+        <details><summary>Qu’est-ce que l’écart de délai ?</summary><p>La différence en jours entre date réelle et date planifiée. Sur le chemin critique, elle se répercute intégralement sur la fin du projet.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicité</span>
+          <h3>Modèles de Gantt pour Excel</h3>
+          <p>ExcelGuru.io propose une bibliothèque gratuite de feuilles de calcul Gantt prêtes à l’emploi, formules déjà en place.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Voir les modèles →</a>
+      </aside>
+
+      <h2 id="related">À lire aussi</h2>
+      <ul>
+        <li><a href="/fr/blog/critical-path-method.html">Le chemin critique</a></li>
+        <li><a href="/fr/blog/gantt-chart-mistakes.html">Les erreurs fréquentes</a></li>
+        <li><a href="/fr/blog/milestones-vs-tasks.html">Jalons et tâches</a></li>
+        <li><a href="/fr/blog/">Retour aux guides</a></li>
+      </ul>
+      <p class="crumbs"><small>Cet article est également disponible en anglais.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Créez votre diagramme de Gantt — gratuitement</h2>
+      <p>Dans le navigateur, sans inscription. Vos données restent sur votre appareil.</p>
+      <a class="btn btn-white btn-lg" href="/fr/app.html">Ouvrir l’outil</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/fr/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Créateur de diagrammes de Gantt gratuit. Sans compte ni téléversement : vos données restent dans votre navigateur.</p>
+          <a class="footer-cta" href="/fr/app.html">Ouvrir l’application →</a>
+          <p class="footer-byline">Un projet de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modèles</h4>
+          <a href="/fr/templates.html">Tous les modèles</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">BTP</a>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/fr/blog/">Tous les guides</a>
+          <a href="/fr/blog/what-is-a-gantt-chart.html">Qu’est-ce qu’un diagramme de Gantt ?</a>
+          <a href="/fr/blog/critical-path-method.html">Méthode du chemin critique</a>
+        </div>
+        <div>
+          <h4>Entreprise</h4>
+          <a href="/fr/about.html">À propos</a>
+          <a href="/fr/contact.html">Contact</a>
+          <a href="/fr/terms.html">Conditions d’utilisation</a>
+          <a href="/fr/privacy.html">Confidentialité</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Tous droits réservés.</span>
+        <span>Site statique : rien de ce que vous planifiez ne quitte votre navigateur.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

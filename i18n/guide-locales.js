@@ -12,14 +12,15 @@
    ============================================================ */
 const es = require('./guides-es.js');
 const de = require('./guides-de.js');
+const fr = require('./guides-fr.js');
 
-const BY_LOCALE = { es: es.G, de: de.G };
+const BY_LOCALE = { es: es.G, de: de.G, fr: fr.G };
 /* Each locale supplies its OWN chrome. Writing `de: de.UI || es.UI` here
    would silently render German articles under Spanish headings the moment
    a UI key were missing — the exact bug that was caught in
    template-locales.js. No fallback: a missing UI block should break the
    build, not ship a bilingual page. */
-const UI = { es: es.UI, de: de.UI };
+const UI = { es: es.UI, de: de.UI, fr: fr.UI };
 
 /** Locale codes with a real translation of this guide. */
 function localesFor(slug) {
