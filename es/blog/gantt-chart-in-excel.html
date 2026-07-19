@@ -90,9 +90,13 @@
       <h2 id="s2">Paso 1: tabla con tarea, inicio, fin y duración</h2>
 <p>Cuatro columnas: nombre de la tarea, fecha de inicio, fecha de fin y duración calculada como <code>=fin − inicio</code>. Mantén las fechas como fechas reales, no como texto, o el gráfico no las situará bien.</p>
       <h2 id="s3">Paso 2: insertar un gráfico de barras apiladas</h2>
-<p>Selecciona tarea e inicio, inserta un gráfico de barras apiladas y añade después la serie de duración. Excel casi siempre coloca las series en el orden equivocado la primera vez; se corrige en «Seleccionar datos».</p>
+<p>Selecciona la columna de tareas y la de inicio, y ve a <strong>Insertar → Gráfico de barras → Barra apilada</strong>. Después añade la serie de duración con clic derecho → <em>Seleccionar datos → Agregar</em>, poniendo la columna de duración como valores.</p>
+        <p>Excel casi siempre coloca las series en el orden equivocado la primera vez: la duración debe ir <em>después</em> del inicio en la lista de series, no antes. Se reordena con las flechas de esa misma ventana.</p>
+        <p>Si las tareas aparecen como números en lugar de nombres, es que Excel ha interpretado la columna de tareas como una serie más; quítala de «Entradas de leyenda» y añádela en «Etiquetas del eje horizontal».</p>
       <h2 id="s4">Paso 3: dejar la serie de inicio sin relleno</h2>
-<p>Haz clic sobre las barras de inicio, y en formato de serie elige «Sin relleno». Ahí aparece el Gantt: las duraciones quedan flotando en la posición correcta.</p>
+<p>Haz clic sobre cualquiera de las barras de inicio para seleccionar toda la serie, abre <em>Formato de serie de datos</em> y en Relleno elige <strong>Sin relleno</strong>. Quita también el borde, o quedará un rectángulo fantasma.</p>
+        <p>Ahí aparece el Gantt: las barras de duración quedan flotando exactamente donde empieza cada tarea, porque la barra invisible de debajo las empuja hasta su fecha.</p>
+        <p>Este es el truco entero. Todo lo demás —colores, orden, formato del eje— es acabado.</p>
       <h2 id="s5">Paso 4: invertir el orden de las tareas</h2>
 <p>Excel dibuja la primera tarea abajo. En el formato del eje vertical, activa «Categorías en orden inverso» para que el plan se lea de arriba abajo como es habitual.</p>
       <h2 id="s6">Paso 5: formatear fechas y colores</h2>

@@ -84,11 +84,15 @@
 
     <div class="prose">
       <h2 id="s1">Método 1: la función Cronograma (Insertar → Cronograma)</h2>
-<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos: seleccionas el rango, insertas el cronograma y eliges qué columnas son inicio, fin y título.</p>
-        <p>A cambio, el control visual es limitado y no hay dependencias ni ruta crítica.</p>
+<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos.</p>
+        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Sheets abre un panel donde asignas qué columna es cada cosa; si tus encabezados son claros, suele acertar solo.</p>
+        <p>Desde ese panel puedes agrupar por una columna adicional —responsable, fase, cliente— y elegir qué campo se muestra sobre cada barra. El zoom se ajusta con el control de la esquina superior derecha, de días a trimestres.</p>
+        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, y sobre todo no hay dependencias ni ruta crítica. La vista es un reflejo de los datos, no un modelo del calendario.</p>
       <h2 id="s2">Método 2: gráfico de barras apiladas</h2>
-<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible. Da más control sobre colores y ejes, a cambio de bastante más configuración manual.</p>
-        <p>Recuerda invertir el orden del eje de categorías para que la primera tarea salga arriba.</p>
+<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible.</p>
+        <p>Monta cuatro columnas —tarea, inicio, fin y duración calculada como <code>=fin−inicio</code>— y selecciona tarea, inicio y duración. En <strong>Insertar → Gráfico</strong>, elige «Barras apiladas» en el selector de tipo. Sheets suele ordenar las series al revés la primera vez; se corrige en la pestaña Configuración del editor de gráficos.</p>
+        <p>Después, en Personalizar → Series, selecciona la serie de inicio y ponle <em>Ninguno</em> como color de relleno. Ahí aparece el Gantt. Por último, en Personalizar → Eje vertical, marca «Orden inverso» para que la primera tarea quede arriba, que es como se lee un plan.</p>
+        <p>Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración y de tener que repetirla si rehaces la hoja.</p>
       <h2 id="s3">Método 3: usar una plantilla</h2>
 <p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>
       <h2 id="s4">Personalizar la vista y añadir dependencias</h2>

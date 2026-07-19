@@ -88,6 +88,10 @@ const G = {
     lead: 'Hacer un <strong>diagrama de Gantt</strong> no consiste en dibujar barras: consiste en decidir el orden del trabajo y comprobar si las fechas se sostienen. Estos siete pasos son el orden que funciona, y explican por qué cada uno va donde va.',
     figIntro: 'El recorrido completo, del listado de tareas al gráfico publicado:',
     sections: [
+      ['Lo que necesitas antes de empezar',
+        `<p>Tres cosas, y ninguna es software. La <strong>lista de tareas</strong>, aunque esté desordenada. Una <strong>duración estimada</strong> para cada una. Y saber <strong>qué depende de qué</strong>.</p>
+        <p>Si tienes esas tres, el gráfico sale en veinte minutos. Si no las tienes, ninguna herramienta te va a salvar: estarás dibujando barras bonitas sobre un plan que no existe.</p>
+        <p>Lo que <em>no</em> necesitas al empezar son fechas. Salen solas al enlazar las dependencias, y fijarlas antes es la forma más rápida de construir un calendario que habrá que rehacer.</p>`],
       ['1. Lista el trabajo antes de pensar en fechas',
         `<p>Escribe todas las tareas sin preocuparte del calendario. Mezclar «qué hay que hacer» con «cuándo» es lo que produce planes optimistas: en cuanto ves una fecha, empiezas a ajustar el alcance para que quepa.</p>
         <p>Agrupa después en fases. Una fase con quince tareas dentro se lee mejor que un listado plano de cuarenta.</p>`],
@@ -105,6 +109,16 @@ const G = {
         `<p>Pon un nombre en cada tarea y mira dónde se apilan. Un plan que parece impecable en el gráfico puede tener a la misma persona en cuatro tareas simultáneas en marzo. Ese solapamiento es invisible en las barras y evidente en una vista de carga.</p>`],
       ['7. Fija línea base y publica',
         `<p>Cuando el plan esté acordado, guarda una línea base: la foto congelada contra la que medirás la desviación. A partir de ahí, exporta a PDF o PowerPoint para compartirlo, y actualiza el porcentaje completado en lugar de redibujar.</p>`],
+      ['Errores que conviene evitar',
+        `<p><strong>Demasiado detalle.</strong> Si una tarea dura menos de un día, pertenece a la lista de alguien, no al plan del proyecto. Doscientas filas no se mantienen: se abandonan.</p>
+        <p><strong>Fechas escritas a mano en lugar de dependencias.</strong> Funciona hasta el primer cambio, y a partir de ahí cada movimiento obliga a reajustar tres tareas más.</p>
+        <p><strong>Cero holgura.</strong> Si todas las tareas son críticas, cualquier imprevisto mueve la entrega. Un plan sin margen no es ambicioso: es frágil.</p>
+        <p><strong>Tareas sin responsable.</strong> Una fila sin nombre al lado es una fila que nadie va a actualizar.</p>
+        <p>Hay una lista más larga en <a href="/es/blog/gantt-chart-mistakes.html">nueve errores habituales</a>, cada uno con su corrección.</p>`],
+      ['Hazlo gratis online',
+        `<p>No necesitas instalar nada ni crear una cuenta. Abre el <a href="/es/app.html">editor de gantts.app</a>, escribe o pega tus tareas, arrastra las barras y conecta las dependencias: la ruta crítica aparece sola.</p>
+        <p>Cuando esté listo, expórtalo a PDF, PNG, Excel o PowerPoint, o comparte el enlace. Sin marca de agua, sin límite de tareas y sin que el plan salga de tu navegador.</p>
+        <p>Si prefieres no partir de cero, hay más de cuarenta <a href="/es/templates.html">plantillas</a> con las fases ya colocadas.</p>`],
     ],
     callout: 'Ordena las tareas antes de fechar. Es tentador empezar arrastrando barras hasta que el gráfico «se ve bien», pero eso produce un calendario que solo se sostiene mientras nadie lo toque. Con dependencias, el plan se recalcula solo y la fecha de fin deja de ser una opinión.',
     faq: [
@@ -260,9 +274,13 @@ const G = {
       ['Paso 1: tabla con tarea, inicio, fin y duración',
         `<p>Cuatro columnas: nombre de la tarea, fecha de inicio, fecha de fin y duración calculada como <code>=fin − inicio</code>. Mantén las fechas como fechas reales, no como texto, o el gráfico no las situará bien.</p>`],
       ['Paso 2: insertar un gráfico de barras apiladas',
-        `<p>Selecciona tarea e inicio, inserta un gráfico de barras apiladas y añade después la serie de duración. Excel casi siempre coloca las series en el orden equivocado la primera vez; se corrige en «Seleccionar datos».</p>`],
+        `<p>Selecciona la columna de tareas y la de inicio, y ve a <strong>Insertar → Gráfico de barras → Barra apilada</strong>. Después añade la serie de duración con clic derecho → <em>Seleccionar datos → Agregar</em>, poniendo la columna de duración como valores.</p>
+        <p>Excel casi siempre coloca las series en el orden equivocado la primera vez: la duración debe ir <em>después</em> del inicio en la lista de series, no antes. Se reordena con las flechas de esa misma ventana.</p>
+        <p>Si las tareas aparecen como números en lugar de nombres, es que Excel ha interpretado la columna de tareas como una serie más; quítala de «Entradas de leyenda» y añádela en «Etiquetas del eje horizontal».</p>`],
       ['Paso 3: dejar la serie de inicio sin relleno',
-        `<p>Haz clic sobre las barras de inicio, y en formato de serie elige «Sin relleno». Ahí aparece el Gantt: las duraciones quedan flotando en la posición correcta.</p>`],
+        `<p>Haz clic sobre cualquiera de las barras de inicio para seleccionar toda la serie, abre <em>Formato de serie de datos</em> y en Relleno elige <strong>Sin relleno</strong>. Quita también el borde, o quedará un rectángulo fantasma.</p>
+        <p>Ahí aparece el Gantt: las barras de duración quedan flotando exactamente donde empieza cada tarea, porque la barra invisible de debajo las empuja hasta su fecha.</p>
+        <p>Este es el truco entero. Todo lo demás —colores, orden, formato del eje— es acabado.</p>`],
       ['Paso 4: invertir el orden de las tareas',
         `<p>Excel dibuja la primera tarea abajo. En el formato del eje vertical, activa «Categorías en orden inverso» para que el plan se lea de arriba abajo como es habitual.</p>`],
       ['Paso 5: formatear fechas y colores',
@@ -293,11 +311,15 @@ const G = {
     figIntro: 'Los tres caminos, de menos a más control:',
     sections: [
       ['Método 1: la función Cronograma (Insertar → Cronograma)',
-        `<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos: seleccionas el rango, insertas el cronograma y eliges qué columnas son inicio, fin y título.</p>
-        <p>A cambio, el control visual es limitado y no hay dependencias ni ruta crítica.</p>`],
+        `<p>Sheets incorpora una vista de cronograma que toma una tabla con fechas y la representa como barras sobre una línea de tiempo. Es la vía más rápida y no requiere trucos.</p>
+        <p>Prepara una hoja con al menos tres columnas: título de la tarea, fecha de inicio y fecha de fin. Selecciona el rango completo, incluida la fila de encabezados, y ve a <strong>Insertar → Cronograma</strong>. Sheets abre un panel donde asignas qué columna es cada cosa; si tus encabezados son claros, suele acertar solo.</p>
+        <p>Desde ese panel puedes agrupar por una columna adicional —responsable, fase, cliente— y elegir qué campo se muestra sobre cada barra. El zoom se ajusta con el control de la esquina superior derecha, de días a trimestres.</p>
+        <p>A cambio de esa rapidez: el control visual es limitado, no puedes cambiar colores tarea por tarea, y sobre todo no hay dependencias ni ruta crítica. La vista es un reflejo de los datos, no un modelo del calendario.</p>`],
       ['Método 2: gráfico de barras apiladas',
-        `<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible. Da más control sobre colores y ejes, a cambio de bastante más configuración manual.</p>
-        <p>Recuerda invertir el orden del eje de categorías para que la primera tarea salga arriba.</p>`],
+        `<p>El mismo principio que en Excel: una serie con la fecha de inicio, otra con la duración, y la primera sin relleno para que quede invisible.</p>
+        <p>Monta cuatro columnas —tarea, inicio, fin y duración calculada como <code>=fin−inicio</code>— y selecciona tarea, inicio y duración. En <strong>Insertar → Gráfico</strong>, elige «Barras apiladas» en el selector de tipo. Sheets suele ordenar las series al revés la primera vez; se corrige en la pestaña Configuración del editor de gráficos.</p>
+        <p>Después, en Personalizar → Series, selecciona la serie de inicio y ponle <em>Ninguno</em> como color de relleno. Ahí aparece el Gantt. Por último, en Personalizar → Eje vertical, marca «Orden inverso» para que la primera tarea quede arriba, que es como se lee un plan.</p>
+        <p>Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración y de tener que repetirla si rehaces la hoja.</p>`],
       ['Método 3: usar una plantilla',
         `<p>Si el objetivo es tener el gráfico hoy, empezar de una plantilla evita todo lo anterior. Descarga un CSV con las tareas ya estructuradas y ábrelo en Sheets, o edítalo online y expórtalo cuando esté listo.</p>`],
       ['Personalizar la vista y añadir dependencias',
@@ -331,7 +353,10 @@ const G = {
         `<p>La primera es insertar un gráfico de barras apiladas y ocultar la serie de inicio, igual que en Excel. La segunda es dibujar rectángulos a mano. La primera mantiene los datos; la segunda da control total sobre el aspecto.</p>
         <p>Para una diapositiva de dirección, la segunda suele ganar. Para algo que vas a actualizar cada mes, la primera.</p>`],
       ['Método 1: gráfico de barras apiladas, paso a paso',
-        `<p>Insertar → Gráfico → Barra apilada. En la hoja de datos que abre PowerPoint, pon tarea, inicio y duración. Deja la serie de inicio sin relleno, invierte el orden de las categorías y ajusta el eje de fechas.</p>`],
+        `<p><strong>Insertar → Gráfico → Barra apilada.</strong> PowerPoint abre una miniatura de Excel con datos de ejemplo: sustitúyelos por tres columnas —tarea, fecha de inicio y duración en días— y cierra la ventana.</p>
+        <p>Haz clic sobre las barras de inicio (las de abajo en cada pila) y en <em>Formato de serie de datos → Relleno</em> elige <strong>Sin relleno</strong>. Las barras de duración quedan flotando en la posición correcta: eso ya es un Gantt.</p>
+        <p>Después, clic derecho sobre el eje vertical, <em>Formato de eje</em>, y marca <strong>Categorías en orden inverso</strong> para que la primera tarea aparezca arriba. En el eje horizontal, fija el mínimo en tu fecha de inicio; si lo dejas en automático, PowerPoint arranca el eje en 1900 y todas las barras se apelotonan a la derecha.</p>
+        <p>La ventaja de este método es que los datos siguen ahí: cambias una duración en la tabla y el gráfico se redibuja. La desventaja es que el control estético es limitado y las barras no se pueden mover a mano.</p>`],
       ['Método 2: formas o SmartArt',
         `<p>Dibuja un rectángulo por tarea sobre una rejilla de meses. Es más trabajo la primera vez y mucho más rápido de retocar después, y permite cosas que el gráfico no da: barras redondeadas, iconos, anotaciones, colores por equipo.</p>
         <p>Alinea con las guías inteligentes y agrupa cada fase para poder moverla entera.</p>`],
