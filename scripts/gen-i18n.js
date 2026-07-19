@@ -33,6 +33,7 @@ const { BY_LOCALE: TPL_I18N, UI: TPL_UI, localesFor } = require('../i18n/templat
 const { T: TPL_EN } = require('./new-templates.js');
 const { CARDS: TPL_CARDS } = require('../i18n/template-cards.js');
 const { ICONS: GUIDE_ICONS, DESC: GUIDE_DESC } = require('../i18n/guide-cards.js');
+const { BENTO } = require('../i18n/bento-icons.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
 
@@ -281,6 +282,21 @@ ${ogLocaleAlternates(loc, only)}
 `;
 }
 
+/* Six representative templates as real cards on the homepage. English
+   shows a card grid here; the localized pages showed a paragraph and a
+   button, which is why they looked emptier. Same markup and the same
+   blurb source as the hub, so nothing can drift between them. */
+const HOME_TPL = ['project-management', 'construction', 'marketing', 'event-planning', 'software-development', 'simple'];
+function homeTemplateCards(code) {
+  const labels = TEMPLATE_LABELS[code];
+  return HOME_TPL.map((sl) => {
+    const d = (TPL_I18N[code] || {})[sl];
+    const blurb = (d && d.card) || ((TPL_CARDS[code] || {})[sl]) || '';
+    const href = localesFor(sl).includes(code) ? `/${code}/templates/${sl}.html` : `/templates/${sl}.html`;
+    return `        <a class="tpl-card" href="${href}"><div class="tpl-thumb"><img src="/templates/img/${sl}.svg" alt="${esc(labels[sl])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[sl])}</h3><p>${blurb}</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>`;
+  }).join('\n');
+}
+
 function renderHome(loc) {
   const code = loc.code;
   const t = HOME[code];
@@ -295,12 +311,22 @@ function renderHome(loc) {
         <div class="fmile r4" style="--s:10" aria-hidden="true"></div>
         <div class="fbar g r5" style="--s:9;--w:6"><span>${esc(t.bars.export)}</span></div>`;
 
-  const features = t.features.map(f => `        <article class="bento-item">
+  /* The English feature grid is a bento: six cells with b1-b6 layout
+     classes and an inline SVG icon on five of them. The localized
+     version rendered the same six features as plain text — no icons,
+     no layout classes — so every language but English got a flat list
+     where English got a designed section. Icons carry no text, so they
+     are shared verbatim. */
+  const features = t.features.map((f, i) => {
+    const cell = BENTO[i] || { cls: '', icon: '' };
+    return `        <article class="bento-item${cell.cls ? ' ' + cell.cls : ''}">
+${cell.icon ? `          <span class="licon">${cell.icon}</span>` : ''}
           <div class="bento-txt">
             <h3>${esc(f.h)}</h3>
             <p>${esc(f.p)}</p>
           </div>
-        </article>`).join('\n');
+        </article>`;
+  }).join('\n');
 
   const faq = t.faq.map(f => `        <details class="faq-item">
           <summary>${esc(f.q)}</summary>
@@ -377,10 +403,12 @@ ${t.steps.map(([h, p]) => `        <li><strong>${esc(h)}</strong> — ${esc(p)}<
   </section>` : ''}
 
   ${t.tplH2 ? `<section class="section section-alt">
-    <div class="container narrow">
-      <h2>${esc(t.tplH2)}</h2>
-      <p>${esc(t.tplP)}</p>
-      <a class="btn btn-primary" href="${localHref(code, 'templates.html')}">${esc(t.tplBtn)}</a>
+    <div class="container">
+      <div class="head-l"><div><h2>${esc(t.tplH2)}</h2></div><p class="head-l-note">${esc(t.tplP)}</p></div>
+      <div class="tpl-grid">
+${homeTemplateCards(code)}
+      </div>
+      <p style="text-align:center;margin-top:26px"><a class="btn btn-primary btn-lg" href="${localHref(code, 'templates.html')}">${esc(t.tplBtn)}</a></p>
     </div>
   </section>` : ''}
 

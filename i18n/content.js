@@ -106,6 +106,8 @@ const HOME = {
       { h: 'Programación con arrastrar y soltar', p: 'Mueve y redimensiona las barras en la línea de tiempo, marca el porcentaje completado y reordena tareas. El plan sigue tu ritmo.' },
       { h: 'Dependencias reales', p: 'Enlaza tareas con fin-inicio y otros tres tipos. Las flechas se redibujan solas cuando cambias las fechas.' },
       { h: 'Exportación profesional', p: 'Descarga en PDF, PNG, Excel o PowerPoint con un clic, listo para enviar a tu cliente o dirección.' },
+      { h: 'Hitos, fases y EDT', p: 'Agrupa el trabajo en fases, marca los hitos que importan y numera la estructura de desglose. La jerarquía es lo que hace legible un plan grande.' },
+      { h: 'Privado por diseño', p: 'El plan se guarda en tu navegador, no en un servidor nuestro. Sin cuenta, sin seguimiento y sin nada que borrar si dejas de usarlo.' },
     ],
     stepsH2: 'De una página en blanco a un plan que puedes compartir',
     steps: [
@@ -154,6 +156,8 @@ const HOME = {
       { h: 'Planification par glisser-déposer', p: 'Déplacez et redimensionnez les barres, indiquez l’avancement en pourcentage et réorganisez les tâches. Le planning suit votre rythme.' },
       { h: 'Véritables dépendances', p: 'Liez les tâches en fin-début et trois autres types. Les flèches se redessinent seules quand vous décalez les dates.' },
       { h: 'Export professionnel', p: 'Téléchargez en PDF, PNG, Excel ou PowerPoint en un clic, prêt à envoyer à votre client ou votre direction.' },
+      { h: 'Jalons, phases et WBS', p: 'Regroupez le travail en phases, posez les jalons qui comptent et numérotez la structure de découpage. C’est la hiérarchie qui rend lisible un grand plan.' },
+      { h: 'Privé par conception', p: 'Le plan reste dans votre navigateur, pas sur nos serveurs. Sans compte, sans suivi, et rien à supprimer si vous arrêtez.' },
     ],
     stepsH2: 'D’une page blanche à un plan partageable',
     steps: [
@@ -202,6 +206,8 @@ const HOME = {
       { h: 'Planen per Drag-and-drop', p: 'Balken auf der Zeitachse verschieben und skalieren, Fortschritt in Prozent setzen, Aufgaben umsortieren. Der Plan hält mit.' },
       { h: 'Echte Abhängigkeiten', p: 'Verknüpfen Sie Aufgaben mit Ende-Anfang und drei weiteren Typen. Die Pfeile zeichnen sich neu, wenn Sie Termine verschieben.' },
       { h: 'Export in Präsentationsqualität', p: 'Mit einem Klick als PDF, PNG, Excel oder PowerPoint herunterladen — direkt bereit für Kunden oder Geschäftsleitung.' },
+      { h: 'Meilensteine, Phasen und PSP', p: 'Fassen Sie Arbeit in Phasen, setzen Sie die Meilensteine, auf die es ankommt, und nummerieren Sie den Projektstrukturplan. Erst die Hierarchie macht einen großen Plan lesbar.' },
+      { h: 'Privat by Design', p: 'Der Plan bleibt in Ihrem Browser, nicht auf unseren Servern. Kein Konto, kein Tracking, und nichts zu löschen, wenn Sie aufhören.' },
     ],
     stepsH2: 'Vom leeren Blatt zum teilbaren Plan',
     steps: [
@@ -250,6 +256,8 @@ const HOME = {
       { h: 'Cronograma por arrastar e soltar', p: 'Mova e redimensione as barras na linha do tempo, defina o percentual concluído e reordene tarefas. O plano acompanha você.' },
       { h: 'Dependências de verdade', p: 'Ligue tarefas com término-início e outros três tipos. As setas se redesenham sozinhas quando você muda as datas.' },
       { h: 'Exportação para apresentação', p: 'Baixe em PDF, PNG, Excel ou PowerPoint com um clique, pronto para enviar ao cliente ou à diretoria.' },
+      { h: 'Marcos, fases e EAP', p: 'Agrupe o trabalho em fases, marque os marcos que importam e numere a estrutura analítica. É a hierarquia que torna legível um plano grande.' },
+      { h: 'Privado por design', p: 'O plano fica no seu navegador, não em um servidor nosso. Sem conta, sem rastreamento e sem nada para apagar se você parar de usar.' },
     ],
     stepsH2: 'De uma página em branco a um plano que dá para compartilhar',
     steps: [
@@ -298,6 +306,8 @@ const HOME = {
       { h: '拖放式排程', p: '在时间线上拖动和缩放任务条，设置完成百分比，随时调整任务顺序。计划随你而动。' },
       { h: '真正的依赖关系', p: '用「完成—开始」以及另外三种类型关联任务。调整日期时，箭头会自动重新绘制。' },
       { h: '可直接汇报的导出效果', p: '一键导出为 PDF、PNG、Excel 或 PowerPoint，可直接发给客户或管理层。' },
+      { h: '里程碑、阶段与 WBS', p: '把工作按阶段分组，标出真正重要的里程碑，并为工作分解结构编号。层级结构是大型计划能读懂的前提。' },
+      { h: '隐私优先的设计', p: '计划保存在你的浏览器里，不在我们的服务器上。无需账号，没有追踪，停用时也没有什么需要删除。' },
     ],
     stepsH2: '从空白页面到可以分享的计划',
     steps: [
