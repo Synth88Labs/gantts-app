@@ -530,6 +530,8 @@ const UI = {
   ctaBtn: 'Abrir el editor gratuito',
   enNote: 'Las guías que aún no se han traducido se abren en inglés.',
   readingTime: 'min de lectura',
+  byline: 'Equipo de gantts.app',
+  onThisPage: 'En esta página',
 };
 
 module.exports = { G, UI };

@@ -30,6 +30,16 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 
 // Components that must look identical in every language.
+/* Detail pages are generated per slug, so rather than enumerate them the
+   check compares each localized page against its English original and
+   reports any styled class the English page uses and the locale does
+   not. This is what caught the guides missing post-meta and the toc,
+   and the about page missing its CTA band. */
+const DETAIL_PAIRS = [
+  ['templates', (s) => `templates/${s}.html`],
+  ['blog', (s) => `blog/${s}.html`],
+];
+
 const REQUIRED = {
   'templates.html': ['tpl-card', 'tpl-thumb', 'tpl-body', 'tpl-tags', 'tag', 'head-l', 'head-l-note', 'cta-band', 'btn-white'],
   '': ['cta-band', 'btn-white'],
@@ -93,6 +103,38 @@ for (const l of LOCALES) {
       errors++;
     }
   });
+}
+
+/* Compare every localized detail page against its English original. */
+const T = require('../i18n/template-locales.js');
+const G = require('../i18n/guide-locales.js');
+for (const [dir, reg] of [['templates', T], ['blog', G]]) {
+  for (const slug of reg.translatedSlugs()) {
+    const en = `${dir}/${slug}.html`;
+    if (!fs.existsSync(path.join(ROOT, en))) continue;
+    for (const code of reg.localesFor(slug)) {
+      const loc = `${code}/${dir}/${slug}.html`;
+      if (!fs.existsSync(path.join(ROOT, loc))) continue;
+      const missing = [...classesIn(en)].filter(c => !classesIn(loc).has(c));
+      if (missing.length) {
+        console.error(`  ✗ ${loc} — missing vs English: ${missing.join(', ')}`);
+        errors++;
+      }
+    }
+  }
+}
+
+/* And the trust pages, which are not slug-driven. */
+for (const l of LOCALES) {
+  for (const page of ['about.html', 'contact.html', 'terms.html', 'privacy.html']) {
+    const loc = `${l.code}/${page}`;
+    if (!fs.existsSync(path.join(ROOT, loc))) continue;
+    const missing = [...classesIn(page)].filter(c => !classesIn(loc).has(c));
+    if (missing.length) {
+      console.error(`  ✗ ${loc} — missing vs English: ${missing.join(', ')}`);
+      errors++;
+    }
+  }
 }
 
 console.log('');

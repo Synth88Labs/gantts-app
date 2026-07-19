@@ -738,7 +738,15 @@ function renderGuide(loc, slug) {
     <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/blog/">${esc(ui.guides)}</a></div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${d.lead}</p>
-    <p class="crumbs"><small>${esc(ui.updated)} ${esc(d.date)}</small></p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>${esc(ui.byline || 'gantts.app')}</span><span>${esc(ui.updated)} ${esc(d.date)}</span><span>${Math.max(3, Math.round(d.sections.reduce((n, sx) => n + String(sx[1]).replace(/<[^>]+>/g, ' ').split(/\s+/).length, 0) / 200))} ${esc(ui.readingTime)}</span></p>
+    <div class="toc"><strong>${esc(ui.onThisPage || ui.related)}</strong>
+      <ol>
+${d.sections.map(([h], i) => `        <li><a href="#s${i + 1}">${esc(h)}</a></li>`).join('\n')}
+      </ol>
+    </div>
 
 ${figure}
 
@@ -857,10 +865,17 @@ function renderSitePage(loc, key) {
     <div class="crumbs"><a href="/${code}/">gantts.app</a> › ${esc(d.h1)}</div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${esc(d.lead)}</p>
-${isLegal ? '    <p class="crumbs"><small>' + esc(SITE[code].legalNote) + '</small></p>\n' : ''}    <div class="prose">
+${isLegal ? '    <p class="crumbs"><small>' + esc(SITE[code].legalNote) + '</small></p>\n' : ''}    ${d.callout ? `<div class="callout">${d.callout}</div>` : ''}
+    <div class="prose">
 ${d.body.map(([h, html]) => `      <h2>${esc(h)}</h2>\n      ${html}`).join('\n')}
     </div>
-  </article>`;
+  </article>
+
+  ${key === 'about' ? `<section class="section"><div class="container"><div class="cta-band">
+    <h2>${esc(TEMPLATES[code].ctaH2)}</h2>
+    <p>${esc(TEMPLATES[code].ctaP)}</p>
+    <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(CHROME[code].nav.open)} →</a>
+  </div></div></section>` : ''}`;
 
   return shell(loc, sub, d, body, ld);
 }

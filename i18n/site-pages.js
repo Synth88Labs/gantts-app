@@ -18,6 +18,7 @@ const SITE = {
       description: 'Quién está detrás de gantts.app y por qué la herramienta es gratuita, sin cuentas y sin subir tus datos a ningún servidor.',
       h1: 'Sobre gantts.app',
       lead: 'gantts.app es un proyecto pequeño e independiente: un creador de diagramas de Gantt que se abre y funciona, sin registro y sin enviar tus datos a ningún sitio.',
+      callout: 'Tu plan nunca sale de tu navegador. No hay servidor que lo almacene, no hay cuenta que crear y no hay nada que borrar si dejas de usarlo.',
       body: [
         ['Por qué existe', '<p>La mayoría de las herramientas de planificación piden una cuenta antes de dejarte dibujar una sola barra. Para un plan rápido, eso es demasiada fricción. gantts.app se abre directamente en el navegador y funciona desde el primer segundo.</p>'],
         ['Cómo funciona', '<p>Todo se ejecuta en tu navegador. No hay servidor que guarde proyectos, así que tu planificación se queda en tu equipo y puedes exportarla a PDF, PNG, Excel, PowerPoint o CSV cuando quieras.</p>'],
@@ -73,6 +74,7 @@ const SITE = {
       description: 'Qui est derrière gantts.app et pourquoi l’outil est gratuit, sans compte et sans envoi de vos données sur un serveur.',
       h1: 'À propos de gantts.app',
       lead: 'gantts.app est un petit projet indépendant : un créateur de diagrammes de Gantt qui s’ouvre et fonctionne, sans inscription et sans envoyer vos données ailleurs.',
+      callout: 'Votre plan ne quitte jamais votre navigateur. Aucun serveur ne le stocke, aucun compte à créer, et rien à supprimer si vous arrêtez de l’utiliser.',
       body: [
         ['Pourquoi cet outil existe', '<p>La plupart des outils de planification exigent un compte avant même de vous laisser tracer une barre. Pour un planning rapide, c’est trop de friction. gantts.app s’ouvre directement dans le navigateur.</p>'],
         ['Comment ça marche', '<p>Tout s’exécute dans votre navigateur. Aucun serveur ne stocke de projet : votre planning reste sur votre machine et s’exporte en PDF, PNG, Excel, PowerPoint ou CSV.</p>'],
@@ -128,6 +130,7 @@ const SITE = {
       description: 'Wer hinter gantts.app steht und warum das Tool kostenlos ist, ohne Konto und ohne Daten auf einen Server zu laden.',
       h1: 'Über gantts.app',
       lead: 'gantts.app ist ein kleines, unabhängiges Projekt: ein Gantt-Generator, der einfach aufgeht und funktioniert — ohne Anmeldung und ohne Ihre Daten irgendwohin zu senden.',
+      callout: 'Ihr Plan verlässt den Browser nie. Kein Server speichert ihn, kein Konto ist nötig, und es gibt nichts zu löschen, wenn Sie aufhören.',
       body: [
         ['Warum es das gibt', '<p>Die meisten Planungswerkzeuge verlangen ein Konto, bevor Sie auch nur einen Balken zeichnen dürfen. Für einen schnellen Plan ist das zu viel Reibung. gantts.app öffnet sich direkt im Browser.</p>'],
         ['Wie es funktioniert', '<p>Alles läuft in Ihrem Browser. Kein Server speichert Projekte — Ihre Planung bleibt auf Ihrem Gerät und lässt sich als PDF, PNG, Excel, PowerPoint oder CSV exportieren.</p>'],
@@ -183,6 +186,7 @@ const SITE = {
       description: 'Quem está por trás do gantts.app e por que a ferramenta é gratuita, sem contas e sem enviar seus dados a servidores.',
       h1: 'Sobre o gantts.app',
       lead: 'O gantts.app é um projeto pequeno e independente: um criador de gráficos de Gantt que abre e funciona, sem cadastro e sem enviar seus dados para lugar nenhum.',
+      callout: 'Seu plano nunca sai do navegador. Nenhum servidor o armazena, não há conta para criar e não há nada para apagar se você parar de usar.',
       body: [
         ['Por que existe', '<p>A maioria das ferramentas de planejamento exige conta antes de deixar você desenhar uma única barra. Para um plano rápido, é atrito demais. O gantts.app abre direto no navegador.</p>'],
         ['Como funciona', '<p>Tudo roda no seu navegador. Nenhum servidor guarda projetos — seu planejamento fica no seu computador e pode ser exportado em PDF, PNG, Excel, PowerPoint ou CSV.</p>'],
@@ -238,6 +242,7 @@ const SITE = {
       description: '谁在做 gantts.app，以及为什么这个工具免费、无需注册、不会把你的数据上传到服务器。',
       h1: '关于 gantts.app',
       lead: 'gantts.app 是一个小型独立项目：一个打开即用的甘特图工具，无需注册，也不会把你的数据发送到任何地方。',
+      callout: '你的计划始终留在浏览器里。没有服务器保存它，不需要注册账号，即使不再使用也没有什么需要删除。',
       body: [
         ['为什么做这个工具', '<p>大多数计划工具在你还没画出第一根任务条之前就要求注册账号。做一份快速计划时，这种阻力太大了。gantts.app 直接在浏览器里打开就能用。</p>'],
         ['工作原理', '<p>所有运算都在你的浏览器中完成。没有服务器保存项目——你的计划保留在自己的设备上，并可导出为 PDF、PNG、Excel、PowerPoint 或 CSV。</p>'],
