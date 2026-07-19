@@ -1,7 +1,7 @@
 {
   "name": "gantts-app",
   "version": "1.0.0",
-  "description": "gantts.app \u2014 a free, no-login, 100% client-side Gantt chart maker, plus its static SEO content site. Vanilla HTML/CSS/JS with no backend and no build step.",
+  "description": "gantts.app — a free, no-login, 100% client-side Gantt chart maker, plus its static SEO content site. Vanilla HTML/CSS/JS with no backend and no build step.",
   "private": true,
   "type": "commonjs",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
-    "check": "npm run check:resources && npm run check:calendar && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap",
+    "check": "npm run check:resources && npm run check:calendar && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap && npm run check:design",
     "deploy:bundle": "npm run gen:templates --silent && node scripts/build-deploy.js",
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
@@ -49,7 +49,8 @@
     "gen:favicon": "node scripts/gen-favicon.js",
     "check:calendar": "node test/calendar.test.js",
     "check:sitemap": "node scripts/check-sitemap.js",
-    "check:resources": "node test/resources.test.js"
+    "check:resources": "node test/resources.test.js",
+    "check:design": "node scripts/check-design-parity.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

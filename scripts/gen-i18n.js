@@ -400,7 +400,7 @@ ${faq}
     <div class="container">
       <h2>${esc(t.ctaH2)}</h2>
       <p>${esc(t.ctaP)}</p>
-      <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
+      <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
     </div>
   </section>`;
 
@@ -450,19 +450,24 @@ function renderTemplates(loc) {
     // back to the shared one-liner table, so a locale gets a usable hub
     // long before all 41 detail pages are translated.
     const d = (TPL_I18N[code] || {})[s];
-    const text = (d && d.card) || ((TPL_CARDS[code] || {})[s]);
-    return text ? `
-            <p>${text}</p>` : '';
+    return (d && d.card) || ((TPL_CARDS[code] || {})[s]) || '';
   };
 
   const groups = TEMPLATE_GROUPS.map(g => {
-    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}">
-            <img src="/templates/img/${s}.svg" alt="" width="240" height="130" loading="lazy" />
-            <h3>${esc(labels[s])}</h3>${blurb(s)}
-          </a>`).join('\n');
+    /* Markup must match the English hub EXACTLY. The localized cards
+       used to emit a bare <img>, <h3> and <p> with no wrappers, so they
+       lost every rule that hangs off .tpl-thumb (aspect ratio and
+       object-fit — the image rendered at its natural size, small and
+       left-aligned), .tpl-body (the 16px/18px padding, i.e. the missing
+       indent) and .tpl-body h3/p (the text colours, so both inherited
+       the anchor's purple). The download badges were missing too. */
+    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>`).join('\n');
+    /* .head-l is a flex row: heading on the left, note on the right.
+       The note was being emitted on its own, so it kept the 380px
+       max-width from .head-l-note but lost the layout — orphaning a
+       narrow paragraph under the heading instead of sitting beside it. */
     return `      <section class="section">
-        <h2>${esc(t[g.key])}</h2>
-        ${t.catNote ? `<p class="head-l-note">${esc(t.catNote)}</p>` : ''}
+        <div class="head-l"><div><h2>${esc(t[g.key])}</h2></div>${t.catNote ? `<p class="head-l-note">${esc(t.catNote)}</p>` : ''}</div>
         <div class="tpl-grid">
 ${cards}
         </div>
@@ -520,9 +525,11 @@ ${t.faq.map(([q, a], i) => `        <details${i === 0 ? ' open' : ''}><summary>$
     </section>` : ''}
 
     <section class="cta-band">
-      <h2>${esc(t.ctaH2)}</h2>
-      <p>${esc(t.ctaP)}</p>
-      <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
+      <div class="container">
+        <h2>${esc(t.ctaH2)}</h2>
+        <p>${esc(t.ctaP)}</p>
+        <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
+      </div>
     </section>
   </article>`;
 
