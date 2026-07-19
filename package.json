@@ -31,7 +31,7 @@
     "gen:assets": "node scripts/gen-assets.js",
     "gen:i18n": "node scripts/gen-i18n.js",
     "gen:sitemap": "node scripts/gen-sitemap.js",
-    "build": "npm run gen:favicon && npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run gen:sitemap && npm run check",
+    "build": "npm run gen:favicon && npm run gen:templates && npm run gen:thumbs && npm run gen:pages && npm run gen:i18n && npm run fix:switchers && npm run gen:sitemap && npm run check",
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
@@ -50,7 +50,8 @@
     "check:calendar": "node test/calendar.test.js",
     "check:sitemap": "node scripts/check-sitemap.js",
     "check:resources": "node test/resources.test.js",
-    "check:design": "node scripts/check-design-parity.js"
+    "check:design": "node scripts/check-design-parity.js",
+    "fix:switchers": "node scripts/fix-lang-switcher.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

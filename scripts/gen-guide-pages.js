@@ -18,6 +18,9 @@ const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
 const V = 'v=22';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
+// Same single source of truth the localized generator and the hreflang
+// injector read, so the switcher cannot disagree with what exists.
+const { localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -36,10 +39,19 @@ function tplTitle(slug) {
   return m ? m[1].trim() : null;
 }
 
+/* Two bugs lived in this one line. It addressed the localized blog index
+   as /<code>/blog/index.html, the non-public form of a directory index —
+   the same duplicate-URL shape that / vs /index.html and /blog/ vs
+   /blog/index.html already were. And it sent every locale to the blog
+   index unconditionally, even for guides that ARE translated, so a
+   reader could not reach the German version of this guide from the
+   English one. Now: the translated guide where it exists, that locale's
+   blog index otherwise, always in public URL form. */
+const LANG_NAMES = { es: 'Español', fr: 'Français', de: 'Deutsch', pt: 'Português', zh: '简体中文' };
 function langSwitcher(slug) {
   const opts = [`<option value="/blog/${slug}.html" selected>English</option>`]
-    .concat(['es', 'fr', 'de', 'pt', 'zh'].map((c, i) =>
-      `<option value="/${c}/blog/index.html">${['Español', 'Français', 'Deutsch', 'Português', '简体中文'][i]}</option>`));
+    .concat(Object.keys(LANG_NAMES).map((c) =>
+      `<option value="${guideLocalesFor(slug).includes(c) ? `/${c}/blog/${slug}.html` : `/${c}/blog/`}">${LANG_NAMES[c]}</option>`));
   return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">\n          ${opts.join('\n          ')}\n        </select>`;
 }
 

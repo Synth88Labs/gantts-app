@@ -57,6 +57,16 @@ const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': t
    URL we link to: /blog/ and /blog/index.html served identical content
    at two addresses, exactly like / and /index.html did. */
 const cleanUrl = (p) => p.replace(/(^|\/)index\.html$/, '$1');
+/* cleanUrl fixed the <a href> case, but every *absolute* URL the page
+   emits was still built as ORIGIN + '/' + sub with sub ending in
+   index.html. That left /de/blog/ declaring rel=canonical to
+   /de/blog/index.html — a canonical pointing at a URL that .htaccess
+   301s straight back, so the two addresses kept splitting signal
+   between them, which is the precise thing the canonicalisation work
+   was meant to end. Same for og:url, every hreflang href, the JSON-LD
+   @id and item URLs, and the language switcher's option values.
+   pub() is the single place a public absolute URL is formed. */
+const pub = (u) => u.replace(/(^|\/)index\.html(#|\?|$)/, '$1$2');
 function localHref(code, sub) {
   return LOCALIZED_PAGES[sub] ? cleanUrl(`/${code}/${sub}`) : cleanUrl(`/${sub}`);
 }
@@ -69,10 +79,10 @@ function localHref(code, sub) {
    row. Defaults to every locale, which is right for the hubs. */
 function altUrls(sub, only) {
   const codes = only || LOCALES.map(l => l.code);
-  const alts = [{ hreflang: 'en', url: ORIGIN + '/' + sub }];
+  const alts = [{ hreflang: 'en', url: pub(ORIGIN + '/' + sub) }];
   LOCALES.filter(l => codes.includes(l.code))
-    .forEach(l => alts.push({ hreflang: l.hreflang, url: `${ORIGIN}/${l.code}/${sub}` }));
-  alts.push({ hreflang: 'x-default', url: ORIGIN + '/' + sub });
+    .forEach(l => alts.push({ hreflang: l.hreflang, url: pub(`${ORIGIN}/${l.code}/${sub}`) }));
+  alts.push({ hreflang: 'x-default', url: pub(ORIGIN + '/' + sub) });
   return alts;
 }
 
@@ -88,8 +98,8 @@ function langSwitcher(currentCode, sub, only) {
   // Locales without this page send the reader to their own home page
   // instead of a 404 — see altUrls().
   const has = (code) => !only || only.includes(code);
-  const opts = [opt('en', 'English', '/' + sub)]
-    .concat(LOCALES.map(l => opt(l.code, l.name, has(l.code) ? `/${l.code}/${sub}` : `/${l.code}/`)))
+  const opts = [opt('en', 'English', pub('/' + sub))]
+    .concat(LOCALES.map(l => opt(l.code, l.name, has(l.code) ? pub(`/${l.code}/${sub}`) : `/${l.code}/`)))
     .join('');
   return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}" onchange="if(this.value)location.href=this.value">${opts}</select>`;
 }
@@ -258,7 +268,7 @@ function ogLocaleAlternates(loc, only) {
 /* One head builder for every localized page, so a hub can never drift
    into having thinner metadata than the homepage. */
 function seoHead(loc, sub, meta, ldJson, only) {
-  const url = sub === '' ? `${ORIGIN}/${loc.code}/` : `${ORIGIN}/${loc.code}/${sub}`;
+  const url = sub === '' ? `${ORIGIN}/${loc.code}/` : pub(`${ORIGIN}/${loc.code}/${sub}`);
   return `  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${esc(meta.title)}</title>
@@ -534,7 +544,7 @@ ${cards}
   }).join('\n');
 
   const allSlugs = TEMPLATE_GROUPS.flatMap(g => g.slugs);
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   const ldNodes = [];
   if (t.faq) ldNodes.push({
     '@type': 'FAQPage', inLanguage: loc.hreflang,
@@ -611,7 +621,7 @@ function renderTemplateDetail(loc, slug) {
   const en = TPL_EN[slug];
   const ui = TPL_UI[code];
   const sub = `templates/${slug}.html`;
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   const only = localesFor(slug);
   const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 
@@ -772,7 +782,7 @@ function renderGuide(loc, slug) {
   const ui = GUIDE_UI[code];
   const en = GUIDE_EN[slug];
   const sub = `blog/${slug}.html`;
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   const only = guideLocalesFor(slug);
   const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 
@@ -906,7 +916,7 @@ function renderBlogIndex(loc) {
           <p>${esc(gdesc[s] || '')}</p>
         </a>`).join('\n');
 
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   const ld = graph(loc, [
     {
       '@type': 'CollectionPage', '@id': url + '#webpage',
@@ -954,7 +964,7 @@ function renderSitePage(loc, key) {
   const code = loc.code;
   const d = SITE[code][key];
   const sub = key + '.html';
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   const isLegal = key === 'terms' || key === 'privacy';
   const type = key === 'about' ? 'AboutPage' : key === 'contact' ? 'ContactPage' : 'WebPage';
 
@@ -997,7 +1007,7 @@ function renderApp(loc) {
   const code = loc.code;
   const a = APP[code];
   const sub = 'app.html';
-  const url = `${ORIGIN}/${code}/${sub}`;
+  const url = pub(`${ORIGIN}/${code}/${sub}`);
   let h = fs.readFileSync(path.join(ROOT, 'app.html'), 'utf8');
 
   // data-app-lang tells js/i18n.js which language to boot in; it takes

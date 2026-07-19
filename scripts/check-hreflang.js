@@ -127,7 +127,12 @@ for (const cluster of CLUSTERS) {
       const target = urlToFile(a.url);
       if (!fs.existsSync(path.join(ROOT, target))) continue;
       const back = readAlternates(target).alts;
-      if (!back.some(b => b.url === m.url)) {
+      /* Compare in FILE space, not string space. /blog/ and
+         /blog/index.html are one page served at its public and its
+         filesystem address; a reciprocity check that compares raw
+         URL strings reports a broken cluster the moment one side
+         adopts the public form. urlToFile collapses both. */
+      if (!back.some(b => urlToFile(b.url) === urlToFile(m.url))) {
         err(`NOT RECIPROCAL — ${m.file} points to ${a.url}, but ${target} does not point back to ${m.url}`);
       }
     }

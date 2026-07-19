@@ -76,7 +76,13 @@ for (const loc of LOCALES) {
     if (!fs.existsSync(abs)) { err(rel, 'file missing'); continue; }
     checked++;
     const html = fs.readFileSync(abs, 'utf8');
-    const expectUrl = sub === '' ? `${ORIGIN}/${loc.code}/` : `${ORIGIN}/${loc.code}/${sub}`;
+    /* Expect the PUBLIC form. A directory index is addressed by its
+       directory: /es/blog/, never /es/blog/index.html. Expecting the
+       filesystem form here would demand a canonical pointing at a URL
+       that .htaccess 301s away, which is the split-signal problem the
+       canonicalisation work exists to prevent. */
+    const expectUrl = (sub === '' ? `${ORIGIN}/${loc.code}/` : `${ORIGIN}/${loc.code}/${sub}`)
+      .replace(/(^|\/)index\.html$/, '$1');
 
     // title / description
     const title = (html.match(/<title>([^<]*)<\/title>/i) || [])[1];

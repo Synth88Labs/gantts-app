@@ -47,14 +47,20 @@ function walk(dir, base = '') {
   return out;
 }
 
+/* Public URL form: a directory index is addressed by its directory,
+   never by index.html. Root was already special-cased here, but
+   blog/index.html was not, so the switcher offered /de/blog/index.html
+   while every other link on the page used /de/blog/. */
+const pub = (u) => u.replace(/(^|\/)index\.html$/, '$1');
+
 function switcherFor(rel) {
   const sub = rel === 'index.html' ? '' : rel;
-  const enHref = '/' + sub;
+  const enHref = pub('/' + sub);
   const opts = [`<option value="${enHref}" selected>English</option>`];
   for (const l of LOCALES) {
     // link to the localized twin when it exists, else that locale's home
     const twin = path.join(ROOT, l.code, sub || 'index.html');
-    const href = fs.existsSync(twin) ? `/${l.code}/${sub}` : `/${l.code}/`;
+    const href = fs.existsSync(twin) ? pub(`/${l.code}/${sub}`) : `/${l.code}/`;
     opts.push(`<option value="${href}">${l.name}</option>`);
   }
   return '<select class="lang-select" data-lang-nav aria-label="Language" title="Language" '
@@ -62,7 +68,7 @@ function switcherFor(rel) {
        + opts.join('\n          ') + '\n        </select>';
 }
 
-let switchers = 0, i18nRemoved = 0;
+let switchers = 0, i18nRemoved = 0, refreshed = 0;
 
 for (const rel of walk(ROOT)) {
   const abs = path.join(ROOT, rel);
@@ -76,6 +82,22 @@ for (const rel of walk(ROOT)) {
     switchers++;
   }
 
+  /* 1b. REFRESH an existing switcher whose options have gone stale.
+     This script began as a one-time migration that only filled in empty
+     selects, so once a switcher existed it was frozen. Translations keep
+     landing after a page is authored: the English critical-path guide
+     still offered "Deutsch → /de/" long after /de/blog/critical-path-method.html
+     existed, so the one page a German reader most wanted was reachable
+     from the German nav but not from the English article.
+     switcherFor() reads what is actually on disk, so rebuilding the
+     switcher every build keeps it true as coverage grows. */
+  const liveSelect = /<select class="lang-select"[^>]*data-lang-nav[\s\S]*?<\/select>/;
+  const m = html.match(liveSelect);
+  if (m) {
+    const fresh = switcherFor(rel);
+    if (m[0] !== fresh) { html = html.replace(liveSelect, fresh); refreshed++; }
+  }
+
   // 2. drop the runtime i18n script from content pages
   const i18nTag = /\s*<script src="\/js\/i18n\.js(\?[^"]*)?"><\/script>/;
   if (i18nTag.test(html)) {
@@ -86,5 +108,5 @@ for (const rel of walk(ROOT)) {
   if (html !== before) fs.writeFileSync(abs, html, 'utf8');
 }
 
-console.log(`✓ ${switchers} navigating switcher(s) installed; i18n.js removed from ${i18nRemoved} content page(s).`);
+console.log(`✓ ${switchers} switcher(s) installed, ${refreshed} refreshed; i18n.js removed from ${i18nRemoved} content page(s).`);
 console.log('  app.html untouched — it keeps runtime i18n on purpose.');
