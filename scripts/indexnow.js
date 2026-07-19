@@ -21,7 +21,15 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const KEY = 'b7dddc1da15c113759ec72b4e49e446c';
+/* The active IndexNow key. The file at https://<HOST>/<KEY>.txt is the
+   ONLY proof of ownership in this protocol, so the key here and the
+   file at the site root must always agree — a mismatch is the usual
+   cause of a 403.
+
+   Both this key file and the previous one are kept in the repo and
+   deployed. Retiring a key by deleting its file breaks any submission
+   still in flight that quoted it, and costs nothing to keep. */
+const KEY = '722a74e8e900485a9d9269f7ade00914';
 const HOST = 'gantts.app';
 const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
