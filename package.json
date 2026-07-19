@@ -40,7 +40,7 @@
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
     "check:seo-i18n": "node scripts/check-seo-i18n.js",
-    "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js",
+    "gen:pages": "node scripts/gen-template-pages.js && node scripts/gen-guide-pages.js && node scripts/fix-guide-hreflang.js",
     "deploy:check": "node scripts/deploy-ftp.js --dry",
     "deploy": "npm run preflight && npm run deploy:bundle && node scripts/deploy-ftp.js --yes",
     "preflight": "node scripts/preflight.js",

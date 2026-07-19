@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dependencias en Gantt: FS, SS, FF y SF | gantts.app</title>
+  <meta name="description" content="Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y cómo funcionan los desfases positivos y negativos." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-dependencies.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Dependencias en Gantt: FS, SS, FF y SF | gantts.app" />
+  <meta property="og:description" content="Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y cómo funcionan los desfases positivos y negativos." />
+  <meta property="og:url" content="https://gantts.app/es/blog/gantt-chart-dependencies.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Dependencias en un diagrama de Gantt: los cuatro tipos" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dependencias en Gantt: FS, SS, FF y SF | gantts.app" />
+  <meta name="twitter:description" content="Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y cómo funcionan los desfases positivos y negativos." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-dependencies.html#post","headline":"Dependencias en un diagrama de Gantt: los cuatro tipos","description":"Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y cómo funcionan los desfases positivos y negativos.","url":"https://gantts.app/es/blog/gantt-chart-dependencies.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Dependencias en un diagrama de Gantt: los cuatro tipos","item":"https://gantts.app/es/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cuáles son los 4 tipos de dependencia en un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Fin-inicio (FS), inicio-inicio (SS), fin-fin (FF) e inicio-fin (SF). Fin-inicio es con diferencia la más frecuente y la que conviene usar salvo que el caso pida otra cosa."}},{"@type":"Question","name":"¿Qué es el desfase (lag) en una dependencia?","acceptedAnswer":{"@type":"Answer","text":"Un retardo o un adelanto aplicado a la relación. Positivo introduce espera —tiempo de secado, curado, revisión externa—; negativo introduce solape, permitiendo que la tarea siguiente empiece antes de que la anterior termine."}},{"@type":"Question","name":"¿Cuándo debo usar inicio-inicio en vez de fin-inicio?","acceptedAnswer":{"@type":"Answer","text":"Cuando dos tareas avanzan en paralelo y lo que importa es que arranquen coordinadas, no que una termine. Control de calidad junto a producción, o validación junto a migración, son casos típicos."}},{"@type":"Question","name":"¿Puedo editar el tipo de dependencia después de crearla?","acceptedAnswer":{"@type":"Answer","text":"Sí. En el editor de gantts.app se hace clic sobre la flecha y se cambia el tipo o el desfase; el resto del plan se recalcula al instante."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/index.html">Guías</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-dependencies.html">English</option><option value="/es/blog/gantt-chart-dependencies.html" selected>Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a></div>
+    <h1>Dependencias en un diagrama de Gantt: los cuatro tipos</h1>
+    <p class="lead">Las <strong>dependencias</strong> son lo que separa un diagrama de Gantt de un dibujo de barras. Dicen qué tiene que ocurrir antes que qué, y hacen que al mover una tarea se mueva todo lo que va detrás. Hay cuatro tipos, y en la práctica uno cubre la mayoría de los casos.</p>
+    <p class="crumbs"><small>Actualizado el 2026-07-19</small></p>
+
+    <figure class="fig">
+      <p>Los cuatro tipos, con el desfase que se les puede añadir:</p>
+      <svg viewBox="0 0 620 330" width="100%" role="img" aria-label="Diagram of the four Gantt dependency types: finish to start, start to start, finish to finish, and start to finish">
+      <text x="0" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Start (FS)</text>
+      <text x="0" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A finishes — the default</text>
+      <rect x="0" y="40" width="130" height="14" rx="4" fill="#6c4cf1"/><text x="138" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="160" y="66" width="130" height="14" rx="4" fill="#8b7bf5"/><text x="298" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 130 47 C 144 47, 146 73, 160 73" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="160,73 154,69 154,77" fill="#6c4cf1"/>
+
+      <text x="330" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Start (SS)</text>
+      <text x="330" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A starts</text>
+      <rect x="330" y="40" width="130" height="14" rx="4" fill="#0d9488"/><text x="468" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="66" width="150" height="14" rx="4" fill="#14b8a6"/><text x="488" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 332 47 C 346 47, 316 73, 330 73" fill="none" stroke="#0d9488" stroke-width="1.8"/><polygon points="330,73 324,69 324,77" fill="#0d9488"/>
+
+      <text x="0" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Finish (FF)</text>
+      <text x="0" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A finishes</text>
+      <rect x="0" y="206" width="150" height="14" rx="4" fill="#ea580c"/><text x="158" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="30" y="232" width="120" height="14" rx="4" fill="#f97316"/><text x="158" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 150 213 C 164 213, 136 239, 150 239" fill="none" stroke="#ea580c" stroke-width="1.8"/><polygon points="150,239 144,235 144,243" fill="#ea580c"/>
+
+      <text x="330" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Finish (SF)</text>
+      <text x="330" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A starts — rare</text>
+      <rect x="430" y="206" width="120" height="14" rx="4" fill="#9333ea"/><text x="558" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
+      <rect x="330" y="232" width="110" height="14" rx="4" fill="#a855f7"/><text x="448" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
+      <path d="M 432 213 C 446 213, 426 239, 440 239" fill="none" stroke="#9333ea" stroke-width="1.8"/><polygon points="440,239 434,235 434,243" fill="#9333ea"/>
+    </svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">Fin-inicio (FS): la que usarás casi siempre</h2>
+<p>La tarea B no puede empezar hasta que A termine. Cimentar y luego levantar muros. Escribir el código y luego probarlo. Es el comportamiento por defecto y cubre la gran mayoría de las relaciones reales.</p>
+        <p>Si dudas de qué tipo poner, es fin-inicio.</p>
+      <h2 id="s2">Inicio-inicio (SS): arrancan juntas</h2>
+<p>B no puede empezar hasta que A empiece. Se usa cuando dos trabajos avanzan en paralelo pero uno marca el arranque del otro: en cuanto empieza el hormigonado, empieza el control de calidad; en cuanto empieza la migración de datos, empieza la validación.</p>
+        <p>Muy útil con desfase: «empieza la revisión tres días después de que empiece la redacción».</p>
+      <h2 id="s3">Fin-fin (FF): terminan juntas</h2>
+<p>B no puede terminar hasta que A termine. Típico en pruebas y documentación: la documentación no puede cerrarse antes de que el desarrollo lo haga, aunque lleve semanas avanzando en paralelo.</p>
+      <h2 id="s4">Inicio-fin (SF): la rara</h2>
+<p>B no puede terminar hasta que A empiece. Aparece sobre todo en relevos y traspasos: el turno saliente no termina hasta que el entrante empieza. Es legítima, pero si la estás usando mucho, merece la pena revisar si el plan está bien modelado.</p>
+      <h2 id="s5">Desfases: adelantos y esperas</h2>
+<p>Un desfase positivo introduce espera: «pintar empieza tres días después de enlucir» para dar tiempo de secado. Un desfase negativo introduce solape: «empezar a probar dos días antes de que termine el desarrollo».</p>
+        <p>Los desfases negativos son la forma limpia de comprimir un calendario. Escribir fechas a mano para conseguir el mismo solape funciona hasta el primer cambio, momento en el que el plan deja de recalcularse.</p>
+
+      <div class="callout">Si te encuentras corrigiendo fechas a mano para que las barras encajen, casi siempre falta una dependencia. La señal es clara: cada vez que se mueve una tarea tienes que arreglar tres más. Con la relación bien puesta, esas tres se mueven solas.</div>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Cuáles son los 4 tipos de dependencia en un diagrama de Gantt?</summary><p>Fin-inicio (FS), inicio-inicio (SS), fin-fin (FF) e inicio-fin (SF). Fin-inicio es con diferencia la más frecuente y la que conviene usar salvo que el caso pida otra cosa.</p></details>
+        <details><summary>¿Qué es el desfase (lag) en una dependencia?</summary><p>Un retardo o un adelanto aplicado a la relación. Positivo introduce espera —tiempo de secado, curado, revisión externa—; negativo introduce solape, permitiendo que la tarea siguiente empiece antes de que la anterior termine.</p></details>
+        <details><summary>¿Cuándo debo usar inicio-inicio en vez de fin-inicio?</summary><p>Cuando dos tareas avanzan en paralelo y lo que importa es que arranquen coordinadas, no que una termine. Control de calidad junto a producción, o validación junto a migración, son casos típicos.</p></details>
+        <details><summary>¿Puedo editar el tipo de dependencia después de crearla?</summary><p>Sí. En el <a href="/es/app.html">editor de gantts.app</a> se hace clic sobre la flecha y se cambia el tipo o el desfase; el resto del plan se recalcula al instante.</p></details>
+      </div>
+
+      <h2 id="related">Seguir leyendo</h2>
+      <ul>
+        <li><a href="/es/blog/critical-path-method.html">Cómo se calcula la ruta crítica</a></li>
+        <li><a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a></li>
+        <li><a href="/es/blog/how-to-make-a-gantt-chart.html">Cómo hacer un diagrama de Gantt paso a paso</a></li>
+        <li><a href="/es/blog/">Ver todas las guías</a></li>
+      </ul>
+      <p class="crumbs"><small>Las guías que aún no se han traducido se abren en inglés.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Pruébalo en el editor gratuito</h2>
+      <p>Abre gantts.app, arrastra las barras y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/index.html">Todas las guías</a>
+          <a href="/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

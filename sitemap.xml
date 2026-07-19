@@ -29,6 +29,9 @@
   </url>
   <url>
     <loc>https://gantts.app/blog/critical-path-method.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html"/>
     <lastmod>2026-07-18</lastmod>
   </url>
   <url>
@@ -37,6 +40,9 @@
   </url>
   <url>
     <loc>https://gantts.app/blog/gantt-chart-dependencies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-dependencies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-dependencies.html"/>
     <lastmod>2026-07-18</lastmod>
   </url>
   <url>
@@ -61,6 +67,9 @@
   </url>
   <url>
     <loc>https://gantts.app/blog/how-to-make-a-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html"/>
     <lastmod>2026-07-18</lastmod>
   </url>
   <url>
@@ -80,6 +89,9 @@
   </url>
   <url>
     <loc>https://gantts.app/blog/what-is-a-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/what-is-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/what-is-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/what-is-a-gantt-chart.html"/>
     <lastmod>2026-07-18</lastmod>
   </url>
   <url>
@@ -204,6 +216,27 @@
     <lastmod>2026-07-19</lastmod>
   </url>
   <url>
+    <loc>https://gantts.app/es/blog/critical-path-method.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/blog/gantt-chart-dependencies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-dependencies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-dependencies.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/blog/how-to-make-a-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html"/>
+    <lastmod>2026-07-19</lastmod>
+  </url>
+  <url>
     <loc>https://gantts.app/es/blog/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/"/>
@@ -213,6 +246,13 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/"/>
     <lastmod>2026-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/blog/what-is-a-gantt-chart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/blog/what-is-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/what-is-a-gantt-chart.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/what-is-a-gantt-chart.html"/>
+    <lastmod>2026-07-19</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/es/contact.html</loc>

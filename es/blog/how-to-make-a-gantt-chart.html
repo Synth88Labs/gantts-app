@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo hacer un diagrama de Gantt (paso a paso) | gantts.app</title>
+  <meta name="description" content="Guía práctica para crear un diagrama de Gantt: listar tareas, estimar duraciones, enlazar dependencias, marcar hitos y publicar el resultado." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/how-to-make-a-gantt-chart.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Cómo hacer un diagrama de Gantt (paso a paso) | gantts.app" />
+  <meta property="og:description" content="Guía práctica para crear un diagrama de Gantt: listar tareas, estimar duraciones, enlazar dependencias, marcar hitos y publicar el resultado." />
+  <meta property="og:url" content="https://gantts.app/es/blog/how-to-make-a-gantt-chart.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cómo hacer un diagrama de Gantt paso a paso" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cómo hacer un diagrama de Gantt (paso a paso) | gantts.app" />
+  <meta name="twitter:description" content="Guía práctica para crear un diagrama de Gantt: listar tareas, estimar duraciones, enlazar dependencias, marcar hitos y publicar el resultado." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/how-to-make-a-gantt-chart.html#post","headline":"Cómo hacer un diagrama de Gantt paso a paso","description":"Guía práctica para crear un diagrama de Gantt: listar tareas, estimar duraciones, enlazar dependencias, marcar hitos y publicar el resultado.","url":"https://gantts.app/es/blog/how-to-make-a-gantt-chart.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/how-to-make-a-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Cómo hacer un diagrama de Gantt paso a paso","item":"https://gantts.app/es/blog/how-to-make-a-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cuánto se tarda en hacer un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Con una plantilla, entre quince minutos y una hora para un proyecto normal. Lo que lleva tiempo no es dibujar: es decidir el orden del trabajo y estimar duraciones con honestidad."}},{"@type":"Question","name":"¿Puedo hacer un diagrama de Gantt en Excel?","acceptedAnswer":{"@type":"Answer","text":"Sí, con un gráfico de barras apiladas, aunque las dependencias hay que mantenerlas a mano y esa es justamente la parte que se rompe. Puedes descargar plantillas listas de Excel o editarlo online sin fórmulas."}},{"@type":"Question","name":"¿Cuántas tareas debe tener?","acceptedAnswer":{"@type":"Answer","text":"Las que puedas seguir de verdad. Entre veinte y sesenta filas es el rango cómodo para un proyecto único; por encima, agrupa en fases y despliega solo lo que necesites mirar."}},{"@type":"Question","name":"¿Es gratis hacerlo en gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Sí. El editor es gratuito, sin registro y sin marca de agua, y el plan se queda en tu navegador."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/index.html">Guías</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/how-to-make-a-gantt-chart.html">English</option><option value="/es/blog/how-to-make-a-gantt-chart.html" selected>Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a></div>
+    <h1>Cómo hacer un diagrama de Gantt paso a paso</h1>
+    <p class="lead">Hacer un <strong>diagrama de Gantt</strong> no consiste en dibujar barras: consiste en decidir el orden del trabajo y comprobar si las fechas se sostienen. Estos siete pasos son el orden que funciona, y explican por qué cada uno va donde va.</p>
+    <p class="crumbs"><small>Actualizado el 2026-07-19</small></p>
+
+
+
+    <div class="prose">
+      <h2 id="s1">1. Lista el trabajo antes de pensar en fechas</h2>
+<p>Escribe todas las tareas sin preocuparte del calendario. Mezclar «qué hay que hacer» con «cuándo» es lo que produce planes optimistas: en cuanto ves una fecha, empiezas a ajustar el alcance para que quepa.</p>
+        <p>Agrupa después en fases. Una fase con quince tareas dentro se lee mejor que un listado plano de cuarenta.</p>
+      <h2 id="s2">2. Estima duraciones, no fechas</h2>
+<p>Para cada tarea, cuánto tiempo lleva hacerla. Nada más. Las fechas saldrán solas cuando enlaces las dependencias — y si las fijas ahora, estarás inventando un calendario que tendrás que rehacer.</p>
+        <p>Estima en días laborables si tu herramienta los distingue. Diez días que cruzan dos fines de semana son catorce días de calendario, y esa diferencia se acumula rápido.</p>
+      <h2 id="s3">3. Enlaza las dependencias</h2>
+<p>Este es el paso que la mayoría se salta y el que convierte el dibujo en un modelo. Para cada tarea pregunta: ¿qué tiene que estar terminado antes de poder empezar esto?</p>
+        <p>La mayoría serán fin-inicio. Usa inicio-inicio cuando dos cosas arrancan juntas y fin-fin cuando deben terminar a la vez. Si te encuentras escribiendo fechas a mano para que las barras «queden bien», te falta una dependencia.</p>
+      <h2 id="s4">4. Marca los hitos que importan</h2>
+<p>Un hito es una fecha sin duración: aprobación concedida, contrato firmado, entrega realizada. Sirven para dos cosas: son lo que dirección mira primero, y son barreras naturales que impiden que el plan avance fuera de secuencia.</p>
+      <h2 id="s5">5. Mira la ruta crítica</h2>
+<p>Con las dependencias puestas, la ruta crítica aparece sola: la cadena que determina tu fecha de fin. Si no te gusta esa fecha, solo tienes tres opciones reales — acortar una tarea crítica, solaparla con la siguiente, o mover la fecha. Recortar tareas que no están en la ruta crítica no adelanta nada.</p>
+      <h2 id="s6">6. Asigna responsables y comprueba la carga</h2>
+<p>Pon un nombre en cada tarea y mira dónde se apilan. Un plan que parece impecable en el gráfico puede tener a la misma persona en cuatro tareas simultáneas en marzo. Ese solapamiento es invisible en las barras y evidente en una vista de carga.</p>
+      <h2 id="s7">7. Fija línea base y publica</h2>
+<p>Cuando el plan esté acordado, guarda una línea base: la foto congelada contra la que medirás la desviación. A partir de ahí, exporta a PDF o PowerPoint para compartirlo, y actualiza el porcentaje completado en lugar de redibujar.</p>
+
+      <div class="callout">Ordena las tareas antes de fechar. Es tentador empezar arrastrando barras hasta que el gráfico «se ve bien», pero eso produce un calendario que solo se sostiene mientras nadie lo toque. Con dependencias, el plan se recalcula solo y la fecha de fin deja de ser una opinión.</div>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Cuánto se tarda en hacer un diagrama de Gantt?</summary><p>Con una plantilla, entre quince minutos y una hora para un proyecto normal. Lo que lleva tiempo no es dibujar: es decidir el orden del trabajo y estimar duraciones con honestidad.</p></details>
+        <details><summary>¿Puedo hacer un diagrama de Gantt en Excel?</summary><p>Sí, con un gráfico de barras apiladas, aunque las dependencias hay que mantenerlas a mano y esa es justamente la parte que se rompe. Puedes descargar plantillas listas de Excel o editarlo online sin fórmulas.</p></details>
+        <details><summary>¿Cuántas tareas debe tener?</summary><p>Las que puedas seguir de verdad. Entre veinte y sesenta filas es el rango cómodo para un proyecto único; por encima, agrupa en fases y despliega solo lo que necesites mirar.</p></details>
+        <details><summary>¿Es gratis hacerlo en gantts.app?</summary><p>Sí. El <a href="/es/app.html">editor</a> es gratuito, sin registro y sin marca de agua, y el plan se queda en tu navegador.</p></details>
+      </div>
+
+      <h2 id="related">Seguir leyendo</h2>
+      <ul>
+        <li><a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a></li>
+        <li><a href="/es/blog/critical-path-method.html">Cómo se calcula la ruta crítica</a></li>
+        <li><a href="/blog/gantt-chart-mistakes.html">Errores habituales al planificar</a></li>
+        <li><a href="/es/blog/">Ver todas las guías</a></li>
+      </ul>
+      <p class="crumbs"><small>Las guías que aún no se han traducido se abren en inglés.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Pruébalo en el editor gratuito</h2>
+      <p>Abre gantts.app, arrastra las barras y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/index.html">Todas las guías</a>
+          <a href="/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

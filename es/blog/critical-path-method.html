@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Método de la ruta crítica (CPM) explicado | gantts.app</title>
+  <meta name="description" content="Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/critical-path-method.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/critical-path-method.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Método de la ruta crítica (CPM) explicado | gantts.app" />
+  <meta property="og:description" content="Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar." />
+  <meta property="og:url" content="https://gantts.app/es/blog/critical-path-method.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="El método de la ruta crítica (CPM), explicado" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Método de la ruta crítica (CPM) explicado | gantts.app" />
+  <meta name="twitter:description" content="Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=22" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/critical-path-method.html#post","headline":"El método de la ruta crítica (CPM), explicado","description":"Qué es la ruta crítica, cómo se calcula con pasada adelante y atrás, qué es la holgura y cómo usarla para decidir qué tareas puedes retrasar.","url":"https://gantts.app/es/blog/critical-path-method.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"El método de la ruta crítica (CPM), explicado","item":"https://gantts.app/es/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Qué es la ruta crítica en un proyecto?","acceptedAnswer":{"@type":"Answer","text":"La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega."}},{"@type":"Question","name":"¿Qué diferencia hay entre holgura total y holgura libre?","acceptedAnswer":{"@type":"Answer","text":"La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre."}},{"@type":"Question","name":"¿Puede haber más de una ruta crítica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas — y el proyecto se vuelve más frágil, porque hay más tareas sin margen."}},{"@type":"Question","name":"¿Cómo veo la ruta crítica de mi plan?","acceptedAnswer":{"@type":"Answer","text":"Enlaza las dependencias y activa la ruta crítica en el editor gratuito: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/index.html">Guías</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html" selected>Español</option><option value="/fr/">Français</option><option value="/de/">Deutsch</option><option value="/pt/">Português</option><option value="/zh/">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a></div>
+    <h1>El método de la ruta crítica (CPM), explicado</h1>
+    <p class="lead">La <strong>ruta crítica</strong> es la cadena de tareas más larga de tu proyecto, y por tanto la que fija la fecha de fin. Retrasa una tarea crítica un día y el proyecto entero se retrasa un día. Retrasa una que no lo es y puede que no pase absolutamente nada — esa diferencia es lo que el método hace visible.</p>
+    <p class="crumbs"><small>Actualizado el 2026-07-19</small></p>
+
+
+
+    <div class="prose">
+      <h2 id="s1">Qué calcula exactamente</h2>
+<p>El método de la ruta crítica (CPM, por sus siglas en inglés) recorre la red de tareas dos veces. La <strong>pasada adelante</strong> calcula lo más pronto que cada tarea puede empezar y terminar, arrastrando las restricciones desde el principio del proyecto. La <strong>pasada atrás</strong> calcula lo más tarde que puede empezar y terminar sin retrasar el final.</p>
+        <p>La diferencia entre ambas es la <strong>holgura total</strong>. Las tareas con holgura cero forman la ruta crítica.</p>
+      <h2 id="s2">Holgura: la cifra que de verdad usas</h2>
+<p>Si una tarea tiene seis días de holgura, puedes retrasarla hasta seis días sin mover la fecha de entrega. Eso es información accionable: te dice de dónde puedes sacar a una persona cuando surge una urgencia, y qué tareas no admiten ninguna negociación.</p>
+        <p>Conviene distinguir la holgura total (cuánto puedes retrasar sin mover el fin del proyecto) de la holgura libre (cuánto puedes retrasar sin mover la tarea siguiente). La primera es la que se mira para decidir prioridades.</p>
+      <h2 id="s3">Por qué la ruta crítica cambia sola</h2>
+<p>No es una propiedad fija del proyecto: es el resultado de las duraciones y dependencias actuales. Acorta la tarea crítica más larga y la ruta salta a otra cadena, que hasta ese momento tenía holgura. Por eso comprimir un plan es un proceso iterativo y no una única decisión.</p>
+        <p>De ahí también el error clásico: optimizar una tarea que no está en la ruta crítica no adelanta el proyecto ni un día. Se siente productivo y no cambia nada.</p>
+      <h2 id="s4">Cómo comprimir el calendario</h2>
+<p>Solo hay tres palancas reales. <em>Acortar</em> una tarea crítica, normalmente añadiendo recursos. <em>Solapar</em> tareas que iban en serie, convirtiendo una dependencia fin-inicio en inicio-inicio con desfase. O <em>reducir alcance</em>. Cualquier otra cosa mueve barras sin mover la fecha.</p>
+        <p>Cada solape que introduces añade riesgo: empezar a probar antes de terminar de construir significa rehacer pruebas si el diseño cambia. Es una decisión legítima, pero conviene tomarla sabiendo qué se compra y qué se paga.</p>
+
+      <div class="callout">La ruta crítica solo existe si has puesto dependencias. Un diagrama con fechas escritas a mano no tiene red que recorrer, así que cualquier herramienta te dirá que todo es crítico o que nada lo es. Enlazar las tareas es el requisito previo, no un adorno.</div>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Qué es la ruta crítica en un proyecto?</summary><p>La secuencia de tareas dependientes más larga entre el inicio y el fin. Determina la duración mínima del proyecto: ninguna de sus tareas puede retrasarse sin retrasar la entrega.</p></details>
+        <details><summary>¿Qué diferencia hay entre holgura total y holgura libre?</summary><p>La holgura total es cuánto puede retrasarse una tarea sin mover el fin del proyecto. La holgura libre es cuánto puede retrasarse sin mover la tarea siguiente. La total suele ser mayor o igual que la libre.</p></details>
+        <details><summary>¿Puede haber más de una ruta crítica?</summary><p>Sí. Cuando dos o más cadenas tienen exactamente la misma duración total, todas son críticas — y el proyecto se vuelve más frágil, porque hay más tareas sin margen.</p></details>
+        <details><summary>¿Cómo veo la ruta crítica de mi plan?</summary><p>Enlaza las dependencias y activa la ruta crítica en el <a href="/es/app.html">editor gratuito</a>: la cadena que fija tu fecha de fin se resalta sola y se actualiza cada vez que cambias una duración.</p></details>
+      </div>
+
+      <h2 id="related">Seguir leyendo</h2>
+      <ul>
+        <li><a href="/es/blog/gantt-chart-dependencies.html">Los cuatro tipos de dependencia</a></li>
+        <li><a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a></li>
+        <li><a href="/blog/gantt-baseline-variance.html">Medir la desviación con una línea base</a></li>
+        <li><a href="/es/blog/">Ver todas las guías</a></li>
+      </ul>
+      <p class="crumbs"><small>Las guías que aún no se han traducido se abren en inglés.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Pruébalo en el editor gratuito</h2>
+      <p>Abre gantts.app, arrastra las barras y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/index.html">Todas las guías</a>
+          <a href="/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=22"></script>
+</body>
+</html>

@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const { LOCALES } = require('../i18n/content.js');
 const { localesFor, translatedSlugs } = require('../i18n/template-locales.js');
+const G = require('../i18n/guide-locales.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -63,6 +64,14 @@ for (const slug of translatedSlugs()) {
     sub: `templates/${slug}.html`,
     en: `templates/${slug}.html`,
     codes: localesFor(slug),
+  });
+}
+
+for (const slug of G.translatedSlugs()) {
+  CLUSTERS.push({
+    sub: `blog/${slug}.html`,
+    en: `blog/${slug}.html`,
+    codes: G.localesFor(slug),
   });
 }
 

@@ -31,6 +31,8 @@ const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 const { APP } = require('../i18n/content.js');
 const { BY_LOCALE: TPL_I18N, UI: TPL_UI, localesFor } = require('../i18n/template-locales.js');
 const { T: TPL_EN } = require('./new-templates.js');
+const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
+const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
@@ -571,6 +573,106 @@ ${faq}
   return shell(loc, sub, { title: `${d.metaTitle} | gantts.app`, description: d.metaDesc, h1: d.h1 }, body, ld, only);
 }
 
+
+/* ---------------- Localized guides ----------------
+
+   BlogPosting + FAQPage, mirroring the English guide's schema role.
+   The SVG figure is inherited from the English guide where one exists:
+   the diagrams are language-independent shapes, and re-authoring them
+   per locale would be a maintenance trap. Guides without a generated
+   English model simply have no figure. */
+function renderGuide(loc, slug) {
+  const code = loc.code;
+  const d = GUIDE_I18N[code][slug];
+  const ui = GUIDE_UI[code];
+  const en = GUIDE_EN[slug];
+  const sub = `blog/${slug}.html`;
+  const url = `${ORIGIN}/${code}/${sub}`;
+  const only = guideLocalesFor(slug);
+  const strip = (s) => String(s).replace(/<[^>]+>/g, '');
+
+  const body = d.sections.map(([h, html], i) =>
+    `      <h2 id="s${i + 1}">${esc(h)}</h2>\n${html}`).join('\n');
+
+  const faq = d.faq.map(([q, a], i) =>
+    `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n');
+
+  // Related guides resolve to the localized version when it exists and
+  // fall back to English otherwise — a cross-link in the wrong language
+  // still beats no cross-link.
+  const related = (d.related || []).map(([rslug, label]) => {
+    const localized = GUIDE_I18N[code][rslug];
+    return `        <li><a href="${localized ? `/${code}/blog/${rslug}.html` : `/blog/${rslug}.html`}">${esc(label)}</a></li>`;
+  }).join('\n');
+
+  const figure = en && en.figure
+    ? `    <figure class="fig">\n      <p>${esc(d.figIntro || '')}</p>\n      ${en.figure}\n    </figure>`
+    : '';
+
+  const ld = graph(loc, [
+    {
+      '@type': 'BlogPosting', '@id': url + '#post',
+      headline: d.h1, description: d.metaDesc, url,
+      inLanguage: loc.hreflang,
+      datePublished: d.date, dateModified: d.date,
+      isPartOf: { '@id': SITE_ID },
+      publisher: { '@id': ORG_ID },
+      author: { '@id': ORG_ID },
+      mainEntityOfPage: url,
+      breadcrumb: breadcrumb(loc, [
+        { name: ui.home, url: `${ORIGIN}/${code}/` },
+        { name: ui.guides, url: `${ORIGIN}/${code}/blog/` },
+        { name: d.h1, url },
+      ]),
+    },
+    {
+      '@type': 'FAQPage',
+      inLanguage: loc.hreflang,
+      mainEntity: d.faq.map(([q, a]) => ({
+        '@type': 'Question', name: strip(q),
+        acceptedAnswer: { '@type': 'Answer', text: strip(a) },
+      })),
+    },
+  ]);
+
+  const html = `  <article class="container narrow" style="padding-top:40px">
+    <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/blog/">${esc(ui.guides)}</a></div>
+    <h1>${esc(d.h1)}</h1>
+    <p class="lead">${d.lead}</p>
+    <p class="crumbs"><small>${esc(ui.updated)} ${esc(d.date)}</small></p>
+
+${figure}
+
+    <div class="prose">
+${body}
+
+      <div class="callout">${d.callout}</div>
+
+      <h2 id="faq">${esc(ui.faq)}</h2>
+      <div class="faq">
+${faq}
+      </div>
+
+      <h2 id="related">${esc(ui.related)}</h2>
+      <ul>
+${related}
+        <li><a href="/${code}/blog/">${esc(ui.backToGuides)}</a></li>
+      </ul>
+      <p class="crumbs"><small>${esc(ui.enNote)}</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>${esc(ui.ctaH2)}</h2>
+      <p>${esc(ui.ctaP)}</p>
+      <a class="btn btn-white btn-lg" href="/${code}/app.html">${esc(ui.ctaBtn)}</a>
+    </div>
+  </section>`;
+
+  return shell(loc, sub, { title: `${d.metaTitle} | gantts.app`, description: d.metaDesc, h1: d.h1 }, html, ld, only);
+}
+
 /* Guides index — a list of English articles with localized labels. */
 function renderBlogIndex(loc) {
   const code = loc.code;
@@ -578,7 +680,9 @@ function renderBlogIndex(loc) {
   const labels = BLOG_LABELS[code];
   const sub = 'blog/index.html';
 
-  const items = BLOG_SLUGS.map(s => `        <a class="card card-link" href="/blog/${s}.html">
+  const guideHref = (s) => guideLocalesFor(s).includes(code)
+    ? `/${code}/blog/${s}.html` : `/blog/${s}.html`;
+  const items = BLOG_SLUGS.map(s => `        <a class="card card-link" href="${guideHref(s)}">
           <h3>${esc(labels[s])}</h3>
           <span class="eyebrow">${esc(b.readMore)} →</span>
         </a>`).join('\n');
@@ -598,7 +702,7 @@ function renderBlogIndex(loc) {
         numberOfItems: BLOG_SLUGS.length,
         itemListElement: BLOG_SLUGS.map((s, i) => ({
           '@type': 'ListItem', position: i + 1,
-          name: labels[s], url: `${ORIGIN}/blog/${s}.html`,
+          name: labels[s], url: ORIGIN + guideHref(s),
         })),
       },
     },
@@ -737,6 +841,16 @@ for (const loc of LOCALES) {
   fs.writeFileSync(path.join(dir, 'app.html'), renderApp(loc), 'utf8');
   written += 8;
   console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
+
+  const gslugs = Object.keys(GUIDE_I18N[loc.code] || {});
+  if (gslugs.length) {
+    fs.mkdirSync(path.join(dir, 'blog'), { recursive: true });
+    for (const slug of gslugs) {
+      fs.writeFileSync(path.join(dir, 'blog', slug + '.html'), renderGuide(loc, slug), 'utf8');
+      written++;
+    }
+    console.log(`    + ${gslugs.length} translated guide(s) under /${loc.code}/blog/`);
+  }
 
   const slugs = Object.keys(TPL_I18N[loc.code] || {});
   if (slugs.length) {
