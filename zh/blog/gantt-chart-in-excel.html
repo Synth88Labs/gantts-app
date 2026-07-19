@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › 用 Excel 做甘特图：步骤与局限</div>
     <h1>用 Excel 做甘特图：步骤与局限</h1>
     <p class="lead">Excel 没有"甘特图"这种图表类型。它是用一个技巧拼出来的：<strong>堆积条形图</strong>，把第一个数据系列设成透明。这招管用，十分钟就能完成——但有一条明确的边界。</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -90,7 +94,10 @@
       </ol>
     </div>
 
-
+    <figure class="fig">
+      <figcaption>技巧一图说明：不可见的偏移量加上可见的工期。</figcaption>
+      <svg viewBox="0 0 520 110" width="100%" role="img" aria-label="技巧一图说明：不可见的偏移量加上可见的工期。"><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务s</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">今天</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">表格</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">幻灯片</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">浏览器</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </figure>
 
     <div class="prose">
       <h2 id="s1">准备数据</h2>

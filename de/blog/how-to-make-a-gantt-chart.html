@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a> › Gantt-Diagramm erstellen: Anleitung in sieben Schritten</div>
     <h1>Gantt-Diagramm erstellen: Anleitung in sieben Schritten</h1>
     <p class="lead">Ein <strong>Gantt-Diagramm zu erstellen</strong> dauert weniger lang, als die meisten erwarten — vorausgesetzt, man geht in der richtigen Reihenfolge vor. Der häufigste Fehler ist, mit Terminen anzufangen. Termine sind das Ergebnis, nicht der Anfang.</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -93,7 +97,10 @@
       </ol>
     </div>
 
-
+    <figure class="fig">
+      <figcaption>Die Reihenfolge, in der ein Plan tatsächlich entsteht:</figcaption>
+      <svg viewBox="0 0 540 78" width="100%" role="img" aria-label="Die Reihenfolge, in der ein Plan tatsächlich entsteht:"><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Entwurf</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Umsetzung</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Test</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Start</text></svg>
+    </figure>
 
     <div class="prose">
       <h2 id="s1">1. Vorgänge sammeln — ohne Termine</h2>

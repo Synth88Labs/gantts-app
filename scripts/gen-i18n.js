@@ -34,6 +34,7 @@ const { T: TPL_EN } = require('./new-templates.js');
 const { CARDS: TPL_CARDS } = require('../i18n/template-cards.js');
 const { ICONS: GUIDE_ICONS, DESC: GUIDE_DESC } = require('../i18n/guide-cards.js');
 const { BENTO } = require('../i18n/bento-icons.js');
+const Figures = require('../i18n/guide-figures.js');
 const { promo } = require('../i18n/promo.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
@@ -934,8 +935,18 @@ function renderGuide(loc, slug) {
     return `        <li><a href="${localized ? `/${code}/blog/${rslug}.html` : `/blog/${rslug}.html`}">${esc(label)}</a></li>`;
   }).join('\n');
 
-  const figure = en && en.figure
-    ? `    <figure class="fig">\n      <p>${esc(d.figIntro || '')}</p>\n      ${en.figure}\n    </figure>`
+  /* The figure is DRAWN FOR THIS LOCALE, not inherited from English.
+     It used to reuse en.figure verbatim, which left every label inside
+     the diagram — "Finish → Start", "Today", "Baseline" — in English on
+     the German, Spanish, French, Portuguese and Chinese pages. A
+     translated article wrapped around an untranslated illustration
+     reads worse than no illustration at all.
+
+     It also closes a gap: only four guides had a figure, so the other
+     eight opened on a wall of prose in every language. */
+  const svg = Figures.figure(slug, code, d.figIntro || d.h1);
+  const figure = svg
+    ? `    <figure class="fig">\n      <figcaption>${esc(d.figIntro || '')}</figcaption>\n      ${svg}\n    </figure>`
     : '';
 
   const ld = graph(loc, [
@@ -975,7 +986,11 @@ function renderGuide(loc, slug) {
      the width — a table-of-contents column beside the prose — rather
      than to narrow the page again. */
   const html = `  <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/blog/">${esc(ui.guides)}</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/blog/">${esc(ui.guides)}</a> › ${esc(d.h1)}</div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${d.lead}</p>
     <!-- English guides carry a byline/date/reading-time line and an

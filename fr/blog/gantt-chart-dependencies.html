@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a> › Les liens d’antériorité : les quatre types expliqués</div>
     <h1>Les liens d’antériorité : les quatre types expliqués</h1>
     <p class="lead">Un <strong>lien d’antériorité</strong> définit ce qui attend quoi. Il en existe quatre types, mais la plupart des plans n’en utilisent réellement qu’un — et les autres font plus de dégâts qu’ils ne rendent service.</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -89,32 +93,8 @@
     </div>
 
     <figure class="fig">
-      <p>Les quatre types de liens comparés :</p>
-      <svg viewBox="0 0 620 330" width="100%" role="img" aria-label="Diagram of the four Gantt dependency types: finish to start, start to start, finish to finish, and start to finish">
-      <text x="0" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Start (FS)</text>
-      <text x="0" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A finishes — the default</text>
-      <rect x="0" y="40" width="130" height="14" rx="4" fill="#6c4cf1"/><text x="138" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
-      <rect x="160" y="66" width="130" height="14" rx="4" fill="#8b7bf5"/><text x="298" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
-      <path d="M 130 47 C 144 47, 146 73, 160 73" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="160,73 154,69 154,77" fill="#6c4cf1"/>
-
-      <text x="330" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Start (SS)</text>
-      <text x="330" y="30" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot start until A starts</text>
-      <rect x="330" y="40" width="130" height="14" rx="4" fill="#0d9488"/><text x="468" y="51" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
-      <rect x="330" y="66" width="150" height="14" rx="4" fill="#14b8a6"/><text x="488" y="77" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
-      <path d="M 332 47 C 346 47, 316 73, 330 73" fill="none" stroke="#0d9488" stroke-width="1.8"/><polygon points="330,73 324,69 324,77" fill="#0d9488"/>
-
-      <text x="0" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Finish → Finish (FF)</text>
-      <text x="0" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A finishes</text>
-      <rect x="0" y="206" width="150" height="14" rx="4" fill="#ea580c"/><text x="158" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
-      <rect x="30" y="232" width="120" height="14" rx="4" fill="#f97316"/><text x="158" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
-      <path d="M 150 213 C 164 213, 136 239, 150 239" fill="none" stroke="#ea580c" stroke-width="1.8"/><polygon points="150,239 144,235 144,243" fill="#ea580c"/>
-
-      <text x="330" y="180" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Start → Finish (SF)</text>
-      <text x="330" y="196" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">B cannot finish until A starts — rare</text>
-      <rect x="430" y="206" width="120" height="14" rx="4" fill="#9333ea"/><text x="558" y="217" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">A</text>
-      <rect x="330" y="232" width="110" height="14" rx="4" fill="#a855f7"/><text x="448" y="243" font-size="11.5" fill="currentColor" font-family="system-ui,sans-serif">B</text>
-      <path d="M 432 213 C 446 213, 426 239, 440 239" fill="none" stroke="#9333ea" stroke-width="1.8"/><polygon points="440,239 434,235 434,243" fill="#9333ea"/>
-    </svg>
+      <figcaption>Les quatre types de liens comparés :</figcaption>
+      <svg viewBox="0 0 580 190" width="100%" role="img" aria-label="Les quatre types de liens comparés :"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fin → Début</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Début → Début</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fin → Fin</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Début → Fin</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text></svg>
     </figure>
 
     <div class="prose">

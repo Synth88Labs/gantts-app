@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › 九个常见的计划错误，以及怎么改</div>
     <h1>九个常见的计划错误，以及怎么改</h1>
     <p class="lead">多数甘特图不是败在工具上，而是败在九个总是重复的错误上。每一个在认出来之后，几分钟就能改掉。</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -93,30 +97,8 @@
     </div>
 
     <figure class="fig">
-      <p>九个错误，按通常被发现的顺序排列：</p>
-      <svg viewBox="0 0 620 250" width="100%" role="img" aria-label="Comparison of a cluttered over-detailed Gantt chart against a clean phase-level chart">
-      <text x="0" y="12" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">✗ Every task, no structure</text>
-      <rect x="8" y="26" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="19" y="38" width="62" height="7" rx="3" fill="#cbd5e1"/><rect x="30" y="50" width="80" height="7" rx="3" fill="#cbd5e1"/><rect x="41" y="62" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="52" y="74" width="62" height="7" rx="3" fill="#cbd5e1"/><rect x="63" y="86" width="80" height="7" rx="3" fill="#cbd5e1"/><rect x="74" y="98" width="44" height="7" rx="3" fill="#cbd5e1"/><rect x="85" y="110" width="62" height="7" rx="3" fill="#cbd5e1"/>
-      <text x="0" y="146" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">40+ rows, no phases, no milestones —</text>
-      <text x="0" y="160" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">unreadable and obsolete within a week.</text>
-
-      <line x1="290" y1="6" x2="290" y2="200" stroke="#e2e8f0" stroke-width="1"/>
-
-      <text x="320" y="12" font-size="12" font-weight="700" fill="#157f4a" font-family="system-ui,sans-serif">✓ Phases, milestones, dependencies</text>
-      <rect x="320" y="26" width="110" height="14" rx="4" fill="#6c4cf1"/>
-      <text x="438" y="37" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Discovery</text>
-      <rect x="346" y="52" width="130" height="14" rx="4" fill="#8b7bf5"/>
-      <text x="484" y="63" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Design</text>
-      <path d="M 430 33 C 444 33, 332 59, 346 59" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="346,59 340,55 340,63" fill="#6c4cf1"/>
-      <polygon points="480,74 488,82 480,90 472,82" fill="#10b981"/>
-      <text x="496" y="86" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Sign-off</text>
-      <rect x="400" y="100" width="150" height="14" rx="4" fill="#ea580c"/>
-      <text x="320" y="122" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Build</text>
-      <rect x="430" y="126" width="90" height="14" rx="4" fill="#0d9488"/>
-      <text x="320" y="148" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Test</text>
-      <text x="320" y="174" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">10 rows. Readable across a room,</text>
-      <text x="320" y="188" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">and cheap enough to keep current.</text>
-    </svg>
+      <figcaption>九个错误，按通常被发现的顺序排列：</figcaption>
+      <svg viewBox="0 0 560 165" width="100%" role="img" aria-label="九个错误，按通常被发现的顺序排列："><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">周 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">阶段 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">阶段 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">里程碑</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">今天</text></svg>
     </figure>
 
     <div class="prose">

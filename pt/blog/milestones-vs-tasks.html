@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/blog/">Guias</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/blog/">Guias</a> › Marcos e tarefas: qual é a diferença</div>
     <h1>Marcos e tarefas: qual é a diferença</h1>
     <p class="lead">Uma <strong>tarefa</strong> ocupa tempo, um <strong>marco</strong> assinala um momento. Essa é toda a diferença técnica — e ainda assim, usar marcos de forma errada é um dos jeitos mais rápidos de tornar um cronograma ilegível.</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -89,27 +93,8 @@
     </div>
 
     <figure class="fig">
-      <p>Barras para o trabalho, losangos para os momentos que importam:</p>
-      <svg viewBox="0 0 620 230" width="100%" role="img" aria-label="Legend of Gantt chart symbols: task bar, milestone diamond, summary bar, dependency arrow, progress fill and today line">
-      <rect x="0" y="14" width="120" height="14" rx="4" fill="#6c4cf1"/>
-      <text x="136" y="25" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Task</tspan> — has duration</text>
-
-      <polygon points="52,56 62,66 52,76 42,66" fill="#10b981"/>
-      <text x="136" y="70" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Milestone</tspan> — zero duration, a moment</text>
-
-      <path d="M 0 104 h 120 v 10 l -6 -5 h -108 l -6 5 z" fill="#334155"/>
-      <text x="136" y="114" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Summary / phase</tspan> — rolls up its children</text>
-
-      <path d="M 0 152 C 14 152, 102 152, 116 152" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="116,152 110,148 110,156" fill="#6c4cf1"/>
-      <text x="136" y="157" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Dependency</tspan> — one task constrains another</text>
-
-      <rect x="0" y="188" width="120" height="14" rx="4" fill="#c7bdf9"/>
-      <rect x="0" y="188" width="74" height="14" rx="4" fill="#6c4cf1"/>
-      <text x="136" y="199" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Progress</tspan> — the filled portion is % complete</text>
-
-      <line x1="480" y1="8" x2="480" y2="212" stroke="#ef4444" stroke-width="1.6" stroke-dasharray="4 3"/>
-      <text x="488" y="20" font-size="11" fill="#ef4444" font-family="system-ui,sans-serif" font-weight="700">Today</text>
-    </svg>
+      <figcaption>Barras para o trabalho, losangos para os momentos que importam:</figcaption>
+      <svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Barras para o trabalho, losangos para os momentos que importam:"><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semana 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Marco</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text></svg>
     </figure>
 
     <div class="prose">

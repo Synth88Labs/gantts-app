@@ -71,7 +71,11 @@
   </header>
 
   <article class="container" style="padding-top:40px">
-    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a></div>
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a> › Faire un diagramme de Gantt : la méthode en sept étapes</div>
     <h1>Faire un diagramme de Gantt : la méthode en sept étapes</h1>
     <p class="lead"><strong>Faire un diagramme de Gantt</strong> prend moins de temps qu’on ne le croit — à condition de procéder dans le bon ordre. L’erreur la plus fréquente est de commencer par les dates. Les dates sont un résultat, pas un point de départ.</p>
     <!-- English guides carry a byline/date/reading-time line and an
@@ -93,7 +97,10 @@
       </ol>
     </div>
 
-
+    <figure class="fig">
+      <figcaption>L’ordre dans lequel un plan se construit réellement :</figcaption>
+      <svg viewBox="0 0 540 78" width="100%" role="img" aria-label="L’ordre dans lequel un plan se construit réellement :"><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Conception</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Réalisation</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Recette</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Lancement</text></svg>
+    </figure>
 
     <div class="prose">
       <h2 id="s1">1. Lister les tâches, sans dates</h2>
