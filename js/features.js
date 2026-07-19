@@ -63,6 +63,7 @@
         { icon: '🎯', name: 'Toggle critical path', run: () => toggleSetting('showCritical', '#toggleCritical') },
         { icon: '🌗', name: 'Toggle weekends', run: () => toggleSetting('showWeekends', '#toggleWeekends') },
         { icon: '📆', name: 'Working calendar (weekends & holidays)', run: () => App.openCalendar() },
+        { icon: '👥', name: 'Show workload / over-allocation', run: () => App.toggleWorkload() },
         { icon: '↻', name: 'Reflow tasks onto working days', run: () => { const n = App.reflowToWorkingDays(); App.toast(n ? 'Moved ' + n + ' task(s)' : 'Nothing to move'); } },
         { icon: '📊', name: 'Toggle progress', run: () => toggleSetting('showProgress', '#toggleProgress') },
         { icon: '📍', name: 'Toggle today marker', run: () => toggleSetting('showToday', '#toggleToday') },

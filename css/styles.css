@@ -611,3 +611,26 @@ body.presenting .today-line { width: 3px; }
 .pdf-go { width: 100%; padding: 10px; }
 .pdf-auto { flex: none; font-size: 11.5px; gap: 4px; }
 .pdf-scale input[type=range]:disabled { opacity: .45; }
+
+/* ---- workload lane ----
+   Shares the chart's x-axis so an over-booked column sits directly
+   under the tasks that caused it. */
+.workload { display: flex; flex: none; height: 132px; border-top: 2px solid var(--line-strong);
+  background: var(--panel); overflow: hidden; }
+.wl-names { width: var(--grid-w); flex: none; border-right: 1px solid var(--line);
+  overflow-y: auto; background: var(--bg); }
+.wl-name { display: flex; flex-direction: column; justify-content: center; gap: 1px;
+  height: 34px; padding: 0 12px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.wl-name.is-over .wl-who { color: var(--danger); font-weight: 700; }
+.wl-who { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wl-meta { font-size: 10.5px; color: var(--ink-soft); }
+.wl-name.is-over .wl-meta { color: var(--danger); }
+.wl-empty { padding: 14px 12px; font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+.wl-scroll { flex: 1; overflow: hidden; }   /* panned by transform, see wireScrollSync */
+.wl-track { position: relative; will-change: transform; }
+.wl-row { position: relative; height: 34px; border-bottom: 1px solid var(--line); }
+.wl-bar { position: absolute; bottom: 0; background: var(--brand); opacity: .5; border-radius: 1px 1px 0 0; }
+.wl-bar.is-over { background: var(--danger); opacity: .85; }
+.wl-capline { position: absolute; left: 0; right: 0; bottom: 50%; height: 1px;
+  background: var(--line-strong); pointer-events: none; }
+#workloadBtn.is-on { background: var(--brand-soft); border-color: var(--brand); }

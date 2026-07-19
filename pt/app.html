@@ -27,7 +27,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=32" />
+  <link rel="stylesheet" href="/css/styles.css?v=34" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -156,6 +156,7 @@
       <label class="chk"><input type="checkbox" id="toggleProgress" checked /> <span data-i18n="app.progress">Progress</span></label>
       <label class="chk"><input type="checkbox" id="toggleToday" checked /> <span data-i18n="app.today">Today</span></label>
       <button class="btn" id="calendarBtn" title="Working days, weekends and holidays">📆 <span data-i18n="app.calendar">Calendar</span></button>
+      <button class="btn" id="workloadBtn" title="Who is over-booked, and when">👥 <span data-i18n="app.workload">Workload</span></button>
     </div>
 
     <div class="tgroup grow"></div>
@@ -187,6 +188,12 @@
       </div>
     </div>
   </main>
+
+  <!-- workload lane: per-person allocation, aligned to the timeline -->
+  <section class="workload" id="workload" hidden aria-label="Resource workload">
+    <div class="wl-names" id="wlNames"></div>
+    <div class="wl-scroll" id="wlScroll"><div class="wl-track" id="wlTrack"></div></div>
+  </section>
 
   <!-- subtle sponsor / banner slot -->
   <div class="ad-slot" id="adSlot" aria-label="Advertisement slot">
@@ -277,19 +284,20 @@
   <div class="toast" id="toast" hidden></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=32"></script>
-  <script src="/js/util.js?v=32"></script>
-  <script src="/js/store.js?v=32"></script>
-  <script src="/js/calendar.js?v=32"></script>
-  <script src="/js/model.js?v=32"></script>
-  <script src="/js/schedule.js?v=32"></script>
-  <script src="/js/render.js?v=32"></script>
-  <script src="/js/interactions.js?v=32"></script>
-  <script src="/js/exports.js?v=32"></script>
-  <script src="/js/export-pdf.js?v=32"></script>
-  <script src="/js/templates.js?v=32"></script>
-  <script src="/js/features.js?v=32"></script>
-  <script src="/js/app.js?v=32"></script>
+  <script src="/js/i18n.js?v=34"></script>
+  <script src="/js/util.js?v=34"></script>
+  <script src="/js/store.js?v=34"></script>
+  <script src="/js/calendar.js?v=34"></script>
+  <script src="/js/resources.js?v=34"></script>
+  <script src="/js/model.js?v=34"></script>
+  <script src="/js/schedule.js?v=34"></script>
+  <script src="/js/render.js?v=34"></script>
+  <script src="/js/interactions.js?v=34"></script>
+  <script src="/js/exports.js?v=34"></script>
+  <script src="/js/export-pdf.js?v=34"></script>
+  <script src="/js/templates.js?v=34"></script>
+  <script src="/js/features.js?v=34"></script>
+  <script src="/js/app.js?v=34"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

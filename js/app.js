@@ -16,7 +16,16 @@
       this.wireSplitter();
       this.wireKeyboard();
 
-      Model.on('load', (p) => { this.syncControls(); this.render(); });
+      Model.on('load', (p) => {
+        this.syncControls();
+        const wl = U.$('#workload');
+        if (wl) {
+          wl.hidden = !p.settings.showWorkload;
+          const b = U.$('#workloadBtn');
+          if (b) b.classList.toggle('is-on', !!p.settings.showWorkload);
+        }
+        this.render();
+      });
       Model.on('change', () => this.render());
       Model.on('select', () => { this.render(); this.refreshDrawer(); });
       Model.on('history', () => this.syncHistoryButtons());
@@ -36,6 +45,7 @@
       Render.render();
       this.applyGridWidth();
       this.applyFont();
+      this.renderWorkload();
     },
 
     applyGridWidth() {
@@ -102,6 +112,8 @@
       U.$('#templatesBtn').addEventListener('click', () => this.openTemplates());
       const calBtn = U.$('#calendarBtn');
       if (calBtn) calBtn.addEventListener('click', () => this.openCalendar());
+      const wlBtn = U.$('#workloadBtn');
+      if (wlBtn) wlBtn.addEventListener('click', () => this.toggleWorkload());
       U.$('#fitBtn').addEventListener('click', () => this.fit());
       U.$('#todayBtn').addEventListener('click', () => this.scrollToToday());
 
@@ -274,9 +286,20 @@
       const chartHead = U.$('#chartHead');
       const gridBody = U.$('#gridBody');
       const gridHead = U.$('#gridHead');
+      const wlTrack = U.$('#wlTrack');
       chartScroll.addEventListener('scroll', () => {
         chartHead.scrollLeft = chartScroll.scrollLeft;
         gridBody.scrollTop = chartScroll.scrollTop;
+        /* The workload lane shares the chart's x-axis, so a red column
+           must stay under the tasks that caused it.
+
+           Translating the track rather than setting scrollLeft on the
+           pane is deliberate: the chart pane carries a vertical
+           scrollbar and the lane does not, so their client widths differ
+           by a few pixels and scrollLeft clamps to different maxima —
+           which drifted the columns out of alignment at the right-hand
+           end. A transform has no maximum and stays pixel-exact. */
+        if (wlTrack) wlTrack.style.transform = 'translateX(' + (-chartScroll.scrollLeft) + 'px)';
       });
       // horizontal scroll of the grid columns keeps the grid header in sync
       gridBody.addEventListener('scroll', () => { gridHead.scrollLeft = gridBody.scrollLeft; });
@@ -703,6 +726,84 @@
         body.appendChild(meter);
         this.refreshStorageMeter(meter);
       });
+    },
+
+    /* ---------------- workload lane ----------------
+
+       Renders per-person allocation as a bar per day, on the same
+       x-axis as the chart so a red column lines up with the tasks
+       causing it. Hidden by default: it is only meaningful once people
+       are assigned, and an empty lane would just be clutter. */
+    toggleWorkload() {
+      const el = U.$('#workload');
+      if (!el) return;
+      const show = el.hidden;
+      el.hidden = !show;
+      Model.project.settings.showWorkload = show;
+      Model.save();
+      U.$('#workloadBtn').classList.toggle('is-on', show);
+      if (show) this.renderWorkload();
+    },
+
+    renderWorkload() {
+      const el = U.$('#workload');
+      if (!el || el.hidden) return;
+
+      const names = U.$('#wlNames'), track = U.$('#wlTrack');
+      U.clear(names); U.clear(track);
+
+      const cal = window.Cal ? Cal.of(Model.project) : null;
+      const load = Resources.compute(Model.tasks(), Model.project, cal);
+      const rs = Render.rs;
+
+      if (!load.names.length) {
+        names.appendChild(U.el('div', { class: 'wl-empty' },
+          'Assign people to tasks (the Assignee column) to see who is over-booked.'));
+        track.style.width = rs.width + 'px';
+        return;
+      }
+
+      track.style.width = rs.width + 'px';
+
+      for (const person of load.names) {
+        const rec = load.byName[person];
+        const over = rec.over.length;
+
+        names.appendChild(U.el('div', { class: 'wl-name' + (over ? ' is-over' : '') }, [
+          U.el('span', { class: 'wl-who' }, person),
+          U.el('span', { class: 'wl-meta' }, over
+            ? `${rec.peak}% peak · ${over} day${over === 1 ? '' : 's'} over`
+            : `${rec.peak}% peak`),
+        ]));
+
+        const row = U.el('div', { class: 'wl-row' });
+        // One div per day that carries load. Days at or under capacity
+        // are muted; over-capacity days are red and sized by overshoot,
+        // so the eye lands on the worst week without reading numbers.
+        for (const [iso, pct] of rec.days) {
+          const i = Render.off(iso);
+          if (i < 0 || i >= rs.totalDays) continue;
+          const ratio = Math.min(2, pct / rec.capacity);
+          const isOver = pct > rec.capacity;
+          row.appendChild(U.el('div', {
+            class: 'wl-bar' + (isOver ? ' is-over' : ''),
+            style: {
+              left: (i * rs.dayW) + 'px',
+              width: Math.max(1, rs.dayW - 1) + 'px',
+              height: Math.round(Math.min(100, ratio * 50)) + '%',
+            },
+            title: `${person} — ${U.fmtShort(iso)}: ${pct}% of ${rec.capacity}%` +
+              (isOver ? '\nOver-booked by ' + (pct - rec.capacity) + '%\n' +
+                Resources.tasksOn(Model.tasks(), person, iso).map(t => '· ' + t.name).join('\n') : ''),
+          }));
+        }
+        // capacity line, so "full" is visible rather than implied
+        row.appendChild(U.el('div', { class: 'wl-capline' }));
+        track.appendChild(row);
+      }
+
+      const btn = U.$('#workloadBtn');
+      if (btn) btn.title = Resources.summary(load);
     },
 
     // ---------------- toast ----------------
