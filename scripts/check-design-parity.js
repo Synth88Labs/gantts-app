@@ -42,7 +42,13 @@ const DETAIL_PAIRS = [
 
 const REQUIRED = {
   'templates.html': ['tpl-card', 'tpl-thumb', 'tpl-body', 'tpl-tags', 'tag', 'head-l', 'head-l-note', 'cta-band', 'btn-white'],
-  '': ['cta-band', 'btn-white'],
+  /* The homepage closes with .cta2, not .cta-band — the two are
+     different treatments and English has only ever used cta2 here.
+     Requiring cta-band on the homepage meant this checker demanded a
+     component English does not have, so it passed while the localized
+     homepages carried the wrong one and failed the moment they were
+     corrected. Requirements are now taken from what English renders. */
+  '': ['cta2', 'btn-white', 'faq2', 'faq2-side', 'faq2-list', 'bento-visual', 'hero3-ruler'],
   'blog/index.html': ['card-link'],
 };
 

@@ -346,7 +346,7 @@ function renderHome(loc) {
   const features = t.features.map((f, i) => {
     const cell = BENTO[i] || { cls: '', icon: '' };
     return `        <article class="bento-item${cell.cls ? ' ' + cell.cls : ''}">
-${cell.icon ? `          <span class="licon">${cell.icon}</span>` : ''}
+${cell.visual ? `          <div class="bento-visual">${cell.visual}</div>` : ''}${cell.icon ? `          <span class="licon">${cell.icon}</span>` : ''}
           <div class="bento-txt">
             <h3>${esc(f.h)}</h3>
             <p>${esc(f.p)}</p>
@@ -383,9 +383,26 @@ ${cell.icon ? `          <span class="licon">${cell.icon}</span>` : ''}
     },
   ]);
 
+  /* The English hero sits under a date ruler with "Today" marked. It is
+     decorative (aria-hidden) but it is the first thing on the page, and
+     without it the localized hero opens on empty space. Dates are
+     formatted per locale rather than copied across, so a German visitor
+     reads "4. Aug." and a Chinese one "8月4日" instead of "Aug 4". The
+     reference date is fixed, not today's — this is illustrative chrome,
+     and a date that silently rolls forward would make every rebuild a
+     content diff. */
+  const rulerFmt = new Intl.DateTimeFormat(DATE_LOCALE[code] || 'en-US',
+    { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const ruler = [0, 7, 14, 21, 28, 35].map((d, i) => {
+    const label = i === 2 ? esc(t.todayLabel)
+      : esc(rulerFmt.format(new Date(Date.UTC(2026, 7, 4 + d))));
+    return `<span${i === 2 ? ' class="on-today"' : ''}>${label}</span>`;
+  }).join('');
+
   const body = `  <section class="hero3">
     <div class="hero3-bg" aria-hidden="true"></div>
     <div class="container">
+      <div class="hero3-ruler" aria-hidden="true">${ruler}</div>
       <div class="hero3-head">
         <span class="kicker"><i></i> <span>${esc(t.kicker)}</span></span>
         <h1>${t.h1}</h1>
@@ -434,11 +451,10 @@ ${t.steps.map(([h, p], i) => `        <li>
 
   ${t.tplH2 ? `<section class="section section-alt">
     <div class="container">
-      <div class="head-l"><div><h2>${esc(t.tplH2)}</h2></div><p class="head-l-note">${esc(t.tplP)}</p></div>
+      <div class="head-l"><div><h2>${esc(t.tplH2)}</h2></div><a class="head-l-link" href="${localHref(code, 'templates.html')}">${esc(t.tplBtn)}</a></div>
       <div class="tpl-grid">
 ${homeTemplateCards(code)}
       </div>
-      <p style="text-align:center;margin-top:26px"><a class="btn btn-primary btn-lg" href="${localHref(code, 'templates.html')}">${esc(t.tplBtn)}</a></p>
     </div>
   </section>` : ''}
 
@@ -456,20 +472,29 @@ ${t.why.map(([h, p]) => `        <li><b>${esc(h)}</b> ${esc(p)}</li>`).join('\n'
     </div>
   </section>` : ''}
 
-  <section class="section section-alt">
-    <div class="container narrow">
-      <h2>${esc(t.faqH2)}</h2>
-      <div class="faq">
+  <section class="section">
+    <div class="container faq2">
+      <div class="faq2-side">
+        <span class="label">${esc(t.faqLabel)}</span>
+        <h2>${esc(t.faqH2)}</h2>
+        <p>${esc(t.faqP)}</p>
+        <a class="head-l-link" href="${guideHrefFor(code, 'what-is-a-gantt-chart')}">${esc(c.nav.what)} →</a>
+      </div>
+      <div class="faq faq2-list">
 ${faq}
       </div>
     </div>
   </section>
 
-  <section class="cta-band">
+  <section class="section">
     <div class="container">
-      <h2>${esc(t.ctaH2)}</h2>
-      <p>${esc(t.ctaP)}</p>
-      <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
+      <div class="cta2">
+        <div>
+          <h2>${esc(t.ctaH2)}</h2>
+          <p>${esc(t.ctaP)}</p>
+        </div>
+        <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(t.ctaBtn)}</a>
+      </div>
     </div>
   </section>`;
 
@@ -500,6 +525,7 @@ ${footer(loc.code)}
 function renderTemplates(loc) {
   const code = loc.code;
   const t = TEMPLATES[code];
+  const c = CHROME[code];
   const labels = TEMPLATE_LABELS[code];
   const sub = 'templates.html';
 
@@ -514,6 +540,20 @@ function renderTemplates(loc) {
      this the localized hub was a wall of bare labels — 319 words against
      the English 1,288, which is a materially worse page for the reader
      and a thin one for Google. */
+  /* Download badges are per template, not a fixed trio. Three of the 41
+     differ, and the localized hub hardcoded Excel/PPT/CSV for all of
+     them — so the Google Sheets template advertised an Excel download
+     and no Sheets one in all five languages, which is wrong about the
+     product rather than merely inconsistent with English. Format names
+     are product names and stay untranslated, as on the English hub. */
+  const TAGS = {
+    excel: '<span class="tag excel">Excel</span> <span class="tag csv">CSV</span>',
+    powerpoint: '<span class="tag ppt">PPT</span> <span class="tag excel">Excel</span> <span class="tag csv">CSV</span>',
+    'google-sheets': '<span class="tag sheets">Sheets</span> <span class="tag excel">Excel</span> <span class="tag csv">CSV</span>',
+  };
+  const DEFAULT_TAGS = '<span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span>';
+  const tagsFor = (s) => TAGS[s] || DEFAULT_TAGS;
+
   const blurb = (s) => {
     // A fully translated template carries its own blurb; otherwise fall
     // back to the shared one-liner table, so a locale gets a usable hub
@@ -521,6 +561,23 @@ function renderTemplates(loc) {
     const d = (TPL_I18N[code] || {})[s];
     return (d && d.card) || ((TPL_CARDS[code] || {})[s]) || '';
   };
+
+  /* A template belongs to exactly one category on the hub. Cross-listing
+     renders the same card twice, which reads as a bug rather than as
+     helpful discovery — and it silently desynced the card count from the
+     template count. Fail loudly instead of deduping quietly: a slug in
+     two groups is a content mistake to fix in TEMPLATE_GROUPS, and
+     swallowing it here would just hide the next one. */
+  const seenSlug = new Map();
+  for (const g of TEMPLATE_GROUPS) {
+    for (const s of g.slugs) {
+      if (seenSlug.has(s)) {
+        throw new Error(`template "${s}" is listed in both ${seenSlug.get(s)} and ${g.key}; `
+          + 'it would render as a duplicate card. Keep it in the more specific category.');
+      }
+      seenSlug.set(s, g.key);
+    }
+  }
 
   const groups = TEMPLATE_GROUPS.map(g => {
     /* Markup must match the English hub EXACTLY. The localized cards
@@ -530,12 +587,23 @@ function renderTemplates(loc) {
        left-aligned), .tpl-body (the 16px/18px padding, i.e. the missing
        indent) and .tpl-body h3/p (the text colours, so both inherited
        the anchor's purple). The download badges were missing too. */
-    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>`).join('\n');
+    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags">${tagsFor(s)}</div></div></a>`).join('\n');
     /* .head-l is a flex row: heading on the left, note on the right.
        The note was being emitted on its own, so it kept the 380px
        max-width from .head-l-note but lost the layout — orphaning a
        narrow paragraph under the heading instead of sitting beside it. */
-    return `      <section class="section">
+    /* The id is what the jump-row chips anchor to; without it the chips
+       would be decorative.
+
+       No .label kicker here, deliberately. On the English hub the label
+       is the axis ("By use case") and the h2 is descriptive ("Templates
+       by project type") — two different strings. The localized groups
+       carry a single string that is already the axis ("Nach Projektart"),
+       so emitting both would print the same words twice, one above the
+       other. Matching a class list is not the point; matching what the
+       reader gets is. Recorded as an accepted divergence in
+       check-design-parity.js rather than faked. */
+    return `      <section class="section" id="${g.key}">
         <div class="head-l"><div><h2>${esc(t[g.key])}</h2></div>${t.catNote ? `<p class="head-l-note">${esc(t.catNote)}</p>` : ''}</div>
         <div class="tpl-grid">
 ${cards}
@@ -543,7 +611,11 @@ ${cards}
       </section>`;
   }).join('\n');
 
-  const allSlugs = TEMPLATE_GROUPS.flatMap(g => g.slugs);
+  /* Unique, not the flattened list. 'research' is cross-listed under
+     two categories, so the raw flatMap is 42 for 41 templates — which
+     overstated the count in the hero and emitted a duplicate ListItem
+     in the ItemList schema. */
+  const allSlugs = [...new Set(TEMPLATE_GROUPS.flatMap(g => g.slugs))];
   const url = pub(`${ORIGIN}/${code}/${sub}`);
   const ldNodes = [];
   if (t.faq) ldNodes.push({
@@ -573,17 +645,51 @@ ${cards}
     },
   ].concat(ldNodes));
 
-  const body = `  <article class="container" style="padding-top:44px">
-    <h1>${esc(t.h1)}</h1>
-    <p class="lead">${esc(t.lead)}</p>
+  /* The English hub opens with a centred hero band: breadcrumb, eyebrow
+     with the template count, h1, lead, and a row of jump chips into the
+     category sections. The localized hubs opened with a bare <h1> on
+     white — no band, no eyebrow, no chips — so the page a searcher lands
+     on looked like a different, plainer product in every language but
+     English. Same markup now, translated copy. */
+  const chips = TEMPLATE_GROUPS
+    .map(g => `        <a class="jump" href="#${g.key}">${esc(t[g.key])}</a>`).join('\n');
+
+  /* The "detail pages are in English" note is written per locale and was
+     going stale silently: Spanish still apologised for untranslated
+     pages after all 41 had been translated, and German claimed every
+     page was English when 24 were not. Drive it off the registry so it
+     states what is actually true and disappears by itself at full
+     coverage. */
+  const translated = allSlugs.filter(s => localesFor(s).includes(code)).length;
+  const note = translated === 0 ? t.noteEn
+    : translated < allSlugs.length ? (t.notePartial || t.noteEn)
+    : '';
+
+  const body = `  <section class="bg-soft" style="padding-top:46px">
+    <div class="container narrow center">
+      <div class="crumbs" style="text-align:center"><a href="/${code}/">${esc(t.homeCrumb)}</a> › ${esc(c.nav.templates)}</div>
+      <span class="eyebrow">${esc(String(t.eyebrow).replace('{n}', allSlugs.length))}</span>
+      <h1 style="margin:16px 0 12px">${esc(t.h1)}</h1>
+      <p class="lead">${esc(t.lead)}</p>
+      <div class="jump-row">
+${chips}
+      </div>
+    </div>
+  </section>
+
+  <article class="container" style="padding-top:44px">
     <p>${esc(t.intro)}</p>
-    <p class="crumbs"><small>${esc(t.noteEn)}</small></p>
-${groups}
-    ${t.howSteps ? `<section class="section">
-      <h2>${esc(t.howH2)}</h2>
-      <ol class="how-steps">
-${t.howSteps.map(([h, p]) => `        <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
-      </ol>
+${note ? `    <p class="crumbs"><small>${esc(note)}</small></p>\n` : ''}${groups}
+    ${t.howSteps ? `<section>
+      <div class="container narrow">
+        <div class="section-head"><span class="eyebrow">${esc(t.howEyebrow)}</span><h2>${esc(t.howH2)}</h2></div>
+        <div class="prose">
+          <ol>
+${t.howSteps.map(([h, p]) => `            <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
+          </ol>
+        </div>
+        <div class="callout" style="margin-top:8px">${t.howCallout}</div>
+      </div>
     </section>` : ''}
 
     ${t.faq ? `<section class="section">
@@ -941,6 +1047,16 @@ function renderBlogIndex(loc) {
      carrying the eyebrow, h1 and lead. The localized version had no
      breadcrumb at all and reused .crumbs to style the English-fallback
      note, which is both a missing element and a misuse of the class. */
+  /* Same coverage-driven rule as the templates hub. German claimed every
+     guide was English while all twelve were German, and Spanish said the
+     same with twelve of twelve translated — the note was written once at
+     authoring time and never revisited. Derive it, so it is true today
+     and removes itself at full coverage. */
+  const translatedGuides = BLOG_SLUGS.filter(s => guideLocalesFor(s).includes(code)).length;
+  const blogNote = translatedGuides === 0 ? b.noteEn
+    : translatedGuides < BLOG_SLUGS.length ? (b.notePartial || b.noteEn)
+    : '';
+
   const body = `  <article class="container narrow" style="padding-top:44px">
     <div class="crumbs"><a href="/${code}/">${esc(CHROME[code].nav.home || 'gantts.app')}</a> › ${esc(CHROME[code].nav.guides)}</div>
     <div class="section-head" style="text-align:left">
@@ -948,11 +1064,21 @@ function renderBlogIndex(loc) {
       <h1>${esc(b.h1)}</h1>
       <p class="lead">${esc(b.lead)}</p>
     </div>
-    ${b.noteEn ? `<p class="locale-note"><small>${esc(b.noteEn)}</small></p>` : ''}
+    ${blogNote ? `<p class="locale-note"><small>${esc(blogNote)}</small></p>` : ''}
     <div class="grid grid-3">
 ${items}
     </div>
-  </article>`;
+  </article>
+
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <h2>${esc(b.ctaH2)}</h2>
+        <p>${esc(b.ctaP)}</p>
+        <a class="btn btn-white btn-lg" href="${localHref(code, 'app.html')}">${esc(b.ctaBtn)}</a>
+      </div>
+    </div>
+  </section>`;
 
   return shell(loc, sub, b, body, ld);
 }

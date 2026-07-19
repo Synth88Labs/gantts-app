@@ -135,6 +135,9 @@ const HOME = {
     ctaH2: '¿Listo para planificar tu proyecto?',
     ctaP: 'Sin registro, sin tarjeta de crédito. Abre la aplicación y empieza.',
     ctaBtn: 'Abrir el creador de Gantt',
+    todayLabel: 'Hoy',
+    faqLabel: 'Preguntas frecuentes',
+    faqP: 'Todo lo que probablemente te estás preguntando antes de empezar.',
   },
   fr: {
     slug: '',
@@ -185,6 +188,9 @@ const HOME = {
     ctaH2: 'Prêt à planifier votre projet ?',
     ctaP: 'Sans inscription, sans carte bancaire. Ouvrez l’application et lancez-vous.',
     ctaBtn: 'Ouvrir le créateur de Gantt',
+    todayLabel: "Aujourd'hui",
+    faqLabel: 'Questions fréquentes',
+    faqP: 'Tout ce que vous vous demandez sans doute avant de vous lancer.',
   },
   de: {
     slug: '',
@@ -235,6 +241,9 @@ const HOME = {
     ctaH2: 'Bereit, Ihr Projekt zu planen?',
     ctaP: 'Ohne Anmeldung, ohne Kreditkarte. App öffnen und anfangen.',
     ctaBtn: 'Gantt-Generator öffnen',
+    todayLabel: 'Heute',
+    faqLabel: 'Häufige Fragen',
+    faqP: 'Alles, was Sie sich vor dem Start vermutlich fragen.',
   },
   pt: {
     slug: '',
@@ -285,6 +294,9 @@ const HOME = {
     ctaH2: 'Pronto para planejar seu projeto?',
     ctaP: 'Sem cadastro, sem cartão de crédito. Abra o aplicativo e comece.',
     ctaBtn: 'Abrir o criador de Gantt',
+    todayLabel: 'Hoje',
+    faqLabel: 'Perguntas frequentes',
+    faqP: 'Tudo o que você provavelmente quer saber antes de começar.',
   },
   zh: {
     slug: '',
@@ -335,6 +347,9 @@ const HOME = {
     ctaH2: '准备好规划你的项目了吗？',
     ctaP: '无需注册，无需信用卡。打开应用即可开始。',
     ctaBtn: '打开甘特图工具',
+    todayLabel: '今天',
+    faqLabel: '常见问题',
+    faqP: '开始之前，你可能想知道的都在这里。',
   },
 };
 
@@ -388,6 +403,12 @@ const TEMPLATES = {
       ['¿Qué plantilla elijo si ninguna encaja?', 'La de gestión de proyectos: cinco fases genéricas que sirven de esqueleto para casi cualquier trabajo.'],
     ],
     noteEn: 'Algunas fichas ya están en español; el resto está en inglés por ahora.',
+    howEyebrow: '3 pasos rápidos',
+    howCallout: '<strong>La vía más rápida:</strong> abre cualquier plantilla en el <a href="/es/app.html">creador de diagramas de Gantt gratuito</a>, edítala en directo y expórtala — te ahorras por completo las fórmulas de hoja de cálculo. Sin registro y sin marca de agua.',
+    notePartial: 'Algunas fichas ya están en español; el resto está en inglés por ahora.',
+    eyebrow: '✦ {n} plantillas gratis · sin registro',
+    homeCrumb: 'Inicio',
+    browseBy: 'Explorar por',
   },
   fr: {
     title: 'Modèles de diagramme de Gantt gratuits | gantts.app',
@@ -413,6 +434,12 @@ const TEMPLATES = {
       ['Lequel choisir si aucun ne correspond ?', 'Celui de gestion de projet : cinq phases génériques qui servent de squelette à presque tout.'],
     ],
     noteEn: 'La fiche de chaque modèle est en anglais pour le moment.',
+    howEyebrow: '3 étapes rapides',
+    howCallout: "<strong>Le chemin le plus rapide :</strong> ouvrez n'importe quel modèle dans le <a href='/fr/app.html'>créateur de diagramme de Gantt gratuit</a>, modifiez-le en direct et exportez — vous évitez entièrement les formules de tableur. Sans inscription ni filigrane.",
+    notePartial: 'Certaines fiches sont déjà en français ; les autres sont encore en anglais.',
+    eyebrow: '✦ {n} modèles gratuits · sans inscription',
+    homeCrumb: 'Accueil',
+    browseBy: 'Parcourir par',
   },
   de: {
     title: 'Kostenlose Gantt-Diagramm-Vorlagen | gantts.app',
@@ -438,6 +465,12 @@ const TEMPLATES = {
       ['Welche Vorlage, wenn keine passt?', 'Die Projektmanagement-Vorlage: fünf generische Phasen als Gerüst für nahezu jedes Vorhaben.'],
     ],
     noteEn: 'Die Detailseiten der Vorlagen sind derzeit auf Englisch.',
+    howEyebrow: '3 schnelle Schritte',
+    howCallout: '<strong>Der schnellste Weg:</strong> Öffnen Sie eine beliebige Vorlage im <a href="/de/app.html">kostenlosen Gantt-Diagramm-Editor</a>, bearbeiten Sie sie direkt und exportieren Sie — die umständlichen Tabellenformeln entfallen komplett. Ohne Anmeldung, ohne Wasserzeichen.',
+    notePartial: 'Ein Teil der Detailseiten ist bereits auf Deutsch; die übrigen sind noch auf Englisch.',
+    eyebrow: '✦ {n} kostenlose Vorlagen · ohne Anmeldung',
+    homeCrumb: 'Start',
+    browseBy: 'Stöbern nach',
   },
   pt: {
     title: 'Modelos de gráfico de Gantt grátis | gantts.app',
@@ -463,6 +496,12 @@ const TEMPLATES = {
       ['Qual escolher se nenhum encaixar?', 'O de gestão de projetos: cinco fases genéricas que servem de esqueleto para quase tudo.'],
     ],
     noteEn: 'A página de cada modelo está em inglês por enquanto.',
+    howEyebrow: '3 passos rápidos',
+    howCallout: "<strong>O caminho mais rápido:</strong> abra qualquer modelo no <a href='/pt/app.html'>criador de gráfico de Gantt gratuito</a>, edite ao vivo e exporte — você dispensa completamente as fórmulas de planilha. Sem cadastro e sem marca d'água.",
+    notePartial: 'Algumas páginas já estão em português; as demais ainda estão em inglês.',
+    eyebrow: '✦ {n} modelos grátis · sem cadastro',
+    homeCrumb: 'Início',
+    browseBy: 'Navegar por',
   },
   zh: {
     title: '免费甘特图模板 | gantts.app',
@@ -488,6 +527,12 @@ const TEMPLATES = {
       ['如果没有合适的模板怎么办？', '选项目管理模板：五个通用阶段，几乎可以作为任何项目的骨架。'],
     ],
     noteEn: '部分模板的详情页目前仍为英文，正在逐步翻译中。模板文件本身与语言无关，下载后可直接使用。',
+    howEyebrow: '三个快速步骤',
+    howCallout: '<strong>最快的方式：</strong>在<a href="/zh/app.html">免费在线甘特图编辑器</a>中打开任意模板，直接编辑并导出——完全不用碰表格公式。无需注册，没有水印。',
+    notePartial: '部分模板详情页已翻译为中文，其余仍为英文。模板文件本身与语言无关。',
+    eyebrow: '✦ {n} 个免费模板 · 无需注册',
+    homeCrumb: '首页',
+    browseBy: '按分类浏览',
   },
 };
 
@@ -502,7 +547,12 @@ const TEMPLATE_LABELS = {
 
 // Which slugs sit under which category heading.
 const TEMPLATE_GROUPS = [
-  { key: 'catTypes', slugs: ['project-management', 'product-launch', 'event-planning', 'research', 'simple'] },
+  { key: 'catTypes', slugs: ['project-management', 'product-launch', 'event-planning', 'simple'
+      /* 'research' lives in catAcademic only. It was listed in both,
+         and since the localized hub renders every group it rendered the
+         same card twice — 42 cards for 41 templates. The English hub is
+         hand-authored and lists it once, so this was a localized-only
+         duplicate. The specific category wins over the generic one. */] },
   { key: 'catIndustry', slugs: ['construction', 'software-development', 'home-renovation', 'wedding-planning'] },
   { key: 'catTeam', slugs: ['marketing', 'content-calendar', 'employee-onboarding', '30-60-90-day-plan', 'product-roadmap'] },
   { key: 'catTime', slugs: ['weekly', 'monthly', 'annual'] },
@@ -528,6 +578,10 @@ const BLOG = {
     lead: 'Explicaciones prácticas, sin jerga: qué es un diagrama de Gantt, cómo montar uno y cómo leer la ruta crítica.',
     readMore: 'Leer la guía',
     noteEn: 'Las guías completas están en inglés por ahora.',
+    notePartial: 'Algunas guías ya están en español; el resto está en inglés por ahora.',
+    ctaH2: 'Deja de leer y empieza a planificar',
+    ctaP: 'Crea tu diagrama de Gantt gratis en el navegador: dependencias, ruta crítica y exportación a PDF, PNG, Excel y PowerPoint. Sin registro.',
+    ctaBtn: 'Abrir el editor →',
   },
   fr: {
     title: 'Guides sur les diagrammes de Gantt | gantts.app',
@@ -537,6 +591,10 @@ const BLOG = {
     lead: 'Des explications concrètes et sans jargon : ce qu’est un diagramme de Gantt, comment en construire un, et comment lire le chemin critique.',
     readMore: 'Lire le guide',
     noteEn: 'Les guides complets sont en anglais pour le moment.',
+    notePartial: 'Certains guides sont déjà en français ; les autres sont encore en anglais.',
+    ctaH2: 'Assez lu, place au planning',
+    ctaP: 'Créez votre diagramme de Gantt gratuitement dans le navigateur : dépendances, chemin critique et export en PDF, PNG, Excel et PowerPoint. Sans inscription.',
+    ctaBtn: "Ouvrir l'éditeur →",
   },
   de: {
     title: 'Gantt-Diagramm-Ratgeber | gantts.app',
@@ -546,6 +604,10 @@ const BLOG = {
     lead: 'Praxisnah und ohne Fachjargon erklärt: was ein Gantt-Diagramm ist, wie Sie eines aufbauen und wie Sie den kritischen Pfad lesen.',
     readMore: 'Ratgeber lesen',
     noteEn: 'Die vollständigen Ratgeber sind derzeit auf Englisch.',
+    notePartial: 'Ein Teil der Ratgeber ist bereits auf Deutsch; die übrigen sind noch auf Englisch.',
+    ctaH2: 'Genug gelesen — planen Sie los',
+    ctaP: 'Erstellen Sie Ihr Gantt-Diagramm kostenlos im Browser: Abhängigkeiten, kritischer Pfad und Export als PDF, PNG, Excel und PowerPoint. Ohne Anmeldung.',
+    ctaBtn: 'Gantt-Editor öffnen →',
   },
   pt: {
     title: 'Guias de gráfico de Gantt | gantts.app',
@@ -555,6 +617,10 @@ const BLOG = {
     lead: 'Explicações práticas e sem jargão: o que é um gráfico de Gantt, como montar um e como ler o caminho crítico.',
     readMore: 'Ler o guia',
     noteEn: 'Os guias completos estão em inglês por enquanto.',
+    notePartial: 'Alguns guias já estão em português; os demais ainda estão em inglês.',
+    ctaH2: 'Pare de ler, comece a planejar',
+    ctaP: 'Crie seu gráfico de Gantt grátis no navegador: dependências, caminho crítico e exportação para PDF, PNG, Excel e PowerPoint. Sem cadastro.',
+    ctaBtn: 'Abrir o editor →',
   },
   zh: {
     title: '甘特图指南 | gantts.app',
@@ -564,6 +630,10 @@ const BLOG = {
     lead: '不讲术语的实用讲解：什么是甘特图、怎样从零搭一个，以及如何看懂关键路径。',
     readMore: '阅读指南',
     noteEn: '完整指南目前为英文。',
+    notePartial: '部分指南已翻译为中文，其余仍为英文。',
+    ctaH2: '别只是读，开始规划',
+    ctaP: '在浏览器中免费创建甘特图：依赖关系、关键路径，并可导出为 PDF、PNG、Excel 和 PowerPoint。无需注册。',
+    ctaBtn: '打开甘特图编辑器 →',
   },
 };
 

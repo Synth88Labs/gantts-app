@@ -73,6 +73,7 @@
   <section class="hero3">
     <div class="hero3-bg" aria-hidden="true"></div>
     <div class="container">
+      <div class="hero3-ruler" aria-hidden="true"><span>4 de ago.</span><span>11 de ago.</span><span class="on-today">Hoje</span><span>25 de ago.</span><span>1 de set.</span><span>8 de set.</span></div>
       <div class="hero3-head">
         <span class="kicker"><i></i> <span>Grátis · sem cadastro · funciona no navegador</span></span>
         <h1>O <span class="grad">criador de gráfico de Gantt</span> gratuito que simplesmente abre e funciona.</h1>
@@ -108,7 +109,7 @@
       </div>
       <div class="bento">
         <article class="bento-item b1">
-
+          <div class="bento-visual"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect x="10" y="18" width="90" height="13" rx="4" fill="#cbb8f5"/> <rect x="70" y="40" width="70" height="13" rx="4" fill="#cbb8f5"/> <rect x="10" y="62" width="120" height="13" rx="4" fill="#ff6a3d"/> <rect x="130" y="84" width="80" height="13" rx="4" fill="#ff6a3d"/> <rect x="200" y="106" width="70" height="13" rx="4" fill="#ff6a3d"/> <path d="M130 68 h12 v22 h-8" fill="none" stroke="#ff6a3d" stroke-width="2"/> <path d="M210 90 h12 v22 h-14" fill="none" stroke="#ff6a3d" stroke-width="2"/> <rect x="8" y="60" width="124" height="17" rx="5" fill="none" stroke="#ff6a3d" stroke-width="2"/> </svg></div>
           <div class="bento-txt">
             <h3>Caminho crítico automático</h3>
             <p>Veja exatamente a cadeia de tarefas que define seu prazo, destacada assim que as datas mudam. Sem cálculo manual e sem plano pago.</p>
@@ -178,7 +179,7 @@
 
   <section class="section section-alt">
     <div class="container">
-      <div class="head-l"><div><h2>Ou comece com um modelo pronto</h2></div><p class="head-l-note">Mais de quarenta modelos com fases, marcos e dependências já posicionados: construção, marketing, software, eventos, pesquisa e mais.</p></div>
+      <div class="head-l"><div><h2>Ou comece com um modelo pronto</h2></div><a class="head-l-link" href="/pt/templates.html">Ver os modelos</a></div>
       <div class="tpl-grid">
         <a class="tpl-card" href="/templates/project-management.html"><div class="tpl-thumb"><img src="/templates/img/project-management.svg" alt="Gestão de projetos" loading="lazy"></div><div class="tpl-body"><h3>Gestão de projetos</h3><p>Plano genérico de cinco fases, do início ao encerramento, com marcos de aprovação.</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
         <a class="tpl-card" href="/templates/construction.html"><div class="tpl-thumb"><img src="/templates/img/construction.svg" alt="Construção" loading="lazy"></div><div class="tpl-body"><h3>Construção</h3><p>Licenças, fundação, estrutura, instalações e acabamentos, com as vistorias.</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
@@ -187,7 +188,6 @@
         <a class="tpl-card" href="/templates/software-development.html"><div class="tpl-thumb"><img src="/templates/img/software-development.svg" alt="Desenvolvimento de software" loading="lazy"></div><div class="tpl-body"><h3>Desenvolvimento de software</h3><p>Descoberta, design, sprints, integração, QA e implantação.</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
         <a class="tpl-card" href="/templates/simple.html"><div class="tpl-thumb"><img src="/templates/img/simple.svg" alt="Simples" loading="lazy"></div><div class="tpl-body"><h3>Simples</h3><p>Poucas linhas, datas claras e nada mais. Para planos curtos que você realmente mantém.</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
       </div>
-      <p style="text-align:center;margin-top:26px"><a class="btn btn-primary btn-lg" href="/pt/templates.html">Ver os modelos</a></p>
     </div>
   </section>
 
@@ -208,10 +208,15 @@
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container narrow">
-      <h2>Perguntas frequentes</h2>
-      <div class="faq">
+  <section class="section">
+    <div class="container faq2">
+      <div class="faq2-side">
+        <span class="label">Perguntas frequentes</span>
+        <h2>Perguntas frequentes</h2>
+        <p>Tudo o que você provavelmente quer saber antes de começar.</p>
+        <a class="head-l-link" href="/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt? →</a>
+      </div>
+      <div class="faq faq2-list">
         <details class="faq-item">
           <summary>É realmente grátis?</summary>
           <p>Sim. Sem contas, sem teste gratuito, sem recursos pagos. Tudo roda no seu navegador, então não há servidores a custear.</p>
@@ -232,11 +237,15 @@
     </div>
   </section>
 
-  <section class="cta-band">
+  <section class="section">
     <div class="container">
-      <h2>Pronto para planejar seu projeto?</h2>
-      <p>Sem cadastro, sem cartão de crédito. Abra o aplicativo e comece.</p>
-      <a class="btn btn-white btn-lg" href="/pt/app.html">Abrir o criador de Gantt</a>
+      <div class="cta2">
+        <div>
+          <h2>Pronto para planejar seu projeto?</h2>
+          <p>Sem cadastro, sem cartão de crédito. Abra o aplicativo e comece.</p>
+        </div>
+        <a class="btn btn-white btn-lg" href="/pt/app.html">Abrir o criador de Gantt</a>
+      </div>
     </div>
   </section>
 

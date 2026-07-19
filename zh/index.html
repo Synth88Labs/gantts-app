@@ -73,6 +73,7 @@
   <section class="hero3">
     <div class="hero3-bg" aria-hidden="true"></div>
     <div class="container">
+      <div class="hero3-ruler" aria-hidden="true"><span>8月4日</span><span>8月11日</span><span class="on-today">今天</span><span>8月25日</span><span>9月1日</span><span>9月8日</span></div>
       <div class="hero3-head">
         <span class="kicker"><i></i> <span>免费 · 无需注册 · 在浏览器中运行</span></span>
         <h1>打开即用的免费<span class="grad">甘特图制作工具</span>。</h1>
@@ -108,7 +109,7 @@
       </div>
       <div class="bento">
         <article class="bento-item b1">
-
+          <div class="bento-visual"><svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"> <rect x="10" y="18" width="90" height="13" rx="4" fill="#cbb8f5"/> <rect x="70" y="40" width="70" height="13" rx="4" fill="#cbb8f5"/> <rect x="10" y="62" width="120" height="13" rx="4" fill="#ff6a3d"/> <rect x="130" y="84" width="80" height="13" rx="4" fill="#ff6a3d"/> <rect x="200" y="106" width="70" height="13" rx="4" fill="#ff6a3d"/> <path d="M130 68 h12 v22 h-8" fill="none" stroke="#ff6a3d" stroke-width="2"/> <path d="M210 90 h12 v22 h-14" fill="none" stroke="#ff6a3d" stroke-width="2"/> <rect x="8" y="60" width="124" height="17" rx="5" fill="none" stroke="#ff6a3d" stroke-width="2"/> </svg></div>
           <div class="bento-txt">
             <h3>自动计算关键路径</h3>
             <p>清楚看到决定项目完成日期的任务链条，日期一变即刻高亮。无需手动计算，也不必升级付费版。</p>
@@ -178,7 +179,7 @@
 
   <section class="section section-alt">
     <div class="container">
-      <div class="head-l"><div><h2>或者从现成模板开始</h2></div><p class="head-l-note">四十多个模板，阶段、里程碑和依赖关系都已排好：工程施工、市场营销、软件开发、活动策划、科研等等。</p></div>
+      <div class="head-l"><div><h2>或者从现成模板开始</h2></div><a class="head-l-link" href="/zh/templates.html">浏览模板</a></div>
       <div class="tpl-grid">
         <a class="tpl-card" href="/templates/project-management.html"><div class="tpl-thumb"><img src="/templates/img/project-management.svg" alt="项目管理" loading="lazy"></div><div class="tpl-body"><h3>项目管理</h3><p>通用五阶段计划，从启动到收尾，含审批里程碑。</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
         <a class="tpl-card" href="/templates/construction.html"><div class="tpl-thumb"><img src="/templates/img/construction.svg" alt="工程施工" loading="lazy"></div><div class="tpl-body"><h3>工程施工</h3><p>报批、基础、主体、机电与装修，含各阶段验收。</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
@@ -187,7 +188,6 @@
         <a class="tpl-card" href="/templates/software-development.html"><div class="tpl-thumb"><img src="/templates/img/software-development.svg" alt="软件开发" loading="lazy"></div><div class="tpl-body"><h3>软件开发</h3><p>需求梳理、设计、迭代开发、集成、测试与上线。</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
         <a class="tpl-card" href="/templates/simple.html"><div class="tpl-thumb"><img src="/templates/img/simple.svg" alt="简易模板" loading="lazy"></div><div class="tpl-body"><h3>简易模板</h3><p>行数少、日期清楚，别无其他。适合真正会去维护的短计划。</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>
       </div>
-      <p style="text-align:center;margin-top:26px"><a class="btn btn-primary btn-lg" href="/zh/templates.html">浏览模板</a></p>
     </div>
   </section>
 
@@ -208,10 +208,15 @@
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container narrow">
-      <h2>常见问题</h2>
-      <div class="faq">
+  <section class="section">
+    <div class="container faq2">
+      <div class="faq2-side">
+        <span class="label">常见问题</span>
+        <h2>常见问题</h2>
+        <p>开始之前，你可能想知道的都在这里。</p>
+        <a class="head-l-link" href="/blog/what-is-a-gantt-chart.html">什么是甘特图？ →</a>
+      </div>
+      <div class="faq faq2-list">
         <details class="faq-item">
           <summary>真的完全免费吗？</summary>
           <p>是的。没有账号、没有试用期、没有付费功能。所有运算都在浏览器中完成，因此没有服务器成本。</p>
@@ -232,11 +237,15 @@
     </div>
   </section>
 
-  <section class="cta-band">
+  <section class="section">
     <div class="container">
-      <h2>准备好规划你的项目了吗？</h2>
-      <p>无需注册，无需信用卡。打开应用即可开始。</p>
-      <a class="btn btn-white btn-lg" href="/zh/app.html">打开甘特图工具</a>
+      <div class="cta2">
+        <div>
+          <h2>准备好规划你的项目了吗？</h2>
+          <p>无需注册，无需信用卡。打开应用即可开始。</p>
+        </div>
+        <a class="btn btn-white btn-lg" href="/zh/app.html">打开甘特图工具</a>
+      </div>
     </div>
   </section>
 
