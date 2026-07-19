@@ -53,6 +53,7 @@ const FOOTER = `  <footer class="footer">
           ${link('/contact.html', 'Contact')}
           ${link('/terms.html', 'Terms of use')}
           ${link('/privacy.html', 'Privacy')}
+          ${link('/accessibility.html', 'Accessibility')}
           ${link(GH, 'GitHub', 'footer-ext')}
         </div>
       </div>

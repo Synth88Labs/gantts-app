@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility statement — gantts.app</title>
+  <meta name="description" content="How accessible gantts.app is, measured against WCAG 2.2 AA — what conforms, what does not yet, and how to report a barrier." />
+  <link rel="canonical" href="https://gantts.app/accessibility.html" />
+  <!-- reciprocal hreflang — validate with scripts/check-hreflang.js -->
+  <link rel="alternate" hreflang="en" href="https://gantts.app/accessibility.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/accessibility.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/accessibility.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/accessibility.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/accessibility.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/accessibility.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/accessibility.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:title" content="Accessibility statement — gantts.app" />
+  <meta property="og:description" content="How accessible gantts.app is, measured against WCAG 2.2 AA — what conforms, what does not yet, and how to report a barrier." />
+  <meta property="og:url" content="https://gantts.app/accessibility.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Accessibility statement",
+    "url": "https://gantts.app/accessibility.html",
+    "description": "How accessible gantts.app is, measured against WCAG 2.2 AA.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "gantts.app",
+      "url": "https://gantts.app/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gantts.app",
+      "url": "https://gantts.app/",
+      "logo": "https://gantts.app/assets/logo-mark.svg",
+      "email": "synth88labs@gmail.com",
+      "sameAs": [
+        "https://github.com/Synth88Labs/gantts-app"
+      ],
+      "parentOrganization": { "@type": "Organization", "name": "Synth88 Labs", "url": "https://synth88.com" }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://gantts.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About gantts.app",
+          "item": "https://gantts.app/accessibility.html"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="gantts.app home">
+        <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/app.html" data-i18n="nav.maker">Gantt Maker</a>
+        <a href="/templates.html" data-i18n="nav.templates">Templates</a>
+        <a href="/blog/" data-i18n="nav.guides">Guides</a>
+        <a href="/blog/what-is-a-gantt-chart.html" data-i18n="nav.what">What is a Gantt chart?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+          <option value="/accessibility.html" selected>English</option>
+          <option value="/es/accessibility.html">Español</option>
+          <option value="/fr/accessibility.html">Français</option>
+          <option value="/de/accessibility.html">Deutsch</option>
+          <option value="/pt/accessibility.html">Português</option>
+          <option value="/zh/accessibility.html">简体中文</option>
+        </select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/app.html" data-i18n="nav.open">Open the app</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:44px">
+    <div class="crumbs"><a href="/">Home</a> › Accessibility</div>
+    <h1>Accessibility statement</h1>
+    <p class="lead">This page says how accessible gantts.app actually is: what conforms to WCAG 2.2 Level AA, what does not yet, and how to tell us about a barrier. It is written to be specific rather than reassuring — a vague claim is no use to anyone deciding whether they can work with this tool.</p>
+    <div class="prose">
+
+      <h2>Conformance claim</h2>
+      <p>gantts.app is <strong>partially conformant</strong> with <a href="https://www.w3.org/TR/WCAG22/" rel="noopener">WCAG 2.2 Level AA</a>. Partially conformant means most of the tool meets the standard and some parts do not yet. The known exceptions are listed below rather than left for you to discover.</p>
+      <p>This is a <strong>self-assessment</strong>. It has not been audited by a third party, and the editor has not yet been tested with a screen reader by a person who uses one daily. Both of those are real limits on how much weight this statement can carry, and we would rather say so than imply a level of assurance we have not earned.</p>
+
+      <div class="callout"><strong>Found a barrier?</strong> Email <a href="mailto:synth88labs@gmail.com?subject=Accessibility%20—%20gantts.app">synth88labs@gmail.com</a> or open an issue on <a href="https://github.com/Synth88Labs/gantts-app/issues" rel="noopener">GitHub</a>. Tell us the browser and assistive technology you were using and what you were trying to do. Reports about accessibility get answered first.</div>
+
+      <h2>What works</h2>
+      <p>The Gantt chart is the hard part of this problem: a bar chart encodes meaning in position and length, which is spatial information a screen reader cannot convey by describing one bar at a time. Four separate paths exist so that the chart is not the only way to use the tool.</p>
+      <ul>
+        <li><strong>Every task bar is reachable by keyboard</strong> and carries a description of everything the bar shows visually — its dates, duration, progress, assignee, whether it is on the critical path, and how many tasks it depends on.</li>
+        <li><strong>Arrow keys move and resize tasks.</strong> Left and right move by one working day, Shift by a week, Alt resizes the end. The resulting dates are announced, so you hear where the task landed rather than that a key was pressed.</li>
+        <li><strong>The chart is one tab stop, not two hundred.</strong> A roving tabindex means Tab moves past the chart in a single press; arrow keys navigate inside it.</li>
+        <li><strong>Nudge buttons reschedule by clicking</strong> — move back or forward a day or a week, lengthen or shorten by a day, with no dragging at all. Along with the date fields and the dependency picker in the task panel, this means nothing requires a drag.</li>
+        <li><strong>A plain-table view</strong> renders the whole plan as a real HTML table with row and column headers. Many people will work entirely from this, and it doubles as the print view and the thing you paste into an email.</li>
+        <li><strong>A summary sentence</strong> describes the chart as a whole — task count, date range, how many tasks are on the critical path, how many are overdue — so arriving at it does not mean exploring every bar to learn its shape.</li>
+        <li><strong>The critical path is not marked by colour alone.</strong> Critical bars carry a diagonal hatch and a distinct border; dependency arrows on the critical path are dashed. This survives greyscale, printing and colour blindness. The same is true of the S-curve, where the three lines differ by dash pattern as well as colour.</li>
+        <li><strong>Windows High Contrast is supported.</strong> Forced-colors mode replaces colours and drops background images, which would otherwise remove both critical-path cues at once, so critical bars get a dashed border there instead.</li>
+        <li><strong>Touch works.</strong> The chart uses Pointer Events, so it can be operated with a finger or a stylus, and hit targets grow on touch screens.</li>
+        <li><strong>Reduced motion is respected</strong> via <code>prefers-reduced-motion</code>.</li>
+        <li><strong>Content pages</strong> — the guides, templates and this page — use ordinary semantic HTML with a single h1, ordered headings, real landmarks and visible focus.</li>
+      </ul>
+
+      <h2>What does not conform yet</h2>
+      <p>These are the gaps we know about. If you hit something not on this list, please tell us — that is more useful than anything else on this page.</p>
+      <ul>
+        <li><strong>No screen-reader testing has been done.</strong> The chart has been built against the specification and verified in code, which is not the same as being usable. NVDA, JAWS and VoiceOver may each behave differently from what we expect. This is the largest gap in this statement.</li>
+        <li><strong>Creating a dependency by dragging</strong> from the dot on a bar has a click-only alternative in the task panel, but the drag itself is still the more discoverable route. The alternative works; it is not yet as easy to find.</li>
+        <li><strong>Reordering rows</strong> uses native drag-and-drop in the task list. There is a keyboard alternative (Alt with the up and down arrows) but no click-only one.</li>
+        <li><strong>Some export dialogs</strong> — the PDF options in particular — have not been reviewed for keyboard order or labelling as carefully as the main interface.</li>
+        <li><strong>No formal audit or VPAT.</strong> If you need one for procurement, contact us and tell us what format you need.</li>
+      </ul>
+
+      <h2>How this was assessed</h2>
+      <p>Reviewed against WCAG 2.2 Level AA using manual keyboard testing, inspection of the accessibility tree, computed-style checks for contrast and forced-colors behaviour, and automated checks that run on every build — including one that fails the build if a chart element loses its label. Browsers used: recent Chrome and Edge on Windows.</p>
+      <p>Not used: a screen reader, a formal audit tool suite, or testing by disabled users. Those are the next steps, in that order.</p>
+
+      <h2>Why this page exists</h2>
+      <p>Most Gantt tools either publish nothing about accessibility or hide a conformance report behind an email request. That makes it impossible to tell, before committing to a tool, whether you will be able to use it. We would rather publish something specific and incomplete than nothing at all — and rather be told we are wrong than not know.</p>
+
+      <p class="muted"><small>Last reviewed 19 July 2026. This statement is updated when the tool changes, not on a schedule.</small></p>
+    </div>
+  </article>
+
+  <section><div class="container"><div class="cta-band"><h2>Start your Gantt chart</h2><p>Free forever, no sign up. Add tasks, dependencies and critical path, then export.</p><a class="btn btn-white btn-lg" href="/app.html">Open the Gantt maker →</a></div></div></section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/" aria-label="gantts.app home">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>The free Gantt chart maker that runs in your browser. No account, no upload — your plan stays on your machine.</p>
+          <a class="footer-cta" href="/app.html">Open the Gantt maker →</a>
+          <p class="footer-byline">A project by <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Templates</h4>
+          <a href="/templates.html">All templates</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construction</a>
+          <a href="/templates/project-management.html">Project management</a>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/blog/">All guides</a>
+          <a href="/blog/what-is-a-gantt-chart.html">What is a Gantt chart?</a>
+          <a href="/blog/critical-path-method.html">Critical path method</a>
+          <a href="/blog/gantt-chart-dependencies.html">Dependency types</a>
+          <a href="/blog/gantt-chart-mistakes.html">Common mistakes</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/accessibility.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/terms.html">Terms of use</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="https://github.com/Synth88Labs/gantts-app" class="footer-ext">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Free forever, no sign up.</span>
+        <span>Built as a static site — nothing you plan leaves your browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

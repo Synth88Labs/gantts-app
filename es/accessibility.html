@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Declaración de accesibilidad — gantts.app</title>
+  <meta name="description" content="Hasta qué punto gantts.app cumple WCAG 2.2 AA: qué cumple, qué todavía no y cómo avisar de una barrera. Es una autoevaluación, sin auditoría externa." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/accessibility.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/accessibility.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/accessibility.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/accessibility.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/accessibility.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/accessibility.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/accessibility.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/accessibility.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Declaración de accesibilidad — gantts.app" />
+  <meta property="og:description" content="Hasta qué punto gantts.app cumple WCAG 2.2 AA: qué cumple, qué todavía no y cómo avisar de una barrera. Es una autoevaluación, sin auditoría externa." />
+  <meta property="og:url" content="https://gantts.app/es/accessibility.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Declaración de accesibilidad" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Declaración de accesibilidad — gantts.app" />
+  <meta name="twitter:description" content="Hasta qué punto gantts.app cumple WCAG 2.2 AA: qué cumple, qué todavía no y cómo avisar de una barrera. Es una autoevaluación, sin auditoría externa." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/es/accessibility.html#webpage","name":"Declaración de accesibilidad — gantts.app","url":"https://gantts.app/es/accessibility.html","description":"Hasta qué punto gantts.app cumple WCAG 2.2 AA: qué cumple, qué todavía no y cómo avisar de una barrera. Es una autoevaluación, sin auditoría externa.","inLanguage":"es","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"gantts.app","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Declaración de accesibilidad","item":"https://gantts.app/es/accessibility.html"}]}}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/">Guías</a>
+        <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/accessibility.html">English</option><option value="/es/accessibility.html" selected>Español</option><option value="/fr/accessibility.html">Français</option><option value="/de/accessibility.html">Deutsch</option><option value="/pt/accessibility.html">Português</option><option value="/zh/accessibility.html">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:44px">
+    <div class="crumbs"><a href="/es/">gantts.app</a> › Declaración de accesibilidad</div>
+    <h1>Declaración de accesibilidad</h1>
+    <p class="lead">Esta página explica hasta qué punto gantts.app es realmente accesible: qué cumple el nivel AA de WCAG 2.2, qué todavía no lo cumple y cómo contarnos una barrera. Está escrita para ser concreta en lugar de tranquilizadora: una afirmación vaga no sirve de nada a quien está decidiendo si podrá trabajar con esta herramienta.</p>
+    <div class="callout"><strong>¿Has encontrado una barrera?</strong> Escribe a <a href="mailto:synth88labs@gmail.com?subject=Accesibilidad%20—%20gantts.app">synth88labs@gmail.com</a> o abre una incidencia en <a href="https://github.com/Synth88Labs/gantts-app/issues" rel="noopener">GitHub</a>. Dinos qué navegador y qué tecnología de asistencia usabas y qué intentabas hacer. Los avisos sobre accesibilidad se responden los primeros.</div>
+    <div class="prose">
+      <h2>Declaración de conformidad</h2>
+      <p>gantts.app cumple <strong>parcialmente</strong> el <a href="https://www.w3.org/TR/WCAG22/" rel="noopener">nivel AA de WCAG 2.2</a>. Cumplimiento parcial significa que la mayor parte de la herramienta satisface el estándar y que algunas partes todavía no. Las excepciones conocidas se enumeran más abajo en lugar de dejar que las descubras tú.</p><p>Esto es una <strong>autoevaluación</strong>. No ha sido auditada por un tercero, y el editor todavía no lo ha probado con un lector de pantalla una persona que use uno a diario. Ambas cosas limitan de verdad el peso que puede tener esta declaración, y preferimos decirlo antes que insinuar un nivel de garantía que no nos hemos ganado.</p>
+      <h2>Lo que funciona</h2>
+      <p>El diagrama de Gantt es la parte difícil del problema: un gráfico de barras codifica el significado en la posición y la longitud, información espacial que un lector de pantalla no puede transmitir describiendo una barra cada vez. Existen cuatro vías independientes para que el diagrama no sea la única forma de usar la herramienta.</p><ul><li><strong>Todas las barras de tarea son accesibles con el teclado</strong> y llevan una descripción de todo lo que la barra muestra visualmente: sus fechas, la duración, el progreso, la persona asignada, si está en la ruta crítica y de cuántas tareas depende.</li><li><strong>Las flechas mueven y redimensionan tareas.</strong> Izquierda y derecha desplazan un día laborable, con Mayús una semana, y Alt redimensiona el final. Las fechas resultantes se anuncian, así que oyes dónde ha quedado la tarea y no solo que se pulsó una tecla.</li><li><strong>El diagrama es una sola parada de tabulación, no doscientas.</strong> Un tabindex móvil hace que Tab rebase el diagrama de una vez; las flechas navegan dentro de él.</li><li><strong>Los botones de ajuste reprograman con un clic</strong>: adelantar o atrasar un día o una semana, alargar o acortar un día, sin arrastrar nada. Junto con los campos de fecha y el selector de dependencias del panel de tarea, esto significa que nada exige arrastrar.</li><li><strong>Una vista de tabla simple</strong> presenta todo el plan como una tabla HTML real, con encabezados de fila y de columna. Mucha gente trabajará únicamente desde ahí, y además sirve como vista de impresión y como lo que pegas en un correo.</li><li><strong>Una frase de resumen</strong> describe el diagrama en conjunto —número de tareas, rango de fechas, cuántas tareas están en la ruta crítica, cuántas van con retraso—, de modo que llegar a él no obliga a recorrer cada barra para entender su forma.</li><li><strong>La ruta crítica no se marca solo con color.</strong> Las barras críticas llevan un trazado diagonal y un borde distinto; las flechas de dependencia de la ruta crítica son discontinuas. Esto sobrevive a la escala de grises, a la impresión y al daltonismo. Lo mismo ocurre con la curva S, donde las tres líneas se distinguen por patrón de trazo además de por color.</li><li><strong>Se admite el modo de alto contraste de Windows.</strong> El modo de colores forzados sustituye los colores y elimina las imágenes de fondo, lo que suprimiría de golpe las dos señales de ruta crítica; por eso allí las barras críticas reciben un borde discontinuo.</li><li><strong>Funciona con pantalla táctil.</strong> El diagrama usa Pointer Events, así que se puede manejar con el dedo o con un lápiz, y las zonas activas crecen en pantallas táctiles.</li><li><strong>Se respeta la reducción de movimiento</strong> mediante <code>prefers-reduced-motion</code>.</li><li><strong>Las páginas de contenido</strong> —las guías, las plantillas y esta misma página— usan HTML semántico corriente, con un único h1, encabezados ordenados, regiones reales y foco visible.</li></ul>
+      <h2>Lo que todavía no cumple</h2>
+      <p>Estas son las carencias que conocemos. Si te topas con algo que no está en esta lista, dínoslo: eso es más útil que cualquier otra cosa de esta página.</p><ul><li><strong>No se ha hecho ninguna prueba con lectores de pantalla.</strong> El diagrama se ha construido siguiendo la especificación y se ha verificado en el código, lo que no es lo mismo que ser usable. NVDA, JAWS y VoiceOver pueden comportarse cada uno de forma distinta a lo que esperamos. Esta es la mayor carencia de esta declaración.</li><li><strong>Crear una dependencia arrastrando</strong> desde el punto de una barra tiene una alternativa solo con clics en el panel de tarea, pero el arrastre sigue siendo la vía más fácil de descubrir. La alternativa funciona; todavía no es igual de fácil de encontrar.</li><li><strong>Reordenar filas</strong> usa arrastrar y soltar nativo en la lista de tareas. Hay una alternativa con teclado (Alt con las flechas arriba y abajo), pero ninguna solo con clics.</li><li><strong>Algunos diálogos de exportación</strong> —en particular las opciones de PDF— no se han revisado con tanto cuidado como la interfaz principal en cuanto a orden de teclado y etiquetado.</li><li><strong>No hay auditoría formal ni VPAT.</strong> Si necesitas uno para una compra o una licitación, escríbenos e indícanos en qué formato lo necesitas.</li></ul>
+      <h2>Cómo se evaluó</h2>
+      <p>Revisado frente al nivel AA de WCAG 2.2 con pruebas manuales de teclado, inspección del árbol de accesibilidad, comprobaciones de estilo calculado para el contraste y el comportamiento en colores forzados, y comprobaciones automáticas que se ejecutan en cada compilación, incluida una que hace fallar la compilación si un elemento del diagrama pierde su etiqueta. Navegadores utilizados: versiones recientes de Chrome y Edge en Windows.</p><p>No se han usado: un lector de pantalla, un conjunto formal de herramientas de auditoría ni pruebas con personas con discapacidad. Esos son los siguientes pasos, en ese orden.</p>
+      <h2>Por qué existe esta página</h2>
+      <p>La mayoría de las herramientas de Gantt no publican nada sobre accesibilidad, o esconden su informe de conformidad tras una solicitud por correo. Eso hace imposible saber, antes de comprometerse con una herramienta, si vas a poder usarla. Preferimos publicar algo concreto e incompleto que no publicar nada, y preferimos que nos digan que nos equivocamos a no saberlo.</p>
+      <h2>Última revisión</h2>
+      <p class="muted"><small>Última revisión: 19 de julio de 2026. Esta declaración se actualiza cuando cambia la herramienta, no según un calendario.</small></p>
+    </div>
+  </article>
+
+  
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/es/templates/excel.html">Excel</a>
+          <a href="/es/templates/powerpoint.html">PowerPoint</a>
+          <a href="/es/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/">Todas las guías</a>
+          <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/es/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a href="/accessibility.html">Accesibilidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

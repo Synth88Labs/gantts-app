@@ -198,6 +198,7 @@ function footer(code) {
           ${L('contact.html', c.footer.contact)}
           ${L('terms.html', c.footer.terms)}
           ${L('privacy.html', c.footer.privacy)}
+          ${L('accessibility.html', c.footer.accessibility)}
           <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
         </div>
       </div>
@@ -1330,11 +1331,24 @@ for (const loc of LOCALES) {
   fs.writeFileSync(path.join(dir, 'index.html'), renderHome(loc), 'utf8');
   fs.writeFileSync(path.join(dir, 'templates.html'), renderTemplates(loc), 'utf8');
   fs.writeFileSync(path.join(dir, 'blog', 'index.html'), renderBlogIndex(loc), 'utf8');
-  for (const key of ['about', 'contact', 'terms', 'privacy']) {
-    fs.writeFileSync(path.join(dir, key + '.html'), renderSitePage(loc, key), 'utf8');
+  /* Driven by SITE_PAGES, not a second hardcoded list. The two had
+     already drifted: accessibility.html was added to SITE_PAGES — which
+     is what hreflang and the sitemap read — while this loop kept
+     emitting the original four, so the page was listed as translated
+     and never written. A registry the generator ignores is not a
+     registry. */
+  for (const page of SITE_PAGES) {
+    const key = page.replace(/\.html$/, '');
+    if (!SITE[loc.code] || !SITE[loc.code][key]) {
+      throw new Error(
+        `SITE_PAGES lists ${page} but i18n/site-pages.js has no ${loc.code}.${key} content. `
+        + `Add the translation, or remove the page from SITE_PAGES — otherwise hreflang and the `
+        + `sitemap advertise a localized page that does not exist.`);
+    }
+    fs.writeFileSync(path.join(dir, page), renderSitePage(loc, key), 'utf8');
   }
   fs.writeFileSync(path.join(dir, 'app.html'), renderApp(loc), 'utf8');
-  written += 8;
+  written += 4 + SITE_PAGES.length;
   console.log(`  ✓ /${loc.code}/  ·  /${loc.code}/templates.html  ·  /${loc.code}/blog/`);
 
   const gslugs = Object.keys(GUIDE_I18N[loc.code] || {});
