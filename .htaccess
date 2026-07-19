@@ -47,15 +47,23 @@ DirectoryIndex index.html
   Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# ---- Force HTTPS + non-www (uncomment once SSL/AutoSSL is active) ----
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteCond %{HTTPS} off
-#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-#   # canonical to non-www (or swap for www if you prefer)
-#   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-#   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-# </IfModule>
+# ---- Force HTTPS + non-www ----
+# Enabled: SSL is live, and www.gantts.app was serving the entire site
+# on a second hostname — all 154 pages returned 200 there. The canonical
+# tags pointed at the apex, which limited the damage, but a fully
+# crawlable duplicate still splits signals and wastes crawl budget.
+#
+# The www rule deliberately comes FIRST and rewrites straight to
+# https://apex. Putting the HTTPS rule first would send
+# http://www -> https://www -> https://apex, costing users an extra
+# round trip on every mistyped link.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
 # ---- Pretty error page ----
 ErrorDocument 404 /404.html
