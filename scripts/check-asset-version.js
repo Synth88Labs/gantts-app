@@ -42,6 +42,20 @@ const STATE = path.join(ROOT, '.asset-versions.json');
 const ASSETS = [
   { file: 'css/site.css', query: 'site.css' },
   { file: 'js/site.js', query: 'site.js' },
+  /* The editor's own assets. These were missing until an entire
+     feature release changed styles.css and every app module while this
+     check reported green — it was only ever looking at the marketing
+     pages. app.html versions all of its scripts together, so checking
+     one of them pins the whole set. */
+  { file: 'css/styles.css', query: 'styles.css' },
+  { file: 'js/app.js', query: 'app.js' },
+  { file: 'js/render.js', query: 'render.js' },
+  { file: 'js/model.js', query: 'model.js' },
+  { file: 'js/interactions.js', query: 'interactions.js' },
+  { file: 'js/exports.js', query: 'exports.js' },
+  { file: 'js/features.js', query: 'features.js' },
+  { file: 'js/templates.js', query: 'templates.js' },
+  { file: 'js/schedule.js', query: 'schedule.js' },
 ];
 
 const sha = (p) => crypto.createHash('sha1')

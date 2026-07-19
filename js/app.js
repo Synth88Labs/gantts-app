@@ -46,6 +46,73 @@
       this.applyGridWidth();
       this.applyFont();
       this.renderWorkload();
+      this.renderViewNote();
+    },
+
+    // ---------------- view modes ----------------
+
+    /* A filtered chart must announce itself. Without this strip the
+       lookahead is indistinguishable from a plan that has lost most of
+       its tasks, which is a genuinely alarming thing to open. */
+    renderViewNote() {
+      const note = U.$('#viewNote');
+      if (!note || typeof Views === 'undefined') return;
+      const v = Views.of(Model.project);
+      note.hidden = !Views.active(v);
+      if (note.hidden) return;
+
+      const isLook = v.mode === 'lookahead';
+      const shown = (Render.rs && Render.rs.visible ? Render.rs.visible : []).filter(t => !t._context).length;
+      const txt = U.$('#viewNoteText');
+      if (txt) {
+        txt.textContent = isLook
+          ? `${Views.label(v, U.today())} — showing ${shown} task${shown === 1 ? '' : 's'} of ${Model.tasks().length}`
+          : `Milestones only — showing ${shown} of ${Model.tasks().length}`;
+      }
+      // The week arrows only mean anything for a date window.
+      ['#viewNotePrev', '#viewNoteNext', '#viewNoteToday'].forEach(sel => {
+        const b = U.$(sel); if (b) b.hidden = !isLook;
+      });
+    },
+
+    _setView(patch) {
+      const v = Object.assign(Views.of(Model.project), patch);
+      Model.project.settings.view = v;
+      Model.save();
+      this.syncViewControls();
+      this.render();
+    },
+
+    setViewMode(mode) {
+      /* Switching into a lookahead resets the anchor to "follow today".
+         A stale anchor from three months ago would open on a window the
+         user has to notice and correct, which is exactly the kind of
+         silently-wrong state this view exists to avoid. */
+      this._setView(mode === 'lookahead' ? { mode, anchor: null } : { mode });
+      if (mode === 'lookahead') this.scrollToToday();
+    },
+    setViewWeeks(weeks) { this._setView({ weeks }); },
+    setViewAnchor(anchor) { this._setView({ anchor }); },
+
+    syncViewControls() {
+      if (typeof Views === 'undefined') return;
+      const v = Views.of(Model.project);
+      const sel = U.$('#viewSelect');
+      if (sel) sel.value = v.mode;
+      const weeks = U.$('#viewWeeks');
+      if (weeks) { weeks.hidden = v.mode !== 'lookahead'; weeks.value = String(v.weeks); }
+    },
+
+    /* Auto-schedule has existed in schedule.js since the CPM work and
+       has never had a way to run it. */
+    autoSchedule() {
+      if (!window.Schedule || !Schedule.autoSchedule) return;
+      if (!Model.tasks().length) { this.toast('Nothing to schedule yet'); return; }
+      // autoSchedule takes its own snapshot and commits — do not wrap it.
+      const moved = Schedule.autoSchedule();
+      this.toast(moved
+        ? `Rescheduled ${moved} task${moved === 1 ? '' : 's'} to the earliest date dependencies allow — Ctrl+Z to undo`
+        : 'Every task already starts as early as its dependencies allow');
     },
 
     applyGridWidth() {
@@ -148,6 +215,30 @@
         document.addEventListener('click', () => { menu.hidden = true; });
       }
 
+      // ---- view mode, S-curve, auto-schedule ----
+      const vSel = U.$('#viewSelect');
+      if (vSel) vSel.addEventListener('change', () => this.setViewMode(vSel.value));
+      const vWeeks = U.$('#viewWeeks');
+      if (vWeeks) vWeeks.addEventListener('change', () => this.setViewWeeks(Number(vWeeks.value)));
+
+      const scBtn = U.$('#scurveBtn');
+      if (scBtn) scBtn.addEventListener('click', () => this.openSCurve());
+
+      const asBtn = U.$('#autoScheduleBtn');
+      if (asBtn) asBtn.addEventListener('click', () => this.autoSchedule());
+
+      // The strip above the chart that says which view is active.
+      const nudge = (weeks) => {
+        const v = Views.of(Model.project);
+        const base = v.anchor || U.weekStart(U.today());
+        this.setViewAnchor(U.addDays(base, weeks * 7));
+      };
+      const bind = (sel, fn) => { const b = U.$(sel); if (b) b.addEventListener('click', fn); };
+      bind('#viewNotePrev', () => nudge(-1));
+      bind('#viewNoteNext', () => nudge(1));
+      bind('#viewNoteToday', () => this.setViewAnchor(null));
+      bind('#viewNoteClear', () => this.setViewMode('all'));
+
       // empty-state buttons
       U.$('#emptyAddTask').addEventListener('click', () => Model.addTask({ type: 'task' }));
       U.$('#emptyTemplates').addEventListener('click', () => this.openTemplates());
@@ -234,8 +325,182 @@
       U.$('#toggleProgress').checked = s.showProgress;
       U.$('#toggleToday').checked = s.showToday;
       const fontSel = U.$('#fontSelect'); if (fontSel) fontSel.value = s.chartFont || 'var(--font)';
+      this.syncViewControls();
       this.applyGridWidth();
       this.applyFont();
+    },
+
+    // ---------------- S-curve / earned value ----------------
+
+    /* Drawn as inline SVG rather than through a chart library: the app
+       has no charting dependency and one would be ~50KB to draw three
+       polylines. */
+    openSCurve() {
+      this.openModal('S-curve - planned vs actual', (body) => {
+        const r = EVM.compute(Model.project, U.today());
+
+        if (r.empty) {
+          body.appendChild(U.el('p', { class: 'muted' },
+            'Add some dated tasks and this will show planned progress against actual.'));
+          return;
+        }
+
+        const m = r.metrics;
+        const money = r.basis === 'cost';
+        const fmt = (v) => v == null ? '—'
+          : (money ? Math.round(v).toLocaleString() : Math.round(v * 10) / 10 + 'd');
+        const pct = (v) => v == null ? '—' : (Math.round(v * 100) / 100).toFixed(2);
+
+        // ---- verdict line ----
+        const verdict = EVM.verdict(m);
+        const vTxt = verdict.key === 'nodata' ? 'Not enough of the plan has started to judge.'
+          : verdict.key === 'ontrack' ? 'On track — earned value matches the plan.'
+          : verdict.key === 'ahead' ? 'Ahead of plan by ' + Math.abs(Math.round(verdict.pct)) + '%.'
+          : 'Behind plan by ' + Math.abs(Math.round(verdict.pct)) + '%.';
+        body.appendChild(U.el('p', { class: 'evm-verdict evm-' + verdict.key }, vTxt));
+
+        // ---- the chart ----
+        body.appendChild(this.sCurveSvg(r));
+
+        // ---- metrics ----
+        const rows = [
+          ['Budget at completion (BAC)', fmt(m.bac)],
+          ['Planned value (PV)', fmt(m.pv)],
+          ['Earned value (EV)', fmt(m.ev)],
+          ['Schedule variance (SV)', fmt(m.sv)],
+          ['Schedule performance (SPI)', pct(m.spi)],
+        ];
+        if (r.hasActuals) {
+          rows.push(['Actual cost (AC)', fmt(m.ac)]);
+          rows.push(['Cost variance (CV)', fmt(m.cv)]);
+          rows.push(['Cost performance (CPI)', pct(m.cpi)]);
+          rows.push(['Forecast at completion (EAC)', fmt(m.eac)]);
+        }
+
+        const tbl = U.el('table', { class: 'evm-table' });
+        rows.forEach((kv) => {
+          const tr = U.el('tr');
+          tr.appendChild(U.el('th', {}, kv[0]));
+          tr.appendChild(U.el('td', {}, String(kv[1])));
+          tbl.appendChild(tr);
+        });
+        body.appendChild(tbl);
+
+        // ---- the caveats, stated rather than buried ----
+        const notes = [];
+        notes.push(r.basis === 'cost'
+          ? 'Weighted by task cost.'
+          : 'No task costs are set, so tasks are weighted by working-day duration — this reads as a progress curve.');
+        notes.push(r.plannedFrom === 'baseline'
+          ? 'Planned value follows the saved baseline.'
+          : 'No baseline is saved, so the plan is your current dates — which means schedule variance reads as zero until you set one (Baseline > Set baseline).');
+        if (!r.hasActuals) {
+          notes.push('No actual costs entered, so CPI, cost variance and forecast are not shown. '
+            + 'Deriving them from progress would make CPI exactly 1.00 for every project, which would tell you nothing. '
+            + 'Add a Spent figure to tasks to see them.');
+        }
+        notes.push('The earned curve before today is reconstructed by spreading each task current progress across its elapsed days — '
+          + 'progress history is not stored. It is exact at today, approximate behind it.');
+
+        const ul = U.el('ul', { class: 'evm-notes' });
+        notes.forEach(n => ul.appendChild(U.el('li', {}, n)));
+        body.appendChild(U.el('details', { class: 'evm-details' }, [
+          U.el('summary', {}, 'How this is calculated'),
+          ul,
+        ]));
+      });
+    },
+
+    sCurveSvg(r) {
+      const W = 640, H = 260, PAD_L = 52, PAD_R = 16, PAD_T = 12, PAD_B = 34;
+      const iw = W - PAD_L - PAD_R, ih = H - PAD_T - PAD_B;
+      const n = r.dates.length;
+      const actualVals = (r.actual || []).filter(v => v != null);
+      const maxY = Math.max(r.bac, Math.max.apply(null, r.planned.concat(actualVals.length ? actualVals : [0]))) || 1;
+
+      const x = (i) => PAD_L + (n <= 1 ? 0 : (i / (n - 1)) * iw);
+      const y = (v) => PAD_T + ih - (v / maxY) * ih;
+
+      /* Null means "not known yet", so the pen lifts rather than
+         drawing a straight line across the gap to the next point. */
+      const path = (series) => {
+        let d = '', pen = false;
+        series.forEach((v, i) => {
+          if (v == null) { pen = false; return; }
+          d += (pen ? ' L' : ' M') + x(i).toFixed(1) + ',' + y(v).toFixed(1);
+          pen = true;
+        });
+        return d.trim();
+      };
+
+      const ns = 'http://www.w3.org/2000/svg';
+      const mk = (tag, attrs) => {
+        const e = document.createElementNS(ns, tag);
+        for (const k in attrs) e.setAttribute(k, attrs[k]);
+        return e;
+      };
+
+      const svg = mk('svg', {
+        class: 'evm-svg', viewBox: '0 0 ' + W + ' ' + H, width: '100%', role: 'img',
+        'aria-label': 'S-curve from ' + r.dates[0] + ' to ' + r.dates[n - 1] + '. '
+          + 'Planned ' + Math.round(r.metrics.pctPlanned) + ' percent, '
+          + 'complete ' + Math.round(r.metrics.pctComplete) + ' percent.',
+      });
+
+      // axes
+      svg.appendChild(mk('line', { class: 'evm-axis', x1: PAD_L, y1: PAD_T, x2: PAD_L, y2: PAD_T + ih }));
+      svg.appendChild(mk('line', { class: 'evm-axis', x1: PAD_L, y1: PAD_T + ih, x2: PAD_L + iw, y2: PAD_T + ih }));
+
+      // gridlines at 0/25/50/75/100%
+      [0, 0.25, 0.5, 0.75, 1].forEach(f => {
+        const yy = y(maxY * f);
+        svg.appendChild(mk('line', { class: 'evm-grid', x1: PAD_L, y1: yy, x2: PAD_L + iw, y2: yy }));
+        const t = mk('text', { class: 'evm-tick', x: PAD_L - 6, y: yy + 4, 'text-anchor': 'end' });
+        t.textContent = Math.round(f * 100) + '%';
+        svg.appendChild(t);
+      });
+
+      // the status line
+      const iNow = r.dates.findIndex(d => U.parse(d) >= U.parse(r.asOf));
+      if (iNow >= 0) {
+        svg.appendChild(mk('line', { class: 'evm-now', x1: x(iNow), y1: PAD_T, x2: x(iNow), y2: PAD_T + ih }));
+        const t = mk('text', { class: 'evm-tick', x: x(iNow), y: PAD_T + ih + 26, 'text-anchor': 'middle' });
+        t.textContent = 'today';
+        svg.appendChild(t);
+      }
+
+      // date ends
+      [[0, 'start'], [n - 1, 'end']].forEach(pair => {
+        const t = mk('text', {
+          class: 'evm-tick', x: x(pair[0]), y: PAD_T + ih + 15,
+          'text-anchor': pair[1] === 'start' ? 'start' : 'end',
+        });
+        t.textContent = U.fmtShort(r.dates[pair[0]]);
+        svg.appendChild(t);
+      });
+
+      /* Dashed vs solid vs dotted, not colour alone - WCAG 1.4.1. The
+         three lines must stay tellable apart in greyscale, in a
+         printout, and to a red-green colourblind reader. */
+      svg.appendChild(mk('path', { class: 'evm-line evm-planned', d: path(r.planned), fill: 'none' }));
+      svg.appendChild(mk('path', { class: 'evm-line evm-earned', d: path(r.earned), fill: 'none' }));
+      if (r.actual) svg.appendChild(mk('path', { class: 'evm-line evm-actual', d: path(r.actual), fill: 'none' }));
+
+      const wrap = U.el('div', { class: 'evm-chart' });
+      wrap.appendChild(svg);
+
+      const legend = U.el('div', { class: 'evm-legend' });
+      const item = (cls, label) => {
+        const sp = U.el('span', { class: 'evm-key' });
+        sp.appendChild(U.el('i', { class: 'evm-swatch ' + cls }));
+        sp.appendChild(document.createTextNode(label));
+        return sp;
+      };
+      legend.appendChild(item('evm-planned', 'Planned'));
+      legend.appendChild(item('evm-earned', 'Earned (actual progress)'));
+      if (r.actual) legend.appendChild(item('evm-actual', 'Actual cost'));
+      wrap.appendChild(legend);
+      return wrap;
     },
 
     syncHistoryButtons() {
@@ -473,6 +738,16 @@
         body.appendChild(field('Progress: ' + (t.progress || 0) + '%', rangeInput(t.progress || 0, v => Model.update(id, { progress: v }))));
       }
       body.appendChild(field('Assignee', input(t.assignee || '', v => Model.update(id, { assignee: v }))));
+
+      /* Budget and actual spend. Both feed the S-curve: cost switches
+         it from a duration-weighted progress curve to a value curve,
+         and spend is the ONLY source of CPI — evm.js reports it as null
+         rather than inferring it from progress. */
+      if (t.type !== 'group') {
+        const costF = field('Budget', input(t.cost || 0, v => Model.update(id, { cost: Number(v) || 0 }), 'number'));
+        const spentF = field('Spent', input(t.spent || 0, v => Model.update(id, { spent: Number(v) || 0 }), 'number'));
+        body.appendChild(U.el('div', { class: 'field-row' }, [costF, spentF]));
+      }
 
       // color swatches
       const sw = U.el('div', { class: 'swatches' });
@@ -807,6 +1082,24 @@
     },
 
     // ---------------- toast ----------------
+    /* Speak a result to assistive tech.
+
+       Debounced ~120ms because holding an arrow key fires many moves a
+       second, and an undebounced region reads every intermediate date
+       — the user hears a stream of numbers instead of where the bar
+       ended up. The text is also cleared first: setting a live region
+       to the value it already holds produces no announcement at all,
+       which is how "it only works the first time" bugs happen. */
+    announce(msg) {
+      const el = U.$('#srLive');
+      if (!el || !msg) return;
+      clearTimeout(this._annT);
+      this._annT = setTimeout(() => {
+        el.textContent = '';
+        setTimeout(() => { el.textContent = msg; }, 30);
+      }, 120);
+    },
+
     toast(msg) {
       const t = U.$('#toast');
       t.textContent = msg; t.hidden = false;

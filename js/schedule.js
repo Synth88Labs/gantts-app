@@ -159,26 +159,87 @@
         ES, EF, LS, LF, dur: id => dur(byId[id]),
         // Exposed so callers convert ordinals back the same way the
         // forward pass created them — calendar-aware or not.
-        dateAt, calOn, cal };
+        dateAt, calOn, cal,
+        /* Also exposed: the topological order and the date->ordinal
+           projection. autoSchedule needs to redo the forward pass with
+           different anchoring rules, and recomputing either of these
+           independently would risk the two passes disagreeing. */
+        order, off, inEdges };
     },
 
     // apply auto-scheduling: shift tasks to satisfy dependencies (respects lags)
+    /* Pull every task back to the earliest date its dependencies allow.
+       Owns its own undo snapshot and commit, so callers must NOT wrap
+       it in another — a second snapshot would make Ctrl+Z take two
+       presses to undo one action.
+
+       @returns the number of tasks whose dates actually moved, so the
+       caller can tell the user "nothing to do" instead of claiming a
+       reschedule that changed nothing. */
     autoSchedule() {
       const info = this.compute();
       Model.snapshot();
       const tasks = Model.tasks();
       const byId = {}; tasks.forEach(t => byId[t.id] = t);
+
+      /* compute() runs AS-PLACED CPM: its forward pass starts each task
+         at max(placed start, dependency constraint), so ES can only ever
+         push a task later. That is the right behaviour for reporting
+         float — a bar you dragged should stay where you put it — but it
+         makes ES useless here, because "auto-schedule" means pulling
+         work back to the earliest date its predecessors allow. Using
+         info.ES directly produced a button that compacted nothing.
+
+         So this recomputes starts with one rule changed: a task WITH
+         predecessors is driven PURELY by its constraints, ignoring where
+         it currently sits. Tasks with no predecessors keep their placed
+         start — they are the anchors, and yanking them to the project
+         origin would be a rewrite nobody asked for.
+
+         compute() is deliberately left alone; changing its semantics
+         would silently alter the critical path on every saved plan. */
+      const earliest = {};
+      info.order.forEach(id => {
+        const t = byId[id]; if (!t) return;
+        const incoming = (info.inEdges && info.inEdges[id]) || [];
+        // No predecessors: this task is an anchor, keep it where it is.
+        if (!incoming.length) { earliest[id] = info.off(t.start); return; }
+
+        const myDur = info.dur(id);
+        let es = -Infinity;
+        incoming.forEach(e => {
+          const pStart = earliest[e.from];
+          if (pStart == null) return;
+          const pDur = info.dur(e.from);
+          const lag = e.lag || 0;
+          let cand;
+          switch (e.type) {
+            case 'SS': cand = pStart + lag; break;
+            case 'FF': cand = pStart + pDur + lag - myDur; break;
+            case 'SF': cand = pStart + lag - myDur; break;
+            default: cand = pStart + pDur + lag; break;   // FS
+          }
+          es = Math.max(es, cand);
+        });
+        earliest[id] = es === -Infinity ? info.off(t.start) : es;
+      });
+
+      let moved = 0;
       Object.keys(info.ES).forEach(id => {
         const t = byId[id]; if (!t) return;
-        const newStart = info.dateAt(info.ES[id]);
+        const at = earliest[id] != null ? earliest[id] : info.ES[id];
+        const newStart = info.dateAt(Math.max(0, at));
         const d = info.calOn ? Cal.duration(t.start, t.end, info.cal) : U.duration(t.start, t.end);
-        t.start = newStart;
-        t.end = t.type === 'milestone'
+        const newEnd = t.type === 'milestone'
           ? newStart
           : (info.calOn ? Cal.endFrom(newStart, Math.max(1, d), info.cal) : U.endFrom(newStart, d));
+        if (t.start !== newStart || t.end !== newEnd) moved++;
+        t.start = newStart;
+        t.end = newEnd;
       });
       Model._recalcGroups();
       Model._afterChange();
+      return moved;
     },
   };
 

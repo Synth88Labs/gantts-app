@@ -84,6 +84,13 @@
         { icon: '{ }', name: 'Export JSON (raw)', run: () => E.run('json') },
         { icon: '🔗', name: 'Copy shareable link', run: () => E.run('link') },
         { icon: '🖨', name: 'Print', run: () => E.run('print') },
+        { icon: '📈', name: 'S-curve — planned vs actual progress', run: () => App.openSCurve() },
+        { icon: '📅', name: 'Lookahead — show only the next 3 weeks', run: () => App.setViewMode('lookahead') },
+        { icon: '◆', name: 'Milestones only — executive view', run: () => App.setViewMode('milestones') },
+        { icon: '▤', name: 'Show all tasks', run: () => App.setViewMode('all') },
+        { icon: '⚡', name: 'Auto-schedule — pull tasks to their earliest dates', run: () => App.autoSchedule() },
+        { icon: '🧜', name: 'Export Mermaid gantt (for README / GitHub)', run: () => E.run('mermaid') },
+        { icon: '📅', name: 'Export calendar (.ics)', run: () => E.run('ics') },
         { icon: '💡', name: 'Show tips & tricks tour', run: () => this.startTour() },
       ];
       function setZoom(z) { Model.project.settings.zoom = z; Model.save(); U.$('#zoomSelect').value = z; App.render(); }

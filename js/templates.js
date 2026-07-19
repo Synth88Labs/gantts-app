@@ -197,10 +197,45 @@
           const name = file.name.toLowerCase();
           if (name.endsWith('.json') || name.endsWith('.gantts') || name.endsWith('.gantt')) this.importJSON(text);
           else if (name.endsWith('.xml')) this.importMSProject(text);
+          /* A Mermaid diagram can arrive as .mmd, or pasted into a .md
+             or .txt. Sniff the content rather than trusting the
+             extension — a .txt holding a gantt block is far more likely
+             to be Mermaid than CSV, and misrouting it to the CSV parser
+             produces a plan full of garbage rows instead of an error. */
+          else if (name.endsWith('.mmd') || name.endsWith('.mermaid') || /^\s*(```(mermaid)?\s*)?gantt/m.test(text)) this.importMermaid(text);
           else this.importCSV(text);
         } catch (err) { App.toast('Import failed: ' + err.message); }
       };
       reader.readAsText(file);
+    },
+
+    /* Mermaid gantt text. Same contract as the MSPDI importer: what
+       could not be honoured is reported, never silently dropped. */
+    importMermaid(text) {
+      if (!window.MermaidGantt) throw new Error('Mermaid import is unavailable.');
+      const res = MermaidGantt.parse(text);
+
+      const settings = Object.assign({}, Model.project.settings);
+      /* "excludes weekends" in the diagram is a statement about the
+         schedule, so honour it rather than importing dates that then
+         disagree with the calendar they were written against. */
+      if (res.excludesWeekends) {
+        settings.calendar = Object.assign({}, settings.calendar || {},
+          { enabled: true, workdays: [1, 2, 3, 4, 5] });
+      }
+
+      Model.loadProjectData({
+        name: res.title || 'Imported from Mermaid',
+        tasks: res.tasks,
+        settings,
+      });
+
+      if (res.warnings.length) {
+        console.warn('Mermaid import warnings:', res.warnings);
+        App.toast(`Imported with ${res.warnings.length} note${res.warnings.length > 1 ? 's' : ''} — see the console`);
+      } else {
+        App.toast('Imported ' + res.tasks.filter(t => t.type !== 'group').length + ' task(s) from Mermaid');
+      }
     },
 
     /* MS Project XML (MSPDI). Anything the importer could not honour

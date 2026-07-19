@@ -6,7 +6,77 @@
   let drag = null; // active gesture
 
   const Interactions = {
+    /* Keyboard operation of a bar.
+
+       WCAG 2.1.1 (Keyboard) and 2.5.7 (Dragging Movements) are two
+       DIFFERENT obligations and one does not satisfy the other. 2.5.7
+       is about people who use a pointer but cannot hold a precise drag
+       — tremor, a head-pointer, eye-gaze — and it is met by the task
+       drawer, whose date fields and dependency picker reschedule with
+       plain clicks. This function is the other half: 2.1.1, for people
+       with no pointer at all.
+
+       Arrow keys act immediately rather than entering a grab mode.
+       Atlassian's testing found modal grab-and-move confusing when you
+       cannot see the canvas, and an immediate nudge with a spoken
+       result is both simpler to operate and simpler to undo. */
+    onBarKey(e, task) {
+      const k = e.key;
+
+      if (k === 'Enter' || k === ' ') {
+        e.preventDefault();
+        Model.select(task.id);
+        App.openDrawer(task.id, e.currentTarget);
+        return;
+      }
+      if (k === 'ArrowUp' || k === 'ArrowDown') {
+        e.preventDefault();
+        const rows = Render.rs.visible || [];
+        const i = rows.findIndex(r => r.id === task.id);
+        const next = rows[i + (k === 'ArrowDown' ? 1 : -1)];
+        if (next) {
+          Model.select(next.id);
+          const el = document.querySelector('.bar[data-id="' + next.id + '"]');
+          if (el) el.focus();
+        }
+        return;
+      }
+      if (k !== 'ArrowLeft' && k !== 'ArrowRight') return;
+
+      e.preventDefault();
+      const dir = k === 'ArrowRight' ? 1 : -1;
+      const step = e.shiftKey ? 7 : 1;      // Shift = a week
+      const cal = Cal.of(Model.project);
+
+      Model.snapshot();
+      if (e.altKey) {
+        /* Alt = resize the end only. Kept off the plain arrows because
+           silently changing a duration when the user meant to move is
+           the kind of edit nobody notices until much later. */
+        if (task.type !== 'milestone') {
+          const end = Cal.shift(task.end, dir * step, cal);
+          if (U.parse(end) >= U.parse(task.start)) task.end = end;
+        }
+      } else {
+        const start = Cal.shift(task.start, dir * step, cal);
+        const moved = Cal.moveKeepingDuration(task, start, cal);
+        task.start = moved.start;
+        task.end = moved.end;
+      }
+      Model._recalcGroups();
+      Model._afterChange();
+
+      /* Announce the RESULT, not the keystroke. The user needs to know
+         where the bar landed, and whether anything else moved with it. */
+      App.announce(Render.barLabel(task));
+
+      // The re-render replaced the node this handler was bound to.
+      const el = document.querySelector('.bar[data-id="' + task.id + '"]');
+      if (el) el.focus();
+    },
+
     wireBar(barEl, task) {
+      barEl.addEventListener('keydown', (e) => this.onBarKey(e, task));
       barEl.addEventListener('mousedown', (e) => this.onBarDown(e, barEl, task));
       // click select handled via mousedown (no move => select)
     },

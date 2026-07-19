@@ -634,3 +634,109 @@ body.presenting .today-line { width: 3px; }
 .wl-capline { position: absolute; left: 0; right: 0; bottom: 50%; height: 1px;
   background: var(--line-strong); pointer-events: none; }
 #workloadBtn.is-on { background: var(--brand-soft); border-color: var(--brand); }
+
+/* ============================================================
+   View strip, S-curve panel, and the accessibility affordances
+   added alongside the lookahead / milestone views.
+   ============================================================ */
+
+/* ---- the strip that says the chart is filtered ---- */
+.view-note {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 14px;
+  background: var(--accent-soft, #eef2ff);
+  border-bottom: 1px solid var(--border, #e2e8f0);
+  font-size: 13px; font-weight: 600;
+  color: var(--text, #1e293b);
+}
+.view-note #viewNoteText { margin-right: auto; }
+.btn.btn-sm { padding: 3px 9px; font-size: 12px; min-height: 26px; }
+
+/* ---- S-curve ---- */
+.evm-verdict {
+  font-weight: 700; font-size: 15px; margin: 0 0 10px;
+  padding: 9px 12px; border-radius: 8px;
+  border-left: 4px solid var(--muted, #94a3b8);
+  background: var(--bg-soft, #f8fafc);
+}
+/* Status is carried by the wording too, never by colour alone (1.4.1). */
+.evm-ahead    { border-left-color: #16a34a; }
+.evm-ontrack  { border-left-color: #2563eb; }
+.evm-behind   { border-left-color: #ea580c; }
+.evm-nodata   { border-left-color: #94a3b8; }
+
+.evm-chart { margin: 6px 0 14px; }
+.evm-svg { display: block; max-width: 100%; height: auto; }
+.evm-axis { stroke: var(--text, #334155); stroke-width: 1; }
+.evm-grid { stroke: var(--border, #e2e8f0); stroke-width: 1; }
+.evm-tick { font-size: 10px; fill: var(--muted, #64748b); }
+.evm-now  { stroke: #ef4444; stroke-width: 1.5; stroke-dasharray: 3 3; }
+
+/* Line IDENTITY is stroke pattern; colour is a redundant second cue.
+   The chart stays readable in greyscale, in print, and to a
+   colourblind reader — WCAG 1.4.1. */
+.evm-line { stroke-width: 2.5; fill: none; }
+.evm-planned { stroke: #2563eb; stroke-dasharray: none; }
+.evm-earned  { stroke: #16a34a; stroke-dasharray: 7 4; }
+.evm-actual  { stroke: #ea580c; stroke-dasharray: 2 3; }
+
+.evm-legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--muted, #64748b); }
+.evm-key { display: inline-flex; align-items: center; gap: 6px; }
+.evm-swatch { display: inline-block; width: 22px; height: 0; border-top-width: 3px; border-top-style: solid; }
+.evm-swatch.evm-planned { border-top-color: #2563eb; border-top-style: solid; }
+.evm-swatch.evm-earned  { border-top-color: #16a34a; border-top-style: dashed; }
+.evm-swatch.evm-actual  { border-top-color: #ea580c; border-top-style: dotted; }
+
+.evm-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+.evm-table th, .evm-table td { padding: 6px 8px; border-bottom: 1px solid var(--border, #e2e8f0); text-align: left; }
+.evm-table th { font-weight: 600; color: var(--muted, #64748b); }
+.evm-table td { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+.evm-details { margin-top: 8px; font-size: 12.5px; color: var(--muted, #64748b); }
+.evm-details summary { cursor: pointer; font-weight: 600; }
+.evm-notes { margin: 8px 0 0; padding-left: 18px; }
+.evm-notes li { margin-bottom: 6px; line-height: 1.5; }
+
+.code-box {
+  width: 100%; font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12.5px; line-height: 1.5; padding: 10px;
+  border: 1px solid var(--border, #e2e8f0); border-radius: 8px;
+  background: var(--bg-soft, #f8fafc); color: var(--text, #1e293b);
+  resize: vertical;
+}
+.modal-actions { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+.small { font-size: 12px; }
+
+/* A context row in a filtered view is a heading, not work in the
+   window — dim it so the distinction is visible, not just semantic. */
+.is-context > * { opacity: .62; }
+
+/* ---- accessibility ---- */
+
+/* Announcements for screen readers. Visually hidden, never
+   display:none — a display:none live region is not announced. */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+
+/* A focused bar must be unmistakable, and must not be hidden under the
+   sticky chart header (WCAG 2.4.11 Focus Not Obscured). */
+.bar:focus-visible,
+.bar:focus {
+  outline: 3px solid #111827;
+  outline-offset: 2px;
+  z-index: 6;
+}
+:root[data-theme="dark"] .bar:focus-visible,
+:root[data-theme="dark"] .bar:focus { outline-color: #f8fafc; }
+
+/* SC 2.5.8: 24x24 CSS px minimum for pointer targets. */
+.view-note .btn.btn-sm { min-width: 26px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bar, .bar * { transition: none !important; animation: none !important; }
+}

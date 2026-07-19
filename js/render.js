@@ -37,6 +37,20 @@
       // include today in range
       if (U.parse(today) < U.parse(min)) min = today;
       if (U.parse(today) > U.parse(max)) max = today;
+
+      /* In a lookahead the window IS the subject. Spanning the whole
+         project would squeeze three weeks into a sliver at one end and
+         defeat the point of the view — the site team needs the next
+         fortnight legible, not the eighteen-month programme. Clamp to
+         the window, padded by a few days for context on either side. */
+      if (typeof Views !== 'undefined') {
+        const view = Views.of(Model.project);
+        if (view.mode === 'lookahead') {
+          const w = Views.window(view, today);
+          min = U.addDays(w.start, -2);
+          max = U.addDays(w.end, 2);
+        }
+      }
       let origin = U.addDays(min, -PAD_BEFORE[zoom]);
       let endDate = U.addDays(max, PAD_AFTER[zoom]);
       // snap origin to Monday for cleaner grid
@@ -52,7 +66,7 @@
 
       this.rs = this.computeRange();
       const rs = this.rs;
-      const visible = Model.visibleTasks();
+      const visible = this.rowSource();
       rs.rowOf = {}; visible.forEach((t, i) => rs.rowOf[t.id] = i);
       rs.visible = visible;
       rs.height = visible.length * ROW_H;
@@ -66,8 +80,34 @@
       this.renderChartBody(visible);
     },
 
+    /* The one place a view filter is applied. Both panes and the row
+       index derive from this, so a filter added here reaches the grid,
+       the bars and the dependency arrows with no further changes.
+
+       Exports deliberately do NOT go through it — they read
+       Model.tasks() and keep exporting the whole plan. A lookahead is
+       a way of reading the schedule, not a smaller schedule, and
+       silently shipping a truncated file would be the worse surprise.
+       The one exception is print/PNG, where the visible chart IS the
+       artefact the user is asking for. */
+    rowSource() {
+      const rows = Model.visibleTasks();
+      if (typeof Views === 'undefined') return rows;
+      const view = Views.of(Model.project);
+      const r = Views.apply(rows, Model.tasks(), view, U.today());
+      this.viewWindow = r.window;
+      return r.rows;
+    },
+
     off(iso) { return U.diffDays(this.rs.origin, iso); },
     xOf(iso) { return this.off(iso) * this.rs.dayW; },
+
+    /* The inverse of xOf. Absent until now because interactions.js
+       works in deltas; the keyboard and nudge paths need an absolute
+       answer to "what date is this pixel?". */
+    isoAt(x) {
+      return U.addDays(this.rs.origin, Math.round(x / this.rs.dayW));
+    },
 
     // ---------------- LEFT GRID (configurable, MS-Project-style columns) ----------------
     // Column registry: each has {key,label,width(null=flex),cls,cell(t,i)->div}
@@ -541,6 +581,43 @@
       });
     },
 
+    /* The accessible name has to carry everything the bar conveys
+       visually, because for a screen-reader user it is the only thing
+       there is. A bare "Design phase" would be a label for a rectangle
+       whose whole meaning is its position and length. */
+    barLabel(t) {
+      const parts = [t.name || 'Untitled'];
+      if (t.type === 'milestone') {
+        parts.push('milestone on ' + U.fmtShort(t.start));
+      } else {
+        const cal = Cal.of(Model.project);
+        const days = Cal.active(cal) ? Cal.duration(t.start, t.end, cal) : U.duration(t.start, t.end);
+        parts.push(U.fmtShort(t.start) + ' to ' + U.fmtShort(t.end));
+        parts.push(days + (days === 1 ? ' working day' : ' working days'));
+      }
+      if (t.type === 'group') parts.push('group');
+      if (Number(t.progress) > 0) parts.push(Math.round(t.progress) + '% complete');
+      if (t.assignee) parts.push('assigned to ' + t.assignee);
+      if (this.cpm && this.cpm.critical && this.cpm.critical.has(t.id)) parts.push('on the critical path');
+      const n = (t.deps || []).length;
+      if (n) parts.push(n === 1 ? 'depends on 1 task' : 'depends on ' + n + ' tasks');
+      return parts.join('. ') + '.';
+    },
+
+    /* Roving tabindex: exactly one bar is in the tab order at a time,
+       so Tab moves past the chart in one press instead of trapping the
+       user in a 200-stop tour of it. Arrow keys move between bars once
+       inside — the composite-widget pattern from the ARIA grid spec. */
+    barA11y(b, t) {
+      const isCurrent = t.id === Model.selectedId
+        || (!Model.selectedId && this.rs.visible && this.rs.visible[0] && this.rs.visible[0].id === t.id);
+      b.setAttribute('tabindex', isCurrent ? '0' : '-1');
+      b.setAttribute('role', 'button');
+      b.setAttribute('aria-label', this.barLabel(t));
+      if (t.type === 'group') b.setAttribute('aria-expanded', String(!t.collapsed));
+      return b;
+    },
+
     bar(t, i) {
       const rs = this.rs;
       const y = i * ROW_H + BAR_TOP;
@@ -554,6 +631,7 @@
         b.appendChild(U.el('div', { class: 'bar-label' }, t.name));
         b.appendChild(U.el('div', { class: 'bar-dep-dot r' }));
         b.appendChild(U.el('div', { class: 'bar-dep-dot l' }));
+        this.barA11y(b, t);
         Interactions.wireBar(b, t);
         return b;
       }
@@ -564,6 +642,8 @@
       if (isGroup) cls.push('group');
       if (t.id === Model.selectedId) cls.push('selected');
       if (critical) cls.push('critical');
+
+      if (t._context) cls.push('is-context');
 
       const b = U.el('div', { class: cls.join(' '), 'data-id': t.id,
         style: { left: x + 'px', top: (isGroup ? i * ROW_H + (ROW_H - 12) / 2 : y) + 'px', width: w + 'px',
@@ -594,6 +674,7 @@
         b.appendChild(U.el('div', { class: 'bar-label', style: { left: (w + 8) + 'px' } }, t.name));
       }
 
+      this.barA11y(b, t);
       Interactions.wireBar(b, t);
       return b;
     },

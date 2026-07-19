@@ -26,6 +26,18 @@
         // Working calendar. New projects skip weekends by default; see
         // _migrate for why existing projects do not silently change.
         calendar: { enabled: true, workdays: [1, 2, 3, 4, 5], holidays: {} },
+        /* Which rows the chart shows.
+
+           _migrate's Object.assign is shallow, so a saved `view` object
+           replaces this one wholesale and a sub-key added later would
+           NOT be back-filled — the same trap `calendar` needs a special
+           case for. This one is safe for a different reason: nothing
+           reads settings.view directly. Every read goes through
+           Views.of(), which supplies a default for each field, so a
+           partial object from an older save normalises on the way in.
+           Keep it that way; a direct read would reintroduce the bug. */
+        view: { mode: 'all', weeks: 3, anchor: null },
+        showWorkload: false,
       },
       // Frozen copy of the plan, for tracking slippage. null until the user sets one.
       // { savedAt, tasks: { [id]: { start, end, progress } } }
@@ -101,6 +113,11 @@
       p.tasks = (p.tasks || []).map(t => Object.assign({
         progress: 0, color: U.PALETTE[0], assignee: '', type: 'task',
         parentId: null, collapsed: false, notes: '', deps: [], cost: 0,
+        /* Actual cost incurred so far. Earned value needs it and will
+           not guess: with no actuals entered, evm.js reports CPI as
+           null rather than deriving cost from progress, which would
+           make CPI exactly 1.00 for every project ever made. */
+        spent: 0,
       }, t));
       return p;
     },

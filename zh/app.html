@@ -27,7 +27,7 @@
   <meta property="og:locale" content="zh_CN" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=35" />
+  <link rel="stylesheet" href="/css/styles.css?v=36" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -88,6 +88,8 @@
           <button data-export="pptx" data-i18n="exp.pptx">📽 PowerPoint (.pptx)</button>
           <button data-export="csv" data-i18n="exp.csv">📑 CSV (spreadsheet)</button>
           <button data-export="mspdi" data-i18n="exp.mspdi">📐 MS Project (.xml)</button>
+          <button data-export="mermaid" data-i18n="exp.mermaid">🧜 Mermaid gantt (text)</button>
+          <button data-export="ics" data-i18n="exp.ics">📅 Calendar (.ics)</button>
           <button data-export="json" data-i18n="exp.json">{ } JSON (raw)</button>
           <button data-export="print" data-i18n="exp.print">🖨 Print</button>
           <button data-export="link" data-i18n="exp.link">🔗 Shareable link</button>
@@ -114,6 +116,7 @@
 
     <div class="tgroup">
       <button class="btn btn-accent" id="pasteBtn" data-i18n="app.paste" title="Generate tasks from text">✨ Paste to Gantt</button>
+      <button class="btn" id="autoScheduleBtn" title="Move every task to the earliest date its dependencies allow">⚡ <span data-i18n="app.autoschedule">Auto-schedule</span></button>
     </div>
 
     <div class="tgroup">
@@ -158,6 +161,24 @@
       <label class="chk"><input type="checkbox" id="toggleToday" checked /> <span data-i18n="app.today">Today</span></label>
       <button class="btn" id="calendarBtn" title="Working days, weekends and holidays">📆 <span data-i18n="app.calendar">Calendar</span></button>
       <button class="btn" id="workloadBtn" title="Who is over-booked, and when">👥 <span data-i18n="app.workload">Workload</span></button>
+      <button class="btn" id="scurveBtn" title="Planned vs actual progress over time">📈 <span data-i18n="app.scurve">S-curve</span></button>
+    </div>
+
+    <div class="tgroup">
+      <label class="tlabel" for="viewSelect" data-i18n="app.view">View</label>
+      <select id="viewSelect" class="select" title="Show every task, only the next few weeks, or only milestones">
+        <option value="all" data-i18n="view.all">All tasks</option>
+        <option value="lookahead" data-i18n="view.lookahead">Lookahead</option>
+        <option value="milestones" data-i18n="view.milestones">Milestones only</option>
+      </select>
+      <select id="viewWeeks" class="select" title="How far the lookahead window reaches" hidden>
+        <option value="1">1 week</option>
+        <option value="2">2 weeks</option>
+        <option value="3" selected>3 weeks</option>
+        <option value="4">4 weeks</option>
+        <option value="6">6 weeks</option>
+        <option value="8">8 weeks</option>
+      </select>
     </div>
 
     <div class="tgroup grow"></div>
@@ -168,6 +189,16 @@
       <button class="btn" id="todayBtn" data-i18n="app.todaybtn" title="Scroll to today">◎ Today</button>
       <span class="autosave" id="autosaveNote">Saved</span>
     </div>
+  </div>
+
+  <!-- A filtered chart that does not say it is filtered reads as a plan
+       with tasks missing. This strip is the difference. -->
+  <div class="view-note" id="viewNote" hidden>
+    <span id="viewNoteText"></span>
+    <button class="btn btn-sm" id="viewNotePrev" title="Previous week">←</button>
+    <button class="btn btn-sm" id="viewNoteNext" title="Next week">→</button>
+    <button class="btn btn-sm" id="viewNoteToday" data-i18n="view.thisweek">This week</button>
+    <button class="btn btn-sm" id="viewNoteClear" data-i18n="view.showall">Show all tasks</button>
   </div>
 
   <!-- ============ MAIN GANTT ============ -->
@@ -281,25 +312,34 @@
   <!-- floating tips button -->
   <button class="tips-fab" id="tipsFab" title="Tips & tricks" aria-label="Tips and tricks">💡</button>
 
-  <input type="file" id="fileInput" accept=".gantts,.gantt,.json,.csv,.xml" hidden />
+  <input type="file" id="fileInput" accept=".gantts,.gantt,.json,.csv,.xml,.mmd,.mermaid,.md,.txt" hidden />
   <div class="toast" id="toast" hidden></div>
 
+  <!-- Screen-reader announcements. Visually hidden but NOT display:none —
+       a hidden live region is never announced. "polite" so a stream of
+       arrow-key nudges queues instead of interrupting. -->
+  <div class="sr-only" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div>
+
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=35"></script>
-  <script src="/js/util.js?v=35"></script>
-  <script src="/js/store.js?v=35"></script>
-  <script src="/js/calendar.js?v=35"></script>
-  <script src="/js/resources.js?v=35"></script>
-  <script src="/js/model.js?v=35"></script>
-  <script src="/js/schedule.js?v=35"></script>
-  <script src="/js/render.js?v=35"></script>
-  <script src="/js/interactions.js?v=35"></script>
-  <script src="/js/msproject.js?v=35"></script>
-  <script src="/js/exports.js?v=35"></script>
-  <script src="/js/export-pdf.js?v=35"></script>
-  <script src="/js/templates.js?v=35"></script>
-  <script src="/js/features.js?v=35"></script>
-  <script src="/js/app.js?v=35"></script>
+  <script src="/js/i18n.js?v=36"></script>
+  <script src="/js/util.js?v=36"></script>
+  <script src="/js/store.js?v=36"></script>
+  <script src="/js/calendar.js?v=36"></script>
+  <script src="/js/resources.js?v=36"></script>
+  <script src="/js/model.js?v=36"></script>
+  <script src="/js/schedule.js?v=36"></script>
+  <script src="/js/render.js?v=36"></script>
+  <script src="/js/interactions.js?v=36"></script>
+  <script src="/js/msproject.js?v=36"></script>
+  <script src="/js/mermaid-gantt.js?v=36"></script>
+  <script src="/js/ics.js?v=36"></script>
+  <script src="/js/evm.js?v=36"></script>
+  <script src="/js/views.js?v=36"></script>
+  <script src="/js/exports.js?v=36"></script>
+  <script src="/js/export-pdf.js?v=36"></script>
+  <script src="/js/templates.js?v=36"></script>
+  <script src="/js/features.js?v=36"></script>
+  <script src="/js/app.js?v=36"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

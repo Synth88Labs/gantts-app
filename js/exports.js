@@ -18,6 +18,8 @@
           case 'mspdi': return this.mspdi();
           case 'print': return this.print();
           case 'link': return this.link();
+          case 'mermaid': return this.mermaid();
+          case 'ics': return this.ics();
         }
       } catch (e) {
         console.error(e);
@@ -28,6 +30,61 @@
     safeName(ext) {
       const n = (Model.project.name || 'gantt').replace(/[^\w\-]+/g, '_').replace(/^_+|_+$/g, '') || 'gantt';
       return n + '.' + ext;
+    },
+
+    /* Mermaid gantt text. Shown in a copyable box rather than only
+       downloaded — the whole point is pasting it into a README or an
+       issue, and a file in the Downloads folder is one step further
+       from that than the clipboard is. */
+    mermaid() {
+      if (!window.MermaidGantt) throw new Error('Mermaid export is still loading — try again in a moment.');
+
+      /* Criticality is computed, never asserted, so it has to be
+         derived here rather than read off the tasks. */
+      let critical = null;
+      try {
+        // Schedule.compute() returns `critical` as a Set of ids already.
+        critical = Schedule.compute().critical || null;
+      } catch (e) { critical = null; }
+
+      const text = MermaidGantt.export(Model.project, { critical });
+      App.openModal('Mermaid gantt', (body) => {
+        body.appendChild(U.el('p', { class: 'muted' },
+          'Paste this into GitHub, GitLab, Notion or Obsidian — they render Mermaid natively.'));
+
+        const ta = U.el('textarea', { class: 'code-box', rows: 16, spellcheck: 'false' });
+        ta.value = text;
+        body.appendChild(ta);
+
+        const row = U.el('div', { class: 'modal-actions' });
+        row.appendChild(U.el('button', {
+          class: 'btn btn-primary',
+          onclick: () => {
+            ta.select();
+            const done = () => App.toast('Mermaid copied to clipboard');
+            if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, () => document.execCommand('copy') && done());
+            else { document.execCommand('copy'); done(); }
+          },
+        }, 'Copy to clipboard'));
+        row.appendChild(U.el('button', {
+          class: 'btn',
+          onclick: () => { U.download(this.safeName('mmd'), text, 'text/plain;charset=utf-8'); },
+        }, 'Download .mmd'));
+        body.appendChild(row);
+
+        body.appendChild(U.el('p', { class: 'muted small' },
+          'Mermaid has no progress percentage, so 100% exports as "done" and anything in between as "active". '
+          + 'Lags and SS/FF/SF links cannot be written as "after", so those tasks carry absolute dates instead.'));
+      });
+    },
+
+    /* iCalendar. One-shot file, not a subscribable feed — see ics.js. */
+    ics() {
+      if (!window.ICS) throw new Error('Calendar export is still loading — try again in a moment.');
+      const { text, count } = ICS.build(Model.project, {});
+      if (!count) throw new Error('Nothing to export — this plan has no dated tasks yet.');
+      U.download(this.safeName('ics'), text, 'text/calendar;charset=utf-8');
+      App.toast(count + ' event(s) exported — import the file into your calendar');
     },
 
     // Build a full-size, unconstrained clone of the chart for image capture.
