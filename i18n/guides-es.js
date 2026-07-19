@@ -33,21 +33,38 @@ const G = {
     lead: 'Un <strong>diagrama de Gantt</strong> es una representación del tiempo: cada tarea es una barra horizontal cuya posición indica cuándo empieza y cuya longitud indica cuánto dura. Puesto en una sola vista, responde la pregunta que ninguna lista de tareas responde bien: <em>¿qué está pasando a la vez, y qué depende de qué?</em>',
     figIntro: 'Las cuatro piezas que aparecen en cualquier diagrama de Gantt, sea de una boda o de una refinería:',
     sections: [
-      ['De dónde viene y por qué sigue vigente',
-        `<p>El formato lleva el nombre de Henry Gantt, ingeniero estadounidense que lo popularizó a principios del siglo XX para planificar producción industrial. Ha sobrevivido a un siglo de metodologías por una razón sencilla: es la forma más directa de mostrar duración y solapamiento al mismo tiempo.</p>
-        <p>Una lista de tareas ordena el trabajo. Un tablero kanban muestra el estado. Solo el diagrama de Gantt muestra <em>el calendario</em> — y por tanto es el único que revela que dos tareas críticas caen en la misma semana con la misma persona.</p>`],
-      ['Las cuatro piezas',
-        `<p><strong>Barras.</strong> Cada una es una tarea. Empieza donde empieza el trabajo y termina donde termina. Su longitud es la duración, no el esfuerzo: una tarea de diez días que ocupa a media persona sigue midiendo diez días.</p>
-        <p><strong>Hitos.</strong> Puntos sin duración, dibujados como rombos. Sirven para marcar fechas que importan y no consumen tiempo: contrato firmado, permiso concedido, producto lanzado.</p>
-        <p><strong>Dependencias.</strong> Flechas que dicen que una tarea no puede empezar (o terminar) hasta que otra lo haga. Son lo que convierte un dibujo en un modelo: al mover una barra, las siguientes se mueven solas.</p>
-        <p><strong>Ruta crítica.</strong> La cadena de tareas más larga del proyecto. Si cualquiera de ellas se retrasa un día, el proyecto entero se retrasa un día. Todo lo que no está en la ruta crítica tiene holgura.</p>`],
-      ['Cuándo usarlo y cuándo no',
-        `<p>Un Gantt rinde cuando el trabajo tiene <em>secuencia</em> y <em>fechas</em>: obras, mudanzas, lanzamientos, investigaciones, aperturas, implantaciones. Si quitar una tarea del medio rompe el resto del plan, necesitas un Gantt.</p>
-        <p>Rinde mal cuando el trabajo es continuo o se reprioriza cada semana. Un equipo de soporte, un backlog de producto o cualquier flujo sin fecha de fin se gestiona mejor con un tablero. Dibujar un Gantt de sesenta filas que se rehace cada lunes es trabajo de mantenimiento, no planificación.</p>
-        <p>La prueba práctica: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>`],
-      ['Cómo leerlo en treinta segundos',
-        `<p>Mira primero el extremo derecho: ahí está la fecha de fin y la tarea que la determina. Después busca las barras resaltadas como críticas — esas son las que no puedes retrasar. Por último, mira dónde se apilan barras verticalmente: eso es la semana en la que tu equipo va a estar saturado.</p>
-        <p>Un diagrama bien hecho contesta esas tres preguntas sin que nadie tenga que explicarlo.</p>`],
+      ['Definición de diagrama de Gantt',
+        `<p>Un diagrama de Gantt es un gráfico de barras horizontales que representa un calendario de proyecto. Cada barra es una tarea: su posición sobre el eje temporal indica cuándo empieza y cuándo termina, y su longitud indica cuánto dura.</p>
+        <p>Esa definición parece trivial y no lo es. La clave está en que muestra <em>duración</em> y <em>solapamiento</em> a la vez, algo que ninguna lista de tareas consigue: en una lista, «diseño» y «desarrollo» son dos líneas consecutivas; en un Gantt se ve que se pisan tres semanas.</p>`],
+      ['¿Qué aspecto tiene?',
+        `<p>A la izquierda, una tabla con los nombres de las tareas, sus fechas y su responsable. A la derecha, la línea de tiempo con las barras. Entre ellas, flechas que conectan las tareas dependientes.</p>
+        <p>Los elementos que aparecen prácticamente siempre son cuatro. Las <strong>barras</strong>, una por tarea. Los <strong>hitos</strong>, rombos sin duración que marcan fechas señaladas. Las <strong>dependencias</strong>, flechas que dicen qué va antes de qué. Y la <strong>ruta crítica</strong>, la cadena resaltada que determina la fecha de fin.</p>
+        <p>Muchas herramientas añaden además una línea vertical de «hoy», sombreado de fines de semana y una barra de progreso dentro de cada tarea.</p>`],
+      ['¿Para qué sirve un diagrama de Gantt?',
+        `<p><strong>Para planificar.</strong> Obliga a decidir el orden del trabajo y a comprobar si las fechas se sostienen. La mayoría de los problemas de un plan aparecen al dibujarlo, no al ejecutarlo.</p>
+        <p><strong>Para comunicar.</strong> Es el formato que entiende un cliente, un comité o un financiador sin explicación previa. Por eso se pide en propuestas de subvención, en informes de obra y en presentaciones de dirección.</p>
+        <p><strong>Para hacer seguimiento.</strong> Con una línea base guardada, el gráfico deja de ser un plan y pasa a ser una medida: cuánto nos hemos desviado, dónde y si afecta a la entrega.</p>
+        <p><strong>Para coordinar.</strong> Cuando varias personas dependen unas de otras, el gráfico responde «¿puedo empezar ya?» sin necesidad de preguntarlo.</p>`],
+      ['Ejemplos por tipo de proyecto',
+        `<p>La secuencia cambia mucho según el sector, aunque los elementos sean los mismos.</p>
+        <p>En <strong>construcción</strong> el orden es rígido: permisos, cimentación, estructura, cerramiento, instalaciones y acabados, con inspecciones como barreras. En <strong>software</strong> los sprints se repiten como barras de duración fija y el valor está en mostrar releases y dependencias externas. En <strong>marketing</strong>, la fase que decide el calendario suele ser la de aprobaciones. En <strong>investigación</strong>, la aprobación ética bloquea la recogida de datos. En <strong>eventos</strong> y <strong>bodas</strong>, la fecha es fija y todo se planifica hacia atrás.</p>
+        <p>Si quieres verlos con las fases ya cargadas, hay <a href="/es/blog/gantt-chart-examples.html">ocho ejemplos comentados</a> y más de cuarenta <a href="/es/templates.html">plantillas listas</a>.</p>`],
+      ['Ventajas e inconvenientes',
+        `<p><strong>A favor:</strong> muestra secuencia y solapamiento en una sola vista; hace visible la fecha de fin y qué la determina; es universalmente comprensible; y con dependencias se recalcula solo.</p>
+        <p><strong>En contra:</strong> envejece rápido si el trabajo se reprioriza cada semana; tiende al exceso de detalle, que es la causa número uno de que se abandone; no muestra bien la carga de trabajo por persona sin una vista adicional; y da una impresión de precisión que las estimaciones no siempre respaldan.</p>
+        <p>La conclusión práctica: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>`],
+      ['¿Quién inventó el diagrama de Gantt?',
+        `<p>Lleva el nombre de Henry Gantt, ingeniero mecánico y consultor estadounidense que lo popularizó entre 1910 y 1915 para planificar producción industrial y construcción naval. No fue del todo el primero: el polaco Karol Adamiecki había desarrollado un gráfico equivalente, el harmonograma, unos quince años antes, pero lo publicó en polaco y en ruso, y el trabajo apenas circuló fuera de Europa del Este.</p>
+        <p>Que un formato de hace un siglo siga en uso dice algo: resolvió bien un problema que no ha cambiado.</p>`],
+      ['Gantt, línea de tiempo y Kanban: en qué se diferencian',
+        `<p>Una <strong>línea de tiempo</strong> muestra cuándo ocurren las cosas, pero normalmente sin duración ni dependencias: sirve para comunicar, no para planificar.</p>
+        <p>Un <strong>tablero Kanban</strong> muestra el estado del trabajo —pendiente, en curso, hecho— y es excelente para flujo continuo. Lo que no muestra es el calendario: un tablero no te dice si llegas a marzo.</p>
+        <p>Un <strong>diagrama de Gantt</strong> muestra duración, solapamiento y dependencia. Es la herramienta adecuada cuando el trabajo tiene un orden y un plazo, y la equivocada cuando se reprioriza constantemente.</p>
+        <p>No compiten: muchos equipos usan tablero para el día a día y Gantt para las fechas comprometidas y las dependencias externas.</p>`],
+      ['Cómo hacer uno gratis',
+        `<p>Necesitas tres cosas: la lista de tareas, una duración estimada para cada una y saber qué depende de qué. Con eso, el gráfico sale prácticamente solo.</p>
+        <p>Puedes construirlo en Excel con un gráfico de barras apiladas, en Google Sheets con la función Cronograma, o directamente en el <a href="/es/app.html">editor de gantts.app</a>, que enlaza dependencias, calcula la ruta crítica y exporta a PDF, Excel y PowerPoint sin cuenta y sin marca de agua.</p>
+        <p>La guía paso a paso está en <a href="/es/blog/how-to-make-a-gantt-chart.html">cómo hacer un diagrama de Gantt</a>.</p>`],
     ],
     callout: 'El error más común no es dibujar mal las barras: es dibujarlas sin dependencias. Un Gantt sin flechas es una lista de fechas bonita que hay que actualizar a mano cada vez que algo cambia. Con dependencias, mueves una tarea y el plan se recalcula solo — y solo entonces la ruta crítica significa algo.',
     faq: [
@@ -111,18 +128,35 @@ const G = {
     lead: 'La <strong>ruta crítica</strong> es la cadena de tareas más larga de tu proyecto, y por tanto la que fija la fecha de fin. Retrasa una tarea crítica un día y el proyecto entero se retrasa un día. Retrasa una que no lo es y puede que no pase absolutamente nada — esa diferencia es lo que el método hace visible.',
     figIntro: 'Pasada adelante, pasada atrás y la holgura que sale de restarlas:',
     sections: [
-      ['Qué calcula exactamente',
-        `<p>El método de la ruta crítica (CPM, por sus siglas en inglés) recorre la red de tareas dos veces. La <strong>pasada adelante</strong> calcula lo más pronto que cada tarea puede empezar y terminar, arrastrando las restricciones desde el principio del proyecto. La <strong>pasada atrás</strong> calcula lo más tarde que puede empezar y terminar sin retrasar el final.</p>
-        <p>La diferencia entre ambas es la <strong>holgura total</strong>. Las tareas con holgura cero forman la ruta crítica.</p>`],
-      ['Holgura: la cifra que de verdad usas',
-        `<p>Si una tarea tiene seis días de holgura, puedes retrasarla hasta seis días sin mover la fecha de entrega. Eso es información accionable: te dice de dónde puedes sacar a una persona cuando surge una urgencia, y qué tareas no admiten ninguna negociación.</p>
-        <p>Conviene distinguir la holgura total (cuánto puedes retrasar sin mover el fin del proyecto) de la holgura libre (cuánto puedes retrasar sin mover la tarea siguiente). La primera es la que se mira para decidir prioridades.</p>`],
-      ['Por qué la ruta crítica cambia sola',
-        `<p>No es una propiedad fija del proyecto: es el resultado de las duraciones y dependencias actuales. Acorta la tarea crítica más larga y la ruta salta a otra cadena, que hasta ese momento tenía holgura. Por eso comprimir un plan es un proceso iterativo y no una única decisión.</p>
-        <p>De ahí también el error clásico: optimizar una tarea que no está en la ruta crítica no adelanta el proyecto ni un día. Se siente productivo y no cambia nada.</p>`],
-      ['Cómo comprimir el calendario',
-        `<p>Solo hay tres palancas reales. <em>Acortar</em> una tarea crítica, normalmente añadiendo recursos. <em>Solapar</em> tareas que iban en serie, convirtiendo una dependencia fin-inicio en inicio-inicio con desfase. O <em>reducir alcance</em>. Cualquier otra cosa mueve barras sin mover la fecha.</p>
-        <p>Cada solape que introduces añade riesgo: empezar a probar antes de terminar de construir significa rehacer pruebas si el diseño cambia. Es una decisión legítima, pero conviene tomarla sabiendo qué se compra y qué se paga.</p>`],
+      ['¿Qué es el método de la ruta crítica?',
+        `<p>El método de la ruta crítica (CPM, <em>critical path method</em>) es una técnica para calcular la duración mínima de un proyecto a partir de las duraciones de sus tareas y de las dependencias entre ellas.</p>
+        <p>Su resultado más útil es una lista corta: qué tareas no admiten ningún retraso. Todo lo demás tiene margen, y saber cuál es cuál cambia por completo dónde pones la atención.</p>
+        <p>Se desarrolló a finales de los años cincuenta en DuPont, para planificar paradas de planta química, en paralelo al método PERT que la Marina estadounidense creó para el programa Polaris.</p>`],
+      ['Términos que necesitas',
+        `<p><strong>Inicio temprano (ES)</strong> y <strong>fin temprano (EF):</strong> lo más pronto que una tarea puede empezar y terminar respetando sus predecesoras.</p>
+        <p><strong>Inicio tardío (LS)</strong> y <strong>fin tardío (LF):</strong> lo más tarde que puede empezar y terminar sin retrasar el proyecto.</p>
+        <p><strong>Holgura total:</strong> LS − ES, es decir, cuánto puedes retrasar la tarea sin mover la fecha de entrega.</p>
+        <p><strong>Holgura libre:</strong> cuánto puedes retrasarla sin mover la tarea siguiente. Siempre es menor o igual que la total.</p>
+        <p><strong>Ruta crítica:</strong> la cadena de tareas con holgura total cero.</p>`],
+      ['Cómo se calcula, paso a paso',
+        `<p><strong>1. Dibuja la red.</strong> Lista las tareas con su duración y sus predecesoras inmediatas.</p>
+        <p><strong>2. Pasada adelante.</strong> Empieza en cero. Para cada tarea, ES es el mayor EF de sus predecesoras; EF = ES + duración. Al llegar al final, el mayor EF es la duración del proyecto.</p>
+        <p><strong>3. Pasada atrás.</strong> Empieza por el final con LF igual a la duración total. Para cada tarea, LF es el menor LS de sus sucesoras; LS = LF − duración.</p>
+        <p><strong>4. Calcula la holgura.</strong> Holgura total = LS − ES. Las tareas con holgura cero forman la ruta crítica.</p>
+        <p>Con desfases (lag) el procedimiento es el mismo: el desfase se suma en la pasada adelante y se resta en la de atrás.</p>`],
+      ['Un ejemplo resuelto',
+        `<p>Cuatro tareas. A dura 3 días y no tiene predecesoras. B dura 4 y depende de A. C dura 2 y también depende de A. D dura 3 y depende de B y de C.</p>
+        <p><em>Pasada adelante:</em> A va de 0 a 3. B de 3 a 7. C de 3 a 5. D no puede empezar hasta que ambas terminen, así que arranca en 7 y termina en 10. El proyecto dura 10 días.</p>
+        <p><em>Pasada atrás:</em> D va de 7 a 10. B debe terminar en 7, luego va de 3 a 7. C debe terminar en 7, luego va de 5 a 7. A de 0 a 3.</p>
+        <p><em>Holguras:</em> A, B y D tienen holgura cero — son críticas. C tiene 2 días de holgura: puede retrasarse dos días sin afectar a nada.</p>
+        <p>Observa la consecuencia práctica: acelerar C no adelanta el proyecto ni un día. Solo mover A, B o D lo hace.</p>`],
+      ['CPM, PERT y cadena crítica',
+        `<p><strong>CPM</strong> usa una duración única por tarea y es determinista. Es lo que usan la mayoría de las herramientas.</p>
+        <p><strong>PERT</strong> usa tres estimaciones —optimista, más probable y pesimista— y calcula una duración esperada ponderada. Sirve cuando la incertidumbre es alta y quieres hablar de probabilidad en lugar de una fecha única.</p>
+        <p><strong>Cadena crítica</strong> parte del CPM pero retira los márgenes individuales de cada tarea y los agrupa en un colchón al final del proyecto, para evitar que la holgura se consuma tarea a tarea. Es la respuesta de la teoría de restricciones al problema de que el margen repartido siempre desaparece.</p>`],
+      ['Verla automáticamente',
+        `<p>Calcular esto a mano funciona con cuatro tareas y es inviable con cuarenta, sobre todo porque la ruta crítica cambia cada vez que ajustas una duración.</p>
+        <p>En el <a href="/es/app.html">editor gratuito</a>, enlaza las dependencias y activa la ruta crítica: se resalta sola y se recalcula al instante con cada cambio. La columna de holgura muestra además cuántos días de margen tiene cada tarea, que es la cifra que de verdad usas para decidir prioridades.</p>`],
     ],
     callout: 'La ruta crítica solo existe si has puesto dependencias. Un diagrama con fechas escritas a mano no tiene red que recorrer, así que cualquier herramienta te dirá que todo es crítico o que nada lo es. Enlazar las tareas es el requisito previo, no un adorno.',
     faq: [

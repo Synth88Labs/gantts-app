@@ -70,21 +70,38 @@
 
 
     <div class="prose">
-      <h2 id="s1">De dónde viene y por qué sigue vigente</h2>
-<p>El formato lleva el nombre de Henry Gantt, ingeniero estadounidense que lo popularizó a principios del siglo XX para planificar producción industrial. Ha sobrevivido a un siglo de metodologías por una razón sencilla: es la forma más directa de mostrar duración y solapamiento al mismo tiempo.</p>
-        <p>Una lista de tareas ordena el trabajo. Un tablero kanban muestra el estado. Solo el diagrama de Gantt muestra <em>el calendario</em> — y por tanto es el único que revela que dos tareas críticas caen en la misma semana con la misma persona.</p>
-      <h2 id="s2">Las cuatro piezas</h2>
-<p><strong>Barras.</strong> Cada una es una tarea. Empieza donde empieza el trabajo y termina donde termina. Su longitud es la duración, no el esfuerzo: una tarea de diez días que ocupa a media persona sigue midiendo diez días.</p>
-        <p><strong>Hitos.</strong> Puntos sin duración, dibujados como rombos. Sirven para marcar fechas que importan y no consumen tiempo: contrato firmado, permiso concedido, producto lanzado.</p>
-        <p><strong>Dependencias.</strong> Flechas que dicen que una tarea no puede empezar (o terminar) hasta que otra lo haga. Son lo que convierte un dibujo en un modelo: al mover una barra, las siguientes se mueven solas.</p>
-        <p><strong>Ruta crítica.</strong> La cadena de tareas más larga del proyecto. Si cualquiera de ellas se retrasa un día, el proyecto entero se retrasa un día. Todo lo que no está en la ruta crítica tiene holgura.</p>
-      <h2 id="s3">Cuándo usarlo y cuándo no</h2>
-<p>Un Gantt rinde cuando el trabajo tiene <em>secuencia</em> y <em>fechas</em>: obras, mudanzas, lanzamientos, investigaciones, aperturas, implantaciones. Si quitar una tarea del medio rompe el resto del plan, necesitas un Gantt.</p>
-        <p>Rinde mal cuando el trabajo es continuo o se reprioriza cada semana. Un equipo de soporte, un backlog de producto o cualquier flujo sin fecha de fin se gestiona mejor con un tablero. Dibujar un Gantt de sesenta filas que se rehace cada lunes es trabajo de mantenimiento, no planificación.</p>
-        <p>La prueba práctica: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>
-      <h2 id="s4">Cómo leerlo en treinta segundos</h2>
-<p>Mira primero el extremo derecho: ahí está la fecha de fin y la tarea que la determina. Después busca las barras resaltadas como críticas — esas son las que no puedes retrasar. Por último, mira dónde se apilan barras verticalmente: eso es la semana en la que tu equipo va a estar saturado.</p>
-        <p>Un diagrama bien hecho contesta esas tres preguntas sin que nadie tenga que explicarlo.</p>
+      <h2 id="s1">Definición de diagrama de Gantt</h2>
+<p>Un diagrama de Gantt es un gráfico de barras horizontales que representa un calendario de proyecto. Cada barra es una tarea: su posición sobre el eje temporal indica cuándo empieza y cuándo termina, y su longitud indica cuánto dura.</p>
+        <p>Esa definición parece trivial y no lo es. La clave está en que muestra <em>duración</em> y <em>solapamiento</em> a la vez, algo que ninguna lista de tareas consigue: en una lista, «diseño» y «desarrollo» son dos líneas consecutivas; en un Gantt se ve que se pisan tres semanas.</p>
+      <h2 id="s2">¿Qué aspecto tiene?</h2>
+<p>A la izquierda, una tabla con los nombres de las tareas, sus fechas y su responsable. A la derecha, la línea de tiempo con las barras. Entre ellas, flechas que conectan las tareas dependientes.</p>
+        <p>Los elementos que aparecen prácticamente siempre son cuatro. Las <strong>barras</strong>, una por tarea. Los <strong>hitos</strong>, rombos sin duración que marcan fechas señaladas. Las <strong>dependencias</strong>, flechas que dicen qué va antes de qué. Y la <strong>ruta crítica</strong>, la cadena resaltada que determina la fecha de fin.</p>
+        <p>Muchas herramientas añaden además una línea vertical de «hoy», sombreado de fines de semana y una barra de progreso dentro de cada tarea.</p>
+      <h2 id="s3">¿Para qué sirve un diagrama de Gantt?</h2>
+<p><strong>Para planificar.</strong> Obliga a decidir el orden del trabajo y a comprobar si las fechas se sostienen. La mayoría de los problemas de un plan aparecen al dibujarlo, no al ejecutarlo.</p>
+        <p><strong>Para comunicar.</strong> Es el formato que entiende un cliente, un comité o un financiador sin explicación previa. Por eso se pide en propuestas de subvención, en informes de obra y en presentaciones de dirección.</p>
+        <p><strong>Para hacer seguimiento.</strong> Con una línea base guardada, el gráfico deja de ser un plan y pasa a ser una medida: cuánto nos hemos desviado, dónde y si afecta a la entrega.</p>
+        <p><strong>Para coordinar.</strong> Cuando varias personas dependen unas de otras, el gráfico responde «¿puedo empezar ya?» sin necesidad de preguntarlo.</p>
+      <h2 id="s4">Ejemplos por tipo de proyecto</h2>
+<p>La secuencia cambia mucho según el sector, aunque los elementos sean los mismos.</p>
+        <p>En <strong>construcción</strong> el orden es rígido: permisos, cimentación, estructura, cerramiento, instalaciones y acabados, con inspecciones como barreras. En <strong>software</strong> los sprints se repiten como barras de duración fija y el valor está en mostrar releases y dependencias externas. En <strong>marketing</strong>, la fase que decide el calendario suele ser la de aprobaciones. En <strong>investigación</strong>, la aprobación ética bloquea la recogida de datos. En <strong>eventos</strong> y <strong>bodas</strong>, la fecha es fija y todo se planifica hacia atrás.</p>
+        <p>Si quieres verlos con las fases ya cargadas, hay <a href="/es/blog/gantt-chart-examples.html">ocho ejemplos comentados</a> y más de cuarenta <a href="/es/templates.html">plantillas listas</a>.</p>
+      <h2 id="s5">Ventajas e inconvenientes</h2>
+<p><strong>A favor:</strong> muestra secuencia y solapamiento en una sola vista; hace visible la fecha de fin y qué la determina; es universalmente comprensible; y con dependencias se recalcula solo.</p>
+        <p><strong>En contra:</strong> envejece rápido si el trabajo se reprioriza cada semana; tiende al exceso de detalle, que es la causa número uno de que se abandone; no muestra bien la carga de trabajo por persona sin una vista adicional; y da una impresión de precisión que las estimaciones no siempre respaldan.</p>
+        <p>La conclusión práctica: si nadie va a preguntar «¿esto llega para tal fecha?», probablemente no necesitas un Gantt.</p>
+      <h2 id="s6">¿Quién inventó el diagrama de Gantt?</h2>
+<p>Lleva el nombre de Henry Gantt, ingeniero mecánico y consultor estadounidense que lo popularizó entre 1910 y 1915 para planificar producción industrial y construcción naval. No fue del todo el primero: el polaco Karol Adamiecki había desarrollado un gráfico equivalente, el harmonograma, unos quince años antes, pero lo publicó en polaco y en ruso, y el trabajo apenas circuló fuera de Europa del Este.</p>
+        <p>Que un formato de hace un siglo siga en uso dice algo: resolvió bien un problema que no ha cambiado.</p>
+      <h2 id="s7">Gantt, línea de tiempo y Kanban: en qué se diferencian</h2>
+<p>Una <strong>línea de tiempo</strong> muestra cuándo ocurren las cosas, pero normalmente sin duración ni dependencias: sirve para comunicar, no para planificar.</p>
+        <p>Un <strong>tablero Kanban</strong> muestra el estado del trabajo —pendiente, en curso, hecho— y es excelente para flujo continuo. Lo que no muestra es el calendario: un tablero no te dice si llegas a marzo.</p>
+        <p>Un <strong>diagrama de Gantt</strong> muestra duración, solapamiento y dependencia. Es la herramienta adecuada cuando el trabajo tiene un orden y un plazo, y la equivocada cuando se reprioriza constantemente.</p>
+        <p>No compiten: muchos equipos usan tablero para el día a día y Gantt para las fechas comprometidas y las dependencias externas.</p>
+      <h2 id="s8">Cómo hacer uno gratis</h2>
+<p>Necesitas tres cosas: la lista de tareas, una duración estimada para cada una y saber qué depende de qué. Con eso, el gráfico sale prácticamente solo.</p>
+        <p>Puedes construirlo en Excel con un gráfico de barras apiladas, en Google Sheets con la función Cronograma, o directamente en el <a href="/es/app.html">editor de gantts.app</a>, que enlaza dependencias, calcula la ruta crítica y exporta a PDF, Excel y PowerPoint sin cuenta y sin marca de agua.</p>
+        <p>La guía paso a paso está en <a href="/es/blog/how-to-make-a-gantt-chart.html">cómo hacer un diagrama de Gantt</a>.</p>
 
       <div class="callout">El error más común no es dibujar mal las barras: es dibujarlas sin dependencias. Un Gantt sin flechas es una lista de fechas bonita que hay que actualizar a mano cada vez que algo cambia. Con dependencias, mueves una tarea y el plan se recalcula solo — y solo entonces la ruta crítica significa algo.</div>
 
