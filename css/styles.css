@@ -862,3 +862,44 @@ body.presenting .today-line { width: 3px; }
   font-size: 13px;
 }
 .sample-note > span { margin-right: auto; }
+
+/* ============================================================
+   Windows High Contrast / forced-colors.
+
+   In forced-colors mode the OS replaces every colour, and background
+   images are dropped entirely. That silently removes BOTH cues for the
+   critical path — the fill and the hatch — so it needs a third one that
+   survives: a border style, which forced-colors preserves.
+   ============================================================ */
+@media (forced-colors: active) {
+  .bar {
+    border: 1px solid CanvasText;
+    forced-color-adjust: none;
+    background: Canvas;
+  }
+  .bar.critical {
+    /* Dashes survive where a gradient does not. */
+    border: 3px dashed Highlight;
+  }
+  .bar-fill { background: Highlight; }
+  .bar:focus-visible, .bar:focus { outline: 3px solid Highlight; outline-offset: 2px; }
+
+  .evm-planned { stroke: CanvasText; }
+  .evm-earned  { stroke: Highlight; }
+  .evm-now     { stroke: CanvasText; }
+
+  /* Pattern swatches lose their gradient; keep the outline meaningful. */
+  .crit-swatch { border: 2px dashed CanvasText; background: Canvas; }
+  .evm-swatch  { border-top-color: CanvasText; }
+
+  .view-note, .sample-note { border: 1px solid CanvasText; }
+}
+
+/* ---- nudge controls ----
+   W3C's own example for SC 2.5.7 is "up/down buttons to reorder list
+   items". These are the horizontal equivalent: click-only, no drag, no
+   keyboard required — which matters because 2.5.7 is aimed at people
+   who CAN use a pointer but cannot hold a precise drag. */
+.nudge-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.nudge-row .btn { min-width: 34px; min-height: 30px; padding: 4px 8px; }
+.nudge-label { font-size: 11.5px; color: var(--muted, #64748b); margin-right: 2px; }

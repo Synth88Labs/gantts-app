@@ -911,6 +911,53 @@
       if (t.type !== 'group') { const row = U.el('div', { class: 'field-row' }, [startF, endF]); body.appendChild(row); }
       else body.appendChild(startF);
 
+      /* Move and resize by clicking, with no dragging at all.
+
+         WCAG 2.5.7 is about people who can use a pointer but cannot
+         hold a sustained precise drag — tremor, a head-pointer,
+         eye-gaze, a switch. A keyboard alternative does NOT satisfy it;
+         that is 2.1.1, a separate criterion. The date fields above are
+         already a valid single-pointer path, but W3C's own example for
+         this criterion is a pair of nudge buttons, and they are far
+         more discoverable than typing a date. */
+      if (t.type !== 'group') {
+        const cal = () => Cal.of(Model.project);
+        const nudge = (field, days) => {
+          Model.snapshot();
+          const cur = Model.get(id);
+          if (field === 'move') {
+            const moved = Cal.moveKeepingDuration(cur, Cal.shift(cur.start, days, cal()), cal());
+            cur.start = moved.start; cur.end = moved.end;
+          } else if (cur.type !== 'milestone') {
+            const end = Cal.shift(cur.end, days, cal());
+            if (U.parse(end) >= U.parse(cur.start)) cur.end = end;
+          }
+          Model._recalcGroups();
+          Model._afterChange();
+          App.announce(Render.barLabel(Model.get(id)));
+          this.refreshDrawer();
+        };
+        const b = (label, title, fn) => U.el('button', { class: 'btn', title, onclick: fn }, label);
+
+        const moveRow = U.el('div', { class: 'nudge-row' }, [
+          U.el('span', { class: 'nudge-label' }, 'Move'),
+          b('◀◀', 'Back one week', () => nudge('move', -7)),
+          b('◀', 'Back one working day', () => nudge('move', -1)),
+          b('▶', 'Forward one working day', () => nudge('move', 1)),
+          b('▶▶', 'Forward one week', () => nudge('move', 7)),
+        ]);
+        body.appendChild(field('Nudge', moveRow));
+
+        if (t.type !== 'milestone') {
+          const sizeRow = U.el('div', { class: 'nudge-row' }, [
+            U.el('span', { class: 'nudge-label' }, 'Length'),
+            b('−', 'One working day shorter', () => nudge('resize', -1)),
+            b('+', 'One working day longer', () => nudge('resize', 1)),
+          ]);
+          body.appendChild(field('Duration', sizeRow));
+        }
+      }
+
       if (t.type === 'task') {
         body.appendChild(field('Progress: ' + (t.progress || 0) + '%', rangeInput(t.progress || 0, v => Model.update(id, { progress: v }))));
       }
