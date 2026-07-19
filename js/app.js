@@ -3,6 +3,9 @@
    Exposes a global `App`.
    ============================================================ */
 (function () {
+  // Starter-template content in the reader's language; identity if absent.
+  const TPLT = (x) => (window.TemplateI18N ? TemplateI18N.tr(x) : x);
+
   const App = {
     init() {
       Render.init();
@@ -130,7 +133,7 @@
        has never had a way to run it. */
     autoSchedule() {
       if (!window.Schedule || !Schedule.autoSchedule) return;
-      if (!Model.tasks().length) { this.toast('Nothing to schedule yet'); return; }
+      if (!Model.tasks().length) { this.toast(this.T('ts.nothing', 'Nothing to schedule yet')); return; }
       // autoSchedule takes its own snapshot and commits — do not wrap it.
       const moved = Schedule.autoSchedule();
       this.toast(moved
@@ -253,7 +256,7 @@
       const sClear = U.$('#sampleClear');
       if (sClear) sClear.addEventListener('click', () => {
         Model.newProject('Untitled Project');
-        this.toast('Blank plan ready');
+        this.toast(this.T('ts.blank', 'Blank plan ready'));
       });
       const sTpl = U.$('#sampleTemplates');
       if (sTpl) sTpl.addEventListener('click', () => this.openTemplates());
@@ -381,7 +384,7 @@
       this.openModal(this.T('md.table', 'Plan as a table'), (body) => {
         const tasks = Model.tasks();
         if (!tasks.length) {
-          body.appendChild(U.el('p', { class: 'muted' }, 'Nothing to show yet — add a task first.'));
+          body.appendChild(U.el('p', { class: 'muted' }, this.T('tbl.empty', 'Nothing to show yet — add a task first.')));
           return;
         }
 
@@ -437,14 +440,14 @@
           class: 'btn btn-primary',
           onclick: () => {
             const txt = this.tableAsText(tasks, cal, cpm);
-            const done = () => this.toast('Table copied to clipboard');
+            const done = () => this.toast(this.T('tbl.copied', 'Table copied to clipboard'));
             if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, done);
             else done();
           },
-        }, 'Copy as text'));
+        }, this.T('tbl.copy', 'Copy as text')));
         row.appendChild(U.el('button', {
           class: 'btn', onclick: () => Exports.run('csv'),
-        }, 'Download CSV'));
+        }, this.T('tbl.csv', 'Download CSV')));
         body.appendChild(row);
       });
     },
@@ -546,7 +549,7 @@
 
         if (r.empty) {
           body.appendChild(U.el('p', { class: 'muted' },
-            'Add some dated tasks and this will show planned progress against actual.'));
+            this.T('evm.empty', 'Add some dated tasks and this will show planned progress against actual.')));
           return;
         }
 
@@ -558,10 +561,10 @@
 
         // ---- verdict line ----
         const verdict = EVM.verdict(m);
-        const vTxt = verdict.key === 'nodata' ? 'Not enough of the plan has started to judge.'
-          : verdict.key === 'ontrack' ? 'On track — earned value matches the plan.'
-          : verdict.key === 'ahead' ? 'Ahead of plan by ' + Math.abs(Math.round(verdict.pct)) + '%.'
-          : 'Behind plan by ' + Math.abs(Math.round(verdict.pct)) + '%.';
+        const vTxt = verdict.key === 'nodata' ? this.T('evm.nodata', 'Not enough of the plan has started to judge.')
+          : verdict.key === 'ontrack' ? this.T('evm.ontrack', 'On track — earned value matches the plan.')
+          : verdict.key === 'ahead' ? this.T('evm.ahead', 'Ahead of plan by') + ' ' + Math.abs(Math.round(verdict.pct)) + '%.'
+          : this.T('evm.behind', 'Behind plan by') + ' ' + Math.abs(Math.round(verdict.pct)) + '%.';
         body.appendChild(U.el('p', { class: 'evm-verdict evm-' + verdict.key }, vTxt));
 
         // ---- the chart ----
@@ -569,17 +572,17 @@
 
         // ---- metrics ----
         const rows = [
-          ['Budget at completion (BAC)', fmt(m.bac)],
-          ['Planned value (PV)', fmt(m.pv)],
-          ['Earned value (EV)', fmt(m.ev)],
-          ['Schedule variance (SV)', fmt(m.sv)],
-          ['Schedule performance (SPI)', pct(m.spi)],
+          [this.T('evm.bac', 'Budget at completion') + ' (BAC)', fmt(m.bac)],
+          [this.T('evm.pv', 'Planned value') + ' (PV)', fmt(m.pv)],
+          [this.T('evm.ev', 'Earned value') + ' (EV)', fmt(m.ev)],
+          [this.T('evm.sv', 'Schedule variance') + ' (SV)', fmt(m.sv)],
+          [this.T('evm.spi', 'Schedule performance') + ' (SPI)', pct(m.spi)],
         ];
         if (r.hasActuals) {
-          rows.push(['Actual cost (AC)', fmt(m.ac)]);
-          rows.push(['Cost variance (CV)', fmt(m.cv)]);
-          rows.push(['Cost performance (CPI)', pct(m.cpi)]);
-          rows.push(['Forecast at completion (EAC)', fmt(m.eac)]);
+          rows.push([this.T('evm.ac', 'Actual cost') + ' (AC)', fmt(m.ac)]);
+          rows.push([this.T('evm.cv', 'Cost variance') + ' (CV)', fmt(m.cv)]);
+          rows.push([this.T('evm.cpi', 'Cost performance') + ' (CPI)', pct(m.cpi)]);
+          rows.push([this.T('evm.eac', 'Forecast at completion') + ' (EAC)', fmt(m.eac)]);
         }
 
         const tbl = U.el('table', { class: 'evm-table' });
@@ -594,11 +597,11 @@
         // ---- the caveats, stated rather than buried ----
         const notes = [];
         notes.push(r.basis === 'cost'
-          ? 'Weighted by task cost.'
-          : 'No task costs are set, so tasks are weighted by working-day duration — this reads as a progress curve.');
+          ? this.T('evm.byCost', 'Weighted by task cost.')
+          : this.T('evm.byDuration', 'No task costs are set, so tasks are weighted by working-day duration — this reads as a progress curve.'));
         notes.push(r.plannedFrom === 'baseline'
-          ? 'Planned value follows the saved baseline.'
-          : 'No baseline is saved, so the plan is your current dates — which means schedule variance reads as zero until you set one (Baseline > Set baseline).');
+          ? this.T('evm.fromBaseline', 'Planned value follows the saved baseline.')
+          : this.T('evm.noBaseline', 'No baseline is saved, so the plan is your current dates — which means schedule variance reads as zero until you set one.'));
         if (!r.hasActuals) {
           notes.push('No actual costs entered, so CPI, cost variance and forecast are not shown. '
             + 'Deriving them from progress would make CPI exactly 1.00 for every project, which would tell you nothing. '
@@ -610,7 +613,7 @@
         const ul = U.el('ul', { class: 'evm-notes' });
         notes.forEach(n => ul.appendChild(U.el('li', {}, n)));
         body.appendChild(U.el('details', { class: 'evm-details' }, [
-          U.el('summary', {}, 'How this is calculated'),
+          U.el('summary', {}, this.T('evm.how', 'How this is calculated')),
           ul,
         ]));
       });
@@ -701,9 +704,9 @@
         sp.appendChild(document.createTextNode(label));
         return sp;
       };
-      legend.appendChild(item('evm-planned', 'Planned'));
-      legend.appendChild(item('evm-earned', 'Earned (actual progress)'));
-      if (r.actual) legend.appendChild(item('evm-actual', 'Actual cost'));
+      legend.appendChild(item('evm-planned', this.T('evm.planned', 'Planned')));
+      legend.appendChild(item('evm-earned', this.T('evm.earned', 'Earned (actual progress)')));
+      if (r.actual) legend.appendChild(item('evm-actual', this.T('evm.actual', 'Actual cost')));
       wrap.appendChild(legend);
       return wrap;
     },
@@ -1223,8 +1226,8 @@
         Templates.list.forEach(tpl => {
           const card = U.el('div', { class: 'template-card', onclick: () => { Templates.apply(tpl.key); this.closeModal(); } }, [
             U.el('div', { class: 'tc-icon' }, tpl.icon),
-            U.el('h4', {}, tpl.name),
-            U.el('p', {}, tpl.desc),
+            U.el('h4', {}, TPLT(tpl.name)),
+            U.el('p', {}, TPLT(tpl.desc)),
           ]);
           grid.appendChild(card);
         });

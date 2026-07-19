@@ -4,6 +4,8 @@
    ============================================================ */
 (function () {
   const P = U.PALETTE;
+  // Starter-template content in the reader's language; identity if absent.
+  const TPL = (x) => (window.TemplateI18N ? TemplateI18N.tr(x) : x);
 
   // template task shorthand: [name, offsetStartDays, durationDays, progress, colorIdx, {milestone,group,indent}]
   function build(defs) {
@@ -17,10 +19,12 @@
       const indent = opts.indent || 0;
       while (parentStack.length && parentStack[parentStack.length - 1].indent >= indent) parentStack.pop();
       const parentId = parentStack.length ? parentStack[parentStack.length - 1].id : null;
+      /* Translated at instantiation, never afterwards — once the user
+         edits a task the text is theirs. */
       const t = {
-        id, name, start,
+        id, name: TPL(name), start,
         end: opts.milestone ? start : U.endFrom(start, dur),
-        progress: prog, color: P[colorIdx % P.length], assignee: opts.who || '',
+        progress: prog, color: P[colorIdx % P.length], assignee: TPL(opts.who || ''),
         type: opts.milestone ? 'milestone' : (opts.group ? 'group' : 'task'),
         parentId, collapsed: false, notes: '', deps: [],
       };
@@ -190,12 +194,12 @@
       const tpl = TEMPLATES.find(t => t.key === key);
       if (!tpl) return;
       const tasks = tpl.make();
-      Model.newProject(tpl.name);
+      Model.newProject(TPL(tpl.name));
       Model.project.tasks = tasks;
       Model._recalcGroups();
       Model._persist();
       Model.emit('load', Model.project);
-      App.toast('Template loaded: ' + tpl.name);
+      App.toast(App.T('tpl.loaded', 'Template loaded') + ': ' + TPL(tpl.name));
     },
 
     // ---------- import ----------

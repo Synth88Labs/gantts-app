@@ -35,7 +35,7 @@
     "check:links": "node scripts/check-links.js",
     "check:seo": "node scripts/check-seo.js",
     "check:hreflang": "node scripts/check-hreflang.js",
-    "check": "npm run check:resources && npm run check:calendar && npm run check:msproject && npm run check:evm && npm run check:views && npm run check:ics && npm run check:mermaid && npm run check:assets && npm run check:urls && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap && npm run check:design",
+    "check": "npm run check:resources && npm run check:calendar && npm run check:msproject && npm run check:evm && npm run check:views && npm run check:ics && npm run check:mermaid && npm run check:tpl-i18n && npm run check:assets && npm run check:urls && npm run check:links && npm run check:seo && npm run check:hreflang && npm run check:seo-i18n && npm run check:sitemap && npm run check:design",
     "deploy:bundle": "npm run gen:templates --silent && node scripts/build-deploy.js",
     "indexnow": "node scripts/indexnow.js",
     "test": "npm run check",
@@ -58,7 +58,8 @@
     "check:evm": "node test/evm.test.js",
     "check:views": "node test/views.test.js",
     "check:ics": "node test/ics.test.js",
-    "check:mermaid": "node test/mermaid-gantt.test.js"
+    "check:mermaid": "node test/mermaid-gantt.test.js",
+    "check:tpl-i18n": "node scripts/check-template-i18n.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
