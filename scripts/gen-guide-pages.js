@@ -167,7 +167,7 @@ function page(slug, d) {
 <body>
 ${nav(slug)}
 
-  <article class="container narrow" style="padding-top:40px">
+  <article class="container" style="padding-top:40px">
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › ${d.h1}</div>
     <h1>${d.h1}</h1>
     <p class="lead">${d.lead}</p>

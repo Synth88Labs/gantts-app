@@ -964,7 +964,17 @@ function renderGuide(loc, slug) {
     },
   ]);
 
-  const html = `  <article class="container narrow" style="padding-top:40px">
+  /* Guide articles run at the full site width, matching the template
+     detail pages, the homepage and the hubs. They were the last page
+     type still on the 724px reading measure, which made the blog the
+     odd one out once the template pages were widened.
+     Tradeoff, recorded rather than hidden: at 1200px a paragraph runs
+     about 128 characters, past the comfortable 45-75. Guides are real
+     long-form prose, unlike the template pages whose bodies are mostly
+     headings and lists. If the lines read too long, the fix is to use
+     the width — a table-of-contents column beside the prose — rather
+     than to narrow the page again. */
+  const html = `  <article class="container" style="padding-top:40px">
     <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/blog/">${esc(ui.guides)}</a></div>
     <h1>${esc(d.h1)}</h1>
     <p class="lead">${d.lead}</p>
