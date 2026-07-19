@@ -12,6 +12,9 @@
 
   var D = {
     en: {
+      'exp.svg': '✒ SVG (vector, for print)',
+      'ex.svgDone': 'SVG downloaded — vector, so it stays sharp at any size',
+      'ex.svgEmpty': 'Nothing to export — this plan has no dated tasks yet.',
       'ex.clipboardBlocked': 'The browser blocked clipboard access — the image was downloaded instead',
 
       // clipboard / share
@@ -182,6 +185,9 @@
       'exp.ics': '📅 Calendar (.ics)',
     },
     es: {
+      'exp.svg': '✒ SVG (vectorial, para imprimir)',
+      'ex.svgDone': 'SVG descargado — es vectorial, así que se ve nítido a cualquier tamaño',
+      'ex.svgEmpty': 'No hay nada que exportar — este plan aún no tiene tareas con fechas.',
 
       // clipboard / share
       'exp.copy': '📋 Copiar diagrama',
@@ -351,6 +357,9 @@
       'exp.ics': '📅 Calendario (.ics)',
     },
     fr: {
+      'exp.svg': '✒ SVG (vectoriel, pour l\'impression)',
+      'ex.svgDone': 'SVG téléchargé — vectoriel, il reste donc net à toute taille',
+      'ex.svgEmpty': 'Rien à exporter — ce plan n\'a pas encore de tâches datées.',
 
       // clipboard / share
       'exp.copy': '📋 Copier le diagramme',
@@ -520,6 +529,9 @@
       'exp.ics': '📅 Calendrier (.ics)',
     },
     de: {
+      'exp.svg': '✒ SVG (Vektor, zum Drucken)',
+      'ex.svgDone': 'SVG heruntergeladen — Vektorformat, bleibt also in jeder Größe scharf',
+      'ex.svgEmpty': 'Nichts zu exportieren — dieser Plan hat noch keine Vorgänge mit Terminen.',
 
       // clipboard / share
       'exp.copy': '📋 Diagramm kopieren',
@@ -689,6 +701,9 @@
       'exp.ics': '📅 Kalender (.ics)',
     },
     pt: {
+      'exp.svg': '✒ SVG (vetorial, para impressão)',
+      'ex.svgDone': 'SVG baixado — é vetorial, então fica nítido em qualquer tamanho',
+      'ex.svgEmpty': 'Nada para exportar — este plano ainda não tem tarefas com datas.',
 
       // clipboard / share
       'exp.copy': '📋 Copiar gráfico',
@@ -858,6 +873,9 @@
       'exp.ics': '📅 Calendário (.ics)',
     },
     zh: {
+      'exp.svg': '✒ SVG（矢量，适合打印）',
+      'ex.svgDone': 'SVG 已下载——矢量格式，任意尺寸都清晰',
+      'ex.svgEmpty': '没有可导出的内容——此计划还没有带日期的任务。',
 
       // clipboard / share
       'exp.copy': '📋 复制图表',

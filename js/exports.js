@@ -43,6 +43,7 @@
           case 'ics': return this.ics();
           case 'copy': return this.copyImage();
           case 'share': return this.shareImage();
+          case 'svg': return this.svg();
       }
     },
 
@@ -95,6 +96,35 @@
           'Mermaid has no progress percentage, so 100% exports as "done" and anything in between as "active". '
           + 'Lags and SS/FF/SF links cannot be written as "after", so those tasks carry absolute dates instead.'));
       });
+    },
+
+    /* Vector export, redrawn from the model rather than serialised
+       from the DOM — see the header of export-svg.js for why the
+       obvious approaches do not work. */
+    svg() {
+      if (!window.ExportSvg) throw new Error('SVG export is still loading — try again in a moment.');
+
+      // Criticality is computed here, never read off the tasks.
+      let critical = null;
+      try { critical = Schedule.compute().critical || null; } catch (e) { critical = null; }
+
+      const st = Model.project.settings || {};
+      const r = ExportSvg.build(Model.project, {
+        critical,
+        cal: (window.Cal && Cal.active(Cal.of(Model.project))) ? Cal.of(Model.project) : null,
+        dayW: { day: 26, week: 12, month: 5, quarter: 3 }[st.zoom] || 12,
+        showProgress: st.showProgress !== false,
+        showWeekends: st.showWeekends !== false,
+        showToday: st.showToday !== false,
+        showCritical: !!st.showCritical,
+        today: U.today(),
+        title: Model.project.name,
+      });
+
+      if (r.empty) throw new Error(App.T('ex.svgEmpty', 'Nothing to export — this plan has no dated tasks yet.'));
+
+      U.download(this.safeName('svg'), r.svg, 'image/svg+xml;charset=utf-8');
+      App.toast(App.T('ex.svgDone', 'SVG downloaded — vector, so it stays sharp at any size'));
     },
 
     /* iCalendar. One-shot file, not a subscribable feed — see ics.js. */
