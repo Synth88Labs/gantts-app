@@ -20,7 +20,7 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=23';
+const V = 'v=24';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

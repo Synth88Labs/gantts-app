@@ -44,7 +44,7 @@
   <meta name="twitter:description" content="Guias claros sobre gráficos de Gantt: o que são, como criar, caminho crítico e como fazer no Excel, Google Sheets e PowerPoint." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=23" />
+  <link rel="stylesheet" href="/css/site.css?v=24" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"CollectionPage","@id":"https://gantts.app/pt/blog/#webpage","name":"Guias de gráfico de Gantt","url":"https://gantts.app/pt/blog/","description":"Guias claros sobre gráficos de Gantt: o que são, como criar, caminho crítico e como fazer no Excel, Google Sheets e PowerPoint.","inLanguage":"pt","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"gantts.app","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias de gráfico de Gantt","item":"https://gantts.app/pt/blog/"}]},"mainEntity":{"@type":"ItemList","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"name":"O que é um gráfico de Gantt?","url":"https://gantts.app/blog/what-is-a-gantt-chart.html"},{"@type":"ListItem","position":2,"name":"Como fazer um gráfico de Gantt","url":"https://gantts.app/blog/how-to-make-a-gantt-chart.html"},{"@type":"ListItem","position":3,"name":"O método do caminho crítico (CPM)","url":"https://gantts.app/blog/critical-path-method.html"},{"@type":"ListItem","position":4,"name":"Exemplos de gráficos de Gantt","url":"https://gantts.app/blog/gantt-chart-examples.html"},{"@type":"ListItem","position":5,"name":"Gráfico de Gantt no Excel","url":"https://gantts.app/blog/gantt-chart-in-excel.html"},{"@type":"ListItem","position":6,"name":"Gráfico de Gantt no Google Sheets","url":"https://gantts.app/blog/gantt-chart-in-google-sheets.html"},{"@type":"ListItem","position":7,"name":"Gráfico de Gantt no PowerPoint","url":"https://gantts.app/blog/gantt-chart-in-powerpoint.html"},{"@type":"ListItem","position":8,"name":"Melhores softwares de Gantt gratuitos","url":"https://gantts.app/blog/best-free-gantt-chart-software.html"},{"@type":"ListItem","position":9,"name":"Dependências: FS, SS, FF, SF","url":"https://gantts.app/blog/gantt-chart-dependencies.html"},{"@type":"ListItem","position":10,"name":"Linha de base e variação","url":"https://gantts.app/blog/gantt-baseline-variance.html"},{"@type":"ListItem","position":11,"name":"Nove erros comuns","url":"https://gantts.app/blog/gantt-chart-mistakes.html"},{"@type":"ListItem","position":12,"name":"Marcos e tarefas","url":"https://gantts.app/blog/milestones-vs-tasks.html"}]}}]}</script>
 </head>
 <body>
@@ -70,76 +70,111 @@
     </div>
   </header>
 
-  <article class="container narrow" style="padding-top:44px">
-    <div class="crumbs"><a href="/pt/">gantts.app</a> › Guias</div>
-    <div class="section-head" style="text-align:left">
-      <span class="eyebrow">Guias e tutoriais</span>
-      <h1>Guias de gráfico de Gantt</h1>
+  <section class="bg-soft" style="padding-top:46px">
+    <div class="container narrow center">
+      <div class="crumbs" style="text-align:center"><a href="/pt/">Início</a> › Guias</div>
+      <span class="eyebrow">✦ 12 guias gratuitos · sem cadastro</span>
+      <h1 style="margin:16px 0 12px">Guias de gráfico de Gantt</h1>
       <p class="lead">Explicações práticas e sem jargão: o que é um gráfico de Gantt, como montar um e como ler o caminho crítico.</p>
+      <div class="jump-row">
+        <a class="jump" href="#gBasics">Conceitos básicos</a>
+        <a class="jump" href="#gBuild">Como criar</a>
+        <a class="jump" href="#gSchedule">Técnica de planejamento</a>
+        <a class="jump" href="#gPractice">Prática e ferramentas</a>
+      </div>
     </div>
+  </section>
+
+  <article class="container" style="padding-top:36px">
     <p class="locale-note"><small>Os guias completos estão em inglês por enquanto.</small></p>
-    <div class="grid grid-3">
-        <a class="card card-link" href="/blog/what-is-a-gantt-chart.html">
-          <div class="ic">📊</div>
-          <h3>O que é um gráfico de Gantt?</h3>
-          <p>O que é, para que serve e quando usar — com as quatro peças explicadas.</p>
-        </a>
-        <a class="card card-link" href="/blog/how-to-make-a-gantt-chart.html">
-          <div class="ic">🛠️</div>
-          <h3>Como fazer um gráfico de Gantt</h3>
-          <p>Sete passos na ordem que funciona: tarefas, durações, dependências e marcos.</p>
-        </a>
-        <a class="card card-link" href="/blog/critical-path-method.html">
-          <div class="ic">🎯</div>
-          <h3>O método do caminho crítico (CPM)</h3>
-          <p>Passagem para frente, para trás e folga, com um exemplo resolvido de quatro tarefas.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-examples.html">
-          <div class="ic">🗂️</div>
-          <h3>Exemplos de gráficos de Gantt</h3>
-          <p>Oito exemplos por setor, da obra à tese, com as fases de cada um.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-excel.html">
-          <div class="ic">📈</div>
-          <h3>Gráfico de Gantt no Excel</h3>
-          <p>O método de barras empilhadas passo a passo, e onde está o seu limite.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-google-sheets.html">
-          <div class="ic">📃</div>
-          <h3>Gráfico de Gantt no Google Sheets</h3>
-          <p>Três métodos, incluindo a função Linha do tempo nativa, e qual escolher.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-powerpoint.html">
-          <div class="ic">📽️</div>
-          <h3>Gráfico de Gantt no PowerPoint</h3>
-          <p>Gráfico ou formas: dois caminhos conforme o controle visual necessário.</p>
-        </a>
-        <a class="card card-link" href="/blog/best-free-gantt-chart-software.html">
-          <div class="ic">⚖️</div>
-          <h3>Melhores softwares de Gantt gratuitos</h3>
-          <p>Nove ferramentas comparadas: o que é realmente grátis e o que é freemium.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-dependencies.html">
-          <div class="ic">🔗</div>
-          <h3>Dependências: FS, SS, FF, SF</h3>
-          <p>Os quatro tipos de ligação, quando usar cada um e como funcionam os atrasos.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-baseline-variance.html">
-          <div class="ic">◳</div>
-          <h3>Linha de base e variação</h3>
-          <p>Como congelar um plano, ler o desvio e quando refazer a linha de base.</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-mistakes.html">
-          <div class="ic">⚠️</div>
-          <h3>Nove erros comuns</h3>
-          <p>Excesso de detalhe, falta de dependências, folga zero — cada um com a correção.</p>
-        </a>
-        <a class="card card-link" href="/blog/milestones-vs-tasks.html">
-          <div class="ic">◆</div>
-          <h3>Marcos e tarefas</h3>
-          <p>No que diferem, para que servem os marcos e quantos um projeto deve ter.</p>
-        </a>
-    </div>
+      <section class="section" id="gBasics">
+        <div class="head-l"><div><h2>Conceitos básicos</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/what-is-a-gantt-chart.html">
+            <div class="ic">📊</div>
+            <h3>O que é um gráfico de Gantt?</h3>
+            <p>O que é, para que serve e quando usar — com as quatro peças explicadas.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-examples.html">
+            <div class="ic">🗂️</div>
+            <h3>Exemplos de gráficos de Gantt</h3>
+            <p>Oito exemplos por setor, da obra à tese, com as fases de cada um.</p>
+          </a>
+          <a class="card card-link" href="/blog/milestones-vs-tasks.html">
+            <div class="ic">◆</div>
+            <h3>Marcos e tarefas</h3>
+            <p>No que diferem, para que servem os marcos e quantos um projeto deve ter.</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gBuild">
+        <div class="head-l"><div><h2>Como criar</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/how-to-make-a-gantt-chart.html">
+            <div class="ic">🛠️</div>
+            <h3>Como fazer um gráfico de Gantt</h3>
+            <p>Sete passos na ordem que funciona: tarefas, durações, dependências e marcos.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-excel.html">
+            <div class="ic">📈</div>
+            <h3>Gráfico de Gantt no Excel</h3>
+            <p>O método de barras empilhadas passo a passo, e onde está o seu limite.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-google-sheets.html">
+            <div class="ic">📃</div>
+            <h3>Gráfico de Gantt no Google Sheets</h3>
+            <p>Três métodos, incluindo a função Linha do tempo nativa, e qual escolher.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-powerpoint.html">
+            <div class="ic">📽️</div>
+            <h3>Gráfico de Gantt no PowerPoint</h3>
+            <p>Gráfico ou formas: dois caminhos conforme o controle visual necessário.</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gSchedule">
+        <div class="head-l"><div><h2>Técnica de planejamento</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/critical-path-method.html">
+            <div class="ic">🎯</div>
+            <h3>O método do caminho crítico (CPM)</h3>
+            <p>Passagem para frente, para trás e folga, com um exemplo resolvido de quatro tarefas.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-dependencies.html">
+            <div class="ic">🔗</div>
+            <h3>Dependências: FS, SS, FF, SF</h3>
+            <p>Os quatro tipos de ligação, quando usar cada um e como funcionam os atrasos.</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-baseline-variance.html">
+            <div class="ic">◳</div>
+            <h3>Linha de base e variação</h3>
+            <p>Como congelar um plano, ler o desvio e quando refazer a linha de base.</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gPractice">
+        <div class="head-l"><div><h2>Prática e ferramentas</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/gantt-chart-mistakes.html">
+            <div class="ic">⚠️</div>
+            <h3>Nove erros comuns</h3>
+            <p>Excesso de detalhe, falta de dependências, folga zero — cada um com a correção.</p>
+          </a>
+          <a class="card card-link" href="/blog/best-free-gantt-chart-software.html">
+            <div class="ic">⚖️</div>
+            <h3>Melhores softwares de Gantt gratuitos</h3>
+            <p>Nove ferramentas comparadas: o que é realmente grátis e o que é freemium.</p>
+          </a>
+        </div>
+      </section>
+    <aside class="promo">
+      <div class="promo-body">
+        <span class="promo-tag">Publicidade</span>
+        <h3>Modelos de Gantt para Excel</h3>
+        <p>O ExcelGuru.io mantém uma biblioteca gratuita de planilhas de Gantt prontas, com as fórmulas já configuradas.</p>
+      </div>
+      <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Ver os modelos →</a>
+    </aside>
   </article>
 
   <section>
@@ -192,6 +227,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=23"></script>
+  <script src="/js/site.js?v=24"></script>
 </body>
 </html>

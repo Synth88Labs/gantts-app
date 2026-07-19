@@ -44,7 +44,7 @@
   <meta name="twitter:description" content="清晰易懂的甘特图指南：什么是甘特图、如何制作、关键路径，以及如何在 Excel、Google Sheets 和 PowerPoint 中绘制。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=23" />
+  <link rel="stylesheet" href="/css/site.css?v=24" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"CollectionPage","@id":"https://gantts.app/zh/blog/#webpage","name":"甘特图指南","url":"https://gantts.app/zh/blog/","description":"清晰易懂的甘特图指南：什么是甘特图、如何制作、关键路径，以及如何在 Excel、Google Sheets 和 PowerPoint 中绘制。","inLanguage":"zh-Hans","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"gantts.app","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"甘特图指南","item":"https://gantts.app/zh/blog/"}]},"mainEntity":{"@type":"ItemList","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"name":"什么是甘特图？","url":"https://gantts.app/blog/what-is-a-gantt-chart.html"},{"@type":"ListItem","position":2,"name":"如何制作甘特图","url":"https://gantts.app/blog/how-to-make-a-gantt-chart.html"},{"@type":"ListItem","position":3,"name":"关键路径法（CPM）","url":"https://gantts.app/blog/critical-path-method.html"},{"@type":"ListItem","position":4,"name":"甘特图示例","url":"https://gantts.app/blog/gantt-chart-examples.html"},{"@type":"ListItem","position":5,"name":"用 Excel 制作甘特图","url":"https://gantts.app/blog/gantt-chart-in-excel.html"},{"@type":"ListItem","position":6,"name":"用 Google Sheets 制作甘特图","url":"https://gantts.app/blog/gantt-chart-in-google-sheets.html"},{"@type":"ListItem","position":7,"name":"用 PowerPoint 制作甘特图","url":"https://gantts.app/blog/gantt-chart-in-powerpoint.html"},{"@type":"ListItem","position":8,"name":"最好用的免费甘特图软件","url":"https://gantts.app/blog/best-free-gantt-chart-software.html"},{"@type":"ListItem","position":9,"name":"依赖关系：FS、SS、FF、SF","url":"https://gantts.app/blog/gantt-chart-dependencies.html"},{"@type":"ListItem","position":10,"name":"基线与进度偏差","url":"https://gantts.app/blog/gantt-baseline-variance.html"},{"@type":"ListItem","position":11,"name":"九个常见错误","url":"https://gantts.app/blog/gantt-chart-mistakes.html"},{"@type":"ListItem","position":12,"name":"里程碑与任务","url":"https://gantts.app/blog/milestones-vs-tasks.html"}]}}]}</script>
 </head>
 <body>
@@ -70,76 +70,111 @@
     </div>
   </header>
 
-  <article class="container narrow" style="padding-top:44px">
-    <div class="crumbs"><a href="/zh/">gantts.app</a> › 指南</div>
-    <div class="section-head" style="text-align:left">
-      <span class="eyebrow">指南与教程</span>
-      <h1>甘特图指南</h1>
+  <section class="bg-soft" style="padding-top:46px">
+    <div class="container narrow center">
+      <div class="crumbs" style="text-align:center"><a href="/zh/">首页</a> › 指南</div>
+      <span class="eyebrow">✦ 12 篇免费指南 · 无需注册</span>
+      <h1 style="margin:16px 0 12px">甘特图指南</h1>
       <p class="lead">不讲术语的实用讲解：什么是甘特图、怎样从零搭一个，以及如何看懂关键路径。</p>
+      <div class="jump-row">
+        <a class="jump" href="#gBasics">基础概念</a>
+        <a class="jump" href="#gBuild">动手创建</a>
+        <a class="jump" href="#gSchedule">排程技术</a>
+        <a class="jump" href="#gPractice">实践与工具</a>
+      </div>
     </div>
+  </section>
+
+  <article class="container" style="padding-top:36px">
     <p class="locale-note"><small>完整指南目前为英文。</small></p>
-    <div class="grid grid-3">
-        <a class="card card-link" href="/blog/what-is-a-gantt-chart.html">
-          <div class="ic">📊</div>
-          <h3>什么是甘特图？</h3>
-          <p>是什么、有什么用、什么时候该用——四个核心要素逐一说明。</p>
-        </a>
-        <a class="card card-link" href="/blog/how-to-make-a-gantt-chart.html">
-          <div class="ic">🛠️</div>
-          <h3>如何制作甘特图</h3>
-          <p>七个步骤，按真正有效的顺序：任务、工期、依赖与里程碑。</p>
-        </a>
-        <a class="card card-link" href="/blog/critical-path-method.html">
-          <div class="ic">🎯</div>
-          <h3>关键路径法（CPM）</h3>
-          <p>正推、逆推与浮动时间，附一个四任务的完整算例。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-examples.html">
-          <div class="ic">🗂️</div>
-          <h3>甘特图示例</h3>
-          <p>八个行业实例，从工程施工到学位论文，各自的阶段划分。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-excel.html">
-          <div class="ic">📈</div>
-          <h3>用 Excel 制作甘特图</h3>
-          <p>堆积条形图方法逐步拆解，以及它的局限在哪里。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-google-sheets.html">
-          <div class="ic">📃</div>
-          <h3>用 Google Sheets 制作甘特图</h3>
-          <p>三种做法，包括原生「时间轴」功能，以及各自适用的场景。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-in-powerpoint.html">
-          <div class="ic">📽️</div>
-          <h3>用 PowerPoint 制作甘特图</h3>
-          <p>用图表还是用图形：根据需要的排版自由度来选。</p>
-        </a>
-        <a class="card card-link" href="/blog/best-free-gantt-chart-software.html">
-          <div class="ic">⚖️</div>
-          <h3>最好用的免费甘特图软件</h3>
-          <p>九款工具横向对比：哪些真免费，哪些其实是增值收费。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-dependencies.html">
-          <div class="ic">🔗</div>
-          <h3>依赖关系：FS、SS、FF、SF</h3>
-          <p>四种依赖类型分别在什么场景用，以及提前量与延迟量怎么起作用。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-baseline-variance.html">
-          <div class="ic">◳</div>
-          <h3>基线与进度偏差</h3>
-          <p>如何冻结计划、读懂偏差，以及什么时候该重设基准。</p>
-        </a>
-        <a class="card card-link" href="/blog/gantt-chart-mistakes.html">
-          <div class="ic">⚠️</div>
-          <h3>九个常见错误</h3>
-          <p>过度细化、缺少依赖、毫无浮动时间——每条都给出对应的修正办法。</p>
-        </a>
-        <a class="card card-link" href="/blog/milestones-vs-tasks.html">
-          <div class="ic">◆</div>
-          <h3>里程碑与任务</h3>
-          <p>两者的区别、里程碑的真正用途，以及一个项目该设几个。</p>
-        </a>
-    </div>
+      <section class="section" id="gBasics">
+        <div class="head-l"><div><h2>基础概念</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/what-is-a-gantt-chart.html">
+            <div class="ic">📊</div>
+            <h3>什么是甘特图？</h3>
+            <p>是什么、有什么用、什么时候该用——四个核心要素逐一说明。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-examples.html">
+            <div class="ic">🗂️</div>
+            <h3>甘特图示例</h3>
+            <p>八个行业实例，从工程施工到学位论文，各自的阶段划分。</p>
+          </a>
+          <a class="card card-link" href="/blog/milestones-vs-tasks.html">
+            <div class="ic">◆</div>
+            <h3>里程碑与任务</h3>
+            <p>两者的区别、里程碑的真正用途，以及一个项目该设几个。</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gBuild">
+        <div class="head-l"><div><h2>动手创建</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/how-to-make-a-gantt-chart.html">
+            <div class="ic">🛠️</div>
+            <h3>如何制作甘特图</h3>
+            <p>七个步骤，按真正有效的顺序：任务、工期、依赖与里程碑。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-excel.html">
+            <div class="ic">📈</div>
+            <h3>用 Excel 制作甘特图</h3>
+            <p>堆积条形图方法逐步拆解，以及它的局限在哪里。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-google-sheets.html">
+            <div class="ic">📃</div>
+            <h3>用 Google Sheets 制作甘特图</h3>
+            <p>三种做法，包括原生「时间轴」功能，以及各自适用的场景。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-in-powerpoint.html">
+            <div class="ic">📽️</div>
+            <h3>用 PowerPoint 制作甘特图</h3>
+            <p>用图表还是用图形：根据需要的排版自由度来选。</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gSchedule">
+        <div class="head-l"><div><h2>排程技术</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/critical-path-method.html">
+            <div class="ic">🎯</div>
+            <h3>关键路径法（CPM）</h3>
+            <p>正推、逆推与浮动时间，附一个四任务的完整算例。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-chart-dependencies.html">
+            <div class="ic">🔗</div>
+            <h3>依赖关系：FS、SS、FF、SF</h3>
+            <p>四种依赖类型分别在什么场景用，以及提前量与延迟量怎么起作用。</p>
+          </a>
+          <a class="card card-link" href="/blog/gantt-baseline-variance.html">
+            <div class="ic">◳</div>
+            <h3>基线与进度偏差</h3>
+            <p>如何冻结计划、读懂偏差，以及什么时候该重设基准。</p>
+          </a>
+        </div>
+      </section>
+      <section class="section" id="gPractice">
+        <div class="head-l"><div><h2>实践与工具</h2></div></div>
+        <div class="grid grid-3">
+          <a class="card card-link" href="/blog/gantt-chart-mistakes.html">
+            <div class="ic">⚠️</div>
+            <h3>九个常见错误</h3>
+            <p>过度细化、缺少依赖、毫无浮动时间——每条都给出对应的修正办法。</p>
+          </a>
+          <a class="card card-link" href="/blog/best-free-gantt-chart-software.html">
+            <div class="ic">⚖️</div>
+            <h3>最好用的免费甘特图软件</h3>
+            <p>九款工具横向对比：哪些真免费，哪些其实是增值收费。</p>
+          </a>
+        </div>
+      </section>
+    <aside class="promo">
+      <div class="promo-body">
+        <span class="promo-tag">广告</span>
+        <h3>Excel 甘特图模板</h3>
+        <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+      </div>
+      <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+    </aside>
   </article>
 
   <section>
@@ -192,6 +227,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=23"></script>
+  <script src="/js/site.js?v=24"></script>
 </body>
 </html>

@@ -25,7 +25,7 @@ const path = require('path');
 const {
   LOCALES, CHROME, HOME,
   TEMPLATES, TEMPLATE_LABELS, TEMPLATE_GROUPS,
-  BLOG, BLOG_SLUGS, BLOG_LABELS,
+  BLOG, BLOG_SLUGS, BLOG_LABELS, BLOG_GROUPS,
 } = require('../i18n/content.js');
 const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 const { APP } = require('../i18n/content.js');
@@ -34,12 +34,13 @@ const { T: TPL_EN } = require('./new-templates.js');
 const { CARDS: TPL_CARDS } = require('../i18n/template-cards.js');
 const { ICONS: GUIDE_ICONS, DESC: GUIDE_DESC } = require('../i18n/guide-cards.js');
 const { BENTO } = require('../i18n/bento-icons.js');
+const { promo } = require('../i18n/promo.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=23';
+const CSS_V = 'v=24';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -989,6 +990,8 @@ ${body}
 ${faq}
       </div>
 
+${promo(code, code + '/blog/' + slug + '.html', '      ')}
+
       <h2 id="related">${esc(ui.related)}</h2>
       <ul>
 ${related}
@@ -1022,11 +1025,39 @@ function renderBlogIndex(loc) {
      to be title + "read the guide →" and nothing else, which made the
      guides index look like a thinner product in every language but one. */
   const gdesc = (GUIDE_DESC[code] || {});
-  const items = BLOG_SLUGS.map(s => `        <a class="card card-link" href="${guideHref(s)}">
-          <div class="ic">${GUIDE_ICONS[s] || '📄'}</div>
-          <h3>${esc(labels[s])}</h3>
-          <p>${esc(gdesc[s] || '')}</p>
-        </a>`).join('\n');
+  /* A slug in two groups renders a duplicate card and desyncs the
+     count from the card total — the bug the templates hub shipped with.
+     Fail at build rather than dedupe silently. */
+  const seenGuide = new Map();
+  for (const g of BLOG_GROUPS) {
+    for (const gs of g.slugs) {
+      if (seenGuide.has(gs)) {
+        throw new Error(`guide "${gs}" is in both ${seenGuide.get(gs)} and ${g.key}`);
+      }
+      seenGuide.set(gs, g.key);
+    }
+  }
+  const ungrouped = BLOG_SLUGS.filter(gs => !seenGuide.has(gs));
+  if (ungrouped.length) {
+    throw new Error('guides missing from BLOG_GROUPS: ' + ungrouped.join(', ')
+      + ' — they would vanish from the index entirely.');
+  }
+
+  const card = (gs) => `          <a class="card card-link" href="${guideHref(gs)}">
+            <div class="ic">${GUIDE_ICONS[gs] || '📄'}</div>
+            <h3>${esc(labels[gs])}</h3>
+            <p>${esc(gdesc[gs] || '')}</p>
+          </a>`;
+
+  const groups = BLOG_GROUPS.map(g => `      <section class="section" id="${g.key}">
+        <div class="head-l"><div><h2>${esc(b[g.key])}</h2></div></div>
+        <div class="grid grid-3">
+${g.slugs.map(card).join('\n')}
+        </div>
+      </section>`).join('\n');
+
+  const chips = BLOG_GROUPS
+    .map(g => `        <a class="jump" href="#${g.key}">${esc(b[g.key])}</a>`).join('\n');
 
   const url = pub(`${ORIGIN}/${code}/${sub}`);
   const ld = graph(loc, [
@@ -1063,17 +1094,28 @@ function renderBlogIndex(loc) {
     : translatedGuides < BLOG_SLUGS.length ? (b.notePartial || b.noteEn)
     : '';
 
-  const body = `  <article class="container narrow" style="padding-top:44px">
-    <div class="crumbs"><a href="/${code}/">${esc(CHROME[code].nav.home || 'gantts.app')}</a> › ${esc(CHROME[code].nav.guides)}</div>
-    <div class="section-head" style="text-align:left">
-      <span class="eyebrow">${esc(b.eyebrow || CHROME[code].nav.guides)}</span>
-      <h1>${esc(b.h1)}</h1>
+  /* Hero band matching the templates hub: same bg-soft/narrow/center
+     shell, same eyebrow-with-count, same jump chips. The index used to
+     open with a left-aligned block and then run the CARD GRID inside
+     the 724px .narrow column too — so the localized guides grid was
+     three cards squeezed into 724px while the English one had 1200.
+     The grid now sits in a full-width .container like English. */
+  const body = `  <section class="bg-soft" style="padding-top:46px">
+    <div class="container narrow center">
+      <div class="crumbs" style="text-align:center"><a href="/${code}/">${esc(b.homeCrumb)}</a> › ${esc(CHROME[code].nav.guides)}</div>
+      <span class="eyebrow">${esc(String(b.heroEyebrow).replace('{n}', BLOG_SLUGS.length))}</span>
+      <h1 style="margin:16px 0 12px">${esc(b.h1)}</h1>
       <p class="lead">${esc(b.lead)}</p>
+      <div class="jump-row">
+${chips}
+      </div>
     </div>
+  </section>
+
+  <article class="container" style="padding-top:36px">
     ${blogNote ? `<p class="locale-note"><small>${esc(blogNote)}</small></p>` : ''}
-    <div class="grid grid-3">
-${items}
-    </div>
+${groups}
+${promo(code, code + '/blog/index.html', '    ')}
   </article>
 
   <section>

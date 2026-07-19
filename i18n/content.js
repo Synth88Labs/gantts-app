@@ -546,6 +546,20 @@ const TEMPLATE_LABELS = {
 };
 
 // Which slugs sit under which category heading.
+/* Guide categories. The index was a flat grid of twelve cards in
+   every language, so it had no hero, no way to scan by intent, and
+   nothing for jump chips to anchor to — the templates hub had all
+   three. Slugs are language-independent; the display names live in
+   BLOG[code] beside the rest of that locale's chrome.
+   A slug in two groups would render a duplicate card, exactly as it did
+   on the templates hub, so renderBlogIndex asserts against it. */
+const BLOG_GROUPS = [
+  { key: 'gBasics',   slugs: ['what-is-a-gantt-chart', 'gantt-chart-examples', 'milestones-vs-tasks'] },
+  { key: 'gBuild',    slugs: ['how-to-make-a-gantt-chart', 'gantt-chart-in-excel', 'gantt-chart-in-google-sheets', 'gantt-chart-in-powerpoint'] },
+  { key: 'gSchedule', slugs: ['critical-path-method', 'gantt-chart-dependencies', 'gantt-baseline-variance'] },
+  { key: 'gPractice', slugs: ['gantt-chart-mistakes', 'best-free-gantt-chart-software'] },
+];
+
 const TEMPLATE_GROUPS = [
   { key: 'catTypes', slugs: ['project-management', 'product-launch', 'event-planning', 'simple'
       /* 'research' lives in catAcademic only. It was listed in both,
@@ -582,6 +596,12 @@ const BLOG = {
     ctaH2: 'Deja de leer y empieza a planificar',
     ctaP: 'Crea tu diagrama de Gantt gratis en el navegador: dependencias, ruta crítica y exportación a PDF, PNG, Excel y PowerPoint. Sin registro.',
     ctaBtn: 'Abrir el editor →',
+    gBasics: 'Conceptos básicos',
+    gBuild: 'Cómo crearlo',
+    gSchedule: 'Técnica de planificación',
+    gPractice: 'Práctica y herramientas',
+    heroEyebrow: '✦ {n} guías gratuitas · sin registro',
+    homeCrumb: 'Inicio',
   },
   fr: {
     title: 'Guides sur les diagrammes de Gantt | gantts.app',
@@ -595,6 +615,12 @@ const BLOG = {
     ctaH2: 'Assez lu, place au planning',
     ctaP: 'Créez votre diagramme de Gantt gratuitement dans le navigateur : dépendances, chemin critique et export en PDF, PNG, Excel et PowerPoint. Sans inscription.',
     ctaBtn: "Ouvrir l'éditeur →",
+    gBasics: 'Les bases',
+    gBuild: 'Créer un diagramme',
+    gSchedule: 'Technique de planification',
+    gPractice: 'Pratique et outils',
+    heroEyebrow: '✦ {n} guides gratuits · sans inscription',
+    homeCrumb: 'Accueil',
   },
   de: {
     title: 'Gantt-Diagramm-Ratgeber | gantts.app',
@@ -608,6 +634,12 @@ const BLOG = {
     ctaH2: 'Genug gelesen — planen Sie los',
     ctaP: 'Erstellen Sie Ihr Gantt-Diagramm kostenlos im Browser: Abhängigkeiten, kritischer Pfad und Export als PDF, PNG, Excel und PowerPoint. Ohne Anmeldung.',
     ctaBtn: 'Gantt-Editor öffnen →',
+    gBasics: 'Grundlagen',
+    gBuild: 'Diagramm erstellen',
+    gSchedule: 'Planungstechnik',
+    gPractice: 'Praxis und Werkzeuge',
+    heroEyebrow: '✦ {n} kostenlose Ratgeber · ohne Anmeldung',
+    homeCrumb: 'Start',
   },
   pt: {
     title: 'Guias de gráfico de Gantt | gantts.app',
@@ -621,6 +653,12 @@ const BLOG = {
     ctaH2: 'Pare de ler, comece a planejar',
     ctaP: 'Crie seu gráfico de Gantt grátis no navegador: dependências, caminho crítico e exportação para PDF, PNG, Excel e PowerPoint. Sem cadastro.',
     ctaBtn: 'Abrir o editor →',
+    gBasics: 'Conceitos básicos',
+    gBuild: 'Como criar',
+    gSchedule: 'Técnica de planejamento',
+    gPractice: 'Prática e ferramentas',
+    heroEyebrow: '✦ {n} guias gratuitos · sem cadastro',
+    homeCrumb: 'Início',
   },
   zh: {
     title: '甘特图指南 | gantts.app',
@@ -634,6 +672,12 @@ const BLOG = {
     ctaH2: '别只是读，开始规划',
     ctaP: '在浏览器中免费创建甘特图：依赖关系、关键路径，并可导出为 PDF、PNG、Excel 和 PowerPoint。无需注册。',
     ctaBtn: '打开甘特图编辑器 →',
+    gBasics: '基础概念',
+    gBuild: '动手创建',
+    gSchedule: '排程技术',
+    gPractice: '实践与工具',
+    heroEyebrow: '✦ {n} 篇免费指南 · 无需注册',
+    homeCrumb: '首页',
   },
 };
 
@@ -666,6 +710,6 @@ const APP = {
 module.exports = {
   LOCALES, CHROME, HOME,
   TEMPLATES, TEMPLATE_SLUGS, TEMPLATE_LABELS, TEMPLATE_GROUPS,
-  BLOG, BLOG_SLUGS, BLOG_LABELS,
+  BLOG, BLOG_SLUGS, BLOG_GROUPS, BLOG_LABELS,
   APP,
 };

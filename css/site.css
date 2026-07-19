@@ -388,6 +388,24 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 .flow li code { background: var(--bg-softer); padding: 1px 6px; border-radius: 5px; font-size: .88em; }
 @media (max-width: 720px) { .flow { grid-template-columns: 1fr; gap: 20px; } }
 
+/* ---- partner promo (ExcelGuru.io) ----
+   A labelled ad slot, not a disguised editorial card. It reads as a
+   promotion on purpose: the "Advertisement" tag is not decoration, it
+   is what keeps the block honest for the reader and keeps the page
+   clear of Google's deceptive-ad guidance. Muted surface rather than
+   the brand purple so it never competes with the page's own CTA. */
+.promo { display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+  border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px;
+  background: var(--bg-soft, #f7f7fb); margin: 34px 0; }
+.promo-body { flex: 1 1 320px; min-width: 0; }
+.promo-tag { display: inline-block; font-size: 11px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 9px; margin-bottom: 9px; }
+.promo h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -0.01em; }
+.promo p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; }
+.promo .btn { flex: 0 0 auto; white-space: nowrap; }
+@media (max-width: 620px) { .promo { padding: 16px; } .promo .btn { width: 100%; text-align: center; } }
+
 /* ---- template detail hero ----
    The detail page used to run the whole page down a 724px .narrow
    column while the nav, the CTA band and every other page type sat at

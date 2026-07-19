@@ -16,11 +16,12 @@ const { FOOTER } = require('./footer.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=23';
+const V = 'v=24';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.
 const { localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
+const { promo } = require('../i18n/promo.js');
 
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -187,6 +188,8 @@ ${body}
 ${tpls}
         <li><a href="/templates.html">Browse all Gantt chart templates</a></li>
       </ul>
+
+${promo('en', 'blog/' + slug + '.html', '      ')}
 
       <h2 id="related">Keep reading</h2>
       <ul>
