@@ -32,6 +32,7 @@ const { APP } = require('../i18n/content.js');
 const { BY_LOCALE: TPL_I18N, UI: TPL_UI, localesFor } = require('../i18n/template-locales.js');
 const { T: TPL_EN } = require('./new-templates.js');
 const { CARDS: TPL_CARDS } = require('../i18n/template-cards.js');
+const { ICONS: GUIDE_ICONS, DESC: GUIDE_DESC } = require('../i18n/guide-cards.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
 
@@ -51,8 +52,12 @@ const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': t
   // showed "Abrir la aplicación" and then dropped the reader into the
   // English editor — the single most visited link on the site.
   'app.html': true };
+/* index.html is an implementation detail of the filesystem, never a
+   URL we link to: /blog/ and /blog/index.html served identical content
+   at two addresses, exactly like / and /index.html did. */
+const cleanUrl = (p) => p.replace(/(^|\/)index\.html$/, '$1');
 function localHref(code, sub) {
-  return LOCALIZED_PAGES[sub] ? `/${code}/${sub}` : `/${sub}`;
+  return LOCALIZED_PAGES[sub] ? cleanUrl(`/${code}/${sub}`) : cleanUrl(`/${sub}`);
 }
 
 /* Every language variant of one logical page, for hreflang.
@@ -105,6 +110,7 @@ function header(code, sub, only) {
         <a href="${localHref(code, 'app.html')}">${esc(c.nav.maker)}</a>
         <a href="${localHref(code, "templates.html")}">${esc(c.nav.templates)}</a>
         <a href="${localHref(code, "blog/index.html")}">${esc(c.nav.guides)}</a>
+        <a href="${guideHrefFor(code, 'what-is-a-gantt-chart')}">${esc(c.nav.what)}</a>
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
@@ -775,9 +781,14 @@ function renderBlogIndex(loc) {
 
   const guideHref = (s) => guideLocalesFor(s).includes(code)
     ? `/${code}/blog/${s}.html` : `/blog/${s}.html`;
+  /* English renders icon + title + description. The localized cards used
+     to be title + "read the guide →" and nothing else, which made the
+     guides index look like a thinner product in every language but one. */
+  const gdesc = (GUIDE_DESC[code] || {});
   const items = BLOG_SLUGS.map(s => `        <a class="card card-link" href="${guideHref(s)}">
+          <div class="ic">${GUIDE_ICONS[s] || '📄'}</div>
           <h3>${esc(labels[s])}</h3>
-          <span class="eyebrow">${esc(b.readMore)} →</span>
+          <p>${esc(gdesc[s] || '')}</p>
         </a>`).join('\n');
 
   const url = `${ORIGIN}/${code}/${sub}`;
@@ -801,10 +812,18 @@ function renderBlogIndex(loc) {
     },
   ]);
 
+  /* Matches the English page: real breadcrumb, then a .section-head
+     carrying the eyebrow, h1 and lead. The localized version had no
+     breadcrumb at all and reused .crumbs to style the English-fallback
+     note, which is both a missing element and a misuse of the class. */
   const body = `  <article class="container narrow" style="padding-top:44px">
-    <h1>${esc(b.h1)}</h1>
-    <p class="lead">${esc(b.lead)}</p>
-    <p class="crumbs"><small>${esc(b.noteEn)}</small></p>
+    <div class="crumbs"><a href="/${code}/">${esc(CHROME[code].nav.home || 'gantts.app')}</a> › ${esc(CHROME[code].nav.guides)}</div>
+    <div class="section-head" style="text-align:left">
+      <span class="eyebrow">${esc(b.eyebrow || CHROME[code].nav.guides)}</span>
+      <h1>${esc(b.h1)}</h1>
+      <p class="lead">${esc(b.lead)}</p>
+    </div>
+    ${b.noteEn ? `<p class="locale-note"><small>${esc(b.noteEn)}</small></p>` : ''}
     <div class="grid grid-3">
 ${items}
     </div>

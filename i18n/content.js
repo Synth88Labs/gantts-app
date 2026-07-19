@@ -513,6 +513,7 @@ const BLOG = {
   es: {
     title: 'Guías de diagramas de Gantt | gantts.app',
     description: 'Guías claras sobre diagramas de Gantt: qué son, cómo crearlos, la ruta crítica y cómo hacerlos en Excel, Google Sheets y PowerPoint.',
+    eyebrow: 'Guías y tutoriales',
     h1: 'Guías de diagramas de Gantt',
     lead: 'Explicaciones prácticas, sin jerga: qué es un diagrama de Gantt, cómo montar uno y cómo leer la ruta crítica.',
     readMore: 'Leer la guía',
@@ -521,6 +522,7 @@ const BLOG = {
   fr: {
     title: 'Guides sur les diagrammes de Gantt | gantts.app',
     description: 'Des guides clairs sur les diagrammes de Gantt : définition, création, chemin critique, et comment en faire dans Excel, Google Sheets et PowerPoint.',
+    eyebrow: 'Guides et tutoriels',
     h1: 'Guides sur les diagrammes de Gantt',
     lead: 'Des explications concrètes et sans jargon : ce qu’est un diagramme de Gantt, comment en construire un, et comment lire le chemin critique.',
     readMore: 'Lire le guide',
@@ -529,6 +531,7 @@ const BLOG = {
   de: {
     title: 'Gantt-Diagramm-Ratgeber | gantts.app',
     description: 'Verständliche Ratgeber zu Gantt-Diagrammen: was sie sind, wie man sie erstellt, der kritische Pfad und die Umsetzung in Excel, Google Sheets und PowerPoint.',
+    eyebrow: 'Leitfäden und Tutorials',
     h1: 'Gantt-Diagramm-Ratgeber',
     lead: 'Praxisnah und ohne Fachjargon erklärt: was ein Gantt-Diagramm ist, wie Sie eines aufbauen und wie Sie den kritischen Pfad lesen.',
     readMore: 'Ratgeber lesen',
@@ -537,6 +540,7 @@ const BLOG = {
   pt: {
     title: 'Guias de gráfico de Gantt | gantts.app',
     description: 'Guias claros sobre gráficos de Gantt: o que são, como criar, caminho crítico e como fazer no Excel, Google Sheets e PowerPoint.',
+    eyebrow: 'Guias e tutoriais',
     h1: 'Guias de gráfico de Gantt',
     lead: 'Explicações práticas e sem jargão: o que é um gráfico de Gantt, como montar um e como ler o caminho crítico.',
     readMore: 'Ler o guia',
@@ -545,6 +549,7 @@ const BLOG = {
   zh: {
     title: '甘特图指南 | gantts.app',
     description: '清晰易懂的甘特图指南：什么是甘特图、如何制作、关键路径，以及如何在 Excel、Google Sheets 和 PowerPoint 中绘制。',
+    eyebrow: '指南与教程',
     h1: '甘特图指南',
     lead: '不讲术语的实用讲解：什么是甘特图、怎样从零搭一个，以及如何看懂关键路径。',
     readMore: '阅读指南',

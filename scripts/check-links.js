@@ -49,12 +49,12 @@ console.log('\nChecked ' + checked + ' local links across ' + pages.length + ' p
 const badHome = [];
 for (const f of pages) {
   const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
-  for (const m of html.matchAll(/href="(\/(?:[a-z]{2}\/)?index\.html)"/g)) {
+  for (const m of html.matchAll(/href="(\/[a-z\/]*index\.html)"/g)) {
     badHome.push(`${f} -> ${m[1]}`);
   }
 }
 if (badHome.length) {
-  console.error(`\n✗ ${badHome.length} link(s) use the non-canonical homepage form:`);
+  console.error(`\n✗ ${badHome.length} link(s) use the non-canonical index.html form:`);
   badHome.slice(0, 8).forEach(l => console.error('   ' + l));
   console.error('  Use "/" and "/<lang>/" instead.\n');
   process.exitCode = 1;

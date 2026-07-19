@@ -79,7 +79,7 @@ function nav(slug) {
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="/app.html">Gantt Maker</a>
         <a href="/templates.html">Templates</a>
-        <a href="/blog/index.html">Guides</a>
+        <a href="/blog/">Guides</a>
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">

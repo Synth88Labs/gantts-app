@@ -52,7 +52,7 @@ const nav = (slug) => `  <header class="nav">
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="/app.html">Gantt Maker</a>
         <a href="/templates.html">Templates</a>
-        <a href="/blog/index.html">Guides</a>
+        <a href="/blog/">Guides</a>
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
@@ -87,7 +87,7 @@ function schema(slug, d) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: ORIGIN + '/' },
-          { '@type': 'ListItem', position: 2, name: 'Guides', item: ORIGIN + '/blog/index.html' },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: ORIGIN + '/blog/' },
           { '@type': 'ListItem', position: 3, name: d.h1, item: url },
         ],
       },
@@ -155,7 +155,7 @@ function page(slug, d) {
 ${nav(slug)}
 
   <article class="container narrow" style="padding-top:40px">
-    <div class="crumbs"><a href="/">Home</a> › <a href="/blog/index.html">Guides</a> › ${d.h1}</div>
+    <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › ${d.h1}</div>
     <h1>${d.h1}</h1>
     <p class="lead">${d.lead}</p>
     <p class="post-meta"><time datetime="${d.date}">${dateLabel}</time> · gantts.app</p>

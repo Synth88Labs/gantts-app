@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
   <link rel="stylesheet" href="/css/site.css?v=22" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-chart-dependencies.html#post","headline":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","description":"The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag.","url":"https://gantts.app/blog/gantt-chart-dependencies.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-chart-dependencies.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/index.html"},{"@type":"ListItem","position":3,"name":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","item":"https://gantts.app/blog/gantt-chart-dependencies.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 4 types of dependencies in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS is the default and covers the large majority of real relationships."}},{"@type":"Question","name":"What is the difference between lead and lag?","acceptedAnswer":{"@type":"Answer","text":"Lag is waiting time added to a dependency — FS+3d means the successor starts three days after the predecessor finishes. Lead is negative lag, letting the successor overlap the predecessor by starting early."}},{"@type":"Question","name":"Which dependency type should I use by default?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start. If another type seems necessary, first check whether the tasks are broken down correctly — an unusual dependency type is often a symptom of a task that should be split."}},{"@type":"Question","name":"How do I add dependencies in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Drag from the dot at the edge of a task bar onto another bar, or type MS Project notation such as 3FS+2d in the Runs after column. Click any link to change its type or lag."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-chart-dependencies.html#post","headline":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","description":"The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag.","url":"https://gantts.app/blog/gantt-chart-dependencies.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-chart-dependencies.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","item":"https://gantts.app/blog/gantt-chart-dependencies.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 4 types of dependencies in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS is the default and covers the large majority of real relationships."}},{"@type":"Question","name":"What is the difference between lead and lag?","acceptedAnswer":{"@type":"Answer","text":"Lag is waiting time added to a dependency — FS+3d means the successor starts three days after the predecessor finishes. Lead is negative lag, letting the successor overlap the predecessor by starting early."}},{"@type":"Question","name":"Which dependency type should I use by default?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start. If another type seems necessary, first check whether the tasks are broken down correctly — an unusual dependency type is often a symptom of a task that should be split."}},{"@type":"Question","name":"How do I add dependencies in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Drag from the dot at the edge of a task bar onto another bar, or type MS Project notation such as 3FS+2d in the Runs after column. Click any link to change its type or lag."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -42,7 +42,7 @@
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="/app.html">Gantt Maker</a>
         <a href="/templates.html">Templates</a>
-        <a href="/blog/index.html">Guides</a>
+        <a href="/blog/">Guides</a>
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
@@ -62,7 +62,7 @@
   </header>
 
   <article class="container narrow" style="padding-top:40px">
-    <div class="crumbs"><a href="/">Home</a> › <a href="/blog/index.html">Guides</a> › Gantt Chart Dependencies Explained: FS, SS, FF and SF</div>
+    <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › Gantt Chart Dependencies Explained: FS, SS, FF and SF</div>
     <h1>Gantt Chart Dependencies Explained: FS, SS, FF and SF</h1>
     <p class="lead">Four relationship types cover every dependency you can draw on a Gantt chart. One of them does about ninety per cent of the work, and the other three exist for the cases it handles badly. Here is what each one means, with a diagram for each.</p>
     <p class="post-meta"><time datetime="2026-07-18">18 July 2026</time> · gantts.app</p>
@@ -178,7 +178,7 @@
         </div>
         <div>
           <h4>Guides</h4>
-          <a href="/blog/index.html">All guides</a>
+          <a href="/blog/">All guides</a>
           <a href="/blog/what-is-a-gantt-chart.html">What is a Gantt chart?</a>
           <a href="/blog/critical-path-method.html">Critical path method</a>
           <a href="/blog/gantt-chart-dependencies.html">Dependency types</a>

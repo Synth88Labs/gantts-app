@@ -41,7 +41,7 @@ const FOOTER = `  <footer class="footer">
         </div>
         <div>
           <h4>Guides</h4>
-          ${link('/blog/index.html', 'All guides')}
+          ${link('/blog/', 'All guides')}
           ${link('/blog/what-is-a-gantt-chart.html', 'What is a Gantt chart?')}
           ${link('/blog/critical-path-method.html', 'Critical path method')}
           ${link('/blog/gantt-chart-dependencies.html', 'Dependency types')}

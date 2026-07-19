@@ -487,3 +487,8 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 :root[data-theme="dark"] .fig figcaption { color: #475569; }
 
 .post-meta { font-size: 14px; color: var(--ink-soft); margin-top: -6px; }
+
+/* Fallback-language note. Previously this reused .crumbs, which is the
+   breadcrumb style — so localized pages had a note that looked like
+   navigation and no actual breadcrumb. */
+.locale-note { color: var(--ink-soft); font-size: 13px; margin: -6px 0 22px; }

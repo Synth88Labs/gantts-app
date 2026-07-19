@@ -82,8 +82,8 @@ RedirectMatch 404 /scripts/
 # links are fixed; this makes the duplicate unreachable rather than
 # merely unlinked, since external sites may still link the old form.
 RewriteEngine On
-RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-RewriteRule ^ / [R=301,L]
-# Same for the localized homes, e.g. /es/index.html -> /es/
-RewriteCond %{THE_REQUEST} \s/+(es|fr|de|pt|zh)/index\.html[\s?] [NC]
-RewriteRule ^ /%1/ [R=301,L]
+# Generalised: ANY directory index, at any depth. The first version
+# enumerated / and /<lang>/ and therefore missed /blog/index.html, which
+# 308 internal links were still pointing at.
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
