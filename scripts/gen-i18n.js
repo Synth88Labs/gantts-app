@@ -116,6 +116,18 @@ function header(code, sub, only) {
   </header>`;
 }
 
+/* Footer deep-links used to be hardcoded to the English pages. Once the
+   Spanish translations existed, that left 300 links pointing out of the
+   locale from inside the Spanish site — five targets repeated across
+   sixty pages. Both helpers fall back to English when a translation
+   does not exist, which is still the right answer for fr/de/pt/zh. */
+function tplHref(code, slug) {
+  return localesFor(slug).includes(code) ? `/${code}/templates/${slug}.html` : `/templates/${slug}.html`;
+}
+function guideHrefFor(code, slug) {
+  return guideLocalesFor(slug).includes(code) ? `/${code}/blog/${slug}.html` : `/blog/${slug}.html`;
+}
+
 function footer(code) {
   const c = CHROME[code];
   const p = '/' + code;
@@ -135,15 +147,15 @@ function footer(code) {
         <div>
           <h4>${esc(c.nav.templates)}</h4>
           ${L('templates.html', c.footer.allTemplates)}
-          <a href="/templates/excel.html">Excel</a>
-          <a href="/templates/powerpoint.html">PowerPoint</a>
-          <a href="/templates/construction.html">${esc(c.footer.construction)}</a>
+          <a href="${tplHref(code, 'excel')}">Excel</a>
+          <a href="${tplHref(code, 'powerpoint')}">PowerPoint</a>
+          <a href="${tplHref(code, 'construction')}">${esc(c.footer.construction)}</a>
         </div>
         <div>
           <h4>${esc(c.nav.guides)}</h4>
           ${L('blog/index.html', c.footer.allGuides)}
-          <a href="/blog/what-is-a-gantt-chart.html">${esc(c.nav.what)}</a>
-          <a href="/blog/critical-path-method.html">${esc(c.footer.cpm)}</a>
+          <a href="${guideHrefFor(code, 'what-is-a-gantt-chart')}">${esc(c.nav.what)}</a>
+          <a href="${guideHrefFor(code, 'critical-path-method')}">${esc(c.footer.cpm)}</a>
         </div>
         <div>
           <h4>${esc(c.footer.company)}</h4>
@@ -480,9 +492,17 @@ function renderTemplateDetail(loc, slug) {
   // Related pages resolve to the localized version when it exists,
   // and fall back to English rather than being dropped — a cross-link
   // in the wrong language still beats no cross-link.
-  const related = (en.related || []).map(r => {
-    const localized = TPL_I18N[code][r];
-    return `        <li><a href="${localized ? `/${code}/templates/${r}.html` : `/templates/${r}.html`}">${esc(localized ? localized.h1 : (TPL_EN[r] ? TPL_EN[r].h1 : r))}</a></li>`;
+  /* Related links come from the Spanish entry when it declares them,
+     otherwise from the English content model. Most template pages are
+     hand-authored HTML with no entry in new-templates.js at all, so
+     reading en.related unconditionally threw for exactly those pages. */
+  const relatedSrc = d.related || (en && en.related) || [];
+  const related = relatedSrc.map(r => {
+    const slugRef = Array.isArray(r) ? r[0] : r;
+    const label = Array.isArray(r) ? r[1] : null;
+    const localized = TPL_I18N[code][slugRef];
+    const text = label || (localized ? localized.h1 : (TPL_EN[slugRef] ? TPL_EN[slugRef].h1 : slugRef));
+    return `        <li><a href="${localized ? `/${code}/templates/${slugRef}.html` : `/templates/${slugRef}.html`}">${esc(text)}</a></li>`;
   }).join('\n');
 
   const ld = graph(loc, [

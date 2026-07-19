@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /* ============================================================
-   fix-guide-hreflang.js — reciprocal hreflang on English guides.
+   fix-guide-hreflang.js — reciprocal hreflang on English pages.
+
+   Covers BOTH guides and template detail pages.
 
    Eight of the twelve English guides are hand-authored HTML and four
    are generated, so there is no single generator that can own their
@@ -18,21 +20,31 @@
 const fs = require('fs');
 const path = require('path');
 const { LOCALES } = require('../i18n/content.js');
-const { localesFor, translatedSlugs } = require('../i18n/guide-locales.js');
+const G = require('../i18n/guide-locales.js');
+const T = require('../i18n/template-locales.js');
+
+/* Two families of page, one problem: in each, some English originals are
+   generated and some are hand-authored HTML, so no single generator can
+   own their <head>. 22 template pages had no hreflang at all until this
+   was generalised — caught by check-hreflang, not by eye. */
+const FAMILIES = [
+  { dir: 'blog', reg: G, label: 'guide' },
+  { dir: 'templates', reg: T, label: 'template' },
+];
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
 const START = '  <!-- hreflang:start -->';
 const END = '  <!-- hreflang:end -->';
 
-function block(slug) {
-  const codes = localesFor(slug);
+function block(dir, reg, slug) {
+  const codes = reg.localesFor(slug);
   if (!codes.length) return '';
-  const en = `${ORIGIN}/blog/${slug}.html`;
+  const en = `${ORIGIN}/${dir}/${slug}.html`;
   const rows = [`  <link rel="alternate" hreflang="en" href="${en}" />`];
   for (const code of codes) {
     const l = LOCALES.find(x => x.code === code);
-    rows.push(`  <link rel="alternate" hreflang="${l.hreflang}" href="${ORIGIN}/${code}/blog/${slug}.html" />`);
+    rows.push(`  <link rel="alternate" hreflang="${l.hreflang}" href="${ORIGIN}/${code}/${dir}/${slug}.html" />`);
   }
   rows.push(`  <link rel="alternate" hreflang="x-default" href="${en}" />`);
   return [START, ...rows, END].join('\n');
@@ -57,11 +69,13 @@ function stripBlocks(html) {
 }
 
 let touched = 0, skipped = 0;
-for (const slug of translatedSlugs()) {
-  const file = path.join(ROOT, 'blog', slug + '.html');
-  if (!fs.existsSync(file)) { console.warn(`  ⚠ blog/${slug}.html not found`); continue; }
+for (const fam of FAMILIES) {
+ for (const slug of fam.reg.translatedSlugs()) {
+  const rel = `${fam.dir}/${slug}.html`;
+  const file = path.join(ROOT, fam.dir, slug + '.html');
+  if (!fs.existsSync(file)) { console.warn(`  ⚠ ${rel} not found`); continue; }
   let html = fs.readFileSync(file, 'utf8');
-  const b = block(slug);
+  const b = block(fam.dir, fam.reg, slug);
 
   /* Drop any previous block, then any stray hreflang links that predate
      the markers, so we never end up with two competing sets.
@@ -77,14 +91,14 @@ for (const slug of translatedSlugs()) {
   html = html.replace(/^[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>\r?\n/gm, '');
 
   const canon = html.match(/^[ \t]*<link rel="canonical"[^>]*>\r?\n/m);
-  if (!canon) { console.warn(`  ⚠ blog/${slug}.html has no canonical to anchor to`); skipped++; continue; }
+  if (!canon) { console.warn(`  ⚠ ${rel} has no canonical to anchor to`); skipped++; continue; }
 
   const next = html.replace(canon[0], canon[0] + b + '\n');
 
   // Refuse to write something we would have to clean up next run.
   const starts = (next.match(/hreflang:start/g) || []).length;
   if (starts !== 1) {
-    console.error(`  ✗ blog/${slug}.html — would contain ${starts} hreflang blocks; not written`);
+    console.error(`  ✗ ${rel} — would contain ${starts} hreflang blocks; not written`);
     process.exitCode = 1;
     continue;
   }
@@ -92,7 +106,8 @@ for (const slug of translatedSlugs()) {
   if (next !== fs.readFileSync(file, 'utf8')) {
     fs.writeFileSync(file, next, 'utf8');
     touched++;
-    console.log(`  ✓ blog/${slug}.html — ${localesFor(slug).join(', ')}`);
+    console.log(`  ✓ ${rel} — ${fam.reg.localesFor(slug).join(', ')}`);
   }
+ }
 }
-console.log(`\n✓ guide hreflang: ${touched} page(s) updated${skipped ? `, ${skipped} skipped` : ''}.\n`);
+console.log(`\n✓ hreflang injected: ${touched} page(s) updated${skipped ? `, ${skipped} skipped` : ''}.\n`);
