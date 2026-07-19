@@ -41,6 +41,8 @@
           case 'link': return this.link();
           case 'mermaid': return this.mermaid();
           case 'ics': return this.ics();
+          case 'copy': return this.copyImage();
+          case 'share': return this.shareImage();
       }
     },
 
@@ -243,9 +245,117 @@
     // Save the whole project as a .gantts file (JSON inside). Re-open it later
     // with the "Open" button / Import — it restores everything exactly.
     // Legacy .gantt files still open fine (see Templates.importFile).
-    save() {
-      U.download(this.safeName('gantts'), JSON.stringify(Model.project), 'application/json');
-      App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”', { f: this.safeName('gantts') }));
+    /* Save in place where the browser allows it.
+
+       showSaveFilePicker gives us a handle we can write to again, so
+       the second save overwrites the first file instead of dropping
+       plan(1).gantts, plan(2).gantts... into Downloads. The handle
+       lives for the session only — persisting it would need IndexedDB
+       and a permission re-prompt on every reload, which is more
+       friction than the feature saves.
+
+       Firefox and Safari have no File System Access API, so they fall
+       through to the download path and behave exactly as before. */
+    _fileHandle: null,
+
+    async save() {
+      const json = JSON.stringify(Model.project);
+      const name = this.safeName('gantts');
+
+      if (window.showSaveFilePicker) {
+        try {
+          if (!this._fileHandle) {
+            this._fileHandle = await showSaveFilePicker({
+              suggestedName: name,
+              types: [{
+                description: 'gantts.app project',
+                accept: { 'application/json': ['.gantts', '.json'] },
+              }],
+            });
+          }
+          const w = await this._fileHandle.createWritable();
+          await w.write(json);
+          await w.close();
+          App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”',
+            { f: this._fileHandle.name || name }));
+          return;
+        } catch (e) {
+          /* AbortError means the user dismissed the picker — that is a
+             decision, not a failure, so say nothing and do not fall
+             back to a download they did not ask for. */
+          if (e && e.name === 'AbortError') return;
+          this._fileHandle = null;   // handle went stale; fall through
+        }
+      }
+
+      U.download(name, json, 'application/json');
+      App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”', { f: name }));
+    },
+
+    /* Copy the chart straight to the clipboard.
+
+       THE SAFARI CONSTRAINT, which is the whole reason this looks odd:
+       Safari requires the ClipboardItem to be constructed with a
+       PROMISE of the blob, synchronously inside the user gesture. Await
+       the blob first and then call clipboard.write and Safari has
+       already decided the gesture expired — it rejects with
+       NotAllowedError. Chrome accepts either form, so testing only in
+       Chrome hides this completely. */
+    async copyImage() {
+      if (!navigator.clipboard || !window.ClipboardItem) {
+        throw new Error(App.T('ex.noClipboard',
+          'This browser cannot copy images to the clipboard — use PNG export instead.'));
+      }
+      App.toast(App.T('ex.copying', 'Copying chart…'));
+
+      const blobPromise = this.capture(2).then(canvas => new Promise((resolve, reject) => {
+        canvas.toBlob(b => b ? resolve(b) : reject(new Error('could not render the image')), 'image/png');
+      }));
+
+      try {
+        // Note the promise is handed to ClipboardItem, not its result.
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blobPromise })]);
+        App.toast(App.T('ex.copied', 'Chart copied — paste it into any document or chat'));
+      } catch (e) {
+        /* The clipboard can refuse for reasons that have nothing to do
+           with this code: a permissions policy, an insecure context, a
+           window that lost focus between the click and the write. The
+           user asked for their chart, so give them the chart — a
+           download is a worse answer than the clipboard but a far
+           better one than an error message. */
+        if (e && (e.name === 'NotAllowedError' || e.name === 'SecurityError')) {
+          const blob = await blobPromise;
+          U.download(this.safeName('png'), blob, 'image/png');
+          App.toast(App.T('ex.clipboardBlocked',
+            'The browser blocked clipboard access — the image was downloaded instead'));
+          return;
+        }
+        throw e;
+      }
+    },
+
+    /* The system share sheet, which on a phone is how anything actually
+       leaves the device. canShare({files}) has to be asked before
+       share() — desktop Chrome exposes navigator.share and then refuses
+       files, so feature-detecting on share() alone fails at the worst
+       moment. */
+    async shareImage() {
+      const canvas = await this.capture(2);
+      const blob = await new Promise((res, rej) =>
+        canvas.toBlob(b => b ? res(b) : rej(new Error('could not render the image')), 'image/png'));
+      const file = new File([blob], this.safeName('png'), { type: 'image/png' });
+
+      if (!navigator.canShare || !navigator.canShare({ files: [file] })) {
+        U.download(this.safeName('png'), blob, 'image/png');
+        App.toast(App.T('ex.noShare', 'Sharing is not available here — the image was downloaded instead'));
+        return;
+      }
+      try {
+        await navigator.share({ files: [file], title: Model.project.name || 'Gantt chart' });
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;   // user closed the sheet
+        throw e;
+      }
     },
 
     /* MS Project XML. Not .mpp: that format is undocumented and every

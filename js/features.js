@@ -70,6 +70,8 @@
         { icon: '🌙', name: 'Toggle dark mode', run: () => this.toggleTheme() },
         { icon: '▶', name: 'Present mode', hint: 'F', run: () => this.enterPresent() },
         { icon: '🖼', name: 'Export PNG', run: () => E.run('png') },
+        { icon: '📋', name: 'Copy chart to clipboard', run: () => E.run('copy') },
+        { icon: '📤', name: 'Share chart…', run: () => E.run('share') },
         { icon: '📄', name: 'Export PDF (paper size, tiling, date range)', run: () => E.run('pdf') },
         { icon: '🖨', name: 'Export PDF — quick, one page', run: () => E.run('pdf-quick') },
         { icon: '📊', name: 'Export Excel (.xlsx)', run: () => E.run('xlsx') },

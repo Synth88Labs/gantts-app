@@ -12,6 +12,15 @@
 
   var D = {
     en: {
+      'ex.clipboardBlocked': 'The browser blocked clipboard access — the image was downloaded instead',
+
+      // clipboard / share
+      'exp.copy': '📋 Copy chart to clipboard',
+      'exp.share': '📤 Share…',
+      'ex.copying': 'Copying chart…',
+      'ex.copied': 'Chart copied — paste it into any document or chat',
+      'ex.noClipboard': 'This browser cannot copy images to the clipboard — use PNG export instead.',
+      'ex.noShare': 'Sharing is not available here — the image was downloaded instead',
 
       // keys referenced by data-i18n in app.html
       'app.calendar': 'Calendar',
@@ -174,6 +183,15 @@
     },
     es: {
 
+      // clipboard / share
+      'exp.copy': '📋 Copiar diagrama',
+      'exp.share': '📤 Compartir…',
+      'ex.copying': 'Copiando el diagrama…',
+      'ex.copied': 'Diagrama copiado — pégalo en cualquier documento o chat',
+      'ex.noClipboard': 'Este navegador no puede copiar imágenes al portapapeles — usa la exportación a PNG.',
+      'ex.noShare': 'Compartir no está disponible aquí — la imagen se descargó en su lugar',
+      'ex.clipboardBlocked': 'El navegador bloqueó el acceso al portapapeles — la imagen se descargó en su lugar',
+
       // keys referenced by data-i18n in app.html
       'app.calendar': 'Calendario',
       'app.workload': 'Carga de trabajo',
@@ -333,6 +351,15 @@
       'exp.ics': '📅 Calendario (.ics)',
     },
     fr: {
+
+      // clipboard / share
+      'exp.copy': '📋 Copier le diagramme',
+      'exp.share': '📤 Partager…',
+      'ex.copying': 'Copie du diagramme…',
+      'ex.copied': "Diagramme copié — collez-le dans n'importe quel document ou chat",
+      'ex.noClipboard': "Ce navigateur ne peut pas copier d'images dans le presse-papiers — utilisez l'export PNG.",
+      'ex.noShare': "Le partage n'est pas disponible ici — l'image a été téléchargée à la place",
+      'ex.clipboardBlocked': "Le navigateur a bloqué l'accès au presse-papiers — l'image a été téléchargée à la place",
 
       // keys referenced by data-i18n in app.html
       'app.calendar': 'Calendrier',
@@ -494,6 +521,15 @@
     },
     de: {
 
+      // clipboard / share
+      'exp.copy': '📋 Diagramm kopieren',
+      'exp.share': '📤 Teilen…',
+      'ex.copying': 'Diagramm wird kopiert…',
+      'ex.copied': 'Diagramm kopiert — füge es in ein beliebiges Dokument oder einen Chat ein',
+      'ex.noClipboard': 'Dieser Browser kann keine Bilder in die Zwischenablage kopieren — nutze stattdessen den PNG-Export.',
+      'ex.noShare': 'Teilen ist hier nicht verfügbar — das Bild wurde stattdessen heruntergeladen',
+      'ex.clipboardBlocked': 'Der Browser hat den Zugriff auf die Zwischenablage blockiert — das Bild wurde stattdessen heruntergeladen',
+
       // keys referenced by data-i18n in app.html
       'app.calendar': 'Kalender',
       'app.workload': 'Auslastung',
@@ -654,6 +690,15 @@
     },
     pt: {
 
+      // clipboard / share
+      'exp.copy': '📋 Copiar gráfico',
+      'exp.share': '📤 Compartilhar…',
+      'ex.copying': 'Copiando o gráfico…',
+      'ex.copied': 'Gráfico copiado — cole em qualquer documento ou chat',
+      'ex.noClipboard': 'Este navegador não consegue copiar imagens para a área de transferência — use a exportação em PNG.',
+      'ex.noShare': 'O compartilhamento não está disponível aqui — a imagem foi baixada',
+      'ex.clipboardBlocked': 'O navegador bloqueou o acesso à área de transferência — a imagem foi baixada',
+
       // keys referenced by data-i18n in app.html
       'app.calendar': 'Calendário',
       'app.workload': 'Carga de trabalho',
@@ -813,6 +858,15 @@
       'exp.ics': '📅 Calendário (.ics)',
     },
     zh: {
+
+      // clipboard / share
+      'exp.copy': '📋 复制图表',
+      'exp.share': '📤 分享…',
+      'ex.copying': '正在复制图表…',
+      'ex.copied': '图表已复制——可粘贴到任意文档或聊天中',
+      'ex.noClipboard': '此浏览器无法将图片复制到剪贴板——请改用 PNG 导出。',
+      'ex.noShare': '此处无法使用分享功能——图片已改为下载',
+      'ex.clipboardBlocked': '浏览器阻止了剪贴板访问——图片已改为下载',
 
       // keys referenced by data-i18n in app.html
       'app.calendar': '工作日历',
