@@ -20,7 +20,7 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=22';
+const V = 'v=23';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -169,20 +169,29 @@ function page(slug, d) {
 <body>
 ${nav(slug)}
 
-  <article class="container narrow" style="padding-top:40px">
-    <div class="crumbs"><a href="/">Home</a> › <a href="/templates.html">Templates</a> › ${esc(d.h1)}</div>
-    <h1>${esc(d.h1)}</h1>
-    <p class="lead">${d.lead}</p>
-
-    <p><img src="/templates/img/${slug}.svg" alt="Preview of the ${attr(strip(d.title).toLowerCase())} template showing phases across a timeline" style="width:100%;height:auto;margin:20px 0" /></p>
-
-    <div class="dl-row">
-      <a class="btn btn-primary" href="/templates/files/${slug}.xlsx" download>⬇ Excel (.xlsx)</a>
-      <a class="btn" href="/templates/files/${slug}.pptx" download>⬇ PowerPoint</a>
-      <a class="btn" href="/templates/files/${slug}.csv" download>⬇ CSV</a>
-      <a class="btn btn-primary" href="/app.html?csv=${slug}">✎ Edit online free</a>
+  <!-- Masthead at the full site width, preview beside the copy. The page
+       used to run everything down a 724px column while the nav and CTA sat
+       at 1200px, so it stepped in and back out; and the 480px preview was
+       upscaled to fill a column still too narrow for it. Prose stays
+       narrow below — 1200px of running text is ~113 characters. -->
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/">Home</a> › <a href="/templates.html">Templates</a> › ${esc(d.h1)}</div>
+        <h1>${esc(d.h1)}</h1>
+        <p class="lead">${d.lead}</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/${slug}.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/${slug}.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/${slug}.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/app.html?csv=${slug}">✎ Edit online free</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" alt="Preview of the ${attr(strip(d.title).toLowerCase())} template showing phases across a timeline" /></div>
     </div>
+  </section>
 
+  <article class="container narrow">
     <div class="prose">
       <h2 id="whats-included">What's included</h2>
       <p>${d.intro}</p>

@@ -39,7 +39,7 @@ const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=22';
+const CSS_V = 'v=23';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -816,20 +816,26 @@ function renderTemplateDetail(loc, slug) {
     },
   ]);
 
-  const body = `  <article class="container narrow" style="padding-top:40px">
-    <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/templates.html">${esc(ui.templates)}</a> › ${esc(d.h1)}</div>
-    <h1>${esc(d.h1)}</h1>
-    <p class="lead">${d.lead}</p>
-
-    <p><img src="/templates/img/${slug}.svg" alt="${esc(ui.imgAlt)}" style="width:100%;height:auto;margin:20px 0" /></p>
-
-    <div class="dl-row">
-      <a class="btn btn-primary" href="/templates/files/${slug}.xlsx" download>⬇ ${esc(ui.xlsx)}</a>
-      <a class="btn" href="/templates/files/${slug}.pptx" download>⬇ ${esc(ui.pptx)}</a>
-      <a class="btn" href="/templates/files/${slug}.csv" download>⬇ ${esc(ui.csv)}</a>
-      <a class="btn btn-primary" href="/${code}/app.html?csv=${slug}">✎ ${esc(ui.edit)}</a>
+  /* Masthead at the full site width with the preview beside the copy —
+     same structure as the English page, see gen-template-pages.js. */
+  const body = `  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/${code}/">${esc(ui.home)}</a> › <a href="/${code}/templates.html">${esc(ui.templates)}</a> › ${esc(d.h1)}</div>
+        <h1>${esc(d.h1)}</h1>
+        <p class="lead">${d.lead}</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/${slug}.xlsx" download>⬇ ${esc(ui.xlsx)}</a>
+          <a class="btn" href="/templates/files/${slug}.pptx" download>⬇ ${esc(ui.pptx)}</a>
+          <a class="btn" href="/templates/files/${slug}.csv" download>⬇ ${esc(ui.csv)}</a>
+          <a class="btn btn-primary" href="/${code}/app.html?csv=${slug}">✎ ${esc(ui.edit)}</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" alt="${esc(ui.imgAlt)}" /></div>
     </div>
+  </section>
 
+  <article class="container narrow">
     <div class="prose">
       <h2 id="whats-included">${esc(ui.included)}</h2>
       <p>${d.intro}</p>

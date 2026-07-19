@@ -16,7 +16,7 @@ const { FOOTER } = require('./footer.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=22';
+const V = 'v=23';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.

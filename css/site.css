@@ -388,6 +388,26 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 .flow li code { background: var(--bg-softer); padding: 1px 6px; border-radius: 5px; font-size: .88em; }
 @media (max-width: 720px) { .flow { grid-template-columns: 1fr; gap: 20px; } }
 
+/* ---- template detail hero ----
+   The detail page used to run the whole page down a 724px .narrow
+   column while the nav, the CTA band and every other page type sat at
+   the 1200px site width — so the page visibly stepped in and back out
+   again, and the 480px-wide preview SVG was upscaled to 676px to fill
+   a column that was still too narrow for it.
+
+   Now the masthead spans the full site width with the preview beside
+   the copy rather than under it. At 1200px the media column lands near
+   540px, which is close to the SVG's native 480 instead of stretching
+   it. Body prose stays in .narrow below: matching the site width is
+   right for the masthead, but a 1200px line of running text is ~113
+   characters and unreadable. */
+.tpl-hero { display: grid; grid-template-columns: 1.02fr .98fr; gap: 46px; align-items: center; }
+@media (max-width: 900px) { .tpl-hero { grid-template-columns: 1fr; gap: 26px; } }
+.tpl-hero-copy h1 { margin: 12px 0 14px; }
+.tpl-hero-copy .lead { margin-bottom: 22px; }
+.tpl-hero-media img { display: block; width: 100%; height: auto; border-radius: 14px;
+  border: 1px solid var(--line); box-shadow: var(--shadow); }
+
 /* ---- split (why free) ---- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 @media (max-width: 820px) { .split { grid-template-columns: 1fr; gap: 30px; } }
