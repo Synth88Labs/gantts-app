@@ -191,7 +191,7 @@ ${nav(slug)}
     </div>
   </section>
 
-  <article class="container narrow">
+  <article class="container">
     <div class="prose">
       <h2 id="whats-included">What's included</h2>
       <p>${d.intro}</p>

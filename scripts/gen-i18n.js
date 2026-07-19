@@ -836,7 +836,7 @@ function renderTemplateDetail(loc, slug) {
     </div>
   </section>
 
-  <article class="container narrow">
+  <article class="container">
     <div class="prose">
       <h2 id="whats-included">${esc(ui.included)}</h2>
       <p>${d.intro}</p>
