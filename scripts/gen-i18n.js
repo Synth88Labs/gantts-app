@@ -31,6 +31,7 @@ const { SITE, SITE_PAGES } = require('../i18n/site-pages.js');
 const { APP } = require('../i18n/content.js');
 const { BY_LOCALE: TPL_I18N, UI: TPL_UI, localesFor } = require('../i18n/template-locales.js');
 const { T: TPL_EN } = require('./new-templates.js');
+const { CARDS: TPL_CARDS } = require('../i18n/template-cards.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
 
@@ -445,9 +446,13 @@ function renderTemplates(loc) {
      the English 1,288, which is a materially worse page for the reader
      and a thin one for Google. */
   const blurb = (s) => {
+    // A fully translated template carries its own blurb; otherwise fall
+    // back to the shared one-liner table, so a locale gets a usable hub
+    // long before all 41 detail pages are translated.
     const d = (TPL_I18N[code] || {})[s];
-    return d && d.card ? `
-            <p>${d.card}</p>` : '';
+    const text = (d && d.card) || ((TPL_CARDS[code] || {})[s]);
+    return text ? `
+            <p>${text}</p>` : '';
   };
 
   const groups = TEMPLATE_GROUPS.map(g => {
