@@ -1130,6 +1130,1105 @@ const T = {
       ["product-launch", "Produkteinführung"]
     ]
   },
+
+  'annual': {
+    card: "Ein Jahr auf einer Seite: Quartale, Initiativen und feste Termine.",
+    h1: "Jahresplan als Gantt-Diagramm",
+    metaTitle: "Jahresplan Vorlage — Gantt-Diagramm",
+    metaDesc: "Kostenlose Jahresplan-Vorlage: Quartale, Initiativen, feste Termine und Meilensteine auf einer Seite.",
+    lead: "Ein <strong>Jahresplan</strong> zeigt zwölf Monate auf einer Seite. Er arbeitet in Quartalen und Initiativen, nicht in Aufgaben — sobald einzelne Arbeitspakete auftauchen, ist er kein Jahresplan mehr, sondern ein unleserlicher Projektplan.",
+    intro: "Vier Quartale mit den Blöcken, die ein Jahr tragen:",
+    phases: [
+      [
+        "Q1 — Start und Weichenstellung",
+        "Jahresziele, Budgetfreigabe, laufende Vorhaben fortsetzen. <em>Meilenstein: Planung verabschiedet.</em>"
+      ],
+      [
+        "Q2 — Umsetzung",
+        "Die großen Initiativen laufen an; erste Zwischenergebnisse und Kurskorrektur."
+      ],
+      [
+        "Q3 — Halbzeit und Nachsteuern",
+        "Halbjahresbilanz, Budgetanpassung, Priorisierung für den Rest des Jahres."
+      ],
+      [
+        "Q4 — Abschluss und Vorbereitung",
+        "Jahresabschluss, Auswertung und Planung des Folgejahres. <em>Meilenstein: Plan für nächstes Jahr steht.</em>"
+      ]
+    ],
+    callout: "Bleiben Sie auf Initiativenebene. Ein Jahresplan mit 200 Aufgaben wird im März nicht mehr gepflegt und im Juni nicht mehr geglaubt. Zwölf bis zwanzig Balken reichen, um ein Jahr zu erzählen.",
+    customize: [
+      "Auf Quartals- oder Monatsauflösung umstellen — Wochen sind für ein Jahr zu fein.",
+      "Feste Termine zuerst eintragen: Messen, Abschlüsse, Saisonspitzen, Urlaubszeiten.",
+      "Je Abteilung eine Zeile ergänzen, wenn der Plan bereichsübergreifend gilt.",
+      "Quartalsübergänge als Meilensteine setzen — dort wird nachgesteuert."
+    ],
+    tips: [
+      "<strong>Nicht mehr als fünf große Initiativen.</strong> Mehr schafft keine Organisation in einem Jahr.",
+      "<strong>Feste Termine sind der Rahmen.</strong> Alles andere ordnet sich ihnen unter.",
+      "<strong>Planen Sie Q4 grob.</strong> Was Sie im Januar für Oktober festlegen, stimmt selten.",
+      "<strong>Quartalsweise überarbeiten</strong>, nicht einmal im Jahr."
+    ],
+    faq: [
+      [
+        "Wie detailliert sollte ein Jahresplan sein?",
+        "Auf Initiativenebene: zwölf bis zwanzig Balken. Einzelne Aufgaben gehören in die Quartals- oder Monatsplanung."
+      ],
+      [
+        "Wann erstellt man den Jahresplan?",
+        "Im vierten Quartal des Vorjahres, sobald das Budget steht. Ein Plan ohne Budgetfreigabe ist eine Wunschliste."
+      ],
+      [
+        "Wie oft wird er aktualisiert?",
+        "Einmal je Quartal grundlegend. Häufiger lohnt sich bei dieser Auflösung nicht."
+      ]
+    ],
+    related: [
+      ["monthly", "Monatsplan"],
+      ["product-roadmap", "Produkt-Roadmap"],
+      ["project-management", "Projektmanagement"]
+    ]
+  },
+
+  'sprint': {
+    card: "Zwei Wochen von Planning über Daily bis Review und Retrospektive.",
+    h1: "Sprintplan als Gantt-Diagramm",
+    metaTitle: "Sprintplan Vorlage — Gantt-Diagramm",
+    metaDesc: "Kostenlose Sprintplan-Vorlage: Sprint Planning, Umsetzung, Testing, Review und Retrospektive über zwei Wochen.",
+    lead: "Ein <strong>Sprintplan</strong> im Gantt-Format ist kein Ersatz für das Board — er zeigt, was ein Board nicht zeigt: welche Aufgaben voneinander abhängen und wo die zwei Wochen tatsächlich eng werden.",
+    intro: "Ein zweiwöchiger Sprint mit den festen Terminen:",
+    phases: [
+      [
+        "Sprint Planning (Tag 1)",
+        "Ziel festlegen, Backlog-Einträge schätzen und committen. <em>Meilenstein: Sprint Goal steht.</em>"
+      ],
+      [
+        "Umsetzung (Tag 1–8)",
+        "Entwicklung mit täglichem Abgleich; Abhängigkeiten zwischen Aufgaben sichtbar halten."
+      ],
+      [
+        "Integration und Test (Tag 7–9)",
+        "Zusammenführen, testen, Fehler beheben — überlappt bewusst mit der Umsetzung."
+      ],
+      [
+        "Review und Retrospektive (Tag 10)",
+        "Ergebnis zeigen, Feedback aufnehmen, Prozess verbessern. <em>Meilenstein: Increment abgenommen.</em>"
+      ]
+    ],
+    callout: "Planen Sie die letzten zwei Tage nicht voll. Jeder Sprint bringt Unvorhergesehenes, und ein Sprint ohne Reserve endet regelmäßig mit unfertigen Aufgaben, die in den nächsten geschoben werden — was die Planbarkeit beider Sprints zerstört.",
+    customize: [
+      "Sprintlänge ändern — bei einwöchigen Sprints Phasen entsprechend kürzen.",
+      "Je Entwicklerin eine Zeile führen, wenn Sie die Auslastung prüfen wollen.",
+      "Abhängigkeiten zwischen Backlog-Einträgen verknüpfen; genau dafür lohnt sich das Gantt-Format hier.",
+      "Wiederkehrende Termine (Daily, Refinement) als Serie eintragen."
+    ],
+    tips: [
+      "<strong>Das Sprintziel ist wichtiger als die Aufgabenliste.</strong> Es entscheidet, was wegfallen darf.",
+      "<strong>Testen läuft parallel</strong>, nicht am Ende. Sonst ist der letzte Tag immer zu kurz.",
+      "<strong>Reserve einplanen.</strong> 15 bis 20 Prozent der Kapazität bleiben frei.",
+      "<strong>Für den Sprint selbst bleibt das Board das Arbeitsmittel</strong> — dieser Plan ist für Abhängigkeiten und Absprachen."
+    ],
+    faq: [
+      [
+        "Passt ein Gantt-Diagramm zu Scrum?",
+        "Für den Sprint selbst ist das Board besser. Das Gantt-Format hilft bei Abhängigkeiten, Releaseplanung und der Abstimmung mit Nicht-Scrum-Beteiligten."
+      ],
+      [
+        "Wie lang sollte ein Sprint sein?",
+        "Ein bis vier Wochen, üblich sind zwei. Kürzer erhöht den Zeremonienanteil, länger verzögert Feedback."
+      ],
+      [
+        "Was tun mit unfertigen Aufgaben?",
+        "Zurück ins Backlog und neu priorisieren, nicht automatisch in den nächsten Sprint schieben."
+      ]
+    ],
+    related: [
+      ["agile", "Agiles Projekt"],
+      ["software-development", "Softwareentwicklung"],
+      ["product-roadmap", "Produkt-Roadmap"]
+    ]
+  },
+
+  'wind-farm-construction-schedule': {
+    card: "Genehmigung, Fundamente, Türme, Netzanschluss und Inbetriebnahme.",
+    h1: "Bauzeitenplan für einen Windpark",
+    metaTitle: "Bauzeitenplan Windpark — Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Windparks: Standortentwicklung, Genehmigung, Fundamente, Errichtung, Netzanschluss.",
+    lead: "Ein <strong>Bauzeitenplan für einen Windpark</strong> wird von drei Dingen bestimmt, die außerhalb der Baustelle liegen: der Genehmigung, dem Netzanschluss und der Verfügbarkeit von Schwerlastkränen.",
+    intro: "Sechs Phasen von der Fläche bis zur ersten Kilowattstunde:",
+    phases: [
+      [
+        "Standortentwicklung",
+        "Flächensicherung, Windmessung, Ertragsgutachten, Netzanfrage. <em>Meilenstein: Netzanschlusszusage.</em>"
+      ],
+      [
+        "Genehmigung",
+        "BImSchG-Verfahren, Umweltverträglichkeit, Artenschutz, Schall- und Schattengutachten — der längste Abschnitt."
+      ],
+      [
+        "Beschaffung und Finanzierung",
+        "Anlagenbestellung, Kranlogistik, EPC-Vergabe. <em>Meilenstein: Financial Close.</em>"
+      ],
+      [
+        "Infrastruktur",
+        "Zuwegung, Kranstellflächen, Kabeltrassen, Umspannwerk — muss vor der Anlieferung stehen."
+      ],
+      [
+        "Errichtung",
+        "Fundamente, Aushärtung, Turmsegmente, Gondel, Rotorblätter. <em>Windabhängig und kranlimitiert.</em>"
+      ],
+      [
+        "Inbetriebnahme",
+        "Elektrische Anbindung, Prüfungen, Probebetrieb, Übergabe. <em>Meilenstein: erste Einspeisung.</em>"
+      ]
+    ],
+    callout: "Die Montage ist windabhängig, nicht nur wetterabhängig. Ab etwa 8 bis 12 m/s in Nabenhöhe steht der Kran still — auf einem Standort, der ausgesucht wurde, weil dort viel Wind weht. Rechnen Sie Stillstandstage ein, statt sie als Verzug zu behandeln.",
+    customize: [
+      "Je Anlage eine Zeile ergänzen — die Errichtung läuft nacheinander, weil der Kran wandert.",
+      "Fundamentaushärtung als eigenen Vorgang führen (28 Tage), nicht als Verzögerung verstecken.",
+      "Artenschutzfenster als nicht-verfügbare Zeiträume im Kalender hinterlegen.",
+      "Krantermine als feste Termine setzen — sie sind Monate im Voraus gebucht und schwer zu verschieben."
+    ],
+    tips: [
+      "<strong>Der Kran bestimmt die Reihenfolge.</strong> Planen Sie die Anlagen in seiner Fahrtroute.",
+      "<strong>Die Zuwegung wird unterschätzt.</strong> Schwertransporte brauchen Kurvenradien und Tragfähigkeit.",
+      "<strong>Genehmigung und Netz laufen parallel</strong>, aber nur eines bestimmt am Ende den Termin.",
+      "<strong>Winter ist nicht automatisch verloren</strong> — Fundamente ja, Montage bei Frost oft nein."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Windparks?",
+        "Die Bauzeit liegt bei sechs bis zwölf Monaten. Von der Standortsicherung bis zur Einspeisung vergehen meist drei bis sieben Jahre."
+      ],
+      [
+        "Was liegt auf dem kritischen Pfad?",
+        "Fast immer die Genehmigung, danach der Netzanschluss. Die Errichtung selbst ist der kürzeste Abschnitt."
+      ],
+      [
+        "Warum steht die Montage bei Wind still?",
+        "Rotorblätter und Gondeln können ab etwa 8 bis 12 m/s nicht sicher gehoben werden. Das ist ein normaler Planungsfaktor, kein Zwischenfall."
+      ]
+    ],
+    related: [
+      ["solar-farm-construction-schedule", "Solarpark"],
+      ["construction", "Bauzeitenplan"],
+      ["ev-charging-installation-schedule", "Ladeinfrastruktur"]
+    ]
+  },
+
+  'ev-charging-installation-schedule': {
+    card: "Standort, Netzanschluss, Tiefbau, Montage und Eichrechtskonformität.",
+    h1: "Projektplan für Ladeinfrastruktur",
+    metaTitle: "Ladeinfrastruktur — Projektplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Ladeinfrastruktur: Standortprüfung, Netzanschluss, Tiefbau, Montage, Eichrecht und Abnahme.",
+    lead: "Ein <strong>Projektplan für Ladeinfrastruktur</strong> scheitert selten an der Technik. Er scheitert am Netzanschluss und am Eichrecht — zwei Vorgänge, die früh beginnen müssen und über die der Errichter nicht allein entscheidet.",
+    intro: "Sechs Phasen von der Standortprüfung bis zur Freigabe:",
+    phases: [
+      [
+        "Standort und Konzept",
+        "Verkehrsfluss, Stellplätze, Leistungsbedarf, Ladepunktzahl und Betreibermodell."
+      ],
+      [
+        "Netzanschluss",
+        "Anfrage beim Netzbetreiber, Leistungszusage, gegebenenfalls Trafostation. <em>Der längste Vorlauf.</em>"
+      ],
+      [
+        "Genehmigung und Förderung",
+        "Baugenehmigung, Stellplatzsatzung, Förderantrag und Bewilligung."
+      ],
+      [
+        "Tiefbau",
+        "Kabelgräben, Fundamente, Leerrohre, Stellplatzmarkierung und Beschilderung."
+      ],
+      [
+        "Montage und Anschluss",
+        "Ladesäulen setzen, elektrisch anschließen, Lastmanagement und Backend anbinden."
+      ],
+      [
+        "Abnahme und Inbetriebnahme",
+        "Elektroprüfung, Eichrechtskonformität, Roaming-Anbindung, Testladung. <em>Meilenstein: freigegeben.</em>"
+      ]
+    ],
+    callout: "Der Netzanschluss gehört an den Anfang, nicht in die Bauphase. Zwischen Anfrage und Leistungszusage liegen je nach Netzbetreiber und Leistung drei bis achtzehn Monate — länger als der gesamte Rest des Projekts.",
+    customize: [
+      "Je Standort eine Zeilengruppe, wenn Sie mehrere parallel errichten.",
+      "Förderfristen als feste Termine eintragen — sie verfallen und verschieben sich nicht.",
+      "Eichrechtskonforme Abnahme als eigenen Vorgang führen; ohne sie darf nicht abgerechnet werden.",
+      "Tiefbau in Frostperioden mit Puffer versehen."
+    ],
+    tips: [
+      "<strong>Netzanschluss zuerst anfragen</strong>, noch bevor der Standort final ist.",
+      "<strong>Leistung realistisch dimensionieren.</strong> Überdimensionierung verteuert den Anschluss erheblich.",
+      "<strong>Backend und Roaming brauchen Vorlauf</strong>, nicht erst am Tag der Inbetriebnahme.",
+      "<strong>Fördermittel binden Termine.</strong> Lesen Sie die Fristen, bevor Sie den Plan bauen."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Errichtung von Ladeinfrastruktur?",
+        "Der Bau selbst dauert Wochen. Mit Netzanschluss und Genehmigung liegen realistisch sechs bis achtzehn Monate dazwischen."
+      ],
+      [
+        "Was ist der häufigste Grund für Verzug?",
+        "Der Netzanschluss. Er wird zu spät angefragt und hat den längsten und am wenigsten beeinflussbaren Vorlauf."
+      ],
+      [
+        "Was bedeutet eichrechtskonform?",
+        "Die Ladepunkte müssen die geladene Energie rechtssicher messen, damit nach kWh abgerechnet werden darf. Ohne diese Abnahme ist kein Verkauf zulässig."
+      ]
+    ],
+    related: [
+      ["solar-farm-construction-schedule", "Solarpark"],
+      ["construction", "Bauzeitenplan"],
+      ["office-relocation-project-plan", "Büroumzug"]
+    ]
+  },
+
+  'mining-project-schedule': {
+    card: "Exploration, Machbarkeit, Genehmigung, Erschließung und Produktionsstart.",
+    h1: "Projektplan für ein Bergbauvorhaben",
+    metaTitle: "Bergbauprojekt — Gantt-Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Bergbauprojekte: Exploration, Machbarkeitsstudien, Genehmigung, Erschließung, Produktionsstart.",
+    lead: "Ein <strong>Bergbauprojekt</strong> läuft über Jahrzehnte und wird in Studienstufen geplant. Jede Stufe schärft die Schätzung und entscheidet, ob überhaupt weitergegangen wird — der Plan ist deshalb eine Kette von Entscheidungspunkten, nicht eine durchgehende Bauabfolge.",
+    intro: "Sechs Stufen von der ersten Bohrung bis zur Produktion:",
+    phases: [
+      [
+        "Exploration",
+        "Geophysik, Bohrprogramm, Ressourcenmodell. <em>Meilenstein: Ressource klassifiziert.</em>"
+      ],
+      [
+        "Scoping- und Vorstudie",
+        "Erste Wirtschaftlichkeitsbetrachtung, Abbauverfahren, grobe Investitionsschätzung."
+      ],
+      [
+        "Machbarkeitsstudie",
+        "Detaillierte Planung, Reserven, Kostenschätzung mit enger Bandbreite. <em>Meilenstein: Investitionsentscheidung.</em>"
+      ],
+      [
+        "Genehmigung und Beteiligung",
+        "Umweltprüfung, Wasserrecht, Abbaugenehmigung, Vereinbarungen mit Anrainern und Behörden."
+      ],
+      [
+        "Erschließung",
+        "Zuwegung, Energie- und Wasserversorgung, Aufbereitungsanlage, Absetzbecken, Unterkünfte."
+      ],
+      [
+        "Anfahren und Produktion",
+        "Vorabraum, Testbetrieb, Hochlauf zur Nennleistung. <em>Meilenstein: kommerzielle Produktion.</em>"
+      ]
+    ],
+    callout: "Genehmigung und gesellschaftliche Akzeptanz sind kein Nebenstrang. Sie sind bei den meisten gescheiterten Bergbauprojekten die eigentliche Ursache — nicht Geologie und nicht Technik. Planen Sie sie mit derselben Ernsthaftigkeit wie die Aufbereitungsanlage.",
+    customize: [
+      "Auf Jahre statt Monate umstellen — ein Bergbauprojekt läuft über ein Jahrzehnt.",
+      "Studienstufen als Meilensteine mit Abbruchentscheidung führen (Stage Gates).",
+      "Lange Lieferzeiten für Mühlen und Brecher als eigene Vorgänge sichtbar machen.",
+      "Genehmigungs- und Beteiligungsstränge parallel zur Technik führen, nicht danach."
+    ],
+    tips: [
+      "<strong>Jede Studienstufe darf das Projekt beenden.</strong> Ein Plan ohne Abbruchpunkte ist keine Planung.",
+      "<strong>Die Kostenbandbreite gehört zur Stufe.</strong> Scoping ±35 %, Machbarkeit ±15 %.",
+      "<strong>Wasser ist oft der Engpass</strong>, nicht das Erz.",
+      "<strong>Der Hochlauf dauert länger als geplant.</strong> Zwölf bis vierundzwanzig Monate zur Nennleistung sind üblich."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Bergbauprojekt bis zur Produktion?",
+        "Von der Entdeckung bis zur Produktion vergehen typischerweise zehn bis zwanzig Jahre, je nach Rohstoff und Rechtsraum."
+      ],
+      [
+        "Was sind Stage Gates?",
+        "Entscheidungspunkte zwischen den Studienstufen, an denen über Fortsetzung, Anpassung oder Abbruch entschieden wird."
+      ],
+      [
+        "Was verzögert Bergbauprojekte am häufigsten?",
+        "Genehmigungsverfahren und Widerstand vor Ort, gefolgt von Finanzierung. Technische Gründe stehen weiter hinten."
+      ]
+    ],
+    related: [
+      ["refinery-turnaround-schedule", "Raffinerie-Turnaround"],
+      ["construction", "Bauzeitenplan"],
+      ["shipbuilding-project-schedule", "Schiffbau"]
+    ]
+  },
+
+  'shipbuilding-project-schedule': {
+    card: "Entwurf, Sektionsbau, Ausrüstung, Probefahrt und Ablieferung.",
+    h1: "Projektplan für den Schiffbau",
+    metaTitle: "Schiffbau — Projektplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für den Schiffbau: Entwurf, Stahlbau, Sektionen, Ausrüstung, Probefahrt und Ablieferung.",
+    lead: "Ein <strong>Schiffbauprojekt</strong> plant nicht Räume, sondern Sektionen. Das Schiff entsteht in Blöcken, die parallel gebaut und dann zusammengefügt werden — die Reihenfolge dieser Blöcke ist der eigentliche Terminplan.",
+    intro: "Sechs Phasen vom Vertrag bis zur Übergabe:",
+    phases: [
+      [
+        "Vertrag und Basisentwurf",
+        "Spezifikation, Klassifikation, Generalplan, Hauptabmessungen. <em>Meilenstein: Design Freeze.</em>"
+      ],
+      [
+        "Detailkonstruktion und Beschaffung",
+        "Fertigungsunterlagen, Materialbestellung, Hauptmaschine und Großkomponenten mit langem Vorlauf."
+      ],
+      [
+        "Sektionsbau",
+        "Zuschnitt, Paneele, Sektionen, Vorausrüstung — je früher ausgerüstet, desto günstiger."
+      ],
+      [
+        "Zusammenbau",
+        "Sektionen fügen, Kiellegung, Aufschwimmen oder Stapellauf. <em>Meilenstein: Schiff schwimmt.</em>"
+      ],
+      [
+        "Ausrüstung und Inbetriebnahme",
+        "Systeme anschließen, Innenausbau, Prüfungen im Dock."
+      ],
+      [
+        "Probefahrt und Ablieferung",
+        "Seeerprobung, Mängelabarbeitung, Klasseabnahme. <em>Meilenstein: Übergabe an den Reeder.</em>"
+      ]
+    ],
+    callout: "Ausrüstung in der Sektion ist um ein Vielfaches günstiger als Ausrüstung im fertigen Schiff. Was erst nach dem Zusammenbau eingebaut wird, muss durch enge Zugänge, in beengter Lage und über Kopf montiert werden — die Vorausrüstungsquote ist die wichtigste Stellschraube im ganzen Plan.",
+    customize: [
+      "Je Sektion eine Zeile — sie sind die eigentlichen Planungseinheiten.",
+      "Lieferzeiten für Hauptmaschine, Propeller und Getriebe als eigene Vorgänge führen; sie liegen bei ein bis zwei Jahren.",
+      "Klassifikationsgesellschaft und Abnahmen als feste Termine setzen.",
+      "Dock- und Kaibelegung als Ressource prüfen, wenn mehrere Neubauten laufen."
+    ],
+    tips: [
+      "<strong>Design Freeze ist der wichtigste Meilenstein.</strong> Spätere Änderungen kosten ein Vielfaches.",
+      "<strong>Der Dockplatz ist die knappste Ressource.</strong> Er bestimmt die Reihenfolge, nicht der Kundenwunsch.",
+      "<strong>Planen Sie Mängelabarbeitung nach der Probefahrt ein.</strong> Sie fällt immer an.",
+      "<strong>Langläufer zuerst bestellen</strong>, oft vor Abschluss der Detailkonstruktion."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Schiffsneubau?",
+        "Je nach Typ und Größe zwölf bis fünfunddreißig Monate ab Vertrag, bei Spezialschiffen auch länger."
+      ],
+      [
+        "Was ist Vorausrüstung?",
+        "Der Einbau von Rohrleitungen, Kabeln und Ausrüstung in die Sektion, bevor sie eingebaut wird — deutlich günstiger als später."
+      ],
+      [
+        "Was liegt auf dem kritischen Pfad?",
+        "Meist die Hauptmaschine und andere Großkomponenten mit langer Lieferzeit, gefolgt von der Dockbelegung."
+      ]
+    ],
+    related: [
+      ["mining-project-schedule", "Bergbauprojekt"],
+      ["construction", "Bauzeitenplan"],
+      ["refinery-turnaround-schedule", "Raffinerie-Turnaround"]
+    ]
+  },
+
+  'apparel-production-calendar': {
+    card: "Von der Kollektionsplanung über Muster und Order bis zur Auslieferung.",
+    h1: "Produktionskalender für Mode und Bekleidung",
+    metaTitle: "Produktionskalender Mode — Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Bekleidungsproduktion: Kollektion, Muster, Order, Materialbeschaffung, Fertigung, Auslieferung.",
+    lead: "Ein <strong>Produktionskalender für Bekleidung</strong> rechnet rückwärts vom Liefertermin an den Handel. Verpasst eine Kollektion ihr Zeitfenster, wird sie nicht später verkauft — sie wird reduziert.",
+    intro: "Sechs Phasen je Saison:",
+    phases: [
+      [
+        "Kollektionsplanung",
+        "Trendrecherche, Sortimentsrahmen, Kalkulation und Farbkarte. <em>Meilenstein: Konzept freigegeben.</em>"
+      ],
+      [
+        "Design und Erstmuster",
+        "Entwürfe, Schnitte, Prototypen, Passformkorrekturen — mehrere Runden sind normal."
+      ],
+      [
+        "Salesmuster und Order",
+        "Musterkollektion, Showroom oder Messe, Ordererfassung. <em>Meilenstein: Orderschluss.</em>"
+      ],
+      [
+        "Materialbeschaffung",
+        "Stoffe, Zutaten, Labels — mit den längsten Lieferzeiten im ganzen Ablauf."
+      ],
+      [
+        "Produktion",
+        "Zuschnitt, Nähen, Finishing, Qualitätsprüfung in der Fertigung."
+      ],
+      [
+        "Versand und Auslieferung",
+        "Verschiffung, Zoll, Wareneingang, Verteilung an die Filialen. <em>Meilenstein: im Handel.</em>"
+      ]
+    ],
+    callout: "Die Stoffbeschaffung startet vor dem Orderschluss, nicht danach. Wer erst nach der Order bestellt, verliert sechs bis zehn Wochen Lieferzeit und erreicht das Zeitfenster nicht mehr. Deshalb wird ein Teil der Stoffe auf Prognose gekauft — mit dem entsprechenden Risiko.",
+    customize: [
+      "Je Kollektion eine Zeilengruppe — Frühjahr/Sommer und Herbst/Winter laufen überlappend.",
+      "Verschiffungsdauer als eigenen Vorgang führen: See vier bis sechs Wochen, Luft Tage.",
+      "Chinesisches Neujahr und Werksferien als nicht-verfügbare Zeiträume hinterlegen.",
+      "Passformrunden mit realistischer Anzahl planen — meist zwei bis drei."
+    ],
+    tips: [
+      "<strong>Rückwärts vom Liefertermin rechnen.</strong> Das Zeitfenster im Handel ist nicht verhandelbar.",
+      "<strong>Stoff ist der längste Vorlauf</strong>, nicht das Nähen.",
+      "<strong>Werksferien einplanen.</strong> Chinesisches Neujahr legt die Produktion ein bis zwei Wochen still.",
+      "<strong>Puffer vor die Verschiffung legen</strong>, nicht dahinter — der Seetermin ist fix."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Produktionszyklus in der Mode?",
+        "Von der Kollektionsplanung bis zur Auslieferung typischerweise neun bis achtzehn Monate, je nach Segment."
+      ],
+      [
+        "Warum wird Stoff vor dem Orderschluss gekauft?",
+        "Weil die Lieferzeit sonst das Zeitfenster sprengt. Ein Teil wird auf Prognose beschafft — ein bewusst eingegangenes Risiko."
+      ],
+      [
+        "Wie viele Passformrunden sind normal?",
+        "Zwei bis drei. Wer mit einer plant, plant unrealistisch."
+      ]
+    ],
+    related: [
+      ["content-calendar", "Redaktionsplan"],
+      ["product-launch", "Produkteinführung"],
+      ["annual", "Jahresplan"]
+    ]
+  },
+
+  'phd-research-gantt-chart': {
+    card: "Promotionsvorhaben über drei bis vier Jahre mit klaren Etappenzielen.",
+    h1: "Gantt-Diagramm für das Promotionsprojekt",
+    metaTitle: "Zeitplan Promotion — Gantt-Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Promotion: Exposé, Literatur, Methodik, Erhebung, Publikationen, Disputation.",
+    lead: "Ein <strong>Zeitplan für die Promotion</strong> unterscheidet sich vom Dissertationsplan darin, dass er mehr enthält als die Schrift: Lehre, Konferenzen, Publikationen und Drittmittel gehören dazu und kosten reale Monate.",
+    intro: "Sechs Stränge über drei bis vier Jahre:",
+    phases: [
+      [
+        "Jahr 1 — Fundament",
+        "Exposé, Betreuungsvereinbarung, Literaturbasis, Methodenschulung. <em>Meilenstein: Annahme.</em>"
+      ],
+      [
+        "Jahr 1–2 — Studiendesign",
+        "Forschungsdesign, Ethikvotum, Instrumente, Pretest und Feldzugang."
+      ],
+      [
+        "Jahr 2–3 — Erhebung und Auswertung",
+        "Datenerhebung, Aufbereitung, Analyse. <em>Der Abschnitt mit dem größten Risiko.</em>"
+      ],
+      [
+        "Laufend — Publikationen",
+        "Konferenzbeiträge und Fachartikel; bei kumulativer Promotion der Kern der Arbeit."
+      ],
+      [
+        "Laufend — Lehre und Selbstverwaltung",
+        "Lehrdeputat, Gremien, Betreuung von Abschlussarbeiten — planbar und zeitfressend."
+      ],
+      [
+        "Jahr 3–4 — Abschluss",
+        "Zusammenführung, Einreichung, Begutachtung, Disputation. <em>Meilenstein: Verteidigung.</em>"
+      ]
+    ],
+    callout: "Zwischen Einreichung und Disputation liegen Monate, nicht Wochen. Die Begutachtung dauert bei den meisten Fakultäten drei bis sechs Monate — ein Plan, der mit der Abgabe endet, endet ein halbes Jahr zu früh.",
+    customize: [
+      "Auf Semester umstellen; Wochen sind über vier Jahre unbrauchbar.",
+      "Bei kumulativer Promotion je Artikel eine Zeilengruppe mit Einreichung und Revision.",
+      "Lehrverpflichtung als wiederkehrenden Block eintragen, nicht als Randnotiz.",
+      "Vertragslaufzeit und Finanzierung als harte Terminlinie führen."
+    ],
+    tips: [
+      "<strong>Publizieren Sie früh.</strong> Peer Review dauert länger, als jeder Zeitplan vorsieht.",
+      "<strong>Die Erhebung ist der riskanteste Abschnitt.</strong> Halten Sie einen Alternativzugang bereit.",
+      "<strong>Lehre kostet ein Drittel Ihrer Zeit</strong>, wenn Sie sie nicht bewusst begrenzen.",
+      "<strong>Planen Sie die Begutachtungszeit ein</strong> — sie liegt außerhalb Ihrer Kontrolle."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Promotion?",
+        "Drei bis fünf Jahre, abhängig von Fach, Finanzierung und Lehrbelastung. Empirische Arbeiten liegen am oberen Ende."
+      ],
+      [
+        "Monographie oder kumulativ?",
+        "Kumulativ verteilt das Risiko auf mehrere Artikel und produziert früher Sichtbares, hängt aber stärker von Review-Zeiten ab."
+      ],
+      [
+        "Was passiert nach der Einreichung?",
+        "Begutachtung durch die Gutachter, dann Disputation. Drei bis sechs Monate sind üblich."
+      ]
+    ],
+    related: [
+      ["dissertation-gantt-chart", "Dissertation"],
+      ["research", "Forschungsprojekt"],
+      ["grant-proposal-gantt-chart", "Förderantrag"]
+    ]
+  },
+
+  'grant-proposal-gantt-chart': {
+    card: "Arbeitsplan für den Antrag — Arbeitspakete, Meilensteine, Deliverables.",
+    h1: "Gantt-Diagramm für den Förderantrag",
+    metaTitle: "Förderantrag — Arbeitsplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für Förderanträge: Arbeitspakete, Meilensteine, Deliverables und Berichtspflichten.",
+    lead: "Fast jeder <strong>Förderantrag</strong> verlangt einen Arbeitsplan als Balkendiagramm. Er ist nicht nur Formsache: Gutachter lesen an ihm ab, ob Sie das Vorhaben durchdacht haben — und nach der Bewilligung wird genau danach berichtet.",
+    intro: "Der Aufbau, den die meisten Förderlinien erwarten:",
+    phases: [
+      [
+        "AP 1 — Projektmanagement",
+        "Koordination, Berichte, Mittelabrufe. Läuft über die gesamte Laufzeit."
+      ],
+      [
+        "AP 2 — Konzeption und Vorbereitung",
+        "Literatur, Design, Ethik und Datenschutz, Rekrutierung."
+      ],
+      [
+        "AP 3 — Durchführung",
+        "Der inhaltliche Kern; meist in mehrere Teilpakete zerlegt."
+      ],
+      [
+        "AP 4 — Auswertung",
+        "Analyse, Validierung, Interpretation. <em>Meilenstein: Ergebnisse liegen vor.</em>"
+      ],
+      [
+        "AP 5 — Verwertung und Transfer",
+        "Publikationen, Öffentlichkeitsarbeit, Datenarchivierung."
+      ],
+      [
+        "Berichtspflichten",
+        "Zwischenbericht, Verwendungsnachweis, Abschlussbericht. <em>Feste Termine des Mittelgebers.</em>"
+      ]
+    ],
+    callout: "Nummerieren Sie Arbeitspakete, Meilensteine und Deliverables durchgehend und verwenden Sie dieselben Nummern im Fließtext des Antrags. Gutachter springen zwischen Text und Balkendiagramm hin und her; wenn die Bezeichnungen auseinanderlaufen, wirkt der Antrag unfertig.",
+    customize: [
+      "Arbeitspaketstruktur exakt an die Vorgaben der Förderlinie anpassen — sie unterscheiden sich deutlich.",
+      "Deliverables als Meilensteine mit Nummer und Monat (M1, M12) eintragen.",
+      "Auf Projektmonate statt Kalenderdaten umstellen; der Startzeitpunkt steht bei Antragstellung nicht fest.",
+      "Bei Verbundprojekten je Partner eine Zeile pro Arbeitspaket."
+    ],
+    tips: [
+      "<strong>In Projektmonaten planen</strong>, nicht in Datumsangaben — M1 bis M36.",
+      "<strong>Meilensteine müssen überprüfbar sein.</strong> „Fortschritt erzielt\" ist keiner.",
+      "<strong>Projektmanagement ist ein eigenes Arbeitspaket</strong> mit eigenem Aufwand.",
+      "<strong>Planen Sie die Anlaufzeit ein.</strong> Zwischen Bewilligung und besetzter Stelle vergehen Monate."
+    ],
+    faq: [
+      [
+        "Wie stellt man einen Arbeitsplan im Antrag dar?",
+        "Als Balkendiagramm über Projektmonate, mit nummerierten Arbeitspaketen, Meilensteinen und Deliverables, passend zum Fließtext."
+      ],
+      [
+        "Warum Projektmonate statt Datumsangaben?",
+        "Weil der Bewilligungszeitpunkt unbekannt ist. M1 bis M36 bleibt gültig, egal wann das Projekt startet."
+      ],
+      [
+        "Wie viele Arbeitspakete sind sinnvoll?",
+        "Vier bis sieben. Mehr wird unübersichtlich, weniger wirkt wenig durchdacht."
+      ]
+    ],
+    related: [
+      ["research", "Forschungsprojekt"],
+      ["phd-research-gantt-chart", "Promotionsprojekt"],
+      ["clinical-trial-gantt-chart", "Klinische Studie"]
+    ]
+  },
+
+  'erp-implementation-schedule': {
+    card: "Von der Analyse über Customizing und Migration bis zum Go-Live.",
+    h1: "Projektplan für die ERP-Einführung",
+    metaTitle: "ERP-Einführung — Projektplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die ERP-Einführung: Analyse, Konzeption, Customizing, Datenmigration, Test, Schulung, Go-Live.",
+    lead: "Eine <strong>ERP-Einführung</strong> ist kein IT-Projekt mit Fachbeteiligung, sondern ein Organisationsprojekt mit IT-Anteil. Der Terminplan scheitert fast immer an denselben zwei Stellen: der Datenmigration und der Verfügbarkeit der Fachbereiche.",
+    intro: "Sieben Phasen bis zum stabilen Betrieb:",
+    phases: [
+      [
+        "Analyse und Zieldefinition",
+        "Ist-Prozesse, Anforderungen, Systemauswahl. <em>Meilenstein: Systementscheidung.</em>"
+      ],
+      [
+        "Konzeption",
+        "Soll-Prozesse, Fit-Gap-Analyse, Entscheidung über Anpassungen statt Standard."
+      ],
+      [
+        "Customizing und Entwicklung",
+        "Konfiguration, Erweiterungen, Schnittstellen zu Umsystemen."
+      ],
+      [
+        "Datenmigration",
+        "Bereinigung, Mapping, Testmigrationen. <em>Mehrere Durchläufe, nicht einer.</em>"
+      ],
+      [
+        "Test",
+        "Funktionstest, Integrationstest, Abnahmetest durch die Fachbereiche."
+      ],
+      [
+        "Schulung",
+        "Key User zuerst, dann Endanwender — zeitnah zum Go-Live, nicht Monate vorher."
+      ],
+      [
+        "Go-Live und Hypercare",
+        "Umstellung, intensive Betreuung, Stabilisierung. <em>Meilenstein: Betrieb übergeben.</em>"
+      ]
+    ],
+    callout: "Rechnen Sie mit drei bis fünf Testmigrationen, nicht mit einer. Altdatenqualität ist in fast jedem Projekt schlechter als angenommen, und jeder Durchlauf deckt Fälle auf, die im Konzept nicht vorkamen. Eine einzige Migration am Go-Live-Wochenende ist der klassische Weg in einen gescheiterten Start.",
+    customize: [
+      "Je Modul oder Fachbereich eine Zeilengruppe (Finanzen, Einkauf, Produktion, Vertrieb).",
+      "Testmigrationen als wiederkehrende Vorgänge eintragen, mit Bereinigungsschleifen dazwischen.",
+      "Verfügbarkeit der Key User als Ressource prüfen — sie haben ihr Tagesgeschäft weiterhin.",
+      "Hypercare als eigene Phase führen, typischerweise vier bis acht Wochen."
+    ],
+    tips: [
+      "<strong>Standard vor Anpassung.</strong> Jede Individualentwicklung verlängert Projekt und Wartung.",
+      "<strong>Schulung kurz vor Go-Live.</strong> Zu früh geschult heißt vergessen.",
+      "<strong>Der Go-Live-Termin sollte nicht im Jahresabschluss liegen.</strong>",
+      "<strong>Key User sind der Engpass</strong>, nicht die Beratung."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine ERP-Einführung?",
+        "Im Mittelstand sechs bis achtzehn Monate, im Konzernumfeld deutlich länger. Umfang und Anpassungstiefe bestimmen die Dauer."
+      ],
+      [
+        "Was ist der häufigste Grund für Verzug?",
+        "Datenmigration und Altdatenqualität, dicht gefolgt von der fehlenden Verfügbarkeit der Fachbereiche."
+      ],
+      [
+        "Big Bang oder schrittweise?",
+        "Big Bang ist schneller und riskanter; schrittweise senkt das Risiko, erfordert aber temporäre Schnittstellen zwischen alt und neu."
+      ]
+    ],
+    related: [
+      ["software-development", "Softwareentwicklung"],
+      ["post-merger-integration-plan", "Post-Merger-Integration"],
+      ["data-center-build-schedule", "Rechenzentrum"]
+    ]
+  },
+
+  'post-merger-integration-plan': {
+    card: "Die ersten 100 Tage nach dem Closing, funktionsübergreifend geplant.",
+    h1: "Integrationsplan nach einer Übernahme",
+    metaTitle: "Post-Merger-Integration — Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Post-Merger-Integration: Day 1, erste 100 Tage, Funktionen, Systeme und Synergien.",
+    lead: "Ein <strong>Integrationsplan</strong> beginnt nicht am Tag des Closings, sondern deutlich davor. Was am Day 1 funktionieren muss — Gehälter, Zugänge, Kundenkommunikation — wird Wochen vorher vorbereitet, oft unter kartellrechtlichen Einschränkungen.",
+    intro: "Sechs Stränge von der Vorbereitung bis zur Synergierealisierung:",
+    phases: [
+      [
+        "Vorbereitung vor dem Closing",
+        "Integrationsteam, Zielbild, Day-1-Checkliste, Clean-Team-Regeln. <em>Was vor dem Closing erlaubt ist, ist begrenzt.</em>"
+      ],
+      [
+        "Day 1",
+        "Kommunikation an Mitarbeitende und Kunden, Zugänge, Gehaltsabrechnung, rechtliche Grundlagen. <em>Meilenstein: Closing.</em>"
+      ],
+      [
+        "Erste 100 Tage",
+        "Führungsstruktur, Berichtswege, Quick Wins, Bindung von Schlüsselpersonen."
+      ],
+      [
+        "Funktionale Integration",
+        "Finanzen, HR, Vertrieb, Einkauf, Produktion — je Funktion eigene Geschwindigkeit."
+      ],
+      [
+        "Systemintegration",
+        "ERP, CRM, Netzwerke, Mailsysteme. <em>Der längste und teuerste Strang.</em>"
+      ],
+      [
+        "Synergien und Abschluss",
+        "Umsetzung der Maßnahmen, Messung gegen den Business Case, Übergang in den Regelbetrieb."
+      ]
+    ],
+    callout: "Kulturelle Integration ist kein weiches Thema, das man nachschieben kann. Der häufigste Grund, warum Übernahmen ihren Business Case verfehlen, ist der Weggang von Schlüsselpersonen in den ersten sechs Monaten — planen Sie Bindung so konkret wie die Systemmigration.",
+    customize: [
+      "Je Funktion eine Zeilengruppe mit eigenem Verantwortlichen.",
+      "Day-1-Aufgaben als eigenen, stundengenauen Abschnitt führen.",
+      "Kartellrechtliche Freigaben als Vorgänger für alles einsetzen, was vor dem Closing nicht erlaubt ist.",
+      "Synergiemaßnahmen mit Zieldatum und Betrag versehen, sonst bleiben sie Absicht."
+    ],
+    tips: [
+      "<strong>Kommunizieren Sie am Day 1 zuerst intern.</strong> Mitarbeitende sollten es nicht aus der Presse erfahren.",
+      "<strong>Systemintegration dauert Jahre</strong>, nicht Monate. Planen Sie eine Zwischenlösung.",
+      "<strong>Halten Sie Schlüsselpersonen früh.</strong> Nach sechs Monaten ist es meist zu spät.",
+      "<strong>Messen Sie Synergien gegen den Business Case</strong>, nicht gegen den Plan."
+    ],
+    faq: [
+      [
+        "Wann beginnt die Integrationsplanung?",
+        "Vor dem Closing, sobald der Kauf absehbar ist — unter Beachtung der kartellrechtlichen Grenzen für den Informationsaustausch."
+      ],
+      [
+        "Warum sind die ersten 100 Tage entscheidend?",
+        "Weil Führungsstruktur, Kommunikation und Bindung in diesem Fenster festgelegt werden. Später wird es deutlich schwerer."
+      ],
+      [
+        "Was dauert am längsten?",
+        "Die Systemintegration, besonders bei ERP und CRM. Zwei bis drei Jahre sind keine Seltenheit."
+      ]
+    ],
+    related: [
+      ["erp-implementation-schedule", "ERP-Einführung"],
+      ["office-relocation-project-plan", "Büroumzug"],
+      ["project-management", "Projektmanagement"]
+    ]
+  },
+
+  'office-relocation-project-plan': {
+    card: "Flächensuche, Ausbau, IT-Infrastruktur und Umzug am Wochenende.",
+    h1: "Projektplan für den Büroumzug",
+    metaTitle: "Büroumzug — Projektplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für den Büroumzug: Flächensuche, Mietvertrag, Ausbau, IT, Umzug und Nacharbeiten.",
+    lead: "Bei einem <strong>Büroumzug</strong> bestimmt die IT den Termin, nicht das Mobiliar. Leitungen, Anschlüsse und Netzwerktechnik haben Vorlaufzeiten von Monaten, während Schreibtische in Tagen zu haben sind.",
+    intro: "Sechs Phasen von der Suche bis zum ersten Arbeitstag:",
+    phases: [
+      [
+        "Bedarf und Flächensuche",
+        "Flächenbedarf, Standortkriterien, Besichtigungen, Verhandlung. <em>Meilenstein: Mietvertrag unterschrieben.</em>"
+      ],
+      [
+        "Planung und Genehmigung",
+        "Flächenkonzept, Arbeitsplatzplanung, Brandschutz, gegebenenfalls Baugenehmigung."
+      ],
+      ["Ausbau", "Trockenbau, Elektrik, Boden, Licht, Küche und Sanitär."],
+      [
+        "IT und Kommunikation",
+        "Leitungsbestellung, Serverraum, Netzwerk, WLAN, Telefonie. <em>Der längste Vorlauf im Projekt.</em>"
+      ],
+      [
+        "Umzugsvorbereitung",
+        "Möbelbestellung, Umzugsunternehmen, Beschriftung, Mitarbeiterkommunikation."
+      ],
+      [
+        "Umzug und Nacharbeiten",
+        "Umzug am Wochenende, Aufbau, Mängelliste, Rückgabe der alten Fläche. <em>Meilenstein: erster Arbeitstag.</em>"
+      ]
+    ],
+    callout: "Bestellen Sie die Datenleitung, sobald der Mietvertrag steht. Sie ist der einzige Vorgang, den Geld nicht beschleunigt: Zwischen Bestellung und Bereitstellung liegen je nach Anschluss und Standort acht bis zwanzig Wochen, und ohne sie ist die neue Fläche nicht arbeitsfähig.",
+    customize: [
+      "Je Etage oder Abteilung eine Zeile, wenn der Umzug in Wellen läuft.",
+      "Kündigungsfrist der alten Fläche als festen Termin eintragen und rückwärts rechnen.",
+      "Umzugswochenende stundengenau planen, getrennt vom Gesamtplan.",
+      "Rückbau und Übergabe der alten Fläche mitführen — sie werden regelmäßig vergessen."
+    ],
+    tips: [
+      "<strong>IT zuerst, Möbel zuletzt.</strong> Die Reihenfolge der Vorlaufzeiten, nicht der Sichtbarkeit.",
+      "<strong>Zwei Wochen Puffer zwischen Ausbau und Umzug.</strong> Der Ausbau wird nie pünktlich fertig.",
+      "<strong>Testen Sie das Netzwerk vor dem Umzug</strong>, nicht am Montagmorgen.",
+      "<strong>Kommunizieren Sie früh und konkret.</strong> Der häufigste Ärger sind Kleinigkeiten wie Parkplätze und Anfahrt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Planung eines Büroumzugs?",
+        "Sechs bis zwölf Monate ab Mietvertrag, je nach Ausbautiefe. Die Flächensuche kommt davor."
+      ],
+      [
+        "Was liegt auf dem kritischen Pfad?",
+        "Fast immer die Datenanbindung, danach der Innenausbau."
+      ],
+      [
+        "Wann zieht man um?",
+        "An einem Wochenende oder über Feiertage, damit ein Arbeitstag Puffer für Nacharbeiten bleibt."
+      ]
+    ],
+    related: [
+      ["home-renovation", "Renovierung"],
+      ["construction", "Bauzeitenplan"],
+      ["employee-onboarding", "Einarbeitung"]
+    ]
+  },
+
+  'data-center-build-schedule': {
+    card: "Von der Standortwahl über Shell, Strom und Kühlung bis zur Übergabe.",
+    h1: "Bauzeitenplan für ein Rechenzentrum",
+    metaTitle: "Rechenzentrum — Bauzeitenplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für den Rechenzentrumsbau: Standort, Genehmigung, Rohbau, Strom, Kühlung, Commissioning.",
+    lead: "Ein <strong>Rechenzentrumsbau</strong> ist zu einem großen Teil ein Elektroprojekt in einem Gebäude. Der Termin hängt am Netzanschluss und an den Lieferzeiten für Trafos, Generatoren und USV — nicht am Beton.",
+    intro: "Sechs Phasen bis zur Übergabe an den Betrieb:",
+    phases: [
+      [
+        "Standort und Vorplanung",
+        "Fläche, Stromverfügbarkeit, Anbindung, Redundanzkonzept und Tier-Klasse. <em>Meilenstein: Netzzusage.</em>"
+      ],
+      [
+        "Genehmigung und Design",
+        "Baurecht, Emissionsschutz für Generatoren, Detailplanung Elektro und Kälte."
+      ],
+      [
+        "Beschaffung",
+        "Trafos, USV, Generatoren, Kälteanlagen — Lieferzeiten von zwölf bis vierundzwanzig Monaten sind derzeit üblich."
+      ],
+      ["Rohbau und Hülle", "Gründung, Tragwerk, Dach, Fassade, Brandabschnitte."],
+      [
+        "Technische Gebäudeausrüstung",
+        "Mittelspannung, USV, Generatoren, Kälte, Brandschutz, Sicherheitstechnik, Verkabelung."
+      ],
+      [
+        "Commissioning und Übergabe",
+        "Integrated System Testing bis Level 5, Lasttests, Notfallszenarien. <em>Meilenstein: Betriebsbereit.</em>"
+      ]
+    ],
+    callout: "Commissioning ist eine Phase, kein Abnahmetermin. Ein vollständiges Integrated System Testing über alle fünf Level — bis hin zum simulierten Netzausfall unter Last — braucht Wochen bis Monate. Wer es als letzte Woche vor der Übergabe plant, übergibt ein ungetestetes Rechenzentrum.",
+    customize: [
+      "Je Datenhalle eine Zeilengruppe, wenn der Bau in Bauabschnitten erfolgt.",
+      "Lieferzeiten der Großkomponenten als eigene Vorgänge mit Bestelldatum sichtbar machen.",
+      "Commissioning-Level 1 bis 5 als getrennte Vorgänge führen.",
+      "Netzanschluss und Ersatzstromkonzept als frühe Meilensteine setzen."
+    ],
+    tips: [
+      "<strong>Trafos und Generatoren zuerst bestellen</strong>, oft vor Baubeginn.",
+      "<strong>Kühlung bestimmt die Halle</strong>, nicht umgekehrt.",
+      "<strong>Planen Sie Commissioning mit Wochen</strong>, nicht mit Tagen.",
+      "<strong>Der Betrieb sollte früh mitplanen</strong> — er übernimmt, was gebaut wurde."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Rechenzentrums?",
+        "Achtzehn bis sechsunddreißig Monate ab Baurecht, stark abhängig von den Lieferzeiten der elektrischen Komponenten."
+      ],
+      [
+        "Was liegt auf dem kritischen Pfad?",
+        "Netzanschluss und die Beschaffung von Trafos, USV und Generatoren — derzeit die längsten Vorlaufzeiten im Markt."
+      ],
+      [
+        "Was ist Integrated System Testing?",
+        "Die stufenweise Prüfung aller Systeme im Zusammenspiel, bis hin zum simulierten Netzausfall unter Volllast."
+      ]
+    ],
+    related: [
+      ["construction", "Bauzeitenplan"],
+      ["erp-implementation-schedule", "ERP-Einführung"],
+      ["refinery-turnaround-schedule", "Raffinerie-Turnaround"]
+    ]
+  },
+
+  'restaurant-opening-timeline': {
+    card: "Konzept, Fläche, Ausbau, Konzession, Personal und Soft Opening.",
+    h1: "Zeitplan für die Restauranteröffnung",
+    metaTitle: "Restauranteröffnung — Zeitplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für die Restauranteröffnung: Konzept, Fläche, Ausbau, Konzession, Personal, Soft Opening.",
+    lead: "Bei einer <strong>Restauranteröffnung</strong> ist die Küche selten das Problem. Der Termin hängt an der Konzession, der Lüftungsanlage und dem Personal — drei Dinge, die früh beginnen müssen und nicht mit Geld zu beschleunigen sind.",
+    intro: "Sechs Phasen vom Konzept zum ersten Gast:",
+    phases: [
+      [
+        "Konzept und Finanzierung",
+        "Gastronomiekonzept, Kalkulation, Businessplan, Finanzierungszusage."
+      ],
+      [
+        "Fläche und Vertrag",
+        "Standortsuche, Nutzungsänderung prüfen, Mietvertrag. <em>Meilenstein: Vertrag unterschrieben.</em>"
+      ],
+      [
+        "Genehmigungen",
+        "Gaststättenkonzession, Hygienekonzept, Brandschutz, Außenbestuhlung, Lüftungsauflagen. <em>Längster Vorlauf.</em>"
+      ],
+      [
+        "Ausbau und Küche",
+        "Rohbau, Lüftung, Fettabscheider, Küchentechnik, Gastraum, Tresen."
+      ],
+      [
+        "Personal und Lieferanten",
+        "Küchenleitung zuerst, dann Team; Lieferanten, Getränke, Warenwirtschaft, Kassensystem."
+      ],
+      [
+        "Soft Opening und Eröffnung",
+        "Testläufe, Freundesabend, Menüfeinschliff, Presse. <em>Meilenstein: Eröffnung.</em>"
+      ]
+    ],
+    callout: "Die Lüftungsanlage ist der Vorgang, der den Termin verschiebt. Auflagen zu Abluftführung und Geruchsbelastung tauchen spät auf, betreffen die Nachbarschaft und lassen sich baulich nur mit erheblichem Aufwand ändern. Klären Sie sie, bevor der Mietvertrag unterschrieben ist.",
+    customize: [
+      "Konzessionsverfahren als Vorgänger für die Eröffnung setzen, nicht parallel dazu.",
+      "Probekochen und Menütests als eigene Vorgänge führen — sie brauchen mehrere Runden.",
+      "Personalgewinnung früh starten; Küchenpersonal ist der knappste Faktor.",
+      "Zwei bis vier Wochen Soft Opening mit reduzierter Karte einplanen."
+    ],
+    tips: [
+      "<strong>Konzession vor Ausbau klären.</strong> Eine fertige Küche ohne Erlaubnis nützt nichts.",
+      "<strong>Küchenleitung zuerst einstellen.</strong> Sie prägt Karte, Einkauf und Team.",
+      "<strong>Rechnen Sie mit Bauverzug.</strong> Setzen Sie den Eröffnungstermin nicht direkt nach der Abnahme.",
+      "<strong>Soft Opening ist Qualitätssicherung</strong>, keine Marketingaktion."
+    ],
+    faq: [
+      [
+        "Wie lange dauert es, ein Restaurant zu eröffnen?",
+        "Sechs bis achtzehn Monate ab Konzept, abhängig von Ausbauzustand der Fläche und Genehmigungslage."
+      ],
+      [
+        "Was verzögert am häufigsten?",
+        "Genehmigungen und die Lüftungstechnik, gefolgt von der Personalgewinnung."
+      ],
+      [
+        "Braucht es ein Soft Opening?",
+        "Ja. Zwei bis vier Wochen mit reduzierter Karte finden die Fehler, bevor Bewertungen sie festschreiben."
+      ]
+    ],
+    related: [
+      ["hotel-pre-opening-critical-path", "Hoteleröffnung"],
+      ["event-planning", "Eventplanung"],
+      ["home-renovation", "Renovierung"]
+    ]
+  },
+
+  'clinical-trial-gantt-chart': {
+    card: "Protokoll, Ethik, Zentren, Rekrutierung, Auswertung und Bericht.",
+    h1: "Gantt-Diagramm für eine klinische Studie",
+    metaTitle: "Klinische Studie — Zeitplan Vorlage",
+    metaDesc: "Kostenlose Gantt-Vorlage für klinische Studien: Protokoll, Ethikvotum, Zentrumsinitiierung, Rekrutierung, Auswertung, Bericht.",
+    lead: "Der Zeitplan einer <strong>klinischen Studie</strong> steht und fällt mit der Rekrutierung. Alle anderen Phasen sind planbar; die Frage, wie schnell Patientinnen und Patienten eingeschlossen werden, ist es nicht — und sie bestimmt die Gesamtdauer.",
+    intro: "Sechs Phasen von der Konzeption bis zum Studienbericht:",
+    phases: [
+      [
+        "Konzeption und Protokoll",
+        "Fragestellung, Design, Fallzahlplanung, Prüfplan und Prüferinformation."
+      ],
+      [
+        "Regulatorik und Ethik",
+        "Ethikkommission, Behördenanzeige, Versicherung, Verträge. <em>Meilenstein: Genehmigung.</em>"
+      ],
+      [
+        "Zentrumsinitiierung",
+        "Auswahl, Verträge, Schulung, Initiierungsbesuche, Systemfreigabe. <em>Meilenstein: erstes Zentrum aktiv.</em>"
+      ],
+      [
+        "Rekrutierung und Durchführung",
+        "Einschluss, Behandlung, Nachbeobachtung, Monitoring. <em>Der längste und unsicherste Abschnitt.</em>"
+      ],
+      [
+        "Datenmanagement und Auswertung",
+        "Datenbankschluss, Bereinigung, Entblindung, statistische Analyse."
+      ],
+      [
+        "Bericht und Publikation",
+        "Studienbericht, Behördenmeldung, Registereintrag, Veröffentlichung."
+      ]
+    ],
+    callout: "Planen Sie mit der halben erwarteten Rekrutierungsgeschwindigkeit. Die Erfahrung fast aller Studienzentren ist, dass der tatsächliche Einschluss deutlich hinter der Prognose zurückbleibt — eine Verzögerung hier verschiebt jede nachfolgende Phase eins zu eins.",
+    customize: [
+      "Je Zentrum eine Zeile für Initiierung und Rekrutierung; sie starten gestaffelt.",
+      "Ethikvotum als harten Vorgänger für jede Aktivität am Patienten setzen.",
+      "Zwischenanalysen und Sicherheitsgremien als feste Termine eintragen.",
+      "Nachbeobachtungszeit je Teilnehmer korrekt abbilden — sie läuft nach dem letzten Einschluss weiter."
+    ],
+    tips: [
+      "<strong>Rekrutierung ist der kritische Pfad.</strong> Alles andere ist berechenbar.",
+      "<strong>Mehr Zentren früher</strong> schlägt Nachsteuern, wenn es schon klemmt.",
+      "<strong>Datenbankschluss braucht Vorlauf.</strong> Query-Bereinigung dauert Wochen.",
+      "<strong>Zwischen letztem Patienten und Bericht liegen Monate</strong>, nicht Tage."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine klinische Studie?",
+        "Je nach Phase und Indikation ein bis fünf Jahre. Die Rekrutierungsdauer ist der größte Einzelfaktor."
+      ],
+      [
+        "Was verzögert klinische Studien am häufigsten?",
+        "Die Rekrutierung, mit Abstand. Danach regulatorische Verfahren und Vertragsverhandlungen mit den Zentren."
+      ],
+      [
+        "Was bedeutet Last Patient Last Visit?",
+        "Der Zeitpunkt, an dem die letzte planmäßige Untersuchung stattfindet. Erst danach beginnen Datenbankschluss und Auswertung."
+      ]
+    ],
+    related: [
+      ["research", "Forschungsprojekt"],
+      ["grant-proposal-gantt-chart", "Förderantrag"],
+      ["phd-research-gantt-chart", "Promotionsprojekt"]
+    ]
+  },
+
+  'google-sheets': {
+    card: "Gantt-Diagramm in Google Sheets — importieren und gemeinsam bearbeiten.",
+    h1: "Gantt-Diagramm-Vorlage für Google Sheets",
+    metaTitle: "Gantt-Vorlage für Google Sheets",
+    metaDesc: "Kostenlose Gantt-Vorlage für Google Sheets: als XLSX oder CSV herunterladen, importieren und im Team bearbeiten.",
+    lead: "Eine <strong>Gantt-Vorlage für Google Sheets</strong> ist die richtige Wahl, wenn mehrere Personen gleichzeitig am Plan arbeiten sollen. Laden Sie die Datei als XLSX oder CSV herunter und importieren Sie sie über <em>Datei → Importieren</em>.",
+    intro: "Die Vorlage enthält vier Phasen mit Aufgaben und Meilensteinen:",
+    phases: [
+      [
+        "Aufgabentabelle",
+        "Vorgang, Start, Dauer und Verantwortlichkeit — die Spalten, aus denen sich alles Weitere ergibt."
+      ],
+      ["Zeitachse", "Balken je Vorgang über die Wochen des Projekts."],
+      [
+        "Phasen",
+        "Vier Gruppen, die die Aufgaben zusammenfassen und den Plan lesbar halten."
+      ],
+      ["Meilensteine", "Feste Punkte für Freigaben und Übergaben."]
+    ],
+    callout: "Google Sheets rechnet keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand nachziehen — bei zwanzig Zeilen machbar, darüber nicht mehr. Wenn der Plan selbst rechnen soll, öffnen Sie ihn stattdessen direkt im Editor.",
+    customize: [
+      "Nach dem Import <em>Datei → Importieren → Hochladen</em> wählen und „Tabelle ersetzen\" bestätigen.",
+      "Spaltenbreite der Zeitachse anpassen, wenn Ihr Projekt länger als die Vorlage läuft.",
+      "Bedingte Formatierung für den heutigen Tag ergänzen, um den Fortschritt sichtbar zu machen.",
+      "Freigabe auf „Kommentieren\" setzen für Beteiligte, die nur mitlesen sollen."
+    ],
+    tips: [
+      "<strong>Für gemeinsames Arbeiten ist Sheets stark</strong>, für Abhängigkeiten schwach.",
+      "<strong>Die native Zeitachsen-Ansicht ist kein Gantt-Diagramm</strong> — sie kennt keine Verknüpfungen.",
+      "<strong>Sperren Sie die Formelspalten</strong>, wenn viele Personen Zugriff haben.",
+      "<strong>Ab etwa zwanzig Vorgängen</strong> lohnt der Wechsel zu einem Werkzeug, das rechnet."
+    ],
+    faq: [
+      [
+        "Wie importiere ich die Vorlage in Google Sheets?",
+        "Datei herunterladen, dann in Sheets Datei → Importieren → Hochladen wählen und „Tabelle ersetzen\" bestätigen."
+      ],
+      [
+        "Kann Google Sheets Abhängigkeiten abbilden?",
+        "Nicht automatisch. Verschiebungen müssen für jeden Nachfolger von Hand nachgetragen werden."
+      ],
+      [
+        "Ist die Vorlage kostenlos?",
+        "Ja, ohne Anmeldung und ohne Wasserzeichen — als XLSX, CSV oder PowerPoint."
+      ]
+    ],
+    related: [
+      ["excel", "Excel-Vorlage"],
+      ["powerpoint", "PowerPoint-Vorlage"],
+      ["simple", "Einfache Vorlage"]
+    ]
+  },
+
+  'printable-gantt-chart': {
+    card: "Für den Ausdruck gebaut: eine Seite, lesbare Schrift, sauberer Rand.",
+    h1: "Gantt-Diagramm zum Ausdrucken",
+    metaTitle: "Gantt-Diagramm zum Ausdrucken — Vorlage",
+    metaDesc: "Kostenlose druckbare Gantt-Vorlage: passt auf eine Seite, lesbar in Schwarzweiß, als PDF, Excel oder PowerPoint.",
+    lead: "Ein <strong>Gantt-Diagramm zum Ausdrucken</strong> hat andere Anforderungen als eines für den Bildschirm: Es muss auf eine Seite passen, in Schwarzweiß lesbar bleiben und ohne Tooltips auskommen — alles Wichtige steht auf dem Papier.",
+    intro: "Die Vorlage ist auf diese vier Punkte hin gebaut:",
+    phases: [
+      [
+        "Eine Seite",
+        "Rund zwanzig Zeilen und ein Quartal Zeitachse — die Grenze, an der A4 quer noch lesbar bleibt."
+      ],
+      [
+        "Kontrast statt Farbe",
+        "Phasen unterscheiden sich durch Helligkeit und Muster, nicht nur durch Farbton."
+      ],
+      [
+        "Beschriftete Balken",
+        "Vorgangsnamen und Termine stehen am Balken, nicht in einer Legende."
+      ],
+      [
+        "Druckränder",
+        "Seitenränder und Kopfzeile so gesetzt, dass nichts abgeschnitten wird."
+      ]
+    ],
+    callout: "Prüfen Sie die Lesbarkeit in Graustufen, bevor Sie hundert Exemplare drucken. Auf dem Bildschirm gut unterscheidbare Farben werden im Schwarzweißdruck regelmäßig zu drei fast identischen Grautönen — der häufigste Fehler bei Plänen, die an die Wand sollen.",
+    customize: [
+      "Auf A3 wechseln, wenn Sie mehr als etwa 25 Zeilen brauchen.",
+      "Als PDF exportieren statt aus der Tabelle zu drucken — der Seitenumbruch bleibt so kontrolliert.",
+      "Nicht benötigte Spalten vor dem Druck ausblenden; jede gesparte Spalte gibt Zeitachse frei.",
+      "Datum der Fassung in die Kopfzeile setzen, damit an der Wand kein veralteter Plan hängt."
+    ],
+    tips: [
+      "<strong>Querformat</strong> — eine Zeitachse braucht Breite.",
+      "<strong>Mindestens 9 pt Schrift.</strong> Was am Monitor klein wirkt, ist gedruckt unleserlich.",
+      "<strong>Ein Quartal je Seite.</strong> Ein ganzes Jahr auf A4 liest niemand.",
+      "<strong>Setzen Sie das Fassungsdatum sichtbar</strong>, sonst hängt der Plan von letztem Monat."
+    ],
+    faq: [
+      [
+        "Wie drucke ich ein Gantt-Diagramm auf eine Seite?",
+        "Querformat wählen, auf etwa zwanzig Zeilen und ein Quartal begrenzen und als PDF exportieren statt direkt aus der Tabelle zu drucken."
+      ],
+      [
+        "Welches Papierformat eignet sich?",
+        "A4 quer für bis zu etwa zwanzig Zeilen, A3 für größere Pläne oder zum Aushang."
+      ],
+      [
+        "Ist die Vorlage in Schwarzweiß lesbar?",
+        "Ja, die Phasen unterscheiden sich durch Helligkeit und Muster, nicht allein durch Farbe."
+      ]
+    ],
+    related: [
+      ["one-page-gantt-chart", "Einseitiger Plan"],
+      ["simple", "Einfache Vorlage"],
+      ["powerpoint", "PowerPoint-Vorlage"]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish
