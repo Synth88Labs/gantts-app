@@ -247,6 +247,17 @@ const G = {
         `<p>Cuatro o cinco fases, veinte tareas, un responsable por línea. El error más común aquí es el contrario al de las grandes obras: demasiado poco detalle, hasta el punto de que una barra de «poner en marcha la tienda» no dice nada útil.</p>`],
       ['8. Plan semanal sencillo',
         `<p>Una rejilla de cinco días con las tareas de la semana. No necesita dependencias ni ruta crítica: es una herramienta de foco, no de planificación. Es el formato que mejor funciona pegado en una pared.</p>`],
+      ['Cuatro ejemplos rápidos más',
+        `<p><strong>Reforma de vivienda.</strong> Demoler, instalar, cerrar, alicatar, pintar y montar. El orden de los gremios es lo único que importa: alterarlo obliga a rehacer trabajo.</p>
+        <p><strong>Incorporación de un empleado.</strong> Preincorporación, primer día, primera semana y revisiones a 30, 60 y 90 días. Lo que decide la experiencia es la fase previa, no la bienvenida.</p>
+        <p><strong>Implantación de un ERP.</strong> Análisis, diseño, configuración, migración de datos, pruebas y arranque. Los datos y las pruebas necesitan carril propio: son los que retrasan el arranque.</p>
+        <p><strong>Traslado de oficina.</strong> Búsqueda, contrato, obra, telecomunicaciones y mudanza. El plazo largo casi nunca es la obra: son los circuitos de datos.</p>`],
+      ['Qué tienen en común los buenos diagramas',
+        `<p><strong>Empiezan por fases, no por tareas.</strong> Todos los ejemplos anteriores agrupan en cinco o seis bloques. Un listado plano de cuarenta filas es ilegible en cualquier sector.</p>
+        <p><strong>Tienen dependencias, no solo fechas.</strong> Es lo que convierte el dibujo en un modelo: mueves una tarea y las siguientes se recolocan solas.</p>
+        <p><strong>Marcan pocos hitos y bien elegidos.</strong> Entre cinco y diez para un proyecto de varios meses. Uno por semana no señala nada.</p>
+        <p><strong>Dejan holgura donde la estimación es débil</strong>, en lugar de repartirla por igual o no dejarla en absoluto.</p>
+        <p><strong>Caben en una pantalla</strong> al nivel de fase, y se despliegan solo cuando hace falta mirar el detalle.</p>`],
     ],
     callout: 'Fíjate en lo que tienen en común: todos empiezan por fases, no por tareas sueltas. Un diagrama que arranca con cuarenta filas al mismo nivel es ilegible independientemente del sector. Agrupa primero en cinco o seis fases y despliega solo lo que necesites mirar.',
     faq: [
@@ -405,11 +416,16 @@ const G = {
         <p><strong>Canva</strong> — capa gratuita de diseño con registro. Exporta a PNG y PDF, pero el resultado es estático: no hay ruta crítica porque no hay motor de planificación.</p>
         <p><strong>Microsoft Project</strong> — de pago, sin plan gratuito. Exportación y ruta crítica completas.</p>`],
       ['Herramientas gratuitas que no piden registro',
-        `<p>Es una categoría corta. La mayoría de las opciones web exigen cuenta antes de dejarte exportar, que es justo el momento en el que necesitas el archivo. Las que no la piden son las herramientas de escritorio de código abierto y unas pocas aplicaciones web que funcionan íntegramente en el navegador.</p>
-        <p>Si el requisito es «hoy, sin dar mi correo, y con el archivo en la mano», ese es el filtro que más reduce la lista.</p>`],
+        `<p>Es una categoría corta, y conviene entender por qué. Pedir una cuenta no es un capricho: es el modelo de negocio. Un correo electrónico es un contacto comercial, y el momento en que más se necesita el archivo —justo al terminar el plan— es también el momento de máxima disposición a entregarlo.</p>
+        <p>Por eso el muro casi nunca está al empezar, sino al exportar. Puedes construir el proyecto entero y descubrir al final que descargar el PDF exige una suscripción, o que la versión gratuita añade una marca de agua.</p>
+        <p>Las que no piden registro se reducen a dos grupos. Las <strong>aplicaciones de escritorio de código abierto</strong>, como GanttProject, que descargas y ejecutas sin cuenta. Y unas pocas <strong>aplicaciones web que funcionan íntegramente en el navegador</strong>, sin servidor donde guardar nada — si el plan no sale de tu equipo, no hay nada que asociar a un usuario.</p>
+        <p>Si tu requisito es «hoy, sin dar mi correo y con el archivo en la mano», ese es el filtro que más reduce la lista, y también el más rápido de comprobar: intenta exportar en los primeros cinco minutos.</p>`],
       ['Cómo elegir',
-        `<p>Responde tres preguntas y la elección se resuelve sola. ¿Necesitas <em>dependencias y ruta crítica</em>, o solo un dibujo? ¿Necesitas <em>exportar</em> a un formato concreto para un cliente o un comité? ¿Vas a <em>colaborar en tiempo real</em>, o el plan lo mantiene una persona?</p>
-        <p>La colaboración en vivo es lo único de esta lista que obliga de verdad a un servicio de pago, porque requiere servidores y cuentas. Todo lo demás —dependencias, ruta crítica, línea base, exportación— existe gratis si sabes dónde mirar.</p>`],
+        `<p>Responde tres preguntas y la elección se resuelve casi sola.</p>
+        <p><strong>¿Necesitas dependencias y ruta crítica, o solo un dibujo?</strong> Si el plan tiene menos de quince tareas y no va a cambiar, cualquier herramienta de diseño sirve. En cuanto haya tareas enlazadas, necesitas un motor que recalcule; sin él, cada cambio es trabajo manual.</p>
+        <p><strong>¿Tienes que exportar a un formato concreto?</strong> Un comité pide PDF, un cliente pide PowerPoint, una oficina técnica pide Excel o MS Project. Comprueba que ese formato concreto esté en el plan gratuito, no solo «exportación» en abstracto.</p>
+        <p><strong>¿Vais a colaborar en tiempo real?</strong> Esta es la única de las tres que obliga de verdad a un servicio de pago, porque requiere servidores, cuentas y permisos. Todo lo demás —dependencias, ruta crítica, línea base, exportación completa— existe gratis si sabes dónde mirar.</p>
+        <p>Y una cuarta pregunta que casi nadie hace: <strong>¿qué pasa con tus datos?</strong> Una herramienta que guarda el plan en su servidor tiene una política de privacidad que conviene leer; una que lo guarda en tu navegador no tiene nada que leer.</p>`],
     ],
     callout: 'Antes de invertir horas en una herramienta, comprueba dónde está el muro. Suele estar en la exportación: puedes construir el plan entero y descubrir al final que descargar el PDF exige una suscripción. Prueba a exportar en los primeros cinco minutos, no en los últimos.',
     faq: [
