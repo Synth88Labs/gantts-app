@@ -121,14 +121,12 @@ for (const l of LOCALES) {
 const ACCEPTED_HOMEPAGE_DIVERGENCE = new Set([
   // hero illustration internals — bespoke to the English page
   'hero3-ruler', 'on-today', 'bento-visual',
-  // the designed how-it-works flow; localized uses a plain ordered list
-  'flow', 'flow-n',
-  // split feature section with tick list
-  'split', 'split-copy', 'checks',
+  // (adopted: flow, flow-n, split, split-copy, checks, band, head-l-cta
+  //  are now built in renderHome and therefore enforced)
   // two-column FAQ layout; localized uses the single-column .faq
   'faq2', 'faq2-side', 'faq2-list',
   // alternate CTA treatment and section-header link variants
-  'cta2', 'band', 'head-l-cta', 'head-l-link',
+  'cta2', 'head-l-link',
 ]);
 
 for (const l of LOCALES) {

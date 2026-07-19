@@ -300,6 +300,7 @@ function homeTemplateCards(code) {
 function renderHome(loc) {
   const code = loc.code;
   const t = HOME[code];
+  const c = CHROME[code];
   const sub = '';
   const url = `${ORIGIN}/${code}/`;
 
@@ -394,10 +395,14 @@ ${features}
   </section>
 
   ${t.steps ? `<section class="section">
-    <div class="container narrow">
-      <h2>${esc(t.stepsH2)}</h2>
-      <ol class="how-steps">
-${t.steps.map(([h, p]) => `        <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
+    <div class="container">
+      <div class="head-l"><div><h2>${esc(t.stepsH2)}</h2></div><a class="head-l-cta btn" href="${localHref(code, 'app.html')}">${esc(t.cta1)}</a></div>
+      <ol class="flow">
+${t.steps.map(([h, p], i) => `        <li>
+          <span class="flow-n">${String(i + 1).padStart(2, '0')}</span>
+          <h3>${esc(h)}</h3>
+          <p>${esc(p)}</p>
+        </li>`).join('\n')}
       </ol>
     </div>
   </section>` : ''}
@@ -412,12 +417,17 @@ ${homeTemplateCards(code)}
     </div>
   </section>` : ''}
 
-  ${t.why ? `<section class="section">
-    <div class="container">
-      <h2>${esc(t.whyH2)}</h2>
-      <div class="grid grid-3">
-${t.why.map(([h, p]) => `        <div class="card"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('\n')}
+  ${t.why ? `<section class="section band">
+    <div class="container split">
+      <div class="split-copy">
+        <span class="label">${esc(c.footer.rights)}</span>
+        <h2>${esc(t.whyH2)}</h2>
+        <p>${esc(c.footer.tagline)}</p>
+        <a class="btn btn-primary btn-lg" href="${localHref(code, 'app.html')}">${esc(c.nav.open)}</a>
       </div>
+      <ul class="checks">
+${t.why.map(([h, p]) => `        <li><b>${esc(h)}</b> ${esc(p)}</li>`).join('\n')}
+      </ul>
     </div>
   </section>` : ''}
 
