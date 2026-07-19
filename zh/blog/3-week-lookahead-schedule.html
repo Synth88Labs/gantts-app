@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>三周滚动计划怎么做 | gantts.app</title>
+  <meta name="description" content="三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/3-week-lookahead-schedule.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/3-week-lookahead-schedule.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="三周滚动计划怎么做 | gantts.app" />
+  <meta property="og:description" content="三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/3-week-lookahead-schedule.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="三周滚动计划：不用每周一重打一遍" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="三周滚动计划怎么做 | gantts.app" />
+  <meta name="twitter:description" content="三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html#post","headline":"三周滚动计划：不用每周一重打一遍","description":"三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。","url":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"三周滚动计划：不用每周一重打一遍","item":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是三周滚动计划？","acceptedAnswer":{"@type":"Answer","text":"总进度计划的一段滚动摘录，只显示与未来三周有交叠的工作。它每周更新，用于协调日常作业，并在还来得及处理的时候发现制约因素。"}},{"@type":"Question","name":"为什么是三周？","acceptedAnswer":{"@type":"Answer","text":"这个长度既足以让材料、许可、班组等制约因素还有时间解决，又短到日期仍然可信。两周、四周、六周的窗口也很常见，具体取决于你的备料周期。"}},{"@type":"Question","name":"几个月前就开工的长任务应该出现在滚动计划里吗？","acceptedAnswer":{"@type":"Answer","text":"应该。凡是与窗口有交叠的都属于它。只筛完整落在三周内的任务，恰好会漏掉当下正在施工的长周期工作。"}},{"@type":"Question","name":"滚动计划和总进度计划是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"不是。总进度计划回答项目能否按期完工，滚动计划回答本周做什么、谁来做。两者出自同一份数据，服务于不同的会议。"}},{"@type":"Question","name":"可以用 Excel 做滚动计划吗？","acceptedAnswer":{"@type":"Answer","text":"可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍。把它做成进度计划的一个视图，就省掉了重抄以及随之而来的偏离。"}},{"@type":"Question","name":"滚动计划怎么打印？","acceptedAnswer":{"@type":"Answer","text":"切换到滚动计划视图，导出 PDF 或 PNG。导出的内容与屏幕一致，所以你得到的是这个窗口，而不是整份总进度计划。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/3-week-lookahead-schedule.html">English</option><option value="/es/blog/3-week-lookahead-schedule.html">Español</option><option value="/fr/blog/3-week-lookahead-schedule.html">Français</option><option value="/de/blog/3-week-lookahead-schedule.html">Deutsch</option><option value="/pt/blog/3-week-lookahead-schedule.html">Português</option><option value="/zh/blog/3-week-lookahead-schedule.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › 三周滚动计划：不用每周一重打一遍</div>
+    <h1>三周滚动计划：不用每周一重打一遍</h1>
+    <p class="lead">没有人拿着一份十八个月的总进度计划去干活，大家干的是接下来这三周。<strong>三周滚动计划</strong>就是这扇窗口——总进度计划中近到已经足够真实的那一段——而在多数工地上，它至今仍然靠每周一手工把行复制进电子表格来产出。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">滚动计划到底是什么</a></li>
+        <li><a href="#s2">是交叠，不是包含——所有人最容易搞错的细节</a></li>
+        <li><a href="#s3">为什么窗口锚定在周一</a></li>
+        <li><a href="#s4">生成它，而不是重打一遍</a></li>
+        <li><a href="#s5">让它成为一份有用的文件，而不只是一个筛选结果</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <figcaption>同一份进度计划，筛出与这个窗口有交叠的工作：</figcaption>
+      <svg viewBox="0 0 600 170" width="100%" role="img" aria-label="同一份进度计划，筛出与这个窗口有交叠的工作："><rect x="0" y="24" width="250" height="13" rx="4" fill="#6c4cf1"/><rect x="0" y="46" width="95" height="13" rx="4" fill="#cbd5e1"/><rect x="40" y="68" width="210" height="13" rx="4" fill="#6c4cf1"/><rect x="155" y="90" width="130" height="13" rx="4" fill="#6c4cf1"/><rect x="210" y="112" width="150" height="13" rx="4" fill="#6c4cf1"/><rect x="155" y="14" width="130" height="126" fill="#6c4cf1" opacity="0.10"/><line x1="155" y1="14" x2="155" y2="140" stroke="#6c4cf1" stroke-width="1.4" stroke-dasharray="4 3"/><line x1="285" y1="14" x2="285" y2="140" stroke="#6c4cf1" stroke-width="1.4" stroke-dasharray="4 3"/><text x="220" y="156" font-size="10.5" font-weight="700" fill="#6c4cf1" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">未来 3 周</text><text x="330" y="40" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务</text><text x="330" y="62" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期</text></svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">滚动计划到底是什么</h2>
+<p>滚动计划是总进度计划的一段短周期滚动摘录——通常三周，也有两周、四周或六周——只显示与该窗口有交叠的工作。它每周向前滚一次，因此同一项任务会随着临近、随着理解加深，连续出现在好几期滚动计划里。</p>
+      <p>它之所以存在，是因为总进度计划和作业计划是两份文件、两种用途。总进度计划回答"我们能不能按期完工"；滚动计划回答"周二要干什么，钢材有没有人订"。拿一份两百行的总进度计划去开现场例会，正是它被打成 A0 挂上墙、然后无人过问的原因。</p>
+      <p>用最后计划者体系的说法，滚动计划正是发现<em>制约因素</em>的地方：工作已经近到可以逐条追问——许可、材料、班组、前道工序，是不是真的都会到位。</p>
+      <h2 id="s2">是交叠，不是包含——所有人最容易搞错的细节</h2>
+<p>下面这条规则决定了一份滚动计划是否正确，也是手工电子表格最常破坏的一条。</p>
+      <p>一项任务属于该窗口，条件是它与窗口<strong>有交叠</strong>，而不是它整个落在窗口里。三月开工、干到十一月的八个月基础工程包此刻正在施工，恰恰是现场班子最需要摆在眼前的工作。如果按"开始<em>且</em>结束都在这三周内"来筛，你会漏掉工地上所有长周期活动，得到一份看着很整洁、却描述了一个没人在干的项目的滚动计划。</p>
+      <p>判定条件是两次比较，不是四次：</p>
+      <p><code>task.start ≤ window.end &nbsp;AND&nbsp; task.end ≥ window.start</code></p>
+      <p>这就是全部规则，gantts.app 用的正是它。</p>
+      <h2 id="s3">为什么窗口锚定在周一</h2>
+<p>滚动计划是挂在每周例会上的每周动作。一个从周四到周四的窗口会把工作周从中间切断，对任何看它的人都没有用。</p>
+      <p>所以窗口总是回退到一周的起点。周三打开工具，你看到的是从本周一开始的窗口，而不是一个从周中起算的三周区间。需要看得更远时用箭头按周步进，"本周"按钮把它拉回来。</p>
+      <h2 id="s4">生成它，而不是重打一遍</h2>
+<p>三周滚动计划的模板并不稀缺——Smartsheet 有一份，另外还有好几家也有，美国海军的设施工程里甚至有一套标准格式。但它们无一例外都是等你手填的空表格。</p>
+      <p>这才是真正的问题所在。答案本来就在进度计划里，每周的工作只是把它抄出来，而错误和过期正是从抄写中产生的。漏掉一项任务，或者改了总进度计划却忘了改滚动计划，两份文件就悄悄对不上了。</p>
+      <p>在 gantts.app 里，滚动计划是同一份数据的一个<em>视图</em>：</p>
+      <ol>
+        <li>把<strong>视图</strong>切换为<strong>滚动计划</strong>。</li>
+        <li>选窗口长度——1、2、3、4、6 或 8 周。</li>
+        <li>用箭头步进，或点"本周"跳回今天。</li>
+        <li>导出 PDF 或 PNG 贴到墙上，或导出 Excel 拿去开会。</li>
+      </ol>
+      <p>图表会缩放到该窗口，让这三周清晰可读，而不是被压成十八个月时间轴上的一小条。顶部有一条状态带说明当前是哪个窗口、有多少任务被隐藏——因为一张不声明自己被筛过的图，读起来就像一份缺了任务的计划。</p>
+      <p>在总进度计划里改一个日期，滚动计划已经是对的了。没有什么需要重抄。</p>
+      <h2 id="s5">让它成为一份有用的文件，而不只是一个筛选结果</h2>
+<ul>
+        <li><strong>每一行都写上人名。</strong>没有逐项负责人的滚动计划只是一串愿望。把负责人列打开。</li>
+        <li><strong>近处的工作要比远处拆得更细。</strong>"二层精装修——6 周"这样的任务放在总进度计划里没问题，放在滚动计划里毫无用处。随着它临近，把它拆开。</li>
+        <li><strong>评审制约因素，而不只是日期。</strong>往前看三周的价值，就在于还来得及把缺的东西补上。</li>
+        <li><strong>保持简短。</strong>如果滚动计划有六十行，要么窗口太长，要么计划对这个会议来说拆得太细。</li>
+      </ul>
+
+      <div class="callout">undefined</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>什么是三周滚动计划？</summary><p>总进度计划的一段滚动摘录，只显示与未来三周有交叠的工作。它每周更新，用于协调日常作业，并在还来得及处理的时候发现制约因素。</p></details>
+        <details><summary>为什么是三周？</summary><p>这个长度既足以让材料、许可、班组等制约因素还有时间解决，又短到日期仍然可信。两周、四周、六周的窗口也很常见，具体取决于你的备料周期。</p></details>
+        <details><summary>几个月前就开工的长任务应该出现在滚动计划里吗？</summary><p>应该。凡是与窗口有交叠的都属于它。只筛完整落在三周内的任务，恰好会漏掉当下正在施工的长周期工作。</p></details>
+        <details><summary>滚动计划和总进度计划是一回事吗？</summary><p>不是。总进度计划回答项目能否按期完工，滚动计划回答本周做什么、谁来做。两者出自同一份数据，服务于不同的会议。</p></details>
+        <details><summary>可以用 Excel 做滚动计划吗？</summary><p>可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍。把它做成进度计划的一个视图，就省掉了重抄以及随之而来的偏离。</p></details>
+        <details><summary>滚动计划怎么打印？</summary><p>切换到滚动计划视图，导出 PDF 或 PNG。导出的内容与屏幕一致，所以你得到的是这个窗口，而不是整份总进度计划。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="templates">相关模板</h2>
+      <ul>
+        <li><a href="/zh/templates/construction.html">工程施工</a></li>
+        <li><a href="/zh/templates/project-management.html">项目管理</a></li>
+      </ul>
+<h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/critical-path-method.html">关键路径</a></li>
+        <li><a href="/zh/blog/s-curve-project-management.html">S 曲线与挣值</a></li>
+        <li><a href="/zh/blog/gantt-chart-dependencies.html">四种依赖关系</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

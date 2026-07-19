@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mermaid 甘特图语法详解 | gantts.app</title>
+  <meta name="description" content="Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/mermaid-gantt-chart.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Mermaid 甘特图语法详解 | gantts.app" />
+  <meta property="og:description" content="Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/mermaid-gantt-chart.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mermaid 甘特图语法详解 | gantts.app" />
+  <meta name="twitter:description" content="Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/mermaid-gantt-chart.html#post","headline":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","description":"Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。","url":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","item":"https://gantts.app/zh/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Mermaid 里怎么写甘特图？","acceptedAnswer":{"@type":"Answer","text":"代码块以 gantt 开头，加上 dateFormat YYYY-MM-DD，然后写 section 标题，标题下按\"名称 :tag, id, start, duration\"的形式写任务行，例如 \"Research :done, res, 2026-01-05, 5d\"。"}},{"@type":"Question","name":"Mermaid 里的 5d 包含开始当天吗？","acceptedAnswer":{"@type":"Answer","text":"包含。从 5 号周一开始的 5d 任务在 9 号周五结束。这种含首日的计数方式是最常见的差一天错误来源。"}},{"@type":"Question","name":"Mermaid 甘特图里依赖关系怎么写？","acceptedAnswer":{"@type":"Answer","text":"在 start 字段写 \"after someId\"。它永远是无延时的完成—开始关系，开始—开始、完成—完成以及延时都无法表达。"}},{"@type":"Question","name":"Mermaid 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"不能，它只有 done 和 active 两个标签。把 active 读成某个具体百分比只能靠猜；gantts.app 取 50%，并且会明确告知。"}},{"@type":"Question","name":"Mermaid 甘特图在哪里能渲染？","acceptedAnswer":{"@type":"Answer","text":"GitHub、GitLab、Notion 和 Obsidian 都能在 Markdown 里原生渲染，mermaid.live 也可以在浏览器里渲染。"}},{"@type":"Question","name":"可以把 Mermaid 甘特图变成可编辑的图表吗？","acceptedAnswer":{"@type":"Answer","text":"可以。在 gantts.app 里打开 .mmd 或 Markdown 文件，可视化编辑之后用\"导出 ▸ Mermaid 甘特图\"把更新后的语法复制回去。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/mermaid-gantt-chart.html">English</option><option value="/es/blog/mermaid-gantt-chart.html">Español</option><option value="/fr/blog/mermaid-gantt-chart.html">Français</option><option value="/de/blog/mermaid-gantt-chart.html">Deutsch</option><option value="/pt/blog/mermaid-gantt-chart.html">Português</option><option value="/zh/blog/mermaid-gantt-chart.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返</div>
+    <h1>Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返</h1>
+    <p class="lead">Mermaid 的 gantt 代码块在 GitHub、GitLab、Notion 和 Obsidian 里都能原生渲染，这让它成为把进度计划放到工作现场最省事的方式。它同时也极其难<em>改</em>：动一个日期，下游每一条 <code>after</code> 链都得手工重新推算。本文讲语法、讲坑，也讲那个缺失的环节——可视化编辑之后把代码取回来。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">一次过完语法</a></li>
+        <li><a href="#s2">四个一定会咬你的地方</a></li>
+        <li><a href="#s3">Mermaid 表达不了的东西</a></li>
+        <li><a href="#s4">可视化编辑，再把代码粘回去</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <figcaption>同一份进度计划，代码形态与横条形态：</figcaption>
+      <svg viewBox="0 0 600 170" width="100%" role="img" aria-label="同一份进度计划，代码形态与横条形态："><rect x="0" y="12" width="250" height="120" rx="8" fill="#0f172a"/><text x="14" y="34" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">gantt</text><text x="14" y="54" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  section 阶段</text><text x="14" y="74" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  任务 :a, 5d</text><text x="14" y="94" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  任务 :after a, 8d</text><text x="60" y="148" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">文本</text><path d="M 262 60 L 306 60" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="312,60 304,56 304,64" fill="#6c4cf1"/><path d="M 312 84 L 268 84" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="262,84 270,80 270,88" fill="#6c4cf1"/><rect x="330" y="30" width="110" height="13" rx="4" fill="#6c4cf1"/><rect x="360" y="52" width="140" height="13" rx="4" fill="#6c4cf1" opacity="0.75"/><rect x="400" y="74" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><polygon points="510,96 518,104 510,112 502,104" fill="#9333ea"/><text x="420" y="148" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">图表</text></svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">一次过完语法</h2>
+<p>一个 gantt 代码块以 <code>gantt</code> 加几行头部声明开始，然后是 <code>section</code> 标题，标题下面是任务行。</p>
+      <p>一行任务是名称、一个冒号，然后是逗号分隔的字段：</p>
+      <p><code>Task name :tag, id, start, duration</code></p>
+      <ul>
+        <li><strong>标签</strong>——<code>done</code>、<code>active</code>、<code>crit</code>、<code>milestone</code> 中的任意一个，可省略。</li>
+        <li><strong>id</strong>——一个不带空格的词，只有当别处要引用这项任务时才需要。</li>
+        <li><strong>start</strong>——一个日期，或 <code>after someId</code>，或省略以接在上一项任务之后。</li>
+        <li><strong>duration</strong>——<code>5d</code>、<code>2w</code>，或者第二个日期。</li>
+      </ul>
+      <p>值得记住的头部声明：<code>dateFormat</code>（日期怎么写）、<code>excludes weekends</code>（跳过周六和周日）、<code>title</code>，以及 <code>axisFormat</code>（坐标轴怎么标）。</p>
+      <h2 id="s2">四个一定会咬你的地方</h2>
+<p><strong>1. 工期包含开始当天。</strong>从 5 号周一算起的 <code>5d</code> 到 9 号周五结束，不是 10 号。这里差一天，会把整份文件里所有任务都推移，而且照样渲染得完美无缺。</p>
+      <p><strong>2. <code>after</code> 碰上 <code>excludes weekends</code>，才是真正出 bug 的地方。</strong>如果前置任务在周五结束，后继任务应当从<em>周一</em>开始，而不是周六。任何用"加一个自然日"来解析 <code>after</code> 的工具，都会在一份明令排除周末的文件里悄悄把任务排到周末。（我们的工具一度也是如此。现在有一条测试专门断言：任何推导出的日期都不会落在被排除的日子上。）</p>
+      <p><strong>3. 没有转义机制。</strong>冒号开启字段列表，逗号分隔字段，所以一项名为 <code>Phase 2: design, review</code> 的任务会被解析成完全不同的东西。任务名里别用冒号和逗号。</p>
+      <p><strong>4. 无法解析的工期会静默变成零。</strong>写成 <code>3dd</code>，你得到的是一条零长度的横条，而不是一个报错。</p>
+      <h2 id="s3">Mermaid 表达不了的东西</h2>
+<p>它是一种图示格式，不是排程引擎；如果你要做往返转换，这些缺口就很关键：</p>
+      <ul>
+        <li><strong>没有完成百分比。</strong>只有 <code>done</code> 和 <code>active</code>。完成 40% 和完成 90% 的任务，都只是"active"。</li>
+        <li><strong>只有完成—开始一种关系。</strong><code>after</code> 就是无延时的 FS。开始—开始、完成—完成以及延时都无处安放。</li>
+        <li><strong>section 是平的。</strong>没有嵌套分组。</li>
+        <li><strong>没有资源、成本和基准。</strong></li>
+      </ul>
+      <p>所以往返转换会有损耗，但损耗方式是已知且乏味的。导出时，gantts.app 把 100% 映射为 <code>done</code>，中间的任何值映射为 <code>active</code>；导入时把 <code>active</code> 读回为 50%——这是一个猜测，工具会明说，而不是让你在某份状态报告里才发现。写不成 <code>after</code> 的依赖关系会退化为绝对日期，这些日期依然正确，只是不再便于维护。</p>
+      <p>有一处刻意的不对称：<code>crit</code> 在导出时会写出，导入时却被忽略。关键性是从依赖关系网络<em>计算</em>出来的，而相信一份可能已经过期的图里写着的值，会让工具把一条并不关键的链条涂成红色。</p>
+      <h2 id="s4">可视化编辑，再把代码粘回去</h2>
+<p>能渲染 Mermaid 的工具不少。一直缺的是反方向——拖动横条，然后把语法拿回来。</p>
+      <ol>
+        <li>在 gantts.app 里粘贴或打开你的图——<code>.mmd</code> 文件，或含有代码围栏的 <code>.md</code> 文件，都可以。它按内容识别 gantt 代码块，而不是看扩展名。</li>
+        <li>像编辑任何图表一样拖动、连线、改日期。<code>excludes weekends</code> 会把工作日历打开，因此产出的日期与它来源的那份文件一致。</li>
+        <li><strong>导出 ▸ Mermaid 甘特图</strong>，复制，粘回你的 README。</li>
+      </ol>
+      <p>对用大模型起草进度计划的人还有一个不错的副作用：让它输出 Mermaid gantt 语法，粘进来，你就得到一张真正可编辑、还带关键路径的图表——不需要 API 密钥，也不需要后端。</p>
+
+      <div class="callout">undefined</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>Mermaid 里怎么写甘特图？</summary><p>代码块以 gantt 开头，加上 dateFormat YYYY-MM-DD，然后写 section 标题，标题下按"名称 :tag, id, start, duration"的形式写任务行，例如 "Research :done, res, 2026-01-05, 5d"。</p></details>
+        <details><summary>Mermaid 里的 5d 包含开始当天吗？</summary><p>包含。从 5 号周一开始的 5d 任务在 9 号周五结束。这种含首日的计数方式是最常见的差一天错误来源。</p></details>
+        <details><summary>Mermaid 甘特图里依赖关系怎么写？</summary><p>在 start 字段写 "after someId"。它永远是无延时的完成—开始关系，开始—开始、完成—完成以及延时都无法表达。</p></details>
+        <details><summary>Mermaid 能显示完成百分比吗？</summary><p>不能，它只有 done 和 active 两个标签。把 active 读成某个具体百分比只能靠猜；gantts.app 取 50%，并且会明确告知。</p></details>
+        <details><summary>Mermaid 甘特图在哪里能渲染？</summary><p>GitHub、GitLab、Notion 和 Obsidian 都能在 Markdown 里原生渲染，mermaid.live 也可以在浏览器里渲染。</p></details>
+        <details><summary>可以把 Mermaid 甘特图变成可编辑的图表吗？</summary><p>可以。在 gantts.app 里打开 .mmd 或 Markdown 文件，可视化编辑之后用"导出 ▸ Mermaid 甘特图"把更新后的语法复制回去。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="templates">相关模板</h2>
+      <ul>
+        <li><a href="/zh/templates/project-management.html">项目管理</a></li>
+      </ul>
+<h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/gantt-chart-dependencies.html">四种依赖关系</a></li>
+        <li><a href="/zh/blog/critical-path-method.html">关键路径</a></li>
+        <li><a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

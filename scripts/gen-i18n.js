@@ -914,6 +914,28 @@ function renderGuide(loc, slug) {
      guides. A reader four clicks into the German site should not be
      handed an English article because that particular guide is not
      translated yet. Retires itself as each locale fills in. */
+  /* "Templates that use this" — the English guides render this from the
+     entry's `tpl` field and the localized ones never did, which left
+     every translated guide one heading short of its original and
+     dropped a link into the templates cluster in five languages.
+
+     The slugs come from the ENGLISH entry deliberately: which templates
+     suit a guide does not change with language, and copying the list
+     into five files would only create five things to drift. Only the
+     heading and the link text are localized. */
+  const tplSlugs = ((en && en.tpl) || [])
+    .filter(sl => TPL_I18N[code] && TPL_I18N[code][sl] && TEMPLATE_LABELS[code] && TEMPLATE_LABELS[code][sl]);
+  const tplBlock = tplSlugs.length
+    ? [
+        `<h2 id="templates">${esc(ui.templatesH || ui.related)}</h2>`,
+        '      <ul>',
+        ...tplSlugs.map(sl =>
+          `        <li><a href="${pub(`/${code}/templates/${sl}.html`)}">${esc(TEMPLATE_LABELS[code][sl])}</a></li>`),
+        '      </ul>',
+        '',            // one blank line before the next heading
+      ].join('\n')
+    : '';
+
   const gWant = 3;
   const gPicked = [];
   const gSeen = new Set([slug]);
@@ -1017,7 +1039,7 @@ ${faq}
 
 ${promo(code, code + '/blog/' + slug + '.html', '      ')}
 
-      <h2 id="related">${esc(ui.related)}</h2>
+      ${tplBlock}<h2 id="related">${esc(ui.related)}</h2>
       <ul>
 ${related}
         <li><a href="/${code}/blog/">${esc(ui.backToGuides)}</a></li>

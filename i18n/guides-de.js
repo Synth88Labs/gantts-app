@@ -596,9 +596,180 @@ const G = {
     ["gantt-chart-dependencies", "Die vier Abhängigkeitsarten"]
   ]
 },
+
+'s-curve-project-management': {
+  h1: 'S-Kurve und Fertigstellungswert: Sind Sie wirklich im Verzug?',
+  metaTitle: 'S-Kurve im Projektmanagement erstellen',
+  metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht.',
+  date: '2026-07-19',
+  lead: 'Eine Prozentangabe allein sagt fast nichts. Sechzig Prozent fertig ist in Woche zwei hervorragend und in Woche neun eine Katastrophe. Eine <strong>S-Kurve</strong> behebt das, indem sie die kumulierte Planleistung über die Zeit aufträgt: Aus „wie weit sind wir" wird „wie weit hätten wir <em>sein sollen</em>" — und der Abstand zwischen den beiden Linien ist die Antwort.',
+  figIntro: 'Plan gegen Ist — und was der Abstand zwischen beiden bedeutet:',
+  sections: [
+    ['Warum die Kurve S-förmig ist', `<p>Projekte leisten ihre Arbeit nicht gleichmäßig. Die ersten Wochen laufen langsam an — Mobilisierung, Abstimmung des Umfangs, Warten auf Freigaben —, dann beschleunigt die Mitte, weil vieles parallel läuft, und am Ende wird es wieder zäh, weil die letzten Punkte auf Abnahmen und Restarbeiten warten.</p>
+        <p>Trägt man die kumulierte Leistung über die Zeit auf, ergibt das ein flach liegendes S: flach, steil, flach. Diese Form hat niemand vorgegeben. Sie folgt daraus, wie Arbeit tatsächlich anfällt.</p>
+        <p>Genau deshalb taugt sie als Maßstab. Eine Gerade würde unterstellen, dass nach zwanzig Prozent der Zeit auch zwanzig Prozent der Arbeit erledigt sind — und jedes Projekt der Welt sähe im ersten Monat nach Verzug aus.</p>`],
+
+    ['Plan und Ist nebeneinander lesen', `<p>Zwei Kurven. Die <strong>Plankurve</strong> stammt aus Ihrem Basisplan: Jeder Vorgang wird mit seinem Gewicht über seine geplanten Termine verteilt und aufsummiert. Die <strong>Ist-Kurve</strong> stammt aus dem gemeldeten Fortschritt.</p>
+        <p>Lesen Sie beide senkrecht, zum heutigen Datum:</p>
+        <ul>
+          <li><strong>Ist unter Plan</strong> — im Verzug. Der senkrechte Abstand ist die fehlende Leistung.</li>
+          <li><strong>Ist über Plan</strong> — vor dem Plan, oder Ihre Fortschrittsmeldungen sind zu optimistisch. Beides kommt vor.</li>
+          <li><strong>Auseinanderlaufende Kurven</strong> — das Problem wächst, es ist nicht stabil. Diese Form ist die wichtigste und die einzige, die eine einzelne Prozentzahl nie zeigt.</li>
+        </ul>
+        <p>Lesen Sie sie stattdessen <em>waagerecht</em>, erhalten Sie etwas, das in einer Statusrunde besser ankommt: Gehen Sie vom heutigen Ist-Punkt nach links, bis Sie die Plankurve treffen. Dort steht das Datum, an dem der Plan diesen Fortschritt erwartet hatte. Der Abstand ist Ihr Verzug in Wochen — also in der Einheit, über die tatsächlich gestritten wird.</p>`],
+
+    ['Fertigstellungswert ohne Fachjargon', `<p>Die Fertigstellungswert-Analyse (Earned Value Management) gibt dem Abstand eine Zahl. Drei Größen, und die Abkürzungen sind schlimmer als die Gedanken dahinter:</p>
+        <ul>
+          <li><strong>PV</strong> (Planwert, Sollkosten) — die Arbeit, die bis heute fertig sein sollte, zu Budgetpreisen bewertet.</li>
+          <li><strong>EV</strong> (Fertigstellungswert) — die Arbeit, die <em>tatsächlich</em> fertig ist, mit demselben Budget bewertet. Ein Vorgang über 10.000 €, der zu 40 % erledigt ist, hat 4.000 € erwirtschaftet. Was er gekostet hat, spielt hier bewusst keine Rolle.</li>
+          <li><strong>AC</strong> (Ist-Kosten) — was Sie wirklich ausgegeben haben.</li>
+        </ul>
+        <p>Daraus ergibt sich:</p>
+        <ul>
+          <li><strong>SV = EV − PV</strong> — Terminabweichung. Negativ heißt im Verzug.</li>
+          <li><strong>CV = EV − AC</strong> — Kostenabweichung. Negativ heißt über Budget.</li>
+          <li><strong>SPI = EV ÷ PV</strong> — unter 1,0 heißt im Verzug. Ein SPI von 0,85 heißt: Sie erhalten 85 Cent Fortschritt für jeden geplanten Euro.</li>
+          <li><strong>CPI = EV ÷ AC</strong> — unter 1,0 heißt über Budget.</li>
+        </ul>
+        <p>Die Trennung ist der ganze Sinn der Übung. Ein Projekt kann exakt im Budget und schwer im Verzug sein oder pünktlich und finanziell aus dem Ruder gelaufen — eine einzige verrührte Prozentzahl verdeckt beides.</p>`],
+
+    ['Warum unser Werkzeug manchmal keinen CPI anzeigt', `<p>Das sei deutlich gesagt, weil die meisten kostenlosen EVM-Rechner es genau umgekehrt handhaben.</p>
+        <p>Die Ist-Kosten sind der einzige Wert, der sich nicht aus einem Terminplan ableiten lässt. Er muss aus Ihrer Buchhaltung kommen. Die verlockende Abkürzung lautet, einem zu 40 % erledigten Vorgang einfach 40 % seines Budgets als Kosten zuzuschreiben — und dann ist AC per Konstruktion gleich EV, sodass <strong>der CPI für jedes Projekt der Geschichte exakt 1,00 beträgt</strong>. Die Zahl sieht seriös aus, reagiert auf nichts und würde einem entgleisenden Budget bescheinigen, alles sei in Ordnung.</p>
+        <p>Deshalb lässt gantts.app die Kostenkennzahlen leer, bis Sie einen echten Wert unter „Ausgegeben" eintragen. Die Terminkennzahlen — SV und SPI — funktionieren weiterhin, denn dafür genügen Termine und Fortschritt. Eine fehlende Zahl ist ehrlich. Eine selbstbewusst falsche ist es nicht.</p>
+        <p>Aus demselben Grund wird die Ist-Kurve für die Vergangenheit rekonstruiert statt aufgezeichnet: Das Werkzeug speichert Ihren Fortschritt so, wie er heute ist, nicht die Historie jeder früheren Meldung. Für den heutigen Tag, an dem die Zahlen abgelesen werden, ist sie exakt, dahinter näherungsweise — und sie sagt das in der Ansicht selbst, nicht in einer Fußnote.</p>`],
+
+    ['Ein Budget ist keine Voraussetzung', `<p>Die meisten Pläne enthalten überhaupt keine Kosten, und eine S-Kurve, die welche verlangt, ist eine S-Kurve, die niemand zeichnet.</p>
+        <p>Ist bei keinem Vorgang ein Betrag hinterlegt, gewichtet gantts.app jeden Vorgang stattdessen nach seiner Dauer in Arbeitstagen. Die Form bleibt dieselbe, die Achse liest sich in Prozent statt in Euro — eine reine Fortschrittskurve. Tragen Sie später Kosten nach, wird ohne weiteres Zutun eine Wertkurve daraus.</p>
+        <p>Eines ist allerdings entscheidend: <strong>Setzen Sie einen Basisplan</strong>. Ohne ihn kann „geplant" nur Ihre aktuellen Termine bedeuten, und die enthalten bereits jeden bisherigen Verzug. Die Terminabweichung stünde dauerhaft auf null — eine sehr beruhigende und vollkommen nutzlose Auskunft. Basisplan ▸ Basisplan setzen, einmal, sobald der Plan freigegeben ist.</p>`],
+
+    ['So erstellen Sie eine S-Kurve hier', `<ol>
+          <li>Bauen oder importieren Sie Ihren Terminplan und bringen Sie die Termine grob in Ordnung.</li>
+          <li><strong>Basisplan ▸ Basisplan setzen</strong>, sobald der Plan freigegeben ist. Das friert die Bedeutung von „geplant" ein.</li>
+          <li>Geben Sie den Vorgängen optional ein <strong>Budget</strong>, damit die Kurve in Euro statt in Tagen rechnet.</li>
+          <li>Pflegen Sie den <strong>Fortschritt in Prozent</strong> — daraus entsteht die Ist-Kurve.</li>
+          <li>Tragen Sie optional je Vorgang <strong>Ausgegeben</strong> ein, um CPI, Kostenabweichung und die Kostenprognose freizuschalten.</li>
+          <li>Klicken Sie auf <strong>📈 S-Kurve</strong>.</li>
+        </ol>
+        <p>Alles läuft vollständig in Ihrem Browser. Kein Konto, kein Hochladen und keine Tabellenvorlage, die von Hand gepflegt werden will.</p>`],
+  ],
+  faq: [
+    ['Was ist eine S-Kurve im Projektmanagement?', 'Eine Kurve der kumulierten Planleistung über die Zeit. Sie ist S-förmig, weil Projekte langsam anlaufen, in der Mitte beschleunigen und zum Ende hin auslaufen. Gegen den tatsächlichen Fortschritt aufgetragen zeigt der senkrechte Abstand, wie weit Sie vor oder hinter dem Plan liegen.'],
+    ['Was unterscheidet die S-Kurve von der Fertigstellungswert-Analyse?', 'Die S-Kurve ist das Bild, die Fertigstellungswert-Analyse die Rechnung dahinter. EVM beziffert den Abstand mit SV, SPI, CV und CPI; die Kurve zeigt seine Form und Richtung.'],
+    ['Was bedeutet ein SPI von 0,9?', 'Sie haben 90 Prozent des Werts erwirtschaftet, den der Plan bis heute vorsah — Sie liegen also rund 10 Prozent hinter dem Termin. Unter 1,0 heißt Verzug, über 1,0 Vorsprung.'],
+    ['Brauche ich Kostendaten für eine S-Kurve?', 'Nein. Ohne Kosten werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine Fortschrittskurve — dieselbe Form, abgelesen in Prozent. Kosten machen daraus eine Wertkurve und schalten die Kostenkennzahlen frei.'],
+    ['Warum wird kein CPI angezeigt?', 'Weil keine Ist-Kosten erfasst sind. Der CPI braucht echte Ausgaben; würde man ihn aus dem Fortschritt ableiten, ergäbe er für jedes Projekt exakt 1,00. Tragen Sie bei den Vorgängen „Ausgegeben" ein, und er erscheint.'],
+    ['Kann man eine S-Kurve in Excel erstellen?', 'Ja, und die meisten tun es — um den Preis einer von Hand gepflegten Summenspalte samt Diagramm, die bei jeder Terminverschiebung neu gemacht werden muss. Wird die Kurve aus dem Terminplan erzeugt, entfällt dieser Schritt.'],
+  ],
+  related: [['gantt-baseline-variance', 'Basisplan und Abweichung'], ['critical-path-method', 'Der kritische Pfad'], ['3-week-lookahead-schedule', 'Die 3-Wochen-Vorschau']],
+},
+
+'3-week-lookahead-schedule': {
+  h1: 'Die 3-Wochen-Vorschau — ohne sie jeden Montag neu abzutippen',
+  metaTitle: '3-Wochen-Vorschau erstellen — kostenlos',
+  metaDesc: 'Was eine 3-Wochen-Vorschau ist, warum Bauteams sie nutzen und wie Sie sie direkt aus dem Terminplan erzeugen, statt sie in Excel abzutippen.',
+  date: '2026-07-19',
+  lead: 'Niemand baut nach einem Programm über achtzehn Monate. Gebaut wird nach den nächsten drei Wochen davon. Die <strong>Vorschau</strong> ist genau dieses Fenster — der Ausschnitt des Terminplans, der nah genug ist, um real zu sein — und auf den meisten Baustellen wird sie noch immer jeden Montag von Hand in eine Tabelle kopiert.',
+  figIntro: 'Derselbe Terminplan, gefiltert auf die Arbeit, die das Fenster berührt:',
+  sections: [
+    ['Was eine Vorschau eigentlich ist', `<p>Eine Vorschau ist ein kurzer, rollierender Auszug aus dem Gesamtterminplan — meist drei Wochen, manchmal zwei, vier oder sechs — und zeigt nur die Arbeit, die dieses Fenster berührt. Sie rollt jede Woche weiter, sodass derselbe Vorgang in mehreren aufeinanderfolgenden Vorschauen auftaucht, während er näher rückt und besser verstanden wird.</p>
+        <p>Es gibt sie, weil Gesamtterminplan und Arbeitsplanung zwei verschiedene Dokumente mit zwei verschiedenen Aufgaben sind. Der Terminplan beantwortet „werden wir rechtzeitig fertig", die Vorschau beantwortet „was passiert am Dienstag, und hat jemand den Stahl bestellt". Der Versuch, eine Baubesprechung mit einem zweihundertzeiligen Programm zu führen, ist der Grund, warum es in A0 gedruckt und danach ignoriert wird.</p>
+        <p>In der Sprache des Last Planner Systems ist die Vorschau der Ort, an dem <em>Randbedingungen</em> auffallen: Die Arbeit ist nah genug, dass man fragen kann, ob Genehmigung, Material, Kolonne und Vorgewerk tatsächlich da sein werden.</p>`],
+
+    ['Überlappung statt Enthaltensein — das Detail, das fast alle falsch machen', `<p>Hier ist die Regel, die eine Vorschau richtig macht, und genau die, an der von Hand gebaute Tabellen am häufigsten scheitern.</p>
+        <p>Ein Vorgang gehört in das Fenster, wenn er es <strong>überlappt</strong> — nicht, wenn er vollständig hineinpasst. Das achtmonatige Gründungspaket, das im März begonnen hat und bis November läuft, findet gerade jetzt statt, und es ist genau die Arbeit, die das Baustellenteam vor Augen haben muss. Filtern Sie auf Vorgänge, die innerhalb der drei Wochen beginnen <em>und</em> enden, verlieren Sie jede langlaufende Tätigkeit auf der Baustelle — und behalten eine Vorschau, die aufgeräumt aussieht und ein Projekt beschreibt, an dem niemand arbeitet.</p>
+        <p>Die Prüfung besteht aus zwei Vergleichen, nicht aus vieren:</p>
+        <p><code>Vorgang.Start ≤ Fenster.Ende &nbsp;UND&nbsp; Vorgang.Ende ≥ Fenster.Start</code></p>
+        <p>Das ist die ganze Regel, und gantts.app wendet exakt sie an.</p>`],
+
+    ['Warum das Fenster auf Montag liegt', `<p>Die Vorschau ist ein wöchentliches Ritual an einer wöchentlichen Besprechung. Ein Fenster von Donnerstag bis Donnerstag würde die Arbeitswoche mitten durchschneiden und wäre für jeden Leser wertlos.</p>
+        <p>Deshalb rastet das Fenster immer auf den Wochenanfang zurück. Öffnen Sie das Werkzeug an einem Mittwoch, erhalten Sie das Fenster, das am Montag begonnen hat, und keinen Dreiwochenblock ab Wochenmitte. Die Pfeile schieben es wochenweise weiter, wenn Sie länger vorausschauen wollen, und „Diese Woche" bringt es zurück.</p>`],
+
+    ['Erzeugen statt abtippen', `<p>An Vorlagen für die 3-Wochen-Vorschau herrscht kein Mangel — Smartsheet veröffentlicht eine, ein halbes Dutzend anderer ebenfalls, und für Bauvorhaben der US Navy gibt es sogar ein Standardformat. Jede einzelne davon ist ein leeres Raster, das Sie von Hand ausfüllen.</p>
+        <p>Das ist das eigentliche Problem. Die Antwort steckt bereits im Terminplan; die wöchentliche Arbeit besteht im Abschreiben, und aus dem Abschreiben kommen die Fehler und die Veralterung. Ein Vorgang wird vergessen, oder der Gesamtplan wird geändert und die Vorschau nicht — und schon widersprechen sich beide Dokumente stillschweigend.</p>
+        <p>In gantts.app ist die Vorschau eine <em>Ansicht</em> derselben Daten:</p>
+        <ol>
+          <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Vorschau</strong>.</li>
+          <li>Wählen Sie das Fenster — 1, 2, 3, 4, 6 oder 8 Wochen.</li>
+          <li>Schieben Sie es mit den Pfeilen weiter oder springen Sie mit „Diese Woche" zu heute zurück.</li>
+          <li>Exportieren Sie als PDF oder PNG für die Wand, oder als Excel für die Besprechung.</li>
+        </ol>
+        <p>Das Diagramm zoomt auf das Fenster, sodass drei Wochen lesbar sind statt zu einem Streifen auf einer Achse über achtzehn Monate zusammengedrückt. Ein Band am oberen Rand nennt das gewählte Fenster und die Zahl der ausgeblendeten Vorgänge, denn ein gefiltertes Diagramm, das seine Filterung nicht ausweist, liest sich wie ein Plan mit fehlenden Vorgängen.</p>
+        <p>Ändern Sie ein Datum im Gesamtplan, stimmt die Vorschau bereits. Es gibt nichts erneut abzuschreiben.</p>`],
+
+    ['Ein brauchbares Dokument, nicht nur ein Filter', `<ul>
+          <li><strong>Auf jede Zeile gehört ein Name.</strong> Eine Vorschau ohne Verantwortliche je Vorgang ist eine Liste von Hoffnungen. Schalten Sie die Spalte für die Zuständigkeit ein.</li>
+          <li><strong>Gliedern Sie die nahe Arbeit feiner als die ferne.</strong> Ein Vorgang „Ausbau erstes Obergeschoss — 6 Wochen" ist im Terminplan in Ordnung und in einer Vorschau nutzlos. Teilen Sie ihn auf, während er näher rückt.</li>
+          <li><strong>Prüfen Sie Randbedingungen, nicht nur Termine.</strong> Der Wert des Blicks drei Wochen nach vorn liegt darin, dass noch Zeit bleibt, Fehlendes zu beschaffen.</li>
+          <li><strong>Halten Sie sie kurz.</strong> Umfasst die Vorschau sechzig Zeilen, ist entweder das Fenster zu lang oder der Plan für diese Besprechung zu fein.</li>
+        </ul>`],
+  ],
+  faq: [
+    ['Was ist eine 3-Wochen-Vorschau?', 'Ein rollierender Auszug aus dem Gesamtterminplan, der nur die Arbeit zeigt, die die nächsten drei Wochen berührt. Sie wird wöchentlich fortgeschrieben und dient dazu, die tägliche Arbeit abzustimmen und Randbedingungen zu erkennen, solange noch Zeit bleibt.'],
+    ['Warum drei Wochen?', 'Lang genug, dass sich Randbedingungen — Material, Genehmigungen, Kolonnen — noch klären lassen, und kurz genug, dass die Termine glaubwürdig sind. Zwei, vier und sechs Wochen sind ebenfalls üblich; die richtige Länge hängt von Ihren Vorlaufzeiten ab.'],
+    ['Gehört ein lange laufender Vorgang in die Vorschau?', 'Ja. Alles, was das Fenster überlappt, gehört hinein. Ein Filter auf Vorgänge, die vollständig in die drei Wochen passen, entfernt genau die langlaufende Arbeit, die gerade stattfindet.'],
+    ['Ist die Vorschau dasselbe wie der Gesamtterminplan?', 'Nein. Der Gesamtterminplan beantwortet, ob das Projekt rechtzeitig fertig wird. Die Vorschau beantwortet, was diese Woche passiert und wer es macht. Beide stammen aus denselben Daten, dienen aber verschiedenen Besprechungen.'],
+    ['Kann man eine Vorschau in Excel erstellen?', 'Ja, und die meisten Teams tun es — indem sie jede Woche Zeilen aus dem Terminplan abtippen. Wird sie als Ansicht des Plans erzeugt, entfallen das Abtippen und das damit verbundene Auseinanderlaufen.'],
+    ['Wie drucke ich die Vorschau?', 'Wechseln Sie in die Vorschau-Ansicht und exportieren Sie als PDF oder PNG. Der Export gibt wieder, was auf dem Bildschirm steht, Sie erhalten also das Fenster und nicht den gesamten Terminplan.'],
+  ],
+  related: [['critical-path-method', 'Der kritische Pfad'], ['s-curve-project-management', 'S-Kurve und Fertigstellungswert'], ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten']],
+},
+
+'mermaid-gantt-chart': {
+  h1: 'Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor',
+  metaTitle: 'Mermaid-Gantt-Syntax mit Live-Editor',
+  metaDesc: 'Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten.',
+  date: '2026-07-19',
+  lead: 'Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax, die Fallstricke und der fehlende Schritt — visuell bearbeiten und den Text zurückbekommen.',
+  figIntro: 'Derselbe Terminplan als Text und als Balken:',
+  sections: [
+    ['Die Syntax in einem Durchgang', `<p>Ein Gantt-Block beginnt mit <code>gantt</code> und einigen Kopfzeilen, danach folgen <code>section</code>-Überschriften mit Vorgangszeilen darunter.</p>
+        <p>Eine Vorgangszeile besteht aus einem Namen, einem Doppelpunkt und dann kommagetrennten Feldern:</p>
+        <p><code>Name des Vorgangs :tag, id, start, dauer</code></p>
+        <ul>
+          <li><strong>Tags</strong> — eines von <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Optional.</li>
+          <li><strong>id</strong> — ein einzelnes Wort, nur nötig, wenn sich etwas anderes auf diesen Vorgang bezieht.</li>
+          <li><strong>start</strong> — ein Datum, oder <code>after eineId</code>, oder weggelassen, um an den vorigen Vorgang anzuschließen.</li>
+          <li><strong>dauer</strong> — <code>5d</code>, <code>2w</code>, oder ein zweites Datum.</li>
+        </ul>
+        <p>Wissenswerte Kopfzeilen: <code>dateFormat</code> (wie Ihre Daten geschrieben sind), <code>excludes weekends</code> (Samstag und Sonntag überspringen), <code>title</code> und <code>axisFormat</code> (Beschriftung der Achse).</p>`],
+
+    ['Vier Dinge, über die Sie stolpern werden', `<p><strong>1. Dauern schließen den Starttag ein.</strong> <code>5d</code> ab Montag, dem 5., läuft bis Freitag, den 9., nicht bis zum 10. Ein Fehler um eins verschiebt hier jeden Vorgang der Datei — und wird trotzdem tadellos gerendert.</p>
+        <p><strong>2. <code>after</code> zusammen mit <code>excludes weekends</code> ist die eigentliche Fehlerquelle.</strong> Endet ein Vorgänger an einem Freitag, beginnt sein Nachfolger am <em>Montag</em> — nicht am Samstag. Jedes Werkzeug, das <code>after</code> durch Addition eines Kalendertages auflöst, legt Vorgänge klammheimlich auf Wochenenden in einer Datei, die genau das verbietet. (Unseres tat es kurzzeitig. Der Test, der es gefunden hat, prüft heute, dass kein abgeleitetes Datum auf einen ausgeschlossenen Tag fällt.)</p>
+        <p><strong>3. Es gibt keine Maskierung.</strong> Ein Doppelpunkt beginnt die Feldliste und ein Komma trennt die Felder — ein Vorgang namens <code>Phase 2: Entwurf, Prüfung</code> wird also zu etwas völlig anderem. Halten Sie Doppelpunkte und Kommas aus Vorgangsnamen heraus.</p>
+        <p><strong>4. Eine unlesbare Dauer wird stillschweigend null.</strong> Schreiben Sie <code>3dd</code>, erhalten Sie einen Balken der Länge null statt einer Fehlermeldung.</p>`],
+
+    ['Was Mermaid nicht ausdrücken kann', `<p>Es ist ein Diagrammformat, keine Terminplanungsmaschine, und die Lücken zählen, sobald man hin und zurück konvertiert:</p>
+        <ul>
+          <li><strong>Kein Fortschritt in Prozent.</strong> Nur <code>done</code> und <code>active</code>. Ein Vorgang mit 40 Prozent und einer mit 90 Prozent sind beide schlicht „active".</li>
+          <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende und Abstände haben keinen Platz.</li>
+          <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen.</li>
+          <li><strong>Keine Ressourcen, Kosten oder Basispläne.</strong></li>
+        </ul>
+        <p>Der Hin- und Rückweg verliert also etwas, aber auf bekannte, langweilige Weise. gantts.app schreibt beim Export 100 Prozent als <code>done</code> und alles dazwischen als <code>active</code> und liest <code>active</code> beim Import als 50 Prozent zurück — eine Schätzung, auf die es hinweist, statt sie Sie in einem Statusbericht entdecken zu lassen. Verknüpfungen, die sich nicht als <code>after</code> schreiben lassen, werden zu festen Terminen, die korrekt bleiben, auch wenn sie nicht mehr pflegbar sind.</p>
+        <p>Eine Asymmetrie ist Absicht: <code>crit</code> wird exportiert, beim Import aber ignoriert. Kritikalität wird aus dem Abhängigkeitsnetz <em>berechnet</em>, und einem Wert zu vertrauen, der in einem womöglich veralteten Diagramm behauptet wird, würde eine unkritische Kette rot einfärben.</p>`],
+
+    ['Visuell bearbeiten, dann den Text zurückkopieren', `<p>Mermaid rendern können viele Werkzeuge. Gefehlt hat die Gegenrichtung — Balken ziehen und die Syntax wieder herausbekommen.</p>
+        <ol>
+          <li>Fügen Sie Ihr Diagramm in gantts.app ein oder öffnen Sie es dort — eine <code>.mmd</code>-Datei oder eine <code>.md</code>-Datei mit einem eingebetteten Block, beides funktioniert. Ein Gantt-Block wird an seinem Inhalt erkannt, nicht an der Dateiendung.</li>
+          <li>Ziehen, verknüpfen und umdatieren Sie wie in jedem anderen Diagramm. <code>excludes weekends</code> schaltet den Arbeitskalender ein, sodass die erzeugten Termine zu der Datei passen, aus der sie stammen.</li>
+          <li><strong>Export ▸ Mermaid gantt</strong>, kopieren, zurück in Ihre README einfügen.</li>
+        </ol>
+        <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>`],
+  ],
+  faq: [
+    ['Wie schreibt man ein Gantt-Diagramm in Mermaid?', 'Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer" — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d".'],
+    ['Schließt 5d in Mermaid den Starttag ein?', 'Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag.'],
+    ['Wie funktionieren Abhängigkeiten in Mermaid gantt?', 'Über „after eineId" im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken.'],
+    ['Kann Mermaid den Fortschritt in Prozent zeigen?', 'Nein. Es gibt nur die Tags done und active. Beim Import ist jeder Prozentwert eine Schätzung; gantts.app setzt 50 Prozent und weist darauf hin.'],
+    ['Wo werden Mermaid-Gantt-Diagramme dargestellt?', 'GitHub, GitLab, Notion und Obsidian rendern sie direkt in Markdown, und mermaid.live zeigt sie im Browser.'],
+    ['Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?', 'Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und kopieren Sie die aktualisierte Syntax über Export ▸ Mermaid gantt wieder heraus.'],
+  ],
+  related: [['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'], ['critical-path-method', 'Der kritische Pfad'], ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?']],
+},
 };
 
 const UI = {
+  templatesH: 'Passende Vorlagen',
   home: 'Start',
   guides: 'Ratgeber',
   backToGuides: 'Zurück zu den Ratgebern',

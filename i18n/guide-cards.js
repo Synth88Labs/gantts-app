@@ -28,6 +28,9 @@ const ICONS = {
   'gantt-baseline-variance': '◳',
   'gantt-chart-mistakes': '⚠️',
   'milestones-vs-tasks': '◆',
+  's-curve-project-management': '📈',
+  '3-week-lookahead-schedule': '📅',
+  'mermaid-gantt-chart': '🧜',
 };
 
 const DESC = {
@@ -44,6 +47,9 @@ const DESC = {
     'gantt-baseline-variance': 'Cómo congelar un plan, leer la desviación y cuándo rehacer la línea base.',
     'gantt-chart-mistakes': 'Exceso de detalle, falta de dependencias, cero holgura — cada uno con su solución.',
     'milestones-vs-tasks': 'En qué se diferencian, para qué sirven los hitos y cuántos debe tener un proyecto.',
+    's-curve-project-management': 'Qué muestra la curva S, cómo leer plan frente a real y qué significan SPI y CPI.',
+    '3-week-lookahead-schedule': 'Qué es una programación a 3 semanas, por qué se usa y cómo generarla desde el cronograma.',
+    'mermaid-gantt-chart': 'La sintaxis de Mermaid gantt, sus trampas y cómo editar el diagrama visualmente.',
   },
   fr: {
     'what-is-a-gantt-chart': 'Ce que c’est, à quoi ça sert et quand l’utiliser — les quatre éléments expliqués.',
@@ -58,6 +64,9 @@ const DESC = {
     'gantt-baseline-variance': 'Figer un plan, lire l’écart, et savoir quand refaire la référence.',
     'gantt-chart-mistakes': 'Trop de détail, pas de dépendances, aucune marge — chacun avec son correctif.',
     'milestones-vs-tasks': 'Ce qui les distingue, à quoi servent les jalons et combien en prévoir.',
+    's-curve-project-management': 'Ce que montre la courbe en S, comment lire prévu contre réel, et ce que valent SPI et CPI.',
+    '3-week-lookahead-schedule': "Ce qu'est un planning glissant à 3 semaines, à quoi il sert et comment le générer.",
+    'mermaid-gantt-chart': 'La syntaxe Mermaid gantt, ses pièges, et comment éditer le diagramme visuellement.',
   },
   de: {
     'what-is-a-gantt-chart': 'Was es ist, wozu es dient und wann es sich lohnt — die vier Bausteine erklärt.',
@@ -72,6 +81,9 @@ const DESC = {
     'gantt-baseline-variance': 'Einen Plan einfrieren, Abweichungen lesen und wissen, wann neu basiert wird.',
     'gantt-chart-mistakes': 'Zu viel Detail, fehlende Abhängigkeiten, kein Puffer — jeweils mit der Korrektur.',
     'milestones-vs-tasks': 'Worin sie sich unterscheiden, wozu Meilensteine dienen und wie viele sinnvoll sind.',
+    's-curve-project-management': 'Was die S-Kurve zeigt, wie Plan und Ist zu lesen sind und was SPI und CPI bedeuten.',
+    '3-week-lookahead-schedule': 'Was eine 3-Wochen-Vorschau ist, wozu sie dient und wie sie aus dem Terminplan entsteht.',
+    'mermaid-gantt-chart': 'Die Mermaid-Gantt-Syntax, ihre Fallstricke und wie sich das Diagramm visuell bearbeiten lässt.',
   },
   pt: {
     'what-is-a-gantt-chart': 'O que é, para que serve e quando usar — com as quatro peças explicadas.',
@@ -86,6 +98,9 @@ const DESC = {
     'gantt-baseline-variance': 'Como congelar um plano, ler o desvio e quando refazer a linha de base.',
     'gantt-chart-mistakes': 'Excesso de detalhe, falta de dependências, folga zero — cada um com a correção.',
     'milestones-vs-tasks': 'No que diferem, para que servem os marcos e quantos um projeto deve ter.',
+    's-curve-project-management': 'O que a curva S mostra, como ler planejado contra real e o que significam SPI e CPI.',
+    '3-week-lookahead-schedule': 'O que é um lookahead de 3 semanas, para que serve e como gerá-lo a partir do cronograma.',
+    'mermaid-gantt-chart': 'A sintaxe do Mermaid gantt, suas armadilhas e como editar o diagrama visualmente.',
   },
   zh: {
     'what-is-a-gantt-chart': '是什么、有什么用、什么时候该用——四个核心要素逐一说明。',
@@ -100,6 +115,9 @@ const DESC = {
     'gantt-baseline-variance': '如何冻结计划、读懂偏差，以及什么时候该重设基准。',
     'gantt-chart-mistakes': '过度细化、缺少依赖、毫无浮动时间——每条都给出对应的修正办法。',
     'milestones-vs-tasks': '两者的区别、里程碑的真正用途，以及一个项目该设几个。',
+    's-curve-project-management': 'S 曲线展示什么、如何对比计划与实际，以及 SPI 与 CPI 的含义。',
+    '3-week-lookahead-schedule': '什么是三周滚动计划、为何要用，以及如何直接从主进度计划生成。',
+    'mermaid-gantt-chart': 'Mermaid 甘特图语法、常见陷阱，以及如何可视化编辑再导出。',
   },
 };
 

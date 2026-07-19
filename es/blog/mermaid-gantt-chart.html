@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagramas de Gantt en Mermaid: sintaxis | gantts.app</title>
+  <meta name="description" content="La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/mermaid-gantt-chart.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/mermaid-gantt-chart.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Diagramas de Gantt en Mermaid: sintaxis | gantts.app" />
+  <meta property="og:description" content="La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente." />
+  <meta property="og:url" content="https://gantts.app/es/blog/mermaid-gantt-chart.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diagramas de Gantt en Mermaid: sintaxis | gantts.app" />
+  <meta name="twitter:description" content="La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/mermaid-gantt-chart.html#post","headline":"Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real","description":"La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente.","url":"https://gantts.app/es/blog/mermaid-gantt-chart.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real","item":"https://gantts.app/es/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cómo se escribe un diagrama de Gantt en Mermaid?","acceptedAnswer":{"@type":"Answer","text":"Abre el bloque con gantt, añade dateFormat YYYY-MM-DD y después encabezados section con líneas de tarea debajo con la forma «Nombre :etiqueta, id, inicio, duración» — por ejemplo «Investigación :done, inv, 2026-01-05, 5d»."}},{"@type":"Question","name":"¿5d en Mermaid incluye el día de inicio?","acceptedAnswer":{"@type":"Answer","text":"Sí. Una tarea de 5d que empieza el lunes día 5 termina el viernes día 9. Este cómputo inclusivo es la causa más habitual de errores de un día."}},{"@type":"Question","name":"¿Cómo funcionan las dependencias en Mermaid gantt?","acceptedAnswer":{"@type":"Answer","text":"Se usa «after algúnId» como campo de inicio. Siempre es fin-inicio y sin desfase: inicio-inicio, fin-fin y los desfases no se pueden expresar."}},{"@type":"Question","name":"¿Puede Mermaid mostrar el porcentaje completado?","acceptedAnswer":{"@type":"Answer","text":"No. Solo tiene las etiquetas done y active. Importar active como un porcentaje concreto es una suposición; gantts.app usa el 50 % y te avisa de que lo ha hecho."}},{"@type":"Question","name":"¿Dónde se renderizan los diagramas de Gantt de Mermaid?","acceptedAnswer":{"@type":"Answer","text":"GitHub, GitLab, Notion y Obsidian los renderizan de forma nativa en Markdown, y mermaid.live los muestra en el navegador."}},{"@type":"Question","name":"¿Puedo convertir un diagrama de Mermaid en un gráfico editable?","acceptedAnswer":{"@type":"Answer","text":"Sí. Abre el archivo .mmd o el Markdown en gantts.app, edítalo visualmente y usa Exportar ▸ Mermaid gantt para copiar de vuelta la sintaxis actualizada."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/">Guías</a>
+        <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/mermaid-gantt-chart.html">English</option><option value="/es/blog/mermaid-gantt-chart.html" selected>Español</option><option value="/fr/blog/mermaid-gantt-chart.html">Français</option><option value="/de/blog/mermaid-gantt-chart.html">Deutsch</option><option value="/pt/blog/mermaid-gantt-chart.html">Português</option><option value="/zh/blog/mermaid-gantt-chart.html">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a> › Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real</div>
+    <h1>Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real</h1>
+    <p class="lead">Los bloques gantt de Mermaid se renderizan de forma nativa en GitHub, GitLab, Notion y Obsidian, lo que los convierte en la manera más fácil de poner un calendario donde ya vive el trabajo. También son penosos de <em>editar</em>: mueves una fecha y tienes que rehacer a mano toda la cadena de <code>after</code> que va detrás. Aquí van la sintaxis, las trampas y el paso que falta: editarlo visualmente y recuperar el texto.</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>3 min de lectura</span></p>
+    <div class="toc"><strong>En esta página</strong>
+      <ol>
+        <li><a href="#s1">La sintaxis de una pasada</a></li>
+        <li><a href="#s2">Cuatro cosas que te van a morder</a></li>
+        <li><a href="#s3">Lo que Mermaid no puede expresar</a></li>
+        <li><a href="#s4">Editar visualmente y pegar el texto de vuelta</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <figcaption>El mismo calendario como texto y como barras:</figcaption>
+      <svg viewBox="0 0 600 170" width="100%" role="img" aria-label="El mismo calendario como texto y como barras:"><rect x="0" y="12" width="250" height="120" rx="8" fill="#0f172a"/><text x="14" y="34" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">gantt</text><text x="14" y="54" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  section Fase</text><text x="14" y="74" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  Tarea :a, 5d</text><text x="14" y="94" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  Tarea :after a, 8d</text><text x="60" y="148" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">texto</text><path d="M 262 60 L 306 60" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="312,60 304,56 304,64" fill="#6c4cf1"/><path d="M 312 84 L 268 84" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="262,84 270,80 270,88" fill="#6c4cf1"/><rect x="330" y="30" width="110" height="13" rx="4" fill="#6c4cf1"/><rect x="360" y="52" width="140" height="13" rx="4" fill="#6c4cf1" opacity="0.75"/><rect x="400" y="74" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><polygon points="510,96 518,104 510,112 502,104" fill="#9333ea"/><text x="420" y="148" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">gráfico</text></svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">La sintaxis de una pasada</h2>
+<p>Un bloque gantt se abre con <code>gantt</code> y unas pocas líneas de cabecera, y después vienen encabezados <code>section</code> con líneas de tarea debajo.</p>
+        <p>Una línea de tarea es un nombre, dos puntos y después campos separados por comas:</p>
+        <p><code>Nombre de tarea :etiqueta, id, inicio, duración</code></p>
+        <ul>
+          <li><strong>Etiquetas</strong> — cualquiera de <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Opcionales.</li>
+          <li><strong>id</strong> — una palabra suelta, necesaria solo si algo más se refiere a esta tarea.</li>
+          <li><strong>inicio</strong> — una fecha, o <code>after algúnId</code>, o se omite para continuar tras la tarea anterior.</li>
+          <li><strong>duración</strong> — <code>5d</code>, <code>2w</code>, o una segunda fecha.</li>
+        </ul>
+        <p>Cabeceras que conviene conocer: <code>dateFormat</code> (cómo escribes las fechas), <code>excludes weekends</code> (saltar sábados y domingos), <code>title</code> y <code>axisFormat</code> (cómo se etiqueta el eje).</p>
+      <h2 id="s2">Cuatro cosas que te van a morder</h2>
+<p><strong>1. Las duraciones incluyen el día de inicio.</strong> <code>5d</code> desde el lunes día 5 llega hasta el viernes día 9, no hasta el 10. Un error de uno aquí desplaza todas las tareas del archivo y aun así se renderiza perfectamente.</p>
+        <p><strong>2. <code>after</code> junto con <code>excludes weekends</code> es donde viven los errores de verdad.</strong> Si una predecesora termina un viernes, su sucesora empieza el <em>lunes</em>, no el sábado. Cualquier herramienta que resuelva <code>after</code> sumando un día natural colocará tareas en fin de semana dentro de un archivo que lo prohíbe explícitamente. (La nuestra lo hizo, brevemente. La prueba que lo detectó ahora comprueba que ninguna fecha derivada cae en un día excluido.)</p>
+        <p><strong>3. No hay forma de escapar caracteres.</strong> Los dos puntos abren la lista de campos y la coma separa campos, así que una tarea llamada <code>Fase 2: diseño, revisión</code> se convierte en otra cosa completamente distinta. Mantén los dos puntos y las comas fuera de los nombres de tarea.</p>
+        <p><strong>4. Una duración que no se puede interpretar pasa a cero en silencio.</strong> Escribe <code>3dd</code> y obtendrás una barra de longitud cero en lugar de un error.</p>
+      <h2 id="s3">Lo que Mermaid no puede expresar</h2>
+<p>Es un formato de diagrama, no un motor de planificación, y las carencias importan si vas a hacer ida y vuelta:</p>
+        <ul>
+          <li><strong>No hay porcentaje de avance.</strong> Solo <code>done</code> y <code>active</code>. Una tarea al 40 % y otra al 90 % son las dos simplemente «active».</li>
+          <li><strong>Solo fin-inicio.</strong> <code>after</code> es FS sin desfase. Inicio-inicio, fin-fin y los desfases no tienen dónde ir.</li>
+          <li><strong>Secciones planas.</strong> Sin grupos anidados.</li>
+          <li><strong>Sin recursos, costes ni líneas base.</strong></li>
+        </ul>
+        <p>Así que la ida y vuelta pierde información de una forma conocida y aburrida. gantts.app convierte el 100 % en <code>done</code> y cualquier valor intermedio en <code>active</code> al salir, e importa <code>active</code> como 50 %: una suposición, que te comunica en vez de dejar que la descubras en un informe de seguimiento. Los enlaces que no puede escribir como <code>after</code> caen a fechas absolutas, que siguen siendo correctas aunque dejen de ser mantenibles.</p>
+        <p>Una asimetría deliberada: <code>crit</code> se escribe al exportar pero se ignora al importar. La criticidad se <em>calcula</em> a partir del grafo de dependencias, y fiarse de un valor afirmado en un diagrama posiblemente obsoleto permitiría pintar de rojo una cadena que no es crítica.</p>
+      <h2 id="s4">Editar visualmente y pegar el texto de vuelta</h2>
+<p>Herramientas que renderizan Mermaid hay muchas. Lo que faltaba es la dirección contraria: arrastrar barras y recuperar la sintaxis.</p>
+        <ol>
+          <li>Pega o abre tu diagrama en gantts.app — un archivo <code>.mmd</code>, o un <code>.md</code> con un bloque delimitado; los dos funcionan. Detecta el bloque gantt por su contenido, no por la extensión.</li>
+          <li>Arrástralo, enlázalo y refecha como cualquier otro gráfico. <code>excludes weekends</code> activa el calendario laboral, así que las fechas que produce coinciden con las del archivo del que salió.</li>
+          <li><strong>Exportar ▸ Mermaid gantt</strong>, copia y pega de vuelta en tu README.</li>
+        </ol>
+        <p>Hay además un efecto secundario agradable para quien use un LLM para redactar calendarios: pide sintaxis gantt de Mermaid, pega la respuesta y tendrás un gráfico editable de verdad con ruta crítica, sin ninguna clave de API ni servidor de por medio.</p>
+
+      <div class="callout">undefined</div>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Cómo se escribe un diagrama de Gantt en Mermaid?</summary><p>Abre el bloque con gantt, añade dateFormat YYYY-MM-DD y después encabezados section con líneas de tarea debajo con la forma «Nombre :etiqueta, id, inicio, duración» — por ejemplo «Investigación :done, inv, 2026-01-05, 5d».</p></details>
+        <details><summary>¿5d en Mermaid incluye el día de inicio?</summary><p>Sí. Una tarea de 5d que empieza el lunes día 5 termina el viernes día 9. Este cómputo inclusivo es la causa más habitual de errores de un día.</p></details>
+        <details><summary>¿Cómo funcionan las dependencias en Mermaid gantt?</summary><p>Se usa «after algúnId» como campo de inicio. Siempre es fin-inicio y sin desfase: inicio-inicio, fin-fin y los desfases no se pueden expresar.</p></details>
+        <details><summary>¿Puede Mermaid mostrar el porcentaje completado?</summary><p>No. Solo tiene las etiquetas done y active. Importar active como un porcentaje concreto es una suposición; gantts.app usa el 50 % y te avisa de que lo ha hecho.</p></details>
+        <details><summary>¿Dónde se renderizan los diagramas de Gantt de Mermaid?</summary><p>GitHub, GitLab, Notion y Obsidian los renderizan de forma nativa en Markdown, y mermaid.live los muestra en el navegador.</p></details>
+        <details><summary>¿Puedo convertir un diagrama de Mermaid en un gráfico editable?</summary><p>Sí. Abre el archivo .mmd o el Markdown en gantts.app, edítalo visualmente y usa Exportar ▸ Mermaid gantt para copiar de vuelta la sintaxis actualizada.</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">Publicidad</span>
+          <h3>Plantillas de Gantt para Excel</h3>
+          <p>ExcelGuru.io mantiene una biblioteca gratuita de hojas de cálculo de Gantt listas para usar, con las fórmulas ya montadas.</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Ver las plantillas →</a>
+      </aside>
+
+      <h2 id="templates">Plantillas que usan esto</h2>
+      <ul>
+        <li><a href="/es/templates/project-management.html">Gestión de proyectos</a></li>
+      </ul>
+<h2 id="related">Seguir leyendo</h2>
+      <ul>
+        <li><a href="/es/blog/gantt-chart-dependencies.html">Los cuatro tipos de dependencia</a></li>
+        <li><a href="/es/blog/critical-path-method.html">Cómo se calcula la ruta crítica</a></li>
+        <li><a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a></li>
+        <li><a href="/es/blog/">Ver todas las guías</a></li>
+      </ul>
+      <p class="crumbs"><small>Las guías que aún no se han traducido se abren en inglés.</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Pruébalo en el editor gratuito</h2>
+      <p>Abre gantts.app, arrastra las barras y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/es/templates/excel.html">Excel</a>
+          <a href="/es/templates/powerpoint.html">PowerPoint</a>
+          <a href="/es/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/">Todas las guías</a>
+          <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/es/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

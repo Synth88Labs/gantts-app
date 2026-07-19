@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S 曲线与挣值管理 | gantts.app</title>
+  <meta name="description" content="S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/s-curve-project-management.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/s-curve-project-management.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="S 曲线与挣值管理 | gantts.app" />
+  <meta property="og:description" content="S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/s-curve-project-management.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="S 曲线与挣值：判断项目是不是真的落后了" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="S 曲线与挣值管理 | gantts.app" />
+  <meta name="twitter:description" content="S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/s-curve-project-management.html#post","headline":"S 曲线与挣值：判断项目是不是真的落后了","description":"S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。","url":"https://gantts.app/zh/blog/s-curve-project-management.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/s-curve-project-management.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"S 曲线与挣值：判断项目是不是真的落后了","item":"https://gantts.app/zh/blog/s-curve-project-management.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"项目管理中的 S 曲线是什么？","acceptedAnswer":{"@type":"Answer","text":"把累计计划工作量对时间作出的曲线图。之所以呈 S 形，是因为项目开头慢、中段快、结尾又放缓。与实际进度对照后，两条曲线之间的竖直距离就是提前或落后的程度。"}},{"@type":"Question","name":"S 曲线和挣值管理有什么区别？","acceptedAnswer":{"@type":"Answer","text":"S 曲线是图，挣值管理是图背后的算术。挣值管理用 SV、SPI、CV、CPI 给差距一个数字，曲线则展示这个差距的形态和走向。"}},{"@type":"Question","name":"SPI 为 0.9 是什么意思？","acceptedAnswer":{"@type":"Answer","text":"你只挣到了计划中此时应有价值的 90%，也就是大约落后一成。小于 1.0 是落后，大于 1.0 是提前。"}},{"@type":"Question","name":"一定要有成本数据才能用 S 曲线吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。没有成本时，任务按工作日工期加权，得到的是进度曲线——形状一样，以百分比来读。填入成本后它才变成价值曲线，并解锁成本类指标。"}},{"@type":"Question","name":"为什么 CPI 不显示？","acceptedAnswer":{"@type":"Answer","text":"因为没有填入实际成本。CPI 需要真实支出；用完成百分比去推导，会让所有项目的 CPI 都恰好等于 1.00。给任务填上\"已花费\"，它就会出现。"}},{"@type":"Question","name":"可以用 Excel 画 S 曲线吗？","acceptedAnswer":{"@type":"Answer","text":"可以，多数人也确实这么做——代价是手工维护一列累计值和一张图表，日期一变就得重做一遍。直接从进度计划生成，就省掉了这一步。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/s-curve-project-management.html">English</option><option value="/es/blog/s-curve-project-management.html">Español</option><option value="/fr/blog/s-curve-project-management.html">Français</option><option value="/de/blog/s-curve-project-management.html">Deutsch</option><option value="/pt/blog/s-curve-project-management.html">Português</option><option value="/zh/blog/s-curve-project-management.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › S 曲线与挣值：判断项目是不是真的落后了</div>
+    <h1>S 曲线与挣值：判断项目是不是真的落后了</h1>
+    <p class="lead">单看一个完成百分比，几乎说明不了任何问题。第二周完成六成很出色，第九周完成六成是灾难。<strong>S 曲线</strong>把累计计划工作量画在时间轴上，于是"我们进展到哪了"变成了"按计划这时候<em>应该</em>进展到哪"——两条线之间的差距就是答案。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">曲线为什么呈 S 形</a></li>
+        <li><a href="#s2">怎么读计划值与实际值</a></li>
+        <li><a href="#s3">挣值管理，去掉术语外壳</a></li>
+        <li><a href="#s4">为什么我们有时不显示 CPI</a></li>
+        <li><a href="#s5">没有预算也能画出曲线</a></li>
+        <li><a href="#s6">在这里怎么做出一条</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <figcaption>计划值与实际值，以及两者之间的差距意味着什么：</figcaption>
+      <svg viewBox="0 0 600 170" width="100%" role="img" aria-label="计划值与实际值，以及两者之间的差距意味着什么："><line x1="46" y1="12" x2="46" y2="150" stroke="#e2e8f0" stroke-width="1"/><line x1="46" y1="150" x2="560" y2="150" stroke="#e2e8f0" stroke-width="1"/><text x="40" y="18" font-size="9.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="end">100%</text><text x="40" y="154" font-size="9.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="end">0%</text><path d="M 46 150 C 150 147, 190 92, 270 74 C 350 56, 420 20, 560 15" fill="none" stroke="#6c4cf1" stroke-width="2.4"/><text x="452" y="40" font-size="11" font-weight="700" fill="#6c4cf1" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">计划</text><path d="M 46 150 C 140 149, 175 118, 270 108" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-dasharray="7 4"/><text x="120" y="132" font-size="11" font-weight="700" fill="#16a34a" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">挣值</text><line x1="270" y1="12" x2="270" y2="150" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="3 3"/><text x="274" y="22" font-size="10" font-weight="400" fill="#ef4444" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">今天</text><line x1="270" y1="74" x2="270" y2="108" stroke="#ea580c" stroke-width="6" opacity="0.3"/><text x="284" y="96" font-size="10.5" font-weight="700" fill="#ea580c" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">落后于计划</text></svg>
+    </figure>
+
+    <div class="prose">
+      <h2 id="s1">曲线为什么呈 S 形</h2>
+<p>项目消耗工作量的速度并不均匀。开头几周很慢——动员、确认范围、等待审批；中段随着大量工作并行而加速；尾段又慢下来，最后几项都在等签字和收尾整改。</p>
+      <p>把累计工作量对时间作图，形状自然就是一个被压扁的 S：平缓、陡峭、再平缓。这不是谁画出来的目标，而是工作实际到来的方式决定的。</p>
+      <p>这恰恰是它可以当尺子用的原因。一条直线意味着时间过去两成、项目就该完成两成，那么历史上每一个项目在第一个月都会显得"落后"。</p>
+      <h2 id="s2">怎么读计划值与实际值</h2>
+<p>两条曲线。<strong>计划</strong>曲线来自基准：把每项任务的权重摊到它的计划日期上再累加。<strong>实际</strong>曲线来自上报的进度。</p>
+      <p>在今天这条线上，竖着读：</p>
+      <ul>
+        <li><strong>实际低于计划</strong>——落后。竖直距离就是欠下的工作量。</li>
+        <li><strong>实际高于计划</strong>——提前，或者进度上报偏乐观。两种情况都常见。</li>
+        <li><strong>两条曲线在张开</strong>——问题在恶化，而不是稳定下来。这是最要紧的形态，也是单一百分比永远显示不出来的。</li>
+      </ul>
+      <p>换成<em>横着</em>读，会得到在例会上更直观的说法：从今天的实际点向左移，直到与计划曲线相交，那个日期就是计划中"达到这个进度"的时点。这段距离就是落后了多少周——正是大家实际争论时使用的单位。</p>
+      <h2 id="s3">挣值管理，去掉术语外壳</h2>
+<p>挣值管理给这个差距一个数字。三个量，缩写比概念本身更吓人：</p>
+      <ul>
+        <li><strong>PV</strong>（计划价值）——按计划到现在应当完成的工作，按预算计价。</li>
+        <li><strong>EV</strong>（挣值）——<em>实际</em>已完成的工作，按同一套预算计价。一项预算 10 万元、完成 40% 的任务，挣值就是 4 万元。它花了多少钱在这里是刻意不计的。</li>
+        <li><strong>AC</strong>（实际成本）——真正花出去的钱。</li>
+      </ul>
+      <p>由这三个量得到：</p>
+      <ul>
+        <li><strong>SV = EV − PV</strong>——进度偏差。为负表示落后。</li>
+        <li><strong>CV = EV − AC</strong>——成本偏差。为负表示超支。</li>
+        <li><strong>SPI = EV ÷ PV</strong>——进度绩效指数，小于 1.0 表示落后。SPI 为 0.85 意味着每一元的计划只换来八毛五的进展。</li>
+        <li><strong>CPI = EV ÷ AC</strong>——成本绩效指数，小于 1.0 表示超支。</li>
+      </ul>
+      <p>把这两件事分开，正是全部意义所在。一个项目完全可能预算无虞却严重延期，也可能按期推进却在大量烧钱，而一个混在一起的"完成百分比"会同时掩盖这两点。</p>
+      <h2 id="s4">为什么我们有时不显示 CPI</h2>
+<p>这一点值得挑明，因为多数免费的挣值计算器做法恰好相反。</p>
+      <p>实际成本是唯一无法从进度计划推导出来的输入，它必须来自你的账目。一个诱人的捷径是：假设完成 40% 的任务就消耗了 40% 的预算——一旦这么做，AC 在构造上就等于 EV，于是<strong>任何项目算出来的 CPI 都恰好是 1.00</strong>。这个数字看着很权威，实则对任何变化都没有反应，还会告诉一个预算早已失控的人一切正常。</p>
+      <p>所以在 gantts.app 里，只要你没有为任务填入真实的"已花费"金额，成本类指标就留空。进度类指标——SV 和 SPI——照常可用，因为它们只需要日期和进度。缺一个数字是诚实的，给一个笃定的错数字不是。</p>
+      <p>出于同样的理由，今天之前的挣值曲线是重建出来的，而不是记录下来的：工具保存的是你当前的进度，而不是历次上报的历史。它在今天这一点上是精确的——数字正是在这里读取的——往前则是近似值。这一点写在面板上，而不是藏在脚注里。</p>
+      <h2 id="s5">没有预算也能画出曲线</h2>
+<p>多数计划根本不带成本数据，而一条非要有成本才能画的 S 曲线，就是一条没人会去画的 S 曲线。</p>
+      <p>如果所有任务都没有成本，gantts.app 就改用工作日工期作为权重。形状完全一样，只是纵轴读作百分比而不是金额——一条纯进度的 S 曲线。以后补上成本，同一个面板就变成价值曲线，别的什么都不用改。</p>
+      <p>不过有一件事必须做：<strong>设置基准</strong>。没有基准，"计划"就只能指你当前的日期，而当前日期里早已包含了发生过的每一次延误。这样进度偏差会永远显示为零——一个非常令人安心、也完全没有用的答案。计划获批时执行一次"基准 ▸ 设置基准"即可。</p>
+      <h2 id="s6">在这里怎么做出一条</h2>
+<ol>
+        <li>建立或导入进度计划，把日期大致排对。</li>
+        <li>计划获批后执行<strong>基准 ▸ 设置基准</strong>。这一步冻结了"计划"的含义。</li>
+        <li>可选：在任务面板里给任务填<strong>预算</strong>，让曲线以金额而不是天数来读。</li>
+        <li>随着工作推进更新<strong>完成百分比</strong>——挣值曲线正是由它构成的。</li>
+        <li>可选：逐项填入<strong>已花费</strong>，以解锁 CPI、成本偏差和完工估算。</li>
+        <li>点击<strong>📈 S 曲线</strong>。</li>
+      </ol>
+      <p>全部在你的浏览器里运行。无需注册，无需上传，也不用手工维护一个电子表格模板。</p>
+
+      <div class="callout">undefined</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>项目管理中的 S 曲线是什么？</summary><p>把累计计划工作量对时间作出的曲线图。之所以呈 S 形，是因为项目开头慢、中段快、结尾又放缓。与实际进度对照后，两条曲线之间的竖直距离就是提前或落后的程度。</p></details>
+        <details><summary>S 曲线和挣值管理有什么区别？</summary><p>S 曲线是图，挣值管理是图背后的算术。挣值管理用 SV、SPI、CV、CPI 给差距一个数字，曲线则展示这个差距的形态和走向。</p></details>
+        <details><summary>SPI 为 0.9 是什么意思？</summary><p>你只挣到了计划中此时应有价值的 90%，也就是大约落后一成。小于 1.0 是落后，大于 1.0 是提前。</p></details>
+        <details><summary>一定要有成本数据才能用 S 曲线吗？</summary><p>不需要。没有成本时，任务按工作日工期加权，得到的是进度曲线——形状一样，以百分比来读。填入成本后它才变成价值曲线，并解锁成本类指标。</p></details>
+        <details><summary>为什么 CPI 不显示？</summary><p>因为没有填入实际成本。CPI 需要真实支出；用完成百分比去推导，会让所有项目的 CPI 都恰好等于 1.00。给任务填上"已花费"，它就会出现。</p></details>
+        <details><summary>可以用 Excel 画 S 曲线吗？</summary><p>可以，多数人也确实这么做——代价是手工维护一列累计值和一张图表，日期一变就得重做一遍。直接从进度计划生成，就省掉了这一步。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="templates">相关模板</h2>
+      <ul>
+        <li><a href="/zh/templates/project-management.html">项目管理</a></li>
+        <li><a href="/zh/templates/construction.html">工程施工</a></li>
+      </ul>
+<h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/gantt-baseline-variance.html">基准与偏差</a></li>
+        <li><a href="/zh/blog/critical-path-method.html">关键路径</a></li>
+        <li><a href="/zh/blog/3-week-lookahead-schedule.html">三周滚动计划</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=24"></script>
+</body>
+</html>

@@ -264,6 +264,248 @@ const G = {
     tpl: ['simple', 'project-management'],
   },
 
+
+  // ---------------------------------------------------------------
+  's-curve-project-management': {
+    h1: 'S-Curves and Earned Value: Reading Whether You Are Actually Behind',
+    metaTitle: 'S-Curve in Project Management (Free Generator)',
+    metaDesc: 'What an S-curve shows, how to read planned against actual, and how earned value turns a hunch into a number. Free generator, from your own schedule.',
+    date: '2026-07-19',
+    lead: 'A percentage complete tells you almost nothing on its own. Sixty per cent done is excellent in week two and a catastrophe in week nine. An <strong>S-curve</strong> fixes that by plotting cumulative planned work against time, so "how far along are we" becomes "how far along were we <em>supposed</em> to be by now" — and the gap between the two lines is the answer.',
+    figIntro: 'Planned against actual, and what the gap between them means:',
+    figure: `<svg viewBox="0 0 620 300" width="100%" role="img" aria-label="An S-curve chart showing a planned cumulative progress curve and an actual curve running below it, with the vertical gap marked as schedule variance">
+      <line x1="50" y1="20" x2="50" y2="240" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="50" y1="240" x2="580" y2="240" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="44" y="26" font-size="10" fill="#94a3b8" text-anchor="end" font-family="system-ui,sans-serif">100%</text>
+      <text x="44" y="134" font-size="10" fill="#94a3b8" text-anchor="end" font-family="system-ui,sans-serif">50%</text>
+      <text x="44" y="244" font-size="10" fill="#94a3b8" text-anchor="end" font-family="system-ui,sans-serif">0%</text>
+      <text x="300" y="266" font-size="11" fill="#94a3b8" text-anchor="middle" font-family="system-ui,sans-serif">time →</text>
+
+      <path d="M 50 240 C 170 236, 210 150, 300 120 C 390 90, 450 30, 580 22" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+      <text x="470" y="52" font-size="11.5" font-weight="700" fill="#2563eb" font-family="system-ui,sans-serif">Planned (PV)</text>
+
+      <path d="M 50 240 C 160 238, 200 190, 300 172" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="7 4"/>
+      <text x="150" y="212" font-size="11.5" font-weight="700" fill="#16a34a" font-family="system-ui,sans-serif">Actual / earned (EV)</text>
+
+      <line x1="300" y1="20" x2="300" y2="240" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="304" y="32" font-size="10.5" fill="#ef4444" font-family="system-ui,sans-serif">today</text>
+
+      <line x1="300" y1="120" x2="300" y2="172" stroke="#ea580c" stroke-width="7" opacity="0.28"/>
+      <text x="314" y="150" font-size="11" font-weight="700" fill="#ea580c" font-family="system-ui,sans-serif">the gap = schedule variance</text>
+      <text x="314" y="166" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">below the line = behind plan</text>
+    </svg>`,
+    sections: [
+      ['Why the curve is S-shaped', `<p>Projects do not burn work at a constant rate. The opening weeks go slowly — mobilising, agreeing scope, waiting for approvals — then the middle accelerates as everything runs in parallel, then the tail slows again as the last items wait on sign-off and snagging.</p>
+        <p>Plot cumulative work against time and that shape comes out as a flattened S: shallow, steep, shallow. It is not a target anyone drew. It falls out of how work actually arrives.</p>
+        <p>Which is exactly what makes it useful as a yardstick. A straight line would imply the project should be twenty per cent done in twenty per cent of the time, and every project in history would look "behind" in its first month.</p>`],
+
+      ['Reading planned against actual', `<p>Two curves. The <strong>planned</strong> curve comes from your baseline: spread each task's weight across its planned dates and accumulate. The <strong>actual</strong> curve comes from reported progress.</p>
+        <p>Read them vertically, at today's date:</p>
+        <ul>
+          <li><strong>Actual below planned</strong> — behind. The vertical distance is how much work you are short.</li>
+          <li><strong>Actual above planned</strong> — ahead, or your progress reporting is optimistic. Both happen.</li>
+          <li><strong>The curves diverging</strong> — the problem is getting worse, not stable. This is the shape that matters most and the one a single percentage never shows.</li>
+        </ul>
+        <p>Read them <em>horizontally</em> instead and you get something more intuitive for a status meeting: slide left from today's actual point to where it meets the planned curve, and you have the date the plan expected you to be at this much progress. The distance is how many weeks behind you are, in the units people actually argue in.</p>`],
+
+      ['Earned value, without the jargon', `<p>Earned value management gives the gap a number. Three quantities, and the acronyms are worse than the ideas:</p>
+        <ul>
+          <li><strong>PV</strong> (planned value, or BCWS) — the work you said you would have finished by now, valued at budget.</li>
+          <li><strong>EV</strong> (earned value, or BCWP) — the work you have <em>actually</em> finished, valued at the same budget. A task worth £10,000 that is 40% done has earned £4,000. What it cost you is irrelevant here, deliberately.</li>
+          <li><strong>AC</strong> (actual cost, or ACWP) — what you have really spent.</li>
+        </ul>
+        <p>From those three:</p>
+        <ul>
+          <li><strong>SV = EV − PV</strong> — schedule variance. Negative means behind.</li>
+          <li><strong>CV = EV − AC</strong> — cost variance. Negative means over budget.</li>
+          <li><strong>SPI = EV ÷ PV</strong> — below 1.0 means behind. An SPI of 0.85 means you are getting 85p of progress for every pound of plan.</li>
+          <li><strong>CPI = EV ÷ AC</strong> — below 1.0 means over budget.</li>
+        </ul>
+        <p>The separation is the whole point. A project can be perfectly on budget and badly late, or on time and haemorrhaging money, and one blended "percentage complete" hides both.</p>`],
+
+      ['Why our tool refuses to show you a CPI sometimes', `<p>This is worth stating plainly, because most free EVM calculators do the opposite.</p>
+        <p>Actual cost is the one input that cannot be derived from a schedule. It has to come from your accounts. The tempting shortcut is to assume a task that is 40% done has consumed 40% of its budget — and if you do that, AC equals EV by construction, so <strong>CPI comes out as exactly 1.00 for every project that has ever existed</strong>. The number looks authoritative, responds to nothing, and would tell someone with a runaway budget that they are perfectly on track.</p>
+        <p>So gantts.app leaves the cost metrics blank until you enter a real "Spent" figure on your tasks. Schedule metrics — SV and SPI — still work, because those need only dates and progress. A missing number is honest. A confident wrong one is not.</p>
+        <p>For the same reason, the earned curve behind today is reconstructed rather than recorded: the tool stores your progress as it is now, not a history of every past reading. It is exact at today, where the numbers are read, and approximate behind it — and it says so on the panel rather than in a footnote.</p>`],
+
+      ['You do not need a budget to get a curve', `<p>Most plans carry no cost data at all, and an S-curve that needs one is an S-curve nobody draws.</p>
+        <p>If no task has a cost, gantts.app weights each task by its working-day duration instead. The shape is the same and the axis reads in percent rather than currency — a pure progress S-curve. Add costs later and the same panel becomes a value curve without you changing anything else.</p>
+        <p>One thing does matter though: <strong>set a baseline</strong>. Without one, "planned" can only mean your current dates, and your current dates already include every slip that has happened. Schedule variance will read as zero forever, which is a very reassuring and completely useless answer. Baseline ▸ Set baseline, once, at the point the plan is agreed.</p>`],
+
+      ['How to build one here', `<ol>
+          <li>Build or import your schedule and get the dates roughly right.</li>
+          <li><strong>Baseline ▸ Set baseline</strong> when the plan is agreed. This freezes what "planned" means.</li>
+          <li>Optionally give tasks a <strong>Budget</strong> in the task panel, so the curve reads in money rather than days.</li>
+          <li>Update <strong>% complete</strong> as work happens — this is what the earned curve is made of.</li>
+          <li>Optionally enter <strong>Spent</strong> per task to unlock CPI, cost variance and the forecast at completion.</li>
+          <li>Click <strong>📈 S-curve</strong>.</li>
+        </ol>
+        <p>It runs entirely in your browser. No account, no upload, and no spreadsheet template to maintain by hand.</p>`],
+    ],
+    faq: [
+      ['What is an S-curve in project management?', 'A graph of cumulative planned work against time. It is S-shaped because projects start slowly, accelerate in the middle and taper at the end. Plotted against actual progress, the vertical gap between the two curves is how far ahead or behind you are.'],
+      ['What is the difference between an S-curve and earned value?', 'The S-curve is the picture; earned value is the arithmetic behind it. EVM puts numbers on the gap — SV, SPI, CV and CPI — where the curve shows you its shape and direction.'],
+      ['What does an SPI of 0.9 mean?', 'You have earned 90% of the value the plan said you would have by now, so you are roughly 10% behind schedule. Below 1.0 is behind, above 1.0 is ahead.'],
+      ['Do I need cost data to use an S-curve?', 'No. Without costs, tasks are weighted by working-day duration and you get a progress curve — the same shape, read in percent. Costs turn it into a value curve and unlock the cost metrics.'],
+      ['Why is CPI not showing?', 'Because no actual costs have been entered. CPI needs real spend; deriving it from percentage complete would make it exactly 1.00 for every project. Add a Spent figure to your tasks and it appears.'],
+      ['Can I make an S-curve in Excel?', 'Yes, and most people do — it means maintaining a cumulative column and a chart by hand, and re-doing it whenever dates move. Generating it from the schedule removes that step.'],
+    ],
+    related: [['gantt-baseline-variance', 'Tracking slippage against a baseline'], ['critical-path-method', 'How the critical path is calculated'], ['3-week-lookahead-schedule', 'The 3-week lookahead']],
+    tpl: ['project-management', 'construction'],
+  },
+
+  // ---------------------------------------------------------------
+  '3-week-lookahead-schedule': {
+    h1: 'The 3-Week Lookahead Schedule (Without Retyping It Every Monday)',
+    metaTitle: '3-Week Lookahead Schedule — Free Generator',
+    metaDesc: 'What a 3-week lookahead is, why site teams use one, and how to generate it straight from your master schedule instead of retyping it into an Excel template.',
+    date: '2026-07-19',
+    lead: 'Nobody builds from an eighteen-month programme. They build from the next three weeks of it. The <strong>lookahead schedule</strong> is that window — the slice of the master programme that is close enough to be real — and on most sites it is still produced by copying rows into a spreadsheet by hand, every single Monday.',
+    figIntro: 'The same schedule, filtered to the work that touches the window:',
+    figure: `<svg viewBox="0 0 620 290" width="100%" role="img" aria-label="Diagram showing a long master schedule on the left and a three-week window on the right containing only the tasks that overlap it">
+      <text x="0" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Master programme</text>
+      <rect x="0" y="28" width="240" height="14" rx="4" fill="#cbd5e1"/>
+      <rect x="0" y="50" width="90" height="14" rx="4" fill="#cbd5e1"/>
+      <rect x="40" y="72" width="200" height="14" rx="4" fill="#94a3b8"/>
+      <rect x="150" y="94" width="120" height="14" rx="4" fill="#94a3b8"/>
+      <rect x="200" y="116" width="140" height="14" rx="4" fill="#cbd5e1"/>
+      <rect x="300" y="138" width="180" height="14" rx="4" fill="#cbd5e1"/>
+
+      <rect x="150" y="20" width="120" height="145" fill="#6c4cf1" opacity="0.10"/>
+      <line x1="150" y1="20" x2="150" y2="165" stroke="#6c4cf1" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <line x1="270" y1="20" x2="270" y2="165" stroke="#6c4cf1" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="210" y="180" font-size="10.5" fill="#6c4cf1" text-anchor="middle" font-family="system-ui,sans-serif">the next 3 weeks</text>
+
+      <text x="360" y="14" font-size="12.5" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Lookahead</text>
+      <rect x="360" y="28" width="200" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="360" y="58" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">already running — still shown</text>
+      <rect x="360" y="68" width="150" height="14" rx="4" fill="#8b7bf5"/>
+      <rect x="400" y="90" width="120" height="14" rx="4" fill="#8b7bf5"/>
+      <text x="360" y="126" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">Work that OVERLAPS the window,</text>
+      <text x="360" y="141" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">not only work that fits inside it.</text>
+    </svg>`,
+    sections: [
+      ['What a lookahead actually is', `<p>A lookahead is a short, rolling extract of the master schedule — typically three weeks, sometimes two, four or six — showing only the work that touches that window. It rolls forward every week, so the same task appears in several consecutive lookaheads as it gets nearer and better understood.</p>
+        <p>It exists because a master programme and a work plan are different documents doing different jobs. The programme answers "will we finish in time"; the lookahead answers "what is happening on Tuesday, and has anyone ordered the steel". Trying to run a site meeting off a two-hundred-line programme is why people print it on A0 and then ignore it.</p>
+        <p>In Last Planner terms the lookahead is where <em>constraints</em> get found: the work is close enough that you can ask whether the permit, the materials, the crew and the preceding trade are all actually going to be there.</p>`],
+
+      ['Overlap, not containment — the detail everyone gets wrong', `<p>Here is the rule that makes a lookahead correct, and the one that hand-built spreadsheets most often break.</p>
+        <p>A task belongs in the window if it <strong>overlaps</strong> the window — not if it fits inside it. The eight-month foundation package that started in March and runs to November is happening right now, and it is precisely the work the site team most needs in front of them. Filter for tasks that start <em>and</em> finish inside the three weeks and you will drop every long-running activity on the job, leaving a lookahead that looks tidy and describes a project nobody is working on.</p>
+        <p>The test is two comparisons, not four:</p>
+        <p><code>task.start ≤ window.end &nbsp;AND&nbsp; task.end ≥ window.start</code></p>
+        <p>That is the whole rule, and gantts.app applies exactly it.</p>`],
+
+      ['Why it is anchored to Monday', `<p>The lookahead is a weekly ritual attached to a weekly meeting. A window running Thursday to Thursday would cut the working week in half and be useless to everyone reading it.</p>
+        <p>So the window always snaps back to the start of the week. Open the tool on a Wednesday and you get the window that began on Monday, not a three-week block starting mid-week. The arrows step it a week at a time when you need to look further out, and "This week" brings it back.</p>`],
+
+      ['Generating one instead of retyping it', `<p>There is no shortage of 3-week lookahead templates — Smartsheet publishes one, so do half a dozen others, and there is even a standard format used on US Navy facilities work. Every one of them is a blank grid you fill in by hand.</p>
+        <p>That is the actual problem. The schedule already contains the answer; the weekly work is copying it out, and copying it out is where the errors and the staleness come from. Miss a task, or update the master and forget the lookahead, and the two documents quietly disagree.</p>
+        <p>In gantts.app the lookahead is a <em>view</em> of the same data:</p>
+        <ol>
+          <li>Set <strong>View</strong> to <strong>Lookahead</strong>.</li>
+          <li>Pick the window — 1, 2, 3, 4, 6 or 8 weeks.</li>
+          <li>Step it with the arrows, or press "This week" to jump back to today.</li>
+          <li>Export to PDF or PNG for the wall, or Excel for the meeting.</li>
+        </ol>
+        <p>The chart zooms to the window so three weeks are legible rather than compressed into a sliver of an eighteen-month axis. A strip across the top states which window you are looking at and how many tasks are hidden, because a filtered chart that does not say it is filtered reads as a plan with tasks missing.</p>
+        <p>Change a date in the master and the lookahead is already correct. There is nothing to re-copy.</p>`],
+
+      ['Making it a useful document, not just a filter', `<ul>
+          <li><strong>Put a name on every line.</strong> A lookahead without an owner per task is a list of hopes. Turn on the Assignee column.</li>
+          <li><strong>Break the near work down further than the far work.</strong> A task that reads "First floor fit-out — 6 weeks" is fine in the programme and useless in a lookahead. Split it as it approaches.</li>
+          <li><strong>Review constraints, not just dates.</strong> The value of looking three weeks out is that there is still time to fix what is missing.</li>
+          <li><strong>Keep it short.</strong> If the lookahead runs to sixty lines, either the window is too long or the plan is too granular for this meeting.</li>
+        </ul>`],
+    ],
+    faq: [
+      ['What is a 3-week lookahead schedule?', 'A rolling extract of the master programme showing only the work that touches the next three weeks. It is updated weekly and used to coordinate day-to-day work and to spot constraints while there is still time to clear them.'],
+      ['Why three weeks?', 'It is long enough that constraints — materials, permits, crews — can still be resolved, and short enough that the dates are credible. Two, four and six-week windows are also common; the right length depends on your lead times.'],
+      ['Should a long task that started months ago appear in the lookahead?', 'Yes. Anything overlapping the window belongs in it. Filtering to tasks that fit entirely inside three weeks drops exactly the long-running work that is happening right now.'],
+      ['Is a lookahead the same as the master schedule?', 'No. The master schedule answers whether the project finishes on time. The lookahead answers what happens this week and who is doing it. They come from the same data but serve different meetings.'],
+      ['Can I make a lookahead in Excel?', 'Yes, and most teams do — by retyping rows from the programme every week. Generating it as a view of the schedule removes the retyping and the drift that comes with it.'],
+      ['How do I print the lookahead?', 'Switch to the Lookahead view and export to PDF or PNG. The export reflects what is on screen, so you get the window rather than the whole programme.'],
+    ],
+    related: [['critical-path-method', 'How the critical path is calculated'], ['s-curve-project-management', 'S-curves and earned value'], ['gantt-chart-dependencies', 'Dependencies: FS, SS, FF, SF']],
+    tpl: ['construction', 'project-management'],
+  },
+
+  // ---------------------------------------------------------------
+  'mermaid-gantt-chart': {
+    h1: 'Mermaid Gantt Charts: Syntax, Gotchas, and Round-Tripping to a Real Editor',
+    metaTitle: 'Mermaid Gantt Chart Syntax (with Live Editor)',
+    metaDesc: 'The Mermaid gantt syntax explained — sections, tags, dependencies, excludes — plus the off-by-one traps, and how to edit a diagram visually and paste it back.',
+    date: '2026-07-19',
+    lead: 'Mermaid gantt blocks render natively in GitHub, GitLab, Notion and Obsidian, which makes them the easiest way to put a schedule where the work already lives. They are also miserable to <em>edit</em>: move one date and you re-derive every <code>after</code> chain downstream by hand. This covers the syntax, the traps, and the missing step — editing visually and getting the text back.',
+    figIntro: 'The same schedule as text and as bars:',
+    figure: `<svg viewBox="0 0 620 250" width="100%" role="img" aria-label="Mermaid gantt source code on the left and the rendered bar chart it produces on the right">
+      <rect x="0" y="20" width="290" height="200" rx="8" fill="#0f172a"/>
+      <text x="14" y="42" font-size="10.5" fill="#7dd3fc" font-family="ui-monospace,monospace">gantt</text>
+      <text x="14" y="58" font-size="10.5" fill="#7dd3fc" font-family="ui-monospace,monospace">  dateFormat YYYY-MM-DD</text>
+      <text x="14" y="74" font-size="10.5" fill="#7dd3fc" font-family="ui-monospace,monospace">  excludes weekends</text>
+      <text x="14" y="90" font-size="10.5" fill="#a5b4fc" font-family="ui-monospace,monospace">  section Design</text>
+      <text x="14" y="106" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  Research  :done, res,</text>
+      <text x="14" y="120" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">            2026-01-05, 5d</text>
+      <text x="14" y="136" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  Wireframes :active, wf,</text>
+      <text x="14" y="150" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">            after res, 8d</text>
+      <text x="14" y="166" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">  Sign-off  :milestone,</text>
+      <text x="14" y="180" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">            2026-01-23, 0d</text>
+
+      <text x="330" y="34" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,sans-serif">Design</text>
+      <rect x="330" y="44" width="80" height="14" rx="4" fill="#16a34a"/>
+      <text x="418" y="55" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">Research (done)</text>
+      <rect x="418" y="70" width="110" height="14" rx="4" fill="#2563eb"/>
+      <text x="330" y="81" font-size="10.5" fill="#94a3b8" font-family="system-ui,sans-serif">after res</text>
+      <polygon points="545,96 553,104 545,112 537,104" fill="#9333ea"/>
+      <text x="560" y="108" font-size="10.5" fill="currentColor" font-family="system-ui,sans-serif">◆</text>
+      <text x="330" y="140" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Renders natively in GitHub, GitLab,</text>
+      <text x="330" y="154" font-size="10" fill="#94a3b8" font-family="system-ui,sans-serif">Notion and Obsidian.</text>
+    </svg>`,
+    sections: [
+      ['The syntax in one pass', `<p>A gantt block opens with <code>gantt</code> and a few header lines, then <code>section</code> headings with task lines under them.</p>
+        <p>A task line is a name, a colon, then comma-separated fields:</p>
+        <p><code>Task name :tag, id, start, duration</code></p>
+        <ul>
+          <li><strong>Tags</strong> — any of <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Optional.</li>
+          <li><strong>id</strong> — a bare word, needed only if something else refers to this task.</li>
+          <li><strong>start</strong> — a date, or <code>after someId</code>, or omitted to continue from the previous task.</li>
+          <li><strong>duration</strong> — <code>5d</code>, <code>2w</code>, or a second date.</li>
+        </ul>
+        <p>Header lines worth knowing: <code>dateFormat</code> (how your dates are written), <code>excludes weekends</code> (skip Saturdays and Sundays), <code>title</code>, and <code>axisFormat</code> (how the axis is labelled).</p>`],
+
+      ['Four things that will bite you', `<p><strong>1. Durations are inclusive of the start day.</strong> <code>5d</code> from Monday the 5th runs to Friday the 9th, not the 10th. Off-by-one here shifts every task in the file and still renders perfectly.</p>
+        <p><strong>2. <code>after</code> plus <code>excludes weekends</code> is where the real bugs live.</strong> If a predecessor ends on a Friday, its successor starts on the <em>Monday</em> — not Saturday. Any tool that resolves <code>after</code> by adding one calendar day will quietly put tasks on weekends in a file that explicitly forbids them. (Ours did, briefly. The test that caught it now asserts that no derived date lands on an excluded day.)</p>
+        <p><strong>3. There is no escaping.</strong> A colon starts the field list and a comma separates fields, so a task named <code>Phase 2: design, review</code> becomes something else entirely. Keep colons and commas out of task names.</p>
+        <p><strong>4. An unparseable duration silently becomes zero.</strong> Write <code>3dd</code> and you get a zero-length bar rather than an error.</p>`],
+
+      ['What Mermaid cannot express', `<p>It is a diagram format, not a scheduling engine, and the gaps matter if you are round-tripping:</p>
+        <ul>
+          <li><strong>No progress percentage.</strong> Only <code>done</code> and <code>active</code>. A task that is 40% complete and one that is 90% complete are both just "active".</li>
+          <li><strong>Only finish-to-start.</strong> <code>after</code> is FS with no lag. Start-to-start, finish-to-finish and lags have nowhere to go.</li>
+          <li><strong>Flat sections.</strong> No nested groups.</li>
+          <li><strong>No resources, costs or baselines.</strong></li>
+        </ul>
+        <p>So a round trip is lossy in a known, boring way. gantts.app maps 100% to <code>done</code> and anything in between to <code>active</code> on the way out, and imports <code>active</code> back as 50% — a guess, which it tells you about rather than letting you find it in a status report. Links it cannot write as <code>after</code> fall back to absolute dates, which stay correct even though they stop being maintainable.</p>
+        <p>One deliberate asymmetry: <code>crit</code> is written on export but ignored on import. Criticality is <em>computed</em> from the dependency graph, and trusting a value asserted in a possibly-stale diagram would let it paint a non-critical chain red.</p>`],
+
+      ['Editing visually, then pasting the text back', `<p>Plenty of tools render Mermaid. What has been missing is the other direction — dragging bars and getting the syntax back out.</p>
+        <ol>
+          <li>Paste or open your diagram in gantts.app — a <code>.mmd</code> file, or a <code>.md</code> with a fenced block, both work. It detects a gantt block by its content, not its extension.</li>
+          <li>Drag, link and re-date it like any other chart. <code>excludes weekends</code> switches the working calendar on, so the dates it produces agree with the file it came from.</li>
+          <li><strong>Export ▸ Mermaid gantt</strong>, copy, paste back into your README.</li>
+        </ol>
+        <p>There is also a nice side effect for anyone using an LLM to draft schedules: ask for Mermaid gantt syntax, paste the answer in, and you have a real editable chart with a critical path — no API key or backend involved.</p>`],
+    ],
+    faq: [
+      ['How do I write a Gantt chart in Mermaid?', 'Start the block with gantt, add dateFormat YYYY-MM-DD, then section headings with task lines under them in the form "Name :tag, id, start, duration" — for example "Research :done, res, 2026-01-05, 5d".'],
+      ['Does 5d in Mermaid include the start day?', 'Yes. A 5d task starting Monday the 5th finishes Friday the 9th. This inclusive counting is the most common source of off-by-one errors.'],
+      ['How do dependencies work in Mermaid gantt?', 'Use "after someId" as the start field. It is always finish-to-start with no lag — start-to-start, finish-to-finish and lags cannot be expressed.'],
+      ['Can Mermaid show percentage complete?', 'No. It has only the done and active tags. Importing active as a specific percentage is a guess; gantts.app uses 50% and tells you it did.'],
+      ['Where do Mermaid gantt charts render?', 'GitHub, GitLab, Notion and Obsidian render them natively in Markdown, and mermaid.live renders them in the browser.'],
+      ['Can I convert a Mermaid gantt chart into an editable chart?', 'Yes. Open the .mmd or the Markdown file in gantts.app, edit it visually, then use Export ▸ Mermaid gantt to copy the updated syntax back out.'],
+    ],
+    related: [['gantt-chart-dependencies', 'Dependencies: FS, SS, FF, SF'], ['critical-path-method', 'How the critical path is calculated'], ['what-is-a-gantt-chart', 'What is a Gantt chart?']],
+    tpl: ['software', 'project-management'],
+  },
 };
 
 module.exports = { G, SLUGS: Object.keys(G) };

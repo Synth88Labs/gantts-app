@@ -46,6 +46,7 @@ const LABELS = {
     step: 'Step', design: 'Design', build: 'Build', test: 'Test', launch: 'Launch',
     excel: 'Excel', sheets: 'Sheets', slides: 'Slides', app: 'Browser',
     depends: 'waits for', duration: 'Duration', done: 'Done',
+    behind: 'behind plan', window: 'next 3 weeks', text: 'text', chart: 'chart', earned: 'Earned',
   },
   es: {
     task: 'Tarea', phase: 'Fase', milestone: 'Hito', today: 'Hoy',
@@ -55,6 +56,7 @@ const LABELS = {
     step: 'Paso', design: 'Diseño', build: 'Construir', test: 'Probar', launch: 'Lanzar',
     excel: 'Excel', sheets: 'Sheets', slides: 'Diapositivas', app: 'Navegador',
     depends: 'espera a', duration: 'Duración', done: 'Hecho',
+    behind: 'retraso', window: 'próximas 3 semanas', text: 'texto', chart: 'gráfico', earned: 'Valor ganado',
   },
   de: {
     task: 'Vorgang', phase: 'Phase', milestone: 'Meilenstein', today: 'Heute',
@@ -64,6 +66,7 @@ const LABELS = {
     step: 'Schritt', design: 'Entwurf', build: 'Umsetzung', test: 'Test', launch: 'Start',
     excel: 'Excel', sheets: 'Sheets', slides: 'Folien', app: 'Browser',
     depends: 'wartet auf', duration: 'Dauer', done: 'Fertig',
+    behind: 'im Rückstand', window: 'nächste 3 Wochen', text: 'Text', chart: 'Diagramm', earned: 'Fertigstellungswert',
   },
   fr: {
     task: 'Tâche', phase: 'Phase', milestone: 'Jalon', today: "Aujourd'hui",
@@ -73,6 +76,7 @@ const LABELS = {
     step: 'Étape', design: 'Conception', build: 'Réalisation', test: 'Recette', launch: 'Lancement',
     excel: 'Excel', sheets: 'Sheets', slides: 'Diapositives', app: 'Navigateur',
     depends: 'attend', duration: 'Durée', done: 'Terminé',
+    behind: 'en retard', window: '3 prochaines semaines', text: 'texte', chart: 'diagramme', earned: 'Valeur acquise',
   },
   pt: {
     task: 'Tarefa', phase: 'Fase', milestone: 'Marco', today: 'Hoje',
@@ -82,6 +86,7 @@ const LABELS = {
     step: 'Passo', design: 'Design', build: 'Execução', test: 'Testes', launch: 'Lançamento',
     excel: 'Excel', sheets: 'Sheets', slides: 'Slides', app: 'Navegador',
     depends: 'espera', duration: 'Duração', done: 'Concluído',
+    behind: 'atrasado', window: 'próximas 3 semanas', text: 'texto', chart: 'gráfico', earned: 'Valor agregado',
   },
   zh: {
     task: '任务', phase: '阶段', milestone: '里程碑', today: '今天',
@@ -91,6 +96,7 @@ const LABELS = {
     step: '步骤', design: '设计', build: '开发', test: '测试', launch: '上线',
     excel: 'Excel', sheets: '表格', slides: '幻灯片', app: '浏览器',
     depends: '等待', duration: '工期', done: '完成',
+    behind: '落后于计划', window: '未来 3 周', text: '文本', chart: '图表', earned: '挣值',
   },
 };
 
@@ -235,6 +241,72 @@ function figTools(L, aria) {
 }
 
 /* ---- which archetype each guide uses -------------------------------- */
+
+/** Planned vs earned cumulative curves, with the gap called out. */
+function figSCurve(L, aria) {
+  const inner =
+    `<line x1="46" y1="12" x2="46" y2="150" stroke="#e2e8f0" stroke-width="1"/>` +
+    `<line x1="46" y1="150" x2="560" y2="150" stroke="#e2e8f0" stroke-width="1"/>` +
+    txt(40, 18, '100%', { size: 9.5, fill: INK_SOFT, anchor: 'end' }) +
+    txt(40, 154, '0%', { size: 9.5, fill: INK_SOFT, anchor: 'end' }) +
+    // planned: solid
+    `<path d="M 46 150 C 150 147, 190 92, 270 74 C 350 56, 420 20, 560 15" fill="none" stroke="${ACCENT}" stroke-width="2.4"/>` +
+    txt(452, 40, L.plan, { size: 11, weight: 700, fill: ACCENT }) +
+    // earned: dashed, so the two are distinguishable without colour
+    `<path d="M 46 150 C 140 149, 175 118, 270 108" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-dasharray="7 4"/>` +
+    txt(120, 132, L.earned, { size: 11, weight: 700, fill: '#16a34a' }) +
+    // status line + the gap
+    `<line x1="270" y1="12" x2="270" y2="150" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="3 3"/>` +
+    txt(274, 22, L.today, { size: 10, fill: '#ef4444' }) +
+    `<line x1="270" y1="74" x2="270" y2="108" stroke="#ea580c" stroke-width="6" opacity="0.3"/>` +
+    txt(284, 96, L.behind, { size: 10.5, weight: 700, fill: '#ea580c' });
+  return wrap('600 170', aria, inner);
+}
+
+/** A long programme with a three-week window cut out of it. */
+function figLookahead(L, aria) {
+  const rows = [
+    [0, 250], [0, 95], [40, 210], [155, 130], [210, 150],
+  ];
+  let inner = '';
+  rows.forEach((r, i) => {
+    const y = 24 + i * 22;
+    // Bars overlapping the window are highlighted; the rest are grey.
+    const overlaps = r[0] < 285 && (r[0] + r[1]) > 155;
+    inner += bar(r[0], y, r[1], { fill: overlaps ? ACCENT : '#cbd5e1' });
+  });
+  inner +=
+    `<rect x="155" y="14" width="130" height="126" fill="${ACCENT}" opacity="0.10"/>` +
+    `<line x1="155" y1="14" x2="155" y2="140" stroke="${ACCENT}" stroke-width="1.4" stroke-dasharray="4 3"/>` +
+    `<line x1="285" y1="14" x2="285" y2="140" stroke="${ACCENT}" stroke-width="1.4" stroke-dasharray="4 3"/>` +
+    txt(220, 156, L.window, { size: 10.5, weight: 700, fill: ACCENT, anchor: 'middle' }) +
+    txt(330, 40, L.task, { size: 10.5, fill: INK_SOFT }) +
+    txt(330, 62, L.duration, { size: 10.5, fill: INK_SOFT });
+  return wrap('600 170', aria, inner);
+}
+
+/** Text on the left, bars on the right — the round trip. */
+function figMermaid(L, aria) {
+  const code = ['gantt', '  section ' + L.phase, '  ' + L.task + ' :a, 5d', '  ' + L.task + ' :after a, 8d'];
+  let inner = `<rect x="0" y="12" width="250" height="120" rx="8" fill="#0f172a"/>`;
+  code.forEach((line, i) => {
+    inner += `<text x="14" y="${34 + i * 20}" font-size="10.5" fill="#e2e8f0" font-family="ui-monospace,monospace">${esc(line)}</text>`;
+  });
+  inner +=
+    txt(60, 148, L.text, { size: 10.5, fill: INK_SOFT, anchor: 'middle' }) +
+    // the arrow both ways
+    `<path d="M 262 60 L 306 60" stroke="${ACCENT}" stroke-width="1.8"/>` +
+    `<polygon points="312,60 304,56 304,64" fill="${ACCENT}"/>` +
+    `<path d="M 312 84 L 268 84" stroke="${ACCENT}" stroke-width="1.8"/>` +
+    `<polygon points="262,84 270,80 270,88" fill="${ACCENT}"/>` +
+    bar(330, 30, 110, {}) +
+    bar(360, 52, 140, { op: 0.75 }) +
+    bar(400, 74, 90, { op: 0.55 }) +
+    `<polygon points="510,96 518,104 510,112 502,104" fill="#9333ea"/>` +
+    txt(420, 148, L.chart, { size: 10.5, fill: INK_SOFT, anchor: 'middle' });
+  return wrap('600 170', aria, inner);
+}
+
 const FOR_SLUG = {
   'what-is-a-gantt-chart': figBars,
   'how-to-make-a-gantt-chart': figSteps,
@@ -248,6 +320,9 @@ const FOR_SLUG = {
   'gantt-baseline-variance': figBaseline,
   'gantt-chart-mistakes': figBars,
   'milestones-vs-tasks': figBars,
+  's-curve-project-management': figSCurve,
+  '3-week-lookahead-schedule': figLookahead,
+  'mermaid-gantt-chart': figMermaid,
 };
 
 /**

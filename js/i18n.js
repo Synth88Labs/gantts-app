@@ -39,6 +39,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV (spreadsheet)',
       'exp.json': '{ } JSON (raw)', 'exp.print': '🖨 Print', 'exp.link': '🔗 Shareable link',
       'pt.laser': '🔴 Laser', 'pt.spotlight': '🔦 Spotlight', 'pt.reset': 'Reset', 'pt.exit': '✕ Exit',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'S-curve',
+      'app.view': 'View',
+      'view.all': 'All tasks',
+      'view.lookahead': 'Lookahead',
+      'view.milestones': 'Milestones only',
+      'view.thisweek': 'This week',
+      'view.showall': 'Show all tasks',
+      'app.autoschedule': 'Auto-schedule',
+      'exp.mermaid': '🧜 Mermaid gantt (text)',
+      'exp.ics': '📅 Calendar (.ics)',
     },
     es: {
       'nav.maker': 'Crear Gantt', 'nav.templates': 'Plantillas', 'nav.guides': 'Guías',
@@ -67,6 +79,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV (hoja de cálculo)',
       'exp.json': '{ } JSON (bruto)', 'exp.print': '🖨 Imprimir', 'exp.link': '🔗 Enlace para compartir',
       'pt.laser': '🔴 Láser', 'pt.spotlight': '🔦 Foco', 'pt.reset': 'Restablecer', 'pt.exit': '✕ Salir',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'Curva S',
+      'app.view': 'Vista',
+      'view.all': 'Todas las tareas',
+      'view.lookahead': 'Próximas semanas',
+      'view.milestones': 'Solo hitos',
+      'view.thisweek': 'Esta semana',
+      'view.showall': 'Ver todas las tareas',
+      'app.autoschedule': 'Reprogramar',
+      'exp.mermaid': '🧜 Mermaid gantt (texto)',
+      'exp.ics': '📅 Calendario (.ics)',
     },
     fr: {
       'nav.maker': 'Créer un Gantt', 'nav.templates': 'Modèles', 'nav.guides': 'Guides',
@@ -95,6 +119,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV (tableur)',
       'exp.json': '{ } JSON (brut)', 'exp.print': '🖨 Imprimer', 'exp.link': '🔗 Lien de partage',
       'pt.laser': '🔴 Laser', 'pt.spotlight': '🔦 Projecteur', 'pt.reset': 'Réinit.', 'pt.exit': '✕ Quitter',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'Courbe en S',
+      'app.view': 'Vue',
+      'view.all': 'Toutes les tâches',
+      'view.lookahead': 'Semaines à venir',
+      'view.milestones': 'Jalons seulement',
+      'view.thisweek': 'Cette semaine',
+      'view.showall': 'Afficher toutes les tâches',
+      'app.autoschedule': 'Replanifier',
+      'exp.mermaid': '🧜 Mermaid gantt (texte)',
+      'exp.ics': '📅 Calendrier (.ics)',
     },
     de: {
       'nav.maker': 'Gantt erstellen', 'nav.templates': 'Vorlagen', 'nav.guides': 'Ratgeber',
@@ -123,6 +159,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV (Tabelle)',
       'exp.json': '{ } JSON (roh)', 'exp.print': '🖨 Drucken', 'exp.link': '🔗 Teilbarer Link',
       'pt.laser': '🔴 Laser', 'pt.spotlight': '🔦 Spotlight', 'pt.reset': 'Zurücksetzen', 'pt.exit': '✕ Beenden',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'S-Kurve',
+      'app.view': 'Ansicht',
+      'view.all': 'Alle Vorgänge',
+      'view.lookahead': 'Vorschau',
+      'view.milestones': 'Nur Meilensteine',
+      'view.thisweek': 'Diese Woche',
+      'view.showall': 'Alle Vorgänge anzeigen',
+      'app.autoschedule': 'Neu planen',
+      'exp.mermaid': '🧜 Mermaid-Gantt (Text)',
+      'exp.ics': '📅 Kalender (.ics)',
     },
     pt: {
       'nav.maker': 'Criar Gantt', 'nav.templates': 'Modelos', 'nav.guides': 'Guias',
@@ -151,6 +199,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV (planilha)',
       'exp.json': '{ } JSON (bruto)', 'exp.print': '🖨 Imprimir', 'exp.link': '🔗 Link de compartilhamento',
       'pt.laser': '🔴 Laser', 'pt.spotlight': '🔦 Holofote', 'pt.reset': 'Redefinir', 'pt.exit': '✕ Sair',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'Curva S',
+      'app.view': 'Exibição',
+      'view.all': 'Todas as tarefas',
+      'view.lookahead': 'Próximas semanas',
+      'view.milestones': 'Somente marcos',
+      'view.thisweek': 'Esta semana',
+      'view.showall': 'Mostrar todas as tarefas',
+      'app.autoschedule': 'Reprogramar',
+      'exp.mermaid': '🧜 Mermaid gantt (texto)',
+      'exp.ics': '📅 Calendário (.ics)',
     },
     zh: {
       'nav.maker': '甘特图工具', 'nav.templates': '模板', 'nav.guides': '指南',
@@ -179,6 +239,18 @@
       'exp.xlsx': '📊 Excel (.xlsx)', 'exp.pptx': '📽 PowerPoint (.pptx)', 'exp.csv': '📑 CSV（表格）',
       'exp.json': '{ } JSON（原始）', 'exp.print': '🖨 打印', 'exp.link': '🔗 分享链接',
       'pt.laser': '🔴 激光笔', 'pt.spotlight': '🔦 聚光灯', 'pt.reset': '重置', 'pt.exit': '✕ 退出',
+
+      // added with the S-curve / lookahead / Mermaid work
+      'app.scurve': 'S 曲线',
+      'app.view': '视图',
+      'view.all': '全部任务',
+      'view.lookahead': '近期计划',
+      'view.milestones': '仅里程碑',
+      'view.thisweek': '本周',
+      'view.showall': '显示全部任务',
+      'app.autoschedule': '自动排程',
+      'exp.mermaid': '🧜 Mermaid 甘特图（文本）',
+      'exp.ics': '📅 日历 (.ics)',
     },
   };
 

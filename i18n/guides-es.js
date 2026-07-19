@@ -555,11 +555,209 @@ const G = {
       ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
     ],
   },
+
+  's-curve-project-management': {
+    h1: 'Curva S y valor ganado: saber si de verdad vas con retraso',
+    metaTitle: 'Curva S y valor ganado en proyectos',
+    metaDesc: 'Qué muestra una curva S, cómo leer lo planificado frente a lo real y cómo el valor ganado convierte esa diferencia en una cifra. Generador gratuito.',
+    date: '2026-07-19',
+    lead: 'Un porcentaje completado no dice casi nada por sí solo. Un sesenta por ciento es excelente en la semana dos y una catástrofe en la semana nueve. Una <strong>curva S</strong> resuelve eso representando el trabajo planificado acumulado frente al tiempo, de modo que «¿cómo vamos?» se convierte en «¿cómo <em>deberíamos</em> ir a estas alturas?» — y la diferencia entre las dos líneas es la respuesta.',
+    figIntro: 'Lo planificado frente a lo real, y qué significa la distancia entre ambas curvas:',
+    sections: [
+      ['Por qué la curva tiene forma de S',
+        `<p>Los proyectos no consumen trabajo a ritmo constante. Las primeras semanas van despacio —movilización, cierre del alcance, esperas de aprobación—, después el centro se acelera porque todo avanza en paralelo, y la cola vuelve a frenarse mientras lo último espera firmas y repasos.</p>
+        <p>Al acumular el trabajo sobre el eje temporal, esa forma sale sola: plana, empinada, plana. No es un objetivo que haya dibujado nadie. Es consecuencia de cómo llega realmente el trabajo.</p>
+        <p>Y eso es justamente lo que la hace útil como vara de medir. Una recta implicaría que el proyecto debe estar al veinte por ciento cuando ha pasado el veinte por ciento del plazo, y todos los proyectos de la historia parecerían retrasados en su primer mes.</p>`],
+
+      ['Leer lo planificado frente a lo real',
+        `<p>Dos curvas. La curva <strong>planificada</strong> sale de tu línea base: se reparte el peso de cada tarea entre sus fechas previstas y se acumula. La curva <strong>real</strong> sale del avance reportado.</p>
+        <p>Se leen en vertical, sobre la fecha de hoy:</p>
+        <ul>
+          <li><strong>Real por debajo de lo planificado</strong> — vas con retraso. La distancia vertical es el trabajo que te falta.</li>
+          <li><strong>Real por encima de lo planificado</strong> — vas adelantado, o tu reporte de avance es optimista. Ocurren las dos cosas.</li>
+          <li><strong>Curvas que se separan</strong> — el problema está empeorando, no estabilizándose. Es la forma que más importa y la que un porcentaje único nunca enseña.</li>
+        </ul>
+        <p>Léelas en <em>horizontal</em> y obtendrás algo más intuitivo para una reunión de seguimiento: desplázate a la izquierda desde el punto real de hoy hasta cortar la curva planificada y tendrás la fecha en la que el plan esperaba este nivel de avance. Esa distancia es cuántas semanas llevas de retraso, en las unidades en las que la gente discute de verdad.</p>`],
+
+      ['Valor ganado, sin jerga',
+        `<p>La gestión del valor ganado pone una cifra a esa diferencia. Son tres magnitudes, y las siglas son peores que las ideas:</p>
+        <ul>
+          <li><strong>PV</strong> (valor planificado) — el trabajo que dijiste que estaría terminado a estas alturas, valorado a presupuesto.</li>
+          <li><strong>EV</strong> (valor ganado) — el trabajo que <em>realmente</em> has terminado, valorado con el mismo presupuesto. Una tarea de 10.000 € al 40 % ha ganado 4.000 €. Lo que te haya costado es irrelevante aquí, y a propósito.</li>
+          <li><strong>AC</strong> (coste real) — lo que has gastado de verdad.</li>
+        </ul>
+        <p>A partir de esas tres:</p>
+        <ul>
+          <li><strong>SV = EV − PV</strong> — desviación de plazo. Negativa significa retraso.</li>
+          <li><strong>CV = EV − AC</strong> — desviación de coste. Negativa significa sobrecoste.</li>
+          <li><strong>SPI = EV ÷ PV</strong> — por debajo de 1,0 significa retraso. Un SPI de 0,85 quiere decir que obtienes 85 céntimos de avance por cada euro de plan.</li>
+          <li><strong>CPI = EV ÷ AC</strong> — por debajo de 1,0 significa sobrecoste.</li>
+        </ul>
+        <p>La separación es todo el asunto. Un proyecto puede ir perfectamente en presupuesto y muy tarde, o en plazo y perdiendo dinero a chorros, y un único «porcentaje completado» esconde ambas cosas.</p>`],
+
+      ['Por qué a veces la herramienta se niega a mostrarte el CPI',
+        `<p>Conviene decirlo claro, porque la mayoría de las calculadoras gratuitas de valor ganado hacen justo lo contrario.</p>
+        <p>El coste real es el único dato que no se puede deducir de un calendario. Tiene que venir de tu contabilidad. El atajo tentador es suponer que una tarea al 40 % ha consumido el 40 % de su presupuesto — y si haces eso, AC es igual a EV por construcción, así que <strong>el CPI sale exactamente 1,00 para todos los proyectos que han existido jamás</strong>. La cifra parece rigurosa, no reacciona a nada y le diría a alguien con el presupuesto descontrolado que va perfectamente.</p>
+        <p>Por eso gantts.app deja las métricas de coste en blanco hasta que introduces una cifra real de «Gastado» en tus tareas. Las métricas de plazo —SV y SPI— siguen funcionando, porque solo necesitan fechas y avance. Un dato ausente es honesto. Uno rotundamente equivocado no lo es.</p>
+        <p>Por la misma razón, la curva ganada anterior a hoy se reconstruye en lugar de registrarse: la herramienta guarda tu avance tal como está ahora, no un histórico de cada lectura pasada. Es exacta en el día de hoy, que es donde se leen las cifras, y aproximada hacia atrás — y lo dice en el propio panel, no en una nota al pie.</p>`],
+
+      ['No necesitas presupuesto para tener una curva',
+        `<p>La mayoría de los planes no llevan ningún dato de coste, y una curva S que exija uno es una curva S que no dibuja nadie.</p>
+        <p>Si ninguna tarea tiene coste, gantts.app pondera cada una por su duración en días laborables. La forma es la misma y el eje se lee en porcentaje en vez de en dinero: una curva S de avance puro. Añade costes más adelante y el mismo panel se convierte en una curva de valor sin que cambies nada más.</p>
+        <p>Eso sí, hay algo que importa: <strong>fija una línea base</strong>. Sin ella, «planificado» solo puede significar tus fechas actuales, y tus fechas actuales ya incluyen todos los retrasos que han ocurrido. La desviación de plazo saldrá cero para siempre, que es una respuesta muy tranquilizadora y completamente inútil. Línea base ▸ Fijar línea base, una vez, cuando el plan esté acordado.</p>`],
+
+      ['Cómo construir una aquí',
+        `<ol>
+          <li>Monta o importa tu calendario y deja las fechas más o menos bien.</li>
+          <li><strong>Línea base ▸ Fijar línea base</strong> cuando el plan esté acordado. Eso congela lo que significa «planificado».</li>
+          <li>Opcionalmente, da un <strong>Presupuesto</strong> a las tareas en el panel, para que la curva se lea en dinero y no en días.</li>
+          <li>Actualiza el <strong>% completado</strong> a medida que avanza el trabajo: de eso está hecha la curva ganada.</li>
+          <li>Opcionalmente, introduce lo <strong>Gastado</strong> por tarea para desbloquear el CPI, la desviación de coste y la previsión a la finalización.</li>
+          <li>Pulsa <strong>📈 Curva S</strong>.</li>
+        </ol>
+        <p>Funciona íntegramente en tu navegador. Sin cuenta, sin subir nada y sin una plantilla de hoja de cálculo que mantener a mano.</p>`],
+    ],
+    faq: [
+      ['¿Qué es una curva S en gestión de proyectos?', 'Un gráfico del trabajo planificado acumulado frente al tiempo. Tiene forma de S porque los proyectos arrancan despacio, se aceleran en el centro y se frenan al final. Comparada con el avance real, la distancia vertical entre ambas curvas es cuánto vas por delante o por detrás.'],
+      ['¿Qué diferencia hay entre curva S y valor ganado?', 'La curva S es la imagen; el valor ganado es la aritmética que hay detrás. La gestión del valor ganado pone cifras a esa diferencia —SV, SPI, CV y CPI— mientras que la curva muestra su forma y su tendencia.'],
+      ['¿Qué significa un SPI de 0,9?', 'Que has ganado el 90 % del valor que el plan decía que tendrías a estas alturas, así que vas en torno a un 10 % retrasado. Por debajo de 1,0 es retraso; por encima, adelanto.'],
+      ['¿Necesito datos de coste para usar una curva S?', 'No. Sin costes, las tareas se ponderan por su duración en días laborables y obtienes una curva de avance: la misma forma, leída en porcentaje. Los costes la convierten en una curva de valor y desbloquean las métricas económicas.'],
+      ['¿Por qué no aparece el CPI?', 'Porque no se han introducido costes reales. El CPI necesita gasto real; deducirlo del porcentaje completado lo dejaría en 1,00 exacto para cualquier proyecto. Añade una cifra de «Gastado» a tus tareas y aparecerá.'],
+      ['¿Puedo hacer una curva S en Excel?', 'Sí, y es lo que hace casi todo el mundo: mantener a mano una columna acumulada y un gráfico, y rehacerlos cada vez que se mueven las fechas. Generarla desde el calendario elimina ese paso.'],
+    ],
+    related: [
+      ['gantt-baseline-variance', 'Medir la desviación con una línea base'],
+      ['critical-path-method', 'Cómo se calcula la ruta crítica'],
+      ['3-week-lookahead-schedule', 'El programa lookahead de 3 semanas'],
+    ],
+  },
+
+  '3-week-lookahead-schedule': {
+    h1: 'El programa lookahead de 3 semanas (sin reescribirlo cada lunes)',
+    metaTitle: 'Programa lookahead de 3 semanas (gratis)',
+    metaDesc: 'Qué es un lookahead de 3 semanas, por qué lo usan los equipos de obra y cómo generarlo desde el programa maestro en vez de reescribirlo en Excel.',
+    date: '2026-07-19',
+    lead: 'Nadie construye con un programa de dieciocho meses en la mano. Se construye con las tres semanas siguientes. El <strong>programa lookahead</strong> es esa ventana —la porción del programa maestro que ya está lo bastante cerca como para ser real— y en la mayoría de las obras se sigue produciendo copiando filas a una hoja de cálculo a mano, todos los lunes.',
+    figIntro: 'El mismo calendario, filtrado al trabajo que toca la ventana:',
+    sections: [
+      ['Qué es realmente un lookahead',
+        `<p>Un lookahead es un extracto corto y rodante del programa maestro —normalmente tres semanas, a veces dos, cuatro o seis— que muestra solo el trabajo que toca esa ventana. Avanza cada semana, así que una misma tarea aparece en varios lookaheads consecutivos según se acerca y se entiende mejor.</p>
+        <p>Existe porque un programa maestro y un plan de trabajo son documentos distintos con funciones distintas. El programa responde a «¿llegamos a tiempo?»; el lookahead responde a «¿qué pasa el martes, y ha pedido alguien el acero?». Intentar llevar una reunión de obra con un programa de doscientas líneas es la razón por la que se imprime en A0 y luego se ignora.</p>
+        <p>En términos de Last Planner, el lookahead es donde aparecen las <em>restricciones</em>: el trabajo está lo bastante cerca como para preguntar si el permiso, los materiales, la cuadrilla y el gremio anterior van a estar realmente ahí.</p>`],
+
+      ['Solape, no contención: el detalle que casi todos fallan',
+        `<p>Esta es la regla que hace correcto un lookahead, y la que más se rompe en las hojas de cálculo hechas a mano.</p>
+        <p>Una tarea pertenece a la ventana si la <strong>solapa</strong>, no si cabe dentro de ella. El paquete de cimentación de ocho meses que empezó en marzo y llega a noviembre está ocurriendo ahora mismo, y es precisamente el trabajo que el equipo de obra más necesita tener delante. Filtra por tareas que empiecen <em>y</em> terminen dentro de las tres semanas y perderás todas las actividades de larga duración de la obra, dejando un lookahead muy pulcro que describe un proyecto en el que no trabaja nadie.</p>
+        <p>La comprobación son dos comparaciones, no cuatro:</p>
+        <p><code>tarea.inicio ≤ ventana.fin &nbsp;Y&nbsp; tarea.fin ≥ ventana.inicio</code></p>
+        <p>Esa es toda la regla, y es exactamente la que aplica gantts.app.</p>`],
+
+      ['Por qué se ancla al lunes',
+        `<p>El lookahead es un ritual semanal ligado a una reunión semanal. Una ventana que fuese de jueves a jueves partiría la semana laboral por la mitad y no le serviría a nadie que la leyera.</p>
+        <p>Por eso la ventana siempre retrocede al inicio de la semana. Abre la herramienta un miércoles y obtendrás la ventana que empezó el lunes, no un bloque de tres semanas arrancando a mitad de semana. Las flechas la avanzan semana a semana cuando necesitas mirar más lejos, y «Esta semana» la devuelve a su sitio.</p>`],
+
+      ['Generarlo en vez de reescribirlo',
+        `<p>Plantillas de lookahead a tres semanas hay de sobra: publica una Smartsheet, y media docena más, y existe incluso un formato estándar usado en obras de instalaciones de la Marina estadounidense. Todas son una rejilla en blanco que rellenas a mano.</p>
+        <p>Ese es el problema de verdad. El calendario ya contiene la respuesta; el trabajo semanal consiste en copiarla, y copiarla es de donde vienen los errores y la desactualización. Se te escapa una tarea, o actualizas el maestro y te olvidas del lookahead, y los dos documentos empiezan a contradecirse en silencio.</p>
+        <p>En gantts.app el lookahead es una <em>vista</em> de los mismos datos:</p>
+        <ol>
+          <li>Pon <strong>Vista</strong> en <strong>Lookahead</strong>.</li>
+          <li>Elige la ventana: 1, 2, 3, 4, 6 u 8 semanas.</li>
+          <li>Avánzala con las flechas, o pulsa «Esta semana» para volver a hoy.</li>
+          <li>Exporta a PDF o PNG para la pared, o a Excel para la reunión.</li>
+        </ol>
+        <p>El gráfico hace zoom sobre la ventana, así que las tres semanas se leen en vez de quedar comprimidas en una franja de un eje de dieciocho meses. Una banda superior indica qué ventana estás mirando y cuántas tareas quedan ocultas, porque un gráfico filtrado que no avisa de que está filtrado se lee como un plan al que le faltan tareas.</p>
+        <p>Cambia una fecha en el maestro y el lookahead ya está bien. No hay nada que volver a copiar.</p>`],
+
+      ['Convertirlo en un documento útil, no solo en un filtro',
+        `<ul>
+          <li><strong>Pon un nombre en cada línea.</strong> Un lookahead sin responsable por tarea es una lista de deseos. Activa la columna de responsable.</li>
+          <li><strong>Desglosa más el trabajo cercano que el lejano.</strong> Una tarea que pone «Acabados de la primera planta — 6 semanas» está bien en el programa y es inútil en un lookahead. Divídela según se acerca.</li>
+          <li><strong>Revisa restricciones, no solo fechas.</strong> El valor de mirar tres semanas por delante es que todavía hay tiempo de resolver lo que falta.</li>
+          <li><strong>Que sea corto.</strong> Si el lookahead llega a sesenta líneas, o la ventana es demasiado larga o el plan es demasiado detallado para esta reunión.</li>
+        </ul>`],
+    ],
+    faq: [
+      ['¿Qué es un programa lookahead de 3 semanas?', 'Un extracto rodante del programa maestro que muestra solo el trabajo que toca las tres semanas siguientes. Se actualiza cada semana y sirve para coordinar el día a día y detectar restricciones mientras aún hay margen para resolverlas.'],
+      ['¿Por qué tres semanas?', 'Es plazo suficiente para resolver restricciones —materiales, permisos, cuadrillas— y lo bastante corto para que las fechas sean creíbles. Las ventanas de dos, cuatro y seis semanas también son habituales; la duración adecuada depende de tus plazos de suministro.'],
+      ['¿Debe aparecer en el lookahead una tarea larga que empezó hace meses?', 'Sí. Todo lo que solape la ventana pertenece a ella. Filtrar por tareas que caben enteras dentro de las tres semanas descarta justamente el trabajo de larga duración que está ocurriendo ahora.'],
+      ['¿Es lo mismo un lookahead que el programa maestro?', 'No. El programa maestro responde a si el proyecto termina a tiempo. El lookahead responde a qué pasa esta semana y quién lo hace. Salen de los mismos datos, pero sirven a reuniones distintas.'],
+      ['¿Puedo hacer un lookahead en Excel?', 'Sí, y es lo que hace casi todo el mundo: reescribiendo filas del programa cada semana. Generarlo como una vista del calendario elimina la reescritura y la desincronización que la acompaña.'],
+      ['¿Cómo imprimo el lookahead?', 'Cambia a la vista Lookahead y exporta a PDF o PNG. La exportación refleja lo que hay en pantalla, así que obtienes la ventana y no el programa entero.'],
+    ],
+    related: [
+      ['critical-path-method', 'Cómo se calcula la ruta crítica'],
+      ['s-curve-project-management', 'Curva S y valor ganado'],
+      ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
+    ],
+  },
+
+  'mermaid-gantt-chart': {
+    h1: 'Diagramas de Gantt en Mermaid: sintaxis, trampas y vuelta a un editor real',
+    metaTitle: 'Diagramas de Gantt en Mermaid: sintaxis',
+    metaDesc: 'La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente.',
+    date: '2026-07-19',
+    lead: 'Los bloques gantt de Mermaid se renderizan de forma nativa en GitHub, GitLab, Notion y Obsidian, lo que los convierte en la manera más fácil de poner un calendario donde ya vive el trabajo. También son penosos de <em>editar</em>: mueves una fecha y tienes que rehacer a mano toda la cadena de <code>after</code> que va detrás. Aquí van la sintaxis, las trampas y el paso que falta: editarlo visualmente y recuperar el texto.',
+    figIntro: 'El mismo calendario como texto y como barras:',
+    sections: [
+      ['La sintaxis de una pasada',
+        `<p>Un bloque gantt se abre con <code>gantt</code> y unas pocas líneas de cabecera, y después vienen encabezados <code>section</code> con líneas de tarea debajo.</p>
+        <p>Una línea de tarea es un nombre, dos puntos y después campos separados por comas:</p>
+        <p><code>Nombre de tarea :etiqueta, id, inicio, duración</code></p>
+        <ul>
+          <li><strong>Etiquetas</strong> — cualquiera de <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Opcionales.</li>
+          <li><strong>id</strong> — una palabra suelta, necesaria solo si algo más se refiere a esta tarea.</li>
+          <li><strong>inicio</strong> — una fecha, o <code>after algúnId</code>, o se omite para continuar tras la tarea anterior.</li>
+          <li><strong>duración</strong> — <code>5d</code>, <code>2w</code>, o una segunda fecha.</li>
+        </ul>
+        <p>Cabeceras que conviene conocer: <code>dateFormat</code> (cómo escribes las fechas), <code>excludes weekends</code> (saltar sábados y domingos), <code>title</code> y <code>axisFormat</code> (cómo se etiqueta el eje).</p>`],
+
+      ['Cuatro cosas que te van a morder',
+        `<p><strong>1. Las duraciones incluyen el día de inicio.</strong> <code>5d</code> desde el lunes día 5 llega hasta el viernes día 9, no hasta el 10. Un error de uno aquí desplaza todas las tareas del archivo y aun así se renderiza perfectamente.</p>
+        <p><strong>2. <code>after</code> junto con <code>excludes weekends</code> es donde viven los errores de verdad.</strong> Si una predecesora termina un viernes, su sucesora empieza el <em>lunes</em>, no el sábado. Cualquier herramienta que resuelva <code>after</code> sumando un día natural colocará tareas en fin de semana dentro de un archivo que lo prohíbe explícitamente. (La nuestra lo hizo, brevemente. La prueba que lo detectó ahora comprueba que ninguna fecha derivada cae en un día excluido.)</p>
+        <p><strong>3. No hay forma de escapar caracteres.</strong> Los dos puntos abren la lista de campos y la coma separa campos, así que una tarea llamada <code>Fase 2: diseño, revisión</code> se convierte en otra cosa completamente distinta. Mantén los dos puntos y las comas fuera de los nombres de tarea.</p>
+        <p><strong>4. Una duración que no se puede interpretar pasa a cero en silencio.</strong> Escribe <code>3dd</code> y obtendrás una barra de longitud cero en lugar de un error.</p>`],
+
+      ['Lo que Mermaid no puede expresar',
+        `<p>Es un formato de diagrama, no un motor de planificación, y las carencias importan si vas a hacer ida y vuelta:</p>
+        <ul>
+          <li><strong>No hay porcentaje de avance.</strong> Solo <code>done</code> y <code>active</code>. Una tarea al 40 % y otra al 90 % son las dos simplemente «active».</li>
+          <li><strong>Solo fin-inicio.</strong> <code>after</code> es FS sin desfase. Inicio-inicio, fin-fin y los desfases no tienen dónde ir.</li>
+          <li><strong>Secciones planas.</strong> Sin grupos anidados.</li>
+          <li><strong>Sin recursos, costes ni líneas base.</strong></li>
+        </ul>
+        <p>Así que la ida y vuelta pierde información de una forma conocida y aburrida. gantts.app convierte el 100 % en <code>done</code> y cualquier valor intermedio en <code>active</code> al salir, e importa <code>active</code> como 50 %: una suposición, que te comunica en vez de dejar que la descubras en un informe de seguimiento. Los enlaces que no puede escribir como <code>after</code> caen a fechas absolutas, que siguen siendo correctas aunque dejen de ser mantenibles.</p>
+        <p>Una asimetría deliberada: <code>crit</code> se escribe al exportar pero se ignora al importar. La criticidad se <em>calcula</em> a partir del grafo de dependencias, y fiarse de un valor afirmado en un diagrama posiblemente obsoleto permitiría pintar de rojo una cadena que no es crítica.</p>`],
+
+      ['Editar visualmente y pegar el texto de vuelta',
+        `<p>Herramientas que renderizan Mermaid hay muchas. Lo que faltaba es la dirección contraria: arrastrar barras y recuperar la sintaxis.</p>
+        <ol>
+          <li>Pega o abre tu diagrama en gantts.app — un archivo <code>.mmd</code>, o un <code>.md</code> con un bloque delimitado; los dos funcionan. Detecta el bloque gantt por su contenido, no por la extensión.</li>
+          <li>Arrástralo, enlázalo y refecha como cualquier otro gráfico. <code>excludes weekends</code> activa el calendario laboral, así que las fechas que produce coinciden con las del archivo del que salió.</li>
+          <li><strong>Exportar ▸ Mermaid gantt</strong>, copia y pega de vuelta en tu README.</li>
+        </ol>
+        <p>Hay además un efecto secundario agradable para quien use un LLM para redactar calendarios: pide sintaxis gantt de Mermaid, pega la respuesta y tendrás un gráfico editable de verdad con ruta crítica, sin ninguna clave de API ni servidor de por medio.</p>`],
+    ],
+    faq: [
+      ['¿Cómo se escribe un diagrama de Gantt en Mermaid?', 'Abre el bloque con gantt, añade dateFormat YYYY-MM-DD y después encabezados section con líneas de tarea debajo con la forma «Nombre :etiqueta, id, inicio, duración» — por ejemplo «Investigación :done, inv, 2026-01-05, 5d».'],
+      ['¿5d en Mermaid incluye el día de inicio?', 'Sí. Una tarea de 5d que empieza el lunes día 5 termina el viernes día 9. Este cómputo inclusivo es la causa más habitual de errores de un día.'],
+      ['¿Cómo funcionan las dependencias en Mermaid gantt?', 'Se usa «after algúnId» como campo de inicio. Siempre es fin-inicio y sin desfase: inicio-inicio, fin-fin y los desfases no se pueden expresar.'],
+      ['¿Puede Mermaid mostrar el porcentaje completado?', 'No. Solo tiene las etiquetas done y active. Importar active como un porcentaje concreto es una suposición; gantts.app usa el 50 % y te avisa de que lo ha hecho.'],
+      ['¿Dónde se renderizan los diagramas de Gantt de Mermaid?', 'GitHub, GitLab, Notion y Obsidian los renderizan de forma nativa en Markdown, y mermaid.live los muestra en el navegador.'],
+      ['¿Puedo convertir un diagrama de Mermaid en un gráfico editable?', 'Sí. Abre el archivo .mmd o el Markdown en gantts.app, edítalo visualmente y usa Exportar ▸ Mermaid gantt para copiar de vuelta la sintaxis actualizada.'],
+    ],
+    related: [
+      ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],
+      ['critical-path-method', 'Cómo se calcula la ruta crítica'],
+      ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
+    ],
+  },
 };
 
 /* Chrome for the guide pages themselves. Kept beside the copy so a new
    locale is one file rather than two. */
 const UI = {
+  templatesH: 'Plantillas que usan esto',
   home: 'Inicio',
   guides: 'Guías',
   backToGuides: 'Ver todas las guías',
