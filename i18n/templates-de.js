@@ -2983,6 +2983,802 @@ const T = {
       ]
     ]
   },
+
+  'hospital-department-opening': {
+    card: "Businessplan, Ausbau, Medizintechnik, Hygienefreigabe, Inbetriebnahme.",
+    h1: "Eröffnungsplan für eine Krankenhausabteilung",
+    metaTitle: "Krankenhaus — Eröffnungsplan Abteilung",
+    metaDesc: "Kostenloser Eröffnungsplan für eine Krankenhausabteilung: Planung, Ausbau, Medizintechnik, Hygienefreigabe, Personal, erste Patientin.",
+    lead: "Eine kostenlose <strong>Vorlage für den Eröffnungsplan einer Krankenhausabteilung</strong> über die gesamte Inbetriebnahme einer neuen Fachabteilung oder Station — Wirtschaftlichkeitsberechnung und Investitionsfreigabe, Planung nach den einschlägigen Bau- und Technikanforderungen, Rohbau und Ausbau, Beschaffung der Medizintechnik, Freigabe durch die Krankenhaushygiene, Personalgewinnung und Kompetenznachweis, Datenschutz und Dokumentation sowie der Anlauf bis zur ersten Patientin.",
+    intro: "Die Eröffnung eines klinischen Bereichs ist kein Bauvorhaben mit einem medizinischen Anhängsel am Ende. Sie ist eine Folge von Freigabetoren, von denen jedes einzelne die Tür am geplanten Tag verschlossen halten kann. Die Vorlage gibt jedem Tor eine eigene sichtbare Zeile:",
+    phases: [
+      [
+        "Bedarf und Investitionsfreigabe",
+        "Versorgungsbedarf und Leistungskonzept, Leistungs- und Personalmodellierung, Investitionsantrag sowie Beschluss von Geschäftsführung und Kostenträgern. <em>Meilenstein: Investition freigegeben.</em>"
+      ],
+      [
+        "Planung und Abweichungen",
+        "Raum- und Funktionsprogramm, Ausführungsplanung nach den geltenden Bau- und Technikanforderungen, dokumentierte Abweichungen dort, wo der Bestand die Norm nicht erfüllen kann, sowie die bauordnungsrechtlichen Genehmigungen. <em>Meilenstein: Planung eingefroren.</em>"
+      ],
+      [
+        "Rohbau und Ausbau",
+        "Vorabmaßnahmen und Auslagerung des Betriebs, Rohbau und Technische Gebäudeausrüstung, medizinische Gasversorgung, Raumlufttechnik und Isolierzimmer, Ausbau und Übergabe. <em>Meilenstein: Bau fertiggestellt.</em>"
+      ],
+      [
+        "Medizintechnik",
+        "Geräteliste und Budget, Vergabe, Bestellung von Großgeräten mit langer Lieferzeit, Anlieferung, Montage, Abnahmeprüfung und Eintrag ins Medizinproduktebuch."
+      ],
+      [
+        "Krankenhaushygiene und Validierung",
+        "Hygienische Begleitung von Planung und Bau nach den RKI-Anforderungen, Trinkwasserhygiene und Spülplan, Validierung der Raumlufttechnik sowie Umgebungs- und mikrobiologische Untersuchungen. <em>Meilenstein: Freigabe der Hygiene.</em>"
+      ],
+      [
+        "Personal und Qualifikation",
+        "Stellenplan, Rekrutierung, Nachweis von Fachkunde und Berechtigungen, Einarbeitung und dokumentierter Kompetenznachweis."
+      ],
+      [
+        "Datenschutz und Dokumentation",
+        "Konfiguration der klinischen Systeme, Datenschutz-Folgenabschätzung, Schnittstellen- und Dokumentationstests sowie die datenschutzrechtliche Freigabe."
+      ],
+      [
+        "Inbetriebnahme und Eröffnung",
+        "Verfahrensanweisungen, Simulations- und Probetage, Anzeige bei der Behörde und Begehung, Go-/No-go-Entscheidung und erste Patientin. <em>Meilenstein: erste Patientin.</em>"
+      ]
+    ],
+    callout: "Validierung ist keine Restpunkteliste. Prüfung der Raumlufttechnik, Trinkwasserproben und die Abnahme der Medizintechnik finden alle nach dem Abzug der Handwerker statt und bevor jemand aufgenommen werden darf — und jede davon hat eine Laborlaufzeit, die Sie nicht steuern. Lassen Sie sechs bis acht Wochen zwischen der baulichen Fertigstellung und dem Eröffnungstermin und setzen Sie jede Prüfung als Vorgang mit Ergebnistermin auf den Plan.",
+    customize: [
+      "Setzen Sie den geforderten Eröffnungstermin und rechnen Sie über die Freigabe der Hygiene zurück — dieses Tor gibt den Bereich frei, nicht die bauliche Fertigstellung.",
+      "Ergänzen Sie eine Zeile je Abweichung, sobald die Planprüfung beginnt; jede ist eine dokumentierte Risikoübernahme mit benannter freigebender Person.",
+      "Weiten Sie die Phase Medizintechnik auf eine Zeile je Großgerät mit den tatsächlich angebotenen Lieferzeiten aus — Bildgebung und OP-Technik überholen den Bau regelmäßig.",
+      "Verlängern Sie die Rekrutierung, wenn Sie Fachpflege oder eine Oberarztstelle besetzen müssen; genau diese Stellen verzögern sich.",
+      "Legen Sie das Zeitfenster für Anzeige und Begehung als festen Balken ein und hängen Sie die erste Patientin daran.",
+      "Halten Sie einen Simulations- oder Probetag vor der Eröffnung — es ist die günstigste Art, Prozesslücken zu finden."
+    ],
+    tips: [
+      "<strong>Starten Sie den Spülplan an dem Tag, an dem die Leitungen befüllt werden.</strong> Spül- und Beprobungspläne laufen über Wochen, und eine auffällige Probe setzt die Uhr zurück, statt sie um einen Tag zu verschieben.",
+      "<strong>Bestellen Sie Großgeräte gegen die Investitionsfreigabe, nicht gegen den Baubeginn.</strong> Wartet die Bestellung auf den Bau, kommt das Gerät nach der Fertigstellung der Station an.",
+      "<strong>Behandeln Sie Berechtigungen als Abhängigkeit.</strong> Wer keine Berechtigung hat, darf keine Patientinnen behandeln — so fertig die Abteilung auch ist.",
+      "<strong>Beginnen Sie die Datenschutz-Folgenabschätzung früh.</strong> Die Systemkonfiguration geht schnell, die Freigabe darum herum nicht.",
+      "<strong>Führen Sie die Go-/No-go-Entscheidung mit den Verantwortlichen der Tore im Raum.</strong> Hygiene, Datenschutz, Technik und ärztliche Leitung haben je ein Vetorecht — diese Entscheidungen erst am Tag einzusammeln, ist der Weg zur verschobenen Eröffnung.",
+      "<strong>Setzen Sie den Basisplan mit dem Einfrieren der Planung.</strong> Alles davor ist Schätzung; danach hat jede Änderung einen Preis und einen Genehmigungsweg."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Eröffnung einer neuen Krankenhausabteilung?",
+        "Üblicherweise 18 bis 24 Monate von der Investitionsentscheidung bis zur ersten Patientin bei einem Umbau, bei einem Neubau länger. Die Vorlage nutzt einen Zeitraum von 18 Monaten, den Sie über den Eröffnungstermin stauchen oder strecken."
+      ],
+      [
+        "Was verzögert die Eröffnung einer klinischen Abteilung am häufigsten?",
+        "Validierung und Freigaben, nicht der Bau — Prüfung der Raumlufttechnik, Trinkwasserproben, Geräteabnahmen, Berechtigungen und Datenschutzfreigabe liegen alle nach der baulichen Fertigstellung und haben jeweils eine externe Laufzeit."
+      ],
+      [
+        "Was ist in diesem Zusammenhang eine Abweichung?",
+        "Eine dokumentierte und freigegebene Abweichung von einer Bau- oder Technikanforderung, wenn der Bestand sie nicht erfüllen kann. Sie muss in der Planung abgestimmt und von einer benannten Person freigegeben werden und steht deshalb als eigener Vorgang im Plan statt als Annahme."
+      ],
+      [
+        "Passt die Vorlage auch für die Sanierung einer Station statt einer neuen Abteilung?",
+        "Ja. Streichen Sie die Vorabmaßnahmen und die Auslagerung, wenn Sie keinen Betrieb verlegen, und behalten Sie Hygiene, Medizintechnik und die Freigabephasen — die sind in beiden Fällen identisch."
+      ],
+      [
+        "Ist die Vorlage für die Abteilungseröffnung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'school-year-planning-calendar': {
+    card: "Stundenplanung, Personal, Anmeldungen, Prüfungen, Zeugnisse, Haushalt.",
+    h1: "Jahresplanungskalender für die Schule",
+    metaTitle: "Schuljahresplanung — Kalendervorlage",
+    metaDesc: "Kostenlose Vorlage zur Schuljahresplanung: Stundenplanung, Unterrichtsverteilung, Anmeldungen, Prüfungszeiträume, Zeugnisse, Haushalt.",
+    lead: "Eine kostenlose <strong>Vorlage für den Jahresplanungskalender einer Schule</strong> auf Ebene der Schulleitung statt des Klassenzimmers — Unterrichtsverteilung und Stundenplanbau, Personalplanung und Vertretung, Anmeldungen und Aufnahme, Ferien- und Termintafel, Leistungserhebungen und externe Prüfungszeiträume, Zeugnisse und Elternsprechtage, Evaluation und Gremienarbeit sowie der Haushaltszyklus, der unter allem mitläuft.",
+    intro: "Ein Schuljahr wird zweimal geplant: einmal im Frühjahr davor und dann noch einmal Woche für Woche, während es läuft. Die Vorlage zeigt beides, wobei die Planungsphasen vor dem ersten Schultag liegen:",
+    phases: [
+      [
+        "Unterrichtsverteilung und Stundenplan",
+        "Kontingent- und Wahlpflichtmodell, Fächer- und Lehrerzuweisung, Stundenplanbau und Prüfung, Raum- und Ressourcenzuteilung. <em>Meilenstein: Stundenplan veröffentlicht.</em>"
+      ],
+      [
+        "Personal und Verträge",
+        "Überprüfung des Stellenplans, Abgänge und Einstellungsrunden, Vertragsabschlüsse, Vertretungs- und Springerregelungen sowie die Einführung neuer Lehrkräfte."
+      ],
+      [
+        "Anmeldung und Aufnahme",
+        "Tage der offenen Tür, Anmeldezeitraum, Zusagen und Widersprüche, Aufnahme und Nachrückverfahren, Schnuppertage für die neuen Jahrgänge. <em>Meilenstein: Schülerzahl bestätigt.</em>"
+      ],
+      [
+        "Termine und Kalender",
+        "Ferien- und Unterrichtstage, pädagogische Tage, die veröffentlichte Termintafel und die Kommunikation an die Eltern."
+      ],
+      [
+        "Leistungserhebungen und Prüfungen",
+        "Interne Erhebungszeitpunkte, Vorabklausuren, Meldungen und Fristen für die externen Prüfungen, die Prüfungszeiträume selbst, Aufsichten und Nachteilsausgleiche sowie die Ausgabe der Ergebnisse. <em>Meilenstein: Ergebnisausgabe.</em>"
+      ],
+      [
+        "Zeugnisse und Eltern",
+        "Notenerhebungsfenster, Zeugniskonferenzen und Zeugnisausgabe, Elternsprechtage sowie die Zielvereinbarungen für das Folgejahr."
+      ],
+      [
+        "Evaluation und Gremien",
+        "Selbstevaluation, Sitzungszyklus der Schulkonferenz, Vorbereitung auf die Schulaufsicht, Kinderschutzprüfung und die Termine der Konzeptfortschreibung."
+      ],
+      [
+        "Haushaltszyklus",
+        "Mittelzuweisung, Haushaltsaufstellung und Beschluss, unterjährige Überwachung sowie der Jahresabschluss."
+      ]
+    ],
+    callout: "Stundenplanbau und Personalplanung sind ein Problem, nicht zwei. Sie können keinen Stundenplan fertigstellen, ohne zu wissen, wer unterrichtet, und Sie können den Stellenplan nicht bestätigen, ohne den Bedarf des Stundenplans zu kennen. Planen Sie beides als überlappende Balken mit gemeinsamem Termin und setzen Sie die Frist für Versetzungsanträge und Kündigungen auf den Plan — dieser eine Termin entscheidet, ob der Stundenplan einmal oder dreimal gebaut wird.",
+    customize: [
+      "Setzen Sie den Nullpunkt auf den Beginn Ihres Planungshalbjahres im Frühjahr, nicht auf den Schuljahresbeginn — die meisten Entscheidungen fallen vorher.",
+      "Ersetzen Sie die Prüfungszeiträume durch die Termine Ihrer Schulbehörde; die liegen extern fest, alles andere ordnet sich darum.",
+      "Ergänzen Sie eine Zeile je Jahrgangsstufe, wenn sich Leistungserhebungen und Zeugnisrhythmen unterscheiden.",
+      "Tragen Sie die Sitzungstermine der Schulkonferenz als Meilensteine ein — sie sind die Beschlusstore für Haushalt und Konzepte.",
+      "Verlängern Sie die Anmeldephase, wenn Sie ein Auswahlverfahren mit Widerspruchszeitraum führen.",
+      "Kennzeichnen Sie pädagogische Tage ausdrücklich, damit Fortbildung eingeplant wird und nicht dazwischengequetscht."
+    ],
+    tips: [
+      "<strong>Setzen Sie die Meldefrist für Versetzungen und Kündigungen auf den Plan.</strong> Sie ist der harte Termin, der einen baubaren Stundenplan von einem trennt, den Sie im August neu bauen.",
+      "<strong>Schützen Sie die Notenerhebungsfenster.</strong> Zeugnisse hängen daran, dass die Daten rechtzeitig vorliegen; ein verrutschter Erhebungstermin verschiebt den Elternsprechtag, nicht nur die Tabelle.",
+      "<strong>Organisieren Sie Prüfungsaufsichten früh.</strong> Aufsichtspersonal und die Feststellung von Nachteilsausgleichen haben beide Vorlaufzeiten und beide sind Tore zum Prüfungszeitraum.",
+      "<strong>Legen Sie Tage der offenen Tür vor die Anmeldefrist.</strong> Ein Tag der offenen Tür nach der Frist ist Werbung, keine Gewinnung.",
+      "<strong>Halten Sie den Haushaltszyklus sichtbar.</strong> Personalentscheidungen ohne den Blick auf die Haushaltslage sind die teuersten Fehler, die eine Schule macht.",
+      "<strong>Planen Sie das Folgejahr im laufenden Sommerhalbjahr.</strong> Alles auf diesem Plan vor dem Schuljahresbeginn gehört noch in das Jahr, das gerade läuft."
+    ],
+    faq: [
+      [
+        "Was gehört in einen Jahresplanungskalender für die Schule?",
+        "Unterrichtsverteilung und Stundenplanbau, Personal, Anmeldung und Aufnahme, Ferien- und Termintafel, Leistungserhebungen und externe Prüfungszeiträume, Zeugnisse und Elternarbeit, Evaluation und Gremien sowie der Haushaltszyklus. Alle acht sind als eigene Stränge hinterlegt."
+      ],
+      [
+        "Wann sollte die Planung für das nächste Schuljahr beginnen?",
+        "In der Regel im Frühjahr des Vorjahres, weil Meldefristen, Wahlpflichtblöcke und Mittelzuweisung Monate vor Schuljahresbeginn liegen. Die Vorlage setzt dort an und nicht im September."
+      ],
+      [
+        "Lässt sich die Vorlage für eine Hochschule oder Berufsschule anpassen?",
+        "Ja. Behalten Sie den Aufbau bei und ersetzen Sie die Prüfungszeiträume durch Ihre Prüfungsausschusstermine und die Anmeldezeilen durch Ihr Immatrikulationsverfahren — die Form des Jahres bleibt gleich."
+      ],
+      [
+        "Wie bilde ich zwei oder drei Aufnahmetermine im Jahr ab?",
+        "Verdoppeln Sie die Zeilen für Anmeldung und Aufnahme je Termin und behalten Sie einen einzigen Stundenplan- und Haushaltsstrang. Die Vorlage liefert das Muster für den Haupttermin."
+      ],
+      [
+        "Ist die Vorlage zur Schuljahresplanung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'nonprofit-fundraising-campaign': {
+    card: "Machbarkeit, Interessentenauswahl, stille Phase, Auftakt, Danksagung.",
+    h1: "Kampagnenplan für Fundraising",
+    metaTitle: "Spendenkampagne — Kampagnenplan",
+    metaDesc: "Kostenloser Kampagnenplan für Fundraising: Machbarkeit, Interessenten, stille Phase, öffentlicher Auftakt, Matching, Dankmanagement.",
+    lead: "Eine kostenlose <strong>Vorlage für den Kampagnenplan einer gemeinnützigen Spendenkampagne</strong>, aufgebaut so, wie Kapital- und Großspendenkampagnen tatsächlich laufen — Machbarkeitsprüfung und Argumentationspapier, Recherche und Aufbau der Interessentenliste, Pflege der Großspenderkontakte in einer stillen Phase, der öffentliche Auftakt, Veranstaltungen und Matching-Zeiträume sowie das Dank- und Berichtswesen, das darüber entscheidet, ob erneut gespendet wird.",
+    intro: "Eine Kampagne ist kein Auftakt mit anschließenden Spenden. Der größte Teil der Summe ist zugesagt, bevor die Öffentlichkeit überhaupt davon hört — deshalb bekommt die stille Phase den größten Anteil am Plan:",
+    phases: [
+      [
+        "Machbarkeit und Argumentationspapier",
+        "Bedarfsermittlung, Zielfestlegung, Machbarkeitsgespräche mit möglichen Leitspendern, Argumentationspapier und Beschluss des Vorstands. <em>Meilenstein: Ziel beschlossen.</em>"
+      ],
+      [
+        "Recherche und Interessentenliste",
+        "Durchsicht der Datenbank, Einschätzung von Potenzial und Bindung, Bewertung der Interessenten, Zuordnung zu Betreuenden und die Spendenstufentabelle."
+      ],
+      [
+        "Leitgremium und stille Phase",
+        "Aufbau des Kampagnenkuratoriums, Eigenbeteiligung des Vorstands, Ansprache für Leit- und Großspenden sowie die Dokumentation der Zusagen — alles vor jeder öffentlichen Ankündigung. <em>Meilenstein: Ziel der stillen Phase erreicht.</em>"
+      ],
+      [
+        "Öffentlicher Auftakt",
+        "Auftaktmaterialien und Kurzfassung des Argumentationspapiers, Presse- und Social-Media-Plan, Auftaktveranstaltung und die breite Ansprache der Spenderbasis. <em>Meilenstein: öffentlicher Auftakt.</em>"
+      ],
+      [
+        "Veranstaltungen und Aufrufe",
+        "Benefizveranstaltungen, Brief- und E-Mail-Aufrufe, Aktionen aus dem Umfeld und von Unterstützenden sowie die Spendentage."
+      ],
+      [
+        "Matching-Spenden",
+        "Zusage des Matching-Gebers, Bewerbung des Zeitfensters, der Matching-Zeitraum selbst und die Abrechnung der verdoppelten Mittel."
+      ],
+      [
+        "Dankmanagement und Berichte",
+        "Dank und Zuwendungsbestätigung, Anerkennung der Spendenden, Wirkungsbericht, Einzug der Zusagen und der Abschlussbericht. <em>Meilenstein: Kampagne abgeschlossen.</em>"
+      ]
+    ],
+    callout: "Gehen Sie nicht an die Öffentlichkeit, bevor die stille Phase den größten Teil des Ziels gesichert hat. Kampagnen, die bei vierzig Prozent ankündigen, verbringen die öffentliche Phase mit Erklärungen; Kampagnen, die bei siebzig Prozent ankündigen, verbringen sie mit Rückenwind. Der Auftakttermin soll aus der Zusagenlage folgen und nicht aus einem Marketingkalender.",
+    customize: [
+      "Legen Sie zuerst die Spendenstufentabelle fest und bemessen Sie die stille Phase an der Zahl der Leitspendengespräche, die daraus folgt — diese Zahl bestimmt die Dauer.",
+      "Ergänzen Sie eine Zeile je Leitinteressent, sobald die Betreuung zugeordnet ist, damit die Kontaktpflege verfolgt und nicht unterstellt wird.",
+      "Verschieben Sie den Meilenstein des öffentlichen Auftakts auf den Punkt, an dem die stille Phase Ihre Schwelle tatsächlich überschreitet.",
+      "Ziehen Sie den Balken für den Einzug der Zusagen auf Ihre tatsächliche Zusagedauer; mehrjährige Zusagen überleben die Kampagne um Jahre.",
+      "Ergänzen Sie Spendentage oder Jahresendaufrufe dort, wo sie in Ihrem Kalender liegen — diese Termine liegen fest, alles andere ordnet sich darum.",
+      "Lassen Sie das Dankmanagement über den Abschlusstermin hinauslaufen; es ist die Vorbereitung der nächsten Kampagne."
+    ],
+    tips: [
+      "<strong>Machbarkeitsgespräche sind Kontaktpflege.</strong> Wen Sie um eine ehrliche Einschätzung des Ziels bitten, den bitten Sie meist später um eine Leitspende — planen Sie die Gespräche entsprechend.",
+      "<strong>Sprechen Sie von oben nach unten an.</strong> Leitspenden setzen den Maßstab für alle darunter; wer die mittlere Ebene zuerst fragt, deckelt die Kampagne auf deren Niveau.",
+      "<strong>Sichern Sie das Matching, bevor Sie es bewerben.</strong> Ein angekündigtes Matching-Fenster ohne unterschriebene Zusage ist ein Versprechen, das Sie nicht halten können.",
+      "<strong>Setzen Sie den Dank mit Frist auf den Plan.</strong> Innerhalb weniger Tage zu danken hat den höchsten Ertrag im Fundraising und ist das Erste, was in einer vollen Kampagne liegen bleibt.",
+      "<strong>Führen Sie Zusagen getrennt von Zahlungseingängen.</strong> Gemeldete Summen sagen nichts über die Liquidität, solange der Zahlungsplan nicht daneben steht.",
+      "<strong>Setzen Sie den Basisplan mit dem Zielbeschluss.</strong> Nachdem der Vorstand die Zahl gesetzt hat, verfolgen Sie die Zusagenlage wöchentlich, statt nur bei Veranstaltungen zu berichten."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Spendenkampagne?",
+        "Groß- und Kapitalkampagnen laufen üblicherweise zwei bis drei Jahre einschließlich stiller Phase und Einzug der Zusagen. Die Vorlage nutzt rund zwei Jahre, die Sie für einen Jahresaufruf stauchen können."
+      ],
+      [
+        "Wie viel sollte vor dem öffentlichen Auftakt eingeworben sein?",
+        "Üblich ist, einen deutlichen Großteil des Ziels in der stillen Phase zugesagt zu haben, häufig genannt werden rund 70 Prozent. Die Vorlage setzt den Auftakt hinter das Ziel der stillen Phase statt auf ein festes Datum."
+      ],
+      [
+        "Was ist eine Spendenstufentabelle und wo gehört sie hin?",
+        "Eine Aufstellung, wie viele Spenden je Größenordnung nötig sind, um das Ziel zu erreichen. Sie gehört in die Recherchephase, weil sie sagt, wie viele Interessenten je Stufe zu betreuen sind, bevor Sie sich auf die Zahl festlegen."
+      ],
+      [
+        "Passt die Vorlage auch für einen Jahresaufruf statt einer Kapitalkampagne?",
+        "Ja. Kürzen Sie die stille Phase, streichen Sie die Zeilen zum Kuratorium und behalten Sie Aufrufe, Matching und Dankmanagement — das ist die Form eines Jahresaufrufs."
+      ],
+      [
+        "Ist die Vorlage für die Spendenkampagne kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'warehouse-setup-project-plan': {
+    card: "Standort, Mietvertrag, Regalanlage, LVS, Flurförderzeuge, Umzug, Hochlauf.",
+    h1: "Projektplan für den Aufbau eines Lagers",
+    metaTitle: "Lageraufbau — Projektplan-Vorlage",
+    metaDesc: "Kostenloser Projektplan für den Lageraufbau: Standort, Mietvertrag, Regalanlage, LVS-Anbindung, Flurförderzeuge, Bestandsumzug, Hochlauf.",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Lageraufbaus</strong> für einen neuen Distributions- oder Fulfillment-Standort von Anfang bis Ende — Netzwerkanalyse und Standortsuche, Mietvertrag und Ausbau durch den Vermieter, Planung und Montage der Regalanlage, Auswahl und Anbindung des Lagerverwaltungssystems (LVS), Beschaffung der Flurförderzeuge, Bestandsumzug vom alten Standort und ein Hochlauf, der Ihre Kunden nicht im Stich lässt.",
+    intro: "Ein Lagerprojekt sind drei Projekte in einem Gebäude: der bauliche Ausbau, die Systemanbindung und der Bestandsumzug. Sie haben unterschiedliche Vorlaufzeiten und unterschiedliche Fehlerbilder, deshalb führt die Vorlage sie als getrennte Stränge:",
+    phases: [
+      [
+        "Anforderungen und Netzwerkanalyse",
+        "Mengen- und Artikelstrukturanalyse, Durchsatzmodell, Netz- und Standortanalyse sowie der Investitionsantrag. <em>Meilenstein: Investition freigegeben.</em>"
+      ],
+      [
+        "Standortsuche und Mietvertrag",
+        "Suche und engere Auswahl, Gebäudebegutachtung, Prüfung von Bodenbelastbarkeit und Netzanschlussleistung, Absichtserklärung, Mietvertragsverhandlung und Ausbau durch den Vermieter. <em>Meilenstein: Mietvertrag unterschrieben.</em>"
+      ],
+      [
+        "Layout und Regalanlage",
+        "Lagerstrategie und Lagerplatzvergabe, Regallayout und Genehmigungen, Brandschutz- und Sprinklerkonzept, Fertigung und Montage der Regalanlage sowie Bühnen und Kommissionierebenen."
+      ],
+      [
+        "LVS-Auswahl und Anbindung",
+        "Anforderungen und Anbieterauswahl, Konfiguration, Anbindung an ERP und Versanddienstleister, Datenübernahme und Abnahmetest. <em>Meilenstein: LVS-Abnahme erteilt.</em>"
+      ],
+      [
+        "Flurförderzeuge und Technik",
+        "Beschaffung von Staplern und Schubmaststaplern, Förder- und Sortiertechnik wo eingesetzt, Packplätze, Scanner, Etikettiertechnik und die Ladeinfrastruktur."
+      ],
+      [
+        "Ausbau und Infrastruktur",
+        "Strom und Beleuchtung, Netzwerk und Funkausleuchtung, Überladebrücken und Tore, Büro- und Sozialräume, Sicherheits- und Zutrittstechnik."
+      ],
+      [
+        "Personal und Schulung",
+        "Einstellung der Standortleitung, Gewinnung der gewerblichen Kräfte, Schulung auf LVS und Technik sowie die Fahrausweise für Flurförderzeuge."
+      ],
+      [
+        "Bestandsumzug und Inbetriebnahme",
+        "Bestandsbereinigung, Umzugswellen, Inventurübernahme und Zykluszählung, Parallelbetrieb, Umschaltung und Mengenhochlauf. <em>Meilenstein: volle Menge.</em>"
+      ]
+    ],
+    callout: "Die Funkausleuchtung ist eine Abhängigkeit, kein Detail. Jeder scannergestützte Prozess im Gebäude setzt Abdeckung in jeder Gasse bis zur vollen Regalhöhe voraus, und die Regalanlage verändert die Funkumgebung vollständig. Messen Sie nach der Regalmontage und vor der Inbetriebnahme, mit Zeit für zusätzliche Zugangspunkte — wer die leere Halle ausleuchtet, entdeckt die toten Gassen im ersten Spitzengeschäft.",
+    customize: [
+      "Verankern Sie den Plan an dem Termin, zu dem Sie den bisherigen Standort verlassen oder eine Kundenzusage einhalten müssen; das setzt die Inbetriebnahme, alles andere rechnet rückwärts.",
+      "Passen Sie die Fertigungszeit der Regalanlage an Ihr Angebot an — sie ist nach dem Mietvertrag häufig die längste Einzelposition.",
+      "Ergänzen Sie eine Zeile je Schnittstelle (ERP, Versanddienstleister, Marktplätze, Retouren), sobald der LVS-Anbieter feststeht; jede hat ihren eigenen Testzyklus.",
+      "Teilen Sie den Bestandsumzug nach Umschlaghäufigkeit in Wellen, damit die Schnelldreher zuerst ankommen und der Standort arbeiten kann, während der Rest folgt.",
+      "Verlängern Sie den Parallelbetrieb, wenn Sie sich keine harte Umschaltung leisten können; zwei Standorte kosten Geld, schützen aber die Lieferfähigkeit.",
+      "Setzen Sie Mietvertrag, Regalmontage, LVS-Abnahme, ersten Warenausgang und volle Menge als Meilensteine."
+    ],
+    tips: [
+      "<strong>Prüfen Sie Bodenbelastbarkeit und Netzanschluss vor der Absichtserklärung.</strong> Ein Gebäude, das Ihre Regallasten oder Ihre Ladeleistung nicht trägt, ist nicht das günstigere, sondern das falsche.",
+      "<strong>Wählen Sie das LVS, bevor das Regallayout eingefroren wird.</strong> Lagerplatzvergabe, Platznummernlogik und Wegeoptimierung folgen dem System, und nachträglich lässt sich das in einer montierten Anlage nur teuer ändern.",
+      "<strong>Bestellen Sie Flurförderzeuge gegen echte Lieferzeiten.</strong> Lieferfristen für Stapler und Schubmaststapler haben sich in den letzten Jahren auf viele Monate gedehnt; der Bestelltermin gehört auf den Plan.",
+      "<strong>Fahren Sie hoch, statt umzuschalten.</strong> Planen Sie die ersten Wochen bewusst mit reduzierter Menge, damit Prozessprobleme auftauchen, solange noch Kapazität da ist, sie aufzufangen.",
+      "<strong>Bereinigen Sie den Bestand vor dem Umzug.</strong> Obsolete Ware kostet doppelt — einmal für den Transport und dann für die Lagerung.",
+      "<strong>Setzen Sie den Basisplan mit der Vertragsunterschrift.</strong> Davor ist alles optional; danach läuft die Miete und jede Woche Verzug hat eine Zahl."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Aufbau eines neuen Lagers?",
+        "Üblicherweise 9 bis 15 Monate von der Investitionsentscheidung bis zur Inbetriebnahme für ein mittelgroßes Distributionszentrum, bestimmt vor allem von Standortsicherung, Regallieferzeit und LVS-Anbindung. Die Vorlage nutzt zwölf Monate."
+      ],
+      [
+        "Was hat üblicherweise die längste Vorlaufzeit?",
+        "Die Fertigung der Regalanlage und die Flurförderzeuge, beide inzwischen in Monaten gerechnet. Der Mietvertrag selbst zieht sich oft noch länger, weshalb die Standortsuche den Plan eröffnet."
+      ],
+      [
+        "Sollte das LVS gleichzeitig mit dem Gebäude live gehen?",
+        "Nicht zwingend. Viele Standorte fahren das neue Gebäude zunächst auf dem bestehenden System und schalten das System später getrennt um, damit sich immer nur eine Variable ändert. Die Vorlage hält die Stränge getrennt, damit Sie wählen können."
+      ],
+      [
+        "Wie plane ich den Bestandsumzug?",
+        "In Wellen nach Umschlaghäufigkeit, mit Zykluszählung nach jeder Welle und einem Parallelbetrieb, bevor der alte Standort schließt. Diese Zeilen sind in der letzten Phase hinterlegt."
+      ],
+      [
+        "Ist die Vorlage für den Lageraufbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'road-construction-schedule': {
+    card: "Planung, Genehmigungen, Leitungsumlegungen, Erdbau, Deckschicht, Freigabe.",
+    h1: "Bauzeitenplan für den Straßenbau",
+    metaTitle: "Straßenbau — Bauzeitenplan-Vorlage",
+    metaDesc: "Kostenloser Bauzeitenplan für den Straßenbau: Vermessung, Genehmigungen, Leitungsumlegungen, Erdbau, Trag- und Deckschicht, Freigabe.",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan im Straßenbau</strong> entlang eines echten Straßenbauvorhabens — Vermessung und Planung, Grunderwerb und Genehmigungen, Leitungsumlegungen der Sparten, Erdbau und Entwässerung, Frostschutzschicht, Tragschichten und die gebundenen Deckschichten, Beschilderung und Markierung, die abschnittsweise Verkehrsführung sowie die Übergabe an den Baulastträger.",
+    intro: "Bei einem Straßenbauvorhaben ist die Fahrbahn der einfache Teil. Den Termin bestimmt, was sich bewegen muss, bevor Sie graben dürfen: die Leitungen der Versorger, Grundstücke, die Ihnen noch nicht gehören, und der Verkehr, der weiterlaufen muss. Die Vorlage gibt jedem davon einen eigenen Strang:",
+    phases: [
+      [
+        "Vermessung und Planung",
+        "Topografische Aufnahme und Baugrunduntersuchung, Leitungsauskünfte und Suchschachtungen, Vor- und Ausführungsplanung, Entwässerungsplanung und Sicherheitsaudit. <em>Meilenstein: Planung genehmigt.</em>"
+      ],
+      [
+        "Grunderwerb und Genehmigungen",
+        "Grunderwerbsverzeichnis, Erwerb oder vorübergehende Inanspruchnahme, Planfeststellung oder Baugenehmigung, naturschutzrechtliche Zulassungen und die Regelung der Anschlussstraßen. <em>Meilenstein: Genehmigungen liegen vor.</em>"
+      ],
+      [
+        "Leitungsumlegungen",
+        "Kostenschätzungen der einzelnen Versorger, Umlegungsplanung, Abstimmung der Termine mit den Sparten und die Umlegungen selbst — Gas, Wasser, Strom und Telekommunikation, jede auf ihrer eigenen Zeitachse."
+      ],
+      [
+        "Verkehrsführung",
+        "Verkehrszeichenplan und verkehrsrechtliche Anordnung, Anmeldung des Straßenraums, Abstimmung der Umleitungsstrecken sowie die abschnittsweisen Sperrungen, Gegenverkehrsführungen und Fahrstreifeneinschränkungen, in denen gebaut wird."
+      ],
+      [
+        "Erdbau und Entwässerung",
+        "Räumung und Oberbodenabtrag, Auf- und Abtrag, Frostschutzschicht, Sammler, Straßenabläufe, Rückhaltung und Einleitstellen."
+      ],
+      [
+        "Oberbau",
+        "Tragschicht ohne Bindemittel, Asphalttrag-, Binder- und Deckschicht, Bordsteine, Gehwege und Höhenanpassung der Schachtabdeckungen. <em>Meilenstein: Deckschicht fertiggestellt.</em>"
+      ],
+      [
+        "Beschilderung, Markierung und Übergabe",
+        "Markierung, Beschilderung und Schilderbrücken, Straßenbeleuchtung, Schutzeinrichtungen, abschließendes Sicherheitsaudit, Restpunkte und Übergabe an den Baulastträger. <em>Meilenstein: Verkehrsfreigabe.</em>"
+      ]
+    ],
+    callout: "Die Leitungsumlegungen sind der Terminplan. Die Versorgungsunternehmen arbeiten nach ihren eigenen Fristen, brauchen lange Vorlaufzeiten und stauchen nicht für Ihren Termin — und jede Sparte muss fertig sein, bevor Sie in diesem Abschnitt aufgraben dürfen. Fordern Sie die Kostenschätzungen bereits in der Planung an, nicht nach der Auftragsvergabe, und setzen Sie jeden Versorger als eigenen Balken mit eigener Dauer auf den Plan.",
+    customize: [
+      "Tragen Sie zuerst die bestätigten Zeitfenster für den Straßenraum ein; auf einer befahrenen Straße sind sie die Fixpunkte, um die sich der Rest ordnet.",
+      "Ergänzen Sie eine Zeile je Versorger — Gas, Wasser, Strom und jeder Telekommunikationsbetreiber haben unterschiedliche Fristen und unterschiedliche Kolonnen.",
+      "Teilen Sie die Maßnahme in Bauabschnitte oder Stationierungsbereiche, sobald die Verkehrsführung steht, damit Erdbau und Oberbau je Abschnitt verfolgt werden.",
+      "Legen Sie den Deckschichteinbau möglichst außerhalb der Wintermonate; Binder- und Deckschicht haben Temperaturgrenzen, die den Einbau am Tag selbst stoppen.",
+      "Tragen Sie umweltfachliche Sperrzeiten ein — Brutzeit, Fledermausaktivität, Fischschonzeiten — wenn Ihre Zulassungen sie vorschreiben.",
+      "Behalten Sie beide Sicherheitsaudits im Plan; das Audit nach dem Bau ist ein Tor zur Freigabe und keine Nachbetrachtung."
+    ],
+    tips: [
+      "<strong>Fordern Sie die Angaben der Versorger in der Planung an.</strong> Allein die Abstimmung der Kostenschätzungen kann Monate dauern, bevor die erste Umlegung gegraben ist, und sie liegt allem anderen auf dem kritischen Pfad voraus.",
+      "<strong>Melden Sie den Straßenraum an, bevor Sie ihn brauchen.</strong> Die Zeitfenster der Straßenverkehrsbehörde werden nach Reihenfolge vergeben, und eine abgelehnte Anmeldung verschiebt den ganzen Bauabschnitt.",
+      "<strong>Entwässerung immer vor dem Oberbau.</strong> Ein vergessener Ablauf oder Anschluss durch eine fertige Fahrbahn nachzurüsten kostet ein Vielfaches.",
+      "<strong>Achten Sie auf die Witterungsfenster der gebundenen Schichten.</strong> Unterhalb der zulässigen Temperatur eingebaute Deckschicht versagt früh, und der Baulastträger übernimmt sie nicht.",
+      "<strong>Planen Sie die Umbauten der Verkehrsführung als Vorgänge mit Dauer.</strong> Jeder Wechsel ist eine Nachtschicht mit eigenen Mitteln; wer die Verkehrsführung als kostenlos behandelt, verliert zwei Wochen.",
+      "<strong>Setzen Sie den Basisplan, wenn die Genehmigungen vorliegen.</strong> Davor ist der Plan bedingt; danach verfolgen Sie die Abweichung, damit Verzug bei den Sparten früh sichtbar wird."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Straßenbauvorhaben?",
+        "Eine kurze innerörtliche Maßnahme läuft 6 bis 9 Monate, eine neue Verbindungsstraße oder ein größerer Ausbau zwei Jahre und mehr. Die Vorlage nutzt rund 18 Monate, die Sie über den Freigabetermin stauchen oder strecken."
+      ],
+      [
+        "Was verzögert Straßenbauvorhaben am häufigsten?",
+        "Leitungsumlegungen und Genehmigungen weit häufiger als der Bau selbst. Beide hängen an Dritten mit eigenen Fristen, weshalb jede einen eigenen Strang bekommt statt einer Zeile innerhalb der Bauarbeiten."
+      ],
+      [
+        "Wie stelle ich die Verkehrsführung im Gantt-Diagramm dar?",
+        "Als abschnittsweise Balken, denen Verkehrszeichenplan und Anmeldung des Straßenraums vorausgehen, wobei jeder Bauabschnitt von seiner eigenen Verkehrsführung abhängt. So bedroht eine abgelehnte oder verspätete Anmeldung sichtbar die Arbeiten, die sie schützt."
+      ],
+      [
+        "Deckt die Vorlage auch ein Bauwerk innerhalb der Maßnahme ab?",
+        "Nur auf Übersichtsebene. Enthält Ihre Maßnahme ein Ingenieurbauwerk, führen Sie unseren <a href=\"/de/templates/bridge-construction-schedule.html\">Bauzeitenplan für den Brückenbau</a> daneben und verknüpfen Sie die Sperrpausen."
+      ],
+      [
+        "Kann ich sie für eine Fahrbahnsanierung statt eines Neubaus nutzen?",
+        "Ja. Streichen Sie Grunderwerb, Genehmigungen und Erdbau und behalten Sie Verkehrsführung, Oberbau und Markierung — das ist die Form einer Sanierungsmaßnahme."
+      ],
+      [
+        "Ist die Vorlage für den Straßenbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'mobile-app-launch-plan': {
+    card: "Release Candidate, Beta, Store-Eintrag, Prüfung, Rollout, Day-One-Patch.",
+    h1: "Launchplan für eine Mobile App",
+    metaTitle: "Mobile App — Launchplan-Vorlage",
+    metaDesc: "Kostenloser Launchplan für Mobile Apps: Stabilisierung, Beta, Store-Eintrag, App-Store-Prüfung, stufenweiser Rollout, Day-One-Patch.",
+    lead: "Eine kostenlose <strong>Vorlage für den Launchplan einer Mobile App</strong>, aufgebaut um die Store-Freigabe statt um allgemeines Marketing — Stabilisierung des Builds und Release Candidate, Beta über TestFlight und den internen Play-Track, Store-Eintrag und Screenshots, Einreichung bei App Store und Google Play, die Wartezeit der Prüfung selbst, stufenweiser Rollout und das Zeitfenster für den Day-One-Patch. Laden Sie sie für eine Release-Freigabe herunter oder öffnen Sie sie online, um zu sehen, was Ihren Termin tatsächlich bestimmt.",
+    intro: "Eine Mobile App auszuliefern ist etwas anderes, als Software auf einen Server zu bringen. Jemand anderes entscheidet, wann Ihr Build live geht, und der Plan muss das zeigen. Die Vorlage trennt die Arbeit, die Sie steuern, von der Wartezeit, die Sie nicht steuern:",
+    phases: [
+      [
+        "Stabilisierung des Builds",
+        "Feature-Freeze, Auswertung von Abstürzen und ANR-Fehlern, Arbeit an Leistung und Speicher, Barrierefreiheit und Tests auf der Gerätematrix sowie der Release-Candidate-Build. <em>Meilenstein: Release Candidate steht.</em>"
+      ],
+      [
+        "Beta-Test",
+        "Upload nach TestFlight und in den internen Play-Track, interne Beta, Gewinnung externer Testerinnen und Tester, die externe Runde und die Auswertung der Rückmeldungen. <em>Meilenstein: Beta-Kriterien erfüllt.</em>"
+      ],
+      [
+        "Store-Eintrag und Assets",
+        "Recherche zu Suchbegriffen und Kategorie, Name und Beschreibung, Screenshots und Vorschauvideo, Symbol und Grafiken, die Angaben zum Datenschutz und der Fragebogen zur Altersfreigabe."
+      ],
+      [
+        "Einreichung und Prüfung",
+        "Prüfung der Richtlinienkonformität vor der Einreichung, Einreichung in beiden Stores, die Wartezeit der Prüfung und ein echter Puffer für Ablehnung und erneute Einreichung. <em>Meilenstein: freigegeben und veröffentlichungsbereit.</em>"
+      ],
+      [
+        "Stufenweiser Rollout",
+        "Gestaffelte Veröffentlichung an 1, 10 und 50 Prozent, wobei vor jeder Ausweitung die absturzfreie Rate geprüft wird. <em>Meilenstein: volle Verfügbarkeit.</em>"
+      ],
+      [
+        "Day-One-Patch und Beobachtung",
+        "Beobachtung von Abstürzen und ANR-Fehlern, das reservierte Patch-Fenster, Antworten auf Store-Bewertungen und die Auswertung der Bindung in Woche eins."
+      ]
+    ],
+    callout: "Rechnen Sie mit einer Ablehnung. Erste Einreichungen werden oft genug abgelehnt, dass ein Plan ohne Puffer für die erneute Einreichung ein Münzwurf ist — und bei der erneuten Einreichung beginnt die Uhr wieder bei null. Setzen Sie Prüfwartezeit und Ablehnungspuffer als zwei getrennte Balken auf den Plan und legen Sie den Ankündigungstermin hinter den zweiten, nicht hinter den ersten.",
+    customize: [
+      "Setzen Sie den Einreichungstermin und rechnen Sie vorwärts, nicht rückwärts — die Prüfdauer können Sie nicht stauchen.",
+      "Teilen Sie Einreichung und Prüfung je Store auf, wenn iOS und Android unterschiedlich takten; die Prüfdauern unterscheiden sich.",
+      "Verlängern Sie den Ablehnungspuffer bei einer ersten Einreichung, bei Abo-Apps und bei allem, was Kontolöschung, Gesundheitsdaten oder nutzergenerierte Inhalte berührt.",
+      "Passen Sie die Rolloutstufen an die Plattform an; der gestaffelte Rollout bei Google Play und die phasenweise Veröffentlichung im App Store laufen nicht identisch.",
+      "Halten Sie das Patch-Fenster mit namentlich benannten Personen im Plan — ein unbesetztes Patch-Fenster ist nur eine leere Woche.",
+      "Setzen Sie Release Candidate, Beta-Abschluss, Store-Freigabe und volle Verfügbarkeit als Meilensteine; nach diesen vier Terminen wird gefragt."
+    ],
+    tips: [
+      "<strong>Reichen Sie die Store-Metadaten ein, bevor das Binary final ist.</strong> Screenshots, Beschreibungen und die Datenschutzangaben lassen sich unabhängig vorbereiten und prüfen und sollten nie der Grund sein, warum der Einreichungstag wartet.",
+      "<strong>Kündigen Sie keinen Termin an, der von einer noch nicht erteilten Freigabe abhängt.</strong> Hängen Sie das Marketing an den Freigabemeilenstein, damit eine Ablehnung die Kampagne automatisch verschiebt.",
+      "<strong>Prüfen Sie die absturzfreie Rate auf jeder Rolloutstufe.</strong> Der Sinn eines stufenweisen Rollouts ist der Halt zwischen den Stufen; wenn niemand eingeplant ist, der auf die Zahlen schaut, bringt die Staffelung nichts.",
+      "<strong>Reservieren Sie das Patch-Fenster vor dem Launch, nicht danach.</strong> Wer den Day-One-Fix bauen soll, ist sonst am Launchtag schon dem nächsten Sprint zugeordnet.",
+      "<strong>Gewinnen Sie externe Testende Wochen im Voraus.</strong> Eine brauchbare Zahl echter Geräte zusammenzubekommen dauert länger als geplant, und eine dünne Beta findet nichts.",
+      "<strong>Setzen Sie den Basisplan mit dem Release Candidate.</strong> Alles davor ist Schätzung; danach besteht der Plan überwiegend aus fremden Warteschlangen und gehört als Abweichung verfolgt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Prüfung im App Store?",
+        "Die meisten App-Store-Prüfungen sind innerhalb von ein bis zwei Tagen abgeschlossen, Google Play ist oft schneller, doch beide können bei einer ersten Einreichung oder in sensiblen Kategorien deutlich länger dauern. Die Vorlage sieht zehn Tage plus Ablehnungspuffer vor."
+      ],
+      [
+        "Was gehört in einen Launchplan für eine Mobile App?",
+        "Stabilisierung des Builds, Beta-Test, Store-Eintrag und Assets, Einreichung und Prüfung, stufenweiser Rollout und ein Zeitfenster für den Day-One-Patch. Alle sechs sind hinterlegt, wobei die Prüfwartezeit als Abhängigkeit modelliert ist und nicht als Annahme."
+      ],
+      [
+        "Worin unterscheidet sich das von einem Plan zur Produkteinführung?",
+        "Dieser Plan ist auf den Store zugeschnitten — Einreichung, Prüfung und gestaffelter Rollout stehen im Mittelpunkt. Für Preisgestaltung, Positionierung und Kampagnen nutzen Sie daneben die <a href=\"/de/templates/product-launch.html\">Vorlage zur Produkteinführung</a>."
+      ],
+      [
+        "Stufenweiser Rollout oder Veröffentlichung an alle?",
+        "Staffeln Sie, sofern nichts dagegen spricht. Eine gestaffelte Veröffentlichung lässt Sie bei 1 Prozent anhalten, wenn die absturzfreie Rate fällt — das ist deutlich günstiger als ein Notfall-Rollback für alle."
+      ],
+      [
+        "Ist die Vorlage für den App-Launch kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'iso-9001-certification-plan': {
+    card: "Gap-Analyse, QM-Handbuch, internes Audit, Stufe 1 und 2, Zertifikat.",
+    h1: "Projektplan zur ISO-9001-Zertifizierung",
+    metaTitle: "ISO 9001 — Zertifizierungsplan-Vorlage",
+    metaDesc: "Kostenloser Plan zur ISO-9001-Zertifizierung: Gap-Analyse, QM-Handbuch, internes Audit, Managementbewertung, Stufe 1 und 2, Überwachung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan einer ISO-9001-Zertifizierung</strong> entlang des tatsächlichen Wegs zum Zertifikat — Gap-Analyse, Prozesslandkarte, QM-Dokumentation, Umsetzung und Schulung, der Zyklus des internen Audits, Managementbewertung und Korrekturmaßnahmen, danach das zweistufige externe Zertifizierungsaudit und das erste Überwachungsaudit. Laden Sie sie für die Unterlage zur Managementbewertung herunter oder verknüpfen Sie online die Tore, die sich nicht überspringen lassen.",
+    intro: "Eine ISO-9001-Zertifizierung ist kein Dokumentationsprojekt. Die Zertifizierungsstelle will Aufzeichnungen eines Systems sehen, das tatsächlich gelaufen ist — deshalb liegen internes Audit und Managementbewertung vor dem externen Audit und nicht daneben:",
+    phases: [
+      [
+        "Gap-Analyse und Planung",
+        "Anwendungsbereich und Kontext der Organisation, Auswahl der Zertifizierungsstelle, eine strukturierte Gap-Analyse gegen die Norm und der daraus abgeleitete Projektplan. <em>Meilenstein: Gap-Analyse abgeschlossen.</em>"
+      ],
+      [
+        "Prozesse und Risiken",
+        "Aufnahme der Kernprozesse, interessierte Parteien und ihre Anforderungen, das Register für Risiken und Chancen sowie messbare Qualitätsziele."
+      ],
+      [
+        "QM-Dokumentation",
+        "Qualitätspolitik und QM-Handbuch, dokumentierte Verfahren, Arbeitsanweisungen und Formblätter, Dokumentenlenkung und die Aufbewahrungsfristen. <em>Meilenstein: Dokumentation freigegeben.</em>"
+      ],
+      [
+        "Umsetzung und Schulung",
+        "Sensibilisierung aller Mitarbeitenden, Schulung der Prozessverantwortlichen und ein Zeitraum, in dem die Prozesse tatsächlich laufen, damit es Aufzeichnungen zu auditieren gibt."
+      ],
+      [
+        "Internes Audit und Korrekturmaßnahmen",
+        "Ausbildung interner Auditoren, das vollständige interne Auditprogramm, Abweichungsberichte und der mit Nachweisen belegte Abschluss der Korrekturmaßnahmen."
+      ],
+      [
+        "Managementbewertung",
+        "Zusammenstellung der Eingaben, die Sitzung zur Managementbewertung selbst und die daraus abgeleiteten Maßnahmen. <em>Meilenstein: Auditreife bestätigt.</em>"
+      ],
+      [
+        "Zertifizierungsaudit",
+        "Stufe-1-Audit als Dokumenten- und Reifeprüfung, Abarbeitung der Feststellungen aus Stufe 1, das Stufe-2-Audit der Umsetzung, Schließen der Abweichungen und die Zertifizierungsentscheidung. <em>Meilenstein: Zertifikat erteilt.</em>"
+      ],
+      [
+        "Überwachung",
+        "Der Verbesserungszyklus, eine zweite Runde interner Audits und das Überwachungsaudit im ersten Jahr, das die Gültigkeit des Zertifikats erhält."
+      ]
+    ],
+    callout: "Der Abstand zwischen Stufe 1 und Stufe 2 ist der ganze Sinn des zweistufigen Audits, und die meisten Pläne setzen ihn falsch an. Stufe 1 sagt Ihnen, ob Ihr System reif ist; Stufe 2 prüft, ob es wirkt. Zertifizierungsstellen wollen regelmäßig mehrere Wochen dazwischen, damit Feststellungen geschlossen werden können — Stufe 2 zu dicht hinter Stufe 1 zu buchen, ist der Weg zu einem zusätzlichen kostenpflichtigen Besuch.",
+    customize: [
+      "Wählen Sie die Zertifizierungsstelle früh und tragen Sie deren tatsächliche Verfügbarkeit ein — Audittermine werden Monate im Voraus vergeben und setzen Ihren äußeren Termin.",
+      "Verlängern Sie den Umsetzungszeitraum, wenn Ihre Prozesse lange Zyklen haben; Sie brauchen Aufzeichnungen über einen repräsentativen Zeitraum, nicht über zwei Wochen.",
+      "Ergänzen Sie eine Zeile je Prozessbereich in Prozessaufnahme und internem Audit, damit die Abdeckung sichtbar und nicht unterstellt ist.",
+      "Legen Sie je Hauptabweichung eine Korrekturmaßnahmenzeile an, sobald die Feststellungen aus Stufe 1 vorliegen; jede hat eigene Nachweise und einen eigenen Abschlusstermin.",
+      "Setzen Sie Dokumentationsfreigabe, bestätigte Auditreife, Abschluss von Stufe 2 und Zertifikatserteilung als Meilensteine — das sind die Termine für die Geschäftsführung.",
+      "Wenn Sie bereits ein anderes Managementsystem zertifiziert haben, kürzen Sie die Dokumentationsphase und nutzen Sie die gemeinsamen Kapitel weiter, statt sie neu zu schreiben."
+    ],
+    tips: [
+      "<strong>Schreiben Sie keine Dokumente, die Sie nicht befolgen.</strong> Auditoren prüfen das System gegen Ihre eigenen Verfahren, deshalb erzeugt ein überspezifiziertes Handbuch Abweichungen, die ein schlankeres nicht hätte.",
+      "<strong>Führen Sie das interne Audit wie das echte durch.</strong> Es ist die günstigste Generalprobe, und intern erhobene Feststellungen sind Verbesserungen statt Abweichungen.",
+      "<strong>Lassen Sie echte Zeit zwischen Stufe 1 und Stufe 2.</strong> Vier bis acht Wochen sind üblich; Feststellungen sauber zu schließen kostet weniger als ein Wiederholungsaudit.",
+      "<strong>Sammeln Sie die Eingaben zur Managementbewertung im Voraus.</strong> Die Sitzung ist eine geforderte Aufzeichnung mit festgelegter Eingabeliste, und am Tag zusammengetragen ergibt sie einen dünnen Nachweis, den ein Auditor bemerkt.",
+      "<strong>Behalten Sie den Überwachungszyklus im Plan.</strong> Die Zertifizierung ist der Beginn eines jährlichen Rhythmus, und wer den Plan nach dem Zertifikat weglegt, hetzt zwölf Monate später.",
+      "<strong>Setzen Sie den Basisplan mit der Dokumentationsfreigabe.</strong> Alles davor ist Aufbau; danach zählt die Abweichung gegen die Audittermine."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine ISO-9001-Zertifizierung?",
+        "Üblicherweise 6 bis 12 Monate für eine Organisation, die bei null beginnt, und schneller, wenn bereits ein dokumentiertes System besteht. Diese Vorlage läuft rund 18 Monate, weil sie bis zum ersten Überwachungsaudit reicht; das Zertifikat selbst fällt etwa in Monat zwölf."
+      ],
+      [
+        "Was ist der Unterschied zwischen Stufe-1- und Stufe-2-Audit?",
+        "Stufe 1 ist weitgehend eine Dokumenten- und Reifeprüfung, ob Ihr QM-System überhaupt auditierbar ist. Stufe 2 prüft anhand von Aufzeichnungen und Gesprächen, ob es umgesetzt und wirksam ist. Beide sind hier eigene Phasen mit einem Zeitraum zum Schließen dazwischen."
+      ],
+      [
+        "Brauche ich ein internes Audit vor der Zertifizierung?",
+        "Ja. Die Norm fordert durchgeführte interne Audits und eine Managementbewertung, und die Zertifizierungsstelle sucht diese Aufzeichnungen bereits in Stufe 1. Deshalb liegen beide in diesem Plan vor dem externen Audit."
+      ],
+      [
+        "Was passiert, wenn der Auditor eine Abweichung feststellt?",
+        "Nebenabweichungen werden meist innerhalb einer gesetzten Frist mit Maßnahmenplan und Nachweis geschlossen; Hauptabweichungen können einen weiteren Besuch erfordern. Die Vorlage sieht nach jeder Stufe genau dafür einen Balken vor."
+      ],
+      [
+        "Ist die Vorlage für die ISO-9001-Zertifizierung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'soc2-compliance-timeline': {
+    card: "Scoping, Kontrollen, Behebung, Nachweise, Beobachtungszeitraum, Bericht.",
+    h1: "Zeitplan für SOC-2-Compliance",
+    metaTitle: "SOC 2 — Zeitplan-Vorlage für Compliance",
+    metaDesc: "Kostenlose SOC-2-Zeitplan-Vorlage: Scoping, Kontrolldesign, Behebung, Nachweise, Readiness, Beobachtungszeitraum, Prüfung, Bericht.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer SOC-2-Compliance</strong> über das gesamte Vorhaben — Abgrenzung des Systems und Auswahl der Trust Services Criteria, Kontrolldesign, Behebung, Nachweiserhebung, die Readiness-Bewertung, der Beobachtungszeitraum für Type II, die Prüfungshandlungen des Wirtschaftsprüfers und die Berichtserteilung. Laden Sie sie für eine Sicherheitsprüfung durch Kunden herunter oder öffnen Sie sie online, um zu sehen, warum der Berichtstermin dort liegt, wo er liegt.",
+    intro: "Fast jede Frage zum SOC-2-Zeitplan ist in Wahrheit eine Frage zum Beobachtungszeitraum. Type I ist ein Urteil zu einem Stichtag; Type II deckt einen Zeitraum ab, in dem Ihre Kontrollen tatsächlich wirken müssen. Die Vorlage macht diesen Zeitraum zu einem sichtbaren Balken, damit niemand einen Bericht zusagt, den die Rechnung verbietet:",
+    phases: [
+      [
+        "Abgrenzung und Kriterien",
+        "Festlegung der Systemgrenze, Auswahl der Trust Services Criteria, Beauftragung des Prüfers und die Entscheidung zwischen Type I und Type II. <em>Meilenstein: Umfang abgestimmt.</em>"
+      ],
+      [
+        "Kontrolldesign",
+        "Risikobeurteilung, Zuordnung der Kontrollen zu den gewählten Kriterien, Entwurf der Richtlinien und Benennung der Kontrollverantwortlichen. <em>Meilenstein: Kontrollmatrix freigegeben.</em>"
+      ],
+      [
+        "Behebung",
+        "Zugriffsverwaltung und Rezertifizierung, Freigabetore im Änderungsmanagement, Protokollierung und Überwachung, Lieferantenrisiko, Sicherheitsschulungen und ein Test der Notfallreaktion — die eigentliche technische Arbeit."
+      ],
+      [
+        "Nachweise und Readiness",
+        "Werkzeuge zur Nachweiserhebung, Befüllen der Nachweisablage, eine Readiness-Bewertung und das Schließen der dabei gefundenen Lücken. <em>Meilenstein: Readiness bestätigt.</em>"
+      ],
+      [
+        "Type-I-Bericht (optional)",
+        "Prüfungshandlungen zum Stichtag und ein Type-I-Bericht — hilfreich, wenn ein Kunde etwas in der Hand braucht, während der Beobachtungszeitraum läuft."
+      ],
+      [
+        "Beobachtungszeitraum",
+        "Der Zeitraum, den das Type-II-Urteil abdeckt — durchgehend wirkende Kontrollen, monatliche Nachweisprüfpunkte und vierteljährliche Rezertifizierungen. Drei bis zwölf Monate, und nicht stauchbar."
+      ],
+      [
+        "Prüfung und Bericht",
+        "Stichprobenanforderungen des Prüfers, Übergabe der Nachweise, Prüfungshandlungen, Abweichungen und Stellungnahme der Geschäftsführung, Durchsicht des Entwurfs und Berichtserteilung. <em>Meilenstein: Type-II-Bericht erteilt.</em>"
+      ]
+    ],
+    callout: "Den Beobachtungszeitraum können Sie nicht verkürzen. Ein Type-II-Bericht sagt aus, dass Ihre Kontrollen über einen Zeitraum gewirkt haben — drei Monate Beobachtungszeitraum sind also drei Monate Kalenderzeit, die kein Budget zurückkauft. Der einzige Hebel ist der Startzeitpunkt, weshalb die bestätigte Readiness und nicht der Berichtstermin der Meilenstein ist, um den es sich zu kämpfen lohnt.",
+    customize: [
+      "Legen Sie zuerst die Länge des Beobachtungszeitraums fest — drei Monate für den ersten Bericht, sechs bis zwölf im Jahreszyklus — und setzen Sie den Balken entsprechend.",
+      "Streichen Sie die Type-I-Phase ganz, wenn kein Kunde einen Zwischenbericht braucht; viele Organisationen gehen direkt auf Type II.",
+      "Ergänzen Sie eine Zeile je Kategorie über Security hinaus; Availability, Confidentiality, Processing Integrity und Privacy bringen jeweils zusätzliche Kontrollen und Nachweise mit.",
+      "Weiten Sie die Behebung nach der Readiness-Bewertung auf eine Zeile je Lücke aus, damit die technische Arbeit verfolgt und nicht zusammengefasst wird.",
+      "Legen Sie die monatlichen Nachweisprüfpunkte als wiederkehrende Zeilen über den Zeitraum — fehlende Monate sind die häufigste Ursache für Abweichungen im Bericht.",
+      "Setzen Sie Umfangsabstimmung, bestätigte Readiness, Beginn und Ende des Zeitraums sowie die Berichtserteilung als Meilensteine."
+    ],
+    tips: [
+      "<strong>Starten Sie den Zeitraum erst, wenn die Behebung wirklich abgeschlossen ist.</strong> Eine im ersten Monat versagende Kontrolle ist eine Abweichung im Bericht; zwei Wochen später zu starten kostet zwei Wochen, zu früh zu starten kann den Bericht kosten.",
+      "<strong>Automatisieren Sie die Nachweiserhebung vor Beginn des Zeitraums, nicht währenddessen.</strong> Drei Monate Rezertifizierungen nachträglich zu rekonstruieren, ist die schmerzhafteste Aufgabe eines SOC 2 — und Prüfer merken es meist.",
+      "<strong>Fassen Sie den Umfang beim ersten Bericht eng.</strong> Security allein ist ein gültiger Umfang und wird von den meisten Kunden akzeptiert; jede weitere Kategorie vervielfacht Kontrollen und verlängert jede Phase.",
+      "<strong>Beauftragen Sie den Prüfer früh.</strong> Seine Verfügbarkeit für die Prüfungshandlungen ist eine echte Nebenbedingung, und eine erst zum Ende gebuchte Kanzlei beginnt nicht in der Woche des Abschlusses.",
+      "<strong>Rechnen Sie mit Abweichungen.</strong> Fast jeder Bericht enthält welche; entscheidend ist die Stellungnahme der Geschäftsführung, und die braucht Zeit im Plan, bevor der Entwurf finalisiert wird.",
+      "<strong>Setzen Sie den Basisplan mit der bestätigten Readiness.</strong> Alles davor ist Behebung; danach ist der Zeitplan Rechnen plus die Terminlage des Prüfers."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine SOC-2-Compliance?",
+        "Für einen ersten Type II üblicherweise 8 bis 12 Monate insgesamt: drei bis sechs Monate Vorbereitung und Behebung, dann ein Beobachtungszeitraum von drei bis zwölf Monaten, dann Prüfung und Bericht. Die Vorlage nutzt rund 16 Monate mit einem Zeitraum von sechs Monaten."
+      ],
+      [
+        "Was ist der Unterschied zwischen SOC 2 Type I und Type II?",
+        "Type I ist ein Urteil über das Kontrolldesign zu einem einzigen Stichtag; Type II ist ein Urteil über die Wirksamkeit über einen Zeitraum. Type II setzt den Beobachtungszeitraum voraus, dauert deshalb weit länger, und der Zeitraum hat hier eine eigene Phase."
+      ],
+      [
+        "Wie lang sollte der Beobachtungszeitraum sein?",
+        "Drei Monate sind das übliche Minimum für einen ersten Type II, sechs bis zwölf Monate sind im Jahreszyklus Standard. Kürzere Zeiträume gehen schneller, werden von manchen Kunden aber geringer bewertet."
+      ],
+      [
+        "Geht ein SOC-2-Bericht auch schneller?",
+        "Sie können die Vorbereitung verkürzen und einen Type I erteilen lassen, während der Zeitraum läuft. Den Zeitraum selbst können Sie nicht verkürzen — das ist der Teil des Plans, den niemand steuert."
+      ],
+      [
+        "Ist die Vorlage für den SOC-2-Zeitplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'manufacturing-production-schedule': {
+    card: "Bedarf, Materialverfügbarkeit, Rüstwechsel, Fertigungslose, Prüfung, Versand.",
+    h1: "Produktionsplan für die Fertigung",
+    metaTitle: "Fertigung — Produktionsplan-Vorlage",
+    metaDesc: "Kostenloser Produktionsplan für die Fertigung: Bedarfsplanung, Lieferzeiten, Losplanung, Rüstwechsel, Prüfung, Sperrbestand, Versand.",
+    lead: "Eine kostenlose <strong>Vorlage für den Produktionsplan einer Fertigung</strong> für die Stückfertigung — Bedarfsplan und Produktionsprogramm, Materialbeschaffung gegen echte Lieferzeiten, Reihenfolgeplanung und Rüstwechsel, die Fertigungslose selbst, fertigungsbegleitende und abschließende Prüfung, danach Verpackung und Versand. Laden Sie sie für die Planungsrunde herunter oder öffnen Sie sie online, um zu sehen, ob Ihr Material vor der freien Linie da ist.",
+    intro: "Ein Produktionsplan sind zwei Pläne, die zusammenkommen müssen: eintreffendes Material und verfügbare Kapazität. Die Vorlage führt beide als getrennte Stränge, damit der Zusammenstoß sichtbar wird, bevor er in der Fertigung passiert:",
+    phases: [
+      [
+        "Bedarfs- und Kapazitätsplanung",
+        "Durchsicht der Absatzprognose, feste Auftragseingänge, das Produktionsprogramm und eine grobe Kapazitäts- und Personalprüfung. <em>Meilenstein: Kapazität bestätigt.</em>"
+      ],
+      [
+        "Materialbeschaffung",
+        "Stücklistenauflösung und Bedarfsermittlung, Bestellungen, Lieferungen mit langer und normaler Vorlaufzeit, Wareneingang und Eingangsprüfung sowie die Bereitstellung an der Linie. <em>Meilenstein: Material verfügbar.</em>"
+      ],
+      [
+        "Reihenfolgeplanung und Rüsten",
+        "Feinplanung der Reihenfolge, Rüstplan, Vorbereitung von Werkzeugen und Vorrichtungen, der Rüstwechsel selbst und die Erstmusterprüfung. <em>Meilenstein: Erstmuster freigegeben.</em>"
+      ],
+      [
+        "Fertigungslose",
+        "Die Lose selbst, wobei die Rüstwechsel zwischen den Produkten als echte Vorgänge geplant und nicht wegdefiniert werden."
+      ],
+      [
+        "Qualitätssicherung",
+        "Fertigungsbegleitende Prüfung und statistische Prozessregelung, Sperrbestand und Entscheidung über die Verwendung, Endprüfung und die Dokumentation zur Chargenfreigabe. <em>Meilenstein: Charge freigegeben.</em>"
+      ],
+      [
+        "Verpackung und Versand",
+        "Verpacken und Etikettieren, Palettierung und Ladeplanung, Speditionsavis und Versandpapiere. <em>Meilenstein: Auftrag versandt.</em>"
+      ]
+    ],
+    callout: "Rüstwechsel sind Produktionszeit. Ein Plan, der drei Lose direkt hintereinander und keine Rüstbalken zeigt, behauptet eine Kapazität, die es nicht gibt — und auf einer Linie mit häufigen Produktwechseln kann das Rüsten einen zweistelligen Anteil der verfügbaren Stunden ausmachen. Setzen Sie jeden Rüstwechsel mit seiner gemessenen Dauer auf den Plan, nicht mit der erhofften.",
+    customize: [
+      "Tragen Sie die echten Lieferzeiten je Komponente ein; die längste davon, nicht die Linienbelegung, bestimmt meist den frühesten möglichen Start.",
+      "Ergänzen Sie eine Zeile je Arbeitsplatz oder Linie, wenn Sie mehrere planen, damit Belegungskonflikte sichtbar werden.",
+      "Setzen Sie Rüstzeiten nach tatsächlich gemessenen Werten und halten Sie sie von den Losen davor und danach getrennt.",
+      "Legen Sie einen Balken für den Sperrbestand ein, wo eine Charge auf die Entscheidung wartet — dieses Warten ist stillstehender Bestand.",
+      "Ergänzen Sie Sicherheitsbestände oder Pufferbalken vor Losen, die eine feste Kundenzusage bedienen.",
+      "Setzen Sie Materialverfügbarkeit, Erstmusterfreigabe, Chargenfreigabe und Versand als Meilensteine."
+    ],
+    tips: [
+      "<strong>Planen Sie rückwärts vom Versandtermin.</strong> Die Kundenzusage ist der Fixpunkt; alles davor leitet sich daraus ab, statt von heute nach vorne geschoben zu werden.",
+      "<strong>Planen Sie kein Los vor der freigegebenen Eingangsprüfung.</strong> Material auf dem Hof ist kein verfügbares Material, und der Start auf ungeprüfter Ware bringt am Ende die ganze Charge in den Sperrbestand.",
+      "<strong>Erst auf minimale Rüstwechsel sortieren, dann die Termine prüfen.</strong> Die effizienteste Reihenfolge und die termingerechte Reihenfolge sind selten dieselbe; im Plan sehen Sie den Tausch.",
+      "<strong>Geben Sie der Erstmusterprüfung einen eigenen Balken.</strong> Sie ist ein Tor, und ein vor der Freigabe gestartetes Los ist ein Los, das Sie unter Umständen verschrotten.",
+      "<strong>Lassen Sie Puffer vor dem Versand.</strong> Speditionsavis und Ladefenster liegen außerhalb Ihrer Kontrolle, und eine erst am Abholmorgen freigegebene Charge hat keinen Raum für eine Nacharbeitsschleife.",
+      "<strong>Setzen Sie den Basisplan mit dem eingefrorenen Programm.</strong> Sobald das Programm für die Periode eingefroren ist, verfolgen Sie die Abweichung, statt es still umzuschreiben."
+    ],
+    faq: [
+      [
+        "Was gehört in einen Produktionsplan?",
+        "Bedarfs- und Kapazitätsplanung, Materialbeschaffung mit echten Lieferzeiten, Reihenfolgeplanung und Rüstwechsel, die Fertigungslose, Qualitätssicherung samt Sperrbestand sowie Verpackung und Versand. Alle sechs sind hier als eigene Phasen hinterlegt."
+      ],
+      [
+        "Wie stelle ich Rüstwechsel im Gantt-Diagramm dar?",
+        "Als eigene kurze Balken zwischen den Losen, wobei jedes Los vom Rüstwechsel davor abhängt. Das Rüsten im Losbalken zu verstecken überzeichnet Ihre verfügbare Kapazität — der häufigste Fehler in einem Produktionsplan."
+      ],
+      [
+        "Passt die Vorlage auch für die Prozessfertigung?",
+        "Am besten passt sie zur Stückfertigung — Chargen, Stück und Rüstwechsel. Für kontinuierliche Prozesse behalten Sie Beschaffung und Versand und ersetzen die Loszeilen durch Kampagnenbalken."
+      ],
+      [
+        "Worin unterscheidet sie sich vom Produktionskalender für Bekleidung?",
+        "Der <a href=\"/de/templates/apparel-production-calendar.html\">Bekleidungskalender</a> ist saisonal aufgebaut, mit Mustern und Stoffbuchungen gegen einen Liefertermin an den Handel. Diese Vorlage ist ein allgemeiner Plan der Stückfertigung rund um Lieferzeiten, Rüstwechsel und Versand."
+      ],
+      [
+        "Ist die Vorlage für den Produktionsplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'website-redesign-project-plan': {
+    card: "Analyse, Inhalte, Design, Umsetzung, Migration, Weiterleitungen, Launch.",
+    h1: "Projektplan für den Website-Relaunch",
+    metaTitle: "Website-Relaunch — Projektplan",
+    metaDesc: "Kostenloser Projektplan für den Website-Relaunch: Analyse, Inhaltsaudit, Design, Umsetzung, Migration, Weiterleitungen, QA, Launch.",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Website-Relaunchs</strong> über das gesamte Projekt — Analyse, Informationsarchitektur und Inhaltsaudit, Design, Umsetzung, Inhaltsmigration, Weiterleitungskonzept für die Suchmaschinen, Qualitätssicherung und die Beobachtung nach dem Launch. Laden Sie sie für ein Agenturangebot oder den internen Auftakt herunter oder geben Sie online der Weiterleitungsliste und der Migration den Platz, den sie wirklich brauchen.",
+    intro: "Relaunches scheitern selten am Design. Sie scheitern an den beiden unspektakulären Strängen, die niemand ausreichend besetzt — die Inhalte umziehen und die Adressen abbilden. Deshalb bekommen beide eine eigene Phase mit eigenen Abhängigkeiten:",
+    phases: [
+      [
+        "Analyse",
+        "Gespräche mit den Beteiligten, Auswertung von Webanalyse und Search Console, Wettbewerbs- und Nutzerrecherche sowie abgestimmte Anforderungen und Erfolgskennzahlen. <em>Meilenstein: Analyse freigegeben.</em>"
+      ],
+      [
+        "Informationsarchitektur und Inhaltsaudit",
+        "Vollständiges Verzeichnis aller Adressen durch einen Crawl, je Seite die Entscheidung behalten, zusammenführen oder abschalten, Seitenstruktur und Navigation sowie Wireframes der wichtigsten Seitentypen. <em>Meilenstein: Architektur freigegeben.</em>"
+      ],
+      [
+        "Design",
+        "Gestalterische Richtung, Designsystem und Komponenten, Entwürfe der Schlüsselseiten sowie die Durchsicht zu Responsivität und Barrierefreiheit. <em>Meilenstein: Design freigegeben.</em>"
+      ],
+      [
+        "Umsetzung",
+        "Umgebungen und CMS-Einrichtung, Entwicklung von Templates und Komponenten, Schnittstellen und Formulare sowie die Einrichtung der Webanalyse. <em>Meilenstein: Funktionsumfang vollständig.</em>"
+      ],
+      [
+        "Inhaltsmigration",
+        "Die Migrationsliste, Überarbeitung und Optimierung der Texte, Migration der Medien und das eigentliche Einspielen ins CMS. <em>Meilenstein: Redaktionsstopp auf der alten Website.</em>"
+      ],
+      [
+        "Weiterleitungen und Suchmaschinen",
+        "Zuordnung alter zu neuen Adressen für jede geänderte Seite, Aufbau und Test der Weiterleitungsregeln, Metadaten und strukturierte Daten, Canonicals und die XML-Sitemap. <em>Meilenstein: Weiterleitungsliste freigegeben.</em>"
+      ],
+      [
+        "Qualitätssicherung",
+        "Tests über Browser und Geräte, Prüfung der Barrierefreiheit, Core Web Vitals, ein vollständiger Weiterleitungs-Crawl auf der Staging-Umgebung und der Abnahmetest der Beteiligten. <em>Meilenstein: QA-Freigabe.</em>"
+      ],
+      [
+        "Launch und Beobachtung",
+        "Go-/No-go-Entscheidung, DNS-Umstellung, Kontrolle der Weiterleitungen nach dem Launch, Einreichen der Sitemap und dreißig Tage Beobachtung von Crawl-Fehlern und Rankings."
+      ]
+    ],
+    callout: "Die Weiterleitungsliste ist das Projekt. Jede Adresse, die sich ohne 301-Weiterleitung ändert, ist Traffic, für den Sie bezahlt und den Sie dann weggeworfen haben — und der Schaden zeigt sich Wochen später, wenn die Rankings längst weg sind. Bauen Sie die Liste aus einem vollständigen Crawl der alten Website und nicht aus der neuen Sitemap, und testen Sie sie auf der Staging-Umgebung vor dem Launch, nicht danach.",
+    customize: [
+      "Beginnen Sie das Adressverzeichnis in der ersten Woche; der Crawl der bestehenden Website ist die Eingabe für Inhaltsaudit, Migrationsliste und Weiterleitungen.",
+      "Ergänzen Sie eine Zeile je Inhaltstyp oder Bereich, wenn Sie tausende Seiten migrieren — ein einzelner Balken für die Migration versteckt immer einen Monat.",
+      "Bemessen Sie die Textüberarbeitung ehrlich; sie ist meist der am stärksten unterschätzte Vorgang im ganzen Projekt und braucht Redaktion, nicht Entwicklung.",
+      "Halten Sie einen Meilenstein für den Redaktionsstopp auf der alten Website, damit die Migration nicht einem beweglichen Ziel hinterherläuft.",
+      "Machen Sie den Weiterleitungs-Crawl auf der Staging-Umgebung zum harten Vorgänger der Go-/No-go-Entscheidung statt zu einer Nettigkeit der Qualitätssicherung.",
+      "Ziehen Sie die Beobachtung nach dem Launch auf mindestens dreißig Tage — Suchmaschinen brauchen Wochen, um eine geänderte Website neu zu erfassen."
+    ],
+    tips: [
+      "<strong>Crawlen Sie die alte Website vor allem anderen.</strong> Sie können nichts auditieren, migrieren oder weiterleiten, was Sie nicht erfasst haben, und die meisten Organisationen haben deutlich mehr aktive Adressen als gedacht.",
+      "<strong>Launchen Sie nicht am Freitag.</strong> Probleme mit Weiterleitungen und Indexierung zeigen sich innerhalb von Stunden und brauchen Leute, die sie beheben können.",
+      "<strong>Testen Sie Weiterleitungen auf Staging mit der echten Liste.</strong> Eine Stichprobe von zehn Adressen beweist nichts; crawlen Sie die vollständige alte Adressliste gegen Staging und prüfen Sie jeden Statuscode.",
+      "<strong>Lassen Sie die alte Webanalyse parallel weiterlaufen.</strong> Ohne vergleichbare Ausgangswerte können Sie nicht unterscheiden, ob ein Rückgang nach dem Launch saisonal oder selbst verursacht ist.",
+      "<strong>Schreiben Sie die Texte, bevor die Templates fertig sind.</strong> Inhalte, die auf das Design warten, sind die häufigste Ursache dafür, dass ein Launchtermin zweimal verschoben wird.",
+      "<strong>Setzen Sie den Basisplan mit der Designfreigabe.</strong> Davor bewegt sich der Umfang noch; danach ist die Abweichung das, worauf der Lenkungskreis schauen sollte."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Website-Relaunch?",
+        "Üblicherweise 4 bis 9 Monate für eine mittelgroße Website, bestimmt vor allem vom Umfang der Inhalte und nicht von Design oder Umsetzung. Die Vorlage nutzt rund neun Monate, die Sie über den Umfang stauchen können, nicht über die Migrationszeit."
+      ],
+      [
+        "Was ist eine Weiterleitungsliste und warum ist sie wichtig?",
+        "Eine Zuordnung jeder alten Adresse zu ihrer neuen, umgesetzt als 301-Weiterleitung. Ohne sie verliert jede geänderte Adresse ihre aufgebaute Sichtbarkeit in der Suche und jeden eingehenden Link. Genau deshalb hat sie hier eine eigene Phase."
+      ],
+      [
+        "Wann sollte die Inhaltsmigration beginnen?",
+        "Sobald das Inhaltsaudit steht und die Migrationsliste existiert — deutlich vor dem Ende der Umsetzung. Inhalte sind der lange Balken, und erst nach fertigen Templates zu beginnen kostet Monate."
+      ],
+      [
+        "Was sollte ich nach dem Launch beobachten?",
+        "Crawl-Fehler und 404-Seiten, die Indexabdeckung, die Rankings Ihrer wichtigsten Begriffe und den organischen Traffic gegen die Ausgangswerte vor dem Launch, mindestens dreißig Tage lang. Alle vier stehen als echte Vorgänge im Plan."
+      ],
+      [
+        "Ist die Vorlage für den Website-Relaunch kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

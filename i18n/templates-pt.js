@@ -2998,6 +2998,802 @@ const T = {
       ]
     ]
   },
+
+  'hospital-department-opening': {
+    card: "Projeto, obra, equipamentos, CCIH, equipe e primeiro paciente.",
+    h1: "Plano de abertura de setor hospitalar",
+    metaTitle: "Abertura de setor hospitalar — plano",
+    metaDesc: "Modelo gratuito de plano de abertura de setor hospitalar: obra, equipamentos, CCIH, licenciamento sanitário, equipe e primeiro paciente.",
+    lead: "Um modelo gratuito de <strong>plano de abertura de setor hospitalar</strong> cobrindo o comissionamento de uma nova unidade assistencial — estudo de viabilidade e aprovação do investimento, projeto arquitetônico e de instalações conforme a RDC 50 da Anvisa, obra e acabamento, aquisição de equipamentos médico-assistenciais, parecer da CCIH, dimensionamento e capacitação da equipe, governança da informação e a reta final até o primeiro paciente.",
+    intro: "Abrir uma área assistencial não é uma obra com um pedaço clínico no fim. É uma sequência de portões regulatórios, e qualquer um deles impede a porta de abrir no dia em que ela ficou pronta. O modelo dá a cada portão uma linha visível:",
+    phases: [
+      [
+        "Estudo de viabilidade e aprovação",
+        "Necessidade assistencial e modelo de atendimento, projeção de demanda e de força de trabalho, plano de investimento e aprovação pela diretoria e pela fonte pagadora. <em>Marco: investimento aprovado.</em>"
+      ],
+      [
+        "Projeto e adequações",
+        "Programa de necessidades, projeto executivo conforme a RDC 50 e as normas técnicas, adequações justificadas onde a estrutura existente não atende, e aprovação do projeto arquitetônico na vigilância sanitária. <em>Marco: projeto congelado.</em>"
+      ],
+      [
+        "Obra e acabamento",
+        "Serviços preliminares e remanejamento de atividades, estrutura e instalações prediais, rede de gases medicinais, climatização e quartos de isolamento, acabamentos e entrega. <em>Marco: obra concluída.</em>"
+      ],
+      [
+        "Equipamentos médico-assistenciais",
+        "Relação de equipamentos e orçamento, processo de compra, itens de prazo longo como imagem e equipamentos de grande porte, entrega, instalação, testes de aceitação e calibração."
+      ],
+      [
+        "Controle de infecção e validação",
+        "Análise do projeto pela CCIH, plano de segurança da água e regime de descarga, validação da climatização, amostragem ambiental e microbiológica. <em>Marco: parecer favorável da CCIH.</em>"
+      ],
+      [
+        "Equipe e capacitação",
+        "Dimensionamento e quadro de pessoal, recrutamento, credenciamento do corpo clínico, integração e validação de competências."
+      ],
+      [
+        "Governança da informação",
+        "Parametrização dos sistemas assistenciais, avaliação de impacto à proteção de dados exigida pela LGPD, testes de prontuário e de integrações, e o parecer final de governança."
+      ],
+      [
+        "Comissionamento e abertura",
+        "Protocolos e procedimentos operacionais, simulações e dias de operação assistida, licenciamento sanitário e vistoria da vigilância, decisão de abrir ou não abrir e primeiro paciente. <em>Marco: primeiro paciente.</em>"
+      ]
+    ],
+    callout: "Validação não é pendência de obra. Verificação da climatização, coleta de água e testes de aceitação dos equipamentos acontecem depois que o construtor sai e antes que um paciente possa ser internado, e cada um deles tem um prazo de laboratório que você não controla. Deixe de seis a oito semanas entre a conclusão da obra e a data de abertura, e coloque cada ensaio no gráfico como tarefa com data de resultado.",
+    customize: [
+      "Fixe a data exigida de abertura e trabalhe de trás para frente a partir do parecer da CCIH — é esse portão, e não o fim da obra, que realmente libera o espaço.",
+      "Acrescente uma linha por adequação assim que a análise de projeto começar; cada uma é uma aceitação formal de risco com um aprovador nomeado.",
+      "Desdobre a fase de equipamentos em uma linha por item de investimento, com prazos realmente cotados — imagem e equipamentos cirúrgicos costumam ultrapassar a obra.",
+      "Estenda o recrutamento se você precisa de enfermagem especializada ou de contratação de médico titular; são essas as vagas que escorregam.",
+      "Insira a janela de vistoria da vigilância sanitária como barra fixa e faça o primeiro paciente depender dela.",
+      "Mantenha um dia de simulação antes da abertura — é a forma mais barata de encontrar as falhas de processo."
+    ],
+    tips: [
+      "<strong>Inicie o plano de segurança da água no dia em que a tubulação for carregada.</strong> Os regimes de descarga e coleta duram semanas, e uma amostra reprovada zera o relógio em vez de atrasar um dia.",
+      "<strong>Compre equipamento de prazo longo contra o plano de investimento, e não contra a obra.</strong> Se o pedido espera o início da obra, a entrega chega depois da unidade pronta.",
+      "<strong>Trate o credenciamento como dependência.</strong> Um médico sem credenciamento não atende, por mais pronta que a unidade esteja.",
+      "<strong>Comece cedo a avaliação de impacto de proteção de dados.</strong> Parametrizar o sistema assistencial é rápido; a aprovação de governança em volta dela não é.",
+      "<strong>Faça a decisão de abrir com os donos dos portões na sala.</strong> CCIH, governança da informação, engenharia clínica e a direção técnica têm poder de veto — juntar essas decisões no próprio dia é como aberturas são adiadas.",
+      "<strong>Estabeleça a linha de base no congelamento do projeto.</strong> Tudo antes disso é estimativa; depois, toda mudança tem custo e caminho de aprovação."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para abrir um novo setor hospitalar?",
+        "Em geral de 18 a 24 meses do estudo de viabilidade ao primeiro paciente numa reforma, e mais que isso em construção nova. O modelo usa um cronograma de dezoito meses que você comprime ou estica movendo a data de abertura."
+      ],
+      [
+        "O que costuma atrasar a abertura de uma unidade assistencial?",
+        "Validação e regulação, muito mais que a obra — verificação da climatização, coleta de água, testes de aceitação dos equipamentos, credenciamento e licenciamento sanitário ficam todos depois do construtor, e cada um tem prazo de terceiros."
+      ],
+      [
+        "O que é uma adequação de projeto nesse contexto?",
+        "É um afastamento documentado e aprovado de uma exigência da RDC 50 ou de norma técnica, quando a estrutura existente não consegue atender. Precisa ser acordado no projeto e assinado por um responsável, por isso aparece como tarefa e não como premissa."
+      ],
+      [
+        "Serve para a reforma de uma enfermaria em vez de um setor novo?",
+        "Sim. Descarte as linhas de serviços preliminares e remanejamento se você não vai transferir um serviço, e mantenha as fases de CCIH, equipamentos e governança — são idênticas nos dois casos."
+      ],
+      [
+        "O modelo de abertura de setor hospitalar é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'school-year-planning-calendar': {
+    card: "Grade horária, matrículas, avaliações, conselhos e orçamento.",
+    h1: "Calendário de planejamento do ano letivo",
+    metaTitle: "Calendário do ano letivo — modelo",
+    metaDesc: "Modelo gratuito de calendário do ano letivo: grade horária, quadro docente, matrículas, avaliações, conselhos de classe e orçamento.",
+    lead: "Um modelo gratuito de <strong>calendário de planejamento do ano letivo</strong> montado no nível da escola, e não da sala de aula — desenho curricular e montagem da grade horária, quadro docente e substituições, matrículas e rematrículas, calendário escolar e recessos, períodos de avaliação e exames externos, conselhos de classe e reuniões de pais, autoavaliação institucional, e o ciclo orçamentário que corre por baixo de tudo.",
+    intro: "Um ano letivo é planejado duas vezes: uma antes de começar e outra semana a semana enquanto acontece. O modelo mostra as duas, com as fases de planejamento antes do primeiro dia de aula:",
+    phases: [
+      [
+        "Currículo e grade horária",
+        "Matriz curricular e blocos de eletivas, atribuição de disciplinas, montagem e validação da grade horária, alocação de salas e recursos. <em>Marco: grade horária publicada.</em>"
+      ],
+      [
+        "Quadro docente e contratos",
+        "Revisão do quadro, desligamentos e processos seletivos, contratação, banco de substituições e integração dos novos professores."
+      ],
+      [
+        "Matrículas e rematrículas",
+        "Portas abertas, período de inscrição, resultados e recursos, matrícula e rematrícula, e dias de acolhimento das novas turmas. <em>Marco: número de alunos confirmado.</em>"
+      ],
+      [
+        "Calendário escolar",
+        "Datas de início e fim de bimestre, recessos e feriados, dias de formação continuada, o calendário de eventos publicado e a comunicação disso tudo às famílias."
+      ],
+      [
+        "Avaliação e exames",
+        "Períodos de avaliação interna, simulados, inscrições e prazos de exames externos, a aplicação das provas, condições especiais de atendimento e a divulgação de resultados. <em>Marco: divulgação de resultados.</em>"
+      ],
+      [
+        "Conselhos de classe e famílias",
+        "Janelas de lançamento de notas, fechamento de boletins, conselhos de classe, reuniões de pais e definição de metas para o ano seguinte."
+      ],
+      [
+        "Avaliação institucional e governança",
+        "Autoavaliação, calendário de reuniões do conselho escolar, preparação para supervisão da rede, auditoria de proteção ao estudante e revisão de regimento e políticas."
+      ],
+      [
+        "Ciclo orçamentário",
+        "Repasse e receita prevista, elaboração e aprovação do orçamento, acompanhamento ao longo do ano e a prestação de contas de encerramento."
+      ]
+    ],
+    callout: "Grade horária e quadro docente são um problema só, não dois. Você não fecha a grade sem saber quem leciona, e não confirma o quadro sem saber o que a grade exige. Programe os dois como barras sobrepostas com um prazo comum, e coloque no gráfico a data-limite de desligamento — é a única data que decide se a grade será montada uma vez ou três.",
+    customize: [
+      "Coloque o dia zero no início do período de planejamento, e não no primeiro dia de aula — a maior parte das decisões é tomada antes.",
+      "Substitua as janelas de exame pelas datas reais dos seus exames externos; elas são fixas e tudo em volta negocia.",
+      "Acrescente uma linha por segmento ou série onde os ciclos de avaliação e de boletim forem diferentes.",
+      "Insira as datas das reuniões do conselho escolar como marcos — são os portões de aprovação de orçamento e de regimento.",
+      "Estenda a fase de matrículas se você opera processo seletivo concorrido com período de recursos.",
+      "Marque os dias de formação continuada explicitamente, para que a capacitação seja planejada no calendário e não espremida em volta dele."
+    ],
+    tips: [
+      "<strong>Coloque a data-limite de desligamento no gráfico.</strong> É a data dura que separa uma grade horária que você consegue montar de outra que você vai refazer nas férias.",
+      "<strong>Proteja as janelas de lançamento de notas.</strong> O boletim depende de a nota entrar no prazo; uma janela perdida move o conselho de classe e a reunião de pais, não só a planilha.",
+      "<strong>Organize cedo a aplicação das provas.</strong> Convocação de aplicadores e avaliação de condições especiais têm prazo próprio, e as duas condicionam o período de exames.",
+      "<strong>Programe as portas abertas contra a data de inscrição.</strong> Uma porta aberta depois do prazo é evento de marketing, não de captação.",
+      "<strong>Mantenha o ciclo orçamentário visível.</strong> Decisões de quadro docente tomadas sem a posição orçamentária à vista são o erro mais caro que uma escola comete.",
+      "<strong>Planeje o próximo ano ainda dentro deste.</strong> Tudo o que está neste gráfico antes do início das aulas pertence ao ano que ainda está correndo."
+    ],
+    faq: [
+      [
+        "O que deve conter um calendário de planejamento do ano letivo?",
+        "Currículo e grade horária, quadro docente, matrículas, calendário escolar, avaliação e exames externos, conselhos de classe e reuniões de pais, avaliação institucional e o ciclo orçamentário. As oito frentes já vêm prontas como faixas separadas."
+      ],
+      [
+        "Quando começar a planejar o próximo ano letivo?",
+        "Normalmente no meio do ano anterior, porque a data-limite de desligamento, os blocos de eletivas e o orçamento acontecem meses antes do primeiro dia de aula. O modelo começa aí, e não no início das aulas."
+      ],
+      [
+        "Dá para adaptar para uma faculdade ou universidade?",
+        "Sim. Mantenha a estrutura e troque os exames externos pelos seus períodos de avaliação, e as linhas de matrícula pelo seu processo de ingresso — o formato do ano é o mesmo."
+      ],
+      [
+        "Como lidar com duas ou três entradas por ano?",
+        "Duplique as linhas de matrícula por entrada e mantenha uma única faixa de grade horária e de orçamento. O modelo dá o padrão para a entrada principal."
+      ],
+      [
+        "O modelo de calendário do ano letivo é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'nonprofit-fundraising-campaign': {
+    card: "Viabilidade, prospecção, fase silenciosa, lançamento e prestação de contas.",
+    h1: "Plano de campanha de captação de recursos",
+    metaTitle: "Campanha de captação — plano",
+    metaDesc: "Modelo gratuito de plano de campanha de captação: viabilidade, prospecção, fase silenciosa, lançamento público, doação pareada e relacionamento.",
+    lead: "Um modelo gratuito de <strong>plano de campanha de captação de recursos</strong> montado do jeito que campanhas institucionais realmente funcionam — estudo de viabilidade e documento de causa, prospecção e construção do funil, cultivo de grandes doadores numa fase silenciosa, o lançamento público, eventos e janelas de doação pareada, e o relacionamento e a prestação de contas que decidem se o doador volta a doar.",
+    intro: "Uma campanha não é um lançamento seguido de doações. A maior parte do dinheiro é comprometida antes de qualquer anúncio público, e é por isso que a fase silenciosa ocupa a maior fatia do gráfico:",
+    phases: [
+      [
+        "Viabilidade e documento de causa",
+        "Diagnóstico da necessidade, definição da meta, entrevistas de viabilidade com prováveis doadores principais, documento de causa e aprovação pelo conselho. <em>Marco: meta aprovada.</em>"
+      ],
+      [
+        "Prospecção e funil",
+        "Higienização da base, análise de capacidade de doação, classificação de prospects, distribuição de carteiras e a tabela de faixas de doação."
+      ],
+      [
+        "Liderança e fase silenciosa",
+        "Formação do comitê da campanha, doação do conselho, solicitação das doações principais e de grande porte, e formalização das promessas de doação — tudo antes de qualquer anúncio. <em>Marco: meta da fase silenciosa atingida.</em>"
+      ],
+      [
+        "Lançamento público",
+        "Materiais de lançamento e resumo da causa, plano de imprensa e redes, evento de lançamento e a campanha ampla junto à base de doadores. <em>Marco: lançamento público.</em>"
+      ],
+      [
+        "Eventos e campanhas",
+        "Jantar beneficente ou eventos da campanha, mala direta e e-mails, captação comunitária e entre pares, e os empurrões de dia de doar."
+      ],
+      [
+        "Doação pareada",
+        "Patrocinador do pareamento assegurado, divulgação da janela, o período de pareamento em si e a conciliação dos valores pareados."
+      ],
+      [
+        "Relacionamento e prestação de contas",
+        "Agradecimento e emissão de recibos, reconhecimento dos doadores, relatório de impacto, cobrança das promessas de doação e o relatório de encerramento. <em>Marco: campanha encerrada.</em>"
+      ]
+    ],
+    callout: "Não lance publicamente antes de a fase silenciosa ter garantido a maior parte da meta. Campanhas que anunciam com quarenta por cento passam a fase pública explicando por que estão atrasadas; campanhas que anunciam com setenta por cento passam a fase pública construindo entusiasmo. A data de lançamento deve ser consequência do funil, e não uma data no calendário de marketing.",
+    customize: [
+      "Monte primeiro a tabela de faixas de doação e depois dimensione a fase silenciosa pelo número de conversas de doação principal que ela implica — esse número define a duração.",
+      "Acrescente uma linha por prospect principal assim que as carteiras forem distribuídas, para que o cultivo seja acompanhado e não presumido.",
+      "Mova o marco de lançamento público para o ponto em que o total da fase silenciosa realmente cruza o limite que você definiu.",
+      "Estenda a barra de cobrança de promessas para o seu prazo real; compromissos plurianuais sobrevivem à campanha por anos.",
+      "Acrescente linhas de dia de doar ou de campanha de fim de ano onde elas caem no seu calendário — essas datas são fixas e o resto se organiza em torno delas.",
+      "Mantenha o relacionamento correndo depois do encerramento; ele é o funil da próxima campanha."
+    ],
+    tips: [
+      "<strong>Entrevista de viabilidade é cultivo.</strong> As pessoas a quem você pede uma opinião honesta sobre a meta são normalmente as mesmas a quem você vai pedir uma doação principal, então programe-as com esse cuidado.",
+      "<strong>Peça de cima para baixo.</strong> As doações principais definem a escala para todo o resto; começar pela base média limita a campanha ao que essa base der.",
+      "<strong>Garanta o pareamento antes de divulgá-lo.</strong> Uma janela de doação pareada anunciada sem compromisso assinado do patrocinador é uma promessa que você não pode cumprir.",
+      "<strong>Coloque o agradecimento no gráfico com prazo.</strong> Agradecer em poucos dias é a atividade de maior retorno na captação e a primeira a ser abandonada quando a campanha aperta.",
+      "<strong>Acompanhe promessas separadas do caixa.</strong> Totais divulgados não significam nada para o fluxo de caixa enquanto você não mostrar o cronograma de recebimento ao lado.",
+      "<strong>Estabeleça a linha de base na aprovação da meta.</strong> Depois que o conselho fixa o número, acompanhe o funil contra ele semanalmente, em vez de reportar só em eventos."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma campanha de captação?",
+        "Campanhas institucionais de grande porte costumam durar de dois a três anos, incluindo a fase silenciosa e a cobrança das promessas. O modelo usa um cronograma de cerca de dois anos, que você comprime para uma campanha anual."
+      ],
+      [
+        "Quanto se deve captar antes do lançamento público?",
+        "A prática usual é chegar ao anúncio com a maior parte da meta já comprometida na fase silenciosa — costuma-se citar algo em torno de 70 por cento. O modelo posiciona o marco de lançamento depois da meta silenciosa, e não numa data fixa."
+      ],
+      [
+        "O que é a tabela de faixas de doação e onde ela entra?",
+        "É a tabela de quantas doações de cada valor você precisa para atingir a meta. Ela pertence à fase de prospecção, porque diz quantos prospects cultivar em cada faixa antes de você se comprometer com o número."
+      ],
+      [
+        "Serve para uma campanha anual em vez de uma campanha institucional?",
+        "Sim. Encurte a fase silenciosa, retire as linhas de comitê da campanha e mantenha as fases de campanhas, doação pareada e relacionamento — esse é o formato de uma campanha anual."
+      ],
+      [
+        "O modelo de campanha de captação é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, além de edição online gratuita, sem necessidade de cadastro."
+      ]
+    ]
+  },
+
+  'warehouse-setup-project-plan': {
+    card: "Imóvel, porta-paletes, WMS, empilhadeiras e transferência de estoque.",
+    h1: "Plano de implantação de armazém",
+    metaTitle: "Implantação de armazém — plano",
+    metaDesc: "Modelo gratuito de plano de implantação de armazém: escolha do imóvel, locação, porta-paletes, WMS, empilhadeiras, transferência e rampa.",
+    lead: "Um modelo gratuito de <strong>plano de implantação de armazém</strong> cobrindo um novo centro de distribuição de ponta a ponta — estudo de malha e escolha do imóvel, locação e obras do proprietário, projeto e montagem dos porta-paletes, seleção e integração do WMS (sistema de gestão de armazém), aquisição de empilhadeiras e demais equipamentos de movimentação, transferência de estoque do site antigo e uma rampa de entrada em operação que não deixe o cliente na mão.",
+    intro: "Um projeto de armazém são três projetos dividindo um galpão: a obra física, a integração de sistemas e a mudança do estoque. Têm prazos e modos de falha diferentes, por isso o modelo os trata como frentes separadas:",
+    phases: [
+      [
+        "Requisitos e estudo de malha",
+        "Perfil de volume e de SKUs, modelagem de capacidade de processamento, análise de malha e de localização, e o business case do investimento. <em>Marco: investimento aprovado.</em>"
+      ],
+      [
+        "Escolha do imóvel e locação",
+        "Busca e lista curta de imóveis, vistoria do galpão, verificação de capacidade de piso e de energia, proposta de locação, negociação do contrato e obras a cargo do proprietário. <em>Marco: contrato assinado.</em>"
+      ],
+      [
+        "Leiaute e porta-paletes",
+        "Estratégia de armazenagem e endereçamento, leiaute dos porta-paletes e licenças, projeto de combate a incêndio e sprinklers, fabricação e montagem das estruturas, mezanino e módulos de separação."
+      ],
+      [
+        "Seleção e integração do WMS",
+        "Requisitos e escolha do fornecedor, parametrização, integrações com ERP e transportadoras, migração de dados e testes de aceitação. <em>Marco: WMS homologado.</em>"
+      ],
+      [
+        "Equipamentos de movimentação",
+        "Compra de empilhadeiras e de empilhadeiras retráteis, esteiras e sorters onde houver, bancadas de embalagem, coletores, impressão e aplicação de etiquetas e a infraestrutura de recarga de baterias."
+      ],
+      [
+        "Obras e infraestrutura",
+        "Energia e iluminação, cabeamento e levantamento de cobertura wi-fi, docas e niveladoras, área administrativa e vestiários, segurança e controle de acesso."
+      ],
+      [
+        "Contratação e treinamento",
+        "Contratação da liderança do site, recrutamento de operadores, treinamento em WMS e em processo, e certificação dos operadores de empilhadeira."
+      ],
+      [
+        "Transferência de estoque e entrada em operação",
+        "Saneamento do estoque, ondas de transferência, inventário rotativo, operação em paralelo, virada e rampa de volume. <em>Marco: volume total.</em>"
+      ]
+    ],
+    callout: "O levantamento de cobertura wi-fi é uma dependência, não um detalhe. Todo processo por coletor no galpão pressupõe sinal em cada corredor e em toda a altura do porta-palete, e a estrutura montada muda completamente o ambiente de rádio. Faça o levantamento depois da montagem e antes da entrada em operação, com prazo para acrescentar pontos de acesso — quem mede o galpão vazio descobre os corredores mortos no primeiro pico.",
+    customize: [
+      "Ancore o plano na data em que você precisa deixar o site atual ou cumprir um compromisso com cliente; isso fixa a entrada em operação e tudo corre de trás para frente.",
+      "Ajuste o prazo de fabricação dos porta-paletes ao número realmente cotado — costuma ser o item isolado mais longo depois da locação.",
+      "Acrescente uma linha por integração (ERP, transportadoras, marketplace, logística reversa) assim que o fornecedor do WMS for escolhido; cada uma tem seu próprio ciclo de teste.",
+      "Divida a transferência de estoque em ondas por giro de SKU, para que os itens de alto giro cheguem primeiro e o site já opere enquanto a cauda chega.",
+      "Estenda a barra de operação em paralelo se você não pode arriscar uma virada seca; manter dois sites custa dinheiro, mas protege o nível de serviço.",
+      "Marque assinatura do contrato, porta-paletes montados, homologação do WMS, primeiro pedido expedido e volume total como marcos."
+    ],
+    tips: [
+      "<strong>Verifique capacidade de piso e de energia antes da proposta de locação.</strong> Um galpão que não suporta a carga dos seus porta-paletes ou a demanda das recargas não é mais barato, é o galpão errado.",
+      "<strong>Escolha o WMS antes de congelar o leiaute.</strong> Endereçamento, nomenclatura de posições e lógica de rota de separação seguem o sistema, e adaptá-los a estruturas já montadas sai caro.",
+      "<strong>Compre equipamento de movimentação contra prazos reais.</strong> A entrega de empilhadeiras passou a ser contada em meses; a data do pedido pertence ao gráfico.",
+      "<strong>Faça rampa, não virada de chave.</strong> Planeje as primeiras semanas com volume deliberadamente reduzido, para que os problemas de processo apareçam enquanto ainda há capacidade para absorvê-los.",
+      "<strong>Saneie o estoque antes de mover.</strong> Transferir item obsoleto custa dinheiro duas vezes — uma para mover e outra para guardar.",
+      "<strong>Estabeleça a linha de base na assinatura do contrato.</strong> Antes disso tudo é opcional; depois, o aluguel já corre e cada semana de atraso tem um número."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para implantar um novo armazém?",
+        "Em geral de 9 a 15 meses do business case à entrada em operação num centro de distribuição de porte médio, puxado principalmente pela busca do imóvel, pelo prazo dos porta-paletes e pela integração do WMS. O modelo usa um cronograma de doze meses."
+      ],
+      [
+        "Qual costuma ser o prazo mais longo?",
+        "Fabricação dos porta-paletes e equipamentos de movimentação, ambos hoje contados em meses. A própria negociação de locação frequentemente dura mais que os dois, e é por isso que a escolha do imóvel abre o plano."
+      ],
+      [
+        "O WMS deve entrar no ar junto com o galpão?",
+        "Não necessariamente. Muitos operadores rodam o galpão novo no sistema atual e viram o sistema depois, para mudar uma variável de cada vez. O modelo mantém as frentes separadas para que você escolha."
+      ],
+      [
+        "Como planejar a transferência de estoque?",
+        "Em ondas por giro de SKU, com inventário rotativo depois de cada onda e um período de operação em paralelo antes de fechar o site antigo. Essas linhas já vêm prontas na última fase."
+      ],
+      [
+        "O modelo de implantação de armazém é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'road-construction-schedule': {
+    card: "Projeto, licenças, interferências, terraplenagem, pavimento e liberação.",
+    h1: "Cronograma de obra rodoviária",
+    metaTitle: "Obra rodoviária — cronograma",
+    metaDesc: "Modelo gratuito de cronograma de obra rodoviária: projeto, licenças, interferências, terraplenagem, drenagem, pavimento, sinalização e liberação.",
+    lead: "Um modelo gratuito de <strong>cronograma de obra rodoviária</strong> montado ao longo de um programa real — levantamento e projeto, desapropriação e licenciamento, remanejamento de interferências das concessionárias, terraplenagem e drenagem, reforço do subleito, sub-base e as camadas asfálticas, sinalização e defensas, desvios e sinalização de obra em etapas, e a entrega ao órgão gestor da via.",
+    intro: "Numa obra rodoviária o pavimento é a parte fácil. Quem manda na data é o que precisa sair da frente antes de escavar: as redes das concessionárias, a faixa de domínio que você ainda não possui e o tráfego que precisa continuar passando. O modelo dá a cada um deles uma frente própria:",
+    phases: [
+      [
+        "Levantamento e projeto",
+        "Levantamento topográfico e sondagens, cadastro de interferências e poços de inspeção, projeto básico e executivo, projeto de drenagem e auditoria de segurança viária. <em>Marco: projeto aprovado.</em>"
+      ],
+      [
+        "Faixa de domínio e licenças",
+        "Cadastro de imóveis, desapropriação ou posse provisória, licença de instalação, aprovações ambientais e as autorizações de acesso e de vias marginais. <em>Marco: licenças emitidas.</em>"
+      ],
+      [
+        "Remanejamento de interferências",
+        "Orçamentos de cada concessionária, projeto do remanejamento, programação junto às concessionárias e os remanejamentos em si — gás, água, energia e telecomunicações, cada um no seu prazo."
+      ],
+      [
+        "Desvios e sinalização de obra",
+        "Projeto e aprovação do plano de sinalização de obra, reserva de bloqueio junto ao órgão gestor, acordo das rotas de desvio, e os bloqueios, mão dupla provisória e restrições de faixa dentro dos quais a obra acontece."
+      ],
+      [
+        "Terraplenagem e drenagem",
+        "Limpeza do terreno e retirada da camada vegetal, corte e aterro, reforço do subleito, galerias e bocas de lobo, bacias de amortecimento e dissipadores."
+      ],
+      [
+        "Pavimentação",
+        "Sub-base, base, camada de ligação e camada de rolamento, meios-fios, calçadas e ajuste de tampões. <em>Marco: pavimentação concluída.</em>"
+      ],
+      [
+        "Sinalização e entrega",
+        "Sinalização horizontal e tachas, placas e pórticos, iluminação, defensas metálicas, auditoria final de segurança viária, pendências e entrega ao órgão gestor. <em>Marco: via liberada ao tráfego.</em>"
+      ]
+    ],
+    callout: "O remanejamento de interferências é o cronograma. As concessionárias trabalham no prazo delas, exigem aviso prévio longo e não vão comprimir nada pela sua data — e cada uma precisa terminar antes de você escavar naquele trecho. Peça os orçamentos ainda durante o projeto, e não depois da assinatura do contrato, e coloque cada concessionária no gráfico como barra separada com duração própria.",
+    customize: [
+      "Lance primeiro as datas de bloqueio já confirmadas; em via em operação elas são os pontos fixos aos quais o resto do programa se ajusta.",
+      "Acrescente uma linha por concessionária — gás, água, energia e cada operadora de telecomunicações têm prazos de aviso e equipes diferentes.",
+      "Divida a obra em trechos ou estacas assim que o faseamento da sinalização de obra estiver definido, para acompanhar terraplenagem e pavimento por etapa.",
+      "Tire a camada de rolamento do período chuvoso onde for possível; a aplicação de asfalto tem limites de temperatura e umidade que param o serviço no dia.",
+      "Insira períodos de restrição ambiental — reprodução de fauna, defeso, supressão vegetal — como barras de bloqueio, se as suas licenças os impuserem.",
+      "Mantenha as duas auditorias de segurança viária no gráfico; a auditoria pós-obra é portão de liberação, e não uma revisão posterior."
+    ],
+    tips: [
+      "<strong>Peça os orçamentos das concessionárias durante o projeto.</strong> Só o processo de orçamento e aprovação pode levar meses antes de um único remanejamento ser escavado, e ele fica na frente de todo o resto do caminho crítico.",
+      "<strong>Reserve o bloqueio antes de precisar dele.</strong> As agendas de interdição e de autorização do órgão gestor são atendidas por ordem de chegada, e um pedido negado desloca a etapa inteira.",
+      "<strong>Drenagem antes do pavimento, sempre.</strong> Refazer uma boca de lobo esquecida através de pista pronta custa várias vezes o que custaria antes.",
+      "<strong>Observe a janela climática das camadas asfálticas.</strong> Camada de rolamento aplicada abaixo da temperatura especificada falha cedo, e o órgão não recebe a obra.",
+      "<strong>Programe as etapas de sinalização de obra como tarefas com duração.</strong> Cada troca de etapa é uma noite de trabalho com recursos próprios; tratar o faseamento como gratuito é como programas perdem duas semanas.",
+      "<strong>Estabeleça a linha de base na emissão das licenças.</strong> Antes disso o programa é condicional; depois, acompanhe a variação para que atraso de concessionária apareça cedo."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma obra rodoviária?",
+        "Uma melhoria urbana curta pode levar de 6 a 9 meses; uma via nova ou uma duplicação importante leva dois anos ou mais. O modelo usa um programa de cerca de dezoito meses que você comprime ou estende a partir da data de liberação."
+      ],
+      [
+        "O que costuma atrasar obras rodoviárias?",
+        "Remanejamento de interferências e licenciamento, muito mais que a construção. Os dois dependem de terceiros com prazos próprios, e é por isso que cada um tem frente separada em vez de uma linha dentro dos serviços."
+      ],
+      [
+        "Como represento a sinalização de obra no gráfico?",
+        "Como barras por etapa, com o projeto e a reserva de bloqueio como predecessores, e cada etapa construtiva dependendo da sua própria etapa de sinalização. Assim, um bloqueio negado ou atrasado ameaça visivelmente o serviço que ele protege."
+      ],
+      [
+        "Cobre uma ponte ou obra de arte dentro do trecho?",
+        "Só em nível de resumo. Se o seu trecho tem uma obra de arte especial, rode o nosso <a href=\"/templates/bridge-construction-schedule.html\">cronograma de construção de ponte</a> em paralelo e ligue as janelas de interdição."
+      ],
+      [
+        "Dá para usar em recapeamento em vez de obra nova?",
+        "Sim. Retire as fases de faixa de domínio, licenças e terraplenagem e mantenha sinalização de obra, camadas do pavimento e sinalização horizontal — esse é o formato de um programa de recapeamento."
+      ],
+      [
+        "O modelo de obra rodoviária é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'mobile-app-launch-plan': {
+    card: "Estabilização, beta, ficha da loja, revisão e lançamento gradual.",
+    h1: "Plano de lançamento de aplicativo móvel",
+    metaTitle: "Lançamento de aplicativo — plano",
+    metaDesc: "Modelo gratuito de plano de lançamento de app: estabilização, beta, ficha da loja, revisão da App Store, lançamento gradual e correção do dia um.",
+    lead: "Um modelo gratuito de <strong>plano de lançamento de aplicativo móvel</strong> montado em torno da aprovação nas lojas, e não de marketing genérico — estabilização da build e candidata a versão, TestFlight e faixa interna do Google Play, ficha da loja e capturas de tela, envio à App Store e ao Google Play, a espera da revisão em si, lançamento gradual e a janela de correção do dia um. Baixe para uma revisão de prontidão, ou abra online para ver o que de fato condiciona a sua data.",
+    intro: "Publicar um aplicativo não é subir software para um servidor. Outra pessoa decide quando a sua build entra no ar, e o plano precisa mostrar isso. O modelo separa o trabalho que você controla da espera que você não controla:",
+    phases: [
+      [
+        "Estabilização da build",
+        "Congelamento de escopo, triagem de travamentos e ANRs, trabalho de desempenho e memória, testes de acessibilidade e de matriz de aparelhos, e a build candidata a versão. <em>Marco: candidata a versão pronta.</em>"
+      ],
+      [
+        "Testes beta",
+        "Envio ao TestFlight e à faixa interna do Google Play, beta interno, recrutamento de testadores externos, a rodada externa e a triagem dos retornos. <em>Marco: critérios de saída do beta atendidos.</em>"
+      ],
+      [
+        "Ficha da loja e materiais",
+        "Pesquisa de palavras-chave e categoria, nome e descrição do app, capturas de tela e vídeo de prévia, ícone e artes, a declaração de privacidade dos dados e o questionário de classificação indicativa."
+      ],
+      [
+        "Envio e revisão nas lojas",
+        "Checagem de conformidade antes do envio, submissão nas duas lojas, a espera da revisão e uma folga real para uma reprovação e novo envio. <em>Marco: aprovado e pronto para publicar.</em>"
+      ],
+      [
+        "Lançamento gradual",
+        "Publicação escalonada em 1%, 10% e 50%, com a taxa de sessões sem travamento verificada em cada degrau antes de ampliar para todos. <em>Marco: disponibilidade total.</em>"
+      ],
+      [
+        "Correção do dia um e monitoramento",
+        "Monitoramento de travamentos e ANRs, a janela de correção reservada, resposta às avaliações na loja e a leitura de retenção da primeira semana."
+      ]
+    ],
+    callout: "Preveja uma reprovação. Primeiras submissões são reprovadas com frequência suficiente para que um plano sem folga de reenvio seja um plano com uma moeda jogada dentro — e o relógio recomeça do zero a cada novo envio. Coloque a espera da revisão e a folga de reprovação como duas barras separadas, e marque a data do anúncio depois da segunda, não da primeira.",
+    customize: [
+      "Fixe a data de submissão e trabalhe para frente, não para trás — a duração da revisão não é sua para comprimir.",
+      "Separe as linhas de envio e revisão por loja se as suas builds de iOS e Android têm cadências diferentes; as durações de revisão são distintas.",
+      "Estenda a folga de reprovação se esta é a primeira submissão, se o app tem assinatura, ou se ele toca exclusão de conta, dados de saúde ou conteúdo gerado por usuário.",
+      "Ajuste os percentuais do lançamento gradual à plataforma; o lançamento escalonado do Google Play e o lançamento em fases da App Store não avançam do mesmo jeito.",
+      "Mantenha a janela de correção do dia um no gráfico com gente nomeada nela — uma janela sem equipe alocada é só uma semana vazia.",
+      "Marque candidata a versão, saída do beta, aprovação na loja e disponibilidade total como marcos; são as quatro datas que todo mundo pergunta."
+    ],
+    tips: [
+      "<strong>Prepare os metadados da ficha antes de a build estar final.</strong> Capturas de tela, descrições e declaração de privacidade podem ser feitas e revisadas em paralelo, e nunca deveriam ser o que segura o dia do envio.",
+      "<strong>Não anuncie data de lançamento presa a uma aprovação que você ainda não tem.</strong> Faça o marketing depender do marco de aprovação, para que uma reprovação desloque a campanha automaticamente em vez de constranger você.",
+      "<strong>Acompanhe a taxa de sessões sem travamento em cada degrau.</strong> O sentido de um lançamento gradual é poder parar entre os degraus; se ninguém está escalado para olhar os números, o escalonamento não serve para nada.",
+      "<strong>Reserve a janela de correção antes do lançamento, não depois.</strong> As pessoas que construiriam a correção do dia um são as mesmas que você alocaria à próxima sprint no dia do lançamento.",
+      "<strong>Recrute testadores externos com semanas de antecedência.</strong> Conseguir um número útil de testadores em aparelhos reais leva mais tempo do que os times planejam, e um beta magro não encontra nada.",
+      "<strong>Estabeleça a linha de base na candidata a versão.</strong> Tudo antes disso é estimativa; depois, o cronograma é basicamente fila dos outros e deve ser acompanhado como variação."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a revisão nas lojas de aplicativos?",
+        "A maioria das revisões da App Store sai em um ou dois dias, e as do Google Play costumam ser mais rápidas, mas as duas podem demorar bem mais numa primeira submissão ou num app de categoria sensível. O modelo reserva dez dias mais uma folga de reprovação."
+      ],
+      [
+        "O que deve conter um plano de lançamento de aplicativo?",
+        "Estabilização da build, testes beta, ficha da loja e materiais, envio e revisão, lançamento gradual e uma janela de correção do dia um. As seis fases já vêm prontas, com a espera da revisão modelada como dependência e não como premissa."
+      ],
+      [
+        "Qual a diferença para um plano de lançamento de produto?",
+        "Este é moldado pelas lojas — gira em torno de envio, revisão e publicação escalonada. Para o trabalho comercial mais amplo de preço, posicionamento e campanha, use o <a href=\"/templates/product-launch.html\">modelo de lançamento de produto</a> em paralelo."
+      ],
+      [
+        "Devo fazer lançamento gradual ou publicar para todo mundo?",
+        "Faça gradual, a menos que haja motivo para não fazer. A publicação escalonada permite parar em 1% quando a taxa de sessões sem travamento cai, o que é muito mais barato que uma reversão de emergência para toda a base."
+      ],
+      [
+        "O modelo de lançamento de aplicativo é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'iso-9001-certification-plan': {
+    card: "Diagnóstico, manual da qualidade, auditoria interna e certificação.",
+    h1: "Plano de certificação ISO 9001",
+    metaTitle: "Certificação ISO 9001 — plano",
+    metaDesc: "Modelo gratuito de plano ISO 9001: diagnóstico, manual da qualidade, auditoria interna, análise crítica, auditorias fase 1 e 2 e manutenção.",
+    lead: "Um modelo gratuito de <strong>plano de certificação ISO 9001</strong> montado ao longo do caminho real até o certificado — diagnóstico de lacunas, mapeamento de processos, documentação do sistema de gestão da qualidade, implantação e treinamento, o ciclo de auditoria interna, a análise crítica pela direção e as ações corretivas, depois a auditoria de certificação em duas fases e a primeira auditoria de manutenção. Baixe para o material da análise crítica, ou abra online para ligar os portões que não dá para pular.",
+    intro: "Certificação ISO 9001 não é um projeto de documentação. O organismo certificador precisa ver registros de um sistema que já esteve rodando, e é por isso que a auditoria interna e a análise crítica ficam antes da auditoria externa, e não ao lado dela:",
+    phases: [
+      [
+        "Diagnóstico e planejamento",
+        "Escopo e contexto da organização, escolha do organismo certificador, um diagnóstico estruturado contra a norma e o plano de projeto que sai dele. <em>Marco: diagnóstico concluído.</em>"
+      ],
+      [
+        "Mapeamento de processos e riscos",
+        "Mapeamento dos processos principais, partes interessadas e seus requisitos, matriz de riscos e oportunidades, e objetivos da qualidade com indicadores mensuráveis."
+      ],
+      [
+        "Documentação do sistema",
+        "Política e manual da qualidade, procedimentos documentados, instruções de trabalho e formulários, controle de documentos e tabela de retenção de registros. <em>Marco: documentação liberada.</em>"
+      ],
+      [
+        "Implantação e treinamento",
+        "Treinamento de conscientização para todos, capacitação dos donos de processo e um período rodando os processos de verdade, para que haja registros a auditar."
+      ],
+      [
+        "Auditoria interna e ações corretivas",
+        "Formação de auditores internos, o programa completo de auditoria interna, relatórios de não conformidade e ações corretivas encerradas com evidência."
+      ],
+      [
+        "Análise crítica pela direção",
+        "Compilação das entradas da análise crítica, a própria reunião de análise crítica e as ações dela decorrentes. <em>Marco: prontidão para certificação confirmada.</em>"
+      ],
+      [
+        "Auditoria de certificação",
+        "Auditoria fase 1 de documentação e prontidão, tratamento dos apontamentos da fase 1, auditoria fase 2 de implementação, encerramento das não conformidades e a decisão de certificação. <em>Marco: certificado emitido.</em>"
+      ],
+      [
+        "Manutenção",
+        "O ciclo de melhoria contínua, uma segunda rodada de auditoria interna e a auditoria de manutenção do primeiro ano, que mantém o certificado válido."
+      ]
+    ],
+    callout: "O intervalo entre a fase 1 e a fase 2 é o sentido inteiro da auditoria em duas etapas, e é aí que a maioria dos planos erra. A fase 1 diz se o seu sistema está pronto; a fase 2 testa se ele funciona. Organismos certificadores normalmente querem semanas entre as duas para que os apontamentos sejam tratados, e marcar a fase 2 colada na fase 1 é como se acaba pagando uma visita repetida.",
+    customize: [
+      "Escolha cedo o organismo certificador e lance a disponibilidade real dele — as agendas de auditoria são fechadas com meses de antecedência e definem a sua data limite.",
+      "Estenda o período de implantação se os seus processos têm ciclos longos; você precisa de registros cobrindo um período representativo, e não duas semanas.",
+      "Acrescente uma linha por área de processo no mapeamento e na auditoria interna, para que a cobertura fique visível em vez de presumida.",
+      "Insira uma linha de ação corretiva por não conformidade maior assim que os apontamentos da fase 1 chegarem; cada uma tem evidência e data de encerramento próprias.",
+      "Marque documentação liberada, prontidão confirmada, fase 2 concluída e certificado emitido como marcos — são as datas que a direção acompanha.",
+      "Se você já tem outro certificado de sistema de gestão, encurte a fase de documentação e reaproveite as cláusulas comuns em vez de reescrevê-las."
+    ],
+    tips: [
+      "<strong>Não escreva documento que você não vai seguir.</strong> O auditor testa o sistema contra os seus próprios procedimentos, então um manual detalhado demais gera não conformidades que um mais simples não geraria.",
+      "<strong>Faça a auditoria interna como se fosse a de verdade.</strong> É o ensaio mais barato possível, e um achado levantado internamente é melhoria, e não não conformidade.",
+      "<strong>Deixe tempo real entre a fase 1 e a fase 2.</strong> De quatro a oito semanas é o normal; encerrar apontamentos direito custa menos que uma auditoria repetida.",
+      "<strong>Reúna as entradas da análise crítica com antecedência.</strong> A reunião é um registro obrigatório com lista de entradas definida, e montá-la no dia produz um registro magro que o auditor vai notar.",
+      "<strong>Mantenha o ciclo de manutenção no gráfico.</strong> A certificação é o começo de um ritmo anual, e quem larga o cronograma depois do certificado corre atrás doze meses depois.",
+      "<strong>Estabeleça a linha de base na liberação da documentação.</strong> Tudo antes disso é preparação; depois, o que importa é a variação contra as datas de auditoria."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a certificação ISO 9001?",
+        "Normalmente de 6 a 12 meses para uma organização começando do zero, e menos onde já existe um sistema documentado. Este modelo leva cerca de dezoito meses porque vai até a primeira auditoria de manutenção; o certificado em si sai por volta do mês doze."
+      ],
+      [
+        "Qual a diferença entre auditoria fase 1 e fase 2?",
+        "A fase 1 é em boa parte uma análise de documentação e prontidão, que verifica se o seu sistema tem condição de ser auditado. A fase 2 testa se ele está de fato implementado e é eficaz, usando registros e entrevistas. As duas são fases separadas aqui, com um período de tratamento entre elas."
+      ],
+      [
+        "Preciso de auditoria interna antes da certificação?",
+        "Sim. A norma exige que auditorias internas e a análise crítica pela direção já tenham acontecido, e o organismo certificador procura esses registros já na fase 1. É por isso que as duas ficam antes da auditoria externa neste plano."
+      ],
+      [
+        "E se o auditor levantar uma não conformidade?",
+        "Apontamentos menores costumam ser encerrados com plano de ação e evidência dentro de um prazo definido; não conformidades maiores podem exigir nova visita. O modelo traz uma barra de tratamento depois de cada fase justamente para isso."
+      ],
+      [
+        "O modelo de plano ISO 9001 é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'soc2-compliance-timeline': {
+    card: "Escopo, controles, remediação, período de observação e relatório.",
+    h1: "Cronograma de conformidade SOC 2",
+    metaTitle: "SOC 2 — cronograma de conformidade",
+    metaDesc: "Modelo gratuito de cronograma SOC 2: escopo, desenho de controles, remediação, evidências, período de observação do Type II e emissão do relatório.",
+    lead: "Um modelo gratuito de <strong>cronograma de conformidade SOC 2</strong> cobrindo o trabalho inteiro — escopo e escolha dos critérios dos trust services, desenho de controles, remediação, coleta de evidências, avaliação de prontidão, o período de observação do Type II, o trabalho de campo do auditor e a emissão do relatório. Baixe para uma avaliação de segurança pedida por cliente, ou abra online para entender por que a data do relatório é aquela.",
+    intro: "Quase toda pergunta sobre prazo de SOC 2 é, no fundo, uma pergunta sobre o período de observação. Um Type I é uma opinião sobre um ponto no tempo; um Type II cobre um período durante o qual os seus controles precisam realmente operar. O modelo transforma esse período numa barra visível, para que ninguém prometa um relatório que a aritmética proíbe:",
+    phases: [
+      [
+        "Escopo e critérios",
+        "Definição da fronteira do sistema, seleção dos critérios dos trust services, contratação do auditor e a decisão entre Type I e Type II. <em>Marco: escopo acordado.</em>"
+      ],
+      [
+        "Desenho de controles",
+        "Avaliação de riscos, mapeamento dos controles contra os critérios escolhidos, redação do conjunto de políticas e nomeação dos donos de controle. <em>Marco: matriz de controles aprovada.</em>"
+      ],
+      [
+        "Remediação",
+        "Controle e revisão de acessos, portões de gestão de mudança, registro e monitoramento, risco de fornecedores, treinamento de segurança e um teste de resposta a incidentes — o trabalho de engenharia propriamente dito."
+      ],
+      [
+        "Evidências e prontidão",
+        "Ferramental de coleta de evidências, alimentação do repositório, uma avaliação de prontidão e o fechamento das lacunas que ela encontrar. <em>Marco: prontidão aprovada.</em>"
+      ],
+      [
+        "Relatório Type I (opcional)",
+        "Trabalho de campo em um ponto no tempo e um relatório Type I, útil quando um cliente precisa de algo em mãos enquanto o período de observação corre."
+      ],
+      [
+        "Período de observação",
+        "O período coberto pela opinião Type II — controles operando continuamente, checkpoints mensais de evidência e revisões trimestrais de acesso. De três a doze meses, e não comprimível."
+      ],
+      [
+        "Trabalho de campo e relatório",
+        "Pedidos de amostra do auditor, envio de evidências, testes, exceções e resposta da administração, revisão da minuta e emissão do relatório. <em>Marco: relatório Type II emitido.</em>"
+      ]
+    ],
+    callout: "Não dá para encurtar o período de observação. Um relatório Type II afirma que os seus controles operaram ao longo de um período, então três meses de janela são três meses de calendário que nenhum orçamento compra de volta. A única alavanca é quando ele começa — e é por isso que a aprovação da prontidão, e não a data do relatório, é o marco pelo qual vale brigar.",
+    customize: [
+      "Escolha primeiro a duração do período de observação — três meses para um primeiro relatório, de seis a doze quando você já está em ciclo anual — e dimensione a barra da janela conforme isso.",
+      "Retire a fase de Type I por completo se nenhum cliente precisa de um relatório intermediário; muitas organizações vão direto ao Type II.",
+      "Acrescente uma linha por categoria de trust services além de Segurança; disponibilidade, confidencialidade, integridade de processamento e privacidade acrescentam controles e evidências cada uma.",
+      "Desdobre a remediação em uma linha por lacuna assim que a avaliação de prontidão chegar, para que o trabalho de engenharia seja acompanhado e não amontoado.",
+      "Coloque os checkpoints mensais de evidência como linhas recorrentes ao longo da janela — mês faltando é a origem mais comum de exceção na auditoria.",
+      "Marque escopo acordado, prontidão aprovada, início e fim da janela e emissão do relatório como marcos."
+    ],
+    tips: [
+      "<strong>Não abra a janela antes de a remediação estar de fato pronta.</strong> Um controle que falhou no primeiro mês do período de observação vira exceção no relatório; começar duas semanas depois custa duas semanas, e começar cedo demais pode custar o relatório.",
+      "<strong>Automatize a coleta de evidências antes de a janela abrir, e não durante.</strong> Reconstruir três meses de revisão de acesso depois do fato é a tarefa mais dolorosa de um SOC 2, e o auditor normalmente percebe.",
+      "<strong>Faça escopo estreito no primeiro relatório.</strong> Segurança sozinha é escopo válido e a maioria dos clientes aceita; acrescentar categorias multiplica controles e alonga todas as fases.",
+      "<strong>Contrate o auditor cedo.</strong> A disponibilidade dele para o trabalho de campo é uma restrição real, e uma firma contratada no fim da janela não começa na semana em que ela fecha.",
+      "<strong>Trate exceções como esperadas.</strong> Quase todo relatório tem alguma; o que importa é a resposta da administração, que precisa de tempo no gráfico antes de a minuta ser fechada.",
+      "<strong>Estabeleça a linha de base na aprovação da prontidão.</strong> Tudo antes disso é remediação; depois, o cronograma é aritmética somada à agenda do auditor."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a conformidade SOC 2?",
+        "Para um primeiro Type II, normalmente de 8 a 12 meses de ponta a ponta: de três a seis meses de preparação e remediação, depois um período de observação de três a doze meses, depois trabalho de campo e relatório. O modelo usa cerca de dezesseis meses com janela de seis."
+      ],
+      [
+        "Qual a diferença entre SOC 2 Type I e Type II?",
+        "O Type I é uma opinião sobre o desenho dos controles num único ponto no tempo; o Type II é uma opinião sobre a efetividade operacional ao longo de um período. O Type II exige o período de observação, e é por isso que demora muito mais e que a janela tem fase própria aqui."
+      ],
+      [
+        "Qual deve ser a duração do período de observação?",
+        "Três meses é o mínimo usual para um primeiro Type II, e de seis a doze meses é o padrão quando você já está em ciclo anual. Janelas mais curtas saem mais rápido, mas alguns clientes as descontam."
+      ],
+      [
+        "Dá para conseguir um relatório SOC 2 mais rápido?",
+        "Dá para encurtar a preparação, e dá para emitir um Type I enquanto a janela corre. Não dá para encurtar a janela em si — é a parte do cronograma que ninguém controla."
+      ],
+      [
+        "O modelo de cronograma SOC 2 é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'manufacturing-production-schedule': {
+    card: "Demanda, materiais, setup, corridas, qualidade e expedição.",
+    h1: "Cronograma de produção industrial",
+    metaTitle: "Cronograma de produção industrial",
+    metaDesc: "Modelo gratuito de cronograma de produção: plano de demanda, prazos de materiais, setup, corridas de produção, estoque bloqueado e expedição.",
+    lead: "Um modelo gratuito de <strong>cronograma de produção industrial</strong> para manufatura discreta — plano de demanda e programa mestre, compra de materiais contra prazos reais de fornecedor, sequenciamento da linha e trocas de ferramenta, as corridas de produção em si, qualidade em processo e final, depois embalagem e expedição. Baixe para a reunião de planejamento, ou abra online para ver se os seus materiais chegam antes de a linha ficar livre.",
+    intro: "Um cronograma de produção são dois cronogramas que precisam se encontrar: material chegando e capacidade disponível. O modelo corre os dois como frentes separadas, para que a colisão apareça antes de acontecer no chão de fábrica:",
+    phases: [
+      [
+        "Planejamento de demanda e capacidade",
+        "Revisão da previsão, entrada de pedidos firmes, o programa mestre de produção e uma verificação grosseira de capacidade e mão de obra. <em>Marco: capacidade confirmada.</em>"
+      ],
+      [
+        "Compra de materiais",
+        "Explosão da lista de materiais e rodada de MRP, ordens de compra, entregas de itens de prazo longo e de itens padrão, recebimento e inspeção de entrada, e a separação junto à linha. <em>Marco: disponibilidade de materiais.</em>"
+      ],
+      [
+        "Programação da linha e setup",
+        "Sequenciamento detalhado, plano de troca de ferramenta, preparação de ferramental e dispositivos, o setup em si e a inspeção da primeira peça. <em>Marco: primeira peça aprovada.</em>"
+      ],
+      [
+        "Corridas de produção",
+        "As corridas propriamente ditas, com as trocas de ferramenta entre produtos programadas como tarefas reais em vez de simplesmente ignoradas."
+      ],
+      [
+        "Controle de qualidade",
+        "Inspeção em processo e CEP, estoque bloqueado por não conformidade e sua destinação, inspeção e ensaio final, e a documentação de liberação do lote. <em>Marco: lote liberado.</em>"
+      ],
+      [
+        "Embalagem e expedição",
+        "Embalagem e rotulagem, paletização e plano de carga, contratação do frete e emissão dos documentos de transporte. <em>Marco: pedido expedido.</em>"
+      ]
+    ],
+    callout: "Troca de ferramenta é tempo de produção. Um cronograma que mostra três corridas coladas e nenhuma barra de setup está reivindicando capacidade que não existe — e numa linha com muitas trocas de produto o setup pode consumir uma fatia de dois dígitos das horas disponíveis. Coloque cada troca no gráfico com a duração medida, e não com a desejada.",
+    customize: [
+      "Lance os prazos reais de cada fornecedor por componente; o mais longo deles, e não a programação da linha, normalmente define a data mais cedo possível de início.",
+      "Acrescente uma linha por centro de trabalho ou linha se você programa mais de uma, para que a disputa por recurso fique visível.",
+      "Defina as durações de troca de ferramenta a partir de tempos realmente medidos, e mantenha-as separadas das corridas de cada lado.",
+      "Insira uma barra de estoque bloqueado onde um lote espera destinação — essa espera é estoque parado de verdade.",
+      "Acrescente barras de estoque de segurança antes das corridas que alimentam um compromisso firme com cliente.",
+      "Marque disponibilidade de materiais, primeira peça aprovada, lote liberado e pedido expedido como marcos."
+    ],
+    tips: [
+      "<strong>Programe de trás para frente a partir da data de embarque.</strong> O compromisso com o cliente é o ponto fixo; tudo a montante deve ser derivado dele, e não empurrado para frente a partir de hoje.",
+      "<strong>Não programe corrida antes de a inspeção de entrada liberar.</strong> Material no pátio não é material disponível, e começar sobre estoque não verificado é como um lote inteiro acaba bloqueado.",
+      "<strong>Sequencie para minimizar trocas e depois confira as datas.</strong> A sequência mais eficiente e a que cumpre os prazos raramente são a mesma; o gráfico é onde essa troca fica visível.",
+      "<strong>Dê barra própria à inspeção da primeira peça.</strong> Ela é um portão, e uma corrida que começou antes da aprovação é uma corrida que você pode ter que sucatear.",
+      "<strong>Deixe folga antes da expedição.</strong> Contratação de frete e janela de carregamento são externas, e um lote liberado na manhã da coleta não tem espaço para um retrabalho.",
+      "<strong>Estabeleça a linha de base no programa congelado.</strong> Uma vez congelado o programa do período, acompanhe a variação em vez de reescrevê-lo em silêncio."
+    ],
+    faq: [
+      [
+        "O que deve conter um cronograma de produção?",
+        "Planejamento de demanda e capacidade, compra de materiais com prazos reais, programação da linha e trocas de ferramenta, as corridas de produção, controle de qualidade e bloqueios, e embalagem e expedição. As seis fases já vêm prontas como blocos separados."
+      ],
+      [
+        "Como represento uma troca de ferramenta no gráfico?",
+        "Como barras curtas próprias entre as corridas, com cada corrida dependendo do setup anterior. Esconder a troca dentro da barra da corrida superestima a capacidade disponível, que é o erro mais comum num cronograma de produção."
+      ],
+      [
+        "Serve para indústria de processo contínuo?",
+        "Funciona melhor para manufatura discreta — lotes, unidades e trocas de ferramenta. Para operações contínuas, mantenha as fases de compra e expedição e substitua as linhas de corrida por barras de campanha."
+      ],
+      [
+        "Qual a diferença para o calendário de produção de vestuário?",
+        "O <a href=\"/templates/apparel-production-calendar.html\">calendário de vestuário</a> é moldado pela coleção, com amostragem e reserva de tecido contra a data de entrada em loja. Este é um cronograma geral de manufatura discreta, construído em torno de prazos, trocas e expedição."
+      ],
+      [
+        "O modelo de cronograma de produção é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'website-redesign-project-plan': {
+    card: "Descoberta, arquitetura, design, migração, redirecionamentos e QA.",
+    h1: "Plano de projeto de reformulação de site",
+    metaTitle: "Reformulação de site — plano",
+    metaDesc: "Modelo gratuito de plano de reformulação de site: descoberta, auditoria de conteúdo, design, migração, mapa de redirecionamentos, QA e monitoramento.",
+    lead: "Um modelo gratuito de <strong>plano de projeto de reformulação de site</strong> cobrindo o projeto inteiro — descoberta, arquitetura da informação e auditoria de conteúdo, design, desenvolvimento, migração de conteúdo, mapa de redirecionamentos para SEO, QA e monitoramento pós-publicação. Baixe para o escopo de uma agência ou para uma reunião de abertura interna, ou abra online para dar ao mapa de redirecionamentos e à migração o espaço de que eles realmente precisam.",
+    intro: "Reformulações raramente falham no design. Falham nas duas frentes sem glamour que ninguém dimensiona direito — mover o conteúdo e mapear as URLs — por isso o modelo dá a cada uma delas fase própria com dependências próprias:",
+    phases: [
+      [
+        "Descoberta",
+        "Entrevistas com as áreas, análise dos dados de tráfego e do Search Console, pesquisa de concorrentes e de usuários, e os requisitos e métricas de sucesso acordados. <em>Marco: descoberta aprovada.</em>"
+      ],
+      [
+        "Arquitetura e auditoria de conteúdo",
+        "Inventário completo de URLs e rastreamento do site, uma decisão de manter, unir ou aposentar para cada página, desenho do mapa do site e da navegação, e wireframes dos gabaritos principais. <em>Marco: arquitetura aprovada.</em>"
+      ],
+      [
+        "Design",
+        "Direção visual, design system e componentes, telas das páginas principais e a revisão de responsividade e acessibilidade. <em>Marco: design aprovado.</em>"
+      ],
+      [
+        "Desenvolvimento",
+        "Ambientes e configuração do CMS, desenvolvimento de gabaritos e componentes, integrações e formulários, e instrumentação de analytics. <em>Marco: escopo funcional concluído.</em>"
+      ],
+      [
+        "Migração de conteúdo",
+        "A planilha de mapeamento da migração, reescrita e otimização dos textos, migração de imagens e arquivos e a carga efetiva no CMS. <em>Marco: congelamento de conteúdo no site antigo.</em>"
+      ],
+      [
+        "SEO e mapa de redirecionamentos",
+        "Mapeamento de URL antiga para URL nova em cada página que muda, regras de redirecionamento construídas e testadas, metadados e dados estruturados, canônicas e o sitemap XML. <em>Marco: mapa de redirecionamentos aprovado.</em>"
+      ],
+      [
+        "QA",
+        "Testes em navegadores e dispositivos, auditoria de acessibilidade, Core Web Vitals, um rastreamento completo dos redirecionamentos em homologação e a validação pelas áreas. <em>Marco: QA aprovado.</em>"
+      ],
+      [
+        "Publicação e monitoramento",
+        "Decisão de publicar ou não publicar, virada de DNS, verificação dos redirecionamentos em produção, envio do sitemap e trinta dias de monitoramento de erros de rastreamento e de posições."
+      ]
+    ],
+    callout: "O mapa de redirecionamentos é o projeto. Cada URL que muda sem um 301 no lugar é tráfego que você pagou para conquistar e depois jogou fora, e o estrago aparece semanas depois, quando as posições já foram embora. Monte o mapa a partir de um rastreamento completo do site antigo — e não do sitemap novo — e teste em homologação antes da publicação, e não depois.",
+    customize: [
+      "Comece o inventário de URLs na primeira semana; o rastreamento do site atual é a entrada da auditoria de conteúdo, da planilha de migração e do mapa de redirecionamentos.",
+      "Acrescente uma linha por tipo de conteúdo ou seção se você vai migrar milhares de páginas — uma única barra de migrar conteúdo sempre esconde um mês.",
+      "Estenda honestamente a barra de reescrita de conteúdo; é normalmente a tarefa mais subestimada do projeto inteiro, e ela precisa de redatores, e não de desenvolvedores.",
+      "Mantenha um marco de congelamento de conteúdo no site antigo, para que a migração não persiga um alvo em movimento.",
+      "Faça do rastreamento de redirecionamentos em homologação um predecessor rígido da decisão de publicar, e não um item simpático de QA.",
+      "Estenda a barra de monitoramento pós-publicação para pelo menos trinta dias — buscadores levam semanas para rastrear e reprocessar um site que mudou."
+    ],
+    tips: [
+      "<strong>Rastreie o site antigo antes de qualquer outra coisa.</strong> Você não audita, migra nem redireciona o que não inventariou, e a maioria das organizações tem bem mais URLs no ar do que imagina.",
+      "<strong>Não publique numa sexta-feira.</strong> Problemas de redirecionamento e de indexação aparecem em horas e exigem gente disponível para corrigir.",
+      "<strong>Teste os redirecionamentos em homologação com o mapa real.</strong> Conferir dez URLs por amostragem não prova nada; rastreie a lista completa de URLs antigas contra a homologação e confira cada código de resposta.",
+      "<strong>Mantenha a medição antiga rodando em paralelo.</strong> Sem uma linha de base comparável você não consegue dizer se a queda de tráfego pós-publicação é sazonal ou culpa sua.",
+      "<strong>Escreva o conteúdo antes de os gabaritos ficarem prontos.</strong> Conteúdo esperando design é a causa mais comum de uma data de publicação escorregar duas vezes.",
+      "<strong>Estabeleça a linha de base na aprovação do design.</strong> Antes disso o escopo ainda se move; depois, a variação é o que o comitê deve estar olhando."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a reformulação de um site?",
+        "Normalmente de 4 a 9 meses num site de porte médio, puxado principalmente pelo volume de conteúdo, e não pelo design ou pelo desenvolvimento. O modelo usa um cronograma de cerca de nove meses, que você comprime cortando escopo, e não tempo de migração."
+      ],
+      [
+        "O que é um mapa de redirecionamentos e por que ele importa?",
+        "É um mapeamento linha a linha de cada endereço antigo para o novo, implementado como redirecionamentos 301. Sem ele, cada URL alterada perde a autoridade de busca acumulada e os links externos que apontavam para ela. Por isso ele tem fase própria aqui."
+      ],
+      [
+        "Quando começar a migração de conteúdo?",
+        "Assim que a auditoria de conteúdo terminar e a planilha de mapeamento existir — bem antes de o desenvolvimento acabar. Conteúdo é o item mais longo, e começá-lo depois de os gabaritos ficarem prontos acrescenta meses."
+      ],
+      [
+        "O que monitorar depois da publicação?",
+        "Erros de rastreamento e 404, cobertura de indexação, posições dos termos prioritários e tráfego orgânico contra a linha de base anterior, por pelo menos trinta dias. Os quatro estão no gráfico como tarefas reais."
+      ],
+      [
+        "O modelo de reformulação de site é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
 };
 
 const UI = {

@@ -3003,6 +3003,802 @@ const T = {
       ]
     ]
   },
+
+  'hospital-department-opening': {
+    card: "Du dossier de projet au premier patient : travaux, équipements, hygiène.",
+    h1: "Plan d’ouverture d’un service hospitalier",
+    metaTitle: "Ouverture d’un service hospitalier",
+    metaDesc: "Modèle gratuit d’ouverture de service hospitalier : dossier, conception, travaux, équipements, hygiène hospitalière, effectifs et premier patient.",
+    lead: "Un <strong>plan d’ouverture de service hospitalier</strong> gratuit couvrant la mise en service d’un nouveau service ou d’une nouvelle unité — dossier de projet et validation de l’investissement, conception et dérogations aux normes de construction hospitalière, travaux et aménagement, achat des dispositifs médicaux, validation par l’équipe d’hygiène hospitalière, recrutement et habilitations, sécurité des données de santé, et la dernière ligne droite jusqu’au premier patient.",
+    intro: "Ouvrir un service de soins n’est pas un chantier avec un peu de clinique à la fin. C’est une suite de points de passage réglementaires, dont chacun peut empêcher l’ouverture le jour prévu. Le modèle donne à chacun sa propre ligne :",
+    phases: [
+      [
+        "Dossier de projet et validation",
+        "Besoin de soins et modèle d’organisation, modélisation de l’activité et des effectifs, dossier d’investissement, validation par la direction et par l’autorité de tutelle. <em>Jalon : dossier validé.</em>"
+      ],
+      [
+        "Conception et dérogations",
+        "Programme des locaux, conception détaillée selon les normes de construction hospitalière, dérogations acceptées là où le bâtiment existant ne peut s’y conformer, et autorisations réglementaires. <em>Jalon : conception figée.</em>"
+      ],
+      [
+        "Travaux et aménagement",
+        "Travaux préparatoires et déménagement provisoire, gros œuvre et lots techniques, réseaux de fluides médicaux, traitement d’air et chambres d’isolement, finitions et réception. <em>Jalon : travaux terminés.</em>"
+      ],
+      [
+        "Dispositifs médicaux",
+        "Liste des équipements et budget, procédure d’achat, commandes d’imagerie à long délai, livraison, installation, essais de réception et étalonnage."
+      ],
+      [
+        "Hygiène hospitalière et validations",
+        "Avis de l’équipe opérationnelle d’hygiène sur la conception, protocole de rinçage et sécurité sanitaire de l’eau, validation du traitement d’air, prélèvements environnementaux et microbiologiques. <em>Jalon : accord hygiène.</em>"
+      ],
+      [
+        "Effectifs et compétences",
+        "Plan d’effectifs, recrutement, vérification des titres et autorisation d’exercer, intégration et validation des compétences."
+      ],
+      [
+        "Données de santé et systèmes",
+        "Paramétrage du dossier patient informatisé, analyse d’impact relative à la protection des données, tests des interfaces et des archives, et validation par le délégué à la protection des données."
+      ],
+      [
+        "Mise en service et ouverture",
+        "Protocoles et procédures d’exploitation, journées de simulation à blanc, autorisation d’activité et passage de la commission de sécurité, décision d’ouverture et premier patient. <em>Jalon : premier patient.</em>"
+      ]
+    ],
+    callout: "Les validations ne sont pas de la levée de réserves. Vérification du traitement d’air, prélèvements d’eau et essais de réception des équipements interviennent tous après le départ des entreprises et avant qu’un patient puisse être admis, et chacun dépend d’un délai de laboratoire que vous ne maîtrisez pas. Laissez six à huit semaines entre l’achèvement des travaux et la date d’ouverture, et inscrivez chaque essai comme une tâche avec sa date de résultat.",
+    customize: [
+      "Poser la date d’ouverture exigée et remonter à rebours depuis l’accord hygiène : c’est ce point de passage, et non la fin des travaux, qui libère réellement les locaux.",
+      "Ajouter une ligne par dérogation dès le début de la revue de conception : chacune est une acceptation de risque documentée avec un approbateur nommé.",
+      "Détailler la phase équipements en une ligne par matériel lourd, avec les délais réellement annoncés — l’imagerie et le bloc dépassent régulièrement la durée du chantier.",
+      "Allonger le recrutement s’il vous faut des infirmiers spécialisés ou un praticien titulaire : ce sont les postes qui glissent.",
+      "Insérer la visite de la commission de sécurité comme barre fixe et faire dépendre le premier patient de son avis.",
+      "Conserver une journée de simulation avant l’ouverture : c’est la façon la moins coûteuse de repérer les trous dans les circuits."
+    ],
+    tips: [
+      "<strong>Lancez le protocole de sécurité sanitaire de l’eau dès la mise en eau des réseaux.</strong> Rinçages et prélèvements s’étalent sur plusieurs semaines, et un prélèvement non conforme relance le cycle au lieu de le décaler d’un jour.",
+      "<strong>Commandez les équipements à long délai sur le dossier d’investissement, pas sur le chantier.</strong> Une commande passée au démarrage des travaux arrive après l’achèvement de l’unité.",
+      "<strong>Traitez l’autorisation d’exercer comme une antériorité.</strong> Un praticien sans autorisation ne peut pas voir de patients, quel que soit l’état d’avancement du service.",
+      "<strong>Lancez l’analyse d’impact tôt.</strong> Le paramétrage des logiciels est rapide ; la validation réglementaire qui l’entoure ne l’est pas.",
+      "<strong>Tenez la revue d’ouverture avec les vrais décideurs dans la salle.</strong> Hygiène, données, technique et chef de service disposent chacun d’un droit de veto : rassembler ces avis le jour même, c’est ainsi qu’une ouverture est reportée.",
+      "<strong>Posez la référence à la conception figée.</strong> Avant, tout est estimation ; après, chaque modification a un coût et un circuit de validation."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour ouvrir un nouveau service hospitalier ?",
+        "Couramment 18 à 24 mois entre le dossier de projet et le premier patient pour une restructuration, davantage pour une construction neuve. Le modèle propose un programme de dix-huit mois, à comprimer ou étendre en déplaçant la date d’ouverture."
+      ],
+      [
+        "Qu’est-ce qui retarde le plus l’ouverture d’un service de soins ?",
+        "Les validations et la réglementation bien plus que les travaux : vérification du traitement d’air, prélèvements d’eau, essais de réception des équipements, autorisations d’exercer et conformité des données interviennent tous après les entreprises, avec des délais externes."
+      ],
+      [
+        "Qu’appelle-t-on une dérogation dans ce contexte ?",
+        "Un écart documenté et approuvé à une norme de construction ou à une prescription technique, lorsque le bâtiment existant ne peut pas s’y conformer. Elle se négocie pendant la conception et se signe par un approbateur nommé : elle apparaît donc comme une tâche et non comme une hypothèse."
+      ],
+      [
+        "Est-ce utilisable pour la rénovation d’une unité plutôt que pour un service neuf ?",
+        "Oui. Retirez les lignes de travaux préparatoires et de déménagement provisoire si aucune activité ne bouge, et gardez les phases hygiène, équipements et données : elles sont identiques dans les deux cas."
+      ],
+      [
+        "Le modèle d’ouverture de service hospitalier est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'school-year-planning-calendar': {
+    card: "L’année scolaire vue de l’établissement : emploi du temps, examens, budget.",
+    h1: "Calendrier de l’année scolaire",
+    metaTitle: "Calendrier de l’année scolaire",
+    metaDesc: "Modèle gratuit de calendrier de l’année scolaire : emploi du temps, service, inscriptions, vacances, examens, conseils de classe et budget.",
+    lead: "Un <strong>calendrier de l’année scolaire</strong> gratuit, construit à l’échelle de l’établissement et non de la classe — offre de formation et construction de l’emploi du temps, répartition de service et remplacements, inscriptions et effectifs, dates de vacances et calendrier des événements, évaluations et périodes d’examens, conseils de classe et bulletins, inspection et instances, et l’exercice budgétaire qui court sous l’ensemble.",
+    intro: "Une année scolaire se prépare deux fois : une première fois au printemps précédent, une seconde semaine après semaine pendant qu’elle se déroule. Le modèle montre les deux, les phases de préparation se plaçant avant le jour de la rentrée :",
+    phases: [
+      [
+        "Offre de formation et emploi du temps",
+        "Structure pédagogique et blocs d’options, répartition des enseignements, construction et vérification de l’emploi du temps, affectation des salles et des moyens. <em>Jalon : emploi du temps publié.</em>"
+      ],
+      [
+        "Répartition de service et contrats",
+        "Revue des postes, démissions et mutations, campagnes de recrutement, contrats signés, dispositif de remplacement et accueil des nouveaux personnels."
+      ],
+      [
+        "Inscriptions et effectifs",
+        "Portes ouvertes, période de candidature, affectations et recours, inscriptions et journées de liaison pour les nouveaux entrants. <em>Jalon : effectifs arrêtés.</em>"
+      ],
+      [
+        "Dates et calendrier",
+        "Dates de rentrée et de vacances, journées de formation des personnels, calendrier des événements publié et communication aux familles."
+      ],
+      [
+        "Évaluations et périodes d’examens",
+        "Points d’évaluation internes, examens blancs, inscriptions aux épreuves et dates limites, période d’examens, surveillance et aménagements d’épreuves, résultats. <em>Jalon : jour des résultats.</em>"
+      ],
+      [
+        "Conseils de classe et familles",
+        "Fenêtres de saisie des notes, rédaction et diffusion des bulletins, conseils de classe, rencontres parents-professeurs et objectifs de l’année suivante."
+      ],
+      [
+        "Inspection et instances",
+        "Auto-évaluation, calendrier du conseil d’administration, préparation à l’inspection, audit de sécurité et revue des règlements."
+      ],
+      [
+        "Cycle budgétaire",
+        "Notification de la dotation, construction et vote du budget, suivi en cours d’année et compte financier."
+      ]
+    ],
+    callout: "L’emploi du temps et la répartition de service sont un seul problème, pas deux. On ne termine pas un emploi du temps sans savoir qui enseigne, et on n’arrête pas le service sans savoir ce que l’emploi du temps exige. Programmez-les en barres qui se recouvrent avec une échéance commune, et posez la date limite de démission sur le planning : c’est la seule date qui décide si l’emploi du temps est construit une fois ou trois fois.",
+    customize: [
+      "Placer le jour zéro au début du trimestre de préparation, et non à la rentrée : l’essentiel des décisions se prend avant septembre.",
+      "Remplacer les périodes d’examens par les dates officielles de votre académie ou de votre certificateur : elles sont fixes et tout le reste se négocie autour.",
+      "Ajouter une ligne par niveau ou par cycle lorsque les rythmes d’évaluation et de bulletins diffèrent.",
+      "Insérer les dates du conseil d’administration en jalons : ce sont les points de validation du budget et des règlements.",
+      "Allonger la phase inscriptions si vous gérez une procédure sélective ou une saison de recours.",
+      "Marquer explicitement les journées de formation pour qu’elles soient planifiées et non intercalées après coup."
+    ],
+    tips: [
+      "<strong>Posez la date limite de démission sur le planning.</strong> C’est la date ferme qui sépare un emploi du temps constructible d’un emploi du temps à refaire en août.",
+      "<strong>Protégez les fenêtres de saisie des notes.</strong> Les bulletins dépendent d’une remontée à l’heure : un point d’évaluation qui glisse décale le conseil de classe, pas seulement le tableur.",
+      "<strong>Organisez la surveillance des épreuves tôt.</strong> Le recrutement des surveillants et l’instruction des aménagements ont des délais et conditionnent tous deux la période d’examens.",
+      "<strong>Calez les portes ouvertes avant la date limite de candidature.</strong> Des portes ouvertes après l’échéance sont une opération de communication, pas de recrutement.",
+      "<strong>Gardez le cycle budgétaire visible.</strong> Les décisions de personnel prises sans la position budgétaire sous les yeux sont les plus coûteuses que puisse commettre un établissement.",
+      "<strong>Préparez l’année suivante au troisième trimestre.</strong> Tout ce qui figure ici avant septembre appartient à l’année encore en cours."
+    ],
+    faq: [
+      [
+        "Que doit contenir un calendrier d’année scolaire ?",
+        "L’offre de formation et l’emploi du temps, la répartition de service, les inscriptions, les dates de vacances, les évaluations et les périodes d’examens, les conseils de classe et bulletins, l’inspection et les instances, et le cycle budgétaire. Les huit sont préchargés en chemins distincts."
+      ],
+      [
+        "Quand commencer la préparation de l’année suivante ?",
+        "Généralement au printemps précédent : la date limite de démission, les blocs d’options et la notification de la dotation tombent tous plusieurs mois avant septembre. Le modèle démarre là plutôt qu’à la rentrée."
+      ],
+      [
+        "Est-ce adaptable à un lycée professionnel ou à l’enseignement supérieur ?",
+        "Oui. Gardez la structure, remplacez la période d’examens par vos jurys et les lignes d’inscription par votre procédure d’admission : la forme de l’année reste la même."
+      ],
+      [
+        "Comment gérer deux ou trois rentrées par an ?",
+        "Dupliquez les lignes d’inscriptions et d’effectifs pour chaque entrée et conservez un seul chemin emploi du temps et un seul chemin budget. Le modèle donne le schéma pour la rentrée principale."
+      ],
+      [
+        "Le modèle de calendrier scolaire est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'nonprofit-fundraising-campaign': {
+    card: "Phase silencieuse, lancement public, abondement et fidélisation des donateurs.",
+    h1: "Plan de campagne de collecte de fonds",
+    metaTitle: "Campagne de collecte de fonds — plan",
+    metaDesc: "Modèle gratuit de plan de campagne de collecte : argumentaire, prospection, phase silencieuse, lancement public, abondement et fidélisation.",
+    lead: "Un <strong>plan de campagne de collecte de fonds</strong> gratuit, construit comme se déroulent réellement les campagnes de grands donateurs — étude de faisabilité et argumentaire, recherche de prospects et constitution des portefeuilles, cultivation des grands dons pendant la phase silencieuse, lancement public, événements et fenêtres d’abondement, puis la reconnaissance et les comptes rendus qui décident si les donateurs redonneront.",
+    intro: "Une campagne n’est pas un lancement suivi de dons. L’essentiel des montants est engagé avant que quiconque en entende parler publiquement, et c’est pourquoi la phase silencieuse occupe la plus grande part du planning :",
+    phases: [
+      [
+        "Faisabilité et argumentaire",
+        "Évaluation des besoins, fixation de l’objectif, entretiens de faisabilité avec les donateurs pressentis, document d’argumentaire et validation par le conseil d’administration. <em>Jalon : objectif validé.</em>"
+      ],
+      [
+        "Prospection et portefeuilles",
+        "Revue de la base de données, évaluation de la capacité de don, notation des prospects, attribution des portefeuilles et tableau de répartition des dons."
+      ],
+      [
+        "Comité et phase silencieuse",
+        "Constitution du comité de campagne, don des administrateurs, sollicitation des dons principaux et des grands dons, formalisation des promesses de don — le tout avant toute annonce publique. <em>Jalon : objectif de la phase silencieuse atteint.</em>"
+      ],
+      [
+        "Lancement public",
+        "Supports de lancement et résumé de l’argumentaire, plan presse et réseaux sociaux, événement de lancement et appel à l’ensemble des donateurs. <em>Jalon : lancement public.</em>"
+      ],
+      [
+        "Événements et appels aux dons",
+        "Gala ou événements de campagne, appels par courrier et par courriel, collecte de proximité et collecte par les pairs, et les journées de mobilisation."
+      ],
+      [
+        "Abondement",
+        "Mécène abondeur sécurisé, promotion de la fenêtre d’abondement, période d’abondement et rapprochement des fonds abondés."
+      ],
+      [
+        "Reconnaissance et comptes rendus",
+        "Remerciements et reçus fiscaux, reconnaissance des donateurs, compte rendu d’impact, encaissement des promesses et rapport de clôture. <em>Jalon : campagne close.</em>"
+      ]
+    ],
+    callout: "Ne lancez pas publiquement avant que la phase silencieuse ait sécurisé l’essentiel de l’objectif. Les campagnes qui annoncent à quarante pour cent passent la phase publique à expliquer leur retard ; celles qui annoncent à soixante-dix pour cent la passent à construire une dynamique. La date de lancement doit découler du portefeuille, pas d’un calendrier de communication.",
+    customize: [
+      "Établir d’abord le tableau de répartition des dons, puis dimensionner la phase silencieuse au nombre d’entretiens de grands dons qu’il implique : ce nombre commande la durée.",
+      "Ajouter une ligne par prospect principal une fois les portefeuilles attribués, pour suivre la cultivation au lieu de la supposer.",
+      "Déplacer le jalon de lancement public au moment où le cumul de la phase silencieuse franchit réellement le seuil que vous avez fixé.",
+      "Étendre la barre d’encaissement des promesses à votre période réelle : les promesses pluriannuelles survivent des années à la campagne.",
+      "Ajouter les journées de mobilisation ou les appels de fin d’année là où ils tombent dans votre calendrier : ces dates sont fixes et le reste s’y adapte.",
+      "Maintenir la reconnaissance des donateurs après la clôture : c’est le vivier de la campagne suivante."
+    ],
+    tips: [
+      "<strong>Les entretiens de faisabilité sont de la cultivation.</strong> Les personnes à qui vous demandez un avis honnête sur l’objectif sont généralement celles à qui vous demanderez un don principal : programmez-les en conséquence.",
+      "<strong>Sollicitez du haut vers le bas.</strong> Les dons principaux fixent l’échelle pour tous les autres ; commencer par le socle des donateurs moyens plafonne la campagne à ce qu’ils donnent.",
+      "<strong>Sécurisez l’abondement avant d’en faire la promotion.</strong> Une fenêtre d’abondement annoncée sans engagement signé du mécène est une promesse que vous ne pourrez pas tenir.",
+      "<strong>Inscrivez les remerciements sur le planning avec une échéance.</strong> Remercier un donateur en quelques jours est l’activité la plus rentable de la collecte, et la première abandonnée quand la campagne s’accélère.",
+      "<strong>Suivez les promesses séparément des encaissements.</strong> Les totaux annoncés ne disent rien de la trésorerie tant que l’échéancier d’encaissement n’est pas affiché à côté.",
+      "<strong>Posez la référence à la validation de l’objectif.</strong> Une fois le montant fixé par le conseil, suivez le portefeuille chaque semaine plutôt que de rendre compte lors des événements."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une campagne de collecte de fonds ?",
+        "Les grandes campagnes durent couramment deux à trois ans, phase silencieuse et encaissement des promesses compris. Le modèle propose un programme d’environ deux ans, à comprimer pour un appel annuel."
+      ],
+      [
+        "Quelle part faut-il avoir collectée avant le lancement public ?",
+        "L’usage est d’avoir engagé une large majorité de l’objectif en phase silencieuse avant d’annoncer — souvent cité autour de 70 pour cent. Le modèle place donc le jalon de lancement après l’objectif de phase silencieuse plutôt qu’à une date fixe."
+      ],
+      [
+        "Qu’est-ce qu’un tableau de répartition des dons et où se place-t-il ?",
+        "Un tableau du nombre de dons nécessaires à chaque niveau pour atteindre l’objectif. Il appartient à la phase de prospection, car il indique combien de prospects cultiver à chaque niveau avant de pouvoir s’engager sur le montant."
+      ],
+      [
+        "Est-ce utilisable pour un appel annuel plutôt qu’une campagne de grands dons ?",
+        "Oui. Raccourcissez la phase silencieuse, retirez les lignes de comité de campagne et gardez les appels, l’abondement et la fidélisation : c’est la forme d’une campagne annuelle."
+      ],
+      [
+        "Le modèle de campagne de collecte est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'warehouse-setup-project-plan': {
+    card: "Du choix du site à la montée en charge : rayonnages, WMS, transfert de stock.",
+    h1: "Plan de projet d’ouverture d’un entrepôt",
+    metaTitle: "Ouverture d’un entrepôt — planning",
+    metaDesc: "Modèle gratuit de projet d’entrepôt : choix du site, bail, rayonnages, intégration WMS, chariots élévateurs, transfert de stock et montée en charge.",
+    lead: "Un <strong>plan de projet d’ouverture d’entrepôt</strong> gratuit couvrant un nouveau site de distribution de bout en bout — étude de schéma directeur et choix du site, bail et travaux du bailleur, conception et montage des rayonnages, choix et intégration du WMS (système de gestion d’entrepôt), achat des chariots élévateurs et des engins de manutention, transfert du stock depuis l’ancien site, et une montée en charge qui ne laisse pas vos clients sans livraison.",
+    intro: "Un projet d’entrepôt, ce sont trois projets qui partagent un bâtiment : l’aménagement physique, l’intégration informatique et le déménagement du stock. Ils n’ont ni les mêmes délais ni les mêmes modes de défaillance, et le modèle les traite donc en chemins distincts :",
+    phases: [
+      [
+        "Besoins et schéma directeur",
+        "Profil des volumes et des références, modélisation des flux, analyse de localisation et dossier d’investissement. <em>Jalon : dossier validé.</em>"
+      ],
+      [
+        "Choix du site et bail",
+        "Recherche et liste courte, visite technique, vérification de la portance des dalles et de la puissance électrique, protocole d’accord, négociation du bail et travaux du bailleur. <em>Jalon : bail signé.</em>"
+      ],
+      [
+        "Implantation et rayonnages",
+        "Stratégie de stockage et affectation des emplacements, plan de rayonnages et autorisations, étude incendie et sprinklage, fabrication et montage des rayonnages, mezzanines et modules de préparation."
+      ],
+      [
+        "Choix et intégration du WMS",
+        "Expression de besoin et choix de l’éditeur, paramétrage, interfaces ERP et transporteurs, reprise des données et recette utilisateur. <em>Jalon : recette WMS prononcée.</em>"
+      ],
+      [
+        "Engins et équipements",
+        "Achat des chariots élévateurs et des chariots à mât rétractable, convoyeurs et tri le cas échéant, postes d’emballage, terminaux et étiquetage, et l’infrastructure de charge."
+      ],
+      [
+        "Aménagement et infrastructure",
+        "Puissance et éclairage, réseau et étude de couverture Wi-Fi, niveleurs de quai et portes, bureaux et locaux sociaux, sûreté et contrôle d’accès."
+      ],
+      [
+        "Recrutement et formation",
+        "Recrutement de l’encadrement du site, recrutement des opérateurs, formation au WMS et aux équipements, et obtention des autorisations de conduite."
+      ],
+      [
+        "Transfert de stock et démarrage",
+        "Assainissement du stock, vagues de transfert, inventaires tournants, double exploitation, bascule et montée en charge. <em>Jalon : volume nominal.</em>"
+      ]
+    ],
+    callout: "L’étude de couverture Wi-Fi est une antériorité, pas un détail. Tous les processus scannés du bâtiment supposent une couverture dans chaque allée et à toute hauteur de rayonnage, et les rayonnages modifient complètement la propagation radio. Réalisez l’étude après le montage et avant le démarrage, avec le temps d’ajouter des bornes : les équipes qui mesurent un bâtiment vide découvrent les allées mortes au premier pic d’activité.",
+    customize: [
+      "Ancrer le plan sur la date de sortie du site actuel ou sur un engagement client : elle fixe le démarrage et tout se déduit à rebours.",
+      "Ajuster le délai de fabrication des rayonnages à celui qui vous est réellement annoncé : c’est souvent le poste le plus long après le bail.",
+      "Ajouter une ligne par interface (ERP, transporteurs, places de marché, retours) une fois l’éditeur WMS choisi : chacune a son propre cycle de tests.",
+      "Découper le transfert de stock en vagues par rotation des références, pour que les fortes rotations arrivent en premier et que le site puisse travailler pendant l’arrivée du reste.",
+      "Allonger la barre de double exploitation si une bascule sèche est trop risquée : exploiter deux sites coûte cher mais protège le service.",
+      "Marquer la signature du bail, la fin des rayonnages, la recette WMS, la première commande expédiée et le volume nominal en jalons."
+    ],
+    tips: [
+      "<strong>Vérifiez portance et puissance avant le protocole d’accord.</strong> Un bâtiment qui ne supporte ni vos charges de rayonnage ni votre puissance de charge n’est pas moins cher : c’est le mauvais bâtiment.",
+      "<strong>Choisissez le WMS avant de figer l’implantation.</strong> Affectation des emplacements, adressage et logique de chemin de prélèvement découlent du système, et les rattraper sur des rayonnages montés coûte cher.",
+      "<strong>Commandez les engins sur les délais réels.</strong> La livraison des chariots élévateurs et des chariots à mât rétractable se compte en mois depuis plusieurs années : la date de commande a sa place sur le planning.",
+      "<strong>Montez en charge, ne basculez pas.</strong> Prévoyez les premières semaines à un volume volontairement réduit, pour que les problèmes de processus apparaissent quand il reste de la capacité pour les absorber.",
+      "<strong>Assainissez le stock avant de le déplacer.</strong> Transférer des références obsolètes coûte deux fois : une fois pour les transporter, une fois pour les stocker.",
+      "<strong>Posez la référence à la signature du bail.</strong> Avant, tout reste optionnel ; après, le loyer court et chaque semaine de glissement a un chiffre."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour ouvrir un entrepôt ?",
+        "Couramment 9 à 15 mois entre le dossier d’investissement et le démarrage pour une plateforme de taille moyenne, principalement du fait de la recherche du site, du délai des rayonnages et de l’intégration du WMS. Le modèle propose douze mois."
+      ],
+      [
+        "Quel est généralement le délai le plus long ?",
+        "La fabrication des rayonnages et les engins de manutention, qui se comptent désormais en mois. Le bail dépasse souvent l’un et l’autre, et c’est pourquoi la recherche de site ouvre le plan."
+      ],
+      [
+        "Le WMS doit-il démarrer en même temps que le bâtiment ?",
+        "Pas nécessairement. Beaucoup de sites exploitent d’abord le nouveau bâtiment sur le système existant, puis basculent le système séparément, pour ne changer qu’une variable à la fois. Le modèle garde les deux chemins séparés."
+      ],
+      [
+        "Comment planifier le transfert de stock ?",
+        "En vagues par rotation des références, avec un inventaire tournant après chaque vague et une période de double exploitation avant la fermeture de l’ancien site. Ces lignes sont préchargées dans la dernière phase."
+      ],
+      [
+        "Le modèle d’ouverture d’entrepôt est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'road-construction-schedule': {
+    card: "Des études à la mise en service : réseaux, terrassements et couches de chaussée.",
+    h1: "Planning de travaux routiers",
+    metaTitle: "Travaux routiers — planning",
+    metaDesc: "Modèle gratuit de planning de travaux routiers : études, autorisations, déviations de réseaux, terrassements, chaussée et mise en service.",
+    lead: "Un <strong>planning de travaux routiers</strong> gratuit, déroulé comme un vrai programme d’infrastructure — levés et études, acquisitions foncières et autorisations, déviations de réseaux des concessionnaires, terrassements et assainissement, couche de forme, grave-bitume et couche de roulement, signalisation et marquage, phasage de circulation, puis remise au gestionnaire de la voirie.",
+    intro: "Sur un chantier routier, la chaussée est la partie facile. Ce qui commande la date, c’est ce qui doit bouger avant de pouvoir terrasser : les réseaux des concessionnaires, le foncier que vous ne possédez pas encore, et la circulation qui doit continuer de passer. Le modèle donne à chacun son propre chemin :",
+    phases: [
+      [
+        "Levés et études",
+        "Levés topographiques et reconnaissance géotechnique, recherche des réseaux et sondages, avant-projet et projet, étude d’assainissement et audit de sécurité routière. <em>Jalon : projet approuvé.</em>"
+      ],
+      [
+        "Foncier et autorisations",
+        "Identification des parcelles, acquisitions ou occupations temporaires, autorisation d’urbanisme, autorisations environnementales et rétablissement des voies. <em>Jalon : autorisations obtenues.</em>"
+      ],
+      [
+        "Déviations de réseaux",
+        "Devis et études de chaque concessionnaire, conception des déviations, programmation avec les concessionnaires, puis les déviations elles-mêmes — gaz, eau, électricité et télécoms, chacune sur son propre calendrier."
+      ],
+      [
+        "Phasage de circulation",
+        "Étude et approbation de la signalisation temporaire, réservation des créneaux d’occupation de la voirie, accord sur les itinéraires de déviation, puis les fermetures, basculements et neutralisations de voies successifs."
+      ],
+      [
+        "Terrassements et assainissement",
+        "Débroussaillage et décapage de la terre végétale, déblais et remblais, couche de forme, collecteurs, avaloirs, bassins de rétention et exutoires."
+      ],
+      [
+        "Construction de la chaussée",
+        "Couche de fondation, couche de base en grave-bitume, couche de liaison et couche de roulement, bordures, trottoirs et mise à niveau des tampons. <em>Jalon : revêtement terminé.</em>"
+      ],
+      [
+        "Signalisation, marquage et remise",
+        "Marquage au sol, panneaux et portiques, éclairage public, dispositifs de retenue, audit de sécurité routière final, levée des réserves et remise au gestionnaire de la voirie. <em>Jalon : mise en service.</em>"
+      ]
+    ],
+    callout: "Les déviations de réseaux sont le planning. Les concessionnaires travaillent à leur propre rythme, exigent de longs préavis et ne se comprimeront pas pour votre date — et chacun doit avoir terminé avant que vous puissiez terrasser sa section. Demandez les devis pendant les études, pas après l’attribution du marché, et inscrivez chaque concessionnaire comme une barre distincte avec sa propre durée.",
+    customize: [
+      "Saisir d’abord les créneaux d’occupation de la voirie confirmés : sur une route en service, ce sont les points fixes autour desquels le reste s’organise.",
+      "Ajouter une ligne par concessionnaire — gaz, eau, électricité et chaque opérateur télécom ont des préavis et des équipes différents.",
+      "Découper le chantier en sections ou en plages de points kilométriques une fois le phasage connu, pour suivre terrassements et chaussée par phase.",
+      "Sortir le revêtement des mois d’hiver dans la mesure du possible : la mise en œuvre des enrobés a des limites de température qui arrêtent le chantier le jour même.",
+      "Insérer les périodes d’exclusion — nidification, chiroptères, fenêtres piscicoles — sous forme de barres bloquées si vos autorisations les imposent.",
+      "Garder les deux audits de sécurité routière sur le planning : celui d’après travaux conditionne l’ouverture, ce n’est pas une revue postérieure."
+    ],
+    tips: [
+      "<strong>Demandez les devis des concessionnaires dès les études.</strong> La seule procédure de chiffrage se compte en mois avant qu’une déviation soit creusée, et elle précède tout le reste sur le chemin critique.",
+      "<strong>Réservez la voirie avant d’en avoir besoin.</strong> Les calendriers d’arrêtés et de fermetures sont attribués au premier demandeur, et une réservation refusée décale toute la phase.",
+      "<strong>Faites l’assainissement avant la chaussée, toujours.</strong> Rattraper un avaloir ou un branchement oublié sous une chaussée finie coûte plusieurs fois ce qu’il aurait coûté avant.",
+      "<strong>Surveillez les fenêtres météo sur les enrobés.</strong> Une couche de roulement mise en œuvre sous la température prescrite se dégrade tôt, et le gestionnaire refusera de la recevoir.",
+      "<strong>Planifiez les phases de circulation comme des tâches avec des durées.</strong> Chaque basculement est une nuit de travail avec ses propres moyens : traiter le phasage comme gratuit fait perdre une quinzaine aux programmes.",
+      "<strong>Posez la référence à l’obtention des autorisations.</strong> Avant, le programme est conditionnel ; après, suivez l’écart pour rendre visible tôt le glissement des concessionnaires."
+    ],
+    faq: [
+      [
+        "Combien de temps dure un chantier routier ?",
+        "Un aménagement urbain court tient en 6 à 9 mois ; une voie nouvelle ou un élargissement important dépasse deux ans. Le modèle propose un programme d’environ dix-huit mois, à comprimer ou étendre depuis la date de mise en service."
+      ],
+      [
+        "Qu’est-ce qui retarde le plus les chantiers routiers ?",
+        "Les déviations de réseaux et les autorisations, bien plus souvent que les travaux. Les deux dépendent de tiers ayant leur propre rythme, d’où un chemin distinct pour chacun plutôt qu’une ligne au milieu des travaux."
+      ],
+      [
+        "Comment représenter le phasage de circulation sur un diagramme de Gantt ?",
+        "En barres successives ayant pour antériorités l’étude et la réservation de voirie, chaque phase de travaux dépendant de sa propre phase de circulation. Une réservation refusée ou décalée menace alors visiblement les travaux qu’elle protège."
+      ],
+      [
+        "Le modèle couvre-t-il un ouvrage d’art inclus dans l’opération ?",
+        'Seulement au niveau du récapitulatif. Si votre opération comporte un ouvrage, faites tourner en parallèle notre <a href="/templates/bridge-construction-schedule.html">planning de construction d’un pont</a> et reliez les fenêtres de coupure.'
+      ],
+      [
+        "Est-ce utilisable pour un simple renouvellement de couche de roulement ?",
+        "Oui. Retirez les phases foncier, autorisations et terrassements et gardez le phasage de circulation, les couches de chaussée et le marquage : c’est la forme d’un programme de renforcement."
+      ],
+      [
+        "Le modèle de travaux routiers est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription ni filigrane."
+      ]
+    ]
+  },
+
+  'mobile-app-launch-plan': {
+    card: "Stabilisation, bêta, fiche du store, validation et déploiement progressif.",
+    h1: "Plan de lancement d’une application mobile",
+    metaTitle: "Lancement d’une application mobile",
+    metaDesc: "Modèle gratuit de lancement d’application mobile : stabilisation, bêta, fiche du store, validation App Store, déploiement progressif et correctif.",
+    lead: "Un <strong>plan de lancement d’application mobile</strong> gratuit, construit autour des exigences des stores plutôt que d’un marketing générique — stabilisation du build et version candidate, bêta TestFlight et piste interne Google Play, fiche du store et captures d’écran, dépôt sur l’App Store et Google Play, l’attente de validation elle-même, déploiement progressif et la fenêtre de correctif du jour un.",
+    intro: "Publier une application mobile n’est pas déployer un logiciel sur un serveur : quelqu’un d’autre décide quand votre build sera en ligne, et le plan doit le montrer. Le modèle sépare le travail que vous maîtrisez de l’attente que vous ne maîtrisez pas :",
+    phases: [
+      [
+        "Stabilisation du build",
+        "Gel des fonctionnalités, traitement des plantages et des blocages, travail sur les performances et la mémoire, accessibilité et tests sur le parc d’appareils, puis la version candidate. <em>Jalon : version candidate prête.</em>"
+      ],
+      [
+        "Tests bêta",
+        "Envois sur TestFlight et sur la piste interne Google Play, bêta interne, recrutement des testeurs externes, tour externe et traitement des retours. <em>Jalon : critères de sortie de bêta atteints.</em>"
+      ],
+      [
+        "Fiche du store et visuels",
+        "Recherche de mots-clés et de catégorie, nom et description, captures d’écran et vidéo de présentation, icône et visuels, déclaration de confidentialité des données et questionnaire de classification par âge."
+      ],
+      [
+        "Dépôt et validation",
+        "Vérification de conformité avant dépôt, dépôt sur les deux stores, l’attente de validation, et une vraie marge pour un refus et un nouveau dépôt. <em>Jalon : application approuvée.</em>"
+      ],
+      [
+        "Déploiement progressif",
+        "Diffusion par paliers à 1 %, 10 % et 50 %, avec vérification du taux de sessions sans plantage à chaque palier avant d’élargir à l’ensemble des utilisateurs. <em>Jalon : disponibilité générale.</em>"
+      ],
+      [
+        "Correctif du jour un et suivi",
+        "Surveillance des plantages et des blocages, la fenêtre de correctif réservée, réponses aux avis sur les stores et lecture de la rétention à une semaine."
+      ]
+    ],
+    callout: "Prévoyez un refus. Les premiers dépôts sont refusés assez souvent pour qu’un plan sans marge de nouveau dépôt soit un plan à pile ou face — et le délai repart de zéro au dépôt suivant. Inscrivez l’attente de validation et la marge de refus comme deux barres distinctes, puis fixez la date d’annonce après la seconde, pas après la première.",
+    customize: [
+      "Fixer la date de dépôt et avancer depuis là plutôt que de remonter à rebours : la durée de validation ne vous appartient pas.",
+      "Dédoubler les lignes de dépôt et de validation par store si vos versions iOS et Android n’ont pas le même rythme : les délais de validation diffèrent.",
+      "Allonger la marge de refus s’il s’agit d’un premier dépôt, d’une application par abonnement, ou de tout ce qui touche à la suppression de compte, aux données de santé ou aux contenus publiés par les utilisateurs.",
+      "Ajuster les paliers de déploiement à votre plateforme : le déploiement par étapes de Google Play et la diffusion échelonnée de l’App Store ne progressent pas de la même façon.",
+      "Garder la fenêtre de correctif sur le planning avec des personnes nommées : une fenêtre sans équipe affectée n’est qu’une semaine vide.",
+      "Marquer la version candidate, la sortie de bêta, l’approbation et la disponibilité générale en jalons : ce sont les quatre dates que l’on vous demandera."
+    ],
+    tips: [
+      "<strong>Préparez la fiche du store avant que le binaire soit figé.</strong> Captures d’écran, descriptions et déclaration de confidentialité s’élaborent et se relisent indépendamment : elles ne devraient jamais bloquer le jour du dépôt.",
+      "<strong>N’annoncez pas une date de lancement adossée à une approbation que vous n’avez pas.</strong> Faites dépendre le marketing du jalon d’approbation, pour qu’un refus décale la campagne automatiquement.",
+      "<strong>Surveillez le taux de sessions sans plantage à chaque palier.</strong> L’intérêt d’un déploiement progressif est de pouvoir s’arrêter entre deux paliers ; si personne n’est chargé de regarder les chiffres, le phasage ne sert à rien.",
+      "<strong>Réservez la fenêtre de correctif avant le lancement, pas après.</strong> Les personnes qui écriraient un correctif du jour un sont celles que vous affecterez sinon au sprint suivant, le jour même du lancement.",
+      "<strong>Recrutez les testeurs externes des semaines à l’avance.</strong> Réunir un nombre utile de testeurs sur appareils réels prend plus de temps que prévu, et une bêta trop mince ne trouve rien.",
+      "<strong>Posez la référence à la version candidate.</strong> Tout ce qui précède relève de l’estimation ; après, le planning dépend surtout des files d’attente d’autres acteurs et se suit comme un écart."
+    ],
+    faq: [
+      [
+        "Combien de temps prend la validation par les stores ?",
+        "La plupart des validations App Store aboutissent en un à deux jours et Google Play est souvent plus rapide, mais les deux peuvent être bien plus longues pour un premier dépôt ou une catégorie sensible. Le modèle prévoit dix jours plus une marge de refus."
+      ],
+      [
+        "Que doit contenir un plan de lancement d’application mobile ?",
+        "Stabilisation du build, tests bêta, fiche du store et visuels, dépôt et validation, déploiement progressif et une fenêtre de correctif du jour un. Les six sont préchargés, l’attente de validation étant modélisée comme une antériorité et non comme une hypothèse."
+      ],
+      [
+        "En quoi diffère-t-il d’un plan de lancement produit ?",
+        'Celui-ci est calé sur les stores : dépôt, validation et déploiement progressif. Pour le travail commercial plus large — prix, positionnement, campagnes — utilisez le <a href="/templates/product-launch.html">modèle de lancement de produit</a> en parallèle.'
+      ],
+      [
+        "Faut-il un déploiement progressif ou une diffusion à tous ?",
+        "Progressif, sauf raison contraire. Une diffusion par paliers permet de s’arrêter à 1 % quand le taux de sessions sans plantage chute, ce qui coûte bien moins cher qu’un retour arrière en urgence sur l’ensemble des utilisateurs."
+      ],
+      [
+        "Le modèle de lancement d’application est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'iso-9001-certification-plan': {
+    card: "Écarts, manuel qualité, audit interne, revue de direction, étapes 1 et 2.",
+    h1: "Plan de certification ISO 9001",
+    metaTitle: "Certification ISO 9001 — plan",
+    metaDesc: "Modèle gratuit de plan de certification ISO 9001 : analyse des écarts, documentation, audit interne, revue de direction, audits étape 1 et étape 2.",
+    lead: "Un <strong>plan de certification ISO 9001</strong> gratuit, déroulé sur le vrai chemin qui mène au certificat — analyse des écarts, cartographie des processus, documentation du système de management de la qualité, mise en œuvre et formation, cycle d’audit interne, revue de direction et actions correctives, puis l’audit de certification en deux étapes et le premier audit de surveillance.",
+    intro: "La certification ISO 9001 n’est pas un projet documentaire. L’organisme certificateur doit voir les enregistrements d’un système qui a réellement fonctionné, et c’est pourquoi l’audit interne et la revue de direction se placent avant l’audit externe et non à côté :",
+    phases: [
+      [
+        "Analyse des écarts et cadrage",
+        "Périmètre et contexte de l’organisme, choix de l’organisme certificateur, analyse structurée des écarts par rapport à la norme, et le plan projet qui en découle. <em>Jalon : analyse des écarts terminée.</em>"
+      ],
+      [
+        "Cartographie des processus et risques",
+        "Cartographie des processus clés, parties intéressées et leurs exigences, registre des risques et opportunités, et objectifs qualité assortis d’indicateurs mesurables."
+      ],
+      [
+        "Documentation du système qualité",
+        "Politique qualité et manuel qualité, procédures documentées, instructions de travail et formulaires, maîtrise documentaire et durées de conservation des enregistrements. <em>Jalon : documentation diffusée.</em>"
+      ],
+      [
+        "Mise en œuvre et formation",
+        "Sensibilisation de l’ensemble du personnel, formation des pilotes de processus, et une période de fonctionnement réel des processus afin de disposer d’enregistrements auditables."
+      ],
+      [
+        "Audit interne et actions correctives",
+        "Formation des auditeurs internes, programme complet d’audit interne, fiches de non-conformité et actions correctives soldées avec preuves."
+      ],
+      [
+        "Revue de direction",
+        "Constitution des données d’entrée, réunion de revue de direction elle-même, et les actions qui en découlent. <em>Jalon : aptitude à la certification confirmée.</em>"
+      ],
+      [
+        "Audit de certification",
+        "Audit d’étape 1 sur la documentation et la maturité, levée des constats d’étape 1, audit d’étape 2 sur la mise en œuvre, clôture des non-conformités et décision de certification. <em>Jalon : certificat délivré.</em>"
+      ],
+      [
+        "Surveillance",
+        "Cycle d’amélioration continue, second tour d’audit interne et audit de surveillance de la première année, qui maintient la validité du certificat."
+      ]
+    ],
+    callout: "L’intervalle entre l’étape 1 et l’étape 2 est la raison d’être de l’audit en deux temps, et la plupart des plannings le traitent mal. L’étape 1 dit si votre système est prêt ; l’étape 2 vérifie qu’il fonctionne. Les organismes certificateurs demandent couramment plusieurs semaines entre les deux pour que les constats soient levés, et programmer l’étape 2 trop près de l’étape 1 est la façon la plus sûre de payer une visite supplémentaire.",
+    customize: [
+      "Choisir tôt l’organisme certificateur et saisir ses disponibilités réelles : les créneaux d’audit se réservent des mois à l’avance et fixent votre date la plus lointaine.",
+      "Allonger la période de mise en œuvre si vos processus ont des cycles longs : il faut des enregistrements couvrant une période représentative, pas une quinzaine.",
+      "Ajouter une ligne par domaine de processus pendant la cartographie et l’audit interne, pour rendre la couverture visible plutôt que supposée.",
+      "Insérer une ligne d’action corrective par non-conformité majeure dès que les constats d’étape 1 tombent : chacune a ses preuves et sa date de clôture.",
+      "Marquer la diffusion de la documentation, l’aptitude confirmée, la fin de l’étape 2 et la délivrance du certificat en jalons : ce sont les dates attendues en comité de direction.",
+      "Si vous détenez déjà une autre certification de système de management, raccourcir la phase documentaire et réutiliser les chapitres communs au lieu de tout réécrire."
+    ],
+    tips: [
+      "<strong>N’écrivez pas des documents que vous n’appliquerez pas.</strong> L’auditeur confronte le système à vos propres procédures : un manuel trop détaillé crée des non-conformités qu’un manuel simple n’aurait pas produites.",
+      "<strong>Menez l’audit interne comme s’il s’agissait du vrai.</strong> C’est la répétition générale la moins coûteuse, et un constat soulevé en interne est une amélioration, pas une non-conformité.",
+      "<strong>Laissez un vrai délai entre l’étape 1 et l’étape 2.</strong> Quatre à huit semaines sont habituelles ; lever correctement les constats coûte moins cher qu’un audit à refaire.",
+      "<strong>Réunissez les données d’entrée de la revue de direction à l’avance.</strong> La réunion est un enregistrement obligatoire dont les entrées sont listées par la norme, et les assembler le jour même produit un compte rendu maigre que l’auditeur remarquera.",
+      "<strong>Gardez le cycle de surveillance sur le planning.</strong> La certification ouvre un rythme annuel, et les organismes qui abandonnent le calendrier après le certificat courent après douze mois plus tard.",
+      "<strong>Posez la référence à la diffusion de la documentation.</strong> Tout ce qui précède relève de la mise en place ; après, c’est l’écart par rapport aux dates d’audit qui compte."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour obtenir la certification ISO 9001 ?",
+        "Généralement 6 à 12 mois pour un organisme qui part de zéro, et moins lorsqu’un système documenté existe déjà. Ce modèle couvre environ dix-huit mois car il va jusqu’au premier audit de surveillance ; le certificat lui-même arrive vers le douzième mois."
+      ],
+      [
+        "Quelle différence entre un audit d’étape 1 et un audit d’étape 2 ?",
+        "L’étape 1 est essentiellement une revue de la documentation et de la maturité, qui vérifie que le système est auditable. L’étape 2 vérifie qu’il est réellement mis en œuvre et efficace, à partir d’enregistrements et d’entretiens. Les deux sont ici des phases distinctes séparées par une période de levée des constats."
+      ],
+      [
+        "Faut-il un audit interne avant la certification ?",
+        "Oui. La norme exige que des audits internes et une revue de direction aient été réalisés, et l’organisme certificateur en cherchera les enregistrements dès l’étape 1. C’est pourquoi les deux précèdent l’audit externe dans ce plan."
+      ],
+      [
+        "Que se passe-t-il si l’auditeur relève une non-conformité ?",
+        "Les constats mineurs se soldent habituellement par un plan d’action et des preuves dans un délai fixé ; les constats majeurs peuvent imposer une nouvelle visite. Le modèle prévoit une barre de levée après chaque étape, précisément pour cela."
+      ],
+      [
+        "Le modèle de certification ISO 9001 est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'soc2-compliance-timeline': {
+    card: "Cadrage, contrôles, remédiation, période d’observation Type II et rapport.",
+    h1: "Planning de conformité SOC 2",
+    metaTitle: "Conformité SOC 2 — planning",
+    metaDesc: "Modèle gratuit de planning SOC 2 : cadrage, conception des contrôles, remédiation, préparation, période d’observation Type II et rapport.",
+    lead: "Un <strong>planning de conformité SOC 2</strong> gratuit couvrant toute la mission — cadrage et choix des Trust Services Criteria, conception des contrôles, remédiation, collecte des preuves, évaluation de préparation, la période d’observation du Type II, les travaux de l’auditeur et l’émission du rapport.",
+    intro: "Presque toutes les questions de délai sur un SOC 2 portent en réalité sur la période d’observation. Un Type I est une opinion à un instant donné ; un Type II couvre une période pendant laquelle vos contrôles doivent réellement fonctionner. Le modèle en fait une barre visible, pour que personne ne promette un rapport que l’arithmétique interdit :",
+    phases: [
+      [
+        "Cadrage et critères",
+        "Définition du périmètre du système, choix des Trust Services Criteria, contractualisation avec le cabinet et arbitrage entre Type I et Type II. <em>Jalon : périmètre arrêté.</em>"
+      ],
+      [
+        "Conception des contrôles",
+        "Analyse de risques, mise en correspondance des contrôles avec les critères retenus, rédaction du corpus de politiques et désignation des responsables de contrôle. <em>Jalon : matrice de contrôles validée.</em>"
+      ],
+      [
+        "Remédiation",
+        "Gestion et revue des accès, points de contrôle sur les changements, journalisation et supervision, risque fournisseurs, sensibilisation à la sécurité et test du plan de réponse aux incidents — le travail d’ingénierie proprement dit."
+      ],
+      [
+        "Preuves et préparation",
+        "Outillage de collecte des preuves, alimentation du référentiel, évaluation de préparation et clôture des écarts qu’elle révèle. <em>Jalon : préparation validée.</em>"
+      ],
+      [
+        "Rapport Type I (facultatif)",
+        "Travaux à un instant donné et rapport Type I, utile quand un client a besoin d’un document pendant que la période d’observation court."
+      ],
+      [
+        "Période d’observation",
+        "La période couverte par l’opinion Type II — contrôles fonctionnant en continu, points de contrôle mensuels sur les preuves et revues d’accès trimestrielles. De trois à douze mois, et non compressible."
+      ],
+      [
+        "Travaux d’audit et rapport",
+        "Demandes d’échantillons, transmission des preuves, tests, exceptions et réponses de la direction, revue du projet de rapport et émission. <em>Jalon : rapport Type II émis.</em>"
+      ]
+    ],
+    callout: "La période d’observation ne se raccourcit pas. Un rapport Type II atteste que vos contrôles ont fonctionné sur une période : trois mois de fenêtre, ce sont trois mois de calendrier réel qu’aucun budget ne rachètera. Le seul levier est la date de départ — et c’est pourquoi le jalon qui mérite qu’on se batte est la validation de la préparation, pas la date du rapport.",
+    customize: [
+      "Choisir d’abord la longueur de la période d’observation — trois mois pour un premier rapport, six à douze une fois dans un cycle annuel — et dimensionner la barre en conséquence.",
+      "Retirer entièrement la phase Type I si aucun client n’a besoin d’un rapport intermédiaire : beaucoup d’organisations vont directement au Type II.",
+      "Ajouter une ligne par catégorie de critères retenue au-delà de la sécurité : disponibilité, confidentialité, intégrité des traitements et vie privée ajoutent chacune des contrôles et des preuves.",
+      "Détailler la remédiation en une ligne par écart dès que l’évaluation de préparation est rendue, pour suivre le travail d’ingénierie au lieu de l’agréger.",
+      "Poser les points de contrôle mensuels sur les preuves en lignes récurrentes pendant toute la période : les mois manquants sont la première source d’exceptions.",
+      "Marquer le périmètre arrêté, la préparation validée, le début et la fin de la période d’observation, et l’émission du rapport en jalons."
+    ],
+    tips: [
+      "<strong>N’ouvrez pas la période d’observation avant que la remédiation soit réellement terminée.</strong> Un contrôle défaillant au premier mois devient une exception dans le rapport : décaler de deux semaines coûte deux semaines, démarrer trop tôt peut coûter le rapport.",
+      "<strong>Automatisez la collecte des preuves avant l’ouverture de la période, pas pendant.</strong> Reconstituer après coup trois mois de revues d’accès est la tâche la plus pénible d’un SOC 2, et l’auditeur s’en aperçoit généralement.",
+      "<strong>Restez étroit sur le premier rapport.</strong> La seule catégorie sécurité est un périmètre valide que la plupart des clients acceptent ; ajouter des catégories multiplie les contrôles et allonge chaque phase.",
+      "<strong>Engagez le cabinet tôt.</strong> Sa disponibilité pour les travaux est une contrainte réelle, et un cabinet retenu à la fin de la période ne commencera pas la semaine où elle se referme.",
+      "<strong>Considérez les exceptions comme normales.</strong> Presque tous les rapports en comportent ; ce qui compte est la réponse de la direction, qui a besoin de place sur le planning avant la finalisation du projet de rapport.",
+      "<strong>Posez la référence à la validation de la préparation.</strong> Tout ce qui précède est de la remédiation ; après, le planning n’est plus que de l’arithmétique et le calendrier du cabinet."
+    ],
+    faq: [
+      [
+        "Combien de temps prend une démarche SOC 2 ?",
+        "Pour un premier Type II, couramment 8 à 12 mois au total : trois à six mois de préparation et de remédiation, puis une période d’observation de trois à douze mois, puis les travaux et le rapport. Le modèle propose environ seize mois avec une période de six mois."
+      ],
+      [
+        "Quelle différence entre SOC 2 Type I et Type II ?",
+        "Le Type I est une opinion sur la conception des contrôles à un instant donné ; le Type II est une opinion sur leur efficacité opérationnelle sur une période. Le Type II impose la période d’observation, d’où sa durée bien plus longue et sa phase dédiée ici."
+      ],
+      [
+        "Quelle durée retenir pour la période d’observation ?",
+        "Trois mois est le minimum usuel pour un premier Type II, et six à douze mois la norme une fois installé dans un cycle annuel. Les périodes courtes vont plus vite, mais certains clients leur accordent moins de valeur."
+      ],
+      [
+        "Peut-on obtenir un rapport SOC 2 plus vite ?",
+        "Vous pouvez raccourcir la préparation, et émettre un Type I pendant que la période court. Vous ne pouvez pas raccourcir la période elle-même : c’est la part du planning que personne ne maîtrise."
+      ],
+      [
+        "Le modèle de planning SOC 2 est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'manufacturing-production-schedule': {
+    card: "Prévisions, matière, changements de série, production, qualité et expédition.",
+    h1: "Planning de production industrielle",
+    metaTitle: "Planning de production industrielle",
+    metaDesc: "Modèle gratuit de planning de production : prévisions, délais matière, ordonnancement, changements de série, contrôle qualité et expédition.",
+    lead: "Un <strong>planning de production industrielle</strong> gratuit pour la fabrication discrète — plan de charge et programme directeur, approvisionnements calés sur les délais réels des fournisseurs, ordonnancement des lignes et changements de série, les séries de production elles-mêmes, contrôle en cours et contrôle final, puis conditionnement et expédition.",
+    intro: "Un planning de production, ce sont deux plannings qui doivent se rejoindre : l’arrivée de la matière et la disponibilité de la capacité. Le modèle les traite en chemins distincts, pour que la collision se voie avant de se produire dans l’atelier :",
+    phases: [
+      [
+        "Prévisions et capacité",
+        "Revue des prévisions, prise de commandes fermes, programme directeur de production et vérification globale de la capacité et des effectifs. <em>Jalon : capacité confirmée.</em>"
+      ],
+      [
+        "Approvisionnements",
+        "Éclatement des nomenclatures et calcul des besoins, commandes d’achat, livraisons à long délai et livraisons courantes, réception et contrôle d’entrée, puis mise à disposition au bord de ligne. <em>Jalon : disponibilité matière.</em>"
+      ],
+      [
+        "Ordonnancement et réglage",
+        "Séquencement détaillé, plan des changements de série, préparation des outillages et des montages, le changement de série lui-même et le contrôle du premier article. <em>Jalon : premier article accepté.</em>"
+      ],
+      [
+        "Séries de production",
+        "Les séries elles-mêmes, avec les changements de série entre produits planifiés comme de vraies tâches plutôt que supposés inexistants."
+      ],
+      [
+        "Contrôle qualité",
+        "Contrôle en cours et maîtrise statistique des procédés, stock bloqué et décision de traitement des non-conformités, contrôle final et essais, dossier de libération de lot. <em>Jalon : lot libéré.</em>"
+      ],
+      [
+        "Conditionnement et expédition",
+        "Emballage et étiquetage, palettisation et plan de chargement, réservation du transporteur et documents d’expédition. <em>Jalon : commande expédiée.</em>"
+      ]
+    ],
+    callout: "Un changement de série est du temps de production. Un planning qui affiche trois séries à la suite sans aucune barre de changement revendique une capacité qui n’existe pas — et sur une ligne à changements fréquents, ils peuvent représenter une part à deux chiffres des heures disponibles. Inscrivez chaque changement de série à sa durée mesurée, pas à sa durée souhaitée.",
+    customize: [
+      "Saisir vos délais fournisseurs réels par composant : c’est le plus long d’entre eux, et non l’ordonnancement, qui fixe la date de début possible.",
+      "Ajouter une ligne par poste de charge ou par ligne si vous en ordonnancez plusieurs, pour rendre les conflits visibles.",
+      "Renseigner les durées de changement de série à partir des temps réellement mesurés, et les garder séparées des séries qui les encadrent.",
+      "Insérer une barre de stock bloqué partout où un lot attend une décision : cette attente est du stock immobilisé bien réel.",
+      "Ajouter des barres de stock de sécurité en amont des séries qui alimentent un engagement client ferme.",
+      "Marquer la disponibilité matière, le premier article accepté, le lot libéré et la commande expédiée en jalons."
+    ],
+    tips: [
+      "<strong>Ordonnancez à rebours depuis la date d’expédition.</strong> L’engagement client est le point fixe ; tout l’amont doit s’en déduire plutôt que d’être poussé depuis aujourd’hui.",
+      "<strong>Ne lancez pas une série avant la levée du contrôle d’entrée.</strong> De la matière sur le site n’est pas de la matière disponible, et démarrer sur du stock non vérifié est la façon habituelle de bloquer un lot entier.",
+      "<strong>Séquencez pour limiter les changements de série, puis vérifiez les dates.</strong> La séquence la plus efficace et celle qui tient les délais sont rarement la même ; le planning est l’endroit où l’arbitrage se voit.",
+      "<strong>Donnez au contrôle du premier article sa propre barre.</strong> C’est un point de passage, et une série lancée avant l’acceptation est une série que vous risquez de rebuter.",
+      "<strong>Laissez de la marge avant l’expédition.</strong> Réservations de transport et créneaux de chargement sont externes, et un lot libéré le matin de l’enlèvement n’a aucune place pour une reprise.",
+      "<strong>Posez la référence au programme figé.</strong> Une fois le programme figé pour la période, suivez l’écart au lieu de le réécrire discrètement."
+    ],
+    faq: [
+      [
+        "Que doit contenir un planning de production ?",
+        "Les prévisions et la capacité, les approvisionnements avec les délais réels, l’ordonnancement et les changements de série, les séries de production, le contrôle qualité et les blocages, puis le conditionnement et l’expédition. Les six sont préchargés en phases distinctes."
+      ],
+      [
+        "Comment représenter les changements de série sur un diagramme de Gantt ?",
+        "En barres courtes propres, entre les séries, chaque série ayant pour antériorité le changement qui la précède. Cacher le changement à l’intérieur de la barre de série surévalue la capacité disponible : c’est l’erreur la plus fréquente sur un planning de production."
+      ],
+      [
+        "Est-ce adapté à l’industrie de process ?",
+        "Le modèle vise d’abord la fabrication discrète — lots, unités et changements de série. Pour une production continue, gardez les phases approvisionnement et expédition et remplacez les lignes de série par des barres de campagne."
+      ],
+      [
+        "En quoi diffère-t-il du calendrier de production textile ?",
+        'Le <a href="/templates/apparel-production-calendar.html">calendrier textile</a> suit une saison, avec prototypage et réservation de tissu face à une date de mise en rayon. Celui-ci est un planning de fabrication discrète général, construit sur les délais, les changements de série et l’expédition.'
+      ],
+      [
+        "Le modèle de planning de production est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'website-redesign-project-plan': {
+    card: "Du cadrage à la mise en ligne : contenu, design, migration et redirections.",
+    h1: "Plan de projet de refonte de site web",
+    metaTitle: "Refonte de site web — plan projet",
+    metaDesc: "Modèle gratuit de refonte de site web : cadrage, audit de contenu, design, développement, migration, plan de redirections, recette et suivi.",
+    lead: "Un <strong>plan de projet de refonte de site web</strong> gratuit couvrant le projet complet — cadrage, arborescence et audit de contenu, design, développement, migration des contenus, plan de redirections SEO, recette et suivi après la mise en ligne.",
+    intro: "Les refontes échouent rarement sur le design. Elles échouent sur les deux chemins ingrats que personne ne dote correctement — déplacer le contenu et faire correspondre les URL — et le modèle leur donne donc chacun une phase avec ses propres antériorités :",
+    phases: [
+      [
+        "Cadrage",
+        "Entretiens avec les parties prenantes, analyse de l’audience et de la Search Console, étude de la concurrence et des utilisateurs, exigences et indicateurs de réussite validés. <em>Jalon : cadrage validé.</em>"
+      ],
+      [
+        "Arborescence et audit de contenu",
+        "Inventaire complet des URL par exploration, décision conserver / fusionner / supprimer pour chaque page, arborescence et navigation, maquettes fonctionnelles des gabarits clés. <em>Jalon : arborescence validée.</em>"
+      ],
+      [
+        "Design",
+        "Direction artistique, système de design et composants, maquettes des pages clés, revue responsive et revue d’accessibilité. <em>Jalon : design validé.</em>"
+      ],
+      [
+        "Développement",
+        "Environnements et installation du CMS, développement des gabarits et des composants, intégrations et formulaires, et mise en place du plan de mesure. <em>Jalon : périmètre fonctionnel complet.</em>"
+      ],
+      [
+        "Migration des contenus",
+        "Tableau de correspondance, réécriture et optimisation des contenus, migration des médias et chargement effectif dans le CMS. <em>Jalon : gel du contenu sur l’ancien site.</em>"
+      ],
+      [
+        "SEO et plan de redirections",
+        "Correspondance de chaque ancienne URL vers la nouvelle pour toute page modifiée, règles de redirection construites et testées, métadonnées et données structurées, canoniques et sitemap XML. <em>Jalon : plan de redirections validé.</em>"
+      ],
+      [
+        "Recette",
+        "Tests navigateurs et appareils, audit d’accessibilité, signaux web essentiels (Core Web Vitals), exploration complète des redirections sur la préproduction et recette métier. <em>Jalon : recette prononcée.</em>"
+      ],
+      [
+        "Mise en ligne et suivi",
+        "Décision de mise en ligne, bascule DNS, vérification des redirections en production, envoi du sitemap et trente jours de suivi des erreurs d’exploration et des positions."
+      ]
+    ],
+    callout: "Le plan de redirections est le projet. Chaque URL qui change sans redirection 301 est du trafic que vous avez payé pour acquérir puis jeté, et les dégâts n’apparaissent que des semaines plus tard, quand les positions sont déjà perdues. Construisez le plan à partir d’une exploration complète de l’ancien site — pas du sitemap du nouveau — et testez-le en préproduction avant la mise en ligne, pas après.",
+    customize: [
+      "Lancer l’inventaire des URL dès la première semaine : l’exploration de l’existant alimente l’audit de contenu, le tableau de migration et le plan de redirections.",
+      "Ajouter une ligne par type de contenu ou par rubrique si vous migrez des milliers de pages : une barre unique « migrer le contenu » cache toujours un mois.",
+      "Allonger honnêtement la barre de réécriture : c’est la tâche la plus sous-estimée du projet, et elle demande des rédacteurs, pas des développeurs.",
+      "Garder un jalon de gel du contenu sur l’ancien site, pour que la migration ne coure pas après une cible mouvante.",
+      "Faire de l’exploration des redirections en préproduction une antériorité ferme de la décision de mise en ligne, et non une politesse de recette.",
+      "Étendre la barre de suivi à trente jours au minimum : les moteurs mettent des semaines à réexplorer et à retraiter un site modifié."
+    ],
+    tips: [
+      "<strong>Explorez l’ancien site avant toute autre chose.</strong> On n’audite, ne migre et ne redirige pas ce que l’on n’a pas inventorié, et la plupart des organisations ont bien plus d’URL en ligne qu’elles ne le pensent.",
+      "<strong>Ne mettez pas en ligne un vendredi.</strong> Les problèmes de redirection et d’indexation apparaissent en quelques heures et demandent des gens disponibles pour les corriger.",
+      "<strong>Testez les redirections en préproduction avec le vrai tableau.</strong> Un sondage sur dix URL ne prouve rien : explorez toute la liste des anciennes URL contre la préproduction et vérifiez chaque code de réponse.",
+      "<strong>Gardez l’ancienne mesure d’audience en parallèle.</strong> Sans référence comparable, impossible de dire si une baisse de trafic après la mise en ligne est saisonnière ou auto-infligée.",
+      "<strong>Rédigez le contenu avant que les gabarits soient finis.</strong> Un contenu qui attend le design est la première cause d’une date de mise en ligne repoussée deux fois.",
+      "<strong>Posez la référence à la validation du design.</strong> Avant, le périmètre bouge encore ; après, c’est l’écart que le comité de pilotage doit regarder."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une refonte de site web ?",
+        "Généralement 4 à 9 mois pour un site de taille moyenne, la durée dépendant surtout du volume de contenu et non du design ou du développement. Le modèle propose environ neuf mois, à comprimer en réduisant le périmètre, pas le temps de migration."
+      ],
+      [
+        "Qu’est-ce qu’un plan de redirections et pourquoi est-ce important ?",
+        "C’est une correspondance ligne à ligne de chaque ancienne adresse vers la nouvelle, mise en œuvre en redirections 301. Sans lui, chaque URL modifiée perd son historique de référencement et les liens entrants qui pointaient vers elle. D’où une phase dédiée ici."
+      ],
+      [
+        "Quand commencer la migration des contenus ?",
+        "Dès que l’audit de contenu est terminé et que le tableau de correspondance existe, bien avant la fin du développement. Le contenu est le poste le plus long, et le démarrer après les gabarits ajoute des mois."
+      ],
+      [
+        "Que surveiller après la mise en ligne ?",
+        "Les erreurs d’exploration et les 404, la couverture d’indexation, les positions sur vos requêtes prioritaires et le trafic organique comparé à la référence d’avant refonte, pendant au moins trente jours. Les quatre figurent sur le planning comme de vraies tâches."
+      ],
+      [
+        "Le modèle de refonte de site est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
 };
 
 const UI = {
