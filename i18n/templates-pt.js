@@ -4539,6 +4539,782 @@ const T = {
       ]
     ]
   },
+
+  'water-treatment-plant-construction-schedule': {
+    card: "Licenciamento ambiental, obra civil, montagem, partida úmida e teste de desempenho.",
+    h1: "Cronograma de obra de estação de tratamento de água",
+    metaTitle: "Cronograma de estação de tratamento",
+    metaDesc: "Cronograma gratuito de estação de tratamento: obra civil, montagem eletromecânica, partida úmida, inoculação de lodo e teste de desempenho.",
+    lead: "Um modelo gratuito de <strong>cronograma de obra de estação de tratamento de água</strong> que trata o comissionamento como o projeto de verdade, e não como um rabicho de duas semanas no fim da obra — licenciamento ambiental e concepção do processo, estruturas de concreto e ensaio de estanqueidade, montagem eletromecânica, testes funcionais com água limpa e, só então, a partida úmida com inoculação de lodo biológico e o teste de desempenho sustentado, acompanhado pelo órgão ambiental, antes que alguém assine um termo de recebimento. Baixe para uma reunião de revisão de fase, ou abra online e estique as barras de comissionamento até a duração que o seu processo realmente exige.",
+    intro: "Qualquer outra obra é entregue quando a lista de pendências zera. Uma estação de tratamento é entregue quando o órgão ambiental acompanhou a unidade produzindo efluente dentro dos padrões, de forma contínua, por semanas. O cronograma é construído de trás para frente a partir dessa data:",
+    phases: [
+      [
+        "Licenças, projeto e suprimentos",
+        "Caracterização da água bruta e ensaios em unidade piloto, concepção do processo e balanço de massa, projeto executivo, Licença Prévia e Licença de Instalação junto ao órgão ambiental estadual, outorga de direito de uso de recursos hídricos para captação e lançamento, e os equipamentos de longo prazo de fabricação que travam as datas de montagem. <em>Marco: Licença de Instalação emitida.</em>"
+      ],
+      [
+        "Obras civis e estruturas",
+        "Terraplenagem e fundações profundas, estrutura de chegada, decantadores, tanques do reator biológico, galeria de filtros e unidades de tratamento de lodo — e depois ensaio hidrostático de estanqueidade em cada tanque. <em>Marco: estruturas estanques.</em>"
+      ],
+      [
+        "Montagem eletromecânica",
+        "Bombas e válvulas, sopradores e a malha de difusores de aeração, meio filtrante, skids de dosagem, reator UV, painéis elétricos e grupo gerador de emergência, e a instrumentação de campo. <em>Marco: conclusão mecânica.</em>"
+      ],
+      [
+        "Automação e testes com água limpa",
+        "Configuração do supervisório, verificação das malhas de controle, ensaios de motores a vazio e testes funcionais com água limpa — provar a filosofia de operação antes que qualquer água bruta entre na unidade."
+      ],
+      [
+        "Partida úmida e inoculação biológica",
+        "Primeira água bruta, inoculação com lodo de semente vindo de uma estação em operação, crescimento da biomassa e formação de sólidos no tanque de aeração, estabelecimento da nitrificação e ajuste da idade do lodo. <em>Marco: processo biológico estabilizado.</em>"
+      ],
+      [
+        "Teste de desempenho e recebimento",
+        "Rampa até a vazão de projeto, o teste de desempenho sustentado acompanhado pelo contratante e pelo órgão ambiental, campanha de amostragem de conformidade, corrida de confiabilidade na vazão de pico, treinamento de operadores e recebimento. <em>Marco: termo de recebimento e Licença de Operação.</em>"
+      ]
+    ],
+    callout: "Comissionamento não se simula. Lodo ativado é uma cultura que precisa ser inoculada e depois crescer, e as bactérias nitrificantes em particular se dividem devagar — conte semanas, não dias, e mais ainda em período frio. Por cima disso vem um teste de desempenho acompanhado, na vazão de projeto, por um período sustentado, com os resultados medidos contra os padrões de lançamento da Resolução CONAMA 430/2011 e as condicionantes da sua licença. Essas duas barras são físicas e contratuais, nunca negociáveis, e devem ser as mais longas de todo o lado direito do gráfico.",
+    customize: [
+      "Dimensione as barras de inoculação e de crescimento da biomassa pelos números do projetista do processo e pela estação do ano da partida — começar no inverno pode acrescentar várias semanas só na nitrificação.",
+      "Ajuste o teste de desempenho à duração escrita no contrato e nas condicionantes da licença; 28 dias é comum, mas muitos empreendimentos exigem mais, ou uma repetição integral se uma amostra reprovar.",
+      "Acrescente uma barra de recoleta e reteste depois do teste de desempenho. Supor aprovação de primeira é o erro de programação mais frequente nesse tipo de obra.",
+      "Divida o ensaio de estanqueidade em uma linha por tanque se você vai enchê-los em sequência — um tanque reprovado precisa ser esvaziado, secado, reparado e reenchido.",
+      "Antecipe a configuração do supervisório: ela depende dos fluxogramas de processo e instrumentação, não do concreto, e é sistematicamente iniciada tarde demais.",
+      "Marque como marcos a Licença de Instalação, a estanqueidade das estruturas, a conclusão mecânica, a primeira água bruta e a Licença de Operação — são as datas que o conselho do contratante e o órgão ambiental acompanham."
+    ],
+    tips: [
+      "<strong>Comunique formalmente ao órgão ambiental a data de início dos testes com boa antecedência.</strong> O acompanhamento depende da agenda deles, não da sua, e uma notificação atrasada empurra o recebimento em um mês mesmo com a estação pronta.",
+      "<strong>Contrate o lodo de semente cedo e por escrito.</strong> Ele vem de outra estação em operação, exige frota de caminhões-tanque e uma janela de entrega; uma unidade cheia de água bruta esperando inóculo está queimando folga à toa.",
+      "<strong>Prove a automação com água limpa primeiro.</strong> Caçar um transmissor de nível ruim ou uma válvula com ação invertida enquanto o processo biológico tenta estabilizar custa muito mais do que as duas semanas da fase de água limpa.",
+      "<strong>Não sobreponha o teste de desempenho a serviços pendentes.</strong> Uma equipe ainda instalando guarda-corpos durante um teste acompanhado dá ao fiscal um motivo fácil para invalidar a corrida.",
+      "<strong>Olhe os padrões de lançamento, não o medidor de vazão.</strong> Atingir a vazão de projeto prova a hidráulica; só a conformidade analítica sustentada prova o processo, e é a segunda que gera o certificado.",
+      "<strong>Treine os operadores durante o comissionamento, não depois.</strong> A equipe de comissionamento é a única que verá a estação em todos os modos de falha, e esse conhecimento vai embora do canteiro junto com ela."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva construir uma estação de tratamento de água?",
+        "Uma estação municipal de porte médio costuma levar de 24 a 36 meses do licenciamento ao recebimento, e o modelo usa aproximadamente isso. A obra civil é previsível; a variação mora nas licenças, na frente, e no comissionamento, no fim."
+      ],
+      [
+        "Por que o comissionamento demora tanto?",
+        "Porque um processo biológico é cultivado, não ligado. Inoculação, crescimento da biomassa e estabelecimento da nitrificação levam semanas, e só depois de o processo estar estável é que um teste de desempenho sustentado pode começar."
+      ],
+      [
+        "O que é um teste de desempenho acompanhado?",
+        "Uma operação contínua na vazão de projeto em que a estação precisa produzir efluente dentro dos padrões da licença, com amostragem e observação do contratante e do órgão ambiental. Passar nele — e não terminar a obra — é o que dispara o recebimento."
+      ],
+      [
+        "Dá para encurtar o comissionamento inoculando mais cedo?",
+        "Só um pouco. Você pode pré-contratar o lodo de semente e ter os caminhões prontos no dia em que a água bruta entrar, mas a curva de crescimento é biologia. Comprimir o programa tem que vir das fases de obra civil e montagem."
+      ],
+      [
+        "Como programar uma amostra de conformidade reprovada?",
+        "Acrescente uma barra de contingência para recoleta e, em muitos contratos, uma repetição integral do período de teste. Montar o cronograma supondo aprovação de primeira é como esses projetos estouram no último portão."
+      ],
+      [
+        "O modelo de estação de tratamento é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'airport-terminal-expansion-plan': {
+    card: "Interdições faseadas, tapumes, credenciamento no lado ar, bagagem, ORAT e virada.",
+    h1: "Plano de ampliação de terminal aeroportuário",
+    metaTitle: "Plano de ampliação de terminal",
+    metaDesc: "Plano gratuito de ampliação de terminal: interdições faseadas, tapumes, acesso ao lado ar, inspeção de segurança, bagagem, ORAT e virada.",
+    lead: "Um modelo gratuito de <strong>plano de ampliação de terminal aeroportuário</strong> para construir num terminal que nunca fecha — interdições faseadas atrás de tapumes, autorizações de trabalho no lado ar e acesso escoltado, rotas provisórias de passageiros, capacidade de inspeção de segurança mantida no nível da hora-pico em cada troca, integração do sistema de bagagens, ORAT e uma virada feita de madrugada. Baixe para um comitê de programa, ou abra online e alinhe as interdições à sazonalidade real do seu movimento.",
+    intro: "Uma ampliação não é um projeto com seis fases; é uma sequência de interdições negociadas dentro de uma operação viva. O modelo mantém a restrição operacional visível em todas as fases:",
+    phases: [
+      [
+        "Planejamento, interface operacional e autorizações",
+        "Modelagem de fluxo de passageiros, acordo com companhias aéreas e empresas de handling, estratégia de faseamento e de interdições, autorização da ANAC para alteração das características físicas do aeródromo, análise do DECEA para guindastes e obstáculos, e o processo de credenciamento dos contratados. <em>Marco: calendário de interdições acordado.</em>"
+      ],
+      [
+        "Projeto e obras preliminares",
+        "Estudo preliminar e projeto executivo, projeto de segurança contra incêndio para aprovação do Corpo de Bombeiros, linhas de tapume e sinalização provisória, remanejamento de utilidades e as rotas provisórias de passageiros que precisam existir antes de qualquer coisa fechar. <em>Marco: obras preliminares concluídas.</em>"
+      ],
+      [
+        "Interdição 1 — ampliação do píer",
+        "Tapumes erguidos, reconfiguração de pátio e posições de estacionamento de aeronaves, estrutura e vedação do píer, pontes de embarque e salas de embarque, e devolução das posições à operação. <em>Marco: posições devolvidas à operação.</em>"
+      ],
+      [
+        "Interdição 2 — inspeção de segurança e check-in",
+        "Canais provisórios de inspeção comprovados primeiro na hora-pico, depois demolição do check-in, novas ilhas, montagem do canal central de inspeção e obras nas áreas de Polícia Federal, Receita Federal e ANVISA."
+      ],
+      [
+        "Bagagem e integração de sistemas",
+        "Instalação do sistema de tratamento de bagagens, inspeção de bagagem despachada, testes de triagem e destinação, painéis de voo e sonorização, CFTV e controle de acesso, e os sistemas compartilhados de check-in das companhias. <em>Marco: integração de sistemas concluída.</em>"
+      ],
+      [
+        "ORAT, ensaios e virada",
+        "Prontidão operacional, familiarização das equipes, operação assistida com passageiros voluntários, simulados de abandono, vistoria dos órgãos anuentes e a virada de madrugada. <em>Marco: operação plena.</em>"
+      ]
+    ],
+    callout: "Nunca retire capacidade de inspeção de segurança antes de ter comprovado a substituta na hora-pico. Tudo o mais num terminal em operação se contorna — uma caminhada mais longa, uma placa provisória, uma loja realocada — mas uma fila de inspeção que estoura o tempo-alvo é uma falha operacional reportável, sujeita a cobrança do operador e da ANAC, e ela derruba a sua interdição em poucos dias. Coloque um marco de comprovação de capacidade na frente de toda troca que encoste no canal central de inspeção.",
+    customize: [
+      "Substitua as duas interdições pelas suas, e dê a cada uma datas de início e fim acordadas com a operação do aeroporto, e não com a construtora.",
+      "Ajuste as janelas de interdição à sua baixa temporada real e olhe a previsão de movimento, não a do ano passado — uma interdição dimensionada para maio não cabe em julho.",
+      "Acrescente uma linha de emissão de credenciais por leva de trabalhadores; a verificação de antecedentes para acesso à área restrita tem prazo próprio e já travou mais mobilizações do que falta de material.",
+      "Insira uma barra de trabalho noturno onde o serviço não puder ocorrer em horário de operação, e dimensione as escoltas que vêm junto.",
+      "Divida o teste do sistema de bagagens em instalação, integração e teste de volume e triagem; o último é o que encontra os problemas e é justamente o que é espremido.",
+      "Marque como marcos o calendário de interdições, a devolução das posições, a comprovação de capacidade de inspeção, a integração de sistemas e a operação plena."
+    ],
+    tips: [
+      "<strong>O calendário de interdições é o programa.</strong> Depois que operação, companhias aéreas e empresas de handling assinam, a sequência construtiva é derivada dele — e não o contrário.",
+      "<strong>Construa a rota provisória antes de precisar dela e percorra-a com carga real de passageiros.</strong> Uma sinalização provisória que fica ótima em planta falha às seis da manhã com um voo internacional cheio e uma família com três carrinhos.",
+      "<strong>Trate o acesso ao lado ar como um recurso com prazo de obtenção.</strong> Credenciais, escoltas, permissões de condutor no pátio e vistoria de veículos levam semanas, e uma equipe escoltada rende uma fração de uma equipe do lado terra — coloque isso nas durações.",
+      "<strong>Não deixe a integração da bagagem começar depois do prédio pronto.</strong> Um sistema de bagagens é uma máquina com curva longa de testes; triagem e reconciliação exigem meses e estão no caminho crítico da abertura.",
+      "<strong>Faça uma operação assistida de verdade, com passageiros voluntários.</strong> Ela revela os estrangulamentos de fila, as lacunas de painel de voo e a falta de pessoal que nenhum teste de sistema revela, e sai muito mais barato do que descobrir isso no primeiro dia.",
+      "<strong>Planeje a virada como uma operação noturna com ponto de aborto.</strong> Defina antes em que estado o terminal precisa estar até determinada hora para a virada seguir, e para o que você volta se não estiver."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva ampliar um terminal aeroportuário?",
+        "Ampliações faseadas de um terminal em operação costumam levar de dois a quatro anos, porque a obra é entregue em interdições negociadas e não de forma contínua. O modelo usa um programa de cerca de dois anos, que você estende acrescentando interdições."
+      ],
+      [
+        "O que é ORAT e quando deve começar?",
+        "Operational readiness and airport transfer — a prontidão operacional e transferência para a operação, cobrindo procedimentos, dimensionamento de pessoal, familiarização e ensaios. Deve começar com a obra ainda correndo, tipicamente de seis a nove meses antes da abertura, e não depois do recebimento."
+      ],
+      [
+        "Como manter a capacidade de inspeção de segurança durante a obra?",
+        "Comissione os canais provisórios primeiro e comprove-os na hora-pico antes de encostar na área de inspeção existente. O modelo transforma essa comprovação em um marco que libera a segunda interdição."
+      ],
+      [
+        "Por que obras no lado ar demoram mais do que as mesmas obras no lado terra?",
+        "Credenciamento, escoltas, permissões de veículo, horários restritos e disponibilidade de posições reduzem a produtividade efetiva. Planeje durações no lado ar bem acima do mesmo escopo no lado terra e acrescente uma barra de credenciamento."
+      ],
+      [
+        "Qual a diferença para um terminal novo?",
+        "Um terminal novo não tem passageiros a proteger e pode ser sequenciado pela eficiência construtiva. Este modelo é organizado em torno de interdições, rotas provisórias e capacidade preservada, que é exatamente o que torna uma ampliação mais lenta."
+      ],
+      [
+        "O modelo de ampliação de terminal é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'fiber-broadband-rollout-plan': {
+    card: "Compartilhamento de postes, licenças, ondas por área, testes OTDR e ativação.",
+    h1: "Plano de expansão de rede de fibra óptica",
+    metaTitle: "Plano de expansão de fibra óptica",
+    metaDesc: "Plano gratuito de expansão de fibra óptica: compartilhamento de postes, licenças municipais, ondas por área, testes OTDR e ativação.",
+    lead: "Um modelo gratuito de <strong>plano de expansão de rede de fibra óptica</strong> montado do jeito que um projeto FTTH realmente roda — uma sequência por área, repetível, executada em ondas sobrepostas, condicionada à aprovação de compartilhamento de postes, ao licenciamento municipal da obra em via pública e à disponibilidade de infraestrutura, com cada área terminando no seu próprio marco de disponibilidade para venda, e com as conexões e a receita só começando depois que esse marco cai. Baixe para um material de conselho ou de investidor, ou abra online e acrescente quantas ondas de área o seu plano de construção exigir.",
+    intro: "Uma expansão de fibra não é uma obra longa; são os mesmos seis passos repetidos por área, deslocados no tempo. O modelo mostra o padrão de forma explícita, para que você copie uma onda em vez de inventar um plano novo a cada área:",
+    phases: [
+      [
+        "Estruturação do programa e projeto de alto nível",
+        "Avaliação de demanda e priorização de áreas, projeto de rede e dos pontos de presença, contratação das empreiteiras, compra de backbone e transporte, outorga ou licença de SCM junto à Anatel, e o modelo de dados de as-built de que tudo depois depende. <em>Marco: plano de expansão aprovado.</em>"
+      ],
+      [
+        "Licenças, postes e levantamento",
+        "Licenciamento municipal da obra em via pública e autorização de uso do subsolo, projeto de ocupação de postes submetido à distribuidora de energia dentro das regras de compartilhamento ANEEL/Anatel, acordos com condomínios amparados na Lei 13.116/2015, e levantamento de campo da disponibilidade de dutos e pontos de fixação. <em>Marco: postes e licenças liberados para a onda 1.</em>"
+      ],
+      [
+        "Área A — obra da onda 1",
+        "Projeto detalhado e plano de fusões, desobstrução de dutos e obra civil, lançamento de cabo e passagem em postes, fusões e montagem de armários ópticos, testes com OTDR e entrega do as-built. <em>Marco: área A disponível para venda.</em>"
+      ],
+      [
+        "Área B — obra da onda 2",
+        "A sequência idêntica, iniciada enquanto a área A ainda está em obra civil, para que equipes e licenças fluam sem parada. <em>Marco: área B disponível para venda.</em>"
+      ],
+      [
+        "Área C — obra da onda 3",
+        "A terceira onda, com o seu próprio prazo de aprovação de postes na frente — o passo que as equipes mais esquecem de deslocar. <em>Marco: área C disponível para venda.</em>"
+      ],
+      [
+        "Ativação, vendas e conexões",
+        "Comissionamento dos pontos de presença, provisionamento nos sistemas de OSS/BSS, pré-marketing, escalonamento das equipes de instalação e as campanhas de conexão por área, que geram a receita. <em>Marco: revisão de adesão e decisão sobre a próxima onda.</em>"
+      ]
+    ],
+    callout: "Nada é faturável antes de a área estar disponível para venda. Domicílios passados é métrica de obra; domicílios conectados é a métrica de receita, e é na distância entre as duas que os planos de negócio de fibra morrem. Coloque um marco de disponibilidade em cada área, comece a barra de conexões a partir dele, e seja honesto: um projeto de ocupação de postes recusado pela distribuidora ou um duto obstruído não atrasa uma tarefa — atrasa a receita de uma área inteira em um trimestre.",
+    customize: [
+      "Copie o bloco da área A uma vez por área de construção e desloque os inícios; a sequência é propositalmente idêntica para ser duplicada, não reescrita.",
+      "Ajuste as barras de licenciamento e de compartilhamento de postes aos prazos da sua prefeitura e da sua distribuidora, que variam enormemente entre municípios e não encurtam por pressão na empreiteira.",
+      "Acrescente uma barra de remediação de infraestrutura com contingência realista — dutos obstruídos e postes sem ponto de fixação disponível aparecem no levantamento, não no projeto, e mudam ruas inteiras de rota.",
+      "Separe lançamento de cabo de fusão se equipes diferentes fazem cada um; têm diárias e sensibilidades a chuva diferentes.",
+      "Insira um subplano de condomínios onde for relevante — aprovação em assembleia e distribuição interna correm num relógio completamente distinto do da obra em via pública.",
+      "Marque a disponibilidade de cada área como marco e comece a barra de conexões daquela área a partir dele, para o gráfico mostrar a receita seguindo a obra, e não correndo ao lado dela."
+    ],
+    tips: [
+      "<strong>Comece o processo de compartilhamento de postes antes de o projeto estar pronto.</strong> É o item de maior prazo de todo o programa e depende da fila de análise da distribuidora, não dos seus engenheiros.",
+      "<strong>Levante os dutos e os postes antes de comprometer uma área com uma onda.</strong> Os cadastros de infraestrutura estão frequentemente errados, e descobrir um duto obstruído depois da mobilização custa à área a sua vaga no cronograma.",
+      "<strong>Sobreponha as ondas de propósito, e não por acidente.</strong> O objetivo do planejamento por ondas é manter uma equipe de obra civil, uma de fusão e uma de instalação continuamente carregadas; buraco entre ondas é custo puro.",
+      "<strong>Faça o provisionamento em OSS/BSS funcionar na onda 1, não antes da onda 3.</strong> Uma área pode estar fisicamente pronta e ainda assim invendável porque pedido, provisionamento e faturamento não conversam.",
+      "<strong>Faça pré-marketing na área antes de ela ficar disponível.</strong> Cadastro de interesse durante a obra converte muito melhor do que campanha fria depois que as vans foram embora, e antecipa a curva de conexões.",
+      "<strong>Acompanhe o custo por domicílio passado por área, e não no programa inteiro.</strong> Uma área difícil, cheia de remediação, se esconde dentro de uma média e consome silenciosamente a contingência de três áreas fáceis."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a expansão de fibra por área?",
+        "Uma área típica de alguns milhares de domicílios leva de quatro a seis meses do projeto detalhado até ficar disponível para venda, que é o que o modelo usa. A duração do programa vem de quantas áreas você roda em paralelo, e não da duração por área."
+      ],
+      [
+        "O que significa a área estar disponível para venda?",
+        "É o ponto em que a área foi construída, testada e carregada nos sistemas de pedido, de modo que clientes podem de fato ser conectados. É o marco que inicia a receita, e ele deve ser acompanhado por área."
+      ],
+      [
+        "Por que o compartilhamento de postes fica no caminho crítico?",
+        "Porque depende da análise e da capacidade disponível na rede de um terceiro, a distribuidora de energia, que não tem incentivo para andar no seu ritmo. Costuma levar meses, não encurta com mais gente, e uma recusa por falta de ponto de fixação pode forçar o reprojeto da área."
+      ],
+      [
+        "Quantas ondas devem correr ao mesmo tempo?",
+        "As suficientes para manter as equipes de obra civil e de fusão continuamente carregadas sem estourar a vazão de licenças que a prefeitura consegue emitir. Duas a três ondas sobrepostas é o comum; o modelo mostra três."
+      ],
+      [
+        "Por que domicílios conectados fica tão abaixo de domicílios passados?",
+        "Porque a conexão depende de marketing, de capacidade de agenda de instalação e da data de término do contrato do cliente com a operadora atual, e nada disso acontece no dia em que a área fica pronta. Modele a curva de adesão separadamente da curva de obra."
+      ],
+      [
+        "O modelo de expansão de fibra é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'stadium-construction-schedule': {
+    card: "Arquibancadas, içamento da cobertura, acabamento, gramado, laudos e jogo de estreia.",
+    h1: "Cronograma de construção de estádio",
+    metaTitle: "Cronograma de construção de estádio",
+    metaDesc: "Cronograma gratuito de construção de estádio: arquibancadas pré-moldadas, içamento da cobertura, acabamento, gramado, laudos e jogo de estreia.",
+    lead: "Um modelo gratuito de <strong>cronograma de construção de estádio</strong> planejado de trás para frente a partir de uma data que ninguém no projeto controla — o jogo de estreia na tabela do campeonato. Ele cobre a estrutura do anel e as arquibancadas pré-moldadas, a cobertura metálica e o içamento com a sua janela de tempo bom, o acabamento de concourses e camarotes, a construção do gramado com o seu período de pega, e os jogos-teste e os laudos técnicos que separam a conclusão da obra de uma casa cheia. Baixe para uma reunião de conselho, ou abra online e arraste a data do jogo para ver o que quebra.",
+    intro: "A maioria dos cronogramas de obra negocia a data de término. Este não pode: a tabela está publicada, os ingressos estão à venda, e dois dos itens mais longos — a pega do gramado e o içamento da cobertura — dependem de clima e de biologia, e não de efetivo. O modelo sequencia de acordo:",
+    phases: [
+      [
+        "Projeto, licenças e obras preliminares",
+        "Definição de capacidade, a data fixa de estreia, alvará de construção e a estratégia de obtenção dos laudos exigidos pelo Estatuto de Defesa do Torcedor, projeto do anel, o pacote de estrutura metálica e a preparação do canteiro. <em>Marco: data do jogo de estreia fixada.</em>"
+      ],
+      [
+        "Infraestrutura e anel",
+        "Estaqueamento e fundações, subsolo e túneis de serviço, estrutura moldada in loco, fabricação e montagem dos degraus pré-moldados das arquibancadas. <em>Marco: estrutura do anel concluída.</em>"
+      ],
+      [
+        "Cobertura e vedação",
+        "Fabricação da estrutura metálica da cobertura, anel de compressão, tensionamento da malha de cabos, o grande içamento dentro da sua janela climática, e o fechamento das fachadas. <em>Marco: envoltória estanque.</em>"
+      ],
+      [
+        "Acabamento, camarotes e sistemas",
+        "Concourses, camarotes e áreas de hospitalidade, cozinhas e praças de alimentação, cadeiras, iluminação de campo e telões, catracas e bilheteria eletrônica, infraestrutura de transmissão e a central de segurança."
+      ],
+      [
+        "Campo e gramado",
+        "Escavação e drenagem, irrigação e aeração do subsolo, camada de rootzone, plantio da grama e o período de pega e enraizamento. <em>Marco: gramado entregue à equipe de campo.</em>"
+      ],
+      [
+        "Jogos-teste, laudos e abertura",
+        "Vistoria conjunta com Corpo de Bombeiros, Polícia Militar, Defesa Civil e vigilância sanitária, emissão dos laudos de estabilidade estrutural, de segurança, de prevenção de incêndio e de condições sanitárias, treinamento dos orientadores de público, um jogo-teste com público reduzido, um jogo-teste com público quase pleno, e a bola rolando. <em>Marco: jogo de estreia.</em>"
+      ]
+    ],
+    callout: "Duas barras deste gráfico não aceitam compressão. O içamento da cobertura precisa de uma janela de tempo estável e de um guindaste reservado com meses de antecedência; o gramado precisa de um período de pega medido em semanas de temperatura e luz adequadas antes de aguentar uma partida. As duas ficam no fim do programa, as duas são sazonais, e as duas alimentam uma data de jogo que não vai se mover. Programe-as primeiro e encaixe o resto da obra em volta delas.",
+    customize: [
+      "Coloque a data real do seu jogo de estreia e trabalhe de trás para frente — o modelo é construído de propósito com o último marco fixo e a folga jogada para a frente do cronograma.",
+      "Ajuste a barra de pega do gramado ao seu clima e ao tipo de grama; um plantio na primavera com chuva regular estabelece muito mais rápido do que um plantio em pleno período seco, e essa diferença pode valer uma rodada inteira.",
+      "Mova o içamento da cobertura para a sua estação de menos vento e chuva e acrescente uma barra de contingência depois dele; um içamento adiado por clima não escorrega um dia, escorrega para a próxima janela.",
+      "Acrescente uma linha por jogo-teste exigido pelas autoridades — em geral se pede uma série gradual de liberações de público, e não um único teste com casa cheia.",
+      "Divida o acabamento por setor ou anel se o estádio puder abrir parcialmente; muitos estádios recebem laudo para capacidade reduzida e concluem o restante depois.",
+      "Marque como marcos a data do jogo, o anel concluído, a envoltória estanque, a entrega do gramado, a emissão dos laudos e a estreia — são as seis datas que uma diretoria de clube pergunta."
+    ],
+    tips: [
+      "<strong>Trate a data do jogo como restrição, e não como meta.</strong> Se o caminho reverso diz que o içamento da cobertura precisa acontecer antes do período de chuvas, essa é a resposta — discutir isso em reunião de obra não muda o vento.",
+      "<strong>Encomende os pré-moldados das arquibancadas cedo a ponto de causar constrangimento.</strong> Fabricação é fila de fábrica, e os degraus são o item com maior chance de travar o anel enquanto todo mundo está olhando para a cobertura.",
+      "<strong>Coloque a construção do campo no cronograma como projeto, e não como uma linha de paisagismo.</strong> Drenagem, irrigação, rootzone e pega formam uma sequência de dois a três meses com um gramadeiro dedicado, e não uma semana de plantio.",
+      "<strong>Jogo-teste é licenciamento, não marketing.</strong> As autoridades querem ver orientação de público, entrada, saída e evacuação em cargas crescentes antes de liberar a capacidade total, e não vão encurtar essa sequência por causa de um acordo de transmissão.",
+      "<strong>Comissione a central de segurança, a sonorização e o CFTV antes do primeiro jogo-teste.</strong> São os sistemas de que os laudos de fato dependem, e costumam ser as últimas coisas energizadas.",
+      "<strong>Mantenha a abertura com capacidade reduzida como alternativa viva.</strong> Decidir isso em cima da hora é caos; decidir seis meses antes, com um gatilho definido, é plano."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva construir um estádio?",
+        "Um estádio novo de porte médio costuma levar de 24 a 36 meses de canteiro depois das licenças, que é aproximadamente o que o modelo mostra. Arenas maiores com coberturas complexas costumam levar mais, puxadas pela sequência de estrutura metálica e malha de cabos."
+      ],
+      [
+        "Por que o gramado demora tanto?",
+        "Porque a superfície é cultivada, não instalada. Depois da drenagem, da irrigação e da construção do rootzone, o gramado precisa de várias semanas de pega e enraizamento em temperatura e luz adequadas antes de suportar a carga de uma partida."
+      ],
+      [
+        "O que acontece se perdermos o jogo de estreia?",
+        "Os clubes normalmente mandam o jogo para outro estádio ou abrem com capacidade reduzida — os dois são caros e muito visíveis. É por isso que o modelo coloca uma série gradual de jogos-teste e uma decisão de capacidade alternativa dentro do programa, em vez de deixá-las ao acaso."
+      ],
+      [
+        "Quando programar o içamento da cobertura?",
+        "Dentro da sua janela sazonal mais calma, com guindaste e equipe especializada reservados com boa antecedência e uma janela de contingência já identificada. Um içamento adiado por clima costuma esperar a próxima janela, e não o dia seguinte."
+      ],
+      [
+        "Quais laudos são exigidos e quando pedir?",
+        "O Estatuto de Defesa do Torcedor exige laudos de estabilidade estrutural, de segurança, de prevenção e combate a incêndio e de condições sanitárias, emitidos após vistoria dos órgãos competentes, além do alvará de funcionamento. Os processos devem ser abertos meses antes da estreia, e não depois da conclusão da obra."
+      ],
+      [
+        "O modelo de construção de estádio é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'museum-exhibition-planning-timeline': {
+    card: "Empréstimos, seguro, conservação, couriers, estabilização da sala e montagem.",
+    h1: "Cronograma de planejamento de exposição de museu",
+    metaTitle: "Cronograma de exposição de museu",
+    metaDesc: "Cronograma gratuito de exposição de museu: pedidos de empréstimo, seguro, conservação, couriers, estabilização da sala, montagem e desmontagem.",
+    lead: "Um modelo gratuito de <strong>cronograma de planejamento de exposição de museu</strong> organizado do jeito que exposições de fato acontecem — em torno dos empréstimos. Pedidos de empréstimo e respostas dos comodantes, facilities report e apólice de seguro prego a prego, agenda dos couriers, conservação e laudos de estado, estabilização climática da sala antes de qualquer obra entrar, e então a montagem sob supervisão do courier até uma data de abertura que não se mexe. Baixe para uma reunião de projeto, ou abra online e defina a sua própria noite de abertura.",
+    intro: "Uma obra emprestada chega nas condições do comodante, na caixa do comodante, com o courier do comodante, na data que convém ao comodante. Todas as outras datas da exposição derivam disso, então o modelo põe empréstimos e couriers no centro em vez de tratá-los como logística:",
+    phases: [
+      [
+        "Concepção e desenvolvimento curatorial",
+        "Tese da exposição, lista de desejos de obras, aprovação de orçamento, submissão do projeto à Lei Rouanet e captação com patrocinadores, e o catálogo, que tem o maior prazo de produção de tudo no projeto. <em>Marco: data de abertura definida.</em>"
+      ],
+      [
+        "Empréstimos e contratos de comodato",
+        "Pedidos formais de empréstimo, respostas e substituições, envio do facilities report com as condições ambientais e de segurança do seu edifício, avaliação de valores e apólice de seguro, contratos de comodato assinados e exigências de courier. <em>Marco: checklist final congelado.</em>"
+      ],
+      [
+        "Projeto expográfico e produção",
+        "Projeto expográfico e implantação em três dimensões, comunicação visual e textos de mediação, projeto de vitrines e suportes, produção com ensaios de emissão de voláteis dos materiais, e projeto de audiovisual e iluminação."
+      ],
+      [
+        "Conservação, couriers e transporte",
+        "Levantamento de estado de conservação, tratamento e emolduramento, especificação de embalagens e caixas climatizadas, autorização do IPHAN para saída temporária de bens culturais brasileiros, admissão temporária junto à Receita Federal para as obras estrangeiras, e a coleta escoltada pelo courier. <em>Marco: obras no museu.</em>"
+      ],
+      [
+        "Preparação da sala e montagem",
+        "Desmontagem da exposição anterior, pintura, estabilização de temperatura e umidade relativa com registro contínuo dos dados, instalação de vitrines e iluminação, laudos de entrada com os couriers presentes, montagem das obras nos suportes e lacre das vitrines."
+      ],
+      [
+        "Abertura, temporada e desmontagem",
+        "Visita técnica, coletiva de imprensa, abertura, programa público, monitoramento de exposição à luz e rodízios de obras sensíveis, e depois desmontagem e devolução. <em>Marco: obras devolvidas aos comodantes.</em>"
+      ]
+    ],
+    callout: "A sala precisa estar climaticamente estável antes de qualquer obra entrar, e estabilidade leva tempo. Tinta nova libera voláteis, vitrine nova libera voláteis, e temperatura e umidade relativa precisam ficar registradas no set point acordado por um período sustentado antes de o courier de um comodante autorizar que a obra saia da caixa. Coloque um marco de dados climáticos registrados e aceitos na frente da montagem — se ele escorregar, os couriers continuam de pé na sua sala e a data de abertura não se moveu.",
+    customize: [
+      "Coloque a barra de pedidos de empréstimo pelo menos doze a dezoito meses antes da abertura para grandes comodantes internacionais; algumas instituições têm comitês que se reúnem poucas vezes por ano.",
+      "Acrescente um laço de substituição depois das respostas dos comodantes. Recusa é normal, e o cronograma deve mostrar o tempo de encontrar e pedir uma obra alternativa.",
+      "Alongue a barra de estabilização climática se você for pintar ou instalar vitrines novas perto da montagem — a emissão de voláteis é justamente o motivo de os comodantes pedirem os registros.",
+      "Acrescente uma linha por courier se as obras chegam em voos separados; cada um exige acompanhamento, hospedagem e uma janela de laudo de entrada na sala.",
+      "Insira rodízios de obras fotossensíveis na fase de temporada, onde uma peça não puder ficar exposta o período inteiro dentro dos limites de lux e de exposição acumulada do comodante.",
+      "Marque como marcos a data de abertura, o congelamento do checklist, a chegada das obras e a devolução — são as quatro datas que a conservação e a direção acompanham juntas."
+    ],
+    tips: [
+      "<strong>Congele o checklist e depois defenda-o.</strong> Cada obra acrescentada tarde reinicia contrato de comodato, seguro, embalagem, produção de suporte e comunicação visual — é o tipo de mudança mais caro que existe numa exposição.",
+      "<strong>Envie o facilities report cedo e sem esperarem pedir.</strong> Os comodantes avaliam o seu edifício antes de avaliarem a sua proposta, e um relatório desatualizado é uma causa comum e totalmente evitável de atraso.",
+      "<strong>Agende os couriers pela agenda do comodante, não pela sua.</strong> O courier é um funcionário nomeado da instituição emprestadora, com calendário próprio; dois comodantes querendo a mesma semana é uma restrição real e frequente.",
+      "<strong>Produza os suportes depois do congelamento do checklist, não antes.</strong> Suporte é feito sob medida para a obra, e uma substituição significa refazer o suporte sem nenhum tempo previsto no programa para isso.",
+      "<strong>Trate o laudo de entrada como tempo de sala, e não como papelada.</strong> Ele é feito com o courier presente, obra por obra, e ocupa dias da janela de montagem que as pessoas rotineiramente esquecem de programar.",
+      "<strong>Programe a desmontagem e a devolução com o mesmo cuidado da montagem.</strong> Laudos de saída, reembalagem e escolta de courier se repetem inteiros, e os comodantes julgam você tanto pela devolução quanto pela exposição."
+    ],
+    faq: [
+      [
+        "Com quanta antecedência começar o planejamento de uma exposição?",
+        "Para uma exposição baseada em empréstimos, de dois a três anos é o normal, e o modelo cobre aproximadamente os últimos dezoito meses. Pedidos a grandes comodantes internacionais devem sair pelo menos de doze a dezoito meses antes da abertura."
+      ],
+      [
+        "O que é um facilities report?",
+        "Um documento padronizado que descreve o controle ambiental, a segurança, a proteção contra incêndio e os procedimentos de manuseio do seu edifício. Os comodantes o usam para decidir se emprestam, então ele precisa estar atualizado antes de os pedidos saírem."
+      ],
+      [
+        "Por que a sala precisa estabilizar antes da montagem?",
+        "Porque tinta nova e vitrine nova liberam voláteis, e temperatura e umidade relativa precisam permanecer no set point acordado tempo suficiente para gerar registro. Couriers rotineiramente se recusam a desembalar em um ambiente sem dados comprovados."
+      ],
+      [
+        "E se um comodante recusar?",
+        "Você substitui, o que reinicia a cadeia de contrato, seguro, embalagem e produção de suporte daquela obra. Coloque um laço de substituição no cronograma em vez de supor que todo pedido será aceito."
+      ],
+      [
+        "Quanto tempo deve ter a janela de montagem?",
+        "Reserve algumas semanas entre a entrega da sala e a abertura: vitrines e iluminação, comunicação visual, laudos de entrada com os couriers, montagem e lacre acontecem em sequência e obra por obra."
+      ],
+      [
+        "O modelo de exposição de museu é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'iso-27001-certification-plan': {
+    card: "Escopo, riscos, Declaração de Aplicabilidade, auditoria interna e as duas fases.",
+    h1: "Plano de certificação ISO 27001",
+    metaTitle: "Plano de certificação ISO 27001",
+    metaDesc: "Plano gratuito de certificação ISO 27001: escopo, análise de riscos, Declaração de Aplicabilidade, controles, auditoria interna, Fase 1 e Fase 2.",
+    lead: "Um modelo gratuito de <strong>plano de certificação ISO 27001</strong> disposto do jeito que um organismo certificador realmente avalia você — escopo do sistema de gestão de segurança da informação, análise de riscos e Declaração de Aplicabilidade, implementação dos controles, um período de operação de verdade que gera registros, e então a auditoria interna e a análise crítica pela direção, que precisam estar concluídas antes da Fase 2, e por fim a auditoria em duas fases em si. Se você também mantém um sistema da qualidade, o <a href=\"/templates/iso-9001-certification-plan.html\">plano de certificação ISO 9001</a> usa o mesmo formato de auditoria.",
+    intro: "A auditoria de certificação não é um evento único. É uma análise documental, depois um intervalo obrigatório em que você corrige o que ela apontou, e só então uma auditoria completa de evidências — e é esse intervalo que impede que planos de ISO 27001 sejam espremidos no fim:",
+    phases: [
+      [
+        "Escopo e análise de lacunas",
+        "Limites do sistema de gestão, partes interessadas e obrigações legais — incluindo a LGPD e as orientações da ANPD, que quase sempre entram no escopo no Brasil —, análise de lacunas contra os controles do Anexo A, e a escolha do organismo certificador acreditado pelo Inmetro, que é também quando as duas datas de auditoria são reservadas. <em>Marco: escopo e linha de base de lacunas acordados.</em>"
+      ],
+      [
+        "Análise de riscos e Declaração de Aplicabilidade",
+        "Inventário de ativos de informação, metodologia de risco, identificação e avaliação dos riscos, plano de tratamento de riscos, e a Declaração de Aplicabilidade que registra quais controles se aplicam e por quê. <em>Marco: Declaração de Aplicabilidade e tratamento de riscos aprovados.</em>"
+      ],
+      [
+        "Implementação dos controles",
+        "O conjunto de políticas, controle de acesso e identidade, controles de fornecedores e de nuvem, desenvolvimento seguro e gestão de mudanças, controles físicos e de pessoas, e os procedimentos de incidentes e de continuidade. <em>Marco: controles implementados.</em>"
+      ],
+      [
+        "Operar e acumular registros",
+        "A fase que não encurta: rodar os controles tempo suficiente para que revisões de acesso, monitoramento de logs, avaliações de fornecedores e um exercício de incidente tenham de fato acontecido e deixado registro. <em>Marco: três meses de registros disponíveis.</em>"
+      ],
+      [
+        "Auditoria interna e análise crítica",
+        "Uma auditoria interna completa do sistema de gestão, as não conformidades que ela levanta, as ações corretivas e a reunião de análise crítica pela direção. As duas são entradas obrigatórias e as duas precisam estar encerradas antes da Fase 2. <em>Marco: auditoria interna e análise crítica concluídas.</em>"
+      ],
+      [
+        "Auditoria Fase 1 e Fase 2",
+        "A auditoria documental da Fase 1, suas constatações, a janela de ação corretiva, a atualização das evidências, a auditoria da Fase 2, o encerramento das não conformidades e a emissão do certificado. <em>Marco: certificado emitido.</em>"
+      ]
+    ],
+    callout: "Fase 1 e Fase 2 são separadas de propósito, e o intervalo entre elas não é folga. A Fase 1 testa se a documentação do seu sistema de gestão é capaz de ser certificada; ela quase sempre levanta constatações, e a Fase 2 não passa enquanto elas não forem encerradas. Reserve de seis a oito semanas entre as duas visitas e coloque trabalho real dentro delas. O outro item imóvel é o tempo decorrido: o auditor na Fase 2 amostra registros, e registros só existem se os controles estiverem rodando. Não dá para implantar uma revisão de acessos em março e mostrar um ano de evidência em abril.",
+    customize: [
+      "Contrate o organismo certificador cedo e fixe primeiro a data da Fase 2 — tudo antes dela é contagem regressiva, não estimativa.",
+      "Mantenha pelo menos seis semanas entre Fase 1 e Fase 2 para ação corretiva; encurtar esse intervalo é a causa mais comum de uma Fase 2 reprovada.",
+      "Expanda as linhas de implementação de controles para uma linha por tema do Anexo A, ou por controle, assim que a Declaração de Aplicabilidade for aprovada.",
+      "Alongue a fase de operação se o seu tratamento de riscos depende de controles com ciclo trimestral ou anual — você precisa de pelo menos um ciclo completo de evidência.",
+      "Acrescente linhas para cada exclusão de escopo que você precisa justificar, porque é justamente nelas que a Fase 1 vai cutucar mais forte.",
+      "Coloque a auditoria de manutenção do primeiro ano como uma linha com data, para que o sistema de gestão continue tendo recurso depois do certificado."
+    ],
+    tips: [
+      "<strong>A Declaração de Aplicabilidade comanda tudo o que vem depois dela.</strong> Enquanto ela não estiver aprovada, você não sabe quais controles está construindo, então estimativa de implementação antes desse ponto é chute.",
+      "<strong>Faça a auditoria interna para valer.</strong> Uma auditoria interna frouxa que não acha nada apenas transfere as constatações para a Fase 2, onde elas custam a data do certificado em vez de duas semanas.",
+      "<strong>Realize a análise crítica como reunião com ata.</strong> É um requisito explícito, com entradas definidas, e os auditores leem a ata em vez de acreditar na sua palavra.",
+      "<strong>Faça o exercício de incidente e de continuidade antes da Fase 2.</strong> É uma das poucas evidências que você consegue agendar em vez de esperar acontecer.",
+      "<strong>Não misture isso com SOC 2.</strong> Eles compartilham controles, mas não a mecânica: a ISO 27001 é uma certificação com ciclo de três anos e auditorias de manutenção, enquanto SOC 2 é um relatório de atestação emitido por firma de auditoria segundo as regras do AICPA norte-americano, contra os Trust Services Criteria."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a certificação ISO 27001?",
+        "Normalmente de doze a dezoito meses partindo do zero, para uma organização sem sistema de gestão de segurança da informação. O modelo usa cerca de quinze meses. As partes que resistem à compressão são o período de operação que gera registros e o intervalo obrigatório entre Fase 1 e Fase 2."
+      ],
+      [
+        "Qual é a diferença entre Fase 1 e Fase 2?",
+        "A Fase 1 é uma análise documental e de prontidão — escopo, políticas, análise de riscos, Declaração de Aplicabilidade e as evidências de auditoria interna e de análise crítica. A Fase 2 é a auditoria completa de se o sistema de gestão de fato opera. As constatações da Fase 1 precisam ser encerradas antes da Fase 2, e é por isso que o modelo deixa uma janela de ação corretiva entre elas."
+      ],
+      [
+        "Preciso de auditoria interna e análise crítica antes da Fase 2?",
+        "Sim. As duas são cláusulas obrigatórias da norma e as duas são coisas cuja evidência o auditor vai pedir para ver. O modelo as coloca antes da Fase 1 para que as ações corretivas que elas levantam tenham tempo de ser encerradas."
+      ],
+      [
+        "ISO 27001 é a mesma coisa que SOC 2?",
+        "Não. A ISO 27001 é uma norma internacional contra a qual você é certificado por um organismo acreditado, em ciclo de três anos com auditorias anuais de manutenção. SOC 2 é uma atestação conduzida por uma firma de contadores públicos segundo normas do AICPA, o instituto norte-americano, contra os Trust Services Criteria, e um relatório Type II cobre uma janela de observação definida em vez de conceder um certificado. Para isso use o <a href=\"/templates/soc2-compliance-timeline.html\">cronograma de conformidade SOC 2</a>; os dois planos se sobrepõem nos controles, mas não nas datas."
+      ],
+      [
+        "Qual a diferença para o plano de ISO 9001?",
+        "A mecânica de auditoria tem o mesmo formato em duas fases, mas o conteúdo é outro: a ISO 9001 é um sistema de gestão da qualidade, e este é um sistema de gestão de segurança da informação construído sobre uma análise de riscos e uma Declaração de Aplicabilidade. Veja o <a href=\"/templates/iso-9001-certification-plan.html\">plano de certificação ISO 9001</a> se você vai certificar os dois."
+      ],
+      [
+        "O modelo de ISO 27001 é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'crm-implementation-plan': {
+    card: "Processo, limpeza e deduplicação da base, integrações, ensaios de carga e virada.",
+    h1: "Plano de implantação de CRM",
+    metaTitle: "Plano de implantação de CRM",
+    metaDesc: "Plano gratuito de implantação de CRM: desenho de processo, limpeza e deduplicação da base, configuração, ensaios de migração, treinamento e virada.",
+    lead: "Um modelo gratuito de <strong>plano de implantação de CRM</strong> que coloca o trabalho onde ele de fato está — não em configurar objetos, mas em auditar, deduplicar e reconciliar a base de clientes que você está prestes a mover, e em fazer a virada cair num ponto do trimestre que não destrua a previsão de vendas. Cobre desenho de processo, limpeza da base, configuração e integração, ensaios de migração, turmas de treinamento, virada e o primeiro ciclo completo de previsão rodado no sistema novo.",
+    intro: "Todo mundo orça a configuração e ninguém orça os dados. Mas um vendedor que abre o CRM novo e vê três cópias da maior conta dele para de usar o sistema naquela mesma manhã, e nenhuma quantidade de treinamento recupera isso:",
+    phases: [
+      [
+        "Descoberta e desenho de processo",
+        "Processo comercial e definição de etapas do funil, definições de pipeline e de previsão, desenho de campos e objetos, e os requisitos de relatório contra os quais toda a configuração é dimensionada. <em>Marco: desenho aprovado.</em>"
+      ],
+      [
+        "Auditoria, limpeza e deduplicação da base",
+        "Extrações das fontes, perfilamento de qualidade, chaves de correspondência — CNPJ e CPF fazem quase todo o trabalho pesado aqui — e regras de deduplicação, a passada automática, os registros que só o comercial consegue corrigir, e a arrumação da hierarquia de grupos econômicos. Isso roda por meses em paralelo. <em>Marco: base pronta para o ensaio de migração.</em>"
+      ],
+      [
+        "Configuração e integração",
+        "Objetos, fluxos de trabalho e validações, permissões e modelo de territórios, e-mail, agenda e telefonia, sincronia com automação de marketing, propostas e integração com o ERP e a emissão fiscal, e os painéis de previsão. <em>Marco: configuração concluída.</em>"
+      ],
+      [
+        "Ensaios de migração",
+        "Dois ensaios completos, com reconciliação e validação pelo comercial entre eles, e depois uma corrida cronometrada em volume total que prova que a carga cabe na janela de virada. <em>Marco: ensaio de migração aprovado.</em>"
+      ],
+      [
+        "Treinamento e adoção",
+        "Conteúdo por papel, oficinas de previsão com os gerentes primeiro, depois as turmas de vendedores agendadas para cair perto do go-live, mais a rede de multiplicadores e o plano de suporte de chão de escritório. <em>Marco: treinamento concluído.</em>"
+      ],
+      [
+        "Virada e primeiro ciclo de previsão",
+        "A janela na virada do trimestre, congelamento do sistema antigo, carga em produção, reconciliação do pipeline contra o sistema anterior, go-live, período de hipercuidado, e o primeiro ciclo completo de previsão rodado no CRM novo. <em>Marco: go-live.</em>"
+      ]
+    ],
+    callout: "Escolha a data da virada olhando o calendário comercial, e não o plano de projeto. Migrar no meio do trimestre significa pedir a um vendedor que redigite negócios vivos no meio da corrida pela meta, e uma previsão que existe pela metade em cada sistema é uma previsão que ninguém consegue defender num conselho. Vire na primeira quinzena de um trimestre novo, quando o pipeline acabou de ser zerado e reconciliado, e o primeiro ciclo de previsão no CRM novo começa de um número com que os dois sistemas concordaram.",
+    customize: [
+      "Coloque a virada nas duas primeiras semanas de um trimestre e conte de trás para frente; o ensaio final deve terminar pelo menos três semanas antes.",
+      "Separe as linhas de deduplicação por objeto — contas, contatos, leads, oportunidades —, porque as chaves de correspondência e os responsáveis são diferentes em cada um.",
+      "Empurre o treinamento dos vendedores o mais tarde que der sem colidir com a virada; treinar seis semanas antes significa treinar duas vezes.",
+      "Acrescente linhas por integração se propostas, ERP ou automação de marketing tiverem dependências próprias de fornecedor.",
+      "Mantenha a correção de registros pelo comercial como uma linha nomeada, com dono nomeado — é trabalho de negócio, não tarefa do time de dados.",
+      "Acrescente uma linha para a decisão sobre histórico. Migrar cinco anos de e-mails e ligações costuma ser a escolha mais cara do plano, e sob a LGPD ainda obriga a justificar por que você continua guardando dado pessoal que não usa."
+    ],
+    tips: [
+      "<strong>Deduplique antes de configurar, e não depois.</strong> Conta duplicada quebra atribuição de território, consolidação de previsão e relatório de uma vez só, e cada uma dessas coisas precisa ser refeita se a base mudar por baixo.",
+      "<strong>Reconcilie o valor do pipeline contra o sistema antigo no dia da virada.</strong> Se os dois números não baterem antes de alguém logar, você vai passar o trimestre discutindo qual dos dois é o verdadeiro.",
+      "<strong>Treine os gerentes antes dos vendedores.</strong> Adoção se cobra em reunião de um a um; um gerente que não consegue rodar a própria revisão de pipeline na ferramenta nova vai silenciosamente deixar o time seguir na planilha.",
+      "<strong>Migre menos histórico.</strong> Oportunidades abertas e os dois últimos anos de atividade cobrem quase todo uso real; o resto é questão de arquivamento, não de migração.",
+      "<strong>Meça adoção, não go-live.</strong> Login não prova nada. Acompanhe se os negócios têm próximo passo, data de fechamento e movimentação de etapa — é isso que torna o pipeline confiável."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva implantar um CRM?",
+        "Normalmente de quatro a nove meses para uma área comercial de porte médio, dependendo quase inteiramente da qualidade da base e do número de integrações. O modelo usa cerca de onze meses de ponta a ponta porque inclui a limpeza da base desde o início e um ciclo completo de previsão depois do go-live."
+      ],
+      [
+        "Por que a migração de dados é o caminho crítico, e não a configuração?",
+        "Porque configuração é trabalho delimitado que você controla, e dado não é. O perfilamento revela problemas, a deduplicação exige decisões de negócio, e a correção a cargo do comercial anda na velocidade de gente que tem meta. É por isso que o modelo começa o trabalho de dados no primeiro mês."
+      ],
+      [
+        "Quando devemos fazer a virada?",
+        "Na virada de trimestre, nas duas primeiras semanas do trimestre novo. Viradas no meio do trimestre partem a previsão entre dois sistemas, e uma previsão em que ninguém confia é o jeito mais rápido de perder a adoção do comercial de forma permanente."
+      ],
+      [
+        "Quantos ensaios de migração são necessários?",
+        "Pelo menos dois, mais uma corrida cronometrada. O primeiro testa o mapeamento, o segundo testa a base deduplicada com validação real do comercial, e a corrida cronometrada em volume total prova que a carga cabe na janela de virada que você reservou."
+      ],
+      [
+        "Como isso se relaciona com o plano de gestão da mudança?",
+        "Este plano cobre o sistema. O <a href=\"/templates/change-management-plan.html\">plano de gestão da mudança</a> cobre a frente de pessoas que corre ao lado — avaliação de impacto, agenda do patrocinador, turmas de treinamento e reforço pós-lançamento. Programas grandes de CRM precisam dos dois."
+      ],
+      [
+        "O modelo de implantação de CRM é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'disaster-recovery-plan': {
+    card: "Análise de impacto, RTO/RPO, replicação, runbooks e testes de contingência.",
+    h1: "Plano de recuperação de desastres",
+    metaTitle: "Plano de recuperação de desastres",
+    metaDesc: "Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência.",
+    lead: "Um modelo gratuito de <strong>plano de recuperação de desastres</strong> que trata a entrega como um plano <em>testado</em>, e não como um documento. A análise de impacto no negócio e as metas de RTO e RPO definem a arquitetura, a arquitetura define a construção, e a metade final do cronograma é a sequência de testes — exercício de mesa, depois contingência parcial, depois uma contingência total com validação pelo negócio, cada uma exigindo a sua própria janela de mudança e o seu próprio caminho de volta.",
+    intro: "Um plano de recuperação não testado é uma hipótese. O cronograma abaixo é moldado pela sequência crescente de testes, porque cada teste custa uma janela de mudança e cada um encontra coisas que o anterior não conseguiria:",
+    phases: [
+      [
+        "Análise de impacto no negócio",
+        "Inventário de aplicações e serviços, mapeamento de dependências, as oficinas de impacto, e as metas de RTO e RPO a que cada serviço fica sujeito. Tudo o que vem depois é precificado a partir desses números. <em>Marco: linha de base de RTO/RPO aprovada.</em>"
+      ],
+      [
+        "Estratégia e arquitetura de contingência",
+        "Classificação dos serviços por camada de recuperação, escolha do site de contingência ou da região secundária, arquitetura de replicação e de backup, desenho de failover de rede e DNS, e a revisão de custo contra as metas. <em>Marco: arquitetura aprovada.</em>"
+      ],
+      [
+        "Construção e replicação",
+        "Infraestrutura de contingência, replicação de storage e de banco de dados, mudanças na política de backup, controles de identidade e de segurança no site secundário, e monitoramento do atraso de replicação. <em>Marco: replicação em regime estável verificada.</em>"
+      ],
+      [
+        "Runbooks e documentação",
+        "Um runbook de acionamento por camada de recuperação, procedimentos de retorno e de failback, a árvore de comunicação de crise, e os critérios de declaração que dizem quem tem alçada para acionar. <em>Marco: runbooks publicados.</em>"
+      ],
+      [
+        "Sequência de testes",
+        "Exercício de mesa primeiro, depois uma contingência parcial das aplicações de camada 1 com retorno, e então uma contingência total com validação pelo negócio e failback — com tempo de correção orçado depois de cada uma. <em>Marco: teste de contingência total aprovado.</em>"
+      ],
+      [
+        "Aprovação e manutenção",
+        "Relatório de teste e risco residual, aprovação pela diretoria, treinamento dos respondentes, o calendário anual de testes, e o gancho no processo de GMUD que impede que aplicações novas entrem em produção silenciosamente fora do plano. <em>Marco: plano aprovado.</em>"
+      ]
+    ],
+    callout: "RTO e RPO não são aspirações, são uma fatura. Um RPO de quinze minutos significa replicação síncrona ou quase síncrona e o custo de storage que vem junto; um RTO de quatro horas significa infraestrutura morna parada sem fazer nada. Acorde os números com o negócio antes de desenhar qualquer coisa, depois mostre quanto custa cada camada e deixe que revisem. Times que definem as metas depois da arquitetura acabam com um plano que recupera mais devagar do que foi prometido ao negócio, e ninguém descobre isso até o teste de contingência.",
+    customize: [
+      "Defina RTO e RPO por serviço, e não por organização — um serviço de pagamentos e uma wiki interna não devem dividir a mesma camada.",
+      "Reserve as duas janelas de mudança cedo; a janela da contingência total normalmente exige aprovação da diretoria e um período de baixo movimento, que são restrições de calendário, não técnicas.",
+      "Mantenha a linha de retorno ao lado de cada teste — um teste sem caminho de volta ensaiado é uma indisponibilidade esperando um dia ruim.",
+      "Acrescente linhas por camada de aplicação se você vai acionar a contingência em grupos, e não tudo de uma vez.",
+      "Alongue a janela de correção depois do teste parcial; é ali que aparece a maior parte das constatações de verdade.",
+      "Coloque o reteste anual como linhas com data, para que o plano não vença silenciosamente doze meses depois da aprovação."
+    ],
+    tips: [
+      "<strong>Teste o retorno, e não só o acionamento.</strong> Rodar no site de contingência é metade do exercício; a maioria das organizações descobre os problemas caros no caminho de volta.",
+      "<strong>Faça o exercício de mesa antes de qualquer coisa técnica.</strong> É barato, não precisa de janela de mudança, e revela com confiabilidade contatos desatualizados, alçada de declaração confusa e passos de runbook que presumem um conhecimento que ninguém escreveu.",
+      "<strong>Valide com o negócio, e não com um ping.</strong> Um serviço que responde não é um serviço que funciona; coloque usuários reais concluindo transações reais durante o teste de contingência total.",
+      "<strong>Acompanhe o atraso de replicação como métrica viva.</strong> Um RPO que você não mede continuamente é um RPO que você só vai conferir durante um incidente.",
+      "<strong>Amarre a contingência ao processo de gestão de mudanças.</strong> Cada aplicação nova que entra sem camada de recuperação alarga a distância entre o plano e a realidade, e essa distância só fica visível na hora do teste."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva construir e testar um plano de recuperação de desastres?",
+        "Normalmente de nove a quinze meses da análise de impacto até um plano testado e aprovado. O modelo usa cerca de quinze meses. A construção é previsível; o que estica é a sequência de testes no fim, porque cada teste precisa de uma janela de mudança e de um ciclo de correção depois."
+      ],
+      [
+        "Qual a diferença entre RTO e RPO?",
+        "RTO é quanto tempo você pode ficar fora do ar — o prazo para restabelecer o serviço. RPO é quanto dado você pode perder — a idade da última cópia utilizável. O RTO puxa a infraestrutura em espera, o RPO puxa a frequência de replicação, e juntos eles determinam a maior parte do custo do plano."
+      ],
+      [
+        "Por que três testes e não um?",
+        "Porque encontram coisas diferentes. Um exercício de mesa encontra lacunas no runbook e na cadeia de decisão pelo preço de uma sala de reunião. Uma contingência parcial encontra falhas técnicas com raio de impacto limitado. Uma contingência total com validação do negócio é a única coisa que comprova o RTO. E cada um precisa que o anterior já tenha sido corrigido."
+      ],
+      [
+        "Precisamos de janela de mudança para os testes?",
+        "Para a contingência parcial e a total, sim — elas movem tráfego de produção e carregam risco real. Abra a GMUD com retorno ensaiado e critério de aborto definido. O exercício de mesa não precisa de janela, e é exatamente por isso que ele deve ser esgotado primeiro."
+      ],
+      [
+        "Como isso se relaciona com continuidade de negócios?",
+        "Recuperação de desastres é o subconjunto de tecnologia: restabelecer sistemas e dados. Continuidade de negócios é mais ampla e cobre pessoas, instalações e processos. Este modelo cobre o lado de tecnologia, embora as linhas de comunicação de crise e de declaração sejam compartilhadas com qualquer plano de continuidade que você mantenha. Em setores regulados, vale conferir também as exigências específicas do seu regulador — na área financeira, por exemplo, a política de segurança cibernética e os requisitos de contratação de nuvem definidos pelo Banco Central."
+      ],
+      [
+        "O modelo de recuperação de desastres é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'rfp-procurement-timeline': {
+    card: "ETP, termo de referência, edital, impugnações, julgamento, recursos e homologação.",
+    h1: "Cronograma de licitação e contratação",
+    metaTitle: "Cronograma de licitação e contratação",
+    metaDesc: "Cronograma gratuito de licitação: ETP, termo de referência, edital, impugnações, sessão pública, julgamento, recursos, homologação e contrato.",
+    lead: "Um modelo gratuito de <strong>cronograma de licitação e contratação</strong> para conduzir uma disputa competitiva do levantamento da necessidade até o início da prestação do serviço — estudo técnico preliminar e critérios de julgamento, termo de referência e minuta de edital, o período de publicidade com o prazo de esclarecimentos e impugnações e a data fixa da sessão pública, julgamento e habilitação, fase recursal, adjudicação e homologação, e então contrato e mobilização. A maior parte dessas datas pertence a outras pessoas, que é exatamente por que elas precisam estar num gráfico.",
+    intro: "Uma licitação é um cronograma feito quase todo do tempo dos outros: licitantes montando proposta, área técnica encontrando uma semana livre, jurídico analisando minutas, órgão de controle olhando por cima, e um contratado atual entregando o serviço. Você controla a data de início e pouquíssimo mais:",
+    phases: [
+      [
+        "Necessidade e estudo técnico preliminar",
+        "Documento de formalização da demanda, levantamento de requisitos com as áreas, estudo técnico preliminar e análise de riscos, pesquisa de preços e estimativa de valor, previsão no plano de contratações anual e reserva orçamentária, e a definição da modalidade e do critério de julgamento. <em>Marco: autorização para licitar.</em>"
+      ],
+      [
+        "Termo de referência e edital",
+        "Consulta ao mercado, termo de referência ou projeto básico, minuta de edital e de contrato com as suas cláusulas e anexos, matriz de riscos, modelo de pontuação quando o julgamento for por técnica e preço, parecer jurídico sobre as minutas, e a designação da comissão ou do pregoeiro com as agendas já bloqueadas. <em>Marco: edital aprovado pelo jurídico.</em>"
+      ],
+      [
+        "Publicidade e disputa",
+        "Publicação do edital no Portal Nacional de Contratações Públicas e no sítio do órgão, janela de pedidos de esclarecimento e de impugnação ao edital, respostas publicadas a todos os interessados, o tempo de preparação das propostas, e a sessão pública com abertura e disputa. <em>Marco: sessão pública realizada.</em>"
+      ],
+      [
+        "Julgamento e habilitação",
+        "Verificação de conformidade das propostas, julgamento técnico e comercial, negociação com o primeiro colocado, análise dos documentos de habilitação jurídica, fiscal, trabalhista, técnica e econômico-financeira, eventuais diligências, e o relatório de julgamento. <em>Marco: licitante declarado vencedor.</em>"
+      ],
+      [
+        "Recursos, adjudicação e contrato",
+        "Manifestação de intenção de recurso, prazo recursal e contrarrazões, decisão da autoridade, adjudicação e homologação, convocação para assinatura, apresentação da garantia contratual e assinatura. <em>Marco: contrato assinado.</em>"
+      ],
+      [
+        "Mobilização e transição",
+        "Reunião inicial, designação de gestor e de fiscal do contrato, transição a partir do contratado anterior, acessos e integração das equipes, governança e relatórios de indicadores, e a data em que o serviço de fato começa. <em>Marco: início da prestação do serviço.</em>"
+      ]
+    ],
+    callout: "O tempo dos licitantes não é seu para comprimir. Se você encurta a janela entre a publicação das respostas aos esclarecimentos e a sessão pública, você não ganha uma licitação mais rápida — ganha menos propostas, propostas piores, e um fornecedor forte que desiste porque não conseguiu montar uma resposta séria a tempo. Vale o mesmo do outro lado: o prazo mínimo de publicidade do edital e o prazo recursal existem na lei justamente para permitir impugnação e contestação, correm em dias definidos independentemente da urgência da área demandante, e uma tentativa de atropelá-los normalmente termina em licitação suspensa pelo tribunal de contas.",
+    customize: [
+      "Fixe primeiro a data da sessão pública e a data de início da prestação do serviço; as duas costumam ser puxadas de fora, e todo o resto se encaixa entre elas.",
+      "Confira o prazo mínimo de publicidade da sua modalidade e critério de julgamento na Lei 14.133/2021 antes de usar as durações mostradas — eles variam bastante e não são negociáveis.",
+      "Bloqueie a agenda da equipe de apoio e da área técnica no mesmo momento em que publicar o edital — a disponibilidade das pessoas, e não o esforço de julgamento, é o que costuma atrasar essa fase.",
+      "Acrescente linhas para visitas técnicas ou prova de conceito se a sua avaliação as incluir; elas dependem da agenda dos licitantes, então trate-as como trabalho programado.",
+      "Alongue bastante a fase de transição se um contratado anterior estiver entregando dados, pessoas ou ativos.",
+      "Acrescente uma linha por lote ou item se o objeto for dividido, já que julgamento e homologação podem terminar em datas diferentes por lote."
+    ],
+    tips: [
+      "<strong>Feche os critérios de julgamento antes de publicar.</strong> Pontuação alterada depois de abertas as propostas é o motivo mais comum de anulação, e não é o tipo de coisa que se corrige discretamente.",
+      "<strong>Publique toda resposta de esclarecimento para todos os interessados.</strong> Resposta dada a um só licitante cria processo desigual, e processo desigual é derrubado.",
+      "<strong>Não marque a sessão pública encostada em feriado ou recesso.</strong> Você vai receber propostas fracas exatamente dos fornecedores que mais queria ouvir.",
+      "<strong>Fundamente o julgamento por escrito.</strong> O relatório é o documento em que você se apoia na fase recursal e perante o controle externo; nota sem justificativa é indefensável.",
+      "<strong>Orce tempo real entre homologação e início do serviço.</strong> Mobilizar exige contrato assinado, garantia apresentada, acessos liberados e gente contratada; data de homologação não é data de início."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva um processo de licitação?",
+        "Normalmente de seis a doze meses do levantamento da necessidade até o início da prestação do serviço, num contrato relevante. O modelo usa cerca de doze meses. O período de publicidade e a fase de julgamento e habilitação são os dois blocos que as pessoas subestimam, porque os dois dependem de gente fora da equipe de projeto."
+      ],
+      [
+        "Quanto tempo os licitantes devem ter para responder?",
+        "O suficiente para escrever uma proposta séria depois de publicadas as respostas aos esclarecimentos. A Lei 14.133/2021 fixa prazos mínimos de divulgação do edital que variam conforme a modalidade e o critério de julgamento — de alguns dias úteis num pregão de menor preço a várias semanas em julgamento por técnica e preço. Confira o seu antes de encurtar qualquer coisa, e some tempo extra se o objeto for complexo ou exigir precificação de transição."
+      ],
+      [
+        "Para que serve a fase recursal?",
+        "É o intervalo entre a declaração do vencedor e a homologação, no qual um licitante derrotado pode manifestar intenção de recurso, apresentar razões e receber contrarrazões. É prazo legal contado em dias úteis, corre independentemente da pressa da área demandante, e não pode ser suprimido para encaixar uma data de mobilização."
+      ],
+      [
+        "Por que o prazo de impugnação está no gráfico?",
+        "Porque ele comanda duas coisas: a data em que a sua equipe precisa ter todas as respostas redigidas e publicadas, e o ponto a partir do qual os licitantes estão escrevendo em vez de perguntar. Deixe-o tarde demais e você encurtou silenciosamente o tempo de preparação das propostas — e ainda corre o risco de ter que republicar o edital com nova data."
+      ],
+      [
+        "Dá para usar numa concorrência privada?",
+        "Dá. Tire as linhas de prazo legal e mantenha a sequência — janela de perguntas, data fixa de entrega, julgamento fundamentado, negociação e mobilização se comportam do mesmo jeito. A disciplina de publicar as respostas para todos os concorrentes vale a pena manter de qualquer forma."
+      ],
+      [
+        "O modelo de cronograma de licitação é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'change-management-plan': {
+    card: "Avaliação de impacto, patrocínio, comunicação, treinamento, hipercuidado e reforço.",
+    h1: "Plano de gestão da mudança organizacional",
+    metaTitle: "Plano de gestão da mudança",
+    metaDesc: "Plano gratuito de gestão da mudança: avaliação de impacto, patrocínio, comunicação, turmas de treinamento, hipercuidado e reforço pós-go-live.",
+    lead: "Um modelo gratuito de <strong>plano de gestão da mudança organizacional</strong> para a frente de pessoas que corre ao lado de um projeto técnico — mapeamento de partes interessadas e avaliação de impacto, coalizão de patrocínio e rede de multiplicadores, comunicação por público, turmas de treinamento agendadas em função do go-live e não da conveniência da agenda, prontidão e suporte de chão, e então o reforço pós-lançamento que decide se alguma coisa disso pega. Use junto com o plano do sistema, seja ele uma <a href=\"/templates/erp-implementation-schedule.html\">implantação de ERP</a> ou uma <a href=\"/templates/crm-implementation-plan.html\">implantação de CRM</a>.",
+    intro: "Gestão da mudança costuma ser desenhada como uma caixinha chamada \"treinamento\" ao lado do go-live. Não é uma caixinha. É uma frente de trabalho com dependências próprias, e a metade que mais importa começa na semana seguinte ao lançamento:",
+    phases: [
+      [
+        "Estratégia da mudança e avaliação de impacto",
+        "Mapeamento de partes interessadas, avaliação de impacto por grupo afetado, linha de base de prontidão, e a estratégia que define quanto apoio cada grupo precisa. <em>Marco: estratégia de mudança aprovada.</em>"
+      ],
+      [
+        "Patrocínio e governança",
+        "A coalizão de patrocinadores, sessões de compromisso, recrutamento e integração dos multiplicadores, a primeira rodada de conversas do patrocinador com as áreas, e um registro de resistências que é de fato trabalhado, e não arquivado. <em>Marco: rede de mudança no ar.</em>"
+      ],
+      [
+        "Comunicação",
+        "Plano de comunicação por público, o motivo da mudança e um FAQ, campanha de sensibilização, kits de briefing para gestores, guias de \"o que muda para mim\" por papel, e a sequência de comunicados do go-live."
+      ],
+      [
+        "Treinamento",
+        "Levantamento de necessidades por papel, construção do conteúdo, formação de instrutores internos, e então as turmas em ondas, com a última caindo perto do go-live para que as pessoas usem o que aprenderam. <em>Marco: treinamento concluído.</em>"
+      ],
+      [
+        "Prontidão e suporte no go-live",
+        "Avaliação de prontidão por área, uma segunda rodada do patrocinador, a escala de multiplicadores e de suporte de chão, o aceite formal de prontidão e o período de hipercuidado. <em>Marco: go-live.</em>"
+      ],
+      [
+        "Reforço e sustentação",
+        "Métricas de adoção, pesquisas rápidas de pulso na segunda semana e no terceiro mês, treinamento de reciclagem direcionado, coaching de gestores, reconhecimento, e a revisão de benefícios. <em>Marco: transferência para a operação.</em>"
+      ]
+    ],
+    callout: "Agende o treinamento pelo go-live, e não pela agenda do instrutor. Habilidade decai rápido, e uma turma treinada seis semanas antes vai ter esquecido quase tudo e vai discretamente perguntar ao colega do lado. Rode as turmas em ondas, de modo que a última termine poucos dias antes do lançamento, e dê à turma piloto folga suficiente para que o retorno dela ainda melhore o material. Depois proteja a fase de reforço, porque ela é sempre a primeira a ser cortada e é a única que muda comportamento no longo prazo — a reciclagem depois da primeira pesquisa de pulso vale mais do que mais um e-mail antes do lançamento.",
+    customize: [
+      "Fixe o go-live primeiro, depois coloque a última turma de treinamento poucos dias antes dele e distribua as demais de trás para frente.",
+      "Acrescente uma linha de avaliação de impacto por grupo afetado; um time de centro de serviços compartilhados e um técnico de campo não vivem a mesma mudança.",
+      "Dimensione a rede de multiplicadores em cerca de um por equipe, e trate o tempo deles como alocação acordada, e não como favor.",
+      "Acrescente linhas de conversas do patrocinador por região ou unidade se ele não conseguir cobrir todo mundo numa rodada só.",
+      "Estenda o hipercuidado em operações por turno ou sazonais, para que cada escala tenha suporte na sua primeira semana de uso real.",
+      "Se a mudança mexe em jornada, função ou local de trabalho, coloque a comunicação e a negociação com o sindicato como linha datada e com prazo próprio — ela não anda na velocidade do projeto.",
+      "Mantenha as pesquisas de pulso e a reciclagem como linhas com data depois do go-live — são as linhas mais frequentemente apagadas e as que determinam a adoção."
+    ],
+    tips: [
+      "<strong>Avaliação de impacto antes de comunicação.</strong> Você não consegue dizer a alguém o que muda para ele antes de ter descoberto o que muda para ele, e mensagem genérica é o que faz as pessoas concluírem que a mudança não é com elas.",
+      "<strong>Patrocinador precisa aparecer, e repetidamente.</strong> Um e-mail de lançamento é um comunicado. Uma rodada de conversas antes e outra depois do go-live é um sinal de que a mudança não é opcional.",
+      "<strong>Prepare os gestores separadamente e antes.</strong> A equipe vai perguntar a eles primeiro, e um gestor que não sabe a resposta vira uma fonte acidental de resistência.",
+      "<strong>Trabalhe o registro de resistências.</strong> Resistência é informação sobre um problema real muito mais vezes do que é obstrução, e o registro é onde você percebe a mesma objeção aparecendo em cinco times.",
+      "<strong>Meça adoção, não presença.</strong> Conclusão de treinamento não diz nada. Pesquisa de pulso e comportamento de uso dizem para onde mandar as sessões de reciclagem."
+    ],
+    faq: [
+      [
+        "Quando a gestão da mudança deve começar?",
+        "Ao mesmo tempo que o projeto técnico, e não perto do go-live. A avaliação de impacto precisa que o desenho já esteja compreendido, mas tem que terminar cedo o bastante para moldar comunicação e treinamento. O modelo começa no dia um e corre cerca de cinco meses depois do lançamento."
+      ],
+      [
+        "Qual a diferença para um plano de projeto?",
+        "Um plano de projeto entrega o sistema. Este entrega a capacidade e a disposição das pessoas de usá-lo. Os dois compartilham a data de go-live e quase mais nada, e é por isso que a gestão da mudança funciona melhor como gráfico próprio, com dono próprio, colocado ao lado do cronograma de entrega."
+      ],
+      [
+        "Quando o treinamento deve acontecer?",
+        "O mais tarde possível sem colidir com a virada. Habilidade decai, então uma turma treinada seis semanas antes acaba retreinada informalmente no go-live. Rode em ondas, ponha uma turma piloto cedo o bastante para que o retorno dela melhore o material, e deixe a última turma cair poucos dias antes do lançamento."
+      ],
+      [
+        "O que acontece depois do go-live?",
+        "A parte que a maioria dos planos corta: hipercuidado, uma pesquisa de pulso por volta da segunda semana, reciclagem direcionada ao que a pesquisa apontou, coaching de gestores e uma revisão de benefícios. Mudança de comportamento acontece nas semanas depois do lançamento, e não antes dele."
+      ],
+      [
+        "Preciso de um plano de mudança separado num projeto pequeno?",
+        "Nem sempre, mas a sequência continua sendo necessária. Numa mudança menor, mantenha avaliação de impacto, briefing de gestores, uma onda de treinamento e uma pesquisa pós-lançamento, e tire as linhas de rede de multiplicadores e de rodadas do patrocinador."
+      ],
+      [
+        "O modelo de gestão da mudança é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

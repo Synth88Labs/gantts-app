@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de recuperação de desastres | gantts.app</title>
+  <meta name="description" content="Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/pt/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/disaster-recovery-plan.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Plano de recuperação de desastres | gantts.app" />
+  <meta property="og:description" content="Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência." />
+  <meta property="og:url" content="https://gantts.app/pt/templates/disaster-recovery-plan.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plano de recuperação de desastres" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plano de recuperação de desastres | gantts.app" />
+  <meta name="twitter:description" content="Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/pt/templates/disaster-recovery-plan.html#webpage","name":"Plano de recuperação de desastres","url":"https://gantts.app/pt/templates/disaster-recovery-plan.html","description":"Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência.","inLanguage":"pt","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Modelos","item":"https://gantts.app/pt/templates.html"},{"@type":"ListItem","position":3,"name":"Plano de recuperação de desastres","item":"https://gantts.app/pt/templates/disaster-recovery-plan.html"}]}},{"@type":"HowTo","name":"Como usar o modelo: Plano de recuperação de desastres","description":"Cronograma gratuito de plano de recuperação de desastres: análise de impacto, RTO/RPO, replicação, runbooks, mesa e testes de contingência.","inLanguage":"pt","step":[{"@type":"HowToStep","position":1,"name":"Defina RTO e RPO por serviço, e não por organização — um serviço de pa","text":"Defina RTO e RPO por serviço, e não por organização — um serviço de pagamentos e uma wiki interna não devem dividir a mesma camada."},{"@type":"HowToStep","position":2,"name":"Reserve as duas janelas de mudança cedo; a janela da contingência tota","text":"Reserve as duas janelas de mudança cedo; a janela da contingência total normalmente exige aprovação da diretoria e um período de baixo movimento, que são restrições de calendário, não técnicas."},{"@type":"HowToStep","position":3,"name":"Mantenha a linha de retorno ao lado de cada teste — um teste sem camin","text":"Mantenha a linha de retorno ao lado de cada teste — um teste sem caminho de volta ensaiado é uma indisponibilidade esperando um dia ruim."},{"@type":"HowToStep","position":4,"name":"Acrescente linhas por camada de aplicação se você vai acionar a contin","text":"Acrescente linhas por camada de aplicação se você vai acionar a contingência em grupos, e não tudo de uma vez."},{"@type":"HowToStep","position":5,"name":"Alongue a janela de correção depois do teste parcial; é ali que aparec","text":"Alongue a janela de correção depois do teste parcial; é ali que aparece a maior parte das constatações de verdade."}]},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"Quanto tempo leva construir e testar um plano de recuperação de desastres?","acceptedAnswer":{"@type":"Answer","text":"Normalmente de nove a quinze meses da análise de impacto até um plano testado e aprovado. O modelo usa cerca de quinze meses. A construção é previsível; o que estica é a sequência de testes no fim, porque cada teste precisa de uma janela de mudança e de um ciclo de correção depois."}},{"@type":"Question","name":"Qual a diferença entre RTO e RPO?","acceptedAnswer":{"@type":"Answer","text":"RTO é quanto tempo você pode ficar fora do ar — o prazo para restabelecer o serviço. RPO é quanto dado você pode perder — a idade da última cópia utilizável. O RTO puxa a infraestrutura em espera, o RPO puxa a frequência de replicação, e juntos eles determinam a maior parte do custo do plano."}},{"@type":"Question","name":"Por que três testes e não um?","acceptedAnswer":{"@type":"Answer","text":"Porque encontram coisas diferentes. Um exercício de mesa encontra lacunas no runbook e na cadeia de decisão pelo preço de uma sala de reunião. Uma contingência parcial encontra falhas técnicas com raio de impacto limitado. Uma contingência total com validação do negócio é a única coisa que comprova o RTO. E cada um precisa que o anterior já tenha sido corrigido."}},{"@type":"Question","name":"Precisamos de janela de mudança para os testes?","acceptedAnswer":{"@type":"Answer","text":"Para a contingência parcial e a total, sim — elas movem tráfego de produção e carregam risco real. Abra a GMUD com retorno ensaiado e critério de aborto definido. O exercício de mesa não precisa de janela, e é exatamente por isso que ele deve ser esgotado primeiro."}},{"@type":"Question","name":"Como isso se relaciona com continuidade de negócios?","acceptedAnswer":{"@type":"Answer","text":"Recuperação de desastres é o subconjunto de tecnologia: restabelecer sistemas e dados. Continuidade de negócios é mais ampla e cobre pessoas, instalações e processos. Este modelo cobre o lado de tecnologia, embora as linhas de comunicação de crise e de declaração sejam compartilhadas com qualquer plano de continuidade que você mantenha. Em setores regulados, vale conferir também as exigências específicas do seu regulador — na área financeira, por exemplo, a política de segurança cibernética e os requisitos de contratação de nuvem definidos pelo Banco Central."}},{"@type":"Question","name":"O modelo de recuperação de desastres é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/pt/app.html">Criar gráfico</a>
+        <a href="/pt/templates.html">Modelos</a>
+        <a href="/pt/blog/">Guias</a>
+        <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/templates/disaster-recovery-plan.html">English</option><option value="/es/templates/disaster-recovery-plan.html">Español</option><option value="/fr/templates/disaster-recovery-plan.html">Français</option><option value="/de/templates/disaster-recovery-plan.html">Deutsch</option><option value="/pt/templates/disaster-recovery-plan.html" selected>Português</option><option value="/zh/templates/disaster-recovery-plan.html">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/templates.html">Modelos</a> › Plano de recuperação de desastres</div>
+        <h1>Plano de recuperação de desastres</h1>
+        <p class="lead">Um modelo gratuito de <strong>plano de recuperação de desastres</strong> que trata a entrega como um plano <em>testado</em>, e não como um documento. A análise de impacto no negócio e as metas de RTO e RPO definem a arquitetura, a arquitetura define a construção, e a metade final do cronograma é a sequência de testes — exercício de mesa, depois contingência parcial, depois uma contingência total com validação pelo negócio, cada uma exigindo a sua própria janela de mudança e o seu próprio caminho de volta.</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/disaster-recovery-plan.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/disaster-recovery-plan.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/disaster-recovery-plan.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/pt/app.html?csv=disaster-recovery-plan">✎ Editar online grátis</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/disaster-recovery-plan.svg" alt="Prévia do modelo com as fases em uma linha do tempo" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">O que o modelo contém</h2>
+      <p>Um plano de recuperação não testado é uma hipótese. O cronograma abaixo é moldado pela sequência crescente de testes, porque cada teste custa uma janela de mudança e cada um encontra coisas que o anterior não conseguiria:</p>
+      <ul>
+        <li><strong>Análise de impacto no negócio</strong> — Inventário de aplicações e serviços, mapeamento de dependências, as oficinas de impacto, e as metas de RTO e RPO a que cada serviço fica sujeito. Tudo o que vem depois é precificado a partir desses números. <em>Marco: linha de base de RTO/RPO aprovada.</em></li>
+        <li><strong>Estratégia e arquitetura de contingência</strong> — Classificação dos serviços por camada de recuperação, escolha do site de contingência ou da região secundária, arquitetura de replicação e de backup, desenho de failover de rede e DNS, e a revisão de custo contra as metas. <em>Marco: arquitetura aprovada.</em></li>
+        <li><strong>Construção e replicação</strong> — Infraestrutura de contingência, replicação de storage e de banco de dados, mudanças na política de backup, controles de identidade e de segurança no site secundário, e monitoramento do atraso de replicação. <em>Marco: replicação em regime estável verificada.</em></li>
+        <li><strong>Runbooks e documentação</strong> — Um runbook de acionamento por camada de recuperação, procedimentos de retorno e de failback, a árvore de comunicação de crise, e os critérios de declaração que dizem quem tem alçada para acionar. <em>Marco: runbooks publicados.</em></li>
+        <li><strong>Sequência de testes</strong> — Exercício de mesa primeiro, depois uma contingência parcial das aplicações de camada 1 com retorno, e então uma contingência total com validação pelo negócio e failback — com tempo de correção orçado depois de cada uma. <em>Marco: teste de contingência total aprovado.</em></li>
+        <li><strong>Aprovação e manutenção</strong> — Relatório de teste e risco residual, aprovação pela diretoria, treinamento dos respondentes, o calendário anual de testes, e o gancho no processo de GMUD que impede que aplicações novas entrem em produção silenciosamente fora do plano. <em>Marco: plano aprovado.</em></li>
+      </ul>
+
+      <div class="callout">RTO e RPO não são aspirações, são uma fatura. Um RPO de quinze minutos significa replicação síncrona ou quase síncrona e o custo de storage que vem junto; um RTO de quatro horas significa infraestrutura morna parada sem fazer nada. Acorde os números com o negócio antes de desenhar qualquer coisa, depois mostre quanto custa cada camada e deixe que revisem. Times que definem as metas depois da arquitetura acabam com um plano que recupera mais devagar do que foi prometido ao negócio, e ninguém descobre isso até o teste de contingência.</div>
+
+      <h2 id="customize">Como adaptar</h2>
+      <ol>
+        <li>Defina RTO e RPO por serviço, e não por organização — um serviço de pagamentos e uma wiki interna não devem dividir a mesma camada.</li>
+        <li>Reserve as duas janelas de mudança cedo; a janela da contingência total normalmente exige aprovação da diretoria e um período de baixo movimento, que são restrições de calendário, não técnicas.</li>
+        <li>Mantenha a linha de retorno ao lado de cada teste — um teste sem caminho de volta ensaiado é uma indisponibilidade esperando um dia ruim.</li>
+        <li>Acrescente linhas por camada de aplicação se você vai acionar a contingência em grupos, e não tudo de uma vez.</li>
+        <li>Alongue a janela de correção depois do teste parcial; é ali que aparece a maior parte das constatações de verdade.</li>
+        <li>Coloque o reteste anual como linhas com data, para que o plano não vença silenciosamente doze meses depois da aprovação.</li>
+      </ol>
+
+      <h2 id="tips">Dicas de cronograma</h2>
+      <ul>
+        <li><strong>Teste o retorno, e não só o acionamento.</strong> Rodar no site de contingência é metade do exercício; a maioria das organizações descobre os problemas caros no caminho de volta.</li>
+        <li><strong>Faça o exercício de mesa antes de qualquer coisa técnica.</strong> É barato, não precisa de janela de mudança, e revela com confiabilidade contatos desatualizados, alçada de declaração confusa e passos de runbook que presumem um conhecimento que ninguém escreveu.</li>
+        <li><strong>Valide com o negócio, e não com um ping.</strong> Um serviço que responde não é um serviço que funciona; coloque usuários reais concluindo transações reais durante o teste de contingência total.</li>
+        <li><strong>Acompanhe o atraso de replicação como métrica viva.</strong> Um RPO que você não mede continuamente é um RPO que você só vai conferir durante um incidente.</li>
+        <li><strong>Amarre a contingência ao processo de gestão de mudanças.</strong> Cada aplicação nova que entra sem camada de recuperação alarga a distância entre o plano e a realidade, e essa distância só fica visível na hora do teste.</li>
+      </ul>
+
+      <h2 id="related">Modelos relacionados</h2>
+      <ul>
+        <li><a href="/pt/templates/data-center-build-schedule.html">Cronograma de construção de data center</a></li>
+        <li><a href="/pt/templates/cloud-migration-project-plan.html">Plano de projeto de migração para nuvem</a></li>
+        <li><a href="/pt/templates/internal-audit-plan.html">Plano de auditoria interna</a></li>
+        <li><a href="/pt/templates.html">Ver todos os modelos de gráfico de Gantt</a></li>
+      </ul>
+      <p class="crumbs"><small>Este modelo está em português. Páginas relacionadas ainda não traduzidas abrem em inglês.</small></p>
+
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>Quanto tempo leva construir e testar um plano de recuperação de desastres?</summary><p>Normalmente de nove a quinze meses da análise de impacto até um plano testado e aprovado. O modelo usa cerca de quinze meses. A construção é previsível; o que estica é a sequência de testes no fim, porque cada teste precisa de uma janela de mudança e de um ciclo de correção depois.</p></details>
+        <details><summary>Qual a diferença entre RTO e RPO?</summary><p>RTO é quanto tempo você pode ficar fora do ar — o prazo para restabelecer o serviço. RPO é quanto dado você pode perder — a idade da última cópia utilizável. O RTO puxa a infraestrutura em espera, o RPO puxa a frequência de replicação, e juntos eles determinam a maior parte do custo do plano.</p></details>
+        <details><summary>Por que três testes e não um?</summary><p>Porque encontram coisas diferentes. Um exercício de mesa encontra lacunas no runbook e na cadeia de decisão pelo preço de uma sala de reunião. Uma contingência parcial encontra falhas técnicas com raio de impacto limitado. Uma contingência total com validação do negócio é a única coisa que comprova o RTO. E cada um precisa que o anterior já tenha sido corrigido.</p></details>
+        <details><summary>Precisamos de janela de mudança para os testes?</summary><p>Para a contingência parcial e a total, sim — elas movem tráfego de produção e carregam risco real. Abra a GMUD com retorno ensaiado e critério de aborto definido. O exercício de mesa não precisa de janela, e é exatamente por isso que ele deve ser esgotado primeiro.</p></details>
+        <details><summary>Como isso se relaciona com continuidade de negócios?</summary><p>Recuperação de desastres é o subconjunto de tecnologia: restabelecer sistemas e dados. Continuidade de negócios é mais ampla e cobre pessoas, instalações e processos. Este modelo cobre o lado de tecnologia, embora as linhas de comunicação de crise e de declaração sejam compartilhadas com qualquer plano de continuidade que você mantenha. Em setores regulados, vale conferir também as exigências específicas do seu regulador — na área financeira, por exemplo, a política de segurança cibernética e os requisitos de contratação de nuvem definidos pelo Banco Central.</p></details>
+        <details><summary>O modelo de recuperação de desastres é gratuito?</summary><p>Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro.</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Planeje online — grátis</h2>
+      <p>Abra o modelo no editor, ajuste as barras às suas datas e exporte em PDF, Excel ou PowerPoint. Sem cadastro e sem marca d'água.</p>
+      <a class="btn btn-white btn-lg" href="/pt/app.html?csv=disaster-recovery-plan">Abrir o editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.</p>
+          <a class="footer-cta" href="/pt/app.html">Abrir o aplicativo →</a>
+          <p class="footer-byline">Um projeto da <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modelos</h4>
+          <a href="/pt/templates.html">Todos os modelos</a>
+          <a href="/pt/templates/excel.html">Excel</a>
+          <a href="/pt/templates/powerpoint.html">PowerPoint</a>
+          <a href="/pt/templates/construction.html">Construção</a>
+        </div>
+        <div>
+          <h4>Guias</h4>
+          <a href="/pt/blog/">Todos os guias</a>
+          <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+          <a href="/pt/blog/critical-path-method.html">Método do caminho crítico</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/pt/about.html">Sobre</a>
+          <a href="/pt/contact.html">Contato</a>
+          <a href="/pt/terms.html">Termos de uso</a>
+          <a href="/pt/privacy.html">Privacidade</a>
+          <a href="/pt/accessibility.html">Acessibilidade</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos os direitos reservados.</span>
+        <span>Site estático — nada do que você planeja sai do seu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=25"></script>
+</body>
+</html>

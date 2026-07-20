@@ -4526,6 +4526,787 @@ const T = {
       ]
     ]
   },
+  'water-treatment-plant-construction-schedule': {
+    card: "Erlaubnis, Tiefbau, Maschinentechnik, Probebetrieb, Impfschlamm, Leistungsnachweis.",
+    h1: "Bauzeitenplan für den Bau einer Kläranlage",
+    metaTitle: "Kläranlage — Bauzeitenplan",
+    metaDesc: "Kostenloser Bauzeitenplan für die Kläranlage: Tiefbau, Maschinen- und Elektrotechnik, Probebetrieb, Impfschlamm und der Leistungsnachweis unter Aufsicht.",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Bau einer Kläranlage</strong>, die den Probebetrieb als das eigentliche Projekt behandelt und nicht als zweiwöchigen Anhang — wasserrechtliche Erlaubnis und Verfahrensbemessung, Bauwerke und Dichtheitsprüfung, Maschinen- und Elektrotechnik, Funktionsprüfung mit Reinwasser, dann der nasse Probebetrieb mit Impfschlamm und schließlich der über Wochen laufende Leistungsnachweis unter behördlicher Begleitung, bevor jemand ein Abnahmeprotokoll unterschreibt. Laden Sie sie für eine Vorlage zur Stufenfreigabe herunter oder öffnen Sie sie online und ziehen Sie die Balken des Probebetriebs auf die Länge, die Ihr Verfahren wirklich braucht.",
+    intro: "Jedes andere Bauwerk wird übergeben, wenn die Mängelliste leer ist. Eine Kläranlage wird übergeben, wenn die Wasserbehörde gesehen hat, dass sie über Wochen hinweg durchgehend einen Ablauf innerhalb der Erlaubniswerte produziert. Der Plan ist von diesem Punkt aus rückwärts gebaut:",
+    phases: [
+      [
+        "Erlaubnis, Planung und Vergabe",
+        "Charakterisierung des Rohabwassers und Pilotversuche, Verfahrensbemessung und Stoffbilanz nach DWA-A 131, Ausführungsplanung, wasserrechtliche Erlaubnis zur Einleitung nach WHG und Abwasserverordnung sowie die Vergabe der Bauteile mit langer Lieferzeit, die die Montagetermine festnageln. <em>Meilenstein: wasserrechtliche Erlaubnis erteilt.</em>"
+      ],
+      [
+        "Tief- und Ingenieurbau",
+        "Erdarbeiten und Gründung, Zulaufbauwerk, Vorklärung, Belebungsbecken, Nachklärung, Filtergalerie und Schlammbehandlung — anschließend die Dichtheitsprüfung jedes einzelnen Beckens. <em>Meilenstein: Bauwerke dicht.</em>"
+      ],
+      [
+        "Maschinen- und Elektrotechnik",
+        "Pumpen und Armaturen, Gebläse und Belüfterroste, Filtermaterial, Dosierstationen, UV-Anlage, Schaltanlagen und Netzersatzanlage sowie die Feldinstrumentierung. <em>Meilenstein: technische Fertigstellung.</em>"
+      ],
+      [
+        "Leittechnik und Reinwasserprüfung",
+        "Konfiguration des Prozessleitsystems, Schleifenprüfungen (SR-Prüfung), Motorläufe ohne Last und Funktionsprüfung mit Reinwasser — die Regelphilosophie wird bewiesen, bevor der erste Tropfen Rohabwasser in die Anlage läuft."
+      ],
+      [
+        "Nasser Probebetrieb und Beimpfung",
+        "Erste Beschickung mit Rohabwasser, Beimpfung mit Belebtschlamm aus einer benachbarten Anlage, Aufbau der Biomasse und des TS-Gehalts im Belebungsbecken, Etablierung der Nitrifikation und Einstellung des Schlammalters. <em>Meilenstein: biologische Reinigungsstufe stabil.</em>"
+      ],
+      [
+        "Leistungsnachweis und Abnahme",
+        "Hochfahren auf den Bemessungszufluss, der durchgehende Leistungsnachweis unter behördlicher Begleitung, amtliche Probenahme, ein Belastungslauf bei Spitzenzufluss, Schulung des Betriebspersonals und die förmliche Abnahme nach VOB/B. <em>Meilenstein: Abnahmeprotokoll unterzeichnet.</em>"
+      ]
+    ],
+    callout: "Einen Probebetrieb kann man nicht simulieren. Belebtschlamm ist eine Kultur, die beimpft und dann gezüchtet werden muss, und gerade die nitrifizierenden Bakterien verdoppeln sich langsam — rechnen Sie in Wochen, nicht in Tagen, und bei niedrigen Abwassertemperaturen im Winter in deutlich mehr. Darauf sitzt ein Leistungsnachweis, den die Behörde über einen längeren Zeitraum beim Bemessungszufluss begleitet. Diese beiden Balken sind physikalisch und vertraglich gesetzt, nicht verhandelbar, und sie gehören zu den längsten Vorgängen am rechten Ende Ihres Diagramms.",
+    customize: [
+      "Setzen Sie die Balken für Beimpfung und Biomasseaufbau auf die Werte Ihres Verfahrensplaners und auf die Jahreszeit, in der Sie anfahren — ein Start im Winter kann allein die Nitrifikation um mehrere Wochen verlängern.",
+      "Ändern Sie die Dauer des Leistungsnachweises auf das, was Vertrag und Erlaubnis fordern; vier Wochen sind üblich, viele Vorhaben verlangen länger oder eine Wiederholung, wenn eine Probe reißt.",
+      "Ergänzen Sie hinter dem Leistungsnachweis einen Balken für Nachbeprobung und Wiederholung. Von einem Bestehen im ersten Anlauf auszugehen ist der häufigste Terminfehler auf diesen Baustellen.",
+      "Zerlegen Sie die Dichtheitsprüfung in eine Zeile je Becken, wenn Sie nacheinander füllen — ein undichtes Becken muss leergefahren, getrocknet, saniert und erneut gefüllt werden.",
+      "Ziehen Sie die Konfiguration des Prozessleitsystems nach vorn; sie hängt an den R&I-Fließbildern, nicht am Beton, und wird regelmäßig viel zu spät begonnen.",
+      "Setzen Sie erteilte Erlaubnis, Dichtheit der Bauwerke, technische Fertigstellung, erste Beschickung und Abnahme als Meilensteine — das sind die Termine, die Aufsichtsrat und Wasserbehörde gleichermaßen verfolgen."
+    ],
+    tips: [
+      "<strong>Melden Sie den Beginn des Leistungsnachweises früh und schriftlich bei der Wasserbehörde an.</strong> Die Begleitung hängt am Terminkalender der Behörde, nicht an Ihrem, und eine verspätete Anzeige kann die Abnahme um einen Monat schieben, obwohl die Anlage fertig dasteht.",
+      "<strong>Sichern Sie den Impfschlamm früh und vertraglich.</strong> Er kommt aus einer laufenden Nachbaranlage, braucht Saugwagen und ein Lieferfenster — eine Anlage, die voll Rohabwasser auf Schlamm wartet, verbrennt Puffer für nichts.",
+      "<strong>Beweisen Sie die Leittechnik zuerst mit Reinwasser.</strong> Einem falsch parametrierten Füllstandsgeber oder einer verkehrt herum wirkenden Armatur hinterherzujagen, während die Biologie sich stabilisieren soll, kostet weit mehr als die zwei Wochen, die die Reinwasserphase braucht.",
+      "<strong>Legen Sie den Leistungsnachweis nicht über offene Restarbeiten.</strong> Eine Firma, die während des begleiteten Laufs noch Geländer montiert, liefert der Behörde einen bequemen Grund, den Lauf für ungültig zu erklären.",
+      "<strong>Schauen Sie auf die Ablaufwerte, nicht auf den Durchflussmesser.</strong> Den Bemessungszufluss zu erreichen beweist die Hydraulik; nur eine durchgehende Beprobung innerhalb der Erlaubniswerte beweist das Verfahren, und nur Letzteres bringt Ihnen die Abnahme.",
+      "<strong>Schulen Sie das Betriebspersonal während des Probebetriebs, nicht danach.</strong> Das Inbetriebnahmeteam ist die einzige Gruppe, die die Anlage je in allen Störfällen erlebt, und dieses Wissen verlässt mit ihm die Baustelle."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau einer Kläranlage?",
+        "Eine mittlere kommunale Anlage läuft üblicherweise 24 bis 36 Monate von der Erlaubnis bis zur Abnahme, und die Vorlage bildet ungefähr das ab. Der Tiefbau ist gut vorhersagbar; die Streuung sitzt vorn im Genehmigungsverfahren und hinten im Probebetrieb."
+      ],
+      [
+        "Warum dauert der Probebetrieb so lange?",
+        "Weil eine biologische Reinigungsstufe gezüchtet und nicht eingeschaltet wird. Beimpfung, Aufbau der Biomasse und Etablierung der Nitrifikation brauchen Wochen, und erst wenn das Verfahren stabil läuft, kann der durchgehende Leistungsnachweis beginnen."
+      ],
+      [
+        "Was ist ein behördlich begleiteter Leistungsnachweis?",
+        "Ein durchgehender Lauf beim Bemessungszufluss, in dem die Anlage einen Ablauf innerhalb der Werte der wasserrechtlichen Erlaubnis erzeugen muss, beprobt und begleitet von Bauherrschaft und Wasserbehörde. Nicht das Ende der Bauarbeiten, sondern das Bestehen dieses Laufs löst die Übergabe aus."
+      ],
+      [
+        "Lässt sich der Probebetrieb durch früheres Beimpfen verkürzen?",
+        "Nur geringfügig. Sie können den Impfschlamm vorbestellen und die Saugwagen an dem Tag bereitstellen, an dem das Rohabwasser kommt — die Wachstumskurve selbst bleibt Biologie. Verkürzen lässt sich das Programm nur im Tiefbau und in der Montage."
+      ],
+      [
+        "Wie plane ich eine gerissene Probe ein?",
+        "Mit einem Reservebalken für die Nachbeprobung und, in vielen Verträgen, für die vollständige Wiederholung des Nachweiszeitraums. Einen Plan auf das Bestehen im ersten Anlauf zu bauen ist der Weg, am allerletzten Tor zu überziehen."
+      ],
+      [
+        "Ist die Kläranlagen-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'airport-terminal-expansion-plan': {
+    card: "Sperrfenster, Bauzäune, Ausweise, Kontrollkapazität, Gepäckanlage, ORAT, Umschaltung.",
+    h1: "Projektplan für die Erweiterung eines Flughafenterminals",
+    metaTitle: "Terminalerweiterung — Projektplan",
+    metaDesc: "Kostenloser Projektplan für die Terminalerweiterung: Sperrfenster, Bauzäune, Flughafenausweise, Kontrollkapazität, Gepäckanlage, ORAT und Umschaltung.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Erweiterung eines Flughafenterminals</strong> — für einen Bau an einem Gebäude, das nie schließt. Abschnittsweise Sperrfenster hinter Bauzäunen, Flughafenausweise und begleiteter Zugang zum Sicherheitsbereich, provisorische Fluggastführung, eine Kontrollkapazität, die über jede Umstellung hinweg auf Spitzenstundenniveau bleibt, Einbindung der Gepäckförderanlage, ORAT (Operational Readiness and Airport Transfer, die betriebliche Inbetriebnahme) und eine Umschaltung über Nacht. Laden Sie sie für die Programmsteuerung herunter oder öffnen Sie sie online und legen Sie die Sperrfenster gegen Ihre eigene Verkehrssaison.",
+    intro: "Eine Erweiterung ist kein Projekt mit sechs Phasen, sondern eine Folge ausgehandelter Sperrfenster mitten im laufenden Betrieb. Der Plan hält diese betriebliche Nebenbedingung in jeder Phase sichtbar:",
+    phases: [
+      [
+        "Planrecht, Betriebsabstimmung und Genehmigungen",
+        "Modellierung der Fluggastströme, Abstimmung mit Fluggesellschaften und Abfertigern, die Bauabschnitts- und Sperrfensterstrategie, Planfeststellung beziehungsweise Plangenehmigung nach LuftVG sowie Zuverlässigkeitsüberprüfungen und Flughafenausweise für die Baufirmen. <em>Meilenstein: Sperrzeitenkalender vereinbart.</em>"
+      ],
+      [
+        "Planung und vorbereitende Maßnahmen",
+        "Vorplanung und Ausführungsplanung, Brandschutzkonzept, Verlauf der Bauzäune und provisorische Wegeleitung, Leitungsumlegungen und die provisorischen Fluggastwege, die stehen müssen, bevor irgendetwas geschlossen wird. <em>Meilenstein: vorbereitende Maßnahmen abgeschlossen.</em>"
+      ],
+      [
+        "Sperrfenster 1 — Pier-Verlängerung",
+        "Bauzäune stellen, Umbau von Vorfeld und Abstellpositionen, Rohbau und Hülle des Piers, Fluggastbrücken und Gate-Bereiche, danach Rückgabe der Positionen an den Betrieb. <em>Meilenstein: Abstellpositionen wieder in Betrieb.</em>"
+      ],
+      [
+        "Sperrfenster 2 — Sicherheitskontrolle und Check-in",
+        "Zuerst der Nachweis der provisorischen Kontrollspuren in der Spitzenstunde, danach Rückbau des Check-in, neue Check-in-Inseln, Ausbau der zentralen Sicherheitskontrolle und Arbeiten in der Grenzkontrolle."
+      ],
+      [
+        "Gepäckanlage und Systemintegration",
+        "Montage der Gepäckförderanlage, Gepäckkontrolle (HBS), Sortier- und Volumentests, Fluginformationsanzeigen und Beschallung, Videoüberwachung und Zutrittskontrolle sowie die Common-Use-Abfertigungsplätze (CUTE/CUPPS). <em>Meilenstein: Systemintegration abgeschlossen.</em>"
+      ],
+      [
+        "ORAT, Probebetrieb und Umschaltung",
+        "Betriebliche Inbetriebnahme, Einweisung des Personals, Probeabfertigung mit Statistinnen und Statisten, Räumungsübungen, Abnahme durch Luftsicherheits- und Bauaufsichtsbehörde und die Umschaltung über Nacht. <em>Meilenstein: Vollbetrieb.</em>"
+      ]
+    ],
+    callout: "Nehmen Sie niemals Kontrollkapazität weg, bevor der Ersatz in der Spitzenstunde nachgewiesen ist. Alles andere in einem laufenden Terminal lässt sich umgehen — ein längerer Weg, ein provisorisches Schild, ein verlegter Laden. Aber eine Warteschlange an der Sicherheitskontrolle, die ihre Zielzeit reißt, ist ein meldepflichtiges betriebliches Versagen, und sie beendet Ihr Sperrfenster binnen Tagen. Setzen Sie vor jede Umstellung, die die zentrale Kontrolle berührt, einen Meilenstein für den Kapazitätsnachweis.",
+    customize: [
+      "Ersetzen Sie die beiden Sperrfenster durch Ihre eigenen und stimmen Sie Anfang und Ende jeweils mit dem Flughafenbetrieb ab, nicht mit der Baufirma.",
+      "Legen Sie die Sperrfenster in Ihre echte verkehrsschwache Zeit und rechnen Sie mit der Prognose, nicht mit dem Vorjahr — ein Fenster, das im Februar passt, passt im Juli nicht.",
+      "Ergänzen Sie eine Zeile je Personalwelle für Zuverlässigkeitsüberprüfung und Ausweisausgabe; die Überprüfung nach LuftSiG hat einen Vorlauf von Wochen und hat schon mehr Baustarts aufgehalten als fehlendes Material.",
+      "Setzen Sie überall dort einen Balken für Nachtarbeit, wo die Arbeit nicht im laufenden Betrieb stattfinden kann, und besetzen Sie die dafür nötigen Begleitpersonen mit.",
+      "Zerlegen Sie den Test der Gepäckanlage in Montage, Integration und Volumen- beziehungsweise Sortiertest; der letzte findet die Fehler, und genau er wird zusammengedrückt.",
+      "Setzen Sie Sperrzeitenkalender, Rückgabe der Abstellpositionen, Kapazitätsnachweis der Kontrolle, Systemintegration und Vollbetrieb als Meilensteine."
+    ],
+    tips: [
+      "<strong>Der Sperrzeitenkalender ist das Programm.</strong> Sobald Flughafenbetrieb, Fluggesellschaften und Abfertiger ihn gezeichnet haben, leitet sich die Bauablauffolge aus ihm ab — und nicht umgekehrt.",
+      "<strong>Bauen Sie den provisorischen Weg, bevor Sie ihn brauchen, und gehen Sie ihn unter echter Last ab.</strong> Eine Wegeleitung, die auf dem Plan einleuchtet, versagt um sechs Uhr früh bei vollem Abflugwellenbetrieb und einer Familie mit drei Wagen.",
+      "<strong>Behandeln Sie den Zugang zum Sicherheitsbereich als Ressource mit Vorlaufzeit.</strong> Ausweise, Begleitungen, Fahrerlaubnisse für das Vorfeld und Fahrzeugprüfungen brauchen Wochen, und eine begleitete Kolonne arbeitet mit einem Bruchteil der Leistung einer Kolonne im öffentlichen Bereich — das gehört in die Dauern.",
+      "<strong>Lassen Sie die Einbindung der Gepäckanlage nicht erst nach dem Rohbau beginnen.</strong> Eine Gepäckförderanlage ist eine Maschine mit langer Testkurve; Sortier- und Abgleichtests brauchen Monate und liegen auf dem kritischen Pfad zur Eröffnung.",
+      "<strong>Fahren Sie eine echte Probeabfertigung mit Freiwilligen.</strong> Sie findet die Engstellen in der Schlange, die Lücken in der Anzeige und die Personallücken, die ein reiner Systemtest nie zeigt — und sie ist weit billiger, als sie am ersten Betriebstag zu finden.",
+      "<strong>Planen Sie die Umschaltung als Nachtbetrieb mit Abbruchpunkt.</strong> Legen Sie vorher fest, in welchem Zustand das Terminal zu welcher Stunde sein muss, damit umgeschaltet wird, und worauf Sie zurückfallen, wenn es das nicht ist."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Erweiterung eines Flughafenterminals?",
+        "Abschnittsweise Erweiterungen im laufenden Betrieb laufen üblicherweise zwei bis vier Jahre, weil in ausgehandelten Sperrfenstern gebaut wird und nicht durchgehend. Die Vorlage nutzt ein Programm von rund zwei Jahren, das Sie durch weitere Sperrfenster verlängern können."
+      ],
+      [
+        "Was ist ORAT, und wann sollte es beginnen?",
+        "ORAT — Operational Readiness and Airport Transfer — ist die betriebliche Inbetriebnahme: Verfahren, Personalplanung, Einweisung und Probebetrieb. Der Begriff wird in der Branche auch im Deutschen englisch verwendet. ORAT sollte starten, während noch gebaut wird, typischerweise sechs bis neun Monate vor der Eröffnung, nicht erst nach der Übergabe."
+      ],
+      [
+        "Wie halten wir die Kontrollkapazität während der Bauzeit?",
+        "Indem provisorische Kontrollspuren zuerst in Betrieb gehen und in der Spitzenstunde nachgewiesen werden, bevor die bestehende Kontrollstelle angefasst wird. In der Vorlage ist dieser Nachweis ein Meilenstein, der das zweite Sperrfenster freigibt."
+      ],
+      [
+        "Warum dauern Arbeiten im Sicherheitsbereich länger als vergleichbare außerhalb?",
+        "Ausweise, Begleitungen, Fahrzeugberechtigungen, eingeschränkte Arbeitszeiten und die Verfügbarkeit von Abstellpositionen senken alle die tatsächliche Leistung. Planen Sie für denselben Umfang im Sicherheitsbereich deutlich längere Dauern und ergänzen Sie einen Balken für die Zuverlässigkeitsüberprüfung."
+      ],
+      [
+        "Worin unterscheidet sich das von einem Terminalneubau?",
+        "Ein Neubau hat keine Fluggäste zu schützen und kann rein nach Bauablaufeffizienz sortiert werden. Diese Vorlage ist um Sperrfenster, provisorische Wege und erhaltene Kapazität herum gebaut — genau das macht eine Erweiterung langsamer."
+      ],
+      [
+        "Ist die Vorlage für die Terminalerweiterung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'fiber-broadband-rollout-plan': {
+    card: "Wegerechte, Genehmigungen, Bestandsaufnahme, Ausbauwellen, Messung, Hausanschlüsse.",
+    h1: "Projektplan für den Glasfaserausbau",
+    metaTitle: "Glasfaserausbau — Projektplan",
+    metaDesc: "Kostenloser Projektplan für den Glasfaserausbau: Wegerechte, Aufgrabegenehmigungen, Ausbauwellen, OTDR-Messung, Betriebsbereitschaft, Hausanschlüsse.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Glasfaserausbau</strong>, gebaut so, wie ein FTTH-Programm tatsächlich läuft — eine wiederholbare Abfolge je Ausbaugebiet, ausgeführt in überlappenden Wellen, getaktet von Wegerechten, Aufgrabegenehmigungen und der Verfügbarkeit mitnutzbarer Leerrohre. Jedes Gebiet endet an seinem eigenen Meilenstein „betriebsbereit“ (Ready for Service), und erst danach beginnen Hausanschlüsse und Umsatz. Laden Sie sie für eine Gremien- oder Investorenvorlage herunter oder öffnen Sie sie online und ergänzen Sie so viele Gebietswellen, wie Ihr Ausbauplan braucht.",
+    intro: "Ein Glasfaserausbau ist kein langer Bau, sondern dieselben sechs Schritte über viele Gebiete hinweg, zeitlich versetzt. Der Plan zeigt dieses Muster ausdrücklich, damit Sie eine Welle kopieren, statt für jedes Gebiet einen neuen Plan zu erfinden:",
+    phases: [
+      [
+        "Programmaufsetzung und Grobplanung",
+        "Bedarfsermittlung und Priorisierung der Gebiete, gegebenenfalls Markterkundungsverfahren und Förderantrag, Netz- und Standortplanung für die Technikstandorte (PoP), Rahmenvertrag mit den Tiefbaupartnern, Beschaffung von Kernnetz und Anbindung sowie das Bestandsdatenmodell, an dem alles Nachgelagerte hängt. <em>Meilenstein: Ausbauplan als Basisplan gesetzt.</em>"
+      ],
+      [
+        "Genehmigungen, Wegerechte und Bestandsaufnahme",
+        "Wegenutzungsverträge mit den Kommunen, Aufgrabegenehmigungen und verkehrsrechtliche Anordnungen, Gestattungsverträge mit privaten Grundstückseigentümern, Eigentümerbeschlüsse in Mehrfamilienhäusern, Bestandsaufnahme mitnutzbarer Leerrohre und Masten sowie Mitnutzungsanträge nach TKG. <em>Meilenstein: Wegerechte für Welle 1 geklärt.</em>"
+      ],
+      [
+        "Gebiet A — Ausbauwelle 1",
+        "Ausführungsplanung und Spleißplan, Freispülen der Leerrohre und Tiefbau, Einblasen der Kabel, Spleißen und Aufbau der Netzverteiler, OTDR-Messung und Übergabe der Bestandsdokumentation. <em>Meilenstein: Gebiet A betriebsbereit.</em>"
+      ],
+      [
+        "Gebiet B — Ausbauwelle 2",
+        "Dieselbe Abfolge, gestartet, während Gebiet A noch im Tiefbau steckt, damit Kolonnen und Genehmigungen ohne Leerlauf durchlaufen. <em>Meilenstein: Gebiet B betriebsbereit.</em>"
+      ],
+      [
+        "Gebiet C — Ausbauwelle 3",
+        "Die dritte Welle, mit ihrem eigenen Vorlauf für die Wegerechte davor — genau der Schritt, den Teams beim Versetzen am häufigsten vergessen. <em>Meilenstein: Gebiet C betriebsbereit.</em>"
+      ],
+      [
+        "Inbetriebnahme, Vermarktung und Hausanschlüsse",
+        "Inbetriebnahme der Technikstandorte, Anbindung an die Auftrags- und Abrechnungssysteme, Vorvermarktung, Aufbau der Montagekapazität und die Anschlusskampagnen je Gebiet, die den Umsatz erzeugen. <em>Meilenstein: Anschlussquote geprüft, nächste Welle entschieden.</em>"
+      ]
+    ],
+    callout: "Vor der Betriebsbereitschaft eines Gebiets ist nichts abrechenbar. Erschlossene Haushalte („homes passed“) sind eine Baukennzahl, angeschlossene Haushalte („homes connected“) sind die Umsatzkennzahl, und in der Lücke dazwischen sterben Glasfaser-Geschäftspläne. Setzen Sie je Gebiet einen Meilenstein für die Betriebsbereitschaft, lassen Sie den Anschlussbalken erst dort beginnen, und seien Sie ehrlich: Ein verweigertes Wegerecht oder ein verstopftes Leerrohr verzögert keinen Vorgang, sondern den Umsatz eines ganzen Gebiets um ein Quartal.",
+    customize: [
+      "Kopieren Sie den Block „Gebiet A“ einmal je Ausbaugebiet und verschieben Sie den Versatz; die Abfolge ist bewusst identisch, damit sie dupliziert und nicht neu geschrieben wird.",
+      "Setzen Sie die Balken für Wegerechte und Genehmigungen auf die tatsächlichen Bearbeitungs- und Anhörungsfristen Ihrer Kommunen und Straßenbaulastträger; die schwanken stark und lassen sich nicht dadurch verkürzen, dass man die Baufirma drängt.",
+      "Ergänzen Sie einen Balken für die Sanierung von Leerrohren mit realistischem Puffer — Verstopfungen und eingedrückte Rohre findet die Bestandsaufnahme, nicht die Planung, und sie führen zur Umtrassierung ganzer Straßenzüge.",
+      "Trennen Sie Einblasen und Spleißen, wenn verschiedene Kolonnen das machen; sie haben unterschiedliche Tagessätze und unterschiedliche Wetterempfindlichkeit.",
+      "Fügen Sie dort, wo es passt, einen Teilplan für Mehrfamilienhäuser ein — Gestattungsverträge, Eigentümerbeschlüsse und Inhausverkabelung laufen auf einer völlig anderen Uhr als der Tiefbau in der Straße.",
+      "Setzen Sie die Betriebsbereitschaft je Gebiet als Meilenstein und starten Sie den Anschlussbalken dieses Gebiets dort, damit das Diagramm zeigt, dass der Umsatz dem Bau folgt und nicht neben ihm herläuft."
+    ],
+    tips: [
+      "<strong>Starten Sie die Wegerechte, bevor die Planung fertig ist.</strong> Sie sind der Vorgang mit dem längsten Vorlauf im ganzen Programm und hängen an fremden Rechtsabteilungen, nicht an Ihren Planern.",
+      "<strong>Nehmen Sie die Leerrohre auf, bevor Sie ein Gebiet in eine Welle einplanen.</strong> Bestandsunterlagen zu mitnutzbarer Infrastruktur sind häufig falsch, und ein verstopftes Rohr nach der Mobilisierung der Kolonnen kostet dem Gebiet seinen Platz im Programm.",
+      "<strong>Überlappen Sie die Wellen absichtlich, nicht versehentlich.</strong> Der Sinn der Wellenplanung ist, eine Tiefbaukolonne, eine Spleißkolonne und eine Montagetruppe durchgehend ausgelastet zu halten; Lücken zwischen den Wellen sind reine Kosten.",
+      "<strong>Bringen Sie Auftragsannahme, Bereitstellung und Abrechnung schon in Welle 1 zum Laufen, nicht erst vor Welle 3.</strong> Ein Gebiet kann physisch betriebsbereit und trotzdem unverkäuflich sein, weil die Systeme nicht integriert sind.",
+      "<strong>Vermarkten Sie ein Gebiet vor, bevor es betriebsbereit ist.</strong> Vorverträge während der Tiefbauphase wandeln weit besser um als eine kalte Kampagne, nachdem die Bagger weg sind, und sie ziehen die Anschlusskurve nach vorn.",
+      "<strong>Verfolgen Sie die Kosten je erschlossenem Haushalt gebietsweise, nicht programmweit.</strong> Ein schwieriges Gebiet mit viel Rohrsanierung verschwindet im Durchschnitt und frisst still den Puffer von drei einfachen Gebieten."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Glasfaserausbau je Gebiet?",
+        "Ein typisches Ausbaugebiet mit einigen tausend Adressen läuft vier bis sechs Monate von der Ausführungsplanung bis zur Betriebsbereitschaft, und genau das nutzt die Vorlage. Die Programmlänge ergibt sich daraus, wie viele Gebiete parallel laufen, nicht aus der Dauer je Gebiet."
+      ],
+      [
+        "Was heißt betriebsbereit beziehungsweise RFS?",
+        "„Ready for Service“: der Punkt, an dem ein Gebiet gebaut, gemessen und in die Auftragssysteme eingepflegt ist, sodass Kundinnen und Kunden tatsächlich angeschlossen werden können. Das ist der Meilenstein, der den Umsatz startet, und er gehört je Gebiet verfolgt."
+      ],
+      [
+        "Warum liegen Wegerechte auf dem kritischen Pfad?",
+        "Weil dahinter Dritte stehen — Kommunen, Straßenbaulastträger, private Eigentümer, Wohnungseigentümergemeinschaften —, die keinen Anlass haben, sich nach Ihrem Takt zu richten. Sie dauern in der Regel Monate, lassen sich nicht durch mehr Personal verkürzen, und eine einzige Verweigerung kann die Trassenplanung eines Gebiets kippen."
+      ],
+      [
+        "Wie viele Wellen sollten gleichzeitig laufen?",
+        "So viele, dass Tiefbau- und Spleißkolonnen durchgehend ausgelastet sind, ohne dass Sie den Genehmigungsdurchsatz der Straßenverkehrsbehörde sprengen. Zwei bis drei überlappende Wellen sind üblich; die Vorlage zeigt drei."
+      ],
+      [
+        "Warum liegen die angeschlossenen weit unter den erschlossenen Haushalten?",
+        "Weil der Anschluss von Vermarktung, Montagekapazität und den Laufzeiten bestehender Verträge abhängt — nichts davon passiert an dem Tag, an dem ein Gebiet betriebsbereit wird. Modellieren Sie die Anschlusskurve getrennt von der Baukurve."
+      ],
+      [
+        "Ist die Vorlage für den Glasfaserausbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'stadium-construction-schedule': {
+    card: "Rohbau, Tribünen, Dachhub, Ausbau, Rasenanwuchs, Gebrauchsabnahme, Eröffnungsspiel.",
+    h1: "Bauzeitenplan für den Stadionbau",
+    metaTitle: "Stadionbau — Bauzeitenplan",
+    metaDesc: "Kostenloser Bauzeitenplan für den Stadionbau: Rohbau und Fertigteiltribünen, Dachhub, Ausbau, Rasenanwuchs, Gebrauchsabnahme und Eröffnungsspiel.",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Stadionbau</strong>, rückwärts geplant von einem Termin, den niemand im Projekt in der Hand hat — dem Eröffnungsspiel im Rahmenterminkalender der Liga. Sie umfasst Rohbau und Fertigteiltribünen, Dachtragwerk und Seilnetz mit ihrem Wetterfenster für den großen Hub, den Ausbau von Umläufen und Hospitality, den Rasenaufbau mit seiner Anwuchszeit sowie die Belastungsproben und die Gebrauchsabnahme, die zwischen der Fertigstellung und einem vollen Haus stehen. Laden Sie sie für die Aufsichtsratsvorlage herunter oder öffnen Sie sie online und ziehen Sie den Spieltermin, um zu sehen, was zerbricht.",
+    intro: "Die meisten Bauzeitenpläne verhandeln ihr Ende. Dieser kann das nicht: Der Spielplan ist veröffentlicht, die Tickets sind verkauft, und zwei der längsten Vorgänge — Rasenanwuchs und Dachhub — hängen an Wetter und Biologie, nicht an der Zahl der Leute auf der Baustelle. Der Plan ist entsprechend sortiert:",
+    phases: [
+      [
+        "Planung, Genehmigungen und Baufeldfreimachung",
+        "Kapazitätsvorgabe, der feststehende Eröffnungstermin, Baugenehmigung und die Strategie für Sicherheitskonzept und Gebrauchsabnahme nach der Versammlungsstättenverordnung, Entwurf der Schüssel, Vergabe des Stahlbaupakets und Baufeldfreimachung. <em>Meilenstein: Termin des Eröffnungsspiels fixiert.</em>"
+      ],
+      [
+        "Gründung und Schüssel",
+        "Pfahlgründung und Fundamente, Untergeschoss und Versorgungstunnel, Ortbetonskelett, Fertigung und Montage der Tribünenfertigteile. <em>Meilenstein: Rohbau der Schüssel fertig.</em>"
+      ],
+      [
+        "Dach und Hülle",
+        "Fertigung des Dachstahls, Druckring, Vorspannen des Seilnetzes, der große Hub innerhalb seines Wetterfensters und die Fassade. <em>Meilenstein: Gebäudehülle dicht.</em>"
+      ],
+      [
+        "Ausbau, Hospitality und Technik",
+        "Umläufe, Logen und Businessbereiche, Gastronomie, Bestuhlung, Flutlicht und Videowände, Drehkreuze und Ticketing, Medienarbeitsplätze und die Stadionsicherheitszentrale."
+      ],
+      [
+        "Rasen und Spielfeld",
+        "Aushub und Dränage, Rasenheizung und Beregnung, Rasentragschicht, Verlegen des Hybridrasens und die Anwuchszeit. <em>Meilenstein: Spielfeld an die Platzwarte übergeben.</em>"
+      ],
+      [
+        "Belastungsproben, Abnahme und Eröffnung",
+        "Sicherheitskonzept mit Polizei, Feuerwehr und Ordnungsamt, Ordnerdienst, eine Belastungsprobe mit reduzierter Zuschauerzahl, eine zweite nahe der Vollauslastung, Gebrauchsabnahme durch die Bauaufsicht und Anpfiff. <em>Meilenstein: Eröffnungsspiel.</em>"
+      ]
+    ],
+    callout: "Zwei Balken in diesem Diagramm lassen sich nicht stauchen. Der Dachhub braucht ein Fenster mit ruhigem Wetter und einen Kran, der Monate vorher gebucht ist; der Rasen braucht eine Anwuchszeit, gemessen in Wochen mit der richtigen Temperatur und genug Licht, bevor er einem Spiel standhält. Beide liegen spät im Programm, beide sind saisonabhängig, und beide münden in einen Spieltermin, der sich nicht verschiebt. Planen Sie diese beiden zuerst und legen Sie den Rest der Arbeiten um sie herum.",
+    customize: [
+      "Tragen Sie Ihren echten Termin für das Eröffnungsspiel ein und rechnen Sie rückwärts — die Vorlage ist bewusst so gebaut, dass der letzte Meilenstein fest steht und der Puffer weiter vorn sitzt.",
+      "Setzen Sie den Anwuchsbalken auf Ihr Klima und Ihr Rasensystem; eine Verlegung im Frühjahr mit langen Tagen wächst weit schneller an als eine im Herbst, und dieser Unterschied kann ein ganzer Spieltag sein.",
+      "Legen Sie den Dachhub in Ihre tatsächlich windarme Jahreszeit und hängen Sie einen Reservebalken dahinter; ein wetterbedingt abgesagter Hub rutscht nicht um einen Tag, sondern in das nächste Fenster.",
+      "Ergänzen Sie eine Zeile je Belastungsprobe, die Ihre Genehmigungsbehörde verlangt — meist ist es eine gestufte Reihe und nicht ein einzelner Test bei voller Auslastung.",
+      "Zerlegen Sie den Ausbau nach Rang oder Tribüne, wenn das Stadion teilweise öffnen kann; manche Häuser erhalten die Abnahme zunächst für eine reduzierte Zuschauerzahl und bauen den Rest danach fertig.",
+      "Setzen Sie Spieltermin, Rohbau fertig, Hülle dicht, Rasenübergabe, Gebrauchsabnahme und Anpfiff als Meilensteine — nach genau diesen sechs Terminen fragt ein Vereinsgremium."
+    ],
+    tips: [
+      "<strong>Behandeln Sie den Spieltermin als Randbedingung, nicht als Ziel.</strong> Wenn die Rückwärtsrechnung sagt, dass der Dachhub vor dem Winter stattfinden muss, ist das die Antwort — darüber in der Baubesprechung zu streiten ändert den Wind nicht.",
+      "<strong>Bestellen Sie die Tribünenfertigteile peinlich früh.</strong> Die Fertigung ist eine Warteschlange im Werk, und die Tribünenelemente sind der Posten, der den Rohbau am ehesten aufhält, während alle auf das Dach schauen.",
+      "<strong>Führen Sie den Rasenaufbau als eigenes Projekt im Plan, nicht als Zeile beim Garten- und Landschaftsbau.</strong> Dränage, Rasenheizung, Tragschicht und Anwuchs sind eine Abfolge von zwei bis drei Monaten mit einem Greenkeeper, nicht eine Woche Rollrasen.",
+      "<strong>Belastungsproben sind Genehmigungsrecht, kein Marketing.</strong> Die Behörde will Ordnerdienst, Einlass, Auslass und Räumung bei steigender Belegung sehen, bevor sie freigibt, und sie kürzt diese Reihe nicht für einen Übertragungstermin.",
+      "<strong>Nehmen Sie Sicherheitszentrale, Beschallung und Videoüberwachung vor der ersten Belastungsprobe in Betrieb.</strong> An diesen Systemen hängt die Abnahme tatsächlich, und sie werden üblicherweise zuletzt eingeschaltet.",
+      "<strong>Halten Sie eine Eröffnung mit reduzierter Kapazität als echten Rückfallplan.</strong> Das in der letzten Woche zu entscheiden ist Chaos; es sechs Monate vorher mit einem definierten Auslöser zu entscheiden ist ein Plan."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Stadions?",
+        "Ein mittelgroßer Neubau läuft nach den Genehmigungen typischerweise 24 bis 36 Monate auf der Baustelle, und ungefähr das zeigt die Vorlage. Große Häuser mit aufwendigen Dächern brauchen regelmäßig länger, getrieben von der Abfolge aus Stahlbau und Seilnetz."
+      ],
+      [
+        "Warum dauert der Rasen so lange?",
+        "Weil die Fläche wächst und nicht eingebaut wird. Nach Dränage, Rasenheizung und Tragschicht braucht ein Hybridrasen mehrere Wochen Anwuchs bei passender Temperatur und genug Licht, bevor er Spielbelastung aushält."
+      ],
+      [
+        "Was passiert, wenn wir das Eröffnungsspiel verpassen?",
+        "Vereine verlegen das Spiel in der Regel oder eröffnen mit reduzierter Kapazität — beides ist teuer und öffentlich sichtbar. Genau deshalb enthält die Vorlage eine gestufte Reihe von Belastungsproben und eine vorab getroffene Entscheidung über die Rückfallkapazität, statt beides dem Zufall zu überlassen."
+      ],
+      [
+        "Wann sollte der Dachhub liegen?",
+        "In Ihrem ruhigsten saisonalen Fenster, mit Kran und Spezialkolonne lange vorher gebucht und einem benannten Ersatzfenster. Ein wetterbedingt verschobener Hub wartet üblicherweise auf das nächste Fenster, nicht auf den nächsten Tag."
+      ],
+      [
+        "Was ist die Gebrauchsabnahme, und wann beantragen wir sie?",
+        "Die Freigabe zur Nutzung als Versammlungsstätte für eine bestimmte Zuschauerzahl, erteilt von der Bauaufsicht nach Begehungen, geprüftem Sicherheitskonzept und den Belastungsproben. Sie gehört Monate vor der Eröffnung auf den Weg gebracht, nicht nach der Fertigstellung."
+      ],
+      [
+        "Ist die Stadionbau-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'museum-exhibition-planning-timeline': {
+    card: "Leihanfragen, Rückgabezusage, Restaurierung, Kuriere, Klima, Aufbau, Abbau.",
+    h1: "Zeitplan für die Ausstellungsplanung im Museum",
+    metaTitle: "Ausstellungsplanung im Museum",
+    metaDesc: "Kostenloser Zeitplan für die Ausstellungsplanung: Leihanfragen, Rückgabezusage, Restaurierung, Kuriertermine, Klimastabilisierung, Aufbau und Abbau.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Ausstellungsplanung im Museum</strong>, so geordnet, wie Ausstellungen tatsächlich laufen — um die Leihgaben herum. Leihanfragen und Antworten der Leihgeber, Facility Report und staatliche Ausfallgarantie, Versicherung und Kurierkalender, Restaurierung und Zustandsprotokolle, Klimastabilisierung des Saals, bevor auch nur ein Objekt eintrifft, dann der Aufbau unter Kurieraufsicht und ein feststehender Eröffnungstermin. Laden Sie sie für die Projektsteuerung herunter oder öffnen Sie sie online und setzen Sie Ihren eigenen Eröffnungsabend.",
+    intro: "Ein geliehenes Objekt kommt zu den Bedingungen des Leihgebers, in seiner Kiste, mit seinem Kurier, an einem Termin, der ihm passt. Jeder andere Termin der Ausstellung leitet sich daraus ab, also stellt der Plan Leihverkehr und Kuriere in die Mitte, statt sie als Logistik abzuhandeln:",
+    phases: [
+      [
+        "Konzept und kuratorische Entwicklung",
+        "Ausstellungsthese, Wunschliste der Objekte, Budgetfreigabe, Antrag auf staatliche Ausfallgarantie sowie der Katalog, der von allem im Projekt den längsten Vorlauf hat. <em>Meilenstein: Eröffnungstermin fixiert.</em>"
+      ],
+      [
+        "Leihverkehr und Leihverträge",
+        "Formale Leihanfragen, Antworten und Ersatzobjekte, Facility Report — das international übliche Formular zu Klima, Sicherheit und Handhabung Ihres Hauses —, Versicherung und Wertermittlung, unterzeichnete Leihverträge, rechtsverbindliche Rückgabezusage nach dem Kulturgutschutzgesetz und die Kurierauflagen. <em>Meilenstein: Objektliste eingefroren.</em>"
+      ],
+      [
+        "Gestaltung und Ausstellungsbau",
+        "Ausstellungsgestaltung und Raumplanung, Grafik und Vermittlungstexte, Vitrinen- und Halterungsentwurf, Fertigung mit Prüfung auf Ausgasung sowie Medien- und Lichtplanung."
+      ],
+      [
+        "Restaurierung, Kuriere und Transport",
+        "Zustandserfassung, Restaurierung und Rahmung, Kistenspezifikationen, Ausfuhrgenehmigungen und Zollabwicklung sowie die kurierbegleitete Abholung selbst. <em>Meilenstein: Objekte im Haus.</em>"
+      ],
+      [
+        "Saalvorbereitung und Aufbau",
+        "Abbau der Vorgängerausstellung, Neuanstrich, Klimastabilisierung mit Datenaufzeichnung, Vitrinen und Licht, Eingangszustandsprotokolle gemeinsam mit den Kurieren, Montage der Objekte und Versiegeln der Vitrinen."
+      ],
+      [
+        "Eröffnung, Laufzeit und Abbau",
+        "Begehung, Pressevorbesichtigung, Eröffnung, Begleitprogramm, Überwachung der Lichtbelastung und Objektwechsel, danach Abbau und Rücktransport. <em>Meilenstein: Objekte an die Leihgeber zurückgegeben.</em>"
+      ]
+    ],
+    callout: "Der Saal muss klimatisch stabil sein, bevor Objekte hineinkommen, und Stabilität braucht Zeit. Frische Farbe gast aus, neue Vitrinen gasen aus, und relative Feuchte und Temperatur müssen über einen längeren Zeitraum am vereinbarten Sollwert aufgezeichnet werden, bevor der Kurier eines Leihgebers sein Objekt aus der Kiste lässt. Setzen Sie vor den Aufbau einen Meilenstein „Klimawerte aufgezeichnet und akzeptiert“ — rutscht der, stehen die Kuriere trotzdem in Ihrem Saal, und der Eröffnungstermin ist keinen Tag später geworden.",
+    customize: [
+      "Setzen Sie den Balken für die Leihanfragen auf mindestens zwölf bis achtzehn Monate vor der Eröffnung, wenn große internationale Häuser dabei sind; manche Institutionen haben Gremien, die nur wenige Male im Jahr tagen.",
+      "Ergänzen Sie hinter den Antworten der Leihgeber eine Schleife für Ersatzobjekte. Absagen sind normal, und der Plan sollte zeigen, wie lange es dauert, ein Alternativobjekt zu finden und anzufragen.",
+      "Verlängern Sie die Klimastabilisierung, wenn Sie kurz vor dem Aufbau streichen oder neue Vitrinen stellen — die Ausgasung ist der Grund, warum Leihgeber die Klimaprotokolle sehen wollen.",
+      "Führen Sie eine Zeile je Kurier, wenn die Objekte mit getrennten Flügen kommen; jeder braucht Begleitung, Unterkunft und ein eigenes Zeitfenster für das Zustandsprotokoll im Saal.",
+      "Tragen Sie in die Laufzeit die Wechsel lichtempfindlicher Objekte ein, wo ein Werk nach den Lux- und Belastungsgrenzen seines Leihgebers nicht über die volle Dauer gezeigt werden darf.",
+      "Setzen Sie Eröffnungstermin, eingefrorene Objektliste, Objekte im Haus und Objekte zurückgegeben als Meilensteine — auf diese vier Termine schauen Registrarin und Direktion gleichermaßen."
+    ],
+    tips: [
+      "<strong>Frieren Sie die Objektliste ein und verteidigen Sie sie dann.</strong> Jede späte Ergänzung startet Leihvertrag, Versicherung, Verpackung, Halterungsbau und Grafik neu — es ist die teuerste Art von Änderung, die eine Ausstellung kennt.",
+      "<strong>Schicken Sie den Facility Report früh und unaufgefordert.</strong> Leihgeber bewerten Ihr Haus, bevor sie Ihr Vorhaben bewerten, und ein veralteter Bericht ist eine häufige und vollständig vermeidbare Verzögerung.",
+      "<strong>Buchen Sie Kuriere nach den Kalendern der Leihgeber, nicht nach Ihrem.</strong> Ein Kurier ist eine namentlich benannte Person aus dem leihgebenden Haus mit eigenem Terminplan; dass zwei Leihgeber dieselbe Woche wollen, ist eine reale und häufige Einschränkung.",
+      "<strong>Bauen Sie Halterungen nach dem Einfrieren der Liste, nicht davor.</strong> Halterungen sind objektspezifische Einzelanfertigungen, und ein ausgetauschtes Werk bedeutet eine neue Halterung, für die im Plan keine Zeit steht.",
+      "<strong>Planen Sie Zustandsprotokolle als Saalzeit, nicht als Papierkram.</strong> Eingangsprotokolle entstehen im Beisein des Kuriers, Objekt für Objekt, und sie belegen Tage des Aufbaufensters, die regelmäßig niemand eingeplant hat.",
+      "<strong>Planen Sie Abbau und Rücktransport mit derselben Sorgfalt wie den Aufbau.</strong> Ausgangsprotokolle, Neuverpackung und Kurierbegleitung wiederholen sich alle, und Leihgeber beurteilen Sie an der Rückgabe genauso wie an der Ausstellung."
+    ],
+    faq: [
+      [
+        "Wie früh sollte die Ausstellungsplanung beginnen?",
+        "Bei einer Ausstellung mit Leihgaben sind zwei bis drei Jahre normal, und die Vorlage deckt ungefähr die letzten achtzehn Monate ab. Leihanfragen an große internationale Häuser sollten mindestens zwölf bis achtzehn Monate vor der Eröffnung heraus sein."
+      ],
+      [
+        "Was ist ein Facility Report?",
+        "Ein standardisiertes Formular, das Klimaführung, Sicherheit, Brandschutz und Handhabungsverfahren Ihres Hauses beschreibt. Der Begriff wird auch im deutschen Leihverkehr englisch verwendet. Leihgeber entscheiden daran, ob sie überhaupt verleihen — er sollte aktuell sein, bevor die Anfragen rausgehen."
+      ],
+      [
+        "Warum muss sich der Saal vor dem Aufbau einklimatisieren?",
+        "Weil frische Farbe und neue Vitrinen ausgasen und Temperatur und relative Feuchte lange genug am vereinbarten Sollwert liegen müssen, um aufgezeichnet zu werden. Kuriere weigern sich regelmäßig, in ein unbelegtes Raumklima auszupacken."
+      ],
+      [
+        "Was passiert, wenn ein Leihgeber absagt?",
+        "Sie tauschen das Objekt aus, und damit startet für dieses Werk die Kette aus Vertrag, Versicherung, Verpackung und Halterungsbau von vorn. Planen Sie eine Ersatzschleife ein, statt anzunehmen, dass jede Anfrage bewilligt wird."
+      ],
+      [
+        "Wie lang sollte das Aufbaufenster sein?",
+        "Rechnen Sie mit mehreren Wochen zwischen Saalübergabe und Eröffnung: Vitrinen und Licht, Grafik, Eingangsprotokolle mit den Kurieren, Montage und Versiegeln laufen nacheinander und Objekt für Objekt."
+      ],
+      [
+        "Ist die Vorlage für die Ausstellungsplanung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'iso-27001-certification-plan': {
+    card: "Anwendungsbereich, Risiken, SoA, Maßnahmen, internes Audit, Stufe 1 und Stufe 2.",
+    h1: "Projektplan für die ISO-27001-Zertifizierung",
+    metaTitle: "ISO 27001 — Zertifizierungsplan",
+    metaDesc: "Kostenloser Plan für die ISO-27001-Zertifizierung: Anwendungsbereich, Risikobewertung, SoA, Maßnahmen, internes Audit, Managementbewertung, Stufe 1 und 2.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-27001-Zertifizierung</strong>, aufgebaut so, wie eine Zertifizierungsstelle Sie tatsächlich bewertet — Anwendungsbereich des ISMS, Risikobewertung und Erklärung zur Anwendbarkeit, Umsetzung der Maßnahmen, eine Zeit echten Betriebs, die Nachweise erzeugt, dann internes Audit und Managementbewertung, die beide vor Stufe 2 abgeschlossen sein müssen, und schließlich das zweistufige Audit selbst. Wenn Sie parallel ein Qualitätsmanagementsystem aufbauen: Der <a href=\"/de/templates/iso-9001-certification-plan.html\">Projektplan für die ISO-9001-Zertifizierung</a> nutzt dieselbe Auditform.",
+    intro: "Das Zertifizierungsaudit ist kein Termin, sondern eine Dokumentenprüfung, danach eine zwingende Lücke, in der Sie beheben, was sie gefunden hat, und erst dann ein vollständiges Nachweisaudit. Genau diese Lücke ist der Grund, warum sich ISO-27001-Pläne am Ende nicht zusammendrücken lassen:",
+    phases: [
+      [
+        "Anwendungsbereich und Gap-Analyse",
+        "Grenzen des ISMS, interessierte Parteien und rechtliche Anforderungen, eine Gap-Analyse gegen die Maßnahmen aus Anhang A und die Auswahl der bei der DAkkS akkreditierten Zertifizierungsstelle — bei der Gelegenheit werden auch die beiden Audittermine gebucht. <em>Meilenstein: Anwendungsbereich und Ausgangslage abgestimmt.</em>"
+      ],
+      [
+        "Risikobewertung und Erklärung zur Anwendbarkeit",
+        "Inventar der Informationswerte, die Risikomethodik, Identifikation und Bewertung der Risiken, der Risikobehandlungsplan und die Erklärung zur Anwendbarkeit (Statement of Applicability), die festhält, welche Maßnahmen gelten und warum. <em>Meilenstein: SoA und Risikobehandlung freigegeben.</em>"
+      ],
+      [
+        "Umsetzung der Maßnahmen",
+        "Das Regelwerk aus Richtlinien, Zugriffssteuerung und Identitäten, Lieferanten- und Cloud-Maßnahmen, sichere Entwicklung und Änderungssteuerung, physische und personelle Maßnahmen sowie Verfahren für Sicherheitsvorfälle und Notbetrieb. <em>Meilenstein: Maßnahmen umgesetzt.</em>"
+      ],
+      [
+        "Betrieb und Sammeln von Nachweisen",
+        "Die Phase, die sich nicht verkürzen lässt: die Maßnahmen lange genug betreiben, dass Berechtigungsprüfungen, Protokollauswertungen, Lieferantenbewertungen und eine Notfallübung tatsächlich stattgefunden und Nachweise hinterlassen haben. <em>Meilenstein: drei Monate Nachweise vorhanden.</em>"
+      ],
+      [
+        "Internes Audit und Managementbewertung",
+        "Ein vollständiges internes Audit des ISMS, die dabei festgestellten Abweichungen, deren Korrekturmaßnahmen und die Managementbewertung. Beides ist zwingend vorgeschrieben und beides muss vor Stufe 2 abgeschlossen sein. <em>Meilenstein: internes Audit und Managementbewertung abgeschlossen.</em>"
+      ],
+      [
+        "Audit Stufe 1 und Stufe 2",
+        "Die Dokumentenprüfung in Stufe 1, ihre Feststellungen, das Zeitfenster für Korrekturmaßnahmen, die Auffrischung der Nachweise, das Audit der Stufe 2, das Schließen der Abweichungen und die Zertifikatserteilung. <em>Meilenstein: Zertifikat erteilt.</em>"
+      ]
+    ],
+    callout: "Stufe 1 und Stufe 2 sind mit Absicht getrennt, und der Abstand dazwischen ist kein Puffer. Stufe 1 prüft, ob Ihre ISMS-Dokumentation überhaupt zertifizierungsfähig ist; sie erzeugt fast immer Feststellungen, und Stufe 2 geht nicht durch, solange die offen sind. Planen Sie sechs bis acht Wochen zwischen die beiden Besuche und legen Sie echte Arbeit hinein. Die zweite unverrückbare Größe ist verstrichene Zeit: Im Audit der Stufe 2 zieht die Auditorin Stichproben aus Aufzeichnungen, und Aufzeichnungen entstehen nur, wenn die Maßnahmen gelaufen sind. Sie können keine Berechtigungsprüfung im März einführen und im April ein Jahr Nachweise vorlegen.",
+    customize: [
+      "Beauftragen Sie die Zertifizierungsstelle früh und setzen Sie zuerst den Termin für Stufe 2 — alles davor ist ein Countdown, keine Schätzung.",
+      "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2 für Korrekturmaßnahmen; diese Spanne zu kürzen ist die häufigste Ursache für ein nicht bestandenes Audit der Stufe 2.",
+      "Zerlegen Sie die Umsetzung in eine Zeile je Themenblock aus Anhang A oder je einzelner Maßnahme, sobald die Erklärung zur Anwendbarkeit freigegeben ist.",
+      "Verlängern Sie die Betriebsphase, wenn Ihre Risikobehandlung an Maßnahmen mit quartalsweisem oder jährlichem Turnus hängt — Sie brauchen mindestens einen vollständigen Durchlauf als Nachweis.",
+      "Ergänzen Sie Zeilen für jeden Ausschluss aus dem Anwendungsbereich, den Sie begründen müssen; genau daran wird Stufe 1 am härtesten bohren.",
+      "Nehmen Sie das erste Überwachungsaudit im Folgejahr als datierte Zeile mit auf, damit das ISMS über die Zertifikatserteilung hinaus mit Personal hinterlegt ist."
+    ],
+    tips: [
+      "<strong>Die Erklärung zur Anwendbarkeit treibt alles, was danach kommt.</strong> Bis sie freigegeben ist, wissen Sie nicht, welche Maßnahmen Sie bauen — Aufwandsschätzungen vor diesem Punkt sind geraten.",
+      "<strong>Führen Sie das interne Audit ernsthaft.</strong> Ein weiches internes Audit, das nichts findet, verschiebt die Feststellungen nur nach Stufe 2, wo sie Sie den Zertifikatstermin kosten statt zwei Wochen.",
+      "<strong>Halten Sie die Managementbewertung als protokollierte Sitzung ab.</strong> Sie ist eine ausdrückliche Anforderung mit festgelegten Eingaben, und Auditoren lesen das Protokoll, statt Ihnen zu glauben.",
+      "<strong>Machen Sie die Übung zu Vorfall und Notbetrieb vor Stufe 2.</strong> Sie ist einer der wenigen Nachweise, die Sie terminieren können, statt auf sie zu warten.",
+      "<strong>Erwägen Sie die Variante ISO 27001 auf Basis von IT-Grundschutz.</strong> Wenn Sie ohnehin nach den BSI-Bausteinen arbeiten oder öffentliche Auftraggeber bedienen, ändert das Auditform und Vorbereitungsaufwand spürbar — das gehört vor die Auswahl der Zertifizierungsstelle, nicht danach.",
+      "<strong>Vermengen Sie das nicht mit SOC 2.</strong> Die Maßnahmen überschneiden sich, die Mechanik nicht: ISO 27001 ist eine Zertifizierung mit Dreijahreszyklus und Überwachungsaudits, SOC 2 ist ein Prüfungsbericht (Attestation) einer US-Wirtschaftsprüfungsgesellschaft gegen die Trust Services Criteria des AICPA. Diese Begriffe bleiben englisch, weil sie eine US-Prüfungsordnung bezeichnen, für die es keine deutsche Entsprechung gibt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine ISO-27001-Zertifizierung?",
+        "Aus dem Stand, ohne bestehendes ISMS, üblicherweise zwölf bis achtzehn Monate. Die Vorlage nutzt rund fünfzehn. Was sich nicht zusammendrücken lässt, ist die Betriebsphase, die die Nachweise erzeugt, und der zwingende Abstand zwischen Stufe 1 und Stufe 2."
+      ],
+      [
+        "Worin unterscheiden sich Stufe 1 und Stufe 2?",
+        "Stufe 1 ist eine Dokumenten- und Reifeprüfung — Anwendungsbereich, Richtlinien, Risikobewertung, Erklärung zur Anwendbarkeit sowie die Nachweise zu internem Audit und Managementbewertung. Stufe 2 ist das vollständige Audit der Frage, ob das ISMS tatsächlich gelebt wird. Feststellungen aus Stufe 1 müssen vor Stufe 2 geschlossen sein, und deshalb lässt die Vorlage ein Fenster für Korrekturmaßnahmen dazwischen."
+      ],
+      [
+        "Brauche ich internes Audit und Managementbewertung vor Stufe 2?",
+        "Ja. Beides sind verbindliche Anforderungen der Norm, und zu beidem wird die Auditorin Nachweise sehen wollen. Die Vorlage legt sie vor Stufe 1, damit die daraus entstehenden Korrekturmaßnahmen noch Zeit haben."
+      ],
+      [
+        "Ist ISO 27001 dasselbe wie SOC 2?",
+        "Nein. ISO 27001 ist eine internationale Norm, gegen die Sie von einer akkreditierten Stelle zertifiziert werden, im Dreijahreszyklus mit jährlichen Überwachungsaudits. SOC 2 ist eine Attestation einer US-Wirtschaftsprüfungsgesellschaft gegen die Trust Services Criteria, und ein Type-II-Bericht deckt einen definierten Beobachtungszeitraum ab, statt ein Zertifikat zu erteilen. Dafür nutzen Sie den <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplan</a>; die beiden Pläne überschneiden sich bei den Maßnahmen, nicht bei den Terminen."
+      ],
+      [
+        "Worin unterscheidet sich das vom ISO-9001-Plan?",
+        "Die Auditmechanik ist dieselbe zweistufige Form, die Inhalte sind es nicht: ISO 9001 ist ein Qualitätsmanagementsystem, dies ist ein Informationssicherheits-Managementsystem auf Basis einer Risikobewertung und einer Erklärung zur Anwendbarkeit. Wenn Sie beides zertifizieren, schauen Sie in den <a href=\"/de/templates/iso-9001-certification-plan.html\">Projektplan für die ISO-9001-Zertifizierung</a>."
+      ],
+      [
+        "Ist die ISO-27001-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'crm-implementation-plan': {
+    card: "Prozessdesign, Datenbereinigung, Konfiguration, Testmigrationen, Schulung, Umstellung.",
+    h1: "Projektplan für die CRM-Einführung",
+    metaTitle: "CRM-Einführung — Projektplan",
+    metaDesc: "Kostenloser Projektplan für die CRM-Einführung: Prozessdesign, Datenbereinigung, Konfiguration, Testmigrationen, Schulung, Umstellung zum Quartalswechsel.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die CRM-Einführung</strong>, die die Arbeit dorthin legt, wo sie wirklich liegt — nicht in die Konfiguration von Objekten, sondern in das Prüfen, Entdoppeln und Abstimmen der Kundendaten, die Sie umziehen wollen, und in eine Umstellung an einem Punkt im Quartal, der die Prognose nicht zerlegt. Enthalten sind Prozessdesign, Datenbereinigung, Konfiguration und Schnittstellen, Testmigrationen, Schulungsgruppen, die Umstellung und der erste vollständige Prognosezyklus im neuen System.",
+    intro: "Für die Konfiguration plant jeder Budget ein, für die Daten niemand. Aber wer als Vertriebsmitarbeiterin das neue CRM öffnet und ihren größten Kunden dreimal darin findet, hört noch am selben Vormittag auf, es zu benutzen, und keine Schulung holt das zurück:",
+    phases: [
+      [
+        "Aufnahme und Prozessdesign",
+        "Vertriebsprozess und Definition der Phasen, Definitionen für Pipeline und Prognose, Feld- und Objektdesign sowie die Auswertungsanforderungen, an denen die ganze Konfiguration bemessen wird. Parallel dazu die Datenschutzarbeit: Verzeichnis der Verarbeitungstätigkeiten, Auftragsverarbeitungsvertrag mit dem Anbieter und ein Löschkonzept mit Speicherfristen. <em>Meilenstein: Design freigegeben.</em>"
+      ],
+      [
+        "Datenprüfung, Bereinigung und Entdoppelung",
+        "Auszüge aus den Quellsystemen, Qualitätsanalyse, Abgleichschlüssel und Entdoppelungsregeln, der automatisierte Durchlauf, die Datensätze, die nur der Vertrieb korrigieren kann, und das Aufräumen der Konzernstrukturen. Das läuft über Monate parallel. <em>Meilenstein: Daten bereit für die Testmigration.</em>"
+      ],
+      [
+        "Konfiguration und Schnittstellen",
+        "Objekte, Automatisierungen und Prüfregeln, Berechtigungen und Gebietsmodell, E-Mail, Kalender und Telefonie, Abgleich mit der Marketingautomatisierung, Angebotserstellung und ERP-Anbindung sowie die Prognose-Auswertungen. <em>Meilenstein: Konfiguration abgeschlossen.</em>"
+      ],
+      [
+        "Testmigrationen",
+        "Zwei vollständige Probeläufe mit Abstimmung und fachlicher Prüfung durch den Vertrieb dazwischen, danach ein gestoppter Lauf mit vollem Datenvolumen, der beweist, dass die Ladezeit in Ihr Umstellungsfenster passt. <em>Meilenstein: Testmigration abgenommen.</em>"
+      ],
+      [
+        "Schulung und Nutzung",
+        "Rollenbezogene Inhalte, zuerst Prognose-Workshops für die Führungskräfte, dann die Gruppen im Vertrieb, terminiert nah an den Produktivstart, dazu das Netz aus Multiplikatoren und der Plan für die Vor-Ort-Betreuung. <em>Meilenstein: Schulungen abgeschlossen.</em>"
+      ],
+      [
+        "Umstellung und erster Prognosezyklus",
+        "Das Fenster am Quartalswechsel, Einfrieren des Altsystems, Produktivladung, Abgleich der Pipeline gegen das Altsystem, Produktivstart, intensive Betreuung und der erste vollständige Prognosezyklus im neuen CRM. <em>Meilenstein: Produktivstart.</em>"
+      ]
+    ],
+    callout: "Wählen Sie den Umstellungstermin aus dem Vertriebskalender, nicht aus dem Projektplan. Eine Migration mitten im Quartal heißt, dass jemand laufende Geschäfte mitten im Lauf auf die Zielerreichung neu erfassen soll, und eine Prognose, die zur Hälfte in jedem der beiden Systeme steht, ist eine Prognose, die niemand vor einem Gremium verteidigen kann. Stellen Sie in den ersten beiden Wochen eines neuen Quartals um, wenn die Pipeline gerade zurückgesetzt und abgestimmt ist — dann startet der erste Prognosezyklus im neuen CRM von einer Zahl aus, auf die sich beide Systeme geeinigt haben.",
+    customize: [
+      "Legen Sie die Umstellung in die ersten beiden Wochen eines Quartals und rechnen Sie von dort rückwärts; der letzte Probelauf sollte mindestens drei Wochen davor fertig sein.",
+      "Zerlegen Sie die Entdoppelung nach Objekt — Firmen, Kontakte, Interessenten, Verkaufschancen —, weil Abgleichschlüssel und Zuständige jeweils andere sind.",
+      "Schieben Sie die Schulung des Vertriebs so spät wie möglich, ohne mit der Umstellung zu kollidieren; sechs Wochen zu früh geschult heißt zweimal geschult.",
+      "Ergänzen Sie Zeilen je Schnittstelle, wenn Angebotserstellung, ERP oder Marketingautomatisierung eigene Abhängigkeiten zu Dienstleistern haben.",
+      "Führen Sie die vom Vertrieb zu korrigierenden Datensätze als benannte Zeile mit benannter verantwortlicher Person — das ist Fachbereichsarbeit, keine Aufgabe des Datenteams.",
+      "Nehmen Sie die Verhandlung der Betriebsvereinbarung als eigene Zeile auf, sobald das System Leistungsdaten auswertbar macht; ohne Zustimmung des Betriebsrats gibt es keinen Produktivstart, und diese Verhandlung dauert Monate.",
+      "Ergänzen Sie eine Zeile für die Entscheidung über die Historie; fünf Jahre E-Mails und Anrufe mitzunehmen ist meist die teuerste einzelne Entscheidung im Plan — und mit Blick auf Speicherfristen selten die zulässigste."
+    ],
+    tips: [
+      "<strong>Entdoppeln Sie vor der Konfiguration, nicht danach.</strong> Doppelte Firmensätze zerlegen Gebietszuordnung, Prognoseverdichtung und Auswertung gleichzeitig, und jede dieser Arbeiten muss wiederholt werden, wenn sich die Daten darunter ändern.",
+      "<strong>Holen Sie den Betriebsrat früh an Bord.</strong> Ein CRM, mit dem sich Verhalten und Leistung auswerten lassen, ist nach dem Betriebsverfassungsgesetz mitbestimmungspflichtig. Wer die Betriebsvereinbarung erst vier Wochen vor dem Start anfasst, verschiebt den Start.",
+      "<strong>Stimmen Sie am Umstellungstag den Pipelinewert gegen das Altsystem ab.</strong> Wenn die beiden Zahlen nicht übereinstimmen, bevor sich jemand anmeldet, streiten Sie das ganze Quartal darüber, welche stimmt.",
+      "<strong>Schulen Sie Führungskräfte vor dem Vertrieb.</strong> Nutzung wird im Einzelgespräch durchgesetzt; wer seine eigene Pipeline-Durchsicht im neuen Werkzeug nicht führen kann, lässt das Team still weiter mit Tabellen arbeiten.",
+      "<strong>Migrieren Sie weniger Historie.</strong> Offene Verkaufschancen und die letzten zwei Jahre Aktivität decken fast jeden realen Anwendungsfall; der Rest ist eine Archiv- und Löschfrage, keine Migrationsfrage.",
+      "<strong>Messen Sie Nutzung, nicht den Produktivstart.</strong> Anmeldungen beweisen nichts. Verfolgen Sie, ob Geschäfte nächste Schritte, Abschlusstermine und Phasenwechsel haben — daran hängt, ob die Pipeline belastbar ist."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine CRM-Einführung?",
+        "Für eine mittelgroße Vertriebsorganisation üblicherweise vier bis neun Monate, abhängig fast ausschließlich von der Datenqualität und der Zahl der Schnittstellen. Die Vorlage nutzt rund elf Monate von Anfang bis Ende, weil sie die Datenbereinigung von Beginn an und einen vollständigen Prognosezyklus nach dem Start enthält."
+      ],
+      [
+        "Warum liegt die Datenmigration auf dem kritischen Pfad und nicht die Konfiguration?",
+        "Weil die Konfiguration abgegrenzte Arbeit ist, die Sie steuern, und die Daten nicht. Die Analyse findet Probleme, die Entdoppelung braucht fachliche Entscheidungen, und die Korrekturen im Vertrieb laufen im Tempo von Leuten mit Umsatzziel. Genau deshalb startet die Vorlage die Datenarbeit im ersten Monat."
+      ],
+      [
+        "Wann sollten wir umstellen?",
+        "Am Quartalswechsel, in den ersten beiden Wochen eines neuen Quartals. Umstellungen mitten im Quartal spalten die Prognose auf zwei Systeme auf, und eine Prognose, der niemand traut, ist der schnellste Weg, die Akzeptanz im Vertrieb dauerhaft zu verlieren."
+      ],
+      [
+        "Braucht die Einführung eine Betriebsvereinbarung?",
+        "In der Regel ja, sobald das System Leistungs- oder Verhaltensdaten auswertbar macht — das löst die Mitbestimmung nach §87 Abs. 1 Nr. 6 Betriebsverfassungsgesetz aus. Planen Sie die Verhandlung als mehrmonatigen Vorgang parallel zur Konfiguration, nicht als Formalie vor dem Start."
+      ],
+      [
+        "Wie viele Testmigrationen brauchen wir?",
+        "Mindestens zwei plus einen gestoppten Lauf. Der erste prüft die Feldzuordnung, der zweite die entdoppelten Daten mit echter fachlicher Prüfung, und der gestoppte Lauf mit vollem Volumen beweist, dass die Ladung in das gebuchte Umstellungsfenster passt."
+      ],
+      [
+        "Wie hängt das mit der Vorlage für das Änderungsmanagement zusammen?",
+        "Dieser Plan deckt das System ab. Der <a href=\"/de/templates/change-management-plan.html\">Plan für das Veränderungsmanagement</a> deckt den Menschenstrang daneben ab — Betroffenheitsanalyse, Auftritte der Führung, Schulungsgruppen und die Verstetigung nach dem Start. Große CRM-Programme brauchen beides."
+      ],
+      [
+        "Ist die CRM-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'disaster-recovery-plan': {
+    card: "Business Impact Analyse, RTO/RPO, Replikation, Handbücher, Notfallübungen.",
+    h1: "Zeitplan für den IT-Notfallwiederherstellungsplan",
+    metaTitle: "IT-Notfallplan (Disaster Recovery)",
+    metaDesc: "Kostenloser Zeitplan für den IT-Notfallplan: Business Impact Analyse, RTO/RPO, Replikation, Notfallhandbücher, Planübung, Teil- und Vollumschaltung.",
+    lead: "Eine kostenlose <strong>Vorlage für den IT-Notfallwiederherstellungsplan</strong>, die als Ergebnis einen <em>geprüften</em> Plan versteht und nicht ein Dokument. Business Impact Analyse und die Ziele für RTO und RPO setzen die Architektur, die Architektur setzt den Aufbau, und die hintere Hälfte des Zeitplans ist die Prüffolge — Planübung, dann Teilumschaltung, dann eine Vollumschaltung mit fachlicher Prüfung, jede mit eigenem Wartungsfenster und eigenem Rückweg.",
+    intro: "Ein ungeprüfter Notfallplan ist eine Vermutung. Der Zeitplan unten ist von der aufsteigenden Prüffolge geformt, weil jede Prüfung ein Wartungsfenster kostet und jede Dinge findet, die die vorherige nicht finden konnte:",
+    phases: [
+      [
+        "Business Impact Analyse",
+        "Inventar der Anwendungen und Dienste, Abhängigkeitskarte, die Workshops zur Schadenswirkung und die RTO- und RPO-Ziele, an denen jeder Dienst gemessen wird. Alles Nachgelagerte wird über diese Zahlen bepreist. <em>Meilenstein: RTO/RPO-Basis freigegeben.</em>"
+      ],
+      [
+        "Notfallstrategie und Architektur",
+        "Zuordnung der Wiederanlaufklassen, Wahl des Ausweichrechenzentrums oder der Ausweichregion, Architektur für Replikation und Sicherung, Auslegung von Netz- und DNS-Umschaltung sowie der Kostenabgleich gegen die Ziele. <em>Meilenstein: Architektur freigegeben.</em>"
+      ],
+      [
+        "Aufbau und Replikation",
+        "Notfallinfrastruktur, Replikation von Speicher und Datenbanken, Anpassung der Sicherungsrichtlinien, Identitäts- und Sicherheitsmaßnahmen am Ausweichstandort und die Überwachung des Replikationsrückstands. <em>Meilenstein: Replikation im stabilen Zustand nachgewiesen.</em>"
+      ],
+      [
+        "Notfallhandbücher und Dokumentation",
+        "Ein Wiederanlaufhandbuch je Wiederanlaufklasse, Verfahren für Rückfall und Rückführung, die Alarmierungskette für den Krisenstab und die Auslösekriterien, die festlegen, wer den Notfall überhaupt ausrufen darf. <em>Meilenstein: Handbücher veröffentlicht.</em>"
+      ],
+      [
+        "Prüffolge",
+        "Zuerst die Planübung am Tisch, dann eine Teilumschaltung der Anwendungen der ersten Klasse mit Rückfall, dann eine Vollumschaltung mit fachlicher Prüfung und anschließender Rückführung — nach jeder Prüfung ist Zeit für die Behebung eingeplant. <em>Meilenstein: Vollumschaltung bestanden.</em>"
+      ],
+      [
+        "Freigabe und Pflege",
+        "Prüfbericht und Restrisiko, Freigabe durch die Geschäftsleitung, Schulung der Bereitschaft, der Jahreskalender für die Wiederholungsprüfungen und die Verankerung im Änderungsprozess, die verhindert, dass neue Anwendungen still außerhalb des Plans landen. <em>Meilenstein: Plan freigegeben.</em>"
+      ]
+    ],
+    callout: "RTO und RPO sind keine Absichtserklärungen, sondern eine Rechnung. Ein RPO von fünfzehn Minuten bedeutet synchrone oder nahezu synchrone Replikation und die Speicherkosten, die dazugehören; ein RTO von vier Stunden bedeutet warm laufende Infrastruktur, die die meiste Zeit nichts tut. Einigen Sie sich mit dem Fachbereich auf die Zahlen, bevor Sie irgendetwas entwerfen, zeigen Sie dann, was jede Klasse kostet, und lassen Sie nachjustieren. Teams, die die Ziele nach der Architektur festlegen, landen bei einem Plan, der langsamer wiederherstellt als dem Geschäft versprochen wurde — und niemand merkt es bis zur Umschaltprüfung.",
+    customize: [
+      "Setzen Sie RTO und RPO je Dienst, nicht je Unternehmen — ein Zahlungsdienst und ein internes Wiki gehören nicht in dieselbe Klasse.",
+      "Buchen Sie beide Wartungsfenster früh; das Fenster für die Vollumschaltung braucht meist die Freigabe der Geschäftsleitung und eine geschäftsarme Zeit — das sind Kalenderbedingungen, keine technischen.",
+      "Halten Sie die Zeile für den Rückfall neben jeder Prüfung — eine Prüfung ohne geübten Rückweg ist eine Störung, die auf einen schlechten Tag wartet.",
+      "Ergänzen Sie Zeilen je Anwendungsklasse, wenn Sie in Gruppen umschalten statt alles auf einmal.",
+      "Verlängern Sie das Behebungsfenster nach der Teilprüfung; dort tauchen die meisten echten Feststellungen auf.",
+      "Nehmen Sie die jährliche Wiederholungsprüfung als datierte Zeilen auf, damit der Plan nicht zwölf Monate nach der Freigabe still verfällt.",
+      "Ergänzen Sie, wenn Sie kritische Infrastruktur betreiben, die Zeile für den Nachweis gegenüber dem BSI; dessen Turnus liegt fest und ist nicht Ihr Projekttermin."
+    ],
+    tips: [
+      "<strong>Prüfen Sie die Rückführung, nicht nur die Umschaltung.</strong> Am Ausweichstandort zu laufen ist die halbe Übung; die teuren Probleme entdecken die meisten Häuser auf dem Rückweg.",
+      "<strong>Machen Sie die Planübung vor allem Technischen.</strong> Sie ist billig, braucht kein Wartungsfenster und findet zuverlässig fehlende Erreichbarkeiten, unklare Ausrufungsbefugnis und Handbuchschritte, die Wissen voraussetzen, das nie jemand aufgeschrieben hat.",
+      "<strong>Prüfen Sie fachlich, nicht mit einem Ping.</strong> Ein Dienst, der antwortet, ist kein Dienst, der funktioniert; lassen Sie echte Anwenderinnen während der Vollumschaltung echte Vorgänge abschließen.",
+      "<strong>Überwachen Sie den Replikationsrückstand als laufende Kennzahl.</strong> Ein RPO, das Sie nicht dauernd messen, ist ein RPO, den Sie erst im Ernstfall überprüfen.",
+      "<strong>Hängen Sie die Notfallvorsorge in den Änderungsprozess.</strong> Jede neue Anwendung ohne Wiederanlaufklasse vergrößert die Lücke zwischen Plan und Wirklichkeit, und diese Lücke wird nur bei der Prüfung sichtbar.",
+      "<strong>Nutzen Sie eine anerkannte Struktur.</strong> Wer sich am BSI-Standard 200-4 für das Notfallmanagement ausrichtet, bekommt Begriffe, Rollen und Nachweisdokumente geschenkt — und erspart sich die Diskussion, ob der eigene Plan prüffähig ist, wenn Aufsicht oder Versicherer fragen."
+    ],
+    faq: [
+      [
+        "Wie lange dauert Aufbau und Prüfung eines Notfallplans?",
+        "Üblicherweise neun bis fünfzehn Monate von der Business Impact Analyse bis zum freigegebenen, geprüften Plan. Die Vorlage nutzt rund fünfzehn Monate. Der Aufbau ist gut vorhersagbar; was sich streckt, ist die Prüffolge am Ende, weil jede Prüfung ein Wartungsfenster und danach einen Behebungszyklus braucht."
+      ],
+      [
+        "Worin unterscheiden sich RTO und RPO?",
+        "Das RTO ist, wie lange Sie ausfallen dürfen — die Zeit bis zur Wiederherstellung des Dienstes. Das RPO ist, wie viele Daten Sie verlieren dürfen — das Alter der letzten brauchbaren Kopie. Das RTO treibt die bereitgehaltene Infrastruktur, das RPO die Replikationshäufigkeit, und zusammen bestimmen sie den größten Teil der Kosten."
+      ],
+      [
+        "Warum drei Prüfungen statt einer?",
+        "Weil sie Unterschiedliches finden. Eine Planübung findet Lücken im Handbuch und in der Entscheidungskette zum Preis eines Besprechungsraums. Eine Teilumschaltung findet technische Fehler bei begrenztem Schaden. Nur eine Vollumschaltung mit fachlicher Prüfung beweist das RTO. Jede setzt voraus, dass die vorherige behoben wurde."
+      ],
+      [
+        "Brauchen die Prüfungen ein Wartungsfenster?",
+        "Für Teil- und Vollumschaltung ja — sie verschieben produktiven Verkehr und tragen echtes Risiko. Buchen Sie sie mit geübtem Rückfall und einem festgelegten Abbruchkriterium. Die Planübung braucht kein Fenster, und genau deshalb sollte sie zuerst ausgereizt werden."
+      ],
+      [
+        "Wie verhält sich das zum Notfallmanagement insgesamt?",
+        "Die IT-Notfallwiederherstellung ist der technische Ausschnitt: Systeme und Daten zurückbringen. Das betriebliche Kontinuitätsmanagement ist weiter und umfasst Menschen, Gebäude und Prozesse — im BSI-Standard 200-4 ist die IT-Wiederherstellung ausdrücklich ein Teil davon. Diese Vorlage deckt den IT-Teil ab, wobei Krisenkommunikation und Auslösekriterien mit jedem Kontinuitätsplan geteilt werden."
+      ],
+      [
+        "Ist die Notfallplan-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+  'rfp-procurement-timeline': {
+    card: "Bedarf, Vergabeunterlagen, Bieterfragen, Angebotsfrist, Wertung, Wartefrist, Start.",
+    h1: "Zeitplan für ein Vergabeverfahren",
+    metaTitle: "Vergabeverfahren — Zeitplan",
+    metaDesc: "Kostenloser Zeitplan für das Vergabeverfahren: Bedarf, Vergabeunterlagen, Bieterfragen, Angebotsfrist, Wertung, Wartefrist nach §134 GWB, Leistungsbeginn.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für ein Vergabeverfahren</strong> — von der Bedarfsfeststellung bis zum Leistungsbeginn. Bedarf und Wirtschaftlichkeitsbetrachtung, Zuschlagskriterien und Gewichtung, Vergabeunterlagen, die Angebotsphase mit Frist für Bieterfragen und fester Angebotsfrist, Wertung im Gremium und Vergabevermerk, Zuschlagsentscheidung mit der Informations- und Wartepflicht, dann Vertrag und Leistungsbeginn. Die meisten dieser Termine gehören anderen Leuten, und genau deshalb müssen sie in ein Diagramm.",
+    intro: "Eine Ausschreibung ist ein Terminplan, der überwiegend aus der Zeit anderer Menschen besteht: Bieter, die Angebote schreiben, Wertungsgremien, die eine gemeinsame Woche finden, Juristinnen, die verhandeln, und ein Altdienstleister, der übergibt. Sie steuern den Starttermin und sonst herzlich wenig:",
+    phases: [
+      [
+        "Bedarf und Wirtschaftlichkeitsbetrachtung",
+        "Anforderungen der Bedarfsträger, Wirtschaftlichkeitsbetrachtung und Haushaltsfreigabe, Wahl der Verfahrensart und Prüfung des EU-Schwellenwerts sowie Eignungs- und Zuschlagskriterien samt Gewichtung — die vor der Veröffentlichung feststehen müssen. <em>Meilenstein: Freigabe zur Bekanntmachung.</em>"
+      ],
+      [
+        "Markterkundung und Vergabeunterlagen",
+        "Markterkundung, gegebenenfalls eine Vorinformation im Amtsblatt der EU, die Leistungsbeschreibung, Vertragsbedingungen und Anlagen, das Wertungsmodell sowie die Benennung des Wertungsgremiums und die Blockung seiner Kalender. <em>Meilenstein: Vergabeunterlagen freigegeben.</em>"
+      ],
+      [
+        "Angebotsphase",
+        "Bekanntmachung und Bereitstellung der Unterlagen auf der Vergabeplattform, Zeitfenster für Bieterfragen, eine Informationsveranstaltung, die Frist für Bieterfragen, Veröffentlichung aller Antworten an sämtliche Bieter und die anschließende Zeit zur Angebotserstellung. <em>Meilenstein: Ablauf der Angebotsfrist.</em>"
+      ],
+      [
+        "Wertung",
+        "Formale Prüfung und Eignungsprüfung, fachliche und preisliche Wertung parallel, Konsensbildung im Gremium, Bietergespräche und Präsentationen, Prüfung der Auskömmlichkeit beim vorgesehenen Bieter und der Vergabevermerk. <em>Meilenstein: Zuschlagsvorschlag freigegeben.</em>"
+      ],
+      [
+        "Zuschlagsentscheidung, Wartefrist und Vertrag",
+        "Information der nicht berücksichtigten Bieter nach §134 GWB, die Wartefrist, in der ein Nachprüfungsantrag bei der Vergabekammer möglich ist, Auskünfte an unterlegene Bieter, letzte Vertragsklärungen und Zuschlagserteilung. <em>Meilenstein: Zuschlag erteilt.</em>"
+      ],
+      [
+        "Mobilisierung und Übergang",
+        "Auftaktbesprechung, Übergang vom Altdienstleister, Zugänge und Einweisung, Steuerungsstruktur und Kennzahlenberichte sowie der Tag, an dem die Leistung tatsächlich beginnt. <em>Meilenstein: Leistungsbeginn.</em>"
+      ]
+    ],
+    callout: "Die Zeit der Bieter gehört nicht Ihnen. Wenn Sie das Fenster zwischen der Veröffentlichung der Antworten auf Bieterfragen und der Angebotsfrist verkürzen, bekommen Sie kein schnelleres Verfahren, sondern weniger Angebote, schwächere Angebote und einen starken Anbieter, der absagt, weil er kein Team für eine ordentliche Antwort freistellen konnte. Am anderen Ende gilt dasselbe: Die Informations- und Wartepflicht nach §134 GWB besteht, damit unterlegene Bieter die Entscheidung überprüfen lassen können — sie läuft nach Kalendertagen, ganz gleich, wie dringend der Fachbereich mobilisieren will.",
+    customize: [
+      "Setzen Sie zuerst Angebotsfrist und Leistungsbeginn; beide werden meist von außen bestimmt, und alles andere passt sich dazwischen ein.",
+      "Prüfen Sie die Mindestfristen Ihrer Verfahrensart, bevor Sie die gezeigten Dauern übernehmen — im offenen Verfahren oberhalb des Schwellenwerts sind es nach der Vergabeverordnung 35 Tage, unterhalb gilt die Unterschwellenvergabeordnung mit anderen Fristen.",
+      "Blocken Sie die Kalender des Wertungsgremiums zeitgleich mit der Bekanntmachung — nicht der Wertungsaufwand, sondern die Verfügbarkeit der Gremienmitglieder lässt diese Phase kippen.",
+      "Ergänzen Sie Zeilen für Referenzbesuche oder Teststellungen, wenn Ihre Wertung sie vorsieht; sie brauchen die Verfügbarkeit von Bietern und Referenzkunden und sind damit terminierte Arbeit.",
+      "Verlängern Sie die Übergangsphase deutlich, wenn ein Altdienstleister Daten, Personal oder Anlagen übergibt — bei Personalübergang kommt ein Betriebsübergang nach §613a BGB mit eigener Informationsfrist hinzu.",
+      "Führen Sie eine Zeile je Los, wenn die Vergabe in Lose geteilt ist, da Wertung und Zuschlag je Los zu unterschiedlichen Zeitpunkten fertig werden können."
+    ],
+    tips: [
+      "<strong>Legen Sie die Zuschlagskriterien vor der Bekanntmachung fest.</strong> Gewichtungen, die sich nach Eingang der Angebote ändern, sind der häufigste Grund für ein erfolgreiches Nachprüfungsverfahren, und sie lassen sich nicht still korrigieren.",
+      "<strong>Veröffentlichen Sie jede Antwort an alle Bieter.</strong> Einzelauskünfte erzeugen ein ungleiches Verfahren, und ungleiche Verfahren werden aufgehoben.",
+      "<strong>Legen Sie die Angebotsfrist nicht neben die Ferienzeit.</strong> Sie erhalten dünne Angebote von genau den Anbietern, von denen Sie am liebsten gehört hätten.",
+      "<strong>Bilden Sie einen Konsens und schreiben Sie die Begründung auf.</strong> Der Vergabevermerk ist das Dokument, auf das Sie sich bei der Bieterinformation und in einem Nachprüfungsverfahren stützen; Punktzahlen ohne Begründung sind nicht verteidigbar.",
+      "<strong>Halten Sie die Kommunikation nach Absendung der Information nach §134 GWB diszipliniert.</strong> Ein Zuschlag vor Ablauf der Wartefrist ist von Anfang an unwirksam — das ist keine Formalie, sondern der Verlust des Vertrags.",
+      "<strong>Planen Sie echte Zeit zwischen Zuschlag und Leistungsbeginn ein.</strong> Mobilisierung braucht unterschriebene Verträge, erteilte Zugänge und eingestellte Leute; ein Zuschlagstermin ist kein Starttermin."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Vergabeverfahren?",
+        "Bei einem größeren Auftrag üblicherweise sechs bis zwölf Monate von der Bedarfsfeststellung bis zum Leistungsbeginn. Die Vorlage nutzt rund zwölf Monate. Angebotsphase und Wertung sind die beiden Blöcke, die regelmäßig unterschätzt werden, weil beide von Menschen außerhalb des Projektteams abhängen."
+      ],
+      [
+        "Wie viel Zeit sollten Bieter zum Antworten bekommen?",
+        "Genug, um nach der Veröffentlichung der Antworten auf Bieterfragen ein ernsthaftes Angebot zu schreiben — bei umfangreichen Vergaben typischerweise vier bis sechs Wochen, länger bei komplexen Leistungen oder wenn eine Übernahme kalkuliert werden muss. Oberhalb der EU-Schwellenwerte gelten gesetzliche Mindestfristen; prüfen Sie sie, bevor Sie kürzen."
+      ],
+      [
+        "Wozu dient die Wartefrist nach §134 GWB?",
+        "Sie ist die Spanne zwischen der Information der unterlegenen Bieter und der Zuschlagserteilung. In ihr kann ein Bieter Auskunft verlangen oder ein Nachprüfungsverfahren bei der Vergabekammer einleiten. Sie beträgt fünfzehn Kalendertage, bei elektronischer Übermittlung zehn, und lässt sich nicht kürzen, um einen Mobilisierungstermin zu halten."
+      ],
+      [
+        "Warum steht die Frist für Bieterfragen im Diagramm?",
+        "Weil sie zwei Dinge steuert: den Tag, bis zu dem Ihr Team alle Antworten formuliert und veröffentlicht haben muss, und den Punkt, ab dem Bieter schreiben statt fragen. Wer sie nach hinten schiebt, hat still die Zeit zur Angebotserstellung verkürzt."
+      ],
+      [
+        "Kann ich die Vorlage für eine private Ausschreibung nutzen?",
+        "Ja. Lassen Sie die Zeilen zu Bekanntmachung und Wartefrist weg und behalten Sie die Abfolge — Fragefenster, feste Angebotsfrist, Wertung im Konsens, Verhandlung und Mobilisierung verhalten sich gleich. Die Disziplin, Antworten allen Bietern zu geben, lohnt sich in jedem Fall."
+      ],
+      [
+        "Ist die Vorlage für das Vergabeverfahren kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'change-management-plan': {
+    card: "Betroffenheitsanalyse, Führung, Kommunikation, Schulung, Betreuung, Verstetigung.",
+    h1: "Projektplan für das Veränderungsmanagement",
+    metaTitle: "Veränderungsmanagement — Plan",
+    metaDesc: "Kostenloser Plan für das Veränderungsmanagement: Betroffenheitsanalyse, Auftritte der Führung, Kommunikation, Schulungsgruppen, Betreuung, Verstetigung.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Veränderungsmanagement</strong> — für den Menschenstrang, der neben einem technischen Projekt läuft. Stakeholder- und Betroffenheitsanalyse, Rückhalt in der Führung und ein Netz aus Multiplikatoren, Kommunikation je Zielgruppe, Schulungsgruppen, die am Produktivstart ausgerichtet sind statt an der Bequemlichkeit des Kalenders, Startbereitschaft und Betreuung auf der Fläche, dann die Verstetigung nach dem Start, an der hängt, ob überhaupt etwas davon bleibt. Kombinieren Sie sie mit dem Systemplan, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/crm-implementation-plan.html\">CRM-Einführung</a>.",
+    intro: "Veränderungsmanagement wird meist als ein Kasten mit der Aufschrift „Schulung“ neben den Produktivstart gemalt. Es ist kein Kasten. Es ist ein eigener Strang mit eigenen Abhängigkeiten, und die Hälfte, die am meisten zählt, beginnt in der Woche nach dem Start:",
+    phases: [
+      [
+        "Veränderungsstrategie und Betroffenheitsanalyse",
+        "Stakeholder-Landkarte, eine Betroffenheitsanalyse je betroffener Gruppe, eine Ausgangsmessung der Bereitschaft, die frühzeitige Unterrichtung des Betriebsrats nach §90 Betriebsverfassungsgesetz und die Strategie, die festlegt, wie viel Unterstützung jede Gruppe braucht. <em>Meilenstein: Veränderungsstrategie freigegeben.</em>"
+      ],
+      [
+        "Rückhalt und Steuerung",
+        "Das Bündnis der Führungskräfte, Verpflichtungsgespräche, Gewinnung und Einweisung der Multiplikatoren, die erste Runde der Führung durch die Standorte, gegebenenfalls eine Betriebsversammlung sowie ein Widerstandsregister, das bearbeitet und nicht abgeheftet wird. <em>Meilenstein: Veränderungsnetz steht.</em>"
+      ],
+      [
+        "Kommunikation",
+        "Kommunikationsplan je Zielgruppe, die Begründung der Veränderung und ein Fragenkatalog, Aufmerksamkeitskampagne, Argumentationshilfen für Führungskräfte, Leitfäden auf Rollenebene nach dem Muster „was sich für mich ändert“ und die Abfolge rund um den Start."
+      ],
+      [
+        "Schulung",
+        "Bedarfsanalyse je Rolle, Aufbau des Lehrplans, Schulung der Schulenden, dann Gruppen in Wellen, wobei die letzte nah am Produktivstart landet, damit die Leute anwenden, was sie gelernt haben. <em>Meilenstein: Schulungen abgeschlossen.</em>"
+      ],
+      [
+        "Startbereitschaft und Betreuung",
+        "Bereitschaftsbewertung je Bereich, eine zweite Runde der Führung durch die Standorte, der Dienstplan für Ansprechpersonen auf der Fläche und Schlüsselanwender, Freigabe der Startbereitschaft und intensive Betreuung nach dem Start. <em>Meilenstein: Produktivstart.</em>"
+      ],
+      [
+        "Verstetigung",
+        "Nutzungskennzahlen, Kurzbefragungen in Woche zwei und Monat drei, gezielte Auffrischungsschulungen, Begleitung der Führungskräfte, Anerkennung und die Nutzenbetrachtung. <em>Meilenstein: Übergabe in den Regelbetrieb.</em>"
+      ]
+    ],
+    callout: "Richten Sie die Schulung am Produktivstart aus, nicht am Kalender der Trainerin. Fertigkeiten verfallen schnell, und eine Gruppe, die sechs Wochen zu früh geschult wurde, hat das meiste vergessen und fragt still die Kollegin. Fahren Sie die Gruppen in Wellen, sodass die letzte wenige Tage vor dem Start endet, und geben Sie der Pilotgruppe genug Abstand, dass ihre Rückmeldung das Material noch verbessern kann. Schützen Sie danach die Verstetigung, denn sie wird als Erstes gestrichen und ist die einzige Phase, die langfristiges Verhalten ändert — die Auffrischung nach der ersten Kurzbefragung ist mehr wert als noch eine E-Mail vor dem Start.",
+    customize: [
+      "Setzen Sie zuerst den Produktivstart, legen Sie die letzte Schulungsgruppe wenige Tage davor und rechnen Sie alle weiteren Gruppen von dort rückwärts.",
+      "Ergänzen Sie eine Zeile für die Betroffenheitsanalyse je betroffener Gruppe; ein Team in den zentralen Diensten und ein Servicetechniker erleben nicht dieselbe Veränderung.",
+      "Bemessen Sie das Multiplikatorennetz mit ungefähr einer Person je Team und hinterlegen Sie deren Zeit als vereinbarte Freistellung, nicht als Gefälligkeit.",
+      "Ergänzen Sie Zeilen für die Auftritte der Führung je Region oder Bereich, wenn eine Runde nicht alle erreicht.",
+      "Verlängern Sie die intensive Betreuung bei Schicht- oder Saisonbetrieb, damit jedes Schichtmodell in seiner ersten Produktivwoche Unterstützung bekommt.",
+      "Nehmen Sie die Beteiligung des Betriebsrats als eigene Zeile auf, wenn die Veränderung Arbeitsabläufe, Arbeitsplätze oder auswertbare Leistungsdaten berührt — die Beteiligung ist ein Vorgang mit Dauer, kein Haken.",
+      "Halten Sie Kurzbefragungen und Auffrischungen als datierte Zeilen nach dem Start — sie werden am häufigsten gelöscht und entscheiden über die tatsächliche Nutzung."
+    ],
+    tips: [
+      "<strong>Betroffenheitsanalyse vor der Kommunikation.</strong> Sie können niemandem sagen, was sich für ihn ändert, bevor Sie es herausgearbeitet haben, und allgemeine Botschaften sind genau der Grund, warum Menschen annehmen, die Veränderung meine sie nicht.",
+      "<strong>Führung muss sichtbar sein, und zwar wiederholt.</strong> Eine Startmail ist ein Rundschreiben. Ein Auftritt vor und nach dem Start ist ein Signal, dass die Veränderung nicht freiwillig ist.",
+      "<strong>Beteiligen Sie den Betriebsrat früh und ehrlich.</strong> Er ist bei Änderungen von Arbeitsverfahren zu unterrichten, und eine späte Beteiligung verwandelt eine lösbare Verhandlung in einen Startblocker.",
+      "<strong>Briefen Sie Führungskräfte getrennt und früher.</strong> Ihr Team fragt zuerst sie, und wer die Antwort nicht kennt, wird versehentlich zur Quelle des Widerstands.",
+      "<strong>Arbeiten Sie mit dem Widerstandsregister.</strong> Widerstand ist weit häufiger ein Hinweis auf ein echtes Problem als Blockade, und im Register sehen Sie, dass derselbe Einwand in fünf Teams auftaucht.",
+      "<strong>Messen Sie Nutzung, nicht Teilnahme.</strong> Abgeschlossene Schulungen sagen nichts. Kurzbefragungen und tatsächliches Nutzungsverhalten zeigen, wohin die Auffrischungen gehören."
+    ],
+    faq: [
+      [
+        "Wann sollte das Veränderungsmanagement beginnen?",
+        "Zeitgleich mit dem technischen Projekt, nicht kurz vor dem Start. Die Betroffenheitsanalyse braucht ein verstandenes Zielbild, muss aber früh genug fertig sein, um Kommunikation und Schulung zu formen. Die Vorlage startet an Tag eins und läuft rund fünf Monate über den Start hinaus."
+      ],
+      [
+        "Worin unterscheidet sich das von einem Projektplan?",
+        "Ein Projektplan liefert das System. Dieser Plan liefert die Fähigkeit und die Bereitschaft der Menschen, es zu nutzen. Beide teilen sich den Starttermin und sonst fast nichts, und genau deshalb funktioniert Veränderungsmanagement am besten als eigenes Diagramm mit eigener verantwortlicher Person, neben den Lieferplan gelegt."
+      ],
+      [
+        "Wann sollte geschult werden?",
+        "So spät wie möglich, ohne mit der Umstellung zu kollidieren. Fertigkeiten verfallen, also wird eine sechs Wochen zu früh geschulte Gruppe beim Start informell nachgeschult. Fahren Sie Wellen, legen Sie eine Pilotgruppe früh genug, dass ihre Rückmeldung das Material verbessert, und lassen Sie die letzte Gruppe wenige Tage vor dem Start enden."
+      ],
+      [
+        "Muss der Betriebsrat beteiligt werden?",
+        "Sobald sich Arbeitsverfahren, Arbeitsabläufe oder Arbeitsplätze ändern, ist er zu unterrichten, und bei Systemen, die Leistung oder Verhalten auswertbar machen, kommt echte Mitbestimmung hinzu. Behandeln Sie das als eigenen Vorgang mit Wochen an Dauer, parallel zur Kommunikationsplanung."
+      ],
+      [
+        "Was passiert nach dem Produktivstart?",
+        "Der Teil, den die meisten Pläne streichen: intensive Betreuung, eine Kurzbefragung um Woche zwei, gezielte Auffrischungen genau zu dem, was die Befragung ergeben hat, Begleitung der Führungskräfte und eine Nutzenbetrachtung. Verhaltensänderung passiert in den Wochen nach dem Start, nicht davor."
+      ],
+      [
+        "Brauche ich für ein kleines Projekt einen eigenen Veränderungsplan?",
+        "Nicht immer, aber die Abfolge brauchen Sie trotzdem. Behalten Sie bei kleineren Vorhaben Betroffenheitsanalyse, Briefing der Führungskräfte, eine Schulungswelle und eine Kurzbefragung nach dem Start und lassen Sie Multiplikatorennetz und Standortrunden weg."
+      ],
+      [
+        "Ist die Vorlage für das Veränderungsmanagement kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

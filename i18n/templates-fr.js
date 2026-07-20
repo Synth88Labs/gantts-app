@@ -4546,6 +4546,787 @@ const T = {
       ]
     ]
   },
+
+  'water-treatment-plant-construction-schedule': {
+    card: "Autorisation environnementale, génie civil, équipements, mise en eau et essais de garantie.",
+    h1: "Planning de construction d’une station de traitement des eaux",
+    metaTitle: "Station de traitement des eaux — planning",
+    metaDesc: "Planning gratuit de station de traitement des eaux : génie civil, équipements, mise en eau, ensemencement biologique et essais de garantie.",
+    lead: "Un <strong>planning de construction de station de traitement des eaux</strong> gratuit, qui traite la mise en service pour ce qu’elle est — le vrai projet, et non une queue de chantier de quinze jours. Autorisation environnementale au titre de la loi sur l’eau et conception process, ouvrages de génie civil et épreuves d’étanchéité, montage électromécanique, essais à l’eau claire, puis mise en eau avec ensemencement de la biomasse et essais de garantie constatés avant toute réception. À télécharger pour un dossier de revue de projet, ou à ouvrir en ligne pour allonger les barres de mise en service à la durée que votre filière exige réellement.",
+    intro: "Tout autre bâtiment est réceptionné quand la liste des réserves est vide. Une station est réceptionnée quand elle a démontré, en continu et pendant des semaines, un rejet conforme à son arrêté d’autorisation. Le planning est construit à rebours de cette date :",
+    phases: [
+      [
+        "Autorisations, conception et achats",
+        "Caractérisation de l’eau brute et essais pilotes, conception de la filière et bilan matière, études d’exécution, dossier loi sur l’eau et arrêté préfectoral d’autorisation de rejet — ou avis de l’ARS et de l’hydrogéologue agréé pour une usine d’eau potable — et commandes des équipements à long délai qui figent les dates de montage. <em>Jalon : arrêté d’autorisation obtenu.</em>"
+      ],
+      [
+        "Génie civil et ouvrages",
+        "Terrassements et fondations profondes, ouvrage d’entrée, décanteurs, bassins biologiques, galerie de filtration et files boues — puis épreuve d’étanchéité de chaque ouvrage par mise en eau. <em>Jalon : ouvrages étanches.</em>"
+      ],
+      [
+        "Montage électromécanique",
+        "Pompes et robinetterie, surpresseurs et grille de diffuseurs d’aération, matériaux filtrants, skids de dosage, traitement UV, tableaux électriques et groupe de secours, instrumentation de terrain. <em>Jalon : achèvement mécanique.</em>"
+      ],
+      [
+        "Automatisme et essais à l’eau claire",
+        "Paramétrage de la supervision, contrôle des boucles de régulation, essais moteurs à vide et essais fonctionnels à l’eau claire — valider la philosophie de conduite avant que la moindre eau brute n’entre dans les ouvrages."
+      ],
+      [
+        "Mise en eau et ensemencement biologique",
+        "Première arrivée d’eau brute, ensemencement en boues issues d’une station en exploitation, croissance de la biomasse et montée en MES, établissement de la nitrification et réglage de l’âge des boues. <em>Jalon : process biologique stabilisé.</em>"
+      ],
+      [
+        "Essais de garantie et réception",
+        "Montée au débit nominal, essais de garantie constatés sur une période soutenue, campagne d’analyses de conformité, essai de fiabilité au débit de pointe, formation des exploitants et réception. <em>Jalon : procès-verbal de réception.</em>"
+      ]
+    ],
+    callout: "La mise en service ne se simule pas. Les boues activées sont une culture qu’il faut ensemencer puis faire croître, et les bactéries nitrifiantes se dédoublent lentement : comptez des semaines, pas des jours, et davantage en période froide. Par-dessus se placent des essais de garantie constatés au débit nominal sur une durée soutenue, avec la police de l’eau et le maître d’ouvrage en observateurs. Ces deux barres sont physiques et contractuelles, jamais négociables, et elles doivent être les plus longues de la partie droite de votre planning.",
+    customize: [
+      "Caler les barres d’ensemencement et de montée en biomasse sur les chiffres du concepteur de la filière et sur la saison de mise en service : un démarrage hivernal peut ajouter plusieurs semaines rien que sur la nitrification.",
+      "Régler la durée des essais de garantie sur celle qu’imposent le marché et l’arrêté d’autorisation : vingt-huit jours est courant, mais beaucoup d’opérations exigent davantage, ou une reprise complète si un prélèvement sort des clous.",
+      "Ajouter une barre de recontrôle après les essais de garantie. Supposer une réussite du premier coup est l’erreur de planning la plus fréquente sur ce type d’ouvrage.",
+      "Découper l’épreuve d’étanchéité en une ligne par ouvrage si vous les remplissez en séquence — un ouvrage recalé doit être vidangé, séché, repris et rerempli.",
+      "Avancer le paramétrage de la supervision : il dépend des schémas PID, pas du béton, et il est systématiquement démarré beaucoup trop tard.",
+      "Marquer comme jalons l’arrêté d’autorisation, l’étanchéité des ouvrages, l’achèvement mécanique, la première eau brute et la réception : ce sont les dates que suivent à la fois le comité de pilotage du maître d’ouvrage et le service instructeur."
+    ],
+    tips: [
+      "<strong>Prévenez le service de police de l’eau de votre date de début d’essais bien à l’avance.</strong> Le constat dépend de leur agenda, pas du vôtre, et une notification décalée peut repousser la réception d’un mois alors que l’usine est prête.",
+      "<strong>Sécurisez vos boues d’ensemencement tôt et par écrit.</strong> Elles viennent d’une autre station en exploitation, demandent une noria de citernes et un créneau de livraison ; une station pleine d’eau brute qui attend son inoculum consomme de la marge pour rien.",
+      "<strong>Validez l’automatisme à l’eau claire d’abord.</strong> Courir après un capteur de niveau défaillant ou une vanne inversée pendant qu’un process biologique cherche à se stabiliser coûte infiniment plus cher que les quinze jours de la phase eau claire.",
+      "<strong>Ne superposez pas les essais de garantie avec des travaux restants.</strong> Une entreprise encore en train de poser des garde-corps pendant un essai constaté offre un motif tout trouvé pour invalider la période.",
+      "<strong>Surveillez les valeurs de rejet, pas le débitmètre.</strong> Atteindre le débit nominal prouve l’hydraulique ; seule une conformité analytique soutenue prouve la filière, et c’est la seconde qui déclenche la réception.",
+      "<strong>Formez les exploitants pendant la mise en service, pas après.</strong> L’équipe de mise en service est la seule qui verra jamais l’ouvrage dans tous ses modes de défaillance, et ce savoir quitte le site avec elle."
+    ],
+    faq: [
+      [
+        "Combien de temps dure la construction d’une station de traitement des eaux ?",
+        "Une station communale de taille moyenne court couramment sur 24 à 36 mois entre l’arrêté d’autorisation et la réception, et le modèle retient cet ordre de grandeur. Le génie civil est prévisible ; la variance se loge dans l’instruction administrative en amont et dans la mise en service en aval."
+      ],
+      [
+        "Pourquoi la mise en service est-elle si longue ?",
+        "Parce qu’un traitement biologique se cultive, il ne s’allume pas. Ensemencement, montée en biomasse et établissement de la nitrification prennent des semaines, et les essais de garantie ne peuvent démarrer qu’une fois la filière stable."
+      ],
+      [
+        "Que sont les essais de garantie ?",
+        "Une période continue au débit nominal pendant laquelle l’ouvrage doit produire un rejet conforme aux valeurs de son arrêté d’autorisation, avec prélèvements et constat contradictoire du maître d’ouvrage et du service de police de l’eau. C’est leur réussite — et non la fin des travaux — qui déclenche la réception."
+      ],
+      [
+        "Peut-on raccourcir la mise en service en ensemençant plus tôt ?",
+        "À peine. Vous pouvez réserver les boues d’ensemencement et avoir les citernes prêtes le jour de l’arrivée d’eau brute, mais la courbe de croissance relève de la biologie. La compression du délai doit venir du génie civil et du montage."
+      ],
+      [
+        "Comment planifier un prélèvement non conforme ?",
+        "En ajoutant une barre d’aléa pour le recontrôle et, dans beaucoup de marchés, pour une reprise complète de la période d’essais. Bâtir le planning sur une réussite du premier coup, c’est ainsi que ces opérations dérapent au tout dernier point d’arrêt."
+      ],
+      [
+        "Le modèle de planning de station de traitement est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'airport-terminal-expansion-plan': {
+    card: "Fenêtres d’intervention négociées, badges côté piste, capacité de filtrage, tri bagages et bascule.",
+    h1: "Plan d’extension d’un terminal aéroportuaire",
+    metaTitle: "Extension de terminal aéroportuaire",
+    metaDesc: "Plan gratuit d’extension de terminal : fenêtres d’intervention, palissades, badges côté piste, capacité de filtrage, tri bagages, ORAT et bascule.",
+    lead: "Un <strong>plan d’extension de terminal aéroportuaire</strong> gratuit, pensé pour un terminal qui ne ferme jamais — fenêtres d’intervention successives derrière palissades, autorisations de travaux côté piste et accès sous accompagnement, cheminements passagers provisoires, capacité de filtrage maintenue au niveau de l’heure de pointe à chaque changement de configuration, intégration du système de tri bagages, ORAT (préparation à l’exploitation) et bascule de nuit. À télécharger pour un comité de programme, ou à ouvrir en ligne pour aligner les fenêtres d’intervention sur votre propre saisonnalité de trafic.",
+    intro: "Une extension n’est pas un projet en six phases : c’est une suite de fenêtres d’intervention négociées à l’intérieur d’une exploitation en service. Le planning garde la contrainte d’exploitation visible dans chaque phase :",
+    phases: [
+      [
+        "Études amont, concertation exploitation et autorisations",
+        "Modélisation des flux passagers, accord des compagnies et des assistants en escale, stratégie de phasage et de mise à disposition des emprises, permis de construire, autorisations de travaux côté piste et titres de circulation aéroportuaire pour les entreprises. <em>Jalon : calendrier des fenêtres d’intervention validé.</em>"
+      ],
+      [
+        "Conception et travaux préparatoires",
+        "Esquisse et études d’exécution, notice de sécurité incendie, tracé des palissades et signalétique provisoire, dévoiement des réseaux et cheminements passagers provisoires qui doivent exister avant la moindre fermeture. <em>Jalon : travaux préparatoires terminés.</em>"
+      ],
+      [
+        "Fenêtre 1 — extension de jetée",
+        "Pose des palissades, reconfiguration de l’aire de stationnement et des postes avions, structure et enveloppe de la jetée, passerelles télescopiques et salles d’embarquement, puis restitution des postes à l’exploitation. <em>Jalon : postes avions remis en service.</em>"
+      ],
+      [
+        "Fenêtre 2 — sûreté et enregistrement",
+        "Lignes de filtrage provisoires démontrées à l’heure de pointe d’abord, puis dépose des banques d’enregistrement, nouveaux îlots, aménagement du poste d’inspection filtrage central et travaux en zone de contrôle transfrontalier."
+      ],
+      [
+        "Bagages et intégration des systèmes",
+        "Installation du système de tri bagages, inspection filtrage des bagages de soute, essais de tri, affichage dynamique et sonorisation, vidéoprotection et contrôle d’accès, banques d’enregistrement partagées CUTE/CUPPS. <em>Jalon : intégration des systèmes terminée.</em>"
+      ],
+      [
+        "ORAT, exercices et bascule",
+        "Préparation à l’exploitation, familiarisation des personnels, exercices avec figurants passagers, essais d’évacuation, inspection de la DSAC et des services de l’État, puis la bascule de nuit. <em>Jalon : exploitation complète.</em>"
+      ]
+    ],
+    callout: "Ne retirez jamais de capacité de filtrage avant d’avoir démontré son remplacement à l’heure de pointe. Tout le reste se contourne dans un terminal en exploitation — un cheminement plus long, un panneau provisoire, une boutique déplacée — mais une file d’attente au poste d’inspection filtrage qui dépasse son objectif est un incident d’exploitation déclaré, et il fera arrêter votre fenêtre d’intervention en quelques jours. Placez un jalon de démonstration de capacité devant chaque changement de configuration qui touche au filtrage central.",
+    customize: [
+      "Remplacer les deux fenêtres d’intervention par les vôtres, et donner à chacune des dates de début et de fin validées avec l’exploitation aéroportuaire, pas avec l’entreprise de travaux.",
+      "Caler les fenêtres sur votre véritable creux de saison et vérifier la prévision de trafic, pas celle de l’an dernier : une fenêtre dimensionnée pour février ne tient pas en juillet.",
+      "Ajouter une ligne d’instruction des titres de circulation par vague de compagnons : le badge aéroportuaire suppose une enquête administrative préfectorale et il a bloqué plus de mobilisations que les ruptures d’approvisionnement.",
+      "Insérer une barre de travaux de nuit partout où l’intervention est impossible aux heures d’exploitation, et affecter les accompagnateurs correspondants.",
+      "Découper les essais du système de tri bagages en installation, intégration puis essais en volume et en tri : c’est le dernier qui révèle les problèmes, et c’est celui que l’on comprime.",
+      "Marquer comme jalons le calendrier des fenêtres, la remise en service des postes avions, la démonstration de capacité de filtrage, l’intégration des systèmes et l’exploitation complète."
+    ],
+    tips: [
+      "<strong>Le calendrier des fenêtres d’intervention est le planning.</strong> Une fois signé par l’exploitation, les compagnies et les assistants en escale, c’est de lui que découle la séquence de travaux — et non l’inverse.",
+      "<strong>Construisez le cheminement provisoire avant d’en avoir besoin, et parcourez-le avec une vraie charge passagers.</strong> Une signalétique provisoire impeccable sur plan échoue à six heures du matin avec un gros-porteur complet et une famille poussant trois chariots.",
+      "<strong>Traitez l’accès côté piste comme une ressource à délai.</strong> Titres de circulation, accompagnateurs, autorisations de conduite en zone réservée et contrôles de véhicules prennent des semaines, et une équipe accompagnée produit une fraction du rendement d’une équipe côté ville : intégrez-le aux durées.",
+      "<strong>Ne laissez pas l’intégration bagages commencer une fois le bâtiment fini.</strong> Un système de tri est une machine à longue courbe d’essais ; le tri et la réconciliation demandent des mois et sont sur le chemin critique de l’ouverture.",
+      "<strong>Organisez un véritable exercice d’exploitation avec des figurants.</strong> Il révèle les points de blocage de file, les trous d’affichage et les manques d’effectifs qu’aucun essai système ne montrera, et il coûte bien moins cher que de les découvrir le premier jour.",
+      "<strong>Planifiez la bascule comme une opération de nuit avec un point de renoncement.</strong> Décidez à l’avance de l’état dans lequel le terminal doit être à une heure donnée pour que la bascule se poursuive, et de la configuration de repli si ce n’est pas le cas."
+    ],
+    faq: [
+      [
+        "Combien de temps prend l’extension d’un terminal aéroportuaire ?",
+        "Une extension par phases sur un terminal en exploitation court couramment sur deux à quatre ans, parce que le travail se livre par fenêtres d’intervention négociées et non en continu. Le modèle propose un programme d’environ deux ans, extensible en ajoutant des fenêtres."
+      ],
+      [
+        "Qu’est-ce que l’ORAT et quand doit-il commencer ?",
+        "L’ORAT — operational readiness and airport transfer, soit la préparation à l’exploitation et au transfert — couvre les procédures, les effectifs, la familiarisation et les exercices. Il doit démarrer pendant que les travaux courent encore, typiquement six à neuf mois avant l’ouverture, et non après la réception."
+      ],
+      [
+        "Comment maintenir la capacité de filtrage pendant les travaux ?",
+        "En mettant d’abord en service des lignes provisoires et en les démontrant à l’heure de pointe avant de toucher au poste d’inspection filtrage existant. Le modèle fait de cette démonstration un jalon qui conditionne la deuxième fenêtre."
+      ],
+      [
+        "Pourquoi les travaux côté piste durent-ils plus longtemps ?",
+        "Titres de circulation, accompagnement, autorisations de véhicules, plages horaires restreintes et disponibilité des postes avions réduisent tous le rendement effectif. Prévoyez des durées côté piste nettement supérieures au même ouvrage côté ville, et ajoutez une barre d’instruction des badges."
+      ],
+      [
+        "En quoi est-ce différent d’un terminal neuf ?",
+        "Un terminal neuf n’a aucun passager à protéger et peut être ordonnancé pour l’efficacité de chantier. Ce modèle s’organise autour des fenêtres d’intervention, des cheminements provisoires et de la capacité préservée — c’est précisément ce qui rend une extension plus lente."
+      ],
+      [
+        "Le modèle d’extension de terminal est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'fiber-broadband-rollout-plan': {
+    card: "Permissions de voirie, conventions, relevé du génie civil, vagues de plaques, mesures et ouverture commerciale.",
+    h1: "Plan de déploiement de la fibre optique",
+    metaTitle: "Déploiement fibre optique — plan",
+    metaDesc: "Plan gratuit de déploiement FTTH : permissions de voirie, conventions d’immeuble, génie civil, vagues de plaques, mesures et ouverture commerciale.",
+    lead: "Un <strong>plan de déploiement de la fibre optique</strong> gratuit, construit comme se déroule réellement un programme FTTH — une séquence par plaque, répétable, exécutée en vagues qui se chevauchent, conditionnée par les permissions de voirie, les conventions de servitude et d’immeuble et la disponibilité du génie civil, chaque plaque s’achevant sur son propre jalon d’ouverture commerciale, les raccordements et le chiffre d’affaires ne démarrant qu’après ce jalon. À télécharger pour un dossier d’investisseur ou de syndicat mixte, ou à ouvrir en ligne pour ajouter autant de vagues de plaques que votre plan de déploiement en compte.",
+    intro: "Un déploiement fibre n’est pas un chantier long : ce sont les mêmes six étapes répétées de plaque en plaque, décalées dans le temps. Le modèle rend ce motif explicite, pour que vous copiiez une vague plutôt que d’inventer un plan par plaque :",
+    phases: [
+      [
+        "Cadrage du programme et ingénierie générale",
+        "Évaluation de la demande et priorisation des plaques, architecture du réseau, NRO et points de mutualisation, marché ou accord-cadre travaux, achats de collecte et de transport, et le modèle de données patrimoniales dont dépend tout l’aval. <em>Jalon : plan de déploiement figé.</em>"
+      ],
+      [
+        "Autorisations, conventions et relevés",
+        "Permissions de voirie et arrêtés de circulation, DT-DICT, négociation des conventions de servitude, conventions d’immeuble avec les syndics de copropriété, relevé de disponibilité des fourreaux et des appuis aériens, et commandes d’accès au génie civil de l’opérateur d’infrastructure. <em>Jalon : conventions purgées pour la vague 1.</em>"
+      ],
+      [
+        "Plaque A — vague 1",
+        "Études d’exécution et plan d’épissurage, aiguillage et débouchage des fourreaux, génie civil, portage de câble et pose sur appuis, raccordement optique et construction du SRO, mesures par réflectométrie et remise des plans de récolement. <em>Jalon : ouverture commerciale plaque A.</em>"
+      ],
+      [
+        "Plaque B — vague 2",
+        "La séquence à l’identique, lancée pendant que la plaque A est encore en génie civil, pour que les équipes et les autorisations s’enchaînent sans creux. <em>Jalon : ouverture commerciale plaque B.</em>"
+      ],
+      [
+        "Plaque C — vague 3",
+        "La troisième vague, avec son propre délai de conventions placé devant elle — l’étape que les équipes oublient le plus souvent de décaler. <em>Jalon : ouverture commerciale plaque C.</em>"
+      ],
+      [
+        "Ouverture, commercialisation et raccordements",
+        "Mise en service du NRO, préavis de mise à disposition du point de mutualisation aux opérateurs commerciaux, paramétrage des systèmes d’information et de facturation, précommercialisation, montée en charge des équipes de raccordement et campagnes de raccordement par plaque. <em>Jalon : revue du taux de pénétration et décision de vague suivante.</em>"
+      ]
+    ],
+    callout: "Rien n’est facturable tant qu’une plaque n’est pas ouverte commercialement. Le nombre de locaux raccordables est un indicateur de chantier ; le nombre de locaux raccordés est celui du chiffre d’affaires, et c’est dans l’écart entre les deux que meurent les plans d’affaires fibre. Posez un jalon d’ouverture commerciale sur chaque plaque, faites partir la barre de raccordement de ce jalon, et reconnaissez qu’un refus de convention ou un fourreau bouché ne décale pas une tâche : il décale d’un trimestre le chiffre d’affaires d’une plaque entière. Prévoyez aussi le préavis réglementaire de mise à disposition du point de mutualisation : la commercialisation n’ouvre pas le jour où le câble est soufflé.",
+    customize: [
+      "Copier le bloc de la plaque A une fois par plaque et décaler les offsets : la séquence est délibérément identique pour être dupliquée plutôt que réécrite.",
+      "Régler les barres de permission de voirie sur les délais d’instruction réels de vos collectivités : ils varient beaucoup d’une commune à l’autre et ne se compriment pas en poussant l’entreprise.",
+      "Ajouter une barre de reprise de génie civil avec un aléa réaliste : les fourreaux bouchés ou effondrés se découvrent au relevé, pas à l’étude, et ils font redévier des rues entières.",
+      "Séparer le portage de câble de l’épissurage si des équipes différentes les réalisent : les prix de journée et la sensibilité à la météo ne sont pas les mêmes.",
+      "Insérer un sous-plan immeuble collectif là où c’est pertinent : la convention avec le syndic, le vote en assemblée générale et la colonne montante suivent une horloge totalement différente de celle des travaux de voirie.",
+      "Marquer l’ouverture commerciale de chaque plaque comme jalon et faire démarrer de là la barre de raccordement, pour que le planning montre le chiffre d’affaires suivant le déploiement plutôt que courant à côté."
+    ],
+    tips: [
+      "<strong>Lancez les conventions avant la fin des études.</strong> C’est le poste à délai le plus long de tout le programme, et il dépend des notaires, des bailleurs et des assemblées générales des autres, pas de vos ingénieurs.",
+      "<strong>Relevez le génie civil avant d’engager une plaque dans une vague.</strong> Les bases patrimoniales d’infrastructure sont fréquemment fausses, et découvrir un fourreau bouché après mobilisation des équipes coûte son créneau à la plaque.",
+      "<strong>Faites se chevaucher les vagues volontairement, pas par accident.</strong> Tout l’intérêt du découpage en vagues est de charger en continu une équipe de génie civil, une équipe de raccordement optique et une équipe de raccordement client ; les trous entre vagues sont du coût pur.",
+      "<strong>Faites fonctionner les systèmes de commande et de facturation dès la vague 1, pas avant la vague 3.</strong> Une plaque peut être physiquement construite et rester invendable parce que la commande, l’activation et la facturation ne sont pas intégrées.",
+      "<strong>Précommercialisez une plaque avant son ouverture.</strong> Les manifestations d’intérêt recueillies pendant le génie civil convertissent bien mieux qu’une campagne à froid une fois les camions repartis, et elles avancent la courbe de raccordement.",
+      "<strong>Suivez le coût par local raccordable plaque par plaque, pas à l’échelle du programme.</strong> Une plaque difficile, lourde en reprise de génie civil, se dissimule dans une moyenne et consomme discrètement l’aléa de trois plaques faciles."
+    ],
+    faq: [
+      [
+        "Combien de temps prend le déploiement d’une plaque fibre ?",
+        "Une plaque de quelques milliers de locaux court typiquement sur quatre à six mois entre les études d’exécution et l’ouverture commerciale, et c’est ce que retient le modèle. La durée du programme vient du nombre de plaques menées en parallèle, pas de la durée unitaire."
+      ],
+      [
+        "Que signifie l’ouverture commerciale d’une plaque ?",
+        "C’est le moment où la plaque est construite, mesurée et chargée dans les systèmes de commande, de sorte que des clients peuvent réellement être raccordés — l’équivalent du RFS anglo-saxon. En France, elle suppose aussi la mise à disposition du point de mutualisation aux opérateurs commerciaux, assortie d’un préavis. C’est ce jalon qui déclenche le chiffre d’affaires, et il se suit plaque par plaque."
+      ],
+      [
+        "Pourquoi les conventions sont-elles sur le chemin critique ?",
+        "Parce qu’elles engagent des tiers — propriétaires, bailleurs, copropriétés — qui n’ont aucune raison d’aller à votre rythme. Elles prennent des mois, ne se compriment pas en ajoutant des moyens, et un seul refus peut imposer une reprise d’ingénierie sur toute une plaque."
+      ],
+      [
+        "Combien de vagues mener en parallèle ?",
+        "Assez pour charger en continu vos équipes de génie civil et de raccordement, sans dépasser le débit d’instruction des permissions de voirie de vos gestionnaires de voirie. Deux à trois vagues qui se chevauchent est courant ; le modèle en montre trois."
+      ],
+      [
+        "Pourquoi les locaux raccordés sont-ils si peu nombreux face aux raccordables ?",
+        "Parce que le raccordement dépend de la commercialisation, de la capacité de rendez-vous d’installation et des échéances de contrat des abonnés, dont rien ne se produit le jour de l’ouverture de la plaque. Modélisez la courbe de pénétration séparément de la courbe de construction."
+      ],
+      [
+        "Le modèle de déploiement fibre est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'stadium-construction-schedule': {
+    card: "Gradins préfabriqués, levage de la toiture, aménagements, pelouse, homologation et match d’ouverture.",
+    h1: "Planning de construction d’un stade",
+    metaTitle: "Construction de stade — planning",
+    metaDesc: "Planning gratuit de construction de stade : gros œuvre, gradins, levage de toiture, aménagements, pelouse, homologation et match d’ouverture.",
+    lead: "Un <strong>planning de construction de stade</strong> gratuit, bâti à rebours d’une date que personne sur le projet ne maîtrise : le match d’ouverture inscrit au calendrier de la ligue. Il couvre la cuvette et les gradins préfabriqués, la charpente de toiture et son levage dans sa fenêtre météo, l’aménagement des coursives et des espaces d’hospitalité, la construction de la pelouse et sa période d’enracinement, puis les matchs tests et l’homologation qui séparent l’achèvement des travaux d’un stade plein. À télécharger pour un dossier de comité, ou à ouvrir en ligne pour déplacer la date du match et voir ce qui casse.",
+    intro: "La plupart des chantiers négocient leur date de fin. Celui-ci ne le peut pas : le calendrier est publié, les billets sont vendus, et deux des postes les plus longs — l’enracinement du gazon et le levage de la toiture — dépendent de la météo et de la biologie, pas de la main-d’œuvre. Le planning s’ordonne en conséquence :",
+    phases: [
+      [
+        "Conception, autorisations et travaux préparatoires",
+        "Programme de jauge, date d’ouverture fixée, permis de construire, stratégie d’homologation de l’enceinte et de classement ERP, conception de la cuvette, lot charpente métallique et installation de chantier. <em>Jalon : date du match d’ouverture arrêtée.</em>"
+      ],
+      [
+        "Infrastructures et cuvette",
+        "Fondations profondes, sous-sols et galeries techniques, ossature coulée en place, fabrication et pose des gradins préfabriqués. <em>Jalon : structure de la cuvette terminée.</em>"
+      ],
+      [
+        "Toiture et enveloppe",
+        "Fabrication de la charpente, anneau de compression, mise en tension du filet de câbles, le grand levage dans sa fenêtre météo, puis bardage. <em>Jalon : enveloppe hors d’eau.</em>"
+      ],
+      [
+        "Aménagements, hospitalités et systèmes",
+        "Coursives, loges et salons, cuisines et points de restauration, sièges, éclairage sportif et écrans géants, tourniquets et billetterie, moyens de diffusion et poste central de sécurité."
+      ],
+      [
+        "Pelouse et aire de jeu",
+        "Terrassement et drainage, chauffage de pelouse et arrosage, couche de croissance, pose du gazon hybride et période d’enracinement. <em>Jalon : pelouse remise à l’équipe terrain.</em>"
+      ],
+      [
+        "Matchs tests, homologation et ouverture",
+        "Dossier d’homologation, passage de la commission de sécurité, formation des stadiers, un match test à jauge réduite, un match test à jauge quasi complète, puis le coup d’envoi. <em>Jalon : match d’ouverture.</em>"
+      ]
+    ],
+    callout: "Deux barres de ce planning ne se compriment pas. Le levage de toiture réclame une fenêtre météo calme et une grue réservée des mois à l’avance ; la pelouse réclame une période d’enracinement qui se compte en semaines de température et de lumière convenables avant de tenir la charge d’un match. Les deux se situent tard dans le programme, les deux sont saisonnières, et les deux alimentent une date de match qui ne bougera pas. Ordonnancez-les en premier et faites tenir le reste des travaux autour.",
+    customize: [
+      "Saisir la date réelle de votre match d’ouverture, puis remonter le temps : le modèle est délibérément construit pour que le dernier jalon soit figé et que la marge se loge plus tôt.",
+      "Régler la barre d’enracinement sur votre climat et votre système de gazon : une pose de printemps, avec des jours longs, s’établit bien plus vite qu’une pose d’automne, et cet écart peut valoir un match entier.",
+      "Déplacer le levage de toiture vers votre vraie saison de vents faibles et ajouter une barre d’aléa derrière : un levage reporté par la météo ne glisse pas d’un jour, il glisse à la fenêtre suivante.",
+      "Ajouter une ligne par match test exigé par votre autorité d’homologation : la plupart demandent une montée en jauge progressive plutôt qu’un unique essai à pleine capacité.",
+      "Découper les aménagements par tribune ou par niveau si le stade peut ouvrir partiellement : certaines enceintes obtiennent une homologation à jauge réduite et achèvent le reste ensuite.",
+      "Marquer comme jalons la date du match, l’achèvement de la cuvette, la mise hors d’eau, la remise de la pelouse, l’homologation et le coup d’envoi : ce sont les six dates que réclame un conseil d’administration de club."
+    ],
+    tips: [
+      "<strong>Traitez la date du match comme une contrainte, pas comme un objectif.</strong> Si le calcul à rebours dit que le levage doit intervenir avant l’hiver, c’est la réponse — en débattre en réunion d’avancement ne change pas le vent.",
+      "<strong>Commandez les gradins préfabriqués démesurément tôt.</strong> La fabrication est une file d’attente d’usine, et les éléments de gradins sont ce qui risque le plus de bloquer la cuvette pendant que tout le monde regarde la toiture.",
+      "<strong>Faites entrer la construction de la pelouse dans le planning comme un projet, pas comme une ligne d’espaces verts.</strong> Drainage, chauffage, couche de croissance et enracinement forment une séquence de deux à trois mois pilotée par un jardinier de terrain, pas une semaine de pose de rouleaux.",
+      "<strong>Les matchs tests relèvent de l’homologation, pas de la communication.</strong> La commission de sécurité veut voir l’encadrement, l’entrée, la sortie et l’évacuation à des charges croissantes avant de rendre un avis favorable, et elle n’abrègera pas cette séquence pour une échéance de diffuseur.",
+      "<strong>Mettez en service le poste central de sécurité, la sonorisation et la vidéoprotection avant le premier match test.</strong> Ce sont les systèmes dont l’homologation dépend réellement, et ce sont d’ordinaire les derniers mis sous tension.",
+      "<strong>Gardez une ouverture à jauge réduite comme repli actif.</strong> Décider au dernier moment, c’est le chaos ; décider six mois avant, avec un critère de déclenchement défini, c’est un plan."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire un stade ?",
+        "Un stade neuf de taille moyenne court typiquement sur 24 à 36 mois de chantier après autorisations, ce que montre approximativement le modèle. Les grandes enceintes à toiture complexe courent souvent plus longtemps, du fait de la séquence charpente et filet de câbles."
+      ],
+      [
+        "Pourquoi la pelouse prend-elle autant de temps ?",
+        "Parce que la surface se cultive, elle ne s’installe pas. Après le drainage, le chauffage et la couche de croissance, un gazon hybride demande plusieurs semaines d’enracinement dans des conditions de température et de lumière convenables avant de supporter les charges d’un match."
+      ],
+      [
+        "Que se passe-t-il si le match d’ouverture est manqué ?",
+        "Les clubs délocalisent généralement la rencontre ou ouvrent à jauge réduite — deux options coûteuses et très visibles. C’est pourquoi le modèle inscrit dans le programme une série progressive de matchs tests et une décision de repli sur la jauge, plutôt que de les laisser au hasard."
+      ],
+      [
+        "Quand programmer le levage de la toiture ?",
+        "Dans votre fenêtre saisonnière la plus calme, avec la grue et l’équipe spécialisée réservées bien à l’avance et une fenêtre de repli identifiée. Un levage reporté par la météo attend généralement la fenêtre suivante, pas le lendemain."
+      ],
+      [
+        "Qu’est-ce que l’homologation et quand la demander ?",
+        "C’est l’arrêté qui autorise l’accueil du public à une jauge donnée, pris après instruction du dossier et avis de la commission de sécurité et d’accessibilité, appuyé sur les visites et les matchs tests. Le dossier se dépose des mois avant l’ouverture, pas après la fin des travaux."
+      ],
+      [
+        "Le modèle de construction de stade est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'museum-exhibition-planning-timeline': {
+    card: "Demandes de prêt, garantie d’État, constats d’état, convoyeurs, climatisation des salles et montage.",
+    h1: "Planning de préparation d’une exposition",
+    metaTitle: "Exposition — planning de préparation",
+    metaDesc: "Planning gratuit d’exposition : demandes de prêt, garantie d’État, restauration, convoyeurs, stabilisation climatique des salles, montage et démontage.",
+    lead: "Un <strong>planning de préparation d’exposition</strong> gratuit, organisé comme se déroulent vraiment les expositions : autour des prêts. Demandes de prêt et réponses des prêteurs, facility reports et garantie d’État, assurance et agendas des convoyeurs, restauration et constats d’état, stabilisation climatique des salles avant qu’une seule œuvre n’arrive, puis montage sous la surveillance des convoyeurs et une date de vernissage figée. À télécharger pour un comité de projet, ou à ouvrir en ligne pour poser votre propre date d’ouverture.",
+    intro: "Une œuvre empruntée arrive aux conditions du prêteur, dans la caisse du prêteur, avec le convoyeur du prêteur, à une date qui arrange le prêteur. Toutes les autres dates de l’exposition en découlent : le modèle place donc les prêts et les convoyages au centre, au lieu de les traiter comme de la logistique :",
+    phases: [
+      [
+        "Conception scientifique et programmation",
+        "Propos de l’exposition, liste d’œuvres souhaitées, validation du budget, demande de garantie d’État et, pour les prêts étrangers, demande d’insaisissabilité, ainsi que le catalogue — le délai le plus long de tout le projet. <em>Jalon : date d’ouverture arrêtée.</em>"
+      ],
+      [
+        "Prêts et conventions",
+        "Demandes officielles de prêt, réponses et substitutions, facility reports, assurance et estimations de valeur, conventions de prêt signées et exigences de convoyage. <em>Jalon : liste d’œuvres figée.</em>"
+      ],
+      [
+        "Scénographie et fabrication",
+        "Scénographie et implantation en volume, graphisme et textes de médiation, conception des vitrines et des supports d’œuvres, fabrication avec essais de dégagement gazeux, conception audiovisuelle et éclairage."
+      ],
+      [
+        "Conservation, convoyeurs et transport",
+        "Constats d’état, traitements de restauration et encadrement, cahier des charges des caisses, certificats d’exportation et formalités douanières, puis l’enlèvement lui-même sous convoyage. <em>Jalon : œuvres arrivées sur site.</em>"
+      ],
+      [
+        "Préparation des salles et montage",
+        "Démontage de l’exposition précédente, remise en peinture, stabilisation climatique et relevés d’hygrométrie et de température, pose des vitrines et de l’éclairage, constats d’état à l’arrivée avec les convoyeurs, mise en place des œuvres et fermeture des vitrines."
+      ],
+      [
+        "Vernissage, exploitation et démontage",
+        "Visite de conformité, présentation à la presse, vernissage, programmation culturelle, suivi de l’exposition lumineuse et rotations, puis démontage et retour. <em>Jalon : œuvres retournées aux prêteurs.</em>"
+      ]
+    ],
+    callout: "Les salles doivent être climatiquement stables avant que les œuvres n’y entrent, et la stabilité demande du temps. Une peinture fraîche dégaze, une vitrine neuve dégaze, et l’hygrométrie relative comme la température doivent être enregistrées au point de consigne convenu sur une période soutenue avant qu’un convoyeur n’autorise le déballage de son œuvre. Placez un jalon « relevés climatiques acceptés » devant le montage : s’il glisse, les convoyeurs sont déjà dans vos salles et la date du vernissage, elle, n’a pas bougé.",
+    customize: [
+      "Placer la barre de demandes de prêt au moins douze à dix-huit mois avant l’ouverture pour les grands prêteurs internationaux : certaines institutions ont des commissions qui ne siègent que quelques fois par an.",
+      "Ajouter une boucle de substitution après les réponses des prêteurs. Les refus sont normaux, et le planning doit montrer le temps nécessaire pour trouver et demander une œuvre de remplacement.",
+      "Allonger la barre de stabilisation climatique si vous repeignez ou installez des vitrines neuves près du montage : le dégagement gazeux est précisément la raison pour laquelle les prêteurs réclament les relevés.",
+      "Ajouter une ligne par convoyeur si les œuvres arrivent sur des vols distincts : chacun demande un accompagnement, un hébergement et un créneau de constat d’état en salle.",
+      "Insérer des rotations d’œuvres sensibles à la lumière dans la phase d’exploitation lorsqu’une pièce ne peut rester exposée toute la durée sous les limites d’éclairement fixées par son prêteur.",
+      "Marquer comme jalons la date d’ouverture, la liste d’œuvres figée, l’arrivée des œuvres et leur retour : ce sont les quatre dates que suivent à la fois le régisseur et la direction."
+    ],
+    tips: [
+      "<strong>Figez la liste d’œuvres, puis défendez-la.</strong> Chaque ajout tardif relance convention de prêt, assurance, caisserie, fabrication de supports et graphisme : c’est de loin la modification la plus coûteuse d’une exposition.",
+      "<strong>Envoyez les facility reports tôt et sans qu’on vous les demande.</strong> Les prêteurs évaluent votre bâtiment avant d’évaluer votre projet, et un rapport périmé est une cause de retard fréquente et parfaitement évitable.",
+      "<strong>Calez les convoyages sur les agendas des prêteurs, pas sur le vôtre.</strong> Un convoyeur est un agent nommément désigné de l’institution prêteuse, avec son propre calendrier ; deux prêteurs qui veulent la même semaine est une contrainte réelle et fréquente.",
+      "<strong>Fabriquez les supports après le gel de la liste, pas avant.</strong> Un support d’œuvre est sur mesure, et une œuvre substituée signifie un support à refaire sans que le programme ait prévu le temps.",
+      "<strong>Comptez les constats d’état comme du temps de salle, pas comme de la paperasse.</strong> Les constats à l’arrivée se font en présence du convoyeur, œuvre par œuvre, et ils occupent des journées entières de la fenêtre de montage que l’on oublie couramment de planifier.",
+      "<strong>Planifiez le démontage et le retour avec le même soin que le montage.</strong> Constats au départ, remise en caisse et convoyages se répètent à l’identique, et les prêteurs vous jugent autant sur le retour que sur l’exposition."
+    ],
+    faq: [
+      [
+        "Combien de temps à l’avance faut-il préparer une exposition ?",
+        "Pour une exposition fondée sur des prêts, deux à trois ans est la norme, et le modèle couvre approximativement les dix-huit derniers mois. Les demandes de prêt aux grands prêteurs internationaux doivent partir au moins douze à dix-huit mois avant l’ouverture."
+      ],
+      [
+        "Qu’est-ce qu’un facility report ?",
+        "Un document standardisé — le terme anglais reste d’usage courant dans les musées français — décrivant le contrôle climatique, la sûreté, la protection incendie et les procédures de manipulation de votre bâtiment. Les prêteurs s’en servent pour décider s’ils prêtent, il doit donc être à jour avant l’envoi des demandes."
+      ],
+      [
+        "Pourquoi les salles doivent-elles être stabilisées avant le montage ?",
+        "Parce que la peinture fraîche et les vitrines neuves dégazent, et parce que la température et l’hygrométrie doivent tenir le point de consigne assez longtemps pour être enregistrées. Les convoyeurs refusent couramment de déballer dans un environnement non prouvé."
+      ],
+      [
+        "Que faire si un prêteur refuse ?",
+        "Vous substituez, ce qui relance pour cette œuvre la chaîne convention, assurance, caisserie et fabrication de support. Intégrez une boucle de substitution au planning plutôt que de supposer que chaque demande sera acceptée."
+      ],
+      [
+        "Quelle durée prévoir pour le montage ?",
+        "Comptez plusieurs semaines entre la mise à disposition des salles et l’ouverture : vitrines et éclairage, graphisme, constats d’état à l’arrivée avec les convoyeurs, mise en place et fermeture des vitrines s’enchaînent séquentiellement et œuvre par œuvre."
+      ],
+      [
+        "Le modèle de planning d’exposition est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'iso-27001-certification-plan': {
+    card: "Périmètre du SMSI, appréciation des risques, déclaration d’applicabilité, audit interne et audit en deux étapes.",
+    h1: "Plan de certification ISO 27001",
+    metaTitle: "ISO 27001 — plan de certification",
+    metaDesc: "Plan gratuit de certification ISO 27001 : périmètre, appréciation des risques, déclaration d’applicabilité, audit interne, revue de direction, audit final.",
+    lead: "Un <strong>plan de certification ISO 27001</strong> gratuit, organisé comme un organisme de certification vous évalue réellement — périmètre du SMSI, appréciation des risques et déclaration d’applicabilité, mise en œuvre des mesures de sécurité, une période de fonctionnement effectif qui produit des enregistrements, puis l’audit interne et la revue de direction qui doivent tous deux être achevés avant l’étape 2, et enfin l’audit initial en deux étapes lui-même. Si vous menez aussi un système qualité, le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> suit la même mécanique d’audit.",
+    intro: "L’audit de certification n’est pas un événement unique. C’est une revue documentaire, puis un intervalle obligatoire pendant lequel vous corrigez ce qu’elle a relevé, puis un audit complet sur preuves — et c’est cet intervalle qui interdit de comprimer un plan ISO 27001 par la fin :",
+    phases: [
+      [
+        "Périmètre et analyse d’écart",
+        "Frontières du SMSI, parties intéressées et obligations légales, analyse d’écart au regard des mesures de l’annexe A, et choix de l’organisme de certification accrédité — moment où se réservent aussi les deux dates d’audit. <em>Jalon : périmètre et écarts validés.</em>"
+      ],
+      [
+        "Appréciation des risques et déclaration d’applicabilité",
+        "Inventaire des actifs informationnels, méthode d’appréciation des risques, identification et évaluation, plan de traitement des risques, et la déclaration d’applicabilité qui consigne quelles mesures s’appliquent et pourquoi. <em>Jalon : déclaration d’applicabilité et traitement des risques approuvés.</em>"
+      ],
+      [
+        "Mise en œuvre des mesures",
+        "Corpus de politiques, contrôle d’accès et gestion des identités, maîtrise des fournisseurs et du cloud, développement sécurisé et gestion des changements, mesures physiques et liées aux personnes, procédures d’incident et de continuité. <em>Jalon : mesures mises en œuvre.</em>"
+      ],
+      [
+        "Fonctionnement et accumulation des preuves",
+        "La phase qui ne se raccourcit pas : faire tourner les mesures assez longtemps pour que revues d’habilitations, surveillance des journaux, revues fournisseurs et exercice d’incident aient réellement eu lieu et laissé des enregistrements. <em>Jalon : trois mois d’enregistrements disponibles.</em>"
+      ],
+      [
+        "Audit interne et revue de direction",
+        "Un audit interne complet du SMSI, les non-conformités qu’il soulève, les actions correctives, puis la réunion de revue de direction. Les deux sont des éléments d’entrée obligatoires et doivent être terminés avant l’étape 2. <em>Jalon : audit interne et revue de direction terminés.</em>"
+      ],
+      [
+        "Audit étape 1 et étape 2",
+        "Audit documentaire d’étape 1, ses constats, la fenêtre d’actions correctives, l’actualisation des preuves, l’audit d’étape 2, la clôture des non-conformités et la délivrance du certificat. <em>Jalon : certificat délivré.</em>"
+      ]
+    ],
+    callout: "L’étape 1 et l’étape 2 sont séparées à dessein, et l’intervalle entre les deux n’est pas de la marge. L’étape 1 vérifie si la documentation de votre SMSI est certifiable ; elle soulève presque toujours des constats, et l’étape 2 ne passera pas tant qu’ils ne sont pas soldés. Réservez six à huit semaines entre les deux visites et planifiez-y du vrai travail. L’autre invariant, c’est le temps écoulé : à l’étape 2, l’auditeur échantillonne des enregistrements, et les enregistrements n’existent que si les mesures ont tourné. On n’instaure pas une revue d’habilitations en mars pour présenter un an de preuves en avril.",
+    customize: [
+      "Retenir l’organisme de certification tôt et poser d’abord la date de l’étape 2 : tout ce qui précède est un compte à rebours, pas une estimation.",
+      "Conserver au moins six semaines entre l’étape 1 et l’étape 2 pour les actions correctives ; raccourcir cet intervalle est la cause la plus fréquente d’échec à l’étape 2.",
+      "Développer les lignes de mise en œuvre en une ligne par thème de l’annexe A, ou par mesure, une fois la déclaration d’applicabilité approuvée.",
+      "Allonger la phase de fonctionnement si votre traitement des risques repose sur des mesures à cycle trimestriel ou annuel : il vous faut au moins un cycle complet de preuves.",
+      "Ajouter une ligne pour chaque exclusion de périmètre que vous devez justifier : c’est précisément ce que l’étape 1 creusera le plus.",
+      "Ajouter l’audit de surveillance de la première année comme ligne datée, pour que le SMSI reste doté en moyens au-delà du certificat."
+    ],
+    tips: [
+      "<strong>La déclaration d’applicabilité commande tout ce qui suit.</strong> Tant qu’elle n’est pas approuvée, vous ne savez pas quelles mesures vous construisez : les estimations de mise en œuvre antérieures sont des paris.",
+      "<strong>Menez l’audit interne pour de vrai.</strong> Un audit interne complaisant qui ne trouve rien déplace simplement les constats vers l’étape 2, où ils coûtent la date de certification et non quinze jours.",
+      "<strong>Tenez la revue de direction comme une réunion avec compte rendu.</strong> C’est une exigence explicite, aux éléments d’entrée définis, et les auditeurs lisent le compte rendu plutôt que de vous croire sur parole.",
+      "<strong>Réalisez l’exercice d’incident et de continuité avant l’étape 2.</strong> C’est l’une des rares preuves que vous pouvez programmer au lieu d’attendre.",
+      "<strong>Ne mélangez pas cette démarche avec SOC 2.</strong> Elles partagent des mesures mais pas leur mécanique : ISO 27001 est une certification à cycle de trois ans avec audits de surveillance, tandis que SOC 2 est un rapport d’attestation américain, délivré par un cabinet de CPA selon les Trust Services Criteria de l’AICPA — un dispositif étranger qui n’a pas d’équivalent français et se désigne par son nom d’origine."
+    ],
+    faq: [
+      [
+        "Combien de temps prend une certification ISO 27001 ?",
+        "Couramment douze à dix-huit mois en partant de zéro pour une organisation sans SMSI existant. Le modèle retient environ quinze mois. Ce qui résiste à la compression, c’est la période de fonctionnement qui produit les enregistrements et l’intervalle obligatoire entre l’étape 1 et l’étape 2."
+      ],
+      [
+        "Quelle différence entre l’étape 1 et l’étape 2 ?",
+        "L’étape 1 est une revue documentaire et de maturité — périmètre, politiques, appréciation des risques, déclaration d’applicabilité, preuves d’audit interne et de revue de direction. L’étape 2 est l’audit complet du fonctionnement réel du SMSI. Les constats d’étape 1 doivent être soldés avant l’étape 2, d’où la fenêtre d’actions correctives que le modèle laisse entre les deux."
+      ],
+      [
+        "L’audit interne et la revue de direction sont-ils obligatoires avant l’étape 2 ?",
+        "Oui. Les deux relèvent d’exigences explicites de la norme et l’auditeur en demandera les preuves. Le modèle les place avant l’étape 1 pour que les actions correctives qu’ils soulèvent aient le temps d’être soldées."
+      ],
+      [
+        "ISO 27001 et SOC 2, est-ce la même chose ?",
+        "Non. ISO 27001 est une norme internationale : vous êtes certifié par un organisme accrédité, sur un cycle de trois ans avec audits de surveillance annuels. SOC 2 est une attestation américaine réalisée par un cabinet de CPA au regard des Trust Services Criteria de l’AICPA, et un rapport de Type II couvre une fenêtre d’observation définie plutôt que d’accorder un certificat. Pour cela, utilisez le <a href=\"/templates/soc2-compliance-timeline.html\">planning de conformité SOC 2</a> ; les deux plans se recoupent sur les mesures, pas sur les dates."
+      ],
+      [
+        "En quoi cela diffère-t-il du plan ISO 9001 ?",
+        "La mécanique d’audit est la même — deux étapes — mais le contenu diffère : ISO 9001 est un système de management de la qualité, celui-ci est un système de management de la sécurité de l’information bâti sur une appréciation des risques et une déclaration d’applicabilité. Voyez le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> si vous visez les deux."
+      ],
+      [
+        "Le modèle ISO 27001 est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'crm-implementation-plan': {
+    card: "Conception des processus, nettoyage et déduplication des données, paramétrage, répétitions de migration et bascule.",
+    h1: "Plan de déploiement d’un CRM",
+    metaTitle: "CRM — plan de déploiement",
+    metaDesc: "Plan gratuit de déploiement CRM : conception des processus, nettoyage et déduplication, paramétrage, répétitions de migration, formation et bascule.",
+    lead: "Un <strong>plan de déploiement de CRM</strong> gratuit, qui place l’effort là où il se trouve réellement : non pas dans le paramétrage des objets, mais dans l’audit, la déduplication et le rapprochement des données clients que vous vous apprêtez à déplacer — et dans le choix d’un moment de bascule dans le trimestre qui ne détruise pas les prévisions de vente. Il couvre la conception des processus, le nettoyage des données, le paramétrage et les interfaces, les répétitions de migration, les cohortes de formation, la bascule et le premier cycle complet de prévisions dans le nouvel outil.",
+    intro: "Tout le monde budgète le paramétrage et personne ne budgète les données. Or un commercial qui ouvre le nouveau CRM et découvre trois exemplaires de son plus gros compte cesse de s’en servir le matin même, et aucune formation ne rattrape cela :",
+    phases: [
+      [
+        "Cadrage et conception des processus",
+        "Processus de vente et définition des étapes, définitions du pipeline et de la prévision, conception des champs et des objets, et les besoins de reporting sur lesquels tout le paramétrage se dimensionne. <em>Jalon : conception validée.</em>"
+      ],
+      [
+        "Audit, nettoyage et déduplication des données",
+        "Extractions sources, profilage de qualité, clés de rapprochement et règles de déduplication, passe automatisée, enregistrements que seuls les commerciaux peuvent corriger, remise à plat des hiérarchies de comptes, purge des contacts dont la durée de conservation est dépassée et mise à jour du registre des traitements. Cette phase court sur plusieurs mois en parallèle. <em>Jalon : données prêtes pour la répétition de migration.</em>"
+      ],
+      [
+        "Paramétrage et interfaces",
+        "Objets, automatisations et règles de validation, habilitations et modèle de secteurs, messagerie, agenda et téléphonie, synchronisation avec l’outil de marketing automation, devis et interface avec l’ERP, tableaux de bord de prévision. <em>Jalon : paramétrage terminé.</em>"
+      ],
+      [
+        "Répétitions de migration",
+        "Deux répétitions complètes, avec rapprochement et validation par les commerciaux entre les deux, puis un essai chronométré au volume réel qui prouve que le chargement tient dans la fenêtre de bascule. <em>Jalon : répétition de migration validée.</em>"
+      ],
+      [
+        "Formation et appropriation",
+        "Contenus par rôle, ateliers de prévision pour les managers d’abord, puis cohortes de commerciaux calées au plus près de la mise en service, réseau de référents et dispositif d’assistance de proximité. <em>Jalon : formation terminée.</em>"
+      ],
+      [
+        "Bascule et premier cycle de prévision",
+        "La fenêtre de changement de trimestre, gel de l’ancien système, chargement en production, rapprochement du pipeline avec l’ancien outil, mise en service, période de vigilance renforcée et premier cycle complet de prévision mené dans le nouveau CRM. <em>Jalon : mise en service.</em>"
+      ]
+    ],
+    callout: "Choisissez la date de bascule sur le calendrier commercial, pas sur le plan projet. Migrer en milieu de trimestre revient à demander à un commercial de ressaisir des affaires en cours au milieu de sa course à l’objectif, et une prévision qui existe à moitié dans chaque système est une prévision que personne ne peut défendre devant un comité. Basculez dans la première quinzaine d’un nouveau trimestre, quand le pipeline vient d’être remis à zéro et rapproché : le premier cycle de prévision dans le nouveau CRM part alors d’un chiffre sur lequel les deux systèmes étaient d’accord.",
+    customize: [
+      "Placer la bascule dans les deux premières semaines d’un trimestre, puis remonter le temps : la dernière répétition doit se terminer au moins trois semaines avant.",
+      "Éclater les lignes de déduplication par objet — comptes, contacts, prospects, opportunités — parce que les clés de rapprochement et les responsables diffèrent pour chacun.",
+      "Repousser la formation des commerciaux aussi tard que possible sans percuter la bascule : former six semaines à l’avance revient à former deux fois.",
+      "Ajouter une ligne par interface si le devis, l’ERP ou le marketing automation ont leurs propres dépendances éditeur.",
+      "Garder la reprise des enregistrements confiée aux commerciaux comme ligne nommée avec un responsable nommé : c’est du travail métier, pas une tâche de l’équipe données.",
+      "Ajouter une ligne pour la décision sur l’historique d’activité, et une autre pour la conformité RGPD de la reprise : périmètre migré, base légale, durées de conservation et information des personnes. Reprendre cinq ans de courriels et d’appels est en général le choix le plus coûteux du plan, et le plus difficile à justifier."
+    ],
+    tips: [
+      "<strong>Dédupliquez avant de paramétrer, pas après.</strong> Les comptes en double cassent d’un coup l’affectation des secteurs, la consolidation des prévisions et le reporting, et chacun de ces éléments est à refaire si les données changent en dessous.",
+      "<strong>Rapprochez la valeur du pipeline avec l’ancien système le jour de la bascule.</strong> Si les deux chiffres ne concordent pas avant que quiconque se connecte, vous passerez le trimestre à débattre de celui qui est vrai.",
+      "<strong>Formez les managers avant les commerciaux.</strong> L’appropriation se joue en entretien individuel ; un manager incapable de mener sa revue de pipeline dans le nouvel outil laissera discrètement son équipe revenir au tableur.",
+      "<strong>Migrez moins d’historique.</strong> Les opportunités ouvertes et deux ans d’activité couvrent presque tous les usages réels ; le reste relève de l’archivage, pas de la migration — et la minimisation des données n’est pas seulement une bonne pratique projet, c’est un principe du RGPD.",
+      "<strong>Mesurez l’appropriation, pas la mise en service.</strong> Les connexions ne prouvent rien. Suivez si les affaires ont une prochaine étape, une date de signature et un mouvement d’étape : c’est ce qui rend le pipeline crédible."
+    ],
+    faq: [
+      [
+        "Combien de temps prend un déploiement de CRM ?",
+        "Couramment quatre à neuf mois pour une organisation commerciale de taille moyenne, la durée dépendant presque entièrement de la qualité des données et du nombre d’interfaces. Le modèle court sur environ onze mois de bout en bout, parce qu’il intègre le nettoyage des données dès le départ et un cycle complet de prévision après la mise en service."
+      ],
+      [
+        "Pourquoi la migration des données est-elle sur le chemin critique plutôt que le paramétrage ?",
+        "Parce que le paramétrage est un travail borné que vous maîtrisez, et les données non. Le profilage révèle des problèmes, la déduplication exige des arbitrages métier, et la reprise confiée aux commerciaux avance au rythme de gens qui ont un objectif à tenir. C’est pour cela que le modèle démarre le chantier données dès le premier mois."
+      ],
+      [
+        "Quand faut-il basculer ?",
+        "À une frontière de trimestre, dans les deux premières semaines du nouveau. Une bascule en milieu de trimestre coupe la prévision entre deux systèmes, et une prévision à laquelle personne ne croit est le moyen le plus rapide de perdre définitivement l’adhésion des commerciaux."
+      ],
+      [
+        "Combien de répétitions de migration faut-il ?",
+        "Au moins deux, plus un essai chronométré. La première teste le mapping, la seconde teste les données dédupliquées avec une vraie validation commerciale, et l’essai chronométré au volume réel prouve que le chargement tient dans la fenêtre de bascule que vous avez réservée."
+      ],
+      [
+        "Quel rapport avec le plan de conduite du changement ?",
+        "Ce plan couvre le système. Le <a href=\"/templates/change-management-plan.html\">plan de conduite du changement</a> couvre le volet humain qui court à côté : analyse d’impact, tournée des sponsors, cohortes de formation et ancrage après le lancement. Les grands programmes CRM ont besoin des deux."
+      ],
+      [
+        "Le modèle de déploiement CRM est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'disaster-recovery-plan': {
+    card: "Bilan d’impact sur l’activité, objectifs DMIA et PDMA, réplication, procédures et exercices de bascule.",
+    h1: "Plan de reprise d’activité (PRA)",
+    metaTitle: "PRA — plan de reprise d’activité",
+    metaDesc: "Planning gratuit de PRA : bilan d’impact, objectifs DMIA et PDMA, réplication, procédures de bascule, exercice sur table et bascules partielle et complète.",
+    lead: "Un <strong>plan de reprise d’activité</strong> gratuit, qui traite le livrable comme un plan <em>éprouvé</em> et non comme un document. Le bilan d’impact sur l’activité et les objectifs de DMIA et de PDMA — durée maximale d’interruption admissible et perte de données maximale admissible, le RTO et le RPO du vocabulaire anglo-saxon — fixent l’architecture, l’architecture fixe la construction, et toute la seconde moitié du planning est la séquence d’exercices : exercice sur table, puis bascule partielle, puis bascule complète avec validation métier, chacun réclamant sa propre fenêtre de changement et son propre chemin de retour arrière.",
+    intro: "Un PRA non testé est une hypothèse. Le planning ci-dessous est façonné par la montée en charge des exercices, parce que chacun coûte une fenêtre de changement et que chacun révèle ce que le précédent ne pouvait pas voir :",
+    phases: [
+      [
+        "Bilan d’impact sur l’activité",
+        "Inventaire des applications et des services, cartographie des dépendances, ateliers d’impact, et les objectifs de DMIA et de PDMA opposables à chaque service. Tout l’aval se chiffre à partir de ces nombres. <em>Jalon : objectifs DMIA/PDMA approuvés.</em>"
+      ],
+      [
+        "Stratégie et architecture de reprise",
+        "Affectation des paliers de reprise, choix du site ou de la région de repli, architecture de réplication et de sauvegarde, conception du basculement réseau et DNS, et revue de coût au regard des objectifs. <em>Jalon : architecture approuvée.</em>"
+      ],
+      [
+        "Construction et réplication",
+        "Infrastructure de repli, réplication du stockage et des bases de données, évolution de la politique de sauvegarde, gestion des identités et mesures de sécurité sur le site de repli, supervision du retard de réplication. <em>Jalon : réplication vérifiée en régime établi.</em>"
+      ],
+      [
+        "Procédures et documentation",
+        "Une procédure de bascule par palier de reprise, procédures de retour arrière et de retour à la normale, chaîne d’alerte et de communication de crise, et les critères de déclenchement qui désignent qui a le droit de déclarer le sinistre. <em>Jalon : procédures publiées.</em>"
+      ],
+      [
+        "Séquence d’exercices",
+        "Exercice sur table d’abord, puis bascule partielle des applications de palier 1 avec retour arrière, puis bascule complète avec validation métier et retour à la normale — avec du temps de correction budgété après chacun. <em>Jalon : exercice de bascule complète réussi.</em>"
+      ],
+      [
+        "Approbation et maintien en condition",
+        "Rapport d’exercice et risque résiduel, approbation de la direction, formation des intervenants, calendrier annuel d’exercices, et le point d’accroche dans la gestion des changements qui empêche les nouvelles applications d’atterrir silencieusement hors du plan. <em>Jalon : plan approuvé.</em>"
+      ]
+    ],
+    callout: "La DMIA et la PDMA ne sont pas des souhaits, ce sont une facture. Une PDMA de quinze minutes impose une réplication synchrone ou quasi synchrone, avec le coût de stockage qui va avec ; une DMIA de quatre heures impose une infrastructure tiède qui attend sans rien produire. Faites valider les nombres par le métier avant de concevoir quoi que ce soit, puis montrez-lui ce que chaque palier coûte et laissez-le réviser. Les équipes qui fixent les objectifs après l’architecture aboutissent à un plan qui redémarre plus lentement que ce qui a été promis au métier, et personne ne le découvre avant l’exercice de bascule.",
+    customize: [
+      "Fixer la DMIA et la PDMA par service, pas par organisation : un service de paiement et un wiki interne n’ont rien à faire dans le même palier.",
+      "Réserver les deux fenêtres de changement tôt : celle de la bascule complète demande en général un arbitrage de la direction et une période d’activité creuse, ce qui relève du calendrier et non de la technique.",
+      "Garder la ligne de retour arrière collée à chaque exercice : un exercice sans chemin de retour répété est une panne qui attend son mauvais jour.",
+      "Ajouter des lignes par palier applicatif si vous basculez par groupes plutôt que d’un bloc.",
+      "Allonger la fenêtre de correction après l’exercice partiel : c’est là qu’apparaît l’essentiel des vraies découvertes.",
+      "Ajouter le réexercice annuel sous forme de lignes datées, pour que le plan ne se périme pas discrètement douze mois après son approbation — et, si vous relevez d’un régime sectoriel qui impose une fréquence de test, alignez ce calendrier sur elle."
+    ],
+    tips: [
+      "<strong>Testez le retour à la normale, pas seulement la bascule.</strong> Tourner sur le site de repli n’est que la moitié de l’exercice ; la plupart des organisations découvrent les problèmes coûteux sur le chemin du retour.",
+      "<strong>Faites l’exercice sur table avant toute technique.</strong> Il ne coûte rien, ne demande aucune fenêtre de changement, et révèle immanquablement des coordonnées manquantes, une autorité de déclenchement floue et des étapes de procédure qui supposent un savoir que personne n’a écrit.",
+      "<strong>Validez avec le métier, pas avec un ping.</strong> Un service qui répond n’est pas un service qui fonctionne : faites réaliser de vraies transactions par de vrais utilisateurs pendant la bascule complète.",
+      "<strong>Surveillez le retard de réplication comme une métrique vivante.</strong> Une PDMA que vous ne mesurez pas en continu est une PDMA que vous ne vérifierez qu’en pleine crise.",
+      "<strong>Raccrochez le PRA à la gestion des changements.</strong> Chaque nouvelle application ajoutée sans palier de reprise creuse l’écart entre le plan et la réalité, et cet écart n’est visible qu’au moment de l’exercice."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire et éprouver un PRA ?",
+        "Couramment neuf à quinze mois entre le bilan d’impact et un plan approuvé et testé. Le modèle retient environ quinze mois. La construction est prévisible ; c’est la séquence d’exercices finale qui s’étire, parce que chaque exercice demande une fenêtre de changement et un cycle de correction derrière lui."
+      ],
+      [
+        "Quelle différence entre DMIA et PDMA ?",
+        "La DMIA est la durée d’indisponibilité tolérable — le temps de rétablissement du service. La PDMA est le volume de données que vous pouvez vous permettre de perdre — l’ancienneté de la dernière copie exploitable. Elles correspondent au RTO et au RPO anglo-saxons. La première commande l’infrastructure en attente, la seconde la fréquence de réplication, et ensemble elles déterminent l’essentiel du coût du plan."
+      ],
+      [
+        "Pourquoi trois exercices plutôt qu’un ?",
+        "Parce qu’ils révèlent des choses différentes. L’exercice sur table révèle les trous de la procédure et de la chaîne de décision pour le prix d’une salle de réunion. La bascule partielle révèle les défauts techniques sur un périmètre limité. Seule la bascule complète avec validation métier prouve la DMIA. Et chacun suppose que le précédent a été corrigé."
+      ],
+      [
+        "Faut-il une fenêtre de changement pour les exercices ?",
+        "Pour la bascule partielle et la bascule complète, oui : elles déplacent du trafic de production et portent un risque réel. Réservez-les avec un retour arrière répété et un critère d’abandon défini. L’exercice sur table n’en demande aucune, ce qui est précisément pourquoi il doit être épuisé en premier."
+      ],
+      [
+        "Quel rapport avec le plan de continuité d’activité ?",
+        "Le PRA est le sous-ensemble technique : rétablir les systèmes et les données. Le PCA est plus large et couvre les personnes, les locaux et les processus. Ce modèle traite le volet PRA, même si les lignes de communication de crise et de critères de déclenchement sont partagées avec tout PCA que vous menez."
+      ],
+      [
+        "Le modèle de PRA est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'rfp-procurement-timeline': {
+    card: "Besoin, dossier de consultation, questions, remise des offres, analyse, délai de suspension et notification.",
+    h1: "Planning de consultation d’un marché public",
+    metaTitle: "Marché public — planning de consultation",
+    metaDesc: "Planning gratuit de consultation : besoin, dossier de consultation, questions, remise des offres, analyse, attribution, délai de suspension et démarrage.",
+    lead: "Un <strong>planning de consultation</strong> gratuit pour mener une mise en concurrence, de la définition du besoin au démarrage effectif de la prestation — dossier de justification et critères de jugement, dossier de consultation des entreprises, période de publicité avec sa date limite de questions et sa date limite de remise des offres, analyse des offres et rapport de présentation, attribution et délai de suspension, puis notification et démarrage. La plupart de ces dates appartiennent à d’autres que vous : c’est précisément pour cela qu’elles doivent figurer sur un planning.",
+    intro: "Une consultation est un planning fait surtout du temps des autres : des candidats qui rédigent, des membres de commission qui trouvent une semaine libre, des juristes qui mettent au point et un titulaire sortant qui doit passer la main. Vous maîtrisez la date de lancement, et à peu près rien d’autre :",
+    phases: [
+      [
+        "Définition du besoin et opportunité",
+        "Recueil du besoin auprès des services, note d’opportunité et validation budgétaire, choix de la procédure et vérification des seuils, allotissement, et les critères de jugement et leur pondération — qui doivent être figés avant toute publication. <em>Jalon : autorisation de lancer la consultation.</em>"
+      ],
+      [
+        "Sourcing et dossier de consultation",
+        "Sourcing et étude du marché fournisseurs, éventuel avis de préinformation, rédaction du règlement de la consultation, du CCAP et du CCTP, bordereau de prix, grille de notation, et confirmation des membres de la commission avec blocage de leurs agendas. <em>Jalon : dossier de consultation validé.</em>"
+      ],
+      [
+        "Période de publicité et de remise des offres",
+        "Publication de l’avis d’appel public à la concurrence au BOAMP et, au-delà des seuils européens, au JOUE, mise en ligne du dossier sur le profil d’acheteur, fenêtre de questions, éventuelle visite ou réunion d’information, date limite des questions, réponses adressées à tous les candidats, puis le temps de rédaction des offres qui suit. <em>Jalon : date limite de remise des offres.</em>"
+      ],
+      [
+        "Analyse des offres",
+        "Vérification de la recevabilité des candidatures, analyse technique et financière menées en parallèle, demandes de précisions, harmonisation des notes, auditions ou soutenances, vérification des attestations du candidat pressenti et rapport d’analyse. <em>Jalon : proposition d’attribution validée.</em>"
+      ],
+      [
+        "Attribution, délai de suspension et notification",
+        "Décision d’attribution, lettres de rejet motivées indiquant les voies de recours, délai de suspension avant signature, réponses aux demandes de précisions des candidats évincés, mise au point et notification. <em>Jalon : marché notifié.</em>"
+      ],
+      [
+        "Démarrage et transition",
+        "Réunion de lancement, transition depuis le titulaire sortant, ouverture des accès et intégration des équipes, mise en place de la gouvernance et des indicateurs, et la date à laquelle la prestation démarre réellement. <em>Jalon : début d’exécution.</em>"
+      ]
+    ],
+    callout: "Le temps des candidats ne vous appartient pas. Si vous raccourcissez la fenêtre entre la publication des réponses aux questions et la date limite de remise, vous n’obtenez pas une consultation plus rapide : vous obtenez moins d’offres, des offres plus faibles, et un très bon prestataire qui renonce faute d’avoir pu mobiliser une équipe à temps. Le même principe vaut à l’autre bout : le délai de suspension entre l’envoi des lettres de rejet et la signature existe pour permettre un recours, il court sur le calendrier quelle que soit l’urgence du service demandeur, et le compresser expose la procédure à un référé précontractuel.",
+    customize: [
+      "Figer d’abord la date limite de remise des offres et la date de début d’exécution : les deux sont généralement imposées de l’extérieur, et tout le reste s’insère entre elles.",
+      "Vérifier les délais minimaux de réception des offres et la durée du délai de suspension applicables à votre procédure avant de reprendre les durées affichées : ils dépendent de la procédure et des seuils, pas de vos préférences.",
+      "Bloquer les agendas de la commission au moment même où vous publiez : c’est la disponibilité des membres, et non la charge d’analyse, qui fait déraper cette phase.",
+      "Ajouter des lignes pour les visites de site ou les soutenances si votre jugement en comporte : elles dépendent de la disponibilité des candidats et se planifient comme du travail.",
+      "Allonger nettement la phase de transition si un titulaire sortant doit transmettre des données, des personnels ou des matériels.",
+      "Ajouter une ligne par lot en cas d’allotissement, puisque l’analyse et l’attribution peuvent s’achever à des dates différentes selon les lots."
+    ],
+    tips: [
+      "<strong>Figez les critères de jugement avant publication.</strong> Une pondération modifiée après réception des offres est le motif d’annulation le plus fréquent, et elle ne se corrige pas discrètement.",
+      "<strong>Adressez chaque réponse à tous les candidats.</strong> Une réponse donnée à un seul crée une rupture d’égalité de traitement, et une procédure inégalitaire s’annule.",
+      "<strong>Ne placez pas la date limite de remise à côté d’une période de congés.</strong> Vous récolterez des offres minces de la part exactement des prestataires que vous vouliez entendre.",
+      "<strong>Harmonisez les notes et écrivez pourquoi.</strong> Le rapport d’analyse est le document sur lequel vous vous appuierez en réponse aux candidats évincés et devant le juge ; des notes sans motivation sont indéfendables.",
+      "<strong>Prévoyez du vrai temps entre l’attribution et le début d’exécution.</strong> Le démarrage suppose un marché notifié, des accès ouverts et des personnes recrutées : une date d’attribution n’est pas une date de démarrage."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une procédure de consultation ?",
+        "Couramment six à douze mois entre l’expression du besoin et le début d’exécution pour un marché significatif. Le modèle retient environ douze mois. La période de remise des offres et la phase d’analyse sont les deux blocs que l’on sous-estime, parce que les deux dépendent de personnes extérieures à l’équipe projet."
+      ],
+      [
+        "Combien de temps laisser aux candidats pour répondre ?",
+        "Assez pour rédiger une offre sérieuse après la publication des réponses aux questions — couramment quatre à six semaines pour une consultation substantielle, davantage si le besoin est complexe ou si le candidat doit chiffrer une reprise. Les procédures formalisées imposent en outre un délai minimal réglementaire : vérifiez celui qui s’applique avant de raccourcir."
+      ],
+      [
+        "À quoi sert le délai de suspension ?",
+        "C’est l’intervalle entre la notification du rejet aux candidats non retenus et la signature du marché, pendant lequel un candidat évincé peut demander des précisions ou saisir le juge du référé précontractuel. Dans la commande publique, c’est un délai calendaire fixe, qui ne se comprime pas pour tenir une date de démarrage."
+      ],
+      [
+        "Pourquoi faire figurer la date limite des questions ?",
+        "Parce qu’elle commande deux choses : la date à laquelle votre équipe doit avoir rédigé et publié toutes les réponses, et le moment à partir duquel les candidats rédigent au lieu de demander. La reculer, c’est raccourcir silencieusement le temps de rédaction des offres."
+      ],
+      [
+        "Peut-on l’utiliser pour une consultation privée ?",
+        "Oui. Supprimez les lignes de publicité réglementaire et de délai de suspension et conservez la séquence : fenêtre de questions, date de remise ferme, analyse harmonisée, mise au point et démarrage se comportent de la même façon. La discipline consistant à publier les réponses à tous les candidats mérite d’être gardée dans tous les cas."
+      ],
+      [
+        "Le modèle de planning de consultation est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription ni filigrane."
+      ]
+    ]
+  },
+
+  'change-management-plan': {
+    card: "Analyse d’impact, consultation du CSE, sponsors, communication, formation calée sur la bascule et ancrage.",
+    h1: "Plan de conduite du changement",
+    metaTitle: "Plan de conduite du changement",
+    metaDesc: "Plan gratuit de conduite du changement : analyse d’impact, consultation du CSE, sponsors, communication, formation, accompagnement et ancrage.",
+    lead: "Un <strong>plan de conduite du changement</strong> gratuit pour le volet humain qui court à côté d’un projet technique — cartographie des parties prenantes et analyse d’impact, information-consultation des représentants du personnel, coalition de sponsors et réseau de référents, communication par public, cohortes de formation calées sur la mise en service et non sur les disponibilités du formateur, évaluation de la préparation et accompagnement de proximité, puis l’ancrage après le lancement qui décide si tout cela tient. À associer au plan système, qu’il s’agisse d’un <a href=\"/templates/erp-implementation-schedule.html\">déploiement d’ERP</a> ou d’un <a href=\"/templates/crm-implementation-plan.html\">déploiement de CRM</a>.",
+    intro: "La conduite du changement se dessine d’ordinaire comme une case « formation » posée à côté de la mise en service. Ce n’est pas une case. C’est un chantier avec ses propres dépendances — dont une qui n’est pas négociable en France, l’information-consultation du CSE — et la moitié qui compte le plus commence la semaine suivant le lancement :",
+    phases: [
+      [
+        "Stratégie de changement et analyse d’impact",
+        "Cartographie des parties prenantes, analyse d’impact par population concernée, mesure initiale du niveau de préparation, et la stratégie qui fixe le niveau d’accompagnement nécessaire à chaque groupe. <em>Jalon : stratégie de changement validée.</em>"
+      ],
+      [
+        "Dialogue social et gouvernance",
+        "Information-consultation du comité social et économique lorsque le projet modifie l’organisation du travail, avis rendu, coalition de sponsors, séances d’engagement, recrutement et intégration des référents, première tournée du sponsor, et un registre des résistances réellement traité plutôt que classé. <em>Jalon : avis du CSE rendu et réseau de changement actif.</em>"
+      ],
+      [
+        "Communication",
+        "Plan de communication par public, argumentaire du changement et foire aux questions, campagne de sensibilisation, kits de briefing pour les managers, fiches « ce qui change pour moi » par métier, et la séquence de communication de mise en service."
+      ],
+      [
+        "Formation",
+        "Analyse des besoins par rôle, construction des parcours et inscription au plan de développement des compétences, formation de formateurs, puis des cohortes menées par vagues, la dernière atterrissant au plus près de la mise en service pour que les gens se servent de ce qu’on leur a appris. <em>Jalon : formation terminée.</em>"
+      ],
+      [
+        "Préparation à la mise en service et accompagnement",
+        "Évaluation de la préparation par direction ou site, deuxième tournée du sponsor, planning des accompagnateurs de proximité et des utilisateurs référents, validation de la préparation et vigilance renforcée. <em>Jalon : mise en service.</em>"
+      ],
+      [
+        "Ancrage et pérennisation",
+        "Indicateurs d’appropriation, enquêtes flash à deux semaines et à trois mois, sessions de rappel ciblées, accompagnement des managers, reconnaissance des équipes, et revue des bénéfices attendus. <em>Jalon : passage en régime courant.</em>"
+      ]
+    ],
+    callout: "Calez la formation sur la mise en service, pas sur l’agenda du formateur. Les acquis se dégradent vite : une cohorte formée six semaines à l’avance en aura oublié l’essentiel et ira discrètement demander à un collègue. Menez les cohortes par vagues pour que la dernière s’achève quelques jours avant le lancement, et laissez au groupe pilote assez d’avance pour que ses retours améliorent encore les supports. Protégez ensuite la phase d’ancrage : c’est toujours la première coupée, et c’est la seule qui change durablement les comportements — une session de rappel après la première enquête flash vaut mieux qu’un courriel de plus avant le lancement. Attention enfin au séquencement du dialogue social : engager la formation avant que le CSE ait rendu son avis fait courir un risque juridique au projet entier, et cette dépendance doit être visible sur le planning.",
+    customize: [
+      "Poser d’abord la mise en service, placer la dernière cohorte de formation quelques jours avant, puis remonter toutes les autres à partir de là.",
+      "Ajouter une ligne d’analyse d’impact par population concernée : une équipe de services partagés et un technicien itinérant ne vivent pas le même changement.",
+      "Placer l’information-consultation du CSE tôt et comme une dépendance dure, avec le délai de consultation applicable : c’est un préalable, pas une formalité de fin de projet.",
+      "Dimensionner le réseau de référents à environ un référent par équipe, et faire de leur temps une allocation validée plutôt qu’un service rendu.",
+      "Ajouter des lignes de tournée du sponsor par région ou par direction si le sponsor ne peut couvrir tout le monde en une seule fois.",
+      "Allonger la vigilance renforcée pour les activités postées ou saisonnières, afin que chaque régime horaire bénéficie d’un accompagnement pendant sa première semaine en réel.",
+      "Conserver les enquêtes flash et les sessions de rappel comme lignes datées après la mise en service : ce sont les lignes que l’on supprime le plus souvent et celles qui déterminent l’appropriation."
+    ],
+    tips: [
+      "<strong>L’analyse d’impact avant la communication.</strong> On ne peut pas dire à quelqu’un ce qui change pour lui avant d’avoir établi ce qui change pour lui, et c’est le message générique qui fait conclure aux gens que le changement ne les concerne pas.",
+      "<strong>Les sponsors doivent être visibles, et à plusieurs reprises.</strong> Un courriel de lancement est une note de service. Une tournée avant et après la mise en service est un signal que le changement n’est pas facultatif.",
+      "<strong>Briefez les managers séparément et plus tôt.</strong> Leur équipe se tournera d’abord vers eux, et un manager qui n’a pas la réponse devient une source de résistance involontaire.",
+      "<strong>Faites vivre le registre des résistances.</strong> Une résistance est bien plus souvent l’information d’un vrai problème qu’une obstruction, et le registre est l’endroit où l’on remarque la même objection dans cinq équipes.",
+      "<strong>Traitez le dialogue social comme une contribution, pas comme une case à cocher.</strong> Les questions posées en séance de consultation révèlent souvent des impacts opérationnels que l’analyse d’impact avait manqués, et il est bien moins coûteux de les corriger avant la formation.",
+      "<strong>Mesurez l’appropriation, pas la présence.</strong> Un taux d’achèvement de formation ne dit rien. Les enquêtes flash et les usages observés vous disent où envoyer les sessions de rappel."
+    ],
+    faq: [
+      [
+        "Quand faut-il démarrer la conduite du changement ?",
+        "En même temps que le projet technique, et non à l’approche de la mise en service. L’analyse d’impact suppose que la conception soit comprise, mais doit s’achever assez tôt pour nourrir la communication et la formation. Le modèle démarre au premier jour et court environ cinq mois après le lancement."
+      ],
+      [
+        "En quoi est-ce différent d’un plan projet ?",
+        "Un plan projet livre le système. Celui-ci livre la capacité et la volonté des personnes à s’en servir. Les deux partagent une date de mise en service et à peu près rien d’autre, ce qui explique que la conduite du changement fonctionne mieux comme planning distinct, avec son propre responsable, posé à côté du planning de réalisation."
+      ],
+      [
+        "Faut-il consulter le CSE ?",
+        "Dès lors que le projet modifie l’organisation du travail, les conditions d’emploi ou introduit une technologie nouvelle susceptible d’affecter les postes, oui : l’information-consultation est une obligation, avec un délai pour rendre l’avis. Placez-la tôt sur le planning et faites-en une dépendance des phases de formation et de déploiement, plutôt que de la découvrir à six semaines de la bascule."
+      ],
+      [
+        "Quand faut-il former ?",
+        "Aussi tard que possible sans percuter la bascule. Les acquis se dégradent : une cohorte formée six semaines à l’avance est reformée informellement le jour de la mise en service. Menez des vagues, placez une cohorte pilote assez tôt pour que ses retours améliorent les supports, et faites atterrir la dernière quelques jours avant le lancement."
+      ],
+      [
+        "Que se passe-t-il après la mise en service ?",
+        "La partie que la plupart des plans coupent : vigilance renforcée, enquête flash vers la deuxième semaine, sessions de rappel ciblées sur ce que l’enquête a révélé, accompagnement des managers et revue des bénéfices. Le changement de comportement se joue dans les semaines qui suivent le lancement, pas avant."
+      ],
+      [
+        "Faut-il un plan de changement distinct pour un petit projet ?",
+        "Pas toujours, mais la séquence reste nécessaire. Pour un changement plus modeste, conservez l’analyse d’impact, l’information des instances lorsqu’elle est due, les briefings managers, une vague de formation et une enquête flash après lancement, et supprimez les lignes de réseau de référents et de tournée du sponsor."
+      ],
+      [
+        "Le modèle de conduite du changement est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
 };
 
 const UI = {

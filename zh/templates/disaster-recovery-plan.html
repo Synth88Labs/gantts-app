@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>灾备建设与演练计划模板 | gantts.app</title>
+  <meta name="description" content="免费的灾难恢复（灾备）计划模板：业务影响分析、RTO/RPO 指标、复制链路建设、切换手册、桌面推演，以及部分切换与全量切换演练。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/disaster-recovery-plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/disaster-recovery-plan.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="灾备建设与演练计划模板 | gantts.app" />
+  <meta property="og:description" content="免费的灾难恢复（灾备）计划模板：业务影响分析、RTO/RPO 指标、复制链路建设、切换手册、桌面推演，以及部分切换与全量切换演练。" />
+  <meta property="og:url" content="https://gantts.app/zh/templates/disaster-recovery-plan.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="灾备建设与演练计划模板" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="灾备建设与演练计划模板 | gantts.app" />
+  <meta name="twitter:description" content="免费的灾难恢复（灾备）计划模板：业务影响分析、RTO/RPO 指标、复制链路建设、切换手册、桌面推演，以及部分切换与全量切换演练。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/zh/templates/disaster-recovery-plan.html#webpage","name":"灾备建设与演练计划模板","url":"https://gantts.app/zh/templates/disaster-recovery-plan.html","description":"免费的灾难恢复（灾备）计划模板：业务影响分析、RTO/RPO 指标、复制链路建设、切换手册、桌面推演，以及部分切换与全量切换演练。","inLanguage":"zh-Hans","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"模板","item":"https://gantts.app/zh/templates.html"},{"@type":"ListItem","position":3,"name":"灾备建设与演练计划模板","item":"https://gantts.app/zh/templates/disaster-recovery-plan.html"}]}},{"@type":"HowTo","name":"如何使用模板：灾备建设与演练计划模板","description":"免费的灾难恢复（灾备）计划模板：业务影响分析、RTO/RPO 指标、复制链路建设、切换手册、桌面推演，以及部分切换与全量切换演练。","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"RTO 和 RPO 按服务定，不要按公司定——支付服务和内部知识库不该在同一个等级里。","text":"RTO 和 RPO 按服务定，不要按公司定——支付服务和内部知识库不该在同一个等级里。"},{"@type":"HowToStep","position":2,"name":"两个变更窗口都要早早预定；全量切换的窗口通常需要管理层批准和一段业务低谷期，这是日历约束，不是技术约束。","text":"两个变更窗口都要早早预定；全量切换的窗口通常需要管理层批准和一段业务低谷期，这是日历约束，不是技术约束。"},{"@type":"HowToStep","position":3,"name":"每一次演练旁边都留着回退那一行——没有演练过退路的切换，就是一次等着挑个坏日子发作的故障。","text":"每一次演练旁边都留着回退那一行——没有演练过退路的切换，就是一次等着挑个坏日子发作的故障。"},{"@type":"HowToStep","position":4,"name":"如果是分组切换而不是一次全切，按应用等级分别加行。","text":"如果是分组切换而不是一次全切，按应用等级分别加行。"},{"@type":"HowToStep","position":5,"name":"把部分切换之后的整改窗口拉长；真正有价值的发现大多出在那里。","text":"把部分切换之后的整改窗口拉长；真正有价值的发现大多出在那里。"}]},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"建成并演练一套灾备方案要多久？","acceptedAnswer":{"@type":"Answer","text":"从业务影响分析到一份经过演练并获批的方案，通常九到十五个月，模板用的大约是十五个月。建设是可预测的；被拉长的是末端的演练序列，因为每次演练都要一个变更窗口，之后还要一轮整改。"}},{"@type":"Question","name":"RTO 和 RPO 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"RTO 是你能停多久——恢复服务所需的时间。RPO 是你能丢多少数据——最后一份可用副本的新旧程度。RTO 决定备用基础设施，RPO 决定复制频率，两者合起来决定了这套方案的大部分成本。"}},{"@type":"Question","name":"为什么要演练三次而不是一次？","acceptedAnswer":{"@type":"Answer","text":"因为它们查出的东西不一样。桌面推演用一间会议室的成本，就能找出手册和决策链上的缺口。部分切换在有限影响范围内找出技术故障。而只有带业务验证的全量切换，才能证明 RTO 成立。每一次都要以上一次的问题已经修好为前提。"}},{"@type":"Question","name":"演练需要变更窗口吗？","acceptedAnswer":{"@type":"Answer","text":"部分切换和全量切换需要——它们会挪动生产流量，带着真实风险。预定窗口时要配上演练过的回退方案和明确的中止判据。桌面推演不需要窗口，这正是应当先把它榨干的原因。"}},{"@type":"Question","name":"它和业务连续性是什么关系？","acceptedAnswer":{"@type":"Answer","text":"灾难恢复是其中的技术子集：把系统和数据恢复起来。业务连续性更宽，覆盖人员、场所和流程。这份模板管灾备这一侧，不过危机沟通和灾难宣布那几行，和任何一份业务连续性计划是共用的。"}},{"@type":"Question","name":"这份灾备模板免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费。可免费下载 Excel、PowerPoint 和 CSV，也可免费在线编辑，无需注册。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/templates/disaster-recovery-plan.html">English</option><option value="/es/templates/disaster-recovery-plan.html">Español</option><option value="/fr/templates/disaster-recovery-plan.html">Français</option><option value="/de/templates/disaster-recovery-plan.html">Deutsch</option><option value="/pt/templates/disaster-recovery-plan.html">Português</option><option value="/zh/templates/disaster-recovery-plan.html" selected>简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/templates.html">模板</a> › 灾备建设与演练计划模板</div>
+        <h1>灾备建设与演练计划模板</h1>
+        <p class="lead">一份免费的<strong>灾难恢复计划模板</strong>，把交付物当成一份<em>演练过的</em>方案，而不是一份文档。业务影响分析和 RTO/RPO 指标决定架构，架构决定建设，而计划的后半段全是演练序列——先桌面推演，再部分切换，最后是带业务验证的全量切换，每一次都要自己的变更窗口和自己的回退路径。</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/disaster-recovery-plan.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/disaster-recovery-plan.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/disaster-recovery-plan.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/zh/app.html?csv=disaster-recovery-plan">✎ 免费在线编辑</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/disaster-recovery-plan.svg" alt="模板预览：时间轴上的各个阶段" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">模板包含什么</h2>
+      <p>没演练过的灾备方案只是一个假设。下面这条时间线的形状，是被逐级升级的演练序列决定的，因为每一次演练都要花掉一个变更窗口，而每一次都会查出上一次查不出来的东西：</p>
+      <ul>
+        <li><strong>业务影响分析</strong> — 应用与服务清单、依赖关系梳理、业务影响访谈，以及每个服务要承诺的 RTO 与 RPO 指标；同时对照《信息系统灾难恢复规范》确定目标灾难恢复能力等级。后面所有东西的价钱都是按这组数字算出来的。<em>里程碑：RTO/RPO 基线获批。</em></li>
+        <li><strong>灾备策略与架构</strong> — 恢复等级划分、灾备中心或异地可用区选址（同城双活还是两地三中心）、复制与备份架构、网络与域名切换设计，以及对照指标做的成本评审。<em>里程碑：架构方案获批。</em></li>
+        <li><strong>建设与数据复制</strong> — 灾备侧基础设施、存储与数据库复制、备份策略调整、灾备中心的身份与安全控制（并满足等级保护对备份与恢复的要求），以及复制时延监控。<em>里程碑：复制进入稳态并验证。</em></li>
+        <li><strong>切换手册与文档</strong> — 按恢复等级各写一份切换手册、回退与回切流程、危机沟通通讯录，以及"谁有权宣布灾难"的启动判据。<em>里程碑：切换手册发布。</em></li>
+        <li><strong>演练序列</strong> — 先桌面推演，再对一级应用做一次带回退的部分切换，最后是带业务验证和回切的全量切换——每一次之后都要留出整改时间。<em>里程碑：全量切换演练通过。</em></li>
+        <li><strong>评审与常态维护</strong> — 演练报告与残余风险、管理层批准、应急人员培训、年度演练计划表，以及挂进变更管理的钩子，防止新上线的系统悄悄落在方案之外。<em>里程碑：方案获批。</em></li>
+      </ul>
+
+      <div class="callout">RTO 和 RPO 不是愿望，是一张账单。RPO 十五分钟意味着同步或准同步复制，以及随之而来的存储成本；RTO 四小时意味着有一套温备的基础设施在那儿闲着。先和业务把这两个数谈定，再把每个等级的成本摆给他们看，让他们自己修正。先做架构、后定指标的团队，最后拿到的是一套恢复速度不及业务被承诺过的方案，而这件事直到切换演练那天才会有人发现。</div>
+
+      <h2 id="customize">如何调整</h2>
+      <ol>
+        <li>RTO 和 RPO 按服务定，不要按公司定——支付服务和内部知识库不该在同一个等级里。</li>
+        <li>两个变更窗口都要早早预定；全量切换的窗口通常需要管理层批准和一段业务低谷期，这是日历约束，不是技术约束。</li>
+        <li>每一次演练旁边都留着回退那一行——没有演练过退路的切换，就是一次等着挑个坏日子发作的故障。</li>
+        <li>如果是分组切换而不是一次全切，按应用等级分别加行。</li>
+        <li>把部分切换之后的整改窗口拉长；真正有价值的发现大多出在那里。</li>
+        <li>把年度复演也作为带日期的行加进去，别让方案在批准十二个月之后悄悄过期。</li>
+      </ol>
+
+      <h2 id="tips">排期建议</h2>
+      <ul>
+        <li><strong>要演练回切，不只是切过去。</strong>在灾备端跑起来只是一半，多数机构昂贵的问题都是在回家的路上发现的。</li>
+        <li><strong>桌面推演要放在一切技术动作之前。</strong>它便宜、不占变更窗口，而且非常可靠地能查出联系方式失效、启动权限不清，以及手册里那些默认"你应该知道"却从没写下来的步骤。</li>
+        <li><strong>验证要靠业务，不是靠 ping 通。</strong>能响应的服务不等于能用的服务；全量切换期间要让真实用户完成真实业务。</li>
+        <li><strong>把复制时延当成实时指标盯着。</strong>一个你没有持续测量的 RPO，只会在真出事的时候才被验证。</li>
+        <li><strong>把灾备挂进变更管理。</strong>每上线一个没有定恢复等级的新应用，方案与现实之间的口子就大一分，而这个口子只有在演练那天才看得见。</li>
+        <li><strong>受监管行业要按监管的演练频次排。</strong>金融等行业对切换演练的周期和报告有明确要求，那是外部时钟，不是内部计划。</li>
+      </ul>
+
+      <h2 id="related">相关模板</h2>
+      <ul>
+        <li><a href="/zh/templates/data-center-build-schedule.html">数据中心建设进度计划</a></li>
+        <li><a href="/zh/templates/cloud-migration-project-plan.html">上云迁移项目计划模板</a></li>
+        <li><a href="/zh/templates/internal-audit-plan.html">内部审计计划模板</a></li>
+        <li><a href="/zh/templates.html">查看全部甘特图模板</a></li>
+      </ul>
+      <p class="crumbs"><small>本模板为中文。尚未翻译的相关页面会以英文打开。</small></p>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>建成并演练一套灾备方案要多久？</summary><p>从业务影响分析到一份经过演练并获批的方案，通常九到十五个月，模板用的大约是十五个月。建设是可预测的；被拉长的是末端的演练序列，因为每次演练都要一个变更窗口，之后还要一轮整改。</p></details>
+        <details><summary>RTO 和 RPO 有什么区别？</summary><p>RTO 是你能停多久——恢复服务所需的时间。RPO 是你能丢多少数据——最后一份可用副本的新旧程度。RTO 决定备用基础设施，RPO 决定复制频率，两者合起来决定了这套方案的大部分成本。</p></details>
+        <details><summary>为什么要演练三次而不是一次？</summary><p>因为它们查出的东西不一样。桌面推演用一间会议室的成本，就能找出手册和决策链上的缺口。部分切换在有限影响范围内找出技术故障。而只有带业务验证的全量切换，才能证明 RTO 成立。每一次都要以上一次的问题已经修好为前提。</p></details>
+        <details><summary>演练需要变更窗口吗？</summary><p>部分切换和全量切换需要——它们会挪动生产流量，带着真实风险。预定窗口时要配上演练过的回退方案和明确的中止判据。桌面推演不需要窗口，这正是应当先把它榨干的原因。</p></details>
+        <details><summary>它和业务连续性是什么关系？</summary><p>灾难恢复是其中的技术子集：把系统和数据恢复起来。业务连续性更宽，覆盖人员、场所和流程。这份模板管灾备这一侧，不过危机沟通和灾难宣布那几行，和任何一份业务连续性计划是共用的。</p></details>
+        <details><summary>这份灾备模板免费吗？</summary><p>免费。可免费下载 Excel、PowerPoint 和 CSV，也可免费在线编辑，无需注册。</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费在线排期</h2>
+      <p>在编辑器中打开模板，把横条拖到你的日期上，然后导出为 PDF、Excel 或 PowerPoint。无需注册，没有水印。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html?csv=disaster-recovery-plan">打开免费编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a href="/zh/accessibility.html">无障碍</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=25"></script>
+</body>
+</html>
