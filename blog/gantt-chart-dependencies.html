@@ -42,8 +42,8 @@
   <meta name="twitter:title" content="Gantt Dependencies: FS, SS, FF, SF" />
   <meta name="twitter:description" content="The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-chart-dependencies.html#post","headline":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","description":"The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag.","url":"https://gantts.app/blog/gantt-chart-dependencies.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-chart-dependencies.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","item":"https://gantts.app/blog/gantt-chart-dependencies.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 4 types of dependencies in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS is the default and covers the large majority of real relationships."}},{"@type":"Question","name":"What is the difference between lead and lag?","acceptedAnswer":{"@type":"Answer","text":"Lag is waiting time added to a dependency — FS+3d means the successor starts three days after the predecessor finishes. Lead is negative lag, letting the successor overlap the predecessor by starting early."}},{"@type":"Question","name":"Which dependency type should I use by default?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start. If another type seems necessary, first check whether the tasks are broken down correctly — an unusual dependency type is often a symptom of a task that should be split."}},{"@type":"Question","name":"How do I add dependencies in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Drag from the dot at the edge of a task bar onto another bar, or type MS Project notation such as 3FS+2d in the Runs after column. Click any link to change its type or lag."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-chart-dependencies.html#post","headline":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","description":"The four Gantt chart dependency types explained with diagrams: finish-to-start, start-to-start, finish-to-finish and start-to-finish, plus lead and lag.","url":"https://gantts.app/blog/gantt-chart-dependencies.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-chart-dependencies.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Gantt Chart Dependencies Explained: FS, SS, FF and SF","item":"https://gantts.app/blog/gantt-chart-dependencies.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 4 types of dependencies in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS covers the large majority of real relationships; SF is rare, and many plans need none."}},{"@type":"Question","name":"What is the difference between lead and lag?","acceptedAnswer":{"@type":"Answer","text":"Lag is waiting time added to a link: FS+3d starts the successor three days after the predecessor finishes. Lead is negative lag, overlapping the two. A lag is committed time, not spare room."}},{"@type":"Question","name":"What is the difference between total float and free float?","acceptedAnswer":{"@type":"Answer","text":"Total float is how far a task can slip before the project finish moves; free float is how far before its own successor moves. Total float is shared along a chain: three tasks each showing eight days do not have twenty-four between them."}},{"@type":"Question","name":"Which dependency type should I use by default?","acceptedAnswer":{"@type":"Answer","text":"Finish-to-Start. If another type seems necessary, check whether the tasks are broken down correctly — an unusual type is often a symptom of a task that should be split."}},{"@type":"Question","name":"What happens to my dates when I add a dependency in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"A dependency can only push a task later, never pull it earlier: a task starts at the later of where you placed it and where its predecessors allow. Press ⚡ Auto-schedule to compact tasks back to their earliest legal dates."}},{"@type":"Question","name":"How do I add dependencies in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Drag from the dot at the edge of a task bar onto another bar, or type notation such as 3FS+2d in the Runs after column. Click a link arrow to change its Type or Lag."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -77,7 +77,7 @@
   <article class="container" style="padding-top:40px">
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › Gantt Chart Dependencies Explained: FS, SS, FF and SF</div>
     <h1>Gantt Chart Dependencies Explained: FS, SS, FF and SF</h1>
-    <p class="lead">Four relationship types cover every dependency you can draw on a Gantt chart. One of them does about ninety per cent of the work, and the other three exist for the cases it handles badly. Here is what each one means, with a diagram for each.</p>
+    <p class="lead">Four relationship types cover every dependency you can draw on a Gantt chart. One does about ninety per cent of the work; the other three exist for the cases it handles badly. Here is what each means, worked through one real project, plus the two things most explanations skip: lag versus lead, and total versus free float.</p>
     <p class="post-meta"><time datetime="2026-07-18">18 July 2026</time> · gantts.app</p>
 
     <figure class="fig">
@@ -110,32 +110,92 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">Finish-to-Start (FS) — the one you will use</h2>
-      <p>Task B cannot start until task A finishes. Pour the foundation, then frame the walls. Write the code, then test it.</p>
-      <p>FS is the default in every scheduling tool, and it covers the large majority of real relationships. If you are unsure which type to use, it is almost certainly this one — reaching for an exotic type is more often a sign the tasks are wrongly broken down than a sign you need SS or FF.</p>
+      <h2 id="s1">The project we will use throughout</h2>
+      <p>Dependency diagrams are easy to nod along to and hard to apply. So: one real project — a billing system cutover — that every type below is applied to.</p>
+      <div class="worked">
+      <p><strong>Replace the billing system. Six tasks, working days, March–April 2026.</strong></p>
+      <table>
+      <thead><tr><th>#</th><th>Task</th><th>Start</th><th>End</th><th>Days</th></tr></thead>
+      <tbody>
+      <tr><td>1</td><td>Build the migration scripts</td><td>Mon 2 Mar</td><td>Fri 13 Mar</td><td>10 days</td></tr>
+      <tr><td>2</td><td>Dry-run the migration</td><td>Mon 16 Mar</td><td>Fri 20 Mar</td><td>5 days</td></tr>
+      <tr><td>3</td><td>Fix the defects the dry run finds</td><td>Mon 23 Mar</td><td>Fri 3 Apr</td><td>10 days</td></tr>
+      <tr><td>4</td><td>Write the cutover runbook</td><td>Mon 16 Mar</td><td>Fri 3 Apr</td><td>15 days</td></tr>
+      <tr><td>5</td><td>Train the billing team</td><td>Mon 23 Mar</td><td>Fri 27 Mar</td><td>5 days</td></tr>
+      <tr><td>6</td><td>Keep the legacy system running</td><td>Mon 2 Mar</td><td>Mon 6 Apr</td><td>26 days</td></tr>
+      </tbody>
+      </table>
+      <p>Six bars, no links yet — nothing here says what depends on what.</p>
+      </div>
 
-      <h2 id="s2">Start-to-Start (SS) — work that runs together</h2>
-      <p>Task B cannot start until task A starts. The two then run in parallel.</p>
-      <p>This is for genuinely concurrent work with a shared trigger: once excavation begins, the site supervision begins; once data collection starts, the data cleaning can start on what has arrived. Use it when B has no reason to wait for A to finish, only for it to begin.</p>
+      <h2 id="s2">Finish-to-Start (FS) — the one you will use</h2>
+      <p>Task B cannot start until task A finishes: pour the foundation, then frame the walls.</p>
+      <p>Task 2 is FS after task 1: you cannot dry-run a script nobody has written. Task 3 is FS after task 2, because the defect list does not exist until the dry run produces it. That chain — 1 → 2 → 3 — is the spine of the project and sets the 3 April finish.</p>
+      <p>FS is the default in every scheduling tool, and if you are unsure it is almost certainly right. Reaching for an exotic type usually means the tasks are wrongly broken down.</p>
 
-      <h2 id="s3">Finish-to-Finish (FF) — work that must land together</h2>
-      <p>Task B cannot finish until task A finishes.</p>
-      <p>Typical for support and verification activities: testing cannot be declared complete until development is complete; documentation closes when the feature closes. B may start whenever, but it cannot be signed off ahead of A.</p>
+      <h2 id="s3">Start-to-Start (SS) — work that runs together</h2>
+      <p>Task B cannot start until task A starts, and the two then run in parallel.</p>
+      <p>The runbook (task 4) is SS after the dry run. The writer needs the dry run underway to have anything to document, but waiting for it to <em>finish</em> would waste a week — so both begin Monday 16 March. The tell for SS is a shared trigger, not a shared deadline.</p>
 
-      <h2 id="s4">Start-to-Finish (SF) — the rare one</h2>
-      <p>Task B cannot finish until task A starts. It reads backwards, and most planners go a whole career without needing it.</p>
-      <p>The classic case is a handover: the old system stays running until the new system starts. The legacy shift cannot end until the replacement shift begins. If you find yourself reaching for SF, check first whether reordering the tasks expresses the same thing with FS.</p>
+      <h2 id="s4">Finish-to-Finish (FF) — work that must land together</h2>
+      <p>Task B cannot finish until A finishes.</p>
+      <p>The runbook also has an FF link to task 3: it cannot be signed off while defects are still landing, because each fix rewrites a step in it. So it stays open until Friday 3 April — started by the dry run, closed by the fixes, which is the shape of a support activity. Testing, documentation and QA sign-off are all FF for the same reason: B may start whenever, it just cannot cross the line first.</p>
 
-      <h2 id="s5">Lead and lag — the modifiers</h2>
-      <p>A <strong>lag</strong> adds waiting time to a link. "FS + 3 days" means B starts three days after A finishes — concrete curing, paint drying, a client review window.</p>
-      <p>A <strong>lead</strong> is negative lag: "FS − 2 days" lets B start two days before A finishes, overlapping the tail. Leads are useful, but they hide risk. An overlap you have not thought about is a rework queue waiting to happen.</p>
-      <p>In MS Project notation you will see these written as <code>3FS+2d</code> — task 3, finish-to-start, two days lag. gantts.app accepts that notation directly in the Runs after column.</p>
+      <h2 id="s5">Start-to-Finish (SF) — the rare one</h2>
+      <p>Task B cannot finish until task A starts. It reads backwards, and most planners never need it.</p>
+      <p>Task 6 is the case it was invented for. The legacy system must run until the new one is live: its <em>finish</em> is pinned to go-live's <em>start</em>. Link it SF and the legacy bar stretches to meet whatever date go-live lands on.</p>
+      <p>That is the test: a handover, where the outgoing thing ends because the incoming one begins. Anywhere else, reordering the tasks usually says the same thing with a plain FS.</p>
 
-      <h2 id="s6">Why the type matters when dates move</h2>
-      <p>Dependency types are not decoration. They determine what happens when something slips.</p>
-      <p>If A slips by a week and B is linked FS, B moves a week. If B is linked SS, B does not move at all unless A's <em>start</em> moved. Choosing the wrong type produces a schedule that looks fine and reacts wrongly — the worst combination, because you only discover it when the plan is already under pressure.</p>
+      <h2 id="s6">The four types side by side</h2>
+      <table>
+      <thead><tr><th>Type</th><th>Real-world trigger</th><th>How often it applies</th><th>The mistake it invites</th></tr></thead>
+      <tbody>
+      <tr><td><strong>FS</strong><br>Finish → Start</td><td>A's output is B's input — a defect list, a signed drawing, a poured slab</td><td>~90% of links</td><td>Used for preference, not constraint, until every date is pinned</td></tr>
+      <tr><td><strong>SS</strong><br>Start → Start</td><td>Two activities share a trigger, then run together</td><td>Common; most plans have a few</td><td>Reacts only to the predecessor's <em>start</em>: if A's finish slips, B never moves</td></tr>
+      <tr><td><strong>FF</strong><br>Finish → Finish</td><td>A wrapper that cannot close before the work it wraps — testing, docs, sign-off</td><td>Occasional, mostly support tasks</td><td>B's start left unconstrained, so it looks able to begin absurdly early</td></tr>
+      <tr><td><strong>SF</strong><br>Start → Finish</td><td>A handover — the old shift or system ends because the new one begins</td><td>Rare; many correct plans have none</td><td>A clumsy backwards FS that reviewers misread</td></tr>
+      </tbody>
+      </table>
 
-      <div class="callout">A dependency should describe a real constraint, not a preference. "We would rather do B after A" is a sequencing choice and belongs in the ordering. "B physically cannot start until A is done" is a dependency. Charts full of the former become impossible to re-plan, because every date is pinned by something that was never actually mandatory.</div>
+      <h2 id="s7">When the wrong type makes the schedule lie</h2>
+      <p>Now task 5, training. A planner links it <strong>SS after task 3</strong>: training starts when defect-fixing starts. It looks fine — both bars begin 23 March, everyone trained by 27 March, well before go-live.</p>
+      <div class="worked">
+      <p><strong>Then the dry run finds more than expected.</strong> Task 3 grows from 10 days to 15, pushing its finish from Fri 3 Apr to Fri 10 Apr.</p>
+      <ul>
+      <li><strong>Task 4 (runbook, FF)</strong> — moves. Its finish follows to Fri 10 Apr. Correct.</li>
+      <li><strong>Task 5 (training, SS)</strong> — <em>does not move at all.</em> SS watches the predecessor's start, and the start did not change. The plan still shows the team trained on Fri 27 Mar.</li>
+      </ul>
+      <p>The chart is not broken; it is answering the question it was asked. But the team is now trained on software with a fortnight of defects still to land, and the plan reports that as green. The right link was <strong>FS after task 3</strong>. One wrong letter turned a two-week problem into no problem at all.</p>
+      </div>
+      <p>So test for it: extend the task most likely to overrun by a week, and see what moved. Anything you expected to shift and did not is a wrong type.</p>
+
+      <h2 id="s8">Lag and lead — a lag is a wait, not slack</h2>
+      <p>A <strong>lag</strong> adds waiting time to a link. "FS + 3 days" means B starts three days after A finishes. Here, go-live is FS+1d after the defect fixes: one clear day for a final data sync.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="A lag is committed waiting time inside the link, not spare room around it."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Finish → Start + Lag</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Lag 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A + 3d</text></svg><figcaption>A lag is committed waiting time inside the link, not spare room around it.</figcaption></figure>
+      <p>The thing people get wrong: <strong>a lag is not slack.</strong> Slack is room you can spend when something slips. A lag is time already committed — concrete curing, paint drying, a contractual review window — and nobody gets to "use" it when they run late. Padding links with lag because a task "might" overrun creates contingency nobody can find or cut.</p>
+      <p>A <strong>lead</strong> is negative lag: "FS − 2 days" overlaps the tail of A. Leads compress a schedule — this is what fast-tracking is — but they buy time with risk. An overlap you have not reasoned about is a rework queue.</p>
+      <p>Both are written <code>3FS+2d</code> — row 3, finish-to-start, two days lag — which gantts.app takes in the <strong>Runs after</strong> column.</p>
+
+      <h2 id="s9">Total float and free float are not the same number</h2>
+      <p>Every task now has float: how long it can slip before it hurts something. There are two kinds, and confusing them is expensive.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="Total float belongs to the chain. Free float belongs to the task."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Free float</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Total float</text></svg><figcaption>Total float belongs to the chain. Free float belongs to the task.</figcaption></figure>
+      <p><strong>Total float</strong> is how far a task can slip before the project finish moves. <strong>Free float</strong> is how far before its own successor moves. Free float is never larger.</p>
+      <p>Training has total float — the finish date is set by the defect chain. But total float is <em>shared</em>: if three tasks in a row each show eight days, there are eight days between them, not twenty-four. A lead who reads only that number and delays a week has spent float belonging to the whole chain.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Zero total float means critical: every day of slip moves the finish date."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Critical path: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Slack (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duration: 12</text></svg><figcaption>Zero total float means critical: every day of slip moves the finish date.</figcaption></figure>
+      <p>Total float of zero is the definition of the critical path. Tick <strong>Critical path</strong> in gantts.app and that chain draws striped. That is where the types have to be right.</p>
+
+      <h2 id="s10">Creating and editing a dependency in gantts.app</h2>
+      <ol>
+      <li><strong>Drag from bar to bar.</strong> Grab the small dot at the edge of a task bar, drag onto the bar you want to link and release. The link is created as <strong>FS</strong> with zero lag.</li>
+      <li><strong>Change its type.</strong> Click the arrow between the bars. The link editor opens with a <strong>Type</strong> dropdown: <em>FS · Finish → Start</em>, <em>SS · Start → Start</em>, <em>FF · Finish → Finish</em>, <em>SF · Start → Finish</em>.</li>
+      <li><strong>Add a lag.</strong> Same editor, <strong>Lag (days)</strong> field: <code>1</code> for the FS+1d before go-live, a negative number for a lead. Both undo with Ctrl+Z.</li>
+      <li><strong>Or type it.</strong> The grid's <strong>Runs after</strong> column takes predecessors by row number: <code>3</code>, <code>2SS</code>, <code>3FF</code>, <code>3FS+2d</code>, comma-separated. Fastest way to link a plan you just pasted in.</li>
+      <li><strong>Or use the task card.</strong> Click a task, open <strong>Runs after (predecessors)</strong>, and pick from the <em>+ Start this after…</em> dropdown. Each existing link has its own type selector.</li>
+      <li><strong>Remove one.</strong> <strong>🗑 Remove this link</strong> in the link editor, or the ✕ in the task card.</li>
+      </ol>
+      <p>One behaviour worth knowing: <strong>adding a dependency here can only push a task later, never pull it earlier.</strong> The scheduler is "as-placed" — a task starts at the later of where you dragged it and where its predecessors allow. Link a task whose bar already sits well after its predecessor and nothing moves; the gap stays, because a bar you placed on purpose should not be yanked about by a link added for reporting. To compact everything, press <strong>⚡ Auto-schedule</strong>, which pulls each dependent task back to the earliest date its predecessors allow, leaving unlinked tasks as anchors.</p>
+
+      <div class="callout">A dependency should describe a real constraint, not a preference. "We would rather do B after A" is a sequencing choice and belongs in the ordering; "B cannot start until A is done" is a dependency. Charts full of the former cannot be re-planned: every date is pinned by something that was never mandatory.</div>
 
       <h2 id="templates">Templates that use this</h2>
       <ul>
@@ -162,10 +222,12 @@
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">
-        <details open><summary>What are the 4 types of dependencies in a Gantt chart?</summary><p>Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS is the default and covers the large majority of real relationships.</p></details>
-        <details><summary>What is the difference between lead and lag?</summary><p>Lag is waiting time added to a dependency — FS+3d means the successor starts three days after the predecessor finishes. Lead is negative lag, letting the successor overlap the predecessor by starting early.</p></details>
-        <details><summary>Which dependency type should I use by default?</summary><p>Finish-to-Start. If another type seems necessary, first check whether the tasks are broken down correctly — an unusual dependency type is often a symptom of a task that should be split.</p></details>
-        <details><summary>How do I add dependencies in gantts.app?</summary><p>Drag from the dot at the edge of a task bar onto another bar, or type MS Project notation such as 3FS+2d in the Runs after column. Click any link to change its type or lag.</p></details>
+        <details open><summary>What are the 4 types of dependencies in a Gantt chart?</summary><p>Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF) and Start-to-Finish (SF). FS covers the large majority of real relationships; SF is rare, and many plans need none.</p></details>
+        <details><summary>What is the difference between lead and lag?</summary><p>Lag is waiting time added to a link: FS+3d starts the successor three days after the predecessor finishes. Lead is negative lag, overlapping the two. A lag is committed time, not spare room.</p></details>
+        <details><summary>What is the difference between total float and free float?</summary><p>Total float is how far a task can slip before the project finish moves; free float is how far before its own successor moves. Total float is shared along a chain: three tasks each showing eight days do not have twenty-four between them.</p></details>
+        <details><summary>Which dependency type should I use by default?</summary><p>Finish-to-Start. If another type seems necessary, check whether the tasks are broken down correctly — an unusual type is often a symptom of a task that should be split.</p></details>
+        <details><summary>What happens to my dates when I add a dependency in gantts.app?</summary><p>A dependency can only push a task later, never pull it earlier: a task starts at the later of where you placed it and where its predecessors allow. Press ⚡ Auto-schedule to compact tasks back to their earliest legal dates.</p></details>
+        <details><summary>How do I add dependencies in gantts.app?</summary><p>Drag from the dot at the edge of a task bar onto another bar, or type notation such as 3FS+2d in the Runs after column. Click a link arrow to change its Type or Lag.</p></details>
       </div>
     </div>
   </article>
@@ -222,6 +284,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

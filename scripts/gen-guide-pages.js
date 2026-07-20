@@ -16,12 +16,13 @@ const { FOOTER } = require('./footer.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=24';
+const V = 'v=25';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.
 const { localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
 const { promo } = require('../i18n/promo.js');
+const Figures = require('../i18n/guide-figures.js');
 
 const attr = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+);)/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const strip = (s) => String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -117,8 +118,12 @@ function schema(slug, d) {
 
 function page(slug, d) {
   const url = `${ORIGIN}/blog/${slug}.html`;
+  /* Section bodies may carry <!--FIG:name--> tokens. They expand to a
+     diagram drawn for this locale — 'en' here, the locale code in
+     gen-i18n.js. Keeping the SVG out of the content model is what
+     stops the localized pages from inheriting English diagram labels. */
   const body = d.sections.map(([h, html], i) =>
-    `      <h2 id="s${i + 1}">${h}</h2>\n${html.split('\n').map(l => '      ' + l.trim()).join('\n')}`).join('\n\n');
+    `      <h2 id="s${i + 1}">${h}</h2>\n${Figures.expand(html, 'en').split('\n').map(l => '      ' + l.trim()).join('\n')}`).join('\n\n');
 
   const related = d.related
     .map(([s, fb]) => ({ s, t: postTitle(s, fb) }))

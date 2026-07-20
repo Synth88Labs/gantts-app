@@ -116,23 +116,101 @@ const G = {
 'gantt-chart-dependencies': {
   h1: 'Les liens d’antériorité : les quatre types expliqués',
   metaTitle: 'Liens d’antériorité dans un Gantt',
-  metaDesc: 'Fin-Début, Début-Début, Fin-Fin et Début-Fin expliqués : quand utiliser chaque lien, et comment fonctionnent décalage et avance.',
+  metaDesc: 'Fin-Début, Début-Début, Fin-Fin et Début-Fin expliqués sur un chantier réel : quand utiliser chaque lien, comment fonctionnent décalage et avance, et pourquoi la marge n’est pas un décalage.',
   date: '2026-07-19',
-  lead: 'Un <strong>lien d’antériorité</strong> définit ce qui attend quoi. Il en existe quatre types, mais la plupart des plans n’en utilisent réellement qu’un — et les autres font plus de dégâts qu’ils ne rendent service.',
-  figIntro: 'Les quatre types de liens comparés :',
+  lead: 'Quatre types de liens couvrent tout ce qu’on peut relier dans un diagramme de Gantt. L’un d’eux fait environ quatre-vingt-dix pour cent du travail ; les trois autres existent pour les cas qu’il traite mal. Voici ce que chacun signifie, appliqué de bout en bout à un seul chantier, avec les deux points que la plupart des explications sautent : le décalage face à l’avance, et la marge totale face à la marge libre.',
+  figIntro: 'Les quatre types de liens, tels qu’ils se comportent sur un planning :',
   sections: [
-    ['Fin-Début (FD)', '<p>Le cas standard : B commence quand A est terminée. « Peindre » commence quand « enduire » est fini. Environ 90 % des liens d’un plan réel sont de ce type, et c’est une bonne chose — c’est le seul que tout le monde interprète correctement du premier coup.</p>'],
-    ['Début-Début (DD)', '<p>B commence quand A commence. Utile pour des travaux qui démarrent ensemble : la maîtrise d’œuvre avec le gros œuvre, l’assurance qualité avec le développement. Souvent combiné à un décalage — la QA démarre trois jours après le développement.</p>'],
-    ['Fin-Fin (FF)', '<p>B se termine quand A se termine. Typique des activités d’accompagnement : la documentation est prête quand le développement est prêt. Ce lien ne fixe pas de date de début, seulement une fin commune.</p>'],
-    ['Début-Fin (DF)', '<p>B se termine quand A commence. Le cas le plus rare, surtout pour des relèves : l’ancienne équipe termine quand la nouvelle arrive ; l’ancien système s’éteint quand le nouveau démarre. Si vous l’employez souvent, le plan est généralement pensé à l’envers.</p>'],
-    ['Décalage et avance', '<p>Chaque lien peut porter un décalage. Un retard repousse le successeur — le béton doit sécher sept jours avant la suite. Une avance le fait démarrer plus tôt — la seconde tranche commence quand la première est à 70 %.</p>\n        <p>Une remarque sur l’attente : séchage, prise, délais administratifs gagnent à figurer comme tâches visibles plutôt que cachés dans un décalage. Ce qui est dans une barre se voit ; ce qui est dans une boîte de dialogue ne se retrouve jamais.</p>'],
+
+    ['Le chantier qui servira de fil rouge', `<p>Les schémas de liens sont faciles à approuver et difficiles à appliquer. Nous partirons donc d’un cas unique, auquel chacun des quatre types sera confronté : un <strong>marché de travaux de réhabilitation</strong> passé par les <strong>Ateliers Perrin</strong>, à Roubaix, pour remettre à niveau un plateau de production de 900 m². Maîtrise d’œuvre : le cabinet Lavandier ; conducteur de travaux : Thibaut Marchand. Lot sols et finitions, <strong>128 000 €</strong>, avec des pénalités de retard de <strong>850 € par jour calendaire</strong> au-delà de la réception contractuelle.</p>
+      <div class="worked">
+        <p><strong>Six tâches, durées en jours ouvrés, mars–avril 2026. Aucun lien pour l’instant.</strong></p>
+        <table>
+          <thead><tr><th>#</th><th>Tâche</th><th>Début</th><th>Fin</th><th>Jours</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Démolition et reprise des supports</td><td>lun 2 mars</td><td>ven 13 mars</td><td>10</td></tr>
+            <tr><td>2</td><td>Coulage de la chape fluide</td><td>lun 16 mars</td><td>ven 20 mars</td><td>5</td></tr>
+            <tr><td>3</td><td>Pose du sol souple et finitions</td><td>lun 23 mars</td><td>ven 3 avril</td><td>10</td></tr>
+            <tr><td>4</td><td>Rédaction du DOE et des notices</td><td>lun 16 mars</td><td>ven 3 avril</td><td>15</td></tr>
+            <tr><td>5</td><td>Formation des opérateurs</td><td>lun 23 mars</td><td>ven 27 mars</td><td>5</td></tr>
+            <tr><td>6</td><td>Maintien de la ligne actuelle en production</td><td>lun 2 mars</td><td>ven 3 avril</td><td>25</td></tr>
+          </tbody>
+        </table>
+        <p>Six barres posées les unes sous les autres : à ce stade, le planning ne dit rien de ce qui attend quoi. Il dit seulement où quelqu’un a décidé de placer les barres — et c’est exactement la différence que les liens vont rendre visible.</p>
+      </div>
+      <p>Une convention à poser tout de suite : les <strong>durées de travail</strong> se comptent en <strong>jours ouvrés</strong>, les <strong>délais imposés</strong> — séchage, recours, préavis — en <strong>jours calendaires</strong>. Mélanger les deux est la première cause d’écart entre un planning et un chantier.</p>`],
+
+    ['Fin-Début (FD) — celui que vous utiliserez', `<p>La tâche B ne peut pas commencer avant que la tâche A soit terminée. On démolit, puis on coule. C’est le lien standard, celui que tout le monde interprète correctement du premier coup.</p>
+      <p>La tâche 2 est en FD après la tâche 1 : on ne coule pas une chape sur un support qu’on est encore en train de piquer. La tâche 3 est en FD après la tâche 2, parce qu’on ne colle pas un revêtement sur une chape qui n’existe pas. Cette chaîne — 1 → 2 → 3, dix jours ouvrés puis cinq puis dix — est la colonne vertébrale du chantier et c’est elle qui fixe la date de réception.</p>
+      <p>Le Fin-Début est le type par défaut dans tous les outils, et dans le doute c’est presque toujours le bon. Aller chercher un type exotique signale le plus souvent un mauvais découpage : une tâche qui exige un lien acrobatique est en général une tâche qu’il fallait couper en deux.</p>`],
+
+    ['Début-Début (DD) — les travaux qui avancent de front', `<p>La tâche B ne peut pas commencer avant que la tâche A commence. Les deux tournent ensuite en parallèle.</p>
+      <p>Le DOE (tâche 4) est en DD après le coulage de la chape. Le projeteur a besoin que la chape soit engagée pour disposer des références de produits et des procès-verbaux à verser au dossier ; attendre la <em>fin</em> du coulage lui ferait perdre une semaine pour rien. Les deux démarrent donc le lundi 16 mars.</p>
+      <p>Employez le DD quand B n’attend que le <em>démarrage</em> de A. Le signe distinctif est un déclencheur commun, pas une échéance commune — le CSPS qui prend ses fonctions au démarrage effectif du lot, par exemple.</p>`],
+
+    ['Fin-Fin (FF) — les travaux qui doivent atterrir ensemble', `<p>La tâche B ne peut pas se terminer avant que la tâche A se termine.</p>
+      <p>Le DOE possède aussi un lien FF vers la tâche 3 : il ne peut pas être remis tant que des finitions se posent encore, parce que chaque produit posé change une fiche du dossier. Il reste donc ouvert jusqu’au vendredi 3 avril — ouvert par le coulage, refermé par les finitions, ce qui est exactement la forme d’une activité d’accompagnement.</p>
+      <p>La recette qui ne peut pas s’achever avant les développements, la notice qui se clôt avec l’ouvrage, le contrôle qualité enroulé autour d’une phase : tout cela est du Fin-Fin. B peut démarrer quand il veut ; il ne peut simplement pas franchir la ligne d’arrivée en premier.</p>`],
+
+    ['Début-Fin (DF) — le type rare', `<p>La tâche B ne peut pas se terminer avant que la tâche A commence. Cela se lit à l’envers, et beaucoup de planificateurs font toute leur carrière sans en poser un seul.</p>
+      <p>La tâche 6 est précisément le cas pour lequel il a été inventé. La ligne de production actuelle doit tourner jusqu’à ce que le plateau réhabilité soit mis en service : sa <em>fin</em> est accrochée au <em>début</em> de la remise en exploitation. Reliez-la en DF et la barre de maintien s’étire d’elle-même jusqu’à la date que prendra la mise en service, sans que personne ait à penser à la déplacer.</p>
+      <p>C’est le test : une relève, où la chose sortante s’arrête parce que la chose entrante démarre. Partout ailleurs, réordonner les deux tâches dit la même chose avec un simple Fin-Début, en beaucoup plus lisible.</p>`],
+
+    ['Les quatre types côte à côte', `<table>
+        <thead><tr><th>Type</th><th>Déclencheur réel</th><th>Fréquence</th><th>L’erreur qu’il induit</th></tr></thead>
+        <tbody>
+          <tr><td><strong>FD</strong><br>Fin → Début</td><td>Le produit de A est la matière de B — un support réceptionné, un plan visé, une chape sèche</td><td>Environ 90 % des liens</td><td>Posé par préférence et non par contrainte, jusqu’à ce que toutes les dates soient figées</td></tr>
+          <tr><td><strong>DD</strong><br>Début → Début</td><td>Deux activités partagent un déclencheur, puis avancent ensemble</td><td>Courant ; presque tout plan en contient</td><td>Ne réagit qu’au <em>début</em> du prédécesseur : si la fin de A glisse, B ne bouge pas</td></tr>
+          <tr><td><strong>FF</strong><br>Fin → Fin</td><td>Une activité enveloppante qui ne peut pas se clore avant ce qu’elle enveloppe — recette, DOE, visa</td><td>Occasionnel, surtout pour l’accompagnement</td><td>Le début de B reste libre, la tâche semble donc pouvoir commencer absurdement tôt</td></tr>
+          <tr><td><strong>DF</strong><br>Début → Fin</td><td>Une relève — l’ancien poste ou l’ancien système s’arrête parce que le nouveau démarre</td><td>Rare ; beaucoup de plans corrects n’en ont aucun</td><td>Un Fin-Début écrit à l’envers, que les relecteurs comprennent de travers</td></tr>
+        </tbody>
+      </table>`],
+
+    ['Quand le mauvais type fait mentir le planning', `<p>Reprenons la tâche 5, la formation des opérateurs. Un planificateur la relie en <strong>DD après la tâche 3</strong> : la formation démarre quand les finitions démarrent. À l’écran, tout paraît sain — les deux barres commencent le 23 mars, l’équipe est formée pour le 27 mars, largement avant la mise en service.</p>
+      <div class="worked">
+        <p><strong>Puis le bureau de contrôle relève des défauts de planéité</strong> sur une partie du plateau. La tâche 3 passe de dix à quinze jours ouvrés et sa fin glisse du vendredi 3 avril au vendredi 10 avril.</p>
+        <ul>
+          <li><strong>Tâche 4 (DOE, FF)</strong> — bouge. Sa fin suit jusqu’au vendredi 10 avril. Correct.</li>
+          <li><strong>Tâche 5 (formation, DD)</strong> — <em>ne bouge pas d’un jour.</em> Le DD surveille le début du prédécesseur, et ce début n’a pas changé. Le planning continue d’annoncer une équipe formée le vendredi 27 mars.</li>
+        </ul>
+        <p>Le diagramme n’est pas cassé : il répond exactement à la question qu’on lui a posée. Mais les opérateurs sont désormais formés sur un plateau où l’on posera encore du revêtement pendant quinze jours, et le planning affiche cette situation en vert. Le bon lien était <strong>FD après la tâche 3</strong>. Une lettre de travers a transformé un problème de deux semaines en absence de problème.</p>
+        <p>Détail qui n’en est pas un : le <strong>lundi de Pâques tombe le 6 avril 2026</strong>. Si ce jour férié est coché dans <strong>Calendrier</strong>, les quinze jours ouvrés ne se terminent pas le 10 mais le <strong>lundi 13 avril</strong>, et les pénalités courent à 850 € le jour calendaire. Un jour férié oublié coûte ici 2 550 €.</p>
+      </div>
+      <p>D’où le contrôle à faire avant de diffuser un planning : allongez d’une semaine la tâche la plus susceptible de déraper, et regardez ce qui a bougé. Tout ce que vous attendiez voir glisser et qui n’a pas glissé signale un type de lien erroné — repéré tant qu’il est encore gratuit à corriger.</p>`],
+
+    ['Décalage et avance — un décalage est une attente, pas une réserve', `<p>Un <strong>décalage</strong> ajoute du temps d’attente à l’intérieur du lien. « FD + 7 jours » signifie que B démarre sept jours après la fin de A. Sur notre chantier, la pose du sol souple est en FD + 7 jours <em>calendaires</em> après le coulage : c’est le délai de séchage de la chape avant la pose d’un revêtement collé. Ce n’est ni négociable ni compressible — le liant prend au rythme du liant.</p>
+      <!--FIG:lag|Le décalage est du temps d’attente engagé à l’intérieur du lien, pas de la place disponible autour.-->
+      <p>La distinction jours ouvrés / jours calendaires devient ici décisive, et elle réclame une conversion que beaucoup escamotent. La chape se termine le <strong>vendredi 20 mars</strong>. Sept jours calendaires plus tard, on est le <strong>vendredi 27 mars</strong> ; la pose peut donc démarrer le <strong>lundi 30 mars</strong>. Mais le champ de décalage de gantts.app compte dans l’unité du planning : dès qu’un calendrier de travail est actif, il compte en <strong>jours ouvrés</strong>. Ces sept jours calendaires, qui enjambent un week-end, s’y saisissent donc comme <code>2FS+5d</code> — cinq jours ouvrés — et non <code>+7d</code>. Saisir sept tout court repousserait le démarrage au <strong>mercredi 1er avril</strong> : deux jours de retard fabriqués par une unité mal convertie. Règle de conversion : posez la date à laquelle le délai réel expire, puis comptez les jours ouvrés qui vous en séparent. Sur un lot à 850 € de pénalité quotidienne, l’erreur inverse — trop peu de séchage — coûte bien davantage, puisqu’elle se solde par un revêtement à redéposer.</p>
+      <p>Ce que la plupart des gens confondent : <strong>un décalage n’est pas une marge.</strong> La marge est de la place que vous pouvez dépenser quand quelque chose dérape. Le décalage est du temps déjà engagé : le séchage d’une chape, les deux mois de <strong>délai de recours des tiers</strong> qui courent en jours calendaires à compter de l’affichage du permis de construire sur le terrain, les dix jours ouvrés d’instruction d’un bureau de contrôle. Personne ne « récupère » un décalage parce qu’il est en retard : la chape sèche le même nombre de jours quoi qu’il arrive. Rembourrer les liens avec du décalage parce qu’une tâche « pourrait » déraper fabrique une provision que personne ne sait retrouver ni arbitrer.</p>
+      <p>Une <strong>avance</strong> est un décalage négatif : « FD − 2 jours » fait chevaucher la fin de A et le début de B. Les avances compressent un planning — c’est le principe même de l’accélération par recouvrement des tâches — mais elles achètent du temps avec du risque. Un chevauchement qu’on n’a pas raisonné est une file d’attente de reprises : B se construit sur un A inachevé.</p>
+      <p>Les deux s’écrivent avec la même notation, laissée en anglais parce que c’est du code et non de la prose : <code>3FS+2d</code> — ligne 3, <em>finish to start</em> c’est-à-dire Fin-Début, deux jours de décalage. C’est la forme que la colonne <strong>Après</strong> accepte dans <a href="/fr/app.html">gantts.app</a>.</p>`],
+
+    ['Marge totale et marge libre ne sont pas le même chiffre', `<p>Chaque tâche possède désormais une marge : le temps dont elle peut glisser avant de gêner quelque chose. Il en existe deux sortes, et les confondre coûte cher.</p>
+      <!--FIG:float|La marge totale appartient à la chaîne. La marge libre appartient à la tâche.-->
+      <p>La <strong>marge totale</strong> est le retard qu’une tâche peut prendre avant que la date de fin du projet ne bouge. La <strong>marge libre</strong> est le retard qu’elle peut prendre avant que son propre successeur ne bouge. La marge libre n’est jamais la plus grande des deux, et c’est dans l’écart entre elles que se logent les ennuis.</p>
+      <p>La formation des opérateurs dispose de marge totale : la date de réception est tenue par la chaîne démolition → chape → finitions, pas par elle. Mais la marge totale est <em>partagée</em> : si trois tâches consécutives affichent chacune huit jours, il y a huit jours pour les trois, pas vingt-quatre. Un chef d’équipe qui ne lit que son propre chiffre et décale sa tâche d’une semaine vient de dépenser une réserve qui appartenait à toute la chaîne — et le suivant la découvrira à zéro.</p>
+      <p>Précision sur l’outil : gantts.app calcule et exploite la <strong>marge totale</strong> — c’est elle qui, à zéro, allume le chemin critique. Il n’affiche pas de colonne de marge libre. La distinction reste à faire de tête, et elle vaut la peine : sur une chaîne où plusieurs tâches se suivent, c’est la marge libre qui vous dit laquelle vous pouvez décaler sans prévenir personne, et la marge totale qui vous dit combien il en reste pour tout le monde.</p>
+      <!--FIG:cpm|Une marge totale nulle définit le chemin critique : chaque jour de retard déplace la date de fin.-->
+      <p>Une marge totale nulle est la définition même du chemin critique. Cochez <strong>Chemin critique</strong> dans gantts.app et cette chaîne s’affiche hachurée — la légende rappelle d’ailleurs que « hachuré = chemin critique ». C’est là que les types de liens doivent être justes, puisque c’est cette chaîne qui fixe la date de réception, et donc le déclenchement des pénalités. Pour aller plus loin sur le calcul lui-même, voyez le guide du <a href="/fr/blog/critical-path-method.html">chemin critique</a>.</p>`],
+
+    ['Créer et modifier un lien dans gantts.app', `<ol>
+        <li><strong>Tirez d’une barre à l’autre.</strong> Attrapez le point situé au bord d’une barre, faites-le glisser sur la barre à relier, relâchez. Le lien est créé en <strong>Fin-Début</strong>, sans décalage.</li>
+        <li><strong>Ou saisissez-le au clavier.</strong> Dans la grille, la colonne <strong>Après</strong> accepte les prédécesseurs par numéro de ligne : <code>3</code>, <code>2SS</code>, <code>3FF</code>, <code>3FS+2d</code>, séparés par des virgules. C’est le moyen le plus rapide de relier un planning que vous venez d’importer avec <strong>✨ Coller vers Gantt</strong>.</li>
+        <li><strong>Ou passez par le volet de la tâche.</strong> Cliquez une tâche et ouvrez <strong>Après (prédécesseurs)</strong>. Chaque lien existant s’y modifie, et c’est là que se saisit le décalage de séchage de sept jours.</li>
+        <li><strong>Vérifiez le calendrier.</strong> Ouvrez <strong>Calendrier</strong> et cochez les jours fériés — le lundi de Pâques 6 avril, le vendredi 8 mai et le pont de l’Ascension pèsent lourd sur un planning de printemps. Les durées se recalculent en jours ouvrés ; les délais réglementaires, eux, restent en jours calendaires.</li>
+        <li><strong>Ajustez sans tout casser.</strong> <strong>Décaler</strong> et <strong>Déplacer</strong> proposent <em>Un jour ouvré avant</em> et <em>Un jour ouvré après</em> ; <strong>Longueur</strong> propose <em>Un jour ouvré de moins</em> et <em>Un jour ouvré de plus</em>.</li>
+        <li><strong>Contrôlez le résultat.</strong> Activez <strong>Chemin critique</strong>, puis ouvrez <strong>Tableau</strong> pour relire les colonnes <strong>Après</strong>, <strong>Début</strong>, <strong>Fin</strong> et <strong>Jours</strong> avant diffusion à la maîtrise d’ouvrage.</li>
+      </ol>
+      <p>Un comportement qu’il vaut mieux connaître : <strong>ajouter un lien ne peut que repousser une tâche, jamais la ramener en arrière.</strong> Le calcul est « tel que posé » — une tâche démarre à la plus tardive des deux dates : celle où vous l’avez placée, et celle qu’autorisent ses prédécesseurs. Reliez une tâche dont la barre est déjà bien après son prédécesseur et rien ne bouge ; l’écart reste. C’est volontaire : une barre que vous avez posée pour une raison précise ne doit pas être tirée en arrière par un lien ajouté pour les besoins d’un reporting. Pour compacter l’ensemble, utilisez <strong>Replanifier</strong> : la commande ignore l’endroit où les tâches liées ont été posées et ramène chacune à la première date que ses prédécesseurs autorisent, en laissant les tâches non reliées servir de points d’ancrage.</p>`],
   ],
-  callout: 'Ne reliez que ce qui attend vraiment. Le test : si A se termine plus tôt, B peut-il démarrer plus tôt ? Si la réponse est non, ce n’est pas une antériorité, c’est simplement l’ordre dans lequel vous l’avez écrit.',
+  callout: 'Un lien doit décrire une contrainte réelle, pas une préférence. « Nous préférons faire B après A » est un choix d’ordonnancement et se traduit par l’ordre des lignes. « B ne peut pas démarrer tant que A n’est pas fini » est une antériorité. Un planning saturé de liens du premier type ne se replanifie plus : chaque date est tenue par quelque chose qui n’a jamais été obligatoire, et plus personne ne sait quels liens portent réellement le chantier.',
   faq: [
-    ['Quels sont les types de liens dans un Gantt ?', 'Quatre : Fin-Début, Début-Début, Fin-Fin et Début-Fin. Le Fin-Début couvre la grande majorité des cas.'],
-    ['Quelle différence entre avance et décalage ?', 'Un décalage repousse le successeur (temps de séchage), une avance le fait démarrer avant la fin complète du prédécesseur.'],
-    ['Faut-il relier toutes les tâches ?', 'Non, seulement les antériorités réelles. Un plan où tout s’enchaîne perd tout parallélisme et réagit excessivement au moindre décalage.'],
-    ['Pourquoi ma tâche ne se décale pas ?', 'Le plus souvent le lien manque, ou une contrainte de date fixe prend le pas sur le calcul.'],
+    ['Quels sont les quatre types de liens dans un diagramme de Gantt ?', 'Fin-Début (FD), Début-Début (DD), Fin-Fin (FF) et Début-Fin (DF). Le Fin-Début couvre la grande majorité des antériorités réelles ; le Début-Fin est rare, et beaucoup de plannings parfaitement corrects n’en contiennent aucun.'],
+    ['Quelle différence entre une avance et un décalage ?', 'Un décalage est un temps d’attente ajouté au lien : FD + 7 jours fait démarrer le successeur sept jours après la fin du prédécesseur, par exemple pour un séchage de chape. Une avance est un décalage négatif, qui fait chevaucher les deux tâches. Un décalage est du temps engagé, pas de la place disponible : on ne le récupère pas parce qu’on est en retard.'],
+    ['Un décalage se compte-t-il en jours ouvrés ou en jours calendaires ?', 'Cela dépend de sa nature. Une durée de travail se compte en jours ouvrés ; un délai imposé se compte en jours calendaires — séchage d’une chape, délai de recours des tiers de deux mois après affichage du permis de construire, préavis contractuel. Confondre les deux fabrique deux à trois jours d’écart par lien, et ces écarts s’additionnent.'],
+    ['Quelle différence entre marge totale et marge libre ?', 'La marge totale est le retard qu’une tâche peut prendre avant que la fin du projet ne bouge ; la marge libre, avant que son propre successeur ne bouge. La marge totale est partagée le long d’une chaîne : trois tâches affichant chacune huit jours n’en ont pas vingt-quatre entre elles.'],
+    ['Quel type de lien utiliser par défaut ?', 'Le Fin-Début. Si un autre type semble indispensable, vérifiez d’abord le découpage des tâches : un type inhabituel est souvent le symptôme d’une tâche qu’il fallait couper en deux.'],
+    ['Que deviennent mes dates quand j’ajoute un lien dans gantts.app ?', 'Un lien ne peut que repousser une tâche, jamais la ramener plus tôt : elle démarre à la plus tardive des deux dates, celle où vous l’avez posée et celle qu’autorisent ses prédécesseurs. Utilisez <strong>Replanifier</strong> pour compacter les tâches à la première date légale.'],
   ],
   related: [['critical-path-method', 'Le chemin critique'], ['what-is-a-gantt-chart', 'Qu’est-ce qu’un diagramme de Gantt ?'], ['gantt-chart-mistakes', 'Les erreurs fréquentes']],
 },
@@ -290,54 +368,240 @@ const G = {
 },
 
 'gantt-baseline-variance': {
-  h1: 'Référence et écarts : le plan face au réel',
+  h1: 'Référence et écarts : le plan validé face au réel',
   metaTitle: 'Référence et écarts dans un Gantt',
-  metaDesc: 'Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment.',
+  metaDesc: 'Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment.',
   date: '2026-07-19',
-  lead: 'La <strong>référence</strong> est l’état figé de votre planning au moment de sa validation. Sans elle, impossible de dire plus tard si un projet est en retard — seulement quand il devrait finir.',
-  figIntro: 'Deux barres par tâche : le plan d’alors, l’état d’aujourd’hui.',
+  lead: 'Un diagramme de Gantt montre où en est votre projet. La <strong>référence</strong> montre où il aurait dû en être. Sans elle vous savez annoncer une nouvelle date de fin, jamais un retard — et le retard est précisément ce que veulent connaître ceux qui financent les travaux.',
+  figIntro: 'La référence s’affiche en barre fantôme sous la barre vivante de chaque tâche. Là où la barre vivante dépasse, l’intervalle est votre écart :',
   sections: [
-    ['Ce qu’est une référence', '<p>Une copie des dates au moment de la validation. Le planning courant continue d’évoluer, la référence reste fixe. La différence entre les deux est l’écart.</p>\n        <p>Sans référence, il n’y a pas de retard — il n’y a qu’une nouvelle date de fin à chaque fois, sans que personne ne puisse expliquer comment on y est arrivé.</p>'],
-    ['Quand la figer', '<p>Après la validation et avant le démarrage des travaux. Une référence posée alors que le projet tourne depuis deux semaines ne mesure plus rien.</p>'],
-    ['Lire les écarts', '<p>L’écart de délai vaut fin réelle moins fin planifiée, en jours. Positif signifie plus tard que prévu. L’important n’est pas l’écart d’une tâche isolée, mais s’il se situe sur le chemin critique — là, il se répercute intégralement sur la fin ; ailleurs, parfois pas du tout.</p>'],
-    ['Mesurer l’avancement correctement', '<p>Les pourcentages d’avancement sont notoirement peu fiables ; « 90 % fait » est la réponse la plus fréquente de tous les projets, et elle le reste des semaines. Plus solide : demander la durée restante. Combien de jours vous faut-il encore ? Ce chiffre-là se vérifie.</p>'],
-    ['Quand refaire la référence', '<p>Uniquement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas parce que l’ancien plan est désagréable à regarder. Qui refait la référence à chaque retard obtient un projet sans écarts et sans aucune information.</p>\n        <p>Conservez les références successives. Leur suite montre combien de fois et pour quelles raisons le plan a été refait — souvent l’information la plus instructive du projet.</p>'],
-    ['Ce qu’on en apprend', '<p>Après la clôture, la comparaison entre référence et réel est la meilleure base disponible pour la prochaine estimation. Si vos tâches durent systématiquement 30 % de plus que prévu, ce n’est pas une série de malchances, c’est un biais d’estimation dont vous connaissez désormais le facteur.</p>'],
+    ['Ce qu’est réellement une référence', `<p>Une référence est une copie figée de votre planning, prise à un instant dont vous avez convenu qu’il était juste — le plus souvent au moment de la validation du plan. Elle enregistre pour chaque tâche la date de début prévue, la date de fin prévue et l’avancement, puis elle cesse de bouger.</p>
+      <p>C’est ce dernier point qui fait tout. Modifiez le planning sans référence et le fichier réécrit silencieusement l’histoire : chaque semaine paraît conforme. Les dates dérivent d’un jour à la fois, et un planning qui a absorbé trente retouches d’un jour ressemble trait pour trait à un planning qui n’a jamais bougé. La référence est le seul dispositif qui fait s’additionner ces retouches en un nombre.</p>
+      <p>Dans un marché de travaux, cette copie figée n’est même pas un choix méthodologique : le planning contractuel annexé au marché <em>est</em> la référence, et c’est par rapport à lui que se calculent les pénalités de retard.</p>`],
+
+    ['Quand la poser — et quand s’en abstenir', `<p>Posez la référence <strong>après</strong> la validation du plan et <strong>avant</strong> le démarrage effectif. Sur un chantier, le repère naturel est l’ordre de service (OS) de démarrage : la période de préparation de chantier commence, le planning est purgé de ses points d’interrogation, et la référence se pose ce jour-là.</p>
+      <p>Une référence capturée en cours d’exécution intègre dans le prévu tout le retard déjà accumulé. Elle n’est pas simplement imprécise : elle sous-estime durablement l’écart réel, et dans le sens qui arrange celui qui l’a posée.</p>
+      <p>Ne figez pas non plus un plan dont vous savez qu’il est faux, uniquement pour en avoir une. Un planning fictif produit des écarts précis au jour près et dépourvus de sens. Si des tâches portent encore des dates provisoires ou des lots sans titulaire désigné, corrigez cela d’abord.</p>`],
+
+    ['Exemple : un marché de travaux et trois situations mensuelles', `<p>Réhabilitation de l’ancienne halle des Ateliers Perrin, à Roubaix. Maîtrise d’ouvrage : la communauté d’agglomération. Maîtrise d’œuvre : le cabinet de Claire Vasseur. Entreprise générale : Groupe Lavandier, conducteur de travaux Thibaut Marchand. Le planning contractuel est annexé au marché, les pénalités de retard sont fixées à <strong>850 € par jour calendaire</strong>, et l’OS de démarrage fixe le début au <strong>lundi 5 janvier 2026</strong>. Cinq lignes, liens Fin-Début de bout en bout, toutes sur le chemin critique.</p>
+      <div class="worked">
+        <p><strong>Référence posée le lundi 5 janvier 2026 (planning contractuel)</strong></p>
+        <ul>
+          <li>Période de préparation de chantier — 5 au 16 janvier (10 jours ouvrés)</li>
+          <li>Démolition et curage — 19 janvier au 6 février (15 jours ouvrés)</li>
+          <li>Gros œuvre et charpente — 9 février au 20 mars (30 jours ouvrés)</li>
+          <li>OPR et levée des réserves — 23 mars au 3 avril (10 jours ouvrés)</li>
+          <li>Réception des travaux — mardi 7 avril 2026 (jalon) — le lundi 6 est le lundi de Pâques, le calendrier de travail décale donc le jalon d’office</li>
+        </ul>
+
+        <p><strong>Situation n° 1 — vendredi 23 janvier (S04)</strong></p>
+        <p>Le repérage amiante avant travaux revient positif sur deux cloisons non signalées au DCE. La période de préparation s’achève le 21 janvier au lieu du 16 : <strong>écart de fin +3 jours ouvrés</strong>. La démolition démarre le 22 janvier — <strong>écart de début +3</strong> — et, sa durée restant inchangée, sa fin prévisionnelle passe au 11 février, également +3. Tout l’aval hérite du même +3 : la réception se lit au 10 avril.</p>
+        <p>La lecture correcte est immédiate : c’est un problème de <em>démarrage</em>, pas d’estimation. Personne n’a mal évalué la démolition, elle commence trois jours trop tard.</p>
+
+        <p><strong>Situation n° 2 — vendredi 13 février (S07)</strong></p>
+        <p>La démolition s’achève bien le 11 février : écart de fin +3, <strong>écart de durée 0</strong>. Le gros œuvre démarre le 12 février, écart de début +3. Mais Groupe Lavandier a redéployé une équipe de coffreurs sur un autre chantier et ré-estime le lot de 30 à 36 jours ouvrés : la fin passe du 20 mars au 2 avril, soit un <strong>écart de fin +9 jours</strong> — dont <strong>3 hérités</strong> et <strong>6 d’écart de durée</strong>. Ces six-là sont la seule mauvaise nouvelle véritablement nouvelle du mois.</p>
+        <p>C’est exactement pour cela que le début et la fin se suivent séparément. Dire « le gros œuvre a neuf jours de retard » ouvre la mauvaise réunion. Dire « il en a hérité trois et en a produit six » désigne une décision d’effectifs, qui, elle, peut encore être discutée en réunion de chantier.</p>
+
+        <p><strong>Situation n° 3 — vendredi 13 mars (S11)</strong></p>
+        <p>Le gros œuvre affiche 55 % d’avancement contre 65 % prévu : l’estimation à 36 jours est elle-même optimiste. Plutôt que de laisser la réception dériver une troisième fois, la MOE réorganise les OPR en deux passes menées en parallèle, avec un renfort du bureau de contrôle : 10 jours ouvrés deviennent 6. Ce lot affiche désormais un <strong>écart de durée −4 jours</strong> et un <strong>écart de fin +5 jours</strong>. La réception atterrit au 14 avril.</p>
+        <p>Attention à ce que cet écart négatif ne dit pas. Rien n’est allé plus vite : quatre jours ont été achetés avec du temps d’hommes supplémentaires, et une colonne qui ne compte que des jours est structurellement incapable de le montrer.</p>
+
+        <p><strong>Ce que cela coûte, et ce qui se rebase</strong></p>
+        <p>Réception contractuelle au 7 avril, réception prévisionnelle au 14 avril : 7 jours calendaires, soit <strong>5 950 €</strong> de pénalités. Un avenant n° 2, signé le vendredi 6 mars, prolonge le délai de 5 jours calendaires au titre du désamiantage non prévu au DCE. La date contractuelle devient le 12 avril, les pénalités retombent à 2 jours calendaires, soit <strong>1 700 €</strong>. Les six jours de gros œuvre, eux, ne sont couverts par aucun avenant et restent à la charge de l’entreprise.</p>
+      </div>
+      <p>Le résumé honnête tient en une phrase : sept jours calendaires de retard à la réception, dont trois jours ouvrés d’aléa amiante couverts par avenant, six jours ouvrés perdus sur les effectifs de gros œuvre, et quatre rachetés en renforçant les OPR.</p>`],
+
+    ['Quatre écarts, et ce que chacun dissimule', `<p>« L’écart » n’est pas un nombre unique. Quatre méritent d’être suivis, et chacun est aveugle à ce que les autres captent.</p>
+      <table>
+        <thead>
+          <tr><th>Écart</th><th>Définition</th><th>Ce que lui seul vous dit</th><th>Où il trompe</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Écart de début</strong></td>
+            <td>Début réel moins début de référence.</td>
+            <td>Si le retard a été hérité : un démarrage tardif désigne l’amont, ou une équipe qui n’était pas libre.</td>
+            <td>Ne dit rien de la fin. Une tâche peut démarrer avec 5 jours de retard et tenir sa fin de référence en brûlant des hommes.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de fin</strong></td>
+            <td>Fin réelle ou prévisionnelle moins fin de référence.</td>
+            <td>L’impact sur l’aval. C’est le chiffre qui se propage jusqu’à la réception.</td>
+            <td>Mélange le retard hérité et le retard nouveau. Les +9 jours du gros œuvre valaient 3 hérités et 6 nouveaux : deux problèmes, un seul nombre.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de durée</strong></td>
+            <td>Durée réelle moins durée de référence.</td>
+            <td>Si l’estimation était fausse — l’écart de fin débarrassé de sa part héritée.</td>
+            <td>Devient négatif quand on comprime une tâche, ce qui se lit comme une avance. Les −4 jours des OPR ont coûté un second bureau de contrôle.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de coût ou de charge</strong></td>
+            <td>Dépense ou effort consommé face au budget.</td>
+            <td>Ce que la récupération a coûté. Le seul écart qui détecte la compression.</td>
+            <td>Exige des dépenses réellement saisies. Sans montants renseignés, il n’est pas petit : il n’existe pas.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>L’écart de durée est celui que la plupart des équipes omettent, et le seul dont la lecture change les comportements : c’est la seule mesure de délai qui sépare « nous avons été en retard » de « nous nous étions trompés ».</p>
+      <!--FIG:baseline|Les barres fantômes portent la référence ; l’intervalle jusqu’à la barre vivante est l’écart.-->`],
+
+    ['Seul l’écart situé sur le chemin critique pèse vraiment', `<p>Cinq jours de glissement sur une tâche disposant de quinze jours de marge totale ne coûtent rien. Un jour de glissement sur le <a href="/fr/blog/critical-path-method.html">chemin critique</a> déplace la date de réception, donc déclenche des pénalités.</p>
+      <p>Triez par écart de fin, puis vérifiez lesquelles de ces tâches sont critiques. Cette courte liste <em>est</em> votre compte rendu de situation. Annoncer un nombre de tâches en retard sans jamais le rapporter à la marge est la mécanique exacte qui produit des chantiers « conformes à 80 % » et livrés avec trois semaines de retard.</p>
+      <p>Le piège inverse existe tout autant : une tâche non critique affichant +12 jours d’écart pour 14 jours de marge va bien aujourd’hui et sera critique demain. On relit donc l’écart et la marge côte à côte, jamais l’un sans l’autre.</p>`],
+
+    ['Refaire la référence : avenant signé ou effacement des preuves', `<p>C’est la décision la plus lourde que vous prendrez au sujet d’une référence, et elle n’est presque jamais technique. Refaire la référence remet la comparaison à zéro : tous les écarts s’annulent et la trace de ce qui avait été promis cesse d’être visible. Trois situations le justifient.</p>
+      <ul>
+        <li><strong>Une modification validée du périmètre.</strong> Sur un marché, cela porte un nom et une signature : un <strong>avenant</strong>. Quelqu’un ayant autorité a ajouté ou retiré des prestations, ou accordé une prolongation de délai, par écrit. Mesurer contre un plan qui ne décrit plus l’ouvrage donne des écarts exacts et sans intérêt.</li>
+        <li><strong>Une replanification formelle.</strong> Les chiffres ont cessé de guider les décisions : toutes les tâches affichent +30 jours et plus personne ne distingue celles qui se dégradent de celles qui stagnent.</li>
+        <li><strong>Une reprise après interruption.</strong> Après un arrêt de chantier, un recours contre le permis de construire ou un redémarrage post-congés, les anciennes dates mesurent l’arrêt, pas le travail.</li>
+      </ul>
+      <p>Toutes les autres raisons sont la même raison déguisée : l’écart est devenu inconfortable et le comité de pilotage est jeudi. Une référence refaite la semaine précédant un COPIL est le signe le plus fiable qui soit. Dans notre exemple, remettre la référence au 13 mars aurait fait afficher zéro jour de retard à la réception — tout en la maintenant au 14 avril, et sans effacer un seul euro de pénalités.</p>
+      <p>Le test est simple, et il est le même que celui du maître d’ouvrage : si la reprise de référence est légitime, vous pouvez en nommer la décision, la date et le signataire. Un avenant signé le 6 mars, oui. Un mois difficile, non.</p>
+      <p>Quand vous refaites la référence, conservez l’ancienne : enregistrez d’abord le projet dans un fichier, puisque le fichier emporte la référence avec lui. L’écart entre la référence n° 1 et la référence n° 3 constitue souvent la description la plus honnête d’un projet — et c’est exactement ce qui disparaît lorsqu’une référence est écrasée sur place.</p>`],
+
+    ['Où se place la valeur acquise — et ce que notre courbe en S annonce honnêtement', `<p>L’écart en jours répond à « de combien sommes-nous en retard ». La <strong>valeur acquise</strong> répond à « quelle quantité de travail avons-nous engrangée pour le temps et l’argent dépensés ». Elle dépend entièrement de la référence : sans elle, la valeur planifiée n’a aucune courbe à suivre. Notre <strong>Courbe en S</strong> est délibérément explicite sur ses limites, et il vaut mieux les connaître avant d’en citer les chiffres.</p>
+      <ul>
+        <li><strong>La <em>Valeur planifiée</em> suit la référence si vous en avez posé une.</strong> Sans référence, le <em>Prévu</em> correspond à vos dates actuelles, donc l’<em>Écart de délai</em> affiche zéro quelle que soit la dérive réelle. Le panneau l’écrit noir sur blanc plutôt que d’afficher un zéro flatteur : « Aucune référence n’est enregistrée, le prévu correspond donc à vos dates actuelles — l’écart de délai affichera zéro tant que vous n’en aurez pas posé une. »</li>
+        <li><strong>Le <em>Coût réel</em> n’est jamais déduit de l’avancement.</strong> Il provient uniquement des montants saisis dans le champ <em>Dépensé</em> de chaque tâche. Le raccourci tentant — supposer qu’une tâche avancée à 40 % a consommé 40 % de son budget — rendrait la <em>Performance des coûts</em> (CPI) rigoureusement égale à 1,00 sur tous les projets du monde. Sans dépenses saisies, le CPI, l’<em>Écart de coût</em> et la <em>Prévision à l’achèvement</em> ne sont donc pas affichés.</li>
+        <li><strong>L’absence de coûts est le cas normal.</strong> Les tâches sont alors pondérées par leur durée en jours ouvrés et vous obtenez une courbe d’avancement pure — même forme, lue en pourcentage plutôt qu’en euros. Le panneau le signale également.</li>
+        <li><strong>La courbe <em>Acquis (avancement réel)</em> est reconstruite pour le passé.</strong> Nous stockons l’avancement d’aujourd’hui, pas son historique : la partie ancienne de la courbe suppose un avancement réparti uniformément sur les jours ouvrés écoulés. Exacte à la date de situation, approchée en amont, et signalée comme telle par <em>Comment ce calcul est fait</em>.</li>
+      </ul>
+      <p>Sur la halle de Roubaix, les situations mensuelles fournissent précisément les montants qui manquent : reporter chaque situation validée dans le champ <em>Dépensé</em> transforme la courbe d’avancement en véritable valeur acquise.</p>
+      <!--FIG:evmquad|Écart de délai et écart de coût sont deux axes indépendants : en retard mais sous le budget est une situation réelle.-->`],
+
+    ['Le faire dans gantts.app', `<p>La boucle complète prend une minute. En reprenant la réhabilitation de la halle :</p>
+      <ol>
+        <li>Validez d’abord le plan : dates, liens d’antériorité et durées doivent être ceux que vous voulez voir mesurés. Au besoin, lancez <strong>Replanifier</strong> pour compacter les tâches à leurs dates au plus tôt avant de figer quoi que ce soit.</li>
+        <li>Ouvrez le menu <strong>Référence</strong> dans la barre d’outils. Tant qu’aucune référence n’est enregistrée, il ne propose qu’une action : poser la référence à partir du planning courant. Le message « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération.</li>
+        <li>Des barres fantômes apparaissent sous chaque barre de tâche. Rouvrez le menu pour retrouver la date et l’heure de capture, ainsi que la case permettant de masquer la référence le temps d’une présentation.</li>
+        <li>Conduisez le chantier. À chaque situation mensuelle, faites glisser les barres ou corrigez les champs <strong>Début</strong> et <strong>Fin</strong> dans le volet de tâche — le 21 janvier pour la fin de la préparation, le 11 février pour celle de la démolition. Les boutons <strong>Un jour ouvré après</strong> et <strong>Une semaine après</strong> évitent de recompter les week-ends à la main.</li>
+        <li>Rouvrez <strong>Référence</strong> et affichez les colonnes d’écart : le message « Affichage des colonnes de référence et d’écart » indique qu’elles sont ajoutées au <strong>Tableau</strong>. Le retard s’affiche en rouge, l’avance en vert.</li>
+        <li>Parcourez la colonne d’écart de fin, puis activez <strong>Chemin critique</strong> pour voir lesquels de ces glissements déplacent réellement la réception — la légende rappelle que « hachuré = chemin critique ». L’écart de durée se lit en comparant la colonne <strong>Jours</strong> à la durée de référence.</li>
+        <li>Pour l’avancement, ouvrez <strong>Courbe en S</strong> : la fenêtre « Courbe en S — prévu vs réel » indique elle-même si la <strong>Valeur planifiée</strong> suit votre référence ou seulement vos dates actuelles.</li>
+        <li>Avant toute reprise de référence, enregistrez une copie via <strong>⬇ Exporter</strong> puis <strong>💾 Enregistrer le projet (.gantts)</strong>, nommée d’après l’avenant. Vous pourrez ensuite mettre la référence à jour sur le planning actuel, ou la supprimer : les deux opérations sont annulables.</li>
+      </ol>`],
   ],
-  callout: 'Ne refaites pas la référence parce que le plan a mauvaise mine. Une référence réalignée à chaque retard affiche durablement zéro écart et n’explique plus rien : ce n’est plus un instrument de mesure, c’est un maquillage.',
+  callout: 'L’erreur la plus fréquente au sujet des références n’est pas technique. Une équipe pose sa référence, voit l’écart devenir inconfortable, et cesse discrètement de le regarder. Une référence que personne ne lit est pire que pas de référence du tout : elle donne l’apparence d’un pilotage sans en avoir la substance. Mettez l’écart à l’ordre du jour de la revue hebdomadaire, ou ne prenez pas la peine d’en poser une.',
   faq: [
-    ['Qu’est-ce qu’une référence de planning ?', 'Le planning figé au moment de la validation. Il sert de repère pour tous les écarts constatés ensuite.'],
-    ['Quand poser la référence ?', 'Après validation et avant le début des travaux. Posée plus tard, elle perd sa valeur.'],
-    ['Quand refaire la référence ?', 'Seulement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas à chaque retard.'],
-    ['Qu’est-ce que l’écart de délai ?', 'La différence en jours entre date réelle et date planifiée. Sur le chemin critique, elle se répercute intégralement sur la fin du projet.'],
+    ['Qu’est-ce qu’une référence dans un diagramme de Gantt ?', 'Une copie figée du planning validé — début prévu, fin prévue et avancement de chaque tâche — conservée inchangée afin de mesurer la dérive du planning courant. Sur un marché de travaux, c’est le planning contractuel annexé au marché.'],
+    ['Que signifie l’écart de délai ?', 'La différence en jours entre la date de référence d’une tâche et sa date actuelle : positif plus tard que prévu, négatif plus tôt, zéro conforme. Attention à l’unité — les écarts de planning se comptent en jours ouvrés, les pénalités de retard le plus souvent en jours calendaires.'],
+    ['Quand faut-il poser la référence ?', 'Après validation du plan et avant le démarrage — en pratique à l’ordre de service. Posée en cours d’exécution, elle masque le retard déjà accumulé et sous-estime tous les écarts suivants.'],
+    ['Quelle différence entre écart de début, de fin et de durée ?', 'L’écart de début dit si le retard a été hérité de l’amont. L’écart de fin dit ce qui se répercute sur l’aval. L’écart de durée retire la part héritée et révèle si l’estimation elle-même était fausse.'],
+    ['Faut-il refaire la référence quand le projet dérape ?', 'Uniquement pour une modification validée du périmètre — un avenant signé —, une replanification formelle ou une reprise après interruption. Si vous ne pouvez nommer ni la décision, ni sa date, ni son signataire, vous effacez la trace de ce qui avait été engagé. Enregistrez d’abord une copie du fichier.'],
+    ['Comment poser une référence dans gantts.app ?', 'Ouvrez le menu Référence et posez-la à partir du planning courant : des barres fantômes apparaissent sous chaque tâche et le message « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération. Le même menu affiche ensuite les colonnes de référence et d’écart.'],
   ],
   related: [['critical-path-method', 'Le chemin critique'], ['gantt-chart-mistakes', 'Les erreurs fréquentes'], ['milestones-vs-tasks', 'Jalons et tâches']],
 },
 
 'gantt-chart-mistakes': {
-  h1: 'Neuf erreurs de planification — et comment les corriger',
+  h1: 'Douze erreurs de planification — et comment les corriger',
   metaTitle: 'Les erreurs fréquentes en planification',
-  metaDesc: 'Neuf erreurs classiques dans les diagrammes de Gantt : trop de détail, liens absents, aucune marge, ressources ignorées — avec les corrections.',
+  metaDesc: 'Les douze erreurs classiques des diagrammes de Gantt : trop de détail, liens absents, aucune marge, jours calendaires, avancement faux — avec la correction de chacune.',
   date: '2026-07-19',
-  lead: 'La plupart des diagrammes de Gantt n’échouent pas à cause de l’outil, mais à cause de neuf erreurs toujours identiques. Chacune se corrige en quelques minutes une fois repérée.',
-  figIntro: 'Neuf erreurs, dans l’ordre où elles se remarquent :',
+  lead: 'La plupart des diagrammes de Gantt ratés échouent des mêmes façons, et presque aucune ne tient à l’outil. Un planning peut être propre, coloré, exporté tous les vendredis et mentir quand même sur la date de fin. Voici chaque erreur, pourquoi elle est fausse, ce qu’elle coûte sur un projet réel, et la revue qui les attrape toutes en vingt minutes.',
+  figIntro: 'Le problème le plus fréquent, avant et après. Le même projet, planifié deux fois :',
   sections: [
-    ['1. Trop de détail', '<p>Un plan de 300 lignes n’est pas tenu à jour, et un plan périmé est plus dangereux que pas de plan, parce qu’on y croit encore. <strong>Correction :</strong> aucune tâche sous la journée, aucune au-dessus du mois.</p>'],
-    ['2. Aucune antériorité', '<p>Sans liens, rien ne se recalcule quand une tâche glisse. <strong>Correction :</strong> reliez au minimum les tâches du chemin critique, même si vous ne saisissez pas toutes les autres.</p>'],
-    ['3. Tout relié à tout', '<p>L’excès inverse est aussi nuisible : une chaîne continue supprime tout parallélisme et réagit excessivement au moindre aléa. <strong>Correction :</strong> ne reliez que ce qui attend réellement.</p>'],
-    ['4. Aucune marge', '<p>Un plan sans marge suppose que rien ne dérape. <strong>Correction :</strong> regroupez les marges devant les jalons et en fin de chemin critique, plutôt que de les répartir sur chaque tâche — dispersées, elles se consomment sans que personne ne le voie.</p>'],
-    ['5. Ressources ignorées', '<p>Le plan est juste sur le papier, mais une personne doit traiter trois tâches la même semaine. <strong>Correction :</strong> vérifiez la charge une fois les dates posées.</p>'],
-    ['6. Des jalons qui durent', '<p>Un jalon a une durée nulle. « Phase de tests » n’est pas un jalon, « tests validés » en est un. <strong>Correction :</strong> formulez les jalons comme des résultats, pas comme des activités.</p>'],
-    ['7. Planifier à rebours depuis la date voulue', '<p>Quand la date de fin est posée d’abord et que les durées sont ajustées pour tomber juste, le plan ne convainc personne. <strong>Correction :</strong> calculez vers l’avant, rendez l’écart visible, puis discutez périmètre ou moyens.</p>'],
-    ['8. Jamais mis à jour', '<p>Un plan est un outil, pas un document. <strong>Correction :</strong> actualisez chaque semaine, comparez à la référence, nommez les écarts.</p>'],
-    ['9. Connu d’une seule personne', '<p>Un plan qui n’a pas été discuté est un avis sur l’avenir. <strong>Correction :</strong> passez-le en revue avec les intervenants avant qu’il ne fasse foi — on y trouve généralement deux ou trois tâches oubliées.</p>'],
+
+    ['Un plan qui commet presque toutes ces erreurs à la fois', `<p>Un projet ordinaire — le déménagement du site de Groupe Lavandier, de Villeurbanne vers Vaulx-en-Velin, démarrage lundi 13 avril 2026 — dessiné comme on le dessine d’habitude, puis dessiné honnêtement.</p>
+      <div class="worked">
+        <p><strong>Le plan présenté au COPIL.</strong> Six lignes, toutes enchaînées en Fin-Début, aucun jalon, aucune marge, et des barres tracées du lundi au vendredi sans qu’<em>aucun jour férié</em> ait été exclu :</p>
+        <ul>
+          <li>Étude d’implantation — lun 13/04 au ven 17/04 (5 jours)</li>
+          <li>Recâblage et brassage — lun 20/04 au ven 08/05 (15 jours, Thibaut Marchand)</li>
+          <li>Bascule des postes et du serveur — lun 20/04 au ven 08/05 (15 jours, Thibaut Marchand)</li>
+          <li>Transfert du mobilier et des archives — lun 11/05 au ven 15/05 (5 jours)</li>
+          <li>Reprise d’activité et recette — lun 18/05 au jeu 21/05 (4 jours)</li>
+          <li>Mise en service — ven 22/05</li>
+        </ul>
+        <p><strong>Ce que le plan ne dit pas.</strong> La consultation du CSE doit être close avant tout déplacement de poste de travail : Nadia Bouchard a besoin d’un mois entre la remise du dossier et l’avis, et cette période n’apparaît nulle part. Thibaut Marchand est chargé à 100 % sur le recâblage et à 100 % sur la bascule pendant exactement les mêmes trois semaines : le graphique promet tranquillement 200 % d’une seule personne. Enfin, les barres comptent cinq jours par semaine sans exception, alors que la fenêtre choisie est la pire de l’année : vendredi 1er mai, vendredi 8 mai, l’Ascension le jeudi 14 mai avec le pont du vendredi 15, puis le lundi de Pentecôte 25 mai. Cinq jours de travail qui n’existent pas ont été vendus comme s’ils existaient.</p>
+        <p><strong>Le plan corrigé.</strong> Le calendrier de travail exclut les week-ends et les cinq fériés. La consultation du CSE devient une tâche de 20 jours ouvrés qui se termine par le jalon <em>Avis du CSE rendu</em>, et le recâblage s’y accroche. Thibaut Marchand ne peut plus tenir les deux chantiers en parallèle : le brassage court d’abord, la bascule ensuite. Cinq jours ouvrés de marge sont posés, visibles, devant la mise en service.</p>
+        <p><strong>La conséquence.</strong> Le plan annonçait 30 jours ouvrés et une mise en service le vendredi 22 mai 2026. Le même travail, replacé sur un calendrier qui exclut réellement les cinq fériés et rangé derrière l’avis du CSE, a demandé 54 jours ouvrés et s’est terminé le jeudi 2 juillet 2026 — six semaines plus tard. Rien n’a changé sauf que trois faits déjà vrais ont enfin été écrits. Ces six semaines de double loyer sur l’ancien site, facturé 18 400 € par mois et réglé au prorata, représentaient environ 25 800 € que personne n’avait provisionnés.</p>
+        <p><strong>Et l’avancement.</strong> Le lundi 4 mai, le point hebdomadaire donnait le recâblage à 60 %, parce que 9 des 15 jours affichés s’étaient écoulés. L’équipe avait brassé 4 zones sur 11. Avancement réel : 36 %.</p>
+        <p><strong>La suite.</strong> La levée des réserves, repoussée à fin juillet, est tombée sur la fermeture d’août : personne n’était là pour signer, et le dossier est resté ouvert jusqu’au 2 septembre.</p>
+      </div>`],
+
+    ['1. Trop de détail', `<p>L’erreur la plus fréquente, et de loin. Un planning qui porte chaque sous-tâche devient illisible et impossible à tenir : personne ne met à jour soixante lignes toutes les semaines, donc le document est périmé en quelques jours. Et un plan périmé est plus dangereux que pas de plan, parce qu’on y croit encore.</p>
+      <p><strong>Correction :</strong> planifiez au niveau auquel vous rendez compte. Tout ce qui dure moins que votre cycle de reporting appartient à l’intérieur d’une tâche. Regroupez le détail en phases : 20 à 60 tâches réparties en quatre à huit phases suffisent à la plupart des projets.</p>`],
+
+    ['2. Aucun lien d’antériorité', `<p>Un planning fait de barres parallèles sans liens est une image, pas un modèle. Quand une tâche glisse, rien ne bouge, parce que rien n’est relié. Les dates ont été tapées à la main, et elles resteront fausses jusqu’à ce que quelqu’un les retape toutes.</p>
+      <p><strong>Correction :</strong> reliez ce qui contraint réellement, puis tirez une barre et regardez. Si rien ne suit, le plan ne modélise pas votre projet. Dans l’application, la colonne <strong>Après</strong> — ou le champ <strong>Après (prédécesseurs)</strong> du volet de tâche — suffit. Attention à une règle utile : un lien ne peut que <em>repousser</em> une tâche, jamais la ramener plus tôt. Si vous voulez que tout se recale au plus tôt, il faut le demander explicitement avec <strong>Replanifier</strong>.</p>`],
+
+    ['3. Tout enchaîné en Fin-Début', `<p>L’erreur inverse, et plus subtile. Mettez toutes les tâches à la suite et toutes se retrouvent sur le chemin critique — soixante lignes qui crient « urgent », ce qui revient à ne rien dire. Le plan devient aussi impossible à réordonner : chaque date est tenue par une préférence, pas par une contrainte.</p>
+      <!--FIG:cpm|Seule la plus longue route à travers le réseau fixe la date de fin.-->
+      <p><strong>Correction :</strong> ne reliez que ce qui contraint physiquement. Si B pourrait démarrer aujourd’hui avec les gens et le matériel disponibles, B ne dépend pas de A. Un chemin critique sain couvre un quart à une moitié des tâches ; s’il les couvre toutes, vous avez dessiné une file d’attente, pas un réseau.</p>`],
+
+    ['4. Confondre estimation et engagement', `<p>Toutes les barres ont l’air également certaines. Une tâche de trois jours que vous avez faite cinquante fois et une que personne n’a jamais tentée sont dessinées exactement pareil. Le lecteur ne peut pas savoir où sont les paris.</p>
+      <p><strong>Correction :</strong> placez la marge là où se trouve l’incertitude, et dites-le. Chez Groupe Lavandier, les 15 jours de recâblage étaient un devis de prestataire ; les 4 jours de recette étaient une intuition, et ils ont coûté neuf jours.</p>`],
+
+    ['5. Aucune marge nulle part', `<p>Un plan où chaque tâche démarre à l’instant précis où la précédente finit n’absorbe rien. Le premier retard de deux jours devient un retard projet de deux jours, et il se propage jusqu’à la fin.</p>
+      <!--FIG:float|La marge, c’est la place dont dispose une tâche avant de repousser la date de fin.-->
+      <p><strong>Correction :</strong> mettez de la marge là où le risque se concentre — devant les échéances fermes, après tout ce qui dépend d’un tiers, autour des validations. Une seule marge visible de cinq jours devant la mise en service vaut mieux que cinq jours étalés invisiblement sur dix tâches : dispersés, ils se consomment sans que personne ne le voie.</p>`],
+
+    ['6. Ignorer le chemin critique', `<p>Si vous ne savez pas quelles tâches pilotent la date de fin, vous ne pouvez pas savoir quels retards comptent. Les équipes s’acharnent sur du travail qui dispose de trois semaines de marge pendant que la vraie contrainte glisse deux lignes plus bas.</p>
+      <p><strong>Correction :</strong> activez <strong>Chemin critique</strong> et revérifiez après chaque modification — la légende indique <em>hachuré = chemin critique</em>. Une tâche qui possède huit jours de marge devient critique dès qu’elle en perd neuf. Le chemin critique n’est pas une propriété stable du projet, c’est une lecture à un instant donné.</p>`],
+
+    ['7. Pas de responsable — et des responsables chargés à 100 %', `<p>Une tâche sans nom est l’affaire de tout le monde, ce qui signifie de façon fiable l’affaire de personne. Une personne par tâche, pas une équipe : seule une personne peut être interrogée.</p>
+      <p>Moins visible : affecter la même personne à des tâches qui se recouvrent, à pleine charge, est la même erreur. Thibaut Marchand à 100 % et 100 % n’est pas ambitieux, c’est arithmétiquement impossible — et le graphique ne le dira pas, parce que les barres se superposent sans se plaindre.</p>
+      <p><strong>Correction :</strong> vérifiez la charge de chaque intervenant sur toute la durée, pas tâche par tâche. Ouvrez <strong>Charge de travail</strong> après avoir posé les dates. Quelqu’un à 140 % pendant trois semaines, c’est un planning qui a déjà échoué.</p>`],
+
+    ['8. Un plan qu’on laisse vieillir', `<p>Un diagramme de Gantt est un document vivant avec une date de péremption. Trois semaines sans mise à jour et les gens cessent de lui faire confiance ; ensuite ils cessent de le lire, et le projet se pilote de nouveau par courriel.</p>
+      <p><strong>Correction :</strong> mettez à jour à une cadence fixe — hebdomadaire en régime normal, quotidienne en période tendue — et gardez le plan assez petit pour que cela prenne quelques minutes.</p>`],
+
+    ['9. Aucun jalon', `<p>Un mur de barres ne donne au lecteur aucun point d’ancrage. Les jalons sont la façon dont quelqu’un d’extérieur au projet retrouve les points de décision. Un jalon a une durée nulle et s’écrit comme un résultat : « avis du CSE rendu », pas « consultation du CSE ».</p>
+      <p><strong>Correction :</strong> marquez les validations, les livraisons, les passages obligés et la mise en service comme jalons de durée nulle, et accrochez-y le travail aval. Quatre à huit suffisent en général. Plus haut, le jalon manquant n’était pas cosmétique : <em>Avis du CSE rendu</em> était exactement l’endroit où un mois de délai réglementaire se cachait.</p>`],
+
+    ['10. L’avancement mesuré en jours écoulés', `<p>C’est ce qui produit le reporting faux le plus sûr de lui de toute cette liste. Déduisez l’avancement de la durée écoulée, et une tâche à peine entamée affiche 60 % au neuvième jour sur quinze — exactement ce qui s’est passé le 4 mai ci-dessus.</p>
+      <p><strong>Correction :</strong> déclarez une part de travail — zones brassées, postes basculés, cas de test passés, plans diffusés — et non une part de calendrier. Une tâche dont on ne sait pas compter les unités est trop grossière pour être suivie : redécoupez-la ou acceptez de ne pas la mesurer.</p>`],
+
+    ['11. Reposer la référence à chaque dérive', `<p>Une <strong>Référence</strong> enregistre ce que vous avez promis. La ré-enregistrer chaque fois que l’écart devient inconfortable la transforme en registre de ce que vous venez de faire — un chiffre que vous aviez déjà.</p>
+      <p>Fait tous les mois, cela donne un projet « conforme au plan » face à sa neuvième référence, et quatre mois en retard face à la première.</p>
+      <p><strong>Correction :</strong> ne reposez la référence que pour une évolution de périmètre validée ou une replanification formelle, et conservez les précédentes. L’écart entre la référence 1 et la référence 5 est souvent la description la plus honnête d’un projet dont vous disposiez.</p>`],
+
+    ['12. Utiliser un Gantt pour ce qu’il ne sait pas faire', `<p>Le diagramme de Gantt sert au travail qui a une séquence, des liens et des dates. Il convient mal à un flux continu ou à un backlog repriorisé chaque semaine : si vous le réécrivez tous les lundis, ce n’est pas le bon outil.</p>
+      <p><strong>Correction :</strong> un Gantt quand l’ordre et les échéances comptent, un tableau quand ce n’est pas le cas. Faire tourner les deux est normal — un tableau pour la semaine, un Gantt pour le trimestre.</p>`],
+
+    ['Le symptôme de chaque erreur', `<p>Ces erreurs se repèrent plus vite par leur symptôme que par leur définition :</p>
+      <table>
+        <thead><tr><th>Ce que vous constatez</th><th>L’erreur</th><th>La correction</th></tr></thead>
+        <tbody>
+          <tr><td>Pas mis à jour depuis trois semaines</td><td>Trop de détail</td><td>Planifier au niveau où l’on rend compte</td></tr>
+          <tr><td>Une tâche glisse, aucune date ne bouge</td><td>Aucun lien d’antériorité</td><td>Relier ce qui contraint ; tirer une barre pour tester</td></tr>
+          <tr><td>Toutes les tâches sont critiques</td><td>Tout enchaîné en Fin-Début</td><td>Supprimer les liens qui expriment une préférence</td></tr>
+          <tr><td>Un petit retard déplace la date de fin</td><td>Aucune marge</td><td>Des marges visibles devant les échéances</td></tr>
+          <tr><td>Vous avez accéléré la mauvaise tâche</td><td>Chemin critique ignoré</td><td>L’activer ; revérifier après chaque modification</td></tr>
+          <tr><td>Personne ne répond quand vous demandez</td><td>Aucun responsable</td><td>Une personne nommée par tâche</td></tr>
+          <tr><td>Les tâches d’une même personne glissent ensemble</td><td>Chargée au-delà de 100 %</td><td>Vérifier la charge sur toute la durée</td></tr>
+          <tr><td>« Et il se passe quoi, quand ? »</td><td>Aucun jalon</td><td>Quatre à huit jalons, avec du travail derrière</td></tr>
+          <tr><td>90 % depuis un mois</td><td>Avancement tiré des jours écoulés</td><td>Déclarer une part de travail</td></tr>
+          <tr><td>Vert chaque semaine, des mois de retard</td><td>Référence reposée à chaque écart</td><td>Ne reposer que sur replanification validée</td></tr>
+          <tr><td>Réécrit tous les lundis</td><td>Mauvais outil</td><td>Un tableau pour le flux</td></tr>
+        </tbody>
+      </table>`],
+
+    ['Une revue de vingt minutes', `<p>Passez cette revue sur un planning que vous avez déjà, dans l’ordre. Chaque étape est une chose que l’on voit, pas une chose qu’il faut juger.</p>
+      <ol>
+        <li>Comptez les lignes. Plus que ce que vous mettrez à jour chaque semaine ? Repliez le détail dans des phases avec <strong>▣ Groupe</strong> avant tout le reste.</li>
+        <li>Ouvrez <strong>Calendrier</strong> et vérifiez que les week-ends et les jours fériés sont exclus. Un plan tracé en jours calendaires sur avril-mai perd une semaine entière sans prévenir.</li>
+        <li>Tirez la dernière tâche de votre première phase deux semaines vers la droite. Tout ce qui ne bouge pas n’est pas relié. Annulez, puis ajoutez ces liens dans la colonne <strong>Après</strong>.</li>
+        <li>Cochez <strong>Chemin critique</strong>. Si tout est hachuré, vous avez trop relié ; si rien ne l’est, vous n’avez pas relié du tout.</li>
+        <li>Passez <strong>Vue</strong> sur <strong>Semaines à venir</strong>. Si cette fenêtre ne ressemble pas à ce que les gens font réellement en ce moment, le plan est déjà périmé.</li>
+        <li>Ouvrez <strong>Charge de travail</strong>. Quelqu’un au-dessus de sa capacité un seul jour, c’est une promesse impossible dans un planning plausible.</li>
+        <li>Cherchez les losanges. Chaque point où quelqu’un d’extérieur à l’équipe valide, livre ou contrôle devrait être un jalon, avec le délai de revue porté par le décalage.</li>
+        <li>Regardez la ligne qui précède chaque échéance ferme. Si elle se termine le jour même de l’échéance, insérez une tâche de marge et nommez-la comme telle.</li>
+        <li>Ouvrez <strong>Référence</strong> et posez-la une fois, maintenant que le plan est honnête, puis affichez les colonnes d’écart.</li>
+        <li>Demandez à chaque responsable son avancement en unités de travail, pas en pourcentage. Là où la réponse et la barre divergent, c’est la barre qui a tort. Corrigez le champ <strong>Avancement</strong>, pas le souvenir.</li>
+      </ol>
+      <p>Vous pouvez faire cette revue dans <a href="/fr/app.html">l’éditeur</a> sur votre plan actuel, ou repartir d’un <a href="/fr/templates.html">modèle</a> déjà structuré en phases et jalons.</p>`],
   ],
-  callout: 'Les deux erreurs les plus fréquentes sont opposées : trop de détail et pas assez de structure. La première rend le plan impossible à tenir, la seconde le rend inutile. Entre 20 et 60 tâches réparties en quatre à huit phases, les deux problèmes disparaissent pour la plupart des projets.',
+  callout: 'Remarquez le peu d’erreurs qui relèvent réellement du graphique. Changer d’outil n’en corrige presque aucune : un lien manquant, une personne surchargée et une référence discrètement réenregistrée sont des décisions, et elles vous suivront dans le logiciel suivant.',
   faq: [
-    ['Quelle est l’erreur la plus fréquente ?', 'Trop de détail. Un plan de trois cents lignes n’est plus mis à jour au bout de deux semaines.'],
-    ['Quelle marge prévoir ?', 'Dix à vingt pour cent, regroupés devant les jalons et en fin de chemin critique plutôt que répartis sur chaque tâche.'],
-    ['Pourquoi mon plan n’est-il jamais juste ?', 'Le plus souvent parce qu’il a été calculé à rebours depuis une date souhaitée, ou parce que la charge n’a jamais été vérifiée.'],
-    ['À quelle fréquence mettre le plan à jour ?', 'Chaque semaine. Moins souvent, l’écart n’apparaît que lorsqu’il n’est plus rattrapable.'],
+    ['Quelle est l’erreur la plus fréquente ?', 'Trop de détail. Un plan qui liste chaque sous-tâche devient illisible et se retrouve abandonné en quelques semaines, parce que le tenir à jour coûte plus qu’il ne rapporte.'],
+    ['Combien de tâches un diagramme de Gantt doit-il contenir ?', 'Assez peu pour que vous le mainteniez : 20 à 60 lignes pour la plupart des projets, réparties en quatre à huit phases. Tout ce qui dure moins que votre cycle de reporting appartient à l’intérieur d’une tâche.'],
+    ['Faut-il relier toutes les tâches en Fin-Début ?', 'Non. Tout enchaîner en une seule file place tout le monde sur le chemin critique et rend le plan impossible à réordonner. Ne reliez que ce qui contraint physiquement.'],
+    ['Pourquoi mon projet dérive-t-il alors que le plan semblait juste ?', 'Le plus souvent : aucune marge, une personne affectée au-delà de 100 % sur des tâches qui se recouvrent, un avancement déduit des jours écoulés — ou des barres tracées en jours calendaires alors que le travail se fait en jours ouvrés.'],
+    ['Est-ce une faute de reposer la référence ?', 'Non pour une évolution de périmètre validée ou une replanification formelle. Oui si vous la reposez à chaque écart : les rapports restent au vert pendant que la date de livraison recule.'],
+    ['À quelle fréquence mettre le plan à jour ?', 'Chaque semaine pour la plupart des projets, chaque jour en période tendue. La cadence importe moins que le fait qu’elle soit fixe et tenable.'],
   ],
   related: [['how-to-make-a-gantt-chart', 'Faire un diagramme de Gantt'], ['gantt-baseline-variance', 'Référence et écarts'], ['milestones-vs-tasks', 'Jalons et tâches']],
 },
@@ -345,74 +609,354 @@ const G = {
 'milestones-vs-tasks': {
   h1: 'Jalons et tâches : ce qui les distingue',
   metaTitle: 'Jalon ou tâche ?',
-  metaDesc: 'Différence entre jalon et tâche, à quoi servent réellement les jalons, combien en prévoir et les erreurs classiques.',
+  metaDesc: 'Différence entre jalon et tâche sur un diagramme de Gantt, ce que signifient le losange, la barre et la flèche, combien de jalons prévoir et les erreurs classiques.',
   date: '2026-07-19',
-  lead: 'Une <strong>tâche</strong> occupe du temps, un <strong>jalon</strong> marque un instant. C’est toute la différence technique — et pourtant, mal employer les jalons est l’un des moyens les plus rapides de rendre un plan illisible.',
-  figIntro: 'Des barres pour le travail, des losanges pour les moments qui comptent :',
+  lead: 'Une <strong>tâche</strong> occupe du temps, un <strong>jalon</strong> marque un instant. Cette seule distinction explique pourquoi l’une se dessine en barre et l’autre en losange — et elle a des conséquences mesurables : un jalon modélisé comme une tâche de trois jours ajoute discrètement trois jours à votre date de fin, et masque justement le retard auquel vous êtes le plus exposé.',
+  figIntro: 'Les symboles que vous croiserez sur presque tous les diagrammes de Gantt :',
   sections: [
-    ['La différence en une phrase', '<p>Une tâche a une durée : elle commence un jour et finit un autre. Un jalon a une durée nulle et se représente par un losange. « Rédiger le contrat » est une tâche ; « contrat signé » est un jalon.</p>'],
-    ['À quoi servent réellement les jalons', '<p>À trois choses. Ce sont des <em>points de contrôle</em> où l’on décide de continuer. C’est le <em>langage de la direction</em> — ce qu’un comité retient de votre plan, ce sont cinq dates, pas cinquante barres. Et ce sont des <em>verrous de séquence</em> : en rattachant le travail suivant à un jalon, vous empêchez qu’il démarre avant que la condition soit remplie.</p>'],
-    ['Combien en prévoir ?', '<p>Assez pour raconter l’histoire, pas au point de la diluer. Cinq à dix pour un projet de plusieurs mois fonctionne bien. Avec un jalon par semaine, le plan est devenu un calendrier et les losanges n’indiquent plus rien.</p>'],
-    ['Les erreurs classiques', '<p><strong>Des jalons qui sont des tâches déguisées.</strong> Ce qui a une durée n’est pas un jalon.</p>\n        <p><strong>Des jalons sans lien.</strong> Un losange isolé dans le calendrier est décoratif. Sa valeur vient de ce que le travail suivant en dépend.</p>\n        <p><strong>Des jalons que personne ne décide.</strong> Si à la date rien n’est validé, signé ni vérifié, c’était un rappel, pas un jalon.</p>'],
-    ['Le troisième type : la tâche récapitulative', '<p>À côté des tâches et des jalons existent les récapitulatives, ou phases. Elles regroupent leurs tâches filles et reprennent automatiquement le début le plus précoce et la fin la plus tardive. On ne les modifie pas directement — elles bougent quand leur contenu bouge.</p>\n        <p>C’est cette hiérarchie à trois niveaux — phase, tâche, jalon — qui rend lisible un grand plan.</p>'],
+    ['La différence en une phrase', `<p>Une tâche consomme du temps et des ressources : elle a un début, une fin et une durée. Un jalon n’a aucune durée — c’est un point qui signale que quelque chose a eu lieu. D’où le losange : il n’y a rien sur quoi étendre une barre.</p>
+      <p>Le test tient en une seconde. <em>Est-ce que quelqu’un peut y travailler ?</em> On peut travailler à la rédaction d’un cahier des charges. On ne peut pas travailler à « cahier des charges validé » : soit c’est fait, soit ça ne l’est pas.</p>
+      <p>Cette frontière n’est pas un détail de dessin. Elle décide de ce que votre planning calcule, de ce qu’il exporte, et de ce que votre comité de pilotage retient. La suite de ce guide suit un seul projet, du plan initial au retard, pour montrer où la distinction se paie.</p>
+      <!--FIG:milestone|Le jalon se place à un instant précis ; les barres de part et d’autre sont le travail.-->`],
+
+    ['Un exemple suivi : la refonte de l’étiquetage chez Maison Perrin', `<p>Maison Perrin, conserverie de la Sarthe, refait l’étiquetage de 32 références alimentaires. Semaine de cinq jours ouvrés, démarrage le lundi 2 mars 2026, budget d’impression de 46 000 €.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Ligne</th><th>Type</th><th>Durée</th><th>Début</th><th>Fin</th></tr></thead>
+          <tbody>
+            <tr><td>Création des maquettes</td><td>Tâche</td><td>10 j</td><td>lun. 2 mars</td><td>ven. 13 mars</td></tr>
+            <tr><td>Revue interne et corrections</td><td>Tâche</td><td>4 j</td><td>lun. 16 mars</td><td>jeu. 19 mars</td></tr>
+            <tr><td><strong>Maquettes figées</strong></td><td>Jalon</td><td>0 j</td><td colspan="2">jeu. 19 mars</td></tr>
+            <tr><td>Contrôle réglementaire d’étiquetage (cabinet externe)</td><td>Tâche</td><td>8 j</td><td>ven. 20 mars</td><td>mar. 31 mars</td></tr>
+            <tr><td><strong>Étiquetage validé</strong></td><td>Jalon</td><td>0 j</td><td colspan="2">mar. 31 mars</td></tr>
+            <tr><td>Épreuves d’imprimerie</td><td>Tâche</td><td>6 j</td><td>mer. 1er avril</td><td>jeu. 9 avril</td></tr>
+            <tr><td><strong>BAT signé</strong></td><td>Jalon</td><td>0 j</td><td colspan="2">jeu. 9 avril</td></tr>
+            <tr><td>Tirage</td><td>Tâche</td><td>15 j</td><td>ven. 10 avril</td><td>jeu. 30 avril</td></tr>
+            <tr><td>Acheminement vers la plateforme logistique</td><td>Tâche</td><td>7 j</td><td>lun. 4 mai</td><td>mer. 13 mai</td></tr>
+            <tr><td><strong>Mise en linéaire</strong></td><td>Jalon</td><td>0 j</td><td colspan="2">lun. 18 mai</td></tr>
+          </tbody>
+        </table>
+        <p>Cinq jalons, cinq tâches. Trois d’entre eux — maquettes figées, étiquetage validé, BAT signé — sont des moments où quelqu’un <em>hors de l’équipe</em> doit agir : le cabinet qui vérifie la conformité des mentions obligatoires avant tout risque de contrôle DGCCRF, l’imprimeur qui attend un bon à tirer, l’enseigne qui réserve son linéaire. C’est exactement la raison de les poser.</p>
+        <p>Le calendrier français fait ici une partie du travail à votre place, à condition de le lui laisser dire. Le lundi de Pâques (6 avril) allonge les épreuves d’imprimerie d’un jour, le 1er mai décale le départ de l’acheminement au lundi 4 mai, et le pont de l’Ascension (jeudi 14 mai) repousse la mise en linéaire au lundi 18 mai. Aucun de ces trois décalages n’est une erreur d’équipe : ce sont des jours fériés, et un planning en jours ouvrés les absorbe tout seul si le <strong>Calendrier de travail</strong> est correctement réglé.</p>
+        <p>Lisez maintenant les seules lignes de jalon et vous tenez le projet en une respiration : maquettes figées le 19 mars, étiquetage validé le 31 mars, BAT signé le 9 avril, mise en linéaire le 18 mai. Quatre dates. C’est la version que votre direction commerciale lira, et la seule qu’elle retiendra.</p>
+      </div>`],
+
+    ['Ce qui se passe quand un jalon dérape', `<p>Le cabinet avait annoncé huit jours ouvrés ; il en prend treize, parce qu’une allégation nutritionnelle sur quatre références demande un aller-retour supplémentaire. Le lundi de Pâques tombant le 6 avril, le contrôle s’achève le mercredi 8 avril au lieu du mardi 31 mars.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Jalon</th><th>Prévu</th><th>Prévision</th><th>Dérive</th></tr></thead>
+          <tbody>
+            <tr><td>Maquettes figées</td><td>jeu. 19 mars</td><td>jeu. 19 mars</td><td>0 j</td></tr>
+            <tr><td>Étiquetage validé</td><td>mar. 31 mars</td><td>mer. 8 avril</td><td>5 j</td></tr>
+            <tr><td>BAT signé</td><td>jeu. 9 avril</td><td>jeu. 16 avril</td><td>5 j</td></tr>
+            <tr><td>Mise en linéaire</td><td>lun. 18 mai</td><td>mar. 26 mai</td><td>5 j</td></tr>
+          </tbody>
+        </table>
+        <p>Il n’y a aucune marge dans cette chaîne : les cinq jours ouvrés arrivent intégralement sur la date de mise en rayon. Ces quatre lignes constituent la totalité du compte rendu d’avancement, et elles n’existent que parce que ces points ont été modélisés comme des jalons plutôt que noyés dans des barres.</p>
+        <p>Notez la formulation de la colonne : cinq <em>jours ouvrés</em>, et non huit jours calendaires. L’écart entre les deux vient entièrement du lundi de Pentecôte, le 25 mai 2026 : la chaîne le traverse, si bien que la mise en linéaire ne retombe que le mardi 26. Un directeur qui lit « une semaine de retard » et un chef de projet qui lit « 5 j » croient parler du même décalage jusqu’au jour où un pont s’intercale. Fixez l’unité une fois pour toutes, dans le plan comme dans le compte rendu, et précisez laquelle.</p>
+      </div>
+      <p>Une tâche qui dérape signifie que le travail prend plus de temps et qu’on peut peut-être l’absorber. Un jalon qui dérape signifie qu’un engagement a bougé. Personne, à l’extérieur du projet, ne s’émeut que les épreuves aient pris sept jours au lieu de six ; en revanche tout le monde retiendra que la date de mise en linéaire est passée au 26 mai.</p>`],
+
+    ['Tâche ou jalon : les dimensions qui diffèrent vraiment', `<p>La distinction n’est pas une convention graphique. Elle change le comportement du planning sur six points précis.</p>
+      <table>
+        <thead><tr><th>Dimension</th><th>Tâche</th><th>Jalon</th></tr></thead>
+        <tbody>
+          <tr><td>Durée</td><td>Un jour ou plus. Consomme du calendrier et de la charge.</td><td>Nulle. Le début et la fin sont la même date.</td></tr>
+          <tr><td>Liens</td><td>Des prédécesseurs et des successeurs, le plus souvent en Fin-Début (FD).</td><td>Il lui en faut au moins un de chaque, sinon c’est un ornement.</td></tr>
+          <tr><td>Une dérive signifie</td><td>Le travail a duré plus longtemps ; la marge ou des renforts peuvent rattraper.</td><td>Un engagement a bougé. Le rattrapage passe par une replanification, pas par de l’effort.</td></tr>
+          <tr><td>Affectation</td><td>Un assigné qui exécute, en général un coût.</td><td>Un responsable qui relance. La charge est nulle.</td></tr>
+          <tr><td>À l’export</td><td>Une barre en PDF, PNG et PowerPoint ; une vraie date de fin et un nombre de jours en Excel et CSV ; un événement de plusieurs jours au calendrier.</td><td>Un losange dans les exports visuels ; fin vide et durée 0 en Excel et CSV ; un événement d’une seule journée au calendrier.</td></tr>
+          <tr><td>Qui le lit</td><td>La personne qui fait le travail, et son responsable.</td><td>Le COPIL, le client, l’enseigne, la diapositive de synthèse.</td></tr>
+        </tbody>
+      </table>
+      <p>C’est la ligne « à l’export » qui surprend le plus. Passez la <strong>Vue</strong> sur <strong>Jalons seulement</strong>, exportez, et vous obtenez un planning d’une page pour un comité de pilotage sans construire un second diagramme — mais uniquement si vos jalons sont de vrais jalons. Un plan truffé de faux jalons produit une synthèse qui ressemble encore à un planning d’exécution, et personne ne la lira.</p>`],
+
+    ['Ce que coûte l’erreur', `<p>Reprenons « Étiquetage validé » écrit comme la plupart des gens l’écrivent la première fois : une tâche intitulée « obtenir la validation du cabinet », trois jours, glissée entre le contrôle et les épreuves.</p>
+      <div class="worked">
+        <ol>
+          <li><strong>La date de fin bouge.</strong> Trois jours de durée inventée repoussent la mise en linéaire du lundi 18 mai au jeudi 21 mai. Le travail n’a pas changé ; le modèle, si. Sur un projet qui en enchaîne cinq, cela fait quinze jours ouvrés — trois semaines perdues sans qu’une seule heure de travail supplémentaire ait été effectuée.</li>
+          <li><strong>Le point de contrôle disparaît.</strong> « Obtenir la validation » se lit comme quelque chose que vous faites ; « Étiquetage validé » se lit comme quelque chose que le cabinet fait. La première formulation n’invite personne à relancer, parce qu’elle donne l’illusion que la balle est dans votre camp.</li>
+          <li><strong>La synthèse casse.</strong> Filtrez sur les jalons : quatre lignes apparaissent au lieu de cinq, et celle qui manque est précisément le point le plus dépendant de l’extérieur — celui sur lequel le retard est effectivement arrivé.</li>
+        </ol>
+      </div>
+      <p>L’erreur inverse coûte moins cher mais elle est réelle : transformer « Tirage » en jalon parce que l’étape paraît importante. Quinze jours de presse s’évaporent, et le chemin critique contourne l’élément le plus long du plan. L’importance décide si une chose figure sur le diagramme ; la durée décide de sa forme. Les deux questions sont indépendantes, et les confondre est la source de la plupart des plannings faux.</p>`],
+
+    ['À quoi servent réellement les jalons', `<p>Les jalons existent pour le lecteur, pas pour celui qui exécute. Ce sont eux qui permettent à quelqu’un qui ne vit pas dans votre projet de retrouver les moments qui comptent : validations, livraisons, points de contrôle, mise en service.</p>
+      <p>Ils rendent aussi un planning opposable. « Maquettes figées », avec le contrôle réglementaire qui en dépend, dit ce que « figer les maquettes » ne dit pas : rien ne démarre en aval tant que ce point n’est pas franchi. Quand une graphiste renvoie une correction le 24 mars, le diagramme montre une règle enfreinte, et non une date qui glisse doucement. C’est une différence de nature en réunion : on ne discute plus d’un ressenti, on constate un franchissement.</p>
+      <!--FIG:deps|Un jalon gagne sa place en se situant entre deux choses : des prédécesseurs qui doivent finir, des successeurs qui ne peuvent pas commencer.-->
+      <p>Un jalon sans aucun lien, ni en amont ni en aval, mérite d’être supprimé. Si rien ne l’attend, c’est une note dans la marge — et les notes ont leur champ, le champ <strong>Notes</strong> du panneau de tâche, pas la ligne de temps.</p>`],
+
+    ['Combien en prévoir ?', `<p>Assez pour raconter l’histoire, assez peu pour que chacun signifie quelque chose. Quatre à huit est une fourchette raisonnable sur un projet de quelques mois ; cent jalons, ce sont des tâches déguisées en losanges.</p>
+      <p>Le test : pourriez-vous décrire l’avancement en n’utilisant que les jalons ? Maison Perrin en compte cinq pour un projet de dix semaines — le haut de la fourchette, justifié parce que trois sont des passages de relais externes sur lesquels l’équipe n’a aucune prise directe. La façon habituelle de dépasser la mesure consiste à poser un losange à la fin de chaque phase par souci de symétrie ; les phases ont déjà leur barre récapitulative, qui dit exactement la même chose sans ajouter de ligne.</p>
+      <p>Une contre-épreuve utile : si deux jalons voisins bougent toujours ensemble et de la même quantité, l’un des deux est superflu. Ils mesurent le même engagement.</p>`],
+
+    ['Le faire dans gantts.app', `<p>Le plan Maison Perrin dans l’éditeur, avec les boutons tels qu’ils s’appellent réellement.</p>
+      <ol>
+        <li>Cliquez sur <strong>✨ Coller vers Gantt</strong> et collez votre trame. Une ligne terminée par <code>!</code> devient un jalon, <code>(10d)</code> fixe une durée, <code>after Nom</code> pose un prédécesseur, un <code>#</code> en début de ligne crée une phase — par exemple <code>Maquettes figées ! after Revue interne</code>.</li>
+        <li>À la main plutôt : <strong>＋ Tâche</strong> pour les lignes de travail, <strong>◆ Jalon</strong> pour les losanges, <strong>▣ Groupe</strong> pour une phase.</li>
+        <li>Un jalon saisi par erreur comme une tâche ? Double-cliquez sa ligne et changez <strong>Type</strong>. Sa fin se replie sur son début ; inutile de supprimer et de recréer la ligne.</li>
+        <li>Dans le même panneau, renseignez <strong>Après (prédécesseurs)</strong>, sans quoi le jalon ne bougera pas quand le travail qui le précède bougera.</li>
+        <li>Ouvrez <strong>Calendrier</strong> et réglez le <strong>Calendrier de travail</strong> : jours ouvrés, jours fériés, fermeture d’août. Le jeu de fériés <em>France</em> se charge d’un coup et couvre les mobiles — lundi de Pâques, Ascension et lundi de Pentecôte sont calculés à partir de la date de Pâques, année par année. C’est ce qui fait que le 1er mai, le 8 mai et l’Ascension se décalent tout seuls au lieu d’être découverts en mai. Les ponts d’entreprise, eux, s’ajoutent à la main : ce sont des jours chômés chez vous, pas des fériés légaux.</li>
+        <li>Cliquez sur <strong>Replanifier</strong> pour pousser chaque ligne à la date la plus précoce que ses liens autorisent — c’est ainsi que vous apprenez si vos dates de jalon étaient des conséquences ou des vœux.</li>
+        <li>Activez <strong>Chemin critique</strong> pour vérifier que la chaîne qui passe par vos points de contrôle détermine bien la date de fin. Les barres hachurées sont critiques.</li>
+        <li>Ouvrez <strong>Référence</strong> et enregistrez le plan avant le démarrage. Les colonnes d’écart chiffrent alors la dérive de chaque jalon en jours — c’est de là que viennent les 5 j du tableau plus haut.</li>
+        <li>Passez la <strong>Vue</strong> sur <strong>Jalons seulement</strong> pour la version COPIL, puis <strong>⬇ Exporter</strong> ▸ <strong>📄 Document PDF</strong> ou <strong>📽 PowerPoint (.pptx)</strong>. Revenez sur <strong>Toutes les tâches</strong> pour piloter l’exécution.</li>
+      </ol>
+      <p>Une chose que l’éditeur refusera : élargir un jalon à la souris. Les jalons se déplacent mais ne se redimensionnent jamais, parce qu’un jalon avec une durée n’est plus un jalon. Précision sur le chemin critique : il est calculé « tel que placé ». Un lien ne peut que retarder une tâche, jamais l’avancer ; c’est <strong>Replanifier</strong> qui compacte le plan sur ses dates les plus précoces.</p>`],
+
+    ['Les erreurs classiques', `<p><strong>Des jalons qui ont une durée.</strong> Si cela prend trois jours, c’est une tâche. Donnez-lui une barre et posez un jalon à sa fin si l’achèvement engage quelqu’un.</p>
+      <p><strong>Des jalons que personne ne porte.</strong> Le responsable est celui qui décroche son téléphone quand la date devient incertaine, pas celui qui valide. Le champ <strong>Assigné à</strong> d’un jalon désigne le relanceur, pas le décideur.</p>
+      <p><strong>Des jalons datés par espoir.</strong> Si « Étiquetage validé » tombe le 31 mars parce que c’est ce qu’on a promis à l’enseigne, et non parce que huit jours ouvrés de contrôle s’y terminent, le diagramme enregistre une ambition. Replanifiez d’abord, puis négociez l’écart en connaissance de cause.</p>
+      <p><strong>Des jalons suivis en pourcentage.</strong> Un jalon vaut 0 % ou 100 %. « La validation d’étiquetage est à 60 % » signifie que la tâche sous-jacente est à 60 % et que le point de contrôle n’a pas été franchi.</p>`],
+
+    ['Les récapitulatives et la hiérarchie', `<p>Le troisième symbole est la barre récapitulative, ou barre de phase, qui enjambe ses tâches filles. Elle est calculée, non saisie : ses dates viennent du début le plus précoce et de la fin la plus tardive de ce qu’elle contient, raison pour laquelle on ne les modifie pas directement. Pour déplacer une phase, on déplace son contenu.</p>
+      <p>Une récapitulative montre quand le travail se déroule ; un jalon montre quand un engagement tombe. Une phase « Prépresse » qui court du 2 mars au 9 avril est utile à l’équipe de Maison Perrin et sans intérêt pour l’acheteur de l’enseigne, qui ne pose qu’une seule question : le 18 mai. C’est cette hiérarchie à trois niveaux — phase, tâche, jalon — qui permet à un grand plan de rester lisible par des lecteurs qui n’ont pas les mêmes besoins.</p>`],
   ],
-  callout: 'Un jalon n’est pas une tâche courte : c’est une tâche de durée nulle qui représente une décision ou une condition remplie. Si le jour venu personne n’a rien à valider, signer ou vérifier, vous posez un rappel, pas un jalon.',
+  callout: 'Une habitude à retenir : posez un jalon partout où quelqu’un d’extérieur à l’équipe doit valider, livrer, contrôler ou signer. Ce sont les dépendances que vous maîtrisez le moins et les retards sur lesquels on vous demandera des comptes le plus. Trois des cinq jalons de Maison Perrin sont exactement de ce type — et celui qui a dérapé en faisait partie.',
   faq: [
-    ['Qu’est-ce qu’un jalon dans un diagramme de Gantt ?', 'Un point sans durée qui marque un moment significatif : une validation, une livraison ou le début d’une phase. Il se représente par un losange.'],
-    ['Combien de jalons pour un projet ?', 'Cinq à dix sur plusieurs mois. Trop nombreux, ils perdent leur rôle de point de contrôle.'],
-    ['Un jalon peut-il avoir une durée ?', 'Par définition non. Pour représenter une période — une fenêtre de revue par exemple — il s’agit d’une tâche, qui peut se terminer par un jalon.'],
-    ['Quelle différence entre jalon et phase ?', 'Une phase est une récapitulative qui regroupe des tâches et reprend leurs dates ; un jalon est un instant sans durée. Les deux vont souvent ensemble : la phase se termine, le jalon confirme la clôture.'],
+    ['Quelle différence entre une tâche et un jalon ?', 'Une tâche a une durée : un début, une fin et du travail entre les deux. Un jalon a une durée nulle et marque un instant, par exemple une validation ou une livraison. Test rapide : si quelqu’un peut y consacrer une après-midi, c’est une tâche.'],
+    ['Que signifie le losange sur un diagramme de Gantt ?', 'Un jalon : un repère de durée nulle pour un événement significatif — signature, livraison, mise en service. N’ayant aucune longueur, il se déplace mais ne se redimensionne pas.'],
+    ['Combien de jalons pour un projet ?', 'En général quatre à huit : assez pour raconter l’histoire, assez peu pour que chacun ait du sens. Si la lecture de la liste de bout en bout ne décrit pas le projet, ce ne sont pas les bons.'],
+    ['Un jalon peut-il avoir une durée ?', 'Non, elle est nulle par définition. Si la chose prend réellement du temps — un contrôle réglementaire de huit jours ouvrés, par exemple — modélisez-la en tâche et posez un jalon à sa fin. La date d’engagement devient alors calculée plutôt qu’affirmée.'],
+    ['Que devient le planning quand un jalon dérape ?', 'Tout ce qui lui est lié en aval se décale d’autant, moins la marge disponible dans la chaîne. Dans l’exemple d’étiquetage, une dérive de 5 jours ouvrés sur « Étiquetage validé » a repoussé la mise en linéaire du 18 au 26 mai en totalité, faute de la moindre marge — huit jours calendaires, parce que la chaîne traverse le lundi de Pentecôte.'],
+    ['Qu’est-ce qu’une tâche récapitulative ?', 'Une barre qui représente une phase ou un groupe. Ses dates viennent du début le plus précoce et de la fin la plus tardive de ses tâches filles : elle bouge quand son contenu bouge. Elle ne remplace pas un jalon — la récapitulative montre quand le travail se déroule, le jalon quand un engagement tombe.'],
   ],
   related: [['what-is-a-gantt-chart', 'Qu’est-ce qu’un diagramme de Gantt ?'], ['gantt-chart-mistakes', 'Les erreurs fréquentes'], ['gantt-chart-dependencies', 'Les quatre types de liens']],
 },
 
 's-curve-project-management': {
   h1: 'Courbe en S et valeur acquise : êtes-vous vraiment en retard ?',
-  metaTitle: 'Courbe en S en gestion de projet',
-  metaDesc: 'Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression en chiffre.',
+  metaTitle: 'Courbe en S en gestion de projet (générateur gratuit)',
+  metaDesc: 'Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression en chiffre. Générateur gratuit, à partir de votre propre planning.',
   date: '2026-07-19',
   lead: 'Un pourcentage d’avancement seul ne dit presque rien. Soixante pour cent en semaine deux est excellent ; en semaine neuf, c’est une catastrophe. La <strong>courbe en S</strong> corrige cela en cumulant le travail prévu au fil du temps : « où en sommes-nous » devient « où étions-nous <em>censés</em> en être aujourd’hui » — et l’écart entre les deux courbes est la réponse.',
   figIntro: 'Le prévu face au réel, et ce que signifie l’écart entre les deux :',
   sections: [
-    ['Pourquoi la courbe a la forme d’un S', '<p>Un projet ne consomme pas son travail à un rythme constant. Les premières semaines sont lentes — mobilisation, cadrage du périmètre, attente de validations — puis le milieu s’accélère parce que tout avance en parallèle, puis la fin ralentit à nouveau, suspendue aux signatures et aux reprises.</p>\n        <p>Cumulez le travail dans le temps et cette allure dessine un S aplati : plat, raide, plat. Ce n’est pas une cible que quelqu’un aurait tracée ; elle découle de la manière dont le travail arrive réellement.</p>\n        <p>C’est précisément ce qui en fait un bon étalon. Une droite supposerait qu’un projet soit avancé de vingt pour cent au bout de vingt pour cent du temps, et tous les projets de l’histoire sembleraient en retard dès le premier mois.</p>'],
-    ['Lire le prévu face au réel', '<p>Deux courbes. La courbe <strong>prévue</strong> vient de votre référence : on répartit le poids de chaque tâche sur ses dates planifiées, puis on cumule. La courbe <strong>réelle</strong> vient de l’avancement déclaré.</p>\n        <p>Lisez-les verticalement, à la date du jour :</p>\n        <ul>\n          <li><strong>Réel sous le prévu</strong> — en retard. La distance verticale correspond au travail qui vous manque.</li>\n          <li><strong>Réel au-dessus du prévu</strong> — en avance, ou bien votre avancement déclaré est optimiste. Les deux arrivent.</li>\n          <li><strong>Des courbes qui divergent</strong> — le problème s’aggrave au lieu de se stabiliser. C’est l’allure la plus importante, et celle qu’un pourcentage isolé ne montre jamais.</li>\n        </ul>\n        <p>Lisez-les <em>horizontalement</em> et vous obtenez quelque chose de plus parlant en réunion : glissez vers la gauche depuis le point réel du jour jusqu’à la courbe prévue, et vous tenez la date à laquelle le plan attendait cet avancement. La distance, c’est votre retard en semaines — l’unité dans laquelle les gens discutent réellement.</p>'],
-    ['La valeur acquise, sans le jargon', '<p>La gestion par la valeur acquise met un chiffre sur l’écart. Trois grandeurs, dont les sigles sont plus rebutants que les idées :</p>\n        <ul>\n          <li><strong>VP</strong> (valeur planifiée, ou PV) — le travail que vous deviez avoir achevé à ce jour, valorisé au budget.</li>\n          <li><strong>VA</strong> (valeur acquise, ou EV) — le travail <em>réellement</em> achevé, valorisé au même budget. Une tâche à 10 000 € achevée à 40 % a acquis 4 000 €. Ce qu’elle vous a coûté n’entre pas ici, volontairement.</li>\n          <li><strong>CR</strong> (coût réel, ou AC) — ce que vous avez effectivement dépensé.</li>\n        </ul>\n        <p>De ces trois grandeurs découlent :</p>\n        <ul>\n          <li><strong>ED = VA − VP</strong> — écart de délai. Négatif signifie en retard.</li>\n          <li><strong>EC = VA − CR</strong> — écart de coût. Négatif signifie au-dessus du budget.</li>\n          <li><strong>IPD = VA ÷ VP</strong> — l’indice de performance des délais. Sous 1,0, vous êtes en retard. Un IPD de 0,85 signifie que vous obtenez 85 centimes d’avancement par euro de plan.</li>\n          <li><strong>IPC = VA ÷ CR</strong> — sous 1,0, vous dépassez le budget.</li>\n        </ul>\n        <p>Cette séparation est tout l’intérêt de la méthode. Un projet peut tenir parfaitement son budget et être très en retard, ou tenir ses délais en perdant beaucoup d’argent — et un « pourcentage d’avancement » unique masque les deux.</p>'],
-    ['Pourquoi l’outil refuse parfois d’afficher un IPC', '<p>Cela mérite d’être dit franchement, parce que la plupart des calculateurs gratuits font l’inverse.</p>\n        <p>Le coût réel est la seule donnée qu’un planning ne permet pas de déduire. Elle doit venir de votre comptabilité. Le raccourci tentant consiste à supposer qu’une tâche achevée à 40 % a consommé 40 % de son budget — mais alors le CR devient égal à la VA par construction, et <strong>l’IPC vaut exactement 1,00 pour tous les projets ayant jamais existé</strong>. Le chiffre paraît sérieux, ne réagit à rien, et annoncerait à quelqu’un dont le budget dérape qu’il est parfaitement dans les clous.</p>\n        <p>gantts.app laisse donc les indicateurs de coût vides tant que vous n’avez pas saisi une dépense réelle sur vos tâches. Les indicateurs de délai — ED et IPD — fonctionnent quand même, puisqu’ils ne demandent que des dates et un avancement. Une valeur absente est honnête. Une valeur fausse énoncée avec assurance ne l’est pas.</p>\n        <p>Pour la même raison, la courbe acquise avant la date du jour est reconstituée plutôt qu’enregistrée : l’outil conserve votre avancement tel qu’il est maintenant, pas l’historique de tous les relevés passés. Elle est exacte à la date du jour, là où on lit les chiffres, et approchée en amont — et le panneau le dit, plutôt que de le reléguer en note de bas de page.</p>'],
-    ['Pas besoin de budget pour obtenir une courbe', '<p>La plupart des plannings ne portent aucune donnée de coût, et une courbe en S qui en exige une est une courbe que personne ne trace.</p>\n        <p>Si aucune tâche n’a de coût, gantts.app pondère chaque tâche par sa durée en jours ouvrés. L’allure est la même et l’axe se lit en pourcentage plutôt qu’en euros — une courbe en S d’avancement pur. Ajoutez les coûts plus tard et le même panneau devient une courbe de valeur, sans rien changer d’autre.</p>\n        <p>Une chose compte toutefois : <strong>posez une référence</strong>. Sans elle, « prévu » ne peut désigner que vos dates actuelles, lesquelles intègrent déjà tous les décalages survenus. L’écart de délai affichera zéro indéfiniment — une réponse très rassurante et parfaitement inutile. Référence ▸ Poser la référence, une fois, au moment où le plan est validé.</p>'],
-    ['Comment en construire une ici', '<ol>\n          <li>Construisez ou importez votre planning et posez des dates à peu près justes.</li>\n          <li><strong>Référence ▸ Poser la référence</strong> une fois le plan validé. Cela fige ce que « prévu » signifie.</li>\n          <li>Donnez éventuellement un <strong>Budget</strong> à vos tâches dans le panneau, pour que la courbe se lise en euros plutôt qu’en jours.</li>\n          <li>Mettez à jour le <strong>% d’avancement</strong> au fil du travail — c’est la matière de la courbe acquise.</li>\n          <li>Saisissez éventuellement le <strong>Dépensé</strong> par tâche pour débloquer l’IPC, l’écart de coût et la prévision à l’achèvement.</li>\n          <li>Cliquez sur <strong>📈 Courbe en S</strong>.</li>\n        </ol>\n        <p>Tout s’exécute dans votre navigateur. Pas de compte, pas de transfert, et aucun modèle de tableur à entretenir à la main.</p>'],
+    ['Pourquoi la courbe a la forme d’un S', `<p>Un projet ne consomme pas son travail à un rythme constant. Les premières semaines sont lentes — mobilisation, cadrage du périmètre, attente de validations, période de préparation avant l’ordre de service — puis le milieu s’accélère parce que tout avance en parallèle, puis la fin ralentit à nouveau, suspendue aux signatures, aux essais et aux reprises.</p>
+      <p>Cumulez le travail dans le temps et cette allure dessine un S aplati : plat, raide, plat. Ce n’est pas une cible que quelqu’un aurait tracée ; elle découle de la manière dont le travail arrive réellement, et c’est précisément ce qui en fait un étalon honnête.</p>
+      <p>Une droite supposerait qu’un projet soit avancé de vingt pour cent au bout de vingt pour cent du temps. Avec une telle référence, tous les projets de l’histoire sembleraient en retard dès le premier mois, et le pilotage se résumerait à rassurer tout le monde jusqu’au moment où il devient trop tard pour agir. La courbe en S, elle, ne s’alarme pas d’un démarrage lent : elle l’avait prévu.</p>
+      <p>C’est aussi pour cela que la courbe est l’outil naturel du suivi financier de chantier. Une courbe de dépenses cumulées et une courbe d’avancement cumulé ont la même forme parce qu’elles décrivent le même phénomène vu sous deux angles : ce qui sort de la trésorerie et ce qui entre dans l’ouvrage.</p>`],
+
+    ['Lire le prévu face au réel', `<p>Deux courbes. La courbe <strong>prévue</strong> vient de votre référence : on répartit le poids de chaque tâche sur ses dates planifiées, puis on cumule. La courbe <strong>réelle</strong>, ou acquise, vient de l’avancement déclaré.</p>
+      <p>Lisez-les verticalement, à la date du jour :</p>
+      <ul>
+        <li><strong>Réel sous le prévu</strong> — en retard. La distance verticale correspond au travail qui vous manque, valorisé au budget.</li>
+        <li><strong>Réel au-dessus du prévu</strong> — en avance, ou bien votre avancement déclaré est optimiste. Les deux arrivent, et la seconde hypothèse mérite d’être écartée avant de célébrer.</li>
+        <li><strong>Des courbes qui divergent</strong> — le problème s’aggrave au lieu de se stabiliser. C’est l’allure la plus importante, et celle qu’un pourcentage isolé ne montre jamais. Un écart constant est un incident ; un écart qui s’ouvre est une tendance.</li>
+      </ul>
+      <p>Lisez-les <em>horizontalement</em> et vous obtenez quelque chose de plus parlant en réunion de chantier ou en COPIL : glissez vers la gauche depuis le point réel du jour jusqu’à la courbe prévue, et vous tenez la date à laquelle le plan attendait cet avancement. La distance, c’est votre retard en semaines — l’unité dans laquelle les gens discutent réellement, et la seule qui se compare à une date contractuelle.</p>
+      <p>Les deux lectures décrivent la même position. La lecture verticale parle aux financiers, la lecture horizontale parle aux conducteurs de travaux. Emportez les deux.</p>`],
+
+    ['La valeur acquise, sans le jargon', `<p>La gestion par la valeur acquise met un chiffre sur l’écart. Trois grandeurs, dont les sigles sont plus rebutants que les idées :</p>
+      <ul>
+        <li><strong>VP</strong> (valeur planifiée, ou PV) — le travail que vous deviez avoir achevé à ce jour, valorisé au budget. Dans le panneau, c’est <strong>Valeur planifiée</strong>.</li>
+        <li><strong>VA</strong> (valeur acquise, ou EV) — le travail <em>réellement</em> achevé, valorisé au même budget. Une tâche à 10 000 € achevée à 40 % a acquis 4 000 €. Ce qu’elle vous a coûté n’entre pas ici, volontairement. Dans le panneau : <strong>Valeur acquise</strong>.</li>
+        <li><strong>CR</strong> (coût réel, ou AC) — ce que vous avez effectivement dépensé, factures reçues et situations validées. Dans le panneau : <strong>Coût réel</strong>.</li>
+      </ul>
+      <p>De ces trois grandeurs découlent quatre indicateurs :</p>
+      <ul>
+        <li><strong>ED = VA − VP</strong> — l’<strong>Écart de délai</strong>. Négatif signifie en retard.</li>
+        <li><strong>EC = VA − CR</strong> — l’<strong>Écart de coût</strong>. Négatif signifie au-dessus du budget.</li>
+        <li><strong>IPD = VA ÷ VP</strong> — la <strong>Performance des délais</strong>. Sous 1,00, vous êtes en retard. Un IPD de 0,85 signifie que vous obtenez 85 centimes d’avancement par euro de plan.</li>
+        <li><strong>IPC = VA ÷ CR</strong> — la <strong>Performance des coûts</strong>. Sous 1,00, vous dépassez le budget.</li>
+      </ul>
+      <p>Cette séparation est tout l’intérêt de la méthode. Un projet peut tenir parfaitement son budget et être très en retard, ou tenir ses délais en perdant beaucoup d’argent — et un « pourcentage d’avancement » unique masque les deux. Vus comme deux axes, il n’y a que quatre endroits où se trouver :</p>
+      <!--FIG:evmquad|Performance des délais et performance des coûts sont indépendantes. Un pourcentage d’avancement unique écrase les deux axes en un seul chiffre.-->`],
+
+    ['Un exemple chiffré : les situations mensuelles d’un chantier', `<p>Le Groupe Lavandier fait construire l’extension de son atelier de production à Villeurbanne : 620 m², marché de travaux tous corps d’état, maîtrise d’œuvre confiée aux Ateliers Perrin. Ordre de service le <strong>lundi 1er septembre 2025</strong>, réception prévue fin juin 2026. <strong>Budget à l’achèvement (BAC) : 480 000 € HT.</strong> Le conducteur de travaux, Thibaut Marchand, produit une situation mensuelle de travaux ; la maîtrise d’ouvrage, elle, veut savoir si le chantier tient.</p>
+      <div class="worked">
+        <p><strong>La courbe prévue, mois par mois, telle qu’elle sort du planning de référence :</strong></p>
+        <table>
+          <thead><tr><th>Mois</th><th>Prévu du mois</th><th>Prévu cumulé (VP)</th></tr></thead>
+          <tbody>
+            <tr><td>septembre 2025</td><td>18 000 €</td><td>18 000 €</td></tr>
+            <tr><td>octobre 2025</td><td>34 000 €</td><td>52 000 €</td></tr>
+            <tr><td>novembre 2025</td><td>52 000 €</td><td>104 000 €</td></tr>
+            <tr><td>décembre 2025</td><td>60 000 €</td><td>164 000 €</td></tr>
+            <tr><td>janvier 2026</td><td>76 000 €</td><td>240 000 €</td></tr>
+            <tr><td>février 2026</td><td>76 000 €</td><td>316 000 €</td></tr>
+            <tr><td>mars 2026</td><td>62 000 €</td><td>378 000 €</td></tr>
+            <tr><td>avril 2026</td><td>44 000 €</td><td>422 000 €</td></tr>
+            <tr><td>mai 2026</td><td>34 000 €</td><td>456 000 €</td></tr>
+            <tr><td>juin 2026</td><td>24 000 €</td><td>480 000 €</td></tr>
+          </tbody>
+        </table>
+        <p>Terrassement et fondations en septembre et octobre, gros œuvre et charpente au cœur de l’hiver, puis second œuvre, essais et levée des réserves qui s’étalent en pente douce jusqu’aux OPR. La forme en S n’a pas été dessinée : elle sort du planning.</p>
+        <p><strong>Cinq situations mensuelles validées.</strong> La VA est la valeur au budget de ce qui est réellement exécuté, relevée contradictoirement sur le chantier ; le CR est le montant des situations validées et des factures reçues.</p>
+        <table>
+          <thead><tr><th>Situation</th><th>Prévu cumulé (VP)</th><th>Acquis cumulé (VA)</th><th>Coût réel cumulé (CR)</th></tr></thead>
+          <tbody>
+            <tr><td>30/09/2025</td><td>18 000 €</td><td>14 000 €</td><td>16 000 €</td></tr>
+            <tr><td>31/10/2025</td><td>52 000 €</td><td>45 000 €</td><td>51 000 €</td></tr>
+            <tr><td>30/11/2025</td><td>104 000 €</td><td>88 000 €</td><td>99 000 €</td></tr>
+            <tr><td>31/12/2025</td><td>164 000 €</td><td>141 000 €</td><td>158 000 €</td></tr>
+            <tr><td>31/01/2026</td><td>240 000 €</td><td>204 000 €</td><td>232 000 €</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Lecture au 31 janvier 2026</strong> : VP = 240 000 €, VA = 204 000 €, CR = 232 000 €.</p>
+        <ul>
+          <li><strong>ED = VA − VP</strong> = 204 000 − 240 000 = <strong>−36 000 €</strong> de travaux budgétés qui devraient être exécutés et ne le sont pas.</li>
+          <li><strong>IPD = VA ÷ VP</strong> = 204 000 ÷ 240 000 = <strong>0,85</strong>. Le plan se transforme en ouvrage à 85 % du rythme supposé.</li>
+          <li><strong>EC = VA − CR</strong> = 204 000 − 232 000 = <strong>−28 000 €</strong>. Ce qui a été construit a coûté vingt-huit mille euros de plus que sa valeur au budget.</li>
+          <li><strong>IPC = VA ÷ CR</strong> = 204 000 ÷ 232 000 = <strong>0,88</strong>. Chaque euro dépensé achète 88 centimes de valeur budgétée.</li>
+          <li><strong>Avancement = VA ÷ BAC</strong> = 204 000 ÷ 480 000 = <strong>42,5 %</strong>, contre <strong>50 %</strong> prévus. 42,5 % paraît tout à fait honorable tant qu’on ignore que 50 % étaient dus.</li>
+          <li><strong>Prévision à l’achèvement = BAC ÷ IPC</strong> = 480 000 ÷ 0,8793 = <strong>545 900 €</strong> environ. Si la performance de coût se maintient, le marché à 480 000 € atterrit à <strong>65 900 € au-dessus</strong>, avec encore <strong>313 900 €</strong> à décaisser.</li>
+        </ul>
+        <p><strong>La lecture horizontale, celle qu’on emmène en réunion.</strong> À quel moment le plan atteignait-il 204 000 € ? Entre fin décembre (164 000 €) et fin janvier (240 000 €) : il manque 40 000 € dans une mensualité prévue de 76 000 €, soit 40 ÷ 76 = 0,53 du mois. La courbe prévue franchissait 204 000 € vers le <strong>17 janvier 2026</strong>. Autrement dit : <strong>une quinzaine de jours calendaires, soit une dizaine de jours ouvrés de retard</strong>.</p>
+        <p>Un IPD de 0,85 et « dix jours ouvrés de retard » sont le même fait. Le ratio paraît sévère parce que janvier est la partie la plus raide de la courbe, celle où quelques jours coûtent beaucoup de valeur. Annoncez les deux : la MOA raisonne en euros, l’entreprise raisonne en jours, et l’écart de 28 000 € sur le coût est une conversation entièrement distincte de celle des délais — potentiellement un sujet d’avenant, pas de pénalités de retard.</p>
+      </div>`],
+
+    ['Les sept chiffres, et la façon précise dont chacun est mal lu', `<p>Chacun a son contresens attitré, et les contresens font plus de dégâts que l’absence de mesure.</p>
+      <table>
+        <thead><tr><th>Indicateur</th><th>Formule</th><th>Ce qu’il répond</th><th>Comment on le lit de travers</th></tr></thead>
+        <tbody>
+          <tr><td><strong>VP</strong></td><td>coût budgété du travail planifié</td><td>Combien devrait être fait à ce jour ?</td><td>Pris sur les dates actuelles au lieu d’une référence. Celles-ci ont absorbé tous les décalages, la VP vous suit donc partout et l’écart affiche zéro.</td></tr>
+          <tr><td><strong>VA</strong></td><td>BAC × avancement</td><td>Combien est fait, valorisé au budget ?</td><td>Elle ne vaut que ce que vaut l’avancement déclaré — le grand classique de la tâche « à 90 % » depuis trois semaines.</td></tr>
+          <tr><td><strong>CR</strong></td><td>coût réellement engagé</td><td>Combien cela a-t-il coûté à ce jour ?</td><td>Relevé avant l’arrivée des factures. Le CR est en retard sur la réalité : il flatte l’IPC au début et le punit ensuite.</td></tr>
+          <tr><td><strong>ED</strong></td><td>VA − VP</td><td>Combien de travail nous manque-t-il ?</td><td>Entendu comme un dépassement de budget. Il s’exprime en euros mais énonce un fait de <em>délai</em>.</td></tr>
+          <tr><td><strong>EC</strong></td><td>VA − CR</td><td>Payons-nous plus que ce que le travail vaut ?</td><td>Comparé au budget consommé plutôt qu’à la valeur acquise : « nous avons utilisé 47 % du budget » ne veut rien dire sans la VA.</td></tr>
+          <tr><td><strong>IPD</strong></td><td>VA ÷ VP</td><td>À quel rythme le plan devient-il de l’avancement ?</td><td>Il revient vers 1,00 en fin de projet quoi qu’il arrive : tout projet finit par acquérir la totalité de son BAC.</td></tr>
+          <tr><td><strong>IPC</strong></td><td>VA ÷ CR</td><td>Combien de valeur achète un euro dépensé ?</td><td>Affiché à exactement 1,00 par les outils qui déduisent le coût réel de l’avancement. Un IPC issu d’un calculateur qui ne vous a jamais demandé vos dépenses est de l’arithmétique, pas une donnée.</td></tr>
+        </tbody>
+      </table>
+      <p>Un dernier point, parce qu’il coûte leurs dates de fin à beaucoup de projets : la valeur acquise pondère tout par le budget, alors que le chemin critique ignore complètement le budget. Une validation de deux jours, peu coûteuse mais située sur la chaîne qui pilote la fin, ne fera presque pas bouger l’IPD. On peut afficher 1,05 et livrer en retard. Lisez la courbe en S <em>et</em> <a href="/fr/blog/critical-path-method.html">le chemin critique</a> ; ils ne répondent pas à la même question.</p>`],
+
+    ['Pourquoi l’outil refuse parfois d’afficher un IPC', `<p>Cela mérite d’être dit franchement, parce que la plupart des calculateurs gratuits font l’inverse.</p>
+      <p>Le coût réel est la seule donnée qu’un planning ne permet pas de déduire. Elle vient de votre comptabilité, de vos situations validées, de vos factures fournisseurs. Le raccourci tentant consiste à supposer qu’une tâche achevée à 40 % a consommé 40 % de son budget — mais alors le CR devient égal à la VA par construction, et <strong>l’IPC vaut exactement 1,00 pour tous les projets ayant jamais existé</strong>. Le chiffre paraît sérieux, ne réagit à rien, et annoncerait au Groupe Lavandier que son chantier est parfaitement dans les clous au moment précis où il dérape de 28 000 €.</p>
+      <p>gantts.app ne prend donc le coût réel qu’à un seul endroit : le champ <strong>Dépensé</strong> que vous saisissez sur une tâche. Si aucune tâche n’en porte, les indicateurs de coût — <strong>Coût réel</strong>, <strong>Écart de coût</strong>, <strong>Performance des coûts</strong>, <strong>Prévision à l’achèvement</strong> — restent vides, et le panneau les omet au lieu de les inventer. Les indicateurs de délai, <strong>Écart de délai</strong> et <strong>Performance des délais</strong>, fonctionnent quand même : ils ne demandent que des dates et un avancement. Une valeur absente est honnête ; une valeur fausse énoncée avec assurance ne l’est pas.</p>
+      <p>L’IPC de 0,88 de l’exemple n’existe que parce que quelqu’un a saisi 232 000 € de dépenses réelles. Aucun diagramme de Gantt ne connaît ce montant.</p>
+      <p>Pour la même raison, la courbe acquise <em>avant</em> la date du jour est reconstituée plutôt qu’enregistrée. L’outil conserve un relevé d’avancement par tâche, pas l’historique de tous les relevés passés ; une courbe acquise fidèle pour les mois écoulés n’est donc pas récupérable. Plutôt que de refuser de la tracer, nous la reconstituons sous une hypothèse annoncée : l’avancement s’est accumulé régulièrement sur les jours ouvrés écoulés de chaque tâche. C’est exact à la date de situation, là où on lit les chiffres, et approché en amont. Le lien <strong>Comment ce calcul est fait</strong>, sous le graphique, le dit noir sur blanc.</p>`],
+
+    ['Pas besoin de budget pour obtenir une courbe', `<p>La plupart des plannings ne portent aucune donnée de coût, et une courbe en S qui en exige une est une courbe que personne ne trace.</p>
+      <p>Si aucune tâche n’a de coût, gantts.app pondère chaque tâche par sa durée en jours ouvrés. Le panneau l’affiche sans détour : « Aucun coût n’est saisi sur les tâches, elles sont donc pondérées par leur durée en jours ouvrés — cela se lit comme une courbe d’avancement. » L’allure est la même, l’axe se lit en jours ouvrés plutôt qu’en euros, et l’<strong>Écart de délai</strong> comme la <strong>Performance des délais</strong> gardent exactement le sens qu’ils avaient plus haut — en jours au lieu d’euros. Ajoutez les budgets plus tard et le même panneau devient une courbe de valeur, sans rien changer d’autre.</p>
+      <p>Deux détails déplacent les chiffres. Seules les tâches feuilles comptent : une tâche récapitulative agrège déjà le budget de ses enfants, et compter les deux gonflerait le BAC de la profondeur de votre arborescence. Les jalons, de durée nulle, ne pèsent rien — ce qui est cohérent, mais surprend quand une réception attendue de longue date n’apparaît pas dans la courbe.</p>
+      <p>Une chose compte plus que tout le reste : <strong>posez une référence</strong>. Sans elle, « prévu » ne peut désigner que vos dates actuelles, lesquelles ont déjà absorbé chaque décalage. Le panneau le signale : « Aucune référence n’est enregistrée, le prévu correspond donc à vos dates actuelles — l’écart de délai affichera zéro tant que vous n’en aurez pas posé une. » Rassurant, et parfaitement inutile.</p>
+      <!--FIG:baseline|Les barres prévues face aux barres réelles. La référence est la copie figée à partir de laquelle la courbe prévue est construite — sans elle, le plan se déplace chaque fois que vous vous déplacez.-->
+      <p>Posez-la une seule fois, au moment où le planning est validé — après la période de préparation de chantier, par exemple, quand les dates ne sont plus des hypothèses. Le bandeau « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération. Voir aussi <a href="/fr/blog/gantt-baseline-variance.html">référence et écarts</a> pour la lecture barre par barre.</p>`],
+
+    ['Comment en construire une ici', `<p>Six étapes, à partir d’un planning que vous avez déjà.</p>
+      <ol>
+        <li>Construisez votre planning dans <a href="/fr/app.html">l’éditeur</a>, ou partez d’un <a href="/fr/templates.html">modèle</a> via <strong>✨ Modèles</strong>. Des dates à peu près justes suffisent pour commencer.</li>
+        <li>Ouvrez <strong>Référence</strong> et posez la référence une fois le planning validé. C’est cette action qui donne un sens au mot « prévu ».</li>
+        <li>Ouvrez une tâche et renseignez son <strong>Budget</strong> dans le tiroir, pour que la courbe se lise en euros plutôt qu’en jours ouvrés. Le champ est juste au-dessus de <strong>Dépensé</strong>.</li>
+        <li>Mettez à jour l’<strong>Avancement</strong> au fil du chantier, à chaque situation mensuelle — c’est la matière même de la courbe acquise.</li>
+        <li>Saisissez le <strong>Dépensé</strong> par tâche pour débloquer la <strong>Performance des coûts</strong>, l’<strong>Écart de coût</strong> et la <strong>Prévision à l’achèvement</strong>.</li>
+        <li>Ouvrez <strong>Courbe en S</strong> : la fenêtre « Courbe en S — prévu vs réel » trace <strong>Prévu</strong>, <strong>Acquis (avancement réel)</strong> et <strong>Coût réel</strong>, avec le <strong>Budget à l’achèvement</strong> et les six indicateurs sous le graphique.</li>
+      </ol>
+      <p>Pour la diffusion, <strong>⬇ Exporter</strong> propose <strong>📄 Document PDF</strong> pour le compte rendu de réunion, <strong>📊 Excel (.xlsx)</strong> si la MOA veut recalculer, et <strong>🖼 Image PNG</strong> pour un affichage en base vie. La vue <strong>Tableau</strong> donne les mêmes données ligne à ligne quand quelqu’un conteste un chiffre.</p>
+      <p>Tout s’exécute dans votre navigateur : pas de compte, pas de transfert de fichier, et aucun modèle de tableur à entretenir à la main. Le jour où une date bouge, la courbe est déjà à jour.</p>`],
   ],
+  callout: 'Une courbe en S ne vaut que par sa référence. Sans plan figé, « prévu » désigne vos dates du jour, qui ont déjà absorbé chaque décalage : les deux courbes se superposent et l’écart de délai affiche zéro jusqu’à la réception. Posez la référence une fois, à la validation du planning, et acceptez que la courbe soit désagréable à regarder — c’est très exactement à cela qu’elle sert.',
   faq: [
-    ['Qu’est-ce qu’une courbe en S en gestion de projet ?', 'Un graphique du travail prévu cumulé dans le temps. Sa forme en S vient de ce qu’un projet démarre lentement, accélère au milieu et ralentit à la fin. Comparée à l’avancement réel, la distance verticale entre les deux courbes donne l’avance ou le retard.'],
-    ['Quelle différence entre courbe en S et valeur acquise ?', 'La courbe en S est l’image ; la valeur acquise est le calcul derrière. Elle chiffre l’écart — ED, IPD, EC et IPC — là où la courbe en montre l’allure et le sens.'],
-    ['Que signifie un IPD de 0,9 ?', 'Vous avez acquis 90 % de la valeur que le plan prévoyait à ce jour : vous avez donc environ 10 % de retard. Sous 1,0 signifie en retard, au-dessus de 1,0 en avance.'],
-    ['Faut-il des données de coût pour une courbe en S ?', 'Non. Sans coûts, les tâches sont pondérées par leur durée en jours ouvrés et vous obtenez une courbe d’avancement — même allure, lue en pourcentage. Les coûts en font une courbe de valeur et débloquent les indicateurs financiers.'],
-    ['Pourquoi l’IPC ne s’affiche-t-il pas ?', 'Parce qu’aucun coût réel n’a été saisi. L’IPC exige une dépense réelle ; le déduire du pourcentage d’avancement le rendrait égal à 1,00 pour tous les projets. Saisissez un montant dépensé sur vos tâches et il apparaît.'],
-    ['Peut-on faire une courbe en S dans Excel ?', 'Oui, et c’est ce que font la plupart des gens — au prix d’une colonne cumulée et d’un graphique tenus à la main, à refaire à chaque changement de date. La générer depuis le planning supprime cette étape.'],
+    ['Qu’est-ce qu’une courbe en S en gestion de projet ?', 'Un graphique du travail prévu cumulé dans le temps. Sa forme en S vient de ce qu’un projet démarre lentement, accélère au milieu et ralentit à la fin. Comparée à l’avancement réel, la distance verticale entre les deux courbes donne l’avance ou le retard, valorisé au budget.'],
+    ['Quelle différence entre courbe en S et valeur acquise ?', 'La courbe en S est l’image ; la valeur acquise est le calcul derrière. Elle chiffre l’écart — écart de délai, performance des délais, écart de coût, performance des coûts — là où la courbe en montre l’allure et le sens.'],
+    ['Que signifie un IPD de 0,85 ?', 'Vous avez acquis 85 % de la valeur que le plan prévoyait à ce jour. Sous 1,00 signifie en retard, au-dessus de 1,00 en avance. L’indice ne dit pas combien de jours de retard vous avez : pour cela, lisez l’écart horizontalement, jusqu’à la date où la courbe prévue atteignait votre valeur acquise.'],
+    ['Comment calculer l’IPD et l’IPC à la main ?', 'Trois chiffres à la même date de situation : la valeur planifiée, la valeur acquise et le coût réel. L’IPD vaut VA ÷ VP, l’IPC vaut VA ÷ CR. Avec VP = 240 000 €, VA = 204 000 € et CR = 232 000 €, on obtient un IPD de 0,85 et un IPC de 0,88.'],
+    ['Faut-il des données de coût pour une courbe en S ?', 'Non. Sans coûts saisis, les tâches sont pondérées par leur durée en jours ouvrés et vous obtenez une courbe d’avancement — même allure, lue en jours. Les budgets en font une courbe de valeur et débloquent les indicateurs financiers.'],
+    ['Pourquoi la performance des coûts ne s’affiche-t-elle pas ?', 'Parce qu’aucun coût réel n’a été saisi. L’IPC exige une dépense réelle ; le déduire de l’avancement le rendrait égal à 1,00 pour tous les projets. Renseignez le champ Dépensé sur vos tâches et il apparaît, avec l’écart de coût et la prévision à l’achèvement.'],
   ],
   related: [['gantt-baseline-variance', 'Référence et écarts'], ['critical-path-method', 'Le chemin critique'], ['3-week-lookahead-schedule', 'Le planning glissant à 3 semaines']],
 },
 
 '3-week-lookahead-schedule': {
   h1: 'Le planning glissant à 3 semaines, sans le retaper chaque lundi',
-  metaTitle: 'Planning glissant à 3 semaines',
-  metaDesc: 'Ce qu’est un planning glissant à 3 semaines, pourquoi les équipes chantier l’utilisent, et comment le générer depuis le planning directeur.',
+  metaTitle: 'Planning glissant à 3 semaines — générateur gratuit',
+  metaDesc: 'Ce qu’est un planning glissant à 3 semaines, pourquoi les équipes chantier l’utilisent, et comment le générer depuis le planning directeur au lieu de le retaper dans un tableur.',
   date: '2026-07-19',
-  lead: 'Personne ne construit à partir d’un programme de dix-huit mois. On construit à partir des trois semaines qui viennent. Le <strong>planning glissant</strong> est cette fenêtre — la tranche du planning directeur assez proche pour être réelle — et sur la plupart des chantiers il est encore produit en recopiant des lignes dans un tableur à la main, tous les lundis.',
+  lead: 'Personne ne construit à partir d’un programme de dix-huit mois. On construit à partir des trois semaines qui viennent. Le <strong>planning glissant</strong> — le planning <em>lookahead</em>, si vous travaillez avec des équipes internationales — est cette fenêtre : la tranche du planning directeur assez proche pour être réelle. Et sur la plupart des chantiers, il est encore produit en recopiant des lignes dans un tableur à la main, tous les lundis, avant la réunion de chantier.',
   figIntro: 'Le même planning, filtré sur le travail qui touche la fenêtre :',
   sections: [
-    ['Ce qu’est réellement un planning glissant', '<p>Un planning glissant est un extrait court et roulant du planning directeur — trois semaines en général, parfois deux, quatre ou six — ne montrant que le travail qui touche cette fenêtre. Il avance d’une semaine à chaque fois, si bien qu’une même tâche apparaît dans plusieurs extraits successifs, à mesure qu’elle se rapproche et se précise.</p>\n        <p>Il existe parce qu’un planning directeur et un plan de travail sont deux documents aux rôles distincts. Le premier répond à « finirons-nous à temps » ; le second répond à « que se passe-t-il mardi, et quelqu’un a-t-il commandé l’acier ». Vouloir tenir une réunion de chantier sur un programme de deux cents lignes, c’est la raison pour laquelle on l’imprime en A0 avant de l’ignorer.</p>\n        <p>Dans le vocabulaire du Last Planner, c’est dans cette fenêtre que se repèrent les <em>contraintes</em> : le travail est assez proche pour qu’on puisse vérifier que l’autorisation, les matériaux, l’équipe et le corps d’état précédent seront bien au rendez-vous.</p>'],
-    ['Chevauchement, pas inclusion — le détail que tout le monde rate', '<p>Voici la règle qui rend un planning glissant correct, et celle que les tableurs faits à la main enfreignent le plus souvent.</p>\n        <p>Une tâche appartient à la fenêtre si elle la <strong>chevauche</strong> — pas si elle y tient entièrement. Le lot de fondations de huit mois commencé en mars et courant jusqu’en novembre se déroule en ce moment même, et c’est précisément le travail que l’équipe de chantier a le plus besoin d’avoir sous les yeux. Filtrez sur les tâches qui commencent <em>et</em> finissent dans les trois semaines et vous éliminez toutes les activités longues du chantier, pour obtenir un extrait très propre décrivant un projet sur lequel personne ne travaille.</p>\n        <p>Le test tient en deux comparaisons, pas quatre :</p>\n        <p><code>tâche.début ≤ fenêtre.fin &nbsp;ET&nbsp; tâche.fin ≥ fenêtre.début</code></p>\n        <p>C’est toute la règle, et c’est exactement celle qu’applique gantts.app.</p>'],
-    ['Pourquoi la fenêtre est calée sur le lundi', '<p>Le planning glissant est un rituel hebdomadaire rattaché à une réunion hebdomadaire. Une fenêtre allant d’un jeudi à un jeudi couperait la semaine de travail en deux et ne servirait à personne.</p>\n        <p>La fenêtre revient donc toujours au début de semaine. Ouvrez l’outil un mercredi et vous obtenez la fenêtre ouverte le lundi, pas un bloc de trois semaines démarrant en milieu de semaine. Les flèches la décalent d’une semaine à la fois quand il faut regarder plus loin, et « Cette semaine » la ramène.</p>'],
-    ['La générer plutôt que la retaper', '<p>Les modèles de planning glissant à 3 semaines ne manquent pas — Smartsheet en publie un, une demi-douzaine d’autres aussi, et il existe même un format standard utilisé sur les chantiers de la marine américaine. Chacun d’eux est une grille vierge à remplir à la main.</p>\n        <p>C’est là qu’est le vrai problème. Le planning contient déjà la réponse ; le travail hebdomadaire consiste à la recopier, et c’est la recopie qui produit les erreurs et l’obsolescence. Oubliez une tâche, ou mettez le directeur à jour sans toucher à l’extrait, et les deux documents se contredisent en silence.</p>\n        <p>Dans gantts.app, le planning glissant est une <em>vue</em> des mêmes données :</p>\n        <ol>\n          <li>Passez la <strong>Vue</strong> sur <strong>Planning glissant</strong>.</li>\n          <li>Choisissez la fenêtre — 1, 2, 3, 4, 6 ou 8 semaines.</li>\n          <li>Décalez-la avec les flèches, ou cliquez sur « Cette semaine » pour revenir à aujourd’hui.</li>\n          <li>Exportez en PDF ou PNG pour l’affichage, ou en Excel pour la réunion.</li>\n        </ol>\n        <p>Le graphique zoome sur la fenêtre, de sorte que trois semaines sont lisibles au lieu d’être comprimées sur un axe de dix-huit mois. Un bandeau en haut indique quelle fenêtre est affichée et combien de tâches sont masquées, parce qu’un graphique filtré qui ne dit pas qu’il l’est se lit comme un plan auquel il manque des tâches.</p>\n        <p>Modifiez une date dans le planning directeur et l’extrait est déjà juste. Il n’y a rien à recopier.</p>'],
-    ['En faire un document utile, pas un simple filtre', '<ul>\n          <li><strong>Un nom sur chaque ligne.</strong> Un planning glissant sans responsable par tâche est une liste de vœux. Activez la colonne Responsable.</li>\n          <li><strong>Découpez le travail proche plus finement que le travail lointain.</strong> Une tâche intitulée « Aménagement du premier étage — 6 semaines » convient au programme et ne sert à rien dans un extrait à trois semaines. Découpez-la à mesure qu’elle approche.</li>\n          <li><strong>Passez en revue les contraintes, pas seulement les dates.</strong> Tout l’intérêt de regarder trois semaines devant soi, c’est qu’il reste du temps pour corriger ce qui manque.</li>\n          <li><strong>Gardez-le court.</strong> Si l’extrait atteint soixante lignes, soit la fenêtre est trop longue, soit le plan est trop détaillé pour cette réunion.</li>\n        </ul>'],
+    ['Ce qu’est réellement un planning glissant', `<p>Un planning glissant est un extrait court et roulant du planning directeur — trois semaines en général, parfois deux, quatre ou six — ne montrant que le travail qui touche cette fenêtre. Il avance d’une semaine à chaque fois, si bien qu’une même tâche apparaît dans plusieurs extraits successifs, à mesure qu’elle se rapproche et se précise.</p>
+      <p>Il existe parce qu’un planning directeur et un plan de travail sont deux documents aux rôles distincts. Le premier répond à « finirons-nous à temps, et faut-il craindre des pénalités de retard » ; le second répond à « que se passe-t-il mardi sur le niveau R+2, et quelqu’un a-t-il lancé la commande des gaines ». Vouloir tenir une réunion de chantier hebdomadaire sur un programme de deux cents lignes, c’est exactement la raison pour laquelle on l’imprime en A0 avant de l’ignorer.</p>
+      <p>C’est en France le document qui alimente le rituel réel : la réunion de chantier du mardi ou du jeudi, animée par la maîtrise d’œuvre, dont sort le compte rendu de chantier qui fait foi entre les lots. Le planning glissant est la pièce que chaque conducteur de travaux devrait avoir sous les yeux à ce moment-là, et le compte rendu en est la trace écrite.</p>
+      <p>Dans le vocabulaire du Last Planner, c’est dans cette fenêtre que se repèrent les <em>contraintes à lever</em>. Et les trois semaines ne sont pas trois semaines équivalentes : elles durcissent à mesure qu’elles approchent.</p>
+      <ul>
+        <li><strong>La semaine 1 est gelée.</strong> Les équipes sont réservées, les approvisionnements sont sur site, la grue est planifiée. Seul un aléa que personne ne pouvait prévoir modifie encore une ligne.</li>
+        <li><strong>La semaine 2 est engagée mais souple.</strong> Les contraintes sont levées, ou bien elles portent un nom de responsable et une date. C’est la semaine où il vous reste de la marge pour corriger.</li>
+        <li><strong>La semaine 3 est de la préparation.</strong> Le travail est identifié et passé au crible, pas promis. Les tâches ont le droit de bouger : c’est précisément à cela que sert cette semaine-là.</li>
+      </ul>
+      <!--FIG:rolling|Chaque lundi la fenêtre avance d’un cran : la semaine 3 devient la semaine 2, la semaine 2 se gèle, et une nouvelle semaine de préparation apparaît.-->`],
+
+    ['Chevauchement, pas inclusion — le détail que tout le monde rate', `<p>Voici la règle qui rend un planning glissant correct, et celle que les tableurs faits à la main enfreignent le plus souvent. Une tâche appartient à la fenêtre si elle la <strong>chevauche</strong> — pas si elle y tient entièrement.</p>
+      <p>Le lot gros œuvre de douze semaines commencé en janvier et courant jusqu’en avril se déroule en ce moment même, et c’est précisément le travail que l’équipe de chantier a le plus besoin d’avoir sous les yeux. Filtrez sur les tâches qui commencent <em>et</em> finissent dans les trois semaines et vous éliminez toutes les activités longues du chantier : vous obtenez un extrait très propre décrivant un projet sur lequel personne ne travaille.</p>
+      <p>Le test tient en deux comparaisons, pas quatre :</p>
+      <p><code>tâche.début ≤ fenêtre.fin &nbsp;ET&nbsp; tâche.fin ≥ fenêtre.début</code></p>
+      <p>C’est toute la règle, et c’est exactement celle qu’applique gantts.app. Une barre de gros œuvre de douze semaines qui ne fait que <em>traverser</em> la fenêtre, sans y commencer ni s’y terminer, apparaît donc bel et bien dans la vue. C’est voulu, et c’est la chose que les gens comprennent de travers.</p>
+      <p>Une conséquence : une tâche récapitulative n’est jamais retenue sur ses propres dates. Les groupes n’entrent qu’à titre de <em>contexte</em> — quand une tâche située dans un groupe touche la fenêtre, ses parents la suivent, présentés comme des intitulés de lot et non comme du travail sur lequel vous vous engagez. Vos lignes n’arrivent ainsi jamais orphelines dans une liste à plat.</p>
+      <!--FIG:lookahead|Seules les barres qui traversent la zone grisée passent le filtre ; les intitulés de lot suivent à titre de contexte.-->`],
+
+    ['Pourquoi la fenêtre est calée sur le lundi', `<p>Le planning glissant est un rituel hebdomadaire rattaché à une réunion hebdomadaire. Une fenêtre allant d’un jeudi à un jeudi couperait la semaine de travail en deux et ne servirait à personne autour de la table.</p>
+      <p>La fenêtre revient donc toujours au début de semaine. Ouvrez l’outil un mercredi et vous obtenez la fenêtre ouverte le lundi, pas un bloc de trois semaines démarrant en milieu de semaine. Les flèches la décalent d’une semaine à la fois quand il faut regarder plus loin, et « Cette semaine » la ramène à aujourd’hui.</p>
+      <p>Attention : ce sont des semaines calendaires, pas des semaines ouvrées. « Trois semaines devant soi », cela veut dire vingt et un jours calendaires, pas quinze jours ouvrés. Sur une fenêtre qui contient un pont — le 8 mai, l’Ascension — la différence entre les deux lectures fait deux jours de production, et deux jours suffisent à faire rater un OPR.</p>`],
+
+    ['Un exemple concret : Résidence Les Garennes, tranche B', `<div class="worked">
+      <p><strong>L’opération.</strong> Résidence Les Garennes à Villeurbanne, 48 logements, tranche B. Maîtrise d’ouvrage : Groupe Lavandier. Claire Vasseur, conductrice de travaux chez Ateliers Perrin, tient le planning depuis la période de préparation de chantier ; l’OS de démarrage est tombé le 5 janvier 2026. Deux chefs de chantier à ses côtés : Thibaut Marchand sur le CVC et l’électricité, Nadia Bouchard sur les cloisons et doublages. <strong>La fenêtre s’ouvre le lundi 16 mars 2026 et court jusqu’au dimanche 5 avril</strong> — semaines S12 à S14. Sur 214 tâches au planning directeur, 13 chevauchent la fenêtre.</p>
+      <table>
+        <thead><tr><th>Semaine</th><th>Lot / tâche</th><th>Responsable</th><th>Ce qui bloque</th></tr></thead>
+        <tbody>
+          <tr><td>S12 — gelée<br>16–22 mars</td><td>Gros œuvre — voiles R+3 (démarré le 12 janvier, fin le 10 avril)</td><td>Ateliers Perrin</td><td>Rien — traverse la fenêtre, donc affiché</td></tr>
+          <tr><td>S12 — gelée<br>16–22 mars</td><td>CVC — pose des chemins de câbles R+1</td><td>T. Marchand</td><td>Rien — matériel livré le 10 mars</td></tr>
+          <tr><td>S13 — engagée<br>23–29 mars</td><td>Cloisons — ossatures R+1 aile ouest</td><td>N. Bouchard</td><td>Plaques : délai de livraison annoncé au 24 mars</td></tr>
+          <tr><td>S13 — engagée<br>23–29 mars</td><td>Électricité — attentes tableaux R+1</td><td>T. Marchand</td><td>Plan de synthèse non visé par la MOE</td></tr>
+          <tr><td>S14 — préparation<br>30 mars–5 avril</td><td>Cloisons — doublages R+2, jalon fin de trame</td><td>N. Bouchard</td><td>Protection collective à valider avec le CSPS</td></tr>
+        </tbody>
+      </table>
+      <p><em>Ce que Claire a fait de la colonne de droite.</em> Elle n’a pas discuté des dates : elle a mis un nom et une date sur chaque contrainte. Relance du fournisseur de plaques par le service achats pour le 24 mars ; visa du plan de synthèse demandé à la MOE pour le 20 mars ; point CSPS calé sur la réunion de chantier du 24. Trois lignes dans le compte rendu de chantier, pas trois discussions.</p>
+      <p><strong>Une semaine plus tard, la fenêtre a glissé sur S13–S15, du 23 mars au 12 avril.</strong> Claire a cliqué une fois sur la flèche ; rien n’a été retapé. L’ancienne semaine engagée était désormais gelée — et les attentes tableaux n’étaient pas prêtes. Le visa n’est pas revenu le 20 mars : la remarque de la MOE est arrivée le 26, demandant un déplacement de gaine dans le circuit de la circulation commune. La tâche n’a <em>pas</em> été promue de force dans la semaine gelée. Elle est passée à la semaine du 6 avril, codée « visa en attente », et les quatre électriciens de Thibaut sont partis sur les attentes du R+2 — déjà rendues prêtes dans l’ancienne semaine 3. Les plaques, elles, sont bien arrivées le 24 mars : les ossatures ont démarré à l’heure.</p>
+      <p><strong>Le score.</strong> Six tâches promises pour la semaine du 23 mars, cinq réalisées comme prévu : PPC de 83 %, un seul code de motif. Ce code — « visa en attente » — était apparu trois fois en neuf semaines. C’est cela qui a réellement changé l’opération : Claire a sorti les demandes de visa de la fenêtre à trois semaines pour les passer sur un crible à six semaines, parce que trois semaines étaient plus courtes que le délai réel de la MOE. Douze semaines plus tard, à l’approche des OPR et de la levée des réserves, c’était la seule catégorie de contrainte qui n’encombrait plus les comptes rendus.</p>
+    </div>`],
+
+    ['Ce que passe réellement en revue une revue de contraintes', `<p>Ce n’est pas une réunion d’avancement, c’est une réunion de criblage : pour chaque tâche qui entre en semaine 2, on demande si ce dont elle a besoin sera là, et sinon, qui va aller le chercher. Sept catégories couvrent l’essentiel de ce qu’on rencontre sur un chantier.</p>
+      <table>
+        <thead><tr><th>Contrainte</th><th>La question que l’on pose</th><th>Qui la lève</th></tr></thead>
+        <tbody>
+          <tr><td>Approvisionnements</td><td>Commandé ? Délai de livraison plus court que le temps restant ? Une aire de stockage prévue ?</td><td>Service achats</td></tr>
+          <tr><td>Études et plans</td><td>Plan visé bon pour exécution, et la réponse à la fiche question est-elle revenue ?</td><td>Responsable études / MOE</td></tr>
+          <tr><td>Main-d’œuvre</td><td>Le bon corps d’état, en nombre suffisant, réservé et accueilli sur le chantier cette semaine-là ?</td><td>Chef de chantier du lot</td></tr>
+          <tr><td>Matériel</td><td>Engin sur site, vérifié, et pas déjà réservé par un autre lot au même moment ?</td><td>Conducteur de travaux</td></tr>
+          <tr><td>Autorisations et visas</td><td>Demandé — et le délai réel de celui qui vise tient-il dans la fenêtre ?</td><td>Le titulaire de la relation</td></tr>
+          <tr><td>Travaux précédents</td><td>Le lot qui précède a-t-il vraiment fini et livré la zone, pas « presque terminé » ?</td><td>Pilote de planning / titulaire du lot</td></tr>
+          <tr><td>Accès et sécurité</td><td>L’équipe peut-elle y accéder : échafaudage, éclairage, cheminement conforme au PGC ?</td><td>Conducteur de travaux / CSPS</td></tr>
+        </tbody>
+      </table>
+      <p>Une tâche dont une contrainte reste ouverte n’entre pas dans la semaine gelée. La promouvoir quand même, c’est la manière la plus sûre de transformer un planning glissant en décoration murale.</p>`],
+
+    ['Le PPC : mesurer la promesse', `<p>Un planning glissant que personne ne note n’est qu’un diagramme de Gantt plus court. Le livrable n’est pas la liste filtrée : c’est un <strong>engagement</strong>, et un engagement que personne ne mesure est un vœu.</p>
+      <p>Le <strong>pourcentage de plan réalisé</strong> — le PPC — en est la mesure. À la fin de la semaine gelée, on divise les activités terminées comme promis par les activités promises. Six promises, cinq faites : 83 %. Pas de crédit partiel : une activité achevée à 90 % compte zéro, parce que le corps d’état qui vient derrière ne peut toujours pas démarrer.</p>
+      <p>Cette dureté est le point central. Le PPC mesure la fiabilité de votre plan, pas la quantité de travail abattue. Une semaine d’efforts imprévus considérables qui n’a tenu que la moitié de ses promesses reste une mauvaise semaine, parce que tout le monde en aval s’était organisé sur la promesse.</p>
+      <p>Le <em>motif</em> attaché à chaque échec compte davantage que le chiffre. Un code par activité manquée — visa en attente, approvisionnement en retard, lot précédent inachevé, intempéries, modification de plan. Au bout de dix semaines, les codes s’empilent et désignent d’eux-mêmes la seule chose qui vaille la peine d’être corrigée.</p>
+      <p>Les équipes qui commencent tournent entre 50 et 60 % ; un travail suivi de levée des contraintes amène à 75–85 %. Des semaines entières au-dessus de 90 % signalent en général un plan matelassé plutôt qu’une équipe exemplaire. Suivez la tendance et les motifs, pas le chiffre absolu.</p>
+      <!--FIG:milestone|On note la semaine par rapport à ce qui avait été promis, pas par rapport à ce qui s’est trouvé commode.-->`],
+
+    ['La générer plutôt que la retaper', `<p>Les modèles de planning glissant à 3 semaines ne manquent pas — Smartsheet en publie un, une demi-douzaine d’autres aussi. Chacun d’eux est une grille vierge à remplir à la main, et c’est là qu’est le vrai problème. Le planning contient déjà la réponse ; le travail hebdomadaire consiste à la recopier, et c’est la recopie qui produit les erreurs. Mettez le directeur à jour sans toucher à l’extrait et les deux documents se contredisent en silence — jusqu’au jour où quelqu’un s’en aperçoit en réunion de chantier.</p>
+      <p>Dans gantts.app, le planning glissant est une <em>vue</em> des mêmes données :</p>
+      <ol>
+        <li>Ouvrez le menu <strong>Vue</strong> et choisissez <strong>Semaines à venir</strong>.</li>
+        <li>Réglez la longueur de la fenêtre — 1, 2, 3, 4, 6 ou 8 semaines.</li>
+        <li>Décalez-la avec les flèches, ou cliquez sur <strong>Cette semaine</strong> pour revenir à aujourd’hui.</li>
+        <li>Activez la colonne <strong>Assigné à</strong> dans <strong>Colonnes</strong> pour que chaque ligne porte un nom.</li>
+        <li>Puis <strong>⬇ Exporter</strong> ▸ <strong>📄 Document PDF</strong> ou <strong>🖼 Image PNG</strong> pour l’affichage en base vie, ou <strong>📊 Excel (.xlsx)</strong> pour la réunion.</li>
+      </ol>
+      <p>Le graphique zoome sur la fenêtre, de sorte que trois semaines sont lisibles au lieu d’être comprimées sur un axe de dix-huit mois. Un bandeau en haut nomme la fenêtre et le décompte — « 16 mars – 5 avril, 13 tâches sur 214 » — parce qu’un graphique filtré qui ne dit pas qu’il l’est se lit comme un plan auquel il manque des tâches. <strong>Afficher toutes les tâches</strong> rétablit le programme entier.</p>
+      <p>Par défaut la fenêtre suit la date du jour : elle avance donc toute seule entre deux visites. Les flèches la fixent sur un lundi précis jusqu’à ce que vous cliquiez sur Cette semaine. Modifiez une date dans le planning directeur et l’extrait est déjà juste.</p>`],
+
+    ['En faire un document utile, pas un simple filtre', `<ul>
+        <li><strong>Un nom sur chaque ligne.</strong> Un planning glissant sans responsable par tâche est une liste de vœux. Activez la colonne <strong>Assigné à</strong> et nommez une personne, pas une entreprise.</li>
+        <li><strong>Découpez le travail proche plus finement que le travail lointain.</strong> « Aménagement du R+1 — 6 semaines » convient au planning directeur et ne sert à rien ici. Découpez la tâche à mesure qu’elle approche de la fenêtre.</li>
+        <li><strong>Gardez-le court.</strong> Soixante lignes signifient soit que la fenêtre est trop longue, soit que le plan est trop détaillé pour cette réunion.</li>
+        <li><strong>Criblez les délais longs sur un horizon plus long.</strong> Si un visa demande cinq semaines, un crible à trois semaines détectera le problème à chaque fois — et toujours trop tard.</li>
+        <li><strong>Consignez les échecs.</strong> Un code de motif écrit au feutre sur un tableau blanc a disparu jeudi. Dans le compte rendu de chantier, il existe encore dans neuf semaines, au moment où il devient une décision.</li>
+      </ul>
+      <p>Un dernier réflexe utile : avant de figer la semaine 1, posez une <strong>Référence</strong> sur le planning directeur. La fenêtre glissante vous dit ce qui se passe maintenant ; la référence vous dira, dans deux mois, si ces arbitrages hebdomadaires ont tenu la date de réception.</p>`],
   ],
+  callout: 'Le planning glissant ne se juge pas sur sa mise en page mais sur ce qu’il change avant la réunion de chantier. S’il sort de l’imprimante sans qu’aucune contrainte ait reçu un nom et une date, vous avez produit un extrait, pas un engagement — et le PPC de la semaine suivante vous le dira.',
   faq: [
-    ['Qu’est-ce qu’un planning glissant à 3 semaines ?', 'Un extrait roulant du planning directeur ne montrant que le travail qui touche les trois semaines à venir. Il est actualisé chaque semaine et sert à coordonner le travail quotidien et à repérer les contraintes tant qu’il reste du temps pour les lever.'],
-    ['Pourquoi trois semaines ?', 'C’est assez long pour que les contraintes — matériaux, autorisations, équipes — puissent encore être levées, et assez court pour que les dates soient crédibles. Les fenêtres de deux, quatre ou six semaines sont également courantes ; la bonne longueur dépend de vos délais d’approvisionnement.'],
-    ['Une tâche longue commencée il y a des mois doit-elle y figurer ?', 'Oui. Tout ce qui chevauche la fenêtre lui appartient. Filtrer sur les tâches qui tiennent entièrement dans trois semaines élimine précisément le travail long qui se déroule en ce moment.'],
-    ['Est-ce la même chose que le planning directeur ?', 'Non. Le planning directeur dit si le projet finira à temps. Le planning glissant dit ce qui se passe cette semaine et qui le fait. Ils viennent des mêmes données mais servent des réunions différentes.'],
-    ['Peut-on faire un planning glissant dans Excel ?', 'Oui, et la plupart des équipes le font — en retapant chaque semaine des lignes venues du programme. Le générer comme une vue du planning supprime la recopie et les écarts qui l’accompagnent.'],
-    ['Comment imprimer le planning glissant ?', 'Passez sur la vue Planning glissant et exportez en PDF ou PNG. L’export reflète ce qui est à l’écran : vous obtenez la fenêtre, pas le programme entier.'],
+    ['Qu’est-ce qu’un planning glissant à 3 semaines ?', 'Un extrait roulant du planning directeur ne montrant que le travail qui touche les trois semaines à venir. Il est actualisé chaque semaine, avant la réunion de chantier, et sert à coordonner le travail quotidien et à repérer les contraintes tant qu’il reste du temps pour les lever.'],
+    ['Pourquoi trois semaines ?', 'C’est assez long pour que les contraintes — approvisionnements, visas, équipes — puissent encore être levées, et assez court pour que les dates soient crédibles. Les fenêtres de deux, quatre ou six semaines sont également courantes ; la bonne longueur dépend de vos délais réels de livraison et de visa.'],
+    ['Une tâche longue commencée il y a des mois doit-elle y figurer ?', 'Oui. Le filtre retient tout ce qui chevauche la fenêtre : une tâche y apparaît si elle commence avant la fin de la fenêtre et se termine après son début. Un lot de gros œuvre de douze semaines qui ne fait que traverser la fenêtre est donc bien affiché — c’est justement le travail en cours sur le chantier.'],
+    ['Qu’est-ce que le PPC et quel score viser ?', 'Les activités terminées comme promis divisées par les activités promises, sans crédit partiel. Les équipes qui débutent tournent à 50–60 % ; 75–85 % est un bon niveau. Au-dessus de 90 % de façon durable, le plan est généralement matelassé. Les codes de motif comptent plus que le chiffre.'],
+    ['Que fait-on d’une tâche dont les contraintes ne sont pas levées ?', 'Elle sort de la semaine gelée au lieu d’être promise quand même, le motif est consigné dans le compte rendu de chantier, et l’équipe est redéployée sur du travail déjà rendu prêt. Promouvoir une tâche non prête détruit exactement la fiabilité que le planning glissant sert à construire.'],
+    ['Peut-on le faire dans Excel, et comment l’imprimer ?', 'La plupart des équipes le font, en retapant chaque semaine des lignes venues du programme ; le générer comme une vue supprime la recopie et les écarts qui l’accompagnent. Pour l’imprimer, passez la Vue sur Semaines à venir puis exportez en PDF ou PNG : l’export reflète ce qui est à l’écran, vous obtenez donc la fenêtre et non le programme entier.'],
   ],
   related: [['critical-path-method', 'Le chemin critique'], ['s-curve-project-management', 'Courbe en S et valeur acquise'], ['gantt-chart-dependencies', 'Les quatre types de liens']],
 },
@@ -422,21 +966,115 @@ const G = {
   metaTitle: 'Syntaxe Mermaid gantt et éditeur visuel',
   metaDesc: 'La syntaxe Mermaid gantt expliquée — sections, marqueurs, antériorités, exclusions — les pièges classiques, et comment éditer puis récupérer le texte.',
   date: '2026-07-19',
-  lead: 'Les blocs gantt de Mermaid s’affichent nativement dans GitHub, GitLab, Notion et Obsidian, ce qui en fait le moyen le plus simple de placer un planning là où le travail se trouve déjà. Ils sont aussi pénibles à <em>modifier</em> : déplacez une date et vous recalculez toute la chaîne de <code>after</code> en aval à la main. Voici la syntaxe, les pièges, et l’étape manquante — modifier visuellement et récupérer le texte.',
+  lead: 'Les blocs gantt de Mermaid s’affichent nativement dans GitHub, GitLab, Notion et Obsidian, ce qui en fait le moyen le plus simple de placer un planning là où le travail se trouve déjà : dans le dépôt, relisible en revue de code, versionné avec le reste. Ils sont en revanche pénibles à <em>modifier</em> : déplacez une seule date et vous recalculez à la main toute la chaîne de <code>after</code> en aval. Cet article passe la syntaxe en revue champ par champ, donne un exemple complet à coller dans un README, détaille les pièges qui s’affichent parfaitement tout en étant faux, et décrit l’étape qui manque partout ailleurs — modifier visuellement, puis récupérer le texte.',
   figIntro: 'Le même planning en texte et en barres :',
   sections: [
-    ['La syntaxe en une passe', '<p>Un bloc s’ouvre par <code>gantt</code> et quelques lignes d’en-tête, puis des titres <code>section</code> avec des lignes de tâches en dessous.</p>\n        <p>Une ligne de tâche, c’est un nom, deux-points, puis des champs séparés par des virgules :</p>\n        <p><code>Nom de la tâche :marqueur, id, début, durée</code></p>\n        <ul>\n          <li><strong>Marqueurs</strong> — au choix <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Facultatifs.</li>\n          <li><strong>id</strong> — un mot simple, nécessaire seulement si une autre tâche s’y réfère.</li>\n          <li><strong>début</strong> — une date, ou <code>after unId</code>, ou rien pour enchaîner sur la tâche précédente.</li>\n          <li><strong>durée</strong> — <code>5d</code>, <code>2w</code>, ou une seconde date.</li>\n        </ul>\n        <p>Les lignes d’en-tête à connaître : <code>dateFormat</code> (le format d’écriture de vos dates), <code>excludes weekends</code> (ignorer les samedis et dimanches), <code>title</code> et <code>axisFormat</code> (le libellé de l’axe).</p>'],
-    ['Quatre choses qui vous piégeront', '<p><strong>1. Les durées incluent le jour de début.</strong> <code>5d</code> à partir du lundi 5 court jusqu’au vendredi 9, pas jusqu’au 10. Une erreur d’un jour ici décale toutes les tâches du fichier et s’affiche pourtant parfaitement.</p>\n        <p><strong>2. <code>after</code> combiné à <code>excludes weekends</code>, c’est là que sont les vrais bugs.</strong> Si un prédécesseur finit un vendredi, son successeur démarre le <em>lundi</em> — pas le samedi. Tout outil qui résout <code>after</code> en ajoutant un jour calendaire placera discrètement des tâches le week-end dans un fichier qui l’interdit explicitement. (Le nôtre l’a fait, brièvement. Le test qui l’a détecté vérifie désormais qu’aucune date calculée ne tombe sur un jour exclu.)</p>\n        <p><strong>3. Il n’y a aucun échappement.</strong> Les deux-points ouvrent la liste des champs et la virgule les sépare : une tâche nommée <code>Phase 2 : conception, revue</code> devient donc tout autre chose. Bannissez deux-points et virgules des noms de tâches.</p>\n        <p><strong>4. Une durée illisible devient zéro, en silence.</strong> Écrivez <code>3dd</code> et vous obtenez une barre de longueur nulle plutôt qu’une erreur.</p>'],
-    ['Ce que Mermaid ne sait pas exprimer', '<p>C’est un format de diagramme, pas un moteur de planification, et les manques comptent dès qu’on fait des aller-retours :</p>\n        <ul>\n          <li><strong>Pas de pourcentage d’avancement.</strong> Seulement <code>done</code> et <code>active</code>. Une tâche à 40 % et une tâche à 90 % sont toutes deux simplement « active ».</li>\n          <li><strong>Uniquement du Fin-Début.</strong> <code>after</code> est un lien FD sans décalage. Le Début-Début, le Fin-Fin et les décalages n’ont nulle part où aller.</li>\n          <li><strong>Sections à plat.</strong> Aucun groupe imbriqué.</li>\n          <li><strong>Ni ressources, ni coûts, ni référence.</strong></li>\n        </ul>\n        <p>Un aller-retour perd donc de l’information, de façon connue et sans surprise. gantts.app convertit 100 % en <code>done</code> et toute valeur intermédiaire en <code>active</code> à l’export, et réimporte <code>active</code> comme 50 % — une estimation, qu’il vous signale plutôt que de vous la laisser découvrir dans un rapport d’avancement. Les liens qu’il ne peut pas écrire en <code>after</code> retombent sur des dates absolues, qui restent justes même si elles cessent d’être maintenables.</p>\n        <p>Une asymétrie assumée : <code>crit</code> est écrit à l’export mais ignoré à l’import. La criticité se <em>calcule</em> à partir du graphe des antériorités, et faire confiance à une valeur affirmée dans un diagramme peut-être périmé reviendrait à colorer en rouge une chaîne qui n’est pas critique.</p>'],
-    ['Modifier visuellement, puis recoller le texte', '<p>Beaucoup d’outils affichent du Mermaid. Ce qui manquait, c’est l’autre sens — déplacer des barres et récupérer la syntaxe.</p>\n        <ol>\n          <li>Collez ou ouvrez votre diagramme dans gantts.app — un fichier <code>.mmd</code>, ou un <code>.md</code> contenant un bloc délimité, les deux fonctionnent. La détection se fait sur le contenu, pas sur l’extension.</li>\n          <li>Déplacez, reliez et redatez comme sur n’importe quel autre planning. <code>excludes weekends</code> active le calendrier ouvré, de sorte que les dates produites concordent avec le fichier d’origine.</li>\n          <li><strong>Export ▸ Mermaid gantt</strong>, copiez, recollez dans votre README.</li>\n        </ol>\n        <p>Il y a là un effet de bord agréable pour qui rédige ses plannings avec un LLM : demandez de la syntaxe Mermaid gantt, collez la réponse, et vous obtenez un vrai diagramme modifiable avec son chemin critique — sans clé d’API ni serveur.</p>'],
+    ['La syntaxe en une passe', `<p>Un bloc s’ouvre par le mot-clé <code>gantt</code>, suivi de quelques lignes d’en-tête, puis de titres <code>section</code> sous lesquels viennent les lignes de tâches. L’indentation est une convention de lisibilité, pas une règle de grammaire : Mermaid lit aussi bien un fichier aligné qu’un fichier collé de travers.</p>
+      <p>Une ligne de tâche, c’est un nom, deux-points, puis des champs séparés par des virgules :</p>
+      <p><code>Nom de la tâche :marqueur, id, début, durée</code></p>
+      <ul>
+        <li><strong>Marqueurs</strong> — au choix <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>, dans n’importe quel ordre, et vous pouvez les cumuler. Facultatifs.</li>
+        <li><strong>id</strong> — un mot simple, sans espace ni ponctuation, nécessaire seulement si une autre tâche s’y réfère.</li>
+        <li><strong>début</strong> — une date, ou <code>after unId</code>, ou rien du tout pour enchaîner sur la tâche précédente.</li>
+        <li><strong>durée</strong> — <code>5d</code>, <code>2w</code>, ou une seconde date absolue qui tient lieu de fin.</li>
+      </ul>
+      <p>Les lignes d’en-tête à connaître : <code>dateFormat</code> (comment sont écrites les dates dans <em>votre</em> fichier), <code>excludes weekends</code>, <code>title</code>, et <code>axisFormat</code> (le libellé de l’axe, en codes de type strftime). Les champs sont reconnus à leur forme plutôt qu’à leur position stricte, ce qui explique que <code>:done, audit, 2026-03-02, 5d</code> et <code>:audit, done, 2026-03-02, 5d</code> donnent le même résultat — commode à l’écriture, déroutant à la relecture.</p>
+      <!--FIG:syntax|Chaque champ d’une ligne de tâche Mermaid, et lesquels sont facultatifs.-->`],
+
+    ['Un exemple complet à coller dans un README', `<p>Voici un bloc valide et réaliste, tiré d’un cas courant : la migration de l’API publique d’une v1 vers une v2 chez Sogecom, éditeur logiciel installé à Villeurbanne. Claire Vasseur, tech lead de l’équipe plateforme, tient ce planning dans le README du dépôt <code>api-gateway</code> pour qu’il soit relu en revue de code comme le reste. L’exemple utilise des sections, des dates absolues, des chaînes de <code>after</code>, tous les marqueurs, un jalon et l’exclusion des week-ends.</p>
+      <div class="worked">
+      <pre><code>gantt
+  title Migration API v2 — Sogecom
+  dateFormat YYYY-MM-DD
+  axisFormat %d %b
+  excludes weekends
+
+  section Cadrage
+  Audit des endpoints v1   :done, audit, 2026-03-02, 5d
+  Contrat OpenAPI          :done, spec, after audit, 4d
+  Revue de code du contrat :active, revue, after spec, 2d
+
+  section Développement
+  Service d’authentification :crit, auth, after revue, 10d
+  Endpoints ressources       :endp, after auth, 12d
+  Régénération du SDK client :sdk, after endp, 3d
+
+  section Bascule
+  Recette sur préproduction :recette, after sdk, 5d
+  Bêta publique             :milestone, beta, 2026-05-04, 0d
+  Arrêt de la v1            :arret, after beta, 2w</code></pre>
+      <p>Ligne par ligne :</p>
+      <ul>
+        <li><code>dateFormat YYYY-MM-DD</code> indique à Mermaid comment <em>lire</em> les dates que vous avez tapées. C’est le format d’entrée, pas celui d’affichage : le modifier ne change rien à l’axe.</li>
+        <li><code>axisFormat %d %b</code> est le côté sortie : l’axe affiche « 02 mars » plutôt qu’une date ISO complète. Sur un planning de plus d’un trimestre, <code>%V</code> donne des numéros de semaine, bien plus lisibles pour une équipe qui raisonne en S10, S11, S12.</li>
+        <li><code>excludes weekends</code> fait enjamber samedi et dimanche à toutes les barres, pour l’ensemble du diagramme. Il n’existe aucune dérogation tâche par tâche.</li>
+        <li><code>Audit des endpoints v1 :done, audit, 2026-03-02, 5d</code> — un marqueur, un id, une date de début absolue (le lundi 2 mars 2026) et cinq jours. La durée inclut le jour de début : la tâche se termine donc le vendredi 6 mars, pas le lundi 9.</li>
+        <li><code>after audit</code> signifie « démarrer quand <code>audit</code> est fini » — les week-ends étant exclus, cela tombe le lundi 9 mars, et non le samedi 7.</li>
+        <li><code>:crit, auth, …</code> colore la barre aux couleurs du chemin critique. Notez bien le verbe : <em>colorer</em>. Voir les limites plus bas.</li>
+        <li><code>Endpoints ressources :endp, after auth, 12d</code> n’a aucun marqueur : le premier champ est directement un id. Une tâche sans marqueur est simplement du travail à venir.</li>
+        <li><code>Bêta publique :milestone, beta, 2026-05-04, 0d</code> est un repère de durée nulle posé à une date fixe, ici le lundi 4 mai 2026. Un jalon reçoit un id comme n’importe quelle tâche, si bien que le <code>after beta</code> de la dernière ligne est parfaitement légal.</li>
+        <li><code>2w</code> vaut deux semaines. Mermaid accepte aussi <code>h</code> et <code>m</code>, rarement utiles sur un planning de projet.</li>
+      </ul>
+      <p>Les lignes vides entre les sections sont purement décoratives : Mermaid les ignore, notre importateur aussi. Gardez-les quand même, car un bloc de quarante tâches sans respiration est illisible dans un diff — c’est Thibaut Marchand, qui relit les demandes de fusion, qui a imposé la règle.</p>
+      </div>`],
+
+    ['Référence des champs d’une ligne de tâche', `<p>Tous les champs et marqueurs, ce qu’ils font, et à quoi ils ressemblent en pratique.</p>
+      <table>
+        <thead><tr><th>Champ ou marqueur</th><th>Exemple</th><th>Ce qu’il fait</th></tr></thead>
+        <tbody>
+          <tr><td><code>id</code></td><td><code>audit</code></td><td>Un mot simple qui nomme la tâche pour qu’un <code>after</code> puisse s’y référer. Ni espace ni ponctuation. Facultatif tant que rien ne dépend de la tâche.</td></tr>
+          <tr><td><code>after</code></td><td><code>after audit</code></td><td>Démarre à la fin de la tâche nommée. Fin-Début uniquement, sans décalage. Accepte plusieurs id — <code>after a b</code> attend le plus tardif des deux.</td></tr>
+          <tr><td><code>done</code></td><td><code>:done, audit, …</code></td><td>Affiche la barre comme terminée. Sans pourcentage : 100 % et « pratiquement fini » se ressemblent trait pour trait.</td></tr>
+          <tr><td><code>active</code></td><td><code>:active, revue, …</code></td><td>Affiche la barre comme en cours. Là encore sans aucun chiffre associé.</td></tr>
+          <tr><td><code>crit</code></td><td><code>:crit, auth, …</code></td><td>Colore la barre comme critique. C’est une affirmation que vous tapez, pas un résultat que Mermaid déduit : rien ne la confronte au graphe des antériorités.</td></tr>
+          <tr><td><code>milestone</code></td><td><code>:milestone, beta, …</code></td><td>Dessine un losange au lieu d’une barre. À associer à <code>0d</code>.</td></tr>
+          <tr><td>Unités de durée</td><td><code>5d</code> · <code>2w</code> · <code>8h</code></td><td>Jours, semaines, heures (et <code>m</code>). Le jour de début est inclus : <code>5d</code> à partir du lundi finit le vendredi.</td></tr>
+          <tr><td>Date de fin</td><td><code>2026-03-02, 2026-03-06</code></td><td>Une seconde date au lieu d’une durée, pour une fin imposée de l’extérieur.</td></tr>
+          <tr><td><code>dateFormat</code></td><td><code>dateFormat YYYY-MM-DD</code></td><td>Comment les dates du fichier sont interprétées. Ligne d’en-tête, une seule fois par diagramme.</td></tr>
+          <tr><td><code>axisFormat</code></td><td><code>axisFormat %d %b</code></td><td>Le libellé de l’axe, en codes strftime. Purement cosmétique.</td></tr>
+          <tr><td><code>excludes</code></td><td><code>excludes weekends</code></td><td>Les jours non travaillés. Accepte aussi des dates précises (<code>excludes 2026-05-08</code>, pour le 8 mai) et des noms de jours. Portée : tout le diagramme.</td></tr>
+        </tbody>
+      </table>
+      <p>Une remarque sur <code>excludes</code> et le calendrier français : les jours fériés se déclarent un par un, et les ponts n’existent pas pour Mermaid. Si l’équipe ferme le vendredi de l’Ascension ou lève le pied en août, écrivez-le, sans quoi le diagramme promet du travail des jours où personne ne travaille.</p>`],
+
+    ['Quatre choses qui vous piégeront', `<p><strong>1. Les durées incluent le jour de début.</strong> <code>5d</code> à partir du lundi 5 court jusqu’au vendredi 9, pas jusqu’au 10. Une erreur d’un jour ici décale toutes les tâches du fichier et s’affiche pourtant parfaitement, ce qui est le pire mode de défaillance possible : rien n’a l’air cassé, la revue de code passe, et le planning est faux d’un jour par tâche.</p>
+      <p><strong>2. <code>after</code> combiné à <code>excludes weekends</code>, c’est là que sont les vrais bugs.</strong> Si un prédécesseur finit un vendredi, son successeur démarre le <em>lundi</em>, pas le samedi. Tout outil qui résout <code>after</code> en ajoutant un jour calendaire placera discrètement des tâches le week-end dans un fichier qui l’interdit explicitement, et toutes les dates en aval dérivent à partir de là. Le nôtre l’a fait, brièvement. Le correctif fait passer le calcul par le calendrier ouvré, pour que l’import concorde avec ce que Mermaid dessine ; et le test qui garde ce comportement vérifie une propriété plutôt que des dates précises : aucune date <em>calculée</em>, de début comme de fin, ne doit tomber un jour exclu. Les dates que vous avez tapées à la main, elles, restent exactement où vous les avez posées, week-end ou pas — déplacer en silence la date explicite d’un auteur, c’est la mauvaise façon de rendre service.</p>
+      <p><strong>3. Il n’y a aucun échappement.</strong> Les deux-points ouvrent la liste des champs et la virgule les sépare : une tâche nommée <code>Phase 2 : conception, revue</code> devient une tâche « Phase 2 » suivie de champs incompréhensibles. Bannissez deux-points, virgules et points-virgules des noms de tâches. À l’export, nous remplaçons ces caractères par des espaces plutôt que d’écrire une ligne qui refusera de s’analyser chez le lecteur.</p>
+      <p><strong>4. Une durée illisible devient zéro, en silence.</strong> Écrivez <code>3dd</code> et vous obtenez une barre de longueur nulle plutôt qu’une erreur. Après une modification en masse — un chercher-remplacer sur trente lignes, typiquement — relisez le rendu à la recherche de tâches devenues invisibles.</p>
+      <!--FIG:deps|Le « after » est un lien Fin-Début sans décalage : le seul type que le format sache écrire.-->`],
+
+    ['Les limites d’un format de diagramme', `<p>Mermaid gantt est un langage de rendu, pas un moteur de planification, et la différence saute aux yeux dès que vous attendez du diagramme qu’il <em>réponde</em> à une question plutôt qu’illustrer une réponse déjà connue.</p>
+      <ul>
+        <li><strong>Pas de ressources.</strong> Aucun champ pour dire qui fait le travail, aucun coût, aucune charge, aucune unité. Vous ne pouvez pas sur-affecter quelqu’un dans Mermaid, pour la bonne raison que Mermaid ignore que quelqu’un existe.</li>
+        <li><strong>Ni marge, ni chemin critique calculé.</strong> <code>crit</code> est une couleur que vous appliquez à la main. Rien ne parcourt le graphe des antériorités, ne calcule les dates au plus tôt et au plus tard, ne vous dit quelle chaîne pilote la date de fin. Un diagramme où toutes les barres portent <code>crit</code> est aussi valide qu’un diagramme où aucune ne le porte.</li>
+        <li><strong>Pas de référence.</strong> Nulle part où consigner ce que le plan annonçait le mois dernier : donc aucun écart à montrer, aucune dérive à mesurer.</li>
+        <li><strong>Uniquement du Fin-Début.</strong> <code>after</code> est un lien FD sans décalage. Le Début-Début, le Fin-Fin, le Début-Fin et tout décalage, positif ou négatif, n’ont nulle part où aller. Les vrais plannings sont pleins de « la recette démarre trois jours après le début du développement » ; en Mermaid, cela devient une date en dur, et le lien a disparu.</li>
+        <li><strong>Pas de pourcentage d’avancement.</strong> Une tâche à 40 % et une tâche à 90 % sont toutes deux simplement <code>active</code>.</li>
+        <li><strong>Sections à plat.</strong> Aucun groupe imbriqué : une décomposition à plus d’un niveau s’aplatit à l’import.</li>
+      </ul>
+      <p>Rien de tout cela n’en fait un mauvais format. Cela en fait un format de <em>publication</em> : excellent pour montrer un planning, inutilisable pour en déduire un. C’est précisément pourquoi l’aller-retour compte.</p>`],
+
+    ['Modifier visuellement, puis recoller le texte', `<p>Beaucoup d’outils affichent du Mermaid. Ce qui manquait, c’est l’autre sens : déplacer des barres et récupérer la syntaxe. Voici la manipulation complète, avec les libellés réels de l’application.</p>
+      <ol>
+        <li>Ouvrez <a href="/fr/app.html">l’éditeur</a> et cliquez sur <strong>✨ Coller vers Gantt</strong>. Collez-y votre bloc, qu’il vienne d’un fichier <code>.mmd</code> ou d’un <code>.md</code> contenant un bloc délimité : la détection se fait sur le contenu, pas sur l’extension.</li>
+        <li>Validez. Le message <strong>Tâches importées depuis Mermaid : {n}</strong> vous confirme le nombre de lignes reprises — comparez-le au nombre de tâches de votre fichier avant d’aller plus loin.</li>
+        <li>Vérifiez le calendrier. Si le fichier déclarait <code>excludes weekends</code>, ouvrez <strong>Calendrier</strong> et confirmez que les jours ouvrés correspondent ; ajoutez-y les jours fériés que Mermaid ne connaît pas.</li>
+        <li>Déplacez, reliez et redatez comme sur n’importe quel autre planning. Le champ <strong>Après (prédécesseurs)</strong> du panneau de tâche reprend ce que les <code>after</code> ont produit ; c’est là que vous ajoutez les liens Début-Début ou les décalages que le format ne savait pas écrire.</li>
+        <li>Activez <strong>Chemin critique</strong> : la légende « hachuré = chemin critique » vous montre la chaîne réellement calculée. Utilisez <strong>Replanifier</strong> si vous voulez compacter les tâches sur leurs dates au plus tôt.</li>
+        <li>Enfin <strong>⬇ Exporter</strong> › <strong>🧜 Mermaid gantt (texte)</strong>. La fenêtre <strong>Mermaid gantt</strong> propose <strong>Copier dans le presse-papiers</strong> ou <strong>Télécharger le .mmd</strong>. Recollez dans le README, ouvrez la revue de code, commitez le diff.</li>
+      </ol>
+      <p>L’aller-retour perd de l’information, mais de façon connue et sans surprise. À l’export, un avancement de 100 % devient <code>done</code> et toute valeur de 1 à 99 % devient <code>active</code> ; à l’import, <code>active</code> revient à 50 %, une estimation qu’un avertissement vous signale plutôt que de vous la laisser découvrir dans un rapport d’avancement. Les liens qui ne peuvent pas s’écrire en <code>after</code> — tout ce qui comporte un décalage, toute relation Début-Début, Fin-Fin ou Début-Fin — retombent sur des dates absolues, qui restent justes même si elles cessent d’être maintenables.</p>
+      <p>Une asymétrie assumée, parce que ce n’est pas un défaut : <strong><code>crit</code> est écrit à l’export mais jamais lu à l’import.</strong> À la sortie, le marqueur est <em>dérivé</em> — l’éditeur a calculé le chemin critique à partir du graphe des antériorités, la mention est donc vraie au moment où elle est écrite. À l’entrée, ce n’est plus qu’un mot tapé par quelqu’un dans un fichier peut-être vieux de plusieurs semaines, et lui faire confiance reviendrait à colorer en rouge une chaîne qui n’est pas critique. Il est donc écrit puis ignoré : marquer une tâche <code>crit</code> dans votre fichier et l’importer ne la rend pas critique, et un simple aller-retour recalculera la criticité à partir des liens. Le chemin critique que vous voyez après un import a été recalculé, jamais recopié — le même principe que dans <a href="/fr/blog/critical-path-method.html">le calcul du chemin critique</a>.</p>
+      <p>Effet de bord appréciable pour qui rédige ses plannings avec un LLM : demandez de la syntaxe Mermaid gantt, collez la réponse dans <strong>✨ Coller vers Gantt</strong>, et vous obtenez un planning modifiable dont le chemin critique est calculé — sans clé d’API, sans serveur, et sans que le fichier quitte votre machine.</p>`],
   ],
+  callout: 'Mermaid est un format de publication, pas un moteur de planification. Il affiche très bien un planning et ne sait en déduire aucun : ni marge, ni chemin critique, ni référence, et un seul type de lien. Écrivez-y le plan une fois qu’il est juste — et pour le rendre juste, passez par un éditeur qui calcule, puis réexportez le texte.',
   faq: [
-    ['Comment écrire un diagramme de Gantt en Mermaid ?', 'Ouvrez le bloc par gantt, ajoutez dateFormat YYYY-MM-DD, puis des titres section avec des lignes de tâches de la forme « Nom :marqueur, id, début, durée » — par exemple « Recherche :done, res, 2026-01-05, 5d ».'],
-    ['Le 5d de Mermaid inclut-il le jour de début ?', 'Oui. Une tâche de 5d commençant le lundi 5 se termine le vendredi 9. Ce décompte inclusif est la première cause d’erreurs d’un jour.'],
-    ['Comment fonctionnent les antériorités en Mermaid ?', 'Avec « after unId » comme champ de début. C’est toujours un lien Fin-Début sans décalage : le Début-Début, le Fin-Fin et les décalages ne peuvent pas être exprimés.'],
-    ['Mermaid peut-il afficher un pourcentage d’avancement ?', 'Non. Il ne dispose que des marqueurs done et active. Réimporter active comme un pourcentage précis est une estimation ; gantts.app retient 50 % et vous le signale.'],
-    ['Où s’affichent les diagrammes de Gantt Mermaid ?', 'GitHub, GitLab, Notion et Obsidian les affichent nativement en Markdown, et mermaid.live les affiche dans le navigateur.'],
-    ['Peut-on convertir un diagramme Mermaid en planning modifiable ?', 'Oui. Ouvrez le fichier .mmd ou le fichier Markdown dans gantts.app, modifiez-le visuellement, puis utilisez Export ▸ Mermaid gantt pour récupérer la syntaxe mise à jour.'],
+    ['Comment écrire un diagramme de Gantt en Mermaid ?', 'Ouvrez le bloc par gantt, ajoutez dateFormat YYYY-MM-DD, puis des titres section avec des lignes de tâches de la forme « Nom :marqueur, id, début, durée » — par exemple « Audit des endpoints :done, audit, 2026-03-02, 5d ».'],
+    ['Le 5d de Mermaid inclut-il le jour de début ?', 'Oui. Une tâche de 5d commençant le lundi 5 se termine le vendredi 9. Ce décompte inclusif est la première cause d’erreurs d’un jour, et il produit un diagramme qui s’affiche parfaitement alors que chaque date est décalée.'],
+    ['Comment fonctionnent les antériorités en Mermaid ?', 'Avec « after unId » comme champ de début. C’est toujours un lien Fin-Début sans décalage : le Début-Début, le Fin-Fin et les décalages ne peuvent pas être exprimés. Vous pouvez nommer plusieurs prédécesseurs, comme dans « after a b », et la tâche attend le plus tardif.'],
+    ['Le after saute-t-il les week-ends ?', 'Oui, dès lors que le diagramme déclare « excludes weekends ». Le successeur d’une tâche finissant un vendredi démarre le lundi, et sa durée se compte en jours ouvrés. Les outils qui résolvent after en ajoutant un jour calendaire posent des tâches le samedi dans un fichier qui l’interdit.'],
+    ['Mermaid peut-il calculer le chemin critique ?', 'Non. Le marqueur crit est une couleur que vous appliquez à la main ; rien dans Mermaid ne parcourt le graphe des antériorités ni ne calcule les marges. C’est pourquoi gantts.app écrit crit à l’export mais l’ignore à l’import : la criticité est recalculée à partir des liens plutôt que reprise d’un fichier peut-être périmé.'],
+    ['Peut-on convertir un diagramme Mermaid en planning modifiable ?', 'Oui. Collez le contenu du fichier .mmd ou du fichier Markdown via ✨ Coller vers Gantt, modifiez-le visuellement, puis utilisez ⬇ Exporter › 🧜 Mermaid gantt (texte) pour récupérer la syntaxe mise à jour.'],
   ],
   related: [['gantt-chart-dependencies', 'Les quatre types de liens'], ['critical-path-method', 'Le chemin critique'], ['what-is-a-gantt-chart', 'Qu’est-ce qu’un diagramme de Gantt ?']],
 },

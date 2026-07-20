@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhängigkeiten im Gantt-Diagramm | gantts.app</title>
-  <meta name="description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta name="description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — mit durchgerechnetem Beispiel, Zeitabständen sowie freiem und gesamtem Puffer." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-dependencies.html" />
@@ -42,7 +42,7 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Abhängigkeiten im Gantt-Diagramm | gantts.app" />
-  <meta property="og:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta property="og:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — mit durchgerechnetem Beispiel, Zeitabständen sowie freiem und gesamtem Puffer." />
   <meta property="og:url" content="https://gantts.app/de/blog/gantt-chart-dependencies.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -50,11 +50,11 @@
   <meta property="og:image:alt" content="Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Abhängigkeiten im Gantt-Diagramm | gantts.app" />
-  <meta name="twitter:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken." />
+  <meta name="twitter:description" content="Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — mit durchgerechnetem Beispiel, Zeitabständen sowie freiem und gesamtem Puffer." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-chart-dependencies.html#post","headline":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","description":"Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken.","url":"https://gantts.app/de/blog/gantt-chart-dependencies.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","item":"https://gantts.app/de/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Welche Abhängigkeitstypen gibt es im Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Vier: Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende. Ende-Anfang deckt die weit überwiegende Mehrheit der Fälle ab."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Vorlauf und Verzögerung?","acceptedAnswer":{"@type":"Answer","text":"Eine Verzögerung schiebt den Nachfolger nach hinten (Aushärtezeit), ein Vorlauf lässt ihn früher beginnen, bevor der Vorgänger ganz fertig ist."}},{"@type":"Question","name":"Sollte man jeden Vorgang verknüpfen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Nur echte Abhängigkeiten. Ein Plan, in dem alles aneinanderhängt, verliert jede Parallelität und reagiert auf jede kleine Verschiebung übertrieben."}},{"@type":"Question","name":"Warum wird mein Vorgang nicht verschoben?","acceptedAnswer":{"@type":"Answer","text":"Meist fehlt die Verknüpfung, oder es ist ein fester Termin gesetzt, der die Berechnung übersteuert."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-chart-dependencies.html#post","headline":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","description":"Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — mit durchgerechnetem Beispiel, Zeitabständen sowie freiem und gesamtem Puffer.","url":"https://gantts.app/de/blog/gantt-chart-dependencies.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten","item":"https://gantts.app/de/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Welche vier Abhängigkeitstypen gibt es im Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Ende-Anfang (EA), Anfang-Anfang (AA), Ende-Ende (EE) und Anfang-Ende (AE). EA deckt die große Mehrheit der echten Beziehungen ab; AE ist wirklich selten, und viele korrekte Pläne enthalten keine einzige."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Vorlauf und Verzögerung?","acceptedAnswer":{"@type":"Answer","text":"Eine Verzögerung ist Wartezeit in der Verknüpfung — EA+3T heißt, der Nachfolger beginnt drei Tage nach dem Ende des Vorgängers. Ein Vorlauf ist eine negative Verzögerung und überlappt beide. Eine Verzögerung ist fest verplante Zeit, kein Spielraum: Sie können sie nicht ausgeben, wenn Sie in Verzug geraten."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Gesamtpuffer und freiem Puffer?","acceptedAnswer":{"@type":"Answer","text":"Gesamtpuffer ist die Zeit, um die ein Vorgang rutschen darf, bevor sich das Projektende verschiebt; freier Puffer die Zeit, bevor sich sein eigener Nachfolger verschiebt. Gesamtpuffer wird entlang einer Kette geteilt — drei Vorgänge mit jeweils acht Tagen haben zusammen nicht vierundzwanzig."}},{"@type":"Question","name":"Welchen Typ sollte man standardmäßig verwenden?","acceptedAnswer":{"@type":"Answer","text":"Ende-Anfang. Wenn ein anderer Typ nötig erscheint, prüfen Sie zuerst, ob die Vorgänge richtig geschnitten sind — ein ungewöhnlicher Typ ist oft das Symptom eines Vorgangs, der geteilt gehört."}},{"@type":"Question","name":"Was passiert mit meinen Terminen, wenn ich in gantts.app eine Abhängigkeit ergänze?","acceptedAnswer":{"@type":"Answer","text":"Eine Abhängigkeit kann einen Vorgang nur nach hinten schieben, nie nach vorn ziehen: Er beginnt zum späteren der beiden Zeitpunkte — dort, wo Sie ihn abgelegt haben, oder dort, wo die Vorgänger es zulassen. Mit „Neu planen“ verdichten Sie abhängige Vorgänge auf ihre frühestmöglichen Termine."}},{"@type":"Question","name":"Wie lege ich in gantts.app Abhängigkeiten an?","acceptedAnswer":{"@type":"Answer","text":"Ziehen Sie vom Punkt am Rand eines Balkens auf einen anderen Balken, oder tippen Sie eine Notation wie 3EA+2T in die Spalte „Nach“. Ein Klick auf einen Verknüpfungspfeil öffnet den Dialog für Typ und Verzögerung — dort lässt sie sich auch entfernen."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -86,18 +86,23 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a> › Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten</div>
     <h1>Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten</h1>
-    <p class="lead">Eine <strong>Abhängigkeit</strong> legt fest, was worauf wartet. Es gibt vier Arten, aber in der Praxis brauchen die meisten Pläne fast nur eine — und der Rest richtet häufiger Schaden an, als er nützt.</p>
+    <p class="lead">Vier Beziehungstypen decken jede Abhängigkeit ab, die sich in einem Gantt-Diagramm zeichnen lässt. Einer erledigt rund neunzig Prozent der Arbeit; die anderen drei gibt es für die Fälle, die er schlecht abbildet. Hier steht, was jeder bedeutet, mit einem Beispiel, das den ganzen Text hindurch mitläuft — und mit den beiden Punkten, die fast alle Erklärungen auslassen: Verzögerung gegen Vorlauf, und Gesamtpuffer gegen freien Puffer.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>8 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
-        <li><a href="#s1">Ende-Anfang (EA)</a></li>
-        <li><a href="#s2">Anfang-Anfang (AA)</a></li>
-        <li><a href="#s3">Ende-Ende (EE)</a></li>
-        <li><a href="#s4">Anfang-Ende (AE)</a></li>
-        <li><a href="#s5">Zeitabstände: Vorlauf und Verzögerung</a></li>
+        <li><a href="#s1">Das Vorhaben, das wir durchgehend verwenden</a></li>
+        <li><a href="#s2">Ende-Anfang (EA) — die Art, die Sie ständig brauchen</a></li>
+        <li><a href="#s3">Anfang-Anfang (AA) — Arbeit, die gemeinsam anläuft</a></li>
+        <li><a href="#s4">Ende-Ende (EE) — Arbeit, die gemeinsam landen muss</a></li>
+        <li><a href="#s5">Anfang-Ende (AE) — die seltene Art</a></li>
+        <li><a href="#s6">Die vier Typen nebeneinander</a></li>
+        <li><a href="#s7">Wenn der falsche Typ den Terminplan lügen lässt</a></li>
+        <li><a href="#s8">Verzögerung und Vorlauf — eine Verzögerung ist Wartezeit, kein Puffer</a></li>
+        <li><a href="#s9">Gesamtpuffer und freier Puffer sind nicht dieselbe Zahl</a></li>
+        <li><a href="#s10">Eine Abhängigkeit in gantts.app anlegen und ändern</a></li>
       </ol>
     </div>
 
@@ -107,26 +112,94 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">Ende-Anfang (EA)</h2>
-<p>Der Standardfall: B beginnt, wenn A fertig ist. „Streichen“ beginnt, wenn „Spachteln“ abgeschlossen ist. Rund 90 Prozent aller Verknüpfungen in realen Plänen sind von diesem Typ, und das ist gut so — sie ist die einzige Art, die jeder auf Anhieb richtig liest.</p>
-      <h2 id="s2">Anfang-Anfang (AA)</h2>
-<p>B beginnt, wenn A beginnt. Nützlich für Arbeiten, die gemeinsam anlaufen: Bauleitung startet mit dem Rohbau, Qualitätssicherung mit der Entwicklung. Häufig kombiniert mit einem Zeitabstand — QS beginnt drei Tage nach Entwicklungsbeginn.</p>
-      <h2 id="s3">Ende-Ende (EE)</h2>
-<p>B endet, wenn A endet. Typisch für begleitende Tätigkeiten: Die Dokumentation ist fertig, wenn die Entwicklung fertig ist. Sie legt kein Startdatum fest, sondern nur einen gemeinsamen Schlusspunkt.</p>
-      <h2 id="s4">Anfang-Ende (AE)</h2>
-<p>B endet, wenn A beginnt. Der seltenste Fall, vor allem für Übergaben: Die alte Schicht endet, wenn die neue beginnt; das Altsystem wird abgeschaltet, wenn das neue in Betrieb geht. Wenn Sie diese Verknüpfung häufig einsetzen, ist der Plan meistens falsch herum gedacht.</p>
-      <h2 id="s5">Zeitabstände: Vorlauf und Verzögerung</h2>
-<p>Jede Verknüpfung lässt sich um einen Abstand ergänzen. Eine Verzögerung schiebt den Nachfolger nach hinten — Beton muss sieben Tage aushärten, bevor weitergebaut wird. Ein Vorlauf lässt ihn früher beginnen — der zweite Bauabschnitt startet, wenn der erste zu 70 Prozent fertig ist.</p>
-        <p>Ein Hinweis zur Wartezeit: Aushärten, Trocknen, Genehmigungsfristen sind besser als eigener Vorgang sichtbar als in einer Verzögerung versteckt. Was im Balken steht, sieht man; was im Verknüpfungsdialog steht, findet niemand wieder.</p>
+      <h2 id="s1">Das Vorhaben, das wir durchgehend verwenden</h2>
+<p>Über Abhängigkeitsdiagramme nickt man leicht und wendet sie schwer an. Deshalb steht hier ein konkretes Vorhaben, auf das jeder der folgenden Typen angewendet wird: die Ablösung des Abrechnungssystems bei einem kommunalen Versorger.</p>
+      <div class="worked">
+        <p><strong>Stadtwerke Lünen, Umstellung der Verbrauchsabrechnung. Sechs Vorgänge, Arbeitstage, März bis April 2026.</strong></p>
+        <table>
+          <thead><tr><th>Nr.</th><th>Vorgang</th><th>Beginn</th><th>Ende</th><th>Tage</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Migrationsskripte entwickeln</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td></tr>
+            <tr><td>2</td><td>Testmigration fahren</td><td>Mo 16. März</td><td>Fr 20. März</td><td>5</td></tr>
+            <tr><td>3</td><td>Befunde der Testmigration beheben</td><td>Mo 23. März</td><td>Fr 3. April</td><td>10</td></tr>
+            <tr><td>4</td><td>Umstellungshandbuch schreiben</td><td>Mo 16. März</td><td>Fr 3. April</td><td>15</td></tr>
+            <tr><td>5</td><td>Abrechnungsteam schulen</td><td>Mo 23. März</td><td>Fr 27. März</td><td>5</td></tr>
+            <tr><td>6</td><td>Altsystem weiterbetreiben</td><td>Mo 2. März</td><td>Mo 6. April</td><td>26</td></tr>
+          </tbody>
+        </table>
+        <p>Sechs Balken, keine Verknüpfungen: Bis hierhin sagt der Plan nichts darüber, was worauf wartet.</p>
+      </div>
+      <h2 id="s2">Ende-Anfang (EA) — die Art, die Sie ständig brauchen</h2>
+<p>Vorgang B kann nicht beginnen, bevor Vorgang A fertig ist. Fundament gießen, dann aufmauern.</p>
+      <p>Vorgang 2 hängt EA an Vorgang 1: Man kann kein Skript testen, das niemand geschrieben hat. Vorgang 3 hängt EA an Vorgang 2, denn die Fehlerliste existiert erst, wenn die Testmigration sie erzeugt hat. Diese Kette — 1 → 2 → 3, zehn plus fünf plus zehn Tage — ist das Rückgrat des Vorhabens und legt das Ende auf den 3. April.</p>
+      <p>Ende-Anfang ist in jedem Planungswerkzeug der Standard, und im Zweifel ist es fast sicher die richtige Wahl. Der Griff zu einem exotischen Typ ist häufiger ein Hinweis darauf, dass die Vorgänge falsch geschnitten sind, als darauf, dass Sie wirklich AA oder EE brauchen.</p>
+      <h2 id="s3">Anfang-Anfang (AA) — Arbeit, die gemeinsam anläuft</h2>
+<p>Vorgang B kann nicht beginnen, bevor Vorgang A begonnen hat. Danach laufen beide parallel.</p>
+      <p>Das Umstellungshandbuch (Vorgang 4) hängt AA an der Testmigration. Die Autorin braucht eine laufende Testmigration, um überhaupt etwas dokumentieren zu können; auf deren <em>Ende</em> zu warten, würde eine Woche verschenken. Also beginnen beide am Montag, dem 16. März.</p>
+      <p>Nehmen Sie AA, wenn B nur auf den Beginn von A wartet: Sobald der Erdaushub anläuft, läuft die Bauüberwachung an. Das Erkennungsmerkmal ist ein gemeinsamer Auslöser, kein gemeinsamer Endtermin.</p>
+      <h2 id="s4">Ende-Ende (EE) — Arbeit, die gemeinsam landen muss</h2>
+<p>Vorgang B kann nicht enden, bevor Vorgang A geendet hat.</p>
+      <p>Das Handbuch hat zusätzlich eine EE-Verknüpfung zu Vorgang 3: Es kann nicht freigegeben werden, solange noch Fehlerbehebungen eintreffen, denn jede Korrektur schreibt einen Arbeitsschritt darin um. Es bleibt also bis Freitag, den 3. April, offen — begonnen von der Testmigration, geschlossen von den Fehlerbehebungen. Das ist die typische Form einer begleitenden Tätigkeit.</p>
+      <p>Tests, die nicht vor der Entwicklung fertig sein können, Dokumentation, die mit der Funktion abschließt, Qualitätssicherung, die sich um einen Bau legt: alles EE. B darf beginnen, wann es will; es darf nur nicht vorher über die Ziellinie.</p>
+      <h2 id="s5">Anfang-Ende (AE) — die seltene Art</h2>
+<p>Vorgang B kann nicht enden, bevor Vorgang A begonnen hat. Das liest sich rückwärts, und die meisten Planerinnen brauchen es in ihrem ganzen Berufsleben nicht.</p>
+      <p>Vorgang 6 ist genau der Fall, für den es erfunden wurde. Das Altsystem muss laufen, bis das neue in Betrieb geht: Sein <em>Ende</em> ist an den <em>Beginn</em> der Inbetriebnahme gekoppelt. Verknüpfen Sie AE, und der Balken des Altsystems dehnt sich automatisch bis zu dem Termin, auf den die Inbetriebnahme fällt — ohne dass sich jemand daran erinnern muss, ihn zu ziehen.</p>
+      <p>Das ist der ehrliche Test: eine Übergabe, bei der das Alte endet, weil das Neue beginnt. Überall sonst sollten Sie prüfen, ob eine Umsortierung dasselbe mit einer schlichten EA-Verknüpfung ausdrückt.</p>
+      <h2 id="s6">Die vier Typen nebeneinander</h2>
+<table>
+        <thead><tr><th>Typ</th><th>Auslöser in der Wirklichkeit</th><th>Wie oft er passt</th><th>Der Fehler, zu dem er verleitet</th></tr></thead>
+        <tbody>
+          <tr><td><strong>EA</strong><br>Ende → Anfang</td><td>Das Ergebnis von A ist der Input von B — eine Fehlerliste, eine freigegebene Zeichnung, eine ausgehärtete Sohle</td><td>Rund 90 % der Verknüpfungen eines typischen Plans</td><td>Als Vorliebe statt als Zwang gesetzt, bis jeder Termin festgenagelt ist und nichts mehr umgeplant werden kann</td></tr>
+          <tr><td><strong>AA</strong><br>Anfang → Anfang</td><td>Zwei Tätigkeiten teilen einen Auslöser und laufen dann gemeinsam</td><td>Häufig; die meisten Pläne haben einige</td><td>Sie reagiert nur auf den <em>Beginn</em> des Vorgängers. Rutscht dessen Ende, bewegt sich B überhaupt nicht</td></tr>
+          <tr><td><strong>EE</strong><br>Ende → Ende</td><td>Eine Klammer, die nicht vor ihrem Inhalt schließen kann — Tests, Dokumentation, Freigabe</td><td>Gelegentlich, vor allem bei begleitenden Vorgängen</td><td>Der Beginn von B bleibt ungebunden, weshalb er absurd früh möglich aussieht</td></tr>
+          <tr><td><strong>AE</strong><br>Anfang → Ende</td><td>Eine Übergabe — die alte Schicht, das Altsystem oder der alte Vertrag endet, weil das Neue beginnt</td><td>Selten. Viele korrekte Pläne haben keine einzige</td><td>Als umständliches rückwärts gedachtes EA benutzt, das beim Durchsehen niemand richtig liest</td></tr>
+        </tbody>
+      </table>
+      <h2 id="s7">Wenn der falsche Typ den Terminplan lügen lässt</h2>
+<p>Nun zu Vorgang 5, der Schulung. Ein Planer verknüpft sie <strong>AA nach Vorgang 3</strong>: Die Schulung beginnt, wenn die Fehlerbehebung beginnt. Das sieht stimmig aus — beide Balken starten am 23. März, alle sind am 27. März geschult, deutlich vor der Inbetriebnahme. Der Termin ist zudem mit dem Betriebsrat abgestimmt, weil die Schulung in der Arbeitszeit stattfindet, und damit doppelt zugesagt.</p>
+      <div class="worked">
+        <p><strong>Dann findet die Testmigration mehr als erwartet</strong>, und Vorgang 3 wächst von zehn auf fünfzehn Tage; sein Ende rückt von Freitag, dem 3. April, auf Freitag, den 10. April.</p>
+        <ul>
+          <li><strong>Vorgang 4 (Handbuch, EE)</strong> — bewegt sich. Sein Ende folgt auf Freitag, den 10. April. Richtig.</li>
+          <li><strong>Vorgang 5 (Schulung, AA)</strong> — <em>bewegt sich überhaupt nicht.</em> AA schaut auf den Beginn des Vorgängers, und der hat sich nicht verändert. Der Plan zeigt weiterhin ein geschultes Team am Freitag, dem 27. März.</li>
+        </ul>
+        <p>Das Diagramm ist nicht kaputt; es beantwortet die Frage, die man ihm gestellt hat. Nur wird das Team an einer Software geschult, an der noch zwei Wochen lang Fehler behoben werden — und der Plan meldet das als grün. Die richtige Verknüpfung wäre <strong>EA nach Vorgang 3</strong> gewesen: schulen, sobald die Software sich nicht mehr ändert. Ein falscher Buchstabe hat aus einem Zwei-Wochen-Problem gar kein Problem gemacht.</p>
+      </div>
+      <p>Prüfen Sie deshalb aktiv darauf. Verlängern Sie in einem verknüpften Plan den Vorgang, der am ehesten überzieht, testweise um eine Woche und sehen Sie nach, was sich bewegt hat. Alles, was sich hätte verschieben müssen und stehen blieb, ist ein falscher Typ — gefunden, solange die Korrektur nichts kostet.</p>
+      <h2 id="s8">Verzögerung und Vorlauf — eine Verzögerung ist Wartezeit, kein Puffer</h2>
+<p>Eine <strong>Verzögerung</strong> ergänzt eine Verknüpfung um Wartezeit. „EA + 3 Tage“ heißt, dass B drei Tage nach dem Ende von A beginnt. Hier hängt die Inbetriebnahme mit EA+1 Tag an den Fehlerbehebungen: ein voller Tag für den letzten Datenabgleich.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="Eine Verzögerung ist fest zugesagte Wartezeit innerhalb der Verknüpfung, kein freier Spielraum daneben."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ende → Anfang + Wartezeit</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Wartezeit 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A + 3d</text></svg><figcaption>Eine Verzögerung ist fest zugesagte Wartezeit innerhalb der Verknüpfung, kein freier Spielraum daneben.</figcaption></figure>
+      <p>Was dabei regelmäßig falsch verstanden wird: <strong>Eine Verzögerung ist kein Puffer.</strong> Puffer ist Spielraum, den Sie ausgeben können, wenn etwas rutscht. Eine Verzögerung ist bereits verplante Zeit — Beton härtet aus, Farbe trocknet, eine vertragliche Prüffrist läuft. Niemand kann eine Verzögerung „aufbrauchen“, wenn er in Verzug gerät; der Beton härtet dieselben Tage. Wer Verknüpfungen mit Verzögerungen polstert, weil ein Vorgang „vielleicht“ überzieht, schafft eine Reserve, die niemand findet und niemand kürzen kann.</p>
+      <p>Ein <strong>Vorlauf</strong> ist eine negative Verzögerung: „EA − 2 Tage“ überlappt das Ende von A. Vorläufe verdichten einen Terminplan — genau das ist beschleunigtes Vorgehen —, aber sie erkaufen Zeit mit Risiko. Eine Überlappung, über die niemand nachgedacht hat, ist eine Warteschlange für Nacharbeit: B baut auf einem unfertigen A auf.</p>
+      <p>Beides schreibt man in der Notation von MS Project als <code>3EA+2T</code> — Zeile 3, Ende-Anfang, zwei Tage Verzögerung. gantts.app nimmt das in der Spalte <strong>Nach</strong> entgegen; in der englischen Notation heißt derselbe Eintrag <code>3FS+2d</code>, und beide werden verstanden.</p>
+      <h2 id="s9">Gesamtpuffer und freier Puffer sind nicht dieselbe Zahl</h2>
+<p>Jeder Vorgang hat jetzt Puffer: die Zeit, um die er rutschen darf, bevor er etwas beschädigt. Es gibt zwei Arten davon, und sie zu verwechseln ist teuer.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="Der Gesamtpuffer gehört der Kette. Der freie Puffer gehört dem Vorgang."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Freier Puffer</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Gesamtpuffer</text></svg><figcaption>Der Gesamtpuffer gehört der Kette. Der freie Puffer gehört dem Vorgang.</figcaption></figure>
+      <p><strong>Gesamtpuffer</strong> ist die Zeit, um die ein Vorgang rutschen darf, bevor sich das Projektende verschiebt. <strong>Freier Puffer</strong> ist die Zeit, um die er rutschen darf, bevor sich sein eigener Nachfolger verschiebt. Der freie Puffer ist nie größer, und im Abstand zwischen beiden wohnen die Probleme.</p>
+      <p>Die Schulung hat im korrigierten Plan Gesamtpuffer — das Enddatum wird von der Fehlerkette bestimmt. Aber Gesamtpuffer ist <em>geteilt</em>: Wenn drei aufeinanderfolgende Vorgänge jeweils acht Tage anzeigen, liegen zwischen ihnen acht Tage und nicht vierundzwanzig. Eine Teamleitung, die nur diese Zahl liest und eine Woche verschiebt, hat Puffer ausgegeben, der der ganzen Kette gehört.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Gesamtpuffer null heißt kritisch: Jeder Tag Verzug verschiebt das Enddatum."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kritischer Pfad: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Puffer (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Dauer: 12</text></svg><figcaption>Gesamtpuffer null heißt kritisch: Jeder Tag Verzug verschiebt das Enddatum.</figcaption></figure>
+      <p>Gesamtpuffer null ist die Definition des kritischen Pfads. Setzen Sie in gantts.app den Haken bei <strong>Kritischer Pfad</strong>, dann wird diese Kette schraffiert gezeichnet. Dort müssen die Typen stimmen, denn dort entsteht das Enddatum.</p>
+      <h2 id="s10">Eine Abhängigkeit in gantts.app anlegen und ändern</h2>
+<ol>
+        <li><strong>Von Balken zu Balken ziehen.</strong> Fassen Sie den kleinen Punkt am Rand eines Vorgangsbalkens, ziehen Sie ihn auf den Balken, den Sie verknüpfen wollen, und lassen Sie los. Die Verknüpfung entsteht als <strong>EA</strong> ohne Verzögerung.</li>
+        <li><strong>Den Typ ändern.</strong> Klicken Sie auf den Pfeil zwischen den Balken. Der Verknüpfungsdialog öffnet sich mit einer Auswahl für den Typ: Ende → Anfang, Anfang → Anfang, Ende → Ende, Anfang → Ende. Das Diagramm zeichnet sich sofort neu.</li>
+        <li><strong>Eine Verzögerung ergänzen.</strong> Im selben Dialog steht das Feld für die Verzögerung in Tagen. Tragen Sie <code>1</code> für das EA+1 vor der Inbetriebnahme ein oder eine negative Zahl für einen Vorlauf. Beides lässt sich mit Strg+Z rückgängig machen.</li>
+        <li><strong>Oder tippen.</strong> Die Spalte <strong>Nach</strong> im Raster nimmt Vorgänger als Zeilennummern entgegen: <code>3</code>, <code>2AA</code>, <code>3EE</code>, <code>3EA+2T</code>, durch Komma getrennt. Das ist der schnellste Weg, einen gerade eingefügten Plan zu verknüpfen.</li>
+        <li><strong>Oder über die Vorgangskarte.</strong> Klicken Sie einen Vorgang an und öffnen Sie <strong>Nach (Vorgänger)</strong>. Über die Auswahl fügen Sie eine Verknüpfung hinzu; jede bestehende hat ihre eigene Typauswahl.</li>
+        <li><strong>Eine entfernen.</strong> Im Verknüpfungsdialog gibt es dafür eine eigene Schaltfläche, alternativ das ✕ neben dem Eintrag in der Vorgangskarte.</li>
+      </ol>
+      <p>Ein Verhalten sollten Sie kennen: <strong>Eine Abhängigkeit kann einen Vorgang hier nur nach hinten schieben, nie nach vorn ziehen.</strong> Die Terminrechnung arbeitet „wie gelegt“ — ein Vorgang beginnt zum späteren der beiden Zeitpunkte: dort, wohin Sie ihn gezogen haben, oder dort, wo seine Vorgänger es erlauben. Verknüpfen Sie einen Vorgang, dessen Balken ohnehin weit hinter seinem Vorgänger liegt, bewegt sich nichts; die Lücke bleibt. Das ist Absicht: Ein bewusst platzierter Balken soll nicht von einer Verknüpfung herumgerissen werden, die Sie für die Berichterstattung ergänzt haben. Wenn Sie alles verdichten wollen, klicken Sie auf <strong>Neu planen</strong>. Das ignoriert, wo abhängige Vorgänge liegen, und zieht jeden auf den frühesten Termin zurück, den seine Vorgänger zulassen; unverknüpfte Vorgänge bleiben als Anker stehen.</p>
 
-      <div class="callout">Verknüpfen Sie nur, was wirklich wartet. Der Test: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort nein, ist es keine Abhängigkeit, sondern nur die Reihenfolge, in der Sie es aufgeschrieben haben.</div>
+      <div class="callout">Eine Abhängigkeit soll einen echten Zwang beschreiben, keine Vorliebe. „Wir machen B lieber nach A“ ist eine Reihenfolgeentscheidung und gehört in die Sortierung. „B kann physisch nicht beginnen, bevor A fertig ist“ ist eine Abhängigkeit. Pläne voller Vorlieben lassen sich nicht mehr umplanen: Jeder Termin ist von etwas festgenagelt, das nie zwingend war, und wenn verdichtet werden muss, kann niemand mehr sagen, welche Verknüpfung tragend ist.</div>
 
       <h2 id="faq">Häufige Fragen</h2>
       <div class="faq">
-        <details open><summary>Welche Abhängigkeitstypen gibt es im Gantt-Diagramm?</summary><p>Vier: Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende. Ende-Anfang deckt die weit überwiegende Mehrheit der Fälle ab.</p></details>
-        <details><summary>Was ist der Unterschied zwischen Vorlauf und Verzögerung?</summary><p>Eine Verzögerung schiebt den Nachfolger nach hinten (Aushärtezeit), ein Vorlauf lässt ihn früher beginnen, bevor der Vorgänger ganz fertig ist.</p></details>
-        <details><summary>Sollte man jeden Vorgang verknüpfen?</summary><p>Nein. Nur echte Abhängigkeiten. Ein Plan, in dem alles aneinanderhängt, verliert jede Parallelität und reagiert auf jede kleine Verschiebung übertrieben.</p></details>
-        <details><summary>Warum wird mein Vorgang nicht verschoben?</summary><p>Meist fehlt die Verknüpfung, oder es ist ein fester Termin gesetzt, der die Berechnung übersteuert.</p></details>
+        <details open><summary>Welche vier Abhängigkeitstypen gibt es im Gantt-Diagramm?</summary><p>Ende-Anfang (EA), Anfang-Anfang (AA), Ende-Ende (EE) und Anfang-Ende (AE). EA deckt die große Mehrheit der echten Beziehungen ab; AE ist wirklich selten, und viele korrekte Pläne enthalten keine einzige.</p></details>
+        <details><summary>Was ist der Unterschied zwischen Vorlauf und Verzögerung?</summary><p>Eine Verzögerung ist Wartezeit in der Verknüpfung — EA+3T heißt, der Nachfolger beginnt drei Tage nach dem Ende des Vorgängers. Ein Vorlauf ist eine negative Verzögerung und überlappt beide. Eine Verzögerung ist fest verplante Zeit, kein Spielraum: Sie können sie nicht ausgeben, wenn Sie in Verzug geraten.</p></details>
+        <details><summary>Was ist der Unterschied zwischen Gesamtpuffer und freiem Puffer?</summary><p>Gesamtpuffer ist die Zeit, um die ein Vorgang rutschen darf, bevor sich das Projektende verschiebt; freier Puffer die Zeit, bevor sich sein eigener Nachfolger verschiebt. Gesamtpuffer wird entlang einer Kette geteilt — drei Vorgänge mit jeweils acht Tagen haben zusammen nicht vierundzwanzig.</p></details>
+        <details><summary>Welchen Typ sollte man standardmäßig verwenden?</summary><p>Ende-Anfang. Wenn ein anderer Typ nötig erscheint, prüfen Sie zuerst, ob die Vorgänge richtig geschnitten sind — ein ungewöhnlicher Typ ist oft das Symptom eines Vorgangs, der geteilt gehört.</p></details>
+        <details><summary>Was passiert mit meinen Terminen, wenn ich in gantts.app eine Abhängigkeit ergänze?</summary><p>Eine Abhängigkeit kann einen Vorgang nur nach hinten schieben, nie nach vorn ziehen: Er beginnt zum späteren der beiden Zeitpunkte — dort, wo Sie ihn abgelegt haben, oder dort, wo die Vorgänger es zulassen. Mit „Neu planen“ verdichten Sie abhängige Vorgänge auf ihre frühestmöglichen Termine.</p></details>
+        <details><summary>Wie lege ich in gantts.app Abhängigkeiten an?</summary><p>Ziehen Sie vom Punkt am Rand eines Balkens auf einen anderen Balken, oder tippen Sie eine Notation wie 3EA+2T in die Spalte „Nach“. Ein Klick auf einen Verknüpfungspfeil öffnet den Dialog für Typ und Verzögerung — dort lässt sie sich auch entfernen.</p></details>
       </div>
 
       <aside class="promo">
@@ -147,7 +220,7 @@
       <ul>
         <li><a href="/de/blog/critical-path-method.html">Der kritische Pfad</a></li>
         <li><a href="/de/blog/what-is-a-gantt-chart.html">Was ist ein Gantt-Diagramm?</a></li>
-        <li><a href="/de/blog/gantt-chart-mistakes.html">Häufige Planungsfehler</a></li>
+        <li><a href="/de/blog/gantt-baseline-variance.html">Basisplan und Abweichung</a></li>
         <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
       </ul>
       <p class="crumbs"><small>Dieser Artikel ist auch auf Englisch verfügbar.</small></p>
@@ -203,6 +276,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

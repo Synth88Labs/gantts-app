@@ -53,8 +53,8 @@
   <meta name="twitter:description" content="Exceso de detalle, falta de dependencias, estimaciones tratadas como compromisos, cero holgura, ruta crítica ignorada y otros errores frecuentes." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-mistakes.html#post","headline":"Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)","description":"Exceso de detalle, falta de dependencias, estimaciones tratadas como compromisos, cero holgura, ruta crítica ignorada y otros errores frecuentes.","url":"https://gantts.app/es/blog/gantt-chart-mistakes.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-mistakes.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)","item":"https://gantts.app/es/blog/gantt-chart-mistakes.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cuál es el error más común en un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"No poner dependencias. Sin ellas no hay ruta crítica, nada se recalcula solo y cada cambio obliga a reajustar fechas a mano."}},{"@type":"Question","name":"¿Cuántas tareas son demasiadas?","acceptedAnswer":{"@type":"Answer","text":"No hay una cifra exacta, pero por encima de unas sesenta filas visibles el mantenimiento suele superar al beneficio. Agrupa en fases y despliega bajo demanda."}},{"@type":"Question","name":"¿Cómo evito que el diagrama se quede desactualizado?","acceptedAnswer":{"@type":"Answer","text":"Reduce el detalle, enlaza las dependencias para que los cambios se propaguen solos y actualiza el porcentaje completado en vez de redibujar barras."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/es/blog/gantt-chart-mistakes.html#post","headline":"Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)","description":"Exceso de detalle, falta de dependencias, estimaciones tratadas como compromisos, cero holgura, ruta crítica ignorada y otros errores frecuentes.","url":"https://gantts.app/es/blog/gantt-chart-mistakes.html","inLanguage":"es","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/es/blog/gantt-chart-mistakes.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Guías","item":"https://gantts.app/es/blog/"},{"@type":"ListItem","position":3,"name":"Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)","item":"https://gantts.app/es/blog/gantt-chart-mistakes.html"}]}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cuál es el error más común en un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"El exceso de detalle. Los diagramas que listan cada subtarea se vuelven ilegibles y se abandonan en pocas semanas, porque mantenerlos al día cuesta más de lo que devuelven."}},{"@type":"Question","name":"¿Cuántas tareas debe tener un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Las suficientemente pocas como para que vayas a mantenerlo: para la mayoría de proyectos, entre 15 y 40 filas. Cualquier cosa más corta que tu ciclo de seguimiento vive dentro de una tarea."}},{"@type":"Question","name":"¿Hay que enlazar todas las tareas fin-inicio?","acceptedAnswer":{"@type":"Answer","text":"No. Encadenarlo todo en una sola línea mete todas las tareas en la ruta crítica y hace imposible resecuenciar el plan. Enlaza solo lo que condiciona materialmente."}},{"@type":"Question","name":"¿Por qué se me retrasa el proyecto si el diagrama pintaba bien?","acceptedAnswer":{"@type":"Answer","text":"Casi siempre por una de tres: cero holgura, alguien asignado por encima del 100 % en tareas solapadas, o avance medido como duración transcurrida en vez de trabajo hecho."}},{"@type":"Question","name":"¿Está mal volver a fijar la línea base?","acceptedAnswer":{"@type":"Answer","text":"Está bien ante un cambio de alcance aprobado o una replanificación formal. Regrabarla cada vez que se incumple, no: los informes siguen en verde mientras la fecha de entrega se aleja."}},{"@type":"Question","name":"¿Cada cuánto hay que actualizar un diagrama de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Semanalmente en la mayoría de proyectos y a diario en una crisis. Importa menos la frecuencia exacta que el hecho de que sea fija y sostenible."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -86,22 +86,28 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/blog/">Guías</a> › Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)</div>
     <h1>Nueve errores habituales en un diagrama de Gantt (y cómo corregirlos)</h1>
-    <p class="lead">Casi todos los diagramas de Gantt que fallan lo hacen por las mismas razones, y ninguna tiene que ver con la herramienta. Estos son los nueve errores que más se repiten y qué hacer en cada caso.</p>
+    <p class="lead">Casi todos los diagramas de Gantt que fallan lo hacen por las mismas razones, y ninguna tiene que ver con la herramienta. Un diagrama puede estar limpio, bien coloreado y exportado todos los viernes, y aun así estar mintiendo sobre la fecha de entrega. Aquí tienes cada error, por qué está mal, cuánto cuesta en un plan real y la revisión que los detecta todos de una pasada.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>3 min de lectura</span></p>
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>12 min de lectura</span></p>
     <div class="toc"><strong>En esta página</strong>
       <ol>
-        <li><a href="#s1">1. Exceso de detalle</a></li>
-        <li><a href="#s2">2. Sin dependencias</a></li>
-        <li><a href="#s3">3. Tratar las estimaciones como compromisos</a></li>
-        <li><a href="#s4">4. Cero holgura en todo el plan</a></li>
-        <li><a href="#s5">5. Ignorar la ruta crítica</a></li>
-        <li><a href="#s6">6. Tareas sin responsable</a></li>
-        <li><a href="#s7">7. Dejar que se quede obsoleto</a></li>
-        <li><a href="#s8">8. Sin hitos</a></li>
-        <li><a href="#s9">9. Confundir duración con esfuerzo</a></li>
+        <li><a href="#s1">Un plan que comete casi todos estos errores a la vez</a></li>
+        <li><a href="#s2">1. Exceso de detalle</a></li>
+        <li><a href="#s3">2. Sin dependencias</a></li>
+        <li><a href="#s4">3. Todo encadenado fin-inicio</a></li>
+        <li><a href="#s5">4. Tratar las estimaciones como compromisos</a></li>
+        <li><a href="#s6">5. Cero holgura en todo el plan</a></li>
+        <li><a href="#s7">6. Ignorar la ruta crítica</a></li>
+        <li><a href="#s8">7. Tareas sin responsable — y responsables al 100 %</a></li>
+        <li><a href="#s9">8. Dejar que se quede obsoleto</a></li>
+        <li><a href="#s10">9. Sin hitos</a></li>
+        <li><a href="#s11">10. Medir el avance en días transcurridos</a></li>
+        <li><a href="#s12">11. Volver a fijar la línea base cada vez que se incumple</a></li>
+        <li><a href="#s13">12. Usar un Gantt para lo que no es</a></li>
+        <li><a href="#s14">El síntoma de cada error</a></li>
+        <li><a href="#s15">Una revisión de veinte minutos</a></li>
       </ol>
     </div>
 
@@ -111,32 +117,114 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">1. Exceso de detalle</h2>
-<p>Un diagrama con doscientas filas no se mantiene: se abandona. Si una tarea dura menos de un día, probablemente pertenece a la lista de alguien, no al plan del proyecto. Agrupa en fases y despliega solo lo que estés mirando.</p>
-      <h2 id="s2">2. Sin dependencias</h2>
-<p>El error más caro. Sin flechas, el diagrama es una lista de fechas que hay que reajustar a mano en cada cambio, no tiene ruta crítica y no avisa de nada. Enlazar las tareas es lo que convierte el dibujo en un modelo.</p>
-      <h2 id="s3">3. Tratar las estimaciones como compromisos</h2>
-<p>«Dos semanas» es una estimación con incertidumbre; en cuanto entra en el gráfico se lee como una promesa. Deja explícito qué duraciones son firmes y cuáles son aproximadas, y reserva holgura donde la incertidumbre es alta.</p>
-      <h2 id="s4">4. Cero holgura en todo el plan</h2>
-<p>Si ninguna tarea tiene margen, todas son críticas y cualquier imprevisto mueve la entrega. Un plan sin holgura no es ambicioso: es frágil. La holgura se planifica, no se improvisa.</p>
-      <h2 id="s5">5. Ignorar la ruta crítica</h2>
-<p>Optimizar tareas que no están en la ruta crítica se siente productivo y no adelanta el proyecto ni un día. Antes de acelerar nada, comprueba si está en la cadena que fija la fecha de fin.</p>
-      <h2 id="s6">6. Tareas sin responsable</h2>
-<p>Una tarea sin nombre al lado es una tarea que nadie va a actualizar. Además, sin responsables no puedes ver que la misma persona está en cuatro tareas simultáneas en marzo — un problema invisible en las barras.</p>
-      <h2 id="s7">7. Dejar que se quede obsoleto</h2>
-<p>Un Gantt que no se actualiza deja de ser un plan y pasa a ser un documento histórico. Si actualizarlo cuesta demasiado, casi siempre es por el error número 1 o el número 2.</p>
-      <h2 id="s8">8. Sin hitos</h2>
-<p>Los hitos son lo que dirección lee y lo que impide que el plan avance fuera de secuencia. Sin ellos, no hay puntos de control y todo se convierte en una masa continua de barras.</p>
-      <h2 id="s9">9. Confundir duración con esfuerzo</h2>
-<p>Una tarea de diez días que ocupa a media persona sigue midiendo diez días en el calendario, pero solo cinco de trabajo. Mezclar ambas cosas produce planes que parecen razonables y equipos que no dan abasto.</p>
+      <h2 id="s1">Un plan que comete casi todos estos errores a la vez</h2>
+<p>Un proyecto corriente — la nueva tienda online de <strong>Cerámicas Lubián</strong>, en Valladolid, que arranca el lunes 2 de marzo de 2026 — dibujado primero como lo dibuja casi todo el mundo y después dibujado con honestidad.</p>
+        <div class="worked">
+          <p><strong>Tal como se planificó.</strong> Seis filas, todas encadenadas fin-inicio, sin hitos y sin un solo día de margen. Presupuesto aprobado: 48.000 €.</p>
+          <ul>
+            <li>Descubrimiento — lun 2 de marzo a vie 13 de marzo (10 días)</li>
+            <li>Diseño — lun 16 de marzo a vie 27 de marzo (10 días)</li>
+            <li>Desarrollo — lun 30 de marzo a vie 24 de abril (20 días, Marta Iglesias)</li>
+            <li>Migración de contenidos — lun 30 de marzo a vie 17 de abril (15 días, Marta Iglesias)</li>
+            <li>QA — lun 27 de abril a vie 8 de mayo (10 días)</li>
+            <li>Salida a producción — lun 11 de mayo</li>
+          </ul>
+          <p><strong>Lo que el diagrama no dice.</strong> Tres cosas, y las tres eran conocidas el día que se dibujó. La primera: el cliente tiene cinco días laborables para revisar el diseño, y esa revisión no aparece por ninguna parte. La segunda: la Semana Santa cae justo encima del arranque del desarrollo — el jueves 2 y el viernes 3 de abril son festivos, y media plantilla tiene vacaciones esa semana; el plan cuenta esos días como si fueran laborables. La tercera: Marta Iglesias está asignada al 100 % a Desarrollo y al 100 % a Migración de contenidos durante las mismas tres semanas, es decir, el diagrama supone en silencio un 200 % de una sola persona. Y como las seis filas cuelgan de una única cadena fin-inicio, las seis son críticas: no hay ni una hora de holgura en cincuenta días laborables.</p>
+          <p><strong>Corregido.</strong> Se añade el hito <em>Diseño aprobado</em> y la revisión del cliente se modela como desfase (FS+5d). Con los festivos de Semana Santa fuera del calendario laboral, la aprobación cae el martes 7 de abril. Desarrollo va del miércoles 8 de abril al miércoles 6 de mayo — descontando el 1 de mayo. Migración de contenidos no puede solaparse mientras Marta lleve las dos, así que va del jueves 7 al miércoles 27 de mayo. QA detrás, del jueves 28 de mayo al miércoles 10 de junio. Cinco días de holgura visible antes del corte dejan la salida a producción el <strong>viernes 19 de junio de 2026</strong>.</p>
+          <p><strong>La consecuencia.</strong> El diagrama decía 11 de mayo. La fecha honesta era el 19 de junio: 29 días laborables más tarde, descubiertos en el primer borrador en lugar de a mediados de mayo, con la tienda a medias y el proveedor de fotografía ya facturando. No cambió nada del proyecto. Solo se escribieron tres cosas que ya eran verdad.</p>
+          <p><strong>Y el reporte.</strong> El lunes 20 de abril el informe de seguimiento daba Desarrollo al 60 %, porque habían transcurrido 12 de sus 20 días. El equipo llevaba 4 de las 11 plantillas de página terminadas. Avance real: 36 %. Con el presupuesto repartido por duración, el informe también daba 28.800 € de valor ganado donde en realidad había 17.280 €.</p>
+        </div>
+        <p>Nueve de los doce errores de esta guía están en ese plan de seis filas. Ninguno es un error de dibujo.</p>
+      <h2 id="s2">1. Exceso de detalle</h2>
+<p>El fallo más frecuente con diferencia. Un diagrama con doscientas filas no se mantiene: se abandona. Nadie actualiza sesenta barras cada semana, así que a los pocos días el archivo describe un proyecto que ya no existe, y a partir de ahí cada reunión se dedica a explicar por qué el plan no coincide con la realidad.</p>
+        <p>Hay además un efecto perverso: cuanto más detalle tiene el plan, más convincente parece, y más tarda alguien en atreverse a decir que está desactualizado.</p>
+        <p><strong>Corrección:</strong> planifica al nivel al que reportas. Si tu ciclo de seguimiento es semanal, cualquier cosa que dure menos de una semana vive dentro de una tarea, no como una fila propia. Agrupa en fases y deja la lista de trabajo fino donde el equipo ya trabaja de verdad.</p>
+      <h2 id="s3">2. Sin dependencias</h2>
+<p>Un diagrama de barras paralelas sin enlaces es un dibujo, no un plan. Cuando algo se retrasa, no se mueve nada, porque no hay nada conectado — y hay que reajustar fechas a mano, cambio a cambio, hasta que alguien se cansa.</p>
+        <p>Sin dependencias tampoco hay ruta crítica que calcular, ni holgura que medir, ni aviso de nada. Enlazar las tareas es lo que convierte el dibujo en un modelo.</p>
+        <p><strong>Corrección:</strong> enlaza lo que de verdad condiciona, y después arrastra una barra y mira. Si detrás no se mueve nada, el plan no está modelando tu proyecto.</p>
+      <h2 id="s4">3. Todo encadenado fin-inicio</h2>
+<p>El error contrario, y más sutil. Pon todas las tareas en una única fila india y todas acaban en la ruta crítica: sesenta filas diciendo «urgente», que es exactamente lo mismo que no decir nada. Además vuelve imposible replanificar, porque cada fecha está clavada por una preferencia y no por una restricción.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Solo el camino más largo de la red fija la fecha de fin."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ruta crítica: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Holgura (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duración: 12</text></svg><figcaption>Solo el camino más largo de la red fija la fecha de fin.</figcaption></figure>
+        <p>La prueba es sencilla: pregunta de cada enlace «si mañana tuviera gente y materiales, ¿podría empezar B sin que A hubiera terminado?». Si la respuesta es sí, ese enlace expresa una costumbre, no una restricción física.</p>
+        <p><strong>Corrección:</strong> enlaza solo lo que condiciona materialmente. Una ruta crítica sana cubre entre la cuarta parte y la mitad de las tareas; si las cubre todas, has dibujado una cola, no una red.</p>
+      <h2 id="s5">4. Tratar las estimaciones como compromisos</h2>
+<p>Todas las barras parecen igual de firmes. Una tarea de tres días que has hecho cincuenta veces y otra que no ha intentado nadie se dibujan exactamente igual, y en cuanto entran en el gráfico las dos se leen como promesas.</p>
+        <p><strong>Corrección:</strong> pon la holgura donde está la incertidumbre y dilo en voz alta. Un plan que admite qué partes son conjeturas sobrevive al contacto con la realidad, precisamente porque a las conjeturas se les dio sitio para equivocarse. En el campo <strong>Notas</strong> de cada tarea cabe perfectamente un «estimación firme» o un «± 3 días, depende del proveedor».</p>
+      <h2 id="s6">5. Cero holgura en todo el plan</h2>
+<p>Un plan en el que cada tarea empieza el mismo día que termina su predecesora no puede absorber nada. El primer retraso de dos días es un retraso de dos días en la entrega, y a partir de ahí todos los siguientes se acumulan.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="La holgura es el margen que tiene una tarea antes de empezar a mover la fecha de fin."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Holgura libre</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Holgura total</text></svg><figcaption>La holgura es el margen que tiene una tarea antes de empezar a mover la fecha de fin.</figcaption></figure>
+        <p>Si ninguna tarea tiene margen, todas son críticas y cualquier imprevisto mueve la entrega. Un plan sin holgura no es ambicioso: es frágil. La holgura se planifica, no se improvisa.</p>
+        <p><strong>Corrección:</strong> concentra el colchón donde se concentra el riesgo — antes de una fecha comprometida, después de cualquier cosa que dependa de un tercero, alrededor de las aprobaciones y justo antes de agosto. Cinco días de holgura visibles antes de la salida a producción valen mucho más que cinco días repartidos invisiblemente entre diez tareas, porque los primeros se pueden defender en una reunión y los segundos desaparecen en la primera negociación.</p>
+      <h2 id="s7">6. Ignorar la ruta crítica</h2>
+<p>Si no sabes qué tareas mandan sobre la fecha final, no puedes saber qué retrasos importan. Optimizar tareas que no están en la ruta crítica se siente productivo y no adelanta el proyecto ni un día: los equipos aceleran trabajo que tenía tres semanas de holgura mientras la restricción real se desliza dos filas más abajo.</p>
+        <p><strong>Corrección:</strong> activa <strong>Ruta crítica</strong> y vuelve a mirarla después de cada cambio, no una vez al principio. La ruta se mueve: una tarea con ocho días de holgura pasa a ser crítica en el momento en que se retrasa nueve.</p>
+      <h2 id="s8">7. Tareas sin responsable — y responsables al 100 %</h2>
+<p>Una tarea sin un nombre al lado es tarea de todos, lo que en la práctica significa de nadie. Una persona por tarea, no un equipo: solo a una persona se le puede preguntar cómo va.</p>
+        <p>Menos evidente, y bastante más caro: asignar a la misma persona dos tareas solapadas a plena dedicación es el mismo error con otra cara. Marta al 100 % y al 100 % no es ambición, es una imposibilidad aritmética — y el diagrama no protesta, porque las barras se solapan tan tranquilas.</p>
+        <p><strong>Corrección:</strong> revisa la carga de cada responsable a lo largo de todo el calendario, no tarea por tarea. Alguien al 140 % durante tres semanas es un plan que ya ha fracasado, aunque todavía se vea verde.</p>
+      <h2 id="s9">8. Dejar que se quede obsoleto</h2>
+<p>Un diagrama de Gantt es un documento vivo con fecha de caducidad. Tres semanas sin actualizar y la gente deja de fiarse; poco después deja de mirarlo, y el proyecto pasa a gestionarse por correo.</p>
+        <p><strong>Corrección:</strong> actualiza con una cadencia fija — semanal en condiciones normales, diaria en una crisis — y mantén el diagrama lo bastante pequeño como para que eso cueste minutos. Si actualizarlo cuesta demasiado, casi siempre es por el error número 1 o el número 2.</p>
+      <h2 id="s10">9. Sin hitos</h2>
+<p>Un muro de barras no le da al lector nada donde agarrarse. Los hitos son la forma que tiene alguien de fuera del proyecto de encontrar los puntos de decisión, y lo que impide que el trabajo avance fuera de secuencia.</p>
+        <p><strong>Corrección:</strong> marca aprobaciones, entregas, inspecciones y la salida a producción como hitos de duración cero, y cuelga de ellos el trabajo posterior. Entre cuatro y ocho suele ser lo correcto. Arriba, el hito que faltaba no era decorativo: <em>Diseño aprobado</em> era exactamente donde estaban escondidos los cinco días de revisión del cliente.</p>
+      <h2 id="s11">10. Medir el avance en días transcurridos</h2>
+<p>De todo lo que hay en esta lista, esto es lo que produce el reporte equivocado más seguro de sí mismo. Si el avance se deduce de la duración transcurrida, una tarea que nadie ha empezado informa de un 60 % el día doce de veinte — justo lo que pasó el 20 de abril en el ejemplo.</p>
+        <p><strong>Corrección:</strong> reporta una fracción del trabajo — plantillas terminadas, planos emitidos, casos de prueba superados, metros cuadrados alicatados — y no una fracción del calendario. Una tarea que no tiene ninguna unidad contable de trabajo es demasiado gruesa para hacerle seguimiento y probablemente haya que partirla.</p>
+      <h2 id="s12">11. Volver a fijar la línea base cada vez que se incumple</h2>
+<p>La línea base registra lo que prometiste. Volver a guardarla cada vez que la desviación incomoda la convierte en un registro de lo último que hiciste — un dato que ya tenías.</p>
+        <div class="worked">
+          <p>Grupo Alcorta lo hizo cada mes durante medio año en la reforma de su nave de Getafe. En el comité de junio el proyecto salía «en plazo» contra su sexta línea base. Contra la primera, la que se aprobó junto al presupuesto de 310.000 €, acumulaba cuatro meses de retraso. Las seis fotos eran correctas; el álbum era una mentira.</p>
+        </div>
+        <p><strong>Corrección:</strong> vuelve a fijar la línea base solo ante un cambio de alcance aprobado o una replanificación formal, y guarda las anteriores. La distancia entre la línea base 1 y la línea base 5 suele ser la descripción más honesta que tendrás nunca de un proyecto.</p>
+      <h2 id="s13">12. Usar un Gantt para lo que no es</h2>
+<p>Los diagramas de Gantt sirven para trabajo con secuencia, dependencias y fechas. Encajan mal con el flujo continuo y con un backlog que se reprioriza cada lunes; si te ves redibujando el plan entero todas las semanas, el problema no es tu plan, es que has elegido la representación equivocada.</p>
+        <p><strong>Corrección:</strong> Gantt cuando importan el orden y los plazos, tablero cuando no. Llevar los dos es lo normal: un tablero para la semana y un Gantt para el trimestre.</p>
+      <h2 id="s14">El síntoma de cada error</h2>
+<p>Casi siempre es más fácil reconocerlos por el síntoma que por la definición:</p>
+        <table>
+          <thead><tr><th>Lo que notas</th><th>El error</th><th>La corrección</th></tr></thead>
+          <tbody>
+            <tr><td>Lleva tres semanas sin actualizarse</td><td>Exceso de detalle</td><td>Planificar al nivel al que reportas</td></tr>
+            <tr><td>Una tarea se retrasa y no se mueve ninguna fecha</td><td>Sin dependencias</td><td>Enlazar lo que condiciona; arrastrar una barra para probar</td></tr>
+            <tr><td>Todas las tareas son críticas</td><td>Todo encadenado fin-inicio</td><td>Borrar los enlaces que solo expresan preferencia</td></tr>
+            <tr><td>Retrasos pequeños mueven la fecha final</td><td>Cero holgura</td><td>Colchones visibles antes de las fechas comprometidas</td></tr>
+            <tr><td>Aceleraste la tarea equivocada</td><td>Ruta crítica ignorada</td><td>Activarla y revisarla tras cada cambio</td></tr>
+            <tr><td>Preguntas por una tarea y no contesta nadie</td><td>Sin responsable</td><td>Una persona con nombre por tarea</td></tr>
+            <tr><td>Las tareas de una misma persona se retrasan juntas</td><td>Asignada por encima del 100 %</td><td>Revisar la carga en todo el calendario</td></tr>
+            <tr><td>«Entonces, ¿qué pasa y cuándo?»</td><td>Sin hitos</td><td>De cuatro a ocho puntos de control, con trabajo detrás</td></tr>
+            <tr><td>Un mes entero al 90 %</td><td>Avance por días transcurridos</td><td>Reportar fracción de trabajo</td></tr>
+            <tr><td>Verde cada semana y meses de retraso</td><td>Línea base regrabada en cada incumplimiento</td><td>Refijarla solo en replanificaciones aprobadas</td></tr>
+            <tr><td>Se reescribe entero todos los lunes</td><td>Herramienta equivocada</td><td>Usar un tablero para el flujo</td></tr>
+          </tbody>
+        </table>
+      <h2 id="s15">Una revisión de veinte minutos</h2>
+<p>Pasa esto por un diagrama que ya tengas, en orden. Cada paso es algo que se ve, no algo que haya que opinar.</p>
+        <ol>
+          <li>Cuenta las filas. ¿Son más de las que vas a actualizar cada semana? Agrupa el detalle en fases con <strong>▣ Grupo</strong> antes de seguir.</li>
+          <li>Arrastra la última tarea de la primera fase dos semanas a la derecha. Todo lo que no se mueva detrás no está enlazado. Deshaz y añade esos enlaces en la columna <strong>Después de</strong>, o en el campo <strong>Después de (predecesoras)</strong> del panel de la tarea.</li>
+          <li>Activa <strong>Ruta crítica</strong>. Si sale todo rayado, has enlazado de más; si no sale nada, no has enlazado nada.</li>
+          <li>Abre <strong>Calendario</strong> y comprueba que los festivos nacionales y autonómicos de tu comunidad, la Semana Santa y el parón de agosto están marcados. Un plan que trabaja el 15 de agosto no es un plan optimista, es un plan mal contado.</li>
+          <li>Pon <strong>Vista</strong> en <strong>Próximas semanas</strong>. Si esa ventana no se parece a lo que la gente está haciendo esta semana, el diagrama ya está obsoleto.</li>
+          <li>Abre <strong>Carga de trabajo</strong>. Cualquiera que aparezca por encima de su capacidad un solo día es una promesa imposible dentro de un diagrama verosímil.</li>
+          <li>Busca rombos. Cada punto en el que alguien de fuera del equipo aprueba, entrega o inspecta debería ser un <strong>◆ Hito</strong>, con el tiempo de revisión metido en el desfase.</li>
+          <li>Mira la fila anterior a cada fecha comprometida. Si termina el mismo día que vence el plazo, inserta una tarea de colchón y llámala por su nombre.</li>
+          <li>Usa <strong>Reprogramar</strong> una vez para compactar el plan a sus fechas legales más tempranas, y compara el resultado con lo que tenías. La diferencia es la holgura que estabas regalando sin saberlo.</li>
+          <li>Abre <strong>Línea base</strong> y fíjala — ahora, una sola vez, cuando el plan ya es honesto. Después activa las columnas de desviación.</li>
+          <li>Pide a cada responsable el avance en unidades de trabajo, no en porcentaje. Donde la respuesta y la barra no coincidan, la que está mal es la barra. Revisa la <strong>Curva S</strong> antes de dar el plan por bueno.</li>
+        </ol>
 
-      <div class="callout">Si solo vas a corregir uno, corrige el segundo. Casi todos los demás problemas —el mantenimiento imposible, la ruta crítica inexistente, el plan obsoleto— son consecuencias de no haber enlazado las tareas.</div>
+      <div class="callout">Fíjate en lo pocos que son errores de diagramación. Cambiar de herramienta no corrige casi ninguno: una dependencia que falta, una persona sobreasignada y una línea base regrabada en silencio son decisiones, y te siguen a cualquier software al que te mudes.</div>
 
       <h2 id="faq">Preguntas frecuentes</h2>
       <div class="faq">
-        <details open><summary>¿Cuál es el error más común en un diagrama de Gantt?</summary><p>No poner dependencias. Sin ellas no hay ruta crítica, nada se recalcula solo y cada cambio obliga a reajustar fechas a mano.</p></details>
-        <details><summary>¿Cuántas tareas son demasiadas?</summary><p>No hay una cifra exacta, pero por encima de unas sesenta filas visibles el mantenimiento suele superar al beneficio. Agrupa en fases y despliega bajo demanda.</p></details>
-        <details><summary>¿Cómo evito que el diagrama se quede desactualizado?</summary><p>Reduce el detalle, enlaza las dependencias para que los cambios se propaguen solos y actualiza el porcentaje completado en vez de redibujar barras.</p></details>
+        <details open><summary>¿Cuál es el error más común en un diagrama de Gantt?</summary><p>El exceso de detalle. Los diagramas que listan cada subtarea se vuelven ilegibles y se abandonan en pocas semanas, porque mantenerlos al día cuesta más de lo que devuelven.</p></details>
+        <details><summary>¿Cuántas tareas debe tener un diagrama de Gantt?</summary><p>Las suficientemente pocas como para que vayas a mantenerlo: para la mayoría de proyectos, entre 15 y 40 filas. Cualquier cosa más corta que tu ciclo de seguimiento vive dentro de una tarea.</p></details>
+        <details><summary>¿Hay que enlazar todas las tareas fin-inicio?</summary><p>No. Encadenarlo todo en una sola línea mete todas las tareas en la ruta crítica y hace imposible resecuenciar el plan. Enlaza solo lo que condiciona materialmente.</p></details>
+        <details><summary>¿Por qué se me retrasa el proyecto si el diagrama pintaba bien?</summary><p>Casi siempre por una de tres: cero holgura, alguien asignado por encima del 100 % en tareas solapadas, o avance medido como duración transcurrida en vez de trabajo hecho.</p></details>
+        <details><summary>¿Está mal volver a fijar la línea base?</summary><p>Está bien ante un cambio de alcance aprobado o una replanificación formal. Regrabarla cada vez que se incumple, no: los informes siguen en verde mientras la fecha de entrega se aleja.</p></details>
+        <details><summary>¿Cada cuánto hay que actualizar un diagrama de Gantt?</summary><p>Semanalmente en la mayoría de proyectos y a diario en una crisis. Importa menos la frecuencia exacta que el hecho de que sea fija y sostenible.</p></details>
       </div>
 
       <aside class="promo">
@@ -213,6 +301,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

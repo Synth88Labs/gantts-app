@@ -37,7 +37,32 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const LOCALES = ['es', 'fr', 'de', 'pt', 'zh'];
-const FLOOR = 55;          // below this, the localized reader is short-changed
+const FLOOR = 80;          // below this, the localized reader is short-changed
+
+/* WHY 80 AND NOT 55.
+   The floor sat at 55 for a long time and the Chinese pages sat at
+   55-68 — passing, because the bar had been set to whatever was true
+   at the time rather than to what a reader needs. A floor that only
+   ever describes the status quo is not a check.
+
+   The seven rebuilt guides now run 102-190% in every locale, so 80 is
+   comfortably achievable. The eight below are the hand-authored guides
+   that have not had their second pass yet; they keep the old floor as
+   NAMED, VISIBLE debt with an expiry, rather than being hidden by a
+   global bar low enough to cover them. Delete an entry as its guide is
+   rebuilt; delete LEGACY entirely when the list is empty. */
+const LEGACY_FLOOR = 55;
+const LEGACY = new Set([
+  'best-free-gantt-chart-software',
+  'critical-path-method',
+  'gantt-chart-examples',
+  'gantt-chart-in-excel',
+  'gantt-chart-in-google-sheets',
+  'gantt-chart-in-powerpoint',
+  'how-to-make-a-gantt-chart',
+  'what-is-a-gantt-chart',
+]);
+const floorFor = (slug) => (LEGACY.has(slug) ? LEGACY_FLOOR : FLOOR);
 
 function bodyText(file) {
   if (!fs.existsSync(file)) return null;
@@ -77,7 +102,7 @@ for (const slug of slugs) {
     if (t === null) { cells.push('   - '); continue; }
     const pct = Math.round((size(t, code) / en) * 100);
     compared++;
-    if (pct < FLOOR) thin.push({ slug, code, pct });
+    if (pct < floorFor(slug)) thin.push({ slug, code, pct, floor: floorFor(slug) });
     cells.push(String(pct).padStart(4) + '%');
   }
   console.log(`  ${slug.padEnd(34)} ${String(en).padStart(5)}w  ${cells.join(' ')}`);
@@ -85,6 +110,10 @@ for (const slug of slugs) {
 
 console.log(`\n  ${LOCALES.join('    ')}   (percentage of the English word count)`);
 console.log(`  ${compared} localized guide(s) compared, floor ${FLOOR}%.`);
+if (LEGACY.size) {
+  console.log(`  ${LEGACY.size} guide(s) still on the legacy ${LEGACY_FLOOR}% floor, awaiting their second pass:`);
+  console.log(`      ${[...LEGACY].join(', ')}`);
+}
 
 if (thin.length) {
   const bySlug = {};

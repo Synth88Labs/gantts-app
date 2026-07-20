@@ -524,6 +524,31 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 :root[data-theme="dark"] .fig { background: #f8fafc; color: #16151d; }
 :root[data-theme="dark"] .fig figcaption { color: #475569; }
 
+/* In-prose diagrams sit between paragraphs rather than above the
+   article, so they need less air and their caption reads better BELOW
+   the drawing — by the time you reach it you have already looked. */
+.fig-inline { margin: 22px 0; padding: 18px 18px 10px; }
+.fig-inline figcaption { margin: 14px 0 0; }
+
+/* Worked examples. The class is also what scripts/audit-guide-richness.js
+   counts, so it is load-bearing markup, not decoration — renaming it
+   silently drops these pages below the richness floor. */
+.worked {
+  margin: 26px 0;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: 0 12px 12px 0;
+  background: var(--bg-soft);
+  font-size: 16.5px;
+}
+.worked > * + * { margin-top: .9em; }
+.worked h3, .worked h4 { margin: 0; font-size: 17px; font-family: var(--font-display); }
+.worked table { font-size: 14.5px; }
+/* Numbers in a worked example are the point of it — tabular figures stop
+   the columns from jittering as the digits change width. */
+.worked td, .worked th { font-variant-numeric: tabular-nums; }
+
 .post-meta { font-size: 14px; color: var(--ink-soft); margin-top: -6px; }
 
 /* Fallback-language note. Previously this reused .crumbs, which is the

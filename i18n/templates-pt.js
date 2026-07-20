@@ -3794,6 +3794,751 @@ const T = {
       ]
     ]
   },
+
+  'hotel-refurbishment-schedule': {
+    card: "Fechamento por andar, diárias perdidas, ruído e áreas sociais.",
+    h1: "Cronograma de reforma de hotel",
+    metaTitle: "Cronograma de reforma de hotel",
+    metaDesc: "Modelo gratuito de cronograma de reforma de hotel: fechamento por andar, diárias perdidas, janelas de ruído, elevadores e áreas de serviço.",
+    lead: "Um modelo gratuito de <strong>cronograma de reforma de hotel</strong> para um hotel que segue vendendo enquanto é reconstruído — fechamentos faseados andar a andar, a receita de diárias perdida em cada um deles, janelas de ruído respeitando o horário dos hóspedes, o sequenciamento de elevadores e das áreas de serviço, e as áreas sociais programadas para a baixa temporada. Baixe para o proprietário ou para a gestora do ativo, ou abra online para enxergar quantas unidades habitacionais você está de fato tirando do inventário a cada mês.",
+    intro: "A reforma de um hotel em operação é uma obra com um contador de receita girando ao lado. O modelo sequencia os serviços em torno da ocupação, e não da disponibilidade das frentes de trabalho:",
+    phases: [
+      [
+        "Viabilidade e planejamento de receita",
+        "Levantamento das condições do prédio, escopo e padrão de acabamento, o modelo de deslocamento de diárias e a estratégia de fechamento que decorre dele. <em>Marco: capital aprovado.</em>"
+      ],
+      [
+        "Projeto e compras",
+        "Conceito e projeto executivo, especificação de mobiliário e enxoval, um apartamento-modelo completo, e as compras contra prazos de entrega que definem quando o primeiro andar pode fechar. <em>Marco: apartamento-modelo aprovado.</em>"
+      ],
+      [
+        "Áreas de serviço e elevadores",
+        "Levantamento de prumadas e instalações, modernização dos elevadores um carro por vez, áreas de funcionários, casa de máquinas e troca de chillers — os serviços que afetam todos os andares e não podem ser feitos duas vezes."
+      ],
+      [
+        "Fechamento dos andares de hóspedes",
+        "Andares retirados do inventário em sequência, demolidos, reformados, revisados na lista de pendências e devolvidos à venda. <em>Marco: último andar devolvido.</em>"
+      ],
+      [
+        "Áreas sociais e alimentos e bebidas",
+        "Lobby, restaurante, bar, salas de evento e spa, programados para a baixa temporada com solução provisória para os hóspedes no intervalo."
+      ],
+      [
+        "Entrega e reposicionamento",
+        "Comissionamento, retreinamento da equipe no produto novo, fotografia, reposicionamento de tarifa e a volta ao inventário completo. <em>Marco: inventário integralmente restabelecido.</em>"
+      ]
+    ],
+    callout: "Precifique cada fechamento em diárias antes de sequenciar qualquer coisa. Um andar de 30 unidades fechado por oito semanas equivale a cerca de 1.700 diárias de inventário perdidas, e mudar esse fechamento de janeiro para junho pode valer mais do que toda a economia que você negociava com a construtora. O modelo de deslocamento pertence ao começo do cronograma, e não a um anexo.",
+    customize: [
+      "Troque as linhas de andar pela sua própria contagem de unidades e pela duração real de cada fechamento, depois some as diárias perdidas por mês contra a sua previsão.",
+      "Empurre as obras das áreas sociais para a sua baixa temporada de verdade — na maioria dos hotéis ela é uma janela mais estreita do que o orçamento anual sugere.",
+      "Defina a janela de serviços ruidosos nas horas que a operação consegue realmente defender, e mantenha perfuração e demolição dentro dela.",
+      "Acrescente uma linha por carro de elevador; modernizar todos ao mesmo tempo quase nunca é aceitável num hotel em operação.",
+      "Insira um plano de remanejamento se você precisar transferir hóspedes no meio da estadia, e dimensione gente para ele — é trabalho real de recepção, não erro de arredondamento.",
+      "Marque aprovação do capital, aprovação do apartamento-modelo, devolução do último andar e inventário restabelecido como marcos."
+    ],
+    tips: [
+      "<strong>Construa o apartamento-modelo antes de comprar qualquer coisa.</strong> É a única oportunidade barata de descobrir que a marcenaria não encaixa, que as tomadas estão no lugar errado e que o detalhe do banheiro vaza — e a equipe de operações deveria dormir nele.",
+      "<strong>Não feche dois andares ao mesmo tempo sem que o modelo diga que dá para vender em volta.</strong> Compressão de tarifa funciona até você não ter mais quartos para comprimir.",
+      "<strong>Sequencie na vertical, e não na horizontal.</strong> Prumadas, tubulações de esgoto e poços de elevador atravessam todos os andares, então planeje os serviços de instalação como uma campanha vertical contínua em vez de repeti-los andar por andar.",
+      "<strong>Proteja o percurso do hóspede.</strong> Acesso da obra, tapumes, retirada de entulho e elevador de carga precisam de um caminho que nunca cruze o lobby no horário de check-in; ponha essas restrições no gráfico, porque elas vão moldar os turnos.",
+      "<strong>Mantenha sempre um elevador para hóspedes.</strong> A modernização de elevador é o item de obra que mais gera reclamação e reembolso, e fazer um carro por vez custa semanas mas salva a nota nas avaliações.",
+      "<strong>Estabeleça a linha de base na aprovação do apartamento-modelo.</strong> Antes disso o escopo ainda se move; depois, cada semana de atraso tem um custo conhecido em diárias que você consegue reportar."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a reforma de um hotel?",
+        "Uma reforma faseada de um hotel de porte médio em operação costuma levar de 12 a 24 meses, porque os andares são fechados em sequência e não todos de uma vez. O modelo usa um cronograma de dezoito meses que você comprime fechando mais unidades por vez — a um custo de receita."
+      ],
+      [
+        "Não seria melhor fechar o hotel inteiro?",
+        "Às vezes sim, e é o modelo de deslocamento que responde isso. O fechamento total é mais rápido e mais barato de construir, mas abre mão de toda a receita e arrisca perder contas corporativas e equipe. Modele os dois cenários antes de decidir; este modelo foi feito para a opção faseada."
+      ],
+      [
+        "Como programar serviços ruidosos num hotel em operação?",
+        "Acorde uma janela diária fixa — normalmente do meio da manhã ao fim da tarde — e trate isso como restrição rígida do cronograma, e não como um pedido à construtora. Perfuração, demolição e corte de concreto fora dessa janela são o que gera reclamação e compensação de tarifa."
+      ],
+      [
+        "Qual a diferença para o modelo de pré-abertura?",
+        "Este é para um hotel que já está vendendo hoje. Se você está comissionando um empreendimento novo, sem hóspedes a proteger, use o <a href=\"/templates/hotel-pre-opening-critical-path.html\">caminho crítico de pré-abertura de hotel</a> — ele é organizado em torno da prontidão para abrir, e não em torno de fechamentos."
+      ],
+      [
+        "O modelo de reforma de hotel é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'port-terminal-construction-schedule': {
+    card: "Dragagem, aterro, cais, portêineres, pátio e sistema operacional.",
+    h1: "Cronograma de obra de terminal portuário",
+    metaTitle: "Cronograma de obra de terminal portuário",
+    metaDesc: "Modelo gratuito de cronograma de terminal portuário: dragagem, aterro, cais, trilhos, portêineres, pavimentação do pátio e sistema operacional.",
+    lead: "Um modelo gratuito de <strong>cronograma de obra de terminal portuário</strong> que cobre as frentes marítima e terrestre juntas — licenciamento de dragagem e de despejo do material, aterro hidráulico, construção do cais, trilhos de portêiner e melhoria do solo, entrega e comissionamento dos portêineres, pavimentação do pátio e o sistema operacional do terminal (TOS). Baixe para um pacote de conselho ou para a autoridade da concessão, ou abra online para alinhar os serviços às suas janelas de tempo bom.",
+    intro: "Um terminal de contêineres são três projetos dividindo o mesmo canteiro: uma obra marítima, uma obra civil e um projeto de sistemas. O modelo mantém os três visíveis como frentes separadas, porque são restringidos por coisas completamente diferentes:",
+    phases: [
+      [
+        "Estudos e licenças",
+        "Levantamento batimétrico e geotécnico, estudo de impacto ambiental, licenças de dragagem e de área de despejo junto ao órgão ambiental e à autoridade marítima, e a anuência da ANTAQ. <em>Marco: licença de dragagem emitida.</em>"
+      ],
+      [
+        "Dragagem e aterro",
+        "Dragagem de aprofundamento dentro da janela climática sazonal, despejo na área licenciada, aterro hidráulico, e o período de sobrecarga e recalque que ninguém consegue encurtar."
+      ],
+      [
+        "Cais e berço",
+        "Estaqueamento ou lançamento de caixões, viga de coroamento, defensas e cabeços, e a dragagem do berço até a profundidade de projeto. <em>Marco: berço disponível.</em>"
+      ],
+      [
+        "Trilhos e pátio",
+        "Melhoria do solo, vigas e trilhos dos portêineres, pavimentação do pátio, drenagem, torres de iluminação, tomadas de contêiner refrigerado e o complexo de gate."
+      ],
+      [
+        "Portêineres e equipamentos",
+        "Fabricação dos guindastes, a viagem do navio de carga pesada e sua janela de atracação, descarga, montagem, ensaio de carga e entrega dos equipamentos de pátio. <em>Marco: guindastes aceitos.</em>"
+      ],
+      [
+        "TOS e início de operação",
+        "Configuração do sistema operacional do terminal, integração do gate e do OCR, cobertura de rede e rádio, treinamento, escala de teste com um navio e a abertura comercial. <em>Marco: primeiro navio comercial.</em>"
+      ]
+    ],
+    callout: "A draga e o navio de carga pesada não são seus. Ambos estão encaixados numa escala de frota global fechada com meses de antecedência, e ambos precisam de janela climática e de um berço pronto no dia. Perder o encaixe não custa uma semana — custa esperar a próxima mobilização, o que pode significar uma estação inteira. Ponha as janelas de chegada das embarcações no gráfico como barras fixas e construa o resto de trás para frente a partir delas.",
+    customize: [
+      "Coloque a campanha de dragagem dentro da janela sazonal real da sua costa, depois confira se o volume de fato cabe nela à taxa de produção da draga.",
+      "Alongue a barra de sobrecarga e recalque para o que o relatório geotécnico exigir; é um processo físico, e pressão de cronograma não o altera.",
+      "Acrescente uma linha por guindaste se eles chegarem em viagens separadas, e marque cada chegada de navio como marco.",
+      "Divida o pátio em módulos se a operação vai entrar progressivamente em vez de abrir o terminal inteiro de uma vez.",
+      "Antecipe as linhas de integração do TOS — o trabalho de software não depende de concreto e é rotineiramente iniciado tarde demais.",
+      "Marque licença de dragagem, berço disponível, guindastes aceitos e primeiro navio comercial como marcos; são as quatro datas que o poder concedente acompanha."
+    ],
+    tips: [
+      "<strong>As licenças condicionam a dragagem, e a dragagem condiciona tudo que é marítimo.</strong> O licenciamento da área de despejo, em particular, é um processo longo de terceiros sem acelerador, e por isso deve começar antes de o projeto estar concluído.",
+      "<strong>Não sobreponha a chegada do navio de guindastes à conclusão do cais.</strong> Os trilhos precisam ser levantados, alinhados e provados sob carga antes de um portêiner poder ser caminhado para terra, e esse levantamento é uma predecessora rígida.",
+      "<strong>Programe o recalque, não o presuma.</strong> Terreno aterrado sob um pátio de contêineres precisa de um período monitorado de sobrecarga; pavimentar cedo demais produz um pátio que falha em dois anos.",
+      "<strong>Comece a configuração do TOS durante a obra civil.</strong> Sistemas de terminal precisam de cadastros mestres, layout de pátio, regras de gate e interfaces com armadores e com a Receita — nada disso depende de a pavimentação estar pronta.",
+      "<strong>Planeje uma escala de teste.</strong> Uma atracação ensaiada com um armador parceiro encontra os problemas de gate, guindaste, TOS e mão de obra que uma primeira escala comercial encontraria caro.",
+      "<strong>Estabeleça a linha de base no berço disponível.</strong> As obras marítimas carregam a maior faixa de incerteza do projeto; existindo o berço, o programa terrestre fica muito mais previsível e vale ser acompanhado contra uma linha de base fixa."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva construir um terminal de contêineres?",
+        "Um terminal novo em área virgem costuma levar de 3 a 5 anos da licença ao primeiro navio comercial, com dragagem, recalque do aterro e entrega dos guindastes definindo o limite superior. O modelo usa um cronograma de cerca de três anos que você estende alongando as fases marítimas."
+      ],
+      [
+        "O que costuma comandar o caminho crítico num projeto portuário?",
+        "As licenças de dragagem e a janela de disponibilidade da draga no início, depois o recalque do aterro, depois a fabricação dos portêineres e a viagem do navio de carga pesada. Quase nada disso está sob controle da construtora, e é por isso que cada item tem barra própria no gráfico."
+      ],
+      [
+        "Quanto tempo leva a entrega de portêineres?",
+        "A fabricação costuma levar de 12 a 18 meses a partir do pedido, mais a viagem e várias semanas de montagem, ensaio de carga e comissionamento por guindaste. Encomendá-los é uma decisão de cronograma, e não de suprimentos."
+      ],
+      [
+        "Dá para usar numa ampliação em vez de um terminal novo?",
+        "Dá. Tire as linhas de aterro e mantenha a dragagem do berço, os trilhos, a entrega dos guindastes e o TOS — é aí que vive a maior parte de um programa de ampliação, com a restrição adicional de trabalhar ao lado da operação em curso."
+      ],
+      [
+        "O modelo de terminal portuário é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'rail-signalling-upgrade-plan': {
+    card: "Projeto, dados de intertravamento, FAT, bloqueios, testes e entrada em serviço.",
+    h1: "Plano de modernização de sinalização ferroviária",
+    metaTitle: "Plano de modernização de sinalização",
+    metaDesc: "Modelo gratuito de plano de sinalização ferroviária: projeto, dados de intertravamento, FAT, bloqueios de via, instalação, testes e entrada em serviço.",
+    lead: "Um modelo gratuito de <strong>plano de modernização de sinalização ferroviária</strong> construído em torno dos bloqueios de via — projeto do esquema, preparação dos dados de intertravamento, ensaios de aceitação em fábrica, solicitação e reserva dos intervalos de manutenção, instalação dentro de cada bloqueio, testes de princípios e testes integrados, e a entrada em serviço. Baixe para uma revisão de portão de fase, ou abra online para conferir se o serviço que você planejou de fato cabe nas horas que lhe foram concedidas.",
+    intro: "Um projeto de ressinalização é um trabalho de escritório com um punhado de fins de semana no meio onde tudo o que é físico acontece. O modelo trata esses fins de semana como recipientes fixos e inegociáveis, e organiza todo o resto em torno deles:",
+    phases: [
+      [
+        "Projeto do esquema",
+        "Viabilidade, arranjo de sinalização e planta do esquema, tabelas de controle, interfaces com via permanente, energia e telecomunicações, e a garantia de projeto. <em>Marco: projeto aceito.</em>"
+      ],
+      [
+        "Preparação de dados e FAT",
+        "Preparação dos dados de intertravamento, verificação independente conforme norma, simulação, e o ensaio de aceitação em fábrica do intertravamento antes de qualquer coisa sair da oficina. <em>Marco: FAT aprovado.</em>"
+      ],
+      [
+        "Planejamento dos bloqueios",
+        "Pedidos de bloqueio protocolados no prazo de grade horária junto ao gestor da infraestrutura, acesso à via reservado, planejamento de desvio e de transporte substituto, e a aprovação da estratégia de bloqueios. <em>Marco: bloqueios confirmados.</em>"
+      ],
+      [
+        "Serviços preparatórios e instalação",
+        "Rotas de cabos, casas de equipamento, canaletas e obras civis de lado de via em acessos de meio de semana, depois instalação dos equipamentos e cabeamento de transferência dentro dos bloqueios reservados."
+      ],
+      [
+        "Testes e comissionamento",
+        "Conferência de fiação e de instalação, teste de princípios, testes funcionais e integrados, reconhecimento de trecho pelos maquinistas e o próprio fim de semana de comissionamento. <em>Marco: sistema comissionado.</em>"
+      ],
+      [
+        "Entrada em serviço",
+        "Passagem do centro de controle, arranjos de contingência e de retorno ao sistema anterior, o período de operação sem falhas e o encerramento do dossiê de segurança. <em>Marco: entrada em serviço.</em>"
+      ]
+    ],
+    callout: "O bloqueio de via é o cronograma. O acesso para manutenção é solicitado contra prazos de grade horária com um ano ou mais de antecedência, e depois de reservado a pergunta deixa de ser \"quando instalamos\" e passa a ser \"o serviço cabe nas horas que recebemos\". Planeje cada bloqueio de trás para frente a partir da hora de devolução da via, com os testes ao final e um plano de contingência para o ponto em que você precisa parar e devolver a ferrovia de qualquer maneira.",
+    customize: [
+      "Lance primeiro as suas datas reais de bloqueio e trave-as; todas as outras barras do gráfico negociam em torno delas.",
+      "Acrescente uma linha por bloqueio com a duração real em horas, e não em dias — um fim de semana de 52 horas e um de 29 horas são projetos diferentes.",
+      "Tire do bloqueio tudo que for possível e leve para o meio de semana ou para fora da via; o que puder ser pré-cabeado, pré-testado ou pré-instalado, deve ser.",
+      "Alongue as barras de preparação e verificação de dados se o seu intertravamento for grande — a verificação independente é um processo lento e normatizado, e não pode ser paralelizada consigo mesma.",
+      "Insira um go/no-go formal duas semanas antes de cada bloqueio de comissionamento, tendo FAT, prontidão de testes e competência da equipe como predecessoras.",
+      "Marque aceitação do projeto, aprovação no FAT, bloqueios confirmados, comissionamento e entrada em serviço como marcos."
+    ],
+    tips: [
+      "<strong>Peça os bloqueios antes de o projeto estar concluído.</strong> O prazo de solicitação não espera o seu cronograma, e um esquema que perde a janela da grade horária perde um ano, não um mês.",
+      "<strong>Teste na fábrica, não na ferrovia.</strong> Cada falha encontrada no FAT é uma falha que você não vai diagnosticar às três da manhã com a hora de devolução da via se aproximando.",
+      "<strong>Escreva primeiro o plano de devolução.</strong> Cada bloqueio precisa de um ponto de não retorno definido, a partir do qual você para de instalar e começa a restabelecer o sistema existente — decida isso no escritório, e não na madrugada.",
+      "<strong>Proteja o teste de princípios.</strong> É a etapa crítica de segurança mais exposta a compressão quando a instalação estoura, e é justamente a que nunca pode ser encurtada.",
+      "<strong>Programe cedo o reconhecimento de trecho.</strong> Habilitação e familiarização exigem maquinistas liberados da escala, o que é uma negociação de recurso com prazo longo próprio.",
+      "<strong>Estabeleça a linha de base nos bloqueios confirmados.</strong> Antes disso as datas são aspirações; depois, os pontos fixos são reais e a variação contra eles é o que importa."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva um projeto de ressinalização?",
+        "A renovação de um único intertravamento costuma levar de 18 a 36 meses da viabilidade à entrada em serviço, com apenas alguns fins de semana disso passados fisicamente na via. O modelo usa um cronograma de cerca de dois anos que você estende acrescentando bloqueios."
+      ],
+      [
+        "O que é um bloqueio de via?",
+        "É um período reservado durante o qual um trecho da ferrovia é fechado ao tráfego para que se possa trabalhar nele — o que a prática britânica chama de <em>possession</em>. Os bloqueios são solicitados contra prazos de planejamento da grade horária com muitos meses de antecedência, e por isso se comportam como restrições fixas, e não como tarefas programáveis."
+      ],
+      [
+        "Por que a preparação de dados de intertravamento está no caminho crítico?",
+        "Porque os dados precisam ser preparados, verificados de forma independente e provados em simulação e em ensaio de fábrica antes de poderem ser instalados, e cada uma dessas etapas é sequencial e normatizada. É trabalho lento de escritório que decide se o fim de semana de comissionamento pode acontecer."
+      ],
+      [
+        "Dá para usar em passagem de nível ou em um projeto de estação?",
+        "Dá. A estrutura centrada em bloqueios é a mesma — reduza as linhas de dados de intertravamento e mantenha projeto, planejamento de bloqueios, instalação, testes e entrada em serviço."
+      ],
+      [
+        "O modelo de sinalização ferroviária é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'pharma-product-launch-plan': {
+    card: "Registro na Anvisa, lotes de validação, preço CMED e ondas de lançamento.",
+    h1: "Plano de lançamento de medicamento",
+    metaTitle: "Plano de lançamento de medicamento",
+    metaDesc: "Modelo gratuito de plano de lançamento farmacêutico: dossiê e registro na Anvisa, lotes de validação, rastreabilidade, preço CMED e ondas por país.",
+    lead: "Um modelo gratuito de <strong>plano de lançamento de medicamento</strong> cobrindo o trecho entre um estudo concluído e o produto na prateleira — dossiê e petição de registro, o prazo de análise do órgão regulador, escalonamento de produção e lotes de validação, rastreabilidade e rotulagem por mercado, definição de preço e dossiês de acesso e reembolso, assuntos médicos, e o sequenciamento de lançamento país a país. Baixe para uma revisão de prontidão de lançamento, ou abra online para ver de que a sua data de primeiro mercado realmente depende.",
+    intro: "Tudo que é comercial num lançamento farmacêutico está condicionado a duas coisas que você não controla: uma aprovação de registro e uma decisão de preço e reembolso. O modelo coloca as duas no gráfico como barras com dependentes, em vez de como premissas num slide:",
+    phases: [
+      [
+        "Registro sanitário",
+        "Compilação do dossiê, reunião pré-submissão, protocolo da petição no primeiro mercado, o prazo de análise, exigências e respostas. <em>Marco: registro concedido.</em>"
+      ],
+      [
+        "Produção e prontidão fabril",
+        "Escalonamento do processo, prontidão da planta, três lotes de validação, dados de estabilidade, inspeção de boas práticas de fabricação e liberação do estoque de lançamento. <em>Marco: estoque de lançamento liberado.</em>"
+      ],
+      [
+        "Rastreabilidade e rotulagem",
+        "Arte de embalagem por mercado, traduções, serialização e agregação, conexão aos repositórios nacionais de rastreabilidade — o SNCM no Brasil, o repositório europeu em outros mercados — e qualificação da linha de embalagem."
+      ],
+      [
+        "Preço e acesso",
+        "Dossiês de avaliação de tecnologia em saúde, pleito de preço junto à CMED, negociação com operadoras e com o comprador público, e as decisões de incorporação por mercado — a fase que decide se um produto aprovado está de fato disponível. <em>Marco: primeira incorporação ou listagem.</em>"
+      ],
+      [
+        "Assuntos médicos e evidência",
+        "Plano de publicações, conselhos consultivos, relacionamento com formadores de opinião, educação médica, evidência de mundo real e a função de informação médica."
+      ],
+      [
+        "Lançamento comercial por país",
+        "Contratação e treinamento da força de vendas, convenção de lançamento, lançamento no primeiro mercado, depois as ondas dois e três conforme registros e incorporações chegam. <em>Marco: primeira venda comercial.</em>"
+      ]
+    ],
+    callout: "Aprovação não é lançamento. Em muitos mercados um produto não pode ser vendido de forma relevante enquanto não tiver preço e cobertura definidos, e esse processo começa depois do registro e corre por meses no calendário dele. Planeje duas datas por mercado — autorização e disponibilidade — e nunca deixe uma projeção comercial supor silenciosamente que são o mesmo dia.",
+    customize: [
+      "Fixe a data de protocolo e deixe o prazo de análise correr a partir dela; a duração do regulador é dada, e só o seu tempo de resposta dentro dela é seu.",
+      "Duplique as linhas de preço, rotulagem e lançamento por mercado, já que cada um tem autoridade, idioma e caminho de reembolso próprios.",
+      "Antecipe os lotes de validação se o seu processo for novo — três lotes bem-sucedidos mais dados de estabilidade formam uma cadeia longa e sem atalho.",
+      "Acrescente uma janela de inspeção com tempo real de preparação; um apontamento na inspeção da planta é a forma mais rápida de perder um trimestre de lançamento.",
+      "Faça a contratação da força de vendas depender do marco de aprovação, a menos que você consiga bancar o custo de um time esperando decisão.",
+      "Marque protocolo, aprovação, liberação do estoque de lançamento, primeira incorporação e primeira venda comercial como marcos."
+    ],
+    tips: [
+      "<strong>Produza o estoque de lançamento antes da aprovação, e assuma o risco de perda conscientemente.</strong> Esperar o registro para só então fabricar acrescenta meses de prateleira vazia; comprometer-se cedo é uma decisão que a diretoria deve tomar explicitamente, e não uma que o cronograma toma por omissão.",
+      "<strong>Rode o dossiê de acesso em paralelo com a análise regulatória.</strong> A evidência se sobrepõe, mas o público não, e começar o trabalho de preço e reembolso depois da aprovação é o que transforma um lançamento em uma espera.",
+      "<strong>Trate a rastreabilidade como um projeto de sistemas.</strong> Codificação por mercado, agregação e conexão aos repositórios precisam ser testadas com embalagens reais; isso falha em silêncio e é descoberto no primeiro embarque.",
+      "<strong>Sequencie os mercados de propósito.</strong> Lançar cedo num mercado de preço baixo usado como referência pode ancorar preços em outros países por anos, então a ordem de lançamento é uma decisão comercial que pertence ao gráfico.",
+      "<strong>Mantenha assuntos médicos à frente do comercial.</strong> Publicações, conselhos consultivos e educação precisam de tempo de preparo e não se comprimem nas semanas seguintes à aprovação, quando a promoção começa.",
+      "<strong>Estabeleça a linha de base no protocolo.</strong> Tudo antes disso é estimativa de desenvolvimento; depois, o cronograma é uma fila que você consegue acompanhar com precisão."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva o lançamento de um medicamento?",
+        "Normalmente de 18 a 30 meses do protocolo de registro à primeira venda comercial, com a análise levando cerca de um ano nos mercados maiores e o acesso somando vários meses em cima. O modelo usa um cronograma de cerca de dois anos que você ajusta por mercado."
+      ],
+      [
+        "Onde este modelo começa em relação ao estudo clínico?",
+        "Ele começa onde o estudo termina. Fechamento de banco de dados, análise e relatório do estudo pertencem ao <a href=\"/templates/clinical-trial-gantt-chart.html\">gráfico de Gantt de estudo clínico</a>; este modelo parte da compilação do dossiê e vai até a primeira venda."
+      ],
+      [
+        "Por que preço e acesso são uma fase separada?",
+        "Porque o registro concede apenas o direito de vender, e não a capacidade de fazê-lo. A avaliação de tecnologia em saúde, o teto de preço definido pela CMED e a negociação com pagadores são processos separados, com prazos próprios, e na maioria dos mercados são eles que determinam quando o produto está de fato disponível."
+      ],
+      [
+        "Como planejar um lançamento em vários países?",
+        "Duplique as linhas de rotulagem, acesso e lançamento comercial por mercado e escalone-as em ondas. O modelo mostra um primeiro mercado mais duas ondas, que é o formato usual."
+      ],
+      [
+        "Qual o risco de produzir estoque antes da aprovação?",
+        "Perda total se o produto não for aprovado ou se a bula mudar. A maioria dos lançamentos aceita parte desse risco porque os prazos de fabricação excedem o intervalo entre aprovação e primeiros pedidos — mas isso deve ser uma decisão declarada, com um número ao lado."
+      ],
+      [
+        "O modelo de lançamento farmacêutico é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'ma-due-diligence-timeline': {
+    card: "NDA, data room, frentes de diligência, SPA, assinatura e fechamento.",
+    h1: "Cronograma de due diligence em M&amp;A",
+    metaTitle: "Cronograma de due diligence em M&A",
+    metaDesc: "Modelo gratuito de cronograma de due diligence: NDA, data room, frentes contábil, jurídica, fiscal e de TI, contrato, assinatura e fechamento.",
+    lead: "Um modelo gratuito de <strong>cronograma de due diligence em M&amp;A</strong> cobrindo a operação do primeiro contato ao fechamento — acordo de confidencialidade, teaser e memorando de informações, abertura do data room, as frentes paralelas de diligência, apresentações da administração e o processo de perguntas e respostas, negociação do contrato de compra e venda, assinatura e as condições precedentes até o fechamento. Baixe para o comitê de investimentos, ou abra online para conferir se cada frente termina dentro do seu período de exclusividade.",
+    intro: "Diligência não é uma sequência. São seis ou sete frentes lendo o mesmo data room ao mesmo tempo, contra um relógio que foi acertado na carta de exclusividade. O modelo as dispõe como raias paralelas para que o gargalo fique visível:",
+    phases: [
+      [
+        "Abordagem e confidencialidade",
+        "Identificação do alvo, abordagem, acordo de confidencialidade, teaser e o memorando de informações. <em>Marco: NDA assinado.</em>"
+      ],
+      [
+        "Oferta indicativa e acesso",
+        "Análise da primeira rodada, oferta indicativa ou carta de intenções, exclusividade acordada e data room aberto. <em>Marco: início da exclusividade.</em>"
+      ],
+      [
+        "Frentes de diligência",
+        "Diligência contábil, jurídica, fiscal, comercial, de TI e de recursos humanos rodando em paralelo sobre o mesmo data room, cada uma produzindo um relatório e um conjunto de apontamentos."
+      ],
+      [
+        "Administração e perguntas",
+        "Apresentações da administração, visitas às instalações, o log de perguntas e respostas e os pedidos complementares — o processo que determina com que velocidade as frentes conseguem de fato terminar."
+      ],
+      [
+        "Apontamentos e termos da operação",
+        "Relatório de pontos críticos, ajuste de valuation, posições de declarações e garantias, seguro de garantias e indenizações (W&amp;I) e a aprovação final do comitê de investimentos. <em>Marco: aprovação do comitê.</em>"
+      ],
+      [
+        "Contrato, assinatura e fechamento",
+        "Negociação do contrato de compra e venda de participação, carta de divulgação, assinatura, condições precedentes incluindo aprovação do CADE, e a conclusão da operação. <em>Marco: fechamento.</em>"
+      ]
+    ],
+    callout: "Exclusividade é contagem regressiva, não conforto. Ela expira numa data fixa, tendo ou não a frente fiscal recebido suas respostas, e pedir prorrogação é o momento em que um vendedor reabre preço. Trabalhe de trás para frente a partir do fim da exclusividade: a negociação do contrato precisa de semanas, o relatório de pontos críticos precisa de dias, e tudo que sobra antes disso é o que as frentes realmente têm.",
+    customize: [
+      "Fixe primeiro a data de término da exclusividade e disponha as frentes de trás para frente a partir dela — é a restrição dentro da qual o plano inteiro vive.",
+      "Acrescente ou remova raias conforme a operação; um alvo intensivo em ativos exige frentes ambiental e imobiliária, um alvo de software exige propriedade intelectual e revisão de código aberto.",
+      "Dê ao log de perguntas e respostas uma linha própria com um responsável. Ele é o gargalo compartilhado entre todas as frentes e o vendedor.",
+      "Alongue a barra de condições precedentes se a operação exigir aprovação concorrencial ou setorial; essas durações são definidas pela autoridade, e não pelas partes.",
+      "Insira um ponto formal de seguir ou parar depois do relatório de pontos críticos, para que um achado ruim tenha uma decisão programada em vez de uma conversa de corredor.",
+      "Marque NDA, início da exclusividade, aprovação do comitê, assinatura e fechamento como marcos — são as datas que um comitê de operações acompanha."
+    ],
+    tips: [
+      "<strong>Abra o data room completo antes de a diligência começar.</strong> Uma sala pela metade faz cada frente queimar a primeira semana abrindo pedidos em vez de lendo, e essa semana não volta.",
+      "<strong>Rode um único log de perguntas, e não seis.</strong> Perguntas duplicadas e contraditórias ao vendedor são a forma mais rápida de esgotar a boa vontade da administração e atrasar todas as respostas.",
+      "<strong>Comece a minuta do contrato antes de a diligência terminar.</strong> Os advogados conseguem montar a estrutura enquanto os apontamentos ainda chegam; esperar um relatório limpo é o que empurra a assinatura para além da exclusividade.",
+      "<strong>Agende cedo as apresentações da administração.</strong> Os executivos do alvo ainda têm um negócio para tocar, e a agenda deles costuma ser o recurso mais escasso do processo.",
+      "<strong>Separe assinatura de fechamento no gráfico.</strong> As condições precedentes — aprovação do CADE, anuências contratuais, liberação do financiamento — ficam entre as duas e podem correr por meses numa operação grande.",
+      "<strong>Entregue o plano no fechamento.</strong> O planejamento da integração já deveria estar em curso; o <a href=\"/templates/post-merger-integration-plan.html\">plano de integração pós-fusão</a> começa onde este modelo termina."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma due diligence de M&A?",
+        "Numa operação de middle market, tipicamente de 6 a 12 semanas de diligência dentro de um período de exclusividade de duração parecida, seguidas da negociação do contrato e depois das condições precedentes até o fechamento. O modelo usa um cronograma de cerca de cinco meses da abordagem ao fechamento."
+      ],
+      [
+        "Que frentes devem existir num plano de diligência?",
+        "Contábil, jurídica, fiscal, comercial, de TI e de recursos humanos como padrão, somando ambiental, imobiliária, de seguros ou de propriedade intelectual conforme o alvo. As seis raias principais correm aqui em paralelo sobre um único data room."
+      ],
+      [
+        "Por que a exclusividade pesa tanto no cronograma?",
+        "Porque é o único período em que um comprador pode gastar dinheiro de verdade com assessores sem risco competitivo. Quando ela expira, o vendedor pode reabrir o processo ou repactuar preço, e por isso o plano de diligência é, na prática, um projeto de duração fixa."
+      ],
+      [
+        "Qual a diferença entre assinatura e fechamento?",
+        "A assinatura é quando as partes celebram o contrato de compra e venda; o fechamento é quando a propriedade efetivamente se transfere, depois de cumpridas as condições precedentes, como a aprovação do CADE e as anuências de terceiros. Em algumas operações é o mesmo dia, em outras há meses entre eles."
+      ],
+      [
+        "O que acontece depois do fechamento?",
+        "Integração. Este modelo termina na conclusão; o <a href=\"/templates/post-merger-integration-plan.html\">plano de integração pós-fusão</a> cobre a prontidão do dia um, as frentes de trabalho e o acompanhamento de sinergias ao longo do primeiro ano."
+      ],
+      [
+        "O modelo de due diligence é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'data-migration-project-plan': {
+    card: "Perfilagem, mapeamento, higienização, cargas de ensaio e virada.",
+    h1: "Plano de projeto de migração de dados",
+    metaTitle: "Plano de projeto de migração de dados",
+    metaDesc: "Modelo gratuito de plano de migração de dados: perfilagem, mapeamento, higienização, cargas de ensaio, reconciliação, virada e verificação.",
+    lead: "Um modelo gratuito de <strong>plano de projeto de migração de dados</strong> cobrindo a frente inteira — perfilagem das origens, mapeamento e regras de transformação, higienização, construção do ETL, cargas de ensaio sucessivas, reconciliação, a carga de virada em si e a verificação pós-carga. Esta é a frente de dados que roda dentro de um programa maior, seja uma <a href=\"/templates/erp-implementation-schedule.html\">implantação de ERP</a> ou uma <a href=\"/templates/cloud-migration-project-plan.html\">migração para a nuvem</a>, e normalmente é ela que decide se a data de entrada em produção se sustenta.",
+    intro: "Planos de migração dão errado quando a carga é tratada como uma tarefa única no fim. Não é uma tarefa — é a mesma tarefa executada várias vezes até a reconciliação bater, e cada execução custa uma janela de indisponibilidade:",
+    phases: [
+      [
+        "Descoberta e perfilagem",
+        "Inventário dos sistemas de origem, volumes de dados, donos da informação, perfilagem de nulos, duplicidades e quebras de formato, e a decisão de escopo sobre o que de fato migra. <em>Marco: escopo e origens acordados.</em>"
+      ],
+      [
+        "Mapeamento e regras",
+        "Mapeamento campo a campo por objeto, regras de transformação e de valor padrão, alinhamento dos dados de referência e as regras de reconciliação contra as quais você vai testar. <em>Marco: mapeamento aprovado.</em>"
+      ],
+      [
+        "Higienização",
+        "Regras de higienização, correção pelos donos do negócio dos registros que as regras não conseguem resolver, e a rodada de deduplicação — trabalho que corre em paralelo porque não depende da construção."
+      ],
+      [
+        "Construção e teste unitário",
+        "Construção do ETL ou da ferramenta de migração por objeto, scripts de extração e carga, tratamento de erro, lógica de reinício e os próprios relatórios de reconciliação."
+      ],
+      [
+        "Cargas de ensaio e reconciliação",
+        "Três cargas de ensaio completas com reconciliação e correção de defeitos entre elas, mais o ensaio geral cronometrado que prova que a carga cabe na janela de indisponibilidade. <em>Marco: ensaio geral aprovado.</em>"
+      ],
+      [
+        "Virada e verificação",
+        "Congelamento da origem, extração do delta, a carga em produção, aprovação da reconciliação, verificação pelo negócio e decisão de retorno. <em>Marco: dados aceitos.</em>"
+      ]
+    ],
+    callout: "Você precisa de três cargas de ensaio, e não de uma, e cada uma consome uma janela de indisponibilidade inteira. A primeira prova que o mapeamento está errado. A segunda prova que a higienização funcionou. A terceira — rodada em volume de produção e cronometrada de ponta a ponta — prova que a carga de fato cabe na janela que lhe foi concedida. Planos que orçam uma única carga descobrem os três problemas no fim de semana da virada, quando não sobra tempo para corrigir nenhum deles.",
+    customize: [
+      "Fixe primeiro a data de virada e conte de trás para frente; a última carga de ensaio precisa terminar pelo menos duas semanas antes dela.",
+      "Desdobre as linhas em uma por objeto de dados — clientes, fornecedores, produtos, transações em aberto, histórico — assim que o mapeamento começar.",
+      "Reserve cada carga de ensaio como uma janela de indisponibilidade de verdade, com as mesmas pessoas que vão operar a virada, e não com uma parte delas.",
+      "Acrescente uma linha para a extração do delta se a sua origem continuar viva entre o último ensaio e a virada.",
+      "Mantenha a decisão de retorno como um marco datado com critérios nomeados, e não como uma opção implícita.",
+      "Encaixe este plano inteiro como subplano do seu cronograma de <a href=\"/templates/erp-implementation-schedule.html\">ERP</a> ou de <a href=\"/templates/cloud-migration-project-plan.html\">migração para a nuvem</a>."
+    ],
+    tips: [
+      "<strong>As regras de reconciliação vêm antes da construção.</strong> Se você não sabe dizer como vai provar que a carga está correta, também não sabe quando ela terminou.",
+      "<strong>Cronometre cada carga de ensaio de ponta a ponta.</strong> O número de que você precisa não é \"funcionou\", e sim \"quantas horas\", porque é contra isso que a janela de virada é dimensionada.",
+      "<strong>Comece a higienização cedo.</strong> Ela depende da perfilagem, e não da construção, então pode correr por meses em paralelo — e sempre leva mais tempo do que o esperado, porque exige gente do negócio, e não do time de dados.",
+      "<strong>Migre menos.</strong> Histórico é a parte mais cara de qualquer migração; uma decisão de arquivar em vez de migrar vale mais cronograma do que qualquer esforço de otimização.",
+      "<strong>Estabeleça a linha de base na aprovação do mapeamento.</strong> Tudo antes disso é estimativa; tudo depois deve ser acompanhado como variação."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma migração de dados?",
+        "Para a substituição de um sistema de porte médio, normalmente de quatro a oito meses da perfilagem à virada verificada. O modelo usa um cronograma de cerca de sete meses; o ciclo de cargas de ensaio no fim é a parte que resiste a compressão."
+      ],
+      [
+        "Quantas cargas de ensaio são necessárias?",
+        "Três é o mínimo de trabalho. A primeira testa o mapeamento, a segunda testa a higienização, e a terceira é um ensaio geral cronometrado em volume de produção que prova que a carga cabe na sua janela de indisponibilidade. Cada uma precisa de janela própria e de reconciliação própria."
+      ],
+      [
+        "Qual a diferença para os modelos de ERP ou de nuvem?",
+        "Esta é a frente de dados que roda dentro de qualquer um dos dois. Use o <a href=\"/templates/erp-implementation-schedule.html\">cronograma de implantação de ERP</a> ou o <a href=\"/templates/cloud-migration-project-plan.html\">plano de migração para a nuvem</a> para o programa inteiro, e este quando os dados precisarem de plano detalhado e responsável próprios."
+      ],
+      [
+        "O que costuma atrasar uma migração?",
+        "Qualidade de dados descoberta tarde, durante a primeira carga de ensaio, e diferenças de reconciliação que ninguém consegue explicar. As duas são encontradas carregando cedo, e não planejando com mais afinco."
+      ],
+      [
+        "O modelo de migração de dados é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'conference-production-schedule': {
+    card: "Local, chamada de trabalhos, palestrantes, patrocínio, ingressos e produção.",
+    h1: "Cronograma de produção de congresso",
+    metaTitle: "Cronograma de produção de congresso",
+    metaDesc: "Modelo gratuito de cronograma de congresso: local, chamada de trabalhos, palestrantes, patrocínio, lotes de ingresso, produção e pós-evento.",
+    lead: "Um modelo gratuito de <strong>cronograma de produção de congresso</strong> para conduzir um evento de várias trilhas — definição de local e data, chamada de trabalhos e montagem da programação, gestão de palestrantes, venda de patrocínio, lotes de inscrição, áudio e vídeo e produção, o roteiro do show e tudo que precisa acontecer depois da última sessão. Baixe para o pacote do comitê organizador, ou abra online para enxergar de qual prazo a sua programação realmente depende.",
+    intro: "Um congresso são quatro negócios rodando ao mesmo tempo: uma programação, um funil de patrocínio, um funil de ingressos e uma montagem de produção. Eles compartilham uma data e quase nada mais, por isso o modelo dá a cada um a sua raia:",
+    phases: [
+      [
+        "Local e datas",
+        "Escolha da data contra o calendário do setor, busca de locais e visitas técnicas, contrato e sinal, bloqueio de hotelaria e a decisão de capacidade contra a qual todo o resto é dimensionado. <em>Marco: local contratado.</em>"
+      ],
+      [
+        "Chamada de trabalhos e programação",
+        "Temas e trilhas, abertura da chamada de trabalhos, prazo de submissão, avaliação e seleção, aceites e recusas, e a agenda publicada. <em>Marco: agenda publicada.</em>"
+      ],
+      [
+        "Palestrantes",
+        "Convites e confirmações de keynote, contratos com palestrantes, passagens e hospedagem, briefings, prazo de entrega das apresentações e ensaios."
+      ],
+      [
+        "Patrocínio e exposição",
+        "Prospecto comercial, precificação por cota, prospecção e renovações, contratação, coleta das entregas de cada patrocinador e a planta da área de exposição. <em>Marco: meta de patrocínio atingida.</em>"
+      ],
+      [
+        "Inscrições e marketing",
+        "Montagem da plataforma de ingressos, lotes promocional, cheio e de última hora, campanha de lançamento, ondas de e-mail e a sequência de comunicação com os inscritos."
+      ],
+      [
+        "Produção e roteiro do show",
+        "Briefing de áudio, vídeo e cenografia, especificação de sala por trilha, sinalização e impressos, equipe e briefings, dias de montagem, o evento em si e o pós-evento. <em>Marco: abertura das portas.</em>"
+      ]
+    ],
+    callout: "O prazo da chamada de trabalhos define tudo o que vem depois. Avaliadores precisam de semanas, palestrantes precisam ser avisados antes de comprar passagem, e a agenda precisa estar pública antes de o lote promocional fechar, ou você vende menos ingressos pelo preço maior. Atrase o prazo de submissão em um mês e você não perdeu um mês — perdeu de uma vez o lote promocional, o tempo de marketing e o orçamento de viagem dos palestrantes.",
+    customize: [
+      "Fixe primeiro a data do evento e conte de trás para frente; todo prazo aqui é um tempo de antecedência contra essa data, e não uma estimativa somada a partir de hoje.",
+      "Acrescente uma linha por trilha se você roda programações paralelas com coordenações e bancas de avaliação separadas.",
+      "Ajuste as datas dos lotes de ingresso à sua própria política de preço — o modelo usa promocional, cheio e de última hora.",
+      "Desdobre o patrocínio em uma linha por cota ou por conta-alvo assim que a prospecção começar.",
+      "Divida os dias de montagem por sala se o local entrega os espaços em horários diferentes.",
+      "Acrescente prazos de publicação de resumos ou de artigos se o seu congresso gera anais."
+    ],
+    tips: [
+      "<strong>Publique a agenda antes de o lote promocional fechar.</strong> As pessoas compram uma programação, e não uma data; um lote promocional encerrado sem palestrantes anunciados é dinheiro deixado na mesa.",
+      "<strong>Confirme os keynotes antes de abrir a chamada de trabalhos.</strong> Um nome forte eleva a qualidade e o volume das submissões, e é a âncora de que o marketing precisa desde o primeiro dia.",
+      "<strong>Estabeleça um prazo de apresentações que você realmente faça valer.</strong> A equipe técnica não testa o que não recebeu, e apresentações de última hora são a causa mais comum de sessões estourando o horário.",
+      "<strong>Rode o patrocínio no calendário dele.</strong> Orçamentos de patrocinador são definidos anualmente, então uma prospecção que começa seis meses antes está falando com um orçamento já fechado.",
+      "<strong>Agende a reunião de avaliação antes do evento.</strong> A semana seguinte é quando todo mundo desaparece, e é o único momento em que os detalhes ainda estão frescos."
+    ],
+    faq: [
+      [
+        "Com quanta antecedência planejar um congresso?",
+        "Doze meses é o usual para um evento de várias trilhas com chamada de trabalhos, e nove já é apertado. O modelo usa um cronograma de doze meses ancorado na data do evento; local e keynotes são travados primeiro porque todo o resto é dimensionado contra eles."
+      ],
+      [
+        "Qual a diferença para o modelo de planejamento de eventos?",
+        "O <a href=\"/templates/event-planning.html\">modelo de planejamento de eventos</a> é genérico e serve para qualquer evento único. Este foi feito para conduzir um congresso de várias trilhas — chamada de trabalhos, ciclo de avaliação, gestão de palestrantes, cotas de patrocínio e roteiro do show. Use aquele para uma festa ou um lançamento, e este quando você tem uma programação."
+      ],
+      [
+        "E se eu for expositor em vez de organizador?",
+        "Use o <a href=\"/templates/trade-show-planning-timeline.html\">cronograma de planejamento de feira</a> — ele cobre a contratação do espaço, a montagem do estande, a captura de contatos e o follow-up. Este modelo é do lado de quem organiza."
+      ],
+      [
+        "Quando a chamada de trabalhos deve fechar?",
+        "Com antecedência suficiente para que avaliação, aceite, publicação da agenda e compra de passagens dos palestrantes caibam todos. O modelo deixa cerca de cinco meses entre o prazo de submissão e a abertura das portas, o que é realista quando os avaliadores são voluntários."
+      ],
+      [
+        "O modelo de cronograma de congresso é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro e sem marca d'água."
+      ]
+    ]
+  },
+
+  'call-center-setup-plan': {
+    card: "Telefonia, dimensionamento, ondas de contratação, treinamento e rampa.",
+    h1: "Plano de implantação de call center",
+    metaTitle: "Plano de implantação de call center",
+    metaDesc: "Modelo gratuito de plano de call center: contratação de telefonia, dimensionamento, ondas de recrutamento, treinamento, piloto, go-live e rampa.",
+    lead: "Um modelo gratuito de <strong>plano de implantação de call center</strong> cobrindo a montagem inteira — modelo de operação presencial ou remoto, contratação de telefonia e de plataforma em nuvem, dimensionamento e escala de força de trabalho, ondas de recrutamento, a academia de treinamento, construção da base de conhecimento, chamadas piloto, go-live e a rampa até o regime permanente. Baixe para um comitê de operações, ou abra online para alinhar as suas ondas de contratação à curva de volume.",
+    intro: "Uma central de atendimento vive ou morre em função de haver gente treinada em operação na semana em que o volume chega. O modelo trata contratação e treinamento como a sequência que comanda, e todo o resto como apoio a ela:",
+    phases: [
+      [
+        "Modelo de operação e site",
+        "Mix de canais, horário de funcionamento, decisão entre presencial, remoto ou híbrido, escolha de localidade ou política de trabalho em casa, e o modelo de quadro e de custo. <em>Marco: modelo de operação aprovado.</em>"
+      ],
+      [
+        "Tecnologia e telefonia",
+        "Seleção da plataforma de atendimento em nuvem e da telefonia, obtenção e portabilidade de números junto à operadora, integração com o CRM e com o sistema de chamados, desenho da URA e do roteamento, ferramentas de gestão de força de trabalho e de qualidade, além da logística de conectividade e headsets."
+      ],
+      [
+        "Dimensionamento",
+        "Previsão de volume por intervalo, premissas de tempo médio de atendimento, modelo de Erlang, absenteísmo e improdutividade, padrões de turno e o número de contratações que cada onda precisa entregar."
+      ],
+      [
+        "Ondas de recrutamento",
+        "Desenho do cargo e faixa salarial, captação, dinâmicas de seleção e propostas, conduzidas em ondas sucessivas cronometradas para que cada turma termine o treinamento antes de chegar o volume para o qual foi contratada."
+      ],
+      [
+        "Treinamento e conhecimento",
+        "Construção do currículo, base de conhecimento e respostas prontas, treinamento de sistemas e comportamental por turma, período de acompanhamento em chamadas reais e certificação. <em>Marco: turma 1 certificada.</em>"
+      ],
+      [
+        "Piloto, go-live e rampa",
+        "Chamadas piloto numa fila limitada, calibração de qualidade, go-live, rampa escalonada de volume por turma, e a passagem ao nível de serviço de regime. <em>Marco: regime permanente.</em>"
+      ]
+    ],
+    callout: "Trabalhe de trás para frente a partir da curva de volume, e não para frente a partir de hoje. Uma turma leva semanas para ser recrutada e mais semanas para ser treinada e acompanhada, então um atendente que precisa estar produtivo na primeira semana de operação tem de receber a proposta cerca de dois meses antes. Desistência durante o treinamento é normal, então cada onda precisa ser sobrecontratada. Se as ondas de contratação não estiverem desenhadas no mesmo gráfico que a rampa de volume, a lacuna só fica visível no dia em que a fila também fica.",
+    customize: [
+      "Fixe primeiro as datas de go-live e da rampa de volume, depois recue cada onda de contratação pela duração completa de recrutar, treinar e acompanhar.",
+      "Sobrecontrate cada onda para cobrir a desistência no treinamento — use o percentual que a sua operação realmente observa, em vez de supor que todos se certificam.",
+      "Acrescente uma linha por turma se você for rodar mais do que as três ondas mostradas.",
+      "Ajuste a duração do acompanhamento à complexidade do seu produto; filas técnicas ou reguladas precisam de mais tempo com apoio em chamada ao vivo.",
+      "Antecipe a portabilidade dos números se você estiver migrando linhas existentes — a portabilidade é uma espera de terceiros que você não comprime.",
+      "Acrescente linhas de idioma ou de canal se você for lançar chat e e-mail junto com a voz."
+    ],
+    tips: [
+      "<strong>Peça a portabilidade cedo.</strong> Ela é o único item deste plano com relógio de terceiros, e condiciona todo teste de roteamento que dependa do número real.",
+      "<strong>Construa a base de conhecimento antes do treinamento, e não durante.</strong> Instrutor escrevendo conteúdo enquanto ensina é como a primeira turma acaba treinada em material que a segunda nunca vê.",
+      "<strong>Proteja o período de acompanhamento.</strong> É na fase supervisionada em chamadas reais que o tempo de atendimento e a qualidade de fato assentam; cortá-la para cumprir uma data reaparece como problema de nível de serviço por um trimestre inteiro.",
+      "<strong>Faça o piloto numa fila real, porém limitada.</strong> Roteamento, códigos de tabulação e caminhos de escalonamento só falham direito com gente de verdade na linha.",
+      "<strong>Suba o volume em degraus.</strong> Passe ao degrau seguinte apenas quando qualidade e tempo de atendimento se sustentarem no atual — a rampa é uma série de portões, e não uma ladeira.",
+      "<strong>Confira os prazos regulatórios de atendimento.</strong> Serviços regulados têm exigências de acessibilidade, gravação e prazos de resposta que precisam estar configuradas no go-live, e não depois."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva montar um call center?",
+        "Normalmente de quatro a seis meses da aprovação do modelo de operação até o go-live, com a rampa até o regime permanente consumindo mais dois ou três. O modelo usa uma montagem de cerca de seis meses e uma rampa escalonada depois dela."
+      ],
+      [
+        "O que comanda o cronograma?",
+        "Contratação e treinamento. A tecnologia pode ser comprada e configurada em paralelo, mas uma turma leva semanas para ser recrutada e mais semanas para ser treinada e acompanhada, então a academia fica no caminho crítico até o go-live."
+      ],
+      [
+        "Quantos atendentes devem estar na primeira onda?",
+        "O suficiente para cobrir o volume de abertura mais o absenteísmo e a desistência no treinamento, o que normalmente significa recrutar bem mais do que o número de posições. O modelo mostra três ondas justamente para que as turmas seguintes sejam dimensionadas com o que a primeira ensinou."
+      ],
+      [
+        "Serve para uma central remota ou híbrida?",
+        "Serve. Tire as linhas de obra do site e mantenha a logística de equipamentos, os testes de conectividade e as tarefas de integração remota — a sequência de contratação e treinamento é idêntica."
+      ],
+      [
+        "O modelo de implantação de call center é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'franchise-rollout-plan': {
+    card: "COF, territórios, seleção de pontos, obras, treinamento e ondas de abertura.",
+    h1: "Plano de expansão de rede de franquias",
+    metaTitle: "Plano de expansão de franquia",
+    metaDesc: "Modelo gratuito de plano de expansão de franquia: COF, mapeamento de território, seleção de ponto, obra, treinamento, marketing e ondas de abertura.",
+    lead: "Um modelo gratuito de <strong>plano de expansão de rede de franquias</strong> construído em torno da sequência por unidade que você vai repetir em cada loja — recrutamento e aprovação do franqueado, mapeamento de território, seleção do ponto, obra e implantação, padrões de marca e manual de operações, treinamento, marketing de inauguração, abertura e suporte pós-abertura. O modelo mostra o trabalho de sistema uma única vez e depois três ondas de abertura sobrepostas, que é como uma expansão de fato acontece.",
+    intro: "Uma expansão de franquia não é um projeto; é um projeto-modelo executado muitas vezes com os inícios escalonados. O gráfico separa as duas coisas:",
+    phases: [
+      [
+        "Prontidão do sistema",
+        "Circular de Oferta de Franquia e o pacote jurídico exigido pela Lei de Franquia, modelo de economia da unidade, manual de operações, padrões de marca, acordos com fornecedores e o modelo de consultoria de campo. <em>Marco: sistema pronto para vender.</em>"
+      ],
+      [
+        "Território e funil",
+        "Mapeamento de territórios e dimensionamento de mercado, meta de unidades por praça, marketing para candidatos, inscrições, reuniões de apresentação, qualificação financeira e aprovação. <em>Marco: primeiros contratos assinados.</em>"
+      ],
+      [
+        "Unidades da onda 1",
+        "A sequência completa por unidade da primeira turma: seleção de ponto e locação, projeto e licenças, obra, equipamentos, treinamento, marketing de inauguração e abertura."
+      ],
+      [
+        "Unidades da onda 2",
+        "A mesma sequência, iniciada quando a onda 1 já está em obra, para que consultoria de campo e gestão de obra não sejam obrigadas a estar em dois lugares ao mesmo tempo."
+      ],
+      [
+        "Unidades da onda 3",
+        "A terceira turma, dimensionada com o que as ondas 1 e 2 revelaram sobre duração e custo reais por unidade."
+      ],
+      [
+        "Suporte e evolução do sistema",
+        "Visitas de campo pós-abertura, análises de desempenho contra o modelo de economia da unidade, e atualizações de manual e de treinamento realimentadas pelo que as primeiras unidades aprenderam."
+      ]
+    ],
+    callout: "A restrição não é nenhuma abertura em particular — é quantas aberturas a sua equipe de suporte consegue carregar ao mesmo tempo. Seleção de ponto, acompanhamento de obra, entrega de treinamento e suporte na semana de inauguração puxam todos o mesmo time central pequeno, e cada unidade precisa dele por semanas. Desenhe as ondas de modo que essas janelas não se empilhem. Uma expansão que promete dez aberturas num trimestre com um consultor de campo é um plano para abrir dez unidades mal.",
+    customize: [
+      "Ajuste primeiro a sequência por unidade às suas durações reais, depois copie-a por onda — o padrão é a parte reaproveitável.",
+      "Mude a sobreposição das ondas conforme o tamanho da sua equipe de campo; mais gente de suporte permite escalonamento mais apertado.",
+      "Passe a usar uma linha por unidade, em vez de por onda, assim que os pontos específicos forem definidos.",
+      "Estenda as durações de alvará e licenciamento por município — a mesma marca leva tempos muito diferentes em cidades diferentes.",
+      "Mantenha o treinamento do franqueado como predecessora rígida da abertura; é a linha mais comprimida com mais frequência e a mais visível para o cliente.",
+      "Acompanhe as visitas de suporte pós-abertura como trabalho realmente programado, e não como uma capacidade presumida."
+    ],
+    tips: [
+      "<strong>Não abra as unidades da onda 2 antes de a onda 1 ter operado por um mês.</strong> É nas primeiras lojas que você descobre o que o manual de operações errou, e esse aprendizado vale mais do que uma segunda onda mais rápida.",
+      "<strong>Aprove franqueados devagar.</strong> Um franqueado errado é muito mais caro do que uma abertura atrasada, e desfazer isso leva anos.",
+      "<strong>Termine o manual de operações antes do primeiro contrato.</strong> Você está vendendo um sistema; se o sistema não estiver escrito, cada unidade inventa o seu.",
+      "<strong>Sequencie locação e licenças por unidade, e não por programa.</strong> Cada ponto tem o seu próprio relógio de aprovação, e eles não correm juntos.",
+      "<strong>Reserve suporte de semana de inauguração por unidade.</strong> A primeira semana de operação define os hábitos da loja, e suporte remoto não substitui alguém no salão.",
+      "<strong>Entregue a COF no prazo legal antes da assinatura.</strong> O prazo mínimo entre entrega da circular e assinatura do contrato é uma restrição jurídica real, e ela pertence ao gráfico como uma barra, não como uma suposição."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva expandir uma rede de franquias?",
+        "A prontidão do sistema costuma levar de quatro a seis meses, e depois cada unidade leva de seis a nove meses da aprovação do franqueado à inauguração. O modelo mostra a montagem do sistema mais três ondas sobrepostas ao longo de cerca de dois anos."
+      ],
+      [
+        "Quantas unidades devem entrar em cada onda?",
+        "Quantas a sua equipe de campo conseguir sustentar de verdade em seleção de ponto, acompanhamento de obra, treinamento e semana de inauguração ao mesmo tempo — normalmente bem menos do que o plano comercial gostaria. É por isso que o modelo usa ondas pequenas."
+      ],
+      [
+        "Qual é a sequência por unidade?",
+        "Aprovação do franqueado, território e seleção de ponto, locação, projeto e licenças, obra, equipamentos, treinamento, marketing de inauguração, abertura e suporte pós-abertura. Ela se repete de forma idêntica por unidade, o que é justamente o que a torna programável."
+      ],
+      [
+        "Dá para usar em expansão de lojas próprias?",
+        "Dá. Tire as linhas de recrutamento e aprovação de franqueado e mantenha a sequência por unidade — para um ponto único, o <a href=\"/templates/retail-store-opening-timeline.html\">cronograma de abertura de loja</a> se encaixa melhor."
+      ],
+      [
+        "O modelo de expansão de franquia é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'okr-quarterly-planning': {
+    card: "Rascunho, alinhamento, avaliação do trimestre, compromisso e retrospectiva.",
+    h1: "Planejamento trimestral de OKRs",
+    metaTitle: "Planejamento trimestral de OKRs",
+    metaDesc: "Modelo gratuito de planejamento trimestral de OKRs: rascunho de objetivos, alinhamento, nota do trimestre, compromisso, check-in e retrospectiva.",
+    lead: "Um modelo gratuito de <strong>planejamento trimestral de OKRs</strong> disposto como o ciclo recorrente que ele de fato é — rascunho dos objetivos, alinhamento entre times, avaliação do trimestre que está terminando, compromisso e publicação, o check-in de meio de trimestre, e o fechamento e a retrospectiva que alimentam a rodada seguinte. Baixe para uma reunião de abertura de planejamento, ou abra online para ver onde o fechamento deste trimestre se sobrepõe ao rascunho do próximo.",
+    intro: "O motivo de o planejamento de OKRs parecer sempre corrido é que ele nunca começa do zero. Você está avaliando um trimestre enquanto rascunha o seguinte, e os dois precisam das mesmas pessoas nas mesmas semanas. O modelo mostra essa sobreposição em vez de fingir que o ciclo é sequencial:",
+    phases: [
+      [
+        "Direção da empresa",
+        "Revisão de estratégia e das metas anuais pela liderança, os dois ou três objetivos de empresa do trimestre, e a orientação contra a qual os times vão rascunhar. <em>Marco: OKRs de empresa rascunhados.</em>"
+      ],
+      [
+        "Fechamento do trimestre anterior",
+        "Coleta final dos dados de resultados-chave, autoavaliação dos times, calibração entre times e a apresentação das notas — rodando em paralelo com o rascunho do trimestre seguinte."
+      ],
+      [
+        "Rascunho dos times",
+        "Cada time rascunha objetivos e resultados-chave contra a direção da empresa, com uma sessão de trabalho e um primeiro rascunho escrito por time."
+      ],
+      [
+        "Alinhamento",
+        "Revisão cruzada de dependências, negociação onde dois times precisam da mesma capacidade, e resolução de conflitos antes do compromisso. <em>Marco: alinhamento concluído.</em>"
+      ],
+      [
+        "Compromisso e abertura",
+        "Revisão pela liderança, ajustes finais, publicação na ferramenta de acompanhamento, reunião geral de abertura e o início da cadência semanal de check-in. <em>Marco: OKRs assumidos.</em>"
+      ],
+      [
+        "Execução no trimestre",
+        "Atualizações semanais de confiança, o check-in de meio de trimestre em que objetivos podem ser ajustados ou abandonados, e o fechamento e a retrospectiva ao final. <em>Marco: trimestre encerrado.</em>"
+      ]
+    ],
+    callout: "O ciclo se sobrepõe a si mesmo, e é aí que mora todo o problema de programação. Você não consegue avaliar o trimestre passado depois de começar o próximo, porque os dados envelhecem e ninguém lembra do contexto — mas também não consegue rascunhar o próximo sem as notas. Então os dois correm juntos por cerca de três semanas, e as mesmas lideranças são necessárias nos dois. Reserve essa sobreposição explicitamente. Times que tratam planejamento como um encontro de dois dias na primeira semana estão na verdade fazendo quatro semanas de trabalho em dois dias e chamando o resultado de compromisso.",
+    customize: [
+      "Coloque o dia zero cerca de três semanas antes do fim do trimestre e o ciclo inteiro se encaixa corretamente em torno da virada.",
+      "Acrescente uma linha de rascunho por time para enxergar quem está atrasado sem precisar cobrar.",
+      "Ajuste o check-in de meio de trimestre à cadência que você realmente pratica — mensal funciona melhor do que trimestral para times de ritmo rápido.",
+      "Encurte a fase de alinhamento se você tem menos de cinco times; alongue-a bastante se os times dividem capacidade de engenharia.",
+      "Mantenha avaliação e rascunho visivelmente sobrepostos, em vez de sequenciados — a sobreposição é o retrato honesto.",
+      "Copie o bloco inteiro para frente para montar o trimestre seguinte; o ciclo é idêntico todas as vezes."
+    ],
+    tips: [
+      "<strong>Avalie antes de assumir.</strong> Definir metas novas sem saber como as anteriores terminaram é como o mesmo objetivo ambicioso demais acaba escrito três trimestres seguidos.",
+      "<strong>Limite o número de objetivos.</strong> Três por time é um plano; sete é uma lista. A fase de alinhamento fica dramaticamente mais fácil quando há menos coisa a alinhar.",
+      "<strong>Explicite as dependências durante o alinhamento.</strong> A maior parte das falhas de OKR é um time dependendo silenciosamente de uma capacidade de outro time que nunca foi assumida.",
+      "<strong>Trate o check-in de meio de trimestre como ponto de decisão.</strong> Ele existe para abandonar ou redimensionar objetivos que não vão se concretizar, e não para reportar status.",
+      "<strong>Faça a retrospectiva sobre o processo, e não apenas sobre os resultados.</strong> Se o rascunho pareceu corrido neste trimestre, vai parecer corrido no próximo, a menos que o calendário mude."
+    ],
+    faq: [
+      [
+        "Quando começar o planejamento trimestral de OKRs?",
+        "Cerca de três a quatro semanas antes de o trimestre começar. O modelo inicia o rascunho enquanto o trimestre anterior ainda está correndo, porque direção da empresa e rascunhos dos times precisam de tempo antes do compromisso, e os dados de avaliação só estão frescos na virada."
+      ],
+      [
+        "Qual a diferença para o modelo de planejamento anual?",
+        "O <a href=\"/templates/annual.html\">plano anual</a> cobre um ano inteiro de atividade do negócio. Este é o ritmo trimestral recorrente dentro dele — o ciclo de quatro semanas de rascunhar, alinhar, assumir, acompanhar e fechar que se repete a cada trimestre."
+      ],
+      [
+        "Como isso se relaciona com o roadmap de produto?",
+        "O <a href=\"/templates/product-roadmap.html\">roadmap de produto</a> mostra o que você está construindo e quando. OKRs são os resultados com que você se compromete num trimestre. O roadmap costuma ser uma das entradas do rascunho dos times, e não um substituto dele."
+      ],
+      [
+        "Por que avaliação e rascunho se sobrepõem?",
+        "Porque os dois precisam das mesmas pessoas e dos mesmos dados ao mesmo tempo. Avaliar depois de rascunhar significa assumir compromissos às cegas; rascunhar depois de avaliar significa começar o trimestre duas semanas atrasado. O modelo sobrepõe os dois de propósito e mostra o quanto."
+      ],
+      [
+        "Dá para reaproveitar todo trimestre?",
+        "Dá — é exatamente essa a ideia. Copie o bloco, desloque as datas em um trimestre e a sequência se mantém. Só os objetivos mudam."
+      ]
+    ]
+  },
 };
 
 const UI = {

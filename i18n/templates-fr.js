@@ -3799,6 +3799,753 @@ const T = {
       ]
     ]
   },
+
+  'hotel-refurbishment-schedule': {
+    card: "Fermetures d’étages par phases, nuitées perdues, plages bruyantes et réception.",
+    h1: "Planning de rénovation d’hôtel",
+    metaTitle: "Rénovation d’hôtel — planning de travaux",
+    metaDesc: "Modèle gratuit de planning de rénovation d’hôtel : fermetures d’étages par phases, nuitées perdues, plages bruyantes, ascenseurs et parties communes.",
+    lead: "Un <strong>planning de rénovation d’hôtel</strong> gratuit, pensé pour un établissement qui continue de vendre pendant qu’on le reconstruit — fermetures d’étages par phases, nuitées perdues sur chacune d’elles, plages de travaux bruyants encadrées par les horaires clients, ordonnancement des ascenseurs et des locaux techniques, et parties communes calées sur la basse saison. À télécharger pour un propriétaire ou un asset manager, ou à ouvrir en ligne pour voir combien de chambres vous sortez réellement du stock chaque mois.",
+    intro: "La rénovation d’un hôtel en exploitation est un chantier avec un compteur de recettes qui tourne à côté. Le modèle ordonne les travaux en fonction du taux d’occupation, et non de la disponibilité des entreprises :",
+    phases: [
+      [
+        "Faisabilité et modèle de recette",
+        "Diagnostic technique, programme et niveau de prestation, modèle de nuitées perdues et stratégie de fermeture qui en découle. <em>Jalon : investissement validé.</em>"
+      ],
+      [
+        "Conception et achats",
+        "Concept, projet détaillé, prescription du mobilier et des équipements, chambre témoin complète, et consultation des entreprises face à des délais d’approvisionnement qui décident de la date de fermeture du premier étage. <em>Jalon : chambre témoin validée.</em>"
+      ],
+      [
+        "Locaux techniques et ascenseurs",
+        "Relevé des gaines et des réseaux, modernisation des ascenseurs cabine par cabine, locaux du personnel, production de froid et centrales de traitement d’air — les travaux qui touchent tous les étages et qu’on ne refait pas deux fois."
+      ],
+      [
+        "Fermetures des étages clients",
+        "Étages sortis du stock l’un après l’autre, curage, aménagement, opérations préalables à la réception, levée des réserves et remise à la vente. <em>Jalon : dernier étage restitué.</em>"
+      ],
+      [
+        "Parties communes et restauration",
+        "Hall, restaurant, bar, salles de séminaire et spa, programmés en basse saison, avec une offre provisoire pour les clients pendant toute la durée des travaux."
+      ],
+      [
+        "Réception et repositionnement",
+        "Essais et mise en service, passage de la commission de sécurité, formation des équipes au nouveau produit, reportage photo, repositionnement tarifaire et retour au stock complet. <em>Jalon : stock complet restitué.</em>"
+      ]
+    ],
+    callout: "Chiffrez chaque fermeture en nuitées avant de séquencer quoi que ce soit. Un étage de 30 chambres fermé huit semaines représente environ 1 700 nuitées de stock perdu, et déplacer cette fermeture de juillet à février peut valoir bien davantage que la remise que vous étiez en train de négocier avec l’entreprise. Le modèle de nuitées perdues se place en tête du planning, pas en annexe du dossier.",
+    customize: [
+      "Remplacer les lignes d’étages par vos propres nombres de chambres et vos durées de fermeture réelles, puis totaliser les nuitées perdues par mois face au budget prévisionnel.",
+      "Décaler les parties communes vers votre vraie basse saison — pour la plupart des hôtels, la fenêtre est plus étroite que ne le laisse croire le budget annuel.",
+      "Fixer la plage de travaux bruyants aux horaires que la direction d’exploitation peut réellement tenir, et y contenir tout percement et toute démolition.",
+      "Ajouter une ligne par ascenseur : moderniser plusieurs cabines simultanément n’est presque jamais acceptable dans un hôtel qui tourne.",
+      "Insérer un plan de relogement si vous devez déplacer des clients en cours de séjour, et le doter en personnel : c’est du vrai travail de réception, pas un arrondi.",
+      "Marquer la validation de l’investissement, la chambre témoin, la restitution du dernier étage et le retour au stock complet comme jalons."
+    ],
+    tips: [
+      "<strong>Construisez la chambre témoin avant de commander quoi que ce soit.</strong> C’est la seule occasion peu coûteuse de découvrir que l’agencement ne rentre pas, que les prises sont mal placées et que le détail de salle de bains fuit — et l’équipe d’exploitation devrait y dormir une nuit.",
+      "<strong>N’empilez pas deux fermetures d’étage si le modèle ne montre pas que vous savez vendre autour.</strong> La compression tarifaire fonctionne jusqu’au jour où il ne reste plus de chambres vers lesquelles comprimer.",
+      "<strong>Séquencez verticalement, pas horizontalement.</strong> Gaines, chutes et cages d’ascenseur traversent tous les étages : traitez les réseaux comme une campagne verticale continue plutôt que comme une tâche répétée à chaque niveau.",
+      "<strong>Protégez le parcours client.</strong> Accès des entreprises, palissades, évacuation des gravats et monte-matériaux ont besoin d’un chemin qui ne croise jamais le hall aux heures d’arrivée ; ces contraintes figurent sur le planning parce qu’elles dictent les horaires de chantier.",
+      "<strong>Gardez un ascenseur en service pour les clients à tout moment.</strong> La modernisation des ascenseurs est le poste qui génère le plus de réclamations et de gestes commerciaux ; traiter les cabines l’une après l’autre coûte des semaines mais sauve la note d’avis.",
+      "<strong>Posez la référence à la validation de la chambre témoin.</strong> Avant, le programme bouge encore ; après, chaque semaine de retard a un coût en nuitées que vous pouvez présenter au propriétaire."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une rénovation d’hôtel ?",
+        "Une rénovation par phases d’un hôtel de taille moyenne en exploitation court couramment sur 12 à 24 mois, parce que les étages ferment successivement et non tous en même temps. Le modèle propose dix-huit mois, que vous pouvez comprimer en fermant plus de chambres à la fois — au prix du chiffre d’affaires."
+      ],
+      [
+        "Vaut-il mieux fermer complètement l’hôtel ?",
+        "Parfois, et c’est le modèle de nuitées perdues qui le dit. Une fermeture totale est plus rapide et moins chère à construire, mais elle abandonne toute la recette et fait courir le risque de perdre les comptes entreprises et le personnel. Chiffrez les deux avant de trancher : ce modèle est bâti pour l’option progressive."
+      ],
+      [
+        "Comment programmer les travaux bruyants dans un hôtel ouvert ?",
+        "En convenant d’une plage quotidienne fixe — typiquement de la fin de matinée au milieu d’après-midi — et en la traitant comme une contrainte ferme du planning, non comme une demande faite à l’entreprise. Les percements, démolitions et carottages hors de cette plage sont la première cause de réclamations et de remises."
+      ],
+      [
+        "En quoi est-ce différent du modèle de pré-ouverture ?",
+        'Celui-ci s’adresse à un hôtel qui exploite déjà. Si vous mettez en service un établissement neuf, sans clients à protéger, utilisez plutôt le <a href="/templates/hotel-pre-opening-critical-path.html">chemin critique de pré-ouverture d’hôtel</a> : il est organisé autour de la préparation à l’ouverture, et non autour des fermetures.'
+      ],
+      [
+        "Le modèle de rénovation d’hôtel est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'port-terminal-construction-schedule': {
+    card: "Dragage, terre-plein, quai, portiques de quai et système d’exploitation.",
+    h1: "Planning de construction d’un terminal portuaire",
+    metaTitle: "Terminal portuaire — planning travaux",
+    metaDesc: "Planning gratuit de terminal portuaire : dragage, remblaiement, quai, voies de portiques, livraison des portiques, terre-plein et système d’exploitation.",
+    lead: "Un <strong>planning de construction de terminal portuaire</strong> gratuit qui tient ensemble les travaux maritimes et terrestres — levés et autorisations de dragage et d’immersion, remblaiement, construction du quai, amélioration des sols et voies de portiques, livraison et mise en service des portiques de quai, revêtement du terre-plein et système d’exploitation du terminal. À télécharger pour un dossier de concession, ou à ouvrir en ligne pour caler les travaux sur vos fenêtres météo.",
+    intro: "Un terminal à conteneurs, ce sont trois projets qui partagent un site : un chantier maritime, un chantier de génie civil et un projet de systèmes. Le modèle les garde visibles comme des lignes distinctes, parce que leurs contraintes n’ont rien à voir :",
+    phases: [
+      [
+        "Études et autorisations",
+        "Levés bathymétriques et reconnaissances géotechniques, étude d’impact et enquête publique, autorisation environnementale, autorisation de dragage et d’immersion des déblais. <em>Jalon : autorisation de dragage obtenue.</em>"
+      ],
+      [
+        "Dragage et remblaiement",
+        "Dragage d’établissement dans la fenêtre météo saisonnière, immersion sur le site autorisé, mise en place des matériaux de remblai, puis la période de surcharge et de tassement que personne ne peut raccourcir."
+      ],
+      [
+        "Quai et poste à quai",
+        "Battage des pieux ou pose des caissons, poutre de couronnement, défenses et bollards, et dragage de la souille à la cote de projet. <em>Jalon : poste à quai disponible.</em>"
+      ],
+      [
+        "Voies de portiques et terre-plein",
+        "Amélioration des sols, longrines et rails de portiques, revêtement du terre-plein, assainissement, mâts d’éclairage, prises frigorifiques et poste de garde."
+      ],
+      [
+        "Portiques et engins de parc",
+        "Fabrication des portiques, voyage du navire de charge lourde et fenêtre d’accostage, déchargement, montage, essais de charge et livraison des engins de parc. <em>Jalon : portiques réceptionnés.</em>"
+      ],
+      [
+        "Système d’exploitation et ouverture",
+        "Paramétrage du système d’exploitation du terminal, interfaces portail, lecture automatique et douane, couverture réseau et radio, formation, escale d’essai et ouverture commerciale. <em>Jalon : première escale commerciale.</em>"
+      ]
+    ],
+    callout: "La drague et le navire de charge lourde ne vous appartiennent pas. Tous deux sont inscrits des mois à l’avance dans un carnet de commandes mondial, et tous deux réclament une fenêtre météo plus un ouvrage prêt le jour dit. Manquer le créneau ne coûte pas une semaine : il faut attendre la mobilisation suivante, ce qui peut représenter une saison. Placez les fenêtres d’arrivée des navires sur le planning comme des barres fixes et construisez le reste en rétroplanning à partir d’elles.",
+    customize: [
+      "Placer la campagne de dragage dans la fenêtre saisonnière réelle de votre littoral, puis vérifier que le volume tient effectivement dedans au rendement de production de la drague.",
+      "Allonger la barre de surcharge et de tassement à ce qu’exige l’étude géotechnique : c’est un phénomène physique, qu’aucune pression de planning ne modifie.",
+      "Ajouter une ligne par portique s’ils arrivent sur des voyages distincts, et marquer chaque arrivée de navire comme un jalon.",
+      "Découper le terre-plein en blocs si vous mettez en service progressivement plutôt que d’ouvrir tout le terminal d’un coup.",
+      "Avancer les lignes de paramétrage du système d’exploitation : le travail logiciel ne dépend d’aucun béton et démarre presque toujours beaucoup trop tard.",
+      "Marquer l’autorisation de dragage, la disponibilité du poste à quai, la réception des portiques et la première escale commerciale comme jalons : ce sont les quatre dates que suit une autorité concédante."
+    ],
+    tips: [
+      "<strong>Les autorisations conditionnent le dragage, et le dragage conditionne tout le maritime.</strong> L’autorisation du site d’immersion, en particulier, est une procédure longue conduite par un tiers, sans accélérateur possible : elle doit démarrer avant la fin des études.",
+      "<strong>Ne faites pas chevaucher l’arrivée du navire de charge lourde et l’achèvement du quai.</strong> Les rails doivent être relevés, alignés et éprouvés en charge avant qu’un portique puisse être débarqué, et ce relevé est une antériorité ferme.",
+      "<strong>Programmez le tassement, ne le supposez pas.</strong> Un remblai sous un parc à conteneurs exige une période de surcharge instrumentée ; revêtir trop tôt produit un terre-plein qui se dégrade en deux ans.",
+      "<strong>Commencez le paramétrage pendant le génie civil.</strong> Le système d’exploitation a besoin de données de référence, d’un plan de parc, de règles d’accès et d’interfaces avec les compagnies maritimes et la douane — rien de tout cela n’attend la fin du revêtement.",
+      "<strong>Prévoyez une escale d’essai.</strong> Une escale répétée avec une compagnie coopérative révèle les problèmes de portail, de portique, de système et de main-d’œuvre qu’une première escale commerciale révélerait beaucoup plus cher.",
+      "<strong>Posez la référence à la disponibilité du poste à quai.</strong> Les travaux maritimes portent la plus large incertitude d’estimation du projet ; une fois le quai existant, la partie terrestre devient bien plus prévisible et mérite un suivi d’écart sur une référence figée."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire un terminal à conteneurs ?",
+        "Un terminal neuf court couramment sur 3 à 5 ans entre l’autorisation et la première escale commerciale, le dragage, le tassement du remblai et la livraison des portiques fixant la borne haute. Le modèle propose environ trois ans, à étendre en allongeant les phases maritimes."
+      ],
+      [
+        "Qu’est-ce qui porte le chemin critique sur un projet portuaire ?",
+        "Les autorisations de dragage et la disponibilité de la drague au début, puis le tassement du remblai, puis la fabrication des portiques de quai et le voyage du navire de charge lourde. Très peu de ce chemin critique est entre les mains de l’entreprise, d’où une barre dédiée pour chacun."
+      ],
+      [
+        "Quel est le délai de livraison des portiques de quai ?",
+        "La fabrication court typiquement sur 12 à 18 mois à compter de la commande, auxquels s’ajoutent le voyage puis plusieurs semaines de montage, d’essais de charge et de mise en service par portique. Commander les portiques est une décision de planning, pas un acte d’achat."
+      ],
+      [
+        "Peut-on l’utiliser pour une extension plutôt qu’un terminal neuf ?",
+        "Oui. Supprimez les lignes de remblaiement et conservez le dragage de la souille, les voies de portiques, la livraison des portiques et le système d’exploitation : c’est là que vit l’essentiel d’un programme d’extension, avec la contrainte supplémentaire de travailler à côté d’une exploitation en cours."
+      ],
+      [
+        "Le modèle de terminal portuaire est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'rail-signalling-upgrade-plan': {
+    card: "Études, données d’enclenchement, essais en usine, plages travaux et mise en service.",
+    h1: "Plan de modernisation de la signalisation ferroviaire",
+    metaTitle: "Signalisation ferroviaire — plan projet",
+    metaDesc: "Plan gratuit de modernisation de la signalisation : études, données d’enclenchement, essais en usine, plages travaux, essais et mise en exploitation.",
+    lead: "Un <strong>plan de modernisation de la signalisation ferroviaire</strong> gratuit, construit autour des plages travaux — études de conception, préparation des données d’enclenchement, essais en usine, réservation des interceptions, installation à l’intérieur de chaque plage, essais de principe et essais d’ensemble, puis mise en exploitation commerciale. À télécharger pour une revue de jalon, ou à ouvrir en ligne pour vérifier que les travaux prévus tiennent réellement dans les heures qui vous ont été accordées.",
+    intro: "Une opération de renouvellement de signalisation est un projet de bureau d’études avec, au milieu, quelques week-ends où tout le physique se passe. Le modèle traite ces week-ends comme des contenants fixes, non déplaçables, et organise tout le reste autour d’eux :",
+    phases: [
+      [
+        "Études de conception",
+        "Faisabilité et choix de la solution, plan de signalisation, tableaux de commande et d’enclenchement, interfaces voie, énergie et télécoms, et assurance de la conception. <em>Jalon : conception acceptée.</em>"
+      ],
+      [
+        "Données et essais en usine",
+        "Élaboration des données d’enclenchement, contrôle indépendant selon le référentiel, simulation et essais en usine du poste avant toute expédition sur site. <em>Jalon : essais en usine prononcés.</em>"
+      ],
+      [
+        "Programmation des plages travaux",
+        "Demandes d’interception déposées à l’échéance de construction de l’horaire de service, plages travaux réservées, adaptation du plan de transport et substitution routière, validation de la stratégie d’interception. <em>Jalon : plages travaux confirmées.</em>"
+      ],
+      [
+        "Travaux préparatoires et installation",
+        "Cheminements de câbles, guérites et coffrets de voie, caniveaux et génie civil des abords en accès de semaine, puis pose des appareils et raccordements de bascule à l’intérieur des plages réservées."
+      ],
+      [
+        "Essais et mise en service",
+        "Contrôles de câblage et de pose, essais de principe, essais fonctionnels et essais d’ensemble, reconnaissance de ligne par les conducteurs, et le week-end de mise en service lui-même. <em>Jalon : système mis en service.</em>"
+      ],
+      [
+        "Mise en exploitation commerciale",
+        "Passation au poste et dispositions de repli, période de marche à blanc sans dérangement, clôture du dossier de sécurité et autorisation de mise en exploitation commerciale. <em>Jalon : mise en exploitation.</em>"
+      ]
+    ],
+    callout: "La plage travaux, c’est le planning. Les interceptions se demandent contre les échéances de l’horaire de service, un an ou plus à l’avance, et une fois la réservation faite, la question n’est plus « quand installe-t-on » mais « les travaux tiennent-ils dans les heures obtenues ». Programmez chaque plage en rétroplanning depuis l’heure de restitution, avec les essais à la fin et un plan de repli pour le moment où il faudra s’arrêter et rendre la voie, quoi qu’il arrive.",
+    customize: [
+      "Saisir d’abord vos dates réelles d’interception et les verrouiller : toutes les autres barres du planning négocient autour d’elles.",
+      "Ajouter une ligne par plage travaux avec sa durée réelle en heures plutôt qu’en jours — un week-end de 52 heures et un week-end de 29 heures sont deux projets différents.",
+      "Sortir de la plage tout ce qui peut en sortir, vers le travail de semaine ou l’atelier : tout ce qui peut être précâblé, préessayé ou préinstallé doit l’être.",
+      "Allonger les barres d’élaboration et de contrôle des données si votre poste est important — le contrôle indépendant est un processus lent, imposé par le référentiel, et il ne se parallélise pas avec lui-même.",
+      "Insérer un feu vert formel quinze jours avant chaque plage de mise en service, avec les essais en usine, la préparation des essais et les habilitations comme antériorités.",
+      "Marquer l’acceptation de la conception, les essais en usine, la confirmation des plages, la mise en service et la mise en exploitation commerciale comme jalons."
+    ],
+    tips: [
+      "<strong>Déposez les demandes d’interception avant la fin des études.</strong> L’échéance de l’horaire de service n’attend pas votre planning, et une opération qui manque la fenêtre perd une année, pas un mois.",
+      "<strong>Essayez en usine, pas sur la voie.</strong> Chaque défaut trouvé aux essais en usine est un défaut que vous ne diagnostiquez pas à trois heures du matin, avec l’heure de restitution qui approche.",
+      "<strong>Écrivez le plan de restitution en premier.</strong> Chaque plage a besoin d’un point de non-retour défini, au-delà duquel on cesse d’installer pour rétablir l’installation existante : ce point se décide au bureau, pas la nuit sur le terrain.",
+      "<strong>Protégez les essais de principe.</strong> C’est l’étape critique pour la sécurité la plus exposée à la compression quand l’installation déborde, et c’est précisément celle qu’il ne faut jamais raccourcir.",
+      "<strong>Réservez tôt la reconnaissance de ligne.</strong> L’habilitation et la familiarisation supposent de libérer des conducteurs du roulement, ce qui est une négociation de ressource avec son propre délai.",
+      "<strong>Posez la référence à la confirmation des plages travaux.</strong> Avant, les dates sont des intentions ; après, les points fixes sont réels et c’est l’écart par rapport à eux qui compte."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une opération de renouvellement de signalisation ?",
+        "Le renouvellement d’un poste court couramment sur 18 à 36 mois, de la faisabilité à la mise en exploitation commerciale, dont quelques week-ends seulement passés physiquement sur la voie. Le modèle propose environ deux ans, à étendre en ajoutant des plages travaux."
+      ],
+      [
+        "Qu’est-ce qu’une plage travaux ?",
+        "Une période réservée pendant laquelle une section de ligne est fermée à la circulation pour permettre les travaux. Les interceptions se demandent contre les échéances de construction de l’horaire de service, de nombreux mois à l’avance : elles se comportent donc comme des contraintes fixes et non comme des tâches programmables."
+      ],
+      [
+        "Pourquoi l’élaboration des données d’enclenchement est-elle sur le chemin critique ?",
+        "Parce que les données doivent être élaborées, contrôlées de façon indépendante, puis éprouvées en simulation et en essais d’usine avant toute installation, et que chacune de ces étapes est séquentielle et imposée. C’est un travail de bureau lent qui décide si le week-end de mise en service peut avoir lieu."
+      ],
+      [
+        "Est-ce utilisable pour un passage à niveau ou une gare ?",
+        "Oui. La structure centrée sur les plages travaux reste la même : réduisez les lignes de données d’enclenchement et conservez les études, la programmation des interceptions, l’installation, les essais et la mise en exploitation."
+      ],
+      [
+        "Le modèle de signalisation ferroviaire est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'pharma-product-launch-plan': {
+    card: "AMM, lots de validation, sérialisation, prix et remboursement, vagues de pays.",
+    h1: "Plan de lancement d’un médicament",
+    metaTitle: "Lancement de médicament — plan",
+    metaDesc: "Plan de lancement gratuit : dossier et AMM, lots de validation, sérialisation, avis de la HAS, négociation du prix au CEPS et lancement par pays.",
+    lead: "Un <strong>plan de lancement de médicament</strong> gratuit qui couvre l’intervalle entre un essai terminé et un produit en pharmacie — constitution du dossier et dépôt, horloge d’évaluation, transposition d’échelle et lots de validation, sérialisation et étiquetage par marché, dossiers de prix et de remboursement, affaires médicales, et séquencement des lancements pays par pays. À télécharger pour une revue de préparation au lancement, ou à ouvrir en ligne pour voir de quoi dépend vraiment la date de votre premier marché.",
+    intro: "Tout ce qui est commercial dans un lancement pharmaceutique est conditionné par deux choses que vous ne maîtrisez pas : une autorisation de mise sur le marché et une décision de remboursement. Le modèle place les deux sur le planning comme des barres avec des successeurs, plutôt que comme des hypothèses sur une diapositive :",
+    phases: [
+      [
+        "Dossier et autorisation",
+        "Constitution du dossier, réunion pré-dépôt, dépôt en procédure centralisée ou nationale, horloge d’évaluation, questions et réponses, négociation du résumé des caractéristiques du produit. <em>Jalon : AMM octroyée.</em>"
+      ],
+      [
+        "Production et libération",
+        "Transposition d’échelle et transfert de technologie, qualification du site et des équipements, trois lots de validation, données de stabilité, inspection des bonnes pratiques de fabrication et libération du stock de lancement. <em>Jalon : stock de lancement libéré.</em>"
+      ],
+      [
+        "Sérialisation et étiquetage",
+        "Articles de conditionnement et traductions par marché, mise en place de la sérialisation et de l’agrégation au titre du règlement délégué, raccordement aux répertoires nationaux de vérification et qualification des lignes de conditionnement."
+      ],
+      [
+        "Prix et remboursement",
+        "Dépôt à la Commission de la transparence de la HAS, avis de service médical rendu et d’amélioration du service médical rendu, négociation du prix avec le CEPS, inscription sur la liste des spécialités remboursables et publication au Journal officiel — la phase qui décide si un produit autorisé est réellement disponible. <em>Jalon : première inscription au remboursement.</em>"
+      ],
+      [
+        "Affaires médicales et données",
+        "Plan de publications, comités d’experts, relations avec les leaders d’opinion, formation médicale continue, données de vie réelle et mise en place de l’information médicale."
+      ],
+      [
+        "Lancement commercial par pays",
+        "Recrutement et formation du réseau, convention de lancement, premier marché, puis les vagues deux et trois à mesure que les autorisations et les inscriptions arrivent. <em>Jalon : première vente.</em>"
+      ]
+    ],
+    callout: "L’autorisation n’est pas le lancement. Sur la plupart des marchés européens, un produit ne se vend pas réellement tant qu’il n’a pas un prix et une inscription au remboursement, et cette procédure ne commence qu’après l’AMM, pour courir ensuite des mois selon son propre calendrier. Prévoyez deux dates par pays — autorisation et disponibilité — et ne laissez jamais une prévision commerciale supposer discrètement qu’il s’agit du même jour.",
+    customize: [
+      "Fixer la date de dépôt et laisser l’horloge d’évaluation courir à partir d’elle : la durée réglementaire est imposée, seul votre temps de réponse à l’intérieur vous appartient.",
+      "Dupliquer les lignes de prix, d’étiquetage et de lancement par marché, chacun ayant son autorité, sa langue et son parcours de remboursement.",
+      "Avancer les lots de validation si votre procédé est nouveau : trois lots conformes plus les données de stabilité forment une chaîne longue et sans raccourci.",
+      "Ajouter une fenêtre d’inspection avec un vrai temps de préparation : un écart relevé sur le site est le moyen le plus rapide de perdre un trimestre de lancement.",
+      "Ajouter une ligne d’accès précoce si votre produit y est éligible : c’est le seul chemin qui met le médicament à disposition avant l’inscription au remboursement.",
+      "Marquer le dépôt, l’AMM, la libération du stock, la première inscription au remboursement et la première vente comme jalons."
+    ],
+    tips: [
+      "<strong>Fabriquez le stock de lancement avant l’autorisation, en assumant consciemment le risque de destruction.</strong> Attendre la décision pour produire ajoute des mois de rayon vide ; s’engager tôt est un arbitrage que la direction doit poser explicitement, et non une décision que le planning prend par défaut.",
+      "<strong>Menez le dossier de remboursement en parallèle de l’évaluation réglementaire.</strong> Les données se recoupent mais l’auditoire diffère, et commencer le travail d’accès au marché après l’AMM transforme un lancement en attente.",
+      "<strong>Traitez la sérialisation comme un projet de systèmes.</strong> Codification par marché, agrégation et raccordement aux répertoires exigent des essais avec de vraies boîtes ; l’échec est silencieux et se découvre à la première expédition.",
+      "<strong>Séquencez les pays délibérément.</strong> Un lancement précoce sur un marché à prix bas peut ancrer les prix ailleurs pendant des années par le jeu des prix de référence : l’ordre des lancements est une décision commerciale qui a sa place sur le planning.",
+      "<strong>Gardez les affaires médicales en avance sur le commercial.</strong> Publications, comités d’experts et formation demandent du délai et ne se compriment pas dans les semaines qui suivent l’autorisation, au moment où la promotion démarre.",
+      "<strong>Posez la référence au dépôt.</strong> Tout ce qui précède est une estimation de développement ; après, le planning devient une file d’attente que l’on suit précisément."
+    ],
+    faq: [
+      [
+        "Combien de temps dure le lancement d’un médicament ?",
+        "Couramment 18 à 30 mois entre le dépôt réglementaire et la première vente, l’évaluation prenant environ un an sur les grands marchés et le remboursement ajoutant plusieurs mois par-dessus. Le modèle propose environ deux ans, à ajuster marché par marché."
+      ],
+      [
+        "Où ce modèle commence-t-il par rapport à un essai clinique ?",
+        'Il prend le relais là où l’essai s’arrête. Le gel de la base, l’analyse et le rapport d’étude relèvent du <a href="/templates/clinical-trial-gantt-chart.html">diagramme de Gantt d’essai clinique</a> ; ce modèle démarre à la constitution du dossier et court jusqu’à la première vente.'
+      ],
+      [
+        "Pourquoi le prix et le remboursement forment-ils une phase à part ?",
+        "Parce que l’autorisation ne donne que le droit de vendre, pas la capacité de le faire. L’évaluation par la Commission de la transparence puis la négociation avec le CEPS sont des procédures distinctes, avec leurs propres délais, et ce sont elles qui déterminent la date de disponibilité réelle."
+      ],
+      [
+        "Comment planifier un lancement multipays ?",
+        "En dupliquant les lignes d’étiquetage, de remboursement et de lancement commercial par marché et en les décalant par vagues. Le modèle montre un premier marché puis deux vagues, ce qui correspond à la forme habituelle."
+      ],
+      [
+        "Quel est le risque de produire avant l’autorisation ?",
+        "La destruction du stock si le produit n’est pas autorisé ou si l’étiquetage change. La plupart des lancements acceptent une part de ce risque, parce que les délais de fabrication dépassent l’intervalle entre l’autorisation et les premières commandes — mais cela doit rester une décision assumée, avec un chiffre en face."
+      ],
+      [
+        "Le modèle de lancement pharmaceutique est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'ma-due-diligence-timeline': {
+    card: "Confidentialité, data room, chantiers d’audit, exclusivité, signature et closing.",
+    h1: "Calendrier de due diligence d’acquisition",
+    metaTitle: "Due diligence — calendrier d’acquisition",
+    metaDesc: "Calendrier gratuit de due diligence : confidentialité, data room, audits financier, juridique, fiscal et social, exclusivité, signature et closing.",
+    lead: "Un <strong>calendrier de due diligence d’acquisition</strong> gratuit qui couvre l’opération du premier contact à la réalisation — accord de confidentialité, teaser et mémorandum d’information, ouverture de la data room, chantiers d’audit menés en parallèle, présentations du management et questions-réponses, négociation du protocole de cession, signature et conditions suspensives avant le closing. À télécharger pour un comité d’investissement, ou à ouvrir en ligne pour vérifier que chaque chantier finit dans votre période d’exclusivité.",
+    intro: "La due diligence n’est pas une séquence. Ce sont six ou sept chantiers qui lisent la même data room en même temps, contre une horloge fixée dans la lettre d’exclusivité. Le modèle les dispose en couloirs parallèles pour que le goulot soit visible :",
+    phases: [
+      [
+        "Approche et confidentialité",
+        "Identification de la cible, prise de contact, accord de confidentialité, teaser et mémorandum d’information. <em>Jalon : accord de confidentialité signé.</em>"
+      ],
+      [
+        "Offre indicative et accès",
+        "Revue de premier tour, offre indicative ou lettre d’intention, exclusivité accordée et ouverture de la data room. <em>Jalon : début de l’exclusivité.</em>"
+      ],
+      [
+        "Chantiers de due diligence",
+        "Audits financier, juridique, fiscal, commercial, informatique et social menés en parallèle sur la même data room, chacun produisant un rapport et une liste de points d’attention."
+      ],
+      [
+        "Management et questions-réponses",
+        "Présentations du management, visites de sites, journal des questions-réponses et demandes complémentaires — le processus qui détermine la vitesse réelle à laquelle les chantiers peuvent se terminer."
+      ],
+      [
+        "Conclusions et conditions de l’opération",
+        "Rapport de points bloquants, ajustement de valorisation, garantie d’actif et de passif, assurance de garantie et accord final du comité d’investissement. <em>Jalon : accord du comité d’investissement.</em>"
+      ],
+      [
+        "Protocole, signature et closing",
+        "Négociation du protocole de cession, information-consultation du comité social et économique, lettre de divulgation, signature, conditions suspensives dont l’autorisation de concentration, puis réalisation. <em>Jalon : closing.</em>"
+      ]
+    ],
+    callout: "L’exclusivité est un compte à rebours, pas un confort. Elle expire à date fixe, que le chantier fiscal ait obtenu ses réponses ou non, et demander une prolongation est le moment précis où un cédant rouvre le prix. Travaillez en rétroplanning depuis la fin de l’exclusivité : la négociation du protocole demande des semaines, le rapport de points bloquants demande des jours, et le reste correspond au temps dont les chantiers disposent réellement.",
+    customize: [
+      "Fixer d’abord la date de fin d’exclusivité et disposer les chantiers en remontant depuis elle — c’est la contrainte dans laquelle vit tout le plan.",
+      "Ajouter ou retirer des couloirs selon l’opération : une cible industrielle appelle un audit environnemental et immobilier, une cible logicielle un examen de la propriété intellectuelle et des composants libres.",
+      "Donner au journal des questions-réponses sa propre ligne et son propre responsable : c’est le goulot partagé entre tous les chantiers et le cédant.",
+      "Insérer la procédure d’information-consultation du comité social et économique comme une barre à part entière : ses délais sont légaux et se déroulent avant la signature, pas après.",
+      "Allonger la barre de conditions suspensives si l’opération requiert une autorisation de concentration : ces durées sont fixées par l’autorité, pas par les parties.",
+      "Marquer la confidentialité, le début d’exclusivité, l’accord du comité d’investissement, la signature et le closing comme jalons — ce sont les dates que suit un comité de direction."
+    ],
+    tips: [
+      "<strong>Ouvrez une data room correctement alimentée avant le démarrage des audits.</strong> Une data room à moitié remplie fait brûler à chaque chantier sa première semaine en demandes plutôt qu’en lecture, et cette semaine ne revient jamais.",
+      "<strong>Tenez un seul journal de questions-réponses, pas six.</strong> Des questions dupliquées et contradictoires adressées au cédant sont le moyen le plus rapide d’épuiser la bonne volonté du management et de ralentir toutes les réponses.",
+      "<strong>Anticipez l’information-consultation des représentants du personnel.</strong> C’est une procédure encadrée par des délais, avec un avis à recueillir avant la signature : découverte tardivement, elle décale l’opération de plusieurs semaines.",
+      "<strong>Commencez la rédaction du protocole avant la fin des audits.</strong> Les avocats peuvent bâtir la structure pendant que les constats arrivent encore ; attendre un rapport propre est ce qui pousse la signature au-delà de l’exclusivité.",
+      "<strong>Réservez tôt les présentations du management.</strong> Les dirigeants de la cible ont encore une entreprise à faire tourner, et leur disponibilité est presque toujours la ressource la plus rare du processus.",
+      '<strong>Passez le relais au closing.</strong> La préparation de l’intégration doit déjà être engagée ; le <a href="/templates/post-merger-integration-plan.html">plan d’intégration post-acquisition</a> commence là où ce modèle s’arrête.'
+    ],
+    faq: [
+      [
+        "Combien de temps dure une due diligence ?",
+        "Sur une opération de moyenne taille, typiquement 6 à 12 semaines d’audits à l’intérieur d’une exclusivité de durée comparable, suivies de la négociation du protocole puis des conditions suspensives avant le closing. Le modèle propose environ cinq mois entre l’approche et la réalisation."
+      ],
+      [
+        "Quels chantiers faut-il prévoir dans un plan de due diligence ?",
+        "Financier, juridique, fiscal, commercial, informatique et social en standard, auxquels s’ajoutent l’environnement, l’immobilier, les assurances ou la propriété intellectuelle selon la cible. Les six couloirs de base tournent ici en parallèle sur une seule data room."
+      ],
+      [
+        "Pourquoi l’exclusivité pèse-t-elle autant sur le calendrier ?",
+        "Parce que c’est la seule période pendant laquelle un acquéreur peut engager des honoraires importants sans risque concurrentiel. À son expiration, le cédant peut rouvrir le processus ou repositionner le prix : le plan de due diligence est donc, de fait, un projet à durée imposée."
+      ],
+      [
+        "Quelle différence entre la signature et le closing ?",
+        "La signature est le moment où les parties signent le protocole de cession ; le closing est celui où la propriété est effectivement transférée, une fois les conditions suspensives levées — autorisation de concentration, agréments, financement. Sur certaines opérations les deux tombent le même jour, sur d’autres plusieurs mois les séparent."
+      ],
+      [
+        "Que se passe-t-il après le closing ?",
+        'L’intégration. Ce modèle s’arrête à la réalisation ; le <a href="/templates/post-merger-integration-plan.html">plan d’intégration post-acquisition</a> couvre la préparation du jour un, les chantiers et le suivi des synergies sur la première année.'
+      ],
+      [
+        "Le modèle de due diligence est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'data-migration-project-plan': {
+    card: "Profilage, correspondances, nettoyage, jeux d’essai, bascule et réconciliation.",
+    h1: "Plan de projet de reprise de données",
+    metaTitle: "Reprise de données — plan projet",
+    metaDesc: "Plan gratuit de reprise de données : profilage, règles de correspondance, nettoyage, chargements à blanc, réconciliation, bascule et recette métier.",
+    lead: "Un <strong>plan de projet de reprise de données</strong> gratuit qui couvre tout le chantier — profilage des sources, correspondances et règles de transformation, nettoyage, développement des chargements, chargements à blanc successifs, réconciliation, bascule en production et vérification après chargement. C’est le chantier données qui tourne à l’intérieur d’un programme plus large, qu’il s’agisse d’une <a href=\"/templates/erp-implementation-schedule.html\">mise en place d’ERP</a> ou d’une <a href=\"/templates/cloud-migration-project-plan.html\">migration vers le cloud</a>, et c’est en général lui qui décide si la date de mise en production tient.",
+    intro: "Les plans de reprise déraillent quand le chargement est traité comme une tâche unique à la fin. Ce n’est pas une tâche : c’est la même tâche rejouée plusieurs fois jusqu’à ce que la réconciliation tombe juste, et chaque exécution coûte une fenêtre d’indisponibilité :",
+    phases: [
+      [
+        "Cadrage et profilage",
+        "Inventaire des systèmes sources, volumétries, propriétaires des données, profilage des valeurs nulles, des doublons et des ruptures de format, et décision de périmètre sur ce qui migre réellement. <em>Jalon : périmètre et sources arrêtés.</em>"
+      ],
+      [
+        "Correspondances et règles",
+        "Correspondance champ à champ par objet, règles de transformation et valeurs par défaut, alignement des référentiels et définition des règles de réconciliation contre lesquelles vous testerez. <em>Jalon : correspondances validées.</em>"
+      ],
+      [
+        "Nettoyage",
+        "Règles de nettoyage, reprise manuelle par les propriétaires métier des enregistrements que les règles ne savent pas corriger, et passe de dédoublonnage — un travail parallèle, sans dépendance au développement."
+      ],
+      [
+        "Développement et tests unitaires",
+        "Développement des chaînes d’extraction et de chargement par objet, gestion des erreurs, logique de reprise sur incident et construction des états de réconciliation eux-mêmes."
+      ],
+      [
+        "Chargements à blanc et réconciliation",
+        "Trois chargements à blanc complets, avec réconciliation et correction des anomalies entre chacun, plus la répétition générale chronométrée qui prouve que le chargement tient dans la fenêtre d’indisponibilité. <em>Jalon : répétition générale réussie.</em>"
+      ],
+      [
+        "Bascule et vérification",
+        "Gel des sources, extraction du différentiel, chargement en production, validation de la réconciliation, recette métier et décision de repli. <em>Jalon : données acceptées.</em>"
+      ]
+    ],
+    callout: "Il vous faut trois chargements à blanc, pas un, et chacun consomme une fenêtre d’indisponibilité entière. Le premier prouve que les correspondances sont fausses. Le deuxième prouve que le nettoyage a fonctionné. Le troisième — joué sur des volumes de production et chronométré de bout en bout — prouve que le chargement tient réellement dans la fenêtre qu’on vous a accordée. Les plans qui budgètent un seul chargement découvrent les trois problèmes le week-end de bascule, quand il ne reste plus de temps pour en corriger aucun.",
+    customize: [
+      "Fixer d’abord la date de bascule et compter à rebours : le dernier chargement à blanc doit se terminer au moins deux semaines avant.",
+      "Développer les lignes en une ligne par objet de données — clients, fournisseurs, articles, en-cours, historique — dès que les correspondances démarrent.",
+      "Réserver chaque chargement à blanc comme une vraie fenêtre d’indisponibilité, avec les personnes qui tiendront la bascule, et non un sous-ensemble.",
+      "Ajouter une ligne d’extraction du différentiel si votre source reste vivante entre le dernier chargement à blanc et la bascule.",
+      "Garder la décision de repli comme un jalon daté avec des critères nommés, et non comme une option implicite.",
+      "Insérer ce plan entier comme sous-plan de votre calendrier d’<a href=\"/templates/erp-implementation-schedule.html\">ERP</a> ou de <a href=\"/templates/cloud-migration-project-plan.html\">migration cloud</a>."
+    ],
+    tips: [
+      "<strong>Les règles de réconciliation viennent avant le développement.</strong> Si vous ne savez pas énoncer comment vous prouverez que le chargement est correct, vous ne saurez pas quand il est terminé.",
+      "<strong>Chronométrez chaque chargement à blanc de bout en bout.</strong> Le chiffre dont vous avez besoin n’est pas « est-ce que ça a marché » mais « combien d’heures », car c’est lui qui dimensionne la fenêtre de bascule.",
+      "<strong>Commencez le nettoyage tôt.</strong> Il dépend du profilage et non du développement : il peut donc courir des mois en parallèle — et il prend toujours plus longtemps que prévu, parce qu’il mobilise des gens du métier, pas l’équipe données.",
+      "<strong>Migrez moins.</strong> L’historique est le poste le plus coûteux de toute reprise ; décider de l’archiver plutôt que de le reprendre rapporte plus de planning que n’importe quel effort d’optimisation, et sert au passage la minimisation exigée par le RGPD.",
+      "<strong>Posez la référence à la validation des correspondances.</strong> Tout ce qui précède relève de l’estimation ; tout ce qui suit se suit comme un écart."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une reprise de données ?",
+        "Pour le remplacement d’un système de taille moyenne, couramment quatre à huit mois entre le profilage et une bascule vérifiée. Le modèle propose environ sept mois ; le cycle de chargements à blanc de la fin est la partie qui résiste à la compression."
+      ],
+      [
+        "Combien de chargements à blanc faut-il ?",
+        "Trois est le minimum de travail. Le premier teste les correspondances, le deuxième teste le nettoyage, et le troisième est une répétition générale chronométrée sur des volumes de production qui prouve que le chargement tient dans votre fenêtre. Chacun exige sa propre fenêtre et sa propre réconciliation."
+      ],
+      [
+        "En quoi est-ce différent des modèles ERP ou migration cloud ?",
+        'C’est le chantier données qui tourne à l’intérieur de l’un ou de l’autre. Utilisez le <a href="/templates/erp-implementation-schedule.html">calendrier de mise en place d’ERP</a> ou le <a href="/templates/cloud-migration-project-plan.html">plan de migration cloud</a> pour l’ensemble du programme, et celui-ci quand les données méritent leur propre plan détaillé et leur propre responsable.'
+      ],
+      [
+        "Qu’est-ce qui fait généralement déraper une reprise ?",
+        "Une qualité de données découverte tard, au premier chargement à blanc, et des écarts de réconciliation que personne ne sait expliquer. Les deux se trouvent en chargeant tôt, pas en planifiant plus fort."
+      ],
+      [
+        "Le modèle de reprise de données est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+
+  'conference-production-schedule': {
+    card: "Lieu, appel à communications, intervenants, sponsors, billetterie et régie.",
+    h1: "Planning de production d’un colloque",
+    metaTitle: "Colloque — planning de production",
+    metaDesc: "Planning gratuit de colloque : lieu, appel à communications, comité de programme, intervenants, sponsors, billetterie, régie et conduite technique.",
+    lead: "Un <strong>planning de production de colloque</strong> gratuit pour organiser un événement à sessions parallèles — réservation du lieu et de la date, appel à communications et construction du programme, gestion des intervenants, commercialisation des partenariats, paliers tarifaires de billetterie, audiovisuel et régie, conduite technique et tout ce qui doit arriver après la dernière session. À télécharger pour un comité d’organisation, ou à ouvrir en ligne pour voir de quelle échéance dépend réellement votre programme.",
+    intro: "Un colloque, ce sont quatre activités menées en même temps : un programme scientifique, un pipeline de partenariats, un tunnel de billetterie et une production technique. Elles partagent une date et presque rien d’autre : le modèle donne donc à chacune son propre couloir :",
+    phases: [
+      [
+        "Lieu et dates",
+        "Choix de la date face au calendrier du secteur, recherche de lieu et visites, contrat et acompte, contingent hôtelier et décision de jauge à laquelle tout le reste sera dimensionné. <em>Jalon : lieu contractualisé.</em>"
+      ],
+      [
+        "Appel à communications et programme",
+        "Thématiques et sessions, ouverture de l’appel à communications, date limite de soumission, relecture et sélection par le comité de programme, notifications d’acceptation et de refus, puis publication du programme. <em>Jalon : programme publié.</em>"
+      ],
+      [
+        "Intervenants",
+        "Invitations et confirmations des conférenciers principaux, conventions d’intervention, déplacements et hébergement, briefings, date limite de remise des supports et répétitions."
+      ],
+      [
+        "Partenariats et exposition",
+        "Dossier de partenariat, grille tarifaire par niveau, prospection et renouvellements, contractualisation, collecte des livrables des partenaires et plan d’implantation des stands. <em>Jalon : objectif de partenariats atteint.</em>"
+      ],
+      [
+        "Billetterie et communication",
+        "Paramétrage de la billetterie, paliers tarif préférentiel, plein tarif et tarif tardif, campagne de lancement, vagues d’e-mails et séquence d’information des participants."
+      ],
+      [
+        "Production et conduite",
+        "Cahier des charges audiovisuel et scénographie, fiches techniques par salle, signalétique et impressions, équipes et briefings, montage, l’événement lui-même et l’après-colloque. <em>Jalon : ouverture des portes.</em>"
+      ]
+    ],
+    callout: "La date limite de l’appel à communications commande tout l’aval. Les relecteurs ont besoin de semaines, les intervenants doivent être prévenus avant de réserver leurs billets, et le programme doit être public avant la fermeture du tarif préférentiel, faute de quoi vous vendez moins de places au prix fort. Décalez la date limite de soumission d’un mois et vous ne perdez pas un mois : vous perdez d’un coup la fenêtre du tarif préférentiel, le temps de communication et le budget de déplacement des intervenants.",
+    customize: [
+      "Fixer d’abord la date de l’événement et compter à rebours : chaque échéance est ici un délai depuis cette date, pas une estimation en avant.",
+      "Ajouter une ligne par session parallèle si vous faites tourner des programmes distincts avec leurs propres présidents et leurs propres relecteurs.",
+      "Adapter les dates des paliers tarifaires à votre grille — le modèle utilise tarif préférentiel, plein tarif et tarif tardif.",
+      "Développer les partenariats en une ligne par niveau ou par compte cible dès que la prospection démarre.",
+      "Découper le montage salle par salle si le lieu vous remet les espaces à des moments différents.",
+      "Ajouter les échéances de remise des résumés ou des textes si votre colloque publie des actes, et les droits musicaux si vous diffusez des œuvres."
+    ],
+    tips: [
+      "<strong>Publiez le programme avant la fermeture du tarif préférentiel.</strong> On achète un programme, pas une date : un tarif préférentiel qui se ferme sans intervenants annoncés est de l’argent laissé sur la table.",
+      "<strong>Confirmez les conférenciers principaux avant l’ouverture de l’appel à communications.</strong> Un nom annoncé élève la qualité et le volume des soumissions, et c’est l’ancrage dont votre communication a besoin dès le premier jour.",
+      "<strong>Fixez une date limite de remise des supports que vous tenez vraiment.</strong> La régie ne peut pas tester ce qu’elle n’a pas reçu, et les diaporamas de dernière minute sont la première cause de sessions qui débordent.",
+      "<strong>Faites courir les partenariats sur leur propre calendrier.</strong> Les budgets de sponsoring se votent annuellement : une prospection lancée six mois avant s’adresse à un budget déjà clos.",
+      "<strong>Programmez le débriefing avant l’événement.</strong> La semaine suivante est celle où tout le monde disparaît, et c’est pourtant le seul moment où le détail est encore frais."
+    ],
+    faq: [
+      [
+        "Combien de temps à l’avance faut-il préparer un colloque ?",
+        "Douze mois est la norme pour un colloque à sessions parallèles avec appel à communications, et neuf mois est tendu. Le modèle propose douze mois ancrés sur la date de l’événement ; le lieu et les conférenciers principaux se verrouillent en premier, parce que tout le reste se dimensionne sur eux."
+      ],
+      [
+        "En quoi est-ce différent du modèle d’organisation d’événement ?",
+        'Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> est générique et convient à n’importe quel événement unique. Celui-ci est bâti pour un colloque à sessions parallèles — appel à communications, cycle de relecture, gestion des intervenants, niveaux de partenariat et conduite technique. Prenez l’autre pour une soirée ou un lancement, celui-ci quand vous avez un programme scientifique.'
+      ],
+      [
+        "Et si j’expose au lieu d’organiser ?",
+        'Utilisez plutôt le <a href="/templates/trade-show-planning-timeline.html">rétroplanning de salon professionnel</a> : il couvre la réservation du stand, la construction, la collecte de contacts et la relance. Ce modèle-ci se place du côté de l’organisateur.'
+      ],
+      [
+        "Quand faut-il clore l’appel à communications ?",
+        "Assez tôt pour que la relecture, les acceptations, la publication du programme et la réservation des déplacements des intervenants tiennent tous. Le modèle laisse environ cinq mois entre la date limite de soumission et l’ouverture des portes, ce qui est réaliste quand les relecteurs sont bénévoles."
+      ],
+      [
+        "Le modèle de planning de colloque est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription ni filigrane."
+      ]
+    ]
+  },
+
+  'call-center-setup-plan': {
+    card: "Modèle opérationnel, téléphonie, dimensionnement, vagues de recrutement et montée en charge.",
+    h1: "Plan de création d’un centre de contacts",
+    metaTitle: "Centre de contacts — plan de création",
+    metaDesc: "Plan gratuit de création de centre de contacts : téléphonie et SVI, dimensionnement Erlang, vagues de recrutement, formation, pilote et montée en charge.",
+    lead: "Un <strong>plan de création de centre de contacts</strong> gratuit qui couvre toute la mise en place — modèle opérationnel sur site ou à distance, choix de la téléphonie et de la solution en mode service, prévision et dimensionnement des effectifs, vagues de recrutement, académie de formation, construction de la base de connaissances, appels pilotes, ouverture et montée en charge jusqu’au régime de croisière. À télécharger pour un comité d’exploitation, ou à ouvrir en ligne pour aligner vos vagues de recrutement sur la courbe de volume.",
+    intro: "Un centre de contacts réussit ou échoue selon qu’il y a, ou non, des conseillers formés sur le plateau la semaine où le volume arrive. Le modèle traite le recrutement et la formation comme la séquence directrice et tout le reste comme son support :",
+    phases: [
+      [
+        "Modèle opérationnel et site",
+        "Mix de canaux, amplitude horaire, arbitrage entre plateau, télétravail et hybride, choix d’implantation ou accord de télétravail, et modèle d’effectifs et de coûts. <em>Jalon : modèle opérationnel validé.</em>"
+      ],
+      [
+        "Technologie et téléphonie",
+        "Choix et contractualisation de la solution de centre de contacts, attribution et portabilité des numéros, intégration au CRM et à l’outil de tickets, conception du serveur vocal interactif et du routage, outils de gestion des effectifs et de qualité, logistique des postes et des casques."
+      ],
+      [
+        "Dimensionnement",
+        "Prévision de volume par tranche horaire, hypothèses de durée moyenne de traitement, modèle d’Erlang, taux d’absence et d’indisponibilité, cycles de service et nombre de recrutements que chaque vague doit livrer."
+      ],
+      [
+        "Vagues de recrutement",
+        "Définition des postes et grille de rémunération, sourcing, sessions d’évaluation et propositions d’embauche, menés en vagues successives calées pour que chaque promotion termine sa formation avant le volume pour lequel elle a été recrutée."
+      ],
+      [
+        "Formation et connaissances",
+        "Construction du parcours pédagogique, base de connaissances et réponses types, formation aux outils et aux compétences relationnelles par promotion, période de double écoute accompagnée, puis certification. <em>Jalon : promotion 1 certifiée.</em>"
+      ],
+      [
+        "Pilote, ouverture et montée en charge",
+        "Appels pilotes sur une file limitée, calibrage qualité, ouverture, montée en charge par paliers au rythme des promotions, puis passage aux niveaux de service cibles. <em>Jalon : régime de croisière.</em>"
+      ]
+    ],
+    callout: "Raisonnez en rétroplanning depuis la courbe de volume, pas en avant depuis aujourd’hui. Une promotion demande des semaines de recrutement, puis des semaines de formation et d’accompagnement, sans compter le préavis du poste précédent : un conseiller qui doit être productif la première semaine d’ouverture doit recevoir sa proposition d’embauche deux à trois mois plus tôt. L’attrition en formation est normale, donc chaque vague doit être surrecrutée. Si les vagues de recrutement ne sont pas dessinées sur le même planning que la montée en charge, l’écart n’apparaît que le jour où la file d’attente le montre.",
+    customize: [
+      "Fixer d’abord la date d’ouverture et les paliers de montée en charge, puis reculer chaque vague de recrutement de la durée complète recrutement plus formation plus accompagnement.",
+      "Surrecruter chaque vague pour l’attrition en formation, en appliquant le pourcentage réellement constaté chez vous plutôt qu’en supposant que tout le monde sera certifié.",
+      "Intégrer les préavis : un conseiller expérimenté qui démissionne d’un autre poste n’arrive pas la semaine de sa signature.",
+      "Ajouter une ligne par promotion si vous en organisez plus que les trois vagues montrées.",
+      "Adapter la durée de la double écoute à la complexité de votre produit : les files techniques ou réglementées demandent un accompagnement plus long.",
+      "Avancer la portabilité des numéros si vous migrez des lignes existantes — le portage est une attente chez un tiers que vous ne comprimez pas."
+    ],
+    tips: [
+      "<strong>Lancez le portage des numéros tôt.</strong> C’est le seul poste de ce plan dont l’horloge est tenue par un tiers, et il conditionne tous les tests de routage qui dépendent du vrai numéro.",
+      "<strong>Construisez la base de connaissances avant la formation, pas pendant.</strong> Des formateurs qui rédigent le contenu en enseignant, c’est ainsi que la promotion 1 est formée sur un support que la promotion 2 ne verra jamais.",
+      "<strong>Protégez la période de double écoute.</strong> C’est là que la durée de traitement et la qualité se stabilisent réellement ; la raccourcir pour tenir une date réapparaît en problème de niveau de service pendant un trimestre.",
+      "<strong>Faites le pilote sur une file réelle mais limitée.</strong> Le routage, les codes de qualification et les chemins d’escalade ne se cassent vraiment qu’avec de vrais appelants en ligne.",
+      "<strong>Montez en charge par paliers.</strong> Ne passez au palier suivant que lorsque la qualité et la durée de traitement tiennent au palier courant : la montée en charge est une série de portes, pas une pente."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour créer un centre de contacts ?",
+        "Couramment quatre à six mois entre la validation du modèle opérationnel et l’ouverture, la montée en charge jusqu’au régime de croisière prenant deux à trois mois de plus. Le modèle propose environ six mois de construction et une montée en charge par paliers ensuite."
+      ],
+      [
+        "Qu’est-ce qui porte le calendrier ?",
+        "Le recrutement et la formation. La technologie s’achète et se paramètre en parallèle, mais une promotion demande des semaines de recrutement, puis des semaines de formation et d’accompagnement : l’académie est donc sur le chemin critique de l’ouverture."
+      ],
+      [
+        "Combien de conseillers dans la première vague ?",
+        "Assez pour couvrir le volume d’ouverture, plus le taux d’indisponibilité et l’attrition en formation, ce qui suppose de recruter sensiblement plus que le nombre de positions. Le modèle montre trois vagues, pour que les promotions suivantes soient dimensionnées sur ce que la première vous a réellement appris."
+      ],
+      [
+        "Est-ce adapté à un centre à distance ou hybride ?",
+        "Oui. Supprimez les lignes d’aménagement de plateau et conservez la logistique du matériel, les vérifications de connexion et l’intégration à distance : la séquence recrutement-formation est identique."
+      ],
+      [
+        "Le modèle de centre de contacts est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
+
+  'franchise-rollout-plan': {
+    card: "Tête de réseau, document précontractuel, recrutement des franchisés et vagues d’ouverture.",
+    h1: "Plan de déploiement d’un réseau de franchise",
+    metaTitle: "Réseau de franchise — plan de déploiement",
+    metaDesc: "Plan gratuit de déploiement de franchise : manuel opératoire, document d’information précontractuelle, recrutement, sites, travaux et vagues d’ouverture.",
+    lead: "Un <strong>plan de déploiement de réseau de franchise</strong> gratuit, bâti autour de la séquence par point de vente que vous répéterez pour chaque site — recrutement et agrément des franchisés, découpage des zones, recherche de local, travaux d’aménagement, standards d’enseigne et manuel opératoire, formation, communication de lancement, ouverture et accompagnement après ouverture. Le modèle montre une fois le travail de tête de réseau, puis trois vagues d’ouverture qui se chevauchent, ce qui correspond au déroulement réel d’un déploiement.",
+    intro: "Un déploiement de franchise n’est pas un projet : c’est un projet type exécuté de nombreuses fois, avec des démarrages décalés. Le planning sépare clairement les deux :",
+    phases: [
+      [
+        "Tête de réseau",
+        "Document d’information précontractuelle et contrat de franchise, modèle économique du point de vente, manuel opératoire, standards d’enseigne, accords fournisseurs et modèle d’animation du réseau. <em>Jalon : réseau prêt à commercialiser.</em>"
+      ],
+      [
+        "Zones et pipeline de candidats",
+        "Découpage des zones et potentiel de marché, nombre de points de vente visés par marché, communication de recrutement, candidatures, journées de découverte, qualification financière et agrément. <em>Jalon : premiers contrats signés.</em>"
+      ],
+      [
+        "Vague 1",
+        "La séquence complète pour la première cohorte : recherche de local et bail commercial, conception et autorisations d’urbanisme, travaux, équipement, formation, communication de lancement et ouverture."
+      ],
+      [
+        "Vague 2",
+        "La même séquence, lancée une fois la vague 1 en travaux, pour que l’animation réseau et la conduite de chantier ne soient pas attendues à deux endroits en même temps."
+      ],
+      [
+        "Vague 3",
+        "La troisième cohorte, dimensionnée sur ce que les vagues 1 et 2 ont révélé de la durée et du coût réels par point de vente."
+      ],
+      [
+        "Accompagnement et amélioration du réseau",
+        "Visites d’animation après ouverture, revues de performance face au modèle économique, et mises à jour du manuel et de la formation nourries par ce que les premiers sites ont appris."
+      ]
+    ],
+    callout: "La contrainte n’est jamais une ouverture en particulier — c’est le nombre d’ouvertures que votre équipe d’accompagnement peut porter simultanément. Recherche de local, suivi de chantier, formation et présence en semaine d’ouverture mobilisent la même petite équipe centrale, et chaque point de vente en a besoin pendant des semaines. Dessinez les vagues de manière à ce que ces fenêtres ne s’empilent pas. Un déploiement qui promet dix ouvertures en un trimestre avec un seul animateur est un plan pour ouvrir dix points de vente mal.",
+    customize: [
+      "Régler d’abord la séquence par point de vente sur vos durées réelles, puis la copier par vague : c’est le motif réutilisable.",
+      "Modifier le chevauchement des vagues selon l’effectif d’animation : plus d’animateurs permet un décalage plus serré.",
+      "Passer à une ligne par point de vente plutôt que par vague dès que les emplacements sont identifiés.",
+      "Allonger les durées d’autorisation selon la commune : la même enseigne n’obtient pas ses autorisations d’urbanisme dans les mêmes délais partout.",
+      "Placer la remise du document d’information précontractuelle au moins vingt jours avant chaque signature : le délai est légal et il décale mécaniquement toute la séquence en aval.",
+      "Suivre les visites d’accompagnement après ouverture comme du travail planifié, et non comme une capacité supposée disponible."
+    ],
+    tips: [
+      "<strong>N’ouvrez pas les sites de la vague 2 avant que la vague 1 ait exploité un mois.</strong> Les premiers points de vente sont là où vous découvrez ce que le manuel opératoire a mal prévu, et cet apprentissage vaut plus qu’une deuxième vague plus rapide.",
+      "<strong>Agréez les franchisés lentement.</strong> Un mauvais franchisé coûte infiniment plus cher qu’une ouverture décalée, et s’en séparer prend des années.",
+      "<strong>Terminez le manuel opératoire avant le premier contrat.</strong> Vous vendez un savoir-faire : s’il n’est pas écrit, chaque point de vente invente le sien.",
+      "<strong>Traitez le bailleur et les autorisations site par site, pas au niveau du programme.</strong> Chaque local a sa propre horloge administrative, et elles ne tournent pas ensemble.",
+      "<strong>Réservez la présence en semaine d’ouverture pour chaque site.</strong> La première semaine d’exploitation installe les habitudes du point de vente, et un appui à distance ne remplace pas quelqu’un sur le terrain."
+    ],
+    faq: [
+      [
+        "Combien de temps prend le déploiement d’un réseau de franchise ?",
+        "La mise au point de la tête de réseau demande typiquement quatre à six mois, puis chaque point de vente court sur six à neuf mois entre l’agrément du franchisé et l’ouverture. Le modèle montre la construction du réseau plus trois vagues qui se chevauchent, sur environ deux ans."
+      ],
+      [
+        "Combien de points de vente par vague ?",
+        "Autant que votre équipe d’animation peut réellement accompagner en même temps sur la recherche de local, le suivi de chantier, la formation et la semaine d’ouverture — en général bien moins que ce que voudrait le plan commercial. C’est la raison pour laquelle le modèle utilise des vagues courtes."
+      ],
+      [
+        "Quelle est la séquence par point de vente ?",
+        "Agrément du franchisé, zone et recherche de local, bail commercial, conception et autorisations, travaux, équipement, formation, communication de lancement, ouverture et accompagnement. Elle se répète à l’identique, et c’est précisément ce qui la rend planifiable."
+      ],
+      [
+        "Peut-on l’utiliser pour un développement en propre ?",
+        'Oui. Supprimez les lignes de recrutement et d’agrément des franchisés et conservez la séquence par point de vente — pour un site unique, le <a href="/templates/retail-store-opening-timeline.html">rétroplanning d’ouverture de magasin</a> est plus adapté.'
+      ],
+      [
+        "Le modèle de déploiement de franchise est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans inscription."
+      ]
+    ]
+  },
+
+  'okr-quarterly-planning': {
+    card: "Cadrage, notation du trimestre écoulé, alignement, engagement et rétrospective.",
+    h1: "Planning de cycle OKR trimestriel",
+    metaTitle: "OKR — planning trimestriel",
+    metaDesc: "Planning gratuit de cycle OKR trimestriel : direction, notation du trimestre écoulé, rédaction, alignement, engagement, point à mi-trimestre et clôture.",
+    lead: "Un <strong>planning de cycle OKR trimestriel</strong> gratuit, présenté pour ce qu’il est réellement : un cycle qui se répète — rédaction des objectifs, alignement entre équipes, notation du trimestre qui s’achève, engagement et publication, point à mi-trimestre, puis clôture et rétrospective qui alimentent le tour suivant. À télécharger pour un lancement de planification, ou à ouvrir en ligne pour voir où la clôture de ce trimestre chevauche la rédaction du suivant.",
+    intro: "Si la planification OKR paraît toujours précipitée, c’est qu’elle ne part jamais d’une page blanche. Vous notez un trimestre pendant que vous rédigez le suivant, et les deux réclament les mêmes personnes les mêmes semaines. Le modèle montre ce chevauchement au lieu de faire comme si le cycle était séquentiel :",
+    phases: [
+      [
+        "Direction de l’entreprise",
+        "Revue de la stratégie et des objectifs annuels par la direction, les deux ou trois objectifs d’entreprise du trimestre, et le cadrage contre lequel les équipes rédigeront. <em>Jalon : objectifs d’entreprise rédigés.</em>"
+      ],
+      [
+        "Clôture du trimestre précédent",
+        "Collecte des dernières données de résultats clés, auto-notation par les équipes, calibrage entre équipes et restitution des résultats notés — le tout en parallèle de la rédaction du trimestre suivant."
+      ],
+      [
+        "Rédaction par les équipes",
+        "Chaque équipe rédige ses objectifs et ses résultats clés à partir du cadrage de l’entreprise, avec une séance de travail et un premier jet écrit par équipe."
+      ],
+      [
+        "Alignement",
+        "Revue des dépendances entre équipes, arbitrage lorsque deux équipes visent la même capacité, et résolution des conflits avant l’engagement. <em>Jalon : alignement terminé.</em>"
+      ],
+      [
+        "Engagement et lancement",
+        "Revue par la direction, derniers arbitrages, publication dans l’outil de suivi, réunion de lancement et démarrage du rythme de point hebdomadaire. <em>Jalon : OKR engagés.</em>"
+      ],
+      [
+        "Exécution dans le trimestre",
+        "Points de confiance hebdomadaires, point à mi-trimestre où les objectifs peuvent être ajustés ou abandonnés, puis clôture et rétrospective à la fin. <em>Jalon : trimestre clôturé.</em>"
+      ]
+    ],
+    callout: "Le cycle se chevauche lui-même, et c’est là tout le problème d’ordonnancement. Vous ne pouvez pas noter le trimestre écoulé après avoir démarré le suivant, parce que les données vieillissent et que plus personne ne se souvient du contexte — mais vous ne pouvez pas non plus rédiger le trimestre suivant sans les notes. Les deux tournent donc ensemble pendant environ trois semaines, avec les mêmes responsables des deux côtés. Réservez ce chevauchement explicitement. Les équipes qui traitent la planification comme un séminaire de deux jours en semaine 1 font en réalité quatre semaines de travail en deux jours, et appellent le résultat un engagement.",
+    customize: [
+      "Placer le jour 0 environ trois semaines avant la fin du trimestre : tout le cycle se cale alors correctement autour de la bascule.",
+      "Ajouter une ligne de rédaction par équipe, pour voir qui est en retard sans avoir à relancer.",
+      "Déplacer le point à mi-trimestre à la fréquence que vous pratiquez réellement — mensuel fonctionne mieux que trimestriel pour les équipes qui bougent vite.",
+      "Raccourcir la phase d’alignement si vous avez moins de cinq équipes, et l’allonger nettement si les équipes se partagent la même capacité de développement.",
+      "Garder la notation et la rédaction visiblement superposées plutôt que mises bout à bout : le chevauchement est l’image honnête.",
+      "Vérifier la position du cycle par rapport aux congés : un trimestre qui englobe août ou la fin décembre perd des semaines de disponibilité qu’aucun planning séquentiel ne montre."
+    ],
+    tips: [
+      "<strong>Notez avant de vous engager.</strong> Fixer de nouvelles cibles sans savoir comment les précédentes ont atterri est exactement ainsi que le même objectif trop ambitieux se réécrit trois trimestres de suite.",
+      "<strong>Plafonnez le nombre d’objectifs.</strong> Trois par équipe est un plan ; sept est une liste. La phase d’alignement devient spectaculairement plus simple quand il y a moins à aligner.",
+      "<strong>Rendez les dépendances explicites pendant l’alignement.</strong> La plupart des échecs d’OKR se ramènent à une équipe qui comptait discrètement sur la capacité d’une autre, sans que celle-ci se soit engagée.",
+      "<strong>Traitez le point à mi-trimestre comme un point de décision.</strong> Il existe pour abandonner ou redimensionner les objectifs qui n’atterriront pas, pas pour présenter un état d’avancement.",
+      "<strong>Faites la rétrospective sur le processus, pas seulement sur les résultats.</strong> Si la rédaction a paru précipitée ce trimestre, elle le paraîtra encore le trimestre prochain tant que le calendrier ne change pas."
+    ],
+    faq: [
+      [
+        "Quand faut-il commencer la planification OKR trimestrielle ?",
+        "Environ trois à quatre semaines avant le début du trimestre. Le modèle démarre la rédaction alors que le trimestre précédent court encore, parce que la direction et les équipes ont besoin de temps avant l’engagement, et parce que les données de notation ne sont fraîches qu’à la bascule."
+      ],
+      [
+        "En quoi est-ce différent du modèle de plan annuel ?",
+        'Le <a href="/templates/annual.html">plan annuel</a> couvre une année entière d’activité. Ceci est le rythme trimestriel qui vit à l’intérieur : le cycle de quatre semaines — rédiger, aligner, engager, faire le point, clôturer — qui se répète chaque trimestre.'
+      ],
+      [
+        "Quel rapport avec la feuille de route produit ?",
+        'La <a href="/templates/product-roadmap.html">feuille de route produit</a> dit ce que vous construisez et quand. Les OKR sont les résultats sur lesquels vous vous engagez pour un trimestre. La feuille de route est généralement une des entrées de la rédaction, et non son remplacement.'
+      ],
+      [
+        "Pourquoi la notation et la rédaction se chevauchent-elles ?",
+        "Parce que les deux mobilisent les mêmes personnes et les mêmes données au même moment. Noter après avoir rédigé revient à s’engager à l’aveugle ; rédiger après avoir noté revient à démarrer le trimestre avec deux semaines de retard. Le modèle les superpose délibérément et montre de combien."
+      ],
+      [
+        "Peut-on le réutiliser chaque trimestre ?",
+        "Oui, c’est même tout l’intérêt. Copiez le bloc, décalez les dates d’un trimestre et la séquence tient. Seuls les objectifs changent."
+      ],
+      [
+        "Le modèle de planification OKR est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte."
+      ]
+    ]
+  },
 };
 
 const UI = {

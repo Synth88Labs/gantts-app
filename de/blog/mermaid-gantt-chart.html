@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mermaid-Gantt-Syntax mit Live-Editor | gantts.app</title>
-  <meta name="description" content="Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten." />
+  <meta name="description" content="Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/de/blog/mermaid-gantt-chart.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/mermaid-gantt-chart.html" />
@@ -42,7 +42,7 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Mermaid-Gantt-Syntax mit Live-Editor | gantts.app" />
-  <meta property="og:description" content="Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten." />
+  <meta property="og:description" content="Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor." />
   <meta property="og:url" content="https://gantts.app/de/blog/mermaid-gantt-chart.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -50,11 +50,11 @@
   <meta property="og:image:alt" content="Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mermaid-Gantt-Syntax mit Live-Editor | gantts.app" />
-  <meta name="twitter:description" content="Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten." />
+  <meta name="twitter:description" content="Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/mermaid-gantt-chart.html#post","headline":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","description":"Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten.","url":"https://gantts.app/de/blog/mermaid-gantt-chart.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","item":"https://gantts.app/de/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Wie schreibt man ein Gantt-Diagramm in Mermaid?","acceptedAnswer":{"@type":"Answer","text":"Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“."}},{"@type":"Question","name":"Schließt 5d in Mermaid den Starttag ein?","acceptedAnswer":{"@type":"Answer","text":"Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag."}},{"@type":"Question","name":"Wie funktionieren Abhängigkeiten in Mermaid gantt?","acceptedAnswer":{"@type":"Answer","text":"Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken."}},{"@type":"Question","name":"Kann Mermaid den Fortschritt in Prozent zeigen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Es gibt nur die Tags done und active. Beim Import ist jeder Prozentwert eine Schätzung; gantts.app setzt 50 Prozent und weist darauf hin."}},{"@type":"Question","name":"Wo werden Mermaid-Gantt-Diagramme dargestellt?","acceptedAnswer":{"@type":"Answer","text":"GitHub, GitLab, Notion und Obsidian rendern sie direkt in Markdown, und mermaid.live zeigt sie im Browser."}},{"@type":"Question","name":"Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und kopieren Sie die aktualisierte Syntax über Export ▸ Mermaid gantt wieder heraus."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/mermaid-gantt-chart.html#post","headline":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","description":"Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor.","url":"https://gantts.app/de/blog/mermaid-gantt-chart.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","item":"https://gantts.app/de/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Wie schreibt man ein Gantt-Diagramm in Mermaid?","acceptedAnswer":{"@type":"Answer","text":"Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“."}},{"@type":"Question","name":"Schließt 5d in Mermaid den Starttag ein?","acceptedAnswer":{"@type":"Answer","text":"Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag — und sie erzeugt ein Diagramm, das einwandfrei rendert, während jedes Datum um einen Tag danebenliegt."}},{"@type":"Question","name":"Wie funktionieren Abhängigkeiten in Mermaid gantt?","acceptedAnswer":{"@type":"Answer","text":"Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand; Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken. Mehrere Vorgänger sind möglich, etwa „after a b“ — der Vorgang wartet dann auf den späteren der beiden."}},{"@type":"Question","name":"Überspringt after die Wochenenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, sofern das Diagramm „excludes weekends“ enthält. Der Nachfolger eines Vorgangs, der freitags endet, beginnt dann am Montag, und die Dauer zählt in Arbeitstagen. Werkzeuge, die after durch Addition eines Kalendertages auflösen, legen Vorgänge auf Samstage in einer Datei, die das ausdrücklich verbietet."}},{"@type":"Question","name":"Kann Mermaid den kritischen Pfad berechnen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Das Tag crit ist eine Farbe, die Sie von Hand vergeben; nichts in Mermaid läuft das Abhängigkeitsnetz ab oder rechnet Puffer aus. Genau deshalb exportiert gantts.app crit, ignoriert es beim Import aber: Die Kritikalität wird aus den Abhängigkeiten neu berechnet, statt einer möglicherweise veralteten Datei geglaubt zu werden."}},{"@type":"Question","name":"Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und holen Sie sich die aktualisierte Syntax über ⬇ Export ▸ 🧜 Mermaid-Gantt (Text) wieder heraus."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -86,17 +86,19 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a> › Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor</div>
     <h1>Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor</h1>
-    <p class="lead">Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax, die Fallstricke und der fehlende Schritt — visuell bearbeiten und den Text zurückbekommen.</p>
+    <p class="lead">Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet: ins Repository, prüfbar im Pull Request. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax Feld für Feld, ein vollständiges Beispiel zum Einfügen, die Fallstricke, die tadellos rendern und trotzdem falsch sind — und der fehlende Schritt: visuell bearbeiten und den Text zurückbekommen.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>9 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
         <li><a href="#s1">Die Syntax in einem Durchgang</a></li>
-        <li><a href="#s2">Vier Dinge, über die Sie stolpern werden</a></li>
-        <li><a href="#s3">Was Mermaid nicht ausdrücken kann</a></li>
-        <li><a href="#s4">Visuell bearbeiten, dann den Text zurückkopieren</a></li>
+        <li><a href="#s2">Ein Beispiel, das Sie in eine README einfügen können</a></li>
+        <li><a href="#s3">Referenz der Vorgangszeile</a></li>
+        <li><a href="#s4">Vier Dinge, über die Sie stolpern werden</a></li>
+        <li><a href="#s5">Die Grenzen eines Diagrammformats</a></li>
+        <li><a href="#s6">Visuell bearbeiten, dann den Text zurückkopieren</a></li>
       </ol>
     </div>
 
@@ -107,50 +109,115 @@
 
     <div class="prose">
       <h2 id="s1">Die Syntax in einem Durchgang</h2>
-<p>Ein Gantt-Block beginnt mit <code>gantt</code> und einigen Kopfzeilen, danach folgen <code>section</code>-Überschriften mit Vorgangszeilen darunter.</p>
-        <p>Eine Vorgangszeile besteht aus einem Namen, einem Doppelpunkt und dann kommagetrennten Feldern:</p>
-        <p><code>Name des Vorgangs :tag, id, start, dauer</code></p>
-        <ul>
-          <li><strong>Tags</strong> — eines von <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Optional.</li>
-          <li><strong>id</strong> — ein einzelnes Wort, nur nötig, wenn sich etwas anderes auf diesen Vorgang bezieht.</li>
-          <li><strong>start</strong> — ein Datum, oder <code>after eineId</code>, oder weggelassen, um an den vorigen Vorgang anzuschließen.</li>
-          <li><strong>dauer</strong> — <code>5d</code>, <code>2w</code>, oder ein zweites Datum.</li>
-        </ul>
-        <p>Wissenswerte Kopfzeilen: <code>dateFormat</code> (wie Ihre Daten geschrieben sind), <code>excludes weekends</code> (Samstag und Sonntag überspringen), <code>title</code> und <code>axisFormat</code> (Beschriftung der Achse).</p>
-      <h2 id="s2">Vier Dinge, über die Sie stolpern werden</h2>
-<p><strong>1. Dauern schließen den Starttag ein.</strong> <code>5d</code> ab Montag, dem 5., läuft bis Freitag, den 9., nicht bis zum 10. Ein Fehler um eins verschiebt hier jeden Vorgang der Datei — und wird trotzdem tadellos gerendert.</p>
-        <p><strong>2. <code>after</code> zusammen mit <code>excludes weekends</code> ist die eigentliche Fehlerquelle.</strong> Endet ein Vorgänger an einem Freitag, beginnt sein Nachfolger am <em>Montag</em> — nicht am Samstag. Jedes Werkzeug, das <code>after</code> durch Addition eines Kalendertages auflöst, legt Vorgänge klammheimlich auf Wochenenden in einer Datei, die genau das verbietet. (Unseres tat es kurzzeitig. Der Test, der es gefunden hat, prüft heute, dass kein abgeleitetes Datum auf einen ausgeschlossenen Tag fällt.)</p>
-        <p><strong>3. Es gibt keine Maskierung.</strong> Ein Doppelpunkt beginnt die Feldliste und ein Komma trennt die Felder — ein Vorgang namens <code>Phase 2: Entwurf, Prüfung</code> wird also zu etwas völlig anderem. Halten Sie Doppelpunkte und Kommas aus Vorgangsnamen heraus.</p>
-        <p><strong>4. Eine unlesbare Dauer wird stillschweigend null.</strong> Schreiben Sie <code>3dd</code>, erhalten Sie einen Balken der Länge null statt einer Fehlermeldung.</p>
-      <h2 id="s3">Was Mermaid nicht ausdrücken kann</h2>
-<p>Es ist ein Diagrammformat, keine Terminplanungsmaschine, und die Lücken zählen, sobald man hin und zurück konvertiert:</p>
-        <ul>
-          <li><strong>Kein Fortschritt in Prozent.</strong> Nur <code>done</code> und <code>active</code>. Ein Vorgang mit 40 Prozent und einer mit 90 Prozent sind beide schlicht „active“.</li>
-          <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende und Abstände haben keinen Platz.</li>
-          <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen.</li>
-          <li><strong>Keine Ressourcen, Kosten oder Basispläne.</strong></li>
-        </ul>
-        <p>Der Hin- und Rückweg verliert also etwas, aber auf bekannte, langweilige Weise. gantts.app schreibt beim Export 100 Prozent als <code>done</code> und alles dazwischen als <code>active</code> und liest <code>active</code> beim Import als 50 Prozent zurück — eine Schätzung, auf die es hinweist, statt sie Sie in einem Statusbericht entdecken zu lassen. Verknüpfungen, die sich nicht als <code>after</code> schreiben lassen, werden zu festen Terminen, die korrekt bleiben, auch wenn sie nicht mehr pflegbar sind.</p>
-        <p>Eine Asymmetrie ist Absicht: <code>crit</code> wird exportiert, beim Import aber ignoriert. Kritikalität wird aus dem Abhängigkeitsnetz <em>berechnet</em>, und einem Wert zu vertrauen, der in einem womöglich veralteten Diagramm behauptet wird, würde eine unkritische Kette rot einfärben.</p>
-      <h2 id="s4">Visuell bearbeiten, dann den Text zurückkopieren</h2>
-<p>Mermaid rendern können viele Werkzeuge. Gefehlt hat die Gegenrichtung — Balken ziehen und die Syntax wieder herausbekommen.</p>
-        <ol>
-          <li>Fügen Sie Ihr Diagramm in gantts.app ein oder öffnen Sie es dort — eine <code>.mmd</code>-Datei oder eine <code>.md</code>-Datei mit einem eingebetteten Block, beides funktioniert. Ein Gantt-Block wird an seinem Inhalt erkannt, nicht an der Dateiendung.</li>
-          <li>Ziehen, verknüpfen und umdatieren Sie wie in jedem anderen Diagramm. <code>excludes weekends</code> schaltet den Arbeitskalender ein, sodass die erzeugten Termine zu der Datei passen, aus der sie stammen.</li>
-          <li><strong>Export ▸ Mermaid gantt</strong>, kopieren, zurück in Ihre README einfügen.</li>
-        </ol>
-        <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>
+<p>Ein Gantt-Block beginnt mit dem Schlüsselwort <code>gantt</code> und einigen Kopfzeilen, danach folgen <code>section</code>-Überschriften mit Vorgangszeilen darunter. Die Einrückung ist Konvention und nicht Grammatik — Mermaid liest den Block auch ohne sie.</p>
+      <p>Eine Vorgangszeile besteht aus einem Namen, einem Doppelpunkt und dann kommagetrennten Feldern:</p>
+      <p><code>Name des Vorgangs :tag, id, start, dauer</code></p>
+      <ul>
+        <li><strong>Tags</strong> — beliebig viele aus <code>done</code>, <code>active</code>, <code>crit</code> und <code>milestone</code>, in beliebiger Reihenfolge. Optional.</li>
+        <li><strong>id</strong> — ein einzelnes Wort ohne Leerzeichen, nur nötig, wenn sich etwas anderes über <code>after</code> auf diesen Vorgang bezieht.</li>
+        <li><strong>start</strong> — ein Datum, oder <code>after eineId</code>, oder ganz weggelassen, um an den Vorgang darüber anzuschließen.</li>
+        <li><strong>dauer</strong> — <code>5d</code>, <code>2w</code>, oder ein zweites absolutes Datum.</li>
+      </ul>
+      <p>Wissenswerte Kopfzeilen: <code>dateFormat</code> (wie die Daten in <em>Ihrer</em> Datei geschrieben sind), <code>excludes weekends</code>, <code>title</code> und <code>axisFormat</code> (wie die Achse beschriftet wird, in strftime-Codes). Die Felder werden nach ihrer Form erkannt und nicht streng nach ihrer Position — deshalb funktionieren <code>:done, spec, 2026-03-02, 5d</code> und <code>:spec, done, 2026-03-02, 5d</code> gleichermaßen.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 360 84" width="100%" role="img" aria-label="Jedes Feld einer Mermaid-Vorgangszeile — und welche davon optional sind."><rect x="0" y="18" width="96" height="24" rx="5" fill="#6c4cf1" opacity="0.16"/><text x="48" y="34" font-size="11" font-weight="700" fill="#6c4cf1" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Vorgang A</text><rect x="102" y="18" width="78" height="24" rx="5" fill="#12a594" opacity="0.16"/><text x="141" y="34" font-size="11" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:ID a1</text><rect x="186" y="18" width="104" height="24" rx="5" fill="#9333ea" opacity="0.16"/><text x="238" y="34" font-size="11" font-weight="700" fill="#9333ea" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:2026-03-02</text><rect x="296" y="18" width="46" height="24" rx="5" fill="#e5484d" opacity="0.16"/><text x="319" y="34" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:5d</text><line x1="48" y1="46" x2="48" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="48" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Vorgang</text><line x1="141" y1="46" x2="141" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="141" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">ID</text><line x1="238" y1="46" x2="238" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="238" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Start</text><line x1="319" y1="46" x2="319" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="319" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Dauer</text></svg><figcaption>Jedes Feld einer Mermaid-Vorgangszeile — und welche davon optional sind.</figcaption></figure>
+      <h2 id="s2">Ein Beispiel, das Sie in eine README einfügen können</h2>
+<p>Ein vollständiger, gültiger Block für eine reale Aufgabe: die Ablösung der internen Zeiterfassungs-API eines mittelständischen Unternehmens, Version 1 auf Version 2. Er nutzt Abschnitte, absolute Daten, <code>after</code>-Ketten, alle Tags, einen Meilenstein sowie ausgeschlossene Wochenenden und Feiertage. Fügen Sie ihn in einen Codeblock mit der Sprache <code>mermaid</code> in einer beliebigen Markdown-Datei auf GitHub ein, und er wird gerendert.</p>
+      <div class="worked">
+        <pre><code>gantt
+    title Abloesung der Zeiterfassungs-API (v1 auf v2)
+    dateFormat YYYY-MM-DD
+    axisFormat %d.%m.
+    excludes weekends 2026-04-03 2026-04-06 2026-05-01
 
-      <div class="callout">undefined</div>
+    section Analyse
+    Bestand v1 erheben        :done, best, 2026-03-02, 5d
+    OpenAPI-Spezifikation     :done, spec, after best, 4d
+    Spezifikation abstimmen   :active, abst, after spec, 2d
+
+    section Datenschutz und Mitbestimmung
+    Datenschutz-Folgenabschaetzung  :crit, dsfa, after abst, 8d
+    Betriebsvereinbarung verhandeln :crit, bv, after dsfa, 15d
+    Betriebsvereinbarung unterzeichnet :milestone, bvm, 2026-04-24, 0d
+
+    section Umsetzung
+    Authentifizierungsdienst  :auth, after bvm, 10d
+    Fachendpunkte             :fach, after auth, 12d
+    Client-SDK neu erzeugen   :sdk, after fach, 3d
+
+    section Umstellung
+    Testbetrieb               :test, after sdk, 5d
+    Abschaltung v1            :ab, after test, 2w</code></pre>
+        <p>Zeile für Zeile gelesen:</p>
+        <ul>
+          <li><code>dateFormat YYYY-MM-DD</code> sagt Mermaid, wie es die von Ihnen getippten Daten <em>lesen</em> soll. Das ist das Eingabeformat, nicht das Ausgabeformat — es zu ändern ändert die Achse nicht.</li>
+          <li><code>axisFormat %d.%m.</code> ist die Ausgabeseite: Die Achse liest sich als „02.03.“ statt als ISO-Datum, also so, wie ein deutscher Leser Termine erwartet. Für alles, was länger als ein Quartal läuft, ist <code>%V</code> mit Kalenderwochen die bessere Wahl.</li>
+          <li><code>excludes weekends 2026-04-03 2026-04-06 2026-05-01</code> lässt jeden Balken über Samstag und Sonntag springen und zusätzlich über Karfreitag, Ostermontag und den 1. Mai. Das gilt für das gesamte Diagramm; es gibt keine Ausnahme je Vorgang. Wer bundeslandspezifische Feiertage braucht — Fronleichnam etwa —, hängt sie einfach an dieselbe Zeile an.</li>
+          <li><code>Bestand v1 erheben :done, best, 2026-03-02, 5d</code> — Tag, id, ein absoluter Beginn (ein Montag), fünf Tage. Dauern schließen den Starttag ein, dieser Vorgang endet also am Freitag, dem 6. März.</li>
+          <li><code>after best</code> heißt „beginne, wenn <code>best</code> fertig ist“ — bei ausgeschlossenen Wochenenden also am Montag, dem 9. März, und nicht am Samstag, dem 7.</li>
+          <li><code>:crit, dsfa, ...</code> färbt den Balken in der Farbe des kritischen Pfads. Beachten Sie: <em>färbt</em> — mehr dazu weiter unten.</li>
+          <li><code>Fachendpunkte :fach, after auth, 12d</code> trägt überhaupt kein Tag; das erste Feld ist nur eine id. Ohne Tag gilt der Vorgang als anstehende Arbeit.</li>
+          <li><code>Betriebsvereinbarung unterzeichnet :milestone, bvm, 2026-04-24, 0d</code> ist eine Marke ohne Länge auf einem festen Datum. Meilensteine bekommen wie alles andere eine id, deshalb ist <code>after bvm</code> in der nächsten Zeile zulässig. Dass die Umsetzung erst nach der Unterschrift beginnt, ist hier kein Zieren: Ein System, das Arbeitszeit erfasst, unterliegt der Mitbestimmung, und ohne Betriebsvereinbarung darf es nicht in Betrieb gehen.</li>
+          <li><code>2w</code> sind zwei Wochen. Mermaid akzeptiert auch <code>h</code> und <code>m</code>, was hier selten hilft.</li>
+        </ul>
+        <p>Die Leerzeilen zwischen den Abschnitten sind Dekoration — Mermaid ignoriert sie, und unser Import tut es ebenso. Lassen Sie sie trotzdem stehen; ein Block mit vierzig Vorgängen ist ohne sie in einem Diff nicht lesbar.</p>
+      </div>
+      <h2 id="s3">Referenz der Vorgangszeile</h2>
+<p>Jedes Feld, was es bewirkt und wie es in der Praxis aussieht.</p>
+      <table>
+        <thead><tr><th>Feld oder Zusatz</th><th>Beispiel</th><th>Wirkung</th></tr></thead>
+        <tbody>
+          <tr><td><code>id</code></td><td><code>best</code></td><td>Ein einzelnes Wort, das den Vorgang benennt, damit <code>after</code> sich darauf beziehen kann. Keine Leerzeichen, keine Satzzeichen. Optional, solange nichts von dem Vorgang abhängt.</td></tr>
+          <tr><td><code>after</code></td><td><code>after best</code></td><td>Beginnt, wenn der genannte Vorgang endet. Nur Ende-Anfang, ohne Zeitabstand. Mehrere ids sind erlaubt — <code>after a b</code> wartet auf den späteren der beiden.</td></tr>
+          <tr><td><code>done</code></td><td><code>:done, best, …</code></td><td>Zeichnet den Balken als abgeschlossen. Ohne Prozentwert — 100 Prozent und „im Grunde fertig“ sehen identisch aus.</td></tr>
+          <tr><td><code>active</code></td><td><code>:active, abst, …</code></td><td>Zeichnet den Balken als laufend. Ebenfalls ohne jede Zahl daran.</td></tr>
+          <tr><td><code>crit</code></td><td><code>:crit, dsfa, …</code></td><td>Färbt den Balken als kritisch. Eine Behauptung, die Sie tippen, und nichts, was Mermaid ableitet — nichts prüft sie gegen das Abhängigkeitsnetz.</td></tr>
+          <tr><td><code>milestone</code></td><td><code>:milestone, bvm, …</code></td><td>Zeichnet eine Raute statt eines Balkens. Sinnvoll nur zusammen mit <code>0d</code>.</td></tr>
+          <tr><td>Dauereinheiten</td><td><code>5d</code> · <code>2w</code> · <code>8h</code></td><td>Tage, Wochen, Stunden (auch <code>m</code>). Einschließlich des Starttags: <code>5d</code> ab Montag endet am Freitag.</td></tr>
+          <tr><td>Enddatum</td><td><code>2026-03-02, 2026-03-06</code></td><td>Ein zweites Datum statt einer Dauer, für ein von außen festgelegtes Ende.</td></tr>
+          <tr><td><code>dateFormat</code></td><td><code>dateFormat YYYY-MM-DD</code></td><td>Wie die Daten in der Datei gelesen werden. Kopfzeile, einmal je Diagramm.</td></tr>
+          <tr><td><code>axisFormat</code></td><td><code>axisFormat %d.%m.</code></td><td>Wie die Achse beschriftet wird, in strftime-Codes. Rein kosmetisch.</td></tr>
+          <tr><td><code>excludes</code></td><td><code>excludes weekends</code></td><td>Arbeitsfreie Tage. Nimmt auch einzelne Daten (<code>excludes 2026-04-06</code>) und Wochentagsnamen. Gilt für das ganze Diagramm.</td></tr>
+        </tbody>
+      </table>
+      <h2 id="s4">Vier Dinge, über die Sie stolpern werden</h2>
+<p><strong>1. Dauern schließen den Starttag ein.</strong> <code>5d</code> ab Montag, dem 5., läuft bis Freitag, den 9., nicht bis zum 10. Ein Fehler um eins verschiebt hier jeden Vorgang der Datei und wird trotzdem tadellos gerendert — das ist die schlimmste denkbare Fehlerart, weil nichts kaputt aussieht.</p>
+      <p><strong>2. <code>after</code> zusammen mit <code>excludes weekends</code> ist die eigentliche Fehlerquelle.</strong> Endet ein Vorgänger an einem Freitag, beginnt sein Nachfolger am <em>Montag</em> — nicht am Samstag. Jedes Werkzeug, das <code>after</code> durch Addition eines einzelnen Kalendertages auflöst, legt Vorgänge klammheimlich auf Wochenenden in einer Datei, die genau das verbietet, und ab dort läuft jedes weitere Datum weg. Unseres tat das kurzzeitig. Die Korrektur führt die Rechnung über den Arbeitskalender, damit der Import mit dem übereinstimmt, was Mermaid zeichnet; der absichernde Test prüft die Eigenschaft statt bestimmter Daten: Kein <em>abgeleitetes</em> Anfangs- oder Enddatum darf auf einen ausgeschlossenen Tag fallen. Daten, die Sie selbst getippt haben, bleiben dagegen stehen, wo Sie sie hingeschrieben haben, Wochenende hin oder her — das ausdrückliche Datum einer Autorin stillschweigend zu verschieben ist die falsche Art von Hilfsbereitschaft.</p>
+      <p><strong>3. Es gibt keine Maskierung.</strong> Ein Doppelpunkt beginnt die Feldliste und ein Komma trennt die Felder — aus <code>Phase 2: Entwurf, Prüfung</code> wird also ein Vorgang namens „Phase 2“ mit unsinnigen Feldern. Halten Sie Doppelpunkte, Kommas und Semikolons aus Vorgangsnamen heraus; beim Export ersetzen wir sie durch Leerzeichen, statt eine Zeile auszugeben, die sich nicht lesen lässt.</p>
+      <p><strong>4. Eine unlesbare Dauer wird stillschweigend null.</strong> Schreiben Sie <code>3dd</code>, erhalten Sie einen Balken der Länge null statt einer Fehlermeldung. Suchen Sie nach jeder größeren Änderung gezielt nach unsichtbaren Vorgängen.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 580 190" width="100%" role="img" aria-label="„after“ ist eine Ende-Anfang-Verknüpfung ohne Zeitabstand — die einzige Verknüpfungsart, die das Format kennt."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ende → Anfang</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Anfang → Anfang</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ende → Ende</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Anfang → Ende</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A</text></svg><figcaption>„after“ ist eine Ende-Anfang-Verknüpfung ohne Zeitabstand — die einzige Verknüpfungsart, die das Format kennt.</figcaption></figure>
+      <h2 id="s5">Die Grenzen eines Diagrammformats</h2>
+<p>Mermaid gantt ist eine Darstellungssprache und keine Terminplanungsmaschine. Der Unterschied fällt in dem Moment auf, in dem das Diagramm eine Frage <em>beantworten</em> statt eine Antwort bebildern soll.</p>
+      <ul>
+        <li><strong>Keine Ressourcen.</strong> Kein Feld für die zuständige Person, keine Kosten, kein Aufwand. Sie können in Mermaid niemanden überlasten, weil Mermaid nicht weiß, dass es Menschen gibt.</li>
+        <li><strong>Kein Puffer und kein berechneter kritischer Pfad.</strong> <code>crit</code> ist eine Farbe, die Sie von Hand vergeben. Nichts läuft das Abhängigkeitsnetz ab, nichts rechnet frühe und späte Lagen aus, nichts sagt Ihnen, welche Kette das Enddatum bestimmt. Ein Diagramm, in dem jeder Balken <code>crit</code> trägt, ist genauso gültig wie eines, in dem es keiner tut.</li>
+        <li><strong>Kein Basisplan.</strong> Es gibt keine Stelle, an der stünde, was der Plan im vergangenen Monat gesagt hat — also auch keine Abweichung und keinen messbaren Verzug.</li>
+        <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende, Anfang-Ende und jeder Zeitabstand haben keinen Platz. Echte Pläne stecken voller Sätze wie „der Test beginnt drei Tage nach dem Beginn der Entwicklung“ — in Mermaid wird daraus ein fest eingetragenes Datum, und die Verknüpfung ist verschwunden.</li>
+        <li><strong>Kein Fortschritt in Prozent.</strong> Ein Vorgang bei 40 Prozent und einer bei 90 Prozent sind beide schlicht <code>active</code>.</li>
+        <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen, eine Gliederung mit mehr als einer Ebene wird beim Einlesen also flach.</li>
+      </ul>
+      <p>Nichts davon macht Mermaid zu einem schlechten Format. Es macht es zu einem <em>Veröffentlichungsformat</em> — gut darin, einen Terminplan zu zeigen, ungeeignet, einen herzuleiten. Genau deshalb zählt der Rückweg.</p>
+      <h2 id="s6">Visuell bearbeiten, dann den Text zurückkopieren</h2>
+<p>Mermaid rendern können viele Werkzeuge. Gefehlt hat die Gegenrichtung — Balken ziehen und die Syntax wieder herausbekommen.</p>
+      <ol>
+        <li>Fügen Sie Ihr Diagramm über <strong>✨ In Gantt einfügen</strong> ein oder öffnen Sie die Datei über <strong>📂 Öffnen</strong> — eine <code>.mmd</code>-Datei oder eine <code>.md</code>-Datei mit eingebettetem Block, beides funktioniert. Ein Gantt-Block wird an seinem Inhalt erkannt, nicht an der Dateiendung.</li>
+        <li>Ziehen, verknüpfen und umdatieren Sie wie in jedem anderen Diagramm. <code>excludes weekends</code> schaltet den Arbeitskalender ein, sodass die erzeugten Termine zu der Datei passen, aus der sie stammen; unter <strong>Kalender</strong> ergänzen Sie die Feiertage Ihres Bundeslandes.</li>
+        <li>Setzen Sie den Haken bei <strong>Kritischer Pfad</strong>. Die schraffierten Balken sind das berechnete Ergebnis — und nicht das, was in der Datei behauptet wurde.</li>
+        <li>Über <strong>⬇ Export</strong> ▸ <strong>🧜 Mermaid-Gantt (Text)</strong> erhalten Sie den aktualisierten Text, entweder über <strong>In die Zwischenablage kopieren</strong> oder als <strong>.mmd herunterladen</strong>. Zurück in die README einfügen, Diff einchecken, fertig.</li>
+      </ol>
+      <p>Der Hin- und Rückweg verliert etwas, aber auf bekannte, langweilige Weise. Der Fortschritt wird beim Export als 100 Prozent auf <code>done</code> und alles zwischen 1 und 99 Prozent auf <code>active</code> abgebildet; beim Import kommt <code>active</code> als 50 Prozent zurück — eine Schätzung, auf die Sie hingewiesen werden, statt sie später in einem Statusbericht zu entdecken. Verknüpfungen, die sich nicht als <code>after</code> schreiben lassen — alles mit Zeitabstand und jede AA-, EE- oder AE-Beziehung —, fallen auf feste Termine zurück. Die bleiben korrekt, hören aber auf, pflegbar zu sein.</p>
+      <p>Eine Asymmetrie ist Absicht und kein Fehler: <strong><code>crit</code> wird exportiert, aber niemals importiert.</strong> Auf dem Weg hinaus ist der Wert abgeleitet — der Editor hat den kritischen Pfad aus dem Abhängigkeitsnetz berechnet, das Tag ist im Moment des Schreibens also wahr. Auf dem Weg hinein ist es ein Wort, das jemand in eine womöglich wochenalte Datei getippt hat; ihm zu vertrauen hieße, eine unkritische Kette rot einzufärben. Also wird es geschrieben und danach ignoriert: Der kritische Pfad, den Sie nach einem Import sehen, ist neu berechnet und nicht behauptet.</p>
+      <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit berechnetem kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>
+
+      <div class="callout">Mermaid ist ein Veröffentlichungsformat, kein Planungswerkzeug. Der Terminplan darf im Repository leben, aber alles, was gerechnet werden muss — kritischer Pfad, Puffer, Abweichung gegen einen Basisplan —, entsteht außerhalb der Datei und wird dann hineingeschrieben. Wer die Reihenfolge umdreht, pflegt am Ende Daten von Hand, die eine Maschine ableiten könnte.</div>
 
       <h2 id="faq">Häufige Fragen</h2>
       <div class="faq">
         <details open><summary>Wie schreibt man ein Gantt-Diagramm in Mermaid?</summary><p>Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“.</p></details>
-        <details><summary>Schließt 5d in Mermaid den Starttag ein?</summary><p>Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag.</p></details>
-        <details><summary>Wie funktionieren Abhängigkeiten in Mermaid gantt?</summary><p>Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken.</p></details>
-        <details><summary>Kann Mermaid den Fortschritt in Prozent zeigen?</summary><p>Nein. Es gibt nur die Tags done und active. Beim Import ist jeder Prozentwert eine Schätzung; gantts.app setzt 50 Prozent und weist darauf hin.</p></details>
-        <details><summary>Wo werden Mermaid-Gantt-Diagramme dargestellt?</summary><p>GitHub, GitLab, Notion und Obsidian rendern sie direkt in Markdown, und mermaid.live zeigt sie im Browser.</p></details>
-        <details><summary>Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?</summary><p>Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und kopieren Sie die aktualisierte Syntax über Export ▸ Mermaid gantt wieder heraus.</p></details>
+        <details><summary>Schließt 5d in Mermaid den Starttag ein?</summary><p>Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag — und sie erzeugt ein Diagramm, das einwandfrei rendert, während jedes Datum um einen Tag danebenliegt.</p></details>
+        <details><summary>Wie funktionieren Abhängigkeiten in Mermaid gantt?</summary><p>Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand; Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken. Mehrere Vorgänger sind möglich, etwa „after a b“ — der Vorgang wartet dann auf den späteren der beiden.</p></details>
+        <details><summary>Überspringt after die Wochenenden?</summary><p>Ja, sofern das Diagramm „excludes weekends“ enthält. Der Nachfolger eines Vorgangs, der freitags endet, beginnt dann am Montag, und die Dauer zählt in Arbeitstagen. Werkzeuge, die after durch Addition eines Kalendertages auflösen, legen Vorgänge auf Samstage in einer Datei, die das ausdrücklich verbietet.</p></details>
+        <details><summary>Kann Mermaid den kritischen Pfad berechnen?</summary><p>Nein. Das Tag crit ist eine Farbe, die Sie von Hand vergeben; nichts in Mermaid läuft das Abhängigkeitsnetz ab oder rechnet Puffer aus. Genau deshalb exportiert gantts.app crit, ignoriert es beim Import aber: Die Kritikalität wird aus den Abhängigkeiten neu berechnet, statt einer möglicherweise veralteten Datei geglaubt zu werden.</p></details>
+        <details><summary>Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?</summary><p>Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und holen Sie sich die aktualisierte Syntax über ⬇ Export ▸ 🧜 Mermaid-Gantt (Text) wieder heraus.</p></details>
       </div>
 
       <aside class="promo">
@@ -226,6 +293,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

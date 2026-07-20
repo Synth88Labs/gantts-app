@@ -41,7 +41,7 @@ const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=24';
+const CSS_V = 'v=25';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -909,8 +909,13 @@ function renderGuide(loc, slug) {
   const only = guideLocalesFor(slug);
   const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 
+  /* Section bodies carry <!--FIG:name--> tokens rather than raw <svg>,
+     and each expands to the diagram DRAWN FOR THIS LOCALE. That is the
+     same reason the lead figure is generated rather than inherited: a
+     pasted English diagram inside a German article is invisible to
+     every word-count and heading check we have. */
   const body = d.sections.map(([h, html], i) =>
-    `      <h2 id="s${i + 1}">${esc(h)}</h2>\n${html}`).join('\n');
+    `      <h2 id="s${i + 1}">${esc(h)}</h2>\n${Figures.expand(html, code)}`).join('\n');
 
   const faq = d.faq.map(([q, a], i) =>
     `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n');

@@ -53,8 +53,8 @@
   <meta name="twitter:description" content="完成-开始、开始-开始、完成-完成、开始-完成四种依赖关系，以及提前量与滞后量的用法。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-dependencies.html#post","headline":"甘特图中的依赖关系：四种类型","description":"完成-开始、开始-开始、完成-完成、开始-完成四种依赖关系，以及提前量与滞后量的用法。","url":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"甘特图中的依赖关系：四种类型","item":"https://gantts.app/zh/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图有哪几种依赖关系？","acceptedAnswer":{"@type":"Answer","text":"四种：完成-开始、开始-开始、完成-完成、开始-完成。完成-开始覆盖了绝大多数情形。"}},{"@type":"Question","name":"提前量和滞后量有什么区别？","acceptedAnswer":{"@type":"Answer","text":"滞后量把后续任务往后推（如养护时间）；提前量让它在前置任务尚未全部完成时就开始。"}},{"@type":"Question","name":"需要把所有任务都连起来吗？","acceptedAnswer":{"@type":"Answer","text":"不需要，只连真实存在的依赖。全部串成一条链会失去并行度，对任何微小变动都反应过度。"}},{"@type":"Question","name":"为什么我的任务不跟着移动？","acceptedAnswer":{"@type":"Answer","text":"通常是缺少连线，或者设置了固定日期约束，覆盖了自动计算。"}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-dependencies.html#post","headline":"甘特图中的依赖关系：四种类型","description":"完成-开始、开始-开始、完成-完成、开始-完成四种依赖关系，以及提前量与滞后量的用法。","url":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"甘特图中的依赖关系：四种类型","item":"https://gantts.app/zh/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图有哪几种依赖关系？","acceptedAnswer":{"@type":"Answer","text":"四种：完成-开始（FS）、开始-开始（SS）、完成-完成（FF）、开始-完成（SF）。FS 覆盖了现实中绝大多数关系；SF 确实罕见，很多正确的计划里一条都没有。"}},{"@type":"Question","name":"提前量和滞后量有什么区别？","acceptedAnswer":{"@type":"Answer","text":"滞后量是加在连线上的等待时间——FS+3d 表示后继任务在前置任务结束三天后开始。提前量是负的滞后量，让两者重叠。要点在于：滞后量是已经承诺出去的时间，不是余量，拖期时你并不能把它花掉。"}},{"@type":"Question","name":"总浮动时间和自由浮动时间有什么区别？","acceptedAnswer":{"@type":"Answer","text":"总浮动时间是一项任务在项目完工日期移动之前可以推迟多久；自由浮动时间是它在自己的紧后任务移动之前可以推迟多久。总浮动时间沿整条链共享——三项任务各显示八天，并不意味着它们之间有二十四天。"}},{"@type":"Question","name":"默认该用哪种依赖类型？","acceptedAnswer":{"@type":"Answer","text":"完成-开始。如果觉得非用别的类型不可，先检查任务拆分得对不对——需要冷门类型，往往是某项任务本该拆开的征兆。"}},{"@type":"Question","name":"在 gantts.app 里加了依赖关系，日期会怎么变？","acceptedAnswer":{"@type":"Answer","text":"依赖关系只能把任务往后推，不会往前拉：任务的开始取\"你摆放的位置\"和\"前置任务允许的最早位置\"中较晚的一个。想把依赖任务压回最早的合法日期，点\"自动排程\"。"}},{"@type":"Question","name":"怎么添加依赖关系？","acceptedAnswer":{"@type":"Answer","text":"从任务横条边缘的小圆点拖到另一条横条上，或者在\"前置任务\"列里直接写 3FS+2d 这样的记法。点任意一条连线箭头，可以改它的类型和滞后天数，也可以删除它。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -86,18 +86,23 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › 甘特图中的依赖关系：四种类型</div>
     <h1>甘特图中的依赖关系：四种类型</h1>
-    <p class="lead"><strong>依赖关系</strong>规定谁等谁。类型有四种，但多数计划实际上只用得到一种——其余三种带来的麻烦往往多于帮助。</p>
+    <p class="lead"><strong>依赖关系</strong>规定谁等谁。你能在甘特图上画出来的关系一共四种，其中一种承担了大约九成的工作，另外三种是为它处理不好的场合准备的。下面逐一说明每种的含义，全文用同一个真实项目贯穿，并补上多数讲解都会跳过的两件事：滞后量与提前量的区别，以及总浮动时间与自由浮动时间的区别。</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
     <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
     <div class="toc"><strong>本页内容</strong>
       <ol>
-        <li><a href="#s1">完成-开始（FS）</a></li>
-        <li><a href="#s2">开始-开始（SS）</a></li>
-        <li><a href="#s3">完成-完成（FF）</a></li>
-        <li><a href="#s4">开始-完成（SF）</a></li>
-        <li><a href="#s5">提前量与滞后量</a></li>
+        <li><a href="#s1">贯穿全文的那个项目</a></li>
+        <li><a href="#s2">完成-开始（FS）——你真正会用的那一种</a></li>
+        <li><a href="#s3">开始-开始（SS）——同时展开的工作</a></li>
+        <li><a href="#s4">完成-完成（FF）——必须一起收口的工作</a></li>
+        <li><a href="#s5">开始-完成（SF）——最少见的那一种</a></li>
+        <li><a href="#s6">四种类型对照</a></li>
+        <li><a href="#s7">类型选错时，计划会说谎</a></li>
+        <li><a href="#s8">提前量与滞后量：滞后不是余量</a></li>
+        <li><a href="#s9">总浮动时间和自由浮动时间不是同一个数</a></li>
+        <li><a href="#s10">在 gantts.app 里创建和编辑依赖关系</a></li>
       </ol>
     </div>
 
@@ -107,26 +112,94 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">完成-开始（FS）</h2>
-<p>标准情形：A 完成后 B 开始。"刮腻子"完成后"刷漆"开始。真实计划中约九成的连线属于这一种，这是好事——它是唯一一种所有人第一眼就能读对的关系。</p>
-      <h2 id="s2">开始-开始（SS）</h2>
-<p>A 开始时 B 也开始。适用于同时启动的工作：监理与主体结构同时进场，测试与开发同时启动。常与滞后量搭配——测试在开发开始三天后启动。</p>
-      <h2 id="s3">完成-完成（FF）</h2>
-<p>A 完成时 B 也完成。典型用于伴随性工作：开发完成时文档同步完成。它不规定开始时间，只规定共同的结束点。</p>
-      <h2 id="s4">开始-完成（SF）</h2>
-<p>A 开始时 B 结束。最少见的一种，主要用于交接：旧班组在新班组到岗时收工；新系统上线时旧系统停用。如果你经常用到它，通常说明计划的思路反了。</p>
-      <h2 id="s5">提前量与滞后量</h2>
-<p>每条连线都可以加一个时间差。滞后量把后续任务往后推——混凝土需养护七天才能继续。提前量让它提早开始——第二标段在第一标段完成 70% 时启动。</p>
-        <p>关于等待时间有一点值得注意：养护、干燥、审批期最好作为独立任务显示出来，而不是藏在滞后量里。写在横条上的看得见；写在连线对话框里的，日后没人找得到。</p>
+      <h2 id="s1">贯穿全文的那个项目</h2>
+<p>依赖关系的示意图人人看得懂，一到自己的计划上就用不出来。所以这里用一个真实项目把四种类型全部走一遍：某市地铁 3 号线的信号系统升级割接。六项任务，按工作日计，2026 年 3 月至 4 月。</p>
+      <div class="worked">
+        <p><strong>信号系统升级割接。六项任务，工作日，2026 年 3—4 月。</strong></p>
+        <table>
+          <thead><tr><th>#</th><th>任务</th><th>开始</th><th>结束</th><th>天数</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>编写数据迁移程序</td><td>3 月 2 日（周一）</td><td>3 月 13 日（周五）</td><td>10</td></tr>
+            <tr><td>2</td><td>迁移试运行（实验线联调）</td><td>3 月 16 日</td><td>3 月 20 日</td><td>5</td></tr>
+            <tr><td>3</td><td>修复试运行发现的缺陷</td><td>3 月 23 日</td><td>4 月 3 日</td><td>10</td></tr>
+            <tr><td>4</td><td>编写割接作业手册</td><td>3 月 16 日</td><td>4 月 3 日</td><td>15</td></tr>
+            <tr><td>5</td><td>行车调度员培训</td><td>3 月 23 日</td><td>3 月 27 日</td><td>5</td></tr>
+            <tr><td>6</td><td>旧信号系统保持运行</td><td>3 月 2 日</td><td>4 月 6 日</td><td>26</td></tr>
+          </tbody>
+        </table>
+        <p>六条横条，一条连线也没有：到这一步为止，这张图还没有说出任何一件事依赖另一件事。正式割接安排在 4 月 6 日夜里的<strong>天窗点</strong>——末班车之后、首班车之前的那几个小时，是全线唯一能动信号设备的时间。这个约束会在下面每一种依赖类型上留下痕迹。</p>
+      </div>
+      <h2 id="s2">完成-开始（FS）——你真正会用的那一种</h2>
+<p>任务 B 必须等任务 A 完成之后才能开始。刮完腻子才能刷漆。</p>
+      <p>任务 2 是任务 1 的 FS 后继：没人写出来的程序没法拿去联调。任务 3 又是任务 2 的 FS 后继，因为缺陷清单在试运行跑出来之前根本不存在。1 → 2 → 3 这条链，十天加五天加十天，是整个项目的脊梁，也决定了 4 月 3 日这个结束日期。</p>
+      <p>FS 是所有排程工具的默认值。如果你拿不准该用哪一种，那多半就该用它。急着去找一种冷门类型，往往说明任务的拆分方式有问题，而不是说明你真的需要 SS 或 FF。</p>
+      <h2 id="s3">开始-开始（SS）——同时展开的工作</h2>
+<p>任务 B 必须等任务 A 开始之后才能开始，此后两者并行推进。</p>
+      <p>割接作业手册（任务 4）是试运行的 SS 后继。编写手册的人需要试运行已经在跑才有东西可写，但如果等它<em>结束</em>就白白浪费一周，所以两者都从 3 月 16 日（周一）开始。</p>
+      <p>什么时候用 SS：B 只等 A 起步。土方一开挖，监理就要进场旁站；主体一开工，安全巡查同步启动。判断标志是两件事共用一个触发点，而不是共用一个截止时间。</p>
+      <h2 id="s4">完成-完成（FF）——必须一起收口的工作</h2>
+<p>任务 B 必须等任务 A 完成之后才能完成。</p>
+      <p>割接手册对任务 3 还有一条 FF 连线：只要缺陷还在陆续修复，手册就不能定稿，因为每修一个缺陷都会改写手册里的一步操作。于是它一直开着，直到 4 月 3 日（周五）——由试运行拉开，由缺陷修复收口，这正是一切伴随性工作的形状。</p>
+      <p>测试不能早于开发结束、文档随功能一起收尾、监理资料随分项工程一起归档，都是 FF。B 什么时候开始都行，它只是不能先冲过终点线。</p>
+      <h2 id="s5">开始-完成（SF）——最少见的那一种</h2>
+<p>任务 B 必须等任务 A 开始之后才能完成。读起来是反的，多数计划人员一辈子也用不上一次。</p>
+      <p>任务 6 恰恰是它被发明出来要解决的情形。旧信号系统必须一直运行到新系统投用为止：它的<em>结束</em>钉在割接的<em>开始</em>上。用 SF 连起来之后，天窗点无论最终落在哪一夜，旧系统那条横条都会自动伸长过去，不需要任何人记得手工拖它。</p>
+      <p>这就是诚实的判断标准：一次交接——旧的东西之所以结束，是因为新的东西开始了。除此之外的场合，先检查一下把顺序调过来能不能用一条普通的 FS 说清楚同一件事。</p>
+      <h2 id="s6">四种类型对照</h2>
+<table>
+        <thead><tr><th>类型</th><th>现实中的触发条件</th><th>使用频率</th><th>它会诱发的错误</th></tr></thead>
+        <tbody>
+          <tr><td><strong>FS</strong><br>完成 → 开始</td><td>A 的产出就是 B 的输入——一份缺陷清单、一张签发的图纸、一段浇筑完成的结构</td><td>约占普通计划连线的九成</td><td>把偏好当成约束来连，直到每个日期都被钉死、再也无法重新规划</td></tr>
+          <tr><td><strong>SS</strong><br>开始 → 开始</td><td>两项工作共用一个触发点，此后并行推进</td><td>常见，多数计划里都有几条</td><td>它只对前置任务的<em>开始</em>作出反应。前置任务结束推迟时，后继一动不动</td></tr>
+          <tr><td><strong>FF</strong><br>完成 → 完成</td><td>包裹在外面、不能先于被包裹工作收口的活动——测试、文档、验收资料</td><td>偶尔，多为伴随性任务</td><td>不约束 B 的开始，于是图上看起来它可以早得离谱地启动</td></tr>
+          <tr><td><strong>SF</strong><br>开始 → 完成</td><td>一次交接——旧班组、旧系统、旧合同因为新的开始而结束</td><td>罕见。很多正确的计划里一条都没有</td><td>被当成"反着写的 FS"来凑合用，而评审计划的人没有一个读得对</td></tr>
+        </tbody>
+      </table>
+      <h2 id="s7">类型选错时，计划会说谎</h2>
+<p>现在看任务 5，行车调度员培训。计划人员把它连成了<strong>任务 3 的 SS 后继</strong>：缺陷修复一开始，培训就开始。看上去没问题——两条横条都从 3 月 23 日起，3 月 27 日全员培训完毕，离割接还早得很。</p>
+      <div class="worked">
+        <p><strong>然后试运行发现的问题比预想多</strong>，任务 3 从十天变成十五天，结束日期从 4 月 3 日推到 4 月 10 日。</p>
+        <ul>
+          <li><strong>任务 4（割接手册，FF）</strong>——跟着动了，结束日期顺延到 4 月 10 日。正确。</li>
+          <li><strong>任务 5（培训，SS）</strong>——<em>纹丝不动。</em>SS 盯的是前置任务的开始，而开始并没有变。计划上仍然显示调度员在 3 月 27 日就完成了培训。</li>
+        </ul>
+        <p>图并没有坏，它只是老实回答了你问它的那个问题。可现实是：调度员正在一套还有两周缺陷要修的系统上接受培训，而计划把这件事报成绿色。正确的连法是<strong>任务 3 的 FS 后继</strong>——等软件不再变化了再培训人。一个字母之差，把一个两周的隐患变成了"没有隐患"。</p>
+      </div>
+      <p>所以要专门试一次。计划连完线之后，把最可能超期的那项任务拉长一周，看看什么跟着动了。凡是你以为会动却没动的，都是类型选错——而现在改还不花钱。</p>
+      <h2 id="s8">提前量与滞后量：滞后不是余量</h2>
+<p><strong>滞后量</strong>给连线加上等待时间。"FS + 3 天"表示 B 在 A 结束三天后才开始。在我们这个项目里，割接是缺陷修复的 FS+1d 后继：留出一整天做最后一次数据同步。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="滞后量是连线内部已经承诺出去的等待时间，不是连线周围的余量。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 开始 + 延隔时间</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">延隔时间 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A + 3d</text></svg><figcaption>滞后量是连线内部已经承诺出去的等待时间，不是连线周围的余量。</figcaption></figure>
+      <p>最容易搞错的一点：<strong>滞后量不是浮动时间。</strong>浮动时间是出事时你可以花掉的余量；滞后量是已经承诺出去的时间——混凝土养护、油漆干燥、合同约定的审查期。谁也不能在拖期时"用掉"一段滞后量，混凝土该养护几天还是几天。因为某项任务"可能超期"就在连线上加滞后量，等于制造了一笔谁也找不到、谁也砍不掉的储备。</p>
+      <p><strong>提前量</strong>是负的滞后量："FS − 2 天"让 B 与 A 的尾巴重叠。提前量能压缩工期——所谓的赶工搭接就是这么做的——但它是用风险换时间。一个没有想清楚的搭接就是一条返工队列：B 是在一个还没做完的 A 上面施工。</p>
+      <p>两者在 MS Project 记法里都写作 <code>3FS+2d</code>——第 3 行、完成-开始、滞后两天。gantts.app 的<strong>前置任务</strong>列直接接受这种写法。</p>
+      <h2 id="s9">总浮动时间和自由浮动时间不是同一个数</h2>
+<p>连线画好之后，每项任务都有了浮动时间：它可以推迟多久才会伤到别的东西。这个"多久"有两种，混为一谈的代价很高。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="总浮动时间属于整条链，自由浮动时间属于这一项任务。"><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">自由浮动时间</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">总浮动时间</text></svg><figcaption>总浮动时间属于整条链，自由浮动时间属于这一项任务。</figcaption></figure>
+      <p><strong>总浮动时间</strong>是一项任务在项目完工日期开始移动之前可以推迟多久。<strong>自由浮动时间</strong>是它在自己的紧后任务开始移动之前可以推迟多久。自由浮动时间永远不会更大，而两者之间的差额正是麻烦藏身的地方。</p>
+      <p>改正之后的计划里，培训是有总浮动时间的——完工日期由缺陷链决定。但总浮动时间是<em>共享</em>的：如果连着三项任务各显示八天，那是三项之间一共八天，不是二十四天。只看这个数字就自作主张推迟一周的负责人，花掉的是整条链的浮动时间，而账要记在最后一项头上。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="总浮动时间为零就是关键：每推迟一天，完工日期就跟着推一天。"><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">浮动时间 (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期: 12</text></svg><figcaption>总浮动时间为零就是关键：每推迟一天，完工日期就跟着推一天。</figcaption></figure>
+      <p>总浮动时间为零，就是关键路径的定义。在 gantts.app 里勾上<strong>关键路径</strong>，这条链会画成斜纹。这也正是类型必须选对的地方，因为它就是决定完工日期的那条链。</p>
+      <h2 id="s10">在 gantts.app 里创建和编辑依赖关系</h2>
+<ol>
+        <li><strong>从横条拖到横条。</strong>按住任务横条边缘的小圆点，拖到目标横条上松手。连线以 <strong>FS</strong>、滞后量为零的形式建立。</li>
+        <li><strong>改类型。</strong>点两条横条之间的箭头，连线编辑器打开，<strong>类型</strong>下拉里有四项：<em>FS · 完成 → 开始</em>、<em>SS · 开始 → 开始</em>、<em>FF · 完成 → 完成</em>、<em>SF · 开始 → 完成</em>。图会立即重绘。</li>
+        <li><strong>加滞后量。</strong>同一个编辑器里的<strong>滞后（天）</strong>。割接前那一天写 <code>1</code>，提前量写负数。两者都可以用 Ctrl+Z 撤销。</li>
+        <li><strong>也可以直接敲。</strong>表格里的<strong>前置任务</strong>列按行号接受写法：<code>3</code>、<code>2SS</code>、<code>3FF</code>、<code>3FS+2d</code>，多个用逗号分隔。刚粘贴进来一份计划时，这是最快的连线方式。</li>
+        <li><strong>或者用任务面板。</strong>点开任务，展开<strong>前置任务</strong>，下拉里选一项就加一条连线，每一条都有自己的类型选择器。</li>
+        <li><strong>删除。</strong>连线编辑器里的删除按钮，或者任务面板里对应条目旁边的 ✕。</li>
+      </ol>
+      <p>有一个行为值得先知道：<strong>在这里添加依赖关系只能把任务往后推，永远不会把它往前拉。</strong>排程是"按摆放位置"计算的——任务的开始时间取"你拖到的位置"和"前置任务允许的最早位置"当中较晚的那个。如果一条横条本来就摆在前置任务之后很远的地方，连上线之后它不会动，中间的空档保持原样。这是刻意的：你有意摆好的横条，不应该因为你为了出报表补了一条连线就被拽走。要把整份计划压实，点<strong>自动排程</strong>——它不管依赖任务现在摆在哪里，一律拉回到前置任务允许的最早日期，同时把没有连线的任务留在原地当锚点。</p>
 
-      <div class="callout">只连接真正需要等待的任务。检验方法：如果 A 提前完成，B 能否提前开始？答案是否，那就不是依赖关系，只是你书写的先后顺序。</div>
+      <div class="callout">依赖关系应当描述真实的约束，而不是偏好。"我们更希望先做 A 再做 B"是排序选择，属于行的先后；"A 没做完 B 在物理上就无法开始"才是依赖关系。塞满前者的图表会变得无法重新规划：每个日期都被一件从来不是强制的事情钉住，等到计划必须压缩时，没有人分得清哪些连线是承重的。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>甘特图有哪几种依赖关系？</summary><p>四种：完成-开始、开始-开始、完成-完成、开始-完成。完成-开始覆盖了绝大多数情形。</p></details>
-        <details><summary>提前量和滞后量有什么区别？</summary><p>滞后量把后续任务往后推（如养护时间）；提前量让它在前置任务尚未全部完成时就开始。</p></details>
-        <details><summary>需要把所有任务都连起来吗？</summary><p>不需要，只连真实存在的依赖。全部串成一条链会失去并行度，对任何微小变动都反应过度。</p></details>
-        <details><summary>为什么我的任务不跟着移动？</summary><p>通常是缺少连线，或者设置了固定日期约束，覆盖了自动计算。</p></details>
+        <details open><summary>甘特图有哪几种依赖关系？</summary><p>四种：完成-开始（FS）、开始-开始（SS）、完成-完成（FF）、开始-完成（SF）。FS 覆盖了现实中绝大多数关系；SF 确实罕见，很多正确的计划里一条都没有。</p></details>
+        <details><summary>提前量和滞后量有什么区别？</summary><p>滞后量是加在连线上的等待时间——FS+3d 表示后继任务在前置任务结束三天后开始。提前量是负的滞后量，让两者重叠。要点在于：滞后量是已经承诺出去的时间，不是余量，拖期时你并不能把它花掉。</p></details>
+        <details><summary>总浮动时间和自由浮动时间有什么区别？</summary><p>总浮动时间是一项任务在项目完工日期移动之前可以推迟多久；自由浮动时间是它在自己的紧后任务移动之前可以推迟多久。总浮动时间沿整条链共享——三项任务各显示八天，并不意味着它们之间有二十四天。</p></details>
+        <details><summary>默认该用哪种依赖类型？</summary><p>完成-开始。如果觉得非用别的类型不可，先检查任务拆分得对不对——需要冷门类型，往往是某项任务本该拆开的征兆。</p></details>
+        <details><summary>在 gantts.app 里加了依赖关系，日期会怎么变？</summary><p>依赖关系只能把任务往后推，不会往前拉：任务的开始取"你摆放的位置"和"前置任务允许的最早位置"中较晚的一个。想把依赖任务压回最早的合法日期，点"自动排程"。</p></details>
+        <details><summary>怎么添加依赖关系？</summary><p>从任务横条边缘的小圆点拖到另一条横条上，或者在"前置任务"列里直接写 3FS+2d 这样的记法。点任意一条连线箭头，可以改它的类型和滞后天数，也可以删除它。</p></details>
       </div>
 
       <aside class="promo">
@@ -203,6 +276,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

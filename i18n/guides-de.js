@@ -258,25 +258,102 @@ const G = {
 'gantt-chart-dependencies': {
   h1: 'Abhängigkeiten im Gantt-Diagramm: die vier Verknüpfungsarten',
   metaTitle: 'Abhängigkeiten im Gantt-Diagramm',
-  metaDesc: 'Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — wann welche Verknüpfung passt und wie Zeitabstände wirken.',
+  metaDesc: 'Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende erklärt — mit durchgerechnetem Beispiel, Zeitabständen sowie freiem und gesamtem Puffer.',
   date: '2026-07-19',
-  lead: 'Eine <strong>Abhängigkeit</strong> legt fest, was worauf wartet. Es gibt vier Arten, aber in der Praxis brauchen die meisten Pläne fast nur eine — und der Rest richtet häufiger Schaden an, als er nützt.',
+  lead: 'Vier Beziehungstypen decken jede Abhängigkeit ab, die sich in einem Gantt-Diagramm zeichnen lässt. Einer erledigt rund neunzig Prozent der Arbeit; die anderen drei gibt es für die Fälle, die er schlecht abbildet. Hier steht, was jeder bedeutet, mit einem Beispiel, das den ganzen Text hindurch mitläuft — und mit den beiden Punkten, die fast alle Erklärungen auslassen: Verzögerung gegen Vorlauf, und Gesamtpuffer gegen freien Puffer.',
   figIntro: 'Die vier Verknüpfungsarten im Vergleich:',
   sections: [
-    ['Ende-Anfang (EA)', '<p>Der Standardfall: B beginnt, wenn A fertig ist. „Streichen“ beginnt, wenn „Spachteln“ abgeschlossen ist. Rund 90 Prozent aller Verknüpfungen in realen Plänen sind von diesem Typ, und das ist gut so — sie ist die einzige Art, die jeder auf Anhieb richtig liest.</p>'],
-    ['Anfang-Anfang (AA)', '<p>B beginnt, wenn A beginnt. Nützlich für Arbeiten, die gemeinsam anlaufen: Bauleitung startet mit dem Rohbau, Qualitätssicherung mit der Entwicklung. Häufig kombiniert mit einem Zeitabstand — QS beginnt drei Tage nach Entwicklungsbeginn.</p>'],
-    ['Ende-Ende (EE)', '<p>B endet, wenn A endet. Typisch für begleitende Tätigkeiten: Die Dokumentation ist fertig, wenn die Entwicklung fertig ist. Sie legt kein Startdatum fest, sondern nur einen gemeinsamen Schlusspunkt.</p>'],
-    ['Anfang-Ende (AE)', '<p>B endet, wenn A beginnt. Der seltenste Fall, vor allem für Übergaben: Die alte Schicht endet, wenn die neue beginnt; das Altsystem wird abgeschaltet, wenn das neue in Betrieb geht. Wenn Sie diese Verknüpfung häufig einsetzen, ist der Plan meistens falsch herum gedacht.</p>'],
-    ['Zeitabstände: Vorlauf und Verzögerung', '<p>Jede Verknüpfung lässt sich um einen Abstand ergänzen. Eine Verzögerung schiebt den Nachfolger nach hinten — Beton muss sieben Tage aushärten, bevor weitergebaut wird. Ein Vorlauf lässt ihn früher beginnen — der zweite Bauabschnitt startet, wenn der erste zu 70 Prozent fertig ist.</p>\n        <p>Ein Hinweis zur Wartezeit: Aushärten, Trocknen, Genehmigungsfristen sind besser als eigener Vorgang sichtbar als in einer Verzögerung versteckt. Was im Balken steht, sieht man; was im Verknüpfungsdialog steht, findet niemand wieder.</p>'],
+    ['Das Vorhaben, das wir durchgehend verwenden', `<p>Über Abhängigkeitsdiagramme nickt man leicht und wendet sie schwer an. Deshalb steht hier ein konkretes Vorhaben, auf das jeder der folgenden Typen angewendet wird: die Ablösung des Abrechnungssystems bei einem kommunalen Versorger.</p>
+      <div class="worked">
+        <p><strong>Stadtwerke Lünen, Umstellung der Verbrauchsabrechnung. Sechs Vorgänge, Arbeitstage, März bis April 2026.</strong></p>
+        <table>
+          <thead><tr><th>Nr.</th><th>Vorgang</th><th>Beginn</th><th>Ende</th><th>Tage</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Migrationsskripte entwickeln</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td></tr>
+            <tr><td>2</td><td>Testmigration fahren</td><td>Mo 16. März</td><td>Fr 20. März</td><td>5</td></tr>
+            <tr><td>3</td><td>Befunde der Testmigration beheben</td><td>Mo 23. März</td><td>Fr 3. April</td><td>10</td></tr>
+            <tr><td>4</td><td>Umstellungshandbuch schreiben</td><td>Mo 16. März</td><td>Fr 3. April</td><td>15</td></tr>
+            <tr><td>5</td><td>Abrechnungsteam schulen</td><td>Mo 23. März</td><td>Fr 27. März</td><td>5</td></tr>
+            <tr><td>6</td><td>Altsystem weiterbetreiben</td><td>Mo 2. März</td><td>Mo 6. April</td><td>26</td></tr>
+          </tbody>
+        </table>
+        <p>Sechs Balken, keine Verknüpfungen: Bis hierhin sagt der Plan nichts darüber, was worauf wartet.</p>
+      </div>`],
+
+    ['Ende-Anfang (EA) — die Art, die Sie ständig brauchen', `<p>Vorgang B kann nicht beginnen, bevor Vorgang A fertig ist. Fundament gießen, dann aufmauern.</p>
+      <p>Vorgang 2 hängt EA an Vorgang 1: Man kann kein Skript testen, das niemand geschrieben hat. Vorgang 3 hängt EA an Vorgang 2, denn die Fehlerliste existiert erst, wenn die Testmigration sie erzeugt hat. Diese Kette — 1 → 2 → 3, zehn plus fünf plus zehn Tage — ist das Rückgrat des Vorhabens und legt das Ende auf den 3. April.</p>
+      <p>Ende-Anfang ist in jedem Planungswerkzeug der Standard, und im Zweifel ist es fast sicher die richtige Wahl. Der Griff zu einem exotischen Typ ist häufiger ein Hinweis darauf, dass die Vorgänge falsch geschnitten sind, als darauf, dass Sie wirklich AA oder EE brauchen.</p>`],
+
+    ['Anfang-Anfang (AA) — Arbeit, die gemeinsam anläuft', `<p>Vorgang B kann nicht beginnen, bevor Vorgang A begonnen hat. Danach laufen beide parallel.</p>
+      <p>Das Umstellungshandbuch (Vorgang 4) hängt AA an der Testmigration. Die Autorin braucht eine laufende Testmigration, um überhaupt etwas dokumentieren zu können; auf deren <em>Ende</em> zu warten, würde eine Woche verschenken. Also beginnen beide am Montag, dem 16. März.</p>
+      <p>Nehmen Sie AA, wenn B nur auf den Beginn von A wartet: Sobald der Erdaushub anläuft, läuft die Bauüberwachung an. Das Erkennungsmerkmal ist ein gemeinsamer Auslöser, kein gemeinsamer Endtermin.</p>`],
+
+    ['Ende-Ende (EE) — Arbeit, die gemeinsam landen muss', `<p>Vorgang B kann nicht enden, bevor Vorgang A geendet hat.</p>
+      <p>Das Handbuch hat zusätzlich eine EE-Verknüpfung zu Vorgang 3: Es kann nicht freigegeben werden, solange noch Fehlerbehebungen eintreffen, denn jede Korrektur schreibt einen Arbeitsschritt darin um. Es bleibt also bis Freitag, den 3. April, offen — begonnen von der Testmigration, geschlossen von den Fehlerbehebungen. Das ist die typische Form einer begleitenden Tätigkeit.</p>
+      <p>Tests, die nicht vor der Entwicklung fertig sein können, Dokumentation, die mit der Funktion abschließt, Qualitätssicherung, die sich um einen Bau legt: alles EE. B darf beginnen, wann es will; es darf nur nicht vorher über die Ziellinie.</p>`],
+
+    ['Anfang-Ende (AE) — die seltene Art', `<p>Vorgang B kann nicht enden, bevor Vorgang A begonnen hat. Das liest sich rückwärts, und die meisten Planerinnen brauchen es in ihrem ganzen Berufsleben nicht.</p>
+      <p>Vorgang 6 ist genau der Fall, für den es erfunden wurde. Das Altsystem muss laufen, bis das neue in Betrieb geht: Sein <em>Ende</em> ist an den <em>Beginn</em> der Inbetriebnahme gekoppelt. Verknüpfen Sie AE, und der Balken des Altsystems dehnt sich automatisch bis zu dem Termin, auf den die Inbetriebnahme fällt — ohne dass sich jemand daran erinnern muss, ihn zu ziehen.</p>
+      <p>Das ist der ehrliche Test: eine Übergabe, bei der das Alte endet, weil das Neue beginnt. Überall sonst sollten Sie prüfen, ob eine Umsortierung dasselbe mit einer schlichten EA-Verknüpfung ausdrückt.</p>`],
+
+    ['Die vier Typen nebeneinander', `<table>
+        <thead><tr><th>Typ</th><th>Auslöser in der Wirklichkeit</th><th>Wie oft er passt</th><th>Der Fehler, zu dem er verleitet</th></tr></thead>
+        <tbody>
+          <tr><td><strong>EA</strong><br>Ende → Anfang</td><td>Das Ergebnis von A ist der Input von B — eine Fehlerliste, eine freigegebene Zeichnung, eine ausgehärtete Sohle</td><td>Rund 90 % der Verknüpfungen eines typischen Plans</td><td>Als Vorliebe statt als Zwang gesetzt, bis jeder Termin festgenagelt ist und nichts mehr umgeplant werden kann</td></tr>
+          <tr><td><strong>AA</strong><br>Anfang → Anfang</td><td>Zwei Tätigkeiten teilen einen Auslöser und laufen dann gemeinsam</td><td>Häufig; die meisten Pläne haben einige</td><td>Sie reagiert nur auf den <em>Beginn</em> des Vorgängers. Rutscht dessen Ende, bewegt sich B überhaupt nicht</td></tr>
+          <tr><td><strong>EE</strong><br>Ende → Ende</td><td>Eine Klammer, die nicht vor ihrem Inhalt schließen kann — Tests, Dokumentation, Freigabe</td><td>Gelegentlich, vor allem bei begleitenden Vorgängen</td><td>Der Beginn von B bleibt ungebunden, weshalb er absurd früh möglich aussieht</td></tr>
+          <tr><td><strong>AE</strong><br>Anfang → Ende</td><td>Eine Übergabe — die alte Schicht, das Altsystem oder der alte Vertrag endet, weil das Neue beginnt</td><td>Selten. Viele korrekte Pläne haben keine einzige</td><td>Als umständliches rückwärts gedachtes EA benutzt, das beim Durchsehen niemand richtig liest</td></tr>
+        </tbody>
+      </table>`],
+
+    ['Wenn der falsche Typ den Terminplan lügen lässt', `<p>Nun zu Vorgang 5, der Schulung. Ein Planer verknüpft sie <strong>AA nach Vorgang 3</strong>: Die Schulung beginnt, wenn die Fehlerbehebung beginnt. Das sieht stimmig aus — beide Balken starten am 23. März, alle sind am 27. März geschult, deutlich vor der Inbetriebnahme. Der Termin ist zudem mit dem Betriebsrat abgestimmt, weil die Schulung in der Arbeitszeit stattfindet, und damit doppelt zugesagt.</p>
+      <div class="worked">
+        <p><strong>Dann findet die Testmigration mehr als erwartet</strong>, und Vorgang 3 wächst von zehn auf fünfzehn Tage; sein Ende rückt von Freitag, dem 3. April, auf Freitag, den 10. April.</p>
+        <ul>
+          <li><strong>Vorgang 4 (Handbuch, EE)</strong> — bewegt sich. Sein Ende folgt auf Freitag, den 10. April. Richtig.</li>
+          <li><strong>Vorgang 5 (Schulung, AA)</strong> — <em>bewegt sich überhaupt nicht.</em> AA schaut auf den Beginn des Vorgängers, und der hat sich nicht verändert. Der Plan zeigt weiterhin ein geschultes Team am Freitag, dem 27. März.</li>
+        </ul>
+        <p>Das Diagramm ist nicht kaputt; es beantwortet die Frage, die man ihm gestellt hat. Nur wird das Team an einer Software geschult, an der noch zwei Wochen lang Fehler behoben werden — und der Plan meldet das als grün. Die richtige Verknüpfung wäre <strong>EA nach Vorgang 3</strong> gewesen: schulen, sobald die Software sich nicht mehr ändert. Ein falscher Buchstabe hat aus einem Zwei-Wochen-Problem gar kein Problem gemacht.</p>
+      </div>
+      <p>Prüfen Sie deshalb aktiv darauf. Verlängern Sie in einem verknüpften Plan den Vorgang, der am ehesten überzieht, testweise um eine Woche und sehen Sie nach, was sich bewegt hat. Alles, was sich hätte verschieben müssen und stehen blieb, ist ein falscher Typ — gefunden, solange die Korrektur nichts kostet.</p>`],
+
+    ['Verzögerung und Vorlauf — eine Verzögerung ist Wartezeit, kein Puffer', `<p>Eine <strong>Verzögerung</strong> ergänzt eine Verknüpfung um Wartezeit. „EA + 3 Tage“ heißt, dass B drei Tage nach dem Ende von A beginnt. Hier hängt die Inbetriebnahme mit EA+1 Tag an den Fehlerbehebungen: ein voller Tag für den letzten Datenabgleich.</p>
+      <!--FIG:lag|Eine Verzögerung ist fest zugesagte Wartezeit innerhalb der Verknüpfung, kein freier Spielraum daneben.-->
+      <p>Was dabei regelmäßig falsch verstanden wird: <strong>Eine Verzögerung ist kein Puffer.</strong> Puffer ist Spielraum, den Sie ausgeben können, wenn etwas rutscht. Eine Verzögerung ist bereits verplante Zeit — Beton härtet aus, Farbe trocknet, eine vertragliche Prüffrist läuft. Niemand kann eine Verzögerung „aufbrauchen“, wenn er in Verzug gerät; der Beton härtet dieselben Tage. Wer Verknüpfungen mit Verzögerungen polstert, weil ein Vorgang „vielleicht“ überzieht, schafft eine Reserve, die niemand findet und niemand kürzen kann.</p>
+      <p>Ein <strong>Vorlauf</strong> ist eine negative Verzögerung: „EA − 2 Tage“ überlappt das Ende von A. Vorläufe verdichten einen Terminplan — genau das ist beschleunigtes Vorgehen —, aber sie erkaufen Zeit mit Risiko. Eine Überlappung, über die niemand nachgedacht hat, ist eine Warteschlange für Nacharbeit: B baut auf einem unfertigen A auf.</p>
+      <p>Beides schreibt man in der Notation von MS Project als <code>3EA+2T</code> — Zeile 3, Ende-Anfang, zwei Tage Verzögerung. gantts.app nimmt das in der Spalte <strong>Nach</strong> entgegen; in der englischen Notation heißt derselbe Eintrag <code>3FS+2d</code>, und beide werden verstanden.</p>`],
+
+    ['Gesamtpuffer und freier Puffer sind nicht dieselbe Zahl', `<p>Jeder Vorgang hat jetzt Puffer: die Zeit, um die er rutschen darf, bevor er etwas beschädigt. Es gibt zwei Arten davon, und sie zu verwechseln ist teuer.</p>
+      <!--FIG:float|Der Gesamtpuffer gehört der Kette. Der freie Puffer gehört dem Vorgang.-->
+      <p><strong>Gesamtpuffer</strong> ist die Zeit, um die ein Vorgang rutschen darf, bevor sich das Projektende verschiebt. <strong>Freier Puffer</strong> ist die Zeit, um die er rutschen darf, bevor sich sein eigener Nachfolger verschiebt. Der freie Puffer ist nie größer, und im Abstand zwischen beiden wohnen die Probleme.</p>
+      <p>Die Schulung hat im korrigierten Plan Gesamtpuffer — das Enddatum wird von der Fehlerkette bestimmt. Aber Gesamtpuffer ist <em>geteilt</em>: Wenn drei aufeinanderfolgende Vorgänge jeweils acht Tage anzeigen, liegen zwischen ihnen acht Tage und nicht vierundzwanzig. Eine Teamleitung, die nur diese Zahl liest und eine Woche verschiebt, hat Puffer ausgegeben, der der ganzen Kette gehört.</p>
+      <!--FIG:cpm|Gesamtpuffer null heißt kritisch: Jeder Tag Verzug verschiebt das Enddatum.-->
+      <p>Gesamtpuffer null ist die Definition des kritischen Pfads. Setzen Sie in gantts.app den Haken bei <strong>Kritischer Pfad</strong>, dann wird diese Kette schraffiert gezeichnet. Dort müssen die Typen stimmen, denn dort entsteht das Enddatum.</p>`],
+
+    ['Eine Abhängigkeit in gantts.app anlegen und ändern', `<ol>
+        <li><strong>Von Balken zu Balken ziehen.</strong> Fassen Sie den kleinen Punkt am Rand eines Vorgangsbalkens, ziehen Sie ihn auf den Balken, den Sie verknüpfen wollen, und lassen Sie los. Die Verknüpfung entsteht als <strong>EA</strong> ohne Verzögerung.</li>
+        <li><strong>Den Typ ändern.</strong> Klicken Sie auf den Pfeil zwischen den Balken. Der Verknüpfungsdialog öffnet sich mit einer Auswahl für den Typ: Ende → Anfang, Anfang → Anfang, Ende → Ende, Anfang → Ende. Das Diagramm zeichnet sich sofort neu.</li>
+        <li><strong>Eine Verzögerung ergänzen.</strong> Im selben Dialog steht das Feld für die Verzögerung in Tagen. Tragen Sie <code>1</code> für das EA+1 vor der Inbetriebnahme ein oder eine negative Zahl für einen Vorlauf. Beides lässt sich mit Strg+Z rückgängig machen.</li>
+        <li><strong>Oder tippen.</strong> Die Spalte <strong>Nach</strong> im Raster nimmt Vorgänger als Zeilennummern entgegen: <code>3</code>, <code>2AA</code>, <code>3EE</code>, <code>3EA+2T</code>, durch Komma getrennt. Das ist der schnellste Weg, einen gerade eingefügten Plan zu verknüpfen.</li>
+        <li><strong>Oder über die Vorgangskarte.</strong> Klicken Sie einen Vorgang an und öffnen Sie <strong>Nach (Vorgänger)</strong>. Über die Auswahl fügen Sie eine Verknüpfung hinzu; jede bestehende hat ihre eigene Typauswahl.</li>
+        <li><strong>Eine entfernen.</strong> Im Verknüpfungsdialog gibt es dafür eine eigene Schaltfläche, alternativ das ✕ neben dem Eintrag in der Vorgangskarte.</li>
+      </ol>
+      <p>Ein Verhalten sollten Sie kennen: <strong>Eine Abhängigkeit kann einen Vorgang hier nur nach hinten schieben, nie nach vorn ziehen.</strong> Die Terminrechnung arbeitet „wie gelegt“ — ein Vorgang beginnt zum späteren der beiden Zeitpunkte: dort, wohin Sie ihn gezogen haben, oder dort, wo seine Vorgänger es erlauben. Verknüpfen Sie einen Vorgang, dessen Balken ohnehin weit hinter seinem Vorgänger liegt, bewegt sich nichts; die Lücke bleibt. Das ist Absicht: Ein bewusst platzierter Balken soll nicht von einer Verknüpfung herumgerissen werden, die Sie für die Berichterstattung ergänzt haben. Wenn Sie alles verdichten wollen, klicken Sie auf <strong>Neu planen</strong>. Das ignoriert, wo abhängige Vorgänge liegen, und zieht jeden auf den frühesten Termin zurück, den seine Vorgänger zulassen; unverknüpfte Vorgänge bleiben als Anker stehen.</p>`],
   ],
-  callout: 'Verknüpfen Sie nur, was wirklich wartet. Der Test: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort nein, ist es keine Abhängigkeit, sondern nur die Reihenfolge, in der Sie es aufgeschrieben haben.',
+  callout: 'Eine Abhängigkeit soll einen echten Zwang beschreiben, keine Vorliebe. „Wir machen B lieber nach A“ ist eine Reihenfolgeentscheidung und gehört in die Sortierung. „B kann physisch nicht beginnen, bevor A fertig ist“ ist eine Abhängigkeit. Pläne voller Vorlieben lassen sich nicht mehr umplanen: Jeder Termin ist von etwas festgenagelt, das nie zwingend war, und wenn verdichtet werden muss, kann niemand mehr sagen, welche Verknüpfung tragend ist.',
   faq: [
-    ['Welche Abhängigkeitstypen gibt es im Gantt-Diagramm?', 'Vier: Ende-Anfang, Anfang-Anfang, Ende-Ende und Anfang-Ende. Ende-Anfang deckt die weit überwiegende Mehrheit der Fälle ab.'],
-    ['Was ist der Unterschied zwischen Vorlauf und Verzögerung?', 'Eine Verzögerung schiebt den Nachfolger nach hinten (Aushärtezeit), ein Vorlauf lässt ihn früher beginnen, bevor der Vorgänger ganz fertig ist.'],
-    ['Sollte man jeden Vorgang verknüpfen?', 'Nein. Nur echte Abhängigkeiten. Ein Plan, in dem alles aneinanderhängt, verliert jede Parallelität und reagiert auf jede kleine Verschiebung übertrieben.'],
-    ['Warum wird mein Vorgang nicht verschoben?', 'Meist fehlt die Verknüpfung, oder es ist ein fester Termin gesetzt, der die Berechnung übersteuert.'],
+    ['Welche vier Abhängigkeitstypen gibt es im Gantt-Diagramm?', 'Ende-Anfang (EA), Anfang-Anfang (AA), Ende-Ende (EE) und Anfang-Ende (AE). EA deckt die große Mehrheit der echten Beziehungen ab; AE ist wirklich selten, und viele korrekte Pläne enthalten keine einzige.'],
+    ['Was ist der Unterschied zwischen Vorlauf und Verzögerung?', 'Eine Verzögerung ist Wartezeit in der Verknüpfung — EA+3T heißt, der Nachfolger beginnt drei Tage nach dem Ende des Vorgängers. Ein Vorlauf ist eine negative Verzögerung und überlappt beide. Eine Verzögerung ist fest verplante Zeit, kein Spielraum: Sie können sie nicht ausgeben, wenn Sie in Verzug geraten.'],
+    ['Was ist der Unterschied zwischen Gesamtpuffer und freiem Puffer?', 'Gesamtpuffer ist die Zeit, um die ein Vorgang rutschen darf, bevor sich das Projektende verschiebt; freier Puffer die Zeit, bevor sich sein eigener Nachfolger verschiebt. Gesamtpuffer wird entlang einer Kette geteilt — drei Vorgänge mit jeweils acht Tagen haben zusammen nicht vierundzwanzig.'],
+    ['Welchen Typ sollte man standardmäßig verwenden?', 'Ende-Anfang. Wenn ein anderer Typ nötig erscheint, prüfen Sie zuerst, ob die Vorgänge richtig geschnitten sind — ein ungewöhnlicher Typ ist oft das Symptom eines Vorgangs, der geteilt gehört.'],
+    ['Was passiert mit meinen Terminen, wenn ich in gantts.app eine Abhängigkeit ergänze?', 'Eine Abhängigkeit kann einen Vorgang nur nach hinten schieben, nie nach vorn ziehen: Er beginnt zum späteren der beiden Zeitpunkte — dort, wo Sie ihn abgelegt haben, oder dort, wo die Vorgänger es zulassen. Mit „Neu planen“ verdichten Sie abhängige Vorgänge auf ihre frühestmöglichen Termine.'],
+    ['Wie lege ich in gantts.app Abhängigkeiten an?', 'Ziehen Sie vom Punkt am Rand eines Balkens auf einen anderen Balken, oder tippen Sie eine Notation wie 3EA+2T in die Spalte „Nach“. Ein Klick auf einen Verknüpfungspfeil öffnet den Dialog für Typ und Verzögerung — dort lässt sie sich auch entfernen.'],
   ],
-  related: [['critical-path-method', 'Der kritische Pfad'], ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'], ['gantt-chart-mistakes', 'Häufige Planungsfehler']],
+  related: [
+    ['critical-path-method', 'Der kritische Pfad'],
+    ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'],
+    ['gantt-baseline-variance', 'Basisplan und Abweichung'],
+  ],
 },
 
 'gantt-chart-examples': {
@@ -845,358 +922,722 @@ const G = {
 },
 
 'gantt-baseline-variance': {
-  h1: "Basisplan und Abweichung: Plan gegen Wirklichkeit",
-  metaTitle: "Basisplan und Abweichung im Gantt",
-  metaDesc: "Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen.",
-  date: "2026-07-19",
-  lead: "Ein <strong>Basisplan</strong> ist der eingefrorene Stand Ihres Terminplans zum Zeitpunkt der Freigabe. Ohne ihn lässt sich später nicht sagen, ob ein Projekt im Verzug ist — nur, wann es voraussichtlich fertig wird.",
-  figIntro: "Zwei Balken je Vorgang: der Plan von damals, der Stand von heute.",
+  h1: 'Basisplan und Abweichung: Plan gegen Wirklichkeit',
+  metaTitle: 'Basisplan und Abweichung im Gantt',
+  metaDesc: 'Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann.',
+  date: '2026-07-19',
+  lead: 'Ein Gantt-Diagramm zeigt, wo Ihr Projekt steht. Ein <strong>Basisplan</strong> zeigt, wo es stehen sollte. Ohne ihn können Sie Fortschritt berichten, aber keinen Verzug — und der Verzug ist genau das, was jede Person wissen will, die die Arbeit bezahlt.',
+  figIntro: 'Zwei Balken je Vorgang: der Plan von damals, der Stand von heute.',
   sections: [
-    [
-      "Was ein Basisplan ist",
-      "<p>Eine Kopie der Termine zum Zeitpunkt der Freigabe. Der aktuelle Plan verändert sich weiter, der Basisplan bleibt stehen. Die Differenz zwischen beiden ist die Abweichung.</p>\n        <p>Ohne Basisplan gibt es keinen Verzug — es gibt nur immer wieder ein neues Enddatum, und niemand kann sagen, wie es dorthin gekommen ist.</p>"
-    ],
-    [
-      "Wann eingefroren wird",
-      "<p>Nach der Freigabe und bevor die Arbeit beginnt. Ein Basisplan, der erst gesetzt wird, wenn das Projekt schon zwei Wochen läuft, misst nichts mehr.</p>"
-    ],
-    [
-      "Abweichung lesen",
-      "<p>Terminabweichung ist Ist-Ende minus Plan-Ende, in Tagen. Positiv heißt später als geplant. Interessant ist dabei nicht die Abweichung eines einzelnen Vorgangs, sondern ob sie auf dem kritischen Pfad liegt — dort schlägt sie voll auf das Projektende durch, anderswo möglicherweise gar nicht.</p>"
-    ],
-    [
-      "Fortschritt richtig erfassen",
-      "<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig“ ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>"
-    ],
-    [
-      "Wann neu basiert wird",
-      "<p>Nur bei einer genehmigten Änderung von Umfang, Budget oder Termin — nicht, weil der alte Plan unangenehm aussieht. Wer bei jedem Verzug neu basiert, hat am Ende ein Projekt ohne Abweichungen und ohne jede Aussage.</p>\n        <p>Bewahren Sie alte Basispläne auf. Die Abfolge zeigt, wie oft und aus welchen Gründen umgeplant wurde — häufig die aufschlussreichste Information im ganzen Projekt.</p>"
-    ],
-    [
-      "Was man daraus lernt",
-      "<p>Nach Projektende ist der Vergleich von Basisplan und Ist die beste verfügbare Grundlage für die nächste Schätzung. Wenn Ihre Vorgänge systematisch 30 Prozent länger dauern als geplant, ist das keine Pannenserie, sondern ein Schätzfehler mit bekanntem Faktor.</p>"
-    ]
+    ['Was ein Basisplan tatsächlich ist', `<p>Ein Basisplan ist eine eingefrorene Kopie Ihres Terminplans zu einem Zeitpunkt, an dem Sie ihn für richtig erklärt haben — üblicherweise mit der Freigabe. Er speichert je Vorgang den geplanten Beginn, das geplante Ende und den Fortschritt und hört dann auf, sich zu verändern.</p>
+      <p>Dieser letzte Teil ist der Punkt. Wenn Sie den Plan ohne Basisplan laufend überschreiben, schreibt der Terminplan stillschweigend seine eigene Geschichte um, und jede Woche sieht planmäßig aus. Termine wandern einen Tag nach dem anderen, und ein Plan, der dreißig Einzeltagsänderungen aufgenommen hat, sieht am Ende aus wie einer, der sich nie bewegt hat. Der Basisplan ist das, was diese Änderungen zu einer Zahl addiert.</p>
+      <p>Im deutschen Bauvertragsrecht hat das zusätzlich eine handfeste Seite: Eine Behinderungsanzeige nach VOB/B braucht einen Bezugspunkt. „Wir sind später dran, als vereinbart“ ist ohne eingefrorenen Vertragsterminplan keine Aussage, sondern eine Meinung.</p>`],
+
+    ['Wann er gesetzt wird — und wann nicht', `<p>Setzen Sie den Basisplan <strong>nach</strong> der Freigabe und <strong>bevor</strong> die Arbeit beginnt. Einer, der mitten in der Ausführung entsteht, backt jeden bereits eingetretenen Verzug ein und unterschätzt die tatsächliche Abweichung von da an dauerhaft.</p>
+      <p>Setzen Sie aber keinen Basisplan auf einen Plan, von dem Sie wissen, dass er falsch ist, nur um einen zu haben — ein erfundener Terminplan liefert selbstbewusste, präzise und bedeutungslose Zahlen. Wenn Vorgänge noch Platzhaltertermine tragen, korrigieren Sie zuerst diese.</p>`],
+
+    ['Ein durchgerechnetes Beispiel: ein Vorhaben, drei Statuszyklen', `<p>Die Sanierung eines Verwaltungsgebäudes, freigegeben am Freitag, dem 27. Februar 2026, und am Montag, dem 2. März, mit dem Basisplan eingefroren, bevor jemand anfängt. Fünf Zeilen, durchgehend Ende-Anfang, alle kritisch. Die Ausführungsplanung liegt in Leistungsphase 5 der HOAI, die Bauüberwachung in Leistungsphase 8.</p>
+      <div class="worked">
+        <p><strong>Basisplan, gesetzt am 2. März 2026</strong></p>
+        <ul>
+          <li>Bestandsaufnahme — 2. bis 13. März (10 Arbeitstage)</li>
+          <li>Ausführungsplanung — 16. März bis 3. April (15 Tage)</li>
+          <li>Ausbau — 6. April bis 15. Mai (30 Tage)</li>
+          <li>Funktionsprüfung — 18. bis 29. Mai (10 Tage)</li>
+          <li>Abnahme — 1. Juni (Meilenstein)</li>
+        </ul>
+
+        <p><strong>Statuszyklus 1 — Freitag, 20. März</strong></p>
+        <p>Zwei Termine mit den Nutzerinnen sind verschoben worden, die Bestandsaufnahme endete daher am 18. statt am 13. März: <strong>Endabweichung +3 Tage</strong>. Die Ausführungsplanung begann am 19. März — <strong>Startabweichung +3 Tage</strong> — und weil ihre Schätzung unverändert bleibt, wandert ihr prognostiziertes Ende auf den 8. April, ebenfalls +3. Jeder nachgelagerte Vorgang trägt dieselben +3; die Abnahme liest sich als 4. Juni.</p>
+        <p>Lesen Sie das richtig: ein <em>Start</em>problem, kein Schätzproblem. Nichts deutet bisher darauf hin, dass die späteren Schätzungen falsch sind.</p>
+
+        <p><strong>Statuszyklus 2 — Freitag, 10. April</strong></p>
+        <p>Die Ausführungsplanung endete wie prognostiziert am 8. April: Endabweichung +3, Dauerabweichung 0. Der Ausbau begann am 9. April, Startabweichung +3. Dann fällt jedoch eine Kolonne aus, und der Ausbau wird von 30 auf 36 Tage neu geschätzt; sein Ende rückt vom 15. auf den 28. Mai: <strong>Endabweichung +9 Tage</strong> — <strong>3 geerbt</strong>, <strong>6 aus Dauerabweichung</strong>, und das ist die eigentlich neue schlechte Nachricht.</p>
+        <p>Genau deshalb werden Start und Ende getrennt verfolgt. „Der Ausbau ist 9 Tage zu spät“ löst das falsche Gespräch aus; „Der Ausbau hat 3 Tage geerbt und ist um 6 gewachsen“ zeigt auf eine Personalentscheidung, an der man noch etwas ändern kann.</p>
+
+        <p><strong>Statuszyklus 3 — Freitag, 1. Mai</strong></p>
+        <p>Der Ausbau steht bei 55 Prozent gegen geplante 65 Prozent, die 36-Tage-Schätzung ist also selbst optimistisch. Statt die Abnahme erneut wandern zu lassen, verdichtet das Team die Funktionsprüfung: zwei zusätzliche Prüfer kürzen sie von 10 auf 6 Tage. Die Funktionsprüfung zeigt jetzt <strong>Dauerabweichung −4 Tage</strong> und <strong>Endabweichung +5 Tage</strong>. Die Abnahme landet auf dem 8. Juni.</p>
+        <p>Achten Sie darauf, was diese negative Dauerabweichung <em>nicht</em> bedeutet. Nichts ist schneller geworden — vier Tage wurden mit der Arbeitszeit zweier Personen gekauft, und eine Spalte, die nur Tage misst, kann das nicht zeigen.</p>
+      </div>
+      <p>Die ehrliche Zusammenfassung passt in einen Satz: fünf Tage Verzug bis zur Abnahme, drei davon aus einer überzogenen Bestandsaufnahme, sechs aus einem Personalausfall im April, vier davon durch zusätzliche Prüfer zurückgekauft.</p>`],
+
+    ['Vier Abweichungen, und was jede verdeckt', `<p>„Abweichung“ ist nicht eine Zahl. Vier lohnen sich, und jede ist blind für etwas, das die anderen sehen.</p>
+      <table>
+        <thead>
+          <tr><th>Abweichung</th><th>Was sie ist</th><th>Was nur sie Ihnen sagt</th><th>Wo sie in die Irre führt</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Startabweichung</strong></td>
+            <td>Ist-Beginn minus Basisplan-Beginn, in Tagen.</td>
+            <td>Ob der Verzug geerbt war — ein später Beginn heißt, dass etwas davor hing oder eine Ressource nicht frei war.</td>
+            <td>Sagt nichts über das Ende. Ein Vorgang kann 5 Tage später beginnen und sein Basisplanende trotzdem halten, indem er Puffer oder Leute verbrennt.</td>
+          </tr>
+          <tr>
+            <td><strong>Endabweichung</strong></td>
+            <td>Ist- oder prognostiziertes Ende minus Basisplanende.</td>
+            <td>Die Wirkung auf alles Nachgelagerte. Das ist die Zahl, die sich fortpflanzt.</td>
+            <td>Bündelt geerbten und neuen Verzug. Die +9 Tage des Ausbaus waren 3 geerbt und 6 neu — zwei Probleme in einer Zahl.</td>
+          </tr>
+          <tr>
+            <td><strong>Dauerabweichung</strong></td>
+            <td>Ist-Dauer minus Basisplandauer.</td>
+            <td>Ob die Schätzung falsch war — Endabweichung, aus der der geerbte Teil herausgerechnet ist.</td>
+            <td>Wird negativ, wenn ein Vorgang verdichtet wird, was sich wie Vorsprung liest. Die −4 Tage der Funktionsprüfung kosteten zwei zusätzliche Personen.</td>
+          </tr>
+          <tr>
+            <td><strong>Aufwands- oder Kostenabweichung</strong></td>
+            <td>Verbrauchter Aufwand oder verbrauchtes Geld gegen den Ansatz im Basisplan.</td>
+            <td>Was die Rettung gekostet hat. Die einzige, die Verdichtung überhaupt bemerkt.</td>
+            <td>Braucht erfasste Ist-Werte. Ohne eingetragene Ausgaben ist sie keine kleine Zahl — es gibt sie schlicht nicht.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Die Dauerabweichung lassen die meisten Teams weg, und ausgerechnet sie ändert Verhalten: Sie ist die einzige Terminkennzahl, die „wir waren spät“ von „wir haben uns geirrt“ trennt.</p>
+      <!--FIG:baseline|Die Geisterbalken tragen den Basisplan; der Abstand zum aktuellen Balken ist die Abweichung.-->`],
+
+    ['Abweichung auf dem kritischen Pfad ist die einzige, die wirklich zählt', `<p>Ein Verzug von fünf Tagen bei einem Vorgang mit fünfzehn Tagen Puffer kostet nichts. Ein Verzug von einem Tag auf dem kritischen Pfad verschiebt das Enddatum.</p>
+      <p>Sortieren Sie nach Abweichung und prüfen Sie dann, welche dieser Vorgänge kritisch sind. Diese kurze Liste ist Ihr eigentlicher Statusbericht. Die Zahl verzögerter Vorgänge ohne Bezug auf den Puffer zu berichten, ist der Weg, wie Projekte gleichzeitig „zu 80 Prozent im Plan“ und drei Wochen zu spät sein können.</p>
+      <p>Die umgekehrte Falle ist genauso real: Ein unkritischer Vorgang mit +12 Tagen Abweichung und 14 Tagen Puffer ist heute in Ordnung und morgen kritisch. Puffer wird verbraucht, nicht nachgefüllt.</p>`],
+
+    ['Neu basieren: genehmigte Änderung oder Spurenbeseitigung', `<p>Das ist die folgenreichste Entscheidung, die Sie zu einem Basisplan treffen, und fast nie eine technische. Neu basieren setzt den Vergleich zurück: Jede Abweichung geht auf null, und was ursprünglich zugesagt war, ist nicht mehr sichtbar. Drei Situationen machen das richtig:</p>
+      <ul>
+        <li><strong>Eine genehmigte Änderung des Umfangs.</strong> Jemand mit Befugnis hat Arbeit hinzugefügt oder gestrichen, schriftlich — bei Bauvorhaben typischerweise als Nachtrag. Gegen einen Plan zu messen, der das Vorhaben nicht mehr beschreibt, ergibt eine Abweichung, die korrekt und ohne Aussage ist.</li>
+        <li><strong>Eine förmliche Umplanung.</strong> Die Zahlen steuern keine Entscheidungen mehr — jeder Vorgang liest sich als +30 Tage, und niemand kann sagen, welche schlechter werden.</li>
+        <li><strong>Ein Wiederanlauf nach einer Unterbrechung.</strong> Die alten Termine messen die Unterbrechung, nicht die Arbeit.</li>
+      </ul>
+      <p>Jeder andere Grund ist derselbe Grund in anderer Kleidung: Die Abweichung sieht schlecht aus und der Bericht ist fällig. Neu zu basieren in der Woche vor dem Lenkungskreis ist das Erkennungszeichen. In unserem Beispiel hätte ein Zurücksetzen am 1. Mai die Abnahme mit 0 Tagen Verzug ausgewiesen — und sie wäre trotzdem am 8. Juni gewesen.</p>
+      <p>Der Test ist einfach. Wenn das Neubasieren berechtigt ist, können Sie die Entscheidung, das Datum und die Person benennen, die sie getroffen hat. Wenn nicht, basieren Sie nicht neu, sondern löschen den Beleg dafür, dass etwas schiefgegangen ist.</p>
+      <p>Wenn Sie neu basieren, bewahren Sie den alten Stand auf — speichern Sie den Plan vorher in eine Datei, denn die Datei trägt den Basisplan mit sich. Der Abstand zwischen Basisplan 1 und Basisplan 3 ist oft die ehrlichste Beschreibung eines Projekts, die es gibt, und genau das geht verloren, wenn ein Basisplan an Ort und Stelle überschrieben wird.</p>`],
+
+    ['Wo der Fertigstellungswert hineinpasst — und was unsere S-Kurve ehrlich berichtet', `<p>Abweichung in Tagen beantwortet „wie spät“. Der Fertigstellungswert beantwortet „wie viel Arbeit haben wir für die verbrauchte Zeit und das verbrauchte Geld verbucht“. Er hängt am Basisplan: Ohne ihn hat der Planwert nichts, dem er folgen könnte.</p>
+      <p>Unsere S-Kurve ist bewusst offen mit ihren Grenzen — kennen Sie sie, bevor Sie ihre Zahlen zitieren:</p>
+      <ul>
+        <li><strong>Der Planwert folgt dem Basisplan, sofern einer existiert.</strong> Ohne ihn ist der Plan nur Ihre aktuellen Termine, und die Terminabweichung steht dauerhaft auf null, egal wie weit sich alles bewegt hat. Der Dialog sagt das, statt eine schmeichelhafte Null zu zeigen.</li>
+        <li><strong>Die Ist-Kosten werden nie aus dem Fortschritt abgeleitet.</strong> Sie stammen ausschließlich aus Ausgaben, die Sie je Vorgang eintragen. Die verlockende Abkürzung — anzunehmen, ein zu 40 Prozent erledigter Vorgang habe 40 Prozent seines Budgets verbraucht — ergäbe einen CPI von exakt 1,00 für jedes Projekt, das je durchgeführt wurde. Ohne eingetragene Ist-Werte werden CPI, Kostenabweichung und Kostenprognose deshalb gar nicht ausgewiesen.</li>
+        <li><strong>Ohne Kosten ist der Normalfall.</strong> Ist bei keinem Vorgang ein Betrag hinterlegt, werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine reine Fortschrittskurve — dieselbe Form, abgelesen in Prozent statt in Euro.</li>
+        <li><strong>Die Ist-Kurve für die Vergangenheit ist rekonstruiert.</strong> Wir speichern den Fortschritt so, wie er heute ist, und keine Historie davon; die frühere Kurve unterstellt daher, dass der Fortschritt gleichmäßig über die verstrichenen Arbeitstage jedes Vorgangs angefallen ist. Zum Stichtag exakt, davor näherungsweise — und in der Ansicht selbst so benannt.</li>
+      </ul>
+      <p>Im durchgerechneten Beispiel, ohne eingetragene Kosten, zeigt die S-Kurve am 1. Mai den erreichten Fortschritt unter dem geplanten — dieselbe Geschichte, die die Endabweichung von +5 Tagen erzählt, nur in Prozent statt in Tagen.</p>
+      <!--FIG:evmquad|Termin- und Kostenabweichung sind unabhängige Achsen: spät und unter Budget ist ein realer Ort.-->`],
+
+    ['So geht das in gantts.app', `<p>Die ganze Schleife dauert etwa eine Minute. Mit der Gebäudesanierung als Beispiel:</p>
+      <ol>
+        <li>Einigen Sie sich zuerst auf den Plan — Termine, Abhängigkeiten und Dauern sollten das sein, woran Sie gemessen werden wollen.</li>
+        <li>Klicken Sie in der Werkzeugleiste auf <strong>◳ Basisplan</strong>. Ist noch keiner gespeichert, bietet das Menü genau eine Handlung an: den Basisplan aus dem aktuellen Plan setzen. Sie sehen danach die Meldung „Basisplan gesetzt — Verzug wird ab jetzt gegen diesen Plan gemessen“.</li>
+        <li>Unter jedem Vorgangsbalken liegt nun ein Geisterbalken. Beim erneuten Öffnen des Menüs sehen Sie Datum und Uhrzeit der Aufnahme sowie einen Schalter, mit dem sich die Geisterbalken für eine Präsentation ausblenden lassen.</li>
+        <li>Arbeiten Sie den Plan ab. Passen Sie in jedem Statuszyklus Balken oder Termine an die Wirklichkeit an — den 18. März für das Ende der Bestandsaufnahme, den 8. April für die Ausführungsplanung.</li>
+        <li>Öffnen Sie <strong>◳ Basisplan</strong> erneut und lassen Sie sich die Abweichungsspalten anzeigen. Das ergänzt im Raster den Basisplan-Beginn, das Basisplan-Ende sowie Start- und Endabweichung. Verspätet erscheint rot, verfrüht grün.</li>
+        <li>Überfliegen Sie die Endabweichung und gleichen Sie danach mit dem kritischen Pfad ab, welche Verzüge das Enddatum bewegen. Die Dauerabweichung ist der Abstand zwischen dem Basisplanwert und dem aktuellen Wert in der Spalte <strong>Tage</strong>.</li>
+        <li>Für die Fortschrittsansicht öffnen Sie <strong>📈 S-Kurve</strong>. Der Dialog nennt selbst, ob der Planwert Ihrem Basisplan folgt oder nur Ihren aktuellen Terminen.</li>
+        <li>Speichern Sie vor jedem Neubasieren eine Kopie der Datei. Danach basieren Sie über dasselbe Menü auf den aktuellen Plan neu; dort lässt sich der Basisplan auch wieder löschen. Beides ist rückgängig zu machen.</li>
+      </ol>`],
   ],
-  callout: "Basieren Sie nicht neu, weil der Plan schlecht aussieht. Ein Basisplan, der bei jedem Verzug nachgezogen wird, zeigt dauerhaft null Abweichung und erklärt am Ende nichts — er ist dann kein Messinstrument mehr, sondern eine Beschönigung.",
+  callout: 'Der häufigste Fehler beim Basisplan ist kein technischer. Teams setzen einen Basisplan, sehen die Abweichung unangenehm werden und hören still auf, hinzusehen. Ein Basisplan, den niemand liest, ist schlechter als gar keiner, weil er den Anschein von Kontrolle erzeugt, ohne sie zu leisten. Nehmen Sie die Abweichung in die wöchentliche Runde auf — oder setzen Sie gar keinen.',
   faq: [
-    [
-      "Was ist ein Basisplan?",
-      "Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen."
-    ],
-    [
-      "Wann setzt man den Basisplan?",
-      "Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft."
-    ],
-    [
-      "Wann sollte man neu basieren?",
-      "Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug."
-    ],
-    [
-      "Was ist Terminabweichung?",
-      "Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende."
-    ]
+    ['Was ist ein Basisplan im Gantt-Diagramm?', 'Eine eingefrorene Kopie des freigegebenen Terminplans — je Vorgang der geplante Beginn, das geplante Ende und der Fortschritt — die unverändert bleibt, damit sich messen lässt, wie weit der laufende Plan davon abgewichen ist.'],
+    ['Was bedeutet Terminabweichung?', 'Die Differenz in Tagen zwischen dem Basisplantermin eines Vorgangs und seinem aktuellen Termin. Positiv heißt später als geplant, negativ früher, null im Plan.'],
+    ['Wann sollte man den Basisplan setzen?', 'Nach der Freigabe und vor Arbeitsbeginn. Wird er mitten in der Ausführung gesetzt, verdeckt er den bereits eingetretenen Verzug.'],
+    ['Was ist der Unterschied zwischen Start-, End- und Dauerabweichung?', 'Die Startabweichung zeigt, ob ein Verzug von vorgelagerter Arbeit geerbt wurde. Die Endabweichung zeigt die Wirkung auf alles Nachgelagerte. Die Dauerabweichung rechnet den geerbten Teil heraus und zeigt, ob die Schätzung selbst falsch war.'],
+    ['Sollte man neu basieren, wenn ein Projekt in Verzug gerät?', 'Nur bei einer genehmigten Änderung des Umfangs, einer förmlichen Umplanung oder einem Wiederanlauf nach einer Unterbrechung. Wenn Sie Entscheidung, Datum und genehmigende Person nicht benennen können, löschen Sie den Beleg dessen, was ursprünglich zugesagt war. Speichern Sie in jedem Fall vorher eine Kopie des Plans.'],
+    ['Wie setze ich in gantts.app einen Basisplan?', 'Über das Menü ◳ Basisplan den Basisplan aus dem aktuellen Plan setzen. Unter jedem Vorgang erscheinen Geisterbalken, und über dasselbe Menü lassen sich die Spalten für Basisplan-Beginn, Basisplan-Ende, Start- und Endabweichung einblenden.'],
   ],
   related: [
-    ["critical-path-method", "Der kritische Pfad"],
-    ["gantt-chart-mistakes", "Häufige Planungsfehler"],
-    ["milestones-vs-tasks", "Meilensteine und Vorgänge"]
-  ]
+    ['critical-path-method', 'Der kritische Pfad'],
+    ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'],
+    ['milestones-vs-tasks', 'Meilensteine und Vorgänge'],
+  ],
 },
 
 'gantt-chart-mistakes': {
-  h1: "Neun Fehler bei der Projektplanung — und wie man sie behebt",
-  metaTitle: "Häufige Fehler im Gantt-Diagramm",
-  metaDesc: "Neun typische Fehler in Gantt-Diagrammen: zu viel Detail, fehlende Abhängigkeiten, kein Puffer, überlastete Ressourcen — je mit Korrektur.",
-  date: "2026-07-19",
-  lead: "Die meisten Gantt-Diagramme scheitern nicht an der Software, sondern an neun immer gleichen Fehlern. Jeder davon lässt sich in wenigen Minuten beheben, wenn man ihn erkennt.",
-  figIntro: "Neun Fehler, in der Reihenfolge, in der sie auffallen:",
+  h1: 'Neun Fehler bei der Projektplanung — und wie man sie behebt',
+  metaTitle: 'Häufige Fehler im Gantt-Diagramm',
+  metaDesc: 'Die häufigsten Fehler in Gantt-Diagrammen: zu viel Detail, fehlende Abhängigkeiten, kein Puffer, überlastete Ressourcen, Fortschritt aus Kalendertagen — je mit Korrektur und Beispiel.',
+  date: '2026-07-19',
+  lead: 'Schlechte Gantt-Diagramme scheitern fast immer auf dieselbe Handvoll Arten, und kaum eine davon hat mit der Software zu tun. Ein Diagramm kann sauber, farbig und jeden Freitag frisch exportiert sein und trotzdem über Ihr Enddatum lügen. Hier steht jeder Fehler, warum er falsch ist, was er in einem echten Plan kostet — und der Durchgang, der ihn findet.',
+  figIntro: 'Das häufigste Problem, vorher und nachher. Dasselbe Vorhaben, zweimal geplant:',
   sections: [
-    [
-      "1. Zu viel Detail",
-      "<p>Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist gefährlicher als gar keiner, weil ihm noch geglaubt wird. <strong>Korrektur:</strong> kein Vorgang unter einem Tag, keiner über einem Monat.</p>"
-    ],
-    [
-      "2. Keine Abhängigkeiten",
-      "<p>Ohne Verknüpfungen rechnet nichts nach, wenn sich etwas verschiebt. <strong>Korrektur:</strong> Verknüpfen Sie zumindest die Vorgänge auf dem kritischen Pfad, auch wenn Sie nicht jeden einzelnen erfassen.</p>"
-    ],
-    [
-      "3. Alles miteinander verknüpft",
-      "<p>Das Gegenteil ist genauso falsch: Eine durchgehende Kette hat keine Parallelität und reagiert auf jede Kleinigkeit übertrieben. <strong>Korrektur:</strong> Nur verknüpfen, was tatsächlich wartet.</p>"
-    ],
-    [
-      "4. Kein Puffer",
-      "<p>Ein Plan ohne Puffer geht davon aus, dass nichts schiefgeht. <strong>Korrektur:</strong> Puffer gebündelt vor Meilensteine und ans Ende des kritischen Pfads legen, nicht verteilt auf jeden Vorgang — verteilte Puffer werden aufgebraucht, ohne dass es jemand merkt.</p>"
-    ],
-    [
-      "5. Ressourcen ignoriert",
-      "<p>Der Plan ist rechnerisch korrekt, aber eine Person soll in derselben Woche an drei Vorgängen arbeiten. <strong>Korrektur:</strong> Auslastung prüfen, nachdem die Termine stehen.</p>"
-    ],
-    [
-      "6. Meilensteine mit Dauer",
-      "<p>Ein Meilenstein hat die Dauer null. „Testphase“ ist kein Meilenstein, „Tests abgenommen“ schon. <strong>Korrektur:</strong> Meilensteine als Ergebnis formulieren, nicht als Tätigkeit.</p>"
-    ],
-    [
-      "7. Rückwärts vom Wunschtermin geplant",
-      "<p>Wenn das Enddatum feststeht und die Dauern danach passend gemacht werden, entsteht ein Plan, der niemanden überzeugt. <strong>Korrektur:</strong> vorwärts rechnen, die Lücke sichtbar machen und dann über Umfang oder Ressourcen sprechen.</p>"
-    ],
-    [
-      "8. Nie aktualisiert",
-      "<p>Ein Plan ist ein Werkzeug, kein Dokument. <strong>Korrektur:</strong> wöchentlich fortschreiben, mit dem Basisplan vergleichen, Abweichungen benennen.</p>"
-    ],
-    [
-      "9. Nur eine Person kennt ihn",
-      "<p>Ein Plan, der nicht besprochen wurde, ist eine Meinung über die Zukunft. <strong>Korrektur:</strong> mit den Beteiligten durchgehen, bevor er gilt — meist finden sich dabei zwei bis drei vergessene Vorgänge.</p>"
-    ]
+    ['Ein Plan, der die meisten dieser Fehler auf einmal macht', `<p>Ein ganz gewöhnliches Vorhaben — der Relaunch des Webauftritts eines mittelständischen Herstellers, Start am Montag, 2. März 2026 — zuerst so gezeichnet, wie man ihn üblicherweise zeichnet, danach ehrlich.</p>
+      <div class="worked">
+        <p><strong>So geplant.</strong> Sechs Zeilen, durchgehend Ende-Anfang verkettet, keine Meilensteine, kein Puffer:</p>
+        <ul>
+          <li>Analyse — Mo 2. März bis Fr 13. März (10 Tage)</li>
+          <li>Gestaltung — Mo 16. März bis Fr 27. März (10 Tage)</li>
+          <li>Umsetzung — Mo 30. März bis Fr 24. April (20 Tage, Jana Ergün)</li>
+          <li>Inhaltsmigration — Mo 30. März bis Fr 17. April (15 Tage, Jana Ergün)</li>
+          <li>Qualitätssicherung — Mo 27. April bis Fr 8. Mai (10 Tage)</li>
+          <li>Livegang — Mo 11. Mai</li>
+        </ul>
+        <p><strong>Was der Plan verschweigt.</strong> Die Fachabteilung hat fünf Arbeitstage, um die Gestaltung zu prüfen; diese Prüfung steht nirgends im Plan. Jana Ergün ist drei Wochen lang gleichzeitig zu 100 Prozent für die Umsetzung und zu 100 Prozent für die Inhaltsmigration eingeplant, das Diagramm unterstellt also stillschweigend 200 Prozent einer Person. In fünfzig Arbeitstagen steckt kein einziger Puffertag. Und weil alle Zeilen in einer einzigen EA-Kette hängen, ist jede Zeile kritisch.</p>
+        <p><strong>Korrigiert.</strong> Ergänzen Sie einen Meilenstein <em>Gestaltung freigegeben</em>, der die Prüfzeit als Verzögerung trägt (EA+5T): Die Umsetzung läuft dann von Mo 6. April bis Fr 1. Mai. Die Inhaltsmigration kann sich nicht damit überlappen, solange Jana Ergün beides verantwortet, sie läuft also von Mo 4. Mai bis Fr 22. Mai. Die Qualitätssicherung folgt von Mo 25. Mai bis Fr 5. Juni. Fünf Puffertage legen den Livegang auf <strong>Fr 12. Juni</strong>.</p>
+        <p><strong>Die Konsequenz.</strong> Das Diagramm sagte den 11. Mai. Der ehrliche Termin war der 12. Juni — 24 Arbeitstage später, gefunden im ersten Entwurf statt in der zweiten Maiwoche. Verändert hat sich nichts außer dass drei ohnehin wahre Dinge aufgeschrieben wurden.</p>
+        <p><strong>Und die Berichterstattung.</strong> Am Montag, dem 20. April, stand die Umsetzung im Statusbericht auf 60 Prozent, weil 12 ihrer 20 Tage verstrichen waren. Fertig waren 4 von 11 Seitenvorlagen. Der tatsächliche Fortschritt: 36 Prozent.</p>
+      </div>`],
+
+    ['1. Zu viel Detail', `<p>Mit Abstand das häufigste Scheitern. Ein Diagramm, das jede Teilaufgabe trägt, ist unlesbar und unpflegbar — sechzig Zeilen aktualisiert niemand wöchentlich, also ist es binnen Tagen veraltet. Und ein ungepflegter Plan ist gefährlicher als gar keiner, weil ihm noch geglaubt wird.</p>
+      <p><strong>Korrektur:</strong> Planen Sie auf der Ebene, auf der Sie berichten. Alles, was kürzer ist als Ihr Berichtszyklus, gehört in einen Vorgang hinein, nicht daneben. Rollen Sie das Detail in Phasen zusammen und lassen Sie die Arbeitsliste dort, wo das Team ohnehin arbeitet.</p>`],
+
+    ['2. Keine Abhängigkeiten', `<p>Ein Diagramm aus parallelen Balken ohne Verknüpfungen ist ein Bild, kein Plan. Wenn etwas rutscht, bewegt sich nichts, weil nichts verbunden ist.</p>
+      <p><strong>Korrektur:</strong> Verknüpfen Sie, was tatsächlich einschränkt, und ziehen Sie danach probeweise einen Balken. Wenn ihm nichts folgt, bildet der Plan Ihr Vorhaben nicht ab.</p>`],
+
+    ['3. Alles durchgehend Ende-Anfang verkettet', `<p>Der umgekehrte Fehler, und der subtilere. Hängen Sie jeden Vorgang in eine lange Reihe, landet jeder Vorgang auf dem kritischen Pfad — sechzig Zeilen, die alle „dringend“ rufen, was dasselbe ist wie gar nichts zu sagen. Außerdem lässt sich so ein Plan nicht mehr umbauen: Jeder Termin wird von einer Vorliebe festgehalten.</p>
+      <!--FIG:cpm|Nur der längste Weg durch das Netz bestimmt das Enddatum.-->
+      <p><strong>Korrektur:</strong> Verknüpfen Sie nur, was physisch einschränkt. Wenn B mit den vorhandenen Leuten und dem vorhandenen Material heute beginnen könnte, hängt es nicht von A ab. Ein gesunder kritischer Pfad umfasst ein Viertel bis die Hälfte Ihrer Vorgänge; umfasst er alle, haben Sie eine Warteschlange gezeichnet und kein Netz.</p>`],
+
+    ['4. Schätzungen als Zusagen behandeln', `<p>Jeder Balken sieht gleich sicher aus. Ein dreitägiger Vorgang, den Sie fünfzigmal gemacht haben, und einer, den noch nie jemand versucht hat, werden identisch gezeichnet.</p>
+      <p><strong>Korrektur:</strong> Legen Sie den Puffer dorthin, wo die Unsicherheit sitzt, und sagen Sie das auch. Ein Plan, der zugibt, welche Teile Schätzungen sind, überlebt den Kontakt mit der Wirklichkeit, weil die Schätzungen Raum bekommen haben, falsch zu sein.</p>`],
+
+    ['5. Nirgends Puffer', `<p>Ein Plan, in dem jeder Vorgang exakt in dem Moment beginnt, in dem sein Vorgänger endet, kann nichts abfedern. Die erste Verzögerung von zwei Tagen ist eine Projektverzögerung von zwei Tagen.</p>
+      <!--FIG:float|Puffer ist der Spielraum, den ein Vorgang hat, bevor er das Enddatum zu schieben beginnt.-->
+      <p><strong>Korrektur:</strong> Puffern Sie dort, wo sich Risiko sammelt — vor harten Terminen, hinter allem, was Dritte verantworten, rund um Freigaben. Ein sichtbarer Puffer von fünf Tagen vor dem Livegang ist mehr wert als fünf Tage, die unsichtbar über zehn Vorgänge verschmiert sind, denn verteilte Puffer werden aufgebraucht, ohne dass es jemand bemerkt.</p>`],
+
+    ['6. Den kritischen Pfad ignorieren', `<p>Wer nicht weiß, welche Vorgänge das Enddatum treiben, kann nicht wissen, welche Verzögerungen zählen. Teams beschleunigen Arbeit mit drei Wochen Puffer, während eine Zeile darunter der eigentliche Engpass rutscht.</p>
+      <p><strong>Korrektur:</strong> Schalten Sie den kritischen Pfad ein und prüfen Sie ihn nach jeder Änderung erneut. Ein Vorgang mit acht Tagen Puffer wird in dem Moment kritisch, in dem er neun rutscht.</p>`],
+
+    ['7. Keine Zuständigen — und Zuständige mit 100 Prozent', `<p>Vorgänge ohne benannte Person sind die Aufgabe aller, was verlässlich heißt: die Aufgabe von niemandem. Eine Person je Vorgang, kein Team: Nur eine Person kann man fragen.</p>
+      <p>Weniger offensichtlich ist der zweite Teil. Eine Person mit voller Last auf sich überlappende Vorgänge zu setzen, ist derselbe Fehler. Jana Ergün mit 100 und 100 Prozent ist nicht ehrgeizig, sondern rechnerisch unmöglich — und das Diagramm sagt es nicht, weil sich Balken bereitwillig überlappen.</p>
+      <p><strong>Korrektur:</strong> Prüfen Sie die Auslastung jeder zuständigen Person über die gesamte Zeitachse, nicht Vorgang für Vorgang. Wer drei Wochen lang auf 140 Prozent steht, arbeitet in einem Terminplan, der bereits gescheitert ist.</p>`],
+
+    ['8. Den Plan veralten lassen', `<p>Ein Gantt-Diagramm ist ein lebendes Dokument mit Verfallsdatum. Drei Wochen ohne Fortschreibung, und die Leute hören auf, ihm zu vertrauen; danach hören sie auf, es zu lesen.</p>
+      <p><strong>Korrektur:</strong> Schreiben Sie in einem festen Takt fort — normalerweise wöchentlich, in einer heißen Phase täglich — und halten Sie das Diagramm klein genug, dass das Minuten dauert.</p>`],
+
+    ['9. Keine Meilensteine', `<p>Eine Wand aus Balken gibt der Leserin nichts, woran sie sich festhalten kann. Meilensteine sind der Weg, auf dem jemand außerhalb des Projekts die Entscheidungspunkte findet.</p>
+      <p><strong>Korrektur:</strong> Markieren Sie Freigaben, Lieferungen, Tore und die Inbetriebnahme als Meilensteine ohne Dauer und hängen Sie die nachgelagerte Arbeit daran. Vier bis acht sind meist richtig. Oben war der fehlende Meilenstein nicht kosmetisch: In <em>Gestaltung freigegeben</em> hatten sich fünf Tage Prüfzeit versteckt.</p>`],
+
+    ['10. Fortschritt aus verstrichenen Kalendertagen', `<p>Das erzeugt die selbstbewussteste Fehlmeldung von allem, was hier steht. Leiten Sie den Fortschritt aus der verstrichenen Dauer ab, meldet ein Vorgang, den niemand angefasst hat, am zwölften von zwanzig Tagen 60 Prozent — genau das ist oben am 20. April passiert.</p>
+      <p><strong>Korrektur:</strong> Melden Sie einen Anteil der <em>Arbeit</em> — gebaute Seitenvorlagen, ausgegebene Zeichnungen, bestandene Testfälle — und nicht einen Anteil des Kalenders. Ein Vorgang ohne zählbare Arbeitseinheit ist in der Regel zu grob geschnitten, um ihn zu verfolgen.</p>`],
+
+    ['11. Bei jeder Abweichung neu basieren', `<p>Ein Basisplan hält fest, was Sie zugesagt haben. Ihn immer dann neu zu speichern, wenn die Abweichung unangenehm wird, macht daraus eine Aufzeichnung dessen, was Sie zuletzt getan haben — eine Zahl, die Sie ohnehin schon hatten.</p>
+      <p>Monatlich betrieben, ergibt das ein Projekt, das gegen seinen neunten Basisplan im Plan liegt und gegen seinen ersten vier Monate zu spät ist.</p>
+      <p><strong>Korrektur:</strong> Neu basieren nur bei einer genehmigten Änderung des Umfangs oder bei einer förmlichen Umplanung — und die alten Stände aufbewahren. Der Abstand zwischen Basisplan 1 und Basisplan 5 ist oft die ehrlichste Beschreibung eines Projekts, die existiert.</p>`],
+
+    ['12. Das Gantt-Diagramm für die falsche Sache verwenden', `<p>Gantt-Diagramme sind für Arbeit mit Reihenfolge, Abhängigkeiten und Terminen gemacht. Zu kontinuierlichem Fluss und zu einem wöchentlich neu priorisierten Rückstand passen sie schlecht.</p>
+      <p><strong>Korrektur:</strong> Gantt, wenn Reihenfolge und Termine zählen; ein Board, wenn nicht. Beides parallel zu führen ist völlig normal — das Board für die Woche, das Gantt-Diagramm für das Quartal.</p>`],
+
+    ['Das Symptom zu jedem Fehler', `<p>Über das Symptom findet man diese Fehler leichter als über die Definition:</p>
+      <table>
+        <thead><tr><th>Was Ihnen auffällt</th><th>Der Fehler</th><th>Die Korrektur</th></tr></thead>
+        <tbody>
+          <tr><td>Seit drei Wochen nicht aktualisiert</td><td>Zu viel Detail</td><td>Auf der Berichtsebene planen</td></tr>
+          <tr><td>Ein Vorgang rutscht, kein Termin bewegt sich</td><td>Keine Abhängigkeiten</td><td>Zwänge verknüpfen; mit einem Balken testen</td></tr>
+          <tr><td>Jeder Vorgang ist kritisch</td><td>Alles EA verkettet</td><td>Verknüpfungen löschen, die nur Vorlieben sind</td></tr>
+          <tr><td>Kleine Verzögerungen schieben das Ende</td><td>Kein Puffer</td><td>Sichtbare Puffer vor harten Terminen</td></tr>
+          <tr><td>Sie haben den falschen Vorgang beschleunigt</td><td>Kritischer Pfad ignoriert</td><td>Einschalten und nach jeder Änderung prüfen</td></tr>
+          <tr><td>Auf Nachfrage antwortet niemand</td><td>Keine Zuständigkeit</td><td>Eine benannte Person je Vorgang</td></tr>
+          <tr><td>Die Vorgänge einer Person rutschen gemeinsam</td><td>Über 100 Prozent eingeplant</td><td>Auslastung über die ganze Zeitachse prüfen</td></tr>
+          <tr><td>„Und was passiert wann?“</td><td>Keine Meilensteine</td><td>Vier bis acht Tore mit Arbeit dahinter</td></tr>
+          <tr><td>Seit einem Monat 90 Prozent fertig</td><td>Fortschritt aus Kalendertagen</td><td>Anteil der Arbeit melden</td></tr>
+          <tr><td>Wöchentlich grün, am Ende Monate zu spät</td><td>Basisplan bei jeder Abweichung neu gesetzt</td><td>Nur bei genehmigter Umplanung neu basieren</td></tr>
+          <tr><td>Jeden Montag neu geschrieben</td><td>Falsches Werkzeug</td><td>Für Fluss ein Board nutzen</td></tr>
+        </tbody>
+      </table>`],
+
+    ['Ein Durchgang in zwanzig Minuten', `<p>Gehen Sie das an einem Diagramm durch, das Sie bereits haben, in dieser Reihenfolge. Jeder Schritt ist etwas, das Sie sehen können, und nichts, worüber Sie urteilen müssen.</p>
+      <ol>
+        <li>Zählen Sie die Zeilen. Mehr, als Sie wöchentlich fortschreiben werden? Fassen Sie das Detail zuerst in Phasen zusammen.</li>
+        <li>Ziehen Sie den letzten Vorgang Ihrer ersten Phase zwei Wochen nach rechts. Alles, was sich nicht mitbewegt, ist nicht verknüpft. Machen Sie das rückgängig und ergänzen Sie diese Verknüpfungen in der Spalte <strong>Nach</strong>.</li>
+        <li>Setzen Sie den Haken bei <strong>Kritischer Pfad</strong>. Ist alles schraffiert, haben Sie überverknüpft; ist nichts schraffiert, haben Sie gar nicht verknüpft.</li>
+        <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Vorschau</strong> mit einem Fenster von drei Wochen. Sieht das nicht aus wie das, woran diese Woche gearbeitet wird, ist das Diagramm bereits veraltet.</li>
+        <li>Öffnen Sie <strong>Auslastung</strong>. Wer an irgendeinem Tag über der Kapazität liegt, ist eine unmögliche Zusage in einem plausibel aussehenden Diagramm.</li>
+        <li>Suchen Sie nach Rauten. Jeder Punkt, an dem jemand außerhalb des Teams freigibt, liefert oder prüft, sollte ein Meilenstein sein, mit der Prüfzeit als Verzögerung.</li>
+        <li>Prüfen Sie die Zeile vor jedem harten Termin. Endet sie am Tag des Termins, fügen Sie einen Puffervorgang ein und beschriften Sie ihn auch so.</li>
+        <li>Öffnen Sie <strong>◳ Basisplan</strong> und frieren Sie den Plan ein — einmal, jetzt, wo er ehrlich ist — und lassen Sie sich anschließend die Abweichungsspalten anzeigen.</li>
+        <li>Fragen Sie jede zuständige Person nach Fortschritt in Arbeitseinheiten, nicht in Prozent. Wo Antwort und Balken auseinandergehen, hat der Balken unrecht.</li>
+      </ol>`],
   ],
-  callout: "Die häufigsten zwei Fehler sind Gegenteile: zu viel Detail und zu wenig Struktur. Der eine macht den Plan unpflegbar, der andere unbrauchbar. Zwischen 20 und 60 Vorgängen in vier bis acht Phasen liegt für die meisten Projekte der Bereich, in dem beides funktioniert.",
+  callout: 'Beachten Sie, wie wenige dieser Punkte überhaupt Diagrammfehler sind. Ein Werkzeugwechsel behebt fast keinen davon: eine fehlende Abhängigkeit, eine überbuchte Person und ein stillschweigend neu gespeicherter Basisplan sind Entscheidungen — und die ziehen mit Ihnen in jede Software um, die als Nächstes kommt.',
   faq: [
-    [
-      "Was ist der häufigste Fehler in Gantt-Diagrammen?",
-      "Zu viel Detail. Ein Plan mit dreihundert Zeilen wird nach zwei Wochen nicht mehr gepflegt."
-    ],
-    [
-      "Wie viel Puffer sollte man einplanen?",
-      "Zehn bis zwanzig Prozent, gebündelt vor Meilensteinen und am Ende des kritischen Pfads statt auf jeden Vorgang verteilt."
-    ],
-    [
-      "Warum stimmt mein Plan nie?",
-      "Meist wurde rückwärts von einem Wunschtermin geplant, oder die Ressourcenauslastung wurde nie geprüft."
-    ],
-    [
-      "Wie oft sollte ein Plan aktualisiert werden?",
-      "Wöchentlich. Seltener, und die Abweichung wird erst sichtbar, wenn sie nicht mehr aufzuholen ist."
-    ]
+    ['Was ist der häufigste Fehler in Gantt-Diagrammen?', 'Zu viel Detail. Diagramme, die jede Teilaufgabe auflisten, werden unlesbar und binnen Wochen aufgegeben, weil ihre Pflege mehr kostet, als sie einbringt.'],
+    ['Wie viele Vorgänge sollte ein Gantt-Diagramm haben?', 'So wenige, dass Sie es tatsächlich pflegen — für die meisten Projekte 15 bis 40 Zeilen. Alles, was kürzer ist als Ihr Berichtszyklus, gehört in einen Vorgang hinein.'],
+    ['Sollte man jeden Vorgang Ende-Anfang verknüpfen?', 'Nein. Alles in eine Reihe zu hängen, setzt jeden Vorgang auf den kritischen Pfad und macht eine Umplanung unmöglich. Verknüpfen Sie nur, was physisch einschränkt.'],
+    ['Warum rutscht mein Projekt, obwohl das Diagramm gut aussah?', 'Meist fehlt Puffer, jemand ist über sich überlappende Vorgänge mit mehr als 100 Prozent eingeplant, oder der Fortschritt wird aus verstrichenen Kalendertagen statt aus geleisteter Arbeit abgeleitet.'],
+    ['Ist es falsch, einen Basisplan neu zu setzen?', 'Bei einer genehmigten Änderung des Umfangs oder einer förmlichen Umplanung ist es richtig. Ihn bei jeder verfehlten Zusage neu zu speichern ist es nicht: Die Berichte bleiben grün, während der Liefertermin wandert.'],
+    ['Wie oft sollte ein Gantt-Diagramm aktualisiert werden?', 'Wöchentlich für die meisten Projekte, täglich in einer heißen Phase. Wichtiger als der Abstand ist, dass der Takt fest und durchhaltbar ist.'],
   ],
   related: [
-    ["how-to-make-a-gantt-chart", "Gantt-Diagramm erstellen"],
-    ["gantt-baseline-variance", "Basisplan und Abweichung"],
-    ["milestones-vs-tasks", "Meilensteine und Vorgänge"]
-  ]
+    ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'],
+    ['gantt-baseline-variance', 'Basisplan und Abweichung'],
+    ['how-to-make-a-gantt-chart', 'Gantt-Diagramm erstellen'],
+  ],
 },
 
 'milestones-vs-tasks': {
-  h1: "Meilensteine und Vorgänge: worin sie sich unterscheiden",
-  metaTitle: "Meilenstein oder Vorgang?",
-  metaDesc: "Unterschied zwischen Meilenstein und Vorgang, wozu Meilensteine wirklich dienen, wie viele ein Projekt braucht und typische Fehler.",
-  date: "2026-07-19",
-  lead: "Ein <strong>Vorgang</strong> braucht Zeit, ein <strong>Meilenstein</strong> markiert einen Zeitpunkt. Das ist der ganze technische Unterschied — und trotzdem ist der falsche Umgang mit Meilensteinen einer der schnellsten Wege, einen Plan unlesbar zu machen.",
-  figIntro: "Balken für die Arbeit, Rauten für die Momente, auf die es ankommt:",
+  h1: 'Meilensteine und Vorgänge: worin sie sich unterscheiden',
+  metaTitle: 'Meilenstein oder Vorgang?',
+  metaDesc: 'Unterschied zwischen Meilenstein und Vorgang, was Raute, Balken und Pfeil bedeuten, wie viele Meilensteine ein Projekt braucht und was ein falsch modellierter Meilenstein kostet.',
+  date: '2026-07-19',
+  lead: 'Ein <strong>Vorgang</strong> braucht Zeit. Ein <strong>Meilenstein</strong> markiert einen Zeitpunkt. Dieser eine Unterschied erklärt, warum das eine als Balken und das andere als Raute gezeichnet wird — und er hat Folgen, die sich beziffern lassen: Ein Meilenstein, den Sie als dreitägigen Vorgang erfassen, verlängert Ihr Enddatum stillschweigend um drei Tage und verdeckt ausgerechnet die Verzögerung, der Sie am stärksten ausgesetzt sind.',
+  figIntro: 'Balken für die Arbeit, Rauten für die Momente, auf die es ankommt:',
   sections: [
-    [
-      "Der Unterschied in einem Satz",
-      "<p>Ein Vorgang hat eine Dauer: Er beginnt an einem Tag und endet an einem anderen. Ein Meilenstein hat die Dauer null und wird als Raute dargestellt. „Vertrag aufsetzen“ ist ein Vorgang; „Vertrag unterzeichnet“ ist ein Meilenstein.</p>"
-    ],
-    [
-      "Wozu Meilensteine wirklich dienen",
-      "<p>Zu dreierlei. Sie sind <em>Kontrollpunkte</em>, an denen entschieden wird, ob es weitergeht. Sie sind <em>die Sprache der Leitungsebene</em> — was ein Gremium von Ihrem Plan behält, sind fünf Termine, nicht fünfzig Balken. Und sie sind <em>Sequenzsperren</em>: Wer nachfolgende Arbeit an einen Meilenstein hängt, verhindert, dass sie vor Erfüllung der Bedingung anläuft.</p>"
-    ],
-    [
-      "Wie viele braucht ein Projekt?",
-      "<p>Genug, um die Geschichte zu erzählen, und nicht so viele, dass sie verwässert. Fünf bis zehn für ein mehrmonatiges Vorhaben ist ein guter Bereich. Wer einen Meilenstein pro Woche setzt, hat aus dem Plan einen Kalender gemacht, und die Rauten zeigen nichts mehr an.</p>"
-    ],
-    [
-      "Typische Fehler",
-      "<p><strong>Meilensteine, die verkleidete Vorgänge sind.</strong> Was Dauer hat, ist kein Meilenstein.</p>\n        <p><strong>Meilensteine ohne Abhängigkeiten.</strong> Eine freistehende Raute im Kalender ist Dekoration. Ihr Wert entsteht erst dadurch, dass etwas von ihr abhängt.</p>\n        <p><strong>Meilensteine, über die niemand entscheidet.</strong> Wenn am Stichtag weder freigegeben noch geprüft noch unterschrieben wird, war es eine Erinnerung, kein Meilenstein.</p>"
-    ],
-    [
-      "Der dritte Typ: Sammelbalken",
-      "<p>Neben Vorgängen und Meilensteinen gibt es Sammelbalken oder Phasen. Sie fassen ihre untergeordneten Vorgänge zusammen und übernehmen automatisch den frühesten Start und das späteste Ende. Man bearbeitet sie nicht direkt — sie bewegen sich, wenn sich ihr Inhalt bewegt.</p>\n        <p>Diese Dreiteilung aus Phase, Vorgang und Meilenstein ist es, die einen großen Plan überhaupt lesbar hält.</p>"
-    ]
+    ['Der Unterschied in einem Satz', `<p>Ein Vorgang verbraucht Zeit und Kapazität; er hat einen Beginn, ein Ende und eine Dauer. Ein Meilenstein hat überhaupt keine Dauer — er ist ein Punkt, der festhält, dass etwas eingetreten ist. Genau deshalb erscheint er als Raute: Es gibt nichts, worüber sich ein Balken ziehen ließe.</p>
+      <p>Die Prüfung dauert eine Sekunde. <em>Kann jemand daran arbeiten?</em> An einem Lastenheft kann man arbeiten. An „Lastenheft freigegeben“ kann niemand arbeiten: Das ist entweder geschehen oder nicht.</p>
+      <p>Diese Frage ersetzt jede längere Definition. Sie erkennt auch die Grenzfälle zuverlässig, an denen Diskussionen sonst hängen bleiben — „Abnahme“ etwa ist in der Praxis meistens beides: ein Vorgang, weil ein Termin stattfindet und ein Protokoll entsteht, und ein Meilenstein, weil mit der Unterschrift eine Frist zu laufen beginnt. Man bildet dann beides ab, nicht eines von beiden.</p>
+      <!--FIG:milestone|Ein Meilenstein liegt auf genau einem Zeitpunkt; die Balken links und rechts davon sind die Arbeit.-->`],
+
+    ['Ein durchgerechnetes Beispiel: der Verpackungs-Relaunch bei Nordhaus Naturkost', `<p>Ein Vorhaben, konsequent bis zum Ende verfolgt. Die Nordhaus Naturkost GmbH stellt die Verpackungen einer Produktlinie mit 40 Artikeln um. Fünf Arbeitstage je Woche, Beginn Montag, 2. März 2026.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Zeile</th><th>Typ</th><th>Dauer</th><th>Beginn</th><th>Ende</th></tr></thead>
+          <tbody>
+            <tr><td>Gestaltungsentwürfe</td><td>Vorgang</td><td>10 Tage</td><td>Mo 2. März</td><td>Fr 13. März</td></tr>
+            <tr><td>Interne Prüfung und Korrekturen</td><td>Vorgang</td><td>4 Tage</td><td>Mo 16. März</td><td>Do 19. März</td></tr>
+            <tr><td><strong>Gestaltung eingefroren</strong></td><td>Meilenstein</td><td>0 Tage</td><td colspan="2">Do 19. März</td></tr>
+            <tr><td>LMIV-Kennzeichnungsprüfung (externes Labor)</td><td>Vorgang</td><td>8 Tage</td><td>Fr 20. März</td><td>Di 31. März</td></tr>
+            <tr><td><strong>Kennzeichnung bestätigt</strong></td><td>Meilenstein</td><td>0 Tage</td><td colspan="2">Di 31. März</td></tr>
+            <tr><td>Andruck der Druckerei</td><td>Vorgang</td><td>6 Tage</td><td>Mi 1. April</td><td>Mi 8. April</td></tr>
+            <tr><td><strong>Druckfreigabe erteilt</strong></td><td>Meilenstein</td><td>0 Tage</td><td colspan="2">Mi 8. April</td></tr>
+            <tr><td>Auflagendruck</td><td>Vorgang</td><td>15 Tage</td><td>Do 9. April</td><td>Mi 29. April</td></tr>
+            <tr><td>Transport ins Zentrallager</td><td>Vorgang</td><td>7 Tage</td><td>Do 30. April</td><td>Fr 8. Mai</td></tr>
+            <tr><td><strong>Umstellung im Handel</strong></td><td>Meilenstein</td><td>0 Tage</td><td colspan="2">Mo 11. Mai</td></tr>
+          </tbody>
+        </table>
+        <p>Fünf Meilensteine, fünf Vorgänge. Drei davon — Gestaltung eingefroren, Kennzeichnung bestätigt, Druckfreigabe erteilt — sind Momente, in denen jemand <em>außerhalb</em> des Teams handeln muss: das Prüflabor, die Rechtsabteilung, die Druckerei. Genau das ist der Grund, sie zu setzen.</p>
+        <p>Lesen Sie nur die Meilensteinzeilen, haben Sie das Vorhaben in einem Atemzug: Gestaltung eingefroren am 19. März, Kennzeichnung bestätigt am 31. März, Druckfreigabe am 8. April, im Regal am 11. Mai. Das ist die Fassung für die Geschäftsführung, und sie entsteht nebenbei.</p>
+      </div>`],
+
+    ['Was passiert, wenn ein Meilenstein rutscht', `<p>Das externe Labor sagt acht Tage zu und braucht dreizehn. Die Kennzeichnungsprüfung endet damit am Dienstag, dem 7. April, statt am Dienstag, dem 31. März.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Meilenstein</th><th>Geplant</th><th>Prognose</th><th>Verzug</th></tr></thead>
+          <tbody>
+            <tr><td>Gestaltung eingefroren</td><td>Do 19. März</td><td>Do 19. März</td><td>0 Tage</td></tr>
+            <tr><td>Kennzeichnung bestätigt</td><td>Di 31. März</td><td>Di 7. April</td><td>5 Tage</td></tr>
+            <tr><td>Druckfreigabe erteilt</td><td>Mi 8. April</td><td>Mi 15. April</td><td>5 Tage</td></tr>
+            <tr><td>Umstellung im Handel</td><td>Mo 11. Mai</td><td>Mo 18. Mai</td><td>5 Tage</td></tr>
+          </tbody>
+        </table>
+        <p>In dieser Kette steckt kein Puffer, also schlagen alle fünf Arbeitstage voll auf den Markteintritt durch. Diese vier Zeilen sind der komplette Statusbericht — und es gibt sie nur, weil diese Punkte als Meilensteine modelliert wurden und nicht als Zwischenschritte in einem Balken.</p>
+      </div>
+      <p>Wenn ein Vorgang rutscht, dauert Arbeit länger, und vielleicht lässt sich das auffangen. Wenn ein Meilenstein rutscht, hat sich eine Zusage verschoben. Niemanden außerhalb des Projekts interessiert, dass der Andruck sieben statt sechs Tage gebraucht hat; alle interessiert, dass die Ware jetzt am 18. Mai im Regal steht.</p>`],
+
+    ['Vorgang oder Meilenstein: die Dimensionen, die sich wirklich unterscheiden', `<p>Der Unterschied ist keine Zeichenkonvention. Er verändert das Verhalten des Plans an sechs Stellen.</p>
+      <table>
+        <thead><tr><th>Dimension</th><th>Vorgang</th><th>Meilenstein</th></tr></thead>
+        <tbody>
+          <tr><td>Dauer</td><td>Ein Tag oder mehr. Verbraucht Kalenderzeit und Aufwand.</td><td>Null. Beginn und Ende fallen auf dasselbe Datum.</td></tr>
+          <tr><td>Abhängigkeiten</td><td>Vorgänger und Nachfolger, meist Ende-Anfang.</td><td>Braucht mindestens je einen — sonst ist er Dekoration.</td></tr>
+          <tr><td>Ein Verzug bedeutet</td><td>Die Arbeit dauerte länger; Puffer oder Kapazität können das auffangen.</td><td>Eine Zusage hat sich verschoben. Das behebt keine Anstrengung, nur Umplanung.</td></tr>
+          <tr><td>Besetzung</td><td>Eine ausführende Person, in der Regel mit Kosten.</td><td>Eine verantwortliche Person, die nachhält. Aufwand meist null.</td></tr>
+          <tr><td>Verhalten beim Export</td><td>Balken in PDF, PNG und PowerPoint; echtes Ende und Tageszahl in Excel und CSV; mehrtägiger Kalendereintrag.</td><td>Raute in den Bildformaten; leeres Ende und Dauer 0 in Excel und CSV; eintägiger Kalendereintrag.</td></tr>
+          <tr><td>Wer es liest</td><td>Die ausführende Person und ihre Führungskraft.</td><td>Auftraggeber, Kunden, Behörden, die Zusammenfassungsfolie.</td></tr>
+        </tbody>
+      </table>
+      <p>Die Exportzeile überrascht die meisten. Stellen Sie die Ansicht auf <strong>Nur Meilensteine</strong>, exportieren Sie, und Sie haben einen einseitigen Terminplan für den Lenkungskreis, ohne ein zweites Diagramm zu pflegen — allerdings nur, wenn Ihre Meilensteine echte Meilensteine sind.</p>`],
+
+    ['Was es kostet, wenn man es falsch modelliert', `<p>Modellieren Sie „Kennzeichnung bestätigt“ nun so, wie es die meisten zuerst aufschreiben: als Vorgang „Kennzeichnungsfreigabe einholen“, drei Tage, zwischen Laborprüfung und Andruck.</p>
+      <div class="worked">
+        <ol>
+          <li><strong>Das Enddatum wandert.</strong> Drei erfundene Tage schieben die Umstellung im Handel von Montag, dem 11. Mai, auf Donnerstag, den 14. Mai. Die Arbeit hat sich nicht verändert, nur das Modell.</li>
+          <li><strong>Das Tor verschwindet.</strong> „Kennzeichnungsfreigabe einholen“ liest sich wie etwas, das man selbst tut; „Kennzeichnung bestätigt“ liest sich wie etwas, das das Labor tut. Beim ersten fühlt sich niemand aufgefordert, dort anzurufen.</li>
+          <li><strong>Die Zusammenfassung bricht.</strong> Filtern Sie auf Meilensteine, erscheinen vier Zeilen statt fünf — und ausgerechnet der Punkt mit der größten Fremdabhängigkeit fehlt.</li>
+        </ol>
+      </div>
+      <p>Der umgekehrte Fehler ist billiger, aber real: „Auflagendruck“ zum Meilenstein zu erklären, weil er wichtig wirkt. Fünfzehn Tage Maschinenzeit verschwinden, und der kritische Pfad führt am längsten Element des Plans vorbei. Über die Bedeutung entscheidet, <em>ob</em> etwas ins Diagramm gehört; über die Form entscheidet allein die Dauer.</p>`],
+
+    ['Wozu Meilensteine wirklich dienen', `<p>Meilensteine sind für die Leserin da, nicht für die Ausführende. Sie sind der Weg, auf dem jemand, der nicht in Ihrem Projekt lebt, die entscheidenden Momente findet: Freigaben, Lieferungen, Tore, Inbetriebnahme.</p>
+      <p>Außerdem machen sie einen Terminplan durchsetzbar. „Gestaltung eingefroren“, mit der Kennzeichnungsprüfung als Nachfolger, sagt etwas, das „Gestaltung einfrieren“ nicht sagt: Nachgelagerte Arbeit beginnt erst, wenn dieser Punkt erreicht ist. Reicht eine Grafikerin am 24. März noch eine Änderung nach, zeigt das Diagramm einen Regelbruch und nicht bloß ein verschobenes Datum.</p>
+      <!--FIG:deps|Ein Meilenstein verdient seinen Platz dadurch, dass er dazwischen liegt: Vorgänger, die fertig sein müssen, und Nachfolger, die nicht früher beginnen können.-->
+      <p>Ein Meilenstein ohne Verknüpfung in beide Richtungen kann gelöscht werden. Wenn nichts auf ihn wartet, ist er eine Randnotiz — und Notizen gehören ins Notizfeld, nicht auf die Zeitachse.</p>`],
+
+    ['Wie viele braucht ein Projekt?', `<p>Genug, um die Geschichte zu erzählen, und so wenige, dass jeder einzelne etwas bedeutet. Vier bis acht ist ein vernünftiger Bereich; hundert Meilensteine sind schlicht Vorgänge in anderer Form.</p>
+      <p>Eine Prüfung: Könnten Sie den Fortschritt allein anhand der Meilensteine beschreiben? Nordhaus Naturkost hat fünf für ein Vorhaben über zehn Wochen — das obere Ende, gerechtfertigt dadurch, dass vier davon Übergaben an Dritte sind. Der übliche Weg, über das Ziel hinauszuschießen, ist eine Raute am Ende jeder Phase aus reiner Symmetrie; Phasen haben aber bereits einen Sammelbalken.</p>`],
+
+    ['So geht das in gantts.app', `<p>Der Nordhaus-Plan im Editor, mit den Schaltflächen so, wie sie tatsächlich beschriftet sind.</p>
+      <ol>
+        <li>Klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie Ihre Gliederung ein. Eine Zeile, die auf <code>!</code> endet, wird zum Meilenstein, <code>(10d)</code> setzt eine Dauer, <code>after Name</code> verknüpft einen Vorgänger, ein führendes <code>#</code> erzeugt eine Phase — etwa <code>Gestaltung eingefroren ! after Interne Prüfung</code>.</li>
+        <li>Von Hand geht es genauso: <strong>＋ Vorgang</strong> für Arbeitszeilen, <strong>◆ Meilenstein</strong> für Rauten, <strong>▣ Gruppe</strong> für eine Phase.</li>
+        <li>Einen Meilenstein versehentlich als Vorgang angelegt? Doppelklicken Sie die Zeile und ändern Sie <strong>Typ</strong> von <em>Vorgang</em> auf <em>Meilenstein</em>. Das Ende fällt auf den Beginn zusammen; löschen und neu anlegen ist unnötig.</li>
+        <li>Setzen Sie im selben Bereich <strong>Nach (Vorgänger)</strong>, sonst bewegt sich der Meilenstein nicht mit, wenn die Arbeit davor sich verschiebt.</li>
+        <li>Klicken Sie auf <strong>Neu planen</strong>, um jede Zeile auf den frühesten Termin zu schieben, den ihre Abhängigkeiten zulassen. So erfahren Sie, ob Ihre Meilensteintermine Wünsche waren oder Konsequenzen.</li>
+        <li>Öffnen Sie <strong>◳ Basisplan</strong> und frieren Sie den Plan ein, bevor die Arbeit beginnt. Die Abweichungsspalten melden den Meilensteinverzug danach in Tagen — daher stammen die fünf Tage oben.</li>
+        <li>Setzen Sie den Haken bei <strong>Kritischer Pfad</strong>, um zu bestätigen, dass die Kette durch Ihre Tore das Enddatum bestimmt. Schraffierte Balken sind kritisch.</li>
+        <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Nur Meilensteine</strong> für die Fassung des Lenkungskreises und exportieren Sie über <strong>⬇ Export</strong> als <strong>📄 PDF-Dokument</strong> oder <strong>📽 PowerPoint (.pptx)</strong>. Danach zurück auf <strong>Alle Vorgänge</strong> für die Umsetzung.</li>
+      </ol>
+      <p>Eines lässt der Editor nicht zu: einen Meilenstein breiter zu ziehen. Meilensteine lassen sich verschieben, aber nie in der Länge ändern — denn ein Meilenstein mit Dauer ist keiner.</p>`],
+
+    ['Typische Fehler', `<p><strong>Meilensteine mit Dauer.</strong> Was drei Tage braucht, ist ein Vorgang. Geben Sie ihm einen Balken und setzen Sie einen Meilenstein an sein Ende, wenn der Abschluss zählt.</p>
+      <p><strong>Meilensteine, für die niemand zuständig ist.</strong> Zuständig ist, wer zum Telefon greift, wenn der Termin wackelt — nicht, wer die Freigabe erteilt.</p>
+      <p><strong>Meilensteine, die aus Hoffnung datiert sind.</strong> Wenn „Kennzeichnung bestätigt“ auf dem 31. März liegt, weil das dem Handel zugesagt wurde, und nicht, weil dort acht Tage Laborarbeit enden, hält das Diagramm einen Wunsch fest. Erst neu planen, dann die Lücke bewusst verhandeln.</p>
+      <p><strong>Meilensteine, die in Prozent berichtet werden.</strong> Ein Meilenstein steht auf 0 oder auf 100 Prozent. „Die Kennzeichnungsfreigabe ist zu 60 Prozent erledigt“ heißt, dass der darunterliegende Vorgang zu 60 Prozent erledigt ist und das Tor noch nicht passiert wurde.</p>`],
+
+    ['Sammelbalken und die Hierarchie', `<p>Das dritte Symbol ist der Sammel- oder Phasenbalken, der sich über seine untergeordneten Vorgänge spannt. Er wird berechnet, nicht eingegeben: Seine Termine ergeben sich aus dem frühesten Beginn und dem spätesten Ende darunter — deshalb ist das direkte Bearbeiten meist gesperrt. Wer eine Phase verschieben will, verschiebt ihren Inhalt.</p>
+      <p>Ein Sammelbalken zeigt, wann gearbeitet wird; ein Meilenstein zeigt, wann eine Zusage fällig ist. Eine Phase „Druckvorstufe“ vom 2. März bis zum 8. April nützt dem Team von Nordhaus und ist für die Einkäuferin des Handelspartners ohne Wert — sie fragt nur nach dem 11. Mai.</p>`],
   ],
-  callout: "Ein Meilenstein ist kein kurzer Vorgang, sondern ein Vorgang der Dauer null, der für eine Entscheidung oder eine erfüllte Bedingung steht. Muss am Stichtag niemand etwas freigeben, unterschreiben oder prüfen, markieren Sie eine Erinnerung — keinen Meilenstein.",
+  callout: 'Eine Gewohnheit lohnt sich besonders: Setzen Sie an jeder Stelle einen Meilenstein, an der jemand außerhalb des Teams freigeben, liefern, prüfen oder unterschreiben muss. Das sind die Abhängigkeiten, die Sie am wenigsten steuern, und die Verzögerungen, nach denen am häufigsten gefragt wird. Drei der fünf Nordhaus-Meilensteine sind genau das — und der eine, der gerutscht ist, war einer davon.',
   faq: [
-    [
-      "Was ist ein Meilenstein im Gantt-Diagramm?",
-      "Ein Punkt ohne Dauer, der einen bedeutsamen Moment markiert: eine Freigabe, eine Übergabe oder den Beginn einer Phase. Dargestellt als Raute statt als Balken."
-    ],
-    [
-      "Wie viele Meilensteine sollte ein Projekt haben?",
-      "Fünf bis zehn bei mehrmonatiger Laufzeit. Zu viele nehmen ihnen die Funktion als Kontrollpunkt."
-    ],
-    [
-      "Kann ein Meilenstein eine Dauer haben?",
-      "Definitionsgemäß nicht. Wenn Sie einen Zeitraum darstellen müssen — etwa ein Prüffenster — ist das ein Vorgang, der mit einem Meilenstein endet."
-    ],
-    [
-      "Was ist der Unterschied zwischen Meilenstein und Phase?",
-      "Eine Phase ist ein Sammelbalken, der Vorgänge gruppiert und deren Termine übernimmt; ein Meilenstein ist ein Zeitpunkt ohne Dauer. Meist genutzt im Paar: Die Phase endet, der Meilenstein bestätigt den Abschluss."
-    ]
+    ['Was ist der Unterschied zwischen Vorgang und Meilenstein?', 'Ein Vorgang hat eine Dauer — Beginn, Ende und Arbeit dazwischen. Ein Meilenstein hat die Dauer null und markiert einen Moment, etwa eine Freigabe oder eine Lieferung. Schnelltest: Wenn jemand einen Nachmittag daran arbeiten kann, ist es ein Vorgang.'],
+    ['Was bedeutet die Raute im Gantt-Diagramm?', 'Einen Meilenstein: eine Markierung ohne Dauer für ein bedeutsames Ereignis wie eine Unterschrift, eine Lieferung oder eine Inbetriebnahme. Da sie keine Länge hat, lässt sie sich verschieben, aber nicht in der Größe ändern.'],
+    ['Wie viele Meilensteine sollte ein Projekt haben?', 'Meist vier bis acht — genug, um die Geschichte zu erzählen, wenige genug, dass jeder etwas bedeutet. Wenn die Liste von oben nach unten gelesen das Projekt nicht beschreibt, haben Sie eher die falschen als zu wenige.'],
+    ['Kann ein Meilenstein eine Dauer haben?', 'Nein — definitionsgemäß ist sie null. Wenn die Sache wirklich Zeit braucht, etwa eine achttägige Kennzeichnungsprüfung, modellieren Sie sie als Vorgang und setzen einen Meilenstein an dessen Ende. Der Zusagetermin ist dann berechnet statt behauptet.'],
+    ['Was passiert mit dem Terminplan, wenn ein Meilenstein rutscht?', 'Alles, was daran hängt, verschiebt sich um denselben Betrag, abzüglich vorhandener Puffer in der Kette. Im Verpackungsbeispiel schob ein Verzug von fünf Tagen bei „Kennzeichnung bestätigt“ die Umstellung im Handel vollständig vom 11. auf den 18. Mai, weil nachgelagert kein Puffer vorhanden war.'],
+    ['Was ist ein Sammelbalken?', 'Ein Balken, der eine Phase oder Gruppe darstellt. Seine Termine werden aus dem frühesten Beginn und dem spätesten Ende darunter berechnet, er bewegt sich also mit seinem Inhalt. Er ersetzt keinen Meilenstein: Der Sammelbalken zeigt, wann gearbeitet wird, der Meilenstein, wann eine Zusage fällig ist.'],
   ],
   related: [
-    ["what-is-a-gantt-chart", "Was ist ein Gantt-Diagramm?"],
-    ["gantt-chart-mistakes", "Häufige Planungsfehler"],
-    ["gantt-chart-dependencies", "Die vier Abhängigkeitsarten"]
-  ]
+    ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'],
+    ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'],
+    ['gantt-chart-mistakes', 'Häufige Planungsfehler'],
+  ],
 },
 
 's-curve-project-management': {
   h1: 'S-Kurve und Fertigstellungswert: Sind Sie wirklich im Verzug?',
   metaTitle: 'S-Kurve im Projektmanagement erstellen',
-  metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht.',
+  metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht — mit durchgerechnetem Beispiel.',
   date: '2026-07-19',
   lead: 'Eine Prozentangabe allein sagt fast nichts. Sechzig Prozent fertig ist in Woche zwei hervorragend und in Woche neun eine Katastrophe. Eine <strong>S-Kurve</strong> behebt das, indem sie die kumulierte Planleistung über die Zeit aufträgt: Aus „wie weit sind wir“ wird „wie weit hätten wir <em>sein sollen</em>“ — und der Abstand zwischen den beiden Linien ist die Antwort.',
   figIntro: 'Plan gegen Ist — und was der Abstand zwischen beiden bedeutet:',
   sections: [
     ['Warum die Kurve S-förmig ist', `<p>Projekte leisten ihre Arbeit nicht gleichmäßig. Die ersten Wochen laufen langsam an — Mobilisierung, Abstimmung des Umfangs, Warten auf Freigaben —, dann beschleunigt die Mitte, weil vieles parallel läuft, und am Ende wird es wieder zäh, weil die letzten Punkte auf Abnahmen und Restarbeiten warten.</p>
-        <p>Trägt man die kumulierte Leistung über die Zeit auf, ergibt das ein flach liegendes S: flach, steil, flach. Diese Form hat niemand vorgegeben. Sie folgt daraus, wie Arbeit tatsächlich anfällt.</p>
-        <p>Genau deshalb taugt sie als Maßstab. Eine Gerade würde unterstellen, dass nach zwanzig Prozent der Zeit auch zwanzig Prozent der Arbeit erledigt sind — und jedes Projekt der Welt sähe im ersten Monat nach Verzug aus.</p>`],
+      <p>Trägt man die kumulierte Leistung über die Zeit auf, ergibt das ein flach liegendes S: flach, steil, flach. Diese Form hat niemand vorgegeben. Sie folgt daraus, wie Arbeit tatsächlich anfällt.</p>
+      <p>Genau deshalb taugt sie als Maßstab. Eine Gerade würde unterstellen, dass nach zwanzig Prozent der Zeit auch zwanzig Prozent der Arbeit erledigt sind — und jedes Projekt der Welt sähe im ersten Monat nach Verzug aus.</p>
+      <p>In deutschen Terminplänen hat die Kurve außerdem zuverlässig zwei waagerechte Stellen, die nichts mit Leistung zu tun haben: die <strong>Betriebsferien</strong> im Sommer und die Tage zwischen Weihnachten und Neujahr. Wer sie im Arbeitskalender als arbeitsfrei hinterlegt, bekommt an diesen Stellen eine flache Plankurve — und damit auch keine Abweichung, die es gar nicht gibt. Wer sie vergisst, sieht im August jedes Jahr denselben scheinbaren Einbruch und diskutiert ihn jedes Jahr aufs Neue.</p>`],
 
     ['Plan und Ist nebeneinander lesen', `<p>Zwei Kurven. Die <strong>Plankurve</strong> stammt aus Ihrem Basisplan: Jeder Vorgang wird mit seinem Gewicht über seine geplanten Termine verteilt und aufsummiert. Die <strong>Ist-Kurve</strong> stammt aus dem gemeldeten Fortschritt.</p>
-        <p>Lesen Sie beide senkrecht, zum heutigen Datum:</p>
-        <ul>
-          <li><strong>Ist unter Plan</strong> — im Verzug. Der senkrechte Abstand ist die fehlende Leistung.</li>
-          <li><strong>Ist über Plan</strong> — vor dem Plan, oder Ihre Fortschrittsmeldungen sind zu optimistisch. Beides kommt vor.</li>
-          <li><strong>Auseinanderlaufende Kurven</strong> — das Problem wächst, es ist nicht stabil. Diese Form ist die wichtigste und die einzige, die eine einzelne Prozentzahl nie zeigt.</li>
-        </ul>
-        <p>Lesen Sie sie stattdessen <em>waagerecht</em>, erhalten Sie etwas, das in einer Statusrunde besser ankommt: Gehen Sie vom heutigen Ist-Punkt nach links, bis Sie die Plankurve treffen. Dort steht das Datum, an dem der Plan diesen Fortschritt erwartet hatte. Der Abstand ist Ihr Verzug in Wochen — also in der Einheit, über die tatsächlich gestritten wird.</p>`],
+      <p>Lesen Sie beide senkrecht, zum heutigen Datum:</p>
+      <ul>
+        <li><strong>Ist unter Plan</strong> — im Verzug. Der senkrechte Abstand ist die fehlende Leistung.</li>
+        <li><strong>Ist über Plan</strong> — vor dem Plan, oder Ihre Fortschrittsmeldungen sind zu optimistisch. Beides kommt vor.</li>
+        <li><strong>Auseinanderlaufende Kurven</strong> — das Problem wächst, es ist nicht stabil. Diese Form ist die wichtigste und die einzige, die eine einzelne Prozentzahl nie zeigt.</li>
+      </ul>
+      <p>Lesen Sie sie stattdessen <em>waagerecht</em>, erhalten Sie etwas, das in einer Statusrunde besser ankommt: Gehen Sie vom heutigen Ist-Punkt nach links, bis Sie die Plankurve treffen. Dort steht das Datum, an dem der Plan diesen Fortschritt erwartet hatte. Der Abstand ist Ihr Verzug in Wochen — also in der Einheit, über die tatsächlich gestritten wird.</p>
+      <p>Beide Lesarten beschreiben dieselbe Lage, und sie klingen völlig unterschiedlich. Das ist kein Mangel, sondern der praktische Nutzen: Die senkrechte Lesart nennt den Umfang des Rückstands, die waagerechte seine Dauer. Wer nur eine von beiden vorträgt, erzeugt entweder Panik oder Gleichgültigkeit.</p>`],
 
     ['Fertigstellungswert ohne Fachjargon', `<p>Die Fertigstellungswert-Analyse (Earned Value Management) gibt dem Abstand eine Zahl. Drei Größen, und die Abkürzungen sind schlimmer als die Gedanken dahinter:</p>
+      <ul>
+        <li><strong>PV</strong> (Planwert, Sollkosten) — die Arbeit, die bis heute fertig sein sollte, zu Budgetpreisen bewertet.</li>
+        <li><strong>EV</strong> (Fertigstellungswert) — die Arbeit, die <em>tatsächlich</em> fertig ist, mit demselben Budget bewertet. Ein Vorgang über 10.000 €, der zu 40 % erledigt ist, hat 4.000 € erwirtschaftet. Was er gekostet hat, spielt hier bewusst keine Rolle.</li>
+        <li><strong>AC</strong> (Ist-Kosten) — was Sie wirklich ausgegeben haben.</li>
+      </ul>
+      <p>Daraus ergibt sich:</p>
+      <ul>
+        <li><strong>SV = EV − PV</strong> — Terminabweichung. Negativ heißt im Verzug.</li>
+        <li><strong>CV = EV − AC</strong> — Kostenabweichung. Negativ heißt über Budget.</li>
+        <li><strong>SPI = EV ÷ PV</strong> — unter 1,0 heißt im Verzug. Ein SPI von 0,85 heißt: Sie erhalten 85 Cent Fortschritt für jeden geplanten Euro.</li>
+        <li><strong>CPI = EV ÷ AC</strong> — unter 1,0 heißt über Budget.</li>
+      </ul>
+      <p>Die Trennung ist der ganze Sinn der Übung. Ein Projekt kann exakt im Budget und schwer im Verzug sein oder pünktlich und finanziell aus dem Ruder gelaufen — eine einzige verrührte Prozentzahl verdeckt beides. Als zwei Achsen gedacht, gibt es vier Felder, in denen ein Projekt stehen kann:</p>
+      <!--FIG:evmquad|Termin- und Kostenleistung sind voneinander unabhängig. Eine einzelne Prozentzahl legt beide Achsen aufeinander.-->`],
+
+    ['Ein durchgerechnetes Beispiel: Innenausbau eines Bürogeschosses', `<p>Die Kannenberg Ausbau GmbH führt den Innenausbau einer Bürofläche als VOB-Bauvertrag aus. Auftragssumme und damit Gesamtbudget (<strong>BAC</strong>): <strong>200.000 €</strong>. Laufzeit zehn Wochen, verteilt wie bei einem Ausbau üblich — langsamer Anlauf, schwere Mitte durch die Gewerke, auslaufendes Ende mit Inbetriebnahme und Restarbeiten.</p>
+      <div class="worked">
+        <p><strong>Geplante Leistung je Woche, zum Planwert aufsummiert:</strong></p>
+        <table>
+          <thead><tr><th>Woche</th><th>Planleistung der Woche</th><th>Planwert kumuliert</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>8.000 €</td><td>8.000 €</td></tr>
+            <tr><td>2</td><td>12.000 €</td><td>20.000 €</td></tr>
+            <tr><td>3</td><td>20.000 €</td><td>40.000 €</td></tr>
+            <tr><td>4</td><td>28.000 €</td><td>68.000 €</td></tr>
+            <tr><td>5</td><td>32.000 €</td><td>100.000 €</td></tr>
+            <tr><td>6</td><td>32.000 €</td><td>132.000 €</td></tr>
+            <tr><td>7</td><td>26.000 €</td><td>158.000 €</td></tr>
+            <tr><td>8</td><td>18.000 €</td><td>176.000 €</td></tr>
+            <tr><td>9</td><td>14.000 €</td><td>190.000 €</td></tr>
+            <tr><td>10</td><td>10.000 €</td><td>200.000 €</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Fünf Wochen Ist-Werte.</strong> Der Fertigstellungswert ist der Budgetwert dessen, was fertig ist; die Ist-Kosten sind das, was es gekostet hat — hier aus den gestellten Abschlagsrechnungen der Nachunternehmer.</p>
+        <table>
+          <thead><tr><th>Woche</th><th>Planwert</th><th>Fertigstellungswert</th><th>Ist-Kosten</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>8.000 €</td><td>6.000 €</td><td>7.000 €</td></tr>
+            <tr><td>2</td><td>20.000 €</td><td>17.000 €</td><td>20.000 €</td></tr>
+            <tr><td>3</td><td>40.000 €</td><td>33.000 €</td><td>38.000 €</td></tr>
+            <tr><td>4</td><td>68.000 €</td><td>55.000 €</td><td>62.000 €</td></tr>
+            <tr><td>5</td><td>100.000 €</td><td>82.000 €</td><td>94.000 €</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Abgelesen zum Ende der fünften Woche:</strong> PV = 100.000 €, EV = 82.000 €, AC = 94.000 €.</p>
         <ul>
-          <li><strong>PV</strong> (Planwert, Sollkosten) — die Arbeit, die bis heute fertig sein sollte, zu Budgetpreisen bewertet.</li>
-          <li><strong>EV</strong> (Fertigstellungswert) — die Arbeit, die <em>tatsächlich</em> fertig ist, mit demselben Budget bewertet. Ein Vorgang über 10.000 €, der zu 40 % erledigt ist, hat 4.000 € erwirtschaftet. Was er gekostet hat, spielt hier bewusst keine Rolle.</li>
-          <li><strong>AC</strong> (Ist-Kosten) — was Sie wirklich ausgegeben haben.</li>
+          <li><strong>SV = EV − PV</strong> = 82.000 − 100.000 = <strong>−18.000 €</strong> an Leistung, die fertig sein sollte und es nicht ist.</li>
+          <li><strong>SPI = EV ÷ PV</strong> = 82.000 ÷ 100.000 = <strong>0,82</strong>. Der Plan wird zu 82 Prozent der unterstellten Geschwindigkeit in Fortschritt umgesetzt.</li>
+          <li><strong>CV = EV − AC</strong> = 82.000 − 94.000 = <strong>−12.000 €</strong>. Die Leistung hat zwölftausend Euro mehr gekostet, als sie wert ist.</li>
+          <li><strong>CPI = EV ÷ AC</strong> = 82.000 ÷ 94.000 = <strong>0,87</strong>. Jeder ausgegebene Euro kauft 87 Cent Budgetwert.</li>
+          <li><strong>Fertigstellungsgrad = EV ÷ BAC</strong> = 82.000 ÷ 200.000 = <strong>41 %</strong> gegenüber <strong>50 %</strong> geplant. 41 Prozent klingt ordentlich, bis man weiß, dass 50 fällig waren.</li>
+          <li><strong>Kostenprognose EAC = BAC ÷ CPI</strong> = 200.000 ÷ 0,8723 = <strong>229.300 €</strong>. Hält die Kostenleistung, landet der 200.000-€-Auftrag rund <strong>29.300 € darüber</strong>, und es sind noch <strong>135.300 €</strong> auszugeben.</li>
         </ul>
-        <p>Daraus ergibt sich:</p>
-        <ul>
-          <li><strong>SV = EV − PV</strong> — Terminabweichung. Negativ heißt im Verzug.</li>
-          <li><strong>CV = EV − AC</strong> — Kostenabweichung. Negativ heißt über Budget.</li>
-          <li><strong>SPI = EV ÷ PV</strong> — unter 1,0 heißt im Verzug. Ein SPI von 0,85 heißt: Sie erhalten 85 Cent Fortschritt für jeden geplanten Euro.</li>
-          <li><strong>CPI = EV ÷ AC</strong> — unter 1,0 heißt über Budget.</li>
-        </ul>
-        <p>Die Trennung ist der ganze Sinn der Übung. Ein Projekt kann exakt im Budget und schwer im Verzug sein oder pünktlich und finanziell aus dem Ruder gelaufen — eine einzige verrührte Prozentzahl verdeckt beides.</p>`],
+        <p><strong>Die waagerechte Lesart für die Baubesprechung.</strong> Wann erreichte der Plan 82.000 €? Zwischen Woche 4 (68.000 €) und Woche 5 (100.000 €): 14.000 € in eine Wochenscheibe von 32.000 €, also 14 ÷ 32 = 0,44 dieser Woche. Der Plan überschritt 82.000 € in <strong>Woche 4,4</strong> — Sie liegen <strong>0,56 Wochen zurück, also knapp drei Arbeitstage</strong>.</p>
+        <p>Drei Tage Rückstand und ein SPI von 0,82 sind dieselbe Tatsache. Die Verhältniszahl wirkt dramatischer, weil dies der steilste Abschnitt der Kurve ist, in dem wenige Tage viel Wert kosten. Nennen Sie beides.</p>
+        <p>Zwei Warnungen zu den Ist-Kosten in einem VOB-Vertrag. Erstens hinken Abschlagsrechnungen der Leistung hinterher; wer den CPI am Tag vor einem Rechnungslauf abliest, bekommt einen zu freundlichen Wert. Zweitens ist der Sicherheitseinbehalt kein Kostenvorteil — das Geld ist geschuldet, nur noch nicht geflossen. Beides ist ein Grund, den CPI über mehrere Zyklen als Trend zu lesen und nicht als Momentaufnahme.</p>
+      </div>`],
+
+    ['Die sieben Zahlen — und wie jede falsch gelesen wird', `<p>Zu jeder gehört eine typische Fehldeutung, und die Fehldeutungen richten mehr Schaden an als gar nicht zu messen.</p>
+      <table>
+        <thead><tr><th>Kennzahl</th><th>Formel</th><th>Beantwortet</th><th>Wie sie falsch gelesen wird</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PV</strong> Planwert</td><td>Sollkosten der geplanten Leistung</td><td>Wie viel sollte bis heute fertig sein?</td><td>Aus den aktuellen Terminen statt aus einem Basisplan genommen. Die haben jeden Verzug schon aufgesogen, also läuft der Planwert mit — und die Abweichung steht auf null.</td></tr>
+          <tr><td><strong>EV</strong> Fertigstellungswert</td><td>BAC × Fertigstellungsgrad</td><td>Wie viel ist fertig, zu Budgetpreisen?</td><td>Nur so ehrlich wie die Fortschrittsmeldung dahinter — das bekannte Problem der Zeile, die drei Wochen lang auf 90 Prozent steht.</td></tr>
+          <tr><td><strong>AC</strong> Ist-Kosten</td><td>tatsächlich angefallene Kosten</td><td>Was hat es bisher gekostet?</td><td>Vor Eingang der Rechnungen abgelesen. Die Ist-Kosten hinken nach, schmeicheln dem CPI früh und bestrafen ihn später.</td></tr>
+          <tr><td><strong>SV</strong> Terminabweichung</td><td>EV − PV</td><td>Wie viel Leistung fehlt uns?</td><td>Als Kostenüberschreitung gehört. Sie wird in Euro gemessen, ist aber eine Aussage über <em>Termine</em>.</td></tr>
+          <tr><td><strong>CV</strong> Kostenabweichung</td><td>EV − AC</td><td>Zahlen wir mehr, als die Leistung wert ist?</td><td>Gegen das verbrauchte Budget statt gegen den Fertigstellungswert gehalten. „Wir haben 47 Prozent des Budgets verbraucht“ sagt ohne EV nichts.</td></tr>
+          <tr><td><strong>SPI</strong> Terminleistung</td><td>EV ÷ PV</td><td>Wie schnell wird Plan zu Fortschritt?</td><td>Läuft zum Projektende hin gegen 1,0, egal was passiert — jedes Projekt erwirtschaftet am Schluss sein volles Budget.</td></tr>
+          <tr><td><strong>CPI</strong> Kostenleistung</td><td>EV ÷ AC</td><td>Wie viel Wert kauft ein Euro?</td><td>Von Werkzeugen, die die Ist-Kosten aus dem Fortschritt ableiten, als exakt 1,00 gemeldet. Ein CPI aus einem Rechner, der nie nach Ihren Ausgaben gefragt hat, ist Arithmetik, keine Information.</td></tr>
+        </tbody>
+      </table>
+      <p>Eine Ergänzung, weil sie Projekte ihren Endtermin kostet: Die Fertigstellungswert-Analyse gewichtet alles nach Budget, der kritische Pfad kennt überhaupt kein Budget. Eine billige zweitägige Freigabe auf der maßgebenden Kette bewegt den SPI kaum. Sie können 1,05 ablesen und trotzdem zu spät kommen.</p>`],
 
     ['Warum unser Werkzeug manchmal keinen CPI anzeigt', `<p>Das sei deutlich gesagt, weil die meisten kostenlosen EVM-Rechner es genau umgekehrt handhaben.</p>
-        <p>Die Ist-Kosten sind der einzige Wert, der sich nicht aus einem Terminplan ableiten lässt. Er muss aus Ihrer Buchhaltung kommen. Die verlockende Abkürzung lautet, einem zu 40 % erledigten Vorgang einfach 40 % seines Budgets als Kosten zuzuschreiben — und dann ist AC per Konstruktion gleich EV, sodass <strong>der CPI für jedes Projekt der Geschichte exakt 1,00 beträgt</strong>. Die Zahl sieht seriös aus, reagiert auf nichts und würde einem entgleisenden Budget bescheinigen, alles sei in Ordnung.</p>
-        <p>Deshalb lässt gantts.app die Kostenkennzahlen leer, bis Sie einen echten Wert unter „Ausgegeben“ eintragen. Die Terminkennzahlen — SV und SPI — funktionieren weiterhin, denn dafür genügen Termine und Fortschritt. Eine fehlende Zahl ist ehrlich. Eine selbstbewusst falsche ist es nicht.</p>
-        <p>Aus demselben Grund wird die Ist-Kurve für die Vergangenheit rekonstruiert statt aufgezeichnet: Das Werkzeug speichert Ihren Fortschritt so, wie er heute ist, nicht die Historie jeder früheren Meldung. Für den heutigen Tag, an dem die Zahlen abgelesen werden, ist sie exakt, dahinter näherungsweise — und sie sagt das in der Ansicht selbst, nicht in einer Fußnote.</p>`],
+      <p>Die Ist-Kosten sind der einzige Wert, der sich nicht aus einem Terminplan ableiten lässt. Er muss aus Ihrer Buchhaltung kommen. Die verlockende Abkürzung lautet, einem zu 40 % erledigten Vorgang einfach 40 % seines Budgets als Kosten zuzuschreiben — und dann ist AC per Konstruktion gleich EV, sodass <strong>der CPI für jedes Projekt der Geschichte exakt 1,00 beträgt</strong>. Die Zahl sieht seriös aus, reagiert auf nichts und würde einem entgleisenden Budget bescheinigen, alles sei in Ordnung.</p>
+      <p>Deshalb nimmt gantts.app die Ist-Kosten aus genau einer Quelle: dem Wert, den Sie beim Vorgang unter <strong>Ausgegeben</strong> eintragen. Trägt kein einziger Vorgang einen solchen Wert, bleiben die Kostenkennzahlen — Ist-Kosten, Kostenabweichung, Kostenleistung und Kostenprognose — leer, und die Ansicht lässt sie weg, statt zu raten. Die Terminkennzahlen funktionieren weiterhin, denn dafür genügen Termine und Fortschritt. Eine fehlende Zahl ist ehrlich. Eine selbstbewusst falsche ist es nicht.</p>
+      <p>Der CPI von 0,87 aus dem Beispiel oben existiert nur, weil jemand 94.000 € echte Ausgaben eingetragen hat. Kein Balkenplan der Welt kennt diese Zahl von sich aus.</p>
+      <p>Aus demselben Grund wird die Ist-Kurve für die Vergangenheit <strong>rekonstruiert und nicht aufgezeichnet</strong>: Das Werkzeug speichert je Vorgang einen Fortschrittswert, nicht die Historie jeder früheren Meldung. Eine wahrheitsgetreue Kurve für zurückliegende Tage ist daraus nicht wiederherstellbar. Statt sie zu verweigern, rekonstruieren wir sie unter einer offen genannten Annahme: Der Fortschritt sei über die verstrichenen Arbeitstage jedes Vorgangs gleichmäßig angefallen. Zum Stichtag, an dem die Kennzahlen abgelesen werden, ist das exakt; dahinter näherungsweise. Die Ansicht sagt das selbst.</p>`],
 
     ['Ein Budget ist keine Voraussetzung', `<p>Die meisten Pläne enthalten überhaupt keine Kosten, und eine S-Kurve, die welche verlangt, ist eine S-Kurve, die niemand zeichnet.</p>
-        <p>Ist bei keinem Vorgang ein Betrag hinterlegt, gewichtet gantts.app jeden Vorgang stattdessen nach seiner Dauer in Arbeitstagen. Die Form bleibt dieselbe, die Achse liest sich in Prozent statt in Euro — eine reine Fortschrittskurve. Tragen Sie später Kosten nach, wird ohne weiteres Zutun eine Wertkurve daraus.</p>
-        <p>Eines ist allerdings entscheidend: <strong>Setzen Sie einen Basisplan</strong>. Ohne ihn kann „geplant“ nur Ihre aktuellen Termine bedeuten, und die enthalten bereits jeden bisherigen Verzug. Die Terminabweichung stünde dauerhaft auf null — eine sehr beruhigende und vollkommen nutzlose Auskunft. Basisplan ▸ Basisplan setzen, einmal, sobald der Plan freigegeben ist.</p>`],
+      <p>Ist bei keinem Vorgang ein Betrag hinterlegt, gewichtet gantts.app jeden Vorgang stattdessen nach seiner <strong>Dauer in Arbeitstagen</strong> — nicht nach Kalendertagen und nicht nach Prozent. Die Form bleibt dieselbe, die Achse liest sich in Arbeitstagen statt in Euro. Terminabweichung und Terminleistung bedeuten dann genau dasselbe wie oben, nur in Tagen. Tragen Sie später Kosten nach, wird ohne weiteres Zutun eine Wertkurve daraus.</p>
+      <p>Zwei Feinheiten verändern die Zahlen. Es zählen nur die untersten Vorgänge: Sammelbalken übernehmen die Kosten ihrer Kinder, wer beide zählt, bläht das Gesamtbudget um die Tiefe seiner Gliederung auf. Und Meilensteine tragen als Vorgänge der Dauer null nichts bei — was richtig ist, aber überrascht, wenn ein Vorhaben hauptsächlich aus Toren besteht.</p>
+      <p>Eines ist wichtiger als alles andere hier: <strong>Setzen Sie einen Basisplan.</strong> Ohne ihn kann „geplant“ nur Ihre aktuellen Termine bedeuten, und die enthalten bereits jeden bisherigen Verzug. Die Terminabweichung stünde dauerhaft auf null — eine sehr beruhigende und vollkommen nutzlose Auskunft.</p>
+      <!--FIG:baseline|Planbalken gegen Ist-Balken. Der Basisplan ist die eingefrorene Kopie, aus der die Plankurve gebildet wird — ohne ihn verschiebt sich der Plan jedes Mal mit Ihnen.-->
+      <p>Basisplan setzen, einmal, sobald der Plan freigegeben ist. Die Ansicht nennt anschließend selbst, welche Quelle sie verwendet hat, sodass Sie eine echte Abweichung von einem Vergleich Ihrer Termine mit sich selbst unterscheiden können.</p>`],
 
     ['So erstellen Sie eine S-Kurve hier', `<ol>
-          <li>Bauen oder importieren Sie Ihren Terminplan und bringen Sie die Termine grob in Ordnung.</li>
-          <li><strong>Basisplan ▸ Basisplan setzen</strong>, sobald der Plan freigegeben ist. Das friert die Bedeutung von „geplant“ ein.</li>
-          <li>Geben Sie den Vorgängen optional ein <strong>Budget</strong>, damit die Kurve in Euro statt in Tagen rechnet.</li>
-          <li>Pflegen Sie den <strong>Fortschritt in Prozent</strong> — daraus entsteht die Ist-Kurve.</li>
-          <li>Tragen Sie optional je Vorgang <strong>Ausgegeben</strong> ein, um CPI, Kostenabweichung und die Kostenprognose freizuschalten.</li>
-          <li>Klicken Sie auf <strong>📈 S-Kurve</strong>.</li>
-        </ol>
-        <p>Alles läuft vollständig in Ihrem Browser. Kein Konto, kein Hochladen und keine Tabellenvorlage, die von Hand gepflegt werden will.</p>`],
+        <li>Bauen oder importieren Sie Ihren Terminplan und bringen Sie die Termine grob in Ordnung.</li>
+        <li>Hinterlegen Sie unter <strong>Kalender</strong> die Feiertage Ihres Bundeslandes sowie Betriebsferien und Brückentage. Alles Weitere rechnet in Arbeitstagen, also lohnt sich dieser Schritt zuerst.</li>
+        <li>Setzen Sie über <strong>Basisplan</strong> den Basisplan aus dem aktuellen Plan, sobald dieser freigegeben ist. Das friert die Bedeutung von „geplant“ ein.</li>
+        <li>Geben Sie den Vorgängen optional ein <strong>Budget</strong>, damit die Kurve in Euro statt in Arbeitstagen rechnet.</li>
+        <li>Pflegen Sie je Vorgang den <strong>Fortschritt</strong> — daraus entsteht die Ist-Kurve. Melden Sie dabei geleistete Arbeit, nicht verstrichene Zeit.</li>
+        <li>Tragen Sie je Vorgang <strong>Ausgegeben</strong> ein, um Kostenleistung, Kostenabweichung und Kostenprognose freizuschalten.</li>
+        <li>Öffnen Sie <strong>S-Kurve</strong>. Der Dialog nennt oben, ob der Planwert dem gespeicherten Basisplan folgt und ob nach Kosten oder nach Dauer gewichtet wird.</li>
+        <li>Für den Bericht: <strong>⬇ Export</strong> ▸ <strong>📄 PDF-Dokument</strong> für die Runde, <strong>📊 Excel (.xlsx)</strong>, wenn jemand die Zahlen nachrechnen will.</li>
+      </ol>
+      <p>Alles läuft vollständig in Ihrem Browser. Kein Konto, kein Hochladen und keine Tabellenvorlage, die von Hand gepflegt werden will.</p>`],
   ],
+  callout: 'Nennen Sie die Terminleistung und die waagerechte Lesart immer gemeinsam. „SPI 0,82“ und „knapp drei Arbeitstage im Rückstand“ beschreiben dieselbe Lage in Woche fünf; eine Runde, die nur eine der beiden Zahlen hört, reagiert entweder über oder gar nicht.',
   faq: [
     ['Was ist eine S-Kurve im Projektmanagement?', 'Eine Kurve der kumulierten Planleistung über die Zeit. Sie ist S-förmig, weil Projekte langsam anlaufen, in der Mitte beschleunigen und zum Ende hin auslaufen. Gegen den tatsächlichen Fortschritt aufgetragen zeigt der senkrechte Abstand, wie weit Sie vor oder hinter dem Plan liegen.'],
     ['Was unterscheidet die S-Kurve von der Fertigstellungswert-Analyse?', 'Die S-Kurve ist das Bild, die Fertigstellungswert-Analyse die Rechnung dahinter. EVM beziffert den Abstand mit SV, SPI, CV und CPI; die Kurve zeigt seine Form und Richtung.'],
-    ['Was bedeutet ein SPI von 0,9?', 'Sie haben 90 Prozent des Werts erwirtschaftet, den der Plan bis heute vorsah — Sie liegen also rund 10 Prozent hinter dem Termin. Unter 1,0 heißt Verzug, über 1,0 Vorsprung.'],
-    ['Brauche ich Kostendaten für eine S-Kurve?', 'Nein. Ohne Kosten werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine Fortschrittskurve — dieselbe Form, abgelesen in Prozent. Kosten machen daraus eine Wertkurve und schalten die Kostenkennzahlen frei.'],
-    ['Warum wird kein CPI angezeigt?', 'Weil keine Ist-Kosten erfasst sind. Der CPI braucht echte Ausgaben; würde man ihn aus dem Fortschritt ableiten, ergäbe er für jedes Projekt exakt 1,00. Tragen Sie bei den Vorgängen „Ausgegeben“ ein, und er erscheint.'],
+    ['Was bedeutet ein SPI von 0,9?', 'Sie haben 90 Prozent des Werts erwirtschaftet, den der Plan bis heute vorsah — Sie liegen also rund 10 Prozent hinter dem Termin. Unter 1,0 heißt Verzug, über 1,0 Vorsprung. Wie viele Tage das sind, sagt der SPI nicht; dafür lesen Sie den Abstand waagerecht ab.'],
+    ['Wie berechne ich SPI und CPI von Hand?', 'Drei Zahlen zum selben Stichtag: der Planwert der bis heute vorgesehenen Leistung, der Fertigstellungswert des tatsächlich Fertigen und die Ist-Kosten. SPI ist EV ÷ PV, CPI ist EV ÷ AC. Bei PV 100.000 €, EV 82.000 € und AC 94.000 € ergibt das SPI 0,82 und CPI 0,87.'],
+    ['Brauche ich Kostendaten für eine S-Kurve?', 'Nein. Ohne Kosten werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine Fortschrittskurve — dieselbe Form, abgelesen in Arbeitstagen. Kosten machen daraus eine Wertkurve und schalten die Kostenkennzahlen frei.'],
+    ['Warum wird kein CPI angezeigt?', 'Weil keine Ist-Kosten erfasst sind. Der CPI braucht echte Ausgaben; würde man ihn aus dem Fortschritt ableiten, ergäbe er für jedes Projekt exakt 1,00. Tragen Sie bei den Vorgängen „Ausgegeben“ ein, und er erscheint — zusammen mit Kostenabweichung und Kostenprognose.'],
     ['Kann man eine S-Kurve in Excel erstellen?', 'Ja, und die meisten tun es — um den Preis einer von Hand gepflegten Summenspalte samt Diagramm, die bei jeder Terminverschiebung neu gemacht werden muss. Wird die Kurve aus dem Terminplan erzeugt, entfällt dieser Schritt.'],
   ],
-  related: [['gantt-baseline-variance', 'Basisplan und Abweichung'], ['critical-path-method', 'Der kritische Pfad'], ['3-week-lookahead-schedule', 'Die 3-Wochen-Vorschau']],
+  related: [
+    ['gantt-baseline-variance', 'Basisplan und Abweichung'],
+    ['critical-path-method', 'Der kritische Pfad'],
+    ['3-week-lookahead-schedule', 'Die 3-Wochen-Vorschau'],
+  ],
 },
 
 '3-week-lookahead-schedule': {
   h1: 'Die 3-Wochen-Vorschau — ohne sie jeden Montag neu abzutippen',
   metaTitle: '3-Wochen-Vorschau erstellen — kostenlos',
-  metaDesc: 'Was eine 3-Wochen-Vorschau ist, warum Bauteams sie nutzen und wie Sie sie direkt aus dem Terminplan erzeugen, statt sie in Excel abzutippen.',
+  metaDesc: 'Was eine 3-Wochen-Vorschau ist, warum Bauteams sie nutzen, wonach die Anlaufprüfung fragt und wie Sie die Vorschau direkt aus dem Terminplan erzeugen, statt sie in Excel abzutippen.',
   date: '2026-07-19',
   lead: 'Niemand baut nach einem Programm über achtzehn Monate. Gebaut wird nach den nächsten drei Wochen davon. Die <strong>Vorschau</strong> ist genau dieses Fenster — der Ausschnitt des Terminplans, der nah genug ist, um real zu sein — und auf den meisten Baustellen wird sie noch immer jeden Montag von Hand in eine Tabelle kopiert.',
   figIntro: 'Derselbe Terminplan, gefiltert auf die Arbeit, die das Fenster berührt:',
   sections: [
     ['Was eine Vorschau eigentlich ist', `<p>Eine Vorschau ist ein kurzer, rollierender Auszug aus dem Gesamtterminplan — meist drei Wochen, manchmal zwei, vier oder sechs — und zeigt nur die Arbeit, die dieses Fenster berührt. Sie rollt jede Woche weiter, sodass derselbe Vorgang in mehreren aufeinanderfolgenden Vorschauen auftaucht, während er näher rückt und besser verstanden wird.</p>
-        <p>Es gibt sie, weil Gesamtterminplan und Arbeitsplanung zwei verschiedene Dokumente mit zwei verschiedenen Aufgaben sind. Der Terminplan beantwortet „werden wir rechtzeitig fertig“, die Vorschau beantwortet „was passiert am Dienstag, und hat jemand den Stahl bestellt“. Der Versuch, eine Baubesprechung mit einem zweihundertzeiligen Programm zu führen, ist der Grund, warum es in A0 gedruckt und danach ignoriert wird.</p>
-        <p>In der Sprache des Last Planner Systems ist die Vorschau der Ort, an dem <em>Randbedingungen</em> auffallen: Die Arbeit ist nah genug, dass man fragen kann, ob Genehmigung, Material, Kolonne und Vorgewerk tatsächlich da sein werden.</p>`],
+      <p>Es gibt sie, weil Gesamtterminplan und Arbeitsplanung zwei verschiedene Dokumente mit zwei verschiedenen Aufgaben sind. Der Terminplan beantwortet „werden wir rechtzeitig fertig“, die Vorschau beantwortet „was passiert am Dienstag, und hat jemand den Stahl bestellt“. Der Versuch, eine Baubesprechung mit einem zweihundertzeiligen Programm zu führen, ist der Grund, warum es in A0 gedruckt und danach ignoriert wird.</p>
+      <p>In der Sprache des Last Planner Systems ist die Vorschau der Ort, an dem <em>Randbedingungen</em> auffallen: Die Arbeit ist nah genug, dass man fragen kann, ob Genehmigung, Material, Kolonne und Vorgewerk tatsächlich da sein werden. Und die drei Wochen sind nicht drei gleichwertige Wochen — sie härten aus, während sie näher rücken:</p>
+      <ul>
+        <li><strong>Woche 1 ist eingefroren.</strong> Die Kolonnen sind disponiert, das Material liegt auf der Baustelle. Nur etwas, das niemand vorhersehen konnte, ändert hier noch eine Zeile.</li>
+        <li><strong>Woche 2 ist zugesagt, aber noch weich.</strong> Die Randbedingungen sind geklärt — oder sie haben einen Namen und ein Datum. Das ist die Woche, in der Sie noch Handlungsraum haben.</li>
+        <li><strong>Woche 3 ist Planung.</strong> Die Arbeit ist benannt und geprüft, aber nicht versprochen. Vorgänge dürfen sich hier verschieben; genau dafür ist diese Woche da.</li>
+      </ul>
+      <!--FIG:rolling|Jeden Montag rückt das Fenster weiter: aus Woche 3 wird Woche 2, Woche 2 friert ein, und eine neue Planungswoche kommt hinzu.-->`],
 
     ['Überlappung statt Enthaltensein — das Detail, das fast alle falsch machen', `<p>Hier ist die Regel, die eine Vorschau richtig macht, und genau die, an der von Hand gebaute Tabellen am häufigsten scheitern.</p>
-        <p>Ein Vorgang gehört in das Fenster, wenn er es <strong>überlappt</strong> — nicht, wenn er vollständig hineinpasst. Das achtmonatige Gründungspaket, das im März begonnen hat und bis November läuft, findet gerade jetzt statt, und es ist genau die Arbeit, die das Baustellenteam vor Augen haben muss. Filtern Sie auf Vorgänge, die innerhalb der drei Wochen beginnen <em>und</em> enden, verlieren Sie jede langlaufende Tätigkeit auf der Baustelle — und behalten eine Vorschau, die aufgeräumt aussieht und ein Projekt beschreibt, an dem niemand arbeitet.</p>
-        <p>Die Prüfung besteht aus zwei Vergleichen, nicht aus vieren:</p>
-        <p><code>Vorgang.Start ≤ Fenster.Ende &nbsp;UND&nbsp; Vorgang.Ende ≥ Fenster.Start</code></p>
-        <p>Das ist die ganze Regel, und gantts.app wendet exakt sie an.</p>`],
+      <p>Ein Vorgang gehört in das Fenster, wenn er es <strong>überlappt</strong> — nicht, wenn er vollständig hineinpasst. Das achtmonatige Gründungspaket, das im März begonnen hat und bis November läuft, findet gerade jetzt statt, und es ist genau die Arbeit, die das Baustellenteam vor Augen haben muss. Filtern Sie auf Vorgänge, die innerhalb der drei Wochen beginnen <em>und</em> enden, verlieren Sie jede langlaufende Tätigkeit auf der Baustelle — und behalten eine Vorschau, die aufgeräumt aussieht und ein Projekt beschreibt, an dem niemand arbeitet.</p>
+      <p>Die Prüfung besteht aus zwei Vergleichen, nicht aus vieren:</p>
+      <p><code>Vorgang.Start ≤ Fenster.Ende &nbsp;UND&nbsp; Vorgang.Ende ≥ Fenster.Start</code></p>
+      <p>Das ist die ganze Regel, und gantts.app wendet exakt sie an. Eine Folge daraus ist erklärungsbedürftig: Eine übergeordnete Phase qualifiziert sich <em>nie</em> über ihre eigenen Termine. Gruppen kommen ausschließlich als <em>Zusammenhang</em> mit — wenn ein Vorgang in ihnen im Fenster liegt, erscheinen die übergeordneten Zeilen als Überschriften und nicht als Arbeit, die Sie zusagen. So landet keine Zeile ohne ihren Kontext in einer flachen Liste, und niemand verspricht versehentlich eine ganze Phase.</p>
+      <!--FIG:lookahead|Nur Balken, die das schattierte Fenster kreuzen, überstehen den Filter; die übergeordneten Zeilen kommen als Zusammenhang mit.-->`],
 
     ['Warum das Fenster auf Montag liegt', `<p>Die Vorschau ist ein wöchentliches Ritual an einer wöchentlichen Besprechung. Ein Fenster von Donnerstag bis Donnerstag würde die Arbeitswoche mitten durchschneiden und wäre für jeden Leser wertlos.</p>
-        <p>Deshalb rastet das Fenster immer auf den Wochenanfang zurück. Öffnen Sie das Werkzeug an einem Mittwoch, erhalten Sie das Fenster, das am Montag begonnen hat, und keinen Dreiwochenblock ab Wochenmitte. Die Pfeile schieben es wochenweise weiter, wenn Sie länger vorausschauen wollen, und „Diese Woche“ bringt es zurück.</p>`],
+      <p>Deshalb rastet das Fenster immer auf den Wochenanfang zurück. Öffnen Sie das Werkzeug an einem Mittwoch, erhalten Sie das Fenster, das am Montag begonnen hat, und keinen Dreiwochenblock ab Wochenmitte. Die Pfeile schieben es wochenweise weiter, wenn Sie länger vorausschauen wollen, und <strong>Diese Woche</strong> bringt es zurück.</p>
+      <p>Gezählt wird in Kalenderwochen, nicht in Arbeitswochen: „drei Wochen voraus“ heißt einundzwanzig Kalendertage und nicht fünfzehn Arbeitstage. Das ist in Deutschland kein Nebensatz, sondern der Grund, warum eine Vorschau über den 1. Mai oder über Christi Himmelfahrt und den folgenden Brückentag deutlich weniger Arbeit enthält als eine gewöhnliche. Wer die Feiertage seines Bundeslandes im Arbeitskalender hinterlegt hat, sieht das im Fenster sofort; wer nicht, verspricht in solchen Wochen zuverlässig zu viel.</p>`],
 
-    ['Erzeugen statt abtippen', `<p>An Vorlagen für die 3-Wochen-Vorschau herrscht kein Mangel — Smartsheet veröffentlicht eine, ein halbes Dutzend anderer ebenfalls, und für Bauvorhaben der US Navy gibt es sogar ein Standardformat. Jede einzelne davon ist ein leeres Raster, das Sie von Hand ausfüllen.</p>
-        <p>Das ist das eigentliche Problem. Die Antwort steckt bereits im Terminplan; die wöchentliche Arbeit besteht im Abschreiben, und aus dem Abschreiben kommen die Fehler und die Veralterung. Ein Vorgang wird vergessen, oder der Gesamtplan wird geändert und die Vorschau nicht — und schon widersprechen sich beide Dokumente stillschweigend.</p>
-        <p>In gantts.app ist die Vorschau eine <em>Ansicht</em> derselben Daten:</p>
-        <ol>
-          <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Vorschau</strong>.</li>
-          <li>Wählen Sie das Fenster — 1, 2, 3, 4, 6 oder 8 Wochen.</li>
-          <li>Schieben Sie es mit den Pfeilen weiter oder springen Sie mit „Diese Woche“ zu heute zurück.</li>
-          <li>Exportieren Sie als PDF oder PNG für die Wand, oder als Excel für die Besprechung.</li>
-        </ol>
-        <p>Das Diagramm zoomt auf das Fenster, sodass drei Wochen lesbar sind statt zu einem Streifen auf einer Achse über achtzehn Monate zusammengedrückt. Ein Band am oberen Rand nennt das gewählte Fenster und die Zahl der ausgeblendeten Vorgänge, denn ein gefiltertes Diagramm, das seine Filterung nicht ausweist, liest sich wie ein Plan mit fehlenden Vorgängen.</p>
-        <p>Ändern Sie ein Datum im Gesamtplan, stimmt die Vorschau bereits. Es gibt nichts erneut abzuschreiben.</p>`],
+    ['Ein durchgerechnetes Beispiel: Quartier Lindenhöfe, Haus C', `<div class="worked">
+      <p><strong>Das Vorhaben.</strong> Haus C des Quartiers Lindenhöfe, ein siebengeschossiger Wohnungsbau; das 1. bis 3. Obergeschoss sind im Ausbau. Bauleiterin Franziska Ortmann führt die Planung mit zwei Polieren: Serkan Yıldız für die technische Gebäudeausrüstung, Marek Wiśniewski für den Trockenbau. <strong>Das Fenster begann Montag, den 20. Juli 2026, und lief bis Sonntag, den 9. August</strong> — 13 von 214 Vorgängen überlappten es.</p>
+      <p><em>Woche 1 — eingefroren, 20. bis 26. Juli.</em> Elektro-Trassen 2. OG, Erstmontage (Yıldız, vier Mann; die Kabeltrassen liegen seit dem 14. Juli auf der Baustelle). Ständerwerk 2. OG, Kopfbefestigung (Wiśniewski, sechs Mann). Schlitz- und Durchbrucharbeiten Steigschacht 3 — begonnen am 2. Juni, Ende am 21. August, taucht also im Fenster auf, obwohl der Vorgang darin weder beginnt noch endet. Genau dafür ist die Überlappungsregel da.</p>
+      <p><em>Woche 2 — zugesagt, 27. Juli bis 2. August.</em> Sprinkler-Abgänge 2. OG (Yıldız), Beplankung Westflügel 2. OG (Wiśniewski), Trassenaufmaß 3. OG. Zwei offene Randbedingungen: Die Abgänge hingen an der Freigabe des geänderten Brandschutzkonzepts durch den Prüfsachverständigen für Brandschutz, und die Gipsplatten für den Westflügel hingen an einer für den 24. Juli zugesagten Lieferung. Ortmann schrieb an beide einen Namen und ein Datum — Freigabe an Yıldız zum 23. Juli, Lieferung an den Einkauf zum 24. Juli.</p>
+      <p><em>Woche 3 — Planung, 3. bis 9. August.</em> Beplankung 3. OG, Elektro-Endmontage 2. OG, Meilenstein „Zwischenabnahme TGA 2. OG“ am 7. August. Nichts davon war versprochen; in dieser Woche wurde benannt, was es blockieren könnte.</p>
+      <p><strong>Eine Woche später rollte das Fenster auf den 27. Juli bis 16. August.</strong> Ortmann drückte einmal auf den Pfeil, abgetippt wurde nichts. Die bislang zugesagte Woche war nun die eingefrorene — und die Sprinkler-Abgänge waren nicht anlaufbereit. Das Brandschutzkonzept kam am 23. Juli nicht zurück; die Stellungnahme des Prüfsachverständigen traf am 29. Juli ein und verlangte eine geänderte lichte Höhe im Flur. Die Abgänge wurden <em>nicht</em> trotzdem in die eingefrorene Woche gezogen. Sie rutschten auf die Woche ab dem 10. August, mit dem Grund „Freigabe offen“, und die vier Mann von Yıldız gingen auf das Trassenaufmaß im 3. OG — das war in der alten Woche 3 bereits als anlaufbereit geprüft worden. Die Gipsplatten kamen am 24. Juli, die Beplankung begann also termingerecht.</p>
+      <p><strong>Die Bewertung.</strong> Für die Woche ab dem 27. Juli waren sechs Zusagen gegeben, fünf wurden wie zugesagt erfüllt: PPC 83 %, ein Grundcode. Dieser Code war in neun Wochen dreimal aufgetreten — und das war es, was das Vorhaben tatsächlich verändert hat. Ortmann nahm Brandschutz-Freigaben auf ein Vorschaufenster von sechs Wochen, weil drei Wochen kürzer waren als die reale Bearbeitungszeit des Prüfsachverständigen.</p>
+      <p><strong>Und ein zweiter Fund im selben Fenster.</strong> Der Trockenbauer hatte Betriebsferien vom 10. bis 21. August gemeldet. Im Gesamtterminplan ging das zwischen 214 Zeilen unter; im Dreiwochenfenster stand es plötzlich am rechten Rand. Zwei Wochen Vorlauf reichten, die Beplankung des 3. OG vorzuziehen und die Kolonne des Estrichlegers um eine Woche nach hinten zu schieben. Genau dafür schaut man drei Wochen voraus und nicht eine.</p>
+    </div>`],
+
+    ['Wonach eine Anlaufprüfung tatsächlich fragt', `<p>Das ist eine Prüfbesprechung, keine Fortschrittsbesprechung: Fragen Sie zu jedem Vorgang, der in Woche 2 einläuft, ob das, was er braucht, auch da sein wird — und wenn nicht, wer es beschafft. Sieben Kategorien decken das ab.</p>
+      <table>
+        <thead><tr><th>Randbedingung</th><th>Die Frage, die Sie stellen</th><th>Wer sie klärt</th></tr></thead>
+        <tbody>
+          <tr><td>Material</td><td>Bestellt? Lieferzeit kürzer als der Vorlauf? Ist Lagerfläche da?</td><td>Einkauf</td></tr>
+          <tr><td>Information und Planung</td><td>Ausführungsplan freigegeben, und ist die Planauskunft zurück?</td><td>Planungskoordination</td></tr>
+          <tr><td>Personal</td><td>Richtiges Gewerk, richtige Zahl, disponiert und unterwiesen für diese Woche?</td><td>Polier des Nachunternehmers</td></tr>
+          <tr><td>Geräte</td><td>Gerät auf der Baustelle, geprüft, nicht doppelt mit einem anderen Gewerk belegt?</td><td>Bauleitung</td></tr>
+          <tr><td>Genehmigungen und Freigaben</td><td>Termin vereinbart — und passt die reale Bearbeitungszeit der Behörde oder des Prüfsachverständigen in das Fenster?</td><td>Wer die Beziehung hält</td></tr>
+          <tr><td>Vorleistung</td><td>Ist das Vorgewerk wirklich fertig und übergeben — nicht „so gut wie fertig“?</td><td>Terminplanung / Paketverantwortung</td></tr>
+          <tr><td>Platz und Zugang</td><td>Kommt die Kolonne hin, mit Gerüst, Beleuchtung und sicherem Weg?</td><td>Bauleitung</td></tr>
+        </tbody>
+      </table>
+      <p>Ein Vorgang mit einer offenen Randbedingung läuft nicht in die eingefrorene Woche ein. Ihn trotzdem hochzustufen ist der Weg, auf dem aus einer Vorschau Dekoration wird — und der Grund, warum Teams nach einem halben Jahr sagen, das Verfahren habe bei ihnen nicht funktioniert.</p>`],
+
+    ['PPC: die Zusage messen', `<p>Eine Vorschau, die niemand bewertet, ist nur ein kürzeres Gantt-Diagramm. Das Ergebnis sind nicht die gefilterten Zeilen — es ist eine <strong>Zusage</strong>, und eine Zusage, die niemand misst, ist ein Wunsch.</p>
+      <p>Das Maß dafür ist der <strong>PPC</strong>, der Prozentsatz eingehaltener Zusagen. Am Ende der eingefrorenen Woche teilen Sie die wie zugesagt erledigten Vorgänge durch die zugesagten Vorgänge. Sechs zugesagt, fünf erledigt: 83 %. Es gibt keine Teilpunkte — ein zu 90 Prozent erledigter Vorgang zählt null, weil das Gewerk dahinter trotzdem nicht anfangen kann.</p>
+      <p>Diese Härte ist der Sinn der Sache: Der PPC misst, wie verlässlich Ihre Planung ist, und nicht, wie viel gearbeitet wurde. Eine Woche mit enormem ungeplantem Einsatz, die die Hälfte ihrer Zusagen liegen lässt, ist eine schlechte Woche, denn alle nachgelagerten Gewerke haben sich auf die Zusage eingerichtet.</p>
+      <p>Wichtiger als die Zahl ist der <em>Grund</em>, der an jeder verfehlten Zusage hängt. Ein Code je gescheitertem Vorgang — Freigabe offen, Material zu spät, Vorgewerk unfertig, Witterung, Planungsänderung. Nach zehn Wochen stapeln sie sich und benennen die eine Sache, deren Behebung sich lohnt.</p>
+      <p>Neue Teams landen bei 50 bis 60 Prozent; wer Randbedingungen konsequent abräumt, kommt auf 75 bis 85. Wochenlang über 90 Prozent heißt meist, dass die Planung gepolstert ist. Verfolgen Sie den Verlauf und die Codes, nicht den absoluten Wert.</p>
+      <!--FIG:milestone|Bewerten Sie die Woche gegen das, was zugesagt war — nicht gegen das, was sich als bequem herausgestellt hat.-->`],
+
+    ['Erzeugen statt abtippen', `<p>An Vorlagen für die 3-Wochen-Vorschau herrscht kein Mangel; jede einzelne davon ist ein leeres Raster, das Sie von Hand ausfüllen. Das ist das eigentliche Problem. Die Antwort steckt bereits im Terminplan; die wöchentliche Arbeit besteht im Abschreiben, und aus dem Abschreiben kommen die Fehler und die Veralterung. Ein Vorgang wird vergessen, oder der Gesamtplan wird geändert und die Vorschau nicht — und schon widersprechen sich beide Dokumente stillschweigend.</p>
+      <p>In gantts.app ist die Vorschau eine <em>Ansicht</em> derselben Daten:</p>
+      <ol>
+        <li>Stellen Sie <strong>Ansicht</strong> auf <strong>Vorschau</strong>.</li>
+        <li>Wählen Sie das Fenster — 1, 2, 3, 4, 6 oder 8 Wochen.</li>
+        <li>Schieben Sie es mit den Pfeilen weiter oder springen Sie mit <strong>Diese Woche</strong> zu heute zurück.</li>
+        <li>Blenden Sie über <strong>Spalten</strong> die Spalte <strong>Zuständig</strong> ein, damit auf jeder Zeile ein Name steht.</li>
+        <li>Exportieren Sie über <strong>⬇ Export</strong> als <strong>📄 PDF-Dokument</strong> oder <strong>🖼 PNG-Bild</strong> für die Wand im Baucontainer, oder als <strong>📊 Excel (.xlsx)</strong> für die Besprechung.</li>
+        <li>Mit <strong>Alle Vorgänge anzeigen</strong> kehren Sie zum vollständigen Terminplan zurück.</li>
+      </ol>
+      <p>Das Diagramm zoomt auf das Fenster, sodass drei Wochen lesbar sind statt zu einem Streifen auf einer Achse über achtzehn Monate zusammengedrückt. Ein Band am oberen Rand nennt das gewählte Fenster und die Zahl der angezeigten Vorgänge — etwa „3-Wochen-Vorschau · 20. Juli bis 9. August — 13 von 214 Vorgängen“ —, denn ein gefiltertes Diagramm, das seine Filterung nicht ausweist, liest sich wie ein Plan mit fehlenden Vorgängen.</p>
+      <p>Das Fenster folgt standardmäßig dem heutigen Tag und rollt damit zwischen zwei Besuchen von selbst weiter; die Pfeile heften es an einen bestimmten Montag, bis Sie „Diese Woche“ drücken. Ändern Sie ein Datum im Gesamtplan, stimmt die Vorschau bereits. Es gibt nichts erneut abzuschreiben.</p>`],
 
     ['Ein brauchbares Dokument, nicht nur ein Filter', `<ul>
-          <li><strong>Auf jede Zeile gehört ein Name.</strong> Eine Vorschau ohne Verantwortliche je Vorgang ist eine Liste von Hoffnungen. Schalten Sie die Spalte für die Zuständigkeit ein.</li>
-          <li><strong>Gliedern Sie die nahe Arbeit feiner als die ferne.</strong> Ein Vorgang „Ausbau erstes Obergeschoss — 6 Wochen“ ist im Terminplan in Ordnung und in einer Vorschau nutzlos. Teilen Sie ihn auf, während er näher rückt.</li>
-          <li><strong>Prüfen Sie Randbedingungen, nicht nur Termine.</strong> Der Wert des Blicks drei Wochen nach vorn liegt darin, dass noch Zeit bleibt, Fehlendes zu beschaffen.</li>
-          <li><strong>Halten Sie sie kurz.</strong> Umfasst die Vorschau sechzig Zeilen, ist entweder das Fenster zu lang oder der Plan für diese Besprechung zu fein.</li>
-        </ul>`],
+        <li><strong>Auf jede Zeile gehört ein Name.</strong> Eine Vorschau ohne Verantwortliche je Vorgang ist eine Liste von Hoffnungen.</li>
+        <li><strong>Gliedern Sie die nahe Arbeit feiner als die ferne.</strong> Ein Vorgang „Ausbau erstes Obergeschoss — 6 Wochen“ ist im Terminplan in Ordnung und in einer Vorschau nutzlos. Teilen Sie ihn auf, während er näher rückt.</li>
+        <li><strong>Prüfen Sie Randbedingungen, nicht nur Termine.</strong> Der Wert des Blicks drei Wochen nach vorn liegt darin, dass noch Zeit bleibt, Fehlendes zu beschaffen.</li>
+        <li><strong>Halten Sie sie kurz.</strong> Umfasst die Vorschau sechzig Zeilen, ist entweder das Fenster zu lang oder der Plan für diese Besprechung zu fein.</li>
+        <li><strong>Prüfen Sie langlaufende Positionen auf einem längeren Horizont.</strong> Wenn eine Freigabestelle fünf Wochen braucht, findet ein Dreiwochenfenster das Problem jedes Mal — und jedes Mal zu spät.</li>
+        <li><strong>Schreiben Sie die Fehlschläge auf.</strong> Ein Grundcode, der nur auf einem Whiteboard im Baucontainer steht, ist am Donnerstag verschwunden.</li>
+      </ul>`],
   ],
+  callout: 'Die Vorschau ist nicht das Ergebnis — die Zusage ist es. Wenn der Montag ein gefiltertes Diagramm hervorbringt, aber keine Bewertung der vergangenen Woche, haben Sie den Papierkram automatisiert und das Verfahren selbst übersprungen.',
   faq: [
-    ['Was ist eine 3-Wochen-Vorschau?', 'Ein rollierender Auszug aus dem Gesamtterminplan, der nur die Arbeit zeigt, die die nächsten drei Wochen berührt. Sie wird wöchentlich fortgeschrieben und dient dazu, die tägliche Arbeit abzustimmen und Randbedingungen zu erkennen, solange noch Zeit bleibt.'],
+    ['Was ist eine 3-Wochen-Vorschau?', 'Ein rollierender Auszug aus dem Gesamtterminplan, der nur die Arbeit zeigt, die die nächsten drei Wochen berührt. Sie wird wöchentlich fortgeschrieben und dient dazu, die tägliche Arbeit abzustimmen und Randbedingungen zu erkennen, solange noch Zeit bleibt, sie zu klären.'],
     ['Warum drei Wochen?', 'Lang genug, dass sich Randbedingungen — Material, Genehmigungen, Kolonnen — noch klären lassen, und kurz genug, dass die Termine glaubwürdig sind. Zwei, vier und sechs Wochen sind ebenfalls üblich; die richtige Länge hängt von Ihren Vorlaufzeiten ab.'],
-    ['Gehört ein lange laufender Vorgang in die Vorschau?', 'Ja. Alles, was das Fenster überlappt, gehört hinein. Ein Filter auf Vorgänge, die vollständig in die drei Wochen passen, entfernt genau die langlaufende Arbeit, die gerade stattfindet.'],
-    ['Ist die Vorschau dasselbe wie der Gesamtterminplan?', 'Nein. Der Gesamtterminplan beantwortet, ob das Projekt rechtzeitig fertig wird. Die Vorschau beantwortet, was diese Woche passiert und wer es macht. Beide stammen aus denselben Daten, dienen aber verschiedenen Besprechungen.'],
-    ['Kann man eine Vorschau in Excel erstellen?', 'Ja, und die meisten Teams tun es — indem sie jede Woche Zeilen aus dem Terminplan abtippen. Wird sie als Ansicht des Plans erzeugt, entfallen das Abtippen und das damit verbundene Auseinanderlaufen.'],
-    ['Wie drucke ich die Vorschau?', 'Wechseln Sie in die Vorschau-Ansicht und exportieren Sie als PDF oder PNG. Der Export gibt wieder, was auf dem Bildschirm steht, Sie erhalten also das Fenster und nicht den gesamten Terminplan.'],
+    ['Gehört ein lange laufender Vorgang in die Vorschau?', 'Ja. Alles, was das Fenster überlappt, gehört hinein. Ein Filter auf Vorgänge, die vollständig in die drei Wochen passen, entfernt genau die langlaufende Arbeit, die gerade stattfindet. Phasen dagegen erscheinen nie wegen ihrer eigenen Termine, sondern nur als Überschrift über einem Vorgang im Fenster.'],
+    ['Was ist der PPC und was ist ein guter Wert?', 'Wie zugesagt erledigte Vorgänge geteilt durch zugesagte Vorgänge, ohne Teilpunkte. Neue Teams erreichen 50 bis 60 Prozent, 75 bis 85 ist gut, dauerhaft über 90 deutet auf gepolsterte Planung hin. Die Grundcodes hinter den Fehlschlägen sagen mehr als die Zahl.'],
+    ['Was passiert mit einem Vorgang, der nicht anlaufbereit ist?', 'Er rückt aus der eingefrorenen Woche heraus, statt trotzdem zugesagt zu werden, der Grund wird festgehalten, und die Kolonne geht auf Arbeit, die bereits als anlaufbereit geprüft ist. Einen unfertigen Vorgang hochzustufen zerstört genau die Verlässlichkeit, für die es die Vorschau gibt.'],
+    ['Kann man eine Vorschau in Excel erstellen, und wie drucke ich sie?', 'In Excel tun es die meisten Teams — indem sie jede Woche Zeilen aus dem Terminplan abtippen. Wird sie als Ansicht des Plans erzeugt, entfallen das Abtippen und das Auseinanderlaufen beider Dokumente. Zum Drucken wechseln Sie in die Vorschau-Ansicht und exportieren als PDF oder PNG; der Export gibt wieder, was auf dem Bildschirm steht, Sie erhalten also das Fenster und nicht den gesamten Terminplan.'],
   ],
-  related: [['critical-path-method', 'Der kritische Pfad'], ['s-curve-project-management', 'S-Kurve und Fertigstellungswert'], ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten']],
+  related: [
+    ['critical-path-method', 'Der kritische Pfad'],
+    ['s-curve-project-management', 'S-Kurve und Fertigstellungswert'],
+    ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'],
+  ],
 },
 
 'mermaid-gantt-chart': {
   h1: 'Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor',
   metaTitle: 'Mermaid-Gantt-Syntax mit Live-Editor',
-  metaDesc: 'Die Mermaid-Gantt-Syntax erklärt: Abschnitte, Tags, Abhängigkeiten und excludes, dazu die typischen Fallstricke und das visuelle Bearbeiten.',
+  metaDesc: 'Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor.',
   date: '2026-07-19',
-  lead: 'Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax, die Fallstricke und der fehlende Schritt — visuell bearbeiten und den Text zurückbekommen.',
+  lead: 'Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet: ins Repository, prüfbar im Pull Request. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax Feld für Feld, ein vollständiges Beispiel zum Einfügen, die Fallstricke, die tadellos rendern und trotzdem falsch sind — und der fehlende Schritt: visuell bearbeiten und den Text zurückbekommen.',
   figIntro: 'Derselbe Terminplan als Text und als Balken:',
   sections: [
-    ['Die Syntax in einem Durchgang', `<p>Ein Gantt-Block beginnt mit <code>gantt</code> und einigen Kopfzeilen, danach folgen <code>section</code>-Überschriften mit Vorgangszeilen darunter.</p>
-        <p>Eine Vorgangszeile besteht aus einem Namen, einem Doppelpunkt und dann kommagetrennten Feldern:</p>
-        <p><code>Name des Vorgangs :tag, id, start, dauer</code></p>
-        <ul>
-          <li><strong>Tags</strong> — eines von <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Optional.</li>
-          <li><strong>id</strong> — ein einzelnes Wort, nur nötig, wenn sich etwas anderes auf diesen Vorgang bezieht.</li>
-          <li><strong>start</strong> — ein Datum, oder <code>after eineId</code>, oder weggelassen, um an den vorigen Vorgang anzuschließen.</li>
-          <li><strong>dauer</strong> — <code>5d</code>, <code>2w</code>, oder ein zweites Datum.</li>
-        </ul>
-        <p>Wissenswerte Kopfzeilen: <code>dateFormat</code> (wie Ihre Daten geschrieben sind), <code>excludes weekends</code> (Samstag und Sonntag überspringen), <code>title</code> und <code>axisFormat</code> (Beschriftung der Achse).</p>`],
+    ['Die Syntax in einem Durchgang', `<p>Ein Gantt-Block beginnt mit dem Schlüsselwort <code>gantt</code> und einigen Kopfzeilen, danach folgen <code>section</code>-Überschriften mit Vorgangszeilen darunter. Die Einrückung ist Konvention und nicht Grammatik — Mermaid liest den Block auch ohne sie.</p>
+      <p>Eine Vorgangszeile besteht aus einem Namen, einem Doppelpunkt und dann kommagetrennten Feldern:</p>
+      <p><code>Name des Vorgangs :tag, id, start, dauer</code></p>
+      <ul>
+        <li><strong>Tags</strong> — beliebig viele aus <code>done</code>, <code>active</code>, <code>crit</code> und <code>milestone</code>, in beliebiger Reihenfolge. Optional.</li>
+        <li><strong>id</strong> — ein einzelnes Wort ohne Leerzeichen, nur nötig, wenn sich etwas anderes über <code>after</code> auf diesen Vorgang bezieht.</li>
+        <li><strong>start</strong> — ein Datum, oder <code>after eineId</code>, oder ganz weggelassen, um an den Vorgang darüber anzuschließen.</li>
+        <li><strong>dauer</strong> — <code>5d</code>, <code>2w</code>, oder ein zweites absolutes Datum.</li>
+      </ul>
+      <p>Wissenswerte Kopfzeilen: <code>dateFormat</code> (wie die Daten in <em>Ihrer</em> Datei geschrieben sind), <code>excludes weekends</code>, <code>title</code> und <code>axisFormat</code> (wie die Achse beschriftet wird, in strftime-Codes). Die Felder werden nach ihrer Form erkannt und nicht streng nach ihrer Position — deshalb funktionieren <code>:done, spec, 2026-03-02, 5d</code> und <code>:spec, done, 2026-03-02, 5d</code> gleichermaßen.</p>
+      <!--FIG:syntax|Jedes Feld einer Mermaid-Vorgangszeile — und welche davon optional sind.-->`],
 
-    ['Vier Dinge, über die Sie stolpern werden', `<p><strong>1. Dauern schließen den Starttag ein.</strong> <code>5d</code> ab Montag, dem 5., läuft bis Freitag, den 9., nicht bis zum 10. Ein Fehler um eins verschiebt hier jeden Vorgang der Datei — und wird trotzdem tadellos gerendert.</p>
-        <p><strong>2. <code>after</code> zusammen mit <code>excludes weekends</code> ist die eigentliche Fehlerquelle.</strong> Endet ein Vorgänger an einem Freitag, beginnt sein Nachfolger am <em>Montag</em> — nicht am Samstag. Jedes Werkzeug, das <code>after</code> durch Addition eines Kalendertages auflöst, legt Vorgänge klammheimlich auf Wochenenden in einer Datei, die genau das verbietet. (Unseres tat es kurzzeitig. Der Test, der es gefunden hat, prüft heute, dass kein abgeleitetes Datum auf einen ausgeschlossenen Tag fällt.)</p>
-        <p><strong>3. Es gibt keine Maskierung.</strong> Ein Doppelpunkt beginnt die Feldliste und ein Komma trennt die Felder — ein Vorgang namens <code>Phase 2: Entwurf, Prüfung</code> wird also zu etwas völlig anderem. Halten Sie Doppelpunkte und Kommas aus Vorgangsnamen heraus.</p>
-        <p><strong>4. Eine unlesbare Dauer wird stillschweigend null.</strong> Schreiben Sie <code>3dd</code>, erhalten Sie einen Balken der Länge null statt einer Fehlermeldung.</p>`],
+    ['Ein Beispiel, das Sie in eine README einfügen können', `<p>Ein vollständiger, gültiger Block für eine reale Aufgabe: die Ablösung der internen Zeiterfassungs-API eines mittelständischen Unternehmens, Version 1 auf Version 2. Er nutzt Abschnitte, absolute Daten, <code>after</code>-Ketten, alle Tags, einen Meilenstein sowie ausgeschlossene Wochenenden und Feiertage. Fügen Sie ihn in einen Codeblock mit der Sprache <code>mermaid</code> in einer beliebigen Markdown-Datei auf GitHub ein, und er wird gerendert.</p>
+      <div class="worked">
+        <pre><code>gantt
+    title Abloesung der Zeiterfassungs-API (v1 auf v2)
+    dateFormat YYYY-MM-DD
+    axisFormat %d.%m.
+    excludes weekends 2026-04-03 2026-04-06 2026-05-01
 
-    ['Was Mermaid nicht ausdrücken kann', `<p>Es ist ein Diagrammformat, keine Terminplanungsmaschine, und die Lücken zählen, sobald man hin und zurück konvertiert:</p>
+    section Analyse
+    Bestand v1 erheben        :done, best, 2026-03-02, 5d
+    OpenAPI-Spezifikation     :done, spec, after best, 4d
+    Spezifikation abstimmen   :active, abst, after spec, 2d
+
+    section Datenschutz und Mitbestimmung
+    Datenschutz-Folgenabschaetzung  :crit, dsfa, after abst, 8d
+    Betriebsvereinbarung verhandeln :crit, bv, after dsfa, 15d
+    Betriebsvereinbarung unterzeichnet :milestone, bvm, 2026-04-24, 0d
+
+    section Umsetzung
+    Authentifizierungsdienst  :auth, after bvm, 10d
+    Fachendpunkte             :fach, after auth, 12d
+    Client-SDK neu erzeugen   :sdk, after fach, 3d
+
+    section Umstellung
+    Testbetrieb               :test, after sdk, 5d
+    Abschaltung v1            :ab, after test, 2w</code></pre>
+        <p>Zeile für Zeile gelesen:</p>
         <ul>
-          <li><strong>Kein Fortschritt in Prozent.</strong> Nur <code>done</code> und <code>active</code>. Ein Vorgang mit 40 Prozent und einer mit 90 Prozent sind beide schlicht „active“.</li>
-          <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende und Abstände haben keinen Platz.</li>
-          <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen.</li>
-          <li><strong>Keine Ressourcen, Kosten oder Basispläne.</strong></li>
+          <li><code>dateFormat YYYY-MM-DD</code> sagt Mermaid, wie es die von Ihnen getippten Daten <em>lesen</em> soll. Das ist das Eingabeformat, nicht das Ausgabeformat — es zu ändern ändert die Achse nicht.</li>
+          <li><code>axisFormat %d.%m.</code> ist die Ausgabeseite: Die Achse liest sich als „02.03.“ statt als ISO-Datum, also so, wie ein deutscher Leser Termine erwartet. Für alles, was länger als ein Quartal läuft, ist <code>%V</code> mit Kalenderwochen die bessere Wahl.</li>
+          <li><code>excludes weekends 2026-04-03 2026-04-06 2026-05-01</code> lässt jeden Balken über Samstag und Sonntag springen und zusätzlich über Karfreitag, Ostermontag und den 1. Mai. Das gilt für das gesamte Diagramm; es gibt keine Ausnahme je Vorgang. Wer bundeslandspezifische Feiertage braucht — Fronleichnam etwa —, hängt sie einfach an dieselbe Zeile an.</li>
+          <li><code>Bestand v1 erheben :done, best, 2026-03-02, 5d</code> — Tag, id, ein absoluter Beginn (ein Montag), fünf Tage. Dauern schließen den Starttag ein, dieser Vorgang endet also am Freitag, dem 6. März.</li>
+          <li><code>after best</code> heißt „beginne, wenn <code>best</code> fertig ist“ — bei ausgeschlossenen Wochenenden also am Montag, dem 9. März, und nicht am Samstag, dem 7.</li>
+          <li><code>:crit, dsfa, ...</code> färbt den Balken in der Farbe des kritischen Pfads. Beachten Sie: <em>färbt</em> — mehr dazu weiter unten.</li>
+          <li><code>Fachendpunkte :fach, after auth, 12d</code> trägt überhaupt kein Tag; das erste Feld ist nur eine id. Ohne Tag gilt der Vorgang als anstehende Arbeit.</li>
+          <li><code>Betriebsvereinbarung unterzeichnet :milestone, bvm, 2026-04-24, 0d</code> ist eine Marke ohne Länge auf einem festen Datum. Meilensteine bekommen wie alles andere eine id, deshalb ist <code>after bvm</code> in der nächsten Zeile zulässig. Dass die Umsetzung erst nach der Unterschrift beginnt, ist hier kein Zieren: Ein System, das Arbeitszeit erfasst, unterliegt der Mitbestimmung, und ohne Betriebsvereinbarung darf es nicht in Betrieb gehen.</li>
+          <li><code>2w</code> sind zwei Wochen. Mermaid akzeptiert auch <code>h</code> und <code>m</code>, was hier selten hilft.</li>
         </ul>
-        <p>Der Hin- und Rückweg verliert also etwas, aber auf bekannte, langweilige Weise. gantts.app schreibt beim Export 100 Prozent als <code>done</code> und alles dazwischen als <code>active</code> und liest <code>active</code> beim Import als 50 Prozent zurück — eine Schätzung, auf die es hinweist, statt sie Sie in einem Statusbericht entdecken zu lassen. Verknüpfungen, die sich nicht als <code>after</code> schreiben lassen, werden zu festen Terminen, die korrekt bleiben, auch wenn sie nicht mehr pflegbar sind.</p>
-        <p>Eine Asymmetrie ist Absicht: <code>crit</code> wird exportiert, beim Import aber ignoriert. Kritikalität wird aus dem Abhängigkeitsnetz <em>berechnet</em>, und einem Wert zu vertrauen, der in einem womöglich veralteten Diagramm behauptet wird, würde eine unkritische Kette rot einfärben.</p>`],
+        <p>Die Leerzeilen zwischen den Abschnitten sind Dekoration — Mermaid ignoriert sie, und unser Import tut es ebenso. Lassen Sie sie trotzdem stehen; ein Block mit vierzig Vorgängen ist ohne sie in einem Diff nicht lesbar.</p>
+      </div>`],
+
+    ['Referenz der Vorgangszeile', `<p>Jedes Feld, was es bewirkt und wie es in der Praxis aussieht.</p>
+      <table>
+        <thead><tr><th>Feld oder Zusatz</th><th>Beispiel</th><th>Wirkung</th></tr></thead>
+        <tbody>
+          <tr><td><code>id</code></td><td><code>best</code></td><td>Ein einzelnes Wort, das den Vorgang benennt, damit <code>after</code> sich darauf beziehen kann. Keine Leerzeichen, keine Satzzeichen. Optional, solange nichts von dem Vorgang abhängt.</td></tr>
+          <tr><td><code>after</code></td><td><code>after best</code></td><td>Beginnt, wenn der genannte Vorgang endet. Nur Ende-Anfang, ohne Zeitabstand. Mehrere ids sind erlaubt — <code>after a b</code> wartet auf den späteren der beiden.</td></tr>
+          <tr><td><code>done</code></td><td><code>:done, best, …</code></td><td>Zeichnet den Balken als abgeschlossen. Ohne Prozentwert — 100 Prozent und „im Grunde fertig“ sehen identisch aus.</td></tr>
+          <tr><td><code>active</code></td><td><code>:active, abst, …</code></td><td>Zeichnet den Balken als laufend. Ebenfalls ohne jede Zahl daran.</td></tr>
+          <tr><td><code>crit</code></td><td><code>:crit, dsfa, …</code></td><td>Färbt den Balken als kritisch. Eine Behauptung, die Sie tippen, und nichts, was Mermaid ableitet — nichts prüft sie gegen das Abhängigkeitsnetz.</td></tr>
+          <tr><td><code>milestone</code></td><td><code>:milestone, bvm, …</code></td><td>Zeichnet eine Raute statt eines Balkens. Sinnvoll nur zusammen mit <code>0d</code>.</td></tr>
+          <tr><td>Dauereinheiten</td><td><code>5d</code> · <code>2w</code> · <code>8h</code></td><td>Tage, Wochen, Stunden (auch <code>m</code>). Einschließlich des Starttags: <code>5d</code> ab Montag endet am Freitag.</td></tr>
+          <tr><td>Enddatum</td><td><code>2026-03-02, 2026-03-06</code></td><td>Ein zweites Datum statt einer Dauer, für ein von außen festgelegtes Ende.</td></tr>
+          <tr><td><code>dateFormat</code></td><td><code>dateFormat YYYY-MM-DD</code></td><td>Wie die Daten in der Datei gelesen werden. Kopfzeile, einmal je Diagramm.</td></tr>
+          <tr><td><code>axisFormat</code></td><td><code>axisFormat %d.%m.</code></td><td>Wie die Achse beschriftet wird, in strftime-Codes. Rein kosmetisch.</td></tr>
+          <tr><td><code>excludes</code></td><td><code>excludes weekends</code></td><td>Arbeitsfreie Tage. Nimmt auch einzelne Daten (<code>excludes 2026-04-06</code>) und Wochentagsnamen. Gilt für das ganze Diagramm.</td></tr>
+        </tbody>
+      </table>`],
+
+    ['Vier Dinge, über die Sie stolpern werden', `<p><strong>1. Dauern schließen den Starttag ein.</strong> <code>5d</code> ab Montag, dem 5., läuft bis Freitag, den 9., nicht bis zum 10. Ein Fehler um eins verschiebt hier jeden Vorgang der Datei und wird trotzdem tadellos gerendert — das ist die schlimmste denkbare Fehlerart, weil nichts kaputt aussieht.</p>
+      <p><strong>2. <code>after</code> zusammen mit <code>excludes weekends</code> ist die eigentliche Fehlerquelle.</strong> Endet ein Vorgänger an einem Freitag, beginnt sein Nachfolger am <em>Montag</em> — nicht am Samstag. Jedes Werkzeug, das <code>after</code> durch Addition eines einzelnen Kalendertages auflöst, legt Vorgänge klammheimlich auf Wochenenden in einer Datei, die genau das verbietet, und ab dort läuft jedes weitere Datum weg. Unseres tat das kurzzeitig. Die Korrektur führt die Rechnung über den Arbeitskalender, damit der Import mit dem übereinstimmt, was Mermaid zeichnet; der absichernde Test prüft die Eigenschaft statt bestimmter Daten: Kein <em>abgeleitetes</em> Anfangs- oder Enddatum darf auf einen ausgeschlossenen Tag fallen. Daten, die Sie selbst getippt haben, bleiben dagegen stehen, wo Sie sie hingeschrieben haben, Wochenende hin oder her — das ausdrückliche Datum einer Autorin stillschweigend zu verschieben ist die falsche Art von Hilfsbereitschaft.</p>
+      <p><strong>3. Es gibt keine Maskierung.</strong> Ein Doppelpunkt beginnt die Feldliste und ein Komma trennt die Felder — aus <code>Phase 2: Entwurf, Prüfung</code> wird also ein Vorgang namens „Phase 2“ mit unsinnigen Feldern. Halten Sie Doppelpunkte, Kommas und Semikolons aus Vorgangsnamen heraus; beim Export ersetzen wir sie durch Leerzeichen, statt eine Zeile auszugeben, die sich nicht lesen lässt.</p>
+      <p><strong>4. Eine unlesbare Dauer wird stillschweigend null.</strong> Schreiben Sie <code>3dd</code>, erhalten Sie einen Balken der Länge null statt einer Fehlermeldung. Suchen Sie nach jeder größeren Änderung gezielt nach unsichtbaren Vorgängen.</p>
+      <!--FIG:deps|„after“ ist eine Ende-Anfang-Verknüpfung ohne Zeitabstand — die einzige Verknüpfungsart, die das Format kennt.-->`],
+
+    ['Die Grenzen eines Diagrammformats', `<p>Mermaid gantt ist eine Darstellungssprache und keine Terminplanungsmaschine. Der Unterschied fällt in dem Moment auf, in dem das Diagramm eine Frage <em>beantworten</em> statt eine Antwort bebildern soll.</p>
+      <ul>
+        <li><strong>Keine Ressourcen.</strong> Kein Feld für die zuständige Person, keine Kosten, kein Aufwand. Sie können in Mermaid niemanden überlasten, weil Mermaid nicht weiß, dass es Menschen gibt.</li>
+        <li><strong>Kein Puffer und kein berechneter kritischer Pfad.</strong> <code>crit</code> ist eine Farbe, die Sie von Hand vergeben. Nichts läuft das Abhängigkeitsnetz ab, nichts rechnet frühe und späte Lagen aus, nichts sagt Ihnen, welche Kette das Enddatum bestimmt. Ein Diagramm, in dem jeder Balken <code>crit</code> trägt, ist genauso gültig wie eines, in dem es keiner tut.</li>
+        <li><strong>Kein Basisplan.</strong> Es gibt keine Stelle, an der stünde, was der Plan im vergangenen Monat gesagt hat — also auch keine Abweichung und keinen messbaren Verzug.</li>
+        <li><strong>Nur Ende-Anfang.</strong> <code>after</code> ist eine EA-Verknüpfung ohne Zeitabstand. Anfang-Anfang, Ende-Ende, Anfang-Ende und jeder Zeitabstand haben keinen Platz. Echte Pläne stecken voller Sätze wie „der Test beginnt drei Tage nach dem Beginn der Entwicklung“ — in Mermaid wird daraus ein fest eingetragenes Datum, und die Verknüpfung ist verschwunden.</li>
+        <li><strong>Kein Fortschritt in Prozent.</strong> Ein Vorgang bei 40 Prozent und einer bei 90 Prozent sind beide schlicht <code>active</code>.</li>
+        <li><strong>Flache Abschnitte.</strong> Keine verschachtelten Gruppen, eine Gliederung mit mehr als einer Ebene wird beim Einlesen also flach.</li>
+      </ul>
+      <p>Nichts davon macht Mermaid zu einem schlechten Format. Es macht es zu einem <em>Veröffentlichungsformat</em> — gut darin, einen Terminplan zu zeigen, ungeeignet, einen herzuleiten. Genau deshalb zählt der Rückweg.</p>`],
 
     ['Visuell bearbeiten, dann den Text zurückkopieren', `<p>Mermaid rendern können viele Werkzeuge. Gefehlt hat die Gegenrichtung — Balken ziehen und die Syntax wieder herausbekommen.</p>
-        <ol>
-          <li>Fügen Sie Ihr Diagramm in gantts.app ein oder öffnen Sie es dort — eine <code>.mmd</code>-Datei oder eine <code>.md</code>-Datei mit einem eingebetteten Block, beides funktioniert. Ein Gantt-Block wird an seinem Inhalt erkannt, nicht an der Dateiendung.</li>
-          <li>Ziehen, verknüpfen und umdatieren Sie wie in jedem anderen Diagramm. <code>excludes weekends</code> schaltet den Arbeitskalender ein, sodass die erzeugten Termine zu der Datei passen, aus der sie stammen.</li>
-          <li><strong>Export ▸ Mermaid gantt</strong>, kopieren, zurück in Ihre README einfügen.</li>
-        </ol>
-        <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>`],
+      <ol>
+        <li>Fügen Sie Ihr Diagramm über <strong>✨ In Gantt einfügen</strong> ein oder öffnen Sie die Datei über <strong>📂 Öffnen</strong> — eine <code>.mmd</code>-Datei oder eine <code>.md</code>-Datei mit eingebettetem Block, beides funktioniert. Ein Gantt-Block wird an seinem Inhalt erkannt, nicht an der Dateiendung.</li>
+        <li>Ziehen, verknüpfen und umdatieren Sie wie in jedem anderen Diagramm. <code>excludes weekends</code> schaltet den Arbeitskalender ein, sodass die erzeugten Termine zu der Datei passen, aus der sie stammen; unter <strong>Kalender</strong> ergänzen Sie die Feiertage Ihres Bundeslandes.</li>
+        <li>Setzen Sie den Haken bei <strong>Kritischer Pfad</strong>. Die schraffierten Balken sind das berechnete Ergebnis — und nicht das, was in der Datei behauptet wurde.</li>
+        <li>Über <strong>⬇ Export</strong> ▸ <strong>🧜 Mermaid-Gantt (Text)</strong> erhalten Sie den aktualisierten Text, entweder über <strong>In die Zwischenablage kopieren</strong> oder als <strong>.mmd herunterladen</strong>. Zurück in die README einfügen, Diff einchecken, fertig.</li>
+      </ol>
+      <p>Der Hin- und Rückweg verliert etwas, aber auf bekannte, langweilige Weise. Der Fortschritt wird beim Export als 100 Prozent auf <code>done</code> und alles zwischen 1 und 99 Prozent auf <code>active</code> abgebildet; beim Import kommt <code>active</code> als 50 Prozent zurück — eine Schätzung, auf die Sie hingewiesen werden, statt sie später in einem Statusbericht zu entdecken. Verknüpfungen, die sich nicht als <code>after</code> schreiben lassen — alles mit Zeitabstand und jede AA-, EE- oder AE-Beziehung —, fallen auf feste Termine zurück. Die bleiben korrekt, hören aber auf, pflegbar zu sein.</p>
+      <p>Eine Asymmetrie ist Absicht und kein Fehler: <strong><code>crit</code> wird exportiert, aber niemals importiert.</strong> Auf dem Weg hinaus ist der Wert abgeleitet — der Editor hat den kritischen Pfad aus dem Abhängigkeitsnetz berechnet, das Tag ist im Moment des Schreibens also wahr. Auf dem Weg hinein ist es ein Wort, das jemand in eine womöglich wochenalte Datei getippt hat; ihm zu vertrauen hieße, eine unkritische Kette rot einzufärben. Also wird es geschrieben und danach ignoriert: Der kritische Pfad, den Sie nach einem Import sehen, ist neu berechnet und nicht behauptet.</p>
+      <p>Für alle, die Terminpläne mit einem Sprachmodell entwerfen, gibt es einen angenehmen Nebeneffekt: Lassen Sie sich Mermaid-Gantt-Syntax ausgeben, fügen Sie die Antwort ein, und Sie haben ein echtes, bearbeitbares Diagramm mit berechnetem kritischem Pfad — ohne API-Schlüssel und ohne Server.</p>`],
   ],
+  callout: 'Mermaid ist ein Veröffentlichungsformat, kein Planungswerkzeug. Der Terminplan darf im Repository leben, aber alles, was gerechnet werden muss — kritischer Pfad, Puffer, Abweichung gegen einen Basisplan —, entsteht außerhalb der Datei und wird dann hineingeschrieben. Wer die Reihenfolge umdreht, pflegt am Ende Daten von Hand, die eine Maschine ableiten könnte.',
   faq: [
     ['Wie schreibt man ein Gantt-Diagramm in Mermaid?', 'Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“.'],
-    ['Schließt 5d in Mermaid den Starttag ein?', 'Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag.'],
-    ['Wie funktionieren Abhängigkeiten in Mermaid gantt?', 'Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand — Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken.'],
-    ['Kann Mermaid den Fortschritt in Prozent zeigen?', 'Nein. Es gibt nur die Tags done und active. Beim Import ist jeder Prozentwert eine Schätzung; gantts.app setzt 50 Prozent und weist darauf hin.'],
-    ['Wo werden Mermaid-Gantt-Diagramme dargestellt?', 'GitHub, GitLab, Notion und Obsidian rendern sie direkt in Markdown, und mermaid.live zeigt sie im Browser.'],
-    ['Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?', 'Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und kopieren Sie die aktualisierte Syntax über Export ▸ Mermaid gantt wieder heraus.'],
+    ['Schließt 5d in Mermaid den Starttag ein?', 'Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag — und sie erzeugt ein Diagramm, das einwandfrei rendert, während jedes Datum um einen Tag danebenliegt.'],
+    ['Wie funktionieren Abhängigkeiten in Mermaid gantt?', 'Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand; Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken. Mehrere Vorgänger sind möglich, etwa „after a b“ — der Vorgang wartet dann auf den späteren der beiden.'],
+    ['Überspringt after die Wochenenden?', 'Ja, sofern das Diagramm „excludes weekends“ enthält. Der Nachfolger eines Vorgangs, der freitags endet, beginnt dann am Montag, und die Dauer zählt in Arbeitstagen. Werkzeuge, die after durch Addition eines Kalendertages auflösen, legen Vorgänge auf Samstage in einer Datei, die das ausdrücklich verbietet.'],
+    ['Kann Mermaid den kritischen Pfad berechnen?', 'Nein. Das Tag crit ist eine Farbe, die Sie von Hand vergeben; nichts in Mermaid läuft das Abhängigkeitsnetz ab oder rechnet Puffer aus. Genau deshalb exportiert gantts.app crit, ignoriert es beim Import aber: Die Kritikalität wird aus den Abhängigkeiten neu berechnet, statt einer möglicherweise veralteten Datei geglaubt zu werden.'],
+    ['Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?', 'Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und holen Sie sich die aktualisierte Syntax über ⬇ Export ▸ 🧜 Mermaid-Gantt (Text) wieder heraus.'],
   ],
-  related: [['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'], ['critical-path-method', 'Der kritische Pfad'], ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?']],
+  related: [
+    ['gantt-chart-dependencies', 'Die vier Abhängigkeitsarten'],
+    ['critical-path-method', 'Der kritische Pfad'],
+    ['what-is-a-gantt-chart', 'Was ist ein Gantt-Diagramm?'],
+  ],
 },
 };
 

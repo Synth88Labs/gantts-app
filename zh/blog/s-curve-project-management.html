@@ -53,7 +53,7 @@
   <meta name="twitter:description" content="S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
+  <link rel="stylesheet" href="/css/site.css?v=25" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/s-curve-project-management.html#post","headline":"S 曲线与挣值：判断项目是不是真的落后了","description":"S 曲线呈现什么、怎么读计划值与实际值的差距，以及挣值管理如何把感觉变成数字。可从你自己的进度计划免费生成。","url":"https://gantts.app/zh/blog/s-curve-project-management.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/s-curve-project-management.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"S 曲线与挣值：判断项目是不是真的落后了","item":"https://gantts.app/zh/blog/s-curve-project-management.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"项目管理中的 S 曲线是什么？","acceptedAnswer":{"@type":"Answer","text":"把累计计划工作量对时间作出的曲线图。之所以呈 S 形，是因为项目开头慢、中段快、结尾又放缓。与实际进度对照后，两条曲线之间的竖直距离就是提前或落后的程度。"}},{"@type":"Question","name":"S 曲线和挣值管理有什么区别？","acceptedAnswer":{"@type":"Answer","text":"S 曲线是图，挣值管理是图背后的算术。挣值管理用 SV、SPI、CV、CPI 给差距一个数字，曲线则展示这个差距的形态和走向。"}},{"@type":"Question","name":"SPI 为 0.9 是什么意思？","acceptedAnswer":{"@type":"Answer","text":"你只挣到了计划中此时应有价值的 90%，也就是大约落后一成。小于 1.0 是落后，大于 1.0 是提前。"}},{"@type":"Question","name":"一定要有成本数据才能用 S 曲线吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。没有成本时，任务按工作日工期加权，得到的是进度曲线——形状一样，以百分比来读。填入成本后它才变成价值曲线，并解锁成本类指标。"}},{"@type":"Question","name":"为什么 CPI 不显示？","acceptedAnswer":{"@type":"Answer","text":"因为没有填入实际成本。CPI 需要真实支出；用完成百分比去推导，会让所有项目的 CPI 都恰好等于 1.00。给任务填上\"已花费\"，它就会出现。"}},{"@type":"Question","name":"可以用 Excel 画 S 曲线吗？","acceptedAnswer":{"@type":"Answer","text":"可以，多数人也确实这么做——代价是手工维护一列累计值和一张图表，日期一变就得重做一遍。直接从进度计划生成，就省掉了这一步。"}}]}]}</script>
 </head>
 <body>
@@ -96,9 +96,11 @@
         <li><a href="#s1">曲线为什么呈 S 形</a></li>
         <li><a href="#s2">怎么读计划值与实际值</a></li>
         <li><a href="#s3">挣值管理，去掉术语外壳</a></li>
-        <li><a href="#s4">为什么我们有时不显示 CPI</a></li>
-        <li><a href="#s5">没有预算也能画出曲线</a></li>
-        <li><a href="#s6">在这里怎么做出一条</a></li>
+        <li><a href="#s4">一个算到底的例子</a></li>
+        <li><a href="#s5">七个数字，以及每个数字被误读的固定方式</a></li>
+        <li><a href="#s6">为什么我们有时不显示 CPI</a></li>
+        <li><a href="#s7">没有预算也能画出曲线</a></li>
+        <li><a href="#s8">在这里怎么做出一条</a></li>
       </ol>
     </div>
 
@@ -135,28 +137,91 @@
         <li><strong>SPI = EV ÷ PV</strong>——进度绩效指数，小于 1.0 表示落后。SPI 为 0.85 意味着每一元的计划只换来八毛五的进展。</li>
         <li><strong>CPI = EV ÷ AC</strong>——成本绩效指数，小于 1.0 表示超支。</li>
       </ul>
-      <p>把这两件事分开，正是全部意义所在。一个项目完全可能预算无虞却严重延期，也可能按期推进却在大量烧钱，而一个混在一起的"完成百分比"会同时掩盖这两点。</p>
-      <h2 id="s4">为什么我们有时不显示 CPI</h2>
+      <p>把这两件事分开，正是全部意义所在。一个项目完全可能预算无虞却严重延期，也可能按期推进却在大量烧钱，而一个混在一起的"完成百分比"会同时掩盖这两点。当成两个坐标轴来看，一共有四个可能待的位置。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 400 196" width="100%" role="img" aria-label="进度绩效和成本绩效互相独立。一个完成百分比把这两个轴压成了一个数。"><rect x="20" y="10" width="150" height="80" fill="#12a594" opacity="0.16"/><rect x="170" y="10" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="20" y="90" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="170" y="90" width="150" height="80" fill="#e5484d" opacity="0.16"/><line x1="170" y1="10" x2="170" y2="170" stroke="#94a3b8" stroke-width="1"/><line x1="20" y1="90" x2="320" y2="90" stroke="#94a3b8" stroke-width="1"/><text x="95" y="54" font-size="10" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">提前 · 低于预算</text><text x="245" y="54" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">落后于计划 · 低于预算</text><text x="95" y="134" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">提前 · 超出预算</text><text x="245" y="134" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">落后于计划 · 超出预算</text><text x="340" y="94" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">时间</text><text x="174" y="186" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">成本</text></svg><figcaption>进度绩效和成本绩效互相独立。一个完成百分比把这两个轴压成了一个数。</figcaption></figure>
+      <h2 id="s4">一个算到底的例子</h2>
+<p>上海某科技公司 1800 平方米办公室装修改造，工期十周，完工预算（<strong>BAC</strong>）<strong>200 万元</strong>，支出节奏是装修工程典型的样子：开头慢，中段主要工种一起进场时很重，收尾在调试和整改中逐渐收窄。</p>
+      <div class="worked">
+        <p><strong>每周计划支出，累加成计划价值：</strong></p>
+        <table>
+          <thead><tr><th>周</th><th>本周计划</th><th>累计 PV</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>8 万元</td><td>8 万元</td></tr>
+            <tr><td>2</td><td>12 万元</td><td>20 万元</td></tr>
+            <tr><td>3</td><td>20 万元</td><td>40 万元</td></tr>
+            <tr><td>4</td><td>28 万元</td><td>68 万元</td></tr>
+            <tr><td>5</td><td>32 万元</td><td>100 万元</td></tr>
+            <tr><td>6</td><td>32 万元</td><td>132 万元</td></tr>
+            <tr><td>7</td><td>26 万元</td><td>158 万元</td></tr>
+            <tr><td>8</td><td>18 万元</td><td>176 万元</td></tr>
+            <tr><td>9</td><td>14 万元</td><td>190 万元</td></tr>
+            <tr><td>10</td><td>10 万元</td><td>200 万元</td></tr>
+          </tbody>
+        </table>
+        <p><strong>五周的实际数。</strong>EV 是已完成部分按预算计的价值，AC 是它实际花掉的钱。</p>
+        <table>
+          <thead><tr><th>周</th><th>累计 PV</th><th>累计 EV</th><th>累计 AC</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>8 万元</td><td>6 万元</td><td>7 万元</td></tr>
+            <tr><td>2</td><td>20 万元</td><td>17 万元</td><td>20 万元</td></tr>
+            <tr><td>3</td><td>40 万元</td><td>33 万元</td><td>38 万元</td></tr>
+            <tr><td>4</td><td>68 万元</td><td>55 万元</td><td>62 万元</td></tr>
+            <tr><td>5</td><td>100 万元</td><td>82 万元</td><td>94 万元</td></tr>
+          </tbody>
+        </table>
+        <p><strong>在第 5 周末读数</strong>：PV = 100 万元，EV = 82 万元，AC = 94 万元。</p>
+        <ul>
+          <li><strong>SV = EV − PV</strong> = 82 − 100 = <strong>−18 万元</strong>，即按预算计价、本该完成而没有完成的那部分工作。</li>
+          <li><strong>SPI = EV ÷ PV</strong> = 82 ÷ 100 = <strong>0.82</strong>。计划正在以假定速度的 82% 转化为实际进展。</li>
+          <li><strong>CV = EV − AC</strong> = 82 − 94 = <strong>−12 万元</strong>。这些活儿比它本身的价值多花了十二万。</li>
+          <li><strong>CPI = EV ÷ AC</strong> = 82 ÷ 94 = <strong>0.87</strong>。每花出去一元，只买到八毛七的预算价值。</li>
+          <li><strong>完成百分比 = EV ÷ BAC</strong> = 82 ÷ 200 = <strong>41%</strong>，而计划应完成 <strong>50%</strong>。41% 听起来没什么问题，直到你知道这时候该有 50%。</li>
+          <li><strong>EAC = BAC ÷ CPI</strong> = 200 ÷ 0.8723 = <strong>229.3 万元</strong>。若成本绩效保持不变，这个 200 万的工程会超出约 <strong>29.3 万元</strong>（VAC），还要再花 <strong>135.3 万元</strong>（ETC = EAC − AC）。</li>
+        </ul>
+        <p><strong>把横着读的那个数带到会上去。</strong>计划曲线是在什么时候达到 82 万元的？在第 4 周（68 万元）和第 5 周（100 万元）之间：82 比 68 多了 14 万，而第 5 周这一段增量是 32 万，14 ÷ 32 = 0.44。也就是说计划在<strong>第 4.4 周</strong>越过 82 万元——你<strong>落后 0.56 周，不到三个工作日</strong>。</p>
+        <p>"落后三天"和"SPI 0.82"说的是同一件事。比值看着吓人，是因为这里正是曲线最陡的一段，几天时间对应很大的价值量。两个数一起报，会议才不会跑偏：只听见 0.82 的人会反应过度，只听见"三天"的人则什么也不会做。</p>
+      </div>
+      <h2 id="s5">七个数字，以及每个数字被误读的固定方式</h2>
+<p>每一个都有一种标准的误读方式，而误读造成的破坏比不度量还大。</p>
+      <table>
+        <thead><tr><th>指标</th><th>算法</th><th>它回答什么</th><th>它怎样被读错</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PV</strong></td><td>计划工作的预算成本</td><td>到现在为止应该完成多少？</td><td>取自当前日期而不是基准。当前日期吸收了每一次延误，于是 PV 跟着你一起走，偏差永远读作零。</td></tr>
+          <tr><td><strong>EV</strong></td><td>BAC × 完成百分比</td><td>已完成的部分，按预算值多少？</td><td>它只能和背后的进度上报一样诚实——也就是"完成 90% 挂了三周"那个老问题。</td></tr>
+          <tr><td><strong>AC</strong></td><td>已发生的实际成本</td><td>到现在花了多少？</td><td>在结算单还没到之前读它。AC 天然滞后，早期让 CPI 好看，后期再加倍惩罚。</td></tr>
+          <tr><td><strong>SV</strong></td><td>EV − PV</td><td>我们欠下了多少工作量？</td><td>被当成超支听。它以金额计量，说的却是<em>进度</em>。</td></tr>
+          <tr><td><strong>CV</strong></td><td>EV − AC</td><td>我们付出的是不是超过了工作本身的价值？</td><td>被拿去和"已用预算"比较。脱离 EV，"我们用掉了 47% 的预算"什么也没说明。</td></tr>
+          <tr><td><strong>SPI</strong></td><td>EV ÷ PV</td><td>把计划转化为进展的速率</td><td>无论发生什么，临近收尾时它都会漂回 1.0——每个项目最终都会挣满它的 BAC。</td></tr>
+          <tr><td><strong>CPI</strong></td><td>EV ÷ AC</td><td>每花一元买到多少价值</td><td>在那些用进度反推 AC 的工具里，它恒等于 1.00。一个从没问过你花了多少钱的计算器给出的 CPI，是算术，不是数据。</td></tr>
+        </tbody>
+      </table>
+      <p>还有一条，因为它让不少项目丢掉了完工日期：挣值按预算给一切加权，而关键路径完全不看预算。一项落在驱动链上、只要两天、几乎不花钱的审批，对 SPI 的影响微乎其微。你完全可能读到 1.05，同时确凿无疑地要延期。所以 S 曲线要和<strong>关键路径</strong>一起看，不能替代它。</p>
+      <h2 id="s6">为什么我们有时不显示 CPI</h2>
 <p>这一点值得挑明，因为多数免费的挣值计算器做法恰好相反。</p>
       <p>实际成本是唯一无法从进度计划推导出来的输入，它必须来自你的账目。一个诱人的捷径是：假设完成 40% 的任务就消耗了 40% 的预算——一旦这么做，AC 在构造上就等于 EV，于是<strong>任何项目算出来的 CPI 都恰好是 1.00</strong>。这个数字看着很权威，实则对任何变化都没有反应，还会告诉一个预算早已失控的人一切正常。</p>
       <p>所以在 gantts.app 里，只要你没有为任务填入真实的"已花费"金额，成本类指标就留空。进度类指标——SV 和 SPI——照常可用，因为它们只需要日期和进度。缺一个数字是诚实的，给一个笃定的错数字不是。</p>
       <p>出于同样的理由，今天之前的挣值曲线是重建出来的，而不是记录下来的：工具保存的是你当前的进度，而不是历次上报的历史。它在今天这一点上是精确的——数字正是在这里读取的——往前则是近似值。这一点写在面板上，而不是藏在脚注里。</p>
-      <h2 id="s5">没有预算也能画出曲线</h2>
+      <h2 id="s7">没有预算也能画出曲线</h2>
 <p>多数计划根本不带成本数据，而一条非要有成本才能画的 S 曲线，就是一条没人会去画的 S 曲线。</p>
-      <p>如果所有任务都没有成本，gantts.app 就改用工作日工期作为权重。形状完全一样，只是纵轴读作百分比而不是金额——一条纯进度的 S 曲线。以后补上成本，同一个面板就变成价值曲线，别的什么都不用改。</p>
-      <p>不过有一件事必须做：<strong>设置基准</strong>。没有基准，"计划"就只能指你当前的日期，而当前日期里早已包含了发生过的每一次延误。这样进度偏差会永远显示为零——一个非常令人安心、也完全没有用的答案。计划获批时执行一次"基准 ▸ 设置基准"即可。</p>
-      <h2 id="s6">在这里怎么做出一条</h2>
+      <p>如果所有任务都没有成本，gantts.app 就改用<em>工作日</em>工期作为权重——注意是工作日，不是自然日，也不是百分比，所以工作日历里排除的周末、清明、五一、国庆等法定节假日不会计入权重，而调休上班的那个周六会。形状完全一样，只是纵轴读作进度而不是金额——一条纯进度的 S 曲线。以后补上成本，同一个面板就变成价值曲线，别的什么都不用改。</p>
+      <p>有两个细节会改变数字。第一，只有叶子任务计入：摘要任务的成本本来就是下属任务的汇总，两边都算会让 BAC 按你大纲的层数被放大。第二，里程碑工期为零，因此对权重没有任何贡献——它们标记时点，不承载工作量。</p>
+      <p>不过有一件事比上面这些都重要：<strong>设置基准</strong>。没有基准，"计划"就只能指你当前的日期，而当前日期里早已包含了发生过的每一次延误。这样进度偏差会永远显示为零——一个非常令人安心、也完全没有用的答案。计划获批时执行一次"基准 ▸ 设置基准"即可。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 140" width="100%" role="img" aria-label="计划横条与实际横条。基准就是计划曲线赖以生成的那份冻结副本——没有它，"计划"会跟着你一起移动。"><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">计划</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">实际</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg><figcaption>计划横条与实际横条。基准就是计划曲线赖以生成的那份冻结副本——没有它，"计划"会跟着你一起移动。</figcaption></figure>
+      <p>面板会明说它用的是哪一个来源，所以你能分辨出真正的偏差，和"拿你自己的日期跟你自己的日期比"。</p>
+      <h2 id="s8">在这里怎么做出一条</h2>
 <ol>
-        <li>建立或导入进度计划，把日期大致排对。</li>
-        <li>计划获批后执行<strong>基准 ▸ 设置基准</strong>。这一步冻结了"计划"的含义。</li>
-        <li>可选：在任务面板里给任务填<strong>预算</strong>，让曲线以金额而不是天数来读。</li>
-        <li>随着工作推进更新<strong>完成百分比</strong>——挣值曲线正是由它构成的。</li>
-        <li>可选：逐项填入<strong>已花费</strong>，以解锁 CPI、成本偏差和完工估算。</li>
-        <li>点击<strong>📈 S 曲线</strong>。</li>
+        <li>建立或导入进度计划，把日期大致排对。可以先用<strong>✨ 粘贴生成甘特图</strong>把任务大纲贴进来，再点<strong>自动排程</strong>。</li>
+        <li>计划获批后打开<strong>基准</strong>，以当前计划设置基准。提示"基准已设置——之后的延误将以此计划为准进行跟踪"意味着"计划"的含义被冻结了。</li>
+        <li>可选：双击任务，在<strong>预算</strong>里填金额，让曲线以人民币而不是天数来读。</li>
+        <li>随着工作推进更新<strong>进度</strong>——挣值曲线正是由它构成的。请按做完的工作量填，不要按已过去的天数填。</li>
+        <li>可选：逐项填入<strong>已花费</strong>，以解锁 CPI、成本偏差、完工估算和完工尚需估算。</li>
+        <li>点击工具栏的 <strong>S 曲线</strong>（面板标题是"S 曲线 —— 计划 vs 实际"）。</li>
+        <li>看一眼面板底部的口径说明：它会告诉你权重是"按任务成本加权"还是"任务未设置成本，因此按工作日时长加权"，以及计划价值是依据已保存的基准，还是只依据当前日期。<strong>计算方式</strong>里写着其余的算法。</li>
+        <li>最后勾上<strong>关键路径</strong>再看一遍图。SPI 说明整体价值挣得快不快，关键路径说明完工日期会不会动，两者要一起读。</li>
       </ol>
       <p>全部在你的浏览器里运行。无需注册，无需上传，也不用手工维护一个电子表格模板。</p>
 
-      <div class="callout">undefined</div>
+      <div class="callout">SPI 和横着读出来的天数要一起报。"SPI 0.82"和"落后三天"描述的是第 5 周同一个位置；只听到其中一个的会议，要么反应过度，要么什么都不做。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
@@ -242,6 +307,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

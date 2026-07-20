@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Référence et écarts dans un Gantt | gantts.app</title>
-  <meta name="description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta name="description" content="Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
@@ -42,19 +42,19 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Référence et écarts dans un Gantt | gantts.app" />
-  <meta property="og:description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta property="og:description" content="Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment." />
   <meta property="og:url" content="https://gantts.app/fr/blog/gantt-baseline-variance.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Référence et écarts : le plan face au réel" />
+  <meta property="og:image:alt" content="Référence et écarts : le plan validé face au réel" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Référence et écarts dans un Gantt | gantts.app" />
-  <meta name="twitter:description" content="Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment." />
+  <meta name="twitter:description" content="Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/gantt-baseline-variance.html#post","headline":"Référence et écarts : le plan face au réel","description":"Ce qu’est une référence de planning, comment lire les écarts, quand refaire la référence et quels indicateurs servent vraiment.","url":"https://gantts.app/fr/blog/gantt-baseline-variance.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Référence et écarts : le plan face au réel","item":"https://gantts.app/fr/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce qu’une référence de planning ?","acceptedAnswer":{"@type":"Answer","text":"Le planning figé au moment de la validation. Il sert de repère pour tous les écarts constatés ensuite."}},{"@type":"Question","name":"Quand poser la référence ?","acceptedAnswer":{"@type":"Answer","text":"Après validation et avant le début des travaux. Posée plus tard, elle perd sa valeur."}},{"@type":"Question","name":"Quand refaire la référence ?","acceptedAnswer":{"@type":"Answer","text":"Seulement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas à chaque retard."}},{"@type":"Question","name":"Qu’est-ce que l’écart de délai ?","acceptedAnswer":{"@type":"Answer","text":"La différence en jours entre date réelle et date planifiée. Sur le chemin critique, elle se répercute intégralement sur la fin du projet."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/gantt-baseline-variance.html#post","headline":"Référence et écarts : le plan validé face au réel","description":"Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment.","url":"https://gantts.app/fr/blog/gantt-baseline-variance.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Référence et écarts : le plan validé face au réel","item":"https://gantts.app/fr/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce qu’une référence dans un diagramme de Gantt ?","acceptedAnswer":{"@type":"Answer","text":"Une copie figée du planning validé — début prévu, fin prévue et avancement de chaque tâche — conservée inchangée afin de mesurer la dérive du planning courant. Sur un marché de travaux, c’est le planning contractuel annexé au marché."}},{"@type":"Question","name":"Que signifie l’écart de délai ?","acceptedAnswer":{"@type":"Answer","text":"La différence en jours entre la date de référence d’une tâche et sa date actuelle : positif plus tard que prévu, négatif plus tôt, zéro conforme. Attention à l’unité — les écarts de planning se comptent en jours ouvrés, les pénalités de retard le plus souvent en jours calendaires."}},{"@type":"Question","name":"Quand faut-il poser la référence ?","acceptedAnswer":{"@type":"Answer","text":"Après validation du plan et avant le démarrage — en pratique à l’ordre de service. Posée en cours d’exécution, elle masque le retard déjà accumulé et sous-estime tous les écarts suivants."}},{"@type":"Question","name":"Quelle différence entre écart de début, de fin et de durée ?","acceptedAnswer":{"@type":"Answer","text":"L’écart de début dit si le retard a été hérité de l’amont. L’écart de fin dit ce qui se répercute sur l’aval. L’écart de durée retire la part héritée et révèle si l’estimation elle-même était fausse."}},{"@type":"Question","name":"Faut-il refaire la référence quand le projet dérape ?","acceptedAnswer":{"@type":"Answer","text":"Uniquement pour une modification validée du périmètre — un avenant signé —, une replanification formelle ou une reprise après interruption. Si vous ne pouvez nommer ni la décision, ni sa date, ni son signataire, vous effacez la trace de ce qui avait été engagé. Enregistrez d’abord une copie du fichier."}},{"@type":"Question","name":"Comment poser une référence dans gantts.app ?","acceptedAnswer":{"@type":"Answer","text":"Ouvrez le menu Référence et posez-la à partir du planning courant : des barres fantômes apparaissent sous chaque tâche et le message « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération. Le même menu affiche ensuite les colonnes de référence et d’écart."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -84,53 +84,150 @@
          post. The localized crumb stopped at Guides, so the trail never
          told the reader which article they were on and the last step of
          the BreadcrumbList schema had no visible counterpart. -->
-    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a> › Référence et écarts : le plan face au réel</div>
-    <h1>Référence et écarts : le plan face au réel</h1>
-    <p class="lead">La <strong>référence</strong> est l’état figé de votre planning au moment de sa validation. Sans elle, impossible de dire plus tard si un projet est en retard — seulement quand il devrait finir.</p>
+    <div class="crumbs"><a href="/fr/">Accueil</a> › <a href="/fr/blog/">Guides</a> › Référence et écarts : le plan validé face au réel</div>
+    <h1>Référence et écarts : le plan validé face au réel</h1>
+    <p class="lead">Un diagramme de Gantt montre où en est votre projet. La <strong>référence</strong> montre où il aurait dû en être. Sans elle vous savez annoncer une nouvelle date de fin, jamais un retard — et le retard est précisément ce que veulent connaître ceux qui financent les travaux.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>3 min de lecture</span></p>
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>12 min de lecture</span></p>
     <div class="toc"><strong>Sommaire</strong>
       <ol>
-        <li><a href="#s1">Ce qu’est une référence</a></li>
-        <li><a href="#s2">Quand la figer</a></li>
-        <li><a href="#s3">Lire les écarts</a></li>
-        <li><a href="#s4">Mesurer l’avancement correctement</a></li>
-        <li><a href="#s5">Quand refaire la référence</a></li>
-        <li><a href="#s6">Ce qu’on en apprend</a></li>
+        <li><a href="#s1">Ce qu’est réellement une référence</a></li>
+        <li><a href="#s2">Quand la poser — et quand s’en abstenir</a></li>
+        <li><a href="#s3">Exemple : un marché de travaux et trois situations mensuelles</a></li>
+        <li><a href="#s4">Quatre écarts, et ce que chacun dissimule</a></li>
+        <li><a href="#s5">Seul l’écart situé sur le chemin critique pèse vraiment</a></li>
+        <li><a href="#s6">Refaire la référence : avenant signé ou effacement des preuves</a></li>
+        <li><a href="#s7">Où se place la valeur acquise — et ce que notre courbe en S annonce honnêtement</a></li>
+        <li><a href="#s8">Le faire dans gantts.app</a></li>
       </ol>
     </div>
 
     <figure class="fig">
-      <figcaption>Deux barres par tâche : le plan d’alors, l’état d’aujourd’hui.</figcaption>
-      <svg viewBox="0 0 420 140" width="100%" role="img" aria-label="Deux barres par tâche : le plan d’alors, l’état d’aujourd’hui."><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Plan</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Réel</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg>
+      <figcaption>La référence s’affiche en barre fantôme sous la barre vivante de chaque tâche. Là où la barre vivante dépasse, l’intervalle est votre écart :</figcaption>
+      <svg viewBox="0 0 420 140" width="100%" role="img" aria-label="La référence s’affiche en barre fantôme sous la barre vivante de chaque tâche. Là où la barre vivante dépasse, l’intervalle est votre écart :"><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Plan</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Réel</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg>
     </figure>
 
     <div class="prose">
-      <h2 id="s1">Ce qu’est une référence</h2>
-<p>Une copie des dates au moment de la validation. Le planning courant continue d’évoluer, la référence reste fixe. La différence entre les deux est l’écart.</p>
-        <p>Sans référence, il n’y a pas de retard — il n’y a qu’une nouvelle date de fin à chaque fois, sans que personne ne puisse expliquer comment on y est arrivé.</p>
-      <h2 id="s2">Quand la figer</h2>
-<p>Après la validation et avant le démarrage des travaux. Une référence posée alors que le projet tourne depuis deux semaines ne mesure plus rien.</p>
-      <h2 id="s3">Lire les écarts</h2>
-<p>L’écart de délai vaut fin réelle moins fin planifiée, en jours. Positif signifie plus tard que prévu. L’important n’est pas l’écart d’une tâche isolée, mais s’il se situe sur le chemin critique — là, il se répercute intégralement sur la fin ; ailleurs, parfois pas du tout.</p>
-      <h2 id="s4">Mesurer l’avancement correctement</h2>
-<p>Les pourcentages d’avancement sont notoirement peu fiables ; « 90 % fait » est la réponse la plus fréquente de tous les projets, et elle le reste des semaines. Plus solide : demander la durée restante. Combien de jours vous faut-il encore ? Ce chiffre-là se vérifie.</p>
-      <h2 id="s5">Quand refaire la référence</h2>
-<p>Uniquement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas parce que l’ancien plan est désagréable à regarder. Qui refait la référence à chaque retard obtient un projet sans écarts et sans aucune information.</p>
-        <p>Conservez les références successives. Leur suite montre combien de fois et pour quelles raisons le plan a été refait — souvent l’information la plus instructive du projet.</p>
-      <h2 id="s6">Ce qu’on en apprend</h2>
-<p>Après la clôture, la comparaison entre référence et réel est la meilleure base disponible pour la prochaine estimation. Si vos tâches durent systématiquement 30 % de plus que prévu, ce n’est pas une série de malchances, c’est un biais d’estimation dont vous connaissez désormais le facteur.</p>
+      <h2 id="s1">Ce qu’est réellement une référence</h2>
+<p>Une référence est une copie figée de votre planning, prise à un instant dont vous avez convenu qu’il était juste — le plus souvent au moment de la validation du plan. Elle enregistre pour chaque tâche la date de début prévue, la date de fin prévue et l’avancement, puis elle cesse de bouger.</p>
+      <p>C’est ce dernier point qui fait tout. Modifiez le planning sans référence et le fichier réécrit silencieusement l’histoire : chaque semaine paraît conforme. Les dates dérivent d’un jour à la fois, et un planning qui a absorbé trente retouches d’un jour ressemble trait pour trait à un planning qui n’a jamais bougé. La référence est le seul dispositif qui fait s’additionner ces retouches en un nombre.</p>
+      <p>Dans un marché de travaux, cette copie figée n’est même pas un choix méthodologique : le planning contractuel annexé au marché <em>est</em> la référence, et c’est par rapport à lui que se calculent les pénalités de retard.</p>
+      <h2 id="s2">Quand la poser — et quand s’en abstenir</h2>
+<p>Posez la référence <strong>après</strong> la validation du plan et <strong>avant</strong> le démarrage effectif. Sur un chantier, le repère naturel est l’ordre de service (OS) de démarrage : la période de préparation de chantier commence, le planning est purgé de ses points d’interrogation, et la référence se pose ce jour-là.</p>
+      <p>Une référence capturée en cours d’exécution intègre dans le prévu tout le retard déjà accumulé. Elle n’est pas simplement imprécise : elle sous-estime durablement l’écart réel, et dans le sens qui arrange celui qui l’a posée.</p>
+      <p>Ne figez pas non plus un plan dont vous savez qu’il est faux, uniquement pour en avoir une. Un planning fictif produit des écarts précis au jour près et dépourvus de sens. Si des tâches portent encore des dates provisoires ou des lots sans titulaire désigné, corrigez cela d’abord.</p>
+      <h2 id="s3">Exemple : un marché de travaux et trois situations mensuelles</h2>
+<p>Réhabilitation de l’ancienne halle des Ateliers Perrin, à Roubaix. Maîtrise d’ouvrage : la communauté d’agglomération. Maîtrise d’œuvre : le cabinet de Claire Vasseur. Entreprise générale : Groupe Lavandier, conducteur de travaux Thibaut Marchand. Le planning contractuel est annexé au marché, les pénalités de retard sont fixées à <strong>850 € par jour calendaire</strong>, et l’OS de démarrage fixe le début au <strong>lundi 5 janvier 2026</strong>. Cinq lignes, liens Fin-Début de bout en bout, toutes sur le chemin critique.</p>
+      <div class="worked">
+        <p><strong>Référence posée le lundi 5 janvier 2026 (planning contractuel)</strong></p>
+        <ul>
+          <li>Période de préparation de chantier — 5 au 16 janvier (10 jours ouvrés)</li>
+          <li>Démolition et curage — 19 janvier au 6 février (15 jours ouvrés)</li>
+          <li>Gros œuvre et charpente — 9 février au 20 mars (30 jours ouvrés)</li>
+          <li>OPR et levée des réserves — 23 mars au 3 avril (10 jours ouvrés)</li>
+          <li>Réception des travaux — mardi 7 avril 2026 (jalon) — le lundi 6 est le lundi de Pâques, le calendrier de travail décale donc le jalon d’office</li>
+        </ul>
 
-      <div class="callout">Ne refaites pas la référence parce que le plan a mauvaise mine. Une référence réalignée à chaque retard affiche durablement zéro écart et n’explique plus rien : ce n’est plus un instrument de mesure, c’est un maquillage.</div>
+        <p><strong>Situation n° 1 — vendredi 23 janvier (S04)</strong></p>
+        <p>Le repérage amiante avant travaux revient positif sur deux cloisons non signalées au DCE. La période de préparation s’achève le 21 janvier au lieu du 16 : <strong>écart de fin +3 jours ouvrés</strong>. La démolition démarre le 22 janvier — <strong>écart de début +3</strong> — et, sa durée restant inchangée, sa fin prévisionnelle passe au 11 février, également +3. Tout l’aval hérite du même +3 : la réception se lit au 10 avril.</p>
+        <p>La lecture correcte est immédiate : c’est un problème de <em>démarrage</em>, pas d’estimation. Personne n’a mal évalué la démolition, elle commence trois jours trop tard.</p>
+
+        <p><strong>Situation n° 2 — vendredi 13 février (S07)</strong></p>
+        <p>La démolition s’achève bien le 11 février : écart de fin +3, <strong>écart de durée 0</strong>. Le gros œuvre démarre le 12 février, écart de début +3. Mais Groupe Lavandier a redéployé une équipe de coffreurs sur un autre chantier et ré-estime le lot de 30 à 36 jours ouvrés : la fin passe du 20 mars au 2 avril, soit un <strong>écart de fin +9 jours</strong> — dont <strong>3 hérités</strong> et <strong>6 d’écart de durée</strong>. Ces six-là sont la seule mauvaise nouvelle véritablement nouvelle du mois.</p>
+        <p>C’est exactement pour cela que le début et la fin se suivent séparément. Dire « le gros œuvre a neuf jours de retard » ouvre la mauvaise réunion. Dire « il en a hérité trois et en a produit six » désigne une décision d’effectifs, qui, elle, peut encore être discutée en réunion de chantier.</p>
+
+        <p><strong>Situation n° 3 — vendredi 13 mars (S11)</strong></p>
+        <p>Le gros œuvre affiche 55 % d’avancement contre 65 % prévu : l’estimation à 36 jours est elle-même optimiste. Plutôt que de laisser la réception dériver une troisième fois, la MOE réorganise les OPR en deux passes menées en parallèle, avec un renfort du bureau de contrôle : 10 jours ouvrés deviennent 6. Ce lot affiche désormais un <strong>écart de durée −4 jours</strong> et un <strong>écart de fin +5 jours</strong>. La réception atterrit au 14 avril.</p>
+        <p>Attention à ce que cet écart négatif ne dit pas. Rien n’est allé plus vite : quatre jours ont été achetés avec du temps d’hommes supplémentaires, et une colonne qui ne compte que des jours est structurellement incapable de le montrer.</p>
+
+        <p><strong>Ce que cela coûte, et ce qui se rebase</strong></p>
+        <p>Réception contractuelle au 7 avril, réception prévisionnelle au 14 avril : 7 jours calendaires, soit <strong>5 950 €</strong> de pénalités. Un avenant n° 2, signé le vendredi 6 mars, prolonge le délai de 5 jours calendaires au titre du désamiantage non prévu au DCE. La date contractuelle devient le 12 avril, les pénalités retombent à 2 jours calendaires, soit <strong>1 700 €</strong>. Les six jours de gros œuvre, eux, ne sont couverts par aucun avenant et restent à la charge de l’entreprise.</p>
+      </div>
+      <p>Le résumé honnête tient en une phrase : sept jours calendaires de retard à la réception, dont trois jours ouvrés d’aléa amiante couverts par avenant, six jours ouvrés perdus sur les effectifs de gros œuvre, et quatre rachetés en renforçant les OPR.</p>
+      <h2 id="s4">Quatre écarts, et ce que chacun dissimule</h2>
+<p>« L’écart » n’est pas un nombre unique. Quatre méritent d’être suivis, et chacun est aveugle à ce que les autres captent.</p>
+      <table>
+        <thead>
+          <tr><th>Écart</th><th>Définition</th><th>Ce que lui seul vous dit</th><th>Où il trompe</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Écart de début</strong></td>
+            <td>Début réel moins début de référence.</td>
+            <td>Si le retard a été hérité : un démarrage tardif désigne l’amont, ou une équipe qui n’était pas libre.</td>
+            <td>Ne dit rien de la fin. Une tâche peut démarrer avec 5 jours de retard et tenir sa fin de référence en brûlant des hommes.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de fin</strong></td>
+            <td>Fin réelle ou prévisionnelle moins fin de référence.</td>
+            <td>L’impact sur l’aval. C’est le chiffre qui se propage jusqu’à la réception.</td>
+            <td>Mélange le retard hérité et le retard nouveau. Les +9 jours du gros œuvre valaient 3 hérités et 6 nouveaux : deux problèmes, un seul nombre.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de durée</strong></td>
+            <td>Durée réelle moins durée de référence.</td>
+            <td>Si l’estimation était fausse — l’écart de fin débarrassé de sa part héritée.</td>
+            <td>Devient négatif quand on comprime une tâche, ce qui se lit comme une avance. Les −4 jours des OPR ont coûté un second bureau de contrôle.</td>
+          </tr>
+          <tr>
+            <td><strong>Écart de coût ou de charge</strong></td>
+            <td>Dépense ou effort consommé face au budget.</td>
+            <td>Ce que la récupération a coûté. Le seul écart qui détecte la compression.</td>
+            <td>Exige des dépenses réellement saisies. Sans montants renseignés, il n’est pas petit : il n’existe pas.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>L’écart de durée est celui que la plupart des équipes omettent, et le seul dont la lecture change les comportements : c’est la seule mesure de délai qui sépare « nous avons été en retard » de « nous nous étions trompés ».</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 140" width="100%" role="img" aria-label="Les barres fantômes portent la référence ; l’intervalle jusqu’à la barre vivante est l’écart."><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Plan</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Réel</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg><figcaption>Les barres fantômes portent la référence ; l’intervalle jusqu’à la barre vivante est l’écart.</figcaption></figure>
+      <h2 id="s5">Seul l’écart situé sur le chemin critique pèse vraiment</h2>
+<p>Cinq jours de glissement sur une tâche disposant de quinze jours de marge totale ne coûtent rien. Un jour de glissement sur le <a href="/fr/blog/critical-path-method.html">chemin critique</a> déplace la date de réception, donc déclenche des pénalités.</p>
+      <p>Triez par écart de fin, puis vérifiez lesquelles de ces tâches sont critiques. Cette courte liste <em>est</em> votre compte rendu de situation. Annoncer un nombre de tâches en retard sans jamais le rapporter à la marge est la mécanique exacte qui produit des chantiers « conformes à 80 % » et livrés avec trois semaines de retard.</p>
+      <p>Le piège inverse existe tout autant : une tâche non critique affichant +12 jours d’écart pour 14 jours de marge va bien aujourd’hui et sera critique demain. On relit donc l’écart et la marge côte à côte, jamais l’un sans l’autre.</p>
+      <h2 id="s6">Refaire la référence : avenant signé ou effacement des preuves</h2>
+<p>C’est la décision la plus lourde que vous prendrez au sujet d’une référence, et elle n’est presque jamais technique. Refaire la référence remet la comparaison à zéro : tous les écarts s’annulent et la trace de ce qui avait été promis cesse d’être visible. Trois situations le justifient.</p>
+      <ul>
+        <li><strong>Une modification validée du périmètre.</strong> Sur un marché, cela porte un nom et une signature : un <strong>avenant</strong>. Quelqu’un ayant autorité a ajouté ou retiré des prestations, ou accordé une prolongation de délai, par écrit. Mesurer contre un plan qui ne décrit plus l’ouvrage donne des écarts exacts et sans intérêt.</li>
+        <li><strong>Une replanification formelle.</strong> Les chiffres ont cessé de guider les décisions : toutes les tâches affichent +30 jours et plus personne ne distingue celles qui se dégradent de celles qui stagnent.</li>
+        <li><strong>Une reprise après interruption.</strong> Après un arrêt de chantier, un recours contre le permis de construire ou un redémarrage post-congés, les anciennes dates mesurent l’arrêt, pas le travail.</li>
+      </ul>
+      <p>Toutes les autres raisons sont la même raison déguisée : l’écart est devenu inconfortable et le comité de pilotage est jeudi. Une référence refaite la semaine précédant un COPIL est le signe le plus fiable qui soit. Dans notre exemple, remettre la référence au 13 mars aurait fait afficher zéro jour de retard à la réception — tout en la maintenant au 14 avril, et sans effacer un seul euro de pénalités.</p>
+      <p>Le test est simple, et il est le même que celui du maître d’ouvrage : si la reprise de référence est légitime, vous pouvez en nommer la décision, la date et le signataire. Un avenant signé le 6 mars, oui. Un mois difficile, non.</p>
+      <p>Quand vous refaites la référence, conservez l’ancienne : enregistrez d’abord le projet dans un fichier, puisque le fichier emporte la référence avec lui. L’écart entre la référence n° 1 et la référence n° 3 constitue souvent la description la plus honnête d’un projet — et c’est exactement ce qui disparaît lorsqu’une référence est écrasée sur place.</p>
+      <h2 id="s7">Où se place la valeur acquise — et ce que notre courbe en S annonce honnêtement</h2>
+<p>L’écart en jours répond à « de combien sommes-nous en retard ». La <strong>valeur acquise</strong> répond à « quelle quantité de travail avons-nous engrangée pour le temps et l’argent dépensés ». Elle dépend entièrement de la référence : sans elle, la valeur planifiée n’a aucune courbe à suivre. Notre <strong>Courbe en S</strong> est délibérément explicite sur ses limites, et il vaut mieux les connaître avant d’en citer les chiffres.</p>
+      <ul>
+        <li><strong>La <em>Valeur planifiée</em> suit la référence si vous en avez posé une.</strong> Sans référence, le <em>Prévu</em> correspond à vos dates actuelles, donc l’<em>Écart de délai</em> affiche zéro quelle que soit la dérive réelle. Le panneau l’écrit noir sur blanc plutôt que d’afficher un zéro flatteur : « Aucune référence n’est enregistrée, le prévu correspond donc à vos dates actuelles — l’écart de délai affichera zéro tant que vous n’en aurez pas posé une. »</li>
+        <li><strong>Le <em>Coût réel</em> n’est jamais déduit de l’avancement.</strong> Il provient uniquement des montants saisis dans le champ <em>Dépensé</em> de chaque tâche. Le raccourci tentant — supposer qu’une tâche avancée à 40 % a consommé 40 % de son budget — rendrait la <em>Performance des coûts</em> (CPI) rigoureusement égale à 1,00 sur tous les projets du monde. Sans dépenses saisies, le CPI, l’<em>Écart de coût</em> et la <em>Prévision à l’achèvement</em> ne sont donc pas affichés.</li>
+        <li><strong>L’absence de coûts est le cas normal.</strong> Les tâches sont alors pondérées par leur durée en jours ouvrés et vous obtenez une courbe d’avancement pure — même forme, lue en pourcentage plutôt qu’en euros. Le panneau le signale également.</li>
+        <li><strong>La courbe <em>Acquis (avancement réel)</em> est reconstruite pour le passé.</strong> Nous stockons l’avancement d’aujourd’hui, pas son historique : la partie ancienne de la courbe suppose un avancement réparti uniformément sur les jours ouvrés écoulés. Exacte à la date de situation, approchée en amont, et signalée comme telle par <em>Comment ce calcul est fait</em>.</li>
+      </ul>
+      <p>Sur la halle de Roubaix, les situations mensuelles fournissent précisément les montants qui manquent : reporter chaque situation validée dans le champ <em>Dépensé</em> transforme la courbe d’avancement en véritable valeur acquise.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 400 196" width="100%" role="img" aria-label="Écart de délai et écart de coût sont deux axes indépendants : en retard mais sous le budget est une situation réelle."><rect x="20" y="10" width="150" height="80" fill="#12a594" opacity="0.16"/><rect x="170" y="10" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="20" y="90" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="170" y="90" width="150" height="80" fill="#e5484d" opacity="0.16"/><line x1="170" y1="10" x2="170" y2="170" stroke="#94a3b8" stroke-width="1"/><line x1="20" y1="90" x2="320" y2="90" stroke="#94a3b8" stroke-width="1"/><text x="95" y="54" font-size="10" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">en avance · sous budget</text><text x="245" y="54" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">en retard · sous budget</text><text x="95" y="134" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">en avance · hors budget</text><text x="245" y="134" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">en retard · hors budget</text><text x="340" y="94" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Temps</text><text x="174" y="186" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Coût</text></svg><figcaption>Écart de délai et écart de coût sont deux axes indépendants : en retard mais sous le budget est une situation réelle.</figcaption></figure>
+      <h2 id="s8">Le faire dans gantts.app</h2>
+<p>La boucle complète prend une minute. En reprenant la réhabilitation de la halle :</p>
+      <ol>
+        <li>Validez d’abord le plan : dates, liens d’antériorité et durées doivent être ceux que vous voulez voir mesurés. Au besoin, lancez <strong>Replanifier</strong> pour compacter les tâches à leurs dates au plus tôt avant de figer quoi que ce soit.</li>
+        <li>Ouvrez le menu <strong>Référence</strong> dans la barre d’outils. Tant qu’aucune référence n’est enregistrée, il ne propose qu’une action : poser la référence à partir du planning courant. Le message « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération.</li>
+        <li>Des barres fantômes apparaissent sous chaque barre de tâche. Rouvrez le menu pour retrouver la date et l’heure de capture, ainsi que la case permettant de masquer la référence le temps d’une présentation.</li>
+        <li>Conduisez le chantier. À chaque situation mensuelle, faites glisser les barres ou corrigez les champs <strong>Début</strong> et <strong>Fin</strong> dans le volet de tâche — le 21 janvier pour la fin de la préparation, le 11 février pour celle de la démolition. Les boutons <strong>Un jour ouvré après</strong> et <strong>Une semaine après</strong> évitent de recompter les week-ends à la main.</li>
+        <li>Rouvrez <strong>Référence</strong> et affichez les colonnes d’écart : le message « Affichage des colonnes de référence et d’écart » indique qu’elles sont ajoutées au <strong>Tableau</strong>. Le retard s’affiche en rouge, l’avance en vert.</li>
+        <li>Parcourez la colonne d’écart de fin, puis activez <strong>Chemin critique</strong> pour voir lesquels de ces glissements déplacent réellement la réception — la légende rappelle que « hachuré = chemin critique ». L’écart de durée se lit en comparant la colonne <strong>Jours</strong> à la durée de référence.</li>
+        <li>Pour l’avancement, ouvrez <strong>Courbe en S</strong> : la fenêtre « Courbe en S — prévu vs réel » indique elle-même si la <strong>Valeur planifiée</strong> suit votre référence ou seulement vos dates actuelles.</li>
+        <li>Avant toute reprise de référence, enregistrez une copie via <strong>⬇ Exporter</strong> puis <strong>💾 Enregistrer le projet (.gantts)</strong>, nommée d’après l’avenant. Vous pourrez ensuite mettre la référence à jour sur le planning actuel, ou la supprimer : les deux opérations sont annulables.</li>
+      </ol>
+
+      <div class="callout">L’erreur la plus fréquente au sujet des références n’est pas technique. Une équipe pose sa référence, voit l’écart devenir inconfortable, et cesse discrètement de le regarder. Une référence que personne ne lit est pire que pas de référence du tout : elle donne l’apparence d’un pilotage sans en avoir la substance. Mettez l’écart à l’ordre du jour de la revue hebdomadaire, ou ne prenez pas la peine d’en poser une.</div>
 
       <h2 id="faq">Questions fréquentes</h2>
       <div class="faq">
-        <details open><summary>Qu’est-ce qu’une référence de planning ?</summary><p>Le planning figé au moment de la validation. Il sert de repère pour tous les écarts constatés ensuite.</p></details>
-        <details><summary>Quand poser la référence ?</summary><p>Après validation et avant le début des travaux. Posée plus tard, elle perd sa valeur.</p></details>
-        <details><summary>Quand refaire la référence ?</summary><p>Seulement lors d’une modification validée du périmètre, du budget ou de l’échéance — pas à chaque retard.</p></details>
-        <details><summary>Qu’est-ce que l’écart de délai ?</summary><p>La différence en jours entre date réelle et date planifiée. Sur le chemin critique, elle se répercute intégralement sur la fin du projet.</p></details>
+        <details open><summary>Qu’est-ce qu’une référence dans un diagramme de Gantt ?</summary><p>Une copie figée du planning validé — début prévu, fin prévue et avancement de chaque tâche — conservée inchangée afin de mesurer la dérive du planning courant. Sur un marché de travaux, c’est le planning contractuel annexé au marché.</p></details>
+        <details><summary>Que signifie l’écart de délai ?</summary><p>La différence en jours entre la date de référence d’une tâche et sa date actuelle : positif plus tard que prévu, négatif plus tôt, zéro conforme. Attention à l’unité — les écarts de planning se comptent en jours ouvrés, les pénalités de retard le plus souvent en jours calendaires.</p></details>
+        <details><summary>Quand faut-il poser la référence ?</summary><p>Après validation du plan et avant le démarrage — en pratique à l’ordre de service. Posée en cours d’exécution, elle masque le retard déjà accumulé et sous-estime tous les écarts suivants.</p></details>
+        <details><summary>Quelle différence entre écart de début, de fin et de durée ?</summary><p>L’écart de début dit si le retard a été hérité de l’amont. L’écart de fin dit ce qui se répercute sur l’aval. L’écart de durée retire la part héritée et révèle si l’estimation elle-même était fausse.</p></details>
+        <details><summary>Faut-il refaire la référence quand le projet dérape ?</summary><p>Uniquement pour une modification validée du périmètre — un avenant signé —, une replanification formelle ou une reprise après interruption. Si vous ne pouvez nommer ni la décision, ni sa date, ni son signataire, vous effacez la trace de ce qui avait été engagé. Enregistrez d’abord une copie du fichier.</p></details>
+        <details><summary>Comment poser une référence dans gantts.app ?</summary><p>Ouvrez le menu Référence et posez-la à partir du planning courant : des barres fantômes apparaissent sous chaque tâche et le message « Référence posée — les dérives sont désormais mesurées par rapport à ce planning » confirme l’opération. Le même menu affiche ensuite les colonnes de référence et d’écart.</p></details>
       </div>
 
       <aside class="promo">
@@ -207,6 +304,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

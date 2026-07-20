@@ -53,8 +53,8 @@
   <meta name="twitter:description" content="三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html#post","headline":"三周滚动计划：不用每周一重打一遍","description":"三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。","url":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"三周滚动计划：不用每周一重打一遍","item":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是三周滚动计划？","acceptedAnswer":{"@type":"Answer","text":"总进度计划的一段滚动摘录，只显示与未来三周有交叠的工作。它每周更新，用于协调日常作业，并在还来得及处理的时候发现制约因素。"}},{"@type":"Question","name":"为什么是三周？","acceptedAnswer":{"@type":"Answer","text":"这个长度既足以让材料、许可、班组等制约因素还有时间解决，又短到日期仍然可信。两周、四周、六周的窗口也很常见，具体取决于你的备料周期。"}},{"@type":"Question","name":"几个月前就开工的长任务应该出现在滚动计划里吗？","acceptedAnswer":{"@type":"Answer","text":"应该。凡是与窗口有交叠的都属于它。只筛完整落在三周内的任务，恰好会漏掉当下正在施工的长周期工作。"}},{"@type":"Question","name":"滚动计划和总进度计划是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"不是。总进度计划回答项目能否按期完工，滚动计划回答本周做什么、谁来做。两者出自同一份数据，服务于不同的会议。"}},{"@type":"Question","name":"可以用 Excel 做滚动计划吗？","acceptedAnswer":{"@type":"Answer","text":"可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍。把它做成进度计划的一个视图，就省掉了重抄以及随之而来的偏离。"}},{"@type":"Question","name":"滚动计划怎么打印？","acceptedAnswer":{"@type":"Answer","text":"切换到滚动计划视图，导出 PDF 或 PNG。导出的内容与屏幕一致，所以你得到的是这个窗口，而不是整份总进度计划。"}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html#post","headline":"三周滚动计划：不用每周一重打一遍","description":"三周滚动计划（lookahead）是什么、现场为什么要用，以及如何直接从总进度计划生成，而不是每周往 Excel 模板里重抄一遍。","url":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"三周滚动计划：不用每周一重打一遍","item":"https://gantts.app/zh/blog/3-week-lookahead-schedule.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是三周滚动计划？","acceptedAnswer":{"@type":"Answer","text":"总进度计划的一段滚动摘录，只显示与未来三周有交叠的工作。它每周更新，用于协调日常作业，并在还来得及处理的时候发现制约因素。"}},{"@type":"Question","name":"为什么是三周？","acceptedAnswer":{"@type":"Answer","text":"这个长度既足以让材料、许可、班组等制约因素还有时间解决，又短到日期仍然可信。两周、四周、六周的窗口也很常见，具体取决于你的备料周期。"}},{"@type":"Question","name":"几个月前就开工的长任务应该出现在滚动计划里吗？","acceptedAnswer":{"@type":"Answer","text":"应该。凡是与窗口有交叠的都属于它。只筛完整落在三周内的任务，恰好会漏掉当下正在施工的长周期工作。"}},{"@type":"Question","name":"PPC 是什么，多少算好？","acceptedAnswer":{"@type":"Answer","text":"按承诺完成的活动数除以承诺的活动数，不给部分分。新团队一般是 50%–60%，75%–85% 算好，长期高于 90% 通常说明计划注了水。原因代码比这个数字更重要。"}},{"@type":"Question","name":"某项工作没具备开工条件怎么办？","acceptedAnswer":{"@type":"Answer","text":"把它移出冻结周，而不是照样承诺；记下原因代码，再把班组调到已经具备条件的工作上。硬把没准备好的任务提上去，正是在摧毁滚动计划本来要建立的那份可靠性。"}},{"@type":"Question","name":"可以用 Excel 做滚动计划吗？怎么打印？","acceptedAnswer":{"@type":"Answer","text":"可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍，而重抄正是错误和两份文件对不上的来源。把它做成进度计划的一个视图就省掉了这一步。打印时切换到近期计划视图，导出 PDF 或 PNG：导出内容与屏幕一致，你得到的是这个窗口，而不是整份总进度计划。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -96,8 +96,11 @@
         <li><a href="#s1">滚动计划到底是什么</a></li>
         <li><a href="#s2">是交叠，不是包含——所有人最容易搞错的细节</a></li>
         <li><a href="#s3">为什么窗口锚定在周一</a></li>
-        <li><a href="#s4">生成它，而不是重打一遍</a></li>
-        <li><a href="#s5">让它成为一份有用的文件，而不只是一个筛选结果</a></li>
+        <li><a href="#s4">一个完整的例子：沁园 C 地块</a></li>
+        <li><a href="#s5">备工备料评审到底在筛什么</a></li>
+        <li><a href="#s6">PPC：给承诺打分</a></li>
+        <li><a href="#s7">生成它，而不是重打一遍</a></li>
+        <li><a href="#s8">让它成为一份有用的文件，而不只是一个筛选结果</a></li>
       </ol>
     </div>
 
@@ -110,46 +113,89 @@
       <h2 id="s1">滚动计划到底是什么</h2>
 <p>滚动计划是总进度计划的一段短周期滚动摘录——通常三周，也有两周、四周或六周——只显示与该窗口有交叠的工作。它每周向前滚一次，因此同一项任务会随着临近、随着理解加深，连续出现在好几期滚动计划里。</p>
       <p>它之所以存在，是因为总进度计划和作业计划是两份文件、两种用途。总进度计划回答"我们能不能按期完工"；滚动计划回答"周二要干什么，钢材有没有人订"。拿一份两百行的总进度计划去开现场例会，正是它被打成 A0 挂上墙、然后无人过问的原因。</p>
-      <p>用最后计划者体系的说法，滚动计划正是发现<em>制约因素</em>的地方：工作已经近到可以逐条追问——许可、材料、班组、前道工序，是不是真的都会到位。</p>
+      <p>用最后计划者体系的说法，滚动计划正是发现<em>制约因素</em>的地方：工作已经近到可以逐条追问——许可、材料、班组、前道工序，是不是真的都会到位。而这三周并不是三个等价的星期，它们越靠近越硬：</p>
+      <ul>
+        <li><strong>第一周是冻结周。</strong>班组已定，材料已经在场。只有谁也预见不了的事才会改动其中一行。</li>
+        <li><strong>第二周是已承诺但仍可动的一周。</strong>制约因素要么已经消除，要么有一个具名的人和一个日期。这是你还有余地去补救的一周。</li>
+        <li><strong>第三周是筹划周。</strong>工作被识别出来并接受筛查，但不作承诺。这一周的任务允许移动，它存在的意义就是让它们移动。</li>
+      </ul>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 150" width="100%" role="img" aria-label="每个周一窗口向前迈一步：第三周变成第二周，第二周冻结，末尾出现一个新的筹划周。"><text x="0" y="20" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">周 1</text><rect x="70" y="8" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.95"/><rect x="132" y="8" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="194" y="8" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="256" y="8" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="318" y="8" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="380" y="8" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="68" y="5" width="184" height="24" rx="6" fill="none" stroke="#e5484d" stroke-width="1.4"/><text x="0" y="62" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">周 2</text><rect x="70" y="50" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="132" y="50" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.95"/><rect x="194" y="50" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="256" y="50" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="318" y="50" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="380" y="50" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="130" y="47" width="184" height="24" rx="6" fill="none" stroke="#e5484d" stroke-width="1.4"/><text x="0" y="104" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">周 3</text><rect x="70" y="92" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="132" y="92" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="194" y="92" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.95"/><rect x="256" y="92" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="318" y="92" width="56" height="18" rx="4" fill="#6c4cf1" opacity="0.5"/><rect x="380" y="92" width="56" height="18" rx="4" fill="#94a3b8" opacity="0.16"/><rect x="192" y="89" width="184" height="24" rx="6" fill="none" stroke="#e5484d" stroke-width="1.4"/><text x="70" y="140" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">未来 3 周 — 冻结 / 已承诺 / 规划</text></svg><figcaption>每个周一窗口向前迈一步：第三周变成第二周，第二周冻结，末尾出现一个新的筹划周。</figcaption></figure>
       <h2 id="s2">是交叠，不是包含——所有人最容易搞错的细节</h2>
 <p>下面这条规则决定了一份滚动计划是否正确，也是手工电子表格最常破坏的一条。</p>
       <p>一项任务属于该窗口，条件是它与窗口<strong>有交叠</strong>，而不是它整个落在窗口里。三月开工、干到十一月的八个月基础工程包此刻正在施工，恰恰是现场班子最需要摆在眼前的工作。如果按"开始<em>且</em>结束都在这三周内"来筛，你会漏掉工地上所有长周期活动，得到一份看着很整洁、却描述了一个没人在干的项目的滚动计划。</p>
       <p>判定条件是两次比较，不是四次：</p>
       <p><code>task.start ≤ window.end &nbsp;AND&nbsp; task.end ≥ window.start</code></p>
-      <p>这就是全部规则，gantts.app 用的正是它。</p>
+      <p>这就是全部规则，gantts.app 用的正是它。由此还有一个后果：<strong>父级分组永远不会凭自己的日期被匹配上。</strong>阶段行只作为<em>上下文</em>出现——当它下面有任务落在窗口里时，它的各级父行才跟着一起出现，并且按标题而不是按"你正在承诺的工作"来呈现，这样行就不会孤零零地散落在一个平铺列表里。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 600 170" width="100%" role="img" aria-label="只有横跨阴影窗口的横条能通过筛选；父级标题作为上下文一同带出。"><rect x="0" y="24" width="250" height="13" rx="4" fill="#6c4cf1"/><rect x="0" y="46" width="95" height="13" rx="4" fill="#cbd5e1"/><rect x="40" y="68" width="210" height="13" rx="4" fill="#6c4cf1"/><rect x="155" y="90" width="130" height="13" rx="4" fill="#6c4cf1"/><rect x="210" y="112" width="150" height="13" rx="4" fill="#6c4cf1"/><rect x="155" y="14" width="130" height="126" fill="#6c4cf1" opacity="0.10"/><line x1="155" y1="14" x2="155" y2="140" stroke="#6c4cf1" stroke-width="1.4" stroke-dasharray="4 3"/><line x1="285" y1="14" x2="285" y2="140" stroke="#6c4cf1" stroke-width="1.4" stroke-dasharray="4 3"/><text x="220" y="156" font-size="10.5" font-weight="700" fill="#6c4cf1" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">未来 3 周</text><text x="330" y="40" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务</text><text x="330" y="62" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期</text></svg><figcaption>只有横跨阴影窗口的横条能通过筛选；父级标题作为上下文一同带出。</figcaption></figure>
       <h2 id="s3">为什么窗口锚定在周一</h2>
 <p>滚动计划是挂在每周例会上的每周动作。一个从周四到周四的窗口会把工作周从中间切断，对任何看它的人都没有用。</p>
       <p>所以窗口总是回退到一周的起点。周三打开工具，你看到的是从本周一开始的窗口，而不是一个从周中起算的三周区间。需要看得更远时用箭头按周步进，"本周"按钮把它拉回来。</p>
-      <h2 id="s4">生成它，而不是重打一遍</h2>
+      <p>还有一点要记住：这里的"周"是自然周，不是工作周。"往前看三周"意味着 21 天，而不是 15 个工作日。碰上国庆或春节这样的长假，窗口仍然是 21 天，只是里面的工作日可能只剩下八九天——这正是你需要提前看见的事实，而不是需要被工具修正掉的事实。相应地，冻结周里排的活儿必须按工作日历核对过，否则你会把三天的活儿承诺进一个只有两个工作日的星期。</p>
+      <h2 id="s4">一个完整的例子：沁园 C 地块</h2>
+<div class="worked">
+      <p><strong>项目情况。</strong>苏州"沁园"C 地块，七层住宅框架结构，一至三层进入精装修阶段。计划员潘宁负责这份计划，两位工长分别是机电的陈德茂和轻钢龙骨隔墙的郭凯。<strong>窗口从 2026 年 7 月 20 日（周一）开到 8 月 9 日（周日）</strong>——全部 214 项任务中有 13 项与它交叠。</p>
+      <p><em>第一周——冻结，7 月 20 日至 26 日。</em>二层机电一次预埋（陈德茂，4 人，桥架 7 月 14 日已进场）。二层隔墙顶部固定（郭凯，6 人）。3 号管井土建配合——6 月 2 日开工，8 月 21 日完成，所以它既不在窗口内开始、也不在窗口内结束，却照样出现在图上。</p>
+      <p><em>第二周——已承诺，7 月 27 日至 8 月 2 日。</em>二层喷淋支管（陈德茂）、二层西区封板（郭凯）、三层桥架放线。两项尚未消除的制约：喷淋支管要等修改后的消防设计通过施工图审查；西区的纸面石膏板压在一个"7 月 24 日到货"的承诺上。潘宁给每一项都写上了人名和日期——报审回复由陈德茂盯，7 月 23 日；到货由采购员盯，7 月 24 日。</p>
+      <p><em>第三周——筹划，8 月 3 日至 9 日。</em>三层封板、二层电气二次安装，以及 8 月 7 日的二层机电中间验收（监理参加）里程碑。什么都不承诺；这一周做的事是把可能卡住它的东西点出来。</p>
+      <p><strong>一周之后，窗口滚到 7 月 27 日至 8 月 16 日。</strong>潘宁按了一次箭头，一个字都没有重打。原来那个"已承诺周"现在冻结了——而喷淋支管并没有具备开工条件。施工图审查的意见 7 月 23 日没回来，7 月 29 日才回，还要求把走廊吊顶标高改一改。喷淋支管<em>没有</em>被硬拉进冻结周，它移到了 8 月 10 日那一周，标注原因代码"审批未回"；陈德茂的四个人转去做三层桥架放线——那项工作在上一期的第三周里已经把制约排除干净了。石膏板 7 月 24 日按时到货，所以封板按期开始。</p>
+      <p><strong>评分。</strong>7 月 27 日那一周共承诺 6 项，按承诺完成 5 项：PPC 83%，一个原因代码。而这个代码在九周里已经出现了三次——真正改变这个项目的就是这一点。潘宁把消防和施工图审查类的报审全部移到六周的筛查窗口上，因为三周比审批方真实的周转时间还短。</p>
+    </div>
+      <h2 id="s5">备工备料评审到底在筛什么</h2>
+<p>这是一次筛查会，不是进度会：对每一项即将进入第二周的任务，逐条追问它需要的东西会不会到位；如果不会，谁去弄。七类问题就能覆盖完。</p>
+      <table>
+        <thead><tr><th>制约因素</th><th>你要问的问题</th><th>谁来消除</th></tr></thead>
+        <tbody>
+          <tr><td>材料</td><td>订了没有？备料周期比剩下的时间短吗？到场后放在哪里？</td><td>采购</td></tr>
+          <tr><td>图纸与设计</td><td>图纸是不是已经出的施工版？技术核定单回了没有？</td><td>设计管理</td></tr>
+          <tr><td>劳动力</td><td>工种对不对、人数够不够、那一周有没有排上并完成入场教育？</td><td>分包工长</td></tr>
+          <tr><td>机械设备</td><td>设备到场了吗？检验过没有？会不会和别的工种撞档期？</td><td>现场经理</td></tr>
+          <tr><td>报批与审查</td><td>报了没有——以及审查方真实的周转时间塞得进这个窗口吗？</td><td>对接这层关系的人</td></tr>
+          <tr><td>前道工序</td><td>前一个工种是真的完成并办了交接，还是"快好了"？</td><td>计划员 / 工程包负责人</td></tr>
+          <tr><td>作业面与通道</td><td>班组进得去吗？脚手架、照明和安全通道都具备吗？</td><td>现场经理</td></tr>
+        </tbody>
+      </table>
+      <p>还有未消除制约的任务，不进冻结周。硬把它提上去，正是滚动计划沦为装饰品的方式。</p>
+      <h2 id="s6">PPC：给承诺打分</h2>
+<p>一份没人打分的滚动计划，只是一张短一点的甘特图。它的产出不是那些被筛出来的行，而是一份<strong>承诺</strong>；而没人度量的承诺就是愿望。</p>
+      <p><strong>计划完成率（PPC）</strong>就是这个度量。冻结周结束时，用"按承诺完成的活动数"除以"承诺的活动数"。承诺 6 项完成 5 项，就是 83%。不给部分分——完成了 90% 的活动记零分，因为它后面的工种照样开不了工。</p>
+      <p>这份严苛正是要点所在：PPC 度量的是你的计划有多可靠，不是干了多少活。一周里付出了巨大的计划外努力、却只兑现了一半承诺，仍然是糟糕的一周，因为下游所有人都是围着那些承诺来安排的。</p>
+      <p>比数字更重要的是每次未完成后面挂的那个<em>原因</em>。每项失败的活动写一个代码——审批未回、材料迟到、前道工序未完、天气、设计变更。十周之后它们会堆起来，指出那件唯一值得去修的事。</p>
+      <p>新团队通常落在 50%–60%；持续消除制约因素能做到 75%–85%。连续几周高于 90% 通常说明计划注了水。要盯趋势和代码，不要盯那个绝对值。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 70" width="100%" role="img" aria-label="按当初承诺过什么来给这一周打分，而不是按最后凑巧顺手干成了什么。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务</text><rect x="0" y="20" width="170" height="13" rx="4" fill="#6c4cf1"/><line x1="0" y1="44" x2="170" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="85" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">工期 8d</text><text x="260" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">里程碑</text><path d="M 300 20 l 10 10 l -10 10 l -10 -10 z" fill="#e5484d"/><line x1="300" y1="44" x2="300" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="300" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">工期为零</text></svg><figcaption>按当初承诺过什么来给这一周打分，而不是按最后凑巧顺手干成了什么。</figcaption></figure>
+      <h2 id="s7">生成它，而不是重打一遍</h2>
 <p>三周滚动计划的模板并不稀缺——Smartsheet 有一份，另外还有好几家也有，美国海军的设施工程里甚至有一套标准格式。但它们无一例外都是等你手填的空表格。</p>
       <p>这才是真正的问题所在。答案本来就在进度计划里，每周的工作只是把它抄出来，而错误和过期正是从抄写中产生的。漏掉一项任务，或者改了总进度计划却忘了改滚动计划，两份文件就悄悄对不上了。</p>
       <p>在 gantts.app 里，滚动计划是同一份数据的一个<em>视图</em>：</p>
       <ol>
-        <li>把<strong>视图</strong>切换为<strong>滚动计划</strong>。</li>
-        <li>选窗口长度——1、2、3、4、6 或 8 周。</li>
-        <li>用箭头步进，或点"本周"跳回今天。</li>
-        <li>导出 PDF 或 PNG 贴到墙上，或导出 Excel 拿去开会。</li>
+        <li>把工具栏上的<strong>视图</strong>切换为<strong>近期计划</strong>。</li>
+        <li>选窗口长度——1、2、3、4、6 或 8 周。现场例会用 3 周，长周期报批用 6 周。</li>
+        <li>用箭头按周步进，或点<strong>本周</strong>跳回今天所在的那一周。</li>
+        <li>把<strong>负责人</strong>列打开，让每一行都有一个能被追问的人。</li>
+        <li>导出 <strong>📄 PDF 文档</strong>或 <strong>🖼 PNG 图片</strong>贴到墙上，或导出 <strong>📊 Excel (.xlsx)</strong> 拿去开会。</li>
+        <li>看完之后点<strong>显示全部任务</strong>回到完整的总进度计划，免得下一个人以为计划里少了东西。</li>
       </ol>
-      <p>图表会缩放到该窗口，让这三周清晰可读，而不是被压成十八个月时间轴上的一小条。顶部有一条状态带说明当前是哪个窗口、有多少任务被隐藏——因为一张不声明自己被筛过的图，读起来就像一份缺了任务的计划。</p>
-      <p>在总进度计划里改一个日期，滚动计划已经是对的了。没有什么需要重抄。</p>
-      <h2 id="s5">让它成为一份有用的文件，而不只是一个筛选结果</h2>
+      <p>图表会缩放到该窗口，让这三周清晰可读，而不是被压成十八个月时间轴上的一小条。顶部有一条状态带说明当前是哪个窗口、显示了多少任务、总共多少任务——因为一张不声明自己被筛过的图，读起来就像一份缺了任务的计划。</p>
+      <p>窗口默认跟着"今天"走，所以两次打开之间它自己就往前滚了；一旦用箭头定到某个具体的周一，它就钉在那里，直到你点<strong>本周</strong>。在总进度计划里改一个日期，滚动计划已经是对的了。没有什么需要重抄。</p>
+      <h2 id="s8">让它成为一份有用的文件，而不只是一个筛选结果</h2>
 <ul>
         <li><strong>每一行都写上人名。</strong>没有逐项负责人的滚动计划只是一串愿望。把负责人列打开。</li>
         <li><strong>近处的工作要比远处拆得更细。</strong>"二层精装修——6 周"这样的任务放在总进度计划里没问题，放在滚动计划里毫无用处。随着它临近，把它拆开。</li>
         <li><strong>评审制约因素，而不只是日期。</strong>往前看三周的价值，就在于还来得及把缺的东西补上。</li>
         <li><strong>保持简短。</strong>如果滚动计划有六十行，要么窗口太长，要么计划对这个会议来说拆得太细。</li>
+        <li><strong>长周期事项用更长的窗口筛。</strong>如果一个审查方要五周，三周的筛查每次都能发现问题，而且每次都太晚。</li>
+        <li><strong>把未完成记下来。</strong>写在白板上的原因代码，到周四就没了。</li>
       </ul>
 
-      <div class="callout">undefined</div>
+      <div class="callout">滚动计划本身不是交付物，承诺才是。如果周一只产出了一张筛过的图，却没有给上一周打分，你不过是把文书工作自动化了，而把这套做法本身整个跳过了。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
         <details open><summary>什么是三周滚动计划？</summary><p>总进度计划的一段滚动摘录，只显示与未来三周有交叠的工作。它每周更新，用于协调日常作业，并在还来得及处理的时候发现制约因素。</p></details>
         <details><summary>为什么是三周？</summary><p>这个长度既足以让材料、许可、班组等制约因素还有时间解决，又短到日期仍然可信。两周、四周、六周的窗口也很常见，具体取决于你的备料周期。</p></details>
         <details><summary>几个月前就开工的长任务应该出现在滚动计划里吗？</summary><p>应该。凡是与窗口有交叠的都属于它。只筛完整落在三周内的任务，恰好会漏掉当下正在施工的长周期工作。</p></details>
-        <details><summary>滚动计划和总进度计划是一回事吗？</summary><p>不是。总进度计划回答项目能否按期完工，滚动计划回答本周做什么、谁来做。两者出自同一份数据，服务于不同的会议。</p></details>
-        <details><summary>可以用 Excel 做滚动计划吗？</summary><p>可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍。把它做成进度计划的一个视图，就省掉了重抄以及随之而来的偏离。</p></details>
-        <details><summary>滚动计划怎么打印？</summary><p>切换到滚动计划视图，导出 PDF 或 PNG。导出的内容与屏幕一致，所以你得到的是这个窗口，而不是整份总进度计划。</p></details>
+        <details><summary>PPC 是什么，多少算好？</summary><p>按承诺完成的活动数除以承诺的活动数，不给部分分。新团队一般是 50%–60%，75%–85% 算好，长期高于 90% 通常说明计划注了水。原因代码比这个数字更重要。</p></details>
+        <details><summary>某项工作没具备开工条件怎么办？</summary><p>把它移出冻结周，而不是照样承诺；记下原因代码，再把班组调到已经具备条件的工作上。硬把没准备好的任务提上去，正是在摧毁滚动计划本来要建立的那份可靠性。</p></details>
+        <details><summary>可以用 Excel 做滚动计划吗？怎么打印？</summary><p>可以，多数团队也确实在做——办法是每周从总进度计划里重抄一遍，而重抄正是错误和两份文件对不上的来源。把它做成进度计划的一个视图就省掉了这一步。打印时切换到近期计划视图，导出 PDF 或 PNG：导出内容与屏幕一致，你得到的是这个窗口，而不是整份总进度计划。</p></details>
       </div>
 
       <aside class="promo">
@@ -226,6 +272,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

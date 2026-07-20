@@ -256,31 +256,121 @@ const G = {
   'gantt-chart-dependencies': {
     h1: 'Dependencias en un diagrama de Gantt: los cuatro tipos',
     metaTitle: 'Dependencias en Gantt: FS, SS, FF y SF',
-    metaDesc: 'Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y cómo funcionan los desfases positivos y negativos.',
+    metaDesc: 'Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno, cómo funcionan el desfase y el adelanto, y en qué se diferencian la holgura total y la libre.',
     date: '2026-07-19',
-    lead: 'Las <strong>dependencias</strong> son lo que separa un diagrama de Gantt de un dibujo de barras. Dicen qué tiene que ocurrir antes que qué, y hacen que al mover una tarea se mueva todo lo que va detrás. Hay cuatro tipos, y en la práctica uno cubre la mayoría de los casos.',
-    figIntro: 'Los cuatro tipos, con el desfase que se les puede añadir:',
+    lead: 'Las <strong>dependencias</strong> son lo que separa un diagrama de Gantt de un dibujo de barras. Dicen qué tiene que ocurrir antes que qué, y hacen que al mover una tarea se mueva todo lo que va detrás. Hay cuatro tipos: uno hace el noventa por ciento del trabajo y los otros tres existen para los casos que ese primero resuelve mal. Aquí va lo que significa cada uno, aplicado a un proyecto real, más las dos cosas que casi ninguna explicación cuenta: la diferencia entre desfase y adelanto, y la que hay entre holgura total y holgura libre.',
+    figIntro: 'Los cuatro tipos, tal y como se comportan sobre el gráfico:',
     sections: [
+      ['El proyecto que usaremos en todo el artículo',
+        `<p>Los diagramas de dependencias son fáciles de entender y difíciles de aplicar, así que aquí tienes un proyecto concreto —el cambio del sistema de facturación de una empresa municipal de aguas— al que se le aplican, uno por uno, los cuatro tipos.</p>
+        <div class="worked">
+          <p><strong>Aguas de Valduero, S.A. (Valladolid). Sustitución del sistema de facturación de agua y saneamiento. Seis tareas, días laborables, marzo–abril de 2026. Presupuesto adjudicado: 148.500 €, con penalidad de 750 € por día de demora sobre la fecha de puesta en marcha del pliego.</strong></p>
+          <table>
+            <thead><tr><th>#</th><th>Tarea</th><th>Inicio</th><th>Fin</th><th>Días</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Construir los scripts de migración</td><td>lun 2 mar</td><td>vie 13 mar</td><td>10 días</td></tr>
+              <tr><td>2</td><td>Ensayo en blanco de la migración</td><td>lun 16 mar</td><td>vie 20 mar</td><td>5 días</td></tr>
+              <tr><td>3</td><td>Corregir las incidencias del ensayo</td><td>lun 23 mar</td><td>mar 7 abr</td><td>10 días</td></tr>
+              <tr><td>4</td><td>Redactar el manual de puesta en marcha</td><td>lun 16 mar</td><td>mar 7 abr</td><td>15 días</td></tr>
+              <tr><td>5</td><td>Formar al equipo de facturación</td><td>lun 23 mar</td><td>vie 27 mar</td><td>5 días</td></tr>
+              <tr><td>6</td><td>Mantener el sistema antiguo en servicio</td><td>lun 2 mar</td><td>mié 8 abr</td><td>26 días</td></tr>
+            </tbody>
+          </table>
+          <p>Marta Iglesias lleva la dirección del proyecto; Javier Ferrán, la parte técnica; Nuria Bastida, la oficina de facturación. Seis barras y ningún enlace: de momento el gráfico no dice absolutamente nada sobre qué depende de qué. Fíjate además en que la tarea 3 empieza el 23 de marzo y termina el 7 de abril pese a durar diez días: en 2026 el Jueves y el Viernes Santo caen el 2 y el 3 de abril, y esos dos festivos ya han empujado el fin de la cadena una semana antes de que nadie enlace nada.</p>
+        </div>`],
+
       ['Fin-inicio (FS): la que usarás casi siempre',
-        `<p>La tarea B no puede empezar hasta que A termine. Cimentar y luego levantar muros. Escribir el código y luego probarlo. Es el comportamiento por defecto y cubre la gran mayoría de las relaciones reales.</p>
-        <p>Si dudas de qué tipo poner, es fin-inicio.</p>`],
-      ['Inicio-inicio (SS): arrancan juntas',
-        `<p>B no puede empezar hasta que A empiece. Se usa cuando dos trabajos avanzan en paralelo pero uno marca el arranque del otro: en cuanto empieza el hormigonado, empieza el control de calidad; en cuanto empieza la migración de datos, empieza la validación.</p>
-        <p>Muy útil con desfase: «empieza la revisión tres días después de que empiece la redacción».</p>`],
-      ['Fin-fin (FF): terminan juntas',
-        `<p>B no puede terminar hasta que A termine. Típico en pruebas y documentación: la documentación no puede cerrarse antes de que el desarrollo lo haga, aunque lleve semanas avanzando en paralelo.</p>`],
+        `<p>La tarea B no puede empezar hasta que A termine. Cimentar y luego levantar muros. Escribir el código y luego probarlo. Es el comportamiento por defecto de cualquier herramienta de planificación y cubre la gran mayoría de las relaciones reales.</p>
+        <p>En nuestro proyecto, la tarea 2 es fin-inicio respecto de la 1: no se puede ensayar una migración con scripts que nadie ha escrito todavía. Y la tarea 3 es fin-inicio respecto de la 2, porque la lista de incidencias no existe hasta que el ensayo la produce. Esa cadena —1 → 2 → 3, diez días más cinco más diez— es la columna vertebral del plan y es la que fija el 7 de abril como fecha de fin.</p>
+        <p>Si dudas de qué tipo poner, casi con seguridad es fin-inicio. Cuando alguien se lanza a un tipo exótico suele ser señal de que las tareas están mal descompuestas: dos trabajos distintos metidos en la misma barra, o una barra que en realidad son tres.</p>
+        <p>Hay un matiz que conviene decir en voz alta. Fin-inicio describe una imposibilidad técnica, no una preferencia de agenda. «Prefiero que Javier acabe los scripts antes de tocar el ensayo porque así descansa» no es una dependencia: es una decisión de secuencia. Si la modelas como enlace, el plan queda amarrado por algo que nadie tenía obligación de cumplir, y dentro de tres semanas nadie sabrá cuáles de los cuarenta enlaces se pueden romper.</p>`],
+
+      ['Inicio-inicio (SS): trabajos que corren juntos',
+        `<p>B no puede empezar hasta que A empiece. A partir de ahí las dos avanzan en paralelo.</p>
+        <p>El manual de puesta en marcha (tarea 4) es inicio-inicio respecto del ensayo. Quien lo redacta necesita que el ensayo esté en marcha para tener algo que documentar, pero esperar a que <em>termine</em> desperdiciaría una semana entera. Así que ambas arrancan el lunes 16 de marzo. La señal de que toca inicio-inicio es que hay un disparador compartido, no un plazo compartido.</p>
+        <p>Es un tipo que se lleva muy bien con el desfase. «La validación de los datos migrados empieza tres días después de que empiece la migración» es exactamente inicio-inicio con desfase de tres días: nadie quiere validar el primer día, cuando todavía no hay nada cargado, pero tampoco quiere esperar a que la carga acabe.</p>`],
+
+      ['Fin-fin (FF): trabajos que tienen que cerrar juntos',
+        `<p>B no puede terminar hasta que A termine.</p>
+        <p>El manual tiene además un enlace fin-fin con la tarea 3: no se puede dar por cerrado mientras sigan entrando correcciones, porque cada arreglo reescribe un paso del procedimiento. Así que la tarea 4 queda abierta hasta el martes 7 de abril: la arranca el ensayo y la cierran las correcciones, que es la forma típica de una actividad de apoyo.</p>
+        <p>Pruebas, documentación y validación de calidad son fin-fin por el mismo motivo: da igual cuándo empiecen, lo que no pueden es cruzar la meta antes que el trabajo al que acompañan. Si el equipo de Nuria firma el manual el 27 de marzo y luego llegan ocho correcciones, lo que hay firmado no es un manual, es un borrador con sello.</p>`],
+
       ['Inicio-fin (SF): la rara',
-        `<p>B no puede terminar hasta que A empiece. Aparece sobre todo en relevos y traspasos: el turno saliente no termina hasta que el entrante empieza. Es legítima, pero si la estás usando mucho, merece la pena revisar si el plan está bien modelado.</p>`],
-      ['Desfases: adelantos y esperas',
-        `<p>Un desfase positivo introduce espera: «pintar empieza tres días después de enlucir» para dar tiempo de secado. Un desfase negativo introduce solape: «empezar a probar dos días antes de que termine el desarrollo».</p>
-        <p>Los desfases negativos son la forma limpia de comprimir un calendario. Escribir fechas a mano para conseguir el mismo solape funciona hasta el primer cambio, momento en el que el plan deja de recalcularse.</p>`],
+        `<p>B no puede terminar hasta que A empiece. Se lee al revés y la mayoría de los planificadores hacen carrera entera sin necesitarla ni una vez.</p>
+        <p>La tarea 6 es justamente el caso para el que se inventó. El sistema antiguo tiene que seguir emitiendo recibos hasta que el nuevo esté en producción: su <em>fin</em> está atado al <em>inicio</em> de la puesta en marcha. Si lo enlazas como inicio-fin, la barra del sistema antiguo se estira sola hasta la fecha en la que acabe cayendo el arranque, sin que nadie tenga que acordarse de arrastrarla. Y con una penalidad de 750 € diarios encima, olvidarse de arrastrarla es caro en los dos sentidos: por un lado el corte de servicio, por otro el mantenimiento del proveedor antiguo facturando semanas que nadie presupuestó.</p>
+        <p>Esa es la prueba del algodón: un relevo, donde lo que sale termina porque lo que entra empieza. En cualquier otro sitio, reordenar las dos tareas suele decir lo mismo con un fin-inicio normal y corriente, que además todo el mundo entiende a la primera.</p>`],
+
+      ['Los cuatro tipos, uno al lado del otro',
+        `<table>
+          <thead><tr><th>Tipo</th><th>Disparador real</th><th>Con qué frecuencia aplica</th><th>El error que invita a cometer</th></tr></thead>
+          <tbody>
+            <tr><td><strong>FS</strong><br>Fin → Inicio</td><td>Lo que sale de A es lo que entra en B: una lista de incidencias, un plano firmado, una losa hormigonada</td><td>~90 % de los enlaces</td><td>Se usa por preferencia y no por restricción, hasta que todas las fechas quedan clavadas</td></tr>
+            <tr><td><strong>SS</strong><br>Inicio → Inicio</td><td>Dos actividades comparten disparador y luego avanzan juntas</td><td>Frecuente; casi todo plan tiene alguna</td><td>Solo reacciona al <em>inicio</em> de la predecesora: si A se alarga por el final, B no se mueve</td></tr>
+            <tr><td><strong>FF</strong><br>Fin → Fin</td><td>Una actividad envolvente que no puede cerrar antes que el trabajo al que acompaña: pruebas, documentación, validación</td><td>Ocasional, casi siempre en tareas de apoyo</td><td>El inicio de B queda sin restringir y parece que podría empezar absurdamente pronto</td></tr>
+            <tr><td><strong>SF</strong><br>Inicio → Fin</td><td>Un relevo: el turno o el sistema saliente termina porque el entrante empieza</td><td>Rara; muchos planes correctos no tienen ninguna</td><td>Un fin-inicio del revés y mal puesto, que quien revisa el plan interpreta al contrario</td></tr>
+          </tbody>
+        </table>`],
+
+      ['Cuando el tipo equivocado hace mentir al plan',
+        `<p>Vamos con la tarea 5, la formación. Marta la enlaza <strong>inicio-inicio con la tarea 3</strong>: la formación arranca cuando arranca la corrección de incidencias. A simple vista funciona — las dos barras empiezan el 23 de marzo, todo el equipo de facturación formado el viernes 27, mucho antes del arranque.</p>
+        <div class="worked">
+          <p><strong>Entonces el ensayo saca más incidencias de las previstas</strong> y la tarea 3 pasa de diez días a quince, con lo que su fin se va del martes 7 al martes 14 de abril.</p>
+          <ul>
+            <li><strong>Tarea 4 (manual, FF)</strong> — se mueve. Su fin acompaña hasta el 14 de abril. Correcto.</li>
+            <li><strong>Tarea 5 (formación, SS)</strong> — <em>no se mueve ni un día.</em> Inicio-inicio mira el inicio de la predecesora, y el inicio no ha cambiado. El plan sigue diciendo que el equipo queda formado el viernes 27 de marzo.</li>
+          </ul>
+          <p>El gráfico no está roto: está contestando exactamente a la pregunta que se le hizo. Pero Nuria va a formar a seis personas sobre una aplicación a la que le quedan quince días laborables de correcciones, y el plan lo pinta en verde. El enlace correcto era <strong>fin-inicio con la tarea 3</strong>. Una letra mal puesta convirtió un problema de dos semanas en ningún problema en absoluto — y con 750 € por día de demora, en una factura de casi 4.000 € que el informe de seguimiento no anticipaba.</p>
+        </div>
+        <p>Así que compruébalo a propósito: alarga una semana la tarea que más papeletas tiene de irse y mira qué se ha movido. Todo lo que esperabas que se desplazara y no se ha desplazado es un tipo mal elegido, y lo has cazado mientras todavía sale gratis arreglarlo.</p>`],
+
+      ['Los festivos también forman parte de la dependencia',
+        `<p>Un enlace no cuenta días de calendario: cuenta días laborables. Y en España el calendario laboral es cualquier cosa menos uniforme —festivos nacionales, autonómicos y locales, Semana Santa moviéndose por el calendario, y agosto—, así que la misma cadena de dependencias produce fechas distintas según dónde se ejecute.</p>
+        <div class="worked">
+          <p><strong>La misma cadena, dos calendarios.</strong> La cadena 1 → 2 → 3 son 25 días laborables desde el lunes 2 de marzo de 2026.</p>
+          <ul>
+            <li><strong>Sin festivos:</strong> terminaría el viernes 3 de abril.</li>
+            <li><strong>Con Jueves y Viernes Santo (2 y 3 de abril de 2026):</strong> termina el martes 7 de abril. Dos días de festivo se convierten en cuatro de retraso, porque caen pegados a un fin de semana.</li>
+            <li><strong>Si Aguas de Valduero hubiera arrancado el proyecto en junio</strong> y la cadena cruzara agosto, con las vacaciones del convenio y el turno reducido de la oficina, los mismos 25 días laborables se irían casi un mes más allá.</li>
+          </ul>
+          <p>Por eso Marta metió los dos festivos en <strong>Calendario</strong> antes de enlazar nada. Un plan que ignora el calendario laboral no da un error: da una fecha, y la da con toda la seguridad del mundo.</p>
+        </div>
+        <p>La consecuencia práctica es que las dependencias y el calendario se revisan juntos. Cambiar un enlace de inicio-inicio a fin-inicio en una cadena que cruza Semana Santa o el puente del Pilar mueve la fecha final mucho más de lo que sugiere la duración de la tarea, y ese es precisamente el momento en que conviene mirar la ruta crítica otra vez.</p>`],
+
+      ['Desfase y adelanto: un desfase es espera, no holgura',
+        `<p>Un <strong>desfase</strong> añade tiempo de espera al enlace. «FS + 3 días» significa que B empieza tres días después de que A termine. En nuestro caso, la puesta en marcha es fin-inicio con un día de desfase respecto de las correcciones: un día limpio para la última sincronización de datos y el corte de facturación.</p>
+        <!--FIG:lag|Un desfase es espera comprometida dentro del enlace, no margen alrededor de él.-->
+        <p>Lo que casi todo el mundo confunde: <strong>un desfase no es holgura.</strong> La holgura es margen que puedes gastar cuando algo se tuerce. Un desfase es tiempo ya comprometido: el hormigón curando, la pintura secando, el plazo de alegaciones de un pliego, los diez días que la imprenta tarda en servir. Nadie «usa» un desfase cuando va tarde; el hormigón cura los mismos días vayas como vayas. Rellenar enlaces con desfase porque una tarea «igual se alarga» crea una reserva que nadie encuentra y que, llegado el recorte, nadie se atreve a tocar porque no sabe si es real.</p>
+        <p>Un <strong>adelanto</strong> es un desfase negativo: «FS − 2 días» solapa el final de A con el principio de B. Los adelantos comprimen el calendario —esto es exactamente lo que se llama ejecución rápida— pero compran tiempo pagando con riesgo. Un solape que no has razonado es una cola de retrabajo: B se está construyendo encima de un A que todavía no está terminado.</p>
+        <p>Los dos se escriben igual: <code>3FS+2d</code> —fila 3, fin-inicio, dos días de desfase—, que es la notación que acepta la columna <strong>Después de</strong> de gantts.app.</p>`],
+
+      ['Holgura total y holgura libre no son el mismo número',
+        `<p>Con las dependencias puestas, cada tarea tiene holgura: cuánto puede retrasarse antes de hacer daño. Hay dos clases, y confundirlas sale caro.</p>
+        <!--FIG:float|La holgura total es de la cadena. La holgura libre es de la tarea.-->
+        <p>La <strong>holgura total</strong> es cuánto puede retrasarse una tarea antes de mover la fecha de fin del proyecto. La <strong>holgura libre</strong> es cuánto puede retrasarse antes de mover a su propia sucesora. La libre nunca es mayor que la total, y en la diferencia entre las dos es donde vive el problema.</p>
+        <p>La formación tiene holgura total —la fecha de fin la marca la cadena de correcciones—, pero la holgura total es <em>compartida</em>: si tres tareas seguidas muestran ocho días cada una, hay ocho días entre las tres, no veinticuatro. Un responsable que lee solo ese número y se retrasa una semana se ha gastado un margen que pertenecía a toda la cadena, y quien venga detrás se encontrará con cero.</p>
+        <!--FIG:cpm|Holgura total cero significa crítica: cada día de retraso mueve la fecha de fin.-->
+        <p>Holgura total cero es, literalmente, la definición de ruta crítica. Activa <strong>Ruta crítica</strong> en gantts.app y esa cadena se dibuja rayada — la leyenda lo dice tal cual: <em>rayado = ruta crítica</em>. Ahí es donde los tipos de dependencia tienen que estar bien puestos, porque son los que fijan la fecha de entrega y, en un contrato con penalidades por demora, la factura.</p>`],
+
+      ['Crear y editar una dependencia en gantts.app',
+        `<ol>
+          <li><strong>Arrastra de barra a barra.</strong> Coge el punto pequeño del extremo de una barra, arrástralo sobre la barra que quieras enlazar y suelta. El enlace se crea como <strong>fin-inicio</strong> y con desfase cero.</li>
+          <li><strong>Cámbiale el tipo desde la flecha.</strong> Haz clic sobre la flecha que une las dos barras para editar la relación: fin-inicio, inicio-inicio, fin-fin o inicio-fin, con su desfase en días. Un número negativo es un adelanto. Todo se deshace con Ctrl+Z.</li>
+          <li><strong>O escríbelo en la tabla.</strong> La columna <strong>Después de</strong> de la rejilla acepta predecesoras por número de fila: <code>3</code>, <code>2SS</code>, <code>3FF</code>, <code>3FS+2d</code>, separadas por comas. Es la forma más rápida de enlazar un plan que acabas de traer con <strong>✨ Pegar a Gantt</strong>.</li>
+          <li><strong>O usa la ficha de la tarea.</strong> Haz clic en una tarea y abre <strong>Después de (predecesoras)</strong>. Ahí añades enlaces uno a uno y cada uno lleva su propio tipo y su propio desfase, junto al resto de campos de la tarea: <strong>Inicio</strong>, <strong>Fin</strong>, <strong>Duración</strong>, <strong>Responsable</strong>.</li>
+          <li><strong>Comprueba el efecto.</strong> Activa <strong>Ruta crítica</strong> y abre <strong>Tabla</strong> (<em>El plan en tabla</em>) para ver las fechas resultantes de un vistazo. Si acabas de meter festivos, revísalos antes en <strong>Calendario</strong> (<em>Calendario laboral</em>).</li>
+          <li><strong>Quita el enlace que sobre.</strong> Desde la misma flecha, o borrando la predecesora en la columna <strong>Después de</strong> o en la ficha de la tarea.</li>
+        </ol>
+        <p>Hay un comportamiento que conviene conocer: <strong>añadir una dependencia aquí solo puede empujar una tarea hacia adelante, nunca tirar de ella hacia atrás.</strong> El planificador es «tal como está colocada»: una tarea empieza en la más tardía de dos fechas, la que tú le diste al arrastrarla y la que le permiten sus predecesoras. Si enlazas una tarea cuya barra ya está bastante después de su predecesora, no se mueve nada y el hueco se mantiene, porque una barra que has colocado a propósito no debería salir disparada por un enlace que añadiste para documentar el plan.</p>
+        <p>Cuando lo que quieras sea compactar, pulsa <strong>Reprogramar</strong>: ignora dónde están colocadas las tareas dependientes y tira de cada una hasta la fecha más temprana que le permiten sus predecesoras, dejando como anclas las tareas sin enlazar. Es el paso que Marta dio al final, con todos los enlaces ya revisados y los festivos de Semana Santa cargados: hasta ese momento, el plan mostraba huecos que no eran restricciones, sino simplemente el sitio donde alguien había soltado una barra.</p>`],
     ],
-    callout: 'Si te encuentras corrigiendo fechas a mano para que las barras encajen, casi siempre falta una dependencia. La señal es clara: cada vez que se mueve una tarea tienes que arreglar tres más. Con la relación bien puesta, esas tres se mueven solas.',
+    callout: 'Una dependencia debe describir una restricción real, no una preferencia. «Preferimos hacer B después de A» es una decisión de secuencia y se resuelve con el orden de las filas. «B no puede empezar hasta que A esté terminada» es una dependencia. Los gráficos llenos de lo primero no se pueden replanificar: cada fecha está sujeta por algo que nunca fue obligatorio, y ya nadie sabe qué enlaces aguantan el peso.',
     faq: [
-      ['¿Cuáles son los 4 tipos de dependencia en un diagrama de Gantt?', 'Fin-inicio (FS), inicio-inicio (SS), fin-fin (FF) e inicio-fin (SF). Fin-inicio es con diferencia la más frecuente y la que conviene usar salvo que el caso pida otra cosa.'],
-      ['¿Qué es el desfase (lag) en una dependencia?', 'Un retardo o un adelanto aplicado a la relación. Positivo introduce espera —tiempo de secado, curado, revisión externa—; negativo introduce solape, permitiendo que la tarea siguiente empiece antes de que la anterior termine.'],
-      ['¿Cuándo debo usar inicio-inicio en vez de fin-inicio?', 'Cuando dos tareas avanzan en paralelo y lo que importa es que arranquen coordinadas, no que una termine. Control de calidad junto a producción, o validación junto a migración, son casos típicos.'],
-      ['¿Puedo editar el tipo de dependencia después de crearla?', 'Sí. En el <a href="/es/app.html">editor de gantts.app</a> se hace clic sobre la flecha y se cambia el tipo o el desfase; el resto del plan se recalcula al instante.'],
+      ['¿Cuáles son los 4 tipos de dependencia en un diagrama de Gantt?', 'Fin-inicio (FS), inicio-inicio (SS), fin-fin (FF) e inicio-fin (SF). Fin-inicio cubre con diferencia la mayoría de las relaciones reales; inicio-fin es rara, y muchos planes perfectamente correctos no tienen ninguna.'],
+      ['¿Qué diferencia hay entre desfase (lag) y adelanto (lead)?', 'El desfase es espera añadida al enlace: FS+3d arranca la sucesora tres días después de que termine la predecesora. El adelanto es un desfase negativo y solapa las dos tareas. Un desfase es tiempo ya comprometido —curado, secado, un plazo administrativo—, no margen: no puedes gastarlo cuando vas tarde.'],
+      ['¿Qué diferencia hay entre holgura total y holgura libre?', 'La holgura total es cuánto puede retrasarse una tarea antes de mover el fin del proyecto; la libre, cuánto antes de mover a su propia sucesora. La total se comparte a lo largo de la cadena: tres tareas seguidas que muestran ocho días cada una no tienen veinticuatro entre ellas, tienen ocho.'],
+      ['¿Qué tipo de dependencia debo usar por defecto?', 'Fin-inicio. Si te parece que hace falta otro tipo, revisa antes si las tareas están bien descompuestas: un tipo poco habitual suele ser el síntoma de una tarea que debería estar partida en dos.'],
+      ['¿Qué pasa con mis fechas al añadir una dependencia en gantts.app?', 'Una dependencia solo puede empujar una tarea hacia adelante, nunca tirar de ella hacia atrás: la tarea empieza en la más tardía de dos fechas, donde tú la colocaste y donde se lo permiten sus predecesoras. Pulsa Reprogramar para compactar las tareas hasta su fecha legal más temprana.'],
+      ['¿Cómo añado dependencias en gantts.app?', 'Arrastrando desde el punto del extremo de una barra hasta otra barra, o escribiendo la notación —por ejemplo 3FS+2d— en la columna Después de de la tabla. Haciendo clic sobre la flecha del enlace cambias el tipo o el desfase, y el resto del plan se recalcula al instante.'],
     ],
     related: [
       ['critical-path-method', 'Cómo se calcula la ruta crítica'],
@@ -672,27 +762,143 @@ const G = {
     sections: [
       ['Qué es exactamente una línea base',
         `<p>Es una copia de las fechas —y opcionalmente del avance— en el momento en que el plan se aprueba. No cambia cuando cambias el plan: precisamente por eso sirve de referencia. Todo lo que ocurra después se mide contra ella.</p>
-        <p>Sin línea base, cada vez que arrastras una barra el plan «siempre ha sido así». Es el equivalente a borrar el punto de partida.</p>`],
+        <p>Sin línea base, cada vez que arrastras una barra el plan «siempre ha sido así». Es el equivalente a borrar el punto de partida. Y el problema no es el arrastre grande y evidente, que alguien discute en la reunión de seguimiento: es el goteo. Un día aquí, dos allá, treinta ediciones a lo largo de seis meses, cada una razonable por separado. Un plan que ha absorbido treinta retoques de un día tiene exactamente el mismo aspecto que uno que no se ha movido nunca. La línea base es lo que obliga a esos retoques a sumar.</p>
+        <p>Conviene entender también qué <em>no</em> es. No es una previsión, no es un objetivo comercial y no es la fecha que le prometiste al cliente por teléfono. Es el plan que alguien aprobó, con nombre y fecha. Si esas tres cosas no coinciden, el problema está antes del diagrama de Gantt.</p>`],
+
       ['Cuándo fijarla, y cuándo no',
-        `<p>Fíjala cuando el plan esté acordado y no antes: una línea base sobre un borrador solo genera desviaciones falsas. En la práctica, el momento suele ser el cierre del diseño, la firma del contrato o la concesión del permiso — el punto en el que las estimaciones dejan de ser conjeturas.</p>
-        <p>No la fijes mientras el alcance siga en discusión. Estarás midiendo contra una hipótesis.</p>`],
-      ['Leer la desviación de inicio y de fin',
-        `<p>La desviación de inicio dice si la tarea arrancó cuando debía; la de fin, si terminó cuando debía. No siempre coinciden, y la combinación es informativa: empezar tarde y terminar a tiempo significa que se recuperó; empezar a tiempo y terminar tarde significa que la estimación era mala.</p>
-        <p>Un signo positivo indica retraso respecto a la línea base; uno negativo, adelanto.</p>`],
+        `<p>Fíjala cuando el plan esté acordado y no antes: una línea base sobre un borrador solo genera desviaciones falsas. En la práctica, el momento suele ser el cierre del proyecto de ejecución, la formalización del contrato o —en obra— la firma del <strong>acta de comprobación del replanteo</strong>, que es el día en que el plazo empieza a contar de verdad. Ese es el punto en el que las estimaciones dejan de ser conjeturas.</p>
+        <p>No la fijes mientras el alcance siga en discusión. Estarás midiendo contra una hipótesis. Y no la fijes a mitad de ejecución solo para tener una: una línea base capturada cuando ya llevas tres semanas de retraso congela ese retraso dentro del plan y a partir de ahí infravalora todo lo demás. Es peor que no tener nada, porque produce cifras precisas y tranquilizadoras.</p>
+        <p>El otro error, más sutil: fijarla sobre un plan que sabes que está mal. Si quedan tareas con fechas de relleno, corrígelas primero. Una línea base ficticia genera desviaciones seguras, exactas y sin significado.</p>`],
+
+      ['Un caso real: tres certificaciones mensuales',
+        `<p>Rehabilitación del Mercado Municipal de la Rondilla, en Valladolid. Contrato de obras licitado por el ayuntamiento al amparo de la <strong>Ley 9/2017 de Contratos del Sector Público</strong>, adjudicado a Construcciones Alcorta S.L. por 1.240.000 € y con un plazo de ejecución de ocho meses. Dirección facultativa: Marta Iglesias, arquitecta. Jefe de obra: Javier Ferrán.</p>
+        <div class="worked">
+          <p><strong>Línea base, fijada el lunes 2 de marzo de 2026</strong></p>
+          <p>Se fija el mismo día de la firma del acta de comprobación del replanteo, con el plan de obra ya visado y antes de que entre la primera máquina. Cinco filas, todas encadenadas fin-inicio (FS), todas críticas:</p>
+          <ul>
+            <li>Demoliciones y desamiantado — 2 mar a 20 mar (15 días laborables)</li>
+            <li>Estructura y refuerzo de forjados — 23 mar a 8 may (30 días)</li>
+            <li>Instalaciones (electricidad, clima, PCI) — 11 may a 19 jun (30 días)</li>
+            <li>Albañilería y acabados — 22 jun a 31 jul (30 días)</li>
+            <li>Recepción de la obra — 3 sep (hito)</li>
+          </ul>
+          <p>El calendario excluye fines de semana, los festivos de Castilla y León, Jueves y Viernes Santo (2 y 3 de abril) y <strong>agosto entero</strong>: por convenio la obra para y el equipo se va de vacaciones. Por eso la recepción cae en septiembre y no a primeros de agosto.</p>
+
+          <p><strong>Certificación de marzo — 31 de marzo</strong></p>
+          <p>La autoridad laboral tardó en aprobar el plan de trabajo del desamiantado y la retirada del fibrocemento de la cubierta arrancó cuatro días tarde. Demoliciones terminó el 26 de marzo en lugar del 20: <strong>desviación de fin +4 días</strong>. Estructura empezó el 27 de marzo — <strong>desviación de inicio +4</strong> — y, con la estimación intacta, su fin previsto se va al 14 de mayo, también +4. Todo lo que viene detrás arrastra los mismos +4 y la recepción se lee el 9 de septiembre.</p>
+          <p>Léelo bien: es un problema de <em>arranque</em>, no de estimación. Nadie tardó más de lo previsto en desamiantar; se empezó tarde. La conversación en la visita de obra es con la tramitación, no con la cuadrilla.</p>
+
+          <p><strong>Certificación de mayo — 29 de mayo</strong></p>
+          <p>Al descubrir los forjados aparecieron dos crujías con la armadura mucho más deteriorada de lo que anticipaba el estudio geotécnico y las catas previas. La dirección facultativa lo deja por escrito en el <strong>Libro de Órdenes y Asistencias</strong> y el órgano de contratación aprueba un <strong>modificado del contrato</strong> de 45.800 € con una <strong>ampliación de plazo de seis días laborables</strong>.</p>
+          <p>Estructura se reestima de 30 a 36 días y termina el 22 de mayo en vez del 8: <strong>desviación de fin +10 días</strong> — <strong>4 heredados</strong> y <strong>6 de desviación de duración</strong>, que es la noticia realmente nueva. Instalaciones arranca el 25 de mayo, desviación de inicio +10.</p>
+          <p>Ese desglose es la razón de seguir el inicio y el fin por separado. «Estructura va diez días tarde» abre la conversación equivocada; «Estructura heredó cuatro y creció seis por un modificado aprobado» separa lo que fue tramitación de lo que fue obra oculta — y solo lo segundo genera derecho a ampliación de plazo.</p>
+
+          <p><strong>Certificación de julio — 31 de julio</strong></p>
+          <p>Instalaciones va al 60 % de avance frente al 75 % previsto, así que la reestimación tampoco era generosa. El pliego fija penalidades por demora por cada día de retraso sobre el plazo contractual, y Ferrán prefiere no llegar ahí: mete una segunda cuadrilla de acabados y baja Albañilería y acabados de 30 a 24 días, con un sobrecoste de 18.400 € que no estaba en la certificación de julio.</p>
+          <p>Acabados muestra ahora <strong>desviación de duración −6 días</strong> y <strong>desviación de fin +4</strong>. La recepción cae el 9 de septiembre.</p>
+          <p>Fíjate en lo que esa desviación negativa <em>no</em> significa. Nada fue más rápido: se compraron seis días con el tiempo de seis personas más, y una columna que solo mide días no puede enseñar eso. Aparecerá en la certificación, no en el Gantt.</p>
+
+          <p><strong>Resumen honesto</strong></p>
+          <p>Cuatro días laborables de retraso en la recepción: cuatro por la tramitación del desamiantado, seis por el modificado de estructura —con ampliación de plazo aprobada, así que a efectos contractuales no cuentan— y seis recomprados con una segunda cuadrilla a 18.400 €. Tres frases, tres responsables distintos, y ninguna se deduce de un porcentaje de avance global.</p>
+        </div>`],
+
+      ['Cuatro desviaciones, y qué esconde cada una',
+        `<p>«Desviación» no es un único número. Merece la pena seguir cuatro, y cada una es ciega a algo que otra sí capta.</p>
+        <table>
+          <thead>
+            <tr><th>Desviación</th><th>Qué es</th><th>Qué solo ella te dice</th><th>Dónde engaña</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>De inicio</strong></td>
+              <td>Inicio real menos inicio de la línea base.</td>
+              <td>Si el retraso era heredado: empezar tarde apunta a algo aguas arriba, a un permiso o a un recurso que no estaba libre.</td>
+              <td>No dice nada del fin. Una tarea puede arrancar cinco días tarde y aun así terminar en fecha metiendo gente.</td>
+            </tr>
+            <tr>
+              <td><strong>De fin</strong></td>
+              <td>Fin real o previsto menos fin de la línea base.</td>
+              <td>El impacto aguas abajo: es la cifra que se propaga por las dependencias hasta el hito de entrega.</td>
+              <td>Mezcla lo heredado con lo nuevo. Los +10 de Estructura eran 4 heredados y 6 propios: dos problemas dentro de un número.</td>
+            </tr>
+            <tr>
+              <td><strong>De duración</strong></td>
+              <td>Duración real menos duración de la línea base.</td>
+              <td>Si la estimación estaba mal — es la desviación de fin con la parte heredada descontada.</td>
+              <td>Se vuelve negativa al acelerar una tarea, y eso se lee como ir adelantado. Los −6 de acabados costaron una cuadrilla entera.</td>
+            </tr>
+            <tr>
+              <td><strong>De coste o de trabajo</strong></td>
+              <td>Gasto o esfuerzo consumido frente al presupuestado.</td>
+              <td>Lo que costó la recuperación. Es la única que detecta que has acelerado pagando.</td>
+              <td>Exige datos reales introducidos. Sin gasto registrado no es una cifra pequeña: no existe.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>La de duración es la que casi todos los equipos se saltan y la única que cambia comportamientos: separa «llegamos tarde» de «estimamos mal», que son dos conversaciones muy distintas con dos soluciones muy distintas.</p>
+        <!--FIG:baseline|La barra fantasma lleva la línea base; el hueco hasta la barra real es la desviación.-->`],
+
+      ['Leer la desviación de inicio y de fin juntas',
+        `<p>La desviación de inicio dice si la tarea arrancó cuando debía; la de fin, si terminó cuando debía. No siempre coinciden, y la combinación es informativa. Cuatro lecturas rápidas:</p>
+        <ul>
+          <li><strong>Inicio 0, fin 0.</strong> En plan. Ni la mires.</li>
+          <li><strong>Inicio +n, fin +n.</strong> Retraso puro de arranque, arrastrado tal cual. La duración se cumplió. Mira aguas arriba: la predecesora, el permiso, el suministro.</li>
+          <li><strong>Inicio 0, fin +n.</strong> Empezaste en fecha y tardaste más. La estimación estaba mal, o la tarea encontró algo que no estaba previsto. Este es el caso del modificado.</li>
+          <li><strong>Inicio +n, fin menor que +n.</strong> Se recuperó parte del retraso. Bien, pero pregunta a costa de qué: casi siempre hay horas extra o una subcontrata detrás.</li>
+        </ul>
+        <p>Un signo positivo indica retraso respecto a la línea base; uno negativo, adelanto. En nuestro editor la desviación negativa se pinta en verde y la positiva en rojo, con la advertencia de siempre: el verde de una duración negativa puede ser una factura.</p>`],
+
       ['La desviación que importa es la de la ruta crítica',
-        `<p>Una tarea con quince días de holgura que se retrasa tres días no ha hecho nada al proyecto. Una tarea crítica que se retrasa un día ha retrasado la entrega un día. Mirar la lista de desviaciones sin cruzarla con la ruta crítica lleva a gastar energía en el sitio equivocado.</p>`],
-      ['Cuándo volver a fijar la línea base',
-        `<p>Cuando el plan original deja de ser una referencia útil: un cambio de alcance aprobado, una parada larga, una replanificación formal. Rehacerla porque vamos con retraso es tentador y destruye la única evidencia de que hubo retraso.</p>
-        <p>Si vuelves a fijarla, deja constancia de por qué y de cuándo. Una línea base sin historia es tan poco fiable como no tenerla.</p>`],
+        `<p>Una tarea con quince días de holgura que se retrasa tres días no ha hecho nada al proyecto. Una tarea crítica que se retrasa un día ha retrasado la entrega un día. Mirar la lista de desviaciones sin cruzarla con la ruta crítica lleva a gastar energía en el sitio equivocado.</p>
+        <p>El procedimiento útil es ordenar por desviación de fin y luego marcar cuáles de esas tareas son críticas. Esa lista corta es tu informe de situación real. Contar «tareas retrasadas» sin mirar la holgura es exactamente como se consigue estar «al 80 % según plan» y tres semanas tarde a la vez.</p>
+        <p>La trampa contraria también existe y es más traicionera: una tarea no crítica con +12 días de desviación y 14 de holgura está bien hoy y es crítica mañana. La holgura se consume; la desviación de una tarea con holgura es un aviso con fecha de caducidad, no una tarea que puedas ignorar para siempre.</p>`],
+
+      ['Volver a fijar la línea base: modificado aprobado o borrado de pruebas',
+        `<p>Es la decisión más consecuente que vas a tomar sobre una línea base, y casi nunca es técnica. Reprogramar la línea base pone todas las desviaciones a cero y hace desaparecer el registro de lo que se prometió al principio. Hay tres situaciones en las que es lo correcto:</p>
+        <ul>
+          <li><strong>Un modificado del contrato aprobado.</strong> Alguien con competencia para ello ha añadido o quitado obra, por escrito, con su expediente y su ampliación de plazo. Medir contra un plan que ya no describe el proyecto da una desviación correcta e inútil.</li>
+          <li><strong>Una replanificación formal.</strong> Los números han dejado de guiar decisiones: todo marca +30 días y nadie distingue qué está empeorando.</li>
+          <li><strong>Un reinicio tras una parada.</strong> Suspensión temporal, un invierno perdido, un recurso ante el tribunal de contratación. Las fechas viejas miden la parada, no el trabajo.</li>
+        </ul>
+        <p>Cualquier otro motivo es el mismo motivo con otra ropa: la desviación queda fea y el informe es el jueves. Reprogramar la línea base la semana antes de una comisión de seguimiento es la señal inequívoca. En nuestro ejemplo, rehacerla el 31 de julio habría dejado la recepción con 0 días de retraso — y seguiría siendo el 9 de septiembre.</p>
+        <p>La prueba es sencilla: si la nueva línea base es legítima, puedes nombrar la decisión, la fecha y quién la aprobó. Si no puedes, estás borrando la evidencia de que algo se torció.</p>
+        <p>Y cuando la reprogrames, conserva la anterior: guarda el plan en un archivo antes, porque el archivo se lleva la línea base dentro. La distancia entre la línea base 1 y la línea base 3 suele ser la descripción más honesta que existe de un proyecto, y es justo lo que destruye sobrescribirla.</p>`],
+
+      ['Dónde encaja el valor ganado, y qué informa de verdad nuestra curva S',
+        `<p>La desviación en días responde a «cuánto tarde». El <strong>valor ganado</strong> responde a «cuánto trabajo hemos ingresado por el tiempo y el dinero gastados». Depende de la línea base: sin ella, el <strong>Valor planificado</strong> no tiene a qué seguir. Nuestra curva S es explícita con sus límites, y conviene conocerlos antes de citar sus cifras en una certificación:</p>
+        <ul>
+          <li><strong>El valor planificado sigue la línea base si la tienes.</strong> Si no, el «plan» son tus fechas actuales, así que la <strong>Desviación de plazo</strong> sale cero por muy lejos que se haya movido todo. El diálogo lo dice en vez de mostrarte un cero halagador.</li>
+          <li><strong>El coste real nunca se deduce del avance.</strong> Sale únicamente del gasto que hayas introducido tarea a tarea, en el campo <strong>Gastado</strong>. El atajo tentador —suponer que una tarea al 40 % ha consumido el 40 % de su presupuesto— hace que el <strong>Rendimiento del coste</strong> (CPI) valga exactamente 1,00 en todos los proyectos del mundo. Por eso, sin gasto real introducido, el CPI, la <strong>Desviación de coste</strong> y la <strong>Previsión a la finalización</strong> se informan como inexistentes, no como cero.</li>
+          <li><strong>No meter costes es el caso normal.</strong> Entonces las tareas se ponderan por su duración en días laborables y obtienes una curva S de avance puro: la misma forma, leída en porcentaje en lugar de en euros.</li>
+          <li><strong>La curva ganada del pasado está reconstruida.</strong> Guardamos el avance de hoy, no su historia, así que el tramo anterior asume que el avance se acumuló de forma uniforme por días laborables transcurridos. Exacta en la fecha de corte, aproximada por detrás, y etiquetada como tal.</li>
+        </ul>
+        <p>Dicho de otro modo: en el mercado de la Rondilla, mientras nadie introduzca el importe de las certificaciones en <strong>Gastado</strong>, la curva S te dirá si vas tarde, pero no te dirá nada sobre los 18.400 € de la segunda cuadrilla. Esa cifra hay que meterla.</p>
+        <!--FIG:evmquad|Plazo y coste son ejes independientes: ir tarde y por debajo de presupuesto es un sitio real donde estar.-->`],
+
       ['Cómo se hace en gantts.app',
-        `<p>Desde el menú de línea base puedes fijarla con el plan actual, mostrar las columnas de línea base y desviación, o borrarla. Las barras de línea base se dibujan bajo las reales, así que el desfase se ve sin leer números. <a href="/es/app.html">Abrir el editor</a>.</p>`],
+        `<p>El ciclo completo lleva menos de un minuto. Con la obra del mercado como ejemplo:</p>
+        <ol>
+          <li>Acuerda el plan primero. Fechas, dependencias y duraciones deben ser exactamente lo que quieres medir.</li>
+          <li>Abre <strong>Línea base</strong> en la barra de herramientas. Sin ninguna guardada, el menú ofrece una sola acción: fijarla con el plan actual. Verás el aviso <em>«Línea base fijada — los retrasos se miden ahora frente a este plan»</em>.</li>
+          <li>Aparecen barras fantasma bajo cada barra de tarea. Al reabrir el menú verás la fecha de captura y la casilla para ocultarlas si vas a usar <strong>▶ Presentar</strong> delante del ayuntamiento.</li>
+          <li>Trabaja el plan. En cada certificación, arrastra las barras o edita <strong>Inicio</strong> y <strong>Fin</strong> en el panel de la tarea para reflejar la realidad: 26 de marzo en Demoliciones, 22 de mayo en Estructura.</li>
+          <li>Vuelve a <strong>Línea base</strong> y activa las columnas de desviación. El aviso <em>«Mostrando columnas de línea base y desviación»</em> confirma que la tabla ya trae el inicio y el fin de la línea base junto a la desviación de cada uno. Lo tarde sale en rojo; lo adelantado, en verde.</li>
+          <li>Recorre la desviación de fin y crúzala con <strong>Ruta crítica</strong> para ver cuáles de esos retrasos mueven la fecha de recepción. La leyenda <em>rayado = ruta crítica</em> te dice qué barras mirar.</li>
+          <li>La desviación de duración es la diferencia entre los días de la línea base y los de la columna <strong>Días</strong>. Ábrela también en <strong>Tabla</strong> («El plan en tabla») si prefieres leer todo el plan de una vez.</li>
+          <li>Para el avance, abre <strong>Curva S</strong> («Curva S — planificado vs real»). El diálogo indica si el <strong>Valor planificado</strong> sigue tu línea base o solo tus fechas actuales, y <strong>Cómo se calcula esto</strong> explica el resto.</li>
+          <li>No uses <strong>Reprogramar</strong> para «arreglar» la desviación: compacta las tareas a sus fechas legales más tempranas y es una herramienta de planificación, no de seguimiento.</li>
+          <li>Antes de cualquier reprogramación de la línea base, guarda una copia con <strong>⬇ Exportar</strong> → <strong>💾 Guardar proyecto (.gantts)</strong>, nombrada con la fecha del modificado. Después actualízala con el plan actual; el aviso <em>«Línea base actualizada al plan actual»</em> cierra el ciclo. Borrarla también se puede, y ambas acciones se deshacen.</li>
+        </ol>
+        <p><a href="/es/app.html">Abrir el editor</a>.</p>`],
     ],
-    callout: 'Volver a fijar la línea base cada vez que el plan se desvía equivale a no tener línea base. El objetivo no es que la desviación sea cero: es saber cuánta hay, dónde está y si toca la ruta crítica.',
+    callout: 'Volver a fijar la línea base cada vez que el plan se desvía equivale a no tener línea base. El objetivo no es que la desviación sea cero: es saber cuánta hay, dónde está y si toca la ruta crítica. El fallo más habitual ni siquiera es técnico: se fija la línea base, la desviación empieza a incomodar y el equipo deja de mirarla. Una línea base que nadie lee es peor que ninguna, porque aparenta seguimiento sin serlo.',
     faq: [
       ['¿Qué diferencia hay entre línea base y plan actual?', 'La línea base son las fechas aprobadas y congeladas; el plan actual son las fechas vigentes, con los cambios ya aplicados. La desviación es la resta entre ambas.'],
-      ['¿Cuándo debo fijar la línea base?', 'Cuando el plan esté aprobado y el alcance estable — típicamente al cierre del diseño, la firma del contrato o la concesión del permiso.'],
-      ['¿Puedo tener varias líneas base?', 'En herramientas de gestión formal, sí. En gantts.app se mantiene una, que puedes actualizar o borrar; lo importante es registrar por qué cambió.'],
-      ['¿Qué es una desviación aceptable?', 'Depende del proyecto, pero la pregunta útil no es el tamaño sino la ubicación: cualquier desviación sobre la ruta crítica se traslada directamente a la fecha de entrega.'],
+      ['¿Cuándo debo fijar la línea base?', 'Cuando el plan esté aprobado y el alcance estable — típicamente al cierre del proyecto de ejecución, la formalización del contrato o la firma del acta de comprobación del replanteo. Fijarla a mitad de ejecución congela el retraso ya producido y lo esconde.'],
+      ['¿Puedo tener varias líneas base?', 'En herramientas de gestión formal, sí. En gantts.app se mantiene una, que puedes actualizar o borrar; lo importante es guardar el archivo .gantts antes de cambiarla, porque el archivo se lleva la línea base dentro.'],
+      ['¿Qué es una desviación aceptable?', 'Depende del proyecto, pero la pregunta útil no es el tamaño sino la ubicación: cualquier desviación sobre la ruta crítica se traslada directamente a la fecha de entrega. Una desviación grande con holgura de sobra es un aviso; una pequeña sin holgura es un retraso.'],
+      ['¿Qué diferencia hay entre desviación de inicio, de fin y de duración?', 'La de inicio dice si el retraso venía heredado de aguas arriba. La de fin dice el impacto que se propaga hacia abajo. La de duración descuenta la parte heredada y muestra si tu estimación estaba mal. Solo la de duración distingue «llegamos tarde» de «estimamos mal».'],
+      ['¿Debo reprogramar la línea base si el contrato se modifica?', 'Sí, ese es justo el caso legítimo: un modificado del contrato aprobado con su ampliación de plazo cambia el proyecto, y medir contra el plan anterior da una desviación correcta e inútil. Guarda el archivo con la línea base antigua antes de hacerlo y anota la fecha y quién lo aprobó.'],
     ],
     related: [
       ['critical-path-method', 'Cómo se calcula la ruta crítica'],
@@ -706,33 +912,130 @@ const G = {
     metaTitle: 'Nueve errores en diagramas de Gantt',
     metaDesc: 'Exceso de detalle, falta de dependencias, estimaciones tratadas como compromisos, cero holgura, ruta crítica ignorada y otros errores frecuentes.',
     date: '2026-07-19',
-    lead: 'Casi todos los diagramas de Gantt que fallan lo hacen por las mismas razones, y ninguna tiene que ver con la herramienta. Estos son los nueve errores que más se repiten y qué hacer en cada caso.',
+    lead: 'Casi todos los diagramas de Gantt que fallan lo hacen por las mismas razones, y ninguna tiene que ver con la herramienta. Un diagrama puede estar limpio, bien coloreado y exportado todos los viernes, y aun así estar mintiendo sobre la fecha de entrega. Aquí tienes cada error, por qué está mal, cuánto cuesta en un plan real y la revisión que los detecta todos de una pasada.',
     figIntro: 'El mismo plan, antes y después de corregir lo esencial:',
     sections: [
+
+      ['Un plan que comete casi todos estos errores a la vez',
+        `<p>Un proyecto corriente — la nueva tienda online de <strong>Cerámicas Lubián</strong>, en Valladolid, que arranca el lunes 2 de marzo de 2026 — dibujado primero como lo dibuja casi todo el mundo y después dibujado con honestidad.</p>
+        <div class="worked">
+          <p><strong>Tal como se planificó.</strong> Seis filas, todas encadenadas fin-inicio, sin hitos y sin un solo día de margen. Presupuesto aprobado: 48.000 €.</p>
+          <ul>
+            <li>Descubrimiento — lun 2 de marzo a vie 13 de marzo (10 días)</li>
+            <li>Diseño — lun 16 de marzo a vie 27 de marzo (10 días)</li>
+            <li>Desarrollo — lun 30 de marzo a vie 24 de abril (20 días, Marta Iglesias)</li>
+            <li>Migración de contenidos — lun 30 de marzo a vie 17 de abril (15 días, Marta Iglesias)</li>
+            <li>QA — lun 27 de abril a vie 8 de mayo (10 días)</li>
+            <li>Salida a producción — lun 11 de mayo</li>
+          </ul>
+          <p><strong>Lo que el diagrama no dice.</strong> Tres cosas, y las tres eran conocidas el día que se dibujó. La primera: el cliente tiene cinco días laborables para revisar el diseño, y esa revisión no aparece por ninguna parte. La segunda: la Semana Santa cae justo encima del arranque del desarrollo — el jueves 2 y el viernes 3 de abril son festivos, y media plantilla tiene vacaciones esa semana; el plan cuenta esos días como si fueran laborables. La tercera: Marta Iglesias está asignada al 100 % a Desarrollo y al 100 % a Migración de contenidos durante las mismas tres semanas, es decir, el diagrama supone en silencio un 200 % de una sola persona. Y como las seis filas cuelgan de una única cadena fin-inicio, las seis son críticas: no hay ni una hora de holgura en cincuenta días laborables.</p>
+          <p><strong>Corregido.</strong> Se añade el hito <em>Diseño aprobado</em> y la revisión del cliente se modela como desfase (FS+5d). Con los festivos de Semana Santa fuera del calendario laboral, la aprobación cae el martes 7 de abril. Desarrollo va del miércoles 8 de abril al miércoles 6 de mayo — descontando el 1 de mayo. Migración de contenidos no puede solaparse mientras Marta lleve las dos, así que va del jueves 7 al miércoles 27 de mayo. QA detrás, del jueves 28 de mayo al miércoles 10 de junio. Cinco días de holgura visible antes del corte dejan la salida a producción el <strong>viernes 19 de junio de 2026</strong>.</p>
+          <p><strong>La consecuencia.</strong> El diagrama decía 11 de mayo. La fecha honesta era el 19 de junio: 29 días laborables más tarde, descubiertos en el primer borrador en lugar de a mediados de mayo, con la tienda a medias y el proveedor de fotografía ya facturando. No cambió nada del proyecto. Solo se escribieron tres cosas que ya eran verdad.</p>
+          <p><strong>Y el reporte.</strong> El lunes 20 de abril el informe de seguimiento daba Desarrollo al 60 %, porque habían transcurrido 12 de sus 20 días. El equipo llevaba 4 de las 11 plantillas de página terminadas. Avance real: 36 %. Con el presupuesto repartido por duración, el informe también daba 28.800 € de valor ganado donde en realidad había 17.280 €.</p>
+        </div>
+        <p>Nueve de los doce errores de esta guía están en ese plan de seis filas. Ninguno es un error de dibujo.</p>`],
+
       ['1. Exceso de detalle',
-        `<p>Un diagrama con doscientas filas no se mantiene: se abandona. Si una tarea dura menos de un día, probablemente pertenece a la lista de alguien, no al plan del proyecto. Agrupa en fases y despliega solo lo que estés mirando.</p>`],
+        `<p>El fallo más frecuente con diferencia. Un diagrama con doscientas filas no se mantiene: se abandona. Nadie actualiza sesenta barras cada semana, así que a los pocos días el archivo describe un proyecto que ya no existe, y a partir de ahí cada reunión se dedica a explicar por qué el plan no coincide con la realidad.</p>
+        <p>Hay además un efecto perverso: cuanto más detalle tiene el plan, más convincente parece, y más tarda alguien en atreverse a decir que está desactualizado.</p>
+        <p><strong>Corrección:</strong> planifica al nivel al que reportas. Si tu ciclo de seguimiento es semanal, cualquier cosa que dure menos de una semana vive dentro de una tarea, no como una fila propia. Agrupa en fases y deja la lista de trabajo fino donde el equipo ya trabaja de verdad.</p>`],
+
       ['2. Sin dependencias',
-        `<p>El error más caro. Sin flechas, el diagrama es una lista de fechas que hay que reajustar a mano en cada cambio, no tiene ruta crítica y no avisa de nada. Enlazar las tareas es lo que convierte el dibujo en un modelo.</p>`],
-      ['3. Tratar las estimaciones como compromisos',
-        `<p>«Dos semanas» es una estimación con incertidumbre; en cuanto entra en el gráfico se lee como una promesa. Deja explícito qué duraciones son firmes y cuáles son aproximadas, y reserva holgura donde la incertidumbre es alta.</p>`],
-      ['4. Cero holgura en todo el plan',
-        `<p>Si ninguna tarea tiene margen, todas son críticas y cualquier imprevisto mueve la entrega. Un plan sin holgura no es ambicioso: es frágil. La holgura se planifica, no se improvisa.</p>`],
-      ['5. Ignorar la ruta crítica',
-        `<p>Optimizar tareas que no están en la ruta crítica se siente productivo y no adelanta el proyecto ni un día. Antes de acelerar nada, comprueba si está en la cadena que fija la fecha de fin.</p>`],
-      ['6. Tareas sin responsable',
-        `<p>Una tarea sin nombre al lado es una tarea que nadie va a actualizar. Además, sin responsables no puedes ver que la misma persona está en cuatro tareas simultáneas en marzo — un problema invisible en las barras.</p>`],
-      ['7. Dejar que se quede obsoleto',
-        `<p>Un Gantt que no se actualiza deja de ser un plan y pasa a ser un documento histórico. Si actualizarlo cuesta demasiado, casi siempre es por el error número 1 o el número 2.</p>`],
-      ['8. Sin hitos',
-        `<p>Los hitos son lo que dirección lee y lo que impide que el plan avance fuera de secuencia. Sin ellos, no hay puntos de control y todo se convierte en una masa continua de barras.</p>`],
-      ['9. Confundir duración con esfuerzo',
-        `<p>Una tarea de diez días que ocupa a media persona sigue midiendo diez días en el calendario, pero solo cinco de trabajo. Mezclar ambas cosas produce planes que parecen razonables y equipos que no dan abasto.</p>`],
+        `<p>Un diagrama de barras paralelas sin enlaces es un dibujo, no un plan. Cuando algo se retrasa, no se mueve nada, porque no hay nada conectado — y hay que reajustar fechas a mano, cambio a cambio, hasta que alguien se cansa.</p>
+        <p>Sin dependencias tampoco hay ruta crítica que calcular, ni holgura que medir, ni aviso de nada. Enlazar las tareas es lo que convierte el dibujo en un modelo.</p>
+        <p><strong>Corrección:</strong> enlaza lo que de verdad condiciona, y después arrastra una barra y mira. Si detrás no se mueve nada, el plan no está modelando tu proyecto.</p>`],
+
+      ['3. Todo encadenado fin-inicio',
+        `<p>El error contrario, y más sutil. Pon todas las tareas en una única fila india y todas acaban en la ruta crítica: sesenta filas diciendo «urgente», que es exactamente lo mismo que no decir nada. Además vuelve imposible replanificar, porque cada fecha está clavada por una preferencia y no por una restricción.</p>
+        <!--FIG:cpm|Solo el camino más largo de la red fija la fecha de fin.-->
+        <p>La prueba es sencilla: pregunta de cada enlace «si mañana tuviera gente y materiales, ¿podría empezar B sin que A hubiera terminado?». Si la respuesta es sí, ese enlace expresa una costumbre, no una restricción física.</p>
+        <p><strong>Corrección:</strong> enlaza solo lo que condiciona materialmente. Una ruta crítica sana cubre entre la cuarta parte y la mitad de las tareas; si las cubre todas, has dibujado una cola, no una red.</p>`],
+
+      ['4. Tratar las estimaciones como compromisos',
+        `<p>Todas las barras parecen igual de firmes. Una tarea de tres días que has hecho cincuenta veces y otra que no ha intentado nadie se dibujan exactamente igual, y en cuanto entran en el gráfico las dos se leen como promesas.</p>
+        <p><strong>Corrección:</strong> pon la holgura donde está la incertidumbre y dilo en voz alta. Un plan que admite qué partes son conjeturas sobrevive al contacto con la realidad, precisamente porque a las conjeturas se les dio sitio para equivocarse. En el campo <strong>Notas</strong> de cada tarea cabe perfectamente un «estimación firme» o un «± 3 días, depende del proveedor».</p>`],
+
+      ['5. Cero holgura en todo el plan',
+        `<p>Un plan en el que cada tarea empieza el mismo día que termina su predecesora no puede absorber nada. El primer retraso de dos días es un retraso de dos días en la entrega, y a partir de ahí todos los siguientes se acumulan.</p>
+        <!--FIG:float|La holgura es el margen que tiene una tarea antes de empezar a mover la fecha de fin.-->
+        <p>Si ninguna tarea tiene margen, todas son críticas y cualquier imprevisto mueve la entrega. Un plan sin holgura no es ambicioso: es frágil. La holgura se planifica, no se improvisa.</p>
+        <p><strong>Corrección:</strong> concentra el colchón donde se concentra el riesgo — antes de una fecha comprometida, después de cualquier cosa que dependa de un tercero, alrededor de las aprobaciones y justo antes de agosto. Cinco días de holgura visibles antes de la salida a producción valen mucho más que cinco días repartidos invisiblemente entre diez tareas, porque los primeros se pueden defender en una reunión y los segundos desaparecen en la primera negociación.</p>`],
+
+      ['6. Ignorar la ruta crítica',
+        `<p>Si no sabes qué tareas mandan sobre la fecha final, no puedes saber qué retrasos importan. Optimizar tareas que no están en la ruta crítica se siente productivo y no adelanta el proyecto ni un día: los equipos aceleran trabajo que tenía tres semanas de holgura mientras la restricción real se desliza dos filas más abajo.</p>
+        <p><strong>Corrección:</strong> activa <strong>Ruta crítica</strong> y vuelve a mirarla después de cada cambio, no una vez al principio. La ruta se mueve: una tarea con ocho días de holgura pasa a ser crítica en el momento en que se retrasa nueve.</p>`],
+
+      ['7. Tareas sin responsable — y responsables al 100 %',
+        `<p>Una tarea sin un nombre al lado es tarea de todos, lo que en la práctica significa de nadie. Una persona por tarea, no un equipo: solo a una persona se le puede preguntar cómo va.</p>
+        <p>Menos evidente, y bastante más caro: asignar a la misma persona dos tareas solapadas a plena dedicación es el mismo error con otra cara. Marta al 100 % y al 100 % no es ambición, es una imposibilidad aritmética — y el diagrama no protesta, porque las barras se solapan tan tranquilas.</p>
+        <p><strong>Corrección:</strong> revisa la carga de cada responsable a lo largo de todo el calendario, no tarea por tarea. Alguien al 140 % durante tres semanas es un plan que ya ha fracasado, aunque todavía se vea verde.</p>`],
+
+      ['8. Dejar que se quede obsoleto',
+        `<p>Un diagrama de Gantt es un documento vivo con fecha de caducidad. Tres semanas sin actualizar y la gente deja de fiarse; poco después deja de mirarlo, y el proyecto pasa a gestionarse por correo.</p>
+        <p><strong>Corrección:</strong> actualiza con una cadencia fija — semanal en condiciones normales, diaria en una crisis — y mantén el diagrama lo bastante pequeño como para que eso cueste minutos. Si actualizarlo cuesta demasiado, casi siempre es por el error número 1 o el número 2.</p>`],
+
+      ['9. Sin hitos',
+        `<p>Un muro de barras no le da al lector nada donde agarrarse. Los hitos son la forma que tiene alguien de fuera del proyecto de encontrar los puntos de decisión, y lo que impide que el trabajo avance fuera de secuencia.</p>
+        <p><strong>Corrección:</strong> marca aprobaciones, entregas, inspecciones y la salida a producción como hitos de duración cero, y cuelga de ellos el trabajo posterior. Entre cuatro y ocho suele ser lo correcto. Arriba, el hito que faltaba no era decorativo: <em>Diseño aprobado</em> era exactamente donde estaban escondidos los cinco días de revisión del cliente.</p>`],
+
+      ['10. Medir el avance en días transcurridos',
+        `<p>De todo lo que hay en esta lista, esto es lo que produce el reporte equivocado más seguro de sí mismo. Si el avance se deduce de la duración transcurrida, una tarea que nadie ha empezado informa de un 60 % el día doce de veinte — justo lo que pasó el 20 de abril en el ejemplo.</p>
+        <p><strong>Corrección:</strong> reporta una fracción del trabajo — plantillas terminadas, planos emitidos, casos de prueba superados, metros cuadrados alicatados — y no una fracción del calendario. Una tarea que no tiene ninguna unidad contable de trabajo es demasiado gruesa para hacerle seguimiento y probablemente haya que partirla.</p>`],
+
+      ['11. Volver a fijar la línea base cada vez que se incumple',
+        `<p>La línea base registra lo que prometiste. Volver a guardarla cada vez que la desviación incomoda la convierte en un registro de lo último que hiciste — un dato que ya tenías.</p>
+        <div class="worked">
+          <p>Grupo Alcorta lo hizo cada mes durante medio año en la reforma de su nave de Getafe. En el comité de junio el proyecto salía «en plazo» contra su sexta línea base. Contra la primera, la que se aprobó junto al presupuesto de 310.000 €, acumulaba cuatro meses de retraso. Las seis fotos eran correctas; el álbum era una mentira.</p>
+        </div>
+        <p><strong>Corrección:</strong> vuelve a fijar la línea base solo ante un cambio de alcance aprobado o una replanificación formal, y guarda las anteriores. La distancia entre la línea base 1 y la línea base 5 suele ser la descripción más honesta que tendrás nunca de un proyecto.</p>`],
+
+      ['12. Usar un Gantt para lo que no es',
+        `<p>Los diagramas de Gantt sirven para trabajo con secuencia, dependencias y fechas. Encajan mal con el flujo continuo y con un backlog que se reprioriza cada lunes; si te ves redibujando el plan entero todas las semanas, el problema no es tu plan, es que has elegido la representación equivocada.</p>
+        <p><strong>Corrección:</strong> Gantt cuando importan el orden y los plazos, tablero cuando no. Llevar los dos es lo normal: un tablero para la semana y un Gantt para el trimestre.</p>`],
+
+      ['El síntoma de cada error',
+        `<p>Casi siempre es más fácil reconocerlos por el síntoma que por la definición:</p>
+        <table>
+          <thead><tr><th>Lo que notas</th><th>El error</th><th>La corrección</th></tr></thead>
+          <tbody>
+            <tr><td>Lleva tres semanas sin actualizarse</td><td>Exceso de detalle</td><td>Planificar al nivel al que reportas</td></tr>
+            <tr><td>Una tarea se retrasa y no se mueve ninguna fecha</td><td>Sin dependencias</td><td>Enlazar lo que condiciona; arrastrar una barra para probar</td></tr>
+            <tr><td>Todas las tareas son críticas</td><td>Todo encadenado fin-inicio</td><td>Borrar los enlaces que solo expresan preferencia</td></tr>
+            <tr><td>Retrasos pequeños mueven la fecha final</td><td>Cero holgura</td><td>Colchones visibles antes de las fechas comprometidas</td></tr>
+            <tr><td>Aceleraste la tarea equivocada</td><td>Ruta crítica ignorada</td><td>Activarla y revisarla tras cada cambio</td></tr>
+            <tr><td>Preguntas por una tarea y no contesta nadie</td><td>Sin responsable</td><td>Una persona con nombre por tarea</td></tr>
+            <tr><td>Las tareas de una misma persona se retrasan juntas</td><td>Asignada por encima del 100 %</td><td>Revisar la carga en todo el calendario</td></tr>
+            <tr><td>«Entonces, ¿qué pasa y cuándo?»</td><td>Sin hitos</td><td>De cuatro a ocho puntos de control, con trabajo detrás</td></tr>
+            <tr><td>Un mes entero al 90 %</td><td>Avance por días transcurridos</td><td>Reportar fracción de trabajo</td></tr>
+            <tr><td>Verde cada semana y meses de retraso</td><td>Línea base regrabada en cada incumplimiento</td><td>Refijarla solo en replanificaciones aprobadas</td></tr>
+            <tr><td>Se reescribe entero todos los lunes</td><td>Herramienta equivocada</td><td>Usar un tablero para el flujo</td></tr>
+          </tbody>
+        </table>`],
+
+      ['Una revisión de veinte minutos',
+        `<p>Pasa esto por un diagrama que ya tengas, en orden. Cada paso es algo que se ve, no algo que haya que opinar.</p>
+        <ol>
+          <li>Cuenta las filas. ¿Son más de las que vas a actualizar cada semana? Agrupa el detalle en fases con <strong>▣ Grupo</strong> antes de seguir.</li>
+          <li>Arrastra la última tarea de la primera fase dos semanas a la derecha. Todo lo que no se mueva detrás no está enlazado. Deshaz y añade esos enlaces en la columna <strong>Después de</strong>, o en el campo <strong>Después de (predecesoras)</strong> del panel de la tarea.</li>
+          <li>Activa <strong>Ruta crítica</strong>. Si sale todo rayado, has enlazado de más; si no sale nada, no has enlazado nada.</li>
+          <li>Abre <strong>Calendario</strong> y comprueba que los festivos nacionales y autonómicos de tu comunidad, la Semana Santa y el parón de agosto están marcados. Un plan que trabaja el 15 de agosto no es un plan optimista, es un plan mal contado.</li>
+          <li>Pon <strong>Vista</strong> en <strong>Próximas semanas</strong>. Si esa ventana no se parece a lo que la gente está haciendo esta semana, el diagrama ya está obsoleto.</li>
+          <li>Abre <strong>Carga de trabajo</strong>. Cualquiera que aparezca por encima de su capacidad un solo día es una promesa imposible dentro de un diagrama verosímil.</li>
+          <li>Busca rombos. Cada punto en el que alguien de fuera del equipo aprueba, entrega o inspecta debería ser un <strong>◆ Hito</strong>, con el tiempo de revisión metido en el desfase.</li>
+          <li>Mira la fila anterior a cada fecha comprometida. Si termina el mismo día que vence el plazo, inserta una tarea de colchón y llámala por su nombre.</li>
+          <li>Usa <strong>Reprogramar</strong> una vez para compactar el plan a sus fechas legales más tempranas, y compara el resultado con lo que tenías. La diferencia es la holgura que estabas regalando sin saberlo.</li>
+          <li>Abre <strong>Línea base</strong> y fíjala — ahora, una sola vez, cuando el plan ya es honesto. Después activa las columnas de desviación.</li>
+          <li>Pide a cada responsable el avance en unidades de trabajo, no en porcentaje. Donde la respuesta y la barra no coincidan, la que está mal es la barra. Revisa la <strong>Curva S</strong> antes de dar el plan por bueno.</li>
+        </ol>`],
     ],
-    callout: 'Si solo vas a corregir uno, corrige el segundo. Casi todos los demás problemas —el mantenimiento imposible, la ruta crítica inexistente, el plan obsoleto— son consecuencias de no haber enlazado las tareas.',
+    callout: 'Fíjate en lo pocos que son errores de diagramación. Cambiar de herramienta no corrige casi ninguno: una dependencia que falta, una persona sobreasignada y una línea base regrabada en silencio son decisiones, y te siguen a cualquier software al que te mudes.',
     faq: [
-      ['¿Cuál es el error más común en un diagrama de Gantt?', 'No poner dependencias. Sin ellas no hay ruta crítica, nada se recalcula solo y cada cambio obliga a reajustar fechas a mano.'],
-      ['¿Cuántas tareas son demasiadas?', 'No hay una cifra exacta, pero por encima de unas sesenta filas visibles el mantenimiento suele superar al beneficio. Agrupa en fases y despliega bajo demanda.'],
-      ['¿Cómo evito que el diagrama se quede desactualizado?', 'Reduce el detalle, enlaza las dependencias para que los cambios se propaguen solos y actualiza el porcentaje completado en vez de redibujar barras.'],
+      ['¿Cuál es el error más común en un diagrama de Gantt?', 'El exceso de detalle. Los diagramas que listan cada subtarea se vuelven ilegibles y se abandonan en pocas semanas, porque mantenerlos al día cuesta más de lo que devuelven.'],
+      ['¿Cuántas tareas debe tener un diagrama de Gantt?', 'Las suficientemente pocas como para que vayas a mantenerlo: para la mayoría de proyectos, entre 15 y 40 filas. Cualquier cosa más corta que tu ciclo de seguimiento vive dentro de una tarea.'],
+      ['¿Hay que enlazar todas las tareas fin-inicio?', 'No. Encadenarlo todo en una sola línea mete todas las tareas en la ruta crítica y hace imposible resecuenciar el plan. Enlaza solo lo que condiciona materialmente.'],
+      ['¿Por qué se me retrasa el proyecto si el diagrama pintaba bien?', 'Casi siempre por una de tres: cero holgura, alguien asignado por encima del 100 % en tareas solapadas, o avance medido como duración transcurrida en vez de trabajo hecho.'],
+      ['¿Está mal volver a fijar la línea base?', 'Está bien ante un cambio de alcance aprobado o una replanificación formal. Regrabarla cada vez que se incumple, no: los informes siguen en verde mientras la fecha de entrega se aleja.'],
+      ['¿Cada cuánto hay que actualizar un diagrama de Gantt?', 'Semanalmente en la mayoría de proyectos y a diario en una crisis. Importa menos la frecuencia exacta que el hecho de que sea fija y sostenible.'],
     ],
     related: [
       ['critical-path-method', 'Cómo se calcula la ruta crítica'],
@@ -746,29 +1049,127 @@ const G = {
     metaTitle: 'Hitos y tareas en un diagrama de Gantt',
     metaDesc: 'Diferencia entre hito y tarea, para qué sirven realmente los hitos, cuántos debería tener un proyecto y los errores más frecuentes.',
     date: '2026-07-19',
-    lead: 'Una <strong>tarea</strong> ocupa tiempo; un <strong>hito</strong> marca un momento. Esa es toda la diferencia técnica, y sin embargo usar mal los hitos es una de las formas más rápidas de que un plan deje de comunicar nada.',
+    lead: 'Una <strong>tarea</strong> ocupa tiempo; un <strong>hito</strong> marca un momento. Esa es toda la diferencia técnica, y sin embargo tiene consecuencias que se miden en días: un hito modelado como una tarea de tres días añade tres días a tu fecha de fin sin que nadie lo note, y esconde justo el retraso al que estás más expuesto.',
     figIntro: 'Barras para el trabajo, rombos para los momentos que importan:',
     sections: [
       ['La diferencia en una línea',
-        `<p>Una tarea tiene duración: empieza un día y termina otro. Un hito tiene duración cero y se dibuja como un rombo. «Redactar el contrato» es una tarea; «contrato firmado» es un hito.</p>`],
+        `<p>Una tarea consume tiempo y recursos: tiene inicio, fin y duración. Un hito no tiene duración ninguna — es un punto que señala que algo ha ocurrido. Por eso se dibuja como un rombo: no hay nada sobre lo que trazar una barra.</p>
+        <p>La prueba práctica dura un segundo. <em>¿Alguien puede trabajar en ello?</em> Se puede trabajar en redactar un contrato. No se puede trabajar en «contrato firmado»: o ha ocurrido o no ha ocurrido.</p>
+        <p>Esa distinción no es cosmética. Cambia cómo se calcula la fecha de fin, qué aparece en el resumen para dirección y a quién se llama por teléfono cuando algo se tuerce.</p>
+        <!--FIG:milestone|El hito ocupa un único punto en el tiempo; la barra que tiene a cada lado es el trabajo.-->`],
+
+      ['Un ejemplo trabajado: el reetiquetado de Conservas Aldán',
+        `<p>Un proyecto seguido de principio a fin. Conservas Aldán (Vigo) rehace el arte final y el etiquetado de una gama de 40 referencias para adaptarla al Reglamento (UE) 1169/2011 sobre información alimentaria facilitada al consumidor. Marta Iglesias lleva el proyecto. Semana de cinco días laborables, arranque el lunes 2 de marzo de 2026, presupuesto de campaña de 12.500 €.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>Fila</th><th>Tipo</th><th>Duración</th><th>Inicio</th><th>Fin</th></tr></thead>
+            <tbody>
+              <tr><td>Conceptos de arte final</td><td>Tarea</td><td>10 d</td><td>lun 2 mar</td><td>vie 13 mar</td></tr>
+              <tr><td>Revisión interna y correcciones</td><td>Tarea</td><td>4 d</td><td>lun 16 mar</td><td>jue 19 mar</td></tr>
+              <tr><td><strong>Arte final congelado</strong></td><td>Hito</td><td>0 d</td><td colspan="2">jue 19 mar</td></tr>
+              <tr><td>Verificación de etiquetado (laboratorio acreditado ENAC)</td><td>Tarea</td><td>8 d</td><td>vie 20 mar</td><td>mar 31 mar</td></tr>
+              <tr><td><strong>Etiquetado conforme aprobado</strong></td><td>Hito</td><td>0 d</td><td colspan="2">mar 31 mar</td></tr>
+              <tr><td>Pruebas de color del impresor</td><td>Tarea</td><td>6 d</td><td>mié 1 abr</td><td>vie 10 abr</td></tr>
+              <tr><td><strong>Prueba de color firmada</strong></td><td>Hito</td><td>0 d</td><td colspan="2">vie 10 abr</td></tr>
+              <tr><td>Tirada de impresión</td><td>Tarea</td><td>15 d</td><td>lun 13 abr</td><td>lun 4 may</td></tr>
+              <tr><td>Transporte al centro de distribución</td><td>Tarea</td><td>7 d</td><td>mar 5 may</td><td>mié 13 may</td></tr>
+              <tr><td><strong>Cambio de lineal en la cadena</strong></td><td>Hito</td><td>0 d</td><td colspan="2">jue 14 may</td></tr>
+            </tbody>
+          </table>
+          <p>Cinco hitos, cinco tareas. Tres de ellos — arte final congelado, etiquetado conforme aprobado, prueba de color firmada — son momentos en los que alguien <em>de fuera</em> del equipo tiene que actuar. Esa es la razón de colocarlos.</p>
+          <p>Fíjate en dos cosas del calendario. Las pruebas de color duran seis días laborables pero terminan el viernes 10 de abril y no el miércoles 8: por medio caen el Jueves Santo (2 de abril) y el Viernes Santo (3 de abril). Y la tirada de 15 días se come el 1 de mayo. Un calendario laboral que ignore la Semana Santa y los festivos te devuelve un plan que ya nace con dos días de mentira dentro.</p>
+          <p>Lee solo las filas de hito y tienes el proyecto en una frase: arte final congelado el 19 de marzo, etiquetado aprobado el 31 de marzo, prueba firmada el 10 de abril, producto en lineal el 14 de mayo. Cuatro fechas. Eso es lo que la dirección comercial de la cadena recuerda; las diez barras no las recuerda nadie.</p>
+        </div>`],
+
+      ['Qué pasa cuando un hito se retrasa',
+        `<p>El laboratorio acreditado presupuesta ocho días y tarda trece: hay una consulta sobre la declaración de alérgenos y el tamaño mínimo de letra de la información nutricional. La verificación termina el jueves 9 de abril en lugar del martes 31 de marzo.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>Hito</th><th>Planificado</th><th>Previsión</th><th>Desviación</th></tr></thead>
+            <tbody>
+              <tr><td>Arte final congelado</td><td>jue 19 mar</td><td>jue 19 mar</td><td>0 d</td></tr>
+              <tr><td>Etiquetado conforme aprobado</td><td>mar 31 mar</td><td>jue 9 abr</td><td>5 d</td></tr>
+              <tr><td>Prueba de color firmada</td><td>vie 10 abr</td><td>vie 17 abr</td><td>5 d</td></tr>
+              <tr><td>Cambio de lineal en la cadena</td><td>jue 14 may</td><td>jue 21 may</td><td>5 d</td></tr>
+            </tbody>
+          </table>
+          <p>Los cinco días son días laborables: entre el 31 de marzo y el 9 de abril hay nueve días de calendario, pero dos son festivos de Semana Santa y cuatro caen en fin de semana. Esa cadena no tiene holgura, así que el retraso llega íntegro a la fecha de lineal. Esas cuatro filas son el informe de seguimiento completo, y existen únicamente porque esos puntos se modelaron como hitos.</p>
+        </div>
+        <p>Que se retrase una tarea significa que el trabajo está llevando más de lo previsto y todavía puede absorberse. Que se retrase un hito significa que se ha movido un compromiso. A la cadena de distribución le da igual que las pruebas de color llevaran siete días en vez de seis; le importa que el cambio de lineal ya no es el 14 de mayo sino el 21.</p>`],
+
+      ['Tarea o hito: en qué se comportan distinto de verdad',
+        `<p>No es una convención de dibujo. Cambia el comportamiento en seis sitios.</p>
+        <table>
+          <thead><tr><th>Dimensión</th><th>Tarea</th><th>Hito</th></tr></thead>
+          <tbody>
+            <tr><td>Duración</td><td>Un día o más. Consume calendario y esfuerzo.</td><td>Cero. Inicio y fin son la misma fecha.</td></tr>
+            <tr><td>Dependencias</td><td>Predecesoras y sucesoras, casi siempre fin-inicio (FS).</td><td>Necesita al menos una de cada, o es decoración.</td></tr>
+            <tr><td>Un retraso significa</td><td>El trabajo llevó más tiempo; la holgura o más recursos pueden recuperarlo.</td><td>Un compromiso se ha movido. Recuperarlo exige replanificar, no apretar.</td></tr>
+            <tr><td>Recursos</td><td>Un responsable que ejecuta, normalmente con coste asociado.</td><td>Un responsable que persigue. El esfuerzo suele ser cero.</td></tr>
+            <tr><td>Cómo se exporta</td><td>Barra en PDF, PNG y PowerPoint; fin real y número de días en Excel y CSV; evento de varios días en el calendario.</td><td>Rombo en las exportaciones visuales; fin vacío y duración 0 en Excel y CSV; evento de un solo día en el calendario.</td></tr>
+            <tr><td>Quién lo lee</td><td>Quien hace el trabajo y su responsable directo.</td><td>Dirección, cliente, organismos, la diapositiva de resumen.</td></tr>
+          </tbody>
+        </table>
+        <p>La fila de exportación es la que sorprende. Pon la vista en solo hitos, exporta, y tienes un cronograma de una página para un comité sin construir un segundo diagrama — pero solo si tus hitos son hitos de verdad.</p>`],
+
+      ['Lo que cuesta equivocarse',
+        `<p>Modela ahora «Etiquetado conforme aprobado» como lo escribe casi todo el mundo la primera vez: una tarea llamada «conseguir el visto bueno del laboratorio», tres días, entre la verificación y las pruebas de color.</p>
+        <div class="worked">
+          <ol>
+            <li><strong>Se mueve la fecha de fin.</strong> Tres días de duración inventada empujan el cambio de lineal del jueves 14 de mayo al martes 19 de mayo. El trabajo no ha cambiado; ha cambiado el modelo. Y esos tres días te los descuentas de la ventana comercial que negociaste, no del laboratorio.</li>
+            <li><strong>Desaparece la puerta.</strong> «Conseguir el visto bueno» se lee como algo que haces tú; «Etiquetado conforme aprobado» se lee como algo que hace el laboratorio. Lo primero no invita a nadie a perseguirlo, y lo segundo obliga a poner un nombre al lado.</li>
+            <li><strong>Se rompe el resumen.</strong> Filtra por hitos y aparecen cuatro filas en vez de cinco, y falta precisamente el punto que más depende de terceros.</li>
+          </ol>
+        </div>
+        <p>El error contrario sale más barato pero también existe: convertir «Tirada de impresión» en un hito porque suena importante. Quince días de máquina se evaporan y la ruta crítica rodea el elemento más largo del plan. La importancia decide si algo aparece en el diagrama; la duración decide su forma.</p>`],
+
       ['Para qué sirven realmente los hitos',
-        `<p>Para tres cosas. Son <em>puntos de control</em>: momentos en los que se decide si se sigue. Son <em>lenguaje de dirección</em>: lo que un comité recuerda de tu plan son cinco fechas, no cincuenta barras. Y son <em>barreras de secuencia</em>: enlazando el trabajo posterior a un hito, evitas que avance antes de que se cumpla la condición.</p>`],
+        `<p>Los hitos existen para quien lee, no para quien ejecuta. Son la forma que tiene alguien que no vive dentro de tu proyecto de encontrar los momentos que importan: aprobaciones, entregas, puertas, salida a mercado. Son <em>puntos de control</em>, son <em>lenguaje de dirección</em> y son <em>barreras de secuencia</em>.</p>
+        <p>Esa tercera función es la menos evidente y la más útil. «Arte final congelado», con la verificación de laboratorio colgando de él, dice algo que «congelar el arte final» no dice: nada de lo que viene después arranca hasta que esto ocurra. Cuando el diseñador entrega una revisión el 24 de marzo, el diagrama enseña una regla rota, no una fecha que se desplaza.</p>
+        <!--FIG:deps|Un hito se gana su sitio por estar en medio: predecesoras que deben terminar, sucesoras que no pueden empezar.-->
+        <p>Un hito sin enlaces por ningún lado es candidato a borrarse. Si nada espera a que ocurra, es una nota al margen — y las notas van en el campo <strong>Notas</strong>, no en la línea de tiempo.</p>`],
+
       ['¿Cuántos debería tener un proyecto?',
-        `<p>Los suficientes para contar la historia y no tantos como para diluirla. Entre cinco y diez para un proyecto de varios meses suele funcionar. Si tienes un hito por semana, has convertido el plan en un calendario y los hitos ya no señalan nada.</p>`],
+        `<p>Los suficientes para contar la historia y no tantos como para diluirla. De cuatro a ocho es un rango razonable en un proyecto de unos meses; cien hitos son tareas disfrazadas de rombo.</p>
+        <p>Una prueba: ¿podrías describir el avance usando solo los hitos? Conservas Aldán tiene cinco para un proyecto de diez semanas — el extremo alto del rango, justificado porque cuatro son entregas o aprobaciones de terceros. La forma habitual de pasarse es poner un rombo al final de cada fase por simetría; las fases ya tienen su barra resumen y no necesitan que las remates con un adorno.</p>
+        <p>La segunda forma habitual de pasarse es convertir en hito cada fecha que aparece en un correo. El alta en el registro sanitario, la fecha del pedido de cartonaje y la reunión de seguimiento del martes no son tres hitos: el primero lo es, el segundo es el inicio de una tarea y el tercero no pinta nada en un cronograma.</p>`],
+
+      ['Cómo se hace en gantts.app',
+        `<p>El plan de Conservas Aldán en el editor, con los botones tal y como están etiquetados.</p>
+        <ol>
+          <li>Pulsa <strong>✨ Pegar a Gantt</strong> y pega el esquema. Una línea que acaba en <code>!</code> se convierte en hito, <code>(10d)</code> fija la duración, <code>after Nombre</code> enlaza una predecesora y una <code>#</code> inicial crea una fase — por ejemplo <code>Arte final congelado ! after Revisión interna</code>.</li>
+          <li>A mano en su lugar: <strong>＋ Tarea</strong> para las filas de trabajo, <strong>◆ Hito</strong> para los rombos y <strong>▣ Grupo</strong> para una fase que agrupe lo anterior.</li>
+          <li>Abre <strong>Calendario</strong> y marca los festivos: Jueves y Viernes Santo, el 1 de mayo y los autonómicos que apliquen. Si no lo haces, el plan colocará trabajo en días en los que la imprenta está cerrada.</li>
+          <li>¿Escribiste un hito como tarea? Haz doble clic en su fila y cambia <strong>Tipo</strong> de tarea a hito. Su fin se colapsa sobre su inicio; no hace falta borrarlo y volver a crearlo.</li>
+          <li>En ese mismo panel rellena <strong>Después de (predecesoras)</strong> y <strong>Responsable</strong>. Sin predecesora, el hito no se moverá cuando se mueva el trabajo que tiene delante, y ahí es donde nacen los cronogramas que mienten.</li>
+          <li>Pulsa <strong>Reprogramar</strong> para empujar cada fila a la fecha más temprana que permiten sus dependencias. Así descubres si tus fechas de hito eran consecuencias o deseos.</li>
+          <li>Activa <strong>Ruta crítica</strong> y comprueba que la cadena que pasa por tus puertas es la que fija la fecha final. La leyenda lo dice: <em>rayado = ruta crítica</em>.</li>
+          <li>Abre <strong>Línea base</strong> y guarda el plan antes de empezar. Verás el aviso «Línea base fijada — los retrasos se miden ahora frente a este plan», y a partir de ahí las columnas de desviación informan del retraso de cada hito en días. De ahí sale la cifra de cinco días de más arriba.</li>
+          <li>Pon <strong>Vista</strong> en <strong>Solo hitos</strong> para la versión de dirección y luego <strong>⬇ Exportar</strong> ▸ <strong>📄 Documento PDF</strong> o <strong>📽 PowerPoint (.pptx)</strong>. Vuelve a <strong>Todas las tareas</strong> para trabajar.</li>
+        </ol>
+        <p>Una cosa que el editor no te dejará hacer: arrastrar un hito para hacerlo más ancho. Los hitos se mueven pero nunca se redimensionan, porque un hito con duración deja de ser un hito.</p>`],
+
       ['Errores frecuentes',
-        `<p><strong>Hitos que son tareas disfrazadas.</strong> Si tiene duración, no es un hito. «Fase de pruebas» no es un hito; «pruebas aprobadas» sí.</p>
+        `<p><strong>Hitos con duración.</strong> Si lleva tres días, es una tarea. Dale su barra y pon un hito al final si lo que importa es que termine.</p>
         <p><strong>Hitos sin dependencias.</strong> Un rombo suelto en el calendario es decorativo. Su valor está en que el trabajo posterior dependa de él.</p>
-        <p><strong>Hitos que nadie decide.</strong> Si al llegar la fecha no ocurre ninguna aprobación ni ninguna decisión, probablemente no era un hito.</p>`],
+        <p><strong>Hitos que nadie decide.</strong> Si al llegar la fecha no ocurre ninguna aprobación ni ninguna verificación, probablemente no era un hito.</p>
+        <p><strong>Hitos sin dueño.</strong> El responsable de un hito es quien hace la llamada cuando la fecha peligra, no quien aprueba. En el ejemplo, el responsable de «Etiquetado conforme aprobado» es Marta, no el laboratorio.</p>
+        <p><strong>Hitos fechados por deseo.</strong> Si «Etiquetado conforme aprobado» está el 31 de marzo porque es lo que se prometió a la cadena, y no porque ocho días de laboratorio terminen ahí, el diagrama registra una aspiración. Pulsa <strong>Reprogramar</strong> primero y negocia la diferencia a conciencia.</p>
+        <p><strong>Hitos reportados en porcentaje.</strong> Un hito está al 0 % o al 100 %. «La aprobación del etiquetado va por el 60 %» significa que la tarea de debajo va por el 60 % y que la puerta no se ha abierto.</p>`],
+
       ['Barras resumen y jerarquía',
-        `<p>Además de tareas e hitos existe un tercer tipo: la barra resumen o fase, que agrupa a sus hijas y toma automáticamente la fecha de inicio de la primera y la de fin de la última. No se edita directamente — se mueve sola cuando se mueve su contenido.</p>
-        <p>Esa jerarquía de tres niveles (fase, tarea, hito) es la que hace legible un plan grande.</p>`],
+        `<p>El tercer símbolo es la barra resumen o fase, que abarca a sus tareas hijas. Es calculada, no introducida: sus fechas salen del inicio más temprano y del fin más tardío de lo que contiene, y por eso editarlas directamente suele estar deshabilitado. Para mover una fase, mueve lo que hay dentro.</p>
+        <p>Una barra resumen enseña cuándo se trabaja; un hito enseña cuándo vence un compromiso. Una fase «Preimpresión» que va del 2 de marzo al 10 de abril le sirve al equipo de Conservas Aldán y no le sirve de nada al comprador de la cadena, que solo pregunta por el 14 de mayo.</p>
+        <p>Esa jerarquía de tres niveles — fase, tarea, hito — es la que hace legible un plan grande. Las fases contestan «¿en qué andamos?», las tareas «¿quién hace qué?» y los hitos «¿llegamos?».</p>`],
     ],
-    callout: 'Un hito no es una tarea corta: es una tarea de duración cero que representa una decisión o una condición cumplida. Si al llegar la fecha nadie tiene que aprobar, firmar o verificar nada, probablemente estás marcando un recordatorio, no un hito.',
+    callout: 'Un hito no es una tarea corta: es una tarea de duración cero que representa una decisión o una condición cumplida. La costumbre que conviene llevarse de aquí es poner un hito en cada punto en el que alguien de fuera del equipo tiene que aprobar, entregar, inspeccionar o firmar. Son las dependencias que menos controlas y los retrasos por los que más te van a preguntar: tres de los cinco hitos de Conservas Aldán son exactamente eso, y el que se retrasó era uno de ellos.',
     faq: [
-      ['¿Qué es un hito en un diagrama de Gantt?', 'Un punto de duración cero que marca un momento significativo: una aprobación, una entrega o el inicio de una fase. Se representa con un rombo en lugar de una barra.'],
-      ['¿Cuántos hitos debe tener un proyecto?', 'Entre cinco y diez para un proyecto de varios meses. Demasiados diluyen su función de punto de control.'],
-      ['¿Puede un hito tener duración?', 'Por definición no. Si necesitas representar un periodo —una ventana de revisión, por ejemplo— eso es una tarea, aunque termine en un hito.'],
-      ['¿Cuál es la diferencia entre un hito y una fase?', 'Una fase es una barra resumen que agrupa tareas y toma sus fechas automáticamente; un hito es un instante sin duración. Suelen usarse juntos: la fase termina y el hito confirma que se cerró.'],
+      ['¿Qué es un hito en un diagrama de Gantt?', 'Un punto de duración cero que marca un momento significativo: una aprobación, una entrega o el inicio de una fase. Se representa con un rombo en lugar de una barra y, al no tener longitud, se puede mover pero no redimensionar.'],
+      ['¿Cuál es la diferencia entre una tarea y un hito?', 'Una tarea tiene duración: inicio, fin y trabajo en medio. Un hito tiene duración cero y marca un instante, como una aprobación o una entrega. Prueba rápida: si alguien puede dedicarle una tarde de trabajo, es una tarea.'],
+      ['¿Cuántos hitos debe tener un proyecto?', 'De cuatro a ocho en un proyecto de varios meses: los suficientes para contar la historia y los pocos suficientes para que cada uno signifique algo. Si al leer la lista entera no queda descrito el proyecto, has elegido los hitos equivocados.'],
+      ['¿Puede un hito tener duración?', 'Por definición no. Si la cosa lleva tiempo de verdad —una verificación de etiquetado de ocho días, por ejemplo—, modélala como tarea y pon el hito en su fin. Así la fecha del compromiso se calcula en lugar de afirmarse.'],
+      ['¿Qué le pasa al cronograma cuando un hito se retrasa?', 'Todo lo enlazado detrás se desplaza lo mismo, menos la holgura que haya en la cadena. En el ejemplo del reetiquetado, cinco días laborables de retraso en «Etiquetado conforme aprobado» movieron el cambio de lineal del 14 al 21 de mayo íntegramente, porque no había holgura aguas abajo.'],
+      ['¿Cuál es la diferencia entre un hito y una fase?', 'Una fase es una barra resumen que agrupa tareas y toma sus fechas del inicio más temprano y el fin más tardío de sus hijas, así que se mueve cuando ellas se mueven. Un hito es un instante sin duración. No son intercambiables: la fase enseña cuándo se trabaja, el hito cuándo vence un compromiso.'],
     ],
     related: [
       ['what-is-a-gantt-chart', '¿Qué es un diagrama de Gantt?'],
@@ -788,7 +1189,8 @@ const G = {
       ['Por qué la curva tiene forma de S',
         `<p>Los proyectos no consumen trabajo a ritmo constante. Las primeras semanas van despacio —movilización, cierre del alcance, esperas de aprobación—, después el centro se acelera porque todo avanza en paralelo, y la cola vuelve a frenarse mientras lo último espera firmas y repasos.</p>
         <p>Al acumular el trabajo sobre el eje temporal, esa forma sale sola: plana, empinada, plana. No es un objetivo que haya dibujado nadie. Es consecuencia de cómo llega realmente el trabajo.</p>
-        <p>Y eso es justamente lo que la hace útil como vara de medir. Una recta implicaría que el proyecto debe estar al veinte por ciento cuando ha pasado el veinte por ciento del plazo, y todos los proyectos de la historia parecerían retrasados en su primer mes.</p>`],
+        <p>Y eso es justamente lo que la hace útil como vara de medir. Una recta implicaría que el proyecto debe estar al veinte por ciento cuando ha pasado el veinte por ciento del plazo, y todos los proyectos de la historia parecerían retrasados en su primer mes.</p>
+        <p>En España la curva tiene además unos escalones muy reconocibles que no aparecen en ningún manual: la <strong>Semana Santa</strong>, los festivos autonómicos, el puente de mayo y, sobre todo, <strong>agosto</strong>. Una obra con parada de agosto no dibuja una S suave, dibuja una S con una meseta en el centro. Si tu calendario laboral está bien puesto, la curva planificada ya la incorpora y no tendrás que explicar todos los años por qué el mes de agosto «va mal».</p>`],
 
       ['Leer lo planificado frente a lo real',
         `<p>Dos curvas. La curva <strong>planificada</strong> sale de tu línea base: se reparte el peso de cada tarea entre sus fechas previstas y se acumula. La curva <strong>real</strong> sale del avance reportado.</p>
@@ -798,7 +1200,8 @@ const G = {
           <li><strong>Real por encima de lo planificado</strong> — vas adelantado, o tu reporte de avance es optimista. Ocurren las dos cosas.</li>
           <li><strong>Curvas que se separan</strong> — el problema está empeorando, no estabilizándose. Es la forma que más importa y la que un porcentaje único nunca enseña.</li>
         </ul>
-        <p>Léelas en <em>horizontal</em> y obtendrás algo más intuitivo para una reunión de seguimiento: desplázate a la izquierda desde el punto real de hoy hasta cortar la curva planificada y tendrás la fecha en la que el plan esperaba este nivel de avance. Esa distancia es cuántas semanas llevas de retraso, en las unidades en las que la gente discute de verdad.</p>`],
+        <p>Léelas en <em>horizontal</em> y obtendrás algo más intuitivo para una reunión de seguimiento: desplázate a la izquierda desde el punto real de hoy hasta cortar la curva planificada y tendrás la fecha en la que el plan esperaba este nivel de avance. Esa distancia es cuántas semanas llevas de retraso, en las unidades en las que la gente discute de verdad.</p>
+        <p>Las dos lecturas dicen lo mismo y no suenan igual. La vertical se expresa en dinero o en días de trabajo pendiente; la horizontal, en calendario. Un jefe de obra entiende «vamos una semana por detrás» mucho antes que «tenemos una desviación de plazo de −14.400 €», aunque sea exactamente la misma frase.</p>`],
 
       ['Valor ganado, sin jerga',
         `<p>La gestión del valor ganado pone una cifra a esa diferencia. Son tres magnitudes, y las siglas son peores que las ideas:</p>
@@ -814,37 +1217,110 @@ const G = {
           <li><strong>SPI = EV ÷ PV</strong> — por debajo de 1,0 significa retraso. Un SPI de 0,85 quiere decir que obtienes 85 céntimos de avance por cada euro de plan.</li>
           <li><strong>CPI = EV ÷ AC</strong> — por debajo de 1,0 significa sobrecoste.</li>
         </ul>
-        <p>La separación es todo el asunto. Un proyecto puede ir perfectamente en presupuesto y muy tarde, o en plazo y perdiendo dinero a chorros, y un único «porcentaje completado» esconde ambas cosas.</p>`],
+        <p>La separación es todo el asunto. Un proyecto puede ir perfectamente en presupuesto y muy tarde, o en plazo y perdiendo dinero a chorros, y un único «porcentaje completado» esconde ambas cosas. Como dos ejes, hay cuatro sitios donde puedes estar:</p>
+        <!--FIG:evmquad|El rendimiento del plazo y el del coste son independientes. Un único porcentaje completado aplasta los dos ejes en una sola cifra.-->
+        <p>El cuadrante importa más que el signo. Estar arriba a la izquierda —en plazo, por encima de coste— se arregla con precio; estar abajo a la derecha —barato y tarde— casi nunca se arregla con dinero, porque lo que falta es capacidad, no presupuesto.</p>`],
+
+      ['Un ejemplo resuelto, con la aritmética',
+        `<p>Reforma integral de las oficinas de <strong>Grupo Alcorta</strong> en Valladolid. Diez semanas de plazo contractual, inicio el <strong>lunes 2 de marzo de 2026</strong>, presupuesto a la finalización (<strong>BAC</strong>) de <strong>240.000 €</strong>. Jefa de proyecto, Marta Iglesias; dirección facultativa por cuenta de la propiedad. El pliego fija penalidades por demora, así que la fecha no es orientativa.</p>
+        <div class="worked">
+          <p>El gasto se reparte como se reparte en una reforma: poco al principio (replanteo, desmontajes, acopios), mucho en el centro (instalaciones y albañilería a la vez) y decreciendo hacia las pruebas y el repaso final. La <strong>semana 5 cae en Semana Santa</strong> —del 30 de marzo al 5 de abril de 2026—, con solo dos días laborables útiles, y eso se ve en la curva antes que en ningún informe.</p>
+          <p><strong>Gasto planificado por semana, acumulado en PV:</strong></p>
+          <table>
+            <thead><tr><th>Semana</th><th>Planificado esa semana</th><th>PV acumulado</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>10.000 €</td><td>10.000 €</td></tr>
+              <tr><td>2</td><td>16.000 €</td><td>26.000 €</td></tr>
+              <tr><td>3</td><td>24.000 €</td><td>50.000 €</td></tr>
+              <tr><td>4</td><td>34.000 €</td><td>84.000 €</td></tr>
+              <tr><td>5</td><td>12.000 €</td><td>96.000 €</td></tr>
+              <tr><td>6</td><td>38.000 €</td><td>134.000 €</td></tr>
+              <tr><td>7</td><td>36.000 €</td><td>170.000 €</td></tr>
+              <tr><td>8</td><td>30.000 €</td><td>200.000 €</td></tr>
+              <tr><td>9</td><td>24.000 €</td><td>224.000 €</td></tr>
+              <tr><td>10</td><td>16.000 €</td><td>240.000 €</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Cinco semanas de datos reales.</strong> EV es el valor a presupuesto de lo que está hecho; AC es lo que ha costado, según las facturas conformadas y los partes de la subcontrata.</p>
+          <table>
+            <thead><tr><th>Semana</th><th>PV acumulado</th><th>EV acumulado</th><th>AC acumulado</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>10.000 €</td><td>8.000 €</td><td>9.000 €</td></tr>
+              <tr><td>2</td><td>26.000 €</td><td>21.000 €</td><td>25.000 €</td></tr>
+              <tr><td>3</td><td>50.000 €</td><td>41.000 €</td><td>47.000 €</td></tr>
+              <tr><td>4</td><td>84.000 €</td><td>66.000 €</td><td>76.000 €</td></tr>
+              <tr><td>5</td><td>96.000 €</td><td>81.600 €</td><td>94.800 €</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Lectura al cierre de la semana 5</strong>, viernes 3 de abril de 2026: PV = 96.000 €, EV = 81.600 €, AC = 94.800 €.</p>
+          <ul>
+            <li><strong>SV = EV − PV</strong> = 81.600 − 96.000 = <strong>−14.400 €</strong> de trabajo presupuestado que debería estar terminado y no lo está.</li>
+            <li><strong>SPI = EV ÷ PV</strong> = 81.600 ÷ 96.000 = <strong>0,85</strong>. El plan se está convirtiendo en avance al 85 % del ritmo supuesto.</li>
+            <li><strong>CV = EV − AC</strong> = 81.600 − 94.800 = <strong>−13.200 €</strong>. Lo hecho ha costado trece mil doscientos euros más de lo que vale.</li>
+            <li><strong>CPI = EV ÷ AC</strong> = 81.600 ÷ 94.800 = <strong>0,86</strong>. Cada euro gastado compra 86 céntimos de valor presupuestado.</li>
+            <li><strong>Avance real = EV ÷ BAC</strong> = 81.600 ÷ 240.000 = <strong>34 %</strong>, frente al <strong>40 %</strong> planificado. Un 34 % suena razonable hasta que sabes que tocaba un 40 %.</li>
+            <li><strong>EAC = BAC ÷ CPI</strong> = 240.000 ÷ 0,8608 = <strong>278.800 €</strong>. Si el rendimiento del coste se mantiene, la obra de 240.000 € acaba unos <strong>38.800 € por encima</strong> (VAC), con <strong>184.000 €</strong> todavía por gastar (ETC = EAC − AC).</li>
+          </ul>
+          <p><strong>Y ahora la lectura horizontal, que es la que te llevas a la reunión.</strong> ¿Cuándo alcanzaba el plan los 81.600 €? Entre la semana 3 (50.000 €) y la semana 4 (84.000 €): faltan 31.600 € dentro de un incremento semanal de 34.000 €, o sea 31.600 ÷ 34.000 = 0,93 de esa semana. El plan cruzaba los 81.600 € hacia la <strong>semana 3,9</strong>. Estás, por tanto, a <strong>algo más de una semana de plan por detrás</strong>: unos cinco días laborables.</p>
+          <p>«SPI 0,85» y «una semana de retraso» son el mismo hecho dicho de dos maneras. El ratio asusta más porque la semana 4 es la parte más empinada de la curva, donde perder unos días cuesta mucho valor. Cita las dos cifras juntas y nadie tendrá que elegir cuál cree.</p>
+          <p><strong>Dónde se fue la semana.</strong> Marta la localiza en un minuto mirando qué tareas arrastran avance: el <em>informe geotécnico complementario</em> llegó cuatro días tarde y bloqueó el refuerzo de forjado, que a su vez retiene a la instaladora. Nada de eso se ve en el 34 %; se ve en el orden de las barras. La curva te dice cuánto y desde cuándo; la ruta crítica te dice qué mover.</p>
+        </div>`],
+
+      ['Las siete cifras y cómo se malinterpreta cada una',
+        `<p>Cada una tiene su malentendido estándar, y los malentendidos hacen más daño que no medir nada.</p>
+        <table>
+          <thead><tr><th>Métrica</th><th>Fórmula</th><th>Qué responde</th><th>Cómo se malinterpreta</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PV</strong></td><td>coste presupuestado del trabajo programado</td><td>¿Cuánto debería estar hecho a estas alturas?</td><td>Se toma de las fechas actuales en vez de una línea base. Esas fechas ya absorbieron cada retraso, así que el PV te sigue y la desviación sale cero.</td></tr>
+            <tr><td><strong>EV</strong></td><td>BAC × avance</td><td>¿Cuánto hay hecho, valorado a presupuesto?</td><td>Vale exactamente lo que valga el reporte de avance detrás: el clásico «al 90 % desde hace tres semanas».</td></tr>
+            <tr><td><strong>AC</strong></td><td>coste realmente incurrido</td><td>¿Qué ha costado hasta hoy?</td><td>Se lee antes de que entren las facturas. El AC va con retraso, así que halaga al CPI al principio y lo castiga después.</td></tr>
+            <tr><td><strong>SV</strong></td><td>EV − PV</td><td>¿Cuánto trabajo nos falta?</td><td>Se oye como un sobrecoste. Se mide en euros, pero es una afirmación sobre el <em>plazo</em>.</td></tr>
+            <tr><td><strong>CV</strong></td><td>EV − AC</td><td>¿Estamos pagando más de lo que vale lo hecho?</td><td>Se compara con el presupuesto consumido en vez de con el valor ganado; «llevamos el 47 % del presupuesto» no dice nada sin el EV.</td></tr>
+            <tr><td><strong>SPI</strong></td><td>EV ÷ PV</td><td>Ritmo al que el plan se convierte en avance</td><td>Tiende a 1,0 al final pase lo que pase: todo proyecto acaba ganando su BAC completo, incluso con seis meses de demora.</td></tr>
+            <tr><td><strong>CPI</strong></td><td>EV ÷ AC</td><td>Valor comprado por cada euro gastado</td><td>Sale exactamente 1,00 en las herramientas que deducen el AC del avance. Un CPI de una calculadora que nunca te preguntó cuánto has gastado es aritmética, no un dato.</td></tr>
+          </tbody>
+        </table>
+        <p>Y una más, porque le cuesta la fecha de entrega a muchos proyectos: el valor ganado pondera todo por presupuesto, y la <strong>ruta crítica</strong> ignora el presupuesto por completo. Una aprobación municipal de dos días que está en la cadena que manda apenas mueve el SPI. Puedes leer un 1,05 y entregar tarde igualmente.</p>`],
 
       ['Por qué a veces la herramienta se niega a mostrarte el CPI',
         `<p>Conviene decirlo claro, porque la mayoría de las calculadoras gratuitas de valor ganado hacen justo lo contrario.</p>
         <p>El coste real es el único dato que no se puede deducir de un calendario. Tiene que venir de tu contabilidad. El atajo tentador es suponer que una tarea al 40 % ha consumido el 40 % de su presupuesto — y si haces eso, AC es igual a EV por construcción, así que <strong>el CPI sale exactamente 1,00 para todos los proyectos que han existido jamás</strong>. La cifra parece rigurosa, no reacciona a nada y le diría a alguien con el presupuesto descontrolado que va perfectamente.</p>
-        <p>Por eso gantts.app deja las métricas de coste en blanco hasta que introduces una cifra real de «Gastado» en tus tareas. Las métricas de plazo —SV y SPI— siguen funcionando, porque solo necesitan fechas y avance. Un dato ausente es honesto. Uno rotundamente equivocado no lo es.</p>
-        <p>Por la misma razón, la curva ganada anterior a hoy se reconstruye en lugar de registrarse: la herramienta guarda tu avance tal como está ahora, no un histórico de cada lectura pasada. Es exacta en el día de hoy, que es donde se leen las cifras, y aproximada hacia atrás — y lo dice en el propio panel, no en una nota al pie.</p>`],
+        <p>Por eso gantts.app toma el coste real de un único sitio: la cifra de <strong>Gastado</strong> que escribes en cada tarea. Si ninguna tarea la lleva, las métricas económicas —<strong>Coste real</strong>, <strong>Desviación de coste</strong>, <strong>Rendimiento del coste</strong> y <strong>Previsión a la finalización</strong>— se quedan vacías y el panel directamente las omite en vez de inventarlas. Las métricas de plazo —<strong>Desviación de plazo</strong> y <strong>Rendimiento del plazo</strong>— siguen funcionando, porque solo necesitan fechas y <strong>Progreso</strong>. Un dato ausente es honesto. Uno rotundamente equivocado no lo es.</p>
+        <p>El CPI de 0,86 del ejemplo existe solo porque alguien tecleó 94.800 € de gasto real. Ningún diagrama de Gantt conoce esa cifra, ni la puede adivinar.</p>
+        <p>Por la misma razón, la curva ganada anterior a hoy se <strong>reconstruye en lugar de registrarse</strong>: la herramienta guarda una lectura de avance por tarea, no un histórico de cada lectura pasada, así que una curva ganada fiel al pasado sencillamente no es recuperable. En vez de negarse a dibujarla, la reconstruimos bajo un supuesto declarado —que el avance se acumuló de forma uniforme a lo largo de los días laborables transcurridos de cada tarea—. Es exacta en la fecha de estado, que es donde se leen las cifras, y aproximada hacia atrás. Despliega <strong>Cómo se calcula esto</strong> en el propio panel y lo verás dicho con todas las letras, no escondido en una nota al pie.</p>`],
 
       ['No necesitas presupuesto para tener una curva',
         `<p>La mayoría de los planes no llevan ningún dato de coste, y una curva S que exija uno es una curva S que no dibuja nadie.</p>
-        <p>Si ninguna tarea tiene coste, gantts.app pondera cada una por su duración en días laborables. La forma es la misma y el eje se lee en porcentaje en vez de en dinero: una curva S de avance puro. Añade costes más adelante y el mismo panel se convierte en una curva de valor sin que cambies nada más.</p>
-        <p>Eso sí, hay algo que importa: <strong>fija una línea base</strong>. Sin ella, «planificado» solo puede significar tus fechas actuales, y tus fechas actuales ya incluyen todos los retrasos que han ocurrido. La desviación de plazo saldrá cero para siempre, que es una respuesta muy tranquilizadora y completamente inútil. Línea base ▸ Fijar línea base, una vez, cuando el plan esté acordado.</p>`],
+        <p>Si ninguna tarea tiene coste, gantts.app pondera cada una por su duración en <strong>días laborables</strong>. La forma es la misma y el eje se lee en días en vez de en dinero: una curva S de avance puro. La desviación y el rendimiento del plazo significan exactamente lo mismo que arriba, solo que en días en lugar de euros. Añade <strong>Presupuesto</strong> más adelante y el mismo panel se convierte en una curva de valor sin que cambies nada más.</p>
+        <p>Dos detalles cambian las cifras. Primero, solo cuentan las tareas hoja: las barras de resumen ya suman el coste de sus hijas, de modo que contar ambas infla el BAC tantas veces como niveles tenga tu esquema. Segundo, los hitos tienen duración cero y por tanto no aportan peso: son fechas, no trabajo. Marcar «hito conseguido» no mueve la curva ni un milímetro, y eso es correcto.</p>
+        <p>Hay algo que importa más que todo lo anterior: <strong>fija una línea base</strong>. Sin ella, «planificado» solo puede significar tus fechas actuales, y tus fechas actuales ya incluyen todos los retrasos que han ocurrido. La desviación de plazo saldrá cero para siempre, que es una respuesta muy tranquilizadora y completamente inútil.</p>
+        <!--FIG:baseline|Barras planificadas frente a barras reales. La línea base es la copia congelada con la que se construye la curva planificada; sin ella, el plan se mueve cada vez que te mueves tú.-->
+        <p><strong>Línea base</strong>, una sola vez, cuando el plan esté acordado y firmado. Verás el aviso «Línea base fijada — los retrasos se miden ahora frente a este plan» y, a partir de ahí, columnas de línea base y desviación en la tabla. La herramienta indica siempre qué origen ha usado para lo planificado, para que puedas distinguir una desviación real de una comparación de tus fechas contra sí mismas.</p>
+        <p>Un matiz de obra: cuando el pliego obliga a un reprogramado formal y la propiedad lo aprueba, actualiza la línea base y déjalo escrito («Línea base actualizada al plan actual»). Lo que no se puede hacer es refijarla cada mes para que la curva salga bonita. Una línea base que se mueve sola es una hoja en blanco con más pasos.</p>`],
 
       ['Cómo construir una aquí',
         `<ol>
-          <li>Monta o importa tu calendario y deja las fechas más o menos bien.</li>
-          <li><strong>Línea base ▸ Fijar línea base</strong> cuando el plan esté acordado. Eso congela lo que significa «planificado».</li>
-          <li>Opcionalmente, da un <strong>Presupuesto</strong> a las tareas en el panel, para que la curva se lea en dinero y no en días.</li>
-          <li>Actualiza el <strong>% completado</strong> a medida que avanza el trabajo: de eso está hecha la curva ganada.</li>
-          <li>Opcionalmente, introduce lo <strong>Gastado</strong> por tarea para desbloquear el CPI, la desviación de coste y la previsión a la finalización.</li>
-          <li>Pulsa <strong>📈 Curva S</strong>.</li>
+          <li>Monta o importa tu calendario y deja las fechas más o menos bien. Con <strong>✨ Pegar a Gantt</strong> puedes traer una lista de tareas tal cual: la línea que acaba en <code>!</code> es un hito, <code>(10d)</code> fija la duración y <code>after Replanteo</code> declara la predecesora.</li>
+          <li>Abre el <strong>Calendario laboral</strong> y marca los festivos que te afectan —nacionales, el autonómico, la Semana Santa, la parada de agosto—. Si esto está mal, la curva planificada estará mal desde el primer día.</li>
+          <li>Pulsa <strong>Reprogramar</strong> si quieres que las tareas se compacten a sus fechas legales más tempranas antes de congelar nada.</li>
+          <li>Ve a <strong>Línea base</strong> y fíjala cuando el plan esté acordado. Eso congela lo que significa «planificado».</li>
+          <li>Opcionalmente, abre cada tarea y dale un <strong>Presupuesto</strong>, para que la curva se lea en euros y no en días.</li>
+          <li>Actualiza el campo <strong>Progreso</strong> a medida que avanza el trabajo: de eso está hecha la curva ganada.</li>
+          <li>Introduce lo <strong>Gastado</strong> por tarea para desbloquear el <strong>Rendimiento del coste</strong>, la <strong>Desviación de coste</strong> y la <strong>Previsión a la finalización</strong>.</li>
+          <li>Pulsa <strong>Curva S</strong>. Se abre <em>Curva S — planificado vs real</em>, con las series <strong>Planificado</strong>, <strong>Ganado (avance real)</strong> y <strong>Coste real</strong>.</li>
+          <li>Despliega <strong>Cómo se calcula esto</strong> antes de enseñarle las cifras a nadie: te dice qué origen se ha usado como planificado y si el peso viene de coste o de duración.</li>
+          <li>Para el acta, saca la imagen con <strong>⬇ Exportar ▸ 🖼 Imagen PNG</strong>, o el plan entero con <strong>📊 Excel (.xlsx)</strong>.</li>
         </ol>
         <p>Funciona íntegramente en tu navegador. Sin cuenta, sin subir nada y sin una plantilla de hoja de cálculo que mantener a mano.</p>`],
     ],
+    callout: 'Cita siempre el SPI y la lectura horizontal juntos. «SPI 0,85» y «una semana por detrás» describen la misma posición al cierre de la semana 5; una sala que solo oiga una de las dos se alarmará de más o no hará nada.',
     faq: [
       ['¿Qué es una curva S en gestión de proyectos?', 'Un gráfico del trabajo planificado acumulado frente al tiempo. Tiene forma de S porque los proyectos arrancan despacio, se aceleran en el centro y se frenan al final. Comparada con el avance real, la distancia vertical entre ambas curvas es cuánto vas por delante o por detrás.'],
       ['¿Qué diferencia hay entre curva S y valor ganado?', 'La curva S es la imagen; el valor ganado es la aritmética que hay detrás. La gestión del valor ganado pone cifras a esa diferencia —SV, SPI, CV y CPI— mientras que la curva muestra su forma y su tendencia.'],
-      ['¿Qué significa un SPI de 0,9?', 'Que has ganado el 90 % del valor que el plan decía que tendrías a estas alturas, así que vas en torno a un 10 % retrasado. Por debajo de 1,0 es retraso; por encima, adelanto.'],
-      ['¿Necesito datos de coste para usar una curva S?', 'No. Sin costes, las tareas se ponderan por su duración en días laborables y obtienes una curva de avance: la misma forma, leída en porcentaje. Los costes la convierten en una curva de valor y desbloquean las métricas económicas.'],
-      ['¿Por qué no aparece el CPI?', 'Porque no se han introducido costes reales. El CPI necesita gasto real; deducirlo del porcentaje completado lo dejaría en 1,00 exacto para cualquier proyecto. Añade una cifra de «Gastado» a tus tareas y aparecerá.'],
-      ['¿Puedo hacer una curva S en Excel?', 'Sí, y es lo que hace casi todo el mundo: mantener a mano una columna acumulada y un gráfico, y rehacerlos cada vez que se mueven las fechas. Generarla desde el calendario elimina ese paso.'],
+      ['¿Qué significa un SPI de 0,9?', 'Que has ganado el 90 % del valor que el plan decía que tendrías a estas alturas, así que vas en torno a un 10 % retrasado en términos de valor. Por debajo de 1,0 es retraso; por encima, adelanto. No te dice cuántos días llevas de demora: para eso lee la diferencia en horizontal.'],
+      ['¿Cómo se calculan el SPI y el CPI a mano?', 'Con tres cifras tomadas en la misma fecha de estado: PV, el valor a presupuesto del trabajo programado hasta hoy; EV, el valor a presupuesto del trabajo terminado; y AC, lo realmente gastado. SPI = EV ÷ PV y CPI = EV ÷ AC. Con PV 96.000 €, EV 81.600 € y AC 94.800 €: SPI 0,85 y CPI 0,86.'],
+      ['¿Necesito datos de coste para usar una curva S?', 'No. Sin costes, las tareas se ponderan por su duración en días laborables y obtienes una curva de avance: la misma forma, leída en días. Los costes la convierten en una curva de valor y desbloquean las métricas económicas.'],
+      ['¿Por qué no aparece el CPI?', 'Porque no se han introducido costes reales. El CPI necesita gasto real; deducirlo del porcentaje completado lo dejaría en 1,00 exacto para cualquier proyecto. Añade una cifra de «Gastado» a tus tareas y aparecerá, junto con la desviación de coste y la previsión a la finalización.'],
     ],
     related: [
       ['gantt-baseline-variance', 'Medir la desviación con una línea base'],
@@ -863,48 +1339,99 @@ const G = {
     sections: [
       ['Qué es realmente un lookahead',
         `<p>Un lookahead es un extracto corto y rodante del programa maestro —normalmente tres semanas, a veces dos, cuatro o seis— que muestra solo el trabajo que toca esa ventana. Avanza cada semana, así que una misma tarea aparece en varios lookaheads consecutivos según se acerca y se entiende mejor.</p>
-        <p>Existe porque un programa maestro y un plan de trabajo son documentos distintos con funciones distintas. El programa responde a «¿llegamos a tiempo?»; el lookahead responde a «¿qué pasa el martes, y ha pedido alguien el acero?». Intentar llevar una reunión de obra con un programa de doscientas líneas es la razón por la que se imprime en A0 y luego se ignora.</p>
-        <p>En términos de Last Planner, el lookahead es donde aparecen las <em>restricciones</em>: el trabajo está lo bastante cerca como para preguntar si el permiso, los materiales, la cuadrilla y el gremio anterior van a estar realmente ahí.</p>`],
+        <p>Existe porque un programa maestro y un plan de trabajo son documentos distintos con funciones distintas. El programa responde a «¿llegamos a la fecha de entrega?»; el lookahead responde a «¿qué pasa el martes, y ha pedido alguien la ferralla?». Intentar llevar la reunión semanal de coordinación en obra con un programa de doscientas líneas es la razón por la que se imprime en A0 y luego se ignora.</p>
+        <p>En términos de Last Planner, el lookahead es donde aparecen las <em>restricciones</em>: el trabajo está lo bastante cerca como para preguntar si el permiso municipal, el acopio, la cuadrilla del subcontratista y el gremio anterior van a estar realmente ahí. Y las tres semanas no son tres semanas iguales: se endurecen a medida que se acercan.</p>
+        <ul>
+          <li><strong>La semana 1 está congelada.</strong> Las cuadrillas están contratadas y el material está a pie de obra. Solo cambia una línea si pasa algo que nadie podía prever.</li>
+          <li><strong>La semana 2 está comprometida pero blanda.</strong> Las restricciones están resueltas, o tienen un responsable con nombre y una fecha. Es la semana en la que todavía te queda margen de maniobra.</li>
+          <li><strong>La semana 3 es planificación.</strong> El trabajo está identificado y cribado, no prometido. Aquí las tareas pueden moverse; para eso está esa semana.</li>
+        </ul>
+        <p>Esa gradación es lo que separa un lookahead de un simple recorte del programa. Si las tres semanas se tratan igual —todas comprometidas, todas negociables— el documento no sirve ni para comprometerse ni para planificar.</p>
+        <!--FIG:rolling|Cada lunes la ventana avanza un paso: la semana 3 pasa a ser la 2, la semana 2 se congela y aparece una nueva semana de planificación.-->`],
 
       ['Solape, no contención: el detalle que casi todos fallan',
         `<p>Esta es la regla que hace correcto un lookahead, y la que más se rompe en las hojas de cálculo hechas a mano.</p>
         <p>Una tarea pertenece a la ventana si la <strong>solapa</strong>, no si cabe dentro de ella. El paquete de cimentación de ocho meses que empezó en marzo y llega a noviembre está ocurriendo ahora mismo, y es precisamente el trabajo que el equipo de obra más necesita tener delante. Filtra por tareas que empiecen <em>y</em> terminen dentro de las tres semanas y perderás todas las actividades de larga duración de la obra, dejando un lookahead muy pulcro que describe un proyecto en el que no trabaja nadie.</p>
         <p>La comprobación son dos comparaciones, no cuatro:</p>
         <p><code>tarea.inicio ≤ ventana.fin &nbsp;Y&nbsp; tarea.fin ≥ ventana.inicio</code></p>
-        <p>Esa es toda la regla, y es exactamente la que aplica gantts.app.</p>`],
+        <p>Esa es toda la regla, y es exactamente la que aplica gantts.app. Tiene una consecuencia que conviene conocer: un grupo padre nunca entra por sus propias fechas. Las fases entran solo como <em>contexto</em> —cuando una tarea de dentro cae en la ventana, sus ancestros la acompañan— y se dibujan como encabezados, no como trabajo que estés comprometiendo. Así las filas no llegan huérfanas a una lista plana en la que nadie sabe de qué planta se está hablando.</p>
+        <!--FIG:lookahead|Solo sobreviven al filtro las barras que cruzan la ventana sombreada; las fases vienen detrás como contexto.-->`],
 
       ['Por qué se ancla al lunes',
-        `<p>El lookahead es un ritual semanal ligado a una reunión semanal. Una ventana que fuese de jueves a jueves partiría la semana laboral por la mitad y no le serviría a nadie que la leyera.</p>
-        <p>Por eso la ventana siempre retrocede al inicio de la semana. Abre la herramienta un miércoles y obtendrás la ventana que empezó el lunes, no un bloque de tres semanas arrancando a mitad de semana. Las flechas la avanzan semana a semana cuando necesitas mirar más lejos, y «Esta semana» la devuelve a su sitio.</p>`],
+        `<p>El lookahead es un ritual semanal ligado a una reunión semanal. Una ventana que fuese de jueves a jueves partiría la semana laboral por la mitad y no le serviría a nadie que la leyera, y menos aún al acta de la reunión, que se redacta pensando en semanas completas.</p>
+        <p>Por eso la ventana siempre retrocede al inicio de la semana. Abre la herramienta un miércoles y obtendrás la ventana que empezó el lunes, no un bloque de tres semanas arrancando a mitad de semana. Las flechas la avanzan semana a semana cuando necesitas mirar más lejos, y <strong>Esta semana</strong> la devuelve a su sitio.</p>
+        <p>Las semanas son semanas naturales, no semanas laborables: «tres semanas vista» significa veintiún días, no quince días laborables. Es una distinción que importa en España más que en casi ningún sitio, porque entre Semana Santa, los festivos autonómicos, algún puente y la parada de agosto, veintiún días naturales pueden contener muy pocos días de trabajo real.</p>`],
+
+      ['Un ejemplo real: Residencial Los Molinos, Bloque C (Getafe)',
+        `<div class="worked">
+        <p><strong>La obra.</strong> Bloque C de una promoción de 48 viviendas en Getafe, siete plantas, con las plantas 1 a 3 ya en fase de acabados y la estructura del ático todavía en marcha. Marta Iglesias, jefa de obra, lleva la planificación con dos encargados: Javier Ferrán en instalaciones y Nuria Belmonte en albañilería y tabiquería. <strong>La ventana se abrió el lunes 20 de julio de 2026 y llegaba hasta el domingo 9 de agosto</strong>: de las 214 tareas del programa maestro, trece solapaban la ventana.</p>
+        <p><em>Semana 1 — congelada, del 20 al 26 de julio.</em> Instalación de bandeja y canalización de climatización en planta 2 (Javier, cuatro operarios; el material se acopió el 14 de julio). Replanteo y fijación de guías de tabiquería seca en planta 2 (Nuria, seis operarios). Y el trasdosado del patinillo 3, que empezó el 2 de junio y no termina hasta el 21 de agosto: aparece en la ventana aunque no empiece ni acabe dentro de ella.</p>
+        <p><em>Semana 2 — comprometida, del 27 de julio al 2 de agosto.</em> Bajantes de la instalación de climatización en planta 2 (Javier), placado del ala oeste (Nuria) y replanteo de canalizaciones en planta 3. Dos restricciones abiertas en el acta de la reunión: las bajantes dependían de que la dirección facultativa validase el cambio de trazado en el falso techo del pasillo, y el placado dependía de un acopio de placa de yeso prometido para el 24 de julio. Marta puso nombre y fecha a cada una: validación a Javier para el 23 de julio, acopio al jefe de compras para el 24.</p>
+        <p><em>Semana 3 — planificación, del 3 al 9 de agosto.</em> Placado de planta 3, segunda fase de electricidad en planta 2 y el hito de prueba de estanqueidad de climatización el 7 de agosto. Nada prometido: en esa semana la obra solo estaba nombrando lo que la podía bloquear. Y detrás, el elefante en la habitación: la parada de agosto del subcontratista de instalaciones, del 10 al 24, que ya asomaba por el borde derecho de la ventana.</p>
+        <p><strong>Una semana después la ventana rodó al 27 de julio – 16 de agosto.</strong> Marta pulsó la flecha una vez; no se reescribió nada. La semana antes comprometida pasaba ahora a estar congelada, y las bajantes de climatización no habían llegado listas. La dirección facultativa no contestó el 23: el visado del cambio de trazado llegó el 29 de julio pidiendo además una altura libre distinta en el pasillo. Las bajantes <em>no</em> se metieron en la semana congelada de todos modos. Se movieron al otro lado de la parada de agosto, con el código «validación pendiente», y los cuatro operarios de Javier pasaron al replanteo de canalizaciones de planta 3, que ya venía cribado de la antigua semana 3. La placa de yeso sí llegó el 24, así que el placado arrancó en fecha.</p>
+        <p><strong>El resultado.</strong> Seis tareas prometidas para la semana del 27 de julio, cinco terminadas tal y como se prometieron: un PPC del 83 %, con un solo código de motivo. Ese código había aparecido tres veces en nueve semanas, y eso —no el porcentaje— fue lo que cambió la obra. Marta sacó las validaciones de la dirección facultativa a un cribado de seis semanas, porque tres semanas eran menos de lo que el aprobador tardaba de verdad. El coordinador de seguridad y salud, por su parte, empezó a leer el mismo lookahead para actualizar el plan de seguridad y salud: si el placado de planta 3 se adelantaba, los medios auxiliares tenían que estar montados antes.</p>
+        </div>`],
+
+      ['Qué se criba realmente en una revisión de restricciones',
+        `<p>Es una reunión de cribado, no de seguimiento: para cada tarea que entra en la semana 2, la pregunta es si lo que necesita va a estar ahí, y si no, quién lo va a conseguir y para cuándo. Con siete categorías se cubre prácticamente todo lo que frena una obra.</p>
+        <table>
+          <thead><tr><th>Restricción</th><th>La pregunta que haces</th><th>Quién la resuelve</th></tr></thead>
+          <tbody>
+            <tr><td>Materiales y acopio</td><td>¿Está pedido? ¿El plazo de suministro cabe en la ventana? ¿Hay dónde acopiarlo?</td><td>Jefe de compras</td></tr>
+            <tr><td>Información y proyecto</td><td>¿El plano está emitido para construcción y ha vuelto la consulta a la dirección facultativa?</td><td>Oficina técnica</td></tr>
+            <tr><td>Mano de obra</td><td>¿El gremio correcto, en el número correcto, con la formación en vigor para esa semana?</td><td>Encargado de la subcontrata</td></tr>
+            <tr><td>Medios y maquinaria</td><td>¿Está el medio auxiliar montado, revisado y no comprometido con otro gremio a la vez?</td><td>Jefe de producción</td></tr>
+            <tr><td>Licencias y permisos</td><td>¿Solicitado el permiso municipal, y el plazo real del ayuntamiento cabe en la ventana?</td><td>Quien lleve esa relación</td></tr>
+            <tr><td>Trabajo precedente</td><td>¿El gremio de delante ha terminado y entregado de verdad, no «casi»?</td><td>Jefe de obra</td></tr>
+            <tr><td>Espacio y acceso</td><td>¿Puede llegar la cuadrilla, con andamio, iluminación y un recorrido seguro?</td><td>Coordinador de seguridad y salud</td></tr>
+          </tbody>
+        </table>
+        <p>Una tarea con una restricción abierta no entra en la semana congelada. Ascenderla igualmente es exactamente la forma en que un lookahead se convierte en decoración de caseta de obra: todo el mundo aprende que las fechas de la semana 1 son orientativas, y a partir de ahí el documento ya no compromete a nadie.</p>
+        <p>El parte diario cierra el círculo. Si lo que se apuntó el martes no se contrasta el lunes siguiente con lo que se prometió, las restricciones se resuelven de memoria y siempre se resuelven las mismas.</p>`],
+
+      ['PPC: puntuar la promesa',
+        `<p>Un lookahead que nadie puntúa es solo un Gantt más corto. Lo que produce la reunión no son las filas filtradas: es un <strong>compromiso</strong>, y un compromiso que nadie mide es un deseo.</p>
+        <p>La medida es el <strong>porcentaje de plan completado</strong> (PPC). Al final de la semana congelada, divides las actividades terminadas tal y como se prometieron entre las actividades prometidas. Seis prometidas, cinco hechas: 83 %. Sin nota parcial: una actividad al 90 % puntúa cero, porque el gremio que va detrás sigue sin poder entrar.</p>
+        <p>Esa dureza es justamente el objetivo. El PPC mide lo fiable que es tu plan, no cuánto trabajo se ha hecho. Una semana de esfuerzo enorme y no planificado que cumple la mitad de sus promesas es una mala semana, porque todos los que venían detrás habían organizado sus cuadrillas alrededor de la promesa.</p>
+        <p>El <em>motivo</em> apuntado en cada fallo importa más que el número. Un código por actividad incumplida —validación pendiente, material fuera de plazo, gremio anterior sin terminar, meteorología, cambio de proyecto—. Al cabo de diez semanas se acumulan y señalan solos la única cosa que merece la pena arreglar.</p>
+        <p>Los equipos que empiezan se mueven entre el 50 % y el 60 %; eliminando restricciones de forma sostenida se llega al 75-85 %. Semana tras semana por encima del 90 % suele significar un plan acolchado, con holgura escondida en cada línea. Sigue la tendencia y los códigos, no el número absoluto.</p>
+        <!--FIG:milestone|Puntúa la semana contra lo que se prometió, no contra lo que resultó cómodo.-->`],
 
       ['Generarlo en vez de reescribirlo',
-        `<p>Plantillas de lookahead a tres semanas hay de sobra: publica una Smartsheet, y media docena más, y existe incluso un formato estándar usado en obras de instalaciones de la Marina estadounidense. Todas son una rejilla en blanco que rellenas a mano.</p>
-        <p>Ese es el problema de verdad. El calendario ya contiene la respuesta; el trabajo semanal consiste en copiarla, y copiarla es de donde vienen los errores y la desactualización. Se te escapa una tarea, o actualizas el maestro y te olvidas del lookahead, y los dos documentos empiezan a contradecirse en silencio.</p>
+        `<p>Plantillas de lookahead a tres semanas hay de sobra: publica una Smartsheet, y media docena de webs más ofrecen la suya, y casi todas las constructoras tienen su propio formato heredado de la última obra. Todas son una rejilla en blanco que rellenas a mano.</p>
+        <p>Ese es el problema de verdad. El calendario ya contiene la respuesta; el trabajo semanal consiste en copiarla, y copiarla es de donde vienen los errores. Se te escapa una tarea, o actualizas el maestro y te olvidas del lookahead, y los dos documentos empiezan a contradecirse en silencio hasta que alguien lo descubre en la certificación mensual de obra.</p>
         <p>En gantts.app el lookahead es una <em>vista</em> de los mismos datos:</p>
         <ol>
-          <li>Pon <strong>Vista</strong> en <strong>Lookahead</strong>.</li>
-          <li>Elige la ventana: 1, 2, 3, 4, 6 u 8 semanas.</li>
-          <li>Avánzala con las flechas, o pulsa «Esta semana» para volver a hoy.</li>
-          <li>Exporta a PDF o PNG para la pared, o a Excel para la reunión.</li>
+          <li>Abre tu plan y pon <strong>Vista</strong> en <strong>Próximas semanas</strong>. El gráfico se recorta solo a la ventana.</li>
+          <li>Elige la ventana: 1, 2, 3, 4, 6 u 8 semanas, según tus plazos de suministro.</li>
+          <li>Avánzala con las flechas, o pulsa <strong>Esta semana</strong> para volver al lunes de hoy.</li>
+          <li>Activa <strong>Columnas</strong> y deja visibles <strong>Responsable</strong>, <strong>Inicio</strong>, <strong>Fin</strong> y <strong>Días</strong>: es lo que se lee en la reunión.</li>
+          <li>Enciende <strong>Ruta crítica</strong> si quieres ver cuáles de esas tareas no tienen holgura (la leyenda lo indica: <em>rayado = ruta crítica</em>).</li>
+          <li>Abre <strong>Calendario</strong> y marca los festivos locales y la parada de agosto, para que las duraciones no cuenten días que nadie va a trabajar.</li>
+          <li>Usa <strong>⬇ Exportar</strong> ▸ <strong>📄 Documento PDF</strong> o <strong>🖼 Imagen PNG</strong> para la pared de la caseta, o <strong>📊 Excel (.xlsx)</strong> para adjuntarlo al acta.</li>
+          <li>Cuando termines, vuelve a <strong>Todas las tareas</strong> para recuperar el programa completo.</li>
         </ol>
-        <p>El gráfico hace zoom sobre la ventana, así que las tres semanas se leen en vez de quedar comprimidas en una franja de un eje de dieciocho meses. Una banda superior indica qué ventana estás mirando y cuántas tareas quedan ocultas, porque un gráfico filtrado que no avisa de que está filtrado se lee como un plan al que le faltan tareas.</p>
-        <p>Cambia una fecha en el maestro y el lookahead ya está bien. No hay nada que volver a copiar.</p>`],
+        <p>El gráfico hace zoom sobre la ventana, así que las tres semanas se leen en vez de quedar comprimidas en una franja de un eje de dieciocho meses. Una banda superior indica qué ventana estás mirando y cuántas tareas hay —«lookahead de 3 semanas · 20 jul – 9 ago — mostrando 13 tareas de 214»— porque un gráfico filtrado que no avisa de que está filtrado se lee como un plan al que le faltan tareas. <strong>Ver todas las tareas</strong> restablece el programa entero.</p>
+        <p>Por defecto la ventana sigue al día de hoy, así que rueda sola entre una visita y la siguiente; las flechas la fijan a un lunes concreto hasta que pulsas Esta semana. Cambia una fecha en el maestro y el lookahead ya está bien. No hay nada que volver a copiar.</p>`],
 
       ['Convertirlo en un documento útil, no solo en un filtro',
         `<ul>
-          <li><strong>Pon un nombre en cada línea.</strong> Un lookahead sin responsable por tarea es una lista de deseos. Activa la columna de responsable.</li>
-          <li><strong>Desglosa más el trabajo cercano que el lejano.</strong> Una tarea que pone «Acabados de la primera planta — 6 semanas» está bien en el programa y es inútil en un lookahead. Divídela según se acerca.</li>
-          <li><strong>Revisa restricciones, no solo fechas.</strong> El valor de mirar tres semanas por delante es que todavía hay tiempo de resolver lo que falta.</li>
+          <li><strong>Pon un nombre en cada línea.</strong> Un lookahead sin responsable por tarea es una lista de deseos. Activa la columna <strong>Responsable</strong> y que sea una persona, no una empresa.</li>
+          <li><strong>Desglosa más el trabajo cercano que el lejano.</strong> Una tarea que pone «Acabados de la primera planta — 6 semanas» está bien en el programa maestro y es inútil aquí. Divídela según se acerca: ferrallado, encofrado, desencofrado del forjado, y no «estructura».</li>
           <li><strong>Que sea corto.</strong> Si el lookahead llega a sesenta líneas, o la ventana es demasiado larga o el plan es demasiado detallado para esta reunión.</li>
+          <li><strong>Criba los suministros de plazo largo en un horizonte más largo.</strong> Si un aprobador tarda cinco semanas, un cribado a tres semanas detecta el problema siempre, y siempre tarde.</li>
+          <li><strong>Apunta los incumplimientos.</strong> Un código de motivo escrito en la pizarra de la caseta ha desaparecido el jueves. Va en el acta o no existe.</li>
+          <li><strong>Cuenta con el calendario real.</strong> Festivos autonómicos, el puente y la parada de agosto no son excepciones: son la mitad del motivo por el que un lookahead de verano no se parece a uno de marzo.</li>
         </ul>`],
     ],
+    callout: 'El lookahead no es el entregable: el entregable es el compromiso. Si el lunes produce un gráfico filtrado y ninguna puntuación de la semana pasada, has automatizado el papeleo y te has saltado la práctica entera.',
     faq: [
       ['¿Qué es un programa lookahead de 3 semanas?', 'Un extracto rodante del programa maestro que muestra solo el trabajo que toca las tres semanas siguientes. Se actualiza cada semana y sirve para coordinar el día a día y detectar restricciones mientras aún hay margen para resolverlas.'],
-      ['¿Por qué tres semanas?', 'Es plazo suficiente para resolver restricciones —materiales, permisos, cuadrillas— y lo bastante corto para que las fechas sean creíbles. Las ventanas de dos, cuatro y seis semanas también son habituales; la duración adecuada depende de tus plazos de suministro.'],
+      ['¿Por qué tres semanas?', 'Es plazo suficiente para resolver restricciones —acopios, licencias, cuadrillas— y lo bastante corto para que las fechas sean creíbles. Las ventanas de dos, cuatro y seis semanas también son habituales; la duración adecuada depende de tus plazos de suministro y del tiempo real que tarda en contestarte la dirección facultativa.'],
       ['¿Debe aparecer en el lookahead una tarea larga que empezó hace meses?', 'Sí. Todo lo que solape la ventana pertenece a ella. Filtrar por tareas que caben enteras dentro de las tres semanas descarta justamente el trabajo de larga duración que está ocurriendo ahora.'],
-      ['¿Es lo mismo un lookahead que el programa maestro?', 'No. El programa maestro responde a si el proyecto termina a tiempo. El lookahead responde a qué pasa esta semana y quién lo hace. Salen de los mismos datos, pero sirven a reuniones distintas.'],
-      ['¿Puedo hacer un lookahead en Excel?', 'Sí, y es lo que hace casi todo el mundo: reescribiendo filas del programa cada semana. Generarlo como una vista del calendario elimina la reescritura y la desincronización que la acompaña.'],
-      ['¿Cómo imprimo el lookahead?', 'Cambia a la vista Lookahead y exporta a PDF o PNG. La exportación refleja lo que hay en pantalla, así que obtienes la ventana y no el programa entero.'],
+      ['¿Qué es el PPC y qué puntuación es buena?', 'Actividades terminadas tal y como se prometieron dividido entre actividades prometidas, sin nota parcial. Los equipos que empiezan sacan un 50-60 %; un 75-85 % ya es bueno. Por encima del 90 % de forma sostenida suele indicar un plan acolchado. Los códigos de motivo importan más que el número.'],
+      ['¿Qué pasa con una tarea que no llega lista?', 'Se saca de la semana congelada en vez de prometerla igualmente, se apunta el motivo y la cuadrilla se reasigna a trabajo que ya estaba cribado. Ascender una tarea que no está lista destruye exactamente la fiabilidad que el lookahead existe para construir.'],
+      ['¿Puedo hacer un lookahead en Excel, y cómo lo imprimo?', 'Casi todo el mundo lo hace así, reescribiendo filas del programa cada semana; generarlo como una vista elimina la reescritura y la desincronización. Para imprimirlo, pon Vista en Próximas semanas y exporta a PDF o PNG: la exportación refleja lo que hay en pantalla, así que obtienes la ventana y no el programa entero.'],
     ],
     related: [
       ['critical-path-method', 'Cómo se calcula la ruta crítica'],
@@ -918,54 +1445,123 @@ const G = {
     metaTitle: 'Diagramas de Gantt en Mermaid: sintaxis',
     metaDesc: 'La sintaxis gantt de Mermaid explicada —secciones, etiquetas, dependencias, excludes—, las trampas más comunes y cómo editarla visualmente.',
     date: '2026-07-19',
-    lead: 'Los bloques gantt de Mermaid se renderizan de forma nativa en GitHub, GitLab, Notion y Obsidian, lo que los convierte en la manera más fácil de poner un calendario donde ya vive el trabajo. También son penosos de <em>editar</em>: mueves una fecha y tienes que rehacer a mano toda la cadena de <code>after</code> que va detrás. Aquí van la sintaxis, las trampas y el paso que falta: editarlo visualmente y recuperar el texto.',
+    lead: 'Los bloques gantt de Mermaid se renderizan de forma nativa en GitHub, GitLab, Notion y Obsidian, lo que los convierte en la manera más fácil de poner un calendario donde ya vive el trabajo: en el repositorio, revisable dentro de una pull request. También son penosos de <em>editar</em>: mueves una fecha y tienes que rehacer a mano toda la cadena de <code>after</code> que va detrás. Aquí van la sintaxis campo por campo, un ejemplo completo que puedes pegar en un README, las trampas que se renderizan perfectamente siendo falsas, y el paso que falta: editarlo visualmente y recuperar el texto.',
     figIntro: 'El mismo calendario como texto y como barras:',
     sections: [
       ['La sintaxis de una pasada',
-        `<p>Un bloque gantt se abre con <code>gantt</code> y unas pocas líneas de cabecera, y después vienen encabezados <code>section</code> con líneas de tarea debajo.</p>
+        `<p>Un bloque gantt se abre con la palabra clave <code>gantt</code> y unas pocas líneas de cabecera, y después vienen encabezados <code>section</code> con líneas de tarea debajo. La sangría es convención, no gramática: Mermaid no se queja si la pierdes, pero el diff sí.</p>
         <p>Una línea de tarea es un nombre, dos puntos y después campos separados por comas:</p>
         <p><code>Nombre de tarea :etiqueta, id, inicio, duración</code></p>
         <ul>
-          <li><strong>Etiquetas</strong> — cualquiera de <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>. Opcionales.</li>
-          <li><strong>id</strong> — una palabra suelta, necesaria solo si algo más se refiere a esta tarea.</li>
-          <li><strong>inicio</strong> — una fecha, o <code>after algúnId</code>, o se omite para continuar tras la tarea anterior.</li>
-          <li><strong>duración</strong> — <code>5d</code>, <code>2w</code>, o una segunda fecha.</li>
+          <li><strong>Etiquetas</strong> — cualquiera de <code>done</code>, <code>active</code>, <code>crit</code>, <code>milestone</code>, en cualquier orden, y puedes apilar varias en la misma tarea. Son opcionales.</li>
+          <li><strong>id</strong> — una palabra suelta, sin espacios ni puntuación, necesaria solo si algo más se refiere a esta tarea.</li>
+          <li><strong>inicio</strong> — una fecha, o <code>after algúnId</code>, o se omite por completo para continuar justo detrás de la tarea anterior.</li>
+          <li><strong>duración</strong> — <code>5d</code>, <code>2w</code>, o una segunda fecha absoluta que fija el final.</li>
         </ul>
-        <p>Cabeceras que conviene conocer: <code>dateFormat</code> (cómo escribes las fechas), <code>excludes weekends</code> (saltar sábados y domingos), <code>title</code> y <code>axisFormat</code> (cómo se etiqueta el eje).</p>`],
+        <p>Cabeceras que conviene conocer: <code>dateFormat</code> (cómo están escritas las fechas en <em>tu</em> archivo), <code>excludes weekends</code>, <code>title</code> y <code>axisFormat</code> (cómo se etiqueta el eje, con códigos al estilo strftime). Los campos se clasifican por su forma más que por su posición estricta, y por eso <code>:done, aud, 2026-03-02, 5d</code> y <code>:aud, done, 2026-03-02, 5d</code> funcionan los dos igual de bien.</p>
+        <p>Una advertencia que ahorra media hora de desconcierto: <code>dateFormat</code> y <code>axisFormat</code> no son el mismo parámetro escrito de dos maneras. El primero es entrada y el segundo es salida. Cambiar <code>dateFormat</code> no reetiqueta el eje; lo que hace es cambiar cómo se leen las fechas que ya has tecleado, con lo que un archivo perfectamente correcto puede pasar a interpretarse al revés.</p>
+        <!--FIG:syntax|Cada campo de una línea de tarea de Mermaid y cuáles son opcionales.-->`],
+
+      ['Un ejemplo completo que puedes pegar en un README',
+        `<p>Un bloque válido y completo para trabajo real: el lanzamiento de la app de reservas de <strong>Grupo Alcorta</strong>, una agencia de Valladolid, con el equipo de producto de Marta Iglesias. Usa secciones, fechas absolutas, cadenas de <code>after</code>, todas las etiquetas, un hito y fines de semana excluidos. Pégalo en un bloque delimitado <code>mermaid</code> dentro de cualquier Markdown de GitHub y se renderiza.</p>
+        <div class="worked">
+        <pre><code>gantt
+    title Lanzamiento app de reservas — Grupo Alcorta
+    dateFormat YYYY-MM-DD
+    axisFormat %d %b
+    excludes weekends
+
+    section Descubrimiento
+    Auditoria del backend actual   :done, aud, 2026-03-02, 5d
+    Especificacion funcional       :done, esp, after aud, 4d
+    Revision con cliente           :active, rev, after esp, 2d
+
+    section Construccion
+    Servicio de identidad          :crit, ident, after rev, 10d
+    Pantallas de reserva           :pant, after ident, 12d
+    Pasarela de pago               :pago, after pant, 6d
+
+    section Salida
+    Pruebas en preproduccion       :pre, after pago, 5d
+    Beta publica                   :milestone, beta, 2026-05-04, 0d
+    Retirada de la version antigua :ret, after beta, 2w</code></pre>
+        <p>Leído línea a línea:</p>
+        <ul>
+          <li><code>dateFormat YYYY-MM-DD</code> le dice a Mermaid cómo <em>leer</em> las fechas que has tecleado. Es formato de entrada, no de salida. Aquí no vale <code>dd/mm/aaaa</code> salvo que lo declares explícitamente, y aun así conviene no hacerlo: el ISO es lo que espera cualquiera que abra el archivo después de ti.</li>
+          <li><code>axisFormat %d %b</code> es el lado de salida: el eje se lee «02 mar» en vez de una fecha ISO completa. Para cualquier cosa más larga que un trimestre, usa <code>%V</code> y trabaja con números de semana.</li>
+          <li><code>excludes weekends</code> hace que todas las barras salten sábados y domingos, para el diagrama entero. No hay excepción por tarea: es todo o nada.</li>
+          <li><code>Auditoria del backend actual :done, aud, 2026-03-02, 5d</code> — etiqueta, id, un inicio absoluto (un lunes) y cinco días. Las duraciones incluyen el día de inicio, así que esto termina el viernes 6 de marzo.</li>
+          <li><code>after aud</code> significa «empieza cuando termine <code>aud</code>»: con los fines de semana excluidos, el lunes 9 de marzo, no el sábado 7.</li>
+          <li><code>:crit, ident, ...</code> pinta la barra con el color de ruta crítica. Fíjate en el verbo: <em>pinta</em>. Más abajo están los límites de eso.</li>
+          <li><code>Pantallas de reserva :pant, after ident, 12d</code> no lleva etiqueta ninguna; el primer campo es simplemente un id. Sin etiqueta significa trabajo pendiente.</li>
+          <li><code>Beta publica :milestone, beta, 2026-05-04, 0d</code> es un marcador de longitud cero en una fecha fija. Los hitos tienen id como cualquier otra cosa, así que el <code>after beta</code> de la última línea es perfectamente legal.</li>
+          <li><code>2w</code> son dos semanas. Mermaid también acepta <code>h</code> y <code>m</code>, que aquí casi nunca sirven de nada.</li>
+        </ul>
+        <p>Un detalle que a un equipo español le importa más que a otros: <code>excludes weekends</code> resuelve los sábados y domingos, pero no sabe nada de los festivos. Este calendario atraviesa la Semana Santa, y el 1 de mayo cae dentro de la ventana de la beta. Si quieres que las barras lo reflejen, hay que declararlos a mano, uno por uno, con <code>excludes 2026-04-03</code> y <code>excludes 2026-05-01</code>. Y eso solo cubre los nacionales: los autonómicos y locales —San Pedro Regalado en Valladolid, la feria en Sevilla, el puente que tu convenio colectivo te regala en septiembre— no están en ninguna lista que Mermaid conozca. En un plan que cruce agosto, la diferencia entre el diagrama y la realidad de la oficina se cuenta en semanas.</p>
+        <p>Las líneas en blanco entre secciones son decorativas: Mermaid las ignora, y nuestro importador también. Déjalas igualmente. Un bloque de cuarenta tareas sin ellas es ilegible en un diff, y ese diff lo va a revisar alguien un viernes a las siete.</p>
+        </div>`],
+
+      ['Referencia de la línea de tarea',
+        `<p>Cada campo y modificador, qué hace y cómo se ve en la práctica.</p>
+        <table>
+          <thead><tr><th>Campo o modificador</th><th>Ejemplo</th><th>Qué hace</th></tr></thead>
+          <tbody>
+            <tr><td><code>id</code></td><td><code>aud</code></td><td>Una palabra suelta que nombra la tarea para que <code>after</code> pueda referirse a ella. Sin espacios ni puntuación. Opcional salvo que algo dependa de la tarea.</td></tr>
+            <tr><td><code>after</code></td><td><code>after aud</code></td><td>Empieza cuando termina la tarea nombrada. Solo fin-inicio y sin desfase. Admite varios ids: <code>after a b</code> espera al más tardío de los dos.</td></tr>
+            <tr><td><code>done</code></td><td><code>:done, aud, …</code></td><td>Dibuja la barra como terminada. Sin porcentaje: el 100 % y el «vamos, que está» se ven exactamente igual.</td></tr>
+            <tr><td><code>active</code></td><td><code>:active, rev, …</code></td><td>Dibuja la barra como en curso. Otra vez sin ningún número detrás.</td></tr>
+            <tr><td><code>crit</code></td><td><code>:crit, ident, …</code></td><td>Colorea la barra como crítica. Es una afirmación que tecleas tú, no algo que Mermaid deduzca: nada la contrasta con la cadena de dependencias.</td></tr>
+            <tr><td><code>milestone</code></td><td><code>:milestone, beta, …</code></td><td>Dibuja un rombo en lugar de una barra. Acompáñalo siempre de <code>0d</code>.</td></tr>
+            <tr><td>Unidades de duración</td><td><code>5d</code> · <code>2w</code> · <code>8h</code></td><td>Días, semanas, horas (también <code>m</code>). Inclusivas respecto al día de inicio: <code>5d</code> desde el lunes acaba el viernes.</td></tr>
+            <tr><td>Fecha de fin</td><td><code>2026-03-02, 2026-03-06</code></td><td>Una segunda fecha en lugar de una duración, para un final fijado desde fuera.</td></tr>
+            <tr><td><code>dateFormat</code></td><td><code>dateFormat YYYY-MM-DD</code></td><td>Cómo se interpretan las fechas del archivo. Línea de cabecera, una vez por diagrama.</td></tr>
+            <tr><td><code>axisFormat</code></td><td><code>axisFormat %d %b</code></td><td>Cómo se etiqueta el eje, con códigos strftime. Puramente cosmético.</td></tr>
+            <tr><td><code>excludes</code></td><td><code>excludes weekends</code></td><td>Días no laborables. Acepta también fechas concretas (<code>excludes 2026-05-01</code>) y nombres de día. Afecta al diagrama entero.</td></tr>
+          </tbody>
+        </table>`],
 
       ['Cuatro cosas que te van a morder',
-        `<p><strong>1. Las duraciones incluyen el día de inicio.</strong> <code>5d</code> desde el lunes día 5 llega hasta el viernes día 9, no hasta el 10. Un error de uno aquí desplaza todas las tareas del archivo y aun así se renderiza perfectamente.</p>
-        <p><strong>2. <code>after</code> junto con <code>excludes weekends</code> es donde viven los errores de verdad.</strong> Si una predecesora termina un viernes, su sucesora empieza el <em>lunes</em>, no el sábado. Cualquier herramienta que resuelva <code>after</code> sumando un día natural colocará tareas en fin de semana dentro de un archivo que lo prohíbe explícitamente. (La nuestra lo hizo, brevemente. La prueba que lo detectó ahora comprueba que ninguna fecha derivada cae en un día excluido.)</p>
-        <p><strong>3. No hay forma de escapar caracteres.</strong> Los dos puntos abren la lista de campos y la coma separa campos, así que una tarea llamada <code>Fase 2: diseño, revisión</code> se convierte en otra cosa completamente distinta. Mantén los dos puntos y las comas fuera de los nombres de tarea.</p>
-        <p><strong>4. Una duración que no se puede interpretar pasa a cero en silencio.</strong> Escribe <code>3dd</code> y obtendrás una barra de longitud cero en lugar de un error.</p>`],
+        `<p><strong>1. Las duraciones incluyen el día de inicio.</strong> <code>5d</code> desde el lunes día 5 llega hasta el viernes día 9, no hasta el 10. Un error de uno aquí desplaza todas las tareas del archivo y aun así se renderiza perfectamente, que es el peor modo de fallo posible: nada parece roto. La entrega sigue apareciendo en su sitio hasta el día en que alguien intenta cumplirla.</p>
+        <p><strong>2. <code>after</code> junto con <code>excludes weekends</code> es donde viven los errores de verdad.</strong> Si una predecesora termina un viernes, su sucesora empieza el <em>lunes</em>, no el sábado. Cualquier herramienta que resuelva <code>after</code> sumando un día natural colocará tareas en fin de semana dentro de un archivo que lo prohíbe explícitamente, y a partir de ahí todas las fechas de aguas abajo van a la deriva. La nuestra lo hizo, brevemente. El arreglo pasa la aritmética por el calendario laboral para que la importación coincida con lo que Mermaid dibuja, y la prueba que lo vigila comprueba la propiedad y no fechas concretas: ningún inicio ni fin <em>derivado</em> puede caer en un día excluido. Las fechas que escribiste tú a mano se quedan donde las pusiste, sea fin de semana o no. Mover en silencio la fecha explícita de un autor es el tipo equivocado de amabilidad.</p>
+        <p><strong>3. No hay forma de escapar caracteres.</strong> Los dos puntos abren la lista de campos y la coma separa campos, así que <code>Fase 2: diseño, revisión</code> se convierte en una tarea llamada «Fase 2» con campos basura. Mantén los dos puntos, las comas y los puntos y comas fuera de los nombres de tarea. Es la razón de que en el ejemplo de arriba los nombres estén escritos sin ellos. Al exportar sustituimos esos caracteres por espacios antes que emitir una línea que no se va a poder interpretar.</p>
+        <p><strong>4. Una duración ilegible pasa a cero en silencio.</strong> Escribe <code>3dd</code> y obtendrás una barra de longitud cero en lugar de un error. Repasa el diagrama en busca de tareas invisibles después de cualquier edición masiva: no aparecen en ningún sitio, ni siquiera como una línea vacía.</p>
+        <!--FIG:deps|«after» es fin-inicio con desfase cero — el único tipo de enlace que existe en el formato.-->`],
 
-      ['Lo que Mermaid no puede expresar',
-        `<p>Es un formato de diagrama, no un motor de planificación, y las carencias importan si vas a hacer ida y vuelta:</p>
+      ['Los límites de un formato de diagrama',
+        `<p>Mermaid gantt es un lenguaje de representación, no un motor de planificación, y la diferencia salta a la vista en cuanto quieres que el gráfico <em>responda</em> a una pregunta en lugar de ilustrar una respuesta que ya tenías.</p>
         <ul>
-          <li><strong>No hay porcentaje de avance.</strong> Solo <code>done</code> y <code>active</code>. Una tarea al 40 % y otra al 90 % son las dos simplemente «active».</li>
-          <li><strong>Solo fin-inicio.</strong> <code>after</code> es FS sin desfase. Inicio-inicio, fin-fin y los desfases no tienen dónde ir.</li>
-          <li><strong>Secciones planas.</strong> Sin grupos anidados.</li>
-          <li><strong>Sin recursos, costes ni líneas base.</strong></li>
+          <li><strong>Sin recursos.</strong> No hay campo para quién hace el trabajo, ni coste, ni esfuerzo, ni unidades. No puedes sobreasignar a nadie en Mermaid porque Mermaid no sabe que exista nadie.</li>
+          <li><strong>Sin holgura y sin ruta crítica calculada.</strong> <code>crit</code> es un color que aplicas a mano. Nada recorre el grafo de dependencias, ni calcula fechas tempranas y tardías, ni te dice qué cadena manda sobre la fecha de fin. Un diagrama con todas las barras marcadas <code>crit</code> es tan válido como uno sin ninguna.</li>
+          <li><strong>Sin línea base.</strong> No hay dónde guardar lo que decía el plan el mes pasado, así que no hay desviación que enseñar ni retraso que medir.</li>
+          <li><strong>Solo fin-inicio.</strong> <code>after</code> es FS con desfase cero. Inicio-inicio, fin-fin, inicio-fin y cualquier desfase o adelanto no tienen dónde ir. Los planes reales están llenos de «empezar a probar tres días después de que arranque el desarrollo»: en Mermaid eso se convierte en una fecha fija y el enlace desaparece.</li>
+          <li><strong>Sin porcentaje de avance.</strong> Una tarea al 40 % y otra al 90 % son las dos simplemente <code>active</code>.</li>
+          <li><strong>Secciones planas.</strong> No hay grupos anidados, así que una EDT de más de un nivel se aplana al entrar.</li>
         </ul>
-        <p>Así que la ida y vuelta pierde información de una forma conocida y aburrida. gantts.app convierte el 100 % en <code>done</code> y cualquier valor intermedio en <code>active</code> al salir, e importa <code>active</code> como 50 %: una suposición, que te comunica en vez de dejar que la descubras en un informe de seguimiento. Los enlaces que no puede escribir como <code>after</code> caen a fechas absolutas, que siguen siendo correctas aunque dejen de ser mantenibles.</p>
-        <p>Una asimetría deliberada: <code>crit</code> se escribe al exportar pero se ignora al importar. La criticidad se <em>calcula</em> a partir del grafo de dependencias, y fiarse de un valor afirmado en un diagrama posiblemente obsoleto permitiría pintar de rojo una cadena que no es crítica.</p>`],
+        <p>Nada de esto lo convierte en un mal formato. Lo convierte en un formato de <em>publicación</em>: excelente para enseñar un calendario, inútil para deducirlo. Y por eso importa la ida y vuelta.</p>`],
 
       ['Editar visualmente y pegar el texto de vuelta',
         `<p>Herramientas que renderizan Mermaid hay muchas. Lo que faltaba es la dirección contraria: arrastrar barras y recuperar la sintaxis.</p>
         <ol>
           <li>Pega o abre tu diagrama en gantts.app — un archivo <code>.mmd</code>, o un <code>.md</code> con un bloque delimitado; los dos funcionan. Detecta el bloque gantt por su contenido, no por la extensión.</li>
-          <li>Arrástralo, enlázalo y refecha como cualquier otro gráfico. <code>excludes weekends</code> activa el calendario laboral, así que las fechas que produce coinciden con las del archivo del que salió.</li>
-          <li><strong>Exportar ▸ Mermaid gantt</strong>, copia y pega de vuelta en tu README.</li>
+          <li>Comprueba el <strong>Calendario laboral</strong>. <code>excludes weekends</code> enciende el calendario, y ahí es donde añades los festivos que Mermaid no conoce: los nacionales, los de tu comunidad y el puente del convenio.</li>
+          <li>Arrastra, enlaza y cambia fechas como en cualquier otro gráfico. Con <code>Ajustar</code> mueves un extremo de la barra y con <code>Mover</code> la desplazas entera sin tocar la duración.</li>
+          <li>Activa <strong>Ruta crítica</strong>. Lo que se raya no es lo que decía <code>crit</code> en el archivo, sino lo que sale de recorrer las dependencias que acabas de importar.</li>
+          <li>Si el plan te ha quedado con huecos porque las fechas venían clavadas del archivo, pulsa <strong>Reprogramar</strong> para compactar cada tarea a su fecha legal más temprana.</li>
+          <li>Abre <strong>⬇ Exportar</strong> ▸ <strong>🧜 Mermaid gantt (texto)</strong>. Ahí tienes <strong>Copiar al portapapeles</strong> si vas directo al README, o <strong>Descargar .mmd</strong> si el diagrama vive en su propio archivo dentro del repositorio.</li>
+          <li>Pega, revisa el diff y haz commit. El bloque sale con la misma forma con la que entró, así que el diff enseña lo que ha cambiado de verdad y no un reformateo completo.</li>
         </ol>
-        <p>Hay además un efecto secundario agradable para quien use un LLM para redactar calendarios: pide sintaxis gantt de Mermaid, pega la respuesta y tendrás un gráfico editable de verdad con ruta crítica, sin ninguna clave de API ni servidor de por medio.</p>`],
+        <p>La ida y vuelta pierde información de una forma conocida y aburrida. El avance convierte el 100 % en <code>done</code> y cualquier valor entre 1 y 99 en <code>active</code> al salir; <code>active</code> vuelve a entrar como 50 %, una suposición que se te comunica en un aviso en lugar de dejar que la descubras en un informe de seguimiento tres semanas después. Los enlaces que no se pueden escribir como <code>after</code> —cualquiera con desfase, o cualquier relación SS, FF o SF— caen a fechas absolutas, que siguen siendo correctas aunque dejen de ser mantenibles.</p>
+        <p>Hay una asimetría deliberada, y no es un fallo: <strong><code>crit</code> se exporta pero nunca se importa.</strong> Al salir es un valor derivado —el editor calculó la ruta crítica a partir del grafo de dependencias, así que la etiqueta es cierta en el momento en que se escribe—. Al entrar es una palabra que alguien tecleó en un archivo que puede llevar semanas sin tocarse, y fiarse de ella permitiría que un diagrama viejo pintara de rojo una cadena que ya no es crítica. Así que se escribe y luego se ignora: la ruta crítica que ves después de importar está recalculada, no afirmada.</p>
+        <p>Un efecto secundario útil si redactas calendarios con un LLM: pídele sintaxis gantt de Mermaid, pega la respuesta y ya tienes un gráfico editable con ruta crítica calculada. Sin clave de API y sin servidor de por medio.</p>`],
     ],
+    callout: 'Mermaid no sabe nada de festivos. <code>excludes weekends</code> resuelve sábados y domingos, pero el 1 de mayo, la Semana Santa y los festivos autonómicos hay que declararlos uno a uno con <code>excludes 2026-05-01</code>. Al importar, revisa el <code>Calendario laboral</code> antes de fiarte de las fechas.',
     faq: [
-      ['¿Cómo se escribe un diagrama de Gantt en Mermaid?', 'Abre el bloque con gantt, añade dateFormat YYYY-MM-DD y después encabezados section con líneas de tarea debajo con la forma «Nombre :etiqueta, id, inicio, duración» — por ejemplo «Investigación :done, inv, 2026-01-05, 5d».'],
-      ['¿5d en Mermaid incluye el día de inicio?', 'Sí. Una tarea de 5d que empieza el lunes día 5 termina el viernes día 9. Este cómputo inclusivo es la causa más habitual de errores de un día.'],
-      ['¿Cómo funcionan las dependencias en Mermaid gantt?', 'Se usa «after algúnId» como campo de inicio. Siempre es fin-inicio y sin desfase: inicio-inicio, fin-fin y los desfases no se pueden expresar.'],
-      ['¿Puede Mermaid mostrar el porcentaje completado?', 'No. Solo tiene las etiquetas done y active. Importar active como un porcentaje concreto es una suposición; gantts.app usa el 50 % y te avisa de que lo ha hecho.'],
-      ['¿Dónde se renderizan los diagramas de Gantt de Mermaid?', 'GitHub, GitLab, Notion y Obsidian los renderizan de forma nativa en Markdown, y mermaid.live los muestra en el navegador.'],
-      ['¿Puedo convertir un diagrama de Mermaid en un gráfico editable?', 'Sí. Abre el archivo .mmd o el Markdown en gantts.app, edítalo visualmente y usa Exportar ▸ Mermaid gantt para copiar de vuelta la sintaxis actualizada.'],
+      ['¿Cómo se escribe un diagrama de Gantt en Mermaid?', 'Abre el bloque con gantt, añade dateFormat YYYY-MM-DD y después encabezados section con líneas de tarea debajo con la forma «Nombre :etiqueta, id, inicio, duración» — por ejemplo «Auditoria :done, aud, 2026-03-02, 5d».'],
+      ['¿5d en Mermaid incluye el día de inicio?', 'Sí. Una tarea de 5d que empieza el lunes día 5 termina el viernes día 9. Este cómputo inclusivo es la causa más habitual de errores de un día, y produce un diagrama que se renderiza perfectamente aunque todas las fechas estén corridas un día por tarea.'],
+      ['¿Cómo funcionan las dependencias en Mermaid gantt?', 'Se usa «after algúnId» como campo de inicio. Siempre es fin-inicio y sin desfase: inicio-inicio, fin-fin y los desfases no se pueden expresar. Puedes nombrar varias predecesoras, como en «after a b», y la tarea espera a la más tardía.'],
+      ['¿Salta after los fines de semana?', 'Sí, cuando el diagrama declara «excludes weekends». La sucesora de una tarea que acaba en viernes empieza el lunes, y su duración se cuenta en días laborables. Las herramientas que resuelven after sumando un día natural acaban colocando tareas en sábado dentro de un archivo que lo prohíbe.'],
+      ['¿Puede Mermaid calcular la ruta crítica?', 'No. La etiqueta crit es un color que aplicas a mano; nada en Mermaid recorre el grafo de dependencias ni calcula holguras. Por eso gantts.app exporta crit pero lo ignora al importar: la criticidad se recalcula a partir de las dependencias en lugar de fiarse de un archivo posiblemente obsoleto.'],
+      ['¿Puedo convertir un diagrama de Mermaid en un gráfico editable?', 'Sí. Abre el archivo .mmd o el Markdown en gantts.app, edítalo visualmente y usa ⬇ Exportar ▸ 🧜 Mermaid gantt (texto) para copiar de vuelta la sintaxis actualizada.'],
     ],
     related: [
       ['gantt-chart-dependencies', 'Los cuatro tipos de dependencia'],

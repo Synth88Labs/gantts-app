@@ -13,7 +13,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basisplan und Abweichung im Gantt | gantts.app</title>
-  <meta name="description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta name="description" content="Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://gantts.app/de/blog/gantt-baseline-variance.html" />
   <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-baseline-variance.html" />
@@ -42,7 +42,7 @@
   <meta property="og:locale:alternate" content="zh_CN" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Basisplan und Abweichung im Gantt | gantts.app" />
-  <meta property="og:description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta property="og:description" content="Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann." />
   <meta property="og:url" content="https://gantts.app/de/blog/gantt-baseline-variance.html" />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -50,11 +50,11 @@
   <meta property="og:image:alt" content="Basisplan und Abweichung: Plan gegen Wirklichkeit" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Basisplan und Abweichung im Gantt | gantts.app" />
-  <meta name="twitter:description" content="Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen." />
+  <meta name="twitter:description" content="Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-baseline-variance.html#post","headline":"Basisplan und Abweichung: Plan gegen Wirklichkeit","description":"Was ein Basisplan ist, wie man Abweichungen liest, wann neu basiert wird und welche Kennzahlen dabei wirklich helfen.","url":"https://gantts.app/de/blog/gantt-baseline-variance.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Basisplan und Abweichung: Plan gegen Wirklichkeit","item":"https://gantts.app/de/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist ein Basisplan?","acceptedAnswer":{"@type":"Answer","text":"Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen."}},{"@type":"Question","name":"Wann setzt man den Basisplan?","acceptedAnswer":{"@type":"Answer","text":"Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft."}},{"@type":"Question","name":"Wann sollte man neu basieren?","acceptedAnswer":{"@type":"Answer","text":"Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug."}},{"@type":"Question","name":"Was ist Terminabweichung?","acceptedAnswer":{"@type":"Answer","text":"Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/gantt-baseline-variance.html#post","headline":"Basisplan und Abweichung: Plan gegen Wirklichkeit","description":"Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann.","url":"https://gantts.app/de/blog/gantt-baseline-variance.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/gantt-baseline-variance.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Basisplan und Abweichung: Plan gegen Wirklichkeit","item":"https://gantts.app/de/blog/gantt-baseline-variance.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist ein Basisplan im Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Eine eingefrorene Kopie des freigegebenen Terminplans — je Vorgang der geplante Beginn, das geplante Ende und der Fortschritt — die unverändert bleibt, damit sich messen lässt, wie weit der laufende Plan davon abgewichen ist."}},{"@type":"Question","name":"Was bedeutet Terminabweichung?","acceptedAnswer":{"@type":"Answer","text":"Die Differenz in Tagen zwischen dem Basisplantermin eines Vorgangs und seinem aktuellen Termin. Positiv heißt später als geplant, negativ früher, null im Plan."}},{"@type":"Question","name":"Wann sollte man den Basisplan setzen?","acceptedAnswer":{"@type":"Answer","text":"Nach der Freigabe und vor Arbeitsbeginn. Wird er mitten in der Ausführung gesetzt, verdeckt er den bereits eingetretenen Verzug."}},{"@type":"Question","name":"Was ist der Unterschied zwischen Start-, End- und Dauerabweichung?","acceptedAnswer":{"@type":"Answer","text":"Die Startabweichung zeigt, ob ein Verzug von vorgelagerter Arbeit geerbt wurde. Die Endabweichung zeigt die Wirkung auf alles Nachgelagerte. Die Dauerabweichung rechnet den geerbten Teil heraus und zeigt, ob die Schätzung selbst falsch war."}},{"@type":"Question","name":"Sollte man neu basieren, wenn ein Projekt in Verzug gerät?","acceptedAnswer":{"@type":"Answer","text":"Nur bei einer genehmigten Änderung des Umfangs, einer förmlichen Umplanung oder einem Wiederanlauf nach einer Unterbrechung. Wenn Sie Entscheidung, Datum und genehmigende Person nicht benennen können, löschen Sie den Beleg dessen, was ursprünglich zugesagt war. Speichern Sie in jedem Fall vorher eine Kopie des Plans."}},{"@type":"Question","name":"Wie setze ich in gantts.app einen Basisplan?","acceptedAnswer":{"@type":"Answer","text":"Über das Menü ◳ Basisplan den Basisplan aus dem aktuellen Plan setzen. Unter jedem Vorgang erscheinen Geisterbalken, und über dasselbe Menü lassen sich die Spalten für Basisplan-Beginn, Basisplan-Ende, Start- und Endabweichung einblenden."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -86,19 +86,21 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a> › Basisplan und Abweichung: Plan gegen Wirklichkeit</div>
     <h1>Basisplan und Abweichung: Plan gegen Wirklichkeit</h1>
-    <p class="lead">Ein <strong>Basisplan</strong> ist der eingefrorene Stand Ihres Terminplans zum Zeitpunkt der Freigabe. Ohne ihn lässt sich später nicht sagen, ob ein Projekt im Verzug ist — nur, wann es voraussichtlich fertig wird.</p>
+    <p class="lead">Ein Gantt-Diagramm zeigt, wo Ihr Projekt steht. Ein <strong>Basisplan</strong> zeigt, wo es stehen sollte. Ohne ihn können Sie Fortschritt berichten, aber keinen Verzug — und der Verzug ist genau das, was jede Person wissen will, die die Arbeit bezahlt.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>3 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>9 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
-        <li><a href="#s1">Was ein Basisplan ist</a></li>
-        <li><a href="#s2">Wann eingefroren wird</a></li>
-        <li><a href="#s3">Abweichung lesen</a></li>
-        <li><a href="#s4">Fortschritt richtig erfassen</a></li>
-        <li><a href="#s5">Wann neu basiert wird</a></li>
-        <li><a href="#s6">Was man daraus lernt</a></li>
+        <li><a href="#s1">Was ein Basisplan tatsächlich ist</a></li>
+        <li><a href="#s2">Wann er gesetzt wird — und wann nicht</a></li>
+        <li><a href="#s3">Ein durchgerechnetes Beispiel: ein Vorhaben, drei Statuszyklen</a></li>
+        <li><a href="#s4">Vier Abweichungen, und was jede verdeckt</a></li>
+        <li><a href="#s5">Abweichung auf dem kritischen Pfad ist die einzige, die wirklich zählt</a></li>
+        <li><a href="#s6">Neu basieren: genehmigte Änderung oder Spurenbeseitigung</a></li>
+        <li><a href="#s7">Wo der Fertigstellungswert hineinpasst — und was unsere S-Kurve ehrlich berichtet</a></li>
+        <li><a href="#s8">So geht das in gantts.app</a></li>
       </ol>
     </div>
 
@@ -108,29 +110,121 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">Was ein Basisplan ist</h2>
-<p>Eine Kopie der Termine zum Zeitpunkt der Freigabe. Der aktuelle Plan verändert sich weiter, der Basisplan bleibt stehen. Die Differenz zwischen beiden ist die Abweichung.</p>
-        <p>Ohne Basisplan gibt es keinen Verzug — es gibt nur immer wieder ein neues Enddatum, und niemand kann sagen, wie es dorthin gekommen ist.</p>
-      <h2 id="s2">Wann eingefroren wird</h2>
-<p>Nach der Freigabe und bevor die Arbeit beginnt. Ein Basisplan, der erst gesetzt wird, wenn das Projekt schon zwei Wochen läuft, misst nichts mehr.</p>
-      <h2 id="s3">Abweichung lesen</h2>
-<p>Terminabweichung ist Ist-Ende minus Plan-Ende, in Tagen. Positiv heißt später als geplant. Interessant ist dabei nicht die Abweichung eines einzelnen Vorgangs, sondern ob sie auf dem kritischen Pfad liegt — dort schlägt sie voll auf das Projektende durch, anderswo möglicherweise gar nicht.</p>
-      <h2 id="s4">Fortschritt richtig erfassen</h2>
-<p>Prozentangaben zum Fortschritt sind notorisch unzuverlässig; „90 Prozent fertig“ ist die häufigste Angabe in jedem Projekt und bleibt es wochenlang. Belastbarer ist die Frage nach der Restdauer: Wie viele Tage brauchen Sie noch? Diese Zahl lässt sich prüfen.</p>
-      <h2 id="s5">Wann neu basiert wird</h2>
-<p>Nur bei einer genehmigten Änderung von Umfang, Budget oder Termin — nicht, weil der alte Plan unangenehm aussieht. Wer bei jedem Verzug neu basiert, hat am Ende ein Projekt ohne Abweichungen und ohne jede Aussage.</p>
-        <p>Bewahren Sie alte Basispläne auf. Die Abfolge zeigt, wie oft und aus welchen Gründen umgeplant wurde — häufig die aufschlussreichste Information im ganzen Projekt.</p>
-      <h2 id="s6">Was man daraus lernt</h2>
-<p>Nach Projektende ist der Vergleich von Basisplan und Ist die beste verfügbare Grundlage für die nächste Schätzung. Wenn Ihre Vorgänge systematisch 30 Prozent länger dauern als geplant, ist das keine Pannenserie, sondern ein Schätzfehler mit bekanntem Faktor.</p>
+      <h2 id="s1">Was ein Basisplan tatsächlich ist</h2>
+<p>Ein Basisplan ist eine eingefrorene Kopie Ihres Terminplans zu einem Zeitpunkt, an dem Sie ihn für richtig erklärt haben — üblicherweise mit der Freigabe. Er speichert je Vorgang den geplanten Beginn, das geplante Ende und den Fortschritt und hört dann auf, sich zu verändern.</p>
+      <p>Dieser letzte Teil ist der Punkt. Wenn Sie den Plan ohne Basisplan laufend überschreiben, schreibt der Terminplan stillschweigend seine eigene Geschichte um, und jede Woche sieht planmäßig aus. Termine wandern einen Tag nach dem anderen, und ein Plan, der dreißig Einzeltagsänderungen aufgenommen hat, sieht am Ende aus wie einer, der sich nie bewegt hat. Der Basisplan ist das, was diese Änderungen zu einer Zahl addiert.</p>
+      <p>Im deutschen Bauvertragsrecht hat das zusätzlich eine handfeste Seite: Eine Behinderungsanzeige nach VOB/B braucht einen Bezugspunkt. „Wir sind später dran, als vereinbart“ ist ohne eingefrorenen Vertragsterminplan keine Aussage, sondern eine Meinung.</p>
+      <h2 id="s2">Wann er gesetzt wird — und wann nicht</h2>
+<p>Setzen Sie den Basisplan <strong>nach</strong> der Freigabe und <strong>bevor</strong> die Arbeit beginnt. Einer, der mitten in der Ausführung entsteht, backt jeden bereits eingetretenen Verzug ein und unterschätzt die tatsächliche Abweichung von da an dauerhaft.</p>
+      <p>Setzen Sie aber keinen Basisplan auf einen Plan, von dem Sie wissen, dass er falsch ist, nur um einen zu haben — ein erfundener Terminplan liefert selbstbewusste, präzise und bedeutungslose Zahlen. Wenn Vorgänge noch Platzhaltertermine tragen, korrigieren Sie zuerst diese.</p>
+      <h2 id="s3">Ein durchgerechnetes Beispiel: ein Vorhaben, drei Statuszyklen</h2>
+<p>Die Sanierung eines Verwaltungsgebäudes, freigegeben am Freitag, dem 27. Februar 2026, und am Montag, dem 2. März, mit dem Basisplan eingefroren, bevor jemand anfängt. Fünf Zeilen, durchgehend Ende-Anfang, alle kritisch. Die Ausführungsplanung liegt in Leistungsphase 5 der HOAI, die Bauüberwachung in Leistungsphase 8.</p>
+      <div class="worked">
+        <p><strong>Basisplan, gesetzt am 2. März 2026</strong></p>
+        <ul>
+          <li>Bestandsaufnahme — 2. bis 13. März (10 Arbeitstage)</li>
+          <li>Ausführungsplanung — 16. März bis 3. April (15 Tage)</li>
+          <li>Ausbau — 6. April bis 15. Mai (30 Tage)</li>
+          <li>Funktionsprüfung — 18. bis 29. Mai (10 Tage)</li>
+          <li>Abnahme — 1. Juni (Meilenstein)</li>
+        </ul>
 
-      <div class="callout">Basieren Sie nicht neu, weil der Plan schlecht aussieht. Ein Basisplan, der bei jedem Verzug nachgezogen wird, zeigt dauerhaft null Abweichung und erklärt am Ende nichts — er ist dann kein Messinstrument mehr, sondern eine Beschönigung.</div>
+        <p><strong>Statuszyklus 1 — Freitag, 20. März</strong></p>
+        <p>Zwei Termine mit den Nutzerinnen sind verschoben worden, die Bestandsaufnahme endete daher am 18. statt am 13. März: <strong>Endabweichung +3 Tage</strong>. Die Ausführungsplanung begann am 19. März — <strong>Startabweichung +3 Tage</strong> — und weil ihre Schätzung unverändert bleibt, wandert ihr prognostiziertes Ende auf den 8. April, ebenfalls +3. Jeder nachgelagerte Vorgang trägt dieselben +3; die Abnahme liest sich als 4. Juni.</p>
+        <p>Lesen Sie das richtig: ein <em>Start</em>problem, kein Schätzproblem. Nichts deutet bisher darauf hin, dass die späteren Schätzungen falsch sind.</p>
+
+        <p><strong>Statuszyklus 2 — Freitag, 10. April</strong></p>
+        <p>Die Ausführungsplanung endete wie prognostiziert am 8. April: Endabweichung +3, Dauerabweichung 0. Der Ausbau begann am 9. April, Startabweichung +3. Dann fällt jedoch eine Kolonne aus, und der Ausbau wird von 30 auf 36 Tage neu geschätzt; sein Ende rückt vom 15. auf den 28. Mai: <strong>Endabweichung +9 Tage</strong> — <strong>3 geerbt</strong>, <strong>6 aus Dauerabweichung</strong>, und das ist die eigentlich neue schlechte Nachricht.</p>
+        <p>Genau deshalb werden Start und Ende getrennt verfolgt. „Der Ausbau ist 9 Tage zu spät“ löst das falsche Gespräch aus; „Der Ausbau hat 3 Tage geerbt und ist um 6 gewachsen“ zeigt auf eine Personalentscheidung, an der man noch etwas ändern kann.</p>
+
+        <p><strong>Statuszyklus 3 — Freitag, 1. Mai</strong></p>
+        <p>Der Ausbau steht bei 55 Prozent gegen geplante 65 Prozent, die 36-Tage-Schätzung ist also selbst optimistisch. Statt die Abnahme erneut wandern zu lassen, verdichtet das Team die Funktionsprüfung: zwei zusätzliche Prüfer kürzen sie von 10 auf 6 Tage. Die Funktionsprüfung zeigt jetzt <strong>Dauerabweichung −4 Tage</strong> und <strong>Endabweichung +5 Tage</strong>. Die Abnahme landet auf dem 8. Juni.</p>
+        <p>Achten Sie darauf, was diese negative Dauerabweichung <em>nicht</em> bedeutet. Nichts ist schneller geworden — vier Tage wurden mit der Arbeitszeit zweier Personen gekauft, und eine Spalte, die nur Tage misst, kann das nicht zeigen.</p>
+      </div>
+      <p>Die ehrliche Zusammenfassung passt in einen Satz: fünf Tage Verzug bis zur Abnahme, drei davon aus einer überzogenen Bestandsaufnahme, sechs aus einem Personalausfall im April, vier davon durch zusätzliche Prüfer zurückgekauft.</p>
+      <h2 id="s4">Vier Abweichungen, und was jede verdeckt</h2>
+<p>„Abweichung“ ist nicht eine Zahl. Vier lohnen sich, und jede ist blind für etwas, das die anderen sehen.</p>
+      <table>
+        <thead>
+          <tr><th>Abweichung</th><th>Was sie ist</th><th>Was nur sie Ihnen sagt</th><th>Wo sie in die Irre führt</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Startabweichung</strong></td>
+            <td>Ist-Beginn minus Basisplan-Beginn, in Tagen.</td>
+            <td>Ob der Verzug geerbt war — ein später Beginn heißt, dass etwas davor hing oder eine Ressource nicht frei war.</td>
+            <td>Sagt nichts über das Ende. Ein Vorgang kann 5 Tage später beginnen und sein Basisplanende trotzdem halten, indem er Puffer oder Leute verbrennt.</td>
+          </tr>
+          <tr>
+            <td><strong>Endabweichung</strong></td>
+            <td>Ist- oder prognostiziertes Ende minus Basisplanende.</td>
+            <td>Die Wirkung auf alles Nachgelagerte. Das ist die Zahl, die sich fortpflanzt.</td>
+            <td>Bündelt geerbten und neuen Verzug. Die +9 Tage des Ausbaus waren 3 geerbt und 6 neu — zwei Probleme in einer Zahl.</td>
+          </tr>
+          <tr>
+            <td><strong>Dauerabweichung</strong></td>
+            <td>Ist-Dauer minus Basisplandauer.</td>
+            <td>Ob die Schätzung falsch war — Endabweichung, aus der der geerbte Teil herausgerechnet ist.</td>
+            <td>Wird negativ, wenn ein Vorgang verdichtet wird, was sich wie Vorsprung liest. Die −4 Tage der Funktionsprüfung kosteten zwei zusätzliche Personen.</td>
+          </tr>
+          <tr>
+            <td><strong>Aufwands- oder Kostenabweichung</strong></td>
+            <td>Verbrauchter Aufwand oder verbrauchtes Geld gegen den Ansatz im Basisplan.</td>
+            <td>Was die Rettung gekostet hat. Die einzige, die Verdichtung überhaupt bemerkt.</td>
+            <td>Braucht erfasste Ist-Werte. Ohne eingetragene Ausgaben ist sie keine kleine Zahl — es gibt sie schlicht nicht.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Die Dauerabweichung lassen die meisten Teams weg, und ausgerechnet sie ändert Verhalten: Sie ist die einzige Terminkennzahl, die „wir waren spät“ von „wir haben uns geirrt“ trennt.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 140" width="100%" role="img" aria-label="Die Geisterbalken tragen den Basisplan; der Abstand zum aktuellen Balken ist die Abweichung."><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Plan</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ist</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg><figcaption>Die Geisterbalken tragen den Basisplan; der Abstand zum aktuellen Balken ist die Abweichung.</figcaption></figure>
+      <h2 id="s5">Abweichung auf dem kritischen Pfad ist die einzige, die wirklich zählt</h2>
+<p>Ein Verzug von fünf Tagen bei einem Vorgang mit fünfzehn Tagen Puffer kostet nichts. Ein Verzug von einem Tag auf dem kritischen Pfad verschiebt das Enddatum.</p>
+      <p>Sortieren Sie nach Abweichung und prüfen Sie dann, welche dieser Vorgänge kritisch sind. Diese kurze Liste ist Ihr eigentlicher Statusbericht. Die Zahl verzögerter Vorgänge ohne Bezug auf den Puffer zu berichten, ist der Weg, wie Projekte gleichzeitig „zu 80 Prozent im Plan“ und drei Wochen zu spät sein können.</p>
+      <p>Die umgekehrte Falle ist genauso real: Ein unkritischer Vorgang mit +12 Tagen Abweichung und 14 Tagen Puffer ist heute in Ordnung und morgen kritisch. Puffer wird verbraucht, nicht nachgefüllt.</p>
+      <h2 id="s6">Neu basieren: genehmigte Änderung oder Spurenbeseitigung</h2>
+<p>Das ist die folgenreichste Entscheidung, die Sie zu einem Basisplan treffen, und fast nie eine technische. Neu basieren setzt den Vergleich zurück: Jede Abweichung geht auf null, und was ursprünglich zugesagt war, ist nicht mehr sichtbar. Drei Situationen machen das richtig:</p>
+      <ul>
+        <li><strong>Eine genehmigte Änderung des Umfangs.</strong> Jemand mit Befugnis hat Arbeit hinzugefügt oder gestrichen, schriftlich — bei Bauvorhaben typischerweise als Nachtrag. Gegen einen Plan zu messen, der das Vorhaben nicht mehr beschreibt, ergibt eine Abweichung, die korrekt und ohne Aussage ist.</li>
+        <li><strong>Eine förmliche Umplanung.</strong> Die Zahlen steuern keine Entscheidungen mehr — jeder Vorgang liest sich als +30 Tage, und niemand kann sagen, welche schlechter werden.</li>
+        <li><strong>Ein Wiederanlauf nach einer Unterbrechung.</strong> Die alten Termine messen die Unterbrechung, nicht die Arbeit.</li>
+      </ul>
+      <p>Jeder andere Grund ist derselbe Grund in anderer Kleidung: Die Abweichung sieht schlecht aus und der Bericht ist fällig. Neu zu basieren in der Woche vor dem Lenkungskreis ist das Erkennungszeichen. In unserem Beispiel hätte ein Zurücksetzen am 1. Mai die Abnahme mit 0 Tagen Verzug ausgewiesen — und sie wäre trotzdem am 8. Juni gewesen.</p>
+      <p>Der Test ist einfach. Wenn das Neubasieren berechtigt ist, können Sie die Entscheidung, das Datum und die Person benennen, die sie getroffen hat. Wenn nicht, basieren Sie nicht neu, sondern löschen den Beleg dafür, dass etwas schiefgegangen ist.</p>
+      <p>Wenn Sie neu basieren, bewahren Sie den alten Stand auf — speichern Sie den Plan vorher in eine Datei, denn die Datei trägt den Basisplan mit sich. Der Abstand zwischen Basisplan 1 und Basisplan 3 ist oft die ehrlichste Beschreibung eines Projekts, die es gibt, und genau das geht verloren, wenn ein Basisplan an Ort und Stelle überschrieben wird.</p>
+      <h2 id="s7">Wo der Fertigstellungswert hineinpasst — und was unsere S-Kurve ehrlich berichtet</h2>
+<p>Abweichung in Tagen beantwortet „wie spät“. Der Fertigstellungswert beantwortet „wie viel Arbeit haben wir für die verbrauchte Zeit und das verbrauchte Geld verbucht“. Er hängt am Basisplan: Ohne ihn hat der Planwert nichts, dem er folgen könnte.</p>
+      <p>Unsere S-Kurve ist bewusst offen mit ihren Grenzen — kennen Sie sie, bevor Sie ihre Zahlen zitieren:</p>
+      <ul>
+        <li><strong>Der Planwert folgt dem Basisplan, sofern einer existiert.</strong> Ohne ihn ist der Plan nur Ihre aktuellen Termine, und die Terminabweichung steht dauerhaft auf null, egal wie weit sich alles bewegt hat. Der Dialog sagt das, statt eine schmeichelhafte Null zu zeigen.</li>
+        <li><strong>Die Ist-Kosten werden nie aus dem Fortschritt abgeleitet.</strong> Sie stammen ausschließlich aus Ausgaben, die Sie je Vorgang eintragen. Die verlockende Abkürzung — anzunehmen, ein zu 40 Prozent erledigter Vorgang habe 40 Prozent seines Budgets verbraucht — ergäbe einen CPI von exakt 1,00 für jedes Projekt, das je durchgeführt wurde. Ohne eingetragene Ist-Werte werden CPI, Kostenabweichung und Kostenprognose deshalb gar nicht ausgewiesen.</li>
+        <li><strong>Ohne Kosten ist der Normalfall.</strong> Ist bei keinem Vorgang ein Betrag hinterlegt, werden die Vorgänge nach ihrer Dauer in Arbeitstagen gewichtet, und Sie erhalten eine reine Fortschrittskurve — dieselbe Form, abgelesen in Prozent statt in Euro.</li>
+        <li><strong>Die Ist-Kurve für die Vergangenheit ist rekonstruiert.</strong> Wir speichern den Fortschritt so, wie er heute ist, und keine Historie davon; die frühere Kurve unterstellt daher, dass der Fortschritt gleichmäßig über die verstrichenen Arbeitstage jedes Vorgangs angefallen ist. Zum Stichtag exakt, davor näherungsweise — und in der Ansicht selbst so benannt.</li>
+      </ul>
+      <p>Im durchgerechneten Beispiel, ohne eingetragene Kosten, zeigt die S-Kurve am 1. Mai den erreichten Fortschritt unter dem geplanten — dieselbe Geschichte, die die Endabweichung von +5 Tagen erzählt, nur in Prozent statt in Tagen.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 400 196" width="100%" role="img" aria-label="Termin- und Kostenabweichung sind unabhängige Achsen: spät und unter Budget ist ein realer Ort."><rect x="20" y="10" width="150" height="80" fill="#12a594" opacity="0.16"/><rect x="170" y="10" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="20" y="90" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="170" y="90" width="150" height="80" fill="#e5484d" opacity="0.16"/><line x1="170" y1="10" x2="170" y2="170" stroke="#94a3b8" stroke-width="1"/><line x1="20" y1="90" x2="320" y2="90" stroke="#94a3b8" stroke-width="1"/><text x="95" y="54" font-size="10" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">im Vorlauf · unter Budget</text><text x="245" y="54" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">im Rückstand · unter Budget</text><text x="95" y="134" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">im Vorlauf · über Budget</text><text x="245" y="134" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">im Rückstand · über Budget</text><text x="340" y="94" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Zeit</text><text x="174" y="186" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kosten</text></svg><figcaption>Termin- und Kostenabweichung sind unabhängige Achsen: spät und unter Budget ist ein realer Ort.</figcaption></figure>
+      <h2 id="s8">So geht das in gantts.app</h2>
+<p>Die ganze Schleife dauert etwa eine Minute. Mit der Gebäudesanierung als Beispiel:</p>
+      <ol>
+        <li>Einigen Sie sich zuerst auf den Plan — Termine, Abhängigkeiten und Dauern sollten das sein, woran Sie gemessen werden wollen.</li>
+        <li>Klicken Sie in der Werkzeugleiste auf <strong>◳ Basisplan</strong>. Ist noch keiner gespeichert, bietet das Menü genau eine Handlung an: den Basisplan aus dem aktuellen Plan setzen. Sie sehen danach die Meldung „Basisplan gesetzt — Verzug wird ab jetzt gegen diesen Plan gemessen“.</li>
+        <li>Unter jedem Vorgangsbalken liegt nun ein Geisterbalken. Beim erneuten Öffnen des Menüs sehen Sie Datum und Uhrzeit der Aufnahme sowie einen Schalter, mit dem sich die Geisterbalken für eine Präsentation ausblenden lassen.</li>
+        <li>Arbeiten Sie den Plan ab. Passen Sie in jedem Statuszyklus Balken oder Termine an die Wirklichkeit an — den 18. März für das Ende der Bestandsaufnahme, den 8. April für die Ausführungsplanung.</li>
+        <li>Öffnen Sie <strong>◳ Basisplan</strong> erneut und lassen Sie sich die Abweichungsspalten anzeigen. Das ergänzt im Raster den Basisplan-Beginn, das Basisplan-Ende sowie Start- und Endabweichung. Verspätet erscheint rot, verfrüht grün.</li>
+        <li>Überfliegen Sie die Endabweichung und gleichen Sie danach mit dem kritischen Pfad ab, welche Verzüge das Enddatum bewegen. Die Dauerabweichung ist der Abstand zwischen dem Basisplanwert und dem aktuellen Wert in der Spalte <strong>Tage</strong>.</li>
+        <li>Für die Fortschrittsansicht öffnen Sie <strong>📈 S-Kurve</strong>. Der Dialog nennt selbst, ob der Planwert Ihrem Basisplan folgt oder nur Ihren aktuellen Terminen.</li>
+        <li>Speichern Sie vor jedem Neubasieren eine Kopie der Datei. Danach basieren Sie über dasselbe Menü auf den aktuellen Plan neu; dort lässt sich der Basisplan auch wieder löschen. Beides ist rückgängig zu machen.</li>
+      </ol>
+
+      <div class="callout">Der häufigste Fehler beim Basisplan ist kein technischer. Teams setzen einen Basisplan, sehen die Abweichung unangenehm werden und hören still auf, hinzusehen. Ein Basisplan, den niemand liest, ist schlechter als gar keiner, weil er den Anschein von Kontrolle erzeugt, ohne sie zu leisten. Nehmen Sie die Abweichung in die wöchentliche Runde auf — oder setzen Sie gar keinen.</div>
 
       <h2 id="faq">Häufige Fragen</h2>
       <div class="faq">
-        <details open><summary>Was ist ein Basisplan?</summary><p>Der eingefrorene Terminplan zum Zeitpunkt der Freigabe. Er dient als Vergleichsmaßstab für alle späteren Abweichungen.</p></details>
-        <details><summary>Wann setzt man den Basisplan?</summary><p>Nach der Freigabe und vor Arbeitsbeginn. Später gesetzt verliert er seine Aussagekraft.</p></details>
-        <details><summary>Wann sollte man neu basieren?</summary><p>Nur bei genehmigter Änderung von Umfang, Budget oder Termin — nicht bei jedem Verzug.</p></details>
-        <details><summary>Was ist Terminabweichung?</summary><p>Die Differenz zwischen tatsächlichem und geplantem Termin in Tagen. Auf dem kritischen Pfad wirkt sie voll auf das Projektende.</p></details>
+        <details open><summary>Was ist ein Basisplan im Gantt-Diagramm?</summary><p>Eine eingefrorene Kopie des freigegebenen Terminplans — je Vorgang der geplante Beginn, das geplante Ende und der Fortschritt — die unverändert bleibt, damit sich messen lässt, wie weit der laufende Plan davon abgewichen ist.</p></details>
+        <details><summary>Was bedeutet Terminabweichung?</summary><p>Die Differenz in Tagen zwischen dem Basisplantermin eines Vorgangs und seinem aktuellen Termin. Positiv heißt später als geplant, negativ früher, null im Plan.</p></details>
+        <details><summary>Wann sollte man den Basisplan setzen?</summary><p>Nach der Freigabe und vor Arbeitsbeginn. Wird er mitten in der Ausführung gesetzt, verdeckt er den bereits eingetretenen Verzug.</p></details>
+        <details><summary>Was ist der Unterschied zwischen Start-, End- und Dauerabweichung?</summary><p>Die Startabweichung zeigt, ob ein Verzug von vorgelagerter Arbeit geerbt wurde. Die Endabweichung zeigt die Wirkung auf alles Nachgelagerte. Die Dauerabweichung rechnet den geerbten Teil heraus und zeigt, ob die Schätzung selbst falsch war.</p></details>
+        <details><summary>Sollte man neu basieren, wenn ein Projekt in Verzug gerät?</summary><p>Nur bei einer genehmigten Änderung des Umfangs, einer förmlichen Umplanung oder einem Wiederanlauf nach einer Unterbrechung. Wenn Sie Entscheidung, Datum und genehmigende Person nicht benennen können, löschen Sie den Beleg dessen, was ursprünglich zugesagt war. Speichern Sie in jedem Fall vorher eine Kopie des Plans.</p></details>
+        <details><summary>Wie setze ich in gantts.app einen Basisplan?</summary><p>Über das Menü ◳ Basisplan den Basisplan aus dem aktuellen Plan setzen. Unter jedem Vorgang erscheinen Geisterbalken, und über dasselbe Menü lassen sich die Spalten für Basisplan-Beginn, Basisplan-Ende, Start- und Endabweichung einblenden.</p></details>
       </div>
 
       <aside class="promo">
@@ -150,7 +244,7 @@
 <h2 id="related">Passend dazu</h2>
       <ul>
         <li><a href="/de/blog/critical-path-method.html">Der kritische Pfad</a></li>
-        <li><a href="/de/blog/gantt-chart-mistakes.html">Häufige Planungsfehler</a></li>
+        <li><a href="/de/blog/gantt-chart-dependencies.html">Die vier Abhängigkeitsarten</a></li>
         <li><a href="/de/blog/milestones-vs-tasks.html">Meilensteine und Vorgänge</a></li>
         <li><a href="/de/blog/">Zurück zu den Ratgebern</a></li>
       </ul>
@@ -207,6 +301,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

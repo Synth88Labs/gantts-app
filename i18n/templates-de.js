@@ -3779,6 +3779,753 @@ const T = {
       ]
     ]
   },
+
+  'hotel-refurbishment-schedule': {
+    card: "Etagenweise Schließungen, Zimmerausfall, Lärmfenster, Aufzüge, öffentliche Bereiche.",
+    h1: "Terminplan für die Hotelsanierung im laufenden Betrieb",
+    metaTitle: "Hotelsanierung — Terminplan-Vorlage",
+    metaDesc: "Kostenloser Terminplan für die Hotelsanierung im laufenden Betrieb: Etagenschließungen, Zimmerausfall, Lärmfenster, Aufzüge, Abnahme.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für die Hotelsanierung</strong> für ein Haus, das während des Umbaus weiter verkauft — etagenweise Schließungen, der Zimmerausfall und der Erlös, den jede Schließung kostet, Lärmfenster rund um die Gästezeiten, die vertikale Abfolge von Steigeschächten und Aufzügen sowie die öffentlichen Bereiche in der Nebensaison. Laden Sie sie für Eigentümer oder Asset Management herunter oder öffnen Sie sie online, um zu sehen, wie viele Zimmer Sie Monat für Monat tatsächlich aus dem Verkauf nehmen.",
+    intro: "Die Sanierung eines laufenden Hotels ist eine Baustelle mit einem mitlaufenden Erlöszähler daneben. Der Plan ordnet die Gewerke nach der Belegung, nicht nach der Verfügbarkeit der Firmen:",
+    phases: [
+      [
+        "Machbarkeit und Ertragsplanung",
+        "Bestandsaufnahme und Schadstoffkataster, Leistungsumfang und Markenstandard, das Modell des Zimmerausfalls und die daraus abgeleitete Schließungsstrategie samt Investitionsrechnung. <em>Meilenstein: Investition freigegeben.</em>"
+      ],
+      [
+        "Planung und Vergabe",
+        "Entwurfs- und Ausführungsplanung über die HOAI-Leistungsphasen, FF&amp;E-Spezifikation und Bemusterung, ein vollständiges Musterzimmer sowie die Vergabe nach VOB/A mit Lieferzeiten, die darüber entscheiden, wann die erste Etage schließen kann. <em>Meilenstein: Musterzimmer freigegeben.</em>"
+      ],
+      [
+        "Back-of-House und Aufzüge",
+        "Aufmaß der Steigeschächte und Trassen, Aufzugsmodernisierung Kabine für Kabine mit Prüfung durch die zugelassene Überwachungsstelle nach BetrSichV, Personalbereiche, Technikzentrale und Kälteerzeugung — die Arbeiten, die jede Etage betreffen und die man kein zweites Mal macht."
+      ],
+      [
+        "Etagenschließungen",
+        "Etagen nacheinander aus dem Verkauf genommen, entkernt, ausgebaut, Mängel abgearbeitet und wieder in die Vermarktung gegeben. <em>Meilenstein: letzte Gästeetage übergeben.</em>"
+      ],
+      [
+        "Öffentliche Bereiche und Gastronomie",
+        "Lobby, Restaurant, Bar, Tagungsräume und Spa in der Nebensaison, mit Interimslösungen für die Gäste in der Zwischenzeit sowie dem Brandschutznachweis und der Abnahme, die Tagungsflächen nach der Versammlungsstättenverordnung brauchen."
+      ],
+      [
+        "Übergabe und Wiedervermarktung",
+        "Inbetriebnahme der Technik, förmliche Abnahme nach VOB/B, Schulung der Mannschaft auf das neue Produkt, Fotoproduktion, Neupositionierung der Raten und die Rückkehr zur vollen Kapazität. <em>Meilenstein: volle Zimmerverfügbarkeit.</em>"
+      ]
+    ],
+    callout: "Bewerten Sie jede Schließung in Zimmernächten, bevor Sie irgendetwas terminieren. Eine Etage mit 30 Zimmern, acht Wochen geschlossen, sind rund 1.700 Zimmernächte, die Sie nicht verkaufen — und diese Schließung von Juli in den Februar zu verlegen ist oft mehr wert als der gesamte Nachlass, den Sie gerade mit dem Bauunternehmen verhandeln. Das Ausfallmodell gehört an den Anfang des Terminplans, nicht in den Anhang.",
+    customize: [
+      "Ersetzen Sie die Etagenzeilen durch Ihre echten Zimmerzahlen und Schließungsdauern und summieren Sie die ausgefallenen Zimmernächte je Monat gegen Ihre Prognose.",
+      "Legen Sie die öffentlichen Bereiche in Ihre tatsächliche Nebensaison — die ist bei den meisten Häusern deutlich kürzer, als die Jahresplanung glauben macht.",
+      "Setzen Sie das Lärmfenster auf die Zeiten, die der Betrieb wirklich verteidigen kann, und halten Sie Bohren, Abbruch und Kernbohrungen konsequent darin.",
+      "Führen Sie je Aufzug eine eigene Zeile; alle Kabinen gleichzeitig stillzulegen ist in einem laufenden Haus praktisch nie vertretbar.",
+      "Ergänzen Sie einen Umzugsplan, wenn Gäste während des Aufenthalts verlegt werden müssen, und besetzen Sie ihn — das ist echte Arbeit an der Rezeption, kein Rundungsfehler.",
+      "Markieren Sie Investitionsfreigabe, Musterzimmer, Übergabe der letzten Etage und volle Verfügbarkeit als Meilensteine."
+    ],
+    tips: [
+      "<strong>Bauen Sie das Musterzimmer, bevor Sie bestellen.</strong> Es ist die einzige günstige Gelegenheit zu merken, dass das Tischlerwerk nicht passt, die Steckdosen falsch sitzen und das Baddetail undicht ist — und der Betrieb sollte darin übernachten.",
+      "<strong>Schließen Sie keine zwei Etagen übereinander, solange das Modell das nicht hergibt.</strong> Verdichtung über den Preis funktioniert genau so lange, bis keine Zimmer mehr da sind, in die verdichtet werden kann.",
+      "<strong>Planen Sie vertikal, nicht horizontal.</strong> Steigeschächte, Abwasserstränge und Aufzugsschächte laufen durch alle Geschosse; führen Sie die Technikarbeiten als eine durchgehende vertikale Kampagne statt sie je Etage zu wiederholen.",
+      "<strong>Schützen Sie den Gästeweg.</strong> Baustellenzugang, Einhausung, Entsorgung und Materialtransport brauchen einen Weg, der die Lobby während der Anreisezeiten nie kreuzt; diese Randbedingung gehört in den Plan, weil sie die Schichten bestimmt.",
+      "<strong>Halten Sie immer einen Aufzug für Gäste frei.</strong> Die Aufzugsmodernisierung erzeugt mehr Beschwerden und Minderungen als jedes andere Gewerk, und die Kabinen nacheinander zu machen kostet Wochen, rettet aber die Bewertungen.",
+      "<strong>Setzen Sie den Basisplan mit der Freigabe des Musterzimmers.</strong> Davor bewegt sich der Umfang noch; danach hat jede Woche Verzug einen bezifferbaren Preis in Zimmernächten."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Hotelsanierung im laufenden Betrieb?",
+        "Bei einem mittelgroßen Haus üblicherweise 12 bis 24 Monate, weil die Etagen nacheinander und nicht gleichzeitig geschlossen werden. Die Vorlage nutzt achtzehn Monate, die Sie durch mehr gleichzeitig geschlossene Zimmer stauchen können — zu einem Preis in Erlös."
+      ],
+      [
+        "Wäre eine Vollschließung nicht besser?",
+        "Manchmal, und genau das beantwortet das Ausfallmodell. Eine Vollschließung baut schneller und günstiger, gibt aber den gesamten Umsatz auf und riskiert Firmenkunden und Personal. Rechnen Sie beide Varianten; diese Vorlage bildet die abschnittsweise Sanierung ab."
+      ],
+      [
+        "Wie plane ich laute Arbeiten in einem belegten Haus?",
+        "Vereinbaren Sie ein festes Tagesfenster — meist später Vormittag bis später Nachmittag — und behandeln Sie es als harte Randbedingung des Bauablaufs, nicht als Bitte an die Firma. Lärm außerhalb dieses Fensters ist der Grund, warum Gäste den Preis mindern, und diese Minderung ist teurer als die eingesparte Bauzeit."
+      ],
+      [
+        "Worin unterscheidet sie sich von der Pre-Opening-Vorlage?",
+        "Diese hier ist für ein Haus, das jetzt verkauft. Wenn Sie ein Neubauhotel ohne Gäste in Betrieb nehmen, nutzen Sie den <a href=\"/de/templates/hotel-pre-opening-critical-path.html\">Pre-Opening-Terminplan</a> — der ist um die Eröffnungsbereitschaft herum gebaut, nicht um Schließungen."
+      ],
+      [
+        "Ist die Vorlage für die Hotelsanierung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'port-terminal-construction-schedule': {
+    card: "Baggern, Aufspülung, Kaimauer, Kranbahn, Containerbrücken, Lagerfläche, TOS.",
+    h1: "Bauzeitenplan für ein Hafenterminal",
+    metaTitle: "Hafenterminal — Bauzeitenplan",
+    metaDesc: "Kostenloser Bauzeitenplan Hafenterminal: Planfeststellung, Baggern, Kaimauer, Kranbahn, Containerbrücken, Lagerfläche und TOS. Excel oder online.",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für ein Hafenterminal</strong>, die die wasserseitigen und die landseitigen Arbeiten zusammen führt — Planfeststellung und wasserrechtliche Genehmigungen, Nassbaggerung und Verbringung des Baggerguts, Aufspülung, Kaimauer, Bodenverbesserung und Kranbahn, Anlieferung und Inbetriebnahme der Containerbrücken, Flächenbefestigung und das Terminal Operating System. Laden Sie sie für die Vorlage im Aufsichtsrat oder bei der Hafenbehörde herunter oder öffnen Sie sie online, um die Gewerke gegen Ihre Wetterfenster zu legen.",
+    intro: "Ein Containerterminal sind drei Projekte auf einer Fläche: ein Wasserbauprojekt, ein Tiefbauprojekt und ein Systemprojekt. Der Plan hält sie als getrennte Stränge sichtbar, weil sie von völlig verschiedenen Dingen abhängen:",
+    phases: [
+      [
+        "Untersuchungen und Genehmigungen",
+        "Peilung und Baugrunderkundung, Umweltverträglichkeitsprüfung, Planfeststellungsverfahren, wasserrechtliche Erlaubnis und die Zulassung der Verbringung des Baggerguts. <em>Meilenstein: Planfeststellungsbeschluss.</em>"
+      ],
+      [
+        "Baggerung und Aufspülung",
+        "Kapitalbaggerung innerhalb des saisonalen Fensters, Verbringung auf die zugelassene Fläche, Aufspülung sowie die Auflast- und Setzungszeit, die niemand verkürzen kann."
+      ],
+      [
+        "Kaimauer und Liegeplatz",
+        "Spundwand oder Senkkästen, Holmbalken, Fender und Poller sowie die Baggerung der Hafensohle auf Solltiefe. <em>Meilenstein: Liegeplatz verfügbar.</em>"
+      ],
+      [
+        "Kranbahn und Lagerfläche",
+        "Bodenverbesserung, Kranbahnbalken und Schienen, Flächenbefestigung, Entwässerung, Lichtmasten sowie Reeferplätze und Torhaus."
+      ],
+      [
+        "Containerbrücken und Geräte",
+        "Fertigung, Reise des Schwergutschiffs und sein Liegeplatzfenster, Löschen, Montage, Lastprobe mit Abnahme durch die Prüfstelle und Anlieferung der Umschlaggeräte. <em>Meilenstein: Brücken abgenommen.</em>"
+      ],
+      [
+        "TOS und Inbetriebnahme",
+        "Konfiguration des Terminal Operating System, Anbindung von Torhaus und OCR, Zollschnittstelle zu ATLAS, Funk- und Netzabdeckung, Schulung, Probeanlauf und kommerzielle Eröffnung. <em>Meilenstein: erster kommerzieller Anlauf.</em>"
+      ]
+    ],
+    callout: "Der Bagger und das Schwergutschiff gehören Ihnen nicht. Beide sind Monate im Voraus in eine weltweite Flottenplanung eingebucht, beide brauchen ein Wetterfenster und einen Liegeplatz, der am Tag X fertig ist. Wer den Slot verpasst, wartet keine Woche, sondern auf die nächste Mobilisierung — und das kann eine Saison sein. Zeichnen Sie die Ankunftsfenster als feste Balken und entwickeln Sie die umliegenden Arbeiten rückwärts daraus.",
+    customize: [
+      "Legen Sie die Baggerkampagne in das reale saisonale Fenster Ihres Reviers und prüfen Sie dann, ob die Menge bei der Förderleistung des Geräts überhaupt hineinpasst.",
+      "Verlängern Sie den Balken für Auflast und Setzung auf das, was das Baugrundgutachten verlangt; das ist ein physikalischer Vorgang, den Termindruck nicht beschleunigt.",
+      "Führen Sie je Containerbrücke eine Zeile, wenn sie auf getrennten Reisen kommen, und markieren Sie jede Schiffsankunft als Meilenstein.",
+      "Teilen Sie die Lagerfläche in Blöcke, wenn Sie abschnittsweise in Betrieb gehen statt das ganze Terminal auf einmal zu öffnen.",
+      "Ziehen Sie die TOS-Arbeiten nach vorn — die Software hängt an keinem Beton und wird regelmäßig viel zu spät begonnen.",
+      "Markieren Sie Planfeststellungsbeschluss, Liegeplatz verfügbar, Brücken abgenommen und ersten kommerziellen Anlauf als Meilensteine; das sind die vier Termine, die eine Hafenbehörde verfolgt."
+    ],
+    tips: [
+      "<strong>Die Genehmigung steuert die Baggerung, und die Baggerung steuert alles Wasserseitige.</strong> Vor allem die Zulassung der Verbringungsfläche ist ein langes Verfahren bei Dritten ohne Beschleuniger und sollte beginnen, bevor die Planung fertig ist.",
+      "<strong>Überlappen Sie das Schwergutschiff nicht mit der Fertigstellung der Kaimauer.</strong> Die Kranbahn muss eingemessen, ausgerichtet und belastungsgeprüft sein, bevor eine Brücke an Land laufen kann; diese Vermessung ist ein harter Vorgänger.",
+      "<strong>Planen Sie die Setzung ein, statt sie zu unterstellen.</strong> Aufgespülter Boden unter einer Containerfläche braucht eine überwachte Auflastphase; wer zu früh befestigt, hat in zwei Jahren eine Fläche zum Sanieren.",
+      "<strong>Beginnen Sie die TOS-Konfiguration während des Tiefbaus.</strong> Ein Terminalsystem braucht Stammdaten, Flächenlayout, Torregeln sowie Schnittstellen zu Reedereien und Zoll — nichts davon hängt an der fertigen Fläche.",
+      "<strong>Planen Sie einen Probeanlauf.</strong> Ein geübter Anlauf mit einer wohlgesonnenen Reederei findet die Probleme an Tor, Brücke, System und Personal, die ein kommerzieller Erstanlauf teuer finden würde.",
+      "<strong>Setzen Sie den Basisplan mit dem verfügbaren Liegeplatz.</strong> Der Wasserbau trägt die größte Schätzunsicherheit im Projekt; sobald der Liegeplatz steht, ist der landseitige Ablauf deutlich belastbarer."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Containerterminals?",
+        "Ein Neubau läuft üblicherweise 3 bis 5 Jahre vom Planfeststellungsbeschluss bis zum ersten kommerziellen Anlauf; Baggerung, Setzungszeit und Kranlieferung bestimmen die Obergrenze. Die Vorlage nutzt rund drei Jahre, die Sie über die wasserseitigen Phasen strecken können."
+      ],
+      [
+        "Was liegt bei einem Hafenprojekt üblicherweise auf dem kritischen Pfad?",
+        "Zuerst die Genehmigungen und das Zeitfenster des Baggers, dann die Setzung der Aufspülung, dann Fertigung und Transport der Containerbrücken. Kaum etwas davon liegt beim Bauunternehmen, und genau deshalb steht jeder dieser Punkte als eigener Balken im Plan."
+      ],
+      [
+        "Wie lange dauert die Lieferung von Containerbrücken?",
+        "Die Fertigung läuft typischerweise 12 bis 18 Monate ab Bestellung, dazu die Schiffsreise sowie mehrere Wochen Montage, Lastprobe und Inbetriebnahme je Gerät. Die Bestellung ist eine Terminentscheidung, keine Beschaffungsentscheidung."
+      ],
+      [
+        "Passt die Vorlage auch für eine Terminalerweiterung?",
+        "Ja. Lassen Sie die Aufspülung weg und behalten Sie Hafensohle, Kranbahn, Kranlieferung und TOS — dort spielt sich eine Erweiterung überwiegend ab, mit der zusätzlichen Randbedingung des laufenden Betriebs nebenan."
+      ],
+      [
+        "Ist die Vorlage für das Hafenterminal kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'rail-signalling-upgrade-plan': {
+    card: "Planung, Stellwerksdaten, Werksabnahme, Sperrpausen, Montage, Inbetriebnahme.",
+    h1: "Projektplan für den Umbau der Leit- und Sicherungstechnik",
+    metaTitle: "Signaltechnik-Umbau — Projektplan",
+    metaDesc: "Kostenloser Projektplan für ESTW- und ETCS-Umbauten: Planung, Stellwerksdaten, Werksabnahme, Sperrpausen, Montage, Prüfung, Inbetriebnahme.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Umbau der Leit- und Sicherungstechnik</strong>, gebaut um die Sperrpausen — Vorplanung und Ausführungsplanung, Aufbereitung und unabhängige Prüfung der Stellwerksdaten, Werksabnahme, Anmeldung der Sperrpausen zum Fahrplanverfahren, Montage innerhalb der gebuchten Sperrpause, Prüfung und Inbetriebnahme sowie die Genehmigung durch das Eisenbahn-Bundesamt. Laden Sie sie für eine Quality-Gate-Vorlage herunter oder öffnen Sie sie online, um zu prüfen, ob die geplante Arbeit wirklich in die bewilligten Stunden passt.",
+    intro: "Ein Stellwerksprojekt ist ein Büroprojekt mit einer Handvoll Wochenenden in der Mitte, an denen alles Körperliche passiert. Der Plan behandelt diese Wochenenden als feste, unverrückbare Gefäße und ordnet alles andere darum herum:",
+    phases: [
+      [
+        "Planung",
+        "Machbarkeit, Signallageplan und Spurplan, Verschlusstabellen, Schnittstellen zu Oberbau, Bahnstrom und Telekommunikation sowie die Planprüfung durch den Prüfsachverständigen. <em>Meilenstein: Planung geprüft und freigegeben.</em>"
+      ],
+      [
+        "Stellwerksdaten und Werksabnahme",
+        "Aufbereitung der Projektierungsdaten, unabhängige Datenprüfung nach Regelwerk, Simulation und die Werksabnahme des Stellwerks, bevor irgendetwas das Werk verlässt. <em>Meilenstein: Werksabnahme bestanden.</em>"
+      ],
+      [
+        "Baubetriebsplanung",
+        "Anmeldung der Sperrpausen zu den Fristen des Bauplanungsverfahrens, Buchung der Betriebsanweisungen, Umleitungs- und Schienenersatzverkehrskonzept sowie die Freigabe der Sperrpausenstrategie. <em>Meilenstein: Sperrpausen bestätigt.</em>"
+      ],
+      [
+        "Vorbereitung und Montage",
+        "Kabeltrassen, Schalthäuser, Kabeltiefbau und Fundamente in den betriebsarmen Nächten, danach Gerätemontage und Umklemmung innerhalb der gebuchten Sperrpausen."
+      ],
+      [
+        "Prüfung und Inbetriebnahme",
+        "Kabel- und Montageprüfung, Prinzipprüfung, Funktions- und Gesamtprüfung, Streckenkenntnis für die Triebfahrzeugführer sowie das Inbetriebnahmewochenende selbst. <em>Meilenstein: Anlage in Betrieb genommen.</em>"
+      ],
+      [
+        "Betriebsaufnahme",
+        "Übergabe an die Betriebszentrale, Rückfallebene und Notfallkonzept, die störungsfreie Beobachtungszeit und der Abschluss des Sicherheitsnachweises gegenüber dem Eisenbahn-Bundesamt. <em>Meilenstein: Inbetriebnahmegenehmigung.</em>"
+      ]
+    ],
+    callout: "Die Sperrpause ist der Terminplan. Betriebliche Sperrungen werden gegen die Fristen des Fahrplanverfahrens ein Jahr und mehr im Voraus angemeldet, und nach der Buchung lautet die Frage nicht mehr „wann bauen wir“, sondern „passt die Arbeit in die Stunden, die wir bekommen haben“. Planen Sie jede Sperrpause rückwärts vom Zeitpunkt der Streckenrückgabe, mit der Prüfung am Ende und einem festen Punkt, ab dem Sie abbrechen und die Strecke unabhängig vom Baufortschritt zurückgeben.",
+    customize: [
+      "Tragen Sie zuerst Ihre echten Sperrpausentermine ein und fixieren Sie sie; jeder andere Balken in diesem Plan verhandelt um sie herum.",
+      "Führen Sie je Sperrpause eine Zeile mit der tatsächlichen Dauer in Stunden statt in Tagen — ein 52-Stunden-Wochenende und ein 29-Stunden-Wochenende sind zwei verschiedene Projekte.",
+      "Verlagern Sie so viel wie möglich aus der Sperrpause heraus; alles, was vorverkabelt, vorgeprüft oder vormontiert werden kann, gehört nach draußen.",
+      "Verlängern Sie die Balken für Datenaufbereitung und Datenprüfung bei großen Stellbereichen — die unabhängige Prüfung ist ein vorgeschriebener, langsamer Vorgang und lässt sich nicht mit sich selbst parallelisieren.",
+      "Setzen Sie zwei Wochen vor jeder Inbetriebnahme ein formales Go-/No-go mit Werksabnahme, Prüfbereitschaft und Personalqualifikation als Vorgängern.",
+      "Markieren Sie Planfreigabe, bestandene Werksabnahme, bestätigte Sperrpausen, Inbetriebnahme und Inbetriebnahmegenehmigung als Meilensteine."
+    ],
+    tips: [
+      "<strong>Melden Sie die Sperrpausen an, bevor die Planung fertig ist.</strong> Die Anmeldefrist wartet nicht auf Ihren Projektfortschritt, und ein Vorhaben, das das Fahrplanfenster verpasst, verliert ein Jahr, nicht einen Monat.",
+      "<strong>Prüfen Sie im Werk, nicht auf der Strecke.</strong> Jeder in der Werksabnahme gefundene Fehler ist ein Fehler, den Sie nicht um drei Uhr morgens mit näher rückender Rückgabezeit suchen müssen.",
+      "<strong>Schreiben Sie zuerst das Rückgabekonzept.</strong> Jede Sperrpause braucht einen definierten Punkt ohne Wiederkehr, ab dem Sie die Montage einstellen und den Altzustand wiederherstellen — das entscheidet man im Büro, nicht in der Nacht.",
+      "<strong>Schützen Sie die Prinzipprüfung.</strong> Sie ist der sicherheitsrelevante Schritt, der bei Montageverzug am stärksten unter Druck gerät, und genau der, der niemals gekürzt werden darf.",
+      "<strong>Planen Sie die Streckenkenntnis früh.</strong> Qualifizierung und Einweisung brauchen Triebfahrzeugführer, die aus dem Dienstplan freigestellt werden — eine eigene Ressourcenverhandlung mit eigener Vorlaufzeit.",
+      "<strong>Setzen Sie den Basisplan mit den bestätigten Sperrpausen.</strong> Davor sind die Termine Absichten; danach sind die Fixpunkte real und die Abweichung dagegen ist die Zahl, die zählt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Stellwerksumbau?",
+        "Die Erneuerung eines einzelnen Stellbereichs läuft üblicherweise 18 bis 36 Monate von der Machbarkeit bis zur Betriebsaufnahme, wovon nur wenige Wochenenden tatsächlich auf der Strecke stattfinden. Die Vorlage nutzt rund zwei Jahre, die Sie durch weitere Sperrpausen strecken können."
+      ],
+      [
+        "Was ist eine Sperrpause?",
+        "Ein gebuchter Zeitraum, in dem ein Streckenabschnitt für den Verkehr gesperrt ist, damit daran gearbeitet werden kann. Sperrpausen werden gegen die Fristen der Fahrplan- und Baubetriebsplanung viele Monate im Voraus angemeldet — deshalb verhalten sie sich wie feste Randbedingungen und nicht wie planbare Vorgänge."
+      ],
+      [
+        "Warum liegt die Aufbereitung der Stellwerksdaten auf dem kritischen Pfad?",
+        "Weil die Projektierungsdaten aufbereitet, unabhängig geprüft und in Simulation sowie Werksabnahme nachgewiesen werden müssen, bevor sie eingespielt werden dürfen; jeder dieser Schritte ist vorgeschrieben und folgt dem vorherigen. Langsame Büroarbeit entscheidet also, ob das Inbetriebnahmewochenende stattfinden kann."
+      ],
+      [
+        "Passt die Vorlage auch für einen Bahnübergang oder ein ETCS-Vorhaben?",
+        "Ja. Die Struktur um die Sperrpausen herum bleibt gleich — kürzen Sie die Datenzeilen und behalten Sie Planung, Baubetriebsplanung, Montage, Prüfung und Betriebsaufnahme. Für ETCS-Ausrüstungen kommen Streckenzentrale und Fahrzeugseite als eigene Stränge hinzu."
+      ],
+      [
+        "Ist die Vorlage für die Leit- und Sicherungstechnik kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'pharma-product-launch-plan': {
+    card: "Zulassung, Validierungschargen, Serialisierung, AMNOG-Verfahren, Marktsequenz.",
+    h1: "Projektplan für den Launch eines Arzneimittels",
+    metaTitle: "Pharma-Launch — Projektplan-Vorlage",
+    metaDesc: "Kostenloser Launch-Plan Pharma: Zulassungsantrag, Validierungschargen, Serialisierung, AMNOG-Nutzenbewertung, Erstattungsbetrag, Marktsequenz.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Pharma-Launch</strong> für die Strecke zwischen abgeschlossener Studie und Produkt in der Apotheke — Zulassungsdossier und Einreichung, die Verfahrensuhr bei der Behörde, Maßstabsvergrößerung und Validierungschargen, Serialisierung und marktspezifische Kennzeichnung, Nutzendossier und Erstattungsverhandlung, Medical Affairs sowie die Reihenfolge der Ländermärkte. Laden Sie sie für ein Launch-Readiness-Review herunter oder öffnen Sie sie online, um zu sehen, wovon Ihr Termin im ersten Markt wirklich abhängt.",
+    intro: "Alles Kommerzielle an einem Pharma-Launch hängt an zwei Dingen, die Sie nicht steuern: einem Zulassungsbescheid und einer Erstattungsentscheidung. Der Plan stellt beide als Balken mit Nachfolgern dar statt als Annahmen auf einer Folie:",
+    phases: [
+      [
+        "Zulassung",
+        "Dossiererstellung, Beratungsgespräch mit der Behörde, Einreichung im zentralisierten Verfahren oder national bei BfArM beziehungsweise Paul-Ehrlich-Institut, die Verfahrensuhr sowie Fragen und Antworten. <em>Meilenstein: Zulassung erteilt.</em>"
+      ],
+      [
+        "Herstellung und CMC",
+        "Maßstabsvergrößerung, Bereitstellung des Standorts, drei Validierungschargen, Stabilitätsdaten, GMP-Inspektion vor der Zulassung und die Freigabe der Launch-Ware durch die Qualified Person. <em>Meilenstein: Launch-Ware freigegeben.</em>"
+      ],
+      [
+        "Serialisierung und Kennzeichnung",
+        "Packmittelgestaltung je Markt, Übersetzungen, Aufbau von Serialisierung und Aggregation, Anbindung an securPharm und das europäische Verifikationssystem sowie die Qualifizierung der Verpackungslinie."
+      ],
+      [
+        "Preis und Erstattung",
+        "Nutzendossier nach § 35a SGB V, Nutzenbewertung durch den Gemeinsamen Bundesausschuss, Verhandlung des Erstattungsbetrags mit dem GKV-Spitzenverband, gegebenenfalls Schiedsstelle sowie die Listung in der Lauer-Taxe. <em>Meilenstein: Erstattungsbetrag vereinbart.</em>"
+      ],
+      [
+        "Medical Affairs und Evidenz",
+        "Publikationsplan, Advisory Boards, Zusammenarbeit mit Experten, Fortbildungsangebote, Versorgungsforschung und die medizinische Auskunft."
+      ],
+      [
+        "Kommerzieller Launch je Markt",
+        "Aufbau und Schulung des Außendienstes, Launch-Meeting, Markteinführung im ersten Markt, danach die zweite und dritte Welle, sobald Zulassungen und Erstattungsentscheidungen vorliegen. <em>Meilenstein: erster Umsatz.</em>"
+      ]
+    ],
+    callout: "Zulassung ist nicht Launch. In Deutschland darf ab dem Inverkehrbringen zwar sofort verkauft werden, aber die freie Preisbildung gilt nur noch für sechs Monate; danach greift der verhandelte Erstattungsbetrag, und die Nutzenbewertung dafür startet mit dem Dossier am Tag des Markteintritts. Planen Sie deshalb pro Markt zwei Termine — Zulassung und Erstattung — und lassen Sie eine Umsatzprognose nie stillschweigend annehmen, dass beide auf denselben Tag fallen.",
+    customize: [
+      "Setzen Sie Ihr Einreichungsdatum und lassen Sie die Verfahrensuhr davon vorwärts laufen; die Dauer der Behörde ist gesetzt, nur Ihre Antwortzeiten darin gehören Ihnen.",
+      "Vervielfältigen Sie die Zeilen für Kennzeichnung, Erstattung und Launch je Markt — jeder hat eine eigene Behörde, eine eigene Sprache und einen eigenen Erstattungsweg.",
+      "Beginnen Sie die Validierungschargen früher, wenn das Verfahren neu ist; drei erfolgreiche Chargen plus Stabilitätsdaten sind eine lange Kette ohne Abkürzung.",
+      "Planen Sie ein echtes Zeitfenster für die Vorbereitung der GMP-Inspektion; eine Beanstandung am Standort ist der schnellste Weg, ein Launch-Quartal zu verlieren.",
+      "Hängen Sie den Aufbau des Außendienstes an den Zulassungsmeilenstein, sofern Sie ein wartendes Team nicht tragen können oder wollen.",
+      "Markieren Sie Einreichung, Zulassung, Freigabe der Launch-Ware, vereinbarten Erstattungsbetrag und ersten Umsatz als Meilensteine."
+    ],
+    tips: [
+      "<strong>Produzieren Sie Launch-Ware vor der Zulassung und entscheiden Sie das Abschreibungsrisiko bewusst.</strong> Erst nach dem Bescheid zu produzieren kostet Monate leeres Regal; die frühe Festlegung sollte die Geschäftsführung ausdrücklich treffen und nicht der Terminplan nebenbei.",
+      "<strong>Bereiten Sie das Nutzendossier parallel zur Zulassungsprüfung vor.</strong> Die Evidenz überschneidet sich, die Adressaten nicht — und mit der Marktzugangsarbeit erst nach der Zulassung zu beginnen macht aus einem Launch ein Warten.",
+      "<strong>Behandeln Sie die Serialisierung als Systemprojekt.</strong> Marktspezifische Codierung, Aggregation und die Anbindung an das Verifikationssystem müssen mit echten Packungen getestet werden; sie versagt leise und fällt erst bei der ersten Auslieferung auf.",
+      "<strong>Wählen Sie die Marktreihenfolge bewusst.</strong> Ein früher Launch in einem Referenzpreisland kann die Preise anderswo für Jahre verankern, und diese Reihenfolge ist eine kommerzielle Entscheidung, die auf den Plan gehört.",
+      "<strong>Halten Sie Medical Affairs vor dem Vertrieb.</strong> Publikationen, Advisory Boards und Fortbildung brauchen Vorlauf und lassen sich nicht in die Wochen nach der Zulassung pressen, in denen die Bewerbung beginnt.",
+      "<strong>Setzen Sie den Basisplan mit der Einreichung.</strong> Alles davor ist Entwicklungsschätzung; danach ist der Terminplan eine Warteschlange, die Sie präzise verfolgen können."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Launch eines Arzneimittels?",
+        "Üblicherweise 18 bis 30 Monate von der Einreichung bis zum ersten Umsatz; die Prüfung dauert in den großen Verfahren rund ein Jahr, die Nutzenbewertung sechs Monate und die Erstattungsverhandlung noch einmal sechs. Die Vorlage nutzt rund zwei Jahre, die Sie je Markt anpassen können."
+      ],
+      [
+        "Wo beginnt die Vorlage im Verhältnis zur klinischen Studie?",
+        "Sie setzt an, wo die Studie endet. Datenbankschluss, Auswertung und Studienbericht gehören in das <a href=\"/de/templates/clinical-trial-gantt-chart.html\">Gantt-Diagramm für klinische Studien</a>; diese Vorlage beginnt mit der Dossiererstellung und läuft bis zum ersten Umsatz."
+      ],
+      [
+        "Warum sind Preis und Erstattung eine eigene Phase?",
+        "Weil die Zulassung nur das Recht zum Verkauf gibt, nicht die wirtschaftliche Grundlage dafür. Nutzenbewertung und Erstattungsverhandlung sind eigenständige Verfahren mit eigenen Fristen, und sie entscheiden darüber, zu welchem Preis das Produkt dauerhaft verfügbar ist."
+      ],
+      [
+        "Wie plane ich einen Launch über mehrere Länder?",
+        "Vervielfältigen Sie die Zeilen für Kennzeichnung, Erstattung und kommerziellen Launch je Markt und staffeln Sie sie in Wellen. Die Vorlage zeigt einen ersten Markt und zwei Wellen, was der üblichen Form entspricht."
+      ],
+      [
+        "Welches Risiko hat die Produktion vor der Zulassung?",
+        "Die Abschreibung, falls nicht zugelassen wird oder sich die Fachinformation ändert. Die meisten Launches tragen einen Teil dieses Risikos, weil die Herstellungsvorlaufzeit länger ist als der Abstand zwischen Bescheid und erwarteten ersten Bestellungen — aber es sollte eine ausgesprochene Entscheidung mit einer Zahl daran sein."
+      ],
+      [
+        "Ist die Vorlage für den Pharma-Launch kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'ma-due-diligence-timeline': {
+    card: "NDA, Datenraum, parallele Prüfstränge, Red Flag Report, SPA, Signing, Closing.",
+    h1: "Zeitplan für die Due Diligence bei einer Übernahme",
+    metaTitle: "M&A Due Diligence — Zeitplan",
+    metaDesc: "Kostenloser Zeitplan für die Due Diligence: NDA, Datenraum, Financial, Legal, Tax und IT, Red Flag Report, SPA, Signing und Closing.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Due Diligence</strong> vom ersten Kontakt bis zum Vollzug — Vertraulichkeitsvereinbarung, Teaser und Information Memorandum, Öffnung des Datenraums, die parallel laufenden Prüfstränge, Management-Präsentationen und Fragenprozess, Verhandlung des Unternehmenskaufvertrags, Signing sowie die Vollzugsbedingungen vor dem Closing. Laden Sie sie für die Vorlage im Investitionsausschuss herunter oder öffnen Sie sie online, um zu prüfen, ob jeder Strang innerhalb Ihrer Exklusivität fertig wird.",
+    intro: "Due Diligence ist keine Abfolge. Sie ist ein halbes Dutzend Stränge, die gleichzeitig denselben Datenraum lesen, gegen eine Uhr, die im Exklusivitätsschreiben gestellt wurde. Der Plan legt sie als parallele Spuren nebeneinander, damit der Engpass sichtbar wird:",
+    phases: [
+      [
+        "Ansprache und Vertraulichkeit",
+        "Identifikation des Zielunternehmens, Ansprache, Vertraulichkeitsvereinbarung, Teaser und Information Memorandum. <em>Meilenstein: NDA unterzeichnet.</em>"
+      ],
+      [
+        "Indikatives Angebot und Zugang",
+        "Prüfung der ersten Runde, indikatives Angebot beziehungsweise Absichtserklärung, vereinbarte Exklusivität und Öffnung des Datenraums. <em>Meilenstein: Exklusivität beginnt.</em>"
+      ],
+      [
+        "Prüfstränge",
+        "Financial, Legal, Tax, Commercial, IT und HR Due Diligence laufen parallel auf demselben Datenraum, jeder mit eigenem Bericht und eigener Feststellungsliste."
+      ],
+      [
+        "Management und Fragenprozess",
+        "Management-Präsentationen, Standortbesichtigungen, die Fragenliste und Nachforderungen — der Vorgang, der bestimmt, wie schnell die Prüfstränge überhaupt fertig werden können."
+      ],
+      [
+        "Feststellungen und Kaufpreislogik",
+        "Red Flag Report, Kaufpreisanpassung, Garantien und Freistellungen, W&amp;I-Versicherung und die abschließende Freigabe im Investitionsausschuss. <em>Meilenstein: Gremienfreigabe.</em>"
+      ],
+      [
+        "Kaufvertrag, Signing und Closing",
+        "Verhandlung des Unternehmenskaufvertrags, Disclosure Letter, notarielle Beurkundung beim Signing, Vollzugsbedingungen einschließlich Fusionskontrolle und Investitionsprüfung sowie der Vollzug. <em>Meilenstein: Closing.</em>"
+      ]
+    ],
+    callout: "Exklusivität ist ein Countdown, keine Zusicherung. Sie endet an einem festen Datum, unabhängig davon, ob der steuerliche Strang seine Antworten bekommen hat — und die Bitte um Verlängerung ist der Moment, in dem ein Verkäufer den Preis wieder aufmacht. Rechnen Sie rückwärts vom Ende der Exklusivität: Die Vertragsverhandlung braucht Wochen, der Red Flag Report Tage, und alles davor ist die Zeit, die die Prüfstränge tatsächlich haben.",
+    customize: [
+      "Setzen Sie zuerst das Ende der Exklusivität und legen Sie die Prüfstränge rückwärts davor — das ist die Randbedingung, in der der ganze Plan lebt.",
+      "Ergänzen oder streichen Sie Stränge je nach Transaktion; ein anlagenintensives Ziel braucht Umwelt und Immobilien, ein Softwareunternehmen IP und eine Open-Source-Prüfung.",
+      "Geben Sie der Fragenliste eine eigene Zeile mit einem Verantwortlichen. Sie ist der gemeinsame Engpass zwischen allen Strängen und dem Verkäufer.",
+      "Verlängern Sie den Balken der Vollzugsbedingungen, wenn Fusionskontrolle beim Bundeskartellamt oder eine Investitionsprüfung durch das Bundeswirtschaftsministerium nötig ist; diese Fristen setzt die Behörde, nicht die Parteien.",
+      "Setzen Sie nach dem Red Flag Report einen formalen Abbruch- oder Weiterpunkt, damit eine schlechte Feststellung eine terminierte Entscheidung auslöst und keine Flurdiskussion.",
+      "Markieren Sie NDA, Beginn der Exklusivität, Gremienfreigabe, Signing und Closing als Meilensteine — das sind die Termine, die ein Transaktionsausschuss verfolgt."
+    ],
+    tips: [
+      "<strong>Befüllen Sie den Datenraum ordentlich, bevor die Prüfung startet.</strong> Ein halb gefüllter Raum bedeutet, dass jeder Strang seine erste Woche mit Nachforderungen statt mit Lesen verbringt, und diese Woche kommt nicht zurück.",
+      "<strong>Führen Sie eine Fragenliste, nicht sechs.</strong> Doppelte und widersprüchliche Fragen an den Verkäufer sind der schnellste Weg, das Wohlwollen des Managements aufzubrauchen und jede Antwortzeit zu verlängern.",
+      "<strong>Beginnen Sie mit dem Kaufvertrag, bevor die Prüfung endet.</strong> Die Anwälte können die Struktur bauen, während noch Feststellungen eintreffen; auf einen sauberen Bericht zu warten schiebt das Signing über die Exklusivität hinaus.",
+      "<strong>Buchen Sie Management-Termine früh.</strong> Die Geschäftsführung des Zielunternehmens hat weiterhin ein Unternehmen zu führen, und ihre Verfügbarkeit ist meist die knappste Ressource im ganzen Prozess.",
+      "<strong>Rechnen Sie den Notartermin ein.</strong> Bei GmbH-Anteilen ist die Übertragung beurkundungsbedürftig, und ein Beurkundungstermin mit vollständigen Anlagen ist ein eigener Vorgang, kein Formalakt am Rand.",
+      "<strong>Trennen Sie Signing und Closing im Plan.</strong> Zwischen beiden liegen die Vollzugsbedingungen — Freigaben, Zustimmungen, Finanzierung — und bei größeren Transaktionen sind das Monate."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Due Diligence?",
+        "Bei einer Mid-Market-Transaktion typischerweise 6 bis 12 Wochen Prüfung innerhalb einer ähnlich langen Exklusivität, danach die Vertragsverhandlung und anschließend die Vollzugsbedingungen bis zum Closing. Die Vorlage nutzt rund fünf Monate von der Ansprache bis zum Vollzug."
+      ],
+      [
+        "Welche Prüfstränge gehören in den Plan?",
+        "Financial, Legal, Tax, Commercial, IT und HR als Standard, dazu je nach Ziel Umwelt, Immobilien, Versicherungen oder gewerbliche Schutzrechte. Die sechs Kernstränge laufen hier parallel auf einem gemeinsamen Datenraum."
+      ],
+      [
+        "Warum ist die Exklusivität für den Terminplan so wichtig?",
+        "Weil sie der einzige Zeitraum ist, in dem ein Käufer echtes Geld für Berater ausgeben kann, ohne im Wettbewerb zu stehen. Läuft sie aus, kann der Verkäufer den Prozess wieder öffnen oder neu bepreisen — die Prüfung ist damit faktisch ein Projekt mit fester Dauer."
+      ],
+      [
+        "Was ist der Unterschied zwischen Signing und Closing?",
+        "Das Signing ist die Unterzeichnung beziehungsweise Beurkundung des Kaufvertrags; das Closing ist der tatsächliche Übergang, nachdem die Vollzugsbedingungen wie Fusionskontrolle, Investitionsprüfung und Zustimmungen Dritter erfüllt sind. Manchmal ist beides derselbe Tag, oft liegen Monate dazwischen."
+      ],
+      [
+        "Was passiert nach dem Closing?",
+        "Die Integration. Diese Vorlage endet mit dem Vollzug; der <a href=\"/de/templates/post-merger-integration-plan.html\">Integrationsplan nach einer Übernahme</a> deckt Tag-eins-Bereitschaft, Arbeitsstränge und die Verfolgung der Synergien im ersten Jahr ab."
+      ],
+      [
+        "Ist die Vorlage für die Due Diligence kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'data-migration-project-plan': {
+    card: "Profiling, Mapping, Bereinigung, Testmigrationen, Abgleich, Cutover, Prüfung.",
+    h1: "Projektplan für die Datenmigration",
+    metaTitle: "Datenmigration — Projektplan",
+    metaDesc: "Kostenloser Projektplan für die Datenmigration: Profiling, Mapping, Bereinigung, Testmigrationen, Abgleich, Cutover und Prüfung. Excel oder online.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Datenmigration</strong> über den gesamten Arbeitsstrang — Analyse der Quellsysteme, Mapping und Transformationsregeln, Bereinigung, Bau der Ladestrecken, mehrere Testmigrationen, Abgleich, der eigentliche Cutover und die Prüfung danach. Das ist der Datenstrang, der innerhalb eines größeren Vorhabens läuft, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migration</a> — und meistens ist es der Strang, der über den Go-live-Termin entscheidet.",
+    intro: "Migrationspläne gehen schief, wenn die Ladung als eine Aufgabe am Ende behandelt wird. Sie ist keine Aufgabe — sie ist dieselbe Aufgabe, mehrfach ausgeführt, bis der Abgleich stimmt, und jeder Durchlauf kostet ein Wartungsfenster:",
+    phases: [
+      [
+        "Analyse und Profiling",
+        "Bestandsaufnahme der Quellsysteme, Datenmengen, Verantwortlichkeiten, Profiling auf Lücken, Dubletten und Formatbrüche sowie die Entscheidung, was überhaupt migriert wird. <em>Meilenstein: Umfang und Quellen abgestimmt.</em>"
+      ],
+      [
+        "Mapping und Regeln",
+        "Feldgenaues Mapping je Objekt, Transformations- und Vorbelegungsregeln, Abgleich der Stammdaten sowie die Abstimmungsregeln, gegen die Sie später prüfen. <em>Meilenstein: Mapping freigegeben.</em>"
+      ],
+      [
+        "Bereinigung",
+        "Bereinigungsregeln, Nacharbeit durch die Fachbereiche für alles, was keine Regel heilen kann, und der Dublettenabgleich — Arbeit, die parallel läuft, weil sie nicht am Bau hängt."
+      ],
+      [
+        "Bau und Modultest",
+        "Aufbau der Ladestrecken je Objekt, Extraktions- und Ladeskripte, Fehlerbehandlung, Wiederaufsetzlogik und die Abstimmungsberichte selbst."
+      ],
+      [
+        "Testmigrationen und Abgleich",
+        "Drei vollständige Testmigrationen mit Abgleich und Fehlerbehebung dazwischen, dazu die gestoppte Generalprobe, die belegt, dass die Ladung in das Wartungsfenster passt. <em>Meilenstein: Generalprobe bestanden.</em>"
+      ],
+      [
+        "Cutover und Abnahme",
+        "Einfrieren der Quelle, Delta-Extrakt, die Produktivladung, Freigabe des Abgleichs, fachliche Prüfung und die Rückfallentscheidung. <em>Meilenstein: Daten abgenommen.</em>"
+      ]
+    ],
+    callout: "Sie brauchen drei Testmigrationen, nicht eine, und jede kostet ein vollständiges Wartungsfenster. Die erste zeigt, dass das Mapping falsch ist. Die zweite zeigt, ob die Bereinigung gewirkt hat. Die dritte — mit Produktivmengen und von Anfang bis Ende gestoppt — zeigt, ob die Ladung in das Fenster passt, das Sie bekommen haben. Pläne mit einem einzigen Ladedurchlauf entdecken alle drei Probleme am Cutover-Wochenende, wenn für keines mehr Zeit ist.",
+    customize: [
+      "Setzen Sie den Cutover-Termin zuerst und zählen Sie rückwärts; die letzte Testmigration muss mindestens zwei Wochen davor abgeschlossen sein.",
+      "Erweitern Sie die Objektzeilen auf eine Zeile je Datenobjekt — Kunden, Lieferanten, Artikel, offene Posten, Historie — sobald das Mapping beginnt.",
+      "Buchen Sie jede Testmigration als echtes Wartungsfenster mit denselben Leuten, die auch den Cutover fahren, nicht mit einer Teilbesetzung.",
+      "Ergänzen Sie eine Zeile für den Delta-Extrakt, wenn die Quelle zwischen der letzten Testmigration und dem Cutover weiterläuft.",
+      "Halten Sie die Rückfallentscheidung als datierten Meilenstein mit benannten Kriterien fest, nicht als stillschweigende Option.",
+      "Hängen Sie diesen Plan als Teilplan unter Ihren <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-</a> oder <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migrationsplan</a>."
+    ],
+    tips: [
+      "<strong>Die Abstimmungsregeln kommen vor dem Bau.</strong> Wer nicht sagen kann, wie er die Richtigkeit der Ladung nachweist, kann auch nicht wissen, wann sie fertig ist.",
+      "<strong>Stoppen Sie jede Testmigration von Anfang bis Ende.</strong> Die gesuchte Zahl ist nicht „hat funktioniert“, sondern „wie viele Stunden“ — denn danach wird das Cutover-Fenster bemessen.",
+      "<strong>Beginnen Sie früh mit der Bereinigung.</strong> Sie hängt am Profiling, nicht am Bau, und kann monatelang parallel laufen — und sie dauert immer länger als geplant, weil sie Fachbereiche braucht und nicht das Datenteam.",
+      "<strong>Migrieren Sie weniger.</strong> Die Historie ist der teuerste Teil jeder Migration; die Entscheidung, sie zu archivieren statt zu übernehmen, bringt mehr Termin als jede Optimierung — prüfen Sie dabei die Aufbewahrungsfristen und die Anforderungen an eine revisionssichere Ablage.",
+      "<strong>Denken Sie das Löschkonzept mit.</strong> Eine Migration ist der natürliche Moment, personenbezogene Daten ohne Zweck nicht mitzunehmen, und die Datenschutzprüfung gehört als Vorgang in den Plan statt als Nachfrage kurz vor dem Cutover.",
+      "<strong>Setzen Sie den Basisplan mit der Mapping-Freigabe.</strong> Alles davor ist Schätzung; alles danach sollte als Abweichung verfolgt werden."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine Datenmigration?",
+        "Bei der Ablösung eines mittelgroßen Systems üblicherweise vier bis acht Monate vom Profiling bis zum geprüften Cutover. Die Vorlage nutzt rund sieben Monate; der Zyklus der Testmigrationen am Ende ist der Teil, der sich einer Stauchung widersetzt."
+      ],
+      [
+        "Wie viele Testmigrationen braucht man?",
+        "Drei sind das praktische Minimum. Die erste prüft das Mapping, die zweite die Bereinigung, die dritte ist eine gestoppte Generalprobe mit Produktivmengen, die nachweist, dass die Ladung in Ihr Wartungsfenster passt. Jede braucht ein eigenes Fenster und einen eigenen Abgleich."
+      ],
+      [
+        "Unterscheidet sich das von den ERP- oder Cloud-Vorlagen?",
+        "Ja — dies ist der Datenstrang, der innerhalb beider läuft. Nutzen Sie den <a href=\"/de/templates/erp-implementation-schedule.html\">Projektplan für die ERP-Einführung</a> oder den <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migrationsplan</a> für das Gesamtvorhaben und diese Vorlage, wenn die Daten einen eigenen detaillierten Plan und einen eigenen Verantwortlichen brauchen."
+      ],
+      [
+        "Woran scheitern Migrationstermine meistens?",
+        "An Datenqualität, die erst in der ersten Testmigration auffällt, und an Abgleichsdifferenzen, die niemand erklären kann. Beides findet man durch frühes Laden, nicht durch längeres Planen."
+      ],
+      [
+        "Ist die Vorlage für die Datenmigration kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'conference-production-schedule': {
+    card: "Location, Call for Papers, Referenten, Sponsoring, Ticketing, Technik, Ablauf.",
+    h1: "Produktionsplan für eine Konferenz",
+    metaTitle: "Konferenz — Produktionsplan",
+    metaDesc: "Kostenloser Zeitplan für die Konferenzplanung: Location, Call for Papers, Referenten, Sponsoring, Ticketstufen, Technik, Regieplan, Nachbereitung.",
+    lead: "Eine kostenlose <strong>Produktionsplan-Vorlage für eine Konferenz</strong> mit mehreren parallelen Strängen — Termin und Location, Call for Papers und Programmaufbau, Referentenbetreuung, Sponsoringvertrieb, Ticketstufen, Veranstaltungstechnik, der Regieplan und alles, was nach der letzten Session noch passieren muss. Laden Sie sie für die Sitzung des Programmkomitees herunter oder öffnen Sie sie online, um zu sehen, an welcher Frist Ihr Programm tatsächlich hängt.",
+    intro: "Eine Konferenz sind vier Betriebe gleichzeitig: ein Programm, eine Sponsoringpipeline, ein Ticketverkauf und ein Produktionsaufbau. Sie teilen sich ein Datum und sonst fast nichts, deshalb bekommt jeder eine eigene Spur:",
+    phases: [
+      [
+        "Termin und Location",
+        "Terminwahl gegen den Branchenkalender, Suche und Besichtigung, Vertrag und Anzahlung, Zimmerkontingent sowie die Kapazitätsentscheidung, an der alles andere bemessen wird. <em>Meilenstein: Location gebucht.</em>"
+      ],
+      [
+        "Call for Papers und Programm",
+        "Themen und Tracks, Öffnung des Call for Papers, Einreichungsfrist, Begutachtung und Auswahl, Zu- und Absagen sowie das veröffentlichte Programm. <em>Meilenstein: Programm veröffentlicht.</em>"
+      ],
+      [
+        "Referentinnen und Referenten",
+        "Einladungen und Zusagen für die Hauptvorträge, Referentenvereinbarungen, Reise und Unterkunft, Briefings, Abgabefrist für Folien und Proben."
+      ],
+      [
+        "Sponsoring und Ausstellung",
+        "Sponsoringmappe, Preisstufen, Ansprache und Verlängerungen, Verträge, Einsammeln der Sponsorenleistungen und der Hallenplan der Ausstellung. <em>Meilenstein: Sponsoringziel erreicht.</em>"
+      ],
+      [
+        "Anmeldung und Marketing",
+        "Aufbau des Ticketshops, Frühbucher-, Normal- und Spättarif, Startkampagne, E-Mail-Wellen und die Kommunikationsstrecke an die Teilnehmenden."
+      ],
+      [
+        "Produktion und Regieplan",
+        "Briefing für Technik und Bühne, Raumspezifikation je Track, Beschilderung und Druck, Brandschutz- und Bestuhlungsnachweis nach der Versammlungsstättenverordnung, GEMA-Anmeldung, Personalplanung und Briefings, Aufbautage, die Veranstaltung selbst und die Nachbereitung. <em>Meilenstein: Türen offen.</em>"
+      ]
+    ],
+    callout: "Die Frist des Call for Papers bestimmt alles Nachgelagerte. Gutachterinnen und Gutachter brauchen Wochen, Referierende müssen Bescheid wissen, bevor sie Flüge buchen, und das Programm muss öffentlich sein, bevor der Frühbuchertarif endet — sonst verkaufen Sie weniger Tickets zum höheren Preis. Wer die Einreichungsfrist um einen Monat verschiebt, verliert nicht einen Monat, sondern das Frühbucherfenster, die Marketingstrecke und das Reisebudget der Referierenden auf einmal.",
+    customize: [
+      "Setzen Sie zuerst den Veranstaltungstermin und zählen Sie rückwärts; jede Frist hier ist eine Vorlaufzeit ab diesem Datum, keine Schätzung von heute nach vorn.",
+      "Führen Sie je Track eine Zeile, wenn Sie parallele Programme mit eigenen Vorsitzen und eigenen Gutachterpools fahren.",
+      "Passen Sie die Termine der Ticketstufen an Ihre Preislogik an — die Vorlage arbeitet mit Frühbucher, Normal und Spättarif.",
+      "Erweitern Sie das Sponsoring auf eine Zeile je Stufe oder je benanntem Zielkunden, sobald die Ansprache beginnt.",
+      "Teilen Sie die Aufbautage nach Räumen, wenn die Location die Flächen zu unterschiedlichen Zeiten übergibt.",
+      "Ergänzen Sie Fristen für Abstracts oder Tagungsbände, wenn Ihre Konferenz Proceedings produziert, und bei Fachkongressen die Beantragung von Fortbildungspunkten."
+    ],
+    tips: [
+      "<strong>Veröffentlichen Sie das Programm, bevor der Frühbuchertarif endet.</strong> Menschen kaufen ein Programm, kein Datum; ein abgelaufener Frühbucher ohne veröffentlichte Vorträge ist liegen gelassenes Geld.",
+      "<strong>Bestätigen Sie die Hauptvorträge, bevor der Call for Papers öffnet.</strong> Ein namentlich bekannter Keynote hebt Zahl und Qualität der Einreichungen und ist der Anker, den Ihr Marketing vom ersten Tag an braucht.",
+      "<strong>Setzen Sie eine Folienfrist, die Sie auch durchsetzen.</strong> Die Technik kann nicht testen, was sie nicht hat, und in letzter Minute gelieferte Präsentationen sind die häufigste Ursache für überzogene Sessions.",
+      "<strong>Fahren Sie das Sponsoring auf eigenem Kalender.</strong> Sponsorenbudgets werden jährlich beschlossen; eine Ansprache sechs Monate vor der Veranstaltung spricht mit einem Budget, das längst geschlossen ist.",
+      "<strong>Klären Sie Bestuhlung und Brandschutz früh mit der Location.</strong> Die zulässige Personenzahl je Raum ist eine Genehmigungsfrage und keine Verhandlungssache, und sie bestimmt, wie viele Tickets Sie überhaupt verkaufen dürfen.",
+      "<strong>Terminieren Sie die Nachbesprechung vor der Veranstaltung.</strong> In der Woche danach sind alle verschwunden, und es ist die einzige Zeit, in der die Details noch frisch sind."
+    ],
+    faq: [
+      [
+        "Wie lange im Voraus plant man eine Konferenz?",
+        "Zwölf Monate sind für eine mehrspurige Konferenz mit Call for Papers üblich, neun sind knapp. Die Vorlage nutzt zwölf Monate, verankert am Veranstaltungstermin; Location und Hauptvorträge werden zuerst festgezurrt, weil alles andere daran bemessen wird."
+      ],
+      [
+        "Worin unterscheidet sie sich von der Vorlage für Eventplanung?",
+        "Die <a href=\"/de/templates/event-planning.html\">Vorlage für Eventplanung</a> ist allgemein und passt für jede einzelne Veranstaltung. Diese hier ist für eine mehrspurige Konferenz gebaut — Call for Papers, Begutachtung, Referentenbetreuung, Sponsoringstufen und Regieplan. Nehmen Sie jene für eine Feier oder einen Launch, diese, sobald Sie ein Programm haben."
+      ],
+      [
+        "Und wenn ich ausstelle statt zu veranstalten?",
+        "Dann nutzen Sie den <a href=\"/de/templates/trade-show-planning-timeline.html\">Zeitplan für die Messeplanung</a> — der deckt Standbuchung, Standbau, Leaderfassung und Nachfassen ab. Diese Vorlage ist die Seite des Veranstalters."
+      ],
+      [
+        "Wann sollte der Call for Papers schließen?",
+        "Früh genug, dass Begutachtung, Zusagen, Programmveröffentlichung und die Reisebuchungen der Referierenden alle hineinpassen. Die Vorlage lässt rund fünf Monate zwischen Einreichungsfrist und Türöffnung — realistisch, wenn die Begutachtung ehrenamtlich passiert."
+      ],
+      [
+        "Ist die Vorlage für den Konferenzplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+
+  'call-center-setup-plan': {
+    card: "Betriebsmodell, Telefonie, Personalbedarf, Einstellungswellen, Schulung, Ramp-up.",
+    h1: "Projektplan für den Aufbau eines Callcenters",
+    metaTitle: "Callcenter-Aufbau — Projektplan",
+    metaDesc: "Kostenloser Projektplan für den Callcenter-Aufbau: CCaaS-Auswahl, Personalbedarf, Einstellungswellen, Schulung, Pilotbetrieb, Go-live und Ramp-up.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Aufbau eines Callcenters</strong> über den gesamten Aufbau — Betriebsmodell vor Ort oder remote, Auswahl von Telefonie und CCaaS-Plattform, Personalbedarfsrechnung und Einsatzplanung, Einstellungswellen, die Trainingsakademie, Aufbau der Wissensdatenbank, Pilotbetrieb, Go-live und der Ramp-up bis zum Regelbetrieb. Laden Sie sie für einen Lenkungskreis herunter oder öffnen Sie sie online, um Ihre Einstellungswellen gegen die Volumenkurve zu legen.",
+    intro: "Ein Servicecenter steht und fällt damit, ob geschulte Leute in der Woche auf der Fläche sind, in der das Volumen kommt. Der Plan behandelt Einstellung und Schulung als treibende Kette und alles andere als Zuarbeit dafür:",
+    phases: [
+      [
+        "Betriebsmodell und Standort",
+        "Kanalmix, Servicezeiten, Entscheidung zwischen Standort, Remote oder Hybrid, Standortwahl beziehungsweise Regelung zur Heimarbeit sowie das Personal- und Kostenmodell. <em>Meilenstein: Betriebsmodell freigegeben.</em>"
+      ],
+      [
+        "Technik und Telefonie",
+        "Auswahl von CCaaS und Telefonie, Rufnummernbereitstellung und Portierung, Anbindung an CRM und Ticketsystem, Sprachdialog und Routing, Workforce-Management und Qualitätswerkzeuge sowie Anschlüsse und Headset-Logistik."
+      ],
+      [
+        "Personalbedarfsplanung",
+        "Volumenprognose je Intervall, Annahmen zur Bearbeitungszeit, Erlang-Rechnung, Schwundfaktor, Schichtmodelle im Rahmen des Arbeitszeitgesetzes und die Einstellungszahl, die jede Welle liefern muss."
+      ],
+      [
+        "Einstellungswellen",
+        "Stellenzuschnitt und Eingruppierung, Ansprache, Auswahltage und Angebote, gefahren als aufeinanderfolgende Wellen, sodass jede Kohorte die Schulung abschließt, bevor das Volumen ankommt, für das sie eingestellt wurde."
+      ],
+      [
+        "Schulung und Wissen",
+        "Aufbau des Curriculums, Wissensdatenbank und Textbausteine, System- und Kommunikationstraining je Kohorte, begleitete Einarbeitung am Telefon und die Zertifizierung. <em>Meilenstein: erste Kohorte zertifiziert.</em>"
+      ],
+      [
+        "Pilot, Go-live und Ramp-up",
+        "Pilotbetrieb auf einer begrenzten Warteschlange, Kalibrierung der Qualitätsbewertung, Go-live, stufenweise Volumensteigerung je Kohorte und der Übergang zu den Ziel-Servicelevels. <em>Meilenstein: Regelbetrieb.</em>"
+      ]
+    ],
+    callout: "Rechnen Sie rückwärts von der Volumenkurve, nicht vorwärts von heute. Eine Kohorte braucht Wochen zur Gewinnung und noch einmal Wochen für Schulung und Einarbeitung; wer in der ersten Go-live-Woche produktiv sein soll, muss also rund zwei Monate vorher ein Angebot bekommen haben. Abgänge während der Schulung sind normal, jede Welle muss also überbucht werden. Und wenn die Einstellungswellen nicht auf demselben Diagramm stehen wie die Volumenkurve, wird die Lücke erst an dem Tag sichtbar, an dem auch die Warteschlange sichtbar wird.",
+    customize: [
+      "Setzen Sie Go-live und Volumenkurve zuerst und schieben Sie dann jede Einstellungswelle um die volle Dauer aus Gewinnung, Schulung und Einarbeitung nach hinten.",
+      "Überbuchen Sie jede Welle um die Abgangsquote, die Ihr Haus tatsächlich sieht, statt anzunehmen, dass alle zertifiziert werden.",
+      "Ergänzen Sie eine Zeile je Kohorte, wenn Sie mehr als die drei gezeigten Wellen fahren.",
+      "Passen Sie die Länge der begleiteten Einarbeitung an die Komplexität an; regulierte oder technische Warteschlangen brauchen länger am Telefon mit Begleitung.",
+      "Ziehen Sie die Rufnummernportierung nach vorn, wenn Sie bestehende Anschlüsse übernehmen — die Portierungsfristen liegen beim abgebenden Anbieter und lassen sich nicht kürzen.",
+      "Planen Sie die Beteiligung des Betriebsrats als eigenen Vorgang ein: Gesprächsaufzeichnung, Qualitätsbewertung und Workforce-Management sind mitbestimmungspflichtig, und die Betriebsvereinbarung dazu ist ein Vorgänger des Pilotbetriebs, kein Nachtrag."
+    ],
+    tips: [
+      "<strong>Portieren Sie Rufnummern früh.</strong> Die Portierung ist der einzige Punkt in diesem Plan mit einer Uhr bei Dritten, und sie blockiert jeden Routingtest, der die echte Nummer braucht.",
+      "<strong>Bauen Sie die Wissensdatenbank vor der Schulung, nicht währenddessen.</strong> Trainerinnen, die Inhalte schreiben, während sie unterrichten, sind der Grund, warum Kohorte eins auf Material geschult wird, das Kohorte zwei nie sieht.",
+      "<strong>Schützen Sie die begleitete Einarbeitung.</strong> In dieser Phase pendeln sich Bearbeitungszeit und Qualität tatsächlich ein; sie zu kürzen, um einen Termin zu halten, kommt als Servicelevel-Problem für ein Quartal zurück.",
+      "<strong>Klären Sie Aufzeichnung und Datenschutz vor dem Pilotbetrieb.</strong> Mitschnitte brauchen eine Rechtsgrundlage, einen Hinweis an die Anrufenden und eine Vereinbarung mit der Arbeitnehmervertretung — das ist ein Vorgang mit Vorlaufzeit, kein Häkchen in der Plattform.",
+      "<strong>Pilotieren Sie auf einer echten, aber begrenzten Warteschlange.</strong> Routing, Nachbearbeitungscodes und Eskalationswege scheitern erst richtig, wenn echte Anrufende in der Leitung sind.",
+      "<strong>Steigern Sie das Volumen in Stufen.</strong> Gehen Sie erst zur nächsten Stufe, wenn Qualität und Bearbeitungszeit auf der aktuellen halten — der Ramp-up ist eine Folge von Toren, keine Rampe."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Aufbau eines Callcenters?",
+        "Üblicherweise vier bis sechs Monate von der Freigabe des Betriebsmodells bis zum Go-live, dazu weitere zwei bis drei Monate Ramp-up bis zum Regelbetrieb. Die Vorlage nutzt rund sechs Monate Aufbau und einen gestuften Ramp-up danach."
+      ],
+      [
+        "Was bestimmt den Terminplan?",
+        "Einstellung und Schulung. Die Technik lässt sich parallel beschaffen und konfigurieren, aber eine Kohorte braucht Wochen zur Gewinnung und noch einmal Wochen für Schulung und Einarbeitung — deshalb liegt die Trainingsakademie auf dem kritischen Pfad zum Go-live."
+      ],
+      [
+        "Wie groß sollte die erste Welle sein?",
+        "Groß genug für das Startvolumen zuzüglich Schwund und Abgängen in der Schulung, was in der Regel deutlich mehr Einstellungen bedeutet als Arbeitsplätze. Die Vorlage zeigt drei Wellen, damit die späteren Kohorten anhand der Erfahrung aus der ersten bemessen werden können."
+      ],
+      [
+        "Funktioniert die Vorlage auch für ein Remote- oder Hybridcenter?",
+        "Ja. Lassen Sie die Zeilen zum Standortausbau weg und behalten Sie Gerätelogistik, Anschlussprüfung und das Remote-Onboarding — die Abfolge aus Einstellung und Schulung ist identisch."
+      ],
+      [
+        "Ist die Vorlage für den Callcenter-Aufbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto."
+      ]
+    ]
+  },
+
+  'franchise-rollout-plan': {
+    card: "Systemaufbau, Gebiete, Partnergewinnung, Standorte, Ausbau, Schulung, Wellen.",
+    h1: "Rollout-Plan für ein Franchisesystem",
+    metaTitle: "Franchise-Rollout — Projektplan",
+    metaDesc: "Kostenloser Rollout-Plan für Franchise: Systemhandbuch, Gebiete, Partnergewinnung, Standort, Ausbau, Schulung, Eröffnungsmarketing, Wellen.",
+    lead: "Eine kostenlose <strong>Rollout-Plan-Vorlage für ein Franchisesystem</strong>, gebaut um die Abfolge, die Sie für jeden Standort wiederholen — Gewinnung und Auswahl der Partnerinnen und Partner, Gebietszuschnitt, Standortsuche, Ausbau, Markenstandards und Systemhandbuch, Schulung, Eröffnungsmarketing, Eröffnung und die Betreuung danach. Die Vorlage zeigt die Systemarbeit einmal und danach drei überlappende Eröffnungswellen — so läuft ein Rollout tatsächlich.",
+    intro: "Ein Franchise-Rollout ist kein Projekt, sondern eine Projektvorlage, die vielfach mit versetzten Startterminen ausgeführt wird. Das Diagramm trennt beides:",
+    phases: [
+      [
+        "Systemreife",
+        "Franchisevertrag und vorvertragliche Aufklärung, Rentabilitätsmodell des Einzelstandorts, Systemhandbuch, Markenstandards, Lieferantenvereinbarungen und das Betreuungsmodell im Feld. <em>Meilenstein: System vertriebsreif.</em>"
+      ],
+      [
+        "Gebiete und Bewerberpipeline",
+        "Gebietszuschnitt und Marktpotenzial, Zielzahl je Markt, Partnermarketing, Bewerbungen, Informationstage, Bonitätsprüfung und Auswahl. <em>Meilenstein: erste Verträge unterzeichnet.</em>"
+      ],
+      [
+        "Standorte Welle 1",
+        "Die vollständige Abfolge je Standort für die erste Kohorte: Standortsuche und Mietvertrag, Planung und Genehmigungen, Ausbau, Ausstattung, Schulung, Eröffnungsmarketing und Eröffnung."
+      ],
+      [
+        "Standorte Welle 2",
+        "Dieselbe Abfolge, gestartet, sobald Welle 1 im Ausbau ist, damit Betreuung und Bauleitung nicht an zwei Orten gleichzeitig gebraucht werden."
+      ],
+      [
+        "Standorte Welle 3",
+        "Die dritte Kohorte, bemessen an dem, was die Wellen 1 und 2 über die reale Dauer und die realen Kosten je Standort gezeigt haben."
+      ],
+      [
+        "Betreuung und Systempflege",
+        "Besuche nach der Eröffnung, Leistungsgespräche gegen das Rentabilitätsmodell sowie die Aktualisierung von Handbuch und Schulung aus dem, was die ersten Standorte gelernt haben."
+      ]
+    ],
+    callout: "Der Engpass ist nicht die einzelne Eröffnung, sondern wie viele Eröffnungen Ihre Zentrale gleichzeitig tragen kann. Standortsuche, Baubegleitung, Schulung und Eröffnungswoche greifen alle auf dasselbe kleine Team zu, und jeder Standort braucht es wochenlang. Legen Sie die Wellen so, dass sich diese Fenster nicht stapeln. Ein Plan, der zehn Eröffnungen im Quartal mit einer Gebietsleitung verspricht, ist ein Plan, zehn Standorte schlecht zu eröffnen.",
+    customize: [
+      "Setzen Sie die Abfolge je Standort zuerst auf Ihre echten Dauern und kopieren Sie sie dann je Welle — das Muster ist der wiederverwendbare Teil.",
+      "Ändern Sie die Überlappung der Wellen entsprechend Ihrer Betreuungskapazität; mehr Leute im Feld erlauben einen engeren Versatz.",
+      "Führen Sie eine Zeile je Standort statt je Welle, sobald konkrete Objekte feststehen.",
+      "Verlängern Sie die Dauern für Baugenehmigung, Nutzungsänderung und gegebenenfalls Gaststättenkonzession je Kommune — dieselbe Marke braucht in verschiedenen Städten sehr unterschiedlich lange.",
+      "Halten Sie die Partnerschulung als harten Vorgänger der Eröffnung; sie ist die Zeile, die am häufigsten gestaucht wird, und die für Gäste am sichtbarsten ist.",
+      "Führen Sie die Betreuungsbesuche nach der Eröffnung als echte terminierte Arbeit statt als unterstellte Fähigkeit."
+    ],
+    tips: [
+      "<strong>Eröffnen Sie Welle 2 nicht, bevor Welle 1 einen Monat gelaufen ist.</strong> An den ersten Standorten lernen Sie, was am Systemhandbuch nicht stimmt, und dieses Lernen ist mehr wert als eine schnellere zweite Welle.",
+      "<strong>Wählen Sie Partnerinnen und Partner langsam aus.</strong> Eine falsche Auswahl ist weit teurer als eine verschobene Eröffnung, und sie rückgängig zu machen dauert Jahre.",
+      "<strong>Klären Sie die vorvertragliche Aufklärung sauber.</strong> Ein gesetzlich vorgeschriebenes Offenlegungsdokument nach US-Vorbild gibt es hier nicht, dafür eine von der Rechtsprechung entwickelte Aufklärungspflicht über Rentabilität und Risiken — dokumentiert, mit Vorlauf vor der Unterschrift.",
+      "<strong>Vollenden Sie das Systemhandbuch vor dem ersten Vertrag.</strong> Sie verkaufen ein System; ist das System nicht aufgeschrieben, erfindet jeder Standort sein eigenes.",
+      "<strong>Planen Sie Vermieter- und Genehmigungsarbeit je Standort, nicht je Programm.</strong> Jedes Objekt hat seine eigene Genehmigungsuhr, und die laufen nicht synchron.",
+      "<strong>Buchen Sie Unterstützung in der Eröffnungswoche je Standort.</strong> Die erste Handelswoche prägt die Gewohnheiten des Betriebs, und Fernbetreuung ersetzt niemanden auf der Fläche."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Franchise-Rollout?",
+        "Die Systemreife braucht typischerweise vier bis sechs Monate, danach läuft jeder Standort etwa sechs bis neun Monate von der Partnerauswahl bis zur Eröffnung. Die Vorlage zeigt den Systemaufbau plus drei überlappende Wellen über rund zwei Jahre."
+      ],
+      [
+        "Wie viele Standorte gehören in eine Welle?",
+        "So viele, wie Ihr Team im Feld durch Standortsuche, Baubegleitung, Schulung und Eröffnungswoche gleichzeitig wirklich tragen kann — meist deutlich weniger, als die Vertriebsplanung möchte. Genau deshalb nutzt die Vorlage kleine Wellen."
+      ],
+      [
+        "Was ist die Abfolge je Standort?",
+        "Partnerauswahl, Gebiet und Standort, Mietvertrag, Planung und Genehmigungen, Ausbau, Ausstattung, Schulung, Eröffnungsmarketing, Eröffnung und Nachbetreuung. Sie wiederholt sich identisch je Standort, und genau das macht sie planbar."
+      ],
+      [
+        "Passt die Vorlage auch für eigene Filialen?",
+        "Ja. Lassen Sie Gewinnung und Auswahl der Partner weg und behalten Sie die Abfolge je Standort — für eine einzelne Filiale passt der <a href=\"/de/templates/retail-store-opening-timeline.html\">Zeitplan für die Ladeneröffnung</a> besser."
+      ],
+      [
+        "Ist die Vorlage für den Franchise-Rollout kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'okr-quarterly-planning': {
+    card: "Entwurf, Abstimmung, Bewertung des Vorquartals, Commitment, Check-in, Retro.",
+    h1: "Vorlage für die quartalsweise OKR-Planung",
+    metaTitle: "OKR-Quartalsplanung — Vorlage",
+    metaDesc: "Kostenlose Vorlage für die OKR-Quartalsplanung: Entwurf, Abstimmung, Bewertung des Vorquartals, Commitment, Check-in, Abschluss und Retro.",
+    lead: "Eine kostenlose <strong>Vorlage für die quartalsweise OKR-Planung</strong>, gezeichnet als der wiederkehrende Zyklus, der sie tatsächlich ist — Entwurf der Objectives, teamübergreifende Abstimmung, Bewertung des auslaufenden Quartals, Commitment und Veröffentlichung, der Check-in zur Quartalsmitte sowie Abschluss und Retrospektive, die in die nächste Runde münden. Laden Sie sie für den Planungsauftakt herunter oder öffnen Sie sie online, um zu sehen, wo der Abschluss dieses Quartals den Entwurf des nächsten überlappt.",
+    intro: "Der Grund, warum sich OKR-Planung immer gehetzt anfühlt: Sie beginnt nie auf einem leeren Blatt. Sie bewerten ein Quartal, während Sie das nächste entwerfen, und beides braucht dieselben Leute in denselben Wochen. Der Plan zeigt diese Überlappung, statt so zu tun, als wäre der Zyklus eine gerade Linie:",
+    phases: [
+      [
+        "Unternehmensrichtung",
+        "Durchsicht von Strategie und Jahreszielen durch die Führung, die zwei bis drei Unternehmens-Objectives für das Quartal und die Leitplanken, gegen die die Teams entwerfen. <em>Meilenstein: Unternehmens-OKR im Entwurf.</em>"
+      ],
+      [
+        "Abschluss des Vorquartals",
+        "Letzte Datenerhebung für die Key Results, Selbstbewertung der Teams, Kalibrierung über die Teams hinweg und die Vorstellung der Ergebnisse — parallel zum Entwurf des Folgequartals."
+      ],
+      [
+        "Entwurf in den Teams",
+        "Jedes Team entwirft Objectives und Key Results gegen die Unternehmensrichtung, mit einer Arbeitssitzung und einem schriftlichen ersten Entwurf je Team."
+      ],
+      [
+        "Abstimmung",
+        "Teamübergreifende Durchsicht der Abhängigkeiten, Verhandlung dort, wo zwei Teams dieselbe Kapazität brauchen, und Auflösung der Konflikte vor dem Commitment. <em>Meilenstein: Abstimmung abgeschlossen.</em>"
+      ],
+      [
+        "Commitment und Auftakt",
+        "Durchsicht durch die Führung, letzte Änderungen, Veröffentlichung im Werkzeug, Auftaktveranstaltung und der Start der wöchentlichen Check-in-Routine. <em>Meilenstein: OKR verbindlich.</em>"
+      ],
+      [
+        "Umsetzung im Quartal",
+        "Wöchentliche Einschätzungen zur Zielerreichung, der Check-in zur Quartalsmitte, in dem Objectives angepasst oder gestrichen werden dürfen, sowie Abschluss und Retrospektive am Ende. <em>Meilenstein: Quartal abgeschlossen.</em>"
+      ]
+    ],
+    callout: "Der Zyklus überlappt sich selbst, und genau das ist das ganze Planungsproblem. Sie können das alte Quartal nicht nach dem Start des neuen bewerten, weil die Daten schal werden und sich niemand mehr an den Kontext erinnert — aber Sie können das neue auch nicht ohne die Bewertungen entwerfen. Also laufen beide rund drei Wochen nebeneinander, und dieselben Verantwortlichen werden für beides gebraucht. Buchen Sie diese Überlappung ausdrücklich. Wer Planung als zweitägigen Workshop in Woche eins behandelt, quetscht vier Wochen Arbeit in zwei Tage und nennt das Ergebnis dann ein Commitment.",
+    customize: [
+      "Setzen Sie Tag 0 auf etwa drei Wochen vor Quartalsende, dann liegt der ganze Zyklus richtig um die Quartalsgrenze.",
+      "Ergänzen Sie eine Entwurfszeile je Team, damit Sie sehen, wer im Verzug ist, ohne hinterhertelefonieren zu müssen.",
+      "Verlegen Sie den Check-in auf die Taktung, die Sie wirklich fahren — monatlich funktioniert bei schnellen Teams besser als quartalsweise.",
+      "Kürzen Sie die Abstimmungsphase bei weniger als fünf Teams; verlängern Sie sie deutlich, wenn sich Teams dieselbe Entwicklungskapazität teilen.",
+      "Lassen Sie Bewertung und Entwurf sichtbar überlappen, statt sie hintereinander zu legen — die Überlappung ist das ehrliche Bild.",
+      "Kopieren Sie den ganzen Block nach vorn, um das nächste Quartal zu bauen; der Zyklus ist jedes Mal derselbe."
+    ],
+    tips: [
+      "<strong>Bewerten Sie, bevor Sie sich festlegen.</strong> Neue Ziele zu setzen, ohne zu wissen, wie die letzten gelandet sind, ist der Weg, dasselbe zu ehrgeizige Objective drei Quartale hintereinander aufzuschreiben.",
+      "<strong>Begrenzen Sie die Zahl der Objectives.</strong> Drei je Team sind ein Plan, sieben sind eine Liste. Die Abstimmungsphase wird dramatisch einfacher, wenn es weniger abzustimmen gibt.",
+      "<strong>Machen Sie Abhängigkeiten in der Abstimmung explizit.</strong> Die meisten OKR-Fehlschläge sind ein Team, das sich still auf die Kapazität eines anderen Teams verlässt, die nie zugesagt wurde.",
+      "<strong>Behandeln Sie den Check-in zur Quartalsmitte als Entscheidungspunkt.</strong> Er existiert, um Objectives zu streichen oder zu verkleinern, die nicht landen werden, nicht um Status zu berichten.",
+      "<strong>Führen Sie die Retrospektive über den Prozess, nicht nur über die Ergebnisse.</strong> Wenn sich der Entwurf dieses Quartal gehetzt angefühlt hat, wird er sich nächstes Quartal wieder gehetzt anfühlen, solange sich der Kalender nicht ändert."
+    ],
+    faq: [
+      [
+        "Wann sollte die quartalsweise OKR-Planung beginnen?",
+        "Etwa drei bis vier Wochen vor Quartalsbeginn. Die Vorlage startet den Entwurf, während das laufende Quartal noch läuft, weil Unternehmensrichtung und Teamentwürfe beide Zeit vor dem Commitment brauchen und die Bewertungsdaten nur an der Quartalsgrenze frisch sind."
+      ],
+      [
+        "Worin unterscheidet sie sich von der Jahresplanung?",
+        "Der <a href=\"/de/templates/annual.html\">Jahresplan</a> deckt ein ganzes Geschäftsjahr ab. Dies ist der wiederkehrende Quartalsrhythmus darin — der vierwöchige Zyklus aus Entwerfen, Abstimmen, Festlegen, Nachhalten und Abschließen, der sich jedes Quartal wiederholt."
+      ],
+      [
+        "Wie verhält sie sich zur Produkt-Roadmap?",
+        "Die <a href=\"/de/templates/product-roadmap.html\">Produkt-Roadmap</a> zeigt, was Sie wann bauen. OKR sind die Ergebnisse, auf die Sie sich für ein Quartal festlegen. Die Roadmap ist üblicherweise eine der Eingaben in den Teamentwurf und kein Ersatz dafür."
+      ],
+      [
+        "Warum überlappen sich Bewertung und Entwurf?",
+        "Weil beide dieselben Leute und dieselben Daten zur selben Zeit brauchen. Nach dem Entwurf zu bewerten heißt, sich blind festzulegen; nach der Bewertung zu entwerfen heißt, zwei Wochen zu spät ins Quartal zu starten. Die Vorlage überlappt beides bewusst und zeigt, um wie viel."
+      ],
+      [
+        "Kann ich die Vorlage jedes Quartal wiederverwenden?",
+        "Ja — genau dafür ist sie gedacht. Kopieren Sie den Block, verschieben Sie die Termine um ein Quartal, und die Abfolge trägt. Nur die Ziele ändern sich."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

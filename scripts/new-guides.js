@@ -508,4 +508,36 @@ const G = {
   },
 };
 
+/* ---- deepened entries ----------------------------------------------
+   Each of these replaces the entry above it with a version carrying a
+   worked example, a comparison table, an in-app tutorial and extra
+   diagrams. They live in their own files purely so they could be
+   written in parallel; the shape is identical.
+
+   The audit that motivated this is `npm run check:richness`. Word count
+   alone reported these guides as healthy while every one of them had
+   zero tables and zero worked examples in all six languages.
+
+   EXPORT BEFORE MERGE, deliberately. A deepened entry may inherit
+   `figure`, `related` or `tpl` from the entry it replaces, which means
+   requiring this module from inside one of those files. Exporting
+   first makes that circular require resolve to the fully-built G
+   instead of `undefined`; the merge below mutates the same object, so
+   every consumer still sees the deepened entries. */
 module.exports = { G, SLUGS: Object.keys(G) };
+
+[
+  'milestones-vs-tasks',
+  'gantt-chart-dependencies',
+  'gantt-chart-mistakes',
+  'gantt-baseline-variance',
+  's-curve-project-management',
+  '3-week-lookahead-schedule',
+  'mermaid-gantt-chart',
+].forEach((slug) => {
+  const { S } = require(`./guides-deep-${slug}.js`);
+  if (!S || !S[slug]) throw new Error(`guides-deep-${slug}.js does not export S['${slug}']`);
+  // Replacing, not merging: a half-applied entry would mix old and new
+  // prose around the same worked example.
+  G[slug] = S[slug];
+});

@@ -42,8 +42,8 @@
   <meta name="twitter:title" content="Gantt Baseline vs Actual: Schedule Variance" />
   <meta name="twitter:description" content="How to set a Gantt baseline and read schedule variance: what it is, when to set it, reading start and finish variance, and when to re-baseline." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-baseline-variance.html#post","headline":"Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart","description":"How to set a Gantt baseline and read schedule variance: what it is, when to set it, reading start and finish variance, and when to re-baseline.","url":"https://gantts.app/blog/gantt-baseline-variance.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-baseline-variance.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart","item":"https://gantts.app/blog/gantt-baseline-variance.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a baseline in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"A frozen copy of the approved schedule — each task's planned start, finish and progress — kept unchanged so you can measure how far the live plan has drifted from it."}},{"@type":"Question","name":"What does schedule variance mean?","acceptedAnswer":{"@type":"Answer","text":"The difference in days between a task's baseline date and its current date. Positive means later than planned, negative means earlier, zero means on plan."}},{"@type":"Question","name":"When should I set a baseline?","acceptedAnswer":{"@type":"Answer","text":"After the plan is approved and before work begins. Baselining mid-execution hides slippage that has already occurred."}},{"@type":"Question","name":"Should I re-baseline when a project slips?","acceptedAnswer":{"@type":"Answer","text":"Only for an approved scope change or a formal replan. Re-baselining to make variance look better erases the record of what was originally committed."}},{"@type":"Question","name":"How do I set a baseline in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Use the ◳ Baseline menu and choose \"Set baseline from current plan\". Ghost bars appear under each task, and \"Show variance columns\" adds start and finish variance to the grid."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/gantt-baseline-variance.html#post","headline":"Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart","description":"How to set a Gantt baseline and read schedule variance: what it is, when to set it, reading start and finish variance, and when to re-baseline.","url":"https://gantts.app/blog/gantt-baseline-variance.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/gantt-baseline-variance.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart","item":"https://gantts.app/blog/gantt-baseline-variance.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a baseline in a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"A frozen copy of the approved schedule — each task's planned start, finish and progress — kept unchanged so you can measure how far the live plan has drifted."}},{"@type":"Question","name":"What does schedule variance mean?","acceptedAnswer":{"@type":"Answer","text":"The difference in days between a task's baseline date and its current date. Positive is later than planned, negative earlier, zero on plan."}},{"@type":"Question","name":"When should I set a baseline?","acceptedAnswer":{"@type":"Answer","text":"After the plan is approved and before work begins. Baselining mid-execution hides slippage that already occurred."}},{"@type":"Question","name":"What is the difference between start, finish and duration variance?","acceptedAnswer":{"@type":"Answer","text":"Start variance shows whether a delay was inherited from upstream. Finish variance shows the impact downstream. Duration variance strips the inherited part out, showing whether your estimate was wrong."}},{"@type":"Question","name":"Should I re-baseline when a project slips?","acceptedAnswer":{"@type":"Answer","text":"Only for an approved scope change, a formal replan, or a restart after a pause. If you cannot name the decision, the date and the approver, you are deleting the record of what was committed. Save a copy of the plan first either way."}},{"@type":"Question","name":"How do I set a baseline in gantts.app?","acceptedAnswer":{"@type":"Answer","text":"Use the ◳ Baseline menu and choose \"Set baseline from current plan\". Ghost bars appear under each task, and \"Show variance columns\" adds Base start, Base end, Start var and Finish var."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -77,7 +77,7 @@
   <article class="container" style="padding-top:40px">
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart</div>
     <h1>Baseline vs Actual: Tracking Schedule Variance on a Gantt Chart</h1>
-    <p class="lead">A Gantt chart shows where your project is. A baseline shows where it was supposed to be. Without one you can report progress but not slippage — and slippage is the thing anyone funding the work actually wants to know.</p>
+    <p class="lead">A Gantt chart shows where your project is. A baseline shows where it was supposed to be. Without one you can report progress but not slippage — and slippage is what anyone funding the work actually wants to know.</p>
     <p class="post-meta"><time datetime="2026-07-18">18 July 2026</time> · gantts.app</p>
 
     <figure class="fig">
@@ -106,36 +106,115 @@
 
     <div class="prose">
       <h2 id="s1">What a baseline actually is</h2>
-      <p>A baseline is a frozen copy of your schedule taken at a moment you agreed it was right — typically when the plan was approved. It stores each task's planned start, finish and progress, and then stops changing.</p>
-      <p>That last part is the point. Once tasks start moving, the original plan is the only thing that can tell you how far you have drifted. If you edit the plan in place without a baseline, the schedule silently rewrites history and every week looks on track.</p>
+      <p>A baseline is a frozen copy of your schedule taken when you agreed it was right — typically at approval. It stores each task's planned start, finish and progress, then stops changing.</p>
+      <p>That last part is the point. Edit the plan in place without a baseline and the schedule silently rewrites history, so every week looks on track. Dates drift a day at a time, and a plan that absorbed thirty single-day edits looks exactly like one that never moved. The baseline makes those edits add up.</p>
 
       <h2 id="s2">When to set it — and when not to</h2>
-      <p>Set the baseline <strong>after</strong> the plan is agreed and <strong>before</strong> work starts. A baseline captured mid-execution bakes in whatever slippage has already happened and understates the real variance from then on.</p>
-      <p>Do not baseline a plan you know is wrong just to have one. A baseline against a fictional schedule produces confident, precise, meaningless variance numbers.</p>
+      <p>Set the baseline <strong>after</strong> the plan is agreed and <strong>before</strong> work starts. One captured mid-execution bakes in slippage that already happened and understates variance from then on.</p>
+      <p>Do not baseline a plan you know is wrong just to have one — a fictional schedule gives confident, precise, meaningless numbers. Fix placeholder dates first.</p>
 
-      <h2 id="s3">Reading start and finish variance</h2>
-      <p>Variance is simply the difference in days between the baseline date and the current date, per task.</p>
+      <h2 id="s3">A worked example: one project, three status cycles</h2>
+      <p>A client portal relaunch, approved 27 February 2026 and baselined Monday 2 March before work starts. Five rows, finish-to-start, all critical:</p>
+      <div class="worked">
+      <p><strong>Baseline, set 2 March 2026</strong></p>
       <ul>
-      <li><strong>Positive (+4d)</strong> — later than planned. The task has slipped.</li>
-      <li><strong>Negative (−2d)</strong> — earlier than planned. Ahead, or the estimate was pessimistic.</li>
-      <li><strong>Zero</strong> — on plan.</li>
+      <li>Discovery — 2 Mar to 13 Mar (10 working days)</li>
+      <li>Design — 16 Mar to 3 Apr (15 days)</li>
+      <li>Build — 6 Apr to 15 May (30 days)</li>
+      <li>Test — 18 May to 29 May (10 days)</li>
+      <li>Go-live — 1 Jun (milestone)</li>
       </ul>
-      <p>Start variance and finish variance tell different stories. A task that started late but finished on time absorbed the delay — worth knowing, because it usually means someone burned float or added people. A task that started on time and finished late took longer than estimated, which is an estimating problem, not a sequencing one.</p>
+      
+      <p><strong>Status cycle 1 — Friday 20 March</strong></p>
+      <p>Two stakeholder interviews slipped, so Discovery finished 18 March instead of 13 March: <strong>finish variance +3 days</strong>. Design started 19 March — <strong>start variance +3 days</strong> — and with its estimate unchanged its forecast finish moves to 8 April, also +3. Every downstream task carries the same +3; go-live reads 4 June.</p>
+      <p>Read that correctly: a <em>start</em> problem, not an estimating one.</p>
+      
+      <p><strong>Status cycle 2 — Friday 10 April</strong></p>
+      <p>Design finished 8 April as forecast: finish variance +3, duration variance 0. Build started 9 April, start variance +3. But the team lost a developer and Build is re-estimated from 30 days to 36, moving its finish from 15 May to 28 May: <strong>finish variance +9 days</strong> — <strong>3 inherited</strong>, <strong>6 of duration variance</strong>, the genuinely new bad news.</p>
+      <p>That split is why start and finish are tracked separately. "Build is 9 days late" invites the wrong conversation; "Build inherited 3 and grew by 6" points at a staffing decision that can still be acted on.</p>
+      
+      <p><strong>Status cycle 3 — Friday 1 May</strong></p>
+      <p>Build is 55% complete against 65% planned, so the 36-day estimate is itself optimistic. Rather than let go-live drift again, the team crashes Test: two extra testers cut it from 10 days to 6. Test now shows <strong>duration variance −4 days</strong> and <strong>finish variance +5 days</strong>; go-live lands 8 June.</p>
+      <p>Note what that negative duration variance does <em>not</em> mean. Nothing got faster — four days were bought with two people's time, and a column measuring only days cannot show that.</p>
+      </div>
+      <p>The honest summary: five days late at go-live — three from a Discovery overrun, six from an April staffing loss, four bought back by adding testers.</p>
 
-      <h2 id="s4">Variance on the critical path is the only variance that matters much</h2>
+      <h2 id="s4">Four variances, and what each one hides</h2>
+      <p>"Variance" is not one number. Four are worth tracking, each blind to something the others catch.</p>
+      <table>
+      <thead>
+      <tr><th>Variance</th><th>What it is</th><th>What only it tells you</th><th>Where it misleads</th></tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><strong>Start variance</strong></td>
+      <td>Actual minus baseline start.</td>
+      <td>Whether the delay was inherited — a late start means something upstream, or a resource who was not free.</td>
+      <td>Says nothing about the finish. A task can start 5 days late and still hit its baseline finish by burning people.</td>
+      </tr>
+      <tr>
+      <td><strong>Finish variance</strong></td>
+      <td>Actual or forecast minus baseline finish.</td>
+      <td>The impact downstream — the number that propagates.</td>
+      <td>Bundles inherited with new delay. Build's +9 days was 3 inherited and 6 new — two problems, one number.</td>
+      </tr>
+      <tr>
+      <td><strong>Duration variance</strong></td>
+      <td>Actual duration minus baseline duration.</td>
+      <td>Whether the estimate was wrong — finish variance with the inherited part removed.</td>
+      <td>Goes negative when a task is crashed, reading as ahead. Test's −4 days cost two extra people.</td>
+      </tr>
+      <tr>
+      <td><strong>Work / cost variance</strong></td>
+      <td>Effort or spend consumed versus budgeted.</td>
+      <td>What the recovery cost — the only one that catches crashing.</td>
+      <td>Requires recorded actuals. Without entered spend it is not small — it does not exist.</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Duration variance is the one most teams skip and the one that changes behaviour: the only schedule measure separating "we were late" from "we were wrong".</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 140" width="100%" role="img" aria-label="Ghost bars carry the baseline; the gap to the live bar is the variance."><text x="0" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Plan</text><rect x="46" y="3" width="26" height="9" rx="4" fill="#cbb8f5"/><text x="84" y="12" font-size="10.5" font-weight="700" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Actual</text><rect x="134" y="3" width="26" height="9" rx="4" fill="#6c4cf1"/><text x="0" y="40" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task A</text><rect x="70" y="30" width="90" height="10" rx="4" fill="#cbb8f5"/><rect x="70" y="42" width="90" height="10" rx="4" fill="#6c4cf1"/><text x="0" y="74" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task B</text><rect x="165" y="64" width="70" height="10" rx="4" fill="#cbb8f5"/><rect x="165" y="76" width="110" height="10" rx="4" fill="#6c4cf1"/><text x="283" y="85" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text><text x="0" y="108" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task C</text><rect x="240" y="98" width="60" height="10" rx="4" fill="#cbb8f5"/><rect x="280" y="110" width="60" height="10" rx="4" fill="#6c4cf1"/><text x="348" y="119" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">+4d</text></svg><figcaption>Ghost bars carry the baseline; the gap to the live bar is the variance.</figcaption></figure>
+
+      <h2 id="s5">Variance on the critical path is the only variance that matters much</h2>
       <p>A five-day slip on a task with fifteen days of float costs nothing. A one-day slip on the critical path moves the end date.</p>
-      <p>Read the two together: sort by variance, then check which of those tasks are critical. That short list is your actual status report. Reporting total slipped-task count without reference to float is how projects manage to be "80% on track" and three weeks late simultaneously.</p>
+      <p>Sort by variance, then check which of those are critical. That short list is your actual status report. Reporting slipped-task count without reference to float is how projects manage to be "80% on track" and three weeks late at once. Watch the reverse too: a task with +12 days of variance and 14 of float is fine today and critical tomorrow.</p>
 
-      <h2 id="s5">When to re-baseline</h2>
-      <p>Re-baselining resets the comparison, so it should be rare and deliberate. Legitimate reasons: approved scope change, a formal replan, or a project restart after a pause.</p>
-      <p>Illegitimate reason: the variance looks bad. Re-baselining to make a report green destroys the only record of what was originally promised, and it is usually obvious to whoever reads the next one.</p>
-      <p>If you do re-baseline, keep the original. The gap between baseline 1 and baseline 3 is often the most honest description of a project that exists.</p>
+      <h2 id="s6">Rebaselining: approved change, or erasing the evidence</h2>
+      <p>This is the most consequential decision you will make about a baseline, and almost never a technical one. Rebaselining resets the comparison: every variance goes to zero and the original promise stops being visible. Three situations make it the right call:</p>
+      <ul>
+      <li><strong>An approved scope change.</strong> Someone with authority added or removed work, in writing. Measuring against a plan that no longer describes the project gives variance that is correct and useless.</li>
+      <li><strong>A formal replan.</strong> The numbers have stopped guiding decisions — every task reads +30 days and nobody can tell which are worsening.</li>
+      <li><strong>A restart after a pause.</strong> The old dates measure the gap, not the work.</li>
+      </ul>
+      <p>Every other reason is the same one in different clothes: the variance looks bad and the report is due. Rebaselining in the week before a steering group is the tell. Resetting our example on 1 May would have made go-live read 0 days late — while still being 8 June.</p>
+      <p>The test is simple: if the rebaseline is legitimate you can name the decision, the date and the approver. If you cannot, you are deleting the evidence that anything went wrong.</p>
+      <p>When you do rebaseline, keep the old one — save the plan to a file first, since the file carries the baseline with it. The gap between baseline 1 and baseline 3 is often the most honest description of a project that exists, and exactly what overwriting destroys.</p>
 
-      <h2 id="s6">Doing it in gantts.app</h2>
-      <p>Open the <strong>◳ Baseline</strong> menu and choose <em>Set baseline from current plan</em>. Ghost bars appear beneath each task, turning orange where a task has slipped past its baseline finish.</p>
-      <p>"Show variance columns" then adds Base start, Base finish, Start var and Finish var to the grid — red for late, green for early. Setting and clearing a baseline is undoable, so you can experiment without consequence.</p>
+      <h2 id="s7">Where earned value fits — and what our S-curve honestly reports</h2>
+      <p>Variance in days answers "how late". Earned value answers "how much work did we bank for the time and money spent". It depends on the baseline: without one, planned value has nothing to follow. Our S-curve is deliberate about its limits — know them before quoting it:</p>
+      <ul>
+      <li><strong>Planned value follows the baseline if you have one.</strong> Without one, the plan is just your current dates, so schedule variance reads zero however far things have moved — and the dialog says so rather than letting a flattering zero stand.</li>
+      <li><strong>Actual cost is never inferred from progress.</strong> It comes only from spend you enter per task. The tempting shortcut — assume a task 40% done has used 40% of its budget — makes CPI exactly 1.00 for every project ever run. Without actuals, CPI, cost variance and forecast at completion report as nothing.</li>
+      <li><strong>No costs is the normal case.</strong> Tasks are then weighted by working-day duration, giving a pure progress S-curve — the same shape, read in percent rather than currency.</li>
+      <li><strong>The earned curve for past dates is reconstructed.</strong> We store progress as it is today, not a history of it, so the earlier curve assumes progress accrued evenly across elapsed working days. Exact at the status date, approximate behind it, and labelled as such.</li>
+      </ul>
+      <figure class="fig fig-inline"><svg viewBox="0 0 400 196" width="100%" role="img" aria-label="Schedule and cost variance are independent axes: late and under budget is a real place to be."><rect x="20" y="10" width="150" height="80" fill="#12a594" opacity="0.16"/><rect x="170" y="10" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="20" y="90" width="150" height="80" fill="#94a3b8" opacity="0.1"/><rect x="170" y="90" width="150" height="80" fill="#e5484d" opacity="0.16"/><line x1="170" y1="10" x2="170" y2="170" stroke="#94a3b8" stroke-width="1"/><line x1="20" y1="90" x2="320" y2="90" stroke="#94a3b8" stroke-width="1"/><text x="95" y="54" font-size="10" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">ahead · under budget</text><text x="245" y="54" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">behind plan · under budget</text><text x="95" y="134" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">ahead · over budget</text><text x="245" y="134" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">behind plan · over budget</text><text x="340" y="94" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Time</text><text x="174" y="186" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Cost</text></svg><figcaption>Schedule and cost variance are independent axes: late and under budget is a real place to be.</figcaption></figure>
 
-      <div class="callout">The most common baseline mistake is not a technical one. Teams set a baseline, watch variance grow uncomfortable, and quietly stop looking at it. A baseline nobody reads is worse than none at all, because it creates the appearance of tracking without the substance. Put variance in the weekly review or do not bother setting one.</div>
+      <h2 id="s8">Doing it in gantts.app</h2>
+      <p>The whole loop takes about a minute. Using the portal relaunch as the example:</p>
+      <ol>
+      <li>Agree the plan first — dates, dependencies and durations should be what you want measured.</li>
+      <li>Click <strong>◳ Baseline</strong> in the toolbar. With none saved, the menu offers one action: <strong>◳ Set baseline from current plan</strong>. You will see "Baseline set — slippage now tracked against this plan".</li>
+      
+      <li>Ghost bars now sit under each task bar. Reopening the menu shows the capture date and a <strong>Show baseline on chart</strong> checkbox to hide them.</li>
+      <li>Work the plan. Each cycle, drag bars or edit dates to reflect reality — 18 March for Discovery's finish, 8 April for Design's.</li>
+      <li>Open <strong>◳ Baseline</strong> again and choose <strong>▦ Show variance columns</strong>, which adds <strong>Base start</strong>, <strong>Base end</strong>, <strong>Start var</strong> and <strong>Finish var</strong> to the grid. Late reads red, early green.</li>
+      <li>Scan Finish var, then cross-check the critical path to see which slips move the end date. Duration variance is the gap between baseline and current in the Duration column.</li>
+      <li>For progress, run <strong>S-curve — planned vs actual progress</strong> from the command palette. It states whether planned value follows your baseline or just your current dates.</li>
+      <li>Before any rebaseline, save a copy of the file. Then use <strong>⟳ Re-baseline to current plan</strong>; <strong>✕ Clear baseline</strong> removes it. Both undoable.</li>
+      </ol>
+
+      <div class="callout">The most common baseline mistake is not a technical one. Teams set a baseline, watch variance grow uncomfortable, and quietly stop looking at it. A baseline nobody reads is worse than none: it creates the appearance of tracking without the substance. Put variance in the weekly review or do not bother setting one.</div>
 
       <h2 id="templates">Templates that use this</h2>
       <ul>
@@ -162,11 +241,12 @@
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">
-        <details open><summary>What is a baseline in a Gantt chart?</summary><p>A frozen copy of the approved schedule — each task's planned start, finish and progress — kept unchanged so you can measure how far the live plan has drifted from it.</p></details>
-        <details><summary>What does schedule variance mean?</summary><p>The difference in days between a task's baseline date and its current date. Positive means later than planned, negative means earlier, zero means on plan.</p></details>
-        <details><summary>When should I set a baseline?</summary><p>After the plan is approved and before work begins. Baselining mid-execution hides slippage that has already occurred.</p></details>
-        <details><summary>Should I re-baseline when a project slips?</summary><p>Only for an approved scope change or a formal replan. Re-baselining to make variance look better erases the record of what was originally committed.</p></details>
-        <details><summary>How do I set a baseline in gantts.app?</summary><p>Use the ◳ Baseline menu and choose "Set baseline from current plan". Ghost bars appear under each task, and "Show variance columns" adds start and finish variance to the grid.</p></details>
+        <details open><summary>What is a baseline in a Gantt chart?</summary><p>A frozen copy of the approved schedule — each task's planned start, finish and progress — kept unchanged so you can measure how far the live plan has drifted.</p></details>
+        <details><summary>What does schedule variance mean?</summary><p>The difference in days between a task's baseline date and its current date. Positive is later than planned, negative earlier, zero on plan.</p></details>
+        <details><summary>When should I set a baseline?</summary><p>After the plan is approved and before work begins. Baselining mid-execution hides slippage that already occurred.</p></details>
+        <details><summary>What is the difference between start, finish and duration variance?</summary><p>Start variance shows whether a delay was inherited from upstream. Finish variance shows the impact downstream. Duration variance strips the inherited part out, showing whether your estimate was wrong.</p></details>
+        <details><summary>Should I re-baseline when a project slips?</summary><p>Only for an approved scope change, a formal replan, or a restart after a pause. If you cannot name the decision, the date and the approver, you are deleting the record of what was committed. Save a copy of the plan first either way.</p></details>
+        <details><summary>How do I set a baseline in gantts.app?</summary><p>Use the ◳ Baseline menu and choose "Set baseline from current plan". Ghost bars appear under each task, and "Show variance columns" adds Base start, Base end, Start var and Finish var.</p></details>
       </div>
     </div>
   </article>
@@ -223,6 +303,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>

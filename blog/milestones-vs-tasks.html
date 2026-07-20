@@ -42,8 +42,8 @@
   <meta name="twitter:title" content="Milestones vs Tasks on a Gantt Chart" />
   <meta name="twitter:description" content="The difference between a milestone and a task on a Gantt chart, what the diamond, bar and arrow symbols mean, and how many milestones a project should have." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
-  <link rel="stylesheet" href="/css/site.css?v=24" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/milestones-vs-tasks.html#post","headline":"Milestones vs Tasks on a Gantt Chart","description":"The difference between a milestone and a task on a Gantt chart, what the diamond, bar and arrow symbols mean, and how many milestones a project should have.","url":"https://gantts.app/blog/milestones-vs-tasks.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/milestones-vs-tasks.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Milestones vs Tasks on a Gantt Chart","item":"https://gantts.app/blog/milestones-vs-tasks.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a task and a milestone?","acceptedAnswer":{"@type":"Answer","text":"A task has duration — a start, a finish and work in between. A milestone has zero duration and marks a moment, such as an approval or a delivery. That is why tasks are bars and milestones are diamonds."}},{"@type":"Question","name":"What does the diamond mean on a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"A milestone: a zero-duration marker for a significant event such as a sign-off, delivery or go-live date."}},{"@type":"Question","name":"How many milestones should a project have?","acceptedAnswer":{"@type":"Answer","text":"Typically four to eight for a normal project. Enough that they tell the story of the project, few enough that each one carries meaning."}},{"@type":"Question","name":"What is a summary bar?","acceptedAnswer":{"@type":"Answer","text":"A bar representing a phase or group. Its dates are calculated from the earliest start and latest finish of the tasks beneath it, so it moves when its children move rather than being edited directly."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://gantts.app/blog/milestones-vs-tasks.html#post","headline":"Milestones vs Tasks on a Gantt Chart","description":"The difference between a milestone and a task on a Gantt chart, what the diamond, bar and arrow symbols mean, and how many milestones a project should have.","url":"https://gantts.app/blog/milestones-vs-tasks.html","inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","image":"https://gantts.app/assets/og-image.png","author":{"@type":"Organization","name":"gantts.app","url":"https://gantts.app/"},"publisher":{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/milestones-vs-tasks.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Milestones vs Tasks on a Gantt Chart","item":"https://gantts.app/blog/milestones-vs-tasks.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a task and a milestone?","acceptedAnswer":{"@type":"Answer","text":"A task has duration — a start, a finish and work in between. A milestone has zero duration and marks a moment, such as an approval or a delivery. Quick test: if somebody can spend an afternoon working on it, it is a task."}},{"@type":"Question","name":"What does the diamond mean on a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"A milestone: a zero-duration marker for a significant event such as a sign-off, delivery or go-live. Having no length, it can be moved but not resized."}},{"@type":"Question","name":"How many milestones should a project have?","acceptedAnswer":{"@type":"Answer","text":"Typically four to eight — enough to tell the story, few enough that each carries meaning. If reading the list end to end does not describe the project, you have the wrong ones."}},{"@type":"Question","name":"Can a milestone have a duration?","acceptedAnswer":{"@type":"Answer","text":"No — by definition it is zero. If the thing genuinely takes time, such as a five-day regulatory review, model it as a task and put a milestone at its finish. The commitment date is then calculated rather than asserted."}},{"@type":"Question","name":"What happens to the schedule when a milestone slips?","acceptedAnswer":{"@type":"Answer","text":"Everything linked after it moves by the same amount, minus any float in the chain. In the packaging example a five-day slip on \"Label approved\" pushed retail switchover from 11 May to 18 May in full, because nothing downstream had slack."}},{"@type":"Question","name":"What is a summary bar?","acceptedAnswer":{"@type":"Answer","text":"A bar representing a phase or group. Its dates come from the earliest start and latest finish beneath it, so it moves when its children move. It is not a substitute for a milestone: a summary shows when work runs, a milestone when a commitment falls due."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -77,7 +77,7 @@
   <article class="container" style="padding-top:40px">
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › Milestones vs Tasks on a Gantt Chart</div>
     <h1>Milestones vs Tasks on a Gantt Chart</h1>
-    <p class="lead">A task takes time. A milestone marks a moment. That single distinction explains why one is drawn as a bar and the other as a diamond — and why mixing them up makes a schedule harder to read than it needs to be.</p>
+    <p class="lead">A task takes time. A milestone marks a moment. That single distinction explains why one is drawn as a bar and the other as a diamond — and it has consequences you can measure: a milestone modelled as a three-day task quietly adds three days to your finish date, and hides the delay you are most exposed to.</p>
     <p class="post-meta"><time datetime="2026-07-18">18 July 2026</time> · gantts.app</p>
 
     <figure class="fig">
@@ -92,7 +92,7 @@
       <path d="M 0 104 h 120 v 10 l -6 -5 h -108 l -6 5 z" fill="#334155"/>
       <text x="136" y="114" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Summary / phase</tspan> — rolls up its children</text>
 
-      <path d="M 0 152 C 14 152, 102 152, 116 152" fill="none" stroke="#6c4cf1" stroke-width="1.8"/><polygon points="116,152 110,148 110,156" fill="#6c4cf1"/>
+      <path d="M 0 152 H 116" stroke="#94a3b8" stroke-width="1.6" fill="none" marker-end="url(#ah)"/><defs><marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#94a3b8"/></marker></defs>
       <text x="136" y="157" font-size="12" fill="currentColor" font-family="system-ui,sans-serif"><tspan font-weight="700">Dependency</tspan> — one task constrains another</text>
 
       <rect x="0" y="188" width="120" height="14" rx="4" fill="#c7bdf9"/>
@@ -106,27 +106,109 @@
 
     <div class="prose">
       <h2 id="s1">The difference in one line</h2>
-      <p>A task consumes time and resources; it has a start, a finish and a duration. A milestone has no duration at all — it is a point marking that something has happened.</p>
-      <p>That is why milestones render as diamonds. There is nothing to draw a bar across.</p>
+      <p>A task consumes time and resources; it has a start, a finish and a duration. A milestone has no duration at all — it is a point marking that something has happened. That is why milestones render as diamonds: there is nothing to draw a bar across.</p>
+      <p>The practical test takes a second. <em>Can somebody work on it?</em> You can work on drafting a specification. You cannot work on "specification approved": it either has happened or it has not.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 420 70" width="100%" role="img" aria-label="A milestone sits at a single point in time; the bar either side of it is the work."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task</text><rect x="0" y="20" width="170" height="13" rx="4" fill="#6c4cf1"/><line x1="0" y1="44" x2="170" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="85" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Duration 8d</text><text x="260" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Milestone</text><path d="M 300 20 l 10 10 l -10 10 l -10 -10 z" fill="#e5484d"/><line x1="300" y1="44" x2="300" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="300" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">zero duration</text></svg><figcaption>A milestone sits at a single point in time; the bar either side of it is the work.</figcaption></figure>
 
-      <h2 id="s2">What milestones are actually for</h2>
+      <h2 id="s2">A worked example: the Harbour Labs packaging rebrand</h2>
+      <p>One project, followed the whole way down. Harbour Labs is redoing the artwork for a 40-SKU line. Five working days a week, start Monday 2 March 2026.</p>
+      <div class="worked">
+      <table>
+      <thead><tr><th>Row</th><th>Type</th><th>Duration</th><th>Start</th><th>Finish</th></tr></thead>
+      <tbody>
+      <tr><td>Artwork concepts</td><td>Task</td><td>10 d</td><td>Mon 2 Mar</td><td>Fri 13 Mar</td></tr>
+      <tr><td>Internal review &amp; revisions</td><td>Task</td><td>4 d</td><td>Mon 16 Mar</td><td>Thu 19 Mar</td></tr>
+      <tr><td><strong>Artwork frozen</strong></td><td>Milestone</td><td>0 d</td><td colspan="2">Thu 19 Mar</td></tr>
+      <tr><td>Regulatory label check (external lab)</td><td>Task</td><td>8 d</td><td>Fri 20 Mar</td><td>Tue 31 Mar</td></tr>
+      <tr><td><strong>Label approved</strong></td><td>Milestone</td><td>0 d</td><td colspan="2">Tue 31 Mar</td></tr>
+      <tr><td>Print proofs from supplier</td><td>Task</td><td>6 d</td><td>Wed 1 Apr</td><td>Wed 8 Apr</td></tr>
+      <tr><td><strong>Proof signed off</strong></td><td>Milestone</td><td>0 d</td><td colspan="2">Wed 8 Apr</td></tr>
+      <tr><td>Print run</td><td>Task</td><td>15 d</td><td>Thu 9 Apr</td><td>Wed 29 Apr</td></tr>
+      <tr><td>Transit to distribution centre</td><td>Task</td><td>7 d</td><td>Thu 30 Apr</td><td>Fri 8 May</td></tr>
+      <tr><td><strong>Retail switchover</strong></td><td>Milestone</td><td>0 d</td><td colspan="2">Mon 11 May</td></tr>
+      </tbody>
+      </table>
+      <p>Five milestones, five tasks. Three of them — artwork frozen, label approved, proof signed off — are moments when somebody <em>outside</em> the team has to act. That is the reason to place them.</p>
+      <p>Read the milestone rows alone and you have the project in one breath: artwork frozen 19 March, label approved 31 March, proof signed 8 April, on shelf 11 May.</p>
+      </div>
+
+      <h2 id="s3">What happens when a milestone slips</h2>
+      <p>The external lab quotes eight days and takes thirteen. The regulatory check now finishes Tuesday 7 April instead of Tuesday 31 March.</p>
+      <div class="worked">
+      <table>
+      <thead><tr><th>Milestone</th><th>Planned</th><th>Forecast</th><th>Slip</th></tr></thead>
+      <tbody>
+      <tr><td>Artwork frozen</td><td>Thu 19 Mar</td><td>Thu 19 Mar</td><td>0 d</td></tr>
+      <tr><td>Label approved</td><td>Tue 31 Mar</td><td>Tue 7 Apr</td><td>5 d</td></tr>
+      <tr><td>Proof signed off</td><td>Wed 8 Apr</td><td>Wed 15 Apr</td><td>5 d</td></tr>
+      <tr><td>Retail switchover</td><td>Mon 11 May</td><td>Mon 18 May</td><td>5 d</td></tr>
+      </tbody>
+      </table>
+      <p>There is no float in that chain, so all five days land on the launch date. Those four rows are the entire status report, and they exist only because those points were modelled as milestones.</p>
+      </div>
+      <p>A task slipping means work is taking longer and may still be absorbed. A milestone slipping means a commitment moved. Nobody outside the project cares that proofs took seven days instead of six; they care that the shelf date is now 18 May.</p>
+
+      <h2 id="s4">Task or milestone: the dimensions that actually differ</h2>
+      <p>The distinction is not a drawing convention. It changes behaviour in six places.</p>
+      <table>
+      <thead><tr><th>Dimension</th><th>Task</th><th>Milestone</th></tr></thead>
+      <tbody>
+      <tr><td>Duration</td><td>One day or more. Consumes calendar and effort.</td><td>Zero. Start and finish are the same date.</td></tr>
+      <tr><td>Dependencies</td><td>Predecessors and successors, most often finish-to-start.</td><td>Needs at least one of each, or it is decoration.</td></tr>
+      <tr><td>A slip means</td><td>Work took longer; float or resources may recover it.</td><td>A commitment moved. Recovery needs re-planning, not effort.</td></tr>
+      <tr><td>Resourcing</td><td>An assignee doing the work, usually a cost.</td><td>An owner who chases it. Effort is typically zero.</td></tr>
+      <tr><td>How it exports</td><td>A bar in PDF, PNG and PowerPoint; a real finish and day count in Excel and CSV; a multi-day calendar event.</td><td>A diamond in visual exports; blank finish and duration 0 in Excel and CSV; a single-day calendar event.</td></tr>
+      <tr><td>Who reads it</td><td>The person doing the work, and their manager.</td><td>Sponsors, clients, regulators, the summary slide.</td></tr>
+      </tbody>
+      </table>
+      <p>The export row surprises people. Set the view to milestones only, export, and you have a one-page schedule for a steering group without building a second chart — but only if your milestones are real milestones.</p>
+
+      <h2 id="s5">What it costs to get it wrong</h2>
+      <p>Now model "Label approved" the way most people first write it: a task called "get label sign-off", three days, between the lab check and the proofs.</p>
+      <div class="worked">
+      <ol>
+      <li><strong>The finish date moves.</strong> Three days of invented duration push retail switchover from Mon 11 May to Thu 14 May. The work did not change; the model did.</li>
+      <li><strong>The gate disappears.</strong> "Get label sign-off" reads like something you do; "Label approved" reads like something the lab does. The first invites nobody to chase it.</li>
+      <li><strong>The summary breaks.</strong> Filter to milestones and four rows appear instead of five, with the most externally-dependent point missing.</li>
+      </ol>
+      </div>
+      <p>The reverse mistake is cheaper but real: making "Print run" a milestone because it feels significant. Fifteen days of press time vanish and the critical path routes around the longest item on the plan. Significance decides whether something belongs on the chart; duration decides its shape.</p>
+
+      <h2 id="s6">What milestones are actually for</h2>
       <p>Milestones exist for the reader, not the doer. They are how someone who does not live inside your project finds the moments that matter: approvals, deliveries, gates, go-live.</p>
-      <p>They are also how you make a schedule enforceable. "Design approved" as a milestone with build tasks depending on it says something a task called "get approval" does not: nothing downstream proceeds until this happens.</p>
+      <p>They also make a schedule enforceable. "Artwork frozen", with the regulatory check depending on it, says what "freeze the artwork" does not: nothing downstream proceeds until this happens. When a designer submits a revision on 24 March, the chart shows a rule being broken, not a date sliding.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 580 190" width="100%" role="img" aria-label="A milestone earns its place by sitting between things: predecessors that must finish, successors that cannot start."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Finish → Start</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Start → Start</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Finish → Finish</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Start → Finish</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A</text></svg><figcaption>A milestone earns its place by sitting between things: predecessors that must finish, successors that cannot start.</figcaption></figure>
+      <p>A milestone with no links either way is worth deleting. If nothing waits on it, it is a note in the margin — and notes belong in the notes field, not on the timeline.</p>
 
-      <h2 id="s3">How many should a project have?</h2>
-      <p>Enough to tell the story, few enough that each one means something. Four to eight across a typical project is a reasonable range; a hundred milestones is just tasks wearing a different shape.</p>
-      <p>A good test: could you describe the project's progress using only its milestones? If yes, you have the right set. If the list reads like a to-do list, you have too many.</p>
+      <h2 id="s7">How many should a project have?</h2>
+      <p>Enough to tell the story, few enough that each one means something. Four to eight is a reasonable range; a hundred milestones is just tasks wearing a different shape.</p>
+      <p>A test: could you describe progress using only the milestones? Harbour Labs has five for a ten-week project — the upper end, justified because four are external hand-offs. The usual way to overshoot is a diamond at the end of every phase out of symmetry; phases already have summary bars.</p>
 
-      <h2 id="s4">Common mistakes</h2>
-      <p><strong>Milestones with duration.</strong> If it takes three days, it is a task. Give it a bar and put a milestone at its end if the completion matters.</p>
-      <p><strong>Milestones nobody owns.</strong> A gate with no owner does not get chased. Assign them like tasks.</p>
-      <p><strong>Milestones with no dependencies.</strong> A milestone that nothing depends on is a note, not a gate. If work legitimately continues regardless, it may not need to be on the chart.</p>
+      <h2 id="s8">Doing it in gantts.app</h2>
+      <p>The Harbour Labs plan in the editor, using the buttons as they are actually labelled.</p>
+      <ol>
+      <li>Click <strong>✨ Paste to Gantt</strong> and paste the outline. A line ending in <code>!</code> becomes a milestone, <code>(10d)</code> sets a duration, <code>after Name</code> links a predecessor, a leading <code>#</code> makes a phase — for example <code>Artwork frozen ! after Internal review</code>.</li>
+      <li>By hand instead: <strong>＋ Task</strong> for work rows, <strong>◆ Milestone</strong> for diamonds, <strong>▣ Group</strong> for a phase, <strong>→|</strong> to indent a row under it.</li>
+      <li>Typed a milestone as a task? Double-click its row and change <strong>Type</strong> from <em>task</em> to <em>milestone</em>. Its finish collapses onto its start; no need to delete and re-add.</li>
+      <li>In the same panel set <strong>Runs after (predecessors)</strong>, or the milestone will not move when the work in front of it moves.</li>
+      <li>Click <strong>⚡ Auto-schedule</strong> to push every row to the earliest date its dependencies allow — this is how you learn whether your milestone dates were wishes or consequences.</li>
+      <li>Tick <strong>Critical path</strong> to confirm the chain through your gates sets the finish date. Striped bars are critical.</li>
+      <li>Open <strong>◳ Baseline</strong> and save the plan before work starts. The variance columns then report milestone slip in days, which is where the five-day figure above comes from.</li>
+      <li>Set <strong>View</strong> to <strong>Milestones only</strong> for the sponsor version, then <strong>Export</strong> → <strong>📄 PDF document</strong> or <strong>📽 PowerPoint (.pptx)</strong>. Switch back to <strong>All tasks</strong> for delivery.</li>
+      </ol>
+      <p>One thing the editor will not do: drag a milestone wider. Milestones move but never resize, because a milestone with duration is not a milestone.</p>
 
-      <h2 id="s5">Summary bars and the hierarchy</h2>
-      <p>The third symbol most people meet is the summary or phase bar — the bracketed bar that spans its child tasks. It is calculated, not entered: its dates come from the earliest start and latest finish beneath it.</p>
-      <p>This is why editing a summary bar's dates directly is usually disabled or unhelpful. The way to move a phase is to move what it contains.</p>
+      <h2 id="s9">Common mistakes</h2>
+      <p><strong>Milestones with duration.</strong> If it takes three days it is a task. Give it a bar and put a milestone at its end if completion matters.</p>
+      <p><strong>Milestones nobody owns.</strong> The owner is whoever makes the phone call when the date is at risk, not whoever does the approving.</p>
+      <p><strong>Milestones dated by hope.</strong> If "Label approved" sits on 31 March because that is what retail was promised, rather than because eight days of lab work end there, the chart records an ambition. Auto-schedule, then negotiate the gap deliberately.</p>
+      <p><strong>Milestones reported as percentages.</strong> A milestone is 0% or 100%. "Label approval is 60% done" means the underlying task is 60% done and the gate has not happened.</p>
 
-      <div class="callout">If you take one habit from this: put a milestone at every point where someone outside the team has to do something — approve, deliver, inspect, sign. Those are the dependencies you control least and the delays you will be asked about most, and giving them a diamond makes them impossible to overlook.</div>
+      <h2 id="s10">Summary bars and the hierarchy</h2>
+      <p>The third symbol is the summary or phase bar spanning its child tasks. It is calculated, not entered: its dates come from the earliest start and latest finish beneath it, which is why editing them directly is usually disabled. To move a phase, move what it contains.</p>
+      <p>A summary bar shows when work runs; a milestone shows when a commitment falls due. A "Pre-press" summary spanning 2 March to 8 April is useful to the Harbour Labs team and useless to the retail buyer, who only asks about 11 May.</p>
+
+      <div class="callout">One habit to take from this: put a milestone at every point where someone outside the team has to approve, deliver, inspect or sign. Those are the dependencies you control least and the delays you will be asked about most. Three of the five Harbour Labs milestones are exactly that — and the one that slipped was one of them.</div>
 
       <h2 id="templates">Templates that use this</h2>
       <ul>
@@ -153,10 +235,12 @@
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">
-        <details open><summary>What is the difference between a task and a milestone?</summary><p>A task has duration — a start, a finish and work in between. A milestone has zero duration and marks a moment, such as an approval or a delivery. That is why tasks are bars and milestones are diamonds.</p></details>
-        <details><summary>What does the diamond mean on a Gantt chart?</summary><p>A milestone: a zero-duration marker for a significant event such as a sign-off, delivery or go-live date.</p></details>
-        <details><summary>How many milestones should a project have?</summary><p>Typically four to eight for a normal project. Enough that they tell the story of the project, few enough that each one carries meaning.</p></details>
-        <details><summary>What is a summary bar?</summary><p>A bar representing a phase or group. Its dates are calculated from the earliest start and latest finish of the tasks beneath it, so it moves when its children move rather than being edited directly.</p></details>
+        <details open><summary>What is the difference between a task and a milestone?</summary><p>A task has duration — a start, a finish and work in between. A milestone has zero duration and marks a moment, such as an approval or a delivery. Quick test: if somebody can spend an afternoon working on it, it is a task.</p></details>
+        <details><summary>What does the diamond mean on a Gantt chart?</summary><p>A milestone: a zero-duration marker for a significant event such as a sign-off, delivery or go-live. Having no length, it can be moved but not resized.</p></details>
+        <details><summary>How many milestones should a project have?</summary><p>Typically four to eight — enough to tell the story, few enough that each carries meaning. If reading the list end to end does not describe the project, you have the wrong ones.</p></details>
+        <details><summary>Can a milestone have a duration?</summary><p>No — by definition it is zero. If the thing genuinely takes time, such as a five-day regulatory review, model it as a task and put a milestone at its finish. The commitment date is then calculated rather than asserted.</p></details>
+        <details><summary>What happens to the schedule when a milestone slips?</summary><p>Everything linked after it moves by the same amount, minus any float in the chain. In the packaging example a five-day slip on "Label approved" pushed retail switchover from 11 May to 18 May in full, because nothing downstream had slack.</p></details>
+        <details><summary>What is a summary bar?</summary><p>A bar representing a phase or group. Its dates come from the earliest start and latest finish beneath it, so it moves when its children move. It is not a substitute for a milestone: a summary shows when work runs, a milestone when a commitment falls due.</p></details>
       </div>
     </div>
   </article>
@@ -213,6 +297,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=24"></script>
+  <script src="/js/site.js?v=25"></script>
 </body>
 </html>
