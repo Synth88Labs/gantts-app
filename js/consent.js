@@ -248,6 +248,19 @@
 
   function init() {
     var state = read();
+
+    /* Anyone who visited before this gate existed is carrying _ga
+       cookies that were set WITHOUT being asked, because analytics used
+       to load unconditionally. Having no record of consent, we have no
+       basis to keep them — and waiting for the visitor to click Decline
+       would mean anyone who simply ignores the banner keeps cookies they
+       never agreed to, indefinitely.
+
+       So: undecided means no analytics cookies, full stop. If they then
+       accept, gtag sets fresh ones a moment later and nothing is lost
+       but a session id that was not ours to hold. */
+    if (state === null) dropAnalyticsCookies();
+
     if (state === 'granted') loadAnalytics();
     addLiveRegion();
     addFooterControl();
