@@ -90,16 +90,17 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>7 min de lecture</span></p>
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>15 min de lecture</span></p>
     <div class="toc"><strong>Sommaire</strong>
       <ol>
         <li><a href="#s1">Les trois formes de gratuité</a></li>
         <li><a href="#s2">Ce qu’il faut vérifier</a></li>
         <li><a href="#s3">Le paysage, catégorie par catégorie</a></li>
-        <li><a href="#s4">Cinq pièges à connaître</a></li>
-        <li><a href="#s5">La question du compte</a></li>
-        <li><a href="#s6">Comment choisir</a></li>
-        <li><a href="#s7">Quand un outil payant se justifie</a></li>
+        <li><a href="#s4">Une évaluation menée en vrai : un projet, quatre tests</a></li>
+        <li><a href="#s5">Cinq pièges à connaître</a></li>
+        <li><a href="#s6">La question du compte</a></li>
+        <li><a href="#s7">Comment choisir</a></li>
+        <li><a href="#s8">Quand un outil payant se justifie</a></li>
       </ol>
     </div>
 
@@ -123,8 +124,65 @@
           <li><strong>Où sont-elles stockées ?</strong> Pour un planning de chantier ou un plan portant des noms de personnes, ce n’est pas une question annexe : hébergement, sous-traitants, durée de conservation.</li>
         </ul>
         <p>Ajoutez-en une cinquième si vous travaillez à plusieurs : combien de collaborateurs l’offre gratuite accepte-t-elle réellement, et un lecteur en consultation compte-t-il comme utilisateur ?</p>
+        <p>Les listes de fonctionnalités sont un mauvais guide, puisque chaque outil revendique chaque fonctionnalité. Ce qui les sépare, c’est leur <em>comportement en charge</em> : ce qui se passe quand une date bouge, quand le plan grossit, quand un extérieur doit le lire, et quand vous cessez de payer. Chacun des critères ci-dessous se teste en quelques minutes et possède un mode de défaillance précis.</p>
+        <table>
+          <thead><tr><th>Critère</th><th>Pourquoi il tranche</th><th>Comment le tester en cinq minutes</th><th>À quoi ressemble l’échec</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Recalcule-t-il ?</strong></td>
+              <td>Sépare un moteur d’ordonnancement d’un outil de dessin. De vraies antériorités se propagent ; les décoratives vous laissent retirer les barres à la main.</td>
+              <td>Reliez trois tâches, repoussez la première de quatre jours.</td>
+              <td>Les tâches deux et trois ne bougent pas. L’entretien est à vie et il est pour vous.</td>
+            </tr>
+            <tr>
+              <td><strong>Chemin critique et marge</strong></td>
+              <td>Indique quelles tâches commandent l’échéance. C’est souvent la première chose déplacée derrière un paiement, parce que les gens l’achètent.</td>
+              <td>Cherchez une colonne de marge, pas seulement des barres colorées. Changez une durée et regardez si le chemin mis en évidence se déplace.</td>
+              <td>Un « chemin critique » qui n’est qu’une couleur appliquée à la main, ou une incitation à payer au moment précis où vous en avez besoin.</td>
+            </tr>
+            <tr>
+              <td><strong>Un export qu’un inconnu peut ouvrir</strong></td>
+              <td>Celui qui valide ne créera pas de compte pour lire votre planning. PDF, Excel et PowerPoint voyagent partout ; un lien de partage, non.</td>
+              <td>Exportez, puis ouvrez le fichier sur un appareil non connecté.</td>
+              <td>Export payant, filigrané, ou réduit à un lien qui demande une inscription.</td>
+            </tr>
+            <tr>
+              <td><strong>Passage à l’échelle</strong></td>
+              <td>Les offres gratuites sont dimensionnées pour la démonstration. Un vrai plan fait 150 à 300 lignes ; le plafond compte autant que la fluidité d’affichage.</td>
+              <td>Collez 200 lignes et faites défiler un axe de 26 semaines.</td>
+              <td>Un plafond dur vers 60 tâches, ou un défilement qui saccade dès que le diagramme s’élargit.</td>
+            </tr>
+            <tr>
+              <td><strong>Coût de sortie</strong></td>
+              <td>Personne ne pose la question avant qu’elle ne se pose. Le plan n’est à vous que si vous pouvez l’en sortir dans un format qu’un autre outil relit.</td>
+              <td>Exportez en CSV et réimportez ailleurs. Vérifiez que les liens et la hiérarchie survivent, pas seulement les intitulés.</td>
+              <td>Export réduit à un PDF non modifiable, antériorités perdues, ou données bloquées derrière un abonnement échu.</td>
+            </tr>
+            <tr>
+              <td><strong>Où vivent les données</strong></td>
+              <td>Détermine si vous avez le droit de l’utiliser tout court. En France, un planning nominatif relève du RGPD, et les marchés publics comme les missions pour un OPH ou une mutuelle imposent régulièrement un hébergement dans l’Union européenne.</td>
+              <td>Coupez le réseau et voyez si l’outil fonctionne encore ; lisez la politique de confidentialité pour savoir ce qui est stocké et où.</td>
+              <td>Découvrir au moment de la revue de conformité que le planning est hébergé là où votre marché ne l’autorise pas.</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="Tableurs, outils de création graphique et moteurs d’ordonnancement se ressemblent à l’écran. Ils divergent à la seconde où une date change."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâches</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Chemin critique</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Aujourd'hui</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Diapositives</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Navigateur</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>Tableurs, outils de création graphique et moteurs d’ordonnancement se ressemblent à l’écran. Ils divergent à la seconde où une date change.</figcaption></figure>
+        <p>Deux seulement de ces critères sont des fonctionnalités au sens commercial du terme. Les autres ne s’observent qu’en se servant de l’outil — raison pour laquelle un quart d’heure passé sur un plan réaliste vaut mieux qu’un après-midi d’articles comparatifs, celui-ci compris.</p>
       <h2 id="s3">Le paysage, catégorie par catégorie</h2>
 <p>Les plafonds bougent d’une année sur l’autre ; considérez ce qui suit comme une carte des modèles économiques plutôt que comme une grille tarifaire, et vérifiez la page de prix du jour.</p>
+        <table>
+        <thead><tr><th>Catégorie</th><th>Limites de l’offre gratuite</th><th>Compte requis ?</th><th>Export</th><th>Chemin critique</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Outil navigateur sans compte</strong> (gantts.app)</td><td>Réellement gratuit · tâches et projets illimités</td><td><strong>Non</strong></td><td>PDF, PNG, Excel, PowerPoint</td><td><strong>Oui, gratuit</strong></td></tr>
+        <tr><td>Logiciel libre à installer</td><td>Gratuit et libre (poste de travail)</td><td>Non (téléchargement)</td><td>PDF, PNG, CSV</td><td>Oui</td></tr>
+        <tr><td>Petits outils web spécialisés</td><td>Fonctions de base gratuites</td><td>Variable, souvent non</td><td>Image ou PDF</td><td>Variable</td></tr>
+        <tr><td>Plateforme collaborative en offre gratuite</td><td>≈ 1 projet, ≈ 60 tâches, équipe réduite</td><td>Oui</td><td>Limité en gratuit</td><td>Offres payantes</td></tr>
+        <tr><td>Outil commercial en essai gratuit</td><td>14 à 30 jours, puis payant</td><td>Oui</td><td>Oui (payant)</td><td>Oui (payant)</td></tr>
+        <tr><td>Outil de création graphique</td><td>Offre gratuite de design</td><td>Oui</td><td>PNG, PDF</td><td>Non (image figée)</td></tr>
+        <tr><td>Suite de gestion de projet d’entreprise</td><td>Payant, sans offre gratuite</td><td>Oui</td><td>Oui</td><td>Oui</td></tr>
+        <tr><td>Tableur (Excel, Sheets)</td><td>Gratuit si vous avez déjà la licence</td><td>Variable</td><td>Oui, à la main</td><td>Non</td></tr>
+        </tbody>
+        </table>
         <p><strong>Outils navigateur sans compte.</strong> Fonctionnalités complètes, aucun plafond de tâches, calcul côté client. <a href="/fr/app.html">gantts.app</a> appartient à cette catégorie — c’est notre outil, nous le signalons — avec antériorités, chemin critique automatique, jalons, référence et export PDF, PNG, Excel et PowerPoint. La contrepartie est assumée : c’est un planificateur, pas une suite de gestion du travail avec suivi des temps, messagerie et facturation.</p>
         <p><strong>Logiciels libres à installer.</strong> Des applications de bureau matures, gratuites et sans compte, gèrent tâches, antériorités, chemin critique, affectation de ressources et export PDF, PNG ou CSV. Elles fonctionnent hors ligne. En échange : installation à faire, interfaces souvent datées, pas de synchronisation intégrée.</p>
         <p><strong>Plateformes collaboratives à offre gratuite plafonnée.</strong> Soignées, pensées pour le travail d’équipe, mais l’offre gratuite se limite fréquemment à un projet et quelques dizaines de tâches pour un petit nombre d’utilisateurs, le chemin critique et l’export riche restant payants. Compte obligatoire.</p>
@@ -132,7 +190,51 @@
         <p><strong>Outils de conception graphique.</strong> Ils produisent un joli <em>visuel</em> de Gantt à partir de modèles, exportable en PNG ou PDF. Aucune antériorité, aucune replanification, aucun chemin critique : les barres sont des formes posées à la main. Parfait pour une illustration, inadapté à un planning vivant.</p>
         <p><strong>Les référentiels d’entreprise.</strong> Logique d’antériorité poussée, nivellement des ressources, références multiples — et aucune offre gratuite. Justifié quand le portefeuille et le budget suivent.</p>
         <p><strong>Le tableur.</strong> Vous l’avez déjà, et on peut l’y plier avec des barres empilées ou une vue chronologie. Gratuit, mais sans antériorités, sans chemin critique, et avec un entretien manuel permanent. Voyez nos guides <a href="/fr/blog/gantt-chart-in-excel.html">Excel</a> et <a href="/fr/blog/gantt-chart-in-google-sheets.html">Google Sheets</a>.</p>
-      <h2 id="s4">Cinq pièges à connaître</h2>
+      <h2 id="s4">Une évaluation menée en vrai : un projet, quatre tests</h2>
+<p>Des critères, on approuve facilement. Voici donc une mission précise passée au crible. L’enjeu n’est pas de désigner un gagnant : c’est de constater que quatre tests, en vingt minutes, éliminent la moitié d’une liste avant que vous n’y ayez investi quoi que ce soit.</p>
+      <div class="worked">
+        <p><strong>La mission.</strong> Déménagement du siège de la mutuelle <strong>Aumont-Prévoyance</strong>, du centre de Nantes vers Saint-Herblain : <strong>186 tâches</strong> réparties en six lots (bail, aménagement, informatique, mobilier, communication interne, week-end de déménagement), sur <strong>22 semaines</strong>, avec une date de restitution des anciens locaux fixée par le congé du bail — préavis de six mois donné, sortie au 31 décembre 2026, non négociable. Un comité de pilotage mensuel de six personnes, dont deux administrateurs bénévoles qui ne créeront pas de compte pour lire un planning. Budget outillage : zéro.</p>
+
+        <p><strong>Test 1 — l’outil recalcule-t-il ?</strong> Construisez la plus petite tranche qui contienne de la vraie logique : <em>relevé → conception de l’aménagement → autorisation de travaux → travaux → raccordement et installation informatique → remise des clés</em>. Puis repoussez l’autorisation de travaux de <strong>10 jours</strong>.</p>
+        <ul>
+          <li>Un moteur d’ordonnancement déplace les travaux, l’installation informatique et la remise des clés de 10 jours chacun, et signale que la remise des clés a franchi la date du bail.</li>
+          <li>Un outil de dessin ne déplace que la barre que vous avez tirée. Les cinq autres décrivent un planning qui ne peut pas se produire.</li>
+        </ul>
+        <p>Sur un plan de 186 tâches, tout se joue là. L’autorisation glissera — elle glisse toujours — et sans recalcul chaque glissement représente une heure de reprise manuelle par quelqu’un qui en oubliera une. Ce seul test écarte la plupart des outils de création graphique et des solutions à modèles, tableur compris.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Une date bouge et tout l’aval suit. Sur un outil de dessin, seule la barre tirée bouge — et le plan cesse discrètement d’être vrai."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semaine 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Jalon</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Aujourd'hui</text></svg><figcaption>Une date bouge et tout l’aval suit. Sur un outil de dessin, seule la barre tirée bouge — et le plan cesse discrètement d’être vrai.</figcaption></figure>
+
+        <p><strong>Test 2 — le comité de pilotage peut-il l’ouvrir ?</strong> Exportez, puis ouvrez le fichier sur un appareil non connecté. Un <strong>PDF ou un PNG</strong> signifie que tout le monde lit et que personne ne modifie ; un <strong>Excel</strong> est ce que le trésorier voudra retravailler ; un <strong>lien de partage</strong> échoue s’il demande au lecteur de s’inscrire, car six comptes pour lire un diagramme font six raisons de ne pas lire la mise à jour.</p>
+        <p>Vérifiez les filigranes et les limites de pages sur l’offre gratuite. Un PDF gratuit mais tatoué n’est pas utilisable dans un dossier de conseil d’administration, et vous l’apprenez la veille au soir.</p>
+
+        <p><strong>Test 3 — tient-il 186 lignes ?</strong> Ne testez pas avec huit tâches. Collez-en deux cents et faites défiler.</p>
+        <ul>
+          <li><strong>Le plafond d’abord.</strong> Une offre gratuite limitée à une soixantaine de tâches échoue franchement à 186 — et le plafond se referme quand le plan est à moitié construit et que vous êtes engagé.</li>
+          <li><strong>L’affichage ensuite.</strong> Vingt-deux semaines au pas quotidien font un diagramme large. Certains outils saccadent, d’autres replient l’arborescence à chaque modification, d’autres perdent votre position de défilement.</li>
+          <li><strong>La hiérarchie enfin.</strong> Six lots impliquent des récapitulatives : vérifiez que la barre de phase se calcule à partir de ses enfants au lieu d’être une barre de plus à entretenir.</li>
+        </ul>
+
+        <p><strong>Test 4 — que se passe-t-il si vous arrêtez ?</strong> Supposez que vous abandonniez l’outil dans neuf mois, ou qu’une offre gratuite soit revue en cours de projet. Les deux sont ordinaires.</p>
+        <ul>
+          <li>Exportez en <strong>CSV ou Excel</strong> et réimportez ailleurs. Les intitulés survivent ; <strong>les antériorités et la hiérarchie sautent</strong>. Relier 186 tâches à la main est une reconstruction, pas une migration.</li>
+          <li>Vérifiez si l’export est lui-même payant. Une offre gratuite d’où l’on ne peut rien exporter est une offre qu’on ne peut pas quitter.</li>
+          <li>Si les données vivent dans votre navigateur, le risque s’inverse : plus rien ne peut vous être retiré, mais vider les données du site les efface. Exportez à chaque jalon.</li>
+        </ul>
+
+        <p><strong>Un cinquième test, propre au contexte français.</strong> Le planning porte les noms des 140 salariés répartis par étage et par bureau : c’est un traitement de données à caractère personnel, et la mutuelle doit pouvoir dire où il est hébergé. Un outil qui calcule dans le navigateur et n’envoie rien répond à la question en une phrase ; un service dont les serveurs sont hors Union européenne ouvre une instruction interne qui durera plus longtemps que le déménagement lui-même.</p>
+
+        <p><strong>Ce que les tests concluent.</strong> Pas un gagnant — une catégorie. Cette mission exige un vrai moteur d’antériorités, aucun plafond de tâches, un export sans filigrane, un format portable et un hébergement défendable. Cela écarte les outils graphiques (test 1), la plupart des offres gratuites plafonnées (test 3) et tout ce qui fait payer l’export (tests 2 et 4). Restent les outils navigateur réellement gratuits et les logiciels libres à installer ; choisir entre les deux revient à décider si vous préférez installer un logiciel.</p>
+      </div>
+      <p>Le protocole se déroule en une seule séance :</p>
+      <ol>
+        <li>Ouvrez <a href="/fr/app.html">gantts.app</a> — aucun compte, rien à installer.</li>
+        <li>Cliquez sur <strong>✨ Coller vers Gantt</strong> et collez vos 186 lignes depuis le tableur où elles vivent aujourd’hui. Le message « Tâches importées depuis le CSV » indique combien de lignes sont passées.</li>
+        <li>Ouvrez <strong>Calendrier de travail</strong> et posez les jours fériés et la fermeture d’été : le week-end de déménagement ne se cale pas en août, les déménageurs non plus.</li>
+        <li>Reliez la tranche du test 1, puis faites glisser l’autorisation de travaux de dix jours et regardez ce qui suit.</li>
+        <li>Cochez <strong>Chemin critique</strong>, puis passez <strong>Vue</strong> sur <strong>Jalons seulement</strong> : c’est la version que verra le comité de pilotage.</li>
+        <li>Testez la sortie : <strong>⬇ Exporter › 📄 Document PDF</strong> pour le dossier, <strong>📊 Excel (.xlsx)</strong> pour le trésorier, <strong>📑 CSV (tableur)</strong> pour vérifier ce que vous récupéreriez le jour où vous partiriez.</li>
+        <li>Enfin <strong>💾 Enregistrer le projet (.gantts)</strong> : le fichier est sur votre disque, et personne ne peut vous le retirer.</li>
+      </ol>
+      <h2 id="s5">Cinq pièges à connaître</h2>
 <p>Les mauvaises surprises se ressemblent d’un outil à l’autre, et elles arrivent toutes après la saisie des données — jamais avant.</p>
         <ul>
           <li><strong>L’export filigrané.</strong> Le PDF sort, mais avec le logo de l’éditeur en travers. Techniquement gratuit, inutilisable devant un client.</li>
@@ -142,11 +244,11 @@
           <li><strong>La sortie sans format ouvert.</strong> Si les données ne ressortent qu’en image, changer d’outil signifie retaper l’intégralité du plan.</li>
         </ul>
         <p>Le test décisif tient en une manœuvre : avant d’investir plus d’une heure dans un outil, saisissez cinq tâches, exportez, et ouvrez le fichier obtenu. Vous saurez en trois minutes ce que la page tarifaire met parfois trois écrans à ne pas dire.</p>
-      <h2 id="s5">La question du compte</h2>
+      <h2 id="s6">La question du compte</h2>
 <p>La plupart des outils gratuits demandent un compte avant d’afficher la première barre. Ce n’est presque jamais une nécessité technique : c’est le prix. Un plan de projet est une donnée de prospection utile, et une adresse électronique vaut une relance.</p>
         <p>Les outils qui s’exécutent entièrement dans le navigateur et enregistrent en local n’ont besoin ni de compte ni de serveur, puisque rien n’est transmis. Les logiciels libres à installer s’en passent également, au prix d’un téléchargement.</p>
         <p><a href="/fr/app.html">gantts.app</a> fonctionne selon le premier modèle : pas d’inscription, pas de transfert, le plan reste sur votre appareil. C’est aussi la réponse à la question de la confidentialité — ce qui ne quitte pas l’appareil n’a pas à être encadré contractuellement. La contrepartie, honnêtement : effacez les données de votre navigateur sans avoir exporté et le plan disparaît. Exportez régulièrement, c’est la seule discipline que ce modèle impose.</p>
-      <h2 id="s6">Comment choisir</h2>
+      <h2 id="s7">Comment choisir</h2>
 <p>Faites correspondre l’outil au besoin réel, pas à la liste de fonctionnalités la plus longue.</p>
         <ul>
           <li><strong>Un planning rapide, gratuit, exportable ?</strong> Un outil navigateur sans compte, chemin critique et export Excel/PPT compris.</li>
@@ -158,7 +260,7 @@
         <p>Quel que soit le choix, tranchez d’emblée sur trois points : antériorités, chemin critique, export réel. C’est exactement là que les offres « gratuites » déçoivent le plus souvent. S’ils comptent, partez d’un outil qui les inclut sans supplément.</p>
         <p>Un mot sur le sens de la migration. Passer d’un outil léger à une plateforme lourde est facile : les plateformes savent importer, c’est leur intérêt commercial. L’inverse l’est beaucoup moins. Commencer petit et monter en gamme si le besoin apparaît coûte donc presque toujours moins cher que l’inverse — et évite de payer pendant deux ans une capacité de portefeuille pour trois projets.</p>
         <p>Si vous découvrez le format, lisez d’abord <a href="/fr/blog/what-is-a-gantt-chart.html">ce qu’est un diagramme de Gantt</a> et la <a href="/fr/blog/how-to-make-a-gantt-chart.html">méthode pour en construire un</a> : la moitié des déceptions attribuées aux outils viennent en réalité d’un plan mal découpé.</p>
-      <h2 id="s7">Quand un outil payant se justifie</h2>
+      <h2 id="s8">Quand un outil payant se justifie</h2>
 <p>Quand plusieurs personnes travaillent simultanément sur le même plan et qu’il faut des droits, un historique et des commentaires. Quand les ressources se planifient sur un portefeuille de projets et qu’il faut détecter qu’une même équipe est engagée deux fois. Quand des obligations de reporting existent vis-à-vis d’un donneur d’ordre, avec des formats de livrable imposés.</p>
         <p>Le calcul se pose alors en jours, pas en euros : un abonnement à quelques centaines d’euros par an se rembourse en une demi-journée de replanification évitée. Mais pour un plan isolé de trente tâches, tenu par une personne, un logiciel payant est presque toujours surdimensionné — et son coût réel est le temps d’administration, pas la facture.</p>
 

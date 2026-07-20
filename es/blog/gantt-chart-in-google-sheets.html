@@ -90,7 +90,7 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>7 min de lectura</span></p>
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>15 min de lectura</span></p>
     <div class="toc"><strong>En esta página</strong>
       <ol>
         <li><a href="#s1">¿Puede Google Sheets hacer un diagrama de Gantt?</a></li>
@@ -98,9 +98,12 @@
         <li><a href="#s3">Método 2: gráfico de barras apiladas</a></li>
         <li><a href="#s4">Las dos columnas auxiliares: «Empieza el día» y «Duración»</a></li>
         <li><a href="#s5">Insertar y formatear el gráfico</a></li>
-        <li><a href="#s6">Método 3: usar una plantilla</a></li>
-        <li><a href="#s7">Personalizar la vista y añadir dependencias</a></li>
-        <li><a href="#s8">Los límites de Sheets, y una alternativa gratuita</a></li>
+        <li><a href="#s6">Aviso de idioma: en Sheets cambian los separadores, no los nombres</a></li>
+        <li><a href="#s7">Un caso resuelto: seis tareas, y luego un retraso</a></li>
+        <li><a href="#s8">Qué te da cada método</a></li>
+        <li><a href="#s9">Método 3: usar una plantilla</a></li>
+        <li><a href="#s10">Personalizar la vista y añadir dependencias</a></li>
+        <li><a href="#s11">Los límites de Sheets, y una alternativa gratuita</a></li>
       </ol>
     </div>
 
@@ -144,10 +147,78 @@
           <li>Recolorea la serie de duración, pon un título y ajusta el eje horizontal para que muestre números de día o fechas legibles.</li>
         </ul>
         <p>Ya tienes un gráfico editable que puedes redimensionar, reestilizar y copiar a otro documento. Da bastante más control que la función Cronograma —colores por fase, formato de eje, etiquetas— a cambio de unos minutos de configuración. Añadir hitos o agrupar por fase significa más columnas auxiliares y más mantenimiento a mano, que es donde este método empieza a pesar en proyectos reales.</p>
-      <h2 id="s6">Método 3: usar una plantilla</h2>
+      <h2 id="s6">Aviso de idioma: en Sheets cambian los separadores, no los nombres</h2>
+<p>Aquí hay una diferencia con Excel que confunde a mucha gente. <strong>Google Sheets no traduce los nombres de función</strong>: aunque tengas la interfaz en español, se escribe <code>WORKDAY</code>, <code>NETWORKDAYS</code>, <code>MAX</code> y <code>TODAY</code>, igual que en inglés. Lo que sí cambia con la configuración regional es el <strong>separador de argumentos</strong>.</p>
+        <ul>
+          <li>Con la hoja en <strong>Archivo › Configuración › Configuración regional: España</strong>, la coma es el separador decimal, así que los argumentos se separan con <strong>punto y coma</strong>: <code>=WORKDAY(B2;D2-1;$H$2:$H$5)</code>.</li>
+          <li>Con la hoja en <em>Estados Unidos</em>, aunque la interfaz esté en español, es la coma: <code>=WORKDAY(B2,D2-1,$H$2:$H$5)</code>.</li>
+        </ul>
+        <p>Y hay un tercer nivel que casi nadie documenta: dentro de una <strong>matriz literal</strong> entre llaves, la configuración española cambia el separador de columnas a la <strong>barra invertida</strong> <code>\</code> y el de filas al punto y coma. Es la razón por la que la fórmula de <code>SPARKLINE</code> que copies de un tutorial estadounidense devolverá un error de análisis en tu hoja aunque esté escrita perfectamente. Más abajo la tienes en las dos formas.</p>
+        <p>Comprueba primero en qué configuración regional está tu hoja y escribe en consecuencia. Es un minuto que ahorra media hora de <code>#¡ERROR!</code> sin explicación.</p>
+      <h2 id="s7">Un caso resuelto: seis tareas, y luego un retraso</h2>
+<p>Las columnas auxiliares son fáciles de describir y fáciles de equivocar sutilmente. Aquí va un plan pequeño con fórmulas reales, y después modificado — porque cómo se comporta una hoja cuando una fecha se mueve es la única prueba que importa.</p>
+        <div class="worked">
+          <p><strong>La hoja.</strong> Puesta en marcha del nuevo almacén de la Cooperativa Agrícola de Villena, arranque el lunes 7 de septiembre de 2026. Encabezados en la fila 1, tareas en las filas 2 a 7. <strong>A</strong> Tarea, <strong>B</strong> Inicio, <strong>C</strong> Fin, <strong>D</strong> Días laborables, <strong>E</strong> Empieza el día, <strong>F</strong> Longitud de barra. En <code>H2:H5</code>, los festivos que de verdad afectan a este plan: el <strong>9 de octubre</strong> (Día de la Comunitat Valenciana), el <strong>12 de octubre</strong>, el <strong>8 de diciembre</strong> y el <strong>25 de diciembre</strong>. Solo la columna D se escribe a mano:</p>
+          <ul>
+            <li><strong>C2</strong> — <code>=WORKDAY(B2;D2-1;$H$2:$H$5)</code>. Sheets tiene la misma <code>WORKDAY</code> que Excel y salta los fines de semana por ti. El <code>-1</code> es imprescindible: <code>WORKDAY</code> cuenta hacia adelante desde el inicio, así que cinco días laborables desde el lunes son <code>WORKDAY(lunes;4)</code>, el viernes.</li>
+            <li><strong>B3</strong> — <code>=WORKDAY(C2;1;$H$2:$H$5)</code>. El siguiente día laborable después de que termine la predecesora. Es lo único del archivo que reprograma algo.</li>
+            <li><strong>E2</strong> — <code>=B2-$B$2</code>, con formato de <em>Número</em>. Cero en la primera tarea.</li>
+            <li><strong>F2</strong> — <code>=C2-B2+1</code>, también como Número. Ojo: <em>no</em> es D2. D son días laborables; el eje del gráfico son días naturales, así que una tarea de 20 días laborables que cruza el Pilar y el 9 de octubre tiene que dibujarse con 30 unidades de largo. Si por error representas D, todas las barras terminan antes mientras la tabla de al lado se lee correctamente.</li>
+          </ul>
+          <p>Arrastra hacia abajo y sale esto:</p>
+          <table>
+            <thead><tr><th>Fila</th><th>Tarea</th><th>B — Inicio</th><th>C — Fin</th><th>D — Días lab.</th><th>E — Empieza el día</th><th>F — Longitud</th></tr></thead>
+            <tbody>
+              <tr><td>2</td><td>Análisis y toma de requisitos</td><td>lun 7 sep</td><td>vie 18 sep</td><td>10</td><td>0</td><td>12</td></tr>
+              <tr><td>3</td><td>Diseño del almacén</td><td>lun 21 sep</td><td>vie 2 oct</td><td>10</td><td>14</td><td>12</td></tr>
+              <tr><td>4</td><td>Instalación y montaje</td><td>lun 5 oct</td><td>mar 3 nov</td><td>20</td><td>28</td><td>30</td></tr>
+              <tr><td>5</td><td>Migración de datos de stock</td><td>mié 4 nov</td><td>mar 24 nov</td><td>15</td><td>58</td><td>21</td></tr>
+              <tr><td>6</td><td>Pruebas de usuario</td><td>mié 25 nov</td><td>mié 9 dic</td><td>10</td><td>79</td><td>15</td></tr>
+              <tr><td>7</td><td>Puesta en marcha</td><td>jue 10 dic</td><td>jue 10 dic</td><td>1</td><td>94</td><td>1</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Comprobación de la última fila:</strong> 94 + 1 = 95 días, que es el recorrido completo del proyecto desde el 7 de septiembre. Si E + F en la fila de abajo no da el recorrido que esperas, alguna convención se ha desviado más arriba.</p>
+          <p>Y mira la fila 4: veinte días laborables dibujados como <strong>treinta</strong>. Ocho son fines de semana; dos son el 9 y el 12 de octubre, dos festivos consecutivos —viernes y lunes— que en la Comunitat Valenciana se comen una semana entera de golpe. Sin esas fechas en <code>$H$2:$H$5</code>, la hoja promete la puesta en marcha para el 8 de diciembre, que además es festivo.</p>
+          <p><strong>Ahora cambia algo.</strong> El diseño se alarga tres días: edita <code>D3</code> de 10 a 13. La cadena de <code>WORKDAY</code> se recalcula y todo lo de abajo se mueve — Diseño termina el miércoles 7 de octubre, Instalación va del 8 de octubre al viernes 6 de noviembre, la Migración del 9 al 27 de noviembre, las Pruebas del 30 de noviembre al lunes 14 de diciembre y la puesta en marcha cae el <strong>martes 15 de diciembre</strong>. Las dos columnas auxiliares se recalculan solas. Esa es la razón de usar fórmulas y no fechas escritas a mano.</p>
+          <p><strong>Y esto es lo que no se recalcula.</strong></p>
+          <ol>
+            <li><strong>Las filas insertadas llegan sin fórmulas.</strong> Mete «Revisión del cliente» entre Diseño e Instalación: la nueva fila 4 está vacía y la vieja Instalación —ahora fila 5— sigue apuntando al Fin de Diseño. Sheets amplía el rango del gráfico igualmente, así que la fila vacía se dibuja como una barra de longitud cero en el día cero: un muñón en el extremo izquierdo que parece un fallo de renderizado y no un error de datos.</li>
+            <li><strong>Ordenar destruye la cadena.</strong> Ordena por fecha de inicio y cada referencia relativa sigue a su nuevo vecino, rederivando fechas en silencio a partir de las filas equivocadas. Sin aviso, y sin deshacer una vez guardado y cerrado.</li>
+            <li><strong>Una segunda predecesora no tiene dónde vivir.</strong> Si las Pruebas necesitan la Instalación <em>y</em> la Migración, la fórmula correcta es <code>=WORKDAY(MAX(C4;C5);1;$H$2:$H$5)</code>. Funciona. Pero nada en el gráfico enseña el enlace, y cinco días de revisión del cliente se convierten en <code>=WORKDAY(C3;1+5;$H$2:$H$5)</code>: un <code>5</code> desnudo dentro de una fórmula, sin etiqueta en ningún sitio.</li>
+          </ol>
+          <p><strong>El atajo exclusivo de Sheets.</strong> Si quieres una barra por fila sin ningún objeto gráfico, pon esto en G2 y arrástralo hacia abajo. En una hoja con configuración regional <strong>España</strong>:</p>
+          <p><code>=SPARKLINE({E2\F2};{"charttype"\"bar";"color1"\"white";"color2"\"#6c4cf1";"max"\95})</code></p>
+          <p>Y la misma fórmula en una hoja configurada como Estados Unidos, por si la copias de otro sitio:</p>
+          <p><code>=SPARKLINE({E2,F2},{"charttype","bar";"color1","white";"color2","#6c4cf1";"max",95})</code></p>
+          <p>Dibuja el mismo truco del espaciador invisible dentro de una sola celda, y como <code>max</code> está fijado al recorrido del proyecto todas las filas comparten un mismo eje. Aguanta mejor que el gráfico las filas insertadas y la reordenación — pero sigue siendo un dibujo, no un calendario.</p>
+        </div>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="El segmento espaciador invisible es lo que empuja cada barra de duración hasta su fecha de inicio."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semana 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarea A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarea B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarea C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hito</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoy</text></svg><figcaption>El segmento espaciador invisible es lo que empuja cada barra de duración hasta su fecha de inicio.</figcaption></figure>
+      <h2 id="s8">Qué te da cada método</h2>
+<p>Los tres métodos dibujan un calendario. Ninguno lo calcula. Las diferencias entre ellos son reales, pero pequeñas al lado de ese límite compartido, así que aquí están las dos cosas a la vez:</p>
+        <table>
+          <thead><tr><th>Capacidad</th><th>Cronograma</th><th>Barras apiladas</th><th><code>SPARKLINE</code></th><th>Un programador de verdad</th></tr></thead>
+          <tbody>
+            <tr><td>Esfuerzo de montaje</td><td>Dos minutos</td><td>Dos columnas auxiliares</td><td>Una fórmula</td><td>Escribir y arrastrar</td></tr>
+            <tr><td>Saltar fines de semana y festivos</td><td>No</td><td>Con <code>WORKDAY</code></td><td>Con <code>WORKDAY</code></td><td>De serie</td></tr>
+            <tr><td>Reprogramar una cadena fin-inicio</td><td>Sí, si el Inicio es fórmula</td><td>Sí, si el Inicio es fórmula</td><td>Sí, si el Inicio es fórmula</td><td>Sí</td></tr>
+            <tr><td>Flechas de dependencia</td><td>No</td><td>No</td><td>No</td><td>Sí</td></tr>
+            <tr><td>Dos predecesoras en una tarea</td><td><code>MAX()</code> escondido</td><td><code>MAX()</code> escondido</td><td><code>MAX()</code> escondido</td><td>Sí</td></tr>
+            <tr><td>Enlaces SS, FF y SF</td><td>No</td><td>No</td><td>No</td><td>Sí</td></tr>
+            <tr><td>Ruta crítica</td><td>No</td><td>No</td><td>No</td><td>Calculada</td></tr>
+            <tr><td>Holgura por tarea</td><td>No</td><td>No</td><td>No</td><td>Calculada (total)</td></tr>
+            <tr><td>Aviso de sobreasignación</td><td>No</td><td>No</td><td>No</td><td>Sí</td></tr>
+            <tr><td>Línea base y desviación</td><td>Copiar columnas a mano</td><td>Copiar columnas a mano</td><td>Copiar columnas a mano</td><td>Guardada y comparada</td></tr>
+            <tr><td>Sobrevive a insertar una fila</td><td>Sí</td><td>Hay que reescribir fórmulas</td><td>Hay que arrastrar la fórmula</td><td>Sí</td></tr>
+            <tr><td>Sobrevive a reordenar</td><td>Sí</td><td>No</td><td>No</td><td>Sí</td></tr>
+            <tr><td>Se exporta como imagen</td><td>No — es una vista</td><td>Sí</td><td>No — es una celda</td><td>PNG, PDF, PPTX</td></tr>
+          </tbody>
+        </table>
+        <p>Los «No» del centro no son un reproche a Sheets: están fuera de lo que una hoja de cálculo es. Sheets guarda números que has decidido en otro sitio. Si lo que quieres es que se <em>deduzcan</em> —qué tarea manda sobre la fecha de entrega, cuánto margen tienen las demás—, ninguna astucia con fórmulas te lleva hasta ahí.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Solo el camino más largo de la red fija la fecha de fin. Ninguna hoja de cálculo lo encuentra por ti."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ruta crítica: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Holgura (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duración: 12</text></svg><figcaption>Solo el camino más largo de la red fija la fecha de fin. Ninguna hoja de cálculo lo encuentra por ti.</figcaption></figure>
+      <h2 id="s9">Método 3: usar una plantilla</h2>
 <p>La forma más rápida de llegar a un gráfico terminado es no construir el mecanismo. Abre una hoja ya preparada, donde las fórmulas auxiliares, el formato condicional y el eje de fechas ya existen, y escribe encima de las filas de ejemplo.</p>
         <p>Haz una copia a tu propio Drive con <strong>Archivo › Hacer una copia</strong> antes de editar nada, o descarga el CSV con las tareas ya estructuradas y ábrelo en Sheets. Las plantillas van bien cuando quieres un aspecto coherente entre proyectos, o cuando prefieres no depurar una serie de gráfico a las siete de la tarde. El catálogo cubre también versiones de Excel y de PowerPoint y planes por sector.</p>
-      <h2 id="s7">Personalizar la vista y añadir dependencias</h2>
+      <h2 id="s10">Personalizar la vista y añadir dependencias</h2>
 <p>Cuatro retoques mejoran la legibilidad de cualquier Gantt hecho en Sheets:</p>
         <ul>
           <li><strong>Agrupar por fase</strong> — añade una columna «Fase» y ordena por ella, o úsala en el campo <em>Agrupar por</em> del Cronograma.</li>
@@ -156,7 +227,7 @@
           <li><strong>Línea de hoy</strong> — una serie de un solo valor o una línea de referencia vertical; es lo que más rápido comunica el estado a quien mira el plan de pasada.</li>
         </ul>
         <p>Las dependencias son el límite duro. Google Sheets no tiene ningún concepto de «la tarea B empieza cuando termina la A». Se puede fingir con fórmulas —poner el inicio de una tarea como <code>=fin_de_la_predecesora + 1</code>— pero no hay flechas visibles, no hay holgura y las cadenas se vuelven frágiles enseguida: basta con que una tarea tenga dos predecesoras para que la fórmula deje de valer. Si las dependencias y el recálculo automático importan en tu proyecto, esa es la señal para cambiar de herramienta.</p>
-      <h2 id="s8">Los límites de Sheets, y una alternativa gratuita</h2>
+      <h2 id="s11">Los límites de Sheets, y una alternativa gratuita</h2>
 <p>Google Sheets es una hoja de cálculo excelente y un Gantt aceptable para salir del paso. Sus límites reales aparecen en cuanto el proyecto tiene piezas móviles:</p>
         <ul>
           <li>Sin flechas de dependencia y sin reprogramación automática cuando una tarea se retrasa.</li>
@@ -165,7 +236,17 @@
           <li>Mantenimiento manual: cada cambio de fecha obliga a revisar a mano las columnas auxiliares.</li>
           <li>Exportación incómoda: el Cronograma no es una imagen, y los gráficos de barras apiladas no siempre viajan bien a una diapositiva.</li>
         </ul>
-        <p>Para un plan de veinte tareas eso se aguanta; para sesenta, no. La alternativa sin registro es <a href="/es/app.html">el editor de gantts.app</a>: exporta la hoja como CSV, impórtala con sus columnas de tarea, inicio y fin, enlaza las dependencias y el calendario se reprograma solo, con la ruta crítica resaltada. Desde ahí se exporta a Excel, PowerPoint, PDF o PNG en un clic, sin cuenta y sin instalar nada.</p>
+        <p>Para un plan de veinte tareas eso se aguanta; para sesenta, no. Así se pasa la hoja del almacén de Villena al <a href="/es/app.html">editor de gantts.app</a>, con los botones tal y como están rotulados:</p>
+        <ol>
+          <li>En Sheets, <strong>Archivo › Descargar › Valores separados por comas (.csv)</strong>. Descarga solo la hoja activa, así que asegúrate de estar en la pestaña de la tabla y no en la del Cronograma.</li>
+          <li>Deja visibles las columnas de tarea, inicio y fin. Las auxiliares —«empieza el día» y «longitud de barra»— ya no hacen falta: eran andamiaje del gráfico, no datos del plan.</li>
+          <li>En el editor, <strong>📂 Abrir</strong> y elige el CSV. Verás el aviso <em>«Tareas importadas desde CSV»</em> con el número de filas, que es la comprobación rápida de que no se ha quedado ninguna fuera.</li>
+          <li>Abre <strong>Calendario laboral</strong> y marca el 9 y el 12 de octubre y el 8 de diciembre. Es lo mismo que hacía tu rango <code>$H$2:$H$5</code>, pero ahora lo aplica todo el plan, no solo las fórmulas donde te acordaste de ponerlo.</li>
+          <li>Doble clic en cada fila y rellena <strong>Después de (predecesoras)</strong>. Aquí es donde el plan gana lo que la hoja no podía tener: las Pruebas pueden depender a la vez de la Instalación y de la Migración, sin ningún <code>MAX()</code> escondido.</li>
+          <li>Marca <strong>Ruta crítica</strong>. Por primera vez el plan te dice qué tareas mandan sobre el 10 de diciembre.</li>
+          <li>Guarda una <strong>Línea base</strong> antes de arrancar, y usa <strong>Progreso</strong> en el panel de cada tarea en lugar de mantener una columna de porcentaje a mano.</li>
+          <li>Cuando la cooperativa pida el archivo de siempre, <strong>⬇ Exportar</strong> → <strong>📊 Excel (.xlsx)</strong> o <strong>📑 CSV (hoja de cálculo)</strong>. Vuelve a ser una hoja, pero calculada en otro sitio.</li>
+        </ol>
         <p>Usa Google Sheets cuando el plan sea pequeño y estático, o cuando los datos ya vivan en una hoja compartida. Cambia de herramienta en cuanto necesites dependencias, ruta crítica o un gráfico que se mantenga al día sin vigilancia.</p>
 
       <div class="callout">Si tu plan va a cambiar más de una vez, elige el método por el coste de mantenerlo, no por lo rápido que es montarlo. La función Cronograma se hace en dos minutos; un gráfico de barras apiladas con veinte tareas se rehace en veinte cada vez que se mueve una fecha.</div>

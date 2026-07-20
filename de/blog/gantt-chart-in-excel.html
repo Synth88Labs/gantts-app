@@ -90,7 +90,7 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>7 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>15 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
         <li><a href="#s1">Hat Excel einen Gantt-Diagrammtyp?</a></li>
@@ -100,10 +100,12 @@
         <li><a href="#s5">Schritt 4: Die Reihenfolge umkehren</a></li>
         <li><a href="#s6">Schritt 5: Datumsachse korrigieren</a></li>
         <li><a href="#s7">Schritt 6: Feinschliff</a></li>
-        <li><a href="#s8">Fortschritt und Abhängigkeiten nachrüsten</a></li>
-        <li><a href="#s9">Der Weg ohne Diagramm: bedingte Formatierung</a></li>
-        <li><a href="#s10">Vorlage statt Selbstbau</a></li>
-        <li><a href="#s11">Wo die Methode endet</a></li>
+        <li><a href="#s8">Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug</a></li>
+        <li><a href="#s9">Was Excel Ihnen gibt und was nicht</a></li>
+        <li><a href="#s10">Fortschritt und Abhängigkeiten nachrüsten</a></li>
+        <li><a href="#s11">Der Weg ohne Diagramm: bedingte Formatierung</a></li>
+        <li><a href="#s12">Vorlage statt Selbstbau</a></li>
+        <li><a href="#s13">Wo die Methode endet</a></li>
       </ol>
     </div>
 
@@ -136,6 +138,7 @@
           <li><strong>Rahmen ▸ Keine Linie</strong></li>
         </ul>
         <p>Die vorderen Segmente verschwinden, und jeder Dauerbalken schwebt an der Stelle, die seinem Startdatum entspricht. Genau in diesem Moment wird aus dem Balkendiagramm ein Gantt-Diagramm. Vergessen Sie den Rahmen nicht: Bleibt er stehen, sieht man weiterhin die Umrisse der unsichtbaren Segmente, und das Ergebnis wirkt unsauber.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Das unsichtbare Abstandssegment ist es, das jeden Dauerbalken auf sein Datum schiebt."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Woche 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Meilenstein</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Heute</text></svg><figcaption>Das unsichtbare Abstandssegment ist es, das jeden Dauerbalken auf sein Datum schiebt.</figcaption></figure>
       <h2 id="s5">Schritt 4: Die Reihenfolge umkehren</h2>
 <p>Excel zeichnet in Balkendiagrammen die erste Tabellenzeile ganz unten. Ihre Vorgangsliste steht also auf dem Kopf, und der letzte Vorgang steht oben.</p>
         <p>Klicken Sie auf die <strong>vertikale Achse</strong> mit den Vorgangsnamen, Rechtsklick, <strong>Achse formatieren</strong>, und setzen Sie unter <strong>Achsenoptionen</strong> das Häkchen bei <strong>Kategorien in umgekehrter Reihenfolge</strong>. Der erste Vorgang springt nach oben, und die Liste liest sich wieder wie Ihre Tabelle.</p>
@@ -152,19 +155,96 @@
           <li><strong>Phasen farblich trennen</strong>: Einzelne Punkte der Dauerreihe lassen sich getrennt einfärben, indem Sie zweimal langsam auf einen Balken klicken und nur diesen formatieren.</li>
           <li><strong>Meilensteine</strong> ergänzen Sie als zusätzliche Datenreihe mit dem Wert null, die Sie über <em>Diagrammtyp der Datenreihe ändern</em> in einen Punkt (XY) umwandeln und mit einer Rautenmarkierung versehen.</li>
         </ul>
-      <h2 id="s8">Fortschritt und Abhängigkeiten nachrüsten</h2>
+      <h2 id="s8">Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug</h2>
+<p>Die sechs Schritte oben sind Mechanik. Ob die Datei ein echtes Projekt überlebt, entscheidet sich an den Formeln — und daran, was mit ihnen passiert, wenn sich der Plan ändert.</p>
+      <p><strong>Hinweis zur Sprachversion.</strong> Alle Formeln hier sind für ein <strong>deutschsprachiges Excel</strong> geschrieben: deutsche Funktionsnamen und <strong>Semikolon</strong> als Argumenttrennzeichen. In einem englischsprachigen Excel heißen dieselben Funktionen <code>WORKDAY</code>, <code>WEEKDAY</code>, <code>AND</code> und <code>TODAY</code>, und getrennt wird mit Komma. Das Trennzeichen hängt zusätzlich an den Regions- und Sprachoptionen von Windows: Steht das Listentrennzeichen dort auf Komma, erwartet auch ein deutsches Excel Kommas. Wenn eine Formel unten mit <em>„Es liegt ein Fehler in der Formel vor“</em> abgelehnt wird, ist fast immer das die Ursache — tauschen Sie die Semikolons gegen Kommas, bevor Sie irgendetwas anderes suchen.</p>
+      <div class="worked">
+        <p><strong>Das Tabellenblatt.</strong> Die Umstellung des Onlineshops der Kaffeerösterei Hansen, Beginn Montag, 2. März 2026. Überschriften in Zeile 1, Vorgänge in den Zeilen 2 bis 7. Spalten: A Vorgang, B Start, C Ende, D Arbeitstage, E Balkenlänge. In <strong>H2:H6</strong> stehen die Feiertage — Karfreitag 3.4., Ostermontag 6.4., Tag der Arbeit 1.5., Christi Himmelfahrt 14.5. und Pfingstmontag 25.5. Nur Spalte D wird von Hand getippt, alles Übrige ist abgeleitet:</p>
+        <ul>
+          <li><strong>C2, das Ende</strong> — <code>=ARBEITSTAG(B2;D2-1;$H$2:$H$6)</code>. Das <code>-1</code> ist entscheidend: <code>ARBEITSTAG</code> zählt <em>vorwärts</em>, ein Vorgang, der montags beginnt und fünf Arbeitstage dauert, endet also bei <code>ARBEITSTAG(Mo;4)</code> am Freitag. Ohne das Minus eins läuft jeder Vorgang einen Tag zu lang.</li>
+          <li><strong>B3, der Start jedes folgenden Vorgangs</strong> — <code>=ARBEITSTAG(C2;1;$H$2:$H$6)</code>. Diese eine Formel ist der einzige Grund, warum das Blatt überhaupt neu rechnet.</li>
+          <li><strong>E2, die Zahl, die das Diagramm zeichnet</strong> — <code>=C2-B2+1</code>. Nicht <code>D2</code>. D sind Arbeitstage, die Diagrammachse dagegen ist ein Kalender einschließlich Wochenenden: Ein Vorgang mit 20 Arbeitstagen muss als 30-Tage-Balken gezeichnet werden. Diese beiden zu verwechseln ist der häufigste Grund, warum ein Excel-Gantt seiner eigenen Tabelle widerspricht.</li>
+        </ul>
+        <p>C2 und E2 nach unten bis Zeile 7 ziehen, B3 bis Zeile 7:</p>
+        <table>
+          <thead>
+            <tr><th>Zeile</th><th>A — Vorgang</th><th>B — Start</th><th>C — Ende</th><th>D — Arbeitstage</th><th>E — Balkenlänge</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>Analyse</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td><td>12</td></tr>
+            <tr><td>3</td><td>Konzept</td><td>Mo 16. März</td><td>Fr 27. März</td><td>10</td><td>12</td></tr>
+            <tr><td>4</td><td>Umsetzung</td><td>Mo 30. März</td><td>Di 28. April</td><td>20</td><td>30</td></tr>
+            <tr><td>5</td><td>Datenmigration</td><td>Mi 29. April</td><td>Do 21. Mai</td><td>15</td><td>23</td></tr>
+            <tr><td>6</td><td>Qualitätssicherung</td><td>Fr 22. Mai</td><td>Fr 5. Juni</td><td>10</td><td>15</td></tr>
+            <tr><td>7</td><td>Livegang</td><td>Mo 8. Juni</td><td>Mo 8. Juni</td><td>1</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p>Lesen Sie Spalte D gegen Spalte E: Die Umsetzung hat 20 Arbeitstage und einen 30 Kalendertage langen Balken. Die Differenz sind acht Wochenendtage <em>und zwei Feiertage</em> — Karfreitag und Ostermontag liegen mitten in diesem Vorgang. Genau dafür steht der Bereich <code>$H$2:$H$6</code> in der Formel. Ein Blatt ohne Feiertagsliste rechnet das Osterwochenende durch und verspricht einen Livegang, den niemand halten kann.</p>
+        <p><strong>Die Achse.</strong> Excel will für die Achsengrenzen serielle Zahlen, keine Datumswerte. Tippen Sie <code>=B2</code> in eine freie Zelle und formatieren Sie diese als <em>Standard</em>, um eine abzulesen: Der 2. März 2026 ist <strong>46083</strong>, der 8. Juni 2026 ist <strong>46181</strong>. Diese beiden Zahlen kommen in <em>Minimum</em> und <em>Maximum</em>, die Haupteinheit auf 7 für Wochenraster.</p>
+        <p><strong>Jetzt ändern Sie etwas.</strong> Das Konzept läuft drei Tage über. Sie ändern eine einzige Zelle — D3 von 10 auf 13 — und die Kette rechnet sich neu: Das Konzept endet Mi 1. April, die Umsetzung läuft Do 2. April bis Mo 4. Mai, die Datenmigration Di 5. Mai bis Mi 27. Mai, die Qualitätssicherung Do 28. Mai bis Mi 10. Juni, der Livegang fällt auf <strong>Do 11. Juni</strong>. Drei Tage hinein, drei Tage heraus. Das ist das Blatt von seiner besten Seite, und es ist ehrlich nützlich.</p>
+        <p><strong>Und das geht dabei kaputt:</strong></p>
+        <ol>
+          <li><strong>Der letzte Balken läuft aus dem Diagramm.</strong> Der Livegang ist auf den 11. Juni gewandert, seriell <strong>46184</strong> — hinter der 46181, die Sie als Achsenmaximum fest eingetragen haben. Der Balken wird abgeschnitten, und nichts warnt Sie. Jede Terminänderung bedeutet, eine serielle Zahl neu abzulesen und eine Achsengrenze neu zu tippen.</li>
+          <li><strong>Eine eingefügte Zeile hängt nur halb im Plan.</strong> Ergänzen Sie zwischen Konzept und Umsetzung eine Zeile „Freigabe durch die Geschäftsführung“: Excel erweitert zwar den Datenbereich des Diagramms, aber die neue Zeile kommt ohne Formeln, und die alte Umsetzungszeile zeigt weiterhin auf das Konzept. Übersehen Sie das, liest sich der Plan richtig und terminiert falsch. Hängen Sie die Zeile stattdessen unter Zeile 7 an, fällt sie aus dem Bereich und erscheint überhaupt nicht.</li>
+          <li><strong>Ein zweiter Vorgänger hat keinen Platz.</strong> Braucht die Qualitätssicherung sowohl die Umsetzung als auch die Datenmigration, lautet die ehrliche Formel <code>=ARBEITSTAG(MAX(C4;C5);1;$H$2:$H$6)</code>. Sie funktioniert — aber im Diagramm zeigt nichts diese Verknüpfung, und die nächste Person sieht nur ein Datum. Kommt eine fünftägige Freigabefrist als Zeitabstand hinzu, wird daraus <code>=ARBEITSTAG(C3;1+5;$H$2:$H$6)</code>: eine nackte 5 in einer Formel, nirgends beschriftet.</li>
+        </ol>
+        <p>Spalte B als Formel kauft Ihnen die Neuberechnung entlang <em>einer</em> Kette. Sie kauft Ihnen kein Netz. Nichts in dieser Datei kann Ihnen sagen, welches Vorgangspaar den Endtermin bestimmt — weil nichts darin weiß, dass die beiden zusammenhängen.</p>
+      </div>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="Ein Zeitabstand ist echte Terminzeit. In einer Tabelle ist er eine Zahl, die in einer Formel vergraben liegt."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ende → Anfang + Wartezeit</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Wartezeit 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A + 3d</text></svg><figcaption>Ein Zeitabstand ist echte Terminzeit. In einer Tabelle ist er eine Zahl, die in einer Formel vergraben liegt.</figcaption></figure>
+      <h2 id="s9">Was Excel Ihnen gibt und was nicht</h2>
+<p>Beide Verfahren zeichnen ein durchaus vorzeigbares Bild eines Terminplans. Terminiert wird von keinem der beiden etwas. Dieser Unterschied geht leicht verloren, sobald die Balken richtig aussehen — deshalb hier ausdrücklich:</p>
+      <table>
+        <thead>
+          <tr><th>Fähigkeit</th><th>Gestapelte Balken</th><th>Bedingte Formatierung</th><th>Echte Terminplanung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wochenenden und Feiertage ausgenommen</td><td>Ja, über ARBEITSTAG</td><td>Ja, über ARBEITSTAG</td><td>Ja, eingebaut</td></tr>
+          <tr><td>Eine einzelne EA-Kette rechnet neu</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja</td></tr>
+          <tr><td>Sichtbare Verknüpfungspfeile</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Zwei Vorgänger an einem Vorgang</td><td>Nur als verstecktes MAX()</td><td>Nur als verstecktes MAX()</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungsarten AA, EE und AE</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Beschrifteter Zeitabstand an einer Verknüpfung</td><td>Nein — eine nackte +5 in der Formel</td><td>Nein — eine nackte +5 in der Formel</td><td>Ja</td></tr>
+          <tr><td>Kritischer Pfad</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Gesamtpuffer je Vorgang</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Auslastung und Überlastungswarnung</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Basisplan und Abweichung</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Gespeichert und verglichen</td></tr>
+          <tr><td>Übersteht das Einfügen einer Zeile</td><td>Formeln müssen nachgetragen werden</td><td>Meistens</td><td>Ja</td></tr>
+          <tr><td>Übersteht das Sortieren der Zeilen</td><td>Nein — Bezüge folgen der Position</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Meilensteine als Rauten</td><td>Eigene Markierungsreihe von Hand</td><td>Eigene Regel von Hand</td><td>Ja</td></tr>
+        </tbody>
+      </table>
+      <p>Das ist eine konkrete Aussage, keine Abwertung: Ein gestapeltes Balkendiagramm ist die <em>Zeichnung</em> eines Terminplans, den Sie anderswo ausgerechnet haben. Für ein Dutzend Vorgänge, die ungefähr hintereinander liegen, reicht das, und die Tabellenkalkulation ist dann das richtige Werkzeug. Nur sind die mittleren Zeilen dieser Tabelle genau das, wonach im Statustermin gefragt wird — und darauf kann die Datei nichts antworten.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Nur der längste Weg durch das Netz bestimmt den Endtermin — und finden kann ihn nur eine Terminrechnung."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kritischer Pfad: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Puffer (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Dauer: 12</text></svg><figcaption>Nur der längste Weg durch das Netz bestimmt den Endtermin — und finden kann ihn nur eine Terminrechnung.</figcaption></figure>
+      <h2 id="s10">Fortschritt und Abhängigkeiten nachrüsten</h2>
 <p><strong>Fortschritt</strong> lässt sich mit einer weiteren Hilfsspalte darstellen. Legen Sie eine Spalte <em>Fertig in Prozent</em> an und daneben eine Spalte <em>Erledigt</em> mit <code>=Dauer*Prozent</code>. Diese neue Spalte fügen Sie über <em>Daten auswählen ▸ Hinzufügen</em> als dritte gestapelte Reihe ein und färben sie dunkler als die Dauerreihe. Damit die Summe stimmt, muss die Dauerreihe dann allerdings nur noch den Restanteil enthalten — andernfalls werden die Balken zu lang. Der praktikablere Weg ist deshalb, die Dauer in „Erledigt“ und „Rest“ aufzuteilen und beide zu stapeln.</p>
         <p><strong>Abhängigkeiten</strong> kennt Excel nicht. Es gibt keine Pfeile zwischen Balken, und das Verschieben eines Vorgangs verschiebt keinen anderen. Der übliche Behelf ist, das Startdatum eines Nachfolgers als Formel auf das Ende des Vorgängers zu setzen — etwa <code>=C2</code> oder <code>=C2+1</code>. Damit läuft eine Änderung immerhin die Spalte hinunter. Sichtbare Verknüpfungen entstehen dadurch nicht, verzweigte Ketten mit mehreren Vorgängern werden schnell unlesbar, und Puffer oder ein kritischer Pfad lassen sich so nicht ermitteln.</p>
-      <h2 id="s9">Der Weg ohne Diagramm: bedingte Formatierung</h2>
+      <h2 id="s11">Der Weg ohne Diagramm: bedingte Formatierung</h2>
 <p>Wer sich mit Diagrammobjekten nicht anfreunden mag, baut das Gantt-Diagramm direkt in die Zellen. Legen Sie in der Kopfzeile ab Spalte F fortlaufende Datumswerte an — eine Spalte je Tag oder je Woche — und lassen Sie Vorgang, Start und Ende links stehen.</p>
-        <p>Markieren Sie anschließend das gesamte Kalenderraster und wählen Sie <strong>Start ▸ Bedingte Formatierung ▸ Neue Regel ▸ Formel zur Ermittlung der zu formatierenden Zellen verwenden</strong>. Als Formel dient <code>=UND(F$1&gt;=$B2; F$1&lt;=$C2)</code>, als Format eine Hintergrundfarbe. Jede Zelle, deren Datum in den Zeitraum des Vorgangs fällt, wird eingefärbt.</p>
+        <p>Für den Shop der Kaffeerösterei Hansen heißt das konkret: <code>=B2</code> in G1, <code>=G1+1</code> in H1, nach rechts gezogen über die Projektdauer — der 2. März bis 8. Juni sind einschließlich 99 Tage, also bis Spalte DC. Formatieren Sie die Zeile als <code>TTT</code> und ziehen Sie die Spalten auf etwa 20 Pixel schmal.</p>
+        <p>Markieren Sie anschließend <strong>G2:DC7</strong>, wobei <strong>G2</strong> die aktive Zelle sein muss — das ist wichtig, weil die Formel aus Sicht der aktiven Zelle geschrieben und für alle anderen versetzt angewendet wird. Unter <strong>Start ▸ Bedingte Formatierung ▸ Neue Regel ▸ Formel zur Ermittlung der zu formatierenden Zellen verwenden</strong> legen Sie drei Regeln in dieser Reihenfolge an (deutsche Funktionsnamen, Semikolon als Trennzeichen):</p>
+        <ol>
+          <li><code>=UND(G$1&gt;=$B2;G$1&lt;=$C2)</code> — Ihre Balkenfarbe. Die gemischten Bezüge sind der ganze Trick: <code>G$1</code> fixiert die Zeile, damit jede Spalte ihr eigenes Datum liest, <code>$B2</code> fixiert die Spalte, damit jede Zeile die Termine ihres eigenen Vorgangs liest.</li>
+          <li><code>=WOCHENTAG(G$1;2)&gt;5</code> — hellgrau. Der Rückgabetyp 2 zählt Montag als 1 bis Sonntag als 7, <code>&gt;5</code> trifft also genau Samstag und Sonntag. Der Standardtyp 1 beginnt am Sonntag und würde die falschen zwei Tage einfärben — ein Fehler, der in einem Plan mit deutscher Wochenzählung sofort auffällt.</li>
+          <li><code>=G$1=HEUTE()</code> — ein farbiger linker Rahmen, und Sie haben eine Heute-Linie.</li>
+        </ol>
+        <p>Die Regeln werden von oben nach unten ausgewertet, und die erste Füllung gewinnt. Die Balkenregel muss deshalb über der Wochenendregel stehen, sonst bekommt jeder Balken samstags graue Streifen. Feiertage lassen sich als vierte Regel über einen <code>ZÄHLENWENN</code>-Vergleich mit derselben Liste <code>$H$2:$H$6</code> ergänzen.</p>
         <p>Der Vorteil: Das Raster aktualisiert sich bei jeder Terminänderung von selbst, es druckt sauber und lässt sich beliebig um Spalten erweitern. Der Nachteil: Bei mehr als einem Quartal in Tagesspalten wird das Blatt sehr breit, und Meilensteine, Fortschritt und Farbcodes brauchen jeweils eine eigene zusätzliche Regel.</p>
-      <h2 id="s10">Vorlage statt Selbstbau</h2>
+      <h2 id="s12">Vorlage statt Selbstbau</h2>
 <p>Wenn Sie nur eine funktionierende Datei brauchen, sparen Sie sich die sechs Schritte: Unsere <a href="/de/templates/excel.html">kostenlose Excel-Vorlage</a> enthält die Vorgangstabelle, die Hilfsspalten, das gestapelte Diagramm mit unsichtbarer erster Reihe, die umgekehrte Achsenreihenfolge und ein formatiertes Datumsraster bereits fertig eingerichtet. Sie tragen Vorgänge und Termine ein, das Diagramm folgt. In der <a href="/de/templates.html">Vorlagenübersicht</a> finden Sie außerdem branchenspezifische Varianten für Bau, Marketing und Softwareentwicklung.</p>
-      <h2 id="s11">Wo die Methode endet</h2>
+      <h2 id="s13">Wo die Methode endet</h2>
 <p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung. Ab da beschreibt die Datei einen Plan, den es nicht mehr gibt.</p>
         <p>Ebenfalls nicht vorhanden: der <strong>kritische Pfad</strong>, die Berechnung von <strong>Puffer</strong>, ein echter <strong>Basisplan</strong> zum Vergleich von Soll und Ist sowie jede Form von Ressourcenauslastung. Dazu kommt der Pflegeaufwand am Diagramm selbst: Jeder neue Vorgang bedeutet, den Datenbereich zu erweitern und gegebenenfalls Farben nachzuziehen.</p>
         <p>Bis etwa zwanzig Vorgänge und bei einem Plan, der sich kaum ändert, ist Excel eine vernünftige Wahl — besonders, wenn die Daten ohnehin schon in einer Tabelle liegen. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart. <a href="/de/app.html">gantts.app</a> rechnet Verschiebungen selbst, zeichnet Verknüpfungen als Pfeile, hebt den kritischen Pfad hervor und exportiert das Ergebnis auf Wunsch wieder als XLSX — ohne Konto und ohne Installation.</p>
+        <p>Derselbe Shop-Umzug ohne eine einzige Formel, mit den Schaltflächen so beschriftet, wie sie tatsächlich heißen:</p>
+        <ol>
+          <li>Öffnen Sie <strong>✨ In Gantt einfügen</strong> und fügen Sie die sechs Zeilen ein — <em>Datenmigration (15d) nach Umsetzung</em>, am Ende <em>Livegang!</em> Es gibt keine Hilfsspalten, keine Balkenlänge und keine serielle Zahl.</li>
+          <li>Tragen Sie unter <strong>Kalender</strong> Karfreitag, Ostermontag, den 1. Mai, Christi Himmelfahrt und Pfingstmontag ein. Das ersetzt den Bereich <code>$H$2:$H$6</code> — nur muss ihn hier keine Formel kennen.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet <strong>Nach (Vorgänger)</strong>. Hier tragen Sie <em>zwei</em> Vorgänger an der Qualitätssicherung ein, statt ein <code>MAX()</code> in einer Formel zu verstecken.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>. Ändern Sie danach die Dauer des Konzepts von 10 auf 13 Tage: Der Livegang wandert auf den 11. Juni, und der Balken läuft nicht aus dem Diagramm, weil es keine fest eingetippte Achsengrenze gibt.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>. Das ist die Zeile aus der Vergleichstabelle, die Excel gar nicht anbieten kann.</li>
+          <li>Speichern Sie <strong>◳ Basisplan</strong>, bevor die Umsetzung beginnt, statt die Spalten B und C in ein zweites Tabellenblatt zu kopieren.</li>
+          <li>Zurück in die Tabellenwelt kommen Sie über <strong>⬇ Export ▸ 📊 Excel (.xlsx)</strong> — Sie erhalten die Datei, ohne den gestapelten Balken je von Hand gebaut zu haben. Ebenfalls dort: <strong>📄 PDF-Dokument</strong>, <strong>📑 CSV (Tabelle)</strong> und <strong>📽 PowerPoint (.pptx)</strong>.</li>
+        </ol>
 
       <div class="callout">Der entscheidende Unterschied ist nicht das Aussehen, sondern das Rechnen. Ein Excel-Gantt sieht richtig aus, aktualisiert sich aber nicht. Sobald sich Termine ändern — und sie ändern sich immer — wird aus einem Plan eine Zeichnung.</div>
 

@@ -111,14 +111,16 @@
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › Best Free Gantt Chart Software</div>
     <h1>Best Free Gantt Chart Software (2026)</h1>
     <p class="post-meta"><span>By the gantts.app team</span><span>Updated July 14, 2026</span><span>11 min read</span></p>
-    <p class="lead">"Free" is the most abused word in project software. Many tools that rank for "free Gantt chart" are actually freemium or a 14-day trial. This is an honest breakdown of nine options — what's genuinely free, what needs a sign up, and which include export and critical path. We build one of these tools, so we've flagged that plainly and kept the descriptions of the others accurate.</p>
+    <p class="lead">"Free" is the most abused word in project software. Many tools ranking for "free Gantt chart" are freemium or a 14-day trial. This is an honest breakdown of nine options — what's genuinely free, what needs a sign up, and which include export and critical path — plus the criteria and tests that should actually decide it. We build one of these tools, so we've flagged that plainly.</p>
 
     <div class="toc"><strong>On this page</strong>
       <ol>
         <li><a href="#what-free-means">What "free" really means</a></li>
         <li><a href="#comparison">Comparison table</a></li>
+        <li><a href="#criteria">The criteria that actually decide it</a></li>
         <li><a href="#tools">The 9 tools reviewed</a></li>
         <li><a href="#no-signup">Free tools that need no sign up</a></li>
+        <li><a href="#evaluate">A worked evaluation</a></li>
         <li><a href="#how-to-choose">How to choose</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
@@ -130,16 +132,16 @@
     </figure>
     <div class="prose">
       <h2 id="what-free-means">What "free" really means (free vs freemium vs trial)</h2>
-      <p>Before comparing tools, it helps to separate three very different business models that all get marketed as "free":</p>
+      <p>Three very different business models all get marketed as "free":</p>
       <ul>
-        <li><strong>Free</strong> — no cost, no expiry, no feature held hostage. Open-source apps and genuinely free web tools fall here.</li>
-        <li><strong>Freemium</strong> — a limited plan that's free forever, but caps something (projects, tasks, collaborators) or paywalls key features like export or the critical path. You can use it for real work only if you stay inside the caps.</li>
-        <li><strong>Free trial</strong> — full access for a fixed window (often 14–30 days), after which you must pay to keep using it. Useful for evaluation, not a long-term free solution.</li>
+        <li><strong>Free</strong> — no cost, no expiry, no feature held hostage. Open-source apps and genuinely free web tools.</li>
+        <li><strong>Freemium</strong> — free forever, but caps something (projects, tasks, collaborators) or paywalls export or the critical path. Usable for real work only inside the caps.</li>
+        <li><strong>Free trial</strong> — full access for 14–30 days, then you pay. Useful for evaluation, not a long-term answer.</li>
       </ul>
-      <p>All three are legitimate. The problem is only when a trial or a tightly-capped freemium plan is presented as simply "free." Below, we label each tool by which model it actually uses.</p>
+      <p>All three are legitimate. The problem is only when a trial or a tightly-capped plan is presented as simply "free."</p>
 
       <h2 id="comparison">Comparison at a glance</h2>
-      <p>Plan limits change over time, so treat the free-plan figures as indicative and confirm on each vendor's current pricing page.</p>
+      <p>Plan limits change, so treat these figures as indicative and confirm on each vendor's current pricing page.</p>
       <table>
         <thead>
           <tr><th>Tool</th><th>Free plan limits</th><th>Sign-up required?</th><th>Export</th><th>Critical path</th></tr>
@@ -158,54 +160,137 @@
 
       <div class="callout"><strong>Want the truly-free, no-login option?</strong> <a href="/app.html">Open the gantts.app Gantt maker</a> — unlimited tasks, automatic critical path, and export to PDF, PNG, Excel and PowerPoint. No account, nothing to install.</div>
 
+      <h2 id="criteria">The criteria that actually decide it</h2>
+      <p>Feature lists are a poor guide, because every tool claims every feature. What separates them is <em>behaviour under load</em>: what happens when a date moves, when the plan gets big, when an outsider needs to read it, and when you stop paying. Each criterion below is testable in minutes, and each has a specific failure mode.</p>
+      <table>
+        <thead>
+          <tr><th>Criterion</th><th>Why it decides the outcome</th><th>How to test it in five minutes</th><th>What failure looks like</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Does it recalculate?</strong></td>
+            <td>Separates a scheduling engine from a drawing tool. Real dependencies ripple; decorative ones leave you re-dragging bars by hand.</td>
+            <td>Link three tasks, push the first out by four days.</td>
+            <td>Tasks two and three do not move. You own the maintenance forever.</td>
+          </tr>
+          <tr>
+            <td><strong>Critical path &amp; float</strong></td>
+            <td>Tells you which tasks control the deadline. Often the first thing moved behind a paywall, because people will pay for it.</td>
+            <td>Look for a float column, not just coloured bars. Change a duration and see whether the highlighted path moves.</td>
+            <td>A "critical path" that is a colour you applied by hand, or an upsell at the moment you need it.</td>
+          </tr>
+          <tr>
+            <td><strong>Export a stranger can open</strong></td>
+            <td>Whoever signs off will not create an account to read it. PDF, Excel and PowerPoint travel anywhere; a share link does not.</td>
+            <td>Export, then open it on a device that is not logged in.</td>
+            <td>Export is paid, watermarked, or only a link prompting a sign-up.</td>
+          </tr>
+          <tr>
+            <td><strong>Scale</strong></td>
+            <td>Free tiers are sized for demos. Real plans run 150–300 rows; both the cap and rendering speed matter.</td>
+            <td>Paste 200 rows and scroll a timeline 26 weeks wide.</td>
+            <td>A hard cap near 60 tasks, or scrolling that stutters once the chart is wide.</td>
+          </tr>
+          <tr>
+            <td><strong>Exit cost</strong></td>
+            <td>Nobody asks until it matters. The plan is yours only if you can get it out in a format something else reads.</td>
+            <td>Export to CSV and re-import elsewhere. Check dependencies and hierarchy survive, not just names.</td>
+            <td>Export is read-only PDF, dependencies are dropped, or data sits behind a lapsed subscription.</td>
+          </tr>
+          <tr>
+            <td><strong>Where the data lives</strong></td>
+            <td>Decides whether you need approval to use it at all. Client and public-sector work often rules out third-party servers.</td>
+            <td>Check whether it works with the network off, and what the privacy policy says is stored.</td>
+            <td>Learning at review time that the schedule sits somewhere your contract does not permit.</td>
+          </tr>
+        </tbody>
+      </table>
+      <figure class="fig fig-inline" data-fig="tools" data-cap="Spreadsheets, design tools and scheduling engines look alike on screen. They diverge the moment a date changes."><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="Spreadsheets, design tools and scheduling engines look alike on screen. They diverge the moment a date changes."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tasks</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Critical path</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Today</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Slides</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Browser</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>Spreadsheets, design tools and scheduling engines look alike on screen. They diverge the moment a date changes.</figcaption></figure>
+      <p>Only two of these are features in the marketing sense. The rest you can only observe by using the thing — which is why fifteen minutes with a realistic plan beats an afternoon of comparison articles, this one included.</p>
+
       <h2 id="tools">The 9 tools, reviewed honestly</h2>
 
+      <p>Read these as categories rather than a league table — the criteria above are what should decide it.</p>
+
       <h3 id="gantt-design">1. gantts.app — free, no login</h3>
-      <p>Full disclosure: this is our tool. It's a browser-based Gantt maker that's <strong>fully free with no sign up or login</strong>, no task or project caps, automatic <a href="/blog/critical-path-method.html">critical path</a>, dependencies, milestones, and one-click export to <strong>PDF, PNG, Excel and PowerPoint</strong>. Your data stays in your browser. The trade-off is that it's focused on Gantt planning and export rather than being a full work-management suite with time tracking, chat and resource billing — if you need those, a heavier platform may suit you better. Best for: anyone who wants a real Gantt chart fast, free, without an account.</p>
+      <p>Full disclosure: this is our tool. Browser-based, <strong>fully free with no sign up</strong>, no caps, automatic <a href="/blog/critical-path-method.html">critical path</a>, dependencies, milestones, and export to <strong>PDF, PNG, Excel and PowerPoint</strong>. Data stays in your browser. The trade-off: it does planning and export, not time tracking or resource billing.</p>
 
       <h3 id="ganttproject">2. GanttProject — open-source desktop</h3>
-      <p>GanttProject is a mature, free, open-source desktop application (Windows, macOS, Linux). It supports tasks, dependencies, the critical path, resource assignment, and export to PDF, PNG and CSV. Because it's a download rather than a web app, it works offline and there's no account — but the interface feels dated and there's no built-in cloud sync. Best for: users who prefer installed software and open-source licensing.</p>
+      <p>A mature, free, open-source desktop app (Windows, macOS, Linux) with dependencies, critical path, resource assignment and PDF/PNG/CSV export. Works offline, no account — but the interface feels dated and there is no cloud sync.</p>
 
       <h3 id="online-tools">3. OnlineGantt &amp; other small free web tools</h3>
-      <p>A handful of lightweight web tools (such as OnlineGantt and similar single-purpose sites) let you sketch a Gantt chart in the browser and export an image or PDF. They're handy for a quick one-off chart and some don't require an account, but feature depth varies widely — many lack a reliable critical path, robust dependencies, or spreadsheet export. Best for: fast, disposable charts. Verify each tool's current limits before relying on it.</p>
+      <p>Lightweight single-purpose sites that sketch a chart and export an image or PDF, some without an account. Depth varies widely — many lack a reliable critical path, robust dependencies or spreadsheet export. Best for: fast, disposable charts.</p>
 
       <h3 id="teamgantt">4. TeamGantt — capable, but capped free plan</h3>
-      <p>TeamGantt is a polished, collaboration-focused Gantt tool. Its free plan is usable but limited — typically around <strong>one project and roughly 60 tasks</strong> for a small number of users, with the critical path and richer export reserved for paid tiers. It requires an account. Best for: small teams evaluating a paid collaboration tool who fit within the free caps.</p>
+      <p>Polished and collaboration-focused. The free plan is usable but limited, typically around <strong>one project and roughly 60 tasks</strong>, with critical path and richer export on paid tiers. Account required. Best for: small teams evaluating a paid tool who fit inside the caps.</p>
 
       <h3 id="ganttpro">5. GanttPRO — trial-based</h3>
-      <p>GanttPRO is a well-designed commercial Gantt tool with strong scheduling, workload and collaboration features. It offers a <strong>free trial</strong> rather than a free plan, so it's paid once the trial ends, and it requires an account. Best for: teams ready to buy who want to trial a dedicated Gantt platform first.</p>
+      <p>A well-designed commercial tool with strong scheduling, workload and collaboration features. It offers a <strong>free trial</strong>, not a free plan, so it is paid once the trial ends. Best for: teams ready to buy.</p>
 
       <h3 id="instagantt">6. Instagantt — freemium</h3>
-      <p>Instagantt is a Gantt tool known for its Asana integration and clean timelines. It's <strong>freemium</strong>: a limited free tier exists, but many features (advanced export, critical path, more projects) sit on paid plans, and it requires an account. Best for: Asana users who want a connected timeline view.</p>
+      <p>Known for its Asana integration and clean timelines. <strong>Freemium</strong>: a limited free tier exists, but advanced export, critical path and extra projects sit on paid plans.</p>
 
       <h3 id="canva">7. Canva — design-first</h3>
-      <p>Canva can produce a nice-looking Gantt <em>graphic</em> from its templates, exportable to PNG or PDF on the free tier (account required). But it's a design tool, not a scheduling engine — there are no real dependencies, no automatic rescheduling, and no critical path; the bars are shapes you place by hand. Best for: a polished, static Gantt visual for a slide or report where accuracy of scheduling isn't the point.</p>
+      <p>Produces a good-looking Gantt <em>graphic</em> from templates, exportable to PNG or PDF free. But it is a design tool, not a scheduling engine — no dependencies, no rescheduling, no critical path; the bars are shapes you place by hand. It fails test 1 by design. Best for: a static visual for a slide.</p>
 
       <h3 id="ms-project">8. Microsoft Project — powerful but paid</h3>
-      <p>Microsoft Project is the enterprise standard for serious scheduling, with deep dependency logic, resource leveling, baselines and critical path. It has <strong>no free plan</strong> — it's subscription or license-based and requires a Microsoft account. Best for: large organizations with complex programs and the budget to match.</p>
+      <p>The enterprise standard: deep dependency logic, resource leveling, baselines, critical path. <strong>No free plan</strong> — subscription or license-based. Best for: large organizations with the budget to match.</p>
 
       <h3 id="spreadsheets">9. Excel &amp; Google Sheets — the DIY option</h3>
-      <p>You already have a spreadsheet, and you can bend it into a Gantt chart with a stacked bar chart or the Sheets Timeline view. It's free if you own the software, but there are no dependencies, no critical path, and lots of manual upkeep. See our <a href="/blog/gantt-chart-in-excel.html">Excel guide</a> and <a href="/blog/gantt-chart-in-google-sheets.html">Google Sheets guide</a>. Best for: tiny, static plans where the data already lives in a sheet.</p>
+      <p>You can bend a stacked bar chart or the Sheets Timeline view into a Gantt. Free if you own the software, but no dependencies, no critical path, constant manual upkeep. See our <a href="/blog/gantt-chart-in-excel.html">Excel guide</a> and <a href="/blog/gantt-chart-in-google-sheets.html">Sheets guide</a>. Best for: small, static plans.</p>
 
       <h2 id="no-signup">Free tools that need no sign up</h2>
-      <p>If avoiding an account is a priority — for privacy, speed, or just to test an idea — the field narrows quickly. The options that let you build a Gantt chart <strong>without creating an account</strong> are:</p>
+      <p>If avoiding an account matters — for privacy, speed, or just to test an idea — the field narrows fast. Options that let you build a chart <strong>without an account</strong>:</p>
       <ul>
-        <li><strong>gantts.app</strong> — open the site and start immediately; no account, and your plan is stored in your own browser. Includes critical path and full export.</li>
-        <li><strong>GanttProject</strong> — no account, but you download and install a desktop app rather than working in the browser.</li>
-        <li><strong>Some small web tools</strong> — a few let you export without signing up, though features are basic; confirm before you rely on one.</li>
+        <li><strong>gantts.app</strong> — open the site and start; the plan is stored in your own browser, with critical path and full export.</li>
+        <li><strong>GanttProject</strong> — no account, but you install a desktop app rather than working in the browser.</li>
+        <li><strong>Some small web tools</strong> — a few export without signing up, though features are basic.</li>
       </ul>
-      <p>Most of the polished web platforms — TeamGantt, GanttPRO, Instagantt, Canva — require an account before you can do anything. That's a reasonable choice for them; it's just worth knowing which side of the line each tool sits on.</p>
+      <p>Most polished web platforms require an account before you can do anything. That is a reasonable choice for them; it is just worth knowing which side of the line each sits on.</p>
+
+      <h2 id="evaluate">A worked evaluation: one real plan, four tests</h2>
+      <p>Criteria are easy to nod along to, so here is a specific job run through them. The point is not which tool wins — it is that four tests, taking twenty minutes, eliminate most of a shortlist before you invest anything.</p>
+      <div class="worked">
+        <p><strong>The job.</strong> An office relocation: <strong>186 tasks</strong> across six workstreams (lease, fit-out, IT, furniture, comms, move weekend), running <strong>22 weeks</strong> to a handover date fixed by the lease, and a monthly steering group of six who will not create accounts to read a schedule. Tooling budget: nothing.</p>
+
+        <p><strong>Test 1 — does it recalculate?</strong> Build the smallest slice with real logic in it: <em>survey → design → council approval → fit-out → IT install → handover</em>. Then push council approval out by <strong>10 days</strong>.</p>
+        <ul>
+          <li>A scheduling engine moves fit-out, IT install and handover 10 days each, and flags that handover has broken the lease date.</li>
+          <li>A drawing tool moves only the bar you dragged. The other five describe a schedule that cannot happen.</li>
+        </ul>
+        <p>On a 186-task plan this is the whole ballgame. Approval will slip, and without recalculation every slip is an hour of manual re-dragging by someone who will miss one. That test alone removes most design-first and template-based options, including a spreadsheet Gantt.</p>
+        <figure class="fig fig-inline" data-fig="bars" data-cap="One date moves and everything downstream follows. On a drawing tool, only the bar you dragged moves — and the plan quietly stops being true."><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="One date moves and everything downstream follows. On a drawing tool, only the bar you dragged moves — and the plan quietly stops being true."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Week 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Milestone</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Today</text></svg><figcaption>One date moves and everything downstream follows. On a drawing tool, only the bar you dragged moves — and the plan quietly stops being true.</figcaption></figure>
+
+        <p><strong>Test 2 — can the steering group open it?</strong> Export, then open the file on a device that is not logged in. <strong>PDF or PNG</strong> means everyone reads it and nobody edits it; <strong>Excel</strong> is what the finance member will re-cut; a <strong>share link</strong> fails if it asks the viewer to sign up, because six accounts to read one chart is six reasons the update goes unread.</p>
+        <p>Check free-tier exports for watermarks and page limits. A PDF that is free but stamped is not usable in a board pack, and you find that out the evening before.</p>
+
+        <p><strong>Test 3 — does it survive 186 rows?</strong> Do not test with eight tasks. Paste in a couple of hundred and scroll.</p>
+        <ul>
+          <li><strong>Caps first.</strong> A free tier of roughly 60 tasks fails outright at 186 — and the cap bites when the plan is half-built and you are committed.</li>
+          <li><strong>Then rendering.</strong> 22 weeks at day resolution is a wide chart. Some tools stutter, some collapse the outline on every edit, some lose your scroll position.</li>
+          <li><strong>Then hierarchy.</strong> Six workstreams means grouping — check summary bars roll up dates from their children rather than being another bar you maintain.</li>
+        </ul>
+
+        <p><strong>Test 4 — what happens if you stop?</strong> Assume you drop the tool in nine months, or a free tier gets re-tiered mid-project. Both are ordinary.</p>
+        <ul>
+          <li>Export to <strong>CSV or Excel</strong> and re-import elsewhere. Task names survive; <strong>dependencies and hierarchy get dropped</strong>. Re-linking 186 tasks by hand is a rebuild, not a migration.</li>
+          <li>Check whether export is itself paid. A free plan you cannot export from is a plan you cannot leave.</li>
+          <li>If data is local to your browser the risk inverts: nothing can be revoked, but clearing site data deletes it. Export at every milestone.</li>
+        </ul>
+
+        <p><strong>What the tests conclude.</strong> Not a winner — a category. This job needs a real dependency engine, no task cap, unwatermarked export and a portable format. That rules out design tools (test 1), most capped free tiers (test 3) and anything paywalling export (tests 2 and 4). What remains is genuinely free web tools and open-source desktop apps; choosing between those comes down to whether you would rather install software.</p>
+      </div>
 
       <h2 id="how-to-choose">How to choose</h2>
-      <p>Match the tool to what you actually need:</p>
+      <p>Match the tool to the need:</p>
       <ul>
-        <li><strong>Just need a Gantt chart fast, free, with export?</strong> Use <a href="/app.html">gantts.app</a> — no account, critical path and Excel/PPT export included.</li>
-        <li><strong>Prefer installed, offline, open-source software?</strong> GanttProject.</li>
-        <li><strong>Building toward a paid team platform and fit the free caps?</strong> TeamGantt or Instagantt free tiers.</li>
-        <li><strong>Enterprise program management with resource leveling?</strong> Microsoft Project or GanttPRO (paid).</li>
-        <li><strong>Only need a static picture for a slide?</strong> Canva, or export a PNG from gantts.app.</li>
+        <li><strong>A Gantt chart fast, free, with export?</strong> <a href="/app.html">gantts.app</a> — no account, critical path and Excel/PPT export.</li>
+        <li><strong>Installed, offline, open-source?</strong> GanttProject.</li>
+        <li><strong>Building toward a paid team platform, inside the caps?</strong> A freemium tier.</li>
+        <li><strong>Enterprise programs with resource leveling?</strong> A paid platform.</li>
+        <li><strong>Only a static picture for a slide?</strong> A design tool, or a PNG export.</li>
       </ul>
-      <p>Whatever you pick, decide up front whether you need <strong>dependencies</strong>, a <strong>critical path</strong>, and <strong>real export</strong> — those three are exactly where "free" plans most often disappoint. If they matter, start with a tool that includes them for free. New to the concept? Read <a href="/blog/what-is-a-gantt-chart.html">what is a Gantt chart</a>, then <a href="/app.html">try building one</a>, or browse <a href="/templates.html">free templates</a> to start from a ready-made plan.</p>
+      <p>Whatever you pick, decide up front whether you need <strong>dependencies</strong>, a <strong>critical path</strong> and <strong>real export</strong> — the three places "free" plans most often disappoint. New to the concept? Read <a href="/blog/what-is-a-gantt-chart.html">what is a Gantt chart</a>, then <a href="/app.html">try building one</a>, or browse <a href="/templates.html">free templates</a>.</p>
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">

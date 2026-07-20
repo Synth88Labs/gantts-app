@@ -90,18 +90,19 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>7 min de leitura</span></p>
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>13 min de leitura</span></p>
     <div class="toc"><strong>Nesta página</strong>
       <ol>
         <li><a href="#s1">Caminho 1: barras empilhadas</a></li>
         <li><a href="#s2">Caminho 2: a visualização Linha do tempo</a></li>
         <li><a href="#s3">Caminho 3: formatação condicional</a></li>
-        <li><a href="#s4">Deixar o cronograma legível</a></li>
-        <li><a href="#s5">Começar de um modelo</a></li>
-        <li><a href="#s6">Qual usar em cada caso</a></li>
-        <li><a href="#s7">Precedências improvisadas</a></li>
-        <li><a href="#s8">Tirar o cronograma da planilha</a></li>
-        <li><a href="#s9">O limite comum</a></li>
+        <li><a href="#s4">Um exemplo resolvido: seis tarefas, depois um atraso</a></li>
+        <li><a href="#s5">Deixar o cronograma legível</a></li>
+        <li><a href="#s6">Começar de um modelo</a></li>
+        <li><a href="#s7">Qual usar em cada caso</a></li>
+        <li><a href="#s8">Precedências improvisadas</a></li>
+        <li><a href="#s9">Tirar o cronograma da planilha</a></li>
+        <li><a href="#s10">O limite comum</a></li>
       </ol>
     </div>
 
@@ -117,6 +118,18 @@
         <p>Selecione as colunas A, D e E (segure Ctrl para pegar colunas não adjacentes) e vá em <strong>Inserir → Gráfico</strong>. No editor de gráficos, aba <strong>Configuração</strong>, escolha <strong>Gráfico de barras empilhadas</strong>.</p>
         <p>Depois, em <strong>Personalizar → Série</strong>, selecione a série <strong>Início no dia</strong> e defina a <strong>Cor de preenchimento</strong> como <strong>Nenhuma</strong>. As barras de duração passam a flutuar na posição correta. Ainda em Personalizar, abra <strong>Eixo vertical</strong> e marque <strong>Ordem inversa</strong>, para que a primeira tarefa fique no topo.</p>
         <p>Vantagem: é um objeto de gráfico de verdade, que pode ser copiado para o Apresentações, baixado como PNG ou incorporado num Documento com atualização automática. Desvantagem: nenhuma precedência, como em qualquer planilha.</p>
+        <p>Em cliques, o caminho inteiro são oito passos:</p>
+        <ol>
+          <li><strong>Confira o local antes de tudo.</strong> <strong>Arquivo → Configurações → Local: Brasil</strong>. Isso define o formato <code>dd/mm/aaaa</code> e o <strong>ponto e vírgula</strong> como separador de argumentos. Numa planilha em local americano, <code>05/07</code> é 7 de maio, e o erro só aparece quando o cronograma já está inteiro.</li>
+          <li><strong>Monte A, B e C</strong> — Tarefa, Início e Término — e formate B e C como data.</li>
+          <li><strong>Crie a coluna D, Início no dia:</strong> <code>=B2-$B$2</code>. Ela diz quantos dias depois do começo do projeto cada barra deve nascer.</li>
+          <li><strong>Crie a coluna E, Duração:</strong> <code>=DIATRABALHOTOTAL(B2;C2;Feriados)</code> se você quiser dias úteis, ou <code>=C2-B2</code> para dias corridos. Escolha uma e seja consistente — misturar as duas é o erro que faz barras de tamanho errado.</li>
+          <li><strong>Formate D e E como Número.</strong> <strong>Formatar → Número → Número</strong>. Sem isso o Planilhas lê 12 como 12 de janeiro de 1900 e o gráfico sai com barras de um século.</li>
+          <li><strong>Selecione A, D e E</strong> segurando Ctrl e vá em <strong>Inserir → Gráfico</strong>; na aba <strong>Configuração</strong>, escolha <strong>Gráfico de barras empilhadas</strong>.</li>
+          <li><strong>Torne a primeira série invisível.</strong> <strong>Personalizar → Série → Início no dia → Cor de preenchimento: Nenhuma</strong>.</li>
+          <li><strong>Inverta o eixo.</strong> <strong>Personalizar → Eixo vertical → Ordem inversa</strong>, para a primeira tarefa ficar no topo.</li>
+        </ol>
+        <p>Sobre nomes de função: o Google Planilhas <strong>traduz os nomes</strong> quando o local do arquivo é Brasil — <code>DIATRABALHO</code>, <code>DIATRABALHOTOTAL</code>, <code>MÁXIMO</code>, <code>E</code>, <code>OU</code>, <code>DIA.DA.SEMANA</code>, <code>CONT.SE</code> — e usa ponto e vírgula. Fórmula copiada de tutorial em inglês, com vírgula, devolve <em>Erro de análise da fórmula</em>. Mas há uma armadilha específica do Planilhas que o Excel não tem: se a planilha foi criada por alguém com local americano e compartilhada com você, ela <em>continua</em> em local americano mesmo aberta na sua conta em português. O local é propriedade do arquivo, não do usuário.</p>
       <h2 id="s2">Caminho 2: a visualização Linha do tempo</h2>
 <p>O Google Planilhas passou a oferecer <strong>Inserir → Linha do tempo</strong>. Selecione o intervalo com cabeçalhos, confirme na caixa de diálogo e uma nova aba de linha do tempo é criada.</p>
         <p>No painel de configurações à direita, você mapeia as colunas: <strong>Título do cartão</strong>, <strong>Data de início</strong>, <strong>Data de término</strong>, <strong>Cor do cartão</strong> e <strong>Agrupar por</strong>. O mínimo exigido é um título e as duas datas; as outras deixam a leitura muito melhor. Uma coluna de fase em "Agrupar por" já organiza o cronograma em faixas, sem nenhuma fórmula.</p>
@@ -127,7 +140,37 @@
         <p>Selecione a grade e vá em <strong>Formatar → Formatação condicional</strong>. Em "Regras de formatação", escolha <strong>A fórmula personalizada é</strong> e escreva <code>=E(E$1&gt;=$B2; E$1&lt;=$C2)</code>, definindo a cor de preenchimento. As referências mistas fazem a regra andar corretamente pela grade: cabeçalho travado na linha 1, datas travadas nas colunas B e C.</p>
         <p>Uma segunda regra, aplicada antes da primeira, pode pintar fins de semana em cinza com <code>=OU(DIA.DA.SEMANA(E$1)=1; DIA.DA.SEMANA(E$1)=7)</code>. Uma terceira pode destacar em vermelho as tarefas cujo término já passou e o percentual não chegou a 100%.</p>
         <p>O resultado é uma grade que se lê como um Gantt, vive dentro da planilha, imprime bem e se redesenha sozinha quando uma data muda. Prático para períodos curtos; a partir de um trimestre, o número de colunas vira um problema de rolagem.</p>
-      <h2 id="s4">Deixar o cronograma legível</h2>
+      <h2 id="s4">Um exemplo resolvido: seis tarefas, depois um atraso</h2>
+<p>Os três caminhos acima em cima do mesmo cronograma real, e depois em cima dele já escorregado — porque é aí que se descobre o que cada método realmente entrega. O projeto: a <strong>coleção de inverno da Malharia Serrafina</strong>, no Brás, em São Paulo, coordenada pela Sandra Kiyoshi. Início em seg 01/06/2026, dias úteis, feriados paulistas aplicados.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>A — Tarefa</th><th>B — Início</th><th>C — Término</th><th>E — Duração</th><th>D — Início no dia</th></tr></thead>
+            <tbody>
+              <tr><td>Definição da cartela e das modelagens</td><td>seg 01/06</td><td>qua 10/06</td><td>6</td><td>0</td></tr>
+              <tr><td>Prototipagem e provas de peça</td><td>qui 11/06</td><td>seg 22/06</td><td>8</td><td>10</td></tr>
+              <tr><td>Compra de malha e aviamentos</td><td>qui 11/06</td><td>qua 24/06</td><td>10</td><td>10</td></tr>
+              <tr><td>Corte e costura do lote piloto</td><td>qui 25/06</td><td>sex 03/07</td><td>7</td><td>24</td></tr>
+              <tr><td>Ensaio fotográfico e catálogo</td><td>seg 06/07</td><td>ter 14/07</td><td>5</td><td>35</td></tr>
+              <tr><td><strong>Lançamento no showroom do Brás</strong></td><td colspan="2">qua 15/07</td><td>0</td><td>44</td></tr>
+            </tbody>
+          </table>
+          <p>Dois feriados já estão embutidos aí. <strong>Corpus Christi cai em qui 04/06/2026</strong> e a malharia emenda a sexta, o que estica a primeira tarefa de 6 dias úteis para 10 dias de calendário. E o <strong>9 de julho, feriado estadual em São Paulo</strong>, cai numa quinta, com emenda na sexta 10/07 — dois dias a menos bem no meio do ensaio fotográfico.</p>
+          <p><strong>Agora o atraso.</strong> O fornecedor de malha atrasa a entrega e a compra de aviamentos vai de 10 para 16 dias úteis, terminando em qui 02/07 em vez de qua 24/06. Seis dias úteis de atraso. Repasse pela cadeia e o resultado é este:</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Plano</th><th>Depois do atraso</th><th>Desvio</th></tr></thead>
+            <tbody>
+              <tr><td>Compra de malha e aviamentos</td><td>qua 24/06</td><td>qui 02/07</td><td>+6 d</td></tr>
+              <tr><td>Corte e costura do lote piloto</td><td>sex 03/07</td><td>qua 15/07</td><td>+7 d</td></tr>
+              <tr><td>Ensaio fotográfico e catálogo</td><td>ter 14/07</td><td>qua 22/07</td><td>+8 d</td></tr>
+              <tr><td><strong>Lançamento no showroom</strong></td><td>qua 15/07</td><td>qui 23/07</td><td>+8 d</td></tr>
+            </tbody>
+          </table>
+          <p>Seis dias de atraso do fornecedor viraram oito no lançamento. O motivo não está em lugar nenhum da planilha: o atraso empurrou o ensaio fotográfico para <em>depois</em> da emenda de 9 de julho, em vez de deixá-lo antes dela. Um cronograma que conta em dias corridos jamais mostraria isso, e nenhum dos três caminhos do Planilhas avisa que aconteceu — as barras simplesmente ficam onde as fórmulas as colocarem.</p>
+          <p>O preço é conhecido na malharia: o showroom do Brás concentra os compradores de inverno numa janela de três semanas, e cada semana perdida vale algo perto de <strong>R$ 22.000</strong> em pedidos que o comprador fecha com outra marca. Oito dias úteis são uma semana e meia dessa janela.</p>
+        </div>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="A série invisível carrega a barra até a data certa; o resto é formatação."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semana 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Marco</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text></svg><figcaption>A série invisível carrega a barra até a data certa; o resto é formatação.</figcaption></figure>
+        <p>Repare no que cada caminho fez com esse atraso. Na <strong>formatação condicional</strong>, a grade se repintou sozinha assim que as datas mudaram — nada a manter. Na <strong>Linha do tempo</strong>, os cartões andaram sozinhos também, e essa é a maior vantagem prática dela. Já no <strong>gráfico de barras empilhadas</strong>, o cronograma passou a se estender além do fim do intervalo original e foi preciso voltar ao editor de gráficos para ampliar o intervalo de dados. Em nenhum dos três apareceu uma seta ligando a compra de malha ao corte, nem uma indicação de que a cadeia inteira era crítica.</p>
+      <h2 id="s5">Deixar o cronograma legível</h2>
 <p>Independentemente do caminho escolhido, alguns ajustes mudam muito a leitura:</p>
         <ul>
           <li><strong>Agrupe por fase.</strong> Uma coluna "Fase" alimenta o campo <em>Agrupar por</em> da Linha do tempo e serve para ordenar a tabela nos outros dois métodos.</li>
@@ -135,25 +178,44 @@
           <li><strong>Mostre o avanço.</strong> Com uma coluna de % concluído e uma auxiliar de duração × percentual, o método das barras empilhadas aceita uma terceira série escura sobre a barra clara.</li>
           <li><strong>Acrescente uma linha de hoje.</strong> Na formatação condicional, uma regra com <code>=E$1=HOJE()</code> pinta a coluna do dia e resolve a pergunta "onde estamos" antes de qualquer explicação.</li>
         </ul>
-      <h2 id="s5">Começar de um modelo</h2>
+      <h2 id="s6">Começar de um modelo</h2>
 <p>O caminho mais rápido é não montar a mecânica. Uma planilha pronta já traz as colunas auxiliares calculadas, o gráfico configurado com a série transparente, o eixo invertido e as datas formatadas — basta digitar por cima das linhas de exemplo.</p>
         <p>Para usar um modelo compartilhado, abra-o e use <strong>Arquivo → Fazer uma cópia</strong>, senão você edita um arquivo somente leitura ou, pior, o original de outra pessoa. Depois de copiar, confira duas coisas antes de digitar: se o intervalo de dados do gráfico cobre linhas suficientes para o seu projeto, e se o formato de data da planilha está em <strong>dd/mm/aaaa</strong> (Arquivo → Configurações → Local: Brasil). Modelos criados em local americano interpretam 05/07 como 7 de maio, e o erro só aparece quando o cronograma já está montado.</p>
         <p>Se precisar de mais linhas, insira-as <em>no meio</em> do intervalo existente, nunca depois da última: linhas inseridas no meio entram automaticamente no intervalo do gráfico; linhas coladas no fim ficam de fora e você passa dez minutos procurando a tarefa que sumiu.</p>
         <p>Nossos <a href="/pt/templates.html">modelos</a> cobrem esse ponto de partida e também abrem direto no editor online, caso o cronograma cresça além do que a planilha aguenta.</p>
-      <h2 id="s6">Qual usar em cada caso</h2>
+      <h2 id="s7">Qual usar em cada caso</h2>
 <p>Linha do tempo quando o objetivo é uma visão geral rápida e o cronograma vai ser consultado dentro do próprio arquivo, por pessoas que já têm acesso à planilha. Barras empilhadas quando o gráfico precisa sair dali — para um slide, um relatório, um PDF enviado a um cliente. Formatação condicional quando o cronograma é o documento de trabalho e a equipe já vive na planilha o dia inteiro.</p>
         <p>Na dúvida entre os dois primeiros, o critério é simples: se alguém vai pedir "me manda a imagem", use barras empilhadas. A Linha do tempo não vira imagem editável, e a captura de tela que a substitui envelhece na semana seguinte.</p>
         <p>Um segundo critério é quem vai manter. As barras empilhadas dependem de duas colunas auxiliares que só fazem sentido para quem as criou — quem herdar a planilha vai apagar uma delas achando que é sobra. A Linha do tempo e a formatação condicional se explicam sozinhas para quem chega depois, o que em cronograma compartilhado vale mais do que parece.</p>
-      <h2 id="s7">Precedências improvisadas</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="Três caminhos dentro da mesma planilha, e o que cada um deixa de fora."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefas</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Caminho crítico</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Slides</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Navegador</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>Três caminhos dentro da mesma planilha, e o que cada um deixa de fora.</figcaption></figure>
+        <table>
+          <thead><tr><th>O que você precisa</th><th>Barras empilhadas</th><th>Linha do tempo</th><th>Formatação condicional</th></tr></thead>
+          <tbody>
+            <tr><td>Tempo até o primeiro desenho</td><td>15–20 min</td><td>2 min</td><td>10 min</td></tr>
+            <tr><td>Se redesenha quando a data muda</td><td>Sim, mas o intervalo é manual</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Vira imagem para slide ou PDF</td><td>Sim — é objeto de gráfico</td><td>Não, só captura de tela</td><td>Só imprimindo o intervalo</td></tr>
+            <tr><td>Agrupa por fase</td><td>Só reordenando a tabela</td><td>Sim, campo Agrupar por</td><td>Só reordenando a tabela</td></tr>
+            <tr><td>Mostra percentual concluído</td><td>Sim, com uma terceira série</td><td>Não</td><td>Sim, com uma regra a mais</td></tr>
+            <tr><td>Sobrevive a um trimestre inteiro</td><td>Sim</td><td>Sim, com zoom por mês</td><td>Fica pesado — colunas demais</td></tr>
+            <tr><td>Setas de precedência</td><td>Não</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Caminho crítico e folga</td><td>Não</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Sai para .xlsx intacto</td><td>Sim</td><td>Não — não existe no Excel</td><td>Sim</td></tr>
+          </tbody>
+        </table>
+        <p>As três últimas linhas são a mesma linha, dita de três formas: nenhum caminho do Planilhas sabe que uma tarefa espera outra. É por isso que o exemplo da Serrafina precisou ter o atraso repassado pela cadeia à mão antes de a tabela poder ser preenchida.</p>
+      <h2 id="s8">Precedências improvisadas</h2>
 <p>O Planilhas não sabe que "B começa quando A termina". Dá para simular fazendo a data de início de uma tarefa referenciar o término da anterior — <code>=C2</code> — ou, com duas predecessoras, <code>=MÁXIMO(C2;C5)</code>. Para pular fins de semana existe <code>DIATRABALHO</code>.</p>
         <p>A cadeia funciona, mas é frágil: não há setas visíveis, ninguém consegue auditar quais ligações existem, e uma tarefa que recebe data digitada por engano quebra a cascata em silêncio. Se as precedências importam de verdade no seu projeto, esse é o sinal para sair da planilha — vale ler os <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a> antes de decidir.</p>
-      <h2 id="s8">Tirar o cronograma da planilha</h2>
+      <h2 id="s9">Tirar o cronograma da planilha</h2>
 <p>Para levar o resultado adiante: <strong>Arquivo → Fazer o download → Microsoft Excel (.xlsx)</strong> preserva a tabela e o gráfico de barras empilhadas, mas não a visualização Linha do tempo, que não tem equivalente no Excel. Um gráfico pode ser copiado e colado no Google Apresentações com vínculo, de modo que atualizar a planilha atualiza o slide.</p>
         <p>A rota mais curta, quando o destino é um arquivo pronto, é montar o cronograma numa ferramenta de Gantt e exportar. O <a href="/pt/app.html">gantts.app</a> roda no navegador, sem cadastro, e gera XLSX, PPTX, PDF e PNG a partir do mesmo plano.</p>
-      <h2 id="s9">O limite comum</h2>
+      <h2 id="s10">O limite comum</h2>
 <p>Nenhum dos três caminhos conhece precedências, nenhum calcula <a href="/pt/blog/critical-path-method.html">caminho crítico</a>, nenhum avisa que uma pessoa está alocada em três tarefas na mesma semana e nenhum guarda uma <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> para medir desvio.</p>
         <p>A força real do Planilhas é outra: várias pessoas editando o mesmo arquivo ao mesmo tempo, com histórico de versões e comentários por célula. Se é disso que o projeto precisa e o cronograma é pequeno, é uma escolha boa e honesta.</p>
         <p>Quando o cronograma precisa calcular sozinho — repassar um atraso pela cadeia, mostrar o que virou crítico, comparar com o plano aprovado —, a planilha deixa de ser a ferramenta certa, por mais bem montada que esteja.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 540 78" width="100%" role="img" aria-label="O que a planilha não faz: repassar o atraso, marcar o crítico, guardar o plano aprovado."><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Design</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Execução</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Testes</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Lançamento</text></svg><figcaption>O que a planilha não faz: repassar o atraso, marcar o crítico, guardar o plano aprovado.</figcaption></figure>
+        <p>No <a href="/pt/app.html">gantts.app</a>, o cenário da Serrafina se resolve em três movimentos que a planilha não tem. A coluna <strong>Depois de</strong> guarda as ligações de forma auditável — <code>2, 3</code> no corte e costura —, então mudar a duração da compra de malha de 10 para 16 empurra o resto sozinho. <strong>Calendário de trabalho</strong> guarda o 9 de julho e a emenda, o que faz o desvio de oito dias aparecer em vez de ser descoberto. E <strong>Linha de base</strong> congela o plano de 01/06, de modo que a comparação entre planejado e real seja uma coluna, não uma reconstrução de memória.</p>
+        <p>Duas ressalvas honestas, porque nada é mágico. A folga que o app mostra é a <strong>folga total</strong> — não existe coluna de folga livre —, e folga total é compartilhada ao longo da cadeia: se duas tarefas em sequência mostram cinco dias cada, não são dez dias, são os mesmos cinco. E as precedências aqui só empurram tarefas para <em>depois</em>, nunca puxam para antes; se o fornecedor de malha entregasse adiantado, o corte não se anteciparia sozinho. Para isso existe <strong>Reprogramar</strong>, que puxa cada tarefa para a data mais cedo que as predecessoras permitem.</p>
 
       <div class="callout">A visualização Linha do tempo não é um gráfico de Gantt, mesmo parecendo. Ela mostra períodos, mas ignora ligações e caminho crítico. Para uma visão geral basta; para um cronograma que repassa atrasos, não.</div>
 

@@ -90,16 +90,18 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>6 min de lecture</span></p>
+    <p class="post-meta"><span>La rédaction gantts.app</span><span>Mis à jour le 19 juillet 2026</span><span>11 min de lecture</span></p>
     <div class="toc"><strong>Sommaire</strong>
       <ol>
         <li><a href="#s1">Aucune des deux n’est native</a></li>
         <li><a href="#s2">Méthode 1 : les barres empilées</a></li>
         <li><a href="#s3">Méthode 2 : construire avec des formes</a></li>
-        <li><a href="#s4">Quand choisir quoi</a></li>
-        <li><a href="#s5">Concevoir pour la projection</a></li>
-        <li><a href="#s6">Le chemin pratique</a></li>
-        <li><a href="#s7">L’erreur la plus fréquente</a></li>
+        <li><a href="#s4">Un exemple traité : six tâches, puis un dérapage</a></li>
+        <li><a href="#s5">Ce que chaque méthode vous donne</a></li>
+        <li><a href="#s6">Quand choisir quoi</a></li>
+        <li><a href="#s7">Concevoir pour la projection</a></li>
+        <li><a href="#s8">Le chemin pratique</a></li>
+        <li><a href="#s9">L’erreur la plus fréquente</a></li>
       </ol>
     </div>
 
@@ -129,11 +131,63 @@
         </ol>
         <p>Trois habitudes évitent que cela tourne au bricolage : fixez une hauteur de barre unique et appuyez-vous sur <strong>Affichage › Grille et repères</strong> pour que tout se cale sur la même ligne de base ; ouvrez le <strong>Volet Sélection</strong> (Format de la forme › Volet Sélection) et nommez vos formes, car vous en aurez rapidement plusieurs dizaines ; construisez le tout comme un objet groupé unique, ce qui permet de le dupliquer pour comparer un « prévu » et un « réel ».</p>
         <p>Les graphiques SmartArt de type Processus ou Chronologie produisent vite une variante simplifiée, mais ils ne sont pas à l’échelle des dates : réservez-les à un visuel de phases, pas à un planning exact. Avantage des formes : contrôle total sur la mise en forme, les libellés et l’animation. Inconvénient : rien ne se met à jour, et les longueurs ne sont justes que si vous les tracez juste.</p>
-      <h2 id="s4">Quand choisir quoi</h2>
+      <h2 id="s4">Un exemple traité : six tâches, puis un dérapage</h2>
+<p>Les deux méthodes ci-dessus vous demandent de fournir des nombres que PowerPoint ne sait pas calculer. Voici exactement lesquels, sur un petit plan — et ce qu’ils deviennent quand une date bouge.</p>
+      <div class="worked">
+        <p><strong>Le plan.</strong> Déploiement du nouvel outil de gestion de la <strong>Mutuelle Beauregard</strong>, à Rennes, du lundi 2 mars au mardi 9 juin 2026. Six tâches, chacune démarrant le jour ouvré suivant la fin de la précédente. Les deux chiffres dont PowerPoint a besoin sont le <strong>décalage de départ</strong> (en jours calendaires depuis le 2 mars, la première tâche vaut donc 0) et la <strong>longueur de barre</strong> en jours calendaires, week-ends et fériés compris — parce que l’axe est un calendrier, même quand vos estimations sont en jours ouvrés.</p>
+        <table>
+          <thead><tr><th>Tâche</th><th>Dates</th><th>Jours ouvrés</th><th>Décalage</th><th>Longueur</th><th>Position (cm)</th><th>Largeur (cm)</th></tr></thead>
+          <tbody>
+            <tr><td>Cadrage</td><td>2–13 mars</td><td>10</td><td>0</td><td>12</td><td>5,40</td><td>3,24</td></tr>
+            <tr><td>Conception</td><td>16–27 mars</td><td>10</td><td>14</td><td>12</td><td>9,18</td><td>3,24</td></tr>
+            <tr><td>Paramétrage</td><td>30 mars – 27 avril</td><td>20</td><td>28</td><td>29</td><td>12,96</td><td>7,83</td></tr>
+            <tr><td>Reprise des données</td><td>28 avril – 22 mai</td><td>15</td><td>57</td><td>25</td><td>20,79</td><td>6,75</td></tr>
+            <tr><td>Recette et formation</td><td>26 mai – 8 juin</td><td>10</td><td>85</td><td>14</td><td>28,35</td><td>3,78</td></tr>
+            <tr><td>Bascule</td><td>9 juin</td><td>1</td><td>99</td><td>1</td><td>32,13</td><td>0,27</td></tr>
+          </tbody>
+        </table>
+        <p>Comparez les colonnes 3 et 5, et vous verrez le mois de mai à l’œil nu. Dix jours ouvrés de cadrage donnent une barre de 12 ; quinze jours de reprise donnent une barre de 25 ; dix jours de recette donnent 14. Entre le lundi de Pâques, le 1<sup>er</sup> et le 8 mai, l’Ascension, son pont et le lundi de Pentecôte, six jours fériés s’intercalent dans ce plan. Une diapositive où les barres seraient proportionnelles aux jours ouvrés serait fausse de deux centimètres sur la fin — et personne dans la salle ne le remarquerait.</p>
+        <p><strong>Pour la méthode 1</strong>, les colonnes 4 et 5 sont tout ce que vous saisissez. Clic droit sur le graphique, <strong>Modifier les données</strong>, puis les noms en colonne A, les décalages en B, les longueurs en C. Mettez la série B sur « Aucun remplissage » et c’est terminé. Remarquez que la colonne des jours ouvrés n’apparaît jamais : une tâche de 10 jours ouvrés est une barre de 12, et si vous tapez 10, l’image se termine deux jours avant le tableau dont vous l’avez tirée.</p>
+        <p><strong>Pour la méthode 2</strong>, ce sont les deux dernières colonnes qu’il vous faut, et l’arithmétique qui les produit vaut la peine d’être faite proprement une fois. Une diapositive 16:9 mesure <strong>33,87 cm</strong> de large. Réservez 5,4 cm à gauche pour les intitulés et arrêtez la frise à 32,4 cm : il reste 27 cm pour un projet de 100 jours, soit <strong>0,27 cm par jour</strong>. Ensuite, pour chaque barre :</p>
+        <ul>
+          <li>Position horizontale = <code>5,4 + 0,27 × décalage</code></li>
+          <li>Largeur = <code>0,27 × longueur</code></li>
+        </ul>
+        <p>Saisissez ces valeurs dans <strong>Format de la forme › Taille et propriétés</strong> plutôt que de les tirer à la souris. Six barres, douze nombres, et un graphique juste au tiers de millimètre près au lieu d’être juste là où votre souris s’est arrêtée.</p>
+        <p><strong>Maintenant la conception dérape de trois jours ouvrés.</strong> Sur un vrai ordonnanceur, c’est une seule modification. Voici ce que cela coûte sur une diapositive. Toutes les dates aval se déplacent, donc tous les décalages et toutes les longueurs changent : conception décalage 14 / longueur 17, paramétrage 31 / 29, reprise 63 / 24, recette 87 / 15, bascule 102 / 1. Le projet s’étend désormais sur 103 jours au lieu de 100, si bien que 0,27 cm par jour ne tient plus dans la place réservée : <strong>l’échelle elle-même doit changer</strong>, à 0,262 cm par jour, et l’élégant nombre rond a disparu.</p>
+        <ul>
+          <li><strong>Méthode 1 :</strong> retapez 10 des 12 nombres dans la feuille de données. Le graphique se redessine seul, ce qui est un avantage réel — mais rien ne vous a signalé que les nombres étaient périmés, et rien ne vérifie ceux que vous venez de taper.</li>
+          <li><strong>Méthode 2 :</strong> recalculez l’échelle, puis retapez les 12 positions et largeurs. Oubliez-en une et vous obtenez une diapositive fausse avec assurance et précision — ce qui est pire qu’un croquis manifestement approximatif, puisque personne dans la salle ne la remettra en question.</li>
+        </ul>
+        <p>Voilà le coût honnête d’un Gantt sous PowerPoint : non pas les vingt minutes de construction, mais les vingt minutes qu’il recoûte chaque fois qu’une date bouge.</p>
+      </div>
+      <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="C’est le segment de décalage invisible qui pousse chaque barre de durée à sa position."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semaine 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Jalon</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Aujourd'hui</text></svg><figcaption>C’est le segment de décalage invisible qui pousse chaque barre de durée à sa position.</figcaption></figure>
+      <h2 id="s5">Ce que chaque méthode vous donne</h2>
+<p>Une diapositive est un objet de communication, et il vaut la peine d’être clair sur le peu qu’il reste d’un planning après le voyage :</p>
+      <table>
+        <thead><tr><th>Capacité</th><th>Barres empilées</th><th>Formes</th><th>SmartArt</th><th>Exporté d’un ordonnanceur</th></tr></thead>
+        <tbody>
+          <tr><td>Juste par rapport à l’axe des dates</td><td>Oui</td><td>Seulement si vous tapez les nombres</td><td>Non — l’échelle n’est pas temporelle</td><td>Oui</td></tr>
+          <tr><td>Se redessine quand les données changent</td><td>Oui</td><td>Non</td><td>Non</td><td>Réexport</td></tr>
+          <tr><td>Dates saisies comme des dates</td><td>Non — des décalages en jours</td><td>Non — des centimètres</td><td>Non</td><td>Oui</td></tr>
+          <tr><td>Week-ends et jours fériés</td><td>À vous de les calculer</td><td>À vous de les calculer</td><td>Non</td><td>Nativement</td></tr>
+          <tr><td>Flèches d’antériorité</td><td>Non</td><td>Dessinées à la main, sans effet</td><td>Non</td><td>Oui, de vrais liens</td></tr>
+          <tr><td>Se replanifie quand une tâche glisse</td><td>Non</td><td>Non</td><td>Non</td><td>Oui</td></tr>
+          <tr><td>Chemin critique</td><td>Non</td><td>Non</td><td>Non</td><td>Calculé</td></tr>
+          <tr><td>Marge totale par tâche</td><td>Non</td><td>Non</td><td>Non</td><td>Calculée</td></tr>
+          <tr><td>Référence face au réel</td><td>Série supplémentaire, à la main</td><td>Seconde rangée de formes</td><td>Non</td><td>Enregistrée et comparée</td></tr>
+          <tr><td>Jalons en losanges</td><td>Ligne de longueur quasi nulle</td><td>Oui, dessinés</td><td>Oui, décoratifs</td><td>Oui</td></tr>
+          <tr><td>Avancement ombré</td><td>Troisième série</td><td>Forme superposée</td><td>Non</td><td>Oui</td></tr>
+          <tr><td>Respect de la charte graphique</td><td>Moyen</td><td>Total</td><td>Total</td><td>Recoloration après export</td></tr>
+        </tbody>
+      </table>
+      <p>Lisez la colonne « Formes » de haut en bas et le motif saute aux yeux : ce que vous gagnez en maîtrise graphique, vous le payez sur chaque ligne où le planning doit <em>savoir</em> quelque chose. Un trait de connexion tracé entre deux rectangles ressemble exactement à un lien d’antériorité et ne contraint rigoureusement rien. Cela reste acceptable tant que tout le monde comprend que la diapositive est la photographie d’un plan, et non le plan.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 580 190" width="100%" role="img" aria-label="De vrais liens contraignent les dates. Un trait tracé entre deux rectangles, non."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fin → Début</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Début → Début</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fin → Fin</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Début → Fin</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B attend A</text></svg><figcaption>De vrais liens contraignent les dates. Un trait tracé entre deux rectangles, non.</figcaption></figure>
+      <h2 id="s6">Quand choisir quoi</h2>
 <p>Les <strong>formes</strong> quand le plan est figé et que la diapositive sert à présenter : la précision compte moins que l’allure, et vous gagnerez du temps. Le <strong>graphique</strong> quand les chiffres bougent encore, ou quand l’exactitude des durées sera contestée en séance.</p>
         <p>Et ni l’un ni l’autre si vous avez de véritables antériorités à suivre : aucune mise en forme PowerPoint ne recalculera un planning quand une tâche se décale. Pour une diapositive de comité à cinq phases, les formes restent presque toujours le chemin le plus rapide.</p>
         <p>Un troisième critère tranche souvent la question : qui reprendra le fichier. Un graphique reste modifiable par n’importe qui sachant ouvrir la feuille de données, mais se déforme si le modèle de la présentation change de palette. Un ensemble de formes groupées survit à tous les changements de thème et se reprend sans explication, à condition d’avoir été aligné proprement. Sur une présentation qui circulera entre plusieurs services, ce dernier point pèse plus lourd que l’exactitude des durées au jour près.</p>
-      <h2 id="s5">Concevoir pour la projection</h2>
+      <h2 id="s7">Concevoir pour la projection</h2>
 <p>Une diapositive supporte six à dix barres, pas quarante. Réduisez au niveau des phases et ne mettez en avant que trois jalons au maximum. Ce qui doit être lisible à dix mètres ne supporte aucun détail de planification.</p>
         <ul>
           <li><strong>Une couleur par phase.</strong> Cadrage, Réalisation, Mise en service : l’auditoire lit la structure avant le détail.</li>
@@ -144,7 +198,8 @@
         </ul>
         <p>Au-delà de dix lignes, scindez : une diapositive de synthèse par phases, puis une diapositive de détail par phase si la question se pose.</p>
         <p>Vérifiez enfin la lisibilité dans les conditions réelles. Passez en mode <strong>Diaporama</strong> et reculez de trois mètres de l’écran : si les libellés d’axe ou les dates ne se lisent plus, ils ne se liront pas davantage projetés au fond d’une salle. En pratique, cela veut dire ne jamais descendre sous 14 points sur une diapositive de planning, quitte à supprimer une graduation sur deux de l’axe des dates.</p>
-      <h2 id="s6">Le chemin pratique</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 420 70" width="100%" role="img" aria-label="Les jalons sont des repères de durée nulle — les points d’accroche que l’auditoire lit réellement."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tâche</text><rect x="0" y="20" width="170" height="13" rx="4" fill="#6c4cf1"/><line x1="0" y1="44" x2="170" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="85" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Durée 8d</text><text x="260" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Jalon</text><path d="M 300 20 l 10 10 l -10 10 l -10 -10 z" fill="#e5484d"/><line x1="300" y1="44" x2="300" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="300" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">durée nulle</text></svg><figcaption>Les jalons sont des repères de durée nulle — les points d’accroche que l’auditoire lit réellement.</figcaption></figure>
+      <h2 id="s8">Le chemin pratique</h2>
 <p>Le plus rapide reste de tenir le plan là où il vit et de l’exporter pour la diapositive, plutôt que de déplacer des rectangles à la souris.</p>
         <ol>
           <li>Ouvrez l’éditeur en ligne <a href="/fr/app.html">gantts.app</a> — sans compte ni installation.</li>
@@ -152,7 +207,7 @@
           <li>Cliquez sur <strong>Exporter › PowerPoint</strong>. Vous obtenez un fichier .pptx contenant la diapositive de planning, prête à présenter.</li>
         </ol>
         <p>C’est l’export .pptx en un clic qui change la nature du travail : quand le plan bouge, vous modifiez le plan et vous réexportez, au lieu de reconstruire la diapositive. Le même menu produit également du PDF, du PNG et de l’Excel. Nos <a href="/fr/templates.html">modèles</a> incluent par ailleurs une diapositive déjà mise en forme, avec palette de phases et marqueurs de jalons, où il ne reste qu’à saisir vos tâches.</p>
-      <h2 id="s7">L’erreur la plus fréquente</h2>
+      <h2 id="s9">L’erreur la plus fréquente</h2>
 <p>Faire tenir le planning complet sur une diapositive. Présentation et planification n’ont pas le même niveau de détail — la diapositive raconte l’histoire, le plan porte le travail.</p>
         <p>Le symptôme est reconnaissable : une police à 8 points, quarante lignes, et un intervenant qui commence par « je sais que c’est petit ». Personne ne lit ce graphique, et la question qu’il devait éviter finit par être posée quand même.</p>
         <p>La règle utile : décidez d’abord de la phrase que la diapositive doit faire comprendre — nous livrons en mars, la recette est le goulot, ce lot dépend d’une validation externe — puis ne montrez que ce qui la démontre. Le planning détaillé accompagne en annexe ou en pièce jointe, à l’intention de ceux qui veulent vérifier.</p>

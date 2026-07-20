@@ -90,17 +90,19 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>6 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>12 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
         <li><a href="#s1">Kann Google Sheets Gantt-Diagramme?</a></li>
         <li><a href="#s2">Weg 1: gestapeltes Balkendiagramm</a></li>
-        <li><a href="#s3">Weg 2: die native Zeitachsen-Ansicht</a></li>
-        <li><a href="#s4">Weg 3: bedingte Formatierung</a></li>
-        <li><a href="#s5">Mit einer Vorlage starten</a></li>
-        <li><a href="#s6">Welcher Weg wofür</a></li>
-        <li><a href="#s7">Die Ansicht verfeinern</a></li>
-        <li><a href="#s8">Abhängigkeiten nachbilden — und die gemeinsame Grenze</a></li>
+        <li><a href="#s3">Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug</a></li>
+        <li><a href="#s4">Welcher Weg was leistet</a></li>
+        <li><a href="#s5">Weg 2: die native Zeitachsen-Ansicht</a></li>
+        <li><a href="#s6">Weg 3: bedingte Formatierung</a></li>
+        <li><a href="#s7">Mit einer Vorlage starten</a></li>
+        <li><a href="#s8">Welcher Weg wofür</a></li>
+        <li><a href="#s9">Die Ansicht verfeinern</a></li>
+        <li><a href="#s10">Abhängigkeiten nachbilden — und die gemeinsame Grenze</a></li>
       </ol>
     </div>
 
@@ -133,7 +135,71 @@
           <li>Färben Sie die Serie <em>Dauer</em> passend ein, vergeben Sie unter <strong>Diagramm- und Achsentitel</strong> einen Titel und blenden Sie die Legende aus — sie erklärt an dieser Stelle nichts mehr.</li>
         </ol>
         <p>Das Ergebnis ist ein echtes Diagrammobjekt: Sie können es in Docs oder Präsentationen kopieren, als Bild herunterladen und jederzeit neu formatieren. Der Preis sind die Hilfsspalten, die bei jeder Terminänderung mitgepflegt werden wollen.</p>
-      <h2 id="s3">Weg 2: die native Zeitachsen-Ansicht</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Das unsichtbare Vorlaufsegment ist es, das jeden Dauerbalken auf sein Startdatum schiebt."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Woche 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Meilenstein</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Heute</text></svg><figcaption>Das unsichtbare Vorlaufsegment ist es, das jeden Dauerbalken auf sein Startdatum schiebt.</figcaption></figure>
+      <h2 id="s3">Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug</h2>
+<p>Hilfsspalten sind leicht zu beschreiben und leicht auf subtile Weise falsch zu bauen. Deshalb hier ein kleiner Plan mit echten Formeln — und danach geändert, denn wie sich ein Tabellenblatt verhält, wenn ein Termin wandert, ist die einzige Prüfung, die zählt.</p>
+      <p><strong>Hinweis zur Spracheinstellung.</strong> Die Formeln unten sind für eine <strong>deutschsprachige Tabelle</strong> geschrieben: deutsche Funktionsnamen und <strong>Semikolon</strong> als Argumenttrennzeichen. Maßgeblich ist in Google Sheets nicht die Sprache Ihres Kontos, sondern das <em>Gebietsschema der Tabelle</em> unter <strong>Datei ▸ Einstellungen ▸ Gebietsschema</strong>. Steht dort „Vereinigte Staaten“, heißen dieselben Funktionen <code>WORKDAY</code>, <code>WEEKDAY</code> und <code>AND</code>, und getrennt wird mit Komma — eine Tabelle, die eine Kollegin aus einer amerikanischen Vorlage kopiert hat, verhält sich deshalb anders als Ihre eigene, obwohl beide auf Deutsch angezeigt werden.</p>
+      <div class="worked">
+        <p><strong>Das Tabellenblatt.</strong> Die Einführung eines Warenwirtschaftssystems bei der Spedition Küppers in Duisburg, Beginn Montag, 2. März 2026. Überschriften in Zeile 1, Vorgänge in den Zeilen 2 bis 7. A Vorgang, B Start, C Ende, D Arbeitstage, E Start am Tag, F Balkenlänge. In <strong>H2:H6</strong> die Feiertage in Nordrhein-Westfalen: Karfreitag 3.4., Ostermontag 6.4., 1. Mai, Christi Himmelfahrt 14.5. und Pfingstmontag 25.5. Nur Spalte D wird von Hand getippt:</p>
+        <ul>
+          <li><strong>C2</strong> — <code>=ARBEITSTAG(B2;D2-1;$H$2:$H$6)</code>. Sheets kennt dieselbe Funktion wie Excel und überspringt Wochenenden von selbst. Das <code>-1</code> ist unverzichtbar: <code>ARBEITSTAG</code> zählt vom Start vorwärts, fünf Arbeitstage ab Montag sind also <code>ARBEITSTAG(Mo;4)</code> = Freitag.</li>
+          <li><strong>B3</strong> — <code>=ARBEITSTAG(C2;1;$H$2:$H$6)</code>. Der nächste Arbeitstag nach dem Ende des Vorgängers. Das ist das Einzige in der ganzen Datei, das überhaupt etwas neu terminiert.</li>
+          <li><strong>E2</strong> — <code>=B2-$B$2</code>, als <em>Zahl</em> formatiert. Null für den ersten Vorgang.</li>
+          <li><strong>F2</strong> — <code>=C2-B2+1</code>, ebenfalls als <em>Zahl</em>. Achtung: <em>nicht</em> <code>D2</code>. D sind Arbeitstage, die Diagrammachse dagegen zählt Kalendertage — ein Vorgang mit 20 Arbeitstagen muss 30 Einheiten lang gezeichnet werden. Wer versehentlich D plottet, bekommt Balken, die überall zu früh enden, während die Tabelle daneben völlig richtig aussieht.</li>
+        </ul>
+        <p>Nach unten gefüllt ergibt das:</p>
+        <table>
+          <thead>
+            <tr><th>Zeile</th><th>Vorgang</th><th>B — Start</th><th>C — Ende</th><th>D — Arbeitstage</th><th>E — Start am Tag</th><th>F — Balkenlänge</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>Analyse der Prozesse</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td><td>0</td><td>12</td></tr>
+            <tr><td>3</td><td>Konzept und Auswahl</td><td>Mo 16. März</td><td>Fr 27. März</td><td>10</td><td>14</td><td>12</td></tr>
+            <tr><td>4</td><td>Einrichtung und Anpassung</td><td>Mo 30. März</td><td>Di 28. April</td><td>20</td><td>28</td><td>30</td></tr>
+            <tr><td>5</td><td>Datenübernahme</td><td>Mi 29. April</td><td>Do 21. Mai</td><td>15</td><td>58</td><td>23</td></tr>
+            <tr><td>6</td><td>Test und Schulung</td><td>Fr 22. Mai</td><td>Fr 5. Juni</td><td>10</td><td>81</td><td>15</td></tr>
+            <tr><td>7</td><td>Produktivstart</td><td>Mo 8. Juni</td><td>Mo 8. Juni</td><td>1</td><td>98</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p>Die Plausibilitätsprüfung steckt in der letzten Zeile: 98 + 1 = 99 Tage, genau die Gesamtspanne des Projekts vom 2. März an. Ergibt E + F unten nicht die erwartete Spanne, ist weiter oben eine Konvention verrutscht.</p>
+        <p>Vergleichen Sie außerdem D und F bei der Einrichtung: 20 Arbeitstage, 30 Kalendertage. Die Differenz sind acht Wochenendtage <em>und</em> Karfreitag sowie Ostermontag, die genau in diesen Vorgang fallen. Ohne den Bereich <code>$H$2:$H$6</code> in der Formel rechnet das Blatt über Ostern hinweg und schenkt Ihnen zwei Tage, die es nicht gibt.</p>
+        <p><strong>Jetzt ändern Sie etwas.</strong> Konzept und Auswahl laufen drei Tage über: D3 von 10 auf 13. Die Kette rechnet sich neu — das Konzept endet Mi 1. April, die Einrichtung läuft Do 2. April bis Mo 4. Mai, die Datenübernahme Di 5. Mai bis Mi 27. Mai, Test und Schulung Do 28. Mai bis Mi 10. Juni, der Produktivstart fällt auf <strong>Do 11. Juni</strong>. Beide Hilfsspalten folgen von selbst. Das ist der Grund, Formeln statt getippter Daten zu verwenden.</p>
+        <p><strong>Und das folgt nicht:</strong></p>
+        <ol>
+          <li><strong>Eingefügte Zeilen kommen ohne Formeln.</strong> Ergänzen Sie zwischen Konzept und Einrichtung eine Zeile „Freigabe durch die Geschäftsführung“: Die neue Zeile 4 ist leer, und die alte Einrichtungszeile — jetzt Zeile 5 — zeigt weiterhin auf das Ende des Konzepts. Sheets erweitert den Diagrammbereich trotzdem, die leere Zeile wird also als Balken der Länge null am Tag null gezeichnet — ein Stummel ganz links, der eher wie ein Anzeigefehler aussieht als wie ein echter Fehler.</li>
+          <li><strong>Sortieren zerstört die Kette.</strong> Sortieren Sie nach Startdatum, folgt jeder relative Bezug seinem neuen Nachbarn und leitet Termine still aus den falschen Zeilen ab. Keine Warnung — und kein Rückgängig mehr, sobald gespeichert und geschlossen wurde. Bei einer Datei, an der mehrere Personen gleichzeitig arbeiten, ist das kein Randfall, sondern eine Frage der Zeit.</li>
+          <li><strong>Ein zweiter Vorgänger hat keinen Platz.</strong> Braucht der Test sowohl die Einrichtung als auch die Datenübernahme, lautet die richtige Formel <code>=ARBEITSTAG(MAX(C4;C5);1;$H$2:$H$6)</code>. Sie funktioniert. Aber im Diagramm zeigt nichts diese Verknüpfung, und aus einer fünftägigen Freigabefrist wird <code>=ARBEITSTAG(C3;1+5;$H$2:$H$6)</code> — eine nackte 5 in einer Formel, nirgends beschriftet.</li>
+        </ol>
+        <p><strong>Die Abkürzung, die es nur in Sheets gibt.</strong> Wenn Sie einen Balken je Zeile ohne jedes Diagrammobjekt wollen, tragen Sie das in G2 ein und füllen nach unten:</p>
+        <p><code>=SPARKLINE({E2\F2};{"charttype"\"bar";"color1"\"white";"color2"\"#6c4cf1";"max"\99})</code></p>
+        <p>Auch hier gilt das Gebietsschema: In einer deutschsprachigen Tabelle trennt der <strong>Backslash</strong> die Spalten eines Arrays und das <strong>Semikolon</strong> die Zeilen. In einer US-Tabelle lautet dieselbe Formel <code>=SPARKLINE({E2,F2},{"charttype","bar";…})</code> mit Kommas. Verwendet man die falsche Variante, meldet Sheets nur einen Formelfehler und sagt nicht, dass das Trennzeichen gemeint ist.</p>
+        <p>Die Formel zeichnet denselben Trick mit unsichtbarem Vorlauf innerhalb einer einzigen Zelle, und weil <code>max</code> fest auf die Projektspanne von 99 gesetzt ist, teilen sich alle Zeilen eine Achse. Sie übersteht eingefügte Zeilen und Umsortieren besser als das Diagramm — bleibt aber ein Bild und kein Terminplan.</p>
+      </div>
+      <h2 id="s4">Welcher Weg was leistet</h2>
+<p>Alle drei Wege zeichnen einen Terminplan. Keiner rechnet einen aus. Die Unterschiede zwischen ihnen sind real, aber klein neben dieser gemeinsamen Grenze — deshalb hier beides auf einmal:</p>
+      <table>
+        <thead>
+          <tr><th>Fähigkeit</th><th>Zeitachsen-Ansicht</th><th>Gestapelte Balken</th><th>SPARKLINE</th><th>Echte Terminplanung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Einrichtungsaufwand</td><td>Zwei Minuten</td><td>Zwei Hilfsspalten</td><td>Eine Formel</td><td>Tippen und ziehen</td></tr>
+          <tr><td>Wochenenden und Feiertage übersprungen</td><td>Nein</td><td>Über ARBEITSTAG</td><td>Über ARBEITSTAG</td><td>Eingebaut</td></tr>
+          <tr><td>Eine einzelne EA-Kette rechnet neu</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungspfeile</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Zwei Vorgänger an einem Vorgang</td><td>Verstecktes MAX()</td><td>Verstecktes MAX()</td><td>Verstecktes MAX()</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungsarten AA, EE und AE</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Kritischer Pfad</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Gesamtpuffer je Vorgang</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Auslastung und Überlastungswarnung</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Basisplan und Abweichung</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Gespeichert und verglichen</td></tr>
+          <tr><td>Übersteht eine eingefügte Zeile</td><td>Ja</td><td>Formeln nachtragen</td><td>Formel nachziehen</td><td>Ja</td></tr>
+          <tr><td>Übersteht Umsortieren</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Als Bild exportierbar</td><td>Nein — es ist eine Ansicht</td><td>Ja</td><td>Nein — es ist eine Zelle</td><td>PNG, PDF, PPTX</td></tr>
+        </tbody>
+      </table>
+      <p>Die „Nein“-Zeilen in der Mitte sind kein Vorwurf an Sheets; sie liegen außerhalb dessen, was eine Tabellenkalkulation ist. Sheets hält Zahlen fest, die Sie anderswo entschieden haben. Sollen sie <em>abgeleitet</em> werden — welcher Vorgang den Termin bestimmt, wie viel Luft die übrigen haben —, hilft keine noch so clevere Formel.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Nur der längste Weg durch das Netz bestimmt den Endtermin. Keine Tabelle findet ihn für Sie."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kritischer Pfad: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Puffer (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Dauer: 12</text></svg><figcaption>Nur der längste Weg durch das Netz bestimmt den Endtermin. Keine Tabelle findet ihn für Sie.</figcaption></figure>
+      <h2 id="s5">Weg 2: die native Zeitachsen-Ansicht</h2>
 <p>Unter <strong>Einfügen ▸ Zeitachse</strong> gibt es eine eingebaute Ansicht, die ganz ohne Formeln auskommt. Sie erwartet eine schlichte Tabelle mit mindestens drei Spalten: einer Bezeichnung, einem Startdatum und einem Enddatum. Optionale Spalten wie Verantwortliche, Phase oder Fortschritt lassen sich zusätzlich anzeigen.</p>
         <ol>
           <li>Markieren Sie den Datenbereich einschließlich der Kopfzeile.</li>
@@ -142,17 +208,17 @@
         </ol>
         <p>Die Zoomstufe lässt sich zwischen Tagen, Wochen, Monaten, Quartalen und Jahren umschalten, die Ansicht seitlich verschieben, und ein Klick auf eine Karte führt zurück in die Ursprungszeile der Tabelle. Für Roadmaps und grobe Terminübersichten ist das der bequemste Weg überhaupt.</p>
         <p>Zwei Einschränkungen sollten Sie vorher kennen. Erstens ist die Zeitachse eine <em>Ansicht</em>, kein Diagrammobjekt: Sie lässt sich nicht als Bild in eine Folie kopieren und nicht wie ein Diagramm umgestalten. Zweitens rechnet sie nichts — keine Verknüpfungen, kein kritischer Pfad, keine Verschiebung von Nachfolgern. Sie stellt Zeiträume dar, mehr nicht.</p>
-      <h2 id="s4">Weg 3: bedingte Formatierung</h2>
+      <h2 id="s6">Weg 3: bedingte Formatierung</h2>
 <p>Ohne Diagramm: Legen Sie in der Kopfzeile eine Spalte je Tag oder je Woche an und lassen Sie Vorgang, Start und Ende links stehen. Markieren Sie dann das gesamte Kalenderraster und wählen Sie <strong>Format ▸ Bedingte Formatierung</strong>. Unter <em>Formatierungsregeln</em> stellen Sie auf <strong>Benutzerdefinierte Formel ist</strong> um und tragen ein: <code>=UND(F$1&gt;=$B2; F$1&lt;=$C2)</code>. Als Formatierung genügt eine Hintergrundfarbe.</p>
         <p>Jede Zelle, deren Kopfdatum in den Zeitraum ihres Vorgangs fällt, färbt sich ein. Das Ergebnis ist ein Raster, das sich wie ein Gantt-Diagramm liest, in der Tabelle lebt und sich bei jeder Terminänderung sofort selbst aktualisiert.</p>
         <p>Praktisch für kurze Zeiträume und für Pläne, die ohnehin in der Tabelle bearbeitet werden. Unübersichtlich wird es ab etwa einem Quartal in Tagesspalten — dann lohnt der Wechsel auf Wochenspalten mit <code>=UND($C2&gt;=F$1; $B2&lt;=F$1+6)</code>, damit auch Vorgänge erfasst werden, die eine Woche nur teilweise berühren.</p>
-      <h2 id="s5">Mit einer Vorlage starten</h2>
+      <h2 id="s7">Mit einer Vorlage starten</h2>
 <p>Der schnellste Weg zu einem fertigen Diagramm ist, die Mechanik gar nicht erst selbst zu bauen. Unsere <a href="/de/templates/google-sheets.html">kostenlose Google-Sheets-Vorlage</a> enthält Hilfsspalten, Diagramm und Formatierung bereits fertig — Sie legen über <em>Datei ▸ Kopie erstellen</em> eine eigene Kopie in Ihrem Drive an und überschreiben die Beispielzeilen. In der <a href="/de/templates.html">Vorlagenübersicht</a> finden Sie außerdem Varianten für Excel, PowerPoint und einzelne Branchen.</p>
-      <h2 id="s6">Welcher Weg wofür</h2>
+      <h2 id="s8">Welcher Weg wofür</h2>
 <p>Zeitachsen-Ansicht für den schnellen Überblick und für Roadmaps, die niemand exportieren muss. Gestapelte Balken für ein Diagramm, das in eine Präsentation oder einen Bericht wandern soll. Bedingte Formatierung für einen Plan, der in der Tabelle bleibt und häufig angefasst wird.</p>
         <p>Als Faustregel: Wenn das Ergebnis das Dokument verlassen soll, brauchen Sie ein Diagrammobjekt — also Weg 1. Wenn es nur gelesen wird, ist Weg 2 in einem Bruchteil der Zeit fertig. Und wenn der Plan täglich angefasst wird, gewinnt Weg 3, weil er als einziger keinen zweiten Ort hat, an dem etwas veralten kann.</p>
         <p>Die Wege lassen sich auch kombinieren, ohne dass Sie die Daten doppelt pflegen: Alle drei greifen auf dieselben Spalten für Vorgang, Start und Ende zu. Ein Plan kann also gleichzeitig eine Zeitachsen-Ansicht für die wöchentliche Abstimmung und ein Balkendiagramm für den Monatsbericht besitzen. Was Sie in beiden Fällen von Hand nachziehen müssen, sind allein die Hilfsspalten für Abstand und Dauer — und die nur, wenn Sie Weg 1 nutzen.</p>
-      <h2 id="s7">Die Ansicht verfeinern</h2>
+      <h2 id="s9">Die Ansicht verfeinern</h2>
 <p>Ein paar Ergänzungen machen jedes Sheets-Gantt lesbarer:</p>
         <ul>
           <li><strong>Nach Phase gruppieren</strong> — eine Spalte „Phase“ ergänzen und entweder danach sortieren oder sie in der Zeitachsen-Ansicht als <em>Gruppieren nach</em> verwenden.</li>
@@ -160,7 +226,7 @@
           <li><strong>Meilensteine markieren</strong> — Vorgänge mit der Dauer null in einer Signalfarbe einfärben, damit sie als Punkt und nicht als Balken gelesen werden.</li>
           <li><strong>Heutiges Datum</strong> — in der bedingten Formatierung eine zweite Regel mit <code>=F$1=HEUTE()</code> anlegen, die die Tagesspalte farblich hervorhebt.</li>
         </ul>
-      <h2 id="s8">Abhängigkeiten nachbilden — und die gemeinsame Grenze</h2>
+      <h2 id="s10">Abhängigkeiten nachbilden — und die gemeinsame Grenze</h2>
 <p>Abhängigkeiten sind die harte Grenze. Google Sheets kennt den Gedanken „Vorgang B beginnt, wenn Vorgang A endet“ nicht. Nachbilden lässt er sich per Formel, indem das Startdatum eines Nachfolgers auf das Ende seines Vorgängers verweist — etwa <code>=C2+1</code>. Eine Änderung läuft dann immerhin die Spalte hinunter.</p>
         <p>Sichtbare Pfeile entstehen dadurch nicht, Vorgänge mit mehreren Vorgängern brauchen verschachtelte MAX-Formeln, und spätestens beim ersten Einfügen einer Zeile in der Mitte geraten die Bezüge durcheinander. Puffer, ein <a href="/de/blog/critical-path-method.html">kritischer Pfad</a> und ein <a href="/de/blog/gantt-baseline-variance.html">Basisplan</a> zum Soll-Ist-Vergleich sind auf diesem Weg nicht erreichbar.</p>
         <p>Der echte Vorteil von Sheets ist die gemeinsame Bearbeitung in Echtzeit samt Versionsverlauf und Kommentaren. Wenn Sie die brauchen und der Plan überschaubar bleibt, ist Sheets eine gute Wahl. Sobald der Plan selbst rechnen soll, brauchen Sie ein Planungswerkzeug: <a href="/de/app.html">gantts.app</a> verknüpft Vorgänge, verschiebt Nachfolger automatisch, hebt den kritischen Pfad hervor und exportiert nach Excel, PowerPoint, PDF oder PNG — ohne Konto und ohne Installation.</p>

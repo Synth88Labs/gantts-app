@@ -54,7 +54,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=25" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间，因此其中任何一项延误一天，完工就晚一天。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先列出所有任务的工期和前置任务，再正推求最早开始与最早完成（汇合处取最大值），然后从项目工期逆推求最晚完成与最晚开始（分叉处取最小值），最后用最晚开始减最早开始得到浮动时间。浮动时间为零的任务首尾相连，就是关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间，等于最晚开始减最早开始，也等于最晚完成减最早完成。注意它由整条支路共享：前面的任务用掉了，后面就没有了。"}},{"@type":"Question","name":"正推和逆推有什么区别？","acceptedAnswer":{"@type":"Answer","text":"正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。"}},{"@type":"Question","name":"CPM 和 PERT 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间，因此其中任何一项延误一天，完工就晚一天。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先列出所有任务的工期和前置任务，再正推求最早开始与最早完成（汇合处取最大值），然后从项目工期逆推求最晚完成与最晚开始（分叉处取最小值），最后用最晚开始减最早开始得到浮动时间。浮动时间为零的任务首尾相连，就是关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间，等于最晚开始减最早开始，也等于最晚完成减最早完成。注意它由整条支路共享：前面的任务用掉了，后面就没有了。"}},{"@type":"Question","name":"正推和逆推有什么区别？","acceptedAnswer":{"@type":"Answer","text":"正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。"}},{"@type":"Question","name":"CPM 和 PERT 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。"}},{"@type":"Question","name":"总浮动时间和自由浮动时间有什么区别？","acceptedAnswer":{"@type":"Answer","text":"总浮动时间是项目完工日期移动之前一项活动能推迟多久；自由浮动时间是它打扰到任何一个紧后活动之前能推迟多久，等于紧后活动中最早的 ES 减去本活动的 EF。总浮动时间沿整条链共享，自由浮动时间是这项活动私有的。gantts.app 只报总浮动时间，界面上没有自由浮动列。"}},{"@type":"Question","name":"gantts.app 算出来的浮动时间为什么和我手算的不一样？","acceptedAnswer":{"@type":"Answer","text":"因为它跑的是\"按摆放位置\"的 CPM：每项任务从你摆放的开始日期起算，依赖关系只能把它往后推，永远不会往前拉。教科书 CPM 则把每项任务都摆到逻辑允许的最早位置。想让两者一致，点\"自动排程\"，它会把所有有前置任务的任务拉回最早合法日期。"}},{"@type":"Question","name":"负浮动时间是什么意思？","acceptedAnswer":{"@type":"Answer","text":"最晚开始落在最早开始之前，通常是因为指定的交付期早于逻辑允许的最早完工日。−4 不是富余，它表示这件事本该四天前就开始。gantts.app 把浮动时间小于或等于零的任务都标为关键，所以负浮动会显示出来而不是被抹掉。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -90,17 +90,17 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
+    <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>4 分钟阅读</span></p>
     <div class="toc"><strong>本页内容</strong>
       <ol>
         <li><a href="#s1">基本想法</a></li>
-        <li><a href="#s2">正推：最早时间</a></li>
-        <li><a href="#s3">逆推：最晚时间</a></li>
-        <li><a href="#s4">浮动时间与关键路径</a></li>
-        <li><a href="#s5">一个六任务算例</a></li>
-        <li><a href="#s6">读懂这张表</a></li>
-        <li><a href="#s7">CPM、PERT 与关键链</a></li>
-        <li><a href="#s8">这在实际中意味着什么</a></li>
+        <li><a href="#s2">几个必须先厘清的术语</a></li>
+        <li><a href="#s3">逐步计算：五个步骤</a></li>
+        <li><a href="#s4">一个完整算例，连算术一起</a></li>
+        <li><a href="#s5">CPM、PERT 与关键链</a></li>
+        <li><a href="#s6">总浮动时间、自由浮动时间与负浮动时间</a></li>
+        <li><a href="#s7">gantts.app 是怎么算的（以及它和教科书的差别）</a></li>
+        <li><a href="#s8">在 gantts.app 里看关键路径</a></li>
       </ol>
     </div>
 
@@ -111,52 +111,113 @@
 
     <div class="prose">
       <h2 id="s1">基本想法</h2>
-<p>并非每项任务对工期的影响都一样。有些有余量，可以推迟而不影响完工；有些一点余量都没有——这些构成关键路径。</p>
-      <p>关键路径法（Critical Path Method，CPM）出自 1950 年代末的工厂检修排期。它的价值是聚焦：几十项任务里，直接指出卡住完工日期的那几项。两条基本公式是<strong>最早完成 = 最早开始 + 工期</strong>与<strong>最晚开始 = 最晚完成 − 工期</strong>。</p>
-      <h2 id="s2">正推：最早时间</h2>
-<p>从项目开始向前推算，约定第一项任务的最早开始为第 0 天。每项任务的最早开始取所有前置任务最早完成中的<em>最大值</em>——只要还有一个前置没完成，它就动不了；最早完成等于最早开始加工期。走到最后一项，得到的就是项目最短可能工期。汇合处务必取最大值，这是手算最常出错的一步。</p>
-      <h2 id="s3">逆推：最晚时间</h2>
-<p>再从项目结束往回推。把最后一项任务的最晚完成设为刚算出的项目工期，然后逐项前推：最晚完成取所有后续任务最晚开始中的<em>最小值</em>——它必须赶在最早需要它的后续任务之前完成；最晚开始等于最晚完成减工期。正推取最大值、逆推取最小值，这一对相反的规则就是全部机关。</p>
-      <h2 id="s4">浮动时间与关键路径</h2>
-<p>总浮动时间 = 最晚开始 − 最早开始 = 最晚完成 − 最早完成，两种算法结果必然相同，可互相校验。浮动时间为零的任务首尾相连，构成关键路径。</p>
-      <p>注意总浮动时间由整条支路<em>共享</em>：前面的任务把三天用完，后面就一天不剩。</p>
-      <h2 id="s5">一个六任务算例</h2>
-<p>工期单位是工作日。设第 0 天为 3 月 2 日（周一），则第 15 个工作日是 3 月 20 日（周五）。</p>
-      <table>
-        <thead><tr><th>任务</th><th>工期（天）</th><th>前置任务</th></tr></thead>
-        <tbody>
-          <tr><td>A — 立项</td><td>3</td><td>—</td></tr>
-          <tr><td>B — 设计</td><td>4</td><td>A</td></tr>
-          <tr><td>C — 采购</td><td>2</td><td>A</td></tr>
-          <tr><td>D — 施工</td><td>5</td><td>B</td></tr>
-          <tr><td>E — 场地准备</td><td>6</td><td>C</td></tr>
-          <tr><td>F — 安装与测试</td><td>3</td><td>D、E</td></tr>
-        </tbody>
-      </table>
-      <p>两条路径：A → B → D → F ＝ 3 + 4 + 5 + 3 ＝ 15 天，A → C → E → F ＝ 3 + 2 + 6 + 3 ＝ 14 天。较长的 15 天就是关键路径。下面用完整的正推和逆推验证。</p>
-      <p><strong>正推：</strong>A 从 0 到 3。B 接 A，3 到 7；C 也接 A，3 到 5。D 接 B，7 到 12；E 接 C，5 到 11。F 等 D 和 E，取 max(12, 11) ＝ 12 开始，到 15 结束。<strong>项目工期 15 天。</strong></p>
-      <p><strong>逆推：</strong>F 最晚完成 15、最晚开始 12。D 最晚完成取 F 的最晚开始 12，最晚开始 7；E 最晚完成同为 12，只要 6 天，最晚开始 6。B 最晚完成取 7，最晚开始 3；C 最晚完成取 6，最晚开始 4。A 最晚完成取 min(3, 4) ＝ 3，最晚开始 0。</p>
-      <table>
-        <thead><tr><th>任务</th><th>最早开始</th><th>最早完成</th><th>最晚开始</th><th>最晚完成</th><th>总浮动时间</th><th>关键？</th></tr></thead>
-        <tbody>
-          <tr><td>A</td><td>0</td><td>3</td><td>0</td><td>3</td><td>0</td><td>是</td></tr>
-          <tr><td>B</td><td>3</td><td>7</td><td>3</td><td>7</td><td>0</td><td>是</td></tr>
-          <tr><td>C</td><td>3</td><td>5</td><td>4</td><td>6</td><td>1</td><td>否</td></tr>
-          <tr><td>D</td><td>7</td><td>12</td><td>7</td><td>12</td><td>0</td><td>是</td></tr>
-          <tr><td>E</td><td>5</td><td>11</td><td>6</td><td>12</td><td>1</td><td>否</td></tr>
-          <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td>0</td><td>是</td></tr>
-        </tbody>
-      </table>
-      <h2 id="s6">读懂这张表</h2>
-<p>浮动时间为零的 A、B、D、F 构成关键路径，与一开始数出的最长路径吻合。C 和 E 各有 1 天浮动时间，任一项推迟一天，15 天的完工日期不变。</p>
-      <p>但这 1 天由支路共享：C 用掉了，E 就没有了。若 C 推迟两天，A → C → E → F 变成 16 天，反过来成为新的关键路径，完工日期后移一天。</p>
-      <h2 id="s7">CPM、PERT 与关键链</h2>
+<p>并非每项任务对工期的影响都一样。有些有余量，可以推迟而不影响完工；有些一点余量都没有——这些构成关键路径。链上的任务叫<strong>关键任务</strong>，因为它们的浮动时间为零：没有任何富余，所以关键任务延误一天，项目完工日期就一对一地后移一天。</p>
+      <p>关键路径法（Critical Path Method，CPM）由 Morgan Walker 和 James Kelley 在 1950 年代末做工厂检修排期时提出。它的价值是聚焦：几十项任务里，直接指出卡住完工日期的那几项。</p>
+      <h2 id="s2">几个必须先厘清的术语</h2>
+<ul>
+        <li><strong>关键路径</strong>——相互依赖的活动中最长的一条路径，它的长度就是项目最短工期。</li>
+        <li><strong>浮动时间（时差）</strong>——一项活动在不推迟完工的前提下可以推迟多久。关键活动为零。</li>
+        <li><strong>正推</strong>——从左往右，求每项活动的最早时间。</li>
+        <li><strong>逆推</strong>——从右往左，求在仍能按期完工前提下的最晚时间。</li>
+        <li><strong>ES / EF</strong>——最早开始与最早完成，<code>EF = ES + 工期</code>。</li>
+        <li><strong>LS / LF</strong>——最晚开始与最晚完成，<code>LS = LF − 工期</code>。</li>
+      </ul>
+      <p>把它们串起来：<strong>总浮动时间 = LS − ES = LF − EF</strong>。两种算法结果必然相同，可以互相校验；结果为零，这项活动就是关键的。</p>
+      <h2 id="s3">逐步计算：五个步骤</h2>
+<ol>
+        <li><strong>列出活动与依赖关系。</strong>每项活动、它的工期，以及它的前置任务。</li>
+        <li><strong>画出网络。</strong>从唯一的开始节点连到唯一的结束节点。</li>
+        <li><strong>正推求 ES / EF。</strong>从左往右：第一项活动 ES = 0，<code>EF = ES + 工期</code>；后续每项的 ES 取所有前置任务 EF 中的<em>最大值</em>——只要还有一个前置没完成，它就动不了。末端最大的那个 EF 就是项目工期。汇合处取最大值，是手算最常出错的一步。</li>
+        <li><strong>逆推求 LS / LF。</strong>从右往左：最后一项活动的 LF 等于项目工期，<code>LS = LF − 工期</code>；更早每项的 LF 取所有紧后活动 LS 中的<em>最小值</em>——它必须赶在最早需要它的那项之前完成。正推取最大值、逆推取最小值，这一对相反的规则就是全部机关。</li>
+        <li><strong>算浮动时间。</strong><code>浮动时间 = LS − ES</code>。浮动时间为零的活动首尾相连，就是关键路径。</li>
+      </ol>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="正推定出最早时间，逆推定出最晚时间，两者之间的差就是浮动时间。差为零即关键。"><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">浮动时间 (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期: 12</text></svg><figcaption>正推定出最早时间，逆推定出最晚时间，两者之间的差就是浮动时间。差为零即关键。</figcaption></figure>
+      <h2 id="s4">一个完整算例，连算术一起</h2>
+<p>一个物流仓库的货架安装工程，九项活动，工期单位是工作日。下面每一个数字都只用到加法和减法。设第 0 天为 3 月 2 日（周一）。</p>
+      <div class="worked">
+        <p><strong>青云仓储 B 库货架安装。九项活动，工作日。</strong></p>
+        <table>
+          <thead><tr><th>活动</th><th>工期（天）</th><th>前置任务</th></tr></thead>
+          <tbody>
+            <tr><td>A — 现场勘测</td><td>4</td><td>—</td></tr>
+            <tr><td>B — 货位布置方案设计</td><td>6</td><td>A</td></tr>
+            <tr><td>C — 施工图审查与消防报建</td><td>10</td><td>A</td></tr>
+            <tr><td>D — 货架采购（长周期）</td><td>15</td><td>B</td></tr>
+            <tr><td>E — 库区清空腾挪</td><td>5</td><td>A</td></tr>
+            <tr><td>F — 地坪修补</td><td>8</td><td>C、E</td></tr>
+            <tr><td>G — 电气一次配管</td><td>6</td><td>F</td></tr>
+            <tr><td>H — 货架安装</td><td>9</td><td>D、G</td></tr>
+            <tr><td>I — 监理验收与竣工验收</td><td>3</td><td>H</td></tr>
+          </tbody>
+        </table>
+        <p>网络里一共<strong>三条路径</strong>，各自求和：</p>
+        <ul>
+          <li>A → C → F → G → H → I ＝ 4 + 10 + 8 + 6 + 9 + 3 ＝ <strong>40 天</strong></li>
+          <li>A → B → D → H → I ＝ 4 + 6 + 15 + 9 + 3 ＝ <strong>37 天</strong></li>
+          <li>A → E → F → G → H → I ＝ 4 + 5 + 8 + 6 + 9 + 3 ＝ <strong>35 天</strong></li>
+        </ul>
+        <p>40 天最长，答案就是它。下面的正推逆推既是证明，也顺便给其余活动的余量定价。</p>
+        <table>
+          <thead><tr><th>活动</th><th>工期</th><th>ES = max(前置 EF)</th><th>EF</th><th>LF = min(紧后 LS)</th><th>LS</th><th>总浮动时间</th><th>关键？</th></tr></thead>
+          <tbody>
+            <tr><td>A — 现场勘测</td><td>4</td><td><strong>0</strong>（无前置）</td><td>0+4 = <strong>4</strong></td><td>min(7, 4, 9) = <strong>4</strong></td><td>4−4 = <strong>0</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+            <tr><td>B — 方案设计</td><td>6</td><td><strong>4</strong>（A）</td><td>4+6 = <strong>10</strong></td><td><strong>13</strong>（D）</td><td>13−6 = <strong>7</strong></td><td>3</td><td>否</td></tr>
+            <tr><td>C — 图审与报建</td><td>10</td><td><strong>4</strong>（A）</td><td>4+10 = <strong>14</strong></td><td><strong>14</strong>（F）</td><td>14−10 = <strong>4</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+            <tr><td>D — 货架采购</td><td>15</td><td><strong>10</strong>（B）</td><td>10+15 = <strong>25</strong></td><td><strong>28</strong>（H）</td><td>28−15 = <strong>13</strong></td><td>3</td><td>否</td></tr>
+            <tr><td>E — 库区清空</td><td>5</td><td><strong>4</strong>（A）</td><td>4+5 = <strong>9</strong></td><td><strong>14</strong>（F）</td><td>14−5 = <strong>9</strong></td><td>5</td><td>否</td></tr>
+            <tr><td>F — 地坪修补</td><td>8</td><td>max(14, 9) = <strong>14</strong></td><td>14+8 = <strong>22</strong></td><td><strong>22</strong>（G）</td><td>22−8 = <strong>14</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+            <tr><td>G — 电气配管</td><td>6</td><td><strong>22</strong>（F）</td><td>22+6 = <strong>28</strong></td><td><strong>28</strong>（H）</td><td>28−6 = <strong>22</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+            <tr><td>H — 货架安装</td><td>9</td><td>max(25, 28) = <strong>28</strong></td><td>28+9 = <strong>37</strong></td><td><strong>37</strong>（I）</td><td>37−9 = <strong>28</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+            <tr><td>I — 竣工验收</td><td>3</td><td><strong>37</strong>（H）</td><td>37+3 = <strong>40</strong></td><td><strong>40</strong>（项目结束）</td><td>40−3 = <strong>37</strong></td><td><strong>0</strong></td><td><strong>是</strong></td></tr>
+          </tbody>
+        </table>
+        <p>有两行承载了整个方法。<strong>F</strong> 从第 14 天开始而不是第 9 天，它等的是图审报建，不是库区清空。<strong>H</strong> 从第 28 天开始而不是第 25 天：电气这条链比货架到货还晚。A 的 LS 算出来正好是 0，这是校验——大于 0，就说明 40 天不是最短工期。</p>
+        <p>浮动时间为零的 <strong>A、C、F、G、H、I</strong> 构成关键路径，恰好是最先加出来的那条 40 天的链。浮动时间也和路径长度对得上：B 和 D 在 37 天那条路径上，40 − 37 = <strong>3</strong>；E 在 35 天那条上，40 − 35 = <strong>5</strong>。<strong>某条路径上的浮动时间，永远等于项目工期减去这条路径的长度</strong>——这是校验自己算术最快的办法。</p>
+        <p><strong>现在让某项延误。</strong>图审报建（C）不是 10 天而是 14 天，关键活动上晚了四天。从 C 重跑正推：EF ＝ 4 + 14 ＝ 18，于是 F 的 ES 18 / EF 26，G 的 ES 26 / EF 32，H 的 ES max(25, 32) ＝ 32 / EF 41，I 的 EF 变成 <strong>44</strong>。</p>
+        <p>项目<strong>一天对一天</strong>地推后了——没有任何东西吸收这次延误，因为根本没有可用来吸收的东西。而其余所有人都变富了：从 LF(I) = 44 重跑逆推，B 的浮动时间变 7、D 变 7、E 变 9，各自都长了四天。<em>别处的余量，是关键路径上的延误制造出来的。</em></p>
+        <p><strong>再来一次超支浮动时间。</strong>把 C 改回 10 天，让货架采购（D，浮动时间 3）从 15 天变成 20 天——在一项<em>非关键</em>活动上晚了五天。D 的 EF 变成 10 + 20 ＝ 30，于是 H 的 ES max(30, 28) ＝ 30 / EF 39，I 在第 <strong>42</strong> 天完成。</p>
+        <p>晚两天，不是五天：前三天是从 D 自己的浮动时间里出的，只有超支的那部分传到了终点。<strong>浮动时间是一笔预算，只能花一次。</strong>而且关键路径<em>移位了</em>——A → B → D → H → I 现在是 4 + 6 + 20 + 9 + 3 ＝ 42 天，原来那条图审链反而多出 2 天浮动时间。你一直在盯的那几项活动，已经不是要紧的那几项了，而如果没有东西替你重算，谁也不会告诉你这件事。</p>
+      </div>
+      <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="浮动时间是一笔预算。花得比拥有的少，完工日期不动；花超了，只有超出的部分传到终点。"><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">自由浮动时间</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">总浮动时间</text></svg><figcaption>浮动时间是一笔预算。花得比拥有的少，完工日期不动；花超了，只有超出的部分传到终点。</figcaption></figure>
+      <h2 id="s5">CPM、PERT 与关键链</h2>
 <p><strong>CPM</strong> 每项任务只用一个确定工期，输出关键路径和浮动时间，适合估算比较可靠的场合。</p>
       <p><strong>PERT</strong> 给三个估计——乐观 O、最可能 M、悲观 P——按 (O + 4M + P) / 6 加权。设计任务估 2、4、12 天，期望工期就是 (2 + 16 + 12) / 6 ＝ 5 天，比"最可能"的 4 天多一天，这一天正是长尾风险的定价。常见做法是用 PERT 估工期，再拿它跑 CPM。</p>
       <p><strong>关键链</strong>来自约束理论，在 CPM 之上加入资源约束，把各任务里分散的余量集中成放在链尾的缓冲。当决定进度的是共用资源时更合适。</p>
-      <h2 id="s8">这在实际中意味着什么</h2>
-<p>它告诉你精力花在哪里有效：给 C 加人对完工毫无帮助；在 B 上省一天，项目就真的早一天完工。</p>
-      <p>关键路径不是计划的固有属性，而是某一时刻的快照，每周更新后都要重算——手算六项尚可，六十项就不现实。<a href="/zh/app.html">gantts.app</a> 在浏览器里边输入边算，改一个工期或一条依赖关系，关键路径立刻重新高亮，随后可导出 PDF、PNG、Excel 或 PowerPoint。</p>
+      <h2 id="s6">总浮动时间、自由浮动时间与负浮动时间</h2>
+<p>上文说的"浮动时间"都是<strong>总浮动时间</strong>：一项活动在<em>项目</em>完工日期移动之前能推迟多久。单看它会误导人，因为总浮动时间常常是<em>共享</em>的。<strong>自由浮动时间</strong>问的是更严格的问题——这项活动推迟多久才会打扰到<em>任何一个紧后活动</em>？公式是 <code>紧后活动中最早的 ES − 本活动 EF</code>：</p>
+      <ul>
+        <li><strong>B：</strong>总浮动时间 3，自由浮动时间 = ES(D) 10 − EF(B) 10 = <strong>0</strong>。B 拖一天，D 立刻就动。那三天属于 B→D 这整条链，谁先花掉就是谁花掉了。</li>
+        <li><strong>D：</strong>总浮动时间 3，自由浮动时间 = ES(H) 28 − EF(D) 25 = <strong>3</strong>。D 的余量确实是 D 自己的。</li>
+        <li><strong>E：</strong>总浮动时间 5，自由浮动时间 = ES(F) 14 − EF(E) 9 = <strong>5</strong>。完全私有，就摆在等报建的那段空档前面。</li>
+      </ul>
+      <p>总浮动时间是交付期能吸收的量，自由浮动时间是你不用打招呼就能花的量。同一条链上的两位负责人如果各自按总浮动时间做打算，他们会把同一批天数各花一遍。</p>
+      <p><strong>负浮动时间</strong>意味着出了问题：最晚开始落在了最早开始<em>之前</em>，通常是因为有人指定的交付期早于逻辑允许的最早日期。−4 不是富余，它读作"这件事本该四天前就开始"。</p>
+      <h2 id="s7">gantts.app 是怎么算的（以及它和教科书的差别）</h2>
+<p>这一点值得说准确，因为我们的正推<em>不是</em>上面那一套，而差别就落在浮动时间这一列上。</p>
+      <p>教科书的 CPM 不管你把横条画在哪：它把每项活动都摆到前置任务允许的最早位置，所以 E 从第 4 天开始，无论你有没有把它摆在那儿。gantts.app 跑的是<strong>"按摆放位置"的 CPM</strong>——每项任务从<em>它自己被摆放的开始日期</em>起算，前置任务只能把它<strong>往后推，永远不会往前拉</strong>。写成代码就是一个 <code>max</code>：最早开始先取任务自身的开始，只有当约束要求更晚时，依赖关系才把它抬高。</p>
+      <p>把 E 的横条摆在第 8 天而不是第 4 天，差别就是一个数字。教科书 CPM 仍然报 ES 4、浮动时间 5 天。我们报 ES 8，而逆推不变（LS 9），浮动时间是 <strong>1 天</strong>。两个都对，只是回答的问题不同：教科书问的是逻辑允许多少余量，我们问的是<em>这份画出来的计划</em>还剩多少余量。</p>
+      <p>理由是它首先是一张图：一个会悄悄搬动任务的正推，等于为一份并不在屏幕上的进度计划打印浮动时间。拖动横条是一条指令，我们就当它是指令。</p>
+      <p>其余部分是常规的。最晚完成取紧后活动最晚开始中的最小值（或项目结束日），浮动时间是 <code>LS − ES</code>，滞后量和非完成-开始的连线都走同一遍推算。浮动时间<strong>小于或等于零</strong>时任务即为关键，所以负浮动时间会显示出来而不是被抹掉。另有三点：</p>
+      <ul>
+        <li><strong>只报总浮动时间。</strong>每项任务一个数字，而且是总浮动时间（总浮动时间）——界面上<strong>没有自由浮动时间这一列</strong>。</li>
+        <li><strong>摘要行不参与排程。</strong>CPM 只跑叶子任务和里程碑；分组横条是下属任务的汇总。</li>
+        <li><strong>启用工作日历时按工作日算。</strong>推算用的是工作日序号，所以偏移 5 表示五个<em>工作日</em>，紧后任务落在周一而不是周日，法定节假日和调休也一并按日历处理。</li>
+      </ul>
+      <p>想要教科书那种行为——所有任务都拉回逻辑允许的最早日期——点<strong>自动排程</strong>。它重跑一遍正推，只改一条规则：有前置任务的任务完全由约束驱动，不管它现在摆在哪；没有前置任务的任务原地不动，当锚点。点完之后，两种算法结果一致。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="滞后量在不打断连线的前提下把约束往后挪。关键路径是穿过滞后量的，所以三天的等待就是交付期的三天。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 开始 + 延隔时间</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">延隔时间 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A + 3d</text></svg><figcaption>滞后量在不打断连线的前提下把约束往后挪。关键路径是穿过滞后量的，所以三天的等待就是交付期的三天。</figcaption></figure>
+      <h2 id="s8">在 gantts.app 里看关键路径</h2>
+<p>手算一遍是理解 CPM 的必经之路，但你不会想在每次估算变动时都重算一遍——而且上面第二次延误已经说明，路径本身是会移位的。</p>
+      <ol>
+        <li>打开 <a href="/zh/app.html">gantts.app</a>，用<strong>＋ 任务</strong>和<strong>◆ 里程碑</strong>把九项活动加进去，在<strong>天数</strong>列填工期。</li>
+        <li>在<strong>前置任务</strong>列直接按行号写依赖关系，多个用逗号分隔，例如 F 那一行写 <code>3,5</code>；也可以从横条边缘的小圆点拖到目标横条上。</li>
+        <li>进<strong>工作日历</strong>登记法定节假日和调休上班日，工期才按真实工作日展开。</li>
+        <li>点<strong>自动排程</strong>，把每项任务拉回依赖关系允许的最早日期——这一步之后，结果与教科书 CPM 一致。</li>
+        <li>勾上<strong>关键路径</strong>，零浮动的那条链会画成斜纹；<strong>天数</strong>和<strong>总浮动时间</strong>可在<strong>列</strong>里显示出来。</li>
+        <li>改一个工期试试：把 C 从 10 改成 14，高亮和日期立刻重算，不用重跑任何一遍手算。</li>
+        <li>计划谈定后存一版<strong>基准</strong>，再用<strong>⬇ 导出</strong>出 PDF、PNG、Excel 或 PowerPoint。</li>
+      </ol>
+      <p>它还告诉你精力花在哪里有效：给 E 加人对完工毫无帮助，因为它有 5 天浮动时间；在 C 上省一天，项目就真的早一天完工。关键路径不是计划的固有属性，而是某一时刻的快照，每周更新后都要重算——手算九项尚可，六十项就不现实。</p>
+      <p>刚接触排程的话，先读<a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图</a>，再看<a href="/zh/blog/how-to-make-a-gantt-chart.html">甘特图怎么做</a>，或者直接从<a href="/zh/templates.html">模板库</a>拿一份现成计划。</p>
 
       <div class="callout">关键路径在项目过程中会变。一项有三天浮动时间的任务若延误四天，它自己就成了关键任务。因此关键路径不是开工时算一次，而是每次更新都要重算。</div>
 
@@ -168,6 +229,9 @@
         <details><summary>正推和逆推有什么区别？</summary><p>正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。</p></details>
         <details><summary>CPM 和 PERT 有什么区别？</summary><p>CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。</p></details>
         <details><summary>关键路径可能有多条吗？</summary><p>可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。</p></details>
+        <details><summary>总浮动时间和自由浮动时间有什么区别？</summary><p>总浮动时间是项目完工日期移动之前一项活动能推迟多久；自由浮动时间是它打扰到任何一个紧后活动之前能推迟多久，等于紧后活动中最早的 ES 减去本活动的 EF。总浮动时间沿整条链共享，自由浮动时间是这项活动私有的。gantts.app 只报总浮动时间，界面上没有自由浮动列。</p></details>
+        <details><summary>gantts.app 算出来的浮动时间为什么和我手算的不一样？</summary><p>因为它跑的是"按摆放位置"的 CPM：每项任务从你摆放的开始日期起算，依赖关系只能把它往后推，永远不会往前拉。教科书 CPM 则把每项任务都摆到逻辑允许的最早位置。想让两者一致，点"自动排程"，它会把所有有前置任务的任务拉回最早合法日期。</p></details>
+        <details><summary>负浮动时间是什么意思？</summary><p>最晚开始落在最早开始之前，通常是因为指定的交付期早于逻辑允许的最早完工日。−4 不是富余，它表示这件事本该四天前就开始。gantts.app 把浮动时间小于或等于零的任务都标为关键，所以负浮动会显示出来而不是被抹掉。</p></details>
       </div>
 
       <aside class="promo">

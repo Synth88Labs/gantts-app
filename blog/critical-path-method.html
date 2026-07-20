@@ -122,8 +122,10 @@
         <li><a href="#what">What is CPM?</a></li>
         <li><a href="#terms">Key terms</a></li>
         <li><a href="#calculate">How to calculate it step by step</a></li>
-        <li><a href="#example">A worked example</a></li>
+        <li><a href="#example">A worked example, with the arithmetic</a></li>
+        <li><a href="#float">Total float, free float, and negative float</a></li>
         <li><a href="#vs">CPM vs PERT vs critical chain</a></li>
+        <li><a href="#as-placed">How gantts.app computes it (and where it differs)</a></li>
         <li><a href="#auto">See the critical path automatically</a></li>
         <li><a href="#faq">Frequently asked questions</a></li>
       </ol>
@@ -136,89 +138,118 @@
     <div class="prose">
       <h2 id="what">What is CPM?</h2>
       <p>The <strong>critical path method</strong> is a project scheduling technique that identifies the longest sequence of dependent tasks from start to finish. The length of that sequence equals the shortest time in which the project can be completed. The tasks on it are called <strong>critical tasks</strong> because they have zero slack: there is no spare time, so any delay to a critical task pushes out the project's end date one-for-one.</p>
-      <p>CPM was developed in the late 1950s (by Morgan Walker and James Kelley, working on plant-maintenance scheduling) and remains one of the most widely taught tools in project management. Its value is focus: on a plan with dozens of tasks, CPM tells you exactly which handful actually control the deadline, so you know where to concentrate attention, resources, and risk management.</p>
+      <p>CPM was developed in the late 1950s by Morgan Walker and James Kelley, working on plant-maintenance scheduling. Its value is focus: on a plan with dozens of tasks, it tells you which handful actually control the deadline.</p>
 
       <h2 id="terms">Key terms</h2>
-      <p>CPM has its own vocabulary. A few definitions make the calculation easy to follow:</p>
       <ul>
-        <li><strong>Critical path</strong> — the longest path of dependent activities through the project; its duration is the project's minimum completion time.</li>
-        <li><strong>Float (slack)</strong> — how long an activity can be delayed without delaying the project finish. Critical activities have zero float.</li>
-        <li><strong>Forward pass</strong> — a left-to-right calculation through the network that finds each activity's earliest possible dates.</li>
-        <li><strong>Backward pass</strong> — a right-to-left calculation that finds each activity's latest possible dates without slipping the end date.</li>
-        <li><strong>ES / EF (Early Start / Early Finish)</strong> — the earliest an activity can start and finish. <code>EF = ES + Duration</code>.</li>
-        <li><strong>LS / LF (Late Start / Late Finish)</strong> — the latest an activity can start and finish without delaying the project. <code>LS = LF − Duration</code>.</li>
+        <li><strong>Critical path</strong> — the longest path of dependent activities; its length is the project's minimum duration.</li>
+        <li><strong>Float (slack)</strong> — how long an activity can be delayed without delaying the finish. Critical activities have zero.</li>
+        <li><strong>Forward pass</strong> — left to right, finding each activity's earliest dates.</li>
+        <li><strong>Backward pass</strong> — right to left, finding the latest dates that still hit the end date.</li>
+        <li><strong>ES / EF</strong> — early start and finish. <code>EF = ES + Duration</code>.</li>
+        <li><strong>LS / LF</strong> — late start and finish. <code>LS = LF − Duration</code>.</li>
       </ul>
-      <p>The core formula that ties it together is <strong>Float = LS − ES = LF − EF</strong>. When float is zero, the activity is on the critical path.</p>
+      <p>Tying them together: <strong>Float = LS − ES = LF − EF</strong>. Zero float means the activity is critical.</p>
 
-      <div class="callout"><strong>Don't want to do the passes by hand?</strong> Build your plan free in the <a href="/app.html">gantts.app Gantt maker</a> and it calculates and highlights the critical path for you as you type — then export to Excel, PowerPoint, PDF or PNG. No sign up, no download.</div>
+      <div class="callout"><strong>Don't want to do the passes by hand?</strong> The <a href="/app.html">gantts.app Gantt maker</a> highlights the critical path as you type, then exports to Excel, PowerPoint, PDF or PNG. No sign up.</div>
 
       <h2 id="calculate">How to calculate it step by step</h2>
-      <p>CPM is a five-step procedure. We will use a day-based convention where the project starts at time 0, so the first activity has ES = 0.</p>
+      <p>Five steps, using a day-based convention where the project starts at time 0.</p>
       <ol>
-        <li><strong>List activities &amp; dependencies.</strong> Write down every activity, its duration, and which activities must finish before it can start (its predecessors).</li>
-        <li><strong>Build the network.</strong> Draw the activities as a network diagram connected by their dependencies, from a single start to a single finish. This shows every possible path through the project.</li>
-        <li><strong>Forward pass (ES / EF).</strong> Moving left to right, set the first activity's ES = 0 and compute <code>EF = ES + Duration</code>. Each following activity's ES is the <em>largest</em> EF among its predecessors; carry EF forward. The largest EF at the end is the project duration.</li>
-        <li><strong>Backward pass (LS / LF).</strong> Moving right to left, set the last activity's LF equal to the project duration and compute <code>LS = LF − Duration</code>. Each earlier activity's LF is the <em>smallest</em> LS among the activities that follow it.</li>
-        <li><strong>Compute float &amp; identify the path.</strong> For each activity, <code>Float = LS − ES</code>. The activities with zero float, connected start to finish, are the critical path.</li>
+        <li><strong>List activities &amp; dependencies.</strong> Every activity, its duration, and its predecessors.</li>
+        <li><strong>Build the network.</strong> Connect them from a single start to a single finish.</li>
+        <li><strong>Forward pass (ES / EF).</strong> Left to right: first activity ES = 0, <code>EF = ES + Duration</code>, and each following ES is the <em>largest</em> EF among its predecessors. The largest EF at the end is the project duration.</li>
+        <li><strong>Backward pass (LS / LF).</strong> Right to left: last activity's LF = project duration, <code>LS = LF − Duration</code>, and each earlier LF is the <em>smallest</em> LS among its successors.</li>
+        <li><strong>Compute float.</strong> <code>Float = LS − ES</code>. The zero-float activities, connected start to finish, are the critical path.</li>
       </ol>
+      <figure class="fig fig-inline" data-fig="cpm" data-cap="The forward pass sets the earliest dates, the backward pass the latest, and the gap between them is float. Zero gap means critical."><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="The forward pass sets the earliest dates, the backward pass the latest, and the gap between them is float. Zero gap means critical."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Critical path: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Slack (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duration: 12</text></svg><figcaption>The forward pass sets the earliest dates, the backward pass the latest, and the gap between them is float. Zero gap means critical.</figcaption></figure>
 
-      <h2 id="example">A worked example</h2>
-      <p>Consider a small project with six activities. Durations are in days; predecessors show what must finish first.</p>
-      <table>
-        <thead><tr><th>Activity</th><th>Duration (days)</th><th>Predecessor(s)</th></tr></thead>
-        <tbody>
-          <tr><td>A — Plan</td><td>3</td><td>—</td></tr>
-          <tr><td>B — Design</td><td>4</td><td>A</td></tr>
-          <tr><td>C — Procure</td><td>2</td><td>A</td></tr>
-          <tr><td>D — Build</td><td>5</td><td>B</td></tr>
-          <tr><td>E — Prepare site</td><td>6</td><td>C</td></tr>
-          <tr><td>F — Install &amp; test</td><td>3</td><td>D, E</td></tr>
-        </tbody>
-      </table>
-      <p>There are two paths from start to finish: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 days</strong>, and <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 days</strong>. The longer one, 15 days, is the critical path — but let us confirm it with the full forward and backward pass and see the float on every activity.</p>
-      <p><strong>Forward pass</strong> (ES, then EF = ES + Duration):</p>
+      <h2 id="example">A worked example, with the arithmetic</h2>
+      <p>A warehouse racking installation, nine activities, durations in working days. Every number below needs nothing but addition and subtraction.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Activity</th><th>Duration (days)</th><th>Predecessor(s)</th></tr></thead>
+          <tbody>
+            <tr><td>A — Site survey</td><td>4</td><td>—</td></tr>
+            <tr><td>B — Design the layout</td><td>6</td><td>A</td></tr>
+            <tr><td>C — Council permit</td><td>10</td><td>A</td></tr>
+            <tr><td>D — Order racking (long lead)</td><td>15</td><td>B</td></tr>
+            <tr><td>E — Clear the floor</td><td>5</td><td>A</td></tr>
+            <tr><td>F — Slab repair</td><td>8</td><td>C, E</td></tr>
+            <tr><td>G — Electrical first fix</td><td>6</td><td>F</td></tr>
+            <tr><td>H — Install racking</td><td>9</td><td>D, G</td></tr>
+            <tr><td>I — Inspection &amp; sign-off</td><td>3</td><td>H</td></tr>
+          </tbody>
+        </table>
+
+        <p><strong>The three paths</strong> through the network, added up:</p>
+        <ul>
+          <li>A → C → F → G → H → I = 4 + 10 + 8 + 6 + 9 + 3 = <strong>40 days</strong></li>
+          <li>A → B → D → H → I = 4 + 6 + 15 + 9 + 3 = <strong>37 days</strong></li>
+          <li>A → E → F → G → H → I = 4 + 5 + 8 + 6 + 9 + 3 = <strong>35 days</strong></li>
+        </ul>
+        <p>Forty days is the longest, so that is the answer. The passes below prove it and price the slack on everything else.</p>
+
+        <p>Forward: start at day 0, <code>EF = ES + Dur</code>, ES is the <em>largest</em> EF among predecessors. Backward: I's LF is the project's 40, <code>LS = LF − Dur</code>, LF is the <em>smallest</em> LS among successors.</p>
+        <table>
+          <thead><tr><th>Activity</th><th>Dur</th><th>ES = max(preds' EF)</th><th>EF</th><th>LF = min(succs' LS)</th><th>LS</th><th>Float</th><th>Critical?</th></tr></thead>
+          <tbody>
+            <tr><td>A — Site survey</td><td>4</td><td><strong>0</strong> (no predecessor)</td><td>0+4 = <strong>4</strong></td><td>min(7, 4, 9) = <strong>4</strong></td><td>4−4 = <strong>0</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+            <tr><td>B — Design layout</td><td>6</td><td><strong>4</strong> (A)</td><td>4+6 = <strong>10</strong></td><td><strong>13</strong> (D)</td><td>13−6 = <strong>7</strong></td><td>3</td><td>No</td></tr>
+            <tr><td>C — Council permit</td><td>10</td><td><strong>4</strong> (A)</td><td>4+10 = <strong>14</strong></td><td><strong>14</strong> (F)</td><td>14−10 = <strong>4</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+            <tr><td>D — Order racking</td><td>15</td><td><strong>10</strong> (B)</td><td>10+15 = <strong>25</strong></td><td><strong>28</strong> (H)</td><td>28−15 = <strong>13</strong></td><td>3</td><td>No</td></tr>
+            <tr><td>E — Clear the floor</td><td>5</td><td><strong>4</strong> (A)</td><td>4+5 = <strong>9</strong></td><td><strong>14</strong> (F)</td><td>14−5 = <strong>9</strong></td><td>5</td><td>No</td></tr>
+            <tr><td>F — Slab repair</td><td>8</td><td>max(14, 9) = <strong>14</strong></td><td>14+8 = <strong>22</strong></td><td><strong>22</strong> (G)</td><td>22−8 = <strong>14</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+            <tr><td>G — Electrical</td><td>6</td><td><strong>22</strong> (F)</td><td>22+6 = <strong>28</strong></td><td><strong>28</strong> (H)</td><td>28−6 = <strong>22</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+            <tr><td>H — Install racking</td><td>9</td><td>max(25, 28) = <strong>28</strong></td><td>28+9 = <strong>37</strong></td><td><strong>37</strong> (I)</td><td>37−9 = <strong>28</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+            <tr><td>I — Sign-off</td><td>3</td><td><strong>37</strong> (H)</td><td>37+3 = <strong>40</strong></td><td><strong>40</strong> (project end)</td><td>40−3 = <strong>37</strong></td><td><strong>0</strong></td><td><strong>Yes</strong></td></tr>
+          </tbody>
+        </table>
+        <p>Two rows carry the method. <strong>F</strong> starts at 14, not 9, waiting on the permit rather than the floor clearance. <strong>H</strong> starts at 28, not 25: the electrical chain lands after the racking delivery. A's LS coming out at 0 is the check — anything higher and 40 would not be the minimum.</p>
+        <p>The zero-float activities — <strong>A, C, F, G, H, I</strong> — are the critical path, exactly the 40-day chain we added up first. The floats agree with the path lengths too: B and D sit on the 37-day path, 40 − 37 = <strong>3</strong> each; E on the 35-day path, 40 − 35 = <strong>5</strong>. Float on a path is always the project duration minus that path's length — the quickest way to check your own arithmetic.</p>
+
+        <p><strong>Now slip something.</strong> The permit (C) takes 14 days instead of 10, four days late on a critical activity. Redo the forward pass from C: EF 4 + 14 = 18, so F ES 18 / EF 26, G ES 26 / EF 32, H ES max(25, 32) = 32 / EF 41, I EF <strong>44</strong>.</p>
+        <p>The project moved <strong>day for day</strong> — nothing absorbed the delay, because there was nothing to absorb it with. Everyone else got richer: rerun the backward pass from LF(I) = 44 and B's float is 7, D's 7, E's 9, each up by the same four days. Slack elsewhere is manufactured by delay on the critical path.</p>
+        <p><strong>Now overspend some float.</strong> Put C back to 10 and let the racking order (D, float 3) take 20 days instead of 15 — five days late on a <em>non-critical</em> activity. D's EF becomes 10 + 20 = 30, so H ES max(30, 28) = 30 / EF 39, and I finishes at <strong>42</strong>.</p>
+        <p>Two days late, not five: the first three came out of D's float, and only the overspend reached the finish. Float is a budget, spendable once. And the critical path <em>moved</em> — A → B → D → H → I is now 4 + 6 + 20 + 9 + 3 = 42, while the old permit chain has 2 days of float. The activities you were guarding stopped being the ones that mattered, and nothing would have told you unless it recalculated.</p>
+      </div>
+      <figure class="fig fig-inline" data-fig="float" data-cap="Float is a budget. Spend less than you have and the finish date does not move; spend more and only the overspend reaches the end."><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="Float is a budget. Spend less than you have and the finish date does not move; spend more and only the overspend reaches the end."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Free float</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Total float</text></svg><figcaption>Float is a budget. Spend less than you have and the finish date does not move; spend more and only the overspend reaches the end.</figcaption></figure>
+
+      <h2 id="float">Total float, free float, and negative float</h2>
+      <p>"Float" above is <strong>total float</strong>: how far an activity can slip before the <em>project</em> finish moves. On its own it misleads, because total float is often <em>shared</em>. <strong>Free float</strong> asks the stricter question — how far can this slip before disturbing <em>any successor</em>? It is <code>earliest ES among successors − EF</code>:</p>
       <ul>
-        <li>A: ES 0, EF 3</li>
-        <li>B: ES 3 (after A), EF 7</li>
-        <li>C: ES 3 (after A), EF 5</li>
-        <li>D: ES 7 (after B), EF 12</li>
-        <li>E: ES 5 (after C), EF 11</li>
-        <li>F: ES 12 (max of D's EF 12 and E's EF 11), EF 15 &rarr; <strong>project = 15 days</strong></li>
+        <li><strong>B:</strong> total float 3, free float = ES(D) 10 − EF(B) 10 = <strong>0</strong>. Slip B a day and D moves immediately. Those three days belong to the B→D chain, and whoever spends them first has spent them.</li>
+        <li><strong>D:</strong> total float 3, free float = ES(H) 28 − EF(D) 25 = <strong>3</strong>. D's slack really is D's.</li>
+        <li><strong>E:</strong> total float 5, free float = ES(F) 14 − EF(E) 9 = <strong>5</strong>. Entirely private, sitting in front of the permit wait.</li>
       </ul>
-      <p><strong>Backward pass</strong> (LF, then LS = LF − Duration), starting from F's LF = 15:</p>
-      <ul>
-        <li>F: LF 15, LS 12</li>
-        <li>D: LF 12 (F's LS), LS 7</li>
-        <li>E: LF 12 (F's LS), LS 6</li>
-        <li>B: LF 7 (D's LS), LS 3</li>
-        <li>C: LF 6 (E's LS), LS 4</li>
-        <li>A: LF 3 (min of B's LS 3 and C's LS 4), LS 0</li>
-      </ul>
-      <p><strong>Float = LS − ES</strong> for each activity:</p>
-      <table>
-        <thead><tr><th>Activity</th><th>ES</th><th>EF</th><th>LS</th><th>LF</th><th>Float</th><th>Critical?</th></tr></thead>
-        <tbody>
-          <tr><td>A</td><td>0</td><td>3</td><td>0</td><td>3</td><td><strong>0</strong></td><td>Yes</td></tr>
-          <tr><td>B</td><td>3</td><td>7</td><td>3</td><td>7</td><td><strong>0</strong></td><td>Yes</td></tr>
-          <tr><td>C</td><td>3</td><td>5</td><td>4</td><td>6</td><td>1</td><td>No</td></tr>
-          <tr><td>D</td><td>7</td><td>12</td><td>7</td><td>12</td><td><strong>0</strong></td><td>Yes</td></tr>
-          <tr><td>E</td><td>5</td><td>11</td><td>6</td><td>12</td><td>1</td><td>No</td></tr>
-          <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td><strong>0</strong></td><td>Yes</td></tr>
-        </tbody>
-      </table>
-      <p>The activities with zero float — <strong>A, B, D, F</strong> — form the critical path, exactly matching the longest path we spotted earlier. Activities C and E each have <strong>1 day of float</strong>, meaning either could slip by one day without delaying the 15-day finish. Push C or E two days, though, and E's path (now 15) becomes critical too. That is the practical payoff of CPM: it tells you which tasks to guard (the zero-float ones) and how much wiggle room the rest have.</p>
+      <p>Total float is what the deadline can absorb; free float is what you can spend without a conversation. Two managers on one chain planning against total float will both take the same days.</p>
+      <p><strong>Negative float</strong> means something is wrong: the late start falls <em>before</em> the early start, usually because an imposed deadline is earlier than the logic allows. −4 is not spare time — it reads "this needed to have started four days ago."</p>
 
       <h2 id="vs">CPM vs PERT vs critical chain</h2>
       <p>Three related techniques are easy to mix up:</p>
       <ul>
-        <li><strong>CPM</strong> uses a single, fixed duration per activity and focuses on the critical path and float. Best when durations are reasonably well known.</li>
-        <li><strong>PERT</strong> (Program Evaluation and Review Technique) uses three estimates per activity — optimistic (O), most likely (M), and pessimistic (P) — and a weighted average, usually <code>(O + 4M + P) / 6</code>, to model uncertainty and estimate the probability of hitting a date. Best when durations are uncertain. In practice teams often run CPM on PERT-derived estimates.</li>
-        <li><strong>Critical chain</strong> (from the theory of constraints) extends CPM by adding resource constraints and consolidating individual task padding into shared "buffers" placed at the end of the chain and its feeders. Best when shared resources, not just dependencies, drive the schedule.</li>
+        <li><strong>CPM</strong> — one fixed duration per activity, focused on the critical path and float. Best when durations are reasonably known.</li>
+        <li><strong>PERT</strong> — three estimates per activity, optimistic, most likely and pessimistic, weighted as <code>(O + 4M + P) / 6</code> to model uncertainty. Teams often run CPM on PERT-derived estimates.</li>
+        <li><strong>Critical chain</strong> — CPM plus resource constraints, consolidating per-task padding into shared buffers at the end of the chain and its feeders. Best when shared resources, not just dependencies, drive the schedule.</li>
       </ul>
 
+      <h2 id="as-placed">How gantts.app computes it (and where it differs from the textbook)</h2>
+      <p>Worth being precise about, because our forward pass is <em>not</em> the one described above, and the difference lands in the float column.</p>
+      <p>Textbook CPM ignores where you drew the bar: it places every activity as early as its predecessors allow, so E starts on day 4 whether or not that is where you put it. gantts.app runs <strong>as-placed CPM</strong> — each task starts at <em>its own placed start date</em>, and predecessors can then push it <strong>later, never earlier</strong>. In code it is one <code>max</code>: early start begins at the task's own start, and a dependency raises it only if the constraint demands more.</p>
+      <p>Put E's bar on day 8 rather than day 4 and the difference is a number. Textbook CPM still reports ES 4 and 5 days of float. We report ES 8, and with the backward pass unchanged (LS 9), float is <strong>1 day</strong>. Both are correct; they answer different questions. The textbook asks how much slack the logic permits; we ask how much this plan, as drawn, has left.</p>
+      <p>The reason is that this is a chart first: a forward pass that silently relocated tasks would print float for a schedule that is not the one on screen. Dragging a bar is an instruction, so we treat it as one.</p>
+      <p>The rest is conventional. Late finish is the smallest late start among successors (or the project end), float is <code>LS − ES</code>, and lags and the non-finish-to-start links run through the same pass. A task is critical when float is <strong>zero or less</strong>, so negative float shows up rather than disappearing. Three more things:</p>
+      <ul>
+        <li><strong>Total float only.</strong> One figure per task, and it is total float — there is no free-float column.</li>
+        <li><strong>Summary rows do not schedule.</strong> CPM runs on leaf tasks and milestones; group bars are rollups of their children.</li>
+        <li><strong>Working days, when a calendar is on.</strong> The calculation runs in working-day ordinals, so an offset of 5 means five <em>working</em> days and successors land on a Monday, not a Sunday.</li>
+      </ul>
+      <p>For the textbook behaviour — everything pulled back to the earliest date its logic allows — use <strong>Auto-schedule</strong>. It redoes the forward pass with one rule changed: a task with predecessors is driven purely by its constraints, ignoring where it sits, while tasks without predecessors stay put as anchors. Press it and the two methods agree.</p>
+      <figure class="fig fig-inline" data-fig="lag" data-cap="A lag shifts the constraint without breaking the link. The critical path runs through the lag, so a three-day wait is three days of the deadline."><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="A lag shifts the constraint without breaking the link. The critical path runs through the lag, so a three-day wait is three days of the deadline."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Finish → Start + Lag</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Lag 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B waits for A + 3d</text></svg><figcaption>A lag shifts the constraint without breaking the link. The critical path runs through the lag, so a three-day wait is three days of the deadline.</figcaption></figure>
+
       <h2 id="auto">See the critical path automatically</h2>
-      <p>Doing the forward and backward pass by hand is a great way to understand CPM, but you would not want to redo it every time an estimate changes. <a href="/app.html">gantts.app</a> calculates and highlights the critical path for you the moment you add tasks and dependencies — free, in your browser, with no sign up and no download. Change a duration or a dependency and the critical path recomputes instantly, so you always know which tasks are driving your deadline. When you are ready, export to PDF, PNG, Excel, or PowerPoint.</p>
-      <p>New to scheduling? Start with <a href="/blog/what-is-a-gantt-chart.html">what a Gantt chart is</a>, then follow <a href="/blog/how-to-make-a-gantt-chart.html">how to make a Gantt chart step by step</a>, or grab a ready-made plan from the <a href="/templates.html">free template library</a>.</p>
+      <p>Doing the passes by hand is the way to understand CPM, but you would not want to redo them every time an estimate changes — and as the second slip above showed, the path itself moves. <a href="/app.html">gantts.app</a> highlights the critical path the moment you add tasks and dependencies, free, in your browser, with no sign up. Change a duration and it recomputes instantly. Export to PDF, PNG, Excel, or PowerPoint.</p>
+      <p>New to scheduling? Start with <a href="/blog/what-is-a-gantt-chart.html">what a Gantt chart is</a>, then <a href="/blog/how-to-make-a-gantt-chart.html">how to make one</a>, or take a ready-made plan from the <a href="/templates.html">template library</a>.</p>
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">

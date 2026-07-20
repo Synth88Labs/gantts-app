@@ -90,14 +90,16 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>7 min de lectura</span></p>
+    <p class="post-meta"><span>Equipo de gantts.app</span><span>Actualizado el 19 de julio de 2026</span><span>13 min de lectura</span></p>
     <div class="toc"><strong>En esta página</strong>
       <ol>
         <li><a href="#s1">Qué significa «gratis» realmente</a></li>
         <li><a href="#s2">Comparativa rápida</a></li>
-        <li><a href="#s3">Las nueve herramientas, una a una</a></li>
-        <li><a href="#s4">Herramientas gratuitas que no piden registro</a></li>
-        <li><a href="#s5">Cómo elegir</a></li>
+        <li><a href="#s3">Los criterios que de verdad deciden</a></li>
+        <li><a href="#s4">La prueba de los quince minutos, hecha de verdad</a></li>
+        <li><a href="#s5">Las nueve herramientas, una a una</a></li>
+        <li><a href="#s6">Herramientas gratuitas que no piden registro</a></li>
+        <li><a href="#s7">Cómo elegir</a></li>
       </ol>
     </div>
 
@@ -115,6 +117,20 @@
         <p>Los tres modelos son legítimos. El problema aparece solo cuando una prueba o un plan muy limitado se presenta simplemente como «gratis».</p>
       <h2 id="s2">Comparativa rápida</h2>
 <p>Los límites de los planes cambian con el tiempo, así que trata estas cifras como orientativas y confírmalas en la página de precios de cada fabricante.</p>
+        <table>
+          <thead><tr><th>Herramienta</th><th>Límites del plan gratuito</th><th>¿Pide registro?</th><th>Exportación</th><th>Ruta crítica</th></tr></thead>
+          <tbody>
+            <tr><td><strong>gantts.app</strong></td><td>Gratuita del todo · tareas y proyectos ilimitados</td><td><strong>No</strong></td><td>PDF, PNG, Excel, PPT</td><td><strong>Sí, gratis</strong></td></tr>
+            <tr><td>GanttProject</td><td>Libre y de código abierto (escritorio)</td><td>No (descarga)</td><td>PDF, PNG, CSV</td><td>Sí</td></tr>
+            <tr><td>OnlineGantt y webs pequeñas</td><td>Funciones básicas gratuitas</td><td>Variable / a menudo no</td><td>Imagen o PDF</td><td>Variable</td></tr>
+            <tr><td>TeamGantt (plan gratuito)</td><td>~1 proyecto / ~60 tareas / equipo pequeño</td><td>Sí</td><td>Limitada en el gratuito</td><td>Planes de pago</td></tr>
+            <tr><td>GanttPRO</td><td>Prueba gratuita, después de pago</td><td>Sí</td><td>Sí (de pago)</td><td>Sí (de pago)</td></tr>
+            <tr><td>Instagantt</td><td>Freemium; capa gratuita limitada</td><td>Sí</td><td>Sí (planes superiores)</td><td>Sí (de pago)</td></tr>
+            <tr><td>Canva</td><td>Capa gratuita de diseño</td><td>Sí</td><td>PNG, PDF</td><td>No (estático)</td></tr>
+            <tr><td>Microsoft Project</td><td>De pago (sin plan gratuito)</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+            <tr><td>Excel y Google Sheets</td><td>Gratis si ya pagas el software</td><td>Cuenta Microsoft o Google</td><td>Nativa</td><td>No</td></tr>
+          </tbody>
+        </table>
         <p><strong>gantts.app</strong> — totalmente gratuito, tareas y proyectos ilimitados, sin registro. Exporta a PDF, PNG, Excel y PowerPoint. Ruta crítica incluida y gratuita. <em>(Es nuestra herramienta.)</em></p>
         <p><strong>GanttProject</strong> — gratuito y de código abierto, de escritorio. No requiere cuenta, solo descarga. Exporta a PDF, PNG y CSV, con ruta crítica.</p>
         <p><strong>OnlineGantt y otras herramientas web pequeñas</strong> — funciones básicas gratuitas, registro variable y a menudo innecesario, exportación a imagen o PDF. La ruta crítica depende de la herramienta.</p>
@@ -124,7 +140,84 @@
         <p><strong>Canva</strong> — capa gratuita de diseño con registro. Exporta a PNG y PDF, pero el resultado es estático: no hay ruta crítica porque no hay motor de planificación.</p>
         <p><strong>Microsoft Project</strong> — de pago, sin plan gratuito. Exportación y ruta crítica completas.</p>
         <p><strong>Excel y Google Sheets</strong> — gratuitas si ya pagas el software. Exportación nativa, pero sin dependencias ni ruta crítica.</p>
-      <h2 id="s3">Las nueve herramientas, una a una</h2>
+      <h2 id="s3">Los criterios que de verdad deciden</h2>
+<p>Las listas de funciones son una guía pésima, porque todas las herramientas dicen tenerlo todo. Lo que las separa es el <em>comportamiento bajo carga</em>: qué pasa cuando una fecha se mueve, cuando el plan crece, cuando alguien de fuera tiene que leerlo y cuando dejas de pagar. Cada criterio de abajo se comprueba en minutos y cada uno tiene su forma característica de fallar.</p>
+        <table>
+          <thead><tr><th>Criterio</th><th>Por qué decide el resultado</th><th>Cómo probarlo en cinco minutos</th><th>Qué aspecto tiene el fallo</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>¿Recalcula?</strong></td>
+              <td>Separa un motor de programación de una herramienta de dibujo. Las dependencias reales propagan; las decorativas te dejan rearrastrando barras a mano.</td>
+              <td>Enlaza tres tareas y retrasa la primera cuatro días.</td>
+              <td>La segunda y la tercera no se mueven. El mantenimiento es tuyo para siempre.</td>
+            </tr>
+            <tr>
+              <td><strong>Ruta crítica y holgura</strong></td>
+              <td>Te dice qué tareas mandan sobre la fecha de entrega. Suele ser lo primero que se mete detrás del muro de pago, porque la gente paga por ello.</td>
+              <td>Busca una columna de holgura, no solo barras de color. Cambia una duración y mira si el resaltado se mueve.</td>
+              <td>Una «ruta crítica» que es un color que aplicaste tú, o una oferta de suscripción justo cuando la necesitas.</td>
+            </tr>
+            <tr>
+              <td><strong>Exportación que abra un desconocido</strong></td>
+              <td>Quien tiene que firmar no se va a crear una cuenta para leerlo. PDF, Excel y PowerPoint viajan a cualquier parte; un enlace compartido, no.</td>
+              <td>Exporta y ábrelo en un dispositivo donde no hayas iniciado sesión.</td>
+              <td>La exportación es de pago, lleva marca de agua o es solo un enlace que pide registrarse.</td>
+            </tr>
+            <tr>
+              <td><strong>Escala</strong></td>
+              <td>Las capas gratuitas están dimensionadas para demos. Un plan real tiene entre 150 y 300 filas, y ahí importan tanto el tope como la fluidez al dibujar.</td>
+              <td>Pega 200 filas y desplázate por una línea de tiempo de 26 semanas.</td>
+              <td>Un tope duro cerca de las 60 tareas, o un desplazamiento a tirones en cuanto el gráfico se ensancha.</td>
+            </tr>
+            <tr>
+              <td><strong>Coste de salida</strong></td>
+              <td>Nadie lo pregunta hasta que importa. El plan es tuyo solo si puedes sacarlo en un formato que otra cosa lea.</td>
+              <td>Exporta a CSV y reimpórtalo en otro sitio. Comprueba que sobreviven las dependencias y la jerarquía, no solo los nombres.</td>
+              <td>La exportación es un PDF de solo lectura, se pierden las dependencias, o los datos quedan detrás de una suscripción caducada.</td>
+            </tr>
+            <tr>
+              <td><strong>Dónde viven los datos</strong></td>
+              <td>Decide si puedes usarla siquiera. En obra pública y en trabajo para cliente, el pliego a veces excluye servidores de terceros.</td>
+              <td>Comprueba si funciona con la red desconectada y qué dice la política de privacidad que se almacena.</td>
+              <td>Enterarte en la auditoría de que el programa de trabajos está en un sitio que tu contrato no permite.</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="Hojas de cálculo, herramientas de diseño y motores de programación se parecen en pantalla. Divergen en el instante en que una fecha cambia."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tareas</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ruta crítica</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoy</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Diapositivas</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Navegador</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>Hojas de cálculo, herramientas de diseño y motores de programación se parecen en pantalla. Divergen en el instante en que una fecha cambia.</figcaption></figure>
+        <p>Solo dos de estos son funciones en el sentido comercial. El resto solo se observa usando la herramienta — que es la razón por la que quince minutos con un plan realista valen más que una tarde de artículos comparativos, este incluido.</p>
+      <h2 id="s4">La prueba de los quince minutos, hecha de verdad</h2>
+<p>Para que esto no se quede en consejo abstracto, aquí está la prueba aplicada. Ingeniería Aránzazu S.L., seis personas en Bilbao, tiene que entregar el <strong>programa de trabajos</strong> de una licitación del Ayuntamiento: el pliego pide el cronograma en PDF y la trazabilidad de la ruta crítica, y la dirección técnica del cliente trabaja con MS Project. El plan real tiene 187 filas y 22 semanas.</p>
+        <div class="worked">
+          <p><strong>El protocolo.</strong> El mismo, idéntico, en cada herramienta, con un cronómetro:</p>
+          <ol>
+            <li>Pega las 187 filas del plan real. No 10 de prueba: 187. La mitad de los topes de los planes gratuitos aparecen aquí.</li>
+            <li>Enlaza tres tareas encadenadas y retrasa la primera cuatro días. Mira si la segunda y la tercera se mueven solas.</li>
+            <li>Carga el calendario laboral con los festivos de Bizkaia y comprueba que una tarea que cruza el 25 de julio se alarga.</li>
+            <li>Activa la ruta crítica y busca una <em>columna de holgura</em> con números, no solo barras de color.</li>
+            <li>Exporta a PDF y ábrelo en un móvil sin sesión iniciada. Ese móvil es el interventor.</li>
+            <li>Exporta a CSV, reimpórtalo en otra herramienta y comprueba si sobreviven las dependencias y las fases, no solo los nombres.</li>
+            <li>Desconecta la red y sigue trabajando dos minutos. Si el plan desaparece, ya sabes dónde vive.</li>
+            <li>Mira el precio anual del plan que <em>de verdad</em> necesitas, no el de la portada.</li>
+          </ol>
+          <p><strong>Los resultados</strong>, sobre las cuatro candidatas que quedaron:</p>
+          <table>
+            <thead><tr><th>Prueba</th><th>Herramienta web freemium</th><th>Herramienta de diseño</th><th>GanttProject</th><th>gantts.app</th></tr></thead>
+            <tbody>
+              <tr><td>187 filas pegadas</td><td>Corta en 60</td><td>Sí, una a una</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Retraso que se propaga</td><td>Sí</td><td>No — son formas</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Festivos de Bizkaia</td><td>Sí</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Columna de holgura con cifras</td><td>Plan de pago</td><td>No</td><td>Sí</td><td>Sí (holgura total)</td></tr>
+              <tr><td>PDF que abre un desconocido</td><td>Con marca de agua</td><td>Sí</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Vuelta desde CSV con dependencias</td><td>Parcial</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Funciona sin red</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+              <tr><td>Coste real al año, 6 usuarios</td><td>1.080 €</td><td>0 €</td><td>0 €</td><td>0 €</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Lo que decidió.</strong> No fue el precio: fueron las filas 1 y 5. La herramienta freemium se rompió al pegar el plan y volvió a romperse al exportar, y las dos veces el fallo apareció <em>después</em> de haber invertido tiempo. La herramienta de diseño produjo la lámina más bonita de las cuatro y suspendió la prueba 2 por diseño — sus barras son formas, y el pliego pedía trazabilidad de la ruta crítica, que es justo lo que un dibujo no puede acreditar.</p>
+          <p><strong>Y lo que no resolvió ninguna de las gratuitas.</strong> La dirección técnica trabaja con MS Project y el intercambio en <code>.xml</code> siempre pierde algo por el camino; conviene acordar por escrito qué formato es el bueno, o entregar el PDF como documento contractual y el resto como cortesía. Ninguna de estas herramientas te ahorra esa conversación.</p>
+          <p><strong>Una advertencia sobre la holgura</strong>, si acabas en gantts.app: la columna informa de la <strong>holgura total</strong>, una cifra por tarea. No hay columna de holgura libre. En un programa de trabajos con cadenas largas de tareas no críticas, dos jefes de tramo que planifiquen contra la holgura total se van a llevar los mismos días, y uno de los dos se llevará el disgusto. Trátala como un presupuesto de la cadena, no de cada tarea.</p>
+        </div>
+      <h2 id="s5">Las nueve herramientas, una a una</h2>
 <p><strong>1. gantts.app — gratuita y sin cuenta.</strong> Aviso: es nuestra herramienta. Es un editor de Gantt que funciona en el navegador, totalmente gratuito, sin registro ni inicio de sesión, sin topes de tareas ni de proyectos, con dependencias, hitos, ruta crítica automática y exportación en un clic a PDF, PNG, Excel y PowerPoint. Los datos se quedan en tu navegador. La contrapartida es que está centrada en planificar y exportar: no es una suite de gestión del trabajo con imputación de horas, chat y facturación de recursos, y si necesitas eso, una plataforma más pesada te encajará mejor. <em>Ideal para</em> quien quiere un Gantt de verdad, rápido y sin cuenta.</p>
         <p><strong>2. GanttProject — escritorio de código abierto.</strong> Aplicación de escritorio madura y gratuita para Windows, macOS y Linux. Soporta tareas, dependencias, ruta crítica, asignación de recursos y exportación a PDF, PNG y CSV. Al ser una descarga y no una web, funciona sin conexión y no pide cuenta; a cambio, la interfaz se nota anticuada y no trae sincronización en la nube. <em>Ideal para</em> quien prefiere software instalado y licencia libre.</p>
         <p><strong>3. OnlineGantt y otras herramientas web pequeñas.</strong> Un puñado de sitios ligeros permiten bosquejar un Gantt en el navegador y exportar una imagen o un PDF. Sirven para un gráfico puntual y algunos no piden cuenta, pero la profundidad varía muchísimo: a muchos les faltan una ruta crítica fiable, dependencias sólidas o exportación a hoja de cálculo. <em>Ideal para</em> gráficos rápidos y desechables; comprueba los límites vigentes antes de depender de uno.</p>
@@ -134,12 +227,12 @@
         <p><strong>7. Canva — primero el diseño.</strong> Canva produce un Gantt con muy buen aspecto a partir de sus plantillas, exportable a PNG o PDF en la capa gratuita (con cuenta). Pero es una herramienta de diseño, no un motor de planificación: no hay dependencias reales, ni reprogramación, ni ruta crítica; las barras son formas que colocas a mano. <em>Ideal para</em> un visual estático y cuidado para una diapositiva o un informe donde la exactitud del calendario no es el punto.</p>
         <p><strong>8. Microsoft Project — potente y de pago.</strong> El estándar corporativo para planificación seria: lógica de dependencias profunda, nivelación de recursos, líneas base y ruta crítica. No tiene plan gratuito —es suscripción o licencia— y requiere cuenta Microsoft. <em>Ideal para</em> organizaciones grandes con programas complejos y presupuesto acorde.</p>
         <p><strong>9. Excel y Google Sheets — la opción artesanal.</strong> Ya tienes la hoja de cálculo, y se puede doblar hasta convertirla en un Gantt con un gráfico de barras apiladas o con la función Cronograma de Sheets. Es gratis si ya pagas el software, pero no hay dependencias, no hay ruta crítica y el mantenimiento es todo manual. <em>Ideal para</em> planes pequeños y estáticos cuyos datos ya viven en una hoja compartida.</p>
-      <h2 id="s4">Herramientas gratuitas que no piden registro</h2>
+      <h2 id="s6">Herramientas gratuitas que no piden registro</h2>
 <p>Es una categoría corta, y conviene entender por qué. Pedir una cuenta no es un capricho: es el modelo de negocio. Un correo electrónico es un contacto comercial, y el momento en que más se necesita el archivo —justo al terminar el plan— es también el momento de máxima disposición a entregarlo.</p>
         <p>Por eso el muro casi nunca está al empezar, sino al exportar. Puedes construir el proyecto entero y descubrir al final que descargar el PDF exige una suscripción, o que la versión gratuita añade una marca de agua.</p>
         <p>Las que no piden registro se reducen a dos grupos. Las <strong>aplicaciones de escritorio de código abierto</strong>, como GanttProject, que descargas y ejecutas sin cuenta. Y unas pocas <strong>aplicaciones web que funcionan íntegramente en el navegador</strong>, sin servidor donde guardar nada — si el plan no sale de tu equipo, no hay nada que asociar a un usuario.</p>
         <p>Si tu requisito es «hoy, sin dar mi correo y con el archivo en la mano», ese es el filtro que más reduce la lista, y también el más rápido de comprobar: intenta exportar en los primeros cinco minutos.</p>
-      <h2 id="s5">Cómo elegir</h2>
+      <h2 id="s7">Cómo elegir</h2>
 <p>Responde tres preguntas y la elección se resuelve casi sola.</p>
         <p><strong>¿Necesitas dependencias y ruta crítica, o solo un dibujo?</strong> Si el plan tiene menos de quince tareas y no va a cambiar, cualquier herramienta de diseño sirve. En cuanto haya tareas enlazadas, necesitas un motor que recalcule; sin él, cada cambio es trabajo manual.</p>
         <p><strong>¿Tienes que exportar a un formato concreto?</strong> Un comité pide PDF, un cliente pide PowerPoint, una oficina técnica pide Excel o MS Project. Comprueba que ese formato concreto esté en el plan gratuito, no solo «exportación» en abstracto.</p>

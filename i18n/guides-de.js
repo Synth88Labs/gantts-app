@@ -26,11 +26,38 @@ const G = {
   sections: [
     ['Wie ein Gantt-Diagramm aufgebaut ist', `<p>Stellen Sie sich ein Tabellenblatt vor, das in der Mitte die Form wechselt. Links stehen Spalten mit Vorgangsname, Start, Ende, Dauer und Verantwortlichem. Rechts davon werden aus den Spalten Kalendertage, -wochen oder -monate. Für jeden Vorgang zieht sich ein farbiger Balken über genau die Spalten, die seinem Zeitraum entsprechen: ein zweitägiger Vorgang ist ein kurzer Balken, ein dreiwöchiger ein dreimal so langer.</p>
         <p>Von oben nach unten lesen Sie die Arbeit, von links nach rechts die Zeit. Diese eine Drehung ist der ganze Unterschied zwischen einer Terminliste und einem Terminplan — und der Grund, warum das Format seit über hundert Jahren überlebt.</p>
-        <p>Fast jedes Gantt-Diagramm enthält zusätzlich eine senkrechte <strong>Heute-Linie</strong>, einen hervorgehobenen <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> und einen Fortschrittsbalken innerhalb jedes Vorgangsbalkens. Alles andere ist Ausstattung.</p>`],
+        <p>Fast jedes Gantt-Diagramm enthält zusätzlich eine senkrechte <strong>Heute-Linie</strong>, einen hervorgehobenen <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> und einen Fortschrittsbalken innerhalb jedes Vorgangsbalkens. Alles andere ist Ausstattung.</p>
+        <!--FIG:bars|Zeilen links, Kalender oben, je Vorgang ein Balken an der Stelle, an die er zeitlich gehört.-->`],
     ['Die vier Bausteine', `<p><strong>Vorgänge</strong> sind das Arbeitspaket selbst und haben eine Dauer. Sie tragen einen Namen mit Verb — „Rohbau abnehmen“, nicht „Rohbau“ —, einen Verantwortlichen und einen Fertigstellungsgrad.</p>
         <p><strong>Meilensteine</strong> haben die Dauer null und markieren einen Zeitpunkt: eine Freigabe, eine Übergabe, eine Entscheidung. Sie erscheinen als Raute statt als Balken. Fünf bis zehn genügen für ein mehrmonatiges Projekt; wer jeden Vorgangsabschluss zum Meilenstein erklärt, entwertet sie alle.</p>
         <p><strong>Abhängigkeiten</strong> verbinden Vorgänge und legen fest, was worauf wartet. Die weit überwiegende Mehrheit ist vom Typ Ende-Anfang: B beginnt, wenn A fertig ist. Drei weitere Arten gibt es für Sonderfälle, sie sind in den <a href="/de/blog/gantt-chart-dependencies.html">vier Verknüpfungsarten</a> beschrieben.</p>
         <p><strong>Sammelbalken</strong> fassen Vorgänge zu Phasen zusammen und übernehmen deren Termine automatisch: Der Phasenbalken beginnt mit dem frühesten und endet mit dem spätesten Vorgang darunter. Man setzt seine Termine nie von Hand — sie sind ein Ergebnis, keine Eingabe. Wer diese vier Elemente sauber trennt, hat bereits den Großteil eines belastbaren Plans.</p>`],
+    ['Ein durchgerechnetes Beispiel: der Umbau der Bäckerei Lindenhof', `<p>Definitionen kommen nur bis zu einem gewissen Punkt. Deshalb hier ein kleines Vorhaben von Anfang bis Ende gerechnet, auf das sich alles Weitere auf dieser Seite bezieht: Die Bäckerei Lindenhof schließt ihre Leipziger Filiale für einen Umbau und eröffnet wieder. Fünf Arbeitstage die Woche, Beginn Montag, der 2. März 2026, gesetzliche Feiertage in Sachsen berücksichtigt.</p>
+      <div class="worked">
+        <p><strong>Der Terminplan, wie er sich aus Dauern und Verknüpfungen ergibt</strong></p>
+        <table>
+          <thead>
+            <tr><th>Nr.</th><th>Vorgang</th><th>Dauer</th><th>Nach</th><th>Start</th><th>Ende</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Bauamt und Zustimmung der Vermieterin</td><td>8 AT</td><td>—</td><td>Mo 2. März</td><td>Mi 11. März</td></tr>
+            <tr><td>2</td><td>Entwurf und Grundriss</td><td>6 AT</td><td>—</td><td>Mo 2. März</td><td>Mo 9. März</td></tr>
+            <tr><td>3</td><td>Backofen und Kühltechnik bestellen (Lieferzeit)</td><td>20 AT</td><td>1</td><td>Do 12. März</td><td>Fr 10. April</td></tr>
+            <tr><td>4</td><td>Entkernung</td><td>4 AT</td><td>1</td><td>Do 12. März</td><td>Di 17. März</td></tr>
+            <tr><td>5</td><td>Sanitär und Elektro</td><td>9 AT</td><td>2, 4</td><td>Mi 18. März</td><td>Mo 30. März</td></tr>
+            <tr><td>6</td><td>Boden und Ladenbau</td><td>7 AT</td><td>5</td><td>Di 31. März</td><td>Fr 10. April</td></tr>
+            <tr><td>7</td><td>Geräteeinbau</td><td>3 AT</td><td>3, 6</td><td>Mo 13. April</td><td>Mi 15. April</td></tr>
+            <tr><td>8</td><td>Lebensmittelüberwachung bestanden</td><td>0 T</td><td>7</td><td>Do 16. April</td><td>—</td></tr>
+            <tr><td>9</td><td>Personalschulung</td><td>5 AT</td><td>8</td><td>Fr 17. April</td><td>Do 23. April</td></tr>
+            <tr><td>10</td><td>Wiedereröffnung</td><td>0 T</td><td>9</td><td>Fr 24. April</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p>Acht Vorgänge, zwei Meilensteine, und das Ganze landet auf Freitag, dem 24. April. Dieses Datum hat niemand gewählt — es fällt aus den Dauern und ihren Verknüpfungen heraus, und genau dafür zeichnet man ein Diagramm, statt Termine in ein Dokument zu tippen.</p>
+        <p><strong>Was Ostern in diesem Plan anrichtet.</strong> Karfreitag fällt 2026 auf den 3. April, Ostermontag auf den 6. April. Beides sind Arbeitstage, die der Kalender aus der Rechnung nimmt — die Bestellung mit 20 Arbeitstagen Lieferzeit endet dadurch am 10. statt am 8. April, und der Ladenbau ebenfalls. Wer dieselbe Bestellung in einer Kalendertabelle ohne Feiertage plant, liest zwei Tage Luft, die es nicht gibt. Dieselbe Falle stellen die Tage zwischen Weihnachten und Neujahr, an denen zwar gearbeitet werden dürfte, aber weder Bauamt noch Lieferant erreichbar sind, und die Betriebsferien vieler Handwerksbetriebe im August.</p>
+        <p><strong>Wo das Geld hängt.</strong> Backofen und Kühltechnik kosten 42.000 €, der Ladenbau 68.000 €. Die Anzahlung für die Technik wird mit der Bestellung fällig, also am 12. März — sechs Wochen bevor die Filiale wieder Umsatz macht. Ein Balken zeigt die Dauer eines Vorgangs, nicht seinen Zahlungszeitpunkt; das ist eine der Stellen, an denen ein Terminplan allein nicht reicht.</p>
+        <p>Beachten Sie, was diese Tabelle sagt und eine Aufgabenliste nicht sagen könnte. Zeile 1 und 2 beginnen beide am ersten Tag, weil keine auf die andere wartet. Zeile 3 sind zwanzig Tage Warten auf einen Lieferanten, die still nebenher laufen, während die Handwerker arbeiten. Und Zeile 3 und 6 enden am selben Freitag — dem Moment, in dem zwei unabhängige Ketten zusammentreffen müssen, bevor die Geräte eingebaut werden können.</p>
+      </div>`],
+
     ['Warum die Zeitachse den Unterschied macht', `<p>Eine Aufgabenliste sagt, <em>was</em> zu tun ist. Ein Gantt-Diagramm sagt zusätzlich <em>wann</em> und <em>in welcher Reihenfolge</em>. Damit wird sichtbar, was in einer Liste unsichtbar bleibt: dass drei Vorgänge in derselben Woche liegen und alle dieselbe Person brauchen, oder dass eine Verzögerung am Anfang das Ende um zwei Wochen verschiebt.</p>
         <p>Ein konkretes Beispiel: In einer Liste stehen „Texte schreiben“, „Bilder erstellen“ und „Layout setzen“ untereinander und wirken gleichwertig. Im Diagramm sieht man, dass Texte und Bilder parallel in Kalenderwoche 12 laufen, beide bei derselben Person liegen und das Layout erst danach beginnen kann. Die Liste ist erfüllbar, der Plan nicht — und diesen Unterschied erkennt man nur auf einer Zeitachse.</p>
         <p>Die Wahl der Zeiteinheit entscheidet dabei mit über die Lesbarkeit. Tagesspalten eignen sich für Vorhaben bis etwa acht Wochen, Wochenspalten für ein halbes bis ganzes Jahr, Monatsspalten für alles darüber. Wer ein zweijähriges Bauvorhaben in Tagesspalten darstellt, erzeugt ein Blatt, das niemand ausdruckt.</p>`],
@@ -39,7 +66,22 @@ const G = {
         <p>Der Test für eine echte Abhängigkeit ist einfach: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort ja, verknüpfen Sie. Lautet sie nein, haben Sie nur die Reihenfolge nachgezeichnet, in der Sie die Vorgänge aufgeschrieben haben. Verknüpfen Sie nicht alles mit allem — ein Plan, in dem jeder Vorgang an seinem Vorgänger hängt, hat keine Parallelität mehr und reagiert auf jede kleine Verschiebung übertrieben.</p>`],
     ['Der kritische Pfad', `<p>Der kritische Pfad ist die längste Kette voneinander abhängiger Vorgänge. Ihre Gesamtdauer bestimmt die Projektdauer. Jeder Verzug auf diesem Pfad verschiebt das Projektende um genau denselben Betrag — Verzögerungen abseits davon oft gar nicht.</p>
         <p>Ein Zahlenbeispiel: Läuft ein Zweig über Konzept, Entwurf, Umsetzung und Test in 15 Arbeitstagen und ein zweiter über Beschaffung und Vorbereitung in 14, dann ist der erste kritisch. Zwei zusätzliche Personen in der Beschaffung ändern am Endtermin nichts. Ein gesparter Tag im Entwurf verschiebt ihn um einen Tag nach vorn.</p>
-        <p>Das ist die praktisch wichtigste Kennzahl eines Plans: Sie zeigt, wo Aufmerksamkeit wirkt und wo sie verpufft. Sie ist außerdem beweglich — verspätet sich der zweite Zweig um zwei Tage, ist er mit 16 Tagen der neue kritische Pfad.</p>`],
+        <p>Das ist die praktisch wichtigste Kennzahl eines Plans: Sie zeigt, wo Aufmerksamkeit wirkt und wo sie verpufft. Sie ist außerdem beweglich — verspätet sich der zweite Zweig um zwei Tage, ist er mit 16 Tagen der neue kritische Pfad.</p>
+        <!--FIG:cpm|Der kritische Pfad ist die längste Kette durch den Plan; seine Vorgänge haben keinen Puffer.-->
+        <p>Im Umbau der Bäckerei Lindenhof sieht das so aus. Die längste Kette läuft über Bauamt, Entkernung, Sanitär und Elektro, Ladenbau, Geräteeinbau, Lebensmittelüberwachung, Schulung und Wiedereröffnung. Jeder Vorgang darauf hat null Puffer, ein verlorener Tag irgendwo darauf schiebt die Wiedereröffnung auf Montag, den 27. April — Freitag plus ein Tag ist im Terminplan Montag, nicht Samstag.</p>
+        <table>
+          <thead>
+            <tr><th>Vorgang</th><th>Endet</th><th>Nachfolger beginnt</th><th>Gesamtpuffer</th><th>Was das heißt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Entwurf und Grundriss</td><td>Mo 9. März</td><td>Mi 18. März</td><td>6 T</td><td>Darf sechs Arbeitstage rutschen, ohne dass sich etwas bewegt</td></tr>
+            <tr><td>Backofen und Kühltechnik</td><td>Fr 10. April</td><td>Mo 13. April</td><td>0 T</td><td>Kritisch — eine späte Lieferung ist eine späte Eröffnung</td></tr>
+            <tr><td>Boden und Ladenbau</td><td>Fr 10. April</td><td>Mo 13. April</td><td>0 T</td><td>Kritisch</td></tr>
+            <tr><td>Personalschulung</td><td>Do 23. April</td><td>Fr 24. April</td><td>0 T</td><td>Kritisch</td></tr>
+          </tbody>
+        </table>
+        <p>Nur eine Zeile hat überhaupt Spiel. Braucht die Architektin drei zusätzliche Tage für den Grundriss, sind die ersten beiden umsonst und der dritte kostet nichts — erst ab dem siebten Tag bewegt sich die Eröffnung. Der Fall der Bestellung ist der interessantere: zwanzig Tage reine Lieferzeit, die am selben Tag enden wie der Ladenbau und damit ebenfalls bei null Puffer stehen. Zwei Ketten können die Eröffnung im Alleingang schieben, eine aus Handwerk, eine aus einem Bestellformular. Besser vor dem Absenden der Bestellung gelernt als danach.</p>
+        <p>Zwei Hinweise dazu, wie gantts.app das rechnet. Ausgewiesen wird der <strong>Gesamtpuffer</strong> — wie weit ein Vorgang rutschen darf, bevor sich der Endtermin bewegt — und nicht der freie Puffer, der den Abstand nur zum unmittelbaren Nachfolger misst; eine Spalte für den freien Puffer gibt es bewusst nicht. Und die Terminrechnung ist <em>wie gesetzt</em>: Eine Abhängigkeit kann einen Vorgang nur nach hinten schieben, niemals nach vorn ziehen. Legen Sie die Personalschulung in den Juni und verknüpfen sie mit der Lebensmittelüberwachung, holt der Plan sie nicht nach April zurück — er zeigt die Lücke, die Sie gelassen haben, statt sie stillschweigend zu schließen. Das weicht vom Lehrbuch-CPM ab und ist Absicht: Ein Terminplan, der Balken eigenmächtig nach vorn zieht, überschreibt Entscheidungen, die aus guten Gründen so getroffen wurden.</p>`],
     ['Wofür sich ein Gantt-Diagramm eignet', `<p>Für Vorhaben mit einem Ende, einer Reihenfolge und mehreren Beteiligten. Überall dort, wo die Frage „was hängt woran“ wichtiger ist als „was mache ich als Nächstes“. Die typischen Einsatzzwecke:</p>
         <ul>
           <li><strong>Terminplanung</strong> — Vorgänge, Dauern und Reihenfolge vom Start bis zur Abnahme festlegen.</li>
@@ -74,6 +116,19 @@ const G = {
         <p>Entwickelt hatte eine sehr ähnliche Form bereits in den 1890er-Jahren der polnische Ingenieur Karol Adamiecki, der sie <em>Harmonogramm</em> nannte. Weil seine Arbeiten überwiegend auf Polnisch und Russisch erschienen, blieben sie im Westen lange unbekannt, und der Name blieb bei Gantt hängen. Die Darstellung hat damit über hundert Jahre überdauert — was selten für eine Methode spricht, die nur Mode wäre.</p>`],
     ['So fangen Sie an', `<p>Schreiben Sie erst alle Vorgänge auf, ohne Termine. Schätzen Sie dann die Dauern in Arbeitstagen. Verknüpfen Sie danach, was wirklich aufeinander wartet — nicht, was zufällig nacheinander im Kalender steht. Setzen Sie zuletzt fünf bis zehn Meilensteine. Termine ergeben sich aus diesen drei Schritten von selbst.</p>
         <p>Sie brauchen dafür weder teure Software noch ein Tabellenblatt voller Formeln. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Konto und ohne Installation: Vorgänge eintippen, Balken ziehen, Abhängigkeiten verknüpfen, kritischen Pfad einblenden und das Ergebnis als PDF, PNG, XLSX oder PPTX exportieren. Der Plan bleibt dabei lokal auf Ihrem Gerät.</p>
+        <p>So entsteht der Umbau der Bäckerei Lindenhof in gantts.app, mit den Schaltflächen so benannt, wie sie tatsächlich beschriftet sind:</p>
+        <ol>
+          <li>Klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie die Liste ein. Dauern in Klammern, <em>nach</em> für eine Verknüpfung und ein abschließendes <em>!</em> für einen Meilenstein werden erkannt — also <em>Sanitär und Elektro (9d) nach Entkernung</em> und danach <em>Lebensmittelüberwachung bestanden!</em></li>
+          <li>Oder bauen Sie ihn von Hand: <strong>＋ Vorgang</strong> für eine Arbeitszeile, <strong>◆ Meilenstein</strong> für eine Raute, <strong>▣ Gruppe</strong> für eine Phase.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet die Detailansicht. Dort setzen Sie <strong>Nach (Vorgänger)</strong>, <strong>Zuständig</strong> und <strong>Fortschritt</strong> — und ändern über <strong>Typ</strong> die Art einer Zeile, falls Sie einen Meilenstein versehentlich als Vorgang eingetippt haben. Ein Meilenstein hat die Dauer null und lässt sich verschieben, aber nicht in der Länge ziehen.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>, damit jeder Vorgang auf das früheste Datum rückt, das seine Abhängigkeiten zulassen. Das ist der Schritt, der aus Schätzungen den 24. April macht.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>, um beide pufferfreien Ketten hervorzuheben, und springen Sie mit <strong>◎ Heute</strong> zurück auf das aktuelle Datum.</li>
+          <li>Prüfen Sie unter <strong>Kalender</strong>, ob Karfreitag und Ostermontag als arbeitsfrei hinterlegt sind. Tragen Sie hier auch die Betriebsferien der beteiligten Betriebe ein — der Plan rechnet danach von selbst um sie herum.</li>
+          <li>Öffnen Sie <strong>◳ Basisplan</strong>, bevor der erste Handwerker auf der Baustelle steht, damit Verzug später gegen das gemessen wird, was Sie zugesagt haben.</li>
+          <li>Über <strong>⬇ Export</strong> erhalten Sie <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong>, <strong>📑 CSV (Tabelle)</strong> oder <strong>📽 PowerPoint (.pptx)</strong>; über <strong>📤 Teilen…</strong> einen <strong>🔗 Teilbarer Link</strong>.</li>
+        </ol>
+        <!--FIG:steps|Von der schlichten Vorgangsliste zu einem terminierten, verknüpften Plan in wenigen Schritten.-->
+        <p>Für die Vermieterin stellen Sie <strong>Ansicht</strong> vor dem Export auf <strong>Nur Meilensteine</strong>: zwei Zeilen, die Lebensmittelüberwachung und die Wiedereröffnung — das gesamte Vorhaben, soweit es sie betrifft.</p>
         <p>Ausführlich Schritt für Schritt steht das in der <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a>; wer lieber in Tabellen arbeitet, findet den Weg über <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> beschrieben.</p>`],
   ],
   callout: 'Ein Gantt-Diagramm ohne Abhängigkeiten ist nur eine Tabelle mit Farbe. Der gesamte Nutzen entsteht dadurch, dass der Plan selbst rechnet, wenn sich etwas verschiebt — und in jedem echten Projekt verschiebt sich etwas.',
@@ -100,6 +155,32 @@ const G = {
     ['Was Sie vorher brauchen', `<p>Drei Dinge sollten geklärt sein, bevor Sie den ersten Balken zeichnen. Erstens das <strong>Ziel und der Endtermin</strong> — woran genau erkennen Sie, dass das Projekt fertig ist, und bis wann muss das der Fall sein. Zweitens eine <strong>Liste der Vorgänge</strong>, die dorthin führen. Drittens eine grobe Vorstellung davon, <strong>wie lange jeder Vorgang dauert und was worauf wartet</strong>.</p>
         <p>Perfekte Schätzungen brauchen Sie nicht. Sie brauchen einen Ausgangspunkt, den Sie verfeinern können — und den bekommen Sie in einer Stunde mit zwei Beteiligten an einem Whiteboard. Wenn Ihnen die Grundbegriffe fehlen, lesen Sie zuerst, <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>.</p>
         <p>Als durchgehendes Beispiel dient hier ein Website-Relaunch mit Projektstart am Montag, 6. Juli 2026 und gewünschtem Start der neuen Seite Anfang Oktober.</p>`],
+
+    ['Der Plan, den wir bauen', `<p>Jeder Schritt unten wird auf ein einziges Vorhaben angewendet: den Website-Relaunch der Möbelwerkstatt Brandner GmbH, fünf Arbeitstage die Woche, Projektstart Montag, der 6. Juli 2026. Werfen Sie jetzt schon einen Blick darauf, wo er nach Schritt 7 landet — jeder Schritt erklärt eine seiner Spalten.</p>
+      <div class="worked">
+        <p><strong>Zehn Zeilen, zehn Wochen, ein errechneter Endtermin</strong></p>
+        <table>
+          <thead>
+            <tr><th>Nr.</th><th>Vorgang</th><th>Dauer</th><th>Nach</th><th>Start</th><th>Ende</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Bestandsaufnahme der Inhalte</td><td>5 AT</td><td>—</td><td>Mo 6. Juli</td><td>Fr 10. Juli</td></tr>
+            <tr><td>2</td><td>Seitenstruktur und Wireframes</td><td>6 AT</td><td>1</td><td>Mo 13. Juli</td><td>Mo 20. Juli</td></tr>
+            <tr><td>3</td><td>Texte schreiben</td><td>10 AT</td><td>1</td><td>Mo 13. Juli</td><td>Fr 24. Juli</td></tr>
+            <tr><td>4</td><td>Gestaltung</td><td>8 AT</td><td>2</td><td>Di 21. Juli</td><td>Do 30. Juli</td></tr>
+            <tr><td>5</td><td>Gestaltung abgenommen</td><td>0 T</td><td>4</td><td>Do 30. Juli</td><td>—</td></tr>
+            <tr><td>6</td><td>Frontend-Umsetzung</td><td>12 AT</td><td>5</td><td>Fr 31. Juli</td><td>Mo 31. August</td></tr>
+            <tr><td>7</td><td>Inhalte einpflegen</td><td>6 AT</td><td>3, 6</td><td>Di 1. September</td><td>Di 8. September</td></tr>
+            <tr><td>8</td><td>Qualitätssicherung und Fehlerbehebung</td><td>7 AT</td><td>7</td><td>Mi 9. September</td><td>Do 17. September</td></tr>
+            <tr><td>9</td><td>Abnahme durch die Kundin</td><td>4 AT</td><td>8</td><td>Fr 18. September</td><td>Mi 23. September</td></tr>
+            <tr><td>10</td><td>Livegang</td><td>0 T</td><td>9</td><td>Do 24. September</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p>Diesen Endtermin hat niemand eingetippt. Er ist die Summe der Dauern entlang der längsten Kette und bewegt sich von selbst, sobald sich eine dieser Dauern ändert.</p>
+        <p><strong>Warum die Umsetzung fünf Wochen für zwölf Tage braucht.</strong> Die beauftragte Agentur hat vom 10. bis 21. August <strong>Betriebsferien</strong>. Zwölf Arbeitstage ab dem 31. Juli enden deshalb nicht am 17., sondern am 31. August. Das ist keine Trödelei, sondern eine Kalenderrealität, die in den Plan gehört — trägt man sie nicht ein, verspricht der Terminplan einen Livegang Mitte September, den niemand halten kann. Dasselbe gilt für die Sommerferien im jeweiligen Bundesland, wenn Freigaben bei Personen liegen, die im August drei Wochen weg sind, und für die Tage zwischen Weihnachten und Neujahr bei jedem Projekt, das über den Jahreswechsel läuft.</p>
+        <p><strong>Was das kostet.</strong> Das Agenturangebot liegt bei 34.500 € netto, dazu 4.800 € für die Fotoproduktion in der Werkstatt. Beide Beträge hängen an Vorgang 4 und 6 — und weil die Betriebsferien die Umsetzung strecken, verschiebt sich auch der zugehörige Zahlungsplan um zwei Wochen. Ein Terminplan, der die Ferien kennt, ist damit auch eine bessere Liquiditätsplanung.</p>
+        <p>Zwei Verknüpfungen lohnen den zweiten Blick. Zeile 7 hat zwei Vorgänger — die Texte und die Umsetzung — und beginnt daher, wenn der spätere der beiden fertig ist, also die Umsetzung am 31. August. Und Zeile 3 endet am 24. Juli, wird aber erst am 1. September gebraucht: sechzehn Arbeitstage Spiel. Diese Lücke ist echte Information — dorthin schieben Sie die Texterin, wenn an anderer Stelle etwas brennt.</p>
+      </div>`],
     ['1. Vorgänge sammeln — ohne Termine', `<p>Schreiben Sie zuerst auf, was zu tun ist. Noch keine Daten, keine Reihenfolge, keine Zuständigkeiten. Nur die Arbeit. Formulieren Sie mit Verb und Objekt: „Startseitentext schreiben“, „Rechtstexte prüfen lassen“, „Auf Produktivsystem veröffentlichen“ — nicht „Texte“ und nicht „Rechtliches“.</p>
         <p>Die richtige Granularität liegt zwischen einem Tag und einem Monat je Vorgang. Alles Kürzere gehört auf eine Aufgabenliste, alles Längere ist noch keine Aufgabe, sondern eine Phase. Ein guter Prüfsatz: Sie sollten eine einzige verantwortliche Person nennen und in einem Satz beschreiben können, woran man die Fertigstellung erkennt. Geht das nicht, ist der Vorgang entweder zu groß (teilen) oder zu unklar (definieren).</p>
         <p>Es lohnt sich, dabei von einer Vorlage für Ihre Projektart auszugehen, damit die branchenüblichen Selbstverständlichkeiten nicht fehlen — Zulassungen, Abnahmen, Übergabefristen. Unsere <a href="/de/templates.html">Vorlagen</a> decken Bau, Marketing, Softwareentwicklung und Veranstaltungen ab.</p>`],
@@ -111,17 +192,63 @@ const G = {
         <p>Trennen Sie beim Schätzen Aufwand und Dauer. Zwei Personentage Arbeit einer Person, die nur halbtags verfügbar ist, sind vier Tage Dauer. Der Balken zeigt die Dauer, nicht den Aufwand — und diese Verwechslung ist die häufigste Ursache für Pläne, die auf dem Papier passen und in der Praxis reißen.</p>`],
     ['4. Abhängigkeiten verknüpfen', `<p>Verbinden Sie, was wirklich aufeinander wartet. Der Test: Kann Vorgang B früher beginnen, wenn A schneller fertig wird? Wenn ja, ist die Verknüpfung echt. Wenn nein, haben Sie nur die Reihenfolge im Kalender nachgezeichnet.</p>
         <p>Die mit Abstand häufigste Art ist <strong>Ende-Anfang</strong>: B beginnt, wenn A fertig ist — der Test beginnt, wenn die Umsetzung steht. Drei weitere Arten gibt es für Sonderfälle: Anfang-Anfang für gemeinsam anlaufende Arbeiten, Ende-Ende für begleitende Tätigkeiten wie die Dokumentation, und das seltene Anfang-Ende für Übergaben. Beginnen Sie mit Ende-Anfang und greifen Sie nur dann zu einer anderen, wenn der Vorgang sich tatsächlich so verhält; alle vier stehen in den <a href="/de/blog/gantt-chart-dependencies.html">Verknüpfungsarten</a>.</p>
-        <p>Verknüpfen Sie nicht alles mit allem. Ein Plan, in dem jeder Vorgang von seinem Vorgänger abhängt, ist eine Kette ohne Parallelität — und meist unrealistisch. Und tragen Sie keine festen Termine dort ein, wo eine Verknüpfung die Berechnung übernehmen sollte: Ein hart gesetztes Datum übersteuert die Neuberechnung und macht aus dem Plan wieder ein Bild.</p>`],
+        <p>Verknüpfen Sie nicht alles mit allem. Ein Plan, in dem jeder Vorgang von seinem Vorgänger abhängt, ist eine Kette ohne Parallelität — und meist unrealistisch. Und tragen Sie keine festen Termine dort ein, wo eine Verknüpfung die Berechnung übernehmen sollte: Ein hart gesetztes Datum übersteuert die Neuberechnung und macht aus dem Plan wieder ein Bild.</p>
+        <!--FIG:deps|Eine Abhängigkeit sagt, dass ein Vorgang einen anderen einschränkt; der Pfeil zeigt vom Vorgänger zum Nachfolger.-->
+        <p>Die vier Arten, jeweils am Relaunch der Möbelwerkstatt Brandner gemessen:</p>
+        <table>
+          <thead>
+            <tr><th>Art</th><th>Regel</th><th>Wo sie hier passt</th><th>Wie oft man sie braucht</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Ende-Anfang (EA)</strong></td><td>B beginnt erst, wenn A fertig ist</td><td>Frontend-Umsetzung nach der abgenommenen Gestaltung — neun der neun Verknüpfungen in diesem Plan</td><td>Fast immer</td></tr>
+            <tr><td><strong>Anfang-Anfang (AA)</strong></td><td>B beginnt erst, wenn A begonnen hat</td><td>Wenn die Texte am selben Tag wie die Wireframes anliefen statt nach der Bestandsaufnahme</td><td>Gelegentlich, bei überlappender Arbeit</td></tr>
+            <tr><td><strong>Ende-Ende (EE)</strong></td><td>B endet nicht vor A</td><td>Die Qualitätssicherung endet frühestens, wenn der letzte Inhalt eingepflegt ist</td><td>Selten</td></tr>
+            <tr><td><strong>Anfang-Ende (AE)</strong></td><td>B endet nicht, bevor A begonnen hat</td><td>Nirgends. Diese Art existiert im Wesentlichen für Schichtübergaben</td><td>Fast nie</td></tr>
+          </tbody>
+        </table>
+        <p>Ein Verhalten sollten Sie kennen, bevor Sie Balken ziehen: gantts.app plant <em>wie gesetzt</em>. Eine Abhängigkeit kann einen Vorgang später schieben, als Sie ihn abgelegt haben, aber niemals früher ziehen. Legen Sie die Qualitätssicherung in den November und verknüpfen sie mit dem Einpflegen der Inhalte, holt der Plan sie nicht in den September zurück — die Verknüpfung setzt den frühestmöglichen Beginn, und das Diagramm zeigt die Lücke, die Sie gelassen haben. <strong>Neu planen</strong> schließt diese Lücken, wenn Sie es verlangen.</p>`],
     ['5. Meilensteine setzen', `<p>Fünf bis zehn für ein mehrmonatiges Projekt. Ein Meilenstein hat die Dauer null, erscheint als Raute und markiert eine Entscheidung, eine Freigabe oder eine erfüllte Bedingung — nicht das Ende einer beliebigen Aufgabe. Für den Relaunch also: Konzept freigegeben, Gestaltung abgenommen, Inhalte vollständig, Rechtsfreigabe erteilt, neue Seite live.</p>
         <p>Meilensteine leisten zweierlei. Sie geben Beteiligten außerhalb des Teams greifbare Kontrollpunkte, und sie sind Ankerpunkte, an die sich Abhängigkeiten sauber knüpfen lassen. Eine gute Gewohnheit ist ein Meilenstein am Ende jeder Phase und einer am Endtermin, damit die Ziellinie im Plan immer sichtbar ist.</p>`],
     ['6. Ressourcen zuordnen und Auslastung prüfen', `<p>Erst jetzt ordnen Sie Personen zu — und prüfen dann, ob jemand in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll. Diese Überlastung ist der häufigste Grund, warum ein rechnerisch korrekter Plan in der Praxis nicht hält.</p>
         <p>Gehen Sie den Plan spaltenweise durch, Woche für Woche, und addieren Sie je Person die parallel laufenden Vorgänge. Wer in Kalenderwoche 33 gleichzeitig Texte schreiben, Bilder abnehmen und den Test begleiten soll, wird alle drei verspäten. Die Gegenmittel sind dieselben wie immer: Vorgänge zeitlich versetzen, wo Puffer vorhanden ist, umverteilen oder den Umfang kürzen.</p>
-        <p>Halten Sie anschließend den Fortschritt in Prozent je Vorgang nach. Der Vergleich von Heute-Linie und Fortschrittsbalken ist die schnellste Statusaussage, die es gibt: Steht ein Balken links der Heute-Linie noch bei 0 Prozent, haben Sie Verzug — und zwar sichtbar, bevor jemand ihn meldet.</p>`],
+        <p>Halten Sie anschließend den Fortschritt in Prozent je Vorgang nach. Der Vergleich von Heute-Linie und Fortschrittsbalken ist die schnellste Statusaussage, die es gibt: Steht ein Balken links der Heute-Linie noch bei 0 Prozent, haben Sie Verzug — und zwar sichtbar, bevor jemand ihn meldet.</p>
+        <p>Tun Sie vor dem ersten Tag noch eines: Speichern Sie einen <strong>Basisplan</strong>. Er friert den vereinbarten Stand ein, sodass Sie sechs Wochen später die Abweichung messen können, statt darüber zu streiten, was zugesagt war. So sieht der Relaunch am Ende der sechsten Woche aus, mit dem Basisplan vom 6. Juli:</p>
+        <table>
+          <thead>
+            <tr><th>Vorgang</th><th>Ende laut Basisplan</th><th>Ist bzw. Prognose</th><th>Abweichung</th><th>Fortschritt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bestandsaufnahme der Inhalte</td><td>Fr 10. Juli</td><td>Fr 10. Juli</td><td>0 T</td><td>100 %</td></tr>
+            <tr><td>Seitenstruktur und Wireframes</td><td>Mo 20. Juli</td><td>Mi 22. Juli</td><td>+2 T</td><td>100 %</td></tr>
+            <tr><td>Gestaltung</td><td>Do 30. Juli</td><td>Mo 3. August</td><td>+2 T</td><td>100 %</td></tr>
+            <tr><td>Texte schreiben</td><td>Fr 24. Juli</td><td>Do 6. August</td><td>+9 T</td><td>100 %</td></tr>
+            <tr><td>Frontend-Umsetzung</td><td>Mo 31. August</td><td>Mi 2. September</td><td>+2 T</td><td>40 %</td></tr>
+            <tr><td>Livegang</td><td>Do 24. September</td><td>Mo 28. September</td><td>+2 T</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p>Lesen Sie die Abweichungsspalte, und die Geschichte erzählt sich selbst. Die Texte sind neun Tage zu spät und kosten nichts, weil sie sechzehn Tage Puffer zu vergeben hatten. Die zwei Tage bei den Wireframes kosten am Livegang exakt zwei Tage, weil dieser Vorgang auf dem kritischen Pfad liegt. Derselbe Verzug, völlig unterschiedlicher Preis — und genau deshalb gibt es Schritt 7.</p>
+        <!--FIG:baseline|Ein Basisplan friert den vereinbarten Stand ein, damit späterer Verzug messbar wird und keine Erinnerungsfrage bleibt.-->`],
     ['7. Puffer einplanen, kritischen Pfad prüfen und freigeben', `<p>Setzen Sie Puffer dorthin, wo Unsicherheit ist — vor Meilensteine und an das Ende des kritischen Pfads, nicht auf jeden einzelnen Vorgang. Verteilte Puffer verschwinden nach dem Parkinsonschen Prinzip; gebündelte bleiben sichtbar und lassen sich bewusst vergeben.</p>
         <p>Schalten Sie dann den <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> ein, also die längste Kette abhängiger Vorgänge, die den Endtermin bestimmt. Prüfen Sie, ob er dort verläuft, wo Sie ihn erwarten. Läuft er durch einen Vorgang, den Sie für nebensächlich hielten, fehlt entweder eine Verknüpfung oder eine Dauer ist falsch geschätzt. Passt der Endtermin nicht, wirken nur zwei Hebel, und beide ausschließlich auf diesem Pfad: mehr Mittel auf kritische Vorgänge oder bisher aufeinanderfolgende Vorgänge überlappen lassen.</p>
+        <p>Im Relaunch der Möbelwerkstatt Brandner läuft diese Kette über Bestandsaufnahme, Wireframes, Gestaltung, Abnahme der Gestaltung, Umsetzung, Einpflegen, Qualitätssicherung, Kundenabnahme und Livegang. Acht der zehn Zeilen liegen darauf, was etwas Unangenehmes, aber Nützliches verrät: Dieser Plan hat fast kein Spiel, und ein einziger Vorgang — die Texte — trägt den gesamten Puffer, den das Projekt besitzt.</p>
+        <!--FIG:float|Puffer ist der Abstand, den ein Vorgang rutschen darf, bevor er andere bewegt.-->
+        <p>Ausgewiesen wird dabei der <strong>Gesamtpuffer</strong>: wie lange ein Vorgang rutschen darf, bevor sich der Endtermin bewegt — und nicht der freie Puffer, der nur den Abstand zum unmittelbaren Nachfolger misst. Eine Spalte für den freien Puffer gibt es nicht. Die sechzehn Tage der Texte sind daher sechzehn Tage echter Schutz für den Livegang, und nicht bloß Luft gegenüber der nächsten Zeile.</p>
         <p>Zum Schluss gehen Sie den Plan mit den Beteiligten durch. Ein Plan, den nur eine Person kennt, ist kein Plan, sondern eine Meinung. Frieren Sie danach den Stand als <strong>Basisplan</strong> ein — ohne diesen Vergleichsstand lässt sich später nicht mehr belegen, wo und wann die Abweichung entstanden ist.</p>`],
     ['Womit erstellen?', `<p>Für kleine Vorhaben reicht eine Tabellenkalkulation, wird aber ab etwa zwanzig Zeilen mühsam, weil Abhängigkeiten nicht automatisch rechnen: Jede Verschiebung müssen Sie durch alle Nachfolger von Hand tragen, und nach der zweiten Änderung unterbleibt das. Wie es trotzdem geht, steht in der Anleitung zu <a href="/de/blog/gantt-chart-in-excel.html">Gantt-Diagrammen in Excel</a>.</p>
-        <p>Spezialisierte Werkzeuge nehmen Ihnen das ab. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Anmeldung und ohne Installation: Vorgänge eintippen, Dauern setzen, Balken ziehen, Verknüpfungen als Pfeile zeichnen. Der kritische Pfad hebt sich automatisch hervor und rechnet sich bei jeder Änderung neu. Exportiert wird nach PDF, PNG, XLSX oder PPTX, und der Plan bleibt lokal auf Ihrem Gerät.</p>`],
+        <p>Spezialisierte Werkzeuge nehmen Ihnen das ab. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Anmeldung und ohne Installation: Vorgänge eintippen, Dauern setzen, Balken ziehen, Verknüpfungen als Pfeile zeichnen. Der kritische Pfad hebt sich automatisch hervor und rechnet sich bei jeder Änderung neu. Exportiert wird nach PDF, PNG, XLSX oder PPTX, und der Plan bleibt lokal auf Ihrem Gerät.</p>
+        <p>Dieselben zehn Zeilen im Editor, mit den Schaltflächen so beschriftet, wie sie tatsächlich heißen:</p>
+        <ol>
+          <li>Öffnen Sie <strong>✨ In Gantt einfügen</strong> und fügen Sie die Gliederung ein. Dauern in Klammern, <em>nach</em> für eine Verknüpfung und ein abschließendes <em>!</em> für einen Meilenstein werden beim Einfügen erkannt — also <em>Frontend-Umsetzung (12d) nach Gestaltung abgenommen</em> und danach <em>Livegang!</em></li>
+          <li>Von Hand stattdessen: <strong>＋ Vorgang</strong> für eine Arbeitszeile, <strong>◆ Meilenstein</strong> für eine Raute, <strong>▣ Gruppe</strong> für eine Phase, danach die Vorgänge darunter einrücken.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet <strong>Nach (Vorgänger)</strong>, <strong>Zuständig</strong> und <strong>Fortschritt</strong>. Auch der <strong>Typ</strong> steht hier: Ändern Sie ihn auf Meilenstein, fällt das Ende der Zeile auf ihren Anfang. Breiter ziehen lässt sich eine Raute nicht — ein Meilenstein mit Dauer ist kein Meilenstein.</li>
+          <li>Tragen Sie unter <strong>Kalender</strong> die Betriebsferien vom 10. bis 21. August ein. Ohne diesen Schritt endet die Umsetzung rechnerisch am 17. August, und der ganze restliche Plan ist zwei Wochen zu optimistisch.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>, damit jeder Vorgang auf den frühesten Termin rückt, den seine Verknüpfungen zulassen. Das ist der Schritt, der den 24. September erzeugt.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>, um die acht kritischen Balken zu schraffieren, und prüfen Sie, dass die Texte nicht darunter sind.</li>
+          <li>Speichern Sie <strong>◳ Basisplan</strong> vor dem ersten Tag, damit die Abweichungstabelle oben etwas ist, das die App ausfüllt, und nicht etwas, das Sie von Hand zusammentragen.</li>
+          <li>Stellen Sie <strong>Zoom</strong> für einen Zehn-Wochen-Plan auf Woche und springen Sie mit <strong>◎ Heute</strong> zurück, sobald die Arbeit läuft.</li>
+          <li><strong>⬇ Export</strong> liefert <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong>, <strong>📑 CSV (Tabelle)</strong> und <strong>📽 PowerPoint (.pptx)</strong>; <strong>📤 Teilen…</strong> liefert einen <strong>🔗 Teilbarer Link</strong>. Für die Kundin stellen Sie <strong>Ansicht</strong> vorher auf <strong>Nur Meilensteine</strong> — Abnahme der Gestaltung und Livegang, sonst nichts.</li>
+        </ol>
+        <!--FIG:steps|Von der Vorgangsliste zum terminierten, verknüpften Plan in wenigen Schritten.-->`],
     ['Die fünf häufigsten Fehler', `<p><strong>Zu detailliert planen.</strong> Ein Plan mit 300 Zeilen wird nicht gepflegt, und ein ungepflegter Plan ist schlechter als gar keiner, weil ihm noch vertraut wird. Beginnen Sie auf Phasenebene und gehen Sie nur dort ins Detail, wo es hilft.</p>
         <p><strong>Feste Termine statt Verknüpfungen.</strong> Wenn Daten sich nicht bewegen, sobald ein Vorgänger sich verspätet, lügt der Plan ab der ersten Änderung.</p>
         <p><strong>Gar kein Puffer.</strong> Ein Plan ohne jede Reserve bricht bei der ersten Verzögerung. Realistisch schätzen und eine sichtbare Reserve vor den Endtermin legen.</p>
@@ -175,7 +302,8 @@ const G = {
           <li><strong>Freier Puffer</strong> — um wie viel sich ein Vorgang verschieben darf, ohne den <em>FAZ seines Nachfolgers</em> zu verschieben. Dieser Puffer gehört dem Vorgang allein.</li>
         </ul>
         <p>Praktisch heißt das: Wenn drei Vorgänge in einem Zweig je acht Tage Gesamtpuffer ausgewiesen bekommen, gibt es nicht 24 Tage Luft, sondern acht — einmal, für den ganzen Zweig.</p>`],
-    ['Ein durchgerechnetes Beispiel', `<p>Sechs Vorgänge, Dauern in Arbeitstagen, Projektstart Montag, 6. Juli 2026.</p>
+    ['Ein durchgerechnetes Beispiel', `<p>Der Einbau einer Regalanlage im Logistikzentrum der Spedition Ostermann in Kassel: sechs Vorgänge, Dauern in Arbeitstagen, Projektstart Montag, 6. Juli 2026. Die Anlage kostet 96.000 €, die Montagekolonne 1.850 € je Tag. Jede Zahl unten braucht nichts als Addition und Subtraktion.</p>
+      <div class="worked">
         <table>
           <thead><tr><th>Vorgang</th><th>Dauer</th><th>Vorgänger</th></tr></thead>
           <tbody>
@@ -220,7 +348,17 @@ const G = {
           </tbody>
         </table>
         <p>Die Vorgänge mit Puffer null — <strong>A, B, D, F</strong> — bilden den kritischen Pfad, genau der Weg, den wir vorher schon als den längeren erkannt hatten. In Kalenderterminen: A läuft von Montag, 6. bis Mittwoch, 8. Juli, B von Donnerstag, 9. bis Dienstag, 14. Juli, D von Mittwoch, 15. bis Dienstag, 21. Juli und F von Mittwoch, 22. bis Freitag, 24. Juli.</p>
-        <p>C und E haben je <strong>einen Arbeitstag Puffer</strong> — aber es ist derselbe Tag, denn beide liegen auf demselben Zweig. Verschiebt sich die Beschaffung um einen Tag, hat die Baustellenvorbereitung anschließend null Puffer, und der zweite Zweig ist ebenfalls kritisch. Verschiebt sie sich um zwei Tage, ist der Endtermin weg.</p>`],
+        <p>C und E haben je <strong>einen Arbeitstag Puffer</strong> — aber es ist derselbe Tag, denn beide liegen auf demselben Zweig. Verschiebt sich die Beschaffung um einen Tag, hat die Baustellenvorbereitung anschließend null Puffer, und der zweite Zweig ist ebenfalls kritisch. Verschiebt sie sich um zwei Tage, ist der Endtermin weg.</p>
+        <p><strong>Warum diese sechs Tage teuer sind.</strong> Der Regalhersteller hat vom 3. bis 21. August <strong>Betriebsferien</strong>. Zwischen dem berechneten Ende am 24. Juli und dem Beginn der Werksschließung liegen sechs Arbeitstage. Rutscht die Montage weiter als das, kostet die Verzögerung nicht einen Tag, sondern drei Wochen — der kritische Pfad hat hier also nicht nur eine Länge, sondern auch eine Klippe kurz dahinter. Genau das ist der Grund, den Betriebsferienkalender der Lieferanten vor der Terminzusage abzufragen und nicht danach.</p>
+
+        <p><strong>Jetzt verbrauchen wir Puffer.</strong> Die Beschaffung (C, Puffer 1) dauert 4 statt 2 Tage. Rechnen Sie vorwärts weiter: C hat FEZ 3 + 4 = 7, E damit FAZ 7 und FEZ 13, und F beginnt bei <code>max(D 12; E 13) = 13</code> und endet bei <strong>16</strong>.</p>
+        <p>Zwei Tage Verzug, ein Tag am Projektende — der erste Tag kam aus dem Puffer, nur die Überschreitung erreichte den Termin. Puffer ist ein Budget, und man kann es genau einmal ausgeben. Und noch etwas ist passiert: <strong>Der kritische Pfad ist umgezogen.</strong> A → C → E → F misst jetzt 3 + 4 + 6 + 3 = 16 Tage, während der alte Weg über Entwurf und Umsetzung mit 15 Tagen einen Tag Puffer hat. Die Vorgänge, die Sie bewacht haben, sind nicht mehr die, auf die es ankommt — und nichts hätte Ihnen das gesagt, wenn nicht neu gerechnet würde. Das Projektende wandert vom 24. auf Montag, den 27. Juli.</p>
+
+        <p><strong>Und jetzt auf dem kritischen Pfad.</strong> Setzen Sie die Beschaffung zurück auf 2 Tage und lassen Sie stattdessen den Entwurf (B) 6 statt 4 Tage dauern. B hat FEZ 9, D damit FAZ 9 und FEZ 14, F beginnt bei <code>max(14; 11) = 14</code> und endet bei <strong>17</strong>. Zwei Tage hinein, zwei Tage heraus, eins zu eins — es gab nichts, was sie hätte auffangen können. Ende: Dienstag, der 28. Juli.</p>
+        <p>Alle anderen sind dabei reicher geworden: Rechnen Sie mit SEZ(F) = 17 rückwärts, haben C und E jetzt je drei Tage Puffer statt einem. Luft an anderer Stelle wird durch Verzug auf dem kritischen Pfad erzeugt — sie ist kein Zeichen dafür, dass es gut läuft.</p>
+        <p><strong>Was ein Tag kostet.</strong> Wollen Sie die zwei Tage zurückkaufen, wirkt nur ein Eingriff auf dem kritischen Pfad. Zwei zusätzliche Monteure verkürzen die Umsetzung (D) um einen Tag und kosten 1.850 € — die Frage im Lenkungskreis lautet dann nicht „können wir schneller“, sondern „ist uns dieser eine Tag 1.850 € wert“. Dieselben zwei Monteure auf die Baustellenvorbereitung gesetzt kosten dasselbe und bringen null Tage.</p>
+      </div>
+      <!--FIG:float|Puffer ist ein Budget. Geben Sie weniger aus, als Sie haben, bewegt sich der Endtermin nicht; geben Sie mehr aus, erreicht nur die Überschreitung das Ende.-->`],
     ['Was das praktisch bedeutet', `<p>Die Rechnung sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf die Baustellenvorbereitung zu setzen bringt für den Endtermin nichts — der Vorgang wird früher fertig und wartet dann länger auf F. Einen Tag beim Entwurf zu sparen bringt dagegen einen Tag am Projektende, eins zu eins.</p>
         <p>Dasselbe gilt für die Nachverfolgung im Betrieb. Bei der wöchentlichen Statusrunde ist die Frage nach den kritischen Vorgängen die einzige, die den Termin bewegt. Ein Vorgang mit zwölf Tagen Puffer, der drei Tage im Rückstand ist, ist eine Notiz. Ein kritischer Vorgang, der einen halben Tag im Rückstand ist, ist ein Thema.</p>
         <p>Und es warnt vor einer Falle: Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme. Er wandert, sobald sich etwas verschiebt. Deshalb wird er nicht einmal zu Projektbeginn berechnet, sondern bei jeder Fortschreibung neu — sonst schützen Sie einen Pfad, der seit drei Wochen nicht mehr der kritische ist.</p>`],
@@ -239,7 +377,30 @@ const G = {
     ['Die drei häufigsten Fehler', `<p><strong>Feste Termine statt Verknüpfungen.</strong> Ein hart eingetragenes Startdatum übersteuert die Berechnung. Der Vorgang wandert nicht mehr mit, der Puffer wird falsch ausgewiesen, und der kritische Pfad läuft an ihm vorbei. Feste Termine gehören nur dorthin, wo sie real sind — ein Messetermin, ein Gerichtstermin.</p>
         <p><strong>Fehlende Verknüpfungen.</strong> Ohne Vorgänger hat jeder Vorgang scheinbar Puffer bis zum Projektende, und die Software meldet einen unrealistisch kurzen kritischen Pfad. Wenn Ihr Plan verdächtig entspannt aussieht, fehlen meist Verknüpfungen.</p>
         <p><strong>Puffer in die Dauern gerechnet.</strong> Wer auf jede Dauer 20 Prozent aufschlägt, bekommt einen Plan, in dem der Puffer unsichtbar ist und nach dem Parkinsonschen Prinzip verbraucht wird. Schätzen Sie realistisch und setzen Sie den Puffer als eigenen Vorgang ans Ende des kritischen Pfads, wo man ihn sieht.</p>`],
-    ['Automatisch statt von Hand', `<p>Die Rechnung einmal von Hand durchzuführen lohnt sich, weil man danach versteht, was die Software tut. Wiederholen möchte man sie nach jeder Schätzungsänderung nicht. <a href="/de/app.html">gantts.app</a> berechnet den kritischen Pfad, sobald Vorgänge und Abhängigkeiten stehen, hebt ihn farblich hervor und rechnet ihn bei jeder Änderung neu — kostenlos im Browser, ohne Konto und ohne Installation. Der fertige Plan lässt sich als PDF, PNG, XLSX oder PPTX exportieren.</p>
+    ['Wie gantts.app rechnet — und wo es vom Lehrbuch abweicht', `<p>Das lohnt sich genau zu benennen, denn unsere Vorwärtsrechnung ist nicht die oben beschriebene, und der Unterschied landet in der Pufferspalte.</p>
+        <p>Das Lehrbuch-CPM ignoriert, wohin Sie den Balken gezeichnet haben: Es setzt jeden Vorgang so früh, wie seine Vorgänger es erlauben. Die Baustellenvorbereitung beginnt also am Tag 3, ob Sie sie dort abgelegt haben oder nicht. gantts.app rechnet dagegen <strong>CPM „wie gesetzt“</strong>: Jeder Vorgang beginnt an <em>seinem eigenen gesetzten Starttermin</em>, und ein Vorgänger kann ihn danach nur <strong>später</strong> schieben, niemals früher ziehen. Im Kern ist das ein einziges Maximum — der früheste Anfang beginnt beim eigenen Starttermin, und eine Abhängigkeit hebt ihn nur an, wenn die Bedingung mehr verlangt.</p>
+        <p>Legen Sie die Baustellenvorbereitung auf den Tag 7 statt auf den Tag 5, und der Unterschied ist eine Zahl. Das Lehrbuch meldet weiter FAZ 5 und einen Tag Puffer. Wir melden FAZ 7, und bei unveränderter Rückwärtsrechnung mit SAZ 6 ergibt das <strong>−1 Tag</strong>, also einen negativen Puffer. Beides ist richtig; die beiden beantworten verschiedene Fragen. Das Lehrbuch fragt, wie viel Luft die Logik erlaubt — wir fragen, wie viel dieser Plan, so wie er gezeichnet ist, noch hat.</p>
+        <p>Der Grund ist, dass dies zuerst ein Diagramm ist: Eine Vorwärtsrechnung, die Vorgänge stillschweigend verschiebt, würde Puffer für einen Terminplan ausweisen, der nicht der auf dem Bildschirm ist. Einen Balken zu ziehen ist eine Anweisung, also behandeln wir sie als eine. Drei weitere Punkte, die Sie kennen sollten:</p>
+        <ul>
+          <li><strong>Nur der Gesamtpuffer.</strong> Es gibt eine Zahl je Vorgang, und das ist der Gesamtpuffer — eine Spalte für den freien Puffer existiert bewusst nicht. Den freien Puffer aus dem Abschnitt weiter oben müssen Sie also selbst im Kopf haben, wenn zwei Personen an demselben Zweig planen.</li>
+          <li><strong>Sammelzeilen terminieren nicht.</strong> Die Rechnung läuft über Einzelvorgänge und Meilensteine; Phasenbalken sind Zusammenfassungen ihrer Kinder. Ein Meilenstein hat die Dauer null und lässt sich verschieben, aber nicht in der Länge ziehen.</li>
+          <li><strong>Arbeitstage, wenn ein Kalender aktiv ist.</strong> Gerechnet wird in Arbeitstagsordnungszahlen, ein Abstand von 5 sind also fünf Arbeitstage, und Nachfolger landen auf einem Montag statt auf einem Sonntag.</li>
+        </ul>
+        <p>Kritisch ist ein Vorgang, wenn sein Puffer <strong>null oder kleiner</strong> ist — negative Puffer verschwinden dadurch nicht, sondern werden sichtbar.</p>
+        <!--FIG:lag|Ein Zeitabstand verschiebt die Bedingung, ohne die Verknüpfung zu lösen. Der kritische Pfad läuft durch den Abstand hindurch.-->
+        <p>Wollen Sie das Lehrbuchverhalten — alles auf den frühesten Termin gezogen, den die Logik zulässt —, klicken Sie auf <strong>Neu planen</strong>. Diese Funktion wiederholt die Vorwärtsrechnung mit einer geänderten Regel: Ein Vorgang mit Vorgängern folgt ausschließlich seinen Bedingungen, unabhängig davon, wo er liegt, während Vorgänge ohne Vorgänger als Anker stehen bleiben. Danach stimmen beide Verfahren überein.</p>
+        <p>So sehen Sie den kritischen Pfad der Regalanlage in unter einer Minute:</p>
+        <ol>
+          <li>Öffnen Sie <a href="/de/app.html">gantts.app</a> und klicken Sie auf <strong>✨ In Gantt einfügen</strong>. Fügen Sie die sechs Vorgänge ein — <em>Umsetzung (5d) nach Entwurf</em>, <em>Montage und Test (3d) nach Umsetzung</em>.</li>
+          <li>Ein Doppelklick auf „Montage und Test“ öffnet <strong>Nach (Vorgänger)</strong>. Tragen Sie dort <em>beide</em> Vorgänger ein, Umsetzung und Baustellenvorbereitung — das ist das <code>max()</code> aus der Vorwärtsrechnung, nur ohne Formel.</li>
+          <li>Tragen Sie unter <strong>Kalender</strong> die Betriebsferien des Regalherstellers vom 3. bis 21. August ein, damit die Klippe hinter dem Endtermin im Plan sichtbar wird.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>. Jetzt entspricht die Rechnung dem Lehrbuch, und die 15 Arbeitstage stehen im Plan.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>. A, B, D und F werden schraffiert; die Legende darunter erklärt die Schraffur.</li>
+          <li>Blenden Sie über <strong>Spalten</strong> die Pufferspalte ein und lesen Sie die 1 bei Beschaffung und Baustellenvorbereitung ab. Denken Sie daran: Das ist einmal ein Tag für den ganzen Zweig, nicht zweimal.</li>
+          <li>Ändern Sie die Dauer der Beschaffung auf 4 Tage. Die Schraffur springt auf den anderen Zweig — genau der Umzug des kritischen Pfads, den wir oben von Hand gerechnet haben.</li>
+          <li>Über <strong>⬇ Export</strong> geht der Plan als <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong> oder <strong>📽 PowerPoint (.pptx)</strong> hinaus.</li>
+        </ol>
+        <p>Die Rechnung einmal von Hand durchzuführen lohnt sich, weil man danach versteht, was die Software tut. Wiederholen möchte man sie nach jeder Schätzungsänderung nicht.</p>
         <p>Wenn Ihnen die Grundlagen noch fehlen, beginnen Sie mit <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>, gehen dann zur <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a> und vertiefen die <a href="/de/blog/gantt-chart-dependencies.html">vier Verknüpfungsarten</a>, ohne die es keinen kritischen Pfad gibt.</p>`],
   ],
   callout: 'Der kritische Pfad ändert sich während des Projekts. Ein Vorgang mit drei Tagen Puffer, der sich um vier verspätet, wird selbst kritisch. Deshalb rechnet man den Pfad nicht einmal zu Projektbeginn, sondern bei jeder Aktualisierung neu.',
@@ -365,6 +526,58 @@ const G = {
   figIntro: "Dieselbe Darstellung, acht sehr unterschiedliche Gliederungen:",
   sections: [
     [
+      "Ein Beispiel in voller Länge: die Jahrestagung der Handwerkskammer Münster",
+      `<p>Acht Kurzbeschreibungen helfen, das eigene Projekt wiederzuerkennen; ein Plan mit echten Terminen zeigt die Form. Deshalb hier ein einziges Beispiel durchgerechnet — eine Jahrestagung mit 400 Gästen am <strong>Donnerstag, dem 15. Oktober 2026</strong>, geplant ab Montag, dem 1. Juni, fünf Arbeitstage die Woche, Feiertage in Nordrhein-Westfalen berücksichtigt.</p>
+      <div class="worked">
+        <p><strong>Zwölf Zeilen bis zum Tagungstag</strong></p>
+        <table>
+          <thead>
+            <tr><th>Nr.</th><th>Zeile</th><th>Dauer</th><th>Nach</th><th>Start</th><th>Ende</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Budget und Auswahl der Veranstaltungsorte</td><td>10 AT</td><td>—</td><td>Mo 1. Juni</td><td>Di 16. Juni</td></tr>
+            <tr><td>2</td><td>Veranstaltungsort beauftragt</td><td>0 T</td><td>1</td><td>Di 16. Juni</td><td>—</td></tr>
+            <tr><td>3</td><td>Referentinnen und Referenten anfragen und bestätigen</td><td>25 AT</td><td>2</td><td>Mi 17. Juni</td><td>Di 21. Juli</td></tr>
+            <tr><td>4</td><td>Catering und Technik beauftragen</td><td>12 AT</td><td>2</td><td>Mi 17. Juni</td><td>Do 2. Juli</td></tr>
+            <tr><td>5</td><td>Anmeldeseite bauen</td><td>8 AT</td><td>2</td><td>Mi 17. Juni</td><td>Fr 26. Juni</td></tr>
+            <tr><td>6</td><td>Anmeldung geöffnet</td><td>0 T</td><td>3, 5</td><td>Mi 22. Juli</td><td>—</td></tr>
+            <tr><td>7</td><td>Bewerbung der Tagung</td><td>45 AT</td><td>6</td><td>Mi 22. Juli</td><td>Di 22. September</td></tr>
+            <tr><td>8</td><td>Programm und Regieablauf</td><td>10 AT</td><td>3</td><td>Mi 22. Juli</td><td>Di 4. August</td></tr>
+            <tr><td>9</td><td>Druck und Beschilderung</td><td>6 AT</td><td>8</td><td>Mi 5. August</td><td>Mi 12. August</td></tr>
+            <tr><td>10</td><td>Endgültige Teilnehmerzahl ans Catering</td><td>2 AT</td><td>7</td><td>Mi 23. September</td><td>Do 24. September</td></tr>
+            <tr><td>11</td><td>Generalprobe</td><td>2 AT</td><td>9, 10</td><td>Di 13. Oktober</td><td>Mi 14. Oktober</td></tr>
+            <tr><td>12</td><td>Tagungstag</td><td>0 T</td><td>11</td><td>Do 15. Oktober</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p>Die kritische Kette läuft 1 → 2 → 3 → 6 → 7 → 10 und landet auf <strong>Donnerstag, dem 24. September</strong>. Die Tagung ist am 15. Oktober. Diese Lücke von vierzehn Arbeitstagen ist die gesamte Reserve des Plans und die nützlichste einzelne Zahl im ganzen Diagramm.</p>
+        <p><strong>Fronleichnam kostet gleich zu Beginn zwei Tage.</strong> Der 4. Juni 2026 ist in Nordrhein-Westfalen gesetzlicher Feiertag, und die Kammer hat am Brückentag, Freitag dem 5. Juni, geschlossen. Zehn Arbeitstage ab dem 1. Juni enden deshalb am 16. statt am 12. Juni — und weil Zeile 1 auf der kritischen Kette liegt, wandern diese zwei Tage bis zur Meldung der Teilnehmerzahl durch. Wer ohne Feiertagskalender plant, verschenkt zwei der vierzehn Reservetage, bevor überhaupt jemand telefoniert hat.</p>
+        <p><strong>Die Sommerferien stehen nicht im Plan und wirken trotzdem.</strong> Die Bewerbung läuft ab dem 22. Juli und damit mitten in die nordrhein-westfälischen Sommerferien. Es wird gearbeitet, aber es meldet sich niemand an. Die Konsequenz ist kein Kalendereintrag, sondern eine Planungsentscheidung: Das Anmeldebudget von 6.500 € gehört überwiegend in den September, nicht in den August.</p>
+        <p>Ein Veranstaltungsplan verhält sich anders als jedes andere Beispiel auf dieser Seite, weil der Endtermin nicht verhandelbar ist. Sie fragen nicht „wann sind wir fertig?“, sondern „passt die Arbeit vor das Datum, und mit wie viel Luft?“. Wäre die Kette auf den 20. Oktober gefallen, hülfe kein Einsatz der Welt — dann kürzt man den Umfang, beginnt früher oder verkürzt das Bewerbungsfenster.</p>
+      </div>
+      <!--FIG:cpm|Die längste Kette verknüpfter Vorgänge setzt den Termin; alles Übrige hat Spielraum.-->
+      <p>Zwei Hinweise dazu, wie gantts.app das rechnet. Ausgewiesen wird der <strong>Gesamtpuffer</strong> — wie weit ein Vorgang rutschen darf, bevor sich der Endtermin bewegt — und nicht der freie Puffer; eine eigene Spalte dafür gibt es nicht. Und geplant wird <em>wie gesetzt</em>: Eine Abhängigkeit kann einen Vorgang später schieben, als Sie ihn abgelegt haben, ihn aber nie früher ziehen. Das ist genau das, was man für eine Generalprobe will, die bewusst in der Tagungswoche liegt. Die Verknüpfung garantiert, dass sie nicht vor Druck und Teilnehmerzahl stattfinden kann; nach August zurück reißt sie sie nicht.</p>`
+    ],
+    [
+      "Die Projektarten im Vergleich",
+      `<p>Vor den Einzelbeschreibungen der Überblick: Wie sich die Hauptarten in den vier Punkten unterscheiden, die das Diagramm tatsächlich verändern.</p>
+      <table>
+        <thead>
+          <tr><th>Projektart</th><th>Übliche Dauer und Zeitachse</th><th>Dichte der Abhängigkeiten</th><th>Wo das Risiko sitzt</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bauprojekt</td><td>6–24 Monate, Wochen</td><td>Sehr hoch — nahezu alles Ende-Anfang</td><td>Abnahmen und Genehmigungen: ein Fehlschlag verschiebt alles</td></tr>
+          <tr><td>Softwareentwicklung</td><td>1–6 Monate, Wochen je Iteration</td><td>Zwischen Iterationen gering, zum Release hin hoch</td><td>Umfang, nicht Reihenfolge — Balken wachsen, statt zu wandern</td></tr>
+          <tr><td>Marketingkampagne</td><td>6–12 Wochen, Wochen</td><td>Mittel, überwiegend innerhalb eines Strangs</td><td>Freigaben zwischen den parallelen Strängen</td></tr>
+          <tr><td>Veranstaltung</td><td>3–6 Monate, Wochen</td><td>Mittel, spät zusammenlaufend</td><td>Der feste Termin. Die Reserve ist die Lücke davor</td></tr>
+          <tr><td>Produkteinführung</td><td>8–16 Wochen, Wochen</td><td>Hoch und bereichsübergreifend</td><td>Übergaben zwischen Produkt, Marketing und Support</td></tr>
+          <tr><td>Dissertation</td><td>9–24 Monate, Monate</td><td>Gering, aber lange Ketten</td><td>Freigaben Dritter mit unkalkulierbarer Dauer</td></tr>
+          <tr><td>Wochenplan</td><td>5 Tage, Tage oder Stunden</td><td>Praktisch keine</td><td>Nichts Strukturelles — er ist ein Verständigungsmittel</td></tr>
+        </tbody>
+      </table>
+      <p>Die letzte Spalte lohnt den zweiten Blick. Im Bau ist das Risiko die <em>Reihenfolge</em>, in der Softwareentwicklung der <em>Umfang</em>, bei Veranstaltungen ein <em>Datum</em>. Dasselbe Diagramm, drei verschiedene Fragen, die man ihm stellen muss.</p>
+      <!--FIG:deps|Im Bau ist fast jede Verknüpfung Ende-Anfang, weshalb dort so viel des Plans kritisch wird.-->`
+    ],
+    [
       "Bauprojekt",
       `<p>Phasen: Planung und Genehmigung, Erdarbeiten, Rohbau, Gebäudehülle, Ausbau, Haustechnik, Abnahme. Zeitachse in Wochen, Laufzeit typischerweise neun bis achtzehn Monate, 40 bis 70 Vorgänge.</p>
         <p>Kein anderes Beispiel ist so stark verkettet. Fundamente vor dem Aushub gibt es nicht, Trockenbau vor der bestandenen Rohinstallationsabnahme auch nicht — hier arbeiten Ende-Anfang-Verknüpfungen und der <a href="/de/blog/critical-path-method.html">kritische Pfad</a> wirklich. Meilensteine sind Baugenehmigung erteilt, Fundament abgenommen, Gebäude dicht, Schlussabnahme.</p>
@@ -430,6 +643,17 @@ const G = {
     [
       "Womit anfangen",
       `<p>Nehmen Sie das nächstliegende Beispiel als Ausgangspunkt und passen Sie es an, statt mit einem leeren Blatt zu beginnen. Unsere <a href="/de/templates.html">Vorlagen</a> decken alle acht Fälle ab und lassen sich direkt im Browser öffnen: Vorgänge austauschen, Dauern anpassen, Verknüpfungen setzen, kritischen Pfad einblenden und als PDF, PNG, XLSX oder PPTX exportieren — ohne Konto.</p>
+        <p>So öffnen Sie die Jahrestagung von oben im Editor und machen sie zu Ihrem eigenen Plan, mit den Schaltflächen so beschriftet, wie sie tatsächlich heißen:</p>
+        <ol>
+          <li>Öffnen Sie <strong>✨ Vorlagen</strong> und wählen Sie die nächstliegende Gliederung — oder klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie die zwölf Zeilen als Liste ein. Dauern in Klammern, <em>nach</em> für eine Verknüpfung und ein abschließendes <em>!</em> für einen Meilenstein werden dabei erkannt: <em>Bewerbung der Tagung (45d) nach Anmeldung geöffnet</em>, dann <em>Tagungstag!</em></li>
+          <li>Tragen Sie unter <strong>Kalender</strong> die Feiertage Ihres Bundeslands ein — für Münster also Fronleichnam am 4. Juni — und ergänzen Sie Brückentage und Betriebsruhe. Ohne diesen Schritt fehlen dem Plan zwei seiner vierzehn Reservetage.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet <strong>Nach (Vorgänger)</strong>, <strong>Zuständig</strong> und <strong>Fortschritt</strong>. Über <strong>Typ</strong> machen Sie aus einer Vorgangszeile eine Raute; der Tagungstag hat die Dauer null und lässt sich verschieben, aber nicht breiter ziehen.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>, damit jede Zeile auf ihren frühestmöglichen Termin rückt. Bei einer Veranstaltung ist das die eigentliche Rechnung: Sie sehen sofort, wie viel Luft zwischen dem Ende der kritischen Kette und dem festen Datum bleibt.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong> und prüfen Sie, ob die Kette dort verläuft, wo Sie sie erwarten — hier über Ort, Referenten, Anmeldung, Bewerbung und Teilnehmerzahl.</li>
+          <li>Stellen Sie <strong>Zoom</strong> auf Woche für den Gesamtplan und für die Tagungswoche auf Tag um.</li>
+          <li>Speichern Sie <strong>◳ Basisplan</strong>, sobald der Plan steht, damit Sie im September belegen können, wo die Reserve geblieben ist.</li>
+          <li>Über <strong>⬇ Export</strong> erzeugen Sie <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong> oder <strong>📽 PowerPoint (.pptx)</strong>; über <strong>📤 Teilen…</strong> einen <strong>🔗 Teilbarer Link</strong> für die Dienstleister. Für den Vorstand stellen Sie <strong>Ansicht</strong> vorher auf <strong>Nur Meilensteine</strong>.</li>
+        </ol>
         <p>Wenn Ihnen die Grundlagen fehlen, beginnen Sie mit <a href="/de/blog/what-is-a-gantt-chart.html">was ein Gantt-Diagramm ist</a>; für den Aufbau von Grund auf führt die <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a> durch den gesamten Weg.</p>`
     ]
   ],
@@ -500,7 +724,8 @@ const G = {
           <li><strong>Füllung ▸ Keine Füllung</strong></li>
           <li><strong>Rahmen ▸ Keine Linie</strong></li>
         </ul>
-        <p>Die vorderen Segmente verschwinden, und jeder Dauerbalken schwebt an der Stelle, die seinem Startdatum entspricht. Genau in diesem Moment wird aus dem Balkendiagramm ein Gantt-Diagramm. Vergessen Sie den Rahmen nicht: Bleibt er stehen, sieht man weiterhin die Umrisse der unsichtbaren Segmente, und das Ergebnis wirkt unsauber.</p>`
+        <p>Die vorderen Segmente verschwinden, und jeder Dauerbalken schwebt an der Stelle, die seinem Startdatum entspricht. Genau in diesem Moment wird aus dem Balkendiagramm ein Gantt-Diagramm. Vergessen Sie den Rahmen nicht: Bleibt er stehen, sieht man weiterhin die Umrisse der unsichtbaren Segmente, und das Ergebnis wirkt unsauber.</p>
+        <!--FIG:bars|Das unsichtbare Abstandssegment ist es, das jeden Dauerbalken auf sein Datum schiebt.-->`
     ],
     [
       "Schritt 4: Die Reihenfolge umkehren",
@@ -525,6 +750,70 @@ const G = {
         </ul>`
     ],
     [
+      "Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug",
+      `<p>Die sechs Schritte oben sind Mechanik. Ob die Datei ein echtes Projekt überlebt, entscheidet sich an den Formeln — und daran, was mit ihnen passiert, wenn sich der Plan ändert.</p>
+      <p><strong>Hinweis zur Sprachversion.</strong> Alle Formeln hier sind für ein <strong>deutschsprachiges Excel</strong> geschrieben: deutsche Funktionsnamen und <strong>Semikolon</strong> als Argumenttrennzeichen. In einem englischsprachigen Excel heißen dieselben Funktionen <code>WORKDAY</code>, <code>WEEKDAY</code>, <code>AND</code> und <code>TODAY</code>, und getrennt wird mit Komma. Das Trennzeichen hängt zusätzlich an den Regions- und Sprachoptionen von Windows: Steht das Listentrennzeichen dort auf Komma, erwartet auch ein deutsches Excel Kommas. Wenn eine Formel unten mit <em>„Es liegt ein Fehler in der Formel vor“</em> abgelehnt wird, ist fast immer das die Ursache — tauschen Sie die Semikolons gegen Kommas, bevor Sie irgendetwas anderes suchen.</p>
+      <div class="worked">
+        <p><strong>Das Tabellenblatt.</strong> Die Umstellung des Onlineshops der Kaffeerösterei Hansen, Beginn Montag, 2. März 2026. Überschriften in Zeile 1, Vorgänge in den Zeilen 2 bis 7. Spalten: A Vorgang, B Start, C Ende, D Arbeitstage, E Balkenlänge. In <strong>H2:H6</strong> stehen die Feiertage — Karfreitag 3.4., Ostermontag 6.4., Tag der Arbeit 1.5., Christi Himmelfahrt 14.5. und Pfingstmontag 25.5. Nur Spalte D wird von Hand getippt, alles Übrige ist abgeleitet:</p>
+        <ul>
+          <li><strong>C2, das Ende</strong> — <code>=ARBEITSTAG(B2;D2-1;$H$2:$H$6)</code>. Das <code>-1</code> ist entscheidend: <code>ARBEITSTAG</code> zählt <em>vorwärts</em>, ein Vorgang, der montags beginnt und fünf Arbeitstage dauert, endet also bei <code>ARBEITSTAG(Mo;4)</code> am Freitag. Ohne das Minus eins läuft jeder Vorgang einen Tag zu lang.</li>
+          <li><strong>B3, der Start jedes folgenden Vorgangs</strong> — <code>=ARBEITSTAG(C2;1;$H$2:$H$6)</code>. Diese eine Formel ist der einzige Grund, warum das Blatt überhaupt neu rechnet.</li>
+          <li><strong>E2, die Zahl, die das Diagramm zeichnet</strong> — <code>=C2-B2+1</code>. Nicht <code>D2</code>. D sind Arbeitstage, die Diagrammachse dagegen ist ein Kalender einschließlich Wochenenden: Ein Vorgang mit 20 Arbeitstagen muss als 30-Tage-Balken gezeichnet werden. Diese beiden zu verwechseln ist der häufigste Grund, warum ein Excel-Gantt seiner eigenen Tabelle widerspricht.</li>
+        </ul>
+        <p>C2 und E2 nach unten bis Zeile 7 ziehen, B3 bis Zeile 7:</p>
+        <table>
+          <thead>
+            <tr><th>Zeile</th><th>A — Vorgang</th><th>B — Start</th><th>C — Ende</th><th>D — Arbeitstage</th><th>E — Balkenlänge</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>Analyse</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td><td>12</td></tr>
+            <tr><td>3</td><td>Konzept</td><td>Mo 16. März</td><td>Fr 27. März</td><td>10</td><td>12</td></tr>
+            <tr><td>4</td><td>Umsetzung</td><td>Mo 30. März</td><td>Di 28. April</td><td>20</td><td>30</td></tr>
+            <tr><td>5</td><td>Datenmigration</td><td>Mi 29. April</td><td>Do 21. Mai</td><td>15</td><td>23</td></tr>
+            <tr><td>6</td><td>Qualitätssicherung</td><td>Fr 22. Mai</td><td>Fr 5. Juni</td><td>10</td><td>15</td></tr>
+            <tr><td>7</td><td>Livegang</td><td>Mo 8. Juni</td><td>Mo 8. Juni</td><td>1</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p>Lesen Sie Spalte D gegen Spalte E: Die Umsetzung hat 20 Arbeitstage und einen 30 Kalendertage langen Balken. Die Differenz sind acht Wochenendtage <em>und zwei Feiertage</em> — Karfreitag und Ostermontag liegen mitten in diesem Vorgang. Genau dafür steht der Bereich <code>$H$2:$H$6</code> in der Formel. Ein Blatt ohne Feiertagsliste rechnet das Osterwochenende durch und verspricht einen Livegang, den niemand halten kann.</p>
+        <p><strong>Die Achse.</strong> Excel will für die Achsengrenzen serielle Zahlen, keine Datumswerte. Tippen Sie <code>=B2</code> in eine freie Zelle und formatieren Sie diese als <em>Standard</em>, um eine abzulesen: Der 2. März 2026 ist <strong>46083</strong>, der 8. Juni 2026 ist <strong>46181</strong>. Diese beiden Zahlen kommen in <em>Minimum</em> und <em>Maximum</em>, die Haupteinheit auf 7 für Wochenraster.</p>
+        <p><strong>Jetzt ändern Sie etwas.</strong> Das Konzept läuft drei Tage über. Sie ändern eine einzige Zelle — D3 von 10 auf 13 — und die Kette rechnet sich neu: Das Konzept endet Mi 1. April, die Umsetzung läuft Do 2. April bis Mo 4. Mai, die Datenmigration Di 5. Mai bis Mi 27. Mai, die Qualitätssicherung Do 28. Mai bis Mi 10. Juni, der Livegang fällt auf <strong>Do 11. Juni</strong>. Drei Tage hinein, drei Tage heraus. Das ist das Blatt von seiner besten Seite, und es ist ehrlich nützlich.</p>
+        <p><strong>Und das geht dabei kaputt:</strong></p>
+        <ol>
+          <li><strong>Der letzte Balken läuft aus dem Diagramm.</strong> Der Livegang ist auf den 11. Juni gewandert, seriell <strong>46184</strong> — hinter der 46181, die Sie als Achsenmaximum fest eingetragen haben. Der Balken wird abgeschnitten, und nichts warnt Sie. Jede Terminänderung bedeutet, eine serielle Zahl neu abzulesen und eine Achsengrenze neu zu tippen.</li>
+          <li><strong>Eine eingefügte Zeile hängt nur halb im Plan.</strong> Ergänzen Sie zwischen Konzept und Umsetzung eine Zeile „Freigabe durch die Geschäftsführung“: Excel erweitert zwar den Datenbereich des Diagramms, aber die neue Zeile kommt ohne Formeln, und die alte Umsetzungszeile zeigt weiterhin auf das Konzept. Übersehen Sie das, liest sich der Plan richtig und terminiert falsch. Hängen Sie die Zeile stattdessen unter Zeile 7 an, fällt sie aus dem Bereich und erscheint überhaupt nicht.</li>
+          <li><strong>Ein zweiter Vorgänger hat keinen Platz.</strong> Braucht die Qualitätssicherung sowohl die Umsetzung als auch die Datenmigration, lautet die ehrliche Formel <code>=ARBEITSTAG(MAX(C4;C5);1;$H$2:$H$6)</code>. Sie funktioniert — aber im Diagramm zeigt nichts diese Verknüpfung, und die nächste Person sieht nur ein Datum. Kommt eine fünftägige Freigabefrist als Zeitabstand hinzu, wird daraus <code>=ARBEITSTAG(C3;1+5;$H$2:$H$6)</code>: eine nackte 5 in einer Formel, nirgends beschriftet.</li>
+        </ol>
+        <p>Spalte B als Formel kauft Ihnen die Neuberechnung entlang <em>einer</em> Kette. Sie kauft Ihnen kein Netz. Nichts in dieser Datei kann Ihnen sagen, welches Vorgangspaar den Endtermin bestimmt — weil nichts darin weiß, dass die beiden zusammenhängen.</p>
+      </div>
+      <!--FIG:lag|Ein Zeitabstand ist echte Terminzeit. In einer Tabelle ist er eine Zahl, die in einer Formel vergraben liegt.-->`
+    ],
+    [
+      "Was Excel Ihnen gibt und was nicht",
+      `<p>Beide Verfahren zeichnen ein durchaus vorzeigbares Bild eines Terminplans. Terminiert wird von keinem der beiden etwas. Dieser Unterschied geht leicht verloren, sobald die Balken richtig aussehen — deshalb hier ausdrücklich:</p>
+      <table>
+        <thead>
+          <tr><th>Fähigkeit</th><th>Gestapelte Balken</th><th>Bedingte Formatierung</th><th>Echte Terminplanung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wochenenden und Feiertage ausgenommen</td><td>Ja, über ARBEITSTAG</td><td>Ja, über ARBEITSTAG</td><td>Ja, eingebaut</td></tr>
+          <tr><td>Eine einzelne EA-Kette rechnet neu</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja</td></tr>
+          <tr><td>Sichtbare Verknüpfungspfeile</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Zwei Vorgänger an einem Vorgang</td><td>Nur als verstecktes MAX()</td><td>Nur als verstecktes MAX()</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungsarten AA, EE und AE</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Beschrifteter Zeitabstand an einer Verknüpfung</td><td>Nein — eine nackte +5 in der Formel</td><td>Nein — eine nackte +5 in der Formel</td><td>Ja</td></tr>
+          <tr><td>Kritischer Pfad</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Gesamtpuffer je Vorgang</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Auslastung und Überlastungswarnung</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Basisplan und Abweichung</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Gespeichert und verglichen</td></tr>
+          <tr><td>Übersteht das Einfügen einer Zeile</td><td>Formeln müssen nachgetragen werden</td><td>Meistens</td><td>Ja</td></tr>
+          <tr><td>Übersteht das Sortieren der Zeilen</td><td>Nein — Bezüge folgen der Position</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Meilensteine als Rauten</td><td>Eigene Markierungsreihe von Hand</td><td>Eigene Regel von Hand</td><td>Ja</td></tr>
+        </tbody>
+      </table>
+      <p>Das ist eine konkrete Aussage, keine Abwertung: Ein gestapeltes Balkendiagramm ist die <em>Zeichnung</em> eines Terminplans, den Sie anderswo ausgerechnet haben. Für ein Dutzend Vorgänge, die ungefähr hintereinander liegen, reicht das, und die Tabellenkalkulation ist dann das richtige Werkzeug. Nur sind die mittleren Zeilen dieser Tabelle genau das, wonach im Statustermin gefragt wird — und darauf kann die Datei nichts antworten.</p>
+      <!--FIG:cpm|Nur der längste Weg durch das Netz bestimmt den Endtermin — und finden kann ihn nur eine Terminrechnung.-->`
+    ],
+    [
       "Fortschritt und Abhängigkeiten nachrüsten",
       `<p><strong>Fortschritt</strong> lässt sich mit einer weiteren Hilfsspalte darstellen. Legen Sie eine Spalte <em>Fertig in Prozent</em> an und daneben eine Spalte <em>Erledigt</em> mit <code>=Dauer*Prozent</code>. Diese neue Spalte fügen Sie über <em>Daten auswählen ▸ Hinzufügen</em> als dritte gestapelte Reihe ein und färben sie dunkler als die Dauerreihe. Damit die Summe stimmt, muss die Dauerreihe dann allerdings nur noch den Restanteil enthalten — andernfalls werden die Balken zu lang. Der praktikablere Weg ist deshalb, die Dauer in „Erledigt“ und „Rest“ aufzuteilen und beide zu stapeln.</p>
         <p><strong>Abhängigkeiten</strong> kennt Excel nicht. Es gibt keine Pfeile zwischen Balken, und das Verschieben eines Vorgangs verschiebt keinen anderen. Der übliche Behelf ist, das Startdatum eines Nachfolgers als Formel auf das Ende des Vorgängers zu setzen — etwa <code>=C2</code> oder <code>=C2+1</code>. Damit läuft eine Änderung immerhin die Spalte hinunter. Sichtbare Verknüpfungen entstehen dadurch nicht, verzweigte Ketten mit mehreren Vorgängern werden schnell unlesbar, und Puffer oder ein kritischer Pfad lassen sich so nicht ermitteln.</p>`
@@ -532,7 +821,14 @@ const G = {
     [
       "Der Weg ohne Diagramm: bedingte Formatierung",
       `<p>Wer sich mit Diagrammobjekten nicht anfreunden mag, baut das Gantt-Diagramm direkt in die Zellen. Legen Sie in der Kopfzeile ab Spalte F fortlaufende Datumswerte an — eine Spalte je Tag oder je Woche — und lassen Sie Vorgang, Start und Ende links stehen.</p>
-        <p>Markieren Sie anschließend das gesamte Kalenderraster und wählen Sie <strong>Start ▸ Bedingte Formatierung ▸ Neue Regel ▸ Formel zur Ermittlung der zu formatierenden Zellen verwenden</strong>. Als Formel dient <code>=UND(F$1&gt;=$B2; F$1&lt;=$C2)</code>, als Format eine Hintergrundfarbe. Jede Zelle, deren Datum in den Zeitraum des Vorgangs fällt, wird eingefärbt.</p>
+        <p>Für den Shop der Kaffeerösterei Hansen heißt das konkret: <code>=B2</code> in G1, <code>=G1+1</code> in H1, nach rechts gezogen über die Projektdauer — der 2. März bis 8. Juni sind einschließlich 99 Tage, also bis Spalte DC. Formatieren Sie die Zeile als <code>TTT</code> und ziehen Sie die Spalten auf etwa 20 Pixel schmal.</p>
+        <p>Markieren Sie anschließend <strong>G2:DC7</strong>, wobei <strong>G2</strong> die aktive Zelle sein muss — das ist wichtig, weil die Formel aus Sicht der aktiven Zelle geschrieben und für alle anderen versetzt angewendet wird. Unter <strong>Start ▸ Bedingte Formatierung ▸ Neue Regel ▸ Formel zur Ermittlung der zu formatierenden Zellen verwenden</strong> legen Sie drei Regeln in dieser Reihenfolge an (deutsche Funktionsnamen, Semikolon als Trennzeichen):</p>
+        <ol>
+          <li><code>=UND(G$1&gt;=$B2;G$1&lt;=$C2)</code> — Ihre Balkenfarbe. Die gemischten Bezüge sind der ganze Trick: <code>G$1</code> fixiert die Zeile, damit jede Spalte ihr eigenes Datum liest, <code>$B2</code> fixiert die Spalte, damit jede Zeile die Termine ihres eigenen Vorgangs liest.</li>
+          <li><code>=WOCHENTAG(G$1;2)&gt;5</code> — hellgrau. Der Rückgabetyp 2 zählt Montag als 1 bis Sonntag als 7, <code>&gt;5</code> trifft also genau Samstag und Sonntag. Der Standardtyp 1 beginnt am Sonntag und würde die falschen zwei Tage einfärben — ein Fehler, der in einem Plan mit deutscher Wochenzählung sofort auffällt.</li>
+          <li><code>=G$1=HEUTE()</code> — ein farbiger linker Rahmen, und Sie haben eine Heute-Linie.</li>
+        </ol>
+        <p>Die Regeln werden von oben nach unten ausgewertet, und die erste Füllung gewinnt. Die Balkenregel muss deshalb über der Wochenendregel stehen, sonst bekommt jeder Balken samstags graue Streifen. Feiertage lassen sich als vierte Regel über einen <code>ZÄHLENWENN</code>-Vergleich mit derselben Liste <code>$H$2:$H$6</code> ergänzen.</p>
         <p>Der Vorteil: Das Raster aktualisiert sich bei jeder Terminänderung von selbst, es druckt sauber und lässt sich beliebig um Spalten erweitern. Der Nachteil: Bei mehr als einem Quartal in Tagesspalten wird das Blatt sehr breit, und Meilensteine, Fortschritt und Farbcodes brauchen jeweils eine eigene zusätzliche Regel.</p>`
     ],
     [
@@ -543,7 +839,17 @@ const G = {
       "Wo die Methode endet",
       `<p>Excel kennt keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand anpassen — und genau das unterbleibt in der Praxis nach der zweiten Änderung. Ab da beschreibt die Datei einen Plan, den es nicht mehr gibt.</p>
         <p>Ebenfalls nicht vorhanden: der <strong>kritische Pfad</strong>, die Berechnung von <strong>Puffer</strong>, ein echter <strong>Basisplan</strong> zum Vergleich von Soll und Ist sowie jede Form von Ressourcenauslastung. Dazu kommt der Pflegeaufwand am Diagramm selbst: Jeder neue Vorgang bedeutet, den Datenbereich zu erweitern und gegebenenfalls Farben nachzuziehen.</p>
-        <p>Bis etwa zwanzig Vorgänge und bei einem Plan, der sich kaum ändert, ist Excel eine vernünftige Wahl — besonders, wenn die Daten ohnehin schon in einer Tabelle liegen. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart. <a href="/de/app.html">gantts.app</a> rechnet Verschiebungen selbst, zeichnet Verknüpfungen als Pfeile, hebt den kritischen Pfad hervor und exportiert das Ergebnis auf Wunsch wieder als XLSX — ohne Konto und ohne Installation.</p>`
+        <p>Bis etwa zwanzig Vorgänge und bei einem Plan, der sich kaum ändert, ist Excel eine vernünftige Wahl — besonders, wenn die Daten ohnehin schon in einer Tabelle liegen. Darüber hinaus kostet die Handpflege mehr Zeit, als das Werkzeug spart. <a href="/de/app.html">gantts.app</a> rechnet Verschiebungen selbst, zeichnet Verknüpfungen als Pfeile, hebt den kritischen Pfad hervor und exportiert das Ergebnis auf Wunsch wieder als XLSX — ohne Konto und ohne Installation.</p>
+        <p>Derselbe Shop-Umzug ohne eine einzige Formel, mit den Schaltflächen so beschriftet, wie sie tatsächlich heißen:</p>
+        <ol>
+          <li>Öffnen Sie <strong>✨ In Gantt einfügen</strong> und fügen Sie die sechs Zeilen ein — <em>Datenmigration (15d) nach Umsetzung</em>, am Ende <em>Livegang!</em> Es gibt keine Hilfsspalten, keine Balkenlänge und keine serielle Zahl.</li>
+          <li>Tragen Sie unter <strong>Kalender</strong> Karfreitag, Ostermontag, den 1. Mai, Christi Himmelfahrt und Pfingstmontag ein. Das ersetzt den Bereich <code>$H$2:$H$6</code> — nur muss ihn hier keine Formel kennen.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet <strong>Nach (Vorgänger)</strong>. Hier tragen Sie <em>zwei</em> Vorgänger an der Qualitätssicherung ein, statt ein <code>MAX()</code> in einer Formel zu verstecken.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>. Ändern Sie danach die Dauer des Konzepts von 10 auf 13 Tage: Der Livegang wandert auf den 11. Juni, und der Balken läuft nicht aus dem Diagramm, weil es keine fest eingetippte Achsengrenze gibt.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>. Das ist die Zeile aus der Vergleichstabelle, die Excel gar nicht anbieten kann.</li>
+          <li>Speichern Sie <strong>◳ Basisplan</strong>, bevor die Umsetzung beginnt, statt die Spalten B und C in ein zweites Tabellenblatt zu kopieren.</li>
+          <li>Zurück in die Tabellenwelt kommen Sie über <strong>⬇ Export ▸ 📊 Excel (.xlsx)</strong> — Sie erhalten die Datei, ohne den gestapelten Balken je von Hand gebaut zu haben. Ebenfalls dort: <strong>📄 PDF-Dokument</strong>, <strong>📑 CSV (Tabelle)</strong> und <strong>📽 PowerPoint (.pptx)</strong>.</li>
+        </ol>`
     ]
   ],
   callout: "Der entscheidende Unterschied ist nicht das Aussehen, sondern das Rechnen. Ein Excel-Gantt sieht richtig aus, aktualisiert sich aber nicht. Sobald sich Termine ändern — und sie ändern sich immer — wird aus einem Plan eine Zeichnung.",
@@ -617,7 +923,75 @@ const G = {
           <li>Öffnen Sie <strong>Vertikale Achse</strong> und aktivieren Sie die Option, welche die Achsenreihenfolge umkehrt. Damit steht der erste Vorgang oben statt unten.</li>
           <li>Färben Sie die Serie <em>Dauer</em> passend ein, vergeben Sie unter <strong>Diagramm- und Achsentitel</strong> einen Titel und blenden Sie die Legende aus — sie erklärt an dieser Stelle nichts mehr.</li>
         </ol>
-        <p>Das Ergebnis ist ein echtes Diagrammobjekt: Sie können es in Docs oder Präsentationen kopieren, als Bild herunterladen und jederzeit neu formatieren. Der Preis sind die Hilfsspalten, die bei jeder Terminänderung mitgepflegt werden wollen.</p>`
+        <p>Das Ergebnis ist ein echtes Diagrammobjekt: Sie können es in Docs oder Präsentationen kopieren, als Bild herunterladen und jederzeit neu formatieren. Der Preis sind die Hilfsspalten, die bei jeder Terminänderung mitgepflegt werden wollen.</p>
+        <!--FIG:bars|Das unsichtbare Vorlaufsegment ist es, das jeden Dauerbalken auf sein Startdatum schiebt.-->`
+    ],
+    [
+      "Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug",
+      `<p>Hilfsspalten sind leicht zu beschreiben und leicht auf subtile Weise falsch zu bauen. Deshalb hier ein kleiner Plan mit echten Formeln — und danach geändert, denn wie sich ein Tabellenblatt verhält, wenn ein Termin wandert, ist die einzige Prüfung, die zählt.</p>
+      <p><strong>Hinweis zur Spracheinstellung.</strong> Die Formeln unten sind für eine <strong>deutschsprachige Tabelle</strong> geschrieben: deutsche Funktionsnamen und <strong>Semikolon</strong> als Argumenttrennzeichen. Maßgeblich ist in Google Sheets nicht die Sprache Ihres Kontos, sondern das <em>Gebietsschema der Tabelle</em> unter <strong>Datei ▸ Einstellungen ▸ Gebietsschema</strong>. Steht dort „Vereinigte Staaten“, heißen dieselben Funktionen <code>WORKDAY</code>, <code>WEEKDAY</code> und <code>AND</code>, und getrennt wird mit Komma — eine Tabelle, die eine Kollegin aus einer amerikanischen Vorlage kopiert hat, verhält sich deshalb anders als Ihre eigene, obwohl beide auf Deutsch angezeigt werden.</p>
+      <div class="worked">
+        <p><strong>Das Tabellenblatt.</strong> Die Einführung eines Warenwirtschaftssystems bei der Spedition Küppers in Duisburg, Beginn Montag, 2. März 2026. Überschriften in Zeile 1, Vorgänge in den Zeilen 2 bis 7. A Vorgang, B Start, C Ende, D Arbeitstage, E Start am Tag, F Balkenlänge. In <strong>H2:H6</strong> die Feiertage in Nordrhein-Westfalen: Karfreitag 3.4., Ostermontag 6.4., 1. Mai, Christi Himmelfahrt 14.5. und Pfingstmontag 25.5. Nur Spalte D wird von Hand getippt:</p>
+        <ul>
+          <li><strong>C2</strong> — <code>=ARBEITSTAG(B2;D2-1;$H$2:$H$6)</code>. Sheets kennt dieselbe Funktion wie Excel und überspringt Wochenenden von selbst. Das <code>-1</code> ist unverzichtbar: <code>ARBEITSTAG</code> zählt vom Start vorwärts, fünf Arbeitstage ab Montag sind also <code>ARBEITSTAG(Mo;4)</code> = Freitag.</li>
+          <li><strong>B3</strong> — <code>=ARBEITSTAG(C2;1;$H$2:$H$6)</code>. Der nächste Arbeitstag nach dem Ende des Vorgängers. Das ist das Einzige in der ganzen Datei, das überhaupt etwas neu terminiert.</li>
+          <li><strong>E2</strong> — <code>=B2-$B$2</code>, als <em>Zahl</em> formatiert. Null für den ersten Vorgang.</li>
+          <li><strong>F2</strong> — <code>=C2-B2+1</code>, ebenfalls als <em>Zahl</em>. Achtung: <em>nicht</em> <code>D2</code>. D sind Arbeitstage, die Diagrammachse dagegen zählt Kalendertage — ein Vorgang mit 20 Arbeitstagen muss 30 Einheiten lang gezeichnet werden. Wer versehentlich D plottet, bekommt Balken, die überall zu früh enden, während die Tabelle daneben völlig richtig aussieht.</li>
+        </ul>
+        <p>Nach unten gefüllt ergibt das:</p>
+        <table>
+          <thead>
+            <tr><th>Zeile</th><th>Vorgang</th><th>B — Start</th><th>C — Ende</th><th>D — Arbeitstage</th><th>E — Start am Tag</th><th>F — Balkenlänge</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>Analyse der Prozesse</td><td>Mo 2. März</td><td>Fr 13. März</td><td>10</td><td>0</td><td>12</td></tr>
+            <tr><td>3</td><td>Konzept und Auswahl</td><td>Mo 16. März</td><td>Fr 27. März</td><td>10</td><td>14</td><td>12</td></tr>
+            <tr><td>4</td><td>Einrichtung und Anpassung</td><td>Mo 30. März</td><td>Di 28. April</td><td>20</td><td>28</td><td>30</td></tr>
+            <tr><td>5</td><td>Datenübernahme</td><td>Mi 29. April</td><td>Do 21. Mai</td><td>15</td><td>58</td><td>23</td></tr>
+            <tr><td>6</td><td>Test und Schulung</td><td>Fr 22. Mai</td><td>Fr 5. Juni</td><td>10</td><td>81</td><td>15</td></tr>
+            <tr><td>7</td><td>Produktivstart</td><td>Mo 8. Juni</td><td>Mo 8. Juni</td><td>1</td><td>98</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p>Die Plausibilitätsprüfung steckt in der letzten Zeile: 98 + 1 = 99 Tage, genau die Gesamtspanne des Projekts vom 2. März an. Ergibt E + F unten nicht die erwartete Spanne, ist weiter oben eine Konvention verrutscht.</p>
+        <p>Vergleichen Sie außerdem D und F bei der Einrichtung: 20 Arbeitstage, 30 Kalendertage. Die Differenz sind acht Wochenendtage <em>und</em> Karfreitag sowie Ostermontag, die genau in diesen Vorgang fallen. Ohne den Bereich <code>$H$2:$H$6</code> in der Formel rechnet das Blatt über Ostern hinweg und schenkt Ihnen zwei Tage, die es nicht gibt.</p>
+        <p><strong>Jetzt ändern Sie etwas.</strong> Konzept und Auswahl laufen drei Tage über: D3 von 10 auf 13. Die Kette rechnet sich neu — das Konzept endet Mi 1. April, die Einrichtung läuft Do 2. April bis Mo 4. Mai, die Datenübernahme Di 5. Mai bis Mi 27. Mai, Test und Schulung Do 28. Mai bis Mi 10. Juni, der Produktivstart fällt auf <strong>Do 11. Juni</strong>. Beide Hilfsspalten folgen von selbst. Das ist der Grund, Formeln statt getippter Daten zu verwenden.</p>
+        <p><strong>Und das folgt nicht:</strong></p>
+        <ol>
+          <li><strong>Eingefügte Zeilen kommen ohne Formeln.</strong> Ergänzen Sie zwischen Konzept und Einrichtung eine Zeile „Freigabe durch die Geschäftsführung“: Die neue Zeile 4 ist leer, und die alte Einrichtungszeile — jetzt Zeile 5 — zeigt weiterhin auf das Ende des Konzepts. Sheets erweitert den Diagrammbereich trotzdem, die leere Zeile wird also als Balken der Länge null am Tag null gezeichnet — ein Stummel ganz links, der eher wie ein Anzeigefehler aussieht als wie ein echter Fehler.</li>
+          <li><strong>Sortieren zerstört die Kette.</strong> Sortieren Sie nach Startdatum, folgt jeder relative Bezug seinem neuen Nachbarn und leitet Termine still aus den falschen Zeilen ab. Keine Warnung — und kein Rückgängig mehr, sobald gespeichert und geschlossen wurde. Bei einer Datei, an der mehrere Personen gleichzeitig arbeiten, ist das kein Randfall, sondern eine Frage der Zeit.</li>
+          <li><strong>Ein zweiter Vorgänger hat keinen Platz.</strong> Braucht der Test sowohl die Einrichtung als auch die Datenübernahme, lautet die richtige Formel <code>=ARBEITSTAG(MAX(C4;C5);1;$H$2:$H$6)</code>. Sie funktioniert. Aber im Diagramm zeigt nichts diese Verknüpfung, und aus einer fünftägigen Freigabefrist wird <code>=ARBEITSTAG(C3;1+5;$H$2:$H$6)</code> — eine nackte 5 in einer Formel, nirgends beschriftet.</li>
+        </ol>
+        <p><strong>Die Abkürzung, die es nur in Sheets gibt.</strong> Wenn Sie einen Balken je Zeile ohne jedes Diagrammobjekt wollen, tragen Sie das in G2 ein und füllen nach unten:</p>
+        <p><code>=SPARKLINE({E2\\F2};{"charttype"\\"bar";"color1"\\"white";"color2"\\"#6c4cf1";"max"\\99})</code></p>
+        <p>Auch hier gilt das Gebietsschema: In einer deutschsprachigen Tabelle trennt der <strong>Backslash</strong> die Spalten eines Arrays und das <strong>Semikolon</strong> die Zeilen. In einer US-Tabelle lautet dieselbe Formel <code>=SPARKLINE({E2,F2},{"charttype","bar";…})</code> mit Kommas. Verwendet man die falsche Variante, meldet Sheets nur einen Formelfehler und sagt nicht, dass das Trennzeichen gemeint ist.</p>
+        <p>Die Formel zeichnet denselben Trick mit unsichtbarem Vorlauf innerhalb einer einzigen Zelle, und weil <code>max</code> fest auf die Projektspanne von 99 gesetzt ist, teilen sich alle Zeilen eine Achse. Sie übersteht eingefügte Zeilen und Umsortieren besser als das Diagramm — bleibt aber ein Bild und kein Terminplan.</p>
+      </div>`
+    ],
+    [
+      "Welcher Weg was leistet",
+      `<p>Alle drei Wege zeichnen einen Terminplan. Keiner rechnet einen aus. Die Unterschiede zwischen ihnen sind real, aber klein neben dieser gemeinsamen Grenze — deshalb hier beides auf einmal:</p>
+      <table>
+        <thead>
+          <tr><th>Fähigkeit</th><th>Zeitachsen-Ansicht</th><th>Gestapelte Balken</th><th>SPARKLINE</th><th>Echte Terminplanung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Einrichtungsaufwand</td><td>Zwei Minuten</td><td>Zwei Hilfsspalten</td><td>Eine Formel</td><td>Tippen und ziehen</td></tr>
+          <tr><td>Wochenenden und Feiertage übersprungen</td><td>Nein</td><td>Über ARBEITSTAG</td><td>Über ARBEITSTAG</td><td>Eingebaut</td></tr>
+          <tr><td>Eine einzelne EA-Kette rechnet neu</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja, wenn der Start eine Formel ist</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungspfeile</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Zwei Vorgänger an einem Vorgang</td><td>Verstecktes MAX()</td><td>Verstecktes MAX()</td><td>Verstecktes MAX()</td><td>Ja</td></tr>
+          <tr><td>Verknüpfungsarten AA, EE und AE</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Kritischer Pfad</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Gesamtpuffer je Vorgang</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Auslastung und Überlastungswarnung</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Basisplan und Abweichung</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Spalten von Hand kopieren</td><td>Gespeichert und verglichen</td></tr>
+          <tr><td>Übersteht eine eingefügte Zeile</td><td>Ja</td><td>Formeln nachtragen</td><td>Formel nachziehen</td><td>Ja</td></tr>
+          <tr><td>Übersteht Umsortieren</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Als Bild exportierbar</td><td>Nein — es ist eine Ansicht</td><td>Ja</td><td>Nein — es ist eine Zelle</td><td>PNG, PDF, PPTX</td></tr>
+        </tbody>
+      </table>
+      <p>Die „Nein“-Zeilen in der Mitte sind kein Vorwurf an Sheets; sie liegen außerhalb dessen, was eine Tabellenkalkulation ist. Sheets hält Zahlen fest, die Sie anderswo entschieden haben. Sollen sie <em>abgeleitet</em> werden — welcher Vorgang den Termin bestimmt, wie viel Luft die übrigen haben —, hilft keine noch so clevere Formel.</p>
+      <!--FIG:cpm|Nur der längste Weg durch das Netz bestimmt den Endtermin. Keine Tabelle findet ihn für Sie.-->`
     ],
     [
       "Weg 2: die native Zeitachsen-Ansicht",
@@ -744,7 +1118,66 @@ const G = {
           <li>Richten Sie alles über <strong>Formformat ▸ Anordnen ▸ Ausrichten</strong> aus und verteilen Sie die Zeilen mit <em>Vertikal verteilen</em> gleichmäßig. Zum Schluss alles markieren und <strong>gruppieren</strong>, damit die Zeichnung als Einheit verschiebbar bleibt.</li>
         </ol>
         <p>Drei Gewohnheiten verhindern, dass daraus ein Flickenteppich wird. Erstens: eine einheitliche Balkenhöhe und ein gemeinsames Grundraster — schalten Sie unter <strong>Ansicht</strong> die Führungslinien ein und lassen Sie die Formen einrasten. Zweitens: der <strong>Auswahlbereich</strong> (Start ▸ Bearbeiten ▸ Markieren ▸ Auswahlbereich) — bei dreißig Formen ist er der einzige Weg, eine bestimmte wiederzufinden und sinnvoll zu benennen. Drittens: die fertige Gruppe duplizieren, bevor Sie eine Variante bauen, etwa „geplant“ gegen „aktuell“.</p>
-        <p>SmartArt-Grafiken aus den Kategorien <em>Prozess</em> und <em>Zeitachse</em> liefern schnell eine roadmap-artige Darstellung, sind aber keine maßstabsgetreuen Terminpläne — die Abstände folgen der Grafik, nicht dem Kalender. Für eine Phasenübersicht ist das in Ordnung, für einen Termin, über den diskutiert wird, nicht.</p>`
+        <p>SmartArt-Grafiken aus den Kategorien <em>Prozess</em> und <em>Zeitachse</em> liefern schnell eine roadmap-artige Darstellung, sind aber keine maßstabsgetreuen Terminpläne — die Abstände folgen der Grafik, nicht dem Kalender. Für eine Phasenübersicht ist das in Ordnung, für einen Termin, über den diskutiert wird, nicht.</p>
+        <!--FIG:bars|Das unsichtbare Abstandssegment ist es, das jeden Dauerbalken an seine Position schiebt.-->`
+    ],
+    [
+      "Ein durchgerechnetes Beispiel: sechs Vorgänge, dann ein Verzug",
+      `<p>Beide Wege oben verlangen von Ihnen Zahlen, die PowerPoint sich nicht selbst ausrechnen kann. Hier steht, welche genau — an einem kleinen Plan — und was mit ihnen passiert, wenn ein Termin wandert.</p>
+      <div class="worked">
+        <p><strong>Der Plan.</strong> Der Relaunch des Kundenportals der Stadtwerke Aurich, Montag, 2. März bis Montag, 8. Juni 2026, vorzustellen im Aufsichtsrat. Sechs Vorgänge, jeder beginnt am nächsten Arbeitstag nach dem vorigen. Die beiden Zahlen, die PowerPoint braucht, sind der <strong>Startversatz</strong> (Kalendertage seit dem 2. März, der erste Vorgang also 0) und die <strong>Balkenlänge in Kalendertagen einschließlich Wochenenden und Feiertagen</strong> — denn die Achse ist ein Kalender, auch wenn Ihre Schätzungen in Arbeitstagen stehen.</p>
+        <table>
+          <thead>
+            <tr><th>Vorgang</th><th>Zeitraum</th><th>Arbeitstage</th><th>Startversatz</th><th>Balkenlänge</th><th>Form links (cm)</th><th>Form breit (cm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Analyse</td><td>2.–13. März</td><td>10</td><td>0</td><td>12</td><td>5,00</td><td>3,00</td></tr>
+            <tr><td>Konzept</td><td>16.–27. März</td><td>10</td><td>14</td><td>12</td><td>8,50</td><td>3,00</td></tr>
+            <tr><td>Einrichtung</td><td>30. März – 28. April</td><td>20</td><td>28</td><td>30</td><td>12,00</td><td>7,50</td></tr>
+            <tr><td>Datenübernahme</td><td>29. April – 21. Mai</td><td>15</td><td>58</td><td>23</td><td>19,50</td><td>5,75</td></tr>
+            <tr><td>Test und Schulung</td><td>22. Mai – 5. Juni</td><td>10</td><td>81</td><td>15</td><td>25,25</td><td>3,75</td></tr>
+            <tr><td>Produktivstart</td><td>8. Juni</td><td>1</td><td>98</td><td>1</td><td>29,50</td><td>0,25</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Für Weg 1</strong> tippen Sie ausschließlich die Spalten 4 und 5. Rechtsklick auf das Diagramm, <strong>Daten bearbeiten</strong>, die Vorgangsnamen in Spalte A, die Startversätze in B, die Balkenlängen in C. Die Reihe B auf <em>Keine Füllung</em>, fertig. Beachten Sie, dass die Spalte mit den Arbeitstagen nirgends auftaucht: Ein Vorgang mit 10 Arbeitstagen ist ein Balken über 12 Tage, und wer die 10 einträgt, zeigt ein Bild, das zwei Tage vor der Tabelle endet, aus der er es abgeschrieben hat. Bei der Einrichtung sind es sogar 20 Arbeitstage gegen 30 Kalendertage, weil Karfreitag und Ostermontag mitten hineinfallen — PowerPoint weiß von deutschen Feiertagen nichts, Sie müssen sie in die Balkenlänge einrechnen.</p>
+        <p><strong>Für Weg 2</strong> brauchen Sie die letzten beiden Spalten, und die Rechnung dahinter lohnt sich einmal richtig. Eine 16:9-Folie ist 33,87 cm breit. Der Folienmaster der Stadtwerke lässt für den Inhalt den Bereich von 5,0 cm bis 29,8 cm frei — also 24,8 cm für 99 Projekttage. Das ergibt einen glatten Maßstab von <strong>0,25 cm pro Tag</strong>, und einen glatten Maßstab wählt man bewusst. Danach gilt für jeden Balken:</p>
+        <ul>
+          <li>Waagerechte Position = 5 + 0,25 × Startversatz</li>
+          <li>Breite = 0,25 × Balkenlänge</li>
+        </ul>
+        <p>Diese Werte tippen Sie unter <strong>Form formatieren ▸ Größe und Eigenschaften</strong> ein, statt zu ziehen. Sechs Balken, zwölf Zahlen — und das Diagramm stimmt auf einen Viertelmillimeter je Tag statt auf die Stelle, an der die Maus zufällig losgelassen wurde. Auf Deutsch tippt man dabei das <strong>Komma</strong> als Dezimaltrennzeichen; ein aus einer englischen Anleitung übernommenes <code>19.50</code> versteht PowerPoint in einer deutschen Installation als 1950.</p>
+        <p><strong>Jetzt läuft das Konzept drei Tage über.</strong> In einer echten Terminplanung ist das eine Änderung. Auf einer Folie kostet es Folgendes: Jeder nachgelagerte Termin wandert, also ändern sich sämtliche Versätze und Längen. Das Konzept wird 14 / 17, die Einrichtung 31 / 33, die Datenübernahme 64 / 23, Test und Schulung 87 / 14, der Produktivstart 101 / 1. Das Vorhaben umfasst jetzt 102 statt 99 Tage — und damit passen 0,25 cm pro Tag nicht mehr in die 24,8 cm des Folienmasters. Der <em>Maßstab selbst</em> muss auf 0,243 cm pro Tag geändert werden, eine Zahl, die sich nicht mehr rund tippen lässt.</p>
+        <ul>
+          <li><strong>Weg 1:</strong> 10 der 12 Zahlen im Datenblatt neu tippen. Das Diagramm zeichnet sich selbst neu, was ein echter Vorteil ist — nur hat Ihnen niemand gesagt, dass die Zahlen veraltet waren, und niemand prüft die neuen.</li>
+          <li><strong>Weg 2:</strong> erst den Maßstab neu rechnen, dann alle zwölf Positionen und Breiten neu tippen. Übersehen Sie eine, haben Sie eine Folie, die selbstbewusst und auf den Millimeter genau falsch ist — schlimmer als eine erkennbar grobe Skizze, weil im Raum niemand sie hinterfragen wird.</li>
+        </ul>
+        <p>Das ist der ehrliche Preis eines PowerPoint-Gantt-Diagramms: nicht die zwanzig Minuten für den Aufbau, sondern die zwanzig Minuten, die es jedes Mal wieder kostet, wenn sich ein Termin bewegt.</p>
+      </div>`
+    ],
+    [
+      "Was die Wege jeweils leisten",
+      `<p>Eine Folie ist ein Mittel der Verständigung, und es lohnt sich, klar zu benennen, wie wenig von einem Terminplan diese Reise übersteht:</p>
+      <table>
+        <thead>
+          <tr><th>Fähigkeit</th><th>Gestapelte Balken</th><th>Formen</th><th>SmartArt</th><th>Aus einer Terminplanung exportiert</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Maßstabsgetreu zur Datumsachse</td><td>Ja</td><td>Nur wenn Sie die Zahlen tippen</td><td>Nein — nicht datumsskaliert</td><td>Ja</td></tr>
+          <tr><td>Zeichnet sich bei Datenänderung neu</td><td>Ja</td><td>Nein</td><td>Nein</td><td>Neu exportieren</td></tr>
+          <tr><td>Termine als Datum eingegeben</td><td>Nein — Tagesversätze</td><td>Nein — Zentimeter</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Wochenenden und Feiertage</td><td>Rechnen Sie selbst</td><td>Rechnen Sie selbst</td><td>Nein</td><td>Eingebaut</td></tr>
+          <tr><td>Verknüpfungspfeile</td><td>Nein</td><td>Von Hand gezeichnet, ohne Bedeutung</td><td>Nein</td><td>Ja, echte Verknüpfungen</td></tr>
+          <tr><td>Rechnet neu, wenn ein Vorgang rutscht</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Kritischer Pfad</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Gesamtpuffer je Vorgang</td><td>Nein</td><td>Nein</td><td>Nein</td><td>Berechnet</td></tr>
+          <tr><td>Basisplan gegen Ist</td><td>Zusätzliche Reihe, von Hand</td><td>Zweite Reihe Formen</td><td>Nein</td><td>Gespeichert und verglichen</td></tr>
+          <tr><td>Meilensteine als Rauten</td><td>Zeile mit Länge nahe null</td><td>Ja, gezeichnet</td><td>Ja, dekorativ</td><td>Ja</td></tr>
+          <tr><td>Fortschrittsanteil</td><td>Dritte Datenreihe</td><td>Überlagerte Form</td><td>Nein</td><td>Ja</td></tr>
+          <tr><td>Kontrolle über das Markenlayout</td><td>Mittel</td><td>Vollständig</td><td>Vollständig</td><td>Nach dem Export umfärben</td></tr>
+        </tbody>
+      </table>
+      <p>Lesen Sie die Spalte „Formen“ von oben nach unten, und das Muster ist eindeutig: Was Sie an Gestaltungskontrolle gewinnen, bezahlen Sie in jeder einzelnen Zeile, in der der Plan etwas <em>wissen</em> müsste. Eine gezeichnete Verbindungslinie zwischen zwei Rechtecken sieht exakt aus wie eine Abhängigkeit und schränkt exakt nichts ein. Das ist unproblematisch, solange allen klar ist, dass die Folie eine Fotografie des Plans ist und nicht der Plan.</p>
+      <!--FIG:deps|Echte Verknüpfungen schränken Termine ein. Eine zwischen zwei Rechtecke gezogene Linie tut das nicht.-->`
     ],
     [
       "Wann welcher Weg",
@@ -766,7 +1199,16 @@ const G = {
     ],
     [
       "Der praktische Weg",
-      `<p>Am schnellsten geht es, den Plan dort zu pflegen, wo er lebt, und ihn für die Folie zu exportieren. In <a href="/de/app.html">gantts.app</a> legen Sie Vorgänge an, ziehen die Balken auf ihre Termine, gruppieren nach Phasen und verknüpfen Abhängigkeiten; der Plan rechnet Verschiebungen selbst nach und hebt den kritischen Pfad hervor. Ein Klick auf <strong>Export ▸ PowerPoint</strong> erzeugt daraus eine PPTX-Datei mit dem Diagramm auf einer Folie.</p>
+      `<p>Am schnellsten geht es, den Plan dort zu pflegen, wo er lebt, und ihn für die Folie zu exportieren. Derselbe Relaunch des Kundenportals, ohne einen einzigen Zentimeterwert:</p>
+        <ol>
+          <li>Öffnen Sie <a href="/de/app.html">gantts.app</a> — ohne Konto, ohne Installation — und klicken Sie auf <strong>✨ In Gantt einfügen</strong>, um die sechs Zeilen als Liste einzufügen: <em>Datenübernahme (15d) nach Einrichtung</em>, am Ende <em>Produktivstart!</em></li>
+          <li>Tragen Sie unter <strong>Kalender</strong> Karfreitag, Ostermontag, den 1. Mai, Christi Himmelfahrt und Pfingstmontag ein. Damit entfällt die gesamte Umrechnung von Arbeitstagen in Balkenlängen, die Weg 1 und Weg 2 von Ihnen verlangen.</li>
+          <li>Ziehen Sie die Balken auf ihre Termine oder setzen Sie sie per Doppelklick über <strong>Start</strong>, <strong>Ende</strong> und <strong>Nach (Vorgänger)</strong>. Für die Gliederung nach Phasen dient <strong>▣ Gruppe</strong>.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong> und setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>. Beides gibt es in PowerPoint auf keinem der beiden Wege.</li>
+          <li>Vor der Aufsichtsratssitzung stellen Sie <strong>Ansicht</strong> auf <strong>Nur Meilensteine</strong> oder <strong>Vorschau</strong>, damit die Folie sechs bis zehn Zeilen zeigt statt vierzig.</li>
+          <li>Dann <strong>⬇ Export ▸ 📽 PowerPoint (.pptx)</strong>. Sie erhalten eine Folie mit dem fertigen Diagramm; im selben Menü liegen <strong>📄 PDF-Dokument</strong>, <strong>🖼 PNG-Bild</strong> und <strong>📊 Excel (.xlsx)</strong>.</li>
+          <li>Verschiebt sich das Konzept um drei Tage, ändern Sie eine Dauer und exportieren erneut. Kein neuer Maßstab, keine zwölf Zahlen, kein Nachziehen von Rechtecken.</li>
+        </ol>
         <p>Ändert sich der Plan, ändern Sie ihn einmal und exportieren neu — statt Rechtecke nachzuziehen. Wer lieber von einer fertigen Folie ausgeht, findet in unserer <a href="/de/templates/powerpoint.html">PowerPoint-Vorlage</a> ein formatiertes Layout mit Farbschema und Meilensteinmarkierungen, in das nur noch die eigenen Vorgänge eingetragen werden.</p>`
     ],
     [
@@ -851,6 +1293,79 @@ const G = {
         <p><strong>Canva</strong> erzeugt aus Vorlagen eine ansehnliche Gantt-<em>Grafik</em> und exportiert sie im kostenlosen Tarif als PNG oder PDF. Es ist aber ein Gestaltungs- und kein Planungswerkzeug: Die Balken sind Formen, die Sie selbst positionieren — keine Verknüpfungen, keine Neuberechnung, kein kritischer Pfad. <strong>Microsoft Project</strong> ist umgekehrt das Schwergewicht mit Ressourcenausgleich, Basisplänen und tiefer Terminlogik, hat jedoch keinen kostenlosen Tarif. Und <strong>Excel oder Google Sheets</strong> haben Sie ohnehin: kostenlos, aber ohne Abhängigkeiten und mit viel Handarbeit — siehe die Anleitungen zu <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> und <a href="/de/blog/gantt-chart-in-google-sheets.html">Google Sheets</a>.</p>`
     ],
     [
+      "Die Kriterien, die tatsächlich entscheiden",
+      `<p>Funktionslisten taugen wenig als Orientierung, weil jeder Anbieter jede Funktion für sich beansprucht. Was die Werkzeuge trennt, ist ihr <em>Verhalten unter Last</em>: was passiert, wenn ein Termin wandert, wenn der Plan groß wird, wenn ein Außenstehender ihn lesen soll und wenn Sie aufhören zu zahlen. Jedes Kriterium unten lässt sich in Minuten prüfen, und jedes hat ein konkretes Versagensbild.</p>
+      <table>
+        <thead>
+          <tr><th>Kriterium</th><th>Warum es den Ausgang bestimmt</th><th>Prüfung in fünf Minuten</th><th>So sieht das Versagen aus</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rechnet es neu?</strong></td>
+            <td>Trennt eine Terminrechnung von einem Zeichenprogramm. Echte Abhängigkeiten pflanzen sich fort, dekorative lassen Sie Balken von Hand nachziehen.</td>
+            <td>Drei Vorgänge verknüpfen, den ersten um vier Tage nach hinten schieben.</td>
+            <td>Vorgang zwei und drei bewegen sich nicht. Die Pflege bleibt auf Dauer bei Ihnen.</td>
+          </tr>
+          <tr>
+            <td><strong>Kritischer Pfad und Puffer</strong></td>
+            <td>Sagt, welche Vorgänge den Endtermin bestimmen. Häufig das Erste, was hinter eine Bezahlschranke wandert, weil Leute dafür zahlen.</td>
+            <td>Nach einer Pufferspalte suchen, nicht nur nach farbigen Balken. Eine Dauer ändern und sehen, ob die Hervorhebung umzieht.</td>
+            <td>Ein „kritischer Pfad“, der eine selbst vergebene Farbe ist — oder ein Verkaufsangebot genau in dem Moment, in dem Sie ihn brauchen.</td>
+          </tr>
+          <tr>
+            <td><strong>Ein Export, den ein Fremder öffnen kann</strong></td>
+            <td>Wer den Plan freigibt, legt dafür kein Konto an. PDF, Excel und PowerPoint reisen überall hin, ein Freigabelink nicht.</td>
+            <td>Exportieren und die Datei auf einem Gerät ohne Anmeldung öffnen.</td>
+            <td>Der Export ist kostenpflichtig, mit Wasserzeichen versehen oder nur ein Link, der zur Anmeldung auffordert.</td>
+          </tr>
+          <tr>
+            <td><strong>Größe</strong></td>
+            <td>Kostenlose Tarife sind für Vorführungen bemessen. Echte Pläne haben 150 bis 300 Zeilen; sowohl die Obergrenze als auch die Darstellungsgeschwindigkeit zählen.</td>
+            <td>200 Zeilen einfügen und eine 26 Wochen breite Zeitachse scrollen.</td>
+            <td>Eine harte Grenze bei etwa 60 Vorgängen, oder ruckelndes Scrollen, sobald das Diagramm breit wird.</td>
+          </tr>
+          <tr>
+            <td><strong>Ausstiegskosten</strong></td>
+            <td>Danach fragt niemand, bis es darauf ankommt. Der Plan gehört Ihnen nur, wenn Sie ihn in einem Format herausbekommen, das etwas anderes liest.</td>
+            <td>Nach CSV exportieren und anderswo wieder importieren. Prüfen, ob Abhängigkeiten und Gliederung überleben, nicht nur die Namen.</td>
+            <td>Der Export ist ein schreibgeschütztes PDF, Abhängigkeiten fallen weg, oder die Daten hängen hinter einem abgelaufenen Abonnement.</td>
+          </tr>
+          <tr>
+            <td><strong>Wo die Daten liegen</strong></td>
+            <td>Entscheidet, ob Sie das Werkzeug überhaupt einsetzen dürfen. Bei Projektdaten mit Personenbezug verlangt die DSGVO einen Auftragsverarbeitungsvertrag — und bei Servern außerhalb der EU zusätzlich eine Rechtsgrundlage für die Übermittlung.</td>
+            <td>Prüfen, ob es mit ausgeschaltetem Netz funktioniert, und was die Datenschutzerklärung als gespeichert benennt.</td>
+            <td>Im Freigabetermin zu erfahren, dass der Terminplan auf einem Server liegt, für den es keinen AV-Vertrag gibt.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Nur zwei davon sind Funktionen im Sinne eines Verkaufsprospekts. Den Rest sehen Sie nur, indem Sie das Ding benutzen — weshalb eine Viertelstunde mit einem realistischen Plan mehr wert ist als ein Nachmittag mit Vergleichsartikeln, diesen eingeschlossen.</p>
+      <!--FIG:tools|Tabellenkalkulationen, Gestaltungswerkzeuge und Terminrechnungen sehen auf dem Bildschirm gleich aus. Sie gehen in dem Moment auseinander, in dem ein Datum wandert.-->`
+    ],
+    [
+      "Eine durchgeführte Bewertung: ein echter Plan, vier Prüfungen",
+      `<p>Kriterien nickt man leicht ab, deshalb hier eine konkrete Aufgabe, durch sie hindurchgeführt. Es geht nicht darum, welches Werkzeug gewinnt — sondern darum, dass vier Prüfungen in zwanzig Minuten den größten Teil einer Auswahlliste ausscheiden, bevor Sie irgendetwas investiert haben.</p>
+      <div class="worked">
+        <p><strong>Die Aufgabe.</strong> Der Umzug der Verwaltung der Möbelwerke Sauerland GmbH von Arnsberg nach Dortmund: 186 Vorgänge in sechs Arbeitssträngen — Mietvertrag, Ausbau, IT, Möblierung, Kommunikation, Umzugswochenende —, 22 Wochen bis zu einem Übergabetermin, den der Mietvertrag festlegt, und ein monatlicher Lenkungskreis aus sechs Personen, die für einen Terminplan kein Konto anlegen werden. Werkzeugbudget: 0 €.</p>
+
+        <p><strong>Prüfung 1 — rechnet es neu?</strong> Bauen Sie den kleinsten Ausschnitt mit echter Logik: Aufmaß → Planung → Zustimmung des Vermieters → Ausbau → IT-Einbau → Übergabe. Dann schieben Sie die Zustimmung um <strong>10 Tage</strong> nach hinten.</p>
+        <ul>
+          <li>Eine Terminrechnung schiebt Ausbau, IT-Einbau und Übergabe um je 10 Tage und macht sichtbar, dass die Übergabe den Mietvertragstermin reißt.</li>
+          <li>Ein Zeichenprogramm bewegt nur den Balken, den Sie gezogen haben. Die anderen fünf beschreiben einen Terminplan, den es nicht geben kann.</li>
+        </ul>
+        <p>Bei 186 Vorgängen ist das die ganze Entscheidung. Die Zustimmung <em>wird</em> sich verspäten, und ohne Neuberechnung ist jede Verspätung eine Stunde Balkenziehen von jemandem, der einen davon übersieht. Diese Prüfung allein streicht die meisten gestaltungsorientierten und vorlagenbasierten Angebote — einschließlich eines Gantt-Diagramms in der Tabellenkalkulation.</p>
+        <!--FIG:bars|Ein Termin wandert, und alles Nachgelagerte folgt. In einem Zeichenprogramm bewegt sich nur der gezogene Balken — und der Plan hört still auf, wahr zu sein.-->
+
+        <p><strong>Prüfung 2 — kann der Lenkungskreis es öffnen?</strong> Exportieren, dann die Datei auf einem Gerät ohne Anmeldung öffnen. PDF oder PNG heißt: alle lesen es, niemand ändert es. Excel ist das, was die Person aus dem Rechnungswesen neu aufbereiten wird. Ein Freigabelink fällt durch, sobald er den Betrachter zur Anmeldung auffordert — sechs Konten, um ein Diagramm zu lesen, sind sechs Gründe, warum die Fortschreibung ungelesen bleibt. Prüfen Sie im kostenlosen Tarif außerdem auf Wasserzeichen und Seitenbegrenzungen: Ein PDF, das gratis, aber gestempelt ist, taugt nicht für eine Sitzungsvorlage, und das merken Sie am Abend davor.</p>
+
+        <p><strong>Prüfung 3 — übersteht es 186 Zeilen?</strong> Testen Sie nicht mit acht Vorgängen. Fügen Sie ein paar hundert ein und scrollen Sie. Zuerst die Obergrenzen: Ein kostenloser Tarif mit rund 60 Vorgängen fällt bei 186 schlicht durch — und die Grenze greift, wenn der Plan halb gebaut und die Entscheidung längst gefallen ist. Dann die Darstellung: 22 Wochen in Tagesauflösung ergeben ein breites Diagramm; manche Werkzeuge ruckeln, manche klappen bei jeder Änderung die Gliederung zu, manche verlieren die Scrollposition. Zuletzt die Hierarchie: Sechs Arbeitsstränge heißen Gruppierung — prüfen Sie, ob Sammelbalken ihre Termine aus den Kindzeilen übernehmen, statt ein weiterer Balken zu sein, den Sie pflegen.</p>
+
+        <p><strong>Prüfung 4 — was passiert, wenn Sie aufhören?</strong> Nehmen Sie an, Sie legen das Werkzeug in neun Monaten weg, oder ein kostenloser Tarif wird mitten im Projekt neu zugeschnitten. Beides ist gewöhnlich. Prüfen Sie, ob der Export selbst kostenpflichtig ist — ein kostenloser Tarif, aus dem Sie nicht exportieren können, ist einer, den Sie nicht verlassen können. Liegen die Daten lokal im Browser, kehrt sich das Risiko um: Nichts kann Ihnen entzogen werden, aber das Löschen der Websitedaten löscht den Plan. Exportieren Sie deshalb an jedem Meilenstein.</p>
+
+        <p><strong>Was die Prüfungen ergeben.</strong> Keinen Sieger — eine Kategorie. Diese Aufgabe braucht eine echte Abhängigkeitsrechnung, keine Vorgangsgrenze, einen Export ohne Wasserzeichen und ein portables Format. Damit fallen Gestaltungswerkzeuge (Prüfung 1), die meisten begrenzten Gratistarife (Prüfung 3) und alles, was den Export hinter eine Bezahlschranke legt (Prüfungen 2 und 4). Übrig bleiben wirklich kostenlose Web-Werkzeuge und Open-Source-Programme für den Rechner; die Wahl dazwischen ist die Frage, ob Sie lieber Software installieren.</p>
+        <p><strong>Und die deutsche Zusatzfrage.</strong> Für die Möbelwerke Sauerland kommt vor all dem eine weitere: Der Plan enthält Namen, Zuständigkeiten und Umzugstermine von Beschäftigten. Ein Werkzeug mit Konto und Serverspeicher braucht damit einen Auftragsverarbeitungsvertrag nach Artikel 28 DSGVO — und je nach Sitz des Anbieters eine Rechtsgrundlage für die Übermittlung in ein Drittland. Das ist kein Formalismus, sondern ein Vorgang mit Datenschutzbeauftragter und Betriebsrat, der leicht länger dauert als die Auswahl des Werkzeugs selbst. Ein Werkzeug, das nichts überträgt, hat diese Frage schlicht nicht — was in einer Organisation mit Betriebsrat der schnellste Weg zu einem freigegebenen Werkzeug sein kann.</p>
+      </div>`
+    ],
+    [
       "Worauf es bei der Auswahl ankommt",
       `<p>Vier Fragen klären fast jede Entscheidung.</p>
         <p><em>Rechnet das Werkzeug Abhängigkeiten?</em> Ohne das ist es ein Zeichenprogramm — hübsch, aber es verschiebt keinen Nachfolger, wenn ein Vorgang sich verspätet. <em>Zeigt es den kritischen Pfad?</em> Das ist die Funktion, die bei Freemium-Tarifen am häufigsten hinter der Bezahlschranke liegt, und zugleich die einzige, die beantwortet, welche Verzögerungen den Endtermin wirklich bewegen.</p>
@@ -878,7 +1393,17 @@ const G = {
           <li><strong>Der Plan liegt schon in einer Tabelle?</strong> Bleiben Sie zunächst dort und wechseln Sie erst, wenn Abhängigkeiten ins Spiel kommen.</li>
         </ul>
         <p>Ein häufiger Irrtum ist, das größte Werkzeug für das sicherste zu halten. Für die meisten Vorhaben ist die entscheidende Größe nicht der Funktionsumfang, sondern die Wahrscheinlichkeit, dass der Plan nach vier Wochen noch gepflegt wird. Werkzeuge, die eine Anmeldung, eine Einführung und eine Freigabe der IT verlangen, verlieren genau an dieser Stelle — nicht weil sie schlechter sind, sondern weil sie zwischen dem Gedanken und dem ersten Balken zu viele Schritte legen.</p>
-        <p>Entscheiden Sie vorher, ob Sie <strong>Abhängigkeiten</strong>, einen <strong>kritischen Pfad</strong> und einen <strong>echten Export</strong> brauchen. Genau an diesen drei Punkten enttäuschen kostenlose Tarife am häufigsten.</p>`
+        <p>Entscheiden Sie vorher, ob Sie <strong>Abhängigkeiten</strong>, einen <strong>kritischen Pfad</strong> und einen <strong>echten Export</strong> brauchen. Genau an diesen drei Punkten enttäuschen kostenlose Tarife am häufigsten.</p>
+        <p>Die vier Prüfungen aus der Bewertung oben können Sie in <a href="/de/app.html">gantts.app</a> in einer Viertelstunde selbst durchführen — und dasselbe Vorgehen anschließend auf jedes andere Werkzeug anwenden:</p>
+        <ol>
+          <li>Öffnen Sie die Seite. Es gibt keine Bestätigungsmail und keine Tarifauswahl — der erste Balken ist der erste Schritt.</li>
+          <li>Klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie den Prüfausschnitt ein: <em>Ausbau (20d) nach Zustimmung der Vermieterin</em>, danach <em>IT-Einbau (10d) nach Ausbau</em> und <em>Übergabe!</em></li>
+          <li><strong>Prüfung 1:</strong> Ziehen Sie die Zustimmung um zehn Tage nach hinten oder ändern Sie ihre Dauer. Ausbau, IT-Einbau und Übergabe rücken mit. Mit <strong>Neu planen</strong> zieht der Plan alles auf den frühesten zulässigen Termin.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong> und blenden Sie über <strong>Spalten</strong> die Pufferspalte ein. Ausgewiesen wird der Gesamtpuffer — eine Spalte für den freien Puffer gibt es nicht, was Sie bei jedem Werkzeug gleichermaßen prüfen sollten.</li>
+          <li><strong>Prüfung 3:</strong> Fügen Sie über <strong>✨ In Gantt einfügen</strong> zweihundert Zeilen auf einmal ein und scrollen Sie die Zeitachse. Es gibt keine Vorgangsgrenze, an die Sie stoßen könnten.</li>
+          <li><strong>Prüfung 2:</strong> <strong>⬇ Export ▸ 📄 PDF-Dokument</strong>, dann die Datei auf einem anderen Gerät öffnen. Ohne Wasserzeichen, ohne Anmeldung, ohne Seitenbegrenzung.</li>
+          <li><strong>Prüfung 4:</strong> <strong>⬇ Export ▸ 📑 CSV (Tabelle)</strong> und danach <strong>💾 Projekt speichern (.gantts)</strong>. Die CSV lesen andere Werkzeuge, die Projektdatei trägt Abhängigkeiten, Gliederung und Basisplan mit sich. Speichern Sie sie dorthin, wo Ihre Projektdateien ohnehin liegen — das ist zugleich die Absicherung dagegen, dass gelöschte Websitedaten den Plan mitnehmen.</li>
+        </ol>`
     ],
     [
       "Und wann sich Bezahlsoftware lohnt",

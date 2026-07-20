@@ -45,24 +45,13 @@ const FLOOR = 80;          // below this, the localized reader is short-changed
    at the time rather than to what a reader needs. A floor that only
    ever describes the status quo is not a check.
 
-   The seven rebuilt guides now run 102-190% in every locale, so 80 is
-   comfortably achievable. The eight below are the hand-authored guides
-   that have not had their second pass yet; they keep the old floor as
-   NAMED, VISIBLE debt with an expiry, rather than being hidden by a
-   global bar low enough to cover them. Delete an entry as its guide is
-   rebuilt; delete LEGACY entirely when the list is empty. */
-const LEGACY_FLOOR = 55;
-const LEGACY = new Set([
-  'best-free-gantt-chart-software',
-  'critical-path-method',
-  'gantt-chart-examples',
-  'gantt-chart-in-excel',
-  'gantt-chart-in-google-sheets',
-  'gantt-chart-in-powerpoint',
-  'how-to-make-a-gantt-chart',
-  'what-is-a-gantt-chart',
-]);
-const floorFor = (slug) => (LEGACY.has(slug) ? LEGACY_FLOOR : FLOOR);
+   Every localized guide now runs 90-190% of its English original, so 80
+   has real headroom. There was briefly a LEGACY exemption list for the
+   eight hand-authored guides awaiting their second pass; it has been
+   deleted because the list is empty. If you find yourself adding one
+   back, give it an expiry and print it on every run — visible debt is
+   the only kind that gets paid. */
+const floorFor = () => FLOOR;
 
 function bodyText(file) {
   if (!fs.existsSync(file)) return null;
@@ -110,10 +99,6 @@ for (const slug of slugs) {
 
 console.log(`\n  ${LOCALES.join('    ')}   (percentage of the English word count)`);
 console.log(`  ${compared} localized guide(s) compared, floor ${FLOOR}%.`);
-if (LEGACY.size) {
-  console.log(`  ${LEGACY.size} guide(s) still on the legacy ${LEGACY_FLOOR}% floor, awaiting their second pass:`);
-  console.log(`      ${[...LEGACY].join(', ')}`);
-}
 
 if (thin.length) {
   const bySlug = {};

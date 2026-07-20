@@ -72,6 +72,7 @@
           {"@type":"Question","name":"What is the main purpose of a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"The main purpose is to plan and communicate a schedule: it shows what needs to be done, in what order, by when, and who is responsible. It makes overlaps, dependencies, and the overall timeline easy to see at a glance."}},
           {"@type":"Question","name":"Who invented the Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"The chart is named after Henry L. Gantt, an American mechanical engineer and management consultant who popularized it around 1910 to 1915. An earlier similar chart was designed by Polish engineer Karol Adamiecki in the 1890s, which he called a harmonogram."}},
           {"@type":"Question","name":"What are the main parts of a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"The core parts are a task list, a timeline or date axis, horizontal task bars, milestones shown as diamonds, dependency arrows linking related tasks, and progress shading that shows percent complete."}},
+          {"@type":"Question","name":"What is float on a Gantt chart?","acceptedAnswer":{"@type":"Answer","text":"Float is how long a task can slip before it causes damage. gantts.app reports total float — the delay a task can absorb before the project finish date moves — rather than free float, which only measures slack against the next task. In the café refit example, \"Design and layout\" has two days of total float and everything on the critical path has none."}},
           {"@type":"Question","name":"What is the difference between a Gantt chart and a timeline?","acceptedAnswer":{"@type":"Answer","text":"A timeline is a simple sequence of dated events on one line. A Gantt chart is richer: it shows many parallel tasks with durations, dependencies, owners, and progress, so it can actually be used to manage the work, not just illustrate key dates."}},
           {"@type":"Question","name":"Can I make a Gantt chart for free?","acceptedAnswer":{"@type":"Answer","text":"Yes. gantts.app lets you build a Gantt chart free in your browser with no sign up and no download, including dependencies and automatic critical path, then export to PDF, PNG, Excel or PowerPoint."}}
         ]
@@ -122,6 +123,8 @@
         <li><a href="#definition">Gantt chart definition</a></li>
         <li><a href="#look">What does a Gantt chart look like?</a></li>
         <li><a href="#used-for">What is a Gantt chart used for?</a></li>
+        <li><a href="#worked">A worked example: the Fernbank Café refit</a></li>
+        <li><a href="#reading">Reading the chart: float and the critical path</a></li>
         <li><a href="#examples">Gantt chart examples by project type</a></li>
         <li><a href="#pros-cons">Advantages and disadvantages</a></li>
         <li><a href="#history">Who invented the Gantt chart?</a></li>
@@ -137,91 +140,110 @@
     </figure>
     <div class="prose">
       <h2 id="definition">Gantt chart definition</h2>
-      <p>A <strong>Gantt chart</strong> is a type of bar chart that illustrates a project schedule. It maps a list of activities against a horizontal time axis so you can see, in a single view, the start date, end date, and duration of every task in a plan. Because the bars sit on a shared calendar, a Gantt chart also reveals which tasks run in parallel, which must happen in sequence, and how the whole project fits together from kickoff to finish.</p>
-      <p>In project management terms, a Gantt chart is a scheduling tool. It answers four practical questions at once: <em>what</em> has to be done (the task list), <em>when</em> each thing happens (the bars on the timeline), <em>in what order</em> (dependencies between tasks), and <em>how it is going</em> (progress shading). That combination is why the format has survived for more than a century and remains the default view in nearly every project planning tool today.</p>
+      <p>A <strong>Gantt chart</strong> is a bar chart that illustrates a project schedule. It maps activities against a horizontal time axis so you can see, in one view, the start, finish and duration of every task. Because the bars share a calendar, it also reveals which tasks run in parallel, which must happen in sequence, and how the project fits together from kickoff to finish.</p>
+      <p>In project management terms it is a scheduling tool, and it answers four questions at once: <em>what</em> has to be done, <em>when</em> each thing happens, <em>in what order</em>, and <em>how it is going</em>. That combination is why the format has survived more than a century and is still the default view in nearly every planning tool.</p>
 
       <h2 id="look">What does a Gantt chart look like?</h2>
-      <p>Picture a spreadsheet grid. The left-hand columns hold your task names and details. To the right, the columns become a calendar — days, weeks, or months. For each task, a colored bar stretches across the cells that correspond to its scheduled dates. A short task is a short bar; a task that spans three weeks is a bar three weeks wide. Read top to bottom and you see every piece of work; read left to right and you see the flow of time.</p>
+      <p>Picture a spreadsheet grid. The left-hand columns hold task names and details; to the right, the columns become a calendar. For each task a coloured bar stretches across the cells matching its dates, so a three-week task is a bar three weeks wide. Read top to bottom for the work, left to right for time.</p>
 
       <h3>Parts of a Gantt chart</h3>
+      <figure class="fig fig-inline" data-fig="bars" data-cap="Rows down the left, a calendar across the top, and one bar per task placed where it belongs in time."><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Rows down the left, a calendar across the top, and one bar per task placed where it belongs in time."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Week 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Task C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Milestone</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Today</text></svg><figcaption>Rows down the left, a calendar across the top, and one bar per task placed where it belongs in time.</figcaption></figure>
       <p>Almost every Gantt chart is built from the same six elements:</p>
       <ul>
-        <li><strong>Task list</strong> — the rows down the left side naming each activity, often grouped into phases or a work breakdown structure (WBS), sometimes with columns for start date, end date, duration, and owner.</li>
-        <li><strong>Timeline (date axis)</strong> — the calendar running across the top that sets the horizontal scale, whether in days, weeks, quarters, or a mix.</li>
-        <li><strong>Task bars</strong> — the horizontal bars themselves. Position shows <em>when</em> a task happens; length shows <em>how long</em> it takes.</li>
-        <li><strong>Milestones</strong> — key moments with no duration, such as a sign-off or launch, usually drawn as a diamond rather than a bar.</li>
-        <li><strong>Dependencies</strong> — arrows connecting bars to show that one task must start or finish before another can begin.</li>
-        <li><strong>Progress</strong> — shading or a bar-within-a-bar showing percent complete, so you can compare planned versus actual at a glance.</li>
+        <li><strong>Task list</strong> — the rows naming each activity, often grouped into phases or a work breakdown structure (WBS).</li>
+        <li><strong>Timeline (date axis)</strong> — the calendar across the top that sets the horizontal scale, in days, weeks or months.</li>
+        <li><strong>Task bars</strong> — position shows <em>when</em>; length shows <em>how long</em>.</li>
+        <li><strong>Milestones</strong> — zero-duration moments such as a sign-off or launch, drawn as a diamond. Having no length, a milestone can be moved but never resized.</li>
+        <li><strong>Dependencies</strong> — arrows showing that one task must finish before another can begin.</li>
+        <li><strong>Progress</strong> — shading showing percent complete, so planned and actual sit side by side.</li>
       </ul>
-      <p>Many charts add a vertical "today" line, a highlighted <a href="/blog/critical-path-method.html">critical path</a>, and resource or owner labels, but the six parts above are the essentials.</p>
+      <p>Many charts add a vertical "today" line, a highlighted <a href="/blog/critical-path-method.html">critical path</a> and owner labels, but those six are the essentials.</p>
 
-      <div class="callout"><strong>Skip the manual work.</strong> Build this free in your browser with the <a href="/app.html">gantts.app Gantt maker</a> — add tasks, drag the bars, link dependencies and see the critical path, then export to Excel, PowerPoint, PDF or PNG. No sign up.</div>
+      <div class="callout"><strong>Skip the manual work.</strong> Build this free in the <a href="/app.html">gantts.app Gantt maker</a> — drag the bars, link dependencies, see the critical path, export to Excel, PowerPoint, PDF or PNG. No sign up.</div>
 
       <h2 id="used-for">What is a Gantt chart used for?</h2>
-      <p>Gantt charts are used anywhere work has to happen in a coordinated order against a deadline. Typical uses include:</p>
-      <ul>
-        <li><strong>Planning a project schedule</strong> — laying out every task, its duration, and the sequence from start to finish.</li>
-        <li><strong>Coordinating a team</strong> — showing who owns what and when, so people can see how their work connects to everyone else's.</li>
-        <li><strong>Managing dependencies</strong> — making it obvious that, say, testing cannot start until the build is done.</li>
-        <li><strong>Tracking progress</strong> — comparing planned dates with actual progress to spot slippage early.</li>
-        <li><strong>Communicating with stakeholders</strong> — giving clients, sponsors, or executives a one-page picture of the plan and its status.</li>
-        <li><strong>Resource and deadline management</strong> — checking that the same person is not booked on two tasks at once, and that the end date is realistic.</li>
-      </ul>
-      <p>You will find Gantt charts in construction, software development, marketing, event planning, manufacturing, consulting, research, and product launches — essentially any field where a project has a beginning, an end, and steps in between.</p>
+      <p>Gantt charts are used anywhere work has to happen in a coordinated order against a deadline. They plan a schedule, show who owns what and when, make dependencies obvious, track progress so slippage shows early, give sponsors a one-page picture, and expose the moment one person is booked on two tasks at once — in construction, software, marketing, events, manufacturing, consulting and research alike.</p>
+
+      <h2 id="worked">A worked example: the Fernbank Café refit</h2>
+      <p>Definitions only go so far. Here is one small project modelled end to end — a café closing for a refit and reopening — which everything later on this page refers back to. Five working days a week, starting Monday 2 March 2026.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>#</th><th>Task</th><th>Duration</th><th>Runs after</th><th>Start</th><th>Finish</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Permits &amp; landlord approval</td><td>8 d</td><td>—</td><td>Mon 2 Mar</td><td>Wed 11 Mar</td></tr>
+            <tr><td>2</td><td>Design &amp; layout</td><td>6 d</td><td>—</td><td>Mon 2 Mar</td><td>Mon 9 Mar</td></tr>
+            <tr><td>3</td><td>Order equipment (supplier lead time)</td><td>20 d</td><td>1</td><td>Thu 12 Mar</td><td>Wed 8 Apr</td></tr>
+            <tr><td>4</td><td>Strip-out</td><td>4 d</td><td>1</td><td>Thu 12 Mar</td><td>Tue 17 Mar</td></tr>
+            <tr><td>5</td><td>Plumbing &amp; electrics</td><td>9 d</td><td>4</td><td>Wed 18 Mar</td><td>Mon 30 Mar</td></tr>
+            <tr><td>6</td><td>Flooring &amp; fit-out</td><td>7 d</td><td>5</td><td>Tue 31 Mar</td><td>Wed 8 Apr</td></tr>
+            <tr><td>7</td><td>Equipment install</td><td>3 d</td><td>3, 6</td><td>Thu 9 Apr</td><td>Mon 13 Apr</td></tr>
+            <tr><td>8</td><td><strong>Health inspection passed</strong></td><td>0 d</td><td>7</td><td colspan="2">Tue 14 Apr</td></tr>
+            <tr><td>9</td><td>Staff training</td><td>5 d</td><td>8</td><td>Wed 15 Apr</td><td>Tue 21 Apr</td></tr>
+            <tr><td>10</td><td><strong>Reopening day</strong></td><td>0 d</td><td>9</td><td colspan="2">Wed 22 Apr</td></tr>
+          </tbody>
+        </table>
+        <p>Eight tasks, two milestones, and the whole thing lands on Wednesday 22 April. Nobody chose that date — it falls out of the durations and the links between them, which is the point of drawing a chart rather than typing dates into a document.</p>
+      </div>
+      <p>Notice what the table tells you that a task list could not. Rows 1 and 2 both start on day one because neither waits for the other. Row 3 is twenty days of waiting on a supplier, running quietly while the builders work. And rows 3 and 6 finish on the same Wednesday — the moment two independent chains must meet before the equipment can go in.</p>
+
+      <h2 id="reading">Reading the chart: float and the critical path</h2>
+      <p>Once tasks are linked, the chart answers a question a task list cannot: <em>which delays actually matter?</em> Follow the longest chain — permits, strip-out, plumbing, flooring, install, inspection, training, reopening. That is the <a href="/blog/critical-path-method.html">critical path</a>, and every task on it has zero slack, so one lost day anywhere along it moves the reopening to 23 April.</p>
+      <figure class="fig fig-inline" data-fig="cpm" data-cap="The critical path is the longest chain through the plan; its tasks have zero float."><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="The critical path is the longest chain through the plan; its tasks have zero float."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Critical path: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Slack (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duration: 12</text></svg><figcaption>The critical path is the longest chain through the plan; its tasks have zero float.</figcaption></figure>
+      <p>The equipment order is the interesting case: twenty days of pure lead time finishing the same day as the flooring, and therefore also at zero float. Two chains can each single-handedly push the opening — one of building work, one of a purchase order. Better learned before placing the order than after.</p>
+      <div class="worked">
+        <table>
+          <thead><tr><th>Task</th><th>Finishes</th><th>Successor starts</th><th>Total float</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Design &amp; layout</td><td>Mon 9 Mar</td><td>Thu 12 Mar</td><td>2 d</td><td>Can slip two days before anything moves</td></tr>
+            <tr><td>Order equipment</td><td>Wed 8 Apr</td><td>Thu 9 Apr</td><td>0 d</td><td>Critical — a late delivery is a late opening</td></tr>
+            <tr><td>Flooring &amp; fit-out</td><td>Wed 8 Apr</td><td>Thu 9 Apr</td><td>0 d</td><td>Critical</td></tr>
+            <tr><td>Staff training</td><td>Tue 21 Apr</td><td>Wed 22 Apr</td><td>0 d</td><td>Critical</td></tr>
+          </tbody>
+        </table>
+        <p>Only one row has any give in it. If the designer needs three extra days, the first two are free and the third costs you the opening.</p>
+      </div>
+      <p>Two details about how gantts.app computes this. The figure it reports is <strong>total float</strong> — how far a task can slip before the project end date moves — not free float, which measures slack against the immediate successor alone. And its scheduling is <em>as-placed</em>: a dependency can only push a task later than where you put it, never drag it earlier. Park "Staff training" in June and linking it to the inspection will not pull it back to April; the chart shows the gap you left rather than silently closing it.</p>
 
       <h2 id="examples">Gantt chart examples by project type</h2>
-      <p>The format stays the same, but the tasks change with the domain. A few concrete examples:</p>
-      <ul>
-        <li><strong>Software development</strong> — rows for discovery, design, sprint 1, sprint 2, QA testing, and release, with a milestone diamond at go-live and a dependency from QA to release. See the <a href="/templates/software-development.html">software project template</a>.</li>
-        <li><strong>Construction</strong> — site prep, foundation, framing, roofing, electrical, plumbing, and inspection, heavily dependency-driven because each phase depends on the previous one finishing.</li>
-        <li><strong>Marketing campaign</strong> — strategy, creative production, content, paid setup, launch, and reporting, often running several tracks in parallel across different teams. See the <a href="/templates/marketing.html">marketing plan template</a>.</li>
-        <li><strong>Event planning</strong> — venue booking, vendor contracts, invitations, run-of-show, rehearsal, and the event day milestone, working backward from a fixed date.</li>
-        <li><strong>Product launch</strong> — research, design, build, test, and launch, with the critical path running straight through the chain that determines the ship date.</li>
-      </ul>
-      <p>You can start from any of these in the <a href="/templates.html">free template library</a> and edit it online.</p>
+      <p>The café refit is one shape; the format holds while the tasks change with the domain. <strong>Software</strong> runs discovery, design, sprints, QA and release. <strong>Construction</strong> chains site prep, foundation and inspection so tightly that almost everything is critical. <strong>Marketing</strong> runs tracks in parallel across teams. <strong>Events</strong> work backwards from a date that cannot move. Start from the <a href="/templates/software-development.html">software</a>, <a href="/templates/marketing.html">marketing</a> or <a href="/templates/construction.html">construction</a> template in the <a href="/templates.html">library</a>, or see a dozen worked through in <a href="/blog/gantt-chart-examples.html">Gantt chart examples</a>.</p>
 
       <h2 id="pros-cons">Advantages and disadvantages</h2>
-      <p>Gantt charts are popular for good reasons, but they are not the right tool for every situation. An honest look at both sides:</p>
-      <h3>Advantages</h3>
-      <ul>
-        <li><strong>Clarity at a glance</strong> — the whole schedule fits on one visual, which is far easier to grasp than a table of dates.</li>
-        <li><strong>Shows dependencies</strong> — you can see how a delay in one task ripples through the rest of the plan.</li>
-        <li><strong>Reveals overlap and workload</strong> — parallel bars make it obvious when too much is scheduled at the same time.</li>
-        <li><strong>Great for communication</strong> — non-experts understand a Gantt chart immediately, making it ideal for stakeholder updates.</li>
-        <li><strong>Supports the critical path</strong> — it pairs naturally with critical path analysis to find the tasks that truly drive the deadline.</li>
-      </ul>
-      <h3>Disadvantages</h3>
-      <ul>
-        <li><strong>Can get complex</strong> — a project with hundreds of tasks produces a very tall, hard-to-read chart.</li>
-        <li><strong>Needs maintenance</strong> — if reality changes and no one updates the chart, it quickly becomes misleading.</li>
-        <li><strong>Doesn't show effort or cost directly</strong> — bar length is duration, not hours of work or budget, which can be misread.</li>
-        <li><strong>Less suited to highly iterative work</strong> — teams doing continuous, unpredictable work often prefer a Kanban board.</li>
-      </ul>
-      <p>The practical fix for most of the downsides is a tool that keeps the chart in sync automatically when you change a date or dependency, rather than a static picture you redraw by hand.</p>
+      <p>Gantt charts are popular for good reasons, but they are not the right tool for every situation.</p>
+      <p><strong>In their favour:</strong> the whole schedule fits on one visual; a delay's ripple is visible rather than guessed at; parallel bars expose over-commitment; non-experts read one without training; and it pairs naturally with critical path analysis.</p>
+      <p><strong>Against:</strong> hundreds of tasks make an unreadable chart; an un-maintained one is worse than none, because people keep trusting a picture that stopped being true; and bar length is duration, not effort — the café's 20-day equipment order costs almost no labour. Teams doing continuous, unpredictable work are usually better served by a Kanban board. The fix for most of this is a tool that recalculates when a date or dependency changes, rather than a picture you redraw by hand.</p>
 
       <h2 id="history">Who invented the Gantt chart?</h2>
-      <p>The chart is named after <strong>Henry L. Gantt</strong> (1861–1919), an American mechanical engineer and management consultant who developed and popularized this style of scheduling chart around <strong>1910 to 1915</strong>. Gantt's charts were used to plan production and, famously, wartime shipbuilding, and they helped establish visual scheduling as a management discipline.</p>
-      <p>Gantt was not strictly the first, though. In the 1890s, Polish engineer <strong>Karol Adamiecki</strong> designed a very similar chart he called a <em>harmonogram</em>, but his work was published mostly in Polish and Russian and did not reach a wide audience. Because Gantt's version spread through American and European industry, the format took his name — which is why we still call it a Gantt chart today.</p>
+      <p>The chart is named after <strong>Henry L. Gantt</strong> (1861–1919), an American mechanical engineer and management consultant who developed and popularized this style of scheduling chart around <strong>1910 to 1915</strong>, first for factory production and then, famously, for wartime shipbuilding. He was not strictly first: in the 1890s the Polish engineer <strong>Karol Adamiecki</strong> designed a very similar chart he called a <em>harmonogram</em>, but he published mostly in Polish and Russian and never reached a wide audience. Gantt's version spread through American and European industry, so the format took his name.</p>
 
       <h2 id="vs">Gantt chart vs timeline vs Kanban</h2>
-      <p>These three tools are often confused, but each does a different job:</p>
-      <ul>
-        <li><strong>Gantt chart</strong> — a scheduling view with tasks, durations, dependencies, owners, and progress. Best when order and timing matter and you need to manage a plan over time.</li>
-        <li><strong>Timeline</strong> — a simpler sequence of dated events on a single line, usually with no durations or dependencies. Best for illustrating milestones or history at a high level. Every Gantt chart contains a timeline, but a timeline is not a full Gantt chart.</li>
-        <li><strong>Kanban board</strong> — columns like To do, In progress, and Done, with cards moving left to right as work flows. Best for continuous, flexible work where <em>what happens next</em> matters more than <em>on which date</em>. Kanban shows status, not a calendar.</li>
-      </ul>
-      <p>A useful rule of thumb: use a Gantt chart when there is a deadline and a defined sequence, a Kanban board when work flows continuously without fixed dates, and a plain timeline when you only need to show a handful of key dates.</p>
+      <p>Each does a different job. Every Gantt chart contains a timeline; a timeline is not a Gantt chart. Side by side, against the café refit:</p>
+      <table>
+        <thead><tr><th></th><th>Gantt chart</th><th>Timeline</th><th>Kanban board</th></tr></thead>
+        <tbody>
+          <tr><td>Core question</td><td>When does each piece of work happen, and in what order?</td><td>What are the headline dates?</td><td>What is being worked on now?</td></tr>
+          <tr><td>Shows duration</td><td>Yes — bar length is the duration</td><td>No — events are points</td><td>No — cards have no length</td></tr>
+          <tr><td>Shows dependencies</td><td>Yes, as arrows between bars</td><td>No</td><td>No</td></tr>
+          <tr><td>Calculates a finish date</td><td>Yes, from durations and links</td><td>No — dates are typed in</td><td>No</td></tr>
+          <tr><td>The café refit on it</td><td>All 10 rows, with 22 April calculated</td><td>Three dates: close, inspection, reopen</td><td>"Plumbing" sitting in the In progress column</td></tr>
+          <tr><td>Best when</td><td>There is a deadline and a defined sequence</td><td>You only need to show a handful of key dates</td><td>Work flows continuously without fixed dates</td></tr>
+        </tbody>
+      </table>
+      <p>They are less rivals than different altitudes: plenty of teams run the café refit as a Gantt chart for the landlord and the bank, and a Kanban board for the fortnight the builders are on site.</p>
 
       <h2 id="make">How to make one free</h2>
-      <p>You do not need expensive software or a spreadsheet full of formulas. With <a href="/app.html">gantts.app</a> you can build a full Gantt chart free in your browser:</p>
+      <p>Here is the café refit built in <a href="/app.html">gantts.app</a>, using the buttons as they are actually labelled:</p>
       <ol>
-        <li>List your tasks and set a start date and duration for each.</li>
-        <li>Group tasks into phases and add milestone diamonds for key dates.</li>
-        <li>Link dependencies so the schedule stays consistent when dates move.</li>
-        <li>Set percent complete and turn on the automatic critical path.</li>
-        <li>Export to PDF, PNG, Excel, or PowerPoint to share it.</li>
+        <li>Click <strong>✨ Paste to Gantt</strong> and paste the list. Durations in brackets, <code>after</code> for a link and a trailing <code>!</code> for a milestone are all detected — <code>Plumbing &amp; electrics (9d) after Strip-out</code>, then <code>Health inspection passed !</code>.</li>
+        <li>Or build it by hand: <strong>＋ Task</strong> for a work row, <strong>◆ Milestone</strong> for a diamond, <strong>▣ Group</strong> for a phase.</li>
+        <li>Double-click a row to set <strong>Runs after (predecessors)</strong>, the <strong>Assignee</strong> and <strong>% complete</strong> — and to switch a row's type if you typed a milestone as a task.</li>
+        <li>Click <strong>⚡ Auto-schedule</strong> to move every task to the earliest date its dependencies allow. This is what turns guesses into the 22 April finish.</li>
+        <li>Tick <strong>Critical path</strong> to see both zero-float chains highlighted, and <strong>◎ Today</strong> to jump the view back to the current date.</li>
+        <li>Open <strong>◳ Baseline</strong> before the first day on site, so slippage is later measured against what you promised.</li>
+        <li>Use <strong>⬇ Export</strong> for <strong>📄 PDF document</strong>, <strong>📊 Excel (.xlsx)</strong>, <strong>📑 CSV (spreadsheet)</strong> or <strong>📽 PowerPoint (.pptx)</strong>, or <strong>📤 Share…</strong> for a <strong>🔗 Shareable link</strong>.</li>
       </ol>
-      <p>For a full walkthrough, read <a href="/blog/how-to-make-a-gantt-chart.html">how to make a Gantt chart step by step</a>, or if you live in spreadsheets, see <a href="/blog/gantt-chart-in-excel.html">how to make a Gantt chart in Excel</a>. There is no sign up, no login, and no download — everything runs and saves in your own browser.</p>
+      <figure class="fig fig-inline" data-fig="steps" data-cap="From a plain task list to a scheduled, linked plan in a handful of steps."><svg viewBox="0 0 540 78" width="100%" role="img" aria-label="From a plain task list to a scheduled, linked plan in a handful of steps."><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Design</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Build</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Test</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Launch</text></svg><figcaption>From a plain task list to a scheduled, linked plan in a handful of steps.</figcaption></figure>
+      <p>For the landlord, set <strong>View</strong> to <strong>Milestones only</strong> before exporting: two rows, inspection and reopening — the entire project as far as they are concerned.</p>
+      <p>For a full walkthrough read <a href="/blog/how-to-make-a-gantt-chart.html">how to make a Gantt chart step by step</a>, or <a href="/blog/gantt-chart-in-excel.html">how to make one in Excel</a>. No sign up, no download — everything runs and saves in your own browser.</p>
 
       <h2 id="faq">Frequently asked questions</h2>
       <div class="faq">
@@ -229,6 +251,7 @@
         <details><summary>What is the main purpose of a Gantt chart?</summary><p>The main purpose is to plan and communicate a schedule: it shows what needs to be done, in what order, by when, and who is responsible. It makes overlaps, dependencies, and the overall timeline easy to see at a glance.</p></details>
         <details><summary>Who invented the Gantt chart?</summary><p>The chart is named after Henry L. Gantt, an American mechanical engineer and management consultant who popularized it around 1910 to 1915. An earlier similar chart was designed by Polish engineer Karol Adamiecki in the 1890s, which he called a harmonogram.</p></details>
         <details><summary>What are the main parts of a Gantt chart?</summary><p>The core parts are a task list, a timeline or date axis, horizontal task bars, milestones shown as diamonds, dependency arrows linking related tasks, and progress shading that shows percent complete.</p></details>
+        <details><summary>What is float on a Gantt chart?</summary><p>Float is how long a task can slip before it causes damage. gantts.app reports total float — the delay a task can absorb before the project finish date moves — rather than free float, which only measures slack against the next task. In the café refit example, "Design and layout" has two days of total float and everything on the critical path has none.</p></details>
         <details><summary>What is the difference between a Gantt chart and a timeline?</summary><p>A timeline is a simple sequence of dated events on one line. A Gantt chart is richer: it shows many parallel tasks with durations, dependencies, owners, and progress, so it can actually be used to manage the work, not just illustrate key dates.</p></details>
         <details><summary>Can I make a Gantt chart for free?</summary><p>Yes. gantts.app lets you build a Gantt chart free in your browser with no sign up and no download, including dependencies and automatic critical path, then export to PDF, PNG, Excel or PowerPoint.</p></details>
       </div>

@@ -54,7 +54,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=25" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html#post","headline":"Google 表格做甘特图：三种方法","description":"Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Google 表格做甘特图：三种方法","item":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Google 表格有内置的甘特图吗？","acceptedAnswer":{"@type":"Answer","text":"没有一键生成的甘特图类型，但有「时间轴」视图（插入 › 时间轴），能把带起止日期的表格变成时间轴上的卡片。真正的甘特图要用堆积条形图做，两者都不支持依赖关系和关键路径。"}},{"@type":"Question","name":"「时间轴」视图和甘特图有什么区别？","acceptedAnswer":{"@type":"Answer","text":"时间轴是绑定源表的交互式视图，缩放和分组都很方便，但它不是可编辑的图表对象，不能像图片一样插进幻灯片，也不计算依赖关系和关键路径。"}},{"@type":"Question","name":"怎么在 Google 表格里加依赖关系？","acceptedAnswer":{"@type":"Answer","text":"只能用公式手工模拟，比如把开始日期写成前置任务结束日期加一天。表格画不出箭头，也不会在任务延期时自动重排后续日期。"}},{"@type":"Question","name":"为什么我的横条从最左边开始？","acceptedAnswer":{"@type":"Answer","text":"通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为\"无\"。"}},{"@type":"Question","name":"用 Google 表格做甘特图要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"不用。有 Google 账号就能免费使用表格，三种方法都没有额外成本。gantts.app 同样免费，而且连账号都不需要。"}},{"@type":"Question","name":"怎么转成 Excel 或 PowerPoint？","acceptedAnswer":{"@type":"Answer","text":"整表可以用「文件 › 下载 › Microsoft Excel (.xlsx)」导出，图表可以复制成图片贴进幻灯片。更快的办法是在 gantts.app 里做好后一键导出。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html#post","headline":"Google 表格做甘特图：三种方法","description":"Google 表格做甘特图的三种方法：堆积条形图、原生「时间轴」视图和条件格式，以及各自的操作步骤与共同的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Google 表格做甘特图：三种方法","item":"https://gantts.app/zh/blog/gantt-chart-in-google-sheets.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Google 表格有内置的甘特图吗？","acceptedAnswer":{"@type":"Answer","text":"没有一键生成的甘特图类型，但有「时间轴」视图（插入 › 时间轴），能把带起止日期的表格变成时间轴上的卡片。真正的甘特图要用堆积条形图做，两者都不支持依赖关系和关键路径。"}},{"@type":"Question","name":"「时间轴」视图和甘特图有什么区别？","acceptedAnswer":{"@type":"Answer","text":"时间轴是绑定源表的交互式视图，缩放和分组都很方便，但它不是可编辑的图表对象，不能像图片一样插进幻灯片，也不计算依赖关系和关键路径。"}},{"@type":"Question","name":"怎么在 Google 表格里加依赖关系？","acceptedAnswer":{"@type":"Answer","text":"只能用公式手工模拟，比如把开始日期写成前置任务结束日期加一天。表格画不出箭头，也不会在任务延期时自动重排后续日期。"}},{"@type":"Question","name":"为什么我的横条从最左边开始？","acceptedAnswer":{"@type":"Answer","text":"通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为\"无\"。还有一种情况是横条长度误用了工作日那一列：图表横轴按自然日计数，含周末和节假日，所以横条长度必须写 =C2-B2+1，十个工作日的任务对应十二格。"}},{"@type":"Question","name":"能只用一个单元格做出甘特图吗？","acceptedAnswer":{"@type":"Answer","text":"可以，用 SPARKLINE。偏移量在 E2、横条长度在 F2 时，写 =SPARKLINE({E2,F2},{\"charttype\",\"bar\";\"color1\",\"white\";\"color2\",\"#6c4cf1\";\"max\",96}) 就能在单元格内画出一条横条。把 max 固定为项目总天数，每一行才共用同一条坐标轴。它比图表对象更扛得住插行和重新排序，但同样没有依赖关系和关键路径。"}},{"@type":"Question","name":"法定节假日和调休怎么处理？","acceptedAnswer":{"@type":"Answer","text":"把节假日日期列在一个区域里（例如 H2:H5），所有 WORKDAY 都带上这个参数，跨假期的任务就会自动顺延。调休上班的周六 WORKDAY 处理不了，只能把该任务的工作日数手工减一天并写清注释，或者换用带工作日历的排程工具。"}},{"@type":"Question","name":"国内用不了 Google 表格怎么办？","acceptedAnswer":{"@type":"Answer","text":"腾讯文档在线表格和飞书多维表格都支持堆积条形图和条件格式，本文的辅助列思路、公式和踩坑点原样适用，只有菜单名不同。函数名同样是英文，参数用半角逗号分隔。"}},{"@type":"Question","name":"用 Google 表格做甘特图要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"不用。有 Google 账号就能免费使用表格，三种方法都没有额外成本。gantts.app 同样免费，而且连账号都不需要。"}},{"@type":"Question","name":"怎么转成 Excel 或 PowerPoint？","acceptedAnswer":{"@type":"Answer","text":"整表可以用「文件 › 下载 › Microsoft Excel (.xlsx)」导出，图表可以复制成图片贴进幻灯片。更快的办法是在 gantts.app 里做好后一键导出。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -93,12 +93,14 @@
     <p class="post-meta"><span>gantts.app 编辑部</span><span>更新于 2026年7月19日</span><span>3 分钟阅读</span></p>
     <div class="toc"><strong>本页内容</strong>
       <ol>
-        <li><a href="#s1">方法一：堆积条形图</a></li>
-        <li><a href="#s2">方法二：原生时间轴视图</a></li>
-        <li><a href="#s3">方法三：条件格式</a></li>
-        <li><a href="#s4">让图表更好读</a></li>
-        <li><a href="#s5">各自适合什么场景</a></li>
-        <li><a href="#s6">共同的局限</a></li>
+        <li><a href="#s1">先说一句：公式在哪都一样</a></li>
+        <li><a href="#s2">方法一：堆积条形图</a></li>
+        <li><a href="#s3">方法二：原生时间轴视图</a></li>
+        <li><a href="#s4">一个完整算例：六项任务，然后来一次延误</a></li>
+        <li><a href="#s5">方法三：条件格式</a></li>
+        <li><a href="#s6">让图表更好读</a></li>
+        <li><a href="#s7">哪种方法给你什么</a></li>
+        <li><a href="#s8">各自适合什么场景，以及共同的局限</a></li>
       </ol>
     </div>
 
@@ -108,25 +110,98 @@
     </figure>
 
     <div class="prose">
-      <h2 id="s1">方法一：堆积条形图</h2>
-<p>原理与 Excel 相同，菜单不同。表里放任务、开始日期、结束日期三列，再加两列计算列——<strong>偏移量</strong>用 <code>=B2-$B$2</code>，<strong>工期</strong>用 <code>=C2-B2</code>。两列都要用<strong>格式 › 数字 › 数字</strong>改成纯数字，留成日期格式横条会全错。</p>
-      <p>按住 Ctrl 选中任务、偏移量、工期三列，点<strong>插入 › 图表</strong>。在右侧图表编辑器里把<strong>图表类型</strong>设为<strong>堆积条形图</strong>，再到<strong>自定义 › 系列</strong>里选中偏移量系列，把填充颜色设为<strong>无</strong>，工期横条就浮到了正确位置。</p>
-      <p>最后在<strong>自定义 › 纵轴</strong>里勾选<strong>反转轴顺序</strong>。这是真正的图表对象，可以复制进 Google 文档或幻灯片，也能下载成图片。</p>
-      <h2 id="s2">方法二：原生时间轴视图</h2>
-<p>把数据整理成一张表：至少要有卡片标题、开始日期、结束日期三列，可选的负责人、分组、完成度会显示在卡片详情里。连表头一起选中，点<strong>插入 › 时间轴</strong>，确认数据区域后创建。</p>
-      <p>表格会新建一个时间轴标签页，右侧设置面板里逐项映射：卡片标题、开始日期、结束日期、卡片颜色、分组依据。缩放可在天、周、月、季度、年之间切换，点卡片能跳回源数据那一行。</p>
-      <p>这是获得总览最省事的方式，但它是一个绑定源表的<em>交互式视图</em>，不是能当图片插进幻灯片的图表对象，也没有依赖关系连线和关键路径。</p>
-      <h2 id="s3">方法三：条件格式</h2>
+      <h2 id="s1">先说一句：公式在哪都一样</h2>
+<p>下面所有公式在<strong>中文界面的 Google 表格里函数名依然是英文</strong>——<code>WORKDAY</code>、<code>MAX</code>、<code>SPARKLINE</code> 照写，参数之间用半角逗号。国内访问 Google 表格需要相应的网络条件，很多团队实际用的是腾讯文档在线表格或飞书多维表格；这两者的堆积条形图做法、辅助列思路和下面完全一致，公式也基本可以直接搬，菜单名略有差别而已。</p>
+      <h2 id="s2">方法一：堆积条形图</h2>
+<p>原理与 Excel 相同，菜单不同。表里放任务、开始日期、结束日期三列，再加两列计算列——<strong>偏移量</strong>（本任务比项目最早日期晚几天）用 <code>=B2-$B$2</code>，<strong>横条长度</strong>用 <code>=C2-B2+1</code>。那个 <code>+1</code> 是把结束当天也算进去；漏掉它，当天开始当天结束的任务长度为零，根本画不出横条。</p>
+      <p>两列都要用<strong>格式 › 数字 › 数字</strong>改成纯数字，这是最多人漏掉的一步——留成日期格式，表格会去画两个巨大的序列号，横条直接跑到右边界外面不见了。</p>
+      <ol>
+        <li>按住 Ctrl 选中<strong>任务</strong>、<strong>偏移量</strong>、<strong>横条长度</strong>三列（A、D、E，不相邻的列要按住 Ctrl 点选）。</li>
+        <li>点<strong>插入 › 图表</strong>，在右侧图表编辑器里把<strong>图表类型</strong>设为<strong>堆积条形图</strong>。</li>
+        <li>到<strong>自定义 › 系列</strong>里选中<strong>偏移量</strong>系列，把填充颜色设为<strong>无</strong>。占位段消失，工期横条浮到正确位置。</li>
+        <li>在<strong>自定义 › 纵轴</strong>里勾选<strong>反转轴顺序</strong>，第一项任务回到顶部。</li>
+        <li>给工期系列换色、加图表标题，把横轴整理成看得懂的日期或天数。</li>
+      </ol>
+      <p>这是真正的图表对象，可以调整大小、改样式、复制进 Google 文档或幻灯片，也能下载成图片。但要加里程碑或按阶段分组，就意味着更多辅助列和更多手工维护——真实项目做到这一步，这种方法开始变得沉重。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="不可见的占位段，就是把每条工期横条推到它开始日期上的那个东西。"><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">周 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">阶段 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">阶段 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">里程碑</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">今天</text></svg><figcaption>不可见的占位段，就是把每条工期横条推到它开始日期上的那个东西。</figcaption></figure>
+      <h2 id="s3">方法二：原生时间轴视图</h2>
+<p>时间轴视图是在表格里拿到甘特图布局最快的路子，而且是内置的，一条公式都不用写。</p>
+      <ol>
+        <li>把数据整理成一张简单的表，至少要有<strong>卡片标题</strong>、<strong>开始日期</strong>、<strong>结束日期</strong>（或工期）三列。可选的负责人、分组、完成度列会显示在卡片详情里。</li>
+        <li>连表头一起选中整个区域。</li>
+        <li>点<strong>插入 › 时间轴</strong>，在对话框里确认数据区域后点<strong>创建</strong>。</li>
+        <li>表格会新建一个时间轴标签页，在右侧设置面板里逐项映射：<em>卡片标题</em>、<em>开始日期</em>、<em>结束日期</em>、<em>卡片颜色</em>、<em>分组依据</em>。</li>
+      </ol>
+      <p>缩放可在天、周、月、季度、年之间切换，可以拖动滚屏，点卡片能跳回源数据那一行。做路线图确实好用。但要注意：时间轴是一个绑定源表的<em>交互式视图</em>，不是能当图片插进幻灯片的图表对象，也没有依赖关系连线和关键路径高亮。</p>
+      <h2 id="s4">一个完整算例：六项任务，然后来一次延误</h2>
+<p>辅助列讲起来容易，写错也容易，而且错得很不显眼。下面是一份带真实公式的小计划，然后改一个数——因为日期一动这张表会怎么样，是唯一有意义的检验。</p>
+      <div class="worked">
+        <p><strong>这张表。</strong>一个教育机构官网重构项目，2026 年 3 月 2 日（周一）启动。第 1 行表头，任务在第 2—7 行。<strong>A</strong> 任务、<strong>B</strong> 开始、<strong>C</strong> 结束、<strong>D</strong> 工作日、<strong>E</strong> 偏移量、<strong>F</strong> 横条长度。<strong>法定节假日</strong>放在 <code>H2:H5</code>：清明补假 4 月 6 日，劳动节 5 月 1 日、5 月 4 日、5 月 5 日。只有 D 列是手工输入的：</p>
+        <ul>
+          <li><strong>C2</strong> —— <code>=WORKDAY(B2,D2-1,$H$2:$H$5)</code>。表格里的 <code>WORKDAY</code> 和 Excel 一样，会替你跳过周末，第三个参数用来跳过节假日。那个 <code>-1</code> 不能省：<code>WORKDAY</code> 从开始日向前数，周一算起的五个工作日是 <code>WORKDAY(周一,4)</code>，也就是周五。</li>
+          <li><strong>B3</strong> —— <code>=WORKDAY(C2,1,$H$2:$H$5)</code>，前置任务结束之后的下一个工作日。整个文件里唯一会"重排"的东西就是它。</li>
+          <li><strong>E2</strong> —— <code>=B2-$B$2</code>，格式设为数字。第一项任务是 0。</li>
+          <li><strong>F2</strong> —— <code>=C2-B2+1</code>，格式设为数字。注意它<em>不是</em> D2。D 是工作日，图表横轴是自然日，所以 10 个工作日的任务必须画成 12 格长。误把 D 拿去作图，每条横条都会提前结束，而旁边那张表读起来还完全正确。</li>
+        </ul>
+        <p>向下填充，得到：</p>
+        <table>
+          <thead><tr><th>行</th><th>任务</th><th>B — 开始</th><th>C — 结束</th><th>D — 工作日</th><th>E — 偏移量</th><th>F — 横条长度</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>需求调研</td><td>3 月 2 日（周一）</td><td>3 月 13 日（周五）</td><td>10</td><td>0</td><td>12</td></tr>
+            <tr><td>3</td><td>设计</td><td>3 月 16 日（周一）</td><td>3 月 27 日（周五）</td><td>10</td><td>14</td><td>12</td></tr>
+            <tr><td>4</td><td>开发</td><td>3 月 30 日（周一）</td><td>4 月 27 日（周一）</td><td>20</td><td>28</td><td>29</td></tr>
+            <tr><td>5</td><td>内容迁移</td><td>4 月 28 日（周二）</td><td>5 月 21 日（周四）</td><td>15</td><td>57</td><td>24</td></tr>
+            <tr><td>6</td><td>测试</td><td>5 月 22 日（周五）</td><td>6 月 4 日（周四）</td><td>10</td><td>81</td><td>14</td></tr>
+            <tr><td>7</td><td>上线</td><td>6 月 5 日（周五）</td><td>6 月 5 日（周五）</td><td>1</td><td>95</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p><strong>拿最后一行做校验：</strong>95 + 1 = 96，正好是 3 月 2 日到 6 月 5 日的完整跨度。如果末行的 E + F 不等于你预期的天数，说明上面某处的约定跑偏了。</p>
+        <p>顺带看第 4、5 行：20 个工作日画成 29 格，15 个工作日画成 24 格。多出来的不只是周末，还有清明和劳动节。<code>H2:H5</code> 空着的话，这两行都会提前完成，而误差一路传到上线日。<strong>调休</strong>上班的周六 <code>WORKDAY</code> 处理不了，只能把那项任务的工作日数手工减一天，并在旁边写一行注释说明为什么。</p>
+        <p><strong>现在改一个数。</strong>设计超期三天：把 <code>D3</code> 从 10 改成 13。<code>WORKDAY</code> 链条重算，后面全跟着动——设计 4 月 1 日结束，开发 4 月 2 日至 4 月 30 日，内容迁移 5 月 6 日至 5 月 26 日，测试 5 月 27 日至 6 月 9 日，上线变成 <strong>6 月 10 日</strong>。两列辅助列自己跟着更新。这就是要用公式而不是硬敲日期的理由。</p>
+        <p><strong>下面是不会跟着动的部分。</strong></p>
+        <ol>
+          <li><strong>插入的行是空的。</strong>在设计和开发之间插入"客户评审"：新的第 4 行没有任何公式，而原来的开发行——现在是第 5 行——仍然指着设计的结束日期。表格照样把图表区域扩大，于是那一空行在最左端画出一条零长度横条，看起来像渲染错误，而不像一处排程错误。</li>
+          <li><strong>排序会毁掉整条链。</strong>按开始日期排一次序，每个相对引用都跟着它的新邻居走，悄悄从错误的行推导日期。没有警告，存盘关闭之后也撤销不回来。</li>
+          <li><strong>第二个前置任务没地方放。</strong>如果测试同时要等开发和内容迁移，正确写法是 <code>=WORKDAY(MAX(C4,C5),1,$H$2:$H$5)</code>。它能跑。但图上看不到任何连线，而加一个五天的客户评审就变成 <code>=WORKDAY(C3,1+5,$H$2:$H$5)</code>——一个光秃秃的 <code>5</code> 埋在公式里，没有任何标注。</li>
+        </ol>
+        <p><strong>一个只有表格才有的捷径。</strong>如果你只想每行有一条横条、连图表对象都不要，在 G2 写下面这条再向下填充：<code>=SPARKLINE({E2,F2},{"charttype","bar";"color1","white";"color2","#6c4cf1";"max",96})</code>。它在单个单元格内部重现了同一个"透明占位段"的把戏，而因为 <code>max</code> 固定为项目总跨度 96 天，每一行共用同一条坐标轴。它比图表更扛得住插行和重新排序——但它仍然是一张画，不是一份进度计划。</p>
+      </div>
+      <h2 id="s5">方法三：条件格式</h2>
 <p>不用图表：顶部横排一行日期，一天一列或一周一列，左边保留任务和起止日期，选中整片网格后走<strong>格式 › 条件格式 › 自定义公式</strong>，写成 <code>=AND(D$1&gt;=$B2, D$1&lt;=$C2)</code>，再选填充色。日期落在任务区间内的格子就自动上色。</p>
-      <p>结果是一张读起来像甘特图、并且就活在表格里的网格，改日期立刻重绘。三个月以内很实用，超过一个季度列数太多就难以阅读了。</p>
-      <h2 id="s4">让图表更好读</h2>
+      <p>混合引用是全部的机关：<code>D$1</code> 锁住行，让每一列去读自己那天的日期；<code>$B2</code> 锁住列，让每一行去读自己那项任务的起止日期。选中区域时要让左上角那个格子保持为<strong>活动单元格</strong>，因为公式是站在它的角度写的，其余格子按相对位置偏移。</p>
+      <p>再叠两条规则会好用很多，注意顺序——规则自上而下判断，第一个填充生效，所以横条那条必须排在最上面：<code>=COUNTIF($H$2:$H$5,D$1)&gt;0</code> 把<strong>法定节假日</strong>涂成另一种浅色，<code>=WEEKDAY(D$1,2)&gt;5</code> 把周末涂灰。<code>WEEKDAY</code> 的第二参数一定要写 <code>2</code>：它把周一编为 1、周日编为 7，<code>&gt;5</code> 正好是周六周日；默认的 <code>1</code> 从周日起算，会涂错两天。<strong>调休</strong>上班的周六再单列一份日期，另加一条 <code>COUNTIF</code> 规则改回工作日底色即可。</p>
+      <p>结果是一张读起来像甘特图、并且就活在表格里的网格，改日期立刻重绘，打印也干净，插入行的容忍度比图表高。三个月以内很实用，超过一个季度列数太多就难以阅读了；里程碑和进度仍然要手写规则，而且它同样对依赖关系一无所知。</p>
+      <h2 id="s6">让图表更好读</h2>
 <p>几个小调整对三种做法都有效：加一列<strong>阶段</strong>并按它排序，或用时间轴视图的"分组依据"聚合相关任务；加一列完成百分比，在堆积条形图里把工期拆成"已完成"和"剩余"两段；把工期为零的<strong>里程碑</strong>换成对比色。</p>
-      <p>依赖关系是硬边界。Google 表格没有"任务 B 在任务 A 结束后开始"这个概念。可以用公式伪造——开始日期写成前置任务结束日期加一天——但没有可见的箭头，链条一长就很脆。</p>
-      <h2 id="s5">各自适合什么场景</h2>
-<p>时间轴视图用于快速总览和路线图，五分钟就能出结果；堆积条形图用于需要对外分发、插进文档或幻灯片的图表；条件格式用于希望计划始终留在表格里、和其他数据放在一起的场合。想更省事就直接从模板开始：复制一份到自己的云端硬盘，把示例数据覆盖掉即可。</p>
-      <h2 id="s6">共同的局限</h2>
-<p>三种方法都不计算依赖关系，也没有关键路径。任何一项任务延期都不会传导到后续任务，只能手工逐个改日期，而实际上改到第二次就没人继续了。导出也别扭：时间轴视图不是图片，条形图搬进幻灯片时样式经常走样；整表可以用<strong>文件 › 下载 › Microsoft Excel (.xlsx)</strong> 导出。</p>
-      <p>它真正的长处是多人实时协作。一旦需要计划自己会算，就该换工具了——<a href="/zh/app.html">gantts.app</a> 免费、无需注册，连上依赖关系后时间轴自动重排并高亮关键路径，再一键导出 Excel、PowerPoint、PDF 或 PNG。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 580 190" width="100%" role="img" aria-label="四种依赖类型。开始列里的一条公式，只能近似其中的第一种。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 开始</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">开始 → 开始</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 完成</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">开始 → 完成</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text></svg><figcaption>四种依赖类型。开始列里的一条公式，只能近似其中的第一种。</figcaption></figure>
+      <p>依赖关系是硬边界。Google 表格没有"任务 B 在任务 A 结束后开始"这个概念。可以用 <code>=WORKDAY(C2,1,$H$2:$H$5)</code> 伪造完成-开始这一种，但没有可见的箭头，另外三种类型根本没有表达方式，链条一长就很脆。如果依赖关系和自动重排对你的项目重要，那就是该换工具的信号。整体流程见<a href="/zh/blog/how-to-make-a-gantt-chart.html">甘特图怎么做</a>。</p>
+      <h2 id="s7">哪种方法给你什么</h2>
+<p>三种方法都能画出一份进度，但没有一种会<em>算</em>出一份进度。它们之间的差别是真实的，只是在这个共同的边界面前显得很小，所以两件事一起放在这张表里：</p>
+      <table>
+        <thead><tr><th>能力</th><th>时间轴视图</th><th>堆积条形图</th><th><code>SPARKLINE</code></th><th>真正的排程工具</th></tr></thead>
+        <tbody>
+          <tr><td>搭建成本</td><td>两分钟</td><td>两列辅助列</td><td>一条公式</td><td>输入并拖动</td></tr>
+          <tr><td>跳过周末</td><td>不会</td><td>靠 <code>WORKDAY</code></td><td>靠 <code>WORKDAY</code></td><td>内置</td></tr>
+          <tr><td>跳过法定节假日</td><td>不会</td><td>靠 <code>WORKDAY</code> 第三参数</td><td>同左</td><td>工作日历，含调休</td></tr>
+          <tr><td>单条 FS 链自动重排</td><td>开始列是公式则可以</td><td>开始列是公式则可以</td><td>开始列是公式则可以</td><td>可以</td></tr>
+          <tr><td>依赖箭头</td><td>没有</td><td>没有</td><td>没有</td><td>有</td></tr>
+          <tr><td>一项任务两个前置</td><td>隐藏的 <code>MAX()</code></td><td>隐藏的 <code>MAX()</code></td><td>隐藏的 <code>MAX()</code></td><td>原生支持</td></tr>
+          <tr><td>SS、FF、SF 三种类型</td><td>不支持</td><td>不支持</td><td>不支持</td><td>支持</td></tr>
+          <tr><td>关键路径</td><td>没有</td><td>没有</td><td>没有</td><td>自动计算</td></tr>
+          <tr><td>每项任务的总浮动时间</td><td>没有</td><td>没有</td><td>没有</td><td>自动计算</td></tr>
+          <tr><td>资源负荷与超配提醒</td><td>没有</td><td>没有</td><td>没有</td><td>有</td></tr>
+          <tr><td>基准与偏差</td><td>手工复制列</td><td>手工复制列</td><td>手工复制列</td><td>保存并自动对比</td></tr>
+          <tr><td>插入一行后还正常</td><td>正常</td><td>公式要重敲</td><td>公式要补填</td><td>正常</td></tr>
+          <tr><td>重新排序后还正常</td><td>正常</td><td>不正常</td><td>不正常</td><td>正常</td></tr>
+          <tr><td>能导出成图片</td><td>不能——它是视图</td><td>能</td><td>不能——它是单元格</td><td>PNG、PDF、PPTX</td></tr>
+        </tbody>
+      </table>
+      <p>中间那一片"没有"不是在贬低表格，那本来就在电子表格的范围之外。表格存的是你在别处决定好的数字。你要的如果是把它们<em>推导</em>出来——哪项任务在决定交付期、其余任务各有多少余量——再花哨的公式也到不了那里。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="只有穿过网络的最长路径决定完工日期。没有哪张电子表格会替你找到它。"><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">浮动时间 (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期: 12</text></svg><figcaption>只有穿过网络的最长路径决定完工日期。没有哪张电子表格会替你找到它。</figcaption></figure>
+      <h2 id="s8">各自适合什么场景，以及共同的局限</h2>
+<p>时间轴视图用于快速总览和路线图，五分钟就能出结果；堆积条形图用于需要对外分发、插进文档或幻灯片的图表；条件格式用于希望计划始终留在表格里、和其他数据放在一起的场合。想更省事就直接从<a href="/zh/templates.html">模板</a>开始：复制一份到自己的云端硬盘，把示例数据覆盖掉即可。</p>
+      <p>但三种方法都不计算依赖关系，也没有关键路径。任何一项任务延期都不会自动传导到后续任务——除非你把开始日期全写成 <code>WORKDAY</code> 公式，而那也只覆盖单链。导出同样别扭：时间轴视图不是图片，条形图搬进幻灯片时样式经常走样；整表可以用<strong>文件 › 下载 › Microsoft Excel (.xlsx)</strong> 导出。</p>
+      <p>表格真正的长处是多人实时协作和"数据本来就在这儿"。一旦需要计划自己会算，就该换工具了——<a href="/zh/app.html">gantts.app</a> 免费、无需注册、无需下载，全部在浏览器里运行：输入任务、拖动横条、连上依赖关系，时间轴自动重排并高亮<a href="/zh/blog/critical-path-method.html">关键路径</a>，再一键导出 Excel、PowerPoint、PDF 或 PNG。计划小而稳定、或者数据本来就长在表里，就用表格；一旦需要依赖关系、关键路径，或者一张不用人看着就能保持同步的图，就换到编辑器。</p>
 
       <div class="callout">原生「时间轴」视图不是甘特图，尽管看起来像。它只呈现时间区间，不理解连线，也没有关键路径。做总览够用；做能自动传递延误的进度计划，不够。</div>
 
@@ -135,7 +210,10 @@
         <details open><summary>Google 表格有内置的甘特图吗？</summary><p>没有一键生成的甘特图类型，但有「时间轴」视图（插入 › 时间轴），能把带起止日期的表格变成时间轴上的卡片。真正的甘特图要用堆积条形图做，两者都不支持依赖关系和关键路径。</p></details>
         <details><summary>「时间轴」视图和甘特图有什么区别？</summary><p>时间轴是绑定源表的交互式视图，缩放和分组都很方便，但它不是可编辑的图表对象，不能像图片一样插进幻灯片，也不计算依赖关系和关键路径。</p></details>
         <details><summary>怎么在 Google 表格里加依赖关系？</summary><p>只能用公式手工模拟，比如把开始日期写成前置任务结束日期加一天。表格画不出箭头，也不会在任务延期时自动重排后续日期。</p></details>
-        <details><summary>为什么我的横条从最左边开始？</summary><p>通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为"无"。</p></details>
+        <details><summary>为什么我的横条从最左边开始？</summary><p>通常是偏移量系列没有设成透明，或者偏移量、工期两列仍然是日期格式。先把这两列改成纯数字，再检查该系列的填充颜色是否为"无"。还有一种情况是横条长度误用了工作日那一列：图表横轴按自然日计数，含周末和节假日，所以横条长度必须写 =C2-B2+1，十个工作日的任务对应十二格。</p></details>
+        <details><summary>能只用一个单元格做出甘特图吗？</summary><p>可以，用 SPARKLINE。偏移量在 E2、横条长度在 F2 时，写 =SPARKLINE({E2,F2},{"charttype","bar";"color1","white";"color2","#6c4cf1";"max",96}) 就能在单元格内画出一条横条。把 max 固定为项目总天数，每一行才共用同一条坐标轴。它比图表对象更扛得住插行和重新排序，但同样没有依赖关系和关键路径。</p></details>
+        <details><summary>法定节假日和调休怎么处理？</summary><p>把节假日日期列在一个区域里（例如 H2:H5），所有 WORKDAY 都带上这个参数，跨假期的任务就会自动顺延。调休上班的周六 WORKDAY 处理不了，只能把该任务的工作日数手工减一天并写清注释，或者换用带工作日历的排程工具。</p></details>
+        <details><summary>国内用不了 Google 表格怎么办？</summary><p>腾讯文档在线表格和飞书多维表格都支持堆积条形图和条件格式，本文的辅助列思路、公式和踩坑点原样适用，只有菜单名不同。函数名同样是英文，参数用半角逗号分隔。</p></details>
         <details><summary>用 Google 表格做甘特图要花钱吗？</summary><p>不用。有 Google 账号就能免费使用表格，三种方法都没有额外成本。gantts.app 同样免费，而且连账号都不需要。</p></details>
         <details><summary>怎么转成 Excel 或 PowerPoint？</summary><p>整表可以用「文件 › 下载 › Microsoft Excel (.xlsx)」导出，图表可以复制成图片贴进幻灯片。更快的办法是在 gantts.app 里做好后一键导出。</p></details>
       </div>

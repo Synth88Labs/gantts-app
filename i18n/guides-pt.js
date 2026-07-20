@@ -44,9 +44,47 @@ const G = {
         <p>Com precedências, o cronograma recalcula sozinho. Você move uma barra e tudo que depende dela acompanha. É a diferença entre um cronograma vivo e um documento desatualizado em três semanas.</p>
         <p>O tipo dominante é <strong>Término-Início</strong>: B começa quando A termina. Ele cobre em torno de 90% das ligações reais. Existem outros três — Início-Início, Término-Término e Início-Término —, úteis em casos específicos, e vale conhecer os <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a> antes de sair usando.</p>
         <p>O teste para saber se uma ligação é real: se A terminar antes do previsto, B pode começar antes? Se a resposta for não, você não criou uma precedência — apenas repetiu a ordem em que digitou a lista, e o cronograma vai reagir a atrasos que não existem.</p>`],
+    ['Um exemplo resolvido: a reforma da Cafeteria Marambaia', `<p>Definição sem número não gruda. Então aqui está um gráfico de Gantt inteiro, pequeno o bastante para caber numa tela e completo o bastante para a conta fechar: a reforma da Cafeteria Marambaia, em Porto Alegre, que fecha as portas em março de 2026 para trocar cozinha, piso e layout de salão. Sócia responsável: Renata Fontoura. Todas as durações estão em dias úteis.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>#</th><th>Tarefa</th><th>Duração</th><th>Depois de</th><th>Início</th><th>Fim</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Alvarás e anuência do proprietário</td><td>8 d</td><td>—</td><td>seg 02/03</td><td>qua 11/03</td></tr>
+              <tr><td>2</td><td>Projeto e layout do salão</td><td>6 d</td><td>—</td><td>seg 02/03</td><td>seg 09/03</td></tr>
+              <tr><td>3</td><td>Compra de equipamentos (prazo do fornecedor)</td><td>20 d</td><td>1, 2</td><td>qui 12/03</td><td>qui 09/04</td></tr>
+              <tr><td>4</td><td>Demolição e retirada do mobiliário</td><td>4 d</td><td>1</td><td>qui 12/03</td><td>ter 17/03</td></tr>
+              <tr><td>5</td><td>Hidráulica e elétrica</td><td>9 d</td><td>4</td><td>qua 18/03</td><td>seg 30/03</td></tr>
+              <tr><td>6</td><td>Piso e marcenaria</td><td>7 d</td><td>5</td><td>ter 31/03</td><td>qui 09/04</td></tr>
+              <tr><td>7</td><td>Instalação dos equipamentos</td><td>3 d</td><td>3, 6</td><td>sex 10/04</td><td>ter 14/04</td></tr>
+              <tr><td>8</td><td><strong>Vistoria da Vigilância Sanitária aprovada</strong></td><td>0 d</td><td>7</td><td colspan="2">qua 15/04</td></tr>
+              <tr><td>9</td><td>Treinamento da equipe no novo layout</td><td>5 d</td><td>8</td><td>qui 16/04</td><td>qui 23/04</td></tr>
+              <tr><td>10</td><td><strong>Reabertura</strong></td><td>0 d</td><td>9</td><td colspan="2">sex 24/04</td></tr>
+            </tbody>
+          </table>
+          <p>Oito tarefas, dois marcos, e a reabertura cai numa sexta-feira, 24/04. Ninguém escolheu essa data. Ela sai da soma das durações ao longo da cadeia mais longa — e é exatamente por isso que se desenha um gráfico em vez de digitar datas num documento do Word.</p>
+        </div>
+        <!--FIG:bars|Uma linha por tarefa, uma barra por duração: é toda a mecânica do desenho.-->
+        <p>Dois feriados fazem trabalho de verdade nesse cronograma, e vale reparar em como. A Sexta-feira Santa cai em 03/04/2026 e engole um dia útil bem no meio da compra de equipamentos e da marcenaria: sem ela, as duas fechariam em qua 08/04 e a reabertura seria na quinta. E Tiradentes cai em ter 21/04/2026, no meio do treinamento, empurrando a reabertura de qua 22/04 para sex 24/04.</p>
+        <p>Esse segundo feriado tem preço. O ponto na Rua Marambaia custa R$ 9.400 de aluguel por mês, algo como R$ 313 por dia de porta fechada, e a folha da equipe corre igual com a loja vazia. Se a Renata ainda emendar a segunda-feira 20/04, como metade do comércio da região faz, a reabertura escorrega para seg 27/04 e a emenda custa perto de R$ 940 só de aluguel — decisão perfeitamente defensável, desde que seja tomada olhando para o número, e não descoberta na segunda-feira.</p>`],
     ['O caminho crítico', `<p>O caminho crítico é a cadeia mais longa de tarefas ligadas. A duração dele é a duração do projeto. Qualquer atraso nesse caminho empurra o fim na mesma medida; atrasos fora dele, muitas vezes, não empurram nada.</p>
         <p>O número que importa aqui chama-se <strong>folga</strong>: quantos dias uma tarefa pode atrasar sem mover a entrega. Tarefas do caminho crítico têm folga zero. Uma tarefa com quatro dias de folga que atrasa dois continua irrelevante para o prazo; a mesma tarefa atrasando cinco dias vira crítica e passa a comandar a entrega.</p>
-        <p>É o indicador mais útil de um cronograma: mostra onde a atenção faz diferença e onde ela se perde. O <a href="/pt/blog/critical-path-method.html">método de cálculo</a> é uma soma para frente e uma subtração para trás, e qualquer ferramenta séria faz isso sozinha a cada alteração.</p>`],
+        <p>É o indicador mais útil de um cronograma: mostra onde a atenção faz diferença e onde ela se perde. O <a href="/pt/blog/critical-path-method.html">método de cálculo</a> é uma soma para frente e uma subtração para trás, e qualquer ferramenta séria faz isso sozinha a cada alteração.</p>
+        <!--FIG:cpm|Folga zero é a definição de crítico: cada dia perdido ali é um dia a mais de porta fechada.-->
+        <p>Na Cafeteria Marambaia a leitura fica assim:</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>Tarefa</th><th>Termina</th><th>Sucessora começa</th><th>Folga total</th><th>O que isso significa</th></tr></thead>
+            <tbody>
+              <tr><td>Projeto e layout do salão</td><td>seg 09/03</td><td>qui 12/03</td><td>2 d</td><td>Pode escorregar dois dias sem mover nada</td></tr>
+              <tr><td>Demolição e retirada</td><td>ter 17/03</td><td>qua 18/03</td><td>0 d</td><td>Crítica</td></tr>
+              <tr><td>Compra de equipamentos</td><td>qui 09/04</td><td>sex 10/04</td><td>0 d</td><td>Crítica — fornecedor atrasado é reabertura atrasada</td></tr>
+              <tr><td>Piso e marcenaria</td><td>qui 09/04</td><td>sex 10/04</td><td>0 d</td><td>Crítica</td></tr>
+              <tr><td>Treinamento da equipe</td><td>qui 23/04</td><td>sex 24/04</td><td>0 d</td><td>Crítica</td></tr>
+            </tbody>
+          </table>
+          <p>Uma única linha tem alguma folga. Se a arquiteta pedir três dias a mais no projeto, os dois primeiros são de graça e o terceiro custa um dia de reabertura — R$ 313 de aluguel mais o faturamento de um dia. Vale notar também que a compra e a marcenaria terminam na mesma quinta: existem dois caminhos críticos ao mesmo tempo, e é o pior arranjo possível, porque qualquer um dos dois atrasando move a data final sozinho.</p>
+        </div>
+        <p>Aqui cabe um aviso sobre o gantts.app, porque o comportamento surpreende quem vem do MS Project. O cálculo é <strong>as-placed</strong>: uma precedência só empurra a tarefa para depois, nunca puxa para antes. Se a marcenaria fechasse em 09/04 mas a barra da instalação estivesse posicionada em 20/04, ligar as duas não traria a instalação para o dia 10 — o vão continuaria ali, porque você o colocou de propósito. A folga que o app reporta é sempre a <strong>folga total</strong>; não existe coluna de folga livre. Para compactar de verdade, o comando é <strong>Reprogramar</strong>.</p>`],
     ['Quando usar', `<p>Em projetos com prazo, ordem e várias pessoas envolvidas: obras, lançamentos, eventos, mudanças de escritório, pesquisas, implantações de sistema. Onde a pergunta "o que depende do quê" pesa mais do que "o que faço agora".</p>
         <p>Três sinais de que o Gantt é a ferramenta certa: existe uma data de entrega que não se negocia; pelo menos algumas tarefas só podem começar depois de outras terminarem; e mais de uma pessoa ou equipe precisa combinar o próprio calendário com o das demais. Com os três presentes, nenhuma outra representação entrega a mesma informação em uma tela.</p>
         <p>Vale para escalas muito diferentes. Uma obra de doze meses num eixo semanal, um lançamento de seis semanas num eixo diário e um plano de uma semana num eixo de horas usam a mesma estrutura — o que muda é a densidade e a unidade de tempo, não a ideia. Os <a href="/pt/blog/gantt-chart-examples.html">exemplos por setor</a> mostram como as fases mudam de nome sem que a estrutura mude.</p>
@@ -57,12 +95,37 @@ const G = {
     ['Gantt, linha do tempo e Kanban', `<p>As três representações são confundidas com frequência, e cada uma responde a uma pergunta diferente.</p>
         <p>A <strong>linha do tempo</strong> é uma sequência de datas sobre um eixo, sem durações nem ligações. Serve para comunicar cinco ou seis momentos a uma diretoria. Todo Gantt contém uma linha do tempo; nenhuma linha do tempo é um Gantt.</p>
         <p>O <strong>Kanban</strong> mostra estado, não calendário: colunas de "a fazer", "fazendo" e "feito", com cartões atravessando. Responde "o que vem agora", que é a pergunta certa quando o trabalho é contínuo e não há uma data única para defender.</p>
-        <p>O <strong>Gantt</strong> responde "isso cabe até a data prometida". Regra de bolso: com prazo fixo e ordem definida, Gantt; com fluxo contínuo e prioridades móveis, Kanban; para mostrar meia dúzia de datas a quem não vai executar nada, uma linha do tempo basta.</p>`],
+        <p>O <strong>Gantt</strong> responde "isso cabe até a data prometida". Regra de bolso: com prazo fixo e ordem definida, Gantt; com fluxo contínuo e prioridades móveis, Kanban; para mostrar meia dúzia de datas a quem não vai executar nada, uma linha do tempo basta.</p>
+        <table>
+          <thead><tr><th></th><th>Gráfico de Gantt</th><th>Linha do tempo</th><th>Quadro Kanban</th></tr></thead>
+          <tbody>
+            <tr><td>Pergunta que responde</td><td>Quando cada trabalho acontece, e em que ordem?</td><td>Quais são as datas de destaque?</td><td>O que está sendo feito agora?</td></tr>
+            <tr><td>Mostra duração</td><td>Sim — o comprimento da barra é a duração</td><td>Não — os eventos são pontos</td><td>Não — cartões não têm comprimento</td></tr>
+            <tr><td>Mostra precedências</td><td>Sim, como setas entre as barras</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Calcula a data de término</td><td>Sim, a partir das durações e das ligações</td><td>Não — as datas são digitadas</td><td>Não</td></tr>
+            <tr><td>A reforma da cafeteria nele</td><td>As 10 linhas, com 24/04 calculado</td><td>Três datas: fechamento, vistoria, reabertura</td><td>"Hidráulica" parada na coluna Fazendo</td></tr>
+            <tr><td>Melhor quando</td><td>Existe prazo e uma sequência definida</td><td>Você só precisa mostrar meia dúzia de datas</td><td>O trabalho flui sem data fixa</td></tr>
+          </tbody>
+        </table>
+        <p>A confusão mais cara das três é usar Kanban num projeto com data contratual. O quadro mostra que tudo está andando e não mostra que o que está andando não cabe no calendário — e essa distinção só aparece quando as barras têm comprimento.</p>`],
     ['De onde vem o nome', `<p>De Henry Gantt, engenheiro mecânico e consultor americano que popularizou a representação por volta de 1910 a 1915, aplicando-a a planejamento de produção e, mais tarde, à construção naval durante a guerra. Uma forma parecida já havia sido desenvolvida duas décadas antes pelo polonês Karol Adamiecki, que a chamou de harmonograma, mas publicou em polonês e russo — e o trabalho permaneceu praticamente desconhecido no Ocidente.</p>
         <p>Foi a versão de Gantt que circulou pela indústria americana e europeia, e por isso é o nome dele que ficou. A representação tem mais de um século e continua sendo a visão padrão de praticamente toda ferramenta de projeto — raro para algo que fosse apenas moda.</p>`],
     ['Por onde começar', `<p>Liste primeiro as tarefas, sem datas. Depois estime as durações em dias úteis. Ligue então o que realmente espera — não o que está em sequência por acaso. Por fim, defina de cinco a dez marcos. As datas saem desses quatro passos; elas são resultado, não ponto de partida.</p>
         <p>Para um cronograma pequeno e estável, uma planilha resolve, e há um <a href="/pt/blog/gantt-chart-in-excel.html">método conhecido no Excel</a> com barras empilhadas. Acima de umas vinte tarefas, o custo de repassar datas à mão supera a familiaridade da planilha, porque nenhuma delas calcula precedências.</p>
-        <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> roda direto no navegador, sem cadastro, salva localmente no seu aparelho e exporta em PDF, PNG, XLSX e PPTX. O passo a passo completo está em <a href="/pt/blog/how-to-make-a-gantt-chart.html">como fazer um gráfico de Gantt</a>.</p>`],
+        <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> roda direto no navegador, sem cadastro, salva localmente no seu aparelho e exporta em PDF, PNG, XLSX e PPTX. O passo a passo completo está em <a href="/pt/blog/how-to-make-a-gantt-chart.html">como fazer um gráfico de Gantt</a>.</p>
+        <p>Para montar exatamente o cronograma da cafeteria, do zero, são oito movimentos:</p>
+        <ol>
+          <li><strong>Cole a lista pronta.</strong> Em <strong>✨ Colar no Gantt</strong>, uma linha por tarefa. <code>(8d)</code> define a duração, <code>after Alvarás</code> cria a predecessora, <code>!</code> no fim da linha transforma a linha num marco e <code>#</code> no começo abre uma fase. A palavra <code>after</code> é sintaxe literal e continua em inglês mesmo com a interface em português.</li>
+          <li><strong>Ou monte linha a linha.</strong> <strong>＋ Tarefa</strong> para trabalho com duração, <strong>◆ Marco</strong> para a vistoria e a reabertura, <strong>▣ Grupo</strong> para separar Obra de Retomada.</li>
+          <li><strong>Ligue as precedências.</strong> Na coluna <strong>Depois de</strong>, digite os números das linhas: <code>1, 2</code> na compra de equipamentos, <code>3, 6</code> na instalação. Ou arraste do pontinho na borda de uma barra até a barra que deve esperar.</li>
+          <li><strong>Marque os feriados.</strong> Em <strong>Calendário de trabalho</strong>, inclua 03/04 e 21/04 — e a emenda de 20/04, se a decisão for emendar. Sem isso, o cronograma promete uma reabertura em 22/04 que não existe.</li>
+          <li><strong>Ligue <strong>Fins de semana</strong> e <strong>Hoje</strong>.</strong> O sombreado de sábado e domingo é o jeito mais rápido de flagrar uma duração que caiu errada, e a linha de hoje responde "onde estamos" antes de qualquer explicação.</li>
+          <li><strong>Ative <strong>Caminho crítico</strong>.</strong> A cadeia crítica aparece listrada — a legenda diz literalmente <em>listrado = caminho crítico</em>. Aqui ela passa por alvarás, demolição, hidráulica, marcenaria, instalação, vistoria e treinamento.</li>
+          <li><strong>Congele o plano.</strong> <strong>Linha de base</strong> grava as datas aprovadas. O aviso <em>Linha de base definida — os atrasos passam a ser medidos em relação a este plano</em> confirma. Sem ela, daqui a um mês ninguém consegue dizer o quanto a obra andou para o lado.</li>
+          <li><strong>Exporte.</strong> <strong>⬇ Exportar</strong> gera <strong>📄 Documento PDF</strong> para o proprietário do ponto, <strong>📊 Excel (.xlsx)</strong> para o contador e <strong>📽 PowerPoint (.pptx)</strong> para a reunião com os sócios.</li>
+        </ol>
+        <!--FIG:milestone|Marco tem duração zero e vira losango: a vistoria da Vigilância Sanitária é um instante, não uma barra.-->
+        <p>Uma última observação sobre marcos, porque é a dúvida que mais aparece. Marco tem duração zero e por isso <strong>não pode ser redimensionado</strong> — não existe arrastar a borda de um losango. Se a vistoria da Vigilância Sanitária costuma tomar dois dias de agente na loja, isso é uma tarefa de dois dias; o marco é o carimbo no fim dela. Confundir os dois é o erro que faz uma fase inteira perder o ponto de decisão que ela deveria destacar.</p>`],
   ],
   callout: 'Um gráfico de Gantt sem precedências é só uma tabela colorida. Todo o valor vem de o cronograma recalcular sozinho quando algo muda — e, em projeto real, algo sempre muda.',
   faq: [
@@ -86,6 +149,28 @@ const G = {
   sections: [
     ['O que ter em mãos antes de começar', `<p>Três coisas, e nenhuma delas é uma data. Primeiro, o <strong>objetivo e o prazo</strong>: o que significa "pronto" e até quando. Segundo, quem decide — porque aprovações consomem calendário e quase nunca aparecem no plano inicial. Terceiro, uma noção grosseira do <strong>tamanho do trabalho</strong>, em semanas, não em horas.</p>
         <p>Estimativas perfeitas não são pré-requisito. Um cronograma é feito para ser revisado; o que ele precisa no dia um é estar completo em escopo, não preciso em números. Se a representação ainda é nova para você, vale ler antes <a href="/pt/blog/what-is-a-gantt-chart.html">o que é um gráfico de Gantt</a>, porque os passos abaixo usam os quatro elementos direto.</p>`],
+    ['O plano que vamos construir', `<p>Para os sete passos não ficarem no abstrato, todos eles serão aplicados ao mesmo projeto: a reformulação da loja virtual da <strong>Terrafina</strong>, uma marca mineira de temperos e ervas de Belo Horizonte, que precisa entrar no ar com folga antes da Black Friday. Gerente do projeto: Douglas Peixoto. Durações em dias úteis, com o calendário brasileiro de 2026 aplicado.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>#</th><th>Tarefa</th><th>Duração</th><th>Depois de</th><th>Início</th><th>Fim</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Auditoria de conteúdo e catálogo</td><td>5 d</td><td>—</td><td>seg 03/08</td><td>sex 07/08</td></tr>
+              <tr><td>2</td><td>Arquitetura de informação e wireframes</td><td>6 d</td><td>1</td><td>seg 10/08</td><td>seg 17/08</td></tr>
+              <tr><td>3</td><td>Redação de textos e fichas de produto</td><td>10 d</td><td>1</td><td>seg 10/08</td><td>sex 21/08</td></tr>
+              <tr><td>4</td><td>Design visual</td><td>8 d</td><td>2</td><td>ter 18/08</td><td>qui 27/08</td></tr>
+              <tr><td>5</td><td><strong>Design aprovado</strong></td><td>0 d</td><td>4</td><td colspan="2">qui 27/08</td></tr>
+              <tr><td>6</td><td>Desenvolvimento do front-end</td><td>12 d</td><td>5</td><td>sex 28/08</td><td>ter 15/09</td></tr>
+              <tr><td>7</td><td>Carga de conteúdo e cadastro de SKUs</td><td>6 d</td><td>3, 6</td><td>qua 16/09</td><td>qua 23/09</td></tr>
+              <tr><td>8</td><td>Testes e correções</td><td>7 d</td><td>7</td><td>qui 24/09</td><td>sex 02/10</td></tr>
+              <tr><td>9</td><td>Homologação com o cliente</td><td>4 d</td><td>8</td><td>seg 05/10</td><td>qui 08/10</td></tr>
+              <tr><td>10</td><td><strong>Entrada no ar</strong></td><td>0 d</td><td>9</td><td colspan="2">sex 09/10</td></tr>
+            </tbody>
+          </table>
+          <p>Dez linhas, dez semanas, uma data de término calculada: sexta-feira, 09/10. Ninguém digitou essa data. Ela é a soma das durações ao longo da cadeia mais longa e vai se mover sozinha no instante em que qualquer uma dessas durações mudar.</p>
+        </div>
+        <!--FIG:steps|A ordem em que um cronograma se constrói: tarefas, durações, ligações, marcos — datas por último.-->
+        <p>O segundo semestre de 2026 tem uma peculiaridade que castiga cronograma de dez semanas: <strong>três feriados nacionais caem numa segunda-feira em sequência</strong> — Independência em 07/09, Nossa Senhora Aparecida em 12/10 e Finados em 02/11. O primeiro já está embutido na tabela acima e é o motivo de o front-end fechar em ter 15/09 e não na sexta anterior. Os outros dois vão aparecer daqui a pouco, quando o plano começar a escorregar.</p>
+        <p>E existe uma data que não se negocia: a Black Friday de 2026 cai em 27/11. Entrar no ar em 09/10 deixa sete semanas de gordura antes do pico de tráfego — tempo para indexar as páginas novas no Google, rodar a primeira campanha e descobrir o gargalo de checkout com pouca gente na loja, em vez de com muita.</p>`],
     ['1. Liste as tarefas, sem datas', `<p>Escreva primeiro o que precisa ser feito. Sem datas, sem ordem, sem responsáveis. Só o trabalho. Nessa etapa a única meta é não esquecer nada — ordenar é trivial depois, lembrar não é.</p>
         <p>O tamanho certo fica entre um dia e um mês por tarefa. Menos que isso é lista de afazeres; mais que isso não é tarefa, é fase. Um teste rápido: você consegue nomear uma pessoa responsável e descrever "pronto" em uma frase? Se não consegue, ou a tarefa é grande demais e precisa ser dividida, ou é vaga demais e precisa ser definida.</p>
         <p>Escreva com verbo: "redigir o texto da página inicial", "revisar com o jurídico", "publicar em produção". "Página inicial" não é tarefa, é assunto — e assunto não tem duração. Para um projeto de três meses, espere chegar entre 25 e 50 itens nessa primeira varredura.</p>`],
@@ -98,7 +183,18 @@ const G = {
     ['4. Ligue as precedências', `<p>Ligue o que de fato espera. O teste: se A terminar antes, B pode começar antes? Se sim, a ligação é real. Se não, você apenas copiou a ordem da lista, e o cronograma vai propagar atrasos que não existem.</p>
         <p>O tipo padrão é <strong>Término-Início</strong> e ele cobre a grande maioria dos casos. Início-Início serve para trabalhos que arrancam juntos, normalmente com retardo — a homologação começa três dias depois do início do desenvolvimento. Os <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos</a> existem, mas usar os raros sem necessidade só dificulta a leitura.</p>
         <p>Não ligue tudo com tudo. Um cronograma em que cada tarefa depende da anterior é uma corrente sem paralelismo — quase sempre irreal e sempre pessimista, porque impede que trabalhos independentes corram lado a lado. Uma pista concreta: se o cronograma tem 40 tarefas e 39 ligações numa única linha, ele foi montado no automático.</p>
-        <p>E não digite datas fixas para conseguir o resultado que você quer. Uma data travada não se move quando a predecessora atrasa, e é a causa mais comum de um cronograma que continua bonito depois de ter deixado de ser verdadeiro.</p>`],
+        <p>E não digite datas fixas para conseguir o resultado que você quer. Uma data travada não se move quando a predecessora atrasa, e é a causa mais comum de um cronograma que continua bonito depois de ter deixado de ser verdadeiro.</p>
+        <!--FIG:deps|Os quatro tipos de ligação e o que cada um faz quando a predecessora escorrega.-->
+        <table>
+          <thead><tr><th>Tipo</th><th>Regra</th><th>Onde ele cabe na Terrafina</th><th>Com que frequência você precisa</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Término-Início (TI)</strong></td><td>B não começa antes de A terminar</td><td>Front-end depois do design aprovado — as nove ligações deste plano são todas assim</td><td>Quase sempre</td></tr>
+            <tr><td><strong>Início-Início (II)</strong></td><td>B não começa antes de A começar</td><td>Se a redação arrancasse junto com os wireframes, em vez de depois da auditoria</td><td>De vez em quando, para trabalho sobreposto</td></tr>
+            <tr><td><strong>Término-Término (TT)</strong></td><td>B não termina antes de A terminar</td><td>Os testes não podem fechar antes de o último SKU estar cadastrado</td><td>Raramente</td></tr>
+            <tr><td><strong>Início-Término (IT)</strong></td><td>B não termina antes de A começar</td><td>Em lugar nenhum. Existe basicamente para passagem de turno</td><td>Quase nunca</td></tr>
+          </tbody>
+        </table>
+        <p>Na notação de texto as siglas continuam em inglês — <code>FS</code>, <code>SS</code>, <code>FF</code> e <code>SF</code> —, mesmo com a interface em português. É herança das ferramentas americanas e não vale a pena lutar contra.</p>`],
     ['5. Defina os marcos', `<p>De cinco a dez para um projeto de vários meses. Um marco assinala uma decisão, uma aprovação ou uma condição cumprida — não o fim de uma tarefa qualquer. "Contrato assinado", "projeto aprovado", "sistema em produção" são marcos. "Terminar de redigir" não é.</p>
         <p>Marcos têm duração zero e aparecem como losango. Dois lugares em que sempre valem a pena: no fim de cada fase, para que a passagem entre fases seja um evento e não uma transição silenciosa, e na data de entrega final, para que a linha de chegada esteja sempre visível no desenho.</p>
         <p>Eles também servem de âncora para precedências: ligar cinco tarefas ao marco "projeto aprovado" é mais legível, e mais fácil de manter, do que ligar cada uma delas às três tarefas de aprovação individualmente.</p>`],
@@ -110,12 +206,42 @@ const G = {
         <p>Por fim, revise o cronograma com quem vai executar. Um cronograma que só uma pessoa conhece não é cronograma, é opinião. E grave uma <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> antes de começar: sem ela, daqui a dois meses não haverá como dizer o quanto o plano mudou.</p>`],
     ['Com qual ferramenta?', `<p>Uma planilha resolve projetos pequenos. Há um <a href="/pt/blog/gantt-chart-in-excel.html">método conhecido no Excel</a>, com barras empilhadas e uma série invisível, e ele funciona bem até umas vinte linhas. Acima disso fica trabalhoso, porque as precedências não recalculam sozinhas e cada atraso vira uma rodada de digitação manual.</p>
         <p>O PowerPoint serve para apresentar, não para planejar: um cronograma feito de retângulos é rápido de montar e impossível de manter. Ferramentas corporativas resolvem tudo, ao custo de licença, instalação e uma curva de aprendizado desproporcional a um projeto de trinta tarefas.</p>
-        <p>Uma ferramenta dedicada e leve assume o recálculo. O <a href="/pt/app.html">gantts.app</a> roda direto no navegador, sem cadastro, salva localmente no seu aparelho, marca o caminho crítico sozinho e exporta em PDF, PNG, XLSX e PPTX quando alguém pedir o arquivo.</p>`],
+        <p>Uma ferramenta dedicada e leve assume o recálculo. O <a href="/pt/app.html">gantts.app</a> roda direto no navegador, sem cadastro, salva localmente no seu aparelho, marca o caminho crítico sozinho e exporta em PDF, PNG, XLSX e PPTX quando alguém pedir o arquivo.</p>
+        <p>Os sete passos acima, traduzidos em cliques, para montar o plano da Terrafina do zero:</p>
+        <ol>
+          <li><strong>Despeje a lista.</strong> Abra <strong>✨ Colar no Gantt</strong> e cole as dez linhas. <code>(12d)</code> define a duração, <code>after Design aprovado</code> cria a ligação, <code>!</code> no fim da linha vira marco e <code>#</code> no começo abre uma fase. Confere o toast <em>Tarefas adicionadas: 10</em> e siga.</li>
+          <li><strong>Agrupe em fases.</strong> <strong>▣ Grupo</strong> cria as tarefas resumo — Descoberta, Criação, Construção, Entrega. Nunca digite datas num grupo: as dele são calculadas pelas filhas.</li>
+          <li><strong>Ajuste durações.</strong> Duplo clique na linha abre a gaveta, com <strong>Início</strong>, <strong>Fim</strong>, <strong>Duração</strong> e os atalhos de <strong>Ajustar</strong>: <em>Um dia útil a mais</em>, <em>Uma semana depois</em>.</li>
+          <li><strong>Ligue o que espera.</strong> Coluna <strong>Depois de</strong>, pelos números de linha: <code>3, 6</code> na carga de conteúdo. Ou arraste do pontinho na borda de uma barra até a outra.</li>
+          <li><strong>Coloque os feriados.</strong> <strong>Calendário de trabalho</strong>, e marque 07/09, 12/10 e 02/11. É o passo que mais gente pula e o que mais estraga previsão em cronograma brasileiro de segundo semestre.</li>
+          <li><strong>Distribua responsáveis.</strong> Coluna <strong>Responsável</strong>, ou o campo na gaveta. Depois abra <strong>Carga de trabalho</strong> para ver quem ficou com três barras na mesma semana.</li>
+          <li><strong>Leia o caminho crítico e congele.</strong> Marque <strong>Caminho crítico</strong> — a cadeia aparece listrada — e grave <strong>Linha de base</strong> antes do primeiro dia de trabalho.</li>
+          <li><strong>Acompanhe semanalmente.</strong> <strong>Exibição › Próximas semanas</strong> filtra o cronograma para o que começa ou termina no horizonte curto, que é a única visão que a reunião de segunda-feira realmente precisa.</li>
+        </ol>
+        <p>Um comportamento que vale conhecer antes de estranhar: no gantts.app uma precedência só empurra a tarefa para <em>depois</em>, nunca puxa para antes. O cálculo é as-placed — a tarefa começa na data mais tardia entre onde você colocou a barra e onde as predecessoras permitem. Se você quer mesmo compactar o plano até as datas mais cedo possíveis, o comando é <strong>Reprogramar</strong>, que trata as tarefas sem ligação como âncoras.</p>`],
     ['O erro mais comum', `<p>Detalhar demais. Um cronograma de 300 linhas não é mantido, e cronograma desatualizado é pior do que nenhum, porque ainda se confia nele. Se o projeto realmente exige esse nível, divida em cronogramas por fase e mantenha um cronograma-mestre só com os resumos.</p>
         <p>Os outros quatro erros recorrentes: começar pelas datas em vez de pelas tarefas; ligar tudo numa corrente única e perder o paralelismo; esconder esperas dentro das durações; e não gravar linha de base, o que torna impossível medir desvio depois. Todos aparecem em <a href="/pt/blog/gantt-chart-mistakes.html">erros comuns de cronograma</a>.</p>`],
     ['E depois?', `<p>Cronograma é ferramenta, não documento. Atualize semanalmente, sempre no mesmo dia: percentual concluído das tarefas em andamento, datas reais das concluídas, e o que mudou de estimativa nas que ainda não começaram.</p>
         <p>A leitura que importa em cada atualização é dupla: o caminho crítico ainda é o mesmo, e quanta folga já foi consumida nos outros caminhos. Uma tarefa com três dias de folga que atrasou quatro acabou de virar crítica, e isso muda onde a atenção precisa estar na semana seguinte.</p>
-        <p>Compare com a linha de base uma vez por mês. Não para justificar desvio, mas para descobrir o padrão: se as tarefas de aprovação atrasam sistematicamente, o próximo cronograma já nasce com estimativas melhores.</p>`],
+        <p>Compare com a linha de base uma vez por mês. Não para justificar desvio, mas para descobrir o padrão: se as tarefas de aprovação atrasam sistematicamente, o próximo cronograma já nasce com estimativas melhores.</p>
+        <!--FIG:baseline|A linha de base é a fotografia do plano aprovado: sem ela não existe desvio, só uma data nova.-->
+        <p>A Terrafina no fim da sexta semana, com a linha de base gravada em 03/08:</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>Tarefa</th><th>Fim na linha de base</th><th>Real / previsto</th><th>Desvio</th><th>% concluído</th></tr></thead>
+            <tbody>
+              <tr><td>Auditoria de conteúdo</td><td>sex 07/08</td><td>sex 07/08</td><td>0 d</td><td>100%</td></tr>
+              <tr><td>Arquitetura e wireframes</td><td>seg 17/08</td><td>qua 19/08</td><td>+2 d</td><td>100%</td></tr>
+              <tr><td>Design visual</td><td>qui 27/08</td><td>seg 31/08</td><td>+2 d</td><td>100%</td></tr>
+              <tr><td>Redação de textos</td><td>sex 21/08</td><td>qui 03/09</td><td>+9 d</td><td>100%</td></tr>
+              <tr><td>Front-end</td><td>ter 15/09</td><td>qui 17/09</td><td>+2 d</td><td>40%</td></tr>
+              <tr><td><strong>Entrada no ar</strong></td><td>sex 09/10</td><td>ter 13/10</td><td>+2 d</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p>Leia a coluna de desvio e a história se conta sozinha. A redação está nove dias atrasada e não custa <em>nada</em>, porque tinha 16 dias úteis de folga total para gastar. Os dois dias perdidos nos wireframes custam exatamente dois dias na entrada no ar, porque aquela tarefa estava no caminho crítico. Mesmo tipo de atraso, preços absurdamente diferentes — e é essa a razão inteira de o passo 7 existir.</p>
+          <p>Repare no detalhe do calendário: dois dias úteis de desvio viram <em>quatro</em> dias corridos, porque Nossa Senhora Aparecida cai na segunda 12/10. A entrada no ar sai de sex 09/10 e vai para ter 13/10. As sete semanas de folga até a Black Friday viram seis e meia — ainda confortável, mas foi o primeiro pedaço da reserva a ser gasto sem que ninguém decidisse gastá-lo.</p>
+        </div>
+        <p>Um alerta sobre a folga que você lê na tela: o gantts.app reporta <strong>folga total</strong>, e só ela. Não há coluna de folga livre. Folga total é compartilhada ao longo da cadeia — se a redação e a carga de conteúdo mostram folga parecida, não são duas reservas, é a mesma reserva contada duas vezes, e quem gastar primeiro deixa o outro em zero.</p>`],
   ],
   callout: 'Nunca comece pelas datas. Tarefas, durações e precedências produzem as datas sozinhas — e um cronograma feito assim se defende. Um cronograma calculado de trás para frente a partir de uma data desejada não sobrevive à primeira pergunta.',
   faq: [
@@ -158,18 +284,19 @@ const G = {
     ['Folga total e folga livre', `<p>A folga total de uma tarefa é o início mais tarde menos o início mais cedo: quanto ela pode atrasar sem mover o fim do projeto. Tarefas com folga zero formam o caminho crítico. Sempre existe pelo menos um caminho, e em cronogramas muito ligados costuma haver vários em paralelo.</p>
         <p>Existe uma segunda folga, menos citada e mais útil no dia a dia: a <strong>folga livre</strong>, que é quanto a tarefa pode atrasar sem mover a <em>sucessora imediata</em>. Ela é sempre menor ou igual à folga total. A diferença importa porque a folga total costuma ser compartilhada: se três tarefas em sequência têm 5 dias de folga total cada, não são 15 dias disponíveis — são os mesmos 5 dias, e quem gastar primeiro deixa as outras em zero.</p>
         <p>Daí a regra prática: folga total é um número para quem cuida do cronograma inteiro; folga livre é o número que se pode prometer a quem executa uma tarefa específica.</p>`],
-    ['Um exemplo resolvido com seis tarefas', `<p>Um projeto pequeno, seis tarefas, durações em dias úteis. As predecessoras indicam o que precisa terminar antes.</p>
+    ['Um exemplo resolvido com seis tarefas', `<p>Um projeto pequeno e real: a <strong>parada programada da Metalúrgica Bracaú</strong>, em Joinville, para trocar o quadro geral de baixa tensão do galpão de estamparia. Seis tarefas, durações em dias úteis, responsável técnico o engenheiro Anderson Kruger, com ART recolhida no CREA-SC. As predecessoras indicam o que precisa terminar antes.</p>
         <table>
           <thead><tr><th>Tarefa</th><th>Duração</th><th>Predecessoras</th></tr></thead>
           <tbody>
-            <tr><td>A — Levantamento</td><td>3</td><td>—</td></tr>
-            <tr><td>B — Projeto detalhado</td><td>4</td><td>A</td></tr>
-            <tr><td>C — Compras</td><td>2</td><td>A</td></tr>
-            <tr><td>D — Execução</td><td>5</td><td>B</td></tr>
-            <tr><td>E — Preparação do local</td><td>6</td><td>C</td></tr>
-            <tr><td>F — Instalação e testes</td><td>3</td><td>D, E</td></tr>
+            <tr><td>A — Levantamento de carga e liberação da área</td><td>3</td><td>—</td></tr>
+            <tr><td>B — Projeto elétrico e ART</td><td>4</td><td>A</td></tr>
+            <tr><td>C — Compra de cabos e disjuntores</td><td>2</td><td>A</td></tr>
+            <tr><td>D — Montagem do novo quadro geral</td><td>5</td><td>B</td></tr>
+            <tr><td>E — Preparação da base e malha de aterramento</td><td>6</td><td>C</td></tr>
+            <tr><td>F — Comissionamento e energização</td><td>3</td><td>D, E</td></tr>
           </tbody>
         </table>
+        <p>Vale registrar por que a parada foi marcada para agosto. A primeira proposta era começar em seg 09/11/2026, e ela foi descartada na primeira reunião: quinze dias úteis a partir dali atravessariam <strong>Finados em seg 02/11</strong> e a <strong>Consciência Negra em sex 20/11</strong>, esticando três semanas de parada para quase quatro semanas de calendário. Agosto de 2026 não tem feriado nacional, e cada dia de galpão parado custa à Bracaú cerca de <strong>R$ 48.000</strong> em produção não faturada. A escolha do mês foi, sozinha, a decisão mais valiosa do planejamento — e foi tomada olhando o calendário, não o cronograma.</p>
         <p>Há dois caminhos do início ao fim: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 dias</strong>, e <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 dias</strong>. O mais longo dá o prazo. Mas o valor do método não é achar o maior número: é saber quanta folga cada tarefa fora dele realmente tem.</p>
         <p><strong>Cálculo para frente</strong> (início mais cedo, depois término mais cedo):</p>
         <ul>
@@ -198,7 +325,23 @@ const G = {
           </tbody>
         </table>
         <p>O caminho crítico é <strong>A → B → D → F</strong>, exatamente o caminho de 15 dias. C e E têm <strong>um dia de folga cada</strong> — e é um dia só, compartilhado pela cadeia inteira: se C atrasar um dia, E perde a folga dela na mesma hora.</p>
-        <p>Traduzindo para o calendário, com início na segunda-feira 3 de agosto de 2026 e semana de cinco dias úteis: A vai de 3 a 5 de agosto, B de 6 a 11, D de 12 a 18 e F de 19 a 21. Entrega na sexta-feira, 21 de agosto. C ocupa 6 e 7 de agosto e E vai de 10 a 17 — um dia antes do que seria estritamente necessário.</p>`],
+        <!--FIG:cpm|Duas cadeias, uma crítica: a mais longa manda na data e a outra tem um dia de sobra.-->
+        <div class="worked">
+          <p><strong>A conta traduzida para o calendário da Bracaú.</strong> Início na segunda-feira 03/08/2026, semana de cinco dias úteis, agosto sem feriado nacional:</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Início</th><th>Fim</th><th>Folga</th><th>Quanto vale um dia de atraso</th></tr></thead>
+            <tbody>
+              <tr><td>A — Levantamento e liberação</td><td>seg 03/08</td><td>qua 05/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>B — Projeto elétrico e ART</td><td>qui 06/08</td><td>ter 11/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>C — Compra de cabos e disjuntores</td><td>qui 06/08</td><td>sex 07/08</td><td>1</td><td>Nada no primeiro dia; R$ 48.000 no segundo</td></tr>
+              <tr><td>D — Montagem do novo quadro</td><td>qua 12/08</td><td>ter 18/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>E — Base e malha de aterramento</td><td>seg 10/08</td><td>seg 17/08</td><td>1</td><td>Nada no primeiro dia; R$ 48.000 no segundo</td></tr>
+              <tr><td>F — Comissionamento e energização</td><td>qua 19/08</td><td>sex 21/08</td><td>0</td><td>R$ 48.000</td></tr>
+            </tbody>
+          </table>
+          <p>Religamento na sexta-feira, 21/08. A coluna da direita é a razão inteira de existir o método: os mesmos R$ 48.000 por dia estão em jogo em quatro das seis tarefas e em nenhuma das outras duas — até o segundo dia. Colocar dois eletricistas a mais na malha de aterramento, que é a tarefa mais visível da obra, não antecipa um único minuto de religamento. Ganhar um dia na montagem do quadro vale R$ 48.000.</p>
+          <p>E o um dia de folga de C e E é <em>um</em> dia, não dois. Se o fornecedor de disjuntores atrasar a entrega em um dia, C consome a folga sozinha e E fica crítica junto com o resto. O supervisor que lê "1 dia de folga" em duas linhas e conclui que tem dois dias de margem acabou de gastar R$ 48.000 numa soma que a planilha nunca fez.</p>
+        </div>`],
     ['O que isso muda na prática', `<p>Mostra onde o esforço rende. Colocar mais duas pessoas em E não antecipa nada: E já tem folga e terminaria antes de F começar de qualquer jeito. Ganhar um dia em D ganha um dia no fim do projeto. É a mesma quantidade de esforço com resultados completamente diferentes.</p>
         <p>Muda também o acompanhamento: em vez de percorrer todas as tarefas, basta perguntar se as quatro críticas estão no prazo e quanto da folga de C e E já foi consumido.</p>
         <p>E alerta para a armadilha central: se C atrasar dois dias, o caminho A → C → E → F passa a durar 16 dias e se torna o novo caminho crítico, enquanto B e D ganham folga. O caminho crítico não é propriedade fixa do cronograma, é um retrato do momento — ele se desloca assim que alguma duração muda.</p>`],
@@ -216,7 +359,23 @@ const G = {
           <li><strong>Esperas embutidas em retardos.</strong> Cura de concreto e prazo de aprovação consomem calendário. Como tarefas visíveis, entram no cálculo e aparecem no desenho; como retardo dentro de uma caixa de diálogo, ninguém encontra depois.</li>
         </ul>`],
     ['Calcular sem fazer as passagens à mão', `<p>Fazer as duas passagens no papel uma vez é o melhor jeito de entender o método. Refazer a cada mudança de estimativa é inviável: seis tarefas cabem numa folha, sessenta não.</p>
-        <p>O <a href="/pt/app.html">gantts.app</a> marca o caminho crítico sozinho assim que existem tarefas e precedências, roda no navegador sem cadastro e exporta em PDF, PNG, XLSX e PPTX. Mude uma duração e o caminho se redesenha na hora — inclusive quando ele muda de lugar. Se as precedências ainda não estão claras, comece pelos <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a>.</p>`],
+        <p>O <a href="/pt/app.html">gantts.app</a> marca o caminho crítico sozinho assim que existem tarefas e precedências, roda no navegador sem cadastro e exporta em PDF, PNG, XLSX e PPTX. Mude uma duração e o caminho se redesenha na hora — inclusive quando ele muda de lugar. Se as precedências ainda não estão claras, comece pelos <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a>.</p>
+        <p>Para montar a parada da Bracaú e ler o caminho crítico dela, são sete movimentos:</p>
+        <ol>
+          <li><strong>Cole as seis linhas.</strong> <strong>✨ Colar no Gantt</strong> aceita <code>(5d)</code> para a duração e <code>after Projeto elétrico</code> para a ligação, tudo de uma vez.</li>
+          <li><strong>Ligue as convergências.</strong> Na coluna <strong>Depois de</strong>, a linha F recebe <code>4, 5</code>. É a convergência que produz a data final — e é sempre nela que o cálculo manual erra, tomando o menor em vez do maior.</li>
+          <li><strong>Confira o calendário.</strong> <strong>Calendário de trabalho</strong> e <strong>Fins de semana</strong> ligado. Foi aqui que a decisão de agosto em vez de novembro se justificou; deixe-a registrada nas <strong>Notas</strong> da primeira tarefa.</li>
+          <li><strong>Marque <strong>Caminho crítico</strong>.</strong> A cadeia A → B → D → F aparece listrada; a legenda diz literalmente <em>listrado = caminho crítico</em>.</li>
+          <li><strong>Leia a folga.</strong> As tarefas fora da listra são as que têm sobra. Uma advertência importante: o app reporta <strong>folga total</strong> e apenas ela — <em>não existe coluna de folga livre</em>. Todo número de folga que você vê na tela é compartilhado com a cadeia, e é por isso que o supervisor do exemplo se enganou.</li>
+          <li><strong>Teste o que dói.</strong> Aumente em um dia a duração da tarefa que tem mais chance de estourar e veja o que se moveu. Ctrl+Z desfaz. Cinco minutos de teste valem mais que uma hora de reunião sobre risco.</li>
+          <li><strong>Congele.</strong> <strong>Linha de base</strong> antes do primeiro dia da parada, e a comparação planejado × real do dia seguinte vira uma coluna em vez de uma discussão.</li>
+        </ol>
+        <!--FIG:float|A folga total pertence à cadeia, não à tarefa: dois dias mostrados em duas linhas costumam ser o mesmo dia.-->`],
+    ['Onde o cálculo do gantts.app difere do livro-texto', `<p>Uma diferença importante e deliberada, que vale entender antes de estranhar o comportamento na tela. O CPM de livro-texto reposiciona cada tarefa na sua data mais cedo possível: se você encurtar o projeto elétrico de quatro para dois dias, a montagem do quadro é <em>puxada</em> para trás automaticamente.</p>
+        <p>Aqui não. O cálculo é <strong>as-placed</strong>, ou seja, parte de onde a barra foi colocada: uma tarefa começa na data mais tardia entre a posição em que você a arrastou e a data que as predecessoras permitem. <strong>Uma precedência só empurra a tarefa para depois, nunca puxa para antes.</strong> Ligue uma tarefa cuja barra já esteja bem depois da predecessora e nada se move; o vão continua onde estava.</p>
+        <p>Isso é intencional, e o exemplo da Bracaú mostra por quê. A malha de aterramento não pode começar em qualquer dia: a empreiteira de civil só tem equipe disponível a partir de seg 10/08, e o caminhão-munck está contratado para aquela semana. Uma barra posicionada de propósito por causa de disponibilidade real não deve ser sugada para trás por uma ligação que existe para efeito de cálculo. O cronograma que respeita a posição que você escolheu é o que continua verdadeiro depois da terceira revisão.</p>
+        <p>Quando você <em>quiser</em> mesmo o comportamento de livro-texto, o comando é <strong>Reprogramar</strong>: ele ignora onde as tarefas dependentes estão e puxa cada uma para a data mais cedo que as predecessoras permitem, tratando as tarefas sem ligação como âncoras. É a ferramenta certa para responder à pergunta clássica de reunião de parada — "se tudo correr no limite do possível, qual é a data mais cedo de religamento?". Rode, olhe o número e desfaça se a resposta era só informativa.</p>
+        <p>A segunda diferença já foi dita mas merece repetição, porque é a que mais custa dinheiro: o app mostra <strong>folga total</strong> e não tem coluna de folga livre. Folga total é o número de quem cuida do cronograma inteiro. Antes de prometer três dias de margem ao eletricista responsável por uma tarefa específica, confira quem mais está compartilhando aquela mesma folga na cadeia.</p>`],
   ],
   callout: 'O caminho crítico muda durante o projeto. Uma tarefa com três dias de folga que atrasa quatro passa a ser crítica, e outra que era crítica ganha folga. Por isso ele não se calcula uma vez no início, mas a cada atualização do cronograma.',
   faq: [
@@ -340,6 +499,30 @@ const G = {
   lead: 'Um <strong>gráfico de Gantt</strong> muda de aparência conforme o setor — não pela forma, mas pelo agrupamento. Oito exemplos, com as fases realmente usadas, a escala de tempo adequada e a tarefa que costuma aparecer no caminho crítico.',
   figIntro: 'A mesma representação, oito agrupamentos bem diferentes:',
   sections: [
+    ['Um exemplo inteiro: o Fórum Terra Viva, em Fortaleza', `<p>Antes das oito descrições por setor, um exemplo completo, com todas as linhas e todas as datas — porque é olhando um plano fechado que se entende o que as descrições estão descrevendo. O <strong>Fórum Terra Viva</strong> é o congresso anual do Instituto Piatã, dois dias no Centro de Eventos do Ceará, em Fortaleza, com 900 inscritos previstos. Coordenação: Vivian Aragão. Durações em dias úteis, feriados de 2026 aplicados.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>#</th><th>Linha</th><th>Duração</th><th>Depois de</th><th>Início</th><th>Fim</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Orçamento e pré-seleção de locais</td><td>10 d</td><td>—</td><td>seg 01/06</td><td>ter 16/06</td></tr>
+              <tr><td>2</td><td><strong>Contrato do local assinado</strong></td><td>0 d</td><td>1</td><td colspan="2">ter 16/06</td></tr>
+              <tr><td>3</td><td>Prospecção e confirmação de palestrantes</td><td>25 d</td><td>2</td><td>qua 17/06</td><td>ter 21/07</td></tr>
+              <tr><td>4</td><td>Contratos de buffet e audiovisual</td><td>12 d</td><td>2</td><td>qua 17/06</td><td>qui 02/07</td></tr>
+              <tr><td>5</td><td>Site de inscrições</td><td>8 d</td><td>2</td><td>qua 17/06</td><td>sex 26/06</td></tr>
+              <tr><td>6</td><td><strong>Inscrições abertas</strong></td><td>0 d</td><td>3, 5</td><td colspan="2">qua 22/07</td></tr>
+              <tr><td>7</td><td>Campanha de divulgação</td><td>45 d</td><td>6</td><td>qua 22/07</td><td>qua 23/09</td></tr>
+              <tr><td>8</td><td>Programação e roteiro do evento</td><td>10 d</td><td>3</td><td>qua 22/07</td><td>ter 04/08</td></tr>
+              <tr><td>9</td><td>Impressão de material e sinalização</td><td>6 d</td><td>8</td><td>qua 05/08</td><td>qua 12/08</td></tr>
+              <tr><td>10</td><td>Número final de convidados para o buffet</td><td>2 d</td><td>7</td><td>qui 24/09</td><td>sex 25/09</td></tr>
+              <tr><td>11</td><td>Ensaio geral</td><td>2 d</td><td>9, 10</td><td>ter 20/10</td><td>qua 21/10</td></tr>
+              <tr><td>12</td><td><strong>Dia do congresso</strong></td><td>0 d</td><td>11</td><td colspan="2">qui 22/10</td></tr>
+            </tbody>
+          </table>
+          <p>A cadeia crítica é 1 → 2 → 3 → 6 → 7 → 10 e ela aterrissa em <strong>sexta-feira, 25/09</strong>. O congresso é em 22/10. Aquele vão de quase quatro semanas é toda a contingência do plano, e é o número mais útil do gráfico inteiro — o único que responde "quanto de imprevisto ainda cabe aqui" sem ninguém precisar chutar.</p>
+        </div>
+        <!--FIG:bars|Doze linhas, duas convergências e um vão de contingência antes da data que não se move.-->
+        <p>Dois detalhes do calendário brasileiro fazem trabalho real nessa tabela. <strong>Corpus Christi cai em qui 04/06/2026</strong>, e o Instituto emenda a sexta 05/06 como sempre faz — são dois dias úteis a menos logo na primeira tarefa, que é justamente a primeira do caminho crítico. Sem a emenda, o contrato do local seria assinado em sex 12/06 e tudo o mais andaria uma semana para a frente de graça. E <strong>Nossa Senhora Aparecida cai em seg 12/10</strong>, dentro do vão de contingência: as quatro semanas de calendário entre 25/09 e 22/10 valem, na prática, 18 dias úteis. Contingência medida em semanas de calendário superestima sistematicamente a reserva que se tem.</p>
+        <p>Repare também em como o dinheiro entra pela linha 10. O contrato do Centro de Eventos fixa o número final de convidados 20 dias antes, e cada cadeira a mais depois disso custa R$ 145 no aditivo de buffet. Não é uma barra qualquer: é o momento em que a campanha de divulgação vira compromisso financeiro. Um evento com 900 inscritos e 60 confirmações tardias é R$ 8.700 que não estavam no orçamento.</p>`],
     ['Obra', `<p>Fases: projeto e licenças, terraplenagem, estrutura, cobertura e vedação, acabamentos, instalações, entrega. Escala semanal, horizonte de 8 a 24 meses, tipicamente de 40 a 80 tarefas.</p>
         <p>O caminho crítico passa quase sempre pelo licenciamento, não pela construção. Aprovação de projeto na prefeitura e alvará levam de 30 a 120 dias e não aceleram com mais gente na obra — são as duas barras que decidem a entrega, e são exatamente as que costumam entrar no cronograma como "15 dias" por otimismo.</p>
         <p>Particularidades que se repetem: cura de concreto entra como tarefa visível de 7 a 28 dias, nunca escondida num retardo; tarefas sensíveis a chuva pedem folga explícita, e num cronograma que atravessa o verão do Sudeste isso significa reserva concreta em janeiro e fevereiro; acabamento só começa com a obra fechada, o que faz de "obra fechada" um marco obrigatório. Marcos típicos: alvará emitido, fundação concluída, obra fechada, habite-se.</p>`],
@@ -371,6 +554,21 @@ const G = {
           <li><strong>Projeto com verba pública ou de edital</strong> — fases longas, ditadas por prazos de prestação de contas e relatórios que se comportam como precedências rígidas.</li>
         </ul>
         <p>Repare como as escalas diferem: uma obra ocupa meses num eixo semanal, um lançamento ocupa semanas num eixo diário e um plano semanal desce até horas. A representação absorve todos; o que muda é a unidade de tempo e a densidade, não a ideia.</p>`],
+    ['Os oito casos lado a lado', `<table>
+          <thead><tr><th>Tipo de projeto</th><th>Horizonte e eixo</th><th>Densidade de precedências</th><th>Onde mora o risco</th></tr></thead>
+          <tbody>
+            <tr><td>Obra</td><td>8–24 meses, semanal</td><td>Altíssima — quase tudo é TI</td><td>Licenças e vistorias: uma reprovação move o plano inteiro</td></tr>
+            <tr><td>Software</td><td>3–9 meses, semanal por sprint</td><td>Baixa entre sprints, alta na entrada em produção</td><td>Escopo, não sequência — as barras engordam em vez de andar</td></tr>
+            <tr><td>Campanha de marketing</td><td>6–12 semanas, diário ou semanal</td><td>Moderada, quase toda dentro da trilha</td><td>Aprovações entre trilhas paralelas</td></tr>
+            <tr><td>Evento</td><td>3–9 meses, semanal virando diário</td><td>Moderada, convergindo no fim</td><td>A data fixa. A contingência é o vão na frente dela</td></tr>
+            <tr><td>Mudança de escritório</td><td>4–9 meses, semanal</td><td>Alta em uma trilha só (TI)</td><td>Prazos de operadora e de cabeamento, que não aceleram</td></tr>
+            <tr><td>Tese acadêmica</td><td>12–48 meses, mensal</td><td>Baixa, mas em cadeia longa</td><td>Aprovações de terceiros com duração impossível de estimar</td></tr>
+            <tr><td>Lançamento de produto</td><td>6–18 meses, semanal</td><td>Alta e entre áreas</td><td>Passagens de bastão entre produto, marketing e comercial</td></tr>
+            <tr><td>Integração de colaborador</td><td>3 meses, diário depois semanal</td><td>Quase nenhuma</td><td>Nada estrutural — é um instrumento de comunicação</td></tr>
+          </tbody>
+        </table>
+        <!--FIG:milestone|Marcos com duração zero: aprovações e datas rígidas viram pontos, não barras.-->
+        <p>A coluna da direita é a que vale guardar. Ela diz onde a atenção do gerente rende, e a resposta muda por completo entre um caso e outro: numa obra, você protege as vistorias; num projeto de software, você protege o escopo, porque as barras não andam para o lado, elas crescem no lugar.</p>`],
     ['O que todos têm em comum', `<p>Quatro a oito fases, de 20 a 60 tarefas, cinco a dez marcos. O setor muda o conteúdo, não a estrutura. E os bons exemplos compartilham cinco traços:</p>
         <ul>
           <li><strong>Fases claras.</strong> O cronograma se lê como uma sequência de etapas, não como uma parede de barras.</li>
@@ -381,7 +579,18 @@ const G = {
         </ul>
         <p>Igualmente importante é o que fica de fora. Um gráfico de Gantt é instrumento de comunicação, não banco de dados de tarefas: subtarefas de meio dia, checklists e itens de controle pertencem a outro lugar. Cada linha acrescentada custa legibilidade, e legibilidade é o que faz alguém abrir o arquivo na semana seguinte.</p>`],
     ['Por onde começar', `<p>Parta do exemplo mais próximo em vez de uma página em branco — mas copie o agrupamento em fases, não os números. Nossos <a href="/pt/templates.html">modelos</a> cobrem os oito casos e abrem direto no navegador, com as fases e os marcos já montados.</p>
-        <p>Depois de escolher a base, o trabalho é sempre o mesmo: substituir as tarefas pelas do seu projeto, reestimar cada duração e refazer as precedências. Se você nunca montou um do zero, o <a href="/pt/blog/how-to-make-a-gantt-chart.html">passo a passo em sete etapas</a> cobre a ordem correta, e <a href="/pt/blog/what-is-a-gantt-chart.html">o que é um gráfico de Gantt</a> explica os elementos usados aqui.</p>`],
+        <p>Depois de escolher a base, o trabalho é sempre o mesmo: substituir as tarefas pelas do seu projeto, reestimar cada duração e refazer as precedências. Se você nunca montou um do zero, o <a href="/pt/blog/how-to-make-a-gantt-chart.html">passo a passo em sete etapas</a> cobre a ordem correta, e <a href="/pt/blog/what-is-a-gantt-chart.html">o que é um gráfico de Gantt</a> explica os elementos usados aqui.</p>
+        <p>Na prática, abrir um exemplo e transformá-lo no seu plano leva seis movimentos:</p>
+        <ol>
+          <li><strong>Abra o modelo.</strong> Em <strong>✨ Modelos</strong> — ou pelo botão <strong>Escolher modelo</strong> da tela inicial — escolha o caso mais próximo do seu. O plano abre já com fases, marcos e ligações montados; o toast <em>Modelo carregado</em> confirma.</li>
+          <li><strong>Troque o conteúdo, não a estrutura.</strong> Renomeie as tarefas na coluna <strong>Nome da tarefa</strong> e mantenha o agrupamento em fases. É o agrupamento que se transfere bem entre projetos; as durações, não.</li>
+          <li><strong>Reestime tudo.</strong> Duplo clique numa linha abre a gaveta com <strong>Duração</strong>, <strong>Início</strong>, <strong>Fim</strong>, <strong>Responsável</strong> e <strong>Notas</strong>. Use as <strong>Notas</strong> para registrar de onde veio cada estimativa — daqui a três meses ninguém lembra.</li>
+          <li><strong>Refaça as ligações.</strong> Coluna <strong>Depois de</strong>, pelos números de linha: <code>3, 5</code> no marco de inscrições abertas, <code>9, 10</code> no ensaio geral. As convergências são o que produz a data final.</li>
+          <li><strong>Coloque os feriados.</strong> <strong>Calendário de trabalho</strong>, incluindo os municipais e estaduais — Corpus Christi e a emenda no exemplo acima, mas também o padroeiro da cidade, que fecha comércio e órgão público em boa parte do Brasil.</li>
+          <li><strong>Leia o vão.</strong> Ligue <strong>Caminho crítico</strong>, veja onde a cadeia listrada termina e meça a distância até a data rígida. Esse número é a resposta para a pergunta que sempre vem na reunião seguinte.</li>
+        </ol>
+        <!--FIG:cpm|A cadeia crítica termina antes da data rígida: a distância entre as duas é toda a contingência que existe.-->
+        <p>Vale um aviso sobre como o app trata as datas de um modelo importado. As precedências aqui só empurram tarefas para <em>depois</em>, nunca puxam para antes — o cálculo é as-placed. Se você encurtar a prospecção de palestrantes de 25 para 15 dias, o marco de inscrições abertas não vai sozinho para trás; ele fica onde está, porque foi ali que a barra foi colocada. Para compactar o plano inteiro até as datas mais cedo possíveis, o comando é <strong>Reprogramar</strong>. É exatamente a operação que responde "se tudo der certo, qual é a data mais cedo em que as inscrições poderiam abrir?".</p>`],
   ],
   callout: 'Copie o agrupamento em fases, não as durações. As fases de um setor são estáveis entre projetos; as durações nunca são. Um cronograma herdado de outro projeto é a causa mais comum de um plano errado desde o primeiro dia.',
   faq: [
@@ -406,7 +615,21 @@ const G = {
     ['Preparar os dados', `<p>Monte quatro colunas numa planilha limpa: <strong>Tarefa</strong> (A), <strong>Início</strong> (B), <strong>Término</strong> (C) e <strong>Duração</strong> (D). Digite datas reais em B e C, com formato de data, e calcule a duração em D com <code>=C2-B2</code>, arrastando para baixo. O Excel guarda datas como números seriais, então essa subtração devolve um número puro de dias — exatamente o que o gráfico precisa receber.</p>
         <p>Falta a quinta coluna, a que faz o truque funcionar: o <strong>deslocamento</strong> (E), quantos dias cada tarefa começa depois do início do projeto. Com a menor data de início travada em <code>$B$2</code>, use <code>=B2-$B$2</code>.</p>
         <p>Formate as colunas de deslocamento e duração como <strong>Número</strong> (Página Inicial → grupo Número → Geral), nunca como data. É o passo que mais gente pula, e o sintoma é inconfundível: o gráfico nasce com barras enormes que vão de 1900 até hoje, porque o Excel leu "37 dias" como "6 de fevereiro de 1900".</p>
-        <p>Vale montar a tabela já na ordem em que as tarefas devem aparecer, porque reordenar depois obriga a mexer no intervalo de dados do gráfico. Cinco ou seis linhas bastam para validar o método antes de digitar o cronograma inteiro.</p>`],
+        <p>Vale montar a tabela já na ordem em que as tarefas devem aparecer, porque reordenar depois obriga a mexer no intervalo de dados do gráfico. Cinco ou seis linhas bastam para validar o método antes de digitar o cronograma inteiro.</p>
+        <p><strong>Uma advertência sobre fórmulas antes de seguir.</strong> Tudo o que aparece neste guia está escrito para o <strong>Excel em português do Brasil</strong>, que traduz os nomes das funções e usa <strong>ponto e vírgula</strong> como separador de argumentos. Se você copiar uma fórmula de um tutorial em inglês — <code>=WORKDAY(B2,5)</code>, com vírgula — o Excel em pt-BR devolve erro de fórmula ou joga tudo numa célula só. A conversão é direta:</p>
+        <table>
+          <thead><tr><th>Em inglês</th><th>Em português (pt-BR)</th><th>Para que serve aqui</th></tr></thead>
+          <tbody>
+            <tr><td><code>=WORKDAY(B2,5)</code></td><td><code>=DIATRABALHO(B2;5)</code></td><td>Somar dias úteis a uma data, pulando fim de semana</td></tr>
+            <tr><td><code>=WORKDAY(B2,5,feriados)</code></td><td><code>=DIATRABALHO(B2;5;Feriados)</code></td><td>O mesmo, pulando também os feriados de um intervalo nomeado</td></tr>
+            <tr><td><code>=NETWORKDAYS(B2,C2)</code></td><td><code>=DIATRABALHOTOTAL(B2;C2)</code></td><td>Contar dias úteis entre duas datas</td></tr>
+            <tr><td><code>=WEEKDAY(E$1,2)&gt;5</code></td><td><code>=DIA.DA.SEMANA(E$1;2)&gt;5</code></td><td>Detectar sábado e domingo para sombrear a coluna</td></tr>
+            <tr><td><code>=MAX(C2,C5)</code></td><td><code>=MÁXIMO(C2;C5)</code></td><td>Início de uma tarefa com duas predecessoras</td></tr>
+            <tr><td><code>=AND(...)</code></td><td><code>=E(...)</code></td><td>Regra de formatação condicional com duas condições</td></tr>
+          </tbody>
+        </table>
+        <p>Duas ressalvas. Existem instalações em português que ainda usam <strong>vírgula</strong> como separador, porque o separador segue a configuração regional do Windows e não o idioma do Office; se a fórmula acusar erro, teste a outra pontuação antes de procurar bug em outro lugar. E o acento em <code>MÁXIMO</code> é obrigatório — o Excel em pt-BR não aceita <code>MAXIMO</code>.</p>
+        <p>Vale ainda montar uma aba <strong>Feriados</strong> com os feriados nacionais, o do seu estado e o do seu município, e nomear o intervalo. Sem ela, <code>DIATRABALHO</code> conta Carnaval, Corpus Christi e o padroeiro da cidade como dias normais de trabalho, e o cronograma nasce otimista em cinco a oito dias por ano.</p>`],
     ['Inserir o gráfico de barras empilhadas', `<p>Selecione a coluna <strong>Tarefa</strong> e, segurando Ctrl, também as colunas de <strong>deslocamento</strong> e <strong>duração</strong> — deixe as datas de fora, o gráfico não as usa. Depois vá em <strong>Inserir → Gráficos → Barras → Barras Empilhadas 2D</strong>.</p>
         <p>O resultado inicial não parece um Gantt, e isso é esperado: você vê duas séries empilhadas por linha, todas começando no zero. Se o Excel interpretar mal o intervalo, clique com o botão direito no gráfico e use <strong>Selecionar Dados</strong> para conferir três coisas: a série 1 é o deslocamento, a série 2 é a duração, e os rótulos do eixo de categorias são os nomes das tarefas.</p>
         <p>A ordem das séries importa de verdade. Se a duração ficar em primeiro lugar, todas as barras colam na margem esquerda e nenhuma formatação posterior conserta isso — é preciso voltar em Selecionar Dados e subir o deslocamento.</p>`],
@@ -421,6 +644,35 @@ const G = {
     ['Acabamento', `<p>Clique na série de duração e abra <strong>Formatar Série de Dados → Opções de Série</strong>. Reduza a <strong>Largura do Espaçamento</strong> para algo entre 20% e 50%: barras finas com muito ar em volta fazem o cronograma parecer vazio e desalinhado.</p>
         <p>Colorir por fase — um tom por fase, variações do mesmo matiz dentro dela — é o que dá estrutura visual. Cores diferentes por tarefa fazem o oposto: viram ruído. Apague a legenda, que só nomeia "deslocamento" e "duração" e não interessa a ninguém, suavize as linhas de grade para um cinza claro e dê um título ao gráfico.</p>
         <p>Marcos entram como uma série adicional de duração zero, formatada como <strong>Dispersão</strong> com marcador de losango, o que exige converter o gráfico em combinação (botão direito → <strong>Alterar Tipo de Gráfico de Série</strong>). Funciona, mas é o ponto em que a planilha começa a resistir: com muitos marcos, o esforço de manter a combinação cresce rápido.</p>`],
+    ['Um exemplo resolvido: seis tarefas, depois um atraso', `<p>O método acima em cima de um cronograma de verdade — e depois em cima do mesmo cronograma depois que ele escorrega, que é onde a planilha mostra o que realmente é. O projeto: a troca do sistema de PDV da rede de farmácias <strong>Vidalonga</strong>, quatro lojas em Curitiba, coordenada pelo Márcio Balbinot. Início em seg 02/02/2026.</p>
+        <div class="worked">
+          <p><strong>O plano como ele entra na planilha</strong> — colunas A a E, com o deslocamento calculado por <code>=B2-$B$2</code> e a duração por <code>=DIATRABALHOTOTAL(B2;C2;Feriados)</code>:</p>
+          <table>
+            <thead><tr><th>A — Tarefa</th><th>B — Início</th><th>C — Término</th><th>D — Duração</th><th>E — Deslocamento</th></tr></thead>
+            <tbody>
+              <tr><td>Levantamento de processos nas 4 lojas</td><td>seg 02/02</td><td>seg 09/02</td><td>6</td><td>0</td></tr>
+              <tr><td>Parametrização do sistema</td><td>ter 10/02</td><td>ter 24/02</td><td>8</td><td>8</td></tr>
+              <tr><td>Migração da base de produtos e preços</td><td>qua 25/02</td><td>ter 03/03</td><td>5</td><td>23</td></tr>
+              <tr><td>Treinamento das equipes de loja</td><td>qua 04/03</td><td>seg 09/03</td><td>4</td><td>30</td></tr>
+              <tr><td>Piloto na loja do Batel</td><td>ter 10/03</td><td>qui 12/03</td><td>3</td><td>36</td></tr>
+              <tr><td><strong>Virada nas 4 lojas</strong></td><td>sex 13/03</td><td>seg 16/03</td><td>2</td><td>39</td></tr>
+            </tbody>
+          </table>
+          <p>Repare no salto da parametrização: oito dias úteis que ocupam quinze dias de calendário. O <strong>Carnaval de 2026 cai em 16 e 17 de fevereiro</strong>, a Quarta-feira de Cinzas em 18/02 é meio expediente que na prática ninguém trabalha, e a rede simplesmente fecha o escritório central a semana toda. Se esses três dias não estiverem na aba <strong>Feriados</strong>, o <code>DIATRABALHO</code> devolve ter 19/02 como término e todo o resto do cronograma nasce três dias adiantado.</p>
+          <p><strong>Agora o atraso.</strong> A migração da base encontra 2.400 SKUs sem código EAN cadastrado e sai de 5 para 9 dias úteis. A coluna B da tarefa seguinte referencia <code>=C4+1</code>, então a cascata funciona: treinamento, piloto e virada andam quatro dias úteis e a virada vai de seg 16/03 para sex 20/03.</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Plano</th><th>Depois do atraso</th><th>Desvio</th></tr></thead>
+            <tbody>
+              <tr><td>Migração da base</td><td>ter 03/03</td><td>seg 09/03</td><td>+4 d</td></tr>
+              <tr><td>Treinamento das equipes</td><td>seg 09/03</td><td>sex 13/03</td><td>+4 d</td></tr>
+              <tr><td>Piloto na loja do Batel</td><td>qui 12/03</td><td>qua 18/03</td><td>+4 d</td></tr>
+              <tr><td><strong>Virada nas 4 lojas</strong></td><td>seg 16/03</td><td>sex 20/03</td><td>+4 d</td></tr>
+            </tbody>
+          </table>
+          <p>E aqui está o que o Excel <em>não</em> faz, e que custa caro. O eixo horizontal do gráfico foi configurado com <strong>Máximo</strong> igual ao número serial de 16/03 — digitado à mão, como o método exige. A última barra agora termina em 20/03 e simplesmente <strong>sai pela borda direita, sem aviso nenhum</strong>. A planilha está certa, o gráfico está errado, e nada na tela sinaliza a diferença. Foi assim que o Márcio apresentou à diretoria um cronograma que mostrava a virada no dia 16 quando os dados já diziam 20 — e a virada de PDV numa rede de farmácia é a semana em que ninguém tira férias, o que significa que quatro dias de deslocamento viraram uma renegociação de escala com o RH.</p>
+        </div>
+        <!--FIG:bars|O deslocamento invisível é o que faz cada barra começar no dia certo.-->
+        <p>Duas lições práticas ficam desse exemplo. Primeira: sempre que uma data mudar, volte ao eixo horizontal e reconfira Mínimo e Máximo — é o passo de manutenção que ninguém documenta e todo mundo esquece. Segunda: a cascata por fórmula só sobrevive enquanto o cronograma for uma corrente única. Bastaria a virada depender também da homologação da NFC-e na Sefaz-PR para que <code>=C4+1</code> virasse <code>=MÁXIMO(C4;C9)+1</code>, e a partir daí cada nova ligação é uma fórmula que só quem escreveu consegue auditar.</p>`],
     ['Mostrar o percentual de avanço na barra', `<p>Dá para exibir o avanço dentro da própria barra usando colunas auxiliares. Acrescente <strong>% Concluído</strong> (F) e duas colunas calculadas: <strong>Avanço</strong> com <code>=D2*F2</code> e <strong>Restante</strong> com <code>=D2-(D2*F2)</code>.</p>
         <p>No gráfico, as séries passam a ser três, nesta ordem: deslocamento (invisível), avanço, restante. Pinte o avanço num tom escuro e o restante no mesmo matiz claro. O efeito é uma barra parcialmente preenchida, legível a distância, sem nenhum recurso extra do Excel.</p>
         <p>O preço é manutenção. Cada tarefa nova exige estender o intervalo de dados do gráfico e reconferir a ordem das três séries, e é comum a formatação se perder no caminho — o Excel recoloca cores padrão quando o intervalo muda.</p>`],
@@ -430,11 +682,39 @@ const G = {
     ['A alternativa sem gráfico: formatação condicional', `<p>Existe um segundo método que dispensa o objeto gráfico por completo e costuma ser mais fácil de manter. Deixe tarefa, início e término nas colunas A, B e C, e monte um calendário na horizontal a partir da coluna E: uma coluna por dia ou por semana, com a data no cabeçalho da linha 1.</p>
         <p>Selecione toda a grade do calendário e vá em <strong>Página Inicial → Formatação Condicional → Nova Regra → Usar uma fórmula para determinar quais células devem ser formatadas</strong>. Com a seleção começando em E2, escreva <code>=E(E$1&gt;=$B2; E$1&lt;=$C2)</code> e escolha um preenchimento.</p>
         <p>As referências mistas são o detalhe que faz a regra funcionar: a linha do cabeçalho travada com <code>$1</code>, as colunas de datas travadas com <code>$B</code> e <code>$C</code>. Erre isso e a grade pinta em diagonal.</p>
-        <p>O resultado é um Gantt em células que se redesenha sozinho quando uma data muda, imprime bem e aceita regras adicionais para destacar fins de semana, marcos ou tarefas atrasadas. Continua sem precedências e sem caminho crítico, mas elimina toda a briga com séries e eixos.</p>`],
+        <p>O resultado é um Gantt em células que se redesenha sozinho quando uma data muda, imprime bem e aceita regras adicionais para destacar fins de semana, marcos ou tarefas atrasadas. Continua sem precedências e sem caminho crítico, mas elimina toda a briga com séries e eixos.</p>
+        <!--FIG:steps|Formatação condicional: sem objeto gráfico, sem eixo para reconfigurar quando a data muda.-->
+        <p>A receita completa, para o cronograma da Vidalonga, em oito passos:</p>
+        <ol>
+          <li><strong>Deixe A, B e C limpas</strong> — Tarefa, Início e Término, com formato de data em B e C.</li>
+          <li><strong>Monte o cabeçalho do calendário.</strong> Em E1 digite <code>02/02/2026</code>; em F1, <code>=E1+1</code>; arraste para a direita até cobrir o projeto inteiro com folga — no exemplo, até meados de abril, porque cronograma escorrega.</li>
+          <li><strong>Formate o cabeçalho como <code>dd/mm</code></strong> e gire o texto 90 graus. Uma segunda linha com <code>=TEXTO(E1;"ddd")</code> mostra o dia da semana e evita metade dos erros de contagem.</li>
+          <li><strong>Selecione a grade</strong> a partir de E3 e vá em <strong>Página Inicial → Formatação Condicional → Nova Regra → Usar uma fórmula</strong>.</li>
+          <li><strong>Regra da barra:</strong> <code>=E(E$1&gt;=$B3; E$1&lt;=$C3)</code>, com um preenchimento sólido. As referências mistas são o que faz a regra andar corretamente pela grade.</li>
+          <li><strong>Regra do fim de semana:</strong> nova regra, <code>=DIA.DA.SEMANA(E$1;2)&gt;5</code>, cinza claro. Coloque-a <em>abaixo</em> da regra da barra na lista de regras, senão o cinza cobre as barras que caem no sábado.</li>
+          <li><strong>Regra dos feriados:</strong> <code>=CONT.SE(Feriados;E$1)&gt;0</code>, com o mesmo cinza. É ela que faz o Carnaval aparecer no desenho, e não só na conta.</li>
+          <li><strong>Regra do atrasado:</strong> <code>=E(E$1&gt;=$B3; E$1&lt;=$C3; $D3&lt;1; E$1&lt;HOJE())</code> em vermelho, se você tiver uma coluna de percentual concluído. É o mais perto de um semáforo que a planilha chega.</li>
+        </ol>
+        <p>Esse caminho envelhece muito melhor que o gráfico de barras empilhadas, justamente porque não existe eixo para desconfigurar. Quando a migração da base foi de 5 para 9 dias, a grade se repintou sozinha e a barra continuou visível — o erro do exemplo anterior simplesmente não acontece aqui.</p>`],
     ['Onde a técnica termina', `<p>Se uma tarefa atrasa, cada data de início seguinte precisa ser ajustada na mão — e, na prática, isso para de acontecer na segunda alteração. O cronograma continua bonito e passa a estar errado, que é a pior combinação possível, porque ainda se confia nele.</p>
         <p>Também faltam caminho crítico, carga de recursos, <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> e histórico de desvios. Nada disso é acidente: o Excel é uma planilha, não um motor de cronograma, e cada um desses recursos exigiria uma camada de cálculo que ele não tem.</p>
         <p>Regra prática: até umas vinte tarefas, num cronograma que muda pouco e cujos dados já vivem numa planilha, o Excel é uma escolha razoável. Acima disso, o tempo de manutenção supera o que a familiaridade economiza.</p>
-        <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> liga precedências, marca o caminho crítico sozinho, roda no navegador sem cadastro e exporta em XLSX quando alguém pedir o arquivo em Excel — o que resolve o motivo mais comum de se montar o cronograma na planilha em primeiro lugar.</p>`],
+        <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> liga precedências, marca o caminho crítico sozinho, roda no navegador sem cadastro e exporta em XLSX quando alguém pedir o arquivo em Excel — o que resolve o motivo mais comum de se montar o cronograma na planilha em primeiro lugar.</p>
+        <!--FIG:tools|O que a planilha entrega, o que ela não entrega e onde a linha é cruzada.-->
+        <table>
+          <thead><tr><th>Recurso</th><th>Excel, barras empilhadas</th><th>Excel, formatação condicional</th><th>Ferramenta de cronograma</th></tr></thead>
+          <tbody>
+            <tr><td>Barras na linha do tempo</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Recalcula quando uma data muda</td><td>Só a grade; o eixo é manual</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Setas de precedência</td><td>Não</td><td>Não</td><td>Sim, com TI, II, TT e IT</td></tr>
+            <tr><td>Caminho crítico</td><td>Não</td><td>Não</td><td>Sim, calculado a cada alteração</td></tr>
+            <tr><td>Folga por tarefa</td><td>Não</td><td>Não</td><td>Sim — folga total (não há coluna de folga livre)</td></tr>
+            <tr><td>Linha de base e desvio</td><td>Só à mão, em colunas paralelas</td><td>Só à mão</td><td>Sim, gravada em um clique</td></tr>
+            <tr><td>Marcos de duração zero</td><td>Exige série de dispersão</td><td>Uma regra a mais</td><td>Nativos, como losango</td></tr>
+            <tr><td>Tamanho em que ainda compensa</td><td>Até ~20 tarefas</td><td>Até ~40 tarefas</td><td>Sem limite prático</td></tr>
+          </tbody>
+        </table>
+        <p>Uma diferença que vale explicitar, porque surpreende quem chega do MS Project: no gantts.app uma precedência só empurra a tarefa para <em>depois</em>, nunca puxa para antes — o cálculo é as-placed, a partir de onde a barra foi colocada. É o comportamento certo para quem posicionou uma barra de propósito, e para compactar o plano de verdade existe o comando <strong>Reprogramar</strong>.</p>`],
   ],
   callout: 'A diferença decisiva não é a aparência, é o cálculo. Um Gantt no Excel parece certo, mas não se atualiza. Assim que as datas mudam — e elas sempre mudam — o cronograma vira desenho.',
   faq: [
@@ -461,7 +741,19 @@ const G = {
         <p>Selecione as duas colunas novas e aplique <strong>Formatar → Número → Número</strong>. Se elas continuarem formatadas como data, o Planilhas converte 12 em "12 de janeiro de 1900" e o gráfico sai com barras de um século. É o erro mais comum do método.</p>
         <p>Selecione as colunas A, D e E (segure Ctrl para pegar colunas não adjacentes) e vá em <strong>Inserir → Gráfico</strong>. No editor de gráficos, aba <strong>Configuração</strong>, escolha <strong>Gráfico de barras empilhadas</strong>.</p>
         <p>Depois, em <strong>Personalizar → Série</strong>, selecione a série <strong>Início no dia</strong> e defina a <strong>Cor de preenchimento</strong> como <strong>Nenhuma</strong>. As barras de duração passam a flutuar na posição correta. Ainda em Personalizar, abra <strong>Eixo vertical</strong> e marque <strong>Ordem inversa</strong>, para que a primeira tarefa fique no topo.</p>
-        <p>Vantagem: é um objeto de gráfico de verdade, que pode ser copiado para o Apresentações, baixado como PNG ou incorporado num Documento com atualização automática. Desvantagem: nenhuma precedência, como em qualquer planilha.</p>`],
+        <p>Vantagem: é um objeto de gráfico de verdade, que pode ser copiado para o Apresentações, baixado como PNG ou incorporado num Documento com atualização automática. Desvantagem: nenhuma precedência, como em qualquer planilha.</p>
+        <p>Em cliques, o caminho inteiro são oito passos:</p>
+        <ol>
+          <li><strong>Confira o local antes de tudo.</strong> <strong>Arquivo → Configurações → Local: Brasil</strong>. Isso define o formato <code>dd/mm/aaaa</code> e o <strong>ponto e vírgula</strong> como separador de argumentos. Numa planilha em local americano, <code>05/07</code> é 7 de maio, e o erro só aparece quando o cronograma já está inteiro.</li>
+          <li><strong>Monte A, B e C</strong> — Tarefa, Início e Término — e formate B e C como data.</li>
+          <li><strong>Crie a coluna D, Início no dia:</strong> <code>=B2-$B$2</code>. Ela diz quantos dias depois do começo do projeto cada barra deve nascer.</li>
+          <li><strong>Crie a coluna E, Duração:</strong> <code>=DIATRABALHOTOTAL(B2;C2;Feriados)</code> se você quiser dias úteis, ou <code>=C2-B2</code> para dias corridos. Escolha uma e seja consistente — misturar as duas é o erro que faz barras de tamanho errado.</li>
+          <li><strong>Formate D e E como Número.</strong> <strong>Formatar → Número → Número</strong>. Sem isso o Planilhas lê 12 como 12 de janeiro de 1900 e o gráfico sai com barras de um século.</li>
+          <li><strong>Selecione A, D e E</strong> segurando Ctrl e vá em <strong>Inserir → Gráfico</strong>; na aba <strong>Configuração</strong>, escolha <strong>Gráfico de barras empilhadas</strong>.</li>
+          <li><strong>Torne a primeira série invisível.</strong> <strong>Personalizar → Série → Início no dia → Cor de preenchimento: Nenhuma</strong>.</li>
+          <li><strong>Inverta o eixo.</strong> <strong>Personalizar → Eixo vertical → Ordem inversa</strong>, para a primeira tarefa ficar no topo.</li>
+        </ol>
+        <p>Sobre nomes de função: o Google Planilhas <strong>traduz os nomes</strong> quando o local do arquivo é Brasil — <code>DIATRABALHO</code>, <code>DIATRABALHOTOTAL</code>, <code>MÁXIMO</code>, <code>E</code>, <code>OU</code>, <code>DIA.DA.SEMANA</code>, <code>CONT.SE</code> — e usa ponto e vírgula. Fórmula copiada de tutorial em inglês, com vírgula, devolve <em>Erro de análise da fórmula</em>. Mas há uma armadilha específica do Planilhas que o Excel não tem: se a planilha foi criada por alguém com local americano e compartilhada com você, ela <em>continua</em> em local americano mesmo aberta na sua conta em português. O local é propriedade do arquivo, não do usuário.</p>`],
     ['Caminho 2: a visualização Linha do tempo', `<p>O Google Planilhas passou a oferecer <strong>Inserir → Linha do tempo</strong>. Selecione o intervalo com cabeçalhos, confirme na caixa de diálogo e uma nova aba de linha do tempo é criada.</p>
         <p>No painel de configurações à direita, você mapeia as colunas: <strong>Título do cartão</strong>, <strong>Data de início</strong>, <strong>Data de término</strong>, <strong>Cor do cartão</strong> e <strong>Agrupar por</strong>. O mínimo exigido é um título e as duas datas; as outras deixam a leitura muito melhor. Uma coluna de fase em "Agrupar por" já organiza o cronograma em faixas, sem nenhuma fórmula.</p>
         <p>A visualização tem zoom por dia, semana, mês, trimestre e ano, rola na horizontal e, ao clicar num cartão, mostra os detalhes e permite pular para a linha de origem na planilha. Como é uma visão ligada à tabela, editar uma data na aba de dados atualiza a linha do tempo na hora.</p>
@@ -470,6 +762,35 @@ const G = {
         <p>Selecione a grade e vá em <strong>Formatar → Formatação condicional</strong>. Em "Regras de formatação", escolha <strong>A fórmula personalizada é</strong> e escreva <code>=E(E$1&gt;=$B2; E$1&lt;=$C2)</code>, definindo a cor de preenchimento. As referências mistas fazem a regra andar corretamente pela grade: cabeçalho travado na linha 1, datas travadas nas colunas B e C.</p>
         <p>Uma segunda regra, aplicada antes da primeira, pode pintar fins de semana em cinza com <code>=OU(DIA.DA.SEMANA(E$1)=1; DIA.DA.SEMANA(E$1)=7)</code>. Uma terceira pode destacar em vermelho as tarefas cujo término já passou e o percentual não chegou a 100%.</p>
         <p>O resultado é uma grade que se lê como um Gantt, vive dentro da planilha, imprime bem e se redesenha sozinha quando uma data muda. Prático para períodos curtos; a partir de um trimestre, o número de colunas vira um problema de rolagem.</p>`],
+    ['Um exemplo resolvido: seis tarefas, depois um atraso', `<p>Os três caminhos acima em cima do mesmo cronograma real, e depois em cima dele já escorregado — porque é aí que se descobre o que cada método realmente entrega. O projeto: a <strong>coleção de inverno da Malharia Serrafina</strong>, no Brás, em São Paulo, coordenada pela Sandra Kiyoshi. Início em seg 01/06/2026, dias úteis, feriados paulistas aplicados.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>A — Tarefa</th><th>B — Início</th><th>C — Término</th><th>E — Duração</th><th>D — Início no dia</th></tr></thead>
+            <tbody>
+              <tr><td>Definição da cartela e das modelagens</td><td>seg 01/06</td><td>qua 10/06</td><td>6</td><td>0</td></tr>
+              <tr><td>Prototipagem e provas de peça</td><td>qui 11/06</td><td>seg 22/06</td><td>8</td><td>10</td></tr>
+              <tr><td>Compra de malha e aviamentos</td><td>qui 11/06</td><td>qua 24/06</td><td>10</td><td>10</td></tr>
+              <tr><td>Corte e costura do lote piloto</td><td>qui 25/06</td><td>sex 03/07</td><td>7</td><td>24</td></tr>
+              <tr><td>Ensaio fotográfico e catálogo</td><td>seg 06/07</td><td>ter 14/07</td><td>5</td><td>35</td></tr>
+              <tr><td><strong>Lançamento no showroom do Brás</strong></td><td colspan="2">qua 15/07</td><td>0</td><td>44</td></tr>
+            </tbody>
+          </table>
+          <p>Dois feriados já estão embutidos aí. <strong>Corpus Christi cai em qui 04/06/2026</strong> e a malharia emenda a sexta, o que estica a primeira tarefa de 6 dias úteis para 10 dias de calendário. E o <strong>9 de julho, feriado estadual em São Paulo</strong>, cai numa quinta, com emenda na sexta 10/07 — dois dias a menos bem no meio do ensaio fotográfico.</p>
+          <p><strong>Agora o atraso.</strong> O fornecedor de malha atrasa a entrega e a compra de aviamentos vai de 10 para 16 dias úteis, terminando em qui 02/07 em vez de qua 24/06. Seis dias úteis de atraso. Repasse pela cadeia e o resultado é este:</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Plano</th><th>Depois do atraso</th><th>Desvio</th></tr></thead>
+            <tbody>
+              <tr><td>Compra de malha e aviamentos</td><td>qua 24/06</td><td>qui 02/07</td><td>+6 d</td></tr>
+              <tr><td>Corte e costura do lote piloto</td><td>sex 03/07</td><td>qua 15/07</td><td>+7 d</td></tr>
+              <tr><td>Ensaio fotográfico e catálogo</td><td>ter 14/07</td><td>qua 22/07</td><td>+8 d</td></tr>
+              <tr><td><strong>Lançamento no showroom</strong></td><td>qua 15/07</td><td>qui 23/07</td><td>+8 d</td></tr>
+            </tbody>
+          </table>
+          <p>Seis dias de atraso do fornecedor viraram oito no lançamento. O motivo não está em lugar nenhum da planilha: o atraso empurrou o ensaio fotográfico para <em>depois</em> da emenda de 9 de julho, em vez de deixá-lo antes dela. Um cronograma que conta em dias corridos jamais mostraria isso, e nenhum dos três caminhos do Planilhas avisa que aconteceu — as barras simplesmente ficam onde as fórmulas as colocarem.</p>
+          <p>O preço é conhecido na malharia: o showroom do Brás concentra os compradores de inverno numa janela de três semanas, e cada semana perdida vale algo perto de <strong>R$ 22.000</strong> em pedidos que o comprador fecha com outra marca. Oito dias úteis são uma semana e meia dessa janela.</p>
+        </div>
+        <!--FIG:bars|A série invisível carrega a barra até a data certa; o resto é formatação.-->
+        <p>Repare no que cada caminho fez com esse atraso. Na <strong>formatação condicional</strong>, a grade se repintou sozinha assim que as datas mudaram — nada a manter. Na <strong>Linha do tempo</strong>, os cartões andaram sozinhos também, e essa é a maior vantagem prática dela. Já no <strong>gráfico de barras empilhadas</strong>, o cronograma passou a se estender além do fim do intervalo original e foi preciso voltar ao editor de gráficos para ampliar o intervalo de dados. Em nenhum dos três apareceu uma seta ligando a compra de malha ao corte, nem uma indicação de que a cadeia inteira era crítica.</p>`],
     ['Deixar o cronograma legível', `<p>Independentemente do caminho escolhido, alguns ajustes mudam muito a leitura:</p>
         <ul>
           <li><strong>Agrupe por fase.</strong> Uma coluna "Fase" alimenta o campo <em>Agrupar por</em> da Linha do tempo e serve para ordenar a tabela nos outros dois métodos.</li>
@@ -483,14 +804,33 @@ const G = {
         <p>Nossos <a href="/pt/templates.html">modelos</a> cobrem esse ponto de partida e também abrem direto no editor online, caso o cronograma cresça além do que a planilha aguenta.</p>`],
     ['Qual usar em cada caso', `<p>Linha do tempo quando o objetivo é uma visão geral rápida e o cronograma vai ser consultado dentro do próprio arquivo, por pessoas que já têm acesso à planilha. Barras empilhadas quando o gráfico precisa sair dali — para um slide, um relatório, um PDF enviado a um cliente. Formatação condicional quando o cronograma é o documento de trabalho e a equipe já vive na planilha o dia inteiro.</p>
         <p>Na dúvida entre os dois primeiros, o critério é simples: se alguém vai pedir "me manda a imagem", use barras empilhadas. A Linha do tempo não vira imagem editável, e a captura de tela que a substitui envelhece na semana seguinte.</p>
-        <p>Um segundo critério é quem vai manter. As barras empilhadas dependem de duas colunas auxiliares que só fazem sentido para quem as criou — quem herdar a planilha vai apagar uma delas achando que é sobra. A Linha do tempo e a formatação condicional se explicam sozinhas para quem chega depois, o que em cronograma compartilhado vale mais do que parece.</p>`],
+        <p>Um segundo critério é quem vai manter. As barras empilhadas dependem de duas colunas auxiliares que só fazem sentido para quem as criou — quem herdar a planilha vai apagar uma delas achando que é sobra. A Linha do tempo e a formatação condicional se explicam sozinhas para quem chega depois, o que em cronograma compartilhado vale mais do que parece.</p>
+        <!--FIG:tools|Três caminhos dentro da mesma planilha, e o que cada um deixa de fora.-->
+        <table>
+          <thead><tr><th>O que você precisa</th><th>Barras empilhadas</th><th>Linha do tempo</th><th>Formatação condicional</th></tr></thead>
+          <tbody>
+            <tr><td>Tempo até o primeiro desenho</td><td>15–20 min</td><td>2 min</td><td>10 min</td></tr>
+            <tr><td>Se redesenha quando a data muda</td><td>Sim, mas o intervalo é manual</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Vira imagem para slide ou PDF</td><td>Sim — é objeto de gráfico</td><td>Não, só captura de tela</td><td>Só imprimindo o intervalo</td></tr>
+            <tr><td>Agrupa por fase</td><td>Só reordenando a tabela</td><td>Sim, campo Agrupar por</td><td>Só reordenando a tabela</td></tr>
+            <tr><td>Mostra percentual concluído</td><td>Sim, com uma terceira série</td><td>Não</td><td>Sim, com uma regra a mais</td></tr>
+            <tr><td>Sobrevive a um trimestre inteiro</td><td>Sim</td><td>Sim, com zoom por mês</td><td>Fica pesado — colunas demais</td></tr>
+            <tr><td>Setas de precedência</td><td>Não</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Caminho crítico e folga</td><td>Não</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Sai para .xlsx intacto</td><td>Sim</td><td>Não — não existe no Excel</td><td>Sim</td></tr>
+          </tbody>
+        </table>
+        <p>As três últimas linhas são a mesma linha, dita de três formas: nenhum caminho do Planilhas sabe que uma tarefa espera outra. É por isso que o exemplo da Serrafina precisou ter o atraso repassado pela cadeia à mão antes de a tabela poder ser preenchida.</p>`],
     ['Precedências improvisadas', `<p>O Planilhas não sabe que "B começa quando A termina". Dá para simular fazendo a data de início de uma tarefa referenciar o término da anterior — <code>=C2</code> — ou, com duas predecessoras, <code>=MÁXIMO(C2;C5)</code>. Para pular fins de semana existe <code>DIATRABALHO</code>.</p>
         <p>A cadeia funciona, mas é frágil: não há setas visíveis, ninguém consegue auditar quais ligações existem, e uma tarefa que recebe data digitada por engano quebra a cascata em silêncio. Se as precedências importam de verdade no seu projeto, esse é o sinal para sair da planilha — vale ler os <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a> antes de decidir.</p>`],
     ['Tirar o cronograma da planilha', `<p>Para levar o resultado adiante: <strong>Arquivo → Fazer o download → Microsoft Excel (.xlsx)</strong> preserva a tabela e o gráfico de barras empilhadas, mas não a visualização Linha do tempo, que não tem equivalente no Excel. Um gráfico pode ser copiado e colado no Google Apresentações com vínculo, de modo que atualizar a planilha atualiza o slide.</p>
         <p>A rota mais curta, quando o destino é um arquivo pronto, é montar o cronograma numa ferramenta de Gantt e exportar. O <a href="/pt/app.html">gantts.app</a> roda no navegador, sem cadastro, e gera XLSX, PPTX, PDF e PNG a partir do mesmo plano.</p>`],
     ['O limite comum', `<p>Nenhum dos três caminhos conhece precedências, nenhum calcula <a href="/pt/blog/critical-path-method.html">caminho crítico</a>, nenhum avisa que uma pessoa está alocada em três tarefas na mesma semana e nenhum guarda uma <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> para medir desvio.</p>
         <p>A força real do Planilhas é outra: várias pessoas editando o mesmo arquivo ao mesmo tempo, com histórico de versões e comentários por célula. Se é disso que o projeto precisa e o cronograma é pequeno, é uma escolha boa e honesta.</p>
-        <p>Quando o cronograma precisa calcular sozinho — repassar um atraso pela cadeia, mostrar o que virou crítico, comparar com o plano aprovado —, a planilha deixa de ser a ferramenta certa, por mais bem montada que esteja.</p>`],
+        <p>Quando o cronograma precisa calcular sozinho — repassar um atraso pela cadeia, mostrar o que virou crítico, comparar com o plano aprovado —, a planilha deixa de ser a ferramenta certa, por mais bem montada que esteja.</p>
+        <!--FIG:steps|O que a planilha não faz: repassar o atraso, marcar o crítico, guardar o plano aprovado.-->
+        <p>No <a href="/pt/app.html">gantts.app</a>, o cenário da Serrafina se resolve em três movimentos que a planilha não tem. A coluna <strong>Depois de</strong> guarda as ligações de forma auditável — <code>2, 3</code> no corte e costura —, então mudar a duração da compra de malha de 10 para 16 empurra o resto sozinho. <strong>Calendário de trabalho</strong> guarda o 9 de julho e a emenda, o que faz o desvio de oito dias aparecer em vez de ser descoberto. E <strong>Linha de base</strong> congela o plano de 01/06, de modo que a comparação entre planejado e real seja uma coluna, não uma reconstrução de memória.</p>
+        <p>Duas ressalvas honestas, porque nada é mágico. A folga que o app mostra é a <strong>folga total</strong> — não existe coluna de folga livre —, e folga total é compartilhada ao longo da cadeia: se duas tarefas em sequência mostram cinco dias cada, não são dez dias, são os mesmos cinco. E as precedências aqui só empurram tarefas para <em>depois</em>, nunca puxam para antes; se o fornecedor de malha entregasse adiantado, o corte não se anteciparia sozinho. Para isso existe <strong>Reprogramar</strong>, que puxa cada tarefa para a data mais cedo que as predecessoras permitem.</p>`],
   ],
   callout: 'A visualização Linha do tempo não é um gráfico de Gantt, mesmo parecendo. Ela mostra períodos, mas ignora ligações e caminho crítico. Para uma visão geral basta; para um cronograma que repassa atrasos, não.',
   faq: [
@@ -531,6 +871,33 @@ const G = {
     ['SmartArt: quando serve e quando não', `<p>Os gráficos de <strong>Processo</strong> e de linha do tempo do SmartArt (Inserir → SmartArt) produzem em segundos um visual de fases encadeadas, com estilos prontos e proporções coerentes. O texto entra por um painel lateral, e trocar o layout depois não desmonta o conteúdo — duas conveniências que as formas soltas não oferecem.</p>
         <p>O que eles não são: cronogramas em escala. As caixas têm todas o mesmo tamanho, independentemente da duração, então uma fase de duas semanas e outra de cinco meses aparecem idênticas. Use SmartArt para um "mapa de fases" de alto nível — abertura de apresentação, resumo executivo — e nunca para comunicar prazos, porque a plateia lê comprimento como tempo mesmo quando ele não significa nada.</p>
         <p>Se precisar do meio-termo, converta o SmartArt em formas (Formato → Converter → Converter em Formas) e ajuste as larguras à duração real. Você perde a edição pelo painel de texto, mas ganha um desenho em escala com o estilo já pronto.</p>`],
+    ['Um exemplo resolvido: seis tarefas, depois um atraso', `<p>A diferença entre os dois caminhos só fica clara quando o plano muda — porque é aí que um deles recalcula e o outro não. O projeto: a abertura da unidade do Setor Bueno pela rede de clínicas <strong>Vitalcorpo</strong>, em Goiânia, apresentada mensalmente ao conselho pela diretora de operações Heloísa Bandeira. Início em seg 14/09/2026.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>#</th><th>Tarefa</th><th>Duração</th><th>Depois de</th><th>Início</th><th>Fim</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Reforma e adequação à RDC 50</td><td>20 d</td><td>—</td><td>seg 14/09</td><td>sex 09/10</td></tr>
+              <tr><td>2</td><td>Instalação de equipamentos e gases medicinais</td><td>10 d</td><td>1</td><td>ter 13/10</td><td>seg 26/10</td></tr>
+              <tr><td>3</td><td>Licença sanitária e vistoria do Corpo de Bombeiros</td><td>15 d</td><td>2</td><td>ter 27/10</td><td>ter 17/11</td></tr>
+              <tr><td>4</td><td>Contratação e treinamento da equipe</td><td>12 d</td><td>1</td><td>ter 13/10</td><td>qua 28/10</td></tr>
+              <tr><td>5</td><td>Campanha de abertura e credenciamento de convênios</td><td>18 d</td><td>3</td><td>qua 18/11</td><td>seg 14/12</td></tr>
+              <tr><td>6</td><td><strong>Inauguração da unidade</strong></td><td>0 d</td><td>5</td><td colspan="2">ter 15/12</td></tr>
+            </tbody>
+          </table>
+          <p>Três feriados já mordem esse calendário. <strong>Nossa Senhora Aparecida em seg 12/10</strong> é o motivo de as tarefas 2 e 4 começarem numa terça. <strong>Finados em seg 02/11</strong> some no meio do processo de licenciamento. E a <strong>Consciência Negra em sex 20/11</strong> entra bem no arranque da campanha de abertura. Nenhum deles muda a lógica do plano; os três juntos movem a inauguração em três dias úteis, o que numa apresentação ao conselho é a diferença entre "antes do Natal" e "logo antes do Natal".</p>
+          <p><strong>Agora o atraso.</strong> A vistoria do Corpo de Bombeiros reprova na primeira visita — largura da saída de emergência do subsolo — e a tarefa 3 sai de 15 para 24 dias úteis, terminando em qui 03/12. Nove dias úteis. O que acontece com o resto:</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Plano</th><th>Depois da reprovação</th><th>Desvio</th></tr></thead>
+            <tbody>
+              <tr><td>Licença sanitária e vistoria</td><td>ter 17/11</td><td>qui 03/12</td><td>+9 d</td></tr>
+              <tr><td>Campanha e convênios</td><td>seg 14/12</td><td>seg 04/01/2027</td><td>+13 d</td></tr>
+              <tr><td><strong>Inauguração da unidade</strong></td><td>ter 15/12/2026</td><td>ter 05/01/2027</td><td>+13 d</td></tr>
+            </tbody>
+          </table>
+          <p>Nove dias úteis de reprovação viraram treze na inauguração, e três semanas de calendário. O motivo é inteiramente brasileiro: o atraso empurrou a campanha para dentro do recesso de fim de ano, com Natal em sex 25/12 e Ano-Novo em sex 01/01, mais a semana em que operadora de convênio nenhuma credencia prestador novo. A unidade parada custa cerca de <strong>R$ 61.000 por mês</strong> entre aluguel, folha da equipe já contratada e leasing dos equipamentos — a tarefa 4 terminou em outubro e a clínica ficou com uma equipe treinada esperando dois meses e meio por uma porta corta-fogo.</p>
+          <p>E aqui está o ponto do guia. No slide montado com <strong>formas</strong>, nada disso acontece sozinho: os retângulos continuam exatamente onde foram desenhados, e a apresentação de dezembro ao conselho mostrou uma inauguração em 15/12 três semanas depois de a data já ser 05/01. No slide montado com <strong>gráfico</strong>, bastou <strong>Editar Dados</strong> e as barras andaram — mas alguém ainda precisou recalcular à mão os deslocamentos das tarefas 5 e 6, porque o PowerPoint não sabe que a tarefa 5 espera a 3.</p>
+        </div>
+        <!--FIG:bars|Formas não recalculam. Um retângulo desenhado em setembro continua dizendo setembro em dezembro.-->`],
     ['Acrescentar avanço, marcos e a linha de hoje', `<p>Três acréscimos separam um cronograma de slide genérico de um que responde perguntas.</p>
         <p><strong>Avanço.</strong> No caminho do gráfico, acrescente uma quarta coluna na planilha vinculada dividindo a duração em "concluído" e "restante": três séries empilhadas, com o concluído em tom escuro. No caminho das formas, sobreponha um retângulo mais escuro sobre parte da barra e agrupe os dois — assim eles se movem juntos quando o slide for reorganizado.</p>
         <p><strong>Marcos.</strong> Um losango (Inserir → Formas → Losango) posicionado na data, com o rótulo acima ou abaixo da linha das barras para não competir com elas. No caminho do gráfico, marcos exigem uma série de dispersão e um gráfico de combinação, o que costuma ser mais trabalho do que desenhar três losangos.</p>
@@ -538,7 +905,21 @@ const G = {
         <p>Todos os três precisam ser reposicionados à mão a cada revisão do plano. É a conta que se paga por manter o cronograma dentro do PowerPoint.</p>`],
     ['Quando usar cada um', `<p>Formas quando o cronograma está fechado e o slide serve para apresentar. Gráfico quando os números ainda se movem e alguém vai pedir uma atualização antes da reunião. SmartArt apenas para o desenho conceitual das fases.</p>
         <p>Para um slide de diretoria com cinco fases e três marcos, formas quase sempre são mais rápidas. Para um relatório mensal que se repete com dados novos, o gráfico paga o investimento inicial já na segunda edição.</p>
-        <p>E vale dizer o que nenhum dos três resolve: precedências. Nenhum caminho do PowerPoint recalcula datas quando uma tarefa escorrega, e nenhum mostra <a href="/pt/blog/critical-path-method.html">caminho crítico</a>. O slide comunica um plano; ele não gerencia um.</p>`],
+        <p>E vale dizer o que nenhum dos três resolve: precedências. Nenhum caminho do PowerPoint recalcula datas quando uma tarefa escorrega, e nenhum mostra <a href="/pt/blog/critical-path-method.html">caminho crítico</a>. O slide comunica um plano; ele não gerencia um.</p>
+        <!--FIG:tools|Quatro maneiras de colocar um cronograma num slide, e o que cada uma custa na revisão seguinte.-->
+        <table>
+          <thead><tr><th>O que você precisa</th><th>Gráfico de barras</th><th>Formas desenhadas</th><th>SmartArt</th><th>Slide exportado</th></tr></thead>
+          <tbody>
+            <tr><td>Tempo até o primeiro slide</td><td>20–30 min</td><td>15–25 min</td><td>3 min</td><td>1 min</td></tr>
+            <tr><td>Barras em escala real de tempo</td><td>Sim</td><td>Só se você desenhar certo</td><td>Não — caixas iguais</td><td>Sim</td></tr>
+            <tr><td>Atualizar quando uma data muda</td><td>Editar Dados, mais recálculo manual dos deslocamentos</td><td>Arrastar cada retângulo</td><td>Redigitar</td><td>Exportar de novo</td></tr>
+            <tr><td>Liberdade visual e tema do deck</td><td>Limitada pelo motor de gráficos</td><td>Total</td><td>Estilos prontos</td><td>Limitada, mas coerente</td></tr>
+            <tr><td>Marcos como losango</td><td>Exige série de dispersão</td><td>Sim, à mão</td><td>Não</td><td>Nativos</td></tr>
+            <tr><td>Precedências e caminho crítico</td><td>Não</td><td>Não</td><td>Não</td><td>Calculados na origem</td></tr>
+            <tr><td>O que aconteceu na Vitalcorpo</td><td>Barras andaram, deslocamentos à mão</td><td>Slide desatualizado por três semanas</td><td>Nunca mostrou prazo nenhum</td><td>Uma exportação, dois minutos</td></tr>
+          </tbody>
+        </table>
+        <p>A última linha é o resumo honesto do guia. Os dois primeiros caminhos existem porque às vezes o cronograma <em>tem</em> que morar no deck — cliente que só recebe .pptx, apresentação com animação por fase, identidade visual inegociável. Fora desses casos, montar o plano onde ele calcula e exportar o slide sai mais barato já na segunda revisão.</p>`],
     ['Projetar para a tela grande', `<p>Um slide comporta de seis a dez barras, não quarenta. O que precisa ser lido a dez metros não suporta detalhe de cronograma. Algumas regras que funcionam:</p>
         <ul>
           <li><strong>Reduza ao nível de fase.</strong> Se o cronograma tem quarenta tarefas, o slide mostra as sete fases e o detalhe vai para o anexo.</li>
@@ -554,10 +935,16 @@ const G = {
        coverage level, so it needs no revisiting later. */
     ['O caminho prático', `<p>O mais rápido é manter o cronograma onde ele vive e gerar o slide a partir dele, em vez de redesenhar retângulos toda vez que uma data muda.</p>
         <ol>
-          <li>Monte o plano no <a href="/pt/app.html">gantts.app</a> — no navegador, sem cadastro e sem instalação.</li>
-          <li>Acrescente tarefas, agrupe em fases e ligue as precedências. O cronograma se reprograma sozinho e o caminho crítico fica destacado.</li>
-          <li>Use <strong>Exportar → PowerPoint</strong> e você recebe um arquivo .pptx com o cronograma no slide, pronto para apresentar.</li>
+          <li><strong>Monte o plano no <a href="/pt/app.html">gantts.app</a></strong> — no navegador, sem cadastro e sem instalação. <strong>✨ Colar no Gantt</strong> aceita a lista inteira de uma vez, com <code>(20d)</code> para duração, <code>after Reforma</code> para a ligação e <code>!</code> no fim da linha para virar marco.</li>
+          <li><strong>Agrupe em fases</strong> com <strong>▣ Grupo</strong>. É o agrupamento que decide se o slide tem seis linhas legíveis ou quarenta ilegíveis.</li>
+          <li><strong>Ligue as precedências</strong> na coluna <strong>Depois de</strong>. Uma reprovação de vistoria passa a empurrar a campanha sozinha, em vez de exigir aritmética de calendário na véspera do conselho.</li>
+          <li><strong>Coloque os feriados</strong> em <strong>Calendário de trabalho</strong> — 12/10, 02/11, 20/11, 25/12, 01/01 — e o recesso, se a empresa fecha entre o Natal e o Ano-Novo. É esse passo que faz aparecer o salto de treze dias do exemplo.</li>
+          <li><strong>Reduza para o nível de slide.</strong> <strong>Exibição › Somente marcos</strong> deixa na tela apenas os pontos de decisão, que é quase sempre o que o conselho quer ver; <strong>Exibição › Próximas semanas</strong> serve para a reunião operacional da semana seguinte.</li>
+          <li><strong>Marque o crítico e congele.</strong> <strong>Caminho crítico</strong> deixa a cadeia listrada, e <strong>Linha de base</strong> guarda o plano aprovado para o slide de planejado × real do mês que vem.</li>
+          <li><strong>Exporte.</strong> <strong>⬇ Exportar → 📽 PowerPoint (.pptx)</strong> devolve o cronograma já no slide. O mesmo menu gera <strong>📄 Documento PDF</strong>, <strong>🖼 Imagem PNG</strong> e <strong>📊 Excel (.xlsx)</strong>, que costumam ser os três pedidos que aparecem depois de qualquer reunião.</li>
         </ol>
+        <!--FIG:milestone|Marcos têm duração zero e não se redimensionam: no slide, eles são o que a plateia lembra.-->
+        <p>Duas notas para quem vem do PowerPoint e vai estranhar. Marcos aqui têm <strong>duração zero e não podem ser redimensionados</strong> — não existe esticar um losango, o que é justamente o que impede a inauguração de virar uma barra de uma semana no slide. E uma precedência só empurra a tarefa para <em>depois</em>, nunca puxa para antes: o cálculo é as-placed, a partir de onde a barra foi posicionada. Se você encurtar a licença sanitária, a campanha não se antecipa sozinha; para isso existe <strong>Reprogramar</strong>, que responde à pergunta "e se tudo der certo, qual é a data mais cedo de inauguração?".</p>
         <p>Quando o plano mudar, edite e exporte de novo: o slide se refaz em segundos, sem alinhar nada à mão. O mesmo menu gera PDF, PNG e XLSX, o que costuma cobrir os três pedidos que aparecem depois de qualquer reunião.</p>
         <p>Se preferir começar de um slide pronto, nossos <a href="/pt/templates.html">modelos</a> incluem uma linha do tempo já formatada, com cores de fase e marcadores de marco, onde só falta inserir suas tarefas.</p>`],
     ['O erro mais comum', `<p>Espremer o cronograma inteiro em um slide. Apresentação e planejamento têm níveis de detalhe diferentes — o slide conta a história, o cronograma carrega o trabalho.</p>
@@ -587,6 +974,22 @@ const G = {
         <p><strong>Freemium</strong>: grátis até um limite. Normalmente três a cinco usuários, um ou dois projetos, ou um teto de tarefas. Com frequência o que fica no plano pago não é o volume, e sim o recurso decisivo: exportação, caminho crítico, linha de base. Ao ultrapassar o limite, o plano vira pago — e a essa altura os dados já estão lá dentro, o que é justamente o ponto do modelo.</p>
         <p><strong>Período de teste</strong>: tudo liberado por 14 ou 30 dias, depois cobrança. Isso não é software gratuito, é demonstração. Serve muito bem para avaliar antes de comprar e não serve para nada como solução permanente.</p>
         <p>Os três modelos são legítimos. O problema começa quando um teste de 14 dias ou um plano com teto apertado é anunciado apenas como "grátis" — e é por isso que vale identificar em qual dos três a ferramenta se encaixa antes de digitar a primeira tarefa.</p>`],
+    ['O comparativo de relance', `<!--FIG:tools|Grátis para sempre, grátis até um teto, grátis por quinze dias: três modelos diferentes com o mesmo rótulo.-->
+        <table>
+          <thead><tr><th>Ferramenta</th><th>Tipo de gratuidade</th><th>Exige cadastro</th><th>Precedências</th><th>Caminho crítico</th><th>Exportação no plano grátis</th><th>Onde ficam os dados</th></tr></thead>
+          <tbody>
+            <tr><td><strong>gantts.app</strong></td><td>Grátis, sem teto</td><td>Não</td><td>Sim, os quatro tipos</td><td>Sim</td><td>PDF, PNG, XLSX, PPTX, CSV, .ics</td><td>No seu aparelho</td></tr>
+            <tr><td>GanttProject</td><td>Livre, código aberto</td><td>Não (instalado)</td><td>Sim</td><td>Sim</td><td>PDF, PNG, CSV</td><td>No seu computador</td></tr>
+            <tr><td>TeamGantt</td><td>Freemium, teto apertado</td><td>Sim</td><td>Sim</td><td>Nos planos pagos</td><td>Limitada</td><td>Servidor do fornecedor</td></tr>
+            <tr><td>GanttPRO</td><td>Período de teste</td><td>Sim</td><td>Sim</td><td>Sim, durante o teste</td><td>Sim, durante o teste</td><td>Servidor do fornecedor</td></tr>
+            <tr><td>Instagantt</td><td>Freemium</td><td>Sim</td><td>Sim</td><td>Nos planos pagos</td><td>Limitada</td><td>Servidor do fornecedor</td></tr>
+            <tr><td>Canva</td><td>Freemium</td><td>Sim</td><td>Não — são formas</td><td>Não</td><td>PNG, PDF</td><td>Servidor do fornecedor</td></tr>
+            <tr><td>Microsoft Project</td><td>Pago</td><td>Sim</td><td>Sim, profundas</td><td>Sim</td><td>—</td><td>Nuvem Microsoft ou arquivo local</td></tr>
+            <tr><td>Excel / Google Planilhas</td><td>Grátis se você já paga o pacote</td><td>Depende</td><td>Não</td><td>Não</td><td>Nativa</td><td>Seu computador ou Google</td></tr>
+          </tbody>
+        </table>
+        <p>Duas colunas dessa tabela merecem uma leitura brasileira. A de <strong>cadastro</strong>, porque em obra, em escola pública e em cooperativa a pessoa que abre o cronograma no celular raramente é a que criou a conta — e uma ferramenta que exige login vira uma ferramenta que só uma pessoa usa. E a de <strong>onde ficam os dados</strong>, porque um cronograma de obra carrega nome de fornecedor, valor de contrato e CPF de responsável técnico. Sob a <strong>LGPD</strong>, isso faz de você controlador desses dados e do fornecedor da ferramenta um operador — o que exige contrato, base legal e clareza sobre o país onde o servidor está. Não é burocracia teórica: é a pergunta que o jurídico do cliente faz na hora de assinar, e chega sempre tarde.</p>
+        <p>Os números e limites dos planos gratuitos mudam com frequência. Trate qualquer teto citado aqui como indicativo e confirme na página de preços antes de decidir.</p>`],
     ['Ferramentas que rodam no navegador', `<p><strong>gantts.app</strong> — declarando o óbvio: a ferramenta é nossa. É um editor de Gantt que roda inteiramente no navegador, <strong>sem cadastro e sem login</strong>, sem teto de tarefas ou de projetos, com precedências, marcos, caminho crítico automático e exportação para <strong>PDF, PNG, XLSX e PPTX</strong>. O cronograma fica salvo no seu próprio aparelho. A contrapartida é o escopo: é uma ferramenta de cronograma e exportação, não uma suíte de gestão com apontamento de horas, chat e faturamento de recursos. Serve bem a quem quer um gráfico de Gantt correto e rápido, sem conta.</p>
         <p><strong>Ferramentas web menores</strong> — existe um punhado de sites de propósito único que permitem esboçar um cronograma no navegador e baixar uma imagem ou PDF. Algumas dispensam cadastro. A profundidade varia muito: é comum faltar caminho crítico confiável, tipos de precedência além do término-início ou exportação para planilha. São ótimas para um gráfico descartável; confira os limites atuais antes de apoiar um projeto real em uma delas.</p>`],
     ['Aplicativos instalados e código aberto', `<p><strong>GanttProject</strong> — aplicativo de desktop maduro, livre e de código aberto, para Windows, macOS e Linux. Trata tarefas, precedências, caminho crítico, alocação de recursos e exporta em PDF, PNG e CSV. Como é um programa instalado, funciona sem internet e não exige conta nenhuma. Em troca, a interface tem cara de outra década e não há sincronização em nuvem embutida: o arquivo é seu para versionar e enviar.</p>
@@ -605,6 +1008,20 @@ const G = {
     ['A questão do cadastro', `<p>A maioria das ferramentas gratuitas pede conta antes de mostrar a primeira barra. Quase nunca é necessidade técnica: é o preço. Um endereço de e-mail vale mais para o fornecedor do que a barra que você desenhou.</p>
         <p>Ferramentas que rodam inteiramente no navegador e salvam localmente não precisam de conta nem de servidor, porque nada é enviado. O <a href="/pt/app.html">gantts.app</a> funciona assim: sem cadastro, sem transmissão, o cronograma fica no seu aparelho. Isso também responde à questão de privacidade — o que não sai do aparelho não precisa de contrato.</p>
         <p>Na prática, a lista de opções sem cadastro é curta: ferramentas que calculam no cliente, aplicativos instalados como o GanttProject, e alguns sites pequenos. TeamGantt, GanttPRO, Instagantt e Canva exigem conta antes de qualquer coisa — o que é uma escolha legítima delas, e apenas convém saber de que lado da linha cada uma está.</p>`],
+    ['Uma avaliação de verdade: um plano real, quatro testes', `<p>Comparativo em tabela decide pouco. O que decide é rodar o <em>seu</em> plano nas candidatas e cronometrar. Foi o que fez o <strong>Ateliê Capibaribe</strong>, escritório de arquitetura de quatro pessoas no Recife, antes de escolher a ferramenta para a reforma de uma escola municipal em Água Fria: 25 tarefas, R$ 840.000 de contrato, entrega prometida para antes do início do ano letivo. Quatro testes, cada um com um critério objetivo de aprovação.</p>
+        <div class="worked">
+          <p><strong>Teste 1 — montar as 25 tarefas com precedências.</strong> Critério: menos de 20 minutos, do zero até uma data final calculada.</p>
+          <p>As ferramentas que aceitam colar uma lista pronta terminaram em 6 a 9 minutos. As que exigem criar tarefa por tarefa em formulário levaram de 25 a 40. E as duas que pedem cadastro consumiram mais 4 minutos entre criar conta, confirmar e-mail e passar pelo tour de boas-vindas — tempo que não aparece em nenhuma comparação de recursos e que, num escritório de quatro pessoas, se multiplica por quatro.</p>
+          <p><strong>Teste 2 — mudar uma duração e ver o caminho crítico andar.</strong> Critério: a data final se move sozinha e a cadeia crítica é redesenhada.</p>
+          <p>A tarefa escolhida foi a impermeabilização da laje, esticada de 8 para 14 dias por causa de chuva — em Recife, cronograma de obra que ignora o inverno de junho a agosto é ficção. Passaram as ferramentas com motor de cronograma de verdade. O Canva não moveu nada, porque as barras são formas. A planilha moveu as datas mas não indicou que a cadeia crítica havia trocado de lugar, que era exatamente a informação procurada. E duas plataformas moveram as datas mas mostraram o caminho crítico apenas com um cadeado ao lado.</p>
+          <p><strong>Teste 3 — entregar o cronograma no formato que o cliente pede.</strong> Critério: PDF para o processo administrativo da prefeitura e XLSX para a planilha de medição.</p>
+          <p>Aqui a lista encurtou de forma brutal. Exportação é o recurso que mais frequentemente está do lado pago da linha, e num contrato com órgão público o formato não é negociável: o PDF vai anexado ao processo e a planilha alimenta a medição mensal. Ferramenta que exporta só PNG está fora antes do primeiro dia de obra.</p>
+          <p><strong>Teste 4 — abrir no celular, no canteiro, com sinal ruim.</strong> Critério: o mestre de obras consulta a semana sem login e sem esperar carregamento.</p>
+          <p>Foi o teste que mais eliminou candidatas, e o menos citado em qualquer comparativo. Plataforma em nuvem com autenticação exige sinal estável e uma senha que o mestre não tem. Ferramenta que calcula no próprio navegador abre com o plano já em cache. Um cronograma que a obra não consegue consultar é um cronograma que a obra não segue — e aí ele volta a ser um PDF impresso e grampeado no quadro, desatualizado desde a semana passada.</p>
+          <p><strong>Resultado.</strong> Das oito candidatas, três passaram nos quatro testes, e a decisão final acabou saindo pelo teste 4. Custo total da avaliação: uma tarde. Custo de descobrir o problema do teste 3 no meio da obra: refazer 25 tarefas em outra ferramenta, com a medição do mês em aberto.</p>
+        </div>
+        <!--FIG:steps|Quatro testes com critério objetivo eliminam mais candidatas que qualquer tabela de recursos.-->
+        <p>Se você for repetir essa avaliação, os quatro testes valem quase para qualquer contexto — troque só o quarto pela restrição real do seu projeto. Numa cooperativa, o teste é quantas pessoas conseguem abrir o arquivo sem licença. Num escritório de contabilidade, é se o cronograma sai em XLSX com as colunas certas. Numa ONG com prestação de contas a edital, é se dá para guardar uma <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> auditável.</p>`],
     ['Como escolher em uma frase', `<ul>
           <li><strong>Precisa de um Gantt rápido, grátis, com exportação?</strong> Uma ferramenta de navegador sem cadastro resolve, e o <a href="/pt/app.html">gantts.app</a> já inclui caminho crítico e saída em Excel e PowerPoint.</li>
           <li><strong>Prefere software instalado e de código aberto?</strong> GanttProject.</li>
@@ -616,7 +1033,20 @@ const G = {
     ['Quando o pago compensa', `<p>Quando várias pessoas trabalham no mesmo cronograma ao mesmo tempo e é preciso controlar quem alterou o quê. Quando os recursos são planejados entre vários projetos e alguém precisa enxergar a carga agregada. Quando existe obrigação de prestação de contas a um contratante, com <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> auditável e histórico de replanejamentos.</p>
         <p>Fora desses casos, o gasto raramente se paga. Para um cronograma isolado de trinta tarefas, mantido por uma pessoa, software pago é quase sempre exagero — e o tempo que se perde configurando a plataforma costuma ser maior do que o cronograma inteiro leva para ser montado.</p>
         <p>Um teste honesto antes de assinar: liste os três recursos que motivaram a compra e verifique se eles estão no plano cotado, e não dois níveis acima. Nivelamento de recursos, portfólio multiprojeto e relatórios personalizados costumam morar no degrau mais caro, e é comum descobrir isso depois de migrar o cronograma inteiro.</p>
-        <p>Se você ainda está decidindo o que precisa, comece pelo básico — <a href="/pt/blog/what-is-a-gantt-chart.html">o que é um gráfico de Gantt</a> e <a href="/pt/blog/how-to-make-a-gantt-chart.html">como montar um</a> — e monte um cronograma de verdade numa ferramenta gratuita antes de comparar preços. A lista de exigências fica muito mais curta e muito mais concreta depois do primeiro plano real.</p>`],
+        <p>Se você ainda está decidindo o que precisa, comece pelo básico — <a href="/pt/blog/what-is-a-gantt-chart.html">o que é um gráfico de Gantt</a> e <a href="/pt/blog/how-to-make-a-gantt-chart.html">como montar um</a> — e monte um cronograma de verdade numa ferramenta gratuita antes de comparar preços. A lista de exigências fica muito mais curta e muito mais concreta depois do primeiro plano real.</p>
+        <!--FIG:cpm|Caminho crítico costuma ser o recurso que separa o plano grátis do pago. Confira antes.-->
+        <p>Rodar o teste 1 no <a href="/pt/app.html">gantts.app</a>, sem criar conta, leva os mesmos seis minutos do exemplo:</p>
+        <ol>
+          <li><strong>Abra e cole.</strong> <strong>✨ Colar no Gantt</strong> aceita a lista inteira: <code>(8d)</code> define a duração, <code>after Impermeabilização</code> cria a ligação, <code>!</code> no fim da linha vira marco, <code>#</code> no começo abre uma fase.</li>
+          <li><strong>Agrupe.</strong> <strong>▣ Grupo</strong> para as fases da obra; as datas do grupo saem das filhas.</li>
+          <li><strong>Ligue o que espera</strong> na coluna <strong>Depois de</strong>, pelos números de linha.</li>
+          <li><strong>Marque os feriados</strong> em <strong>Calendário de trabalho</strong> — inclusive os municipais, que em muita cidade brasileira fecham a prefeitura e travam medição e vistoria.</li>
+          <li><strong>Ligue <strong>Caminho crítico</strong></strong> e faça o teste 2: estique uma duração e veja a cadeia listrada se redesenhar. Ctrl+Z desfaz.</li>
+          <li><strong>Faça o teste 3.</strong> <strong>⬇ Exportar</strong> gera <strong>📄 Documento PDF</strong> para o processo e <strong>📊 Excel (.xlsx)</strong> para a medição — e também <strong>📽 PowerPoint (.pptx)</strong>, <strong>📑 CSV</strong> e <strong>📅 Calendário (.ics)</strong>.</li>
+          <li><strong>Faça o teste 4.</strong> <strong>💾 Salvar projeto (.gantts)</strong> e depois abra no celular. O plano fica no aparelho, sem login e sem depender do sinal do canteiro.</li>
+          <li><strong>Congele.</strong> <strong>Linha de base</strong> antes da ordem de serviço, para que a medição do mês seguinte compare com o plano aprovado e não com a memória de alguém.</li>
+        </ol>
+        <p>Duas ressalvas honestas, porque uma comparação sem elas não vale nada. O caminho crítico aqui é calculado <strong>as-placed</strong>: uma precedência só empurra a tarefa para depois, nunca puxa para antes — diferente do CPM de livro-texto, e diferente do MS Project. Para compactar o plano até as datas mais cedo possíveis existe o comando <strong>Reprogramar</strong>. E a folga que aparece na tela é a <strong>folga total</strong>, sem coluna de folga livre: antes de prometer margem a um empreiteiro específico, confira quem mais divide aquela mesma folga na cadeia.</p>`],
   ],
   callout: 'Verifique a exportação antes de começar. Uma ferramenta da qual os dados não saem em formato aberto é cara independentemente do preço: a troca passa a custar refazer o cronograma inteiro.',
   faq: [

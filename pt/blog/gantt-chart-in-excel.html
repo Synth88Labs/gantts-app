@@ -90,7 +90,7 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>7 min de leitura</span></p>
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>14 min de leitura</span></p>
     <div class="toc"><strong>Nesta página</strong>
       <ol>
         <li><a href="#s1">Preparar os dados</a></li>
@@ -99,10 +99,11 @@
         <li><a href="#s4">Inverter a ordem</a></li>
         <li><a href="#s5">Ajustar o eixo de datas</a></li>
         <li><a href="#s6">Acabamento</a></li>
-        <li><a href="#s7">Mostrar o percentual de avanço na barra</a></li>
-        <li><a href="#s8">Precedências: o que dá para improvisar</a></li>
-        <li><a href="#s9">A alternativa sem gráfico: formatação condicional</a></li>
-        <li><a href="#s10">Onde a técnica termina</a></li>
+        <li><a href="#s7">Um exemplo resolvido: seis tarefas, depois um atraso</a></li>
+        <li><a href="#s8">Mostrar o percentual de avanço na barra</a></li>
+        <li><a href="#s9">Precedências: o que dá para improvisar</a></li>
+        <li><a href="#s10">A alternativa sem gráfico: formatação condicional</a></li>
+        <li><a href="#s11">Onde a técnica termina</a></li>
       </ol>
     </div>
 
@@ -117,6 +118,20 @@
         <p>Falta a quinta coluna, a que faz o truque funcionar: o <strong>deslocamento</strong> (E), quantos dias cada tarefa começa depois do início do projeto. Com a menor data de início travada em <code>$B$2</code>, use <code>=B2-$B$2</code>.</p>
         <p>Formate as colunas de deslocamento e duração como <strong>Número</strong> (Página Inicial → grupo Número → Geral), nunca como data. É o passo que mais gente pula, e o sintoma é inconfundível: o gráfico nasce com barras enormes que vão de 1900 até hoje, porque o Excel leu "37 dias" como "6 de fevereiro de 1900".</p>
         <p>Vale montar a tabela já na ordem em que as tarefas devem aparecer, porque reordenar depois obriga a mexer no intervalo de dados do gráfico. Cinco ou seis linhas bastam para validar o método antes de digitar o cronograma inteiro.</p>
+        <p><strong>Uma advertência sobre fórmulas antes de seguir.</strong> Tudo o que aparece neste guia está escrito para o <strong>Excel em português do Brasil</strong>, que traduz os nomes das funções e usa <strong>ponto e vírgula</strong> como separador de argumentos. Se você copiar uma fórmula de um tutorial em inglês — <code>=WORKDAY(B2,5)</code>, com vírgula — o Excel em pt-BR devolve erro de fórmula ou joga tudo numa célula só. A conversão é direta:</p>
+        <table>
+          <thead><tr><th>Em inglês</th><th>Em português (pt-BR)</th><th>Para que serve aqui</th></tr></thead>
+          <tbody>
+            <tr><td><code>=WORKDAY(B2,5)</code></td><td><code>=DIATRABALHO(B2;5)</code></td><td>Somar dias úteis a uma data, pulando fim de semana</td></tr>
+            <tr><td><code>=WORKDAY(B2,5,feriados)</code></td><td><code>=DIATRABALHO(B2;5;Feriados)</code></td><td>O mesmo, pulando também os feriados de um intervalo nomeado</td></tr>
+            <tr><td><code>=NETWORKDAYS(B2,C2)</code></td><td><code>=DIATRABALHOTOTAL(B2;C2)</code></td><td>Contar dias úteis entre duas datas</td></tr>
+            <tr><td><code>=WEEKDAY(E$1,2)&gt;5</code></td><td><code>=DIA.DA.SEMANA(E$1;2)&gt;5</code></td><td>Detectar sábado e domingo para sombrear a coluna</td></tr>
+            <tr><td><code>=MAX(C2,C5)</code></td><td><code>=MÁXIMO(C2;C5)</code></td><td>Início de uma tarefa com duas predecessoras</td></tr>
+            <tr><td><code>=AND(...)</code></td><td><code>=E(...)</code></td><td>Regra de formatação condicional com duas condições</td></tr>
+          </tbody>
+        </table>
+        <p>Duas ressalvas. Existem instalações em português que ainda usam <strong>vírgula</strong> como separador, porque o separador segue a configuração regional do Windows e não o idioma do Office; se a fórmula acusar erro, teste a outra pontuação antes de procurar bug em outro lugar. E o acento em <code>MÁXIMO</code> é obrigatório — o Excel em pt-BR não aceita <code>MAXIMO</code>.</p>
+        <p>Vale ainda montar uma aba <strong>Feriados</strong> com os feriados nacionais, o do seu estado e o do seu município, e nomear o intervalo. Sem ela, <code>DIATRABALHO</code> conta Carnaval, Corpus Christi e o padroeiro da cidade como dias normais de trabalho, e o cronograma nasce otimista em cinco a oito dias por ano.</p>
       <h2 id="s2">Inserir o gráfico de barras empilhadas</h2>
 <p>Selecione a coluna <strong>Tarefa</strong> e, segurando Ctrl, também as colunas de <strong>deslocamento</strong> e <strong>duração</strong> — deixe as datas de fora, o gráfico não as usa. Depois vá em <strong>Inserir → Gráficos → Barras → Barras Empilhadas 2D</strong>.</p>
         <p>O resultado inicial não parece um Gantt, e isso é esperado: você vê duas séries empilhadas por linha, todas começando no zero. Se o Excel interpretar mal o intervalo, clique com o botão direito no gráfico e use <strong>Selecionar Dados</strong> para conferir três coisas: a série 1 é o deslocamento, a série 2 é a duração, e os rótulos do eixo de categorias são os nomes das tarefas.</p>
@@ -136,24 +151,82 @@
 <p>Clique na série de duração e abra <strong>Formatar Série de Dados → Opções de Série</strong>. Reduza a <strong>Largura do Espaçamento</strong> para algo entre 20% e 50%: barras finas com muito ar em volta fazem o cronograma parecer vazio e desalinhado.</p>
         <p>Colorir por fase — um tom por fase, variações do mesmo matiz dentro dela — é o que dá estrutura visual. Cores diferentes por tarefa fazem o oposto: viram ruído. Apague a legenda, que só nomeia "deslocamento" e "duração" e não interessa a ninguém, suavize as linhas de grade para um cinza claro e dê um título ao gráfico.</p>
         <p>Marcos entram como uma série adicional de duração zero, formatada como <strong>Dispersão</strong> com marcador de losango, o que exige converter o gráfico em combinação (botão direito → <strong>Alterar Tipo de Gráfico de Série</strong>). Funciona, mas é o ponto em que a planilha começa a resistir: com muitos marcos, o esforço de manter a combinação cresce rápido.</p>
-      <h2 id="s7">Mostrar o percentual de avanço na barra</h2>
+      <h2 id="s7">Um exemplo resolvido: seis tarefas, depois um atraso</h2>
+<p>O método acima em cima de um cronograma de verdade — e depois em cima do mesmo cronograma depois que ele escorrega, que é onde a planilha mostra o que realmente é. O projeto: a troca do sistema de PDV da rede de farmácias <strong>Vidalonga</strong>, quatro lojas em Curitiba, coordenada pelo Márcio Balbinot. Início em seg 02/02/2026.</p>
+        <div class="worked">
+          <p><strong>O plano como ele entra na planilha</strong> — colunas A a E, com o deslocamento calculado por <code>=B2-$B$2</code> e a duração por <code>=DIATRABALHOTOTAL(B2;C2;Feriados)</code>:</p>
+          <table>
+            <thead><tr><th>A — Tarefa</th><th>B — Início</th><th>C — Término</th><th>D — Duração</th><th>E — Deslocamento</th></tr></thead>
+            <tbody>
+              <tr><td>Levantamento de processos nas 4 lojas</td><td>seg 02/02</td><td>seg 09/02</td><td>6</td><td>0</td></tr>
+              <tr><td>Parametrização do sistema</td><td>ter 10/02</td><td>ter 24/02</td><td>8</td><td>8</td></tr>
+              <tr><td>Migração da base de produtos e preços</td><td>qua 25/02</td><td>ter 03/03</td><td>5</td><td>23</td></tr>
+              <tr><td>Treinamento das equipes de loja</td><td>qua 04/03</td><td>seg 09/03</td><td>4</td><td>30</td></tr>
+              <tr><td>Piloto na loja do Batel</td><td>ter 10/03</td><td>qui 12/03</td><td>3</td><td>36</td></tr>
+              <tr><td><strong>Virada nas 4 lojas</strong></td><td>sex 13/03</td><td>seg 16/03</td><td>2</td><td>39</td></tr>
+            </tbody>
+          </table>
+          <p>Repare no salto da parametrização: oito dias úteis que ocupam quinze dias de calendário. O <strong>Carnaval de 2026 cai em 16 e 17 de fevereiro</strong>, a Quarta-feira de Cinzas em 18/02 é meio expediente que na prática ninguém trabalha, e a rede simplesmente fecha o escritório central a semana toda. Se esses três dias não estiverem na aba <strong>Feriados</strong>, o <code>DIATRABALHO</code> devolve ter 19/02 como término e todo o resto do cronograma nasce três dias adiantado.</p>
+          <p><strong>Agora o atraso.</strong> A migração da base encontra 2.400 SKUs sem código EAN cadastrado e sai de 5 para 9 dias úteis. A coluna B da tarefa seguinte referencia <code>=C4+1</code>, então a cascata funciona: treinamento, piloto e virada andam quatro dias úteis e a virada vai de seg 16/03 para sex 20/03.</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Plano</th><th>Depois do atraso</th><th>Desvio</th></tr></thead>
+            <tbody>
+              <tr><td>Migração da base</td><td>ter 03/03</td><td>seg 09/03</td><td>+4 d</td></tr>
+              <tr><td>Treinamento das equipes</td><td>seg 09/03</td><td>sex 13/03</td><td>+4 d</td></tr>
+              <tr><td>Piloto na loja do Batel</td><td>qui 12/03</td><td>qua 18/03</td><td>+4 d</td></tr>
+              <tr><td><strong>Virada nas 4 lojas</strong></td><td>seg 16/03</td><td>sex 20/03</td><td>+4 d</td></tr>
+            </tbody>
+          </table>
+          <p>E aqui está o que o Excel <em>não</em> faz, e que custa caro. O eixo horizontal do gráfico foi configurado com <strong>Máximo</strong> igual ao número serial de 16/03 — digitado à mão, como o método exige. A última barra agora termina em 20/03 e simplesmente <strong>sai pela borda direita, sem aviso nenhum</strong>. A planilha está certa, o gráfico está errado, e nada na tela sinaliza a diferença. Foi assim que o Márcio apresentou à diretoria um cronograma que mostrava a virada no dia 16 quando os dados já diziam 20 — e a virada de PDV numa rede de farmácia é a semana em que ninguém tira férias, o que significa que quatro dias de deslocamento viraram uma renegociação de escala com o RH.</p>
+        </div>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="O deslocamento invisível é o que faz cada barra começar no dia certo."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semana 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Marco</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text></svg><figcaption>O deslocamento invisível é o que faz cada barra começar no dia certo.</figcaption></figure>
+        <p>Duas lições práticas ficam desse exemplo. Primeira: sempre que uma data mudar, volte ao eixo horizontal e reconfira Mínimo e Máximo — é o passo de manutenção que ninguém documenta e todo mundo esquece. Segunda: a cascata por fórmula só sobrevive enquanto o cronograma for uma corrente única. Bastaria a virada depender também da homologação da NFC-e na Sefaz-PR para que <code>=C4+1</code> virasse <code>=MÁXIMO(C4;C9)+1</code>, e a partir daí cada nova ligação é uma fórmula que só quem escreveu consegue auditar.</p>
+      <h2 id="s8">Mostrar o percentual de avanço na barra</h2>
 <p>Dá para exibir o avanço dentro da própria barra usando colunas auxiliares. Acrescente <strong>% Concluído</strong> (F) e duas colunas calculadas: <strong>Avanço</strong> com <code>=D2*F2</code> e <strong>Restante</strong> com <code>=D2-(D2*F2)</code>.</p>
         <p>No gráfico, as séries passam a ser três, nesta ordem: deslocamento (invisível), avanço, restante. Pinte o avanço num tom escuro e o restante no mesmo matiz claro. O efeito é uma barra parcialmente preenchida, legível a distância, sem nenhum recurso extra do Excel.</p>
         <p>O preço é manutenção. Cada tarefa nova exige estender o intervalo de dados do gráfico e reconferir a ordem das três séries, e é comum a formatação se perder no caminho — o Excel recoloca cores padrão quando o intervalo muda.</p>
-      <h2 id="s8">Precedências: o que dá para improvisar</h2>
+      <h2 id="s9">Precedências: o que dá para improvisar</h2>
 <p>O Excel não tem precedências. Não existe seta término-início, e mover uma tarefa não move nada do que vem depois. O improviso conhecido é apontar a data de início de cada tarefa para o término da anterior: se C2 guarda o término da tarefa 1, B3 recebe <code>=C2</code>, e uma alteração desce em cascata pela coluna.</p>
         <p>Funciona enquanto o cronograma for uma corrente única. Quando uma tarefa tem duas predecessoras, é preciso <code>=MÁXIMO(C2;C5)</code>. Quando existe retardo, soma-se um número. Quando o calendário é de dias úteis, entram <code>DIATRABALHO</code> e <code>DIATRABALHOTOTAL</code>.</p>
         <p>Em vinte linhas isso já virou uma teia de fórmulas que só quem montou consegue auditar — e mesmo assim o gráfico continua sem uma única seta e sem qualquer indicação de <a href="/pt/blog/critical-path-method.html">caminho crítico</a>. A informação está na planilha; ela simplesmente não aparece no desenho.</p>
-      <h2 id="s9">A alternativa sem gráfico: formatação condicional</h2>
+      <h2 id="s10">A alternativa sem gráfico: formatação condicional</h2>
 <p>Existe um segundo método que dispensa o objeto gráfico por completo e costuma ser mais fácil de manter. Deixe tarefa, início e término nas colunas A, B e C, e monte um calendário na horizontal a partir da coluna E: uma coluna por dia ou por semana, com a data no cabeçalho da linha 1.</p>
         <p>Selecione toda a grade do calendário e vá em <strong>Página Inicial → Formatação Condicional → Nova Regra → Usar uma fórmula para determinar quais células devem ser formatadas</strong>. Com a seleção começando em E2, escreva <code>=E(E$1&gt;=$B2; E$1&lt;=$C2)</code> e escolha um preenchimento.</p>
         <p>As referências mistas são o detalhe que faz a regra funcionar: a linha do cabeçalho travada com <code>$1</code>, as colunas de datas travadas com <code>$B</code> e <code>$C</code>. Erre isso e a grade pinta em diagonal.</p>
         <p>O resultado é um Gantt em células que se redesenha sozinho quando uma data muda, imprime bem e aceita regras adicionais para destacar fins de semana, marcos ou tarefas atrasadas. Continua sem precedências e sem caminho crítico, mas elimina toda a briga com séries e eixos.</p>
-      <h2 id="s10">Onde a técnica termina</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 540 78" width="100%" role="img" aria-label="Formatação condicional: sem objeto gráfico, sem eixo para reconfigurar quando a data muda."><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Design</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Execução</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Testes</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Lançamento</text></svg><figcaption>Formatação condicional: sem objeto gráfico, sem eixo para reconfigurar quando a data muda.</figcaption></figure>
+        <p>A receita completa, para o cronograma da Vidalonga, em oito passos:</p>
+        <ol>
+          <li><strong>Deixe A, B e C limpas</strong> — Tarefa, Início e Término, com formato de data em B e C.</li>
+          <li><strong>Monte o cabeçalho do calendário.</strong> Em E1 digite <code>02/02/2026</code>; em F1, <code>=E1+1</code>; arraste para a direita até cobrir o projeto inteiro com folga — no exemplo, até meados de abril, porque cronograma escorrega.</li>
+          <li><strong>Formate o cabeçalho como <code>dd/mm</code></strong> e gire o texto 90 graus. Uma segunda linha com <code>=TEXTO(E1;"ddd")</code> mostra o dia da semana e evita metade dos erros de contagem.</li>
+          <li><strong>Selecione a grade</strong> a partir de E3 e vá em <strong>Página Inicial → Formatação Condicional → Nova Regra → Usar uma fórmula</strong>.</li>
+          <li><strong>Regra da barra:</strong> <code>=E(E$1&gt;=$B3; E$1&lt;=$C3)</code>, com um preenchimento sólido. As referências mistas são o que faz a regra andar corretamente pela grade.</li>
+          <li><strong>Regra do fim de semana:</strong> nova regra, <code>=DIA.DA.SEMANA(E$1;2)&gt;5</code>, cinza claro. Coloque-a <em>abaixo</em> da regra da barra na lista de regras, senão o cinza cobre as barras que caem no sábado.</li>
+          <li><strong>Regra dos feriados:</strong> <code>=CONT.SE(Feriados;E$1)&gt;0</code>, com o mesmo cinza. É ela que faz o Carnaval aparecer no desenho, e não só na conta.</li>
+          <li><strong>Regra do atrasado:</strong> <code>=E(E$1&gt;=$B3; E$1&lt;=$C3; $D3&lt;1; E$1&lt;HOJE())</code> em vermelho, se você tiver uma coluna de percentual concluído. É o mais perto de um semáforo que a planilha chega.</li>
+        </ol>
+        <p>Esse caminho envelhece muito melhor que o gráfico de barras empilhadas, justamente porque não existe eixo para desconfigurar. Quando a migração da base foi de 5 para 9 dias, a grade se repintou sozinha e a barra continuou visível — o erro do exemplo anterior simplesmente não acontece aqui.</p>
+      <h2 id="s11">Onde a técnica termina</h2>
 <p>Se uma tarefa atrasa, cada data de início seguinte precisa ser ajustada na mão — e, na prática, isso para de acontecer na segunda alteração. O cronograma continua bonito e passa a estar errado, que é a pior combinação possível, porque ainda se confia nele.</p>
         <p>Também faltam caminho crítico, carga de recursos, <a href="/pt/blog/gantt-baseline-variance.html">linha de base</a> e histórico de desvios. Nada disso é acidente: o Excel é uma planilha, não um motor de cronograma, e cada um desses recursos exigiria uma camada de cálculo que ele não tem.</p>
         <p>Regra prática: até umas vinte tarefas, num cronograma que muda pouco e cujos dados já vivem numa planilha, o Excel é uma escolha razoável. Acima disso, o tempo de manutenção supera o que a familiaridade economiza.</p>
         <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> liga precedências, marca o caminho crítico sozinho, roda no navegador sem cadastro e exporta em XLSX quando alguém pedir o arquivo em Excel — o que resolve o motivo mais comum de se montar o cronograma na planilha em primeiro lugar.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="O que a planilha entrega, o que ela não entrega e onde a linha é cruzada."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefas</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Caminho crítico</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Slides</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Navegador</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>O que a planilha entrega, o que ela não entrega e onde a linha é cruzada.</figcaption></figure>
+        <table>
+          <thead><tr><th>Recurso</th><th>Excel, barras empilhadas</th><th>Excel, formatação condicional</th><th>Ferramenta de cronograma</th></tr></thead>
+          <tbody>
+            <tr><td>Barras na linha do tempo</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Recalcula quando uma data muda</td><td>Só a grade; o eixo é manual</td><td>Sim</td><td>Sim</td></tr>
+            <tr><td>Setas de precedência</td><td>Não</td><td>Não</td><td>Sim, com TI, II, TT e IT</td></tr>
+            <tr><td>Caminho crítico</td><td>Não</td><td>Não</td><td>Sim, calculado a cada alteração</td></tr>
+            <tr><td>Folga por tarefa</td><td>Não</td><td>Não</td><td>Sim — folga total (não há coluna de folga livre)</td></tr>
+            <tr><td>Linha de base e desvio</td><td>Só à mão, em colunas paralelas</td><td>Só à mão</td><td>Sim, gravada em um clique</td></tr>
+            <tr><td>Marcos de duração zero</td><td>Exige série de dispersão</td><td>Uma regra a mais</td><td>Nativos, como losango</td></tr>
+            <tr><td>Tamanho em que ainda compensa</td><td>Até ~20 tarefas</td><td>Até ~40 tarefas</td><td>Sem limite prático</td></tr>
+          </tbody>
+        </table>
+        <p>Uma diferença que vale explicitar, porque surpreende quem chega do MS Project: no gantts.app uma precedência só empurra a tarefa para <em>depois</em>, nunca puxa para antes — o cálculo é as-placed, a partir de onde a barra foi colocada. É o comportamento certo para quem posicionou uma barra de propósito, e para compactar o plano de verdade existe o comando <strong>Reprogramar</strong>.</p>
 
       <div class="callout">A diferença decisiva não é a aparência, é o cálculo. Um Gantt no Excel parece certo, mas não se atualiza. Assim que as datas mudam — e elas sempre mudam — o cronograma vira desenho.</div>
 

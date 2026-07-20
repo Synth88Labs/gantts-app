@@ -54,7 +54,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
   <link rel="stylesheet" href="/css/site.css?v=25" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-excel.html#post","headline":"用 Excel 做甘特图：步骤与局限","description":"用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"用 Excel 做甘特图：步骤与局限","item":"https://gantts.app/zh/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Excel 有内置的甘特图类型吗？","acceptedAnswer":{"@type":"Answer","text":"没有。插入图表菜单里只有柱形图、条形图、折线图和饼图。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。"}},{"@type":"Question","name":"为什么我的横条长度不对？","acceptedAnswer":{"@type":"Answer","text":"几乎都是因为偏移量或工期列还是日期格式。把这两列的数字格式改成\"常规\"或\"数值\"，横条长度就正常了。"}},{"@type":"Question","name":"为什么任务顺序是反的？","acceptedAnswer":{"@type":"Answer","text":"Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选\"逆序类别\"，第一项任务就回到顶部。"}},{"@type":"Question","name":"Excel 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"能，但要靠辅助列：工期乘以完成百分比，作为第三个堆积系列加入图表，用深一号的颜色。每新增任务都要手动扩大数据区域。"}},{"@type":"Question","name":"Excel 能处理依赖关系吗？","acceptedAnswer":{"@type":"Answer","text":"不能自动处理。可以用公式引用前置任务的结束日期做单链传递，但没有箭头，也没有关键路径，多分支的计划维护不下来。"}},{"@type":"Question","name":"有现成的 Excel 模板吗？","acceptedAnswer":{"@type":"Answer","text":"有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-excel.html#post","headline":"用 Excel 做甘特图：步骤与局限","description":"用 Excel 的堆积条形图做甘特图：逐步操作、坐标轴与日期格式设置、进度与里程碑的处理，以及这种做法的局限。","url":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-excel.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"用 Excel 做甘特图：步骤与局限","item":"https://gantts.app/zh/blog/gantt-chart-in-excel.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Excel 有内置的甘特图类型吗？","acceptedAnswer":{"@type":"Answer","text":"没有。插入图表菜单里只有柱形图、条形图、折线图和饼图，没有一项叫\"甘特图\"。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。微软自带的几个\"甘特项目计划\"模板，底下用的也是同一个技巧。"}},{"@type":"Question","name":"中文版 Excel 和 WPS 的公式要改写吗？","acceptedAnswer":{"@type":"Answer","text":"不用。中文版 Excel 的函数名仍是英文——WORKDAY、NETWORKDAYS、MAX、COUNTIF 照写——参数之间用半角逗号分隔，不是分号。WPS Office 在这一点上与 Excel 完全一致，本文所有公式都可以原样粘贴。"}},{"@type":"Question","name":"为什么我的横条长度不对？","acceptedAnswer":{"@type":"Answer","text":"两个常见原因。一是偏移量或工期列还是日期格式，把它们改成\"常规\"或\"数值\"即可。二是把工作日直接当成了横条长度：图表横轴是含周末和节假日的自然日历，所以横条长度要写 =C2-B2+1，而不是引用工作日那一列。"}},{"@type":"Question","name":"法定节假日和调休怎么处理？","acceptedAnswer":{"@type":"Answer","text":"把节假日日期列在一个区域里（例如 H2:H5），所有 WORKDAY 和 NETWORKDAYS 都带上这个参数。调休上班的周六 WORKDAY 处理不了，只能把该任务的工作日数手工减一天，或者干脆换用会算工作日历的排程工具。"}},{"@type":"Question","name":"为什么任务顺序是反的？","acceptedAnswer":{"@type":"Answer","text":"Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选\"逆序类别\"，第一项任务就回到顶部；同一面板里把\"横坐标轴交叉\"设为\"最大分类\"，日期轴会留在上方。"}},{"@type":"Question","name":"Excel 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"能，但要用三个系列而不是四个。加一列完成百分比，再加两列辅助：\"已完成\"＝横条长度×完成百分比，\"剩余\"＝横条长度×(1−完成百分比)，按\"开始、已完成、剩余\"作图并丢掉原来的长度系列。把进度系列直接叠在工期之上是常见错误——那会让每条横条都比真实工期更长。"}},{"@type":"Question","name":"任务延误时 Excel 甘特图会自动更新吗？","acceptedAnswer":{"@type":"Answer","text":"只有在每项任务的开始日期是引用前置任务结束日期的公式时才会，例如 =WORKDAY(C2,1,$H$2:$H$5)，此时改动能沿单条链往下传。它处理不了有两个前置任务的情况，也表达不了开始-开始或完成-完成；而且坐标轴边界是写死的序列号，日期一旦超出项目原定结束日，横条会跑出图外且没有任何提示。"}},{"@type":"Question","name":"有现成的 Excel 模板吗？","acceptedAnswer":{"@type":"Answer","text":"有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。也可以在 gantts.app 里搭好之后一键导出成 Excel，省掉全部堆积条形图的设置工作。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -98,9 +98,11 @@
         <li><a href="#s3">把第一个系列设为不可见</a></li>
         <li><a href="#s4">反转顺序</a></li>
         <li><a href="#s5">修正日期坐标轴</a></li>
-        <li><a href="#s6">加进度与里程碑</a></li>
-        <li><a href="#s7">另一种做法：条件格式</a></li>
-        <li><a href="#s8">这种做法的边界</a></li>
+        <li><a href="#s6">一个完整算例：六项任务，然后来一次延误</a></li>
+        <li><a href="#s7">加依赖关系与完成百分比</a></li>
+        <li><a href="#s8">另一种做法：条件格式</a></li>
+        <li><a href="#s9">Excel 给得了什么，给不了什么</a></li>
+        <li><a href="#s10">更快的路：在线搭好，再导出成 Excel</a></li>
       </ol>
     </div>
 
@@ -112,6 +114,18 @@
     <div class="prose">
       <h2 id="s1">准备数据</h2>
 <p>新建一张空白工作表，建四列：<strong>任务</strong>、<strong>开始日期</strong>、<strong>结束日期</strong>、<strong>工期</strong>。开始和结束填真实日期，工期用公式算：开始在 B2、结束在 C2，D2 输入 <code>=C2-B2</code> 向下填充。Excel 把日期存成序列号，相减得到的正是天数。</p>
+      <p>一个最小的例子，每项任务都从上一项结束的次日开始：</p>
+      <table>
+        <thead><tr><th>任务</th><th>开始</th><th>结束</th><th>工期</th></tr></thead>
+        <tbody>
+          <tr><td>调研</td><td>7 月 1 日</td><td>7 月 5 日</td><td>5</td></tr>
+          <tr><td>设计</td><td>7 月 6 日</td><td>7 月 12 日</td><td>7</td></tr>
+          <tr><td>开发</td><td>7 月 13 日</td><td>7 月 26 日</td><td>14</td></tr>
+          <tr><td>测试</td><td>7 月 27 日</td><td>8 月 2 日</td><td>7</td></tr>
+          <tr><td>上线</td><td>8 月 3 日</td><td>8 月 4 日</td><td>2</td></tr>
+        </tbody>
+      </table>
+      <p>上表用的是 <code>=C2-B2+1</code>：当天开始、当天结束的任务仍然要占一天，没有这个 <code>+1</code>，每条横条都会短一天，一天工期的任务干脆消失。如果你习惯把结束日期当作交接时点、让下一项任务同日开始，那就用 <code>=C2-B2</code>。两种约定都成立，混着用才会得到一张每一行都悄悄差一天的图。</p>
       <p>再加一列<strong>偏移量</strong>：本任务比项目最早开始日期晚几天，<code>=B2-$B$2</code>。</p>
       <p>关键一步是把偏移量和工期两列的数字格式改成"常规"或"数值"。留成日期格式的话，7 天会被读成 1900 年 1 月 7 日，横条长度全错——这是最常见的翻车点。</p>
       <h2 id="s2">插入堆积条形图</h2>
@@ -126,26 +140,97 @@
       <h2 id="s5">修正日期坐标轴</h2>
 <p>横轴默认从 0 开始，左边空出一大片。点选横轴，在<strong>设置坐标轴格式 › 边界</strong>里把<strong>最小值</strong>设为项目开始日期、<strong>最大值</strong>设为结束日期。这里只接受序列号：在空单元格输入日期、把格式改成"常规"，显示的数字就是要填的值。</p>
       <p>再把<strong>单位 › 主要</strong>设为 7 得到按周的网格线，把<strong>分类间距</strong>压到 20% 左右让横条更粗，最后按阶段换色、删掉图例。</p>
-      <h2 id="s6">加进度与里程碑</h2>
-<p><strong>完成百分比</strong>靠辅助列："已完成工期"＝工期 × 完成百分比，作为第三个堆积系列加进图表，用深一号的同色系填充。代价是每新增一行都要回到<strong>选择数据</strong>里扩大数据区域。</p>
-      <p><strong>里程碑</strong>要单独建一个系列，只在里程碑日期上有值，改成散点图、标记选菱形——工期为零的任务在条形图里画不出可见形状。</p>
-      <h2 id="s7">另一种做法：条件格式</h2>
-<p>不想和图表工具较劲的话，还有一条路。顶部横排一行日期（一天或一周一列），左边保留任务和起止日期，选中整片网格后走<strong>条件格式 › 新建规则 › 使用公式确定要设置格式的单元格</strong>，公式写 <code>=AND(E$1&gt;=$B2, E$1&lt;=$C2)</code>。</p>
-      <p>日期一改格子自己重画，打印也干净。缺点是刻度只能靠列宽缩放，进度仍要另写公式。</p>
-      <h2 id="s8">这种做法的边界</h2>
-<p>Excel 不理解依赖关系，也画不出连线箭头。常见变通是把开始日期写成前置任务结束日期的引用（比如 <code>=C2</code>），改动能沿列往下传，但只对单链有效，一有分支就散架。</p>
-      <p>同样缺失的还有关键路径、总浮动时间和资源负荷。二十项任务以内 Excel 是合理选择；再多，手工维护的代价就超过它的便利。<a href="/zh/app.html">gantts.app</a> 在浏览器里直接做这些计算，也能一键导出回 XLSX。</p>
+      <h2 id="s6">一个完整算例：六项任务，然后来一次延误</h2>
+<p>上面五步是机械操作。真正决定这个文件能不能撑过一个真实项目的，是公式怎么写，以及计划一变它们会怎么样。</p>
+      <p>先说一句关于版本的话：<strong>中文版 Excel 的函数名仍然是英文</strong>——<code>WORKDAY</code>、<code>NETWORKDAYS</code>、<code>MAX</code>、<code>COUNTIF</code> 照写不误，只有参数之间用<strong>半角逗号</strong>分隔，不是分号。国内很多人用的 <strong>WPS Office</strong> 在这一点上与 Excel 完全一致，下面所有公式原样粘贴即可，不需要改写。</p>
+      <div class="worked">
+        <p><strong>这张表。</strong>一个电商官网重构项目，2026 年 3 月 2 日（周一）启动。第 1 行是表头，任务在第 2—7 行。列：<strong>A</strong> 任务、<strong>B</strong> 开始、<strong>C</strong> 结束、<strong>D</strong> 工作日、<strong>E</strong> 横条长度。<strong>法定节假日</strong>放在 <code>H2:H5</code>：清明补假 4 月 6 日，以及劳动节 5 月 1 日、5 月 4 日、5 月 5 日。只有 D 列是手工输入的，其余都是算出来的：</p>
+        <ul>
+          <li><strong>C2</strong>，结束日期——<code>=WORKDAY(B2,D2-1,$H$2:$H$5)</code>。那个 <code>-1</code> 很关键：<code>WORKDAY</code> 是<em>向前</em>数的，周一开始、做满 5 个工作日的任务，结束日是 <code>WORKDAY(周一,4)</code> 也就是周五。漏掉它，每项任务都会长出一天。</li>
+          <li><strong>B3</strong>，后续每项任务的开始日期——<code>=WORKDAY(C2,1,$H$2:$H$5)</code>。整张表之所以还能"自动重排"，全靠这一条公式。</li>
+          <li><strong>E2</strong>，图表实际绘制的那个数——<code>=C2-B2+1</code>，<em>不是</em> <code>D2</code>。D 是工作日，而图表横轴是含周末和节假日的自然日历，所以一项 10 个工作日的任务必须画成 12 天长的横条。把这两个数混为一谈，是 Excel 甘特图和它自己那张表对不上最常见的原因。</li>
+          <li>如果还想知道两个日期之间到底有几个工作日，用 <code>=NETWORKDAYS(B2,C2,$H$2:$H$5)</code> 反查一遍，能当作校验。</li>
+        </ul>
+        <p>把 C2、E2 向下填充到第 2—7 行，B3 向下填充到第 3—7 行：</p>
+        <table>
+          <thead><tr><th>行</th><th>A — 任务</th><th>B — 开始</th><th>C — 结束</th><th>D — 工作日</th><th>E — 横条长度</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>需求调研</td><td>3 月 2 日（周一）</td><td>3 月 13 日（周五）</td><td>10</td><td>12</td></tr>
+            <tr><td>3</td><td>设计</td><td>3 月 16 日（周一）</td><td>3 月 27 日（周五）</td><td>10</td><td>12</td></tr>
+            <tr><td>4</td><td>开发</td><td>3 月 30 日（周一）</td><td>4 月 27 日（周一）</td><td>20</td><td>29</td></tr>
+            <tr><td>5</td><td>内容迁移</td><td>4 月 28 日（周二）</td><td>5 月 21 日（周四）</td><td>15</td><td>24</td></tr>
+            <tr><td>6</td><td>测试</td><td>5 月 22 日（周五）</td><td>6 月 4 日（周四）</td><td>10</td><td>14</td></tr>
+            <tr><td>7</td><td>上线</td><td>6 月 5 日（周五）</td><td>6 月 5 日（周五）</td><td>1</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <p>注意第 4 行和第 5 行：20 个工作日的开发画成 29 天长的横条，15 个工作日的内容迁移画成 24 天——多出来的不只是周末，还有清明和劳动节。<code>H2:H5</code> 这几个格子如果不填，开发会提前一天完成，内容迁移提前三天，而错误会一路累积到上线日。</p>
+        <p><strong>坐标轴。</strong>Excel 的坐标轴边界只认<strong>序列号</strong>，不认日期。在空单元格里输入 <code>=B2</code> 再把格式改成"常规"就能读出来：2026 年 3 月 2 日是 <strong>46083</strong>，6 月 5 日是 <strong>46178</strong>。这两个数填进最小值和最大值，<strong>单位 › 主要</strong>填 <code>7</code> 得到按周的网格线。</p>
+        <p><strong>现在改一个数。</strong>设计超了三天：只改 <code>D3</code>，从 10 改成 13。整条链自己重算——设计 4 月 1 日（周三）结束，开发 4 月 2 日至 4 月 30 日，内容迁移 5 月 6 日至 5 月 26 日，测试 5 月 27 日至 6 月 9 日，上线变成 <strong>6 月 10 日（周三）</strong>。进去三个工作日，出来三个工作日。这是这张表最好的样子，而且确实好用。</p>
+        <p><strong>接下来是它坏掉的地方。</strong></p>
+        <ol>
+          <li><strong>最后一条横条跑出图外了。</strong>上线挪到 6 月 10 日，超过了写死在坐标轴最大值里的 46178。横条被截断，而且没有任何提示。此后每改一次日期，都要重新读一遍序列号、重新敲一遍边界。</li>
+          <li><strong>插入一行只加进来一半。</strong>在设计和开发之间插入"客户评审"：Excel 会自动扩展图表的数据区域，但新行里一条公式也没有，而原来的开发行仍然指着设计。看漏了这一点，表面读起来完全正确，实际排的是错的。要是图省事加在第 7 行下面，它又落在数据区域之外，根本不显示。</li>
+          <li><strong>第二个前置任务没地方放。</strong>如果测试同时要等开发<em>和</em>内容迁移，诚实的写法是 <code>=WORKDAY(MAX(C4,C5),1,$H$2:$H$5)</code>。它能用——但图上看不出任何连线，下一个接手的人只看得见一个日期。再给它加五天的客户评审当滞后量，就变成 <code>=WORKDAY(C3,1+5,$H$2:$H$5)</code>：一个光秃秃的 <code>5</code> 埋在公式里，任何地方都没有标注。</li>
+        </ol>
+        <p>把 B 列写成公式，买到的是"沿单一链条重排"。它买不到一张网络。这里没有任何东西能告诉你哪两项任务在决定完工日期，因为这里没有任何东西知道它们连着。</p>
+      </div>
+      <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="滞后量是真实的进度时间。在电子表格里，它是一个埋在公式里的数字。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 开始 + 延隔时间</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">延隔时间 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A + 3d</text></svg><figcaption>滞后量是真实的进度时间。在电子表格里，它是一个埋在公式里的数字。</figcaption></figure>
+      <h2 id="s7">加依赖关系与完成百分比</h2>
+<p>局限就是在这里露出来的。<strong>依赖关系</strong>没有原生支持：没有完成-开始箭头，Excel 也完全不知道一项任务约束着另一项。上面那种在开始列里引用前置任务结束日期的写法，只能应付一条单链。它根本表达不了开始-开始和完成-完成，两个前置任务要靠一个藏起来的 <code>MAX()</code>，而且只要有人对行<strong>排序</strong>就会无声地崩掉——排序移动的是值，相对引用却仍然指向"现在排在上面的那一行"。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 580 190" width="100%" role="img" aria-label="四种依赖类型。开始列里的一条公式，只能近似其中的第一种。"><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 开始</text><rect x="0" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="46" width="110" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="236" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="290" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">开始 → 开始</text><rect x="290" y="22" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="33" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="46" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="386" y="57" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="76" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="0" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">完成 → 完成</text><rect x="0" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="116" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="40" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="116" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text><text x="290" y="104" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">开始 → 完成</text><rect x="290" y="114" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="406" y="125" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="290" y="138" width="70" height="13" rx="4" fill="#6c4cf1" opacity="0.55"/><text x="366" y="149" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="290" y="168" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B 等待 A</text></svg><figcaption>四种依赖类型。开始列里的一条公式，只能近似其中的第一种。</figcaption></figure>
+      <p><strong>完成百分比</strong>要靠辅助列，而且网上通行的那个做法是错的。把进度系列<em>叠加在</em>开始和工期<em>之上</em>，会让每条横条按已完成的工作量变长——一项 100% 的任务会画成真实长度的两倍。正确的搭法用三个系列，并且丢掉原来那个纯长度系列。设<em>完成百分比</em>在 F 列，加两列辅助：<strong>已完成</strong>写 <code>=E2*F2</code>，<strong>剩余</strong>写 <code>=E2*(1-F2)</code>。</p>
+      <p>按"开始、已完成、剩余"这个顺序作图：开始设无填充，已完成用深色，剩余用浅色。两段可见部分之和恒等于 E，所以每条横条都保持真实的日历跨度，并随着工作推进从左往右填满。代价是每新增一项任务都要回去核对数据区域和系列顺序——而区域一变，Excel 很乐意帮你把顺序重排一遍。</p>
+      <p><strong>里程碑</strong>还要再单独建一个系列，只在里程碑日期上有值，改成散点图、标记选菱形——工期为零的任务在条形图里画不出任何可见形状。</p>
+      <h2 id="s8">另一种做法：条件格式</h2>
+<p>完全不想碰图表工具的话，可以直接在单元格里做一张<strong>条件格式甘特图</strong>。它更结实，因为没有一个带着数据区域、会悄悄过期的图表对象。</p>
+      <p>A—E 列的表原样保留。从 G 列开始在第 1 行横排一条日历：<strong>G1</strong> 写 <code>=B2</code>，<strong>H1</strong> 写 <code>=G1+1</code>，向右拖满整个项目长度——3 月 2 日到 6 月 5 日含首尾共 96 天，因此拖到 CX 列。把这一行的格式设成 <code>aaa</code>（中文版显示"一、二…日"），列宽压到 20 像素左右。</p>
+      <p>选中 <strong>G2:CX7</strong>，并且让 <strong>G2 保持为活动单元格</strong>——这一点很要紧，因为公式是站在活动单元格的角度写的，其余每个格子按相对位置偏移。走<strong>开始 › 条件格式 › 新建规则 › 使用公式确定要设置格式的单元格</strong>，按这个顺序加四条规则：</p>
+      <ol>
+        <li><code>=AND(G$1&gt;=$B2, G$1&lt;=$C2)</code> —— 横条颜色。混合引用就是全部的机关：<code>G$1</code> 锁住行，所以每一列读自己那天的日期；<code>$B2</code> 锁住列，所以每一行读自己那项任务的起止日期。</li>
+        <li><code>=COUNTIF($H$2:$H$5,G$1)&gt;0</code> —— 法定节假日，填成醒目的另一种浅色。国内的计划不标这一条几乎没法看：光看周末，谁也想不起来 5 月 4 日为什么没人干活。</li>
+        <li><code>=WEEKDAY(G$1,2)&gt;5</code> —— 周末，浅灰。返回类型写 <code>2</code>，把周一编为 1、周日编为 7，于是 <code>&gt;5</code> 正好是周六和周日。默认的类型 <code>1</code> 从周日起算，会把错误的两天涂灰。</li>
+        <li><code>=G$1=TODAY()</code> —— 一条彩色左边框，这就是今天线。</li>
+      </ol>
+      <p>规则自上而下判断，第一个填充生效，所以横条规则必须排在节假日和周末规则<em>上面</em>，否则每条横条都会在周六周日长出灰色条纹。<strong>调休</strong>上班的周六要单独处理：它既不该按周末涂灰，也不在节假日清单里，最省事的办法是再建一列调休日期，另加一条 <code>COUNTIF</code> 规则把它改回工作日底色。</p>
+      <p>这套做法的好处是日期一改格子立刻重画、打印干净、插入行的容忍度也比图表高。但里程碑和进度仍然要手写规则，而且它同样对依赖关系一无所知。</p>
+      <h2 id="s9">Excel 给得了什么，给不了什么</h2>
+<p>两种做法都能画出一张相当体面的进度图。但它们都不<em>排程</em>。横条一旦看着对了，这个区别就很容易被忘掉，所以这里直说：</p>
+      <table>
+        <thead><tr><th>能力</th><th>堆积条形图</th><th>条件格式</th><th>真正的排程工具</th></tr></thead>
+        <tbody>
+          <tr><td>排除周末与法定节假日</td><td>可以，靠 <code>WORKDAY</code></td><td>可以，靠 <code>WORKDAY</code></td><td>内置</td></tr>
+          <tr><td>单条 FS 链自动重排</td><td>可以，前提是开始列是公式</td><td>可以，前提是开始列是公式</td><td>可以</td></tr>
+          <tr><td>看得见的依赖箭头</td><td>没有</td><td>没有</td><td>有</td></tr>
+          <tr><td>一项任务两个前置</td><td>只能靠隐藏的 <code>MAX()</code></td><td>只能靠隐藏的 <code>MAX()</code></td><td>可以</td></tr>
+          <tr><td>SS、FF、SF 三种类型</td><td>不支持</td><td>不支持</td><td>支持</td></tr>
+          <tr><td>连线上带标注的滞后量</td><td>没有——公式里一个裸的 <code>+5</code></td><td>没有——公式里一个裸的 <code>+5</code></td><td>有</td></tr>
+          <tr><td>关键路径</td><td>没有</td><td>没有</td><td>自动计算</td></tr>
+          <tr><td>每项任务的总浮动时间</td><td>没有</td><td>没有</td><td>自动计算</td></tr>
+          <tr><td>资源负荷与超配提醒</td><td>没有</td><td>没有</td><td>有</td></tr>
+          <tr><td>基准与偏差</td><td>手工复制一份列</td><td>手工复制一份列</td><td>保存并自动对比</td></tr>
+          <tr><td>插入一行后还正常</td><td>公式要重敲</td><td>基本正常</td><td>正常</td></tr>
+          <tr><td>对行排序后还正常</td><td>不正常——引用跟着位置走</td><td>不正常</td><td>正常</td></tr>
+          <tr><td>里程碑画成菱形</td><td>手工加标记系列</td><td>手工加规则</td><td>原生支持</td></tr>
+        </tbody>
+      </table>
+      <p>这是一个具体的判断，不是一句贬低：堆积条形图是<em>一张你在别处想好的进度的画像</em>。十来项任务大致排成一条线的时候，这就够用了，电子表格正是对的工具。但那张表中间那几行，恰恰是你在进度例会上会被问到的东西，而这个文件一条都答不上来。</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="只有穿过网络的最长路径决定完工日期——而只有排程工具找得到它。"><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">浮动时间 (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期: 12</text></svg><figcaption>只有穿过网络的最长路径决定完工日期——而只有排程工具找得到它。</figcaption></figure>
+      <h2 id="s10">更快的路：在线搭好，再导出成 Excel</h2>
+<p>堆积条形图管用，但搭起来慢、改起来疼。如果你要的只是那个 Excel 文件而不是这堆杂活，先在 <a href="/zh/app.html">gantts.app</a> 里把图搭好——免费、无需注册、无需下载。输入任务、拖动横条、连上依赖关系，<a href="/zh/blog/critical-path-method.html">关键路径</a>自动算出来，然后一键<strong>导出 📊 Excel (.xlsx)</strong>，也可以出 PowerPoint、PDF、PNG。</p>
+      <p>想要现成文件，可以直接用我们的 <a href="/zh/templates.html">Excel 甘特图模板</a>：任务表、堆积条形图设置、逆序坐标轴和日期格式都已经配好，填入自己的任务和日期，图就跟着更新。第一次做这种图，先读<a href="/zh/blog/how-to-make-a-gantt-chart.html">甘特图怎么做</a>。</p>
 
       <div class="callout">真正的差别不在外观，而在是否会计算。Excel 做的甘特图看上去没错，但不会自动更新。只要日期变动——而日期总会变动——计划就退化成一张图画。</div>
 
       <h2 id="faq">常见问题</h2>
       <div class="faq">
-        <details open><summary>Excel 有内置的甘特图类型吗？</summary><p>没有。插入图表菜单里只有柱形图、条形图、折线图和饼图。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。</p></details>
-        <details><summary>为什么我的横条长度不对？</summary><p>几乎都是因为偏移量或工期列还是日期格式。把这两列的数字格式改成"常规"或"数值"，横条长度就正常了。</p></details>
-        <details><summary>为什么任务顺序是反的？</summary><p>Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选"逆序类别"，第一项任务就回到顶部。</p></details>
-        <details><summary>Excel 能显示完成百分比吗？</summary><p>能，但要靠辅助列：工期乘以完成百分比，作为第三个堆积系列加入图表，用深一号的颜色。每新增任务都要手动扩大数据区域。</p></details>
-        <details><summary>Excel 能处理依赖关系吗？</summary><p>不能自动处理。可以用公式引用前置任务的结束日期做单链传递，但没有箭头，也没有关键路径，多分支的计划维护不下来。</p></details>
-        <details><summary>有现成的 Excel 模板吗？</summary><p>有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。</p></details>
+        <details open><summary>Excel 有内置的甘特图类型吗？</summary><p>没有。插入图表菜单里只有柱形图、条形图、折线图和饼图，没有一项叫"甘特图"。标准做法是用堆积条形图，把第一个数据系列设为无填充，剩下的横条就落在正确的开始位置上。微软自带的几个"甘特项目计划"模板，底下用的也是同一个技巧。</p></details>
+        <details><summary>中文版 Excel 和 WPS 的公式要改写吗？</summary><p>不用。中文版 Excel 的函数名仍是英文——WORKDAY、NETWORKDAYS、MAX、COUNTIF 照写——参数之间用半角逗号分隔，不是分号。WPS Office 在这一点上与 Excel 完全一致，本文所有公式都可以原样粘贴。</p></details>
+        <details><summary>为什么我的横条长度不对？</summary><p>两个常见原因。一是偏移量或工期列还是日期格式，把它们改成"常规"或"数值"即可。二是把工作日直接当成了横条长度：图表横轴是含周末和节假日的自然日历，所以横条长度要写 =C2-B2+1，而不是引用工作日那一列。</p></details>
+        <details><summary>法定节假日和调休怎么处理？</summary><p>把节假日日期列在一个区域里（例如 H2:H5），所有 WORKDAY 和 NETWORKDAYS 都带上这个参数。调休上班的周六 WORKDAY 处理不了，只能把该任务的工作日数手工减一天，或者干脆换用会算工作日历的排程工具。</p></details>
+        <details><summary>为什么任务顺序是反的？</summary><p>Excel 默认把表格第一行画在图表最下方。选中纵轴，设置坐标轴格式 → 坐标轴选项 → 勾选"逆序类别"，第一项任务就回到顶部；同一面板里把"横坐标轴交叉"设为"最大分类"，日期轴会留在上方。</p></details>
+        <details><summary>Excel 能显示完成百分比吗？</summary><p>能，但要用三个系列而不是四个。加一列完成百分比，再加两列辅助："已完成"＝横条长度×完成百分比，"剩余"＝横条长度×(1−完成百分比)，按"开始、已完成、剩余"作图并丢掉原来的长度系列。把进度系列直接叠在工期之上是常见错误——那会让每条横条都比真实工期更长。</p></details>
+        <details><summary>任务延误时 Excel 甘特图会自动更新吗？</summary><p>只有在每项任务的开始日期是引用前置任务结束日期的公式时才会，例如 =WORKDAY(C2,1,$H$2:$H$5)，此时改动能沿单条链往下传。它处理不了有两个前置任务的情况，也表达不了开始-开始或完成-完成；而且坐标轴边界是写死的序列号，日期一旦超出项目原定结束日，横条会跑出图外且没有任何提示。</p></details>
+        <details><summary>有现成的 Excel 模板吗？</summary><p>有。我们的模板可下载为 XLSX，辅助列、逆序坐标轴和日期格式都已经设好，填入任务即可。也可以在 gantts.app 里搭好之后一键导出成 Excel，省掉全部堆积条形图的设置工作。</p></details>
       </div>
 
       <aside class="promo">

@@ -90,16 +90,18 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>6 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>13 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
         <li><a href="#s1">Die drei Arten von „kostenlos“</a></li>
         <li><a href="#s2">Die Werkzeuge im Überblick</a></li>
         <li><a href="#s3">Was hinter den Zeilen steht</a></li>
-        <li><a href="#s4">Worauf es bei der Auswahl ankommt</a></li>
-        <li><a href="#s5">Die Anmeldefrage</a></li>
-        <li><a href="#s6">Entscheidungshilfe</a></li>
-        <li><a href="#s7">Und wann sich Bezahlsoftware lohnt</a></li>
+        <li><a href="#s4">Die Kriterien, die tatsächlich entscheiden</a></li>
+        <li><a href="#s5">Eine durchgeführte Bewertung: ein echter Plan, vier Prüfungen</a></li>
+        <li><a href="#s6">Worauf es bei der Auswahl ankommt</a></li>
+        <li><a href="#s7">Die Anmeldefrage</a></li>
+        <li><a href="#s8">Entscheidungshilfe</a></li>
+        <li><a href="#s9">Und wann sich Bezahlsoftware lohnt</a></li>
       </ol>
     </div>
 
@@ -134,19 +136,88 @@
         <p><strong>GanttProject und ProjectLibre</strong> sind ausgereifte Open-Source-Programme für Windows, macOS und Linux. Beide beherrschen Abhängigkeiten, kritischen Pfad und Ressourcenzuordnung, ProjectLibre liest zusätzlich MS-Project-Dateien. Sie arbeiten offline und ohne Konto — dafür wirken die Oberflächen altbacken, und eine Synchronisation zwischen Geräten gibt es nicht.</p>
         <p><strong>TeamGantt</strong> ist eine gepflegte Kollaborationslösung, deren kostenloser Tarif typischerweise auf ein Projekt und etwa sechzig Vorgänge für wenige Nutzer begrenzt ist; kritischer Pfad und der volle Export gehören zu den Bezahltarifen. <strong>GanttPRO</strong> bietet keine dauerhaft kostenlose Stufe, sondern eine Testphase. <strong>Instagantt</strong> ist Freemium und vor allem für Asana-Nutzer interessant, die eine Zeitachse zu ihren Aufgaben brauchen.</p>
         <p><strong>Canva</strong> erzeugt aus Vorlagen eine ansehnliche Gantt-<em>Grafik</em> und exportiert sie im kostenlosen Tarif als PNG oder PDF. Es ist aber ein Gestaltungs- und kein Planungswerkzeug: Die Balken sind Formen, die Sie selbst positionieren — keine Verknüpfungen, keine Neuberechnung, kein kritischer Pfad. <strong>Microsoft Project</strong> ist umgekehrt das Schwergewicht mit Ressourcenausgleich, Basisplänen und tiefer Terminlogik, hat jedoch keinen kostenlosen Tarif. Und <strong>Excel oder Google Sheets</strong> haben Sie ohnehin: kostenlos, aber ohne Abhängigkeiten und mit viel Handarbeit — siehe die Anleitungen zu <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> und <a href="/de/blog/gantt-chart-in-google-sheets.html">Google Sheets</a>.</p>
-      <h2 id="s4">Worauf es bei der Auswahl ankommt</h2>
+      <h2 id="s4">Die Kriterien, die tatsächlich entscheiden</h2>
+<p>Funktionslisten taugen wenig als Orientierung, weil jeder Anbieter jede Funktion für sich beansprucht. Was die Werkzeuge trennt, ist ihr <em>Verhalten unter Last</em>: was passiert, wenn ein Termin wandert, wenn der Plan groß wird, wenn ein Außenstehender ihn lesen soll und wenn Sie aufhören zu zahlen. Jedes Kriterium unten lässt sich in Minuten prüfen, und jedes hat ein konkretes Versagensbild.</p>
+      <table>
+        <thead>
+          <tr><th>Kriterium</th><th>Warum es den Ausgang bestimmt</th><th>Prüfung in fünf Minuten</th><th>So sieht das Versagen aus</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rechnet es neu?</strong></td>
+            <td>Trennt eine Terminrechnung von einem Zeichenprogramm. Echte Abhängigkeiten pflanzen sich fort, dekorative lassen Sie Balken von Hand nachziehen.</td>
+            <td>Drei Vorgänge verknüpfen, den ersten um vier Tage nach hinten schieben.</td>
+            <td>Vorgang zwei und drei bewegen sich nicht. Die Pflege bleibt auf Dauer bei Ihnen.</td>
+          </tr>
+          <tr>
+            <td><strong>Kritischer Pfad und Puffer</strong></td>
+            <td>Sagt, welche Vorgänge den Endtermin bestimmen. Häufig das Erste, was hinter eine Bezahlschranke wandert, weil Leute dafür zahlen.</td>
+            <td>Nach einer Pufferspalte suchen, nicht nur nach farbigen Balken. Eine Dauer ändern und sehen, ob die Hervorhebung umzieht.</td>
+            <td>Ein „kritischer Pfad“, der eine selbst vergebene Farbe ist — oder ein Verkaufsangebot genau in dem Moment, in dem Sie ihn brauchen.</td>
+          </tr>
+          <tr>
+            <td><strong>Ein Export, den ein Fremder öffnen kann</strong></td>
+            <td>Wer den Plan freigibt, legt dafür kein Konto an. PDF, Excel und PowerPoint reisen überall hin, ein Freigabelink nicht.</td>
+            <td>Exportieren und die Datei auf einem Gerät ohne Anmeldung öffnen.</td>
+            <td>Der Export ist kostenpflichtig, mit Wasserzeichen versehen oder nur ein Link, der zur Anmeldung auffordert.</td>
+          </tr>
+          <tr>
+            <td><strong>Größe</strong></td>
+            <td>Kostenlose Tarife sind für Vorführungen bemessen. Echte Pläne haben 150 bis 300 Zeilen; sowohl die Obergrenze als auch die Darstellungsgeschwindigkeit zählen.</td>
+            <td>200 Zeilen einfügen und eine 26 Wochen breite Zeitachse scrollen.</td>
+            <td>Eine harte Grenze bei etwa 60 Vorgängen, oder ruckelndes Scrollen, sobald das Diagramm breit wird.</td>
+          </tr>
+          <tr>
+            <td><strong>Ausstiegskosten</strong></td>
+            <td>Danach fragt niemand, bis es darauf ankommt. Der Plan gehört Ihnen nur, wenn Sie ihn in einem Format herausbekommen, das etwas anderes liest.</td>
+            <td>Nach CSV exportieren und anderswo wieder importieren. Prüfen, ob Abhängigkeiten und Gliederung überleben, nicht nur die Namen.</td>
+            <td>Der Export ist ein schreibgeschütztes PDF, Abhängigkeiten fallen weg, oder die Daten hängen hinter einem abgelaufenen Abonnement.</td>
+          </tr>
+          <tr>
+            <td><strong>Wo die Daten liegen</strong></td>
+            <td>Entscheidet, ob Sie das Werkzeug überhaupt einsetzen dürfen. Bei Projektdaten mit Personenbezug verlangt die DSGVO einen Auftragsverarbeitungsvertrag — und bei Servern außerhalb der EU zusätzlich eine Rechtsgrundlage für die Übermittlung.</td>
+            <td>Prüfen, ob es mit ausgeschaltetem Netz funktioniert, und was die Datenschutzerklärung als gespeichert benennt.</td>
+            <td>Im Freigabetermin zu erfahren, dass der Terminplan auf einem Server liegt, für den es keinen AV-Vertrag gibt.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Nur zwei davon sind Funktionen im Sinne eines Verkaufsprospekts. Den Rest sehen Sie nur, indem Sie das Ding benutzen — weshalb eine Viertelstunde mit einem realistischen Plan mehr wert ist als ein Nachmittag mit Vergleichsartikeln, diesen eingeschlossen.</p>
+      <figure class="fig fig-inline"><svg viewBox="0 0 520 110" width="100%" role="img" aria-label="Tabellenkalkulationen, Gestaltungswerkzeuge und Terminrechnungen sehen auf dem Bildschirm gleich aus. Sie gehen in dem Moment auseinander, in dem ein Datum wandert."><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgangs</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kritischer Pfad</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Heute</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Sheets</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Folien</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Browser</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg><figcaption>Tabellenkalkulationen, Gestaltungswerkzeuge und Terminrechnungen sehen auf dem Bildschirm gleich aus. Sie gehen in dem Moment auseinander, in dem ein Datum wandert.</figcaption></figure>
+      <h2 id="s5">Eine durchgeführte Bewertung: ein echter Plan, vier Prüfungen</h2>
+<p>Kriterien nickt man leicht ab, deshalb hier eine konkrete Aufgabe, durch sie hindurchgeführt. Es geht nicht darum, welches Werkzeug gewinnt — sondern darum, dass vier Prüfungen in zwanzig Minuten den größten Teil einer Auswahlliste ausscheiden, bevor Sie irgendetwas investiert haben.</p>
+      <div class="worked">
+        <p><strong>Die Aufgabe.</strong> Der Umzug der Verwaltung der Möbelwerke Sauerland GmbH von Arnsberg nach Dortmund: 186 Vorgänge in sechs Arbeitssträngen — Mietvertrag, Ausbau, IT, Möblierung, Kommunikation, Umzugswochenende —, 22 Wochen bis zu einem Übergabetermin, den der Mietvertrag festlegt, und ein monatlicher Lenkungskreis aus sechs Personen, die für einen Terminplan kein Konto anlegen werden. Werkzeugbudget: 0 €.</p>
+
+        <p><strong>Prüfung 1 — rechnet es neu?</strong> Bauen Sie den kleinsten Ausschnitt mit echter Logik: Aufmaß → Planung → Zustimmung des Vermieters → Ausbau → IT-Einbau → Übergabe. Dann schieben Sie die Zustimmung um <strong>10 Tage</strong> nach hinten.</p>
+        <ul>
+          <li>Eine Terminrechnung schiebt Ausbau, IT-Einbau und Übergabe um je 10 Tage und macht sichtbar, dass die Übergabe den Mietvertragstermin reißt.</li>
+          <li>Ein Zeichenprogramm bewegt nur den Balken, den Sie gezogen haben. Die anderen fünf beschreiben einen Terminplan, den es nicht geben kann.</li>
+        </ul>
+        <p>Bei 186 Vorgängen ist das die ganze Entscheidung. Die Zustimmung <em>wird</em> sich verspäten, und ohne Neuberechnung ist jede Verspätung eine Stunde Balkenziehen von jemandem, der einen davon übersieht. Diese Prüfung allein streicht die meisten gestaltungsorientierten und vorlagenbasierten Angebote — einschließlich eines Gantt-Diagramms in der Tabellenkalkulation.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Ein Termin wandert, und alles Nachgelagerte folgt. In einem Zeichenprogramm bewegt sich nur der gezogene Balken — und der Plan hört still auf, wahr zu sein."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Woche 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Meilenstein</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Heute</text></svg><figcaption>Ein Termin wandert, und alles Nachgelagerte folgt. In einem Zeichenprogramm bewegt sich nur der gezogene Balken — und der Plan hört still auf, wahr zu sein.</figcaption></figure>
+
+        <p><strong>Prüfung 2 — kann der Lenkungskreis es öffnen?</strong> Exportieren, dann die Datei auf einem Gerät ohne Anmeldung öffnen. PDF oder PNG heißt: alle lesen es, niemand ändert es. Excel ist das, was die Person aus dem Rechnungswesen neu aufbereiten wird. Ein Freigabelink fällt durch, sobald er den Betrachter zur Anmeldung auffordert — sechs Konten, um ein Diagramm zu lesen, sind sechs Gründe, warum die Fortschreibung ungelesen bleibt. Prüfen Sie im kostenlosen Tarif außerdem auf Wasserzeichen und Seitenbegrenzungen: Ein PDF, das gratis, aber gestempelt ist, taugt nicht für eine Sitzungsvorlage, und das merken Sie am Abend davor.</p>
+
+        <p><strong>Prüfung 3 — übersteht es 186 Zeilen?</strong> Testen Sie nicht mit acht Vorgängen. Fügen Sie ein paar hundert ein und scrollen Sie. Zuerst die Obergrenzen: Ein kostenloser Tarif mit rund 60 Vorgängen fällt bei 186 schlicht durch — und die Grenze greift, wenn der Plan halb gebaut und die Entscheidung längst gefallen ist. Dann die Darstellung: 22 Wochen in Tagesauflösung ergeben ein breites Diagramm; manche Werkzeuge ruckeln, manche klappen bei jeder Änderung die Gliederung zu, manche verlieren die Scrollposition. Zuletzt die Hierarchie: Sechs Arbeitsstränge heißen Gruppierung — prüfen Sie, ob Sammelbalken ihre Termine aus den Kindzeilen übernehmen, statt ein weiterer Balken zu sein, den Sie pflegen.</p>
+
+        <p><strong>Prüfung 4 — was passiert, wenn Sie aufhören?</strong> Nehmen Sie an, Sie legen das Werkzeug in neun Monaten weg, oder ein kostenloser Tarif wird mitten im Projekt neu zugeschnitten. Beides ist gewöhnlich. Prüfen Sie, ob der Export selbst kostenpflichtig ist — ein kostenloser Tarif, aus dem Sie nicht exportieren können, ist einer, den Sie nicht verlassen können. Liegen die Daten lokal im Browser, kehrt sich das Risiko um: Nichts kann Ihnen entzogen werden, aber das Löschen der Websitedaten löscht den Plan. Exportieren Sie deshalb an jedem Meilenstein.</p>
+
+        <p><strong>Was die Prüfungen ergeben.</strong> Keinen Sieger — eine Kategorie. Diese Aufgabe braucht eine echte Abhängigkeitsrechnung, keine Vorgangsgrenze, einen Export ohne Wasserzeichen und ein portables Format. Damit fallen Gestaltungswerkzeuge (Prüfung 1), die meisten begrenzten Gratistarife (Prüfung 3) und alles, was den Export hinter eine Bezahlschranke legt (Prüfungen 2 und 4). Übrig bleiben wirklich kostenlose Web-Werkzeuge und Open-Source-Programme für den Rechner; die Wahl dazwischen ist die Frage, ob Sie lieber Software installieren.</p>
+        <p><strong>Und die deutsche Zusatzfrage.</strong> Für die Möbelwerke Sauerland kommt vor all dem eine weitere: Der Plan enthält Namen, Zuständigkeiten und Umzugstermine von Beschäftigten. Ein Werkzeug mit Konto und Serverspeicher braucht damit einen Auftragsverarbeitungsvertrag nach Artikel 28 DSGVO — und je nach Sitz des Anbieters eine Rechtsgrundlage für die Übermittlung in ein Drittland. Das ist kein Formalismus, sondern ein Vorgang mit Datenschutzbeauftragter und Betriebsrat, der leicht länger dauert als die Auswahl des Werkzeugs selbst. Ein Werkzeug, das nichts überträgt, hat diese Frage schlicht nicht — was in einer Organisation mit Betriebsrat der schnellste Weg zu einem freigegebenen Werkzeug sein kann.</p>
+      </div>
+      <h2 id="s6">Worauf es bei der Auswahl ankommt</h2>
 <p>Vier Fragen klären fast jede Entscheidung.</p>
         <p><em>Rechnet das Werkzeug Abhängigkeiten?</em> Ohne das ist es ein Zeichenprogramm — hübsch, aber es verschiebt keinen Nachfolger, wenn ein Vorgang sich verspätet. <em>Zeigt es den kritischen Pfad?</em> Das ist die Funktion, die bei Freemium-Tarifen am häufigsten hinter der Bezahlschranke liegt, und zugleich die einzige, die beantwortet, welche Verzögerungen den Endtermin wirklich bewegen.</p>
         <p><em>Kommen die Daten wieder heraus</em> — als CSV, XLSX oder Projektdatei? Ein Werkzeug ohne offenen Export ist unabhängig vom Preis teuer, weil der Wechsel bedeutet, den Plan noch einmal zu bauen. <em>Wo liegen die Daten?</em> Das ist bei personenbezogenen Projektdaten keine Nebenfrage, sondern eine, die in vielen Organisationen vor der ersten Nutzung geklärt sein muss.</p>
         <p>Prüfen Sie diese Punkte an einem echten kleinen Plan, nicht an der Beispielvorlage des Anbieters. Legen Sie zehn Vorgänge an, verknüpfen Sie fünf davon, verschieben Sie den ersten um eine Woche und sehen Sie nach, was passiert. Verschieben sich die Nachfolger nicht, ist die Frage nach dem kritischen Pfad bereits beantwortet. Exportieren Sie anschließend einmal und öffnen Sie die Datei — mancher „Export“ ist ein Screenshot mit anderem Dateiende.</p>
         <p>Eine fünfte Frage lohnt sich, wenn ein Basisplan vorgesehen ist: Kann das Werkzeug einen <a href="/de/blog/gantt-baseline-variance.html">Basisplan</a> einfrieren und Soll gegen Ist stellen? Viele kostenlose Werkzeuge zeigen nur den aktuellen Stand — und der enthält jede bisherige Verschiebung bereits, sodass die Abweichung dauerhaft bei null steht.</p>
-      <h2 id="s5">Die Anmeldefrage</h2>
+      <h2 id="s7">Die Anmeldefrage</h2>
 <p>Die meisten kostenlosen Werkzeuge verlangen ein Konto, bevor man den ersten Balken sieht. Das ist selten technisch nötig — es ist der Preis. Werkzeuge, die vollständig im Browser laufen und lokal speichern, brauchen weder Konto noch Server, weil nichts hochgeladen wird.</p>
         <p>Ohne Anmeldung nutzbar sind im Wesentlichen drei Gruppen: rein clientseitige Web-Werkzeuge wie <a href="/de/app.html">gantts.app</a>, heruntergeladene Open-Source-Programme wie GanttProject und ProjectLibre sowie einzelne kleine Web-Werkzeuge mit entsprechend eingeschränktem Funktionsumfang. Die gepflegten Plattformen — TeamGantt, GanttPRO, Instagantt, Canva — setzen durchweg ein Konto voraus.</p>
         <p>Der Unterschied ist praktisch spürbar. Ohne Konto liegen zwischen dem Öffnen der Seite und dem ersten Balken keine Bestätigungsmail, keine Passwortregeln und keine Auswahl eines Tarifs. Das klingt nach einer Kleinigkeit, entscheidet aber häufig darüber, ob ein Plan überhaupt entsteht — besonders, wenn jemand nur schnell prüfen will, ob eine Idee terminlich aufgeht.</p>
         <p>Ein Nachteil gehört dazu: Was lokal gespeichert wird, liegt in <em>einem</em> Browser auf <em>einem</em> Gerät. Wer den Plan auch morgen am anderen Rechner braucht, exportiert ihn und legt die Datei dorthin, wo Projektdateien ohnehin liegen. Das ist derselbe Umgang wie mit einer Tabellenkalkulation und für die meisten Vorhaben völlig ausreichend.</p>
         <p>gantts.app arbeitet ohne Anmeldung, ohne Übertragung, der Plan bleibt auf Ihrem Gerät. Das ist zugleich die Antwort auf die Datenschutzfrage — was das Gerät nicht verlässt, muss auch nicht vertraglich geregelt werden.</p>
-      <h2 id="s6">Entscheidungshilfe</h2>
+      <h2 id="s8">Entscheidungshilfe</h2>
 <ul>
           <li><strong>Schnell ein Diagramm mit Export und kritischem Pfad?</strong> Ein clientseitiges Web-Werkzeug ohne Konto, etwa <a href="/de/app.html">gantts.app</a>.</li>
           <li><strong>Lieber installiert, offline, Open Source?</strong> GanttProject oder ProjectLibre.</li>
@@ -158,7 +229,17 @@
         </ul>
         <p>Ein häufiger Irrtum ist, das größte Werkzeug für das sicherste zu halten. Für die meisten Vorhaben ist die entscheidende Größe nicht der Funktionsumfang, sondern die Wahrscheinlichkeit, dass der Plan nach vier Wochen noch gepflegt wird. Werkzeuge, die eine Anmeldung, eine Einführung und eine Freigabe der IT verlangen, verlieren genau an dieser Stelle — nicht weil sie schlechter sind, sondern weil sie zwischen dem Gedanken und dem ersten Balken zu viele Schritte legen.</p>
         <p>Entscheiden Sie vorher, ob Sie <strong>Abhängigkeiten</strong>, einen <strong>kritischen Pfad</strong> und einen <strong>echten Export</strong> brauchen. Genau an diesen drei Punkten enttäuschen kostenlose Tarife am häufigsten.</p>
-      <h2 id="s7">Und wann sich Bezahlsoftware lohnt</h2>
+        <p>Die vier Prüfungen aus der Bewertung oben können Sie in <a href="/de/app.html">gantts.app</a> in einer Viertelstunde selbst durchführen — und dasselbe Vorgehen anschließend auf jedes andere Werkzeug anwenden:</p>
+        <ol>
+          <li>Öffnen Sie die Seite. Es gibt keine Bestätigungsmail und keine Tarifauswahl — der erste Balken ist der erste Schritt.</li>
+          <li>Klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie den Prüfausschnitt ein: <em>Ausbau (20d) nach Zustimmung der Vermieterin</em>, danach <em>IT-Einbau (10d) nach Ausbau</em> und <em>Übergabe!</em></li>
+          <li><strong>Prüfung 1:</strong> Ziehen Sie die Zustimmung um zehn Tage nach hinten oder ändern Sie ihre Dauer. Ausbau, IT-Einbau und Übergabe rücken mit. Mit <strong>Neu planen</strong> zieht der Plan alles auf den frühesten zulässigen Termin.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong> und blenden Sie über <strong>Spalten</strong> die Pufferspalte ein. Ausgewiesen wird der Gesamtpuffer — eine Spalte für den freien Puffer gibt es nicht, was Sie bei jedem Werkzeug gleichermaßen prüfen sollten.</li>
+          <li><strong>Prüfung 3:</strong> Fügen Sie über <strong>✨ In Gantt einfügen</strong> zweihundert Zeilen auf einmal ein und scrollen Sie die Zeitachse. Es gibt keine Vorgangsgrenze, an die Sie stoßen könnten.</li>
+          <li><strong>Prüfung 2:</strong> <strong>⬇ Export ▸ 📄 PDF-Dokument</strong>, dann die Datei auf einem anderen Gerät öffnen. Ohne Wasserzeichen, ohne Anmeldung, ohne Seitenbegrenzung.</li>
+          <li><strong>Prüfung 4:</strong> <strong>⬇ Export ▸ 📑 CSV (Tabelle)</strong> und danach <strong>💾 Projekt speichern (.gantts)</strong>. Die CSV lesen andere Werkzeuge, die Projektdatei trägt Abhängigkeiten, Gliederung und Basisplan mit sich. Speichern Sie sie dorthin, wo Ihre Projektdateien ohnehin liegen — das ist zugleich die Absicherung dagegen, dass gelöschte Websitedaten den Plan mitnehmen.</li>
+        </ol>
+      <h2 id="s9">Und wann sich Bezahlsoftware lohnt</h2>
 <p>Wenn mehrere Personen gleichzeitig am selben Plan arbeiten, wenn Ressourcen über viele Projekte hinweg geplant und ausgeglichen werden oder wenn Berichtspflichten gegenüber Auftraggebern bestehen, die ein bestimmtes Format verlangen. Auch die revisionssichere Ablage von Basisplänen ist ein guter Grund.</p>
         <p>Für einen einzelnen Plan mit dreißig Vorgängen ist bezahlte Projektsoftware fast immer überdimensioniert — die Einrichtungszeit übersteigt den Nutzen, und die Mehrzahl der Funktionen wird nie angefasst. Beginnen Sie klein, prüfen Sie den Export, und wechseln Sie erst, wenn Sie an eine echte Grenze stoßen.</p>
         <p>Rechnen Sie dabei die Wechselkosten mit ein, nicht nur den Lizenzpreis. Ein Umzug von einem Werkzeug ins nächste kostet die Zeit, den Plan zu übertragen, die Verknüpfungen neu zu setzen und den Basisplan neu zu vereinbaren — bei einem mittelgroßen Vorhaben leicht ein bis zwei Arbeitstage. Genau deshalb ist die Exportfrage keine Nebensache: Wer von Anfang an ein Werkzeug wählt, aus dem sich CSV oder XLSX herausholen lässt, hält diese Kosten klein.</p>

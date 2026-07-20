@@ -90,21 +90,22 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>8 Min. Lesezeit</span></p>
+    <p class="post-meta"><span>Redaktion gantts.app</span><span>Aktualisiert 19. Juli 2026</span><span>13 Min. Lesezeit</span></p>
     <div class="toc"><strong>Inhalt</strong>
       <ol>
         <li><a href="#s1">Wie ein Gantt-Diagramm aufgebaut ist</a></li>
         <li><a href="#s2">Die vier Bausteine</a></li>
-        <li><a href="#s3">Warum die Zeitachse den Unterschied macht</a></li>
-        <li><a href="#s4">Abhängigkeiten: der eigentliche Wert</a></li>
-        <li><a href="#s5">Der kritische Pfad</a></li>
-        <li><a href="#s6">Wofür sich ein Gantt-Diagramm eignet</a></li>
-        <li><a href="#s7">Beispiele nach Projektart</a></li>
-        <li><a href="#s8">Vorteile und Grenzen im Überblick</a></li>
-        <li><a href="#s9">Wo seine Grenzen liegen</a></li>
-        <li><a href="#s10">Gantt-Diagramm, Zeitstrahl und Kanban</a></li>
-        <li><a href="#s11">Woher der Name kommt</a></li>
-        <li><a href="#s12">So fangen Sie an</a></li>
+        <li><a href="#s3">Ein durchgerechnetes Beispiel: der Umbau der Bäckerei Lindenhof</a></li>
+        <li><a href="#s4">Warum die Zeitachse den Unterschied macht</a></li>
+        <li><a href="#s5">Abhängigkeiten: der eigentliche Wert</a></li>
+        <li><a href="#s6">Der kritische Pfad</a></li>
+        <li><a href="#s7">Wofür sich ein Gantt-Diagramm eignet</a></li>
+        <li><a href="#s8">Beispiele nach Projektart</a></li>
+        <li><a href="#s9">Vorteile und Grenzen im Überblick</a></li>
+        <li><a href="#s10">Wo seine Grenzen liegen</a></li>
+        <li><a href="#s11">Gantt-Diagramm, Zeitstrahl und Kanban</a></li>
+        <li><a href="#s12">Woher der Name kommt</a></li>
+        <li><a href="#s13">So fangen Sie an</a></li>
       </ol>
     </div>
 
@@ -118,24 +119,66 @@
 <p>Stellen Sie sich ein Tabellenblatt vor, das in der Mitte die Form wechselt. Links stehen Spalten mit Vorgangsname, Start, Ende, Dauer und Verantwortlichem. Rechts davon werden aus den Spalten Kalendertage, -wochen oder -monate. Für jeden Vorgang zieht sich ein farbiger Balken über genau die Spalten, die seinem Zeitraum entsprechen: ein zweitägiger Vorgang ist ein kurzer Balken, ein dreiwöchiger ein dreimal so langer.</p>
         <p>Von oben nach unten lesen Sie die Arbeit, von links nach rechts die Zeit. Diese eine Drehung ist der ganze Unterschied zwischen einer Terminliste und einem Terminplan — und der Grund, warum das Format seit über hundert Jahren überlebt.</p>
         <p>Fast jedes Gantt-Diagramm enthält zusätzlich eine senkrechte <strong>Heute-Linie</strong>, einen hervorgehobenen <a href="/de/blog/critical-path-method.html">kritischen Pfad</a> und einen Fortschrittsbalken innerhalb jedes Vorgangsbalkens. Alles andere ist Ausstattung.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Zeilen links, Kalender oben, je Vorgang ein Balken an der Stelle, an die er zeitlich gehört."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Woche 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Phase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Vorgang C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Meilenstein</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Heute</text></svg><figcaption>Zeilen links, Kalender oben, je Vorgang ein Balken an der Stelle, an die er zeitlich gehört.</figcaption></figure>
       <h2 id="s2">Die vier Bausteine</h2>
 <p><strong>Vorgänge</strong> sind das Arbeitspaket selbst und haben eine Dauer. Sie tragen einen Namen mit Verb — „Rohbau abnehmen“, nicht „Rohbau“ —, einen Verantwortlichen und einen Fertigstellungsgrad.</p>
         <p><strong>Meilensteine</strong> haben die Dauer null und markieren einen Zeitpunkt: eine Freigabe, eine Übergabe, eine Entscheidung. Sie erscheinen als Raute statt als Balken. Fünf bis zehn genügen für ein mehrmonatiges Projekt; wer jeden Vorgangsabschluss zum Meilenstein erklärt, entwertet sie alle.</p>
         <p><strong>Abhängigkeiten</strong> verbinden Vorgänge und legen fest, was worauf wartet. Die weit überwiegende Mehrheit ist vom Typ Ende-Anfang: B beginnt, wenn A fertig ist. Drei weitere Arten gibt es für Sonderfälle, sie sind in den <a href="/de/blog/gantt-chart-dependencies.html">vier Verknüpfungsarten</a> beschrieben.</p>
         <p><strong>Sammelbalken</strong> fassen Vorgänge zu Phasen zusammen und übernehmen deren Termine automatisch: Der Phasenbalken beginnt mit dem frühesten und endet mit dem spätesten Vorgang darunter. Man setzt seine Termine nie von Hand — sie sind ein Ergebnis, keine Eingabe. Wer diese vier Elemente sauber trennt, hat bereits den Großteil eines belastbaren Plans.</p>
-      <h2 id="s3">Warum die Zeitachse den Unterschied macht</h2>
+      <h2 id="s3">Ein durchgerechnetes Beispiel: der Umbau der Bäckerei Lindenhof</h2>
+<p>Definitionen kommen nur bis zu einem gewissen Punkt. Deshalb hier ein kleines Vorhaben von Anfang bis Ende gerechnet, auf das sich alles Weitere auf dieser Seite bezieht: Die Bäckerei Lindenhof schließt ihre Leipziger Filiale für einen Umbau und eröffnet wieder. Fünf Arbeitstage die Woche, Beginn Montag, der 2. März 2026, gesetzliche Feiertage in Sachsen berücksichtigt.</p>
+      <div class="worked">
+        <p><strong>Der Terminplan, wie er sich aus Dauern und Verknüpfungen ergibt</strong></p>
+        <table>
+          <thead>
+            <tr><th>Nr.</th><th>Vorgang</th><th>Dauer</th><th>Nach</th><th>Start</th><th>Ende</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Bauamt und Zustimmung der Vermieterin</td><td>8 AT</td><td>—</td><td>Mo 2. März</td><td>Mi 11. März</td></tr>
+            <tr><td>2</td><td>Entwurf und Grundriss</td><td>6 AT</td><td>—</td><td>Mo 2. März</td><td>Mo 9. März</td></tr>
+            <tr><td>3</td><td>Backofen und Kühltechnik bestellen (Lieferzeit)</td><td>20 AT</td><td>1</td><td>Do 12. März</td><td>Fr 10. April</td></tr>
+            <tr><td>4</td><td>Entkernung</td><td>4 AT</td><td>1</td><td>Do 12. März</td><td>Di 17. März</td></tr>
+            <tr><td>5</td><td>Sanitär und Elektro</td><td>9 AT</td><td>2, 4</td><td>Mi 18. März</td><td>Mo 30. März</td></tr>
+            <tr><td>6</td><td>Boden und Ladenbau</td><td>7 AT</td><td>5</td><td>Di 31. März</td><td>Fr 10. April</td></tr>
+            <tr><td>7</td><td>Geräteeinbau</td><td>3 AT</td><td>3, 6</td><td>Mo 13. April</td><td>Mi 15. April</td></tr>
+            <tr><td>8</td><td>Lebensmittelüberwachung bestanden</td><td>0 T</td><td>7</td><td>Do 16. April</td><td>—</td></tr>
+            <tr><td>9</td><td>Personalschulung</td><td>5 AT</td><td>8</td><td>Fr 17. April</td><td>Do 23. April</td></tr>
+            <tr><td>10</td><td>Wiedereröffnung</td><td>0 T</td><td>9</td><td>Fr 24. April</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p>Acht Vorgänge, zwei Meilensteine, und das Ganze landet auf Freitag, dem 24. April. Dieses Datum hat niemand gewählt — es fällt aus den Dauern und ihren Verknüpfungen heraus, und genau dafür zeichnet man ein Diagramm, statt Termine in ein Dokument zu tippen.</p>
+        <p><strong>Was Ostern in diesem Plan anrichtet.</strong> Karfreitag fällt 2026 auf den 3. April, Ostermontag auf den 6. April. Beides sind Arbeitstage, die der Kalender aus der Rechnung nimmt — die Bestellung mit 20 Arbeitstagen Lieferzeit endet dadurch am 10. statt am 8. April, und der Ladenbau ebenfalls. Wer dieselbe Bestellung in einer Kalendertabelle ohne Feiertage plant, liest zwei Tage Luft, die es nicht gibt. Dieselbe Falle stellen die Tage zwischen Weihnachten und Neujahr, an denen zwar gearbeitet werden dürfte, aber weder Bauamt noch Lieferant erreichbar sind, und die Betriebsferien vieler Handwerksbetriebe im August.</p>
+        <p><strong>Wo das Geld hängt.</strong> Backofen und Kühltechnik kosten 42.000 €, der Ladenbau 68.000 €. Die Anzahlung für die Technik wird mit der Bestellung fällig, also am 12. März — sechs Wochen bevor die Filiale wieder Umsatz macht. Ein Balken zeigt die Dauer eines Vorgangs, nicht seinen Zahlungszeitpunkt; das ist eine der Stellen, an denen ein Terminplan allein nicht reicht.</p>
+        <p>Beachten Sie, was diese Tabelle sagt und eine Aufgabenliste nicht sagen könnte. Zeile 1 und 2 beginnen beide am ersten Tag, weil keine auf die andere wartet. Zeile 3 sind zwanzig Tage Warten auf einen Lieferanten, die still nebenher laufen, während die Handwerker arbeiten. Und Zeile 3 und 6 enden am selben Freitag — dem Moment, in dem zwei unabhängige Ketten zusammentreffen müssen, bevor die Geräte eingebaut werden können.</p>
+      </div>
+      <h2 id="s4">Warum die Zeitachse den Unterschied macht</h2>
 <p>Eine Aufgabenliste sagt, <em>was</em> zu tun ist. Ein Gantt-Diagramm sagt zusätzlich <em>wann</em> und <em>in welcher Reihenfolge</em>. Damit wird sichtbar, was in einer Liste unsichtbar bleibt: dass drei Vorgänge in derselben Woche liegen und alle dieselbe Person brauchen, oder dass eine Verzögerung am Anfang das Ende um zwei Wochen verschiebt.</p>
         <p>Ein konkretes Beispiel: In einer Liste stehen „Texte schreiben“, „Bilder erstellen“ und „Layout setzen“ untereinander und wirken gleichwertig. Im Diagramm sieht man, dass Texte und Bilder parallel in Kalenderwoche 12 laufen, beide bei derselben Person liegen und das Layout erst danach beginnen kann. Die Liste ist erfüllbar, der Plan nicht — und diesen Unterschied erkennt man nur auf einer Zeitachse.</p>
         <p>Die Wahl der Zeiteinheit entscheidet dabei mit über die Lesbarkeit. Tagesspalten eignen sich für Vorhaben bis etwa acht Wochen, Wochenspalten für ein halbes bis ganzes Jahr, Monatsspalten für alles darüber. Wer ein zweijähriges Bauvorhaben in Tagesspalten darstellt, erzeugt ein Blatt, das niemand ausdruckt.</p>
-      <h2 id="s4">Abhängigkeiten: der eigentliche Wert</h2>
+      <h2 id="s5">Abhängigkeiten: der eigentliche Wert</h2>
 <p>Der Nutzen eines Gantt-Diagramms steht und fällt mit den Verknüpfungen. Ein Diagramm ohne Abhängigkeiten ist eine bunte Tabelle: Verschiebt sich ein Vorgang, muss alles Nachfolgende von Hand angepasst werden — und genau das passiert in der Praxis nie.</p>
         <p>Mit Verknüpfungen rechnet der Plan selbst. Sie verschieben einen Balken, und alles, was davon abhängt, rückt mit. Das ist der Unterschied zwischen einem Plan, der lebt, und einem, der nach drei Wochen veraltet in der Ablage liegt.</p>
         <p>Der Test für eine echte Abhängigkeit ist einfach: Wenn A früher fertig wird, kann B dann früher beginnen? Lautet die Antwort ja, verknüpfen Sie. Lautet sie nein, haben Sie nur die Reihenfolge nachgezeichnet, in der Sie die Vorgänge aufgeschrieben haben. Verknüpfen Sie nicht alles mit allem — ein Plan, in dem jeder Vorgang an seinem Vorgänger hängt, hat keine Parallelität mehr und reagiert auf jede kleine Verschiebung übertrieben.</p>
-      <h2 id="s5">Der kritische Pfad</h2>
+      <h2 id="s6">Der kritische Pfad</h2>
 <p>Der kritische Pfad ist die längste Kette voneinander abhängiger Vorgänge. Ihre Gesamtdauer bestimmt die Projektdauer. Jeder Verzug auf diesem Pfad verschiebt das Projektende um genau denselben Betrag — Verzögerungen abseits davon oft gar nicht.</p>
         <p>Ein Zahlenbeispiel: Läuft ein Zweig über Konzept, Entwurf, Umsetzung und Test in 15 Arbeitstagen und ein zweiter über Beschaffung und Vorbereitung in 14, dann ist der erste kritisch. Zwei zusätzliche Personen in der Beschaffung ändern am Endtermin nichts. Ein gesparter Tag im Entwurf verschiebt ihn um einen Tag nach vorn.</p>
         <p>Das ist die praktisch wichtigste Kennzahl eines Plans: Sie zeigt, wo Aufmerksamkeit wirkt und wo sie verpufft. Sie ist außerdem beweglich — verspätet sich der zweite Zweig um zwei Tage, ist er mit 16 Tagen der neue kritische Pfad.</p>
-      <h2 id="s6">Wofür sich ein Gantt-Diagramm eignet</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Der kritische Pfad ist die längste Kette durch den Plan; seine Vorgänge haben keinen Puffer."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Kritischer Pfad: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Puffer (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Dauer: 12</text></svg><figcaption>Der kritische Pfad ist die längste Kette durch den Plan; seine Vorgänge haben keinen Puffer.</figcaption></figure>
+        <p>Im Umbau der Bäckerei Lindenhof sieht das so aus. Die längste Kette läuft über Bauamt, Entkernung, Sanitär und Elektro, Ladenbau, Geräteeinbau, Lebensmittelüberwachung, Schulung und Wiedereröffnung. Jeder Vorgang darauf hat null Puffer, ein verlorener Tag irgendwo darauf schiebt die Wiedereröffnung auf Montag, den 27. April — Freitag plus ein Tag ist im Terminplan Montag, nicht Samstag.</p>
+        <table>
+          <thead>
+            <tr><th>Vorgang</th><th>Endet</th><th>Nachfolger beginnt</th><th>Gesamtpuffer</th><th>Was das heißt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Entwurf und Grundriss</td><td>Mo 9. März</td><td>Mi 18. März</td><td>6 T</td><td>Darf sechs Arbeitstage rutschen, ohne dass sich etwas bewegt</td></tr>
+            <tr><td>Backofen und Kühltechnik</td><td>Fr 10. April</td><td>Mo 13. April</td><td>0 T</td><td>Kritisch — eine späte Lieferung ist eine späte Eröffnung</td></tr>
+            <tr><td>Boden und Ladenbau</td><td>Fr 10. April</td><td>Mo 13. April</td><td>0 T</td><td>Kritisch</td></tr>
+            <tr><td>Personalschulung</td><td>Do 23. April</td><td>Fr 24. April</td><td>0 T</td><td>Kritisch</td></tr>
+          </tbody>
+        </table>
+        <p>Nur eine Zeile hat überhaupt Spiel. Braucht die Architektin drei zusätzliche Tage für den Grundriss, sind die ersten beiden umsonst und der dritte kostet nichts — erst ab dem siebten Tag bewegt sich die Eröffnung. Der Fall der Bestellung ist der interessantere: zwanzig Tage reine Lieferzeit, die am selben Tag enden wie der Ladenbau und damit ebenfalls bei null Puffer stehen. Zwei Ketten können die Eröffnung im Alleingang schieben, eine aus Handwerk, eine aus einem Bestellformular. Besser vor dem Absenden der Bestellung gelernt als danach.</p>
+        <p>Zwei Hinweise dazu, wie gantts.app das rechnet. Ausgewiesen wird der <strong>Gesamtpuffer</strong> — wie weit ein Vorgang rutschen darf, bevor sich der Endtermin bewegt — und nicht der freie Puffer, der den Abstand nur zum unmittelbaren Nachfolger misst; eine Spalte für den freien Puffer gibt es bewusst nicht. Und die Terminrechnung ist <em>wie gesetzt</em>: Eine Abhängigkeit kann einen Vorgang nur nach hinten schieben, niemals nach vorn ziehen. Legen Sie die Personalschulung in den Juni und verknüpfen sie mit der Lebensmittelüberwachung, holt der Plan sie nicht nach April zurück — er zeigt die Lücke, die Sie gelassen haben, statt sie stillschweigend zu schließen. Das weicht vom Lehrbuch-CPM ab und ist Absicht: Ein Terminplan, der Balken eigenmächtig nach vorn zieht, überschreibt Entscheidungen, die aus guten Gründen so getroffen wurden.</p>
+      <h2 id="s7">Wofür sich ein Gantt-Diagramm eignet</h2>
 <p>Für Vorhaben mit einem Ende, einer Reihenfolge und mehreren Beteiligten. Überall dort, wo die Frage „was hängt woran“ wichtiger ist als „was mache ich als Nächstes“. Die typischen Einsatzzwecke:</p>
         <ul>
           <li><strong>Terminplanung</strong> — Vorgänge, Dauern und Reihenfolge vom Start bis zur Abnahme festlegen.</li>
@@ -146,7 +189,7 @@
           <li><strong>Auslastung prüfen</strong> — sehen, ob dieselbe Person in derselben Woche an drei Vorgängen gleichzeitig arbeiten soll.</li>
         </ul>
         <p>Verbreitet ist das Format im Bauwesen, in der Softwareentwicklung, im Marketing, in der Veranstaltungsplanung, in Fertigung, Beratung, Forschung und bei Produkteinführungen.</p>
-      <h2 id="s7">Beispiele nach Projektart</h2>
+      <h2 id="s8">Beispiele nach Projektart</h2>
 <p>Die Darstellung bleibt gleich, die Gliederung ändert sich mit der Branche:</p>
         <ul>
           <li><strong>Softwareentwicklung</strong> — Anforderungen, Architektur, Iterationen, Integration, Test, Inbetriebnahme, mit einer Raute am Tag der Freischaltung. Die Testphase wird fast immer zu kurz geplant.</li>
@@ -156,13 +199,13 @@
           <li><strong>Produkteinführung</strong> — Entwicklung, Zulassung, Vertriebsvorbereitung, Kampagne, Markteintritt. Zertifizierungen werden regelmäßig unterschätzt.</li>
         </ul>
         <p>Ausführlicher stehen diese und drei weitere Fälle in den <a href="/de/blog/gantt-chart-examples.html">Beispielen aus acht Branchen</a>; fertige Startpunkte finden Sie in den <a href="/de/templates.html">Vorlagen</a>.</p>
-      <h2 id="s8">Vorteile und Grenzen im Überblick</h2>
+      <h2 id="s9">Vorteile und Grenzen im Überblick</h2>
 <p>Die Stärken sind schnell benannt: Der gesamte Terminplan passt auf ein Bild, Abhängigkeiten und ihre Folgewirkungen werden sichtbar, Überschneidungen und Überlastung fallen ins Auge, und selbst Beteiligte ohne Projekterfahrung verstehen die Darstellung ohne Erklärung. Dazu kommt die Verbindung mit der Berechnung des kritischen Pfads, die aus dem Bild ein Steuerungsinstrument macht.</p>
         <p>Die Schwächen ebenso: Ein Plan mit Hunderten Zeilen wird unlesbar. Ohne Pflege veraltet er und wird dadurch gefährlicher als gar kein Plan, weil ihm weiter vertraut wird. Die Balkenlänge zeigt Dauer, nicht Aufwand — ein vierwöchiger Balken kann zwei Personentage bedeuten, was regelmäßig falsch gelesen wird. Und für stark iterative Arbeit mit bewusst offenem Umfang ist die Darstellung schlicht das falsche Werkzeug.</p>
-      <h2 id="s9">Wo seine Grenzen liegen</h2>
+      <h2 id="s10">Wo seine Grenzen liegen</h2>
 <p>Für laufenden, wiederkehrenden Betrieb ist ein Gantt-Diagramm das falsche Werkzeug — dafür gibt es Kanban. Für ein Team, das in zweiwöchigen Sprints arbeitet und den Umfang bewusst offen hält, ebenfalls.</p>
         <p>Und es wird unbrauchbar, wenn es zu fein wird: Ein Plan mit 400 Zeilen ist keine Planung mehr, sondern Buchhaltung. Als Faustregel gilt: kein Vorgang kürzer als ein Tag, keiner länger als ein Monat, insgesamt 20 bis 60 Zeilen. Was feiner ist, gehört in eine Aufgabenliste oder ein Ticketsystem — das Gantt-Diagramm ist ein Kommunikationsmittel, keine Aufgabendatenbank.</p>
-      <h2 id="s10">Gantt-Diagramm, Zeitstrahl und Kanban</h2>
+      <h2 id="s11">Gantt-Diagramm, Zeitstrahl und Kanban</h2>
 <p>Drei Darstellungen werden häufig verwechselt, obwohl jede eine andere Aufgabe hat:</p>
         <ul>
           <li><strong>Gantt-Diagramm</strong> — Vorgänge mit Dauern, Abhängigkeiten, Verantwortlichen und Fortschritt. Passend, wenn Reihenfolge und Termine zählen und ein Plan über Wochen gesteuert werden muss.</li>
@@ -170,12 +213,25 @@
           <li><strong>Kanban-Board</strong> — Spalten wie Offen, In Arbeit und Erledigt, durch die Karten wandern. Passend für kontinuierliche Arbeit, bei der wichtiger ist, <em>was als Nächstes</em> kommt, als <em>an welchem Datum</em>. Ein Board zeigt Zustand, keinen Kalender.</li>
         </ul>
         <p>Als Faustregel: Gantt bei festem Termin und definierter Reihenfolge, Kanban bei laufendem Fluss ohne feste Daten, Zeitstrahl, wenn nur eine Handvoll Eckdaten kommuniziert werden soll.</p>
-      <h2 id="s11">Woher der Name kommt</h2>
+      <h2 id="s12">Woher der Name kommt</h2>
 <p>Benannt nach Henry L. Gantt (1861–1919), einem amerikanischen Maschinenbauingenieur und Berater, der die Darstellung zwischen etwa 1910 und 1915 populär machte — unter anderem für Produktionsplanung und den Schiffbau im Ersten Weltkrieg.</p>
         <p>Entwickelt hatte eine sehr ähnliche Form bereits in den 1890er-Jahren der polnische Ingenieur Karol Adamiecki, der sie <em>Harmonogramm</em> nannte. Weil seine Arbeiten überwiegend auf Polnisch und Russisch erschienen, blieben sie im Westen lange unbekannt, und der Name blieb bei Gantt hängen. Die Darstellung hat damit über hundert Jahre überdauert — was selten für eine Methode spricht, die nur Mode wäre.</p>
-      <h2 id="s12">So fangen Sie an</h2>
+      <h2 id="s13">So fangen Sie an</h2>
 <p>Schreiben Sie erst alle Vorgänge auf, ohne Termine. Schätzen Sie dann die Dauern in Arbeitstagen. Verknüpfen Sie danach, was wirklich aufeinander wartet — nicht, was zufällig nacheinander im Kalender steht. Setzen Sie zuletzt fünf bis zehn Meilensteine. Termine ergeben sich aus diesen drei Schritten von selbst.</p>
         <p>Sie brauchen dafür weder teure Software noch ein Tabellenblatt voller Formeln. <a href="/de/app.html">gantts.app</a> läuft direkt im Browser, ohne Konto und ohne Installation: Vorgänge eintippen, Balken ziehen, Abhängigkeiten verknüpfen, kritischen Pfad einblenden und das Ergebnis als PDF, PNG, XLSX oder PPTX exportieren. Der Plan bleibt dabei lokal auf Ihrem Gerät.</p>
+        <p>So entsteht der Umbau der Bäckerei Lindenhof in gantts.app, mit den Schaltflächen so benannt, wie sie tatsächlich beschriftet sind:</p>
+        <ol>
+          <li>Klicken Sie auf <strong>✨ In Gantt einfügen</strong> und fügen Sie die Liste ein. Dauern in Klammern, <em>nach</em> für eine Verknüpfung und ein abschließendes <em>!</em> für einen Meilenstein werden erkannt — also <em>Sanitär und Elektro (9d) nach Entkernung</em> und danach <em>Lebensmittelüberwachung bestanden!</em></li>
+          <li>Oder bauen Sie ihn von Hand: <strong>＋ Vorgang</strong> für eine Arbeitszeile, <strong>◆ Meilenstein</strong> für eine Raute, <strong>▣ Gruppe</strong> für eine Phase.</li>
+          <li>Ein Doppelklick auf eine Zeile öffnet die Detailansicht. Dort setzen Sie <strong>Nach (Vorgänger)</strong>, <strong>Zuständig</strong> und <strong>Fortschritt</strong> — und ändern über <strong>Typ</strong> die Art einer Zeile, falls Sie einen Meilenstein versehentlich als Vorgang eingetippt haben. Ein Meilenstein hat die Dauer null und lässt sich verschieben, aber nicht in der Länge ziehen.</li>
+          <li>Klicken Sie auf <strong>Neu planen</strong>, damit jeder Vorgang auf das früheste Datum rückt, das seine Abhängigkeiten zulassen. Das ist der Schritt, der aus Schätzungen den 24. April macht.</li>
+          <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>, um beide pufferfreien Ketten hervorzuheben, und springen Sie mit <strong>◎ Heute</strong> zurück auf das aktuelle Datum.</li>
+          <li>Prüfen Sie unter <strong>Kalender</strong>, ob Karfreitag und Ostermontag als arbeitsfrei hinterlegt sind. Tragen Sie hier auch die Betriebsferien der beteiligten Betriebe ein — der Plan rechnet danach von selbst um sie herum.</li>
+          <li>Öffnen Sie <strong>◳ Basisplan</strong>, bevor der erste Handwerker auf der Baustelle steht, damit Verzug später gegen das gemessen wird, was Sie zugesagt haben.</li>
+          <li>Über <strong>⬇ Export</strong> erhalten Sie <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong>, <strong>📑 CSV (Tabelle)</strong> oder <strong>📽 PowerPoint (.pptx)</strong>; über <strong>📤 Teilen…</strong> einen <strong>🔗 Teilbarer Link</strong>.</li>
+        </ol>
+        <figure class="fig fig-inline"><svg viewBox="0 0 540 78" width="100%" role="img" aria-label="Von der schlichten Vorgangsliste zu einem terminierten, verknüpften Plan in wenigen Schritten."><circle cx="16" cy="26" r="15" fill="#6c4cf1"/><text x="16" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">1</text><text x="0" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Entwurf</text><line x1="36" y1="26" x2="118" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="148" cy="26" r="15" fill="#6c4cf1"/><text x="148" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">2</text><text x="132" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Umsetzung</text><line x1="168" y1="26" x2="250" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="280" cy="26" r="15" fill="#6c4cf1"/><text x="280" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">3</text><text x="264" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Test</text><line x1="300" y1="26" x2="382" y2="26" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="412" cy="26" r="15" fill="#6c4cf1"/><text x="412" y="30" font-size="12" font-weight="700" fill="#fff" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">4</text><text x="396" y="62" font-size="11.5" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Start</text></svg><figcaption>Von der schlichten Vorgangsliste zu einem terminierten, verknüpften Plan in wenigen Schritten.</figcaption></figure>
+        <p>Für die Vermieterin stellen Sie <strong>Ansicht</strong> vor dem Export auf <strong>Nur Meilensteine</strong>: zwei Zeilen, die Lebensmittelüberwachung und die Wiedereröffnung — das gesamte Vorhaben, soweit es sie betrifft.</p>
         <p>Ausführlich Schritt für Schritt steht das in der <a href="/de/blog/how-to-make-a-gantt-chart.html">Anleitung in sieben Schritten</a>; wer lieber in Tabellen arbeitet, findet den Weg über <a href="/de/blog/gantt-chart-in-excel.html">Excel</a> beschrieben.</p>
 
       <div class="callout">Ein Gantt-Diagramm ohne Abhängigkeiten ist nur eine Tabelle mit Farbe. Der gesamte Nutzen entsteht dadurch, dass der Plan selbst rechnet, wenn sich etwas verschiebt — und in jedem echten Projekt verschiebt sich etwas.</div>

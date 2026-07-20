@@ -28,8 +28,27 @@ function load(loc) {
   if (loc === 'en') {
     const out = {};
     Object.assign(out, require('./new-guides.js').G);
-    // The hand-authored English guides live as pages, not in the model;
-    // they are picked up from disk below.
+
+    /* The other eight English guides are hand-authored pages, not model
+       entries, so `require` cannot see them. They were invisible to this
+       audit entirely — which is how eight 2000-word guides sat with one
+       diagram and no worked example while the report showed nothing
+       wrong. Read them off disk and synthesise an entry so they are
+       measured by exactly the same rules. */
+    const fs = require('fs');
+    const dir = path.join(__dirname, '..', 'blog');
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.html') || f === 'index.html') continue;
+      const slug = f.slice(0, -5);
+      if (out[slug]) continue;                       // generated; already loaded
+      const html = fs.readFileSync(path.join(dir, f), 'utf8');
+      /* Capture from <article>, NOT from <div class="prose">. The hero
+         <figure class="fig"> sits between them, so a prose-only capture
+         reports every hand-authored page as having zero diagrams when
+         each has one. */
+      const m = html.match(/<article[^>]*>([\s\S]*?)<\/article>/);
+      if (m) out[slug] = { _handAuthored: true, sections: [['', m[1]]] };
+    }
     return out;
   }
   const m = require(path.join('..', 'i18n', `guides-${loc}.js`));

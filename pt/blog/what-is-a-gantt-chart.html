@@ -90,19 +90,20 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>8 min de leitura</span></p>
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>14 min de leitura</span></p>
     <div class="toc"><strong>Nesta página</strong>
       <ol>
         <li><a href="#s1">Como ele é, na prática</a></li>
         <li><a href="#s2">Os quatro elementos</a></li>
         <li><a href="#s3">Por que a linha do tempo muda tudo</a></li>
         <li><a href="#s4">Precedências: o valor real</a></li>
-        <li><a href="#s5">O caminho crítico</a></li>
-        <li><a href="#s6">Quando usar</a></li>
-        <li><a href="#s7">Onde estão os limites</a></li>
-        <li><a href="#s8">Gantt, linha do tempo e Kanban</a></li>
-        <li><a href="#s9">De onde vem o nome</a></li>
-        <li><a href="#s10">Por onde começar</a></li>
+        <li><a href="#s5">Um exemplo resolvido: a reforma da Cafeteria Marambaia</a></li>
+        <li><a href="#s6">O caminho crítico</a></li>
+        <li><a href="#s7">Quando usar</a></li>
+        <li><a href="#s8">Onde estão os limites</a></li>
+        <li><a href="#s9">Gantt, linha do tempo e Kanban</a></li>
+        <li><a href="#s10">De onde vem o nome</a></li>
+        <li><a href="#s11">Por onde começar</a></li>
       </ol>
     </div>
 
@@ -130,31 +131,95 @@
         <p>Com precedências, o cronograma recalcula sozinho. Você move uma barra e tudo que depende dela acompanha. É a diferença entre um cronograma vivo e um documento desatualizado em três semanas.</p>
         <p>O tipo dominante é <strong>Término-Início</strong>: B começa quando A termina. Ele cobre em torno de 90% das ligações reais. Existem outros três — Início-Início, Término-Término e Início-Término —, úteis em casos específicos, e vale conhecer os <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a> antes de sair usando.</p>
         <p>O teste para saber se uma ligação é real: se A terminar antes do previsto, B pode começar antes? Se a resposta for não, você não criou uma precedência — apenas repetiu a ordem em que digitou a lista, e o cronograma vai reagir a atrasos que não existem.</p>
-      <h2 id="s5">O caminho crítico</h2>
+      <h2 id="s5">Um exemplo resolvido: a reforma da Cafeteria Marambaia</h2>
+<p>Definição sem número não gruda. Então aqui está um gráfico de Gantt inteiro, pequeno o bastante para caber numa tela e completo o bastante para a conta fechar: a reforma da Cafeteria Marambaia, em Porto Alegre, que fecha as portas em março de 2026 para trocar cozinha, piso e layout de salão. Sócia responsável: Renata Fontoura. Todas as durações estão em dias úteis.</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>#</th><th>Tarefa</th><th>Duração</th><th>Depois de</th><th>Início</th><th>Fim</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Alvarás e anuência do proprietário</td><td>8 d</td><td>—</td><td>seg 02/03</td><td>qua 11/03</td></tr>
+              <tr><td>2</td><td>Projeto e layout do salão</td><td>6 d</td><td>—</td><td>seg 02/03</td><td>seg 09/03</td></tr>
+              <tr><td>3</td><td>Compra de equipamentos (prazo do fornecedor)</td><td>20 d</td><td>1, 2</td><td>qui 12/03</td><td>qui 09/04</td></tr>
+              <tr><td>4</td><td>Demolição e retirada do mobiliário</td><td>4 d</td><td>1</td><td>qui 12/03</td><td>ter 17/03</td></tr>
+              <tr><td>5</td><td>Hidráulica e elétrica</td><td>9 d</td><td>4</td><td>qua 18/03</td><td>seg 30/03</td></tr>
+              <tr><td>6</td><td>Piso e marcenaria</td><td>7 d</td><td>5</td><td>ter 31/03</td><td>qui 09/04</td></tr>
+              <tr><td>7</td><td>Instalação dos equipamentos</td><td>3 d</td><td>3, 6</td><td>sex 10/04</td><td>ter 14/04</td></tr>
+              <tr><td>8</td><td><strong>Vistoria da Vigilância Sanitária aprovada</strong></td><td>0 d</td><td>7</td><td colspan="2">qua 15/04</td></tr>
+              <tr><td>9</td><td>Treinamento da equipe no novo layout</td><td>5 d</td><td>8</td><td>qui 16/04</td><td>qui 23/04</td></tr>
+              <tr><td>10</td><td><strong>Reabertura</strong></td><td>0 d</td><td>9</td><td colspan="2">sex 24/04</td></tr>
+            </tbody>
+          </table>
+          <p>Oito tarefas, dois marcos, e a reabertura cai numa sexta-feira, 24/04. Ninguém escolheu essa data. Ela sai da soma das durações ao longo da cadeia mais longa — e é exatamente por isso que se desenha um gráfico em vez de digitar datas num documento do Word.</p>
+        </div>
+        <figure class="fig fig-inline"><svg viewBox="0 0 560 165" width="100%" role="img" aria-label="Uma linha por tarefa, uma barra por duração: é toda a mecânica do desenho."><text x="0" y="14" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Semana 1–8</text><line x1="190" y1="24" x2="190" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="252" y1="24" x2="252" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="314" y1="24" x2="314" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="376" y1="24" x2="376" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><line x1="438" y1="24" x2="438" y2="152" stroke="#94a3b8" stroke-width="0.5" opacity="0.35"/><text x="0" y="44" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 1</text><rect x="190" y="34" width="150" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="68" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa A</text><rect x="200" y="58" width="90" height="13" rx="4" fill="#6c4cf1"/><text x="12" y="92" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa B</text><rect x="260" y="82" width="110" height="13" rx="4" fill="#6c4cf1"/><text x="0" y="116" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Fase 2</text><rect x="340" y="106" width="170" height="13" rx="4" fill="#cbb8f5"/><text x="12" y="140" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa C</text><rect x="350" y="130" width="120" height="13" rx="4" fill="#6c4cf1"/><path d="M 510 142 l 8 8 l -8 8 l -8 -8 z" fill="#e5484d"/><text x="526" y="153" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Marco</text><line x1="390" y1="24" x2="390" y2="152" stroke="#e5484d" stroke-width="1.5" stroke-dasharray="3 3"/><text x="395" y="20" font-size="10" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Hoje</text></svg><figcaption>Uma linha por tarefa, uma barra por duração: é toda a mecânica do desenho.</figcaption></figure>
+        <p>Dois feriados fazem trabalho de verdade nesse cronograma, e vale reparar em como. A Sexta-feira Santa cai em 03/04/2026 e engole um dia útil bem no meio da compra de equipamentos e da marcenaria: sem ela, as duas fechariam em qua 08/04 e a reabertura seria na quinta. E Tiradentes cai em ter 21/04/2026, no meio do treinamento, empurrando a reabertura de qua 22/04 para sex 24/04.</p>
+        <p>Esse segundo feriado tem preço. O ponto na Rua Marambaia custa R$ 9.400 de aluguel por mês, algo como R$ 313 por dia de porta fechada, e a folha da equipe corre igual com a loja vazia. Se a Renata ainda emendar a segunda-feira 20/04, como metade do comércio da região faz, a reabertura escorrega para seg 27/04 e a emenda custa perto de R$ 940 só de aluguel — decisão perfeitamente defensável, desde que seja tomada olhando para o número, e não descoberta na segunda-feira.</p>
+      <h2 id="s6">O caminho crítico</h2>
 <p>O caminho crítico é a cadeia mais longa de tarefas ligadas. A duração dele é a duração do projeto. Qualquer atraso nesse caminho empurra o fim na mesma medida; atrasos fora dele, muitas vezes, não empurram nada.</p>
         <p>O número que importa aqui chama-se <strong>folga</strong>: quantos dias uma tarefa pode atrasar sem mover a entrega. Tarefas do caminho crítico têm folga zero. Uma tarefa com quatro dias de folga que atrasa dois continua irrelevante para o prazo; a mesma tarefa atrasando cinco dias vira crítica e passa a comandar a entrega.</p>
         <p>É o indicador mais útil de um cronograma: mostra onde a atenção faz diferença e onde ela se perde. O <a href="/pt/blog/critical-path-method.html">método de cálculo</a> é uma soma para frente e uma subtração para trás, e qualquer ferramenta séria faz isso sozinha a cada alteração.</p>
-      <h2 id="s6">Quando usar</h2>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Folga zero é a definição de crítico: cada dia perdido ali é um dia a mais de porta fechada."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Caminho crítico: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Folga (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duração: 12</text></svg><figcaption>Folga zero é a definição de crítico: cada dia perdido ali é um dia a mais de porta fechada.</figcaption></figure>
+        <p>Na Cafeteria Marambaia a leitura fica assim:</p>
+        <div class="worked">
+          <table>
+            <thead><tr><th>Tarefa</th><th>Termina</th><th>Sucessora começa</th><th>Folga total</th><th>O que isso significa</th></tr></thead>
+            <tbody>
+              <tr><td>Projeto e layout do salão</td><td>seg 09/03</td><td>qui 12/03</td><td>2 d</td><td>Pode escorregar dois dias sem mover nada</td></tr>
+              <tr><td>Demolição e retirada</td><td>ter 17/03</td><td>qua 18/03</td><td>0 d</td><td>Crítica</td></tr>
+              <tr><td>Compra de equipamentos</td><td>qui 09/04</td><td>sex 10/04</td><td>0 d</td><td>Crítica — fornecedor atrasado é reabertura atrasada</td></tr>
+              <tr><td>Piso e marcenaria</td><td>qui 09/04</td><td>sex 10/04</td><td>0 d</td><td>Crítica</td></tr>
+              <tr><td>Treinamento da equipe</td><td>qui 23/04</td><td>sex 24/04</td><td>0 d</td><td>Crítica</td></tr>
+            </tbody>
+          </table>
+          <p>Uma única linha tem alguma folga. Se a arquiteta pedir três dias a mais no projeto, os dois primeiros são de graça e o terceiro custa um dia de reabertura — R$ 313 de aluguel mais o faturamento de um dia. Vale notar também que a compra e a marcenaria terminam na mesma quinta: existem dois caminhos críticos ao mesmo tempo, e é o pior arranjo possível, porque qualquer um dos dois atrasando move a data final sozinho.</p>
+        </div>
+        <p>Aqui cabe um aviso sobre o gantts.app, porque o comportamento surpreende quem vem do MS Project. O cálculo é <strong>as-placed</strong>: uma precedência só empurra a tarefa para depois, nunca puxa para antes. Se a marcenaria fechasse em 09/04 mas a barra da instalação estivesse posicionada em 20/04, ligar as duas não traria a instalação para o dia 10 — o vão continuaria ali, porque você o colocou de propósito. A folga que o app reporta é sempre a <strong>folga total</strong>; não existe coluna de folga livre. Para compactar de verdade, o comando é <strong>Reprogramar</strong>.</p>
+      <h2 id="s7">Quando usar</h2>
 <p>Em projetos com prazo, ordem e várias pessoas envolvidas: obras, lançamentos, eventos, mudanças de escritório, pesquisas, implantações de sistema. Onde a pergunta "o que depende do quê" pesa mais do que "o que faço agora".</p>
         <p>Três sinais de que o Gantt é a ferramenta certa: existe uma data de entrega que não se negocia; pelo menos algumas tarefas só podem começar depois de outras terminarem; e mais de uma pessoa ou equipe precisa combinar o próprio calendário com o das demais. Com os três presentes, nenhuma outra representação entrega a mesma informação em uma tela.</p>
         <p>Vale para escalas muito diferentes. Uma obra de doze meses num eixo semanal, um lançamento de seis semanas num eixo diário e um plano de uma semana num eixo de horas usam a mesma estrutura — o que muda é a densidade e a unidade de tempo, não a ideia. Os <a href="/pt/blog/gantt-chart-examples.html">exemplos por setor</a> mostram como as fases mudam de nome sem que a estrutura mude.</p>
         <p>Cinco usos aparecem em praticamente todo projeto: montar o cronograma; combinar o calendário entre equipes; enxergar as dependências antes que elas virem atraso; acompanhar o avanço comparando o planejado com o realizado; e apresentar o plano a quem financia ou aprova. Esse último não é acessório — na maioria das organizações, o Gantt é o único documento de projeto que a diretoria lê inteiro.</p>
-      <h2 id="s7">Onde estão os limites</h2>
+      <h2 id="s8">Onde estão os limites</h2>
 <p>Para trabalho contínuo e recorrente, o Gantt é a ferramenta errada — Kanban serve melhor. Para um time em sprints de duas semanas com escopo deliberadamente aberto, também.</p>
         <p>Há mais três limitações honestas. A barra mostra <strong>duração, não esforço</strong>: uma tarefa de dez dias pode consumir duas horas por dia ou o dia inteiro, e o desenho é idêntico — por isso o Gantt sozinho não substitui um plano de recursos. Ele <strong>exige manutenção</strong>: um cronograma que ninguém atualiza é pior do que nenhum, porque continua sendo levado a sério. E ele <strong>não mostra custo</strong>, a não ser que se acrescente uma <a href="/pt/blog/s-curve-project-management.html">curva S</a> ao lado.</p>
         <p>E ele deixa de funcionar quando desce demais: um cronograma de 400 linhas não é planejamento, é contabilidade. Regra prática: nenhuma tarefa com menos de um dia, nenhuma com mais de um mês. Acima de 150 linhas, o caminho é dividir em cronogramas por fase, com um cronograma-mestre só de resumos por cima.</p>
-      <h2 id="s8">Gantt, linha do tempo e Kanban</h2>
+      <h2 id="s9">Gantt, linha do tempo e Kanban</h2>
 <p>As três representações são confundidas com frequência, e cada uma responde a uma pergunta diferente.</p>
         <p>A <strong>linha do tempo</strong> é uma sequência de datas sobre um eixo, sem durações nem ligações. Serve para comunicar cinco ou seis momentos a uma diretoria. Todo Gantt contém uma linha do tempo; nenhuma linha do tempo é um Gantt.</p>
         <p>O <strong>Kanban</strong> mostra estado, não calendário: colunas de "a fazer", "fazendo" e "feito", com cartões atravessando. Responde "o que vem agora", que é a pergunta certa quando o trabalho é contínuo e não há uma data única para defender.</p>
         <p>O <strong>Gantt</strong> responde "isso cabe até a data prometida". Regra de bolso: com prazo fixo e ordem definida, Gantt; com fluxo contínuo e prioridades móveis, Kanban; para mostrar meia dúzia de datas a quem não vai executar nada, uma linha do tempo basta.</p>
-      <h2 id="s9">De onde vem o nome</h2>
+        <table>
+          <thead><tr><th></th><th>Gráfico de Gantt</th><th>Linha do tempo</th><th>Quadro Kanban</th></tr></thead>
+          <tbody>
+            <tr><td>Pergunta que responde</td><td>Quando cada trabalho acontece, e em que ordem?</td><td>Quais são as datas de destaque?</td><td>O que está sendo feito agora?</td></tr>
+            <tr><td>Mostra duração</td><td>Sim — o comprimento da barra é a duração</td><td>Não — os eventos são pontos</td><td>Não — cartões não têm comprimento</td></tr>
+            <tr><td>Mostra precedências</td><td>Sim, como setas entre as barras</td><td>Não</td><td>Não</td></tr>
+            <tr><td>Calcula a data de término</td><td>Sim, a partir das durações e das ligações</td><td>Não — as datas são digitadas</td><td>Não</td></tr>
+            <tr><td>A reforma da cafeteria nele</td><td>As 10 linhas, com 24/04 calculado</td><td>Três datas: fechamento, vistoria, reabertura</td><td>"Hidráulica" parada na coluna Fazendo</td></tr>
+            <tr><td>Melhor quando</td><td>Existe prazo e uma sequência definida</td><td>Você só precisa mostrar meia dúzia de datas</td><td>O trabalho flui sem data fixa</td></tr>
+          </tbody>
+        </table>
+        <p>A confusão mais cara das três é usar Kanban num projeto com data contratual. O quadro mostra que tudo está andando e não mostra que o que está andando não cabe no calendário — e essa distinção só aparece quando as barras têm comprimento.</p>
+      <h2 id="s10">De onde vem o nome</h2>
 <p>De Henry Gantt, engenheiro mecânico e consultor americano que popularizou a representação por volta de 1910 a 1915, aplicando-a a planejamento de produção e, mais tarde, à construção naval durante a guerra. Uma forma parecida já havia sido desenvolvida duas décadas antes pelo polonês Karol Adamiecki, que a chamou de harmonograma, mas publicou em polonês e russo — e o trabalho permaneceu praticamente desconhecido no Ocidente.</p>
         <p>Foi a versão de Gantt que circulou pela indústria americana e europeia, e por isso é o nome dele que ficou. A representação tem mais de um século e continua sendo a visão padrão de praticamente toda ferramenta de projeto — raro para algo que fosse apenas moda.</p>
-      <h2 id="s10">Por onde começar</h2>
+      <h2 id="s11">Por onde começar</h2>
 <p>Liste primeiro as tarefas, sem datas. Depois estime as durações em dias úteis. Ligue então o que realmente espera — não o que está em sequência por acaso. Por fim, defina de cinco a dez marcos. As datas saem desses quatro passos; elas são resultado, não ponto de partida.</p>
         <p>Para um cronograma pequeno e estável, uma planilha resolve, e há um <a href="/pt/blog/gantt-chart-in-excel.html">método conhecido no Excel</a> com barras empilhadas. Acima de umas vinte tarefas, o custo de repassar datas à mão supera a familiaridade da planilha, porque nenhuma delas calcula precedências.</p>
         <p>Uma ferramenta dedicada assume o recálculo. O <a href="/pt/app.html">gantts.app</a> roda direto no navegador, sem cadastro, salva localmente no seu aparelho e exporta em PDF, PNG, XLSX e PPTX. O passo a passo completo está em <a href="/pt/blog/how-to-make-a-gantt-chart.html">como fazer um gráfico de Gantt</a>.</p>
+        <p>Para montar exatamente o cronograma da cafeteria, do zero, são oito movimentos:</p>
+        <ol>
+          <li><strong>Cole a lista pronta.</strong> Em <strong>✨ Colar no Gantt</strong>, uma linha por tarefa. <code>(8d)</code> define a duração, <code>after Alvarás</code> cria a predecessora, <code>!</code> no fim da linha transforma a linha num marco e <code>#</code> no começo abre uma fase. A palavra <code>after</code> é sintaxe literal e continua em inglês mesmo com a interface em português.</li>
+          <li><strong>Ou monte linha a linha.</strong> <strong>＋ Tarefa</strong> para trabalho com duração, <strong>◆ Marco</strong> para a vistoria e a reabertura, <strong>▣ Grupo</strong> para separar Obra de Retomada.</li>
+          <li><strong>Ligue as precedências.</strong> Na coluna <strong>Depois de</strong>, digite os números das linhas: <code>1, 2</code> na compra de equipamentos, <code>3, 6</code> na instalação. Ou arraste do pontinho na borda de uma barra até a barra que deve esperar.</li>
+          <li><strong>Marque os feriados.</strong> Em <strong>Calendário de trabalho</strong>, inclua 03/04 e 21/04 — e a emenda de 20/04, se a decisão for emendar. Sem isso, o cronograma promete uma reabertura em 22/04 que não existe.</li>
+          <li><strong>Ligue <strong>Fins de semana</strong> e <strong>Hoje</strong>.</strong> O sombreado de sábado e domingo é o jeito mais rápido de flagrar uma duração que caiu errada, e a linha de hoje responde "onde estamos" antes de qualquer explicação.</li>
+          <li><strong>Ative <strong>Caminho crítico</strong>.</strong> A cadeia crítica aparece listrada — a legenda diz literalmente <em>listrado = caminho crítico</em>. Aqui ela passa por alvarás, demolição, hidráulica, marcenaria, instalação, vistoria e treinamento.</li>
+          <li><strong>Congele o plano.</strong> <strong>Linha de base</strong> grava as datas aprovadas. O aviso <em>Linha de base definida — os atrasos passam a ser medidos em relação a este plano</em> confirma. Sem ela, daqui a um mês ninguém consegue dizer o quanto a obra andou para o lado.</li>
+          <li><strong>Exporte.</strong> <strong>⬇ Exportar</strong> gera <strong>📄 Documento PDF</strong> para o proprietário do ponto, <strong>📊 Excel (.xlsx)</strong> para o contador e <strong>📽 PowerPoint (.pptx)</strong> para a reunião com os sócios.</li>
+        </ol>
+        <figure class="fig fig-inline"><svg viewBox="0 0 420 70" width="100%" role="img" aria-label="Marco tem duração zero e vira losango: a vistoria da Vigilância Sanitária é um instante, não uma barra."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Tarefa</text><rect x="0" y="20" width="170" height="13" rx="4" fill="#6c4cf1"/><line x1="0" y1="44" x2="170" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="85" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Duração 8d</text><text x="260" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Marco</text><path d="M 300 20 l 10 10 l -10 10 l -10 -10 z" fill="#e5484d"/><line x1="300" y1="44" x2="300" y2="44" stroke="#94a3b8" stroke-width="1"/><text x="300" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">duração zero</text></svg><figcaption>Marco tem duração zero e vira losango: a vistoria da Vigilância Sanitária é um instante, não uma barra.</figcaption></figure>
+        <p>Uma última observação sobre marcos, porque é a dúvida que mais aparece. Marco tem duração zero e por isso <strong>não pode ser redimensionado</strong> — não existe arrastar a borda de um losango. Se a vistoria da Vigilância Sanitária costuma tomar dois dias de agente na loja, isso é uma tarefa de dois dias; o marco é o carimbo no fim dela. Confundir os dois é o erro que faz uma fase inteira perder o ponto de decisão que ela deveria destacar.</p>
 
       <div class="callout">Um gráfico de Gantt sem precedências é só uma tabela colorida. Todo o valor vem de o cronograma recalcular sozinho quando algo muda — e, em projeto real, algo sempre muda.</div>
 

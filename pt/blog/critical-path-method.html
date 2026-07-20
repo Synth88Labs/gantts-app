@@ -90,7 +90,7 @@
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>9 min de leitura</span></p>
+    <p class="post-meta"><span>Redação gantts.app</span><span>Atualizado em 19 de julho de 2026</span><span>14 min de leitura</span></p>
     <div class="toc"><strong>Nesta página</strong>
       <ol>
         <li><a href="#s1">A ideia central</a></li>
@@ -103,6 +103,7 @@
         <li><a href="#s8">CPM, PERT e corrente crítica</a></li>
         <li><a href="#s9">Os erros que invalidam o cálculo</a></li>
         <li><a href="#s10">Calcular sem fazer as passagens à mão</a></li>
+        <li><a href="#s11">Onde o cálculo do gantts.app difere do livro-texto</a></li>
       </ol>
     </div>
 
@@ -139,18 +140,19 @@
         <p>Existe uma segunda folga, menos citada e mais útil no dia a dia: a <strong>folga livre</strong>, que é quanto a tarefa pode atrasar sem mover a <em>sucessora imediata</em>. Ela é sempre menor ou igual à folga total. A diferença importa porque a folga total costuma ser compartilhada: se três tarefas em sequência têm 5 dias de folga total cada, não são 15 dias disponíveis — são os mesmos 5 dias, e quem gastar primeiro deixa as outras em zero.</p>
         <p>Daí a regra prática: folga total é um número para quem cuida do cronograma inteiro; folga livre é o número que se pode prometer a quem executa uma tarefa específica.</p>
       <h2 id="s6">Um exemplo resolvido com seis tarefas</h2>
-<p>Um projeto pequeno, seis tarefas, durações em dias úteis. As predecessoras indicam o que precisa terminar antes.</p>
+<p>Um projeto pequeno e real: a <strong>parada programada da Metalúrgica Bracaú</strong>, em Joinville, para trocar o quadro geral de baixa tensão do galpão de estamparia. Seis tarefas, durações em dias úteis, responsável técnico o engenheiro Anderson Kruger, com ART recolhida no CREA-SC. As predecessoras indicam o que precisa terminar antes.</p>
         <table>
           <thead><tr><th>Tarefa</th><th>Duração</th><th>Predecessoras</th></tr></thead>
           <tbody>
-            <tr><td>A — Levantamento</td><td>3</td><td>—</td></tr>
-            <tr><td>B — Projeto detalhado</td><td>4</td><td>A</td></tr>
-            <tr><td>C — Compras</td><td>2</td><td>A</td></tr>
-            <tr><td>D — Execução</td><td>5</td><td>B</td></tr>
-            <tr><td>E — Preparação do local</td><td>6</td><td>C</td></tr>
-            <tr><td>F — Instalação e testes</td><td>3</td><td>D, E</td></tr>
+            <tr><td>A — Levantamento de carga e liberação da área</td><td>3</td><td>—</td></tr>
+            <tr><td>B — Projeto elétrico e ART</td><td>4</td><td>A</td></tr>
+            <tr><td>C — Compra de cabos e disjuntores</td><td>2</td><td>A</td></tr>
+            <tr><td>D — Montagem do novo quadro geral</td><td>5</td><td>B</td></tr>
+            <tr><td>E — Preparação da base e malha de aterramento</td><td>6</td><td>C</td></tr>
+            <tr><td>F — Comissionamento e energização</td><td>3</td><td>D, E</td></tr>
           </tbody>
         </table>
+        <p>Vale registrar por que a parada foi marcada para agosto. A primeira proposta era começar em seg 09/11/2026, e ela foi descartada na primeira reunião: quinze dias úteis a partir dali atravessariam <strong>Finados em seg 02/11</strong> e a <strong>Consciência Negra em sex 20/11</strong>, esticando três semanas de parada para quase quatro semanas de calendário. Agosto de 2026 não tem feriado nacional, e cada dia de galpão parado custa à Bracaú cerca de <strong>R$ 48.000</strong> em produção não faturada. A escolha do mês foi, sozinha, a decisão mais valiosa do planejamento — e foi tomada olhando o calendário, não o cronograma.</p>
         <p>Há dois caminhos do início ao fim: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 dias</strong>, e <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 dias</strong>. O mais longo dá o prazo. Mas o valor do método não é achar o maior número: é saber quanta folga cada tarefa fora dele realmente tem.</p>
         <p><strong>Cálculo para frente</strong> (início mais cedo, depois término mais cedo):</p>
         <ul>
@@ -179,7 +181,23 @@
           </tbody>
         </table>
         <p>O caminho crítico é <strong>A → B → D → F</strong>, exatamente o caminho de 15 dias. C e E têm <strong>um dia de folga cada</strong> — e é um dia só, compartilhado pela cadeia inteira: se C atrasar um dia, E perde a folga dela na mesma hora.</p>
-        <p>Traduzindo para o calendário, com início na segunda-feira 3 de agosto de 2026 e semana de cinco dias úteis: A vai de 3 a 5 de agosto, B de 6 a 11, D de 12 a 18 e F de 19 a 21. Entrega na sexta-feira, 21 de agosto. C ocupa 6 e 7 de agosto e E vai de 10 a 17 — um dia antes do que seria estritamente necessário.</p>
+        <figure class="fig fig-inline"><svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Duas cadeias, uma crítica: a mais longa manda na data e a outra tem um dia de sobra."><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Caminho crítico: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Folga (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duração: 12</text></svg><figcaption>Duas cadeias, uma crítica: a mais longa manda na data e a outra tem um dia de sobra.</figcaption></figure>
+        <div class="worked">
+          <p><strong>A conta traduzida para o calendário da Bracaú.</strong> Início na segunda-feira 03/08/2026, semana de cinco dias úteis, agosto sem feriado nacional:</p>
+          <table>
+            <thead><tr><th>Tarefa</th><th>Início</th><th>Fim</th><th>Folga</th><th>Quanto vale um dia de atraso</th></tr></thead>
+            <tbody>
+              <tr><td>A — Levantamento e liberação</td><td>seg 03/08</td><td>qua 05/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>B — Projeto elétrico e ART</td><td>qui 06/08</td><td>ter 11/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>C — Compra de cabos e disjuntores</td><td>qui 06/08</td><td>sex 07/08</td><td>1</td><td>Nada no primeiro dia; R$ 48.000 no segundo</td></tr>
+              <tr><td>D — Montagem do novo quadro</td><td>qua 12/08</td><td>ter 18/08</td><td>0</td><td>R$ 48.000</td></tr>
+              <tr><td>E — Base e malha de aterramento</td><td>seg 10/08</td><td>seg 17/08</td><td>1</td><td>Nada no primeiro dia; R$ 48.000 no segundo</td></tr>
+              <tr><td>F — Comissionamento e energização</td><td>qua 19/08</td><td>sex 21/08</td><td>0</td><td>R$ 48.000</td></tr>
+            </tbody>
+          </table>
+          <p>Religamento na sexta-feira, 21/08. A coluna da direita é a razão inteira de existir o método: os mesmos R$ 48.000 por dia estão em jogo em quatro das seis tarefas e em nenhuma das outras duas — até o segundo dia. Colocar dois eletricistas a mais na malha de aterramento, que é a tarefa mais visível da obra, não antecipa um único minuto de religamento. Ganhar um dia na montagem do quadro vale R$ 48.000.</p>
+          <p>E o um dia de folga de C e E é <em>um</em> dia, não dois. Se o fornecedor de disjuntores atrasar a entrega em um dia, C consome a folga sozinha e E fica crítica junto com o resto. O supervisor que lê "1 dia de folga" em duas linhas e conclui que tem dois dias de margem acabou de gastar R$ 48.000 numa soma que a planilha nunca fez.</p>
+        </div>
       <h2 id="s7">O que isso muda na prática</h2>
 <p>Mostra onde o esforço rende. Colocar mais duas pessoas em E não antecipa nada: E já tem folga e terminaria antes de F começar de qualquer jeito. Ganhar um dia em D ganha um dia no fim do projeto. É a mesma quantidade de esforço com resultados completamente diferentes.</p>
         <p>Muda também o acompanhamento: em vez de percorrer todas as tarefas, basta perguntar se as quatro críticas estão no prazo e quanto da folga de C e E já foi consumido.</p>
@@ -202,6 +220,23 @@
       <h2 id="s10">Calcular sem fazer as passagens à mão</h2>
 <p>Fazer as duas passagens no papel uma vez é o melhor jeito de entender o método. Refazer a cada mudança de estimativa é inviável: seis tarefas cabem numa folha, sessenta não.</p>
         <p>O <a href="/pt/app.html">gantts.app</a> marca o caminho crítico sozinho assim que existem tarefas e precedências, roda no navegador sem cadastro e exporta em PDF, PNG, XLSX e PPTX. Mude uma duração e o caminho se redesenha na hora — inclusive quando ele muda de lugar. Se as precedências ainda não estão claras, comece pelos <a href="/pt/blog/gantt-chart-dependencies.html">quatro tipos de precedência</a>.</p>
+        <p>Para montar a parada da Bracaú e ler o caminho crítico dela, são sete movimentos:</p>
+        <ol>
+          <li><strong>Cole as seis linhas.</strong> <strong>✨ Colar no Gantt</strong> aceita <code>(5d)</code> para a duração e <code>after Projeto elétrico</code> para a ligação, tudo de uma vez.</li>
+          <li><strong>Ligue as convergências.</strong> Na coluna <strong>Depois de</strong>, a linha F recebe <code>4, 5</code>. É a convergência que produz a data final — e é sempre nela que o cálculo manual erra, tomando o menor em vez do maior.</li>
+          <li><strong>Confira o calendário.</strong> <strong>Calendário de trabalho</strong> e <strong>Fins de semana</strong> ligado. Foi aqui que a decisão de agosto em vez de novembro se justificou; deixe-a registrada nas <strong>Notas</strong> da primeira tarefa.</li>
+          <li><strong>Marque <strong>Caminho crítico</strong>.</strong> A cadeia A → B → D → F aparece listrada; a legenda diz literalmente <em>listrado = caminho crítico</em>.</li>
+          <li><strong>Leia a folga.</strong> As tarefas fora da listra são as que têm sobra. Uma advertência importante: o app reporta <strong>folga total</strong> e apenas ela — <em>não existe coluna de folga livre</em>. Todo número de folga que você vê na tela é compartilhado com a cadeia, e é por isso que o supervisor do exemplo se enganou.</li>
+          <li><strong>Teste o que dói.</strong> Aumente em um dia a duração da tarefa que tem mais chance de estourar e veja o que se moveu. Ctrl+Z desfaz. Cinco minutos de teste valem mais que uma hora de reunião sobre risco.</li>
+          <li><strong>Congele.</strong> <strong>Linha de base</strong> antes do primeiro dia da parada, e a comparação planejado × real do dia seguinte vira uma coluna em vez de uma discussão.</li>
+        </ol>
+        <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="A folga total pertence à cadeia, não à tarefa: dois dias mostrados em duas linhas costumam ser o mesmo dia."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Folga livre</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Folga total</text></svg><figcaption>A folga total pertence à cadeia, não à tarefa: dois dias mostrados em duas linhas costumam ser o mesmo dia.</figcaption></figure>
+      <h2 id="s11">Onde o cálculo do gantts.app difere do livro-texto</h2>
+<p>Uma diferença importante e deliberada, que vale entender antes de estranhar o comportamento na tela. O CPM de livro-texto reposiciona cada tarefa na sua data mais cedo possível: se você encurtar o projeto elétrico de quatro para dois dias, a montagem do quadro é <em>puxada</em> para trás automaticamente.</p>
+        <p>Aqui não. O cálculo é <strong>as-placed</strong>, ou seja, parte de onde a barra foi colocada: uma tarefa começa na data mais tardia entre a posição em que você a arrastou e a data que as predecessoras permitem. <strong>Uma precedência só empurra a tarefa para depois, nunca puxa para antes.</strong> Ligue uma tarefa cuja barra já esteja bem depois da predecessora e nada se move; o vão continua onde estava.</p>
+        <p>Isso é intencional, e o exemplo da Bracaú mostra por quê. A malha de aterramento não pode começar em qualquer dia: a empreiteira de civil só tem equipe disponível a partir de seg 10/08, e o caminhão-munck está contratado para aquela semana. Uma barra posicionada de propósito por causa de disponibilidade real não deve ser sugada para trás por uma ligação que existe para efeito de cálculo. O cronograma que respeita a posição que você escolheu é o que continua verdadeiro depois da terceira revisão.</p>
+        <p>Quando você <em>quiser</em> mesmo o comportamento de livro-texto, o comando é <strong>Reprogramar</strong>: ele ignora onde as tarefas dependentes estão e puxa cada uma para a data mais cedo que as predecessoras permitem, tratando as tarefas sem ligação como âncoras. É a ferramenta certa para responder à pergunta clássica de reunião de parada — "se tudo correr no limite do possível, qual é a data mais cedo de religamento?". Rode, olhe o número e desfaça se a resposta era só informativa.</p>
+        <p>A segunda diferença já foi dita mas merece repetição, porque é a que mais custa dinheiro: o app mostra <strong>folga total</strong> e não tem coluna de folga livre. Folga total é o número de quem cuida do cronograma inteiro. Antes de prometer três dias de margem ao eletricista responsável por uma tarefa específica, confira quem mais está compartilhando aquela mesma folga na cadeia.</p>
 
       <div class="callout">O caminho crítico muda durante o projeto. Uma tarefa com três dias de folga que atrasa quatro passa a ser crítica, e outra que era crítica ganha folga. Por isso ele não se calcula uma vez no início, mas a cada atualização do cronograma.</div>
 
