@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan de migración a SAP S/4HANA | gantts.app</title>
+  <meta name="description" content="Plan gratuito de migración a SAP S/4HANA: ruta brownfield, remediación de código propio, tres simulacros de cutover, ensayo general y congelación." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/es/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/sap-s4hana-migration-plan.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Plan de migración a SAP S/4HANA | gantts.app" />
+  <meta property="og:description" content="Plan gratuito de migración a SAP S/4HANA: ruta brownfield, remediación de código propio, tres simulacros de cutover, ensayo general y congelación." />
+  <meta property="og:url" content="https://gantts.app/es/templates/sap-s4hana-migration-plan.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plantilla de plan de migración a SAP S/4HANA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plan de migración a SAP S/4HANA | gantts.app" />
+  <meta name="twitter:description" content="Plan gratuito de migración a SAP S/4HANA: ruta brownfield, remediación de código propio, tres simulacros de cutover, ensayo general y congelación." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/es/templates/sap-s4hana-migration-plan.html#webpage","name":"Plan de migración a SAP S/4HANA","url":"https://gantts.app/es/templates/sap-s4hana-migration-plan.html","description":"Plan gratuito de migración a SAP S/4HANA: ruta brownfield, remediación de código propio, tres simulacros de cutover, ensayo general y congelación.","inLanguage":"es","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Plantillas","item":"https://gantts.app/es/templates.html"},{"@type":"ListItem","position":3,"name":"Plantilla de plan de migración a SAP S/4HANA","item":"https://gantts.app/es/templates/sap-s4hana-migration-plan.html"}]}},{"@type":"HowTo","name":"Cómo usar la plantilla: Plantilla de plan de migración a SAP S/4HANA","description":"Plan gratuito de migración a SAP S/4HANA: ruta brownfield, remediación de código propio, tres simulacros de cutover, ensayo general y congelación.","inLanguage":"es","step":[{"@type":"HowToStep","position":1,"name":"Si lo tuyo es una nueva implantación y no una conversión, borra las fa","text":"Si lo tuyo es una nueva implantación y no una conversión, borra las fases de remediación y de simulacros y reconstruye alrededor del diseño de procesos: las formas son de verdad distintas."},{"@type":"HowToStep","position":2,"name":"Fija primero el fin de semana de cutover productivo y cuenta hacia atr","text":"Fija primero el fin de semana de cutover productivo y cuenta hacia atrás; los simulacros son la única estimación fiable de cuánto se tarda."},{"@type":"HowToStep","position":3,"name":"Parte la remediación de código en oleadas por responsable del objeto, ","text":"Parte la remediación de código en oleadas por responsable del objeto, no por número de objetos, para que las barras se correspondan con quien hace realmente el trabajo."},{"@type":"HowToStep","position":4,"name":"Alarga la ventana de congelación si tienes volúmenes altos al cierre, ","text":"Alarga la ventana de congelación si tienes volúmenes altos al cierre, y evita que el cutover cruce un límite de periodo fiscal."},{"@type":"HowToStep","position":5,"name":"Añade filas por cada interfaz y sistema satélite: las conversiones sue","text":"Añade filas por cada interfaz y sistema satélite: las conversiones suelen romper las integraciones antes que SAP."}]},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Cuánto dura una migración a SAP S/4HANA?","acceptedAnswer":{"@type":"Answer","text":"Una conversión de sistema suele ir de doce a veinte meses según el volumen de código propio y el número de interfaces. La plantilla usa unos dieciséis meses. Las nuevas implantaciones varían muchísimo más, porque su calendario lo marca el diseño de procesos y no la remediación."}},{"@type":"Question","name":"¿Qué diferencia hay entre brownfield y greenfield?","acceptedAnswer":{"@type":"Answer","text":"Brownfield es una conversión de sistema: conservas tu configuración, tu histórico y tu código propio, y conviertes el sistema en su sitio. Greenfield es una implantación nueva a la que migras datos seleccionados. Los calendarios brownfield los dominan la remediación de código y los simulacros de cutover; los greenfield, el diseño de procesos y la gestión del cambio. Esta plantilla muestra la ruta brownfield."}},{"@type":"Question","name":"¿En qué se diferencia del cronograma de implantación de ERP?","acceptedAnswer":{"@type":"Answer","text":"El cronograma de implantación de ERP da por hecho que estás seleccionando e implantando un sistema desde cero: elección de proveedor, diseño de procesos, parametrización, migración de datos y formación. Este plan da por hecho que SAP ya está funcionando y que lo estás convirtiendo, así que las fases pesadas son la remediación de código propio y los simulacros de cutover repetidos."}},{"@type":"Question","name":"¿Cuántos simulacros de cutover hacen falta?","acceptedAnswer":{"@type":"Answer","text":"Tres es la cifra habitual de planificación y es la que usa la plantilla, seguidos del ensayo general. Cada uno ejecuta el runbook completo sobre volúmenes de producción y se cronometra; si el tercero todavía se sale de la ventana disponible, añade un cuarto en lugar de comprimir el real."}},{"@type":"Question","name":"¿Cuánto debe durar la congelación del negocio?","acceptedAnswer":{"@type":"Answer","text":"Más que el cutover técnico. Las contabilizaciones, los cambios de datos maestros y el cierre de transacciones abiertas suelen congelarse varios días antes de que empiece la conversión y siguen congelados hasta que la conciliación cuadra. Dimensiónala con los tiempos de tus simulacros en lugar de a ojo, y comunícala al negocio con semanas de antelación."}},{"@type":"Question","name":"¿Qué pasa con el SII y la facturación electrónica durante el cutover?","acceptedAnswer":{"@type":"Answer","text":"Son obligaciones con plazo que corren en paralelo a tu proyecto. Antes de fijar la ventana, decide cómo se cubren los envíos que caigan dentro de ella, comprueba que la localización española queda operativa en el sistema convertido, y añade a la conciliación posterior una comprobación explícita de que no se ha perdido ni duplicado ningún envío."}},{"@type":"Question","name":"¿Es gratuita?","acceptedAnswer":{"@type":"Answer","text":"Sí, con descarga en Excel, PowerPoint y CSV y edición online sin registro ni marca de agua."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/es/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/es/app.html">Crear diagrama</a>
+        <a href="/es/templates.html">Plantillas</a>
+        <a href="/es/blog/">Guías</a>
+        <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/templates/sap-s4hana-migration-plan.html">English</option><option value="/es/templates/sap-s4hana-migration-plan.html" selected>Español</option><option value="/fr/templates/sap-s4hana-migration-plan.html">Français</option><option value="/de/templates/sap-s4hana-migration-plan.html">Deutsch</option><option value="/pt/templates/sap-s4hana-migration-plan.html">Português</option><option value="/zh/templates/sap-s4hana-migration-plan.html">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/es/">Inicio</a> › <a href="/es/templates.html">Plantillas</a> › Plantilla de plan de migración a SAP S/4HANA</div>
+        <h1>Plantilla de plan de migración a SAP S/4HANA</h1>
+        <p class="lead">Una <strong>plantilla gratuita de plan de migración a SAP S/4HANA</strong> construida sobre la decisión que condiciona todo lo demás: si vas a convertir un sistema ECC existente en su sitio (<em>brownfield</em>, conversión de sistema) o a levantar una implantación nueva y migrar los datos a ella (<em>greenfield</em>, nueva implantación). Este plan muestra la ruta de <em>conversión</em>, porque es aquella cuyo calendario lo dominan la remediación del código propio y los simulacros de cutover repetidos, y no el diseño de procesos. Si lo que vas a hacer es implantar un ERP desde cero, empieza por el <a href="/es/templates/erp-implementation-schedule.html">cronograma de implantación de ERP</a>.</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/sap-s4hana-migration-plan.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/sap-s4hana-migration-plan.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/sap-s4hana-migration-plan.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/es/app.html?csv=sap-s4hana-migration-plan">✎ Editar online gratis</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/sap-s4hana-migration-plan.svg" alt="Vista previa de la plantilla con las fases repartidas en una línea de tiempo" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">Qué incluye</h2>
+      <p>Una conversión no es un proyecto que termina en la salida a producción: termina cuando se cierra la ventana de congelación y los libros cuadran. Las barras de abajo colocan los simulacros de cutover y la congelación donde de verdad están:</p>
+      <ul>
+        <li><strong>Decisión de ruta y preparación</strong> — Informes de readiness check, análisis de simplification items, la propia decisión entre brownfield y greenfield, dimensionamiento y diseño del paisaje de sistemas objetivo. <em>Hito: ruta de conversión aprobada.</em></li>
+        <li><strong>Preparación y remediación de código propio</strong> — La parte de una conversión que nadie dimensiona bien: análisis del código Z contra la base de datos de simplificación, oleadas de remediación, retirada de código obsoleto, y la preparación del modelo de datos financiero del que depende la conversión. <em>Hito: remediación de código completada.</em></li>
+        <li><strong>Conversión de sandbox y de desarrollo</strong> — La primera conversión técnica sobre una copia sandbox y el tiempo de ejecución real que revela, después los sistemas de desarrollo y de calidad, con adaptación funcional y pruebas unitarias detrás de cada uno. <em>Hito: sistema de calidad convertido.</em></li>
+        <li><strong>Ciclos de prueba</strong> — Pruebas funcionales, de integración, de interfaces, de autorizaciones y de rendimiento, más el ciclo de incidencias, ejecutadas contra un sistema de calidad convertido y no contra una construcción nueva. <em>Hito: salida de pruebas de integración superada.</em></li>
+        <li><strong>Simulacros de cutover y ensayo general</strong> — Tres simulacros de cutover sobre volúmenes de datos de producción, cada uno cronometrado y cada uno acortando el runbook, y después el ensayo general que decide el go/no-go. <em>Hito: decisión de go/no-go del ensayo general.</em></li>
+        <li><strong>Congelación, cutover e hipercuidado</strong> — La ventana de congelación del negocio, la conversión productiva propiamente dicha, validación y conciliación, entrega al negocio, y el periodo de hipercuidado antes de que soporte recupere el sistema. <em>Hito: salida de hipercuidado.</em></li>
+      </ul>
+
+      <div class="callout">Hay dos cosas que hunden el calendario de una conversión. La primera es el código propio: el informe de readiness va a listar miles de hallazgos, la mayoría triviales y un puñado estructurales, y hasta que alguien los ha clasificado no tienes una estimación, tienes un número de objetos. La segunda es la congelación del negocio. Los equipos planifican un fin de semana y descubren que la congelación de contabilizaciones, de datos maestros y de transacciones abiertas empieza en realidad varios días antes y no se levanta hasta que la conciliación cuadra. Planifica la congelación como un evento de negocio con responsables con nombre, no como una ventana técnica, y deja que sean los simulacros los que te digan cuánto necesita de verdad en lugar de decidirlo por adelantado.</div>
+
+      <h2 id="customize">Cómo personalizarla</h2>
+      <ol>
+        <li>Si lo tuyo es una nueva implantación y no una conversión, borra las fases de remediación y de simulacros y reconstruye alrededor del diseño de procesos: las formas son de verdad distintas.</li>
+        <li>Fija primero el fin de semana de cutover productivo y cuenta hacia atrás; los simulacros son la única estimación fiable de cuánto se tarda.</li>
+        <li>Parte la remediación de código en oleadas por responsable del objeto, no por número de objetos, para que las barras se correspondan con quien hace realmente el trabajo.</li>
+        <li>Alarga la ventana de congelación si tienes volúmenes altos al cierre, y evita que el cutover cruce un límite de periodo fiscal.</li>
+        <li>Añade filas por cada interfaz y sistema satélite: las conversiones suelen romper las integraciones antes que SAP.</li>
+        <li>Si operas en España, añade barras propias para la continuidad del SII con la AEAT y para la facturación electrónica: son envíos con plazo legal que no se paran porque tú tengas una ventana de congelación, y la conciliación posterior a la conversión tiene que demostrar que no se ha perdido ningún envío.</li>
+        <li>Añade un cuarto simulacro si el tercero todavía no termina dentro de la ventana disponible.</li>
+      </ol>
+
+      <h2 id="tips">Consejos de programación</h2>
+      <ul>
+        <li><strong>Ejecuta el primer simulacro pronto y mal.</strong> Su trabajo es descubrir qué le falta al runbook, no salir bien. Los que tienen que verse limpios son los siguientes.</li>
+        <li><strong>Clasifica el informe de readiness, no lo cuentes.</strong> Mil hallazgos pueden ser dos semanas de trabajo o seis meses, y solo la clasificación te dice cuál de las dos.</li>
+        <li><strong>Trata el ensayo general como una puerta de verdad.</strong> Si el ensayo no cabe dentro de la ventana prevista, el cutover productivo tampoco va a caber: para eso exactamente se hace.</li>
+        <li><strong>Congela el negocio, no solo el sistema.</strong> Publica qué se puede y qué no se puede hacer cada día de la ventana, bastante antes de que empiece.</li>
+        <li><strong>Cuida las obligaciones informativas durante la ventana.</strong> Los envíos con plazo a la administración no entienden de congelaciones; ten decidido de antemano si se adelantan, si se acumulan o si se envían desde el sistema convertido, y quién firma esa decisión.</li>
+        <li><strong>Concilia antes de liberar.</strong> Saldos contables, partidas abiertas y existencias validados contra las cifras previas a la conversión son el criterio real de salida a producción, no una pantalla en verde.</li>
+      </ul>
+
+      <h2 id="related">Plantillas relacionadas</h2>
+      <ul>
+        <li><a href="/es/templates/erp-implementation-schedule.html">Plantilla de cronograma de implantación de ERP</a></li>
+        <li><a href="/es/templates/data-migration-project-plan.html">Plantilla de plan de proyecto de migración de datos</a></li>
+        <li><a href="/es/templates/cloud-migration-project-plan.html">Plantilla de plan de migración a la nube</a></li>
+        <li><a href="/es/templates/digital-transformation-roadmap.html">Plantilla de hoja de ruta de transformación digital</a></li>
+        <li><a href="/es/templates.html">Ver todas las plantillas de diagramas de Gantt</a></li>
+      </ul>
+      <p class="crumbs"><small>Esta plantilla está en español. Las páginas relacionadas que aún no se han traducido se abren en inglés.</small></p>
+
+      <h2 id="faq">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details open><summary>¿Cuánto dura una migración a SAP S/4HANA?</summary><p>Una conversión de sistema suele ir de doce a veinte meses según el volumen de código propio y el número de interfaces. La plantilla usa unos dieciséis meses. Las nuevas implantaciones varían muchísimo más, porque su calendario lo marca el diseño de procesos y no la remediación.</p></details>
+        <details><summary>¿Qué diferencia hay entre brownfield y greenfield?</summary><p>Brownfield es una conversión de sistema: conservas tu configuración, tu histórico y tu código propio, y conviertes el sistema en su sitio. Greenfield es una implantación nueva a la que migras datos seleccionados. Los calendarios brownfield los dominan la remediación de código y los simulacros de cutover; los greenfield, el diseño de procesos y la gestión del cambio. Esta plantilla muestra la ruta brownfield.</p></details>
+        <details><summary>¿En qué se diferencia del cronograma de implantación de ERP?</summary><p>El <a href="/es/templates/erp-implementation-schedule.html">cronograma de implantación de ERP</a> da por hecho que estás seleccionando e implantando un sistema desde cero: elección de proveedor, diseño de procesos, parametrización, migración de datos y formación. Este plan da por hecho que SAP ya está funcionando y que lo estás convirtiendo, así que las fases pesadas son la remediación de código propio y los simulacros de cutover repetidos.</p></details>
+        <details><summary>¿Cuántos simulacros de cutover hacen falta?</summary><p>Tres es la cifra habitual de planificación y es la que usa la plantilla, seguidos del ensayo general. Cada uno ejecuta el runbook completo sobre volúmenes de producción y se cronometra; si el tercero todavía se sale de la ventana disponible, añade un cuarto en lugar de comprimir el real.</p></details>
+        <details><summary>¿Cuánto debe durar la congelación del negocio?</summary><p>Más que el cutover técnico. Las contabilizaciones, los cambios de datos maestros y el cierre de transacciones abiertas suelen congelarse varios días antes de que empiece la conversión y siguen congelados hasta que la conciliación cuadra. Dimensiónala con los tiempos de tus simulacros en lugar de a ojo, y comunícala al negocio con semanas de antelación.</p></details>
+        <details><summary>¿Qué pasa con el SII y la facturación electrónica durante el cutover?</summary><p>Son obligaciones con plazo que corren en paralelo a tu proyecto. Antes de fijar la ventana, decide cómo se cubren los envíos que caigan dentro de ella, comprueba que la localización española queda operativa en el sistema convertido, y añade a la conciliación posterior una comprobación explícita de que no se ha perdido ni duplicado ningún envío.</p></details>
+        <details><summary>¿Es gratuita?</summary><p>Sí, con descarga en Excel, PowerPoint y CSV y edición online sin registro ni marca de agua.</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Planifícalo online, gratis</h2>
+      <p>Abre esta plantilla en el editor, arrastra las barras hasta ajustarlas a tus fechas y exporta a PDF, Excel o PowerPoint. Sin cuenta y sin marca de agua.</p>
+      <a class="btn btn-white btn-lg" href="/es/app.html?csv=sap-s4hana-migration-plan">Abrir el editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/es/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Creador de diagramas de Gantt gratis. Sin cuenta y sin subir nada: tus datos se quedan en tu navegador.</p>
+          <a class="footer-cta" href="/es/app.html">Abrir la aplicación →</a>
+          <p class="footer-byline">Un proyecto de <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Plantillas</h4>
+          <a href="/es/templates.html">Todas las plantillas</a>
+          <a href="/es/templates/excel.html">Excel</a>
+          <a href="/es/templates/powerpoint.html">PowerPoint</a>
+          <a href="/es/templates/construction.html">Construcción</a>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <a href="/es/blog/">Todas las guías</a>
+          <a href="/es/blog/what-is-a-gantt-chart.html">¿Qué es un diagrama de Gantt?</a>
+          <a href="/es/blog/critical-path-method.html">Método de la ruta crítica</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/es/about.html">Acerca de</a>
+          <a href="/es/contact.html">Contacto</a>
+          <a href="/es/terms.html">Términos de uso</a>
+          <a href="/es/privacy.html">Privacidad</a>
+          <a href="/es/accessibility.html">Accesibilidad</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos los derechos reservados.</span>
+        <span>Sitio estático: nada de lo que planificas sale de tu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=25"></script>
+</body>
+</html>

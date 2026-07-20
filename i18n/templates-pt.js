@@ -5315,6 +5315,812 @@ const T = {
       ]
     ]
   },
+
+  'tunnel-construction-schedule': {
+    card: "TBM como prazo mestre, poço de partida, taxa de avanço, travessias, breakthrough e sistemas.",
+    h1: "Cronograma de obra de túnel",
+    metaTitle: "Cronograma de obra de túnel",
+    metaDesc: "Cronograma gratuito de obra de túnel: fabricação da TBM, poço de partida, taxa de avanço, galerias, breakthrough e comissionamento.",
+    lead: "Um modelo gratuito de <strong>cronograma de obra de túnel</strong> montado em torno da máquina, e não em torno das fases — especificação, fabricação, teste de aceitação em fábrica e transporte da TBM como item de prazo longo que começa antes de qualquer escavação; um poço de partida que precisa estar pronto, e não quase pronto, para receber a máquina; uma taxa de avanço que muda com o maciço; fornecimento de aduelas e retirada de material como serviços contínuos que comandam a escavação; e então o breakthrough, o revestimento secundário e os sistemas de ventilação e de combate a incêndio que vêm depois dele. Baixe para a reunião de acompanhamento, ou abra online e defina os seus próprios metros por semana.",
+    intro: "Uma obra de túnel não é uma sequência de serviços. É uma máquina avançando na velocidade que o maciço permite, com todo o resto organizado para mantê-la andando. O modelo é organizado assim:",
+    phases: [
+      [
+        "Licenciamento, investigação geotécnica e contratação",
+        "Sondagens e o relatório geotécnico de referência, projeto de traçado e de revestimento, licenciamento ambiental junto ao órgão ambiental (LP e depois LI) e a outorga onde houver interferência com curso d'água, e a concorrência da TBM, que fixa todas as datas seguintes. <em>Marcos: LI emitida, contrato da TBM assinado.</em>"
+      ],
+      [
+        "Poço de partida e instalação do canteiro",
+        "Canteiro e instalações provisórias conforme a NR-18, paredes-diafragma, escavação do poço, laje de fundo, muro de reação e câmara de partida — mais a produção de aduelas, que precisa estar à frente da máquina já no primeiro dia. <em>Marco: poço de partida pronto para receber a TBM.</em>"
+      ],
+      [
+        "Fabricação, transporte e montagem da TBM",
+        "Configuração da cabeça de corte para o maciço previsto, fabricação, teste de aceitação em fábrica, embarque em seções, descida pelo poço e montagem subterrânea. <em>Marco: TBM pronta para partir.</em>"
+      ],
+      [
+        "Escavação",
+        "Partida pelo soft eye, as primeiras centenas de metros em curva de aprendizado, avanço sustentado em maciço misto, uma intervenção hiperbárica para troca de ferramentas de corte, a travessia sob o rio, e o pano de fundo permanente de monitoramento de recalques, suprimento de aduelas e retirada de material. <em>Marco: breakthrough.</em>"
+      ],
+      [
+        "Galerias de interligação e obras complementares",
+        "Tratamento do maciço e escavação das galerias de interligação enquanto a máquina ainda está à frente, desmontagem e retirada da TBM, injeção de preenchimento, levantamento dos anéis e revestimento secundário. <em>Marco: túnel estruturalmente concluído.</em>"
+      ],
+      [
+        "Acabamento, sistemas e comissionamento",
+        "Passadiço e drenagem, eletrocalhas, ventiladores e dutos, rede de incêndio e supressão, energia e iluminação, comunicação e SCADA, e então o ensaio de fumaça quente com o Corpo de Bombeiros e o dossiê de segurança. <em>Marco: entrega para operação.</em>"
+      ]
+    ],
+    callout: "A TBM é o cronograma. Compre tarde e nada do que você fizer depois recupera o tempo: projeto, fabricação, teste de aceitação e transporte levam de 12 a 18 meses numa máquina sob medida, e ela não desce num poço que não está terminado. As duas barras que arruínam obras de túnel são a de fabricação começando tarde demais e a do poço terminando depois que a máquina chega — máquina em peças na superfície custa dinheiro todo dia e não compra nada. Ponha as duas no gráfico no primeiro dia e não deixe nenhuma escorregar. E some tempo real de licenciamento na frente: LP, LI e o atendimento às condicionantes não correm na agenda da obra.",
+    customize: [
+      "Tire a taxa de avanço do relatório geotécnico de referência, e não da melhor semana da sua última obra — depois quebre a escavação em barras por unidade geotécnica, para que um trecho ruim apareça em vez de sumir na média.",
+      "Dê às primeiras centenas de metros uma barra própria, curta e lenta. Toda TBM tem curva de aprendizado enquanto equipe, injeção e transporte de material se ajustam, e planejar esse trecho em produção plena é atraso garantido logo no começo.",
+      "Acrescente uma barra de intervenção hiperbárica onde o relatório previr maciço abrasivo. Troca de ferramenta de corte é evento programado, com duração conhecida; descobri-la no meio da escavação é o que a transforma em um mês. Trabalho em ar comprimido e em espaço confinado ainda puxa os requisitos da NR-33 — liberação de entrada, vigia, tempos de acesso e de descompressão entram na duração da barra, não em nota de rodapé.",
+      "Modele o fornecimento de aduelas como barra contínua ao longo de toda a escavação, e confira a produção da fábrica de aduelas contra o seu pico semanal de anéis, e não contra a média.",
+      "Mostre a retirada de material e o destino do bota-fora explicitamente. Silo cheio ou área de bota-fora sem licença param a máquina tão bem quanto uma falha mecânica.",
+      "Marque LI emitida, contrato da TBM assinado, poço pronto, TBM pronta para partir e breakthrough como marcos — essas cinco datas são o resumo da obra inteira."
+    ],
+    tips: [
+      "<strong>Compre a máquina antes de fechar o resto do projeto.</strong> A configuração da cabeça de corte depende do maciço, e não da arquitetura das estações, e o relatório geotécnico costuma bastar para colocar o pedido muito antes de o projeto executivo estar fechado.",
+      "<strong>Trate o poço de partida como o caminho crítico que ele é.</strong> Parede-diafragma, escavação, laje de fundo e muro de reação são sequenciais e todos em solo mole; não há como comprimir o final dessa corrente para compensar um começo atrasado.",
+      "<strong>Nunca planeje as galerias de interligação como serviço de enchimento.</strong> Elas exigem tratamento do maciço, são a atividade de maior risco da maioria das obras de túnel, e dependem de os anéis daquele trecho estarem completos e injetados.",
+      "<strong>Mantenha o monitoramento de recalques rodando desde antes da partida até bem depois de a máquina passar.</strong> Leitura de referência tomada depois do início da escavação não vale nada, e injeção de compensação precisa estar instrumentada antes de ser necessária.",
+      "<strong>Breakthrough não é o fim.</strong> Na maioria das obras, acabamento, ventilação e sistemas de incêndio depois do breakthrough demoram mais do que se imagina, e o ensaio de fumaça e o dossiê de segurança ficam atrás de tudo no caminho crítico para a abertura.",
+      "<strong>Agende o Corpo de Bombeiros para o simulado com meses de antecedência.</strong> O ensaio de fumaça quente exige a presença deles, e a agenda deles não é sua — um horário perdido empurra a entrega em semanas com o túnel fisicamente pronto."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para construir um túnel?",
+        "Um túnel urbano de tubo único e poucos quilômetros costuma levar de 30 a 40 meses do licenciamento à entrega, que é aproximadamente o que o modelo usa. A variação está no prazo de fabricação da TBM na frente e nas condições do maciço durante a escavação."
+      ],
+      [
+        "Com quanta antecedência devo encomendar a TBM?",
+        "Projeto, fabricação, teste de aceitação em fábrica e transporte costumam levar de 12 a 18 meses numa máquina sob medida, e a montagem subterrânea soma mais. O pedido tem que ser colocado enquanto o poço ainda está sendo projetado, e não quando ele estiver pronto."
+      ],
+      [
+        "Como o licenciamento ambiental entra no cronograma?",
+        "Como três barras, e não uma. A licença prévia trata da viabilidade e do traçado, a licença de instalação libera a obra, e a licença de operação vem no fim; entre elas há condicionantes com prazos próprios, e interferência com curso d'água ainda exige outorga do órgão gestor de recursos hídricos. Os prazos variam por estado e pela complexidade do empreendimento, então trate cada etapa como barra com responsável e data, em vez de um único bloco chamado \"licenças\"."
+      ],
+      [
+        "Como planejar uma taxa de avanço que não dá para prever?",
+        "Quebre a escavação em barras por unidade geotécnica a partir do relatório geotécnico de referência e dê a cada uma a sua própria taxa. Assim um trecho lento aparece como trecho lento, em vez de ficar escondido numa barra única com média."
+      ],
+      [
+        "Por que o cronograma desacelera no início da escavação?",
+        "Toda escavação tem curva de aprendizado. Equipe, ciclo de montagem de anel, injeção e transporte de material levam algumas centenas de metros para se ajustar, e planejar as primeiras semanas em produção plena é um dos estouros iniciais mais comuns."
+      ],
+      [
+        "O modelo de cronograma de obra de túnel é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'semiconductor-fab-construction-schedule': {
+    card: "Estrutura, mudança de protocolo da sala limpa, utilidades, hook-up, qualificação e primeiro silício.",
+    h1: "Cronograma de construção de fábrica de semicondutores",
+    metaTitle: "Cronograma de fábrica de semicondutores",
+    metaDesc: "Cronograma gratuito de fábrica de semicondutores: obra civil, sala limpa, água ultrapura e gases, hook-up de equipamentos e qualificação.",
+    lead: "Um modelo gratuito de <strong>cronograma de construção de fábrica de semicondutores</strong> que coloca o protocolo da sala limpa onde ele pertence — na dobradiça do empreendimento. Terreno, licenças e laje isolada de vibração; estrutura, envoltória e o grid da sala limpa; água ultrapura, gases de processo e especiais, exaustão e abatimento construídos para estarem prontos nos pontos de <em>hook-up</em>; então a virada dura em que o local deixa de ser obra e passa a ser ambiente controlado, seguida de entrada dos equipamentos, conexão, qualificação e primeiro silício. Baixe para a apresentação ao conselho, ou abra online e reorganize as ondas de equipamentos conforme a sua disponibilidade de utilidades.",
+    intro: "Uma fab não termina quando o prédio termina. Ela termina quando os equipamentos estão qualificados e as lâminas rodam, e tudo entre esses dois pontos é governado por um protocolo. O modelo segue essa transição:",
+    phases: [
+      [
+        "Terreno, licenças e obra de base",
+        "Levantamento sísmico e de vibração, licenciamento ambiental junto ao órgão ambiental estadual e a licença para manuseio de produtos perigosos, a outorga de captação e o acordo de lançamento de efluentes, o congelamento da lista de equipamentos de que todo o resto é dimensionado, equipamentos de utilidade de prazo longo, estaqueamento e laje. <em>Marcos: lista de equipamentos congelada, LI emitida.</em>"
+      ],
+      [
+        "Estrutura e envoltória da sala limpa",
+        "Estrutura metálica e fechamento, subfab e furações na laje, estanqueidade, e então o grid de paredes e forro da sala limpa, piso elevado e as unidades de filtragem. <em>Marco: prédio estanque.</em>"
+      ],
+      [
+        "Utilidades e sistemas de abatimento",
+        "Planta de água ultrapura e lavagem do anel, central de gases a granel e especiais, painéis de válvulas e teste de estanqueidade, exaustão e lavadores de gases, e energização da subestação — todos levados até os pontos de <em>hook-up</em>, e não até um \"concluído\" genérico. <em>Marco: utilidades disponíveis no ponto de conexão.</em>"
+      ],
+      [
+        "Certificação da sala limpa e virada de protocolo",
+        "A mudança do protocolo de obra para o protocolo de sala limpa, paramentação e antecâmaras, procedimento de entrada de materiais, balanceamento de ar e fluxo laminar, contagem de partículas e certificação de classe ISO, e o levantamento de vibração e de interferência eletromagnética. <em>Marco: sala limpa certificada.</em>"
+      ],
+      [
+        "Entrada, conexão e qualificação dos equipamentos",
+        "Plano de içamento e sequência de entrega, ondas de litografia, corrosão, deposição e metrologia, conexão a gases, exaustão e água ultrapura, e a qualificação de instalação e a qualificação operacional feitas pelo fornecedor. <em>Marco: qualificação de equipamentos concluída.</em>"
+      ],
+      [
+        "Qualificação de processo e primeiro silício",
+        "Integração do MES e da automação, carga de receitas, a primeira lâmina por um módulo único, o lote piloto de fluxo completo, aprendizado de rendimento e qualificação junto ao cliente. <em>Marcos: primeiro silício, liberação para produção em volume.</em>"
+      ]
+    ],
+    callout: "Há uma data numa obra de fab que muda as regras para todo mundo: a virada do protocolo da sala limpa. Antes dela, isto é um canteiro com capacete e solda. Depois dela, toda pessoa entra paramentada, todo material entra limpo por uma antecâmara, e a produtividade por equipe cai bruscamente. Planeje o trabalho dos dois lados dessa linha de propósito — o que puder ser terminado \"sujo\" tem que terminar antes dela, e qualquer barra que a atravesse precisa de duração maior do que o mesmo serviço levaria do lado de fora. Cronogramas que tratam isso como uma entrega comum perdem meses reaprendendo em campo.",
+    customize: [
+      "Congele a lista de equipamentos cedo e marque isso como marco. Todo dimensionamento de utilidade, toda furação e todo desenho de conexão derivam dela, e uma troca tardia de equipamento se propaga por todo o projeto de instalações.",
+      "Reordene as ondas de equipamentos pela sua disponibilidade de utilidades, e não pelas datas de entrega dos fornecedores. Equipamento que chega antes de gás e exaustão estarem vivos ocupa área e não qualifica nada.",
+      "Dê à água ultrapura uma barra própria de lavagem e qualificação de resistividade depois da instalação. A planta construída não é a mesma coisa que o anel limpo o bastante para conectar um equipamento.",
+      "Separe a qualificação de instalação da qualificação operacional. O fornecedor provando que o equipamento liga é um evento diferente, com gente diferente, da sua equipe de processo provando que ele sustenta uma linha de base estatística.",
+      "Coloque barras explícitas para a virada de protocolo, os procedimentos de paramentação e a entrada de materiais. São atividades com duração, e não um comunicado interno.",
+      "Ponha o levantamento de vibração, EMI e ruído antes da entrada dos equipamentos de litografia. Descobrir problema de vibração depois de um <em>stepper</em> posicionado é a descoberta mais cara deste cronograma.",
+      "Some barras de segurança de processo para os gases especiais — silano, arsina e amônia puxam análise de risco, plano de resposta a emergência e treinamento conforme as normas regulamentadoras aplicáveis, e nada disso cabe dentro da barra de comissionamento mecânico."
+    ],
+    tips: [
+      "<strong>O marco real é a conexão, não a entrega.</strong> Acompanhe os equipamentos pela data em que estão ligados a utilidades vivas e energizados, porque um galpão cheio de equipamentos entregues não vale nada para o cronograma de qualificação.",
+      "<strong>Construa as utilidades contra uma data de ponto de conexão.</strong> \"Planta de água ultrapura concluída\" e \"água ultrapura disponível no ponto de conexão da litografia, na resistividade especificada\" estão a meses de distância, e só a segunda destrava um equipamento.",
+      "<strong>Proteja o cronograma do abatimento.</strong> Exaustão e lavadores de gases não têm glamour e são despriorizados por hábito, e nenhum equipamento que usa gás é qualificado sem eles — ficam silenciosamente no caminho crítico do primeiro silício.",
+      "<strong>Faça o levantamento de vibração em condição real.</strong> Um levantamento feito antes de ventiladores e bombas estarem rodando não representa o ambiente em que os equipamentos de litografia vão viver.",
+      "<strong>Não planeje o aprendizado de rendimento como barra fixa.</strong> A densidade de defeitos cai numa curva que é em parte experimental; dê a ela uma janela realista e uma contingência, em vez da data que o plano de negócios gostaria.",
+      "<strong>Comece a integração do MES e da automação durante a instalação, e não depois.</strong> Receita e movimentação de material são software com ciclo de defeitos próprio, e viram bloqueio surpresa no primeiro lote de fluxo completo com frequência incômoda."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para construir uma fábrica de semicondutores?",
+        "Uma fab nova costuma levar de 28 a 36 meses das licenças à produção em volume, que é aproximadamente o intervalo do modelo. Estrutura e utilidades são previsíveis; a variação se concentra na qualificação dos equipamentos e no aprendizado de rendimento."
+      ],
+      [
+        "O que é a virada de protocolo da sala limpa?",
+        "O ponto em que o local deixa de ser canteiro de obras e passa a ser ambiente controlado. Paramentação, antecâmaras, limpeza de materiais na entrada e restrição de ferramentas começam todos ali, e a produtividade de qualquer serviço remanescente cai bastante."
+      ],
+      [
+        "Por que a conexão do equipamento está no caminho crítico, e não a entrega?",
+        "Porque um equipamento não é qualificado enquanto não estiver ligado a água ultrapura, gases de processo, exaustão e energia dentro da especificação. Entrega é evento de logística; a conexão depende de as utilidades estarem completas naquele ponto específico da fab."
+      ],
+      [
+        "Quais licenças brasileiras comandam o começo?",
+        "O licenciamento ambiental junto ao órgão ambiental estadual, com LP, LI e depois LO, mais as autorizações específicas para armazenamento e uso de gases e produtos químicos perigosos, a outorga de captação de água e o acordo de lançamento de efluentes com a concessionária. O AVCB do Corpo de Bombeiros entra perto da ocupação. Os prazos variam por estado e pelo porte do empreendimento, então cada um vira barra com responsável em vez de um bloco único."
+      ],
+      [
+        "Quanta contingência devo guardar para o aprendizado de rendimento?",
+        "O suficiente para que a curva de densidade de defeitos seja experimental, e não programada. A maioria dos projetos subestima essa fase porque é a única em que a resposta não é conhecida de antemão; uma barra separada e visível funciona melhor do que engordar as anteriores."
+      ],
+      [
+        "O modelo de cronograma de fábrica de semicondutores é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'oil-gas-pipeline-construction-schedule': {
+    card: "Faixa de servidão, janelas ambientais, frente de solda e raio-X, travessias, teste hidrostático e tie-in.",
+    h1: "Cronograma de construção de duto de óleo e gás",
+    metaTitle: "Cronograma de duto de óleo e gás",
+    metaDesc: "Cronograma gratuito de construção de duto: faixa de servidão, janelas ambientais, frente de solda e raio-X, travessias e teste hidrostático.",
+    lead: "Um modelo gratuito de <strong>cronograma de construção de duto de óleo e gás</strong> organizado em torno das duas coisas que de fato mandam nas datas — terra e estação do ano. Levantamento de traçado, estudo ambiental, licenciamento e constituição da faixa de servidão na frente; períodos reprodutivos da fauna e janelas de intervenção em leito de rio mapeados como restrições fixas; a frente de construção como linha de produção móvel de desfile de tubos, vala, solda, ensaio radiográfico, revestimento de juntas, abaixamento e reaterro; travessias e estações em paralelo; e então teste hidrostático, soldas de fechamento e comissionamento. Baixe para o comitê do projeto, ou abra online e coloque as suas próprias janelas.",
+    intro: "Um duto é construído por uma linha de produção que caminha por um corredor que você ainda não tem, dentro de estações do ano que você não controla. O modelo mantém as duas restrições visíveis:",
+    phases: [
+      [
+        "Traçado, licenciamento e faixa de servidão",
+        "Levantamento de traçado e alternativas, o estudo de impacto ambiental e o relatório, audiências públicas e a licença prévia, autorização de supressão de vegetação, negociação com proprietários e constituição da servidão administrativa, anuência do órgão de patrimônio quando houver sítio arqueológico, e a interface com a ANP quando o duto for de transporte. <em>Marcos: faixa liberada, LI emitida.</em>"
+      ],
+      [
+        "Suprimento de tubos e logística",
+        "Pedido e produção do tubo na usina, revestimento e preparação de pontas, e o transporte ferroviário e rodoviário até os pátios de estocagem ao longo do traçado. <em>Marco: tubo na faixa.</em>"
+      ],
+      [
+        "Pré-obra e janelas ambientais",
+        "Mapeamento dos períodos reprodutivos e das janelas de intervenção em leito de rio sobre o cronograma, melhoria de acessos e pontes, supressão e terraplenagem, decapagem do solo orgânico e controle de erosão, e mobilização da frente. <em>Marco: frente pronta para desfilar tubo.</em>"
+      ],
+      [
+        "Frente de construção da linha-tronco",
+        "A linha de produção em si — desfile, vala, curvamento em campo e alinhamento, solda, ensaio radiográfico e ultrassônico, revestimento de juntas e detecção de falhas, abaixamento, enchimento, reaterro e proteção catódica. <em>Marco: solda da linha-tronco concluída.</em>"
+      ],
+      [
+        "Travessias e obras especiais",
+        "Furo direcional sob o rio principal, travessias de cursos d'água espremidas dentro da janela autorizada, travessias de rodovia, ferrovia e de interferências de terceiros, sítios de válvula de bloqueio e as estações de bombeio ou de compressão. <em>Marco: janela de intervenção em leito encerrada.</em>"
+      ],
+      [
+        "Teste hidrostático, tie-in e comissionamento",
+        "Isolamento dos trechos, enchimento e pressurização, período de estabilização e reparos, esvaziamento e secagem, soldas de fechamento, SCADA e detecção de vazamento, purga e admissão de produto, e a recuperação da faixa. <em>Marcos: teste hidrostático aprovado, duto em operação.</em>"
+      ]
+    ],
+    callout: "Janelas ambientais não são riscos; são paredes. A janela de intervenção em leito de rio pode ser de poucas semanas no ano, uma restrição de período reprodutivo pode parar a supressão por toda uma estação, e nenhuma das duas negocia. Mapeie cada janela sobre o cronograma antes de sequenciar qualquer outra coisa, e depois monte o programa da frente para que as travessias caiam dentro delas. Perder uma janela por uma semana não custa uma semana — custa um ano, porque a próxima abertura está a doze meses de distância. Vale lembrar que a janela vem escrita na condicionante da licença: quem a define é o órgão ambiental, e o texto da condicionante é o documento que manda no seu cronograma.",
+    customize: [
+      "Lance primeiro as suas janelas de leito e de período reprodutivo como barras fixas, tiradas das condicionantes da licença, e só então arrume a frente em volta delas — nunca o contrário.",
+      "Divida a linha-tronco em um conjunto de barras por frente, se você estiver rodando várias equipes, e dê a cada frente a sua própria produção em metros ou juntas por dia.",
+      "Modele solda, radiografia e revestimento como barras sobrepostas que se perseguem ao longo do traçado — são uma linha de produção única em movimento, e não três fases sequenciais; desenhá-las em série esconde onde está a restrição real.",
+      "Acrescente uma barra de reparo de solda e nova radiografia. Supor aprovação de primeira no ensaio radiográfico é o erro otimista mais comum em obra de duto.",
+      "Dê à constituição da faixa uma cauda longa e uma contingência para proprietário resistente. Um único proprietário que não assina trava uma frente que já estaria pronta para andar, e o caminho judicial da servidão tem prazo próprio.",
+      "Quebre o teste hidrostático em trechos que correspondam aos seus manifolds de teste, e acrescente uma barra de reparo e novo teste depois do período de estabilização; um trecho reprovado precisa ser localizado, cortado, ressoldado e testado de novo."
+    ],
+    tips: [
+      "<strong>Comece a negociação de servidão antes de fechar o projeto.</strong> Terra é o item de prazo mais longo da maioria dos dutos e está inteiramente fora do controle da construtora — trate como suprimento, com dono e status semanal.",
+      "<strong>Não deixe a frente correr mais do que o tubo.</strong> O estoque no pátio à frente da equipe é o melhor indicador antecedente da obra; se está caindo, a frente vai parar antes que alguém reporte problema.",
+      "<strong>Contrate a equipe e o equipamento de furo direcional contra a janela, e não contra a frente.</strong> Empresas de perfuração direcional são especializadas e escassas, e um equipamento que chega depois de fechada a janela de leito é um ano de folga perdido.",
+      "<strong>Trate as soldas de fechamento como atividade separada e cuidadosamente sequenciada.</strong> Elas acontecem depois do teste hidrostático e não podem ser testadas por pressão do mesmo jeito, então carregam peso desproporcional de inspeção e de cronograma.",
+      "<strong>Rode SCADA e detecção de vazamento junto com as estações, e não depois delas.</strong> Integração de sala de controle é um projeto de software com ciclo de testes próprio e surpreende cronograma de duto bem no final.",
+      "<strong>Planeje a recuperação da faixa e o aceite dos proprietários como trabalho de verdade.</strong> O duto pode estar em operação, mas enquanto a faixa não estiver recuperada e as condicionantes não estiverem atendidas, o projeto não fechou e a retenção não é liberada."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para construir um duto?",
+        "Um duto de médio diâmetro atravessando região costuma levar de 20 a 28 meses do levantamento de traçado à entrada em operação, que é aproximadamente o intervalo do modelo. Licenciamento e faixa dominam a frente; as janelas ambientais dominam o meio."
+      ],
+      [
+        "O que são janelas ambientais e por que pesam tanto?",
+        "São os períodos em que a intervenção em curso d'água ou em área de fauna sensível é permitida ou proibida, definidos nas condicionantes da licença de instalação e na autorização específica. Não se negociam nem se comprimem, então perder uma normalmente empurra aquele escopo em um ano inteiro, e não em algumas semanas."
+      ],
+      [
+        "Como planejo uma frente de construção?",
+        "Como linha de produção móvel, e não como fases. Desfile, vala, solda, radiografia, revestimento, abaixamento e reaterro avançam pelo traçado a uma taxa, um atrás do outro, e o cronograma deve mostrá-los sobrepostos."
+      ],
+      [
+        "Quando o teste hidrostático deve ser programado?",
+        "Depois do reaterro de cada trecho de teste e antes das soldas de fechamento. Inclua o período de estabilização, a avaliação de vazamento e uma barra explícita de reparo e novo teste; supor que todo trecho passa de primeira é o estouro clássico de fim de obra em duto."
+      ],
+      [
+        "Por que a faixa de servidão está no caminho crítico?",
+        "Porque a obra fisicamente não começa em terra sobre a qual você não tem servidão constituída, e o prazo de negociação depende de cada proprietário, não do seu cronograma. Comporta-se como item de suprimento de prazo longo e deve ser acompanhada como tal."
+      ],
+      [
+        "O modelo de cronograma de duto é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'theatre-production-schedule': {
+    card: "Contagem regressiva a partir da estreia: elenco, cenografia, ensaios, montagem, semana técnica e pré-estreias.",
+    h1: "Cronograma de produção teatral",
+    metaTitle: "Cronograma de produção teatral",
+    metaDesc: "Cronograma gratuito de produção teatral: contagem regressiva da estreia, elenco, cenografia, ensaios, montagem, semana técnica e pré-estreias.",
+    lead: "Um modelo gratuito de <strong>cronograma de produção teatral</strong> que funciona do único jeito que cronograma de teatro funciona — de trás para frente, a partir da estreia. A data é fixa, os ingressos estão à venda e o teatro está reservado, então seleção de elenco, aprovação do projeto cenográfico, construção na oficina, semanas de sala de ensaio, montagem, ensaios técnicos, ensaios gerais e pré-estreias precisam todos caber antes dela. Baixe para a reunião de produção, ou abra online e arraste a data da estreia para ver todo o retroplanejamento se mover junto.",
+    intro: "Todo outro projeto pergunta quando vai terminar. Uma produção teatral já sabe, com hora marcada, e descobre o que precisa ser verdade até lá. O modelo é construído nessa direção:",
+    phases: [
+      [
+        "Desenvolvimento, direitos e viabilização",
+        "A data da estreia e a reserva do teatro, direitos autorais da obra e a autorização do autor ou do representante, o projeto de captação — inscrição, aprovação e captação pela Lei Rouanet ou por edital, que tem calendário próprio e independente do seu — e a equipe criativa, e então o retroplanejamento acordado a partir da data fixa. <em>Marcos: recursos captados, produção aprovada.</em>"
+      ],
+      [
+        "Elenco e projeto cenográfico",
+        "Perfil dos personagens e recebimento de material, testes e retestes, propostas e contratação com registro profissional e enquadramento sindical, a maquete branca, e a apresentação da maquete final, que libera a oficina. <em>Marcos: elenco contratado, cenografia aprovada.</em>"
+      ],
+      [
+        "Construção e sala de ensaio",
+        "Construção e pintura do cenário na oficina, confecção e provas de figurino, as semanas de sala de ensaio com passagens completas, e os mapas de luz e de som rascunhados sobre a marcação do chão. <em>Marco: passagem para a produção.</em>"
+      ],
+      [
+        "Montagem no teatro",
+        "Desmontagem da produção anterior, rigging na casa vazia, a montagem propriamente dita, comissionamento de automação e varas, foco de luz e ajuste de som na sala. <em>Marco: palco disponível para a companhia.</em>"
+      ],
+      [
+        "Semana técnica",
+        "Ensaio de marcação no palco, ensaio técnico ato a ato, notas e remarcação das trocas de cenário, e dois ensaios gerais — o gargalo que não pode ser estendido porque o teatro está reservado. <em>Marco: primeira plateia.</em>"
+      ],
+      [
+        "Pré-estreias, estreia e temporada",
+        "Sessões de pré-estreia com ensaios de retrabalho durante o dia entre elas, o congelamento do espetáculo, a estreia na data contratada, crítica e recorte do material de divulgação, e então a temporada sob a direção de palco. <em>Marco: estreia.</em>"
+      ]
+    ],
+    callout: "A estreia não é uma meta; é um contrato. A imprensa está convidada, os ingressos estão vendidos, a verba de divulgação está comprometida e o teatro tem outro espetáculo entrando depois do seu. Tudo, portanto, retrocede a partir dela, e a semana técnica — marcação, técnico, geral — é o gargalo que absorve todo atraso de todas as fases anteriores. Um figurino que atrasa, uma automação que não comissiona, uma troca de cenário que não foi marcada: chegam todos nos mesmos sete dias, e esses sete dias não viram oito. Duas coisas fora da sua mão moram nessa mesma janela e costumam ser lembradas tarde: o AVCB do teatro precisa estar válido para a casa abrir ao público, e a autorização do ECAD para a execução musical tem que estar resolvida antes da primeira sessão paga.",
+    customize: [
+      "Fixe primeiro a data da estreia e depois arraste tudo para antes dela. Se o retroplanejamento não couber, a correção é a montante — cenário menor, elenco fechado mais cedo, mais semanas de sala — e nunca uma semana técnica mais curta.",
+      "Ajuste as semanas de sala de ensaio ao seu acordo com a companhia; de quatro a seis semanas é comum, e a cobertura de substitutos tem que caber dentro disso.",
+      "Alongue ou encurte as barras de montagem conforme o seu teatro. Uma casa em repertório que entrega o palco no domingo é uma restrição completamente diferente de um teatro vazio que você tem por quinze dias.",
+      "Divida o ensaio técnico por atos, e acrescente barra separada para automação ou voo cênico, se o espetáculo tiver — são as sequências que comem tempo de técnico.",
+      "Acrescente barra para os ensaios de retrabalho diurnos entre as pré-estreias. Pré-estreia não é só sessão; é a última chance de mudar o espetáculo, e esses ensaios são trabalho programado de verdade.",
+      "Marque a aprovação da cenografia como marco duro. A oficina não começa sem ela, e cada dia de atraso sai direto do tempo de pintura e de prova de encaixe do outro lado.",
+      "Coloque a licença do ECAD e a verificação do AVCB do teatro como barras com data e responsável, à frente da primeira sessão paga — nenhuma das duas anda sozinha, e a segunda depende da casa, não de você.",
+      "Se a produção depender de lei de incentivo, ponha inscrição, aprovação, captação e prestação de contas como barras próprias. O calendário do edital não se ajusta ao seu, e a prestação de contas continua depois de encerrada a temporada."
+    ],
+    tips: [
+      "<strong>Aprove a cenografia cedo o bastante para a oficina construir com calma.</strong> Maquete apresentada tarde não adia a estreia — só faz o cenário chegar sem pintura e a montagem invadir o técnico.",
+      "<strong>Proteja a passagem para a produção.</strong> É o último momento em que o espetáculo é visto inteiro antes de o teatro engolir a atenção de todo mundo, e cortá-la para comprar um dia de ensaio quase sempre é mau negócio.",
+      "<strong>Marque luz e som a partir da sala de ensaio, e não do palco.</strong> Tudo que os criadores conseguirem decidir antes da montagem é tempo comprado de volta no técnico, onde uma hora vale muito mais.",
+      "<strong>Não ponha a companhia no palco antes de a montagem estar de fato terminada.</strong> Ensaio de marcação dividindo o palco com equipe ainda montando é mais lento do que esperar, e é onde acontecem os acidentes.",
+      "<strong>Trate as pré-estreias como parte do processo de ensaio.</strong> Marque os ensaios diurnos, orce as horas extras, e decida com antecedência qual sessão é o congelamento, para que a companhia saiba quando as mudanças param.",
+      "<strong>Mantenha o mapa de figurino e de troca rápida no cronograma.</strong> Troca de figurino é a parte mais subensaiada da semana técnica, e é o que falha visivelmente diante da primeira plateia."
+    ],
+    faq: [
+      [
+        "Como se monta um cronograma de produção teatral?",
+        "De trás para frente, a partir da estreia. Fixe a data e depois calcule o início mais tarde possível das pré-estreias, da semana técnica, da montagem, dos ensaios, da construção, da cenografia e da seleção de elenco. O modelo é disposto nessa ordem para manter a restrição visível."
+      ],
+      [
+        "O que é a semana técnica?",
+        "A semana entre a chegada da companhia ao palco e a primeira plateia: marcação, ensaios técnicos, notas e ensaios gerais. É o ponto de aperto onde pousa todo atraso anterior, e é limitada dos dois lados pela reserva do teatro."
+      ],
+      [
+        "Quanto tempo dura um período normal de ensaios?",
+        "De quatro a seis semanas em sala de ensaio é típico para uma peça, e musicais costumam pedir mais. O modelo usa seis semanas, incluindo passagens, mas isso deve ser ajustado ao seu acordo com a companhia e ao porte do espetáculo."
+      ],
+      [
+        "Que autorizações precisam estar no cronograma?",
+        "Três costumam ser esquecidas até tarde. A cessão de direitos da obra e da tradução, que vem do autor ou do representante. A licença do ECAD para a execução de música, que é solicitada por espetáculo e por temporada e cobrada sobre a bilheteria. E o AVCB do teatro, que é do teatro e não seu, mas precisa estar válido para a casa receber público — confirme a validade quando reservar, não na semana da estreia."
+      ],
+      [
+        "Dá para esticar a semana técnica se estivermos atrasados?",
+        "Quase nunca. O teatro está reservado, as pré-estreias estão à venda e a estreia está contratada, então o tempo de palco é fixo. A recuperação tem que vir da sala de ensaio, da oficina ou da aprovação da cenografia, todas anteriores."
+      ],
+      [
+        "O modelo de cronograma de produção teatral é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'medical-clinic-opening-timeline': {
+    card: "Alvará sanitário, CNES e RT no CRM, credenciamento com operadoras, obra assistencial e vistorias.",
+    h1: "Cronograma de abertura de clínica médica",
+    metaTitle: "Cronograma de abertura de clínica",
+    metaDesc: "Cronograma gratuito de abertura de clínica: alvará sanitário, CNES, RT no CRM, credenciamento com operadoras, obra assistencial e vistorias.",
+    lead: "Um modelo gratuito de <strong>cronograma de abertura de clínica médica</strong> montado em torno dos três relógios que decidem quando você de fato atende o primeiro paciente — licenciamento sanitário, vistoria e habilitação do corpo clínico. Plano de negócio e definição do caminho regulatório, registro dos profissionais e credenciamento com as operadoras correndo longo e quase todo fora do seu controle, uma obra com gases medicinais, pressões diferenciais e requisitos de controle de infecção que obra comercial comum não tem, comissionamento e calibração de equipamentos, e então as vistorias e o alvará sanitário que abrem as portas. Baixe para a reunião de sócios, ou abra online e coloque o seu prazo real de credenciamento.",
+    intro: "Uma clínica construída, equipada e com equipe contratada ainda não atende ninguém enquanto três aprovações separadas não caírem. O modelo trata essas três como a espinha dorsal, e não como o rabo:",
+    phases: [
+      [
+        "Plano de negócio, ponto e caminho regulatório",
+        "Definição das linhas de atendimento e análise de demanda, escolha do ponto e contrato de locação, consulta prévia à vigilância sanitária sobre a classificação do serviço e o que o projeto vai precisar, e as inscrições que tudo o mais depende: CNPJ com o CNAE correto, inscrição municipal, e o registro da pessoa jurídica no CRM. <em>Marcos: contrato assinado, caminho regulatório confirmado.</em>"
+      ],
+      [
+        "Corpo clínico e credenciamento com operadoras",
+        "Recrutamento dos médicos, conferência de registro e de especialidade no CRM, indicação e aceite do responsável técnico, registro do estabelecimento no CNES, e o credenciamento junto às operadoras de planos de saúde — um relógio longo, tocado por outras organizações. <em>Marcos: RT e corpo clínico registrados, contratos com operadoras vigentes.</em>"
+      ],
+      [
+        "Projeto e obra assistencial",
+        "Programa arquitetônico sala a sala, projeto executivo e aprovação do projeto arquitetônico pela vigilância sanitária, alvará de construção, infraestrutura, rede de gases medicinais, relações de pressão do ar-condicionado e barreiras de controle de infecção durante a obra, e acabamentos laváveis. <em>Marco: obra substancialmente concluída.</em>"
+      ],
+      [
+        "Equipamentos, TI e comissionamento",
+        "Ordens de compra dos equipamentos, entrega e instalação dos equipamentos de imagem, ensaio e certificação da rede de gases medicinais, comissionamento e calibração pela engenharia clínica, levantamento radiométrico e o plano de proteção radiológica, e a implantação do prontuário eletrônico e das integrações. <em>Marco: equipamentos comissionados e calibrados.</em>"
+      ],
+      [
+        "Vistorias, licenciamento e acreditação",
+        "AVCB do Corpo de Bombeiros e alvará de funcionamento, encerramento do plano de controle de infecção da obra, a inspeção da vigilância sanitária que resulta no alvará sanitário, o licenciamento específico do laboratório próprio e do serviço de radiodiagnóstico, e a preparação para acreditação se ela estiver no plano. <em>Marco: alvará sanitário emitido.</em>"
+      ],
+      [
+        "Equipe, simulação e início do atendimento",
+        "Contratação assistencial e de recepção, integração e validação de competências, cadeia de suprimentos e estoque de material estéril, um dia simulado de atendimento, faturamento de guias de teste no padrão TISS, e divulgação junto aos médicos que encaminham. <em>Marcos: primeiro paciente atendido, agenda cheia liberada.</em>"
+      ]
+    ],
+    callout: "Você não atende ninguém enquanto alvará sanitário, vistorias e habilitação do corpo clínico não tiverem todos caído — e o credenciamento é o que você menos controla. Registro do RT, cadastro no CNES, análise documental e negociação com cada operadora correm cada um na fila de outra organização, e vários meses a partir de um dossiê completo é o normal. Comece no dia em que fizer a proposta ao médico, e não quando o prédio estiver pronto, porque clínica inteiramente montada com corpo clínico não habilitado e sem contrato vigente com operadora é um imóvel vazio que também está queimando caixa. Vale a mesma disciplina do lado da vigilância: a aprovação do projeto arquitetônico vem antes da obra, e refazer parede por exigência de vistoria é caro e visível.",
+    customize: [
+      "Comece a barra de credenciamento na data da proposta ao médico e use o prazo real das suas operadoras, e não o melhor caso. Se ela terminar depois do alvará, o credenciamento é o seu caminho crítico e o gráfico deve dizer isso.",
+      "Acrescente uma linha por médico se você abrir com vários. Eles não saem todos ao mesmo tempo, e a data de abertura depende do mais lento, e não da média.",
+      "Separe credenciamento com operadora do registro profissional. Estar apto a exercer e estar contratado para faturar são processos diferentes, com relógios diferentes, e é o segundo que determina receita, não acesso.",
+      "Mantenha a rede de gases medicinais, o ensaio e a certificação como barras próprias. É instalação especializada, com verificação por terceiro, e não se dissolve dentro da barra de instalações mecânicas.",
+      "Acrescente a aprovação do projeto arquitetônico pela vigilância sanitária como barra com data anterior ao início da obra — e uma barra menor de reapresentação, porque exigência na primeira análise é comum.",
+      "Se houver equipamento de imagem, ponha o levantamento radiométrico, o memorial de proteção radiológica e a designação do supervisor de proteção radiológica como barras separadas; nenhum deles é comissionamento de equipamento.",
+      "Coloque o dia simulado de atendimento antes do início, com equipe completa. É o único ensaio que você tem de recepção, encaminhamento à sala, prontuário, equipamento e guia, tudo num fluxo só."
+    ],
+    tips: [
+      "<strong>Confirme o caminho regulatório antes de assinar a locação.</strong> Qual classificação de serviço se aplica, o que a vigilância sanitária vai exigir do projeto e que pé-direito, ventilação e circulação o imóvel precisa ter mudam o espaço, o custo da obra e o cronograma por inteiro.",
+      "<strong>Protocole o dossiê de credenciamento completo, ou não protocole.</strong> Dossiê incompleto não começa a contar prazo — volta para o fim da fila quando é corrigido, e esse único deslize administrativo é a causa mais comum de abertura atrasada.",
+      "<strong>Projete para a análise da vigilância, e não só para o construtor.</strong> A análise tem exigências específicas de dimensão de sala, lavatórios, relações de pressão e acabamentos, e redesenhar depois de uma exigência custa muito mais do que acertar de primeira.",
+      "<strong>Agende as vistorias do Corpo de Bombeiros e da vigilância cedo, e conte com reinspeção.</strong> A agenda deles não é sua, e marcar a abertura supondo aprovação de primeira nas duas é uma aposta que costuma ser perdida.",
+      "<strong>Comissione e calibre com a engenharia clínica, e não só com o fornecedor.</strong> Entrega e instalação não são a mesma coisa que estar calibrado, ensaiado e lançado num inventário que o fiscal vai pedir para ver.",
+      "<strong>Fature guias de teste no padrão TISS antes do primeiro paciente real.</strong> Descobrir configuração errada de operadora na primeira semana significa atender gente que você não consegue faturar, o que é pior do que abrir uma semana depois."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para abrir uma clínica médica?",
+        "De doze a dezesseis meses é típico para uma clínica montada em imóvel alugado, que é aproximadamente o que o modelo usa. A obra raramente é a restrição; licenciamento e credenciamento são."
+      ],
+      [
+        "Quanto tempo leva o credenciamento com as operadoras?",
+        "Vários meses a partir de um dossiê completo, e mais quando há negociação de tabela. O prazo depende da operadora, da região e da carência de rede naquela especialidade — algumas respondem em semanas, outras deixam a solicitação parada por bem mais tempo. Trate como item de prazo longo, comece na data da proposta ao médico e acompanhe cada operadora numa linha própria, em vez de estimar uma média."
+      ],
+      [
+        "Quais registros e licenças são obrigatórios antes de atender?",
+        "O alvará sanitário emitido pela vigilância sanitária do município depois da inspeção, o alvará de funcionamento e o AVCB, o cadastro do estabelecimento no CNES, o registro da pessoa jurídica no CRM com um responsável técnico médico indicado e aceito, e o licenciamento específico do laboratório próprio ou do serviço de radiodiagnóstico, quando houver. Os requisitos e os prazos variam por município e pela classificação do serviço, então confirme o seu caminho antes de assinar contrato de locação."
+      ],
+      [
+        "O que diferencia uma obra assistencial de uma obra comercial?",
+        "Rede de gases medicinais com ensaio e certificação por terceiro, relações de pressão entre áreas limpas e sujas, barreiras de controle de infecção durante a execução, acabamentos monolíticos e laváveis, e blindagem nas salas de imagem — nada disso aparece em obra de escritório, e tudo isso passa por análise prévia de projeto."
+      ],
+      [
+        "Dá para abrir antes de os contratos com operadoras estarem vigentes?",
+        "Fisicamente sim, financeiramente não. Atender paciente que você não consegue faturar é um erro comum e caro, então \"contratos com operadoras vigentes\" é tratado como marco próprio, em vez de ser embutido no credenciamento."
+      ],
+      [
+        "O modelo de cronograma de abertura de clínica é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'sap-s4hana-migration-plan': {
+    card: "Conversão brownfield, remediação de código próprio, três ensaios de cutover e janela de congelamento.",
+    h1: "Plano de migração para SAP S/4HANA",
+    metaTitle: "Plano de migração para SAP S/4HANA",
+    metaDesc: "Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento.",
+    lead: "Um modelo gratuito de <strong>plano de migração para SAP S/4HANA</strong> montado em torno da decisão que muda todo o resto: converter o sistema ECC existente no lugar (<em>brownfield</em>) ou construir uma implantação nova e migrar para dentro dela (<em>greenfield</em>). Este plano mostra o caminho de <em>conversão</em>, porque é aquele cujo cronograma é dominado pela remediação de código próprio e por ensaios repetidos de cutover, e não pelo desenho de processos. Se o seu caso for levantar um ERP do zero, comece pelo <a href=\"/templates/erp-implementation-schedule.html\">cronograma de implantação de ERP</a>.",
+    intro: "Uma conversão não é um projeto que termina no go-live — termina quando a janela de congelamento fecha e os saldos batem. As barras abaixo colocam os ensaios de cutover e o congelamento onde eles de fato ficam:",
+    phases: [
+      [
+        "Decisão do caminho e prontidão",
+        "Relatórios de <em>readiness check</em>, análise dos <em>simplification items</em>, a decisão brownfield versus greenfield em si, dimensionamento, e o desenho da paisagem de destino. <em>Marco: caminho de conversão aprovado.</em>"
+      ],
+      [
+        "Preparação e remediação de código próprio",
+        "A parte de uma conversão que ninguém dimensiona direito: análise do código Z contra a base de simplificação, ondas de remediação, aposentadoria de código obsoleto, e a preparação do modelo de dados de finanças de que a conversão depende. Aqui também entra o add-on de localização brasileira: notas fiscais eletrônicas, SPED e as obrigações acessórias precisam ser revistos objeto a objeto, porque é o ponto em que uma conversão tecnicamente limpa fica impedida de emitir. <em>Marco: remediação de código concluída.</em>"
+      ],
+      [
+        "Conversão de sandbox e desenvolvimento",
+        "A primeira conversão técnica sobre uma cópia sandbox, o tempo de execução que ela revela, e depois os ambientes de desenvolvimento e de qualidade, com adaptação funcional e teste unitário atrás de cada um. <em>Marco: ambiente de qualidade convertido.</em>"
+      ],
+      [
+        "Ciclos de teste",
+        "Testes funcionais, de integração, de interface, de autorizações e de desempenho, mais o ciclo de defeitos, rodando contra um ambiente de qualidade convertido, e não contra uma construção nova. Reserve um ciclo próprio para emissão fiscal e transmissão de arquivos aos fiscos, ponta a ponta. <em>Marco: saída do teste integrado aprovada.</em>"
+      ],
+      [
+        "Ensaios de cutover e ensaio geral",
+        "Três ensaios de cutover sobre volumes de dados de produção, cada um cronometrado e cada um encurtando o <em>runbook</em>, e então o ensaio geral que dá o go/no-go. <em>Marco: decisão de go/no-go no ensaio geral.</em>"
+      ],
+      [
+        "Congelamento, cutover e hipercuidado",
+        "A janela de congelamento do negócio, a conversão de produção em si, validação e conciliação, liberação para o negócio, e o período de hipercuidado antes da devolução ao suporte. <em>Marco: saída do hipercuidado.</em>"
+      ]
+    ],
+    callout: "Duas coisas afundam cronograma de conversão. A primeira é o código próprio: o relatório de prontidão vai listar milhares de ocorrências, a maioria trivial e um punhado estrutural, e até alguém triá-las você não tem uma estimativa — tem um número de objetos. A segunda é o congelamento do negócio. As equipes planejam um fim de semana e descobrem que o congelamento de lançamentos, de dados mestres e de transações em aberto começa de fato vários dias antes e não é liberado enquanto a conciliação não fechar. Planeje o congelamento como evento de negócio, com donos nomeados, e não como janela técnica — e no Brasil ainda cheque o calendário das obrigações acessórias antes de escolher a data, porque emissão de nota e entrega de SPED não param só porque o seu cutover começou.",
+    customize: [
+      "Se o seu caso for implantação nova, e não conversão, apague as fases de remediação e de ensaio de cutover e reconstrua em torno do desenho de processos — os formatos são realmente diferentes.",
+      "Fixe primeiro o fim de semana do cutover de produção e conte para trás; os ensaios de cutover são a única estimativa confiável de quanto tempo isso leva.",
+      "Divida a remediação de código próprio em ondas por dono do objeto, e não por quantidade de objetos, para que as barras correspondam a quem de fato faz o trabalho.",
+      "Alongue a janela de congelamento se você tiver volume alto de transações no fechamento, e evite rodar o cutover atravessando virada de período fiscal.",
+      "Acrescente linhas para cada interface e sistema satélite — conversões costumam quebrar as integrações antes de quebrar o próprio SAP.",
+      "Trate a localização brasileira como frente própria, com barras para as notas fiscais eletrônicas, os blocos do SPED e a integração com o middleware fiscal; ela raramente se comporta como o resto do código Z.",
+      "Acrescente um quarto ensaio de cutover se o terceiro ainda não tiver terminado dentro da janela disponível."
+    ],
+    tips: [
+      "<strong>Rode o primeiro ensaio de cutover cedo e mal.</strong> A função dele é descobrir o que falta no runbook, e não dar certo. Os ensaios seguintes é que precisam parecer limpos.",
+      "<strong>Triagem do relatório de prontidão, não contagem.</strong> Mil ocorrências podem ser duas semanas de trabalho ou seis meses, e só a triagem diz qual dos dois.",
+      "<strong>Trate o ensaio geral como portão de verdade.</strong> Se o ensaio não termina dentro da janela planejada, o cutover de produção também não vai terminar — é exatamente para isso que ele existe.",
+      "<strong>Congele o negócio, e não só o sistema.</strong> Publique o que as pessoas podem e não podem fazer em cada dia da janela, bastante antes de ela começar.",
+      "<strong>Concilie antes de liberar.</strong> Saldos contábeis, partidas em aberto e quantidades de estoque validados contra os números pré-conversão são o critério real de go-live, e não uma tela verde.",
+      "<strong>Prove a emissão fiscal antes de liberar o faturamento.</strong> Sistema convertido que não consegue autorizar uma nota fiscal eletrônica no ambiente de produção da SEFAZ é uma parada de faturamento, e é o tipo de coisa que só aparece com uma nota real."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva uma migração para SAP S/4HANA?",
+        "Uma conversão de sistema costuma levar de doze a vinte meses, dependendo do volume de código próprio e do número de interfaces. O modelo usa cerca de dezesseis meses. Implantações novas variam muito mais, porque o cronograma é comandado pelo desenho de processos, e não pela remediação."
+      ],
+      [
+        "Qual a diferença entre brownfield e greenfield?",
+        "Brownfield é conversão de sistema: você mantém configuração, histórico e código próprio existentes e converte o ambiente no lugar. Greenfield é uma implantação nova para dentro da qual você migra dados selecionados. Cronogramas brownfield são dominados por remediação de código e ensaios de cutover; cronogramas greenfield são dominados por desenho de processos e gestão da mudança. Este modelo mostra o caminho brownfield."
+      ],
+      [
+        "Como isso se diferencia do cronograma de implantação de ERP?",
+        "O <a href=\"/templates/erp-implementation-schedule.html\">cronograma de implantação de ERP</a> pressupõe que você está selecionando e implantando um sistema do zero — escolha de fornecedor, desenho de processos, parametrização, migração de dados e treinamento. Este plano pressupõe que o SAP já roda e que você está convertendo, então as fases pesadas são remediação de código próprio e ensaios repetidos de cutover."
+      ],
+      [
+        "O que a localização brasileira acrescenta ao plano?",
+        "Uma frente inteira. Nota fiscal eletrônica de produto e de serviço, os blocos do SPED fiscal e contábil, a apuração de tributos e o middleware que conversa com a SEFAZ costumam ter código próprio antigo e forte acoplamento a tabelas que a conversão mexe. Reserve barras específicas de análise, remediação e teste ponta a ponta de emissão fiscal, e coloque o calendário das obrigações acessórias ao lado da data escolhida para o cutover."
+      ],
+      [
+        "Quantos ensaios de cutover eu preciso?",
+        "Três é o número usual de planejamento e o modelo usa três, seguidos de um ensaio geral. Cada um roda o runbook completo sobre volumes de produção e é cronometrado; se o terceiro ainda estourar a janela disponível, acrescente um quarto em vez de comprimir o de verdade."
+      ],
+      [
+        "Quanto tempo deve durar o congelamento do negócio?",
+        "Mais do que o cutover técnico. Lançamentos, alterações de dados mestres e encerramento de transações em aberto normalmente congelam vários dias antes de a conversão começar e continuam congelados até a conciliação passar. Use os tempos dos seus ensaios de cutover para dimensioná-lo, em vez de chutar, e comunique ao negócio com semanas de antecedência."
+      ],
+      [
+        "O modelo de migração para SAP S/4HANA é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'iso-14001-certification-plan': {
+    card: "Levantamento de aspectos e impactos, requisitos legais, objetivos, registros e auditorias de fase 1 e 2.",
+    h1: "Plano de certificação ISO 14001",
+    metaTitle: "Plano de certificação ISO 14001",
+    metaDesc: "Plano gratuito de certificação ISO 14001: aspectos e impactos, requisitos legais, objetivos, registros operacionais e auditorias de fase 1 e 2.",
+    lead: "Um modelo gratuito de <strong>plano de certificação ISO 14001</strong> organizado em torno dos dois levantamentos que são o trabalho de verdade de um sistema de gestão ambiental: o levantamento de aspectos e impactos e o registro de requisitos legais e outros requisitos. Tudo o que vem depois — objetivos, controles operacionais, monitoramento, treinamento — é derivado desses dois, e é por isso que planos que começam pelos objetivos empacam. A mecânica de auditoria tem o mesmo formato de duas fases do <a href=\"/templates/iso-9001-certification-plan.html\">plano de certificação ISO 9001</a> e do <a href=\"/templates/iso-27001-certification-plan.html\">plano de certificação ISO 27001</a>.",
+    intro: "Organismos certificadores avaliam um SGA em duas visitas, com um intervalo obrigatório entre elas, e amostram registros que só existem se o sistema estiver rodando. As barras refletem as duas coisas:",
+    phases: [
+      [
+        "Escopo, contexto e diagnóstico",
+        "Fronteiras do SGA, partes interessadas, diagnóstico contra a norma, política ambiental, e a escolha do organismo certificador acreditado pelo Inmetro — momento em que as duas datas de auditoria são reservadas. <em>Marco: escopo e política aprovados.</em>"
+      ],
+      [
+        "Aspectos, impactos e requisitos legais",
+        "O núcleo do plano: levantamento dos aspectos ambientais de cada atividade, avaliação da significância por um método documentado, e a construção do registro de requisitos legais e outros requisitos ao lado dele. No Brasil esse registro começa pelas condicionantes da sua licença ambiental, e segue por outorga de água, destinação de resíduos, emissões e efluentes, e os compromissos assumidos em termos de ajustamento de conduta, quando houver. <em>Marco: os dois levantamentos aprovados.</em>"
+      ],
+      [
+        "Objetivos, metas e programas",
+        "Objetivos derivados dos aspectos significativos e dos requisitos legais, com metas, indicadores, recursos e donos nomeados — e não aspirações escritas antes de os levantamentos existirem. <em>Marco: objetivos e programas aprovados.</em>"
+      ],
+      [
+        "Controle operacional e preparação para emergências",
+        "Procedimentos de controle operacional para os aspectos significativos, controles de resíduos, efluentes e emissões, controle de fornecedores e de contratados, treinamento de competência e conscientização, e o simulado de emergência. <em>Marco: controles operacionais implantados.</em>"
+      ],
+      [
+        "Operar, monitorar e acumular registros",
+        "A fase que não dá para comprimir: rodar o SGA tempo suficiente para que dados de monitoramento, avaliações de atendimento a requisitos legais, manifestos de transporte de resíduos e um exemplo real de gestão de mudança de fato existam. <em>Marco: registros de monitoramento disponíveis.</em>"
+      ],
+      [
+        "Auditoria interna, análise crítica e auditoria em duas fases",
+        "A auditoria interna, as não conformidades e as ações corretivas, a análise crítica pela direção, e então a fase 1, a janela de ação corretiva, e a fase 2. <em>Marco: certificado emitido.</em>"
+      ]
+    ],
+    callout: "O levantamento de aspectos e impactos é o documento que o auditor abre primeiro, e um levantamento fraco derruba o resto do sistema. Ele tem que cobrir condições normais, anormais e de emergência, e a avaliação de significância tem que ser um método que você consiga explicar, e não uma cor que alguém escolheu. O registro de requisitos legais é o segundo documento estrutural: lista licenças, outorgas, condicionantes, obrigações legais e outros compromissos aplicáveis a você, e a norma exige que você avalie periodicamente o atendimento a ele — ou seja, a avaliação precisa ter acontecido antes da fase 2, e não estar planejada para depois. Comece esse registro pelas condicionantes da sua licença ambiental: elas já são requisitos com prazo, dono e evidência, e ignorá-las é o furo mais visível numa auditoria brasileira.",
+    customize: [
+      "Contrate o organismo certificador cedo e fixe a data da fase 2; tudo antes dela passa a ser contagem regressiva, e não estimativa.",
+      "Confirme que o organismo é acreditado pela CGCRE/Inmetro para o escopo do seu setor — certificado emitido por organismo não acreditado costuma não ser aceito por cliente nem por órgão público.",
+      "Expanda as linhas de levantamento de aspectos para uma por unidade, processo ou atividade — uma linha única esconde o esforço real.",
+      "Mantenha ao menos seis semanas entre a fase 1 e a fase 2, para que as ações corretivas levantadas na fase 1 possam de fato ser fechadas.",
+      "Alongue a fase de operação se algum dos seus requisitos for avaliado anualmente — você precisa de pelo menos um ciclo de evidência.",
+      "Acrescente linhas para renovação de licença, entrega de relatório ao órgão ambiental ou vistoria de fiscalização que caiam dentro da janela, já que competem pelas mesmas pessoas.",
+      "Acrescente a auditoria de manutenção do primeiro ano, para que o SGA continue com recursos depois de o certificado chegar."
+    ],
+    tips: [
+      "<strong>Construa os levantamentos antes dos objetivos.</strong> Objetivos escritos primeiro quase sempre acabam mirando aspectos não significativos, e o auditor vai perguntar como você decidiu.",
+      "<strong>Cubra condições anormais e de emergência.</strong> Partida, parada, vazamento e incêndio são onde a maioria dos levantamentos de aspectos fica visivelmente incompleta.",
+      "<strong>Faça uma avaliação de atendimento a requisitos legais de verdade.</strong> A norma espera avaliação periódica contra o seu registro, com evidência — e não uma declaração de que você cumpre.",
+      "<strong>Faça o simulado de emergência antes da fase 2.</strong> É uma das poucas evidências que você consegue agendar, em vez de esperar acontecer.",
+      "<strong>Mantenha ISO 14001, ISO 9001 e ISO 27001 separadas.</strong> Elas compartilham a mesma estrutura de alto nível e podem ser auditadas juntas, mas são três certificações acreditadas distintas, com conteúdos diferentes — ambiental, qualidade e segurança da informação, respectivamente."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a certificação ISO 14001?",
+        "Normalmente de nove a quinze meses partindo do zero. O modelo usa cerca de treze meses. As partes que resistem à compressão são o trabalho dos levantamentos de aspectos e de requisitos legais na frente e o período de operação que gera os registros de monitoramento no fim."
+      ],
+      [
+        "O que é o levantamento de aspectos e impactos?",
+        "Uma lista estruturada das formas como suas atividades, produtos e serviços interagem com o meio ambiente — emissões, efluentes, resíduos, uso de recursos, uso do solo — e dos impactos decorrentes, avaliados quanto à significância em condições normais, anormais e de emergência. É a entrada de quase todo o resto do SGA, e é por isso que o modelo o coloca antes dos objetivos."
+      ],
+      [
+        "As condicionantes da licença ambiental entram no plano?",
+        "Entram, e no lugar mais importante: no registro de requisitos legais. Cada condicionante tem prazo, evidência exigida e responsável, o que a torna material auditável direto. A avaliação periódica de atendimento a elas é justamente o tipo de registro que a fase 2 amostra, então trate cada condicionante como linha, e não como anexo."
+      ],
+      [
+        "Qual a diferença entre ISO 14001 e ISO 9001?",
+        "Compartilham a mesma estrutura de sistema de gestão e a mesma mecânica de auditoria em duas fases, mas o conteúdo é inteiramente diferente: a ISO 9001 é um sistema de gestão da qualidade voltado a requisitos do cliente e conformidade de processo, e a ISO 14001 é um sistema de gestão ambiental construído sobre aspectos ambientais e requisitos legais. Veja o <a href=\"/templates/iso-9001-certification-plan.html\">plano de certificação ISO 9001</a> se você for certificar as duas."
+      ],
+      [
+        "Posso certificar ISO 14001 e ISO 27001 juntas?",
+        "Podem ser auditadas numa visita integrada e compartilham estrutura de requisitos, mas são certificações acreditadas separadas, com certificados e escopos separados. O <a href=\"/templates/iso-27001-certification-plan.html\">plano de certificação ISO 27001</a> cobre o lado de segurança da informação; não presuma que evidência de uma satisfaz a outra."
+      ],
+      [
+        "O que acontece entre a fase 1 e a fase 2?",
+        "A fase 1 é uma análise de documentação e de prontidão e quase sempre levanta constatações — mais comumente um levantamento de aspectos incompleto ou uma avaliação de requisitos legais que não foi feita. A fase 2 é a auditoria completa de como o SGA opera. O modelo deixa uma janela de ação corretiva entre as duas, porque a fase 2 não passa enquanto as constatações da fase 1 não estiverem fechadas."
+      ],
+      [
+        "O modelo de certificação ISO 14001 é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'product-recall-plan': {
+    card: "Hora zero, avaliação de risco, comunicação aos órgãos e ao consumidor, recolhimento e encerramento.",
+    h1: "Plano de recall de produto",
+    metaTitle: "Plano de recall de produto",
+    metaDesc: "Plano gratuito de recall: hora zero, avaliação de risco, comunicação à Senacon e ao consumidor, recolhimento, quarentena e encerramento.",
+    lead: "Um modelo gratuito de <strong>plano de recall de produto</strong> disposto sobre o único relógio que importa — o que começa no instante em que você tem informação de que um produto pode ser inseguro ou não conforme. Cronograma de recall é incomum porque boa parte da sequência é legal, e não discricionária: o dever de comunicar, a guarda de registros e o relatório de acompanhamento são fixados por norma, e atrasar é exposição jurídica, e não atraso de projeto. As barras abaixo estão em dias a partir da hora zero, para que você veja o que precisa acontecer na primeira semana.",
+    intro: "As primeiras linhas são horas, e não semanas. Tudo depois da decisão de comunicar depende da velocidade com que as três primeiras linhas forem concluídas:",
+    phases: [
+      [
+        "Hora zero — detectar, conter, reunir",
+        "O sinal chega, o comitê de crise se reúne, a distribuição é bloqueada, e os lotes e códigos afetados são rastreados. Esta é a fase medida em horas. <em>Marco: comitê reunido e expedição bloqueada.</em>"
+      ],
+      [
+        "Avaliação de risco e decisão de recall",
+        "Caracterização do perigo, avaliação de exposição e de gravidade, classificação, a decisão sobre a profundidade do recolhimento — consumidor, varejo ou distribuidor — e a decisão formal de fazer o recall. <em>Marco: decisão de recall registrada.</em>"
+      ],
+      [
+        "Comunicação às autoridades",
+        "Definir quais autoridades precisam ser comunicadas: a Senacon e os órgãos estaduais e municipais de defesa do consumidor no regime geral do Código de Defesa do Consumidor, a Anvisa quando o produto for alimento, medicamento, cosmético, saneante ou produto para saúde, o Inmetro quando houver certificação compulsória, e o rito próprio de veículos, que tem procedimento e formulários específicos. Montar o dossiê de comunicação, protocolar, e alinhar o texto do aviso ao consumidor com o órgão. <em>Marco: autoridades comunicadas.</em>"
+      ],
+      [
+        "Comunicação ao consumidor e ao mercado",
+        "Cascata para distribuidores e varejistas, contato direto com o consumidor onde houver cadastro, o anúncio de recall na imprensa e nos meios exigidos, site e redes, e a central de atendimento dedicada. <em>Marco: aviso de risco publicado.</em>"
+      ],
+      [
+        "Recolhimento, quarentena e destinação",
+        "Logística reversa, recebimento e conciliação contra a quantidade distribuída, quarentena segura e identificada, e a decisão de destinação — retrabalho, destruição ou liberação. <em>Marco: conciliação de quantidades concluída.</em>"
+      ],
+      [
+        "Verificação de eficácia, causa raiz e encerramento",
+        "Verificações de eficácia em intervalos definidos, investigação de causa raiz e ação corretiva, relatórios periódicos de atendimento ao órgão, o relatório final e o encerramento formal. <em>Marco: recall encerrado pelo órgão.</em>"
+      ]
+    ],
+    callout: "O prazo de comunicação não é um número único. O Código de Defesa do Consumidor impõe ao fornecedor o dever de comunicar imediatamente às autoridades competentes e aos consumidores assim que tem conhecimento da periculosidade, mas o rito, os formulários, o conteúdo do aviso e a periodicidade dos relatórios vêm do regime de recall do Ministério da Justiça e variam conforme a classe do produto e a gravidade do risco. Alimento, medicamento e produto para saúde passam pela Anvisa em paralelo; produto sob certificação compulsória envolve o Inmetro; veículo segue uma rota própria, com procedimento separado e amplamente conhecida no setor. Não planeje contra um único prazo universal. Mantenha uma lista atualizada de qual autoridade se aplica a cada classe de produto que você vende, com o gatilho e o rito de cada uma, e confirme com o jurídico antes do incidente, e não durante. As durações nas linhas abaixo são marcadores curtos, para você substituir pelas suas obrigações verificadas.",
+    customize: [
+      "Substitua as linhas de comunicação pelos ritos e prazos que de fato se aplicam à sua classe de produto, verificados com o jurídico, e não presumidos.",
+      "Acrescente uma linha por autoridade quando mais de uma for competente — Senacon e Anvisa, por exemplo, correm em paralelo e pedem conteúdos diferentes; se você exporta, some uma linha por país.",
+      "Deixe a profundidade do recolhimento explícita — nível consumidor, nível varejo ou nível distribuidor muda toda a fase de recolhimento.",
+      "Expanda as linhas de verificação de eficácia para os intervalos que o órgão espera de você, e mantenha-as rodando até a taxa de atendimento estabilizar.",
+      "Acrescente linhas para comunicação à seguradora e, se houver lesão envolvida, para a preservação de documentos e evidências.",
+      "Acrescente a linha do plano de mídia: no regime brasileiro o aviso de risco tem exigências de veiculação e de conteúdo, e negociar isso com o órgão leva tempo que a equipe de operações não enxerga.",
+      "Ensaie este plano como recall simulado sobre um código de lote real ao menos uma vez por ano — exercício de rastreabilidade que leva dias é uma não conformidade."
+    ],
+    tips: [
+      "<strong>Rastreie antes de anunciar.</strong> Aviso público que nomeia os lotes errados precisa ser republicado, e republicar destrói credibilidade com o órgão e com o consumidor ao mesmo tempo.",
+      "<strong>Ponha uma pessoa só no relógio.</strong> Alguém cuja única função é acompanhar prazos e protocolos junto a cada autoridade, porque o trabalho operacional vai consumir todo o resto da equipe.",
+      "<strong>Concilie contra a quantidade distribuída.</strong> A taxa de atendimento do recall é o número que o órgão olha, e não dá para calculá-la sem saber exatamente quanto saiu.",
+      "<strong>Mantenha a quarentena fisicamente segura.</strong> Produto devolvido que volta ao estoque por acidente é um segundo recall em cima do primeiro.",
+      "<strong>Não confunda causa raiz com o recall.</strong> O recolhimento tem relógio próprio; a investigação corre ao lado e termina depois, e o órgão espera ver as duas coisas.",
+      "<strong>Guarde o processo decisório por escrito.</strong> A avaliação de risco, a classificação e a decisão de profundidade são exatamente o que será pedido depois, em fiscalização ou em juízo, e reconstruir isso de memória meses depois não funciona."
+    ],
+    faq: [
+      [
+        "Em quanto tempo o recall precisa ser comunicado às autoridades?",
+        "Depende da classe do produto e da gravidade do risco, e não existe um prazo único. O Código de Defesa do Consumidor exige comunicação imediata às autoridades competentes e aos consumidores a partir do momento em que o fornecedor toma conhecimento da periculosidade, e o regime de recall do Ministério da Justiça detalha o rito. Alimentos, medicamentos, cosméticos e produtos para saúde têm o caminho paralelo da Anvisa; produtos sob certificação compulsória envolvem o Inmetro; veículos seguem procedimento próprio. Levante as obrigações que se aplicam a você com o jurídico antes do incidente e registre-as no plano, em vez de confiar num número lido em algum lugar."
+      ],
+      [
+        "A quem se comunica no Brasil?",
+        "No regime geral, à Secretaria Nacional do Consumidor e aos órgãos estaduais e municipais de defesa do consumidor, com o aviso de risco depois dirigido ao consumidor. Conforme a classe do produto, entram também a Anvisa, o Inmetro ou a autoridade setorial correspondente, e a comunicação a um deles não substitui a comunicação aos demais. Mapeie isso por linha de produto antes de precisar."
+      ],
+      [
+        "O que é verificação de eficácia?",
+        "Uma verificação estruturada de que quem precisava receber o aviso de recall de fato recebeu e agiu — contatar uma amostra de distribuidores e varejistas, confirmar que o estoque foi retirado, e medir a proporção do que foi distribuído que voltou ou foi localizada. Os órgãos costumam esperar isso em intervalos definidos, e o modelo roda várias, e não uma."
+      ],
+      [
+        "O que significa profundidade do recolhimento?",
+        "Até onde o recall desce na cadeia: nível distribuidor para no atacado, nível varejo alcança as lojas, nível consumidor alcança o usuário final. Decorre da avaliação de risco e muda a logística, a comunicação e o custo em uma ordem de grandeza, então o modelo transforma isso numa linha de decisão explícita."
+      ],
+      [
+        "Quanto tempo dura um recall?",
+        "A fase de comunicação e recolhimento costuma ser medida em dias e semanas; o modelo roda cerca de noventa dias até o encerramento. Investigação de causa raiz, ação corretiva e encerramento formal pelo órgão frequentemente vão além, e as verificações de eficácia continuam até a taxa de atendimento estabilizar."
+      ],
+      [
+        "Devemos fazer recall simulado?",
+        "Sim, e a maioria das normas de qualidade e das auditorias de clientes espera isso anualmente. Um recall simulado sobre um código de lote real testa a rastreabilidade sob pressão de tempo, e é a forma mais barata de descobrir que os seus registros não reconstroem uma lista de distribuição rápido o bastante."
+      ],
+      [
+        "O modelo de plano de recall é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'digital-transformation-roadmap': {
+    card: "Ondas plurianuais, fundações de dados e identidade primeiro, benefícios medidos a cada onda.",
+    h1: "Roadmap de transformação digital",
+    metaTitle: "Roadmap de transformação digital",
+    metaDesc: "Roadmap gratuito de transformação digital: ondas plurianuais, fundações de dados e identidade primeiro, benefícios medidos a cada onda.",
+    lead: "Um modelo gratuito de <strong>roadmap de transformação digital</strong> construído como uma sequência de ondas, e não como um programa com data de término. A ideia organizadora é capacidade dependente: fundações de dados, identidade e integração precisam cair antes do trabalho visível, os benefícios são medidos ao fim de cada onda em vez de guardados para uma revisão de business case no terceiro ano, e o ritmo de governança é desenhado para sobreviver à saída do patrocinador — o que, num programa de três anos, provavelmente vai acontecer.",
+    intro: "Cada onda entrega algo utilizável, e cada uma é seguida de uma revisão de benefícios que pode mudar o conteúdo da onda seguinte. Esse laço de realimentação é o ponto:",
+    phases: [
+      [
+        "Estratégia, linha de base e governança",
+        "Diagnóstico da situação atual, linha de base de maturidade digital, modelo operacional alvo, o caso de valor, e a montagem do ritmo de governança e do escritório de portfólio que vão sobreviver a lideranças individuais. <em>Marco: roadmap e governança aprovados.</em>"
+      ],
+      [
+        "Onda 1 — fundações",
+        "A onda sem glamour de que tudo o mais depende: identidade e controle de acesso, camada de integração, plataforma e governança de dados, zona de aterrissagem em nuvem e linha de base de segurança. Aqui também entra o alicerce de LGPD que o resto vai reutilizar: inventário de dados pessoais, base legal por tratamento, registro das operações e o fluxo de atendimento ao titular. Nada visível ao cliente é entregue nesta onda. <em>Marco: fundações no ar.</em>"
+      ],
+      [
+        "Onda 2 — digitalização dos processos centrais",
+        "Automação de processos de finanças, compras e RH, gestão de fluxo e de documentos, e a aposentadoria dos processos manuais e das planilhas que eles substituem. <em>Marco: processos centrais migrados.</em>"
+      ],
+      [
+        "Onda 3 — capacidade voltada ao cliente",
+        "Portal do cliente, autoatendimento, experiência mobile, dados unificados de cliente e redesenho de jornada — entregáveis apenas porque a onda 1 construiu a identidade e a integração por baixo. <em>Marco: capacidade de cliente lançada.</em>"
+      ],
+      [
+        "Onda 4 — analytics e automação inteligente",
+        "Analytics de autoatendimento, modelos preditivos e automação das decisões de alto volume, mais a governança de modelos necessária para operá-los com responsabilidade. <em>Marco: capacidade analítica adotada.</em>"
+      ],
+      [
+        "Realização de benefícios e sustentação",
+        "Revisões de benefício ao fim de cada onda, medição de adoção e de mudança, transferência de capacidade para a operação, descomissionamento de sistemas legados e a revisão anual do roadmap. <em>Marco: programa transferido para a operação.</em>"
+      ]
+    ],
+    callout: "A falha recorrente é fazer o trabalho visível primeiro. Portais, painéis e demonstrações de automação são o que o patrocinador pede, mas cada um deles depende silenciosamente de identidade, integração e dados confiáveis, e construí-los antes das fundações produz uma onda 3 que é discretamente refeita durante a onda 4. A segunda falha é adiar os benefícios: se a primeira revisão acontece depois de três anos, não sobrou ninguém que seja dono da promessa original. Ponha uma revisão de benefício logo depois de cada onda, publique o número mesmo quando ele for constrangedor, e deixe que ele mude o conteúdo da onda seguinte.",
+    customize: [
+      "Renomeie as ondas para a linguagem de capacidade da sua casa, mas mantenha as fundações primeiro — essa ordenação é a substância do plano.",
+      "Ajuste a duração da onda ao que a sua organização consegue absorver; de seis a nove meses por onda é comum, e ondas mais curtas falham por capacidade de mudança, e não por entrega.",
+      "Acrescente uma linha de revisão de benefício depois de cada onda, cada uma com um dono nomeado que estava lá quando o benefício foi prometido.",
+      "Acrescente linhas explícitas de descomissionamento de legado — transformações que nunca desligam nada terminam financiando dois parques ao mesmo tempo.",
+      "Insira uma linha de reinício de governança em cada troca prevista de liderança, ciclo orçamentário ou reorganização.",
+      "Trate a adequação à LGPD como capacidade da onda 1, e não como projeto paralelo: base legal, registro de operações, atendimento ao titular e resposta a incidente à ANPD são pré-requisitos das ondas de cliente e de analytics, não uma revisão jurídica no fim.",
+      "Quebre cada onda em linhas por frente assim que o escopo dela estiver acordado; a barra única só é útil no nível de roadmap."
+    ],
+    tips: [
+      "<strong>Sequencie por dependência, e não por entusiasmo.</strong> A pergunta certa para qualquer candidata à onda 1 é o que quebra na onda 3 se isso não existir.",
+      "<strong>Meça adoção, e não implantação.</strong> Plataforma no ar com quinze por cento de uso não entregou nada, e só uma métrica de adoção conta isso a tempo de agir.",
+      "<strong>Suponha que o patrocinador vai mudar.</strong> Escreva o caso de valor, as decisões e as linhas de base de benefício numa forma que um sucessor consiga retomar sem você.",
+      "<strong>Mantenha um único padrão de integração.</strong> Ondas que cada uma inventa a própria abordagem de integração criam exatamente a fragmentação que o programa deveria eliminar.",
+      "<strong>Descomissione com data.</strong> Aposentadoria de legado que não está agendada com dono não acontece, e as economias do caso de valor dependem dela."
+    ],
+    faq: [
+      [
+        "Qual a duração de um roadmap de transformação digital?",
+        "Normalmente de dois a quatro anos, em três ou quatro ondas. O modelo roda cerca de três anos. Roadmaps mais curtos costumam ser programas isolados; roadmaps mais longos deixam de ser plano e viram intenção, então revise anualmente em vez de estender."
+      ],
+      [
+        "Por que as fundações têm que vir primeiro?",
+        "Porque portal de cliente, analytics e automação dependem todos de saber quem é o usuário, de mover dados entre sistemas e de confiar nesses dados. Construí-los sobre identidade e integração fragmentadas funciona como demonstração e falha como capacidade, e o retrabalho pousa na onda seguinte."
+      ],
+      [
+        "Onde a LGPD entra no roadmap?",
+        "Na onda 1, junto com identidade e plataforma de dados. Inventário de dados pessoais, base legal por tratamento, registro das operações, política de retenção, atendimento a pedidos de titular e o processo de comunicação de incidente à ANPD são capacidades reutilizadas por todas as ondas seguintes. Tratada como revisão jurídica no fim, ela vira retrabalho na onda de cliente, que é justamente a que mais coleta dado pessoal."
+      ],
+      [
+        "O que é realização de benefícios e por que depois de cada onda?",
+        "É medir se o valor prometido de fato chegou — custo, tempo de ciclo, adoção, receita. Fazer isso ao fim de cada onda, e não no fim de tudo, significa medir enquanto quem fez a promessa ainda está no cargo, e o resultado pode mudar o conteúdo da onda seguinte. Revisão de benefício adiada vira, com confiabilidade, uma afirmação impossível de contestar."
+      ],
+      [
+        "Como manter a governança viva através de trocas de liderança?",
+        "Tornando o ritmo e os artefatos institucionais, e não pessoais: um comitê de portfólio permanente com cadência definida, decisões documentadas, e linhas de base de benefício registradas onde um sucessor encontre. O modelo inclui uma linha de reinício de governança exatamente por isso."
+      ],
+      [
+        "Como isso se relaciona com um programa de sistema único, como um ERP?",
+        "Um roadmap sequencia vários programas; um plano de implantação roda um. Se uma onda contiver a troca do ERP, planeje-a separadamente com o <a href=\"/templates/erp-implementation-schedule.html\">cronograma de implantação de ERP</a> ou, no caso de uma conversão SAP, com o <a href=\"/templates/sap-s4hana-migration-plan.html\">plano de migração para SAP S/4HANA</a>, e mantenha a linha do roadmap como barra de resumo."
+      ],
+      [
+        "O modelo de transformação digital é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'qa-test-plan-schedule': {
+    card: "Critérios de entrada e saída, ambiente e massa de teste, fases sobrepostas, triagem de defeitos e regressão.",
+    h1: "Cronograma de plano de testes de QA",
+    metaTitle: "Cronograma de plano de testes de QA",
+    metaDesc: "Cronograma gratuito de plano de testes: critérios de entrada e saída, ambiente e massa de teste, fases sobrepostas, triagem de defeitos e regressão.",
+    lead: "Um modelo gratuito de <strong>cronograma de plano de testes de QA</strong> cuja espinha dorsal são critérios de entrada e saída, e não uma fila de fases. Duas coisas comandam tudo: um ambiente de teste estável e uma massa de dados provisionada. Depois disso as fases se sobrepõem — o teste integrado começa enquanto o teste unitário ainda termina, o UAT começa pelos módulos que já estão prontos — e o calendário é consumido menos pela execução dos testes do que pelo laço de triagem, correção e reteste de defeitos que roda por baixo de tudo.",
+    intro: "Repare que as barras de execução se sobrepõem e que o laço de defeitos corre por toda a extensão delas. É essa a cara de um cronograma de testes de verdade:",
+    phases: [
+      [
+        "Planejamento e critérios de teste",
+        "Estratégia de teste, escopo e priorização baseada em risco, os critérios de entrada e de saída de cada fase escritos antes de a execução começar, estimativa e plano de alocação. <em>Marco: plano e critérios aprovados.</em>"
+      ],
+      [
+        "Prontidão de ambiente e de massa de teste",
+        "O portão de verdade. Construção do ambiente, configuração e simuladores de integração, provisionamento e mascaramento da massa de teste, acessos e usuários, e um teste de fumaça que prova o ambiente antes de qualquer um testar nele. <em>Marco: critérios de entrada do ambiente atendidos.</em>"
+      ],
+      [
+        "Desenho de testes e automação",
+        "Desenho de condições e de casos de teste, rastreabilidade de volta aos requisitos, framework de automação, construção da suíte de regressão e os scripts de teste de desempenho. <em>Marco: casos prontos para execução.</em>"
+      ],
+      [
+        "Execução — unitário, integrado, sistema",
+        "Ondas de execução sobrepostas, e não uma fila: testes unitários e de componente, testes integrados e de interface, e então testes de sistema e de segurança. <em>Marco: critérios de saída do teste de sistema atendidos.</em>"
+      ],
+      [
+        "Laço de triagem, correção e reteste",
+        "O laço que de fato consome o calendário — triagem diária, atribuição de severidade, ciclos de correção, reteste e impacto em regressão, e as decisões sobre defeitos postergados. <em>Marco: limiares de defeito atingidos.</em>"
+      ],
+      [
+        "UAT, regressão e prontidão para release",
+        "Teste de aceitação pelo usuário de negócio, regressão completa, execuções de desempenho e de carga, a revisão de prontidão e o aceite formal. <em>Marco: release aprovado.</em>"
+      ]
+    ],
+    callout: "A falha de cronograma mais comum em QA é tratar ambiente e massa de teste como tarefa, e não como portão. Se o ambiente está instável ou a massa não sustenta os cenários, os testadores continuam apontando horas, mas geram defeitos sobre o ambiente em vez de sobre o produto — e essas horas são irrecuperáveis. Escreva os critérios de entrada do ambiente, rode um teste de fumaça contra eles, e recuse-se a iniciar a execução enquanto não passarem. A segunda falha é planejar o laço de defeitos como folga. Correção e reteste não são custo acessório em volta do teste; na maioria dos projetos é a barra mais longa do gráfico, e deve ser desenhada como tal.",
+    customize: [
+      "Escreva critérios de entrada e de saída de verdade nas notas de cada linha de fase — taxa de aprovação, defeitos abertos por severidade, cobertura — para que os portões sejam verificáveis, e não retóricos.",
+      "Sobreponha as ondas de execução conforme a sua cadência de build; enfileirá-las ponta a ponta quase sempre superestima a duração total e subestima o risco.",
+      "Dimensione o laço de defeitos pelas suas taxas históricas de descoberta e de correção, e não por um percentual do esforço de teste.",
+      "Acrescente uma linha por interface ou sistema integrado se o teste integrado depender de parceiros que controlam os próprios ambientes.",
+      "Se a massa vier de produção, ponha o mascaramento ou a anonimização como barra própria e anterior à liberação do ambiente — sob a LGPD, copiar base de produção para um ambiente de teste com dado pessoal em claro é tratamento sem base legal, e resolver isso depois custa a fase inteira.",
+      "Antecipe o UAT por módulo se você entrega de forma incremental, em vez de num único corte.",
+      "Acrescente uma linha de congelamento de código antes da regressão, e mantenha a regressão depois dela — regressão contra build em movimento não é regressão."
+    ],
+    tips: [
+      "<strong>Faça os critérios de saída numéricos.</strong> \"Teste concluído\" não é portão; \"zero defeito de severidade 1 aberto, menos de cinco de severidade 2, 95% dos casos planejados executados\" é.",
+      "<strong>Provisione a massa antes de o desenho de testes terminar.</strong> Quem desenha descobre lacunas de dado, e o provisionamento de massa é o item de maior prazo do plano.",
+      "<strong>Faça triagem diária no pico da execução.</strong> Reunião semanal de triagem significa que um defeito pode ficar cinco dias parado antes de alguém decidir quem corrige.",
+      "<strong>Proteja a regressão do fluxo de correções.</strong> Toda correção tardia invalida parte da rodada de regressão, e é para isso que existe a linha de congelamento de código.",
+      "<strong>Acompanhe a taxa de descoberta de defeitos, e não a contagem.</strong> Taxa de descoberta caindo é o sinal honesto de que uma fase está convergindo; a contagem bruta não diz quase nada."
+    ],
+    faq: [
+      [
+        "O que são critérios de entrada e de saída num plano de testes?",
+        "Critérios de entrada são as condições que precisam ser verdadeiras para uma fase começar — ambiente estável, build implantado, massa carregada, teste de fumaça aprovado. Critérios de saída são as condições para declará-la encerrada — cobertura de execução, taxa de aprovação e defeitos abertos por severidade. Ambos devem ser numéricos, acordados antes da execução e efetivamente cobrados."
+      ],
+      [
+        "Por que as fases de teste se sobrepõem em vez de correr em sequência?",
+        "Porque os builds chegam de forma incremental. O teste integrado pode começar pelos módulos já testados unitariamente, e o UAT pode começar pelas jornadas concluídas enquanto o teste de sistema continua em outro ponto. Enfileirar as fases infla o cronograma e esconde a restrição real, que normalmente é o laço de correção e reteste."
+      ],
+      [
+        "Quanto tempo devo reservar para correção de defeitos?",
+        "Dimensione pelo seu histórico: defeitos encontrados por dia de teste, a proporção que exige correção, e o seu tempo médio de correção mais reteste. Na maioria dos projetos o laço é a barra mais longa do gráfico. Alocar um percentual fixo do esforço de teste é a forma habitual de estourar o prazo."
+      ],
+      [
+        "Posso usar dados de produção como massa de teste?",
+        "Com cuidado, e nunca em claro. A LGPD trata a cópia de base de produção para ambiente de teste como tratamento de dado pessoal, com todas as obrigações que vêm junto, e ambiente de teste costuma ter controle de acesso mais frouxo do que produção. O caminho usual é mascarar, anonimizar ou gerar massa sintética, com o mascaramento como barra própria antes da liberação do ambiente — e a decisão registrada, porque é uma das primeiras coisas perguntadas numa auditoria."
+      ],
+      [
+        "E se o ambiente de teste não estiver pronto?",
+        "Não comece a execução. Testar contra ambiente instável produz defeito de ambiente, e não defeito de produto, e o tempo é irrecuperável. O modelo faz da prontidão do ambiente um marco com portão e um teste de fumaça na frente, justamente para que essa decisão seja visível em vez de absorvida em silêncio."
+      ],
+      [
+        "Quando o UAT deve começar?",
+        "Depois de atendidos os critérios de saída do teste de sistema para o escopo que o UAT vai cobrir — e não depois de todo o teste de sistema, em toda parte, estar concluído. UAT é validação de negócio, então precisa de build estável e de massa com cara de real; rodá-lo contra um build que ainda recebe correções desperdiça o usuário de negócio, que é o recurso mais escasso do plano."
+      ],
+      [
+        "O modelo de plano de testes de QA é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

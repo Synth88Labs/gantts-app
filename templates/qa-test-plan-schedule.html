@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Test Plan Schedule Template | gantts.app</title>
+  <meta name="description" content="Free QA test plan schedule: entry and exit criteria, environment and test data readiness, overlapping test phases, defect triage loop and regression." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/templates/qa-test-plan-schedule.html" />
+  <!-- hreflang:start -->
+  <link rel="alternate" hreflang="en" href="https://gantts.app/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/qa-test-plan-schedule.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/qa-test-plan-schedule.html" />
+  <!-- hreflang:end -->
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:title" content="QA Test Plan Schedule Template" />
+  <meta property="og:description" content="Free QA test plan schedule: entry and exit criteria, environment and test data readiness, overlapping test phases, defect triage loop and regression." />
+  <meta property="og:url" content="https://gantts.app/templates/qa-test-plan-schedule.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="QA Test Plan Schedule Template" />
+  <meta name="twitter:description" content="Free QA test plan schedule: entry and exit criteria, environment and test data readiness, overlapping test phases, defect triage loop and regression." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Templates","item":"https://gantts.app/templates.html"},{"@type":"ListItem","position":3,"name":"QA Test Plan Schedule Template","item":"https://gantts.app/templates/qa-test-plan-schedule.html"}]},{"@type":"HowTo","name":"How to use the qa test plan schedule template","description":"Free QA test plan schedule: entry and exit criteria, environment and test data readiness, overlapping test phases, defect triage loop and regression.","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"name":"Write actual entry and exit criteria into the notes on each phase row ","text":"Write actual entry and exit criteria into the notes on each phase row — pass rate, open defect count by severity, coverage — so the gates are checkable rather than rhetorical."},{"@type":"HowToStep","position":2,"name":"Overlap the execution waves to match your build cadence; queueing them","text":"Overlap the execution waves to match your build cadence; queueing them end to end almost always overstates the total duration and understates the risk."},{"@type":"HowToStep","position":3,"name":"Size the defect loop from your historical defect discovery and fix rat","text":"Size the defect loop from your historical defect discovery and fix rates, not from a percentage of test effort."},{"@type":"HowToStep","position":4,"name":"Add a row per interface or integrated system if integration testing de","text":"Add a row per interface or integrated system if integration testing depends on partners who control their own environments."},{"@type":"HowToStep","position":5,"name":"Move UAT earlier per module if you release incrementally rather than i","text":"Move UAT earlier per module if you release incrementally rather than in one drop."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are entry and exit criteria in a test plan?","acceptedAnswer":{"@type":"Answer","text":"Entry criteria are the conditions that must be true before a test phase may begin — environment stable, build deployed, test data loaded, smoke test passed. Exit criteria are the conditions that must be true before it may be declared finished — execution coverage, pass rate, and open defect counts by severity. Both should be numeric, agreed before execution starts, and enforced."}},{"@type":"Question","name":"Why do test phases overlap instead of running in sequence?","acceptedAnswer":{"@type":"Answer","text":"Because builds arrive incrementally. Integration testing can start on the modules that are already unit tested, and UAT can begin on completed journeys while system testing continues elsewhere. Queueing phases end to end inflates the schedule and hides the real constraint, which is usually the fix and retest loop."}},{"@type":"Question","name":"How long should I allow for defect fixing?","acceptedAnswer":{"@type":"Answer","text":"Size it from your own history: defects found per test day, the proportion that need a fix, and your average fix-plus-retest turnaround. On most projects the loop is the longest bar on the chart. Allocating a flat percentage of test effort is the usual way schedules slip."}},{"@type":"Question","name":"What if the test environment is not ready?","acceptedAnswer":{"@type":"Answer","text":"Do not start execution. Testing against an unstable environment produces environment defects, not product defects, and the time is unrecoverable. The template makes environment readiness a gated milestone with a smoke test in front of it precisely so that this decision is visible rather than absorbed silently."}},{"@type":"Question","name":"When should UAT start?","acceptedAnswer":{"@type":"Answer","text":"After the system test exit criteria are met for the scope UAT will cover — not after all system testing everywhere is done. UAT is business validation, so it needs a stable build and real-shaped data; running it against a build still receiving fixes wastes business users, who are the scarcest resource in the plan."}},{"@type":"Question","name":"Is the QA test plan template free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/" aria-label="gantts.app home">
+        <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="30" height="30" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/app.html">Gantt Maker</a>
+        <a href="/templates.html">Templates</a>
+        <a href="/blog/">Guides</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+          <option value="/templates/qa-test-plan-schedule.html" selected>English</option>
+          <option value="/es/templates/qa-test-plan-schedule.html">Español</option>
+          <option value="/fr/templates/qa-test-plan-schedule.html">Français</option>
+          <option value="/de/templates/qa-test-plan-schedule.html">Deutsch</option>
+          <option value="/pt/templates/qa-test-plan-schedule.html">Português</option>
+          <option value="/zh/templates/qa-test-plan-schedule.html">简体中文</option>
+        </select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/app.html">Open the app</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Masthead at the full site width, preview beside the copy. The page
+       used to run everything down a 724px column while the nav and CTA sat
+       at 1200px, so it stepped in and back out; and the 480px preview was
+       upscaled to fill a column still too narrow for it. Prose stays
+       narrow below — 1200px of running text is ~113 characters. -->
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/">Home</a> › <a href="/templates.html">Templates</a> › QA Test Plan Schedule Template</div>
+        <h1>QA Test Plan Schedule Template</h1>
+        <p class="lead">A free <strong>QA test plan schedule template</strong> whose spine is entry and exit criteria rather than a queue of phases. Two things gate everything: a stable test environment and provisioned test data. After that the phases overlap — integration testing starts while unit testing is still finishing, UAT begins on the modules that are ready — and the calendar is consumed less by test execution than by the defect triage, fix and retest loop that runs underneath all of it.</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/qa-test-plan-schedule.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/qa-test-plan-schedule.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/qa-test-plan-schedule.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/app.html?csv=qa-test-plan-schedule">✎ Edit online free</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/qa-test-plan-schedule.svg" alt="Preview of the qa test plan schedule template showing phases across a timeline" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">What's included</h2>
+      <p>Notice that the execution bars overlap and that the defect loop runs the full length of them. That is what a real test schedule looks like:</p>
+      <ul>
+        <li><strong>Test planning &amp; criteria</strong> — Test strategy, scope and risk-based prioritisation, the entry and exit criteria for each phase written down before execution starts, estimation and the resourcing plan. <em>Milestone: test plan and criteria approved.</em></li>
+        <li><strong>Environment &amp; test data readiness</strong> — The real gate. Environment build, configuration and integration stubs, test data provisioning and masking, access and accounts, and a smoke test that proves the environment before anyone tests in it. <em>Milestone: environment entry criteria met.</em></li>
+        <li><strong>Test design &amp; automation</strong> — Test condition and case design, traceability back to requirements, the automation framework, regression suite build and the performance test scripts. <em>Milestone: test cases ready for execution.</em></li>
+        <li><strong>Execution — unit, integration, system</strong> — Overlapping execution waves rather than a queue: unit and component testing, integration and interface testing, then system and security testing. <em>Milestone: system test exit criteria met.</em></li>
+        <li><strong>Defect triage, fix &amp; retest loop</strong> — The loop that actually consumes the calendar — daily triage, severity assignment, fix cycles, retest and regression impact, and the deferred defect decisions. <em>Milestone: defect thresholds met.</em></li>
+        <li><strong>UAT, regression &amp; release readiness</strong> — User acceptance testing by business users, full regression, performance and load runs, the release readiness review and sign-off. <em>Milestone: release sign-off.</em></li>
+      </ul>
+
+      <div class="callout">The most common schedule failure in QA is treating environment and test data as a task rather than a gate. If the environment is unstable or the data does not support the scenarios, testers still log time but generate defects about the environment rather than the product — and those hours are unrecoverable. Write the environment entry criteria down, run a smoke test against them, and refuse to start execution until they pass. The second failure is planning the defect loop as slack. Fix and retest is not overhead around testing; on most projects it is the single longest bar on the chart, and it should be drawn as one.</div>
+
+      <h2 id="customize">How to customize it</h2>
+      <ol>
+        <li>Write actual entry and exit criteria into the notes on each phase row — pass rate, open defect count by severity, coverage — so the gates are checkable rather than rhetorical.</li>
+        <li>Overlap the execution waves to match your build cadence; queueing them end to end almost always overstates the total duration and understates the risk.</li>
+        <li>Size the defect loop from your historical defect discovery and fix rates, not from a percentage of test effort.</li>
+        <li>Add a row per interface or integrated system if integration testing depends on partners who control their own environments.</li>
+        <li>Move UAT earlier per module if you release incrementally rather than in one drop.</li>
+        <li>Add a code freeze row before regression, and keep regression after it — regression against a moving build is not regression.</li>
+      </ol>
+
+      <h2 id="tips">Scheduling tips</h2>
+      <ul>
+        <li><strong>Make exit criteria numeric.</strong> "Testing complete" is not a gate; "zero open severity 1, fewer than five severity 2, 95% of planned cases executed" is.</li>
+        <li><strong>Provision test data before test design finishes.</strong> Designers discover data gaps, and data provisioning has the longest lead time of anything in the plan.</li>
+        <li><strong>Triage daily during peak execution.</strong> A weekly triage meeting means a defect can sit five days before anyone decides who fixes it.</li>
+        <li><strong>Protect regression from the fix stream.</strong> Every late fix invalidates part of the regression run, which is why the code freeze row exists.</li>
+        <li><strong>Track defect discovery rate, not defect count.</strong> A falling discovery rate is the honest signal that a phase is converging; a raw count tells you almost nothing.</li>
+      </ul>
+
+      <h2 id="related">Related templates</h2>
+      <ul>
+        <li><a href="/templates/software-development.html">Software Development Gantt Chart Template</a></li>
+        <li><a href="/templates/sprint.html">Free Sprint Planning Gantt Chart Template</a></li>
+        <li><a href="/templates/mobile-app-launch-plan.html">Mobile App Launch Plan Template</a></li>
+        <li><a href="/templates/website-redesign-project-plan.html">Website Redesign Project Plan Template</a></li>
+        <li><a href="/templates/data-migration-project-plan.html">Data Migration Project Plan Template</a></li>
+        <li><a href="/templates.html">Browse all Gantt chart templates</a></li>
+      </ul>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq">
+        <details open><summary>What are entry and exit criteria in a test plan?</summary><p>Entry criteria are the conditions that must be true before a test phase may begin — environment stable, build deployed, test data loaded, smoke test passed. Exit criteria are the conditions that must be true before it may be declared finished — execution coverage, pass rate, and open defect counts by severity. Both should be numeric, agreed before execution starts, and enforced.</p></details>
+        <details><summary>Why do test phases overlap instead of running in sequence?</summary><p>Because builds arrive incrementally. Integration testing can start on the modules that are already unit tested, and UAT can begin on completed journeys while system testing continues elsewhere. Queueing phases end to end inflates the schedule and hides the real constraint, which is usually the fix and retest loop.</p></details>
+        <details><summary>How long should I allow for defect fixing?</summary><p>Size it from your own history: defects found per test day, the proportion that need a fix, and your average fix-plus-retest turnaround. On most projects the loop is the longest bar on the chart. Allocating a flat percentage of test effort is the usual way schedules slip.</p></details>
+        <details><summary>What if the test environment is not ready?</summary><p>Do not start execution. Testing against an unstable environment produces environment defects, not product defects, and the time is unrecoverable. The template makes environment readiness a gated milestone with a smoke test in front of it precisely so that this decision is visible rather than absorbed silently.</p></details>
+        <details><summary>When should UAT start?</summary><p>After the system test exit criteria are met for the scope UAT will cover — not after all system testing everywhere is done. UAT is business validation, so it needs a stable build and real-shaped data; running it against a build still receiving fixes wastes business users, who are the scarcest resource in the plan.</p></details>
+        <details><summary>Is the QA test plan template free?</summary><p>Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Plan it online — free</h2>
+      <p>Open this template in the editor, drag the bars to fit your dates, and export to PDF, Excel or PowerPoint. No account, no watermark.</p>
+      <a class="btn btn-white btn-lg" href="/app.html?csv=qa-test-plan-schedule">Open the free editor</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/" aria-label="gantts.app home">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>The free Gantt chart maker that runs in your browser. No account, no upload — your plan stays on your machine.</p>
+          <a class="footer-cta" href="/app.html">Open the Gantt maker →</a>
+          <p class="footer-byline">A project by <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Templates</h4>
+          <a href="/templates.html">All templates</a>
+          <a href="/templates/excel.html">Excel</a>
+          <a href="/templates/powerpoint.html">PowerPoint</a>
+          <a href="/templates/construction.html">Construction</a>
+          <a href="/templates/project-management.html">Project management</a>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href="/blog/">All guides</a>
+          <a href="/blog/what-is-a-gantt-chart.html">What is a Gantt chart?</a>
+          <a href="/blog/critical-path-method.html">Critical path method</a>
+          <a href="/blog/gantt-chart-dependencies.html">Dependency types</a>
+          <a href="/blog/gantt-chart-mistakes.html">Common mistakes</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/terms.html">Terms of use</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/accessibility.html">Accessibility</a>
+          <a href="https://github.com/Synth88Labs/gantts-app" class="footer-ext">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Free forever, no sign up.</span>
+        <span>Built as a static site — nothing you plan leaves your browser.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=25"></script>
+</body>
+</html>

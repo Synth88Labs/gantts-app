@@ -5307,6 +5307,803 @@ const T = {
       ]
     ]
   },
+  'tunnel-construction-schedule': {
+    card: "Planfeststellung, TVM-Beschaffung, Startschacht, Vortrieb, Durchschlag, Ausbau.",
+    h1: "Terminplan für den Tunnelbau",
+    metaTitle: "Tunnelbau — Terminplan",
+    metaDesc: "Kostenloser Terminplan für den Tunnelbau: Planfeststellung, TVM-Fertigung, Startschacht, Vortriebsleistung, Querschläge, Durchschlag und Ausbau.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Tunnelbau</strong>, die um die Maschine herum aufgebaut ist und nicht um Phasen. Ausschreibung, Fertigung, Werksabnahme und Transport der Tunnelvortriebsmaschine als lange Vorlaufzeit, die beginnt, bevor der erste Spatenstich gesetzt ist; ein Startschacht, der fertig sein muss und nicht fast fertig, um sie aufzunehmen; eine Vortriebsleistung, die sich mit dem Baugrund ändert; Tübbingversorgung und Ausbruchtransport als Dauerleistungen, die den Vortrieb takten; danach Durchschlag, Innenschale und die Lüftungs- und Brandschutztechnik. Laden Sie sie für eine Lenkungskreisvorlage herunter oder öffnen Sie sie online und tragen Sie Ihre eigenen Meter pro Woche ein.",
+    intro: "Ein Tunnelprojekt ist keine Abfolge von Gewerken. Es ist eine Maschine, die sich mit der Geschwindigkeit vorwärtsbewegt, die der Baugrund zulässt, und alles andere ist darauf ausgerichtet, sie in Bewegung zu halten. So ist die Vorlage gegliedert:",
+    phases: [
+      [
+        "Genehmigung, Baugrunderkundung und Vergabe",
+        "Bohrungen und das geotechnische Gutachten als vertragliche Baugrundbeschreibung, Trassierung und Bemessung der Schale, das Planfeststellungsverfahren mit Umweltverträglichkeitsprüfung und Erörterungstermin, wasserrechtliche Erlaubnis für Grundwasserhaltung und Unterquerungen sowie die Vergabe der Vortriebsmaschine, die jeden nachgelagerten Termin festlegt. <em>Meilensteine: Planfeststellungsbeschluss bestandskräftig, TVM beauftragt.</em>"
+      ],
+      [
+        "Startschacht und Baustelleneinrichtung",
+        "Baustelleneinrichtungsfläche, Schlitzwände, Schachtaushub, Sohlplatte sowie Widerlager und Anfahrblock — dazu die Tübbingproduktion, die der Maschine am ersten Tag bereits voraus sein muss, und die Bestellung des SiGeKo mit dem Sicherheits- und Gesundheitsschutzplan. <em>Meilenstein: Startschacht bereit zur Aufnahme der TVM.</em>"
+      ],
+      [
+        "Fertigung, Lieferung und Montage der TVM",
+        "Auslegung des Schneidrads auf den erwarteten Baugrund, Fertigung, Werksabnahme beim Hersteller, Transport in Teilen, Absenken in den Schacht und untertägige Montage. <em>Meilenstein: TVM anfahrbereit.</em>"
+      ],
+      [
+        "Vortrieb",
+        "Anfahren durch die Weichgelenkdichtung, die ersten Hundert Meter mit Einarbeitungskurve, Dauervortrieb durch wechselnden Baugrund, ein Druckluftbetrieb für den Werkzeugwechsel, die Flussunterquerung sowie durchgehend Setzungsmessung, Tübbinglieferung und Ausbruchtransport. <em>Meilenstein: Durchschlag.</em>"
+      ],
+      [
+        "Querschläge und Restarbeiten",
+        "Baugrundverbesserung und Ausbruch der Querschläge, während die Maschine noch vor Ihnen liegt, Demontage und Bergung der TVM, Ringspaltverpressung, Ringvermessung und Innenschale. <em>Meilenstein: Rohbau des Tunnels fertig.</em>"
+      ],
+      [
+        "Ausbau, Technik und Inbetriebnahme",
+        "Fluchtweg und Entwässerung, Kabeltrassen, Lüfter und Kanäle, Löschwasserleitung und Brandbekämpfungsanlage, Strom und Beleuchtung, Kommunikation und Leittechnik, dann ein Heißrauchversuch mit Feuerwehr und Rettungsdiensten, das Sicherheitskonzept und die förmliche Abnahme nach VOB/B. <em>Meilenstein: Übergabe an den Betrieb.</em>"
+      ]
+    ],
+    callout: "Die TVM ist der Terminplan. Wer sie zu spät bestellt, holt die Zeit danach nicht mehr auf: Konstruktion, Fertigung, Werksabnahme und Transport laufen bei einer maßgefertigten Maschine zwölf bis achtzehn Monate, und sie lässt sich nicht in einen unfertigen Schacht absenken. Die beiden Balken, die Tunnelprojekte ruinieren, sind eine zu spät beginnende Fertigung und ein Startschacht, der nach Ankunft der Maschine fertig wird — eine in Teilen an der Oberfläche liegende TVM kostet jeden Tag Geld und bringt nichts. Beide gehören am ersten Tag ins Diagramm und dürfen nie verrutschen.",
+    customize: [
+      "Leiten Sie die Vortriebsleistung aus dem geotechnischen Gutachten ab, nicht aus der besten Woche Ihrer letzten Baustelle — und teilen Sie den Vortrieb in getrennte Balken je Baugrundabschnitt, damit ein schwieriger Abschnitt sichtbar wird statt im Mittelwert zu verschwinden.",
+      "Geben Sie den ersten Hundert Metern einen eigenen kurzen, langsamen Balken. Jede TVM hat eine Einarbeitungskurve, in der sich Mannschaft, Verpressung und Ausbruchförderung einspielen, und wer sie mit voller Leistung plant, plant einen frühen Verzug.",
+      "Ergänzen Sie einen Balken für Druckluftarbeiten überall dort, wo das Gutachten abrasiven Baugrund erwartet — Werkzeugwechsel sind planbare Vorgänge mit bekannter Dauer, und erst die Entdeckung mitten im Vortrieb macht daraus einen Monat.",
+      "Bilden Sie die Tübbinglieferung als durchlaufenden Balken über die gesamte Vortriebslänge ab und prüfen Sie die Leistung des Fertigteilwerks gegen Ihre Spitzenwoche, nicht gegen den Durchschnitt.",
+      "Zeigen Sie Ausbruchtransport und Entsorgungsweg ausdrücklich. Eine volle Bodenmiete oder eine entzogene Deponiegenehmigung stoppt die Maschine so wirksam wie ein Maschinenschaden.",
+      "Setzen Sie Planfeststellungsbeschluss, TVM-Auftrag, Startschacht fertig, TVM anfahrbereit und Durchschlag als Meilensteine — diese fünf Termine sind das gesamte Projekt in Kurzform."
+    ],
+    tips: [
+      "<strong>Bestellen Sie die Maschine, bevor die übrige Planung fertig ist.</strong> Die Schneidradkonfiguration hängt vom Baugrund ab, nicht von der Architektur der Stationen, und das Baugrundgutachten reicht in der Regel aus, um lange vor Abschluss der übrigen Planung zu vergeben.",
+      "<strong>Behandeln Sie den Startschacht als das, was er ist: der kritische Pfad.</strong> Schlitzwände, Aushub, Sohlplatte und Widerlager sind vollständig sequenziell und liegen im weichen Baugrund; das Ende dieser Kette lässt sich nicht stauchen, um einen späten Beginn aufzufangen.",
+      "<strong>Planen Sie Querschläge nie als Lückenfüller hinter der Maschine.</strong> Sie brauchen Baugrundverbesserung, sie sind auf den meisten Tunnelbaustellen die Tätigkeit mit dem höchsten Risiko, und sie hängen davon ab, dass die Ringe in diesem Abschnitt fertig und verpresst sind.",
+      "<strong>Lassen Sie die Setzungsmessung von vor dem Anfahren bis weit nach der Vortriebspassage laufen.</strong> Nullmessungen nach Vortriebsbeginn sind wertlos, und eine Hebungsinjektion muss instrumentiert sein, bevor sie gebraucht wird.",
+      "<strong>Der Durchschlag ist nicht das Ende.</strong> Bei den meisten Projekten dauern Ausbau, Lüftung und Brandschutztechnik nach dem Durchschlag länger als erwartet, und Heißrauchversuch und Sicherheitsnachweis liegen auf dem kritischen Pfad zur Inbetriebnahme.",
+      "<strong>Stimmen Sie den Brandversuch Monate im Voraus mit Feuerwehr und Rettungsdiensten ab.</strong> Der Heißrauchversuch braucht ihre Anwesenheit, und deren Kalender gehört Ihnen nicht — ein verpasster Termin schiebt die Übergabe um Wochen, obwohl der Tunnel körperlich fertig ist."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau eines Tunnels?",
+        "Eine einröhrige innerstädtische Tunnelstrecke von wenigen Kilometern läuft üblicherweise 30 bis 40 Monate vom Baurecht bis zur Übergabe; ungefähr diesen Zeitraum nutzt die Vorlage. Die Streuung steckt vorn in der Lieferzeit der TVM und in der Mitte im Baugrund."
+      ],
+      [
+        "Wie früh muss die Vortriebsmaschine bestellt werden?",
+        "Konstruktion, Fertigung, Werksabnahme und Transport dauern bei einer maßgefertigten Maschine typischerweise zwölf bis achtzehn Monate, und die untertägige Montage kommt hinzu. Der Auftrag muss erteilt werden, während der Schacht noch geplant wird, nicht wenn er fertig ist."
+      ],
+      [
+        "Wie plane ich eine Vortriebsleistung, die ich nicht vorhersagen kann?",
+        "Teilen Sie den Vortrieb anhand des geotechnischen Gutachtens in Balken je Baugrundabschnitt und geben Sie jedem seine eigene Leistung. So zeigt sich ein langsamer Abschnitt als langsamer Abschnitt, statt in einem gemittelten Balken zu verschwinden."
+      ],
+      [
+        "Wie lange dauert das Planfeststellungsverfahren?",
+        "Es ist bei Tunnelvorhaben regelmäßig der längste Vorgang vor Baubeginn: Antragsunterlagen, Umweltverträglichkeitsprüfung, Auslegung, Einwendungen und Erörterungstermin brauchen zusammen leicht ein bis mehrere Jahre, und der Beschluss kann beklagt werden. Planen Sie es als eigene Phase mit eigener verantwortlicher Person und legen Sie die wasserrechtliche Erlaubnis für Grundwasserhaltung und Gewässerunterquerungen als eigenen Balken daneben."
+      ],
+      [
+        "Warum wird der Vortrieb zu Beginn langsamer geplant?",
+        "Jeder Vortrieb hat eine Einarbeitungskurve. Mannschaft, Ringbauzyklus, Verpressung und Ausbruchförderung brauchen einige Hundert Meter, bis sie eingespielt sind, und die ersten Wochen mit voller Leistung zu planen ist ein häufiger früher Verzug."
+      ],
+      [
+        "Ist die Vorlage für den Tunnelbau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'semiconductor-fab-construction-schedule': {
+    card: "Rohbau, Reinraumprotokoll, Medienversorgung, Anlagenanschluss, Qualifizierung.",
+    h1: "Terminplan für den Bau einer Halbleiterfabrik",
+    metaTitle: "Halbleiterfabrik — Bauterminplan",
+    metaDesc: "Kostenloser Terminplan für den Fab-Bau: Rohbau, Umstellung auf Reinraumprotokoll, Reinstwasser und Gase, Anlagenanschluss, Qualifizierung, erster Wafer.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Bau einer Halbleiterfabrik</strong>, die das Reinraumprotokoll dorthin setzt, wo es hingehört: in das Scharnier des Projekts. Standort, Genehmigungen und eine schwingungsentkoppelte Bodenplatte; Rohbau, Hülle und Reinraumraster; Reinstwasser, Grund- und Spezialgase, Abluft und Abgasreinigung, gebaut auf die Anschlusspunkte hin; dann eine harte Umstellung, mit der die Baustelle aufhört, eine Baustelle zu sein, und eine kontrollierte Umgebung wird, gefolgt von Anlageneinbringung, Anschluss, Qualifizierung und erstem Silizium. Laden Sie sie für eine Vorstandsvorlage herunter oder ordnen Sie die Anlagenwellen online Ihrer eigenen Medienverfügbarkeit zu.",
+    intro: "Eine Fab ist nicht fertig, wenn das Gebäude fertig ist. Sie ist fertig, wenn Anlagen qualifiziert sind und Wafer laufen, und alles zwischen diesen beiden Punkten steht unter einem Protokoll. Die Vorlage folgt diesem Übergang:",
+    phases: [
+      [
+        "Standort, Genehmigungen und Grundbau",
+        "Seismik- und Schwingungsuntersuchung, immissionsschutzrechtliche Genehmigung und Umgang mit Gefahrstoffen nach Störfallrecht, das Auslegungskonzept und das Einfrieren der Anlagenliste, aus der alles andere dimensioniert wird, Bestellung langlaufender Medientechnik sowie Gründung und Waffelplatte. <em>Meilensteine: Anlagenliste eingefroren, Genehmigungen erteilt.</em>"
+      ],
+      [
+        "Rohbau und Reinraumhülle",
+        "Stahlbau und Gebäudehülle, Untergeschoss und Durchbrüche, Regendichtheit, danach Wand- und Deckenraster des Reinraums, Doppelboden und Filterdecke. <em>Meilenstein: Gebäude regendicht.</em>"
+      ],
+      [
+        "Medienversorgung und Abgasreinigung",
+        "Reinstwasseranlage und Spülung des Kreislaufs, Gasehof für Grund- und Spezialgase, Ventilschränke und Dichtheitsprüfung, Abluft und Wäscher sowie Zuschaltung der Umspannstation — alles auf die Anschlusspunkte hin getrieben, nicht auf ein allgemeines „fertig“. <em>Meilenstein: Medien an den Anschlusspunkten verfügbar.</em>"
+      ],
+      [
+        "Reinraumabnahme und Protokollumstellung",
+        "Die Umstellung des Bauprotokolls, Schleusen und Umkleiden, Verfahren für die Materialeinschleusung, Luftmengenabgleich und Nachweis der Verdrängungsströmung, Partikelzählung und Klassifizierung nach ISO 14644, dazu Schwingungs- und EMV-Messung. <em>Meilenstein: Reinraum abgenommen.</em>"
+      ],
+      [
+        "Anlageneinbringung, Anschluss und Qualifizierung",
+        "Transportkonzept und Einbringreihenfolge, Wellen für Litho, Ätzen, Beschichtung und Messtechnik, Anschluss an Gase, Abluft und Reinstwasser, Installationsqualifizierung durch den Hersteller und anschließende Betriebsqualifizierung. <em>Meilenstein: Anlagenqualifizierung abgeschlossen.</em>"
+      ],
+      [
+        "Prozessqualifizierung und erstes Silizium",
+        "Anbindung von MES und Automatisierung, Einspielen der Rezepte, erster Wafer durch ein einzelnes Modul, das Pilotlos über die gesamte Prozesskette, Ausbeutelernkurve und Kundenqualifizierung. <em>Meilensteine: erstes Silizium, Freigabe für die Serienfertigung.</em>"
+      ]
+    ],
+    callout: "Es gibt einen Termin in einem Fab-Projekt, der für alle die Regeln ändert: die Umstellung auf das Reinraumprotokoll. Davor ist es eine Baustelle mit Helm und Schweißgerät. Danach ist jede Person eingekleidet, jedes Material wird durch eine Schleuse gewischt, und die Leistung je Gewerk bricht deutlich ein. Planen Sie die Arbeit beiderseits dieser Linie bewusst — alles, was schmutzig fertig werden kann, muss davor fertig sein, und jeder Balken, der sie kreuzt, braucht eine längere Dauer als dieselbe Arbeit außerhalb. Projekte, die das als gewöhnliche Übergabe behandeln, lernen es auf der Baustelle neu und verlieren dabei Monate.",
+    customize: [
+      "Frieren Sie die Anlagenliste früh ein und setzen Sie das als Meilenstein. Jede Mediengröße, jeder Durchbruch und jede Anschlusszeichnung leitet sich daraus ab, und ein später Anlagentausch läuft durch die gesamte Gebäudeplanung.",
+      "Ordnen Sie die Anlagenwellen Ihrer eigenen Medienverfügbarkeit zu und nicht den Lieferterminen der Hersteller. Eine Anlage, die vor ihren Gasen und ihrer Abluft ankommt, belegt Fläche und qualifiziert nichts.",
+      "Geben Sie dem Reinstwasser nach der Montage einen eigenen Balken für Spülung und Leitfähigkeitsnachweis. Eine gebaute Anlage ist nicht dasselbe wie ein Kreislauf, der sauber genug ist, um eine Prozessanlage anzuschließen.",
+      "Trennen Sie Installations- und Betriebsqualifizierung. Dass der Hersteller das Hochfahren nachweist, ist ein anderer Vorgang mit anderen Leuten als der Nachweis Ihres Prozessteams, dass die Anlage eine stabile Regelgrenze hält.",
+      "Nehmen Sie Protokollumstellung, Einkleideverfahren und Materialeinschleusung als eigene Balken auf. Das sind Vorgänge mit Dauer, keine Rundmail.",
+      "Legen Sie Schwingungs-, EMV- und Schallmessung vor die Einbringung der Lithografieanlagen. Ein Schwingungsproblem nach dem Aufstellen eines Steppers zu finden, ist die teuerste Entdeckung in diesem Plan."
+    ],
+    tips: [
+      "<strong>Der echte Meilenstein ist der Anschluss, nicht die Lieferung.</strong> Verfolgen Sie Anlagen nach dem Tag, an dem sie an laufende Medien angeschlossen und bestromt sind — eine Halle voller gelieferter Anlagen ist für den Qualifizierungsplan wertlos.",
+      "<strong>Bauen Sie die Medien auf einen Anschlusspunkttermin hin.</strong> „Reinstwasseranlage fertig“ und „Reinstwasser am Anschlusspunkt der Lithozelle mit spezifikationsgerechtem Widerstand verfügbar“ liegen Monate auseinander, und nur das Zweite gibt eine Anlage frei.",
+      "<strong>Schützen Sie den Terminplan der Abgasreinigung.</strong> Abluft und Wäscher sind unscheinbar und werden regelmäßig zurückgestellt, und ohne sie lässt sich keine gasführende Anlage qualifizieren — sie liegen still auf dem kritischen Pfad zum ersten Silizium.",
+      "<strong>Messen Sie Schwingungen unter realen Bedingungen.</strong> Eine Messung vor dem Anlauf von Ventilatoren und Pumpen bildet nicht die Umgebung ab, in der die Lithoanlagen später stehen.",
+      "<strong>Planen Sie die Ausbeutelernkurve nicht als festen Balken.</strong> Die Defektdichte sinkt entlang einer teilweise experimentellen Kurve; geben Sie ihr ein realistisches Fenster und eine Reserve statt eines Termins, den der Businessplan gern hätte.",
+      "<strong>Beginnen Sie mit MES und Automatisierung während der Anlagenmontage, nicht danach.</strong> Rezept- und Materialflussanbindung ist Software mit eigenem Fehlerzyklus und ein häufiger Blocker beim ersten Pilotlos."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau einer Halbleiterfabrik?",
+        "Eine Fab auf der grünen Wiese läuft üblicherweise 28 bis 36 Monate von der Genehmigung bis zur Serienfertigung; ungefähr diesen Zeitraum nutzt die Vorlage. Rohbau und Medien sind gut planbar, die Streuung sitzt in Anlagenqualifizierung und Ausbeutelernkurve."
+      ],
+      [
+        "Was ist die Umstellung auf das Reinraumprotokoll?",
+        "Der Punkt, an dem das Gebäude aufhört, Baustelle zu sein, und zu einer kontrollierten Umgebung wird. Einkleiden, Schleusen, Wischeinschleusung von Material und eingeschränkte Werkzeuge beginnen, und die Leistung der Gewerke für alle Restarbeiten sinkt deutlich."
+      ],
+      [
+        "Warum steht der Anlagenanschluss auf dem kritischen Pfad und nicht die Lieferung?",
+        "Eine Anlage lässt sich erst qualifizieren, wenn sie spezifikationsgerecht an Reinstwasser, Prozessgase, Abluft und Strom angeschlossen ist. Die Lieferung ist ein Logistikvorgang; der Anschluss hängt daran, dass die Medien an genau diesem Punkt der Fab fertig sind."
+      ],
+      [
+        "Welche Genehmigungen bestimmen den Vorlauf in Deutschland?",
+        "Bei einer Fab ist es regelmäßig die immissionsschutzrechtliche Genehmigung nach dem Bundes-Immissionsschutzgesetz, weil Prozessgase, Abluft und Abwasser die Anlage genehmigungsbedürftig machen, häufig mit Umweltverträglichkeitsprüfung und Öffentlichkeitsbeteiligung. Sie läuft parallel zur Baugenehmigung und braucht einen eigenen Balken mit realistischer Dauer, nicht eine Zeile am Rand."
+      ],
+      [
+        "Wann ist eine Fab tatsächlich „eröffnet“?",
+        "Bei Anlagenqualifizierung und erstem Silizium, nicht bei Baufertigstellung. Die Vorlage behandelt Regendichtheit und Reinraumabnahme als Zwischentore und reserviert die Hauptmeilensteine für Qualifizierung und das erste vollständige Pilotlos."
+      ],
+      [
+        "Wie viel Reserve brauche ich für die Ausbeutelernkurve?",
+        "Genug, dass die Defektdichtekurve experimentell sein darf statt terminiert. Die meisten Projekte unterschätzen diese Phase, weil sie die einzige ist, in der die Antwort vorher nicht feststeht; ein eigener sichtbarer Balken ist besser, als die davorliegenden aufzupolstern."
+      ],
+      [
+        "Ist die Vorlage für den Fab-Bau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'oil-gas-pipeline-construction-schedule': {
+    card: "Trasse, Genehmigung, Grunddienstbarkeiten, Zeitfenster, Schweißkolonne, Druckprobe.",
+    h1: "Terminplan für den Bau einer Öl- und Gaspipeline",
+    metaTitle: "Pipelinebau — Terminplan",
+    metaDesc: "Kostenloser Terminplan für den Pipelinebau: Planfeststellung, Grunddienstbarkeiten, Bauzeitenfenster, Schweißkolonne, Kreuzungen, Druckprobe, Einbindung.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Bau einer Öl- und Gaspipeline</strong>, geordnet nach den beiden Dingen, die die Termine wirklich setzen: Grund und Jahreszeit. Trassenerkundung, Umweltverträglichkeitsprüfung, Planfeststellung und der Erwerb von Grunddienstbarkeiten am Anfang; Brut- und Schonzeiten sowie die wasserrechtlich zugelassenen Bauzeitenfenster für Gewässerquerungen als feste Randbedingungen; die Rohrleitungskolonne als wandernde Fertigungsstraße aus Auslegen, Graben, Schweißen, Durchstrahlungsprüfung, Umhüllen, Einlegen und Verfüllen; Kreuzungen und Stationen parallel; danach Druckprobe, Einbindenähte und Inbetriebnahme. Laden Sie sie für den Lenkungskreis herunter oder tragen Sie online Ihre eigenen Fenstertermine ein.",
+    intro: "Eine Pipeline wird von einer Fertigungsstraße gebaut, die durch einen Korridor wandert, der Ihnen noch nicht gehört, und zwar innerhalb von Jahreszeiten, die Sie nicht steuern. Die Vorlage hält beide Zwänge sichtbar:",
+    phases: [
+      [
+        "Trassenwahl, Genehmigungen und Wegerechte",
+        "Trassenerkundung und Variantenvergleich, Umweltverträglichkeitsprüfung und artenschutzrechtliche Prüfung, das Planfeststellungsverfahren mit Erörterungstermin, wasserrechtliche Erlaubnis für die Gewässerquerungen, Verhandlung mit Grundstückseigentümern und Eintragung der Grunddienstbarkeiten sowie die archäologische Freigabe. <em>Meilensteine: Wegerechte gesichert, Baurecht erteilt.</em>"
+      ],
+      [
+        "Rohrbeschaffung und Logistik",
+        "Bestellung und Walzung der Leitungsrohre im Werk, Werksumhüllung und Vorbereitung der Schweißenden sowie der Transport per Bahn und Lkw auf die Lagerplätze entlang der Trasse. <em>Meilenstein: Rohre auf dem Arbeitsstreifen.</em>"
+      ],
+      [
+        "Bauvorbereitung und Zeitfenster",
+        "Eintragen der Brut- und Schonzeiten sowie der Bauzeitenfenster in den Plan, Ertüchtigung von Zufahrten und Brücken, Freimachen und Planieren des Arbeitsstreifens, Oberbodenabtrag und Erosionsschutz, Aufstellung des SiGe-Plans und Mobilisierung der Kolonne. <em>Meilenstein: Kolonne bereit zum Auslegen.</em>"
+      ],
+      [
+        "Rohrleitungskolonne auf der Strecke",
+        "Die Fertigungsstraße selbst — Auslegen, Graben, Feldbögen und Ausrichten, Schweißen, Durchstrahlungs- und Ultraschallprüfung, Nachumhüllung der Rundnähte mit Porenprüfung, Einlegen, Bettung, Verfüllen und kathodischer Korrosionsschutz. <em>Meilenstein: Streckenschweißung abgeschlossen.</em>"
+      ],
+      [
+        "Kreuzungen und Sonderbauwerke",
+        "Horizontalspülbohrung unter dem großen Fluss, Gewässerquerungen im zugelassenen Bauzeitenfenster, Kreuzungen von Straßen, Bahnstrecken und Fremdleitungen, Streckenschieberstationen und die Pump- oder Verdichterstationen. <em>Meilenstein: Bauzeitenfenster geschlossen.</em>"
+      ],
+      [
+        "Druckprobe, Einbindung und Inbetriebnahme",
+        "Abschnittstrennung, Füllen und Aufdrücken, Haltezeit und Reparaturen nach DVGW-Regelwerk, Entleeren und Trocknen, Einbindenähte, Leittechnik und Leckerkennung, Spülen und Produkteinführung sowie Rekultivierung. <em>Meilensteine: Druckprobe bestanden, Leitung in Betrieb.</em>"
+      ]
+    ],
+    callout: "Bauzeitenfenster sind keine Risiken, sie sind Wände. Ein wasserrechtlich zugelassenes Fenster für Arbeiten im Gewässer kann sechs Wochen im Jahr betragen, eine artenschutzrechtliche Brutzeitregelung kann das Freimachen eine Saison lang vollständig stoppen, und keines von beidem verhandelt. Tragen Sie jedes Fenster in den Plan ein, bevor Sie irgendetwas anderes sequenzieren, und bauen Sie das Kolonnenprogramm so, dass die Querungen darin landen. Ein Fenster um eine Woche zu verfehlen kostet keine Woche, sondern ein Jahr, weil die nächste Öffnung zwölf Monate entfernt ist.",
+    customize: [
+      "Tragen Sie zuerst Ihre eigenen Bauzeitenfenster und Schonzeiten als feste Balken ein und ordnen Sie die Kolonne darum herum an, nicht umgekehrt.",
+      "Teilen Sie die Strecke in je einen Satz Balken pro Kolonne, wenn Sie mit mehreren Mannschaften arbeiten, und geben Sie jeder Kolonne ihre eigene Leistung in Metern oder Nähten pro Tag.",
+      "Bilden Sie Schweißen, Prüfung und Umhüllung als überlappende Balken ab, die einander die Trasse entlang nachlaufen — es ist eine wandernde Fertigungsstraße und nicht drei aufeinanderfolgende Phasen, und eine sequenzielle Darstellung verbirgt, wo der Engpass wirklich sitzt.",
+      "Ergänzen Sie einen Balken für Nahtreparatur und Wiederholungsprüfung. Die Annahme, jede Naht bestehe die Durchstrahlungsprüfung beim ersten Mal, ist der häufigste Optimismusfehler im Pipelinebau.",
+      "Geben Sie dem Erwerb der Grunddienstbarkeiten einen langen Auslauf und eine Reserve für Verweigerer. Ein einziger Eigentümer, der nicht unterschreibt, hält eine sonst startbereite Kolonne auf.",
+      "Zerlegen Sie die Druckprobe in Abschnitte, die zu Ihren Prüfarmaturen passen, und ergänzen Sie nach der Haltezeit einen Balken für Reparatur und Wiederholungsprüfung; ein durchgefallener Abschnitt muss gefunden, herausgetrennt, neu geschweißt und erneut geprüft werden."
+    ],
+    tips: [
+      "<strong>Beginnen Sie den Erwerb der Wegerechte, bevor die Planung fertig ist.</strong> Grund und Boden ist bei den meisten Pipelines der längste Vorlauf und liegt vollständig außerhalb der Kontrolle der Baufirma — behandeln Sie ihn wie eine Beschaffung, mit verantwortlicher Person und wöchentlichem Status.",
+      "<strong>Lassen Sie die Kolonne nicht dem Rohr davonlaufen.</strong> Der Lagerbestand vor der Mannschaft ist die beste Frühwarnkennzahl auf der Baustelle; wenn er sinkt, steht die Kolonne, bevor jemand ein Problem meldet.",
+      "<strong>Binden Sie die Spülbohrmannschaft an das Fenster, nicht an die Kolonne.</strong> Spülbohrfirmen sind spezialisiert und knapp, und ein Gerät, das nach Schließen des Bauzeitenfensters ankommt, kostet ein Jahr Puffer.",
+      "<strong>Behandeln Sie die Einbindenähte als eigenen, sorgfältig sequenzierten Vorgang.</strong> Sie entstehen nach der Druckprobe und lassen sich nicht auf dieselbe Weise mitprüfen, tragen also überproportionales Prüf- und Termingewicht.",
+      "<strong>Führen Sie Leittechnik und Leckerkennung parallel zu den Stationen, nicht danach.</strong> Die Anbindung an die Leitwarte ist ein Softwarevorhaben mit eigenem Testzyklus und überrascht Pipelinepläne regelmäßig ganz am Ende.",
+      "<strong>Planen Sie Rekultivierung und Abnahme durch die Eigentümer als echte Arbeit.</strong> Die Leitung mag in Betrieb sein, aber solange der Arbeitsstreifen nicht wiederhergestellt und abgenommen ist, ist das Projekt nicht abgeschlossen und der Sicherheitseinbehalt nicht frei."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau einer Pipeline?",
+        "Eine Fernleitung mittleren Durchmessers läuft üblicherweise 20 bis 28 Monate von der Trassenerkundung bis zur Inbetriebnahme; ungefähr diesen Zeitraum nutzt die Vorlage. Vorn dominieren Genehmigung und Wegerechte, in der Mitte die Bauzeitenfenster."
+      ],
+      [
+        "Was sind Bauzeitenfenster und warum wiegen sie so schwer?",
+        "Es sind rechtlich festgelegte Zeiträume, in denen Arbeiten im oder am Gewässer und in Brut- und Lebensstätten erlaubt oder untersagt sind — festgeschrieben in der wasserrechtlichen Erlaubnis und im Planfeststellungsbeschluss. Sie lassen sich weder verhandeln noch stauchen, und ein verpasstes Fenster schiebt den betroffenen Umfang meist um ein volles Jahr."
+      ],
+      [
+        "Wie plane ich eine Rohrleitungskolonne?",
+        "Als wandernde Fertigungsstraße, nicht als Phasen. Auslegen, Graben, Schweißen, Prüfen, Umhüllen, Einlegen und Verfüllen laufen die Trasse mit je eigener Leistung entlang und laufen einander nach, und genau so sollte der Plan sie überlappend zeigen."
+      ],
+      [
+        "Wann sollte die Druckprobe liegen?",
+        "Nach dem Verfüllen des jeweiligen Prüfabschnitts und vor der Einbindung. Planen Sie eine Haltezeit, eine Dichtheitsbewertung und einen ausdrücklichen Balken für Reparatur und Wiederholungsprüfung ein; die Annahme, jeder Abschnitt bestehe beim ersten Mal, ist die klassische Überschreitung am Projektende. Umfang und Ablauf richten sich nach dem einschlägigen DVGW- beziehungsweise DIN-Regelwerk für die jeweilige Leitungsart."
+      ],
+      [
+        "Warum liegt der Erwerb der Wegerechte auf dem kritischen Pfad?",
+        "Weil auf einem Grundstück ohne eingetragene Dienstbarkeit körperlich nicht gebaut werden kann und die Verhandlungsdauer von einzelnen Eigentümern abhängt, nicht von Ihrem Programm. Es verhält sich wie eine Beschaffung mit langem Vorlauf und sollte auch so verfolgt werden."
+      ],
+      [
+        "Ist die Vorlage für den Pipelinebau kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'theatre-production-schedule': {
+    card: "Rückwärts von der Premiere: Besetzung, Proben, Bauprobe, Endproben, Voraufführungen.",
+    h1: "Probenplan für eine Theaterproduktion",
+    metaTitle: "Theaterproduktion — Probenplan",
+    metaDesc: "Kostenloser Probenplan fürs Theater: rückwärts von der Premiere über Besetzung, Probenwochen, Einbau, Technikprobe, Hauptproben und Voraufführungen.",
+    lead: "Eine kostenlose <strong>Probenplan-Vorlage für eine Theaterproduktion</strong>, die so funktioniert, wie Theaterpläne allein funktionieren können: rückwärts von der Premiere. Der Termin steht, die Karten sind verkauft und das Haus ist disponiert, also müssen Besetzung, Bauprobe und Freigabe des Bühnenbildes, Werkstattbau, Probenwochen im Probensaal, Einbau, Beleuchtungseinrichtung, Technische Probe, Hauptproben und Voraufführungen davor Platz finden. Laden Sie sie für die Produktionssitzung herunter oder schieben Sie online den Premierentermin und sehen Sie den ganzen Rückwärtsplan mitwandern.",
+    intro: "Jedes andere Projekt fragt, wann es fertig sein wird. Eine Theaterproduktion weiß es auf die Stunde genau und arbeitet heraus, was vorher wahr sein muss. In dieser Richtung ist die Vorlage gebaut:",
+    phases: [
+      [
+        "Entwicklung, Rechte und Freigabe",
+        "Premierentermin und Disposition des Hauses, Aufführungsrechte über Bühnenverlag und die GEMA-Anmeldung für Musik, Finanzierung, das Leitungsteam sowie der aus dem festen Termin abgeleitete Rückwärtsplan. <em>Meilenstein: Produktion freigegeben.</em>"
+      ],
+      [
+        "Besetzung und Ausstattung",
+        "Rollenprofile und Agenturvorschläge, Vorsprechen und Zweitrunden, Angebote und Verträge nach dem Normalvertrag Bühne beziehungsweise Gastverträge, die Bauprobe mit dem Weißmodell und die abschließende Modellabnahme, die die Werkstätten freigibt. <em>Meilensteine: Ensemble verpflichtet, Ausstattung freigegeben.</em>"
+      ],
+      [
+        "Werkstattbau und Probensaal",
+        "Bau und Malerei in den Werkstätten, Kostümanfertigung und Anproben, die Probenwochen mit Durchlaufproben und die vom abgeklebten Probensaalboden aus geschriebenen Stellproben und Verwandlungspläne. <em>Meilenstein: Durchlaufprobe für die Leitung.</em>"
+      ],
+      [
+        "Einbau und Einrichtung",
+        "Übergabe von der Vorstellung davor, Hängen im leeren Haus, der Einbau selbst, Inbetriebnahme von Obermaschinerie und Untermaschinerie, Einleuchten und Klangeinrichtung im Raum. <em>Meilenstein: Bühne für das Ensemble verfügbar.</em>"
+      ],
+      [
+        "Endprobenwoche",
+        "Stellprobe auf der Bühne, technische Probe Akt für Akt, Notizen und Neuplanung der Verwandlungen sowie zwei Hauptproben — der Engpass, der sich nicht dehnen lässt, weil das Haus disponiert ist. <em>Meilenstein: erstes Publikum.</em>"
+      ],
+      [
+        "Voraufführungen, Premiere und Serie",
+        "Voraufführungen mit Nachproben am Tag dazwischen, der Stopp aller Änderungen, die Premiere am vertraglich vereinbarten Termin, Kritiken und Nachsteuerung des Marketings, dann die Serie unter der Abendspielleitung. <em>Meilenstein: Premiere.</em>"
+      ]
+    ],
+    callout: "Die Premiere ist kein Ziel, sondern ein Vertrag. Kritikerinnen sind eingeladen, Karten sind verkauft, das Werbebudget ist ausgegeben und nach Ihnen kommt die nächste Produktion ins Haus. Alles rechnet deshalb rückwärts von ihr, und die Endprobenwoche — Stellprobe, technische Probe, Hauptproben — nimmt jede Verzögerung aus jeder Phase davor auf. Ein Kostüm, das zu spät kommt, eine Maschinerie, die nicht abgenommen wird, eine Verwandlung, die nie geschrieben wurde: alles landet in denselben sieben Tagen, und aus sieben Tagen werden keine acht.",
+    customize: [
+      "Setzen Sie zuerst den Premierentermin und ziehen Sie alles andere davor. Wenn der Rückwärtsplan nicht passt, liegt die Lösung stromaufwärts — ein kleinerer Bau, frühere Besetzung, mehr Probenwochen — niemals in einer kürzeren Endprobenwoche.",
+      "Passen Sie die Probenwochen Ihrem Haus an; sechs bis acht Wochen sind an Stadt- und Staatstheatern üblich, in der freien Szene oft weniger, und Zweitbesetzungen müssen hineinpassen.",
+      "Verlängern oder verkürzen Sie Einbau und Einrichtung nach Ihrem Haus. Ein Repertoirebetrieb, der sonntags übergibt, ist eine völlig andere Randbedingung als ein Gastspielhaus, das Ihnen zwei Wochen gehört.",
+      "Teilen Sie die technische Probe nach Akten und ergänzen Sie einen eigenen Balken für Obermaschinerie oder Flugwerk, wenn die Produktion damit arbeitet — das sind die Sequenzen, die Technikzeit fressen.",
+      "Ergänzen Sie einen Balken für Nachproben zwischen den Voraufführungen. Voraufführungen sind nicht nur Vorstellungen, sondern die letzte Gelegenheit, die Inszenierung zu ändern, und die Proben sind angesetzte Arbeit für das Ensemble.",
+      "Setzen Sie die Freigabe der Ausstattung als harten Meilenstein. Die Werkstätten können ohne sie nicht anfangen, und jeder Tag Verzug geht am anderen Ende direkt von Malerei und Anprobenzeit ab.",
+      "Nehmen Sie die Prüfung nach Versammlungsstättenverordnung als eigene Zeile auf, wenn das Bühnenbild Aufbauten, Praktikabel oder Pyrotechnik enthält — Brandschutzeinstufung der Dekoration und die Abnahme mit der Leiterin oder dem Leiter der Veranstaltungstechnik sind terminierte Vorgänge, kein Formblatt."
+    ],
+    tips: [
+      "<strong>Geben Sie die Ausstattung früh genug frei, dass die Werkstätten ruhig bauen können.</strong> Eine späte Modellabnahme verschiebt die Premiere nicht — sie führt nur dazu, dass das Bühnenbild ungemalt ankommt und der Einbau in die technische Probe hineinläuft.",
+      "<strong>Schützen Sie die Durchlaufprobe für die Leitung.</strong> Sie ist der letzte Moment, in dem die Inszenierung als Ganzes zu sehen ist, bevor das Haus alle Aufmerksamkeit schluckt, und sie für einen zusätzlichen Probentag zu streichen, ist fast immer ein schlechter Tausch.",
+      "<strong>Schreiben Sie Licht und Ton vom Probensaal aus.</strong> Alles, was die Ausstattenden vor dem Einbau entscheiden können, ist Zeit, die Sie in der technischen Probe zurückgewinnen, und dort ist eine Stunde weit mehr wert.",
+      "<strong>Stellen Sie das Ensemble nicht auf die Bühne, bevor der Einbau wirklich fertig ist.</strong> Eine Stellprobe, die sich die Bühne mit noch bauender Technik teilt, ist langsamer als warten, und dort passieren die Unfälle.",
+      "<strong>Behandeln Sie Voraufführungen als Teil der Probenarbeit.</strong> Setzen Sie die Nachproben an, kalkulieren Sie die Mehrarbeit und legen Sie vorab fest, nach welcher Voraufführung Änderungen aufhören.",
+      "<strong>Halten Sie Garderobe und schnelle Umzüge im Plan.</strong> Kostümwechsel sind der am häufigsten unterprobierte Teil einer Endprobenwoche und genau das, was vor dem ersten Publikum sichtbar schiefgeht."
+    ],
+    faq: [
+      [
+        "Wie plant man eine Theaterproduktion?",
+        "Rückwärts von der Premiere. Termin festlegen, dann den spätestmöglichen Beginn für Voraufführungen, Endprobenwoche, Einbau, Proben, Werkstattbau, Ausstattung und Besetzung bestimmen. Die Vorlage ist in dieser Reihenfolge angelegt, damit die Randbedingung sichtbar bleibt."
+      ],
+      [
+        "Was ist die Endprobenwoche?",
+        "Die Woche zwischen dem Betreten der Bühne durch das Ensemble und dem ersten Publikum: Stellprobe, technische Proben, Notizen und Hauptproben. Hier landet jede frühere Verzögerung, und sie ist auf beiden Seiten von der Disposition des Hauses begrenzt."
+      ],
+      [
+        "Wie lang ist eine übliche Probenzeit?",
+        "Sechs bis acht Wochen im Probensaal sind an einem Stadt- oder Staatstheater üblich, bei Musiktheater häufig länger. Die Vorlage nutzt sechs Wochen einschließlich Durchlaufproben; passen Sie sie an Ihren Haustarif und die Größe der Produktion an."
+      ],
+      [
+        "Welche Verträge bestimmen die Verfügbarkeit des Ensembles?",
+        "Am festen Haus der Normalvertrag Bühne mit Spielzeitbindung, Probenzeitregelungen und Ruhezeiten; für zusätzlich Verpflichtete Gastverträge mit ausgehandelten Probentagen. Beides begrenzt, wie viele Personen wann im Saal stehen können, und gehört deshalb als Randbedingung in den Plan und nicht in eine Nebenrechnung."
+      ],
+      [
+        "Lässt sich die Endprobenwoche verlängern, wenn wir hinterherliegen?",
+        "So gut wie nie. Das Haus ist disponiert, die Voraufführungen sind im Verkauf und die Premiere ist vereinbart, die Bühnenzeit steht also fest. Aufholen muss man im Probensaal, in den Werkstätten oder bei der Freigabe der Ausstattung — alles liegt früher."
+      ],
+      [
+        "Wann sollten Änderungen aufhören?",
+        "Meist ein bis zwei Vorstellungen vor der Premiere, damit das Ensemble die besprochene Fassung mindestens einmal spielt. Setzen Sie diesen Stopp ausdrücklich in den Plan — ein unausgesprochener Termin bedeutet, dass bis zum Premierenabend Änderungen eintreffen."
+      ],
+      [
+        "Ist die Vorlage für die Theaterproduktion kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'medical-clinic-opening-timeline': {
+    card: "Bedarfsplanung, Zulassung, Approbation, Praxisausbau nach MPBetreibV, Abnahmen.",
+    h1: "Zeitplan für die Eröffnung einer Arztpraxis",
+    metaTitle: "Praxiseröffnung — Zeitplan",
+    metaDesc: "Kostenloser Zeitplan für die Praxiseröffnung: Bedarfsplanung und Zulassung, Approbation und Arztregister, Praxisausbau, Hygiene, Abnahmen, erster Patient.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Eröffnung einer Arztpraxis</strong>, gebaut um die drei Uhren, die entscheiden, wann Sie tatsächlich behandeln dürfen: Zulassung, Abnahmen und die persönlichen Voraussetzungen der Ärztinnen und Ärzte. Konzept, Standort und die Klärung des Zulassungswegs, Eintragung ins Arztregister und das Verfahren beim Zulassungsausschuss als lange Uhr, die andere stellen, ein Ausbau mit Anforderungen an Hygiene, Lüftung und Medizinprodukte, die ein gewöhnlicher Büroausbau nicht kennt, Inbetriebnahme und Einweisung der Geräte, dann die Abnahmen und die Zulassung, die die Türen öffnen. Laden Sie sie für die Bankvorlage herunter oder tragen Sie online Ihre eigenen Fristen ein.",
+    intro: "Eine Praxis, die gebaut, besetzt und ausgestattet ist, darf trotzdem niemanden behandeln, bevor mehrere getrennte Genehmigungen vorliegen. Die Vorlage macht daraus das Rückgrat statt eines Anhängsels:",
+    phases: [
+      [
+        "Konzept, Standort und Zulassungsweg",
+        "Leistungsspektrum und Bedarfsanalyse, Standortsuche und Mietvertrag, Prüfung der Bedarfsplanung im gewünschten Planungsbereich, Klärung von Rechtsform und Zulassungsweg mit der Kassenärztlichen Vereinigung sowie Betriebsstättennummer und steuerliche Anmeldungen. <em>Meilensteine: Mietvertrag unterschrieben, Zulassungsweg geklärt.</em>"
+      ],
+      [
+        "Zulassung, Arztregister und persönliche Voraussetzungen",
+        "Gewinnung der Ärztinnen und Ärzte, Approbation und Facharztanerkennung, Eintragung ins Arztregister bei der Kassenärztlichen Vereinigung, Antrag beim Zulassungsausschuss samt Sitzungstermin, Meldung an die Ärztekammer sowie Betäubungsmittelnummer, wo sie gebraucht wird. <em>Meilensteine: Arztregistereintrag erfolgt, Zulassung erteilt.</em>"
+      ],
+      [
+        "Planung und regulierter Praxisausbau",
+        "Raumplanung Zimmer für Zimmer, Ausführungsplanung und Bauantrag beziehungsweise Nutzungsänderung, Barrierefreiheit, Trennung von rein und unrein, Lüftung und Wasserführung mit Blick auf die Trinkwasserverordnung, abwischbare Oberflächen sowie Strahlenschutz, wo geröntgt wird. <em>Meilenstein: Ausbau im Wesentlichen fertig.</em>"
+      ],
+      [
+        "Geräte, IT und Inbetriebnahme",
+        "Bestellung der Medizintechnik, Lieferung und Aufstellung, Inbetriebnahme mit Einweisung nach der Medizinprodukte-Betreiberverordnung, Anlage des Medizinproduktebuchs und des Bestandsverzeichnisses, sicherheits- und messtechnische Kontrollen, Abnahmeprüfung und Sachverständigenprüfung der Röntgeneinrichtung sowie Praxisverwaltungssystem und Anbindung an die Telematikinfrastruktur. <em>Meilenstein: Geräte abgenommen und eingewiesen.</em>"
+      ],
+      [
+        "Abnahmen, Hygiene und Anzeigen",
+        "Brandschutz und Nutzungsabnahme, Hygieneplan nach den Empfehlungen des Robert Koch-Instituts und Aufbereitung von Medizinprodukten, Anzeige beim Gesundheitsamt und dessen Begehung, Anzeige der Röntgeneinrichtung bei der zuständigen Behörde, Datenschutzkonzept und Verzeichnis der Verarbeitungstätigkeiten. <em>Meilenstein: Praxis betriebsbereit gemeldet.</em>"
+      ],
+      [
+        "Personal, Probelauf und Start",
+        "Einstellung von medizinischen Fachangestellten und Empfang, Einarbeitung und Nachweis der Fachkunde, Beschaffung und Sterilgutlager, ein Probetag mit Testpatienten, Testabrechnung über die Kassenärztliche Vereinigung und die Vorstellung bei zuweisenden Praxen. <em>Meilensteine: erster Patient behandelt, volle Sprechstunde.</em>"
+      ]
+    ],
+    callout: "Die Uhr, die Sie am wenigsten steuern, ist die Zulassung — und in einem gesperrten Planungsbereich kann sie gar nicht laufen. Die Bedarfsplanung der Kassenärztlichen Vereinigung entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Sitz frei ist; ist er gesperrt, gibt es keinen Termin, den Sie beschleunigen könnten, sondern nur den Weg über die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung. Der Zulassungsausschuss tagt zudem in festen Sitzungsterminen mit vorgelagerter Antragsfrist, und ein unvollständiger Antrag rutscht in die nächste Sitzung. Klären Sie das, bevor Sie den Mietvertrag unterschreiben, nicht wenn der Ausbau fertig ist.",
+    customize: [
+      "Beginnen Sie den Zulassungsbalken am Tag der Entscheidung für den Standort und tragen Sie die tatsächlichen Sitzungstermine des Zulassungsausschusses als feste Punkte ein — dazwischen liegt die Antragsfrist, nicht der Sitzungstag.",
+      "Ergänzen Sie eine Zeile je Ärztin und Arzt, wenn Sie zu mehreren eröffnen. Approbation, Facharztanerkennung und Arztregistereintrag laufen nicht gleichzeitig durch, und der Starttermin hängt an der langsamsten Person, nicht am Mittelwert.",
+      "Trennen Sie Zulassung und Abrechnungsfähigkeit. Zugelassen zu sein und über die Kassenärztliche Vereinigung abrechnen zu können, sind zwei Vorgänge mit eigenen Uhren, und das Zweite entscheidet über Einnahmen, nicht über den Zugang.",
+      "Führen Sie Anschluss an die Telematikinfrastruktur, Konnektor und elektronische Heilberufsausweise als eigene Balken; sie hängen an Lieferzeiten und Identifizierungsverfahren Dritter und blockieren sonst still die erste Abrechnung.",
+      "Halten Sie Aufbereitung von Medizinprodukten, Validierung des Sterilisators und Hygieneplan als eigene Zeilen — das Gesundheitsamt fragt bei der Begehung danach, und eine Nachbesserung kostet einen zweiten Termin.",
+      "Legen Sie den Probetag mit vollem Personal vor den Start. Es ist die einzige Übung, in der Anmeldung, Zimmerbelegung, Praxisverwaltungssystem, Geräte und Abrechnung einmal in einem Fluss zusammenkommen."
+    ],
+    tips: [
+      "<strong>Prüfen Sie die Bedarfsplanung, bevor Sie den Mietvertrag unterschreiben.</strong> Ob in Ihrer Arztgruppe im gewünschten Planungsbereich ein Sitz frei ist, ändert Standort, Rechtsform und Zeitplan vollständig — und ein gesperrter Bereich lässt sich nicht durch mehr Aufwand öffnen.",
+      "<strong>Reichen Sie Anträge vollständig ein oder gar nicht.</strong> Ein unvollständiger Antrag startet die Uhr nicht, sondern rutscht in die nächste Sitzung des Zulassungsausschusses — dieser eine Verwaltungsfehler ist die häufigste Ursache einer verschobenen Eröffnung.",
+      "<strong>Planen Sie für die Begehung, nicht nur für den Handwerker.</strong> Trennung von rein und unrein, Handwaschplätze, Oberflächen und die Aufbereitungsräume werden vom Gesundheitsamt konkret geprüft, und eine Umplanung nach der Begehung kostet weit mehr, als es gleich richtig zu machen.",
+      "<strong>Vereinbaren Sie Brandschutz- und Gesundheitsamtstermine früh und rechnen Sie mit einer Nachbegehung.</strong> Deren Kalender gehört Ihnen nicht, und ein Starttermin, der bei beiden auf Anhieb-Erfolg setzt, ist eine Wette, die Sie meist verlieren.",
+      "<strong>Nehmen Sie Geräte mit Einweisung und Dokumentation in Betrieb, nicht nur mit dem Lieferschein.</strong> Die Medizinprodukte-Betreiberverordnung verlangt Einweisung der Anwenderinnen und Anwender, ein Bestandsverzeichnis und ein Medizinproduktebuch für bestimmte Geräte sowie sicherheitstechnische Kontrollen — genau danach wird gefragt.",
+      "<strong>Rechnen Sie Testfälle ab, bevor der erste echte Patient kommt.</strong> Eine falsch angelegte Betriebsstätte oder ein fehlender Heilberufsausweis fällt sonst im Quartalsabschluss auf, wenn die Leistungen bereits erbracht sind."
+    ],
+    faq: [
+      [
+        "Wie lange dauert es, eine Praxis zu eröffnen?",
+        "Zwölf bis sechzehn Monate sind für eine ausgebaute Praxis in Mieträumen üblich; ungefähr diesen Zeitraum nutzt die Vorlage. Der Ausbau ist selten der Engpass — Zulassung und Abnahmen sind es."
+      ],
+      [
+        "Was bedeutet die Bedarfsplanung für meinen Zeitplan?",
+        "Sie entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Vertragsarztsitz zu haben ist. In einem gesperrten Bereich gibt es keinen freien Sitz, sondern nur die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung bei einer bestehenden Praxis — jeweils mit eigenem Verfahren und eigener Dauer. Das ist keine Formalie am Rand, sondern die Randbedingung, die über den Standort entscheidet."
+      ],
+      [
+        "Welche persönlichen Voraussetzungen brauchen die Ärztinnen und Ärzte?",
+        "Approbation, in der Regel eine Facharztanerkennung der Ärztekammer und die Eintragung ins Arztregister der Kassenärztlichen Vereinigung, bevor überhaupt ein Zulassungsantrag gestellt werden kann. Bei ausländischen Abschlüssen kommt die Anerkennung hinzu, die eigene Monate braucht. Beginnen Sie damit am Tag der Zusage, nicht wenn der Ausbau steht."
+      ],
+      [
+        "Worin unterscheidet sich ein Praxisausbau von einem Büroausbau?",
+        "Trennung von reinen und unreinen Bereichen, Räume für die Aufbereitung von Medizinprodukten mit validiertem Verfahren, Anforderungen an Trinkwasserinstallation und Lüftung, abwischbare Oberflächen, Barrierefreiheit und Strahlenschutz für Röntgenräume — nichts davon kommt in einem gewöhnlichen Büroausbau vor."
+      ],
+      [
+        "Welche Abnahmen und Anzeigen sind vor der Eröffnung nötig?",
+        "Typischerweise Brandschutz- und Nutzungsabnahme, die Anzeige beim Gesundheitsamt mit anschließender infektionshygienischer Begehung, die Anzeige der Röntgeneinrichtung mit Abnahme- und Sachverständigenprüfung sowie die Inbetriebnahme der Medizinprodukte mit Einweisung und Dokumentation nach der Medizinprodukte-Betreiberverordnung. Welche davon greifen, hängt vom Leistungsspektrum ab."
+      ],
+      [
+        "Ist die Vorlage für die Praxiseröffnung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'sap-s4hana-migration-plan': {
+    card: "Brownfield-Konversion, Eigenentwicklungen, drei Testumstellungen, Freeze, Hypercare.",
+    h1: "Projektplan für die SAP-S/4HANA-Migration",
+    metaTitle: "SAP S/4HANA — Migrationsplan",
+    metaDesc: "Kostenloser Plan für die SAP-S/4HANA-Migration: Brownfield-Konversion, Anpassung der Eigenentwicklungen, drei Testumstellungen, Generalprobe, Freeze.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die SAP-S/4HANA-Migration</strong>, gebaut um die Entscheidung, die alles andere bestimmt: ob Sie ein bestehendes ECC-System an Ort und Stelle konvertieren (Brownfield) oder eine Neuimplementierung aufsetzen und dorthin migrieren (Greenfield). Dieser Plan zeigt den Weg der <em>Systemkonversion</em>, weil dessen Terminplan von der Anpassung der Eigenentwicklungen und von wiederholten Testumstellungen beherrscht wird und nicht von der Prozessgestaltung. Wenn Sie stattdessen ein ERP auf der grünen Wiese aufbauen, beginnen Sie beim <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a>.",
+    intro: "Eine Konversion endet nicht mit dem Produktivstart — sie endet, wenn das Freeze-Fenster schließt und die Bücher stimmen. Die Balken unten setzen Testumstellungen und Freeze dorthin, wo sie tatsächlich liegen:",
+    phases: [
+      [
+        "Wegentscheidung und Bereitschaft",
+        "SAP Readiness Check und Auswertung der Simplification Items, die Entscheidung zwischen Brownfield und Greenfield, Sizing und der Entwurf der Zielsystemlandschaft. <em>Meilenstein: Konversionsweg freigegeben.</em>"
+      ],
+      [
+        "Vorbereitung und Anpassung der Eigenentwicklungen",
+        "Der Teil, den niemand richtig schätzt: Analyse der kundeneigenen ABAP-Objekte gegen die Simplification-Datenbank, Anpassung in Wellen, Stilllegung nicht mehr genutzter Objekte und die Vorbereitung des Finanzdatenmodells, auf der die Konversion aufsetzt — Geschäftspartner-Umstellung und neue Anlagenbuchhaltung. <em>Meilenstein: Anpassung der Eigenentwicklungen abgeschlossen.</em>"
+      ],
+      [
+        "Sandbox- und Entwicklungskonversion",
+        "Die erste technische Konversion auf einer Sandbox-Kopie und die Laufzeiten, die sie offenlegt, danach Entwicklungs- und Qualitätssicherungssystem, jeweils mit fachlicher Nacharbeit und Modultests dahinter. <em>Meilenstein: Qualitätssicherungssystem konvertiert.</em>"
+      ],
+      [
+        "Testzyklen",
+        "Fachliche Tests, Integrations-, Schnittstellen-, Berechtigungs- und Lasttests sowie die Fehlerschleife, alles gegen ein konvertiertes Qualitätssicherungssystem statt gegen einen Neuaufbau. <em>Meilenstein: Integrationstest bestanden.</em>"
+      ],
+      [
+        "Testumstellungen und Generalprobe",
+        "Drei Testumstellungen auf vollem Produktivdatenvolumen, jede gemessen und jede verkürzt das Umstellungsdrehbuch, danach die Generalprobe, an der die Go-/No-go-Entscheidung hängt. <em>Meilenstein: Go-/No-go-Entscheidung nach Generalprobe.</em>"
+      ],
+      [
+        "Freeze, Umstellung und Hypercare",
+        "Das Freeze-Fenster für das Geschäft, die Produktivkonversion selbst, Validierung und Abstimmung, Freigabe an die Fachbereiche und die Hypercare-Phase bis zur Übergabe an den Regelsupport. <em>Meilenstein: Ende der Hypercare.</em>"
+      ]
+    ],
+    callout: "Zwei Dinge versenken Konversionspläne. Das erste sind die Eigenentwicklungen: der Readiness Check listet Tausende Befunde, die meisten trivial und eine Handvoll strukturell, und bevor jemand sie bewertet hat, haben Sie keine Schätzung, sondern eine Objektzahl. Das zweite ist der Freeze im Geschäft. Teams planen ein Wochenende und stellen fest, dass der Freeze für Buchungen, Stammdatenänderungen und offene Vorgänge in Wahrheit mehrere Tage früher beginnt und erst endet, wenn die Abstimmung stimmt. Planen Sie den Freeze als Geschäftsereignis mit benannten Verantwortlichen, nicht als technisches Fenster, und lassen Sie die Testumstellungen sagen, wie lang er wirklich sein muss.",
+    customize: [
+      "Wenn Sie neu implementieren statt zu konvertieren, streichen Sie die Phasen für Anpassung und Testumstellungen und bauen Sie um die Prozessgestaltung herum neu — die Formen unterscheiden sich wirklich.",
+      "Setzen Sie zuerst das Umstellungswochenende und rechnen Sie rückwärts; die Testumstellungen sind die einzige belastbare Schätzung der benötigten Dauer.",
+      "Teilen Sie die Anpassung der Eigenentwicklungen in Wellen nach zuständigem Team, nicht nach Objektzahl, damit die Balken zu denen passen, die die Arbeit tatsächlich machen.",
+      "Verlängern Sie das Freeze-Fenster bei hohen Buchungsvolumina zum Periodenende und vermeiden Sie eine Umstellung über eine Geschäftsjahres- oder Periodengrenze hinweg.",
+      "Nehmen Sie je Schnittstelle und Umsystem eine eigene Zeile auf — Konversionen brechen in der Regel Integrationen, bevor sie SAP selbst brechen.",
+      "Ergänzen Sie eine vierte Testumstellung, wenn die dritte noch nicht innerhalb des verfügbaren Fensters fertig geworden ist.",
+      "Nehmen Sie den Betriebsrat als eigene Zeile auf, wenn sich Arbeitsabläufe oder auswertbare Leistungsdaten ändern; die Beteiligung ist ein Vorgang mit Wochen an Dauer und kein Haken vor dem Start."
+    ],
+    tips: [
+      "<strong>Fahren Sie die erste Testumstellung früh und ruhig unsauber.</strong> Ihre Aufgabe ist herauszufinden, was im Drehbuch fehlt, nicht zu gelingen. Erst die späteren müssen sauber aussehen.",
+      "<strong>Bewerten Sie den Readiness Check, zählen Sie ihn nicht.</strong> Tausend Befunde können zwei Wochen oder sechs Monate Arbeit sein, und nur die Bewertung sagt, welches von beidem.",
+      "<strong>Nehmen Sie die Generalprobe als echtes Tor.</strong> Wenn die Probe nicht in das geplante Fenster passt, passt die Produktivumstellung es auch nicht — genau dafür fährt man sie.",
+      "<strong>Frieren Sie das Geschäft ein, nicht nur das System.</strong> Veröffentlichen Sie für jeden Tag des Fensters, was erlaubt ist und was nicht, und zwar lange bevor es beginnt.",
+      "<strong>Stimmen Sie ab, bevor Sie freigeben.</strong> Bestände, offene Posten und Salden gegen die Werte vor der Konversion validiert sind das tatsächliche Startkriterium, nicht ein grüner Bildschirm."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine SAP-S/4HANA-Migration?",
+        "Eine Systemkonversion läuft üblicherweise zwölf bis zwanzig Monate, abhängig vom Umfang der Eigenentwicklungen und der Zahl der Schnittstellen. Die Vorlage nutzt rund sechzehn Monate. Neuimplementierungen streuen deutlich stärker, weil dort die Prozessgestaltung den Plan treibt und nicht die Anpassung."
+      ],
+      [
+        "Was ist der Unterschied zwischen Brownfield und Greenfield?",
+        "Brownfield ist die Systemkonversion: Sie behalten Customizing, Historie und Eigenentwicklungen und konvertieren das System an Ort und Stelle. Greenfield ist eine Neuimplementierung, in die Sie ausgewählte Daten migrieren. Brownfield-Pläne werden von der Anpassung der Eigenentwicklungen und von Testumstellungen beherrscht, Greenfield-Pläne von Prozessgestaltung und Veränderungsmanagement. Diese Vorlage zeigt den Brownfield-Weg."
+      ],
+      [
+        "Worin unterscheidet sich das vom ERP-Einführungsplan?",
+        "Der <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a> geht davon aus, dass Sie ein System auswählen und von Grund auf einführen — Auswahl, Prozessgestaltung, Customizing, Datenmigration und Schulung. Dieser Plan setzt voraus, dass SAP bereits läuft und Sie es konvertieren, weshalb die schweren Phasen die Anpassung der Eigenentwicklungen und die wiederholten Testumstellungen sind."
+      ],
+      [
+        "Wie viele Testumstellungen brauche ich?",
+        "Drei ist die übliche Planungszahl, und die Vorlage nutzt drei, gefolgt von einer Generalprobe. Jede fährt das vollständige Drehbuch auf Produktivdatenvolumen und wird gestoppt; wenn die dritte das verfügbare Fenster noch überschreitet, fügen Sie eine vierte hinzu, statt die echte zu stauchen."
+      ],
+      [
+        "Wie lang sollte der Freeze für das Geschäft sein?",
+        "Länger als die technische Umstellung. Buchungen, Stammdatenänderungen und der Abschluss offener Vorgänge frieren typischerweise mehrere Tage vor Beginn der Konversion ein und bleiben eingefroren, bis die Abstimmung stimmt. Bemessen Sie ihn anhand der Zeiten aus den Testumstellungen statt zu raten, und kommunizieren Sie ihn Wochen im Voraus."
+      ],
+      [
+        "Ist die Vorlage für SAP S/4HANA kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'iso-14001-certification-plan': {
+    card: "Umweltaspekte, Rechtskataster, Ziele, Betriebsabläufe, Stufe 1 und Stufe 2.",
+    h1: "Projektplan für die ISO-14001-Zertifizierung",
+    metaTitle: "ISO 14001 — Zertifizierungsplan",
+    metaDesc: "Kostenloser Plan zur ISO-14001-Zertifizierung: Umweltaspekte, Rechtskataster, Umweltziele, Ablauflenkung, internes Audit, Stufe-1- und Stufe-2-Audit.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-14001-Zertifizierung</strong>, geordnet um die beiden Verzeichnisse, die die eigentliche Arbeit eines Umweltmanagementsystems ausmachen: das Verzeichnis der Umweltaspekte und Umweltauswirkungen und das Rechtskataster mit den bindenden Verpflichtungen. Alles Nachgelagerte — Ziele, Ablauflenkung, Überwachung, Schulung — leitet sich aus diesen beiden ab, weshalb Pläne, die mit Zielen beginnen, hängen bleiben. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>.",
+    intro: "Zertifizierungsstellen bewerten ein Umweltmanagementsystem in zwei Besuchen mit einem verpflichtenden Abstand dazwischen, und sie prüfen stichprobenartig Aufzeichnungen, die es nur gibt, wenn das System bereits läuft. Beides bilden die Balken ab:",
+    phases: [
+      [
+        "Anwendungsbereich, Kontext und Gap-Analyse",
+        "Grenzen des Umweltmanagementsystems, interessierte Parteien, eine Gap-Analyse gegen die Norm, die Umweltpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle — der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
+      ],
+      [
+        "Umweltaspekte, Auswirkungen und Rechtskataster",
+        "Der Kern des Plans: Ermittlung der Umweltaspekte über alle Tätigkeiten hinweg, Bewertung ihrer Bedeutung mit einer dokumentierten Methode und der parallele Aufbau des Rechtskatasters mit gesetzlichen und sonstigen bindenden Verpflichtungen. <em>Meilenstein: beide Verzeichnisse freigegeben.</em>"
+      ],
+      [
+        "Umweltziele, Zielwerte und Programme",
+        "Ziele, die aus den bedeutenden Umweltaspekten und den bindenden Verpflichtungen abgeleitet sind, mit Zielwerten, Kennzahlen, Ressourcen und benannten Verantwortlichen — keine Absichtserklärungen, die vor den Verzeichnissen geschrieben wurden. <em>Meilenstein: Ziele und Programme freigegeben.</em>"
+      ],
+      [
+        "Ablauflenkung und Notfallvorsorge",
+        "Verfahrensanweisungen für die bedeutenden Aspekte, Lenkung von Abfall, Abwasser und Emissionen, Anforderungen an Lieferanten und Fremdfirmen, Kompetenz- und Bewusstseinsschulungen sowie die Notfallübung. <em>Meilenstein: Ablauflenkung eingeführt.</em>"
+      ],
+      [
+        "Betreiben, überwachen und Nachweise sammeln",
+        "Die Phase, die sich nicht stauchen lässt: das System lange genug betreiben, dass Messdaten, Bewertungen der Rechtskonformität, Abfallnachweise und ein Beispiel für gelenkte Änderungen tatsächlich vorliegen. <em>Meilenstein: Überwachungsnachweise vorhanden.</em>"
+      ],
+      [
+        "Internes Audit, Managementbewertung und zweistufiges Audit",
+        "Das interne Audit, seine Abweichungen und Korrekturmaßnahmen, die Managementbewertung, danach Stufe 1, das Zeitfenster für Korrekturmaßnahmen und Stufe 2. <em>Meilenstein: Zertifikat erteilt.</em>"
+      ]
+    ],
+    callout: "Das Verzeichnis der Umweltaspekte ist das Dokument, das die auditierende Person zuerst öffnet, und ein dünnes Verzeichnis bringt den Rest des Systems zum Einsturz. Es muss den Normalbetrieb, abweichende Betriebszustände und Notfallsituationen abdecken, und die Bewertung der Bedeutung muss eine Methode sein, die Sie erklären können, und keine Farbe, die jemand gewählt hat. Das Rechtskataster ist das zweite tragende Dokument: Es führt Genehmigungen, Erlaubnisse, gesetzliche Pflichten und weitere Verpflichtungen auf, und die Norm verlangt eine regelmäßige Bewertung der Rechtskonformität dagegen — diese Bewertung muss also vor Stufe 2 stattgefunden haben und nicht danach geplant sein.",
+    customize: [
+      "Buchen Sie die Zertifizierungsstelle früh und legen Sie den Termin für Stufe 2 fest; alles davor ist danach ein Countdown und keine Schätzung.",
+      "Erweitern Sie die Zeilen zur Aspektermittlung auf eine Zeile je Standort, Prozess oder Tätigkeit — eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
+      "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2, damit die dort aufgenommenen Korrekturmaßnahmen wirklich geschlossen werden können.",
+      "Verlängern Sie die Betriebsphase, wenn eine Ihrer Verpflichtungen jährlich bewertet wird — Sie brauchen mindestens einen vollständigen Nachweiszyklus.",
+      "Ergänzen Sie Zeilen für Genehmigungsverlängerungen oder behördliche Überwachungen, die in das Fenster fallen, denn sie konkurrieren um dieselben Personen.",
+      "Legen Sie für nach dem Bundes-Immissionsschutzgesetz genehmigungsbedürftige Anlagen eigene Zeilen an: Genehmigungsbescheid mit Nebenbestimmungen, Emissionserklärung und die Berichte der Betriebsbeauftragten sind Nachweise, die das Audit sehen will.",
+      "Ergänzen Sie das Überwachungsaudit im ersten Jahr, damit das System auch nach Erhalt des Zertifikats mit Ressourcen hinterlegt bleibt."
+    ],
+    tips: [
+      "<strong>Bauen Sie die Verzeichnisse vor den Zielen.</strong> Zuerst geschriebene Ziele treffen fast immer unbedeutende Aspekte, und die auditierende Person wird fragen, wie Sie entschieden haben.",
+      "<strong>Decken Sie abweichende Betriebszustände und Notfälle ab.</strong> An- und Abfahren, Leckagen und Brandszenarien sind die Stellen, an denen die meisten Aspektverzeichnisse sichtbar unvollständig sind.",
+      "<strong>Führen Sie eine echte Bewertung der Rechtskonformität durch.</strong> Die Norm erwartet eine regelmäßige Bewertung gegen Ihr Rechtskataster mit Aufzeichnungen — keine Erklärung, dass Sie konform seien.",
+      "<strong>Machen Sie die Notfallübung vor Stufe 2.</strong> Sie gehört zu den wenigen Nachweisen, die Sie terminieren können, statt auf sie zu warten.",
+      "<strong>Halten Sie ISO 14001, ISO 9001 und ISO 27001 auseinander.</strong> Sie teilen dieselbe Grundstruktur und lassen sich gemeinsam auditieren, sind aber drei getrennte akkreditierte Zertifizierungen mit unterschiedlichem Inhalt — Umwelt, Qualität und Informationssicherheit.",
+      "<strong>Verwechseln Sie ISO 14001 nicht mit EMAS.</strong> EMAS ist das Umweltmanagementsystem der Europäischen Union mit eigener Verordnung; es setzt auf ISO 14001 auf, verlangt darüber hinaus aber eine geprüfte Umwelterklärung, den Nachweis der Rechtskonformität und die Registrierung bei einer Industrie- und Handelskammer. Wenn Sie beides wollen, planen Sie die zusätzlichen Schritte ein, statt anzunehmen, das Zertifikat genüge."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine ISO-14001-Zertifizierung?",
+        "Üblicherweise neun bis fünfzehn Monate aus dem Stand. Die Vorlage nutzt rund dreizehn Monate. Was sich nicht stauchen lässt, ist vorn die Arbeit an Aspekt- und Rechtskataster und hinten die Betriebszeit, die die Überwachungsnachweise erzeugt."
+      ],
+      [
+        "Was ist ein Verzeichnis der Umweltaspekte?",
+        "Eine strukturierte Aufstellung der Wechselwirkungen Ihrer Tätigkeiten, Produkte und Dienstleistungen mit der Umwelt — Emissionen, Einleitungen, Abfall, Ressourcen- und Flächenverbrauch — samt der daraus folgenden Auswirkungen, bewertet nach Bedeutung für Normalbetrieb, abweichende Zustände und Notfälle. Es ist die Eingangsgröße für nahezu alles Weitere, weshalb die Vorlage es vor die Ziele setzt."
+      ],
+      [
+        "Worin unterscheidet sich ISO 14001 von ISO 9001?",
+        "Sie teilen die Grundstruktur für Managementsysteme und dieselbe zweistufige Auditmechanik, der Inhalt unterscheidet sich aber vollständig: ISO 9001 ist ein Qualitätsmanagementsystem, ausgerichtet auf Kundenanforderungen und Prozesskonformität, ISO 14001 ein Umweltmanagementsystem, aufgebaut auf Umweltaspekten und bindenden Verpflichtungen. Siehe den <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a>, wenn Sie beides zertifizieren."
+      ],
+      [
+        "Was ist der Unterschied zwischen ISO 14001 und EMAS?",
+        "ISO 14001 ist eine internationale Norm, die von einer akkreditierten Zertifizierungsstelle zertifiziert wird. EMAS ist ein Verfahren der Europäischen Union auf eigener Rechtsgrundlage: Es enthält die Anforderungen der ISO 14001, verlangt zusätzlich eine von einem zugelassenen Umweltgutachter geprüfte und veröffentlichte Umwelterklärung, den ausdrücklichen Nachweis der Rechtskonformität und die Eintragung in das EMAS-Register. Beides ist kombinierbar, aber es ist nicht dasselbe, und die Zusatzschritte brauchen eigene Balken."
+      ],
+      [
+        "Kann ich ISO 14001 und ISO 27001 gemeinsam zertifizieren?",
+        "Sie lassen sich in einem integrierten Audit prüfen und teilen die Kapitelstruktur, sind aber getrennte akkreditierte Zertifizierungen mit eigenen Zertifikaten und eigenen Anwendungsbereichen. Der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a> deckt die Informationssicherheit ab; gehen Sie nicht davon aus, dass Nachweise aus dem einen System das andere erfüllen."
+      ],
+      [
+        "Was passiert zwischen Stufe 1 und Stufe 2?",
+        "Stufe 1 ist eine Dokumenten- und Bereitschaftsprüfung und bringt fast immer Feststellungen hervor — meist ein unvollständiges Aspektverzeichnis oder eine nicht durchgeführte Bewertung der Rechtskonformität. Stufe 2 prüft, ob das System tatsächlich wirkt. Die Vorlage lässt dazwischen ein Fenster für Korrekturmaßnahmen, weil Stufe 2 nicht besteht, solange die Feststellungen aus Stufe 1 offen sind."
+      ],
+      [
+        "Ist die Vorlage für ISO 14001 kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'product-recall-plan': {
+    card: "Stunde null, Risikobewertung, Behördenmeldung, Rückholung, Wirksamkeit, Abschluss.",
+    h1: "Ablaufplan für einen Produktrückruf",
+    metaTitle: "Produktrückruf — Ablaufplan",
+    metaDesc: "Kostenloser Ablaufplan für den Produktrückruf: Stunde null, Risikobewertung, Meldung an die Marktüberwachungsbehörde, Rückholung, Wirksamkeit, Abschluss.",
+    lead: "Eine kostenlose <strong>Ablaufplan-Vorlage für einen Produktrückruf</strong>, angelegt auf der einzigen Uhr, die zählt: der, die in dem Moment beginnt, in dem Ihnen Anhaltspunkte vorliegen, dass ein Produkt unsicher oder nicht konform ist. Rückrufpläne sind ungewöhnlich, weil ein großer Teil der Abfolge nicht in Ihrem Ermessen steht, sondern rechtlich vorgegeben ist: Meldepflichten, Aufbewahrungspflichten und Wirksamkeitsnachweise sind von Behörden gesetzt, und zu spät zu sein ist keine Verzögerung, sondern eine Haftungsfrage. Die Balken sind in Tagen ab Stunde null angelegt, damit Sie sehen, was in der ersten Woche geschehen muss.",
+    intro: "Die frühen Zeilen sind Stunden, keine Wochen. Alles nach der Meldeentscheidung hängt daran, wie schnell die ersten drei Zeilen abgearbeitet sind:",
+    phases: [
+      [
+        "Stunde null — erkennen, sperren, einberufen",
+        "Der Hinweis trifft ein, das Krisenteam wird einberufen, die Auslieferung wird gesperrt und die betroffenen Chargen und Losnummern werden zurückverfolgt. Diese Phase wird in Stunden gemessen. <em>Meilenstein: Krisenteam einberufen, Auslieferung gesperrt.</em>"
+      ],
+      [
+        "Risikobewertung und Rückrufentscheidung",
+        "Gefahrencharakterisierung, Bewertung von Exposition und Schwere, Einstufung des Risikos, die Entscheidung über die Rückrufstufe — Endverbraucher, Handel oder Großhandel — und der förmliche Rückrufbeschluss. <em>Meilenstein: Rückrufentscheidung dokumentiert.</em>"
+      ],
+      [
+        "Behördenmeldung",
+        "Feststellen, welche Behörden in welchen Ländern zu unterrichten sind, Zusammenstellen der Meldeunterlagen, Meldung innerhalb der einschlägigen Frist und Abstimmung der öffentlichen Kommunikation mit der Behörde. <em>Meilenstein: Behörden unterrichtet.</em>"
+      ],
+      [
+        "Information von Kunden und Öffentlichkeit",
+        "Kaskade an Großhandel und Handel, direkte Kundenansprache, soweit die Daten es zulassen, die öffentliche Rückrufanzeige, Website und Presseerklärung sowie die Hotline für Betroffene. <em>Meilenstein: öffentliche Rückrufanzeige veröffentlicht.</em>"
+      ],
+      [
+        "Rückholung, Sperrlager und Verwendungsentscheidung",
+        "Rücknahmelogistik, Wareneingang und Abgleich gegen die ausgelieferte Menge, gesicherte Sperrlagerung und die Entscheidung über Nacharbeit, Vernichtung oder Freigabe. <em>Meilenstein: Mengenabgleich abgeschlossen.</em>"
+      ],
+      [
+        "Wirksamkeitsprüfung, Ursachenanalyse und Abschluss",
+        "Wirksamkeitsprüfungen in festgelegten Abständen, Ursachenanalyse und Korrekturmaßnahmen, Sachstandsberichte an die Behörde, der Abschlussbericht und die förmliche Beendigung. <em>Meilenstein: Rückruf behördlich abgeschlossen.</em>"
+      ]
+    ],
+    callout: "In Deutschland läuft ein Rückruf über die Marktüberwachungsbehörde des jeweiligen Bundeslandes. Bei Non-Food-Produkten ist das Produktsicherheitsgesetz die Grundlage, und die Behörde speist ernste Risiken über die europäische Meldekette in das Safety Gate der Europäischen Union ein; bei Lebensmitteln und Futtermitteln laufen die Meldungen über die Lebensmittelüberwachung der Länder und das Bundesamt für Verbraucherschutz und Lebensmittelsicherheit; bei Arzneimitteln und Medizinprodukten sind das Bundesinstitut für Arzneimittel und Medizinprodukte oder das Paul-Ehrlich-Institut zuständig. Die Meldefrist ist keine feste Zahl: Sie hängt von Produktklasse und Gefahrenschwere ab, und ein Produkt in mehreren Märkten kann mehreren Regimen gleichzeitig unterliegen. Daneben läuft die zivilrechtliche Seite mit — Produkthaftung nach dem Produkthaftungsgesetz und Verkehrssicherungspflichten des Herstellers —, und deren Umfang steht erst später fest.",
+    customize: [
+      "Ersetzen Sie die Balken für die Meldung durch die Fristen, die für Ihre Produktklasse in jedem Markt tatsächlich gelten — anwaltlich geprüft, nicht angenommen.",
+      "Nehmen Sie je Land eine eigene Meldezeile auf, wenn Sie grenzüberschreitend verkaufen; sie laufen parallel und verlangen unterschiedliche Inhalte.",
+      "Legen Sie die Rückrufstufe ausdrücklich als eigene Zeile fest — Endverbraucher, Handel oder Großhandel verändert die gesamte Rückholphase.",
+      "Passen Sie die Zeilen für die Wirksamkeitsprüfung an die Abstände an, die Ihre Behörde erwartet, und lassen Sie sie laufen, bis die Rücklaufquote nicht mehr steigt.",
+      "Ergänzen Sie Zeilen für die Meldung an den Versicherer und, wenn Personenschäden im Raum stehen, für die Sicherung von Unterlagen und Rückstellmustern.",
+      "Hinterlegen Sie eine Zeile für die Abstimmung mit der Behörde über den Wortlaut der öffentlichen Anzeige; sie wird in der Regel vorab abgestimmt und ist selten in einer Stunde erledigt.",
+      "Üben Sie diesen Plan mindestens jährlich als Rückrufübung an einer echten Chargennummer — eine Rückverfolgung, die Tage braucht, ist im Audit eine Abweichung."
+    ],
+    tips: [
+      "<strong>Verfolgen Sie zurück, bevor Sie veröffentlichen.</strong> Eine öffentliche Anzeige mit falschen Chargennummern muss neu veröffentlicht werden, und das kostet die Glaubwürdigkeit bei Behörde und Kunden.",
+      "<strong>Setzen Sie eine Person auf die Uhr.</strong> Jemanden, dessen einzige Aufgabe die Meldefristen über alle Zuständigkeiten hinweg sind, denn die operative Arbeit bindet alle anderen.",
+      "<strong>Gleichen Sie gegen die ausgelieferte Menge ab.</strong> Die Rücklaufquote ist die Zahl, auf die Behörden schauen, und sie lässt sich nicht berechnen, ohne genau zu wissen, wie viel hinausgegangen ist.",
+      "<strong>Sichern Sie das Sperrlager physisch.</strong> Zurückgeholte Ware, die versehentlich wieder in den Bestand läuft, ist ein zweiter Rückruf auf dem ersten.",
+      "<strong>Verwechseln Sie Ursachenanalyse und Rückruf nicht.</strong> Die Rückholung hat ihre eigene Uhr; die Untersuchung läuft daneben und endet später, und die Behörde erwartet beides zu sehen.",
+      "<strong>Dokumentieren Sie jede Entscheidung mit Zeitstempel.</strong> Wann Sie was wussten und was Sie daraufhin veranlasst haben, ist im Verwaltungsverfahren wie in einem späteren Haftungsstreit die entscheidende Frage, und sie lässt sich im Nachhinein nicht rekonstruieren."
+    ],
+    faq: [
+      [
+        "Wie schnell muss ein Produktrückruf den Behörden gemeldet werden?",
+        "Das hängt von Zuständigkeit, Produktklasse und Gefahrenschwere ab — Lebensmittel, Medizinprodukte, Fahrzeuge, Kosmetika und allgemeine Verbrauchsgüter unterliegen unterschiedlichen Regeln, und auch die Auslöser der Meldepflicht unterscheiden sich. Es gibt keine einheitliche Frist, und ein in mehreren Märkten verkauftes Produkt kann mehreren gleichzeitig unterliegen. Klären Sie die für Sie geltenden Pflichten vorab anwaltlich und schreiben Sie sie in den Plan, statt sich auf eine irgendwo gelesene Zahl zu verlassen."
+      ],
+      [
+        "Welche Behörde ist in Deutschland zuständig?",
+        "Bei Non-Food-Produkten die Marktüberwachungsbehörde des Bundeslandes, in dem Sie ansässig sind, auf Grundlage des Produktsicherheitsgesetzes; ernste Risiken gehen von dort in das Safety Gate der Europäischen Union. Bei Lebensmitteln und Futtermitteln ist es die Lebensmittelüberwachung der Länder, gebündelt über das Bundesamt für Verbraucherschutz und Lebensmittelsicherheit. Bei Arzneimitteln und Medizinprodukten sind es das Bundesinstitut für Arzneimittel und Medizinprodukte beziehungsweise das Paul-Ehrlich-Institut. Hinterlegen Sie im Plan namentlich, wer für Ihr Produkt zuständig ist."
+      ],
+      [
+        "Was ist eine Wirksamkeitsprüfung?",
+        "Eine strukturierte Überprüfung, ob die Rückrufinformation die Empfänger tatsächlich erreicht hat und ob gehandelt wurde — Stichproben bei Großhandel und Handel, Bestätigung, dass Ware aus dem Verkauf genommen wurde, und die Messung des Anteils der zurückgeholten oder anderweitig geklärten Menge. Behörden erwarten sie üblicherweise in festgelegten Abständen, weshalb die Vorlage mehrere ansetzt und nicht eine."
+      ],
+      [
+        "Was bedeutet die Rückrufstufe?",
+        "Wie weit der Rückruf die Vertriebskette hinunterreicht: Auf Großhandelsstufe endet er bei Zwischenhändlern, auf Handelsstufe erreicht er die Geschäfte, auf Verbraucherstufe die Endkunden. Sie folgt aus der Risikobewertung und verändert Rückhollogistik, Kommunikationsweg und Kosten um eine Größenordnung, weshalb die Vorlage daraus eine ausdrückliche Entscheidungszeile macht."
+      ],
+      [
+        "Wie hoch ist das Haftungsrisiko?",
+        "Das lässt sich nicht in eine Zahl fassen. Neben der öffentlich-rechtlichen Seite steht die Produkthaftung nach dem Produkthaftungsgesetz sowie die deliktische Haftung für Verkehrssicherungspflichten, zu denen bei erkannten Gefahren auch die Pflicht zur Warnung und gegebenenfalls zum Rückruf zählt. Die Höhe hängt von Schadensbild, Stückzahl und Verschulden ab. Was der Plan leisten kann, ist die lückenlose Dokumentation von Kenntnisstand und Reaktionszeit — genau die beiden Punkte, an denen sich später entscheidet, ob rechtzeitig gehandelt wurde."
+      ],
+      [
+        "Wie lange dauert ein Produktrückruf?",
+        "Melde- und Rückholphase werden in Tagen und Wochen gemessen; die Vorlage läuft rund neunzig Tage bis zum Abschluss. Ursachenanalyse, Korrekturmaßnahmen und die behördliche Beendigung dauern oft länger, und Wirksamkeitsprüfungen laufen, bis die Rücklaufquote nicht mehr steigt."
+      ],
+      [
+        "Sollten wir eine Rückrufübung durchführen?",
+        "Ja, und die meisten Qualitätsstandards und Kundenaudits erwarten sie jährlich. Eine Übung an einer echten Chargennummer prüft die Rückverfolgbarkeit unter Zeitdruck und ist der günstigste Weg, herauszufinden, dass sich aus Ihren Aufzeichnungen keine Verteilerliste schnell genug rekonstruieren lässt."
+      ],
+      [
+        "Ist die Vorlage für den Produktrückruf kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'digital-transformation-roadmap': {
+    card: "Wellen über Jahre: erst Daten und Identitäten, Nutzenmessung nach jeder Welle.",
+    h1: "Fahrplan für die digitale Transformation",
+    metaTitle: "Digitale Transformation — Fahrplan",
+    metaDesc: "Kostenloser Fahrplan für die digitale Transformation: mehrjährige Wellen, zuerst Daten und Identitäten, Nutzenmessung je Welle, tragfähige Steuerung.",
+    lead: "Eine kostenlose <strong>Fahrplan-Vorlage für die digitale Transformation</strong>, aufgebaut als Abfolge von Wellen statt als Programm mit Enddatum. Der leitende Gedanke ist abhängige Fähigkeit: Grundlagen für Daten, Identitäten und Integration müssen stehen, bevor das Sichtbare möglich wird, der Nutzen wird nach jeder Welle gemessen statt für eine Business-Case-Prüfung im dritten Jahr aufgespart, und die Steuerung ist so angelegt, dass sie den Weggang der auftraggebenden Person überlebt — was sie über drei Jahre hinweg vermutlich muss.",
+    intro: "Jede Welle liefert etwas Nutzbares, und auf jede folgt eine Nutzenbetrachtung, die den Inhalt der nächsten Welle verändern darf. Genau diese Rückkopplung ist der Zweck:",
+    phases: [
+      [
+        "Strategie, Ausgangslage und Steuerung",
+        "Bestandsaufnahme, Reifegradbestimmung, Zielbild der Organisation, der Wertbeitrag mit Ausgangswerten sowie der Aufbau des Steuerungsrhythmus und eines Portfoliobüros, die einzelne Führungskräfte überdauern. <em>Meilenstein: Fahrplan und Steuerung freigegeben.</em>"
+      ],
+      [
+        "Welle 1 — Grundlagen",
+        "Die unspektakuläre Welle, von der alles andere abhängt: Identitäts- und Berechtigungsverwaltung, die Integrationsschicht, Datenplattform und Datenverantwortung, Cloud-Landezone und Sicherheitsgrundlinie. Hier wird nichts für Kundinnen und Kunden Sichtbares geliefert. <em>Meilenstein: Grundlagen produktiv.</em>"
+      ],
+      [
+        "Welle 2 — Digitalisierung der Kernprozesse",
+        "Automatisierung in Finanzen, Einkauf und Personal, Vorgangs- und Dokumentenverwaltung sowie die Abschaltung der manuellen und tabellengestützten Abläufe, die dadurch ersetzt werden. <em>Meilenstein: Kernprozesse umgestellt.</em>"
+      ],
+      [
+        "Welle 3 — Angebote für Kundinnen und Kunden",
+        "Kundenportal, Selbstbedienung, mobile Nutzung, eine einheitliche Kundensicht und die Neugestaltung der Kundenreise — nur möglich, weil Welle 1 Identitäten und Integration darunter gebaut hat. <em>Meilenstein: Kundenangebot gestartet.</em>"
+      ],
+      [
+        "Welle 4 — Auswertung und intelligente Automatisierung",
+        "Auswertungen zur Selbstbedienung, Prognosemodelle und die Automatisierung von Entscheidungen mit hohem Volumen, dazu die Modellsteuerung, um sie verantwortbar zu betreiben. <em>Meilenstein: Auswertungsfähigkeit genutzt.</em>"
+      ],
+      [
+        "Nutzenmessung und Verstetigung",
+        "Nutzenbetrachtungen nach jeder Welle, Messung von Nutzung und Veränderung, Übergabe der Fähigkeit in die Linie, Abschaltung von Altsystemen und die jährliche Fortschreibung des Fahrplans. <em>Meilenstein: Programm in den Regelbetrieb überführt.</em>"
+      ]
+    ],
+    callout: "Der wiederkehrende Fehler ist, das Sichtbare zuerst zu bauen. Portale, Dashboards und Automatisierungsvorführungen sind das, wonach Auftraggeber fragen, aber jedes davon hängt still an Identitäten, Integration und verlässlichen Daten, und wer sie vor den Grundlagen baut, erzeugt eine Welle 3, die während Welle 4 leise neu gebaut wird. Der zweite Fehler ist, den Nutzen zu vertagen: Findet die erste Nutzenbetrachtung nach drei Jahren statt, ist niemand mehr da, der die ursprüngliche Zusage vertritt. Setzen Sie sie unmittelbar hinter jede Welle, veröffentlichen Sie die Zahl, ob sie schmeichelt oder nicht, und lassen Sie sie den Inhalt der nächsten Welle verändern.",
+    customize: [
+      "Benennen Sie die Wellen in Ihre eigene Sprache um, behalten Sie aber die Grundlagen vorn — diese Reihenfolge ist der eigentliche Inhalt des Plans.",
+      "Wählen Sie die Wellenlänge nach dem, was Ihre Organisation verkraftet; sechs bis neun Monate je Welle sind üblich, und kürzere Wellen scheitern an der Veränderungsfähigkeit, nicht an der Lieferung.",
+      "Setzen Sie nach jede Welle eine Zeile für die Nutzenbetrachtung, jeweils mit einer benannten Person, die schon dabei war, als der Nutzen zugesagt wurde.",
+      "Nehmen Sie die Abschaltung von Altsystemen ausdrücklich auf — Transformationen, die nie etwas abschalten, finanzieren am Ende zwei Landschaften.",
+      "Fügen Sie bei jedem erwarteten Führungswechsel, Haushaltszyklus oder Umbau eine Zeile für das Nachjustieren der Steuerung ein.",
+      "Zerlegen Sie jede Welle in Zeilen je Arbeitsstrang, sobald ihr Umfang steht; der einzelne Balken taugt nur auf Fahrplanebene.",
+      "Planen Sie die Beteiligung des Betriebsrats je Welle ein, nicht einmal zu Beginn — jede Welle, die Arbeitsabläufe oder auswertbare Leistungsdaten berührt, löst sie erneut aus, und Datenschutz-Folgenabschätzungen gehören daneben."
+    ],
+    tips: [
+      "<strong>Sequenzieren Sie nach Abhängigkeit, nicht nach Begeisterung.</strong> Die richtige Frage für jeden Kandidaten in Welle 1 lautet, was in Welle 3 bricht, wenn es ihn nicht gibt.",
+      "<strong>Messen Sie Nutzung, nicht Inbetriebnahme.</strong> Eine produktive Plattform mit fünfzehn Prozent Nutzung hat nichts geliefert, und nur eine Nutzungskennzahl sagt Ihnen das früh genug, um zu handeln.",
+      "<strong>Rechnen Sie damit, dass die Auftraggeberin wechselt.</strong> Schreiben Sie Wertbeitrag, Entscheidungen und Ausgangswerte so auf, dass eine Nachfolge sie ohne Sie aufnehmen kann.",
+      "<strong>Bleiben Sie bei einem Integrationsmuster.</strong> Wellen, die jeweils ihren eigenen Integrationsansatz erfinden, erzeugen genau die Zersplitterung, die das Programm beseitigen sollte.",
+      "<strong>Schalten Sie zu einem Datum ab.</strong> Eine Altsystemabschaltung ohne Termin und ohne verantwortliche Person findet nicht statt, und die Einsparungen im Wertbeitrag hängen daran."
+    ],
+    faq: [
+      [
+        "Wie lang ist ein Fahrplan für die digitale Transformation?",
+        "Typischerweise zwei bis vier Jahre über drei oder vier Wellen. Die Vorlage läuft rund drei Jahre. Kürzere Fahrpläne sind meist einzelne Programme; längere hören auf, Pläne zu sein, und werden Absichten — schreiben Sie deshalb jährlich fort, statt zu verlängern."
+      ],
+      [
+        "Warum müssen die Grundlagen zuerst kommen?",
+        "Weil Kundenportale, Auswertungen und Automatisierung alle davon abhängen zu wissen, wer eine Person ist, Daten zwischen Systemen zu bewegen und diesen Daten zu trauen. Auf zersplitterten Identitäten und Integrationen gebaut, funktionieren sie als Vorführung und scheitern als Fähigkeit, und der Neubau landet in der nächsten Welle."
+      ],
+      [
+        "Was ist Nutzenmessung und warum nach jeder Welle?",
+        "Es ist die Messung, ob der zugesagte Wert tatsächlich eingetreten ist — Kosten, Durchlaufzeit, Nutzung, Umsatz. Nach jeder Welle statt am Ende zu messen bedeutet, dass die Messung stattfindet, solange die Personen, die die Zusage gemacht haben, noch im Amt sind, und dass das Ergebnis den Inhalt der nächsten Welle verändern kann. Vertagte Nutzenbetrachtungen werden zuverlässig unwiderlegbar."
+      ],
+      [
+        "Wie halten wir die Steuerung über einen Führungswechsel hinweg?",
+        "Indem Rhythmus und Unterlagen institutionell werden statt persönlich: ein stehender Portfolioausschuss mit festem Takt, dokumentierte Entscheidungen und Ausgangswerte an einem Ort, den eine Nachfolge findet. Genau dafür enthält die Vorlage eine Zeile zum Nachjustieren der Steuerung."
+      ],
+      [
+        "Wie verhält sich das zu einem einzelnen Systemprogramm wie ERP?",
+        "Ein Fahrplan sequenziert mehrere Programme; ein Einführungsplan führt eines durch. Enthält eine Welle einen ERP-Wechsel, planen Sie ihn getrennt mit dem <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a> oder, bei einer SAP-Konversion, mit dem <a href=\"/de/templates/sap-s4hana-migration-plan.html\">SAP-S/4HANA-Migrationsplan</a>, und belassen Sie die Zeile im Fahrplan als zusammenfassenden Balken."
+      ],
+      [
+        "Ist die Vorlage für die digitale Transformation kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'qa-test-plan-schedule': {
+    card: "Eintritts- und Austrittskriterien, Testumgebung, überlappende Phasen, Fehlerschleife.",
+    h1: "Terminplan für den Testplan der Qualitätssicherung",
+    metaTitle: "Testplan QS — Terminplan",
+    metaDesc: "Kostenloser Terminplan für den QS-Testplan: Eintritts- und Austrittskriterien, Testumgebung, Testdaten, überlappende Testphasen, Fehlerschleife, Regression.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Testplan der Qualitätssicherung</strong>, deren Rückgrat Eintritts- und Austrittskriterien sind und keine Warteschlange von Phasen. Zwei Dinge steuern alles: eine stabile Testumgebung und bereitgestellte Testdaten. Danach überlappen sich die Phasen — der Integrationstest beginnt, während der Komponententest noch läuft, der Abnahmetest startet auf den Modulen, die fertig sind —, und der Kalender wird weniger von der Testdurchführung verbraucht als von der darunter laufenden Schleife aus Fehlerbewertung, Korrektur und Nachtest.",
+    intro: "Achten Sie darauf, dass sich die Durchführungsbalken überlappen und dass die Fehlerschleife über ihre gesamte Länge läuft. So sieht ein echter Testplan aus:",
+    phases: [
+      [
+        "Testplanung und Kriterien",
+        "Teststrategie, Umfang und risikobasierte Priorisierung, die vor Beginn der Durchführung schriftlich festgelegten Eintritts- und Austrittskriterien je Phase, Aufwandsschätzung und Ressourcenplan. <em>Meilenstein: Testplan und Kriterien freigegeben.</em>"
+      ],
+      [
+        "Testumgebung und Testdaten",
+        "Das eigentliche Tor. Aufbau und Konfiguration der Umgebung, Platzhalter für nicht verfügbare Schnittstellen, Bereitstellung und Anonymisierung der Testdaten, Zugänge und Konten sowie ein Rauchtest, der die Umgebung nachweist, bevor jemand darin testet. <em>Meilenstein: Eintrittskriterien der Umgebung erfüllt.</em>"
+      ],
+      [
+        "Testentwurf und Automatisierung",
+        "Entwurf von Testbedingungen und Testfällen, Nachverfolgbarkeit zu den Anforderungen, das Automatisierungsgerüst, Aufbau der Regressionssuite und die Skripte für den Lasttest. <em>Meilenstein: Testfälle durchführungsbereit.</em>"
+      ],
+      [
+        "Durchführung — Komponente, Integration, System",
+        "Überlappende Durchführungswellen statt einer Warteschlange: Komponenten- und Modultest, Integrations- und Schnittstellentest, danach System- und Sicherheitstest. <em>Meilenstein: Austrittskriterien des Systemtests erfüllt.</em>"
+      ],
+      [
+        "Fehlerbewertung, Korrektur und Nachtest",
+        "Die Schleife, die den Kalender tatsächlich verbraucht — tägliche Fehlerbewertung, Einstufung nach Schwere, Korrekturzyklen, Nachtest und Regressionswirkung sowie die Entscheidungen über zurückgestellte Fehler. <em>Meilenstein: Fehlerschwellen erreicht.</em>"
+      ],
+      [
+        "Abnahmetest, Regression und Freigabereife",
+        "Abnahmetest durch die Fachbereiche, vollständige Regression, Last- und Leistungsläufe, die Prüfung der Freigabereife und die Freigabe. <em>Meilenstein: Freigabe erteilt.</em>"
+      ]
+    ],
+    callout: "Der häufigste Planungsfehler in der Qualitätssicherung ist, Testumgebung und Testdaten als Vorgang zu behandeln statt als Tor. Ist die Umgebung instabil oder tragen die Daten die Szenarien nicht, buchen Testerinnen und Tester trotzdem Zeit, erzeugen dabei aber Fehler über die Umgebung statt über das Produkt — und diese Stunden sind unwiederbringlich. Schreiben Sie die Eintrittskriterien der Umgebung auf, prüfen Sie sie mit einem Rauchtest und beginnen Sie die Durchführung erst, wenn sie bestanden sind. Der zweite Fehler ist, die Fehlerschleife als Puffer zu planen. Korrektur und Nachtest sind kein Beiwerk um das Testen herum; in den meisten Projekten sind sie der längste Balken im Diagramm und sollten auch so gezeichnet werden.",
+    customize: [
+      "Schreiben Sie echte Eintritts- und Austrittskriterien in die Notizen jeder Phasenzeile — Bestehensquote, offene Fehler nach Schwere, Abdeckung —, damit die Tore prüfbar sind und nicht rhetorisch.",
+      "Überlappen Sie die Durchführungswellen entsprechend Ihrem Lieferrhythmus; sie hintereinanderzuhängen überschätzt fast immer die Gesamtdauer und unterschätzt das Risiko.",
+      "Bemessen Sie die Fehlerschleife aus Ihren eigenen historischen Fund- und Korrekturraten, nicht als Prozentsatz des Testaufwands.",
+      "Nehmen Sie je Schnittstelle oder angebundenem System eine eigene Zeile auf, wenn der Integrationstest von Partnern abhängt, die ihre eigenen Umgebungen steuern.",
+      "Ziehen Sie den Abnahmetest je Modul vor, wenn Sie schrittweise ausliefern statt in einem Wurf.",
+      "Ergänzen Sie vor der Regression eine Zeile für den Code-Freeze und halten Sie die Regression danach — Regression gegen einen sich bewegenden Stand ist keine Regression.",
+      "Nehmen Sie Personendaten in Testdaten ausdrücklich als eigene Zeile auf: Anonymisierung oder synthetische Daten sind nach der Datenschutz-Grundverordnung die Regel, und die Freigabe durch die Datenschutzbeauftragte hat eine Dauer."
+    ],
+    tips: [
+      "<strong>Machen Sie Austrittskriterien zu Zahlen.</strong> „Test abgeschlossen“ ist kein Tor; „null offene Fehler der Schwere 1, weniger als fünf der Schwere 2, 95 Prozent der geplanten Fälle durchgeführt“ ist eines.",
+      "<strong>Stellen Sie Testdaten bereit, bevor der Testentwurf endet.</strong> Beim Entwurf fallen Datenlücken auf, und die Bereitstellung hat den längsten Vorlauf im ganzen Plan.",
+      "<strong>Bewerten Sie Fehler in der Spitzenphase täglich.</strong> Eine wöchentliche Runde bedeutet, dass ein Fehler fünf Tage liegen kann, bevor jemand entscheidet, wer ihn behebt.",
+      "<strong>Schützen Sie die Regression vor dem Korrekturstrom.</strong> Jede späte Korrektur entwertet einen Teil des Regressionslaufs, und genau dafür gibt es die Zeile für den Code-Freeze.",
+      "<strong>Verfolgen Sie die Fundrate, nicht die Fehlerzahl.</strong> Eine sinkende Fundrate ist das ehrliche Signal, dass eine Phase konvergiert; eine reine Zahl sagt fast nichts."
+    ],
+    faq: [
+      [
+        "Was sind Eintritts- und Austrittskriterien in einem Testplan?",
+        "Eintrittskriterien sind die Bedingungen, die vor Beginn einer Testphase erfüllt sein müssen — Umgebung stabil, Stand eingespielt, Testdaten geladen, Rauchtest bestanden. Austrittskriterien sind die Bedingungen, die vor der Erklärung des Abschlusses erfüllt sein müssen — Durchführungsabdeckung, Bestehensquote und offene Fehler nach Schwere. Beide sollten Zahlen sein, vor Beginn vereinbart und durchgesetzt werden."
+      ],
+      [
+        "Warum überlappen sich Testphasen statt aufeinanderzufolgen?",
+        "Weil Stände schrittweise ankommen. Der Integrationstest kann auf den bereits komponentengetesteten Modulen beginnen, und der Abnahmetest kann auf fertigen Abläufen starten, während anderswo noch der Systemtest läuft. Phasen hintereinanderzuhängen bläht den Plan auf und verbirgt den echten Engpass, nämlich die Schleife aus Korrektur und Nachtest."
+      ],
+      [
+        "Wie viel Zeit sollte ich für die Fehlerbehebung einplanen?",
+        "Bemessen Sie sie aus Ihrer eigenen Historie: gefundene Fehler je Testtag, der Anteil, der eine Korrektur braucht, und Ihre durchschnittliche Durchlaufzeit aus Korrektur und Nachtest. In den meisten Projekten ist diese Schleife der längste Balken im Diagramm. Ein pauschaler Prozentsatz des Testaufwands ist der übliche Weg in den Verzug."
+      ],
+      [
+        "Dürfen echte Produktivdaten als Testdaten dienen?",
+        "In aller Regel nicht ohne Weiteres. Enthalten sie Personendaten, braucht ihre Verwendung im Test eine Rechtsgrundlage nach der Datenschutz-Grundverordnung, und der übliche Weg sind Anonymisierung, Pseudonymisierung oder synthetische Daten. Planen Sie das als eigenen Vorgang mit Vorlauf und Freigabe ein, nicht als Nebenschritt der Bereitstellung — es ist einer der häufigsten stillen Blocker vor dem Eintrittstor."
+      ],
+      [
+        "Was, wenn die Testumgebung nicht bereit ist?",
+        "Nicht mit der Durchführung beginnen. Ein Test gegen eine instabile Umgebung erzeugt Umgebungsfehler statt Produktfehler, und die Zeit ist unwiederbringlich. Die Vorlage macht die Bereitschaft der Umgebung zu einem Meilenstein mit vorgelagertem Rauchtest, damit diese Entscheidung sichtbar getroffen wird und nicht still verschluckt."
+      ],
+      [
+        "Wann sollte der Abnahmetest beginnen?",
+        "Wenn die Austrittskriterien des Systemtests für den Umfang erfüllt sind, den der Abnahmetest abdeckt — nicht wenn überall jeder Systemtest fertig ist. Der Abnahmetest ist fachliche Bestätigung, er braucht also einen stabilen Stand und realistisch geformte Daten; ihn gegen einen Stand laufen zu lassen, der noch Korrekturen erhält, verschwendet die Fachbereiche, und die sind die knappste Ressource im Plan."
+      ],
+      [
+        "Ist die Vorlage für den QS-Testplan kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

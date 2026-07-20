@@ -435,6 +435,8 @@ const H = require('./new-templates-h.js').T;
 const I = require('./new-templates-i.js').T;
 const J = require('./new-templates-j.js').T;
 const K = require('./new-templates-k.js').T;
-Object.assign(T, B, C, D, E, F, G, H, I, J, K);
+const L = require('./new-templates-l.js').T;
+const M = require('./new-templates-m.js').T;
+Object.assign(T, B, C, D, E, F, G, H, I, J, K, L, M);
 
 module.exports = { T, SLUGS: Object.keys(T) };

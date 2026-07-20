@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3ZFCTKWL1D');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de migração para SAP S/4HANA | gantts.app</title>
+  <meta name="description" content="Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/pt/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/sap-s4hana-migration-plan.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/sap-s4hana-migration-plan.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="Plano de migração para SAP S/4HANA | gantts.app" />
+  <meta property="og:description" content="Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento." />
+  <meta property="og:url" content="https://gantts.app/pt/templates/sap-s4hana-migration-plan.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plano de migração para SAP S/4HANA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plano de migração para SAP S/4HANA | gantts.app" />
+  <meta name="twitter:description" content="Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/pt/templates/sap-s4hana-migration-plan.html#webpage","name":"Plano de migração para SAP S/4HANA","url":"https://gantts.app/pt/templates/sap-s4hana-migration-plan.html","description":"Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento.","inLanguage":"pt","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Modelos","item":"https://gantts.app/pt/templates.html"},{"@type":"ListItem","position":3,"name":"Plano de migração para SAP S/4HANA","item":"https://gantts.app/pt/templates/sap-s4hana-migration-plan.html"}]}},{"@type":"HowTo","name":"Como usar o modelo: Plano de migração para SAP S/4HANA","description":"Plano gratuito de migração para SAP S/4HANA: conversão brownfield, remediação de código Z, três ensaios de cutover e janela de congelamento.","inLanguage":"pt","step":[{"@type":"HowToStep","position":1,"name":"Se o seu caso for implantação nova, e não conversão, apague as fases d","text":"Se o seu caso for implantação nova, e não conversão, apague as fases de remediação e de ensaio de cutover e reconstrua em torno do desenho de processos — os formatos são realmente diferentes."},{"@type":"HowToStep","position":2,"name":"Fixe primeiro o fim de semana do cutover de produção e conte para trás","text":"Fixe primeiro o fim de semana do cutover de produção e conte para trás; os ensaios de cutover são a única estimativa confiável de quanto tempo isso leva."},{"@type":"HowToStep","position":3,"name":"Divida a remediação de código próprio em ondas por dono do objeto, e n","text":"Divida a remediação de código próprio em ondas por dono do objeto, e não por quantidade de objetos, para que as barras correspondam a quem de fato faz o trabalho."},{"@type":"HowToStep","position":4,"name":"Alongue a janela de congelamento se você tiver volume alto de transaçõ","text":"Alongue a janela de congelamento se você tiver volume alto de transações no fechamento, e evite rodar o cutover atravessando virada de período fiscal."},{"@type":"HowToStep","position":5,"name":"Acrescente linhas para cada interface e sistema satélite — conversões ","text":"Acrescente linhas para cada interface e sistema satélite — conversões costumam quebrar as integrações antes de quebrar o próprio SAP."}]},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"Quanto tempo leva uma migração para SAP S/4HANA?","acceptedAnswer":{"@type":"Answer","text":"Uma conversão de sistema costuma levar de doze a vinte meses, dependendo do volume de código próprio e do número de interfaces. O modelo usa cerca de dezesseis meses. Implantações novas variam muito mais, porque o cronograma é comandado pelo desenho de processos, e não pela remediação."}},{"@type":"Question","name":"Qual a diferença entre brownfield e greenfield?","acceptedAnswer":{"@type":"Answer","text":"Brownfield é conversão de sistema: você mantém configuração, histórico e código próprio existentes e converte o ambiente no lugar. Greenfield é uma implantação nova para dentro da qual você migra dados selecionados. Cronogramas brownfield são dominados por remediação de código e ensaios de cutover; cronogramas greenfield são dominados por desenho de processos e gestão da mudança. Este modelo mostra o caminho brownfield."}},{"@type":"Question","name":"Como isso se diferencia do cronograma de implantação de ERP?","acceptedAnswer":{"@type":"Answer","text":"O cronograma de implantação de ERP pressupõe que você está selecionando e implantando um sistema do zero — escolha de fornecedor, desenho de processos, parametrização, migração de dados e treinamento. Este plano pressupõe que o SAP já roda e que você está convertendo, então as fases pesadas são remediação de código próprio e ensaios repetidos de cutover."}},{"@type":"Question","name":"O que a localização brasileira acrescenta ao plano?","acceptedAnswer":{"@type":"Answer","text":"Uma frente inteira. Nota fiscal eletrônica de produto e de serviço, os blocos do SPED fiscal e contábil, a apuração de tributos e o middleware que conversa com a SEFAZ costumam ter código próprio antigo e forte acoplamento a tabelas que a conversão mexe. Reserve barras específicas de análise, remediação e teste ponta a ponta de emissão fiscal, e coloque o calendário das obrigações acessórias ao lado da data escolhida para o cutover."}},{"@type":"Question","name":"Quantos ensaios de cutover eu preciso?","acceptedAnswer":{"@type":"Answer","text":"Três é o número usual de planejamento e o modelo usa três, seguidos de um ensaio geral. Cada um roda o runbook completo sobre volumes de produção e é cronometrado; se o terceiro ainda estourar a janela disponível, acrescente um quarto em vez de comprimir o de verdade."}},{"@type":"Question","name":"Quanto tempo deve durar o congelamento do negócio?","acceptedAnswer":{"@type":"Answer","text":"Mais do que o cutover técnico. Lançamentos, alterações de dados mestres e encerramento de transações em aberto normalmente congelam vários dias antes de a conversão começar e continuam congelados até a conciliação passar. Use os tempos dos seus ensaios de cutover para dimensioná-lo, em vez de chutar, e comunique ao negócio com semanas de antecedência."}},{"@type":"Question","name":"O modelo de migração para SAP S/4HANA é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/pt/app.html">Criar gráfico</a>
+        <a href="/pt/templates.html">Modelos</a>
+        <a href="/pt/blog/">Guias</a>
+        <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/templates/sap-s4hana-migration-plan.html">English</option><option value="/es/templates/sap-s4hana-migration-plan.html">Español</option><option value="/fr/templates/sap-s4hana-migration-plan.html">Français</option><option value="/de/templates/sap-s4hana-migration-plan.html">Deutsch</option><option value="/pt/templates/sap-s4hana-migration-plan.html" selected>Português</option><option value="/zh/templates/sap-s4hana-migration-plan.html">简体中文</option></select>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
+    <div class="container tpl-hero">
+      <div class="tpl-hero-copy">
+        <div class="crumbs"><a href="/pt/">Início</a> › <a href="/pt/templates.html">Modelos</a> › Plano de migração para SAP S/4HANA</div>
+        <h1>Plano de migração para SAP S/4HANA</h1>
+        <p class="lead">Um modelo gratuito de <strong>plano de migração para SAP S/4HANA</strong> montado em torno da decisão que muda todo o resto: converter o sistema ECC existente no lugar (<em>brownfield</em>) ou construir uma implantação nova e migrar para dentro dela (<em>greenfield</em>). Este plano mostra o caminho de <em>conversão</em>, porque é aquele cujo cronograma é dominado pela remediação de código próprio e por ensaios repetidos de cutover, e não pelo desenho de processos. Se o seu caso for levantar um ERP do zero, comece pelo <a href="/templates/erp-implementation-schedule.html">cronograma de implantação de ERP</a>.</p>
+        <div class="dl-row">
+          <a class="btn btn-primary" href="/templates/files/sap-s4hana-migration-plan.xlsx" download>⬇ Excel (.xlsx)</a>
+          <a class="btn" href="/templates/files/sap-s4hana-migration-plan.pptx" download>⬇ PowerPoint</a>
+          <a class="btn" href="/templates/files/sap-s4hana-migration-plan.csv" download>⬇ CSV</a>
+          <a class="btn btn-primary" href="/pt/app.html?csv=sap-s4hana-migration-plan">✎ Editar online grátis</a>
+        </div>
+      </div>
+      <div class="tpl-hero-media"><img src="/templates/img/sap-s4hana-migration-plan.svg" alt="Prévia do modelo com as fases em uma linha do tempo" /></div>
+    </div>
+  </section>
+
+  <article class="container">
+    <div class="prose">
+      <h2 id="whats-included">O que o modelo contém</h2>
+      <p>Uma conversão não é um projeto que termina no go-live — termina quando a janela de congelamento fecha e os saldos batem. As barras abaixo colocam os ensaios de cutover e o congelamento onde eles de fato ficam:</p>
+      <ul>
+        <li><strong>Decisão do caminho e prontidão</strong> — Relatórios de <em>readiness check</em>, análise dos <em>simplification items</em>, a decisão brownfield versus greenfield em si, dimensionamento, e o desenho da paisagem de destino. <em>Marco: caminho de conversão aprovado.</em></li>
+        <li><strong>Preparação e remediação de código próprio</strong> — A parte de uma conversão que ninguém dimensiona direito: análise do código Z contra a base de simplificação, ondas de remediação, aposentadoria de código obsoleto, e a preparação do modelo de dados de finanças de que a conversão depende. Aqui também entra o add-on de localização brasileira: notas fiscais eletrônicas, SPED e as obrigações acessórias precisam ser revistos objeto a objeto, porque é o ponto em que uma conversão tecnicamente limpa fica impedida de emitir. <em>Marco: remediação de código concluída.</em></li>
+        <li><strong>Conversão de sandbox e desenvolvimento</strong> — A primeira conversão técnica sobre uma cópia sandbox, o tempo de execução que ela revela, e depois os ambientes de desenvolvimento e de qualidade, com adaptação funcional e teste unitário atrás de cada um. <em>Marco: ambiente de qualidade convertido.</em></li>
+        <li><strong>Ciclos de teste</strong> — Testes funcionais, de integração, de interface, de autorizações e de desempenho, mais o ciclo de defeitos, rodando contra um ambiente de qualidade convertido, e não contra uma construção nova. Reserve um ciclo próprio para emissão fiscal e transmissão de arquivos aos fiscos, ponta a ponta. <em>Marco: saída do teste integrado aprovada.</em></li>
+        <li><strong>Ensaios de cutover e ensaio geral</strong> — Três ensaios de cutover sobre volumes de dados de produção, cada um cronometrado e cada um encurtando o <em>runbook</em>, e então o ensaio geral que dá o go/no-go. <em>Marco: decisão de go/no-go no ensaio geral.</em></li>
+        <li><strong>Congelamento, cutover e hipercuidado</strong> — A janela de congelamento do negócio, a conversão de produção em si, validação e conciliação, liberação para o negócio, e o período de hipercuidado antes da devolução ao suporte. <em>Marco: saída do hipercuidado.</em></li>
+      </ul>
+
+      <div class="callout">Duas coisas afundam cronograma de conversão. A primeira é o código próprio: o relatório de prontidão vai listar milhares de ocorrências, a maioria trivial e um punhado estrutural, e até alguém triá-las você não tem uma estimativa — tem um número de objetos. A segunda é o congelamento do negócio. As equipes planejam um fim de semana e descobrem que o congelamento de lançamentos, de dados mestres e de transações em aberto começa de fato vários dias antes e não é liberado enquanto a conciliação não fechar. Planeje o congelamento como evento de negócio, com donos nomeados, e não como janela técnica — e no Brasil ainda cheque o calendário das obrigações acessórias antes de escolher a data, porque emissão de nota e entrega de SPED não param só porque o seu cutover começou.</div>
+
+      <h2 id="customize">Como adaptar</h2>
+      <ol>
+        <li>Se o seu caso for implantação nova, e não conversão, apague as fases de remediação e de ensaio de cutover e reconstrua em torno do desenho de processos — os formatos são realmente diferentes.</li>
+        <li>Fixe primeiro o fim de semana do cutover de produção e conte para trás; os ensaios de cutover são a única estimativa confiável de quanto tempo isso leva.</li>
+        <li>Divida a remediação de código próprio em ondas por dono do objeto, e não por quantidade de objetos, para que as barras correspondam a quem de fato faz o trabalho.</li>
+        <li>Alongue a janela de congelamento se você tiver volume alto de transações no fechamento, e evite rodar o cutover atravessando virada de período fiscal.</li>
+        <li>Acrescente linhas para cada interface e sistema satélite — conversões costumam quebrar as integrações antes de quebrar o próprio SAP.</li>
+        <li>Trate a localização brasileira como frente própria, com barras para as notas fiscais eletrônicas, os blocos do SPED e a integração com o middleware fiscal; ela raramente se comporta como o resto do código Z.</li>
+        <li>Acrescente um quarto ensaio de cutover se o terceiro ainda não tiver terminado dentro da janela disponível.</li>
+      </ol>
+
+      <h2 id="tips">Dicas de cronograma</h2>
+      <ul>
+        <li><strong>Rode o primeiro ensaio de cutover cedo e mal.</strong> A função dele é descobrir o que falta no runbook, e não dar certo. Os ensaios seguintes é que precisam parecer limpos.</li>
+        <li><strong>Triagem do relatório de prontidão, não contagem.</strong> Mil ocorrências podem ser duas semanas de trabalho ou seis meses, e só a triagem diz qual dos dois.</li>
+        <li><strong>Trate o ensaio geral como portão de verdade.</strong> Se o ensaio não termina dentro da janela planejada, o cutover de produção também não vai terminar — é exatamente para isso que ele existe.</li>
+        <li><strong>Congele o negócio, e não só o sistema.</strong> Publique o que as pessoas podem e não podem fazer em cada dia da janela, bastante antes de ela começar.</li>
+        <li><strong>Concilie antes de liberar.</strong> Saldos contábeis, partidas em aberto e quantidades de estoque validados contra os números pré-conversão são o critério real de go-live, e não uma tela verde.</li>
+        <li><strong>Prove a emissão fiscal antes de liberar o faturamento.</strong> Sistema convertido que não consegue autorizar uma nota fiscal eletrônica no ambiente de produção da SEFAZ é uma parada de faturamento, e é o tipo de coisa que só aparece com uma nota real.</li>
+      </ul>
+
+      <h2 id="related">Modelos relacionados</h2>
+      <ul>
+        <li><a href="/pt/templates/erp-implementation-schedule.html">Cronograma de implantação de ERP</a></li>
+        <li><a href="/pt/templates/data-migration-project-plan.html">Plano de projeto de migração de dados</a></li>
+        <li><a href="/pt/templates/cloud-migration-project-plan.html">Plano de projeto de migração para nuvem</a></li>
+        <li><a href="/pt/templates/digital-transformation-roadmap.html">Roadmap de transformação digital</a></li>
+        <li><a href="/pt/templates.html">Ver todos os modelos de gráfico de Gantt</a></li>
+      </ul>
+      <p class="crumbs"><small>Este modelo está em português. Páginas relacionadas ainda não traduzidas abrem em inglês.</small></p>
+
+      <h2 id="faq">Perguntas frequentes</h2>
+      <div class="faq">
+        <details open><summary>Quanto tempo leva uma migração para SAP S/4HANA?</summary><p>Uma conversão de sistema costuma levar de doze a vinte meses, dependendo do volume de código próprio e do número de interfaces. O modelo usa cerca de dezesseis meses. Implantações novas variam muito mais, porque o cronograma é comandado pelo desenho de processos, e não pela remediação.</p></details>
+        <details><summary>Qual a diferença entre brownfield e greenfield?</summary><p>Brownfield é conversão de sistema: você mantém configuração, histórico e código próprio existentes e converte o ambiente no lugar. Greenfield é uma implantação nova para dentro da qual você migra dados selecionados. Cronogramas brownfield são dominados por remediação de código e ensaios de cutover; cronogramas greenfield são dominados por desenho de processos e gestão da mudança. Este modelo mostra o caminho brownfield.</p></details>
+        <details><summary>Como isso se diferencia do cronograma de implantação de ERP?</summary><p>O <a href="/templates/erp-implementation-schedule.html">cronograma de implantação de ERP</a> pressupõe que você está selecionando e implantando um sistema do zero — escolha de fornecedor, desenho de processos, parametrização, migração de dados e treinamento. Este plano pressupõe que o SAP já roda e que você está convertendo, então as fases pesadas são remediação de código próprio e ensaios repetidos de cutover.</p></details>
+        <details><summary>O que a localização brasileira acrescenta ao plano?</summary><p>Uma frente inteira. Nota fiscal eletrônica de produto e de serviço, os blocos do SPED fiscal e contábil, a apuração de tributos e o middleware que conversa com a SEFAZ costumam ter código próprio antigo e forte acoplamento a tabelas que a conversão mexe. Reserve barras específicas de análise, remediação e teste ponta a ponta de emissão fiscal, e coloque o calendário das obrigações acessórias ao lado da data escolhida para o cutover.</p></details>
+        <details><summary>Quantos ensaios de cutover eu preciso?</summary><p>Três é o número usual de planejamento e o modelo usa três, seguidos de um ensaio geral. Cada um roda o runbook completo sobre volumes de produção e é cronometrado; se o terceiro ainda estourar a janela disponível, acrescente um quarto em vez de comprimir o de verdade.</p></details>
+        <details><summary>Quanto tempo deve durar o congelamento do negócio?</summary><p>Mais do que o cutover técnico. Lançamentos, alterações de dados mestres e encerramento de transações em aberto normalmente congelam vários dias antes de a conversão começar e continuam congelados até a conciliação passar. Use os tempos dos seus ensaios de cutover para dimensioná-lo, em vez de chutar, e comunique ao negócio com semanas de antecedência.</p></details>
+        <details><summary>O modelo de migração para SAP S/4HANA é gratuito?</summary><p>Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro.</p></details>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Planeje online — grátis</h2>
+      <p>Abra o modelo no editor, ajuste as barras às suas datas e exporte em PDF, Excel ou PowerPoint. Sem cadastro e sem marca d'água.</p>
+      <a class="btn btn-white btn-lg" href="/pt/app.html?csv=sap-s4hana-migration-plan">Abrir o editor gratuito</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/pt/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.</p>
+          <a class="footer-cta" href="/pt/app.html">Abrir o aplicativo →</a>
+          <p class="footer-byline">Um projeto da <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
+        </div>
+        <div>
+          <h4>Modelos</h4>
+          <a href="/pt/templates.html">Todos os modelos</a>
+          <a href="/pt/templates/excel.html">Excel</a>
+          <a href="/pt/templates/powerpoint.html">PowerPoint</a>
+          <a href="/pt/templates/construction.html">Construção</a>
+        </div>
+        <div>
+          <h4>Guias</h4>
+          <a href="/pt/blog/">Todos os guias</a>
+          <a href="/pt/blog/what-is-a-gantt-chart.html">O que é um gráfico de Gantt?</a>
+          <a href="/pt/blog/critical-path-method.html">Método do caminho crítico</a>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <a href="/pt/about.html">Sobre</a>
+          <a href="/pt/contact.html">Contato</a>
+          <a href="/pt/terms.html">Termos de uso</a>
+          <a href="/pt/privacy.html">Privacidade</a>
+          <a href="/pt/accessibility.html">Acessibilidade</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · Todos os direitos reservados.</span>
+        <span>Site estático — nada do que você planeja sai do seu navegador.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=25"></script>
+</body>
+</html>

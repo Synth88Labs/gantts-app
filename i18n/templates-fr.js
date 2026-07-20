@@ -5327,6 +5327,795 @@ const T = {
       ]
     ]
   },
+  'tunnel-construction-schedule': {
+    card: "Tunnelier commandé très en amont, puits d’attaque, vitesse d’avancement selon le terrain, percement, rameaux et second œuvre.",
+    h1: "Planning de construction de tunnel",
+    metaTitle: "Planning de construction de tunnel",
+    metaDesc: "Planning gratuit de construction de tunnel : autorisations, tunnelier, puits d’attaque, avancement, percement, rameaux, ventilation et sécurité incendie.",
+    lead: "Un <strong>planning de construction de tunnel</strong> gratuit, construit autour de la machine plutôt qu’autour des phases — spécification, fabrication, essais en usine et transport du tunnelier comme approvisionnement long qui démarre avant le premier coup de pioche ; un puits d’attaque qui doit être terminé, et non presque terminé, pour recevoir la machine ; une vitesse d’avancement qui change avec le terrain ; l’approvisionnement en voussoirs et l’évacuation des déblais comme services continus qui conditionnent le creusement ; puis le percement, le revêtement définitif et les systèmes de ventilation et de sécurité incendie qui suivent. À télécharger pour un comité de pilotage, ou à ouvrir en ligne pour y poser vos propres mètres par semaine.",
+    intro: "Un chantier de tunnel n’est pas une succession de corps d’état. C’est une machine qui avance à la vitesse que le terrain autorise, et tout le reste est organisé pour qu’elle continue d’avancer. Le modèle suit cette logique :",
+    phases: [
+      [
+        "Autorisations, reconnaissance géotechnique et achat du tunnelier",
+        "Sondages et rapport géotechnique de référence, tracé et dimensionnement du revêtement, autorisation environnementale et enquête publique, autorisation au titre de la loi sur l’eau pour les franchissements de cours d’eau, DT et DICT auprès des exploitants de réseaux, puis l’appel d’offres tunnelier qui fige toutes les dates en aval. <em>Jalons : autorisations obtenues, marché tunnelier attribué.</em>"
+      ],
+      [
+        "Puits d’attaque et installation de chantier",
+        "Installations de chantier, désignation du coordonnateur SPS et rédaction du plan général de coordination, parois moulées, terrassement du puits, radier, mur de réaction et chambre de lancement — ainsi que la production des premiers anneaux de voussoirs, qui doit avoir de l’avance sur la machine dès le premier jour. <em>Jalon : puits d’attaque prêt à recevoir le tunnelier.</em>"
+      ],
+      [
+        "Fabrication, livraison et montage du tunnelier",
+        "Conception de la roue de coupe pour le terrain attendu, fabrication, essais de réception en usine, transport exceptionnel par tronçons, descente dans le puits et montage en souterrain. <em>Jalon : tunnelier prêt au lancement.</em>"
+      ],
+      [
+        "Creusement",
+        "Lancement à travers l’œil de sortie, les premières centaines de mètres en montée en cadence, le creusement en régime établi dans des terrains hétérogènes, une intervention hyperbare pour le changement d’outils, le passage sous la rivière, et le bruit de fond permanent que sont l’auscultation des tassements, l’approvisionnement en voussoirs et l’évacuation des déblais. <em>Jalon : percement.</em>"
+      ],
+      [
+        "Rameaux de communication et travaux secondaires",
+        "Traitement de terrain et creusement des rameaux pendant que la machine est encore devant vous, démontage et remontée du tunnelier, injection de bourrage de l’espace annulaire, relevé des anneaux et revêtement définitif. <em>Jalon : gros œuvre du tunnel achevé.</em>"
+      ],
+      [
+        "Second œuvre, systèmes et mise en service",
+        "Cheminement et drainage, chemins de câbles, ventilateurs et gaines, colonne sèche et moyens d’extinction, distribution électrique et éclairage, télécommunications et supervision, puis un essai de fumées chaudes avec le SDIS et le dossier de sécurité soumis à l’autorité compétente. <em>Jalon : remise à l’exploitant.</em>"
+      ]
+    ],
+    callout: "Le tunnelier, c’est le planning. Commandez-le tard et rien de ce que vous ferez ensuite ne rattrapera le temps perdu : conception, fabrication, réception en usine et transport représentent couramment douze à dix-huit mois pour une machine sur mesure, et elle ne se descend pas dans un puits inachevé. Les deux barres qui ruinent les chantiers de tunnel sont celle de la fabrication qui démarre trop tard et celle du puits qui se termine après l’arrivée de la machine — un tunnelier en pièces détachées en surface coûte de l’argent chaque jour et n’achète rien. Posez-les toutes les deux dès le premier jour et ne les laissez jamais dériver.",
+    customize: [
+      "Tirez votre vitesse d’avancement du rapport géotechnique de référence, et non de la meilleure semaine du chantier précédent — puis découpez le creusement en barres distinctes par unité géologique, pour qu’un passage difficile soit visible au lieu d’être noyé dans une moyenne.",
+      "Donnez aux premières centaines de mètres leur propre barre, courte et lente. Tout tunnelier connaît une montée en cadence pendant que l’équipe, l’injection et le marinage se calent, et les planifier au régime nominal garantit un retard précoce.",
+      "Ajoutez une barre d’intervention hyperbare partout où le rapport prévoit un terrain abrasif. Le changement d’outils de coupe est un événement planifiable de durée connue ; le découvrir en cours de creusement le transforme en un mois.",
+      "Représentez l’approvisionnement en voussoirs par une barre continue sur toute la durée du creusement, et confrontez la production de l’usine de préfabrication à votre pic hebdomadaire d’anneaux, pas à la moyenne.",
+      "Faites apparaître explicitement l’évacuation des déblais et la filière de valorisation ou de stockage. Une aire saturée ou une filière perdue arrête la machine aussi sûrement qu’une avarie mécanique.",
+      "Placez les DT-DICT avant tout terrassement et non dans une phase administrative de début de projet : les récépissés conditionnent l’ouverture du chantier, et leur oubli est un arrêt de travaux immédiat.",
+      "Posez comme jalons les autorisations obtenues, l’attribution du marché tunnelier, la disponibilité du puits, la mise en service de la machine et le percement — ces cinq dates résument tout le programme."
+    ],
+    tips: [
+      "<strong>Achetez la machine avant d’avoir terminé le reste des études.</strong> La configuration de la roue de coupe dépend du terrain, pas de l’architecture des stations, et le rapport géotechnique suffit généralement à passer commande bien avant que le reste soit figé.",
+      "<strong>Traitez le puits d’attaque comme le chemin critique qu’il est.</strong> Parois moulées, terrassement, radier et mur de réaction s’enchaînent en série et en terrain meuble ; il n’existe aucun moyen de comprimer la fin de cette chaîne pour rattraper un démarrage tardif.",
+      "<strong>Ne considérez jamais les rameaux comme du travail de remplissage.</strong> Ils exigent un traitement de terrain, ils constituent l’activité la plus risquée de la plupart des chantiers de tunnel, et ils dépendent d’anneaux posés et injectés sur cette section.",
+      "<strong>Faites courir l’auscultation des tassements bien avant le lancement et bien après le passage.</strong> Des mesures de référence prises une fois le creusement commencé ne valent rien, et une injection de compensation doit être instrumentée avant d’être nécessaire.",
+      "<strong>Intégrez la coordination SPS au planning, pas au dossier.</strong> Le PGC impose des interférences entre entreprises, des accès et des périodes d’intervention qui modifient réellement les durées, et un coordonnateur informé après coup est un coordonnateur qui arrête des tâches.",
+      "<strong>Le percement n’est pas la fin.</strong> Sur la plupart des projets, le second œuvre, la ventilation et les systèmes de sécurité qui suivent durent plus longtemps qu’on ne l’imagine, et l’essai de fumées chaudes comme le dossier de sécurité se placent derrière tout le reste sur le chemin critique de la mise en service.",
+      "<strong>Réservez le SDIS des mois à l’avance pour l’exercice incendie.</strong> Un essai de fumées chaudes suppose sa présence, son agenda n’est pas le vôtre, et un créneau manqué repousse la remise de plusieurs semaines alors que le tunnel est physiquement terminé."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire un tunnel ?",
+        "Un tunnel urbain monotube de quelques kilomètres court couramment trente à quarante mois entre l’obtention des autorisations et la remise à l’exploitant, ce qui correspond à peu près à l’hypothèse du modèle. La variabilité se concentre sur le délai de fabrication du tunnelier en amont et sur les conditions de terrain pendant le creusement."
+      ],
+      [
+        "Combien de temps à l’avance faut-il commander le tunnelier ?",
+        "Conception, fabrication, réception en usine et transport représentent couramment douze à dix-huit mois pour une machine sur mesure, auxquels s’ajoute le montage en souterrain. La commande doit être passée pendant que le puits est encore à l’étude, pas une fois qu’il est terminé."
+      ],
+      [
+        "Comment planifier une vitesse d’avancement que l’on ne peut pas prévoir ?",
+        "En découpant le creusement en barres par unité géologique issue du rapport géotechnique de référence et en affectant à chacune sa propre cadence. Une section lente apparaît alors comme telle, au lieu de disparaître dans une barre unique moyennée."
+      ],
+      [
+        "Quelles autorisations conditionnent le démarrage ?",
+        "Selon le projet : autorisation environnementale après enquête publique, autorisation ou déclaration au titre de la loi sur l’eau dès qu’un cours d’eau ou une nappe est concerné, et éventuellement une déclaration d’utilité publique. À cela s’ajoutent les DT-DICT auprès des exploitants de réseaux, qui ne sont pas une formalité d’étude mais un préalable à chaque terrassement."
+      ],
+      [
+        "Quand construire les rameaux de communication ?",
+        "Après le passage de la machine et une fois les anneaux injectés sur la section concernée, mais généralement pendant que le creusement se poursuit devant. Ils exigent d’abord un traitement de terrain et portent le risque le plus élevé du chantier : ils méritent donc leurs propres barres plutôt que d’être traités comme du remplissage de marge."
+      ],
+      [
+        "Le modèle de planning de tunnel est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'semiconductor-fab-construction-schedule': {
+    card: "Gros œuvre, bascule du protocole salle blanche, utilités jusqu’aux points de raccordement, qualification des équipements et premier silicium.",
+    h1: "Planning de construction d’une usine de semi-conducteurs",
+    metaTitle: "Planning de construction d’une fab",
+    metaDesc: "Planning gratuit de construction d’usine de semi-conducteurs : gros œuvre, salle blanche, utilités, raccordement et qualification des équipements.",
+    lead: "Un <strong>planning de construction d’usine de semi-conducteurs</strong> gratuit qui remet le protocole salle blanche à sa vraie place : à la charnière du programme. Site, autorisations et dalle désolidarisée des vibrations ; structure, enveloppe et trame de salle blanche ; eau ultrapure, gaz vrac et gaz spéciaux, extraction et traitement des effluents gazeux, dimensionnés pour être disponibles aux points de raccordement ; puis une bascule nette où le site cesse d’être un chantier pour devenir un environnement contrôlé, suivie de l’entrée des équipements, du raccordement, de la qualification et du premier silicium. À télécharger pour un dossier de comité, ou à ouvrir en ligne pour réordonner les vagues d’équipements selon votre propre disponibilité des utilités.",
+    intro: "Une fab n’est pas terminée quand le bâtiment est terminé. Elle est terminée quand les équipements sont qualifiés et que les plaquettes tournent, et tout ce qui sépare ces deux points est gouverné par un protocole. Le modèle suit cette transition :",
+    phases: [
+      [
+        "Site, autorisations et gros œuvre",
+        "Étude sismique et vibratoire, autorisation environnementale et régime ICPE au titre des gaz et produits dangereux stockés, programme technique détaillé et gel de la liste des équipements dont tout le dimensionnement découle, achat des utilités à long délai, puis fondations profondes et dalle nervurée désolidarisée. <em>Jalons : liste d’équipements gelée, autorisations obtenues.</em>"
+      ],
+      [
+        "Structure et enveloppe de salle blanche",
+        "Charpente métallique et enveloppe, sous-sol technique et réservations dans la dalle, mise hors d’eau, puis trame de cloisons et de plafond de salle blanche, plancher technique et ventilateurs-filtres. <em>Jalon : bâtiment hors d’eau et hors d’air.</em>"
+      ],
+      [
+        "Utilités et traitement des effluents",
+        "Station d’eau ultrapure et rinçage de la boucle, parc de gaz vrac et de gaz spéciaux, armoires de distribution et essais d’étanchéité, extraction et laveurs, mise sous tension du poste de livraison — le tout piloté sur les points de raccordement, et non sur un « terminé » générique. <em>Jalon : utilités disponibles aux points de raccordement.</em>"
+      ],
+      [
+        "Certification de la salle blanche et bascule de protocole",
+        "La bascule du protocole de construction, habillage et sas, procédures d’introduction des matériaux, équilibrage aéraulique et vérification du flux laminaire, comptage particulaire et classification ISO, puis relevé vibratoire et compatibilité électromagnétique. <em>Jalon : salle blanche certifiée.</em>"
+      ],
+      [
+        "Entrée, raccordement et qualification des équipements",
+        "Plan de manutention et séquence de livraison, vagues lithographie, gravure, dépôt et métrologie, raccordement aux gaz, à l’extraction et à l’eau ultrapure, qualification d’installation par le fournisseur puis qualification opérationnelle. <em>Jalon : qualification des équipements achevée.</em>"
+      ],
+      [
+        "Qualification procédé et premier silicium",
+        "Intégration du MES et de l’automatisation, chargement des recettes, première plaquette sur un module isolé, lot pilote sur la gamme complète, montée en rendement et qualification client. <em>Jalons : premier silicium, autorisation de production en volume.</em>"
+      ]
+    ],
+    callout: "Il existe une date qui change les règles pour tout le monde sur un chantier de fab : la bascule du protocole salle blanche. Avant, c’est un chantier avec casques et soudure. Après, chaque personne est habillée en combinaison, chaque matériau entre par un sas après essuyage, et la productivité de chaque corps d’état chute nettement. Planifiez délibérément de part et d’autre de cette ligne — tout ce qui peut être terminé « en sale » doit l’être avant, et toute barre qui la franchit exige une durée plus longue que le même travail réalisé à l’extérieur. Les programmes qui la traitent comme une réception ordinaire perdent des mois à le réapprendre sur le terrain.",
+    customize: [
+      "Gelez tôt la liste des équipements et posez-la comme jalon. Chaque dimensionnement d’utilité, chaque réservation et chaque plan de raccordement en découlent, et un changement tardif se propage à toute la conception du bâtiment.",
+      "Réordonnez les vagues d’équipements selon votre disponibilité d’utilités plutôt que selon les dates de livraison des fournisseurs. Un équipement qui arrive avant que ses gaz et son extraction soient en service occupe de la surface et ne qualifie rien.",
+      "Donnez à l’eau ultrapure sa propre barre de rinçage et de qualification de résistivité après installation. La station construite et la boucle assez propre pour y raccorder un équipement sont deux choses différentes.",
+      "Séparez la qualification d’installation de la qualification opérationnelle. Le fournisseur qui démontre que l’équipement démarre et votre équipe procédé qui démontre qu’il tient une base de maîtrise statistique sont deux événements distincts, avec des personnes différentes.",
+      "Ajoutez des barres explicites pour la bascule de protocole, les procédures d’habillage et l’introduction des matériaux. Ce sont des activités avec une durée, pas une note de service.",
+      "Placez le relevé vibratoire, la mesure de compatibilité électromagnétique et l’étude acoustique avant l’entrée des équipements de lithographie. Découvrir un problème de vibration après le calage d’un scanner est la découverte la plus coûteuse de ce planning."
+    ],
+    tips: [
+      "<strong>Le vrai jalon est le raccordement, pas la livraison.</strong> Suivez les équipements à la date où ils sont raccordés aux utilités en service et sous tension : un entrepôt plein d’équipements livrés ne vaut rien pour le planning de qualification.",
+      "<strong>Pilotez les utilités sur une date de point de raccordement.</strong> « Station d’eau ultrapure terminée » et « eau ultrapure disponible à la résistivité spécifiée au point de raccordement de la baie de lithographie » sont séparés de plusieurs mois, et seule la seconde débloque un équipement.",
+      "<strong>Protégez le planning de traitement des effluents.</strong> L’extraction et les laveurs sont ingrats et systématiquement déprioritisés, aucun équipement consommant du gaz ne peut être qualifié sans eux, et ils s’installent discrètement sur le chemin critique du premier silicium.",
+      "<strong>Faites le relevé vibratoire dans les conditions réelles.</strong> Une mesure réalisée avant la mise en route des ventilateurs et des pompes ne représente pas l’environnement dans lequel vivront les équipements de lithographie.",
+      "<strong>Ne planifiez pas la montée en rendement comme une barre fixe.</strong> La densité de défauts décroît selon une courbe en partie expérimentale : donnez-lui une fenêtre réaliste et une provision, plutôt qu’une date choisie par le plan d’affaires.",
+      "<strong>Démarrez l’intégration du MES et de l’automatisation pendant l’installation, pas après.</strong> L’intégration des recettes et de la manutention automatisée est du logiciel avec son propre cycle d’anomalies, et c’est un blocage fréquemment découvert sur le premier lot complet."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire une usine de semi-conducteurs ?",
+        "Une usine neuve court couramment vingt-huit à trente-six mois entre l’obtention des autorisations et la production en volume, ce qui correspond à peu près à la durée retenue par le modèle. Le gros œuvre et les utilités sont prévisibles ; la variabilité se concentre sur la qualification des équipements et la montée en rendement."
+      ],
+      [
+        "Qu’est-ce que la bascule du protocole salle blanche ?",
+        "Le moment où le bâtiment cesse d’être un chantier pour devenir un environnement contrôlé. Habillage, sas, introduction des matériaux après essuyage et restriction des outillages entrent en vigueur, et la productivité des corps d’état encore présents chute fortement."
+      ],
+      [
+        "Pourquoi le raccordement, et non la livraison, est-il sur le chemin critique ?",
+        "Parce qu’un équipement ne peut être qualifié qu’une fois raccordé à l’eau ultrapure, aux gaz de procédé, à l’extraction et à l’alimentation électrique aux spécifications. La livraison est un événement logistique ; le raccordement dépend de l’achèvement des utilités à cet endroit précis de la fab."
+      ],
+      [
+        "Quand l’usine « ouvre-t-elle » réellement ?",
+        "À la qualification des équipements et au premier silicium, pas à l’achèvement du bâtiment. Le modèle traite la mise hors d’eau et la certification de la salle blanche comme des jalons intermédiaires et réserve les jalons majeurs à la qualification et au premier lot pilote complet."
+      ],
+      [
+        "Quelle provision garder pour la montée en rendement ?",
+        "Assez pour que la courbe de densité de défauts reste expérimentale plutôt que planifiée. La plupart des programmes sous-estiment cette phase parce que c’est la seule dont la réponse n’est pas connue à l’avance ; une barre distincte et visible vaut mieux qu’un rembourrage discret des phases précédentes."
+      ],
+      [
+        "Le modèle de planning de fab est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'oil-gas-pipeline-construction-schedule': {
+    card: "Servitudes et autorisations, fenêtres environnementales, chantier mobile de soudage et contrôle, franchissements, épreuve hydraulique et mise en gaz.",
+    h1: "Planning de construction d’un pipeline pétrolier ou gazier",
+    metaTitle: "Planning de construction de pipeline",
+    metaDesc: "Planning gratuit de construction de pipeline : servitudes, autorisations, fenêtres environnementales, soudage, franchissements et épreuve hydraulique.",
+    lead: "Un <strong>planning de construction de pipeline</strong> gratuit, organisé autour des deux éléments qui fixent réellement les dates : le foncier et les saisons. Étude de tracé, évaluation environnementale, autorisations et acquisition des servitudes en amont ; périodes de nidification et fenêtres d’intervention en lit de cours d’eau posées comme contraintes fermes ; le chantier mobile comme chaîne de production qui descend le tracé — bardage, tranchée, soudage, radiographie, revêtement, mise en fouille et remblaiement ; franchissements et stations en parallèle ; puis épreuve hydraulique, soudures de raboutage et mise en service. À télécharger pour un comité projet, ou à ouvrir en ligne pour y saisir vos propres dates de fenêtres.",
+    intro: "Un pipeline est construit par une chaîne de production qui descend un couloir dont vous n’êtes pas encore propriétaire, à l’intérieur de saisons que vous ne contrôlez pas. Le modèle garde ces deux contraintes visibles :",
+    phases: [
+      [
+        "Tracé, autorisations et servitudes",
+        "Étude de tracé et variantes, étude d’impact environnemental et social, autorisation environnementale unique et autorisation au titre de la loi sur l’eau pour les franchissements, enquête publique, négociation avec les propriétaires et constitution des servitudes, diagnostic d’archéologie préventive, et DT-DICT auprès des exploitants de réseaux avant tout terrassement. <em>Jalons : servitudes acquises, autorisation de construire délivrée.</em>"
+      ],
+      [
+        "Approvisionnement en tubes et logistique",
+        "Commande et production des tubes en aciérie, revêtement d’usine et préparation des chanfreins, puis acheminement ferroviaire et routier vers les aires de stockage le long du tracé. <em>Jalon : tubes disponibles sur la piste.</em>"
+      ],
+      [
+        "Préparatifs et fenêtres environnementales",
+        "Report des périodes de nidification et des fenêtres d’intervention en lit de cours d’eau sur le programme, renforcement des accès et des ouvrages de franchissement, désignation du coordonnateur SPS et plan général de coordination, déboisement et nivellement de la piste, décapage de la terre végétale et lutte contre l’érosion, puis mobilisation du chantier mobile. <em>Jalon : chantier prêt à barder.</em>"
+      ],
+      [
+        "Chantier mobile de pose",
+        "La chaîne de production elle-même — bardage, terrassement de la tranchée, cintrage et alignement, soudage, contrôle radiographique et ultrasonore, revêtement des joints et détection de défauts, mise en fouille, lit de pose, remblaiement et protection cathodique. <em>Jalon : soudage de la ligne achevé.</em>"
+      ],
+      [
+        "Franchissements et ouvrages particuliers",
+        "Forage dirigé sous la rivière principale, franchissements de cours d’eau à caler dans la fenêtre d’intervention, traversées de routes, de voies ferrées et de réseaux tiers, postes de sectionnement et stations de pompage ou de compression. <em>Jalon : fermeture de la fenêtre d’intervention en lit.</em>"
+      ],
+      [
+        "Épreuve hydraulique, raboutage et mise en service",
+        "Sectionnement et pose des collecteurs d’épreuve, remplissage et mise en pression, palier de maintien et réparations, vidange, nettoyage et séchage au racleur, soudures de raboutage, supervision et détection de fuite, inertage à l’azote et introduction du produit, puis remise en état des terrains. <em>Jalons : épreuve hydraulique concluante, pipeline en service.</em>"
+      ]
+    ],
+    callout: "Les fenêtres environnementales ne sont pas des risques : ce sont des murs. Une fenêtre d’intervention en lit de cours d’eau peut ne durer que six semaines dans l’année, une période de nidification peut interdire tout déboisement pendant une saison entière, et ni l’une ni l’autre ne se négocie. Reportez chaque fenêtre sur le planning avant de séquencer quoi que ce soit d’autre, puis construisez le programme du chantier mobile pour que les franchissements tombent à l’intérieur. Manquer une fenêtre d’une semaine ne coûte pas une semaine : cela coûte un an, parce que la prochaine ouverture est dans douze mois.",
+    customize: [
+      "Saisissez d’abord vos propres dates de fenêtres en lit et de nidification, comme barres fixes, puis organisez le chantier autour d’elles et non l’inverse.",
+      "Découpez la ligne en un jeu de barres par chantier mobile si vous faites travailler plusieurs équipes, et donnez à chacune sa propre cadence en mètres ou en joints par jour.",
+      "Représentez soudage, radiographie et revêtement par des barres qui se chevauchent et se suivent le long du tracé — c’est une seule chaîne de production en mouvement, pas trois phases successives, et les dessiner en série masque la véritable contrainte.",
+      "Ajoutez une barre de réparation et de contre-radiographie des soudures. L’hypothèse d’un contrôle concluant du premier coup est l’erreur d’optimisme la plus fréquente sur ce type de chantier.",
+      "Donnez à l’acquisition des servitudes une longue traîne et une provision pour propriétaire récalcitrant. Une seule signature manquante peut bloquer un chantier par ailleurs prêt à avancer.",
+      "Découpez l’épreuve hydraulique en tronçons correspondant à vos collecteurs d’essai, et ajoutez une barre de réparation et de nouvelle épreuve après le palier de maintien : un tronçon défaillant doit être localisé, découpé, ressoudé puis réessayé."
+    ],
+    tips: [
+      "<strong>Engagez l’acquisition des servitudes avant la fin des études.</strong> Le foncier est l’élément au délai le plus long de la plupart des pipelines et il échappe totalement à l’entreprise : traitez-le comme un achat, avec un responsable et un point hebdomadaire.",
+      "<strong>Ne laissez pas le chantier dépasser les tubes.</strong> Le stock en aire d’entreposage devant l’équipe est le meilleur indicateur d’alerte précoce du chantier ; s’il baisse, la pose s’arrêtera avant que quiconque ait signalé un problème.",
+      "<strong>Réservez l’équipe et la machine de forage dirigé sur la fenêtre, pas sur le chantier.</strong> Les foreurs dirigés sont spécialisés et rares, et une machine qui arrive après la fermeture de la fenêtre représente une année de marge perdue.",
+      "<strong>Traitez les soudures de raboutage comme une activité distincte et soigneusement séquencée.</strong> Elles interviennent après l’épreuve hydraulique et ne peuvent pas être testées en pression de la même manière : elles portent donc un poids de contrôle et de planning disproportionné.",
+      "<strong>Menez la supervision et la détection de fuite en parallèle des stations, pas après.</strong> L’intégration à la salle de contrôle est un projet logiciel avec son propre cycle d’essais, et elle surprend régulièrement les plannings pipeline tout à la fin.",
+      "<strong>Planifiez la remise en état et la réception par les propriétaires comme du vrai travail.</strong> Le pipeline peut être en service ; tant que la bande n’est pas remise en état et réceptionnée, le projet n’est pas clos et la retenue de garantie n’est pas libérée."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire un pipeline ?",
+        "Une canalisation terrestre de diamètre moyen court couramment vingt à vingt-huit mois entre l’étude de tracé et la mise en service, ce qui correspond à peu près à la durée retenue par le modèle. Les autorisations et le foncier dominent le début, les fenêtres environnementales dominent le milieu."
+      ],
+      [
+        "Qu’est-ce qu’une fenêtre environnementale et pourquoi pèse-t-elle autant ?",
+        "Ce sont des périodes fixées par l’autorisation environnementale et par les prescriptions au titre de la loi sur l’eau, pendant lesquelles les travaux à proximité ou dans les cours d’eau et dans les habitats de nidification sont permis ou interdits. Elles ne se négocient ni ne se compriment : en manquer une décale généralement ce lot d’une année complète plutôt que de quelques semaines."
+      ],
+      [
+        "Comment planifier un chantier mobile de pose ?",
+        "Comme une chaîne de production en mouvement plutôt que comme des phases. Bardage, tranchée, soudage, radiographie, revêtement, mise en fouille et remblaiement descendent le tracé à une cadence donnée, en se suivant, et le planning doit les montrer superposés."
+      ],
+      [
+        "Quand programmer l’épreuve hydraulique ?",
+        "Après remblaiement de chaque tronçon d’essai et avant les raboutages. Prévoyez un palier de maintien, une évaluation des fuites et une barre explicite de réparation et de nouvelle épreuve ; supposer que chaque tronçon passe du premier coup est le dépassement de fin de chantier classique sur un pipeline."
+      ],
+      [
+        "Pourquoi l’acquisition des servitudes est-elle sur le chemin critique ?",
+        "Parce qu’on ne peut physiquement pas commencer sur un terrain sur lequel on ne dispose d’aucune servitude, et parce que le calendrier de négociation dépend de propriétaires individuels, pas de votre programme. Cela se comporte comme un achat à long délai et doit être suivi comme tel — y compris l’enquête publique et, le cas échéant, la déclaration d’utilité publique qui la précède."
+      ],
+      [
+        "Le modèle de planning de pipeline est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'theatre-production-schedule': {
+    card: "Rétroplanning depuis la première : droits SACD, distribution, construction, répétitions, montage, semaine technique et avant-premières.",
+    h1: "Planning de production théâtrale",
+    metaTitle: "Planning de production théâtrale",
+    metaDesc: "Planning gratuit de production théâtrale : rétroplanning depuis la première, droits, distribution, construction, montage, semaine technique, filages.",
+    lead: "Un <strong>planning de production théâtrale</strong> gratuit, construit de la seule façon dont un planning de spectacle peut l’être : à rebours de la première. La date est fixée, les billets sont vendus et la salle est louée ; distribution, validation de la maquette, construction en atelier, semaines de répétition, montage, réglages, filages techniques, générales et avant-premières doivent donc tous tenir devant elle. À télécharger pour une réunion de production, ou à ouvrir en ligne pour déplacer la date de première et voir tout le rétroplanning bouger avec elle.",
+    intro: "Tout autre projet se demande quand il sera terminé. Une production théâtrale le sait à l’heure près, et en déduit ce qui doit être vrai avant. Le modèle est construit dans ce sens :",
+    phases: [
+      [
+        "Développement, droits et décision de production",
+        "La date de première et la location de la salle, la licence d’entrepreneur de spectacles vivants du producteur, la négociation des droits de représentation auprès de la SACD ou des ayants droit, le budget et les coproductions, l’équipe artistique, et le rétroplanning arrêté à partir de la date fixe. <em>Jalon : production engagée.</em>"
+      ],
+      [
+        "Distribution et scénographie",
+        "Appel à candidatures et propositions d’agents, auditions et rappels, propositions d’engagement et contrats d’intermittents du spectacle avec déclaration préalable à l’embauche, maquette blanche, puis la présentation de maquette définitive qui libère l’atelier. <em>Jalons : distribution contractée, scénographie validée.</em>"
+      ],
+      [
+        "Construction et salle de répétition",
+        "Construction et patine du décor en atelier, réalisation des costumes et essayages, les semaines de répétition en salle avec les filages, déclaration des œuvres musicales à la SACEM lorsque le spectacle en utilise, et les conduites écrites depuis le tracé au sol. <em>Jalon : filage devant les producteurs.</em>"
+      ],
+      [
+        "Montage et implantation",
+        "Sortie de la production précédente, accroche dans une salle vide, montage du décor, mise en service de la machinerie et des perches motorisées, visite de la commission de sécurité si la configuration de la salle est modifiée, réglages lumière et calage son au plateau. <em>Jalon : plateau disponible pour la troupe.</em>"
+      ],
+      [
+        "Semaine technique",
+        "Répétition à l’italienne au plateau, conduite technique acte par acte, notes et reprises des changements à vue, et deux générales — le goulot d’étranglement qui ne peut pas être allongé parce que la salle est louée. <em>Jalon : première rencontre avec le public.</em>"
+      ],
+      [
+        "Avant-premières, première et exploitation",
+        "Représentations d’avant-première avec des répétitions de reprise en journée entre elles, le gel du spectacle, la première de presse à la date contractée, les critiques et le réajustement de la communication, puis l’exploitation sous la conduite de la régie générale. <em>Jalon : première.</em>"
+      ]
+    ],
+    callout: "La première n’est pas un objectif : c’est un engagement. La presse est invitée, les billets sont vendus, l’achat d’espace est engagé et une autre production entre en salle après la vôtre. Tout se calcule donc à rebours, et la semaine technique — italienne, conduite, générales — absorbe le retard de toutes les phases qui la précèdent. Un costume en retard, une machinerie qui ne se met pas en service, un changement à vue qui n’a pas été réglé : tout arrive dans les mêmes sept jours, et ces sept jours ne peuvent pas en faire huit.",
+    customize: [
+      "Posez d’abord la date de première, puis tirez tout le reste devant elle. Si le rétroplanning ne tient pas, la correction est en amont — un décor plus modeste, une distribution plus précoce, davantage de semaines de répétition — jamais une semaine technique plus courte.",
+      "Calez les semaines de répétition sur votre convention collective et sur les contrats d’intermittents : quatre à six semaines sont courantes dans le spectacle subventionné, et les doublures doivent tenir à l’intérieur.",
+      "Placez la négociation des droits SACD et la déclaration SACEM comme des tâches datées avec un responsable, et non comme une formalité administrative de fin de projet : une autorisation de représentation manquante bloque la vente comme la première.",
+      "Allongez ou raccourcissez les barres de montage selon votre lieu. Une salle en alternance qui vous cède le plateau un dimanche est une contrainte radicalement différente d’un théâtre noir dont vous disposez quinze jours.",
+      "Découpez la conduite technique par acte, et ajoutez une barre distincte pour la machinerie ou les vols si le spectacle en comporte : ce sont les séquences qui dévorent le temps technique.",
+      "Ajoutez une barre de répétitions de reprise en journée entre les avant-premières. Une avant-première n’est pas seulement une représentation : c’est la dernière occasion de modifier le spectacle, et les services de répétition sont du travail réellement planifié.",
+      "Posez la validation de la maquette comme jalon dur. L’atelier ne peut pas commencer sans elle, et chaque jour de glissement se prélève directement sur le temps de patine et d’essayage à l’autre bout."
+    ],
+    tips: [
+      "<strong>Validez la scénographie assez tôt pour que l’atelier construise sereinement.</strong> Une présentation de maquette tardive ne repousse pas la première — elle signifie seulement que le décor arrive sans patine et que le montage déborde sur la technique.",
+      "<strong>Protégez le filage devant les producteurs.</strong> C’est le dernier moment où le spectacle se voit entier avant que le théâtre n’absorbe l’attention de tout le monde, et le sacrifier pour gagner un jour de répétition est presque toujours un mauvais échange.",
+      "<strong>Bouclez les contrats d’intermittents avant l’entrée en répétition.</strong> Comédiens, techniciens et régisseurs sont engagés au cachet ou au service sur des périodes précises, ils travaillent souvent ailleurs jusqu’à la veille, et une date décalée n’est pas une date négociable : c’est une personne qui n’est plus disponible.",
+      "<strong>Écrivez les conduites lumière et son depuis la salle de répétition, pas depuis le plateau.</strong> Tout ce que les concepteurs peuvent décider avant le montage est du temps gagné en technique, là où une heure vaut infiniment plus cher.",
+      "<strong>Ne convoquez pas la troupe au plateau avant que le montage soit réellement terminé.</strong> Une italienne qui partage le plateau avec une équipe encore en train de monter est plus lente que l’attente, et c’est là que surviennent les accidents.",
+      "<strong>Traitez les avant-premières comme une partie du travail de répétition.</strong> Programmez les services de journée, budgétez les heures supplémentaires, et décidez à l’avance quelle avant-première marque le gel du spectacle, pour que la troupe sache quand les modifications s’arrêtent.",
+      "<strong>Gardez la conduite costumes et les changements rapides dans le planning.</strong> Les changements de costume sont la partie la moins répétée d’une semaine technique, et c’est ce qui rate visiblement devant le premier public."
+    ],
+    faq: [
+      [
+        "Comment planifie-t-on une production théâtrale ?",
+        "À rebours de la première. On fixe la date, puis on en déduit le démarrage au plus tard des avant-premières, de la semaine technique, du montage, des répétitions, de la construction, de la scénographie et de la distribution. Le modèle est présenté dans cet ordre pour que la contrainte reste visible."
+      ],
+      [
+        "Qu’est-ce que la semaine technique ?",
+        "La semaine qui sépare l’arrivée de la troupe au plateau du premier public : italienne, conduites techniques, notes et générales. C’est le point de crispation où atterrit tout retard antérieur, et elle est bornée des deux côtés par la location de la salle."
+      ],
+      [
+        "Combien de temps dure une période de répétition normale ?",
+        "Quatre à six semaines en salle de répétition sont courantes pour une pièce, davantage pour un spectacle musical. Le modèle retient six semaines, filages compris, mais la durée doit être calée sur votre convention collective, sur les contrats d’intermittents et sur l’ampleur du spectacle."
+      ],
+      [
+        "Faut-il une licence d’entrepreneur de spectacles ?",
+        "Dès lors que vous produisez ou diffusez des spectacles vivants de manière autre qu’occasionnelle, la déclaration donnant lieu au récépissé de licence est une obligation, et elle est vérifiée par les lieux et les financeurs. Placez-la très en amont du planning : elle conditionne la contractualisation et la billetterie, et se découvrir sans licence à quelques semaines de la première est un blocage administratif, pas un contretemps."
+      ],
+      [
+        "La semaine technique peut-elle être allongée en cas de retard ?",
+        "Presque jamais. La salle est louée, les avant-premières sont en vente et la première est contractée : le temps de plateau est fixe. La récupération doit venir de la salle de répétition, de l’atelier ou de la validation de maquette, tous situés plus tôt."
+      ],
+      [
+        "Quand faut-il geler le spectacle ?",
+        "En général une ou deux représentations avant la première, pour que la troupe joue au moins une fois la version qui sera critiquée. Posez le gel explicitement sur le planning : une date de gel implicite signifie que les modifications continuent d’arriver jusqu’au soir même."
+      ],
+      [
+        "Le modèle de planning de production théâtrale est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'medical-clinic-opening-timeline': {
+    card: "Autorisation ARS, inscription à l’Ordre, conventionnement Assurance Maladie, aménagement ERP accessible, commission de sécurité et ouverture.",
+    h1: "Planning d’ouverture d’un centre de santé",
+    metaTitle: "Planning d’ouverture d’un centre de santé",
+    metaDesc: "Planning gratuit d’ouverture de centre de santé : autorisation ARS, inscription à l’Ordre, conventionnement, aménagement ERP, commission de sécurité.",
+    lead: "Un <strong>planning d’ouverture de centre de santé</strong> gratuit, construit autour des trois horloges qui décident du jour où vous pourrez réellement recevoir un patient : l’autorisation, la commission de sécurité et l’installation des praticiens. Étude d’opportunité et choix du régime — autorisation ou déclaration auprès de l’ARS ; inscription au tableau de l’Ordre des médecins et conventionnement avec l’Assurance Maladie, deux démarches longues et largement hors de votre contrôle ; un aménagement soumis aux fluides médicaux, aux règles d’hygiène et à l’accessibilité des établissements recevant du public ; la mise en service des équipements ; puis les contrôles qui autorisent l’ouverture des portes. À télécharger pour un dossier de financement, ou à ouvrir en ligne pour y poser vos propres délais.",
+    intro: "Un cabinet construit, équipé et doté d’une équipe ne peut toujours soigner personne tant que trois autorisations distinctes ne sont pas arrivées. Le modèle en fait la colonne vertébrale plutôt que la queue de comète :",
+    phases: [
+      [
+        "Projet de santé, local et régime d’autorisation",
+        "Définition de l’offre de soins et analyse des besoins du territoire, choix du local et signature du bail, confirmation auprès de l’ARS du régime applicable — autorisation, déclaration ou simple enregistrement selon la structure et les activités — dépôt du projet de santé, et les immatriculations, numéros FINESS et enregistrements RPPS sans lesquels rien n’avance en aval. <em>Jalons : bail signé, régime d’autorisation confirmé.</em>"
+      ],
+      [
+        "Installation des praticiens et conventionnement",
+        "Recrutement des médecins, inscription au tableau du conseil départemental de l’Ordre des médecins, vérification des diplômes et de l’assurance en responsabilité civile professionnelle, enregistrement du numéro RPPS, puis conventionnement avec l’Assurance Maladie et raccordement à la télétransmission — une horloge longue tenue par d’autres organismes. <em>Jalons : praticiens inscrits, conventionnement effectif.</em>"
+      ],
+      [
+        "Conception et aménagement réglementé",
+        "Programmation médicale pièce par pièce, dossier de permis de construire ou d’autorisation de travaux ERP avec la notice de sécurité et la notice d’accessibilité, dépôt en mairie, gros œuvre et second œuvre, réseaux de fluides médicaux, traitement d’air et cascades de pression, cloisonnement pendant les travaux et revêtements nettoyables. <em>Jalon : aménagement substantiellement achevé.</em>"
+      ],
+      [
+        "Équipements, système d’information et mise en service",
+        "Commandes des équipements lourds, livraison et installation de l’imagerie, déclaration à l’Autorité de sûreté nucléaire et contrôle qualité des installations de radiologie, vérification des fluides médicaux, mise en service et étalonnage biomédical, puis paramétrage du logiciel métier, de la carte Vitale et des échanges sécurisés de santé. <em>Jalon : équipements réceptionnés et étalonnés.</em>"
+      ],
+      [
+        "Contrôles, autorisation et démarche qualité",
+        "Passage de la commission de sécurité et attestation d’accessibilité, registre public d’accessibilité, levée des réserves d’hygiène, visite de conformité ou instruction du dossier par l’ARS, accréditation du laboratoire si vous en exploitez un, et convention de traitement des déchets d’activités de soins à risques infectieux. <em>Jalon : autorisation d’ouverture délivrée.</em>"
+      ],
+      [
+        "Recrutement, répétition générale et ouverture",
+        "Recrutement des équipes soignantes et de l’accueil, formation et validation des compétences, approvisionnement et stock stérile, une journée de simulation avec de faux patients, des feuilles de soins d’essai transmises en télétransmission, et l’information des médecins adresseurs. <em>Jalons : premier patient reçu, planning complet ouvert.</em>"
+      ]
+    ],
+    callout: "Vous ne pouvez recevoir aucun patient tant que l’autorisation, le contrôle de sécurité et l’installation des praticiens ne sont pas tous arrivés — et c’est l’installation des praticiens que vous maîtrisez le moins. L’inscription au tableau de l’Ordre, la vérification des titres, l’enregistrement RPPS et le conventionnement avec l’Assurance Maladie avancent chacun dans la file d’attente de quelqu’un d’autre, et plusieurs mois à compter d’un dossier complet sont la norme. Engagez la démarche le jour où vous faites une proposition d’embauche, et non quand le bâtiment est fini : un cabinet parfaitement aménagé dont les médecins ne sont ni inscrits ni conventionnés est un local vide qui perd de l’argent.",
+    customize: [
+      "Faites démarrer la barre d’installation à la date de la proposition d’embauche et donnez-lui le délai réellement observé auprès de votre conseil départemental et de votre caisse, pas le meilleur cas. Si elle se termine après l’autorisation, c’est elle votre chemin critique et le planning doit le dire.",
+      "Ajoutez une ligne par praticien si vous ouvrez à plusieurs. Ils ne sont pas inscrits en même temps, et la date d’ouverture dépend du plus lent, pas de la moyenne.",
+      "Séparez le conventionnement de l’inscription à l’Ordre. Être autorisé à exercer et être conventionné pour facturer sont deux processus distincts, avec des horloges distinctes, et c’est le second qui détermine les recettes, pas l’accès.",
+      "Gardez les réseaux de fluides médicaux, leur vérification et leur certification comme des barres propres. C’est une installation spécialisée avec un vérificateur tiers, qui ne se dissout pas dans le lot plomberie-ventilation.",
+      "Traitez l’accessibilité comme une contrainte de conception et non de finition : le dossier d’autorisation de travaux ERP comporte une notice d’accessibilité, et une mise en conformité découverte à la commission de sécurité se paie en semaines et en travaux repris.",
+      "Ajoutez le nettoyage et le cloisonnement de chantier comme activité réelle avec une levée de réserves, en particulier si vous aménagez à l’intérieur d’un bâtiment déjà occupé.",
+      "Placez la journée de simulation avant l’ouverture et dotez-la de toute l’équipe. C’est la seule répétition dont vous disposiez pour enchaîner accueil, installation en salle, logiciel métier, équipement et facturation dans un même flux."
+    ],
+    tips: [
+      "<strong>Confirmez le régime auprès de l’ARS avant de signer le bail.</strong> Savoir si votre structure relève d’une autorisation, d’une déclaration ou d’un simple enregistrement, et ce que l’instruction exigera, peut changer entièrement la surface, le coût des travaux et le calendrier.",
+      "<strong>Déposez des dossiers complets ou ne les déposez pas.</strong> Un dossier incomplet ne fait pas partir l’horloge : il repart en fin de file lorsqu’il est corrigé, et ce seul faux pas administratif est la cause la plus fréquente d’une ouverture décalée.",
+      "<strong>Concevez pour l’instruction, pas seulement pour l’entreprise.</strong> Surfaces des pièces, points d’eau, cascades de pression, revêtements et accessibilité font l’objet d’exigences précises, et une reprise de conception après un avis coûte infiniment plus cher que de viser juste du premier coup.",
+      "<strong>Sollicitez tôt la commission de sécurité et prévoyez une contre-visite.</strong> Son agenda n’est pas le vôtre, et programmer une ouverture en supposant un avis favorable du premier coup est un pari que l’on perd généralement.",
+      "<strong>Réceptionnez et étalonnez les équipements avec un ingénieur biomédical, pas avec le seul fournisseur.</strong> Livraison et installation ne valent pas étalonnage, contrôle qualité et inscription à l’inventaire que le contrôleur demandera à voir.",
+      "<strong>Transmettez des feuilles de soins d’essai avant le premier vrai patient.</strong> Découvrir un paramétrage de télétransmission défaillant la première semaine, c’est soigner des patients que vous ne pouvez pas facturer — pire que d’ouvrir une semaine plus tard."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour ouvrir un centre de santé ?",
+        "Douze à seize mois sont courants pour une structure aménagée dans un local loué, ce qui correspond à peu près à la durée retenue par le modèle. Les travaux sont rarement la contrainte : l’autorisation et l’installation des praticiens le sont."
+      ],
+      [
+        "Combien de temps prend l’installation d’un médecin ?",
+        "Plusieurs mois à compter d’un dossier complet, et davantage lorsque le conventionnement est inclus. L’inscription au tableau du conseil départemental de l’Ordre, la vérification des titres, l’enregistrement RPPS et le conventionnement avec l’Assurance Maladie relèvent d’organismes différents : la démarche doit être engagée dès la proposition d’embauche et suivie comme un approvisionnement long."
+      ],
+      [
+        "En quoi un aménagement médical diffère-t-il d’un aménagement de bureaux ?",
+        "Réseaux de fluides médicaux avec vérification par un tiers, cascades de pression entre zones propres et zones souillées, cloisonnement et hygiène pendant les travaux, revêtements nettoyables, protection radiologique des salles d’imagerie et accessibilité au titre des établissements recevant du public — rien de tout cela n’apparaît dans un aménagement tertiaire ordinaire."
+      ],
+      [
+        "Peut-on ouvrir avant que le conventionnement soit effectif ?",
+        "Matériellement oui, financièrement non. Recevoir des patients sans pouvoir télétransmettre reporte la charge sur eux et retarde vos encaissements : le conventionnement effectif est donc traité comme un jalon à part entière plutôt que fondu dans l’installation des praticiens."
+      ],
+      [
+        "Quels contrôles précèdent l’ouverture ?",
+        "Le plus souvent la commission de sécurité et l’attestation d’accessibilité, la vérification des fluides médicaux, le contrôle qualité des installations de radiologie et leur déclaration, l’instruction du dossier par l’ARS selon le régime applicable, et l’accréditation du laboratoire de biologie médicale si vous en exploitez un."
+      ],
+      [
+        "Le modèle d’ouverture de centre de santé est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'sap-s4hana-migration-plan': {
+    card: "Conversion brownfield : remédiation du code spécifique, trois bascules à blanc, répétition générale et gel de gestion.",
+    h1: "Plan de migration SAP S/4HANA",
+    metaTitle: "Plan de migration SAP S/4HANA",
+    metaDesc: "Plan gratuit de migration SAP S/4HANA : conversion brownfield, remédiation du code spécifique, trois bascules à blanc, gel de gestion et hypercare.",
+    lead: "Un <strong>plan de migration SAP S/4HANA</strong> gratuit, construit autour de la décision qui commande tout le reste : convertir un système ECC existant sur place (<em>brownfield</em>) ou monter une nouvelle implémentation et y migrer les données (<em>greenfield</em>). Ce plan montre le chemin de la <em>conversion</em>, parce que c’est celui dont le calendrier est dominé par la remédiation du code spécifique et par des bascules à blanc répétées, et non par la conception des processus. Si vous montez au contraire un nouvel ERP de zéro, partez plutôt du <a href=\"/templates/erp-implementation-schedule.html\">planning de déploiement d’ERP</a>.",
+    intro: "Une conversion n’est pas un projet qui s’arrête à la mise en service : elle s’arrête quand la fenêtre de gel se referme et que les comptes se réconcilient. Les barres ci-dessous placent les bascules à blanc et le gel là où ils se situent réellement :",
+    phases: [
+      [
+        "Choix du chemin et évaluation de la faisabilité",
+        "Rapports de <em>readiness check</em>, analyse des <em>simplification items</em>, la décision brownfield ou greenfield elle-même, le dimensionnement et la conception du paysage cible. <em>Jalon : chemin de conversion validé.</em>"
+      ],
+      [
+        "Préparation et remédiation du code spécifique",
+        "La partie qu’aucune équipe ne dimensionne correctement : analyse du code spécifique au regard de la base des <em>simplification items</em>, vagues de remédiation, retrait du code obsolète, et la préparation du modèle de données financier dont la conversion dépend. <em>Jalon : remédiation du code spécifique achevée.</em>"
+      ],
+      [
+        "Conversion du bac à sable et du développement",
+        "La première conversion technique sur une copie de bac à sable et le temps d’exécution qu’elle révèle, puis les systèmes de développement et de qualification, avec l’adaptation fonctionnelle et les tests unitaires derrière chacun. <em>Jalon : système de qualification converti.</em>"
+      ],
+      [
+        "Cycles de tests",
+        "Tests fonctionnels, d’intégration, d’interfaces, d’autorisations et de performance, plus la boucle d’anomalies, exécutés sur un système de qualification converti et non sur une construction neuve. <em>Jalon : critères de sortie des tests d’intégration atteints.</em>"
+      ],
+      [
+        "Bascules à blanc et répétition générale",
+        "Trois bascules à blanc sur des volumes de données de production, chacune chronométrée et chacune raccourcissant le mode opératoire, puis la répétition générale qui conditionne la décision de lancement. <em>Jalon : décision go/no-go après répétition générale.</em>"
+      ],
+      [
+        "Gel, bascule et hypercare",
+        "La fenêtre de gel de gestion, la conversion de production elle-même, la validation et la réconciliation, la remise à disposition des utilisateurs, et la période d’hypercare avant le transfert au support. <em>Jalon : sortie d’hypercare.</em>"
+      ]
+    ],
+    callout: "Deux choses coulent les plannings de conversion. La première est le code spécifique : le rapport de <em>readiness check</em> listera des milliers de constats, pour la plupart triviaux et une poignée structurants, et tant que personne ne les a triés vous n’avez pas une estimation — vous avez un nombre d’objets. La seconde est le gel de gestion. Les équipes prévoient un week-end et découvrent que le gel des écritures, des données de base et des transactions ouvertes commence en réalité plusieurs jours plus tôt et ne se lève qu’une fois la réconciliation validée. Planifiez le gel comme un événement de gestion, avec des responsables nommés, et non comme une fenêtre technique — et laissez les bascules à blanc vous dire sa durée réelle plutôt que d’en décider à l’avance.",
+    customize: [
+      "S’il s’agit d’une nouvelle implémentation et non d’une conversion, supprimez les phases de remédiation et de bascule à blanc et reconstruisez autour de la conception des processus : les formes sont réellement différentes.",
+      "Posez d’abord le week-end de bascule en production et remontez à rebours ; les bascules à blanc sont la seule estimation fiable de sa durée.",
+      "Découpez la remédiation du code spécifique en vagues par propriétaire d’objet, et non par nombre d’objets, pour que les barres correspondent à qui fait réellement le travail.",
+      "Allongez la fenêtre de gel si vos volumes de transactions sont élevés en fin de période, et évitez de faire passer la bascule au-dessus d’une clôture d’exercice.",
+      "Ajoutez une ligne par interface et par système satellite : une conversion casse généralement les intégrations avant de casser SAP lui-même.",
+      "Ajoutez une quatrième bascule à blanc si la troisième ne tient toujours pas dans la fenêtre disponible.",
+      "Prévoyez l’information-consultation du CSE si la conversion modifie l’organisation du travail, et faites-en une dépendance des vagues de formation plutôt qu’une découverte de dernière minute."
+    ],
+    tips: [
+      "<strong>Menez la première bascule à blanc tôt et mal.</strong> Son rôle est de révéler ce qui manque au mode opératoire, pas de réussir. Ce sont les suivantes qui doivent être propres.",
+      "<strong>Triez le rapport de readiness, ne le comptez pas.</strong> Mille constats peuvent représenter deux semaines de travail ou six mois, et seul le tri vous dira lequel.",
+      "<strong>Traitez la répétition générale comme un vrai point de passage.</strong> Si la répétition ne tient pas dans la fenêtre prévue, la bascule de production n’y tiendra pas davantage — c’est exactement pour cela qu’on la fait.",
+      "<strong>Gelez la gestion, pas seulement le système.</strong> Publiez ce que chacun peut et ne peut pas faire chaque jour de la fenêtre, bien avant qu’elle ne commence.",
+      "<strong>Réconciliez avant de rendre la main.</strong> Soldes comptables, postes ouverts et quantités en stock validés au regard des chiffres d’avant conversion : voilà le vrai critère de mise en service, pas un écran vert."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une migration SAP S/4HANA ?",
+        "Une conversion de système court couramment douze à vingt mois selon le volume de code spécifique et le nombre d’interfaces. Le modèle retient environ seize mois. Les nouvelles implémentations varient bien davantage, parce que leur calendrier est commandé par la conception des processus et non par la remédiation."
+      ],
+      [
+        "Quelle différence entre brownfield et greenfield ?",
+        "Le brownfield est une conversion de système : vous conservez votre paramétrage, votre historique et votre code spécifique, et vous convertissez le système sur place. Le greenfield est une nouvelle implémentation dans laquelle vous migrez des données choisies. Les plannings brownfield sont dominés par la remédiation du code spécifique et les bascules à blanc ; les plannings greenfield le sont par la conception des processus et la conduite du changement. Ce modèle montre le chemin brownfield."
+      ],
+      [
+        "En quoi cela diffère-t-il du planning de déploiement d’ERP ?",
+        "Le <a href=\"/templates/erp-implementation-schedule.html\">planning de déploiement d’ERP</a> suppose que vous sélectionnez et implémentez un système de zéro — choix de l’éditeur, conception des processus, paramétrage, reprise de données et formation. Ce plan-ci suppose que SAP tourne déjà et que vous le convertissez : les phases lourdes sont donc la remédiation du code spécifique et les bascules à blanc répétées."
+      ],
+      [
+        "Combien de bascules à blanc faut-il ?",
+        "Trois est le chiffre de planification habituel, et le modèle en retient trois, suivies d’une répétition générale. Chacune déroule le mode opératoire complet sur des volumes de production et est chronométrée ; si la troisième déborde encore de la fenêtre disponible, ajoutez-en une quatrième plutôt que de comprimer la vraie."
+      ],
+      [
+        "Quelle doit être la durée du gel de gestion ?",
+        "Plus longue que la bascule technique. Les écritures, les modifications de données de base et la clôture des transactions ouvertes se gèlent typiquement plusieurs jours avant le début de la conversion et le restent jusqu’à validation de la réconciliation. Dimensionnez-la à partir des durées mesurées en bascule à blanc plutôt qu’au jugé, et annoncez-la aux directions métier des semaines à l’avance."
+      ],
+      [
+        "Le modèle SAP S/4HANA est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'iso-14001-certification-plan': {
+    card: "Analyse environnementale, veille réglementaire, objectifs, maîtrise opérationnelle, audit interne et audit de certification en deux étapes.",
+    h1: "Plan de certification ISO 14001",
+    metaTitle: "Plan de certification ISO 14001",
+    metaDesc: "Plan gratuit de certification ISO 14001 : analyse environnementale, veille réglementaire, objectifs, maîtrise opérationnelle, audits étape 1 et étape 2.",
+    lead: "Un <strong>plan de certification ISO 14001</strong> gratuit, organisé autour des deux registres qui constituent le travail réel d’un système de management environnemental : l’analyse environnementale — aspects et impacts — et le registre des obligations de conformité, alimenté par la veille réglementaire. Tout ce qui vient ensuite — objectifs, maîtrise opérationnelle, surveillance, formation — en découle, et c’est pour cela que les plans qui commencent par les objectifs s’enlisent. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
+    intro: "Un organisme certificateur accrédité évalue un SME en deux visites séparées par un intervalle obligatoire, et il échantillonne des enregistrements qui n’existent que si le système a réellement fonctionné. Les barres traduisent ces deux réalités :",
+    phases: [
+      [
+        "Domaine d’application, contexte et diagnostic d’écart",
+        "Périmètre du SME, enjeux internes et externes, parties intéressées, diagnostic d’écart au regard de la norme, politique environnementale, et choix de l’organisme certificateur accrédité par le COFRAC — c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique approuvés.</em>"
+      ],
+      [
+        "Analyse environnementale et obligations de conformité",
+        "Le cœur du plan : identification des aspects environnementaux sur l’ensemble des activités, évaluation de leur significativité selon une méthode documentée, et construction en parallèle du registre des obligations légales et autres — arrêté préfectoral d’autorisation ou d’enregistrement ICPE lorsque le site est classé, autorisations de rejet, obligations déchets et responsabilité élargie du producteur — entretenu par une veille réglementaire datée. <em>Jalon : analyse environnementale et registre des obligations approuvés.</em>"
+      ],
+      [
+        "Objectifs, cibles et programmes",
+        "Des objectifs dérivés des aspects significatifs et des obligations, avec cibles, indicateurs, moyens et responsables nommés — et non des intentions rédigées avant que les registres n’existent. <em>Jalon : objectifs et programmes validés.</em>"
+      ],
+      [
+        "Maîtrise opérationnelle et situations d’urgence",
+        "Procédures de maîtrise opérationnelle pour les aspects significatifs, gestion des déchets, des rejets et des émissions, maîtrise des fournisseurs et des entreprises extérieures, compétence et sensibilisation du personnel, et l’exercice de situation d’urgence — un exercice de confinement de pollution accidentelle, par exemple. <em>Jalon : maîtrise opérationnelle en place.</em>"
+      ],
+      [
+        "Fonctionnement, surveillance et accumulation des enregistrements",
+        "La phase qui ne se comprime pas : faire tourner le SME assez longtemps pour que les données de surveillance, les évaluations de conformité, les registres de déchets et un exemple réel de maîtrise des changements existent effectivement. <em>Jalon : enregistrements de surveillance disponibles.</em>"
+      ],
+      [
+        "Audit interne, revue de direction et audit en deux étapes",
+        "L’audit interne, ses non-conformités et les actions correctives, la revue de direction, puis l’étape 1, l’intervalle de traitement des écarts, et l’étape 2. <em>Jalon : certificat délivré.</em>"
+      ]
+    ],
+    callout: "L’analyse environnementale est le document que l’auditeur ouvrira en premier, et si elle est mince tout le reste du système s’effondre avec elle. Elle doit couvrir les conditions normales, dégradées et d’urgence, et la cotation de significativité doit reposer sur une méthode que vous pouvez expliquer plutôt que sur une couleur choisie par quelqu’un. Le registre des obligations de conformité est le second document porteur : il recense les autorisations, arrêtés préfectoraux, prescriptions et engagements qui vous sont applicables, et la norme exige d’évaluer périodiquement votre conformité au regard de ce registre — l’évaluation doit donc avoir eu lieu avant l’étape 2, et non être planifiée après.",
+    customize: [
+      "Choisissez l’organisme certificateur tôt et figez la date d’étape 2 ; tout ce qui précède devient un compte à rebours plutôt qu’une estimation.",
+      "Éclatez les lignes d’identification des aspects en une ligne par site, par procédé ou par activité — une ligne unique masque l’effort réel.",
+      "Laissez au moins six semaines entre l’étape 1 et l’étape 2 pour que les écarts relevés à l’étape 1 puissent réellement être soldés.",
+      "Allongez la phase de fonctionnement si certaines de vos obligations s’évaluent annuellement : il vous faut au moins un cycle de preuves.",
+      "Ajoutez des lignes pour les renouvellements d’autorisation et les inspections de l’inspection des installations classées qui tombent dans la fenêtre, puisqu’elles mobilisent les mêmes personnes.",
+      "Si vous visez aussi l’enregistrement EMAS, ajoutez les lignes propres au règlement européen — déclaration environnementale validée par un vérificateur et enregistrement auprès de l’autorité compétente — sans les fondre dans les barres ISO 14001 : ce sont deux dispositifs distincts.",
+      "Ajoutez l’audit de surveillance de la première année pour que le SME reste doté de moyens une fois le certificat obtenu."
+    ],
+    tips: [
+      "<strong>Construisez les registres avant les objectifs.</strong> Des objectifs rédigés d’abord visent presque toujours des aspects non significatifs, et l’auditeur vous demandera comment vous avez décidé.",
+      "<strong>Couvrez les conditions dégradées et d’urgence.</strong> Démarrage, arrêt, déversement accidentel et incendie sont les scénarios où la plupart des analyses environnementales sont visiblement incomplètes.",
+      "<strong>Menez une véritable évaluation de conformité.</strong> La norme attend une évaluation périodique au regard de votre registre d’obligations, avec des enregistrements — pas une déclaration affirmant que vous êtes conforme.",
+      "<strong>Faites l’exercice d’urgence avant l’étape 2.</strong> C’est l’une des rares preuves que vous pouvez programmer au lieu d’attendre.",
+      "<strong>Tenez la veille réglementaire à jour et datée.</strong> Une veille dont la dernière mise à jour remonte à dix-huit mois est un écart en soi, indépendamment de votre conformité réelle.",
+      "<strong>Gardez ISO 14001, ISO 9001 et ISO 27001 distinctes.</strong> Elles partagent la même structure de haut niveau et peuvent être auditées ensemble, mais ce sont trois certifications accréditées séparées, aux contenus différents : environnement, qualité et sécurité de l’information respectivement."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour obtenir la certification ISO 14001 ?",
+        "Couramment neuf à quinze mois en partant de zéro. Le modèle retient environ treize mois. Les parties qui résistent à la compression sont le travail d’analyse environnementale et de registre des obligations en amont, et la période de fonctionnement qui produit les enregistrements de surveillance en aval."
+      ],
+      [
+        "Qu’est-ce que l’analyse environnementale ?",
+        "Un inventaire structuré des façons dont vos activités, produits et services interagissent avec l’environnement — émissions, rejets, déchets, consommation de ressources, usage des sols — et des impacts qui en résultent, cotés en significativité dans des conditions normales, dégradées et d’urgence. C’est l’entrée de presque tout le reste du SME, et c’est pourquoi le modèle la place avant les objectifs."
+      ],
+      [
+        "En quoi ISO 14001 diffère-t-elle d’ISO 9001 ?",
+        "Elles partagent la même structure de système de management et la même mécanique d’audit en deux étapes, mais le contenu diffère entièrement : ISO 9001 est un système de management de la qualité centré sur les exigences client et la conformité des processus, ISO 14001 est un système de management environnemental bâti sur les aspects environnementaux et les obligations de conformité. Voyez le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> si vous visez les deux."
+      ],
+      [
+        "Quelle différence entre ISO 14001 et l’EMAS ?",
+        "ISO 14001 est une norme internationale certifiée par un organisme accrédité. L’EMAS est le système européen de management et d’audit environnemental : il reprend les exigences d’ISO 14001, y ajoute une déclaration environnementale publique validée par un vérificateur et une évaluation de la conformité réglementaire plus explicite, et se conclut par un enregistrement auprès de l’autorité compétente plutôt que par un certificat. Ce sont deux dispositifs complémentaires, pas deux noms pour la même chose."
+      ],
+      [
+        "Peut-on certifier ISO 14001 et ISO 27001 ensemble ?",
+        "Elles peuvent être auditées lors d’une visite intégrée et partagent la structure des chapitres, mais ce sont des certifications accréditées séparées, avec des certificats et des périmètres distincts. Le <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a> couvre le volet sécurité de l’information ; ne supposez pas que les preuves de l’une satisfont l’autre."
+      ],
+      [
+        "Que se passe-t-il entre l’étape 1 et l’étape 2 ?",
+        "L’étape 1 est une revue documentaire et de maturité, et elle relève presque toujours des constats — le plus souvent une analyse environnementale incomplète ou une évaluation de conformité qui n’a pas été faite. L’étape 2 est l’audit complet du fonctionnement du SME. Le modèle laisse une fenêtre d’actions correctives entre les deux, parce que l’étape 2 ne sera pas concluante tant que les constats de l’étape 1 ne sont pas soldés."
+      ],
+      [
+        "Le modèle ISO 14001 est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'product-recall-plan': {
+    card: "Heure zéro, évaluation du risque, signalement DGCCRF et RappelConso, information des clients, récupération, contrôles d’efficacité et clôture.",
+    h1: "Plan de rappel de produit",
+    metaTitle: "Plan de rappel de produit",
+    metaDesc: "Plan gratuit de rappel de produit : heure zéro, évaluation du risque, signalement à la DGCCRF, RappelConso, récupération, efficacité et clôture.",
+    lead: "Un <strong>plan de rappel de produit</strong> gratuit, posé sur la seule horloge qui compte : celle qui démarre à l’instant où vous détenez une information laissant penser qu’un produit est dangereux ou non conforme. Les plannings de rappel sont particuliers parce qu’une grande partie de la séquence relève de la loi et non de votre choix — délais de signalement, obligations de traçabilité et comptes rendus d’efficacité sont fixés par la réglementation, et être en retard est une exposition juridique et non un simple décalage. Les barres sont exprimées en jours depuis l’heure zéro, pour que l’on voie ce qui doit se produire dans la première semaine.",
+    intro: "Les premières lignes se comptent en heures, pas en semaines. Tout ce qui suit la décision de signalement dépend de la rapidité avec laquelle les trois premières sont exécutées :",
+    phases: [
+      [
+        "Heure zéro — détecter, contenir, réunir",
+        "Le signal arrive, la cellule de crise se réunit, les expéditions sont bloquées, et les lots et numéros de série concernés sont tracés. C’est la phase qui se mesure en heures. <em>Jalon : cellule réunie et expéditions bloquées.</em>"
+      ],
+      [
+        "Évaluation du risque et décision de rappel",
+        "Caractérisation du danger, évaluation de l’exposition et de la gravité, classement, décision sur le niveau de rappel — consommateur, détaillant ou grossiste — et décision formelle de rappel ou de simple retrait. <em>Jalon : décision de rappel consignée.</em>"
+      ],
+      [
+        "Signalement aux autorités",
+        "Détermination des autorités compétentes selon la catégorie de produit et les marchés concernés — la DGCCRF pour les produits de consommation, l’ANSM pour les médicaments et les dispositifs médicaux, la DGAL et les services vétérinaires départementaux pour les denrées d’origine animale — constitution du dossier de signalement, dépôt dans le délai applicable, publication sur RappelConso, notification au Safety Gate de l’Union européenne lorsque le produit circule dans plusieurs États membres, et accord avec l’autorité sur la communication au public. <em>Jalon : autorités notifiées.</em>"
+      ],
+      [
+        "Information des clients et du public",
+        "Cascade vers les distributeurs et les enseignes, contact direct des clients lorsque vos fichiers le permettent, avis de rappel affiché sur les lieux de vente, site internet et communiqué de presse, et ouverture d’une ligne de contact consommateurs. <em>Jalon : avis public diffusé.</em>"
+      ],
+      [
+        "Récupération, quarantaine et destination",
+        "Logistique de retour, réception et rapprochement avec les quantités mises en distribution, quarantaine physiquement sécurisée, et décision de destination — reconditionnement, destruction ou remise sur le marché. <em>Jalon : rapprochement des quantités achevé.</em>"
+      ],
+      [
+        "Contrôles d’efficacité, cause racine et clôture",
+        "Contrôles d’efficacité à intervalles définis, investigation de cause racine et actions correctives, comptes rendus d’avancement à l’autorité, rapport final et clôture formelle. <em>Jalon : rappel clôturé par l’autorité.</em>"
+      ]
+    ],
+    callout: "Les délais de signalement sont fixés par la réglementation et ils varient selon la catégorie de produit, la gravité du danger et le marché concerné : une denrée alimentaire, un dispositif médical et un produit de consommation courante ne relèvent ni des mêmes textes ni des mêmes autorités, et un produit vendu dans plusieurs pays peut être soumis à plusieurs régimes simultanément. Ne planifiez pas contre un chiffre unique et universel. Tenez à jour la liste des autorités compétentes pour chaque marché et chaque catégorie que vous commercialisez, avec le fait générateur et le délai correspondants, et faites-la valider par votre conseil juridique avant l’incident plutôt que pendant. Les durées portées ci-dessous sont des marqueurs courts à remplacer par vos obligations vérifiées.",
+    customize: [
+      "Remplacez les durées de signalement par les délais réellement applicables à votre catégorie de produit sur chaque marché — vérifiés avec votre conseil, pas supposés.",
+      "Ajoutez une ligne de signalement par autorité et par pays si vous exportez : elles courent en parallèle et leurs exigences de contenu diffèrent.",
+      "Ajoutez une ligne dédiée à la publication sur RappelConso et une autre à la notification au Safety Gate européen : ce sont deux démarches distinctes, avec des destinataires et des contenus différents.",
+      "Fixez explicitement la ligne de niveau de rappel — consommateur, détaillant ou grossiste : elle change entièrement la phase de récupération.",
+      "Distinguez le retrait du rappel. Retirer un produit de la vente et demander aux consommateurs de rapporter ce qu’ils détiennent déjà sont deux opérations aux logistiques et aux communications différentes.",
+      "Étendez les contrôles d’efficacité aux intervalles attendus par l’autorité, et maintenez-les jusqu’à ce que le taux de retour se stabilise.",
+      "Ajoutez des lignes pour la déclaration à l’assureur et, si le danger a causé des dommages corporels, pour la conservation des preuves en vue d’un contentieux.",
+      "Répétez ce plan sous forme de rappel à blanc sur un numéro de lot réel au moins une fois par an : un exercice de traçabilité qui prend plusieurs jours est un écart."
+    ],
+    tips: [
+      "<strong>Tracez avant d’annoncer.</strong> Un avis public qui désigne les mauvais numéros de lot doit être réémis, et une réémission détruit votre crédibilité auprès de l’autorité comme des consommateurs.",
+      "<strong>Affectez une personne à l’horloge.</strong> Quelqu’un dont l’unique tâche est de suivre les échéances de signalement par pays et par autorité, parce que le travail opérationnel absorbera tous les autres.",
+      "<strong>Rapprochez des quantités mises en distribution.</strong> Le taux de retour est le chiffre que l’autorité regarde, et il est incalculable sans savoir exactement ce qui est sorti.",
+      "<strong>Maintenez la quarantaine physiquement sécurisée.</strong> Un produit retourné qui repart en stock par inadvertance est un second rappel par-dessus le premier.",
+      "<strong>Ne confondez pas la cause racine et le rappel.</strong> La récupération a son horloge propre ; l’investigation court en parallèle et se termine plus tard, et l’autorité attend de voir les deux."
+    ],
+    faq: [
+      [
+        "Sous quel délai faut-il signaler un rappel de produit aux autorités ?",
+        "Cela dépend du pays, de la catégorie de produit et de la gravité du danger — denrées alimentaires, dispositifs médicaux, véhicules, cosmétiques et produits de consommation courante relèvent de textes différents, et les faits générateurs de l’obligation diffèrent également. Il n’existe pas de délai universel unique, et un produit vendu dans plusieurs pays peut être soumis à plusieurs à la fois. Faites établir à l’avance par votre conseil juridique les obligations qui vous sont applicables et consignez-les dans le plan, plutôt que de vous fier à un chiffre lu quelque part."
+      ],
+      [
+        "À qui signale-t-on un rappel en France ?",
+        "Cela dépend du produit. La DGCCRF est l’autorité de référence pour les produits de consommation et les denrées, et le rappel est publié sur le site RappelConso ; l’ANSM traite les médicaments et les dispositifs médicaux ; la DGAL et les directions départementales en charge de la protection des populations interviennent pour les denrées d’origine animale. Au-dessus s’ajoute le Safety Gate européen, qui diffuse l’alerte aux autres États membres. Un même incident peut relever de plusieurs de ces canaux, et il faut avoir identifié le vôtre avant l’incident."
+      ],
+      [
+        "Qu’est-ce qu’un contrôle d’efficacité ?",
+        "Une vérification structurée du fait que les personnes qui devaient recevoir l’avis de rappel l’ont effectivement reçu et en ont tenu compte — contact d’un échantillon de distributeurs et d’enseignes, confirmation du retrait des rayons, et mesure de la part du produit distribué qui a été retournée ou justifiée. Les autorités les attendent généralement à intervalles définis, et le modèle en programme plusieurs plutôt qu’un seul."
+      ],
+      [
+        "Que signifie le niveau de rappel ?",
+        "Jusqu’où le rappel descend dans la chaîne de distribution : le niveau grossiste s’arrête aux distributeurs, le niveau détaillant atteint les magasins, le niveau consommateur atteint les utilisateurs finaux. Il découle de l’évaluation du risque, et il modifie la logistique de récupération, l’approche de communication et le coût d’un ordre de grandeur : le modèle en fait donc une ligne de décision explicite."
+      ],
+      [
+        "Combien de temps dure un rappel de produit ?",
+        "La phase de signalement et de récupération se mesure généralement en jours et en semaines ; le modèle court sur environ quatre-vingt-dix jours jusqu’à la clôture. L’investigation de cause racine, les actions correctives et la clôture par l’autorité s’étendent souvent plus loin, et les contrôles d’efficacité se poursuivent jusqu’à stabilisation du taux de retour."
+      ],
+      [
+        "Faut-il organiser un rappel à blanc ?",
+        "Oui, et la plupart des référentiels qualité et des audits clients l’attendent chaque année. Un rappel à blanc sur un numéro de lot réel éprouve la traçabilité sous contrainte de temps, et c’est le moyen le moins coûteux de découvrir que vos enregistrements ne permettent pas de reconstituer une liste de distribution assez vite."
+      ],
+      [
+        "Le modèle de plan de rappel est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'digital-transformation-roadmap': {
+    card: "Vagues pluriannuelles, socles données et identité d’abord, mesure des bénéfices après chaque vague, gouvernance qui survit au sponsor.",
+    h1: "Feuille de route de transformation numérique",
+    metaTitle: "Feuille de route de transformation numérique",
+    metaDesc: "Feuille de route gratuite de transformation numérique : vagues pluriannuelles, socles données et identité, bénéfices mesurés et gouvernance durable.",
+    lead: "Une <strong>feuille de route de transformation numérique</strong> gratuite, construite comme une suite de vagues plutôt que comme un programme avec une date de fin. L’idée directrice est celle de capacité dépendante : les socles de données, d’identité et d’intégration doivent atterrir avant le travail visible, les bénéfices se mesurent après chaque vague au lieu d’être remis à une revue d’investissement en troisième année, et le rythme de gouvernance est conçu pour survivre au départ du sponsor — ce qui, sur trois ans, arrivera probablement.",
+    intro: "Chaque vague livre quelque chose d’utilisable et chacune est suivie d’une revue de bénéfices qui peut modifier le contenu de la suivante. Cette boucle de rétroaction est tout l’intérêt de la démarche :",
+    phases: [
+      [
+        "Stratégie, état des lieux et gouvernance",
+        "Évaluation de l’existant, mesure de la maturité numérique, cible d’organisation, dossier de valeur, et mise en place du rythme de gouvernance et du bureau de portefeuille qui survivront aux personnes. <em>Jalon : feuille de route et gouvernance approuvées.</em>"
+      ],
+      [
+        "Vague 1 — les socles",
+        "La vague ingrate dont tout le reste dépend : identité et gestion des accès, couche d’intégration, plateforme de données et sa gouvernance — registre des traitements et conformité au RGPD compris — zone d’atterrissage cloud et socle de sécurité. Rien de visible pour le client ne sort ici. <em>Jalon : socles en service.</em>"
+      ],
+      [
+        "Vague 2 — numérisation des processus cœur",
+        "Automatisation des processus finance, achats et ressources humaines, gestion des flux et des documents, facturation électronique, et retrait des processus manuels et tableurs qu’ils remplacent. <em>Jalon : processus cœur migrés.</em>"
+      ],
+      [
+        "Vague 3 — capacités orientées client",
+        "Portail client, libre-service, expérience mobile, données client unifiées et refonte des parcours — livrables uniquement parce que la vague 1 a construit l’identité et l’intégration en dessous. <em>Jalon : capacités client lancées.</em>"
+      ],
+      [
+        "Vague 4 — analytique et automatisation intelligente",
+        "Analytique en libre-service, modèles prédictifs et automatisation des décisions à fort volume, avec la gouvernance des modèles nécessaire pour les exploiter de façon responsable. <em>Jalon : capacités analytiques adoptées.</em>"
+      ],
+      [
+        "Réalisation des bénéfices et pérennisation",
+        "Revues de bénéfices après chaque vague, mesure de l’adoption et du changement, transfert des compétences vers les métiers, décommissionnement du patrimoine applicatif et rafraîchissement annuel de la feuille de route. <em>Jalon : programme passé en régime courant.</em>"
+      ]
+    ],
+    callout: "L’échec récurrent consiste à faire d’abord le travail visible. Portails, tableaux de bord et démonstrations d’automatisation sont ce que les sponsors réclament, mais chacun dépend silencieusement de l’identité, de l’intégration et de données dignes de confiance : les construire avant les socles produit une vague 3 discrètement refaite pendant la vague 4. Le second échec consiste à repousser les bénéfices : si la première revue de bénéfices a lieu au bout de trois ans, plus personne n’est là pour assumer la promesse initiale. Placez une revue de bénéfices immédiatement après chaque vague, publiez le chiffre qu’il soit flatteur ou non, et laissez-le modifier le contenu de la vague suivante.",
+    customize: [
+      "Renommez les vagues dans votre propre vocabulaire de capacités, mais gardez les socles en premier : cet ordonnancement est la substance même du plan.",
+      "Fixez la durée des vagues à ce que votre organisation peut absorber ; six à neuf mois par vague est courant, et les vagues plus courtes échouent sur la capacité de changement plutôt que sur la livraison.",
+      "Ajoutez une revue de bénéfices après chaque vague, chacune avec un responsable nommé qui était présent lorsque le bénéfice a été annoncé.",
+      "Ajoutez explicitement les lignes de décommissionnement : les transformations qui n’éteignent jamais rien finissent par financer deux patrimoines applicatifs.",
+      "Insérez une ligne de remise à plat de la gouvernance à chaque changement de direction, cycle budgétaire ou réorganisation attendus.",
+      "Placez l’information-consultation du CSE au bon endroit de chaque vague qui modifie l’organisation du travail : c’est une dépendance datée, et elle se découvre mal six semaines avant un déploiement.",
+      "Découpez chaque vague en lignes par chantier une fois son périmètre arrêté ; la barre unique n’est utile qu’au niveau de la feuille de route."
+    ],
+    tips: [
+      "<strong>Séquencez par dépendance, pas par enthousiasme.</strong> La bonne question pour tout candidat à la vague 1 est : qu’est-ce qui casse en vague 3 si cela n’existe pas ?",
+      "<strong>Mesurez l’adoption, pas le déploiement.</strong> Une plateforme en service utilisée par quinze pour cent des personnes n’a rien livré, et seul un indicateur d’adoption vous le dira assez tôt pour réagir.",
+      "<strong>Partez du principe que le sponsor changera.</strong> Écrivez le dossier de valeur, les décisions et les mesures de référence sous une forme qu’un successeur peut reprendre sans vous.",
+      "<strong>Tenez-vous à un seul modèle d’intégration.</strong> Des vagues qui inventent chacune leur approche d’intégration recréent exactement la fragmentation que le programme devait supprimer.",
+      "<strong>Décommissionnez à une date.</strong> Un retrait d’application non planifié et sans responsable n’a jamais lieu, et les économies du dossier de valeur en dépendent."
+    ],
+    faq: [
+      [
+        "Quelle est la durée d’une feuille de route de transformation numérique ?",
+        "Typiquement deux à quatre ans sur trois ou quatre vagues. Le modèle court sur environ trois ans. Les feuilles de route plus courtes sont en général de simples programmes ; les plus longues cessent d’être des plans pour devenir des intentions : rafraîchissez chaque année plutôt que de prolonger."
+      ],
+      [
+        "Pourquoi les socles doivent-ils venir en premier ?",
+        "Parce que portails client, analytique et automatisation reposent tous sur le fait de savoir qui est un utilisateur, de faire circuler les données entre systèmes et de pouvoir s’y fier. Les construire sur une identité et une intégration fragmentées fonctionne en démonstration et échoue en capacité, et la reconstruction atterrit dans la vague suivante."
+      ],
+      [
+        "Qu’est-ce que la réalisation des bénéfices, et pourquoi après chaque vague ?",
+        "C’est la mesure de la valeur réellement obtenue — coût, délai de traitement, adoption, chiffre d’affaires. La faire après chaque vague plutôt qu’à la fin garantit que la mesure a lieu pendant que les personnes qui ont fait la promesse sont encore en poste, et que le résultat peut modifier le contenu de la vague suivante. Les revues de bénéfices repoussées deviennent immanquablement infalsifiables."
+      ],
+      [
+        "Comment faire tenir la gouvernance à travers les changements de direction ?",
+        "En rendant le rythme et les artefacts institutionnels plutôt que personnels : un comité de portefeuille permanent à cadence définie, des décisions documentées et des mesures de référence consignées là où un successeur les trouvera. Le modèle prévoit une ligne de remise à plat de la gouvernance exactement pour cette raison."
+      ],
+      [
+        "Quel rapport avec un programme applicatif unique comme un ERP ?",
+        "Une feuille de route séquence plusieurs programmes ; un plan de déploiement en conduit un seul. Si une vague contient un remplacement d’ERP, planifiez-le à part avec le <a href=\"/templates/erp-implementation-schedule.html\">planning de déploiement d’ERP</a> ou, pour une conversion SAP, avec le <a href=\"/templates/sap-s4hana-migration-plan.html\">plan de migration SAP S/4HANA</a>, et gardez la ligne de la feuille de route comme barre de synthèse."
+      ],
+      [
+        "Le modèle de transformation numérique est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'qa-test-plan-schedule': {
+    card: "Critères d’entrée et de sortie, environnement et jeux de données, phases superposées, boucle d’anomalies et non-régression.",
+    h1: "Planning de plan de tests",
+    metaTitle: "Planning de plan de tests logiciels",
+    metaDesc: "Planning gratuit de plan de tests : critères d’entrée et de sortie, environnement et jeux de données, phases superposées, anomalies, non-régression.",
+    lead: "Un <strong>planning de plan de tests</strong> gratuit dont la colonne vertébrale est faite de critères d’entrée et de sortie, et non d’une file d’attente de phases. Deux choses conditionnent tout le reste : un environnement de test stable et des jeux de données provisionnés. Ensuite, les phases se superposent — les tests d’intégration démarrent alors que les tests unitaires s’achèvent, la recette utilisateur commence sur les modules déjà prêts — et le calendrier est consommé bien moins par l’exécution des tests que par la boucle de tri, de correction et de nouvelle exécution qui court en dessous de tout.",
+    intro: "Remarquez que les barres d’exécution se chevauchent et que la boucle d’anomalies court sur toute leur longueur. C’est à cela que ressemble un vrai planning de tests :",
+    phases: [
+      [
+        "Stratégie de test et critères",
+        "Stratégie, périmètre et priorisation par les risques, critères d’entrée et de sortie de chaque phase écrits avant le début de l’exécution, estimation de charge et plan de ressources. <em>Jalon : plan de tests et critères approuvés.</em>"
+      ],
+      [
+        "Disponibilité de l’environnement et des données",
+        "Le vrai point de passage. Construction de l’environnement, paramétrage et bouchons d’intégration, provisionnement et anonymisation des jeux de données — une exigence du RGPD dès qu’il s’agit d’un extrait de production — comptes et habilitations, et un test de fumée qui prouve l’environnement avant que quiconque y teste. <em>Jalon : critères d’entrée de l’environnement satisfaits.</em>"
+      ],
+      [
+        "Conception des tests et automatisation",
+        "Conception des conditions et des cas de test, traçabilité vers les exigences, cadre d’automatisation, constitution de la campagne de non-régression et scripts de tests de performance. <em>Jalon : cas de test prêts à l’exécution.</em>"
+      ],
+      [
+        "Exécution — unitaire, intégration, système",
+        "Des vagues d’exécution qui se chevauchent plutôt qu’une file d’attente : tests unitaires et de composants, tests d’intégration et d’interfaces, puis tests système et tests de sécurité. <em>Jalon : critères de sortie des tests système satisfaits.</em>"
+      ],
+      [
+        "Boucle de tri, correction et nouvelle exécution",
+        "La boucle qui consomme réellement le calendrier — comité de tri quotidien, affectation de gravité, cycles de correction, nouvelle exécution et impact sur la non-régression, et les décisions d’anomalies reportées. <em>Jalon : seuils d’anomalies atteints.</em>"
+      ],
+      [
+        "Recette, non-régression et décision de mise en production",
+        "Recette utilisateur par les métiers, non-régression complète, tirs de performance et de charge, revue de préparation à la mise en production et prononcé de la recette. <em>Jalon : mise en production prononcée.</em>"
+      ]
+    ],
+    callout: "L’échec de planning le plus fréquent en test consiste à traiter l’environnement et les jeux de données comme une tâche plutôt que comme un point de passage. Si l’environnement est instable ou si les données ne couvrent pas les scénarios, les testeurs consomment quand même leurs journées mais produisent des anomalies portant sur l’environnement et non sur le produit — et ces heures sont irrécupérables. Écrivez les critères d’entrée de l’environnement, déroulez un test de fumée contre eux, et refusez de démarrer l’exécution tant qu’ils ne passent pas. Le second échec consiste à planifier la boucle d’anomalies comme de la marge. La correction et la nouvelle exécution ne sont pas des frais généraux autour du test : sur la plupart des projets, c’est la plus longue barre du planning, et elle doit être dessinée comme telle.",
+    customize: [
+      "Inscrivez de vrais critères d’entrée et de sortie dans les notes de chaque ligne de phase — taux de réussite, nombre d’anomalies ouvertes par gravité, couverture — pour que les points de passage soient vérifiables et non rhétoriques.",
+      "Superposez les vagues d’exécution selon votre cadence de livraison ; les mettre bout à bout surestime presque toujours la durée totale et sous-estime le risque.",
+      "Dimensionnez la boucle d’anomalies à partir de vos taux historiques de découverte et de correction, et non d’un pourcentage de la charge de test.",
+      "Ajoutez une ligne par interface ou par système intégré si les tests d’intégration dépendent de partenaires qui maîtrisent leurs propres environnements.",
+      "Avancez la recette utilisateur module par module si vous livrez par incréments plutôt qu’en une seule fois.",
+      "Ajoutez une ligne de gel du code avant la non-régression, et gardez la non-régression après ce gel : une non-régression contre une version qui bouge n’est pas une non-régression.",
+      "Ajoutez une ligne d’anonymisation si vos jeux de données sont issus de la production : c’est une tâche à part entière, avec un délai propre et une exigence de conformité derrière elle."
+    ],
+    tips: [
+      "<strong>Rendez les critères de sortie chiffrés.</strong> « Tests terminés » n’est pas un point de passage ; « zéro anomalie ouverte de gravité 1, moins de cinq de gravité 2, 95 % des cas prévus exécutés » en est un.",
+      "<strong>Provisionnez les jeux de données avant la fin de la conception des tests.</strong> Les concepteurs découvrent les manques de données, et le provisionnement a le délai le plus long de tout le plan.",
+      "<strong>Triez quotidiennement pendant les pics d’exécution.</strong> Un comité de tri hebdomadaire signifie qu’une anomalie peut attendre cinq jours avant que quelqu’un décide qui la corrige.",
+      "<strong>Protégez la non-régression du flux de corrections.</strong> Chaque correction tardive invalide une partie de la campagne, et c’est précisément à cela que sert la ligne de gel du code.",
+      "<strong>Suivez le taux de découverte d’anomalies, pas leur nombre.</strong> Un taux de découverte qui baisse est le signal honnête qu’une phase converge ; un décompte brut ne vous dit à peu près rien."
+    ],
+    faq: [
+      [
+        "Que sont les critères d’entrée et de sortie d’un plan de tests ?",
+        "Les critères d’entrée sont les conditions à réunir avant qu’une phase puisse commencer — environnement stable, version déployée, jeux de données chargés, test de fumée concluant. Les critères de sortie sont les conditions à réunir avant de la déclarer terminée — couverture d’exécution, taux de réussite, anomalies ouvertes par gravité. Les uns comme les autres doivent être chiffrés, arrêtés avant le début de l’exécution, et réellement opposés."
+      ],
+      [
+        "Pourquoi les phases de test se chevauchent-elles au lieu de s’enchaîner ?",
+        "Parce que les livraisons arrivent par incréments. Les tests d’intégration peuvent démarrer sur les modules déjà testés unitairement, et la recette peut commencer sur les parcours achevés pendant que les tests système se poursuivent ailleurs. Mettre les phases bout à bout gonfle le planning et masque la véritable contrainte, qui est généralement la boucle de correction."
+      ],
+      [
+        "Combien de temps prévoir pour la correction des anomalies ?",
+        "Dimensionnez-la à partir de votre propre historique : anomalies trouvées par jour de test, proportion nécessitant une correction, et délai moyen de correction plus nouvelle exécution. Sur la plupart des projets, cette boucle est la plus longue barre du planning. Allouer un pourcentage forfaitaire de la charge de test est la façon habituelle de dériver."
+      ],
+      [
+        "Que faire si l’environnement de test n’est pas prêt ?",
+        "Ne démarrez pas l’exécution. Tester sur un environnement instable produit des anomalies d’environnement et non de produit, et ce temps est irrécupérable. Le modèle fait de la disponibilité de l’environnement un jalon conditionnel précédé d’un test de fumée, précisément pour que cette décision soit visible au lieu d’être absorbée en silence."
+      ],
+      [
+        "Quand la recette utilisateur doit-elle commencer ?",
+        "Une fois les critères de sortie des tests système satisfaits sur le périmètre que la recette couvrira — et non une fois tous les tests système terminés partout. La recette est une validation métier : elle exige une version stable et des données réalistes, et la dérouler sur une version qui reçoit encore des corrections gaspille les utilisateurs métier, qui sont la ressource la plus rare du plan."
+      ],
+      [
+        "Le modèle de plan de tests est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
 };
 
 const UI = {
