@@ -37,11 +37,37 @@
 
   <link rel="stylesheet" href="/css/styles.css?v=54" />
 
-  <!-- Export libraries (CDN). Vendor locally for full offline export. -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <!-- Export libraries (CDN). Vendor locally for full offline export.
+
+       SUBRESOURCE INTEGRITY IS LOAD-BEARING HERE. These four scripts run
+       inside the editor, where the user's whole plan lives in memory and
+       localStorage. Without `integrity`, a compromised CDN account or
+       edge — someone else's security incident, not ours — would execute
+       arbitrary JavaScript in that context. The hash makes the browser
+       refuse anything but these exact bytes.
+
+       The hashes were not taken on trust from whatever the CDN happened
+       to serve: the three cdnjs files were verified byte-for-byte
+       against cdnjs's own published SHA-512 SRI, and pptxgenjs was
+       confirmed identical from two independent npm mirrors (jsDelivr and
+       unpkg) before pinning. Computing a hash from a single fetch would
+       have pinned a compromise just as happily as the real file.
+
+       If you bump a version, re-derive the hash the same way. A wrong
+       hash does not degrade — the script simply never loads, and the
+       export silently stops working. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+          integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+          integrity="sha384-ZZ1pncU3bQe8y31yfZdMFdSpttDoPmOZg2wguVK9almUodir1PghgT0eY7Mrty8H"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
+          integrity="sha384-vtjasyidUo0kW94K5MXDXntzOJpQgBKXmE7e2Ga4LG0skTTLeBi97eFAXsqewJjw"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"
+          integrity="sha384-Cck14aA9cifjYolcnjebXRfWGkz5ltHMBiG4px/j8GS+xQcb7OhNQWZYyWjQ+UwQ"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script type="application/ld+json">
   { "@context":"https://schema.org","@type":"SoftwareApplication","name":"gantts.app Gantt Chart Maker","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://gantts.app/app.html" }

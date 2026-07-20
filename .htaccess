@@ -5,6 +5,22 @@
 
 DirectoryIndex index.html
 
+# ---- No directory listings ----
+# /templates/files/, /templates/img/, /assets/, /css/ and /js/ were all
+# serving an "Index of …" page. Nothing secret was in them — every file
+# there is public and linked — but a listing is still worth closing:
+#
+#   * it exposes the whole INVENTORY, including anything staged but not
+#     yet linked, so an unreleased template slug leaks before launch;
+#   * it turns bulk scraping into one request instead of ninety-one;
+#   * search engines can index the listing itself as thin, duplicate
+#     content that is not in our sitemap, spending crawl budget on a
+#     page we would never choose to rank.
+#
+# The files stay reachable and crawlable by their real URLs. Only the
+# auto-generated index goes away.
+Options -Indexes
+
 # ---- Correct MIME types ----
 <IfModule mod_mime.c>
   AddType image/svg+xml .svg
@@ -45,6 +61,18 @@ DirectoryIndex index.html
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # HTTPS is already forced by the rewrite below, but a 301 still means
+  # the FIRST request of a session can go out in clear text. HSTS removes
+  # that window by making the browser rewrite to https itself.
+  # Deliberately no `preload` and no `includeSubDomains`: preload is
+  # effectively irreversible and should be a considered decision, not a
+  # side effect of a security pass.
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # We ask for none of these. Saying so explicitly means an injected
+  # script cannot quietly ask on our behalf.
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
 </IfModule>
 
 # ---- Force HTTPS + non-www ----
