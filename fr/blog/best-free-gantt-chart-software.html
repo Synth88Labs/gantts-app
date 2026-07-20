@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logiciels de Gantt gratuits comparés | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Comparatif des logiciels de Gantt gratuits : ce qui est réellement gratuit, ce qui est freemium, et quoi vérifier avant de choisir." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/best-free-gantt-chart-software.html#post","headline":"Logiciels de Gantt gratuits : ce qui l’est vraiment","description":"Comparatif des logiciels de Gantt gratuits : ce qui est réellement gratuit, ce qui est freemium, et quoi vérifier avant de choisir.","url":"https://gantts.app/fr/blog/best-free-gantt-chart-software.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/best-free-gantt-chart-software.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Logiciels de Gantt gratuits : ce qui l’est vraiment","item":"https://gantts.app/fr/blog/best-free-gantt-chart-software.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Quel logiciel de Gantt est vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Les outils sans coûts serveur — ceux qui calculent dans le navigateur et enregistrent en local — peuvent l’être durablement, tout comme les applications de bureau libres. Les services cloud sont presque toujours freemium, parce qu’ils ont une infrastructure à financer."}},{"@type":"Question","name":"Quelle différence entre gratuit, freemium et essai ?","acceptedAnswer":{"@type":"Answer","text":"Gratuit signifie sans coût et sans échéance. Le freemium offre un plan gratuit permanent mais plafonne les projets, les tâches ou les utilisateurs, et place souvent l’export et le chemin critique derrière le paiement. L’essai ouvre tout pendant 14 ou 30 jours, puis se ferme."}},{"@type":"Question","name":"Faut-il un compte pour un logiciel de Gantt gratuit ?","acceptedAnswer":{"@type":"Answer","text":"La plupart l’exigent, mais ce n’est techniquement nécessaire que pour les services hébergés. Les outils entièrement côté client s’en passent, puisqu’aucune donnée n’est transmise : on ouvre la page et on commence."}},{"@type":"Question","name":"Quels outils gratuits incluent le chemin critique ?","acceptedAnswer":{"@type":"Answer","text":"Les outils navigateur complets et les applications de bureau libres le calculent sans supplément. Dans plusieurs plateformes commerciales, il est réservé aux offres payantes : vérifiez ce point précis avant de vous engager, c’est le plus souvent plafonné."}},{"@type":"Question","name":"Que vérifier avant de choisir ?","acceptedAnswer":{"@type":"Answer","text":"Les antériorités, le chemin critique, les formats d’export et le lieu de stockage des données — plus, si vous êtes plusieurs, le nombre réel d’utilisateurs autorisés. Le reste relève du confort."}},{"@type":"Question","name":"Le gratuit convient-il en entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Pour des plans isolés, oui, y compris de bonne taille. Pour le travail simultané avec gestion des droits, la planification de ressources transverse et le reporting contractuel, généralement non."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="/blog/best-free-gantt-chart-software.html">English</option><option value="/es/blog/best-free-gantt-chart-software.html">Español</option><option value="/fr/blog/best-free-gantt-chart-software.html" selected>Français</option><option value="/de/blog/best-free-gantt-chart-software.html">Deutsch</option><option value="/pt/blog/best-free-gantt-chart-software.html">Português</option><option value="/zh/blog/best-free-gantt-chart-software.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Langue"><option value="/blog/best-free-gantt-chart-software.html">English</option><option value="/es/blog/best-free-gantt-chart-software.html">Español</option><option value="/fr/blog/best-free-gantt-chart-software.html" selected>Français</option><option value="/de/blog/best-free-gantt-chart-software.html">Deutsch</option><option value="/pt/blog/best-free-gantt-chart-software.html">Português</option><option value="/zh/blog/best-free-gantt-chart-software.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/fr/app.html">Ouvrir l’application</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -345,6 +340,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

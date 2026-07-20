@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found — gantts.app</title>
@@ -18,7 +13,7 @@
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
 </head>
 <body>
   <header class="nav">
@@ -41,6 +36,6 @@
       <a class="btn btn-lg" href="/">Go home</a>
     </div>
   </section>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

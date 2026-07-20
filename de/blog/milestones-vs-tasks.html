@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meilenstein oder Vorgang? | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Unterschied zwischen Meilenstein und Vorgang, was Raute, Balken und Pfeil bedeuten, wie viele Meilensteine ein Projekt braucht und was ein falsch modellierter Meilenstein kostet." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/milestones-vs-tasks.html#post","headline":"Meilensteine und Vorgänge: worin sie sich unterscheiden","description":"Unterschied zwischen Meilenstein und Vorgang, was Raute, Balken und Pfeil bedeuten, wie viele Meilensteine ein Projekt braucht und was ein falsch modellierter Meilenstein kostet.","url":"https://gantts.app/de/blog/milestones-vs-tasks.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/milestones-vs-tasks.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Meilensteine und Vorgänge: worin sie sich unterscheiden","item":"https://gantts.app/de/blog/milestones-vs-tasks.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist der Unterschied zwischen Vorgang und Meilenstein?","acceptedAnswer":{"@type":"Answer","text":"Ein Vorgang hat eine Dauer — Beginn, Ende und Arbeit dazwischen. Ein Meilenstein hat die Dauer null und markiert einen Moment, etwa eine Freigabe oder eine Lieferung. Schnelltest: Wenn jemand einen Nachmittag daran arbeiten kann, ist es ein Vorgang."}},{"@type":"Question","name":"Was bedeutet die Raute im Gantt-Diagramm?","acceptedAnswer":{"@type":"Answer","text":"Einen Meilenstein: eine Markierung ohne Dauer für ein bedeutsames Ereignis wie eine Unterschrift, eine Lieferung oder eine Inbetriebnahme. Da sie keine Länge hat, lässt sie sich verschieben, aber nicht in der Größe ändern."}},{"@type":"Question","name":"Wie viele Meilensteine sollte ein Projekt haben?","acceptedAnswer":{"@type":"Answer","text":"Meist vier bis acht — genug, um die Geschichte zu erzählen, wenige genug, dass jeder etwas bedeutet. Wenn die Liste von oben nach unten gelesen das Projekt nicht beschreibt, haben Sie eher die falschen als zu wenige."}},{"@type":"Question","name":"Kann ein Meilenstein eine Dauer haben?","acceptedAnswer":{"@type":"Answer","text":"Nein — definitionsgemäß ist sie null. Wenn die Sache wirklich Zeit braucht, etwa eine achttägige Kennzeichnungsprüfung, modellieren Sie sie als Vorgang und setzen einen Meilenstein an dessen Ende. Der Zusagetermin ist dann berechnet statt behauptet."}},{"@type":"Question","name":"Was passiert mit dem Terminplan, wenn ein Meilenstein rutscht?","acceptedAnswer":{"@type":"Answer","text":"Alles, was daran hängt, verschiebt sich um denselben Betrag, abzüglich vorhandener Puffer in der Kette. Im Verpackungsbeispiel schob ein Verzug von fünf Tagen bei „Kennzeichnung bestätigt“ die Umstellung im Handel vollständig vom 11. auf den 18. Mai, weil nachgelagert kein Puffer vorhanden war."}},{"@type":"Question","name":"Was ist ein Sammelbalken?","acceptedAnswer":{"@type":"Answer","text":"Ein Balken, der eine Phase oder Gruppe darstellt. Seine Termine werden aus dem frühesten Beginn und dem spätesten Ende darunter berechnet, er bewegt sich also mit seinem Inhalt. Er ersetzt keinen Meilenstein: Der Sammelbalken zeigt, wann gearbeitet wird, der Meilenstein, wann eine Zusage fällig ist."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/milestones-vs-tasks.html">English</option><option value="/es/blog/milestones-vs-tasks.html">Español</option><option value="/fr/blog/milestones-vs-tasks.html">Français</option><option value="/de/blog/milestones-vs-tasks.html" selected>Deutsch</option><option value="/pt/blog/milestones-vs-tasks.html">Português</option><option value="/zh/blog/milestones-vs-tasks.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Sprache"><option value="/blog/milestones-vs-tasks.html">English</option><option value="/es/blog/milestones-vs-tasks.html">Español</option><option value="/fr/blog/milestones-vs-tasks.html">Français</option><option value="/de/blog/milestones-vs-tasks.html" selected>Deutsch</option><option value="/pt/blog/milestones-vs-tasks.html">Português</option><option value="/zh/blog/milestones-vs-tasks.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -293,6 +288,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

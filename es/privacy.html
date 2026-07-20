@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Política de privacidad — gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="gantts.app no tiene cuentas ni almacenamiento en servidor. Tus diagramas de Gantt se quedan en tu propio navegador." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"es","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/es/privacy.html#webpage","name":"Política de privacidad — gantts.app","url":"https://gantts.app/es/privacy.html","description":"gantts.app no tiene cuentas ni almacenamiento en servidor. Tus diagramas de Gantt se quedan en tu propio navegador.","inLanguage":"es","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"gantts.app","item":"https://gantts.app/es/"},{"@type":"ListItem","position":2,"name":"Política de privacidad","item":"https://gantts.app/es/privacy.html"}]}}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/privacy.html">English</option><option value="/es/privacy.html" selected>Español</option><option value="/fr/privacy.html">Français</option><option value="/de/privacy.html">Deutsch</option><option value="/pt/privacy.html">Português</option><option value="/zh/privacy.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Idioma"><option value="/privacy.html">English</option><option value="/es/privacy.html" selected>Español</option><option value="/fr/privacy.html">Français</option><option value="/de/privacy.html">Deutsch</option><option value="/pt/privacy.html">Português</option><option value="/zh/privacy.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/es/app.html">Abrir la aplicación</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -93,7 +88,7 @@
       <h2>Lo que no recogemos</h2>
       <ul><li>No pedimos correo, nombre ni cuenta.</li><li>No subimos ni leemos el contenido de tus diagramas.</li><li>No vendemos datos: no tenemos tus datos.</li></ul>
       <h2>Cookies y analítica</h2>
-      <p>Usamos <strong>Google Analytics 4</strong> para saber qué páginas resultan útiles: qué guías se leen, qué plantillas se descargan y si se abre el editor. Mide páginas, no planes: <strong>no se envía nada sobre los proyectos que creas</strong>, porque tus datos nunca salen del navegador.</p><p>Google Analytics recoge información habitual a nivel de página —la página que ves, tu ubicación aproximada, el navegador y el dispositivo, y cómo llegaste— y coloca dos cookies, <code>_ga</code> y <code>_ga_3ZFCTKWL1D</code>, que sirven para distinguir a un visitante de otro. Contienen un identificador aleatorio, no tu nombre ni nada que hayas escrito. No usamos <strong>cookies publicitarias</strong> y no vendemos ni compartimos estos datos. Google los trata según su <a href="https://policies.google.com/privacy" rel="noopener">política de privacidad</a>, y puedes desactivarlo con el <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">complemento de Google</a> o con cualquier bloqueador: la herramienta funciona igual.</p><p>Todo lo demás es <strong>almacenamiento local</strong> del navegador, no una cookie, y nunca sale de tu dispositivo: tus proyectos y preferencias como el tema claro u oscuro. Nuestro proveedor de alojamiento puede conservar registros de servidor habituales por seguridad y rendimiento.</p><p class="muted"><small>Versiones anteriores de esta página decían que no usábamos cookies de seguimiento. Fue cierto hasta que añadimos Google Analytics el 19 de julio de 2026; esta página se actualizó el mismo día.</small></p>
+      <p>Usamos <strong>Google Analytics 4</strong> para saber qué páginas resultan útiles: qué guías se leen, qué plantillas se descargan y si se abre el editor. Mide páginas, no planes: <strong>no se envía nada sobre los proyectos que creas</strong>, porque tus datos nunca salen del navegador.</p><p><strong>No se ejecuta si no la aceptas.</strong> La analítica está desactivada hasta que la aceptas en el aviso. Hasta ese momento —y de forma permanente si la rechazas— tu navegador <strong>no hace ninguna petición a Google</strong>. No la cargamos en estado desactivado ni enviamos mediciones «sin cookies»: el script sencillamente no llega a descargarse. Rechazar no te cuesta nada, porque nada de la página estaba esperando a la analítica.</p><p><strong>Si la rechazas, este sitio no coloca ninguna cookie.</strong> No un conjunto reducido: ninguna.</p><p>Si la aceptas, Google Analytics recoge información habitual a nivel de página —la página que ves, tu ubicación aproximada, el navegador y el dispositivo, y cómo llegaste— y coloca dos cookies, <code>_ga</code> y <code>_ga_3ZFCTKWL1D</code>, que sirven para distinguir a un visitante de otro. Contienen un identificador aleatorio, no tu nombre ni nada que hayas escrito. No usamos <strong>cookies publicitarias</strong> y no vendemos ni compartimos estos datos. Google los trata según su <a href="https://policies.google.com/privacy" rel="noopener">política de privacidad</a>, y puedes desactivarlo con el <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">complemento de Google</a> o con cualquier bloqueador: la herramienta funciona igual.</p><p>Tu respuesta se guarda en el <strong>almacenamiento local</strong> y no en una cookie, precisamente para que rechazar te deje sin ninguna. Solo registra «granted» o «denied» y la fecha.</p><p>Puedes cambiar de opinión cuando quieras desde <strong>Configuración de cookies</strong>, al final de cualquier página; rechazar ahí también <strong>borra las cookies de analítica</strong> que ya estuvieran en tu dispositivo. El tratamiento analítico se basa en tu consentimiento, en el sentido del RGPD y de la LOPDGDD, y puedes retirarlo en cualquier momento; si consideras que no respetamos tus derechos, puedes reclamar ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>.</p><p>Todo lo demás es <strong>almacenamiento local</strong> del navegador, no una cookie, y nunca sale de tu dispositivo: tus proyectos y preferencias como el tema claro u oscuro. Nuestro proveedor de alojamiento puede conservar registros de servidor habituales por seguridad y rendimiento.</p><p class="muted"><small>Versiones anteriores de esta página decían que no usábamos cookies de seguimiento. Fue cierto hasta que añadimos Google Analytics el 19 de julio de 2026; esta página se actualizó el mismo día. El 20 de julio de 2026 la analítica pasó a depender de un aviso de consentimiento: antes se cargaba automáticamente para todo el mundo y ahora no se carga para nadie hasta que la acepta.</small></p>
       <h2>Contacto</h2>
       <p>¿Preguntas sobre privacidad? Escribe a <a href="mailto:synth88labs@gmail.com">synth88labs@gmail.com</a>.</p>
     </div>
@@ -142,6 +137,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

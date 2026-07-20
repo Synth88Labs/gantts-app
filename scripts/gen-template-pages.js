@@ -20,7 +20,7 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=25';
+const V = 'v=27';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -49,7 +49,7 @@ function langSwitcher(slug) {
   const opts = [`<option value="/${sub}" selected>English</option>`]
     .concat(LOCALES.map(l =>
       `<option value="${here.has(l.code) ? `/${l.code}/${sub}` : `/${l.code}/`}">${l.name}</option>`));
-  return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">\n          ${opts.join('\n          ')}\n        </select>`;
+  return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language">\n          ${opts.join('\n          ')}\n        </select>`;
 }
 
 /* Reciprocal hreflang, emitted only for locales that really have the
@@ -84,7 +84,7 @@ function nav(slug) {
       <div class="nav-spacer"></div>
       <div class="nav-cta">
         ${langSwitcher(slug)}
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>

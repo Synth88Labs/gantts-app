@@ -16,7 +16,7 @@ const { FOOTER } = require('./footer.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=25';
+const V = 'v=27';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.
@@ -54,7 +54,7 @@ function langSwitcher(slug) {
   const opts = [`<option value="/blog/${slug}.html" selected>English</option>`]
     .concat(Object.keys(LANG_NAMES).map((c) =>
       `<option value="${guideLocalesFor(slug).includes(c) ? `/${c}/blog/${slug}.html` : `/${c}/blog/`}">${LANG_NAMES[c]}</option>`));
-  return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">\n          ${opts.join('\n          ')}\n        </select>`;
+  return `<select class="lang-select" data-lang-nav aria-label="Language" title="Language">\n          ${opts.join('\n          ')}\n        </select>`;
 }
 
 const nav = (slug) => `  <header class="nav">
@@ -71,7 +71,7 @@ const nav = (slug) => `  <header class="nav">
       <div class="nav-spacer"></div>
       <div class="nav-cta">
         ${langSwitcher(slug)}
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>

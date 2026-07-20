@@ -64,7 +64,7 @@ function switcherFor(rel) {
     opts.push(`<option value="${href}">${l.name}</option>`);
   }
   return '<select class="lang-select" data-lang-nav aria-label="Language" title="Language" '
-       + 'onchange="if(this.value)location.href=this.value">\n          '
+       + '>\n          '
        + opts.join('\n          ') + '\n        </select>';
 }
 

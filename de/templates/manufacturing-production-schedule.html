@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fertigung — Produktionsplan-Vorlage | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Kostenloser Produktionsplan für die Fertigung: Bedarfsplanung, Lieferzeiten, Losplanung, Rüstwechsel, Prüfung, Sperrbestand, Versand." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/de/templates/manufacturing-production-schedule.html#webpage","name":"Fertigung — Produktionsplan-Vorlage","url":"https://gantts.app/de/templates/manufacturing-production-schedule.html","description":"Kostenloser Produktionsplan für die Fertigung: Bedarfsplanung, Lieferzeiten, Losplanung, Rüstwechsel, Prüfung, Sperrbestand, Versand.","inLanguage":"de","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Vorlagen","item":"https://gantts.app/de/templates.html"},{"@type":"ListItem","position":3,"name":"Produktionsplan für die Fertigung","item":"https://gantts.app/de/templates/manufacturing-production-schedule.html"}]}},{"@type":"HowTo","name":"So verwenden Sie die Vorlage: Produktionsplan für die Fertigung","description":"Kostenloser Produktionsplan für die Fertigung: Bedarfsplanung, Lieferzeiten, Losplanung, Rüstwechsel, Prüfung, Sperrbestand, Versand.","inLanguage":"de","step":[{"@type":"HowToStep","position":1,"name":"Tragen Sie die echten Lieferzeiten je Komponente ein; die längste davo","text":"Tragen Sie die echten Lieferzeiten je Komponente ein; die längste davon, nicht die Linienbelegung, bestimmt meist den frühesten möglichen Start."},{"@type":"HowToStep","position":2,"name":"Ergänzen Sie eine Zeile je Arbeitsplatz oder Linie, wenn Sie mehrere p","text":"Ergänzen Sie eine Zeile je Arbeitsplatz oder Linie, wenn Sie mehrere planen, damit Belegungskonflikte sichtbar werden."},{"@type":"HowToStep","position":3,"name":"Setzen Sie Rüstzeiten nach tatsächlich gemessenen Werten und halten Si","text":"Setzen Sie Rüstzeiten nach tatsächlich gemessenen Werten und halten Sie sie von den Losen davor und danach getrennt."},{"@type":"HowToStep","position":4,"name":"Legen Sie einen Balken für den Sperrbestand ein, wo eine Charge auf di","text":"Legen Sie einen Balken für den Sperrbestand ein, wo eine Charge auf die Entscheidung wartet — dieses Warten ist stillstehender Bestand."},{"@type":"HowToStep","position":5,"name":"Ergänzen Sie Sicherheitsbestände oder Pufferbalken vor Losen, die eine","text":"Ergänzen Sie Sicherheitsbestände oder Pufferbalken vor Losen, die eine feste Kundenzusage bedienen."}]},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was gehört in einen Produktionsplan?","acceptedAnswer":{"@type":"Answer","text":"Bedarfs- und Kapazitätsplanung, Materialbeschaffung mit echten Lieferzeiten, Reihenfolgeplanung und Rüstwechsel, die Fertigungslose, Qualitätssicherung samt Sperrbestand sowie Verpackung und Versand. Alle sechs sind hier als eigene Phasen hinterlegt."}},{"@type":"Question","name":"Wie stelle ich Rüstwechsel im Gantt-Diagramm dar?","acceptedAnswer":{"@type":"Answer","text":"Als eigene kurze Balken zwischen den Losen, wobei jedes Los vom Rüstwechsel davor abhängt. Das Rüsten im Losbalken zu verstecken überzeichnet Ihre verfügbare Kapazität — der häufigste Fehler in einem Produktionsplan."}},{"@type":"Question","name":"Passt die Vorlage auch für die Prozessfertigung?","acceptedAnswer":{"@type":"Answer","text":"Am besten passt sie zur Stückfertigung — Chargen, Stück und Rüstwechsel. Für kontinuierliche Prozesse behalten Sie Beschaffung und Versand und ersetzen die Loszeilen durch Kampagnenbalken."}},{"@type":"Question","name":"Worin unterscheidet sie sich vom Produktionskalender für Bekleidung?","acceptedAnswer":{"@type":"Answer","text":"Der Bekleidungskalender ist saisonal aufgebaut, mit Mustern und Stoffbuchungen gegen einen Liefertermin an den Handel. Diese Vorlage ist ein allgemeiner Plan der Stückfertigung rund um Lieferzeiten, Rüstwechsel und Versand."}},{"@type":"Question","name":"Ist die Vorlage für den Produktionsplan kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/templates/manufacturing-production-schedule.html">English</option><option value="/es/templates/manufacturing-production-schedule.html">Español</option><option value="/fr/templates/manufacturing-production-schedule.html">Français</option><option value="/de/templates/manufacturing-production-schedule.html" selected>Deutsch</option><option value="/pt/templates/manufacturing-production-schedule.html">Português</option><option value="/zh/templates/manufacturing-production-schedule.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Sprache"><option value="/templates/manufacturing-production-schedule.html">English</option><option value="/es/templates/manufacturing-production-schedule.html">Español</option><option value="/fr/templates/manufacturing-production-schedule.html">Français</option><option value="/de/templates/manufacturing-production-schedule.html" selected>Deutsch</option><option value="/pt/templates/manufacturing-production-schedule.html">Português</option><option value="/zh/templates/manufacturing-production-schedule.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -200,6 +195,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

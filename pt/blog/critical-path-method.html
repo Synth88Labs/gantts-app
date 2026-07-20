@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caminho crítico: cálculo e exemplo | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/critical-path-method.html#post","headline":"Caminho crítico: método, cálculo e exemplo resolvido","description":"Caminho crítico explicado: cálculo para frente, para trás, folga total e um exemplo resolvido com seis tarefas e a conta completa.","url":"https://gantts.app/pt/blog/critical-path-method.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Caminho crítico: método, cálculo e exemplo resolvido","item":"https://gantts.app/pt/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"O que é o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"A cadeia mais longa de tarefas ligadas do início ao fim do projeto. A duração dela é a menor duração possível do projeto, e todas as suas tarefas têm folga zero: cada dia de atraso em qualquer uma delas é um dia de atraso na entrega."}},{"@type":"Question","name":"Como calcular o caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Faça o cálculo para frente, tomando sempre o maior término mais cedo das predecessoras, para obter as datas mais cedo e a duração do projeto. Depois o cálculo para trás, tomando sempre o menor início mais tarde das sucessoras. As tarefas em que as duas datas coincidem — folga zero — formam o caminho crítico."}},{"@type":"Question","name":"O que é folga total?","acceptedAnswer":{"@type":"Answer","text":"O quanto uma tarefa pode atrasar sem mover o fim do projeto: início mais tarde menos início mais cedo. Atenção porque ela costuma ser compartilhada por uma cadeia inteira — três tarefas com cinco dias de folga total não somam quinze dias, são os mesmos cinco."}},{"@type":"Question","name":"Qual a diferença entre folga total e folga livre?","acceptedAnswer":{"@type":"Answer","text":"A folga total mede o atraso possível sem mover o fim do projeto; a folga livre mede o atraso possível sem mover a sucessora imediata. A folga livre é sempre menor ou igual à total, e é a única que se pode prometer com segurança a quem executa a tarefa."}},{"@type":"Question","name":"Pode haver mais de um caminho crítico?","acceptedAnswer":{"@type":"Answer","text":"Sim. Em cronogramas muito ligados, vários caminhos paralelos têm o mesmo comprimento e todos passam a ser críticos. Isso aumenta bastante o risco, porque um atraso em qualquer um deles empurra a entrega e não há folga em lugar nenhum para absorver."}},{"@type":"Question","name":"Qual a diferença entre CPM e PERT?","acceptedAnswer":{"@type":"Answer","text":"O CPM usa uma duração única por tarefa e se concentra em caminho crítico e folga. O PERT usa três estimativas — otimista, provável e pessimista — ponderadas para lidar com incerteza. Na prática muita equipe estima as durações em PERT e calcula o caminho em CPM."}},{"@type":"Question","name":"Por que o caminho crítico do meu cronograma parece errado?","acceptedAnswer":{"@type":"Answer","text":"Quase sempre por uma destas quatro causas: datas fixas digitadas à mão, tarefas sem nenhuma ligação, folga inflada dentro das durações ou esperas escondidas em retardos em vez de tarefas visíveis. Qualquer uma delas quebra o cálculo sem gerar aviso."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html" selected>Português</option><option value="/zh/blog/critical-path-method.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Idioma"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html" selected>Português</option><option value="/zh/blog/critical-path-method.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -320,6 +315,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

@@ -408,10 +408,22 @@
       const canvas = await this.capture(2);
       const img = canvas.toDataURL('image/png');
       const w = window.open('', '_blank');
+      /* No inline onload here. A blank window opened this way is
+         same-origin and inherits our Content Security Policy, so an
+         inline handler would be blocked the moment the CSP is enforced
+         — and print would fail silently, since nothing else calls
+         print(). Binding from this side keeps it working and keeps
+         'unsafe-inline' out of script-src. */
       w.document.write(`<html><head><title>${U.escapeHtml(Model.project.name)}</title>
         <style>@page{margin:12mm} body{margin:0} img{width:100%}</style></head>
-        <body><img src="${img}" onload="window.print()"/></body></html>`);
+        <body><img src="${img}"/></body></html>`);
       w.document.close();
+
+      const shot = w.document.querySelector('img');
+      // A data: URL can already be decoded by the time we get here, in
+      // which case 'load' has been and gone and would never fire.
+      if (!shot || shot.complete) w.print();
+      else shot.addEventListener('load', () => w.print(), { once: true });
     },
 
     async link() {

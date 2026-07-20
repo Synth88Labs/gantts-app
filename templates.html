@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Gantt Chart Templates — 35 Ready-Made Plans</title>
@@ -39,7 +34,7 @@
   <meta name="twitter:title" content="Free Gantt Chart Templates — 35 Ready-Made Plans" />
   <meta name="twitter:description" content="Free Gantt chart templates for Excel, Sheets & PowerPoint — by industry, use case, timeframe or methodology. Edit online free." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
 
   <script type="application/ld+json">
   {
@@ -94,7 +89,7 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" >
           <option value="/templates.html" selected>English</option>
           <option value="/es/templates.html">Español</option>
           <option value="/fr/templates.html">Français</option>
@@ -102,7 +97,7 @@
           <option value="/pt/templates.html">Português</option>
           <option value="/zh/templates.html">简体中文</option>
         </select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html" data-i18n="nav.open">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -382,6 +377,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

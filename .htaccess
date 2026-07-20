@@ -73,6 +73,36 @@ Options -Indexes
   # We ask for none of these. Saying so explicitly means an injected
   # script cannot quietly ask on our behalf.
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+
+  # ---- Content Security Policy: REPORT-ONLY, deliberately ----
+  #
+  # This does not block anything yet. It is here to find out what a real
+  # policy would break before it breaks it for a visitor. Enforcing a CSP
+  # blind on 745 pages is how you discover in production that one page
+  # loaded something nobody remembered.
+  #
+  # The prerequisite is already done: 1483 inline on* handlers across the
+  # site were replaced with delegated listeners in js/site.js, so this
+  # policy needs no 'unsafe-inline' for scripts. That single attribute is
+  # most of what a CSP is for — permitting inline script permits the main
+  # thing XSS needs.
+  #
+  # Still permissive in two places, honestly noted rather than hidden:
+  #   * style-src allows 'unsafe-inline' — the app sets bar geometry via
+  #     inline style, which is what a Gantt chart is. Removing it means
+  #     CSS custom properties for every bar; worth doing, not today.
+  #   * script-src allows the two CDNs. They are pinned with Subresource
+  #     Integrity, so a compromised CDN still cannot execute — the hash
+  #     is the real control there, not the origin allowlist.
+  #
+  # googletagmanager and google-analytics are listed because analytics
+  # loads AFTER consent. Listing them does not load them.
+  #
+  # TO ENFORCE: watch the browser console on the app and a template page,
+  # confirm no violations, then rename this header to
+  # Content-Security-Policy. Keep the Report-Only one alongside for a
+  # while so a later violation is still visible.
+  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>
 
 # ---- Force HTTPS + non-www ----

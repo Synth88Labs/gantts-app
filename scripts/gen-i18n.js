@@ -41,7 +41,7 @@ const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=25';
+const CSS_V = 'v=27';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -111,7 +111,7 @@ function langSwitcher(currentCode, sub, only) {
   const opts = [opt('en', 'English', pub('/' + sub))]
     .concat(LOCALES.map(l => opt(l.code, l.name, has(l.code) ? pub(`/${l.code}/${sub}`) : `/${l.code}/`)))
     .join('');
-  return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}" onchange="if(this.value)location.href=this.value">${opts}</select>`;
+  return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}">${opts}</select>`;
 }
 
 /* Markup must mirror the English pages exactly — site.css styles
@@ -136,7 +136,7 @@ function header(code, sub, only) {
       <div class="nav-spacer"></div>
       <div class="nav-cta">
         ${langSwitcher(code, sub, only)}
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="${localHref(code, 'app.html')}">${esc(c.nav.open)}</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>

@@ -77,7 +77,40 @@ const need = [
   [/Referrer-Policy/, 'Referrer-Policy'],
   [/Strict-Transport-Security/, 'Strict-Transport-Security (HSTS)'],
   [/Permissions-Policy/, 'Permissions-Policy'],
+  [/Content-Security-Policy(-Report-Only)?/, 'Content-Security-Policy (report-only or enforced)'],
 ];
+
+/* The CSP is only worth having if nothing forces 'unsafe-inline' back
+   into script-src. 1483 inline on* handlers were removed for exactly
+   this reason; a generator that starts emitting them again would make
+   the policy unenforceable without anyone noticing, because Report-Only
+   does not break the page. */
+{
+  const inline = [];
+  const scanDirs = [ROOT, path.join(ROOT, 'scripts')];
+  const seen = new Set();
+  const walkFor = (dir, depth) => {
+    if (depth > 2) return;
+    for (const n of fs.readdirSync(dir)) {
+      if (['node_modules', '.git', 'deploy', 'docs', 'test'].includes(n)) continue;
+      const abs = path.join(dir, n);
+      if (seen.has(abs)) continue; seen.add(abs);
+      const st = fs.statSync(abs);
+      if (st.isDirectory()) { walkFor(abs, depth + 1); continue; }
+      if (!/\.(html|js)$/.test(n)) continue;
+      const src = fs.readFileSync(abs, 'utf8');
+      const hits = src.match(/\son(click|change|load|submit|error|focus|blur)="/g);
+      if (hits) inline.push(path.relative(ROOT, abs).split(path.sep).join('/') + ' (' + hits.length + ')');
+    }
+  };
+  scanDirs.forEach((d) => walkFor(d, 0));
+  if (inline.length) {
+    err(`${inline.length} file(s) reintroduced inline event handlers — script-src would need 'unsafe-inline', which defeats the CSP:`);
+    inline.slice(0, 6).forEach((f) => console.error('      ' + f));
+  } else {
+    console.log('  no inline event handlers anywhere (CSP can drop \'unsafe-inline\' for scripts)');
+  }
+}
 for (const [re, label] of need) if (!re.test(ht)) err(`.htaccess is missing ${label}`);
 console.log(`  ${need.length} server-config item(s) checked in .htaccess`);
 

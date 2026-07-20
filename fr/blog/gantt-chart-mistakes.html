@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Les erreurs fréquentes en planification | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Les douze erreurs classiques des diagrammes de Gantt : trop de détail, liens absents, aucune marge, jours calendaires, avancement faux — avec la correction de chacune." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/gantt-chart-mistakes.html#post","headline":"Douze erreurs de planification — et comment les corriger","description":"Les douze erreurs classiques des diagrammes de Gantt : trop de détail, liens absents, aucune marge, jours calendaires, avancement faux — avec la correction de chacune.","url":"https://gantts.app/fr/blog/gantt-chart-mistakes.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/gantt-chart-mistakes.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Douze erreurs de planification — et comment les corriger","item":"https://gantts.app/fr/blog/gantt-chart-mistakes.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Quelle est l’erreur la plus fréquente ?","acceptedAnswer":{"@type":"Answer","text":"Trop de détail. Un plan qui liste chaque sous-tâche devient illisible et se retrouve abandonné en quelques semaines, parce que le tenir à jour coûte plus qu’il ne rapporte."}},{"@type":"Question","name":"Combien de tâches un diagramme de Gantt doit-il contenir ?","acceptedAnswer":{"@type":"Answer","text":"Assez peu pour que vous le mainteniez : 20 à 60 lignes pour la plupart des projets, réparties en quatre à huit phases. Tout ce qui dure moins que votre cycle de reporting appartient à l’intérieur d’une tâche."}},{"@type":"Question","name":"Faut-il relier toutes les tâches en Fin-Début ?","acceptedAnswer":{"@type":"Answer","text":"Non. Tout enchaîner en une seule file place tout le monde sur le chemin critique et rend le plan impossible à réordonner. Ne reliez que ce qui contraint physiquement."}},{"@type":"Question","name":"Pourquoi mon projet dérive-t-il alors que le plan semblait juste ?","acceptedAnswer":{"@type":"Answer","text":"Le plus souvent : aucune marge, une personne affectée au-delà de 100 % sur des tâches qui se recouvrent, un avancement déduit des jours écoulés — ou des barres tracées en jours calendaires alors que le travail se fait en jours ouvrés."}},{"@type":"Question","name":"Est-ce une faute de reposer la référence ?","acceptedAnswer":{"@type":"Answer","text":"Non pour une évolution de périmètre validée ou une replanification formelle. Oui si vous la reposez à chaque écart : les rapports restent au vert pendant que la date de livraison recule."}},{"@type":"Question","name":"À quelle fréquence mettre le plan à jour ?","acceptedAnswer":{"@type":"Answer","text":"Chaque semaine pour la plupart des projets, chaque jour en période tendue. La cadence importe moins que le fait qu’elle soit fixe et tenable."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-mistakes.html">English</option><option value="/es/blog/gantt-chart-mistakes.html">Español</option><option value="/fr/blog/gantt-chart-mistakes.html" selected>Français</option><option value="/de/blog/gantt-chart-mistakes.html">Deutsch</option><option value="/pt/blog/gantt-chart-mistakes.html">Português</option><option value="/zh/blog/gantt-chart-mistakes.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Langue"><option value="/blog/gantt-chart-mistakes.html">English</option><option value="/es/blog/gantt-chart-mistakes.html">Español</option><option value="/fr/blog/gantt-chart-mistakes.html" selected>Français</option><option value="/de/blog/gantt-chart-mistakes.html">Deutsch</option><option value="/pt/blog/gantt-chart-mistakes.html">Português</option><option value="/zh/blog/gantt-chart-mistakes.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/fr/app.html">Ouvrir l’application</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -295,6 +290,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

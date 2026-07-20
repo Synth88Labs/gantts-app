@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>里程碑和任务的区别 | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/milestones-vs-tasks.html#post","headline":"里程碑与任务：区别在哪里","description":"里程碑与任务的区别、里程碑真正的用途、一个项目该设几个，以及常见错误。","url":"https://gantts.app/zh/blog/milestones-vs-tasks.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/milestones-vs-tasks.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"里程碑与任务：区别在哪里","item":"https://gantts.app/zh/blog/milestones-vs-tasks.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图里的里程碑是什么？","acceptedAnswer":{"@type":"Answer","text":"一个工期为零的节点，标记有意义的时刻：审批、交付或上线。因为没有长度，它用菱形而不是横条表示，可以移动但不能拉宽。"}},{"@type":"Question","name":"任务和里程碑有什么区别？","acceptedAnswer":{"@type":"Answer","text":"任务有工期——有开始、有结束，中间有人在干活；里程碑工期为零，标记一个时点。快速判断：如果有人能花一个下午去做它，那是任务。"}},{"@type":"Question","name":"一个项目该设多少里程碑？","acceptedAnswer":{"@type":"Answer","text":"通常四到八个——足以讲清脉络，又少到每一个都还有分量。如果把里程碑从头读到尾说不清这个项目，那说明你设的不是该设的那几个。"}},{"@type":"Question","name":"里程碑可以有工期吗？","acceptedAnswer":{"@type":"Answer","text":"按定义不可以。如果那件事确实要花时间，比如八天的标签合规检测，就把它建成任务，在结束处放一个里程碑。这样承诺日期是算出来的，而不是宣布出来的。"}},{"@type":"Question","name":"里程碑推迟后进度计划会怎样？","acceptedAnswer":{"@type":"Answer","text":"它后面所有相连的任务都移动同样的天数，减去链上的浮动时间。上面的包装改版例子里，\"标签检测通过\"推迟五天，门店换新就从 5 月 12 日整体推到 5 月 19 日，因为下游一天浮动时间也没有。"}},{"@type":"Question","name":"摘要任务是什么？","acceptedAnswer":{"@type":"Answer","text":"代表阶段或分组的横条。它的日期取自下属任务里最早的开始和最晚的结束，所以内容移动时它自己跟着动。它不能替代里程碑：摘要说明工作在什么时候进行，里程碑说明承诺在哪一天到期。"}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/milestones-vs-tasks.html">English</option><option value="/es/blog/milestones-vs-tasks.html">Español</option><option value="/fr/blog/milestones-vs-tasks.html">Français</option><option value="/de/blog/milestones-vs-tasks.html">Deutsch</option><option value="/pt/blog/milestones-vs-tasks.html">Português</option><option value="/zh/blog/milestones-vs-tasks.html" selected>简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="语言"><option value="/blog/milestones-vs-tasks.html">English</option><option value="/es/blog/milestones-vs-tasks.html">Español</option><option value="/fr/blog/milestones-vs-tasks.html">Français</option><option value="/de/blog/milestones-vs-tasks.html">Deutsch</option><option value="/pt/blog/milestones-vs-tasks.html">Português</option><option value="/zh/blog/milestones-vs-tasks.html" selected>简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -294,6 +289,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

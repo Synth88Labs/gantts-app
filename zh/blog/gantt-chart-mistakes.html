@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>甘特图九个常见错误 | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-mistakes.html#post","headline":"九个常见的计划错误，以及怎么改","description":"甘特图九个常见错误：过度细化、缺少依赖、没有浮动时间、忽略资源——每个都给出改法。","url":"https://gantts.app/zh/blog/gantt-chart-mistakes.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-mistakes.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"九个常见的计划错误，以及怎么改","item":"https://gantts.app/zh/blog/gantt-chart-mistakes.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图最常见的错误是什么？","acceptedAnswer":{"@type":"Answer","text":"过度细化。把每个子任务都列出来的图既读不了也维护不了，几周之内就被放弃了——因为维持它的成本超过了它的回报。"}},{"@type":"Question","name":"甘特图应该有多少项任务？","acceptedAnswer":{"@type":"Answer","text":"少到你真的会去维护它——对多数项目是 15 到 40 行。比你的汇报周期还短的东西，应该待在任务内部。"}},{"@type":"Question","name":"是不是每项任务都该用完成-开始连起来？","acceptedAnswer":{"@type":"Answer","text":"不是。把所有任务串成一条链会让每一项都变成关键任务，也让计划无法重新排序。只连接物理上真正构成约束的关系。"}},{"@type":"Question","name":"图看起来没问题，项目为什么还是延期了？","acceptedAnswer":{"@type":"Answer","text":"通常是三个原因之一：没有任何浮动时间；某个人在重叠的任务上被排到 100% 以上；或者进度是按已流逝的天数算的，而不是按做完的工作量算的。"}},{"@type":"Question","name":"重设基准是错的吗？","acceptedAnswer":{"@type":"Answer","text":"经审批的范围变更或正式的重新规划时是对的。每次没达成就重存一次则不是：报告一路绿灯，交付日期却一直在往后走。"}},{"@type":"Question","name":"甘特图应该多久更新一次？","acceptedAnswer":{"@type":"Answer","text":"多数项目每周一次，攻坚期每天一次。节奏本身比频率更重要——固定、且能长期坚持。"}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-mistakes.html">English</option><option value="/es/blog/gantt-chart-mistakes.html">Español</option><option value="/fr/blog/gantt-chart-mistakes.html">Français</option><option value="/de/blog/gantt-chart-mistakes.html">Deutsch</option><option value="/pt/blog/gantt-chart-mistakes.html">Português</option><option value="/zh/blog/gantt-chart-mistakes.html" selected>简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="语言"><option value="/blog/gantt-chart-mistakes.html">English</option><option value="/es/blog/gantt-chart-mistakes.html">Español</option><option value="/fr/blog/gantt-chart-mistakes.html">Français</option><option value="/de/blog/gantt-chart-mistakes.html">Deutsch</option><option value="/pt/blog/gantt-chart-mistakes.html">Português</option><option value="/zh/blog/gantt-chart-mistakes.html" selected>简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -296,6 +291,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

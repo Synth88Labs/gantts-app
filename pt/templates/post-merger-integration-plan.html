@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Integração pós-fusão — plano | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Modelo gratuito de plano de integração pós-aquisição: Dia 1, 100 primeiros dias, áreas, sistemas e sinergias." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/pt/templates/post-merger-integration-plan.html#webpage","name":"Integração pós-fusão — plano","url":"https://gantts.app/pt/templates/post-merger-integration-plan.html","description":"Modelo gratuito de plano de integração pós-aquisição: Dia 1, 100 primeiros dias, áreas, sistemas e sinergias.","inLanguage":"pt","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Modelos","item":"https://gantts.app/pt/templates.html"},{"@type":"ListItem","position":3,"name":"Plano de integração pós-aquisição","item":"https://gantts.app/pt/templates/post-merger-integration-plan.html"}]}},{"@type":"HowTo","name":"Como usar o modelo: Plano de integração pós-aquisição","description":"Modelo gratuito de plano de integração pós-aquisição: Dia 1, 100 primeiros dias, áreas, sistemas e sinergias.","inLanguage":"pt","step":[{"@type":"HowToStep","position":1,"name":"Um grupo de linhas por área, com responsável identificado.","text":"Um grupo de linhas por área, com responsável identificado."},{"@type":"HowToStep","position":2,"name":"Trate as tarefas do Dia 1 em uma seção por horário, à parte.","text":"Trate as tarefas do Dia 1 em uma seção por horário, à parte."},{"@type":"HowToStep","position":3,"name":"Coloque as aprovações concorrenciais como precedência de tudo que é ve","text":"Coloque as aprovações concorrenciais como precedência de tudo que é vedado antes do fechamento."},{"@type":"HowToStep","position":4,"name":"Associe cada medida de sinergia a uma data e um valor, senão continua ","text":"Associe cada medida de sinergia a uma data e um valor, senão continua sendo intenção."}]},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"Quando começa o planejamento da integração?","acceptedAnswer":{"@type":"Answer","text":"Antes do fechamento, assim que a aquisição se desenha, respeitando os limites concorrenciais para troca de informações."}},{"@type":"Question","name":"Por que os 100 primeiros dias importam?","acceptedAnswer":{"@type":"Answer","text":"Porque estrutura, comunicação e retenção se definem nessa janela. Depois, tudo fica mais difícil."}},{"@type":"Question","name":"O que leva mais tempo?","acceptedAnswer":{"@type":"Answer","text":"A integração de sistemas, sobretudo ERP e CRM. Dois a três anos não são raros."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/templates/post-merger-integration-plan.html">English</option><option value="/es/templates/post-merger-integration-plan.html">Español</option><option value="/fr/templates/post-merger-integration-plan.html">Français</option><option value="/de/templates/post-merger-integration-plan.html">Deutsch</option><option value="/pt/templates/post-merger-integration-plan.html" selected>Português</option><option value="/zh/templates/post-merger-integration-plan.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Idioma"><option value="/templates/post-merger-integration-plan.html">English</option><option value="/es/templates/post-merger-integration-plan.html">Español</option><option value="/fr/templates/post-merger-integration-plan.html">Français</option><option value="/de/templates/post-merger-integration-plan.html">Deutsch</option><option value="/pt/templates/post-merger-integration-plan.html" selected>Português</option><option value="/zh/templates/post-merger-integration-plan.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -194,6 +189,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

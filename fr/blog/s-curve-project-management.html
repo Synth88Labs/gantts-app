@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Courbe en S en gestion de projet (générateur gratuit) | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression en chiffre. Générateur gratuit, à partir de votre propre planning." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"fr","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/fr/blog/s-curve-project-management.html#post","headline":"Courbe en S et valeur acquise : êtes-vous vraiment en retard ?","description":"Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression en chiffre. Générateur gratuit, à partir de votre propre planning.","url":"https://gantts.app/fr/blog/s-curve-project-management.html","inLanguage":"fr","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/fr/blog/s-curve-project-management.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://gantts.app/fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/fr/blog/"},{"@type":"ListItem","position":3,"name":"Courbe en S et valeur acquise : êtes-vous vraiment en retard ?","item":"https://gantts.app/fr/blog/s-curve-project-management.html"}]}},{"@type":"FAQPage","inLanguage":"fr","mainEntity":[{"@type":"Question","name":"Qu’est-ce qu’une courbe en S en gestion de projet ?","acceptedAnswer":{"@type":"Answer","text":"Un graphique du travail prévu cumulé dans le temps. Sa forme en S vient de ce qu’un projet démarre lentement, accélère au milieu et ralentit à la fin. Comparée à l’avancement réel, la distance verticale entre les deux courbes donne l’avance ou le retard, valorisé au budget."}},{"@type":"Question","name":"Quelle différence entre courbe en S et valeur acquise ?","acceptedAnswer":{"@type":"Answer","text":"La courbe en S est l’image ; la valeur acquise est le calcul derrière. Elle chiffre l’écart — écart de délai, performance des délais, écart de coût, performance des coûts — là où la courbe en montre l’allure et le sens."}},{"@type":"Question","name":"Que signifie un IPD de 0,85 ?","acceptedAnswer":{"@type":"Answer","text":"Vous avez acquis 85 % de la valeur que le plan prévoyait à ce jour. Sous 1,00 signifie en retard, au-dessus de 1,00 en avance. L’indice ne dit pas combien de jours de retard vous avez : pour cela, lisez l’écart horizontalement, jusqu’à la date où la courbe prévue atteignait votre valeur acquise."}},{"@type":"Question","name":"Comment calculer l’IPD et l’IPC à la main ?","acceptedAnswer":{"@type":"Answer","text":"Trois chiffres à la même date de situation : la valeur planifiée, la valeur acquise et le coût réel. L’IPD vaut VA ÷ VP, l’IPC vaut VA ÷ CR. Avec VP = 240 000 €, VA = 204 000 € et CR = 232 000 €, on obtient un IPD de 0,85 et un IPC de 0,88."}},{"@type":"Question","name":"Faut-il des données de coût pour une courbe en S ?","acceptedAnswer":{"@type":"Answer","text":"Non. Sans coûts saisis, les tâches sont pondérées par leur durée en jours ouvrés et vous obtenez une courbe d’avancement — même allure, lue en jours. Les budgets en font une courbe de valeur et débloquent les indicateurs financiers."}},{"@type":"Question","name":"Pourquoi la performance des coûts ne s’affiche-t-elle pas ?","acceptedAnswer":{"@type":"Answer","text":"Parce qu’aucun coût réel n’a été saisi. L’IPC exige une dépense réelle ; le déduire de l’avancement le rendrait égal à 1,00 pour tous les projets. Renseignez le champ Dépensé sur vos tâches et il apparaît, avec l’écart de coût et la prévision à l’achèvement."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Langue" onchange="if(this.value)location.href=this.value"><option value="/blog/s-curve-project-management.html">English</option><option value="/es/blog/s-curve-project-management.html">Español</option><option value="/fr/blog/s-curve-project-management.html" selected>Français</option><option value="/de/blog/s-curve-project-management.html">Deutsch</option><option value="/pt/blog/s-curve-project-management.html">Português</option><option value="/zh/blog/s-curve-project-management.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Langue"><option value="/blog/s-curve-project-management.html">English</option><option value="/es/blog/s-curve-project-management.html">Español</option><option value="/fr/blog/s-curve-project-management.html" selected>Français</option><option value="/de/blog/s-curve-project-management.html">Deutsch</option><option value="/pt/blog/s-curve-project-management.html">Português</option><option value="/zh/blog/s-curve-project-management.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/fr/app.html">Ouvrir l’application</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -311,6 +306,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

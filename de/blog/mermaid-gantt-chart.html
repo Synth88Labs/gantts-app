@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mermaid-Gantt-Syntax mit Live-Editor | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/mermaid-gantt-chart.html#post","headline":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","description":"Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor.","url":"https://gantts.app/de/blog/mermaid-gantt-chart.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor","item":"https://gantts.app/de/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Wie schreibt man ein Gantt-Diagramm in Mermaid?","acceptedAnswer":{"@type":"Answer","text":"Beginnen Sie den Block mit gantt, ergänzen Sie dateFormat YYYY-MM-DD und darunter section-Überschriften mit Vorgangszeilen der Form „Name :tag, id, start, dauer“ — zum Beispiel „Recherche :done, rec, 2026-01-05, 5d“."}},{"@type":"Question","name":"Schließt 5d in Mermaid den Starttag ein?","acceptedAnswer":{"@type":"Answer","text":"Ja. Ein Vorgang mit 5d ab Montag, dem 5., endet am Freitag, dem 9. Diese einschließende Zählweise ist die häufigste Ursache für Fehler um einen Tag — und sie erzeugt ein Diagramm, das einwandfrei rendert, während jedes Datum um einen Tag danebenliegt."}},{"@type":"Question","name":"Wie funktionieren Abhängigkeiten in Mermaid gantt?","acceptedAnswer":{"@type":"Answer","text":"Über „after eineId“ im Startfeld. Es ist immer eine Ende-Anfang-Verknüpfung ohne Zeitabstand; Anfang-Anfang, Ende-Ende und Abstände lassen sich nicht ausdrücken. Mehrere Vorgänger sind möglich, etwa „after a b“ — der Vorgang wartet dann auf den späteren der beiden."}},{"@type":"Question","name":"Überspringt after die Wochenenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, sofern das Diagramm „excludes weekends“ enthält. Der Nachfolger eines Vorgangs, der freitags endet, beginnt dann am Montag, und die Dauer zählt in Arbeitstagen. Werkzeuge, die after durch Addition eines Kalendertages auflösen, legen Vorgänge auf Samstage in einer Datei, die das ausdrücklich verbietet."}},{"@type":"Question","name":"Kann Mermaid den kritischen Pfad berechnen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Das Tag crit ist eine Farbe, die Sie von Hand vergeben; nichts in Mermaid läuft das Abhängigkeitsnetz ab oder rechnet Puffer aus. Genau deshalb exportiert gantts.app crit, ignoriert es beim Import aber: Die Kritikalität wird aus den Abhängigkeiten neu berechnet, statt einer möglicherweise veralteten Datei geglaubt zu werden."}},{"@type":"Question","name":"Kann ich ein Mermaid-Gantt-Diagramm bearbeitbar machen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Öffnen Sie die .mmd- oder die Markdown-Datei in gantts.app, bearbeiten Sie sie visuell und holen Sie sich die aktualisierte Syntax über ⬇ Export ▸ 🧜 Mermaid-Gantt (Text) wieder heraus."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Sprache" onchange="if(this.value)location.href=this.value"><option value="/blog/mermaid-gantt-chart.html">English</option><option value="/es/blog/mermaid-gantt-chart.html">Español</option><option value="/fr/blog/mermaid-gantt-chart.html">Français</option><option value="/de/blog/mermaid-gantt-chart.html" selected>Deutsch</option><option value="/pt/blog/mermaid-gantt-chart.html">Português</option><option value="/zh/blog/mermaid-gantt-chart.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Sprache"><option value="/blog/mermaid-gantt-chart.html">English</option><option value="/es/blog/mermaid-gantt-chart.html">Español</option><option value="/fr/blog/mermaid-gantt-chart.html">Français</option><option value="/de/blog/mermaid-gantt-chart.html" selected>Deutsch</option><option value="/pt/blog/mermaid-gantt-chart.html">Português</option><option value="/zh/blog/mermaid-gantt-chart.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/de/app.html">App öffnen</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -293,6 +288,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

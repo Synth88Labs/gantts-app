@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — gantts.app</title>
@@ -79,7 +74,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
 </head>
 <body>
   <header class="nav">
@@ -96,7 +91,7 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" >
           <option value="/privacy.html" selected>English</option>
           <option value="/es/privacy.html">Español</option>
           <option value="/fr/privacy.html">Français</option>
@@ -104,7 +99,7 @@
           <option value="/pt/privacy.html">Português</option>
           <option value="/zh/privacy.html">简体中文</option>
         </select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html" data-i18n="nav.open">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -132,15 +127,19 @@
       <h2>Analytics & hosting</h2>
       <p>Like most websites, our web host may keep standard server logs (such as IP address and browser type) for security and performance.</p>
       <p>We use <strong>Google Analytics 4</strong> to understand which pages people find useful — which guides get read, which templates get downloaded, and whether the editor is being opened. This tells us what to improve. It measures pages, not plans: <strong>nothing about the projects you build is sent anywhere</strong>, because your project data never leaves your browser in the first place.</p>
-      <p>Google Analytics collects the usual page-level information — the page you are on, roughly where in the world you are, your browser and device type, and how you arrived. It sets cookies (see below). Google processes this data as described in <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>, and you can opt out entirely with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google's browser add-on</a> or by using any browser setting or extension that blocks analytics — the tool works exactly the same either way.</p>
+      <p><strong>It does not run unless you say yes.</strong> Analytics is off until you accept it on the banner. Until then — and permanently, if you decline — your browser makes <strong>no request to Google at all</strong>. We are not loading it in a disabled state or sending "cookieless" pings; the script is simply never fetched. Declining costs you nothing, because nothing on the page was waiting for it.</p>
+      <p>If you accept, Google Analytics collects the usual page-level information — the page you are on, roughly where in the world you are, your browser and device type, and how you arrived. Google processes this data as described in <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>. You can change your mind at any time using <strong>Cookie settings</strong> at the bottom of any page; declining there also deletes the analytics cookies already on your device. You can additionally opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google's browser add-on</a> or any extension that blocks analytics — the tool works exactly the same either way.</p>
 
       <h2>Third-party libraries</h2>
       <p>The app loads a few open-source libraries (for exporting to PDF, Excel and PowerPoint) from a public CDN. These requests are made by your browser to fetch code; they don't include your project data.</p>
 
       <h2>Cookies</h2>
-      <p>Google Analytics sets two cookies, <code>_ga</code> and <code>_ga_3ZFCTKWL1D</code>, which distinguish one visitor from another so that ten pageviews from one person are not counted as ten people. They contain a random identifier, not your name or anything you typed. We set <strong>no advertising cookies</strong> and we do not sell or share this data.</p>
-      <p>Everything else is your browser's <strong>local storage</strong>, not a cookie, and never leaves your device: your projects, and preferences like light or dark theme. Clearing your browser data removes both.</p>
-      <p class="muted"><small>Earlier versions of this page said gantts.app used no tracking cookies. That was true until we added Google Analytics on 19 July 2026, and this page was updated the same day.</small></p>
+      <p><strong>If you decline, this site sets no cookies whatsoever.</strong> Not a reduced set — none.</p>
+      <p>If you accept, Google Analytics sets two: <code>_ga</code> and <code>_ga_3ZFCTKWL1D</code>, which distinguish one visitor from another so that ten pageviews from one person are not counted as ten people. They contain a random identifier, not your name or anything you typed. We set <strong>no advertising cookies</strong> and we do not sell or share this data.</p>
+      <p>Your answer itself is remembered in <strong>local storage</strong> rather than in a cookie, precisely so that declining leaves you with none. It records only "granted" or "denied" and the date.</p>
+      <p>Everything else is also your browser's <strong>local storage</strong>, and never leaves your device: your projects, and preferences like light or dark theme. Clearing your browser data removes all of it — including your cookie choice, so we will ask again.</p>
+      <p><button type="button" class="btn" data-consent-reset>Change your cookie choice</button></p>
+      <p class="muted"><small>Earlier versions of this page said gantts.app used no tracking cookies. That was true until we added Google Analytics on 19 July 2026, and this page was updated the same day. On 20 July 2026 analytics was moved behind a consent banner: it had been loading for everyone automatically, and now loads for nobody until they accept.</small></p>
 
       <h2>Contact</h2>
       <p>Questions about privacy? This is a small, independent project — reach out via the site and we'll do our best to help.</p>
@@ -191,6 +190,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

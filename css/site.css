@@ -524,6 +524,53 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 :root[data-theme="dark"] .fig { background: #f8fafc; color: #16151d; }
 :root[data-theme="dark"] .fig figcaption { color: #475569; }
 
+/* ---------- cookie consent ----------
+   A bar, not a modal. It does not cover the page or trap focus: a
+   cookie choice is not worth blocking someone from reading. Accept and
+   Decline are deliberately the same size and weight — a decline that is
+   harder to reach than an accept is not a free choice. */
+.consent {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  background: var(--card, #fff);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -8px 30px rgb(0 0 0 / 12%);
+  padding: 16px 0;
+  animation: consent-in .18s ease-out;
+}
+@keyframes consent-in { from { transform: translateY(100%); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .consent { animation: none; } }
+
+.consent-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 20px;
+  display: flex; gap: 20px; align-items: center; justify-content: space-between;
+  flex-wrap: wrap;
+}
+.consent-copy { flex: 1 1 420px; min-width: 0; }
+.consent-copy strong { display: block; font-size: 15px; margin-bottom: 3px; }
+.consent-copy p { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+.consent-copy a { text-decoration: underline; text-underline-offset: 2px; }
+
+.consent-actions { display: flex; gap: 10px; flex: 0 0 auto; }
+/* Equal footprint on purpose. Do not make one of these quieter. */
+.consent-actions .btn { min-width: 116px; justify-content: center; }
+
+@media (max-width: 560px) {
+  .consent-inner { flex-direction: column; align-items: stretch; }
+  .consent-actions { width: 100%; }
+  .consent-actions .btn { flex: 1; }
+}
+
+/* The withdrawal control. Styled as a quiet footer link because it
+   lives among them, but it is a real button for assistive tech. */
+.consent-reopen {
+  background: none; border: 0; padding: 0;
+  font: inherit; color: inherit; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.consent-reopen:hover { color: var(--brand-ink, var(--brand)); }
+
 /* In-prose diagrams sit between paragraphs rather than above the
    article, so they need less air and their caption reads better BELOW
    the drawing — by the time you reach it you have already looked. */

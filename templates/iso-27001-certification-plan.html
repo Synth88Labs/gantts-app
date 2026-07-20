@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ISO 27001 Certification Plan Template | gantts.app</title>
@@ -41,7 +36,7 @@
   <meta name="twitter:title" content="ISO 27001 Certification Plan Template" />
   <meta name="twitter:description" content="Free ISO 27001 certification plan: scope, risk assessment, SoA, controls, internal audit, management review, Stage 1 and Stage 2 audits." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Templates","item":"https://gantts.app/templates.html"},{"@type":"ListItem","position":3,"name":"ISO 27001 Certification Plan Template","item":"https://gantts.app/templates/iso-27001-certification-plan.html"}]},{"@type":"HowTo","name":"How to use the iso 27001 certification plan template","description":"Free ISO 27001 certification plan: scope, risk assessment, SoA, controls, internal audit, management review, Stage 1 and Stage 2 audits.","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"name":"Book the certification body early and set the Stage 2 date first — eve","text":"Book the certification body early and set the Stage 2 date first — everything before it is a countdown, not an estimate."},{"@type":"HowToStep","position":2,"name":"Keep at least six weeks between Stage 1 and Stage 2 for corrective act","text":"Keep at least six weeks between Stage 1 and Stage 2 for corrective action; shortening it is the most common cause of a failed Stage 2."},{"@type":"HowToStep","position":3,"name":"Expand the control implementation rows to one line per Annex A theme, ","text":"Expand the control implementation rows to one line per Annex A theme, or per control, once the Statement of Applicability is approved."},{"@type":"HowToStep","position":4,"name":"Lengthen the operating phase if your risk treatment relies on controls","text":"Lengthen the operating phase if your risk treatment relies on controls with quarterly or annual cycles — you need at least one full cycle of evidence."},{"@type":"HowToStep","position":5,"name":"Add rows for any scope exclusions you have to justify, since those are","text":"Add rows for any scope exclusions you have to justify, since those are what Stage 1 will probe hardest."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does ISO 27001 certification take?","acceptedAnswer":{"@type":"Answer","text":"Commonly twelve to eighteen months from a standing start for an organisation with no existing ISMS. The template uses roughly fifteen months. The parts that resist compression are the operating period that generates records and the mandatory gap between Stage 1 and Stage 2."}},{"@type":"Question","name":"What is the difference between Stage 1 and Stage 2?","acceptedAnswer":{"@type":"Answer","text":"Stage 1 is a documentation and readiness review — scope, policies, risk assessment, Statement of Applicability, internal audit and management review evidence. Stage 2 is the full audit of whether the ISMS actually operates. Stage 1 findings must be closed before Stage 2, which is why the template leaves a corrective action window between them."}},{"@type":"Question","name":"Do I need an internal audit and management review before Stage 2?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both are mandatory clauses of the standard and both are things the auditor will ask to see evidence of. The template puts them ahead of Stage 1 so the corrective actions they raise have time to be closed."}},{"@type":"Question","name":"Is ISO 27001 the same as SOC 2?","acceptedAnswer":{"@type":"Answer","text":"No. ISO 27001 is an international standard you are certified against by an accredited body, on a three-year cycle with annual surveillance audits. SOC 2 is an AICPA attestation performed by a CPA firm against the Trust Services Criteria, and a Type II report covers a defined observation window rather than granting a certificate. Use the SOC 2 compliance timeline for that; the two plans overlap on controls but not on dates."}},{"@type":"Question","name":"How does this differ from the ISO 9001 plan?","acceptedAnswer":{"@type":"Answer","text":"The audit mechanics are the same two-stage shape, but the content is different: ISO 9001 is a quality management system, this is an information security management system built on a risk assessment and a Statement of Applicability. See the ISO 9001 certification plan if you are certifying both."}},{"@type":"Question","name":"Is the ISO 27001 template free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark."}}]}]}</script>
 </head>
 <body>
@@ -58,7 +53,7 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" onchange="if(this.value)location.href=this.value">
+        <select class="lang-select" data-lang-nav aria-label="Language" title="Language" >
           <option value="/templates/iso-27001-certification-plan.html" selected>English</option>
           <option value="/es/templates/iso-27001-certification-plan.html">Español</option>
           <option value="/fr/templates/iso-27001-certification-plan.html">Français</option>
@@ -66,7 +61,7 @@
           <option value="/pt/templates/iso-27001-certification-plan.html">Português</option>
           <option value="/zh/templates/iso-27001-certification-plan.html">简体中文</option>
         </select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/app.html">Open the app</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -201,6 +196,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

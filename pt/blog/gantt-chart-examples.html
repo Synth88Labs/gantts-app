@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Exemplos de gráfico de Gantt | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="Oito exemplos de gráfico de Gantt: obra, software, marketing, evento, mudança, tese, lançamento e integração de pessoal." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"pt","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/pt/blog/gantt-chart-examples.html#post","headline":"Exemplos de gráfico de Gantt em oito setores","description":"Oito exemplos de gráfico de Gantt: obra, software, marketing, evento, mudança, tese, lançamento e integração de pessoal.","url":"https://gantts.app/pt/blog/gantt-chart-examples.html","inLanguage":"pt","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/pt/blog/gantt-chart-examples.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://gantts.app/pt/"},{"@type":"ListItem","position":2,"name":"Guias","item":"https://gantts.app/pt/blog/"},{"@type":"ListItem","position":3,"name":"Exemplos de gráfico de Gantt em oito setores","item":"https://gantts.app/pt/blog/gantt-chart-examples.html"}]}},{"@type":"FAQPage","inLanguage":"pt","mainEntity":[{"@type":"Question","name":"Como é um bom gráfico de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Quatro a oito fases, de 20 a 60 tarefas, cinco a dez marcos e precedências reais, com o caminho crítico destacado. Cabe em uma página, mostra entre 10 e 30 barras por tela e se explica em um minuto para quem nunca viu o projeto."}},{"@type":"Question","name":"Quais são os exemplos mais comuns de gráfico de Gantt?","acceptedAnswer":{"@type":"Answer","text":"Obra, desenvolvimento de software, campanha de marketing, evento, mudança de escritório, tese acadêmica, lançamento de produto e integração de novo colaborador. A estrutura é a mesma em todos; mudam as fases, a escala de tempo e quais tarefas caem no caminho crítico."}},{"@type":"Question","name":"A partir de quantas tarefas é demais?","acceptedAnswer":{"@type":"Answer","text":"Acima de 150 ninguém mantém, e cronograma desatualizado é pior do que nenhum. Nesse ponto, divida em cronogramas menores por fase e mantenha um cronograma-mestre só com as tarefas resumo, para que a visão geral continue cabendo em uma tela."}},{"@type":"Question","name":"Posso aproveitar o cronograma de outro projeto?","acceptedAnswer":{"@type":"Answer","text":"O agrupamento sim, as durações não. Fases e marcos se transferem bem porque descrevem como o setor trabalha; estimativas dependem de equipe, escopo e fornecedores específicos daquele projeto. Reaproveitar durações é a causa mais frequente de um plano errado desde o primeiro dia."}},{"@type":"Question","name":"Qual escala de tempo usar?","acceptedAnswer":{"@type":"Answer","text":"Depende do horizonte. Projetos de mais de seis meses ficam legíveis num eixo semanal ou mensal; campanhas e lançamentos de poucas semanas pedem eixo diário; planos de uma semana descem a horas. Se as barras ficam finas demais para ler o rótulo, a escala está errada."}},{"@type":"Question","name":"Onde encontro modelos gratuitos e editáveis?","acceptedAnswer":{"@type":"Answer","text":"Nossos modelos cobrem obra, software, marketing, eventos e mais, abrem direto no navegador sem cadastro e podem ser exportados em PDF, PNG, XLSX ou PPTX. Substitua as tarefas de exemplo pelas suas, reestime as durações e refaça as precedências."}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="Idioma" onchange="if(this.value)location.href=this.value"><option value="/blog/gantt-chart-examples.html">English</option><option value="/es/blog/gantt-chart-examples.html">Español</option><option value="/fr/blog/gantt-chart-examples.html">Français</option><option value="/de/blog/gantt-chart-examples.html">Deutsch</option><option value="/pt/blog/gantt-chart-examples.html" selected>Português</option><option value="/zh/blog/gantt-chart-examples.html">简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="Idioma"><option value="/blog/gantt-chart-examples.html">English</option><option value="/es/blog/gantt-chart-examples.html">Español</option><option value="/fr/blog/gantt-chart-examples.html">Français</option><option value="/de/blog/gantt-chart-examples.html">Deutsch</option><option value="/pt/blog/gantt-chart-examples.html" selected>Português</option><option value="/zh/blog/gantt-chart-examples.html">简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/pt/app.html">Abrir o aplicativo</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -302,6 +297,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

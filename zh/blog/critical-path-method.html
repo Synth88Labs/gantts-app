@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>关键路径怎么算（CPM） | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/critical-path-method.html#post","headline":"关键路径法：算法、公式与算例","description":"关键路径法完整讲解：正推求最早时间、逆推求最晚时间、总浮动时间怎么算，附六任务算例与逐项浮动时间表，以及 CPM、PERT 与关键链的区别。","url":"https://gantts.app/zh/blog/critical-path-method.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"关键路径法：算法、公式与算例","item":"https://gantts.app/zh/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是关键路径？","acceptedAnswer":{"@type":"Answer","text":"相互依赖的任务中最长的一条链。它的长度等于项目最短工期，链上任务没有浮动时间，因此其中任何一项延误一天，完工就晚一天。"}},{"@type":"Question","name":"关键路径怎么计算？","acceptedAnswer":{"@type":"Answer","text":"先列出所有任务的工期和前置任务，再正推求最早开始与最早完成（汇合处取最大值），然后从项目工期逆推求最晚完成与最晚开始（分叉处取最小值），最后用最晚开始减最早开始得到浮动时间。浮动时间为零的任务首尾相连，就是关键路径。"}},{"@type":"Question","name":"什么是总浮动时间？","acceptedAnswer":{"@type":"Answer","text":"一项任务在不推迟项目完工的前提下可以推迟的时间，等于最晚开始减最早开始，也等于最晚完成减最早完成。注意它由整条支路共享：前面的任务用掉了，后面就没有了。"}},{"@type":"Question","name":"正推和逆推有什么区别？","acceptedAnswer":{"@type":"Answer","text":"正推从项目开始向后走，算每项任务的最早开始和最早完成，最后得到项目最短工期；逆推从这个工期往回走，算在不推迟完工的前提下每项任务最晚能什么时候开始和完成。两者之差就是浮动时间。"}},{"@type":"Question","name":"CPM 和 PERT 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"CPM 每项任务用一个确定工期，关注关键路径和浮动时间；PERT 用乐观、最可能、悲观三个估计按 (O + 4M + P) / 6 加权，用来处理工期不确定性。实际项目里常常先用 PERT 估工期，再用 CPM 排关键路径。"}},{"@type":"Question","name":"关键路径可能有多条吗？","acceptedAnswer":{"@type":"Answer","text":"可能。在依赖密集的计划中，多条并行路径长度相同，于是全部成为关键路径。这时项目没有任何缓冲，任何一条路径上的延误都会直接体现在完工日期上，风险显著上升。"}},{"@type":"Question","name":"总浮动时间和自由浮动时间有什么区别？","acceptedAnswer":{"@type":"Answer","text":"总浮动时间是项目完工日期移动之前一项活动能推迟多久；自由浮动时间是它打扰到任何一个紧后活动之前能推迟多久，等于紧后活动中最早的 ES 减去本活动的 EF。总浮动时间沿整条链共享，自由浮动时间是这项活动私有的。gantts.app 只报总浮动时间，界面上没有自由浮动列。"}},{"@type":"Question","name":"gantts.app 算出来的浮动时间为什么和我手算的不一样？","acceptedAnswer":{"@type":"Answer","text":"因为它跑的是\"按摆放位置\"的 CPM：每项任务从你摆放的开始日期起算，依赖关系只能把它往后推，永远不会往前拉。教科书 CPM 则把每项任务都摆到逻辑允许的最早位置。想让两者一致，点\"自动排程\"，它会把所有有前置任务的任务拉回最早合法日期。"}},{"@type":"Question","name":"负浮动时间是什么意思？","acceptedAnswer":{"@type":"Answer","text":"最晚开始落在最早开始之前，通常是因为指定的交付期早于逻辑允许的最早完工日。−4 不是富余，它表示这件事本该四天前就开始。gantts.app 把浮动时间小于或等于零的任务都标为关键，所以负浮动会显示出来而不是被抹掉。"}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html">Português</option><option value="/zh/blog/critical-path-method.html" selected>简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="语言"><option value="/blog/critical-path-method.html">English</option><option value="/es/blog/critical-path-method.html">Español</option><option value="/fr/blog/critical-path-method.html">Français</option><option value="/de/blog/critical-path-method.html">Deutsch</option><option value="/pt/blog/critical-path-method.html">Português</option><option value="/zh/blog/critical-path-method.html" selected>简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -303,6 +298,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>

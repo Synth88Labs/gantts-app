@@ -1,11 +1,11 @@
 {
   "css/site.css": {
-    "hash": "78f74073b0c9",
-    "version": "25"
+    "hash": "6e7cfcae4128",
+    "version": "27"
   },
   "js/site.js": {
-    "hash": "eebdb7519e98",
-    "version": "25"
+    "hash": "b7ffaf1829ff",
+    "version": "27"
   },
   "css/styles.css": {
     "hash": "bfc69521cc73",
@@ -28,8 +28,8 @@
     "version": "54"
   },
   "js/exports.js": {
-    "hash": "067c8ea23838",
-    "version": "54"
+    "hash": "bc8a5202a79d",
+    "version": "55"
   },
   "js/features.js": {
     "hash": "5d5240ecae0c",

@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-Hans" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZFCTKWL1D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3ZFCTKWL1D');
-  </script>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=27"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>三周滚动作业计划模板 | gantts.app</title>
@@ -53,7 +48,7 @@
   <meta name="twitter:description" content="免费的三周滚动计划模板：分周列出各专业作业、验收节点、制约因素与长周期采购项，可直接在线编辑。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=25" />
+  <link rel="stylesheet" href="/css/site.css?v=27" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"WebPage","@id":"https://gantts.app/zh/templates/3-week-lookahead-template.html#webpage","name":"三周滚动作业计划模板","url":"https://gantts.app/zh/templates/3-week-lookahead-template.html","description":"免费的三周滚动计划模板：分周列出各专业作业、验收节点、制约因素与长周期采购项，可直接在线编辑。","inLanguage":"zh-Hans","isPartOf":{"@id":"https://gantts.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"模板","item":"https://gantts.app/zh/templates.html"},{"@type":"ListItem","position":3,"name":"三周滚动作业计划模板","item":"https://gantts.app/zh/templates/3-week-lookahead-template.html"}]}},{"@type":"HowTo","name":"如何使用模板：三周滚动作业计划模板","description":"免费的三周滚动计划模板：分周列出各专业作业、验收节点、制约因素与长周期采购项，可直接在线编辑。","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"把窗口起点设成你自己的那个周一——近期计划视图以周一对齐，窗口可以在 1 到 8 周之间任选。","text":"把窗口起点设成你自己的那个周一——近期计划视图以周一对齐，窗口可以在 1 到 8 周之间任选。"},{"@type":"HowToStep","position":2,"name":"如果现场是按分包组织的，就按班组或分包单位加行，而不是按作业加行：工长要看到自己那一条。","text":"如果现场是按分包组织的，就按班组或分包单位加行，而不是按作业加行：工长要看到自己那一条。"},{"@type":"HowToStep","position":3,"name":"把制约因素写成有真实工期的横条。写成零工期的备注，没人会理。","text":"把制约因素写成有真实工期的横条。写成零工期的备注，没人会理。"},{"@type":"HowToStep","position":4,"name":"把每一次验收都设为里程碑，这样就不会有后续作业穿过停检点排进去。","text":"把每一次验收都设为里程碑，这样就不会有后续作业穿过停检点排进去。"},{"@type":"HowToStep","position":5,"name":"每周一把整张图前滚一周，而不是重做一张——总进度计划是源头，滚动计划只是它的一个视图。","text":"每周一把整张图前滚一周，而不是重做一张——总进度计划是源头，滚动计划只是它的一个视图。"}]},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"什么是三周滚动作业计划？","acceptedAnswer":{"@type":"Answer","text":"一种滚动的短期作业计划，从总进度计划中切出未来三周的作业，并附上制约因素和验收节点，每周刷新一次，通常在周一协调会上过。它和拉动式计划的关系，见三周滚动计划指南。"}},{"@type":"Question","name":"gantts.app 能从我的进度计划直接生成滚动计划吗？","acceptedAnswer":{"@type":"Answer","text":"可以。在免费编辑器中打开进度计划，选择视图 ▸ 近期计划。它以周一对齐，窗口可设 1 到 8 周，所以滚动计划始终是实时计划的一个视图，而不是第二份副本。"}},{"@type":"Question","name":"为什么是三周，不是四周或六周？","acceptedAnswer":{"@type":"Answer","text":"三周足够清除大部分制约因素，又短到日期还可信。长周期专业多的项目常用六周；近期计划视图最多支持八周，按你创造条件的周期来定。"}},{"@type":"Question","name":"滚动计划里有哪些内容是总进度计划里没有的？","acceptedAnswer":{"@type":"Answer","text":"制约因素——深化图报审、技术核定、到货、许可、验收和班组可用性。总进度计划承载作业，滚动计划承载作业可能干不成的原因。"}},{"@type":"Question","name":"这份三周滚动计划模板免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费。可免费下载 Excel、PowerPoint 和 CSV，也可免费在线编辑，无需注册，没有水印。"}}]}]}</script>
 </head>
 <body>
@@ -71,8 +66,8 @@
       </nav>
       <div class="nav-spacer"></div>
       <div class="nav-cta">
-        <select class="lang-select" data-lang-nav aria-label="语言" onchange="if(this.value)location.href=this.value"><option value="/templates/3-week-lookahead-template.html">English</option><option value="/es/templates/3-week-lookahead-template.html">Español</option><option value="/fr/templates/3-week-lookahead-template.html">Français</option><option value="/de/templates/3-week-lookahead-template.html">Deutsch</option><option value="/pt/templates/3-week-lookahead-template.html">Português</option><option value="/zh/templates/3-week-lookahead-template.html" selected>简体中文</option></select>
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <select class="lang-select" data-lang-nav aria-label="语言"><option value="/templates/3-week-lookahead-template.html">English</option><option value="/es/templates/3-week-lookahead-template.html">Español</option><option value="/fr/templates/3-week-lookahead-template.html">Français</option><option value="/de/templates/3-week-lookahead-template.html">Deutsch</option><option value="/pt/templates/3-week-lookahead-template.html">Português</option><option value="/zh/templates/3-week-lookahead-template.html" selected>简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </div>
@@ -198,6 +193,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=25"></script>
+  <script src="/js/site.js?v=27"></script>
 </body>
 </html>
