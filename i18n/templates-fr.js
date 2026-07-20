@@ -6116,6 +6116,708 @@ const T = {
       ]
     ]
   },
+  'battery-gigafactory-construction-schedule': {
+    card: "Gel du format de cellule, salle sèche et point de rosée, qualification des équipements, formation et maturation, montée en rendement.",
+    h1: "Planning de construction d’une gigafactory de batteries",
+    metaTitle: "Planning de gigafactory de batteries",
+    metaDesc: "Planning gratuit de gigafactory de batteries : point de rosée en salle sèche, qualification des équipements, formation et maturation, montée en rendement.",
+    lead: "Un <strong>planning de construction de gigafactory</strong> gratuit, organisé autour de la salle sèche et non autour du bâtiment. Le gel du format de cellule et de la chimie ouvre le plan, parce que chaque machine et chaque utilité en est dimensionnée ; puis un gros œuvre qui doit devenir une enceinte étanche et déshydratée bien avant l’arrivée du premier équipement ; une descente en point de rosée et un essai de maintien qui conditionnent l’entrée des machines ; une qualification des équipements qui conditionne la production vendable, et non l’achèvement du bâtiment ; enfin la formation et la maturation des cellules, qui consomment de vraies journées de calendrier, et une montée en rendement qui est une courbe et non un jalon.",
+    intro: "Une usine de cellules n’est pas terminée quand la toiture est posée. Elle l’est quand les cellules sortent de ligne à un rendement que quelqu’un accepte de payer, et le chemin y passe par une atmosphère contrôlée. Le modèle suit ce chemin :",
+    phases: [
+      [
+        "Site, autorisations et conception du procédé",
+        "Site et raccordement au réseau, gel du format de cellule et de la chimie qui fige toutes les machines en aval, autorisation environnementale et classement ICPE, référentiel de conception du flux et de la capacité de ligne, et commandes d’équipements à long délai. <em>Jalons : format de cellule gelé, autorisations obtenues.</em>"
+      ],
+      [
+        "Gros œuvre et construction de la salle sèche",
+        "Fondations, dallage et charpente, clos et couvert, puis pare-vapeur et étanchéité de l’enceinte de la salle sèche, sas et zones d’habillage, et la planéité de sol qu’exigent les lignes d’enduction et de calandrage. <em>Jalon : bâtiment hors d’eau hors d’air.</em>"
+      ],
+      [
+        "Utilités, déshumidification et qualification de la salle sèche",
+        "Poste de transformation et distribution, centrale de déshumidification à dessiccant, air comprimé sec, azote et refroidissement de procédé, récupération de solvant et traitement des rejets, puis descente au point de rosée cible et essai de maintien qui prouve l’enceinte. <em>Jalon : salle sèche qualifiée au point de rosée.</em>"
+      ],
+      [
+        "Entrée, installation et qualification des équipements",
+        "Enducteuse et calandre, refendage, séchage sous vide et bobinage, empilage, soudage des languettes et fermeture, remplissage d’électrolyte et dégazage, racks de formation et de maturation, puis réception poste par poste. <em>Jalon : qualification des équipements achevée.</em>"
+      ],
+      [
+        "Mise en service de la ligne, première cellule et formation",
+        "Intégration du MES et de la traçabilité, essais d’enduction et réglage de la qualité de bande, discipline d’exploitation en salle sèche, première cellule assemblée, puis cycles de formation, fenêtre de maturation et d’autodécharge, et boucle de démontage et d’analyse de défaillance. <em>Jalon : première cellule sortie de ligne.</em>"
+      ],
+      [
+        "Montée en rendement et qualification client",
+        "Capabilité procédé et MSP par poste, réduction du rebut de l’électrode à l’assemblage, envoi des échantillons A, essais d’abus et certification transport, qualification des échantillons B et PPAP, puis montée à la capacité nominale. <em>Jalons : rendement cible atteint, démarrage de la production.</em>"
+      ]
+    ],
+    callout: "La salle sèche est le planning. La manipulation des électrodes et l’assemblage des cellules exigent des points de rosée de l’ordre de moins quarante degrés, ce qui oblige le bâtiment à devenir une enceinte étanche et déshydratée avant qu’un seul équipement ne soit posé — et l’enveloppe, le pare-vapeur, les sas et la centrale de déshumidification sont tous sur ce chemin. Viennent ensuite deux choses que personne ne comprime : la formation et la maturation consomment de vraies journées par cellule, quel que soit l’effectif embauché, et le rendement après la première cellule progresse selon une courbe plutôt qu’il ne saute à une valeur. L’achèvement du bâtiment ne conditionne pas la production vendable : la qualification des équipements et cette courbe s’en chargent.",
+    customize: [
+      "Gelez tôt le format de cellule et la chimie, et posez-le comme jalon. Largeur d’enduction, effort de calandrage, dimensions du boîtier, implantation des racks de formation et dimensionnement des utilités en découlent : un changement tardif est une reconception, pas un ajustement.",
+      "Donnez à la descente en point de rosée et à l’essai de maintien leurs propres barres, après l’installation de la centrale de déshumidification. Une centrale qui tourne n’est pas une enceinte qui tient, et la recherche de fuites est l’endroit où les défauts tardifs d’enveloppe apparaissent.",
+      "Séquencez l’entrée des machines sur la disponibilité de la salle sèche, et non sur les dates de livraison fournisseur. Un équipement resté en caisse devant une salle qui n’a pas atteint son point de rosée ne qualifie rien.",
+      "Modélisez la formation et la maturation comme des barres à durée fixe par lot, et non comme une capacité à laquelle on ajoute des équipes. La chimie fixe les jours ; le seul levier est le nombre de racks dont vous disposez.",
+      "Dessinez la montée en rendement comme une longue barre avec un jalon de cible à la fin, plutôt que comme une marche. Tout ce qui suit la première cellule est une courbe d’apprentissage, et la représenter comme un évènement escamote des mois de travail réel.",
+      "Séparez la qualification des équipements de la mise en service de la ligne. Un fournisseur qui prouve qu’un poste tient sa spécification et votre équipe procédé qui prouve que la ligne fabrique une bonne cellule sont deux évènements distincts, avec des responsables distincts."
+    ],
+    tips: [
+      "<strong>Construisez la salle sèche avant d’en avoir besoin.</strong> L’étanchéité de l’enveloppe, les sas et la descente en point de rosée sont séquentiels et lents, et chaque journée de cette chaîne se place directement devant la première cellule.",
+      "<strong>Achetez de la capacité de formation et de maturation, pas du planning.</strong> Si la maturation dure trois semaines par lot, le seul moyen de raccourcir la montée en cadence est d’ajouter des racks et des mètres carrés — aucun reséquencement ne change la chimie.",
+      "<strong>Traitez la récupération de solvant et le traitement des rejets comme du chemin critique.</strong> Ces postes n’ont rien de spectaculaire, ils passent systématiquement au second plan, et aucune ligne d’enduction ne peut produire sans eux.",
+      "<strong>Suivez le taux de rebut par poste dès les premiers essais.</strong> Un seul poste amont qui dérive jette de la matière déjà valorisée, et c’est la raison la plus fréquente pour laquelle une montée en cadence s’enlise.",
+      "<strong>Lancez la qualification client avant de vous croire prêt.</strong> Essais d’abus, certification transport et PPAP demandent des mois de calendrier et peuvent se dérouler sur les premières cellules pendant que le rendement progresse encore.",
+      "<strong>Portez la discipline de salle sèche au planning comme une formation, pas comme une note de service.</strong> Habillage, entrée de matière et maîtrise de l’humidité sont des habitudes qui mettent des semaines à s’installer, et un écart d’humidité coûte plus cher que la formation."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour construire une gigafactory de batteries ?",
+        "Une usine de cellules en site vierge court couramment de 30 à 36 mois entre les autorisations et le démarrage de la production, soit à peu près l’étendue du modèle. Le gros œuvre est prévisible ; la qualification de la salle sèche, celle des équipements et la montée en rendement portent toute la variance."
+      ],
+      [
+        "Pourquoi la salle sèche domine-t-elle le planning ?",
+        "Parce que la manipulation des électrodes et l’assemblage exigent une humidité extrêmement basse : le bâtiment doit être étanche, pare-vapeur et déshydraté avant que le moindre équipement ne soit posé. Une séquence de construction devient ainsi une séquence d’atmosphère contrôlée, des mois avant toute arrivée de machine."
+      ],
+      [
+        "Peut-on comprimer la formation et la maturation ?",
+        "Non. Chaque cellule demande un nombre fixé d’heures ou de jours de charge contrôlée, puis une période de repos pour le tri par autodécharge. Le seul levier est d’augmenter la capacité de formation et de maturation, ce qui relève de l’investissement et de la surface, pas de l’ordonnancement."
+      ],
+      [
+        "Qu’est-ce qui conditionne réellement la production vendable ?",
+        "La qualification des équipements et le rendement, pas l’achèvement du bâtiment. Une usine terminée dont les postes ne sont pas qualifiés ne produit rien de vendable, et c’est pourquoi le modèle place le jalon de qualification bien après la fin des aménagements."
+      ],
+      [
+        "Comment représenter la montée en rendement sur un diagramme de Gantt ?",
+        "Comme une longue barre suivie d’un jalon de cible. La réduction des défauts est une courbe pilotée par des essais, et la dessiner comme un évènement unique est la façon la plus courante dont les plannings de gigafactory trompent leur propre conseil."
+      ],
+      [
+        "Le modèle de gigafactory de batteries est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'nuclear-decommissioning-schedule': {
+    card: "Caractérisation, décret de démantèlement, filières Andra et critères d’acceptation, dose collective, conditionnement, déclassement.",
+    h1: "Planning de démantèlement d’une installation nucléaire",
+    metaTitle: "Planning de démantèlement nucléaire",
+    metaDesc: "Planning gratuit de démantèlement nucléaire : caractérisation, décret de démantèlement, filières de déchets Andra, dose collective, déclassement de l’INB.",
+    lead: "Un <strong>planning de démantèlement nucléaire</strong> gratuit, construit sur la règle qui gouverne tout programme de ce type : on ne démantèle pas plus vite qu’on n’évacue. D’abord l’évacuation du combustible et la caractérisation radiologique, parce que rien ne se planifie contre un inventaire inconnu ; puis le dossier de démantèlement, le décret pris après enquête publique et les critères d’acceptation convenus avec l’Andra pour chaque filière, arrêtés avant le premier découpage ; un démantèlement cadencé par une contrainte de dose collective plutôt que par l’effectif ; le conditionnement, l’expédition et l’entreposage intermédiaire menés en parallèle ; enfin la démolition, la remise en état des sols et la décision de déclassement.",
+    intro: "Les plannings de démantèlement échouent lorsqu’ils sont dessinés comme une démolition avec de la paperasse en plus. Le travail est conditionné par les filières d’évacuation, par les autorisations et par la dose. Le modèle est ordonné ainsi :",
+    phases: [
+      [
+        "Mise à l’arrêt définitif et caractérisation",
+        "Évacuation du combustible hors site, caractérisation radiologique, inventaire des déchets historiques et comptabilité matières, repérage amiante et substances dangereuses, et la définition de l’état final auquel tout sera comparé. <em>Jalons : statut « combustible évacué », référentiel de caractérisation émis.</em>"
+      ],
+      [
+        "Autorisations et accord sur les filières de déchets",
+        "Dossier de démantèlement et démonstration de sûreté instruits par l’ASNR, décret de démantèlement après enquête publique, critères d’acceptation convenus avec l’Andra par filière, capacité d’expédition réservée, et contrainte de dose collective assortie du plan de radioprotection. <em>Jalons : autorisation de démarrer le démantèlement, filières confirmées.</em>"
+      ],
+      [
+        "Dépose des installations annexes et confinement",
+        "Retrait de l’amiante et traitement des risques conventionnels, ventilation et sas de confinement, dépose des circuits et tuyauteries devenus inutiles, curage des réseaux actifs et des piscines, et décontamination des surfaces accessibles. <em>Jalon : bâtiments annexes assainis.</em>"
+      ],
+      [
+        "Démantèlement du réacteur et du circuit primaire",
+        "Essais de télémanipulation et de découpe, dose allouée par zone de travail, segmentation et réduction de volume du circuit primaire, dépose des internes sous protection biologique, revue de dosimétrie, puis dépose du bloc de béton activé. <em>Jalon : bâtiment réacteur vidé.</em>"
+      ],
+      [
+        "Conditionnement, expédition et stockage des déchets",
+        "Tri, mesure d’activité et dossiers de caractérisation, conditionnement en colis agréés, expédition vers le centre de l’Andra dans le respect de ses critères d’acceptation, chargement et surveillance de l’entreposage intermédiaire pour les déchets sans filière ouverte, et libération des matériaux qui peuvent sortir. <em>Jalon : déchets actifs expédiés ou entreposés.</em>"
+      ],
+      [
+        "Démolition, remise en état et déclassement",
+        "Contrôle radiologique final des structures, démolition conventionnelle des bâtiments assainis, diagnostic et dépollution des sols, dossier d’état final, puis la décision de déclassement de l’INB. <em>Jalon : installation déclassée.</em>"
+      ]
+    ],
+    callout: "C’est la capacité d’évacuation, et non l’effectif, qui donne le rythme. Chaque mètre cube découpé doit partir quelque part qui l’accepte, et les critères d’acceptation du centre de l’Andra dictent la façon dont le déchet est caractérisé, conditionné, mesuré et documenté avant de pouvoir bouger. Le CSA de Soulaines prend les déchets de faible et moyenne activité à vie courte, le Cires ceux de très faible activité — mais pour le graphite et plus largement les déchets de faible activité à vie longue, la filière n’est pas ouverte, et c’est une contrainte de planning au sens plein : ces colis partent en entreposage intermédiaire et la charge reste au bilan. Superposez la contrainte de dose, qui limite le temps passé en zone, et le fait que chaque phase physique demande sa propre autorisation. Dessinez la filière comme une barre datée, pas comme une hypothèse.",
+    customize: [
+      "Placez les barres de critères d’acceptation et de réservation d’expédition avant de séquencer le moindre démantèlement. Si elles se terminent après le début de vos découpes, le planning est faux, quelle que soit la qualité du plan de démantèlement.",
+      "Donnez à la caractérisation une barre large et précoce. Toutes les estimations en aval — volumes, colis, dose, coût — en dérivent, et une caractérisation légère est le meilleur prédicteur d’un dérapage de démantèlement.",
+      "Modélisez la dose comme une contrainte de durée, et non comme une note de sécurité. Si une zone n’autorise qu’une dose collective donnée par campagne, le travail dure ce qu’il dure et ajouter des personnes n’y change rien.",
+      "Placez un jalon d’autorisation devant chaque phase physique. Le démantèlement est autorisé par étapes, et traiter le consentement comme un évènement unique en début de programme fausse la représentation des vrais points de passage.",
+      "Séparez l’entreposage intermédiaire du stockage définitif. Un colis qui entre dans un entreposage sur site n’est pas un colis qui quitte le site, et un seul des deux réduit réellement la charge future.",
+      "Gardez une barre de libération et de valorisation des matériaux. Une part importante de la masse n’est pas active, et l’assainir proprement réduit à la fois le coût et la pression sur les filières."
+    ],
+    tips: [
+      "<strong>Caractérisez avant de planifier, pas pendant le démantèlement.</strong> Un planning bâti sur un inventaire supposé sera recalé dès le premier contrôle qui revient plus haut qu’attendu.",
+      "<strong>Réservez la capacité d’évacuation comme un approvisionnement à long délai.</strong> Les centres ont des volumes annuels finis et leurs propres files d’attente : un créneau d’expédition réservé est un actif, un créneau absent est un risque d’arrêt de chantier.",
+      "<strong>Découpez pour le colis.</strong> La réduction de volume doit être dictée par ce que le colis et les critères d’acceptation autorisent, non par ce qui est commode au poste de découpe — recouper de l’acier activé coûte cher et coûte de la dose.",
+      "<strong>Suivez la dose collective chaque semaine par rapport à l’allocation.</strong> Une dosimétrie qui court devant le plan est un signal précoce que la méthode est mauvaise, et il apparaît bien avant le glissement du planning.",
+      "<strong>Ne minimisez ni l’amiante ni les risques conventionnels.</strong> Sur beaucoup d’installations anciennes, ils pèsent plus lourd que le radiologique dans le programme initial et bloquent l’accès à tout ce qui se trouve derrière.",
+      "<strong>Constituez le dossier de fin d’état au fil de l’eau.</strong> Le déclassement repose sur la preuve que l’état final est atteint, et reconstituer les contrôles et les bordereaux d’expédition à la fin est plus lent que de les tenir à jour."
+    ],
+    faq: [
+      [
+        "Combien de temps dure un démantèlement nucléaire ?",
+        "Le modèle couvre environ 1 200 jours pour un programme de démantèlement d’une tranche unique, mais les programmes réels vont de quelques années à plusieurs décennies selon la stratégie retenue, les filières disponibles et la présence ou non d’une période d’attente avant démantèlement."
+      ],
+      [
+        "Pourquoi les filières de déchets commandent-elles le planning ?",
+        "Parce que la matière déposée doit être caractérisée, conditionnée puis expédiée vers un centre qui l’accepte. Le CSA de Soulaines et le Cires ont chacun leurs critères d’acceptation et leurs capacités ; si la filière n’est pas ouverte — le cas du graphite et des déchets de faible activité à vie longue — la matière reste sur site, l’entreposage se remplit et la découpe s’arrête."
+      ],
+      [
+        "Comment la contrainte de dose agit-elle sur le plan ?",
+        "Elle fixe l’exposition contre laquelle le travail en zone est planifié, au titre du principe d’optimisation. Elle limite le nombre d’heures-homme réalisables dans une zone donnée, si bien que les tâches en ambiance dosante ont une durée déterminée par la dose et non par la main-d’œuvre disponible."
+      ],
+      [
+        "Pourquoi la caractérisation passe-t-elle avant tout le reste ?",
+        "Parce que volumes, débits de dose, types de colis, catégories de déchets et coûts en découlent tous. Planifier un démantèlement sans référentiel de caractérisation revient à faire de chaque estimation aval une supposition, qui sera corrigée sur le terrain."
+      ],
+      [
+        "L’autorisation est-elle unique ?",
+        "Non. Le démantèlement est encadré par un décret pris après instruction du dossier par l’ASNR et enquête publique, puis par des accords et prescriptions successifs au fil des phases. Le modèle place des jalons d’autorisation devant les phases physiques plutôt qu’un consentement unique au départ."
+      ],
+      [
+        "Le modèle de démantèlement nucléaire est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'university-accreditation-timeline': {
+    card: "Rétroplanning depuis la visite du comité Hcéres : autoévaluation, données, mobilisation des équipes, dépôt, phase contradictoire, accréditation.",
+    h1: "Calendrier d’accréditation d’un établissement d’enseignement supérieur",
+    metaTitle: "Calendrier d’accréditation universitaire",
+    metaDesc: "Calendrier gratuit d’accréditation : rétroplanning depuis la visite Hcéres, autoévaluation, indicateurs, mobilisation des équipes, dépôt et accréditation.",
+    lead: "Un <strong>calendrier d’accréditation</strong> gratuit qui commence là où commence le vrai planning : sur des dates que l’établissement ne fixe pas. Le Hcéres évalue par vagues, académie par académie, au rythme du contrat quinquennal ; c’est la vague qui commande la date de dépôt du rapport d’autoévaluation et la période de visite du comité d’experts, et manquer la fenêtre ne coûte pas un mois mais un cycle. Tout le reste se déduit à rebours : comité de pilotage et groupes de travail, analyse d’écarts au référentiel, données de suivi et indicateurs, mobilisation des enseignants et des conseils, puis rédaction, relecture, répétition générale et dépôt.",
+    intro: "L’accréditation est l’un des rares projets institutionnels dont l’échéance est réellement immuable et n’a pas été choisie par l’établissement. Le modèle se lit à rebours depuis cette date :",
+    phases: [
+      [
+        "Cadrage de la vague et échanges avec le Hcéres",
+        "Lecture du référentiel et du calendrier de la vague, confirmation de la date de dépôt et de la période de visite auprès du Hcéres, construction du rétroplanning depuis la date de dépôt, et validation du budget et des décharges de service. <em>Jalons : période de visite fixée, fenêtre de dépôt confirmée.</em>"
+      ],
+      [
+        "Conception de l’autoévaluation et gouvernance",
+        "Comité de pilotage désigné et mandaté, groupes de travail par champ de formations et par entité, plan du rapport d’autoévaluation et cadre de preuve, analyse d’écarts domaine par domaine, et un espace documentaire qui tiendra tout le cycle. <em>Jalon : analyse d’écarts présentée à l’équipe de direction.</em>"
+      ],
+      [
+        "Données de suivi, indicateurs et remédiation",
+        "Un cycle complet de suivi des acquis et de la réussite étudiante, indicateurs de pilotage et données d’insertion professionnelle, revue des qualifications et de la composition des équipes pédagogiques, comptes financiers, révisions de maquettes et de règlements pour combler les écarts, et actualisation des fiches de formation. <em>Jalon : base de preuve complète.</em>"
+      ],
+      [
+        "Mobilisation des enseignants, des étudiants et des conseils",
+        "Points en conseil académique et en CFVU, ateliers par domaine du référentiel, cliniques de preuve avec les responsables de mention, enquêtes étudiants et diplômés, information du conseil d’administration, et consultation des partenaires socio-économiques."
+      ],
+      [
+        "Rédaction, relecture et dépôt du rapport",
+        "Première version complète, période de relecture ouverte à la communauté, répétition générale avec des évaluateurs extérieurs, édition finale avec annexes et liens de preuve, validation par les conseils, puis dépôt dans la fenêtre. <em>Jalon : rapport d’autoévaluation déposé.</em>"
+      ],
+      [
+        "Visite, phase contradictoire et accréditation",
+        "Logistique et calendrier des entretiens, préparation des personnes qui seront reçues, échanges préalables avec le président du comité et demandes de documents, visite du comité d’experts, rapport d’évaluation, observations de l’établissement en phase contradictoire, puis l’accréditation délivrée par le ministère. <em>Jalon : accréditation renouvelée.</em>"
+      ]
+    ],
+    callout: "Vous ne maîtrisez pas les deux dates qui comptent. Le Hcéres évalue par vagues : votre académie est rattachée à une vague, la vague fixe la période de visite du comité d’experts et la date de dépôt du rapport d’autoévaluation, et l’accréditation qui en découle est délivrée par le ministère pour la durée du contrat quinquennal. Manquer la fenêtre ne décale pas le dossier de quelques semaines : il attend la vague suivante, avec l’autoévaluation, les preuves et la bonne volonté qu’il emporte. Toutes les autres barres du diagramme se déduisent de là — date limite de validation par les conseils, d’édition finale, de répétition générale, du cycle de suivi qui doit avoir tourné au moins une fois. Posez d’abord la date de visite, et laissez le reste remonter.",
+    customize: [
+      "Saisissez d’abord la période de visite et la date de dépôt comme repères fixes, puis tirez toutes les autres barres vers l’arrière jusqu’à ce que la chaîne tienne. Si elle ne tient pas, la réponse est plus de moyens plus tôt, jamais une phase de rédaction plus courte.",
+      "Ajoutez une barre par champ de formations ou par domaine du référentiel. Les groupes n’avancent pas au même rythme, et une barre moyennée masque les deux qui sont bloqués.",
+      "Donnez au cycle de suivi une année universitaire entière. Les acquis des étudiants ne se documentent pas rétroactivement, et c’est la barre que l’on découvre le plus souvent trop tard pour la rattraper.",
+      "Placez la répétition générale assez tôt pour agir sur ce qu’elle révèle. Une répétition quinze jours avant la visite est du théâtre ; une répétition avant l’édition finale vaut son coût.",
+      "Traitez la mobilisation des équipes comme du travail planifié avec des responsables nommés. La preuve vit dans les composantes, et une autoévaluation rédigée depuis la présidence sans adhésion des composantes s’entend comme telle devant un comité.",
+      "Marquez explicitement la consultation des conseils et des partenaires. Les délais de convocation et l’ordre du jour des instances leur sont propres, et c’est une source classique de précipitation tardive."
+    ],
+    tips: [
+      "<strong>Confirmez la vague, pas seulement la visite.</strong> La visite est visible ; c’est le calendrier de vague et la date de dépôt qui déterminent réellement combien de temps il reste, et de combien de temps vous disposerez pour la phase contradictoire.",
+      "<strong>Constituez l’espace de preuve une seule fois, au début.</strong> Aller chercher deux fois les mêmes documents — d’abord pour les groupes de travail, ensuite pour les annexes — est le plus gros coût évitable du cycle.",
+      "<strong>Comblez les écarts assez tôt pour montrer une pratique.</strong> Une modalité adoptée le mois précédant la visite montre une prise de conscience ; adoptée un an avant, elle montre un fonctionnement, et un comité d’experts fait parfaitement la différence.",
+      "<strong>Préparez les entretiens avec les personnes qui seront réellement dans la salle.</strong> Le comité rencontre des responsables de mention, des vacataires, des étudiants et des personnels administratifs, pas seulement le comité de pilotage, et c’est là que naissent les remarques.",
+      "<strong>Gardez une seule voix dans le rapport.</strong> Douze groupes de travail produisent douze styles : budgétez un vrai temps éditorial, faute de quoi le document se lit comme un assemblage de contributions et non comme l’argumentation d’un établissement.",
+      "<strong>Prévoyez la phase contradictoire.</strong> Répondre au rapport d’évaluation avant qu’il ne soit publié est une vraie occasion de corriger des erreurs factuelles, et c’est une période courte et tendue qui mérite sa propre barre."
+    ],
+    faq: [
+      [
+        "Combien de temps dure une campagne d’accréditation ?",
+        "La préparation court sur environ deux ans pour un renouvellement, soit à peu près l’étendue du modèle. Le rapport d’autoévaluation lui-même représente peut-être six mois de rédaction ; les données de suivi et la remédiation des écarts qui le précèdent prennent bien plus longtemps."
+      ],
+      [
+        "Pourquoi la date de visite est-elle traitée comme fixe ?",
+        "Parce que le Hcéres évalue par vagues, académie par académie, au rythme du contrat quinquennal. La vague fixe la fenêtre de dépôt et la période de visite ; l’établissement construit son rétroplanning à partir de là plutôt que de proposer ses propres dates."
+      ],
+      [
+        "Que se passe-t-il si l’on manque la fenêtre de dépôt ?",
+        "Le dossier bascule sur la vague suivante, ce qui peut représenter une année ou davantage. C’est pourquoi le modèle fait du dépôt un jalon dur, avec la validation par les conseils et l’édition finale délibérément séquencées devant lui."
+      ],
+      [
+        "Qui délivre l’accréditation, le Hcéres ou le ministère ?",
+        "Le Hcéres conduit l’évaluation et publie son rapport ; l’accréditation à délivrer des diplômes est prononcée par le ministère chargé de l’enseignement supérieur, pour la durée du contrat. Confondre les deux conduit à mal placer les jalons de fin de cycle."
+      ],
+      [
+        "Quand commencer la rédaction de l’autoévaluation ?",
+        "Après l’analyse d’écarts et une fois les données disponibles, pas avant. Rédiger tôt sans preuve produit un document qu’il faudra réécrire, ce qui est plus lent qu’attendre les données."
+      ],
+      [
+        "Le modèle d’accréditation universitaire est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'crop-planting-harvest-schedule': {
+    card: "Assolement et déclaration PAC, fenêtre de semis, traitements calés sur les stades, ZNT et délais avant récolte, moisson, séchage et stockage.",
+    h1: "Calendrier de semis et de moisson",
+    metaTitle: "Calendrier de semis et de moisson",
+    metaDesc: "Calendrier gratuit de semis et de moisson : déclaration PAC, fenêtre de semis, traitements par stade, ZNT et délais avant récolte, séchage et stockage.",
+    lead: "Un <strong>calendrier de semis et de moisson</strong> gratuit pour une campagne qui, elle, ne se décale pas. Planification hivernale, analyses de sol, commandes d’intrants et entretien du matériel ; la déclaration PAC, dont la date limite de dépôt au printemps est une obligation datée comme une autre ; une fenêtre de semis ouverte par la température et l’état du sol et non par un plan de projet ; des semis répartis entre terres précoces, bloc principal et terres tardives, parce qu’un seul parc de matériel doit tout couvrir ; une succession de stades avec les traitements et la fertilisation accrochés à ces stades ; puis une moisson conditionnée par l’humidité du grain, et un séchage et un stockage qui décident de la vitesse à laquelle on peut couper.",
+    intro: "Presque tous les autres plannings négocient avec leurs contraintes. Une campagne culturale, non : la biologie fixe la séquence et la météo fixe la fenêtre. Le modèle garde les deux visibles :",
+    phases: [
+      [
+        "Planification hivernale, agronomie et intrants",
+        "Assolement parcelle par parcelle et rotation, analyses de terre et résultats de reliquats, commandes de semences, d’engrais et de produits de protection, entretien, réglage et contrôle du pulvérisateur, réservation de main-d’œuvre et d’entreprises de travaux agricoles, et le dépôt de la déclaration PAC dans les délais. <em>Jalons : déclaration PAC déposée, intrants livrés et stockés.</em>"
+      ],
+      [
+        "Préparation du lit de semences et fenêtre de semis",
+        "Suivi de la température et de l’humidité du sol, travail primaire et préparation du lit de semences, désherbage de prélevée et engrais starter, puis semis conduits successivement sur les terres précoces, le bloc principal et les terres tardives ou humides. <em>Jalons : ouverture de la fenêtre de semis, semis terminés.</em>"
+      ],
+      [
+        "Levée et stades de développement",
+        "Comptages de levée et évaluation de l’implantation, tallage, montaison et couverture du sol, floraison et remplissage du grain, avec un tour de plaine hebdomadaire et le pilotage de l’irrigation courant sur toute la campagne. <em>Ce sont les stades qui portent les dates de traitement.</em>"
+      ],
+      [
+        "Programme de traitements et de fertilisation",
+        "Désherbage de postlevée au tallage, fractionnement des apports d’azote, T1 à montaison, T2 à dernière feuille étalée et T3 à floraison — chacun accroché à un stade et non à une date de calendrier — avec les conditions réglementaires d’application, les ZNT à respecter le long des points d’eau et des habitations, les délais avant récolte, les délais de rentrée et la tenue du registre phytosanitaire. <em>Jalon : programme de traitements terminé.</em>"
+      ],
+      [
+        "Moisson et logistique de chantier",
+        "Mesures d’humidité du grain et décision de récolte, disponibilité des moissonneuses et des bennes, puis moisson des terres précoces, du bloc principal et des terres tardives, avec le transport et le passage au pont-bascule menés en parallèle. <em>Jalons : ouverture du chantier à l’humidité cible, moisson terminée.</em>"
+      ],
+      [
+        "Séchage, stockage et interculture",
+        "Débit du séchoir et maîtrise de l’humidité, remplissage des cellules avec ventilation et suivi des températures, échantillonnage, classement et enregistrements pour la certification, livraisons sous contrat, déchaumage et semis des couverts, puis bilan de campagne. <em>Jalon : campagne clôturée.</em>"
+      ]
+    ],
+    callout: "Le calendrier ne vous appartient pas. La température et l’état du sol décident du démarrage des semis ; les stades de la culture décident du moment de chaque traitement, et un fongicide passé une semaine à côté du stade est de l’argent brûlé ; l’humidité du grain décide du départ de la moissonneuse. S’y ajoutent des obligations datées que rien ne déplace : la déclaration PAC au printemps, dont le retard coûte des pénalités ; les conditions d’application fixées par l’arrêté — vent, ZNT le long des points d’eau et des riverains, délais avant récolte et délais de rentrée — qui ferment des journées entières de pulvérisation ; le Certiphyto de ceux qui appliquent, et le registre à tenir au fil de l’eau. Derrière tout cela, une limite plus dure encore : le débit du séchoir et la capacité de stockage. Si vous séchez vingt tonnes à l’heure, vous ne couperez pas plus vite très longtemps, quel que soit le nombre de moissonneuses dans la parcelle.",
+    customize: [
+      "Fixez le jalon d’ouverture de semis à partir de vos propres relevés de température de sol, et non de la date de semis de l’an dernier, et laissez les barres de semis suivre.",
+      "Découpez les semis en terres précoces, bloc principal et terres tardives, dimensionnés à votre débit de chantier réel. C’est ce qui montre si le parc matériel finit dans la fenêtre ou s’il faut une entreprise.",
+      "Accrochez chaque barre de traitement à une barre de stade plutôt qu’à une date. Quand la campagne est en avance ou en retard, les dates d’application doivent suivre la culture automatiquement.",
+      "Ajoutez une barre par culture si vous en conduisez plusieurs. Leurs fenêtres se chevauchent et se disputent le même semoir, le même pulvérisateur et la même moissonneuse : c’est précisément l’objet du diagramme.",
+      "Donnez au débit du séchoir sa propre barre courant sur toute la moisson. Si elle est plus courte que les barres de récolte au-dessus, c’est le stockage qui est votre contrainte, et le planning doit le dire.",
+      "Portez au plan la déclaration PAC, les contrôles obligatoires du pulvérisateur et les échéances de renouvellement du Certiphyto : ce sont des dates administratives qui tombent en pleine campagne et qui n’attendent pas."
+    ],
+    tips: [
+      "<strong>Semez à l’état du sol, pas au plan.</strong> Un lit de semences travaillé humide coûte du rendement toute la campagne, et les jours apparemment gagnés reviennent en implantation ratée que nul traitement ne rattrape.",
+      "<strong>Gardez le pulvérisateur devant la culture, pas derrière.</strong> Les positionnements par stade ouvrent quelques jours seulement, et un pulvérisateur bloqué dans une autre parcelle est la première cause de fongicide passé trop tard.",
+      "<strong>Comptez les journées perdues pour conditions non conformes.</strong> Vent, ZNT et délais de rentrée retirent des jours réels de la fenêtre de traitement : les intégrer au plan vaut mieux que de les découvrir.",
+      "<strong>Planifiez la moisson autour du séchoir, pas de la moissonneuse.</strong> Couper humide ne sert que si vous pouvez sécher ; sinon le grain chauffe dans les bennes pendant que la machine a l’air productive.",
+      "<strong>Réservez le transport avant la moisson, pas pendant.</strong> Tout le monde a besoin de camions la même quinzaine, et une cellule pleine sans débouché arrête la moissonneuse aussi sûrement que la pluie.",
+      "<strong>Enregistrez au fil de l’eau.</strong> Registre phytosanitaire, relevés d’humidité et températures de cellule sont exigés par les contrôles et par les contrats de collecte, et les reconstituer après la moisson est à la fois lent et peu convaincant."
+    ],
+    faq: [
+      [
+        "Comment construire un calendrier de semis et de moisson ?",
+        "Partez des fenêtres que vous ne maîtrisez pas — température du sol pour les semis, humidité du grain pour la moisson — puis calez le parc matériel autour. Entre ces deux points, la séquence agronomique est fixée par la culture et non par la préférence, et les obligations datées comme la déclaration PAC s’y ajoutent telles quelles."
+      ],
+      [
+        "Pourquoi les dates de traitement sont-elles liées aux stades ?",
+        "Parce qu’un fongicide ou un herbicide n’agit que dans une fenêtre étroite autour d’un stade précis. Si la campagne prend quinze jours d’avance, les dates d’application avancent d’autant, et c’est pourquoi le modèle les accroche aux barres de stade."
+      ],
+      [
+        "Quelles contraintes réglementaires portent sur la pulvérisation ?",
+        "Les conditions d’application sont encadrées : vitesse de vent maximale, zones non traitées le long des points d’eau et des habitations, délais avant récolte propres à chaque produit et délais de rentrée dans la parcelle. L’applicateur doit être titulaire du Certiphyto, le pulvérisateur passer son contrôle périodique, et chaque intervention être portée au registre phytosanitaire. Vérifiez le texte en vigueur et les éventuels arrêtés préfectoraux avant de figer les dates."
+      ],
+      [
+        "Qu’est-ce qui limite la vitesse de la moisson ?",
+        "Le séchage et le stockage, plus souvent que la capacité de récolte. Si le débit est inférieur au rythme d’arrivée du grain, il faut ralentir la coupe : la barre du séchoir a donc sa place sur le diagramme, à côté des barres de moisson."
+      ],
+      [
+        "Comment représenter plusieurs cultures ?",
+        "Par des jeux de barres parallèles partageant le même matériel. L’intérêt du diagramme est de montrer où deux cultures réclament le semoir, le pulvérisateur ou la moissonneuse la même semaine, ce qui est la vraie décision d’un assolement diversifié."
+      ],
+      [
+        "Le modèle de calendrier cultural est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'gym-opening-timeline': {
+    card: "Bail et ERP, travaux, délais de livraison des équipements, prévente aux membres fondateurs, cartes professionnelles, commission de sécurité, ouverture.",
+    h1: "Calendrier d’ouverture d’une salle de sport",
+    metaTitle: "Ouverture d’une salle de sport",
+    metaDesc: "Calendrier gratuit d’ouverture de salle de sport : travaux ERP, délais des équipements, prévente membres fondateurs, encadrants, commission de sécurité.",
+    lead: "Un <strong>calendrier d’ouverture de salle de sport</strong> gratuit, organisé autour de ce qui décide réellement d’une bonne ouverture : la prévente. Les abonnements se vendent des mois avant l’ouverture des portes, si bien que la marque, le site, la palissade et la campagne « membres fondateurs » passent devant les travaux et non derrière, et l’objectif de membres fondateurs est un point de passage sur la décision d’ouvrir, pas un agrément marketing. Derrière : un bail et une autorisation d’urbanisme, un aménagement soumis au régime des établissements recevant du public avec de vraies exigences de charge de plancher et d’isolation acoustique, des équipements aux délais de fabrication longs, des encadrants dont la carte professionnelle et la prise en main du matériel prennent du temps, et un planning de cours qu’il faut répéter.",
+    intro: "Une salle qui ouvre avec un fichier d’abonnés vide est en difficulté dès la première semaine. Le modèle fait donc passer la commercialisation devant les travaux :",
+    phases: [
+      [
+        "Concept, local et bail",
+        "Positionnement et analyse de la zone de chalandise, modèle économique et grille tarifaire, recherche et sélection du local, lettre d’intention et signature du bail commercial, puis financement, création de la société et assurances, dont la responsabilité civile obligatoire de l’exploitant. <em>Jalon : bail signé.</em>"
+      ],
+      [
+        "Conception, autorisations et travaux",
+        "Plan d’implantation et zonage, autorisation d’urbanisme et changement de destination, dossier ERP déposé auprès de la mairie avec le volet sécurité incendie et le volet accessibilité, étude de charge de plancher et d’isolation acoustique, démolition et lots techniques, vestiaires et évacuations, puis sols amortissants, miroirs et finitions des studios. <em>Jalon : travaux substantiellement achevés.</em>"
+      ],
+      [
+        "Achat et installation des équipements",
+        "Cahier des charges et devis, commande cardio et musculation passée très tôt, fabrication et transport à long délai, livraison des racks et des charges libres, montage et ancrage au sol, puis vérification de conformité et registre des équipements. <em>Jalon : plateau équipé et utilisable en sécurité.</em>"
+      ],
+      [
+        "Marque, communication et prévente membres fondateurs",
+        "Identité et enseigne, site, application de réservation et encaissement en ligne, palissade et relations presse locales pour constituer une liste d’attente, puis l’ouverture de la prévente, qui court des mois pendant que le local est encore un chantier. <em>Jalons : prévente ouverte, objectif membres fondateurs atteint.</em>"
+      ],
+      [
+        "Recrutement, qualifications et programmation",
+        "Recrutement du responsable et des éducateurs sportifs, vérification des diplômes et des cartes professionnelles, déclaration de l’établissement d’activités physiques et sportives auprès de la DRAJES, prise en main des machines, secourisme et exercices d’évacuation, planning de cours construit avec les intervenants affectés, et sa répétition. <em>Jalon : équipe prête à exploiter.</em>"
+      ],
+      [
+        "Commissions, ouverture douce et lancement",
+        "Passage de la commission de sécurité et autorisation d’ouverture délivrée par le maire, nettoyage, corner boutique et distributeurs, contrôle d’accès et badges, semaine d’ouverture douce réservée aux membres fondateurs, levée des réserves, puis jour d’ouverture et première revue de rétention. <em>Jalons : ouverture au public, régime de croisière.</em>"
+      ]
+    ],
+    callout: "La prévente est le sujet. L’économie d’une salle dépend du volume d’abonnés dès le premier mois, et les abonnements se vendent bien avant que quiconque puisse utiliser le local — ce qui suppose une marque, un site, un encaissement et une campagne membres fondateurs actifs pendant que l’espace est encore derrière une palissade. Dessinez ces barres devant la fin des travaux, et traitez l’objectif de membres fondateurs comme un point de passage sur la décision d’ouvrir : si le compte n’y est pas, la bonne réponse est en général quelques semaines de prévente de plus, et non une ouverture devant une salle vide. Derrière, deux échéances que l’on ne comprime pas : les équipements, dont la fabrication et le transport se comptent en mois, et le passage de la commission de sécurité, dont l’avis conditionne l’autorisation d’ouverture délivrée par le maire — et qui demande souvent une seconde visite.",
+    customize: [
+      "Démarrez la barre de prévente aussi tôt que votre solution d’encaissement et vos conditions générales le permettent, et faites-la courir en parallèle des travaux. Si elle commence après la livraison du local, la fenêtre membres fondateurs est perdue.",
+      "Posez l’objectif membres fondateurs comme un jalon chiffré, puis décidez à l’avance de ce qui se passe s’il n’est pas atteint : prolonger la prévente est une décision, pas un échec.",
+      "Placez la commande d’équipements devant les barres de travaux. Fabrication et transport courent couramment sur trois à quatre mois, et rien dans un bâtiment terminé ne les raccourcit.",
+      "Gardez la charge de plancher et l’isolation acoustique comme une barre d’études à part. Les zones de charges libres et les studios situés au-dessus ou à côté d’autres occupants sont la mauvaise surprise tardive la plus fréquente et la plus chère.",
+      "Réservez du temps devant la commission de sécurité et prévoyez explicitement une contre-visite. Le dossier ERP, l’accessibilité et les vérifications techniques ont leurs propres délais d’instruction.",
+      "Séquencez la vérification des cartes professionnelles, la déclaration de l’établissement et la prise en main du matériel après l’installation, pas avant : personne ne se forme sur des machines encore en caisse.",
+      "Ajoutez une barre de répétition des cours avec le vrai planning et les vrais intervenants. C’est la seule répétition générale de ce pour quoi les adhérents viennent réellement."
+    ],
+    tips: [
+      "<strong>Vendez avant de construire.</strong> Une palissade avec un QR code et une offre fondateur convertit bien mieux qu’une publicité de lancement la semaine de l’ouverture, et elle apporte de la trésorerie et un signal de demande des mois plus tôt.",
+      "<strong>Rendez l’offre fondateur limitée et honnête.</strong> Le tarif fondateur fonctionne parce qu’il se ferme vraiment ensuite ; remettre une remise au deuxième mois apprend à tout le monde à attendre la suivante.",
+      "<strong>Les visites de chantier fonctionnent.</strong> On s’inscrit plus volontiers après avoir vu le plateau en travaux que depuis un site, et cela ne coûte que quelques casques et un samedi.",
+      "<strong>Ne calez pas l’ouverture sur une commission réussie du premier coup.</strong> Un avis défavorable ou des prescriptions imposent une contre-visite, et une date d’ouverture sans marge devant elle se transforme en remboursements et en excuses.",
+      "<strong>Testez le contrôle d’accès et les prélèvements en ouverture douce.</strong> Portiques, casiers et mandats SEPA échouent d’une façon qui n’apparaît qu’au volume, et les membres fondateurs sont un public indulgent pour cela.",
+      "<strong>Programmez la première revue de rétention avant d’ouvrir.</strong> Les résiliations du premier mois en disent plus sur l’activité que le chiffre de la prévente, et personne ne planifie cette revue après le lancement si elle n’est pas déjà au plan."
+    ],
+    faq: [
+      [
+        "Combien de temps faut-il pour ouvrir une salle de sport ?",
+        "Environ onze à douze mois entre le concept et l’ouverture dans un local pris à bail, ce que retient le modèle. Les travaux représentent quelques mois ; le bail, les autorisations, les délais d’équipement et la campagne de prévente occupent le reste."
+      ],
+      [
+        "Quand lancer la prévente des abonnements ?",
+        "Dès que la marque, le site et l’encaissement sont en place et que la date d’ouverture est crédible — typiquement trois à quatre mois avant l’ouverture, alors que le local est encore un chantier. C’est exactement pour cela que le modèle fait courir la barre de prévente en parallèle des travaux."
+      ],
+      [
+        "Quelles démarches réglementaires sont propres à une salle de sport ?",
+        "Une salle est un établissement recevant du public : le dossier est déposé en mairie, la commission de sécurité rend un avis et l’autorisation d’ouverture est délivrée par le maire, avec l’accessibilité traitée dans le même dossier. S’y ajoutent la déclaration de l’établissement d’activités physiques et sportives auprès de la DRAJES, la carte professionnelle des éducateurs sportifs rémunérés, l’assurance de responsabilité civile et l’affichage des diplômes. Les délais d’instruction dépendent de la commune : confirmez-les localement avant de figer la date."
+      ],
+      [
+        "Pourquoi l’objectif membres fondateurs conditionne-t-il le lancement ?",
+        "Parce qu’une salle qui ouvre avec trop peu d’adhérents peine à financer sa première année. En faire un jalon force une décision explicite — prolonger la prévente ou ouvrir quand même — au lieu de laisser la date décider par défaut."
+      ],
+      [
+        "Combien de temps à l’avance commander les équipements ?",
+        "Trois à quatre mois sont courants pour la fabrication et le transport du cardio et de la musculation, et les racks peuvent demander davantage. La commande doit être passée pendant la conception, sinon l’installation devient le chemin critique."
+      ],
+      [
+        "Le modèle d’ouverture de salle de sport est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'iso-45001-certification-plan': {
+    card: "Analyse d’écarts, identification des dangers, consultation des travailleurs et CSE, enregistrements d’accidents et presque-accidents, audits étape 1 et étape 2.",
+    h1: "Plan de certification ISO 45001",
+    metaTitle: "Plan de certification ISO 45001",
+    metaDesc: "Plan gratuit de certification ISO 45001 : dangers et risques, DUERP, consultation des travailleurs et du CSE, presque-accidents, audits étape 1 et étape 2.",
+    lead: "Un <strong>plan de certification ISO 45001</strong> gratuit qui porte au diagramme la consultation et la participation des travailleurs comme du travail planifié, parce que la norme en fait une exigence et non une attention de communication. L’autre colonne vertébrale est l’identification des dangers et l’évaluation des risques : les objectifs, les contrôles opérationnels et les formations en découlent. En France, ce travail s’articule avec des obligations qui existent de toute façon — le DUERP, les attributions du CSE et de sa CSSCT, le suivi par le service de prévention et de santé au travail. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a>, du <a href=\"/templates/iso-14001-certification-plan.html\">plan de certification ISO 14001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
+    intro: "Remarquez que la barre de consultation court presque sur toute la longueur du diagramme, et que la phase d’accumulation des enregistrements ne se comprime pas. Les deux sont voulus :",
+    phases: [
+      [
+        "Périmètre, contexte et analyse d’écarts",
+        "Frontières du système de management de la santé et de la sécurité au travail, travailleurs et autres parties intéressées, analyse d’écarts par rapport à la norme, politique SST, et choix de l’organisme certificateur accrédité par le COFRAC — c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique SST approuvés.</em>"
+      ],
+      [
+        "Identification des dangers et évaluation des risques",
+        "Le moteur du système : cartographie des activités et des postes, identification des dangers pour le travail courant comme pour le travail exceptionnel, application de la hiérarchie des mesures de prévention, mise à jour du DUERP et de son plan d’actions, et constitution en parallèle du recueil des exigences légales et autres. <em>Jalon : registres des dangers et des risques approuvés.</em>"
+      ],
+      [
+        "Consultation et participation des travailleurs",
+        "Planifiée, et non sous-entendue. Représentants désignés, articulation avec le CSE et sa commission santé, sécurité et conditions de travail, cycle de réunions et ordre du jour, consultation sur le travail d’analyse des risques et sur les projets d’objectifs, et un examen délibéré de ce qui empêche les gens d’y prendre part. <em>Jalon : dispositif de consultation opérationnel.</em>"
+      ],
+      [
+        "Objectifs, maîtrise opérationnelle et situations d’urgence",
+        "Objectifs déduits des risques évalués, avec cibles et responsables nommés, mesures de maîtrise pour les tâches à risque élevé, plan de prévention et protocole de sécurité pour les entreprises extérieures, accueil et formation à la sécurité, suivi par le service de prévention et de santé au travail, et l’exercice d’évacuation. <em>Jalon : mesures de maîtrise et exercice réalisés.</em>"
+      ],
+      [
+        "Exploitation, accidents et presque-accidents",
+        "La phase qu’on ne raccourcit pas : faire vivre le système assez longtemps pour que déclarations d’accidents et d’incidents, remontées de presque-accidents, enquêtes, actions correctives soldées et évaluation de conformité existent réellement et puissent être échantillonnées. <em>Jalon : enregistrements d’accidents et de presque-accidents disponibles.</em>"
+      ],
+      [
+        "Audit interne, revue de direction et audit en deux étapes",
+        "Audit interne sur le terrain et actions correctives, revue de direction, puis l’étape 1, l’intervalle de traitement des écarts, et l’étape 2. <em>Jalon : certificat ISO 45001 délivré.</em>"
+      ]
+    ],
+    callout: "La consultation est ce qui distingue le plus ISO 45001 des autres normes de système de management, et c’est ce que les plans réduisent le plus souvent à une affiche. La norme attend que les travailleurs — y compris ceux qui n’exercent pas de responsabilité d’encadrement — soient consultés et participent à des choses précises : identification des dangers, évaluation des risques, détermination des mesures, analyse des accidents. Cela signifie des réunions, des comptes rendus, des représentants et des preuves, et cela a donc des dates. Il faut aussi être net sur un point : la certification ne remplace rien. Le DUERP, les attributions du CSE et de la CSSCT, le suivi individuel par le service de prévention et de santé au travail et l’ensemble des obligations du code du travail s’imposent que vous soyez certifié ou non ; ISO 45001 organise ce travail et le rend auditable, il ne s’y substitue pas. Second piège : la période qui produit les enregistrements. L’étape 2 échantillonne déclarations, presque-accidents, enquêtes et actions soldées ; si la culture de remontée démarre trois semaines avant l’audit, il n’y a rien à échantillonner et aucune tendance à montrer.",
+    customize: [
+      "Réservez tôt l’organisme certificateur et figez la date de l’étape 2 ; tout ce qui précède devient un compte à rebours plutôt qu’une estimation.",
+      "Déployez les lignes d’identification des dangers en une ligne par site, par service ou par activité à risque élevé — une ligne unique masque l’effort réel.",
+      "Calez le cycle de réunions sur le vôtre, et faites courir la barre au-delà de l’étape 2 : l’auditeur cherchera une continuité, pas un pic.",
+      "Alignez la mise à jour du DUERP et les consultations du CSE sur le calendrier du projet plutôt que de les traiter à part ; ce sont les mêmes personnes et souvent les mêmes preuves.",
+      "Gardez au moins six semaines entre l’étape 1 et l’étape 2, pour que les écarts relevés à l’étape 1 puissent réellement être soldés.",
+      "Allongez la phase d’exploitation si votre volume d’évènements est faible — il faut assez d’enregistrements pour qu’une tendance soit visible.",
+      "Ajoutez des lignes pour les vérifications périodiques obligatoires, les visites du service de santé au travail ou les contrôles de l’inspection du travail qui tombent dans la fenêtre, puisqu’ils mobilisent les mêmes personnes."
+    ],
+    tips: [
+      "<strong>Planifiez la consultation, ne la présumez pas.</strong> Des représentants nommés, un cycle de réunions et des comptes rendus sont des preuves ; une page d’intranet n’en est pas une.",
+      "<strong>Couvrez le travail exceptionnel.</strong> Maintenance, arrêts techniques, interventions d’entreprises extérieures et situations d’urgence sont les endroits où les registres de dangers sont visiblement les plus pauvres.",
+      "<strong>Appliquez explicitement la hiérarchie des mesures.</strong> Un auditeur demandera pourquoi vous avez retenu l’équipement de protection individuelle plutôt que la suppression ou la substitution, et attend une réponse écrite.",
+      "<strong>Encouragez tôt la remontée des presque-accidents.</strong> Ce sont les enregistrements que l’étape 2 échantillonne pour vérifier que le système sert, et ils mettent des mois à s’accumuler honnêtement.",
+      "<strong>Ne confondez pas certification et conformité réglementaire.</strong> Le certificat atteste d’un système de management ; le DUERP, le CSE et le suivi médical relèvent du code du travail et restent dus indépendamment de lui.",
+      "<strong>Gardez les quatre normes ISO distinctes.</strong> ISO 45001, ISO 9001, ISO 14001 et ISO 27001 partagent une structure commune et peuvent être auditées ensemble, mais ce sont quatre certifications accréditées distinctes, aux contenus différents."
+    ],
+    faq: [
+      [
+        "Combien de temps demande une certification ISO 45001 ?",
+        "Couramment dix à seize mois en partant de zéro, et le modèle en retient environ dix-sept. Ce qui résiste à la compression, c’est le travail d’identification des dangers en amont et la période d’exploitation en aval, qui produit les enregistrements d’accidents et de presque-accidents que l’auditeur échantillonnera."
+      ],
+      [
+        "Pourquoi la consultation des travailleurs est-elle planifiée comme du travail réel ?",
+        "Parce que la norme l’exige. ISO 45001 demande de consulter les travailleurs, y compris ceux sans responsabilité d’encadrement, et de permettre leur participation à l’identification des dangers, à l’évaluation des risques, à la détermination des mesures et à l’analyse des évènements — et de lever ce qui fait obstacle à cette participation. Cela suppose des représentants, une instance, un cycle de réunions et des enregistrements, tous datés, d’où des barres plutôt qu’une ligne de communication."
+      ],
+      [
+        "ISO 45001 remplace-t-il le DUERP et le CSE ?",
+        "Non, et c’est un point à ne pas laisser dans le flou. Le document unique d’évaluation des risques professionnels, les attributions du CSE et de sa CSSCT et le suivi par le service de prévention et de santé au travail découlent du code du travail : ils s’imposent avec ou sans certificat. ISO 45001 structure ce travail, le documente et le rend auditable ; en pratique, le DUERP alimente le registre des risques de la norme, mais l’obligation légale demeure entière."
+      ],
+      [
+        "En quoi ISO 45001 diffère-t-il d’ISO 9001, ISO 14001 et ISO 27001 ?",
+        "Ces normes partagent la même structure de haut niveau et la même mécanique d’audit en deux étapes, mais leur contenu diffère entièrement. ISO 45001 porte sur la santé et la sécurité au travail, ISO 9001 sur la qualité, ISO 14001 sur l’environnement, ISO 27001 sur la sécurité de l’information. Ce sont quatre certifications accréditées distinctes, avec leur propre périmètre et leur propre certificat : les preuves de l’une ne satisfont pas l’autre. À noter également : SOC 2 n’est pas une norme ISO mais un rapport d’attestation de l’AICPA — voyez le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si c’est ce qu’il vous faut."
+      ],
+      [
+        "Peut-on conduire un système de management intégré sur plusieurs normes ?",
+        "Oui. Un système intégré permet de traiter une seule fois les chapitres communs — politique, contexte, audit interne, revue de direction, informations documentées — au lieu de quatre, et les organismes certificateurs acceptent souvent de les auditer lors d’une visite combinée. Cela ne fusionne pas les certifications : vous conservez des certificats distincts, sur des périmètres distincts, et le contenu propre à chaque norme reste séparé."
+      ],
+      [
+        "Combien d’enregistrements faut-il avant l’étape 2 ?",
+        "Il n’y a pas de nombre fixé, mais l’auditeur échantillonne pour vérifier que le processus vit et que les constats débouchent sur des actions soldées. Un système sans aucune remontée de presque-accident se lit comme un problème de déclaration, non comme un site sûr. Faites tourner la remontée plusieurs mois avant l’étape 2, pour disposer d’une tendance, de quelques enquêtes et d’actions correctives vérifiées."
+      ],
+      [
+        "Le modèle ISO 45001 est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'gdpr-compliance-timeline': {
+    card: "Registre des traitements d’abord, puis base légale, durées de conservation, transferts, procédure de droits testée et violation répétée.",
+    h1: "Calendrier de mise en conformité RGPD",
+    metaTitle: "Calendrier de conformité RGPD",
+    metaDesc: "Calendrier gratuit de conformité RGPD : registre des traitements, base légale, conservation, transferts, exercice des droits testé, violations et AIPD.",
+    lead: "Un <strong>calendrier de mise en conformité RGPD</strong> gratuit, pensé pour un programme qui atteint une position défendable puis continue de tourner, et non pour un projet qui se termine. L’idée directrice est que le registre des traitements vient en premier : base légale, durées de conservation, encadrement des transferts et analyses d’impact en découlent tous, parce qu’ils supposent de savoir ce que vous faites réellement des données personnelles. Les deux horloges imposées de l’extérieur — le délai de réponse aux demandes d’exercice des droits et le délai de notification d’une violation — figurent au diagramme comme des procédures que l’on teste avant d’en avoir besoin.",
+    intro: "La barre du registre des traitements conditionne presque tout ce qui la suit, et les deux lignes de répétition existent parce qu’une procédure que personne n’a jamais déroulée n’est pas une procédure :",
+    phases: [
+      [
+        "Cadrage du programme et gouvernance",
+        "Responsabilités attribuées, désignation ou confirmation du délégué à la protection des données, qualification de responsable de traitement ou de sous-traitant pour chaque activité, entités et pays concernés, évaluation d’écarts et instance de pilotage. <em>Jalon : périmètre et rôles arrêtés.</em>"
+      ],
+      [
+        "Registre des traitements — la fondation",
+        "Ateliers de recensement avec chaque direction, inventaire des applications, description des activités de traitement et des flux, repérage des données sensibles et des données relatives aux condamnations, puis validation du registre avec ceux qui portent réellement les traitements. <em>Jalon : registre des traitements établi.</em>"
+      ],
+      [
+        "Base légale, conservation et transferts",
+        "Tout ce qui se déduit du registre : une base légale par activité, l’analyse de mise en balance là où l’intérêt légitime est invoqué, recueil et retrait du consentement, règles de conservation et de purge, cartographie des transferts hors Union européenne et de leur mécanisme d’encadrement, et des mentions d’information réécrites à partir de la réalité. <em>Jalon : bases légales et durées de conservation validées.</em>"
+      ],
+      [
+        "Droits des personnes et capacité de réponse",
+        "Procédure de traitement des demandes, vérification d’identité, canal de réception, recherche et extraction dans les systèmes, formation des personnes qui répondent, et un exercice à blanc chronométré sur une demande complète de bout en bout. <em>Jalon : procédure de droits testée de bout en bout.</em>"
+      ],
+      [
+        "Sécurité et préparation aux violations",
+        "Revue des mesures techniques et organisationnelles, détection et escalade, procédure d’appréciation du risque et de décision de notification, registre des violations, et un exercice sur table déroulé contre la montre. <em>Jalon : réponse aux violations répétée.</em>"
+      ],
+      [
+        "AIPD, sous-traitants et fonctionnement continu",
+        "Critères de déclenchement et analyses d’impact relatives à la protection des données sur les traitements à risque élevé, mise en conformité des contrats de sous-traitance, sensibilisation, et le processus de gestion du changement qui maintient le registre à jour une fois le projet terminé. <em>Jalon : position défendable atteinte.</em>"
+      ]
+    ],
+    callout: "Deux durées viennent du règlement lui-même et méritent d’être citées exactement. L’article 12 fixe le délai de réponse à une demande d’exercice des droits à un mois à compter de la réception, prolongeable de deux mois supplémentaires compte tenu de la complexité et du nombre de demandes, à condition que la personne concernée soit informée de la prolongation et de ses motifs dans le premier mois. L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente — en France, la CNIL — dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance, à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques ; une notification tardive doit être accompagnée des motifs du retard. L’article 34 traite séparément de l’information des personnes en cas de risque élevé. Ces conditions font partie du texte : le point de départ du délai, les cas de prolongation, les cas de dispense. La CNIL publie par ailleurs ses propres lignes directrices et recommandations, et la loi Informatique et Libertés porte les dispositions nationales : ce sont des sources utiles, mais ce ne sont pas le règlement, et il ne faut pas les confondre. N’aplatissez ni l’un ni l’autre en slogan, et faites vérifier votre situation par un conseil.",
+    customize: [
+      "Découpez le recensement et le registre en une ligne par direction ou par entité ; une ligne unique masque le plus gros poste du plan.",
+      "Si vous êtes sous-traitant et non responsable de traitement, reconstruisez les phases « droits » et « violations » autour de votre obligation d’assister et d’alerter vos responsables de traitement.",
+      "Ajoutez une ligne par flux si vous transférez des données hors Union européenne — le mécanisme d’encadrement et l’analyse diffèrent selon la destination.",
+      "Allongez la phase des droits si vos données vivent dans de nombreux systèmes ; l’outillage d’extraction est presque toujours le point dur, pas l’analyse juridique.",
+      "Ajoutez des lignes pour toute procédure en cours avec la CNIL, consultation préalable ou plainte déjà déposée : elles passeront devant le plan.",
+      "Faites courir la dernière phase au-delà du jalon — le registre se périme dès qu’un nouveau système ou un nouveau sous-traitant arrive."
+    ],
+    tips: [
+      "<strong>Construisez le registre avant les politiques.</strong> Une politique rédigée avant de savoir quels traitements existent décrit une organisation que vous n’avez pas, et la première demande le révélera.",
+      "<strong>Chronométrez l’exercice à blanc.</strong> Le résultat utile d’une demande d’entraînement, c’est le nombre de jours consommés et l’endroit où cela a coincé, pas le fait d’avoir fini par produire le dossier.",
+      "<strong>Répétez la décision, pas seulement la réponse technique.</strong> Le difficile est d’apprécier le risque et de décider si la notification est requise, et cette décision doit être prise par des personnes qui l’ont déjà prise.",
+      "<strong>Écrivez pourquoi vous n’avez pas notifié.</strong> Si vous concluez qu’une violation n’est pas notifiable, c’est le raisonnement et sa trace qui défendront la décision plus tard.",
+      "<strong>Distinguez le règlement des lignes directrices.</strong> Citez le texte quand c’est le texte, et présentez les recommandations de la CNIL pour ce qu’elles sont : la lecture de l’autorité, utile et attendue, mais distincte de l’article.",
+      "<strong>Branchez le registre sur la gestion du changement.</strong> Un nouveau prestataire, un nouveau système ou une nouvelle fonctionnalité doit mettre le registre à jour par routine, sinon vous le reconstruirez dans deux ans."
+    ],
+    faq: [
+      [
+        "Combien de temps dure un programme de conformité RGPD ?",
+        "Le modèle court sur environ quinze mois jusqu’à une position défendable. L’essentiel tient au travail de registre et à l’outillage derrière les demandes d’exercice des droits, non à la rédaction juridique. Il faut dire clairement que le programme ne s’arrête pas là : le registre s’entretient, les analyses d’impact se rejouent, et les systèmes comme les sous-traitants changent."
+      ],
+      [
+        "Quel est le délai de réponse à une demande d’accès ?",
+        "L’article 12 du règlement fixe le délai à un mois à compter de la réception de la demande. Il peut être prolongé de deux mois supplémentaires si nécessaire, compte tenu de la complexité et du nombre de demandes, et le responsable de traitement doit informer la personne concernée de cette prolongation et de ses motifs dans le mois suivant la réception. Le point de départ du délai, la vérification d’identité et le traitement des demandes manifestement infondées ou excessives sont là où se loge la difficulté pratique : faites confirmer votre cas par un conseil."
+      ],
+      [
+        "Que dit exactement la règle des 72 heures ?",
+        "L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance — à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques. Une notification au-delà de 72 heures doit être accompagnée des motifs du retard. L’article 34 impose séparément d’informer les personnes concernées lorsque la violation est susceptible d’engendrer un risque élevé pour elles. Le moment où l’on est réputé avoir « pris connaissance » relève de l’appréciation, et c’est pourquoi le modèle fait répéter la décision et pas seulement le confinement technique."
+      ],
+      [
+        "Pourquoi le registre des traitements passe-t-il avant tout le reste ?",
+        "Parce que base légale, durées de conservation, encadrement des transferts, mentions d’information et analyses d’impact sont autant d’affirmations portant sur des traitements précis. Sans registre de ces traitements, chacune est écrite contre une hypothèse. Les programmes qui commencent par une bibliothèque de politiques la refont une fois le recensement terminé."
+      ],
+      [
+        "Quand faut-il une AIPD, et qui doit être désigné DPO ?",
+        "Le règlement impose une analyse d’impact relative à la protection des données lorsqu’un traitement est susceptible d’engendrer un risque élevé pour les droits et libertés des personnes, et la désignation d’un délégué à la protection des données dans les cas qu’il énumère — autorité ou organisme public, suivi systématique à grande échelle, traitement à grande échelle de données sensibles. Au-delà de ces cas, la CNIL publie ses propres listes et recommandations sur les traitements qu’elle considère comme soumis à AIPD : consultez-les, mais gardez la distinction entre le texte et sa lecture par l’autorité."
+      ],
+      [
+        "En quoi cela diffère-t-il d’ISO 27001 ou de SOC 2 ?",
+        "Le RGPD est un texte de droit : il s’applique que quiconque vous certifie ou non. ISO 27001 est une certification accréditée portant sur un système de management de la sécurité de l’information, et SOC 2 est un rapport d’attestation de l’AICPA produit par un auditeur — ni l’un ni l’autre n’est un constat de conformité juridique. Le recouvrement est fort sur les mesures de sécurité et les preuves sont réutilisables, mais un certificat n’est pas un moyen de défense. Voyez le <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a> et le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si vous les menez en parallèle."
+      ],
+      [
+        "Le modèle de calendrier RGPD est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane. Ce modèle est une aide à la planification, pas un conseil juridique."
+      ]
+    ]
+  },
+  'customer-onboarding-plan': {
+    card: "Réunion de lancement, dépendances côté client, chemin court vers la première valeur, reprise de données, intégrations, formation, mise en service.",
+    h1: "Plan d’intégration d’un nouveau client",
+    metaTitle: "Plan d’intégration client",
+    metaDesc: "Plan gratuit d’intégration client : lancement, dépendances côté client, chemin vers la première valeur, reprise de données, formation, mise en service.",
+    lead: "Un <strong>plan d’intégration client</strong> gratuit, honnête sur la question de savoir à qui appartient le planning. La plupart des barres ci-dessous dépendent du client : ses données, ses accès aux systèmes à intégrer, sa revue de sécurité, ses validations et les agendas de ses équipes. Le plan est agencé pour qu’un résultat exploitable tombe tôt — le délai jusqu’à la première valeur est l’indicateur qui prédit le renouvellement — plutôt que de séquencer chaque décision de paramétrage avant d’autoriser quiconque à se connecter.",
+    intro: "Les lignes portées par le client sont signalées comme telles. Regardez combien il y en a, et où elles se situent par rapport à votre propre travail :",
+    phases: [
+      [
+        "Passage de relais commercial et lancement",
+        "Dossier de passation, critères de succès et définition du premier résultat attendu, désignation du chef de projet et des décideurs côté client, réunion de lancement, et les engagements du client assortis de dates. <em>Jalon : lancement tenu et responsables nommés.</em>"
+      ],
+      [
+        "Cadrage et cartographie des dépendances côté client",
+        "Revue du processus actuel, puis la liste honnête : chaque élément que le client vous doit, qui détient les données, qui détient les accès aux systèmes à intégrer, et quelle revue de sécurité, quelle étape d’achats ou quelle validation juridique se tient entre vous et la production. <em>Jalon : dépendances client confirmées et datées.</em>"
+      ],
+      [
+        "Chemin court vers la première valeur",
+        "Volontairement étroit. Ouvrir l’environnement, paramétrer un seul processus, charger à la main de quoi le rendre réel, embarquer une poignée d’utilisateurs, et obtenir du client un vrai résultat avant que le gros du travail ne commence. <em>Jalon : première valeur livrée.</em>"
+      ],
+      [
+        "Reprise de données et intégrations",
+        "La phase la plus exposée au glissement, parce que l’essentiel est chez le client : extraction et remise des fichiers, mapping et transformations, import d’essai avec un rapport de qualité de données rendu au client, sa passe de correction, la construction des interfaces et sa validation de sécurité. <em>Jalon : données et intégrations en production.</em>"
+      ],
+      [
+        "Paramétrage, formation et déploiement",
+        "Processus et habilitations restants, validation du paramétrage par le client, formation des administrateurs, et sessions utilisateurs que le client doit remplir avec ses propres équipes. <em>Jalon : utilisateurs formés et paramétrage validé.</em>"
+      ],
+      [
+        "Mise en service, adoption et transfert",
+        "Revue de préparation, bascule depuis l’ancien processus, période de vigilance renforcée, mesure du délai jusqu’à la première valeur et de l’adoption, arrêt de l’ancien outil, et transfert au responsable de la relation client. <em>Jalon : intégration close et compte en régime courant.</em>"
+      ]
+    ],
+    callout: "Quand une intégration prend du retard, la cause est presque toujours en amont de l’équipe de déploiement : l’export de données que personne n’avait jamais fait, l’accès détenu par un prestataire, le questionnaire de sécurité qui dort dans une file, le sponsor en congés la semaine où la validation du paramétrage était attendue. Ce n’est pas une excuse pour planifier de façon lâche : c’est un argument pour nommer ces dépendances dès les deux premières semaines, mettre le nom d’une personne du client en face de chacune, et les passer en revue à chaque point d’avancement. La seconde leçon est d’arrêter de tout séquencer. La pression est énorme pour tout paramétrer avant que le client ne touche au produit, et cela produit invariablement une longue période silencieuse suivie d’un démarrage auquel personne ne croit. Faites fonctionner un vrai résultat dès le premier mois, même étroit et alimenté à la main, puis construisez à partir de quelque chose auquel le client croit déjà.",
+    customize: [
+      "Marquez clairement chaque ligne portée par le client et mettez en face une personne nommée de son côté, pas un service.",
+      "Avancez le jalon de première valeur si votre produit le permet ; quatre semaines est une cible courante, et plus tôt vaut mieux.",
+      "Ajoutez une ligne par intégration et par source de données — une barre unique masque exactement les dépendances qui vont glisser.",
+      "Faites apparaître explicitement la revue de sécurité, les achats et le juridique du client s’il s’agit d’un grand compte ; ces étapes prennent régulièrement plus de temps que le travail technique.",
+      "Allongez la boucle de correction si l’import d’essai risque de révéler des problèmes : une seule passe est optimiste pour la plupart des reprises.",
+      "Ajoutez des lignes pour l’accompagnement au changement côté client si vous remplacez un processus auquel les équipes tiennent."
+    ],
+    tips: [
+      "<strong>Publiez un plan partagé, pas votre plan.</strong> Le client doit voir ses propres lignes et ses propres dates, parce que ce sont celles qui bougent.",
+      "<strong>Définissez la première valeur comme un résultat précis.</strong> « En production » n’est pas un jalon ; « l’équipe exploitation a produit le planning de la semaine dans l’outil » en est un.",
+      "<strong>Demandez qui a déjà fait l’export.</strong> La réponse est souvent personne, et cela change votre estimation plus que n’importe quel détail technique.",
+      "<strong>Rendez le rapport de qualité de données au client.</strong> La correction lui appartient, et une liste précise d’enregistrements douteux avance plus vite qu’une demande de nettoyage général.",
+      "<strong>Mesurez le délai jusqu’à la première valeur sur chaque compte.</strong> C’est le seul indicateur d’intégration qui prédise l’adoption, et il justifie de charger l’avant plutôt que de séquencer."
+    ],
+    faq: [
+      [
+        "Combien de temps doit durer l’intégration d’un client ?",
+        "Cela varie énormément avec le volume de données et le nombre d’intégrations. Le modèle court sur environ cinq mois pour un déploiement de taille intermédiaire avec reprise de données ; un produit en libre-service se compte en jours. La question la plus utile reste le délai jusqu’à la première valeur, qui doit se mesurer en quelques semaines quelle que soit la durée du déploiement complet."
+      ],
+      [
+        "Qu’appelle-t-on délai jusqu’à la première valeur ?",
+        "Le temps écoulé entre la signature ou le lancement et le moment où le client obtient du produit un résultat réel et utile — pas une démonstration, pas un exercice de formation. C’est l’indicateur autour duquel ce modèle est construit, parce qu’un client qui a vu une valeur réelle supporte le reste du déploiement, et qu’un client qui n’en a pas vu commence à se demander ce qu’il a acheté."
+      ],
+      [
+        "Pourquoi charger l’avant du plan avec un résultat étroit ?",
+        "Parce qu’un paramétrage complet avant la première connexion crée une longue période silencieuse où la seule chose que vit le client, c’est le travail qu’il vous doit. Un premier processus étroit, alimenté à la main, crée quelque chose de réel sur quoi bâtir, et fait remonter les malentendus tant qu’ils sont encore bon marché à corriger."
+      ],
+      [
+        "Que faire quand le client rate ses dates ?",
+        "L’anticiper et concevoir le plan pour cela. Nommez la dépendance et son responsable dès la deuxième semaine, passez les lignes du client en revue à chaque point, et montrez l’effet sur la date de mise en service au lieu de l’absorber en silence. Absorber le retard apprend au client que ses dates n’ont pas d’importance, et l’équipe de déploiement le paie plus tard."
+      ],
+      [
+        "Quelle différence avec un plan d’intégration d’un nouveau salarié ?",
+        "Deux plans entièrement différents malgré le mot commun. Le <a href=\"/templates/employee-onboarding.html\">modèle d’intégration d’un nouveau collaborateur</a> couvre les premières semaines d’un salarié — matériel, accès, présentations, montée en compétence. Celui-ci couvre le déploiement d’un produit chez un client payant, où le planning est partagé avec une autre organisation et où l’essentiel du risque se trouve de son côté."
+      ],
+      [
+        "Le modèle d’intégration client est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
+  'brand-relaunch-plan': {
+    card: "Nommage et recherche d’antériorités, dépôt INPI, identité validée, production des supports, bascule simultanée et longue traîne des surfaces physiques.",
+    h1: "Plan de changement de marque",
+    metaTitle: "Plan de changement de marque",
+    metaDesc: "Plan gratuit de changement de marque : antériorités et dépôt INPI, validation de l’identité, production des supports, bascule simultanée et longue traîne.",
+    lead: "Un <strong>plan de changement de marque</strong> gratuit, organisé autour d’un fait dur : la révélation est un instant, et à cet instant tout ce que vous maîtrisez doit basculer ensemble. Site, interface produit, modèles d’e-mails, comptes sociaux, enseignes, présentations, factures. Devant, un délai long qui peut tuer un nom tardivement — la recherche d’antériorités et le dépôt de marque, avec le délai d’opposition qui suit la publication. Derrière, une traîne de supports physiques et de surfaces détenues par des tiers, qui ne basculent pas le jour J et qu’il faut relancer une par une.",
+    intro: "La barre de disponibilité juridique court sous le travail de création pour une raison, et la traîne après le jour J est plus longue que la plupart des plans ne l’admettent :",
+    phases: [
+      [
+        "Stratégie, positionnement et nommage",
+        "Audit de marque et capital existant, plateforme de positionnement et récit, génération et présélection de noms, et vérification linguistique et culturelle avant que quiconque ne s’attache à un candidat. <em>Jalon : liste courte arrêtée pour recherche d’antériorités.</em>"
+      ],
+      [
+        "Antériorités, dépôt et surveillance",
+        "Le délai long. Recherches d’identiques puis recherche d’antériorités complète sur les marchés prioritaires, avis de risque du conseil en propriété industrielle, réservation discrète des noms de domaine et des comptes, dépôt à l’INPI par classe et à l’EUIPO pour l’Union européenne, puis suivi de l’examen et du délai d’opposition. <em>Jalon : nom disponible et demandes déposées.</em>"
+      ],
+      [
+        "Création de l’identité et validation",
+        "Territoires graphiques, logotype et signature, couleur, typographie et animation, contrôles d’accessibilité et de lisibilité, et la validation dont tout le reste découle en éventail. <em>Jalon : identité validée et figée.</em>"
+      ],
+      [
+        "Production des supports et système de marque",
+        "Charte et bibliothèque d’actifs d’abord, puis production en parallèle : refonte du site, habillage de l’interface produit, modèles d’e-mails et messages transactionnels, maquettes d’emballage, enseignes et habillage des véhicules. <em>Jalon : supports principaux produits.</em>"
+      ],
+      [
+        "Préparation de la bascule et répétition",
+        "L’inventaire de chaque surface, revue de la dénomination sociale et des mentions sur les factures et les documents commerciaux, fiches et places de marché tenues par des tiers, plan de redirections et continuité de la mesure d’audience, et une répétition en préproduction avant la décision de partir. <em>Jalon : bascule répétée et décision prise.</em>"
+      ],
+      [
+        "Jour J et longue traîne",
+        "La bascule simultanée, l’annonce, la reprise des comptes sociaux — puis la partie que les plans oublient : pose des enseignes site par site, écoulement des emballages à l’ancienne marque, surfaces détenues par des partenaires, et un audit de retrait de l’ancienne marque. <em>Jalon : traîne close et ancienne marque retirée.</em>"
+      ]
+    ],
+    callout: "Deux choses tuent les changements de marque. La première est de découvrir un problème d’antériorité une fois l’identité validée et la production lancée. La recherche de disponibilité n’est ni une formalité ni une opération rapide : les recherches d’identiques sont bon marché et rapides, une recherche complète sur plusieurs marchés ne l’est pas, et en France une opposition peut être formée dans un délai de deux mois à compter de la publication de la demande — plus tard encore selon le territoire et la procédure. Placez l’avis de risque avant la dépense de création, et n’autorisez personne à présenter le nouveau nom à l’extérieur avant que le conseil n’ait tranché. La seconde est de traiter la révélation comme un lancement marketing plutôt que comme une bascule. Un lancement est une campagne que l’on phase ; une bascule est un changement d’état, et une marque à moitié basculée — nouveau site, anciennes factures, ancienne enseigne, ancienne fiche sur les places de marché — se lit comme une entreprise mal tenue. Construisez la liste surface par surface, attribuez un responsable à chacune, et acceptez que le physique et les tiers traînent : suivez-les comme une liste nommée plutôt qu’en espérant.",
+    customize: [
+      "Ajoutez une ligne de recherche par territoire et par classe ; les durées et le risque diffèrent, et une barre unique masque le marché qui pose problème.",
+      "Si vous faites évoluer l’identité sans changer de nom, supprimez les phases de nommage et de disponibilité et commencez à la création : le plan raccourcit de plusieurs mois.",
+      "Déployez la production en une ligne par surface une fois l’inventaire établi ; le compte est toujours plus élevé que la première estimation.",
+      "Ajoutez des lignes pour les supports réglementés ou contractuels — étiquetage, certificats, agréments, mentions légales, dépôts — qui ont leurs propres circuits d’approbation.",
+      "Ne fixez la date de révélation qu’après la ligne de répétition, et rattachez les prises de parole à cette date plutôt qu’à un mois du calendrier.",
+      "Allongez la barre d’écoulement des emballages pour coller à votre couverture de stock réelle : c’est en général l’élément de traîne le plus long et le plus visible."
+    ],
+    tips: [
+      "<strong>Vérifiez la disponibilité avant de tomber amoureux du nom.</strong> Le moment le moins cher pour perdre un nom est celui des recherches d’identiques ; le plus cher est après l’impression des emballages.",
+      "<strong>Inventoriez toutes les surfaces qui portent la marque.</strong> Factures, contrats, signatures d’e-mail, offres d’emploi, fiches sur les magasins d’applications et scripts d’accueil téléphonique en font partie, et aucun ne figure dans le brief de création.",
+      "<strong>Répétez la bascule.</strong> Un passage en préproduction révèle le logo codé en dur, la favicon en cache et le modèle chez un prestataire que personne ne pilotait.",
+      "<strong>Protégez le référencement acquis.</strong> Le plan de redirections et la continuité de la mesure font la différence entre un changement de marque et un redémarrage à zéro sur le trafic organique.",
+      "<strong>Séparez la marque commerciale de la dénomination sociale.</strong> Si vous ne changez que l’une des deux, dites-le explicitement dans le plan : factures, contrats et mentions légales n’obéissent pas au même calendrier que la communication.",
+      "<strong>Suivez la traîne comme une liste, pas comme une phase.</strong> Enseignes, emballages et surfaces partenaires basculent sur des semaines ou des mois, et les éléments de traîne sans responsable sont ceux que l’on remarque encore un an après."
+    ],
+    faq: [
+      [
+        "Combien de temps prend un changement de marque ?",
+        "Le modèle court sur environ seize mois pour un changement de nom complet incluant la recherche d’antériorités et le dépôt. Une évolution graphique sans changement de nom prend couramment quatre à huit mois, parce que la phase de disponibilité disparaît et que la création peut démarrer immédiatement."
+      ],
+      [
+        "Pourquoi la disponibilité de la marque est-elle le point dur ?",
+        "Parce qu’elle conditionne le nom et qu’aucun renfort d’équipe ne la comprime. Les recherches d’identiques sont rapides, mais une recherche complète sur plusieurs territoires et plusieurs classes prend des semaines, le conseil a besoin de temps pour formuler un avis de risque, et après le dépôt viennent l’examen puis une période d’opposition que vous ne maîtrisez pas. Tout travail de création mené devant l’avis de risque est du travail que vous risquez de jeter."
+      ],
+      [
+        "Où déposer, et quel délai d’opposition prévoir ?",
+        "Le dépôt se fait à l’INPI pour la France et à l’EUIPO pour une marque de l’Union européenne, par classe de produits et de services. Après publication, un tiers peut former opposition — deux mois à compter de la publication au Bulletin officiel de la propriété industrielle pour un dépôt français, avec des délais et des procédures différents devant l’EUIPO et à l’international. Traitez cette période comme un risque de planning à part entière et faites confirmer les délais applicables par votre conseil."
+      ],
+      [
+        "Faut-il tout basculer le même jour ?",
+        "Tout ce que vous maîtrisez, oui — site, interface produit, comptes sociaux, modèles d’e-mails, signatures, supports commerciaux et l’annonce. Une bascule partielle sur les surfaces que vous détenez ressemble à une erreur plutôt qu’à une décision. Les supports physiques et les surfaces de tiers font exception, parce qu’ils ne peuvent réellement pas basculer instantanément : le modèle leur donne une traîne suivie plutôt que de prétendre qu’ils tombent le jour J."
+      ],
+      [
+        "Qu’oublie-t-on le plus souvent ?",
+        "Les surfaces ingrates : modèles de factures et de contrats, dénomination sociale là où elle diffère du nom commercial, fiches sur les magasins d’applications et les places de marché, profils sur les sites d’avis, annuaires de partenaires, offres d’emploi, signatures d’e-mail, habillage des véhicules et tout ce qui est imprimé et dort dans une réserve. Le modèle donne à l’inventaire de bascule sa propre ligne, parce que le construire est un vrai travail."
+      ],
+      [
+        "Le modèle de changement de marque est-il gratuit ?",
+        "Oui. Téléchargements Excel, PowerPoint et CSV gratuits, et édition en ligne gratuite, sans compte ni filigrane."
+      ]
+    ]
+  },
 };
 
 const UI = {

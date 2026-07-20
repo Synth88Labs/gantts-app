@@ -6104,6 +6104,756 @@ const T = {
       ]
     ]
   },
+  'battery-gigafactory-construction-schedule': {
+    card: "Zellformat-Freeze, Trockenraum, Anlagenqualifizierung, Formierung, Ausbeutehochlauf.",
+    h1: "Bauzeitplan für eine Batteriezellfabrik",
+    metaTitle: "Bauzeitplan Batteriezellfabrik",
+    metaDesc: "Kostenloser Bauzeitplan für eine Batteriezellfabrik: Trockenraum-Qualifizierung, Anlagenmontage, Formierung und Reifung sowie der Ausbeutehochlauf.",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitplan einer Batteriezellfabrik</strong>, geordnet um den Trockenraum statt um das Gebäude. Vorn der Freeze von Zellformat und Zellchemie, weil jede Maschine und jede Medienversorgung daraus dimensioniert wird; danach eine Hülle, die lange vor der ersten Anlage zu einer dichten, sorptionsgetrockneten Umgebung werden muss; Taupunktabsenkung und Haltetest als Tor für den Anlageneinzug; Montage und Qualifizierung der Anlagen als Tor für verkaufsfähige Ausbringung — und nicht die bauliche Fertigstellung; danach Formierung und Reifung, die je Zelle echte Kalendertage verbrauchen, und ein Ausbeutehochlauf, der eine Kurve ist und kein Meilenstein.",
+    intro: "Eine Zellfabrik ist nicht fertig, wenn das Dach dicht ist. Sie ist fertig, wenn Zellen mit einer Ausbeute vom Band laufen, für die jemand zahlt — und der Weg dorthin führt durch eine kontrollierte Atmosphäre. Die Balken folgen diesem Weg:",
+    phases: [
+      [
+        "Standort, Genehmigungen und Zellprozessauslegung",
+        "Standort und Netzanschluss, der Freeze von Zellformat und Zellchemie, aus dem jede nachgelagerte Maschine folgt, die immissionsschutzrechtliche Genehmigung nach dem Bundes-Immissionsschutzgesetz samt Umgang mit Gefahrstoffen und Lösemitteln, die Auslegungsbasis für Prozessfluss und Linienkapazität sowie die Bestellung der Langläufer-Anlagen. <em>Meilensteine: Zellformat eingefroren, Genehmigung erteilt.</em>"
+      ],
+      [
+        "Rohbau und Errichtung des Trockenraums",
+        "Gründung, Bodenplatte und Stahlbau, Hülle und Dichtigkeit, danach die Dampfsperre und die dichte Trockenraumhülle, Schleusen und Umkleidebereiche sowie die Ebenheit des Bodens, die Beschichtungs- und Kalanderlinie verlangen. <em>Meilenstein: Gebäude wetterdicht.</em>"
+      ],
+      [
+        "Medien, Entfeuchtung und Trockenraumqualifizierung",
+        "Umspannwerk und Verteilung, die Sorptionsentfeuchtungsanlage, Drucklufttrocknung, Stickstoff und Prozesskühlung, Lösemittelrückgewinnung und Abluftreinigung, danach die Absenkung auf den Zieltaupunkt und ein Haltetest, der die Dichtheit der Hülle beweist. <em>Meilenstein: Trockenraum auf Taupunkt qualifiziert.</em>"
+      ],
+      [
+        "Anlageneinzug, Montage und Qualifizierung",
+        "Beschichter und Kalander, Schneiden, Vakuumtrocknung und Wickeln, Stapeln, Ableiterschweißen und Versiegeln, Elektrolytbefüllung und Entgasung, Formier- und Reiferegale, danach die stationsweise Werksabnahme vor Ort. <em>Meilenstein: Anlagenqualifizierung abgeschlossen.</em>"
+      ],
+      [
+        "Linieninbetriebnahme, erste Zelle und Formierung",
+        "Anbindung von Fertigungsleitsystem und Rückverfolgbarkeit, Beschichtungsversuche und Bahnqualität, die Betriebsdisziplin im Trockenraum, die erste montierte Zelle, danach Formierzyklen, das Fenster für Reifung und Selbstentladungsprüfung sowie die Schleife aus Zerlegung und Fehleranalyse. <em>Meilenstein: erste Zelle vom Band.</em>"
+      ],
+      [
+        "Ausbeutehochlauf und Kundenfreigabe",
+        "Prozessfähigkeit und statistische Prozesslenkung je Station, Ausschussreduzierung von der Elektrode bis zur Montage, A-Muster an den Kunden, Missbrauchs- und Transportprüfungen, B-Muster-Freigabe und Produktionsteil-Abnahmeverfahren, danach der Hochlauf auf die Nennkapazität. <em>Meilensteine: Ausbeuteziel erreicht, Serienproduktion gestartet.</em>"
+      ]
+    ],
+    callout: "Der Trockenraum ist der Terminplan. Elektrodenhandhabung und Zellmontage brauchen Taupunkte um minus vierzig Grad, also muss das Gebäude zu einer dichten, sorptionsgetrockneten Umgebung werden, bevor eine einzige Anlage gestellt wird — und Hülle, Dampfsperre, Schleusen und Entfeuchtungsanlage liegen alle auf diesem Pfad. Dahinter zwei Dinge, die niemand stauchen kann: Formierung und Reifung verbrauchen je Zelle echte Kalendertage, gleich wie viele Menschen Sie einstellen, und die Ausbeute nach der ersten Zelle steigt auf einer Kurve, statt auf eine Zahl zu springen. Die bauliche Fertigstellung ist kein Tor für verkaufsfähige Ausbringung; die Anlagenqualifizierung und diese Kurve sind es.",
+    customize: [
+      "Frieren Sie Zellformat und Zellchemie früh ein und setzen Sie das als Meilenstein. Beschichterbreite, Kalanderlast, Gehäusemaße, Regallayout und die gesamte Medienauslegung folgen daraus; eine späte Änderung ist eine Neuplanung und keine Anpassung.",
+      "Geben Sie Taupunktabsenkung und Haltetest eigene Balken nach der Montage der Entfeuchtungsanlage. Eine laufende Anlage ist nicht dasselbe wie eine dichte Hülle, und bei der Leckagesuche kommen späte Hüllenmängel ans Licht.",
+      "Takten Sie den Anlageneinzug gegen die Trockenraumbereitschaft, nicht gegen die Liefertermine der Lieferanten. Eine Anlage, die in der Kiste vor einem Raum ohne Zieltaupunkt steht, qualifiziert gar nichts.",
+      "Bilden Sie Formierung und Reifung als Balken fester Dauer je Charge ab, nicht als Kapazität, der man Personal hinzufügen kann. Die Chemie setzt die Tage; der einzige Hebel ist die Zahl der Regale.",
+      "Zeichnen Sie den Ausbeutehochlauf als langen Balken mit Zielmeilenstein am Ende, nicht als Sprung. Alles nach der ersten Zelle ist eine Lernkurve, und sie als Ereignis zu zeichnen verbirgt Monate echter Arbeit.",
+      "Trennen Sie Anlagenqualifizierung und Linieninbetriebnahme. Ein Lieferant, der beweist, dass eine Station spezifikationsgemäß läuft, und Ihr Prozessteam, das beweist, dass die Linie eine gute Zelle macht, sind zwei Ereignisse mit zwei Verantwortlichen.",
+      "Legen Sie für die Genehmigung nach dem Bundes-Immissionsschutzgesetz einen eigenen Balken mit Öffentlichkeitsbeteiligung an, wenn Ihr Verfahren sie erfordert — sie hat eine gesetzlich getaktete Dauer, die Sie nicht verhandeln."
+    ],
+    tips: [
+      "<strong>Bauen Sie den Trockenraum, bevor Sie ihn brauchen.</strong> Abdichtung der Hülle, Schleusen und Absenkung laufen nacheinander und langsam, und jeder Tag dieser Kette liegt unmittelbar vor der ersten Zelle.",
+      "<strong>Kaufen Sie Formier- und Reifekapazität, nicht Termine.</strong> Dauert die Reifung drei Wochen je Charge, verkürzen nur mehr Regale und mehr Fläche den Hochlauf — kein Umsortieren ändert die Chemie.",
+      "<strong>Behandeln Sie Lösemittelrückgewinnung und Abluftreinigung als kritischen Pfad.</strong> Sie sind unscheinbar, werden regelmäßig zurückgestellt, und keine Beschichtungslinie darf ohne sie in Produktion gehen.",
+      "<strong>Verfolgen Sie den Ausschuss je Station ab dem ersten Versuch.</strong> Eine schlecht laufende Station weit vorn wirft Material weg, dem bereits Wert zugefügt wurde — der häufigste Grund für einen stockenden Hochlauf.",
+      "<strong>Beginnen Sie die Kundenfreigabe früher, als Sie sich bereit fühlen.</strong> Missbrauchsprüfung, Transportzulassung und Produktionsteil-Abnahmeverfahren dauern Monate und laufen gegen frühe Zellen, während die Ausbeute noch steigt.",
+      "<strong>Setzen Sie die Trockenraumdisziplin als Schulung auf den Plan, nicht als Rundschreiben.</strong> Einschleusen, Materialtransfer und Feuchteschutz sind Gewohnheiten, die Wochen brauchen — eine Feuchteexkursion kostet mehr als die Schulung."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Bau einer Batteriezellfabrik?",
+        "Ein Neubau auf der grünen Wiese läuft üblicherweise dreißig bis sechsunddreißig Monate von der Genehmigung bis zum Produktionsstart, und ungefähr diese Spanne nutzt die Vorlage. Der Rohbau ist gut planbar; Trockenraumqualifizierung, Anlagenqualifizierung und der Ausbeutehochlauf tragen die Streuung."
+      ],
+      [
+        "Warum bestimmt der Trockenraum den Terminplan?",
+        "Elektrodenhandhabung und Zellmontage verlangen extrem niedrige Feuchte, also muss das Gebäude dicht, dampfgesperrt und sorptionsgetrocknet sein, bevor Anlagen gestellt werden können. Damit wird aus einer Bauabfolge Monate vor der ersten Maschine eine Abfolge der kontrollierten Atmosphäre."
+      ],
+      [
+        "Lassen sich Formierung und Reifung verkürzen?",
+        "Nein. Jede Zelle braucht eine feste Zahl an Stunden oder Tagen kontrollierter Ladung und danach eine Ruhezeit für die Selbstentladungsprüfung. Der einzige Hebel ist mehr Formier- und Reifekapazität, und das ist Kapital und Fläche, keine Terminplanung."
+      ],
+      [
+        "Was bestimmt tatsächlich die verkaufsfähige Ausbringung?",
+        "Anlagenqualifizierung und Ausbeute, nicht die bauliche Fertigstellung. Eine fertige Fabrik mit nicht qualifizierten Stationen produziert nichts Verkäufliches — deshalb liegt der Qualifizierungsmeilenstein in der Vorlage deutlich hinter dem Ausbau."
+      ],
+      [
+        "Wie stellt man den Ausbeutehochlauf im Gantt-Diagramm dar?",
+        "Als langen Balken mit Zielmeilenstein am Ende. Fehlerreduzierung ist eine von Versuchen getriebene Kurve, und sie als einzelnes Ereignis zu zeichnen ist der häufigste Weg, mit dem Terminpläne von Zellfabriken ihre eigenen Gremien in die Irre führen."
+      ],
+      [
+        "Braucht eine Zellfabrik eine Genehmigung nach dem Bundes-Immissionsschutzgesetz?",
+        "In aller Regel ja. Beschichtung mit Lösemitteln, Abluftreinigung, Lösemittel- und Elektrolytlager und die Feuerungsanlagen führen typischerweise in ein Genehmigungsverfahren nach dem Bundes-Immissionsschutzgesetz, häufig mit Umweltverträglichkeitsprüfung und Öffentlichkeitsbeteiligung. Das Verfahren hat gesetzlich getaktete Schritte, die Sie nicht beschleunigen, deshalb gehört es als eigener Langläufer-Balken nach vorn und nicht als Fußnote in die Bauphase."
+      ],
+      [
+        "Ist die Vorlage für die Batteriezellfabrik kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'nuclear-decommissioning-schedule': {
+    card: "Charakterisierung, Entsorgungsweg, dosisbudgetierter Abbau, Freigabe, Entlassung.",
+    h1: "Terminplan für Stilllegung und Rückbau eines Kernkraftwerks",
+    metaTitle: "Terminplan Rückbau Kernkraftwerk",
+    metaDesc: "Kostenloser Rückbau-Terminplan: Charakterisierung, Stilllegungsgenehmigung, Entsorgungsweg, dosisbudgetierter Abbau, Freigabe und Entlassung des Standorts.",
+    lead: "Eine kostenlose <strong>Vorlage für den Terminplan von Stilllegung und Rückbau</strong>, gebaut auf der Regel, die jedes solche Vorhaben beherrscht: Sie können nicht schneller abbauen, als Sie entsorgen können. Zuerst Brennelementfreiheit und radiologische Charakterisierung, weil sich gegen ein unbekanntes Inventar nichts planen lässt; danach die Stilllegungs- und Abbaugenehmigung nach § 7 Absatz 3 Atomgesetz und die mit dem Endlagerbetreiber abgestimmten Annahmebedingungen, bevor physisch gearbeitet wird; der Abbau getaktet durch ein Dosisbudget statt durch Mannschaftsstärke; Konditionierung, Pufferlagerung und Abtransport parallel; danach Freigabe nach der Strahlenschutzverordnung, konventioneller Abriss und die Entlassung des Geländes aus der atomrechtlichen Aufsicht.",
+    intro: "Rückbauterminpläne scheitern, wenn sie als Abriss mit zusätzlichem Papier gezeichnet werden. Die Arbeit wird durch Entsorgungskapazität, Genehmigungen und Dosis getaktet, und die Balken sind entsprechend geordnet:",
+    phases: [
+      [
+        "Nachbetrieb, Brennelementfreiheit und Charakterisierung",
+        "Entladung des Reaktorkerns und Abtransport der Brennelemente in das Zwischenlager, radiologische Charakterisierung von Gebäuden und Komponenten, das Reststoff- und Abfallinventar mit Buchführung, Asbest- und Gefahrstofferkundung sowie die Definition des Zielzustands, an dem später alles gemessen wird. <em>Meilensteine: Brennelementfreiheit erklärt, Charakterisierungsbasis veröffentlicht.</em>"
+      ],
+      [
+        "Atomrechtliche Genehmigung und Entsorgungsweg",
+        "Der Antrag auf Stilllegung und Abbau nach § 7 Absatz 3 Atomgesetz mit Sicherheitsbericht und Störfallbetrachtung, Umweltverträglichkeitsprüfung und Öffentlichkeitsbeteiligung, die Abstimmung mit der atomrechtlichen Aufsichtsbehörde des Landes, die Annahmebedingungen des Endlagers und die zugesagten Einlagerungskontingente sowie das Dosisbudget nach dem Minimierungsgebot. <em>Meilensteine: Abbaugenehmigung erteilt, Entsorgungsweg bestätigt.</em>"
+      ],
+      [
+        "Abbau der Nebenanlagen und Einhausung",
+        "Asbestsanierung und konventionelle Gefahrstoffbeseitigung, Lüftung, Unterdruckhaltung und Einhausungszelte, Demontage stillgelegter Systeme und Rohrleitungen, Entleerung und Reinigung von Becken und aktiven Abläufen sowie Dekontamination zugänglicher Oberflächen. <em>Meilenstein: Nebengebäude radiologisch freigemessen.</em>"
+      ],
+      [
+        "Abbau von Reaktor und Primärkreis",
+        "Erprobung von Fernhantierung und Zerlegetechnik, Zuteilung des Dosisbudgets je Arbeitsbereich, Zerlegung und Volumenreduzierung des Primärkreises, Ausbau der Reaktoreinbauten unter Abschirmung — häufig nass —, Auswertung der Dosisleistung samt Schichtanpassung und der Abtrag des aktivierten Biologischen Schilds. <em>Meilenstein: Reaktorgebäude geräumt.</em>"
+      ],
+      [
+        "Konditionierung, Verpackung und Abtransport",
+        "Sortierung, Aktivitätsbestimmung und lückenlose Nachweisführung, Konditionierung in zugelassene Behälter nach den Annahmebedingungen, Abtransport in das Zwischenlager oder an die vorgesehene Endlagerstätte, Einlagerung und wiederkehrende Kontrollen sowie die Freigabe nach § 31 ff. der Strahlenschutzverordnung für Material, das die Anlage verlassen darf. <em>Meilenstein: alle radioaktiven Abfälle abgegeben oder zwischengelagert.</em>"
+      ],
+      [
+        "Abriss, Sanierung und Entlassung aus der Aufsicht",
+        "Abschließende Freimessung der Gebäudestrukturen, konventioneller Abriss der freigegebenen Bauwerke, Bewertung der Bodenqualität und Sanierung, das Abschlussgutachten mit Nachweispaket und die Entlassung des Standorts aus der atomrechtlichen Überwachung. <em>Meilenstein: Standort aus der Aufsicht entlassen.</em>"
+      ]
+    ],
+    callout: "Nicht die Mannschaftsstärke setzt das Tempo, sondern die Entsorgungskapazität. Jeder Kubikmeter, den Sie herausschneiden, muss irgendwohin, wo er angenommen wird, und die Annahmebedingungen bestimmen, wie der Abfall charakterisiert, konditioniert, deklariert und dokumentiert wird, bevor er sich bewegen darf. In Deutschland ist genau das die offene Flanke: Schwach- und mittelradioaktive Abfälle mit vernachlässigbarer Wärmeentwicklung sind für Schacht Konrad vorgesehen, dessen Inbetriebnahme sich wiederholt verschoben hat, und für hochradioaktive Abfälle läuft die Standortsuche noch. Was das für Ihren Plan bedeutet: Der Balken heißt Zwischenlagerung, nicht Endlagerung, er ist länger, als das erste Konzept annimmt, und wenn er voll ist, steht der Abbau mit Leuten daneben. Darüber liegt das Dosisbudget — das Minimierungsgebot begrenzt, wie viel Zeit jemand in einem Bereich verbringen darf — und jede Phase braucht ihre eigene Teilgenehmigung, bevor sie beginnt. Zeichnen Sie den Entsorgungsweg als Balken, nicht als Annahme.",
+    customize: [
+      "Legen Sie die Balken für Annahmebedingungen und zugesagte Einlagerungskontingente an, bevor Sie irgendeinen Abbau takten. Enden sie später, als Ihr Zerlegen beginnt, ist der Terminplan falsch, wie gut der Abbauplan auch aussieht.",
+      "Geben Sie der Charakterisierung einen großzügigen, frühen Balken. Jede nachgelagerte Schätzung — Massen, Konditionierung, Dosis, Kosten — leitet sich daraus ab, und eine dünne Charakterisierung ist der zuverlässigste Vorbote einer Terminüberschreitung.",
+      "Bilden Sie das Dosisbudget als Dauerrestriktion ab, nicht als Sicherheitshinweis. Lässt ein Bereich nur eine bestimmte Kollektivdosis je Kampagne zu, dauert die Arbeit so lange, wie sie dauert, und mehr Personal hilft nicht.",
+      "Setzen Sie vor jede physische Phase einen Genehmigungsmeilenstein. Der Rückbau wird in Stufen genehmigt, und die Zustimmung als einmaliges Ereignis am Anfang zu behandeln, verzeichnet die tatsächlichen Tore.",
+      "Trennen Sie Zwischenlagerung und Endlagerung. Material, das in ein standortnahes Zwischenlager geht, hat den Standort nicht verlassen, und nur eines von beidem verringert die Verbindlichkeit wirklich.",
+      "Behalten Sie einen eigenen Balken für Freigabe und Wiederverwertung. Ein erheblicher Massenanteil ist nicht aktiviert oder kontaminiert, und ihn sauber nach der Strahlenschutzverordnung freizumessen entlastet Kosten und Entsorgungsweg zugleich.",
+      "Ergänzen Sie eine Zeile für die Öffentlichkeitsbeteiligung und mögliche Klagen gegen die Genehmigung; beide haben gesetzlich getaktete Fristen und liegen häufig auf dem kritischen Pfad."
+    ],
+    tips: [
+      "<strong>Charakterisieren Sie, bevor Sie planen, nicht während Sie abbauen.</strong> Ein auf angenommenem Inventar gebauter Terminplan wird neu aufgesetzt, sobald die erste Messung höher ausfällt als erwartet.",
+      "<strong>Behandeln Sie Entsorgungskapazität wie eine Langläufer-Beschaffung.</strong> Kapazitäten sind jährlich begrenzt und haben eigene Warteschlangen; ein zugesagtes Kontingent ist ein Vermögenswert, ein fehlendes ein Stillstandsrisiko.",
+      "<strong>Zerlegen Sie für den Behälter.</strong> Die Volumenreduzierung richtet sich nach dem, was Behälter und Annahmebedingungen zulassen, nicht nach dem, was an der Schnittstelle bequem ist — aktiviertes Material nachzuschneiden ist teuer und dosisintensiv.",
+      "<strong>Verfolgen Sie die Kollektivdosis wöchentlich gegen das Budget.</strong> Eine Dosisaufnahme über Plan ist ein Frühwarnzeichen für ein falsches Verfahren, und sie zeigt sich lange bevor der Termin rutscht.",
+      "<strong>Nehmen Sie Asbest und konventionelle Gefahrstoffe ernst.</strong> In vielen älteren Anlagen treiben die nichtradiologischen Gefahren mehr vom frühen Programm als die radiologischen, und sie versperren den Zugang zu allem dahinter.",
+      "<strong>Führen Sie das Nachweispaket laufend mit.</strong> Die Entlassung aus der Aufsicht hängt am Nachweis, dass der Zielzustand erreicht ist, und Mess- und Abgabeaufzeichnungen am Ende zu rekonstruieren ist langsamer, als sie aktuell zu halten."
+    ],
+    faq: [
+      [
+        "Wie lange dauert der Rückbau eines Kernkraftwerks?",
+        "Die Vorlage umfasst rund 1.200 Tage für den direkten Rückbau einer Anlage, in der Praxis reichen deutsche Vorhaben aber von etwa fünfzehn Jahren bis zu mehreren Jahrzehnten — je nach Strategie, verfügbaren Entsorgungswegen und ob ein sicherer Einschluss zwischengeschaltet wird."
+      ],
+      [
+        "Warum steuert die Entsorgung den Terminplan?",
+        "Weil abgebautes Material charakterisiert, konditioniert und an eine Stelle abgegeben werden muss, die es annimmt. Ist der Weg nicht verfügbar oder sind die Annahmebedingungen nicht erfüllt, bleibt das Material am Standort, das Lager füllt sich, und das Zerlegen muss anhalten."
+      ],
+      [
+        "Welche Genehmigung braucht der Rückbau in Deutschland?",
+        "Eine Stilllegungs- und Abbaugenehmigung nach § 7 Absatz 3 Atomgesetz, erteilt von der atomrechtlichen Aufsichtsbehörde des jeweiligen Landes, mit Sicherheitsbericht, Störfallbetrachtung, Umweltverträglichkeitsprüfung und Öffentlichkeitsbeteiligung. Sie wird üblicherweise in Stufen erteilt, und die Aufsicht begleitet den Abbau danach fortlaufend mit Zustimmungsvorbehalten für einzelne Maßnahmen."
+      ],
+      [
+        "Wohin gehen die radioaktiven Abfälle?",
+        "Schwach- und mittelradioaktive Abfälle mit vernachlässigbarer Wärmeentwicklung sind für das Endlager Schacht Konrad vorgesehen, dessen Inbetriebnahme sich mehrfach verschoben hat; bis dahin gehen sie in standortnahe oder zentrale Zwischenlager. Für hochradioaktive Abfälle läuft die Standortsuche nach dem Standortauswahlgesetz noch. Planen Sie deshalb mit Zwischenlagerkapazität als echter Restriktion und nicht mit einem Abgabetermin, den niemand zusagen kann."
+      ],
+      [
+        "Was bedeutet Freigabe nach der Strahlenschutzverordnung?",
+        "Es ist das Verfahren, mit dem Material aus dem atomrechtlichen Regime entlassen wird, wenn seine Aktivität unter den festgelegten Freigabewerten liegt. Es setzt ein behördlich zugestimmtes Messkonzept, dokumentierte Freimessung und die Zustimmung der Aufsichtsbehörde voraus. Ein großer Teil der Gesamtmasse geht diesen Weg, weshalb er einen eigenen Balken verdient — er entlastet den Entsorgungspfad spürbar."
+      ],
+      [
+        "Ist die atomrechtliche Zustimmung eine einzige Freigabe?",
+        "Nein. Der Rückbau wird in Stufen genehmigt, mit eigenem Nachweis für jede größere Phase und laufender Aufsicht dazwischen. Die Vorlage setzt Genehmigungsmeilensteine vor die physischen Phasen, statt eine einzige Zustimmung am Anfang zu zeigen."
+      ],
+      [
+        "Ist die Rückbau-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'university-accreditation-timeline': {
+    card: "Rückwärtsplanung ab Begehung und Sitzung des Akkreditierungsrats.",
+    h1: "Zeitplan für die Akkreditierung an einer Hochschule",
+    metaTitle: "Zeitplan Hochschulakkreditierung",
+    metaDesc: "Kostenloser Zeitplan für die Akkreditierung: Rückwärtsplanung ab Begehung und Sitzung des Akkreditierungsrats, Selbstbericht, Nachweise, Beteiligung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Hochschulakkreditierung</strong>, die dort beginnt, wo der echte Terminplan beginnt: bei zwei Terminen, die jemand anderes besitzt. Die beauftragte Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur wenige Male im Jahr stattfindet — es gibt also ein Einreichfenster, und es zu verpassen kostet einen Turnus und nicht einen Monat. Alles Weitere wird davon zurückgerechnet: Lenkungsgruppe und Arbeitsgruppen, eine Lückenanalyse gegen die Kriterien des Studienakkreditierungsstaatsvertrags, Daten aus Qualitätssicherung und Lehrevaluation, Beteiligung von Lehrenden, Studierenden und Hochschulleitung, danach Entwurf, interne Prüfung, Probebegehung und Einreichung.",
+    intro: "Die Akkreditierung ist das seltene Hochschulprojekt mit einer wirklich unverrückbaren Frist, die die Hochschule nicht selbst gewählt hat. Die Vorlage ist von hinten nach vorn gelegt:",
+    phases: [
+      [
+        "Verfahrensklärung und Abstimmung mit der Agentur",
+        "Klärung, ob Sie ein Programm- oder ein Systemakkreditierungsverfahren führen, Lektüre der formalen und fachlich-inhaltlichen Kriterien der Musterrechtsverordnung, Auswahl und Beauftragung einer beim Akkreditierungsrat registrierten Agentur, Bestätigung des Begehungstermins und der Sitzung des Akkreditierungsrats sowie die Rückwärtsplanung aus der Einreichfrist. <em>Meilensteine: Begehungstermin fixiert, Einreichfenster bestätigt.</em>"
+      ],
+      [
+        "Aufbau des Selbstberichts und Verfahrenssteuerung",
+        "Berufung und Beauftragung der Lenkungsgruppe, Arbeitsgruppen je Kriterium oder je Studiengang, Gliederung des Selbstberichts und Nachweisraster, eine Lückenanalyse gegen die Kriterien sowie ein Nachweisspeicher, der den gesamten Turnus übersteht. <em>Meilenstein: Lückenanalyse im Präsidium berichtet.</em>"
+      ],
+      [
+        "Nachweise, Qualitätsdaten und Nachbesserung",
+        "Ein vollständiger Zyklus der Lehrveranstaltungsevaluation und der Überprüfung der Qualifikationsziele, Kennzahlen zu Studienerfolg, Verbleib und Studierbarkeit, Prüfung der Qualifikation des Lehrpersonals, Ressourcennachweise, Änderungen von Prüfungs- und Studienordnungen zur Schließung der Lücken sowie die Aktualisierung von Modulhandbuch und Arbeitsaufwandserhebung. <em>Meilenstein: Nachweisbasis vollständig.</em>"
+      ],
+      [
+        "Beteiligung von Lehrenden, Studierenden und Gremien",
+        "Berichte in Fakultätsrat und Senat, Workshops zu einzelnen Kriterien, Nachweisklinik für Studiendekaninnen und Studiendekane, Befragungen von Studierenden und Absolventen sowie die Einbindung der studentischen Vertretung und der Berufspraxis, die im Gutachtergremium ohnehin vertreten sind."
+      ],
+      [
+        "Selbstbericht: Entwurf, Prüfung und Einreichung",
+        "Erster vollständiger Entwurf, hochschulinterne Kommentierungsfrist, eine Probebegehung mit externen Kolleginnen und Kollegen, Endredaktion mit Anlagen und verknüpften Nachweisen, Beschluss der Hochschulleitung und Einreichung innerhalb des Fensters. <em>Meilenstein: Selbstbericht eingereicht.</em>"
+      ],
+      [
+        "Begehung, Stellungnahme und Beschluss",
+        "Organisation und Gesprächsplan, Probelauf auf dem Campus, Vorgespräch mit der Agentur und Nachforderung von Unterlagen, die Begehung durch das Gutachtergremium, der Entwurf des Gutachtens, die Stellungnahme der Hochschule, der Beschlussvorschlag der Agentur und die Sitzung des Akkreditierungsrats. <em>Meilenstein: Akkreditierung ausgesprochen.</em>"
+      ]
+    ],
+    callout: "Die beiden Termine, auf die es ankommt, gehören Ihnen nicht. Die Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur einige Male im Jahr zusammentritt — das Einreichfenster davor ist eng und hart. Wird es verpasst, rutscht das ganze Verfahren in den nächsten Turnus und nimmt Selbstbericht, Nachweise und guten Willen mit. Jeder andere Balken ist abgeleitet: der spätestmögliche Termin für den Beschluss der Hochschulleitung, für die Endfassung, für die Probebegehung, für den Evaluationszyklus, der mindestens einmal gelaufen sein muss. Fixieren Sie zuerst den Begehungstermin und lassen Sie den Rest zurückrechnen. Und klären Sie früh, welches Verfahren Sie führen: In der Programmakkreditierung wird jeder Studiengang einzeln begutachtet, in der Systemakkreditierung Ihr internes Qualitätsmanagementsystem, das anschließend selbst akkreditiert — zwei sehr verschiedene Terminpläne.",
+    customize: [
+      "Tragen Sie Begehungstermin und Sitzungstermin des Akkreditierungsrats zuerst als feste Marken ein und ziehen Sie jeden anderen Balken rückwärts, bis es passt. Passt es nicht, lautet die Antwort früher mehr Ressourcen — niemals eine kürzere Schreibphase.",
+      "Legen Sie in der Programmakkreditierung eine Arbeitsgruppenzeile je Studiengang oder Bündel an. Sie kommen nicht gleich schnell voran, und ein gemittelter Balken verbirgt die zwei Gruppen, die feststecken.",
+      "Geben Sie dem Evaluations- und Qualitätsdatenzyklus ein volles Semester oder Studienjahr. Qualifikationsziele lassen sich nicht rückwirkend belegen, und dieser Balken wird am häufigsten zu spät entdeckt.",
+      "Setzen Sie die Probebegehung früh genug an, um auf die Befunde reagieren zu können. Eine Generalprobe zwei Wochen vor dem Termin ist Theater; eine vor der Endredaktion ist ihr Geld wert.",
+      "Planen Sie die Änderung von Prüfungs- und Studienordnungen mit dem tatsächlichen Gremienweg: Fakultätsrat, Senat, Rechtsprüfung und Veröffentlichung haben feste Sitzungstermine, die Sie nicht verschieben.",
+      "Führen Sie die Beteiligung der Lehrenden als echte terminierte Arbeit mit Verantwortlichen. Nachweise liegen in den Fachbereichen, und ein zentral geschriebener Selbstbericht ohne die Fachbereiche liest sich für ein Gutachtergremium auch so.",
+      "Ergänzen Sie in der Systemakkreditierung Zeilen für die Merkmalsstichproben; die Agentur prüft Ihr Qualitätsmanagementsystem an ausgewählten Studiengängen, und diese Auswahl treffen nicht Sie."
+    ],
+    tips: [
+      "<strong>Bestätigen Sie nicht nur die Begehung, sondern den Sitzungstermin.</strong> Die Begehung ist sichtbar; die Sitzung des Akkreditierungsrats ist der eigentliche Entscheidungspunkt und legt fest, wie viel Zeit für die Stellungnahme zum Gutachten bleibt.",
+      "<strong>Bauen Sie den Nachweisspeicher einmal, am Anfang.</strong> Dokumente zweimal zu suchen — erst für die Arbeitsgruppen, dann für die Anlagen — ist der größte vermeidbare Aufwand des ganzen Turnus.",
+      "<strong>Schließen Sie Lücken früh genug, um Praxis zu zeigen.</strong> Eine im Monat vor der Begehung beschlossene Ordnung zeigt Problembewusstsein; eine ein Jahr zuvor beschlossene zeigt gelebte Praxis, und Gutachtergremien kennen den Unterschied.",
+      "<strong>Proben Sie die Gespräche mit denen, die wirklich im Raum sitzen.</strong> Das Gremium spricht mit Studiendekanen, Lehrbeauftragten, Studierenden und Verwaltung, nicht nur mit der Lenkungsgruppe — und unvorbereitete Ehrlichkeit ist die Quelle der meisten Auflagen.",
+      "<strong>Halten Sie den Selbstbericht in einer Stimme.</strong> Zwölf Arbeitsgruppen erzeugen zwölf Stile; planen Sie echte Redaktionszeit ein, sonst liest sich das Dokument als Sammlung von Zulieferungen und nicht als Argument der Hochschule.",
+      "<strong>Planen Sie das Fenster für die Stellungnahme.</strong> Sachliche Fehler vor der Sitzung zu korrigieren ist eine echte Gelegenheit, und es ist eine kurze Phase unter Druck, die einen eigenen Balken verdient."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Akkreditierungsverfahren?",
+        "Die Vorbereitung läuft für eine Reakkreditierung etwa zwei Jahre, und ungefähr diese Spanne nutzt die Vorlage. Der Selbstbericht selbst ist vielleicht ein halbes Jahr Schreibarbeit; die Qualitätsdaten und das Schließen der Lücken davor dauern deutlich länger."
+      ],
+      [
+        "Was ist der Unterschied zwischen Programm- und Systemakkreditierung?",
+        "In der Programmakkreditierung wird jeder Studiengang einzeln gegen die formalen und fachlich-inhaltlichen Kriterien begutachtet. In der Systemakkreditierung wird stattdessen Ihr internes Qualitätsmanagementsystem akkreditiert; die Hochschule akkreditiert ihre Studiengänge danach selbst, geprüft an Stichproben. Der Aufwand verschiebt sich damit von vielen kleinen Verfahren zu einem großen — und zu der Frage, ob Ihr internes System die Prüfung tatsächlich trägt."
+      ],
+      [
+        "Wer entscheidet über die Akkreditierung?",
+        "Die Agentur führt das Verfahren und organisiert das Gutachtergremium, aber die Entscheidung trifft der Akkreditierungsrat in seiner Akkreditierungskommission auf Grundlage des Studienakkreditierungsstaatsvertrags. Seine Sitzungen finden nur wenige Male im Jahr statt, und genau deshalb ist die Einreichfrist davor eine harte Marke."
+      ],
+      [
+        "Was passiert, wenn wir das Einreichfenster verpassen?",
+        "Das Verfahren rutscht in aller Regel in die nächste Sitzung, die Monate entfernt sein kann. Deshalb zeigt die Vorlage die Einreichung als harten Meilenstein mit bewusst davorgelegtem Beschluss der Hochschulleitung und Endredaktion."
+      ],
+      [
+        "Wann sollte das Schreiben des Selbstberichts beginnen?",
+        "Nach der Lückenanalyse und sobald die Qualitätsdaten vorliegen, nicht davor. Früh ohne Nachweise zu schreiben erzeugt ein Dokument, das neu geschrieben werden muss, und das ist langsamer, als auf die Daten zu warten."
+      ],
+      [
+        "Was passiert bei Auflagen?",
+        "Eine Akkreditierung mit Auflagen ist der Normalfall und kein Scheitern. Die Auflagen sind fristgebunden, und ihre Erfüllung muss der Agentur nachgewiesen werden — planen Sie diese Nachweisführung als eigene Balken hinter dem Beschluss ein, sonst fällt sie in die Zeit, in der alle Beteiligten das Verfahren für beendet halten."
+      ],
+      [
+        "Ist die Vorlage für die Hochschulakkreditierung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'crop-planting-harvest-schedule': {
+    card: "Sammelantrag, Sperrfristen, Aussaatfenster, Wachstumsstadien, Ernte und Trocknung.",
+    h1: "Anbau- und Erntezeitplan für den Ackerbau",
+    metaTitle: "Anbau- und Erntezeitplan",
+    metaDesc: "Kostenloser Anbau- und Erntezeitplan: Sammelantrag, Sperrfristen der Düngeverordnung, Aussaatfenster, Wachstumsstadien, Erntefeuchte, Trocknung und Lager.",
+    lead: "Eine kostenlose <strong>Vorlage für den Anbau- und Erntezeitplan</strong> für ein Jahr, das sich wirklich nicht verschieben lässt. Winterplanung, Bodenuntersuchung, Betriebsmittel und Maschinenwartung; ein Aussaatfenster, das von Bodentemperatur und Befahrbarkeit geöffnet wird und nicht von einem Projektplan; die Aussaat über frühe, mittlere und späte Schläge getaktet, weil eine Maschinenkette sie alle bedienen muss; eine agronomische Abfolge von Wachstumsstadien, an denen Pflanzenschutz- und Düngetermine hängen; danach die Ernte, getaktet von der Kornfeuchte, und Trocknungs- und Lagerkapazität, die bestimmen, wie schnell gedroschen werden kann. Dazwischen liegen zwei Termine, die der Gesetzgeber setzt: der Sammelantrag und die Sperrfristen der Düngeverordnung.",
+    intro: "Fast jeder andere Terminplan verhandelt mit seinen Restriktionen. Ein Anbaujahr nicht: Die Biologie setzt die Reihenfolge, das Wetter das Fenster und das Fachrecht feste Kalendertage. Die Vorlage hält alle drei sichtbar:",
+    phases: [
+      [
+        "Winterplanung, Betriebsmittel und Antragsfristen",
+        "Anbauplan und Fruchtfolge je Schlag, Bodenuntersuchung mit Nährstoffergebnissen, Bestellung von Saatgut, Düngemitteln und Pflanzenschutzmitteln, Wartung und Kalibrierung der Maschinen, Buchung von Arbeitskräften und Lohnunternehmen sowie der Sammelantrag mit den Vorgaben der Gemeinsamen Agrarpolitik, dessen Frist unabhängig von Ihrem Feldkalender läuft. <em>Meilensteine: Sammelantrag gestellt, Betriebsmittel eingelagert.</em>"
+      ],
+      [
+        "Saatbettbereitung und Aussaatfenster",
+        "Beobachtung von Bodentemperatur und Befahrbarkeit, Grundbodenbearbeitung und Saatbettbereitung, Vorauflaufherbizid und Startdüngung im Rahmen der Düngebedarfsermittlung, danach die Aussaat über frühe Schläge, den Hauptblock und die späten oder nassen Flächen. <em>Meilensteine: Aussaatfenster offen, Aussaat abgeschlossen.</em>"
+      ],
+      [
+        "Auflauf und Wachstumsstadien",
+        "Bestandeszählung und Bewertung der Etablierung, Bestockung, Schossen und Bestandesschluss, Blüte und Kornfüllung, mit wöchentlichen Bestandeskontrollen und Bewässerungsplanung über die gesamte Saison. <em>An den Wachstumsstadien hängen die Behandlungstermine, nicht am Kalender.</em>"
+      ],
+      [
+        "Pflanzenschutz- und Düngeprogramm",
+        "Nachauflaufherbizid zur frühen Bestockung, die Stickstoffgaben innerhalb der ermittelten Obergrenze, Fungizid zum Schossen, zum Erscheinen des Fahnenblatts und zur Blüte — jeweils an ein Wachstumsstadium gebunden. Dazu die Pflichten, die mitlaufen: gültige Sachkunde im Pflanzenschutz, geprüfte Spritze, Abstandsauflagen zu Gewässern und Saumbiotopen sowie die einzuhaltenden Wartezeiten vor der Ernte. <em>Meilenstein: Behandlungsprogramm abgeschlossen.</em>"
+      ],
+      [
+        "Ernte und Feldlogistik",
+        "Messung der Kornfeuchte und Druschreife, Bereitschaft von Mähdrescher und Abfuhrkette, danach die Ernte über frühe, mittlere und späte Schläge mit Abfuhr und Waagenlogistik parallel. <em>Meilensteine: Erntefenster bei Zielfeuchte offen, Ernte abgeschlossen.</em>"
+      ],
+      [
+        "Trocknung, Lagerung und Nachernte",
+        "Durchsatz der Trocknung und Feuchtesteuerung, Befüllung des Lagers mit Belüftung und Temperaturüberwachung, Probenahme, Qualitätsbestimmung und Dokumentation für die Erzeugerrichtlinien, Vertragslieferungen, Stoppelbearbeitung und Zwischenfruchtaussaat innerhalb der Fristen sowie der Rückblick auf das Anbaujahr. <em>Meilenstein: Anbaujahr abgeschlossen.</em>"
+      ]
+    ],
+    callout: "Der Kalender gehört Ihnen nicht. Bodentemperatur und Befahrbarkeit entscheiden, wann gesät werden kann; die Wachstumsstadien entscheiden, wann jede Behandlung sitzt, und ein Fungizid eine Woche neben dem Stadium ist verbranntes Geld; die Kornfeuchte entscheidet, wann der Mähdrescher fahren darf. Dahinter steht eine zweite, härtere Grenze: Trocknungsdurchsatz und Lagerkapazität. Wer zwanzig Tonnen je Stunde trocknen kann, kann auf Dauer nicht schneller dreschen, egal wie viele Mähdrescher im Feld stehen. Und dann gibt es Termine, die nicht das Wetter setzt, sondern das Recht: Der Sammelantrag hat eine Ausschlussfrist, deren Versäumnis bares Geld kostet, und die Düngeverordnung schreibt Sperrfristen fest, in denen stickstoffhaltige Düngemittel schlicht nicht ausgebracht werden dürfen — auf Ackerland nach der Ernte der letzten Hauptfrucht bis Ende Januar, auf Grünland etwas anders, und in nitratbelasteten roten Gebieten mit zusätzlichen Auflagen und verlängerten Sperrzeiten. Diese Daten stehen im Kalender fest, bevor die Saison beginnt. Zeichnen Sie sie als graue Sperrbalken ein, gegen die die Ausbringungsbalken stoßen dürfen — sie sind die verlässlichsten Restriktionen im ganzen Plan.",
+    customize: [
+      "Setzen Sie den Meilenstein für das Aussaatfenster aus Ihren eigenen Bodentemperaturaufzeichnungen, nicht aus dem Saattermin des Vorjahres, und lassen Sie die Aussaatbalken mitwandern.",
+      "Legen Sie die Sperrfristen der Düngeverordnung als feste Sperrbalken über das ganze Jahr, getrennt nach Ackerland und Grünland. Jeder Ausbringungsbalken, der dagegen stößt, ist ein Planungsfehler, den Sie im Februar sehen und nicht im Oktober.",
+      "Tragen Sie die Frist für den Sammelantrag als harten Meilenstein ein, mit einer eigenen Zeile für die Erfassung der Flächen und Nutzungen davor. Sie ist eine Ausschlussfrist, und Kürzungen der Zahlungen sind teurer als jede Ertragsdifferenz im selben Plan.",
+      "Teilen Sie die Aussaat in frühe, mittlere und späte Schläge, dimensioniert nach Ihrer echten Tagesleistung. Daran zeigt sich, ob die Kette im Fenster fertig wird oder ob Sie ein Lohnunternehmen brauchen.",
+      "Hängen Sie jeden Behandlungsbalken an einen Wachstumsstadienbalken statt an ein Datum. Läuft die Saison früh oder spät, sollen die Termine automatisch mit dem Bestand wandern.",
+      "Ergänzen Sie eine Zeile je Kultur, wenn Sie mehrere anbauen. Ihre Fenster überlappen und konkurrieren um dieselbe Drillmaschine, dieselbe Spritze und denselben Mähdrescher, und genau diese Konkurrenz ist der Sinn des Diagramms.",
+      "Geben Sie dem Trocknungsdurchsatz einen eigenen Balken durch die Ernte hindurch. Ist er kürzer als die Erntebalken darüber, ist die Lagerung Ihre Restriktion, und der Plan soll das aussprechen.",
+      "Legen Sie eine Zeile für Wartezeiten zwischen der letzten Behandlung und dem Drusch an — sie ist mittelspezifisch, sie ist verbindlich, und sie kollidiert regelmäßig mit dem frühesten Termin, an dem die Feuchte passt."
+    ],
+    tips: [
+      "<strong>Säen Sie nach Bodenzustand, nicht nach Plan.</strong> Ein nass gedrilltes Saatbett kostet Ertrag über die ganze Saison, und die scheinbar gesparten Tage kommen als schlechte Etablierung zurück, aus der kein Pflanzenschutz herausführt.",
+      "<strong>Halten Sie die Spritze vor dem Bestand, nicht dahinter.</strong> Stadienbezogene Termine haben ein Fenster von wenigen Tagen; eine Spritze, die auf einem anderen Schlag festhängt, ist der häufigste Grund für ein zu spätes Fungizid.",
+      "<strong>Planen Sie die Ernte um die Trocknung, nicht um den Mähdrescher.</strong> Feucht zu dreschen nützt nur, wenn Sie es auch trocknen können; sonst steht das Korn im Hänger und erwärmt sich, während der Mähdrescher produktiv aussieht.",
+      "<strong>Prüfen Sie die Sachkunde und die Spritzenprüfung vor der Saison.</strong> Ein abgelaufener Sachkundenachweis oder eine überfällige Gerätekontrolle legt die Applikation still, und beides ist im Winter eine Formalie und im Mai ein Ernteschaden.",
+      "<strong>Buchen Sie Transport und Lohnunternehmen vor der Ernte, nicht während.</strong> Alle brauchen die Fahrzeuge in denselben vierzehn Tagen, und ein volles Lager ohne Abfluss stoppt den Mähdrescher so zuverlässig wie Regen.",
+      "<strong>Warten Sie die Maschinen im Winter und kalibrieren Sie vor dem Fenster.</strong> Ein Ausfall in einem vierzehntägigen Aussaatfenster ist keine Reparatur, sondern ein verlorener Schlag, und Werkstattzeit im Februar ist dagegen umsonst.",
+      "<strong>Dokumentieren Sie laufend.</strong> Düngebedarfsermittlung, Aufzeichnungen zur Ausbringung, Pflanzenschutzdokumentation, Feuchtemessungen und Lagertemperaturen werden für Kontrollen und Abnahmeverträge gebraucht, und sie nach der Ernte zu rekonstruieren ist langsam und wenig überzeugend."
+    ],
+    faq: [
+      [
+        "Wie baut man einen Anbau- und Erntezeitplan auf?",
+        "Beginnen Sie mit den Fenstern, die Sie nicht steuern — Bodentemperatur für die Aussaat, Kornfeuchte für die Ernte — und fügen Sie die Maschinenkette dazwischen ein. Legen Sie darüber die Termine, die das Fachrecht setzt: Sammelantragsfrist und Sperrfristen. Die agronomische Abfolge dazwischen bestimmt die Kultur, nicht die Vorliebe."
+      ],
+      [
+        "Warum hängen Behandlungstermine an Wachstumsstadien statt an Daten?",
+        "Weil ein Fungizid oder Herbizid nur in einem engen Fenster um ein bestimmtes Stadium wirkt, und weil die Zulassung die Anwendung häufig ausdrücklich an Stadien bindet. Läuft die Saison zwei Wochen früher, wandern die Termine zwei Wochen mit — deshalb hängt die Vorlage sie an die Stadienbalken."
+      ],
+      [
+        "Was sind die Sperrfristen der Düngeverordnung und wie planen wir mit ihnen?",
+        "Es sind gesetzlich festgelegte Zeiträume, in denen stickstoff- oder phosphathaltige Düngemittel nicht ausgebracht werden dürfen — auf Ackerland im Kern zwischen der Ernte der letzten Hauptfrucht und dem Ende des Januars, auf Grünland in einem abweichenden Zeitraum, mit weiteren Einschränkungen auf gefrorenem, überschwemmtem oder schneebedecktem Boden. Weil sie datumsfest sind, sind sie die planbarste Restriktion des Jahres: Zeichnen Sie sie als Sperrbalken und legen Sie Herbst- und Frühjahrsgaben dagegen an. Die genauen Daten und die Abweichungen für einzelne Kulturen prüfen Sie bitte in der geltenden Fassung und bei Ihrer Landwirtschaftskammer."
+      ],
+      [
+        "Was gilt zusätzlich in roten Gebieten?",
+        "In nitratbelasteten Gebieten kommen verschärfte Auflagen hinzu, typischerweise eine Absenkung des ermittelten Düngebedarfs, verlängerte Sperrfristen und Vorgaben zur Begrünung. Weil die Ausweisung dieser Gebiete durch die Länder erfolgt und sich ändern kann, gehört sie als eigene Prüfzeile in die Winterplanung und nicht in eine Fußnote — sie verändert sowohl die Mengen als auch die Termine."
+      ],
+      [
+        "Was begrenzt die Erntegeschwindigkeit?",
+        "Meist Trocknung und Lagerung, nicht die Drescherleistung. Ist der Durchsatz niedriger als die Rate, mit der Korn ankommt, muss langsamer gedroschen werden — deshalb gehört der Trocknungsbalken neben die Erntebalken."
+      ],
+      [
+        "Wann sollten Betriebsmittel und Lohnunternehmen gebucht werden?",
+        "Über den Winter, deutlich vor Öffnung des Fensters. Verfügbarkeit von Saatgut, Pflanzenschutzmitteln und Spezialtechnik ist regional und wird mit Saisonbeginn schnell knapp; eine späte Buchung verkürzt Ihr Fenster faktisch."
+      ],
+      [
+        "Ist die Vorlage für Anbau und Ernte kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'gym-opening-timeline': {
+    card: "Mietvertrag, Ausbau, Gerätelieferzeiten, Gründungsmitglieder-Vorverkauf, Eröffnung.",
+    h1: "Zeitplan für die Eröffnung eines Fitnessstudios",
+    metaTitle: "Zeitplan Fitnessstudio-Eröffnung",
+    metaDesc: "Kostenloser Zeitplan für die Studioeröffnung: Ausbau, Gerätelieferzeiten, Vorverkauf an Gründungsmitglieder, Trainer-Lizenzen, Probebetrieb, Eröffnung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Fitnessstudio-Eröffnung</strong>, geordnet um das, was tatsächlich entscheidet, ob ein Studio gut eröffnet: den Vorverkauf. Mitgliedschaften werden Monate vor der Öffnung verkauft, also laufen Marke, Website, Bauzaunwerbung und die Kampagne für Gründungsmitglieder vor dem Ausbau und nicht dahinter — und die Zielzahl an Gründungsmitgliedern ist ein Tor für die Eröffnungsentscheidung und keine Marketingzugabe. Dahinter: Mietvertrag, Gewerbeanmeldung und gegebenenfalls eine Nutzungsänderung, ein Ausbau mit echten Anforderungen an Deckenlast und Schallschutz, Geräte mit langen Fertigungsvorläufen, Trainerqualifikation, die vor der Montage nicht beginnen kann, und ein Kursplan, der geprobt werden muss.",
+    intro: "Ein Studio, das mit leerer Mitgliederliste öffnet, ist ab Woche eins in Schwierigkeiten. Die Vorlage stellt das Marketing deshalb vor den Bau und nicht dahinter:",
+    phases: [
+      [
+        "Konzept, Standort und Mietvertrag",
+        "Format- und Einzugsgebietsanalyse, Finanzmodell und Beitragsstaffel, Standortsuche und Auswahl, Absichtserklärung und Unterzeichnung des Gewerbemietvertrags sowie Finanzierung, Rechtsform, Gewerbeanmeldung beim Gewerbeamt und die Betriebshaftpflichtversicherung. <em>Meilenstein: Mietvertrag unterzeichnet.</em>"
+      ],
+      [
+        "Planung, Genehmigungen und Ausbau",
+        "Flächenaufteilung und Zonierung, Bauantrag und Nutzungsänderung, wo die bisherige Nutzung eine andere war, Nachweis der Deckenlast im Freihantelbereich und Schallschutzkonzept, Rückbau und Rohinstallation der Technik, Umkleiden, Sanitär und Entwässerung, danach Fallschutzboden, Spiegel und Studioausbau. <em>Meilenstein: Ausbau im Wesentlichen fertig.</em>"
+      ],
+      [
+        "Gerätebeschaffung und Montage",
+        "Spezifikation und Angebote, frühe Bestellung von Ausdauer- und Kraftgeräten, Fertigung und Transport als Langläufer, Lieferung von Rig und Freihantelbereich, Aufbau und Verankerung, danach die sicherheitstechnische Abnahme und das Anlagenverzeichnis. <em>Meilenstein: Trainingsfläche ausgestattet und sicher nutzbar.</em>"
+      ],
+      [
+        "Marke, Marketing und Vorverkauf an Gründungsmitglieder",
+        "Markenauftritt und Beschilderung, Website, Buchungs-App und Zahlungsanbindung mit Lastschriftmandat, Bauzaunwerbung und lokale Pressearbeit für die Warteliste, danach der Start des Vorverkaufs, der monatelang läuft, während die Fläche noch Baustelle ist. <em>Meilensteine: Vorverkauf gestartet, Zielzahl Gründungsmitglieder erreicht.</em>"
+      ],
+      [
+        "Personal, Qualifikation und Programm",
+        "Gewinnung von Studioleitung und Trainerinnen und Trainern, Prüfung der Trainer-Lizenzen und der Berufshaftpflicht, Anmeldung bei der zuständigen Berufsgenossenschaft, Geräteeinweisung, Erste-Hilfe-Ausbildung und Notfallübung, der Kursplan mit zugeordneten Übungsleitern und dessen Probelauf. <em>Meilenstein: Team betriebsbereit.</em>"
+      ],
+      [
+        "Abnahmen, Probebetrieb und Eröffnung",
+        "Brandschutzabnahme und Nutzungsfreigabe, Reinigung, Shop und Automaten, Zutrittskontrolle und Mitgliedsausweise, eine Probewoche für Gründungsmitglieder, Mängelabarbeitung, danach der Eröffnungstag und die erste Auswertung der Kündigungsquote. <em>Meilensteine: öffentliche Eröffnung, eingeschwungener Betrieb.</em>"
+      ]
+    ],
+    callout: "Der Vorverkauf ist der Kern. Die Wirtschaftlichkeit eines Studios hängt ab Monat eins an der Mitgliederzahl, und Mitgliedschaften werden verkauft, lange bevor jemand das Gebäude nutzen kann — Marke, Website, Zahlungsanbindung und die Kampagne für Gründungsmitglieder müssen also live sein, während die Fläche noch eingezäunt und staubig ist. Zeichnen Sie diese Balken vor die Fertigstellung des Ausbaus und behandeln Sie die Zielzahl der Gründungsmitglieder als Tor für die Eröffnungsentscheidung: Fehlt die Zahl, ist die richtige Antwort meist mehr Vorverkaufswochen und kein Eröffnungstag vor leerer Fläche. Dahinter liegen die Geräte mit Fertigungsvorläufen in Monaten, und Trainerqualifikation wie Kursprobe können erst beginnen, wenn die Technik verankert ist. Und prüfen Sie früh die baurechtliche Seite: Kommt aus Ihrer Fläche und der geplanten Belegung eine Versammlungsstätte im Sinne der Versammlungsstättenverordnung Ihres Landes, ändern sich Rettungswege, Brandschutz und Abnahme grundlegend — das ist eine Planungsfrage für den Monat des Mietvertrags, nicht für den Monat vor der Eröffnung.",
+    customize: [
+      "Starten Sie den Vorverkaufsbalken so früh, wie Zahlungsanbindung und Vertragsbedingungen es erlauben, und lassen Sie ihn parallel zum Ausbau laufen. Beginnt er nach der Übergabe, ist das Gründungsmitglieder-Fenster vollständig verloren.",
+      "Setzen Sie die Zielzahl der Gründungsmitglieder als ausdrücklichen Meilenstein mit einer Zahl und entscheiden Sie vorab, was bei Verfehlung passiert — den Vorverkauf zu verlängern ist eine Entscheidung, kein Scheitern.",
+      "Ziehen Sie die Gerätebestellung vor die Ausbaubalken. Fertigung und Transport laufen häufig drei bis vier Monate, und nichts an einem fertigen Gebäude verkürzt sie.",
+      "Behalten Sie Deckenlast und Schallschutz als eigenen Planungsbalken. Freihantelbereiche und Kursräume über oder neben anderen Mietern sind die häufigste späte und teure Überraschung im Studioausbau.",
+      "Legen Sie eine eigene Zeile für die Klärung an, ob Ihre Fläche als Versammlungsstätte einzustufen ist, und führen Sie sie vor die Ausbauplanung. Die Antwort verändert Rettungswege, Brandschutz und Abnahmeweg.",
+      "Takten Sie Trainerqualifikation und Geräteeinweisung nach der Montage, nicht davor. Niemand wird auf Geräten eingewiesen, die noch in Kisten stehen.",
+      "Ergänzen Sie einen Balken für die Kursprobe mit echtem Kursplan und echten Übungsleitern. Es ist der einzige Testlauf dessen, wofür Mitglieder tatsächlich kommen."
+    ],
+    tips: [
+      "<strong>Verkaufen Sie, bevor Sie bauen.</strong> Ein Bauzaun mit QR-Code und Gründungsmitglieder-Angebot wandelt weit besser als eine Anzeige in der Eröffnungswoche, und er bringt Monate früher Geld und ein echtes Nachfragesignal.",
+      "<strong>Machen Sie das Vorverkaufsangebot befristet und ehrlich.</strong> Gründungsmitglieder-Preise wirken, weil sie später wirklich geschlossen werden; ein zweiter Rabatt im zweiten Monat lehrt alle, auf das nächste Angebot zu warten.",
+      "<strong>Tage der offenen Baustelle funktionieren.</strong> Menschen unterschreiben auf einer Baustellenführung bereitwilliger als auf einer Website, und es kostet nichts als ein paar Helme und einen Samstag.",
+      "<strong>Legen Sie den Eröffnungstag nicht auf eine Abnahme im ersten Anlauf.</strong> Brandschutz- und Nutzungsfreigabe brauchen häufig eine Nachbegehung, und ein Eröffnungstermin ohne Puffer davor wird zu Rückerstattungen und Entschuldigungen.",
+      "<strong>Testen Sie Zutrittskontrolle und Abrechnung im Probebetrieb mit echten Mitgliedern.</strong> Türsysteme, Schließfächer und Lastschriften scheitern auf Arten, die erst in der Menge auftreten, und Gründungsmitglieder sind ein nachsichtiges Publikum dafür.",
+      "<strong>Terminieren Sie die erste Kündigungsauswertung vor der Eröffnung.</strong> Die Kündigungen des ersten Monats sagen mehr über das Geschäft als die Vorverkaufszahl, und niemand terminiert sie nach dem Start, wenn sie nicht schon im Plan steht."
+    ],
+    faq: [
+      [
+        "Wie lange dauert die Eröffnung eines Fitnessstudios?",
+        "Etwa elf bis zwölf Monate vom Konzept bis zum Eröffnungstag in angemieteter Fläche, und das nutzt die Vorlage. Der Ausbau sind wenige Monate; Mietvertrag, Genehmigungen, Gerätelieferzeiten und die Vorverkaufskampagne machen den Rest."
+      ],
+      [
+        "Wann sollte der Mitgliedervorverkauf beginnen?",
+        "Sobald Marke, Website und Zahlungsanbindung stehen und der Eröffnungstermin glaubwürdig ist — typischerweise drei bis vier Monate vor der Eröffnung, während die Fläche noch Baustelle ist. Genau deshalb lässt die Vorlage den Vorverkaufsbalken parallel zum Ausbau laufen."
+      ],
+      [
+        "Warum ist die Zahl der Gründungsmitglieder ein Tor für die Eröffnung?",
+        "Weil ein Studio mit zu wenigen Mitgliedern bei Eröffnung sein erstes Jahr kaum finanziert. Die Zielzahl als Meilenstein zu führen erzwingt eine ausdrückliche Entscheidung — Vorverkauf verlängern oder trotzdem öffnen — statt das Datum stillschweigend entscheiden zu lassen."
+      ],
+      [
+        "Welche Anmeldungen und Genehmigungen braucht ein Studio in Deutschland?",
+        "Mindestens die Gewerbeanmeldung beim Gewerbeamt, die Anmeldung bei der zuständigen Berufsgenossenschaft und, sobald Sie Personal beschäftigen, die üblichen sozialversicherungsrechtlichen Meldungen. Baurechtlich hängt es an der Fläche: Weicht die geplante Nutzung von der genehmigten ab, brauchen Sie eine Nutzungsänderung, und je nach Größe und Belegung kann die Versammlungsstättenverordnung des Landes greifen, was Rettungswege, Brandschutz und Abnahme verändert. Klären Sie das mit Bauamt und Planer vor Unterzeichnung des Mietvertrags, nicht danach."
+      ],
+      [
+        "Wie weit im Voraus müssen Geräte bestellt werden?",
+        "Drei bis vier Monate sind für Fertigung und Transport von Ausdauer- und Kraftgeräten üblich, Rigs können länger dauern. Die Bestellung muss während der Planung erfolgen und nicht nach dem Ausbau, sonst wird die Montage zum kritischen Pfad."
+      ],
+      [
+        "Welche Qualifikation brauchen die Trainerinnen und Trainer?",
+        "Der Begriff Fitnesstrainer ist in Deutschland nicht geschützt, in der Praxis erwarten Mitglieder und Versicherer aber eine anerkannte Trainer-Lizenz, dazu eine gültige Erste-Hilfe-Ausbildung und eine Berufshaftpflicht. Werden Kurse mit Präventionscharakter angeboten, verlangen die Krankenkassen für eine Bezuschussung eigene Qualifikationsnachweise. Prüfen Sie die Nachweise vor der Einstellung und legen Sie die Geräteeinweisung hinter die Montage."
+      ],
+      [
+        "Ist die Vorlage für die Studioeröffnung kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'iso-45001-certification-plan': {
+    card: "Gefährdungsbeurteilung, Beteiligung der Beschäftigten, Ereignisnachweise, Stufe 1 und 2.",
+    h1: "Projektplan für die ISO-45001-Zertifizierung",
+    metaTitle: "ISO 45001 — Zertifizierungsplan",
+    metaDesc: "Kostenloser Plan zur ISO-45001-Zertifizierung: Gefährdungsbeurteilung, Beteiligung der Beschäftigten, Ereignisaufzeichnungen, Stufe-1- und Stufe-2-Audit.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-45001-Zertifizierung</strong>, die Konsultation und Beteiligung der Beschäftigten als terminierte Arbeit auf das Diagramm setzt, weil die Norm sie als Anforderung behandelt und nicht als Kommunikationsgeste. Das zweite Rückgrat ist die Gefährdungsbeurteilung: Ziele, Ablauflenkung und Schulung leiten sich daraus ab. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a>, der <a href=\"/de/templates/iso-14001-certification-plan.html\">ISO-14001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>. Wichtig für deutsche Betriebe: Das Zertifikat tritt nicht an die Stelle der Pflichten aus Arbeitsschutzgesetz, Arbeitssicherheitsgesetz und den Vorschriften Ihrer Berufsgenossenschaft — es baut auf ihnen auf.",
+    intro: "Beachten Sie, dass der Beteiligungsbalken fast über die volle Länge läuft und dass sich die Phase mit den Ereignisaufzeichnungen nicht stauchen lässt. Beides ist Absicht:",
+    phases: [
+      [
+        "Anwendungsbereich, Kontext und Gap-Analyse",
+        "Grenzen des Arbeitsschutzmanagementsystems, die Beschäftigten und weiteren interessierten Parteien, eine Gap-Analyse gegen die Norm, die Arbeitsschutzpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle — der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
+      ],
+      [
+        "Gefährdungsbeurteilung und Risikobewertung",
+        "Der Motor des Systems und zugleich die Pflicht aus § 5 Arbeitsschutzgesetz: Tätigkeiten und Arbeitsplätze erfassen, Gefährdungen im Regel- wie im Sonderbetrieb ermitteln, das Maßnahmenrangfolgeprinzip anwenden, psychische Belastungen einbeziehen und parallel das Verzeichnis der rechtlichen und sonstigen Anforderungen aufbauen — Arbeitsschutzgesetz, Verordnungen und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung. <em>Meilenstein: Gefährdungsbeurteilungen und Rechtsverzeichnis freigegeben.</em>"
+      ],
+      [
+        "Beteiligung der Beschäftigten und betriebliche Gremien",
+        "Terminiert, nicht unterstellt. Sicherheitsbeauftragte benannt, der Arbeitsschutzausschuss nach § 11 Arbeitssicherheitsgesetz mit Geschäftsordnung und vierteljährlichem Sitzungsrhythmus, die Bestellung von Fachkraft für Arbeitssicherheit und Betriebsarzt nach dem Arbeitssicherheitsgesetz, die Einbindung des Betriebsrats über seine Mitbestimmungsrechte im Arbeitsschutz, Konsultation zur Gefährdungsbeurteilung und zu den Zielentwürfen sowie ein ausdrücklicher Blick darauf, was Beschäftigte an der Beteiligung hindert. <em>Meilenstein: Beteiligungsstrukturen arbeiten.</em>"
+      ],
+      [
+        "Ziele, Ablauflenkung und Notfallvorsorge",
+        "Ziele, abgeleitet aus den beurteilten Risiken, mit Kennzahlen und benannten Verantwortlichen, Betriebsanweisungen für Tätigkeiten mit hohem Risiko, Erlaubnisscheinverfahren und Fremdfirmenkoordination, Unterweisungen nach § 12 Arbeitsschutzgesetz und Einweisung neuer Beschäftigter, arbeitsmedizinische Vorsorge sowie die Räumungs- und Notfallübung. <em>Meilenstein: Ablauflenkung und Übung abgeschlossen.</em>"
+      ],
+      [
+        "Betreiben, Unfälle und Beinaheereignisse aufzeichnen",
+        "Die Phase, die sich nicht verkürzen lässt: das System lange genug betreiben, dass Unfallanzeigen, das Verbandbuch, Meldungen über Beinaheereignisse, Untersuchungen, abgeschlossene Korrekturmaßnahmen und eine Bewertung der Rechtskonformität tatsächlich zum Stichprobenziehen vorliegen. <em>Meilenstein: Ereignisaufzeichnungen verfügbar.</em>"
+      ],
+      [
+        "Internes Audit, Managementbewertung und zweistufiges Audit",
+        "Das interne Audit und seine Korrekturmaßnahmen, die Managementbewertung, danach Stufe 1, das Zeitfenster für Korrekturmaßnahmen und Stufe 2. <em>Meilenstein: ISO-45001-Zertifikat erteilt.</em>"
+      ]
+    ],
+    callout: "Die Beteiligung ist der Punkt, an dem sich ISO 45001 am stärksten von den anderen Managementsystemnormen unterscheidet, und sie ist das, was Pläne am häufigsten zu einem Aushang schrumpfen lassen. Die Norm erwartet, dass Beschäftigte — ausdrücklich auch nicht führende Beschäftigte — zu bestimmten Dingen konsultiert werden und sich beteiligen: Gefährdungsermittlung, Risikobewertung, Festlegung der Maßnahmen, Untersuchung von Ereignissen. Das sind Sitzungen, Protokolle, benannte Personen und Nachweise, und das gehört mit Terminen auf das Diagramm. In Deutschland haben Sie dafür bereits einen Rahmen, den Sie nutzen statt daneben zu bauen: den Arbeitsschutzausschuss, die Sicherheitsbeauftragten, die Fachkraft für Arbeitssicherheit und den Betriebsarzt — und den Betriebsrat, dessen Mitbestimmung im Arbeitsschutz kein Beiwerk ist. Die zweite Falle ist der Zeitraum, der Aufzeichnungen erzeugt. Stufe 2 zieht Stichproben aus Unfallmeldungen, Beinaheereignissen, Untersuchungen und geschlossenen Maßnahmen; beginnt Ihre Meldekultur drei Wochen vor dem Audit, gibt es nichts zu ziehen und keinen Verlauf zu zeigen. Beginnen Sie früh und werten Sie eine steigende Zahl gemeldeter Beinaheereignisse als Erfolg, nicht als Misserfolg.",
+    customize: [
+      "Buchen Sie die Zertifizierungsstelle früh und legen Sie den Termin für Stufe 2 fest; alles davor ist danach ein Countdown und keine Schätzung.",
+      "Erweitern Sie die Zeilen zur Gefährdungsbeurteilung auf eine Zeile je Standort, Bereich oder Tätigkeit mit hohem Risiko — eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
+      "Legen Sie den Sitzungsrhythmus des Arbeitsschutzausschusses auf Ihren eigenen Takt, mindestens aber vierteljährlich, und lassen Sie den Balken über Stufe 2 hinauslaufen; das Audit sucht Kontinuität, keinen Schub.",
+      "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2, damit die dort aufgenommenen Korrekturmaßnahmen wirklich geschlossen werden können.",
+      "Verlängern Sie die Betriebsphase, wenn Ihre Ereigniszahlen niedrig sind — Sie brauchen genug Aufzeichnungen, damit ein Verlauf sichtbar wird.",
+      "Ergänzen Sie Zeilen für die Besichtigung durch die Aufsichtsperson der Berufsgenossenschaft, für wiederkehrende Prüfungen befähigter Personen und für arbeitsmedizinische Vorsorgetermine, die in das Fenster fallen — sie konkurrieren um dieselben Personen.",
+      "Nehmen Sie die psychische Belastung als eigene Zeile auf. Sie ist Teil der Gefährdungsbeurteilung nach dem Arbeitsschutzgesetz, sie braucht eine Erhebungsmethode und die Beteiligung des Betriebsrats, und sie ist die am häufigsten fehlende Zeile in deutschen Gefährdungsbeurteilungen."
+    ],
+    tips: [
+      "<strong>Terminieren Sie die Beteiligung, unterstellen Sie sie nicht.</strong> Benannte Vertretungen, ein Sitzungsrhythmus und Protokolle sind Nachweise; eine Intranetseite ist keiner.",
+      "<strong>Decken Sie den Sonderbetrieb ab.</strong> Instandhaltung, Stillstände, Fremdfirmentätigkeiten und Notfälle sind die Stellen, an denen Gefährdungsbeurteilungen am sichtbarsten dünn sind.",
+      "<strong>Wenden Sie die Maßnahmenrangfolge ausdrücklich an.</strong> Die auditierende Person wird fragen, warum Sie persönliche Schutzausrüstung gewählt haben statt Beseitigung oder Ersatz, und erwartet eine dokumentierte Antwort.",
+      "<strong>Fördern Sie das Melden von Beinaheereignissen früh.</strong> Es sind genau die Aufzeichnungen, aus denen Stufe 2 Stichproben zieht, und sie sammeln sich ehrlich nur über Monate an.",
+      "<strong>Nutzen Sie den Arbeitsschutzausschuss als Nachweisquelle.</strong> Er existiert ohnehin gesetzlich, tagt vierteljährlich und produziert Protokolle — ein paralleles Beteiligungsgremium für das Audit aufzubauen erzeugt doppelte Arbeit und widersprüchliche Aufzeichnungen.",
+      "<strong>Halten Sie die vier ISO-Normen auseinander.</strong> ISO 45001, ISO 9001, ISO 14001 und ISO 27001 teilen eine gemeinsame Grundstruktur und lassen sich gemeinsam auditieren, sind aber vier getrennte akkreditierte Zertifizierungen mit unterschiedlichem Inhalt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert eine ISO-45001-Zertifizierung?",
+        "Üblicherweise zehn bis sechzehn Monate aus dem Stand, die Vorlage nutzt rund siebzehn Monate. Was sich nicht stauchen lässt, ist vorn die Arbeit an Gefährdungsbeurteilung und Rechtsverzeichnis und hinten der Betriebszeitraum, der Unfall- und Beinaheereignisaufzeichnungen für die Stichprobe erzeugt."
+      ],
+      [
+        "Ersetzt ISO 45001 die Pflichten aus dem Arbeitsschutzgesetz?",
+        "Nein, und das ist die wichtigste Klarstellung für deutsche Betriebe. Gefährdungsbeurteilung nach § 5, Unterweisung nach § 12, die Bestellung von Fachkraft für Arbeitssicherheit und Betriebsarzt nach dem Arbeitssicherheitsgesetz, der Arbeitsschutzausschuss, die Unfallmeldung an die Berufsgenossenschaft und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung gelten unabhängig davon, ob Sie zertifiziert sind. ISO 45001 ist eine freiwillige Norm, die diese Pflichten in ein Managementsystem einordnet und überprüfbar macht — sie hebt keine davon auf und ersetzt keine Aufsicht."
+      ],
+      [
+        "Warum wird die Beteiligung der Beschäftigten als echte Arbeit terminiert?",
+        "Weil die Norm sie verlangt. ISO 45001 fordert, Beschäftigte einschließlich nicht führender Beschäftigter zu konsultieren und ihre Beteiligung zu ermöglichen — bei Gefährdungsermittlung, Risikobewertung, Festlegung von Maßnahmen und Untersuchung von Ereignissen — und Hindernisse für die Beteiligung abzubauen. Das bedeutet Vertretungen, ein Gremium, einen Sitzungsrhythmus und Aufzeichnungen, alles mit Terminen. Deshalb gibt die Vorlage dem Balken statt einer Kommunikationszeile."
+      ],
+      [
+        "Welche Rolle hat der Betriebsrat?",
+        "Eine starke. Im Arbeitsschutz hat der Betriebsrat Mitbestimmungsrechte nach dem Betriebsverfassungsgesetz, unter anderem bei Regelungen über den Gesundheitsschutz im Rahmen gesetzlicher Vorschriften und bei der Ausgestaltung der Gefährdungsbeurteilung. Praktisch heißt das: Methode und Instrumente der Beurteilung, Unterweisungskonzepte und Meldesysteme werden mit ihm vereinbart, häufig in einer Betriebsvereinbarung. Planen Sie diese Abstimmung als eigene Balken vor der Einführung ein — nachträglich eingeführte Systeme ohne Beteiligung sind der klassische Grund für Verzögerungen kurz vor Stufe 2."
+      ],
+      [
+        "Worin unterscheidet sich ISO 45001 von ISO 9001, ISO 14001 und ISO 27001?",
+        "Sie teilen dieselbe Grundstruktur für Managementsysteme und dieselbe zweistufige Auditmechanik, der Inhalt unterscheidet sich vollständig: ISO 45001 ist Arbeits- und Gesundheitsschutz, ISO 9001 Qualität, ISO 14001 Umwelt, ISO 27001 Informationssicherheit. Alle vier sind eigenständige akkreditierte Zertifizierungen mit eigenem Anwendungsbereich und eigenem Zertifikat; Nachweise für eine erfüllen nicht die andere. Beachten Sie außerdem, dass SOC 2 ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA ist und überhaupt keine ISO-Norm — siehe die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, falls Sie das brauchen."
+      ],
+      [
+        "Können wir ein integriertes Managementsystem über mehrere Normen führen?",
+        "Ja. Ein integriertes Managementsystem führt die gemeinsamen Kapitel — Politik, Kontext, internes Audit, Managementbewertung, dokumentierte Information — einmal statt viermal, und Zertifizierungsstellen auditieren sie häufig in einem kombinierten Besuch. Es verschmilzt die Zertifizierungen aber nicht: Sie halten weiterhin getrennte Zertifikate gegen getrennte Normen mit getrennten Anwendungsbereichen, und die normspezifischen Inhalte bleiben ebenfalls getrennt."
+      ],
+      [
+        "Wie viele Ereignisaufzeichnungen brauchen wir vor Stufe 2?",
+        "Es gibt keine feste Zahl, aber die auditierende Person sucht Nachweise, dass der Prozess genutzt wird und Feststellungen zu geschlossenen Maßnahmen führen. Ein System ganz ohne gemeldete Beinaheereignisse liest sich als Meldeproblem und nicht als sicherer Betrieb. Lassen Sie das Meldewesen mehrere Monate vor Stufe 2 laufen, damit ein Verlauf, einige Untersuchungen und einige verifizierte Korrekturmaßnahmen vorliegen."
+      ],
+      [
+        "Ist die Vorlage für ISO 45001 kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'gdpr-compliance-timeline': {
+    card: "Verarbeitungsverzeichnis zuerst, dann Rechtsgrundlagen, Löschfristen, Betroffenenrechte.",
+    h1: "Zeitplan für die Umsetzung der Datenschutz-Grundverordnung",
+    metaTitle: "DSGVO-Umsetzung — Zeitplan",
+    metaDesc: "Kostenloser DSGVO-Zeitplan: Verarbeitungsverzeichnis zuerst, dann Rechtsgrundlage, Löschkonzept, Drittlandtransfers, geübter Auskunfts- und Meldeprozess.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan zur Umsetzung der Datenschutz-Grundverordnung</strong>, gebaut für ein Programm, das einen verteidigungsfähigen Zustand erreicht und dann weiterläuft, statt fertig zu werden. Der Ordnungsgedanke: Das Verzeichnis von Verarbeitungstätigkeiten kommt zuerst — Rechtsgrundlage, Löschfristen, Übermittlungsmechanismen und Datenschutz-Folgenabschätzungen leiten sich alle daraus ab, dass Sie wissen, was Sie mit personenbezogenen Daten tatsächlich tun. Die beiden extern getakteten Uhren — die Frist für Betroffenenanfragen und die Meldefrist bei Datenschutzverletzungen — stehen als Prozesse auf dem Diagramm, die geübt werden, bevor sie jemand braucht. Ergänzend zur Verordnung gilt in Deutschland das Bundesdatenschutzgesetz, und zuständig ist in der Regel die Datenschutzaufsichtsbehörde des Landes, in dem Ihre Hauptniederlassung liegt.",
+    intro: "Der Balken für das Verarbeitungsverzeichnis ist das Tor für fast alles danach, und die beiden Übungszeilen gibt es, weil ein Prozess, den niemand durchlaufen hat, kein Prozess ist:",
+    phases: [
+      [
+        "Programmaufsatz und Abgrenzung",
+        "Verantwortliche Zuständigkeit, die Bestellung eines Datenschutzbeauftragten, wo Verordnung oder Bundesdatenschutzgesetz sie verlangen, die Einordnung je Tätigkeit als Verantwortlicher oder Auftragsverarbeiter, welche Gesellschaften und Länder im Anwendungsbereich liegen, die Feststellung der federführenden Aufsichtsbehörde, eine Reifegradbewertung und das Steuerungsgremium. <em>Meilenstein: Anwendungsbereich und Rollen geklärt.</em>"
+      ],
+      [
+        "Verzeichnis von Verarbeitungstätigkeiten — das Fundament",
+        "Erhebungsworkshops mit jedem Fachbereich, ein Systeminventar, die Abbildung von Verarbeitungstätigkeiten und Datenflüssen, Kennzeichnung besonderer Kategorien personenbezogener Daten und Beschäftigtendaten sowie die Abnahme des Verzeichnisses durch die Personen, denen die Verarbeitung tatsächlich gehört. <em>Meilenstein: Verarbeitungsverzeichnis als Basis festgeschrieben.</em>"
+      ],
+      [
+        "Rechtsgrundlage, Löschkonzept und Übermittlungen",
+        "Alles daraus abgeleitet: eine Rechtsgrundlage je Tätigkeit, Abwägungen, wo Sie sich auf berechtigte Interessen stützen, die Sonderregeln für den Beschäftigtenkontext nach § 26 Bundesdatenschutzgesetz, Erteilung und Widerruf von Einwilligungen, Aufbewahrungs- und Löschregeln gegen die handels- und steuerrechtlichen Aufbewahrungspflichten, Abbildung der Drittlandtransfers samt Standardvertragsklauseln und Transfer-Folgenabschätzung sowie Datenschutzhinweise, die neu aus dem geschrieben werden, was Sie wirklich tun. <em>Meilenstein: Rechtsgrundlagen und Löschkonzept freigegeben.</em>"
+      ],
+      [
+        "Betroffenenrechte und Auskunftsfähigkeit",
+        "Ein Verfahren für Anfragen, Identitätsprüfung, ein Eingangskanal, Suche und Extraktion über die Systeme hinweg, geschulte Bearbeitende und ein zeitgemessener Trockenlauf einer vollständigen Auskunft von Anfang bis Ende. <em>Meilenstein: Auskunftsprozess durchgängig getestet.</em>"
+      ],
+      [
+        "Sicherheit und Meldebereitschaft",
+        "Überprüfung der technischen und organisatorischen Maßnahmen, Erkennung und Eskalation von Verletzungen, das Verfahren zur Bewertung und zur Entscheidung über die Meldung, das Verzeichnis der Verletzungen und eine Planübung gegen die Uhr. <em>Meilenstein: Meldeprozess geübt.</em>"
+      ],
+      [
+        "Folgenabschätzungen, Dienstleister und Dauerbetrieb",
+        "Prüfkriterien und Datenschutz-Folgenabschätzungen für risikoreiche Verarbeitung, Nachverhandlung der Auftragsverarbeitungsverträge, Betriebsvereinbarungen für Systeme, die der Mitbestimmung unterliegen, Schulungen und der Änderungsprozess, der das Verzeichnis aktuell hält, wenn das Programm kein Programm mehr ist. <em>Meilenstein: verteidigungsfähiger Zustand erreicht.</em>"
+      ]
+    ],
+    callout: "Zwei Zahlen stehen in der Verordnung selbst und sind es wert, genau wiedergegeben zu werden. Artikel 12 setzt die Frist für die Antwort auf einen Antrag einer betroffenen Person auf einen Monat ab Eingang, verlängerbar um weitere zwei Monate, wenn Anträge komplex oder zahlreich sind und die betroffene Person innerhalb des ersten Monats über die Verlängerung und deren Gründe unterrichtet wird. Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet — es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen; erfolgt die Meldung später, ist ihr eine Begründung der Verzögerung beizufügen. Beide Zahlen haben Bedingungen: wann die Frist beginnt, wann sie verlängert werden darf, wann keine Meldung nötig ist. Hinzu kommt eine deutsche Besonderheit, die den Zeitplan wirklich verändert: Führen Sie ein System ein, das zur Überwachung von Verhalten oder Leistung der Beschäftigten geeignet ist, hat der Betriebsrat ein Mitbestimmungsrecht nach § 87 Absatz 1 Nummer 6 Betriebsverfassungsgesetz. Praktisch heißt das, eine Betriebsvereinbarung kann die Einführung tatsächlich blockieren, bis sie geschlossen ist — sie gehört als eigener Balken vor den Rollout und nicht als Nacharbeit dahinter. Flachen Sie nichts davon zu einem Poster ab und klären Sie Ihre konkrete Lage anwaltlich statt anhand einer Zusammenfassung.",
+    customize: [
+      "Teilen Sie die Erhebungs- und Verzeichniszeilen auf eine Zeile je Fachbereich oder Gesellschaft auf; eine einzelne Zeile verbirgt das größte Arbeitspaket im ganzen Plan.",
+      "Sind Sie Auftragsverarbeiter und nicht Verantwortlicher, bauen Sie die Phasen zu Betroffenenrechten und Meldung um Ihre Pflicht zur Unterstützung und zur Benachrichtigung Ihrer Auftraggeber herum neu auf.",
+      "Legen Sie eine Zeile je Übermittlungsroute an, wenn Sie Daten in Drittländer geben — Mechanismus und Prüfung unterscheiden sich je Route und Zielland.",
+      "Verlängern Sie die Phase zu den Betroffenenrechten, wenn Ihre Daten in vielen Systemen liegen; die Extraktionswerkzeuge sind fast immer der lange Balken, nicht die rechtliche Prüfung.",
+      "Ergänzen Sie Zeilen für laufende Verfahren mit der Aufsichtsbehörde, vorherige Konsultationen nach Artikel 36 oder offene Beschwerden — sie überholen den Plan.",
+      "Setzen Sie eine eigene Zeile für die Verhandlung von Betriebsvereinbarungen zu mitbestimmungspflichtigen Systemen und legen Sie sie vor den jeweiligen Rollout. Verhandlungen mit dem Betriebsrat haben eine echte Dauer, die nicht Ihrem Projektplan folgt.",
+      "Lassen Sie die letzte Phase über den Meilenstein hinauslaufen — das Verarbeitungsverzeichnis veraltet in dem Moment, in dem ein neues System oder ein neuer Dienstleister ankommt."
+    ],
+    tips: [
+      "<strong>Bauen Sie das Verzeichnis vor den Richtlinien.</strong> Richtlinien, die vor der Kenntnis der Verarbeitung geschrieben werden, beschreiben eine Organisation, die Sie nicht haben, und die erste Anfrage zeigt es.",
+      "<strong>Messen Sie den Trockenlauf.</strong> Das nützliche Ergebnis einer Übungsanfrage ist, wie viele Tage sie gebraucht hat und wo sie hängen blieb, nicht ob Sie am Ende eine Datei erzeugt haben.",
+      "<strong>Üben Sie die Meldeentscheidung, nicht nur die technische Reaktion.</strong> Das Schwierige ist die Risikobewertung und die Entscheidung, ob gemeldet werden muss, und diese Entscheidung sollten Menschen treffen, die sie schon einmal getroffen haben.",
+      "<strong>Halten Sie fest, warum Sie nicht gemeldet haben.</strong> Bewerten Sie eine Verletzung als nicht meldepflichtig, sind die Begründung und ihre Dokumentation das, was die Entscheidung später trägt.",
+      "<strong>Binden Sie den Betriebsrat früh ein, nicht am Ende.</strong> Ein fertig konfiguriertes System, das der Mitbestimmung unterliegt, ist eine schlechtere Verhandlungsposition als ein Konzept, und die Verzögerung trifft den Rollout, nicht die Rechtsabteilung.",
+      "<strong>Klären Sie, welche Aufsichtsbehörde für Sie zuständig ist.</strong> In Deutschland sind die Aufsichtsbehörden je Land organisiert, und ihre Auslegungshinweise und Formulare unterscheiden sich — das ist eine Planungstatsache, kein Detail.",
+      "<strong>Hängen Sie das Verzeichnis in den Änderungsprozess.</strong> Ein neuer Dienstleister, ein neues System oder eine neue Funktion soll das Verzeichnis routinemäßig aktualisieren, sonst bauen Sie es in zwei Jahren neu."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein DSGVO-Umsetzungsprogramm?",
+        "Die Vorlage läuft rund fünfzehn Monate bis zu einem verteidigungsfähigen Zustand. Das meiste davon ist die Arbeit am Verarbeitungsverzeichnis und an der Technik hinter Betroffenenanfragen, nicht juristisches Formulieren. Und es endet dort nicht: Das Verzeichnis muss gepflegt werden, Folgenabschätzungen wiederholen sich, Dienstleister und Systeme ändern sich weiter."
+      ],
+      [
+        "Welche Frist gilt für die Auskunft an eine betroffene Person?",
+        "Artikel 12 der Verordnung setzt die Frist auf einen Monat ab Eingang des Antrags. Sie kann um weitere zwei Monate verlängert werden, wenn dies unter Berücksichtigung der Komplexität und der Anzahl der Anträge erforderlich ist, und der Verantwortliche muss die betroffene Person innerhalb eines Monats nach Eingang über die Verlängerung und die Gründe unterrichten. Die praktischen Schwierigkeiten liegen darin, wann die Frist beginnt, wie die Identität geprüft wird und wie mit offenkundig unbegründeten oder exzessiven Anträgen umzugehen ist — lassen Sie Ihre konkrete Lage anwaltlich klären."
+      ],
+      [
+        "Was besagt die 72-Stunden-Meldefrist?",
+        "Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet — es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen. Erfolgt die Meldung nicht binnen 72 Stunden, ist ihr eine Begründung für die Verzögerung beizufügen. Getrennt davon verlangt Artikel 34 die Benachrichtigung der betroffenen Personen, wenn die Verletzung voraussichtlich ein hohes Risiko für sie zur Folge hat. Ab wann etwas als bekannt gilt, ist eine Wertungsfrage — deshalb übt die Vorlage die Bewertung und nicht nur die technische Eindämmung."
+      ],
+      [
+        "Welche Aufsichtsbehörde ist in Deutschland zuständig?",
+        "Für nichtöffentliche Stellen ist grundsätzlich die Datenschutzaufsichtsbehörde des Landes zuständig, in dem die Niederlassung liegt; für Post- und Telekommunikationsunternehmen und für Bundesbehörden die Bundesbeauftragte oder der Bundesbeauftragte für den Datenschutz und die Informationsfreiheit. Dass die Aufsicht in Deutschland föderal organisiert ist, ist selbst eine Planungstatsache: Mehrere Standorte in mehreren Ländern können mehrere Ansprechpartner mit unterschiedlichen Formularen und Auslegungshinweisen bedeuten, und bei grenzüberschreitender Verarbeitung tritt zusätzlich die Frage der federführenden Aufsichtsbehörde hinzu."
+      ],
+      [
+        "Wann braucht ein Unternehmen einen Datenschutzbeauftragten?",
+        "Die Verordnung verlangt ihn in bestimmten Fällen, etwa bei umfangreicher regelmäßiger Überwachung oder umfangreicher Verarbeitung besonderer Kategorien. Das Bundesdatenschutzgesetz geht darüber hinaus und verlangt ihn zusätzlich, wenn in der Regel eine bestimmte Zahl von Personen ständig mit automatisierter Verarbeitung beschäftigt ist, sowie in weiteren Fällen. Weil diese Schwelle mehrfach angepasst wurde, prüfen Sie die geltende Fassung, statt sich auf eine erinnerte Zahl zu verlassen — die Bestellung selbst ist schnell, der Aufbau der Position nicht."
+      ],
+      [
+        "Warum kommt das Verarbeitungsverzeichnis vor allem anderen?",
+        "Weil Rechtsgrundlage, Aufbewahrungsfristen, Übermittlungsmechanismen, Datenschutzhinweise und Folgenabschätzungen alle Aussagen über konkrete Verarbeitungstätigkeiten sind. Ohne eine Aufstellung dieser Tätigkeiten ist jede dieser Aussagen gegen eine Annahme geschrieben. Programme, die mit einer Richtliniensammlung beginnen, bauen sie nach der Erhebung meist neu."
+      ],
+      [
+        "Worin unterscheidet sich das von ISO 27001 oder SOC 2?",
+        "Die Datenschutz-Grundverordnung ist Recht und gilt unabhängig davon, ob Sie jemand zertifiziert. ISO 27001 ist eine akkreditierte Zertifizierung gegen eine Norm für Informationssicherheitsmanagement, und SOC 2 ist ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA — keines von beidem ist eine Feststellung rechtlicher Konformität. Die Sicherheitsmaßnahmen überschneiden sich stark, die Nachweise sind also wiederverwendbar, aber ein Zertifikat ist keine Verteidigung. Siehe den <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a> und die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, wenn Sie das parallel betreiben."
+      ],
+      [
+        "Ist die DSGVO-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen. Diese Vorlage ist eine Planungshilfe und keine Rechtsberatung."
+      ]
+    ]
+  },
+  'customer-onboarding-plan': {
+    card: "Kickoff, Kundenabhängigkeiten, schneller erster Nutzen, Daten, Schulung, Go-live.",
+    h1: "Projektplan für das Kunden-Onboarding",
+    metaTitle: "Projektplan Kunden-Onboarding",
+    metaDesc: "Kostenloser Onboarding-Plan: Kickoff, Kundenabhängigkeiten mit Terminen, schneller erster Nutzen, Datenmigration, Schnittstellen, Schulung, Go-live.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Kunden-Onboarding</strong>, die ehrlich damit umgeht, wem der Terminplan gehört. Die meisten Balken unten hängen am Kunden: an seinen Daten, seinen Zugangsdaten für Schnittstellen, seiner Sicherheitsprüfung, seinen Freigaben und den Kalendern seiner Leute. Der Plan ist so geordnet, dass ein nutzbares Ergebnis früh landet — die Zeit bis zum ersten Nutzen ist die Kennzahl, die die Verlängerung vorhersagt — statt jede Konfigurationsentscheidung zu takten, bevor sich überhaupt jemand anmelden darf.",
+    intro: "Die Zeilen, die dem Kunden gehören, sind als seine gekennzeichnet. Sehen Sie sich an, wie viele es sind und wo sie im Verhältnis zu Ihrer eigenen Arbeit liegen:",
+    phases: [
+      [
+        "Übergabe aus dem Vertrieb und Kickoff",
+        "Das Übergabepaket, die Erfolgskriterien und das konkrete erste Nutzenergebnis, die Projektverantwortung und die Entscheidungsbefugten auf Kundenseite, der Kickoff-Termin und die Zusagen des Kunden mit Terminen dahinter. <em>Meilenstein: Kickoff durchgeführt und Verantwortliche benannt.</em>"
+      ],
+      [
+        "Analyse und Erfassung der Kundenabhängigkeiten",
+        "Ein Durchgang durch den bisherigen Prozess, danach die ehrliche Liste: jede Zulieferung, die der Kunde schuldet, wem die Daten gehören, wer die Zugangsdaten für die Schnittstellen hält, und welche Sicherheitsprüfung, Betriebsratsbeteiligung oder Einkaufsfreigabe zwischen Ihnen und dem Produktivbetrieb steht. <em>Meilenstein: Kundenabhängigkeiten mit Terminen bestätigt.</em>"
+      ],
+      [
+        "Schneller Weg zum ersten Nutzen",
+        "Bewusst schmal. Mandanten bereitstellen, einen Ablauf konfigurieren, genug Daten von Hand laden, damit es echt wird, eine Handvoll Nutzer aufschalten und den Kunden ein echtes Ergebnis erzeugen lassen, bevor die große Arbeit beginnt. <em>Meilenstein: erster Nutzen geliefert.</em>"
+      ],
+      [
+        "Datenmigration und Schnittstellen",
+        "Die Phase, die am ehesten rutscht, weil das meiste davon dem Kunden gehört: Extraktion und Übergabe der Dateien, Feldzuordnung und Transformation, ein Probeimport mit Datenqualitätsbericht zurück an ihn, seine Bereinigungsrunde, der Schnittstellenbau und seine Sicherheitsfreigabe. <em>Meilenstein: Daten und Schnittstellen produktiv.</em>"
+      ],
+      [
+        "Konfiguration, Schulung und Rollout",
+        "Restliche Abläufe und Berechtigungen, die Konfigurationsfreigabe des Kunden, Administratorenschulung und Endanwenderschulungen, die der Kunde mit eigenen Leuten füllen muss. <em>Meilenstein: Anwender geschult und Konfiguration freigegeben.</em>"
+      ],
+      [
+        "Go-live, Nutzung und Übergabe",
+        "Bereitschaftsprüfung, Umstellung vom Altprozess, intensive Betreuung nach dem Start, Messung von Zeit bis zum ersten Nutzen und Nutzungsgrad, Abschaltung des Altsystems und Übergabe an die Kundenbetreuung. <em>Meilenstein: Onboarding geschlossen und Konto im Regelbetrieb.</em>"
+      ]
+    ],
+    callout: "Wenn ein Onboarding zu spät läuft, liegt die Ursache fast immer vor dem Lieferteam: der Datenexport, den vorher nie jemand gemacht hat, das Zugangspasswort für die Schnittstelle bei einem externen Dienstleister, der Sicherheitsfragebogen, der in einer Warteschlange liegt, die Betriebsvereinbarung für ein System mit Leistungsbezug, die noch verhandelt wird, oder die Person, die genau in der Woche der Konfigurationsfreigabe im Urlaub ist. Das ist keine Entschuldigung für lockere Planung — es ist ein Argument dafür, diese Abhängigkeiten in den ersten zwei Wochen zu benennen, jeweils einen Namen des Kunden dahinterzuschreiben und sie in jedem Statustermin durchzugehen. Die zweite Lehre ist, mit dem Takten aufzuhören. Es gibt enormen Druck, alles zu konfigurieren, bevor der Kunde das Produkt anfasst, und das erzeugt zuverlässig eine lange stille Phase und danach einen Start, dem niemand traut. Bringen Sie im ersten Monat ein echtes Ergebnis zum Laufen, auch wenn es von Hand geladen und eng ist, und bauen Sie von etwas aus weiter, an das der Kunde schon glaubt.",
+    customize: [
+      "Kennzeichnen Sie jede kundenseitige Zeile deutlich und schreiben Sie eine namentlich benannte Person auf seiner Seite dahinter, keine Abteilung.",
+      "Ziehen Sie den Meilenstein des ersten Nutzens vor, wenn Ihr Produkt es zulässt; vier Wochen sind ein üblicher Zielwert, und kürzer ist besser.",
+      "Legen Sie eine Zeile je Schnittstelle und je Datenquelle an — ein Sammelbalken verbirgt genau die Abhängigkeiten, die rutschen werden.",
+      "Nehmen Sie bei größeren Kunden Sicherheitsprüfung, Einkauf und Rechtsprüfung ausdrücklich auf; sie dauern regelmäßig länger als die technische Arbeit.",
+      "Ergänzen Sie bei mitbestimmten Betrieben eine Zeile für die Beteiligung des Betriebsrats. Systeme, die Verhalten oder Leistung erfassen können, brauchen häufig eine Betriebsvereinbarung, und die ist ein echtes Tor vor dem Rollout und keine Formalie.",
+      "Verlängern Sie die Bereinigungsschleife, wenn der Probeimport voraussichtlich Probleme findet; eine Runde ist für die meisten Migrationen optimistisch.",
+      "Ergänzen Sie Zeilen für das Änderungsmanagement des Kunden, wenn Sie einen Prozess ersetzen, an dem Menschen hängen."
+    ],
+    tips: [
+      "<strong>Veröffentlichen Sie einen gemeinsamen Plan, nicht Ihren Plan.</strong> Der Kunde muss seine eigenen Zeilen und Termine sehen, denn genau die bewegen sich.",
+      "<strong>Definieren Sie den ersten Nutzen als ein konkretes Ergebnis.</strong> „Produktiv“ ist kein Meilenstein; „die Disposition hat den Wochenplan im Produkt erzeugt“ ist einer.",
+      "<strong>Fragen Sie, wer den Export tatsächlich schon einmal gemacht hat.</strong> Die Antwort lautet oft niemand, und das ändert Ihre Schätzung mehr als jedes technische Detail.",
+      "<strong>Geben Sie den Datenqualitätsbericht an den Kunden zurück.</strong> Die Bereinigung ist seine Aufgabe, und eine konkrete Liste fehlerhafter Datensätze bewegt sich schneller als die Bitte, die Daten aufzuräumen.",
+      "<strong>Messen Sie die Zeit bis zum ersten Nutzen bei jedem Konto.</strong> Es ist die eine Onboarding-Kennzahl, die die spätere Nutzung vorhersagt, und sie begründet das Vorziehen statt des Taktens.",
+      "<strong>Absorbieren Sie Verzug des Kunden nicht still.</strong> Zeigen Sie die Wirkung auf den Go-live-Termin, sonst lernt der Kunde, dass seine Termine folgenlos sind, und das Lieferteam bezahlt es später."
+    ],
+    faq: [
+      [
+        "Wie lange sollte ein Kunden-Onboarding dauern?",
+        "Das schwankt stark mit der Menge an Daten und Schnittstellen. Die Vorlage läuft etwa fünf Monate für eine mittelständische Einführung mit Migration; ein Selbstbedienungsprodukt kann Tage brauchen. Die nützlichere Frage ist die Zeit bis zum ersten Nutzen, und die sollte unabhängig von der Gesamtdauer wenige Wochen betragen."
+      ],
+      [
+        "Was ist die Zeit bis zum ersten Nutzen?",
+        "Die verstrichene Zeit von Vertrag oder Kickoff bis zu dem Moment, in dem der Kunde ein echtes, nützliches Ergebnis aus dem Produkt zieht — keine Vorführung, keine Schulungsübung. Um diese Kennzahl ist die Vorlage gebaut, weil ein Kunde, der echten Nutzen gesehen hat, den Rest der Einführung erträgt, und einer, der ihn nicht gesehen hat, zu fragen beginnt, was er eigentlich gekauft hat."
+      ],
+      [
+        "Warum stellt der Plan ein schmales Ergebnis nach vorn?",
+        "Weil vollständige Konfiguration vor der ersten Anmeldung eine lange stille Strecke erzeugt, in der der Kunde nur die Arbeit erlebt, die er Ihnen schuldet. Ein schmaler erster Ablauf mit handgeladenen Daten schafft etwas Echtes zum Weiterbauen und bringt Missverständnisse ans Licht, solange sie billig zu beheben sind."
+      ],
+      [
+        "Was tun wir, wenn der Kunde seine Termine reißt?",
+        "Damit rechnen und dafür planen. Benennen Sie Abhängigkeit und Verantwortliche in den ersten zwei Wochen, gehen Sie die kundenseitigen Zeilen in jedem Statustermin durch und zeigen Sie die Folgewirkung auf den Go-live-Termin, statt sie still aufzufangen. Verzug still aufzufangen lehrt den Kunden, dass seine Termine nicht zählen."
+      ],
+      [
+        "Worin unterscheidet sich das von einem Einarbeitungsplan für neue Mitarbeitende?",
+        "Trotz des ähnlichen Worts ein völlig anderer Plan. Die <a href=\"/de/templates/employee-onboarding.html\">Vorlage für die Einarbeitung neuer Mitarbeitender</a> deckt die ersten Wochen einer neuen Person ab — Ausstattung, Zugänge, Vorstellungen, Einarbeitung. Diese hier deckt die Einführung eines Produkts bei einem zahlenden Kunden ab, wo der Terminplan mit einer anderen Organisation geteilt wird und das meiste Risiko auf deren Seite liegt."
+      ],
+      [
+        "Ist die Onboarding-Vorlage kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
+  'brand-relaunch-plan': {
+    card: "Namensfindung, Markenanmeldung, Identität, Produktion, Umstellungstag, langer Nachlauf.",
+    h1: "Projektplan für einen Markenrelaunch",
+    metaTitle: "Projektplan Markenrelaunch",
+    metaDesc: "Kostenloser Plan für den Markenrelaunch: Namensfindung, Markenanmeldung beim DPMA, Identität, Produktion, gleichzeitige Umstellung und der lange Nachlauf.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für einen Markenrelaunch</strong>, geordnet um eine harte Tatsache: Die Enthüllung ist ein Moment, und in diesem Moment muss alles, was Sie kontrollieren, gemeinsam umschalten. Website, Produktoberfläche, E-Mail-Vorlagen, Profile in sozialen Netzwerken, Beschilderung, Präsentationen, Rechnungen. Davor liegt ein Langläufer, der einen Namen spät noch töten kann — Recherche, Anmeldung und Eintragung der Marke beim Deutschen Patent- und Markenamt und gegebenenfalls beim Amt der Europäischen Union für geistiges Eigentum, mit der Widerspruchsfrist danach. Dahinter liegt ein Nachlauf aus physischen und fremden Oberflächen, die am Tag selbst nicht umschalten können und nachgehalten werden müssen.",
+    intro: "Der Balken für die markenrechtliche Prüfung liegt aus gutem Grund unter der Gestaltungsarbeit, und der Nachlauf nach dem Umstellungstag ist länger, als die meisten Pläne zugeben:",
+    phases: [
+      [
+        "Strategie, Positionierung und Namensfindung",
+        "Markenaudit und Untersuchung des vorhandenen Markenwerts, Positionierung und Erzählplattform, Namensentwicklung und Auswahlliste sowie sprachliche und kulturelle Prüfung, bevor sich jemand verliebt. <em>Meilenstein: Auswahlliste für die Prüfung abgestimmt.</em>"
+      ],
+      [
+        "Markenrecherche, Anmeldung und Eintragung",
+        "Der Langläufer. Identitätsrecherche im Register des Deutschen Patent- und Markenamts, danach eine Ähnlichkeitsrecherche über die relevanten Klassen und Länder, eine anwaltliche Risikoeinschätzung, die stille Sicherung von Domains und Profilnamen, die Anmeldung nach Klassen der Nizza-Klassifikation beim Deutschen Patent- und Markenamt oder als Unionsmarke, danach die Beobachtung von Prüfung und Widerspruchsfrist. <em>Meilenstein: Name geprüft und Anmeldungen eingereicht.</em>"
+      ],
+      [
+        "Gestaltung und Freigabe der Identität",
+        "Gestaltungsrichtungen, Wort- und Bildmarke, Farbe, Typografie und Bewegung, Prüfung auf Barrierefreiheit und Lesbarkeit sowie die Freigabe, von der alles Nachgelagerte ausgeht. <em>Meilenstein: Identität freigegeben und festgeschrieben.</em>"
+      ],
+      [
+        "Produktion der Gestaltungsmittel und Systemaufbau",
+        "Zuerst Richtlinien und Medienbibliothek, danach parallele Produktion: Umbau der Website, Umfärbung der Produktoberfläche, E-Mail- und Systemnachrichten-Vorlagen, Verpackungsdruckvorlagen, Beschilderung und Fahrzeugbeschriftung. <em>Meilenstein: Kernmaterialien produziert.</em>"
+      ],
+      [
+        "Umstellungsbereitschaft und Probelauf",
+        "Die Prüfliste aller Oberflächen, die Überprüfung von Firmierung, Handelsregistereintrag, Impressum und Rechnungsangaben, Einträge bei Dritten und auf Marktplätzen, Weiterleitungen und Kontinuität der Auswertung sowie ein Probelauf in der Testumgebung vor der Freigabeentscheidung. <em>Meilenstein: Umstellung geprobt und Freigabe erteilt.</em>"
+      ],
+      [
+        "Umstellungstag und der lange Nachlauf",
+        "Die gleichzeitige Umstellung, die Ankündigung, die Übernahme der Profilnamen — danach der Teil, den Pläne vergessen: Montage der Beschilderung an allen Standorten, Verpackungswechsel nach Abverkauf der Altbestände, Oberflächen von Partnern und ein Abschlussdurchgang, der die alte Marke aufspürt. <em>Meilenstein: Nachlauf geschlossen und alte Marke abgelegt.</em>"
+      ]
+    ],
+    callout: "Zwei Dinge bringen Markenrelaunches zu Fall. Das erste ist, ein markenrechtliches Problem zu entdecken, nachdem die Identität freigegeben ist und die Produktion läuft. Die Prüfung ist keine Formalie und sie ist nicht schnell: Eine Identitätsrecherche ist billig und rasch, eine Ähnlichkeitsrecherche über mehrere Klassen und Länder ist beides nicht. In Deutschland kommt eine Besonderheit hinzu, die Sie einplanen müssen: Das Deutsche Patent- und Markenamt prüft von Amts wegen nur absolute Schutzhindernisse, nicht ältere Rechte Dritter. Nach der Eintragung läuft eine dreimonatige Widerspruchsfrist, und ein Widerspruch kann also Monate nach der Anmeldung eintreffen, wenn Ihre Verpackung längst gedruckt ist. Legen Sie die Risikoeinschätzung vor die Gestaltungsausgaben und lassen Sie niemanden den neuen Namen extern zeigen, bevor die anwaltliche Entscheidung steht. Das zweite ist, die Enthüllung als Marketingstart zu behandeln statt als Umstellung. Eine Kampagne kann man staffeln; eine Umstellung ist ein Zustandswechsel, und eine halb umgestellte Marke — neue Website, alte Rechnungen, alte Beschilderung, alter Eintrag im App-Store — liest sich als Unternehmen, das sich nicht im Griff hat. Bauen Sie die Prüfliste nach Oberflächen, geben Sie jeder eine verantwortliche Person und akzeptieren Sie, dass die physischen und fremden nachlaufen — halten Sie sie deshalb als benannte Liste nach statt zu hoffen.",
+    customize: [
+      "Legen Sie eine Recherchezeile je Land und je Waren- und Dienstleistungsklasse an; Dauer und Risiko unterscheiden sich, und ein Sammelbalken verbirgt, welches Land das Problem ist.",
+      "Ergänzen Sie einen eigenen Balken für die dreimonatige Widerspruchsfrist nach der Eintragung und lassen Sie ihn bewusst hinter den Umstellungstag laufen, wenn Sie nicht warten wollen — dann ist es eine bewusst getragene Restriktion und keine Überraschung.",
+      "Wenn Sie auffrischen statt umbenennen, streichen Sie Namensfindung und Markenprüfung und beginnen Sie bei der Gestaltung — der Plan wird um Monate kürzer.",
+      "Weiten Sie die Produktionsphase auf eine Zeile je Oberfläche aus, sobald die Inventur steht; die Zahl ist immer höher als die erste Schätzung.",
+      "Ergänzen Sie Zeilen für regulierte oder vertraglich gebundene Oberflächen — Produktkennzeichnung, Zertifikate, Zulassungen, Registereintragungen —, die ihre eigenen Freigabewege haben.",
+      "Prüfen Sie in einer eigenen Zeile, ob sich auch die Firmierung ändert. Handelsregisteränderung, Impressum, Pflichtangaben auf Geschäftsbriefen und Rechnungsangaben folgen dann ihrem eigenen, notariell und gerichtlich getakteten Weg und nicht Ihrem Kampagnenplan.",
+      "Setzen Sie das Enthüllungsdatum erst nach der Zeile für den Probelauf und binden Sie die Ankündigungszeilen daran statt an einen Kalendermonat.",
+      "Verlängern Sie den Balken für den Verpackungswechsel auf Ihre tatsächliche Lagerreichweite; er ist meist der längste Nachlaufposten und der sichtbarste."
+    ],
+    tips: [
+      "<strong>Prüfen Sie den Namen, bevor Sie sich in ihn verlieben.</strong> Der billigste Moment, einen Namen zu verlieren, ist die Identitätsrecherche; der teuerste ist, nachdem die Verpackung gedruckt wurde.",
+      "<strong>Inventarisieren Sie jede Oberfläche, die die Marke trägt.</strong> Rechnungen, Verträge, E-Mail-Signaturen, Stellenanzeigen, App-Store-Einträge und die Begrüßung am Empfang zählen alle, und keines davon steht im Kreativbriefing.",
+      "<strong>Proben Sie die Umstellung.</strong> Ein Durchlauf in der Testumgebung findet das fest verdrahtete Logo, das zwischengespeicherte Symbol im Browsertab und die Vorlage eines Dritten, für die sich niemand zuständig fühlte.",
+      "<strong>Schützen Sie die Sichtbarkeit in Suchmaschinen.</strong> Weiterleitungsplan und Kontinuität der Auswertung sind der Unterschied zwischen einem Relaunch und einem Neustart bei null im organischen Verkehr.",
+      "<strong>Denken Sie an die Pflichtangaben.</strong> Impressum, Handelsregisternummer, Umsatzsteuer-Identifikationsnummer und die Angaben auf Geschäftsbriefen hängen an der Firmierung, nicht an der Marke — verwechseln Sie beides nicht, und ändern Sie nur, was sich wirklich ändert.",
+      "<strong>Halten Sie den Nachlauf als Liste nach, nicht als Phase.</strong> Beschilderung, Verpackung und Partneroberflächen stellen über Wochen oder Monate um, und Nachlaufposten ohne Verantwortliche fallen noch ein Jahr später auf."
+    ],
+    faq: [
+      [
+        "Wie lange dauert ein Markenrelaunch?",
+        "Die Vorlage läuft etwa sechzehn Monate für eine vollständige Umbenennung einschließlich Markenrecherche und Eintragung. Eine reine visuelle Auffrischung ohne Namenswechsel dauert üblicherweise vier bis acht Monate, weil die Prüfphase entfällt und die Gestaltung sofort beginnen kann."
+      ],
+      [
+        "Warum ist die Markenprüfung der lange Balken?",
+        "Weil sie den Namen freigibt und sich nicht durch mehr Personal verkürzen lässt. Identitätsrecherchen sind schnell, aber eine Ähnlichkeitsrecherche über mehrere Länder und Klassen dauert Wochen, die anwaltliche Risikoeinschätzung braucht Zeit, und nach der Anmeldung folgen Prüfung und Widerspruchsfrist, die Sie nicht steuern. Gestaltungsarbeit, die der Risikoeinschätzung vorauseilt, ist Arbeit, die Sie möglicherweise wegwerfen."
+      ],
+      [
+        "Wie läuft die Markenanmeldung in Deutschland ab?",
+        "Sie melden beim Deutschen Patent- und Markenamt in München an, mit Angabe der Waren- und Dienstleistungsklassen nach der Nizza-Klassifikation. Das Amt prüft absolute Schutzhindernisse — fehlende Unterscheidungskraft, beschreibende Angaben, Freihaltebedürfnis — aber es prüft nicht, ob ältere Rechte Dritter entgegenstehen. Nach der Eintragung und ihrer Veröffentlichung läuft eine dreimonatige Widerspruchsfrist, in der Inhaber älterer Marken Widerspruch einlegen können. Für den europaweiten Schutz melden Sie stattdessen oder zusätzlich eine Unionsmarke beim Amt der Europäischen Union für geistiges Eigentum in Alicante an. Welcher Weg passt, ist eine Frage Ihrer Märkte und gehört anwaltlich geklärt."
+      ],
+      [
+        "Was bedeutet die Widerspruchsfrist für die Planung?",
+        "Sie bedeutet, dass die Eintragung nicht das Ende des Risikos ist. Ein Widerspruch kann Monate nach der Anmeldung kommen, also potenziell zu einem Zeitpunkt, an dem Verpackung gedruckt, Beschilderung bestellt und die Website gebaut ist. Zeichnen Sie die Frist als eigenen Balken. Dann entscheiden Sie bewusst, ob Sie den Umstellungstag dahinter legen oder das Risiko tragen — beides ist vertretbar, unbewusst hineinzulaufen nicht."
+      ],
+      [
+        "Müssen wir alles am selben Tag umstellen?",
+        "Alles, was Sie kontrollieren, ja — Website, Produktoberfläche, Profilnamen, E-Mail-Vorlagen, Signaturen, Vertriebsunterlagen und die Ankündigung. Eine halbe Umstellung auf den eigenen Oberflächen wirkt wie ein Fehler und nicht wie eine Entscheidung. Physische und fremde Oberflächen sind die Ausnahme, weil sie wirklich nicht sofort umschalten können — deshalb gibt die Vorlage ihnen einen nachgehaltenen Nachlauf, statt so zu tun, als landeten sie am Tag selbst."
+      ],
+      [
+        "Was wird bei einem Markenrelaunch meist vergessen?",
+        "Die unscheinbaren Oberflächen: Rechnungs- und Vertragsvorlagen, die Firmierung dort, wo sie von der Marke abweicht, Pflichtangaben und Impressum, Einträge in App-Stores und auf Marktplätzen, Bewertungsprofile, Partnerverzeichnisse, Stellenbörsen, E-Mail-Signaturen, Fahrzeugbeschriftung und alles Gedruckte im Lager. Die Vorlage macht die Umstellungsprüfliste zu einer eigenen Zeile, weil das Erstellen dieser Inventur echte Arbeit ist."
+      ],
+      [
+        "Wie vermeiden wir Verluste bei der Auffindbarkeit?",
+        "Behandeln Sie Weiterleitungsplan, kanonische Verweise und die Kontinuität der Auswertung als startblockierende Aufgaben und nicht als Aufräumarbeit danach, und lassen Sie die alte Domain weiterleiten, statt sie aufzugeben. Ändert sich gleichzeitig die Seitenstruktur, planen Sie das mit dem <a href=\"/de/templates/website-redesign-project-plan.html\">Projektplan für den Website-Relaunch</a>, damit die Arbeit an den Adressen nicht in die Enthüllungswoche gequetscht wird."
+      ],
+      [
+        "Ist die Vorlage für den Markenrelaunch kostenlos?",
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

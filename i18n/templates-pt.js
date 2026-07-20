@@ -6121,6 +6121,757 @@ const T = {
       ]
     ]
   },
+
+  'battery-gigafactory-construction-schedule': {
+    card: "Congelamento do formato da célula, sala seca no ponto de orvalho, qualificação de equipamentos, formação e rampa de rendimento.",
+    h1: "Cronograma de construção de gigafábrica de baterias",
+    metaTitle: "Cronograma de gigafábrica de baterias",
+    metaDesc: "Cronograma gratuito de gigafábrica de baterias: sala seca, instalação e qualificação de equipamentos, formação, envelhecimento e rampa de rendimento.",
+    lead: "Um modelo gratuito de <strong>cronograma de construção de gigafábrica de baterias</strong> organizado em torno da sala seca, e não em torno do prédio. O congelamento do formato e da química da célula fica na frente, porque toda máquina e toda utilidade são dimensionadas a partir dele; a estrutura precisa virar um ambiente selado e desumidificado por dessecante muito antes de qualquer equipamento chegar; a descida até o ponto de orvalho e o teste de manutenção liberam a entrada das máquinas; a instalação e a qualificação dos equipamentos liberam produção vendável, e não a conclusão da obra; depois vêm formação e envelhecimento, que ocupam dias de calendário reais por célula, e a rampa de rendimento, que é uma curva, e não um marco.",
+    intro: "Uma fábrica de células não termina quando o telhado fecha. Termina quando saem células da linha a um rendimento que alguém aceita pagar, e o caminho até lá passa por um ambiente controlado. O modelo segue esse caminho:",
+    phases: [
+      [
+        "Terreno, licenças e projeto de processo da célula",
+        "Escolha do sítio e conexão à rede, o congelamento de formato e química da célula que fixa toda máquina a jusante, licenciamento ambiental e de produtos perigosos, o fluxograma de processo e a base de projeto de capacidade de linha, e os pedidos de equipamento de longo prazo de entrega. <em>Marcos: formato da célula congelado, licenças emitidas.</em>"
+      ],
+      [
+        "Estrutura do prédio e construção da sala seca",
+        "Estaqueamento, laje e estrutura metálica, fechamento e vedação da envoltória, depois a barreira de vapor e a selagem da envoltória da sala seca, eclusas e vestiários de paramentação, e a planicidade de piso que as linhas de revestimento e calandragem exigem. <em>Marco: prédio fechado e estanque.</em>"
+      ],
+      [
+        "Utilidades, desumidificação e qualificação da sala seca",
+        "Subestação e distribuição, a planta de desumidificação por dessecante, ar comprimido seco, nitrogênio e água gelada de processo, recuperação de solvente e tratamento de emissões de NMP, e então a descida até o ponto de orvalho alvo e um teste de manutenção que prova a envoltória. <em>Marco: sala seca qualificada no ponto de orvalho.</em>"
+      ],
+      [
+        "Entrada, montagem e qualificação de equipamentos",
+        "Revestidora e calandra, corte longitudinal, secagem a vácuo e bobinamento, empilhamento, solda de tabs e selagem, enchimento de eletrólito e desgaseificação, racks de formação e envelhecimento, e então o comissionamento de aceitação estação por estação. <em>Marco: qualificação de equipamentos concluída.</em>"
+      ],
+      [
+        "Comissionamento da linha, primeira célula e formação",
+        "Integração de MES e rastreabilidade, ensaios de revestimento e ajuste de qualidade da manta, disciplina operacional de sala seca, a primeira célula montada, e depois a ciclagem de formação, a janela de envelhecimento e triagem de autodescarga, e o laço de desmontagem e análise de falha. <em>Marco: primeira célula fora da linha.</em>"
+      ],
+      [
+        "Rampa de rendimento e qualificação junto ao cliente",
+        "Capacidade de processo e CEP por estação, redução de refugo do eletrodo à montagem, amostras A enviadas, ensaios de abuso e de transporte, qualificação de amostras B e PPAP, e a rampa até a capacidade nominal. <em>Marcos: meta de rendimento atingida, início de produção.</em>"
+      ]
+    ],
+    callout: "A sala seca é o cronograma. Manuseio de eletrodo e montagem de célula pedem ponto de orvalho na casa de menos quarenta graus, o que significa que o prédio precisa virar um ambiente selado e desumidificado por dessecante antes de a primeira máquina ser posicionada — e a envoltória, a barreira de vapor, as eclusas e a planta de desumidificação estão todas nesse caminho. Depois vêm duas coisas que ninguém comprime: formação e envelhecimento consomem dias de calendário reais por célula, por mais gente que se contrate, e o rendimento depois da primeira célula sobe em curva, e não em salto. A conclusão da obra não libera produção vendável; quem libera é a qualificação dos equipamentos e essa curva.",
+    customize: [
+      "Congele formato e química da célula cedo e marque isso como marco. Largura da revestidora, carga de calandra, dimensões de carcaça, arranjo dos racks de formação e todo o dimensionamento de utilidades derivam daí, e mudar depois é reprojeto, e não ajuste.",
+      "Dê barras próprias à descida ao ponto de orvalho e ao teste de manutenção, depois da planta de desumidificação instalada. Planta que roda não é o mesmo que envoltória que segura, e a pesquisa de vazamentos é onde os defeitos tardios aparecem.",
+      "Sequencie a entrada das máquinas contra a prontidão da sala seca, e não contra as datas de entrega do fornecedor. Equipamento parado em caixa do lado de fora de uma sala que não chegou ao ponto de orvalho não qualifica nada.",
+      "Modele formação e envelhecimento como barras de duração fixa por lote, e não como capacidade a que se acrescenta gente. A química define os dias; a única alavanca é quantos racks você tem.",
+      "Desenhe a rampa de rendimento como uma barra longa com um marco de meta no fim, e não como degrau. Tudo depois da primeira célula é curva de aprendizado, e desenhar isso como evento esconde meses de trabalho real.",
+      "Separe qualificação de equipamento de comissionamento de linha. O fornecedor provando que a estação atende à especificação e o seu time de processo provando que a linha faz uma célula boa são eventos diferentes, com donos diferentes.",
+      "Acrescente a homologação junto ao cliente já durante a rampa. Ensaio de abuso, certificação de transporte e PPAP levam meses de calendário e podem correr sobre células iniciais enquanto o rendimento ainda melhora."
+    ],
+    tips: [
+      "<strong>Construa a sala seca antes de precisar dela.</strong> Selagem de envoltória, eclusas e descida ao ponto de orvalho são sequenciais e lentas, e cada dia dessa corrente fica diretamente na frente da primeira célula.",
+      "<strong>Compre capacidade de formação e envelhecimento, não cronograma.</strong> Se a janela de envelhecimento é de três semanas por lote, encurtar a rampa só acontece com mais racks e mais área — resequenciar não muda a química.",
+      "<strong>Trate recuperação de solvente e tratamento de emissões como caminho crítico.</strong> São itens sem glamour, rotineiramente despriorizados, e nenhuma linha de revestimento roda em produção sem eles.",
+      "<strong>Acompanhe o refugo por estação desde o primeiro ensaio.</strong> Uma estação ruim a montante joga fora material que já recebeu valor agregado, e é a razão mais comum de uma rampa empacar.",
+      "<strong>Não confunda obra pronta com fábrica produtiva.</strong> O que o conselho enxerga é o prédio; o que gera receita é a estação qualificada, e o modelo separa os dois marcos de propósito.",
+      "<strong>Ponha a disciplina de sala seca no gráfico como treinamento, e não como comunicado.</strong> Paramentação, entrada de material e controle de umidade são hábitos que levam semanas para pegar, e uma excursão de umidade custa mais do que o treinamento custaria."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva construir uma gigafábrica de baterias?",
+        "Uma planta de células em terreno novo costuma levar de trinta a trinta e seis meses das licenças ao início de produção, que é aproximadamente o intervalo do modelo. A estrutura é previsível; a variância mora na qualificação da sala seca, na qualificação dos equipamentos e na rampa de rendimento."
+      ],
+      [
+        "Por que a sala seca domina o cronograma?",
+        "Porque manuseio de eletrodo e montagem de célula exigem umidade extremamente baixa, então o prédio precisa estar selado, com barreira de vapor e desumidificado por dessecante antes de qualquer máquina ser posicionada. Isso transforma uma sequência de obra em uma sequência de ambiente controlado meses antes de o primeiro equipamento chegar."
+      ],
+      [
+        "Dá para comprimir formação e envelhecimento?",
+        "Não. Cada célula precisa de um número fixo de horas ou dias de carga controlada e depois de um período de repouso para a triagem de autodescarga. A única alavanca é mais capacidade de formação e envelhecimento, o que é capital e área, e não programação."
+      ],
+      [
+        "O que de fato libera produção vendável?",
+        "Qualificação de equipamentos e rendimento, e não conclusão da obra. Uma fábrica terminada com estações não qualificadas não produz nada vendável, e é por isso que o modelo coloca o marco de qualificação bem depois do acabamento."
+      ],
+      [
+        "Como mostrar a rampa de rendimento em um gráfico de Gantt?",
+        "Como barra longa com marco de meta no fim. A redução de defeitos é uma curva movida por experimentos, e desenhar isso como evento único é a forma mais comum de um cronograma de gigafábrica enganar o próprio conselho."
+      ],
+      [
+        "Como isso se compara a uma fábrica de semicondutores?",
+        "A lógica é parecida: em ambos os casos o ambiente controlado e a qualificação dos equipamentos ficam no caminho crítico, e não a obra civil. A diferença é que a sala limpa de um fab é controlada por partículas e a sala seca de células é controlada por umidade, e que formação e envelhecimento acrescentam um tempo de calendário fixo por célula que não existe no fab."
+      ],
+      [
+        "O modelo de cronograma de gigafábrica é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'nuclear-decommissioning-schedule': {
+    card: "Caracterização radiológica, autorização da CNEN, rota do rejeito, desmontagem com orçamento de dose e liberação do sítio.",
+    h1: "Cronograma de descomissionamento nuclear",
+    metaTitle: "Cronograma de descomissionamento nuclear",
+    metaDesc: "Cronograma gratuito de descomissionamento nuclear: caracterização, rota do rejeito, critérios da CNEN, desmontagem por dose e liberação do sítio.",
+    lead: "Um modelo gratuito de <strong>cronograma de descomissionamento nuclear</strong> construído sobre a regra que governa todo programa desse tipo: não se desmonta mais rápido do que se consegue dar destino ao rejeito. Primeiro a retirada do combustível e a caracterização radiológica, porque nada se planeja contra um inventário desconhecido; depois o plano de descomissionamento, a análise de segurança e a autorização da CNEN, com os critérios de aceitação do rejeito e a capacidade de depósito acertados antes de o corte começar; a desmontagem é ritmada pelo orçamento de dose ALARA, e não pelo tamanho da equipe; embalagem, caracterização e depósito correm ao lado; e no fim vêm demolição, remediação do terreno e a decisão de liberação do sítio.",
+    intro: "Cronogramas de descomissionamento falham quando são desenhados como demolição com papelada extra. O trabalho é limitado por destino do rejeito, autorizações e dose, e o modelo é ordenado assim:",
+    phases: [
+      [
+        "Desativação, retirada de combustível e caracterização",
+        "Retirada do combustível e transferência para fora da área, caracterização radiológica, inventário de rejeitos legados e contabilidade de materiais nucleares, levantamento de amianto e de perigos convencionais, e a definição do estado final contra o qual tudo será medido. <em>Marcos: instalação livre de combustível, linha de base de caracterização emitida.</em>"
+      ],
+      [
+        "Licenciamento, autorização da CNEN e rota do rejeito",
+        "O plano de descomissionamento e a análise de segurança submetidos à CNEN, o licenciamento ambiental correspondente, os critérios de aceitação de rejeitos acertados com o depósito de destino, a capacidade de depósito reservada, e o orçamento de dose ALARA com o plano de proteção radiológica. <em>Marcos: autorização para iniciar a desmontagem, rota do rejeito confirmada.</em>"
+      ],
+      [
+        "Remoção de sistemas auxiliares e contenção",
+        "Remoção de amianto e limpeza de perigos convencionais, tendas de contenção e ventilação dedicada, desmontagem de sistemas e tubulações fora de uso, limpeza de drenos ativos e de piscinas, e descontaminação de superfícies acessíveis. <em>Marco: prédios auxiliares radiologicamente liberados.</em>"
+      ],
+      [
+        "Desmontagem do reator e do circuito primário",
+        "Ensaios de manipulação remota e de corte, dose alocada por área de trabalho, segmentação e redução de tamanho do circuito primário, remoção dos internos do reator sob blindagem, revisão de dose acumulada com ajuste de turnos, e remoção do blindagem biológica. <em>Marco: prédio do reator esvaziado.</em>"
+      ],
+      [
+        "Embalagem, caracterização e deposição do rejeito",
+        "Segregação, ensaio e registros de caracterização, embalagem em contentores blindados dentro dos critérios de aceitação, carregamento e monitoração do depósito, e a liberação irrestrita do material que pode sair como sucata ou reciclagem. <em>Marco: todo o rejeito ativo embalado e depositado.</em>"
+      ],
+      [
+        "Demolição, remediação e liberação do sítio",
+        "Levantamento radiológico final das estruturas, demolição convencional dos prédios liberados, avaliação de qualidade do solo e remediação, o levantamento de estado final com o pacote de registros, e a decisão de liberação do sítio pela CNEN. <em>Marco: sítio liberado.</em>"
+      ]
+    ],
+    callout: "Quem dita o ritmo é a capacidade de destino do rejeito, e não o tamanho da equipe. Cada metro cúbico cortado precisa ir para algum lugar que o aceite, e os critérios de aceitação desse depósito determinam como o rejeito é caracterizado, embalado, ensaiado e documentado antes de se mover. Esse ponto é mais duro no Brasil do que em textos importados: o país não opera um repositório definitivo para rejeitos de baixo e médio nível, e a prática de Angra é a guarda em depósitos licenciados enquanto a solução definitiva não existe. Ou seja, a sua rota realista é depósito intermediário com capacidade finita, sob os critérios da CNEN — e quando o depósito enche, o corte para com gente parada em pé. Sobreponha a isso o orçamento de dose, que limita quanto tempo alguém pode passar em cada área, e a autorização por etapa. Desenhe a rota do rejeito como barra, e não como premissa.",
+    customize: [
+      "Ponha as barras de critérios de aceitação e de reserva de capacidade de depósito antes de sequenciar qualquer desmontagem. Se elas terminam depois de o corte começar, o cronograma está errado por mais bem feito que esteja o plano de desmontagem.",
+      "Dê à caracterização uma barra generosa e cedo. Volumes, embalagem, dose e custo derivam dela, e caracterização magra é o previsor mais confiável de estouro em descomissionamento.",
+      "Modele o orçamento de dose como restrição de duração, e não como nota de segurança. Se a área permite apenas certa dose coletiva por campanha, o trabalho leva o tempo que leva e mais gente não ajuda.",
+      "Acrescente um marco de autorização na frente de cada fase física. A CNEN autoriza por etapas, e tratar a anuência como evento único no começo distorce os portões reais.",
+      "Separe depósito intermediário de destinação definitiva. Material que entra em depósito no próprio sítio não é o mesmo que material que sai do sítio, e só um dos dois reduz o passivo de verdade.",
+      "Mantenha uma barra de liberação irrestrita e reciclagem. Boa parte da massa não é ativa, e liberá-la corretamente reduz custo e alivia a pressão sobre a capacidade de depósito.",
+      "Some as barras dos licenciamentos que correm em paralelo ao nuclear — ambiental, transporte de material radioativo, demolição — porque cada um tem rito e prazo próprios."
+    ],
+    tips: [
+      "<strong>Caracterize antes de planejar, não durante a desmontagem.</strong> Cronograma construído sobre inventário presumido é cronograma que será rebaselinado na primeira medição que voltar acima do esperado.",
+      "<strong>Trate a capacidade de depósito como compra de longo prazo de entrega.</strong> Depósito tem volume finito e fila própria; vaga reservada é ativo, e vaga não reservada é risco de parada.",
+      "<strong>Projete o corte para o contentor.</strong> A redução de tamanho tem que atender ao que a embalagem e os critérios de aceitação permitem, e não ao que é conveniente na frente de corte — recortar aço ativado é caro e dose-intensivo.",
+      "<strong>Acompanhe a dose coletiva semanalmente contra o orçamento.</strong> Dose subindo à frente do plano é aviso precoce de que o método está errado, e aparece muito antes de o cronograma atrasar.",
+      "<strong>Não trate amianto e perigos convencionais como detalhe.</strong> Em instalações antigas os perigos não radiológicos movem mais do programa inicial do que os radiológicos, e bloqueiam o acesso a tudo o que está atrás deles.",
+      "<strong>Monte o pacote de registros ao longo do caminho.</strong> A liberação do sítio depende de evidência de que o estado final foi alcançado, e reconstruir levantamentos e registros de expedição no fim é mais lento do que mantê-los em dia."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva um descomissionamento nuclear?",
+        "O modelo cobre cerca de mil e duzentos dias para um programa de uma única instalação com desmontagem diferida, mas programas reais vão de poucos anos a várias décadas, conforme a estratégia adotada, a disponibilidade de rota para o rejeito e o uso ou não de um período de guarda segura antes da desmontagem."
+      ],
+      [
+        "Quem autoriza o descomissionamento no Brasil?",
+        "A CNEN é a autoridade reguladora nuclear: o plano de descomissionamento, a análise de segurança, os critérios de gerência do rejeito e a liberação final do sítio passam por ela. O licenciamento ambiental e as licenças de demolição correm em paralelo, com órgãos próprios, e uma anuência não substitui a outra. Confirme o rito e as normas aplicáveis com a CNEN antes de fixar datas, e não depois."
+      ],
+      [
+        "Por que o destino do rejeito controla o cronograma?",
+        "Porque o material desmontado precisa ser caracterizado, embalado e aceito por um depósito. No Brasil isso pesa ainda mais, porque não há repositório definitivo em operação para rejeitos de baixo e médio nível, e o caminho prático é o depósito licenciado com capacidade finita. Depósito cheio significa material parado no sítio e corte interrompido."
+      ],
+      [
+        "O que é orçamento de dose ALARA e como afeta o plano?",
+        "É o limite de exposição contra o qual o trabalho em uma área é planejado, sob o princípio de manter a dose tão baixa quanto razoavelmente exequível. Ele restringe quantas horas-homem podem ser gastas ali, então tarefas em áreas de dose alta têm duração definida pela dose, e não pela mão de obra disponível."
+      ],
+      [
+        "Por que a caracterização vem antes de tudo?",
+        "Porque volumes, taxas de dose, tipos de embalagem, categorias de rejeito e custos derivam dela. Planejar desmontagem sem linha de base de caracterização faz de cada estimativa a jusante um palpite que será corrigido em campo, quase sempre para pior."
+      ],
+      [
+        "A autorização é única para todo o programa?",
+        "Não. O descomissionamento é autorizado por etapas, com análise de segurança e revisão para cada fase relevante. O modelo mostra marcos de autorização na frente de cada fase física, em vez de uma anuência única no início."
+      ],
+      [
+        "O modelo de descomissionamento nuclear é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'university-accreditation-timeline': {
+    card: "Protocolo no e-MEC, PPC e PDI, autoavaliação, avaliação in loco do INEP e o conceito final.",
+    h1: "Cronograma de reconhecimento de curso no MEC",
+    metaTitle: "Cronograma de reconhecimento de curso no MEC",
+    metaDesc: "Cronograma gratuito de reconhecimento de curso: protocolo no e-MEC, PPC e PDI, autoavaliação, avaliação in loco do INEP e o conceito de curso.",
+    lead: "Um modelo gratuito de <strong>cronograma de reconhecimento de curso no MEC</strong> que começa onde o cronograma real começa — com datas que a instituição não controla. O protocolo tem janela regulamentar, a comissão do INEP é designada pelo sistema e a visita in loco é agendada sem consultar o calendário acadêmico da IES. Tudo o mais é contado para trás a partir daí: comissão própria e grupos por dimensão, diagnóstico contra os indicadores do instrumento, atualização do PPC e do PDI, corpo docente e titulação, acervo e infraestrutura, e então a simulação de visita. O modelo separa de propósito autorização, reconhecimento e renovação de reconhecimento, que são três processos diferentes.",
+    intro: "Avaliação de curso é um dos raros projetos institucionais com prazo genuinamente imóvel que a instituição não escolheu. O modelo é montado de trás para frente a partir dele:",
+    phases: [
+      [
+        "Enquadramento do processo e protocolo no e-MEC",
+        "Definir de qual processo se trata — autorização, reconhecimento ou renovação de reconhecimento —, ler o instrumento de avaliação vigente e o ciclo do SINAES, conferir a janela regulamentar, montar o processo e protocolá-lo no e-MEC, e aprovar orçamento e horas de dedicação. <em>Marcos: processo protocolado, fase de análise documental iniciada.</em>"
+      ],
+      [
+        "Governança da autoavaliação e diagnóstico",
+        "Comissão de acompanhamento designada pela reitoria, grupos de trabalho por dimensão do instrumento — organização didático-pedagógica, corpo docente e tutorial, infraestrutura —, o repositório de evidências que vai durar o ciclo inteiro, a articulação com a CPA, e o diagnóstico indicador a indicador. <em>Marco: diagnóstico apresentado à direção.</em>"
+      ],
+      [
+        "PPC, PDI e evidências acadêmicas",
+        "Revisão do projeto pedagógico do curso e da matriz curricular, coerência com o plano de desenvolvimento institucional, titulação e regime de trabalho do corpo docente, produção e planos de ensino, atas de colegiado e de NDE, resultados do ENADE e da autoavaliação, e políticas de atendimento ao discente. <em>Marco: base de evidências completa.</em>"
+      ],
+      [
+        "Infraestrutura, acervo e acessibilidade",
+        "Laboratórios e equipamentos exigidos pelo PPC, bibliografia básica e complementar conferida título a título contra os planos de ensino, acervo físico e digital com comprovação de assinatura, acessibilidade arquitetônica e atitudinal, e as salas que a comissão vai efetivamente visitar."
+      ],
+      [
+        "Preparação da comunidade e simulação de visita",
+        "Reuniões com o colegiado e o NDE, oficinas por dimensão com coordenadores, preparação de docentes, técnicos e representação discente, e uma simulação de visita conduzida por avaliadores externos, cedo o bastante para que o achado ainda possa ser corrigido. <em>Marco: simulação concluída e plano de correção definido.</em>"
+      ],
+      [
+        "Avaliação in loco, impugnação e conceito",
+        "Designação da comissão do INEP e agendamento da visita, logística e agenda de entrevistas, a visita in loco, o relatório de avaliação, a fase de impugnação quando cabível, e a publicação do conceito de curso e do ato autorizativo. <em>Marco: conceito publicado e ato expedido.</em>"
+      ]
+    ],
+    callout: "As duas datas que importam não são suas. A janela de protocolo é regulamentar — no reconhecimento, o pedido é feito quando o curso já cumpriu entre 50% e 75% da carga horária, e perder essa janela não custa um mês, custa a regularidade do curso e a expedição de diplomas. A segunda data é a visita: a comissão do INEP é designada pelo sistema e chega quando chega, muitas vezes com poucas semanas de aviso e sem respeitar o seu calendário de férias ou de reforma de laboratório. Toda barra deste gráfico é derivada disso: a última data possível para o PPC atualizado, para a contratação de docente titulado, para a compra do acervo, para a simulação. E vale separar os três processos, porque confundi-los é o erro mais comum: <strong>autorização</strong> antecede a oferta do curso; <strong>reconhecimento</strong> ocorre com o curso em andamento e é o que garante a validade do diploma; <strong>renovação de reconhecimento</strong> é periódica, dentro do ciclo avaliativo, e é fortemente influenciada pelo CPC.",
+    customize: [
+      "Ponha primeiro a janela de protocolo e a data prevista de visita como marcadores fixos, e puxe todas as demais barras para trás até caber. Se não couber, a resposta é mais recurso mais cedo, e nunca uma fase de PPC mais curta.",
+      "Deixe explícito na primeira linha qual é o processo — autorização, reconhecimento ou renovação —, porque o instrumento aplicável, os documentos e o efeito jurídico mudam entre eles.",
+      "Acrescente uma barra por dimensão do instrumento em vez de uma barra média de autoavaliação. As dimensões não andam no mesmo ritmo, e a média esconde a que está travada.",
+      "Dê à conferência de bibliografia uma barra própria e generosa. Conferir título a título contra os planos de ensino e comprovar acervo físico e digital é trabalho lento, e é onde as comissões costumam encontrar lacuna.",
+      "Coloque a simulação de visita cedo o suficiente para agir sobre o que ela achar. Ensaio duas semanas antes é teatro; ensaio antes da revisão final do PPC vale o que custou.",
+      "Trate a contratação e a titulação do corpo docente como item de longo prazo de entrega. Doutor com aderência à área não se contrata no mês da visita.",
+      "Acrescente barras para o ENADE e para os trabalhos da CPA que caiam dentro da janela, porque disputam as mesmas pessoas e alimentam os mesmos indicadores."
+    ],
+    tips: [
+      "<strong>Não confunda os três processos.</strong> Autorização, reconhecimento e renovação de reconhecimento têm instrumentos, prazos e consequências diferentes, e planejar um com o roteiro do outro é o erro que mais custa caro.",
+      "<strong>Trate o PPC como documento vivo, e não como anexo.</strong> A comissão avalia coerência entre o que o PPC promete, o que os planos de ensino dizem e o que os laboratórios e o acervo permitem — três coisas que costumam divergir sem que ninguém perceba.",
+      "<strong>Monte o repositório de evidências uma vez, no início.</strong> Buscar o mesmo documento duas vezes, primeiro para o grupo de trabalho e depois para o processo, é o maior custo evitável do ciclo.",
+      "<strong>Feche lacunas com antecedência suficiente para ter histórico.</strong> Política aprovada no mês anterior à visita demonstra consciência; política com um ano de atas demonstra prática, e a comissão sabe distinguir.",
+      "<strong>Ensaie as entrevistas com quem realmente vai estar na sala.</strong> A comissão conversa com coordenador, NDE, docentes, técnicos e estudantes, e não só com a direção.",
+      "<strong>Acompanhe o CPC e o resultado do ENADE o ciclo inteiro.</strong> Eles entram na renovação de reconhecimento por caminho próprio, e reagir a eles só quando o processo abre é tarde demais."
+    ],
+    faq: [
+      [
+        "Qual a diferença entre autorização, reconhecimento e renovação de reconhecimento?",
+        "São três processos distintos. A autorização é prévia: permite que a instituição não autônoma passe a ofertar o curso. O reconhecimento acontece com o curso já em andamento e é o ato que assegura a validade nacional do diploma — por isso o pedido tem janela regulamentar, feita quando o curso cumpriu entre 50% e 75% da carga horária. A renovação de reconhecimento é periódica, dentro do ciclo avaliativo do SINAES, e é a fase em que os indicadores acumulados pesam mais. Confundir os três é o erro mais frequente no planejamento."
+      ],
+      [
+        "Quanto tempo leva preparar um processo de reconhecimento?",
+        "A preparação costuma rodar cerca de dois anos até a visita, que é aproximadamente o intervalo do modelo. A montagem documental em si pode levar poucos meses; o que consome tempo é o que vem antes dela — titulação do corpo docente, acervo, laboratórios, atas de colegiado e um ciclo de autoavaliação que precisa ter efetivamente ocorrido."
+      ],
+      [
+        "Podemos escolher a data da avaliação in loco?",
+        "Não. A comissão do INEP é designada pelo sistema e a visita é agendada sem negociação com a instituição, às vezes com aviso curto. O que a instituição controla é a data do protocolo e o quanto está pronta quando o agendamento sair, e é por isso que o modelo trabalha de trás para frente."
+      ],
+      [
+        "O que são o CC e o CPC?",
+        "O conceito de curso resulta da avaliação in loco conduzida pela comissão sobre as dimensões do instrumento. O conceito preliminar de curso é calculado a partir de indicadores já disponíveis — desempenho no ENADE, corpo docente, infraestrutura percebida — e é ele que costuma definir se um curso é dispensado ou selecionado para visita na renovação. Um alimenta o outro, mas não são a mesma coisa."
+      ],
+      [
+        "Que papel o PDI cumpre na avaliação de curso?",
+        "O plano de desenvolvimento institucional é a moldura contra a qual o PPC é lido. A comissão verifica se o curso é coerente com o que a instituição declarou sobre políticas acadêmicas, expansão, corpo docente e infraestrutura. PPC excelente que contradiz o PDI gera fragilidade nas duas pontas, então o modelo revisa os dois na mesma fase."
+      ],
+      [
+        "Vale a pena fazer simulação de visita?",
+        "Vale, e ela precisa cair cedo o bastante para que o achado ainda seja corrigível. Uma simulação conduzida por avaliadores externos, antes da revisão final do PPC, encontra exatamente o tipo de incoerência entre documento, laboratório e plano de ensino que a comissão encontraria — a diferença é que ainda dá tempo de resolver."
+      ],
+      [
+        "O modelo de cronograma de avaliação de curso é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'crop-planting-harvest-schedule': {
+    card: "Vazio sanitário, janela do ZARC, estádios fenológicos, carência, colheita por umidade e capacidade de secagem.",
+    h1: "Cronograma de plantio e colheita da safra",
+    metaTitle: "Cronograma de plantio e colheita da safra",
+    metaDesc: "Cronograma gratuito de plantio e colheita: vazio sanitário, janela do ZARC, estádios fenológicos, carência, umidade de colheita, secagem e armazenagem.",
+    lead: "Um modelo gratuito de <strong>cronograma de plantio e colheita</strong> para uma safra que genuinamente não se move. Planejamento de entressafra, análise de solo, insumos e revisão de máquinas; uma janela de semeadura aberta pelo vazio sanitário e delimitada pelo ZARC, e não pelo desejo do gestor; a semeadura distribuída entre talhões porque uma única frota atende todos; uma sequência de estádios fenológicos com as aplicações penduradas nesses estádios, e não em datas; depois a colheita liberada pela umidade do grão e pelos períodos de carência, com secagem e armazenagem definindo a velocidade com que dá para colher. E, no Brasil, uma amarração extra: a data em que a soja sai do campo é a data em que a segunda safra pode entrar.",
+    intro: "Quase todo cronograma negocia com suas restrições. Um ano agrícola não: a biologia define a sequência, o clima define a janela e a norma fecha as bordas. O modelo mantém os três visíveis:",
+    phases: [
+      [
+        "Entressafra, planejamento agronômico e insumos",
+        "Plano de cultivo e rotação talhão a talhão, amostragem de solo e resultados de fertilidade, calagem e gessagem, compra de sementes, fertilizantes e defensivos, revisão e regulagem de máquinas, e contratação de mão de obra e prestadores para a safra. <em>Marco: insumos entregues e armazenados.</em>"
+      ],
+      [
+        "Vazio sanitário, ZARC e janela de semeadura",
+        "Cumprimento do vazio sanitário da soja com o campo comprovadamente limpo, conferência da janela de semeadura do ZARC para o município, o tipo de solo e o ciclo da cultivar escolhida, verificação de que a janela usada é a mesma exigida pelo crédito e pelo seguro, monitoramento de umidade e temperatura do solo, preparo ou manejo da palhada, e o tratamento de sementes. <em>Marcos: vazio sanitário encerrado, janela de semeadura aberta.</em>"
+      ],
+      [
+        "Semeadura e implantação da lavoura",
+        "Semeadura dos talhões precoces, do bloco principal e das áreas tardias ou de solo mais úmido, com adubação de base, herbicida de pré-emergência, e a avaliação de estande e de emergência que diz se algum talhão precisa de replantio. <em>Marco: semeadura concluída dentro da janela.</em>"
+      ],
+      [
+        "Estádios fenológicos e monitoramento",
+        "Desenvolvimento vegetativo, fechamento do dossel, florescimento e enchimento de grãos, com monitoramento semanal de pragas e doenças, amostragem por talhão e manejo de irrigação quando houver. <em>Os estádios são o que sustenta as datas de aplicação.</em>"
+      ],
+      [
+        "Manejo fitossanitário e nutricional",
+        "Herbicida de pós-emergência, o programa de fungicidas para ferrugem e doenças de final de ciclo, inseticidas conforme nível de dano, e adubação foliar — cada aplicação amarrada a um estádio, com receituário agronômico emitido, registro de aplicação e o período de carência contado até a colheita. <em>Marco: programa de aplicações concluído com carência cumprida.</em>"
+      ],
+      [
+        "Colheita, secagem, armazenagem e segunda safra",
+        "Amostragem de umidade e ponto de colheita, prontidão de colhedoras e transbordos, colheita dos talhões precoces, principais e tardios, transporte e balança, secagem contínua com controle de umidade, enchimento de silos com aeração e termometria, classificação e recebimento, entrega dos contratos, e a semeadura da segunda safra logo atrás da colheita. <em>Marcos: colheita concluída, safra encerrada.</em>"
+      ]
+    ],
+    callout: "O calendário não é seu. Três instrumentos com data fecham a janela antes de qualquer decisão agronômica. O <strong>vazio sanitário</strong> da soja é um período legalmente fixado, definido por norma estadual na maioria dos estados produtores, em que não pode haver planta viva de soja no campo — é um bloqueio duro, com fiscalização e multa, e é ele que define o primeiro dia possível de semeadura. O <strong>ZARC</strong> define, por município, tipo de solo e ciclo de cultivar, os períodos de semeadura de menor risco climático, e não é apenas orientação técnica: semear fora da janela indicada costuma custar o enquadramento no crédito rural e a cobertura do seguro agrícola, o que transforma uma decisão de campo em decisão financeira. E, na outra ponta, o <strong>período de carência</strong> de cada produto aplicado define a data mais cedo em que aquele talhão pode ser colhido. Atrás disso ainda existe um limite físico: a capacidade de secagem e de armazenagem. Se você seca vinte toneladas por hora, não adianta colher mais rápido do que isso por muito tempo. E como a mesma frota e a mesma equipe atendem todos os talhões, o plano é, no fundo, um problema de sequenciamento.",
+    customize: [
+      "Ponha as datas do vazio sanitário do seu estado como barra bloqueada no início do gráfico, e não como nota. Elas mudam de estado para estado e podem mudar de safra para safra.",
+      "Puxe a janela de semeadura do ZARC para o seu município, o seu tipo de solo e o ciclo da cultivar que você comprou — e confira se é essa mesma janela que consta na sua proposta de crédito e na apólice do seguro.",
+      "Divida a semeadura em talhões precoces, principais e tardios dimensionados pelo seu rendimento diário real. É isso que mostra se a frota fecha dentro da janela ou se falta prestador.",
+      "Pendure cada aplicação em uma barra de estádio fenológico, e não em uma data. Quando a safra adianta ou atrasa, as aplicações andam junto com a lavoura.",
+      "Acrescente uma barra por cultura se você tem mais de uma. Soja, milho e algodão disputam a mesma semeadora, o mesmo pulverizador e a mesma colhedora, e essa disputa é o ponto do gráfico.",
+      "Marque o período de carência de cada produto entre a última aplicação e a colheita do talhão. É restrição legal e contratual, e é o que impede colher um talhão pronto.",
+      "Dê à capacidade de secagem uma barra própria atravessando a colheita. Se ela é mais curta que as barras de colheita acima, a armazenagem é a sua restrição e o cronograma precisa dizer isso.",
+      "Coloque a segunda safra no mesmo gráfico. A data em que a soja sai é a data em que o milho entra, e o atraso de uma semana na colheita é uma semana a menos de janela para a safrinha."
+    ],
+    tips: [
+      "<strong>Semeie conforme a condição de solo, e não conforme o plano.</strong> Semeadura em solo encharcado custa produtividade a safra inteira, e os dias aparentemente ganhos voltam como estande falho que nenhuma aplicação recupera.",
+      "<strong>Trate o ZARC como instrumento financeiro, e não como sugestão.</strong> Semear fora da janela indicada costuma comprometer o enquadramento no crédito e a cobertura do seguro, e essa conta aparece justamente no ano em que a lavoura quebra.",
+      "<strong>Mantenha o pulverizador à frente da lavoura.</strong> As janelas por estádio têm poucos dias, e pulverizador preso em outro talhão é a razão mais comum de um fungicida entrar atrasado.",
+      "<strong>Emita o receituário agronômico antes da aplicação, não depois.</strong> Ele é obrigatório para a compra e o uso de agrotóxicos, e serve de base para o registro de aplicação que a rastreabilidade e a certificação vão pedir.",
+      "<strong>Planeje a colheita pelo secador, e não pela colhedora.</strong> Colher com umidade alta só serve se houver secagem disponível; caso contrário o grão fica esquentando em transbordo enquanto a colhedora parece produtiva.",
+      "<strong>Contrate frete e prestador antes da colheita.</strong> Todo mundo precisa de caminhão na mesma quinzena, e armazém cheio sem escoamento para a colhedora tão bem quanto a chuva.",
+      "<strong>Registre tudo enquanto acontece.</strong> Receituário, registro de aplicação, leituras de umidade e temperatura de silo são exigidos por certificação e por contrato, e reconstruí-los depois da safra é lento e pouco convincente."
+    ],
+    faq: [
+      [
+        "Como montar um cronograma de plantio e colheita no Brasil?",
+        "Comece pelas datas que você não controla: o vazio sanitário do seu estado, a janela de semeadura do ZARC para o seu município e cultivar, e a umidade de colheita. Depois encaixe a frota entre elas. A sequência agronômica entre esses dois pontos é definida pela cultura, e não pela preferência de quem planeja."
+      ],
+      [
+        "O que é o vazio sanitário e como ele entra no cronograma?",
+        "É um período fixado por norma, adotado pela maioria dos estados produtores de soja, em que não pode existir planta viva de soja no campo — a finalidade é quebrar o ciclo da ferrugem asiática. Como as datas são publicadas e fiscalizadas, ele funciona como um bloqueio duro no início do gráfico: define o primeiro dia possível de semeadura e, indiretamente, toda a cadeia até a segunda safra. Confirme as datas do seu estado a cada safra, porque elas variam."
+      ],
+      [
+        "Por que o ZARC importa para o cronograma, e não só para a agronomia?",
+        "Porque o zoneamento agrícola de risco climático indica, por município, tipo de solo e ciclo de cultivar, os períodos de semeadura de menor risco — e o enquadramento no crédito rural e na cobertura do seguro agrícola está atrelado a semear dentro da janela indicada. Isso torna a janela uma restrição contratual com data, e não uma recomendação técnica que se possa flexibilizar em um ano apertado."
+      ],
+      [
+        "Por que as aplicações são amarradas a estádios e não a datas?",
+        "Porque fungicida e herbicida só funcionam dentro de uma janela estreita em torno de um estádio específico. Se a safra adianta duas semanas, as aplicações adiantam junto — por isso o modelo pendura as barras de aplicação nas barras de estádio fenológico, e não no calendário."
+      ],
+      [
+        "O que é o período de carência e como ele afeta a colheita?",
+        "É o intervalo mínimo, definido no registro de cada produto, entre a última aplicação e a colheita. Ele existe para garantir resíduo dentro do limite permitido e é obrigatório. Na prática, ele fixa a data mais cedo em que cada talhão pode ser colhido, o que pode ser mais restritivo do que a própria umidade do grão — e por isso aparece como barra no modelo."
+      ],
+      [
+        "O que limita a velocidade da colheita?",
+        "Normalmente secagem e armazenagem, e não a colhedora. Se a capacidade do secador é menor que o ritmo de chegada do grão, a colheita precisa desacelerar — por isso a barra de secagem fica no gráfico ao lado das barras de colheita, e não em uma planilha separada."
+      ],
+      [
+        "O modelo de cronograma de safra é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'gym-opening-timeline': {
+    card: "Alvará e AVCB, obra, prazo de fabricação dos equipamentos, registro no CREF e pré-venda de sócios fundadores.",
+    h1: "Cronograma de abertura de academia",
+    metaTitle: "Cronograma de abertura de academia",
+    metaDesc: "Cronograma gratuito de abertura de academia: alvará e AVCB, obra, prazo dos equipamentos, registro no CREF, pré-venda de sócios fundadores e inauguração.",
+    lead: "Um modelo gratuito de <strong>cronograma de abertura de academia</strong> montado em torno do que de fato decide se a academia abre bem: a pré-venda. Plano se vende meses antes de a porta abrir, então marca, site, tapume e a campanha de sócios fundadores correm à frente da obra, e não atrás dela — e a meta de fundadores vira portão da decisão de inaugurar, e não enfeite de marketing. Atrás disso ficam o contrato de locação, o alvará de funcionamento e o AVCB, uma obra com carga de piso e isolamento acústico reais, equipamentos com prazo de fabricação medido em meses, o registro da academia e do responsável técnico no CREF, e uma grade de aulas que precisa ser ensaiada.",
+    intro: "Academia que abre com a lista de alunos vazia já nasce em dificuldade. Por isso o modelo põe o marketing na frente da obra, e não depois dela:",
+    phases: [
+      [
+        "Conceito, ponto e contrato",
+        "Formato e análise de raio de captação, modelo financeiro e escada de planos, busca e seleção de pontos, negociação e assinatura do contrato de locação, e a abertura da empresa com capital, seguros e consulta prévia de viabilidade na prefeitura. <em>Marco: contrato assinado.</em>"
+      ],
+      [
+        "Projeto, licenças e obra",
+        "Layout e zoneamento do salão, projeto arquitetônico e projeto de prevenção contra incêndio protocolado no corpo de bombeiros, alvará de construção e mudança de uso quando houver, projeto de carga de piso e isolamento acústico, demolição e infraestrutura elétrica e hidráulica, vestiários e drenagem, e então piso emborrachado, espelhos e acabamento dos estúdios. <em>Marco: obra substancialmente concluída.</em>"
+      ],
+      [
+        "Compra e instalação dos equipamentos",
+        "Especificação e cotações, o pedido de cardio e musculação colocado cedo, fabricação e transporte, entrega do rack e do peso livre, montagem e ancoragem, e então inspeção de segurança e registro patrimonial. <em>Marco: salão equipado e liberado para uso.</em>"
+      ],
+      [
+        "Marca, marketing e pré-venda de fundadores",
+        "Identidade e comunicação visual, site, aplicativo de agendamento e meio de pagamento com recorrência, tapume e imprensa local formando lista de espera, e então a abertura da pré-venda, que roda por meses enquanto o espaço ainda é canteiro de obras. <em>Marcos: pré-venda aberta, meta de sócios fundadores atingida.</em>"
+      ],
+      [
+        "Equipe, registro no CREF e programação",
+        "Contratação de gerente e professores, registro da pessoa jurídica no CREF do estado e indicação do responsável técnico, conferência do registro individual de cada professor, familiarização com os equipamentos instalados, primeiros socorros e simulado de emergência, e a grade de aulas montada, com professores nomeados e um ensaio geral. <em>Marco: equipe pronta para operar.</em>"
+      ],
+      [
+        "Vistorias, soft opening e inauguração",
+        "Vistoria do corpo de bombeiros e emissão do AVCB, alvará de funcionamento e licença sanitária, limpeza, loja e vending, controle de acesso e carteirinhas, uma semana de soft opening só para os sócios fundadores, resolução das pendências, e então o dia de inauguração e a primeira revisão de retenção. <em>Marcos: inauguração ao público, operação em regime.</em>"
+      ]
+    ],
+    callout: "A pré-venda é o ponto. A economia de uma academia depende de volume de alunos desde o primeiro mês, e planos são vendidos muito antes de alguém poder usar o prédio — o que significa marca, site, meio de pagamento e campanha de fundadores no ar enquanto o espaço ainda está tapumado e cheio de poeira. Desenhe essas barras à frente da conclusão da obra e trate a meta de sócios fundadores como portão da decisão de inaugurar: se o número não veio, a resposta certa costuma ser mais semanas de pré-venda, e não uma inauguração diante de um salão vazio. Do lado das autorizações, o par que costuma atrasar tudo é o <strong>AVCB</strong> — ou o certificado equivalente do corpo de bombeiros do seu estado — e o <strong>alvará de funcionamento</strong>, porque o alvará normalmente depende da vistoria do bombeiro, e a vistoria depende de um projeto de prevenção aprovado meses antes. E há um requisito que nada tem a ver com obra: academia é atividade fiscalizada pelo sistema CONFEF/CREF, com registro da pessoa jurídica, responsável técnico indicado e professores registrados — resolver isso na semana da abertura é como o negócio começa autuado.",
+    customize: [
+      "Comece a barra de pré-venda tão cedo quanto o meio de pagamento e o contrato de adesão permitirem, e rode-a em paralelo à obra. Se ela começa depois da entrega, a janela de fundadores já foi perdida.",
+      "Transforme a meta de sócios fundadores em marco com número, e decida antes o que acontece se ela não for atingida — estender a pré-venda é decisão, e não fracasso.",
+      "Coloque o pedido dos equipamentos à frente das barras de obra. Fabricação e transporte costumam levar de três a quatro meses, e prédio pronto não encurta isso.",
+      "Protocole o projeto de prevenção contra incêndio cedo e deixe a vistoria do corpo de bombeiros com folga antes da inauguração. É a pendência que mais adia inauguração de academia, e a reinspeção tem fila.",
+      "Ponha registro no CREF, indicação do responsável técnico e conferência do registro de cada professor como barra própria, com prazo. É requisito de funcionamento, e não item de RH.",
+      "Mantenha carga de piso e isolamento acústico como barra de projeto separada. Área de peso livre e estúdio ao lado ou acima de outro ocupante são a surpresa cara e tardia mais comum na obra de academia.",
+      "Sequencie a familiarização dos professores depois da instalação, e não antes. Ninguém é liberado em máquina que ainda está na caixa."
+    ],
+    tips: [
+      "<strong>Venda antes de construir.</strong> Tapume com QR code e oferta de fundador converte muito melhor do que anúncio de inauguração na semana da abertura, e traz caixa e sinal de demanda meses antes.",
+      "<strong>Faça a oferta de fundador limitada e honesta.</strong> O preço de fundador funciona porque de fato fecha depois; repetir o desconto no segundo mês ensina todo mundo a esperar a próxima promoção.",
+      "<strong>Visita guiada em obra funciona.</strong> Gente se matricula em visita de capacete com mais facilidade do que pelo site, e custa um sábado e alguns EPIs.",
+      "<strong>Não marque inauguração contando com vistoria aprovada de primeira.</strong> AVCB e alvará frequentemente pedem reinspeção, e data sem folga vira estorno e pedido de desculpas.",
+      "<strong>Teste controle de acesso e cobrança recorrente no soft opening.</strong> Catraca, armário e débito automático falham de formas que só aparecem em volume, e sócio fundador é plateia tolerante para isso.",
+      "<strong>Agende a revisão de retenção antes de abrir.</strong> Os cancelamentos do primeiro mês dizem mais sobre o negócio do que a meta de pré-venda disse, e ninguém marca essa reunião depois da inauguração se ela já não estiver no plano."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para abrir uma academia?",
+        "Cerca de onze a doze meses do conceito à inauguração em ponto alugado, que é o intervalo do modelo. A obra leva alguns meses; contrato, licenças, prazo de fabricação dos equipamentos e a campanha de pré-venda respondem pelo resto."
+      ],
+      [
+        "Quando a pré-venda deve começar?",
+        "Assim que marca, site e meio de pagamento estiverem no ar e a data de abertura for crível — tipicamente três a quatro meses antes de abrir, com o espaço ainda em obra. É exatamente por isso que o modelo roda a barra de pré-venda em paralelo à obra, e não depois dela."
+      ],
+      [
+        "Quais licenças uma academia precisa no Brasil?",
+        "No mínimo o alvará de funcionamento da prefeitura, o AVCB ou certificado equivalente do corpo de bombeiros do seu estado, e a licença sanitária quando o município exigir. Some a isso o registro da pessoa jurídica no CREF, com responsável técnico indicado, e o registro individual dos professores. O encadeamento importa: o alvará costuma depender da vistoria do bombeiro, que depende de projeto de prevenção aprovado bem antes — confirme o rito com a prefeitura e o corpo de bombeiros do seu município, porque ele varia."
+      ],
+      [
+        "Por que a meta de sócios fundadores condiciona a inauguração?",
+        "Porque academia com poucos alunos na abertura tem dificuldade de bancar o primeiro ano. Tratar a meta como marco força uma decisão explícita — estender a pré-venda ou abrir assim mesmo — em vez de deixar a data decidir por omissão."
+      ],
+      [
+        "Com quanta antecedência os equipamentos devem ser comprados?",
+        "Três a quatro meses é comum para fabricação e entrega de cardio e musculação, e rack montado sob medida pode levar mais. O pedido precisa sair durante o projeto, e não depois da obra, ou a instalação vira caminho crítico."
+      ],
+      [
+        "O que precisa acontecer entre instalar os equipamentos e abrir?",
+        "Inspeção de segurança e registro patrimonial, familiarização dos professores nas máquinas específicas, primeiros socorros e simulado de emergência, e um ensaio da grade real de aulas. Nada disso começa enquanto o equipamento está encaixotado."
+      ],
+      [
+        "O modelo de abertura de academia é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'iso-45001-certification-plan': {
+    card: "Levantamento de perigos e riscos, consulta e participação dos trabalhadores, registros de incidentes e auditorias de fase 1 e 2.",
+    h1: "Plano de certificação ISO 45001",
+    metaTitle: "Plano de certificação ISO 45001",
+    metaDesc: "Plano gratuito de certificação ISO 45001: perigos e riscos, consulta aos trabalhadores, registros de incidentes e auditorias de fase 1 e 2, com PGR e CIPA.",
+    lead: "Um modelo gratuito de <strong>plano de certificação ISO 45001</strong> que coloca a consulta e a participação dos trabalhadores no gráfico como trabalho agendado, porque a norma trata isso como requisito, e não como gentileza de comunicação interna. A outra espinha é a identificação de perigos e a avaliação de riscos: objetivos, controles operacionais e treinamento derivam dela. No Brasil há ainda uma camada por baixo que a norma não substitui — o PGR da NR-1, o PCMSO, a CIPA e os eventos de SST do eSocial — e o plano trata as duas coisas ao mesmo tempo. A mecânica de auditoria tem o mesmo formato de duas fases do <a href=\"/templates/iso-9001-certification-plan.html\">plano de certificação ISO 9001</a>, do <a href=\"/templates/iso-14001-certification-plan.html\">plano de certificação ISO 14001</a> e do <a href=\"/templates/iso-27001-certification-plan.html\">plano de certificação ISO 27001</a>.",
+    intro: "Repare que a barra de consulta atravessa quase todo o gráfico, e que a fase de registros de incidentes e quase acidentes não comprime. As duas coisas são deliberadas:",
+    phases: [
+      [
+        "Escopo, contexto e diagnóstico",
+        "Fronteiras do sistema de gestão de SSO, quem são os trabalhadores e as demais partes interessadas, diagnóstico contra a norma, a política de SSO, o levantamento do que já existe por obrigação legal — PGR, PCMSO, CIPA, laudos —, e a escolha do organismo certificador acreditado pelo Inmetro, momento em que as duas datas de auditoria são reservadas. <em>Marco: escopo e política de SSO aprovados.</em>"
+      ],
+      [
+        "Identificação de perigos e avaliação de riscos",
+        "O motor do sistema: mapear atividades e tarefas, identificar perigos em trabalho rotineiro e não rotineiro, aplicar a hierarquia de controles, e construir ao lado o registro de requisitos legais e outros requisitos. É aqui que o inventário de riscos do PGR e o plano de ação da NR-1 se encaixam, em vez de virarem um documento paralelo. <em>Marco: registros de perigos e riscos aprovados.</em>"
+      ],
+      [
+        "Consulta e participação dos trabalhadores",
+        "Agendada, e não presumida. Representantes eleitos, a CIPA constituída e em ciclo de reuniões com atas, comissão ou fórum de SSO com regimento, consulta aos trabalhadores sobre o levantamento de perigos e sobre a minuta de objetivos, e um exame deliberado do que impede as pessoas de participar. <em>Marco: arranjos de consulta em operação.</em>"
+      ],
+      [
+        "Objetivos, controle operacional e emergência",
+        "Objetivos derivados dos riscos avaliados, com metas e donos nomeados, controles operacionais para tarefas de alto risco, permissão de trabalho e gestão de contratados, treinamentos de competência e integração, saúde ocupacional em dia pelo PCMSO, e o simulado de emergência. <em>Marco: controles operacionais e simulado concluídos.</em>"
+      ],
+      [
+        "Operar, registrar incidentes e quase acidentes",
+        "A fase que não encurta: rodar o sistema tempo suficiente para que relatos de incidente, registros de quase acidente, investigações, ações corretivas fechadas, emissão de CAT quando aplicável, os eventos de SST transmitidos ao eSocial e uma avaliação de atendimento a requisitos legais de fato existam para serem amostrados. <em>Marco: registros de incidentes e quase acidentes disponíveis.</em>"
+      ],
+      [
+        "Auditoria interna, análise crítica e auditoria em duas fases",
+        "Auditoria interna e suas ações corretivas, a análise crítica pela direção, e então a fase 1, a janela de ação corretiva e a fase 2. <em>Marco: certificado ISO 45001 emitido.</em>"
+      ]
+    ],
+    callout: "A consulta é onde a ISO 45001 mais se afasta das outras normas de sistema de gestão, e é justamente o que os planos costumam reduzir a um cartaz. A norma espera que os trabalhadores — inclusive os não gerenciais — sejam consultados e participem de coisas específicas: identificação de perigos, avaliação de riscos, definição de controles, investigação de incidentes. Isso é reunião, ata, representante e evidência, então tem data e entra no gráfico. A segunda armadilha é o período que gera registros: a fase 2 amostra relatos de incidente, quase acidentes, investigações e ações fechadas, e se a cultura de relato começa três semanas antes da auditoria não há o que amostrar nem tendência a mostrar. E é preciso dizer com todas as letras: <strong>a ISO 45001 não substitui as obrigações legais brasileiras de saúde e segurança do trabalho.</strong> O PGR exigido pela NR-1, o PCMSO, a CIPA da NR-5, os laudos, a CAT e os eventos de SST do eSocial continuam devidos com certificado ou sem ele. O bom plano usa a certificação para organizar o que a lei já exige, e não para fingir que a substituiu.",
+    customize: [
+      "Contrate o organismo certificador cedo e fixe a data da fase 2; tudo antes dela passa a ser contagem regressiva, e não estimativa.",
+      "Confirme que o organismo é acreditado pela CGCRE/Inmetro para o escopo do seu setor — certificado emitido por organismo não acreditado costuma não ser aceito por cliente nem em licitação.",
+      "Amarre as linhas de levantamento de perigos ao inventário de riscos do PGR em vez de manter dois documentos. Duplicar isso gera divergência, e a divergência é achado de auditoria dos dois lados.",
+      "Expanda as linhas de identificação de perigos para uma por site, setor ou atividade de alto risco — uma linha única esconde o esforço real.",
+      "Ajuste o ciclo de reuniões da comissão à sua realidade e mantenha a barra rodando depois da fase 2; o auditor procura continuidade, e não um surto de reuniões.",
+      "Mantenha ao menos seis semanas entre a fase 1 e a fase 2, para que as ações corretivas levantadas na fase 1 possam de fato ser fechadas.",
+      "Alongue a fase de operação se o seu volume de incidentes for baixo — é preciso registro suficiente para que uma tendência apareça.",
+      "Acrescente linhas para eleição da CIPA, exames periódicos do PCMSO, inspeções legais ou visita de fiscalização que caiam dentro da janela, porque disputam as mesmas pessoas."
+    ],
+    tips: [
+      "<strong>Agende a consulta, não presuma.</strong> Representantes nomeados, ciclo de reuniões e atas são evidência; página em intranet não é.",
+      "<strong>Cubra o trabalho não rotineiro.</strong> Manutenção, parada, tarefa de contratado e emergência são onde os inventários de perigos ficam visivelmente rasos.",
+      "<strong>Use a hierarquia de controles de forma explícita.</strong> O auditor vai perguntar por que você escolheu EPI em vez de eliminação ou substituição, e espera resposta registrada.",
+      "<strong>Estimule o relato de quase acidentes cedo.</strong> São os registros que a fase 2 amostra para ver se o sistema é usado, e levam meses para se acumular com honestidade — contagem de quase acidentes subindo é sucesso, e não fracasso.",
+      "<strong>Não trate a certificação como quitação legal.</strong> PGR, PCMSO, CIPA, laudos e eventos de SST do eSocial continuam sendo obrigação, fiscalizada por outro caminho e com outras sanções.",
+      "<strong>Mantenha as quatro normas ISO distintas.</strong> ISO 45001, ISO 9001, ISO 14001 e ISO 27001 compartilham a mesma estrutura de alto nível e podem ser auditadas juntas, mas são quatro certificações acreditadas separadas, com conteúdos diferentes."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva a certificação ISO 45001?",
+        "Comumente de dez a dezesseis meses partindo do zero, e o modelo usa cerca de dezessete meses. As partes que resistem à compressão são o trabalho de levantamento de perigos e riscos na frente e o período de operação no fim, que gera os registros de incidentes e quase acidentes para o auditor amostrar."
+      ],
+      [
+        "A ISO 45001 substitui o PGR, o PCMSO e a CIPA?",
+        "Não, e essa é a confusão mais cara nessa área. As normas regulamentadoras são obrigação legal brasileira: o PGR, com inventário de riscos e plano de ação, vem da NR-1; o PCMSO cuida do controle médico ocupacional; a CIPA vem da NR-5; e os eventos de SST do eSocial precisam ser transmitidos independentemente de qualquer certificado. A ISO 45001 é uma certificação voluntária que organiza um sistema de gestão em torno disso. Bem feita, ela aproveita os mesmos levantamentos e os mesmos registros; mal feita, cria um segundo conjunto de documentos que contradiz o primeiro."
+      ],
+      [
+        "Por que a consulta aos trabalhadores é agendada como trabalho real?",
+        "Porque a norma exige. A ISO 45001 pede que a organização consulte os trabalhadores, inclusive os não gerenciais, e viabilize a participação deles em coisas como identificação de perigos, avaliação de riscos, definição de controles e investigação de incidentes — e que remova obstáculos a essa participação. Isso significa representantes, comissão, ciclo de reuniões e registros, tudo com data, por isso o modelo dá barras a esses itens em vez de uma linha de comunicação."
+      ],
+      [
+        "Qual a diferença entre ISO 45001, ISO 9001, ISO 14001 e ISO 27001?",
+        "Compartilham a mesma estrutura de sistema de gestão e a mesma mecânica de auditoria em duas fases, mas o conteúdo é inteiramente diferente. A ISO 45001 é saúde e segurança ocupacional, a ISO 9001 é qualidade, a ISO 14001 é meio ambiente e a ISO 27001 é segurança da informação. As quatro são certificações acreditadas distintas, com escopo e certificado próprios, e evidência de uma não satisfaz a outra. Vale registrar também que o SOC 2 não é norma ISO: é um relatório de asseguração emitido por auditor independente segundo os critérios do AICPA — veja a <a href=\"/templates/soc2-compliance-timeline.html\">linha do tempo de conformidade SOC 2</a> se for isso que você precisa."
+      ],
+      [
+        "Dá para rodar um sistema de gestão integrado com várias normas?",
+        "Dá. Um sistema integrado é a forma de rodar uma vez, e não quatro, as cláusulas compartilhadas — política, contexto, auditoria interna, análise crítica, informação documentada — e os organismos costumam auditá-las em visita combinada. Isso não funde as certificações: você continua com certificados separados, contra normas separadas, com escopos separados, e o conteúdo específico de cada norma continua específico."
+      ],
+      [
+        "Quantos registros de incidente são necessários antes da fase 2?",
+        "Não há número fixo, mas o auditor amostra buscando evidência de que o processo é usado e de que os achados levam a ações fechadas. Sistema sem nenhum relato de quase acidente é lido como problema de relato, e não como site seguro. Rode o relato por vários meses antes da fase 2, para que haja tendência, investigações e ações corretivas verificadas."
+      ],
+      [
+        "O modelo de certificação ISO 45001 é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'gdpr-compliance-timeline': {
+    card: "Registro das operações primeiro, depois bases legais, retenção, transferências, atendimento ao titular e resposta a incidente.",
+    h1: "Cronograma de adequação à LGPD (e ao GDPR)",
+    metaTitle: "Cronograma de adequação à LGPD",
+    metaDesc: "Cronograma gratuito de adequação à LGPD: registro das operações, bases legais, retenção, transferências, atendimento ao titular e resposta a incidente.",
+    lead: "Um modelo gratuito de <strong>cronograma de adequação à LGPD</strong> feito para um programa que alcança uma posição defensável e continua rodando, e não para um projeto que termina. A ideia organizadora é que o registro das operações de tratamento vem primeiro: base legal, prazos de retenção, mecanismos de transferência internacional e relatórios de impacto são todos derivados de saber o que você de fato faz com dados pessoais. Os dois relógios movidos de fora — o prazo de resposta ao titular e o dever de comunicar incidente de segurança — entram no gráfico como processos testados antes de alguém precisar deles. Se a sua operação também atinge titulares na União Europeia, o GDPR incide em paralelo, com prazos próprios, e o modelo trata as duas leis separadamente de propósito.",
+    intro: "A barra de registro das operações governa quase tudo o que vem depois, e as duas linhas de ensaio existem porque processo que ninguém rodou não é processo:",
+    phases: [
+      [
+        "Montagem do programa e escopo",
+        "Responsabilidade nomeada e indicação do encarregado, definição de quem é controlador e quem é operador em cada atividade, quais entidades e quais leis incidem — LGPD sempre, GDPR quando houver oferta de bens e serviços ou monitoramento de titulares na União Europeia —, diagnóstico de lacunas e o fórum de governança. <em>Marco: escopo, leis aplicáveis e papéis definidos.</em>"
+      ],
+      [
+        "Registro das operações de tratamento — a fundação",
+        "Oficinas de descoberta com cada área, inventário de sistemas, mapeamento das atividades de tratamento e dos fluxos de dados, sinalização de dados pessoais sensíveis e de dados de crianças e adolescentes, e a validação do registro com quem é dono do processo. <em>Marco: registro das operações estabelecido.</em>"
+      ],
+      [
+        "Bases legais, retenção e transferências",
+        "Tudo derivado do registro: base legal por atividade entre as hipóteses da lei, teste de balanceamento onde se apoia em legítimo interesse, coleta e revogação de consentimento onde ele for a base, regras de retenção e eliminação, mapeamento das transferências internacionais e do mecanismo de cada rota, e avisos de privacidade reescritos a partir do que você realmente faz. <em>Marco: bases legais e retenção aprovadas.</em>"
+      ],
+      [
+        "Direitos do titular e capacidade de atendimento",
+        "Procedimento de requisição, verificação de identidade, canal de entrada divulgado, busca e extração nos sistemas, atendentes treinados, e um ensaio cronometrado de uma requisição completa de ponta a ponta contra o prazo legal. <em>Marco: atendimento ao titular testado de ponta a ponta.</em>"
+      ],
+      [
+        "Segurança e prontidão para incidentes",
+        "Revisão das medidas técnicas e administrativas, detecção e escalonamento, o procedimento de avaliação de risco e de decisão sobre comunicar, o registro de incidentes, e um exercício de mesa rodado contra o relógio, com a decisão de comunicar à ANPD e aos titulares sendo tomada de verdade no exercício. <em>Marco: resposta a incidente ensaiada.</em>"
+      ],
+      [
+        "Relatórios de impacto, fornecedores e operação contínua",
+        "Critérios de triagem e relatório de impacto à proteção de dados nos tratamentos de alto risco, adequação dos contratos com operadores e suboperadores, treinamento, e o processo de mudança que mantém o registro atualizado depois que o programa deixa de ser programa. <em>Marco: posição defensável alcançada.</em>"
+      ]
+    ],
+    callout: "Vale ser preciso, porque aqui os números circulam misturados e as duas leis não têm os mesmos prazos. Pela <strong>LGPD</strong>, o titular pode pedir confirmação de existência de tratamento e acesso aos dados, e o controlador responde em formato simplificado imediatamente ou, por meio de declaração clara e completa, no prazo de quinze dias contado da data do requerimento. Já a comunicação de incidente de segurança que possa acarretar risco ou dano relevante aos titulares deve ser feita à autoridade nacional e ao titular em <strong>prazo razoável</strong>, conforme definido pela autoridade — ou seja, a lei não fixa o número; quem o fixa é a regulamentação da ANPD, que já tratou do tema, então confirme o prazo e o conteúdo exigidos na norma vigente em vez de repetir um número ouvido em treinamento. Se você também atinge titulares na União Europeia, os prazos do <strong>GDPR</strong> são outros e correm em paralelo: o Artigo 12 fixa um mês desde o recebimento para responder à requisição do titular, prorrogável por mais dois meses quando os pedidos forem complexos ou numerosos, desde que o titular seja informado da prorrogação e das razões dentro do primeiro mês; e o Artigo 33 exige notificar a autoridade de controle competente sem demora injustificada e, sendo viável, em até 72 horas do conhecimento da violação, salvo quando ela for improvável de acarretar risco aos direitos e liberdades das pessoas naturais, devendo a notificação tardia vir acompanhada das razões do atraso. Não funda os dois regimes em um único conjunto de números, e confirme a sua posição com o jurídico em vez de se apoiar em resumo.",
+    customize: [
+      "Divida as linhas de descoberta e de registro em uma por área ou unidade de negócio; uma linha única esconde a maior peça de trabalho do plano.",
+      "Deixe explícito, logo na primeira fase, se você é controlador ou operador em cada atividade — se for operador, reconstrua as fases de direitos e de incidente em torno do dever de auxiliar e de comunicar ao controlador.",
+      "Acrescente uma linha por rota de transferência internacional; o mecanismo aplicável e a avaliação mudam conforme o destino e o instrumento usado.",
+      "Se você atinge titulares na União Europeia, mantenha barras separadas para as obrigações do GDPR em vez de uma barra única de privacidade. Os prazos são diferentes e misturá-los produz um plano que descumpre os dois.",
+      "Alongue a fase de atendimento ao titular se os dados moram em muitos sistemas; a extração é quase sempre a parte longa, e não a análise jurídica.",
+      "Acrescente linhas para qualquer interação já em curso com a ANPD, com órgão de defesa do consumidor ou com o Ministério Público, porque elas passam à frente do plano.",
+      "Mantenha a última fase rodando depois do marco — o registro das operações se desatualiza no instante em que entra um sistema ou um fornecedor novo."
+    ],
+    tips: [
+      "<strong>Construa o registro antes das políticas.</strong> Política escrita antes de saber quais tratamentos existem descreve uma organização que você não tem, e a primeira requisição de titular expõe isso.",
+      "<strong>Cronometre o ensaio.</strong> O resultado útil de uma requisição de treino é quantos dias levou e onde travou, e não se no fim o arquivo saiu.",
+      "<strong>Ensaie a decisão sobre o incidente, e não só a resposta técnica.</strong> A parte difícil é avaliar risco relevante e decidir se comunica, e essa decisão precisa ser tomada por quem já a tomou antes.",
+      "<strong>Registre por que você não comunicou.</strong> Se a avaliação concluir que o incidente não exigia comunicação, o raciocínio e o registro são o que defende a decisão depois.",
+      "<strong>Não confunda LGPD com GDPR.</strong> São leis diferentes, com autoridades diferentes e prazos diferentes; um programa que trata as duas como sinônimos costuma aplicar o prazo errado justamente no dia em que ele importa.",
+      "<strong>Coloque o registro dentro do processo de mudança.</strong> Fornecedor novo, sistema novo ou funcionalidade nova deve atualizar o registro por rotina, ou você vai reconstruí-lo daqui a dois anos."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva um programa de adequação à LGPD?",
+        "O modelo roda cerca de quinze meses até uma posição defensável. A maior parte disso é o trabalho de registro das operações e a instrumentação por trás do atendimento ao titular, e não redação jurídica. E vale dizer com clareza: o programa não acaba aí — o registro precisa de manutenção, relatórios de impacto se repetem, e fornecedores e sistemas continuam mudando."
+      ],
+      [
+        "Qual o prazo para responder a uma requisição de titular na LGPD?",
+        "A lei prevê resposta em formato simplificado imediatamente e, por meio de declaração clara e completa sobre origem, critérios e finalidade do tratamento, no prazo de quinze dias contado da data do requerimento. A dificuldade prática está no entorno: verificar identidade sem coletar mais dados do que o necessário, localizar a informação em vários sistemas e decidir o que fazer com pedidos manifestamente abusivos. Confirme a sua situação específica com o jurídico."
+      ],
+      [
+        "Existe prazo de 72 horas na LGPD?",
+        "Não é assim que a LGPD está redigida — as 72 horas são do GDPR. A LGPD determina que o controlador comunique à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante em prazo razoável, conforme definido pela autoridade, e coube à ANPD regulamentar esse prazo e o conteúdo da comunicação. Ou seja: consulte a regulamentação vigente da ANPD para o número atual, e não presuma que ele é igual ao europeu."
+      ],
+      [
+        "Quando o GDPR se aplica a uma empresa brasileira?",
+        "Quando ela oferece bens ou serviços a titulares que estão na União Europeia, ou monitora o comportamento deles no território europeu — e também quando trata dados no contexto de um estabelecimento na União. Nesses casos as duas leis incidem juntas, com autoridades e prazos próprios: um mês prorrogável por mais dois para a requisição do titular, sob o Artigo 12, e a notificação em até 72 horas do conhecimento sob o Artigo 33, salvo quando a violação for improvável de gerar risco. Planeje com dois conjuntos de prazos, e não com a média deles."
+      ],
+      [
+        "Por que o registro das operações vem antes de tudo?",
+        "Porque base legal, prazos de retenção, mecanismos de transferência, avisos de privacidade e relatórios de impacto são todos afirmações sobre atividades de tratamento específicas. Sem um registro do que são essas atividades, cada um desses documentos é escrito contra uma suposição. Programas que começam por uma biblioteca de políticas normalmente refazem tudo depois da descoberta."
+      ],
+      [
+        "Em que isso difere de ISO 27001 ou SOC 2?",
+        "A LGPD é lei e se aplica a você independentemente de qualquer certificado. A ISO 27001 é uma certificação acreditada contra uma norma de sistema de gestão de segurança da informação, e o SOC 2 é um relatório de asseguração emitido por auditor independente segundo os critérios do AICPA — nenhum dos dois é uma declaração de conformidade legal. A sobreposição de controles de segurança é grande e a evidência é reaproveitável, mas certificado não é defesa. Veja o <a href=\"/templates/iso-27001-certification-plan.html\">plano de certificação ISO 27001</a> e a <a href=\"/templates/soc2-compliance-timeline.html\">linha do tempo de conformidade SOC 2</a> se você estiver tocando esses trabalhos em paralelo."
+      ],
+      [
+        "O modelo de cronograma de LGPD é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro. Este modelo é um apoio de planejamento, e não aconselhamento jurídico."
+      ]
+    ]
+  },
+
+  'customer-onboarding-plan': {
+    card: "Kickoff, mapa das dependências do cliente, caminho curto até o primeiro valor, dados e integrações, treinamento e go-live.",
+    h1: "Plano de onboarding de cliente",
+    metaTitle: "Plano de onboarding de cliente",
+    metaDesc: "Plano gratuito de onboarding de cliente: kickoff, dependências do cliente, caminho rápido ao primeiro valor, dados e integrações, treinamento e go-live.",
+    lead: "Um modelo gratuito de <strong>plano de onboarding de cliente</strong> honesto sobre quem é dono do cronograma. A maior parte das barras abaixo depende do cliente: os dados dele, as credenciais de integração dele, a análise de segurança dele, as aprovações dele e a agenda das pessoas dele. O plano é organizado para que um resultado utilizável apareça cedo — tempo até o primeiro valor é o número que prevê renovação — em vez de sequenciar toda decisão de configuração antes de alguém ter permissão de entrar no produto.",
+    intro: "As linhas que pertencem ao cliente estão marcadas como dele. Repare em quantas são, e onde ficam em relação ao seu próprio trabalho:",
+    phases: [
+      [
+        "Passagem de bastão e kickoff",
+        "O pacote de passagem do comercial, os critérios de sucesso e qual é exatamente o primeiro resultado de valor, o responsável de projeto e os decisores do lado do cliente, a reunião de kickoff, e os compromissos do cliente com data ao lado de cada um. <em>Marco: kickoff concluído e responsáveis nomeados.</em>"
+      ],
+      [
+        "Descoberta e mapa de dependências do cliente",
+        "Um passo a passo do processo atual e depois a lista honesta: cada insumo que o cliente deve a você, quem é dono do dado, quem guarda as credenciais de integração, e qual análise de segurança, jurídica ou de compras está entre você e a produção. <em>Marco: dependências do cliente confirmadas com datas.</em>"
+      ],
+      [
+        "Caminho curto até o primeiro valor",
+        "Deliberadamente estreito. Provisionar o ambiente, configurar um fluxo, carregar dados suficientes na mão para que a coisa seja real, habilitar um punhado de usuários, e fazer o cliente produzir um resultado verdadeiro antes de o trabalho grande começar. <em>Marco: primeiro valor entregue.</em>"
+      ],
+      [
+        "Migração de dados e integrações",
+        "A fase com maior chance de atrasar, porque quase tudo nela é do cliente: extração e entrega dos arquivos, mapeamento e transformação, uma carga de teste com relatório de qualidade devolvido a ele, a rodada de limpeza dele, a construção da integração e a aprovação de segurança dele. <em>Marco: dados e integrações em produção.</em>"
+      ],
+      [
+        "Configuração, treinamento e implantação",
+        "Fluxos restantes e perfis de permissão, o aceite de configuração pelo cliente, treinamento de administradores, e as turmas de usuário final que o cliente precisa preencher com as próprias pessoas. <em>Marco: usuários treinados e configuração aceita.</em>"
+      ],
+      [
+        "Go-live, adoção e transição",
+        "Checagem de prontidão, virada a partir do processo antigo, período de hipercuidado, medição do tempo até o primeiro valor e da adoção, desativação do processo legado, e a passagem para a pessoa de sucesso do cliente. <em>Marco: onboarding encerrado e conta em regime.</em>"
+      ]
+    ],
+    callout: "Quando um onboarding atrasa, a causa quase sempre está a montante do time de entrega: a extração de dados que ninguém nunca tinha feito, a credencial de integração que está com um terceiro, o questionário de segurança parado em uma fila, o patrocinador que estava de férias justamente na semana do aceite de configuração. Isso não é desculpa para planejar frouxo — é argumento para nomear essas dependências na primeira quinzena, colocar o nome de uma pessoa do cliente em cada uma e revisá-las em toda reunião de status. A segunda lição é parar de sequenciar. Existe uma pressão enorme para configurar tudo antes de o cliente tocar no produto, e isso produz de forma confiável um longo período de silêncio seguido de um lançamento em que ninguém confia. Faça um resultado real funcionar no primeiro mês, mesmo que seja estreito e com dados carregados na mão, e construa para fora a partir de algo em que o cliente já acredita.",
+    customize: [
+      "Marque com clareza toda linha que pertence ao cliente e ponha o nome de uma pessoa do lado dele, e não o de um departamento.",
+      "Antecipe o marco de primeiro valor se o seu produto permitir; quatro semanas é uma meta comum, e menos é melhor.",
+      "Acrescente uma linha por integração e por fonte de dados — uma barra combinada esconde exatamente as dependências que vão escorregar.",
+      "Insira explicitamente a análise de segurança, o jurídico e as compras do cliente se ele for uma organização grande; essas etapas costumam levar mais tempo do que o trabalho técnico.",
+      "Alongue o laço de limpeza se a carga de teste provavelmente vai achar problemas; uma rodada só é otimista para a maioria das migrações.",
+      "Acrescente linhas para a gestão de mudança do próprio cliente se você está substituindo um processo ao qual as pessoas são apegadas.",
+      "Inclua a etapa de tratamento de dados pessoais quando a migração levar dados de clientes finais — base legal, contrato com operador e prazo de retenção fazem parte do onboarding, e não do jurídico depois."
+    ],
+    tips: [
+      "<strong>Publique um plano compartilhado, e não o seu plano.</strong> O cliente precisa ver as linhas e as datas dele, porque são justamente essas que se mexem.",
+      "<strong>Defina primeiro valor como um resultado específico.</strong> \"No ar\" não é marco; \"o time de operações gerou a escala desta semana dentro do produto\" é.",
+      "<strong>Pergunte quem já fez essa extração antes.</strong> A resposta costuma ser ninguém, e isso muda a sua estimativa mais do que qualquer detalhe técnico.",
+      "<strong>Devolva o relatório de qualidade de dados ao cliente.</strong> A limpeza é dele, e uma lista específica de registros ruins anda mais rápido do que um pedido para organizar a base.",
+      "<strong>Mostre o efeito do atraso em vez de absorvê-lo em silêncio.</strong> Absorver escorregão ensina ao cliente que as datas dele não importam, e quem paga por isso é o time de entrega mais adiante.",
+      "<strong>Meça o tempo até o primeiro valor em toda conta.</strong> É a única métrica de onboarding que prevê adoção, e é o que sustenta o argumento de antecipar em vez de sequenciar."
+    ],
+    faq: [
+      [
+        "Quanto tempo deve durar um onboarding de cliente?",
+        "Varia enormemente com o volume de dados e de integração envolvido. O modelo roda cerca de cinco meses para uma implantação de porte médio com migração; um produto de autoatendimento pode levar dias. A pergunta mais útil é o tempo até o primeiro valor, que deve ser de poucas semanas independentemente de quanto dure a implantação completa."
+      ],
+      [
+        "O que é tempo até o primeiro valor?",
+        "É o tempo decorrido entre o contrato ou o kickoff e o momento em que o cliente obtém um resultado genuíno e útil do produto — não uma demonstração, não um exercício de treinamento. É a métrica em torno da qual este modelo foi construído, porque cliente que já viu valor real tolera o resto da implantação, e cliente que não viu começa a perguntar o que foi que comprou."
+      ],
+      [
+        "Por que o plano antecipa um resultado estreito?",
+        "Porque configurar tudo antes do primeiro acesso produz um longo trecho silencioso em que a única coisa que o cliente experimenta é o trabalho que ele deve a você. Um primeiro fluxo estreito, com dados carregados na mão, cria algo real de onde crescer, e faz aparecer mal-entendidos enquanto ainda são baratos de corrigir."
+      ],
+      [
+        "O que fazer quando o cliente perde as datas dele?",
+        "Espere que aconteça e desenhe para isso. Nomeie a dependência e o dono na primeira quinzena, revise as linhas do cliente em toda reunião de status, e mostre o efeito em cadeia sobre a data de go-live em vez de absorver o atraso caladamente."
+      ],
+      [
+        "Como tratar dados pessoais durante a migração?",
+        "Como parte do plano, e não como pendência jurídica posterior. Se a base migrada contém dados de pessoas, existe uma relação de controlador e operador entre o cliente e você, com contrato, finalidade, prazo de retenção e medidas de segurança definidos antes da primeira carga. Deixar isso para depois do go-live costuma travar justamente a aprovação de segurança que estava no caminho crítico."
+      ],
+      [
+        "Qual a diferença para um plano de integração de novo funcionário?",
+        "São planos completamente diferentes, apesar da palavra em comum. O <a href=\"/templates/employee-onboarding.html\">modelo de integração de novo funcionário</a> cobre as primeiras semanas de um contratado — equipamento, acessos, apresentações, rampa. Este aqui cobre a implantação de um produto para um cliente pagante, em que o cronograma é compartilhado com outra organização e a maior parte do risco mora do lado dela."
+      ],
+      [
+        "O modelo de onboarding de cliente é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
+
+  'brand-relaunch-plan': {
+    card: "Nome e busca de anterioridade, registro no INPI, identidade aprovada, produção de peças, virada simultânea e a cauda longa.",
+    h1: "Plano de relançamento de marca",
+    metaTitle: "Plano de relançamento de marca",
+    metaDesc: "Plano gratuito de relançamento de marca: busca de anterioridade e registro no INPI, identidade, produção de peças, virada simultânea e a cauda longa.",
+    lead: "Um modelo gratuito de <strong>plano de relançamento de marca</strong> organizado em torno de um fato duro: a virada é um único momento, e nesse momento tudo o que você controla precisa trocar junto. Site, interface do produto, modelos de e-mail, perfis nas redes, fachada, apresentações, nota fiscal. Antes dele existe um caminho longo que pode matar um nome tarde demais — busca de anterioridade e registro de marca no INPI — e depois dele existe uma cauda de superfícies físicas e de terceiros que não vira no dia e precisa ser perseguida.",
+    intro: "A barra de registro corre por baixo do trabalho de design por um motivo, e a cauda depois do dia da virada é mais longa do que a maioria dos planos admite:",
+    phases: [
+      [
+        "Estratégia, posicionamento e naming",
+        "Diagnóstico de marca e pesquisa de equity, a plataforma de posicionamento e narrativa, geração e seleção de nomes, e a triagem linguística e cultural antes de alguém se apaixonar por uma opção. <em>Marco: lista curta de nomes aprovada para busca.</em>"
+      ],
+      [
+        "Busca de anterioridade e registro no INPI",
+        "O caminho longo. Busca preliminar na base do INPI, busca completa nas classes e nos mercados prioritários, parecer de risco do escritório de marcas, registro discreto de domínios e perfis, depósito por classe da classificação de Nice e por país, e então o acompanhamento da publicação, do prazo de oposição e do exame. <em>Marco: nome liberado por parecer e pedidos depositados.</em>"
+      ],
+      [
+        "Design da identidade e aprovação",
+        "Territórios criativos, logo e marca nominativa, cor, tipografia e movimento, verificações de acessibilidade e de legibilidade, e a aprovação de que tudo a jusante se abre em leque. <em>Marco: identidade aprovada e travada.</em>"
+      ],
+      [
+        "Produção de peças e construção do sistema",
+        "Manual de marca e biblioteca de ativos primeiro, depois produção em paralelo: reconstrução do site, tematização da interface do produto, modelos de e-mail e de mensagens transacionais, arte de embalagem, sinalização e envelopamento de frota. <em>Marco: peças centrais produzidas.</em>"
+      ],
+      [
+        "Prontidão para a virada e ensaio",
+        "A lista de toda superfície que carrega a marca, a revisão do nome empresarial, do nome fantasia e dos documentos fiscais, listagens em marketplaces e diretórios de terceiros, redirecionamentos e continuidade de analytics, e um ensaio em ambiente de homologação antes da decisão de seguir. <em>Marco: virada ensaiada e decisão tomada.</em>"
+      ],
+      [
+        "Dia da virada e a cauda longa",
+        "A troca simultânea, o anúncio, a migração dos perfis — e então a parte que os planos esquecem: instalação de sinalização nas unidades, troca de embalagem conforme o estoque antigo se esgota, superfícies de parceiros, e uma auditoria de retirada da marca antiga. <em>Marco: cauda encerrada e marca antiga aposentada.</em>"
+      ]
+    ],
+    callout: "Duas coisas matam relançamentos de marca. A primeira é descobrir um problema de marca registrada depois de a identidade aprovada e a produção começada. No Brasil isso tem cronologia própria e ela é lenta: a busca preliminar na base do INPI é barata e rápida, a busca completa por classe e o parecer de risco não são, e depois do depósito o pedido é publicado na Revista da Propriedade Industrial e abre um <strong>prazo de oposição de sessenta dias</strong> em que qualquer terceiro pode se manifestar. Some a isso a fila de exame do INPI, que costuma levar mais de um ano até a decisão mesmo sem oposição — ou seja, você quase certamente vai lançar a marca com o pedido ainda em andamento, e o que protege a decisão nesse intervalo é o parecer de risco, e não o certificado. Ponha o parecer antes do gasto com design, e não deixe ninguém apresentar o nome novo externamente antes de o jurídico assinar. A segunda é tratar a virada como lançamento de campanha. Campanha se faz em fases; virada é mudança de estado, e uma marca meio trocada — site novo, nota fiscal velha, fachada velha, ficha na loja de aplicativos velha — lê como empresa desorganizada. Monte a lista por superfície, dê um dono a cada uma, e aceite que as físicas e as de terceiros vão ficar para trás, então acompanhe-as como lista nomeada, e não na esperança.",
+    customize: [
+      "Acrescente uma linha de busca por classe e por país; as durações e o risco são diferentes, e uma barra única esconde qual classe é o problema.",
+      "Marque a publicação na RPI e o prazo de oposição de sessenta dias como barra própria, e não como nota de rodapé. É o intervalo em que o risco jurídico ainda pode se materializar com a produção já rodando.",
+      "Trate o exame do INPI como fila, e não como tarefa. Ele costuma ultrapassar um ano, então planeje conviver com o pedido pendente em vez de esperar o certificado para lançar.",
+      "Se você está apenas refrescando a identidade e não trocando o nome, exclua as fases de naming e registro e comece pelo design — o plano encurta em meses.",
+      "Expanda a produção de peças para uma linha por superfície assim que o inventário existir; a contagem é sempre maior do que a primeira estimativa.",
+      "Acrescente linhas para superfícies reguladas ou contratuais — rotulagem, certificados, licenças, alvarás, contratos — que têm rota de aprovação própria e prazo que ninguém do marketing conhece.",
+      "Defina a data da virada só depois da linha de ensaio, e mantenha as linhas de anúncio amarradas a ela, e não a um mês do calendário.",
+      "Alongue a barra de troca de embalagem para o seu giro real de estoque; costuma ser o item de cauda mais longo e o mais visível."
+    ],
+    tips: [
+      "<strong>Libere o nome antes de se apaixonar por ele.</strong> O momento mais barato de perder um nome é na busca preliminar; o mais caro é depois de a embalagem estar impressa.",
+      "<strong>Deposite antes de falar.</strong> No sistema brasileiro quem chega antes ao INPI leva vantagem, e apresentar o nome novo em evento ou em imprensa antes do depósito é entregar a informação a quem pode depositar primeiro.",
+      "<strong>Inventarie toda superfície que carrega a marca.</strong> Nota fiscal, contrato, assinatura de e-mail, vaga publicada, ficha na loja de aplicativos e o texto que a recepção usa ao atender o telefone contam, e nenhum deles está no briefing criativo.",
+      "<strong>Ensaie a virada.</strong> Uma rodada em homologação encontra o logo chumbado no código, o favicon em cache e o modelo de terceiro que não tinha dono.",
+      "<strong>Proteja o tráfego orgânico.</strong> Mapa de redirecionamentos e continuidade de analytics são a diferença entre um relançamento e recomeçar do zero na busca.",
+      "<strong>Acompanhe a cauda como lista, e não como fase.</strong> Fachada, embalagem e superfícies de parceiros viram ao longo de semanas ou meses, e item de cauda sem dono é o que as pessoas ainda notam um ano depois."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva um relançamento de marca?",
+        "O modelo roda cerca de dezesseis meses para uma troca completa de nome, incluindo busca e depósito no INPI. Um refresco visual sem troca de nome costuma levar de quatro a oito meses, porque a fase de registro desaparece e o design da identidade pode começar imediatamente."
+      ],
+      [
+        "Por que o registro de marca é o caminho mais longo?",
+        "Porque ele condiciona o nome e não encurta com mais gente. A busca preliminar é rápida, mas a busca completa por classe e por mercado leva semanas, o parecer de risco leva o tempo de um jurídico formar convicção, e depois do depósito vêm a publicação na RPI, o prazo de oposição de sessenta dias e uma fila de exame que você não controla. Design que corre à frente do parecer é design que pode ir para o lixo."
+      ],
+      [
+        "Precisamos esperar o certificado do INPI para lançar?",
+        "Na prática, quase ninguém espera — a fila de exame costuma ultrapassar um ano, e segurar o lançamento por todo esse tempo raramente é viável. O que muda a conversa é o risco: com busca completa feita, parecer favorável do jurídico e nenhuma oposição no prazo, lançar com o pedido pendente é uma decisão informada. Sem isso, é aposta. Decida com o jurídico, e registre a decisão."
+      ],
+      [
+        "O que é o prazo de oposição?",
+        "Depois de depositado, o pedido é publicado na Revista da Propriedade Industrial e abre-se um prazo de sessenta dias para que terceiros apresentem oposição ao registro. Se alguém se opuser, você tem prazo para se manifestar e o exame demora ainda mais. É por isso que o modelo desenha esse período como barra: ele cai justamente quando a produção de peças já está rodando."
+      ],
+      [
+        "Precisamos trocar tudo no mesmo dia?",
+        "Tudo o que você controla, sim — site, interface do produto, perfis nas redes, modelos de e-mail, assinaturas, material comercial e o anúncio. Virada parcial nas superfícies que são suas parece erro, e não decisão. As superfícies físicas e de terceiros são a exceção, porque genuinamente não trocam de forma instantânea, e por isso o modelo lhes dá uma cauda acompanhada em vez de fingir que caem no dia."
+      ],
+      [
+        "O que costuma ser esquecido em um relançamento de marca?",
+        "As superfícies sem glamour: modelos de contrato e de nota fiscal, o nome empresarial registrado na junta comercial quando ele difere do nome fantasia, fichas em lojas de aplicativos e marketplaces, perfis em sites de avaliação, diretórios de parceiros, anúncios de vaga, assinatura de e-mail, envelopamento de frota e tudo o que está impresso parado em um estoque. O modelo transforma a lista de virada em linha própria porque montar esse inventário é trabalho de verdade."
+      ],
+      [
+        "O modelo de relançamento de marca é gratuito?",
+        "Sim. Downloads gratuitos em Excel, PowerPoint e CSV, e edição online gratuita, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {
