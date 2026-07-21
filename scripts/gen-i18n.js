@@ -41,7 +41,7 @@ const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=28';
+const CSS_V = 'v=29';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 

@@ -75,13 +75,35 @@ for (const loc of ['en', 'es', 'fr', 'de', 'pt', 'zh']) {
 }
 
 /* Declining must be as easy as accepting. This cannot be fully checked
-   statically, but a stylesheet that gives the two buttons different
-   widths is the usual way it goes wrong, so assert the rule that keeps
-   them equal is still present. */
-const css = fs.readFileSync(path.join(ROOT, 'css', 'site.css'), 'utf8');
-if (!/\.consent-actions \.btn\s*\{[^}]*min-width/.test(css)) {
-  console.error('  ✗ css/site.css no longer forces equal width on the consent buttons —');
+   statically, but giving the two buttons different widths is the usual
+   way it goes wrong, so assert the rule that keeps them equal is still
+   present.
+
+   The rule lives in js/consent.js, not a stylesheet: the banner injects
+   its own CSS because /app.html loads styles.css while the marketing
+   pages load site.css, and the banner rendered completely unstyled in
+   the editor when its rules lived in only one of them. */
+if (!/\.consent-btn\{[^}]*min-width:\s*116px/.test(consent)) {
+  console.error('  ✗ js/consent.js no longer forces equal width on the consent buttons —');
   console.error('    a decline that is smaller than the accept is not a free choice.');
+  errors++;
+}
+
+/* The banner must not depend on a host stylesheet. If someone moves the
+   rules back out into site.css, /app.html silently loses them again. */
+if (!/id\s*=\s*'consentStyles'|consentStyles/.test(consent) || !/\.consent\{position:fixed/.test(consent)) {
+  console.error('  ✗ js/consent.js no longer carries its own styles — the banner will render');
+  console.error('    unstyled on /app.html, which loads styles.css rather than site.css.');
+  errors++;
+}
+
+/* A consent prompt must not be able to hide itself. Sliding in from
+   translateY(100%) means that if the animation never advances (a
+   throttled background tab), the banner rests entirely below the fold
+   and the visitor is never actually asked. */
+if (/@keyframes consent-in\{from\{transform:translateY\(100%\)/.test(consent)) {
+  console.error('  ✗ the consent banner animates in from translateY(100%) — if the animation');
+  console.error('    does not run, it rests off-screen and nobody is ever asked. Use a small offset.');
   errors++;
 }
 

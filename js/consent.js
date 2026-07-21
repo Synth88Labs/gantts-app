@@ -171,6 +171,73 @@
     return T[lang] && lang !== 'en' ? '/' + lang + '/privacy.html' : '/privacy.html';
   }
 
+  /* ---- styles, carried by the component ------------------------
+     The banner first shipped with its CSS in site.css only. The editor
+     at /app.html loads styles.css instead, so the banner appeared there
+     completely unstyled — a raw block of text and two default buttons
+     shoved at the bottom of the document.
+
+     Copying the rules into the second stylesheet would fix today and
+     drift tomorrow, and the two sheets do not even define the same
+     custom properties (--card and --bg-soft exist in one, not the
+     other). So the component brings its own styles and depends on
+     nothing: every colour has a literal fallback, and the buttons are
+     styled here rather than borrowing .btn, which differs between the
+     two sheets. It cannot render unstyled on a page again. */
+  function injectStyles() {
+    if (document.getElementById('consentStyles')) return;
+    var css =
+      '.consent{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;' +
+        'background:var(--card,var(--bg,#fff));border-top:1px solid var(--line,#e2e8f0);' +
+        'color:var(--ink,#16151d);box-shadow:0 -8px 30px rgba(0,0,0,.14);' +
+        'padding:14px 0;font-family:var(--font,system-ui,-apple-system,Segoe UI,Roboto,sans-serif);' +
+        'animation:consent-in .18s ease-out}' +
+      /* Slide from 12px, not from 100%. If the animation never advances
+         — a throttled background tab at load, say — the element rests
+         wherever the "from" state puts it. At translateY(100%) that is
+         entirely below the fold: the banner is invisible and the visitor
+         is never actually asked. At 12px it is simply 12px low and fully
+         usable. A consent prompt must not be able to hide itself. */
+      '@keyframes consent-in{from{transform:translateY(12px)}to{transform:none}}' +
+      '@media (prefers-reduced-motion:reduce){.consent{animation:none}}' +
+      '.consent-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;gap:18px;' +
+        'align-items:center;justify-content:space-between;flex-wrap:wrap}' +
+      '.consent-copy{flex:1 1 420px;min-width:0}' +
+      '.consent-copy strong{display:block;font-size:14.5px;margin-bottom:2px;color:var(--ink,#16151d)}' +
+      '.consent-copy p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-soft,#64748b)}' +
+      '.consent-copy a{color:var(--brand,#6c4cf1);text-decoration:underline;text-underline-offset:2px}' +
+      '.consent-actions{display:flex;gap:10px;flex:0 0 auto}' +
+      /* Equal footprint is a legal requirement, not a style choice. */
+      '.consent-btn{min-width:116px;justify-content:center;display:inline-flex;align-items:center;' +
+        'padding:9px 16px;border-radius:9px;font:inherit;font-size:14px;font-weight:600;' +
+        'cursor:pointer;border:1px solid var(--line,#cbd5e1);background:transparent;' +
+        'color:var(--ink,#16151d);line-height:1.2}' +
+      '.consent-btn:hover{border-color:var(--brand,#6c4cf1)}' +
+      '.consent-btn-primary{background:var(--brand,#6c4cf1);border-color:var(--brand,#6c4cf1);color:#fff}' +
+      '.consent-btn:focus-visible{outline:2px solid var(--brand,#6c4cf1);outline-offset:2px}' +
+      ':root[data-theme="dark"] .consent{background:#151127;border-top-color:#2a2440;color:#ece9f7}' +
+      ':root[data-theme="dark"] .consent-copy strong{color:#ece9f7}' +
+      ':root[data-theme="dark"] .consent-copy p{color:#a9a3c4}' +
+      ':root[data-theme="dark"] .consent-btn{border-color:#3a3357;color:#ece9f7}' +
+      /* Mobile: reset the flex-basis. In a column container that 420px
+         becomes a HEIGHT floor and turns the bar into a two-thirds
+         screen interstitial, which Google treats as intrusive. */
+      '@media (max-width:560px){' +
+        '.consent{padding:12px 0}' +
+        '.consent-inner{flex-direction:column;align-items:stretch;gap:12px;padding:0 16px}' +
+        '.consent-copy{flex:0 0 auto}' +
+        '.consent-copy strong{font-size:14px}' +
+        '.consent-copy p{font-size:13px;line-height:1.45}' +
+        '.consent-actions{width:100%}' +
+        '.consent-btn{flex:1;min-width:0}}' +
+      '.consent-reopen{background:none;border:0;padding:0;font:inherit;color:inherit;' +
+        'cursor:pointer;text-decoration:underline;text-underline-offset:2px}';
+    var s = document.createElement('style');
+    s.id = 'consentStyles';
+    s.textContent = css;
+    document.head.appendChild(s);
+  }
+
   /* ---- banner -------------------------------------------------- */
 
   var el = null;
@@ -185,6 +252,7 @@
 
   function show() {
     if (el) return;
+    injectStyles();
     var t = strings();
     el = document.createElement('aside');
     el.className = 'consent';
@@ -197,8 +265,8 @@
           '<p>' + t.body + ' <a href="' + privacyHref() + '">' + t.more + '</a></p>' +
         '</div>' +
         '<div class="consent-actions">' +
-          '<button type="button" class="btn consent-no">' + t.decline + '</button>' +
-          '<button type="button" class="btn btn-primary consent-yes">' + t.accept + '</button>' +
+          '<button type="button" class="consent-btn consent-no">' + t.decline + '</button>' +
+          '<button type="button" class="consent-btn consent-btn-primary consent-yes">' + t.accept + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(el);
@@ -218,6 +286,7 @@
   function addFooterControl() {
     var bottom = document.querySelector('.footer-bottom') || document.querySelector('.footer .container');
     if (!bottom || document.querySelector('.consent-reopen')) return;
+    injectStyles();   // this renders even when the banner does not
     var t = strings();
     var b = document.createElement('button');
     b.type = 'button';

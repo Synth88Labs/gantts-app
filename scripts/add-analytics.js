@@ -34,7 +34,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const ID = 'G-3ZFCTKWL1D';
-const V = 'v=28';
+const V = 'v=30';
 const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', 'scripts', 'test', 'i18n']);
 
 const MARKER = 'js/consent.js';

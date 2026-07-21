@@ -524,69 +524,12 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 :root[data-theme="dark"] .fig { background: #f8fafc; color: #16151d; }
 :root[data-theme="dark"] .fig figcaption { color: #475569; }
 
-/* ---------- cookie consent ----------
-   A bar, not a modal. It does not cover the page or trap focus: a
-   cookie choice is not worth blocking someone from reading. Accept and
-   Decline are deliberately the same size and weight — a decline that is
-   harder to reach than an accept is not a free choice. */
-.consent {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 60;
-  background: var(--card, #fff);
-  border-top: 1px solid var(--line);
-  box-shadow: 0 -8px 30px rgb(0 0 0 / 12%);
-  padding: 16px 0;
-  animation: consent-in .18s ease-out;
-}
-@keyframes consent-in { from { transform: translateY(100%); } to { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .consent { animation: none; } }
-
-.consent-inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 20px;
-  display: flex; gap: 20px; align-items: center; justify-content: space-between;
-  flex-wrap: wrap;
-}
-.consent-copy { flex: 1 1 420px; min-width: 0; }
-.consent-copy strong { display: block; font-size: 15px; margin-bottom: 3px; }
-.consent-copy p { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
-.consent-copy a { text-decoration: underline; text-underline-offset: 2px; }
-
-.consent-actions { display: flex; gap: 10px; flex: 0 0 auto; }
-/* Equal footprint on purpose. Do not make one of these quieter. */
-.consent-actions .btn { min-width: 116px; justify-content: center; }
-
-@media (max-width: 560px) {
-  /* Keep the mobile footprint small on purpose. A cookie banner that
-     covers most of the screen reads to Google as an intrusive
-     interstitial — the exemption for consent notices only holds while
-     they use a reasonable amount of space. So: tighter padding, smaller
-     copy, and the two buttons stay SIDE BY SIDE (the labels are one
-     word) rather than stacking into two extra rows. This keeps the bar
-     to roughly a third of the viewport instead of two thirds. */
-  .consent { padding: 12px 0; }
-  .consent-inner { flex-direction: column; align-items: stretch; gap: 12px; }
-  /* Critical: reset the flex-basis. On desktop the copy block is
-     `flex: 1 1 420px`, where 420px is a WIDTH basis in a row. When the
-     container flips to a column here, that same 420px becomes a HEIGHT
-     floor — which padded the banner to ~500px of mostly empty space and
-     turned a bottom bar into a two-thirds-screen interstitial. Natural
-     height instead. */
-  .consent-copy { flex: 0 0 auto; }
-  .consent-copy strong { font-size: 14px; }
-  .consent-copy p { font-size: 13px; line-height: 1.45; }
-  .consent-actions { width: 100%; }
-  .consent-actions .btn { flex: 1; min-width: 0; }   /* equal width preserved */
-}
-
-/* The withdrawal control. Styled as a quiet footer link because it
-   lives among them, but it is a real button for assistive tech. */
-.consent-reopen {
-  background: none; border: 0; padding: 0;
-  font: inherit; color: inherit; cursor: pointer;
-  text-decoration: underline; text-underline-offset: 2px;
-}
-.consent-reopen:hover { color: var(--brand-ink, var(--brand)); }
+/* The cookie-consent banner styles used to live here. They now ship
+   inside js/consent.js, because this stylesheet is not loaded by
+   /app.html — the editor uses styles.css, so the banner rendered there
+   completely unstyled. A component that injects itself into every page
+   has to carry its own CSS; two copies in two stylesheets would drift,
+   and the sheets do not even define the same custom properties. */
 
 /* In-prose diagrams sit between paragraphs rather than above the
    article, so they need less air and their caption reads better BELOW

@@ -1,10 +1,10 @@
 /* sw.js — service worker for gantts.app (offline app shell) */
-var CACHE = 'gantts-v41';
+var CACHE = 'gantts-v43';
 var V = '?v=57';
 var SHELL = [
   '/app.html',
   '/css/styles.css' + V,
-  '/js/consent.js?v=28',
+  '/js/consent.js?v=30',
   '/js/i18n.js' + V,
   '/js/util.js' + V,
   '/js/store.js' + V,
