@@ -77,7 +77,12 @@ const need = [
   [/Referrer-Policy/, 'Referrer-Policy'],
   [/Strict-Transport-Security/, 'Strict-Transport-Security (HSTS)'],
   [/Permissions-Policy/, 'Permissions-Policy'],
-  [/Content-Security-Policy(-Report-Only)?/, 'Content-Security-Policy (report-only or enforced)'],
+  /* Enforced, not merely reported. The report-only copy is kept
+     alongside on purpose so new violations stay visible after
+     enforcement turns them into broken features rather than console
+     messages — so require BOTH. */
+  [/Header set Content-Security-Policy "/, 'Content-Security-Policy (enforced)'],
+  [/Content-Security-Policy-Report-Only/, 'Content-Security-Policy-Report-Only (kept for visibility)'],
 ];
 
 /* The CSP is only worth having if nothing forces 'unsafe-inline' back

@@ -98,11 +98,29 @@ Options -Indexes
   # googletagmanager and google-analytics are listed because analytics
   # loads AFTER consent. Listing them does not load them.
   #
-  # TO ENFORCE: watch the browser console on the app and a template page,
-  # confirm no violations, then rename this header to
-  # Content-Security-Policy. Keep the Report-Only one alongside for a
-  # while so a later violation is still visible.
-  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  # NOW ENFORCED. Evidence, gathered on the live site rather than assumed:
+  # fifteen code paths exercised with zero violations — consent accept
+  # (which loads gtag), PNG, PDF, XLSX, PPTX, CSV, SVG, Mermaid, ICS and
+  # MSPDI exports, share-link generation, the lookahead view, the EVM
+  # computation, a template load and a full re-render. Fonts resolve, so
+  # font-src 'self' is satisfied.
+  #
+  # ONE PATH IS UNVERIFIED BY EXECUTION: print. It opens a window via
+  # window.open(''), which needs a real user gesture, so it could not be
+  # driven from an automated pane. The reasoning: an about:blank window
+  # inherits the opener's policy, its only resource is a data: image
+  # (covered by img-src), and nothing in this policy governs window.open
+  # or document.write. The one thing that WOULD have violated — an inline
+  # onload="window.print()" — was removed, and check-security.js fails if
+  # any inline handler comes back. If print ever breaks, this is the first
+  # place to look.
+  #
+  # The Report-Only header stays alongside deliberately: once enforcing,
+  # a violation becomes a broken feature rather than a console message,
+  # so keeping the reporting copy means new violations are still visible
+  # as violations.
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>
 
 # ---- Force HTTPS + non-www ----
