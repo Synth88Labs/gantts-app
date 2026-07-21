@@ -22,6 +22,10 @@ the architectural decisions below.
 - [Interoperability](#interoperability)
 - [The content site](#the-content-site)
 - [Internationalisation](#internationalisation)
+- [Privacy and analytics](#privacy-and-analytics)
+- [Security](#security)
+- [Content methodology](#content-methodology)
+- [Accessibility](#accessibility)
 - [Build and checks](#build-and-checks)
 - [Repository layout](#repository-layout)
 - [Running locally](#running-locally)
@@ -222,6 +226,150 @@ Notes for adding a language:
 
 ---
 
+## Privacy and analytics
+
+Analytics is Google Analytics 4, and **nothing is requested from Google until
+the visitor accepts**. Not Consent Mode with denied defaults, not cookieless
+pings — the script is simply never fetched. Declining costs the page nothing,
+because nothing was waiting on it.
+
+The ordering is the whole point. The tag previously sat first in `<head>` on
+every page, which meant cookies were set before anyone was asked; a banner
+added on top of that would have been decoration, since the thing it claims to
+control has already happened. `scripts/add-analytics.js` now injects a
+reference to `js/consent.js` instead, and it also *removes* the old
+unconditional snippet — a single page still carrying it would silently bypass
+the gate, and nothing on the page would look wrong.
+
+Details that are deliberate rather than incidental:
+
+- Accept and Decline are the same size and weight. A decline that is harder to
+  reach than an accept is not a free choice.
+- There is no implicit consent. Closing, scrolling and Escape all leave the
+  state undecided, and undecided means analytics stays off.
+- The answer is stored in `localStorage`, not a cookie, so a visitor who
+  declines ends the visit with **no cookies at all** rather than fewer.
+- Withdrawing deletes the analytics cookies already on the device, instead of
+  flipping a flag while the browser keeps them.
+- An undecided visitor has any pre-existing analytics cookies cleared on load.
+  They were set before the gate existed, so there is no record of consent for
+  them and no basis to keep them.
+- The banner injects its own CSS. It first shipped with styles in `site.css`
+  only, and the editor loads `styles.css` — so it rendered completely unstyled
+  in the app while looking correct everywhere else. A component that inserts
+  itself into every page has to carry its own styling.
+- It slides in from 12px, not from 100%. If the animation never advances — a
+  throttled background tab — a 100% offset leaves the banner below the fold,
+  invisible, and the visitor is never actually asked.
+
+---
+
+## Security
+
+There is very little to attack: static files, no backend, no accounts, no
+server-side user data, and share links that travel in the URL **fragment**,
+which browsers never transmit. That is exactly why the few real items matter.
+
+**Subresource Integrity on third-party scripts.** Four export libraries load
+from public CDNs into the editor, where the whole plan sits in memory. Without
+`integrity`, someone else's security incident becomes ours. The hashes were not
+taken on trust from a single fetch — that would pin a compromise as readily as
+the real file. The cdnjs files were verified byte-for-byte against cdnjs's own
+published SRI, and the jsDelivr one was confirmed identical from a second
+independent npm mirror before pinning.
+
+**Content Security Policy, enforced.** The prerequisite was removing 1483
+inline `on*` handlers in favour of delegated listeners, so `script-src` needs
+no `'unsafe-inline'` — which is most of what a CSP is for, since inline script
+is the main thing XSS needs. It ran in Report-Only first, and enforcement
+followed evidence: fifteen code paths exercised on the live site with zero
+violations.
+
+Two parts stay permissive, stated rather than hidden: `style-src` allows inline
+because the app sets bar geometry that way, which is what a Gantt chart is; and
+`script-src` allows the two CDNs, where SRI rather than the origin allowlist is
+the real control. Google's `gtag.js` is unversioned and therefore cannot be
+pinned at all — `check:security` prints that on every run instead of
+whitelisting it silently, so the trade-off does not decay into an assumption.
+
+Removing the inline handlers surfaced a bug worth recording: the print export
+wrote `onload="window.print()"` into a new window. That window is same-origin
+and inherits the policy, so print would have failed **silently** under
+enforcement, because nothing else calls `print()`.
+
+---
+
+## Content methodology
+
+The template and guide libraries are large (100 templates and 15 guides, each
+in six languages), and two decisions did more for their quality than volume did.
+
+**Localisation adapts the regime, not the words.** A schedule is made of
+constraints, and constraints are jurisdictional. Translating an article about
+one country's rules into another language produces fluent, authoritative
+nonsense. So the procurement template is effectively six different templates:
+the German one carries the §134 GWB standstill and the fact that an award made
+before it expires is *unwirksam*; the Chinese one replaces "standstill" with
+中标公示期 entirely. The same rule produced genuinely different schedules
+elsewhere — a Brazilian turf grow-in timed to rainy versus dry season rather
+than to day length, and five different answers to "what stops you dismantling a
+reactor", because the real answer is a different waste route in each country.
+
+The corollary matters as much: **instruments that are genuinely foreign stay in
+their own language with a gloss.** Inventing a German name for a US audit report
+reads authoritative and is wrong, so SOC 2 stays SOC 2 everywhere, described as
+an AICPA attestation and explicitly distinguished from ISO certification.
+
+**Where a figure is not real, none is invented.** On the product-recall
+template no notification deadline is stated in any language, because there is no
+universal one; each locale names the actual authority to notify and says the
+window depends on jurisdiction, product class and hazard. Where a number *is* in
+a regulation it is quoted with its conditions intact rather than flattened into
+a slogan.
+
+**Word count is not a measure of usefulness.** A depth check comparing localized
+word counts passed while every guide in every language had zero worked examples
+and zero tables. `check:richness` counts what a reader can actually use —
+diagrams, tables, step-by-step procedures, worked examples with numbers you can
+follow — because a page can hit any word target with more prose.
+
+Diagrams are the same problem in a different shape. They are drawn per locale
+from a label pack rather than pasted as SVG, because a translated article
+wrapped around an English diagram is worse than one with no diagram, and no
+text-based check can see inside an `<svg>`. Guide bodies carry a
+`<!--FIG:name-->` token that each generator expands in the reader's language;
+`check:figures` fails on a literal `<svg>` in a body, on a token naming no
+diagram, and on a missing label that would render the word "undefined".
+
+---
+
+## Accessibility
+
+The WCAG 2.2 AA work is the ordinary part: a single-pointer alternative for
+dragging (SC 2.5.7 needs that specifically, not a keyboard one), 24×24 targets,
+roving tabindex across the bars, colour never carrying meaning alone,
+forced-colors handled, reduced-motion respected.
+
+The useful lesson was that **reading the accessibility tree finds what spec
+compliance does not**. The tree is what assistive technology actually consumes,
+and it exposed two defects that every checker here was blind to:
+
+- 60 of 84 grid inputs had no accessible name. Tabbing across the task table
+  announced "edit text, 2026-07-21" then "2026-08-10" — two dates, no way to
+  tell start from finish, no idea which row. The visible column header carries
+  that meaning and the tree did not. Cells now name themselves and their row.
+- The bar's `aria-label` was built from hard-coded English, so a German user
+  heard the task name in German and the rest in English. It is the only
+  description of a bar that exists, since a bar is a positioned div.
+
+Both lived in attributes, where no text or heading check can reach.
+
+`accessibility.html` states plainly that testing is spec-based and has not been
+verified with a real screen reader. That remains true: the tree tells you a
+page is *labelled*, not that it is *coherent to listen to*.
+
+---
+
 ## Build and checks
 
 ```bash
@@ -237,6 +385,11 @@ bug shipped at least once.
 | `check:calendar` | working-day and holiday arithmetic |
 | `check:resources` | allocation and over-allocation |
 | `check:msproject` | MSPDI link types, lag units, durations |
+| `check:evm` | earned-value maths, and its honesty constraints |
+| `check:views` | lookahead and milestone filtering |
+| `check:ics` | calendar export: exclusive all-day end, line folding, stable UIDs |
+| `check:mermaid` | Mermaid syntax, and `after` across non-working days |
+| `check:svg` | vector export redrawn from the model, not serialized from the DOM |
 | `check:assets` | a changed asset keeping its old cache-busting version |
 | `check:urls` | `index.html` appearing in any published URL |
 | `check:links` | dead internal links |
@@ -245,9 +398,44 @@ bug shipped at least once.
 | `check:seo-i18n` | per-locale metadata, measured in display units |
 | `check:sitemap` | sitemap and `lastmod` integrity |
 | `check:design` | localized pages using the same components as English |
+| `check:i18n-keys` | a `data-i18n` key with no translation, in any locale |
+| `check:tpl-i18n` | a template string that cannot be translated at all |
+| `check:depth` | a localized article that is a stub wearing a full outline |
+| `check:richness` | an article with no worked example, table or diagram |
+| `check:figures` | a diagram that would render in the wrong language |
+| `check:security` | unpinned third-party script, directory listing, missing header |
+| `check:consent` | a page loading analytics before the visitor agrees |
 
 `check:hreflang` compares in *file* space rather than string space, so `/blog/`
 and `/blog/index.html` are correctly understood to be one page.
+
+### What we learned about writing checks
+
+More than one check here has, at some point, passed while verifying nothing.
+The failures were never in the thing being checked — they were in the check's
+own assumptions, and they all read as good news:
+
+- A content audit caught its own file-load error and reported "0 pages below
+  the floor" — a clean result produced by there being nothing to inspect.
+- A structural validator read `t.name` on task data that is stored as tuples.
+  Every field came back `undefined`, so it looped over nothing and passed.
+- A batch validator had its input list hardcoded, so it silently covered a
+  subset while reporting confidently on the whole.
+- One check used a stricter limit than the project actually enforces, and
+  flagged a healthy page as broken.
+
+The pattern is the same each time: **the check encoded an assumption about
+form, and a negative result was read as a fact about substance.** The mitigation
+that works is making a check state its own scope, so the output is falsifiable:
+
+```
+63 templates, 2508 tasks and 1751 dependencies actually inspected
+```
+
+That line can be wrong in a way you can see. "All templates clean" cannot.
+Where a check has a floor, it also prints what it exempted and why, so debt
+stays visible rather than being absorbed into a threshold set low enough to
+hide it.
 
 ---
 
