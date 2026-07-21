@@ -475,7 +475,7 @@ const G = {
   'gantt-chart-dependencies': {
     h1: 'Dependencias en un diagrama de Gantt: los cuatro tipos',
     metaTitle: 'Dependencias en Gantt: FS, SS, FF y SF',
-    metaDesc: 'Los cuatro tipos de dependencia (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno, cómo funcionan el desfase y el adelanto, y en qué se diferencian la holgura total y la libre.',
+    metaDesc: 'Los cuatro tipos de dependencia entre tareas (fin-inicio, inicio-inicio, fin-fin, inicio-fin), cuándo usar cada uno y qué son el desfase y el adelanto.',
     date: '2026-07-19',
     lead: 'Las <strong>dependencias</strong> son lo que separa un diagrama de Gantt de un dibujo de barras. Dicen qué tiene que ocurrir antes que qué, y hacen que al mover una tarea se mueva todo lo que va detrás. Hay cuatro tipos: uno hace el noventa por ciento del trabajo y los otros tres existen para los casos que ese primero resuelve mal. Aquí va lo que significa cada uno, aplicado a un proyecto real, más las dos cosas que casi ninguna explicación cuenta: la diferencia entre desfase y adelanto, y la que hay entre holgura total y holgura libre.',
     figIntro: 'Los cuatro tipos, tal y como se comportan sobre el gráfico:',

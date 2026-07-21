@@ -557,9 +557,26 @@ h3 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
 .consent-actions .btn { min-width: 116px; justify-content: center; }
 
 @media (max-width: 560px) {
-  .consent-inner { flex-direction: column; align-items: stretch; }
+  /* Keep the mobile footprint small on purpose. A cookie banner that
+     covers most of the screen reads to Google as an intrusive
+     interstitial — the exemption for consent notices only holds while
+     they use a reasonable amount of space. So: tighter padding, smaller
+     copy, and the two buttons stay SIDE BY SIDE (the labels are one
+     word) rather than stacking into two extra rows. This keeps the bar
+     to roughly a third of the viewport instead of two thirds. */
+  .consent { padding: 12px 0; }
+  .consent-inner { flex-direction: column; align-items: stretch; gap: 12px; }
+  /* Critical: reset the flex-basis. On desktop the copy block is
+     `flex: 1 1 420px`, where 420px is a WIDTH basis in a row. When the
+     container flips to a column here, that same 420px becomes a HEIGHT
+     floor — which padded the banner to ~500px of mostly empty space and
+     turned a bottom bar into a two-thirds-screen interstitial. Natural
+     height instead. */
+  .consent-copy { flex: 0 0 auto; }
+  .consent-copy strong { font-size: 14px; }
+  .consent-copy p { font-size: 13px; line-height: 1.45; }
   .consent-actions { width: 100%; }
-  .consent-actions .btn { flex: 1; }
+  .consent-actions .btn { flex: 1; min-width: 0; }   /* equal width preserved */
 }
 
 /* The withdrawal control. Styled as a quiet footer link because it

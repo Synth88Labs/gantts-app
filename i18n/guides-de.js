@@ -1449,7 +1449,7 @@ const G = {
 'gantt-baseline-variance': {
   h1: 'Basisplan und Abweichung: Plan gegen Wirklichkeit',
   metaTitle: 'Basisplan und Abweichung im Gantt',
-  metaDesc: 'Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung, wann neu basiert wird und was die S-Kurve dazu ehrlich sagen kann.',
+  metaDesc: 'Wie man einen Basisplan setzt und Terminabweichungen liest: Start-, End-, Dauer- und Kostenabweichung — und wann sich ein neuer Basisplan lohnt.',
   date: '2026-07-19',
   lead: 'Ein Gantt-Diagramm zeigt, wo Ihr Projekt steht. Ein <strong>Basisplan</strong> zeigt, wo es stehen sollte. Ohne ihn können Sie Fortschritt berichten, aber keinen Verzug — und der Verzug ist genau das, was jede Person wissen will, die die Arbeit bezahlt.',
   figIntro: 'Zwei Balken je Vorgang: der Plan von damals, der Stand von heute.',
@@ -1577,7 +1577,7 @@ const G = {
 'gantt-chart-mistakes': {
   h1: 'Neun Fehler bei der Projektplanung — und wie man sie behebt',
   metaTitle: 'Häufige Fehler im Gantt-Diagramm',
-  metaDesc: 'Die häufigsten Fehler in Gantt-Diagrammen: zu viel Detail, fehlende Abhängigkeiten, kein Puffer, überlastete Ressourcen, Fortschritt aus Kalendertagen — je mit Korrektur und Beispiel.',
+  metaDesc: 'Die häufigsten Fehler in Gantt-Diagrammen: zu viel Detail, fehlende Abhängigkeiten, kein Puffer, überlastete Ressourcen — je mit Korrektur.',
   date: '2026-07-19',
   lead: 'Schlechte Gantt-Diagramme scheitern fast immer auf dieselbe Handvoll Arten, und kaum eine davon hat mit der Software zu tun. Ein Diagramm kann sauber, farbig und jeden Freitag frisch exportiert sein und trotzdem über Ihr Enddatum lügen. Hier steht jeder Fehler, warum er falsch ist, was er in einem echten Plan kostet — und der Durchgang, der ihn findet.',
   figIntro: 'Das häufigste Problem, vorher und nachher. Dasselbe Vorhaben, zweimal geplant:',
@@ -1689,7 +1689,7 @@ const G = {
 'milestones-vs-tasks': {
   h1: 'Meilensteine und Vorgänge: worin sie sich unterscheiden',
   metaTitle: 'Meilenstein oder Vorgang?',
-  metaDesc: 'Unterschied zwischen Meilenstein und Vorgang, was Raute, Balken und Pfeil bedeuten, wie viele Meilensteine ein Projekt braucht und was ein falsch modellierter Meilenstein kostet.',
+  metaDesc: 'Der Unterschied zwischen Meilenstein und Vorgang: was Raute, Balken und Pfeil bedeuten und wie viele Meilensteine ein Projekt wirklich braucht.',
   date: '2026-07-19',
   lead: 'Ein <strong>Vorgang</strong> braucht Zeit. Ein <strong>Meilenstein</strong> markiert einen Zeitpunkt. Dieser eine Unterschied erklärt, warum das eine als Balken und das andere als Raute gezeichnet wird — und er hat Folgen, die sich beziffern lassen: Ein Meilenstein, den Sie als dreitägigen Vorgang erfassen, verlängert Ihr Enddatum stillschweigend um drei Tage und verdeckt ausgerechnet die Verzögerung, der Sie am stärksten ausgesetzt sind.',
   figIntro: 'Balken für die Arbeit, Rauten für die Momente, auf die es ankommt:',
@@ -1807,7 +1807,7 @@ const G = {
 's-curve-project-management': {
   h1: 'S-Kurve und Fertigstellungswert: Sind Sie wirklich im Verzug?',
   metaTitle: 'S-Kurve im Projektmanagement erstellen',
-  metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht — mit durchgerechnetem Beispiel.',
+  metaDesc: 'Was eine S-Kurve zeigt, wie sich Plan und Ist vergleichen lassen und wie die Fertigstellungswert-Analyse aus einem Gefühl eine belastbare Zahl macht.',
   date: '2026-07-19',
   lead: 'Eine Prozentangabe allein sagt fast nichts. Sechzig Prozent fertig ist in Woche zwei hervorragend und in Woche neun eine Katastrophe. Eine <strong>S-Kurve</strong> behebt das, indem sie die kumulierte Planleistung über die Zeit aufträgt: Aus „wie weit sind wir“ wird „wie weit hätten wir <em>sein sollen</em>“ — und der Abstand zwischen den beiden Linien ist die Antwort.',
   figIntro: 'Plan gegen Ist — und was der Abstand zwischen beiden bedeutet:',
@@ -1946,7 +1946,7 @@ const G = {
 '3-week-lookahead-schedule': {
   h1: 'Die 3-Wochen-Vorschau — ohne sie jeden Montag neu abzutippen',
   metaTitle: '3-Wochen-Vorschau erstellen — kostenlos',
-  metaDesc: 'Was eine 3-Wochen-Vorschau ist, warum Bauteams sie nutzen, wonach die Anlaufprüfung fragt und wie Sie die Vorschau direkt aus dem Terminplan erzeugen, statt sie in Excel abzutippen.',
+  metaDesc: 'Was eine 3-Wochen-Vorschau ist, warum Bauteams sie nutzen und wie Sie sie direkt aus dem Terminplan erzeugen, statt sie in Excel abzutippen.',
   date: '2026-07-19',
   lead: 'Niemand baut nach einem Programm über achtzehn Monate. Gebaut wird nach den nächsten drei Wochen davon. Die <strong>Vorschau</strong> ist genau dieses Fenster — der Ausschnitt des Terminplans, der nah genug ist, um real zu sein — und auf den meisten Baustellen wird sie noch immer jeden Montag von Hand in eine Tabelle kopiert.',
   figIntro: 'Derselbe Terminplan, gefiltert auf die Arbeit, die das Fenster berührt:',
@@ -2045,7 +2045,7 @@ const G = {
 'mermaid-gantt-chart': {
   h1: 'Mermaid-Gantt-Diagramme: Syntax, Fallstricke und der Weg zurück in einen Editor',
   metaTitle: 'Mermaid-Gantt-Syntax mit Live-Editor',
-  metaDesc: 'Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein vollständiges Beispiel, die typischen Fallstricke und der Rückweg in einen visuellen Editor.',
+  metaDesc: 'Die Mermaid-Gantt-Syntax Feld für Feld: Abschnitte, Tags, Abhängigkeiten und excludes, dazu ein Beispiel und der Rückweg in einen visuellen Editor.',
   date: '2026-07-19',
   lead: 'Mermaid-Gantt-Blöcke werden in GitHub, GitLab, Notion und Obsidian direkt gerendert — das macht sie zum einfachsten Weg, einen Terminplan dorthin zu bringen, wo die Arbeit ohnehin stattfindet: ins Repository, prüfbar im Pull Request. Sie zu <em>bearbeiten</em> ist dagegen mühsam: Ein Datum verschieben heißt, jede <code>after</code>-Kette dahinter von Hand neu abzuleiten. Hier stehen die Syntax Feld für Feld, ein vollständiges Beispiel zum Einfügen, die Fallstricke, die tadellos rendern und trotzdem falsch sind — und der fehlende Schritt: visuell bearbeiten und den Text zurückbekommen.',
   figIntro: 'Derselbe Terminplan als Text und als Balken:',

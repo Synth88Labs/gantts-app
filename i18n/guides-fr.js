@@ -285,7 +285,7 @@ const G = {
 'gantt-chart-dependencies': {
   h1: 'Les liens d’antériorité : les quatre types expliqués',
   metaTitle: 'Liens d’antériorité dans un Gantt',
-  metaDesc: 'Fin-Début, Début-Début, Fin-Fin et Début-Fin expliqués sur un chantier réel : quand utiliser chaque lien, comment fonctionnent décalage et avance, et pourquoi la marge n’est pas un décalage.',
+  metaDesc: 'Fin-Début, Début-Début, Fin-Fin et Début-Fin : quand utiliser chaque lien d’antériorité, et comment fonctionnent décalage et avance.',
   date: '2026-07-19',
   lead: 'Quatre types de liens couvrent tout ce qu’on peut relier dans un diagramme de Gantt. L’un d’eux fait environ quatre-vingt-dix pour cent du travail ; les trois autres existent pour les cas qu’il traite mal. Voici ce que chacun signifie, appliqué de bout en bout à un seul chantier, avec les deux points que la plupart des explications sautent : le décalage face à l’avance, et la marge totale face à la marge libre.',
   figIntro: 'Les quatre types de liens, tels qu’ils se comportent sur un planning :',
@@ -1025,7 +1025,7 @@ const G = {
 'gantt-chart-mistakes': {
   h1: 'Douze erreurs de planification — et comment les corriger',
   metaTitle: 'Les erreurs fréquentes en planification',
-  metaDesc: 'Les douze erreurs classiques des diagrammes de Gantt : trop de détail, liens absents, aucune marge, jours calendaires, avancement faux — avec la correction de chacune.',
+  metaDesc: 'Les douze erreurs classiques des diagrammes de Gantt : trop de détail, liens absents, aucune marge, jours calendaires — avec la correction de chacune.',
   date: '2026-07-19',
   lead: 'La plupart des diagrammes de Gantt ratés échouent des mêmes façons, et presque aucune ne tient à l’outil. Un planning peut être propre, coloré, exporté tous les vendredis et mentir quand même sur la date de fin. Voici chaque erreur, pourquoi elle est fausse, ce qu’elle coûte sur un projet réel, et la revue qui les attrape toutes en vingt minutes.',
   figIntro: 'Le problème le plus fréquent, avant et après. Le même projet, planifié deux fois :',
@@ -1137,7 +1137,7 @@ const G = {
 'milestones-vs-tasks': {
   h1: 'Jalons et tâches : ce qui les distingue',
   metaTitle: 'Jalon ou tâche ?',
-  metaDesc: 'Différence entre jalon et tâche sur un diagramme de Gantt, ce que signifient le losange, la barre et la flèche, combien de jalons prévoir et les erreurs classiques.',
+  metaDesc: 'Différence entre jalon et tâche sur un diagramme de Gantt : ce que signifient le losange, la barre et la flèche, et combien de jalons prévoir.',
   date: '2026-07-19',
   lead: 'Une <strong>tâche</strong> occupe du temps, un <strong>jalon</strong> marque un instant. Cette seule distinction explique pourquoi l’une se dessine en barre et l’autre en losange — et elle a des conséquences mesurables : un jalon modélisé comme une tâche de trois jours ajoute discrètement trois jours à votre date de fin, et masque justement le retard auquel vous êtes le plus exposé.',
   figIntro: 'Les symboles que vous croiserez sur presque tous les diagrammes de Gantt :',
@@ -1254,8 +1254,8 @@ const G = {
 
 's-curve-project-management': {
   h1: 'Courbe en S et valeur acquise : êtes-vous vraiment en retard ?',
-  metaTitle: 'Courbe en S en gestion de projet (générateur gratuit)',
-  metaDesc: 'Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression en chiffre. Générateur gratuit, à partir de votre propre planning.',
+  metaTitle: 'Courbe en S en gestion de projet',
+  metaDesc: 'Ce que montre une courbe en S, comment lire le prévu face au réel, et comment la valeur acquise transforme une impression de retard en chiffre.',
   date: '2026-07-19',
   lead: 'Un pourcentage d’avancement seul ne dit presque rien. Soixante pour cent en semaine deux est excellent ; en semaine neuf, c’est une catastrophe. La <strong>courbe en S</strong> corrige cela en cumulant le travail prévu au fil du temps : « où en sommes-nous » devient « où étions-nous <em>censés</em> en être aujourd’hui » — et l’écart entre les deux courbes est la réponse.',
   figIntro: 'Le prévu face au réel, et ce que signifie l’écart entre les deux :',
@@ -1388,8 +1388,8 @@ const G = {
 
 '3-week-lookahead-schedule': {
   h1: 'Le planning glissant à 3 semaines, sans le retaper chaque lundi',
-  metaTitle: 'Planning glissant à 3 semaines — générateur gratuit',
-  metaDesc: 'Ce qu’est un planning glissant à 3 semaines, pourquoi les équipes chantier l’utilisent, et comment le générer depuis le planning directeur au lieu de le retaper dans un tableur.',
+  metaTitle: 'Planning glissant à 3 semaines',
+  metaDesc: 'Ce qu’est un planning glissant à 3 semaines, pourquoi les équipes chantier l’utilisent, et comment le générer depuis le planning directeur.',
   date: '2026-07-19',
   lead: 'Personne ne construit à partir d’un programme de dix-huit mois. On construit à partir des trois semaines qui viennent. Le <strong>planning glissant</strong> — le planning <em>lookahead</em>, si vous travaillez avec des équipes internationales — est cette fenêtre : la tranche du planning directeur assez proche pour être réelle. Et sur la plupart des chantiers, il est encore produit en recopiant des lignes dans un tableur à la main, tous les lundis, avant la réunion de chantier.',
   figIntro: 'Le même planning, filtré sur le travail qui touche la fenêtre :',

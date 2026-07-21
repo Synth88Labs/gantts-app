@@ -1194,7 +1194,7 @@ const G = {
 'gantt-chart-mistakes': {
   h1: 'Nove erros de cronograma — e como corrigir cada um',
   metaTitle: 'Erros comuns em cronogramas',
-  metaDesc: 'Os erros mais comuns em gráficos de Gantt: detalhe demais, sem precedências, sem folga, carga ignorada, avanço medido em dias corridos — cada um com a correção, antes e depois.',
+  metaDesc: 'Os erros mais comuns em gráficos de Gantt: detalhe demais, sem precedências, sem folga e avanço medido em dias corridos — cada um com a correção.',
   date: '2026-07-19',
   lead: 'Quase nenhum cronograma ruim é ruim por causa da ferramenta. Ele pode estar bonito, colorido, exportado toda sexta-feira e ainda assim mentir sobre a data de término. Os erros são sempre os mesmos meia dúzia, e a maioria deles não é de desenho: é de decisão. Abaixo estão eles, o que cada um custa em dias úteis num plano real e a revisão que os pega antes de o projeto pagar a conta.',
   figIntro: 'O problema mais comum de todos, antes e depois. O mesmo projeto, planejado duas vezes:',

@@ -48,7 +48,7 @@
   <meta name="twitter:description" content="完成-开始、开始-开始、完成-完成、开始-完成四种依赖关系，以及提前量与滞后量的用法。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=27" />
+  <link rel="stylesheet" href="/css/site.css?v=28" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-dependencies.html#post","headline":"甘特图中的依赖关系：四种类型","description":"完成-开始、开始-开始、完成-完成、开始-完成四种依赖关系，以及提前量与滞后量的用法。","url":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-dependencies.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"甘特图中的依赖关系：四种类型","item":"https://gantts.app/zh/blog/gantt-chart-dependencies.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"甘特图有哪几种依赖关系？","acceptedAnswer":{"@type":"Answer","text":"四种：完成-开始（FS）、开始-开始（SS）、完成-完成（FF）、开始-完成（SF）。FS 覆盖了现实中绝大多数关系；SF 确实罕见，很多正确的计划里一条都没有。"}},{"@type":"Question","name":"提前量和滞后量有什么区别？","acceptedAnswer":{"@type":"Answer","text":"滞后量是加在连线上的等待时间——FS+3d 表示后继任务在前置任务结束三天后开始。提前量是负的滞后量，让两者重叠。要点在于：滞后量是已经承诺出去的时间，不是余量，拖期时你并不能把它花掉。"}},{"@type":"Question","name":"总浮动时间和自由浮动时间有什么区别？","acceptedAnswer":{"@type":"Answer","text":"总浮动时间是一项任务在项目完工日期移动之前可以推迟多久；自由浮动时间是它在自己的紧后任务移动之前可以推迟多久。总浮动时间沿整条链共享——三项任务各显示八天，并不意味着它们之间有二十四天。"}},{"@type":"Question","name":"默认该用哪种依赖类型？","acceptedAnswer":{"@type":"Answer","text":"完成-开始。如果觉得非用别的类型不可，先检查任务拆分得对不对——需要冷门类型，往往是某项任务本该拆开的征兆。"}},{"@type":"Question","name":"在 gantts.app 里加了依赖关系，日期会怎么变？","acceptedAnswer":{"@type":"Answer","text":"依赖关系只能把任务往后推，不会往前拉：任务的开始取\"你摆放的位置\"和\"前置任务允许的最早位置\"中较晚的一个。想把依赖任务压回最早的合法日期，点\"自动排程\"。"}},{"@type":"Question","name":"怎么添加依赖关系？","acceptedAnswer":{"@type":"Answer","text":"从任务横条边缘的小圆点拖到另一条横条上，或者在\"前置任务\"列里直接写 3FS+2d 这样的记法。点任意一条连线箭头，可以改它的类型和滞后天数，也可以删除它。"}}]}]}</script>
 </head>
 <body>
@@ -271,6 +271,6 @@
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=27"></script>
+  <script src="/js/site.js?v=28"></script>
 </body>
 </html>
