@@ -1,6 +1,6 @@
 /* sw.js — service worker for gantts.app (offline app shell) */
-var CACHE = 'gantts-v38';
-var V = '?v=54';
+var CACHE = 'gantts-v41';
+var V = '?v=57';
 var SHELL = [
   '/app.html',
   '/css/styles.css' + V,

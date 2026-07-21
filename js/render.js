@@ -282,15 +282,37 @@
       const dot = U.el('span', { class: 'dot', style: { background: t.type === 'group' ? '#475569' : t.color } });
       const input = U.el('input', {
         class: 'cell-input', value: t.name, spellcheck: 'false',
+        /* The name field is the one cell whose value IS its meaning, so
+           it only needs the column, not the row context. */
+        'aria-label': App.T('col.name', 'Task name'),
         style: { paddingLeft: (depth * 14) + 'px', flex: '1' },
         onchange: (e) => Model.update(t.id, { name: e.target.value }),
         onkeydown: (e) => { if (e.key === 'Enter') e.target.blur(); },
       });
       return U.el('div', { class: 'grow-cell col-name' }, [twisty, dot, input]);
     },
+    /* Every grid input needs an accessible name, and the name has to say
+       WHICH ROW it belongs to.
+
+       Without this a screen-reader user tabbing across the grid hears
+       "edit text, 2026-07-21" then "2026-08-10" — two dates with no way
+       to tell start from end, or which task they belong to, because the
+       column header is nowhere in the announcement. The visible layout
+       carries that meaning; the accessibility tree did not.
+
+       Found by reading the accessibility tree rather than the spec: the
+       markup satisfies every rule we had a checker for, and was still
+       unusable to listen to. */
+    _cellName(t, label) {
+      return App.Tn('a11y.cell', '{label} for {task}', { label, task: t.name || '' });
+    },
     _dateCell(t, which) {
+      const label = which === 'start'
+        ? App.T('col.start', 'Start')
+        : App.T('col.end', 'Finish');
       const input = U.el('input', {
         class: 'cell-input', type: 'date', value: which === 'start' ? t.start : t.end,
+        'aria-label': this._cellName(t, label),
         disabled: which === 'end' && (t.type === 'milestone' || t.type === 'group'),
         onchange: (e) => this._editDate(t, which, e.target.value),
       });
@@ -304,6 +326,7 @@
       const input = U.el('input', {
         class: 'cell-input', type: 'number', min: '1', value: shown,
         title: Cal.active(cal) ? 'Working days (weekends and holidays excluded)' : 'Calendar days',
+        'aria-label': this._cellName(t, App.T('col.days', 'Days')),
         disabled: t.type === 'milestone' || t.type === 'group',
         onchange: (e) => {
           const d = Math.max(1, +e.target.value || 1);
@@ -315,6 +338,10 @@
     _progCell(t) {
       const input = U.el('input', {
         class: 'cell-input', type: 'number', min: '0', max: '100', value: t.progress || 0,
+        /* The progress column header is just "%", which is meaningless
+           read aloud, so this needs its own spelled-out string rather
+           than the column label. */
+        'aria-label': this._cellName(t, App.T('a11y.progress', 'Progress percent')),
         disabled: t.type === 'group',
         onchange: (e) => Model.update(t.id, { progress: Math.max(0, Math.min(100, +e.target.value || 0)) }),
       });
@@ -324,6 +351,7 @@
     _assigneeCell(t) {
       const input = U.el('input', {
         class: 'cell-input', value: t.assignee || '', placeholder: '—',
+        'aria-label': this._cellName(t, App.T('col.assignee', 'Assignee')),
         onchange: (e) => Model.update(t.id, { assignee: e.target.value }),
       });
       return U.el('div', { class: 'grow-cell col-assignee' }, input);
@@ -585,22 +613,32 @@
        visually, because for a screen-reader user it is the only thing
        there is. A bare "Design phase" would be a label for a rectangle
        whose whole meaning is its position and length. */
+    /* This is the ONLY description of a bar a screen-reader user gets —
+       the bar itself is a positioned div, so everything meaningful about
+       it lives here.
+
+       It used to be built from hard-coded English, which meant a German
+       or Chinese user heard the task name in their language and
+       "Jul 21 to Aug 10. 15 working days. group. 43% complete." in
+       English. Exactly the failure the guide diagrams had: translated
+       wrapper, untranslated content, and invisible to every text check
+       because it is an attribute. */
     barLabel(t) {
-      const parts = [t.name || 'Untitled'];
+      const parts = [t.name || App.T('a11y.untitled', 'Untitled')];
       if (t.type === 'milestone') {
-        parts.push('milestone on ' + U.fmtShort(t.start));
+        parts.push(App.Tn('a11y.milestoneOn', 'milestone on {date}', { date: U.fmtShort(t.start) }));
       } else {
         const cal = Cal.of(Model.project);
         const days = Cal.active(cal) ? Cal.duration(t.start, t.end, cal) : U.duration(t.start, t.end);
-        parts.push(U.fmtShort(t.start) + ' to ' + U.fmtShort(t.end));
-        parts.push(days + (days === 1 ? ' working day' : ' working days'));
+        parts.push(App.Tn('a11y.range', '{from} to {to}', { from: U.fmtShort(t.start), to: U.fmtShort(t.end) }));
+        parts.push(App.Tn(days === 1 ? 'a11y.day1' : 'a11y.dayN', days === 1 ? '{n} working day' : '{n} working days', { n: days }));
       }
-      if (t.type === 'group') parts.push('group');
-      if (Number(t.progress) > 0) parts.push(Math.round(t.progress) + '% complete');
-      if (t.assignee) parts.push('assigned to ' + t.assignee);
-      if (this.cpm && this.cpm.critical && this.cpm.critical.has(t.id)) parts.push('on the critical path');
+      if (t.type === 'group') parts.push(App.T('a11y.group', 'group'));
+      if (Number(t.progress) > 0) parts.push(App.Tn('a11y.pctDone', '{n}% complete', { n: Math.round(t.progress) }));
+      if (t.assignee) parts.push(App.Tn('a11y.assignedTo', 'assigned to {who}', { who: t.assignee }));
+      if (this.cpm && this.cpm.critical && this.cpm.critical.has(t.id)) parts.push(App.T('a11y.onCritical', 'on the critical path'));
       const n = (t.deps || []).length;
-      if (n) parts.push(n === 1 ? 'depends on 1 task' : 'depends on ' + n + ' tasks');
+      if (n) parts.push(App.Tn(n === 1 ? 'a11y.dep1' : 'a11y.depN', n === 1 ? 'depends on {n} task' : 'depends on {n} tasks', { n }));
       return parts.join('. ') + '.';
     },
 
