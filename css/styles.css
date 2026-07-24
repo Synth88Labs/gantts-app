@@ -171,6 +171,13 @@ body.col-resizing .grow-row:hover { background: none; }
 .cell-input { border: 1px solid transparent; background: transparent; font: inherit; width: 100%; padding: 2px 4px; border-radius: 4px; color: var(--ink); }
 .cell-input:hover { border-color: var(--line); }
 .cell-input:focus { outline: none; border-color: var(--brand); background: #fff; }
+/* A clipped task name shows an ellipsis rather than a hard cut, so it
+   reads as "there is more" instead of looking like the name just ends.
+   On focus the ellipsis is dropped so the caret can reach the full text.
+   Full text is on the title (hover) and the column drags wider. */
+.col-name .cell-input { text-overflow: ellipsis; }
+.col-name .cell-input:focus { text-overflow: clip; }
+:root[data-theme="dark"] .cell-input:focus { background: var(--bg-softer); }
 .col-start .cell-input, .col-end .cell-input { font-size: 11.5px; }
 /* hide native number spinners (they crowd the narrow Days/% columns) */
 .cell-input[type=number]::-webkit-outer-spin-button,
@@ -373,6 +380,23 @@ body.card-dragging .drawer { animation: none; }
 .template-card h4 { margin: 0 0 4px; font-size: 14px; }
 .template-card p { margin: 0; font-size: 12px; color: var(--ink-soft); }
 .template-card .tc-icon { font-size: 26px; margin-bottom: 6px; }
+
+/* the searchable catalogue below the six featured cards */
+.tpl-cat-head { margin: 22px 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.tpl-cat-search {
+  width: 100%; font: inherit; font-size: 15px; padding: 11px 14px; margin-bottom: 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink);
+}
+.tpl-cat-search:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+.tpl-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; max-height: 46vh; overflow-y: auto; }
+.tpl-cat-item {
+  text-align: left; font: inherit; font-size: 13.5px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
+  background: var(--card); color: var(--ink); line-height: 1.3;
+}
+.tpl-cat-item:hover { border-color: var(--brand); background: var(--bg-soft); }
+.tpl-cat-item:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; }
+.tpl-cat-none { color: var(--ink-soft); font-size: 14px; padding: 12px 2px; }
 .projects-list { display: flex; flex-direction: column; gap: 4px; }
 .project-row { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 7px; cursor: pointer; }
 .project-row:hover { background: #f1f5f9; }

@@ -1,46 +1,46 @@
 {
   "css/site.css": {
-    "hash": "97274eb2beb7",
-    "version": "29"
+    "hash": "492de31d6ce5",
+    "version": "30"
   },
   "js/site.js": {
-    "hash": "b7ffaf1829ff",
-    "version": "28"
+    "hash": "1529cbb3a46c",
+    "version": "30"
   },
   "css/styles.css": {
-    "hash": "bfc69521cc73",
-    "version": "57"
+    "hash": "8a202ac8a0b5",
+    "version": "60"
   },
   "js/app.js": {
-    "hash": "ad1b32f35075",
-    "version": "57"
+    "hash": "1e6f469686fd",
+    "version": "60"
   },
   "js/render.js": {
-    "hash": "d9cf09658427",
-    "version": "57"
+    "hash": "d2acdc36ac3b",
+    "version": "60"
   },
   "js/model.js": {
     "hash": "6db1eb3de836",
-    "version": "57"
+    "version": "60"
   },
   "js/interactions.js": {
     "hash": "240ce03bc6fc",
-    "version": "57"
+    "version": "60"
   },
   "js/exports.js": {
     "hash": "bc8a5202a79d",
-    "version": "57"
+    "version": "60"
   },
   "js/features.js": {
-    "hash": "5d5240ecae0c",
-    "version": "57"
+    "hash": "eec2556357e0",
+    "version": "60"
   },
   "js/templates.js": {
-    "hash": "c8adf15a7ba0",
-    "version": "57"
+    "hash": "49553d4eb84d",
+    "version": "60"
   },
   "js/schedule.js": {
     "hash": "fe41297db4ce",
-    "version": "57"
+    "version": "60"
   }
 }

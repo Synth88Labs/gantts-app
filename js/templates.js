@@ -202,6 +202,27 @@
       App.toast(App.T('tpl.loaded', 'Template loaded') + ': ' + TPL(tpl.name));
     },
 
+    /* Load one of the 100 catalog templates by slug, fetching its CSV.
+
+       This is the single path shared by the ?csv= deep link and the
+       in-app picker — the deep link used to inline this and the picker
+       had no access to the catalog at all. Loading into a NEW project
+       (importCSV mints a fresh id) so a visitor's existing plan is never
+       overwritten, only added alongside.
+
+       Returns a promise so the caller can close a modal / toast on
+       success and report failure honestly rather than silently. */
+    loadCatalogSlug(slug, label) {
+      return fetch('/templates/files/' + slug + '.csv')
+        .then((r) => (r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status))))
+        .then((txt) => {
+          this.importCSV(txt, label || slug);
+          Model.save();
+          if (window.App) App.render();
+          return true;
+        });
+    },
+
     // ---------- import ----------
     importFile(file) {
       const reader = new FileReader();

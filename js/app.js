@@ -793,6 +793,44 @@
         if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // let native horizontal scroll happen
         chartScroll.scrollTop += e.deltaY; e.preventDefault();
       }, { passive: false });
+
+      /* Wheel over the chart itself.
+
+         The chart pane scrolls vertically on its own — but a Gantt is
+         almost always far wider than it is tall (here ~1850px of
+         timeline against ~40px of vertical overrun), so a plain mouse
+         wheel had almost nothing to move and the timeline could only be
+         reached with the scrollbar or Shift. On a trackpad the sideways
+         gesture worked; on a wheel mouse it did not, which is what made
+         the chart feel stuck.
+
+         Rules, chosen to stay unsurprising:
+           - Shift+wheel always pans the timeline.
+           - A horizontal gesture (trackpad) pans the timeline — native
+             already does this, but claiming it keeps the header in sync.
+           - A plain vertical wheel scrolls vertically UNTIL there is no
+             more vertical to scroll, then spends the rest on the
+             timeline. So a tall plan scrolls down as expected, and a
+             short one — the common case — pans left/right from the same
+             wheel. This is the pattern spreadsheet-style timelines use.
+
+         Present mode hides the grid and the scrollbars but keeps this
+         pane, so the same handler is what makes a presenter able to move
+         along a long plan at all. */
+      const atVEdge = (dy) => dy < 0
+        ? chartScroll.scrollTop <= 0
+        : chartScroll.scrollTop >= chartScroll.scrollHeight - chartScroll.clientHeight - 1;
+      chartScroll.addEventListener('wheel', (e) => {
+        const horizontalGesture = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        if (horizontalGesture) return;                       // native handles deltaX
+        if (e.shiftKey || atVEdge(e.deltaY)) {
+          const before = chartScroll.scrollLeft;
+          chartScroll.scrollLeft += e.deltaY;
+          // Only claim the event if we actually moved the timeline —
+          // otherwise let the page do its normal thing at the extremes.
+          if (chartScroll.scrollLeft !== before) e.preventDefault();
+        }
+      }, { passive: false });
     },
 
     // ---------------- splitter ----------------
@@ -1234,16 +1272,78 @@
 
     openTemplates() {
       this.openModal(this.T('md.templates', 'Start from a template'), (body) => {
-        const grid = U.el('div', { class: 'template-grid' });
+        // The six hand-built templates stay featured at the top: they
+        // carry richer, curated dependency chains than the CSV imports.
+        const featured = U.el('div', { class: 'template-grid' });
         Templates.list.forEach(tpl => {
           const card = U.el('div', { class: 'template-card', onclick: () => { Templates.apply(tpl.key); this.closeModal(); } }, [
             U.el('div', { class: 'tc-icon' }, tpl.icon),
             U.el('h4', {}, TPLT(tpl.name)),
             U.el('p', {}, TPLT(tpl.desc)),
           ]);
-          grid.appendChild(card);
+          featured.appendChild(card);
         });
-        body.appendChild(grid);
+
+        /* The rest of the catalogue — all hundred, loaded from the same
+           CSVs the website serves, through the same importCSV path the
+           template pages use. Without this the editor offered six
+           templates while the site advertised a hundred, which is a
+           poor surprise on opening the app.
+
+           The catalogue is a generated global (js/template-catalog.js),
+           listing only slugs whose CSV exists, so a click can never
+           404. If it somehow failed to load, the featured six still
+           work — the extra section simply does not appear. */
+        const cat = window.TEMPLATE_CATALOG;
+        if (cat && cat.slugs && cat.slugs.length) {
+          const lang = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
+          const labels = cat.labels[lang] || cat.labels.en;
+
+          body.appendChild(U.el('h4', { class: 'tpl-cat-head' },
+            this.T('md.moreTemplates', 'More templates')));
+
+          const search = U.el('input', {
+            type: 'search', class: 'tpl-cat-search', spellcheck: 'false', autocomplete: 'off',
+            'aria-label': this.Tn('md.searchN', 'Search {n} templates', { n: cat.slugs.length }),
+            placeholder: this.Tn('md.searchN', 'Search {n} templates', { n: cat.slugs.length }),
+          });
+          body.appendChild(search);
+
+          const list = U.el('div', { class: 'tpl-cat-grid' });
+          body.appendChild(list);
+
+          // Precompute so every keystroke is a cheap substring test.
+          const items = cat.slugs.map(slug => ({
+            slug, label: labels[slug] || slug, q: (labels[slug] || slug).toLowerCase(),
+          })).sort((a, b) => a.label.localeCompare(b.label));
+
+          const render = (query) => {
+            U.clear(list);
+            const q = (query || '').trim().toLowerCase();
+            const hits = q ? items.filter(it => it.q.indexOf(q) !== -1) : items;
+            hits.forEach(it => {
+              const row = U.el('button', {
+                type: 'button', class: 'tpl-cat-item',
+                onclick: () => {
+                  Templates.loadCatalogSlug(it.slug, it.label)
+                    .then(() => {
+                      this.closeModal();
+                      App.toast(this.T('tpl.loaded', 'Template loaded') + ': ' + it.label);
+                    })
+                    .catch(() => App.toast(this.T('ft.tplFailed', 'Could not load that template — starting from a blank chart')));
+                },
+              }, it.label);
+              list.appendChild(row);
+            });
+            if (!hits.length) list.appendChild(U.el('p', { class: 'tpl-cat-none' },
+              this.T('md.noMatch', 'No templates match')));
+          };
+          render('');
+          let t;
+          search.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => render(search.value), 80); });
+        }
+
+        body.insertBefore(featured, body.firstChild);
       });
     },
 

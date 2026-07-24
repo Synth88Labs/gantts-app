@@ -441,16 +441,11 @@
         // list rather than overwritten. No extra newProject() call: that
         // would leave an empty duplicate behind in the list.
         const fresh = !Model.project.tasks.length;
-        fetch('/templates/files/' + slug + '.csv')
-          .then(r => (r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status))))
-          .then(txt => {
-            // Pass the name in so the project is never briefly called
-            // "Imported project" — loadProjectData emits 'load', and a
-            // listener that read the name saw the placeholder.
-            Templates.importCSV(txt, prettyName(slug));
-            Model.save();
+        // Same fetch-and-import as the in-app picker — one path, so the
+        // deep link and the picker cannot drift apart.
+        Templates.loadCatalogSlug(slug, prettyName(slug))
+          .then(() => {
             if (window.App) {
-              App.render();
               App.toast(fresh
                 ? 'Template loaded — drag the bars to fit your dates'
                 : 'Opened “' + Model.project.name + '” as a new project');

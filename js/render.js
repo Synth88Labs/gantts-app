@@ -285,8 +285,15 @@
         /* The name field is the one cell whose value IS its meaning, so
            it only needs the column, not the row context. */
         'aria-label': App.T('col.name', 'Task name'),
+        /* A long name is clipped with an ellipsis (the grid and chart
+           share a fixed row height, so it cannot wrap without desyncing
+           the bar beside it). The title makes the full text recoverable
+           on hover, and the Name column can be dragged wider from its
+           header — so nothing is ever lost, only tucked away. Refreshed
+           on edit so the tooltip never lags the value. */
+        title: t.name || '',
         style: { paddingLeft: (depth * 14) + 'px', flex: '1' },
-        onchange: (e) => Model.update(t.id, { name: e.target.value }),
+        onchange: (e) => { e.target.title = e.target.value; Model.update(t.id, { name: e.target.value }); },
         onkeydown: (e) => { if (e.key === 'Enter') e.target.blur(); },
       });
       return U.el('div', { class: 'grow-cell col-name' }, [twisty, dot, input]);
