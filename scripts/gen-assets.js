@@ -37,7 +37,7 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
     <rect x="57" y="34" width="24" height="24" rx="5" transform="rotate(45 69 46)" fill="#ff6a3d"/>
     <circle cx="69" cy="46" r="4.2" fill="#fff"/>
   </g>
-  <text x="192" y="128" font-family="Bricolage, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff" letter-spacing="-1">gantt<tspan fill="#a78bfa">.design</tspan></text>
+  <text x="192" y="128" font-family="Bricolage, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff" letter-spacing="-1">gantts<tspan fill="#a78bfa">.app</tspan></text>
   <text x="80" y="298" font-family="Bricolage, Segoe UI, Arial, sans-serif" font-size="78" font-weight="700" fill="#ffffff" letter-spacing="-3">Free online</text>
   <text x="80" y="392" font-family="Bricolage, Segoe UI, Arial, sans-serif" font-size="78" font-weight="700" fill="url(#acc)" letter-spacing="-3">Gantt chart maker</text>
   <text x="82" y="458" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="29" fill="#b3adca">No sign-up · dependencies · critical path · export to PDF, Excel &amp; PPT</text>
