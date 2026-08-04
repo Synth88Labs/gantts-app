@@ -20,7 +20,7 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=29';
+const V = 'v=30';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -93,11 +93,21 @@ function nav(slug) {
 }
 
 
+const { lastModified } = require('./git-dates.js');
+const Audience = require('../i18n/template-audience.js');
 function schema(slug, d) {
   const url = `${ORIGIN}/templates/${slug}.html`;
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
+      {
+        // WebPage node carries the freshness (dateModified) and voice/AI
+        // (Speakable) signals; the HowTo/FAQ nodes describe the content.
+        '@type': 'WebPage', '@id': url + '#webpage',
+        name: strip(d.metaTitle), url, description: strip(d.metaDesc),
+        inLanguage: 'en', dateModified: lastModified('templates/' + slug + '.html'),
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead'] },
+      },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -198,7 +208,7 @@ ${nav(slug)}
       <ul>
 ${phases}
       </ul>
-
+${Audience.render(slug, 'en')}
       <div class="callout">${d.callout}</div>
 
       <h2 id="customize">How to customize it</h2>

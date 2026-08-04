@@ -37,6 +37,9 @@ const { BENTO } = require('../i18n/bento-icons.js');
 const Figures = require('../i18n/guide-figures.js');
 const { promo } = require('../i18n/promo.js');
 const { BY_LOCALE: GUIDE_I18N, UI: GUIDE_UI, localesFor: guideLocalesFor } = require('../i18n/guide-locales.js');
+const { lastModified } = require('./git-dates.js');
+const Takeaways = require('../i18n/takeaways.js');
+const Audience = require('../i18n/template-audience.js');
 const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
@@ -802,6 +805,8 @@ function renderTemplateDetail(loc, slug) {
       '@type': 'WebPage', '@id': url + '#webpage',
       name: d.metaTitle, url, description: d.metaDesc,
       inLanguage: loc.hreflang, isPartOf: { '@id': SITE_ID },
+      dateModified: lastModified(`${code}/templates/${slug}.html`),
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead'] },
       breadcrumb: breadcrumb(loc, [
         { name: ui.home, url: `${ORIGIN}/${code}/` },
         { name: ui.templates, url: `${ORIGIN}/${code}/templates.html` },
@@ -853,7 +858,7 @@ function renderTemplateDetail(loc, slug) {
       <ul>
 ${phases}
       </ul>
-
+${Audience.render(slug, code)}
       <div class="callout">${d.callout}</div>
 
       <h2 id="customize">${esc(ui.customize)}</h2>
@@ -991,6 +996,7 @@ function renderGuide(loc, slug) {
       headline: d.h1, description: d.metaDesc, url,
       inLanguage: loc.hreflang,
       datePublished: d.date, dateModified: d.date,
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead', '#key-takeaways'] },
       isPartOf: { '@id': SITE_ID },
       publisher: { '@id': ORG_ID },
       author: { '@id': ORG_ID },
@@ -1042,6 +1048,7 @@ ${d.sections.map(([h], i) => `        <li><a href="#s${i + 1}">${esc(h)}</a></li
 ${figure}
 
     <div class="prose">
+${Takeaways.render(slug, code)}
 ${body}
 
       <div class="callout">${d.callout}</div>

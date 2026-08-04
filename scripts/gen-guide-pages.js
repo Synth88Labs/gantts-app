@@ -12,11 +12,12 @@ const fs = require('fs');
 const path = require('path');
 const { G } = require('./new-guides.js');
 const { FOOTER } = require('./footer.js');
+const Takeaways = require('../i18n/takeaways.js');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=29';
+const V = 'v=30';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.
@@ -89,6 +90,7 @@ function schema(slug, d) {
         headline: d.h1, description: strip(d.metaDesc), url,
         inLanguage: 'en',
         datePublished: d.date, dateModified: d.date,
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead', '#key-takeaways'] },
         image: ORIGIN + '/assets/og-image.png',
         author: { '@type': 'Organization', name: 'gantts.app', url: ORIGIN + '/' },
         publisher: {
@@ -184,6 +186,7 @@ ${nav(slug)}
     </figure>
 
     <div class="prose">
+${Takeaways.render(slug, 'en')}
 ${body}
 
       <div class="callout">${d.callout}</div>

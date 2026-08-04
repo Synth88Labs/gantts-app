@@ -37,43 +37,7 @@
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
   <link rel="stylesheet" href="/css/site.css?v=30" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "headline": "Critical Path Method (CPM): Steps, Formula & Example",
-        "description": "What the critical path method is, how to calculate it with forward/backward pass, a worked example, and how to see it free in gantts.app.",
-        "author": { "@type": "Organization", "name": "The gantts.app team" },
-        "publisher": { "@type": "Organization", "name": "gantts.app", "logo": { "@type": "ImageObject", "url": "https://gantts.app/assets/logo-mark.svg" } },
-        "datePublished": "2026-07-14",
-        "dateModified": "2026-07-14",
-        "image": "https://gantts.app/assets/og-image.png",
-        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gantts.app/blog/critical-path-method.html" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gantts.app/" },
-          { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gantts.app/blog/" },
-          { "@type": "ListItem", "position": 3, "name": "Critical path method", "item": "https://gantts.app/blog/critical-path-method.html" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {"@type":"Question","name":"What is the critical path method in simple terms?","acceptedAnswer":{"@type":"Answer","text":"The critical path method is a way to find the longest chain of dependent tasks in a project. That chain determines the shortest possible finish date, because every task on it must be done in sequence with no slack. Delaying any critical task delays the whole project."}},
-          {"@type":"Question","name":"How do you calculate the critical path?","acceptedAnswer":{"@type":"Answer","text":"List every activity with its duration and dependencies, draw a network diagram, run a forward pass to find each task's earliest start and finish, run a backward pass to find the latest start and finish, then compute float as late start minus early start. Tasks with zero float form the critical path."}},
-          {"@type":"Question","name":"What is float or slack?","acceptedAnswer":{"@type":"Answer","text":"Float, also called slack, is how long a task can be delayed without delaying the project. It equals late start minus early start (or late finish minus early finish). Tasks on the critical path have zero float; non-critical tasks have positive float."}},
-          {"@type":"Question","name":"What is the difference between the forward pass and backward pass?","acceptedAnswer":{"@type":"Answer","text":"The forward pass moves left to right through the network to calculate each task's earliest start and earliest finish, giving the project's minimum duration. The backward pass moves right to left to calculate each task's latest start and latest finish without delaying that end date."}},
-          {"@type":"Question","name":"What is the difference between CPM and PERT?","acceptedAnswer":{"@type":"Answer","text":"CPM uses a single, deterministic duration for each activity and focuses on the critical path and float. PERT uses three time estimates (optimistic, most likely, pessimistic) to model uncertainty and estimate the probability of finishing by a given date. In practice the two are often combined."}},
-          {"@type":"Question","name":"Can I see the critical path automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. gantts.app calculates and highlights the critical path for you as you build the chart, free in your browser with no sign up. Change a duration or dependency and the critical path updates instantly."}}
-        ]
-      }
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Critical Path Method (CPM): Steps, Formula & Example","description":"What the critical path method is, how to calculate it with forward/backward pass, a worked example, and how to see it free in gantts.app.","author":{"@type":"Organization","name":"The gantts.app team"},"publisher":{"@type":"Organization","name":"gantts.app","logo":{"@type":"ImageObject","url":"https://gantts.app/assets/logo-mark.svg"}},"datePublished":"2026-07-14","dateModified":"2026-07-14","image":"https://gantts.app/assets/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://gantts.app/blog/critical-path-method.html"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gantts.app/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://gantts.app/blog/"},{"@type":"ListItem","position":3,"name":"Critical path method","item":"https://gantts.app/blog/critical-path-method.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the critical path method in simple terms?","acceptedAnswer":{"@type":"Answer","text":"The critical path method is a way to find the longest chain of dependent tasks in a project. That chain determines the shortest possible finish date, because every task on it must be done in sequence with no slack. Delaying any critical task delays the whole project."}},{"@type":"Question","name":"How do you calculate the critical path?","acceptedAnswer":{"@type":"Answer","text":"List every activity with its duration and dependencies, draw a network diagram, run a forward pass to find each task's earliest start and finish, run a backward pass to find the latest start and finish, then compute float as late start minus early start. Tasks with zero float form the critical path."}},{"@type":"Question","name":"What is float or slack?","acceptedAnswer":{"@type":"Answer","text":"Float, also called slack, is how long a task can be delayed without delaying the project. It equals late start minus early start (or late finish minus early finish). Tasks on the critical path have zero float; non-critical tasks have positive float."}},{"@type":"Question","name":"What is the difference between the forward pass and backward pass?","acceptedAnswer":{"@type":"Answer","text":"The forward pass moves left to right through the network to calculate each task's earliest start and earliest finish, giving the project's minimum duration. The backward pass moves right to left to calculate each task's latest start and latest finish without delaying that end date."}},{"@type":"Question","name":"What is the difference between CPM and PERT?","acceptedAnswer":{"@type":"Answer","text":"CPM uses a single, deterministic duration for each activity and focuses on the critical path and float. PERT uses three time estimates (optimistic, most likely, pessimistic) to model uncertainty and estimate the probability of finishing by a given date. In practice the two are often combined."}},{"@type":"Question","name":"Can I see the critical path automatically?","acceptedAnswer":{"@type":"Answer","text":"Yes. gantts.app calculates and highlights the critical path for you as you build the chart, free in your browser with no sign up. Change a duration or dependency and the critical path updates instantly."}}]}]}</script>
 </head>
 <body>
   <!-- NAV -->
@@ -131,6 +95,15 @@
       <svg viewBox="0 0 520 140" width="100%" role="img" aria-label="Forward pass, backward pass, then read the slack:"><defs><marker id="gf-ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#94a3b8"/></marker></defs><rect x="0" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="38" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">A · 3</text><line x1="78" y1="63" x2="108" y2="63" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><rect x="110" y="12" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="148" y="33" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">B · 5</text><rect x="110" y="84" width="76" height="34" rx="6" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="148" y="105" font-size="11" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">C · 2</text><line x1="188" y1="29" x2="218" y2="52" stroke="#e5484d" stroke-width="2" marker-end="url(#gf-ar)"/><line x1="188" y1="101" x2="218" y2="78" stroke="#94a3b8" stroke-width="1" marker-end="url(#gf-ar)"/><rect x="220" y="46" width="76" height="34" rx="6" fill="none" stroke="#e5484d" stroke-width="2"/><text x="258" y="67" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">D · 4</text><text x="310" y="40" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Critical path: A → B → D</text><text x="310" y="58" font-size="11" font-weight="400" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Slack (C): 3</text><text x="310" y="80" font-size="11" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Duration: 12</text></svg>
     </figure>
     <div class="prose">
+      <aside id="key-takeaways" class="callout callout-takeaways" role="note" aria-label="Key takeaways">
+        <p class="takeaways-title"><strong>Key takeaways</strong></p>
+        <ul>
+          <li>The critical path is the longest chain of dependent tasks, and its length equals the shortest time in which the project can finish.</li>
+          <li>Delaying any task on the critical path delays the whole project; tasks off it have float (slack) and can slip without moving the end date.</li>
+          <li>You find it with a forward and backward pass that gives each task an earliest and latest start/finish, then isolating the zero-float chain.</li>
+          <li>gantts.app recalculates and highlights the critical path automatically as you add or change dependencies.</li>
+        </ul>
+      </aside>
       <h2 id="what">What is CPM?</h2>
       <p>The <strong>critical path method</strong> is a project scheduling technique that identifies the longest sequence of dependent tasks from start to finish. The length of that sequence equals the shortest time in which the project can be completed. The tasks on it are called <strong>critical tasks</strong> because they have zero slack: there is no spare time, so any delay to a critical task pushes out the project's end date one-for-one.</p>
       <p>CPM was developed in the late 1950s by Morgan Walker and James Kelley, working on plant-maintenance scheduling. Its value is focus: on a plan with dozens of tasks, it tells you which handful actually control the deadline.</p>
