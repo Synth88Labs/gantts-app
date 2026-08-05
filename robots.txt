@@ -4,4 +4,12 @@ Disallow: /docs/
 Disallow: /scripts/
 Disallow: /node_modules/
 
+# Crawl-budget: the editor's deep-link parameters render the SAME app page
+# ~600 different ways (one per template x locale), which wastes crawl quota on
+# duplicate content. Exclude them so crawlers spend budget on real pages.
+# NOTE: ?v= (CSS/JS cache-busting) is intentionally NOT blocked, so search
+# engines can still fetch stylesheets and scripts to render pages.
+Disallow: /*?csv=
+Disallow: /*?tpl=
+
 Sitemap: https://gantts.app/sitemap.xml
