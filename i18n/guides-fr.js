@@ -898,7 +898,7 @@ const G = {
 'gantt-baseline-variance': {
   h1: 'Référence et écarts : le plan validé face au réel',
   metaTitle: 'Référence et écarts dans un Gantt',
-  metaDesc: 'Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que la courbe en S mesure vraiment.',
+  metaDesc: 'Ce qu’est une référence de planning, comment lire les écarts de début, de fin et de durée, quand refaire la référence et ce que mesure la courbe en S.',
   date: '2026-07-19',
   lead: 'Un diagramme de Gantt montre où en est votre projet. La <strong>référence</strong> montre où il aurait dû en être. Sans elle vous savez annoncer une nouvelle date de fin, jamais un retard — et le retard est précisément ce que veulent connaître ceux qui financent les travaux.',
   figIntro: 'La référence s’affiche en barre fantôme sous la barre vivante de chaque tâche. Là où la barre vivante dépasse, l’intervalle est votre écart :',
