@@ -6872,6 +6872,142 @@ const T = {
       ]
     ]
   },
+
+  'online-course-creation-plan': {
+    card: "Validar, estruturar, roteirizar, gravar, montar, página de vendas e lançamento em uma linha do tempo.",
+    h1: "Modelo de plano de criação de curso online",
+    metaTitle: "Modelo de plano de criação de curso online",
+    metaDesc: "Modelo gratuito de plano de criação de curso online: validar, estruturar, roteirizar, gravar, montar a página de vendas e lançar. Excel, PowerPoint ou online.",
+    lead: "Um modelo gratuito de <strong>plano de criação de curso online</strong> que segue um curso da ideia ao lançamento — validar o tema, montar a grade, roteirizar e gravar as aulas, editar e montar, configurar a plataforma e a página de vendas e, então, conduzir o lançamento. Baixe para Excel, PowerPoint ou CSV, ou abra no <a href=\"/pt/app.html\">editor gratuito</a> para ligar dependências e ver o caminho crítico até a sua data de lançamento.",
+    intro: "A maioria dos cursos empaca entre o “gravado” e o “vendido” porque produção e lançamento nunca foram planejados juntos. Este modelo coloca a construção inteira em uma linha do tempo, nas seis etapas por que um curso de fato passa:",
+    phases: [
+      [
+        "Planejar e validar",
+        "Defina para quem o curso é e o resultado que ele entrega, e então valide a demanda com pesquisa, lista de espera ou pré-venda antes de gravar qualquer coisa. <em>Marco: tema validado.</em>"
+      ],
+      [
+        "Estruturar e roteirizar",
+        "Transforme o resultado em uma grade, divida em módulos e aulas e escreva os roteiros ou os slides para que a gravação seja rápida. <em>Marco: roteiros prontos.</em>"
+      ],
+      [
+        "Gravar e produzir",
+        "Ajuste áudio e iluminação e grave as videoaulas e as demonstrações de tela em blocos concentrados. <em>Marco: gravações concluídas.</em>"
+      ],
+      [
+        "Editar e montar",
+        "Edite vídeo e áudio, monte as apostilas e os quizzes e adicione legendas e miniaturas até o curso ficar completo. <em>Marco: curso montado.</em>"
+      ],
+      [
+        "Plataforma e página de vendas",
+        "Escolha a plataforma de hospedagem, suba as aulas, defina preço e checkout e construa a página de vendas. <em>Marco: loja no ar.</em>"
+      ],
+      [
+        "Lançar e divulgar",
+        "Aqueça a lista de e-mails, faça conteúdo de pré-lançamento ou um webinar, abra o carrinho e depois faça o acompanhamento e colete depoimentos. <em>Marco: lançamento concluído.</em>"
+      ]
+    ],
+    callout: "Valide antes de gravar. O erro mais caro na criação de cursos é filmar vinte aulas de um tema que ninguém vai pagar para ver — coloque um marco real de validação (lista de espera, pesquisa ou uma pequena pré-venda) antes da produção e faça a gravação depender dele.",
+    customize: [
+      "Defina a data de lançamento primeiro e trabalhe de trás para frente — a gravação se estende para ocupar todo o tempo que lhe for dado.",
+      "Acrescente uma linha por módulo em Gravar e em Editar para que um curso longo mostre o avanço de cada unidade.",
+      "Se for fazer pré-venda, adiante a página de vendas e o checkout para receber pedidos antes de terminar de filmar.",
+      "Grave em blocos por setup (todas as aulas de câmera, depois todas as de tela), e não na ordem do curso — é muito mais rápido.",
+      "Marque validação, “curso montado” e “loja no ar” como marcos para que nada a jusante comece antes de os insumos estarem prontos."
+    ],
+    tips: [
+      "<strong>Mantenha a validação no caminho crítico.</strong> Tudo depois dela — roteiros, gravação, edição — é desperdício se o tema não for desejado, então faça o primeiro marco um go/no-go de verdade.",
+      "<strong>Roteirize antes de gravar.</strong> Uma hora de roteiro economiza várias horas de regravação e edição; o cronograma nunca deve deixar a gravação começar antes de os roteiros estarem prontos.",
+      "<strong>Edição e produção de apostilas podem correr em paralelo.</strong> Têm donos diferentes e nenhuma dependência entre si, então sobreponha-as para comprimir o meio do plano.",
+      "<strong>Construa a página de vendas durante a edição.</strong> A página não precisa dos vídeos finais — só da promessa e da grade — então pode estar no ar antes de o curso ficar totalmente montado.",
+      "<strong>Trate a semana de lançamento como uma sequência própria.</strong> Aquecimento, abertura e fechamento de carrinho e acompanhamento têm um timing que importa; agende-os em vez de improvisar."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para criar um curso online?",
+        "Um curso solo bem focado costuma levar de 8 a 12 semanas da ideia validada ao lançamento. O modelo distribui validação, roteiro, gravação, edição, configuração da plataforma e lançamento em uma linha do tempo para você ver se a sua data-alvo é realista."
+      ],
+      [
+        "Devo construir o curso antes ou depois de vendê-lo?",
+        "Valide — e, de preferência, faça pré-venda — antes de gravar. O modelo coloca um marco de validação antes da produção para você comprometer tempo de filmagem só quando houver demanda real; você pode adiantar a página de vendas para receber pré-encomendas."
+      ],
+      [
+        "Dá para mostrar dependências entre as tarefas do curso?",
+        "Sim. Abra o modelo no <a href=\"/pt/app.html\">editor gratuito do gantts.app</a> para ligar relações de término para início (validar → roteirizar → gravar → editar → lançar), de modo que o trabalho posterior se desloque sozinho e o caminho crítico até o lançamento fique sempre à vista."
+      ],
+      [
+        "O modelo de plano de curso online é gratuito?",
+        "Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro."
+      ]
+    ]
+  },
+
+  'book-launch-plan': {
+    card: "Edição, capa, leitores ARC, pré-venda e semana de lançamento em uma linha do tempo.",
+    h1: "Modelo de plano de lançamento de livro",
+    metaTitle: "Modelo de plano de lançamento de livro",
+    metaDesc: "Modelo gratuito de plano de lançamento de livro para autores e autopublicação: edição, capa, leitores ARC, pré-venda e semana de lançamento. Excel ou online.",
+    lead: "Um modelo gratuito de <strong>plano de lançamento de livro</strong> para autores e autopublicação que vai do manuscrito pronto à semana de lançamento — edição, produção de capa e miolo, leitores ARC e frases de apoio, pré-venda, marketing e o próprio lançamento. Baixe para Excel, PowerPoint ou CSV, ou abra no <a href=\"/pt/app.html\">editor gratuito</a> para ligar dependências e ver o caminho crítico até a data de publicação.",
+    intro: "Um lançamento de livro é, na verdade, cinco projetos empilhados sobre uma única data: edição, produção, pré-lançamento, marketing e a publicação. Este modelo os coloca em uma só linha do tempo para que nada colida, organizados em seis etapas:",
+    phases: [
+      [
+        "Manuscrito",
+        "Termine o rascunho e faça uma rodada de autoedição para que o manuscrito esteja pronto para entregar a um editor. <em>Marco: manuscrito concluído.</em>"
+      ],
+      [
+        "Edição",
+        "Edição de desenvolvimento para a estrutura, depois copidesque para linha e consistência e, por fim, uma revisão final. <em>Marco: manuscrito finalizado.</em>"
+      ],
+      [
+        "Produção",
+        "Design de capa, diagramação do miolo e ISBN e metadados para que os arquivos fiquem prontos para impressão e ebook. <em>Marco: arquivos prontos para impressão.</em>"
+      ],
+      [
+        "Pré-lançamento",
+        "Recrute leitores ARC e beta, envie cópias de leitura e reúna frases de apoio e configure a pré-venda. <em>Marco: pré-venda no ar.</em>"
+      ],
+      [
+        "Marketing",
+        "Construa a plataforma de autor e a lista de e-mails, monte um time de lançamento e contrate divulgações e anúncios para a semana de lançamento."
+      ],
+      [
+        "Semana de lançamento e acompanhamento",
+        "Publique o livro, faça as ações da semana de lançamento, busque avaliações e notas e depois analise o que funcionou. <em>Marco: lançamento concluído.</em>"
+      ]
+    ],
+    callout: "A pré-venda é a data que o resto do plano protege. As livrarias recompensam o embalo de vendas iniciais, e os leitores ARC precisam de semanas para ler e avaliar antes da publicação — então defina primeiro as datas de pré-venda e lançamento e depois confira se edição e produção realmente terminam a tempo antes delas.",
+    customize: [
+      "Defina a data de lançamento e trabalhe de trás para frente; edição e capa quase sempre exigem mais fôlego do que os autores de primeira viagem imaginam.",
+      "Dê aos leitores ARC pelo menos três a quatro semanas antes da publicação — avaliações que caem na semana de lançamento valem muito mais do que as tardias.",
+      "Sobreponha a produção ao fim da edição: o design de capa não depende da revisão final, então comece cedo.",
+      "Se você for publicado por uma editora tradicional, troque a fase de produção pelos marcos da editora e mantenha as etapas de marketing e lançamento.",
+      "Marque “manuscrito finalizado”, “arquivos prontos para impressão” e “pré-venda no ar” como marcos para que nada a jusante comece antes de os insumos existirem."
+    ],
+    tips: [
+      "<strong>A edição costuma ser o caminho crítico.</strong> Desenvolvimento → copidesque → revisão é uma sequência rígida, e qualquer atraso aqui empurra tudo; proteja-a e comece cedo.",
+      "<strong>O design de capa pode correr em paralelo com a edição.</strong> Ele depende do conceito, não do texto final, então sobrepô-lo devolve semanas ao cronograma.",
+      "<strong>Construa a lista de e-mails antes de precisar dela.</strong> Um e-mail de semana de lançamento para uma lista engajada supera quase qualquer anúncio, mas a lista leva meses para crescer — comece na fase de marketing, não na semana de lançamento.",
+      "<strong>Envie os ARCs cedo e acompanhe-os.</strong> Avaliações precisam de tempo de leitura; uma resenha publicada no dia do lançamento vale muito mais do que uma que chega um mês depois.",
+      "<strong>Agende o acompanhamento.</strong> As duas semanas após a publicação — busca de avaliações, ajuste de anúncios, uma análise pós-lançamento — são onde muitos lançamentos perdem embalo em silêncio por falta de plano."
+    ],
+    faq: [
+      [
+        "Com quanta antecedência devo planejar um lançamento de livro?",
+        "A maioria de quem autopublica trabalha de três a seis meses de trás para frente a partir da data de publicação. O modelo distribui edição, produção, pré-lançamento, marketing e semana de lançamento em uma linha do tempo para você ver se a sua data deixa fôlego suficiente para edição e avaliações."
+      ],
+      [
+        "Quando devo configurar a pré-venda?",
+        "Assim que a sua loja permitir — muitas vezes semanas a meses antes da publicação. O modelo faz da pré-venda um marco porque as avaliações ARC e o embalo de marketing são cronometrados em relação a ela, e as livrarias recompensam as vendas iniciais."
+      ],
+      [
+        "Dá para mostrar dependências entre as tarefas do lançamento?",
+        "Sim. Abra o modelo no <a href=\"/pt/app.html\">editor gratuito do gantts.app</a> para ligar relações de término para início (edição de desenvolvimento → copidesque → revisão → diagramação), de modo que o trabalho posterior se desloque sozinho e o caminho crítico até a publicação fique sempre à vista."
+      ],
+      [
+        "O modelo de plano de lançamento de livro é gratuito?",
+        "Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

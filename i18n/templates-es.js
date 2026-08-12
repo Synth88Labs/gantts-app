@@ -3977,6 +3977,82 @@ const T = {
       ['¿Es gratuita?', 'Sí, con descarga en Excel, PowerPoint y CSV y edición online sin registro ni marca de agua.'],
     ],
   },
+
+  'online-course-creation-plan': {
+    card: 'Un curso online de la idea al lanzamiento: validar, guionizar, grabar, montar, plataforma y promoción.',
+    h1: 'Plantilla de plan para crear un curso online',
+    metaTitle: 'Plantilla de plan para crear un curso online',
+    metaDesc: 'Plantilla gratuita para crear un curso online: valida, guioniza, graba, edita, monta la página de ventas y lanza. Excel, PowerPoint o edición online.',
+    lead: 'Una <strong>plantilla gratuita para crear un curso online</strong> que sigue el curso desde la idea hasta el lanzamiento: valida el tema, esboza el temario, guioniza y graba las lecciones, edita y monta, prepara la plataforma y la página de ventas, y ejecuta el lanzamiento. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu fecha de lanzamiento.',
+    intro: 'La mayoría de los cursos se quedan atascados entre «grabado» y «vendido» porque la producción y el lanzamiento nunca se planificaron juntos. Esta plantilla coloca toda la construcción en una sola línea de tiempo, en las seis etapas por las que realmente pasa un curso:',
+    phases: [
+      ['Planificar y validar', 'Define para quién es el curso y el resultado que entrega, y valida la demanda con una encuesta, una lista de espera o una preventa antes de grabar nada. <em>Hito: tema validado.</em>'],
+      ['Esquema y guion', 'Convierte el resultado en un temario, divídelo en módulos y lecciones, y escribe los guiones o las diapositivas para que la grabación sea rápida. <em>Hito: guiones listos.</em>'],
+      ['Grabar y producir', 'Prepara el audio y la iluminación, y graba las videolecciones y las capturas de pantalla o demos en tandas concentradas. <em>Hito: rodaje terminado.</em>'],
+      ['Editar y montar', 'Edita el vídeo y el audio, crea los cuadernos de trabajo y los cuestionarios, y añade subtítulos y miniaturas para que el curso quede completo. <em>Hito: curso montado.</em>'],
+      ['Plataforma y página de ventas', 'Elige una plataforma de alojamiento, sube las lecciones, fija precios y pago, y monta la página de ventas. <em>Hito: tienda en marcha.</em>'],
+      ['Lanzar y promocionar', 'Calienta la lista de correo, publica contenido de prelanzamiento o un webinar, abre el carrito y luego haz seguimiento y recoge reseñas. <em>Hito: lanzamiento completado.</em>'],
+    ],
+    callout: 'Valida antes de grabar. El error más caro al crear un curso es rodar veinte lecciones de un tema por el que nadie va a pagar: pon un hito de validación real (lista de espera, encuesta o una pequeña preventa) por delante de la producción y haz que la grabación dependa de él.',
+    customize: [
+      'Fija primero tu fecha de lanzamiento y trabaja hacia atrás: la grabación se expande hasta llenar todo el tiempo que le des.',
+      'Añade una fila por módulo bajo Grabar y Editar para que un curso largo muestre el avance de cada unidad.',
+      'Si estás en preventa, adelanta la página de ventas y el pago para poder recibir pedidos antes de terminar el rodaje.',
+      'Agrupa la grabación por montaje (primero todas las lecciones a cámara y luego todas las capturas) en vez de por orden del curso: es mucho más rápido.',
+      'Marca la validación, «curso montado» y «tienda en marcha» como hitos para que nada posterior arranque antes de tener sus insumos listos.',
+    ],
+    tips: [
+      '<strong>Mantén la validación en la ruta crítica.</strong> Todo lo que viene después —guiones, grabación, edición— se desperdicia si el tema no interesa, así que haz del primer hito un verdadero sí/no.',
+      '<strong>Guioniza antes de grabar.</strong> Una hora de guion ahorra varias horas de regrabaciones y edición; el cronograma nunca debería permitir empezar a grabar sin los guiones terminados.',
+      '<strong>La edición y la creación de cuadernos pueden ir en paralelo.</strong> Tienen responsables distintos y no dependen entre sí, así que solápalas para comprimir la parte central del plan.',
+      '<strong>Monta la página de ventas mientras editas.</strong> La página no necesita los vídeos finales —solo la promesa y el temario—, así que puede estar en marcha antes de que el curso esté del todo montado.',
+      '<strong>Trata la semana de lanzamiento como su propia secuencia.</strong> Calentamiento, apertura del carrito, cierre y seguimiento tienen tiempos que importan: prográmalos en vez de improvisarlos.',
+    ],
+    faq: [
+      ['¿Cuánto se tarda en crear un curso online?', 'Un curso individual y enfocado suele llevar de 8 a 12 semanas desde la idea validada hasta el lanzamiento. La plantilla reparte validación, guion, grabación, edición, montaje de plataforma y lanzamiento en una línea de tiempo para que veas si tu fecha objetivo es realista.'],
+      ['¿Creo el curso antes o después de venderlo?', 'Valida —e idealmente prevende— antes de grabar. La plantilla sitúa un hito de validación por delante de la producción para que solo comprometas tiempo de rodaje cuando haya demanda real; puedes adelantar la página de ventas para aceptar pedidos anticipados.'],
+      ['¿Puedo mostrar dependencias entre las tareas del curso?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (validar → guionizar → grabar → editar → lanzar): el trabajo posterior se desplaza solo y la ruta crítica hasta tu lanzamiento se mantiene visible.'],
+      ['¿La plantilla de plan de curso online es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
+
+  'book-launch-plan': {
+    card: 'De manuscrito terminado a semana de lanzamiento: edición, portada, lectores ARC, preventa y promoción.',
+    h1: 'Plantilla de plan de lanzamiento de un libro',
+    metaTitle: 'Plantilla de plan de lanzamiento de un libro',
+    metaDesc: 'Plantilla gratuita de lanzamiento de libro para autores y autoeditores: edición, portada, lectores ARC, preventa y semana de lanzamiento. Excel u online.',
+    lead: 'Una <strong>plantilla gratuita de plan de lanzamiento de un libro</strong> para autores y autoeditores que va del manuscrito terminado a la semana de lanzamiento: edición, portada y producción del interior, lectores ARC y reseñas, preventa, marketing y el propio lanzamiento. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu fecha de publicación.',
+    intro: 'Un lanzamiento de libro son en realidad cinco proyectos apilados sobre una misma fecha: edición, producción, prelanzamiento, marketing y la publicación. Esta plantilla los coloca en una sola línea de tiempo para que nada choque, organizados en seis etapas:',
+    phases: [
+      ['Manuscrito', 'Termina el borrador y haz una pasada de autoedición para que el manuscrito esté listo para pasarlo a un editor. <em>Hito: manuscrito completo.</em>'],
+      ['Edición', 'Edición de desarrollo para la estructura, luego corrección de estilo para la línea y la coherencia, y finalmente una corrección de pruebas. <em>Hito: manuscrito final.</em>'],
+      ['Producción', 'Diseño de portada, maquetación y composición del interior, e ISBN y metadatos para que los archivos queden listos para impresión y ebook. <em>Hito: archivos listos para imprenta.</em>'],
+      ['Prelanzamiento', 'Recluta lectores ARC y beta, envía ejemplares de reseña y recoge citas de portada, y prepara la preventa. <em>Hito: preventa en marcha.</em>'],
+      ['Marketing', 'Construye la plataforma de autor y la lista de correo, forma un equipo de lanzamiento y reserva promociones y anuncios para la semana de lanzamiento.'],
+      ['Semana de lanzamiento y seguimiento', 'Publica el libro, ejecuta las promociones de la semana de lanzamiento, persigue reseñas y valoraciones, y luego revisa qué funcionó. <em>Hito: lanzamiento completado.</em>'],
+    ],
+    callout: 'La preventa es la fecha que protege el resto del plan. Las plataformas premian el impulso de ventas temprano, y los lectores ARC necesitan semanas para leer y reseñar antes de la publicación: fija primero las fechas de preventa y lanzamiento, y comprueba después que la edición y la producción realmente terminan a tiempo por detrás.',
+    customize: [
+      'Fija la fecha de lanzamiento y trabaja hacia atrás; la edición y el diseño de portada casi siempre necesitan más margen del que esperan los autores primerizos.',
+      'Da a los lectores ARC al menos tres o cuatro semanas antes de la publicación: las reseñas que llegan en la semana de lanzamiento importan mucho más que las tardías.',
+      'Solapa la producción con el final de la edición: el diseño de portada no necesita la corrección de pruebas final, así que empiézalo pronto.',
+      'Si publicas con editorial tradicional, sustituye la fase de producción por los hitos de tu editorial y conserva las etapas de marketing y lanzamiento.',
+      'Marca «manuscrito final», «archivos listos para imprenta» y «preventa en marcha» como hitos para que nada posterior arranque antes de tener sus insumos.',
+    ],
+    tips: [
+      '<strong>La edición suele ser la ruta crítica.</strong> Desarrollo → corrección de estilo → corrección de pruebas es una secuencia estricta, y cualquier retraso aquí lo empuja todo: protégela y empieza pronto.',
+      '<strong>El diseño de portada puede ir en paralelo a la edición.</strong> Depende del concepto, no del texto final, así que solaparlo recupera semanas en el cronograma.',
+      '<strong>Construye la lista de correo antes de necesitarla.</strong> Un correo en la semana de lanzamiento a una lista comprometida rinde más que casi cualquier anuncio, pero la lista tarda meses en crecer: empiézala en la fase de marketing, no en la de lanzamiento.',
+      '<strong>Envía los ARC pronto y hazles seguimiento.</strong> Las reseñas necesitan tiempo de lectura; una que se publica el día del lanzamiento vale mucho más que otra que llega un mes tarde.',
+      '<strong>Programa el seguimiento.</strong> Las dos semanas posteriores a la publicación —persecución de reseñas, ajuste de anuncios, una revisión posterior— son donde muchos lanzamientos pierden fuelle en silencio por falta de plan.',
+    ],
+    faq: [
+      ['¿Con cuánta antelación debo planificar un lanzamiento de libro?', 'La mayoría de los autoeditores trabajan hacia atrás entre tres y seis meses desde la fecha de publicación. La plantilla reparte edición, producción, prelanzamiento, marketing y semana de lanzamiento en una línea de tiempo para que veas si tu fecha deja margen suficiente para la edición y las reseñas.'],
+      ['¿Cuándo debo montar la preventa?', 'Tan pronto como lo permita tu tienda, a menudo desde varias semanas hasta meses antes de la publicación. La plantilla convierte la preventa en un hito porque las reseñas ARC y el impulso de marketing se calculan contra ella, y las plataformas premian las ventas tempranas.'],
+      ['¿Puedo mostrar dependencias entre las tareas del lanzamiento?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (edición de desarrollo → corrección de estilo → corrección de pruebas → maquetación): el trabajo posterior se desplaza solo y la ruta crítica hasta tu publicación se mantiene visible.'],
+      ['¿La plantilla de plan de lanzamiento de libro es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

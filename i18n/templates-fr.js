@@ -6818,6 +6818,106 @@ const T = {
       ]
     ]
   },
+
+  'online-course-creation-plan': {
+    card: 'De l’idée au lancement : valider, tourner, monter et vendre un cours en ligne.',
+    h1: 'Modèle de plan de création de cours en ligne',
+    metaTitle: 'Plan de création de cours en ligne — modèle',
+    metaDesc: 'Modèle gratuit de plan de création de cours en ligne : valider, structurer, scripter, tourner, monter, page de vente et lancement.',
+    lead: 'Un <strong>modèle de plan de création de cours en ligne</strong> gratuit qui suit un cours de l’idée au lancement — valider le sujet, structurer le programme, scripter et tourner les leçons, monter et assembler, configurer la plateforme et la page de vente, puis mener le lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
+    intro: 'La plupart des cours se bloquent entre « tourné » et « vendu » parce que production et lancement n’ont jamais été planifiés ensemble. Ce modèle pose tout le projet sur une seule frise, selon les six étapes qu’un cours traverse réellement :',
+    phases: [
+      ['Cadrer et valider', 'Définissez à qui s’adresse le cours et le résultat qu’il apporte, puis validez la demande par un sondage, une liste d’attente ou une prévente avant de tourner quoi que ce soit. <em>Jalon : sujet validé.</em>'],
+      ['Programme et scripts', 'Transformez le résultat visé en programme, découpez-le en modules et leçons, puis rédigez les scripts ou les diapositives pour que le tournage soit rapide. <em>Jalon : scripts prêts.</em>'],
+      ['Tournage et production', 'Réglez le son et l’éclairage, tournez les leçons vidéo et les captures d’écran ou démonstrations par lots concentrés. <em>Jalon : tournage terminé.</em>'],
+      ['Montage et assemblage', 'Montez la vidéo et l’audio, créez les supports et les quiz, ajoutez sous-titres et vignettes pour que le cours soit complet. <em>Jalon : cours assemblé.</em>'],
+      ['Plateforme et page de vente', 'Choisissez une plateforme d’hébergement, mettez les leçons en ligne, fixez le prix et le paiement, et construisez la page de vente. <em>Jalon : boutique en ligne.</em>'],
+      ['Lancement et promotion', 'Réchauffez la liste d’e-mails, diffusez du contenu de pré-lancement ou un webinaire, ouvrez les inscriptions, puis relancez et recueillez les avis. <em>Jalon : lancement terminé.</em>']
+    ],
+    callout: 'Validez avant de tourner. L’erreur la plus coûteuse en création de cours, c’est de filmer vingt leçons sur un sujet que personne ne paiera — placez un vrai jalon de validation (liste d’attente, sondage ou petite prévente) avant la production, et faites dépendre le tournage de ce jalon.',
+    customize: [
+      'Fixez d’abord votre date de lancement et remontez le fil — le tournage s’étale toujours jusqu’à occuper tout le temps qu’on lui laisse.',
+      'Ajoutez une ligne par module sous Tournage et Montage pour qu’un cours long montre l’avancement de chaque unité.',
+      'Si vous êtes en prévente, avancez la page de vente et le paiement pour prendre des commandes avant la fin du tournage.',
+      'Groupez le tournage par configuration (toutes les leçons face caméra, puis toutes les captures d’écran) plutôt que dans l’ordre du cours — c’est bien plus rapide.',
+      'Marquez la validation, « cours assemblé » et « boutique en ligne » comme des jalons pour que rien en aval ne démarre avant que ses entrées soient prêtes.'
+    ],
+    tips: [
+      '<strong>Gardez la validation sur le chemin critique.</strong> Tout ce qui vient après — scripts, tournage, montage — est perdu si le sujet n’intéresse personne : faites du premier jalon un vrai go/no-go.',
+      '<strong>Scriptez avant de tourner.</strong> Une heure de script économise plusieurs heures de reprises et de montage ; le planning ne doit jamais laisser le tournage démarrer avant que les scripts soient finis.',
+      '<strong>Montage et création des supports peuvent avancer en parallèle.</strong> Ils ont des responsables différents et aucune dépendance mutuelle : chevauchez-les pour comprimer le milieu du plan.',
+      '<strong>Construisez la page de vente pendant le montage.</strong> La page n’a pas besoin des vidéos finales — seulement de la promesse et du programme — elle peut donc être en ligne avant que le cours soit entièrement assemblé.',
+      '<strong>Traitez la semaine de lancement comme sa propre séquence.</strong> Réchauffe, ouverture, fermeture des inscriptions et relance ont chacun un tempo qui compte : planifiez-les au lieu d’improviser.'
+    ],
+    faq: [
+      [
+        'Combien de temps faut-il pour créer un cours en ligne ?',
+        'Un cours solo bien cadré prend en général 8 à 12 semaines, de l’idée validée au lancement. Le modèle répartit validation, scripts, tournage, montage, configuration de la plateforme et lancement sur une frise pour voir si votre date cible est réaliste.'
+      ],
+      [
+        'Faut-il créer le cours avant ou après l’avoir vendu ?',
+        'Validez — et idéalement prévendez — avant de tourner. Le modèle place un jalon de validation avant la production pour n’engager le temps de tournage qu’une fois la demande réelle ; vous pouvez avancer la page de vente pour prendre des précommandes.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches du cours ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les dépendances fin-à-début (valider → scripter → tourner → monter → lancer) : le travail en aval se décale automatiquement et le chemin critique jusqu’à votre lancement reste visible.'
+      ],
+      [
+        'Le modèle de plan de cours en ligne est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
+
+  'book-launch-plan': {
+    card: 'Du manuscrit fini à la semaine de lancement : correction, couverture, ARC, précommande.',
+    h1: 'Modèle de plan de lancement de livre',
+    metaTitle: 'Plan de lancement de livre — modèle',
+    metaDesc: 'Modèle gratuit de plan de lancement de livre pour auteurs et autoéditeurs : correction, couverture, ARC, précommande et semaine de lancement.',
+    lead: 'Un <strong>modèle de plan de lancement de livre</strong> gratuit pour auteurs et autoéditeurs, du manuscrit terminé à la semaine de lancement — correction, couverture et mise en pages, lecteurs ARC et recommandations, précommande, marketing et le lancement lui-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de sortie.',
+    intro: 'Un lancement de livre, c’est en réalité cinq projets empilés sur une même date : correction, fabrication, pré-lancement, marketing et la sortie. Ce modèle les pose sur une seule frise pour que rien n’entre en collision, en six étapes :',
+    phases: [
+      ['Manuscrit', 'Terminez le premier jet et faites une passe d’auto-correction pour que le manuscrit soit prêt à confier à un correcteur. <em>Jalon : manuscrit terminé.</em>'],
+      ['Correction', 'Correction éditoriale pour la structure, puis correction de style pour la ligne et la cohérence, enfin une relecture finale. <em>Jalon : manuscrit définitif.</em>'],
+      ['Fabrication', 'Conception de la couverture, mise en pages intérieure et composition, ISBN et métadonnées, pour des fichiers prêts pour l’impression et le livre numérique. <em>Jalon : fichiers prêts à imprimer.</em>'],
+      ['Pré-lancement', 'Recrutez les lecteurs ARC et bêta, envoyez les exemplaires de lecture et recueillez les recommandations, et configurez la précommande. <em>Jalon : précommande ouverte.</em>'],
+      ['Marketing', 'Développez la plateforme d’auteur et la liste d’e-mails, constituez une équipe de lancement, et réservez promotions et publicités pour la semaine de lancement.'],
+      ['Semaine de lancement et suivi', 'Publiez le livre, menez les promotions de la semaine de lancement, relancez pour les avis et les notes, puis analysez ce qui a marché. <em>Jalon : lancement terminé.</em>']
+    ],
+    callout: 'La précommande est la date que tout le reste du plan protège. Les libraires récompensent l’élan des premières ventes, et les lecteurs ARC ont besoin de semaines pour lire et publier leur avis avant la sortie — fixez donc d’abord les dates de précommande et de lancement, puis vérifiez que correction et fabrication se terminent réellement à temps derrière elles.',
+    customize: [
+      'Fixez la date de lancement et remontez le fil ; correction et couverture demandent presque toujours plus de délai que les auteurs débutants ne l’imaginent.',
+      'Donnez aux lecteurs ARC au moins trois à quatre semaines avant la sortie — les avis qui tombent la semaine du lancement comptent bien plus que les tardifs.',
+      'Chevauchez la fabrication avec la fin de la correction : la couverture n’a pas besoin de la relecture finale, alors commencez-la tôt.',
+      'Si vous êtes édité à compte d’éditeur, remplacez la phase de fabrication par les jalons de votre éditeur et conservez les étapes marketing et lancement.',
+      'Marquez « manuscrit définitif », « fichiers prêts à imprimer » et « précommande ouverte » comme des jalons pour que rien en aval ne démarre avant l’existence de ses entrées.'
+    ],
+    tips: [
+      '<strong>La correction est le chemin critique habituel.</strong> Éditoriale → style → relecture est une séquence stricte, et le moindre glissement pousse tout le reste ; protégez-la et commencez tôt.',
+      '<strong>La couverture peut avancer en parallèle de la correction.</strong> Elle dépend du concept, pas du texte final, alors la chevaucher fait gagner des semaines sur le planning.',
+      '<strong>Constituez la liste d’e-mails avant d’en avoir besoin.</strong> Un e-mail de lancement à une liste engagée surpasse presque n’importe quelle publicité, mais la liste met des mois à croître — commencez dès la phase marketing, pas la semaine du lancement.',
+      '<strong>Envoyez les ARC tôt et suivez-les.</strong> Les avis demandent du temps de lecture ; un avis publié le jour de la sortie vaut bien plus qu’un avis arrivé un mois plus tard.',
+      '<strong>Planifiez le suivi.</strong> Les deux semaines après la sortie — relance des avis, ajustement des publicités, bilan de lancement — sont là où bien des lancements perdent discrètement leur élan faute de plan.'
+    ],
+    faq: [
+      [
+        'Combien de temps à l’avance planifier un lancement de livre ?',
+        'La plupart des autoéditeurs remontent de trois à six mois depuis la date de sortie. Le modèle répartit correction, fabrication, pré-lancement, marketing et semaine de lancement sur une frise pour voir si votre date laisse assez de marge à la correction et aux avis.'
+      ],
+      [
+        'Quand configurer la précommande ?',
+        'Dès que votre libraire le permet — souvent plusieurs semaines à plusieurs mois avant la sortie. Le modèle fait de la précommande un jalon parce que les avis ARC et l’élan marketing se calent dessus, et que les libraires récompensent les premières ventes.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches du lancement ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les dépendances fin-à-début (correction éditoriale → correction de style → relecture → mise en pages) : le travail en aval se décale automatiquement et le chemin critique jusqu’à votre sortie reste visible.'
+      ],
+      [
+        'Le modèle de plan de lancement de livre est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

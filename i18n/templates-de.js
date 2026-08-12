@@ -6854,6 +6854,142 @@ const T = {
       ]
     ]
   },
+
+  'online-course-creation-plan': {
+    card: "Von der Idee bis zum Launch: validieren, aufnehmen, schneiden, Plattform und Verkaufsseite.",
+    h1: "Vorlage für die Erstellung eines Online-Kurses",
+    metaTitle: "Online-Kurs erstellen — Gantt-Vorlage",
+    metaDesc: "Kostenlose Vorlage zum Erstellen eines Online-Kurses: validieren, gliedern, aufnehmen, schneiden, Verkaufsseite bauen und launchen. Excel oder online.",
+    lead: "Eine kostenlose <strong>Vorlage für die Erstellung eines Online-Kurses</strong>, die den Weg von der Idee bis zum Launch abbildet — Thema validieren, Curriculum gliedern, Lektionen skripten und aufnehmen, schneiden und zusammenstellen, Plattform und Verkaufsseite aufsetzen und dann den Launch fahren. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
+    intro: "Die meisten Kurse bleiben zwischen \"aufgenommen\" und \"verkauft\" stecken, weil Produktion und Launch nie gemeinsam terminiert wurden. Diese Vorlage legt den ganzen Aufbau auf eine Zeitachse, in den sechs Phasen, die ein Kurs tatsächlich durchläuft:",
+    phases: [
+      [
+        "Planen und validieren",
+        "Festlegen, für wen der Kurs ist und welches Ergebnis er liefert, und die Nachfrage mit Umfrage, Warteliste oder Vorverkauf prüfen, bevor Sie irgendetwas aufnehmen. <em>Meilenstein: Thema validiert.</em>"
+      ],
+      [
+        "Gliedern und skripten",
+        "Das Ergebnis in ein Curriculum überführen, in Module und Lektionen zerlegen und dann die Skripte oder Folien schreiben, damit die Aufnahme zügig läuft. <em>Meilenstein: Skripte fertig.</em>"
+      ],
+      [
+        "Aufnehmen und produzieren",
+        "Ton und Licht einrichten, die Video-Lektionen sowie Screencasts und Demos in fokussierten Blöcken aufnehmen. <em>Meilenstein: Dreh abgeschlossen.</em>"
+      ],
+      [
+        "Schneiden und zusammenstellen",
+        "Video und Ton schneiden, Arbeitshefte und Quizze bauen, Untertitel und Thumbnails ergänzen, sodass der Kurs vollständig ist. <em>Meilenstein: Kurs fertiggestellt.</em>"
+      ],
+      [
+        "Plattform und Verkaufsseite",
+        "Eine Hosting-Plattform wählen, die Lektionen hochladen, Preise und Kasse einrichten und die Verkaufsseite bauen. <em>Meilenstein: Shop live.</em>"
+      ],
+      [
+        "Launch und Bewerbung",
+        "Die E-Mail-Liste aufwärmen, Pre-Launch-Inhalte oder ein Webinar fahren, den Verkauf öffnen und danach nachfassen und Bewertungen sammeln. <em>Meilenstein: Launch abgeschlossen.</em>"
+      ]
+    ],
+    callout: "Validieren, bevor Sie aufnehmen. Der teuerste Fehler bei der Kurserstellung ist, zwanzig Lektionen zu einem Thema zu filmen, für das niemand zahlt — setzen Sie einen echten Validierungs-Meilenstein (Warteliste, Umfrage oder kleiner Vorverkauf) vor die Produktion und machen Sie die Aufnahme davon abhängig.",
+    customize: [
+      "Legen Sie zuerst den Launch-Termin fest und rechnen Sie rückwärts — die Aufnahme dehnt sich sonst auf jede verfügbare Zeit aus.",
+      "Fügen Sie unter Aufnehmen und Schneiden je Modul eine Zeile ein, damit ein langer Kurs den Fortschritt jeder Einheit einzeln zeigt.",
+      "Beim Vorverkauf die Verkaufsseite und Kasse nach vorn ziehen, damit Sie Bestellungen annehmen können, bevor der Dreh fertig ist.",
+      "Die Aufnahme nach Setup bündeln (erst alle Talking-Head-Lektionen, dann alle Screencasts) statt in Kursreihenfolge — das ist deutlich schneller.",
+      "Validierung, \"Kurs fertiggestellt\" und \"Shop live\" als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
+    ],
+    tips: [
+      "<strong>Halten Sie die Validierung auf dem kritischen Pfad.</strong> Alles danach — Skripte, Aufnahme, Schnitt — ist vergebens, wenn das Thema nicht gewollt ist, also machen Sie den ersten Meilenstein zu einer echten Go/No-go-Entscheidung.",
+      "<strong>Skripten Sie vor der Aufnahme.</strong> Eine Stunde Skripten spart mehrere Stunden Nachdreh und Schnitt; der Plan sollte die Aufnahme nie vor fertigen Skripten beginnen lassen.",
+      "<strong>Schnitt und Arbeitsheft-Bau können parallel laufen.</strong> Sie haben verschiedene Verantwortliche und keine Abhängigkeit voneinander, überlappen Sie sie, um die Mitte des Plans zu verdichten.",
+      "<strong>Bauen Sie die Verkaufsseite während des Schnitts.</strong> Die Seite braucht nicht die fertigen Videos — nur das Versprechen und die Gliederung — und kann live sein, bevor der Kurs vollständig ist.",
+      "<strong>Behandeln Sie die Launch-Woche als eigene Abfolge.</strong> Aufwärmen, Verkauf öffnen, Verkauf schließen und Nachfassen haben jeweils ein Timing, das zählt; terminieren Sie sie, statt zu improvisieren."
+    ],
+    faq: [
+      [
+        "Wie lange dauert es, einen Online-Kurs zu erstellen?",
+        "Ein fokussierter Solo-Kurs braucht meist 8 bis 12 Wochen von der validierten Idee bis zum Launch. Die Vorlage verteilt Validierung, Skript, Aufnahme, Schnitt, Plattformaufbau und Launch über eine Zeitachse, sodass Sie sehen, ob Ihr Zieltermin realistisch ist."
+      ],
+      [
+        "Soll ich den Kurs vor oder nach dem Verkauf bauen?",
+        "Validieren — und idealerweise vorverkaufen —, bevor Sie aufnehmen. Die Vorlage setzt einen Validierungs-Meilenstein vor die Produktion, damit Sie Drehzeit erst binden, wenn es echte Nachfrage gibt; die Verkaufsseite lässt sich für Vorbestellungen nach vorn ziehen."
+      ],
+      [
+        "Kann ich Abhängigkeiten zwischen den Kursaufgaben abbilden?",
+        "Ja. Öffnen Sie die Vorlage im kostenlosen <a href=\"/de/app.html\">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (validieren → skripten → aufnehmen → schneiden → launchen), sodass sich spätere Arbeit automatisch verschiebt und der kritische Pfad zu Ihrem Launch sichtbar bleibt."
+      ],
+      [
+        "Ist die Vorlage für den Online-Kurs-Plan kostenlos?",
+        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+
+  'book-launch-plan': {
+    card: "Vom fertigen Manuskript zur Launch-Woche: Lektorat, Cover, ARC-Leser, Vorbestellung.",
+    h1: "Vorlage für den Buch-Launch",
+    metaTitle: "Buch-Launch-Plan — Gantt-Vorlage",
+    metaDesc: "Kostenlose Buch-Launch-Vorlage für Autorinnen und Selfpublisher: Lektorat, Cover, ARC-Leser, Vorbestellung und Launch-Woche. Excel oder online.",
+    lead: "Eine kostenlose <strong>Vorlage für den Buch-Launch</strong> für Autorinnen und Selfpublisher, die vom fertigen Manuskript bis zur Launch-Woche reicht — Lektorat, Cover- und Innenteil-Produktion, ARC-Leser und Blurbs, Vorbestellung, Marketing und der Launch selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Erscheinungstermin zu sehen.",
+    intro: "Ein Buch-Launch sind eigentlich fünf Projekte, gestapelt auf einen Termin: Lektorat, Produktion, Pre-Launch, Marketing und das Erscheinen. Diese Vorlage legt sie auf eine einzige Zeitachse, damit nichts kollidiert, gegliedert in sechs Phasen:",
+    phases: [
+      [
+        "Manuskript",
+        "Den Entwurf fertigstellen und eine Selbstkorrektur durchlaufen, sodass das Manuskript bereit für die Übergabe an das Lektorat ist. <em>Meilenstein: Manuskript fertig.</em>"
+      ],
+      [
+        "Lektorat",
+        "Inhaltslektorat für die Struktur, dann Korrektorat für Zeile und Konsistenz, dann ein finaler Korrekturdurchgang. <em>Meilenstein: Manuskript final.</em>"
+      ],
+      [
+        "Produktion",
+        "Cover-Gestaltung, Innensatz und Typografie sowie ISBN und Metadaten, damit die Dateien druck- und E-Book-fertig sind. <em>Meilenstein: Dateien druckfertig.</em>"
+      ],
+      [
+        "Pre-Launch",
+        "ARC- und Beta-Leser gewinnen, Rezensionsexemplare verschicken und Blurbs sammeln sowie die Vorbestellung einrichten. <em>Meilenstein: Vorbestellung live.</em>"
+      ],
+      [
+        "Marketing",
+        "Die Autorenplattform und E-Mail-Liste aufbauen, ein Launch-Team zusammenstellen und Promotions und Anzeigen für die Launch-Woche buchen."
+      ],
+      [
+        "Launch-Woche und Nachlauf",
+        "Das Buch veröffentlichen, Launch-Woche-Promotions fahren, Rezensionen und Bewertungen nachfassen und dann auswerten, was funktioniert hat. <em>Meilenstein: Launch abgeschlossen.</em>"
+      ]
+    ],
+    callout: "Die Vorbestellung ist der Termin, den der Rest des Plans schützt. Händler belohnen frühen Verkaufsschwung, und ARC-Leser brauchen Wochen zum Lesen und Rezensieren vor dem Erscheinen — legen Sie also zuerst Vorbestellungs- und Launch-Termin fest und prüfen Sie dann, ob Lektorat und Produktion dahinter rechtzeitig fertig werden.",
+    customize: [
+      "Den Launch-Termin festlegen und rückwärts rechnen; Lektorat und Cover-Gestaltung brauchen fast immer mehr Vorlauf, als Erstautorinnen erwarten.",
+      "Geben Sie ARC-Lesern mindestens drei bis vier Wochen vor dem Erscheinen — Rezensionen in der Launch-Woche zählen weit mehr als späte.",
+      "Die Produktion mit dem Ende des Lektorats überlappen: Die Cover-Gestaltung braucht nicht den finalen Korrekturdurchgang, also früh starten.",
+      "Bei Verlagsveröffentlichung die Produktionsphase durch die Meilensteine Ihres Verlags ersetzen und die Marketing- und Launch-Phasen behalten.",
+      "\"Manuskript final\", \"Dateien druckfertig\" und \"Vorbestellung live\" als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
+    ],
+    tips: [
+      "<strong>Das Lektorat ist meist der kritische Pfad.</strong> Inhalts- → Korrektorat → Korrektur ist eine strikte Abfolge, und Verzug hier schiebt alles; schützen Sie sie und starten Sie früh.",
+      "<strong>Die Cover-Gestaltung kann parallel zum Lektorat laufen.</strong> Sie hängt vom Konzept ab, nicht vom finalen Text, sodass ein Überlappen Wochen im Plan zurückgewinnt.",
+      "<strong>Bauen Sie die E-Mail-Liste, bevor Sie sie brauchen.</strong> Eine Launch-Woche-Mail an eine engagierte Liste schlägt fast jede Anzeige, aber die Liste wächst über Monate — beginnen Sie in der Marketing-Phase, nicht in der Launch-Woche.",
+      "<strong>Verschicken Sie ARCs früh und verfolgen Sie sie.</strong> Rezensionen brauchen Lesezeit; eine Rezension am Erscheinungstag ist weit mehr wert als eine einen Monat später.",
+      "<strong>Terminieren Sie den Nachlauf.</strong> Die zwei Wochen nach dem Erscheinen — Rezensionen nachfassen, Anzeigen justieren, eine Auswertung — sind der Punkt, an dem viele Launches mangels Plan still an Schwung verlieren."
+    ],
+    faq: [
+      [
+        "Wie weit im Voraus sollte ich einen Buch-Launch planen?",
+        "Die meisten Selfpublisher rechnen drei bis sechs Monate vom Erscheinungstermin zurück. Die Vorlage verteilt Lektorat, Produktion, Pre-Launch, Marketing und Launch-Woche über eine Zeitachse, sodass Sie sehen, ob Ihr Termin genug Vorlauf für Lektorat und Rezensionen lässt."
+      ],
+      [
+        "Wann sollte ich die Vorbestellung einrichten?",
+        "So früh, wie Ihr Händler es erlaubt — oft mehrere Wochen bis Monate vor dem Erscheinen. Die Vorlage macht die Vorbestellung zum Meilenstein, weil ARC-Rezensionen und Marketing-Schwung darauf getaktet sind und Händler frühe Verkäufe belohnen."
+      ],
+      [
+        "Kann ich Abhängigkeiten zwischen den Launch-Aufgaben abbilden?",
+        "Ja. Öffnen Sie die Vorlage im kostenlosen <a href=\"/de/app.html\">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Inhaltslektorat → Korrektorat → Korrektur → Satz), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad zu Ihrem Erscheinen sichtbar bleibt."
+      ],
+      [
+        "Ist die Vorlage für den Buch-Launch-Plan kostenlos?",
+        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish
