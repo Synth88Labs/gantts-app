@@ -6990,6 +6990,73 @@ const T = {
       ]
     ]
   },
+  'go-to-market-plan': {
+    card: "Sequenziert einen Launch von der Recherche bis zum Ergebnis: Positionierung, Pricing, Enablement, Launch.",
+    h1: "Go-to-Market-Plan Vorlage",
+    metaTitle: "Go-to-Market-Plan (GTM) — Gantt-Vorlage",
+    metaDesc: "Kostenlose Go-to-Market-Vorlage: Recherche, Positionierung, Pricing, Enablement, Launch und Nachlauf auf einer Zeitachse. Excel, PowerPoint oder online.",
+    lead: "Eine kostenlose <strong>Go-to-Market-Plan Vorlage</strong>, die einen Launch von der Recherche bis zum Ergebnis sequenziert — Kunden- und Marktforschung, Positionierung und Messaging, Pricing und Packaging, Sales-Enablement und Assets, den Launch selbst und die Iteration danach. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
+    intro: "Ein Go-to-Market-Plan scheitert, wenn Marketing, Produkt, Vertrieb und Pricing nach unterschiedlichen Uhren laufen. Diese Vorlage legt jeden Arbeitsstrang auf eine Zeitachse, in den sechs Phasen, die ein Launch tatsächlich durchläuft:",
+    phases: [
+      [
+        "Markt- und Kundenforschung",
+        "Das ideale Kundenprofil und die Personas definieren, den Wettbewerb analysieren und Problem sowie Zahlungsbereitschaft validieren, bevor Sie sich auf eine Position festlegen. <em>Meilenstein: Recherche abgeschlossen.</em>"
+      ],
+      [
+        "Positionierung und Messaging",
+        "Die Recherche in eine differenzierte Position und ein Nutzenversprechen übersetzen, dann in ein Messaging-Framework, das das ganze Team nutzen kann. <em>Meilenstein: Messaging freigegeben.</em>"
+      ],
+      [
+        "Pricing und Packaging",
+        "Das Preismodell, die Tarifstufen und das Packaging festlegen und den Business Case sowie die Umsatzziele dahinter aufbauen. <em>Meilenstein: Pricing freigegeben.</em>"
+      ],
+      [
+        "Enablement und Assets",
+        "Den Vertrieb befähigen und schulen, Website und Landingpages bauen sowie Demo, Unterlagen und Dokumentation erstellen, die der Launch braucht. <em>Meilenstein: Assets fertig.</em>"
+      ],
+      [
+        "Launch",
+        "Den internen Launch und Readiness-Check durchführen, extern live gehen und Kampagnen, PR und Vertriebsansprache gemeinsam starten. <em>Meilenstein: externer Launch.</em>"
+      ],
+      [
+        "Nachlauf und Iteration",
+        "Funnel und KPIs messen, Win/Loss-Feedback sammeln und optimieren — ein Launch ist der Anfang des Plans, nicht das Ende. <em>Meilenstein: 30-Tage-Review.</em>"
+      ]
+    ],
+    callout: "Die Positionierung ist die Abhängigkeit, die alles andere erbt. Enablement, Website und Sales-Pitch kodieren allesamt Ihre Positionierung, geben Sie sie also als harten Meilenstein frei, bevor diese Assets gebaut werden — sie nach dem Launch zu überarbeiten, weil sich die Botschaft geändert hat, ist der teuerste GTM-Fehler.",
+    customize: [
+      "Zuerst den Launch-Termin festlegen und rückwärts rechnen; Enablement und Asset-Produktion brauchen fast immer mehr Vorlauf als geplant.",
+      "Unter Launch je Kanal eine Zeile ergänzen (Paid, Content, PR, Partnerschaften), damit jeder einen eigenen Verantwortlichen und Zeitplan hat.",
+      "Wenn Sie über eine Warteliste oder Beta vorab launchen, Website und Anmeldungen früher ziehen und den vollen Launch hinter Readiness verriegeln.",
+      "Das Pricing auf einem eigenen Strang halten — es hängt von der Recherche ab, nicht vom Messaging, und kann daher parallel zur Positionierung laufen.",
+      "Recherche, Messaging, Pricing und \"Assets fertig\" als Meilensteine markieren, damit kein nachgelagerter Strang vor seinen Eingaben startet."
+    ],
+    tips: [
+      "<strong>Die Positionierung liegt auf dem kritischen Pfad.</strong> Messaging, Enablement und jedes Asset hängen von ihr ab; eine Woche Verzug bei der Freigabe schiebt den ganzen Launch, also schützen Sie sie.",
+      "<strong>Enablement ist meist der Engpass.</strong> Vertriebsschulung, Unterlagen und Demo dauern länger als erwartet und verriegeln den Launch — starten Sie sie, sobald das Messaging freigegeben ist.",
+      "<strong>Pricing parallel fahren, nicht in Reihe.</strong> Es braucht nur die Recherche, sodass eine Überlappung mit der Positionierung Wochen im Zeitplan zurückgewinnt.",
+      "<strong>Internen und externen Launch trennen.</strong> Das Team muss bereit sein, bevor der Markt etwas hört; terminieren Sie den internen Go-live als eigenen Meilenstein.",
+      "<strong>Terminieren Sie das Post-Launch-Review.</strong> Die 30 Tage nach dem Launch — Funnel-Metriken, Win/Loss, Iteration — sind der Punkt, an dem ein Plan aufgeht oder mangels Nachfassen still stehen bleibt."
+    ],
+    faq: [
+      [
+        "Was ist ein Go-to-Market-Plan (GTM)?",
+        "Ein Go-to-Market-Plan ist die Zeitachse und die Arbeitsstränge, die ein Produkt in den Markt bringen — Recherche, Positionierung, Pricing, Enablement, Launch und Nachlauf. Diese Vorlage legt diese Phasen auf einen Zeitplan, sodass Marketing, Produkt und Vertrieb im Takt bleiben."
+      ],
+      [
+        "Was sollte ein Go-to-Market-Plan enthalten?",
+        "Mindestens: ideales Kundenprofil und Recherche, Positionierung und Messaging, Pricing und Packaging, Sales-Enablement und Assets, den Launch selbst und eine Post-Launch-Messschleife. Die Vorlage gibt jedem Punkt eine eigene Phase und eigene Meilensteine."
+      ],
+      [
+        "Kann ich Abhängigkeiten zwischen den GTM-Strängen abbilden?",
+        "Ja. Öffnen Sie die Vorlage im kostenlosen <a href=\"/de/app.html\">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Recherche → Positionierung → Enablement → Launch), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad zum Launch sichtbar bleibt."
+      ],
+      [
+        "Ist die Go-to-Market-Plan Vorlage kostenlos?",
+        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

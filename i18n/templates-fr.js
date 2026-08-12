@@ -6918,6 +6918,55 @@ const T = {
       ]
     ]
   },
+  'go-to-market-plan': {
+    card: 'De la recherche au lancement : positionnement, tarification, activation commerciale et bilan post-lancement.',
+    h1: 'Modèle de plan go-to-market (GTM)',
+    metaTitle: 'Plan go-to-market (GTM) — modèle',
+    metaDesc: 'Modèle gratuit de plan go-to-market : recherche, positionnement, tarification, activation, lancement et bilan. Excel, PowerPoint ou en ligne.',
+    lead: 'Un <strong>modèle de plan go-to-market</strong> gratuit qui séquence un lancement, de la recherche aux résultats — recherche client et marché, positionnement et message, tarification et offres, activation commerciale et supports, le lancement lui-même, puis l’itération post-lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
+    intro: 'Un plan go-to-market échoue quand marketing, produit, ventes et tarification avancent chacun à leur rythme. Ce modèle pose chaque chantier sur une seule frise, dans les six étapes que suit réellement un lancement :',
+    phases: [
+      ['Recherche marché et client', 'Définissez le profil client idéal et les personas, analysez la concurrence, et validez le problème et la disposition à payer avant d’arrêter un positionnement. <em>Jalon : recherche terminée.</em>'],
+      ['Positionnement et message', 'Transformez la recherche en un positionnement différenciant et une proposition de valeur, puis en un cadre de message utilisable par toute l’équipe. <em>Jalon : message validé.</em>'],
+      ['Tarification et offres', 'Choisissez le modèle tarifaire, les paliers et la composition des offres, et bâtissez l’analyse de rentabilité et les objectifs de revenus qui les sous-tendent. <em>Jalon : tarifs validés.</em>'],
+      ['Activation et supports', 'Formez et outillez les ventes, construisez le site et les pages d’atterrissage, et produisez la démo, les supports et la documentation dont le lancement a besoin. <em>Jalon : supports prêts.</em>'],
+      ['Lancement', 'Menez le lancement interne et le contrôle de préparation, passez en ligne à l’externe, et déclenchez ensemble campagnes, RP et prospection commerciale. <em>Jalon : lancement externe.</em>'],
+      ['Post-lancement et itération', 'Mesurez le tunnel et les KPI, recueillez les retours gagné/perdu, et optimisez — un lancement est le début du plan, pas la fin. <em>Jalon : bilan à 30 jours.</em>']
+    ],
+    callout: 'Le positionnement est la dépendance dont tout le reste hérite. L’activation, le site et le pitch commercial encodent tous votre positionnement : validez-le donc comme un jalon ferme avant de produire ces supports — les refaire après le lancement parce que le message a changé est l’erreur go-to-market la plus coûteuse.',
+    customize: [
+      'Fixez d’abord la date de lancement et remontez le fil ; l’activation et la production des supports demandent presque toujours plus de délai que prévu.',
+      'Ajoutez une ligne par canal sous Lancement (payant, contenu, RP, partenariats) pour que chacun ait son responsable et son calendrier.',
+      'Si vous pré-lancez sur une liste d’attente ou une bêta, avancez le site et les inscriptions, et conditionnez le lancement complet à la préparation.',
+      'Gardez la tarification sur sa propre voie — elle dépend de la recherche, pas du message, elle peut donc avancer en parallèle du positionnement.',
+      'Marquez recherche, message, tarifs et « supports prêts » comme des jalons pour qu’aucun chantier en aval ne démarre avant l’existence de ses entrées.'
+    ],
+    tips: [
+      '<strong>Le positionnement est sur le chemin critique.</strong> Message, activation et chaque support en dépendent ; une semaine perdue à valider le positionnement décale tout le lancement, alors protégez-le.',
+      '<strong>L’activation est souvent le goulot d’étranglement.</strong> Formation des ventes, supports et démo prennent plus de temps que prévu et conditionnent le lancement — commencez-les dès que le message est validé.',
+      '<strong>Menez la tarification en parallèle, pas en série.</strong> Elle n’a besoin que de la recherche, alors la chevaucher avec le positionnement fait regagner des semaines sur le planning.',
+      '<strong>Séparez lancement interne et lancement externe.</strong> L’équipe doit être prête avant que le marché n’entende quoi que ce soit ; planifiez la mise en ligne interne comme un jalon distinct.',
+      '<strong>Planifiez le bilan post-lancement.</strong> Les 30 jours après le lancement — métriques du tunnel, gagné/perdu, itération — sont là où un plan se capitalise ou s’enlise discrètement faute de suivi.'
+    ],
+    faq: [
+      [
+        'Qu’est-ce qu’un plan go-to-market (GTM) ?',
+        'Un plan go-to-market est la frise et l’ensemble des chantiers qui amènent un produit sur le marché — recherche, positionnement, tarification, activation, lancement et post-lancement. Ce modèle pose ces étapes sur un seul planning pour que marketing, produit et ventes restent synchronisés.'
+      ],
+      [
+        'Que doit contenir un plan go-to-market ?',
+        'Au minimum : profil client idéal et recherche, positionnement et message, tarification et offres, activation commerciale et supports, le lancement lui-même, et une boucle de mesure post-lancement. Le modèle donne à chacun sa propre phase et ses jalons.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les chantiers GTM ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (recherche → positionnement → activation → lancement) : le travail en aval se décale automatiquement et le chemin critique jusqu’au lancement reste visible.'
+      ],
+      [
+        'Le modèle de plan go-to-market est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

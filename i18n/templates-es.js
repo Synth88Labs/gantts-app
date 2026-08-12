@@ -4053,6 +4053,43 @@ const T = {
       ['¿La plantilla de plan de lanzamiento de libro es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+  'go-to-market-plan': {
+    card: 'Salida al mercado sin descoordinar producto, marketing, ventas y precios: investigación, posicionamiento, habilitación y lanzamiento.',
+    h1: 'Plantilla de plan de salida al mercado (go-to-market)',
+    metaTitle: 'Plantilla de plan de salida al mercado (go-to-market)',
+    metaDesc: 'Plantilla gratuita de plan go-to-market: investigación, posicionamiento, precios, habilitación y lanzamiento en una línea de tiempo. Excel u online.',
+    lead: 'Una <strong>plantilla gratuita de plan de salida al mercado (go-to-market)</strong> que ordena un lanzamiento desde la investigación hasta los resultados: estudio de mercado y de cliente, posicionamiento y mensajes, precios y empaquetado, habilitación de ventas y piezas, el propio lanzamiento y la iteración posterior. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu fecha de lanzamiento.',
+    intro: 'Un plan de salida al mercado fracasa cuando marketing, producto, ventas y precios avanzan a distinto ritmo. Esta plantilla pone cada línea de trabajo en una misma línea de tiempo, en las seis etapas por las que realmente pasa un lanzamiento:',
+    phases: [
+      ['Investigación de mercado y cliente', 'Define el perfil de cliente ideal y los buyer personas, analiza a la competencia y valida el problema y la disposición a pagar antes de comprometerte con un posicionamiento. <em>Hito: investigación completa.</em>'],
+      ['Posicionamiento y mensajes', 'Convierte la investigación en un posicionamiento diferenciado y una propuesta de valor, y luego en un marco de mensajes que todo el equipo pueda usar. <em>Hito: mensajes aprobados.</em>'],
+      ['Precios y empaquetado', 'Decide el modelo de precios, los niveles y el empaquetado, y construye el business case y los objetivos de ingresos que los respaldan. <em>Hito: precios aprobados.</em>'],
+      ['Habilitación y piezas', 'Habilita y forma al equipo de ventas, construye la web y las landing pages, y produce la demo, los materiales y la documentación que necesita el lanzamiento. <em>Hito: piezas listas.</em>'],
+      ['Lanzamiento', 'Ejecuta el lanzamiento interno y la comprobación de preparación, sal en vivo hacia fuera y dispara a la vez las campañas, las relaciones públicas y la acción comercial. <em>Hito: lanzamiento externo.</em>'],
+      ['Poslanzamiento e iteración', 'Mide el embudo y los KPI, recoge el feedback de ganados y perdidos, y optimiza: un lanzamiento es el inicio del plan, no el final. <em>Hito: revisión a 30 días.</em>'],
+    ],
+    callout: 'El posicionamiento es la dependencia que todo lo demás hereda. La habilitación, la web y el discurso comercial codifican tu posicionamiento, así que apruébalo como hito firme antes de construir esas piezas: rehacerlas tras el lanzamiento porque cambió el mensaje es el error más caro de una salida al mercado.',
+    customize: [
+      'Fija primero la fecha de lanzamiento y trabaja hacia atrás; la habilitación y la producción de piezas casi siempre necesitan más margen del previsto.',
+      'Añade una fila por canal dentro de Lanzamiento (pago, contenidos, prensa, alianzas) para que cada uno tenga su propio responsable y calendario.',
+      'Si haces un prelanzamiento con lista de espera o beta, adelanta la web y los registros y condiciona el lanzamiento completo a la comprobación de preparación.',
+      'Mantén los precios en su propia vía: dependen de la investigación, no de los mensajes, así que pueden avanzar en paralelo al posicionamiento.',
+      'Marca investigación, mensajes, precios y «piezas listas» como hitos para que ninguna línea de trabajo posterior arranque antes de tener sus insumos.',
+    ],
+    tips: [
+      '<strong>El posicionamiento está en la ruta crítica.</strong> Los mensajes, la habilitación y cada pieza dependen de él; una semana perdida aprobando el posicionamiento empuja todo el lanzamiento, así que protégelo.',
+      '<strong>La habilitación suele ser el cuello de botella.</strong> La formación de ventas, los materiales y la demo llevan más de lo previsto y condicionan el lanzamiento: empiézalos en cuanto se aprueben los mensajes.',
+      '<strong>Ejecuta los precios en paralelo, no en serie.</strong> Solo necesitan la investigación, así que solaparlos con el posicionamiento recupera semanas en el cronograma.',
+      '<strong>Separa el lanzamiento interno del externo.</strong> El equipo tiene que estar preparado antes de que el mercado se entere de nada; programa la salida en vivo interna como su propio hito.',
+      '<strong>Programa la revisión posterior al lanzamiento.</strong> Los 30 días siguientes —métricas del embudo, ganados y perdidos, iteración— son donde un plan se multiplica o se estanca en silencio por falta de seguimiento.',
+    ],
+    faq: [
+      ['¿Qué es un plan de salida al mercado (go-to-market)?', 'Un plan de salida al mercado es la línea de tiempo y las líneas de trabajo que llevan un producto al mercado: investigación, posicionamiento, precios, habilitación, lanzamiento y poslanzamiento. Esta plantilla coloca esas etapas en un mismo cronograma para que marketing, producto y ventas vayan sincronizados.'],
+      ['¿Qué debe incluir un plan de salida al mercado?', 'Como mínimo: perfil de cliente ideal e investigación, posicionamiento y mensajes, precios y empaquetado, habilitación de ventas y piezas, el propio lanzamiento y un ciclo de medición posterior. La plantilla da a cada elemento su propia fase e hitos.'],
+      ['¿Puedo mostrar dependencias entre las líneas de trabajo?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (investigación → posicionamiento → habilitación → lanzamiento): el trabajo posterior se desplaza solo y la ruta crítica hasta el lanzamiento se mantiene visible.'],
+      ['¿La plantilla de plan de salida al mercado es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

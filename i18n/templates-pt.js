@@ -7008,6 +7008,73 @@ const T = {
       ]
     ]
   },
+  'go-to-market-plan': {
+    card: "Pesquisa, posicionamento, preços, capacitação, lançamento e pós-lançamento em uma linha do tempo.",
+    h1: "Modelo de plano go-to-market (GTM)",
+    metaTitle: "Modelo de plano go-to-market (GTM)",
+    metaDesc: "Modelo gratuito de plano go-to-market: pesquisa, posicionamento, preços, capacitação, lançamento e pós-lançamento em uma linha do tempo. Excel ou online.",
+    lead: "Um modelo gratuito de <strong>plano go-to-market</strong> que sequencia um lançamento da pesquisa aos resultados — pesquisa de mercado e de clientes, posicionamento e mensagem, preços e empacotamento, capacitação de vendas e materiais, o próprio lançamento e a iteração pós-lançamento. Baixe para Excel, PowerPoint ou CSV, ou abra no <a href=\"/pt/app.html\">editor gratuito</a> para ligar dependências e ver o caminho crítico até a data de lançamento.",
+    intro: "Um plano go-to-market falha quando marketing, produto, vendas e preços correm em relógios diferentes. Este modelo coloca cada frente de trabalho em uma só linha do tempo, nas seis etapas pelas quais um lançamento realmente passa:",
+    phases: [
+      [
+        "Pesquisa de mercado e de clientes",
+        "Defina o perfil de cliente ideal e as personas, analise a concorrência e valide o problema e a disposição a pagar antes de fechar um posicionamento. <em>Marco: pesquisa concluída.</em>"
+      ],
+      [
+        "Posicionamento e mensagem",
+        "Transforme a pesquisa em um posicionamento diferenciado e uma proposta de valor e, depois, em um framework de mensagem que toda a equipe possa usar. <em>Marco: mensagem aprovada.</em>"
+      ],
+      [
+        "Preços e empacotamento",
+        "Defina o modelo de preços, os planos e o empacotamento e construa o business case e as metas de receita por trás deles. <em>Marco: preços aprovados.</em>"
+      ],
+      [
+        "Capacitação e materiais",
+        "Capacite e treine o time de vendas, construa o site e as landing pages e produza a demonstração, os materiais e a documentação que o lançamento exige. <em>Marco: materiais prontos.</em>"
+      ],
+      [
+        "Lançamento",
+        "Faça o lançamento interno e a verificação de prontidão, entre no ar externamente e dispare campanhas, PR e abordagem de vendas ao mesmo tempo. <em>Marco: lançamento externo.</em>"
+      ],
+      [
+        "Pós-lançamento e iteração",
+        "Meça o funil e os KPIs, colete feedback de ganhos/perdas e otimize — um lançamento é o início do plano, não o fim. <em>Marco: revisão de 30 dias.</em>"
+      ]
+    ],
+    callout: "O posicionamento é a dependência que todo o resto herda. A capacitação, o site e o discurso de vendas codificam o seu posicionamento, então aprove-o como um marco rígido antes de esses materiais serem construídos — refazê-los depois do lançamento porque a mensagem mudou é o erro de GTM mais caro.",
+    customize: [
+      "Defina primeiro a data de lançamento e trabalhe de trás para frente; capacitação e produção de materiais quase sempre exigem mais fôlego do que o planejado.",
+      "Adicione uma linha por canal dentro de Lançamento (mídia paga, conteúdo, PR, parcerias) para que cada um tenha seu próprio responsável e cronometragem.",
+      "Se você está fazendo um pré-lançamento para uma lista de espera ou beta, antecipe o site e os cadastros e condicione o lançamento completo à prontidão.",
+      "Mantenha os preços em uma trilha própria — eles dependem da pesquisa, não da mensagem, então podem correr em paralelo com o posicionamento.",
+      "Marque pesquisa, mensagem, preços e “materiais prontos” como marcos para que nenhuma frente a jusante comece antes de os insumos existirem."
+    ],
+    tips: [
+      "<strong>O posicionamento está no caminho crítico.</strong> Mensagem, capacitação e todos os materiais dependem dele; uma semana perdida na aprovação do posicionamento empurra todo o lançamento, então proteja-a.",
+      "<strong>A capacitação costuma ser o gargalo.</strong> Treinamento de vendas, materiais e a demonstração levam mais tempo do que se espera e condicionam o lançamento — comece-os no momento em que a mensagem for aprovada.",
+      "<strong>Rode os preços em paralelo, não em série.</strong> Eles só precisam da pesquisa, então sobrepô-los ao posicionamento devolve semanas ao cronograma.",
+      "<strong>Separe o lançamento interno do externo.</strong> A equipe precisa estar pronta antes de o mercado ouvir qualquer coisa; agende o go-live interno como um marco próprio.",
+      "<strong>Agende a revisão pós-lançamento.</strong> Os 30 dias após o lançamento — métricas de funil, ganhos/perdas, iteração — são onde um plano se multiplica ou trava em silêncio por falta de acompanhamento."
+    ],
+    faq: [
+      [
+        "O que é um plano go-to-market (GTM)?",
+        "Um plano go-to-market é a linha do tempo e as frentes de trabalho que levam um produto ao mercado — pesquisa, posicionamento, preços, capacitação, lançamento e pós-lançamento. Este modelo coloca essas etapas em um só cronograma para que marketing, produto e vendas fiquem sincronizados."
+      ],
+      [
+        "O que um plano go-to-market deve incluir?",
+        "No mínimo: perfil de cliente ideal e pesquisa, posicionamento e mensagem, preços e empacotamento, capacitação de vendas e materiais, o próprio lançamento e um ciclo de medição pós-lançamento. O modelo dá a cada um sua própria fase e marcos."
+      ],
+      [
+        "Dá para mostrar dependências entre as frentes do GTM?",
+        "Sim. Abra o modelo no <a href=\"/pt/app.html\">editor gratuito do gantts.app</a> para ligar relações de término para início (pesquisa → posicionamento → capacitação → lançamento), de modo que o trabalho posterior se desloque sozinho e o caminho crítico até o lançamento fique sempre à vista."
+      ],
+      [
+        "O modelo de plano go-to-market é gratuito?",
+        "Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {
