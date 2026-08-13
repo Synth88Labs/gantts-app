@@ -6967,6 +6967,55 @@ const T = {
       ]
     ]
   },
+  'training-program-rollout': {
+    card: 'De l’analyse des besoins aux résultats : conception, LMS, pilote et déploiement par vagues dans toute l’organisation.',
+    h1: 'Modèle de plan de déploiement d’un programme de formation',
+    metaTitle: 'Plan de déploiement de formation — modèle',
+    metaDesc: 'Modèle gratuit de plan de déploiement de formation : analyse des besoins, conception, pilote, déploiement et évaluation. Excel, PowerPoint ou en ligne.',
+    lead: 'Un <strong>modèle de plan de déploiement de formation</strong> gratuit pour les équipes L&amp;D, qui mène un programme de l’analyse des besoins aux résultats — évaluation des besoins, conception pédagogique, développement des contenus, un pilote, le déploiement complet, puis l’évaluation. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre mise en service.',
+    intro: 'Un déploiement de formation s’enlise quand le contenu est produit avant que le besoin soit confirmé, ou lancé avant d’être piloté. Ce modèle pose tout le programme sur une seule frise, dans les six étapes que suit réellement la formation :',
+    phases: [
+      ['Analyse des besoins', 'Évaluez le besoin de formation, définissez le public et les objectifs, et analysez l’écart de compétences pour que le programme réponde à un vrai problème. <em>Jalon : besoins validés.</em>'],
+      ['Conception', 'Fixez des objectifs pédagogiques mesurables, concevez le parcours et les modalités de diffusion, et décidez comment vous mesurerez la réussite. <em>Jalon : conception approuvée.</em>'],
+      ['Développement', 'Produisez les contenus et les supports, configurez et alimentez le LMS, et préparez les guides d’animation et la formation des formateurs. <em>Jalon : contenu prêt.</em>'],
+      ['Pilote', 'Menez une cohorte pilote, recueillez les retours et évaluez, puis révisez les supports avant de passer à l’échelle. <em>Jalon : pilote validé.</em>'],
+      ['Déploiement', 'Planifiez les cohortes et la communication, inscrivez les apprenants, et diffusez la formation par vagues. <em>Jalon : déploiement terminé.</em>'],
+      ['Évaluation et ancrage', 'Mesurez les résultats par rapport au plan, ancrez avec des aides à la tâche et un suivi, et passez le programme en revue pour itérer. <em>Jalon : bilan à 90 jours.</em>']
+    ],
+    callout: 'Le pilote est l’endroit le moins coûteux pour se tromper. Déployer un programme à toute l’organisation avant qu’un pilote ait validé le contenu, le rythme et l’animation transforme de petits ajustements en refonte à grande échelle — traitez la validation du pilote comme un jalon ferme dont dépend le déploiement complet.',
+    customize: [
+      'Fixez d’abord la date de mise en service et remontez le fil ; le développement des contenus et la configuration du LMS demandent presque toujours plus de délai que prévu.',
+      'Ajoutez une ligne par cohorte ou par région sous Déploiement pour que chaque vague ait son propre calendrier et son responsable.',
+      'Si le programme est réglementaire, ajoutez l’échéance comme jalon fixe et vérifiez que le déploiement se termine avant elle.',
+      'Gardez la configuration du LMS sur sa propre voie — elle dépend de la conception, pas du contenu fini, elle peut donc avancer en parallèle du développement.',
+      'Marquez la validation des besoins, de la conception, du contenu et du pilote comme des jalons pour qu’aucune phase ne démarre avant que ses entrées soient prêtes.'
+    ],
+    tips: [
+      '<strong>Concevez avant de développer.</strong> Produire du contenu sur des objectifs flous est la cause la plus fréquente de reprises ; le planning ne devrait jamais laisser le développement démarrer avant l’approbation de la conception.',
+      '<strong>Le pilote est sur le chemin critique du déploiement.</strong> Le déploiement complet dépend de la validation du pilote, alors protégez la fenêtre du pilote plutôt que de la comprimer pour tenir une date.',
+      '<strong>Menez la configuration du LMS en parallèle.</strong> Elle n’a besoin que de la conception et de la structure, alors la chevaucher avec le développement des contenus fait regagner des semaines sur le planning.',
+      '<strong>Planifiez l’ancrage, pas seulement la diffusion.</strong> L’apprentissage se dissipe sans suivi ; les aides à la tâche et les piqûres de rappel ont leur place dans le plan, pas dans les bonnes intentions.',
+      '<strong>Mesurez par rapport aux objectifs fixés.</strong> Reliez l’évaluation aux indicateurs de réussite de la phase de conception — un déploiement qui a diffusé des sessions mais pas de résultats n’est pas terminé.'
+    ],
+    faq: [
+      [
+        'Qu’est-ce qu’un plan de déploiement de formation ?',
+        'Un plan de déploiement de formation est la frise et les phases qui mènent un programme d’apprentissage de l’analyse des besoins à la conception, au développement, à un pilote, au déploiement complet et à l’évaluation. Ce modèle pose ces étapes sur un seul planning pour que l’équipe L&amp;D voie les dépendances et le chemin critique jusqu’à la mise en service.'
+      ],
+      [
+        'Que doit contenir un plan de déploiement de formation ?',
+        'Au minimum : une évaluation des besoins, des objectifs pédagogiques et une conception, le développement des contenus et la configuration du LMS, un pilote, le déploiement par vagues, et une boucle d’évaluation. Le modèle donne à chacun sa propre phase, avec jalons et responsables.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les phases de formation ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (besoins → conception → développement → pilote → déploiement) : le travail en aval se décale automatiquement et le chemin critique reste visible.'
+      ],
+      [
+        'Le modèle de plan de déploiement de formation est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

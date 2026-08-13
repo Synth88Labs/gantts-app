@@ -7075,6 +7075,73 @@ const T = {
       ]
     ]
   },
+  'training-program-rollout': {
+    card: "Análise de necessidades, design, desenvolvimento, piloto, implantação e avaliação em uma linha do tempo.",
+    h1: "Modelo de plano de implantação de programa de treinamento",
+    metaTitle: "Modelo de plano de implantação de treinamento",
+    metaDesc: "Modelo gratuito de plano de implantação de programa de treinamento: análise de necessidades, design, piloto, rollout e avaliação. Excel ou online.",
+    lead: "Um modelo gratuito de <strong>plano de implantação de programa de treinamento</strong> para times de L&amp;D que leva um programa da análise de necessidades aos resultados — levantamento de necessidades de treinamento, design instrucional, desenvolvimento de conteúdo, um piloto, o rollout completo e a avaliação. Baixe para Excel, PowerPoint ou CSV, ou abra no <a href=\"/pt/app.html\">editor gratuito</a> para ligar dependências e ver o caminho crítico até a data de go-live.",
+    intro: "A implantação de um treinamento trava quando o conteúdo é construído antes de a necessidade ser confirmada, ou lançado antes de ser pilotado. Este modelo coloca todo o programa em uma só linha do tempo, nas seis etapas pelas quais a área de treinamento e desenvolvimento realmente passa:",
+    phases: [
+      [
+        "Análise de necessidades",
+        "Avalie a necessidade de treinamento, defina o público e os objetivos e analise a lacuna de competências para que o programa resolva um problema real. <em>Marco: necessidades aprovadas.</em>"
+      ],
+      [
+        "Design",
+        "Defina objetivos de aprendizagem mensuráveis, desenhe o currículo e as modalidades de entrega e decida como vai avaliar o sucesso. <em>Marco: design aprovado.</em>"
+      ],
+      [
+        "Desenvolvimento",
+        "Construa o conteúdo e os materiais, configure e carregue o LMS e prepare os guias do facilitador e o treinamento de multiplicadores. <em>Marco: conteúdo pronto.</em>"
+      ],
+      [
+        "Piloto",
+        "Rode uma turma-piloto, colete feedback e avalie, e revise os materiais antes de escalar. <em>Marco: piloto aprovado.</em>"
+      ],
+      [
+        "Implantação",
+        "Agende as turmas e as comunicações, matricule os participantes e entregue o treinamento em ondas. <em>Marco: implantação concluída.</em>"
+      ],
+      [
+        "Avaliação e sustentação",
+        "Meça os resultados em relação ao plano, reforce com job aids e acompanhamento e revise o programa para iterar. <em>Marco: revisão de 90 dias.</em>"
+      ]
+    ],
+    callout: "O piloto é o lugar mais barato para errar. Implantar um programa para toda a organização antes de um piloto validar o conteúdo, o ritmo e a facilitação transforma pequenos ajustes em retrabalho em larga escala — trate a aprovação do piloto como um portão rígido do qual a implantação completa depende.",
+    customize: [
+      "Defina primeiro a data de go-live e trabalhe de trás para frente; o desenvolvimento de conteúdo e a configuração do LMS quase sempre levam mais tempo do que o planejado.",
+      "Adicione uma linha por turma ou região dentro de Implantação para que cada onda tenha seu próprio cronograma e responsável.",
+      "Se o programa é obrigatório por compliance, adicione o prazo como um marco fixo e verifique se a implantação termina antes dele.",
+      "Mantenha a configuração do LMS em uma trilha própria — ela depende do design, não do conteúdo finalizado, então pode correr em paralelo com o desenvolvimento.",
+      "Marque as aprovações de necessidades, design, conteúdo e piloto como marcos para que nenhuma fase comece antes de seus insumos estarem prontos."
+    ],
+    tips: [
+      "<strong>Desenhe antes de desenvolver.</strong> Construir conteúdo sobre objetivos pouco claros é a causa mais comum de retrabalho; o cronograma nunca deve deixar o desenvolvimento começar antes de o design ser aprovado.",
+      "<strong>O piloto está no caminho crítico até a implantação.</strong> A implantação completa depende da aprovação do piloto, então proteja a janela do piloto em vez de comprimi-la para cumprir uma data.",
+      "<strong>Rode a configuração do LMS em paralelo.</strong> Ela só precisa do design e da estrutura, então sobrepô-la ao desenvolvimento de conteúdo devolve semanas ao cronograma.",
+      "<strong>Agende o reforço, não só a entrega.</strong> A aprendizagem se perde sem acompanhamento; job aids e reciclagens pertencem ao plano, não às boas intenções de alguém.",
+      "<strong>Meça em relação aos objetivos que você definiu.</strong> Ligue a avaliação às métricas de sucesso da fase de design — uma implantação que entregou sessões, mas não resultados, não terminou."
+    ],
+    faq: [
+      [
+        "O que é um plano de implantação de programa de treinamento?",
+        "É a linha do tempo e as fases para levar um programa de aprendizagem da análise de necessidades ao design, desenvolvimento, um piloto, a implantação completa e a avaliação. Este modelo coloca essas etapas em um só cronograma para que a área de L&amp;D veja as dependências e o caminho crítico até o go-live."
+      ],
+      [
+        "O que um plano de implantação de treinamento deve incluir?",
+        "No mínimo: um levantamento de necessidades, objetivos de aprendizagem e design, desenvolvimento de conteúdo e configuração do LMS, um piloto, a implantação em ondas e um ciclo de avaliação. O modelo dá a cada um sua própria fase, com marcos e responsáveis."
+      ],
+      [
+        "Dá para mostrar dependências entre as fases do treinamento?",
+        "Sim. Abra o modelo no <a href=\"/pt/app.html\">editor gratuito do gantts.app</a> para ligar relações de término para início (necessidades → design → desenvolvimento → piloto → implantação), de modo que o trabalho posterior se desloque sozinho e o caminho crítico fique sempre à vista."
+      ],
+      [
+        "O modelo de plano de implantação de treinamento é gratuito?",
+        "Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

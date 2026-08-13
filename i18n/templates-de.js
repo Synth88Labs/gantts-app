@@ -7057,6 +7057,73 @@ const T = {
       ]
     ]
   },
+  'training-program-rollout': {
+    card: "Führt ein Schulungsprogramm von der Bedarfsanalyse bis zum Ergebnis: Design, Entwicklung, Pilot, Rollout, Evaluation.",
+    h1: "Vorlage für den Rollout eines Schulungsprogramms",
+    metaTitle: "Rollout eines Schulungsprogramms — Gantt-Vorlage",
+    metaDesc: "Kostenlose Vorlage für den Rollout eines Schulungsprogramms: Bedarfsanalyse, Design, Pilot, Rollout und Evaluation. Als Excel, PowerPoint oder online.",
+    lead: "Eine kostenlose <strong>Vorlage für den Rollout eines Schulungsprogramms</strong> für L&amp;D-Teams, die ein Programm von der Bedarfsanalyse bis zum Ergebnis führt — Bedarfsanalyse und Zielgruppe, Instructional Design, Content-Entwicklung, ein Pilot, der vollständige Rollout und die Evaluation. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Go-live zu sehen.",
+    intro: "Ein Schulungs-Rollout gerät ins Stocken, wenn Content gebaut wird, bevor der Bedarf bestätigt ist, oder ausgerollt wird, bevor er pilotiert wurde. Diese Vorlage legt das ganze Programm auf eine Zeitachse, in den sechs Phasen, die Weiterbildung tatsächlich durchläuft:",
+    phases: [
+      [
+        "Bedarfsanalyse",
+        "Den Schulungsbedarf ermitteln, Zielgruppe und Lernziele definieren und die Kompetenzlücke analysieren, damit das Programm ein echtes Problem löst. <em>Meilenstein: Bedarf freigegeben.</em>"
+      ],
+      [
+        "Design",
+        "Messbare Lernziele setzen, das Curriculum und die Vermittlungsformate gestalten und festlegen, wie Sie den Erfolg messen. <em>Meilenstein: Design freigegeben.</em>"
+      ],
+      [
+        "Entwicklung",
+        "Content und Materialien erstellen, das LMS einrichten und befüllen sowie Trainerleitfäden und Train-the-Trainer vorbereiten. <em>Meilenstein: Content fertig.</em>"
+      ],
+      [
+        "Pilot",
+        "Eine Pilotgruppe durchführen, Feedback sammeln und auswerten und die Materialien überarbeiten, bevor skaliert wird. <em>Meilenstein: Pilot freigegeben.</em>"
+      ],
+      [
+        "Rollout",
+        "Die Gruppen und die Kommunikation planen, Teilnehmende anmelden und die Schulung in Wellen ausliefern. <em>Meilenstein: Rollout abgeschlossen.</em>"
+      ],
+      [
+        "Evaluation und Verstetigung",
+        "Ergebnisse gegen den Plan messen, mit Arbeitshilfen und Follow-up verstärken und das Programm zur Iteration überprüfen. <em>Meilenstein: 90-Tage-Review.</em>"
+      ]
+    ],
+    callout: "Der Pilot ist die günstigste Stelle, um sich zu irren. Ein Programm organisationsweit auszurollen, bevor ein Pilot Content, Timing und Moderation validiert hat, macht aus kleinen Korrekturen große Nacharbeit — behandeln Sie die Pilot-Freigabe als harten Meilenstein, von dem der vollständige Rollout abhängt.",
+    customize: [
+      "Den Go-live-Termin festlegen und rückwärts rechnen; Content-Entwicklung und LMS-Einrichtung dauern fast immer länger als geplant.",
+      "Unter Rollout je Gruppe oder Region eine Zeile ergänzen, damit jede Welle einen eigenen Zeitplan und Verantwortlichen hat.",
+      "Ist das Programm compliance-getrieben, die Frist als festen Meilenstein ergänzen und prüfen, dass der Rollout davor abschließt.",
+      "Die LMS-Einrichtung auf einem eigenen Strang halten — sie hängt vom Design ab, nicht vom fertigen Content, und kann daher parallel zur Entwicklung laufen.",
+      "Bedarf, Design, Content und Pilot-Freigabe als Meilensteine markieren, damit keine Phase vor ihren Eingaben startet."
+    ],
+    tips: [
+      "<strong>Erst designen, dann entwickeln.</strong> Content gegen unklare Ziele zu bauen ist die häufigste Ursache für Nacharbeit; der Zeitplan sollte die Entwicklung nie vor der Design-Freigabe starten lassen.",
+      "<strong>Der Pilot liegt auf dem kritischen Pfad zum Rollout.</strong> Der vollständige Rollout hängt von der Pilot-Freigabe ab, schützen Sie also das Pilotfenster, statt es zusammenzustauchen, um einen Termin zu treffen.",
+      "<strong>Die LMS-Einrichtung parallel fahren.</strong> Sie braucht nur Design und Struktur, sodass eine Überlappung mit der Content-Entwicklung Wochen im Zeitplan zurückgewinnt.",
+      "<strong>Nicht nur die Vermittlung terminieren, sondern auch die Verstärkung.</strong> Gelerntes verblasst ohne Follow-up; Arbeitshilfen und Auffrischungen gehören in den Plan, nicht in gute Vorsätze.",
+      "<strong>Gegen die gesetzten Ziele messen.</strong> Die Evaluation an die Erfolgskennzahlen aus der Designphase koppeln — ein Rollout, der Sitzungen geliefert hat, aber keine Ergebnisse, ist nicht fertig."
+    ],
+    faq: [
+      [
+        "Was ist ein Plan für den Rollout eines Schulungsprogramms?",
+        "Ein Schulungs-Rollout-Plan ist die Zeitachse und die Phasen, die ein Lernprogramm von der Bedarfsanalyse über Design, Entwicklung, einen Pilot, den vollständigen Rollout bis zur Evaluation führen. Diese Vorlage legt diese Phasen auf einen Zeitplan, sodass L&amp;D Abhängigkeiten und den kritischen Pfad zum Go-live sieht."
+      ],
+      [
+        "Was sollte ein Schulungs-Rollout-Plan enthalten?",
+        "Mindestens: eine Bedarfsanalyse, Lernziele und Design, Content-Entwicklung und LMS-Einrichtung, einen Pilot, den phasenweisen Rollout und eine Evaluationsschleife. Die Vorlage gibt jedem Punkt eine eigene Phase mit Meilensteinen und Verantwortlichen."
+      ],
+      [
+        "Kann ich Abhängigkeiten zwischen den Schulungsphasen abbilden?",
+        "Ja. Öffnen Sie die Vorlage im kostenlosen <a href=\"/de/app.html\">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Bedarf → Design → Entwicklung → Pilot → Rollout), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad sichtbar bleibt."
+      ],
+      [
+        "Ist die Vorlage für den Schulungs-Rollout kostenlos?",
+        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

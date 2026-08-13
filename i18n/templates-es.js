@@ -4090,6 +4090,43 @@ const T = {
       ['¿La plantilla de plan de salida al mercado es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+  'training-program-rollout': {
+    card: 'Despliega un programa de formación sin que el contenido, el LMS y los grupos choquen: análisis, diseño, piloto, despliegue y evaluación.',
+    h1: 'Plantilla de plan de despliegue de programa de formación',
+    metaTitle: 'Plantilla de plan de despliegue de programa de formación',
+    metaDesc: 'Plantilla gratuita de despliegue de formación para equipos de L&D: análisis, diseño, piloto, despliegue y evaluación. Excel, PowerPoint u online.',
+    lead: 'Una <strong>plantilla gratuita de plan de despliegue de programa de formación</strong> para equipos de L&amp;D que lleva un programa desde el análisis de necesidades hasta los resultados: diagnóstico de necesidades, diseño instruccional, desarrollo de contenidos, un piloto, el despliegue completo y la evaluación. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu puesta en marcha.',
+    intro: 'Un despliegue de formación se atasca cuando se construye el contenido antes de confirmar la necesidad, o se lanza antes de pilotarlo. Esta plantilla pone todo el programa en una misma línea de tiempo, en las seis etapas por las que realmente avanza el área de formación y desarrollo:',
+    phases: [
+      ['Análisis de necesidades', 'Diagnostica la necesidad de formación, define la audiencia y los objetivos, y analiza la brecha de competencias para que el programa resuelva un problema real. <em>Hito: necesidades aprobadas.</em>'],
+      ['Diseño', 'Fija objetivos de aprendizaje medibles, diseña el itinerario y las modalidades de impartición, y decide cómo evaluarás el éxito. <em>Hito: diseño aprobado.</em>'],
+      ['Desarrollo', 'Construye el contenido y los materiales, configura y carga el LMS, y prepara las guías del facilitador y la formación de formadores. <em>Hito: contenido listo.</em>'],
+      ['Piloto', 'Ejecuta un grupo piloto, recoge feedback y evalúa, y revisa los materiales antes de escalar. <em>Hito: piloto aprobado.</em>'],
+      ['Despliegue', 'Programa los grupos y las comunicaciones, inscribe a los participantes e imparte la formación por oleadas. <em>Hito: despliegue completo.</em>'],
+      ['Evaluar y sostener', 'Mide los resultados frente al plan, refuerza con ayudas al desempeño y seguimiento, y revisa el programa para iterar. <em>Hito: revisión a 90 días.</em>'],
+    ],
+    callout: 'El piloto es el lugar más barato para equivocarse. Desplegar un programa a toda la organización antes de que un piloto haya validado el contenido, los tiempos y la facilitación convierte pequeños ajustes en un rehacer a gran escala: trata la aprobación del piloto como una barrera firme de la que depende el despliegue completo.',
+    customize: [
+      'Fija la fecha de puesta en marcha y trabaja hacia atrás; el desarrollo de contenidos y la configuración del LMS casi siempre llevan más de lo previsto.',
+      'Añade una fila por grupo o región dentro de Despliegue para que cada oleada tenga su propio calendario y responsable.',
+      'Si el programa responde a un requisito normativo, añade la fecha límite como hito fijo y comprueba que el despliegue termine antes de ella.',
+      'Mantén la configuración del LMS en su propia vía: depende del diseño, no del contenido terminado, así que puede avanzar en paralelo al desarrollo.',
+      'Marca necesidades, diseño, contenido y aprobación del piloto como hitos para que ninguna fase arranque antes de tener sus insumos listos.',
+    ],
+    tips: [
+      '<strong>Diseña antes de desarrollar.</strong> Construir contenido con objetivos poco claros es la causa más común de rehacer trabajo; el cronograma nunca debería permitir que el desarrollo empiece antes de aprobar el diseño.',
+      '<strong>El piloto está en la ruta crítica hacia el despliegue.</strong> El despliegue completo depende de la aprobación del piloto, así que protege su ventana de tiempo en vez de comprimirla para cumplir una fecha.',
+      '<strong>Ejecuta la configuración del LMS en paralelo.</strong> Solo necesita el diseño y la estructura, así que solaparla con el desarrollo de contenidos recupera semanas en el cronograma.',
+      '<strong>Programa el refuerzo, no solo la impartición.</strong> El aprendizaje se pierde sin seguimiento; las ayudas al desempeño y los repasos van en el plan, no en las buenas intenciones de alguien.',
+      '<strong>Mide frente a los objetivos que fijaste.</strong> Liga la evaluación a las métricas de éxito de la fase de diseño: un despliegue que impartió sesiones pero no logró resultados no ha terminado.',
+    ],
+    faq: [
+      ['¿Qué es un plan de despliegue de programa de formación?', 'Un plan de despliegue de formación es la línea de tiempo y las fases para llevar un programa de aprendizaje desde el análisis de necesidades hasta el diseño, el desarrollo, un piloto, el despliegue completo y la evaluación. Esta plantilla coloca esas etapas en un mismo cronograma para que L&amp;D vea las dependencias y la ruta crítica hasta la puesta en marcha.'],
+      ['¿Qué debe incluir un plan de despliegue de formación?', 'Como mínimo: un diagnóstico de necesidades, objetivos de aprendizaje y diseño, desarrollo de contenidos y configuración del LMS, un piloto, el despliegue por fases y un ciclo de evaluación. La plantilla da a cada elemento su propia fase, con hitos y responsables.'],
+      ['¿Puedo mostrar dependencias entre las fases de formación?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (necesidades → diseño → desarrollo → piloto → despliegue): el trabajo posterior se desplaza solo y la ruta crítica se mantiene visible.'],
+      ['¿La plantilla de despliegue de formación es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.
