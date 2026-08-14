@@ -35,6 +35,7 @@ const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 const args = process.argv.slice(2);
 const dry = args.includes('--dry');
+const all = args.includes('--all');
 const explicit = args.filter(a => a.startsWith('http'));
 
 function sitemapUrls() {
@@ -42,7 +43,27 @@ function sitemapUrls() {
   return [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map(m => m[1]);
 }
 
-const urlList = explicit.length ? explicit : sitemapUrls();
+/* IndexNow is per-URL and one-shot: a URL only needs submitting ONCE, when its
+   content changes. Repeatedly re-submitting the whole sitemap is the "IndexNow
+   Batch Mode" that Bing Webmaster Tools flags — it reads as excessive load and
+   can throttle crawling / delay indexing. So the whole-sitemap path is gated
+   behind an explicit --all (for the one-time initial submission only); the
+   normal path is passing just the URL(s) that actually changed. */
+let urlList;
+if (explicit.length) {
+  urlList = explicit;
+} else if (all) {
+  urlList = sitemapUrls();
+} else {
+  console.error('✗ IndexNow: refusing to re-submit the whole sitemap.');
+  console.error('  A URL only needs IndexNow once, when it changes. Repeated full-batch');
+  console.error('  submits are the "IndexNow Batch Mode" Bing penalises (load + indexing delays).\n');
+  console.error('  Normal use — submit only the page(s) that changed:');
+  console.error('    node scripts/indexnow.js https://' + HOST + '/<changed>.html [...]\n');
+  console.error('  One-time initial submission of the whole sitemap:');
+  console.error('    node scripts/indexnow.js --all');
+  process.exit(1);
+}
 
 if (!urlList.length) {
   console.error('✗ No URLs found to submit.');
