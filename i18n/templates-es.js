@@ -4127,6 +4127,43 @@ const T = {
       ['¿La plantilla de despliegue de formación es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+  'podcast-launch-plan': {
+    card: 'De la idea al día de lanzamiento: concepto, marca, grabación por lotes, edición, alta en directorios y un lanzamiento de varios episodios.',
+    h1: 'Plantilla de plan de lanzamiento de un pódcast',
+    metaTitle: 'Plantilla de plan de lanzamiento de un pódcast',
+    metaDesc: 'Plantilla gratuita para lanzar un pódcast: concepto, marca, grabación por lotes, edición, alta en Apple y Spotify y día de lanzamiento. Excel u online.',
+    lead: 'Una <strong>plantilla gratuita de plan de lanzamiento de un pódcast</strong> que lleva un programa de la idea al día de lanzamiento: concepto y audiencia, marca y equipo, grabación de tus episodios de estreno, edición, alta en directorios y el propio lanzamiento de varios episodios. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu estreno.',
+    intro: 'La mayoría de los pódcast se apagan porque estrenan con un solo episodio y sin margen por delante. Esta plantilla planifica todo el lanzamiento en una sola línea de tiempo —incluido el lote de episodios que te mantiene constante— en las seis etapas por las que realmente pasa un programa:',
+    phases: [
+      ['Concepto y plan', 'Define tu nicho y tu audiencia, cierra el formato y el nombre del programa, y planifica una primera temporada para no ir improvisando cada episodio. <em>Hito: concepto cerrado.</em>'],
+      ['Marca y montaje', 'Encarga el arte de portada, resuelve la música de entrada y salida, y elige tu plataforma de alojamiento, tu equipo y tu espacio de grabación. <em>Hito: montaje listo.</em>'],
+      ['Grabar episodios de estreno', 'Reserva y prepara a los invitados, y luego graba un lote de tres a cinco episodios para lanzar con margen por delante. <em>Hito: grabación terminada.</em>'],
+      ['Edición y materiales', 'Edita el audio, redacta las notas del episodio y las transcripciones, y graba el tráiler que presenta el programa. <em>Hito: episodios listos.</em>'],
+      ['Alta y prelanzamiento', 'Configura tu feed RSS y envíalo a Apple Podcasts y Spotify, monta una web sencilla y ve calentando a tu audiencia. <em>Hito: directorios aprobados.</em>'],
+      ['Lanzamiento y crecimiento', 'Publica los episodios de estreno a la vez, activa la promoción y el contacto con otros, y luego revisa las analíticas y asienta una cadencia. <em>Hito: primer mes revisado.</em>'],
+    ],
+    callout: 'Lanza con un lote, no con un solo episodio. Los programas nuevos se posicionan en parte por su constancia inicial, y un estreno de un episodio se para en cuanto la vida se complica: graba de tres a cinco episodios antes del día de lanzamiento y trata «grabación terminada» como una puerta firme antes de enviar el feed a los directorios.',
+    customize: [
+      'Fija tu fecha de lanzamiento y trabaja hacia atrás; el arte de portada y la aprobación en directorios tardan más de lo que esperan los presentadores primerizos.',
+      'Envía tu feed a Apple y Spotify al menos una semana antes: la aprobación no es inmediata y no puedes lanzar sin ella.',
+      'Añade una fila por episodio de estreno en Grabar y Editar para que un lanzamiento de varios episodios muestre el avance de cada uno.',
+      'Mantén la marca en su propia vía: el arte de portada y la música dependen del concepto, no de las grabaciones, así que pueden avanzar en paralelo.',
+      'Marca concepto, montaje, grabación y aprobación en directorios como hitos para que nada posterior arranque antes de tener sus insumos listos.',
+    ],
+    tips: [
+      '<strong>La aprobación en directorios está en la ruta crítica.</strong> No puedes lanzar hasta que Apple y Spotify listen tu feed, y eso puede tardar días: envíalo pronto y trátalo como una dependencia firme antes del día de lanzamiento.',
+      '<strong>Graba por lotes antes de lanzar.</strong> Tener de tres a cinco episodios grabados de antemano es lo que separa a los programas que duran de los que se apagan; el cronograma debe condicionar el lanzamiento a ese lote.',
+      '<strong>Lleva la marca en paralelo a la grabación.</strong> El arte de portada, la música y la web solo necesitan el concepto, así que solaparlos con la producción recupera semanas en el cronograma.',
+      '<strong>Graba el tráiler cuando ya existan episodios.</strong> Un tráiler que promete un tono que los episodios no cumplen perjudica: prográmalo después de las primeras ediciones, no antes.',
+      '<strong>Programa el seguimiento.</strong> El primer mes —promoción, contacto con invitados, revisar las analíticas— es donde un lanzamiento coge impulso o se apaga en silencio por falta de plan.',
+    ],
+    faq: [
+      ['¿Cuánto se tarda en lanzar un pódcast?', 'Un lanzamiento enfocado suele llevar de 8 a 12 semanas desde el concepto hasta el día de estreno. La plantilla reparte concepto, marca, grabación, edición, alta en directorios y lanzamiento en una línea de tiempo para que veas si tu fecha es realista.'],
+      ['¿Con cuántos episodios debería lanzar?', 'La mayoría de los programas de éxito estrenan con tres a cinco episodios a la vez y luego mantienen una cadencia constante. La plantilla incorpora ese lote en las fases de grabación y edición y condiciona el día de lanzamiento a él.'],
+      ['¿Puedo mostrar dependencias entre las tareas del lanzamiento del pódcast?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (concepto → grabar → editar → enviar → lanzar): el trabajo posterior se desplaza solo y la ruta crítica hasta tu estreno se mantiene visible.'],
+      ['¿La plantilla de plan de lanzamiento de pódcast es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

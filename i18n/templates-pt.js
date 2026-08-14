@@ -7142,6 +7142,73 @@ const T = {
       ]
     ]
   },
+  'podcast-launch-plan': {
+    card: "Conceito, branding, gravação em lote, edição, submissão a diretórios e dia do lançamento em uma linha do tempo.",
+    h1: "Modelo de plano de lançamento de podcast",
+    metaTitle: "Modelo de plano de lançamento de podcast",
+    metaDesc: "Modelo gratuito de plano de lançamento de podcast: conceito, branding, gravação, edição, submissão a diretórios e dia do lançamento. Excel ou online.",
+    lead: "Um modelo gratuito de <strong>plano de lançamento de podcast</strong> que leva um programa da ideia ao dia do lançamento — conceito e público, branding e equipamento, gravação dos episódios de estreia, edição, submissão aos diretórios e o próprio lançamento com vários episódios. Baixe para Excel, PowerPoint ou CSV, ou abra no <a href=\"/pt/app.html\">editor gratuito</a> para ligar dependências e ver o caminho crítico até a data de estreia.",
+    intro: "A maioria dos podcasts se apaga porque estreia com um único episódio e sem fôlego. Este modelo planeja todo o lançamento em uma só linha do tempo — incluindo o lote de episódios que mantém a consistência — nas seis etapas pelas quais um programa realmente passa:",
+    phases: [
+      [
+        "Conceito e planejamento",
+        "Defina o nicho e o público, feche o formato e o nome do programa e planeje uma primeira temporada para não inventar cada episódio na hora. <em>Marco: conceito fechado.</em>"
+      ],
+      [
+        "Branding e preparação",
+        "Encomende a capa, resolva a música de abertura e encerramento e escolha a hospedagem, o equipamento e o espaço de gravação. <em>Marco: preparação pronta.</em>"
+      ],
+      [
+        "Gravar episódios de estreia",
+        "Agende e prepare os convidados e depois grave um lote de três a cinco episódios para estrear com fôlego. <em>Marco: gravação concluída.</em>"
+      ],
+      [
+        "Edição e materiais",
+        "Edite o áudio, escreva as notas do episódio e as transcrições e grave o trailer que apresenta o programa. <em>Marco: episódios prontos.</em>"
+      ],
+      [
+        "Submissão e pré-lançamento",
+        "Configure o feed RSS e submeta ao Apple Podcasts e ao Spotify, monte um site simples e aqueça o público. <em>Marco: diretórios aprovados.</em>"
+      ],
+      [
+        "Lançamento e crescimento",
+        "Publique os episódios de estreia juntos, faça a divulgação e a abordagem e depois analise os dados e assuma uma cadência. <em>Marco: primeiro mês avaliado.</em>"
+      ]
+    ],
+    callout: "Estreie com um lote, não com um único episódio. Programas novos são ranqueados em parte pela consistência inicial, e uma estreia de um episódio trava no instante em que a vida aperta — grave de três a cinco episódios antes do dia do lançamento e trate “gravação concluída” como uma barreira rígida antes de submeter aos diretórios.",
+    customize: [
+      "Defina a data de estreia e trabalhe de trás para frente; a capa e a aprovação nos diretórios levam mais tempo do que os apresentadores de primeira viagem imaginam.",
+      "Submeta o feed ao Apple e ao Spotify com pelo menos uma semana de antecedência — a aprovação não é imediata e você não estreia sem ela.",
+      "Adicione uma linha por episódio de estreia em Gravar e Editar para que um lançamento com vários episódios mostre o progresso de cada um.",
+      "Mantenha o branding em uma trilha própria — capa e música dependem do conceito, não das gravações, então podem correr em paralelo.",
+      "Marque conceito, preparação, gravação e aprovação nos diretórios como marcos para que nada a jusante comece antes de os insumos estarem prontos."
+    ],
+    tips: [
+      "<strong>A aprovação nos diretórios está no caminho crítico.</strong> Você não estreia até o Apple e o Spotify listarem seu feed, e isso pode levar dias — submeta cedo e trate como uma dependência rígida antes do dia do lançamento.",
+      "<strong>Grave em lote antes de estrear.</strong> Gravar de três a cinco episódios de antemão é o que separa os programas que duram dos que somem; o cronograma deve condicionar o lançamento a esse lote.",
+      "<strong>Rode o branding em paralelo com a gravação.</strong> Capa, música e site só precisam do conceito, então sobrepô-los à produção devolve semanas ao cronograma.",
+      "<strong>Grave o trailer depois que os episódios existirem.</strong> Um trailer que promete um tom que os episódios não entregam atrapalha; agende-o após as primeiras edições, não antes.",
+      "<strong>Agende o acompanhamento.</strong> O primeiro mês — divulgação, abordagem de convidados, análise dos dados — é onde um lançamento ganha embalo ou trava em silêncio por falta de plano."
+    ],
+    faq: [
+      [
+        "Quanto tempo leva para lançar um podcast?",
+        "Um lançamento focado normalmente leva de 8 a 12 semanas do conceito ao dia da estreia. O modelo distribui conceito, branding, gravação, edição, submissão aos diretórios e lançamento em uma linha do tempo para você ver se a sua data é realista."
+      ],
+      [
+        "Com quantos episódios devo estrear?",
+        "A maioria dos programas bem-sucedidos estreia com três a cinco episódios de uma vez e depois mantém uma cadência consistente. O modelo insere esse lote nas fases de gravação e edição e condiciona o dia do lançamento a ele."
+      ],
+      [
+        "Dá para mostrar dependências entre as tarefas do lançamento?",
+        "Sim. Abra o modelo no <a href=\"/pt/app.html\">editor gratuito do gantts.app</a> para ligar relações de término para início (conceito → gravar → editar → submeter → lançar), de modo que o trabalho posterior se desloque sozinho e o caminho crítico fique sempre à vista."
+      ],
+      [
+        "O modelo de plano de lançamento de podcast é gratuito?",
+        "Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro."
+      ]
+    ]
+  },
 };
 
 const UI = {

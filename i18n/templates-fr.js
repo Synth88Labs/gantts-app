@@ -7016,6 +7016,55 @@ const T = {
       ]
     ]
   },
+  'podcast-launch-plan': {
+    card: 'De l’idée au jour du lancement : concept, identité, enregistrement en lot, flux RSS et sortie multi-épisodes.',
+    h1: 'Modèle de plan de lancement de podcast',
+    metaTitle: 'Plan de lancement de podcast — modèle',
+    metaDesc: 'Modèle gratuit de plan de lancement de podcast : concept, identité, enregistrement, flux RSS, annuaires et jour du lancement. Excel, PowerPoint ou en ligne.',
+    lead: 'Un <strong>modèle de plan de lancement de podcast</strong> gratuit qui mène une émission de l’idée au jour du lancement — concept et audience, identité visuelle et matériel, enregistrement des épisodes de lancement, montage, soumission aux annuaires, et la sortie multi-épisodes elle-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre sortie.',
+    intro: 'La plupart des podcasts s’essoufflent parce qu’ils sortent avec un seul épisode et aucune réserve d’avance. Ce modèle planifie tout le lancement sur une seule frise — y compris le lot d’épisodes qui vous garde régulier — en six étapes que suit réellement une émission :',
+    phases: [
+      ['Concept &amp; plan', 'Définissez votre niche et votre audience, fixez le format et le nom de l’émission, et planifiez une première saison pour ne pas inventer chaque épisode à la dernière minute. <em>Jalon : concept validé.</em>'],
+      ['Identité &amp; installation', 'Commandez la pochette, réglez la musique d’intro et d’outro, et choisissez votre hébergeur, votre matériel et votre espace d’enregistrement. <em>Jalon : installation prête.</em>'],
+      ['Enregistrer les épisodes de lancement', 'Réservez et préparez d’éventuels invités, puis enregistrez un lot de trois à cinq épisodes pour lancer avec de l’avance. <em>Jalon : enregistrement terminé.</em>'],
+      ['Montage &amp; supports', 'Montez l’audio, rédigez les notes d’épisode et les transcriptions, et enregistrez la bande-annonce qui présente l’émission. <em>Jalon : épisodes prêts.</em>'],
+      ['Soumission &amp; pré-lancement', 'Configurez votre flux RSS et soumettez-le à Apple Podcasts et Spotify, montez un site simple, et échauffez une audience. <em>Jalon : annuaires approuvés.</em>'],
+      ['Lancement &amp; croissance', 'Publiez les épisodes de lancement ensemble, menez promotion et prospection, puis analysez les statistiques et installez un rythme. <em>Jalon : premier mois analysé.</em>']
+    ],
+    callout: 'Lancez avec un lot, pas un seul épisode. Les nouvelles émissions sont classées en partie sur leur régularité initiale, et un lancement à un épisode cale dès que la vie s’accélère — enregistrez trois à cinq épisodes avant le jour du lancement et traitez « enregistrement terminé » comme une barrière ferme avant de soumettre aux annuaires.',
+    customize: [
+      'Fixez votre date de lancement et remontez le fil ; la pochette et l’approbation des annuaires prennent tous deux plus de temps que les débutants ne l’imaginent.',
+      'Soumettez votre flux à Apple et Spotify au moins une semaine à l’avance — l’approbation n’est pas instantanée et vous ne pouvez pas lancer sans elle.',
+      'Ajoutez une ligne par épisode de lancement sous Enregistrement et Montage pour qu’une sortie multi-épisodes montre l’avancement de chacun.',
+      'Gardez l’identité sur sa propre voie — la pochette et la musique dépendent du concept, pas des enregistrements, elles peuvent donc avancer en parallèle.',
+      'Marquez concept, installation, enregistrement et approbation des annuaires comme des jalons pour que rien en aval ne démarre avant que ses entrées soient prêtes.'
+    ],
+    tips: [
+      '<strong>L’approbation des annuaires est sur le chemin critique.</strong> Vous ne pouvez pas lancer tant qu’Apple et Spotify n’ont pas référencé votre flux, et cela peut prendre plusieurs jours — soumettez tôt et traitez-la comme une dépendance ferme avant le jour du lancement.',
+      '<strong>Enregistrez en lot avant de lancer.</strong> Enregistrer trois à cinq épisodes en amont distingue les émissions qui durent de celles qui s’éteignent ; le planning doit conditionner le lancement à ce lot.',
+      '<strong>Menez l’identité en parallèle de l’enregistrement.</strong> Pochette, musique et site n’ont besoin que du concept, alors les chevaucher avec la production fait gagner des semaines sur le planning.',
+      '<strong>Enregistrez la bande-annonce une fois les épisodes prêts.</strong> Une bande-annonce qui promet un ton que les épisodes ne tiennent pas nuit à l’émission ; planifiez-la après les premiers montages, pas avant.',
+      '<strong>Planifiez le suivi.</strong> Le premier mois — promotion, prospection d’invités, analyse des statistiques — est là où un lancement prend son élan ou s’essouffle discrètement faute de plan.'
+    ],
+    faq: [
+      [
+        'Combien de temps faut-il pour lancer un podcast ?',
+        'Un lancement bien mené prend généralement 8 à 12 semaines, du concept au jour de sortie. Le modèle répartit concept, identité, enregistrement, montage, soumission aux annuaires et lancement sur une frise pour voir si votre date est réaliste.'
+      ],
+      [
+        'Avec combien d’épisodes faut-il lancer ?',
+        'La plupart des émissions qui réussissent lancent avec trois à cinq épisodes d’un coup, puis tiennent un rythme régulier. Le modèle intègre ce lot dans les phases d’enregistrement et de montage et y conditionne le jour du lancement.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches du lancement ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (concept → enregistrement → montage → soumission → lancement) : le travail en aval se décale automatiquement et le chemin critique reste visible.'
+      ],
+      [
+        'Le modèle de plan de lancement de podcast est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

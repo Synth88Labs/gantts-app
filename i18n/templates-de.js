@@ -7060,7 +7060,7 @@ const T = {
   'training-program-rollout': {
     card: "Führt ein Schulungsprogramm von der Bedarfsanalyse bis zum Ergebnis: Design, Entwicklung, Pilot, Rollout, Evaluation.",
     h1: "Vorlage für den Rollout eines Schulungsprogramms",
-    metaTitle: "Rollout eines Schulungsprogramms — Gantt-Vorlage",
+    metaTitle: "Schulungsprogramm-Rollout — Gantt-Vorlage",
     metaDesc: "Kostenlose Vorlage für den Rollout eines Schulungsprogramms: Bedarfsanalyse, Design, Pilot, Rollout und Evaluation. Als Excel, PowerPoint oder online.",
     lead: "Eine kostenlose <strong>Vorlage für den Rollout eines Schulungsprogramms</strong> für L&amp;D-Teams, die ein Programm von der Bedarfsanalyse bis zum Ergebnis führt — Bedarfsanalyse und Zielgruppe, Instructional Design, Content-Entwicklung, ein Pilot, der vollständige Rollout und die Evaluation. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Go-live zu sehen.",
     intro: "Ein Schulungs-Rollout gerät ins Stocken, wenn Content gebaut wird, bevor der Bedarf bestätigt ist, oder ausgerollt wird, bevor er pilotiert wurde. Diese Vorlage legt das ganze Programm auf eine Zeitachse, in den sechs Phasen, die Weiterbildung tatsächlich durchläuft:",
@@ -7120,6 +7120,73 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Schulungs-Rollout kostenlos?",
+        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+      ]
+    ]
+  },
+  'podcast-launch-plan': {
+    card: "Von der Idee bis zum Launch-Tag: Konzept, Branding, Folgen aufnehmen, Verzeichnis-Einreichung.",
+    h1: "Vorlage für den Podcast-Launch",
+    metaTitle: "Podcast-Launch-Plan — Gantt-Vorlage",
+    metaDesc: "Kostenlose Podcast-Launch-Vorlage: Konzept, Branding, Folgen aufnehmen, Einreichung bei Apple Podcasts und Spotify sowie Launch-Tag. Excel oder online.",
+    lead: "Eine kostenlose <strong>Vorlage für den Podcast-Launch</strong>, die eine Show von der Idee bis zum Launch-Tag führt — Konzept und Zielgruppe, Branding und Technik, das Aufnehmen der Launch-Folgen, Schnitt, Einreichung im Verzeichnis und der Launch mit mehreren Folgen selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrer Veröffentlichung zu sehen.",
+    intro: "Die meisten Podcasts verstummen, weil sie mit einer einzigen Folge und ohne Vorlauf starten. Diese Vorlage plant den gesamten Launch auf einer Zeitachse — inklusive des Folgen-Stapels, der Sie konstant hält — in den sechs Phasen, die eine Show tatsächlich durchläuft:",
+    phases: [
+      [
+        "Konzept &amp; Plan",
+        "Nische und Zielgruppe definieren, Format und Show-Namen festlegen und eine erste Staffel planen, damit Sie nicht jede Folge neu erfinden. <em>Meilenstein: Konzept steht.</em>"
+      ],
+      [
+        "Branding &amp; Setup",
+        "Cover-Artwork beauftragen, Intro- und Outro-Musik klären und Hosting, Equipment und Aufnahmeraum wählen. <em>Meilenstein: Setup bereit.</em>"
+      ],
+      [
+        "Launch-Folgen aufnehmen",
+        "Gäste buchen und vorbereiten, dann einen Stapel von drei bis fünf Folgen aufnehmen, damit Sie mit Vorlauf launchen. <em>Meilenstein: Aufnahmen fertig.</em>"
+      ],
+      [
+        "Schnitt &amp; Assets",
+        "Die Audiospur schneiden, Shownotes und Transkripte schreiben und den Trailer aufnehmen, der die Show vorstellt. <em>Meilenstein: Folgen fertig.</em>"
+      ],
+      [
+        "Einreichen &amp; Pre-Launch",
+        "Den RSS-Feed einrichten und bei Apple Podcasts und Spotify einreichen, eine einfache Website bauen und eine Zuhörerschaft aufwärmen. <em>Meilenstein: Verzeichnisse freigegeben.</em>"
+      ],
+      [
+        "Launch &amp; Wachstum",
+        "Die Launch-Folgen gemeinsam veröffentlichen, Promotion und Ansprache fahren, dann die Analytics auswerten und in einen Rhythmus finden. <em>Meilenstein: erster Monat ausgewertet.</em>"
+      ]
+    ],
+    callout: "Launchen Sie mit einem Stapel, nicht mit einer einzelnen Folge. Neue Shows werden teils nach früher Konstanz gerankt, und ein Ein-Folgen-Launch bricht ab, sobald der Alltag dazwischenkommt — nehmen Sie drei bis fünf Folgen vor dem Launch-Tag auf und behandeln Sie „Aufnahmen fertig“ als harte Hürde, bevor Sie in die Verzeichnisse einreichen.",
+    customize: [
+      "Den Launch-Termin festlegen und rückwärts rechnen; Cover-Artwork und die Verzeichnis-Freigabe dauern beide länger, als Erst-Hosts erwarten.",
+      "Reichen Sie Ihren Feed mindestens eine Woche früher bei Apple und Spotify ein — die Freigabe kommt nicht sofort, und ohne sie können Sie nicht launchen.",
+      "Unter Aufnehmen und Schnitt je Launch-Folge eine Zeile ergänzen, damit ein Launch mit mehreren Folgen den Fortschritt jeder einzelnen zeigt.",
+      "Das Branding auf einem eigenen Strang halten — Cover-Artwork und Musik hängen vom Konzept ab, nicht von den Aufnahmen, und können daher parallel laufen.",
+      "Konzept, Setup, Aufnahmen und Verzeichnis-Freigabe als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
+    ],
+    tips: [
+      "<strong>Die Verzeichnis-Freigabe liegt auf dem kritischen Pfad.</strong> Sie können nicht launchen, bevor Apple und Spotify Ihren Feed listen, und das kann Tage dauern — früh einreichen und als harte Abhängigkeit vor dem Launch-Tag behandeln.",
+      "<strong>Nehmen Sie vor dem Launch auf Vorrat auf.</strong> Drei bis fünf Folgen im Voraus zu produzieren ist das, was dauerhafte Shows von solchen unterscheidet, die im Podfade verstummen; der Zeitplan sollte den Launch an diesen Stapel koppeln.",
+      "<strong>Branding parallel zu den Aufnahmen fahren.</strong> Cover-Artwork, Musik und Website brauchen nur das Konzept, sodass ein Überlappen mit der Produktion Wochen im Zeitplan zurückgewinnt.",
+      "<strong>Den Trailer erst aufnehmen, wenn Folgen existieren.</strong> Ein Trailer, der einen Ton verspricht, den die Folgen nicht halten, schadet; terminieren Sie ihn nach den ersten Schnitten, nicht davor.",
+      "<strong>Terminieren Sie den Nachlauf.</strong> Der erste Monat — Promotion, Gäste-Ansprache, Analytics prüfen — ist der Punkt, an dem ein Launch Schwung aufbaut oder mangels Plan still stehen bleibt."
+    ],
+    faq: [
+      [
+        "Wie lange dauert es, einen Podcast zu launchen?",
+        "Ein fokussierter Launch dauert typischerweise 8–12 Wochen vom Konzept bis zum Veröffentlichungstag. Die Vorlage verteilt Konzept, Branding, Aufnahmen, Schnitt, Verzeichnis-Einreichung und Launch über eine Zeitachse, sodass Sie sehen, ob Ihr Termin realistisch ist."
+      ],
+      [
+        "Mit wie vielen Folgen sollte ich launchen?",
+        "Die meisten erfolgreichen Shows launchen mit drei bis fünf Folgen auf einmal und halten dann einen konstanten Rhythmus. Die Vorlage baut diesen Stapel in die Aufnahme- und Schnittphasen ein und koppelt den Launch-Tag daran."
+      ],
+      [
+        "Kann ich Abhängigkeiten zwischen den Podcast-Launch-Aufgaben abbilden?",
+        "Ja. Öffnen Sie die Vorlage im kostenlosen <a href=\"/de/app.html\">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Konzept → Aufnehmen → Schnitt → Einreichen → Launch), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad zu Ihrer Veröffentlichung sichtbar bleibt."
+      ],
+      [
+        "Ist die Vorlage für den Podcast-Launch-Plan kostenlos?",
         "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
