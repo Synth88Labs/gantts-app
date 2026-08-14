@@ -4056,7 +4056,7 @@ const T = {
   'go-to-market-plan': {
     card: 'Salida al mercado sin descoordinar producto, marketing, ventas y precios: investigación, posicionamiento, habilitación y lanzamiento.',
     h1: 'Plantilla de plan de salida al mercado (go-to-market)',
-    metaTitle: 'Plantilla de plan de salida al mercado (go-to-market)',
+    metaTitle: 'Plantilla de plan go-to-market (GTM)',
     metaDesc: 'Plantilla gratuita de plan go-to-market: investigación, posicionamiento, precios, habilitación y lanzamiento en una línea de tiempo. Excel u online.',
     lead: 'Una <strong>plantilla gratuita de plan de salida al mercado (go-to-market)</strong> que ordena un lanzamiento desde la investigación hasta los resultados: estudio de mercado y de cliente, posicionamiento y mensajes, precios y empaquetado, habilitación de ventas y piezas, el propio lanzamiento y la iteración posterior. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu fecha de lanzamiento.',
     intro: 'Un plan de salida al mercado fracasa cuando marketing, producto, ventas y precios avanzan a distinto ritmo. Esta plantilla pone cada línea de trabajo en una misma línea de tiempo, en las seis etapas por las que realmente pasa un lanzamiento:',
@@ -4093,7 +4093,7 @@ const T = {
   'training-program-rollout': {
     card: 'Despliega un programa de formación sin que el contenido, el LMS y los grupos choquen: análisis, diseño, piloto, despliegue y evaluación.',
     h1: 'Plantilla de plan de despliegue de programa de formación',
-    metaTitle: 'Plantilla de plan de despliegue de programa de formación',
+    metaTitle: 'Plantilla de despliegue de formación',
     metaDesc: 'Plantilla gratuita de despliegue de formación para equipos de L&D: análisis, diseño, piloto, despliegue y evaluación. Excel, PowerPoint u online.',
     lead: 'Una <strong>plantilla gratuita de plan de despliegue de programa de formación</strong> para equipos de L&amp;D que lleva un programa desde el análisis de necesidades hasta los resultados: diagnóstico de necesidades, diseño instruccional, desarrollo de contenidos, un piloto, el despliegue completo y la evaluación. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu puesta en marcha.',
     intro: 'Un despliegue de formación se atasca cuando se construye el contenido antes de confirmar la necesidad, o se lanza antes de pilotarlo. Esta plantilla pone todo el programa en una misma línea de tiempo, en las seis etapas por las que realmente avanza el área de formación y desarrollo:',
