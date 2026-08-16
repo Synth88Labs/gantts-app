@@ -7016,6 +7016,44 @@ const T = {
       ]
     ]
   },
+  'webinar-plan': {
+    card: 'Du sujet et des intervenants au suivi : inscription, promotion, répétition, direct.',
+    h1: 'Modèle de plan de webinaire',
+    metaTitle: 'Modèle de plan de webinaire',
+    metaDesc: 'Modèle gratuit de plan de webinaire : sujet et intervenants, inscription et promotion, répétition, direct et suivi. Excel, PowerPoint ou en ligne.',
+    lead: 'Un modèle gratuit de <strong>plan de webinaire</strong> qui mène un webinaire de l’idée au suivi : sujet et intervenants, la page d’inscription et la promotion, la répétition, l’événement en direct et le suivi qui transforme les participants en leads. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et voir le chemin critique jusqu’à la date de l’événement.',
+    intro: 'Les webinaires échouent sur ce qui entoure l’heure en direct : trop peu de délai de promotion, ou aucun plan de suivi. Ce modèle place tout le webinaire sur une seule ligne de temps, dans les six étapes qu’il traverse réellement :',
+    phases: [
+      ['Cadrage et sujet', 'Fixez l’objectif et l’audience, choisissez le sujet, le format et la date, et confirmez les intervenants et la plateforme. <em>Jalon : webinaire confirmé.</em>'],
+      ['Inscription et supports', 'Créez la page d’inscription et de destination, préparez les diapositives et le contenu, et concevez les supports de promotion. <em>Jalon : supports prêts.</em>'],
+      ['Promotion', 'Annoncez le webinaire et lancez la séquence d’e-mails, la promotion sur les réseaux et via les partenaires, et les publicités payantes pour remplir les places. <em>Jalon : objectif d’inscriptions atteint.</em>'],
+      ['Répétition et préparation', 'Préparez les intervenants et relisez le contenu, faites un test technique et une générale, et envoyez les e-mails de rappel. <em>Jalon : prêt pour le direct.</em>'],
+      ['Événement en direct', 'Passez en direct et animez, et modérez les questions et l’engagement. <em>Jalon : webinaire diffusé.</em>'],
+      ['Suivi', 'Publiez l’enregistrement, envoyez les e-mails de suivi, transmettez les leads aux ventes et mesurez les résultats. <em>Jalon : bilan post-webinaire.</em>'],
+    ],
+    callout: 'L’essentiel de la valeur d’un webinaire se crée après l’heure en direct. Les participants comme les absents ont besoin d’un suivi — l’enregistrement, un e-mail de nurturing et la transmission aux ventes — alors planifiez le suivi avant l’événement, pas dans les jours de fatigue qui suivent, sinon les leads durement inscrits refroidissent.',
+    customize: [
+      'Accordez au moins trois à quatre semaines à la promotion : la plupart des inscriptions arrivent la première et la dernière semaine, mais il faut le délai entre les deux.',
+      'Posez l’objectif d’inscriptions en jalon et surveillez-le ; si vous êtes en retard à mi-parcours, ajoutez de la promotion plutôt que d’espérer.',
+      'Menez la création des diapositives en parallèle de la page d’inscription : elles ont des responsables différents et aucune dépendance entre elles.',
+      'Ajoutez une ligne par canal de promotion (e-mail, réseaux, partenaires, payant) pour que chacun ait son responsable et son rythme.',
+      'Marquez « webinaire confirmé », « supports prêts » et « prêt pour le direct » comme jalons pour que rien ne démarre avant ses intrants.',
+    ],
+    tips: [
+      '<strong>Le délai de promotion est le chemin critique vers la participation.</strong> Les places se remplissent sur des semaines, pas des jours ; protégez la fenêtre de promotion plutôt que de la comprimer pour tenir une date.',
+      '<strong>Faites toujours une générale.</strong> Le test technique et la répétition complète détectent les problèmes d’audio, de partage d’écran et de passation qui, sinon, surviennent en direct ; planifiez-la comme un passage obligé avant le direct.',
+      '<strong>Préparez le suivi avant l’événement.</strong> L’enregistrement, les e-mails de nurturing et la transmission aux ventes doivent être rédigés à l’avance pour partir tant que l’intérêt est chaud.',
+      '<strong>Envoyez des rappels : ils font grimper le taux de présence.</strong> Un rappel la veille et un autre une heure avant augmentent souvent nettement la participation ; mettez-les au planning, pas dans votre mémoire.',
+      '<strong>Mesurez par rapport à l’objectif.</strong> Reliez le bilan aux objectifs d’inscription et de pipeline du plan : un webinaire diffusé mais sans suivi n’est pas terminé.',
+    ],
+    faq: [
+      ['Combien de temps à l’avance planifier un webinaire ?', 'La plupart des webinaires demandent quatre à huit semaines — assez de délai pour la promotion et la préparation des intervenants. Le modèle répartit le cadrage, l’inscription, la promotion, la répétition, l’événement en direct et le suivi sur une ligne de temps pour voir si votre date est réaliste.'],
+      ['Que doit contenir un plan de webinaire ?', 'Au minimum : objectif et sujet, intervenants et plateforme, une page d’inscription, une séquence de promotion, une répétition et un test technique, l’événement en direct et un plan de suivi. Le modèle donne à chacun sa propre étape, avec jalons et responsables.'],
+      ['Puis-je afficher les dépendances entre les tâches du webinaire ?', 'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier des liens fin-début (confirmer → créer → promouvoir → répéter → diffuser) afin que le travail en aval se décale automatiquement et que le chemin critique reste visible.'],
+      ['Le modèle de plan de webinaire est-il gratuit ?', 'Oui — gratuit à télécharger en Excel, PowerPoint ou CSV, et gratuit à modifier en ligne sans inscription.'],
+    ],
+  },
+
   'podcast-launch-plan': {
     card: 'De l’idée au jour du lancement : concept, identité, enregistrement en lot, flux RSS et sortie multi-épisodes.',
     h1: 'Modèle de plan de lancement de podcast',

@@ -825,7 +825,7 @@ const G = {
 'gantt-chart-in-powerpoint': {
   h1: 'PPT 做甘特图：用图表还是用形状',
   metaTitle: 'PPT 甘特图怎么做',
-  metaDesc: 'PPT 做甘特图的两种方式：堆积条形图与手工绘制形状，含逐步操作、投影排版建议，以及一键导出 .pptx 的做法。',
+  metaDesc: '在 PowerPoint 中制作甘特图的两种方式：堆积条形图与手工绘制形状，附逐步操作与投影排版建议。它适合向相关方汇报；可一键导出 .pptx，也能在线免费编辑。',
   date: '2026-07-19',
   lead: '在 PowerPoint 里做<strong>甘特图</strong>有两条路：带数据表的图表，或者用矩形手工绘制。选哪条，只取决于数据是否还会变。',
   figIntro: '两条路，两种工作方式：',

@@ -7142,6 +7142,44 @@ const T = {
       ]
     ]
   },
+  'webinar-plan': {
+    card: 'Do tema e dos palestrantes ao follow-up: inscrição, promoção, ensaio e evento ao vivo.',
+    h1: 'Modelo de plano de webinar',
+    metaTitle: 'Modelo de plano de webinar',
+    metaDesc: 'Modelo grátis de plano de webinar: tema e palestrantes, inscrição e promoção, ensaio, evento ao vivo e follow-up. Excel, PowerPoint ou edição online.',
+    lead: 'Um modelo gratuito de <strong>plano de webinar</strong> que leva um webinar da ideia ao follow-up: tema e palestrantes, a página de inscrição e a promoção, o ensaio, o evento ao vivo e o acompanhamento que transforma participantes em leads. Baixe em Excel, PowerPoint ou CSV, ou abra online para ligar dependências e ver o caminho crítico até a data do evento.',
+    intro: 'Os webinars falham no que cerca a hora ao vivo: pouco prazo de promoção ou nenhum plano de acompanhamento. Este modelo coloca todo o webinar numa única linha do tempo, nas seis fases pelas quais ele realmente passa:',
+    phases: [
+      ['Planejamento e tema', 'Defina o objetivo e o público, escolha o tema, o formato e a data, e confirme os palestrantes e a plataforma. <em>Marco: webinar confirmado.</em>'],
+      ['Inscrição e materiais', 'Monte a página de inscrição e de destino, prepare os slides e o conteúdo, e desenhe os materiais de promoção. <em>Marco: materiais prontos.</em>'],
+      ['Promoção', 'Anuncie o webinar e dispare a sequência de e-mails, a promoção em redes sociais e com parceiros, e os anúncios pagos para preencher as vagas. <em>Marco: meta de inscrições atingida.</em>'],
+      ['Ensaio e preparação', 'Prepare os palestrantes e revise o conteúdo, faça um teste técnico e um ensaio geral, e envie os e-mails de lembrete. <em>Marco: pronto para ir ao ar.</em>'],
+      ['Evento ao vivo', 'Entre ao vivo e apresente, e modere as perguntas e a interação. <em>Marco: webinar realizado.</em>'],
+      ['Follow-up', 'Publique a gravação, envie os e-mails de acompanhamento, passe os leads para vendas e meça os resultados. <em>Marco: revisão pós-webinar.</em>'],
+    ],
+    callout: 'A maior parte do valor de um webinar é criada depois da hora ao vivo. Tanto os participantes quanto os ausentes precisam de acompanhamento — a gravação, um e-mail de nutrição e a passagem para vendas —, então planeje o follow-up antes do evento, e não nos dias cansados que se seguem, ou os leads que você tanto trabalhou para inscrever esfriam.',
+    customize: [
+      'Dê à promoção pelo menos três a quatro semanas: a maioria das inscrições chega na primeira e na última semana, mas você precisa do prazo entre elas.',
+      'Marque a meta de inscrições como um marco e acompanhe-a; se estiver atrasado na metade do caminho, acrescente promoção em vez de torcer.',
+      'Faça os slides em paralelo com a página de inscrição — eles têm responsáveis diferentes e nenhuma dependência entre si.',
+      'Adicione uma linha por canal de promoção (e-mail, redes, parceiros, pago) para que cada um tenha seu responsável e sua cadência.',
+      'Marque «webinar confirmado», «materiais prontos» e «pronto para ir ao ar» como marcos para que nada comece antes de ter seus insumos.',
+    ],
+    tips: [
+      '<strong>O prazo de promoção é o caminho crítico para a audiência.</strong> As vagas se preenchem ao longo de semanas, não de dias; proteja a janela de promoção em vez de comprimi-la para bater uma data.',
+      '<strong>Sempre faça um ensaio geral.</strong> O teste técnico e o ensaio completo pegam os problemas de áudio, de compartilhamento de tela e de passagem que, do contrário, acontecem ao vivo; agende-o como um portão firme antes de ir ao ar.',
+      '<strong>Prepare o follow-up antes do evento.</strong> A gravação, os e-mails de nutrição e a passagem para vendas devem estar redigidos com antecedência para saírem enquanto o interesse está quente.',
+      '<strong>Envie lembretes: eles elevam a taxa de comparecimento.</strong> Um lembrete um dia antes e outro uma hora antes costumam aumentar bastante a presença; coloque-os no cronograma, não na memória.',
+      '<strong>Meça em relação à meta.</strong> Ligue o encerramento às metas de inscrição e de pipeline do plano: um webinar que aconteceu mas não gerou follow-up não terminou.',
+    ],
+    faq: [
+      ['Com quanta antecedência devo planejar um webinar?', 'A maioria dos webinars precisa de quatro a oito semanas — prazo suficiente para a promoção e a preparação dos palestrantes. O modelo distribui o planejamento, a inscrição, a promoção, o ensaio, o evento ao vivo e o follow-up numa linha do tempo para você ver se a sua data é realista.'],
+      ['O que um plano de webinar deve incluir?', 'No mínimo: objetivo e tema, palestrantes e plataforma, uma página de inscrição, uma sequência de promoção, um ensaio e teste técnico, o evento ao vivo e um plano de acompanhamento. O modelo dá a cada um a sua própria fase, com marcos e responsáveis.'],
+      ['Posso mostrar dependências entre as tarefas do webinar?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito do gantts.app</a> para ligar relações término-início (confirmar → montar → promover → ensaiar → ir ao ar) de modo que o trabalho seguinte se desloque sozinho e o caminho crítico continue visível.'],
+      ['O modelo de plano de webinar é grátis?', 'Sim — grátis para baixar em Excel, PowerPoint ou CSV, e grátis para editar online sem cadastro.'],
+    ],
+  },
+
   'podcast-launch-plan': {
     card: "Conceito, branding, gravação em lote, edição, submissão a diretórios e dia do lançamento em uma linha do tempo.",
     h1: "Modelo de plano de lançamento de podcast",

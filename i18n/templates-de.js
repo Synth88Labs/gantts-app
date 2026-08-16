@@ -7124,6 +7124,44 @@ const T = {
       ]
     ]
   },
+  'webinar-plan': {
+    card: 'Vom Thema und den Sprechern bis zum Follow-up: Anmeldung, Promotion, Probe, Live-Event.',
+    h1: 'Webinar-Plan Vorlage',
+    metaTitle: 'Webinar-Plan — Gantt-Vorlage',
+    metaDesc: 'Kostenlose Webinar-Plan-Vorlage: Thema und Sprecher, Anmeldung und Promotion, Generalprobe, Live-Event und Follow-up. Excel, PowerPoint oder online.',
+    lead: 'Eine kostenlose Vorlage für einen <strong>Webinar-Plan</strong>, die ein Webinar von der Idee bis zum Follow-up führt — Thema und Sprecher, die Anmeldeseite und die Promotion, die Generalprobe, das Live-Event und das Follow-up, das aus Teilnehmenden Leads macht. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Termin zu sehen.',
+    intro: 'Webinare scheitern an dem, was die Live-Stunde umgibt: zu wenig Vorlauf für die Promotion oder kein Follow-up-Plan. Diese Vorlage bringt das ganze Webinar auf einen Zeitstrahl, in den sechs Phasen, die es tatsächlich durchläuft:',
+    phases: [
+      ['Planung &amp; Thema', 'Ziel und Zielgruppe festlegen, Thema, Format und Termin wählen und Sprecher sowie Plattform bestätigen. <em>Meilenstein: Webinar bestätigt.</em>'],
+      ['Anmeldung &amp; Materialien', 'Die Anmelde- und Landingpage aufbauen, Folien und Inhalte erstellen und die Promotion-Materialien gestalten. <em>Meilenstein: Materialien fertig.</em>'],
+      ['Promotion', 'Das Webinar ankündigen und die E-Mail-Strecke, die Promotion über Social Media und Partner sowie bezahlte Anzeigen ausspielen, um die Plätze zu füllen. <em>Meilenstein: Anmeldeziel erreicht.</em>'],
+      ['Probe &amp; Vorbereitung', 'Die Sprecher vorbereiten und die Inhalte prüfen, einen Technikcheck und eine Generalprobe durchführen und Erinnerungs-E-Mails versenden. <em>Meilenstein: bereit für den Livegang.</em>'],
+      ['Live-Event', 'Live gehen und moderieren sowie Fragen und Interaktion steuern. <em>Meilenstein: Webinar durchgeführt.</em>'],
+      ['Follow-up', 'Die Aufzeichnung veröffentlichen, Follow-up-E-Mails senden, Leads an den Vertrieb übergeben und die Ergebnisse messen. <em>Meilenstein: Rückblick nach dem Webinar.</em>'],
+    ],
+    callout: 'Der größte Teil des Werts eines Webinars entsteht nach der Live-Stunde. Teilnehmende wie No-Shows brauchen ein Follow-up — die Aufzeichnung, eine Nurturing-E-Mail und die Übergabe an den Vertrieb —, planen Sie es also vor dem Event und nicht in den müden Tagen danach, sonst kühlen die mühsam gewonnenen Leads ab.',
+    customize: [
+      'Geben Sie der Promotion mindestens drei bis vier Wochen: Die meisten Anmeldungen kommen in der ersten und der letzten Woche, aber Sie brauchen den Vorlauf dazwischen.',
+      'Setzen Sie das Anmeldeziel als Meilenstein und behalten Sie es im Blick; liegen Sie zur Halbzeit zurück, ergänzen Sie Promotion, statt zu hoffen.',
+      'Erstellen Sie die Folien parallel zur Anmeldeseite — sie haben unterschiedliche Verantwortliche und keine Abhängigkeit voneinander.',
+      'Fügen Sie pro Promotion-Kanal eine Zeile hinzu (E-Mail, Social, Partner, Paid), damit jeder seinen Verantwortlichen und Takt hat.',
+      'Markieren Sie „Webinar bestätigt“, „Materialien fertig“ und „bereit für den Livegang“ als Meilensteine, damit nichts vor seinen Voraussetzungen startet.',
+    ],
+    tips: [
+      '<strong>Der Promotion-Vorlauf ist der kritische Pfad zur Teilnahme.</strong> Plätze füllen sich über Wochen, nicht Tage; schützen Sie das Promotion-Fenster, statt es für einen Termin zu stauchen.',
+      '<strong>Führen Sie immer eine Generalprobe durch.</strong> Technikcheck und volle Probe fangen die Ton-, Bildschirmfreigabe- und Übergabeprobleme ab, die sonst live passieren; planen Sie sie als feste Hürde vor dem Livegang.',
+      '<strong>Bereiten Sie das Follow-up vor dem Event vor.</strong> Aufzeichnung, Nurturing-E-Mails und Vertriebsübergabe sollten im Voraus verfasst sein, damit sie hinausgehen, solange das Interesse warm ist.',
+      '<strong>Versenden Sie Erinnerungen — sie steigern die Teilnahmequote.</strong> Eine Erinnerung am Vortag und eine eine Stunde vorher heben die Teilnahme oft deutlich; setzen Sie sie in den Plan, nicht ins Gedächtnis.',
+      '<strong>Messen Sie am Ziel.</strong> Knüpfen Sie den Abschluss an die Anmelde- und Pipeline-Ziele aus dem Plan: Ein Webinar, das lief, aber kein Follow-up erzeugte, ist nicht fertig.',
+    ],
+    faq: [
+      ['Wie lange im Voraus sollte man ein Webinar planen?', 'Die meisten Webinare brauchen vier bis acht Wochen — genug Vorlauf für Promotion und Sprechervorbereitung. Die Vorlage verteilt Planung, Anmeldung, Promotion, Probe, Live-Event und Follow-up auf einen Zeitstrahl, damit Sie sehen, ob Ihr Termin realistisch ist.'],
+      ['Was gehört in einen Webinar-Plan?', 'Mindestens: Ziel und Thema, Sprecher und Plattform, eine Anmeldeseite, eine Promotion-Strecke, eine Probe und ein Technikcheck, das Live-Event und ein Follow-up-Plan. Die Vorlage gibt jedem eine eigene Phase, mit Meilensteinen und Verantwortlichen.'],
+      ['Kann ich Abhängigkeiten zwischen den Webinar-Aufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im kostenlosen <a href="/de/app.html">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (bestätigen → erstellen → bewerben → proben → live gehen), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad sichtbar bleibt.'],
+      ['Ist die Webinar-Plan-Vorlage kostenlos?', 'Ja — kostenlos als Excel, PowerPoint oder CSV herunterladen und kostenlos online bearbeiten, ohne Anmeldung.'],
+    ],
+  },
+
   'podcast-launch-plan': {
     card: "Von der Idee bis zum Launch-Tag: Konzept, Branding, Folgen aufnehmen, Verzeichnis-Einreichung.",
     h1: "Vorlage für den Podcast-Launch",
