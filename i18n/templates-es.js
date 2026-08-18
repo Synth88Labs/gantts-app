@@ -4240,6 +4240,44 @@ const T = {
       ['¿La plantilla de plan de estudio es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+
+  'moving-house-timeline': {
+    card: 'Planifica una mudanza semana a semana: vaciar, contratar la mudanza, cambiar la dirección, empaquetar, día de la mudanza e instalación.',
+    h1: 'Plantilla de planificación de mudanza',
+    metaTitle: 'Plantilla de planificación de mudanza',
+    metaDesc: 'Plantilla y checklist gratis de mudanza: fija la fecha, contrata la mudanza, cambia tu dirección y empaqueta por habitaciones. Excel, PowerPoint u online.',
+    lead: 'Una plantilla gratuita de <strong>planificación de mudanza</strong> —un checklist semana a semana que te lleva de tu primer plan a tu primera noche en la nueva casa: fija la fecha y el presupuesto, contrata la mudanza, cambia tu dirección, empaqueta habitación por habitación, supera el día de la mudanza e instálate. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día de la mudanza.',
+    intro: 'Mudarse estresa porque todo llega a la vez —y los trámites (suministros, correo, cambios de dirección) son, sin ruido, los de mayor plazo. Esta plantilla reparte toda la mudanza en una sola línea de tiempo, en las seis etapas por las que realmente pasa:',
+    phases: [
+      ['Planificar y presupuestar', 'Fija la fecha y el presupuesto de la mudanza, haz un inventario, empieza a vaciar y pide presupuestos a empresas de mudanzas. <em>Hito: plan y presupuesto listos.</em>'],
+      ['Contratar y avisar', 'Contrata la mudanza o alquila una furgoneta, organiza los días libres y la ayuda, avisa al casero o pon la vivienda en venta, y gestiona el aparcamiento y el acceso. <em>Hito: mudanza contratada.</em>'],
+      ['Cambio de dirección y trámites', 'Activa la redirección del correo, cambia los suministros e internet, actualiza tu dirección en todas partes (banco, seguros, DNI) y date de alta en los servicios locales. <em>Hito: cambios de dirección hechos.</em>'],
+      ['Empaquetar', 'Reúne el material, empaqueta habitación por habitación etiquetando sobre la marcha y aparta una caja de esenciales para la primera noche. <em>Hito: empaquetado terminado.</em>'],
+      ['Semana de la mudanza', 'Confirma con la empresa, descongela el frigorífico, toma las lecturas de contadores, limpia la casa antigua y supera el día de la mudanza. <em>Hito: ya instalado.</em>'],
+      ['Instalarse', 'Desempaqueta lo esencial, deja funcionando los suministros e internet, desempaqueta habitación por habitación y actualiza tu empadronamiento. <em>Hito: instalación completa.</em>'],
+    ],
+    callout: 'Empieza pronto con los trámites: son los de mayor plazo. Contratar una buena empresa de mudanzas, redirigir el correo y cambiar los suministros tardan días o semanas en hacerse efectivos, así que las mudanzas que salen bien son las que empezaron el papeleo seis u ocho semanas antes, no el fin de semana previo a la furgoneta.',
+    customize: [
+      'Fija primero el día de la mudanza y trabaja hacia atrás; seis u ocho semanas es cómodo, pero una mudanza en dos semanas funciona si comprimes los trámites.',
+      'Añade una fila por habitación en Empaquetar para que una mudanza de toda la casa muestre el avance de cada una y no quede nada en un armario.',
+      'Contrata la empresa de mudanzas pronto: las buenas se llenan con semanas de antelación, sobre todo a final de mes y en verano.',
+      'Mantén la caja de esenciales (hervidor, cargadores, medicación, ropa de cama, aseo) como su propia tarea para empaquetarla la última y abrirla la primera.',
+      'Marca «mudanza contratada», «cambios de dirección hechos» y «empaquetado terminado» como hitos para ver si vas a tiempo para el día de la mudanza.',
+    ],
+    tips: [
+      '<strong>Vacía antes de empaquetar, no después.</strong> Cada caja que no mudas ahorra tiempo y dinero; empieza a vender y donar pronto, porque lleva semanas: es la única tarea que no puedes acelerar al final.',
+      '<strong>Los suministros y el correo son los de mayor plazo.</strong> Cambiar la luz e internet y redirigir el correo puede tardar días o semanas en surtir efecto, así que empieza los trámites de dirección seis semanas antes, no la semana de la mudanza.',
+      '<strong>Etiqueta las cajas por habitación y por prioridad.</strong> Una caja marcada «cocina — abrir primero» ahorra horas en el destino; etiqueta al empaquetar, no de memoria después.',
+      '<strong>Toma lecturas de contadores y fotos el día de la mudanza.</strong> Las lecturas y una foto de cada habitación protegen tu fianza y cierran las facturas finales de suministros: una tarea fácil de olvidar con las prisas.',
+      '<strong>Empaqueta la caja de esenciales la última.</strong> Hervidor, cargadores, medicinas, una muda y ropa de cama: la primera noche es mucho más fácil cuando la única caja que necesitas es la que encuentras.',
+    ],
+    faq: [
+      ['¿Con cuánta antelación debería empezar a planificar una mudanza?', 'Seis u ocho semanas es cómodo para una mudanza de casa: tiempo para contratar la mudanza, vaciar y hacer los trámites de dirección antes de que el empaquetado lo ocupe todo. La plantilla reparte planificación, contratación, trámites, empaquetado, semana de mudanza e instalación en una línea de tiempo para que veas si tu margen es realista.'],
+      ['¿Qué debe incluir un checklist de mudanza?', 'Una fecha y un presupuesto, presupuestos de mudanza, aviso al casero, redirección del correo, cambio de suministros e internet, actualizaciones de dirección, empaquetado por habitaciones, una caja de esenciales, lecturas de contadores y un plan para desempaquetar. La plantilla da a cada etapa su propia fase, con hitos que puedes seguir.'],
+      ['¿Puedo mostrar dependencias entre las tareas de la mudanza?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (contratar la mudanza → empaquetar → día de la mudanza → instalarse): si una fecha se retrasa, el trabajo posterior se desplaza solo y la ruta crítica hasta el día de la mudanza se mantiene visible.'],
+      ['¿La plantilla de planificación de mudanza es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

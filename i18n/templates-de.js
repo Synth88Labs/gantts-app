@@ -7267,6 +7267,44 @@ const T = {
       ['Ist die Lernplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
+
+  'moving-house-timeline': {
+    card: 'Planen Sie einen Umzug Woche für Woche: ausmisten, Umzugsunternehmen buchen, ummelden, packen, Umzugstag und Einleben.',
+    h1: 'Umzugsplan-Vorlage',
+    metaTitle: 'Umzugsplan-Vorlage',
+    metaDesc: 'Kostenlose Umzugsplan-Vorlage und Checkliste: Termin festlegen, Umzugsunternehmen buchen, ummelden, Raum für Raum packen und Umzugstag. Als Excel oder online.',
+    lead: 'Eine kostenlose <strong>Umzugsplan-Vorlage</strong> — eine Umzugs-Checkliste Woche für Woche, die Sie vom ersten Plan bis zur ersten Nacht in der neuen Wohnung führt: Termin und Budget festlegen, Umzugsunternehmen buchen, ummelden, Raum für Raum packen, den Umzugstag überstehen und sich einleben. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Umzugstag zu sehen.',
+    intro: 'Ein Umzug stresst, weil alles auf einmal kommt — und die Behördengänge (Strom, Post, Adressänderungen) haben unauffällig die längste Vorlaufzeit. Diese Vorlage verteilt den ganzen Umzug auf eine Zeitachse — in den sechs Phasen, die ein Umzug tatsächlich durchläuft:',
+    phases: [
+      ['Planen &amp; Budget', 'Umzugstermin und Budget festlegen, ein Inventar erstellen, mit dem Ausmisten beginnen und Angebote von Umzugsunternehmen einholen. <em>Meilenstein: Plan und Budget stehen.</em>'],
+      ['Buchen &amp; abmelden', 'Umzugsunternehmen oder Transporter buchen, Urlaub und Helfer organisieren, die Wohnung kündigen oder zum Verkauf anbieten und Halteverbot sowie Zugang klären. <em>Meilenstein: Umzugsunternehmen gebucht.</em>'],
+      ['Adressänderung &amp; Behörden', 'Nachsendeauftrag einrichten, Strom, Gas und Internet ummelden, Ihre Adresse überall aktualisieren (Bank, Versicherungen, Kfz) und die Ummeldung beim Bürgeramt vorbereiten. <em>Meilenstein: Adressänderungen erledigt.</em>'],
+      ['Packen', 'Packmaterial besorgen, Raum für Raum packen und dabei beschriften und eine Kiste mit dem Nötigsten für die erste Nacht beiseitelegen. <em>Meilenstein: Packen abgeschlossen.</em>'],
+      ['Umzugswoche', 'Mit dem Umzugsunternehmen bestätigen, den Kühlschrank abtauen, Zählerstände ablesen, die alte Wohnung putzen und den Umzugstag überstehen. <em>Meilenstein: eingezogen.</em>'],
+      ['Einleben', 'Das Nötigste auspacken, Strom und Internet in Betrieb nehmen, Raum für Raum auspacken und die Ummeldung beim Bürgeramt erledigen. <em>Meilenstein: eingelebt.</em>'],
+    ],
+    callout: 'Beginnen Sie früh mit den Behördengängen — sie haben die längste Vorlaufzeit. Ein gutes Umzugsunternehmen zu buchen, den Nachsendeauftrag einzurichten und Strom umzumelden dauert Tage oder Wochen bis zur Wirkung — Umzüge, die glattlaufen, sind die, bei denen der Papierkram sechs bis acht Wochen vorher startete, nicht am Wochenende vor dem Transporter.',
+    customize: [
+      'Legen Sie zuerst den Umzugstag fest und rechnen Sie rückwärts; sechs bis acht Wochen sind bequem, aber ein Umzug in zwei Wochen klappt, wenn Sie die Behördengänge verdichten.',
+      'Fügen Sie unter Packen je eine Zeile pro Raum hinzu, damit ein Umzug der ganzen Wohnung den Fortschritt jedes Raums zeigt und nichts im Schrank bleibt.',
+      'Buchen Sie das Umzugsunternehmen früh: Gute sind Wochen im Voraus ausgebucht, besonders zum Monatsende und im Sommer.',
+      'Behandeln Sie die Kiste mit dem Nötigsten (Wasserkocher, Ladegeräte, Medikamente, Bettwäsche, Kulturbeutel) als eigene Aufgabe, damit sie zuletzt gepackt und zuerst ausgepackt wird.',
+      'Markieren Sie Umzugsunternehmen gebucht, Adressänderungen erledigt und Packen abgeschlossen als Meilensteine, um zu sehen, ob Sie im Plan für den Umzugstag liegen.',
+    ],
+    tips: [
+      '<strong>Misten Sie vor dem Packen aus, nicht danach.</strong> Jede Kiste, die Sie nicht umziehen, spart Zeit und Geld; fangen Sie früh mit Verkaufen und Spenden an, denn es zieht sich über Wochen — es ist die eine Aufgabe, die Sie am Ende nicht beschleunigen können.',
+      '<strong>Strom und Post haben die längste Vorlaufzeit.</strong> Strom und Internet umzumelden und die Post nachsenden zu lassen kann Tage oder Wochen bis zur Wirkung dauern; starten Sie die Adress-Behördengänge sechs Wochen vorher, nicht in der Umzugswoche.',
+      '<strong>Beschriften Sie Kisten nach Raum und Priorität.</strong> Eine Kiste mit der Aufschrift Küche — zuerst öffnen spart am Zielort Stunden; beschriften Sie beim Packen, nicht später aus dem Gedächtnis.',
+      '<strong>Lesen Sie am Umzugstag Zählerstände ab und machen Sie Fotos.</strong> Zählerstände und ein Foto jedes Raums schützen Ihre Kaution und schließen die letzten Nebenkostenabrechnungen ab — eine im Trubel leicht vergessene Aufgabe.',
+      '<strong>Packen Sie die Kiste mit dem Nötigsten zuletzt.</strong> Wasserkocher, Ladegeräte, Medikamente, Wechselkleidung und Bettwäsche — die erste Nacht ist viel leichter, wenn die eine Kiste, die Sie brauchen, die ist, die Sie finden.',
+    ],
+    faq: [
+      ['Wie früh sollte ich einen Umzug planen?', 'Sechs bis acht Wochen sind für einen Umzug bequem — genug Zeit, um das Umzugsunternehmen zu buchen, auszumisten und die Adress-Behördengänge zu erledigen, bevor das Packen alles einnimmt. Die Vorlage verteilt Planung, Buchung, Behördengänge, Packen, Umzugswoche und Einleben über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
+      ['Was gehört auf eine Umzugs-Checkliste?', 'Ein Umzugstermin und Budget, Umzugsangebote, die Kündigung der Wohnung, ein Nachsendeauftrag, die Ummeldung von Strom, Gas und Internet, Adressaktualisierungen, das Packen Raum für Raum, eine Kiste mit dem Nötigsten, Zählerstände und ein Auspackplan. Die Vorlage gibt jeder Etappe eine eigene Phase mit nachverfolgbaren Meilensteinen.'],
+      ['Kann ich Abhängigkeiten zwischen den Umzugsaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Umzugsunternehmen buchen → packen → Umzugstag → einleben): Verschiebt sich ein Termin, rückt die spätere Arbeit von selbst nach und der kritische Pfad bis zum Umzugstag bleibt sichtbar.'],
+      ['Ist die Umzugsplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+    ],
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

@@ -7285,6 +7285,44 @@ const T = {
       ['O modelo de plano de estudos é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
     ],
   },
+
+  'moving-house-timeline': {
+    card: 'Planeje uma mudança semana a semana: desapegar, contratar a mudança, mudar o endereço, embalar, dia da mudança e instalação.',
+    h1: 'Modelo de planejamento de mudança',
+    metaTitle: 'Modelo de planejamento de mudança',
+    metaDesc: 'Modelo e checklist gratuitos de mudança: defina a data, contrate a mudança, mude o endereço, embale cômodo a cômodo e o dia da mudança. Excel ou online.',
+    lead: 'Um modelo gratuito de <strong>planejamento de mudança</strong> — um checklist semana a semana que leva você do primeiro plano à primeira noite na casa nova: defina a data e o orçamento, contrate a mudança, mude o endereço, embale cômodo a cômodo, supere o dia da mudança e se instale. Baixe em Excel, PowerPoint ou CSV, ou abra online para ligar dependências e ver o caminho crítico até o dia da mudança.',
+    intro: 'Mudar de casa estressa porque tudo chega ao mesmo tempo — e a papelada (contas, correspondência, mudança de endereço) tem, sem alarde, o maior prazo. Este modelo distribui toda a mudança em uma só linha do tempo, nas seis etapas por que uma mudança realmente passa:',
+    phases: [
+      ['Planejar e orçar', 'Defina a data e o orçamento da mudança, faça um inventário, comece a desapegar e peça orçamentos a empresas de mudança. <em>Marco: plano e orçamento prontos.</em>'],
+      ['Contratar e avisar', 'Contrate a mudança ou alugue um caminhão, organize a folga e a ajuda, avise o proprietário ou anuncie o imóvel e resolva o estacionamento e o acesso. <em>Marco: mudança contratada.</em>'],
+      ['Mudança de endereço e papelada', 'Configure o redirecionamento da correspondência, transfira as contas (água, luz, gás) e a internet, atualize seu endereço em todo lugar (banco, seguros, CNH) e cadastre-se nos serviços locais. <em>Marco: mudanças de endereço feitas.</em>'],
+      ['Embalar', 'Reúna o material, embale cômodo a cômodo etiquetando conforme avança e separe uma caixa de essenciais para a primeira noite. <em>Marco: embalagem concluída.</em>'],
+      ['Semana da mudança', 'Confirme com a empresa, descongele a geladeira, faça a leitura dos medidores, limpe a casa antiga e supere o dia da mudança. <em>Marco: já instalado.</em>'],
+      ['Instalar-se', 'Desembale o essencial, deixe as contas e a internet funcionando, desembale cômodo a cômodo e atualize seu endereço eleitoral. <em>Marco: instalação concluída.</em>'],
+    ],
+    callout: 'Comece a papelada cedo — é ela que tem o maior prazo. Contratar uma boa empresa de mudança, redirecionar a correspondência e transferir as contas levam dias ou semanas para valer, então as mudanças que dão certo são aquelas em que a papelada começou seis a oito semanas antes, não no fim de semana anterior ao caminhão.',
+    customize: [
+      'Defina primeiro o dia da mudança e trabalhe de trás para frente; seis a oito semanas é confortável, mas uma mudança em duas semanas funciona se você comprimir a papelada.',
+      'Adicione uma linha por cômodo em Embalar para que uma mudança da casa toda mostre o avanço de cada um e nada fique num armário.',
+      'Contrate a empresa de mudança cedo: as boas ficam lotadas com semanas de antecedência, sobretudo no fim do mês e no verão.',
+      'Mantenha a caixa de essenciais (chaleira, carregadores, remédios, roupa de cama, higiene) como sua própria tarefa, para embalá-la por último e abri-la primeiro.',
+      'Marque mudança contratada, mudanças de endereço feitas e embalagem concluída como marcos para ver se você está no prazo para o dia da mudança.',
+    ],
+    tips: [
+      '<strong>Desapegue antes de embalar, não depois.</strong> Cada caixa que você não muda economiza tempo e dinheiro; comece a vender e doar cedo, porque leva semanas — é a única tarefa que você não consegue acelerar no fim.',
+      '<strong>As contas e a correspondência têm o maior prazo.</strong> Transferir energia e internet e redirecionar a correspondência pode levar dias ou semanas para valer, então comece a papelada de endereço seis semanas antes, não na semana da mudança.',
+      '<strong>Etiquete as caixas por cômodo e por prioridade.</strong> Uma caixa marcada "cozinha — abrir primeiro" economiza horas no destino; etiquete ao embalar, não de memória depois.',
+      '<strong>Faça a leitura dos medidores e fotos no dia da mudança.</strong> As leituras e uma foto de cada cômodo protegem seu depósito e encerram as últimas contas de serviços — uma tarefa fácil de esquecer na correria.',
+      '<strong>Embale a caixa de essenciais por último.</strong> Chaleira, carregadores, remédios, uma muda de roupa e roupa de cama — a primeira noite é muito mais fácil quando a única caixa de que você precisa é a que você encontra.',
+    ],
+    faq: [
+      ['Com quanta antecedência devo começar a planejar uma mudança?', 'Seis a oito semanas é confortável para uma mudança de casa — tempo para contratar a mudança, desapegar e resolver a papelada de endereço antes que a embalagem tome conta. O modelo distribui planejamento, contratação, papelada, embalagem, semana da mudança e instalação em uma linha do tempo para você ver se sua margem é realista.'],
+      ['O que um checklist de mudança deve incluir?', 'Uma data e um orçamento, orçamentos de mudança, aviso ao proprietário, redirecionamento da correspondência, transferência de contas e internet, atualizações de endereço, embalagem cômodo a cômodo, uma caixa de essenciais, a leitura dos medidores e um plano de desembalagem. O modelo dá a cada etapa a sua própria fase, com marcos que você pode acompanhar.'],
+      ['Posso mostrar dependências entre as tarefas da mudança?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito da gantts.app</a> para ligar relações término-início (contratar a mudança → embalar → dia da mudança → instalar-se): se uma data atrasar, o trabalho seguinte se desloca sozinho e o caminho crítico até o dia da mudança continua visível.'],
+      ['O modelo de planejamento de mudança é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
+    ],
+  },
 };
 
 const UI = {

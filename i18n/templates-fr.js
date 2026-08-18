@@ -7153,6 +7153,56 @@ const T = {
       ]
     ]
   },
+
+  'moving-house-timeline': {
+    card: 'Planifiez un déménagement semaine par semaine : trier, réserver les déménageurs, changer d’adresse, emballer, jour J et installation.',
+    h1: 'Modèle de planning de déménagement',
+    metaTitle: 'Planning de déménagement — modèle',
+    metaDesc: 'Modèle et check-list gratuits de déménagement : fixez la date, réservez les déménageurs, changez d’adresse et emballez pièce par pièce. Excel ou en ligne.',
+    lead: 'Un <strong>planning de déménagement</strong> gratuit — une check-list semaine par semaine qui vous mène de votre premier plan à votre première nuit dans le nouveau logement : fixez la date et le budget, réservez les déménageurs, changez d’adresse, emballez pièce par pièce, passez le jour J et installez-vous. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du déménagement.',
+    intro: 'Déménager stresse parce que tout tombe en même temps — et les démarches (énergie, courrier, changements d’adresse) ont, sans bruit, les délais les plus longs. Ce modèle répartit tout le déménagement sur une seule frise, en six étapes qu’un déménagement traverse réellement :',
+    phases: [
+      ['Planifier &amp; budgéter', 'Fixez la date et le budget, faites un inventaire, commencez à trier et demandez des devis à des entreprises de déménagement. <em>Jalon : plan et budget prêts.</em>'],
+      ['Réserver &amp; prévenir', 'Réservez les déménageurs ou un utilitaire, posez des congés et organisez de l’aide, donnez congé au propriétaire ou mettez le bien en vente, et gérez le stationnement et l’accès. <em>Jalon : déménageurs réservés.</em>'],
+      ['Changement d’adresse &amp; démarches', 'Activez la réexpédition du courrier, changez l’énergie et la box internet, mettez à jour votre adresse partout (banque, assurances, carte grise) et inscrivez-vous aux services locaux. <em>Jalon : changements d’adresse faits.</em>'],
+      ['Emballer', 'Réunissez les fournitures, emballez pièce par pièce en étiquetant au fur et à mesure, et mettez de côté un carton d’essentiels pour la première nuit. <em>Jalon : emballage terminé.</em>'],
+      ['Semaine du déménagement', 'Confirmez avec les déménageurs, dégivrez le frigo, relevez les compteurs, faites le ménage de l’ancien logement et passez le jour J. <em>Jalon : emménagé.</em>'],
+      ['S’installer', 'Déballez l’essentiel, mettez l’énergie et internet en service, déballez pièce par pièce et inscrivez-vous sur les listes électorales. <em>Jalon : installation terminée.</em>'],
+    ],
+    callout: 'Commencez les démarches tôt : ce sont elles qui ont les délais les plus longs. Réserver une bonne entreprise de déménagement, faire suivre le courrier et changer l’énergie prennent des jours ou des semaines à prendre effet — les déménagements qui se passent bien sont ceux où la paperasse a démarré six à huit semaines avant, pas le week-end avant l’arrivée du camion.',
+    customize: [
+      'Fixez d’abord le jour du déménagement et remontez le fil ; six à huit semaines est confortable, mais un déménagement en deux semaines fonctionne si vous compressez les démarches.',
+      'Ajoutez une ligne par pièce sous Emballer pour qu’un déménagement de toute la maison montre l’avancement de chacune et que rien ne reste dans un placard.',
+      'Réservez l’entreprise de déménagement tôt : les bonnes sont complètes des semaines à l’avance, surtout en fin de mois et l’été.',
+      'Gardez le carton d’essentiels (bouilloire, chargeurs, médicaments, linge de lit, toilette) comme sa propre tâche pour l’emballer en dernier et le déballer en premier.',
+      'Marquez « déménageurs réservés », « changements d’adresse faits » et « emballage terminé » comme des jalons pour voir si vous tenez le rythme jusqu’au jour J.',
+    ],
+    tips: [
+      '<strong>Triez avant d’emballer, pas après.</strong> Chaque carton que vous ne déménagez pas fait gagner du temps et de l’argent ; commencez à vendre et à donner tôt, car cela dure des semaines — c’est la seule tâche impossible à précipiter à la fin.',
+      '<strong>L’énergie et le courrier ont les délais les plus longs.</strong> Changer d’énergie et d’internet et faire suivre le courrier peut prendre des jours ou des semaines à prendre effet ; démarrez les démarches d’adresse six semaines avant, pas la semaine du déménagement.',
+      '<strong>Étiquetez les cartons par pièce et par priorité.</strong> Un carton marqué « cuisine — à ouvrir en premier » fait gagner des heures à l’arrivée ; étiquetez en emballant, pas de mémoire ensuite.',
+      '<strong>Relevez les compteurs et prenez des photos le jour J.</strong> Les relevés et une photo de chaque pièce protègent votre caution et soldent les dernières factures d’énergie — une tâche facile à oublier dans la précipitation.',
+      '<strong>Emballez le carton d’essentiels en dernier.</strong> Bouilloire, chargeurs, médicaments, une tenue de rechange et le linge de lit — la première nuit est bien plus simple quand le seul carton dont vous avez besoin est celui que vous retrouvez.',
+    ],
+    faq: [
+      [
+        'Combien de temps à l’avance faut-il planifier un déménagement ?',
+        'Six à huit semaines est confortable pour un déménagement — assez pour réserver les déménageurs, trier et faire les démarches d’adresse avant que l’emballage ne prenne le dessus. Le modèle répartit planification, réservation, démarches, emballage, semaine du déménagement et installation sur une frise pour voir si votre marge est réaliste.'
+      ],
+      [
+        'Que doit contenir une check-list de déménagement ?',
+        'Une date et un budget, des devis de déménagement, le congé au propriétaire, la réexpédition du courrier, le changement d’énergie et d’internet, les mises à jour d’adresse, l’emballage pièce par pièce, un carton d’essentiels, les relevés de compteurs et un plan de déballage. Le modèle donne à chaque étape sa propre phase, avec des jalons à suivre.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches du déménagement ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (réserver les déménageurs → emballer → jour J → s’installer) : si une date glisse, le travail en aval se décale automatiquement et le chemin critique jusqu’au jour du déménagement reste visible.'
+      ],
+      [
+        'Le modèle de planning de déménagement est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {
