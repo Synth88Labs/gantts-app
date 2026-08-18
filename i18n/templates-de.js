@@ -7229,6 +7229,44 @@ const T = {
       ]
     ]
   },
+
+  'study-plan': {
+    card: 'Themen auflisten, einen wöchentlichen Lernplan bauen, mit alten Klausuren üben, Schwächen wiederholen und Probeklausuren schreiben.',
+    h1: 'Lernplan-Vorlage',
+    metaTitle: 'Lernplan-Vorlage',
+    metaDesc: 'Kostenlose Lernplan-Vorlage für Prüfungen: Themen, Wochenplan, Lernen, Üben, Schwächen wiederholen und Probeklausuren. Als Excel, PowerPoint oder online.',
+    lead: 'Eine kostenlose <strong>Lernplan-Vorlage</strong> — ein Wiederholungsplan, der Sie von der ersten Themenliste bis zum Prüfungstag führt: planen und einrichten, den Stoff lernen, mit alten Klausuren und aktivem Abruf üben, Ihre Schwächen wiederholen, Probeklausuren unter Zeit schreiben und vorbereitet in die Prüfung gehen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Prüfungstermin zu sehen.',
+    intro: 'Die meisten Prüfungsvorbereitungen scheitern nicht am Fleiß, sondern am fehlenden Plan: Man paukt die leichten Themen und hat für die schweren keine Zeit mehr. Diese Vorlage legt Ihre gesamte Wiederholung auf eine Zeitachse — in den sechs Phasen, die Sie wirklich prüfungsfertig machen:',
+    phases: [
+      ['Planen &amp; einrichten', 'Fächer und Themen auflisten, Materialien sammeln, Stärken und Lücken ehrlich einschätzen und Prüfungstermine sowie Zielnoten festlegen. <em>Meilenstein: Lernplan steht.</em>'],
+      ['Lernen — erster Durchgang', 'Die Kernthemen zum ersten Mal durcharbeiten, dabei Notizen und Karteikarten anlegen und mit einer wöchentlichen Review aufholen. <em>Meilenstein: erster Durchgang fertig.</em>'],
+      ['Üben &amp; aktiver Abruf', 'Übungsaufgaben nach Thema lösen, Karteikarten mit verteilter Wiederholung durchgehen und die erste alte Klausur unter Zeit schreiben. <em>Meilenstein: Üben läuft.</em>'],
+      ['Schwächen wiederholen', 'Die Themen mit den schlechtesten Ergebnissen erkennen und erneut lernen und sie zu Zusammenfassungen und Mindmaps verdichten. <em>Meilenstein: Schwächen aufgearbeitet.</em>'],
+      ['Probeklausuren &amp; letzte Review', 'Vollständige Probeklausuren unter Zeit schreiben, die Ergebnisse auswerten und die Zusammenfassungen fertigstellen — dann ausruhen. <em>Meilenstein: bereit für die Prüfungen.</em>'],
+      ['Prüfungswoche', 'Die Logistik klären, die Prüfungen schreiben und abschließen. <em>Meilenstein: Prüfungen geschafft.</em>'],
+    ],
+    callout: 'Wiederholen Sie Ihre schwachen Themen, nicht Ihre Lieblingsthemen. Lernzeit fühlt sich produktiv an, wenn man erneut liest, was man schon kann — planen Sie deshalb die schweren, schlecht benoteten Themen zuerst ein und schützen Sie diese Zeit: Die größten Notensprünge kommen aus dem Stoff, den Sie gemieden haben, nicht aus dem, der Ihnen Spaß macht.',
+    customize: [
+      'Legen Sie zuerst Ihren Prüfungstermin fest und rechnen Sie rückwärts; drei bis acht Wochen sind üblich, aber blocken Sie die Tage, an denen Sie wirklich nicht lernen können.',
+      'Fügen Sie unter Lernen und Üben je eine Zeile pro Fach (oder Thema) hinzu, damit ein Plan über mehrere Fächer den Fortschritt jedes einzelnen zeigt.',
+      'Ziehen Sie Ihre schwächsten Fächer vor — legen Sie die schweren Themen an den Anfang, wenn Energie und Vorlauf am größten sind.',
+      'Planen Sie Pausen und leichtere Tage ein; einen Plan ohne Erholung brechen Sie in der zweiten Woche ab.',
+      'Markieren Sie Lernplan steht, erster Durchgang fertig und Schwächen aufgearbeitet als Meilensteine, um zu sehen, ob Sie im Plan liegen.',
+    ],
+    tips: [
+      '<strong>Aktiver Abruf schlägt erneutes Lesen.</strong> Sich selbst abzufragen — Karteikarten, Übungsaufgaben — bleibt weit besser haften als Markieren; der Plan sollte das Üben stark gewichten, nicht nur das Lesen.',
+      '<strong>Alte Klausuren sind die wertvollste Aufgabe.</strong> Eine alte Klausur unter Zeit zeigt zugleich, was Sie nicht können und wie Sie die Prüfungszeit einteilen; schreiben Sie die erste früh, nicht in der letzten Woche.',
+      '<strong>Verteilen Sie die Wiederholung, häufen Sie sie nicht an.</strong> Ein Thema über mehrere Tage erneut anzugehen schlägt eine einzige lange Sitzung; deshalb läuft die Karteikarten-Spur durch den ganzen Plan.',
+      '<strong>Werten Sie Ihre Probeklausuren aus, schreiben Sie sie nicht nur.</strong> Das Lernen steckt im Durchgehen der Fehler; planen Sie die Auswertung ein, nicht nur die Klausur.',
+      '<strong>Schützen Sie die letzten Tage für die Erholung.</strong> Die Nacht davor zu pauken kostet mehr an Müdigkeit, als es an Erinnerung bringt; der Plan endet mit Wiederholung und Ruhe, nicht mit neuem Stoff.',
+    ],
+    faq: [
+      ['Wie früh sollte ich mit einem Lernplan beginnen?', 'Drei bis acht Wochen vor den Prüfungen sind üblich — genug Zeit für einen ersten Durchgang, Üben und Wiederholung, ohne auszubrennen. Die Vorlage verteilt Planung, Lernen, Üben, Wiederholung und Probeklausuren über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
+      ['Was gehört in einen Lernplan?', 'Eine Themenliste, ein Wochenplan, Zeit zum Lernen, Übung mit aktivem Abruf (Karteikarten und alte Klausuren), gezielte Wiederholung der Schwächen, Probeklausuren unter Zeit und Erholung. Die Vorlage gibt jeder Etappe eine eigene Phase mit nachverfolgbaren Meilensteinen.'],
+      ['Kann ich Abhängigkeiten zwischen den Lernaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (lernen → üben → wiederholen → Probeklausur): Wenn Sie in Verzug geraten, verschiebt sich die spätere Arbeit von selbst und der kritische Pfad bis zum Prüfungstag bleibt sichtbar.'],
+      ['Ist die Lernplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+    ],
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

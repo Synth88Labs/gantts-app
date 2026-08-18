@@ -4202,6 +4202,44 @@ const T = {
       ['¿La plantilla de plan de lanzamiento de pódcast es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+
+  'study-plan': {
+    card: 'Enumera los temas, arma un calendario de repaso semanal, practica con exámenes anteriores, repasa los puntos débiles y haz simulacros.',
+    h1: 'Plantilla de plan de estudio',
+    metaTitle: 'Plantilla de plan de estudio',
+    metaDesc: 'Plantilla gratis de plan de estudio para exámenes: temas, calendario semanal, práctica, repaso de puntos débiles y simulacros. Excel, PowerPoint u online.',
+    lead: 'Una plantilla gratuita de <strong>plan de estudio</strong> —un calendario de repaso que te lleva de tu primera lista de temas al día del examen: planifica y organízate, aprende la materia, practica con exámenes anteriores y repaso activo, repasa tus puntos débiles, haz simulacros cronometrados y llega al examen preparado. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la fecha del examen.',
+    intro: 'La mayoría de los repasos fallan no por falta de esfuerzo, sino por falta de plan: se estudian los temas fáciles y se acaba el tiempo para los difíciles. Esta plantilla pone todo tu repaso en una sola línea de tiempo, en las seis etapas que de verdad te preparan para el examen:',
+    phases: [
+      ['Planificación y preparación', 'Enumera tus asignaturas y temas, reúne tus materiales, evalúa con honestidad tus puntos fuertes y débiles, y fija las fechas de examen y las notas objetivo. <em>Hito: plan de estudio listo.</em>'],
+      ['Aprender — primera vuelta', 'Trabaja los temas principales por primera vez, toma apuntes y haz fichas sobre la marcha, y usa un repaso semanal para ponerte al día. <em>Hito: primera vuelta completada.</em>'],
+      ['Practicar y repaso activo', 'Haz ejercicios por tema, repasa las fichas con repetición espaciada y haz tu primer examen anterior cronometrado. <em>Hito: práctica en marcha.</em>'],
+      ['Repasar los puntos débiles', 'Identifica y vuelve a estudiar los temas en los que peor rindes, y condénsalos en resúmenes y esquemas. <em>Hito: puntos débiles consolidados.</em>'],
+      ['Simulacros y repaso final', 'Haz simulacros completos cronometrados, revisa los resultados y termina tus resúmenes; luego descansa. <em>Hito: listo para los exámenes.</em>'],
+      ['Semana de exámenes', 'Resuelve la logística, haz los exámenes y termina. <em>Hito: exámenes completados.</em>'],
+    ],
+    callout: 'Estudia tus temas débiles, no tus favoritos. El tiempo de repaso parece productivo cuando relees lo que ya sabes, así que programa primero los temas difíciles y de baja nota y protege ese tiempo: las mayores mejoras de nota vienen de la materia que evitabas, no de la que disfrutas.',
+    customize: [
+      'Fija primero la fecha del examen y trabaja hacia atrás; entre tres y ocho semanas es lo habitual, pero bloquea los días en que de verdad no puedes estudiar.',
+      'Añade una fila por asignatura (o por tema) en Aprender y Practicar para que un plan de varias asignaturas muestre el avance de cada una.',
+      'Pon por delante tus asignaturas más débiles: coloca los temas difíciles al principio, cuando tienes más energía y margen.',
+      'Programa descansos y días más ligeros; un plan sin descanso es un plan que abandonarás en la segunda semana.',
+      'Marca «plan de estudio listo», «primera vuelta completada» y «puntos débiles consolidados» como hitos para ver si vas a tiempo.',
+    ],
+    tips: [
+      '<strong>El repaso activo supera a la relectura.</strong> El tiempo dedicado a examinarte —fichas, ejercicios— se fija mucho mejor que subrayar; el calendario debe dar peso a la práctica, no solo a la lectura.',
+      '<strong>Los exámenes anteriores son la tarea más valiosa.</strong> Un examen anterior cronometrado revela a la vez lo que no sabes y cómo gestionas el tiempo; haz el primero pronto, no la última semana.',
+      '<strong>Espacia el repaso, no lo acumules.</strong> Volver sobre un tema a lo largo de varios días supera a una sola sesión larga; por eso el carril de fichas recorre todo el plan.',
+      '<strong>Revisa los resultados de los simulacros, no solo los hagas.</strong> El aprendizaje está en repasar lo que fallaste; programa la revisión, no solo el simulacro.',
+      '<strong>Protege los últimos días para descansar.</strong> Empollar la noche anterior cuesta más en cansancio de lo que suma en memoria; el plan termina con repaso y descanso, no con materia nueva.',
+    ],
+    faq: [
+      ['¿Con cuánta antelación debería empezar un plan de estudio?', 'Entre tres y ocho semanas antes de los exámenes es lo habitual: tiempo suficiente para una primera vuelta, práctica y repaso sin quemarte. La plantilla reparte planificación, aprendizaje, práctica, repaso y simulacros en una línea de tiempo para que veas si tu margen es realista.'],
+      ['¿Qué debe incluir un plan de estudio?', 'Una lista de temas, un calendario semanal, tiempo para aprender, práctica de repaso activo (fichas y exámenes anteriores), repaso específico de los puntos débiles, simulacros cronometrados y descanso. La plantilla da a cada etapa su propia fase, con hitos que puedes seguir.'],
+      ['¿Puedo mostrar dependencias entre las tareas de estudio?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (aprender → practicar → repasar → simulacro): si te retrasas, el trabajo posterior se desplaza solo y la ruta crítica hasta el día del examen se mantiene visible.'],
+      ['¿La plantilla de plan de estudio es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

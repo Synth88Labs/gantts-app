@@ -7103,6 +7103,56 @@ const T = {
       ]
     ]
   },
+
+  'study-plan': {
+    card: 'Listez les matières, bâtissez un planning de révision hebdomadaire, entraînez-vous sur les annales, revoyez vos points faibles et passez des examens blancs.',
+    h1: 'Modèle de plan de révision',
+    metaTitle: 'Plan de révision — modèle',
+    metaDesc: 'Modèle gratuit de plan de révision pour examens : matières, planning hebdomadaire, entraînement et examens blancs. Excel, PowerPoint ou en ligne.',
+    lead: 'Un <strong>modèle de plan de révision</strong> gratuit qui vous mène de votre première liste de matières au jour de l’examen : organisez-vous, apprenez le cours, entraînez-vous sur les annales et par rappel actif, revoyez vos points faibles, passez des examens blancs chronométrés et arrivez préparé. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la date de l’examen.',
+    intro: 'La plupart des révisions échouent non par manque de travail mais par manque de plan : on revoit les sujets faciles et le temps manque pour les difficiles. Ce modèle place toute votre révision sur une seule frise, en six étapes qui vous préparent réellement à l’examen :',
+    phases: [
+      ['Organisation &amp; préparation', 'Listez vos matières et vos chapitres, rassemblez vos supports, évaluez honnêtement vos forces et vos lacunes, et fixez vos dates d’examen et vos notes visées. <em>Jalon : plan de révision prêt.</em>'],
+      ['Apprendre — premier passage', 'Travaillez les chapitres principaux une première fois, prenez des notes et faites des fiches au fil de l’eau, et prévoyez une revue hebdomadaire pour rattraper. <em>Jalon : premier passage terminé.</em>'],
+      ['Entraînement &amp; rappel actif', 'Faites des exercices par chapitre, révisez vos fiches en répétition espacée, et passez votre première annale chronométrée. <em>Jalon : entraînement lancé.</em>'],
+      ['Revoir les points faibles', 'Repérez et retravaillez les chapitres où vous êtes le plus faible, et condensez-les en fiches de synthèse et cartes mentales. <em>Jalon : points faibles consolidés.</em>'],
+      ['Examens blancs &amp; revue finale', 'Passez des examens blancs complets et chronométrés, analysez les résultats et finissez vos synthèses — puis reposez-vous. <em>Jalon : prêt pour les examens.</em>'],
+      ['Semaine d’examens', 'Réglez la logistique, passez les examens et terminez. <em>Jalon : examens terminés.</em>']
+    ],
+    callout: 'Révisez vos points faibles, pas vos sujets préférés. Le temps de révision paraît productif quand on relit ce qu’on sait déjà, alors programmez d’abord les chapitres difficiles et mal notés et protégez ce temps : les plus grands gains de note viennent de la matière que vous évitiez, pas de celle que vous aimez.',
+    customize: [
+      'Fixez d’abord votre date d’examen et remontez le fil ; trois à huit semaines est courant, mais bloquez les jours où vous ne pouvez vraiment pas réviser.',
+      'Ajoutez une ligne par matière (ou par chapitre) sous Apprendre et Entraînement pour qu’un plan multi-matières montre l’avancement de chacune.',
+      'Placez vos matières les plus faibles en premier — mettez les chapitres difficiles au début, quand votre énergie et votre marge sont au plus haut.',
+      'Prévoyez des pauses et des journées plus légères ; un plan sans repos est un plan que vous abandonnerez dès la deuxième semaine.',
+      'Marquez « plan de révision prêt », « premier passage terminé » et « points faibles consolidés » comme des jalons pour voir si vous tenez le rythme.'
+    ],
+    tips: [
+      '<strong>Le rappel actif bat la relecture.</strong> Le temps passé à s’interroger — fiches, exercices — s’ancre bien mieux que le surlignage ; le planning doit donner du poids à l’entraînement, pas seulement à la lecture.',
+      '<strong>Les annales sont la tâche la plus rentable.</strong> Une annale chronométrée révèle à la fois ce que vous ne savez pas et votre gestion du temps ; faites la première tôt, pas la dernière semaine.',
+      '<strong>Espacez vos révisions, ne les massez pas.</strong> Revenir sur un chapitre sur plusieurs jours l’emporte sur une seule longue séance ; c’est pourquoi la voie des fiches traverse tout le plan.',
+      '<strong>Analysez vos examens blancs, ne vous contentez pas de les passer.</strong> L’apprentissage est dans la relecture de vos erreurs ; planifiez l’analyse, pas seulement l’épreuve.',
+      '<strong>Protégez les derniers jours pour le repos.</strong> Bachoter la veille coûte plus en fatigue qu’il ne rapporte en mémoire ; le plan se termine par une revue et du repos, pas par de la matière nouvelle.'
+    ],
+    faq: [
+      [
+        'Combien de temps à l’avance commencer un plan de révision ?',
+        'Trois à huit semaines avant les examens est courant — assez pour un premier passage, de l’entraînement et une révision sans s’épuiser. Le modèle répartit organisation, apprentissage, entraînement, révision et examens blancs sur une frise pour voir si votre marge est réaliste.'
+      ],
+      [
+        'Que doit contenir un plan de révision ?',
+        'Une liste de chapitres, un planning hebdomadaire, du temps pour apprendre, de l’entraînement par rappel actif (fiches et annales), une révision ciblée des points faibles, des examens blancs chronométrés et du repos. Le modèle donne à chaque étape sa propre phase, avec des jalons à suivre.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches de révision ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (apprendre → s’entraîner → réviser → examen blanc) : si vous prenez du retard, le travail en aval se décale automatiquement et le chemin critique jusqu’au jour de l’examen reste visible.'
+      ],
+      [
+        'Le modèle de plan de révision est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

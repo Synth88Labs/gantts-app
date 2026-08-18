@@ -7247,6 +7247,44 @@ const T = {
       ]
     ]
   },
+
+  'study-plan': {
+    card: 'Liste os temas, monte um cronograma de estudo semanal, pratique com provas anteriores, revise os pontos fracos e faça simulados.',
+    h1: 'Modelo de plano de estudos',
+    metaTitle: 'Modelo de plano de estudos',
+    metaDesc: 'Modelo gratuito de plano de estudos para provas: temas, cronograma semanal, prática, revisão dos pontos fracos e simulados. Excel, PowerPoint ou online.',
+    lead: 'Um modelo gratuito de <strong>plano de estudos</strong> — um cronograma de revisão que leva você da primeira lista de temas ao dia da prova: planeje e organize, aprenda o conteúdo, pratique com provas anteriores e revisão ativa, revise seus pontos fracos, faça simulados cronometrados e chegue preparado à prova. Baixe em Excel, PowerPoint ou CSV, ou abra no editor online para ligar dependências e ver o caminho crítico até a data da prova.',
+    intro: 'A maioria das revisões falha não por falta de esforço, mas por falta de plano: estuda-se os temas fáceis e falta tempo para os difíceis. Este modelo coloca toda a sua revisão em uma só linha do tempo, nas seis etapas que de fato preparam você para a prova:',
+    phases: [
+      ['Planejamento e organização', 'Liste suas matérias e temas, reúna seus materiais, avalie com honestidade seus pontos fortes e lacunas e defina as datas das provas e as notas-alvo. <em>Marco: plano de estudos pronto.</em>'],
+      ['Aprender — primeira passada', 'Trabalhe os temas principais pela primeira vez, faça anotações e flashcards no caminho e use uma revisão semanal para se atualizar. <em>Marco: primeira passada concluída.</em>'],
+      ['Praticar e revisão ativa', 'Faça exercícios por tema, revise os flashcards com repetição espaçada e faça sua primeira prova anterior cronometrada. <em>Marco: prática em andamento.</em>'],
+      ['Revisar os pontos fracos', 'Identifique e volte a estudar os temas em que você foi pior e condense-os em resumos e mapas mentais. <em>Marco: pontos fracos consolidados.</em>'],
+      ['Simulados e revisão final', 'Faça simulados completos cronometrados, revise os resultados e conclua seus resumos — depois descanse. <em>Marco: pronto para as provas.</em>'],
+      ['Semana de provas', 'Resolva a logística, faça as provas e conclua. <em>Marco: provas concluídas.</em>'],
+    ],
+    callout: 'Revise seus temas fracos, não os favoritos. O tempo de revisão parece produtivo quando você relê o que já sabe, então programe primeiro os temas difíceis e de nota baixa e proteja esse tempo: os maiores ganhos de nota vêm do conteúdo que você evitava, não do que você gosta.',
+    customize: [
+      'Defina primeiro a data da prova e trabalhe de trás para frente; de três a oito semanas é o comum, mas bloqueie os dias em que você realmente não consegue estudar.',
+      'Adicione uma linha por matéria (ou por tema) em Aprender e Praticar para que um plano de várias matérias mostre o avanço de cada uma.',
+      'Coloque as matérias mais fracas na frente — ponha os temas difíceis no início, quando a energia e a margem são maiores.',
+      'Programe pausas e dias mais leves; um plano sem descanso é um plano que você abandona na segunda semana.',
+      'Marque plano de estudos pronto, primeira passada concluída e pontos fracos consolidados como marcos para ver se você está no ritmo.',
+    ],
+    tips: [
+      '<strong>A revisão ativa supera a releitura.</strong> O tempo dedicado a se testar — flashcards, exercícios — fixa muito melhor do que grifar; o cronograma deve dar peso à prática, não só à leitura.',
+      '<strong>Provas anteriores são a tarefa mais valiosa.</strong> Uma prova anterior cronometrada revela ao mesmo tempo o que você não sabe e como você administra o tempo; faça a primeira cedo, não na última semana.',
+      '<strong>Espace a revisão, não a acumule.</strong> Voltar a um tema ao longo de vários dias supera uma única sessão longa; por isso a trilha de flashcards percorre todo o plano.',
+      '<strong>Revise os resultados dos simulados, não apenas os faça.</strong> O aprendizado está em revisar o que você errou; programe a análise, não só o simulado.',
+      '<strong>Proteja os últimos dias para o descanso.</strong> Virar a noite antes custa mais em cansaço do que rende em memória; o plano termina com revisão e descanso, não com conteúdo novo.',
+    ],
+    faq: [
+      ['Com quanta antecedência devo começar um plano de estudos?', 'De três a oito semanas antes das provas é o comum — tempo suficiente para uma primeira passada, prática e revisão sem se esgotar. O modelo distribui planejamento, aprendizado, prática, revisão e simulados em uma linha do tempo para você ver se sua margem é realista.'],
+      ['O que um plano de estudos deve incluir?', 'Uma lista de temas, um cronograma semanal, tempo para aprender, prática de revisão ativa (flashcards e provas anteriores), revisão específica dos pontos fracos, simulados cronometrados e descanso. O modelo dá a cada etapa a sua própria fase, com marcos que você pode acompanhar.'],
+      ['Posso mostrar dependências entre as tarefas de estudo?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito da gantts.app</a> para ligar relações término-início (aprender → praticar → revisar → simulado): se você atrasar, o trabalho seguinte se desloca sozinho e o caminho crítico até o dia da prova continua visível.'],
+      ['O modelo de plano de estudos é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
+    ],
+  },
 };
 
 const UI = {
