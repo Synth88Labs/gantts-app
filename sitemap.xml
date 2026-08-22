@@ -472,7 +472,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/de/templates/3-week-lookahead-template.html</loc>
@@ -682,6 +682,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/de/templates/customer-onboarding-plan.html</loc>
@@ -1935,7 +1946,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/es/templates/3-week-lookahead-template.html</loc>
@@ -2145,6 +2156,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/es/templates/customer-onboarding-plan.html</loc>
@@ -3398,7 +3420,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/fr/templates/3-week-lookahead-template.html</loc>
@@ -3608,6 +3630,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/fr/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/fr/templates/customer-onboarding-plan.html</loc>
@@ -4883,7 +4916,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/pt/templates/3-week-lookahead-template.html</loc>
@@ -5093,6 +5126,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/pt/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/pt/templates/customer-onboarding-plan.html</loc>
@@ -6104,7 +6148,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/3-week-lookahead-template.html</loc>
@@ -6314,6 +6358,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/customer-onboarding-plan.html</loc>
@@ -7567,7 +7622,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/zh/templates/3-week-lookahead-template.html</loc>
@@ -7777,6 +7832,17 @@
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crop-planting-harvest-schedule.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crop-planting-harvest-schedule.html"/>
     <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/zh/templates/crowdfunding-campaign-plan.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/crowdfunding-campaign-plan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/crowdfunding-campaign-plan.html"/>
+    <lastmod>2026-08-22</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/zh/templates/customer-onboarding-plan.html</loc>

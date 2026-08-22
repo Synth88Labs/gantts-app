@@ -7343,6 +7343,44 @@ const T = {
       ['Ist die Küchenumbau-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
+
+  'crowdfunding-campaign-plan': {
+    card: 'Planen Sie eine Crowdfunding-Kampagne von Anfang bis Ende: Konzept, Video, Vorab-Publikum, Live-Kampagne und Auslieferung.',
+    h1: 'Crowdfunding-Kampagnen-Vorlage',
+    metaTitle: 'Crowdfunding-Kampagnen-Vorlage',
+    metaDesc: 'Kostenlose Crowdfunding-Kampagnen-Vorlage für Kickstarter oder Indiegogo: Konzept, Video, Vorab-Publikum, Kampagne und Auslieferung. Als Excel oder online.',
+    lead: 'Eine kostenlose <strong>Crowdfunding-Kampagnen-Vorlage</strong> — eine Zeitachse, die ein Kickstarter- oder Indiegogo-Projekt von der Idee bis zu den ausgelieferten Belohnungen führt: Konzept und Belohnungen validieren, Pitch-Video und Seite erstellen, ein Vorab-Publikum aufbauen, die Live-Kampagne fahren und ausliefern. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Launch-Tag zu sehen.',
+    intro: 'Crowdfunding-Kampagnen werden vor dem Launch gewonnen: Die Projekte, die schnell finanziert sind, haben wochenlang eine E-Mail-Liste aufgebaut und Frühunterstützer gewonnen, damit der erste Tag Schwung hat. Diese Vorlage legt die ganze Kampagne auf eine Zeitachse — samt der langen Vorlaufphase — in den sechs Phasen, die eine Kampagne durchläuft:',
+    phases: [
+      ['Konzept &amp; Validierung', 'Idee und Nutzenversprechen definieren, den Markt recherchieren, Finanzierungsziel und Budget festlegen, die Belohnungsstufen gestalten und die Plattform wählen. <em>Meilenstein: Konzept validiert.</em>'],
+      ['Kampagnen-Assets bauen', 'Prototyp oder Muster bauen, das Pitch-Video schreiben und drehen, die Kampagnenseite texten und die Grafiken gestalten. <em>Meilenstein: Assets fertig.</em>'],
+      ['Vorab-Publikum', 'Eine Landingpage bauen, eine E-Mail-Liste aufbauen, Community und Social bespielen, Presse gewinnen und Frühzusagen im Wert von rund 20% des Ziels sichern. <em>Meilenstein: Vorab-Liste bereit.</em>'],
+      ['Launch-Vorbereitung', 'Eine letzte Prüfung und Test der Seite, den Launch-Termin setzen und die Liste anwärmen, und die E-Mails und Posts für den Launch-Tag vorbereiten. <em>Meilenstein: startbereit.</em>'],
+      ['Live-Kampagne', 'Launchen, täglich mit Unterstützern austauschen, zur Mitte einen Presse-Schub fahren, Stretch-Goals ankündigen und den Endspurt der letzten 48 Stunden treiben. <em>Meilenstein: Kampagne finanziert.</em>'],
+      ['Abschluss &amp; Auslieferung', 'Unterstützern danken, die Umfragen des Pledge-Managers verschicken, die Produktion abschließen und die Belohnungen ausliefern und versenden. <em>Meilenstein: Belohnungen ausgeliefert.</em>'],
+    ],
+    callout: 'Bauen Sie Ihr Publikum vor dem Launch auf, nicht danach. Kampagnen werden teils nach dem frühen Schwung eingeordnet, und ein Projekt, das ohne E-Mail-Liste startet, bleibt am ersten Tag stehen. Nutzen Sie die Wochen vor dem Launch, um E-Mails zu sammeln und Frühzusagen im Wert von rund 20% des Ziels zu sichern, damit die Kampagne in den ersten 48 Stunden einen Teil ihres Ziels erreicht — der stärkste Indikator dafür, ob sie überhaupt finanziert wird.',
+    customize: [
+      'Legen Sie zuerst den Launch-Termin fest und rechnen Sie rückwärts; eine ernsthafte Vorlaufphase dauert sechs bis zwölf Wochen, nicht ein paar Tage.',
+      'Halten Sie die Aufgaben E-Mail-Liste und Early-Bird über Wochen aktiv: Der Aufbau des Vorab-Publikums finanziert die Kampagne wirklich, nicht der Post am Launch-Tag.',
+      'Fügen Sie unter Produktion und Auslieferung je eine Zeile pro Belohnungsstufe hinzu, damit eine mehrstufige Kampagne Fertigung und Versand jeder Stufe zeigt.',
+      'Behandeln Sie Frühzusagen sichern als Meilenstein mit einer Zahl (≈20% des Ziels), damit Sie wissen, ob Sie startbereit sind.',
+      'Kalkulieren Sie die Auslieferung realistisch: Produktion und Versand laufen Wochen oder Monate nach dem Ende der Kampagne und sind der Punkt, an dem schlecht geplante Projekte Geld verlieren.',
+    ],
+    tips: [
+      '<strong>Die Vorab-Liste ist die Kampagne.</strong> Projekte, die schnell finanziert sind, starteten fast immer mit einer warmen E-Mail-Liste; die Wochen des Publikumsaufbaus vor dem ersten Tag zählen mehr als alles, was Sie während der Kampagne tun.',
+      '<strong>Die ersten 48 Stunden entscheiden.</strong> Plattformen heben Projekte mit frühem Schwung hervor, also gewinnen Sie genug Frühunterstützer, um am ersten Tag einen sichtbaren Teil Ihres Ziels zu erreichen, statt auf einen späten Schub zu hoffen.',
+      '<strong>Das Pitch-Video verkauft.</strong> Ein klares, kurzes Video ist das Asset mit dem größten Hebel; geben Sie ihm echte Zeit im Plan und stellen Sie es vor der Launch-Vorbereitung fertig, nicht mittendrin.',
+      '<strong>Planen Sie die Auslieferung vor dem Launch.</strong> Versand- und Produktionskosten versenken mehr finanzierte Projekte als gescheiterte; kalkulieren Sie Ihre Stufen und planen Sie die Auslieferung so ernst wie die Kampagne selbst.',
+      '<strong>Halten Sie Unterstützer während der Kampagne auf dem Laufenden.</strong> Regelmäßige Updates und Antworten halten Schwung und Teilrate hoch; planen Sie den Austausch, statt nach dem Launch-Tag zu verstummen.',
+    ],
+    faq: [
+      ['Wie lange dauert die Planung einer Crowdfunding-Kampagne?', 'Die meisten erfolgreichen Kampagnen verbringen sechs bis zwölf Wochen mit dem Vorlauf — E-Mail-Liste, Assets und Frühzusagen aufbauen — vor einer 30-tägigen Live-Kampagne und danach Wochen oder Monate mit der Auslieferung. Die Vorlage verteilt Konzept, Assets, Vorlauf, Launch, Live-Kampagne und Auslieferung über eine Zeitachse, sodass Sie den echten Vorlauf sehen.'],
+      ['Warum ist die Vorlaufphase so wichtig?', 'Crowdfunding-Plattformen ordnen Projekte teils nach dem frühen Schwung ein, also erreicht eine Kampagne, die mit Publikum und Frühzusagen startet, in den ersten 48 Stunden einen Teil ihres Ziels — der stärkste Indikator für die Finanzierung. Die Vorlage gibt dem Publikumsaufbau eine eigene, wochenlange Phase, statt den Launch-Tag als Start zu behandeln.'],
+      ['Kann ich Abhängigkeiten zwischen den Kampagnenaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Assets → Vorlauf → Launch → Auslieferung): Verzögert sich das Video, rücken Launch und alles Folgende von selbst nach und der kritische Pfad bis zum Launch-Tag bleibt sichtbar.'],
+      ['Ist die Crowdfunding-Kampagnen-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+    ],
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

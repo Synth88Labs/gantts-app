@@ -4316,6 +4316,44 @@ const T = {
       ['¿La plantilla de reforma de cocina es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+
+  'crowdfunding-campaign-plan': {
+    card: 'Planifica una campaña de crowdfunding de principio a fin: concepto, vídeo, audiencia previa, campaña en directo y entrega de recompensas.',
+    h1: 'Plantilla de campaña de crowdfunding',
+    metaTitle: 'Plantilla de campaña de crowdfunding',
+    metaDesc: 'Plantilla gratis de campaña de crowdfunding para Kickstarter o Indiegogo: concepto, vídeo, audiencia previa, campaña en directo y entrega. Excel u online.',
+    lead: 'Una plantilla gratuita de <strong>campaña de crowdfunding</strong> —un cronograma que lleva un proyecto de Kickstarter o Indiegogo de la idea a las recompensas entregadas: valida el concepto y las recompensas, crea el vídeo y la página, construye una audiencia previa al lanzamiento, ejecuta la campaña en directo y cumple. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día del lanzamiento.',
+    intro: 'Las campañas de crowdfunding se ganan antes de lanzarse: los proyectos que se financian rápido son los que pasaron semanas construyendo una lista de correo y alineando mecenas tempranos para que el primer día tenga impulso. Esta plantilla pone toda la campaña en una sola línea de tiempo —con la larga fase previa incluida— en las seis etapas por las que pasa:',
+    phases: [
+      ['Concepto y validación', 'Define la idea y la propuesta de valor, investiga el mercado, fija tu objetivo de financiación y presupuesto, diseña los niveles de recompensa y elige la plataforma. <em>Hito: concepto validado.</em>'],
+      ['Crear los materiales', 'Construye el prototipo o las muestras, guioniza y graba el vídeo de presentación, redacta la página de la campaña y diseña los gráficos. <em>Hito: materiales listos.</em>'],
+      ['Audiencia previa', 'Crea una página de aterrizaje, haz crecer una lista de correo, mueve comunidad y redes, alinea prensa y consigue compromisos anticipados por un 20% del objetivo. <em>Hito: lista previa lista.</em>'],
+      ['Preparar el lanzamiento', 'Haz una revisión y prueba final de la página, fija la fecha y calienta la lista, y prepara los correos y publicaciones del día de lanzamiento. <em>Hito: listo para lanzar.</em>'],
+      ['Campaña en directo', 'Lanza, interactúa con los mecenas a diario, haz un empujón de prensa a mitad de campaña, anuncia metas ampliadas e impulsa el sprint de las últimas 48 horas. <em>Hito: campaña financiada.</em>'],
+      ['Cierre y entrega', 'Agradece a tus mecenas, envía las encuestas del gestor de recompensas, cierra la producción y entrega y envía las recompensas. <em>Hito: recompensas entregadas.</em>'],
+    ],
+    callout: 'Construye tu audiencia antes de lanzar, no después. Las campañas se posicionan en parte por el impulso inicial, y un proyecto que abre sin lista de correo se estanca el primer día. Dedica las semanas previas a captar correos y a asegurar compromisos anticipados por un 20% del objetivo, para que la campaña alcance una parte de su meta en las primeras 48 horas: el mejor predictor de si se financia.',
+    customize: [
+      'Fija primero la fecha de lanzamiento y trabaja hacia atrás; una fase previa seria son de seis a doce semanas, no unos días.',
+      'Mantén las tareas de lista de correo y early bird activas durante semanas: construir audiencia previa es lo que de verdad financia la campaña, no la publicación del día de lanzamiento.',
+      'Añade una fila por nivel de recompensa en producción y entrega para que una campaña de varios niveles muestre la fabricación y el envío de cada uno.',
+      'Trata «asegurar compromisos anticipados» como un hito ligado a un número (≈20% del objetivo) para saber si estás listo para lanzar.',
+      'Presupuesta la entrega con realismo: la producción y el envío duran semanas o meses tras cerrar la campaña, y son donde los proyectos mal planificados pierden dinero.',
+    ],
+    tips: [
+      '<strong>La lista previa es la campaña.</strong> Los proyectos que se financian rápido casi siempre lanzaron con una lista de correo caliente; las semanas de construir audiencia antes del primer día importan más que nada de lo que hagas durante la campaña.',
+      '<strong>Las primeras 48 horas deciden el resultado.</strong> Las plataformas destacan los proyectos con impulso temprano, así que alinea suficientes mecenas anticipados para alcanzar una parte visible de tu objetivo el primer día en vez de esperar un repunte tardío.',
+      '<strong>El vídeo de presentación es lo que vende.</strong> Un vídeo claro y corto es el material de mayor impacto; dale tiempo real en el cronograma y termínalo antes de preparar el lanzamiento, no durante.',
+      '<strong>Planifica la entrega antes de lanzar.</strong> Los costes de envío y producción hunden más proyectos financiados que fallidos; fija el precio de los niveles y programa la entrega tan en serio como la propia campaña.',
+      '<strong>Mantén informados a los mecenas durante la campaña.</strong> Las actualizaciones y respuestas frecuentes mantienen el impulso y el ritmo de difusión; programa la interacción en lugar de callar tras el día de lanzamiento.',
+    ],
+    faq: [
+      ['¿Cuánto se tarda en planificar una campaña de crowdfunding?', 'La mayoría de las campañas de éxito dedican de seis a doce semanas a la fase previa —construir lista de correo, materiales y compromisos anticipados— antes de una campaña en directo de 30 días, y luego semanas o meses a la entrega. La plantilla reparte concepto, materiales, fase previa, lanzamiento, campaña en directo y entrega en una línea de tiempo para que veas el margen real.'],
+      ['¿Por qué es tan importante la fase previa?', 'Las plataformas de crowdfunding posicionan los proyectos en parte por el impulso inicial, así que una campaña que abre con audiencia y compromisos anticipados alcanza una parte de su objetivo en las primeras 48 horas: el mejor predictor de la financiación. La plantilla da a la construcción de audiencia su propia fase de varias semanas en lugar de tratar el día de lanzamiento como el inicio.'],
+      ['¿Puedo mostrar dependencias entre las tareas de la campaña?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (materiales → fase previa → lanzamiento → entrega): si el vídeo se retrasa, el lanzamiento y todo lo posterior se desplazan solos y la ruta crítica hasta el día del lanzamiento se mantiene visible.'],
+      ['¿La plantilla de campaña de crowdfunding es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

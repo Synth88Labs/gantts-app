@@ -7361,6 +7361,44 @@ const T = {
       ['O modelo de reforma de cozinha é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
     ],
   },
+
+  'crowdfunding-campaign-plan': {
+    card: 'Planeje uma campanha de crowdfunding de ponta a ponta: conceito, vídeo, público de pré-lançamento, campanha ao vivo e entrega.',
+    h1: 'Modelo de campanha de crowdfunding',
+    metaTitle: 'Modelo de campanha de crowdfunding',
+    metaDesc: 'Modelo gratuito de campanha de crowdfunding para Kickstarter ou Indiegogo: conceito, vídeo, público de pré-lançamento, campanha e entrega. Excel ou online.',
+    lead: 'Um modelo gratuito de <strong>campanha de crowdfunding</strong> — um cronograma que leva um projeto do Kickstarter ou Indiegogo da ideia às recompensas entregues: valide o conceito e as recompensas, produza o vídeo e a página, construa um público de pré-lançamento, toque a campanha ao vivo e faça a entrega. Baixe em Excel, PowerPoint ou CSV, ou abra online para ligar dependências e ver o caminho crítico até o dia do lançamento.',
+    intro: 'As campanhas de crowdfunding são ganhas antes de lançar: os projetos que se financiam rápido são os que passaram semanas construindo uma lista de e-mails e alinhando apoiadores antecipados, para que o primeiro dia tenha embalo. Este modelo coloca toda a campanha em uma só linha do tempo — com a longa fase de pré-lançamento incluída — nas seis etapas por que uma campanha passa:',
+    phases: [
+      ['Conceito e validação', 'Defina a ideia e a proposta de valor, pesquise o mercado, fixe sua meta de arrecadação e o orçamento, desenhe os níveis de recompensa e escolha a plataforma. <em>Marco: conceito validado.</em>'],
+      ['Criar os materiais', 'Construa o protótipo ou as amostras, roteirize e grave o vídeo de apresentação, escreva a página da campanha e crie as artes. <em>Marco: materiais prontos.</em>'],
+      ['Público de pré-lançamento', 'Crie uma página de captura, faça crescer uma lista de e-mails, movimente comunidade e redes, alinhe imprensa e garanta compromissos antecipados no valor de cerca de 20% da meta. <em>Marco: lista de pré-lançamento pronta.</em>'],
+      ['Preparar o lançamento', 'Faça uma revisão e um teste final da página, defina a data e aqueça a lista, e prepare os e-mails e posts do dia do lançamento. <em>Marco: pronto para lançar.</em>'],
+      ['Campanha ao vivo', 'Lance, interaja com os apoiadores todo dia, faça um empurrão de imprensa no meio da campanha, anuncie metas estendidas e conduza o sprint das últimas 48 horas. <em>Marco: campanha financiada.</em>'],
+      ['Encerramento e entrega', 'Agradeça aos apoiadores, envie os questionários do gerenciador de recompensas, finalize a produção e faça a entrega e o envio das recompensas. <em>Marco: recompensas entregues.</em>'],
+    ],
+    callout: 'Construa seu público antes de lançar, não depois. As campanhas são posicionadas em parte pelo embalo inicial, e um projeto que abre sem lista de e-mails empaca no primeiro dia. Use as semanas antes do lançamento para captar e-mails e garantir compromissos antecipados no valor de cerca de 20% da meta, para que a campanha alcance uma fatia do objetivo nas primeiras 48 horas — o maior indicador de que ela vai se financiar.',
+    customize: [
+      'Defina primeiro a data de lançamento e trabalhe de trás para frente; uma fase de pré-lançamento séria dura de seis a doze semanas, não uns dias.',
+      'Mantenha as tarefas de lista de e-mails e early bird ativas por semanas: construir público antes é o que de fato financia a campanha, não o post do dia do lançamento.',
+      'Adicione uma linha por nível de recompensa em produção e entrega para que uma campanha de vários níveis mostre a fabricação e o envio de cada um.',
+      'Trate garantir compromissos antecipados como um marco ligado a um número (≈20% da meta) para saber se você está pronto para lançar.',
+      'Orce a entrega com realismo: produção e envio duram semanas ou meses após o encerramento da campanha e são onde os projetos mal planejados perdem dinheiro.',
+    ],
+    tips: [
+      '<strong>A lista de pré-lançamento é a campanha.</strong> Os projetos que se financiam rápido quase sempre lançaram com uma lista de e-mails quente; as semanas de construção de público antes do primeiro dia importam mais do que qualquer coisa que você faça durante a campanha.',
+      '<strong>As primeiras 48 horas decidem o resultado.</strong> As plataformas destacam projetos com embalo inicial, então alinhe apoiadores antecipados suficientes para atingir uma fatia visível da meta no primeiro dia, em vez de torcer por uma arrancada tardia.',
+      '<strong>O vídeo de apresentação é quem vende.</strong> Um vídeo claro e curto é o material de maior alavancagem; dê a ele tempo real no cronograma e termine-o antes de preparar o lançamento, não durante.',
+      '<strong>Planeje a entrega antes de lançar.</strong> Custos de envio e produção afundam mais projetos financiados do que fracassados; precifique seus níveis e programe a entrega tão a sério quanto a própria campanha.',
+      '<strong>Mantenha os apoiadores informados durante a campanha.</strong> Atualizações e respostas frequentes sustentam o embalo e o compartilhamento; programe a interação em vez de sumir depois do dia do lançamento.',
+    ],
+    faq: [
+      ['Quanto tempo leva para planejar uma campanha de crowdfunding?', 'A maioria das campanhas bem-sucedidas passa de seis a doze semanas no pré-lançamento — construindo lista de e-mails, materiais e compromissos antecipados — antes de uma campanha ao vivo de 30 dias, e depois semanas ou meses na entrega. O modelo distribui conceito, materiais, pré-lançamento, lançamento, campanha ao vivo e entrega em uma linha do tempo para você ver a margem real.'],
+      ['Por que a fase de pré-lançamento é tão importante?', 'As plataformas de crowdfunding posicionam os projetos em parte pelo embalo inicial, então uma campanha que abre com público e compromissos antecipados alcança uma fatia da meta nas primeiras 48 horas — o maior indicador de financiamento. O modelo dá à construção de público sua própria fase de várias semanas, em vez de tratar o dia do lançamento como o início.'],
+      ['Posso mostrar dependências entre as tarefas da campanha?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito da gantts.app</a> para ligar relações término-início (materiais → pré-lançamento → lançamento → entrega): se o vídeo atrasar, o lançamento e tudo depois se deslocam sozinhos e o caminho crítico até o dia do lançamento continua visível.'],
+      ['O modelo de campanha de crowdfunding é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
+    ],
+  },
 };
 
 const UI = {

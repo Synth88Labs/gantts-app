@@ -7253,6 +7253,56 @@ const T = {
       ]
     ]
   },
+
+  'crowdfunding-campaign-plan': {
+    card: 'Planifiez une campagne de financement participatif de bout en bout : concept, vidéo, audience de pré-lancement, campagne en direct et livraison.',
+    h1: 'Modèle de campagne de financement participatif',
+    metaTitle: 'Campagne de crowdfunding — modèle',
+    metaDesc: 'Modèle gratuit de campagne de financement participatif : concept, vidéo, audience de pré-lancement, campagne et livraison. Excel ou en ligne.',
+    lead: 'Un <strong>modèle de campagne de financement participatif</strong> gratuit — un calendrier qui mène un projet Kickstarter ou Indiegogo de l’idée aux contreparties livrées : validez le concept et les contreparties, réalisez la vidéo et la page, construisez une audience de pré-lancement, menez la campagne en direct et livrez. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du lancement.',
+    intro: 'Les campagnes de financement participatif se gagnent avant leur lancement : les projets qui financent vite sont ceux qui ont passé des semaines à construire une liste d’e-mails et à aligner des contributeurs de la première heure, pour que le premier jour ait de l’élan. Ce modèle place toute la campagne sur une seule frise — la longue phase de pré-lancement comprise — en six étapes :',
+    phases: [
+      ['Concept &amp; validation', 'Définissez l’idée et la proposition de valeur, étudiez le marché, fixez votre objectif de collecte et le budget, concevez les paliers de contreparties et choisissez la plateforme. <em>Jalon : concept validé.</em>'],
+      ['Créer les supports', 'Construisez le prototype ou les échantillons, écrivez et tournez la vidéo de présentation, rédigez la page de campagne et concevez les visuels. <em>Jalon : supports prêts.</em>'],
+      ['Audience de pré-lancement', 'Créez une page d’atterrissage, faites grandir une liste d’e-mails, animez communauté et réseaux, alignez la presse et obtenez des engagements anticipés valant environ 20% de l’objectif. <em>Jalon : liste de pré-lancement prête.</em>'],
+      ['Préparer le lancement', 'Faites une relecture et un test final de la page, fixez la date et chauffez la liste, et préparez les e-mails et publications du jour de lancement. <em>Jalon : prêt à lancer.</em>'],
+      ['Campagne en direct', 'Lancez, échangez chaque jour avec les contributeurs, menez une relance presse à mi-parcours, annoncez des objectifs bonus et poussez le sprint des dernières 48 heures. <em>Jalon : campagne financée.</em>'],
+      ['Clôture &amp; livraison', 'Remerciez vos contributeurs, envoyez les questionnaires du gestionnaire de contributions, finalisez la production et livrez et expédiez les contreparties. <em>Jalon : contreparties livrées.</em>'],
+    ],
+    callout: 'Construisez votre audience avant de lancer, pas après. Les campagnes sont classées en partie sur l’élan initial, et un projet qui ouvre sans liste d’e-mails cale dès le premier jour. Consacrez les semaines avant le lancement à collecter des e-mails et à sécuriser des engagements anticipés valant environ 20% de l’objectif, pour que la campagne atteigne une part de sa cible dans les 48 premières heures — le meilleur indicateur de réussite du financement.',
+    customize: [
+      'Fixez d’abord votre date de lancement et remontez le fil ; une vraie phase de pré-lancement dure six à douze semaines, pas quelques jours.',
+      'Gardez les tâches liste d’e-mails et early bird actives pendant des semaines : la construction d’audience en amont est ce qui finance vraiment la campagne, pas la publication du jour de lancement.',
+      'Ajoutez une ligne par palier de contrepartie en production et livraison pour qu’une campagne à plusieurs paliers montre la fabrication et l’expédition de chacun.',
+      'Traitez « sécuriser les engagements anticipés » comme un jalon lié à un chiffre (≈20% de l’objectif) pour savoir si vous êtes prêt à lancer.',
+      'Budgétez la livraison de façon réaliste : la production et l’expédition durent des semaines ou des mois après la clôture, et c’est là que les projets mal préparés perdent de l’argent.',
+    ],
+    tips: [
+      '<strong>La liste de pré-lancement, c’est la campagne.</strong> Les projets qui financent vite ont presque toujours lancé avec une liste d’e-mails chaude ; les semaines de construction d’audience avant le premier jour comptent plus que tout ce que vous faites pendant la campagne.',
+      '<strong>Les 48 premières heures décident du résultat.</strong> Les plateformes mettent en avant les projets à l’élan précoce, alors alignez assez de contributeurs anticipés pour atteindre une part visible de votre objectif le premier jour, plutôt que d’espérer un sursaut tardif.',
+      '<strong>La vidéo de présentation fait la vente.</strong> Une vidéo claire et courte est le support à plus fort levier ; accordez-lui du temps réel dans le planning et terminez-la avant la préparation du lancement, pas pendant.',
+      '<strong>Planifiez la livraison avant de lancer.</strong> Les coûts d’expédition et de production coulent plus de projets financés que d’échecs ; tarifez vos paliers et planifiez la livraison aussi sérieusement que la campagne elle-même.',
+      '<strong>Tenez les contributeurs informés pendant la campagne.</strong> Des mises à jour et des réponses régulières entretiennent l’élan et le partage ; planifiez les échanges plutôt que de disparaître après le jour de lancement.',
+    ],
+    faq: [
+      [
+        'Combien de temps faut-il pour planifier une campagne de financement participatif ?',
+        'La plupart des campagnes réussies consacrent six à douze semaines au pré-lancement — construire une liste d’e-mails, les supports et des engagements anticipés — avant une campagne en direct de 30 jours, puis des semaines ou des mois à la livraison. Le modèle répartit concept, supports, pré-lancement, lancement, campagne en direct et livraison sur une frise pour voir la vraie marge.'
+      ],
+      [
+        'Pourquoi la phase de pré-lancement est-elle si importante ?',
+        'Les plateformes classent les projets en partie sur l’élan initial, donc une campagne qui ouvre avec une audience et des engagements anticipés atteint une part de son objectif dans les 48 premières heures — le meilleur indicateur de financement. Le modèle donne à la construction d’audience sa propre phase de plusieurs semaines au lieu de traiter le jour de lancement comme le départ.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches de la campagne ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (supports → pré-lancement → lancement → livraison) : si la vidéo glisse, le lancement et tout ce qui suit se décalent automatiquement et le chemin critique jusqu’au jour du lancement reste visible.'
+      ],
+      [
+        'Le modèle de campagne de financement participatif est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {
