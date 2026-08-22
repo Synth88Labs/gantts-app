@@ -4278,6 +4278,44 @@ const T = {
       ['¿La plantilla de planificación de mudanza es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+
+  'kitchen-remodel-timeline': {
+    card: 'Planifica una reforma de cocina semana a semana: diseño, pedir los muebles, demolición, instalaciones, encimeras y montaje final.',
+    h1: 'Plantilla de reforma de cocina',
+    metaTitle: 'Plantilla de reforma de cocina',
+    metaDesc: 'Plantilla y cronograma gratis de reforma de cocina: diseño, pedir muebles, demolición, instalaciones, encimeras y montaje final. Excel, PowerPoint u online.',
+    lead: 'Una plantilla gratuita de <strong>reforma de cocina</strong> —un cronograma semana a semana que lleva tu cocina de las primeras medidas a la inspección final: diseño y presupuesto, pedido de los muebles y encimeras de largo plazo, demolición, instalación de fontanería y electricidad, paredes y suelo, y por último el montaje de muebles, encimeras y electrodomésticos. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la cocina terminada.',
+    intro: 'Una reforma de cocina se alarga no porque el trabajo sea lento, sino por dos cosas: los muebles tardan de seis a ocho semanas en llegar y las encimeras no se pueden medir hasta que los muebles están montados, y luego hay que fabricarlas. Esta plantilla pone toda la obra en una sola línea de tiempo para que esos pedidos de largo plazo empiecen pronto y la secuencia no se atasque:',
+    phases: [
+      ['Diseño y planificación', 'Fija el presupuesto y el alcance, toma medidas y cierra la distribución, elige materiales y acabados, contrata al reformista y saca las licencias. <em>Hito: diseño aprobado.</em>'],
+      ['Pedir lo de largo plazo', 'Pide los muebles (el cuello de botella de seis a ocho semanas), las encimeras, los electrodomésticos, el suelo y los azulejos, y monta una cocina provisional. <em>Hito: muebles entregados.</em>'],
+      ['Demolición', 'Desconecta las instalaciones, retira los muebles, las encimeras y el suelo antiguos y saca los escombros. <em>Hito: demolición terminada.</em>'],
+      ['Instalaciones e inspección', 'Haz los cambios de tabiquería, deja la fontanería y la electricidad en su primera fase y pasa la inspección antes de cerrar las paredes. <em>Hito: instalaciones aprobadas.</em>'],
+      ['Paredes, suelo y pintura', 'Monta y remata el pladur, imprima y pinta, y coloca el suelo nuevo. <em>Hito: superficies listas.</em>'],
+      ['Montaje y acabado', 'Monta los muebles, toma medidas y coloca las encimeras, alicata el frente, instala los electrodomésticos, conecta agua y luz y pasa la inspección final. <em>Hito: cocina terminada.</em>'],
+    ],
+    callout: 'Pide los muebles lo primero: todo depende de ellos. Los muebles tardan de seis a ocho semanas en llegar y, tras la demolición, nada se termina sin ellos: las encimeras ni siquiera se pueden medir hasta que los muebles están montados, y luego necesitan una o dos semanas de fabricación. Haz ese pedido el día que se aprueba el diseño, no después de demoler, o toda la obra se para con la cocina inutilizable.',
+    customize: [
+      'Pide muebles y encimeras en cuanto se apruebe el diseño; su plazo de entrega, no la mano de obra, marca tu fecha de fin.',
+      'Mantén los pasos medir → fabricar → colocar la encimera como tareas separadas: esa una o dos semanas de fabricación es lo que casi todos olvidan planificar.',
+      'Monta una cocina provisional (microondas, hervidor, un fregadero en otro sitio) antes de demoler; estarás sin cocina la mayor parte de la obra.',
+      'Añade una fila por gremio (fontanero, electricista, alicatador) para ver quién está en obra cada semana y evitar que dos gremios choquen.',
+      'Marca «muebles entregados», «instalaciones aprobadas» y «superficies listas» como hitos para ver si el montaje puede empezar a tiempo.',
+    ],
+    tips: [
+      '<strong>Los muebles son la ruta crítica.</strong> Su plazo de seis a ocho semanas es más largo que toda la obra en sitio junta, así que lo que más controlas es con cuánta antelación haces el pedido.',
+      '<strong>Las encimeras no se pueden medir hasta que los muebles están montados.</strong> La secuencia medir → fabricar → colocar añade una o dos semanas tras el montaje de los muebles; planifica ese hueco en lugar de esperar las encimeras el primer día.',
+      '<strong>No cierres las paredes antes de la inspección de instalaciones.</strong> Tapar con pladur una fontanería o un cableado sin inspeccionar es el repaso clásico; el visto bueno de la inspección es una barrera antes del pladur.',
+      '<strong>Cierra cada elección antes de demoler.</strong> Cambiar un azulejo o el color de un mueble a mitad de obra es donde se disparan el presupuesto y los plazos; fija las decisiones en la fase de diseño.',
+      '<strong>Cuenta con vivir sin cocina.</strong> Monta una cocina provisional y organiza las comidas en torno a ella: las encimeras, el fregadero y los electrodomésticos son de lo último que vuelve.',
+    ],
+    faq: [
+      ['¿Cuánto dura una reforma de cocina?', 'La mayoría de las reformas de cocina duran de 10 a 16 semanas desde el diseño hasta la inspección final, y buena parte es esperar a los muebles (de seis a ocho semanas) y a la fabricación de las encimeras (una o dos semanas tras montar los muebles), no la mano de obra. La plantilla reparte diseño, pedidos, demolición, instalaciones, superficies y montaje en una línea de tiempo para que veas dónde están las esperas de verdad.'],
+      ['¿Por qué tardan tanto las encimeras?', 'Las encimeras no se pueden medir (tomar plantilla) hasta que los muebles están montados; luego el material se fabrica en taller una o dos semanas antes de poder colocarlo. La plantilla mantiene medir → fabricar → colocar como pasos separados para que ese hueco sea visible y el frente y las conexiones queden secuenciados después.'],
+      ['¿Puedo mostrar dependencias entre las tareas de la reforma?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (demolición → instalaciones → pladur → muebles → encimeras): si los muebles se retrasan, todo lo posterior se desplaza solo y la ruta crítica hasta la cocina terminada se mantiene visible.'],
+      ['¿La plantilla de reforma de cocina es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.

@@ -7203,6 +7203,56 @@ const T = {
       ]
     ]
   },
+
+  'kitchen-remodel-timeline': {
+    card: 'Planifiez une rénovation de cuisine semaine par semaine : conception, commande des meubles, démolition, réseaux, plans de travail et pose finale.',
+    h1: 'Modèle de planning de rénovation de cuisine',
+    metaTitle: 'Rénovation de cuisine — modèle',
+    metaDesc: 'Modèle et planning gratuits de rénovation de cuisine : conception, commande des meubles, démolition, réseaux et plans de travail. Excel ou en ligne.',
+    lead: 'Un <strong>planning de rénovation de cuisine</strong> gratuit — un calendrier semaine par semaine qui mène votre cuisine des premières mesures au contrôle final : conception et budget, commande des meubles et plans de travail à long délai, démolition, passage de la plomberie et de l’électricité, murs et sol, puis la pose des meubles, des plans de travail et de l’électroménager. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la cuisine terminée.',
+    intro: 'Une rénovation de cuisine s’étire non parce que le travail est lent, mais pour deux raisons : les meubles mettent six à huit semaines à arriver et les plans de travail ne peuvent être mesurés qu’une fois les meubles posés — puis fabriqués. Ce modèle place tout le chantier sur une seule frise pour que ces commandes à long délai partent tôt et que la séquence ne cale jamais :',
+    phases: [
+      ['Conception &amp; planification', 'Fixez le budget et le périmètre, prenez les mesures et arrêtez l’implantation, choisissez matériaux et finitions, engagez l’entreprise et obtenez les autorisations. <em>Jalon : conception validée.</em>'],
+      ['Commander les longs délais', 'Commandez les meubles (le goulot de six à huit semaines), les plans de travail, l’électroménager, le sol et le carrelage, et installez une cuisine provisoire. <em>Jalon : meubles livrés.</em>'],
+      ['Démolition', 'Débranchez les réseaux, déposez les anciens meubles, plans de travail et sol, et évacuez les gravats. <em>Jalon : démolition terminée.</em>'],
+      ['Réseaux &amp; contrôle', 'Faites les modifications de cloisons, passez la plomberie et l’électricité, et validez le contrôle avant de refermer les murs. <em>Jalon : réseaux validés.</em>'],
+      ['Murs, sol &amp; peinture', 'Posez et finissez le placo, apprêtez et peignez, et posez le nouveau sol. <em>Jalon : surfaces prêtes.</em>'],
+      ['Pose &amp; finitions', 'Posez les meubles, prenez les mesures et posez les plans de travail, carrelez la crédence, installez l’électroménager, raccordez eau et électricité et passez le contrôle final. <em>Jalon : cuisine terminée.</em>'],
+    ],
+    callout: 'Commandez les meubles en premier : tout dépend d’eux. Les meubles mettent six à huit semaines à arriver et, après la démolition, rien ne se termine sans eux : les plans de travail ne peuvent même pas être mesurés tant que les meubles ne sont pas posés, puis il leur faut une à deux semaines de fabrication. Passez cette commande le jour où la conception est validée, pas après la démolition, sinon tout le chantier s’arrête avec une cuisine inutilisable.',
+    customize: [
+      'Commandez meubles et plans de travail dès la validation de la conception ; c’est leur délai, pas la main-d’œuvre, qui fixe votre date de fin.',
+      'Gardez les étapes mesurer → fabriquer → poser le plan de travail comme des tâches distinctes : cette une à deux semaines de fabrication est ce que la plupart oublient de prévoir.',
+      'Installez une cuisine provisoire (micro-ondes, bouilloire, un évier ailleurs) avant la démolition ; vous serez sans cuisine la majeure partie du chantier.',
+      'Ajoutez une ligne par corps de métier (plombier, électricien, carreleur) pour voir qui est sur le chantier chaque semaine et éviter que deux métiers ne se gênent.',
+      'Marquez « meubles livrés », « réseaux validés » et « surfaces prêtes » comme des jalons pour voir si la pose peut démarrer à temps.',
+    ],
+    tips: [
+      '<strong>Les meubles sont le chemin critique.</strong> Leur délai de six à huit semaines est plus long que tout le travail sur place réuni, donc ce que vous maîtrisez le plus, c’est la précocité de la commande.',
+      '<strong>Les plans de travail ne se mesurent qu’une fois les meubles posés.</strong> La séquence mesurer → fabriquer → poser ajoute une à deux semaines après la pose des meubles ; prévoyez ce délai plutôt que d’attendre les plans dès le premier jour.',
+      '<strong>Ne refermez pas les murs avant le contrôle des réseaux.</strong> Recouvrir de placo une plomberie ou un câblage non contrôlé est la reprise classique ; la validation du contrôle est une barrière avant le placo.',
+      '<strong>Arrêtez chaque choix avant la démolition.</strong> Changer un carreau ou la couleur d’un meuble en cours de chantier, c’est là que budget et délais dérapent ; verrouillez les décisions en phase de conception.',
+      '<strong>Prévoyez de vivre sans cuisine.</strong> Installez une cuisine provisoire et organisez les repas autour : les plans de travail, l’évier et l’électroménager sont parmi les derniers éléments à revenir.',
+    ],
+    faq: [
+      [
+        'Combien de temps dure une rénovation de cuisine ?',
+        'La plupart des rénovations de cuisine durent 10 à 16 semaines de la conception au contrôle final — et l’essentiel, c’est l’attente des meubles (six à huit semaines) et de la fabrication des plans de travail (une à deux semaines après la pose des meubles), pas la main-d’œuvre. Le modèle répartit conception, commandes, démolition, réseaux, surfaces et pose sur une frise pour voir où sont les vraies attentes.'
+      ],
+      [
+        'Pourquoi les plans de travail sont-ils si longs ?',
+        'Les plans de travail ne peuvent être mesurés (gabarit) qu’une fois les meubles posés ; le matériau est ensuite fabriqué en atelier une à deux semaines avant de pouvoir être posé. Le modèle garde mesurer → fabriquer → poser comme des étapes distinctes pour que ce délai soit visible et que la crédence et les raccordements soient séquencés après.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches de la rénovation ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (démolition → réseaux → placo → meubles → plans de travail) : si les meubles sont en retard, tout ce qui suit se décale automatiquement et le chemin critique jusqu’à la cuisine terminée reste visible.'
+      ],
+      [
+        'Le modèle de rénovation de cuisine est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

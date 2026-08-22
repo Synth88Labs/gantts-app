@@ -7305,6 +7305,44 @@ const T = {
       ['Ist die Umzugsplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
+
+  'kitchen-remodel-timeline': {
+    card: 'Planen Sie einen Küchenumbau Woche für Woche: Planung, Schränke bestellen, Abriss, Rohinstallation, Arbeitsplatten und Endmontage.',
+    h1: 'Küchenumbau-Zeitplan-Vorlage',
+    metaTitle: 'Küchenumbau-Zeitplan-Vorlage',
+    metaDesc: 'Kostenlose Küchenumbau-Zeitplan-Vorlage: Planung, Schränke bestellen, Abriss, Rohinstallation, Arbeitsplatten und Endmontage. Als Excel oder online.',
+    lead: 'Eine kostenlose <strong>Küchenumbau-Zeitplan-Vorlage</strong> — ein Wochenplan, der Ihre Küche vom ersten Aufmaß bis zur Endabnahme führt: Planung und Budget, Bestellung der Schränke und Arbeitsplatten mit langer Lieferzeit, Abriss, Rohinstallation von Sanitär und Elektrik, Wände und Boden und zuletzt die Montage von Schränken, Arbeitsplatten und Geräten. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur fertigen Küche zu sehen.',
+    intro: 'Ein Küchenumbau zieht sich nicht, weil die Arbeit langsam wäre, sondern aus zwei Gründen: Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke stehen — und werden dann gefertigt. Diese Vorlage legt den ganzen Umbau auf eine Zeitachse, damit diese Bestellungen mit langer Lieferzeit früh starten und die Abfolge nie ins Stocken gerät:',
+    phases: [
+      ['Planung &amp; Entwurf', 'Budget und Umfang festlegen, aufmessen und den Grundriss festzurren, Materialien und Oberflächen wählen, den Betrieb beauftragen und Genehmigungen einholen. <em>Meilenstein: Entwurf freigegeben.</em>'],
+      ['Lange Lieferzeiten bestellen', 'Schränke bestellen (der Engpass von sechs bis acht Wochen), dazu Arbeitsplatten, Geräte, Bodenbelag und Fliesen, und eine provisorische Küche einrichten. <em>Meilenstein: Schränke geliefert.</em>'],
+      ['Abriss', 'Die Anschlüsse trennen, alte Schränke, Arbeitsplatten und Boden herausreißen und den Bauschutt abtransportieren. <em>Meilenstein: Abriss fertig.</em>'],
+      ['Rohinstallation &amp; Abnahme', 'Wände anpassen, die Sanitär- und Elektro-Rohinstallation verlegen und die Abnahme bestehen, bevor die Wände geschlossen werden. <em>Meilenstein: Rohinstallation abgenommen.</em>'],
+      ['Wände, Boden &amp; Farbe', 'Den Trockenbau setzen und verspachteln, grundieren und streichen und den neuen Boden verlegen. <em>Meilenstein: Flächen fertig.</em>'],
+      ['Montage &amp; Endausbau', 'Schränke montieren, Arbeitsplatten aufmessen und einbauen, die Rückwand fliesen, Geräte anschließen, Wasser und Strom anklemmen und die Endabnahme bestehen. <em>Meilenstein: Küche fertig.</em>'],
+    ],
+    callout: 'Bestellen Sie zuerst die Schränke — alles wartet auf sie. Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und nach dem Abriss lässt sich ohne sie nichts fertigstellen: Arbeitsplatten können nicht einmal aufgemessen werden, bevor die Schränke montiert sind, und danach brauchen sie ein bis zwei Wochen Fertigung. Geben Sie diese Bestellung an dem Tag auf, an dem der Entwurf freigegeben wird, nicht nach dem Abriss, sonst steht der ganze Umbau still und die Küche ist unbenutzbar.',
+    customize: [
+      'Bestellen Sie Schränke und Arbeitsplatten, sobald der Entwurf freigegeben ist; ihre Lieferzeit, nicht die Arbeit, bestimmt Ihren Fertigstellungstermin.',
+      'Halten Sie die Schritte aufmessen → fertigen → einbauen der Arbeitsplatte als getrennte Aufgaben — diese ein bis zwei Wochen Fertigung vergessen die meisten einzuplanen.',
+      'Richten Sie vor dem Abriss eine provisorische Küche ein (Mikrowelle, Wasserkocher, ein Waschbecken anderswo); Sie sind den größten Teil des Umbaus ohne Küche.',
+      'Fügen Sie je eine Zeile pro Gewerk hinzu (Installateur, Elektriker, Fliesenleger), um zu sehen, wer jede Woche auf der Baustelle ist, und Kollisionen zu vermeiden.',
+      'Markieren Sie Schränke geliefert, Rohinstallation abgenommen und Flächen fertig als Meilensteine, um zu sehen, ob die Montage rechtzeitig starten kann.',
+    ],
+    tips: [
+      '<strong>Die Schränke sind der kritische Pfad.</strong> Ihre Lieferzeit von sechs bis acht Wochen ist länger als die gesamte Arbeit vor Ort zusammen — das Wichtigste, das Sie steuern, ist also, wie früh Sie bestellen.',
+      '<strong>Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke stehen.</strong> Die Abfolge aufmessen → fertigen → einbauen kostet ein bis zwei Wochen nach der Schrankmontage; planen Sie diese Lücke ein, statt die Platten am ersten Tag zu erwarten.',
+      '<strong>Schließen Sie die Wände nicht vor der Abnahme der Rohinstallation.</strong> Nicht abgenommene Leitungen mit Trockenbau zu verkleiden ist die klassische Nacharbeit; die Abnahme ist eine harte Schranke vor dem Trockenbau.',
+      '<strong>Legen Sie jede Auswahl vor dem Abriss fest.</strong> Eine Fliese oder eine Schrankfarbe mitten im Umbau zu ändern ist der Punkt, an dem Budget und Termine kippen; fixieren Sie die Entscheidungen in der Planungsphase.',
+      '<strong>Rechnen Sie damit, ohne Küche zu leben.</strong> Richten Sie eine provisorische Küche ein und planen Sie die Mahlzeiten darum herum — Arbeitsplatten, Spüle und Geräte gehören zu den Letzten, die zurückkommen.',
+    ],
+    faq: [
+      ['Wie lange dauert ein Küchenumbau?', 'Die meisten Küchenumbauten dauern 10 bis 16 Wochen vom Entwurf bis zur Endabnahme — und der Großteil ist Warten auf die Schränke (sechs bis acht Wochen) und die Fertigung der Arbeitsplatten (ein bis zwei Wochen nach der Schrankmontage), nicht die Arbeit vor Ort. Die Vorlage verteilt Planung, Bestellung, Abriss, Rohinstallation, Flächen und Montage über eine Zeitachse, sodass Sie sehen, wo die echten Wartezeiten liegen.'],
+      ['Warum dauern Arbeitsplatten so lange?', 'Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke montiert sind; danach wird das Material ein bis zwei Wochen in der Werkstatt gefertigt, bevor es eingebaut werden kann. Die Vorlage hält aufmessen → fertigen → einbauen als getrennte Schritte, damit diese Lücke sichtbar ist und Rückwand und Anschlüsse danach eingetaktet werden.'],
+      ['Kann ich Abhängigkeiten zwischen den Umbauaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Abriss → Rohinstallation → Trockenbau → Schränke → Arbeitsplatten): Sind die Schränke spät, rückt alles Folgende von selbst nach und der kritische Pfad bis zur fertigen Küche bleibt sichtbar.'],
+      ['Ist die Küchenumbau-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+    ],
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

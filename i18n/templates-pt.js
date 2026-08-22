@@ -7323,6 +7323,44 @@ const T = {
       ['O modelo de planejamento de mudança é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
     ],
   },
+
+  'kitchen-remodel-timeline': {
+    card: 'Planeje uma reforma de cozinha semana a semana: projeto, pedir os armários, demolição, instalações, bancadas e montagem final.',
+    h1: 'Modelo de cronograma de reforma de cozinha',
+    metaTitle: 'Modelo de reforma de cozinha',
+    metaDesc: 'Modelo e cronograma gratuitos de reforma de cozinha: projeto, pedir armários, demolição, instalações, bancadas e montagem final. Excel, PowerPoint ou online.',
+    lead: 'Um modelo gratuito de <strong>reforma de cozinha</strong> — um cronograma semana a semana que leva sua cozinha das primeiras medidas à vistoria final: projeto e orçamento, pedido dos armários e bancadas de longo prazo, demolição, instalações hidráulicas e elétricas, paredes e piso e, por fim, a montagem de armários, bancadas e eletrodomésticos. Baixe em Excel, PowerPoint ou CSV, ou abra online para ligar dependências e ver o caminho crítico até a cozinha pronta.',
+    intro: 'Uma reforma de cozinha se estende não porque o trabalho seja lento, mas por dois motivos: os armários levam de seis a oito semanas para chegar e as bancadas só podem ser medidas depois que os armários estão instalados — e então precisam ser fabricadas. Este modelo coloca toda a obra em uma só linha do tempo para que esses pedidos de longo prazo comecem cedo e a sequência nunca trave:',
+    phases: [
+      ['Projeto e planejamento', 'Defina o orçamento e o escopo, meça e feche o layout, escolha materiais e acabamentos, contrate o empreiteiro e tire as licenças. <em>Marco: projeto aprovado.</em>'],
+      ['Pedir os itens de longo prazo', 'Peça os armários (o gargalo de seis a oito semanas), as bancadas, os eletrodomésticos, o piso e os azulejos, e monte uma cozinha provisória. <em>Marco: armários entregues.</em>'],
+      ['Demolição', 'Desligue as instalações, retire os armários, as bancadas e o piso antigos e leve o entulho embora. <em>Marco: demolição concluída.</em>'],
+      ['Instalações e vistoria', 'Faça as mudanças de parede, deixe a hidráulica e a elétrica prontas na fase bruta e passe na vistoria antes de fechar as paredes. <em>Marco: instalações aprovadas.</em>'],
+      ['Paredes, piso e pintura', 'Instale e acabe o drywall, aplique o primer e pinte, e assente o piso novo. <em>Marco: superfícies prontas.</em>'],
+      ['Montagem e acabamento', 'Monte os armários, meça e instale as bancadas, assente o revestimento da parede, instale os eletrodomésticos, ligue água e luz e passe na vistoria final. <em>Marco: cozinha pronta.</em>'],
+    ],
+    callout: 'Peça os armários primeiro: tudo depende deles. Os armários levam de seis a oito semanas para chegar e, depois da demolição, nada se conclui sem eles: as bancadas nem sequer podem ser medidas antes de os armários estarem instalados e, depois, precisam de uma a duas semanas de fabricação. Faça esse pedido no dia em que o projeto for aprovado, não depois de demolir, ou toda a obra para com a cozinha inutilizável.',
+    customize: [
+      'Peça armários e bancadas assim que o projeto for aprovado; é o prazo deles, não a mão de obra, que define sua data de término.',
+      'Mantenha as etapas medir → fabricar → instalar a bancada como tarefas separadas: essa uma a duas semanas de fabricação é o que quase todo mundo esquece de planejar.',
+      'Monte uma cozinha provisória (micro-ondas, chaleira, uma pia em outro lugar) antes de demolir; você ficará sem cozinha na maior parte da obra.',
+      'Adicione uma linha por profissional (encanador, eletricista, azulejista) para ver quem está na obra a cada semana e evitar que dois se atrapalhem.',
+      'Marque armários entregues, instalações aprovadas e superfícies prontas como marcos para ver se a montagem pode começar no prazo.',
+    ],
+    tips: [
+      '<strong>Os armários são o caminho crítico.</strong> O prazo de seis a oito semanas deles é maior do que toda a obra no local somada, então o que você mais controla é a antecedência com que faz o pedido.',
+      '<strong>As bancadas só podem ser medidas depois que os armários estão instalados.</strong> A sequência medir → fabricar → instalar acrescenta uma a duas semanas após a montagem dos armários; planeje esse intervalo em vez de esperar as bancadas no primeiro dia.',
+      '<strong>Não feche as paredes antes da vistoria das instalações.</strong> Cobrir com drywall uma hidráulica ou fiação sem vistoria é o retrabalho clássico; a aprovação da vistoria é uma barreira antes do drywall.',
+      '<strong>Feche cada escolha antes de demolir.</strong> Trocar um azulejo ou a cor de um armário no meio da obra é onde o orçamento e o prazo estouram; trave as decisões na fase de projeto.',
+      '<strong>Conte com viver sem cozinha.</strong> Monte uma cozinha provisória e planeje as refeições em torno dela: bancadas, pia e eletrodomésticos estão entre as últimas coisas a voltar.',
+    ],
+    faq: [
+      ['Quanto tempo leva uma reforma de cozinha?', 'A maioria das reformas de cozinha leva de 10 a 16 semanas do projeto à vistoria final — e boa parte é a espera pelos armários (seis a oito semanas) e pela fabricação das bancadas (uma a duas semanas após os armários instalados), não a mão de obra. O modelo distribui projeto, pedidos, demolição, instalações, superfícies e montagem em uma linha do tempo para você ver onde estão as esperas de verdade.'],
+      ['Por que as bancadas demoram tanto?', 'As bancadas só podem ser medidas (gabarito) depois que os armários estão instalados; então o material é fabricado fora por uma a duas semanas antes de poder ser instalado. O modelo mantém medir → fabricar → instalar como etapas separadas para que esse intervalo fique visível e o revestimento e as ligações fiquem sequenciados depois.'],
+      ['Posso mostrar dependências entre as tarefas da reforma?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito da gantts.app</a> para ligar relações término-início (demolição → instalações → drywall → armários → bancadas): se os armários atrasarem, tudo o que vem depois se desloca sozinho e o caminho crítico até a cozinha pronta continua visível.'],
+      ['O modelo de reforma de cozinha é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
+    ],
+  },
 };
 
 const UI = {
