@@ -7303,6 +7303,56 @@ const T = {
       ]
     ]
   },
+
+  'performance-review-cycle': {
+    card: 'Menez un cycle d’évaluation de la performance de bout en bout : cadre, auto-évaluations, évaluations des managers, calibrage, restitution et développement.',
+    h1: 'Modèle de cycle d’évaluation de la performance',
+    metaTitle: 'Cycle d’évaluation de la performance',
+    metaDesc: 'Modèle gratuit de cycle d’évaluation de la performance : cadre, auto-évaluations, évaluations des managers, calibrage et restitution. Excel ou en ligne.',
+    lead: 'Un <strong>modèle de cycle d’évaluation de la performance</strong> gratuit — un calendrier qui mène un cycle d’évaluation du cadre aux évaluations clôturées : fixez les critères et formez les managers, recueillez auto-évaluations et feedback 360, rédigez les évaluations des managers, calibrez les notes, restituez en entretien individuel et fixez des plans de développement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la restitution.',
+    intro: 'Les évaluations dérapent quand les étapes se chevauchent : des managers qui rédigent avant d’avoir les auto-évaluations, ou des notes restituées avant le calibrage. Ce modèle place tout le cycle sur une seule frise, en six étapes qu’un processus d’évaluation traverse — annuel, semestriel ou trimestriel :',
+    phases: [
+      ['Préparer &amp; cadrer', 'Définissez le périmètre et le calendrier du cycle, mettez à jour les compétences et l’échelle de notation, configurez l’outil, communiquez à l’organisation et formez les managers. <em>Jalon : cadre du cycle prêt.</em>'],
+      ['Objectifs &amp; auto-évaluation', 'Confirmez les objectifs évalués, recueillez les auto-évaluations des salariés et le feedback 360/des pairs, et rassemblez les données de performance à l’appui. <em>Jalon : auto-évaluations reçues.</em>'],
+      ['Évaluations des managers', 'Les managers rédigent leurs évaluations, proposent des notes selon l’échelle et passent une revue du n+2 avant que les notes n’aillent au calibrage. <em>Jalon : notes provisoires prêtes.</em>'],
+      ['Calibrage', 'Préparez les données de calibrage, tenez les sessions pour normaliser les notes entre équipes, et arrêtez les notes et les décisions de rémunération et de promotion. <em>Jalon : notes arrêtées.</em>'],
+      ['Restitution', 'Préparez les comptes rendus d’évaluation et restituez les évaluations en entretien individuel. <em>Jalon : évaluations restituées.</em>'],
+      ['Développement &amp; clôture', 'Fixez les objectifs du prochain cycle, convenez des plans de développement, recueillez un retour sur le processus, et clôturez et rendez compte du cycle. <em>Jalon : cycle clôturé.</em>'],
+    ],
+    callout: 'Calibrez avant de restituer, jamais après. Une note communiquée à un salarié ne peut être retirée, il faut donc la normaliser entre équipes — au calibrage — avant de restituer une seule évaluation. L’erreur la plus dommageable d’un cycle est qu’un manager partage une note que le calibrage change ensuite ; traitez « notes arrêtées » comme une barrière avant tout entretien.',
+    customize: [
+      'Fixez d’abord la date limite de restitution et remontez le fil ; un cycle complet demande six à dix semaines une fois auto-évaluation, évaluations et calibrage bien enchaînés.',
+      'Gardez l’auto-évaluation strictement avant les évaluations des managers : le but est que le manager rédige avec l’apport du salarié en main, pas après coup.',
+      'Ajoutez une ligne par équipe ou service sous évaluations des managers et calibrage pour qu’une grande organisation montre l’avancement de chaque groupe.',
+      'Pour des cycles trimestriels, compressez les mêmes six phases ; pour des cycles annuels, donnez plus de place au calibrage et à la restitution.',
+      'Marquez « auto-évaluations reçues », « notes provisoires prêtes » et « notes arrêtées » comme des jalons pour voir si la restitution peut démarrer à temps.',
+    ],
+    tips: [
+      '<strong>Les auto-évaluations conditionnent celles des managers.</strong> Le manager devrait rédiger avec l’auto-évaluation et le feedback des pairs déjà reçus ; enchaînez les phases pour qu’aucune évaluation ne soit rédigée avant ses entrées.',
+      '<strong>Le calibrage est ce qui rend les notes justes.</strong> Les normaliser entre équipes avant la restitution empêche un manager indulgent ou sévère de fausser les résultats ; ne restituez jamais une note non calibrée.',
+      '<strong>Les notes sont irréversibles une fois restituées.</strong> Traitez « notes arrêtées » comme une barrière : une note partagée en entretien puis changée au calibrage détruit la confiance dans tout le processus.',
+      '<strong>Formez les managers avant l’ouverture du cycle.</strong> Des écrits et des notes cohérents dépendent de managers qui comprennent l’échelle et les critères en amont, pas en cours de cycle.',
+      '<strong>Bouclez la boucle avec des plans de développement.</strong> L’évaluation est l’entrée, pas la sortie ; planifiez les objectifs du prochain cycle et les plans de développement pour que le cycle nourrisse la progression, pas seulement une note.',
+    ],
+    faq: [
+      [
+        'Combien de temps dure un cycle d’évaluation de la performance ?',
+        'Un cycle complet dure généralement six à dix semaines, de l’ouverture du cadre à la restitution des évaluations — plus dans les grandes organisations, car le calibrage et la restitution croissent avec l’effectif. Le modèle répartit préparation, auto-évaluation, évaluations des managers, calibrage, restitution et développement sur une frise pour voir si vos dates sont réalistes.'
+      ],
+      [
+        'Quelles sont les étapes d’un cycle d’évaluation de la performance ?',
+        'La plupart des cycles passent par six étapes : cadre et formation des managers, auto-évaluation et feedback 360, évaluations des managers et notes provisoires, calibrage, restitution en entretien individuel et planification du développement. Le modèle donne à chacune sa propre phase avec des jalons, et convient aux cycles annuels, semestriels ou trimestriels.'
+      ],
+      [
+        'Puis-je afficher les dépendances entre les tâches du cycle ?',
+        'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier les relations fin-à-début (auto-évaluations → évaluations des managers → calibrage → restitution) : si les auto-évaluations tardent, tout ce qui suit se décale automatiquement et le chemin critique jusqu’à la restitution reste visible.'
+      ],
+      [
+        'Le modèle de cycle d’évaluation de la performance est-il gratuit ?',
+        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+      ]
+    ]
+  },
 };
 
 const UI = {

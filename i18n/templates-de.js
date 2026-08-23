@@ -7381,6 +7381,44 @@ const T = {
       ['Ist die Crowdfunding-Kampagnen-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
+
+  'performance-review-cycle': {
+    card: 'Führen Sie einen Leistungsbeurteilungszyklus von Anfang bis Ende: Rahmen, Selbsteinschätzungen, Beurteilungen, Kalibrierung, Übergabe und Entwicklung.',
+    h1: 'Leistungsbeurteilungs-Vorlage',
+    metaTitle: 'Leistungsbeurteilungs-Vorlage',
+    metaDesc: 'Kostenlose Vorlage für den Leistungsbeurteilungszyklus: Rahmen, Selbsteinschätzungen, Beurteilungen, Kalibrierung und Übergabe. Als Excel oder online.',
+    lead: 'Eine kostenlose <strong>Leistungsbeurteilungs-Vorlage</strong> — eine Zeitachse, die einen Beurteilungszyklus vom Rahmen bis zu den abgeschlossenen Beurteilungen führt: Kriterien festlegen und Führungskräfte schulen, Selbsteinschätzungen und 360-Grad-Feedback einholen, die Beurteilungen der Führungskräfte schreiben, die Bewertungen kalibrieren, im Einzelgespräch übergeben und Entwicklungspläne festlegen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur Übergabe zu sehen.',
+    intro: 'Beurteilungen laufen schief, wenn sich die Phasen überschneiden: Führungskräfte schreiben, bevor die Selbsteinschätzungen da sind, oder Bewertungen werden vor der Kalibrierung übergeben. Diese Vorlage legt den ganzen Zyklus auf eine Zeitachse, in den sechs Phasen, die ein Beurteilungsprozess durchläuft — jährlich, halbjährlich oder quartalsweise:',
+    phases: [
+      ['Planen &amp; einrichten', 'Umfang und Zeitplan des Zyklus definieren, Kompetenzen und Bewertungsskala aktualisieren, das Tool einrichten, an die Organisation kommunizieren und Führungskräfte schulen. <em>Meilenstein: Zyklusrahmen steht.</em>'],
+      ['Ziele &amp; Selbsteinschätzung', 'Die zu beurteilenden Ziele bestätigen, die Selbsteinschätzungen der Mitarbeitenden und 360-Grad-/Peer-Feedback einholen und die unterstützenden Leistungsdaten sammeln. <em>Meilenstein: Selbsteinschätzungen da.</em>'],
+      ['Beurteilungen der Führungskräfte', 'Die Führungskräfte schreiben ihre Beurteilungen, entwerfen Bewertungen anhand der Skala und durchlaufen eine Review der nächsthöheren Ebene, bevor die Bewertungen in die Kalibrierung gehen. <em>Meilenstein: Entwurfsbewertungen fertig.</em>'],
+      ['Kalibrierung', 'Die Kalibrierungsdaten vorbereiten, die Sitzungen abhalten, um Bewertungen über Teams hinweg zu normalisieren, und Bewertungen sowie Vergütungs- und Beförderungsentscheidungen final machen. <em>Meilenstein: Bewertungen final.</em>'],
+      ['Übergabe', 'Die Beurteilungsunterlagen vorbereiten und die Beurteilungen im Einzelgespräch übergeben. <em>Meilenstein: Beurteilungen übergeben.</em>'],
+      ['Entwicklung &amp; Abschluss', 'Ziele für den nächsten Zyklus setzen, Entwicklungspläne vereinbaren, Feedback zum Prozess einholen und den Zyklus abschließen und berichten. <em>Meilenstein: Zyklus abgeschlossen.</em>'],
+    ],
+    callout: 'Kalibrieren Sie vor der Übergabe, nie danach. Eine an eine mitarbeitende Person übergebene Bewertung lässt sich nicht zurücknehmen, also muss sie über Teams hinweg normalisiert werden — in der Kalibrierung — bevor eine einzige Beurteilung übergeben wird. Der schädlichste Fehler eines Zyklus ist, dass eine Führungskraft eine Note teilt, die die Kalibrierung später ändert; behandeln Sie Bewertungen final als harte Schranke vor jedem Einzelgespräch.',
+    customize: [
+      'Legen Sie zuerst die Übergabefrist fest und rechnen Sie rückwärts; ein voller Zyklus braucht sechs bis zehn Wochen, wenn Selbsteinschätzung, Beurteilungen und Kalibrierung sauber verkettet sind.',
+      'Halten Sie die Selbsteinschätzung strikt vor den Beurteilungen der Führungskräfte: Der ganze Sinn ist, dass die Führungskraft mit dem Input der Person in der Hand schreibt, nicht im Nachhinein.',
+      'Fügen Sie unter Beurteilungen und Kalibrierung je eine Zeile pro Team oder Abteilung hinzu, damit eine große Organisation den Fortschritt jeder Gruppe zeigt.',
+      'Bei Quartalszyklen verdichten Sie dieselben sechs Phasen; bei Jahreszyklen geben Sie Kalibrierung und Übergabe mehr Raum.',
+      'Markieren Sie Selbsteinschätzungen da, Entwurfsbewertungen fertig und Bewertungen final als Meilensteine, um zu sehen, ob die Übergabe rechtzeitig starten kann.',
+    ],
+    tips: [
+      '<strong>Selbsteinschätzungen sind die Schranke vor den Beurteilungen.</strong> Führungskräfte sollten mit Selbsteinschätzung und Peer-Feedback in der Hand schreiben; verketten Sie die Phasen so, dass keine Beurteilung vor ihren Eingaben entsteht.',
+      '<strong>Die Kalibrierung macht Bewertungen fair.</strong> Sie über Teams hinweg vor der Übergabe zu normalisieren verhindert, dass eine milde oder strenge Führungskraft die Ergebnisse verzerrt; übergeben Sie nie eine unkalibrierte Bewertung.',
+      '<strong>Bewertungen sind nach der Übergabe unumkehrbar.</strong> Behandeln Sie Bewertungen final als harte Schranke — eine im Einzelgespräch geteilte und dann in der Kalibrierung geänderte Note zerstört das Vertrauen in den ganzen Prozess.',
+      '<strong>Schulen Sie Führungskräfte vor dem Start des Zyklus.</strong> Einheitliche Texte und Bewertungen hängen davon ab, dass Führungskräfte Skala und Kriterien vorab verstehen, nicht mitten im Zyklus.',
+      '<strong>Schließen Sie den Kreis mit Entwicklungsplänen.</strong> Die Beurteilung ist der Input, nicht das Ergebnis; planen Sie Ziele für den nächsten Zyklus und Entwicklungspläne, damit der Zyklus Wachstum antreibt und nicht nur eine Note.',
+    ],
+    faq: [
+      ['Wie lange dauert ein Leistungsbeurteilungszyklus?', 'Ein voller Zyklus dauert typischerweise sechs bis zehn Wochen vom Öffnen des Rahmens bis zur Übergabe der Beurteilungen — länger in großen Organisationen, weil Kalibrierung und Übergabe mit der Belegschaft wachsen. Die Vorlage verteilt Einrichtung, Selbsteinschätzung, Beurteilungen, Kalibrierung, Übergabe und Entwicklung über eine Zeitachse, sodass Sie sehen, ob Ihre Termine realistisch sind.'],
+      ['Welche Phasen hat ein Leistungsbeurteilungszyklus?', 'Die meisten Zyklen durchlaufen sechs Phasen: Rahmen und Schulung der Führungskräfte, Selbsteinschätzung und 360-Grad-Feedback, Beurteilungen und Entwurfsbewertungen, Kalibrierung, Übergabe im Einzelgespräch und Entwicklungsplanung. Die Vorlage gibt jeder eine eigene Phase mit Meilensteinen und passt für jährliche, halbjährliche oder quartalsweise Zyklen.'],
+      ['Kann ich Abhängigkeiten zwischen den Zyklusaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Selbsteinschätzungen → Beurteilungen → Kalibrierung → Übergabe): Verzögern sich die Selbsteinschätzungen, rückt alles Folgende von selbst nach und der kritische Pfad bis zur Übergabe bleibt sichtbar.'],
+      ['Ist die Leistungsbeurteilungs-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+    ],
+  },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish

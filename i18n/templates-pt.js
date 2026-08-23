@@ -7399,6 +7399,44 @@ const T = {
       ['O modelo de campanha de crowdfunding é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
     ],
   },
+
+  'performance-review-cycle': {
+    card: 'Conduza um ciclo de avaliação de desempenho de ponta a ponta: framework, autoavaliações, avaliações do gestor, calibração, entrega e desenvolvimento.',
+    h1: 'Modelo de ciclo de avaliação de desempenho',
+    metaTitle: 'Ciclo de avaliação de desempenho',
+    metaDesc: 'Modelo gratuito de ciclo de avaliação de desempenho: framework, autoavaliações, avaliações do gestor, calibração e entrega. Excel, PowerPoint ou online.',
+    lead: 'Um modelo gratuito de <strong>ciclo de avaliação de desempenho</strong> — um cronograma que leva um ciclo de avaliação do framework às avaliações encerradas: defina os critérios e treine os gestores, colete autoavaliações e feedback 360, escreva as avaliações dos gestores, calibre as notas, entregue em conversas 1:1 e defina planos de desenvolvimento. Baixe em Excel, PowerPoint ou CSV, ou abra online para ligar dependências e ver o caminho crítico até a entrega das avaliações.',
+    intro: 'As avaliações dão errado quando as etapas se sobrepõem: gestores escrevendo antes de as autoavaliações chegarem, ou notas entregues antes da calibração. Este modelo coloca todo o ciclo em uma só linha do tempo, nas seis etapas por que um processo de avaliação passa — anual, semestral ou trimestral:',
+    phases: [
+      ['Planejar e preparar', 'Defina o escopo e o cronograma do ciclo, atualize as competências e a escala de avaliação, configure a ferramenta, comunique à organização e treine os gestores. <em>Marco: framework do ciclo pronto.</em>'],
+      ['Metas e autoavaliação', 'Confirme as metas em avaliação, colete as autoavaliações dos funcionários e o feedback 360/dos pares, e reúna os dados de desempenho de apoio. <em>Marco: autoavaliações recebidas.</em>'],
+      ['Avaliações do gestor', 'Os gestores escrevem suas avaliações, propõem notas conforme a escala e passam por uma revisão do superior antes de as notas irem para a calibração. <em>Marco: notas preliminares prontas.</em>'],
+      ['Calibração', 'Prepare os dados de calibração, conduza as sessões para normalizar as notas entre times, e finalize as notas e as decisões de remuneração e promoção. <em>Marco: notas finalizadas.</em>'],
+      ['Entrega', 'Prepare os relatórios de avaliação e entregue as avaliações em conversas 1:1. <em>Marco: avaliações entregues.</em>'],
+      ['Desenvolvimento e encerramento', 'Defina as metas do próximo ciclo, combine planos de desenvolvimento, colete feedback sobre o processo, e encerre e reporte o ciclo. <em>Marco: ciclo encerrado.</em>'],
+    ],
+    callout: 'Calibre antes de entregar, nunca depois. Uma nota comunicada a um funcionário não pode ser desfeita, então ela precisa ser normalizada entre times — na calibração — antes de uma única avaliação ser entregue. O erro mais danoso de um ciclo é um gestor compartilhar uma nota que a calibração muda depois, então trate notas finalizadas como uma barreira antes de qualquer 1:1.',
+    customize: [
+      'Defina primeiro o prazo de entrega e trabalhe de trás para frente; um ciclo completo precisa de seis a dez semanas quando autoavaliação, avaliações e calibração são sequenciadas direito.',
+      'Mantenha a autoavaliação estritamente antes das avaliações do gestor: a ideia é que o gestor escreva com a contribuição do funcionário em mãos, não depois.',
+      'Adicione uma linha por time ou departamento em avaliações do gestor e calibração para que uma organização grande mostre o avanço de cada grupo.',
+      'Para ciclos trimestrais, comprima as mesmas seis fases; para ciclos anuais, dê mais espaço à calibração e à entrega.',
+      'Marque autoavaliações recebidas, notas preliminares prontas e notas finalizadas como marcos para ver se a entrega pode começar no prazo.',
+    ],
+    tips: [
+      '<strong>As autoavaliações são a barreira antes das avaliações do gestor.</strong> O gestor deve escrever com a autoavaliação e o feedback dos pares já em mãos; sequencie as fases para que nenhuma avaliação seja escrita antes de seus insumos.',
+      '<strong>A calibração é o que torna as notas justas.</strong> Normalizá-las entre times antes da entrega é o que impede um gestor leniente ou severo de distorcer os resultados; nunca entregue uma nota sem calibrar.',
+      '<strong>As notas são irreversíveis depois de entregues.</strong> Trate notas finalizadas como uma barreira: uma nota compartilhada em um 1:1 e depois mudada na calibração destrói a confiança em todo o processo.',
+      '<strong>Treine os gestores antes de abrir o ciclo.</strong> Textos e notas consistentes dependem de os gestores entenderem a escala e os critérios de antemão, não no meio do ciclo.',
+      '<strong>Feche o ciclo com planos de desenvolvimento.</strong> A avaliação é o insumo, não o resultado; programe metas do próximo ciclo e planos de desenvolvimento para que o ciclo impulsione o crescimento, e não só uma nota.',
+    ],
+    faq: [
+      ['Quanto tempo leva um ciclo de avaliação de desempenho?', 'Um ciclo completo costuma durar de seis a dez semanas, da abertura do framework até a entrega das avaliações — mais em organizações grandes, porque a calibração e a entrega escalam com o quadro de pessoal. O modelo distribui preparação, autoavaliação, avaliações do gestor, calibração, entrega e desenvolvimento em uma linha do tempo para você ver se suas datas são realistas.'],
+      ['Quais são as etapas de um ciclo de avaliação de desempenho?', 'A maioria dos ciclos passa por seis etapas: framework e treinamento dos gestores, autoavaliação e feedback 360, avaliações do gestor e notas preliminares, calibração, entrega em 1:1 e planejamento de desenvolvimento. O modelo dá a cada uma sua própria fase com marcos, e serve para ciclos anuais, semestrais ou trimestrais.'],
+      ['Posso mostrar dependências entre as tarefas do ciclo?', 'Sim. Abra o modelo no <a href="/pt/app.html">editor gratuito da gantts.app</a> para ligar relações término-início (autoavaliações → avaliações do gestor → calibração → entrega): se as autoavaliações atrasarem, tudo depois se desloca sozinho e o caminho crítico até a entrega continua visível.'],
+      ['O modelo de ciclo de avaliação de desempenho é gratuito?', 'Sim — gratuito para baixar em Excel, PowerPoint ou CSV, e gratuito para editar online, sem cadastro.'],
+    ],
+  },
 };
 
 const UI = {

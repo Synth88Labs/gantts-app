@@ -4354,6 +4354,44 @@ const T = {
       ['¿La plantilla de campaña de crowdfunding es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
   },
+
+  'performance-review-cycle': {
+    card: 'Ejecuta un ciclo de evaluación del desempeño de principio a fin: marco, autoevaluaciones, evaluaciones del manager, calibración, entrega y desarrollo.',
+    h1: 'Plantilla de ciclo de evaluación del desempeño',
+    metaTitle: 'Ciclo de evaluación del desempeño',
+    metaDesc: 'Plantilla gratis de ciclo de evaluación del desempeño: marco, autoevaluaciones, evaluaciones del manager, calibración y entrega. Excel, PowerPoint u online.',
+    lead: 'Una plantilla gratuita de <strong>ciclo de evaluación del desempeño</strong> —un cronograma que lleva un ciclo de evaluación del marco a las evaluaciones cerradas: fija los criterios y forma a los managers, recoge autoevaluaciones y feedback 360, redacta las evaluaciones de los managers, calibra las valoraciones, entrégalas en 1:1 y fija planes de desarrollo. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la entrega de las evaluaciones.',
+    intro: 'Las evaluaciones se tuercen cuando las etapas se solapan: managers que redactan antes de tener las autoevaluaciones, o valoraciones entregadas antes de calibrar. Esta plantilla pone todo el ciclo en una sola línea de tiempo, en las seis etapas por las que pasa un proceso de evaluación —anual, semestral o trimestral:',
+    phases: [
+      ['Planificar y preparar', 'Define el alcance y el calendario del ciclo, actualiza las competencias y la escala de valoración, configura la herramienta, comunícalo a la organización y forma a los managers. <em>Hito: marco del ciclo listo.</em>'],
+      ['Objetivos y autoevaluación', 'Confirma los objetivos a evaluar, recoge las autoevaluaciones de los empleados y el feedback 360/de pares, y reúne los datos de desempeño de apoyo. <em>Hito: autoevaluaciones recibidas.</em>'],
+      ['Evaluaciones del manager', 'Los managers redactan sus evaluaciones, proponen valoraciones según la escala y pasan una revisión del superior antes de que las valoraciones vayan a calibración. <em>Hito: valoraciones borrador listas.</em>'],
+      ['Calibración', 'Prepara los datos de calibración, celebra las sesiones para normalizar las valoraciones entre equipos y cierra las valoraciones y las decisiones de retribución y promoción. <em>Hito: valoraciones cerradas.</em>'],
+      ['Entrega', 'Prepara los informes de evaluación y entrega las evaluaciones en conversaciones 1:1. <em>Hito: evaluaciones entregadas.</em>'],
+      ['Desarrollo y cierre', 'Fija los objetivos del próximo ciclo, acuerda planes de desarrollo, recoge feedback sobre el proceso y cierra y reporta el ciclo. <em>Hito: ciclo cerrado.</em>'],
+    ],
+    callout: 'Calibra antes de entregar, nunca después. Una valoración comunicada a un empleado no se puede deshacer, así que hay que normalizarla entre equipos —en la calibración— antes de entregar una sola evaluación. El error más dañino de un ciclo es que un manager comparta una nota que la calibración cambie después, así que trata «valoraciones cerradas» como una barrera antes de cualquier 1:1.',
+    customize: [
+      'Fija primero la fecha límite de entrega y trabaja hacia atrás; un ciclo completo necesita de seis a diez semanas si autoevaluación, evaluaciones y calibración se secuencian bien.',
+      'Mantén la autoevaluación estrictamente antes de las evaluaciones del manager: la idea es que el manager redacte con la aportación del empleado en la mano, no después.',
+      'Añade una fila por equipo o departamento en evaluaciones del manager y calibración para que una organización grande muestre el avance de cada grupo.',
+      'Para ciclos trimestrales, comprime las mismas seis fases; para ciclos anuales, da más margen a la calibración y la entrega.',
+      'Marca «autoevaluaciones recibidas», «valoraciones borrador listas» y «valoraciones cerradas» como hitos para ver si la entrega puede empezar a tiempo.',
+    ],
+    tips: [
+      '<strong>Las autoevaluaciones condicionan las del manager.</strong> El manager debería redactar con la autoevaluación y el feedback de pares ya recibidos; secuencia las fases para que ninguna evaluación se redacte antes de tener sus insumos.',
+      '<strong>La calibración es lo que hace justas las valoraciones.</strong> Normalizarlas entre equipos antes de entregar es lo que evita que un manager indulgente o severo desvirtúe los resultados; nunca entregues una valoración sin calibrar.',
+      '<strong>Las valoraciones son irreversibles una vez entregadas.</strong> Trata «valoraciones cerradas» como una barrera: una nota compartida en un 1:1 y luego cambiada en calibración destruye la confianza en todo el proceso.',
+      '<strong>Forma a los managers antes de abrir el ciclo.</strong> Unos textos y valoraciones consistentes dependen de que los managers entiendan la escala y los criterios de antemano, no a mitad de ciclo.',
+      '<strong>Cierra el círculo con planes de desarrollo.</strong> La evaluación es el insumo, no el resultado; programa objetivos del próximo ciclo y planes de desarrollo para que el ciclo impulse el crecimiento y no solo una nota.',
+    ],
+    faq: [
+      ['¿Cuánto dura un ciclo de evaluación del desempeño?', 'Un ciclo completo suele durar de seis a diez semanas desde que se abre el marco hasta que se entregan las evaluaciones —más en organizaciones grandes, porque la calibración y la entrega escalan con la plantilla. La plantilla reparte preparación, autoevaluación, evaluaciones del manager, calibración, entrega y desarrollo en una línea de tiempo para que veas si tus fechas son realistas.'],
+      ['¿Cuáles son las etapas de un ciclo de evaluación del desempeño?', 'La mayoría de los ciclos pasa por seis etapas: marco y formación de managers, autoevaluación y feedback 360, evaluaciones del manager y valoraciones borrador, calibración, entrega en 1:1 y planificación del desarrollo. La plantilla da a cada una su propia fase con hitos, y sirve para ciclos anuales, semestrales o trimestrales.'],
+      ['¿Puedo mostrar dependencias entre las tareas del ciclo?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (autoevaluaciones → evaluaciones del manager → calibración → entrega): si las autoevaluaciones se retrasan, todo lo posterior se desplaza solo y la ruta crítica hasta la entrega se mantiene visible.'],
+      ['¿La plantilla de ciclo de evaluación del desempeño es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
+    ],
+  },
 };
 
 /* Page furniture: headings, download buttons, breadcrumb and CTA band.
