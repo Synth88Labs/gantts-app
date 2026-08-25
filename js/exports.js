@@ -206,6 +206,7 @@
         Days: U.duration(t.start, t.end),
         'Progress %': t.progress || 0,
         Assignee: t.assignee || '',
+        Deadline: t.deadline || '',
         Dependencies: (t.deps || []).map(d => { const f = Model.get(d.from); return f ? Render.wbs(f) + '(' + d.type + ')' : ''; }).filter(Boolean).join(', '),
         Notes: t.notes || '',
       }));

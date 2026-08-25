@@ -125,6 +125,7 @@
         progress:     { label: '%',    i18n: null,          width: 56,   cls: 'col-prog',     cell: (t) => R._progCell(t) },
         predecessors: { label: 'Runs after', i18n: 'col.pred', width: 100, cls: 'col-pred',   cell: (t) => R._predCell(t) },
         assignee:     { label: 'Assignee', i18n: 'col.assignee', width: 108, cls: 'col-assignee', cell: (t) => R._assigneeCell(t) },
+        deadline:     { label: 'Deadline', i18n: 'col.deadline', width: 100, cls: 'col-deadline', cell: (t) => R._deadlineCell(t) },
         slack:        { label: 'Slack', i18n: 'col.slack',   width: 64,   cls: 'col-slack',    cell: (t) => R._slackCell(t) },
         cost:         { label: 'Cost', i18n: 'col.cost',     width: 82,   cls: 'col-cost',     cell: (t) => R._costCell(t) },
         baseStart:    { label: 'Base start', i18n: null,     width: 86,   cls: 'col-bstart',   cell: (t) => R._baseCell(t, 'start') },
@@ -134,7 +135,7 @@
       };
       return this._cols;
     },
-    ALL_COLUMN_KEYS: ['id', 'wbs', 'name', 'start', 'end', 'duration', 'progress', 'predecessors', 'assignee', 'slack', 'cost', 'baseStart', 'baseEnd', 'startVar', 'finishVar'],
+    ALL_COLUMN_KEYS: ['id', 'wbs', 'name', 'start', 'end', 'duration', 'progress', 'predecessors', 'assignee', 'deadline', 'slack', 'cost', 'baseStart', 'baseEnd', 'startVar', 'finishVar'],
     visibleColumns() {
       const reg = this.columns();
       let keys = Model.project.settings.columns;
@@ -425,6 +426,24 @@
       });
       return U.el('div', { class: 'grow-cell col-cost' }, input);
     },
+    // A task is "slipping" when it carries a committed deadline and its
+    // scheduled finish falls after it. Groups and deadline-less tasks never slip.
+    _isSlipping(t) {
+      return !!(t && t.deadline && t.type !== 'group' && U.parse(t.end) > U.parse(t.deadline));
+    },
+    _deadlineCell(t) {
+      if (t.type === 'group') {
+        return U.el('div', { class: 'grow-cell col-deadline' }, U.el('span', { class: 'ro-text' }, ''));
+      }
+      const late = this._isSlipping(t);
+      const input = U.el('input', {
+        class: 'cell-input' + (late ? ' deadline-late' : ''), type: 'date', value: t.deadline || '',
+        'aria-label': this._cellName(t, App.T('col.deadline', 'Deadline')),
+        title: late ? App.T('deadline.slipTip', 'Scheduled finish is past this deadline') : '',
+        onchange: (e) => Model.update(t.id, { deadline: e.target.value || null }),
+      });
+      return U.el('div', { class: 'grow-cell col-deadline' }, input);
+    },
 
     _editDate(t, which, val) {
       if (!val) return;
@@ -544,6 +563,8 @@
         visible.forEach((t, i) => { const g = this.baselineBar(t, i); if (g) bars.appendChild(g); });
       }
       visible.forEach((t, i) => bars.appendChild(this.bar(t, i)));
+      // deadline flags sit above the bars so a red flag is never hidden by one
+      visible.forEach((t, i) => { const m = this.deadlineMarker(t, i); if (m) bars.appendChild(m); });
 
       // dependency arrows
       this.renderDeps(visible);
@@ -613,6 +634,21 @@
         'data-baseline-for': t.id,
         title: 'Baseline: ' + U.fmtShort(b.start) + ' → ' + U.fmtShort(b.end),
         style: { left: left + 'px', top: (i * ROW_H + BAR_TOP + BAR_H - 1) + 'px', width: w + 'px' },
+      });
+    },
+
+    // A small flag pinned to the day a task is due. Turns red when the task's
+    // scheduled finish is past it — the visual half of the slip alert.
+    deadlineMarker(t, i) {
+      if (!t.deadline || t.type === 'group') return null;
+      const rs = this.rs;
+      const x = this.xOf(t.deadline) + rs.dayW / 2;
+      const late = this._isSlipping(t);
+      return U.el('div', {
+        class: 'deadline-marker' + (late ? ' late' : ''),
+        title: App.Tn('deadline.on', 'Deadline: {date}', { date: U.fmtShort(t.deadline) })
+          + (late ? ' — ' + App.T('deadline.missed', 'scheduled to finish late') : ''),
+        style: { left: x + 'px', top: (i * ROW_H) + 'px' },
       });
     },
 
@@ -687,6 +723,7 @@
       if (isGroup) cls.push('group');
       if (t.id === Model.selectedId) cls.push('selected');
       if (critical) cls.push('critical');
+      if (this._isSlipping(t)) cls.push('deadline-slip');
 
       if (t._context) cls.push('is-context');
 

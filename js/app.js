@@ -539,6 +539,10 @@
         t.type !== 'group' && t.end && (t.progress || 0) < 100 && U.parse(t.end) < U.parse(U.today())).length;
       if (late) out += ` ${late} task${late === 1 ? ' is' : 's are'} past due.`;
 
+      const slipping = tasks.filter(t =>
+        t.type !== 'group' && t.deadline && U.parse(t.end) > U.parse(t.deadline)).length;
+      if (slipping) out += ` ${slipping} task${slipping === 1 ? ' is' : 's are'} past deadline.`;
+
       return out;
     },
 

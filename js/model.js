@@ -160,7 +160,7 @@
       if (!Array.isArray(p.settings.columns) || !p.settings.columns.length) p.settings.columns = blankProject().settings.columns.slice();
       p.tasks = (p.tasks || []).map(t => Object.assign({
         progress: 0, color: U.PALETTE[0], assignee: '', type: 'task',
-        parentId: null, collapsed: false, notes: '', deps: [], cost: 0,
+        parentId: null, collapsed: false, notes: '', deps: [], cost: 0, deadline: null,
         /* Actual cost incurred so far. Earned value needs it and will
            not guess: with no actuals entered, evm.js reports CPI as
            null rather than deriving cost from progress, which would
@@ -332,7 +332,7 @@
         })(partial && partial.type),
         start, end: partial && partial.type === 'milestone' ? start : U.endFrom(start, 3),
         progress: 0, color: U.PALETTE[this.project.tasks.length % U.PALETTE.length],
-        assignee: '', type: 'task', parentId: sel ? sel.parentId : null, collapsed: false, notes: '', deps: [],
+        assignee: '', type: 'task', parentId: sel ? sel.parentId : null, collapsed: false, notes: '', deps: [], deadline: null,
       }, partial);
       if (t.type === 'milestone') t.end = t.start;
       // insert after selected (and its subtree) or at end

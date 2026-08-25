@@ -244,6 +244,14 @@ body.col-resizing .grow-row:hover { background: none; }
 .bar.selected { outline: 2px solid var(--brand); outline-offset: 1px; }
 .bar.critical { box-shadow: 0 0 0 2.5px var(--critical), 0 0 12px rgba(249,115,116,.55); border: 1px solid var(--critical); }
 .bar.critical .bar-fill { background: rgba(120,40,0,.28); }
+/* Deadlines & slip alerts: a flag pinned to the due date, red when the
+   scheduled finish blows past it, plus an inner red ring on the slipping bar. */
+.deadline-marker { position: absolute; width: 0; height: 36px; transform: translateX(-50%); z-index: 4; pointer-events: none; border-left: 1.5px dashed var(--muted, #94a3b8); }
+.deadline-marker::before { content: '⚑'; position: absolute; top: -2px; left: 1px; font-size: 11px; line-height: 1; color: var(--muted, #94a3b8); }
+.deadline-marker.late { border-left-color: var(--critical, #f97374); }
+.deadline-marker.late::before { color: var(--critical, #f97374); }
+.bar.deadline-slip { box-shadow: inset 0 0 0 2px var(--critical, #f97374); }
+.cell-input.deadline-late { color: var(--critical, #f97374); font-weight: 600; }
 .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px 0 0 6px; background: rgba(0,0,0,.22); pointer-events: none; }
 .bar-label { position: absolute; left: calc(100% + 8px); white-space: nowrap; font-size: 11.5px; color: var(--ink); pointer-events: none; }
 .bar-label.inside { left: 8px; color: #fff; font-weight: 600; }
