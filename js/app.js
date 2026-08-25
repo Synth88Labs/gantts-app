@@ -11,6 +11,9 @@
       Render.init();
       Model.init();
 
+      // Embed mode: a read-only, chrome-free chart for iframing on other sites.
+      if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('embed-mode');
+
       this.wireTopbar();
       this.wireToolbar();
       this.wireDrawer();
@@ -79,7 +82,20 @@
       this.renderWorkload();
       this.renderViewNote();
       this.refreshChartSummary();
+      this.refreshColorLegend();
       this.syncSampleNote();
+    },
+
+    // Swatch legend for the current "colour by" mode; empty (hidden) when off.
+    refreshColorLegend() {
+      const el = U.$('#colorLegend'); if (!el) return;
+      const items = (Render.colorLegend ? Render.colorLegend() : []).slice(0, 12);
+      U.clear(el);
+      el.hidden = !items.length;
+      items.forEach(it => el.appendChild(U.el('span', { class: 'cl-item' }, [
+        U.el('i', { class: 'cl-swatch', style: { background: it.color } }),
+        U.el('span', {}, it.label),
+      ])));
     },
 
     syncSampleNote() {
@@ -253,6 +269,16 @@
         document.addEventListener('click', () => { menu.hidden = true; });
       }
 
+      // colour-by + free-text filter
+      const cbSel = U.$('#colorBySelect');
+      if (cbSel) cbSel.addEventListener('change', (e) => { Model.project.settings.colorBy = e.target.value; Model.save(); this.render(); });
+      const tf = U.$('#taskFilter');
+      if (tf) tf.addEventListener('input', (e) => { Model.project.settings.filter = e.target.value; Model.save(); this.render(); });
+
+      // key-date markers + shift-dates (build their panel on open)
+      this._wireBuildMenu('#markersBtn', '#markersMenu', () => this.buildMarkersMenu());
+      this._wireBuildMenu('#shiftBtn', '#shiftMenu', () => this.buildShiftMenu());
+
       // ---- view mode, S-curve, auto-schedule ----
       const vSel = U.$('#viewSelect');
       if (vSel) vSel.addEventListener('change', () => this.setViewMode(vSel.value));
@@ -365,10 +391,60 @@
       this.render();
     },
 
+    // Toggle a build-on-open dropdown, mirroring the columns/baseline menus.
+    _wireBuildMenu(btnSel, panelSel, build) {
+      const btn = U.$(btnSel), menu = U.$(panelSel);
+      if (!btn || !menu) return;
+      menu.addEventListener('click', (e) => e.stopPropagation());
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = !menu.hidden;
+        this.closeMenus();
+        if (open) { menu.hidden = true; return; }
+        build();
+        menu.hidden = false;
+      });
+      document.addEventListener('click', () => { menu.hidden = true; });
+    },
+
+    buildMarkersMenu() {
+      const menu = U.$('#markersMenu'); U.clear(menu);
+      menu.appendChild(U.el('div', { class: 'menu-title' }, this.T('mk.title', 'Key-date markers')));
+      const markers = Model.project.settings.markers || [];
+      if (markers.length) {
+        markers.forEach(m => menu.appendChild(U.el('div', { class: 'mk-row' }, [
+          U.el('i', { class: 'mk-dot', style: { background: m.color || '#ef4444' } }),
+          U.el('span', { class: 'mk-label' }, (m.label || '—') + ' · ' + U.fmtShort(m.date)),
+          U.el('button', { class: 'mk-del', title: this.T('mk.remove', 'Remove'), onclick: () => { Model.removeMarker(m.id); this.buildMarkersMenu(); } }, '✕'),
+        ])));
+        menu.appendChild(U.el('div', { class: 'menu-sep' }));
+      }
+      menu.appendChild(U.el('div', { class: 'menu-title' }, this.T('mk.add', 'Add a marker')));
+      const labelI = U.el('input', { type: 'text', class: 'select', placeholder: this.T('mk.labelPh', 'Label (e.g. Launch)') });
+      const dateI = U.el('input', { type: 'date', class: 'select', value: U.today() });
+      menu.appendChild(labelI);
+      menu.appendChild(dateI);
+      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { if (!dateI.value) return; Model.addMarker(dateI.value, labelI.value); this.buildMarkersMenu(); } }, '＋ ' + this.T('mk.addBtn', 'Add marker')));
+    },
+
+    buildShiftMenu() {
+      const menu = U.$('#shiftMenu'); U.clear(menu);
+      menu.appendChild(U.el('div', { class: 'menu-title' }, this.T('sh.title', 'Shift the whole plan')));
+      menu.appendChild(U.el('div', { class: 'menu-hint' }, this.T('sh.hint', 'Move every task by the same amount so the plan starts on a new date — durations and gaps stay the same.')));
+      let curMin = null;
+      Model.tasks().forEach(t => { if (t.start && (!curMin || U.parse(t.start) < U.parse(curMin))) curMin = t.start; });
+      menu.appendChild(U.el('label', { class: 'menu-hint' }, this.T('sh.startOn', 'Start the plan on:')));
+      const dateI = U.el('input', { type: 'date', class: 'select', value: curMin || U.today() });
+      menu.appendChild(dateI);
+      menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => { if (!dateI.value) return; Model.shiftPlan(dateI.value); this.closeMenus(); this.toast(this.T('sh.done', 'Plan shifted')); } }, '🗓 ' + this.T('sh.apply', 'Shift plan')));
+    },
+
     syncControls() {
       U.$('#projectName').value = Model.project.name;
       const s = Model.project.settings;
       U.$('#zoomSelect').value = s.zoom;
+      const cb = U.$('#colorBySelect'); if (cb) cb.value = s.colorBy || 'none';
+      const tf = U.$('#taskFilter'); if (tf && tf.value !== (s.filter || '')) tf.value = s.filter || '';
       U.$('#toggleCritical').checked = s.showCritical;
       U.$('#toggleWeekends').checked = s.showWeekends;
       U.$('#toggleProgress').checked = s.showProgress;

@@ -32,7 +32,7 @@
   <meta property="og:locale" content="fr_FR" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=61" />
+  <link rel="stylesheet" href="/css/styles.css?v=62" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export.
 
@@ -127,6 +127,7 @@
           <button data-export="json" data-i18n="exp.json">{ } JSON (raw)</button>
           <button data-export="print" data-i18n="exp.print">🖨 Print</button>
           <button data-export="link" data-i18n="exp.link">🔗 Shareable link</button>
+          <button data-export="embed" data-i18n="exp.embed">🖼 Embed (iframe)</button>
         </div>
       </div>
     </div>
@@ -162,6 +163,14 @@
         <button class="btn" id="baselineBtn" title="Freeze the current plan and track slippage against it">◳ <span data-i18n="app.baseline">Baseline</span></button>
         <div class="menu-panel" id="baselineMenu" hidden></div>
       </div>
+      <div class="menu">
+        <button class="btn" id="markersBtn" title="Key-date lines (launch, review gates, quarter ends)">⚑ <span data-i18n="app.markers">Markers</span></button>
+        <div class="menu-panel" id="markersMenu" hidden></div>
+      </div>
+      <div class="menu">
+        <button class="btn" id="shiftBtn" title="Move the whole plan to start on a chosen date">🗓 <span data-i18n="app.shift">Shift dates</span></button>
+        <div class="menu-panel" id="shiftMenu" hidden></div>
+      </div>
     </div>
 
     <div class="tgroup">
@@ -171,6 +180,7 @@
         <option value="week">Week</option>
         <option value="month">Month</option>
         <option value="quarter">Quarter</option>
+        <option value="year">Year</option>
       </select>
     </div>
 
@@ -214,6 +224,18 @@
         <option value="6">6 weeks</option>
         <option value="8">8 weeks</option>
       </select>
+    </div>
+
+    <div class="tgroup">
+      <label class="tlabel" for="colorBySelect" data-i18n="app.colorby">Colour by</label>
+      <select id="colorBySelect" class="select" title="Colour the bars by owner, tag or phase">
+        <option value="none" data-i18n="color.default">Default</option>
+        <option value="assignee" data-i18n="color.assignee">Assignee</option>
+        <option value="tag" data-i18n="color.tag">Tag</option>
+        <option value="phase" data-i18n="color.phase">Phase</option>
+      </select>
+      <span id="colorLegend" class="color-legend" aria-hidden="true"></span>
+      <input id="taskFilter" class="select filter-input" type="search" placeholder="Filter tasks…" data-i18n-ph="app.filter" title="Show only tasks matching this text (name, assignee or tag)" />
     </div>
 
     <div class="tgroup grow"></div>
@@ -369,30 +391,30 @@
   <div class="sr-only" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=61"></script>
-  <script src="/js/util.js?v=61"></script>
-  <script src="/js/store.js?v=61"></script>
-  <script src="/js/calendar.js?v=61"></script>
-  <script src="/js/resources.js?v=61"></script>
-  <script src="/js/model.js?v=61"></script>
-  <script src="/js/schedule.js?v=61"></script>
-  <script src="/js/render.js?v=61"></script>
-  <script src="/js/interactions.js?v=61"></script>
-  <script src="/js/msproject.js?v=61"></script>
+  <script src="/js/i18n.js?v=62"></script>
+  <script src="/js/util.js?v=62"></script>
+  <script src="/js/store.js?v=62"></script>
+  <script src="/js/calendar.js?v=62"></script>
+  <script src="/js/resources.js?v=62"></script>
+  <script src="/js/model.js?v=62"></script>
+  <script src="/js/schedule.js?v=62"></script>
+  <script src="/js/render.js?v=62"></script>
+  <script src="/js/interactions.js?v=62"></script>
+  <script src="/js/msproject.js?v=62"></script>
   <script src="/js/mermaid-gantt.js?v=57"></script>
   <script src="/js/ics.js?v=57"></script>
   <script src="/js/evm.js?v=57"></script>
   <script src="/js/views.js?v=57"></script>
-  <script src="/js/exports.js?v=61"></script>
-  <script src="/js/export-pdf.js?v=61"></script>
+  <script src="/js/exports.js?v=62"></script>
+  <script src="/js/export-pdf.js?v=62"></script>
   <script src="/js/export-svg.js?v=57"></script>
-  <script src="/js/template-i18n.js?v=61"></script>
+  <script src="/js/template-i18n.js?v=62"></script>
   <!-- Generated catalogue of all 100 templates (js/template-catalog.js),
        read by the in-app picker. Must load before app.js. -->
-  <script src="/js/template-catalog.js?v=61"></script>
-  <script src="/js/templates.js?v=61"></script>
-  <script src="/js/features.js?v=61"></script>
-  <script src="/js/app.js?v=61"></script>
+  <script src="/js/template-catalog.js?v=62"></script>
+  <script src="/js/templates.js?v=62"></script>
+  <script src="/js/features.js?v=62"></script>
+  <script src="/js/app.js?v=62"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

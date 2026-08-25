@@ -7,9 +7,9 @@
   const BAR_H = 22;
   const BAR_TOP = (ROW_H - BAR_H) / 2;
 
-  const DAY_W = { day: 34, week: 16, month: 5.4, quarter: 2.6 };
-  const PAD_BEFORE = { day: 3, week: 7, month: 14, quarter: 30 };
-  const PAD_AFTER = { day: 7, week: 14, month: 30, quarter: 60 };
+  const DAY_W = { day: 34, week: 16, month: 5.4, quarter: 2.6, year: 0.9 };
+  const PAD_BEFORE = { day: 3, week: 7, month: 14, quarter: 30, year: 45 };
+  const PAD_AFTER = { day: 7, week: 14, month: 30, quarter: 60, year: 90 };
 
   const Render = {
     rs: null, // render state
@@ -91,12 +91,29 @@
        The one exception is print/PNG, where the visible chart IS the
        artefact the user is asking for. */
     rowSource() {
-      const rows = Model.visibleTasks();
-      if (typeof Views === 'undefined') return rows;
-      const view = Views.of(Model.project);
-      const r = Views.apply(rows, Model.tasks(), view, U.today());
-      this.viewWindow = r.window;
-      return r.rows;
+      let rows = Model.visibleTasks();
+      if (typeof Views !== 'undefined') {
+        const view = Views.of(Model.project);
+        const r = Views.apply(rows, Model.tasks(), view, U.today());
+        this.viewWindow = r.window;
+        rows = r.rows;
+      }
+      return this._applyTextFilter(rows);
+    },
+    // Free-text filter over name / assignee / tags. Ancestors of a match are
+    // kept so the row stays inside its group rather than floating contextless.
+    _applyTextFilter(rows) {
+      const q = (Model.project.settings.filter || '').trim().toLowerCase();
+      if (!q) return rows;
+      const matches = new Set();
+      rows.forEach(t => {
+        const hay = [t.name, t.assignee, (t.tags || []).join(' ')].join(' ').toLowerCase();
+        if (hay.indexOf(q) >= 0) matches.add(t.id);
+      });
+      if (!matches.size) return [];
+      const keep = new Set(matches);
+      matches.forEach(id => { let t = Model.get(id); while (t && t.parentId) { keep.add(t.parentId); t = Model.get(t.parentId); } });
+      return rows.filter(t => keep.has(t.id));
     },
 
     off(iso) { return U.diffDays(this.rs.origin, iso); },
@@ -126,6 +143,8 @@
         predecessors: { label: 'Runs after', i18n: 'col.pred', width: 100, cls: 'col-pred',   cell: (t) => R._predCell(t) },
         assignee:     { label: 'Assignee', i18n: 'col.assignee', width: 108, cls: 'col-assignee', cell: (t) => R._assigneeCell(t) },
         deadline:     { label: 'Deadline', i18n: 'col.deadline', width: 100, cls: 'col-deadline', cell: (t) => R._deadlineCell(t) },
+        tags:         { label: 'Tags', i18n: 'col.tags',     width: 120,  cls: 'col-tags',     cell: (t) => R._tagsCell(t) },
+        status:       { label: 'Status', i18n: 'col.status', width: 88,   cls: 'col-status',   cell: (t) => R._statusCell(t) },
         slack:        { label: 'Slack', i18n: 'col.slack',   width: 64,   cls: 'col-slack',    cell: (t) => R._slackCell(t) },
         cost:         { label: 'Cost', i18n: 'col.cost',     width: 82,   cls: 'col-cost',     cell: (t) => R._costCell(t) },
         baseStart:    { label: 'Base start', i18n: null,     width: 86,   cls: 'col-bstart',   cell: (t) => R._baseCell(t, 'start') },
@@ -135,7 +154,7 @@
       };
       return this._cols;
     },
-    ALL_COLUMN_KEYS: ['id', 'wbs', 'name', 'start', 'end', 'duration', 'progress', 'predecessors', 'assignee', 'deadline', 'slack', 'cost', 'baseStart', 'baseEnd', 'startVar', 'finishVar'],
+    ALL_COLUMN_KEYS: ['id', 'wbs', 'name', 'start', 'end', 'duration', 'progress', 'status', 'predecessors', 'assignee', 'tags', 'deadline', 'slack', 'cost', 'baseStart', 'baseEnd', 'startVar', 'finishVar'],
     visibleColumns() {
       const reg = this.columns();
       let keys = Model.project.settings.columns;
@@ -444,6 +463,69 @@
       });
       return U.el('div', { class: 'grow-cell col-deadline' }, input);
     },
+    _tagsCell(t) {
+      if (t.type === 'group') return U.el('div', { class: 'grow-cell col-tags' }, U.el('span', { class: 'ro-text' }, (t.tags || []).join(', ')));
+      const input = U.el('input', {
+        class: 'cell-input', value: (t.tags || []).join(', '), placeholder: '—',
+        'aria-label': this._cellName(t, App.T('col.tags', 'Tags')),
+        title: 'Comma-separated labels, e.g. frontend, urgent',
+        onchange: (e) => Model.update(t.id, { tags: String(e.target.value).split(',').map(s => s.trim()).filter(Boolean) }),
+      });
+      return U.el('div', { class: 'grow-cell col-tags' }, input);
+    },
+    // RAG health, derived from progress vs where the schedule says the task
+    // should be by today. Never stored — it is always a read of the plan.
+    _statusOf(t) {
+      const prog = t.progress || 0;
+      if (prog >= 100) return { key: 'done', label: App.T('status.done', 'Done'), title: 'Complete' };
+      const today = U.today();
+      if (this._isSlipping(t) || U.parse(t.end) < U.parse(today)) {
+        return { key: 'late', label: App.T('status.risk', 'At risk'), title: 'Past its deadline or overdue' };
+      }
+      const total = Math.max(1, U.duration(t.start, t.end));
+      const elapsed = Math.max(0, Math.min(total, U.diffDays(t.start, today)));
+      const expected = (elapsed / total) * 100;
+      if (prog + 1 < expected - 15) return { key: 'behind', label: App.T('status.behind', 'Behind'), title: 'Behind the expected pace' };
+      return { key: 'ontrack', label: App.T('status.ontrack', 'On track'), title: 'On or ahead of pace' };
+    },
+    _statusCell(t) {
+      if (t.type === 'group') return U.el('div', { class: 'grow-cell col-status' }, U.el('span', { class: 'ro-text' }, ''));
+      const s = this._statusOf(t);
+      return U.el('div', { class: 'grow-cell col-status' },
+        U.el('span', { class: 'ro-text rag rag-' + s.key, title: s.title },
+          [U.el('i', { class: 'rag-dot' }), U.el('span', {}, s.label)]));
+    },
+    // Bar colour honours the "colour by" mode; falls back to the task's own
+    // colour when the chosen field is empty or the mode is off.
+    _barColor(t) {
+      const mode = Model.project.settings.colorBy || 'none';
+      if (mode === 'none') return t.color;
+      const key = mode === 'assignee' ? (t.assignee || '')
+        : mode === 'tag' ? ((t.tags || [])[0] || '')
+        : mode === 'phase' ? (((t.parentId && Model.get(t.parentId)) || {}).name || '')
+        : '';
+      return key ? this._keyColor(key) : t.color;
+    },
+    _keyColor(key) {
+      let h = 0; for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
+      const pal = U.PALETTE || ['#2563EB'];
+      return pal[h % pal.length];
+    },
+    // Distinct legend keys for the current colour-by mode, in first-seen order.
+    colorLegend() {
+      const mode = Model.project.settings.colorBy || 'none';
+      if (mode === 'none') return [];
+      const seen = new Map();
+      Model.tasks().forEach(t => {
+        if (t.type === 'group' && mode !== 'phase') return;
+        const key = mode === 'assignee' ? (t.assignee || '')
+          : mode === 'tag' ? ((t.tags || [])[0] || '')
+          : mode === 'phase' ? (((t.parentId && Model.get(t.parentId)) || {}).name || '')
+          : '';
+        if (key && !seen.has(key)) seen.set(key, this._keyColor(key));
+      });
+      return [...seen.entries()].map(([label, color]) => ({ label, color }));
+    },
 
     _editDate(t, which, val) {
       if (!val) return;
@@ -613,6 +695,15 @@
           frag.appendChild(U.el('div', { class: 'today-flag', style: { left: x + 'px' } }, 'Today'));
         }
       }
+
+      // key-date markers (launch, review gates, quarter ends …)
+      (settings.markers || []).forEach(m => {
+        if (!m.date || U.parse(m.date) < U.parse(rs.origin) || U.parse(m.date) > U.parse(rs.endDate)) return;
+        const mx = this.xOf(m.date) + rs.dayW / 2;
+        frag.appendChild(U.el('div', { class: 'key-marker', style: { left: mx + 'px', height: rs.height + 'px', borderColor: m.color || '#ef4444' } }));
+        if (m.label) frag.appendChild(U.el('div', { class: 'key-marker-flag', title: m.label + ' — ' + U.fmtShort(m.date), style: { left: mx + 'px', background: m.color || '#ef4444' } }, m.label));
+      });
+
       const wrap = U.el('div', { style: { position: 'absolute', inset: '0' } });
       wrap.appendChild(frag);
       return wrap;
@@ -708,7 +799,7 @@
       if (t.type === 'milestone') {
         const b = U.el('div', { class: 'bar milestone' + (t.id === Model.selectedId ? ' selected' : ''), 'data-id': t.id,
           style: { left: (x + rs.dayW / 2 - 11) + 'px', top: (y) + 'px' } });
-        b.appendChild(U.el('div', { class: 'milestone-diamond', style: { background: t.color } }));
+        b.appendChild(U.el('div', { class: 'milestone-diamond', style: { background: this._barColor(t) } }));
         b.appendChild(U.el('div', { class: 'bar-label' }, t.name));
         b.appendChild(U.el('div', { class: 'bar-dep-dot r' }));
         b.appendChild(U.el('div', { class: 'bar-dep-dot l' }));
@@ -729,7 +820,7 @@
 
       const b = U.el('div', { class: cls.join(' '), 'data-id': t.id,
         style: { left: x + 'px', top: (isGroup ? i * ROW_H + (ROW_H - 12) / 2 : y) + 'px', width: w + 'px',
-                 background: isGroup ? undefined : t.color } });
+                 background: isGroup ? undefined : this._barColor(t) } });
 
       if (!isGroup) {
         // progress fill
@@ -739,7 +830,7 @@
         // label — inside if wide enough
         const inside = w > 60;
         const lbl = U.el('div', { class: 'bar-label' + (inside ? ' inside' : ''),
-          style: inside ? { color: U.contrast(t.color) } : {} }, t.name + (t.assignee ? '  ·  ' + t.assignee : ''));
+          style: inside ? { color: U.contrast(this._barColor(t)) } : {} }, t.name + (t.assignee ? '  ·  ' + t.assignee : ''));
         b.appendChild(lbl);
 
         // handles

@@ -38,6 +38,9 @@
            Keep it that way; a direct read would reintroduce the bug. */
         view: { mode: 'all', weeks: 3, anchor: null },
         showWorkload: false,
+        colorBy: 'none',   // 'none' | 'assignee' | 'tag' | 'phase' — how bars are coloured
+        filter: '',        // free-text filter over task name / assignee / tag
+        markers: [],       // key-date lines: { id, date, label, color }
       },
       // Frozen copy of the plan, for tracking slippage. null until the user sets one.
       // { savedAt, tasks: { [id]: { start, end, progress } } }
@@ -160,7 +163,7 @@
       if (!Array.isArray(p.settings.columns) || !p.settings.columns.length) p.settings.columns = blankProject().settings.columns.slice();
       p.tasks = (p.tasks || []).map(t => Object.assign({
         progress: 0, color: U.PALETTE[0], assignee: '', type: 'task',
-        parentId: null, collapsed: false, notes: '', deps: [], cost: 0, deadline: null,
+        parentId: null, collapsed: false, notes: '', deps: [], cost: 0, deadline: null, tags: [],
         /* Actual cost incurred so far. Earned value needs it and will
            not guess: with no actuals entered, evm.js reports CPI as
            null rather than deriving cost from progress, which would
@@ -332,7 +335,7 @@
         })(partial && partial.type),
         start, end: partial && partial.type === 'milestone' ? start : U.endFrom(start, 3),
         progress: 0, color: U.PALETTE[this.project.tasks.length % U.PALETTE.length],
-        assignee: '', type: 'task', parentId: sel ? sel.parentId : null, collapsed: false, notes: '', deps: [], deadline: null,
+        assignee: '', type: 'task', parentId: sel ? sel.parentId : null, collapsed: false, notes: '', deps: [], deadline: null, tags: [],
       }, partial);
       if (t.type === 'milestone') t.end = t.start;
       // insert after selected (and its subtree) or at end
@@ -404,6 +407,39 @@
       let target = idx + delta;
       target = Math.max(0, Math.min(this.project.tasks.length, target));
       this.project.tasks.splice(target, 0, ...block);
+      this._afterChange();
+    },
+
+    // Slide the whole plan so its earliest task starts on `targetStart`.
+    // Every task moves by the same day delta, so durations and gaps are kept.
+    shiftPlan(targetStart) {
+      const tasks = this.project.tasks;
+      if (!tasks.length || !targetStart) return;
+      let min = null;
+      tasks.forEach(t => { if (t.start && (!min || U.parse(t.start) < U.parse(min))) min = t.start; });
+      if (!min) return;
+      const delta = U.diffDays(min, targetStart);
+      if (!delta) return;
+      this.snapshot();
+      tasks.forEach(t => {
+        if (t.start) t.start = U.addDays(t.start, delta);
+        if (t.end) t.end = U.addDays(t.end, delta);
+      });
+      this._recalcGroups();
+      this._afterChange();
+    },
+
+    addMarker(date, label) {
+      if (!date) return;
+      this.snapshot();
+      const s = this.project.settings;
+      (s.markers = s.markers || []).push({ id: U.uid('mk'), date, label: label || '', color: '#ef4444' });
+      this._afterChange();
+    },
+    removeMarker(mid) {
+      this.snapshot();
+      const s = this.project.settings;
+      s.markers = (s.markers || []).filter(m => m.id !== mid);
       this._afterChange();
     },
 

@@ -252,6 +252,31 @@ body.col-resizing .grow-row:hover { background: none; }
 .deadline-marker.late::before { color: var(--critical, #f97374); }
 .bar.deadline-slip { box-shadow: inset 0 0 0 2px var(--critical, #f97374); }
 .cell-input.deadline-late { color: var(--critical, #f97374); font-weight: 600; }
+
+/* ---- Key-date markers ---- */
+.key-marker { position: absolute; top: 0; width: 0; border-left: 2px dashed var(--critical, #ef4444); z-index: 4; pointer-events: none; }
+.key-marker-flag { position: absolute; top: 0; transform: translateX(-50%); color: #fff; font-size: 9px; padding: 1px 5px; border-radius: 0 0 4px 4px; z-index: 6; white-space: nowrap; max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+/* ---- RAG status ---- */
+.rag { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+.rag-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: currentColor; }
+.rag-done { color: #64748b; } .rag-ontrack { color: #16a34a; } .rag-behind { color: #d97706; } .rag-late { color: var(--critical, #ef4444); }
+/* ---- Colour-by legend ---- */
+.color-legend { display: inline-flex; flex-wrap: wrap; gap: 3px 10px; align-items: center; max-width: 340px; overflow: hidden; }
+.color-legend[hidden] { display: none; }
+.cl-item { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: var(--muted, #64748b); }
+.cl-swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.filter-input { min-width: 150px; }
+/* ---- Markers dropdown ---- */
+.mk-row { display: flex; align-items: center; gap: 6px; padding: 3px 4px; font-size: 12px; }
+.mk-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+.mk-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mk-del { border: 0; background: transparent; cursor: pointer; color: var(--muted, #94a3b8); font-size: 12px; }
+.mk-del:hover { color: var(--critical, #ef4444); }
+#markersMenu .select, #shiftMenu .select { width: 100%; margin: 4px 0; box-sizing: border-box; }
+/* ---- Embed mode: read-only, chrome-free chart for iframing ---- */
+.embed-mode header, .embed-mode .toolbar, .embed-mode #gridPane, .embed-mode #splitter, .embed-mode #taskDrawer { display: none !important; }
+.embed-mode #chartPane { flex: 1 1 100% !important; width: 100% !important; }
+.embed-mode .bar, .embed-mode .bar-handle, .embed-mode .bar-dep-dot, .embed-mode .bar-progress-handle { pointer-events: none !important; }
 .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px 0 0 6px; background: rgba(0,0,0,.22); pointer-events: none; }
 .bar-label { position: absolute; left: calc(100% + 8px); white-space: nowrap; font-size: 11.5px; color: var(--ink); pointer-events: none; }
 .bar-label.inside { left: 8px; color: #fff; font-weight: 600; }

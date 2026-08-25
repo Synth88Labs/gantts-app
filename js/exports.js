@@ -39,6 +39,7 @@
           case 'mspdi': return this.mspdi();
           case 'print': return this.print();
           case 'link': return this.link();
+          case 'embed': return this.embed();
           case 'mermaid': return this.mermaid();
           case 'ics': return this.ics();
           case 'copy': return this.copyImage();
@@ -206,6 +207,7 @@
         Days: U.duration(t.start, t.end),
         'Progress %': t.progress || 0,
         Assignee: t.assignee || '',
+        Tags: (t.tags || []).join(', '),
         Deadline: t.deadline || '',
         Dependencies: (t.deps || []).map(d => { const f = Model.get(d.from); return f ? Render.wbs(f) + '(' + d.type + ')' : ''; }).filter(Boolean).join(', '),
         Notes: t.notes || '',
@@ -469,6 +471,29 @@
         body.appendChild(U.el('p', {}, 'Copy this link — it contains your whole chart (no server needed):'));
         const ta = U.el('textarea', { style: { width: '100%', height: '90px' }, readonly: 'true' }, url);
         body.appendChild(ta); ta.select();
+      });
+    },
+    // A copy-paste <iframe> snippet. The chart travels in the URL (same as a
+    // share link) plus &embed=1, which app.html renders read-only and chrome-free.
+    async embed() {
+      const r = await Model.shareLink();
+      if (r.tooLong) {
+        App.openModal(App.T('ex.embedTooBigTitle', 'Too big to embed'), (body) => {
+          body.appendChild(U.el('p', {}, App.T('ex.embedTooBig',
+            'This plan is too large to encode in an embeddable link. Embedding works for small and medium plans; trim the plan or share the project file instead.')));
+        });
+        return;
+      }
+      const src = r.url + (r.url.indexOf('?') >= 0 ? '&' : '?') + 'embed=1';
+      const snippet = '<iframe src="' + src + '" width="100%" height="480" loading="lazy" '
+        + 'style="border:1px solid #e2e8f0;border-radius:12px" title="Gantt chart — gantts.app"></iframe>';
+      App.openModal(App.T('ex.embedTitle', 'Embed this chart'), (body) => {
+        body.appendChild(U.el('p', {}, App.T('ex.embedHint',
+          'Paste this into any web page. The chart is self-contained and read-only — no account or server needed:')));
+        const ta = U.el('textarea', { style: { width: '100%', height: '110px' }, readonly: 'true' }, snippet);
+        body.appendChild(ta); ta.select();
+        const note = U.el('p', { class: 'muted' }, App.T('ex.embedNote', 'Anyone who can load the page can see the chart; the whole plan travels inside the link.'));
+        body.appendChild(note);
       });
     },
   };
