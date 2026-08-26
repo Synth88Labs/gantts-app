@@ -12,6 +12,19 @@
 const SITE = {
 
   es: {
+    'whats-new': {
+      title: 'Novedades — registro de cambios de gantts.app',
+      description: 'Novedades de gantts.app: últimas mejoras del creador de diagramas de Gantt gratis y su biblioteca de plantillas. Publicamos funciones a menudo, sin cuenta.',
+      h1: 'Novedades',
+      lead: 'gantts.app mejora constantemente. Esto es lo que hemos publicado hace poco: cada actualización gratis, sin registro y funcionando por completo en tu navegador. Muchas ideas vienen de sugerencias de usuarios.',
+      callout: '<strong>¿Tienes una idea?</strong> Cuéntanos qué te facilitaría la planificación y lo estudiaremos. Escríbenos a <a href="mailto:synth88labs@gmail.com?subject=Sugerencia%20gantts.app">synth88labs@gmail.com</a>.',
+      body: [
+        ['Agosto de 2026 — Kit de planificación y analítica', '<p>Ocho añadidos al editor, pensados para la inteligencia de planificación y no solo para dibujar barras:</p><ul><li><strong>Fechas límite y avisos de retraso</strong>: fija una fecha objetivo por tarea; la barra se pone en rojo cuando el plan la supera.</li><li><strong>Etiquetas y filtro</strong>: etiqueta tareas y filtra todo el plan por nombre, responsable o etiqueta.</li><li><strong>Colorear por responsable, etiqueta o fase</strong>: recolorea las barras, con leyenda, para leer el plan de un vistazo.</li><li><strong>Estado (RAG)</strong>: una columna automática En curso / Retrasado / En riesgo.</li><li><strong>Marcadores de fechas clave</strong>: líneas verticales con etiqueta para lanzamientos, hitos y fin de trimestre.</li><li><strong>Desplazar todo el plan</strong>: mueve todas las tareas a la vez para empezar en otra fecha.</li><li><strong>Zoom de año</strong>: una línea de tiempo a escala anual para programas de varios trimestres.</li><li><strong>Gráficos insertables</strong>: un fragmento iframe de solo lectura para poner un gráfico en cualquier página.</li></ul>'],
+        ['Agosto de 2026 — Una biblioteca de plantillas más grande', '<p>Cinco nuevos planes listos para usar, traducidos por completo a los seis idiomas: <a href="/es/templates/study-plan.html">plan de estudio</a>, <a href="/es/templates/moving-house-timeline.html">mudanza</a>, <a href="/es/templates/kitchen-remodel-timeline.html">reforma de cocina</a>, <a href="/es/templates/crowdfunding-campaign-plan.html">campaña de crowdfunding</a> y <a href="/es/templates/performance-review-cycle.html">ciclo de evaluación del desempeño</a>, hasta superar las 100 plantillas gratuitas en la <a href="/es/templates.html">biblioteca</a>.</p>'],
+        ['Lo esencial, siempre incluido y gratis', '<p>Todo lo que sostiene el editor, sin cuenta y sin muro de pago: dependencias entre tareas (fin-inicio y tres más), <a href="/es/blog/critical-path-method.html">ruta crítica</a> automática, curva S de valor ganado, líneas base y desviaciones, calendario laboral con fines de semana y festivos, carga de trabajo, modo presentación, paleta de comandos, control total por teclado, modo oscuro y exportación a PDF, PNG, Excel, PowerPoint, CSV, MS Project y Mermaid, en seis idiomas.</p>'],
+        ['Sugiere una función', '<p>La mayor parte de lo que construimos empieza como una petición de un usuario. Si hay algo que te facilitaría planificar, dínoslo: leemos todos los mensajes.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idea%20gantts.app">Escríbenos a synth88labs@gmail.com</a></p>'],
+      ],
+    },
     legalNote: 'Esta es una traducción de cortesía. En caso de discrepancia, prevalece la versión en inglés.',
     about: {
       title: 'Sobre gantts.app — creador de diagramas de Gantt',
@@ -83,6 +96,19 @@ const SITE = {
   },
 
   fr: {
+    'whats-new': {
+      title: 'Nouveautés — journal des modifications de gantts.app',
+      description: 'Nouveautés de gantts.app : les dernières améliorations du créateur de diagrammes de Gantt gratuit et de ses modèles, publiées régulièrement.',
+      h1: 'Nouveautés',
+      lead: 'gantts.app s’améliore en permanence. Voici ce que nous avons publié récemment — chaque mise à jour gratuite, sans inscription et fonctionnant entièrement dans votre navigateur. Beaucoup d’idées viennent des suggestions des utilisateurs.',
+      callout: '<strong>Une idée ?</strong> Dites-nous ce qui faciliterait votre planification et nous l’étudierons. Écrivez-nous à <a href="mailto:synth88labs@gmail.com?subject=Suggestion%20gantts.app">synth88labs@gmail.com</a>.',
+      body: [
+        ['Août 2026 — Boîte à outils planification et analyse', '<p>Huit ajouts à l’éditeur, pensés pour l’intelligence de planification et pas seulement pour dessiner des barres :</p><ul><li><strong>Échéances et alertes de dérive</strong> : fixez une date cible par tâche ; la barre passe au rouge quand le planning la dépasse.</li><li><strong>Étiquettes et filtre</strong> : étiquetez les tâches et filtrez tout le plan par nom, responsable ou étiquette.</li><li><strong>Couleur par responsable, étiquette ou phase</strong> : recolorez les barres, avec une légende, pour lire le plan d’un coup d’œil.</li><li><strong>Statut (RAG)</strong> : une colonne automatique Dans les temps / En retard / À risque.</li><li><strong>Repères de dates clés</strong> : des lignes verticales étiquetées pour les lancements, les jalons et les fins de trimestre.</li><li><strong>Décaler tout le plan</strong> : déplacez toutes les tâches d’un coup pour démarrer à une nouvelle date.</li><li><strong>Zoom année</strong> : une frise à l’échelle de l’année pour les programmes sur plusieurs trimestres.</li><li><strong>Graphiques intégrables</strong> : un extrait iframe en lecture seule pour poser un graphique sur n’importe quelle page.</li></ul>'],
+        ['Août 2026 — Une bibliothèque de modèles plus large', '<p>Cinq nouveaux plans prêts à l’emploi, entièrement traduits dans les six langues : <a href="/fr/templates/study-plan.html">plan de révision</a>, <a href="/fr/templates/moving-house-timeline.html">déménagement</a>, <a href="/fr/templates/kitchen-remodel-timeline.html">rénovation de cuisine</a>, <a href="/fr/templates/crowdfunding-campaign-plan.html">campagne de financement participatif</a> et <a href="/fr/templates/performance-review-cycle.html">cycle d’évaluation de la performance</a> — portant la <a href="/fr/templates.html">bibliothèque</a> à plus de 100 modèles gratuits.</p>'],
+        ['L’essentiel, toujours inclus et gratuit', '<p>Tout ce sur quoi l’éditeur repose, sans compte ni péage : dépendances entre tâches (fin-à-début et trois autres), <a href="/fr/blog/critical-path-method.html">chemin critique</a> automatique, courbe en S de la valeur acquise, lignes de base et écarts, calendrier ouvré avec week-ends et jours fériés, charge de travail, mode présentation, palette de commandes, contrôle complet au clavier, mode sombre et export vers PDF, PNG, Excel, PowerPoint, CSV, MS Project et Mermaid — en six langues.</p>'],
+        ['Proposez une fonction', '<p>La plupart de ce que nous construisons commence par une demande d’utilisateur. S’il y a quelque chose qui faciliterait votre planification, dites-le-nous : nous lisons chaque message.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idée%20gantts.app">Écrivez-nous à synth88labs@gmail.com</a></p>'],
+      ],
+    },
     legalNote: 'Ceci est une traduction de courtoisie. En cas de divergence, la version anglaise prévaut.',
     about: {
       title: 'À propos de gantts.app — diagrammes de Gantt',
@@ -154,6 +180,19 @@ const SITE = {
   },
 
   de: {
+    'whats-new': {
+      title: 'Neuigkeiten — Änderungsprotokoll von gantts.app',
+      description: 'Neuigkeiten von gantts.app: die neuesten Verbesserungen am kostenlosen Gantt-Generator und seiner Vorlagenbibliothek — regelmäßig, ohne Konto.',
+      h1: 'Neuigkeiten',
+      lead: 'gantts.app wird ständig besser. Das haben wir zuletzt veröffentlicht — jede Aktualisierung kostenlos, ohne Anmeldung und vollständig in Ihrem Browser. Vieles davon entsteht aus Nutzervorschlägen.',
+      callout: '<strong>Eine Idee?</strong> Sagen Sie uns, was Ihre Planung leichter machen würde, und wir sehen es uns an. Schreiben Sie an <a href="mailto:synth88labs@gmail.com?subject=Vorschlag%20gantts.app">synth88labs@gmail.com</a>.',
+      body: [
+        ['August 2026 — Werkzeugkasten für Planung und Analyse', '<p>Acht Ergänzungen im Editor, ausgerichtet auf Planungsintelligenz statt nur aufs Balkenzeichnen:</p><ul><li><strong>Fristen und Verzugswarnungen</strong>: Legen Sie je Vorgang ein Zieldatum fest; der Balken wird rot, wenn der Plan es überschreitet.</li><li><strong>Tags und Filter</strong>: Vorgänge mit Labels versehen und den ganzen Plan nach Name, Zuständigem oder Tag filtern.</li><li><strong>Färben nach Zuständigem, Tag oder Phase</strong>: Balken mit Legende umfärben, um den Plan auf einen Blick zu lesen.</li><li><strong>Status (RAG)</strong>: eine automatische Spalte Im Plan / In Verzug / Gefährdet.</li><li><strong>Marker für Schlüsseltermine</strong>: beschriftete vertikale Linien für Launches, Gates und Quartalsenden.</li><li><strong>Ganzen Plan verschieben</strong>: alle Vorgänge auf einmal auf einen neuen Starttermin schieben.</li><li><strong>Jahres-Zoom</strong>: eine Zeitachse im Jahresmaßstab für Programme über mehrere Quartale.</li><li><strong>Einbettbare Diagramme</strong>: ein schreibgeschützter iframe-Ausschnitt, um ein Diagramm auf jede Seite zu setzen.</li></ul>'],
+        ['August 2026 — Eine größere Vorlagenbibliothek', '<p>Fünf neue fertige Pläne, vollständig in alle sechs Sprachen übersetzt: <a href="/de/templates/study-plan.html">Lernplan</a>, <a href="/de/templates/moving-house-timeline.html">Umzug</a>, <a href="/de/templates/kitchen-remodel-timeline.html">Küchenumbau</a>, <a href="/de/templates/crowdfunding-campaign-plan.html">Crowdfunding-Kampagne</a> und <a href="/de/templates/performance-review-cycle.html">Leistungsbeurteilungszyklus</a> — womit die <a href="/de/templates.html">Bibliothek</a> über 100 kostenlose Vorlagen umfasst.</p>'],
+        ['Das Wesentliche — immer dabei und kostenlos', '<p>Alles, worauf der Editor beruht, ohne Konto und ohne Bezahlschranke: Vorgangsabhängigkeiten (Ende-Anfang und drei weitere), automatischer <a href="/de/blog/critical-path-method.html">kritischer Pfad</a>, S-Kurve des Fertigstellungswerts, Baselines und Abweichungen, Arbeitskalender mit Wochenenden und Feiertagen, Auslastung, Präsentationsmodus, Befehlspalette, volle Tastatursteuerung, Dunkelmodus und Export nach PDF, PNG, Excel, PowerPoint, CSV, MS Project und Mermaid — in sechs Sprachen.</p>'],
+        ['Schlagen Sie eine Funktion vor', '<p>Das meiste, was wir bauen, beginnt als Nutzerwunsch. Wenn etwas Ihre Planung leichter machen würde, sagen Sie es uns — wir lesen jede Nachricht.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idee%20gantts.app">Schreiben Sie an synth88labs@gmail.com</a></p>'],
+      ],
+    },
     legalNote: 'Dies ist eine Übersetzung zur Information. Im Zweifelsfall gilt die englische Fassung.',
     about: {
       title: 'Über gantts.app — Gantt-Diagramm-Generator',
@@ -225,6 +264,19 @@ const SITE = {
   },
 
   pt: {
+    'whats-new': {
+      title: 'Novidades — registro de alterações do gantts.app',
+      description: 'Novidades do gantts.app: as últimas melhorias do criador de gráficos de Gantt gratuito e dos modelos. Novos recursos com frequência, sem cadastro.',
+      h1: 'Novidades',
+      lead: 'O gantts.app melhora o tempo todo. Veja o que lançamos recentemente — cada atualização gratuita, sem cadastro e rodando inteiramente no seu navegador. Muita coisa nasce de sugestões de usuários.',
+      callout: '<strong>Tem uma ideia?</strong> Conte o que facilitaria o seu planejamento e vamos avaliar. Escreva para <a href="mailto:synth88labs@gmail.com?subject=Sugestao%20gantts.app">synth88labs@gmail.com</a>.',
+      body: [
+        ['Agosto de 2026 — Kit de planejamento e análise', '<p>Oito adições ao editor, voltadas à inteligência de planejamento e não só a desenhar barras:</p><ul><li><strong>Prazos e alertas de atraso</strong>: defina uma data-alvo por tarefa; a barra fica vermelha quando o cronograma a ultrapassa.</li><li><strong>Tags e filtro</strong>: rotule tarefas e filtre todo o plano por nome, responsável ou tag.</li><li><strong>Colorir por responsável, tag ou fase</strong>: recolore as barras, com legenda, para ler o plano num relance.</li><li><strong>Status (RAG)</strong>: uma coluna automática No prazo / Atrasado / Em risco.</li><li><strong>Marcadores de datas-chave</strong>: linhas verticais com rótulo para lançamentos, marcos e fins de trimestre.</li><li><strong>Deslocar todo o plano</strong>: mova todas as tarefas de uma vez para começar em outra data.</li><li><strong>Zoom de ano</strong>: uma linha do tempo em escala anual para programas de vários trimestres.</li><li><strong>Gráficos incorporáveis</strong>: um trecho iframe somente leitura para colocar um gráfico em qualquer página.</li></ul>'],
+        ['Agosto de 2026 — Uma biblioteca de modelos maior', '<p>Cinco novos planos prontos, totalmente traduzidos nos seis idiomas: <a href="/pt/templates/study-plan.html">plano de estudos</a>, <a href="/pt/templates/moving-house-timeline.html">mudança</a>, <a href="/pt/templates/kitchen-remodel-timeline.html">reforma de cozinha</a>, <a href="/pt/templates/crowdfunding-campaign-plan.html">campanha de crowdfunding</a> e <a href="/pt/templates/performance-review-cycle.html">ciclo de avaliação de desempenho</a> — levando a <a href="/pt/templates.html">biblioteca</a> a mais de 100 modelos gratuitos.</p>'],
+        ['O essencial — sempre incluído e gratuito', '<p>Tudo em que o editor se apoia, sem conta e sem paywall: dependências entre tarefas (término-início e três outras), <a href="/pt/blog/critical-path-method.html">caminho crítico</a> automático, curva S de valor agregado, linhas de base e variação, calendário de trabalho com fins de semana e feriados, carga de trabalho, modo apresentação, paleta de comandos, controle total pelo teclado, modo escuro e exportação para PDF, PNG, Excel, PowerPoint, CSV, MS Project e Mermaid — em seis idiomas.</p>'],
+        ['Sugira um recurso', '<p>A maior parte do que construímos começa como um pedido de usuário. Se há algo que facilitaria o seu planejamento, diga: lemos todas as mensagens.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Ideia%20gantts.app">Escreva para synth88labs@gmail.com</a></p>'],
+      ],
+    },
     legalNote: 'Esta é uma tradução de cortesia. Em caso de divergência, prevalece a versão em inglês.',
     about: {
       title: 'Sobre o gantts.app — gráficos de Gantt',
@@ -296,6 +348,19 @@ const SITE = {
   },
 
   zh: {
+    'whats-new': {
+      title: '更新日志 — gantts.app 有什么新变化',
+      description: 'gantts.app 更新日志：免费甘特图工具及其模板库的最新改进。我们经常发布新功能，无需注册、无需上传，全部在浏览器里运行。',
+      h1: '更新日志',
+      lead: 'gantts.app 一直在变好。这是我们最近发布的内容——每一次更新都免费、无需注册，并且完全在你的浏览器里运行。其中很多来自用户的建议。',
+      callout: '<strong>有想法吗？</strong>告诉我们什么能让你的规划更轻松，我们会认真考虑。来信：<a href="mailto:synth88labs@gmail.com?subject=gantts.app">synth88labs@gmail.com</a>。',
+      body: [
+        ['2026 年 8 月 — 规划与分析工具箱', '<p>为编辑器新增八项功能，着眼于规划智能，而不只是画横条：</p><ul><li><strong>截止日期与延期提醒</strong>：为每个任务设定目标日期；一旦排期超过它，横条会变红。</li><li><strong>标签与筛选</strong>：给任务打标签，并按名称、负责人或标签筛选整个计划。</li><li><strong>按负责人、标签或阶段配色</strong>：给横条重新上色并配图例，让计划一目了然。</li><li><strong>状态（RAG）</strong>：自动的“正常 / 滞后 / 有风险”一列。</li><li><strong>关键日期标记</strong>：为发布、评审关口和季度末画上带标签的竖线。</li><li><strong>整体平移计划</strong>：一次性把所有任务移到新的开始日期。</li><li><strong>年视图缩放</strong>：面向跨多个季度的项目的年度时间轴。</li><li><strong>可嵌入图表</strong>：一段只读的 iframe 代码，把实时图表放到任何网页上。</li></ul>'],
+        ['2026 年 8 月 — 更大的模板库', '<p>五个全新的现成计划，已完整翻译成六种语言：<a href="/zh/templates/study-plan.html">学习计划</a>、<a href="/zh/templates/moving-house-timeline.html">搬家</a>、<a href="/zh/templates/kitchen-remodel-timeline.html">厨房翻新</a>、<a href="/zh/templates/crowdfunding-campaign-plan.html">众筹活动</a> 和 <a href="/zh/templates/performance-review-cycle.html">绩效考核周期</a>——让<a href="/zh/templates.html">模板库</a>超过 100 个免费模板。</p>'],
+        ['核心功能——始终内置、始终免费', '<p>编辑器所依托的一切，无需账号、没有付费墙：任务依赖（完成到开始以及另外三种）、自动<a href="/zh/blog/critical-path-method.html">关键路径</a>、挣值 S 曲线、基线与偏差、含周末和节假日的工作日历、工作负荷、演示模式、命令面板、完整键盘操作、深色模式，以及导出为 PDF、PNG、Excel、PowerPoint、CSV、MS Project 和 Mermaid——支持六种语言。</p>'],
+        ['提个功能建议', '<p>我们所做的大多数功能，都始于一条用户请求。如果有什么能让你的规划更省心，告诉我们——每一条留言我们都会看。</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=gantts.app">来信 synth88labs@gmail.com</a></p>'],
+      ],
+    },
     legalNote: '本页面为参考翻译。如有歧义，以英文版本为准。',
     about: {
       title: '关于 gantts.app — 甘特图工具',
@@ -369,6 +434,6 @@ const SITE = {
 };
 
 // page key -> English URL, used for hreflang pairing
-const SITE_PAGES = ['about.html', 'contact.html', 'terms.html', 'privacy.html', 'accessibility.html'];
+const SITE_PAGES = ['about.html', 'contact.html', 'terms.html', 'privacy.html', 'accessibility.html', 'whats-new.html'];
 
 module.exports = { SITE, SITE_PAGES };

@@ -50,6 +50,7 @@ const FOOTER = `  <footer class="footer">
         <div>
           <h4>Company</h4>
           ${link('/about.html', 'About')}
+          ${link('/whats-new.html', 'What’s new')}
           ${link('/contact.html', 'Contact')}
           ${link('/terms.html', 'Terms of use')}
           ${link('/privacy.html', 'Privacy')}
