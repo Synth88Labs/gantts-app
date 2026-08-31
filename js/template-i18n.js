@@ -1,10 +1,10 @@
 /* ============================================================
-   template-i18n.js — starter-template content in the reader's language.
+   template-i18n.js, starter-template content in the reader's language.
 
    WHY THIS IS KEYED BY THE ENGLISH STRING
 
-   The template definitions in templates.js are terse literal arrays —
-   ['Requirements gathering', 0, 5, 100, 0, {...}] — and threading a key
+   The template definitions in templates.js are terse literal arrays, 
+   ['Requirements gathering', 0, 5, 100, 0, {...}], and threading a key
    through every one of them would bloat the definitions and make the
    templates harder to read and edit, which is the whole point of that
    shorthand. The English text is stable (it lives in one file, written
@@ -13,19 +13,19 @@
 
    The tradeoff is real and worth stating: rename an English task and
    its translations silently stop matching. `npm run check:tpl-i18n`
-   exists for exactly that — it fails the build when a string in
+   exists for exactly that, it fails the build when a string in
    templates.js has no entry here.
 
    WHAT IS TRANSLATED AND WHAT IS NOT
 
-   Task names, role names and the template titles/descriptions — all
+   Task names, role names and the template titles/descriptions, all
    content the user sees before they have typed anything. The moment
    they edit a task it is their text and is never touched again; this
    only ever runs at template-instantiation time.
    ============================================================ */
 (function () {
   /* Every string in templates.js that a user can see. English is the
-     key, so there is no `en` map — it falls through unchanged. */
+     key, so there is no `en` map, it falls through unchanged. */
   const T = {
     es: {
       "Assets ready": 'Piezas listas',

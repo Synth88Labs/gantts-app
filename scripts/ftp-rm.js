@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* ftp-rm.js — remove a directory tree from the FTP root.
+/* ftp-rm.js, remove a directory tree from the FTP root.
    Deliberately narrow: refuses anything that is not an explicit,
    non-root path, and lists what it is about to delete first.
    Usage: node scripts/ftp-rm.js /home --yes */
@@ -35,7 +35,7 @@ if (!target || target === '/' || target === '.' || target === '') {
     console.log(`\n${target} contains ${listing.length} entr${listing.length === 1 ? 'y' : 'ies'}:`);
     console.log('  ' + listing.map(f => f.name + (f.isDirectory ? '/' : '')).join('  '));
     if (!yes) {
-      console.log('\n(dry run — pass --yes to delete)\n');
+      console.log('\n(dry run, pass --yes to delete)\n');
       c.close();
       return;
     }

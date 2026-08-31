@@ -4,7 +4,7 @@
   <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
        after the visitor accepts. Nothing is requested from Google
        before that. See scripts/add-analytics.js for why. -->
-  <script defer src="/js/consent.js?v=30"></script>
+  <script defer src="/js/consent.js?v=31"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Créer un diagramme de Gantt en ligne | gantts.app</title>
@@ -32,14 +32,14 @@
   <meta property="og:locale" content="fr_FR" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="stylesheet" href="/css/styles.css?v=62" />
+  <link rel="stylesheet" href="/css/styles.css?v=63" />
 
   <!-- Export libraries (CDN). Vendor locally for full offline export.
 
        SUBRESOURCE INTEGRITY IS LOAD-BEARING HERE. These four scripts run
        inside the editor, where the user's whole plan lives in memory and
        localStorage. Without `integrity`, a compromised CDN account or
-       edge — someone else's security incident, not ours — would execute
+       edge, someone else's security incident, not ours, would execute
        arbitrary JavaScript in that context. The hash makes the browser
        refuse anything but these exact bytes.
 
@@ -51,7 +51,7 @@
        have pinned a compromise just as happily as the real file.
 
        If you bump a version, re-derive the hash the same way. A wrong
-       hash does not degrade — the script simply never loads, and the
+       hash does not degrade, the script simply never loads, and the
        export silently stops working. -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
           integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk"
@@ -206,7 +206,7 @@
       <button class="btn" id="calendarBtn" title="Working days, weekends and holidays">📆 <span data-i18n="app.calendar">Calendar</span></button>
       <button class="btn" id="workloadBtn" title="Who is over-booked, and when">👥 <span data-i18n="app.workload">Workload</span></button>
       <button class="btn" id="scurveBtn" title="Planned vs actual progress over time">📈 <span data-i18n="app.scurve">S-curve</span></button>
-      <button class="btn" id="tableViewBtn" title="The whole plan as a plain table — readable, copyable, printable">▤ <span data-i18n="app.tableview">Table view</span></button>
+      <button class="btn" id="tableViewBtn" title="The whole plan as a plain table, readable, copyable, printable">▤ <span data-i18n="app.tableview">Table view</span></button>
     </div>
 
     <div class="tgroup">
@@ -385,36 +385,36 @@
   <input type="file" id="fileInput" accept=".gantts,.gantt,.json,.csv,.xml,.mmd,.mermaid,.md,.txt" hidden />
   <div class="toast" id="toast" hidden></div>
 
-  <!-- Screen-reader announcements. Visually hidden but NOT display:none —
+  <!-- Screen-reader announcements. Visually hidden but NOT display:none, 
        a hidden live region is never announced. "polite" so a stream of
        arrow-key nudges queues instead of interrupting. -->
   <div class="sr-only" id="srLive" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- App scripts (bump ?v= on release to bust caches) -->
-  <script src="/js/i18n.js?v=62"></script>
-  <script src="/js/util.js?v=62"></script>
-  <script src="/js/store.js?v=62"></script>
-  <script src="/js/calendar.js?v=62"></script>
-  <script src="/js/resources.js?v=62"></script>
-  <script src="/js/model.js?v=62"></script>
-  <script src="/js/schedule.js?v=62"></script>
-  <script src="/js/render.js?v=62"></script>
-  <script src="/js/interactions.js?v=62"></script>
-  <script src="/js/msproject.js?v=62"></script>
-  <script src="/js/mermaid-gantt.js?v=57"></script>
-  <script src="/js/ics.js?v=57"></script>
-  <script src="/js/evm.js?v=57"></script>
-  <script src="/js/views.js?v=57"></script>
-  <script src="/js/exports.js?v=62"></script>
-  <script src="/js/export-pdf.js?v=62"></script>
-  <script src="/js/export-svg.js?v=57"></script>
-  <script src="/js/template-i18n.js?v=62"></script>
+  <script src="/js/i18n.js?v=63"></script>
+  <script src="/js/util.js?v=63"></script>
+  <script src="/js/store.js?v=63"></script>
+  <script src="/js/calendar.js?v=63"></script>
+  <script src="/js/resources.js?v=63"></script>
+  <script src="/js/model.js?v=63"></script>
+  <script src="/js/schedule.js?v=63"></script>
+  <script src="/js/render.js?v=63"></script>
+  <script src="/js/interactions.js?v=63"></script>
+  <script src="/js/msproject.js?v=63"></script>
+  <script src="/js/mermaid-gantt.js?v=58"></script>
+  <script src="/js/ics.js?v=58"></script>
+  <script src="/js/evm.js?v=58"></script>
+  <script src="/js/views.js?v=58"></script>
+  <script src="/js/exports.js?v=63"></script>
+  <script src="/js/export-pdf.js?v=63"></script>
+  <script src="/js/export-svg.js?v=58"></script>
+  <script src="/js/template-i18n.js?v=63"></script>
   <!-- Generated catalogue of all 100 templates (js/template-catalog.js),
        read by the in-app picker. Must load before app.js. -->
-  <script src="/js/template-catalog.js?v=62"></script>
-  <script src="/js/templates.js?v=62"></script>
-  <script src="/js/features.js?v=62"></script>
-  <script src="/js/app.js?v=62"></script>
+  <script src="/js/template-catalog.js?v=63"></script>
+  <script src="/js/templates.js?v=63"></script>
+  <script src="/js/features.js?v=63"></script>
+  <script src="/js/app.js?v=63"></script>
   <script>
     if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }
   </script>

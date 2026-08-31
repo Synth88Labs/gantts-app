@@ -1,5 +1,5 @@
 /* ============================================================
-   app.js — wiring: toolbar, menus, drawer, modal, keyboard, scroll sync
+   app.js, wiring: toolbar, menus, drawer, modal, keyboard, scroll sync
    Exposes a global `App`.
    ============================================================ */
 (function () {
@@ -39,11 +39,11 @@
          got truncated in transit. Naming that is the difference
          between blaming the link and blaming the tool. */
       Model.on('sharefailed', () => this.toast(
-        'That shared link could not be opened — it was probably cut short when it was sent. Ask for the project file instead.'));
+        'That shared link could not be opened, it was probably cut short when it was sent. Ask for the project file instead.'));
       Model.on('select', () => { this.render(); this.refreshDrawer(); });
       Model.on('history', () => this.syncHistoryButtons());
       Model.on('saved', () => this.flashSaved());
-      // A save that did not happen must never be silent — this is the
+      // A save that did not happen must never be silent, this is the
       // only warning a user gets before they lose work.
       Model.on('savefailed', (info) => this.showSaveError(info));
 
@@ -59,7 +59,7 @@
        a raw key like "drawer.assignee" to the user. */
     /* Interpolate counts into a translated clause rather than
        concatenating fragments around them. Concatenation forces English
-       word order on every language and cannot express plural agreement —
+       word order on every language and cannot express plural agreement, 
        it produced "Hinzugefügt: 1 Vorgänge" in German and "Added 1
        tasks" in English. With the whole sentence in one key the
        translator decides both. */
@@ -120,8 +120,8 @@
       const txt = U.$('#viewNoteText');
       if (txt) {
         txt.textContent = isLook
-          ? `${Views.label(v, U.today())} — showing ${shown} task${shown === 1 ? '' : 's'} of ${Model.tasks().length}`
-          : `Milestones only — showing ${shown} of ${Model.tasks().length}`;
+          ? `${Views.label(v, U.today())}, showing ${shown} task${shown === 1 ? '' : 's'} of ${Model.tasks().length}`
+          : `Milestones only, showing ${shown} of ${Model.tasks().length}`;
       }
       // The week arrows only mean anything for a date window.
       ['#viewNotePrev', '#viewNoteNext', '#viewNoteToday'].forEach(sel => {
@@ -162,10 +162,10 @@
     autoSchedule() {
       if (!window.Schedule || !Schedule.autoSchedule) return;
       if (!Model.tasks().length) { this.toast(this.T('ts.nothing', 'Nothing to schedule yet')); return; }
-      // autoSchedule takes its own snapshot and commits — do not wrap it.
+      // autoSchedule takes its own snapshot and commits, do not wrap it.
       const moved = Schedule.autoSchedule();
       this.toast(moved
-        ? `Rescheduled ${moved} task${moved === 1 ? '' : 's'} to the earliest date dependencies allow — Ctrl+Z to undo`
+        ? `Rescheduled ${moved} task${moved === 1 ? '' : 's'} to the earliest date dependencies allow, Ctrl+Z to undo`
         : 'Every task already starts as early as its dependencies allow');
     },
 
@@ -367,7 +367,7 @@
       } else {
         menu.appendChild(U.el('div', { class: 'menu-hint' }, 'Freeze today’s dates as the plan of record, then track how far each task drifts from it.'));
         menu.appendChild(U.el('button', { class: 'menu-act', onclick: () => {
-          Model.setBaseline(); this.toast(this.T('ap.baselineSet', 'Baseline set — slippage now tracked against this plan'));
+          Model.setBaseline(); this.toast(this.T('ap.baselineSet', 'Baseline set, slippage now tracked against this plan'));
         } }, '◳ Set baseline from current plan'));
       }
     },
@@ -414,7 +414,7 @@
       if (markers.length) {
         markers.forEach(m => menu.appendChild(U.el('div', { class: 'mk-row' }, [
           U.el('i', { class: 'mk-dot', style: { background: m.color || '#ef4444' } }),
-          U.el('span', { class: 'mk-label' }, (m.label || '—') + ' · ' + U.fmtShort(m.date)),
+          U.el('span', { class: 'mk-label' }, (m.label || ', ') + ' · ' + U.fmtShort(m.date)),
           U.el('button', { class: 'mk-del', title: this.T('mk.remove', 'Remove'), onclick: () => { Model.removeMarker(m.id); this.buildMarkersMenu(); } }, '✕'),
         ])));
         menu.appendChild(U.el('div', { class: 'menu-sep' }));
@@ -430,7 +430,7 @@
     buildShiftMenu() {
       const menu = U.$('#shiftMenu'); U.clear(menu);
       menu.appendChild(U.el('div', { class: 'menu-title' }, this.T('sh.title', 'Shift the whole plan')));
-      menu.appendChild(U.el('div', { class: 'menu-hint' }, this.T('sh.hint', 'Move every task by the same amount so the plan starts on a new date — durations and gaps stay the same.')));
+      menu.appendChild(U.el('div', { class: 'menu-hint' }, this.T('sh.hint', 'Move every task by the same amount so the plan starts on a new date, durations and gaps stay the same.')));
       let curMin = null;
       Model.tasks().forEach(t => { if (t.start && (!curMin || U.parse(t.start) < U.parse(curMin))) curMin = t.start; });
       menu.appendChild(U.el('label', { class: 'menu-hint' }, this.T('sh.startOn', 'Start the plan on:')));
@@ -462,7 +462,7 @@
        This is the most useful accessibility feature in the app and the
        cheapest. A bar chart is a spatial encoding; a screen reader
        cannot convey position and length, so no amount of ARIA on the
-       bars makes the CHART readable — it makes the bars readable one at
+       bars makes the CHART readable, it makes the bars readable one at
        a time. A table gives the same information in a form the reader
        was designed for, and many users will work only from this.
 
@@ -472,7 +472,7 @@
       this.openModal(this.T('md.table', 'Plan as a table'), (body) => {
         const tasks = Model.tasks();
         if (!tasks.length) {
-          body.appendChild(U.el('p', { class: 'muted' }, this.T('tbl.empty', 'Nothing to show yet — add a task first.')));
+          body.appendChild(U.el('p', { class: 'muted' }, this.T('tbl.empty', 'Nothing to show yet, add a task first.')));
           return;
         }
 
@@ -484,11 +484,11 @@
 
         const tbl = U.el('table', { class: 'data-table' });
         tbl.appendChild(U.el('caption', {},
-          (Model.project.name || 'Project') + ' — ' + this.T('tbl.caption', 'every task, with dates and dependencies')));
+          (Model.project.name || 'Project') + ', ' + this.T('tbl.caption', 'every task, with dates and dependencies')));
 
         const head = U.el('tr');
         /* Reuse the grid's existing column keys rather than minting new
-           ones — the table is the same data, and two sets of keys for
+           ones, the table is the same data, and two sets of keys for
            the same columns would drift apart the first time one was
            retranslated. */
         this.tableHeadings()
@@ -513,7 +513,7 @@
           tr.appendChild(U.el('td', {}, (t.deps || [])
             .map(d => { const f = Model.get(d.from); return f ? f.name : '?'; }).join(', ')));
           tr.appendChild(U.el('td', {}, t.assignee || ''));
-          // A word, not a colour — the whole point of this column.
+          // A word, not a colour, the whole point of this column.
           tr.appendChild(U.el('td', {}, cpm && cpm.critical.has(t.id) ? this.T('tbl.yes', 'yes') : ''));
           tbody.appendChild(tr);
         }
@@ -584,7 +584,7 @@
        orientation sentence that says whether it is worth exploring. */
     chartSummary() {
       const tasks = Model.tasks();
-      if (!tasks.length) return 'Empty plan — no tasks yet.';
+      if (!tasks.length) return 'Empty plan, no tasks yet.';
 
       const groups = tasks.filter(t => t.type === 'group').length;
       const ms = tasks.filter(t => t.type === 'milestone').length;
@@ -636,7 +636,7 @@
        has no charting dependency and one would be ~50KB to draw three
        polylines. */
     openSCurve() {
-      this.openModal(this.T('md.scurve', 'S-curve — planned vs actual'), (body) => {
+      this.openModal(this.T('md.scurve', 'S-curve, planned vs actual'), (body) => {
         const r = EVM.compute(Model.project, U.today());
 
         if (r.empty) {
@@ -647,14 +647,14 @@
 
         const m = r.metrics;
         const money = r.basis === 'cost';
-        const fmt = (v) => v == null ? '—'
+        const fmt = (v) => v == null ? ', '
           : (money ? Math.round(v).toLocaleString() : Math.round(v * 10) / 10 + 'd');
-        const pct = (v) => v == null ? '—' : (Math.round(v * 100) / 100).toFixed(2);
+        const pct = (v) => v == null ? ', ' : (Math.round(v * 100) / 100).toFixed(2);
 
         // ---- verdict line ----
         const verdict = EVM.verdict(m);
         const vTxt = verdict.key === 'nodata' ? this.T('evm.nodata', 'Not enough of the plan has started to judge.')
-          : verdict.key === 'ontrack' ? this.T('evm.ontrack', 'On track — earned value matches the plan.')
+          : verdict.key === 'ontrack' ? this.T('evm.ontrack', 'On track, earned value matches the plan.')
           : verdict.key === 'ahead' ? this.T('evm.ahead', 'Ahead of plan by') + ' ' + Math.abs(Math.round(verdict.pct)) + '%.'
           : this.T('evm.behind', 'Behind plan by') + ' ' + Math.abs(Math.round(verdict.pct)) + '%.';
         body.appendChild(U.el('p', { class: 'evm-verdict evm-' + verdict.key }, vTxt));
@@ -690,16 +690,16 @@
         const notes = [];
         notes.push(r.basis === 'cost'
           ? this.T('evm.byCost', 'Weighted by task cost.')
-          : this.T('evm.byDuration', 'No task costs are set, so tasks are weighted by working-day duration — this reads as a progress curve.'));
+          : this.T('evm.byDuration', 'No task costs are set, so tasks are weighted by working-day duration, this reads as a progress curve.'));
         notes.push(r.plannedFrom === 'baseline'
           ? this.T('evm.fromBaseline', 'Planned value follows the saved baseline.')
-          : this.T('evm.noBaseline', 'No baseline is saved, so the plan is your current dates — which means schedule variance reads as zero until you set one.'));
+          : this.T('evm.noBaseline', 'No baseline is saved, so the plan is your current dates, which means schedule variance reads as zero until you set one.'));
         if (!r.hasActuals) {
           notes.push('No actual costs entered, so CPI, cost variance and forecast are not shown. '
             + 'Deriving them from progress would make CPI exactly 1.00 for every project, which would tell you nothing. '
             + 'Add a Spent figure to tasks to see them.');
         }
-        notes.push('The earned curve before today is reconstructed by spreading each task current progress across its elapsed days — '
+        notes.push('The earned curve before today is reconstructed by spreading each task current progress across its elapsed days, '
           + 'progress history is not stored. It is exact at today, approximate behind it.');
 
         const ul = U.el('ul', { class: 'evm-notes' });
@@ -861,7 +861,7 @@
            Translating the track rather than setting scrollLeft on the
            pane is deliberate: the chart pane carries a vertical
            scrollbar and the lane does not, so their client widths differ
-           by a few pixels and scrollLeft clamps to different maxima —
+           by a few pixels and scrollLeft clamps to different maxima, 
            which drifted the columns out of alignment at the right-hand
            end. A transform has no maximum and stays pixel-exact. */
         if (wlTrack) wlTrack.style.transform = 'translateX(' + (-chartScroll.scrollLeft) + 'px)';
@@ -876,7 +876,7 @@
 
       /* Wheel over the chart itself.
 
-         The chart pane scrolls vertically on its own — but a Gantt is
+         The chart pane scrolls vertically on its own, but a Gantt is
          almost always far wider than it is tall (here ~1850px of
          timeline against ~40px of vertical overrun), so a plain mouse
          wheel had almost nothing to move and the timeline could only be
@@ -886,12 +886,12 @@
 
          Rules, chosen to stay unsurprising:
            - Shift+wheel always pans the timeline.
-           - A horizontal gesture (trackpad) pans the timeline — native
+           - A horizontal gesture (trackpad) pans the timeline, native
              already does this, but claiming it keeps the header in sync.
            - A plain vertical wheel scrolls vertically UNTIL there is no
              more vertical to scroll, then spends the rest on the
              timeline. So a tall plan scrolls down as expected, and a
-             short one — the common case — pans left/right from the same
+             short one, the common case, pans left/right from the same
              wheel. This is the pattern spreadsheet-style timelines use.
 
          Present mode hides the grid and the scrollbars but keeps this
@@ -906,7 +906,7 @@
         if (e.shiftKey || atVEdge(e.deltaY)) {
           const before = chartScroll.scrollLeft;
           chartScroll.scrollLeft += e.deltaY;
-          // Only claim the event if we actually moved the timeline —
+          // Only claim the event if we actually moved the timeline, 
           // otherwise let the page do its normal thing at the extremes.
           if (chartScroll.scrollLeft !== before) e.preventDefault();
         }
@@ -951,7 +951,7 @@
     // ---------------- task card (anchored popover editor) ----------------
     wireDrawer() {
       U.$('#closeDrawer').addEventListener('click', () => this.closeDrawer());
-      // close on outside click — but never when the click landed on another
+      // close on outside click, but never when the click landed on another
       // task, since that task opens its own card immediately after
       document.addEventListener('click', (e) => {
         const d = U.$('#taskDrawer');
@@ -974,7 +974,7 @@
       }
     },
 
-    // Once the user drags the card it stops auto-anchoring — otherwise the next
+    // Once the user drags the card it stops auto-anchoring, otherwise the next
     // re-render would yank it back to the task and undo the move.
     beginDrawerDrag(e) {
       if (e.button !== 0 || e.target.closest('button')) return;
@@ -1023,7 +1023,7 @@
     },
     closeDrawer() { U.$('#taskDrawer').hidden = true; this._drawerId = null; },
 
-    // Re-find the anchor by task id every time rather than holding a reference —
+    // Re-find the anchor by task id every time rather than holding a reference, 
     // re-renders replace these nodes, and a stale ref measures as (0,0).
     _drawerAnchor() {
       const id = this._drawerId; if (!id) return null;
@@ -1034,11 +1034,11 @@
     },
     positionDrawer() {
       const d = U.$('#taskDrawer'); if (d.hidden) return;
-      // on narrow screens the card becomes a bottom sheet — no anchoring
+      // on narrow screens the card becomes a bottom sheet, no anchoring
       const sheet = window.innerWidth < 760;
       d.classList.toggle('as-sheet', sheet);
       if (sheet) { d.style.left = d.style.top = ''; d.classList.remove('on-left'); return; }
-      // user parked it somewhere — leave it there, just keep it on screen
+      // user parked it somewhere, leave it there, just keep it on screen
       if (this._drawerDragged) { this.clampDrawer(); return; }
       const a = this._drawerAnchor();
       if (!a) return;
@@ -1075,7 +1075,7 @@
       /* Move and resize by clicking, with no dragging at all.
 
          WCAG 2.5.7 is about people who can use a pointer but cannot
-         hold a sustained precise drag — tremor, a head-pointer,
+         hold a sustained precise drag, tremor, a head-pointer,
          eye-gaze, a switch. A keyboard alternative does NOT satisfy it;
          that is 2.1.1, a separate criterion. The date fields above are
          already a valid single-pointer path, but W3C's own example for
@@ -1126,7 +1126,7 @@
 
       /* Budget and actual spend. Both feed the S-curve: cost switches
          it from a duration-weighted progress curve to a value curve,
-         and spend is the ONLY source of CPI — evm.js reports it as null
+         and spend is the ONLY source of CPI, evm.js reports it as null
          rather than inferring it from progress. */
       if (t.type !== 'group') {
         const costF = field(this.T('dr.budget', 'Budget'), input(t.cost || 0, v => Model.update(id, { cost: Number(v) || 0 }), 'number'));
@@ -1167,7 +1167,7 @@
       const del = U.el('button', { class: 'btn btn-danger-ghost', onclick: () => { Model.remove(id); this.closeDrawer(); } }, '🗑 Delete task');
       body.appendChild(del);
 
-      // content height just changed — re-anchor before the frame paints
+      // content height just changed, re-anchor before the frame paints
       this.positionDrawer();
     },
 
@@ -1224,7 +1224,7 @@
         body.appendChild(days);
         if (!cal.workdays.length) {
           body.appendChild(U.el('p', { class: 'cal-warn' },
-            'No working days selected — scheduling will treat every day as a working day.'));
+            'No working days selected, scheduling will treat every day as a working day.'));
         }
 
         // --- holidays ---
@@ -1242,7 +1242,7 @@
         });
         body.appendChild(picker);
         body.appendChild(U.el('p', { class: 'cal-note' },
-          'Presets cover ' + yearNow + '–' + (yearNow + 3) + ' and are a starting point — regional and ' +
+          'Presets cover ' + yearNow + ', ' + (yearNow + 3) + ' and are a starting point, regional and ' +
           'substitute-day rules vary, so check them against your local calendar. Every date can be edited or removed.'));
 
         const addRow = U.el('div', { class: 'cal-add' });
@@ -1280,7 +1280,7 @@
             const moved = this.reflowToWorkingDays();
             this.closeModal();
             this.toast(moved
-              ? 'Moved ' + moved + ' task(s) onto working days — undo if that is not what you wanted'
+              ? 'Moved ' + moved + ' task(s) onto working days, undo if that is not what you wanted'
               : 'Every task already starts on a working day');
           },
         }, '↻ Reflow existing tasks onto working days'));
@@ -1364,7 +1364,7 @@
           featured.appendChild(card);
         });
 
-        /* The rest of the catalogue — all hundred, loaded from the same
+        /* The rest of the catalogue, all hundred, loaded from the same
            CSVs the website serves, through the same importCSV path the
            template pages use. Without this the editor offered six
            templates while the site advertised a hundred, which is a
@@ -1373,7 +1373,7 @@
            The catalogue is a generated global (js/template-catalog.js),
            listing only slugs whose CSV exists, so a click can never
            404. If it somehow failed to load, the featured six still
-           work — the extra section simply does not appear. */
+           work, the extra section simply does not appear. */
         const cat = window.TEMPLATE_CATALOG;
         if (cat && cat.slugs && cat.slugs.length) {
           const lang = (document.documentElement.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
@@ -1410,7 +1410,7 @@
                       this.closeModal();
                       App.toast(this.T('tpl.loaded', 'Template loaded') + ': ' + it.label);
                     })
-                    .catch(() => App.toast(this.T('ft.tplFailed', 'Could not load that template — starting from a blank chart')));
+                    .catch(() => App.toast(this.T('ft.tplFailed', 'Could not load that template, starting from a blank chart')));
                 },
               }, it.label);
               list.appendChild(row);
@@ -1514,7 +1514,7 @@
               width: Math.max(1, rs.dayW - 1) + 'px',
               height: Math.round(Math.min(100, ratio * 50)) + '%',
             },
-            title: `${person} — ${U.fmtShort(iso)}: ${pct}% of ${rec.capacity}%` +
+            title: `${person}: ${U.fmtShort(iso)}: ${pct}% of ${rec.capacity}%` +
               (isOver ? '\nOver-booked by ' + (pct - rec.capacity) + '%\n' +
                 Resources.tasksOn(Model.tasks(), person, iso).map(t => '· ' + t.name).join('\n') : ''),
           }));
@@ -1533,7 +1533,7 @@
 
        Debounced ~120ms because holding an arrow key fires many moves a
        second, and an undebounced region reads every intermediate date
-       — the user hears a stream of numbers instead of where the bar
+, the user hears a stream of numbers instead of where the bar
        ended up. The text is also cleared first: setting a live region
        to the value it already holds produces no announcement at all,
        which is how "it only works the first time" bugs happen. */
@@ -1557,7 +1557,7 @@
     /* Storage failure banner.
 
        Deliberately NOT a toast. A toast disappears after two seconds and
-       the user carries on typing into a plan that is not being saved —
+       the user carries on typing into a plan that is not being saved, 
        which is exactly the failure this replaces. It stays until the
        user acts, and it offers the one action that actually rescues the
        work: download the file. */
@@ -1587,7 +1587,7 @@
       document.body.appendChild(bar);
     },
 
-    /* Storage meter — so "full" is something you can see coming rather
+    /* Storage meter, so "full" is something you can see coming rather
        than discover at the moment it breaks. */
     async refreshStorageMeter(el) {
       if (!el) return;

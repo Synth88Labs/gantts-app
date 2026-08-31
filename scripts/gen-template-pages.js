@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   gen-template-pages.js — build landing pages for the generated
+   gen-template-pages.js, build landing pages for the generated
    templates in new-templates.js.
 
    Mirrors the hand-authored template pages exactly: same markup, same
@@ -20,7 +20,7 @@ const { LOCALES } = require('../i18n/content.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'templates');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=30';
+const V = 'v=31';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 
 const esc = (s) => String(s).replace(/&(?!(amp|lt|gt|quot|#\d+|nbsp);)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -138,7 +138,7 @@ function schema(slug, d) {
 
 function page(slug, d) {
   const url = `${ORIGIN}/templates/${slug}.html`;
-  const phases = d.phases.map(([h, p]) => `        <li><strong>${h}</strong> — ${p}</li>`).join('\n');
+  const phases = d.phases.map(([h, p]) => `        <li><strong>${h}</strong>, ${p}</li>`).join('\n');
   const custom = d.customize.map(c => `        <li>${c}</li>`).join('\n');
   const tips = d.tips.map(t => `        <li>${t}</li>`).join('\n');
   const related = d.related
@@ -183,7 +183,7 @@ ${nav(slug)}
        used to run everything down a 724px column while the nav and CTA sat
        at 1200px, so it stepped in and back out; and the 480px preview was
        upscaled to fill a column still too narrow for it. Prose stays
-       narrow below — 1200px of running text is ~113 characters. -->
+       narrow below, 1200px of running text is ~113 characters. -->
   <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
     <div class="container tpl-hero">
       <div class="tpl-hero-copy">
@@ -236,7 +236,7 @@ ${faq}
 
   <section class="cta-band">
     <div class="container">
-      <h2>Plan it online — free</h2>
+      <h2>Plan it online, free</h2>
       <p>Open this template in the editor, drag the bars to fit your dates, and export to PDF, Excel or PowerPoint. No account, no watermark.</p>
       <a class="btn btn-white btn-lg" href="/app.html?csv=${slug}">Open the free editor</a>
     </div>
@@ -252,7 +252,7 @@ ${FOOTER}
 let n = 0;
 for (const [slug, d] of Object.entries(T)) {
   fs.writeFileSync(path.join(OUT, slug + '.html'), page(slug, d), 'utf8');
-  console.log(`  ✓ templates/${slug}.html — ${d.metaTitle}`);
+  console.log(`  ✓ templates/${slug}.html, ${d.metaTitle}`);
   n++;
 }
 console.log(`\n✓ ${n} template page(s) generated. Hand-authored pages untouched.\n`);

@@ -1,4 +1,4 @@
-/* gen-assets.js — rasterize favicon PNGs, apple-touch-icon, and OG image.
+/* gen-assets.js, rasterize favicon PNGs, apple-touch-icon, and OG image.
    Run: node scripts/gen-assets.js */
 const sharp = require('sharp');
 const fs = require('fs');
@@ -14,7 +14,7 @@ async function icon(size, name) {
 
 // Bricolage font embedded so the OG text matches the brand wordmark
 const fontB64 = fs.readFileSync(path.join(A, 'fonts', 'bricolage.woff2')).toString('base64');
-// OG image 1200x630 — violet + coral identity
+// OG image 1200x630, violet + coral identity
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <style>@font-face{font-family:'Bricolage';src:url(data:font/woff2;base64,${fontB64}) format('woff2');font-weight:700}</style>

@@ -1,10 +1,10 @@
 /* ============================================================
-   i18n/content.js — translated copy for the localized static pages.
+   i18n/content.js, translated copy for the localized static pages.
 
    This is the source of truth for /es/, /fr/, /de/, /pt/, /zh/.
    scripts/gen-i18n.js renders real HTML from it, so each language
    gets its own indexable URL with its own <title>, description and
-   hreflang — which client-side text swapping can never provide.
+   hreflang, which client-side text swapping can never provide.
 
    English lives here too, but only for the shared chrome (nav,
    footer, language names). The English pages themselves stay
@@ -24,9 +24,9 @@ const LOCALES = [
 const CHROME = {
   en: {
     nav: { maker: 'Gantt Maker', templates: 'Templates', guides: 'Guides', what: 'What is a Gantt chart?', open: 'Open the app' },
-    footer: { tagline: 'Free online Gantt chart maker. No account, no upload — your data stays in your browser.',
+    footer: { tagline: 'Free online Gantt chart maker. No account, no upload, your data stays in your browser.',
       byline: 'A project by Synth88 Labs',
-      allTemplates: 'All templates', allGuides: 'All guides', construction: 'Construction', cpm: 'Critical path method', contact: 'Contact', terms: 'Terms of use', staticNote: 'Built as a static site — nothing you plan leaves your browser.',
+      allTemplates: 'All templates', allGuides: 'All guides', construction: 'Construction', cpm: 'Critical path method', contact: 'Contact', terms: 'Terms of use', staticNote: 'Built as a static site, nothing you plan leaves your browser.',
       product: 'Product', resources: 'Resources', company: 'Company',
       privacy: 'Privacy', accessibility: 'Accessibility', about: 'About', whatsnew: 'What’s new', rights: 'All rights reserved.' },
     langLabel: 'Language',
@@ -54,9 +54,9 @@ const CHROME = {
   },
   de: {
     nav: { maker: 'Gantt-Diagramm erstellen', templates: 'Vorlagen', guides: 'Ratgeber', what: 'Was ist ein Gantt-Diagramm?', open: 'App öffnen' },
-    footer: { tagline: 'Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.',
+    footer: { tagline: 'Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload, Ihre Daten bleiben im Browser.',
       byline: 'Ein Projekt von Synth88 Labs',
-      allTemplates: 'Alle Vorlagen', allGuides: 'Alle Ratgeber', construction: 'Bauwesen', cpm: 'Methode des kritischen Pfads', contact: 'Kontakt', terms: 'Nutzungsbedingungen', staticNote: 'Statische Website — nichts, was Sie planen, verlässt Ihren Browser.',
+      allTemplates: 'Alle Vorlagen', allGuides: 'Alle Ratgeber', construction: 'Bauwesen', cpm: 'Methode des kritischen Pfads', contact: 'Kontakt', terms: 'Nutzungsbedingungen', staticNote: 'Statische Website, nichts, was Sie planen, verlässt Ihren Browser.',
       product: 'Produkt', resources: 'Ressourcen', company: 'Unternehmen',
       privacy: 'Datenschutz', accessibility: 'Barrierefreiheit', about: 'Über uns', whatsnew: 'Neuigkeiten', rights: 'Alle Rechte vorbehalten.' },
     langLabel: 'Sprache',
@@ -64,9 +64,9 @@ const CHROME = {
   },
   pt: {
     nav: { maker: 'Criar gráfico', templates: 'Modelos', guides: 'Guias', what: 'O que é um gráfico de Gantt?', open: 'Abrir o aplicativo' },
-    footer: { tagline: 'Criador de gráfico de Gantt gratuito. Sem conta e sem upload — seus dados ficam no seu navegador.',
+    footer: { tagline: 'Criador de gráfico de Gantt gratuito. Sem conta e sem upload, seus dados ficam no seu navegador.',
       byline: 'Um projeto da Synth88 Labs',
-      allTemplates: 'Todos os modelos', allGuides: 'Todos os guias', construction: 'Construção', cpm: 'Método do caminho crítico', contact: 'Contato', terms: 'Termos de uso', staticNote: 'Site estático — nada do que você planeja sai do seu navegador.',
+      allTemplates: 'Todos os modelos', allGuides: 'Todos os guias', construction: 'Construção', cpm: 'Método do caminho crítico', contact: 'Contato', terms: 'Termos de uso', staticNote: 'Site estático, nada do que você planeja sai do seu navegador.',
       product: 'Produto', resources: 'Recursos', company: 'Empresa',
       privacy: 'Privacidade', accessibility: 'Acessibilidade', about: 'Sobre', whatsnew: 'Novidades', rights: 'Todos os direitos reservados.' },
     langLabel: 'Idioma',
@@ -74,9 +74,9 @@ const CHROME = {
   },
   zh: {
     nav: { maker: '甘特图制作', templates: '模板', guides: '指南', what: '什么是甘特图？', open: '打开应用' },
-    footer: { tagline: '免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。',
+    footer: { tagline: '免费在线甘特图制作工具。无需注册、无需上传, , 数据只保存在你的浏览器中。',
       byline: 'Synth88 Labs 出品',
-      allTemplates: '全部模板', allGuides: '全部指南', construction: '工程施工', cpm: '关键路径法', contact: '联系我们', terms: '使用条款', staticNote: '纯静态网站——你规划的内容不会离开浏览器。',
+      allTemplates: '全部模板', allGuides: '全部指南', construction: '工程施工', cpm: '关键路径法', contact: '联系我们', terms: '使用条款', staticNote: '纯静态网站, , 你规划的内容不会离开浏览器。',
       product: '产品', resources: '资源', company: '关于',
       privacy: '隐私政策', accessibility: '无障碍', about: '关于我们', whatsnew: '更新日志', rights: '保留所有权利。' },
     langLabel: '语言',
@@ -88,19 +88,19 @@ const CHROME = {
 const HOME = {
   es: {
     slug: '',
-    title: 'Diagrama de Gantt online gratis — sin registro | gantts.app',
+    title: 'Diagrama de Gantt online gratis: sin registro | gantts.app',
     description: 'Crea un diagrama de Gantt gratis en tu navegador. Sin registro. Tareas, dependencias y ruta crítica, con exportación a PDF, Excel y PowerPoint.',
-    ogTitle: 'Creador de diagramas de Gantt gratis — sin registro',
+    ogTitle: 'Creador de diagramas de Gantt gratis, sin registro',
     kicker: 'Gratis · sin registro · funciona en tu navegador',
     h1: 'El <span class="grad">creador de diagramas de Gantt</span> gratuito que simplemente se abre y funciona.',
     sub: 'Escribe o pega tus tareas y míralas convertirse en una línea de tiempo clara e interactiva. Dependencias, ruta crítica e hitos; después exporta a PDF, Excel o PowerPoint. Sin cuenta, nunca.',
-    cta1: 'Empezar a planificar — gratis',
+    cta1: 'Empezar a planificar, gratis',
     cta2: 'o abre una plantilla →',
     bars: { add: 'Añadir y arrastrar tareas', link: 'Enlazar dependencias', cp: 'Ver la ruta crítica', ms: 'Hitos y fases', export: 'Exportar a PDF · Excel · PPT' },
     meta: 'Sin cuenta · tareas ilimitadas · funciona sin conexión · tus datos no salen del navegador',
     featLabel: 'Qué incluye',
     featH2: 'Todo lo que necesita un plan, sin nada bajo llave',
-    featNote: 'Las funciones por las que otras herramientas cobran —ruta crítica, exportación, tareas ilimitadas— están aquí y son gratuitas.',
+    featNote: 'Las funciones por las que otras herramientas cobran, ruta crítica, exportación, tareas ilimitadas, están aquí y son gratuitas.',
     features: [
       { h: 'Ruta crítica automática', p: 'Descubre la cadena exacta de tareas que determina tu fecha de entrega, resaltada en cuanto cambian las fechas. Sin cálculos manuales ni versiones de pago.' },
       { h: 'Programación con arrastrar y soltar', p: 'Mueve y redimensiona las barras en la línea de tiempo, marca el porcentaje completado y reordena tareas. El plan sigue tu ritmo.' },
@@ -143,17 +143,17 @@ const HOME = {
     slug: '',
     title: 'Diagramme de Gantt en ligne gratuit | gantts.app',
     description: 'Créez un diagramme de Gantt gratuit dans votre navigateur, sans inscription. Tâches, dépendances, chemin critique et export PDF, Excel, PowerPoint.',
-    ogTitle: 'Créateur de diagramme de Gantt gratuit — sans inscription',
+    ogTitle: 'Créateur de diagramme de Gantt gratuit, sans inscription',
     kicker: 'Gratuit · sans inscription · fonctionne dans votre navigateur',
     h1: 'Le <span class="grad">créateur de diagramme de Gantt</span> gratuit qui s’ouvre et fonctionne, tout simplement.',
-    sub: 'Saisissez ou collez vos tâches et regardez-les s’organiser en un planning clair et interactif. Dépendances, chemin critique, jalons — puis export vers PDF, Excel ou PowerPoint. Sans compte, jamais.',
-    cta1: 'Commencer à planifier — gratuit',
+    sub: 'Saisissez ou collez vos tâches et regardez-les s’organiser en un planning clair et interactif. Dépendances, chemin critique, jalons, puis export vers PDF, Excel ou PowerPoint. Sans compte, jamais.',
+    cta1: 'Commencer à planifier, gratuit',
     cta2: 'ou ouvrir un modèle →',
     bars: { add: 'Ajouter et déplacer des tâches', link: 'Lier les dépendances', cp: 'Voir le chemin critique', ms: 'Jalons et phases', export: 'Exporter en PDF · Excel · PPT' },
     meta: 'Sans compte · tâches illimitées · fonctionne hors ligne · vos données restent dans votre navigateur',
     featLabel: 'Ce qu’il contient',
     featH2: 'Tout ce qu’un plan exige, rien sous clé',
-    featNote: 'Les fonctions que les autres outils font payer — chemin critique, export, tâches illimitées — sont ici, et gratuites.',
+    featNote: 'Les fonctions que les autres outils font payer, chemin critique, export, tâches illimitées, sont ici, et gratuites.',
     features: [
       { h: 'Chemin critique automatique', p: 'Visualisez la chaîne exacte de tâches qui détermine votre échéance, mise en évidence dès que les dates changent. Sans calcul manuel ni abonnement.' },
       { h: 'Planification par glisser-déposer', p: 'Déplacez et redimensionnez les barres, indiquez l’avancement en pourcentage et réorganisez les tâches. Le planning suit votre rythme.' },
@@ -194,24 +194,24 @@ const HOME = {
   },
   de: {
     slug: '',
-    title: 'Gantt-Diagramm online erstellen — kostenlos | gantts.app',
+    title: 'Gantt-Diagramm online erstellen: kostenlos | gantts.app',
     description: 'Gantt-Diagramm kostenlos im Browser erstellen, ohne Anmeldung. Aufgaben, Abhängigkeiten, kritischer Pfad und Export nach PDF, Excel und PowerPoint.',
-    ogTitle: 'Kostenloser Gantt-Diagramm-Generator — ohne Anmeldung',
+    ogTitle: 'Kostenloser Gantt-Diagramm-Generator, ohne Anmeldung',
     kicker: 'Kostenlos · ohne Anmeldung · läuft im Browser',
     h1: 'Der kostenlose <span class="grad">Gantt-Diagramm-Generator</span>, der einfach aufgeht und funktioniert.',
-    sub: 'Aufgaben eintippen oder einfügen und zusehen, wie daraus ein klarer, interaktiver Zeitplan wird. Abhängigkeiten, kritischer Pfad, Meilensteine — danach Export nach PDF, Excel oder PowerPoint. Ohne Konto, für immer.',
-    cta1: 'Jetzt planen — kostenlos',
+    sub: 'Aufgaben eintippen oder einfügen und zusehen, wie daraus ein klarer, interaktiver Zeitplan wird. Abhängigkeiten, kritischer Pfad, Meilensteine, danach Export nach PDF, Excel oder PowerPoint. Ohne Konto, für immer.',
+    cta1: 'Jetzt planen, kostenlos',
     cta2: 'oder eine Vorlage öffnen →',
     bars: { add: 'Aufgaben anlegen und ziehen', link: 'Abhängigkeiten verknüpfen', cp: 'Kritischen Pfad sehen', ms: 'Meilensteine und Phasen', export: 'Export nach PDF · Excel · PPT' },
     meta: 'Kein Konto · unbegrenzte Aufgaben · funktioniert offline · Ihre Daten bleiben im Browser',
     featLabel: 'Was drinsteckt',
-    featH2: 'Alles, was ein Plan braucht — nichts weggesperrt',
-    featNote: 'Funktionen, für die andere Tools Geld verlangen — kritischer Pfad, Export, unbegrenzte Aufgaben — sind hier enthalten und kostenlos.',
+    featH2: 'Alles, was ein Plan braucht, nichts weggesperrt',
+    featNote: 'Funktionen, für die andere Tools Geld verlangen, kritischer Pfad, Export, unbegrenzte Aufgaben, sind hier enthalten und kostenlos.',
     features: [
-      { h: 'Automatischer kritischer Pfad', p: 'Sehen Sie genau die Aufgabenkette, die Ihren Endtermin bestimmt — hervorgehoben, sobald sich Termine ändern. Ohne Handrechnerei, ohne Upgrade.' },
+      { h: 'Automatischer kritischer Pfad', p: 'Sehen Sie genau die Aufgabenkette, die Ihren Endtermin bestimmt, hervorgehoben, sobald sich Termine ändern. Ohne Handrechnerei, ohne Upgrade.' },
       { h: 'Planen per Drag-and-drop', p: 'Balken auf der Zeitachse verschieben und skalieren, Fortschritt in Prozent setzen, Aufgaben umsortieren. Der Plan hält mit.' },
       { h: 'Echte Abhängigkeiten', p: 'Verknüpfen Sie Aufgaben mit Ende-Anfang und drei weiteren Typen. Die Pfeile zeichnen sich neu, wenn Sie Termine verschieben.' },
-      { h: 'Export in Präsentationsqualität', p: 'Mit einem Klick als PDF, PNG, Excel oder PowerPoint herunterladen — direkt bereit für Kunden oder Geschäftsleitung.' },
+      { h: 'Export in Präsentationsqualität', p: 'Mit einem Klick als PDF, PNG, Excel oder PowerPoint herunterladen, direkt bereit für Kunden oder Geschäftsleitung.' },
       { h: 'Meilensteine, Phasen und PSP', p: 'Fassen Sie Arbeit in Phasen, setzen Sie die Meilensteine, auf die es ankommt, und nummerieren Sie den Projektstrukturplan. Erst die Hierarchie macht einen großen Plan lesbar.' },
       { h: 'Privat by Design', p: 'Der Plan bleibt in Ihrem Browser, nicht auf unseren Servern. Kein Konto, kein Tracking, und nichts zu löschen, wenn Sie aufhören.' },
     ],
@@ -219,7 +219,7 @@ const HOME = {
     steps: [
       ['Aufgaben eintragen', 'Zeilen hinzufügen oder eine Liste einfügen. Bei vielen Zeilen in Phasen gruppieren.'],
       ['Verknüpfen und anpassen', 'Balken ziehen und Abhängigkeiten verbinden. Der kritische Pfad erscheint von selbst.'],
-      ['Exportieren oder teilen', 'PDF, PNG, Excel oder PowerPoint. Oder den Link teilen — ohne Konto.'],
+      ['Exportieren oder teilen', 'PDF, PNG, Excel oder PowerPoint. Oder den Link teilen, ohne Konto.'],
     ],
     tplH2: 'Oder mit einer fertigen Vorlage starten',
     tplP: 'Über vierzig Vorlagen mit fertigen Phasen, Meilensteinen und Abhängigkeiten: Bau, Marketing, Software, Events, Forschung und mehr.',
@@ -229,14 +229,14 @@ const HOME = {
       ['Ohne Anmeldung', 'Kein Konto, keine E-Mail, keine ablaufende Testphase.'],
       ['Ihre Daten bleiben im Browser', 'Der Plan wird auf Ihrem Gerät gespeichert. Kein Server hält ihn vor.'],
       ['Funktioniert offline', 'Einmal geladen, arbeitet die Anwendung ohne Internet weiter.'],
-      ['Vollständiger Export, kostenlos', 'PDF, PNG, Excel, PowerPoint und CSV — ohne Wasserzeichen, ohne Limit.'],
+      ['Vollständiger Export, kostenlos', 'PDF, PNG, Excel, PowerPoint und CSV, ohne Wasserzeichen, ohne Limit.'],
     ],
     faqH2: 'Häufige Fragen',
     faq: [
       { q: 'Ist das wirklich kostenlos?', a: 'Ja. Keine Konten, keine Testphase, keine kostenpflichtigen Funktionen. Alles läuft im Browser, es gibt also keine Server zu finanzieren.' },
       { q: 'Muss ich ein Konto anlegen?', a: 'Nein. App öffnen und loslegen. Ihr Projekt wird automatisch im Browser gespeichert.' },
       { q: 'Wo werden meine Daten gespeichert?', a: 'In Ihrem eigenen Browser (localStorage). Nichts wird auf einen Server hochgeladen. Sie können zusätzlich eine .gantts-Datei auf Ihrem Rechner speichern.' },
-      { q: 'Kann ich nach Excel oder PowerPoint exportieren?', a: 'Ja, ebenso nach PDF, PNG und CSV. Die Exporte sind echte, bearbeitbare Dateien — keine Bilder.' },
+      { q: 'Kann ich nach Excel oder PowerPoint exportieren?', a: 'Ja, ebenso nach PDF, PNG und CSV. Die Exporte sind echte, bearbeitbare Dateien, keine Bilder.' },
     ],
     ctaH2: 'Bereit, Ihr Projekt zu planen?',
     ctaP: 'Ohne Anmeldung, ohne Kreditkarte. App öffnen und anfangen.',
@@ -249,17 +249,17 @@ const HOME = {
     slug: '',
     title: 'Gráfico de Gantt online grátis | gantts.app',
     description: 'Crie um gráfico de Gantt grátis no navegador, sem cadastro. Tarefas, dependências, caminho crítico e exportação para PDF, Excel e PowerPoint.',
-    ogTitle: 'Criador de gráfico de Gantt grátis — sem cadastro',
+    ogTitle: 'Criador de gráfico de Gantt grátis, sem cadastro',
     kicker: 'Grátis · sem cadastro · funciona no navegador',
     h1: 'O <span class="grad">criador de gráfico de Gantt</span> gratuito que simplesmente abre e funciona.',
     sub: 'Digite ou cole suas tarefas e veja tudo virar uma linha do tempo clara e interativa. Dependências, caminho crítico e marcos; depois exporte para PDF, Excel ou PowerPoint. Sem conta, nunca.',
-    cta1: 'Começar a planejar — grátis',
+    cta1: 'Começar a planejar, grátis',
     cta2: 'ou abrir um modelo →',
     bars: { add: 'Adicionar e arrastar tarefas', link: 'Ligar dependências', cp: 'Ver o caminho crítico', ms: 'Marcos e fases', export: 'Exportar para PDF · Excel · PPT' },
     meta: 'Sem conta · tarefas ilimitadas · funciona offline · seus dados ficam no navegador',
     featLabel: 'O que vem junto',
-    featH2: 'Tudo o que um plano precisa — nada trancado',
-    featNote: 'Os recursos que outras ferramentas cobram — caminho crítico, exportação, tarefas ilimitadas — estão aqui, e de graça.',
+    featH2: 'Tudo o que um plano precisa, nada trancado',
+    featNote: 'Os recursos que outras ferramentas cobram, caminho crítico, exportação, tarefas ilimitadas, estão aqui, e de graça.',
     features: [
       { h: 'Caminho crítico automático', p: 'Veja exatamente a cadeia de tarefas que define seu prazo, destacada assim que as datas mudam. Sem cálculo manual e sem plano pago.' },
       { h: 'Cronograma por arrastar e soltar', p: 'Mova e redimensione as barras na linha do tempo, defina o percentual concluído e reordene tarefas. O plano acompanha você.' },
@@ -300,23 +300,23 @@ const HOME = {
   },
   zh: {
     slug: '',
-    title: '免费在线甘特图制作工具 — 无需注册 | gantts.app',
+    title: '免费在线甘特图制作工具: 无需注册 | gantts.app',
     description: '在浏览器中免费制作甘特图。无需注册，无需下载。支持任务、依赖关系与关键路径，并可导出为 PDF、Excel 和 PowerPoint。',
-    ogTitle: '免费在线甘特图制作工具 — 无需注册',
+    ogTitle: '免费在线甘特图制作工具, 无需注册',
     kicker: '免费 · 无需注册 · 在浏览器中运行',
     h1: '打开即用的免费<span class="grad">甘特图制作工具</span>。',
     sub: '输入或粘贴任务，它们会自动排成清晰、可交互的时间线。连接依赖关系后，改动一处，后续任务会自动顺延，关键路径也随之更新。支持里程碑、基准线与进度跟踪，可导出为 PDF、PNG、Excel 或 PowerPoint。全程无需账号，计划保存在你自己的浏览器里，不会上传到任何服务器。',
-    cta1: '开始规划 — 免费',
+    cta1: '开始规划, 免费',
     cta2: '或打开一个模板 →',
     bars: { add: '添加并拖动任务', link: '关联依赖关系', cp: '查看关键路径', ms: '里程碑与阶段', export: '导出为 PDF · Excel · PPT' },
     meta: '无需账号 · 任务数量不限 · 支持离线使用 · 数据只保留在浏览器中',
     featLabel: '功能一览',
     featH2: '项目计划所需的一切，没有任何功能被锁住',
-    featNote: '别的工具留给付费版的功能——关键路径、完整导出、基准线、无限任务和项目——在这里全部免费，而且不需要注册。没有试用期，也没有到期之后才发现导不出文件的情况。',
+    featNote: '别的工具留给付费版的功能, , 关键路径、完整导出、基准线、无限任务和项目, , 在这里全部免费，而且不需要注册。没有试用期，也没有到期之后才发现导不出文件的情况。',
     features: [
       { h: '自动计算关键路径', p: '清楚看到决定项目完成日期的任务链条，日期一变即刻高亮。无需手动计算，也不必升级付费版。' },
       { h: '拖放式排程', p: '在时间线上拖动和缩放任务条，设置完成百分比，随时调整任务顺序。计划随你而动。' },
-      { h: '真正的依赖关系', p: '用「完成—开始」以及另外三种类型关联任务。调整日期时，箭头会自动重新绘制。' },
+      { h: '真正的依赖关系', p: '用「完成, 开始」以及另外三种类型关联任务。调整日期时，箭头会自动重新绘制。' },
       { h: '可直接汇报的导出效果', p: '一键导出为 PDF、PNG、Excel 或 PowerPoint，可直接发给客户或管理层。' },
       { h: '里程碑、阶段与 WBS', p: '把工作按阶段分组，标出真正重要的里程碑，并为工作分解结构编号。层级结构是大型计划能读懂的前提。' },
       { h: '隐私优先的设计', p: '计划保存在你的浏览器里，不在我们的服务器上。无需账号，没有追踪，停用时也没有什么需要删除。' },
@@ -404,7 +404,7 @@ const TEMPLATES = {
     ],
     noteEn: 'Algunas fichas ya están en español; el resto está en inglés por ahora.',
     howEyebrow: '3 pasos rápidos',
-    howCallout: '<strong>La vía más rápida:</strong> abre cualquier plantilla en el <a href="/es/app.html">creador de diagramas de Gantt gratuito</a>, edítala en directo y expórtala — te ahorras por completo las fórmulas de hoja de cálculo. Sin registro y sin marca de agua.',
+    howCallout: '<strong>La vía más rápida:</strong> abre cualquier plantilla en el <a href="/es/app.html">creador de diagramas de Gantt gratuito</a>, edítala en directo y expórtala, te ahorras por completo las fórmulas de hoja de cálculo. Sin registro y sin marca de agua.',
     notePartial: 'Algunas fichas ya están en español; el resto está en inglés por ahora.',
     eyebrow: '✦ {n} plantillas gratis · sin registro',
     homeCrumb: 'Inicio',
@@ -435,7 +435,7 @@ const TEMPLATES = {
     ],
     noteEn: 'La fiche de chaque modèle est en anglais pour le moment.',
     howEyebrow: '3 étapes rapides',
-    howCallout: "<strong>Le chemin le plus rapide :</strong> ouvrez n'importe quel modèle dans le <a href='/fr/app.html'>créateur de diagramme de Gantt gratuit</a>, modifiez-le en direct et exportez — vous évitez entièrement les formules de tableur. Sans inscription ni filigrane.",
+    howCallout: "<strong>Le chemin le plus rapide :</strong> ouvrez n'importe quel modèle dans le <a href='/fr/app.html'>créateur de diagramme de Gantt gratuit</a>, modifiez-le en direct et exportez, vous évitez entièrement les formules de tableur. Sans inscription ni filigrane.",
     notePartial: 'Certaines fiches sont déjà en français ; les autres sont encore en anglais.',
     eyebrow: '✦ {n} modèles gratuits · sans inscription',
     homeCrumb: 'Accueil',
@@ -446,11 +446,11 @@ const TEMPLATES = {
     description: 'Kostenlose Gantt-Diagramm-Vorlagen für Excel, PowerPoint und CSV herunterladen oder online bearbeiten. Bau, Marketing, Software, Events und mehr.',
     h1: 'Kostenlose Gantt-Diagramm-Vorlagen',
     lead: 'Jede Vorlage öffnet sich direkt im Editor und lässt sich zusätzlich als Excel, PowerPoint oder CSV herunterladen. Ohne Anmeldung, ohne Wasserzeichen.',
-    intro: 'Wählen Sie einen Startpunkt, der Ihrem Projekt nahekommt: Phasen und Aufgaben sind bereits gefüllt — Sie passen nur noch Bezeichnungen und Termine an.',
+    intro: 'Wählen Sie einen Startpunkt, der Ihrem Projekt nahekommt: Phasen und Aufgaben sind bereits gefüllt, Sie passen nur noch Bezeichnungen und Termine an.',
     catTypes: 'Nach Projektart', catIndustry: 'Nach Branche', catTeam: 'Nach Team und Funktion',
     catTime: 'Nach Zeitraum', catAgile: 'Agile und Sprints', catSector: 'Energie und Hotellerie', catOps: 'Betrieb und Unternehmensprogramme', catAcademic: 'Forschung und Studium', catFormat: 'Nach Format',
     ctaH2: 'Mit einer kostenlosen Vorlage starten', ctaP: 'Öffnen, anpassen, exportieren. Ohne Konto.', ctaBtn: 'Editor öffnen',
-    catNote: 'Pläne mit fertigen Phasen und Meilensteinen — nur noch Termine anpassen.',
+    catNote: 'Pläne mit fertigen Phasen und Meilensteinen, nur noch Termine anpassen.',
     howH2: 'So nutzen Sie diese Vorlagen',
     howSteps: [
       ['Wählen Sie die passendste Vorlage', 'Sie muss nicht exakt passen: Phasen sind in einer Minute umbenannt.'],
@@ -466,7 +466,7 @@ const TEMPLATES = {
     ],
     noteEn: 'Die Detailseiten der Vorlagen sind derzeit auf Englisch.',
     howEyebrow: '3 schnelle Schritte',
-    howCallout: '<strong>Der schnellste Weg:</strong> Öffnen Sie eine beliebige Vorlage im <a href="/de/app.html">kostenlosen Gantt-Diagramm-Editor</a>, bearbeiten Sie sie direkt und exportieren Sie — die umständlichen Tabellenformeln entfallen komplett. Ohne Anmeldung, ohne Wasserzeichen.',
+    howCallout: '<strong>Der schnellste Weg:</strong> Öffnen Sie eine beliebige Vorlage im <a href="/de/app.html">kostenlosen Gantt-Diagramm-Editor</a>, bearbeiten Sie sie direkt und exportieren Sie, die umständlichen Tabellenformeln entfallen komplett. Ohne Anmeldung, ohne Wasserzeichen.',
     notePartial: 'Ein Teil der Detailseiten ist bereits auf Deutsch; die übrigen sind noch auf Englisch.',
     eyebrow: '✦ {n} kostenlose Vorlagen · ohne Anmeldung',
     homeCrumb: 'Start',
@@ -497,7 +497,7 @@ const TEMPLATES = {
     ],
     noteEn: 'A página de cada modelo está em inglês por enquanto.',
     howEyebrow: '3 passos rápidos',
-    howCallout: "<strong>O caminho mais rápido:</strong> abra qualquer modelo no <a href='/pt/app.html'>criador de gráfico de Gantt gratuito</a>, edite ao vivo e exporte — você dispensa completamente as fórmulas de planilha. Sem cadastro e sem marca d'água.",
+    howCallout: "<strong>O caminho mais rápido:</strong> abra qualquer modelo no <a href='/pt/app.html'>criador de gráfico de Gantt gratuito</a>, edite ao vivo e exporte, você dispensa completamente as fórmulas de planilha. Sem cadastro e sem marca d'água.",
     notePartial: 'Algumas páginas já estão em português; as demais ainda estão em inglês.',
     eyebrow: '✦ {n} modelos grátis · sem cadastro',
     homeCrumb: 'Início',
@@ -508,7 +508,7 @@ const TEMPLATES = {
     description: '免费下载 Excel、PowerPoint 和 CSV 格式的甘特图模板，也可在线直接编辑，无需注册。涵盖项目管理、工程施工、市场营销、软件开发、产品发布和活动策划等 100 多种场景。',
     h1: '免费甘特图模板',
     lead: '每个模板都能直接在编辑器中打开，也可以下载为 Excel、PowerPoint 或 CSV 使用。阶段、里程碑和依赖关系都已经排好，你只需要把名称和日期换成自己的。无需注册，没有水印，也没有任务数量限制。',
-    intro: '挑一个和你的项目最接近的模板作为起点——不必完全吻合，阶段名称一分钟就能改。每个模板都是按该类项目真实的推进顺序排的：施工要先报批再动土，软件要先设计再迭代，活动则从固定的举办日期往回倒排。选好之后调整日期、连上依赖关系，关键路径会自动显示。',
+    intro: '挑一个和你的项目最接近的模板作为起点, , 不必完全吻合，阶段名称一分钟就能改。每个模板都是按该类项目真实的推进顺序排的：施工要先报批再动土，软件要先设计再迭代，活动则从固定的举办日期往回倒排。选好之后调整日期、连上依赖关系，关键路径会自动显示。',
     catTypes: '按项目类型', catIndustry: '按行业', catTeam: '按团队与职能',
     catTime: '按周期', catAgile: '敏捷与冲刺', catSector: '能源与酒店', catOps: '运营与企业项目', catAcademic: '科研与学业', catFormat: '按格式',
     ctaH2: '从免费模板开始', ctaP: '打开、编辑、导出。无需账号。', ctaBtn: '打开编辑器',
@@ -528,7 +528,7 @@ const TEMPLATES = {
     ],
     noteEn: '部分模板的详情页目前仍为英文，正在逐步翻译中。模板文件本身与语言无关，下载后可直接使用。',
     howEyebrow: '三个快速步骤',
-    howCallout: '<strong>最快的方式：</strong>在<a href="/zh/app.html">免费在线甘特图编辑器</a>中打开任意模板，直接编辑并导出——完全不用碰表格公式。无需注册，没有水印。',
+    howCallout: '<strong>最快的方式：</strong>在<a href="/zh/app.html">免费在线甘特图编辑器</a>中打开任意模板，直接编辑并导出, , 完全不用碰表格公式。无需注册，没有水印。',
     notePartial: '部分模板详情页已翻译为中文，其余仍为英文。模板文件本身与语言无关。',
     eyebrow: '✦ {n} 个免费模板 · 无需注册',
     homeCrumb: '首页',
@@ -548,7 +548,7 @@ const TEMPLATE_LABELS = {
 // Which slugs sit under which category heading.
 /* Guide categories. The index was a flat grid of twelve cards in
    every language, so it had no hero, no way to scan by intent, and
-   nothing for jump chips to anchor to — the templates hub had all
+   nothing for jump chips to anchor to, the templates hub had all
    three. Slugs are language-independent; the display names live in
    BLOG[code] beside the rest of that locale's chrome.
    A slug in two groups would render a duplicate card, exactly as it did
@@ -564,7 +564,7 @@ const TEMPLATE_GROUPS = [
   { key: 'catTypes', slugs: ['project-management', 'product-launch', 'event-planning', 'simple'
       /* 'research' lives in catAcademic only. It was listed in both,
          and since the localized hub renders every group it rendered the
-         same card twice — 42 cards for 41 templates. The English hub is
+         same card twice, 42 cards for 41 templates. The English hub is
          hand-authored and lists it once, so this was a localized-only
          duplicate. The specific category wins over the generic one. */, '3-week-lookahead-template', 's-curve-template', 'cloud-migration-project-plan', 'new-product-development-plan', 'mobile-app-launch-plan', 'website-redesign-project-plan', 'nonprofit-fundraising-campaign', 'data-migration-project-plan', 'ma-due-diligence-timeline', 'crm-implementation-plan', 'disaster-recovery-plan', 'rfp-procurement-timeline', 'sap-s4hana-migration-plan', 'digital-transformation-roadmap', 'product-recall-plan', 'gdpr-compliance-timeline', 'brand-relaunch-plan', 'online-course-creation-plan', 'book-launch-plan', 'go-to-market-plan', 'training-program-rollout', 'podcast-launch-plan', 'webinar-plan', 'study-plan', 'moving-house-timeline', 'kitchen-remodel-timeline', 'crowdfunding-campaign-plan', 'performance-review-cycle'] },
   { key: 'catIndustry', slugs: ['construction', 'software-development', 'home-renovation', 'wedding-planning'] },
@@ -631,7 +631,7 @@ const BLOG = {
     readMore: 'Ratgeber lesen',
     noteEn: 'Die vollständigen Ratgeber sind derzeit auf Englisch.',
     notePartial: 'Ein Teil der Ratgeber ist bereits auf Deutsch; die übrigen sind noch auf Englisch.',
-    ctaH2: 'Genug gelesen — planen Sie los',
+    ctaH2: 'Genug gelesen, planen Sie los',
     ctaP: 'Erstellen Sie Ihr Gantt-Diagramm kostenlos im Browser: Abhängigkeiten, kritischer Pfad und Export als PDF, PNG, Excel und PowerPoint. Ohne Anmeldung.',
     ctaBtn: 'Gantt-Editor öffnen →',
     gBasics: 'Grundlagen',
@@ -703,7 +703,7 @@ const APP = {
         description: 'Kostenloser Gantt-Editor im Browser. Vorgänge verschieben, Abhängigkeiten verknüpfen, kritischen Pfad sehen und nach PDF, Excel oder PowerPoint exportieren.' },
   pt: { title: 'Criar gráfico de Gantt online grátis | gantts.app',
         description: 'Editor de gráfico de Gantt gratuito no navegador. Arraste tarefas, ligue dependências, veja o caminho crítico e exporte para PDF, Excel ou PowerPoint.' },
-  zh: { title: '在线制作甘特图 — 免费 | gantts.app',
+  zh: { title: '在线制作甘特图, 免费 | gantts.app',
         description: '在浏览器中免费使用的甘特图编辑器。拖动任务、关联依赖、查看关键路径，并导出为 PDF、Excel 或 PowerPoint。' },
 };
 

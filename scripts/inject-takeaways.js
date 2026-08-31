@@ -1,4 +1,4 @@
-/* inject-takeaways.js — insert the "key takeaways" block into the HAND-AUTHORED
+/* inject-takeaways.js, insert the "key takeaways" block into the HAND-AUTHORED
    English guides, which the generators never touch (see
    [[content-generation-split]]). Generated English guides get the block from
    gen-guide-pages.js and localized ones from gen-i18n.js; this closes the gap

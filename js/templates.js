@@ -1,5 +1,5 @@
 /* ============================================================
-   templates.js — ready-made project templates + CSV/JSON import
+   templates.js, ready-made project templates + CSV/JSON import
    Exposes global `Templates`.
    ============================================================ */
 (function () {
@@ -19,7 +19,7 @@
       const indent = opts.indent || 0;
       while (parentStack.length && parentStack[parentStack.length - 1].indent >= indent) parentStack.pop();
       const parentId = parentStack.length ? parentStack[parentStack.length - 1].id : null;
-      /* Translated at instantiation, never afterwards — once the user
+      /* Translated at instantiation, never afterwards, once the user
          edits a task the text is theirs. */
       const t = {
         id, name: TPL(name), start,
@@ -181,7 +181,7 @@
     list: TEMPLATES,
 
     /* The plan a first-time visitor lands on. Reuses the Product Launch
-       starter rather than inventing a second sample to keep in sync —
+       starter rather than inventing a second sample to keep in sync, 
        it already has a group, a dependency chain, mixed progress and a
        milestone, which is exactly the vocabulary the first frame needs
        to demonstrate. */
@@ -205,7 +205,7 @@
     /* Load one of the 100 catalog templates by slug, fetching its CSV.
 
        This is the single path shared by the ?csv= deep link and the
-       in-app picker — the deep link used to inline this and the picker
+       in-app picker, the deep link used to inline this and the picker
        had no access to the catalog at all. Loading into a NEW project
        (importCSV mints a fresh id) so a visitor's existing plan is never
        overwritten, only added alongside.
@@ -234,7 +234,7 @@
           else if (name.endsWith('.xml')) this.importMSProject(text);
           /* A Mermaid diagram can arrive as .mmd, or pasted into a .md
              or .txt. Sniff the content rather than trusting the
-             extension — a .txt holding a gantt block is far more likely
+             extension, a .txt holding a gantt block is far more likely
              to be Mermaid than CSV, and misrouting it to the CSV parser
              produces a plan full of garbage rows instead of an error. */
           else if (name.endsWith('.mmd') || name.endsWith('.mermaid') || /^\s*(```(mermaid)?\s*)?gantt/m.test(text)) this.importMermaid(text);
@@ -267,14 +267,14 @@
 
       if (res.warnings.length) {
         console.warn('Mermaid import warnings:', res.warnings);
-        App.toast(`Imported with ${res.warnings.length} note${res.warnings.length > 1 ? 's' : ''} — see the console`);
+        App.toast(`Imported with ${res.warnings.length} note${res.warnings.length > 1 ? 's' : ''}, see the console`);
       } else {
         App.toast(App.Tn('tp.importedMermaidN', 'Imported {n} task(s) from Mermaid', { n: res.tasks.filter(t => t.type !== 'group').length }));
       }
     },
 
     /* MS Project XML (MSPDI). Anything the importer could not honour
-       comes back as warnings rather than being dropped in silence — a
+       comes back as warnings rather than being dropped in silence, a
        plan that lost a dependency looks fine and schedules wrongly. */
     importMSProject(text) {
       if (!window.MSProject) throw new Error('MS Project import is unavailable.');
@@ -286,7 +286,7 @@
       });
       if (res.warnings.length) {
         console.warn('MS Project import warnings:', res.warnings);
-        App.toast(`Imported with ${res.warnings.length} warning${res.warnings.length > 1 ? 's' : ''} — see the console`);
+        App.toast(`Imported with ${res.warnings.length} warning${res.warnings.length > 1 ? 's' : ''}, see the console`);
       } else {
         App.toast(`Imported ${res.tasks.length} tasks from MS Project`);
       }
@@ -314,7 +314,7 @@
         type: col(['type']),
         notes: col(['notes']),
         /* Our own CSV exports carry these two, and the importer used to
-           ignore both — so every "edit this template online" link served
+           ignore both, so every "edit this template online" link served
            a flat list with no phases and no dependency arrows. The data
            was in the file the whole time. */
         wbs: col(['wbs', 'id', '#']),
@@ -333,7 +333,7 @@
         const type = /mile/i.test(rawType) ? 'milestone'
           : /group|phase|summary/i.test(rawType) ? 'group' : 'task';
 
-        /* Indentation in the Task column is presentational — the real
+        /* Indentation in the Task column is presentational, the real
            hierarchy is the WBS number. Leading spaces would otherwise
            end up inside the name and then be indented AGAIN on render. */
         const name = String(r[ci.name]).replace(/^[\s\u00a0]+/, '').trim();

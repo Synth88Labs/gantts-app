@@ -1,4 +1,4 @@
-/* template-audience.js — "Who uses this template" answer block for template
+/* template-audience.js, "Who uses this template" answer block for template
    detail pages. Turns a download page into a helpful answer page and gives AI
    answer engines an extractable who/when statement.
 

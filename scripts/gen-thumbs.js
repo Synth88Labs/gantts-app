@@ -1,4 +1,4 @@
-/* gen-thumbs.js — branded, TEMPLATE-SPECIFIC preview images.
+/* gen-thumbs.js, branded, TEMPLATE-SPECIFIC preview images.
    Renders each template's real tasks (from gen-templates.js data) as a mini
    Gantt so every thumbnail is distinct and representative.
    Output: templates/img/{slug}.svg   Run: node scripts/gen-thumbs.js */
@@ -108,4 +108,4 @@ Object.keys(META).forEach(slug => {
   fs.writeFileSync(path.join(OUT, slug + '.svg'), svgFor(slug));
   console.log('thumb', slug);
 });
-console.log('done —', Object.keys(META).length, 'template previews');
+console.log('done, ', Object.keys(META).length, 'template previews');

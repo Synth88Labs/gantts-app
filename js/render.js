@@ -1,5 +1,5 @@
 /* ============================================================
-   render.js — draws the grid (left) and timeline chart (right)
+   render.js, draws the grid (left) and timeline chart (right)
    Exposes a global `Render`.
    ============================================================ */
 (function () {
@@ -40,7 +40,7 @@
 
       /* In a lookahead the window IS the subject. Spanning the whole
          project would squeeze three weeks into a sliver at one end and
-         defeat the point of the view — the site team needs the next
+         defeat the point of the view, the site team needs the next
          fortnight legible, not the eighteen-month programme. Clamp to
          the window, padded by a few days for context on either side. */
       if (typeof Views !== 'undefined') {
@@ -84,7 +84,7 @@
        index derive from this, so a filter added here reaches the grid,
        the bars and the dependency arrows with no further changes.
 
-       Exports deliberately do NOT go through it — they read
+       Exports deliberately do NOT go through it, they read
        Model.tasks() and keep exporting the whole plan. A lookahead is
        a way of reading the schedule, not a smaller schedule, and
        silently shipping a truncated file would be the worse surprise.
@@ -169,7 +169,7 @@
 
     // ---------------- COLUMN WIDTHS (resizable + auto-fit) ----------------
     // A user-set width always wins over the registry default. `name` has a null
-    // default meaning "flex to fill" — once the user drags it, it becomes fixed.
+    // default meaning "flex to fill", once the user drags it, it becomes fixed.
     MIN_COL_W: 34,
     colWidth(c) {
       const cw = Model.project.settings.colWidths || {};
@@ -309,7 +309,7 @@
            share a fixed row height, so it cannot wrap without desyncing
            the bar beside it). The title makes the full text recoverable
            on hover, and the Name column can be dragged wider from its
-           header — so nothing is ever lost, only tucked away. Refreshed
+           header, so nothing is ever lost, only tucked away. Refreshed
            on edit so the tooltip never lags the value. */
         title: t.name || '',
         style: { paddingLeft: (depth * 14) + 'px', flex: '1' },
@@ -322,7 +322,7 @@
        WHICH ROW it belongs to.
 
        Without this a screen-reader user tabbing across the grid hears
-       "edit text, 2026-07-21" then "2026-08-10" — two dates with no way
+       "edit text, 2026-07-21" then "2026-08-10", two dates with no way
        to tell start from end, or which task they belong to, because the
        column header is nowhere in the announcement. The visible layout
        carries that meaning; the accessibility tree did not.
@@ -377,7 +377,7 @@
     },
     _assigneeCell(t) {
       const input = U.el('input', {
-        class: 'cell-input', value: t.assignee || '', placeholder: '—',
+        class: 'cell-input', value: t.assignee || '', placeholder: ', ',
         'aria-label': this._cellName(t, App.T('col.assignee', 'Assignee')),
         onchange: (e) => Model.update(t.id, { assignee: e.target.value }),
       });
@@ -391,7 +391,7 @@
         return n + ty + lag;
       }).filter(Boolean).join(',');
       const input = U.el('input', {
-        class: 'cell-input', value: text, placeholder: '—',
+        class: 'cell-input', value: text, placeholder: ', ',
         title: 'Predecessors by row #, e.g. 3, 5SS, 4FS+2d',
         onchange: (e) => this._editPred(t, e.target.value),
       });
@@ -424,13 +424,13 @@
       const b = Model.baselineOf(t.id);
       const cls = 'col-' + (which === 'start' ? 'bstart' : 'bend');
       return U.el('div', { class: 'grow-cell ' + cls },
-        U.el('span', { class: 'ro-text base-date' }, b ? U.fmtShort(b[which]) : '—'));
+        U.el('span', { class: 'ro-text base-date' }, b ? U.fmtShort(b[which]) : ', '));
     },
     // slippage vs baseline: +n late, -n early, "On plan" when zero
     _varCell(t, which) {
       const cls = 'col-' + (which === 'start' ? 'svar' : 'fvar');
       const v = Model.variance(t.id, which);
-      if (v == null) return U.el('div', { class: 'grow-cell ' + cls }, U.el('span', { class: 'ro-text' }, '—'));
+      if (v == null) return U.el('div', { class: 'grow-cell ' + cls }, U.el('span', { class: 'ro-text' }, ', '));
       const txt = v === 0 ? '0d' : (v > 0 ? '+' + v + 'd' : v + 'd');
       const tone = v > 0 ? ' var-late' : (v < 0 ? ' var-early' : ' var-onplan');
       return U.el('div', { class: 'grow-cell ' + cls },
@@ -466,7 +466,7 @@
     _tagsCell(t) {
       if (t.type === 'group') return U.el('div', { class: 'grow-cell col-tags' }, U.el('span', { class: 'ro-text' }, (t.tags || []).join(', ')));
       const input = U.el('input', {
-        class: 'cell-input', value: (t.tags || []).join(', '), placeholder: '—',
+        class: 'cell-input', value: (t.tags || []).join(', '), placeholder: ', ',
         'aria-label': this._cellName(t, App.T('col.tags', 'Tags')),
         title: 'Comma-separated labels, e.g. frontend, urgent',
         onchange: (e) => Model.update(t.id, { tags: String(e.target.value).split(',').map(s => s.trim()).filter(Boolean) }),
@@ -474,7 +474,7 @@
       return U.el('div', { class: 'grow-cell col-tags' }, input);
     },
     // RAG health, derived from progress vs where the schedule says the task
-    // should be by today. Never stored — it is always a read of the plan.
+    // should be by today. Never stored, it is always a read of the plan.
     _statusOf(t) {
       const prog = t.progress || 0;
       if (prog >= 100) return { key: 'done', label: App.T('status.done', 'Done'), title: 'Complete' };
@@ -658,7 +658,7 @@
       const settings = Model.project.settings;
 
       /* Non-working column shading (day/week zoom only, to avoid clutter).
-         When a working calendar is active this follows the calendar —
+         When a working calendar is active this follows the calendar, 
          a Saturday that the user marked as a working day is no longer
          shaded, and a holiday is, with its name on hover. */
       const shadeCal = Cal.of(Model.project);
@@ -701,7 +701,7 @@
         if (!m.date || U.parse(m.date) < U.parse(rs.origin) || U.parse(m.date) > U.parse(rs.endDate)) return;
         const mx = this.xOf(m.date) + rs.dayW / 2;
         frag.appendChild(U.el('div', { class: 'key-marker', style: { left: mx + 'px', height: rs.height + 'px', borderColor: m.color || '#ef4444' } }));
-        if (m.label) frag.appendChild(U.el('div', { class: 'key-marker-flag', title: m.label + ' — ' + U.fmtShort(m.date), style: { left: mx + 'px', background: m.color || '#ef4444' } }, m.label));
+        if (m.label) frag.appendChild(U.el('div', { class: 'key-marker-flag', title: m.label + ', ' + U.fmtShort(m.date), style: { left: mx + 'px', background: m.color || '#ef4444' } }, m.label));
       });
 
       const wrap = U.el('div', { style: { position: 'absolute', inset: '0' } });
@@ -709,7 +709,7 @@
       return wrap;
     },
 
-    // Thin grey bar showing where this task was planned to sit. Purely visual —
+    // Thin grey bar showing where this task was planned to sit. Purely visual, 
     // no pointer events, so it never interferes with dragging the real bar.
     baselineBar(t, i) {
       const b = Model.baselineOf(t.id);
@@ -729,7 +729,7 @@
     },
 
     // A small flag pinned to the day a task is due. Turns red when the task's
-    // scheduled finish is past it — the visual half of the slip alert.
+    // scheduled finish is past it, the visual half of the slip alert.
     deadlineMarker(t, i) {
       if (!t.deadline || t.type === 'group') return null;
       const rs = this.rs;
@@ -738,7 +738,7 @@
       return U.el('div', {
         class: 'deadline-marker' + (late ? ' late' : ''),
         title: App.Tn('deadline.on', 'Deadline: {date}', { date: U.fmtShort(t.deadline) })
-          + (late ? ' — ' + App.T('deadline.missed', 'scheduled to finish late') : ''),
+          + (late ? ', ' + App.T('deadline.missed', 'scheduled to finish late') : ''),
         style: { left: x + 'px', top: (i * ROW_H) + 'px' },
       });
     },
@@ -747,7 +747,7 @@
        visually, because for a screen-reader user it is the only thing
        there is. A bare "Design phase" would be a label for a rectangle
        whose whole meaning is its position and length. */
-    /* This is the ONLY description of a bar a screen-reader user gets —
+    /* This is the ONLY description of a bar a screen-reader user gets, 
        the bar itself is a positioned div, so everything meaningful about
        it lives here.
 
@@ -779,7 +779,7 @@
     /* Roving tabindex: exactly one bar is in the tab order at a time,
        so Tab moves past the chart in one press instead of trapping the
        user in a 200-stop tour of it. Arrow keys move between bars once
-       inside — the composite-widget pattern from the ARIA grid spec. */
+       inside, the composite-widget pattern from the ARIA grid spec. */
     barA11y(b, t) {
       const isCurrent = t.id === Model.selectedId
         || (!Model.selectedId && this.rs.visible && this.rs.visible[0] && this.rs.visible[0].id === t.id);
@@ -827,7 +827,7 @@
         if (Model.project.settings.showProgress && t.progress > 0) {
           b.appendChild(U.el('div', { class: 'bar-fill', style: { width: (t.progress) + '%' } }));
         }
-        // label — inside if wide enough
+        // label, inside if wide enough
         const inside = w > 60;
         const lbl = U.el('div', { class: 'bar-label' + (inside ? ' inside' : ''),
           style: inside ? { color: U.contrast(this._barColor(t)) } : {} }, t.name + (t.assignee ? '  ·  ' + t.assignee : ''));
@@ -884,7 +884,7 @@
           arrow.setAttribute('points', path.arrow);
           arrow.setAttribute('class', 'dep-arrow' + (isCrit ? ' critical' : ''));
           svg.appendChild(arrow);
-          // wide transparent hit path on top — click to edit/remove the link
+          // wide transparent hit path on top, click to edit/remove the link
           const hit = document.createElementNS('http://www.w3.org/2000/svg', 'path');
           hit.setAttribute('d', path.d);
           hit.setAttribute('class', 'dep-hit');
@@ -926,7 +926,7 @@
         }
         arrow = `${ex - ah},${ey - av} ${ex - ah},${ey + av} ${ex},${ey}`;
       } else {
-        // enter right side of target (FF/SF) — arrow points left
+        // enter right side of target (FF/SF), arrow points left
         d = `M ${sx} ${sy} H ${Math.max(sx, ex) + g} V ${ey} H ${ex + ah}`;
         arrow = `${ex + ah},${ey - av} ${ex + ah},${ey + av} ${ex},${ey}`;
       }

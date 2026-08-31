@@ -4,7 +4,7 @@
   <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
        after the visitor accepts. Nothing is requested from Google
        before that. See scripts/add-analytics.js for why. -->
-  <script defer src="/js/consent.js?v=30"></script>
+  <script defer src="/js/consent.js?v=31"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kritischer Pfad berechnen (CPM) | gantts.app</title>
@@ -48,8 +48,8 @@
   <meta name="twitter:description" content="Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen." />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=30" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/critical-path-method.html#post","headline":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","description":"Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen.","url":"https://gantts.app/de/blog/critical-path-method.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]},"isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","item":"https://gantts.app/de/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist der kritische Pfad?","acceptedAnswer":{"@type":"Answer","text":"Die längste Kette abhängiger Vorgänge von Projektstart bis Projektende. Ihre Dauer entspricht der kürzestmöglichen Projektdauer, und ihre Vorgänge haben keinen Puffer. Verzögert sich einer davon um einen Tag, verschiebt sich der Endtermin um genau einen Tag."}},{"@type":"Question","name":"Wie berechnet man den kritischen Pfad?","acceptedAnswer":{"@type":"Answer","text":"In vier Schritten: alle Vorgänge mit Dauer und Vorgängern auflisten, Vorwärtsrechnung für die frühesten Termine (FAZ, FEZ), Rückwärtsrechnung für die spätesten (SAZ, SEZ) und schließlich Puffer = SAZ − FAZ. Alle Vorgänge mit Puffer null, durchgehend verkettet, bilden den kritischen Pfad."}},{"@type":"Question","name":"Was ist Pufferzeit?","acceptedAnswer":{"@type":"Answer","text":"Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang. Der Gesamtpuffer gilt für einen ganzen Zweig und wird von allen Vorgängen darin geteilt; der freie Puffer betrifft nur den Abstand zum unmittelbaren Nachfolger."}},{"@type":"Question","name":"Kann es mehrere kritische Pfade geben?","acceptedAnswer":{"@type":"Answer","text":"Ja. In stark verketteten Plänen sind mehrere parallele Wege gleich lang und damit alle kritisch. Das erhöht das Risiko deutlich, weil dann zwei oder mehr unabhängige Ketten gleichzeitig störungsfrei laufen müssen, damit der Termin hält."}},{"@type":"Question","name":"Was ist der Unterschied zwischen CPM und PERT?","acceptedAnswer":{"@type":"Answer","text":"CPM rechnet mit einer festen Dauer je Vorgang und liefert Pfad und Puffer. PERT arbeitet mit drei Schätzwerten — optimistisch, wahrscheinlich, pessimistisch — und gewichtet sie als (O + 4W + P) / 6, um Unsicherheit abzubilden. In der Praxis werden beide kombiniert: PERT für die Dauern, CPM für den Pfad."}},{"@type":"Question","name":"Was bedeutet ein negativer Puffer?","acceptedAnswer":{"@type":"Answer","text":"Dass der geforderte Endtermin früher liegt als das rechnerisch mögliche Ende. Ein Puffer von minus drei Tagen heißt: Der Plan ist drei Tage zu lang. Das ist kein Rechenfehler, sondern die klare Aussage, dass Umfang, Termin oder Mittel angepasst werden müssen."}},{"@type":"Question","name":"Wie verkürze ich den kritischen Pfad?","acceptedAnswer":{"@type":"Answer","text":"Entweder durch Verkürzen — mehr Mittel auf kritische Vorgänge, was Geld kostet — oder durch Parallelisieren, also das Überlappen bisher aufeinanderfolgender Vorgänge, was das Risiko von Nacharbeit erhöht. Beides wirkt nur auf dem kritischen Pfad, und nach jedem Eingriff muss neu gerechnet werden, weil ein anderer Weg kritisch werden kann."}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=31" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"de","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/de/blog/critical-path-method.html#post","headline":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","description":"Kritischer Pfad einfach erklärt: Vorwärtsrechnung, Rückwärtsrechnung, Pufferzeit und ein durchgerechnetes Beispiel mit vier Vorgängen.","url":"https://gantts.app/de/blog/critical-path-method.html","inLanguage":"de","datePublished":"2026-07-19","dateModified":"2026-07-19","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]},"isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/de/blog/critical-path-method.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://gantts.app/de/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://gantts.app/de/blog/"},{"@type":"ListItem","position":3,"name":"Kritischer Pfad: Methode, Berechnung und ein Beispiel","item":"https://gantts.app/de/blog/critical-path-method.html"}]}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Was ist der kritische Pfad?","acceptedAnswer":{"@type":"Answer","text":"Die längste Kette abhängiger Vorgänge von Projektstart bis Projektende. Ihre Dauer entspricht der kürzestmöglichen Projektdauer, und ihre Vorgänge haben keinen Puffer. Verzögert sich einer davon um einen Tag, verschiebt sich der Endtermin um genau einen Tag."}},{"@type":"Question","name":"Wie berechnet man den kritischen Pfad?","acceptedAnswer":{"@type":"Answer","text":"In vier Schritten: alle Vorgänge mit Dauer und Vorgängern auflisten, Vorwärtsrechnung für die frühesten Termine (FAZ, FEZ), Rückwärtsrechnung für die spätesten (SAZ, SEZ) und schließlich Puffer = SAZ − FAZ. Alle Vorgänge mit Puffer null, durchgehend verkettet, bilden den kritischen Pfad."}},{"@type":"Question","name":"Was ist Pufferzeit?","acceptedAnswer":{"@type":"Answer","text":"Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang. Der Gesamtpuffer gilt für einen ganzen Zweig und wird von allen Vorgängen darin geteilt; der freie Puffer betrifft nur den Abstand zum unmittelbaren Nachfolger."}},{"@type":"Question","name":"Kann es mehrere kritische Pfade geben?","acceptedAnswer":{"@type":"Answer","text":"Ja. In stark verketteten Plänen sind mehrere parallele Wege gleich lang und damit alle kritisch. Das erhöht das Risiko deutlich, weil dann zwei oder mehr unabhängige Ketten gleichzeitig störungsfrei laufen müssen, damit der Termin hält."}},{"@type":"Question","name":"Was ist der Unterschied zwischen CPM und PERT?","acceptedAnswer":{"@type":"Answer","text":"CPM rechnet mit einer festen Dauer je Vorgang und liefert Pfad und Puffer. PERT arbeitet mit drei Schätzwerten, optimistisch, wahrscheinlich, pessimistisch, und gewichtet sie als (O + 4W + P) / 6, um Unsicherheit abzubilden. In der Praxis werden beide kombiniert: PERT für die Dauern, CPM für den Pfad."}},{"@type":"Question","name":"Was bedeutet ein negativer Puffer?","acceptedAnswer":{"@type":"Answer","text":"Dass der geforderte Endtermin früher liegt als das rechnerisch mögliche Ende. Ein Puffer von minus drei Tagen heißt: Der Plan ist drei Tage zu lang. Das ist kein Rechenfehler, sondern die klare Aussage, dass Umfang, Termin oder Mittel angepasst werden müssen."}},{"@type":"Question","name":"Wie verkürze ich den kritischen Pfad?","acceptedAnswer":{"@type":"Answer","text":"Entweder durch Verkürzen, mehr Mittel auf kritische Vorgänge, was Geld kostet, oder durch Parallelisieren, also das Überlappen bisher aufeinanderfolgender Vorgänge, was das Risiko von Nacharbeit erhöht. Beides wirkt nur auf dem kritischen Pfad, und nach jedem Eingriff muss neu gerechnet werden, weil ein anderer Weg kritisch werden kann."}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,7 +81,7 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/de/">Start</a> › <a href="/de/blog/">Ratgeber</a> › Kritischer Pfad: Methode, Berechnung und ein Beispiel</div>
     <h1>Kritischer Pfad: Methode, Berechnung und ein Beispiel</h1>
-    <p class="lead">Der <strong>kritische Pfad</strong> ist die längste Kette voneinander abhängiger Vorgänge in einem Projekt. Seine Länge ist die kürzestmögliche Projektdauer — und jeder Tag Verzug auf diesem Pfad ist ein Tag Verzug am Projektende.</p>
+    <p class="lead">Der <strong>kritische Pfad</strong> ist die längste Kette voneinander abhängiger Vorgänge in einem Projekt. Seine Länge ist die kürzestmögliche Projektdauer, und jeder Tag Verzug auf diesem Pfad ist ein Tag Verzug am Projektende.</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
@@ -98,7 +98,7 @@
         <li><a href="#s8">Wenn der Termin nicht reicht</a></li>
         <li><a href="#s9">CPM, PERT und kritische Kette</a></li>
         <li><a href="#s10">Die drei häufigsten Fehler</a></li>
-        <li><a href="#s11">Wie gantts.app rechnet — und wo es vom Lehrbuch abweicht</a></li>
+        <li><a href="#s11">Wie gantts.app rechnet, und wo es vom Lehrbuch abweicht</a></li>
       </ol>
     </div>
 
@@ -118,46 +118,46 @@
         </ul>
       </aside>
       <h2 id="s1">Die Grundidee</h2>
-<p>Nicht alle Vorgänge sind gleich wichtig für den Termin. Manche haben Luft: Sie können sich verschieben, ohne dass das Projektende wandert. Andere haben keine — und die bilden den kritischen Pfad.</p>
+<p>Nicht alle Vorgänge sind gleich wichtig für den Termin. Manche haben Luft: Sie können sich verschieben, ohne dass das Projektende wandert. Andere haben keine, und die bilden den kritischen Pfad.</p>
         <p>Die Methode heißt Critical Path Method, kurz CPM, und stammt aus den späten 1950er-Jahren. Morgan Walker und James Kelley entwickelten sie ursprünglich für die Planung von Instandhaltungsstillständen in Chemieanlagen, wo jeder Stillstandstag unmittelbar Geld kostete. Sie beantwortet zwei Fragen: Wie lange dauert das Projekt mindestens, und welche Vorgänge dürfen sich auf keinen Fall verzögern?</p>
         <p>Der praktische Nutzen liegt in der Fokussierung. Ein Plan mit sechzig Vorgängen wirkt so, als müsse man auf alle sechzig gleich genau achten. Die Berechnung zeigt, dass typischerweise nur zwölf bis zwanzig davon den Endtermin tatsächlich bestimmen. Diese Vorgänge bekommen die erfahrensten Leute, die engmaschigste Nachverfolgung und die Reserven. Für den Rest genügt eine wöchentliche Statusabfrage.</p>
       <h2 id="s2">Die Begriffe: FAZ, FEZ, SAZ, SEZ</h2>
 <p>Die Rechnung arbeitet mit vier Terminen je Vorgang. Die deutschen Kürzel sind seit der Netzplantechnik nach DIN 69900 gebräuchlich und lohnen sich zu merken, weil jede Projektsoftware sie in irgendeiner Form anzeigt:</p>
         <ul>
-          <li><strong>FAZ</strong> — frühester Anfangszeitpunkt: der früheste Moment, an dem der Vorgang beginnen kann, ohne dass ein Vorgänger noch läuft.</li>
-          <li><strong>FEZ</strong> — frühester Endzeitpunkt: <code>FEZ = FAZ + Dauer</code>.</li>
-          <li><strong>SEZ</strong> — spätester Endzeitpunkt: der späteste Moment, an dem der Vorgang enden darf, ohne den Projekttermin zu verschieben.</li>
-          <li><strong>SAZ</strong> — spätester Anfangszeitpunkt: <code>SAZ = SEZ − Dauer</code>.</li>
+          <li><strong>FAZ</strong>, frühester Anfangszeitpunkt: der früheste Moment, an dem der Vorgang beginnen kann, ohne dass ein Vorgänger noch läuft.</li>
+          <li><strong>FEZ</strong>, frühester Endzeitpunkt: <code>FEZ = FAZ + Dauer</code>.</li>
+          <li><strong>SEZ</strong>, spätester Endzeitpunkt: der späteste Moment, an dem der Vorgang enden darf, ohne den Projekttermin zu verschieben.</li>
+          <li><strong>SAZ</strong>, spätester Anfangszeitpunkt: <code>SAZ = SEZ − Dauer</code>.</li>
         </ul>
-        <p>Daraus folgt die einzige Formel, die man wirklich braucht: <strong>Gesamtpuffer = SAZ − FAZ = SEZ − FEZ</strong>. Ist dieser Wert null, liegt der Vorgang auf dem kritischen Pfad. Alle Rechnungen laufen in Arbeitstagen, und die Zeitachse beginnt bei null — der erste Vorgang hat also FAZ 0, nicht FAZ 1. Das erspart die klassische Verwirrung um einen Tag am Ende.</p>
+        <p>Daraus folgt die einzige Formel, die man wirklich braucht: <strong>Gesamtpuffer = SAZ − FAZ = SEZ − FEZ</strong>. Ist dieser Wert null, liegt der Vorgang auf dem kritischen Pfad. Alle Rechnungen laufen in Arbeitstagen, und die Zeitachse beginnt bei null, der erste Vorgang hat also FAZ 0, nicht FAZ 1. Das erspart die klassische Verwirrung um einen Tag am Ende.</p>
       <h2 id="s3">Vorwärtsrechnung: die frühesten Termine</h2>
 <p>Beginnen Sie am Projektstart und gehen Sie vorwärts durch das Netz. Für jeden Vorgang gilt: der FAZ ist der <em>größte</em> FEZ aller seiner Vorgänger; der FEZ ist FAZ plus Dauer.</p>
-        <p>Das Wort <em>größte</em> ist der ganze Trick. Hat ein Vorgang zwei Vorgänger, von denen einer nach 11 Tagen und der andere nach 12 Tagen fertig ist, kann er nicht nach 11 Tagen beginnen — er wartet auf den langsameren. Wer hier versehentlich den kleineren Wert nimmt, erhält eine Projektdauer, die zu kurz ist, und einen kritischen Pfad, der durch den falschen Zweig läuft. Das ist der mit Abstand häufigste Rechenfehler bei der Handrechnung.</p>
-        <p>Am Ende der Vorwärtsrechnung steht der größte FEZ überhaupt — und das ist die frühestmögliche Projektdauer.</p>
+        <p>Das Wort <em>größte</em> ist der ganze Trick. Hat ein Vorgang zwei Vorgänger, von denen einer nach 11 Tagen und der andere nach 12 Tagen fertig ist, kann er nicht nach 11 Tagen beginnen, er wartet auf den langsameren. Wer hier versehentlich den kleineren Wert nimmt, erhält eine Projektdauer, die zu kurz ist, und einen kritischen Pfad, der durch den falschen Zweig läuft. Das ist der mit Abstand häufigste Rechenfehler bei der Handrechnung.</p>
+        <p>Am Ende der Vorwärtsrechnung steht der größte FEZ überhaupt, und das ist die frühestmögliche Projektdauer.</p>
       <h2 id="s4">Rückwärtsrechnung: die spätesten Termine</h2>
-<p>Jetzt gehen Sie vom Projektende zurück. Setzen Sie den SEZ des letzten Vorgangs gleich der eben ermittelten Projektdauer — nicht gleich einem Wunschtermin — und rechnen Sie <code>SAZ = SEZ − Dauer</code>. Für jeden weiter links liegenden Vorgang gilt: der SEZ ist der <em>kleinste</em> SAZ aller seiner Nachfolger.</p>
+<p>Jetzt gehen Sie vom Projektende zurück. Setzen Sie den SEZ des letzten Vorgangs gleich der eben ermittelten Projektdauer, nicht gleich einem Wunschtermin, und rechnen Sie <code>SAZ = SEZ − Dauer</code>. Für jeden weiter links liegenden Vorgang gilt: der SEZ ist der <em>kleinste</em> SAZ aller seiner Nachfolger.</p>
         <p>Hier ist es genau umgekehrt zur Vorwärtsrechnung: Es zählt der engste Nachfolger. Wenn ein Vorgang zwei Nachfolger hat, von denen einer am Tag 6 und der andere am Tag 7 beginnen muss, dann muss er am Tag 6 fertig sein. Der spätere Nachfolger ist keine Erlaubnis, sich Zeit zu lassen.</p>
-        <p>Ein Hinweis, der viel Ärger spart: Wenn Sie den SEZ des letzten Vorgangs auf einen vertraglich zugesagten Termin setzen, der früher liegt als die berechnete Dauer, entstehen <strong>negative Puffer</strong>. Das ist kein Rechenfehler, sondern eine Aussage — der Plan ist in dieser Form nicht haltbar, und die Zahl sagt Ihnen um wie viele Tage.</p>
+        <p>Ein Hinweis, der viel Ärger spart: Wenn Sie den SEZ des letzten Vorgangs auf einen vertraglich zugesagten Termin setzen, der früher liegt als die berechnete Dauer, entstehen <strong>negative Puffer</strong>. Das ist kein Rechenfehler, sondern eine Aussage, der Plan ist in dieser Form nicht haltbar, und die Zahl sagt Ihnen um wie viele Tage.</p>
       <h2 id="s5">Puffer und der kritische Pfad</h2>
-<p>Die Pufferzeit eines Vorgangs ist SAZ minus FAZ. Vorgänge mit Puffer null bilden den kritischen Pfad. Es gibt immer mindestens einen solchen Pfad, und in stark verketteten Plänen häufig mehrere parallele — was das Risiko erhöht, weil dann zwei unabhängige Ketten gleichzeitig gut gehen müssen.</p>
+<p>Die Pufferzeit eines Vorgangs ist SAZ minus FAZ. Vorgänge mit Puffer null bilden den kritischen Pfad. Es gibt immer mindestens einen solchen Pfad, und in stark verketteten Plänen häufig mehrere parallele, was das Risiko erhöht, weil dann zwei unabhängige Ketten gleichzeitig gut gehen müssen.</p>
         <p>Zu unterscheiden sind zwei Arten von Puffer, und die Verwechslung führt regelmäßig zu falscher Sicherheit:</p>
         <ul>
-          <li><strong>Gesamtpuffer</strong> — um wie viel sich ein Vorgang verschieben darf, ohne das <em>Projektende</em> zu verschieben. Er wird über alle Vorgänge eines Zweigs geteilt: Verbraucht der erste ihn ganz, hat der zweite keinen mehr.</li>
-          <li><strong>Freier Puffer</strong> — um wie viel sich ein Vorgang verschieben darf, ohne den <em>FAZ seines Nachfolgers</em> zu verschieben. Dieser Puffer gehört dem Vorgang allein.</li>
+          <li><strong>Gesamtpuffer</strong>, um wie viel sich ein Vorgang verschieben darf, ohne das <em>Projektende</em> zu verschieben. Er wird über alle Vorgänge eines Zweigs geteilt: Verbraucht der erste ihn ganz, hat der zweite keinen mehr.</li>
+          <li><strong>Freier Puffer</strong>, um wie viel sich ein Vorgang verschieben darf, ohne den <em>FAZ seines Nachfolgers</em> zu verschieben. Dieser Puffer gehört dem Vorgang allein.</li>
         </ul>
-        <p>Praktisch heißt das: Wenn drei Vorgänge in einem Zweig je acht Tage Gesamtpuffer ausgewiesen bekommen, gibt es nicht 24 Tage Luft, sondern acht — einmal, für den ganzen Zweig.</p>
+        <p>Praktisch heißt das: Wenn drei Vorgänge in einem Zweig je acht Tage Gesamtpuffer ausgewiesen bekommen, gibt es nicht 24 Tage Luft, sondern acht, einmal, für den ganzen Zweig.</p>
       <h2 id="s6">Ein durchgerechnetes Beispiel</h2>
 <p>Der Einbau einer Regalanlage im Logistikzentrum der Spedition Ostermann in Kassel: sechs Vorgänge, Dauern in Arbeitstagen, Projektstart Montag, 6. Juli 2026. Die Anlage kostet 96.000 €, die Montagekolonne 1.850 € je Tag. Jede Zahl unten braucht nichts als Addition und Subtraktion.</p>
       <div class="worked">
         <table>
           <thead><tr><th>Vorgang</th><th>Dauer</th><th>Vorgänger</th></tr></thead>
           <tbody>
-            <tr><td>A — Konzept</td><td>3</td><td>—</td></tr>
-            <tr><td>B — Entwurf</td><td>4</td><td>A</td></tr>
-            <tr><td>C — Beschaffung</td><td>2</td><td>A</td></tr>
-            <tr><td>D — Umsetzung</td><td>5</td><td>B</td></tr>
-            <tr><td>E — Baustelle vorbereiten</td><td>6</td><td>C</td></tr>
-            <tr><td>F — Montage und Test</td><td>3</td><td>D, E</td></tr>
+            <tr><td>A, Konzept</td><td>3</td><td>, </td></tr>
+            <tr><td>B, Entwurf</td><td>4</td><td>A</td></tr>
+            <tr><td>C, Beschaffung</td><td>2</td><td>A</td></tr>
+            <tr><td>D, Umsetzung</td><td>5</td><td>B</td></tr>
+            <tr><td>E, Baustelle vorbereiten</td><td>6</td><td>C</td></tr>
+            <tr><td>F, Montage und Test</td><td>3</td><td>D, E</td></tr>
           </tbody>
         </table>
         <p>Es gibt zwei Wege durch das Netz: <strong>A → B → D → F</strong> = 3 + 4 + 5 + 3 = <strong>15 Tage</strong> und <strong>A → C → E → F</strong> = 3 + 2 + 6 + 3 = <strong>14 Tage</strong>. Der längere Weg ist der kritische. Rechnen wir es sauber durch.</p>
@@ -168,7 +168,7 @@
           <li>C: FAZ 3 (nach A), FEZ 5</li>
           <li>D: FAZ 7 (nach B), FEZ 12</li>
           <li>E: FAZ 5 (nach C), FEZ 11</li>
-          <li>F: FAZ 12 — der größere Wert aus D mit 12 und E mit 11 —, FEZ 15</li>
+          <li>F: FAZ 12, der größere Wert aus D mit 12 und E mit 11, , FEZ 15</li>
         </ul>
         <p>Die Projektdauer beträgt also <strong>15 Arbeitstage</strong>. Ab Montag, 6. Juli gerechnet, endet das Projekt am Freitag, 24. Juli 2026.</p>
         <p><strong>Rückwärtsrechnung</strong> (SEZ, dann SAZ = SEZ − Dauer), beginnend mit F und SEZ 15:</p>
@@ -178,7 +178,7 @@
           <li>E: SEZ 12 (SAZ von F), SAZ 6</li>
           <li>B: SEZ 7 (SAZ von D), SAZ 3</li>
           <li>C: SEZ 6 (SAZ von E), SAZ 4</li>
-          <li>A: SEZ 3 — der kleinere Wert aus B mit 3 und C mit 4 —, SAZ 0</li>
+          <li>A: SEZ 3, der kleinere Wert aus B mit 3 und C mit 4, , SAZ 0</li>
         </ul>
         <p><strong>Puffer = SAZ − FAZ</strong> für jeden Vorgang:</p>
         <table>
@@ -192,62 +192,62 @@
             <tr><td>F</td><td>12</td><td>15</td><td>12</td><td>15</td><td><strong>0</strong></td><td>ja</td></tr>
           </tbody>
         </table>
-        <p>Die Vorgänge mit Puffer null — <strong>A, B, D, F</strong> — bilden den kritischen Pfad, genau der Weg, den wir vorher schon als den längeren erkannt hatten. In Kalenderterminen: A läuft von Montag, 6. bis Mittwoch, 8. Juli, B von Donnerstag, 9. bis Dienstag, 14. Juli, D von Mittwoch, 15. bis Dienstag, 21. Juli und F von Mittwoch, 22. bis Freitag, 24. Juli.</p>
-        <p>C und E haben je <strong>einen Arbeitstag Puffer</strong> — aber es ist derselbe Tag, denn beide liegen auf demselben Zweig. Verschiebt sich die Beschaffung um einen Tag, hat die Baustellenvorbereitung anschließend null Puffer, und der zweite Zweig ist ebenfalls kritisch. Verschiebt sie sich um zwei Tage, ist der Endtermin weg.</p>
-        <p><strong>Warum diese sechs Tage teuer sind.</strong> Der Regalhersteller hat vom 3. bis 21. August <strong>Betriebsferien</strong>. Zwischen dem berechneten Ende am 24. Juli und dem Beginn der Werksschließung liegen sechs Arbeitstage. Rutscht die Montage weiter als das, kostet die Verzögerung nicht einen Tag, sondern drei Wochen — der kritische Pfad hat hier also nicht nur eine Länge, sondern auch eine Klippe kurz dahinter. Genau das ist der Grund, den Betriebsferienkalender der Lieferanten vor der Terminzusage abzufragen und nicht danach.</p>
+        <p>Die Vorgänge mit Puffer null, <strong>A, B, D, F</strong>, bilden den kritischen Pfad, genau der Weg, den wir vorher schon als den längeren erkannt hatten. In Kalenderterminen: A läuft von Montag, 6. bis Mittwoch, 8. Juli, B von Donnerstag, 9. bis Dienstag, 14. Juli, D von Mittwoch, 15. bis Dienstag, 21. Juli und F von Mittwoch, 22. bis Freitag, 24. Juli.</p>
+        <p>C und E haben je <strong>einen Arbeitstag Puffer</strong>, aber es ist derselbe Tag, denn beide liegen auf demselben Zweig. Verschiebt sich die Beschaffung um einen Tag, hat die Baustellenvorbereitung anschließend null Puffer, und der zweite Zweig ist ebenfalls kritisch. Verschiebt sie sich um zwei Tage, ist der Endtermin weg.</p>
+        <p><strong>Warum diese sechs Tage teuer sind.</strong> Der Regalhersteller hat vom 3. bis 21. August <strong>Betriebsferien</strong>. Zwischen dem berechneten Ende am 24. Juli und dem Beginn der Werksschließung liegen sechs Arbeitstage. Rutscht die Montage weiter als das, kostet die Verzögerung nicht einen Tag, sondern drei Wochen, der kritische Pfad hat hier also nicht nur eine Länge, sondern auch eine Klippe kurz dahinter. Genau das ist der Grund, den Betriebsferienkalender der Lieferanten vor der Terminzusage abzufragen und nicht danach.</p>
 
         <p><strong>Jetzt verbrauchen wir Puffer.</strong> Die Beschaffung (C, Puffer 1) dauert 4 statt 2 Tage. Rechnen Sie vorwärts weiter: C hat FEZ 3 + 4 = 7, E damit FAZ 7 und FEZ 13, und F beginnt bei <code>max(D 12; E 13) = 13</code> und endet bei <strong>16</strong>.</p>
-        <p>Zwei Tage Verzug, ein Tag am Projektende — der erste Tag kam aus dem Puffer, nur die Überschreitung erreichte den Termin. Puffer ist ein Budget, und man kann es genau einmal ausgeben. Und noch etwas ist passiert: <strong>Der kritische Pfad ist umgezogen.</strong> A → C → E → F misst jetzt 3 + 4 + 6 + 3 = 16 Tage, während der alte Weg über Entwurf und Umsetzung mit 15 Tagen einen Tag Puffer hat. Die Vorgänge, die Sie bewacht haben, sind nicht mehr die, auf die es ankommt — und nichts hätte Ihnen das gesagt, wenn nicht neu gerechnet würde. Das Projektende wandert vom 24. auf Montag, den 27. Juli.</p>
+        <p>Zwei Tage Verzug, ein Tag am Projektende, der erste Tag kam aus dem Puffer, nur die Überschreitung erreichte den Termin. Puffer ist ein Budget, und man kann es genau einmal ausgeben. Und noch etwas ist passiert: <strong>Der kritische Pfad ist umgezogen.</strong> A → C → E → F misst jetzt 3 + 4 + 6 + 3 = 16 Tage, während der alte Weg über Entwurf und Umsetzung mit 15 Tagen einen Tag Puffer hat. Die Vorgänge, die Sie bewacht haben, sind nicht mehr die, auf die es ankommt, und nichts hätte Ihnen das gesagt, wenn nicht neu gerechnet würde. Das Projektende wandert vom 24. auf Montag, den 27. Juli.</p>
 
-        <p><strong>Und jetzt auf dem kritischen Pfad.</strong> Setzen Sie die Beschaffung zurück auf 2 Tage und lassen Sie stattdessen den Entwurf (B) 6 statt 4 Tage dauern. B hat FEZ 9, D damit FAZ 9 und FEZ 14, F beginnt bei <code>max(14; 11) = 14</code> und endet bei <strong>17</strong>. Zwei Tage hinein, zwei Tage heraus, eins zu eins — es gab nichts, was sie hätte auffangen können. Ende: Dienstag, der 28. Juli.</p>
-        <p>Alle anderen sind dabei reicher geworden: Rechnen Sie mit SEZ(F) = 17 rückwärts, haben C und E jetzt je drei Tage Puffer statt einem. Luft an anderer Stelle wird durch Verzug auf dem kritischen Pfad erzeugt — sie ist kein Zeichen dafür, dass es gut läuft.</p>
-        <p><strong>Was ein Tag kostet.</strong> Wollen Sie die zwei Tage zurückkaufen, wirkt nur ein Eingriff auf dem kritischen Pfad. Zwei zusätzliche Monteure verkürzen die Umsetzung (D) um einen Tag und kosten 1.850 € — die Frage im Lenkungskreis lautet dann nicht „können wir schneller“, sondern „ist uns dieser eine Tag 1.850 € wert“. Dieselben zwei Monteure auf die Baustellenvorbereitung gesetzt kosten dasselbe und bringen null Tage.</p>
+        <p><strong>Und jetzt auf dem kritischen Pfad.</strong> Setzen Sie die Beschaffung zurück auf 2 Tage und lassen Sie stattdessen den Entwurf (B) 6 statt 4 Tage dauern. B hat FEZ 9, D damit FAZ 9 und FEZ 14, F beginnt bei <code>max(14; 11) = 14</code> und endet bei <strong>17</strong>. Zwei Tage hinein, zwei Tage heraus, eins zu eins, es gab nichts, was sie hätte auffangen können. Ende: Dienstag, der 28. Juli.</p>
+        <p>Alle anderen sind dabei reicher geworden: Rechnen Sie mit SEZ(F) = 17 rückwärts, haben C und E jetzt je drei Tage Puffer statt einem. Luft an anderer Stelle wird durch Verzug auf dem kritischen Pfad erzeugt, sie ist kein Zeichen dafür, dass es gut läuft.</p>
+        <p><strong>Was ein Tag kostet.</strong> Wollen Sie die zwei Tage zurückkaufen, wirkt nur ein Eingriff auf dem kritischen Pfad. Zwei zusätzliche Monteure verkürzen die Umsetzung (D) um einen Tag und kosten 1.850 €, die Frage im Lenkungskreis lautet dann nicht „können wir schneller“, sondern „ist uns dieser eine Tag 1.850 € wert“. Dieselben zwei Monteure auf die Baustellenvorbereitung gesetzt kosten dasselbe und bringen null Tage.</p>
       </div>
       <figure class="fig fig-inline"><svg viewBox="0 0 470 112" width="100%" role="img" aria-label="Puffer ist ein Budget. Geben Sie weniger aus, als Sie haben, bewegt sich der Endtermin nicht; geben Sie mehr aus, erreicht nur die Überschreitung das Ende."><rect x="0" y="20" width="100" height="13" rx="4" fill="#6c4cf1"/><text x="106" y="31" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><rect x="120" y="44" width="90" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="216" y="55" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><rect x="300" y="68" width="110" height="13" rx="4" fill="#e5484d" opacity="0.85"/><text x="416" y="79" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">C</text><rect x="210" y="44" width="90" height="13" rx="4" fill="#12a594" opacity="0.28"/><text x="255" y="54" font-size="9.5" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Freier Puffer</text><line x1="210" y1="100" x2="410" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><text x="310" y="96" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Gesamtpuffer</text></svg><figcaption>Puffer ist ein Budget. Geben Sie weniger aus, als Sie haben, bewegt sich der Endtermin nicht; geben Sie mehr aus, erreicht nur die Überschreitung das Ende.</figcaption></figure>
       <h2 id="s7">Was das praktisch bedeutet</h2>
-<p>Die Rechnung sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf die Baustellenvorbereitung zu setzen bringt für den Endtermin nichts — der Vorgang wird früher fertig und wartet dann länger auf F. Einen Tag beim Entwurf zu sparen bringt dagegen einen Tag am Projektende, eins zu eins.</p>
+<p>Die Rechnung sagt Ihnen, wo Aufmerksamkeit wirkt. Zusätzliche Leute auf die Baustellenvorbereitung zu setzen bringt für den Endtermin nichts, der Vorgang wird früher fertig und wartet dann länger auf F. Einen Tag beim Entwurf zu sparen bringt dagegen einen Tag am Projektende, eins zu eins.</p>
         <p>Dasselbe gilt für die Nachverfolgung im Betrieb. Bei der wöchentlichen Statusrunde ist die Frage nach den kritischen Vorgängen die einzige, die den Termin bewegt. Ein Vorgang mit zwölf Tagen Puffer, der drei Tage im Rückstand ist, ist eine Notiz. Ein kritischer Vorgang, der einen halben Tag im Rückstand ist, ist ein Thema.</p>
-        <p>Und es warnt vor einer Falle: Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme. Er wandert, sobald sich etwas verschiebt. Deshalb wird er nicht einmal zu Projektbeginn berechnet, sondern bei jeder Fortschreibung neu — sonst schützen Sie einen Pfad, der seit drei Wochen nicht mehr der kritische ist.</p>
+        <p>Und es warnt vor einer Falle: Der kritische Pfad ist keine feste Eigenschaft des Plans, sondern eine Momentaufnahme. Er wandert, sobald sich etwas verschiebt. Deshalb wird er nicht einmal zu Projektbeginn berechnet, sondern bei jeder Fortschreibung neu, sonst schützen Sie einen Pfad, der seit drei Wochen nicht mehr der kritische ist.</p>
       <h2 id="s8">Wenn der Termin nicht reicht</h2>
-<p>Ergibt die Rechnung 15 Tage, der Kunde erwartet aber 12, gibt es genau zwei seriöse Hebel — und beide wirken ausschließlich auf dem kritischen Pfad:</p>
+<p>Ergibt die Rechnung 15 Tage, der Kunde erwartet aber 12, gibt es genau zwei seriöse Hebel, und beide wirken ausschließlich auf dem kritischen Pfad:</p>
         <ul>
-          <li><strong>Verkürzen</strong> (Crashing): mehr Mittel auf kritische Vorgänge. Kostet Geld, und der Ertrag sinkt schnell — zwei Personen halbieren die Dauer selten, vier vervierteln sie nie.</li>
+          <li><strong>Verkürzen</strong> (Crashing): mehr Mittel auf kritische Vorgänge. Kostet Geld, und der Ertrag sinkt schnell, zwei Personen halbieren die Dauer selten, vier vervierteln sie nie.</li>
           <li><strong>Parallelisieren</strong> (Fast Tracking): Vorgänge, die bisher nacheinander liefen, überlappen lassen, etwa indem die Umsetzung nach 70 Prozent des Entwurfs beginnt. Kostet kein Geld, erhöht aber das Risiko von Nacharbeit.</li>
         </ul>
-        <p>Nach jedem Eingriff neu rechnen. Verkürzen Sie den Entwurf um zwei Tage, ist der Weg über A, B, D und F nur noch 13 Tage lang — und der andere Weg mit 14 Tagen wird zum kritischen Pfad. Weitere Tage beim Entwurf einzusparen bringt ab dann nichts mehr.</p>
+        <p>Nach jedem Eingriff neu rechnen. Verkürzen Sie den Entwurf um zwei Tage, ist der Weg über A, B, D und F nur noch 13 Tage lang, und der andere Weg mit 14 Tagen wird zum kritischen Pfad. Weitere Tage beim Entwurf einzusparen bringt ab dann nichts mehr.</p>
       <h2 id="s9">CPM, PERT und kritische Kette</h2>
 <p>Drei Verfahren werden regelmäßig verwechselt:</p>
         <ul>
           <li><strong>CPM</strong> arbeitet mit einer festen Dauer je Vorgang und liefert kritischen Pfad und Puffer. Geeignet, wenn die Dauern einigermaßen bekannt sind.</li>
-          <li><strong>PERT</strong> nutzt drei Schätzwerte je Vorgang — optimistisch (O), wahrscheinlich (W) und pessimistisch (P) — und gewichtet sie mit <code>(O + 4W + P) / 6</code>. Bei 4, 6 und 14 Tagen ergibt das 7 Tage statt der 6, die man aus dem Bauch genannt hätte. Geeignet bei unsicheren Dauern; in der Praxis rechnet man CPM anschließend mit den PERT-Werten.</li>
+          <li><strong>PERT</strong> nutzt drei Schätzwerte je Vorgang, optimistisch (O), wahrscheinlich (W) und pessimistisch (P), und gewichtet sie mit <code>(O + 4W + P) / 6</code>. Bei 4, 6 und 14 Tagen ergibt das 7 Tage statt der 6, die man aus dem Bauch genannt hätte. Geeignet bei unsicheren Dauern; in der Praxis rechnet man CPM anschließend mit den PERT-Werten.</li>
           <li><strong>Kritische Kette</strong> ergänzt CPM um Ressourcenengpässe und bündelt die Einzelpuffer zu einem sichtbaren Projektpuffer am Kettenende. Geeignet, wenn nicht die Reihenfolge, sondern geteilte Personen der Engpass sind.</li>
         </ul>
       <h2 id="s10">Die drei häufigsten Fehler</h2>
-<p><strong>Feste Termine statt Verknüpfungen.</strong> Ein hart eingetragenes Startdatum übersteuert die Berechnung. Der Vorgang wandert nicht mehr mit, der Puffer wird falsch ausgewiesen, und der kritische Pfad läuft an ihm vorbei. Feste Termine gehören nur dorthin, wo sie real sind — ein Messetermin, ein Gerichtstermin.</p>
+<p><strong>Feste Termine statt Verknüpfungen.</strong> Ein hart eingetragenes Startdatum übersteuert die Berechnung. Der Vorgang wandert nicht mehr mit, der Puffer wird falsch ausgewiesen, und der kritische Pfad läuft an ihm vorbei. Feste Termine gehören nur dorthin, wo sie real sind, ein Messetermin, ein Gerichtstermin.</p>
         <p><strong>Fehlende Verknüpfungen.</strong> Ohne Vorgänger hat jeder Vorgang scheinbar Puffer bis zum Projektende, und die Software meldet einen unrealistisch kurzen kritischen Pfad. Wenn Ihr Plan verdächtig entspannt aussieht, fehlen meist Verknüpfungen.</p>
         <p><strong>Puffer in die Dauern gerechnet.</strong> Wer auf jede Dauer 20 Prozent aufschlägt, bekommt einen Plan, in dem der Puffer unsichtbar ist und nach dem Parkinsonschen Prinzip verbraucht wird. Schätzen Sie realistisch und setzen Sie den Puffer als eigenen Vorgang ans Ende des kritischen Pfads, wo man ihn sieht.</p>
-      <h2 id="s11">Wie gantts.app rechnet — und wo es vom Lehrbuch abweicht</h2>
+      <h2 id="s11">Wie gantts.app rechnet, und wo es vom Lehrbuch abweicht</h2>
 <p>Das lohnt sich genau zu benennen, denn unsere Vorwärtsrechnung ist nicht die oben beschriebene, und der Unterschied landet in der Pufferspalte.</p>
-        <p>Das Lehrbuch-CPM ignoriert, wohin Sie den Balken gezeichnet haben: Es setzt jeden Vorgang so früh, wie seine Vorgänger es erlauben. Die Baustellenvorbereitung beginnt also am Tag 3, ob Sie sie dort abgelegt haben oder nicht. gantts.app rechnet dagegen <strong>CPM „wie gesetzt“</strong>: Jeder Vorgang beginnt an <em>seinem eigenen gesetzten Starttermin</em>, und ein Vorgänger kann ihn danach nur <strong>später</strong> schieben, niemals früher ziehen. Im Kern ist das ein einziges Maximum — der früheste Anfang beginnt beim eigenen Starttermin, und eine Abhängigkeit hebt ihn nur an, wenn die Bedingung mehr verlangt.</p>
-        <p>Legen Sie die Baustellenvorbereitung auf den Tag 7 statt auf den Tag 5, und der Unterschied ist eine Zahl. Das Lehrbuch meldet weiter FAZ 5 und einen Tag Puffer. Wir melden FAZ 7, und bei unveränderter Rückwärtsrechnung mit SAZ 6 ergibt das <strong>−1 Tag</strong>, also einen negativen Puffer. Beides ist richtig; die beiden beantworten verschiedene Fragen. Das Lehrbuch fragt, wie viel Luft die Logik erlaubt — wir fragen, wie viel dieser Plan, so wie er gezeichnet ist, noch hat.</p>
+        <p>Das Lehrbuch-CPM ignoriert, wohin Sie den Balken gezeichnet haben: Es setzt jeden Vorgang so früh, wie seine Vorgänger es erlauben. Die Baustellenvorbereitung beginnt also am Tag 3, ob Sie sie dort abgelegt haben oder nicht. gantts.app rechnet dagegen <strong>CPM „wie gesetzt“</strong>: Jeder Vorgang beginnt an <em>seinem eigenen gesetzten Starttermin</em>, und ein Vorgänger kann ihn danach nur <strong>später</strong> schieben, niemals früher ziehen. Im Kern ist das ein einziges Maximum, der früheste Anfang beginnt beim eigenen Starttermin, und eine Abhängigkeit hebt ihn nur an, wenn die Bedingung mehr verlangt.</p>
+        <p>Legen Sie die Baustellenvorbereitung auf den Tag 7 statt auf den Tag 5, und der Unterschied ist eine Zahl. Das Lehrbuch meldet weiter FAZ 5 und einen Tag Puffer. Wir melden FAZ 7, und bei unveränderter Rückwärtsrechnung mit SAZ 6 ergibt das <strong>−1 Tag</strong>, also einen negativen Puffer. Beides ist richtig; die beiden beantworten verschiedene Fragen. Das Lehrbuch fragt, wie viel Luft die Logik erlaubt, wir fragen, wie viel dieser Plan, so wie er gezeichnet ist, noch hat.</p>
         <p>Der Grund ist, dass dies zuerst ein Diagramm ist: Eine Vorwärtsrechnung, die Vorgänge stillschweigend verschiebt, würde Puffer für einen Terminplan ausweisen, der nicht der auf dem Bildschirm ist. Einen Balken zu ziehen ist eine Anweisung, also behandeln wir sie als eine. Drei weitere Punkte, die Sie kennen sollten:</p>
         <ul>
-          <li><strong>Nur der Gesamtpuffer.</strong> Es gibt eine Zahl je Vorgang, und das ist der Gesamtpuffer — eine Spalte für den freien Puffer existiert bewusst nicht. Den freien Puffer aus dem Abschnitt weiter oben müssen Sie also selbst im Kopf haben, wenn zwei Personen an demselben Zweig planen.</li>
+          <li><strong>Nur der Gesamtpuffer.</strong> Es gibt eine Zahl je Vorgang, und das ist der Gesamtpuffer, eine Spalte für den freien Puffer existiert bewusst nicht. Den freien Puffer aus dem Abschnitt weiter oben müssen Sie also selbst im Kopf haben, wenn zwei Personen an demselben Zweig planen.</li>
           <li><strong>Sammelzeilen terminieren nicht.</strong> Die Rechnung läuft über Einzelvorgänge und Meilensteine; Phasenbalken sind Zusammenfassungen ihrer Kinder. Ein Meilenstein hat die Dauer null und lässt sich verschieben, aber nicht in der Länge ziehen.</li>
           <li><strong>Arbeitstage, wenn ein Kalender aktiv ist.</strong> Gerechnet wird in Arbeitstagsordnungszahlen, ein Abstand von 5 sind also fünf Arbeitstage, und Nachfolger landen auf einem Montag statt auf einem Sonntag.</li>
         </ul>
-        <p>Kritisch ist ein Vorgang, wenn sein Puffer <strong>null oder kleiner</strong> ist — negative Puffer verschwinden dadurch nicht, sondern werden sichtbar.</p>
+        <p>Kritisch ist ein Vorgang, wenn sein Puffer <strong>null oder kleiner</strong> ist, negative Puffer verschwinden dadurch nicht, sondern werden sichtbar.</p>
         <figure class="fig fig-inline"><svg viewBox="0 0 460 105" width="100%" role="img" aria-label="Ein Zeitabstand verschiebt die Bedingung, ohne die Verknüpfung zu lösen. Der kritische Pfad läuft durch den Abstand hindurch."><text x="0" y="12" font-size="12" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">Ende → Anfang + Wartezeit</text><rect x="0" y="24" width="130" height="13" rx="4" fill="#6c4cf1"/><text x="136" y="35" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">A</text><line x1="130" y1="46" x2="220" y2="46" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/><line x1="130" y1="40" x2="130" y2="52" stroke="#94a3b8" stroke-width="1"/><line x1="220" y1="40" x2="220" y2="52" stroke="#94a3b8" stroke-width="1"/><text x="175" y="42" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Wartezeit 3d</text><rect x="220" y="58" width="150" height="13" rx="4" fill="#6c4cf1" opacity="0.6"/><text x="376" y="69" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B</text><text x="0" y="92" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">B wartet auf A + 3d</text></svg><figcaption>Ein Zeitabstand verschiebt die Bedingung, ohne die Verknüpfung zu lösen. Der kritische Pfad läuft durch den Abstand hindurch.</figcaption></figure>
-        <p>Wollen Sie das Lehrbuchverhalten — alles auf den frühesten Termin gezogen, den die Logik zulässt —, klicken Sie auf <strong>Neu planen</strong>. Diese Funktion wiederholt die Vorwärtsrechnung mit einer geänderten Regel: Ein Vorgang mit Vorgängern folgt ausschließlich seinen Bedingungen, unabhängig davon, wo er liegt, während Vorgänge ohne Vorgänger als Anker stehen bleiben. Danach stimmen beide Verfahren überein.</p>
+        <p>Wollen Sie das Lehrbuchverhalten, alles auf den frühesten Termin gezogen, den die Logik zulässt, , klicken Sie auf <strong>Neu planen</strong>. Diese Funktion wiederholt die Vorwärtsrechnung mit einer geänderten Regel: Ein Vorgang mit Vorgängern folgt ausschließlich seinen Bedingungen, unabhängig davon, wo er liegt, während Vorgänge ohne Vorgänger als Anker stehen bleiben. Danach stimmen beide Verfahren überein.</p>
         <p>So sehen Sie den kritischen Pfad der Regalanlage in unter einer Minute:</p>
         <ol>
-          <li>Öffnen Sie <a href="/de/app.html">gantts.app</a> und klicken Sie auf <strong>✨ In Gantt einfügen</strong>. Fügen Sie die sechs Vorgänge ein — <em>Umsetzung (5d) nach Entwurf</em>, <em>Montage und Test (3d) nach Umsetzung</em>.</li>
-          <li>Ein Doppelklick auf „Montage und Test“ öffnet <strong>Nach (Vorgänger)</strong>. Tragen Sie dort <em>beide</em> Vorgänger ein, Umsetzung und Baustellenvorbereitung — das ist das <code>max()</code> aus der Vorwärtsrechnung, nur ohne Formel.</li>
+          <li>Öffnen Sie <a href="/de/app.html">gantts.app</a> und klicken Sie auf <strong>✨ In Gantt einfügen</strong>. Fügen Sie die sechs Vorgänge ein, <em>Umsetzung (5d) nach Entwurf</em>, <em>Montage und Test (3d) nach Umsetzung</em>.</li>
+          <li>Ein Doppelklick auf „Montage und Test“ öffnet <strong>Nach (Vorgänger)</strong>. Tragen Sie dort <em>beide</em> Vorgänger ein, Umsetzung und Baustellenvorbereitung, das ist das <code>max()</code> aus der Vorwärtsrechnung, nur ohne Formel.</li>
           <li>Tragen Sie unter <strong>Kalender</strong> die Betriebsferien des Regalherstellers vom 3. bis 21. August ein, damit die Klippe hinter dem Endtermin im Plan sichtbar wird.</li>
           <li>Klicken Sie auf <strong>Neu planen</strong>. Jetzt entspricht die Rechnung dem Lehrbuch, und die 15 Arbeitstage stehen im Plan.</li>
           <li>Setzen Sie das Häkchen bei <strong>Kritischer Pfad</strong>. A, B, D und F werden schraffiert; die Legende darunter erklärt die Schraffur.</li>
           <li>Blenden Sie über <strong>Spalten</strong> die Pufferspalte ein und lesen Sie die 1 bei Beschaffung und Baustellenvorbereitung ab. Denken Sie daran: Das ist einmal ein Tag für den ganzen Zweig, nicht zweimal.</li>
-          <li>Ändern Sie die Dauer der Beschaffung auf 4 Tage. Die Schraffur springt auf den anderen Zweig — genau der Umzug des kritischen Pfads, den wir oben von Hand gerechnet haben.</li>
+          <li>Ändern Sie die Dauer der Beschaffung auf 4 Tage. Die Schraffur springt auf den anderen Zweig, genau der Umzug des kritischen Pfads, den wir oben von Hand gerechnet haben.</li>
           <li>Über <strong>⬇ Export</strong> geht der Plan als <strong>📄 PDF-Dokument</strong>, <strong>📊 Excel (.xlsx)</strong> oder <strong>📽 PowerPoint (.pptx)</strong> hinaus.</li>
         </ol>
         <p>Die Rechnung einmal von Hand durchzuführen lohnt sich, weil man danach versteht, was die Software tut. Wiederholen möchte man sie nach jeder Schätzungsänderung nicht.</p>
@@ -261,16 +261,16 @@
         <details><summary>Wie berechnet man den kritischen Pfad?</summary><p>In vier Schritten: alle Vorgänge mit Dauer und Vorgängern auflisten, Vorwärtsrechnung für die frühesten Termine (FAZ, FEZ), Rückwärtsrechnung für die spätesten (SAZ, SEZ) und schließlich Puffer = SAZ − FAZ. Alle Vorgänge mit Puffer null, durchgehend verkettet, bilden den kritischen Pfad.</p></details>
         <details><summary>Was ist Pufferzeit?</summary><p>Die Zeit, um die sich ein Vorgang verschieben darf, ohne das Projektende zu verschieben: spätester Anfang minus frühester Anfang. Der Gesamtpuffer gilt für einen ganzen Zweig und wird von allen Vorgängen darin geteilt; der freie Puffer betrifft nur den Abstand zum unmittelbaren Nachfolger.</p></details>
         <details><summary>Kann es mehrere kritische Pfade geben?</summary><p>Ja. In stark verketteten Plänen sind mehrere parallele Wege gleich lang und damit alle kritisch. Das erhöht das Risiko deutlich, weil dann zwei oder mehr unabhängige Ketten gleichzeitig störungsfrei laufen müssen, damit der Termin hält.</p></details>
-        <details><summary>Was ist der Unterschied zwischen CPM und PERT?</summary><p>CPM rechnet mit einer festen Dauer je Vorgang und liefert Pfad und Puffer. PERT arbeitet mit drei Schätzwerten — optimistisch, wahrscheinlich, pessimistisch — und gewichtet sie als (O + 4W + P) / 6, um Unsicherheit abzubilden. In der Praxis werden beide kombiniert: PERT für die Dauern, CPM für den Pfad.</p></details>
+        <details><summary>Was ist der Unterschied zwischen CPM und PERT?</summary><p>CPM rechnet mit einer festen Dauer je Vorgang und liefert Pfad und Puffer. PERT arbeitet mit drei Schätzwerten, optimistisch, wahrscheinlich, pessimistisch, und gewichtet sie als (O + 4W + P) / 6, um Unsicherheit abzubilden. In der Praxis werden beide kombiniert: PERT für die Dauern, CPM für den Pfad.</p></details>
         <details><summary>Was bedeutet ein negativer Puffer?</summary><p>Dass der geforderte Endtermin früher liegt als das rechnerisch mögliche Ende. Ein Puffer von minus drei Tagen heißt: Der Plan ist drei Tage zu lang. Das ist kein Rechenfehler, sondern die klare Aussage, dass Umfang, Termin oder Mittel angepasst werden müssen.</p></details>
-        <details><summary>Wie verkürze ich den kritischen Pfad?</summary><p>Entweder durch Verkürzen — mehr Mittel auf kritische Vorgänge, was Geld kostet — oder durch Parallelisieren, also das Überlappen bisher aufeinanderfolgender Vorgänge, was das Risiko von Nacharbeit erhöht. Beides wirkt nur auf dem kritischen Pfad, und nach jedem Eingriff muss neu gerechnet werden, weil ein anderer Weg kritisch werden kann.</p></details>
+        <details><summary>Wie verkürze ich den kritischen Pfad?</summary><p>Entweder durch Verkürzen, mehr Mittel auf kritische Vorgänge, was Geld kostet, oder durch Parallelisieren, also das Überlappen bisher aufeinanderfolgender Vorgänge, was das Risiko von Nacharbeit erhöht. Beides wirkt nur auf dem kritischen Pfad, und nach jedem Eingriff muss neu gerechnet werden, weil ein anderer Weg kritisch werden kann.</p></details>
       </div>
 
       <aside class="promo">
         <div class="promo-body">
           <span class="promo-tag">Anzeige</span>
           <h3>Gantt-Vorlagen für Excel</h3>
-          <p>ExcelGuru.io führt eine kostenlose Sammlung fertiger Gantt-Tabellen — die Formeln sind bereits hinterlegt, Add-ins sind nicht nötig.</p>
+          <p>ExcelGuru.io führt eine kostenlose Sammlung fertiger Gantt-Tabellen, die Formeln sind bereits hinterlegt, Add-ins sind nicht nötig.</p>
         </div>
         <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">Vorlagen ansehen →</a>
       </aside>
@@ -288,7 +288,7 @@
 
   <section class="cta-band">
     <div class="container">
-      <h2>Erstellen Sie Ihr Gantt-Diagramm — kostenlos</h2>
+      <h2>Erstellen Sie Ihr Gantt-Diagramm, kostenlos</h2>
       <p>Im Browser, ohne Anmeldung. Ihre Daten bleiben auf Ihrem Gerät.</p>
       <a class="btn btn-white btn-lg" href="/de/app.html">Planer öffnen</a>
     </div>
@@ -302,7 +302,7 @@
             <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
             <span class="brand-word">gantts<b>.app</b></span>
           </a>
-          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload – Ihre Daten bleiben im Browser.</p>
+          <p>Kostenloser Gantt-Diagramm-Generator. Ohne Konto, ohne Upload, Ihre Daten bleiben im Browser.</p>
           <a class="footer-cta" href="/de/app.html">App öffnen →</a>
           <p class="footer-byline">Ein Projekt von <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
         </div>
@@ -332,10 +332,10 @@
       </div>
       <div class="footer-bottom">
         <span>© <span class="year">2026</span> gantts.app · Alle Rechte vorbehalten.</span>
-        <span>Statische Website — nichts, was Sie planen, verlässt Ihren Browser.</span>
+        <span>Statische Website, nichts, was Sie planen, verlässt Ihren Browser.</span>
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=30"></script>
+  <script src="/js/site.js?v=31"></script>
 </body>
 </html>

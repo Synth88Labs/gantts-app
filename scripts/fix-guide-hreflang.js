@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   fix-guide-hreflang.js — reciprocal hreflang on English pages.
+   fix-guide-hreflang.js, reciprocal hreflang on English pages.
 
    Covers BOTH guides and template detail pages.
 
@@ -12,7 +12,7 @@
    actually written.
 
    Idempotent: the block is delimited by markers and replaced wholesale
-   on each run, so running it twice does not stack duplicates — which
+   on each run, so running it twice does not stack duplicates, which
    would silently invalidate the cluster.
 
    Usage: node scripts/fix-guide-hreflang.js
@@ -26,7 +26,7 @@ const T = require('../i18n/template-locales.js');
 /* Two families of page, one problem: in each, some English originals are
    generated and some are hand-authored HTML, so no single generator can
    own their <head>. 22 template pages had no hreflang at all until this
-   was generalised — caught by check-hreflang, not by eye. */
+   was generalised, caught by check-hreflang, not by eye. */
 const FAMILIES = [
   { dir: 'blog', reg: G, label: 'guide' },
   { dir: 'templates', reg: T, label: 'template' },
@@ -82,7 +82,7 @@ for (const fam of FAMILIES) {
 
      Deliberately NOT a RegExp built from the marker strings. The first
      version did exactly that with '[\s\S]*?' written inside a plain JS
-     string, where \s collapses to s — the pattern silently became
+     string, where \s collapses to s, the pattern silently became
      [sS]*? and never matched, so every build stripped the links but
      left the markers behind and appended a fresh block. Running it
      twice produced three marker pairs. Index splicing has no escaping
@@ -98,7 +98,7 @@ for (const fam of FAMILIES) {
   // Refuse to write something we would have to clean up next run.
   const starts = (next.match(/hreflang:start/g) || []).length;
   if (starts !== 1) {
-    console.error(`  ✗ ${rel} — would contain ${starts} hreflang blocks; not written`);
+    console.error(`  ✗ ${rel}, would contain ${starts} hreflang blocks; not written`);
     process.exitCode = 1;
     continue;
   }
@@ -106,7 +106,7 @@ for (const fam of FAMILIES) {
   if (next !== fs.readFileSync(file, 'utf8')) {
     fs.writeFileSync(file, next, 'utf8');
     touched++;
-    console.log(`  ✓ ${rel} — ${fam.reg.localesFor(slug).join(', ')}`);
+    console.log(`  ✓ ${rel}, ${fam.reg.localesFor(slug).join(', ')}`);
   }
  }
 }

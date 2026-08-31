@@ -1,5 +1,5 @@
 /* ============================================================
-   evm.js — S-curve and earned value. Pure arithmetic, no DOM.
+   evm.js, S-curve and earned value. Pure arithmetic, no DOM.
 
    WHAT THIS COMPUTES
 
@@ -25,7 +25,7 @@
 
    1. ACTUAL COST IS NOT INVENTED.
 
-      The obvious shortcut is to derive AC from progress — assume a task
+      The obvious shortcut is to derive AC from progress, assume a task
       that is 40% done has consumed 40% of its budget. Do that and
       AC == EV identically, so CPI is exactly 1.00 and CV exactly 0 for
       every project that has ever existed. The number would look
@@ -41,7 +41,7 @@
 
       We know each task's progress *today*. We do not store progress
       history, so a truthful earned curve for past dates is not
-      recoverable — we have one sample, not a series.
+      recoverable, we have one sample, not a series.
 
       Rather than refuse to draw it, we reconstruct it under a stated
       assumption: each task's progress accrued linearly across its
@@ -55,7 +55,7 @@
       Most plans carry no budget at all. Weighting by cost would then
       make every task worth zero and the curve flat. So when no task has
       a cost we weight by working-day duration instead and the result is
-      a pure progress S-curve — the same shape, read in percent rather
+      a pure progress S-curve, the same shape, read in percent rather
       than currency. `basis` says which happened. This is why the
       feature works on a plan the user made sixty seconds ago.
 
@@ -65,7 +65,7 @@
 (function () {
   /* Spread a task's budget evenly across its working days. Real work
      is not this uniform, but front/back-loading a curve requires a
-     distribution the user never supplied — the arithmetic would be
+     distribution the user never supplied, the arithmetic would be
      invented, and unlike the earned curve there is nothing to anchor
      it to. Even spreading is the assumption that adds no information. */
   function workingDays(start, end, cal) {
@@ -78,7 +78,7 @@
       d = U.addDays(d, 1);
     }
     /* A task wholly inside a shutdown has no working days but still has
-       budget. Charge it to its start date rather than dropping it —
+       budget. Charge it to its start date rather than dropping it, 
        losing it would make the curve stop short of BAC and imply work
        that never gets done. */
     return out.length ? out : [start];
@@ -106,7 +106,7 @@
       const basis = costed.length ? 'cost' : 'duration';
       const hasActuals = leaves.some(t => Number(t.spent) > 0);
 
-      /* Baseline is the correct source for planned value — that is what
+      /* Baseline is the correct source for planned value, that is what
          a baseline is for. Without one, current dates are the only
          plan there is, which makes SV read 0 until the user sets one.
          `plannedFrom` tells the caller so it can say as much. */
@@ -145,7 +145,7 @@
           const aDays = workingDays(t.start, t.end, cal);
           /* Only the elapsed portion. A task marked 50% done whose bar
              sits entirely in the future should raise the curve today,
-             not on some future date — otherwise the curve would climb
+             not on some future date, otherwise the curve would climb
              after the status line, which reads as work already banked. */
           const elapsed = aDays.filter(d => U.parse(d) <= U.parse(status));
           const spread = elapsed.length ? elapsed : [U.min(t.start, status)];
@@ -224,7 +224,7 @@
           ac: hasActuals ? acNow : null,
           sv, spi,
           cv, cpi,
-          /* EAC assumes cost performance to date continues — the
+          /* EAC assumes cost performance to date continues, the
              standard CPI-based forecast. Null without actuals, because
              every input to it would be made up. */
           eac: cpi ? bac / cpi : null,

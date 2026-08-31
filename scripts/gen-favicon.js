@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   gen-favicon.js — build /favicon.ico at the site root.
+   gen-favicon.js, build /favicon.ico at the site root.
 
    The site already shipped an SVG icon and an apple-touch-icon, but
    never a favicon.ico, and /favicon.ico was returning 404. That matters
@@ -18,7 +18,7 @@
    every browser in use and by Windows Vista onwards), so the sizes are
    generated with sharp and embedded as-is rather than converted to BMP.
 
-   Sizes 16/32/48 are the ones that are actually requested — 48 is what
+   Sizes 16/32/48 are the ones that are actually requested, 48 is what
    Windows and several crawlers pick.
 
    Source of truth is assets/logo-mark.svg, so the icon can never drift
@@ -47,7 +47,7 @@ function buildIco(images) {
 
   images.forEach((img, i) => {
     const at = i * 16;
-    // 256px is encoded as 0 in this byte — the field is one byte wide.
+    // 256px is encoded as 0 in this byte, the field is one byte wide.
     dir.writeUInt8(img.size >= 256 ? 0 : img.size, at + 0);  // width
     dir.writeUInt8(img.size >= 256 ? 0 : img.size, at + 1);  // height
     dir.writeUInt8(0, at + 2);             // palette colours (0 = truecolour)
@@ -64,7 +64,7 @@ function buildIco(images) {
 
 (async () => {
   if (!fs.existsSync(SRC)) {
-    console.error('✗ assets/logo-mark.svg missing — nothing to build the icon from.\n');
+    console.error('✗ assets/logo-mark.svg missing, nothing to build the icon from.\n');
     process.exit(1);
   }
 
@@ -84,6 +84,6 @@ function buildIco(images) {
   const ico = buildIco(images);
   fs.writeFileSync(path.join(ROOT, 'favicon.ico'), ico);
 
-  console.log(`✓ favicon.ico written — ${SIZES.join('/')}px, ${ico.length} bytes`);
+  console.log(`✓ favicon.ico written, ${SIZES.join('/')}px, ${ico.length} bytes`);
   console.log('  assets/favicon-16.png and favicon-32.png refreshed from the same source.');
 })();

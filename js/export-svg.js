@@ -1,5 +1,5 @@
 /* ============================================================
-   export-svg.js — the chart as real vector, built from the model.
+   export-svg.js, the chart as real vector, built from the model.
 
    WHY THIS IS NOT A SERIALISED DOM NODE
 
@@ -9,7 +9,7 @@
    dependency arrows are SVG. Serialising the existing node yields the
    arrows floating over nothing.
 
-   The next obvious idea — wrap the HTML in <foreignObject> — produces a
+   The next obvious idea, wrap the HTML in <foreignObject>, produces a
    file that renders in a browser and is useless everywhere else.
    Illustrator, Inkscape and most print pipelines ignore foreignObject,
    so the "vector export" opens blank at exactly the moment somebody
@@ -19,7 +19,7 @@
    and it buys two things that matter:
 
      1. It opens in real vector tools and prints at any size. PNG and
-        the html2canvas PDF are raster — enlarge them and the text goes
+        the html2canvas PDF are raster, enlarge them and the text goes
         soft. A schedule pinned to a wall is the whole point.
 
      2. It is DOM-free, so it is UNIT TESTED. Everything else in the
@@ -28,7 +28,7 @@
         from a project to a string.
 
    The cost of the duplication is that render.js and this file can
-   drift. The tests pin the parts that would silently go wrong — bar
+   drift. The tests pin the parts that would silently go wrong, bar
    geometry against the date axis, and the inclusive-end convention.
    ============================================================ */
 (function () {
@@ -88,7 +88,7 @@
       if (!tasks.length) {
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="80" viewBox="0 0 480 80">`
           + `<text x="16" y="44" font-family="${FONT}" font-size="14" fill="#64748b">`
-          + `${esc(title)} — no dated tasks</text></svg>`;
+          + `${esc(title)}, no dated tasks</text></svg>`;
         return { svg, width: 480, height: 80, empty: true };
       }
 
@@ -269,7 +269,7 @@
         + `y2="${bodyTop + tasks.length * ROW_H}" stroke="#cbd5e1" stroke-width="1"/>`);
 
       parts.push(`<text x="${PAD}" y="${H - 8}" font-size="9.5" fill="#94a3b8">`
-        + `${esc(U.fmtShort(min))} – ${esc(U.fmtShort(max))} · gantts.app</text>`);
+        + `${esc(U.fmtShort(min))}, ${esc(U.fmtShort(max))} · gantts.app</text>`);
       parts.push('</svg>');
 
       return { svg: parts.join('\n'), width: W, height: H, empty: false };

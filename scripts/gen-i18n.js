@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   gen-i18n.js — render localized static pages from i18n/content.js.
+   gen-i18n.js, render localized static pages from i18n/content.js.
 
    WHY STATIC PAGES INSTEAD OF CLIENT-SIDE TEXT SWAPPING:
    A JS language toggle repaints one URL. Google indexes one version
@@ -44,12 +44,12 @@ const { G: GUIDE_EN } = require('./new-guides.js');
 
 const ROOT = path.join(__dirname, '..');
 const ORIGIN = 'https://gantts.app';
-const CSS_V = 'v=30';
+const CSS_V = 'v=31';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /* Which sub-pages exist in a given locale. Until templates.html and
-   blog/ are localized, their nav links must fall back to English —
+   blog/ are localized, their nav links must fall back to English, 
    linking to a 404 is worse than linking across languages. */
 const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': true,
   /* Site pages come from SITE_PAGES rather than being repeated here.
@@ -59,12 +59,12 @@ const LOCALIZED_PAGES = { '': true, 'templates.html': true, 'blog/index.html': t
      footer sent German, Spanish, French, Portuguese and Chinese
      readers to the English statement. Silent, because falling back to
      English is the DESIGNED behaviour for a page a locale does not
-     have — it just was not true here. */
+     have, it just was not true here. */
   ...Object.fromEntries(SITE_PAGES.map((p) => [p, true])),
   // renderApp() writes /<code>/app.html for every locale, so the nav and
   // every CTA must send readers there. Omitting it meant a Spanish page
   // showed "Abrir la aplicación" and then dropped the reader into the
-  // English editor — the single most visited link on the site.
+  // English editor, the single most visited link on the site.
   'app.html': true };
 /* index.html is an implementation detail of the filesystem, never a
    URL we link to: /blog/ and /blog/index.html served identical content
@@ -73,7 +73,7 @@ const cleanUrl = (p) => p.replace(/(^|\/)index\.html$/, '$1');
 /* cleanUrl fixed the <a href> case, but every *absolute* URL the page
    emits was still built as ORIGIN + '/' + sub with sub ending in
    index.html. That left /de/blog/ declaring rel=canonical to
-   /de/blog/index.html — a canonical pointing at a URL that .htaccess
+   /de/blog/index.html, a canonical pointing at a URL that .htaccess
    301s straight back, so the two addresses kept splitting signal
    between them, which is the precise thing the canonicalisation work
    was meant to end. Same for og:url, every hreflang href, the JSON-LD
@@ -103,13 +103,13 @@ function hreflangTags(sub, only) {
   return altUrls(sub, only).map(a => `  <link rel="alternate" hreflang="${a.hreflang}" href="${a.url}" />`).join('\n');
 }
 
-/* Switcher is a <select> of real links — changing it navigates.
+/* Switcher is a <select> of real links, changing it navigates.
    Keeping it a form control matches the existing site chrome. */
 function langSwitcher(currentCode, sub, only) {
   const opt = (code, label, url) =>
     `<option value="${url}"${code === currentCode ? ' selected' : ''}>${esc(label)}</option>`;
   // Locales without this page send the reader to their own home page
-  // instead of a 404 — see altUrls().
+  // instead of a 404, see altUrls().
   const has = (code) => !only || only.includes(code);
   const opts = [opt('en', 'English', pub('/' + sub))]
     .concat(LOCALES.map(l => opt(l.code, l.name, has(l.code) ? pub(`/${l.code}/${sub}`) : `/${l.code}/`)))
@@ -117,7 +117,7 @@ function langSwitcher(currentCode, sub, only) {
   return `<select class="lang-select" data-lang-nav aria-label="${esc(CHROME[currentCode].langLabel)}">${opts}</select>`;
 }
 
-/* Markup must mirror the English pages exactly — site.css styles
+/* Markup must mirror the English pages exactly, site.css styles
    .nav / .nav-inner / .nav-logo. Using invented class names here left
    the header as a non-flex block, stacking brand, links and buttons
    into three rows at 124px tall. */
@@ -148,7 +148,7 @@ function header(code, sub, only) {
 }
 
 /* The English guide prints "Updated July 14, 2026". Every localized guide
-   was printing the raw ISO string instead — "Aktualisiert 2026-07-19" —
+   was printing the raw ISO string instead, "Aktualisiert 2026-07-19", 
    which reads as a machine artefact in any of the five languages and was
    the single most visible untranslated element on the page.
    Intl handles the per-locale ordering and separators: 19. Juli 2026,
@@ -164,7 +164,7 @@ function longDate(code, iso) {
 
 /* Footer deep-links used to be hardcoded to the English pages. Once the
    Spanish translations existed, that left 300 links pointing out of the
-   locale from inside the Spanish site — five targets repeated across
+   locale from inside the Spanish site, five targets repeated across
    sixty pages. Both helpers fall back to English when a translation
    does not exist, which is still the right answer for fr/de/pt/zh. */
 function tplHref(code, slug) {
@@ -354,8 +354,8 @@ function renderHome(loc) {
 
   /* The English feature grid is a bento: six cells with b1-b6 layout
      classes and an inline SVG icon on five of them. The localized
-     version rendered the same six features as plain text — no icons,
-     no layout classes — so every language but English got a flat list
+     version rendered the same six features as plain text, no icons,
+     no layout classes, so every language but English got a flat list
      where English got a designed section. Icons carry no text, so they
      are shared verbatim. */
   const features = t.features.map((f, i) => {
@@ -403,7 +403,7 @@ ${cell.visual ? `          <div class="bento-visual">${cell.visual}</div>` : ''}
      without it the localized hero opens on empty space. Dates are
      formatted per locale rather than copied across, so a German visitor
      reads "4. Aug." and a Chinese one "8月4日" instead of "Aug 4". The
-     reference date is fixed, not today's — this is illustrative chrome,
+     reference date is fixed, not today's, this is illustrative chrome,
      and a date that silently rolls forward would make every rebuild a
      content diff. */
   const rulerFmt = new Intl.DateTimeFormat(DATE_LOCALE[code] || 'en-US',
@@ -536,7 +536,7 @@ ${footer(loc.code)}
 }
 
 /* Templates hub. CollectionPage + ItemList mirrors the English hub's
-   schema role — the localized page is the same kind of thing. */
+   schema role, the localized page is the same kind of thing. */
 function renderTemplates(loc) {
   const code = loc.code;
   const t = TEMPLATES[code];
@@ -544,7 +544,7 @@ function renderTemplates(loc) {
   const labels = TEMPLATE_LABELS[code];
   const sub = 'templates.html';
 
-  // Card links land on the localized detail page where one exists —
+  // Card links land on the localized detail page where one exists, 
   // that is the whole point of translating them. The rest stay English.
   const cardHref = (s) => localesFor(s).includes(code)
     ? `/${code}/templates/${s}.html` : `/templates/${s}.html`;
@@ -552,12 +552,12 @@ function renderTemplates(loc) {
   /* Card blurbs come from the translated template entry itself, so a
      locale gets richer cards exactly as its translations land. The
      English hub carries a one-line description under every card; without
-     this the localized hub was a wall of bare labels — 319 words against
+     this the localized hub was a wall of bare labels, 319 words against
      the English 1,288, which is a materially worse page for the reader
      and a thin one for Google. */
   /* Download badges are per template, not a fixed trio. Three of the 41
      differ, and the localized hub hardcoded Excel/PPT/CSV for all of
-     them — so the Google Sheets template advertised an Excel download
+     them, so the Google Sheets template advertised an Excel download
      and no Sheets one in all five languages, which is wrong about the
      product rather than merely inconsistent with English. Format names
      are product names and stay untranslated, as on the English hub. */
@@ -579,7 +579,7 @@ function renderTemplates(loc) {
 
   /* A template belongs to exactly one category on the hub. Cross-listing
      renders the same card twice, which reads as a bug rather than as
-     helpful discovery — and it silently desynced the card count from the
+     helpful discovery, and it silently desynced the card count from the
      template count. Fail loudly instead of deduping quietly: a slug in
      two groups is a content mistake to fix in TEMPLATE_GROUPS, and
      swallowing it here would just hide the next one. */
@@ -598,21 +598,21 @@ function renderTemplates(loc) {
     /* Markup must match the English hub EXACTLY. The localized cards
        used to emit a bare <img>, <h3> and <p> with no wrappers, so they
        lost every rule that hangs off .tpl-thumb (aspect ratio and
-       object-fit — the image rendered at its natural size, small and
+       object-fit, the image rendered at its natural size, small and
        left-aligned), .tpl-body (the 16px/18px padding, i.e. the missing
        indent) and .tpl-body h3/p (the text colours, so both inherited
        the anchor's purple). The download badges were missing too. */
     const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags">${tagsFor(s)}</div></div></a>`).join('\n');
     /* .head-l is a flex row: heading on the left, note on the right.
        The note was being emitted on its own, so it kept the 380px
-       max-width from .head-l-note but lost the layout — orphaning a
+       max-width from .head-l-note but lost the layout, orphaning a
        narrow paragraph under the heading instead of sitting beside it. */
     /* The id is what the jump-row chips anchor to; without it the chips
        would be decorative.
 
        No .label kicker here, deliberately. On the English hub the label
        is the axis ("By use case") and the h2 is descriptive ("Templates
-       by project type") — two different strings. The localized groups
+       by project type"), two different strings. The localized groups
        carry a single string that is already the axis ("Nach Projektart"),
        so emitting both would print the same words twice, one above the
        other. Matching a class list is not the point; matching what the
@@ -627,7 +627,7 @@ ${cards}
   }).join('\n');
 
   /* Unique, not the flattened list. 'research' is cross-listed under
-     two categories, so the raw flatMap is 42 for 41 templates — which
+     two categories, so the raw flatMap is 42 for 41 templates, which
      overstated the count in the hero and emitted a duplicate ListItem
      in the ItemList schema. */
   const allSlugs = [...new Set(TEMPLATE_GROUPS.flatMap(g => g.slugs))];
@@ -663,7 +663,7 @@ ${cards}
   /* The English hub opens with a centred hero band: breadcrumb, eyebrow
      with the template count, h1, lead, and a row of jump chips into the
      category sections. The localized hubs opened with a bare <h1> on
-     white — no band, no eyebrow, no chips — so the page a searcher lands
+     white, no band, no eyebrow, no chips, so the page a searcher lands
      on looked like a different, plainer product in every language but
      English. Same markup now, translated copy. */
   const chips = TEMPLATE_GROUPS
@@ -700,7 +700,7 @@ ${note ? `    <p class="crumbs"><small>${esc(note)}</small></p>\n` : ''}${groups
         <div class="section-head"><span class="eyebrow">${esc(t.howEyebrow)}</span><h2>${esc(t.howH2)}</h2></div>
         <div class="prose">
           <ol>
-${t.howSteps.map(([h, p]) => `            <li><strong>${esc(h)}</strong> — ${esc(p)}</li>`).join('\n')}
+${t.howSteps.map(([h, p]) => `            <li><strong>${esc(h)}</strong>, ${esc(p)}</li>`).join('\n')}
           </ol>
         </div>
         <div class="callout" style="margin-top:8px">${t.howCallout}</div>
@@ -731,7 +731,7 @@ ${t.faq.map(([q, a], i) => `        <details${i === 0 ? ' open' : ''}><summary>$
    Same schema role as the English page (BreadcrumbList + HowTo +
    FAQPage), same layout, translated copy. The schedule data, preview
    image and download files are language-independent and shared with
-   the English page — only the prose differs, so a Spanish reader gets
+   the English page, only the prose differs, so a Spanish reader gets
    the same spreadsheet, described in Spanish.
 
    Rendered only for slugs with a real translation in
@@ -746,14 +746,14 @@ function renderTemplateDetail(loc, slug) {
   const only = localesFor(slug);
   const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 
-  const phases = d.phases.map(([h, p]) => `        <li><strong>${h}</strong> — ${p}</li>`).join('\n');
+  const phases = d.phases.map(([h, p]) => `        <li><strong>${h}</strong>, ${p}</li>`).join('\n');
   const custom = d.customize.map(c => `        <li>${c}</li>`).join('\n');
   const tips = d.tips.map(t => `        <li>${t}</li>`).join('\n');
   const faq = d.faq.map(([q, a], i) =>
     `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n');
 
   // Related pages resolve to the localized version when it exists,
-  // and fall back to English rather than being dropped — a cross-link
+  // and fall back to English rather than being dropped, a cross-link
   // in the wrong language still beats no cross-link.
   /* Related links come from the Spanish entry when it declares them,
      otherwise from the English content model. Most template pages are
@@ -769,7 +769,7 @@ function renderTemplateDetail(loc, slug) {
      So: keep every declared link that exists in this locale, then top up
      from the locale's other translated templates until there are three.
      Only if the locale has fewer than three translations at all does the
-     English fallback still apply — with 24 German templates it no longer
+     English fallback still apply, with 24 German templates it no longer
      fires, and it stops firing for each locale as coverage grows. */
   const WANT = 3;
   const picked = [];
@@ -786,7 +786,7 @@ function renderTemplateDetail(loc, slug) {
       picked.push([s, null]); seen.add(s);
     }
   }
-  // Locale too thin to fill the list from translations alone — keep the
+  // Locale too thin to fill the list from translations alone, keep the
   // declared English targets rather than shipping a one-item section.
   if (!picked.length) {
     for (const r of relatedSrc) {
@@ -833,7 +833,7 @@ function renderTemplateDetail(loc, slug) {
     },
   ]);
 
-  /* Masthead at the full site width with the preview beside the copy —
+  /* Masthead at the full site width with the preview beside the copy, 
      same structure as the English page, see gen-template-pages.js. */
   const body = `  <section class="bg-soft" style="padding-top:40px;padding-bottom:40px">
     <div class="container tpl-hero">
@@ -927,14 +927,14 @@ function renderGuide(loc, slug) {
     `        <details${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><p>${a}</p></details>`).join('\n');
 
   // Related guides resolve to the localized version when it exists and
-  // fall back to English otherwise — a cross-link in the wrong language
+  // fall back to English otherwise, a cross-link in the wrong language
   // still beats no cross-link.
   /* Same rule as the template related list: keep declared siblings that
      exist in this locale, then top up from the locale's other translated
      guides. A reader four clicks into the German site should not be
      handed an English article because that particular guide is not
      translated yet. Retires itself as each locale fills in. */
-  /* "Templates that use this" — the English guides render this from the
+  /* "Templates that use this", the English guides render this from the
      entry's `tpl` field and the localized ones never did, which left
      every translated guide one heading short of its original and
      dropped a link into the templates cluster in five languages.
@@ -979,7 +979,7 @@ function renderGuide(loc, slug) {
 
   /* The figure is DRAWN FOR THIS LOCALE, not inherited from English.
      It used to reuse en.figure verbatim, which left every label inside
-     the diagram — "Finish → Start", "Today", "Baseline" — in English on
+     the diagram, "Finish → Start", "Today", "Baseline", in English on
      the German, Spanish, French, Portuguese and Chinese pages. A
      translated article wrapped around an untranslated illustration
      reads worse than no illustration at all.
@@ -1026,7 +1026,7 @@ function renderGuide(loc, slug) {
      about 128 characters, past the comfortable 45-75. Guides are real
      long-form prose, unlike the template pages whose bodies are mostly
      headings and lists. If the lines read too long, the fix is to use
-     the width — a table-of-contents column beside the prose — rather
+     the width, a table-of-contents column beside the prose, rather
      than to narrow the page again. */
   const html = `  <article class="container" style="padding-top:40px">
     <!-- Three levels, matching the English guides: Home > Guides > this
@@ -1081,7 +1081,7 @@ ${related}
   return shell(loc, sub, { title: `${d.metaTitle} | gantts.app`, description: d.metaDesc, h1: d.h1 }, html, ld, only);
 }
 
-/* Guides index — a list of English articles with localized labels. */
+/* Guides index, a list of English articles with localized labels. */
 function renderBlogIndex(loc) {
   const code = loc.code;
   const b = BLOG[code];
@@ -1095,7 +1095,7 @@ function renderBlogIndex(loc) {
      guides index look like a thinner product in every language but one. */
   const gdesc = (GUIDE_DESC[code] || {});
   /* A slug in two groups renders a duplicate card and desyncs the
-     count from the card total — the bug the templates hub shipped with.
+     count from the card total, the bug the templates hub shipped with.
      Fail at build rather than dedupe silently. */
   const seenGuide = new Map();
   for (const g of BLOG_GROUPS) {
@@ -1109,7 +1109,7 @@ function renderBlogIndex(loc) {
   const ungrouped = BLOG_SLUGS.filter(gs => !seenGuide.has(gs));
   if (ungrouped.length) {
     throw new Error('guides missing from BLOG_GROUPS: ' + ungrouped.join(', ')
-      + ' — they would vanish from the index entirely.');
+      + ', they would vanish from the index entirely.');
   }
 
   const card = (gs) => `          <a class="card card-link" href="${guideHref(gs)}">
@@ -1155,7 +1155,7 @@ ${g.slugs.map(card).join('\n')}
      note, which is both a missing element and a misuse of the class. */
   /* Same coverage-driven rule as the templates hub. German claimed every
      guide was English while all twelve were German, and Spanish said the
-     same with twelve of twelve translated — the note was written once at
+     same with twelve of twelve translated, the note was written once at
      authoring time and never revisited. Derive it, so it is true today
      and removes itself at full coverage. */
   const translatedGuides = BLOG_SLUGS.filter(s => guideLocalesFor(s).includes(code)).length;
@@ -1166,7 +1166,7 @@ ${g.slugs.map(card).join('\n')}
   /* Hero band matching the templates hub: same bg-soft/narrow/center
      shell, same eyebrow-with-count, same jump chips. The index used to
      open with a left-aligned block and then run the CARD GRID inside
-     the 724px .narrow column too — so the localized guides grid was
+     the 724px .narrow column too, so the localized guides grid was
      three cards squeezed into 724px while the English one had 1200.
      The grid now sits in a full-width .container like English. */
   const body = `  <section class="bg-soft" style="padding-top:46px">
@@ -1202,7 +1202,7 @@ ${promo(code, code + '/blog/index.html', '    ')}
 
 
 /* Trust pages. Terms and privacy carry a localized note saying the
-   English text governs — see i18n/site-pages.js for why. */
+   English text governs, see i18n/site-pages.js for why. */
 function renderSitePage(loc, key) {
   const code = loc.code;
   const d = SITE[code][key];
@@ -1228,8 +1228,8 @@ function renderSitePage(loc, key) {
 
      Same tradeoff as the guides, recorded rather than hidden: at 1200px
      a paragraph runs long, and the legal pages are dense prose. If that
-     reads badly the fix is to use the width — a defined-terms column
-     beside the text — rather than to narrow the page again. */
+     reads badly the fix is to use the width, a defined-terms column
+     beside the text, rather than to narrow the page again. */
   const body = `  <article class="container" style="padding-top:44px">
     <div class="crumbs"><a href="/${code}/">gantts.app</a> › ${esc(d.h1)}</div>
     <h1>${esc(d.h1)}</h1>
@@ -1253,7 +1253,7 @@ ${d.body.map(([h, html]) => `      <h2>${esc(h)}</h2>\n      ${html}`).join('\n'
 /* The app, per locale.
    Transforms the hand-authored app.html rather than duplicating it, so the
    editor itself can never drift between languages. Only the head, the
-   <html> element, the home links and the language switcher change — the
+   <html> element, the home links and the language switcher change, the
    application markup is untouched. */
 function renderApp(loc) {
   const code = loc.code;
@@ -1267,7 +1267,7 @@ function renderApp(loc) {
   h = h.replace('<html lang="en">', `<html lang="${loc.hreflang}" data-app-lang="${code}">`);
   h = h.replace(/<title>[^<]*<\/title>/, `<title>${esc(a.title)}</title>`);
   h = h.replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${esc(a.description)}" />`);
-  // Strip the English page's own hreflang block first — otherwise the
+  // Strip the English page's own hreflang block first, otherwise the
   // locale copy carries two full sets and two x-default tags, which
   // invalidates the whole cluster.
   h = h.replace(/^\s*<link rel="alternate" hreflang="[^"]*" href="[^"]*" \/>\r?\n/gm, "");
@@ -1295,7 +1295,7 @@ ${hreflangTags(sub)}`);
 
      It could not self-correct at runtime either. This is a NAVIGATING
      switcher (data-lang-nav) whose option values are URLs, not language
-     codes, so i18n.js deliberately leaves it alone — assigning a
+     codes, so i18n.js deliberately leaves it alone, assigning a
      language code to it would blank the control and break navigation.
      The markup is the only place this can be right. */
   h = h.replace(/(<option value="[^"]*")\s+selected(>)/g, '$1$2');
@@ -1303,7 +1303,7 @@ ${hreflangTags(sub)}`);
   const before = h;
   h = h.replace(new RegExp(`(<option value="${selfHref}")(>)`), '$1 selected$2');
   if (h === before) {
-    throw new Error(`renderApp(${code}): no switcher option for ${selfHref} — the language selector would show the wrong language.`);
+    throw new Error(`renderApp(${code}): no switcher option for ${selfHref}, the language selector would show the wrong language.`);
   }
 
   // The hand-authored app.html predates the localized-page SEO standard,
@@ -1353,8 +1353,8 @@ for (const loc of LOCALES) {
   fs.writeFileSync(path.join(dir, 'templates.html'), renderTemplates(loc), 'utf8');
   fs.writeFileSync(path.join(dir, 'blog', 'index.html'), renderBlogIndex(loc), 'utf8');
   /* Driven by SITE_PAGES, not a second hardcoded list. The two had
-     already drifted: accessibility.html was added to SITE_PAGES — which
-     is what hreflang and the sitemap read — while this loop kept
+     already drifted: accessibility.html was added to SITE_PAGES, which
+     is what hreflang and the sitemap read, while this loop kept
      emitting the original four, so the page was listed as translated
      and never written. A registry the generator ignores is not a
      registry. */
@@ -1363,7 +1363,7 @@ for (const loc of LOCALES) {
     if (!SITE[loc.code] || !SITE[loc.code][key]) {
       throw new Error(
         `SITE_PAGES lists ${page} but i18n/site-pages.js has no ${loc.code}.${key} content. `
-        + `Add the translation, or remove the page from SITE_PAGES — otherwise hreflang and the `
+        + `Add the translation, or remove the page from SITE_PAGES, otherwise hreflang and the `
         + `sitemap advertise a localized page that does not exist.`);
     }
     fs.writeFileSync(path.join(dir, page), renderSitePage(loc, key), 'utf8');

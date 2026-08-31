@@ -1,18 +1,18 @@
 /* ============================================================
-   export-pdf.js — paginated / tiled PDF export.
+   export-pdf.js, paginated / tiled PDF export.
 
    WHY THIS EXISTS
 
    The old PDF export captured the whole chart as one image and scaled
    it to fit a single A4 page. For anything wider than a few weeks that
-   produces a picture of a schedule rather than a readable schedule —
+   produces a picture of a schedule rather than a readable schedule, 
    the single most durable complaint about every Gantt tool, going back
    two decades and true of paid products too.
 
    The browser cannot fix this for us. `@page { size: landscape }` is
    only a hint that the print dialog overrides, the `page-orientation`
    descriptor is Chromium-only, and nothing in CSS tiles a horizontally
-   overflowing element across sheets — native print simply clips or
+   overflowing element across sheets, native print simply clips or
    shrinks a 6000px-wide timeline. So the pagination has to happen here.
 
    HOW IT WORKS
@@ -28,8 +28,8 @@
        stack of printed sheets with no ordering is worse than one
        illegible one.
 
-   Fit-to-page is still offered — it is the right answer for a short
-   project — but it is now a choice rather than the only behaviour.
+   Fit-to-page is still offered, it is the right answer for a short
+   project, but it is now a choice rather than the only behaviour.
    ============================================================ */
 (function () {
   // Paper sizes in PostScript points (1pt = 1/72"), portrait orientation.
@@ -79,7 +79,7 @@
        A two-year plan at 100% on A4 is 70 pages, which nobody wants and
        nobody asked for. Auto walks down from 100% and takes the first
        scale that fits the whole height on one row and the width in at
-       most three columns, bottoming out at 40% — below that the text
+       most three columns, bottoming out at 40%, below that the text
        stops being readable and fit-to-one-page is the better answer
        anyway. The user can still override with the slider. */
     autoScale(o) {
@@ -148,12 +148,12 @@
     /** Human summary for the dialog. */
     summary(o) {
       const g = this.geometry(o);
-      if (o.mode === 'fit') return 'Everything shrunk onto 1 page — quick, but wide plans get small.';
+      if (o.mode === 'fit') return 'Everything shrunk onto 1 page, quick, but wide plans get small.';
       const s = this.effectiveScale(o);
       const sheets = g.pages === 1 ? '1 page' : `${g.cols} across × ${g.rows} down = ${g.pages} pages`;
       let out = `${sheets} at ${s}%${o.scale ? '' : ' (auto)'} on ${PAPER[o.paper].label} ${o.orientation}.`;
       if (g.pages > BUSY_PAGES) {
-        out += `  That is a lot of paper — try a bigger sheet, a lower scale, or a date range.`;
+        out += `  That is a lot of paper, try a bigger sheet, a lower scale, or a date range.`;
       }
       return out;
     },
@@ -162,7 +162,7 @@
        Suppression happens on the CLONE, never on the live DOM, so an
        export can't leave the user's chart altered. */
     async captureAll(o) {
-      if (!window.html2canvas) throw new Error('image library still loading — try again in a moment');
+      if (!window.html2canvas) throw new Error('image library still loading, try again in a moment');
       const node = Exports.buildExportNode();
       if (!o.showDeps) {
         node.querySelectorAll('.dep, .dep-hit, #depLayer path, .chart-svg path').forEach(el => el.remove());
@@ -176,7 +176,7 @@
     },
 
     async run() {
-      if (!window.jspdf) throw new Error('PDF library still loading — try again in a moment');
+      if (!window.jspdf) throw new Error('PDF library still loading, try again in a moment');
       const o = this.opts();
       const g = this.geometry(o);
 
@@ -186,7 +186,7 @@
       const { jsPDF } = window.jspdf;
       /* compress:true is NOT the jsPDF default. Without it the image
          streams are stored raw and a four-page tiled export weighed
-         45 MB — nobody is emailing that to a client. */
+         45 MB, nobody is emailing that to a client. */
       const pdf = new jsPDF({
         orientation: o.orientation === 'landscape' ? 'l' : 'p',
         unit: 'pt', format: [g.box.w, g.box.h], compress: true,
@@ -212,7 +212,7 @@
         const ratio = Math.min(g.availW / composed.width, g.availH / composed.height);
         const outW = composed.width * ratio, outH = composed.height * ratio;
         // Resample to print resolution instead of embedding the raw 2x
-        // capture — same result on paper, a fraction of the file size.
+        // capture, same result on paper, a fraction of the file size.
         const shrunk = this.crop(composed, 0, 0, composed.width, composed.height,
           this.pxFor(outW), this.pxFor(outH));
         pdf.addImage(this.encode(shrunk), this.FMT, o.margin, o.margin, outW, outH);
@@ -267,10 +267,10 @@
       }
 
       pdf.save(Exports.safeName('pdf'));
-      App.toast(`PDF downloaded — ${g.pages} page(s)`);
+      App.toast(`PDF downloaded, ${g.pages} page(s)`);
     },
 
-    /* "Page 3 of 8 · 12 Mar – 3 Apr" plus tile coordinates. A stack of
+    /* "Page 3 of 8 · 12 Mar, 3 Apr" plus tile coordinates. A stack of
        printed sheets with no ordering is worse than one illegible one. */
     footer(pdf, o, g, page, total, c, r) {
       const box = g.box;
@@ -288,7 +288,7 @@
         const toPx = Math.min(g.x1, fromPx + pxPerPage);
         const d0 = U.addDays(rs.origin, Math.floor(fromPx / rs.dayW));
         const d1 = U.addDays(rs.origin, Math.max(0, Math.ceil(toPx / rs.dayW) - 1));
-        right = `${U.fmtShort(d0)} – ${U.fmtShort(d1)}   ·   ` + right;
+        right = `${U.fmtShort(d0)}, ${U.fmtShort(d1)}   ·   ` + right;
       }
       pdf.text(left, o.margin, box.h - 12);
       pdf.text(right, box.w - o.margin, box.h - 12, { align: 'right' });
@@ -300,7 +300,7 @@
     /* Crop, optionally resampling to a target pixel size.
 
        The source capture is 2x CSS pixels, which at a 40% tile scale
-       works out to roughly 480 DPI on the page — six times more data
+       works out to roughly 480 DPI on the page, six times more data
        than print needs, and it made the PDF slow to build and heavy to
        open. Tiles are resampled to PRINT_DPI instead, which is
        indistinguishable on paper and a fraction of the bytes. */

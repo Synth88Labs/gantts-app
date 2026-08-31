@@ -1,4 +1,4 @@
-/* site.js — shared behavior for marketing/content pages */
+/* site.js, shared behavior for marketing/content pages */
 (function () {
   // theme
   var KEY = 'gantts.theme';
@@ -25,7 +25,7 @@
      There were 1805 of them across 745 pages, in three shapes: the
      theme toggle, the language switcher, and the consent reset on the
      privacy page. Every one required 'unsafe-inline' in a Content
-     Security Policy, which is most of what a CSP is for — allowing
+     Security Policy, which is most of what a CSP is for, allowing
      inline script is allowing the main thing XSS needs.
 
      Delegation rather than per-element binding because the consent
@@ -78,7 +78,7 @@
      Injected from JS, and only when a template grid is present, so the
      one implementation covers the hand-authored English hub AND the five
      generated localized hubs without touching six files or the
-     generator. It filters cards already in the DOM — no request, no
+     generator. It filters cards already in the DOM, no request, no
      index, nothing to keep in sync with the pages.
 
      The whole hub is category sections of `.tpl-card` anchors. A search

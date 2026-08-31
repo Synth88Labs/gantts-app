@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-h.js — eighth batch of generated templates.
+   new-templates-h.js, eighth batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch H is about programmes where the schedule is dictated
@@ -13,7 +13,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries where
+   Picked on the same SERP evidence as earlier batches, queries where
    the ranking pages are consultancy posts, gated PDFs or vendor
    landing pages rather than a template anyone can open and edit.
    ============================================================ */
@@ -28,12 +28,12 @@ const T = {
     kw: 'hotel refurbishment schedule template',
     metaTitle: 'Hotel Refurbishment Schedule Template',
     metaDesc: 'Free hotel refurbishment schedule: phased floor closures, room-night loss, noise windows, lift and back-of-house works. Excel or edit online.',
-    lead: 'A free <strong>hotel refurbishment schedule template</strong> for a hotel that stays open while it is being rebuilt — phased floor-by-floor closures, the room-night revenue lost in each one, noise windows around guest hours, lift and back-of-house sequencing, and public area works timed to the low season. Download it for an owner or asset manager, or open it online to see how many keys you are actually taking out of inventory each month.',
+    lead: 'A free <strong>hotel refurbishment schedule template</strong> for a hotel that stays open while it is being rebuilt, phased floor-by-floor closures, the room-night revenue lost in each one, noise windows around guest hours, lift and back-of-house sequencing, and public area works timed to the low season. Download it for an owner or asset manager, or open it online to see how many keys you are actually taking out of inventory each month.',
     intro: 'A refurbishment of a trading hotel is a construction project with a revenue meter running next to it. The template sequences the work around occupancy rather than around trade availability:',
     phases: [
       ['Feasibility &amp; revenue planning', 'Condition survey, scope and standards, the room-night displacement model and the closure strategy that follows from it. <em>Milestone: capital approved.</em>'],
       ['Design &amp; procurement', 'Concept and detailed design, FF&amp;E specification, a full mock-up room, and procurement against lead times that decide when the first floor can close. <em>Milestone: mock-up room signed off.</em>'],
-      ['Back-of-house &amp; lifts', 'Riser and service surveys, lift modernisation one car at a time, staff areas, plant and chiller replacement — the works that affect every floor and cannot be done twice.'],
+      ['Back-of-house &amp; lifts', 'Riser and service surveys, lift modernisation one car at a time, staff areas, plant and chiller replacement, the works that affect every floor and cannot be done twice.'],
       ['Guest floor closures', 'Floors taken out of inventory in sequence, stripped, fitted out, snagged and returned to sale. <em>Milestone: last guest floor handed back.</em>'],
       ['Public areas &amp; F&amp;B', 'Lobby, restaurant, bar, meeting rooms and spa, scheduled into the low season with temporary provision for guests in the meantime.'],
       ['Handover &amp; re-marketing', 'Commissioning, staff retraining on the new product, photography, rate repositioning and the return to full inventory. <em>Milestone: full inventory restored.</em>'],
@@ -41,14 +41,14 @@ const T = {
     callout: 'Price every closure in room-nights before you sequence anything. A floor of 30 keys closed for eight weeks is roughly 1,700 room-nights of lost inventory, and moving that closure from July to February can be worth more than the entire contractor saving you were negotiating. The displacement model belongs at the front of the schedule, not in an appendix.',
     customize: [
       'Replace the floor rows with your own key counts and closure lengths, then total the room-nights lost per month against your forecast.',
-      'Shift public area works into your genuine low season — for most hotels that is a narrower window than the annual budget implies.',
+      'Shift public area works into your genuine low season, for most hotels that is a narrower window than the annual budget implies.',
       'Set the noisy-works window to the hours your operations team can actually defend, and keep drilling and demolition inside it.',
       'Add a lift row per car; modernising them simultaneously is almost never acceptable in an operating hotel.',
-      'Insert a decant plan if you have to relocate guests mid-stay, and staff it — it is real front-office work, not a rounding error.',
+      'Insert a decant plan if you have to relocate guests mid-stay, and staff it, it is real front-office work, not a rounding error.',
       'Mark capital approval, mock-up sign-off, last floor handback and full inventory restored as milestones.',
     ],
     tips: [
-      '<strong>Build the mock-up room before you order anything.</strong> It is the only cheap opportunity to find that the joinery does not fit, the sockets are wrong and the bathroom detail leaks — and the operations team should sleep in it.',
+      '<strong>Build the mock-up room before you order anything.</strong> It is the only cheap opportunity to find that the joinery does not fit, the sockets are wrong and the bathroom detail leaks, and the operations team should sleep in it.',
       '<strong>Do not close two floors on top of each other unless the model says you can sell around it.</strong> Compression pricing works until you have no rooms left to compress into.',
       '<strong>Sequence vertically, not horizontally.</strong> Risers, waste stacks and lift shafts run through every floor, so plan the service works as one continuous vertical campaign rather than repeating them per floor.',
       '<strong>Protect the guest route.</strong> Contractor access, hoardings, waste removal and material lifts all need a path that never crosses the lobby during check-in hours; put those constraints on the chart as they will shape shift patterns.',
@@ -57,10 +57,10 @@ const T = {
     ],
     related: ['hotel-pre-opening-critical-path', 'home-renovation', 'construction'],
     faq: [
-      ['How long does a hotel refurbishment take?', 'A phased refurbishment of a mid-sized operating hotel commonly runs 12–24 months, because floors are closed in sequence rather than all at once. The template uses an eighteen-month schedule you can compress by closing more keys at a time — at a revenue cost.'],
+      ['How long does a hotel refurbishment take?', 'A phased refurbishment of a mid-sized operating hotel commonly runs 12-24 months, because floors are closed in sequence rather than all at once. The template uses an eighteen-month schedule you can compress by closing more keys at a time, at a revenue cost.'],
       ['Should the hotel close completely instead?', 'Sometimes, and the displacement model is what tells you. A full closure is faster and cheaper to build but surrenders all revenue and risks losing corporate accounts and staff. Model both before committing; this template is built for the phased option.'],
-      ['How do I schedule noisy work in an operating hotel?', 'Agree a fixed daily window — typically mid-morning to late afternoon — and treat it as a hard constraint on the programme rather than a request to the contractor. Drilling, demolition and core cutting outside that window is what drives complaints and rate compensation.'],
-      ['How is this different from the pre-opening template?', 'This one is for a hotel that is trading now. If you are commissioning a brand new property with no guests to protect, use the <a href="/templates/hotel-pre-opening-critical-path.html">hotel pre-opening critical path</a> instead — it is organised around opening readiness rather than around closures.'],
+      ['How do I schedule noisy work in an operating hotel?', 'Agree a fixed daily window, typically mid-morning to late afternoon, and treat it as a hard constraint on the programme rather than a request to the contractor. Drilling, demolition and core cutting outside that window is what drives complaints and rate compensation.'],
+      ['How is this different from the pre-opening template?', 'This one is for a hotel that is trading now. If you are commissioning a brand new property with no guests to protect, use the <a href="/templates/hotel-pre-opening-critical-path.html">hotel pre-opening critical path</a> instead, it is organised around opening readiness rather than around closures.'],
       ['Is the hotel refurbishment template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
     tasks: [
@@ -112,7 +112,7 @@ const T = {
     kw: 'port terminal construction schedule template',
     metaTitle: 'Port Terminal Construction Schedule',
     metaDesc: 'Free port terminal construction schedule: dredging, reclamation, quay wall, crane rail, STS crane delivery, yard paving and TOS. Excel or edit online.',
-    lead: 'A free <strong>port terminal construction schedule template</strong> covering the marine and landside work together — dredging and disposal consents, reclamation, quay wall construction, crane rail and ground improvement, ship-to-shore crane delivery and commissioning, yard paving and the terminal operating system. Download it for a concession board pack, or open it online to line the works up against your weather windows.',
+    lead: 'A free <strong>port terminal construction schedule template</strong> covering the marine and landside work together, dredging and disposal consents, reclamation, quay wall construction, crane rail and ground improvement, ship-to-shore crane delivery and commissioning, yard paving and the terminal operating system. Download it for a concession board pack, or open it online to line the works up against your weather windows.',
     intro: 'A container terminal is three projects sharing a site: a marine works project, a civils project and a systems project. The template keeps them visible as separate tracks, because they are constrained by completely different things:',
     phases: [
       ['Studies &amp; consents', 'Bathymetric and geotechnical survey, environmental impact assessment, dredging and disposal consents and the marine licence. <em>Milestone: dredging consent granted.</em>'],
@@ -122,29 +122,29 @@ const T = {
       ['STS cranes &amp; equipment', 'Crane fabrication, the heavy-lift vessel voyage and berthing window, offloading, erection, load testing and yard equipment delivery. <em>Milestone: cranes accepted.</em>'],
       ['TOS &amp; go-live', 'Terminal operating system configuration, gate and OCR integration, network and radio coverage, training, trial vessel call and commercial opening. <em>Milestone: first commercial vessel.</em>'],
     ],
-    callout: 'The dredger and the crane vessel are not yours. Both are booked into a global fleet schedule months ahead, and both need a weather window plus a berth that is ready on the day. Miss the slot and you do not wait a week — you wait for the next mobilisation, which can be a season. Put the vessel arrival windows on the chart as fixed bars and build the surrounding work backwards from them.',
+    callout: 'The dredger and the crane vessel are not yours. Both are booked into a global fleet schedule months ahead, and both need a weather window plus a berth that is ready on the day. Miss the slot and you do not wait a week, you wait for the next mobilisation, which can be a season. Put the vessel arrival windows on the chart as fixed bars and build the surrounding work backwards from them.',
     customize: [
       'Set your dredging campaign inside the real seasonal window for your coast, then check whether the volume actually fits inside it at the dredger\'s production rate.',
       'Lengthen the surcharge and settlement bar to whatever the geotechnical report requires; it is a physical process and no amount of programme pressure changes it.',
       'Add a row per crane if they arrive on separate voyages, and mark each vessel arrival as a milestone.',
       'Split the yard into blocks if you are commissioning progressively rather than opening the whole terminal at once.',
-      'Move the TOS integration rows earlier — the software work has no dependency on concrete and is routinely started far too late.',
+      'Move the TOS integration rows earlier, the software work has no dependency on concrete and is routinely started far too late.',
       'Mark dredging consent, berth available, cranes accepted and first commercial vessel as milestones; those are the four dates a concession authority tracks.',
     ],
     tips: [
       '<strong>Consents gate the dredge, and the dredge gates everything marine.</strong> Disposal ground licensing in particular is a long third-party process with no accelerator, so it should start before design is finished.',
       '<strong>Do not overlap the crane vessel with quay wall completion.</strong> The crane rails have to be surveyed, aligned and load-proven before an STS crane can be walked ashore, and that survey is a hard predecessor.',
       '<strong>Schedule settlement, do not assume it.</strong> Reclaimed ground under a container yard needs a monitored surcharge period; paving over it early produces a yard that fails within two years.',
-      '<strong>Start TOS configuration during civils.</strong> Terminal operating systems need master data, yard layout, gate rules and interfaces to shipping lines and customs — none of which depends on the paving being finished.',
+      '<strong>Start TOS configuration during civils.</strong> Terminal operating systems need master data, yard layout, gate rules and interfaces to shipping lines and customs, none of which depends on the paving being finished.',
       '<strong>Plan a trial vessel call.</strong> One rehearsed call with a friendly line finds the gate, crane, TOS and labour problems that a commercial first call would find expensively.',
       '<strong>Baseline at berth available.</strong> Marine works carry the widest estimating range on the project; once the berth exists, the landside programme is far more predictable and worth tracking against a fixed baseline.',
     ],
     related: ['construction', 'bridge-construction-schedule', 'shipbuilding-project-schedule'],
     faq: [
-      ['How long does it take to build a container terminal?', 'A new greenfield terminal commonly runs 3–5 years from consent to first commercial vessel, with dredging, reclamation settlement and crane delivery setting the outer bound. The template uses a roughly three-year schedule you can extend by lengthening the marine phases.'],
+      ['How long does it take to build a container terminal?', 'A new greenfield terminal commonly runs 3-5 years from consent to first commercial vessel, with dredging, reclamation settlement and crane delivery setting the outer bound. The template uses a roughly three-year schedule you can extend by lengthening the marine phases.'],
       ['What usually drives the critical path on a port project?', 'Dredging consents and the dredger\'s availability window early on, then reclamation settlement, then ship-to-shore crane fabrication and the heavy-lift voyage. Very little of that critical path is inside the contractor\'s control, which is why each sits on the chart as its own bar.'],
-      ['How long do ship-to-shore cranes take to deliver?', 'Fabrication typically runs 12–18 months from order, plus the voyage and several weeks of erection, load testing and commissioning per crane. Ordering them is a schedule decision, not a procurement one.'],
-      ['Can I use this for a terminal expansion rather than a greenfield build?', 'Yes. Drop the reclamation rows and keep the berth pocket dredge, crane rail, crane delivery and TOS phases — that is where an expansion programme mostly lives, with the added constraint of working alongside live operations.'],
+      ['How long do ship-to-shore cranes take to deliver?', 'Fabrication typically runs 12-18 months from order, plus the voyage and several weeks of erection, load testing and commissioning per crane. Ordering them is a schedule decision, not a procurement one.'],
+      ['Can I use this for a terminal expansion rather than a greenfield build?', 'Yes. Drop the reclamation rows and keep the berth pocket dredge, crane rail, crane delivery and TOS phases, that is where an expansion programme mostly lives, with the added constraint of working alongside live operations.'],
       ['Is the port terminal template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, plus free online editing without an account.'],
     ],
     tasks: [
@@ -199,7 +199,7 @@ const T = {
     kw: 'rail signalling upgrade project plan template',
     metaTitle: 'Rail Signalling Upgrade Plan Template',
     metaDesc: 'Free rail signalling upgrade plan: design, interlocking data, factory testing, possession planning, installation, testing and entry into service.',
-    lead: 'A free <strong>rail signalling upgrade plan template</strong> built around possessions — scheme design, interlocking data preparation, factory acceptance testing, possession booking, installation inside each possession, principles and through testing, and entry into service. Download it for a stage gate review, or open it online to check that the work you have planned actually fits inside the hours you have been granted.',
+    lead: 'A free <strong>rail signalling upgrade plan template</strong> built around possessions, scheme design, interlocking data preparation, factory acceptance testing, possession booking, installation inside each possession, principles and through testing, and entry into service. Download it for a stage gate review, or open it online to check that the work you have planned actually fits inside the hours you have been granted.',
     intro: 'A resignalling scheme is an office project with a handful of weekends in the middle where everything physical happens. The template treats those weekends as fixed, immovable containers and organises everything else around them:',
     phases: [
       ['Scheme design', 'Feasibility, signalling layout and scheme plan, control tables, interfaces to track, power and telecoms, and design assurance. <em>Milestone: design accepted.</em>'],
@@ -212,26 +212,26 @@ const T = {
     callout: 'The possession is the schedule. Engineering access is applied for against timetable deadlines a year or more ahead, and once the booking is made the question is no longer "when do we install" but "does the work fit in the hours we were given". Plan every possession backwards from handback time, with the testing at the end and a contingency plan for the point where you must stop and give the railway back regardless.',
     customize: [
       'Enter your real possession dates first and lock them; every other bar on this chart negotiates around them.',
-      'Add a row per possession with its actual duration in hours rather than days — a 52-hour weekend and a 29-hour weekend are different projects.',
+      'Add a row per possession with its actual duration in hours rather than days, a 52-hour weekend and a 29-hour weekend are different projects.',
       'Move as much as possible out of the possession and into midweek or offline work; anything that can be pre-wired, pre-tested or pre-installed should be.',
-      'Extend the data preparation and checking bars if your interlocking is large — independent checking is a slow, mandated process and cannot be run in parallel with itself.',
+      'Extend the data preparation and checking bars if your interlocking is large, independent checking is a slow, mandated process and cannot be run in parallel with itself.',
       'Insert a formal go/no-go a fortnight before each commissioning possession, with FAT, testing readiness and staff competence as its predecessors.',
       'Mark design acceptance, FAT pass, possessions confirmed, commissioning and entry into service as milestones.',
     ],
     tips: [
       '<strong>Apply for possessions before the design is finished.</strong> The booking deadline does not wait for your programme, and a scheme that misses the timetable window loses a year, not a month.',
       '<strong>Test in the factory, not on the railway.</strong> Every fault found at FAT is a fault you are not diagnosing at three in the morning with a handback time approaching.',
-      '<strong>Write the handback plan first.</strong> Each possession needs a defined point of no return after which you stop installing and start restoring the existing system — decide it in the office, not on the night.',
+      '<strong>Write the handback plan first.</strong> Each possession needs a defined point of no return after which you stop installing and start restoring the existing system, decide it in the office, not on the night.',
       '<strong>Protect principles testing.</strong> It is the safety-critical step most exposed to compression when installation overruns, and it is the one that must never be shortened.',
       '<strong>Book driver route learning early.</strong> Competence and familiarisation need traincrew released from the roster, which is a resource negotiation with a long lead time of its own.',
       '<strong>Baseline at possessions confirmed.</strong> Before that the dates are aspirations; after it, the fixed points are real and variance against them is what matters.',
     ],
     related: ['road-construction-schedule', 'bridge-construction-schedule', 'project-management'],
     faq: [
-      ['How long does a resignalling scheme take?', 'A single-interlocking renewal commonly runs 18–36 months from feasibility to entry into service, with only a few weekends of that spent physically on the railway. The template uses a roughly two-year schedule you can extend by adding possessions.'],
+      ['How long does a resignalling scheme take?', 'A single-interlocking renewal commonly runs 18-36 months from feasibility to entry into service, with only a few weekends of that spent physically on the railway. The template uses a roughly two-year schedule you can extend by adding possessions.'],
       ['What is an engineering possession?', 'A booked period during which a section of railway is closed to traffic so work can be done on it. Possessions are applied for against timetable planning deadlines many months ahead, which is why they behave as fixed constraints rather than schedulable tasks.'],
       ['Why is interlocking data preparation on the critical path?', 'Because the data has to be prepared, independently checked and proven in simulation and factory testing before it can be installed, and each of those steps is sequential and mandated. It is slow office work that decides whether the commissioning weekend can happen.'],
-      ['Can this be used for a level crossing or a station scheme?', 'Yes. The possession-centred structure is the same — trim the interlocking data rows and keep design, possession planning, installation, testing and entry into service.'],
+      ['Can this be used for a level crossing or a station scheme?', 'Yes. The possession-centred structure is the same, trim the interlocking data rows and keep design, possession planning, installation, testing and entry into service.'],
       ['Is the rail signalling template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
     ],
     tasks: [
@@ -284,21 +284,21 @@ const T = {
     kw: 'pharmaceutical product launch plan template',
     metaTitle: 'Pharma Product Launch Plan Template',
     metaDesc: 'Free pharma launch plan: regulatory submission, approval, validation batches, serialisation, pricing and reimbursement, country launch sequence.',
-    lead: 'A free <strong>pharma product launch plan template</strong> covering the stretch between a completed trial and a product on a shelf — regulatory dossier and submission, the review clock, manufacturing scale-up and validation batches, serialisation and market-specific labelling, pricing and reimbursement dossiers, medical affairs, and country-by-country launch sequencing. Download it for a launch readiness review, or open it online to see what your first-market launch date really depends on.',
+    lead: 'A free <strong>pharma product launch plan template</strong> covering the stretch between a completed trial and a product on a shelf, regulatory dossier and submission, the review clock, manufacturing scale-up and validation batches, serialisation and market-specific labelling, pricing and reimbursement dossiers, medical affairs, and country-by-country launch sequencing. Download it for a launch readiness review, or open it online to see what your first-market launch date really depends on.',
     intro: 'Everything commercial in a pharma launch is gated by two things you do not control: an approval letter and a reimbursement decision. The template puts both on the chart as bars with dependants, rather than as assumptions in a slide:',
     phases: [
       ['Regulatory submission', 'Dossier compilation, pre-submission meeting, submission to the first market, the review clock, questions and responses. <em>Milestone: marketing authorisation granted.</em>'],
       ['CMC &amp; manufacturing readiness', 'Process scale-up, site readiness, three validation batches, stability data, pre-approval inspection and release of launch stock. <em>Milestone: launch stock released.</em>'],
       ['Serialisation &amp; labelling', 'Artwork per market, translations, serialisation and aggregation set-up, national repository connections and packaging qualification.'],
-      ['Pricing &amp; reimbursement', 'Health technology assessment dossiers, pricing strategy, payer negotiations and listing decisions per market — the phase that decides whether an approved product is actually available. <em>Milestone: first reimbursement listing.</em>'],
+      ['Pricing &amp; reimbursement', 'Health technology assessment dossiers, pricing strategy, payer negotiations and listing decisions per market, the phase that decides whether an approved product is actually available. <em>Milestone: first reimbursement listing.</em>'],
       ['Medical affairs &amp; evidence', 'Publication plan, advisory boards, KOL engagement, medical education, real-world evidence and the medical information function.'],
       ['Commercial launch by country', 'Field force hiring and training, launch meeting, first market launch, then wave two and wave three markets as approvals and listings arrive. <em>Milestone: first commercial sale.</em>'],
     ],
-    callout: 'Approval is not launch. In many markets a product cannot be meaningfully sold until it has a price and a reimbursement listing, and that process starts after approval and runs for months on its own timetable. Plan two dates per market — authorisation and availability — and never let a commercial forecast quietly assume they are the same day.',
+    callout: 'Approval is not launch. In many markets a product cannot be meaningfully sold until it has a price and a reimbursement listing, and that process starts after approval and runs for months on its own timetable. Plan two dates per market, authorisation and availability, and never let a commercial forecast quietly assume they are the same day.',
     customize: [
       'Set your submission date and let the review clock run forward from it; the regulator\'s duration is fixed, and only your response time inside it is yours.',
       'Duplicate the pricing, labelling and launch rows per market, since each has its own authority, language and reimbursement path.',
-      'Start validation batches earlier if your process is new — three successful batches plus stability data is a long chain with no shortcut.',
+      'Start validation batches earlier if your process is new, three successful batches plus stability data is a long chain with no shortcut.',
       'Add a pre-approval inspection window with real preparation time; a site finding at inspection is the fastest way to lose a launch quarter.',
       'Push field force hiring to depend on the approval milestone unless you can carry the cost of a team waiting for a decision.',
       'Mark submission, approval, launch stock release, first reimbursement listing and first commercial sale as milestones.',
@@ -313,11 +313,11 @@ const T = {
     ],
     related: ['clinical-trial-gantt-chart', 'product-launch', 'new-product-development-plan'],
     faq: [
-      ['How long does a pharma product launch take?', 'Commonly 18–30 months from regulatory submission to first commercial sale, with review taking around a year in major markets and reimbursement adding several months on top. The template uses a roughly two-year schedule you can adjust per market.'],
+      ['How long does a pharma product launch take?', 'Commonly 18-30 months from regulatory submission to first commercial sale, with review taking around a year in major markets and reimbursement adding several months on top. The template uses a roughly two-year schedule you can adjust per market.'],
       ['Where does this template start relative to a clinical trial?', 'It picks up where the trial ends. Database lock, analysis and the study report belong in the <a href="/templates/clinical-trial-gantt-chart.html">clinical trial Gantt chart</a>; this template starts with dossier compilation and runs to first sale.'],
       ['Why are pricing and reimbursement a separate phase?', 'Because approval only grants the right to sell, not the ability to. Health technology assessment and payer negotiation are separate processes with their own timelines, and in most markets they determine when a product is genuinely available.'],
       ['How do I plan a multi-country launch?', 'Duplicate the labelling, reimbursement and commercial launch rows per market and stagger them into waves. The template shows a first market plus two waves, which is the usual shape.'],
-      ['What is the risk of building stock before approval?', 'Write-off if the product is not approved or the label changes. Most launches accept some of that risk because manufacturing lead times exceed the gap between approval and expected first orders — but it should be a stated decision with a number attached.'],
+      ['What is the risk of building stock before approval?', 'Write-off if the product is not approved or the label changes. Most launches accept some of that risk because manufacturing lead times exceed the gap between approval and expected first orders, but it should be a stated decision with a number attached.'],
       ['Is the pharma launch template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [
@@ -371,36 +371,36 @@ const T = {
     kw: 'due diligence timeline template',
     metaTitle: 'M&A Due Diligence Timeline Template',
     metaDesc: 'Free M&A due diligence timeline: NDA, IM, data room, financial, legal, tax and IT workstreams, management meetings, SPA, signing and closing.',
-    lead: 'A free <strong>M&amp;A due diligence timeline template</strong> covering the deal from first contact to closing — NDA, teaser and information memorandum, data room opening, the parallel diligence workstreams, management presentations and Q&amp;A, SPA negotiation, signing and the conditions precedent before closing. Download it for a deal committee pack, or open it online to check that every workstream finishes inside your exclusivity period.',
+    lead: 'A free <strong>M&amp;A due diligence timeline template</strong> covering the deal from first contact to closing, NDA, teaser and information memorandum, data room opening, the parallel diligence workstreams, management presentations and Q&amp;A, SPA negotiation, signing and the conditions precedent before closing. Download it for a deal committee pack, or open it online to check that every workstream finishes inside your exclusivity period.',
     intro: 'Diligence is not a sequence. It is six or seven workstreams reading the same data room at the same time, against a clock that was set in the exclusivity letter. The template lays them out as parallel lanes so the bottleneck is visible:',
     phases: [
       ['Approach &amp; NDA', 'Target identification, approach, non-disclosure agreement, teaser and the information memorandum. <em>Milestone: NDA signed.</em>'],
       ['Indicative offer &amp; access', 'First round review, indicative offer or letter of intent, exclusivity agreed and the data room opened. <em>Milestone: exclusivity starts.</em>'],
       ['Diligence workstreams', 'Financial, legal, tax, commercial, IT and HR diligence run in parallel off the same data room, each producing a report and a set of issues.'],
-      ['Management &amp; Q&amp;A', 'Management presentations, site visits, the Q&amp;A log and follow-up requests — the process that determines how fast the workstreams can actually finish.'],
+      ['Management &amp; Q&amp;A', 'Management presentations, site visits, the Q&amp;A log and follow-up requests, the process that determines how fast the workstreams can actually finish.'],
       ['Findings &amp; deal terms', 'Red flag report, valuation adjustment, warranty and indemnity positions, W&amp;I insurance and the final investment committee approval. <em>Milestone: IC approval.</em>'],
       ['SPA, signing &amp; closing', 'Share purchase agreement negotiation, disclosure letter, signing, conditions precedent including regulatory clearance, and completion. <em>Milestone: closing.</em>'],
     ],
     callout: 'Exclusivity is a countdown, not a comfort. It expires on a fixed date whether or not the tax workstream got its answers, and asking for an extension is the moment a seller reopens price. Work backwards from the exclusivity end date: SPA negotiation needs weeks, the red flag report needs days, and everything before that is what the workstreams actually have.',
     customize: [
-      'Set the exclusivity end date first and lay the workstreams backwards from it — that is the constraint the whole plan lives inside.',
+      'Set the exclusivity end date first and lay the workstreams backwards from it, that is the constraint the whole plan lives inside.',
       'Add or remove workstream lanes to match the deal; an asset-heavy target needs environmental and property, a software target needs IP and open-source review.',
       'Give the Q&A log its own row with an owner. It is the shared bottleneck between every workstream and the seller.',
       'Extend the conditions precedent bar if the deal needs antitrust or regulatory clearance; those durations are set by the authority, not by the parties.',
       'Insert a formal stop-or-continue point after the red flag report, so a bad finding has a scheduled decision rather than a hallway one.',
-      'Mark NDA, exclusivity start, IC approval, signing and closing as milestones — those are the dates a deal committee tracks.',
+      'Mark NDA, exclusivity start, IC approval, signing and closing as milestones, those are the dates a deal committee tracks.',
     ],
     tips: [
       '<strong>Open the data room properly before diligence starts.</strong> A half-populated room means every workstream burns its first week raising requests instead of reading, and that week never comes back.',
       '<strong>Run one Q&amp;A log, not six.</strong> Duplicated and contradictory questions to the seller are the fastest way to exhaust management goodwill and slow every response down.',
       '<strong>Start SPA drafting before diligence finishes.</strong> The lawyers can build the structure while findings are still landing; waiting for a clean report is what pushes signing past exclusivity.',
       '<strong>Book management presentations early.</strong> The target\'s executives still have a business to run, and their availability is usually the scarcest resource in the process.',
-      '<strong>Separate signing from closing on the chart.</strong> Conditions precedent — regulatory clearance, consents, financing — sit between them and can run for months on a large deal.',
+      '<strong>Separate signing from closing on the chart.</strong> Conditions precedent, regulatory clearance, consents, financing, sit between them and can run for months on a large deal.',
       '<strong>Hand the plan over at closing.</strong> Integration planning should already be underway; the <a href="/templates/post-merger-integration-plan.html">post-merger integration plan</a> starts where this template ends.',
     ],
     related: ['post-merger-integration-plan', 'internal-audit-plan', 'project-management'],
     faq: [
-      ['How long does M&A due diligence take?', 'For a mid-market deal, typically 6–12 weeks of diligence inside an exclusivity period of a similar length, followed by SPA negotiation and then conditions precedent before closing. The template uses a roughly five-month schedule from approach to closing.'],
+      ['How long does M&A due diligence take?', 'For a mid-market deal, typically 6-12 weeks of diligence inside an exclusivity period of a similar length, followed by SPA negotiation and then conditions precedent before closing. The template uses a roughly five-month schedule from approach to closing.'],
       ['What workstreams belong in a due diligence plan?', 'Financial, legal, tax, commercial, IT and HR as standard, with environmental, property, insurance or IP added depending on the target. All six core lanes run in parallel here off a single data room.'],
       ['Why does exclusivity matter so much to the schedule?', 'Because it is the only period in which a buyer can spend real money on advisers without competitive risk. When it expires the seller can reopen the process or reprice, so the diligence plan is effectively a fixed-duration project.'],
       ['What is the difference between signing and closing?', 'Signing is when the parties execute the share purchase agreement; closing is when ownership actually transfers, after conditions precedent such as regulatory clearance and third-party consents are satisfied. On some deals they are the same day, on others months apart.'],

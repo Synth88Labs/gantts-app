@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /* ============================================================
-   add-analytics.js — put the CONSENT GATE in every <head>.
+   add-analytics.js, put the CONSENT GATE in every <head>.
 
    It used to inject gtag.js directly, as the first thing in <head>, on
    every page. That meant Google Analytics cookies were set before the
-   visitor had any say — and a consent banner bolted on afterwards would
+   visitor had any say, and a consent banner bolted on afterwards would
    have been decoration, since the cookies exist by the time anyone sees
    it. privacy.html makes checkable promises; this is what keeps one of
    them true.
@@ -34,7 +34,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const ID = 'G-3ZFCTKWL1D';
-const V = 'v=30';
+const V = 'v=31';
 const SKIP = new Set(['node_modules', '.git', 'deploy', 'docs', 'scripts', 'test', 'i18n']);
 
 const MARKER = 'js/consent.js';
@@ -45,8 +45,8 @@ const SNIPPET = `
   <script defer src="/js/consent.js?${V}"></script>`;
 
 /* The old unconditional tag, in the exact shape this script used to
-   write it. Matching loosely on purpose — whitespace drifts through
-   generators — but anchored on the two lines that actually load and
+   write it. Matching loosely on purpose, whitespace drifts through
+   generators, but anchored on the two lines that actually load and
    configure gtag. */
 const OLD_TAG = new RegExp(
   '\\s*<!-- Google tag \\(gtag\\.js\\) -->' +

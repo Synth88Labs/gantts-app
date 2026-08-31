@@ -1,5 +1,5 @@
 /* ============================================================
-   model.js — application state, tasks, undo/redo, persistence
+   model.js, application state, tasks, undo/redo, persistence
    Exposes a global `Model` (event-emitting store).
    ============================================================ */
 (function () {
@@ -30,7 +30,7 @@
 
            _migrate's Object.assign is shallow, so a saved `view` object
            replaces this one wholesale and a sub-key added later would
-           NOT be back-filled — the same trap `calendar` needs a special
+           NOT be back-filled, the same trap `calendar` needs a special
            case for. This one is safe for a different reason: nothing
            reads settings.view directly. Every read goes through
            Views.of(), which supplies a default for each field, so a
@@ -38,7 +38,7 @@
            Keep it that way; a direct read would reintroduce the bug. */
         view: { mode: 'all', weeks: 3, anchor: null },
         showWorkload: false,
-        colorBy: 'none',   // 'none' | 'assignee' | 'tag' | 'phase' — how bars are coloured
+        colorBy: 'none',   // 'none' | 'assignee' | 'tag' | 'phase', how bars are coloured
         filter: '',        // free-text filter over task name / assignee / tag
         markers: [],       // key-date lines: { id, date, label, color }
       },
@@ -83,7 +83,7 @@
 
       /* FIRST VISIT: show a real plan, not an empty grid.
 
-         An empty canvas is the most common silent drop-off there is —
+         An empty canvas is the most common silent drop-off there is, 
          the visitor has to invent a project before the tool shows them
          anything, and a fair number simply leave. Landing on a small
          worked example means the first frame already demonstrates
@@ -137,7 +137,7 @@
                returning visitor boots with no legacy localStorage, so
                the sample is seeded and `_sample` set; the durable copy
                then loads over it a moment later. With the flag left
-               standing, `_persist` kept returning early — the user saw
+               standing, `_persist` kept returning early, the user saw
                their own plan, edited it, and nothing was ever written.
                The stale banner was the visible half of a silent
                failure. */
@@ -213,7 +213,7 @@
       const rec = { id: p.id, name: p.name, updated: p.updated, count: p.tasks.length };
       const i = idx.findIndex(r => r.id === this.project.id);
       if (i >= 0) idx[i] = rec; else idx.push(rec);
-      // Index only — a few hundred bytes. Project blobs live in Store.
+      // Index only, a few hundred bytes. Project blobs live in Store.
       if (!Store.setIndex(idx)) this.emit('savefailed', { op: 'index', quota: true });
     },
     _projectIndex() { return Store.index(); },
@@ -249,7 +249,7 @@
     },
 
     // ---------- undo / redo ----------
-    // Undo captures tasks AND the baseline — setting or clearing a baseline is a
+    // Undo captures tasks AND the baseline, setting or clearing a baseline is a
     // real edit, and restoring tasks without it would leave variance columns
     // reading against the wrong plan.
     _histState() {
@@ -398,7 +398,7 @@
     },
 
     move(id, delta) {
-      // reorder within siblings (delta -1 up / +1 down) — simple array move of subtree
+      // reorder within siblings (delta -1 up / +1 down), simple array move of subtree
       const idx = this.index(id); if (idx < 0) return;
       this.snapshot();
       // extract subtree
@@ -576,7 +576,7 @@
 
        The payload lives in the FRAGMENT, never the query string.
        Fragments are not sent to the server by the browser, so a shared
-       plan is never in anyone's access log — the same discipline
+       plan is never in anyone's access log, the same discipline
        Excalidraw uses for its encryption key. Keep it that way.
 
        Everything below exists because the first version base64'd raw
@@ -656,8 +656,8 @@
       return out;
     },
     /* Legacy uncompressed links stay synchronous so boot is unchanged
-       for them. Compressed ones cannot be — DecompressionStream is
-       async — so they are handled separately in _readShareLinkAsync and
+       for them. Compressed ones cannot be, DecompressionStream is
+       async, so they are handled separately in _readShareLinkAsync and
        `_pendingShare` tells init() not to seed the sample over the top
        of a plan that is about to arrive. */
     _readShareLink() {

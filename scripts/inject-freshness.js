@@ -1,7 +1,7 @@
-/* inject-freshness.js — ensure every English content page's JSON-LD carries
+/* inject-freshness.js, ensure every English content page's JSON-LD carries
    a dateModified (git-based freshness) and a Speakable node.
 
-   Why this exists: template/guide pages come from TWO sources — most are
+   Why this exists: template/guide pages come from TWO sources, most are
    emitted by gen-template-pages.js / gen-guide-pages.js (which already add
    these), but ~22 templates and ~8 guides are hand-authored static HTML the
    generators never touch. Their localized variants (built by gen-i18n.js)
@@ -43,7 +43,7 @@ function processFile(rel) {
     (Array.isArray(n['@type']) && n['@type'].some(t => primaryTypes.has(t))));
 
   if (!node) {
-    // Templates typically have only Breadcrumb/HowTo/FAQ — give them a WebPage.
+    // Templates typically have only Breadcrumb/HowTo/FAQ, give them a WebPage.
     const canonical = metaOf(html, /<link rel="canonical" href="([^"]+)"/);
     const title = (metaOf(html, /<title>([^<]*)<\/title>/) || '').replace(/\s*\|\s*gantts\.app\s*$/i, '').trim();
     const desc = metaOf(html, /<meta name="description" content="([^"]*)"/) || '';

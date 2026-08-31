@@ -1,5 +1,5 @@
 /* ============================================================
-   i18n/templates-de.js — German template detail pages.
+   i18n/templates-de.js, German template detail pages.
 
    Same shape as templates-es.js: the schedule data is
    language-independent and shared, only the prose is translated.
@@ -30,32 +30,32 @@ const T = {
       ['Überwachung und Steuerung', 'Statusberichte, Änderungssteuerung, Risikomanagement und Messung gegen den Basisplan. Läuft parallel zur Durchführung, nicht danach.'],
       ['Abschluss', 'Formale Abnahme, Dokumentation, Lessons Learned und Auflösung des Teams. <em>Meilenstein: Projekt abgeschlossen.</em>'],
     ],
-    callout: 'Die Steuerung ist keine Phase nach der Durchführung — sie läuft gleichzeitig. Sie als paralleles Band zu zeichnen statt als Block am Ende ist der Unterschied zwischen einem Plan, der die Realität abbildet, und einem, der nur ordentlich aussieht.',
+    callout: 'Die Steuerung ist keine Phase nach der Durchführung, sie läuft gleichzeitig. Sie als paralleles Band zu zeichnen statt als Block am Ende ist der Unterschied zwischen einem Plan, der die Realität abbildet, und einem, der nur ordentlich aussieht.',
     customize: [
       'Benennen Sie die Phasen nach Ihrer Hausmethodik um, falls Sie eine eigene verwenden.',
       'Verschieben Sie den Abschlusstermin; der Rest richtet sich über die Abhängigkeiten neu aus.',
       'Ergänzen Sie unter Durchführung eine Zeile je Liefergegenstand statt eines einzigen Sammelbalkens.',
-      'Setzen Sie Freigaben und Entscheidungspunkte als Meilensteine — nicht die langen Vorgänge.',
+      'Setzen Sie Freigaben und Entscheidungspunkte als Meilensteine, nicht die langen Vorgänge.',
       'Legen Sie den Basisplan fest, sobald der Plan genehmigt ist, um Abweichungen messen zu können.',
     ],
     tips: [
       '<strong>Beginnen Sie mit Phasen, nicht mit Vorgängen.</strong> Vierzig Zeilen auf einer Ebene liest niemand; fünf aufklappbare Phasen schon.',
       '<strong>Verknüpfen Sie Abhängigkeiten, bevor Sie Termine anfassen.</strong> Nur so rechnet sich der Plan bei Änderungen selbst neu.',
       '<strong>Jede Zeile braucht einen Namen.</strong> Ein Vorgang ohne Verantwortlichen wird nicht gepflegt.',
-      '<strong>Puffer gehört dorthin, wo die Schätzung unsicher ist</strong> — nicht gleichmäßig verteilt.',
+      '<strong>Puffer gehört dorthin, wo die Schätzung unsicher ist</strong>, nicht gleichmäßig verteilt.',
       '<strong>Pflegen Sie den Fertigstellungsgrad</strong>, statt Balken neu zu zeichnen; nur so bleibt der Vergleich zum Basisplan erhalten.',
     ],
     related: [['simple', 'Einfache Vorlage'], ['construction', 'Bauprojekt'], ['software-development', 'Softwareentwicklung']],
     faq: [
       ['Welche Phasen gehören in einen Projektplan?', 'Initiierung, Planung, Durchführung, Überwachung und Steuerung sowie Abschluss. Das ist der Standard-Lebenszyklus und funktioniert praktisch in jeder Branche; die Vorlage bringt ihn fertig mit.'],
-      ['Eignet sich die Vorlage für kleine Projekte?', 'Ja. Behalten Sie die fünf Phasen und reduzieren Sie die Vorgänge darin — die Struktur trägt auch bei fünfzehn Zeilen.'],
+      ['Eignet sich die Vorlage für kleine Projekte?', 'Ja. Behalten Sie die fünf Phasen und reduzieren Sie die Vorgänge darin, die Struktur trägt auch bei fünfzehn Zeilen.'],
       ['Funktioniert sie mit agilen Methoden?', 'Teilweise. Für Releases, externe Abhängigkeiten und zugesagte Termine ja; für die Arbeit innerhalb des Sprints sind die Agile- oder Sprint-Vorlagen besser geeignet.'],
       ['Ist die Vorlage kostenlos?', 'Ja: kostenloser Download als Excel, PowerPoint und CSV sowie Online-Bearbeitung ohne Anmeldung und ohne Wasserzeichen.'],
     ],
   },
 
   'construction': {
-    card: 'Genehmigungen, Gründung, Rohbau, Gewerke und Ausbau — samt Abnahmen.',
+    card: 'Genehmigungen, Gründung, Rohbau, Gewerke und Ausbau, samt Abnahmen.',
     h1: 'Gantt-Diagramm-Vorlage für Bauprojekte',
     metaTitle: 'Bauzeitenplan-Vorlage (Gantt, kostenlos)',
     metaDesc: 'Kostenlose Bauzeitenplan-Vorlage: Genehmigungen, Erdarbeiten, Gründung, Rohbau, Gebäudehülle, Gewerke, Ausbau und Abnahme.',
@@ -63,31 +63,31 @@ const T = {
     intro: 'Der Bauablauf ist zwingend sequenziell, und die Vorlage bildet ihn Phase für Phase ab:',
     phases: [
       ['Genehmigungen und Vorbereitung', 'Baugenehmigung, SiGe-Plan, Versicherungen, Absteckung und Baustelleneinrichtung. <em>Meilenstein: Baugenehmigung erteilt.</em>'],
-      ['Erdarbeiten und Gründung', 'Räumung, Aushub, Entwässerung, Bewehrung und Betonage der Fundamente — samt Aushärtezeit.'],
+      ['Erdarbeiten und Gründung', 'Räumung, Aushub, Entwässerung, Bewehrung und Betonage der Fundamente, samt Aushärtezeit.'],
       ['Rohbau', 'Stützen, Decken und Dachtragwerk. Gibt den Takt für alles Folgende vor.'],
       ['Gebäudehülle', 'Fassade, Fenster und Dachabdichtung. <em>Meilenstein: Gebäude dicht.</em>'],
       ['Technische Gewerke', 'Sanitär, Elektro, Heizung, Lüftung und Brandschutz, weitgehend parallel geführt.'],
       ['Ausbau und Abnahme', 'Trockenbau, Fliesen, Malerarbeiten, Innentüren, Funktionsprüfungen und Schlussabnahme. <em>Meilenstein: Abnahme.</em>'],
     ],
-    callout: 'Die Aushärtezeit des Betons lässt sich nicht mit mehr Personal verkürzen. Bilden Sie sie als Zeitabstand in der Abhängigkeit ab, nicht als eigenen Balken — sonst kürzt sie jemand bei der nächsten Terminstraffung einfach weg.',
+    callout: 'Die Aushärtezeit des Betons lässt sich nicht mit mehr Personal verkürzen. Bilden Sie sie als Zeitabstand in der Abhängigkeit ab, nicht als eigenen Balken, sonst kürzt sie jemand bei der nächsten Terminstraffung einfach weg.',
     customize: [
       'Passen Sie die Dauern an Größe und Bauart an: Einfamilienhaus und zehngeschossiger Bau haben nichts gemein.',
       'Ergänzen Sie eine Zeile je Geschoss oder Bauabschnitt, wenn Sie so fein steuern müssen.',
       'Aushärte- und Trocknungszeiten gehören als Zeitabstand in die Verknüpfung, nicht als Vorgang.',
-      'Jede Abnahme ist ein Meilenstein — eine Sperre, keine Formalie.',
+      'Jede Abnahme ist ein Meilenstein, eine Sperre, keine Formalie.',
       'Planen Sie Wetterpuffer bei Erdarbeiten und Rohbau ein.',
     ],
     tips: [
       '<strong>Die Genehmigung bestimmt den echten Start.</strong> Sie hängt an Dritten und lässt sich nicht beschleunigen, also gehört sie von Anfang an in den Plan.',
       '<strong>Gewerke überlappen nur zonenweise.</strong> Sanitär, Elektro und Lüftung teilen sich denselben Raum und behindern sich sonst gegenseitig.',
-      '<strong>Achten Sie auf Lieferzeiten</strong> bei Fenstern, Türen und Technik — die kommen häufiger zu spät als der Bau selbst.',
+      '<strong>Achten Sie auf Lieferzeiten</strong> bei Fenstern, Türen und Technik, die kommen häufiger zu spät als der Bau selbst.',
       '<strong>Pflegen Sie den Fortschritt wöchentlich</strong> und exportieren Sie den Plan für die Baubesprechung.',
       '<strong>Basisplan bei Genehmigungserteilung setzen</strong>, nicht früher: alles davor ist Schätzung.',
     ],
     related: [['home-renovation', 'Renovierung'], ['project-management', 'Projektmanagement'], ['data-center-build-schedule', 'Rechenzentrum']],
     faq: [
       ['Welche Phasen gehören in einen Bauzeitenplan?', 'Genehmigungen, Erdarbeiten und Gründung, Rohbau, Gebäudehülle, technische Gewerke sowie Ausbau mit Abnahme. Die Vorlage bringt sie mit den zugehörigen Abnahme-Meilensteinen mit.'],
-      ['Taugt sie für eine kleine Sanierung?', 'Ja, für eine Wohnung ist die Renovierungsvorlage allerdings direkter — kürzere Phasen und kein Rohbau.'],
+      ['Taugt sie für eine kleine Sanierung?', 'Ja, für eine Wohnung ist die Renovierungsvorlage allerdings direkter, kürzere Phasen und kein Rohbau.'],
       ['Wie bilde ich die Betonaushärtung ab?', 'Als Zeitabstand (Lag) in der Verknüpfung zwischen Betonage und Folgevorgang. So kann sie beim Straffen des Plans nicht versehentlich entfallen.'],
       ['Ist die Bauvorlage kostenlos?', 'Ja: Excel, PowerPoint und CSV kostenlos, dazu Online-Bearbeitung ohne Anmeldung.'],
     ],
@@ -108,7 +108,7 @@ const T = {
     ],
     callout: 'Einfachheit ist eine Entscheidung, kein Mangel. Wenn Ihr Plan in zehn Zeilen passt, sorgt genau das dafür, dass Sie ihn auch pflegen. Struktur hinzuzufügen, die Sie nicht brauchen, ist der schnellste Weg zu einem veralteten Diagramm.',
     customize: [
-      'Ersetzen Sie die Vorgangsnamen — die Struktur passt auf fast jede kurze Arbeit.',
+      'Ersetzen Sie die Vorgangsnamen, die Struktur passt auf fast jede kurze Arbeit.',
       'Termine per Ziehen anpassen; es sind keine Formeln zu ändern.',
       'Einen Meilenstein am Ende ergänzen, wenn ein sichtbarer Liefertermin gebraucht wird.',
       'Erst auf Phasen umstellen, wenn der Plan fünfzehn Zeilen überschreitet.',
@@ -116,15 +116,15 @@ const T = {
     ],
     tips: [
       '<strong>Verzichten Sie auf Abhängigkeiten, wenn Sie sie nicht brauchen.</strong> Bei zehn sequenziellen Vorgängen ist Verschieben von Hand schneller.',
-      '<strong>Farbe nach Art der Arbeit</strong>, nicht je Vorgang — weniger visuelles Rauschen.',
+      '<strong>Farbe nach Art der Arbeit</strong>, nicht je Vorgang, weniger visuelles Rauschen.',
       '<strong>Setzen Sie einen echten Endtermin</strong>, auch wenn er grob ist. Ein Plan ohne Ende verpflichtet zu nichts.',
       '<strong>Als PDF teilen</strong>: bei einem kurzen Plan ist ein Bild besser als ein Bearbeitungszugang.',
-      '<strong>Wechseln Sie zur Projektmanagement-Vorlage</strong>, sobald es wächst — bevor es unübersichtlich wird.',
+      '<strong>Wechseln Sie zur Projektmanagement-Vorlage</strong>, sobald es wächst, bevor es unübersichtlich wird.',
     ],
     related: [['weekly', 'Wochenplan'], ['project-management', 'Projektmanagement'], ['one-page-gantt-chart', 'Plan auf einer Seite']],
     faq: [
       ['Wann ist die einfache Vorlage die richtige?', 'Bei weniger als fünfzehn Vorgängen und klarer Reihenfolge. Phasen, Ressourcen und Abhängigkeiten kosten dort mehr, als sie bringen.'],
-      ['Kann ich später Abhängigkeiten ergänzen?', 'Ja. Im <a href="/de/app.html">Editor</a> verknüpfen Sie die Vorgänge, wenn Sie sie brauchen — danach rechnet sich der Plan selbst neu.'],
+      ['Kann ich später Abhängigkeiten ergänzen?', 'Ja. Im <a href="/de/app.html">Editor</a> verknüpfen Sie die Vorgänge, wenn Sie sie brauchen, danach rechnet sich der Plan selbst neu.'],
       ['Ist sie kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos, ohne Konto.'],
     ],
   },
@@ -144,25 +144,25 @@ const T = {
       ['Deployment', 'Umgebung vorbereiten, Datenmigration, Deployment-Fenster und Nachkontrolle. <em>Meilenstein: in Produktion.</em>'],
       ['Stabilisierung', 'Verstärkter Support, Störungsbehebung und Übergabe an den Betrieb.'],
     ],
-    callout: 'Ein Gantt ersetzt das Board nicht, es ergänzt es. Innerhalb des Sprints entscheidet das Team; das Diagramm existiert für das, was das Board nicht sieht — externe Abhängigkeiten, vertragliche Termine und das Deployment-Fenster.',
+    callout: 'Ein Gantt ersetzt das Board nicht, es ergänzt es. Innerhalb des Sprints entscheidet das Team; das Diagramm existiert für das, was das Board nicht sieht, externe Abhängigkeiten, vertragliche Termine und das Deployment-Fenster.',
     customize: [
       'Sprintlänge und Anzahl anpassen; zwei Wochen sind der Normalfall.',
       'Je externe Abhängigkeit eine Zeile ergänzen (Fremd-API, Rechtsfreigabe, Inhaltslieferung).',
       'Termine, die nicht bei Ihnen liegen, als Meilensteine markieren: Code Freeze, Wartungsfenster, Audits.',
       'QA über Anfang-Anfang mit Zeitabstand überlappen statt streng nachgelagert.',
-      'Echte Stabilisierungszeit nach dem Go-live einplanen — das ist keine Leerzeit.',
+      'Echte Stabilisierungszeit nach dem Go-live einplanen, das ist keine Leerzeit.',
     ],
     tips: [
       '<strong>Planen Sie nicht in den Sprint hinein.</strong> Ein Balken je Sprint genügt; Detail veraltet binnen Tagen.',
       '<strong>Externe Abhängigkeiten kippen Pläne.</strong> Machen Sie sie sichtbar und geben Sie ihnen einen Verantwortlichen.',
       '<strong>Schützen Sie die QA-Phase.</strong> Sie wird zuerst gekürzt und findet als Einzige die Fehler, die Anwender stören.',
-      '<strong>Datenmigration ist ein eigenes kleines Projekt</strong>, wenn ein Altsystem existiert — meist der Grund für ein gerissenes Fenster.',
+      '<strong>Datenmigration ist ein eigenes kleines Projekt</strong>, wenn ein Altsystem existiert, meist der Grund für ein gerissenes Fenster.',
       '<strong>Basisplan bei Design-Freigabe setzen</strong>, wenn Schätzungen aufhören, Vermutungen zu sein.',
     ],
     related: [['agile', 'Agil'], ['sprint', 'Sprint'], ['product-launch', 'Produkteinführung']],
     faq: [
       ['Passt ein Gantt zu einem agilen Projekt?', 'Ja, für das, was das Board nicht abdeckt: externe Abhängigkeiten, Releases und zugesagte Termine. Innerhalb des Sprints bleibt das Team samt Board zuständig.'],
-      ['Wie stelle ich Sprints dar?', 'Als Balken fester, wiederkehrender Länge — einer je Sprint, ohne die Stories darin aufzuführen. So bleibt das Diagramm gültig, auch wenn sich der Sprintinhalt ändert.'],
+      ['Wie stelle ich Sprints dar?', 'Als Balken fester, wiederkehrender Länge, einer je Sprint, ohne die Stories darin aufzuführen. So bleibt das Diagramm gültig, auch wenn sich der Sprintinhalt ändert.'],
       ['Geht die Vorlage auch für ein Wasserfallprojekt?', 'Ja. Ersetzen Sie die Sprints durch sequenzielle Entwicklungsphasen; der Rest der Struktur trägt weiterhin.'],
       ['Ist sie kostenlos?', 'Ja, mit Download als Excel, PowerPoint und CSV sowie kostenloser Online-Bearbeitung.'],
     ],
@@ -183,22 +183,22 @@ const T = {
       ['Launch', 'Einplanung, Veröffentlichung und Mediaschaltung. <em>Meilenstein: Kampagne live.</em>'],
       ['Auswertung', 'Kennzahlen verfolgen, optimieren und Abschlussbericht.'],
     ],
-    callout: 'Zeichnen Sie Freigabeschleifen als Balken mit Dauer. Eine Kampagne, die sofortige Zustimmung unterstellt, verzögert sich exakt um die Zeit, die das erste „lass mich das kurz im Team besprechen" kostet — und diese Wartezeit steht in keinem optimistischen Plan.',
+    callout: 'Zeichnen Sie Freigabeschleifen als Balken mit Dauer. Eine Kampagne, die sofortige Zustimmung unterstellt, verzögert sich exakt um die Zeit, die das erste „lass mich das kurz im Team besprechen" kostet, und diese Wartezeit steht in keinem optimistischen Plan.',
     customize: [
       'Je Kanal eine Zeile ergänzen (Social, E-Mail, Display, Paid) mit eigenen Terminen.',
       'Die Freigabephase verdoppeln, wenn neben interner Abstimmung ein externer Kunde beteiligt ist.',
-      'Den Mediabuchungstermin als Meilenstein setzen — der ist meist unverrückbar.',
+      'Den Mediabuchungstermin als Meilenstein setzen, der ist meist unverrückbar.',
       'Die Auswertung als echte Phase mit Berichtstermin führen.',
     ],
     tips: [
       '<strong>Media vor den fertigen Assets buchen.</strong> Inventar ist endlich, Kreation lässt sich noch anpassen.',
       '<strong>Zwei Korrekturrunden sind normal.</strong> Wer eine plant, plant eine Verzögerung.',
-      '<strong>Kanaladaption am Ende</strong>, nicht parallel — sonst werden zehn Formate wegen einer Textänderung neu gebaut.',
+      '<strong>Kanaladaption am Ende</strong>, nicht parallel, sonst werden zehn Formate wegen einer Textänderung neu gebaut.',
       '<strong>Den Berichtstermin fixieren</strong>, sonst findet die Auswertung nicht statt.',
     ],
     related: [['content-calendar', 'Redaktionsplan'], ['product-launch', 'Produkteinführung'], ['event-planning', 'Eventplanung']],
     faq: [
-      ['Wie lange dauert die Vorbereitung einer Kampagne?', 'Vier bis acht Wochen für eine Standardkampagne, abhängig vor allem von der Zahl der Freigabeschleifen — sie sind der Faktor mit der größten Streuung.'],
+      ['Wie lange dauert die Vorbereitung einer Kampagne?', 'Vier bis acht Wochen für eine Standardkampagne, abhängig vor allem von der Zahl der Freigabeschleifen, sie sind der Faktor mit der größten Streuung.'],
       ['Wie stelle ich mehrere Kanäle dar?', 'Mit je einer Zeile pro Kanal in Produktion und Launch, jede mit eigenen Terminen. So sieht man sofort, welcher Kanal hinterherhängt.'],
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos und ohne Anmeldung.'],
     ],
@@ -213,18 +213,18 @@ const T = {
     intro: 'Sechs Phasen, von der Locationbuchung bis zum Abbau:',
     phases: [
       ['Konzept und Location', 'Ziele, Budget, Teilnehmerzahl, Termin und Buchung der Räumlichkeit. <em>Meilenstein: Location bestätigt.</em>'],
-      ['Dienstleister', 'Catering, Technik, Mobiliar, Sicherheit und Transport — beauftragt nach Verfügbarkeitsknappheit.'],
+      ['Dienstleister', 'Catering, Technik, Mobiliar, Sicherheit und Transport, beauftragt nach Verfügbarkeitsknappheit.'],
       ['Programm und Referenten', 'Agenda, Zusagen, Materialien und Proben.'],
       ['Kommunikation und Anmeldung', 'Website, Kampagne, Anmeldestart und Erinnerungen.'],
       ['Aufbau und Generalprobe', 'Produktion, Aufbau, Technikcheck und Generalprobe. <em>Meilenstein: bereit.</em>'],
       ['Durchführung und Abbau', 'Veranstaltung, Abbau, Abrechnung und Teilnehmerbefragung.'],
     ],
-    callout: 'Der Technikcheck verdient einen eigenen Balken, keine Randnotiz. Der häufigste und sichtbarste Fehler einer Veranstaltung betrifft Ton oder Projektion — und er zeigt sich immer dann, wenn keine Zeit mehr bleibt.',
+    callout: 'Der Technikcheck verdient einen eigenen Balken, keine Randnotiz. Der häufigste und sichtbarste Fehler einer Veranstaltung betrifft Ton oder Projektion, und er zeigt sich immer dann, wenn keine Zeit mehr bleibt.',
     customize: [
-      'Veranstaltungstermin ändern — der gesamte Plan rückt rückwärts nach.',
+      'Veranstaltungstermin ändern, der gesamte Plan rückt rückwärts nach.',
       'Je Saal eine Zeile ergänzen, wenn parallele Sessions stattfinden.',
       'Anmeldeschluss und Teilnehmerbestätigung als Meilensteine setzen: Sie bestimmen Catering und Aufbau.',
-      'Abbau und Abrechnung mitführen — sie gehören zum Projekt, auch wenn niemand daran denkt.',
+      'Abbau und Abrechnung mitführen, sie gehören zum Projekt, auch wenn niemand daran denkt.',
     ],
     tips: [
       '<strong>Location zuerst.</strong> Sie bestimmt Kapazität, Termin und einen Großteil des Budgets.',
@@ -244,8 +244,8 @@ const T = {
     card: 'Tabelle und Diagramm fertig eingerichtet: Daten ersetzen, fertig.',
     h1: 'Gantt-Diagramm-Vorlage für Excel',
     metaTitle: 'Gantt-Diagramm-Vorlage für Excel',
-    metaDesc: 'Fertige Gantt-Vorlage für Excel: Vorgänge, Termine, Dauer und Fortschritt — ohne komplizierte Formeln.',
-    lead: 'Eine <strong>Gantt-Diagramm-Vorlage für Excel</strong>, fertig aufgebaut: Spalten für Vorgang, Start, Ende, Dauer und Fortschritt, dazu das bereits konfigurierte Diagramm. Herunterladen, Daten ersetzen — ohne sich mit unsichtbaren Datenreihen herumzuschlagen.',
+    metaDesc: 'Fertige Gantt-Vorlage für Excel: Vorgänge, Termine, Dauer und Fortschritt, ohne komplizierte Formeln.',
+    lead: 'Eine <strong>Gantt-Diagramm-Vorlage für Excel</strong>, fertig aufgebaut: Spalten für Vorgang, Start, Ende, Dauer und Fortschritt, dazu das bereits konfigurierte Diagramm. Herunterladen, Daten ersetzen, ohne sich mit unsichtbaren Datenreihen herumzuschlagen.',
     intro: 'Die Struktur, die Excel erwartet, bereits mit Beispieldaten gefüllt:',
     phases: [
       ['Datenblatt', 'Vorgang, Start, Ende, Dauer und Fertigstellungsgrad im Format, das das Diagramm braucht.'],
@@ -258,7 +258,7 @@ const T = {
       'Beispielzeilen durch eigene Vorgänge ersetzen und dabei das Datumsformat beibehalten.',
       'Minimum der Horizontalachse auf Ihr Startdatum setzen, sonst beginnt Excel im Jahr 1900.',
       'Zeilen innerhalb einer Phase ergänzen und den Datenbereich des Diagramms erweitern.',
-      'Farbe je Phase statt je Vorgang — deutlich besser lesbar.',
+      'Farbe je Phase statt je Vorgang, deutlich besser lesbar.',
     ],
     tips: [
       '<strong>Termine müssen echte Datumswerte sein</strong>, kein Text, sonst platziert das Diagramm sie falsch.',
@@ -269,7 +269,7 @@ const T = {
     related: [['google-sheets', 'Google Sheets'], ['powerpoint', 'PowerPoint'], ['project-management', 'Projektmanagement']],
     faq: [
       ['Wie verwende ich die Vorlage in Excel?', 'Datei herunterladen, Datenblatt öffnen und die Beispielvorgänge samt Terminen ersetzen. Das Diagramm aktualisiert sich selbst, solange das Spaltenformat erhalten bleibt.'],
-      ['Funktioniert sie in älteren Excel-Versionen?', 'Ja. Sie nutzt ein normales gestapeltes Balkendiagramm, das in jeder modernen Version verfügbar ist — ohne Makros und ohne Add-ins.'],
+      ['Funktioniert sie in älteren Excel-Versionen?', 'Ja. Sie nutzt ein normales gestapeltes Balkendiagramm, das in jeder modernen Version verfügbar ist, ohne Makros und ohne Add-ins.'],
       ['Kann ich Abhängigkeiten ergänzen?', 'In Excel nicht. Wenn Sie sie brauchen, öffnen Sie die CSV im <a href="/de/app.html">kostenlosen Editor</a> und verknüpfen die Vorgänge dort.'],
       ['Ist sie kostenlos?', 'Ja, ohne Anmeldung und ohne Wasserzeichen.'],
     ],
@@ -280,14 +280,14 @@ const T = {
     h1: 'Wochenplan als Gantt-Diagramm',
     metaTitle: 'Wochenplan-Vorlage (Gantt)',
     metaDesc: 'Kostenlose Wochenplan-Vorlage: fünf Tage, Aufgaben je Verantwortlichem, passt auf eine Seite. Excel oder online bearbeiten.',
-    lead: 'Ein <strong>Wochenplan</strong> im Gantt-Format: fünf Tage, die Aufgaben der Woche und wer sie übernimmt. Ohne Abhängigkeiten und ohne kritischen Pfad — das hier ist ein Fokus-Werkzeug.',
+    lead: 'Ein <strong>Wochenplan</strong> im Gantt-Format: fünf Tage, die Aufgaben der Woche und wer sie übernimmt. Ohne Abhängigkeiten und ohne kritischen Pfad, das hier ist ein Fokus-Werkzeug.',
     intro: 'Ein Raster von Montag bis Freitag mit verteilten Aufgaben:',
     phases: [
       ['Montag bis Dienstag', 'Wochenstart und Arbeit, die mehr Spielraum braucht.'],
       ['Mittwoch', 'Halbzeit: Fortschritt prüfen und nachsteuern.'],
       ['Donnerstag bis Freitag', 'Abschluss, Lieferungen und Vorbereitung der Folgewoche.'],
     ],
-    callout: 'Eine Woche fasst nicht mehr, als hineinpasst. Wenn nach dem Ausfüllen keine Lücke bleibt, ist der Plan bereits gescheitert: Für das, was dazwischenkommt, ist kein Platz — und es kommt immer etwas dazwischen.',
+    callout: 'Eine Woche fasst nicht mehr, als hineinpasst. Wenn nach dem Ausfüllen keine Lücke bleibt, ist der Plan bereits gescheitert: Für das, was dazwischenkommt, ist kein Platz, und es kommt immer etwas dazwischen.',
     customize: [
       'Startdatum ändern, um die Woche zu wechseln.',
       'Je Person eine Zeile ergänzen, wenn Sie den Plan im kleinen Team nutzen.',
@@ -303,13 +303,13 @@ const T = {
     related: [['monthly', 'Monatsplan'], ['simple', 'Einfache Vorlage'], ['printable-gantt-chart', 'Zum Ausdrucken']],
     faq: [
       ['Eignet sich der Wochenplan für ein Team?', 'Ja, für kleine Teams: eine Zeile je Person und die ganze Woche im Blick. Für größere Teams ist die Monatsansicht sinnvoller.'],
-      ['Kann ich ihn ausdrucken?', 'Ja, er passt quer auf ein A4-Blatt — das Format, in dem er auf Papier am besten funktioniert.'],
+      ['Kann ich ihn ausdrucken?', 'Ja, er passt quer auf ein A4-Blatt, das Format, in dem er auf Papier am besten funktioniert.'],
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos.'],
     ],
   },
 
   'product-launch': {
-    card: 'Produkt, Material, Vertriebsbefähigung und Presse — alle auf denselben Tag.',
+    card: 'Produkt, Material, Vertriebsbefähigung und Presse, alle auf denselben Tag.',
     h1: 'Gantt-Diagramm-Vorlage für Produkteinführungen',
     metaTitle: 'Gantt-Vorlage für Produkteinführungen',
     metaDesc: 'Kostenlose Launch-Vorlage: Vorbereitung, Beta, Materialien, Vertriebsbefähigung, Markteinführung und Nachbereitung.',
@@ -319,15 +319,15 @@ const T = {
       ['Vorbereitung', 'Positionierung, Preise, Zielgruppe und Zieltermin. <em>Meilenstein: Launch-Termin fixiert.</em>'],
       ['Produkt und Beta', 'Feature Freeze, Beta-Programm, Fehlerbehebung und Release Candidate.'],
       ['Materialien und Inhalte', 'Website, Demos, Dokumentation, Pressemitteilung und Kreation.'],
-      ['Vertriebsbefähigung', 'Schulung, Argumentationsleitfaden, Preise und Einwandbehandlung — vor dem Launch, nicht währenddessen.'],
+      ['Vertriebsbefähigung', 'Schulung, Argumentationsleitfaden, Preise und Einwandbehandlung, vor dem Launch, nicht währenddessen.'],
       ['Markteinführung', 'Sperrfrist, Veröffentlichung, Kampagne und Bestellfreigabe. <em>Meilenstein: Produkt eingeführt.</em>'],
       ['Nachbereitung', 'Kennzahlen, Rückmeldungen, schnelle Korrekturen und Retrospektive.'],
     ],
-    callout: 'Die Vertriebsbefähigung wird zuerst gekürzt und fällt am stärksten auf. Ein Team, das das Produkt am Launch-Tag kennenlernt, verkauft das erste Quartal schlecht — und dieses Quartal kommt nicht wieder.',
+    callout: 'Die Vertriebsbefähigung wird zuerst gekürzt und fällt am stärksten auf. Ein Team, das das Produkt am Launch-Tag kennenlernt, verkauft das erste Quartal schlecht, und dieses Quartal kommt nicht wieder.',
     customize: [
       'Launch-Termin fixieren und alle vier Stränge davon rückwärts rechnen lassen.',
       'Je Markt oder Sprache eine Zeile ergänzen, wenn Sie mehrfach starten.',
-      'Feature Freeze und Pressesperrfrist als Meilensteine setzen — das sind Punkte ohne Rückweg.',
+      'Feature Freeze und Pressesperrfrist als Meilensteine setzen, das sind Punkte ohne Rückweg.',
       'Eine echte Stabilisierungsphase danach einplanen, statt das Projekt am Tag eins zu schließen.',
     ],
     tips: [
@@ -359,22 +359,22 @@ const T = {
       ['Tischler und Maler', 'Türen, Einbauschränke, Küchen- und Badmöbel, abschließend Malerarbeiten.'],
       ['Montage und Reinigung', 'Sanitärobjekte, Geräte, Schalter, Endreinigung und Nacharbeiten. <em>Meilenstein: fertig.</em>'],
     ],
-    callout: 'Schließen Sie keine Wand, bevor die Installationen sichtbar abgenommen sind. Das ist der billigste Meilenstein im ganzen Plan — und der, der den teuersten Fehler der Renovierung verhindert.',
+    callout: 'Schließen Sie keine Wand, bevor die Installationen sichtbar abgenommen sind. Das ist der billigste Meilenstein im ganzen Plan, und der, der den teuersten Fehler der Renovierung verhindert.',
     customize: [
       'Dauern an die Größe anpassen: ein komplettes Bad meist zwei bis drei Wochen, eine ganze Wohnung zwei bis vier Monate.',
       'Je Raum eine Zeile ergänzen, wenn mehrere parallel renoviert werden.',
       'Trocknungs- und Aushärtezeiten als Zeitabstand führen, nicht als Vorgang.',
-      'Lieferzeiten für Küche und Tischlerarbeiten notieren — sie verzögern meist das Ende.',
+      'Lieferzeiten für Küche und Tischlerarbeiten notieren, sie verzögern meist das Ende.',
     ],
     tips: [
       '<strong>Küchenmöbel früh bestellen.</strong> Die Fertigungszeiten übersteigen häufig die Bauzeit.',
       '<strong>Puffer zwischen den Gewerken lassen.</strong> Ein Tag Reserve verhindert, dass ein Verzug drei Folgegewerke mitreißt.',
-      '<strong>Rechnen Sie bei Altbauten mit Überraschungen</strong> — die zeigen sich beim Abbruch, nicht davor.',
+      '<strong>Rechnen Sie bei Altbauten mit Überraschungen</strong>, die zeigen sich beim Abbruch, nicht davor.',
       '<strong>Endreinigung als echten Vorgang führen.</strong> Baustaub kostet mehr Zeit, als irgendjemand einplant.',
     ],
     related: [['construction', 'Bauprojekt'], ['simple', 'Einfache Vorlage'], ['project-management', 'Projektmanagement']],
     faq: [
-      ['Wie lange dauert eine Renovierung?', 'Ein Bad meist zwei bis drei Wochen, eine komplette Wohnung zwei bis vier Monate — abhängig von Fläche und davon, ob der Grundriss verändert wird.'],
+      ['Wie lange dauert eine Renovierung?', 'Ein Bad meist zwei bis drei Wochen, eine komplette Wohnung zwei bis vier Monate, abhängig von Fläche und davon, ob der Grundriss verändert wird.'],
       ['In welcher Reihenfolge arbeiten die Gewerke?', 'Abbruch, Installationen, Schließen und Fliesen, Tischler und Maler, zuletzt Montage. Eine andere Reihenfolge bedeutet Nacharbeit.'],
       ['Brauche ich eine Genehmigung?', 'Das hängt vom Umfang und der Gemeinde ab; Grundrissänderungen oder Eingriffe in Gemeinschaftseigentum meist ja. Die Vorlage hält dafür eine Phase frei, weil sie den Starttermin bestimmt.'],
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos, ohne Anmeldung.'],
@@ -405,7 +405,7 @@ const T = {
     tips: [
       '<strong>Benennen Sie einen Paten als Aufgabe im Plan</strong>, nicht als informelle Geste.',
       '<strong>Geben Sie in der ersten Woche eine echte Aufgabe.</strong> Schulung ohne Anwendung bleibt nicht hängen.',
-      '<strong>Terminieren Sie die Gespräche von Anfang an</strong> — was nicht im Kalender steht, findet nicht statt.',
+      '<strong>Terminieren Sie die Gespräche von Anfang an</strong>, was nicht im Kalender steht, findet nicht statt.',
       '<strong>Verwenden Sie den Plan je Rolle wieder</strong>, statt bei jeder Einstellung neu zu improvisieren.',
     ],
     related: [['30-60-90-day-plan', '30-60-90-Tage-Plan'], ['project-management', 'Projektmanagement'], ['simple', 'Einfache Vorlage']],
@@ -417,11 +417,11 @@ const T = {
   },
 
   'agile': {
-    card: 'Epics, Sprints und Releases auf einer Zeitachse — ohne das Board zu ersetzen.',
+    card: 'Epics, Sprints und Releases auf einer Zeitachse, ohne das Board zu ersetzen.',
     h1: 'Gantt-Diagramm-Vorlage für agile Projekte',
     metaTitle: 'Gantt-Vorlage für agile Projekte',
     metaDesc: 'Kostenlose Vorlage für agile Teams: Epics, Sprints, Releases und externe Abhängigkeiten auf einer Zeitachse.',
-    lead: 'Eine <strong>Gantt-Diagramm-Vorlage für agile Projekte</strong>, die nicht mit Ihrem Board konkurriert: Sie zeigt Epics, Sprints und Releases auf einer Zeitachse und beantwortet damit, was das Board nicht beantwortet — wann es fertig ist und wovon es abhängt.',
+    lead: 'Eine <strong>Gantt-Diagramm-Vorlage für agile Projekte</strong>, die nicht mit Ihrem Board konkurriert: Sie zeigt Epics, Sprints und Releases auf einer Zeitachse und beantwortet damit, was das Board nicht beantwortet, wann es fertig ist und wovon es abhängt.',
     intro: 'Epics oben, Sprints darunter, Releases als Meilensteine:',
     phases: [
       ['Vorbereitung', 'Vision, initiales Backlog, grobe Schätzung und Definition of Ready.'],
@@ -430,7 +430,7 @@ const T = {
       ['Releases', 'Gebündelte Veröffentlichungen. <em>Meilensteine: R1, R2, R3.</em>'],
       ['Externe Abhängigkeiten', 'Dritte, Freigaben und Integrationen außerhalb der Teamkontrolle.'],
     ],
-    callout: 'Gantt und Board beantworten unterschiedliche Fragen. Innerhalb des Sprints entscheidet das Team; das Diagramm existiert für externe Abhängigkeiten und zugesagte Termine — also genau für das, was ein Board nicht zeigt.',
+    callout: 'Gantt und Board beantworten unterschiedliche Fragen. Innerhalb des Sprints entscheidet das Team; das Diagramm existiert für externe Abhängigkeiten und zugesagte Termine, also genau für das, was ein Board nicht zeigt.',
     customize: [
       'Sprintlänge und Anzahl der Iterationen anpassen.',
       'Je Epic einen Balken ergänzen und mit den zugehörigen Sprints verknüpfen.',
@@ -446,7 +446,7 @@ const T = {
     related: [['sprint', 'Sprint'], ['software-development', 'Softwareentwicklung'], ['product-roadmap', 'Produkt-Roadmap']],
     faq: [
       ['Widerspricht ein Gantt der agilen Arbeitsweise?', 'Nein, wenn er für das genutzt wird, was er kann: externe Abhängigkeiten, Releases und terminierte Zusagen. Die Arbeit im Sprint bleibt beim Team und seinem Board.'],
-      ['Wie stelle ich Epics dar?', 'Als Balken über die Sprints, in denen daran gearbeitet wird — ohne die enthaltenen Stories aufzuführen.'],
+      ['Wie stelle ich Epics dar?', 'Als Balken über die Sprints, in denen daran gearbeitet wird, ohne die enthaltenen Stories aufzuführen.'],
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos und ohne Anmeldung.'],
     ],
   },
@@ -474,22 +474,22 @@ const T = {
     tips: [
       '<strong>Vier oder fünf Blöcke genügen.</strong> Ein Monat mit dreißig flachen Zeilen ist unlesbar.',
       '<strong>Halten Sie die letzte Woche frei.</strong> Abschlüsse brauchen immer mehr Zeit als geplant.',
-      '<strong>Prüfen Sie zur Monatsmitte</strong>, nicht erst am Ende — dann ist Korrektur noch möglich.',
+      '<strong>Prüfen Sie zur Monatsmitte</strong>, nicht erst am Ende, dann ist Korrektur noch möglich.',
       '<strong>Als PDF für den Monatsbericht exportieren</strong>; das spart die Zusammenfassung.',
     ],
     related: [['weekly', 'Wochenplan'], ['annual', 'Jahresplan'], ['project-management', 'Projektmanagement']],
     faq: [
       ['Wann ist ein Monatsplan das richtige Format?', 'Wenn die Woche zu kurz für den Überblick und das Quartal zu ungenau ist. Für operative Teams ist es der übliche Horizont.'],
-      ['Geht das auch für mehrere Teams?', 'Ja, indem Sie nach Bereich oder Team gruppieren statt nach Person — so sieht man, welche Wochen überlastet sind.'],
+      ['Geht das auch für mehrere Teams?', 'Ja, indem Sie nach Bereich oder Team gruppieren statt nach Person, so sieht man, welche Wochen überlastet sind.'],
       ['Ist die Vorlage kostenlos?', 'Ja, Download und Online-Bearbeitung kostenlos und ohne Anmeldung.'],
     ],
   },
 
   'powerpoint': {
-    card: 'Balken als native, bearbeitbare Formen — zum Präsentieren gemacht.',
+    card: 'Balken als native, bearbeitbare Formen, zum Präsentieren gemacht.',
     h1: 'Gantt-Diagramm-Vorlage für PowerPoint',
     metaTitle: 'Gantt-Diagramm-Vorlage für PowerPoint',
-    metaDesc: 'Kostenlose Gantt-Vorlage für PowerPoint mit bearbeitbaren Formen, Phasenfarben und Meilensteinen — präsentationsfertig.',
+    metaDesc: 'Kostenlose Gantt-Vorlage für PowerPoint mit bearbeitbaren Formen, Phasenfarben und Meilensteinen, präsentationsfertig.',
     lead: 'Eine <strong>Gantt-Diagramm-Vorlage für PowerPoint</strong>, deren Balken native, bearbeitbare Formen sind: Text, Farbe und Position ändern Sie direkt, ohne Diagramm oder Datenblatt anzufassen.',
     intro: 'Zum Präsentieren gemacht, nicht zum Planen:',
     phases: [
@@ -500,13 +500,13 @@ const T = {
     ],
     callout: 'Eine Gantt-Folie ist eine Zusammenfassung des Plans, nicht der Plan. Acht bis zehn Balken sind das Maximum, das aus der letzten Reihe noch lesbar ist: gruppieren Sie nach Phasen und lassen Sie das Detail in einem anderen Dokument.',
     customize: [
-      'Texte ersetzen und Formen verschieben — alles ist native Form.',
+      'Texte ersetzen und Formen verschieben, alles ist native Form.',
       'Eine Akzentfarbe für Kritisches, Grautöne für den Rest.',
       'Monate ergänzen oder entfernen, indem Sie die Rasterlinien duplizieren.',
       'Jede Phase gruppieren, damit sie sich als Ganzes verschieben lässt.',
     ],
     tips: [
-      '<strong>An den intelligenten Führungslinien ausrichten</strong> — ein schiefes Gantt fällt in der Projektion sofort auf.',
+      '<strong>An den intelligenten Führungslinien ausrichten</strong>, ein schiefes Gantt fällt in der Projektion sofort auf.',
       '<strong>Datum neben jeden Meilenstein schreiben</strong>: das fotografiert das Publikum.',
       '<strong>Nicht mehr als zehn Balken.</strong> Passt es nicht, gruppieren Sie.',
       '<strong>Ändert sich der Plan häufig</strong>, pflegen Sie ihn im <a href="/de/app.html">Editor</a> und exportieren Sie zum Präsentieren nach .pptx.',
@@ -523,7 +523,7 @@ const T = {
     card: 'Der ganze Plan auf Phasen und Meilensteine verdichtet, in DIN-A4-Größe.',
     h1: 'Gantt-Diagramm auf einer Seite',
     metaTitle: 'Gantt-Diagramm auf einer Seite (Vorlage)',
-    metaDesc: 'Kostenlose Vorlage für einen Plan auf einer Seite: Phasen, Meilensteine und Status — passt auf eine Folie oder ein A4-Blatt.',
+    metaDesc: 'Kostenlose Vorlage für einen Plan auf einer Seite: Phasen, Meilensteine und Status, passt auf eine Folie oder ein A4-Blatt.',
     lead: 'Ein <strong>Gantt-Diagramm auf einer Seite</strong>: der gesamte Plan verdichtet auf Phasen und Meilensteine, in der Größe einer Folie oder eines A4-Blatts. Das Format für die Geschäftsführung, den Kunden und die Wand.',
     intro: 'Weniger Zeilen, mehr Aussage:',
     phases: [
@@ -533,7 +533,7 @@ const T = {
     ],
     callout: 'Verdichten heißt nicht verstecken. Ein Plan auf einer Seite funktioniert, weil er zwingt, die fünf wesentlichen Dinge zu benennen. Wer vierzig Vorgänge über eine kleinere Schriftgröße hineinzwängt, hat keinen Überblick gebaut, sondern etwas Unlesbares.',
     customize: [
-      'Phasen ersetzen — vier bis sechs ist der Bereich, der funktioniert.',
+      'Phasen ersetzen, vier bis sechs ist der Bereich, der funktioniert.',
       'Meilensteine nach Relevanz für das Publikum wählen, nicht chronologisch.',
       'Den Zeitraum auf die gesamte Projektlaufzeit einstellen.',
       'Als PDF oder PowerPoint exportieren, je nach Präsentationsort.',
@@ -541,7 +541,7 @@ const T = {
     tips: [
       '<strong>Aus dem Detailplan verdichten</strong>, nicht umgekehrt.',
       '<strong>Eine Farbe je Phase, Grau für Erledigtes.</strong>',
-      '<strong>Datum neben jeden Meilenstein</strong> — das bleibt hängen.',
+      '<strong>Datum neben jeden Meilenstein</strong>, das bleibt hängen.',
       '<strong>Monatlich aktualisieren</strong>; auf dieser Flughöhe braucht es nicht mehr.',
     ],
     related: [['printable-gantt-chart', 'Zum Ausdrucken'], ['powerpoint', 'PowerPoint'], ['annual', 'Jahresplan']],
@@ -553,9 +553,9 @@ const T = {
   },
 
   'refinery-turnaround-schedule': {
-    card: "Stillstand, Entleerung, Inspektion, Reparatur und Anfahren — stundengenau geplant.",
+    card: "Stillstand, Entleerung, Inspektion, Reparatur und Anfahren, stundengenau geplant.",
     h1: "Gantt-Vorlage für Raffinerie-Turnaround",
-    metaTitle: "Turnaround-Terminplan Raffinerie — Vorlage",
+    metaTitle: "Turnaround-Terminplan Raffinerie: Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Raffinerie-Turnarounds: Vorbereitung, Abfahren, Entleeren, Inspektion, Reparatur, Wiederanfahren.",
     lead: "Ein <strong>Turnaround-Terminplan</strong> unterscheidet sich von jedem anderen Bauplan in einem Punkt: Die Anlage verdient währenddessen kein Geld. Jeder Tag Verzug kostet Produktionsausfall, deshalb wird hier in Schichten geplant, nicht in Wochen.",
     intro: "Sechs Phasen vom Vorlauf bis zur Übergabe an den Betrieb:",
@@ -574,7 +574,7 @@ const T = {
       ],
       [
         "Reparatur und Austausch",
-        "Katalysatorwechsel, Wärmetauscher, Ventile, Rohrleitungsarbeiten — der kritische Pfad liegt fast immer in einer einzigen Kolonne."
+        "Katalysatorwechsel, Wärmetauscher, Ventile, Rohrleitungsarbeiten, der kritische Pfad liegt fast immer in einer einzigen Kolonne."
       ],
       [
         "Dichtheitsprüfung und Wiederherstellung",
@@ -587,14 +587,14 @@ const T = {
     ],
     callout: "Planen Sie den Zusatzumfang ein, bevor Sie ihn kennen. Zwischen 10 und 30 Prozent der Turnaround-Stunden entstehen aus Befunden, die erst beim Öffnen sichtbar werden. Ein Plan ohne diesen Puffer ist nicht optimistisch, sondern unvollständig.",
     customize: [
-      "Auf Schichten umstellen, wenn rund um die Uhr gearbeitet wird — bei einem Turnaround ist die Tagesauflösung zu grob.",
+      "Auf Schichten umstellen, wenn rund um die Uhr gearbeitet wird, bei einem Turnaround ist die Tagesauflösung zu grob.",
       "Je Anlagenteil oder Kolonne eine eigene Zeile führen; sie laufen parallel und konkurrieren um dieselben Gewerke.",
-      "Freimessung und Freigabe als eigene Vorgänge abbilden, nicht als Teil des Abfahrens — sie sind der häufigste Startverzug.",
+      "Freimessung und Freigabe als eigene Vorgänge abbilden, nicht als Teil des Abfahrens, sie sind der häufigste Startverzug.",
       "Eine Puffer-Zeile für Zusatzumfang je Phase einplanen und offen ausweisen."
     ],
     tips: [
       "<strong>Der Scope Freeze ist der wichtigste Meilenstein.</strong> Was danach dazukommt, verschiebt das Anfahren.",
-      "<strong>Der kritische Pfad ist meist kurz.</strong> Wenige Vorgänge bestimmen die Dauer — schützen Sie genau diese.",
+      "<strong>Der kritische Pfad ist meist kurz.</strong> Wenige Vorgänge bestimmen die Dauer, schützen Sie genau diese.",
       "<strong>Fremdfirmen sind eine Ressource, kein Vorgang.</strong> Prüfen Sie die Auslastung, nicht nur die Termine.",
       "<strong>Das Anfahren gehört in den Plan.</strong> Ein Turnaround endet mit Produkt in Spezifikation, nicht mit dem letzten Schraubenschlüssel."
     ],
@@ -622,9 +622,9 @@ const T = {
   'hotel-pre-opening-critical-path': {
     card: "Von der Bauabnahme bis zum ersten Gast: Personal, Systeme, Lizenzen, Probebetrieb.",
     h1: "Gantt-Vorlage für die Hotel-Eröffnung (Pre-Opening)",
-    metaTitle: "Pre-Opening-Terminplan Hotel — Vorlage",
+    metaTitle: "Pre-Opening-Terminplan Hotel: Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Hoteleröffnung: Lizenzen, Personal, Systeme, Warenwirtschaft, Probebetrieb und Soft Opening.",
-    lead: "Ein <strong>Pre-Opening-Plan</strong> beginnt dort, wo der Bauzeitenplan aufhört. Zwischen fertigem Gebäude und erstem zahlenden Gast liegen sechs bis neun Monate Arbeit, die mit dem Bau parallel laufen muss — sonst steht ein fertiges Haus leer.",
+    lead: "Ein <strong>Pre-Opening-Plan</strong> beginnt dort, wo der Bauzeitenplan aufhört. Zwischen fertigem Gebäude und erstem zahlenden Gast liegen sechs bis neun Monate Arbeit, die mit dem Bau parallel laufen muss, sonst steht ein fertiges Haus leer.",
     intro: "Sechs Stränge, die auf den Eröffnungstag zulaufen:",
     phases: [
       [
@@ -637,7 +637,7 @@ const T = {
       ],
       [
         "Systeme und Technik",
-        "PMS, Kassensystem, Channel Manager, Schließanlage, WLAN, Telefonie — inklusive Schnittstellen und Testbuchungen."
+        "PMS, Kassensystem, Channel Manager, Schließanlage, WLAN, Telefonie, inklusive Schnittstellen und Testbuchungen."
       ],
       [
         "Vertrieb und Distribution",
@@ -652,11 +652,11 @@ const T = {
         "Testläufe je Abteilung, Freundeslauf, Mängelliste, Nacharbeit. <em>Meilenstein: erster Gast.</em>"
       ]
     ],
-    callout: "Buchbarkeit ist ein früher Meilenstein, kein später. Zimmer müssen Monate vor der Eröffnung verkäuflich sein, sonst startet das Haus mit leerem Belegungskalender in die erste Saison — der teuerste vermeidbare Fehler einer Neueröffnung.",
+    callout: "Buchbarkeit ist ein früher Meilenstein, kein später. Zimmer müssen Monate vor der Eröffnung verkäuflich sein, sonst startet das Haus mit leerem Belegungskalender in die erste Saison, der teuerste vermeidbare Fehler einer Neueröffnung.",
     customize: [
-      "Eröffnungstermin ändern — alle Stränge rücken mit, die Lizenzkette zeigt sofort, ob der Termin trägt.",
+      "Eröffnungstermin ändern, alle Stränge rücken mit, die Lizenzkette zeigt sofort, ob der Termin trägt.",
       "Je Abteilung eine Zeile für Schulung ergänzen: Rezeption, Housekeeping, Küche, Service, Technik.",
-      "Bauabnahme als Vorgänger für Probebetrieb setzen — ohne Abnahme kein Testlauf.",
+      "Bauabnahme als Vorgänger für Probebetrieb setzen, ohne Abnahme kein Testlauf.",
       "Ein Soft Opening mit reduzierter Kapazität als eigene Phase führen, nicht als Eröffnungstag."
     ],
     tips: [
@@ -672,7 +672,7 @@ const T = {
       ],
       [
         "Was liegt üblicherweise auf dem kritischen Pfad?",
-        "Meist die Genehmigungskette oder die Systemintegration — selten der Bau selbst, obwohl er am sichtbarsten ist."
+        "Meist die Genehmigungskette oder die Systemintegration, selten der Bau selbst, obwohl er am sichtbarsten ist."
       ],
       [
         "Braucht es ein Soft Opening?",
@@ -687,11 +687,11 @@ const T = {
   },
 
   'solar-farm-construction-schedule': {
-    card: "Standortsicherung, Netzanschluss, Module, Inbetriebnahme — mit Wetter- und Netzpuffer.",
+    card: "Standortsicherung, Netzanschluss, Module, Inbetriebnahme, mit Wetter- und Netzpuffer.",
     h1: "Gantt-Vorlage für den Bau einer Photovoltaik-Freiflächenanlage",
-    metaTitle: "Bauzeitenplan Solarpark — Gantt-Vorlage",
+    metaTitle: "Bauzeitenplan Solarpark: Gantt-Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Solarparks: Standortentwicklung, Genehmigung, Netzanschluss, Montage, Inbetriebnahme.",
-    lead: "Ein <strong>Bauzeitenplan für einen Solarpark</strong> wird selten von der Montage bestimmt. Module aufzustellen geht schnell; Genehmigung und Netzanschluss dauern Jahre — und genau dort liegt der kritische Pfad.",
+    lead: "Ein <strong>Bauzeitenplan für einen Solarpark</strong> wird selten von der Montage bestimmt. Module aufzustellen geht schnell; Genehmigung und Netzanschluss dauern Jahre, und genau dort liegt der kritische Pfad.",
     intro: "Sechs Phasen von der Fläche bis zur Einspeisung:",
     phases: [
       [
@@ -700,7 +700,7 @@ const T = {
       ],
       [
         "Genehmigung",
-        "Bauleitplanung, Umweltprüfung, Artenschutz, Baugenehmigung — der längste und unsicherste Abschnitt."
+        "Bauleitplanung, Umweltprüfung, Artenschutz, Baugenehmigung, der längste und unsicherste Abschnitt."
       ],
       [
         "Beschaffung und Finanzierung",
@@ -719,11 +719,11 @@ const T = {
         "Anschluss, Prüfungen, Zertifikate, Probebetrieb. <em>Meilenstein: erste Einspeisung.</em>"
       ]
     ],
-    callout: "Der Netzanschluss ist der Vorgang, der das Projekt terminiert. Die Zusage des Netzbetreibers und der Termin für den Anschluss liegen außerhalb Ihrer Kontrolle und häufig Jahre voraus — planen Sie alles andere rückwärts von diesem Datum.",
+    callout: "Der Netzanschluss ist der Vorgang, der das Projekt terminiert. Die Zusage des Netzbetreibers und der Termin für den Anschluss liegen außerhalb Ihrer Kontrolle und häufig Jahre voraus, planen Sie alles andere rückwärts von diesem Datum.",
     customize: [
       "Je Bauabschnitt eine Zeile ergänzen, wenn der Park in Teilflächen errichtet wird.",
       "Rammarbeiten und Kabeltrassen als wetterabhängige Vorgänge kennzeichnen und im Winter mit Puffer versehen.",
-      "Financial Close als harten Meilenstein setzen — ohne ihn beginnt keine Beschaffung.",
+      "Financial Close als harten Meilenstein setzen, ohne ihn beginnt keine Beschaffung.",
       "Artenschutzfenster als nicht-verfügbare Zeiträume im Kalender hinterlegen (Brutzeiten)."
     ],
     tips: [
@@ -756,7 +756,7 @@ const T = {
   'dissertation-gantt-chart': {
     card: "Exposé, Literatur, Empirie, Kapitel, Korrektur und Abgabe über mehrere Semester.",
     h1: "Gantt-Diagramm-Vorlage für die Dissertation",
-    metaTitle: "Zeitplan Dissertation — Gantt-Vorlage",
+    metaTitle: "Zeitplan Dissertation: Gantt-Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Dissertation: Exposé, Literaturarbeit, Datenerhebung, Auswertung, Kapitel, Korrektur, Abgabe.",
     lead: "Ein <strong>Zeitplan für die Dissertation</strong> hat ein Problem, das kein Bauprojekt kennt: Sie sind die einzige Ressource, und der Abgabetermin liegt Jahre entfernt. Ohne Zwischenmeilensteine merkt man den Verzug erst, wenn er nicht mehr aufzuholen ist.",
     intro: "Sechs Phasen über typischerweise drei bis vier Jahre:",
@@ -767,7 +767,7 @@ const T = {
       ],
       [
         "Literatur und Theorie",
-        "Systematische Recherche, Forschungsstand, theoretischer Rahmen — läuft im Hintergrund weiter."
+        "Systematische Recherche, Forschungsstand, theoretischer Rahmen, läuft im Hintergrund weiter."
       ],
       [
         "Methodik und Feldzugang",
@@ -789,7 +789,7 @@ const T = {
     callout: "Setzen Sie Kapitelmeilensteine alle sechs bis acht Wochen. Eine Dissertation scheitert selten an einem großen Problem, sondern an vielen kleinen Verzögerungen, die niemand misst, weil erst in drei Jahren jemand hinsieht.",
     customize: [
       "Auf Semester statt Wochen umstellen, wenn die Arbeit vierjährig angelegt ist.",
-      "Lehrverpflichtungen und Konferenzen als eigene Zeilen führen — sie kosten reale Wochen.",
+      "Lehrverpflichtungen und Konferenzen als eigene Zeilen führen, sie kosten reale Wochen.",
       "Ethikvotum als Vorgänger der Datenerhebung setzen; es ist der häufigste unterschätzte Vorlauf.",
       "Puffer vor der Abgabe einplanen: Korrektur und Formatierung dauern regelmäßig doppelt so lange wie geschätzt."
     ],
@@ -823,9 +823,9 @@ const T = {
   'wedding-planning': {
     card: "Location, Trauung, Dienstleister, Gästeliste und der Tagesablauf selbst.",
     h1: "Gantt-Diagramm-Vorlage für die Hochzeitsplanung",
-    metaTitle: "Zeitplan Hochzeit — kostenlose Gantt-Vorlage",
+    metaTitle: "Zeitplan Hochzeit: kostenlose Gantt-Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Hochzeitsplanung: Location, Trauung, Dienstleister, Einladungen, Kleidung, Tagesablauf.",
-    lead: "Eine <strong>Vorlage für die Hochzeitsplanung</strong> rechnet rückwärts von einem Datum, das feststeht. Zwölf bis achtzehn Monate klingen nach viel Zeit — bis man merkt, dass die guten Locations und Fotografen zwei Jahre im Voraus ausgebucht sind.",
+    lead: "Eine <strong>Vorlage für die Hochzeitsplanung</strong> rechnet rückwärts von einem Datum, das feststeht. Zwölf bis achtzehn Monate klingen nach viel Zeit, bis man merkt, dass die guten Locations und Fotografen zwei Jahre im Voraus ausgebucht sind.",
     intro: "Sechs Phasen vom Termin bis zum Tag danach:",
     phases: [
       [
@@ -838,7 +838,7 @@ const T = {
       ],
       [
         "Dienstleister",
-        "Fotograf, Catering, Musik, Floristik, Torte, Transport — in der Reihenfolge, in der sie ausgebucht sind."
+        "Fotograf, Catering, Musik, Floristik, Torte, Transport, in der Reihenfolge, in der sie ausgebucht sind."
       ],
       [
         "Gäste und Papeterie",
@@ -853,9 +853,9 @@ const T = {
         "Ablaufplan, Bestätigungen, Aufbau, Hochzeitstag, Abbau und Rückgaben."
       ]
     ],
-    callout: "Der Hochzeitstag selbst braucht einen eigenen Stundenplan, getrennt vom Jahresplan. Ankunft der Floristik, Fototermin, Sektempfang und Essensausgabe hängen auf die Minute voneinander ab — ein Tagesplan in Wochenauflösung hilft niemandem.",
+    callout: "Der Hochzeitstag selbst braucht einen eigenen Stundenplan, getrennt vom Jahresplan. Ankunft der Floristik, Fototermin, Sektempfang und Essensausgabe hängen auf die Minute voneinander ab, ein Tagesplan in Wochenauflösung hilft niemandem.",
     customize: [
-      "Termin ändern — alle Vorlaufzeiten rücken mit, ausgebuchte Dienstleister werden sofort sichtbar.",
+      "Termin ändern, alle Vorlaufzeiten rücken mit, ausgebuchte Dienstleister werden sofort sichtbar.",
       "Eine Zeile je Dienstleister, mit Anzahlung und Restzahlung als Meilensteine.",
       "RSVP-Frist als Vorgänger für Sitzplan und Catering-Endzahl setzen.",
       "Den Tag selbst auf Stundenauflösung umstellen und als eigenen Abschnitt führen."
@@ -905,7 +905,7 @@ const T = {
       ],
       [
         "Erhebung",
-        "Instrumente, Pretest, Feldzugang und Datenerhebung — meist der längste Abschnitt."
+        "Instrumente, Pretest, Feldzugang und Datenerhebung, meist der längste Abschnitt."
       ],
       [
         "Auswertung",
@@ -920,12 +920,12 @@ const T = {
         "Zwischenberichte, Mittelabruf, Verwendungsnachweis, Datenarchivierung und Abschlussbericht."
       ]
     ],
-    callout: "Peer Review ist ein Vorgang mit Dauer, kein Ereignis. Zwischen Einreichung und Annahme liegen bei den meisten Zeitschriften sechs bis zwölf Monate mit ein bis drei Überarbeitungsrunden — ein Projektplan, der die Publikation als Endpunkt setzt, endet zu früh.",
+    callout: "Peer Review ist ein Vorgang mit Dauer, kein Ereignis. Zwischen Einreichung und Annahme liegen bei den meisten Zeitschriften sechs bis zwölf Monate mit ein bis drei Überarbeitungsrunden, ein Projektplan, der die Publikation als Endpunkt setzt, endet zu früh.",
     customize: [
-      "Je Arbeitspaket eine Zeile, passend zur Gliederung des Antrags — dann dient derselbe Plan als Berichtsgrundlage.",
+      "Je Arbeitspaket eine Zeile, passend zur Gliederung des Antrags, dann dient derselbe Plan als Berichtsgrundlage.",
       "Berichtstermine des Mittelgebers als Meilensteine eintragen und rückwärts planen.",
       "Ethikvotum und Datenschutzfreigabe als Vorgänger der Erhebung setzen.",
-      "Personalzeilen ergänzen, wenn Stellen befristet auslaufen — das begrenzt den Plan härter als jede Frist."
+      "Personalzeilen ergänzen, wenn Stellen befristet auslaufen, das begrenzt den Plan härter als jede Frist."
     ],
     tips: [
       "<strong>Der Antragszeitplan ist der spätere Projektplan.</strong> Bauen Sie ihn gleich so, dass er trägt.",
@@ -957,7 +957,7 @@ const T = {
   'content-calendar': {
     card: "Themen, Produktion, Freigaben und Veröffentlichung über Kanäle hinweg.",
     h1: "Gantt-Diagramm-Vorlage für den Redaktionsplan",
-    metaTitle: "Redaktionsplan Vorlage — Gantt-Diagramm",
+    metaTitle: "Redaktionsplan Vorlage: Gantt-Diagramm",
     metaDesc: "Kostenlose Gantt-Vorlage für den Redaktionsplan: Themenplanung, Produktion, Freigabe, Veröffentlichung und Auswertung.",
     lead: "Ein <strong>Redaktionsplan</strong> als Gantt-Diagramm zeigt etwas, das eine Tabelle verbirgt: die Produktionszeit vor jedem Veröffentlichungstermin. Der Redaktionsschluss ist nicht der Tag der Veröffentlichung, sondern zwei Wochen davor.",
     intro: "Fünf wiederkehrende Phasen je Ausspielung:",
@@ -968,7 +968,7 @@ const T = {
       ],
       [
         "Produktion",
-        "Briefing, Text, Bild, Video oder Grafik — je Format eine eigene Vorlaufzeit."
+        "Briefing, Text, Bild, Video oder Grafik, je Format eine eigene Vorlaufzeit."
       ],
       [
         "Freigabe",
@@ -983,7 +983,7 @@ const T = {
         "Reichweite, Rankings, Nachbearbeitung und Aktualisierung älterer Beiträge."
       ]
     ],
-    callout: "Planen Sie die Freigabe als eigenen Balken. In den meisten Teams liegt der Text drei Tage fertig herum und wartet auf eine Unterschrift — das ist keine Produktionszeit, sondern Wartezeit, und sie gehört sichtbar in den Plan.",
+    callout: "Planen Sie die Freigabe als eigenen Balken. In den meisten Teams liegt der Text drei Tage fertig herum und wartet auf eine Unterschrift, das ist keine Produktionszeit, sondern Wartezeit, und sie gehört sichtbar in den Plan.",
     customize: [
       "Je Kanal eine Zeile: Blog, Newsletter, LinkedIn, Video. Sie haben unterschiedliche Vorlaufzeiten.",
       "Wiederkehrende Formate als Serie anlegen und den Rhythmus im Kalender abbilden.",
@@ -1020,27 +1020,27 @@ const T = {
   '30-60-90-day-plan': {
     card: "Einarbeitung in drei Etappen: verstehen, mitarbeiten, eigenständig liefern.",
     h1: "30-60-90-Tage-Plan als Gantt-Diagramm",
-    metaTitle: "30-60-90-Tage-Plan — kostenlose Vorlage",
+    metaTitle: "30-60-90-Tage-Plan: kostenlose Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für den 30-60-90-Tage-Plan: Einarbeitung, erste Beiträge und eigenständige Verantwortung.",
     lead: "Ein <strong>30-60-90-Tage-Plan</strong> beantwortet eine Frage, die in jedem neuen Job gestellt wird: Was tun Sie zuerst? Als Gantt-Diagramm zeigt er nicht nur die Ziele, sondern auch, was parallel läuft und was aufeinander aufbaut.",
     intro: "Drei Etappen mit klar unterschiedlichem Charakter:",
     phases: [
       [
-        "Tag 1–30: Verstehen",
+        "Tag 1-30: Verstehen",
         "Einarbeitung, Gespräche mit Team und Schnittstellen, Produkt, Kunden, Zahlen und Prozesse. <em>Meilenstein: Bestandsaufnahme vorgestellt.</em>"
       ],
       [
-        "Tag 31–60: Mitarbeiten",
+        "Tag 31-60: Mitarbeiten",
         "Erste eigene Aufgaben, Übernahme laufender Themen, Verbesserungsvorschläge und erste sichtbare Ergebnisse."
       ],
       [
-        "Tag 61–90: Liefern",
+        "Tag 61-90: Liefern",
         "Eigenverantwortliche Themen, ein abgeschlossenes Vorhaben und ein Plan für die folgenden sechs Monate. <em>Meilenstein: Probezeitgespräch.</em>"
       ]
     ],
-    callout: "Widerstehen Sie dem Reflex, in den ersten 30 Tagen etwas zu verändern. Der häufigste Fehler neuer Führungskräfte ist eine Umstellung, die vor der Bestandsaufnahme beschlossen wurde — sie kostet mehr Vertrauen, als das schnelle Ergebnis wert ist.",
+    callout: "Widerstehen Sie dem Reflex, in den ersten 30 Tagen etwas zu verändern. Der häufigste Fehler neuer Führungskräfte ist eine Umstellung, die vor der Bestandsaufnahme beschlossen wurde, sie kostet mehr Vertrauen, als das schnelle Ergebnis wert ist.",
     customize: [
-      "Je Etappe drei bis fünf Ziele statt einer langen Aufgabenliste — mehr wird in 30 Tagen nicht erreicht.",
+      "Je Etappe drei bis fünf Ziele statt einer langen Aufgabenliste, mehr wird in 30 Tagen nicht erreicht.",
       "Gesprächstermine mit Schlüsselpersonen als eigene Vorgänge in den ersten zwei Wochen setzen.",
       "Feedbackgespräche nach 30, 60 und 90 Tagen als Meilensteine eintragen.",
       "Auf 100 Tage erweitern, wenn die Probezeit sechs Monate beträgt."
@@ -1075,9 +1075,9 @@ const T = {
   'product-roadmap': {
     card: "Themen, Releases und Abhängigkeiten über Quartale statt Wochen.",
     h1: "Gantt-Diagramm-Vorlage für die Produkt-Roadmap",
-    metaTitle: "Produkt-Roadmap Vorlage — Gantt-Diagramm",
+    metaTitle: "Produkt-Roadmap Vorlage: Gantt-Diagramm",
     metaDesc: "Kostenlose Gantt-Vorlage für die Produkt-Roadmap: Themen, Initiativen, Releases, Abhängigkeiten und Quartalsplanung.",
-    lead: "Eine <strong>Produkt-Roadmap</strong> ist kein Sprintplan. Sie arbeitet in Quartalen und Themen, nicht in Tickets — und ihr eigentlicher Wert liegt darin, Abhängigkeiten zwischen Initiativen zu zeigen, bevor sie zum Problem werden.",
+    lead: "Eine <strong>Produkt-Roadmap</strong> ist kein Sprintplan. Sie arbeitet in Quartalen und Themen, nicht in Tickets, und ihr eigentlicher Wert liegt darin, Abhängigkeiten zwischen Initiativen zu zeigen, bevor sie zum Problem werden.",
     intro: "Vier Ebenen, die eine Roadmap tragen:",
     phases: [
       [
@@ -1100,7 +1100,7 @@ const T = {
     callout: "Setzen Sie keine Tagesgenauigkeit für das dritte und vierte Quartal. Eine Roadmap, die zwölf Monate im Voraus konkrete Termine zusagt, wird entweder gebrochen oder eingehalten, indem man den Umfang heimlich reduziert. Grobe Balken sind ehrlicher und halten länger.",
     customize: [
       "Je Thema eine Gruppe mit den zugehörigen Initiativen darunter.",
-      "Auf Quartalsauflösung umstellen — Wochen suggerieren eine Genauigkeit, die nicht besteht.",
+      "Auf Quartalsauflösung umstellen, Wochen suggerieren eine Genauigkeit, die nicht besteht.",
       "Abhängigkeiten zwischen Initiativen verknüpfen; sie sind der Hauptgrund für Verschiebungen.",
       "Eine Zeile für Plattform- und Wartungsarbeit führen, sonst verschwindet sie und passiert trotzdem."
     ],
@@ -1134,34 +1134,34 @@ const T = {
   'annual': {
     card: "Ein Jahr auf einer Seite: Quartale, Initiativen und feste Termine.",
     h1: "Jahresplan als Gantt-Diagramm",
-    metaTitle: "Jahresplan Vorlage — Gantt-Diagramm",
+    metaTitle: "Jahresplan Vorlage: Gantt-Diagramm",
     metaDesc: "Kostenlose Jahresplan-Vorlage: Quartale, Initiativen, feste Termine und Meilensteine auf einer Seite.",
-    lead: "Ein <strong>Jahresplan</strong> zeigt zwölf Monate auf einer Seite. Er arbeitet in Quartalen und Initiativen, nicht in Aufgaben — sobald einzelne Arbeitspakete auftauchen, ist er kein Jahresplan mehr, sondern ein unleserlicher Projektplan.",
+    lead: "Ein <strong>Jahresplan</strong> zeigt zwölf Monate auf einer Seite. Er arbeitet in Quartalen und Initiativen, nicht in Aufgaben, sobald einzelne Arbeitspakete auftauchen, ist er kein Jahresplan mehr, sondern ein unleserlicher Projektplan.",
     intro: "Vier Quartale mit den Blöcken, die ein Jahr tragen:",
     phases: [
       [
-        "Q1 — Start und Weichenstellung",
+        "Q1, Start und Weichenstellung",
         "Jahresziele, Budgetfreigabe, laufende Vorhaben fortsetzen. <em>Meilenstein: Planung verabschiedet.</em>"
       ],
       [
-        "Q2 — Umsetzung",
+        "Q2, Umsetzung",
         "Die großen Initiativen laufen an; erste Zwischenergebnisse und Kurskorrektur."
       ],
       [
-        "Q3 — Halbzeit und Nachsteuern",
+        "Q3, Halbzeit und Nachsteuern",
         "Halbjahresbilanz, Budgetanpassung, Priorisierung für den Rest des Jahres."
       ],
       [
-        "Q4 — Abschluss und Vorbereitung",
+        "Q4, Abschluss und Vorbereitung",
         "Jahresabschluss, Auswertung und Planung des Folgejahres. <em>Meilenstein: Plan für nächstes Jahr steht.</em>"
       ]
     ],
     callout: "Bleiben Sie auf Initiativenebene. Ein Jahresplan mit 200 Aufgaben wird im März nicht mehr gepflegt und im Juni nicht mehr geglaubt. Zwölf bis zwanzig Balken reichen, um ein Jahr zu erzählen.",
     customize: [
-      "Auf Quartals- oder Monatsauflösung umstellen — Wochen sind für ein Jahr zu fein.",
+      "Auf Quartals- oder Monatsauflösung umstellen, Wochen sind für ein Jahr zu fein.",
       "Feste Termine zuerst eintragen: Messen, Abschlüsse, Saisonspitzen, Urlaubszeiten.",
       "Je Abteilung eine Zeile ergänzen, wenn der Plan bereichsübergreifend gilt.",
-      "Quartalsübergänge als Meilensteine setzen — dort wird nachgesteuert."
+      "Quartalsübergänge als Meilensteine setzen, dort wird nachgesteuert."
     ],
     tips: [
       "<strong>Nicht mehr als fünf große Initiativen.</strong> Mehr schafft keine Organisation in einem Jahr.",
@@ -1193,9 +1193,9 @@ const T = {
   'sprint': {
     card: "Zwei Wochen von Planning über Daily bis Review und Retrospektive.",
     h1: "Sprintplan als Gantt-Diagramm",
-    metaTitle: "Sprintplan Vorlage — Gantt-Diagramm",
+    metaTitle: "Sprintplan Vorlage: Gantt-Diagramm",
     metaDesc: "Kostenlose Sprintplan-Vorlage: Sprint Planning, Umsetzung, Testing, Review und Retrospektive über zwei Wochen.",
-    lead: "Ein <strong>Sprintplan</strong> im Gantt-Format ist kein Ersatz für das Board — er zeigt, was ein Board nicht zeigt: welche Aufgaben voneinander abhängen und wo die zwei Wochen tatsächlich eng werden.",
+    lead: "Ein <strong>Sprintplan</strong> im Gantt-Format ist kein Ersatz für das Board, er zeigt, was ein Board nicht zeigt: welche Aufgaben voneinander abhängen und wo die zwei Wochen tatsächlich eng werden.",
     intro: "Ein zweiwöchiger Sprint mit den festen Terminen:",
     phases: [
       [
@@ -1203,21 +1203,21 @@ const T = {
         "Ziel festlegen, Backlog-Einträge schätzen und committen. <em>Meilenstein: Sprint Goal steht.</em>"
       ],
       [
-        "Umsetzung (Tag 1–8)",
+        "Umsetzung (Tag 1-8)",
         "Entwicklung mit täglichem Abgleich; Abhängigkeiten zwischen Aufgaben sichtbar halten."
       ],
       [
-        "Integration und Test (Tag 7–9)",
-        "Zusammenführen, testen, Fehler beheben — überlappt bewusst mit der Umsetzung."
+        "Integration und Test (Tag 7-9)",
+        "Zusammenführen, testen, Fehler beheben, überlappt bewusst mit der Umsetzung."
       ],
       [
         "Review und Retrospektive (Tag 10)",
         "Ergebnis zeigen, Feedback aufnehmen, Prozess verbessern. <em>Meilenstein: Increment abgenommen.</em>"
       ]
     ],
-    callout: "Planen Sie die letzten zwei Tage nicht voll. Jeder Sprint bringt Unvorhergesehenes, und ein Sprint ohne Reserve endet regelmäßig mit unfertigen Aufgaben, die in den nächsten geschoben werden — was die Planbarkeit beider Sprints zerstört.",
+    callout: "Planen Sie die letzten zwei Tage nicht voll. Jeder Sprint bringt Unvorhergesehenes, und ein Sprint ohne Reserve endet regelmäßig mit unfertigen Aufgaben, die in den nächsten geschoben werden, was die Planbarkeit beider Sprints zerstört.",
     customize: [
-      "Sprintlänge ändern — bei einwöchigen Sprints Phasen entsprechend kürzen.",
+      "Sprintlänge ändern, bei einwöchigen Sprints Phasen entsprechend kürzen.",
       "Je Entwicklerin eine Zeile führen, wenn Sie die Auslastung prüfen wollen.",
       "Abhängigkeiten zwischen Backlog-Einträgen verknüpfen; genau dafür lohnt sich das Gantt-Format hier.",
       "Wiederkehrende Termine (Daily, Refinement) als Serie eintragen."
@@ -1226,7 +1226,7 @@ const T = {
       "<strong>Das Sprintziel ist wichtiger als die Aufgabenliste.</strong> Es entscheidet, was wegfallen darf.",
       "<strong>Testen läuft parallel</strong>, nicht am Ende. Sonst ist der letzte Tag immer zu kurz.",
       "<strong>Reserve einplanen.</strong> 15 bis 20 Prozent der Kapazität bleiben frei.",
-      "<strong>Für den Sprint selbst bleibt das Board das Arbeitsmittel</strong> — dieser Plan ist für Abhängigkeiten und Absprachen."
+      "<strong>Für den Sprint selbst bleibt das Board das Arbeitsmittel</strong>, dieser Plan ist für Abhängigkeiten und Absprachen."
     ],
     faq: [
       [
@@ -1252,7 +1252,7 @@ const T = {
   'wind-farm-construction-schedule': {
     card: "Genehmigung, Fundamente, Türme, Netzanschluss und Inbetriebnahme.",
     h1: "Bauzeitenplan für einen Windpark",
-    metaTitle: "Bauzeitenplan Windpark — Vorlage",
+    metaTitle: "Bauzeitenplan Windpark: Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Windparks: Standortentwicklung, Genehmigung, Fundamente, Errichtung, Netzanschluss.",
     lead: "Ein <strong>Bauzeitenplan für einen Windpark</strong> wird von drei Dingen bestimmt, die außerhalb der Baustelle liegen: der Genehmigung, dem Netzanschluss und der Verfügbarkeit von Schwerlastkränen.",
     intro: "Sechs Phasen von der Fläche bis zur ersten Kilowattstunde:",
@@ -1263,7 +1263,7 @@ const T = {
       ],
       [
         "Genehmigung",
-        "BImSchG-Verfahren, Umweltverträglichkeit, Artenschutz, Schall- und Schattengutachten — der längste Abschnitt."
+        "BImSchG-Verfahren, Umweltverträglichkeit, Artenschutz, Schall- und Schattengutachten, der längste Abschnitt."
       ],
       [
         "Beschaffung und Finanzierung",
@@ -1271,7 +1271,7 @@ const T = {
       ],
       [
         "Infrastruktur",
-        "Zuwegung, Kranstellflächen, Kabeltrassen, Umspannwerk — muss vor der Anlieferung stehen."
+        "Zuwegung, Kranstellflächen, Kabeltrassen, Umspannwerk, muss vor der Anlieferung stehen."
       ],
       [
         "Errichtung",
@@ -1282,18 +1282,18 @@ const T = {
         "Elektrische Anbindung, Prüfungen, Probebetrieb, Übergabe. <em>Meilenstein: erste Einspeisung.</em>"
       ]
     ],
-    callout: "Die Montage ist windabhängig, nicht nur wetterabhängig. Ab etwa 8 bis 12 m/s in Nabenhöhe steht der Kran still — auf einem Standort, der ausgesucht wurde, weil dort viel Wind weht. Rechnen Sie Stillstandstage ein, statt sie als Verzug zu behandeln.",
+    callout: "Die Montage ist windabhängig, nicht nur wetterabhängig. Ab etwa 8 bis 12 m/s in Nabenhöhe steht der Kran still, auf einem Standort, der ausgesucht wurde, weil dort viel Wind weht. Rechnen Sie Stillstandstage ein, statt sie als Verzug zu behandeln.",
     customize: [
-      "Je Anlage eine Zeile ergänzen — die Errichtung läuft nacheinander, weil der Kran wandert.",
+      "Je Anlage eine Zeile ergänzen, die Errichtung läuft nacheinander, weil der Kran wandert.",
       "Fundamentaushärtung als eigenen Vorgang führen (28 Tage), nicht als Verzögerung verstecken.",
       "Artenschutzfenster als nicht-verfügbare Zeiträume im Kalender hinterlegen.",
-      "Krantermine als feste Termine setzen — sie sind Monate im Voraus gebucht und schwer zu verschieben."
+      "Krantermine als feste Termine setzen, sie sind Monate im Voraus gebucht und schwer zu verschieben."
     ],
     tips: [
       "<strong>Der Kran bestimmt die Reihenfolge.</strong> Planen Sie die Anlagen in seiner Fahrtroute.",
       "<strong>Die Zuwegung wird unterschätzt.</strong> Schwertransporte brauchen Kurvenradien und Tragfähigkeit.",
       "<strong>Genehmigung und Netz laufen parallel</strong>, aber nur eines bestimmt am Ende den Termin.",
-      "<strong>Winter ist nicht automatisch verloren</strong> — Fundamente ja, Montage bei Frost oft nein."
+      "<strong>Winter ist nicht automatisch verloren</strong>, Fundamente ja, Montage bei Frost oft nein."
     ],
     faq: [
       [
@@ -1319,9 +1319,9 @@ const T = {
   'ev-charging-installation-schedule': {
     card: "Standort, Netzanschluss, Tiefbau, Montage und Eichrechtskonformität.",
     h1: "Projektplan für Ladeinfrastruktur",
-    metaTitle: "Ladeinfrastruktur — Projektplan Vorlage",
+    metaTitle: "Ladeinfrastruktur: Projektplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Ladeinfrastruktur: Standortprüfung, Netzanschluss, Tiefbau, Montage, Eichrecht und Abnahme.",
-    lead: "Ein <strong>Projektplan für Ladeinfrastruktur</strong> scheitert selten an der Technik. Er scheitert am Netzanschluss und am Eichrecht — zwei Vorgänge, die früh beginnen müssen und über die der Errichter nicht allein entscheidet.",
+    lead: "Ein <strong>Projektplan für Ladeinfrastruktur</strong> scheitert selten an der Technik. Er scheitert am Netzanschluss und am Eichrecht, zwei Vorgänge, die früh beginnen müssen und über die der Errichter nicht allein entscheidet.",
     intro: "Sechs Phasen von der Standortprüfung bis zur Freigabe:",
     phases: [
       [
@@ -1349,10 +1349,10 @@ const T = {
         "Elektroprüfung, Eichrechtskonformität, Roaming-Anbindung, Testladung. <em>Meilenstein: freigegeben.</em>"
       ]
     ],
-    callout: "Der Netzanschluss gehört an den Anfang, nicht in die Bauphase. Zwischen Anfrage und Leistungszusage liegen je nach Netzbetreiber und Leistung drei bis achtzehn Monate — länger als der gesamte Rest des Projekts.",
+    callout: "Der Netzanschluss gehört an den Anfang, nicht in die Bauphase. Zwischen Anfrage und Leistungszusage liegen je nach Netzbetreiber und Leistung drei bis achtzehn Monate, länger als der gesamte Rest des Projekts.",
     customize: [
       "Je Standort eine Zeilengruppe, wenn Sie mehrere parallel errichten.",
-      "Förderfristen als feste Termine eintragen — sie verfallen und verschieben sich nicht.",
+      "Förderfristen als feste Termine eintragen, sie verfallen und verschieben sich nicht.",
       "Eichrechtskonforme Abnahme als eigenen Vorgang führen; ohne sie darf nicht abgerechnet werden.",
       "Tiefbau in Frostperioden mit Puffer versehen."
     ],
@@ -1386,9 +1386,9 @@ const T = {
   'mining-project-schedule': {
     card: "Exploration, Machbarkeit, Genehmigung, Erschließung und Produktionsstart.",
     h1: "Projektplan für ein Bergbauvorhaben",
-    metaTitle: "Bergbauprojekt — Gantt-Vorlage",
+    metaTitle: "Bergbauprojekt: Gantt-Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Bergbauprojekte: Exploration, Machbarkeitsstudien, Genehmigung, Erschließung, Produktionsstart.",
-    lead: "Ein <strong>Bergbauprojekt</strong> läuft über Jahrzehnte und wird in Studienstufen geplant. Jede Stufe schärft die Schätzung und entscheidet, ob überhaupt weitergegangen wird — der Plan ist deshalb eine Kette von Entscheidungspunkten, nicht eine durchgehende Bauabfolge.",
+    lead: "Ein <strong>Bergbauprojekt</strong> läuft über Jahrzehnte und wird in Studienstufen geplant. Jede Stufe schärft die Schätzung und entscheidet, ob überhaupt weitergegangen wird, der Plan ist deshalb eine Kette von Entscheidungspunkten, nicht eine durchgehende Bauabfolge.",
     intro: "Sechs Stufen von der ersten Bohrung bis zur Produktion:",
     phases: [
       [
@@ -1416,9 +1416,9 @@ const T = {
         "Vorabraum, Testbetrieb, Hochlauf zur Nennleistung. <em>Meilenstein: kommerzielle Produktion.</em>"
       ]
     ],
-    callout: "Genehmigung und gesellschaftliche Akzeptanz sind kein Nebenstrang. Sie sind bei den meisten gescheiterten Bergbauprojekten die eigentliche Ursache — nicht Geologie und nicht Technik. Planen Sie sie mit derselben Ernsthaftigkeit wie die Aufbereitungsanlage.",
+    callout: "Genehmigung und gesellschaftliche Akzeptanz sind kein Nebenstrang. Sie sind bei den meisten gescheiterten Bergbauprojekten die eigentliche Ursache, nicht Geologie und nicht Technik. Planen Sie sie mit derselben Ernsthaftigkeit wie die Aufbereitungsanlage.",
     customize: [
-      "Auf Jahre statt Monate umstellen — ein Bergbauprojekt läuft über ein Jahrzehnt.",
+      "Auf Jahre statt Monate umstellen, ein Bergbauprojekt läuft über ein Jahrzehnt.",
       "Studienstufen als Meilensteine mit Abbruchentscheidung führen (Stage Gates).",
       "Lange Lieferzeiten für Mühlen und Brecher als eigene Vorgänge sichtbar machen.",
       "Genehmigungs- und Beteiligungsstränge parallel zur Technik führen, nicht danach."
@@ -1453,9 +1453,9 @@ const T = {
   'shipbuilding-project-schedule': {
     card: "Entwurf, Sektionsbau, Ausrüstung, Probefahrt und Ablieferung.",
     h1: "Projektplan für den Schiffbau",
-    metaTitle: "Schiffbau — Projektplan Vorlage",
+    metaTitle: "Schiffbau: Projektplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für den Schiffbau: Entwurf, Stahlbau, Sektionen, Ausrüstung, Probefahrt und Ablieferung.",
-    lead: "Ein <strong>Schiffbauprojekt</strong> plant nicht Räume, sondern Sektionen. Das Schiff entsteht in Blöcken, die parallel gebaut und dann zusammengefügt werden — die Reihenfolge dieser Blöcke ist der eigentliche Terminplan.",
+    lead: "Ein <strong>Schiffbauprojekt</strong> plant nicht Räume, sondern Sektionen. Das Schiff entsteht in Blöcken, die parallel gebaut und dann zusammengefügt werden, die Reihenfolge dieser Blöcke ist der eigentliche Terminplan.",
     intro: "Sechs Phasen vom Vertrag bis zur Übergabe:",
     phases: [
       [
@@ -1468,7 +1468,7 @@ const T = {
       ],
       [
         "Sektionsbau",
-        "Zuschnitt, Paneele, Sektionen, Vorausrüstung — je früher ausgerüstet, desto günstiger."
+        "Zuschnitt, Paneele, Sektionen, Vorausrüstung, je früher ausgerüstet, desto günstiger."
       ],
       [
         "Zusammenbau",
@@ -1483,9 +1483,9 @@ const T = {
         "Seeerprobung, Mängelabarbeitung, Klasseabnahme. <em>Meilenstein: Übergabe an den Reeder.</em>"
       ]
     ],
-    callout: "Ausrüstung in der Sektion ist um ein Vielfaches günstiger als Ausrüstung im fertigen Schiff. Was erst nach dem Zusammenbau eingebaut wird, muss durch enge Zugänge, in beengter Lage und über Kopf montiert werden — die Vorausrüstungsquote ist die wichtigste Stellschraube im ganzen Plan.",
+    callout: "Ausrüstung in der Sektion ist um ein Vielfaches günstiger als Ausrüstung im fertigen Schiff. Was erst nach dem Zusammenbau eingebaut wird, muss durch enge Zugänge, in beengter Lage und über Kopf montiert werden, die Vorausrüstungsquote ist die wichtigste Stellschraube im ganzen Plan.",
     customize: [
-      "Je Sektion eine Zeile — sie sind die eigentlichen Planungseinheiten.",
+      "Je Sektion eine Zeile, sie sind die eigentlichen Planungseinheiten.",
       "Lieferzeiten für Hauptmaschine, Propeller und Getriebe als eigene Vorgänge führen; sie liegen bei ein bis zwei Jahren.",
       "Klassifikationsgesellschaft und Abnahmen als feste Termine setzen.",
       "Dock- und Kaibelegung als Ressource prüfen, wenn mehrere Neubauten laufen."
@@ -1503,7 +1503,7 @@ const T = {
       ],
       [
         "Was ist Vorausrüstung?",
-        "Der Einbau von Rohrleitungen, Kabeln und Ausrüstung in die Sektion, bevor sie eingebaut wird — deutlich günstiger als später."
+        "Der Einbau von Rohrleitungen, Kabeln und Ausrüstung in die Sektion, bevor sie eingebaut wird, deutlich günstiger als später."
       ],
       [
         "Was liegt auf dem kritischen Pfad?",
@@ -1520,9 +1520,9 @@ const T = {
   'apparel-production-calendar': {
     card: "Von der Kollektionsplanung über Muster und Order bis zur Auslieferung.",
     h1: "Produktionskalender für Mode und Bekleidung",
-    metaTitle: "Produktionskalender Mode — Vorlage",
+    metaTitle: "Produktionskalender Mode: Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Bekleidungsproduktion: Kollektion, Muster, Order, Materialbeschaffung, Fertigung, Auslieferung.",
-    lead: "Ein <strong>Produktionskalender für Bekleidung</strong> rechnet rückwärts vom Liefertermin an den Handel. Verpasst eine Kollektion ihr Zeitfenster, wird sie nicht später verkauft — sie wird reduziert.",
+    lead: "Ein <strong>Produktionskalender für Bekleidung</strong> rechnet rückwärts vom Liefertermin an den Handel. Verpasst eine Kollektion ihr Zeitfenster, wird sie nicht später verkauft, sie wird reduziert.",
     intro: "Sechs Phasen je Saison:",
     phases: [
       [
@@ -1531,7 +1531,7 @@ const T = {
       ],
       [
         "Design und Erstmuster",
-        "Entwürfe, Schnitte, Prototypen, Passformkorrekturen — mehrere Runden sind normal."
+        "Entwürfe, Schnitte, Prototypen, Passformkorrekturen, mehrere Runden sind normal."
       ],
       [
         "Salesmuster und Order",
@@ -1539,7 +1539,7 @@ const T = {
       ],
       [
         "Materialbeschaffung",
-        "Stoffe, Zutaten, Labels — mit den längsten Lieferzeiten im ganzen Ablauf."
+        "Stoffe, Zutaten, Labels, mit den längsten Lieferzeiten im ganzen Ablauf."
       ],
       [
         "Produktion",
@@ -1550,18 +1550,18 @@ const T = {
         "Verschiffung, Zoll, Wareneingang, Verteilung an die Filialen. <em>Meilenstein: im Handel.</em>"
       ]
     ],
-    callout: "Die Stoffbeschaffung startet vor dem Orderschluss, nicht danach. Wer erst nach der Order bestellt, verliert sechs bis zehn Wochen Lieferzeit und erreicht das Zeitfenster nicht mehr. Deshalb wird ein Teil der Stoffe auf Prognose gekauft — mit dem entsprechenden Risiko.",
+    callout: "Die Stoffbeschaffung startet vor dem Orderschluss, nicht danach. Wer erst nach der Order bestellt, verliert sechs bis zehn Wochen Lieferzeit und erreicht das Zeitfenster nicht mehr. Deshalb wird ein Teil der Stoffe auf Prognose gekauft, mit dem entsprechenden Risiko.",
     customize: [
-      "Je Kollektion eine Zeilengruppe — Frühjahr/Sommer und Herbst/Winter laufen überlappend.",
+      "Je Kollektion eine Zeilengruppe, Frühjahr/Sommer und Herbst/Winter laufen überlappend.",
       "Verschiffungsdauer als eigenen Vorgang führen: See vier bis sechs Wochen, Luft Tage.",
       "Chinesisches Neujahr und Werksferien als nicht-verfügbare Zeiträume hinterlegen.",
-      "Passformrunden mit realistischer Anzahl planen — meist zwei bis drei."
+      "Passformrunden mit realistischer Anzahl planen, meist zwei bis drei."
     ],
     tips: [
       "<strong>Rückwärts vom Liefertermin rechnen.</strong> Das Zeitfenster im Handel ist nicht verhandelbar.",
       "<strong>Stoff ist der längste Vorlauf</strong>, nicht das Nähen.",
       "<strong>Werksferien einplanen.</strong> Chinesisches Neujahr legt die Produktion ein bis zwei Wochen still.",
-      "<strong>Puffer vor die Verschiffung legen</strong>, nicht dahinter — der Seetermin ist fix."
+      "<strong>Puffer vor die Verschiffung legen</strong>, nicht dahinter, der Seetermin ist fix."
     ],
     faq: [
       [
@@ -1570,7 +1570,7 @@ const T = {
       ],
       [
         "Warum wird Stoff vor dem Orderschluss gekauft?",
-        "Weil die Lieferzeit sonst das Zeitfenster sprengt. Ein Teil wird auf Prognose beschafft — ein bewusst eingegangenes Risiko."
+        "Weil die Lieferzeit sonst das Zeitfenster sprengt. Ein Teil wird auf Prognose beschafft, ein bewusst eingegangenes Risiko."
       ],
       [
         "Wie viele Passformrunden sind normal?",
@@ -1587,37 +1587,37 @@ const T = {
   'phd-research-gantt-chart': {
     card: "Promotionsvorhaben über drei bis vier Jahre mit klaren Etappenzielen.",
     h1: "Gantt-Diagramm für das Promotionsprojekt",
-    metaTitle: "Zeitplan Promotion — Gantt-Vorlage",
+    metaTitle: "Zeitplan Promotion: Gantt-Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Promotion: Exposé, Literatur, Methodik, Erhebung, Publikationen, Disputation.",
     lead: "Ein <strong>Zeitplan für die Promotion</strong> unterscheidet sich vom Dissertationsplan darin, dass er mehr enthält als die Schrift: Lehre, Konferenzen, Publikationen und Drittmittel gehören dazu und kosten reale Monate.",
     intro: "Sechs Stränge über drei bis vier Jahre:",
     phases: [
       [
-        "Jahr 1 — Fundament",
+        "Jahr 1, Fundament",
         "Exposé, Betreuungsvereinbarung, Literaturbasis, Methodenschulung. <em>Meilenstein: Annahme.</em>"
       ],
       [
-        "Jahr 1–2 — Studiendesign",
+        "Jahr 1-2, Studiendesign",
         "Forschungsdesign, Ethikvotum, Instrumente, Pretest und Feldzugang."
       ],
       [
-        "Jahr 2–3 — Erhebung und Auswertung",
+        "Jahr 2-3, Erhebung und Auswertung",
         "Datenerhebung, Aufbereitung, Analyse. <em>Der Abschnitt mit dem größten Risiko.</em>"
       ],
       [
-        "Laufend — Publikationen",
+        "Laufend, Publikationen",
         "Konferenzbeiträge und Fachartikel; bei kumulativer Promotion der Kern der Arbeit."
       ],
       [
-        "Laufend — Lehre und Selbstverwaltung",
-        "Lehrdeputat, Gremien, Betreuung von Abschlussarbeiten — planbar und zeitfressend."
+        "Laufend, Lehre und Selbstverwaltung",
+        "Lehrdeputat, Gremien, Betreuung von Abschlussarbeiten, planbar und zeitfressend."
       ],
       [
-        "Jahr 3–4 — Abschluss",
+        "Jahr 3-4, Abschluss",
         "Zusammenführung, Einreichung, Begutachtung, Disputation. <em>Meilenstein: Verteidigung.</em>"
       ]
     ],
-    callout: "Zwischen Einreichung und Disputation liegen Monate, nicht Wochen. Die Begutachtung dauert bei den meisten Fakultäten drei bis sechs Monate — ein Plan, der mit der Abgabe endet, endet ein halbes Jahr zu früh.",
+    callout: "Zwischen Einreichung und Disputation liegen Monate, nicht Wochen. Die Begutachtung dauert bei den meisten Fakultäten drei bis sechs Monate, ein Plan, der mit der Abgabe endet, endet ein halbes Jahr zu früh.",
     customize: [
       "Auf Semester umstellen; Wochen sind über vier Jahre unbrauchbar.",
       "Bei kumulativer Promotion je Artikel eine Zeilengruppe mit Einreichung und Revision.",
@@ -1628,7 +1628,7 @@ const T = {
       "<strong>Publizieren Sie früh.</strong> Peer Review dauert länger, als jeder Zeitplan vorsieht.",
       "<strong>Die Erhebung ist der riskanteste Abschnitt.</strong> Halten Sie einen Alternativzugang bereit.",
       "<strong>Lehre kostet ein Drittel Ihrer Zeit</strong>, wenn Sie sie nicht bewusst begrenzen.",
-      "<strong>Planen Sie die Begutachtungszeit ein</strong> — sie liegt außerhalb Ihrer Kontrolle."
+      "<strong>Planen Sie die Begutachtungszeit ein</strong>, sie liegt außerhalb Ihrer Kontrolle."
     ],
     faq: [
       [
@@ -1652,31 +1652,31 @@ const T = {
   },
 
   'grant-proposal-gantt-chart': {
-    card: "Arbeitsplan für den Antrag — Arbeitspakete, Meilensteine, Deliverables.",
+    card: "Arbeitsplan für den Antrag, Arbeitspakete, Meilensteine, Deliverables.",
     h1: "Gantt-Diagramm für den Förderantrag",
-    metaTitle: "Förderantrag — Arbeitsplan Vorlage",
+    metaTitle: "Förderantrag: Arbeitsplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für Förderanträge: Arbeitspakete, Meilensteine, Deliverables und Berichtspflichten.",
-    lead: "Fast jeder <strong>Förderantrag</strong> verlangt einen Arbeitsplan als Balkendiagramm. Er ist nicht nur Formsache: Gutachter lesen an ihm ab, ob Sie das Vorhaben durchdacht haben — und nach der Bewilligung wird genau danach berichtet.",
+    lead: "Fast jeder <strong>Förderantrag</strong> verlangt einen Arbeitsplan als Balkendiagramm. Er ist nicht nur Formsache: Gutachter lesen an ihm ab, ob Sie das Vorhaben durchdacht haben, und nach der Bewilligung wird genau danach berichtet.",
     intro: "Der Aufbau, den die meisten Förderlinien erwarten:",
     phases: [
       [
-        "AP 1 — Projektmanagement",
+        "AP 1, Projektmanagement",
         "Koordination, Berichte, Mittelabrufe. Läuft über die gesamte Laufzeit."
       ],
       [
-        "AP 2 — Konzeption und Vorbereitung",
+        "AP 2, Konzeption und Vorbereitung",
         "Literatur, Design, Ethik und Datenschutz, Rekrutierung."
       ],
       [
-        "AP 3 — Durchführung",
+        "AP 3, Durchführung",
         "Der inhaltliche Kern; meist in mehrere Teilpakete zerlegt."
       ],
       [
-        "AP 4 — Auswertung",
+        "AP 4, Auswertung",
         "Analyse, Validierung, Interpretation. <em>Meilenstein: Ergebnisse liegen vor.</em>"
       ],
       [
-        "AP 5 — Verwertung und Transfer",
+        "AP 5, Verwertung und Transfer",
         "Publikationen, Öffentlichkeitsarbeit, Datenarchivierung."
       ],
       [
@@ -1686,13 +1686,13 @@ const T = {
     ],
     callout: "Nummerieren Sie Arbeitspakete, Meilensteine und Deliverables durchgehend und verwenden Sie dieselben Nummern im Fließtext des Antrags. Gutachter springen zwischen Text und Balkendiagramm hin und her; wenn die Bezeichnungen auseinanderlaufen, wirkt der Antrag unfertig.",
     customize: [
-      "Arbeitspaketstruktur exakt an die Vorgaben der Förderlinie anpassen — sie unterscheiden sich deutlich.",
+      "Arbeitspaketstruktur exakt an die Vorgaben der Förderlinie anpassen, sie unterscheiden sich deutlich.",
       "Deliverables als Meilensteine mit Nummer und Monat (M1, M12) eintragen.",
       "Auf Projektmonate statt Kalenderdaten umstellen; der Startzeitpunkt steht bei Antragstellung nicht fest.",
       "Bei Verbundprojekten je Partner eine Zeile pro Arbeitspaket."
     ],
     tips: [
-      "<strong>In Projektmonaten planen</strong>, nicht in Datumsangaben — M1 bis M36.",
+      "<strong>In Projektmonaten planen</strong>, nicht in Datumsangaben, M1 bis M36.",
       "<strong>Meilensteine müssen überprüfbar sein.</strong> „Fortschritt erzielt\" ist keiner.",
       "<strong>Projektmanagement ist ein eigenes Arbeitspaket</strong> mit eigenem Aufwand.",
       "<strong>Planen Sie die Anlaufzeit ein.</strong> Zwischen Bewilligung und besetzter Stelle vergehen Monate."
@@ -1721,7 +1721,7 @@ const T = {
   'erp-implementation-schedule': {
     card: "Von der Analyse über Customizing und Migration bis zum Go-Live.",
     h1: "Projektplan für die ERP-Einführung",
-    metaTitle: "ERP-Einführung — Projektplan Vorlage",
+    metaTitle: "ERP-Einführung: Projektplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die ERP-Einführung: Analyse, Konzeption, Customizing, Datenmigration, Test, Schulung, Go-Live.",
     lead: "Eine <strong>ERP-Einführung</strong> ist kein IT-Projekt mit Fachbeteiligung, sondern ein Organisationsprojekt mit IT-Anteil. Der Terminplan scheitert fast immer an denselben zwei Stellen: der Datenmigration und der Verfügbarkeit der Fachbereiche.",
     intro: "Sieben Phasen bis zum stabilen Betrieb:",
@@ -1748,7 +1748,7 @@ const T = {
       ],
       [
         "Schulung",
-        "Key User zuerst, dann Endanwender — zeitnah zum Go-Live, nicht Monate vorher."
+        "Key User zuerst, dann Endanwender, zeitnah zum Go-Live, nicht Monate vorher."
       ],
       [
         "Go-Live und Hypercare",
@@ -1759,7 +1759,7 @@ const T = {
     customize: [
       "Je Modul oder Fachbereich eine Zeilengruppe (Finanzen, Einkauf, Produktion, Vertrieb).",
       "Testmigrationen als wiederkehrende Vorgänge eintragen, mit Bereinigungsschleifen dazwischen.",
-      "Verfügbarkeit der Key User als Ressource prüfen — sie haben ihr Tagesgeschäft weiterhin.",
+      "Verfügbarkeit der Key User als Ressource prüfen, sie haben ihr Tagesgeschäft weiterhin.",
       "Hypercare als eigene Phase führen, typischerweise vier bis acht Wochen."
     ],
     tips: [
@@ -1792,9 +1792,9 @@ const T = {
   'post-merger-integration-plan': {
     card: "Die ersten 100 Tage nach dem Closing, funktionsübergreifend geplant.",
     h1: "Integrationsplan nach einer Übernahme",
-    metaTitle: "Post-Merger-Integration — Vorlage",
+    metaTitle: "Post-Merger-Integration: Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Post-Merger-Integration: Day 1, erste 100 Tage, Funktionen, Systeme und Synergien.",
-    lead: "Ein <strong>Integrationsplan</strong> beginnt nicht am Tag des Closings, sondern deutlich davor. Was am Day 1 funktionieren muss — Gehälter, Zugänge, Kundenkommunikation — wird Wochen vorher vorbereitet, oft unter kartellrechtlichen Einschränkungen.",
+    lead: "Ein <strong>Integrationsplan</strong> beginnt nicht am Tag des Closings, sondern deutlich davor. Was am Day 1 funktionieren muss, Gehälter, Zugänge, Kundenkommunikation, wird Wochen vorher vorbereitet, oft unter kartellrechtlichen Einschränkungen.",
     intro: "Sechs Stränge von der Vorbereitung bis zur Synergierealisierung:",
     phases: [
       [
@@ -1811,7 +1811,7 @@ const T = {
       ],
       [
         "Funktionale Integration",
-        "Finanzen, HR, Vertrieb, Einkauf, Produktion — je Funktion eigene Geschwindigkeit."
+        "Finanzen, HR, Vertrieb, Einkauf, Produktion, je Funktion eigene Geschwindigkeit."
       ],
       [
         "Systemintegration",
@@ -1822,7 +1822,7 @@ const T = {
         "Umsetzung der Maßnahmen, Messung gegen den Business Case, Übergang in den Regelbetrieb."
       ]
     ],
-    callout: "Kulturelle Integration ist kein weiches Thema, das man nachschieben kann. Der häufigste Grund, warum Übernahmen ihren Business Case verfehlen, ist der Weggang von Schlüsselpersonen in den ersten sechs Monaten — planen Sie Bindung so konkret wie die Systemmigration.",
+    callout: "Kulturelle Integration ist kein weiches Thema, das man nachschieben kann. Der häufigste Grund, warum Übernahmen ihren Business Case verfehlen, ist der Weggang von Schlüsselpersonen in den ersten sechs Monaten, planen Sie Bindung so konkret wie die Systemmigration.",
     customize: [
       "Je Funktion eine Zeilengruppe mit eigenem Verantwortlichen.",
       "Day-1-Aufgaben als eigenen, stundengenauen Abschnitt führen.",
@@ -1838,7 +1838,7 @@ const T = {
     faq: [
       [
         "Wann beginnt die Integrationsplanung?",
-        "Vor dem Closing, sobald der Kauf absehbar ist — unter Beachtung der kartellrechtlichen Grenzen für den Informationsaustausch."
+        "Vor dem Closing, sobald der Kauf absehbar ist, unter Beachtung der kartellrechtlichen Grenzen für den Informationsaustausch."
       ],
       [
         "Warum sind die ersten 100 Tage entscheidend?",
@@ -1859,7 +1859,7 @@ const T = {
   'office-relocation-project-plan': {
     card: "Flächensuche, Ausbau, IT-Infrastruktur und Umzug am Wochenende.",
     h1: "Projektplan für den Büroumzug",
-    metaTitle: "Büroumzug — Projektplan Vorlage",
+    metaTitle: "Büroumzug: Projektplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für den Büroumzug: Flächensuche, Mietvertrag, Ausbau, IT, Umzug und Nacharbeiten.",
     lead: "Bei einem <strong>Büroumzug</strong> bestimmt die IT den Termin, nicht das Mobiliar. Leitungen, Anschlüsse und Netzwerktechnik haben Vorlaufzeiten von Monaten, während Schreibtische in Tagen zu haben sind.",
     intro: "Sechs Phasen von der Suche bis zum ersten Arbeitstag:",
@@ -1891,7 +1891,7 @@ const T = {
       "Je Etage oder Abteilung eine Zeile, wenn der Umzug in Wellen läuft.",
       "Kündigungsfrist der alten Fläche als festen Termin eintragen und rückwärts rechnen.",
       "Umzugswochenende stundengenau planen, getrennt vom Gesamtplan.",
-      "Rückbau und Übergabe der alten Fläche mitführen — sie werden regelmäßig vergessen."
+      "Rückbau und Übergabe der alten Fläche mitführen, sie werden regelmäßig vergessen."
     ],
     tips: [
       "<strong>IT zuerst, Möbel zuletzt.</strong> Die Reihenfolge der Vorlaufzeiten, nicht der Sichtbarkeit.",
@@ -1923,9 +1923,9 @@ const T = {
   'data-center-build-schedule': {
     card: "Von der Standortwahl über Shell, Strom und Kühlung bis zur Übergabe.",
     h1: "Bauzeitenplan für ein Rechenzentrum",
-    metaTitle: "Rechenzentrum — Bauzeitenplan Vorlage",
+    metaTitle: "Rechenzentrum: Bauzeitenplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für den Rechenzentrumsbau: Standort, Genehmigung, Rohbau, Strom, Kühlung, Commissioning.",
-    lead: "Ein <strong>Rechenzentrumsbau</strong> ist zu einem großen Teil ein Elektroprojekt in einem Gebäude. Der Termin hängt am Netzanschluss und an den Lieferzeiten für Trafos, Generatoren und USV — nicht am Beton.",
+    lead: "Ein <strong>Rechenzentrumsbau</strong> ist zu einem großen Teil ein Elektroprojekt in einem Gebäude. Der Termin hängt am Netzanschluss und an den Lieferzeiten für Trafos, Generatoren und USV, nicht am Beton.",
     intro: "Sechs Phasen bis zur Übergabe an den Betrieb:",
     phases: [
       [
@@ -1938,7 +1938,7 @@ const T = {
       ],
       [
         "Beschaffung",
-        "Trafos, USV, Generatoren, Kälteanlagen — Lieferzeiten von zwölf bis vierundzwanzig Monaten sind derzeit üblich."
+        "Trafos, USV, Generatoren, Kälteanlagen, Lieferzeiten von zwölf bis vierundzwanzig Monaten sind derzeit üblich."
       ],
       ["Rohbau und Hülle", "Gründung, Tragwerk, Dach, Fassade, Brandabschnitte."],
       [
@@ -1950,7 +1950,7 @@ const T = {
         "Integrated System Testing bis Level 5, Lasttests, Notfallszenarien. <em>Meilenstein: Betriebsbereit.</em>"
       ]
     ],
-    callout: "Commissioning ist eine Phase, kein Abnahmetermin. Ein vollständiges Integrated System Testing über alle fünf Level — bis hin zum simulierten Netzausfall unter Last — braucht Wochen bis Monate. Wer es als letzte Woche vor der Übergabe plant, übergibt ein ungetestetes Rechenzentrum.",
+    callout: "Commissioning ist eine Phase, kein Abnahmetermin. Ein vollständiges Integrated System Testing über alle fünf Level, bis hin zum simulierten Netzausfall unter Last, braucht Wochen bis Monate. Wer es als letzte Woche vor der Übergabe plant, übergibt ein ungetestetes Rechenzentrum.",
     customize: [
       "Je Datenhalle eine Zeilengruppe, wenn der Bau in Bauabschnitten erfolgt.",
       "Lieferzeiten der Großkomponenten als eigene Vorgänge mit Bestelldatum sichtbar machen.",
@@ -1961,7 +1961,7 @@ const T = {
       "<strong>Trafos und Generatoren zuerst bestellen</strong>, oft vor Baubeginn.",
       "<strong>Kühlung bestimmt die Halle</strong>, nicht umgekehrt.",
       "<strong>Planen Sie Commissioning mit Wochen</strong>, nicht mit Tagen.",
-      "<strong>Der Betrieb sollte früh mitplanen</strong> — er übernimmt, was gebaut wurde."
+      "<strong>Der Betrieb sollte früh mitplanen</strong>, er übernimmt, was gebaut wurde."
     ],
     faq: [
       [
@@ -1970,7 +1970,7 @@ const T = {
       ],
       [
         "Was liegt auf dem kritischen Pfad?",
-        "Netzanschluss und die Beschaffung von Trafos, USV und Generatoren — derzeit die längsten Vorlaufzeiten im Markt."
+        "Netzanschluss und die Beschaffung von Trafos, USV und Generatoren, derzeit die längsten Vorlaufzeiten im Markt."
       ],
       [
         "Was ist Integrated System Testing?",
@@ -1987,9 +1987,9 @@ const T = {
   'restaurant-opening-timeline': {
     card: "Konzept, Fläche, Ausbau, Konzession, Personal und Soft Opening.",
     h1: "Zeitplan für die Restauranteröffnung",
-    metaTitle: "Restauranteröffnung — Zeitplan Vorlage",
+    metaTitle: "Restauranteröffnung: Zeitplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für die Restauranteröffnung: Konzept, Fläche, Ausbau, Konzession, Personal, Soft Opening.",
-    lead: "Bei einer <strong>Restauranteröffnung</strong> ist die Küche selten das Problem. Der Termin hängt an der Konzession, der Lüftungsanlage und dem Personal — drei Dinge, die früh beginnen müssen und nicht mit Geld zu beschleunigen sind.",
+    lead: "Bei einer <strong>Restauranteröffnung</strong> ist die Küche selten das Problem. Der Termin hängt an der Konzession, der Lüftungsanlage und dem Personal, drei Dinge, die früh beginnen müssen und nicht mit Geld zu beschleunigen sind.",
     intro: "Sechs Phasen vom Konzept zum ersten Gast:",
     phases: [
       [
@@ -2020,7 +2020,7 @@ const T = {
     callout: "Die Lüftungsanlage ist der Vorgang, der den Termin verschiebt. Auflagen zu Abluftführung und Geruchsbelastung tauchen spät auf, betreffen die Nachbarschaft und lassen sich baulich nur mit erheblichem Aufwand ändern. Klären Sie sie, bevor der Mietvertrag unterschrieben ist.",
     customize: [
       "Konzessionsverfahren als Vorgänger für die Eröffnung setzen, nicht parallel dazu.",
-      "Probekochen und Menütests als eigene Vorgänge führen — sie brauchen mehrere Runden.",
+      "Probekochen und Menütests als eigene Vorgänge führen, sie brauchen mehrere Runden.",
       "Personalgewinnung früh starten; Küchenpersonal ist der knappste Faktor.",
       "Zwei bis vier Wochen Soft Opening mit reduzierter Karte einplanen."
     ],
@@ -2054,9 +2054,9 @@ const T = {
   'clinical-trial-gantt-chart': {
     card: "Protokoll, Ethik, Zentren, Rekrutierung, Auswertung und Bericht.",
     h1: "Gantt-Diagramm für eine klinische Studie",
-    metaTitle: "Klinische Studie — Zeitplan Vorlage",
+    metaTitle: "Klinische Studie: Zeitplan Vorlage",
     metaDesc: "Kostenlose Gantt-Vorlage für klinische Studien: Protokoll, Ethikvotum, Zentrumsinitiierung, Rekrutierung, Auswertung, Bericht.",
-    lead: "Der Zeitplan einer <strong>klinischen Studie</strong> steht und fällt mit der Rekrutierung. Alle anderen Phasen sind planbar; die Frage, wie schnell Patientinnen und Patienten eingeschlossen werden, ist es nicht — und sie bestimmt die Gesamtdauer.",
+    lead: "Der Zeitplan einer <strong>klinischen Studie</strong> steht und fällt mit der Rekrutierung. Alle anderen Phasen sind planbar; die Frage, wie schnell Patientinnen und Patienten eingeschlossen werden, ist es nicht, und sie bestimmt die Gesamtdauer.",
     intro: "Sechs Phasen von der Konzeption bis zum Studienbericht:",
     phases: [
       [
@@ -2084,12 +2084,12 @@ const T = {
         "Studienbericht, Behördenmeldung, Registereintrag, Veröffentlichung."
       ]
     ],
-    callout: "Planen Sie mit der halben erwarteten Rekrutierungsgeschwindigkeit. Die Erfahrung fast aller Studienzentren ist, dass der tatsächliche Einschluss deutlich hinter der Prognose zurückbleibt — eine Verzögerung hier verschiebt jede nachfolgende Phase eins zu eins.",
+    callout: "Planen Sie mit der halben erwarteten Rekrutierungsgeschwindigkeit. Die Erfahrung fast aller Studienzentren ist, dass der tatsächliche Einschluss deutlich hinter der Prognose zurückbleibt, eine Verzögerung hier verschiebt jede nachfolgende Phase eins zu eins.",
     customize: [
       "Je Zentrum eine Zeile für Initiierung und Rekrutierung; sie starten gestaffelt.",
       "Ethikvotum als harten Vorgänger für jede Aktivität am Patienten setzen.",
       "Zwischenanalysen und Sicherheitsgremien als feste Termine eintragen.",
-      "Nachbeobachtungszeit je Teilnehmer korrekt abbilden — sie läuft nach dem letzten Einschluss weiter."
+      "Nachbeobachtungszeit je Teilnehmer korrekt abbilden, sie läuft nach dem letzten Einschluss weiter."
     ],
     tips: [
       "<strong>Rekrutierung ist der kritische Pfad.</strong> Alles andere ist berechenbar.",
@@ -2119,7 +2119,7 @@ const T = {
   },
 
   'google-sheets': {
-    card: "Gantt-Diagramm in Google Sheets — importieren und gemeinsam bearbeiten.",
+    card: "Gantt-Diagramm in Google Sheets, importieren und gemeinsam bearbeiten.",
     h1: "Gantt-Diagramm-Vorlage für Google Sheets",
     metaTitle: "Gantt-Vorlage für Google Sheets",
     metaDesc: "Kostenlose Gantt-Vorlage für Google Sheets: als XLSX oder CSV herunterladen, importieren und im Team bearbeiten.",
@@ -2128,7 +2128,7 @@ const T = {
     phases: [
       [
         "Aufgabentabelle",
-        "Vorgang, Start, Dauer und Verantwortlichkeit — die Spalten, aus denen sich alles Weitere ergibt."
+        "Vorgang, Start, Dauer und Verantwortlichkeit, die Spalten, aus denen sich alles Weitere ergibt."
       ],
       ["Zeitachse", "Balken je Vorgang über die Wochen des Projekts."],
       [
@@ -2137,7 +2137,7 @@ const T = {
       ],
       ["Meilensteine", "Feste Punkte für Freigaben und Übergaben."]
     ],
-    callout: "Google Sheets rechnet keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand nachziehen — bei zwanzig Zeilen machbar, darüber nicht mehr. Wenn der Plan selbst rechnen soll, öffnen Sie ihn stattdessen direkt im Editor.",
+    callout: "Google Sheets rechnet keine Abhängigkeiten. Verschiebt sich ein Vorgang, müssen Sie jedes nachfolgende Startdatum von Hand nachziehen, bei zwanzig Zeilen machbar, darüber nicht mehr. Wenn der Plan selbst rechnen soll, öffnen Sie ihn stattdessen direkt im Editor.",
     customize: [
       "Nach dem Import <em>Datei → Importieren → Hochladen</em> wählen und „Tabelle ersetzen\" bestätigen.",
       "Spaltenbreite der Zeitachse anpassen, wenn Ihr Projekt länger als die Vorlage läuft.",
@@ -2146,7 +2146,7 @@ const T = {
     ],
     tips: [
       "<strong>Für gemeinsames Arbeiten ist Sheets stark</strong>, für Abhängigkeiten schwach.",
-      "<strong>Die native Zeitachsen-Ansicht ist kein Gantt-Diagramm</strong> — sie kennt keine Verknüpfungen.",
+      "<strong>Die native Zeitachsen-Ansicht ist kein Gantt-Diagramm</strong>, sie kennt keine Verknüpfungen.",
       "<strong>Sperren Sie die Formelspalten</strong>, wenn viele Personen Zugriff haben.",
       "<strong>Ab etwa zwanzig Vorgängen</strong> lohnt der Wechsel zu einem Werkzeug, das rechnet."
     ],
@@ -2161,7 +2161,7 @@ const T = {
       ],
       [
         "Ist die Vorlage kostenlos?",
-        "Ja, ohne Anmeldung und ohne Wasserzeichen — als XLSX, CSV oder PowerPoint."
+        "Ja, ohne Anmeldung und ohne Wasserzeichen, als XLSX, CSV oder PowerPoint."
       ]
     ],
     related: [
@@ -2174,14 +2174,14 @@ const T = {
   'printable-gantt-chart': {
     card: "Für den Ausdruck gebaut: eine Seite, lesbare Schrift, sauberer Rand.",
     h1: "Gantt-Diagramm zum Ausdrucken",
-    metaTitle: "Gantt-Diagramm zum Ausdrucken — Vorlage",
+    metaTitle: "Gantt-Diagramm zum Ausdrucken: Vorlage",
     metaDesc: "Kostenlose druckbare Gantt-Vorlage: passt auf eine Seite, lesbar in Schwarzweiß, als PDF, Excel oder PowerPoint.",
-    lead: "Ein <strong>Gantt-Diagramm zum Ausdrucken</strong> hat andere Anforderungen als eines für den Bildschirm: Es muss auf eine Seite passen, in Schwarzweiß lesbar bleiben und ohne Tooltips auskommen — alles Wichtige steht auf dem Papier.",
+    lead: "Ein <strong>Gantt-Diagramm zum Ausdrucken</strong> hat andere Anforderungen als eines für den Bildschirm: Es muss auf eine Seite passen, in Schwarzweiß lesbar bleiben und ohne Tooltips auskommen, alles Wichtige steht auf dem Papier.",
     intro: "Die Vorlage ist auf diese vier Punkte hin gebaut:",
     phases: [
       [
         "Eine Seite",
-        "Rund zwanzig Zeilen und ein Quartal Zeitachse — die Grenze, an der A4 quer noch lesbar bleibt."
+        "Rund zwanzig Zeilen und ein Quartal Zeitachse, die Grenze, an der A4 quer noch lesbar bleibt."
       ],
       [
         "Kontrast statt Farbe",
@@ -2196,15 +2196,15 @@ const T = {
         "Seitenränder und Kopfzeile so gesetzt, dass nichts abgeschnitten wird."
       ]
     ],
-    callout: "Prüfen Sie die Lesbarkeit in Graustufen, bevor Sie hundert Exemplare drucken. Auf dem Bildschirm gut unterscheidbare Farben werden im Schwarzweißdruck regelmäßig zu drei fast identischen Grautönen — der häufigste Fehler bei Plänen, die an die Wand sollen.",
+    callout: "Prüfen Sie die Lesbarkeit in Graustufen, bevor Sie hundert Exemplare drucken. Auf dem Bildschirm gut unterscheidbare Farben werden im Schwarzweißdruck regelmäßig zu drei fast identischen Grautönen, der häufigste Fehler bei Plänen, die an die Wand sollen.",
     customize: [
       "Auf A3 wechseln, wenn Sie mehr als etwa 25 Zeilen brauchen.",
-      "Als PDF exportieren statt aus der Tabelle zu drucken — der Seitenumbruch bleibt so kontrolliert.",
+      "Als PDF exportieren statt aus der Tabelle zu drucken, der Seitenumbruch bleibt so kontrolliert.",
       "Nicht benötigte Spalten vor dem Druck ausblenden; jede gesparte Spalte gibt Zeitachse frei.",
       "Datum der Fassung in die Kopfzeile setzen, damit an der Wand kein veralteter Plan hängt."
     ],
     tips: [
-      "<strong>Querformat</strong> — eine Zeitachse braucht Breite.",
+      "<strong>Querformat</strong>, eine Zeitachse braucht Breite.",
       "<strong>Mindestens 9 pt Schrift.</strong> Was am Monitor klein wirkt, ist gedruckt unleserlich.",
       "<strong>Ein Quartal je Seite.</strong> Ein ganzes Jahr auf A4 liest niemand.",
       "<strong>Setzen Sie das Fassungsdatum sichtbar</strong>, sonst hängt der Plan von letztem Monat."
@@ -2232,22 +2232,22 @@ const T = {
 
   '3-week-lookahead-template': {
     card: "Rollierende Drei-Wochen-Vorschau mit Gewerken, Abnahmen und Randbedingungen.",
-    h1: "3-Wochen-Vorschau — Vorlage für die Bauablaufplanung",
-    metaTitle: "3-Wochen-Vorschau — Terminplan-Vorlage",
+    h1: "3-Wochen-Vorschau: Vorlage für die Bauablaufplanung",
+    metaTitle: "3-Wochen-Vorschau: Terminplan-Vorlage",
     metaDesc: "Kostenlose Vorlage für die 3-Wochen-Vorschau: Gewerke, Abnahmen, Randbedingungen und Lieferfristen je Woche. Als Excel oder online.",
-    lead: `Eine kostenlose <strong>Vorlage für die 3-Wochen-Vorschau</strong>, aufgebaut wie die Montagsbesprechung auf der Baustelle tatsächlich läuft: diese Woche, nächste Woche, übernächste Woche — mit Gewerken, Abnahmen, Randbedingungen und Langläufern auf jeder davon. Laden Sie sie für die Wand im Baucontainer herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a> und erzeugen Sie das Zeitfenster über <strong>Ansicht ▸ Vorschau</strong> direkt aus Ihrem Rahmenterminplan, statt es jede Woche neu in eine Tabelle zu tippen.`,
+    lead: `Eine kostenlose <strong>Vorlage für die 3-Wochen-Vorschau</strong>, aufgebaut wie die Montagsbesprechung auf der Baustelle tatsächlich läuft: diese Woche, nächste Woche, übernächste Woche, mit Gewerken, Abnahmen, Randbedingungen und Langläufern auf jeder davon. Laden Sie sie für die Wand im Baucontainer herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a> und erzeugen Sie das Zeitfenster über <strong>Ansicht ▸ Vorschau</strong> direkt aus Ihrem Rahmenterminplan, statt es jede Woche neu in eine Tabelle zu tippen.`,
     intro: "Eine Vorschau ist kein zweiter Plan. Sie ist ein Drei-Wochen-Ausschnitt des Rahmenterminplans, versehen mit den Randbedingungen und wöchentlich fortgeschrieben. Genau so ist die Vorlage gegliedert:",
     phases: [
       [
-        "Woche 1 — zugesagte Arbeiten",
+        "Woche 1, zugesagte Arbeiten",
         "Vorgänge ohne offene Randbedingung, die in dieser Woche ausgeführt werden. Kolonnen, Material und Zugang sind bestätigt. <em>Meilenstein: Bewehrungsabnahme vor dem Betonieren.</em>"
       ],
       [
-        "Woche 2 — vorbereitete Arbeiten",
+        "Woche 2, vorbereitete Arbeiten",
         "Vorgänge, deren Randbedingungen erledigt sind, die aber noch nicht begonnen haben. Dieser Vorrat hält die Kolonnen beschäftigt, wenn Woche 1 kippt."
       ],
       [
-        "Woche 3 — geplante Arbeiten",
+        "Woche 3, geplante Arbeiten",
         "Vorgänge, die noch arbeitsreif gemacht werden. Alles, was hier eine offene Randbedingung hat, ist der eigentliche Grund für die Besprechung."
       ],
       [
@@ -2256,24 +2256,24 @@ const T = {
       ],
       [
         "Abnahmen und Haltepunkte",
-        "Prüfungen Dritter, die den Bauablauf stoppen, wenn sie ausbleiben — Bewehrung, Leitungen im Erdreich, Tragwerk. Jede davon ist ein Meilenstein, kein Vorgang."
+        "Prüfungen Dritter, die den Bauablauf stoppen, wenn sie ausbleiben, Bewehrung, Leitungen im Erdreich, Tragwerk. Jede davon ist ein Meilenstein, kein Vorgang."
       ],
       [
         "Wöchentliche Fortschreibung",
         "Der Plan rollt jeden Montag eine Woche weiter. Fertigstellungsgrade werden eingetragen, das Fenster verschiebt sich, die Liste der Randbedingungen wird erneut durchgegangen."
       ]
     ],
-    callout: `Sinn der Vorschau ist das Ausräumen von Randbedingungen, nicht das Berichten. Wenn ein Vorgang in Woche 3 auf eine ausstehende Freigabe oder eine nicht gelieferte Lieferung wartet, ist das am Montag das Einzige, worüber zu reden sich lohnt — alles Übrige ist bereits arbeitsreif. Unser <a href="/de/blog/3-week-lookahead-schedule.html">Leitfaden zur 3-Wochen-Vorschau</a> zeigt, wie Sie die Besprechung anhand des Plans führen.`,
+    callout: `Sinn der Vorschau ist das Ausräumen von Randbedingungen, nicht das Berichten. Wenn ein Vorgang in Woche 3 auf eine ausstehende Freigabe oder eine nicht gelieferte Lieferung wartet, ist das am Montag das Einzige, worüber zu reden sich lohnt, alles Übrige ist bereits arbeitsreif. Unser <a href="/de/blog/3-week-lookahead-schedule.html">Leitfaden zur 3-Wochen-Vorschau</a> zeigt, wie Sie die Besprechung anhand des Plans führen.`,
     customize: [
-      "Legen Sie den Startmontag selbst fest — die Ansicht Vorschau verankert am Montag und lässt Fenster von einer bis acht Wochen zu.",
+      "Legen Sie den Startmontag selbst fest, die Ansicht Vorschau verankert am Montag und lässt Fenster von einer bis acht Wochen zu.",
       "Führen Sie bei gewerkeorientierten Baustellen eine Zeile je Kolonne oder Nachunternehmer statt je Vorgang; die Poliere müssen ihre eigene Zeile sehen.",
       "Bilden Sie Randbedingungen als echte Balken mit echter Dauer ab. Eine Freigabe als Notiz ohne Dauer wird schlicht übersehen.",
       "Setzen Sie jede Abnahme als Meilenstein, damit kein nachfolgender Vorgang über einen Haltepunkt hinweg geplant wird.",
-      "Rollen Sie den Plan jeden Montag eine Woche weiter, statt ihn neu zu bauen — der Rahmenterminplan ist die Quelle, die Vorschau nur die Sicht darauf."
+      "Rollen Sie den Plan jeden Montag eine Woche weiter, statt ihn neu zu bauen, der Rahmenterminplan ist die Quelle, die Vorschau nur die Sicht darauf."
     ],
     tips: [
       "<strong>Erzeugen statt abtippen.</strong> Wird die Vorschau getrennt vom Rahmenterminplan gepflegt, laufen beide binnen eines Monats auseinander. Öffnen Sie den Rahmenterminplan im Editor und schneiden Sie das Fenster über <strong>Ansicht ▸ Vorschau</strong> heraus.",
-      "<strong>Woche 1 enthält keine offenen Randbedingungen.</strong> Tut sie es doch, ist der Vorgang nicht zugesagt, sondern erhofft — und gehört in Woche 2.",
+      "<strong>Woche 1 enthält keine offenen Randbedingungen.</strong> Tut sie es doch, ist der Vorgang nicht zugesagt, sondern erhofft, und gehört in Woche 2.",
       "<strong>Messen Sie die Zusageerfüllung.</strong> Wie viele der Zusagen aus Woche 1 tatsächlich fertig wurden, ist die nützlichste Kennzahl, die eine Vorschau liefert.",
       "<strong>Langläufer gehören Monate früher auf den Plan.</strong> Stahlbau, Schaltanlagen und Aufzüge kümmert Ihr Drei-Wochen-Fenster nicht; sie müssen darin zum Liefertermin auftauchen und lange vorher bestellt sein.",
       "<strong>Drucken Sie den Plan in der Größe, die die Containerwand verlangt.</strong> Eine Vorschau, die man aus einem Meter Entfernung nicht lesen kann, ändert niemandes Montag."
@@ -2285,11 +2285,11 @@ const T = {
       ],
       [
         "Kann gantts.app die Vorschau aus meinem Plan erzeugen?",
-        `Ja. Öffnen Sie Ihren Terminplan im <a href="/de/app.html">kostenlosen Editor</a> und wählen Sie <strong>Ansicht ▸ Vorschau</strong>. Die Ansicht verankert am Montag und lässt Fenster von einer bis acht Wochen zu — die Vorschau bleibt damit eine Sicht auf den laufenden Plan und wird nicht zur zweiten Fassung davon.`
+        `Ja. Öffnen Sie Ihren Terminplan im <a href="/de/app.html">kostenlosen Editor</a> und wählen Sie <strong>Ansicht ▸ Vorschau</strong>. Die Ansicht verankert am Montag und lässt Fenster von einer bis acht Wochen zu, die Vorschau bleibt damit eine Sicht auf den laufenden Plan und wird nicht zur zweiten Fassung davon.`
       ],
       [
         "Warum drei Wochen und nicht vier oder sechs?",
-        "Drei Wochen reichen, um die meisten Randbedingungen auszuräumen, und sind kurz genug, dass die Termine noch belastbar sind. Baustellen mit langen Lieferfristen fahren oft sechs Wochen; die Ansicht Vorschau erlaubt bis zu acht — nehmen Sie, was Ihr Vorlauf braucht."
+        "Drei Wochen reichen, um die meisten Randbedingungen auszuräumen, und sind kurz genug, dass die Termine noch belastbar sind. Baustellen mit langen Lieferfristen fahren oft sechs Wochen; die Ansicht Vorschau erlaubt bis zu acht, nehmen Sie, was Ihr Vorlauf braucht."
       ],
       [
         "Was steht in der Vorschau, das nicht im Rahmenterminplan steht?",
@@ -2297,7 +2297,7 @@ const T = {
       ],
       [
         "Ist die Vorlage für die 3-Wochen-Vorschau kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -2305,14 +2305,14 @@ const T = {
   's-curve-template': {
     card: "Plan gegen Ist als S-Kurve: Basisplan setzen, PV, EV, SV und SPI ablesen.",
     h1: "S-Kurven-Vorlage (Plan gegen Ist)",
-    metaTitle: "S-Kurve — Vorlage Plan gegen Ist",
+    metaTitle: "S-Kurve: Vorlage Plan gegen Ist",
     metaDesc: "Kostenlose S-Kurven-Vorlage für Plan- und Ist-Fortschritt: Basisplan setzen und PV, EV, SV sowie SPI im S-Kurven-Panel ablesen.",
-    lead: `Eine kostenlose <strong>S-Kurven-Vorlage</strong> — ein Projekt, das so geschnitten ist, dass die Kurve aus Plan und Ist überhaupt etwas aussagt: langsamer Anlauf, schwere Mitte, langer Auslauf. Laden Sie sie für den Fortschrittsbericht herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a>, setzen Sie einen Basisplan und lesen Sie im Panel <strong>📈 S-Kurve</strong> Plankosten, Fertigstellungswert, Terminabweichung und SPI direkt aus Ihren eigenen Terminen und Fertigstellungsgraden ab.`,
+    lead: `Eine kostenlose <strong>S-Kurven-Vorlage</strong>, ein Projekt, das so geschnitten ist, dass die Kurve aus Plan und Ist überhaupt etwas aussagt: langsamer Anlauf, schwere Mitte, langer Auslauf. Laden Sie sie für den Fortschrittsbericht herunter oder öffnen Sie sie im <a href="/de/app.html">kostenlosen Editor</a>, setzen Sie einen Basisplan und lesen Sie im Panel <strong>📈 S-Kurve</strong> Plankosten, Fertigstellungswert, Terminabweichung und SPI direkt aus Ihren eigenen Terminen und Fertigstellungsgraden ab.`,
     intro: "Eine S-Kurve ist nichts weiter als der kumulierte Fortschritt über die Zeit. S-förmig wird sie, weil Projekte langsam anlaufen, in der Mitte heiß laufen und über die Inbetriebnahme auslaufen. Die Vorlage liefert einen Terminplan mit genau dieser Form:",
     phases: [
       [
         "Start und Basisplan",
-        "Projektauftrag, Leistungsumfang, Budget und der Basisplan selbst — der flache Fuß der Kurve, auf dem viel Kalender vergeht und wenig Wert entsteht. <em>Meilenstein: Basisplan gesetzt.</em>"
+        "Projektauftrag, Leistungsumfang, Budget und der Basisplan selbst, der flache Fuß der Kurve, auf dem viel Kalender vergeht und wenig Wert entsteht. <em>Meilenstein: Basisplan gesetzt.</em>"
       ],
       [
         "Planung und Engineering",
@@ -2328,16 +2328,16 @@ const T = {
       ],
       [
         "Test und Inbetriebnahme",
-        "Der Auslauf. Die Restleistung ist wertmäßig klein, dauert aber hartnäckig lange — deshalb flachen Kurven ab, bevor sie enden. <em>Meilenstein: Inbetriebnahme abgeschlossen.</em>"
+        "Der Auslauf. Die Restleistung ist wertmäßig klein, dauert aber hartnäckig lange, deshalb flachen Kurven ab, bevor sie enden. <em>Meilenstein: Inbetriebnahme abgeschlossen.</em>"
       ],
       [
         "Übergabe und Abschluss",
-        "Dokumentation, Restpunkte, Schlussrechnung und Lessons Learned — die letzten Prozente, die immer länger dauern als vorgesehen."
+        "Dokumentation, Restpunkte, Schlussrechnung und Lessons Learned, die letzten Prozente, die immer länger dauern als vorgesehen."
       ]
     ],
     callout: `Eine einzelne Kurve sagt nichts. Der Wert liegt im Abstand zwischen Plan- und Ist-Kurve: Liegt die Ist-Kurve darunter, sind Sie im Verzug, und der senkrechte Abstand ist Ihre Terminabweichung in Wertgrößen, während der waagerechte Abstand grob Ihrem Zeitverzug entspricht. Unser <a href="/de/blog/s-curve-project-management.html">Leitfaden zur S-Kurve</a> arbeitet durch, wie Sie PV, EV, SV und SPI ablesen.`,
     customize: [
-      "Setzen Sie den Basisplan, sobald der Plan abgestimmt ist — ohne ihn gibt es keine Plankurve, und das S-Kurven-Panel hat keinen Vergleichsmaßstab.",
+      "Setzen Sie den Basisplan, sobald der Plan abgestimmt ist, ohne ihn gibt es keine Plankurve, und das S-Kurven-Panel hat keinen Vergleichsmaßstab.",
       "Halten Sie die Fertigstellungsgrade ehrlich und aktuell; die Ist-Kurve ist nur so gut wie die letzte Rückmeldung.",
       "Gewichten Sie die mittleren Phasen deutlich. Bei gleichmäßig verteilten Dauern wird die Kurve zur Geraden, was meist heißt, dass der Plan zu grob ist.",
       "Hinterlegen Sie je Vorgang Kosten oder Personenstunden, wenn Sie eine kostenbewertete statt einer dauerbewerteten Kurve wollen.",
@@ -2347,7 +2347,7 @@ const T = {
       "<strong>Lesen Sie den SPI, nicht die Form.</strong> Ein SPI unter 1,0 heißt, dass bis heute weniger Wert erbracht wurde als geplant. Der Trend über vier oder fünf Stichtage sagt weit mehr als ein einzelner Wert.",
       "<strong>Rechnen Sie mit langsamem Anlauf.</strong> Eine Kurve, die ab Tag eins steil steigt, misst fast immer Ausgaben oder Aufwand statt gelieferten Fortschritt.",
       "<strong>Achten Sie auf den Knick.</strong> Kurven, die schon bei 85 bis 90 Prozent abflachen, sind das klassische Bild eines Projekts voller fast fertiger Arbeit.",
-      "<strong>Schreiben Sie in festem Takt fort.</strong> Wöchentlich oder vierzehntägig, immer am selben Tag — unregelmäßige Stichtage machen die Kurve unlesbar.",
+      "<strong>Schreiben Sie in festem Takt fort.</strong> Wöchentlich oder vierzehntägig, immer am selben Tag, unregelmäßige Stichtage machen die Kurve unlesbar.",
       "<strong>Zeigen Sie Kurve und Balkenplan zusammen.</strong> Die Kurve sagt, dass Sie im Verzug sind; der Balkenplan sagt, welche Vorgänge ihn verursacht haben. Beides gehört in den Bericht."
     ],
     faq: [
@@ -2365,7 +2365,7 @@ const T = {
       ],
       [
         "Warum sieht meine Kurve aus wie eine Gerade?",
-        "Meist, weil alle Vorgänge ähnlich lang und ähnlich schwer sind und der Fortschritt deshalb gleichmäßig anfällt. Gliedern Sie die mittleren Phasen feiner oder hinterlegen Sie Kosten beziehungsweise Personenstunden — dann erscheint die S-Form."
+        "Meist, weil alle Vorgänge ähnlich lang und ähnlich schwer sind und der Fortschritt deshalb gleichmäßig anfällt. Gliedern Sie die mittleren Phasen feiner oder hinterlegen Sie Kosten beziehungsweise Personenstunden, dann erscheint die S-Form."
       ],
       [
         "Brauche ich dafür einen Basisplan?",
@@ -2381,14 +2381,14 @@ const T = {
   'cloud-migration-project-plan': {
     card: "Analyse, Landing Zone, Migrationswellen, Cutover, Hypercare und Rückbau.",
     h1: "Projektplan für die Cloud-Migration",
-    metaTitle: "Cloud-Migration — Projektplan-Vorlage",
+    metaTitle: "Cloud-Migration: Projektplan-Vorlage",
     metaDesc: "Kostenloser Projektplan für die Cloud-Migration: Analyse, Landing Zone, Migrationswellen, Cutover, Hypercare und Rückbau. Excel oder online.",
-    lead: "Eine kostenlose <strong>Vorlage für den Cloud-Migrationsplan</strong>, die den Umzug von Anwendungen und Workloads durchgehend abbildet — Bestandsaufnahme und Anwendungsbewertung, Aufbau der Landing Zone, Wellenplanung, Pilot- und Produktionswellen, Cutover, Hypercare und der Rückbau dessen, was zurückbleibt. Laden Sie sie für die Lenkungsausschussunterlage herunter oder verknüpfen Sie die Wellen online, damit ein Verzug in der einen nicht stillschweigend die nächste auffrisst.",
+    lead: "Eine kostenlose <strong>Vorlage für den Cloud-Migrationsplan</strong>, die den Umzug von Anwendungen und Workloads durchgehend abbildet, Bestandsaufnahme und Anwendungsbewertung, Aufbau der Landing Zone, Wellenplanung, Pilot- und Produktionswellen, Cutover, Hypercare und der Rückbau dessen, was zurückbleibt. Laden Sie sie für die Lenkungsausschussunterlage herunter oder verknüpfen Sie die Wellen online, damit ein Verzug in der einen nicht stillschweigend die nächste auffrisst.",
     intro: "Eine Cloud-Migration ist kein einzelnes Projekt, sondern ein Fundamentbau plus eine sich wiederholende Welle. Die Vorlage trennt beides, damit die Landing Zone fertig ist, bevor die Wellen darauf aufsetzen:",
     phases: [
       [
         "Bestandsaufnahme und Bewertung",
-        "Anwendungsinventar, Abhängigkeitsanalyse, Geschäftskritikalität und je Workload eine Entscheidung nach den 7 R — Rehost, Replatform, Refactor, Repurchase, Relocate, Retire, Retain. <em>Meilenstein: Zuordnung der Anwendungen abgestimmt.</em>"
+        "Anwendungsinventar, Abhängigkeitsanalyse, Geschäftskritikalität und je Workload eine Entscheidung nach den 7 R, Rehost, Replatform, Refactor, Repurchase, Relocate, Retire, Retain. <em>Meilenstein: Zuordnung der Anwendungen abgestimmt.</em>"
       ],
       [
         "Landing Zone und Fundament",
@@ -2411,18 +2411,18 @@ const T = {
         "Abschalten der Altumgebung, Ausstieg aus Rechenzentrum oder Hosting-Vertrag, danach Right-Sizing und reservierte Kapazitäten. Hier wird der Business Case tatsächlich eingelöst."
       ]
     ],
-    callout: "Der Business Case ist erst eingelöst, wenn das Alte abgeschaltet ist. Migrationen enden regelmäßig nach dem letzten Cutover — beide Umgebungen laufen weiter und die Einsparung existiert nur auf dem Papier. Setzen Sie den Rückbau als datierten Vorgang mit Verantwortlichem auf den Plan und stellen Sie das Vertragsende des Hostings als festen Meilenstein daneben.",
+    callout: "Der Business Case ist erst eingelöst, wenn das Alte abgeschaltet ist. Migrationen enden regelmäßig nach dem letzten Cutover, beide Umgebungen laufen weiter und die Einsparung existiert nur auf dem Papier. Setzen Sie den Rückbau als datierten Vorgang mit Verantwortlichem auf den Plan und stellen Sie das Vertragsende des Hostings als festen Meilenstein daneben.",
     customize: [
       "Legen Sie zuerst das Ende des Rechenzentrums- oder Hosting-Vertrags fest und rechnen Sie rückwärts; dieser Termin ist meist vertraglich und nicht verhandelbar.",
       "Ergänzen Sie nach der Bestandsaufnahme eine Zeile je Anwendung, gruppiert unter der Welle, die sie trägt.",
       "Duplizieren Sie die Wellenphase für jede weitere Welle; der innere Aufbau bleibt identisch.",
-      "Nehmen Sie Refactor-Kandidaten ganz aus der Wellenplanung heraus — das sind Entwicklungsprojekte, keine Migrationen, und sie zerstören den Takt der Wellen.",
+      "Nehmen Sie Refactor-Kandidaten ganz aus der Wellenplanung heraus, das sind Entwicklungsprojekte, keine Migrationen, und sie zerstören den Takt der Wellen.",
       "Setzen Sie Landing Zone produktiv, Pilotwelle abgeschlossen, jeden Produktiv-Cutover und den Rückbau als Meilensteine."
     ],
     tips: [
-      "<strong>Keine Welle vor fertiger Landing Zone.</strong> In ein Fundament zu migrieren, das sich noch ändert, heißt zweimal zu migrieren — die häufigste Quelle von Nacharbeit in solchen Programmen.",
+      "<strong>Keine Welle vor fertiger Landing Zone.</strong> In ein Fundament zu migrieren, das sich noch ändert, heißt zweimal zu migrieren, die häufigste Quelle von Nacharbeit in solchen Programmen.",
       "<strong>Bündeln Sie nach Abhängigkeit, nicht nach Abteilung.</strong> Anwendungen, die miteinander sprechen, sollten gemeinsam ziehen, sonst bezahlen Sie die Latenz zwischen zwei Umgebungen, solange sie getrennt sind.",
-      "<strong>Fahren Sie eine echte Pilotwelle.</strong> Sie soll das Runbook belegen und die Überraschungen zutage fördern; wählen Sie also risikoarme, aber wirklich repräsentative Anwendungen — nicht die drei einfachsten.",
+      "<strong>Fahren Sie eine echte Pilotwelle.</strong> Sie soll das Runbook belegen und die Überraschungen zutage fördern; wählen Sie also risikoarme, aber wirklich repräsentative Anwendungen, nicht die drei einfachsten.",
       "<strong>Kalkulieren Sie den Parallelbetrieb.</strong> Beide Umgebungen laufen für die Dauer der Migration gleichzeitig; diese Doppelkosten sind real und gehören vom ersten Tag an in den Business Case.",
       "<strong>Halten Sie bei jedem Cutover ein Rückfallfenster offen.</strong> Ein Cutover ohne dokumentierten und geprobten Rückfall ist eine Einbahnstraße, die man betritt, ohne sich dafür entschieden zu haben."
     ],
@@ -2433,7 +2433,7 @@ const T = {
       ],
       [
         "Was sind die 7 R der Cloud-Migration?",
-        "Rehost, Replatform, Refactor, Repurchase, Relocate, Retire und Retain — die Handlungsoptionen, die jeder Anwendung in der Bewertung zugeordnet werden. Erst wenn sie feststehen, ist eine Wellenplanung überhaupt möglich."
+        "Rehost, Replatform, Refactor, Repurchase, Relocate, Retire und Retain, die Handlungsoptionen, die jeder Anwendung in der Bewertung zugeordnet werden. Erst wenn sie feststehen, ist eine Wellenplanung überhaupt möglich."
       ],
       [
         "Wie sollten die Migrationswellen geschnitten sein?",
@@ -2441,7 +2441,7 @@ const T = {
       ],
       [
         "Deckt die Vorlage den Rückbau der Altumgebung ab?",
-        "Ja — als vollwertige Phase, denn dort landen die Einsparungen des Business Case, und genau diese Phase wird nach dem letzten Cutover am häufigsten liegen gelassen."
+        "Ja, als vollwertige Phase, denn dort landen die Einsparungen des Business Case, und genau diese Phase wird nach dem letzten Cutover am häufigsten liegen gelassen."
       ],
       [
         "Ist die Vorlage für die Cloud-Migration kostenlos?",
@@ -2453,7 +2453,7 @@ const T = {
   'new-product-development-plan': {
     card: "Stage-Gate von der Idee über Prototyp und Werkzeugbau bis zur Serienfreigabe.",
     h1: "Projektplan für die Produktentwicklung",
-    metaTitle: "Produktentwicklung — Projektplan-Vorlage",
+    metaTitle: "Produktentwicklung: Projektplan-Vorlage",
     metaDesc: "Kostenloser Produktentwicklungsplan: Konzept, Machbarkeit, Konstruktion, Prototypen, Validierung, Werkzeugbau, Nullserie und Serienfreigabe.",
     lead: `Eine kostenlose <strong>Vorlage für den Produktentwicklungsplan</strong>, aufgebaut als Stage-Gate-Programm: Konzept, Machbarkeit, Konstruktion, Prototypenbau, Validierung und Erprobung, Werkzeugbau, Nullserie und Übergabe an den Markteintritt. Das ist die technische Kette, an deren Ende etwas Verkäufliches steht; für die Marktseite desselben Vorhabens siehe den <a href="/de/templates/product-launch.html">Produkteinführungsplan</a>, für den längeren Horizont die <a href="/de/templates/product-roadmap.html">Produkt-Roadmap</a>.`,
     intro: "Entwicklungspläne scheitern an den Gates, nicht an den Vorgängen. Die Vorlage trennt die Stufen sauber, damit ein Gate eine Entscheidung mit Nachweisen dahinter ist und nicht bloß ein Termin, der still verstreicht:",
@@ -2487,18 +2487,18 @@ const T = {
         "Nullserienlauf, Serienteilfreigabe, Hochlaufplan, Dokumentationspaket und Übergabe an Produktion und Markteinführung. <em>Gate 5: Serienfreigabe.</em>"
       ]
     ],
-    callout: "Das Einfrieren des Konstruktionsstands ist der teure Meilenstein. Jede Änderung danach kostet Werkzeuggeld, und jede Änderung nach der Erstmusterprüfung kostet es zweimal. Dieses Gate zu einem echten Gate zu machen — mit Erprobungsnachweisen statt einem optimistischen Termin —, ist die eine Entscheidung, die ein Entwicklungsbudget zusammenhält.",
+    callout: "Das Einfrieren des Konstruktionsstands ist der teure Meilenstein. Jede Änderung danach kostet Werkzeuggeld, und jede Änderung nach der Erstmusterprüfung kostet es zweimal. Dieses Gate zu einem echten Gate zu machen, mit Erprobungsnachweisen statt einem optimistischen Termin, , ist die eine Entscheidung, die ein Entwicklungsbudget zusammenhält.",
     customize: [
       "Setzen Sie den geforderten Termin der Serienfreigabe und rechnen Sie rückwärts; die Lieferzeit der Werkzeuge entscheidet meist, ob der Plan überhaupt aufgeht.",
       "Bestellen Sie Langläufer-Werkzeuge gegen echte Angebotslieferzeiten und legen Sie den Bestellvorgang vor das Einfrieren, wenn Sie dieses Risiko bewusst eingehen.",
-      "Ergänzen Sie eine Zeile je Zulassungsstelle, wenn Ihr Produkt mehrere Zulassungen braucht — sie laufen parallel und jede hat ihre eigene Warteschlange.",
+      "Ergänzen Sie eine Zeile je Zulassungsstelle, wenn Ihr Produkt mehrere Zulassungen braucht, sie laufen parallel und jede hat ihre eigene Warteschlange.",
       "Erweitern Sie den Prototypenbau auf so viele Aufbauten, wie Sie wirklich brauchen; zwei sind für alles mit beweglichen Teilen optimistisch.",
-      "Halten Sie die Lieferantenfreigabe sichtbar — ein freigegebenes Teil von einem nicht freigegebenen Lieferanten ist kein serienfähiges Teil.",
+      "Halten Sie die Lieferantenfreigabe sichtbar, ein freigegebenes Teil von einem nicht freigegebenen Lieferanten ist kein serienfähiges Teil.",
       "Setzen Sie alle fünf Gates als Meilensteine, damit der Lenkungsausschuss Entscheidungen sieht und nicht Fortschrittsbalken."
     ],
     tips: [
       "<strong>Werkzeugbau und Konstruktionsänderungen nicht überlappen.</strong> Stahl zu schneiden, bevor der Konstruktionsstand eingefroren ist, verbrennt die Reserve eines Entwicklungsprogramms schneller als alles andere.",
-      "<strong>Beginnen Sie früh mit der Zulassung.</strong> Prüfhauswarteschlangen und Behördenverfahren sind Fremddauern, die sich durch mehr Einsatz nicht verkürzen lassen — buchen Sie Termine, sobald ein prüffähiger Aufbau existiert.",
+      "<strong>Beginnen Sie früh mit der Zulassung.</strong> Prüfhauswarteschlangen und Behördenverfahren sind Fremddauern, die sich durch mehr Einsatz nicht verkürzen lassen, buchen Sie Termine, sobald ein prüffähiger Aufbau existiert.",
       "<strong>Geben Sie der Validierung einen eigenen Balken.</strong> Prüfzeit ist echte Kalenderzeit; Dauererprobungen laufen über Wochen, gleichgültig wie viele Ingenieure daran sitzen.",
       "<strong>Binden Sie Lieferanten während der Konstruktion ein, nicht danach.</strong> Fertigungshinweise, die nach dem Einfrieren eintreffen, werden zum Änderungsantrag statt zur Konstruktionsvorgabe.",
       "<strong>Trennen Sie diesen Plan vom Markteinführungsplan.</strong> Marketingtermine hängen an der Serienfreigabe, nicht an einer Schätzung aus der Konzeptphase.",
@@ -2507,7 +2507,7 @@ const T = {
     faq: [
       [
         "Worin unterscheidet sich diese Vorlage vom Produkteinführungsplan?",
-        `Diese hier ist die technische Kette bis zur Serienfreigabe — Konzept bis Werkzeugbau und Nullserie. Der <a href="/de/templates/product-launch.html">Produkteinführungsplan</a> setzt ungefähr dort an, wo diese endet, und behandelt Positionierung, Preis, Kanalvorbereitung und die Markteinführungskampagne.`
+        `Diese hier ist die technische Kette bis zur Serienfreigabe, Konzept bis Werkzeugbau und Nullserie. Der <a href="/de/templates/product-launch.html">Produkteinführungsplan</a> setzt ungefähr dort an, wo diese endet, und behandelt Positionierung, Preis, Kanalvorbereitung und die Markteinführungskampagne.`
       ],
       [
         "Wie lange dauert eine Produktentwicklung?",
@@ -2519,7 +2519,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für ein Softwareprodukt?",
-        `Teilweise — Konzept, Machbarkeit, Design und Validierung lassen sich gut übertragen, Werkzeugbau und Nullserie entfallen dagegen. Für Software passt der <a href="/de/templates/software-development.html">Projektplan für Softwareentwicklung</a> besser.`
+        `Teilweise, Konzept, Machbarkeit, Design und Validierung lassen sich gut übertragen, Werkzeugbau und Nullserie entfallen dagegen. Für Software passt der <a href="/de/templates/software-development.html">Projektplan für Softwareentwicklung</a> besser.`
       ],
       [
         "Ist die Vorlage für die Produktentwicklung kostenlos?",
@@ -2531,10 +2531,10 @@ const T = {
   'retail-store-opening-timeline': {
     card: "Von Standortsuche und Mietvertrag über Ladenbau bis zur Eröffnung.",
     h1: "Zeitplan für die Ladeneröffnung",
-    metaTitle: "Ladeneröffnung — Zeitplan-Vorlage",
+    metaTitle: "Ladeneröffnung: Zeitplan-Vorlage",
     metaDesc: "Kostenlose Vorlage für die Ladeneröffnung: Mietvertrag, Ladenbau, Genehmigungen, Kasse, Ware, Personal, Soft Opening und Eröffnung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Ladeneröffnung</strong>, von der Standortsuche bis zur Eröffnungsfeier — Mietvertrag und Zustimmung des Vermieters, Ladenplanung und Ladenbau, Genehmigungen und Abnahmen, Kassensystem und IT, Erstorder und Warenpräsentation, Personalsuche und Schulung, dann Soft Opening und Eröffnungswochenende.",
-    intro: "Eine Ladeneröffnung ist ein Bauprojekt, ein Einstellungsprojekt und ein Einkaufszyklus gleichzeitig — und alle drei zielen auf einen Termin, den der Vermieter längst beworben hat. Die Vorlage führt sie als parallele Stränge:",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Ladeneröffnung</strong>, von der Standortsuche bis zur Eröffnungsfeier, Mietvertrag und Zustimmung des Vermieters, Ladenplanung und Ladenbau, Genehmigungen und Abnahmen, Kassensystem und IT, Erstorder und Warenpräsentation, Personalsuche und Schulung, dann Soft Opening und Eröffnungswochenende.",
+    intro: "Eine Ladeneröffnung ist ein Bauprojekt, ein Einstellungsprojekt und ein Einkaufszyklus gleichzeitig, und alle drei zielen auf einen Termin, den der Vermieter längst beworben hat. Die Vorlage führt sie als parallele Stränge:",
     phases: [
       [
         "Standort und Mietvertrag",
@@ -2561,19 +2561,19 @@ const T = {
         "Zuerst die Filialleitung, dann das Verkaufsteam, Produkt- und Kassenschulung, die Soft-Opening-Verkaufstage und die offizielle Eröffnung. <em>Meilenstein: Eröffnung.</em>"
       ]
     ],
-    callout: "Die Erstorder ist der Vorgang, den man nicht beschleunigen kann. Ladenbauteile lassen sich per Express besorgen und Personal in einer Woche schulen, aber eine zu spät bestellte Erstlieferung kommt zu spät — und ein Laden, der mit Lücken an der Wand öffnet, verbringt sein Eröffnungswochenende mit Entschuldigungen. Bestellen Sie gegen echte Lieferzeiten und behandeln Sie den Liefertermin als harten Vorgänger der Warenpräsentation.",
+    callout: "Die Erstorder ist der Vorgang, den man nicht beschleunigen kann. Ladenbauteile lassen sich per Express besorgen und Personal in einer Woche schulen, aber eine zu spät bestellte Erstlieferung kommt zu spät, und ein Laden, der mit Lücken an der Wand öffnet, verbringt sein Eröffnungswochenende mit Entschuldigungen. Bestellen Sie gegen echte Lieferzeiten und behandeln Sie den Liefertermin als harten Vorgänger der Warenpräsentation.",
     customize: [
-      "Verankern Sie den Plan am Übergabetermin des Vermieters — dann beginnt Ihre Ausbaufrist und häufig auch die Miete.",
+      "Verankern Sie den Plan am Übergabetermin des Vermieters, dann beginnt Ihre Ausbaufrist und häufig auch die Miete.",
       "Ergänzen Sie eine Zeile je Möblierungspaket, wenn die Ladeneinrichtung zentral geliefert und nicht vor Ort gebaut wird.",
-      "Verlängern Sie die Genehmigungsphase, wenn Sie Reglementiertes verkaufen — Alkohol, Apothekenware, Tabak und Waffen haben jeweils eigene Fristen.",
+      "Verlängern Sie die Genehmigungsphase, wenn Sie Reglementiertes verkaufen, Alkohol, Apothekenware, Tabak und Waffen haben jeweils eigene Fristen.",
       "Trennen Sie Platzierungsplan und Flächenumsetzung; das sind unterschiedliche Arbeiten von unterschiedlichen Leuten.",
       "Halten Sie das Soft Opening als echte Verkaufstage mit echten Kundinnen und Kunden, nicht als Rundgang für die Belegschaft."
     ],
     tips: [
       "<strong>Lesen Sie die Ausbaubedingungen des Vermieters vor der Planung.</strong> Zustimmungen des Centermanagements, zulässige Arbeitszeiten und Anlieferregeln stellen den Terminplan um, und das erst bei der Montage zu merken kostet Wochen.",
-      "<strong>Bestellen Sie Fassade und Beschilderung früh.</strong> Individuelle Beschilderung hat lange Lieferzeiten und wird zuletzt montiert — sie liegt damit direkt auf dem kritischen Pfad zur Eröffnung.",
+      "<strong>Bestellen Sie Fassade und Beschilderung früh.</strong> Individuelle Beschilderung hat lange Lieferzeiten und wird zuletzt montiert, sie liegt damit direkt auf dem kritischen Pfad zur Eröffnung.",
       "<strong>Stellen Sie die Filialleitung deutlich vor dem Team ein.</strong> Sie verantwortet Personalsuche, Schulung und die Freigabe der Erstorder; die Besetzung ist damit eine Abhängigkeit und keine Kopfzahl.",
-      "<strong>Testen Sie die Kasse mit echten Vorgängen.</strong> Zahlungsterminals, Preisdaten und Bestandsführung brauchen einen echten Verkaufstag als Nachweis — genau dafür gibt es das Soft Opening.",
+      "<strong>Testen Sie die Kasse mit echten Vorgängen.</strong> Zahlungsterminals, Preisdaten und Bestandsführung brauchen einen echten Verkaufstag als Nachweis, genau dafür gibt es das Soft Opening.",
       "<strong>Schützen Sie das Zeitfenster für die Warenpräsentation.</strong> Sie wird als Letztes zusammengedrückt und von den Kundinnen und Kunden als Erstes gesehen; unter ein paar Tagen sieht man das auf der Fläche."
     ],
     faq: [
@@ -2583,7 +2583,7 @@ const T = {
       ],
       [
         "Was verzögert eine Ladeneröffnung am häufigsten?",
-        "Zustimmungen von Vermieter und Centermanagement, Genehmigungen und zu späte Beschilderung. Alle drei sind Fremddauern — deshalb führt die Vorlage Zustimmungen und Genehmigungen als eigene Stränge und nicht innerhalb des Ladenbaus."
+        "Zustimmungen von Vermieter und Centermanagement, Genehmigungen und zu späte Beschilderung. Alle drei sind Fremddauern, deshalb führt die Vorlage Zustimmungen und Genehmigungen als eigene Stränge und nicht innerhalb des Ladenbaus."
       ],
       [
         "Wann sollte die Erstorder platziert werden?",
@@ -2591,7 +2591,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für einen Pop-up-Store oder eine Shop-in-Shop-Fläche?",
-        "Ja. Lassen Sie bei einer Fläche innerhalb eines fremden Hauses die Zeilen für Genehmigung und Fassade weg und stauchen Sie den Ladenbau — Genehmigungen, IT, Ware und Personal bleiben gleich."
+        "Ja. Lassen Sie bei einer Fläche innerhalb eines fremden Hauses die Zeilen für Genehmigung und Fassade weg und stauchen Sie den Ladenbau, Genehmigungen, IT, Ware und Personal bleiben gleich."
       ],
       [
         "Ist die Vorlage für die Ladeneröffnung kostenlos?",
@@ -2603,9 +2603,9 @@ const T = {
   'film-production-schedule': {
     card: "Stoffentwicklung, Vorbereitung, Dreh, Postproduktion und Auslieferung.",
     h1: "Produktionszeitplan für einen Film",
-    metaTitle: "Filmproduktion — Zeitplan-Vorlage",
+    metaTitle: "Filmproduktion: Zeitplan-Vorlage",
     metaDesc: "Kostenloser Produktionszeitplan für Filme: Stoffentwicklung, Vorbereitung, Dreharbeiten, Postproduktion, Ton, Farbe und Auslieferung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Produktionszeitplan eines Films</strong> über das ganze Vorhaben — Stoffentwicklung und Finanzierung, Vorbereitung und Besetzung, die Dreharbeiten selbst, die Postproduktion bis zum Schnittabschluss, Ton und Farbkorrektur sowie das Auslieferungspaket, das der Verleih tatsächlich verlangt. Laden Sie sie für die Finanzierungsunterlage herunter oder verknüpfen Sie die Abhängigkeiten online, die darüber entscheiden, ob Ihr Auslieferungstermin hält.",
+    lead: "Eine kostenlose <strong>Vorlage für den Produktionszeitplan eines Films</strong> über das ganze Vorhaben, Stoffentwicklung und Finanzierung, Vorbereitung und Besetzung, die Dreharbeiten selbst, die Postproduktion bis zum Schnittabschluss, Ton und Farbkorrektur sowie das Auslieferungspaket, das der Verleih tatsächlich verlangt. Laden Sie sie für die Finanzierungsunterlage herunter oder verknüpfen Sie die Abhängigkeiten online, die darüber entscheiden, ob Ihr Auslieferungstermin hält.",
     intro: "Jedes Department arbeitet auf die Drehtermine hin, und alles nach dem Dreh arbeitet auf den Auslieferungstermin hin. Die Vorlage setzt beide Fixpunkte auf den Plan und lässt sich den Rest darum herum ordnen:",
     phases: [
       [
@@ -2621,11 +2621,11 @@ const T = {
         "Der Dreh, gegliedert in Motiv- und Studioblöcke, mit dem Drehschluss als unverrückbarem Zentrum der gesamten Planung. <em>Meilenstein: Drehschluss.</em>"
       ],
       [
-        "Postproduktion — Bild",
+        "Postproduktion, Bild",
         "Musterbetrachtung und Rohschnitt während des Drehs, Editor-Fassung, Regiefassung, Anmerkungen und Schnittabschluss. <em>Meilenstein: Schnittabschluss.</em>"
       ],
       [
-        "Postproduktion — Ton und Bildfinish",
+        "Postproduktion, Ton und Bildfinish",
         "Nachsynchronisation, Geräusche, Sounddesign, Musik, Mischung, Lieferung der VFX-Einstellungen, Farbkorrektur und Conforming."
       ],
       [
@@ -2633,11 +2633,11 @@ const T = {
         "DCP und Masterfassungen, technische Prüfung, Untertitel und Fassungen, Werbematerial, Festivaleinreichungen und das Auslieferungspaket. <em>Meilenstein: Auslieferung abgenommen.</em>"
       ]
     ],
-    callout: "Die Dreharbeiten sind die einzige Phase, die sich nicht verlängern lässt, ohne pro Tag echtes Geld zu kosten. Alles davor existiert, um den Dreh möglich zu machen, und alles danach erbt, was der Dreh hergegeben hat. Legen Sie also zuerst die Drehtermine fest und prüfen Sie dann, ob die Vorbereitung genug Vorlauf davor hat — nicht umgekehrt.",
+    callout: "Die Dreharbeiten sind die einzige Phase, die sich nicht verlängern lässt, ohne pro Tag echtes Geld zu kosten. Alles davor existiert, um den Dreh möglich zu machen, und alles danach erbt, was der Dreh hergegeben hat. Legen Sie also zuerst die Drehtermine fest und prüfen Sie dann, ob die Vorbereitung genug Vorlauf davor hat, nicht umgekehrt.",
     customize: [
       "Setzen Sie Drehbeginn und Drehschluss zuerst und lassen Sie die Vorbereitung rückwärts davon rechnen.",
       "Führen Sie eine Zeile je Drehblock oder Motiv, damit die Umzugstage sichtbar werden; ungeplante Motivwechsel fressen Drehtage.",
-      "Verlängern Sie die VFX-Zeilen und beginnen Sie sie früher, wenn Sie nennenswert viele Einstellungen haben — VFX läuft oft vom Dreh bis zur Endmischung.",
+      "Verlängern Sie die VFX-Zeilen und beginnen Sie sie früher, wenn Sie nennenswert viele Einstellungen haben, VFX läuft oft vom Dreh bis zur Endmischung.",
       "Setzen Sie Einreichfristen für Festivals als Meilensteine; das sind feste Termine, die den ganzen Postproduktionsplan nach vorne ziehen.",
       "Halten Sie Reservetage innerhalb der Dreharbeiten statt am Ende, wo sie von einem Verzug nicht mehr zu unterscheiden sind."
     ],
@@ -2646,12 +2646,12 @@ const T = {
       "<strong>Schließen Sie den Schnitt ab, bevor Sie Ton und Farbe binden.</strong> Nach begonnener Mischung noch umzuschneiden ist der teuerste vermeidbare Fehler der Postproduktion.",
       "<strong>Behandeln Sie Motive und Genehmigungen als Langläufer.</strong> Drehgenehmigungen, Straßensperrungen und Motivverträge haben Fremddauern, die sich durch mehr Einsatz nicht verkürzen.",
       "<strong>Besetzen Sie die Hauptrollen vor dem endgültigen Drehplan.</strong> Die Verfügbarkeit der Darstellerinnen und Darsteller schreibt den Drehplan um; sie ist damit eine Abhängigkeit und kein Parallelvorgang.",
-      "<strong>Lesen Sie die Lieferbedingungen am Anfang, nicht am Ende.</strong> Auslieferungslisten sind lang, präzise und nicht verhandelbar — sie erst im letzten Monat zu entdecken kostet Wochen."
+      "<strong>Lesen Sie die Lieferbedingungen am Anfang, nicht am Ende.</strong> Auslieferungslisten sind lang, präzise und nicht verhandelbar, sie erst im letzten Monat zu entdecken kostet Wochen."
     ],
     faq: [
       [
         "Wie lange läuft ein Produktionszeitplan für einen Film?",
-        "Bei einem unabhängigen Spielfilm üblicherweise 12 bis 18 Monate von der Produktionsfreigabe bis zur Auslieferung — grob zwei bis drei Monate Vorbereitung, vier bis acht Wochen Dreh und sechs bis neun Monate Postproduktion und Auslieferung. Die Vorlage liegt in diesem Bereich."
+        "Bei einem unabhängigen Spielfilm üblicherweise 12 bis 18 Monate von der Produktionsfreigabe bis zur Auslieferung, grob zwei bis drei Monate Vorbereitung, vier bis acht Wochen Dreh und sechs bis neun Monate Postproduktion und Auslieferung. Die Vorlage liegt in diesem Bereich."
       ],
       [
         "Welche Phasen hat eine Filmproduktion?",
@@ -2663,11 +2663,11 @@ const T = {
       ],
       [
         "Sind VFX enthalten?",
-        "Ja — die Lieferung der VFX-Einstellungen liegt im Bildfinish und beginnt während der Postproduktion. Bei hoher Einstellungszahl ziehen Sie diese Zeilen nach vorne, damit die Dienstleisterarbeit den Schnitt überlappt."
+        "Ja, die Lieferung der VFX-Einstellungen liegt im Bildfinish und beginnt während der Postproduktion. Bei hoher Einstellungszahl ziehen Sie diese Zeilen nach vorne, damit die Dienstleisterarbeit den Schnitt überlappt."
       ],
       [
         "Ist die Vorlage für die Filmproduktion kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -2675,9 +2675,9 @@ const T = {
   'bridge-construction-schedule': {
     card: "Baugrund, Genehmigungen, Gründung, Unterbau, Überbau und Verkehrsfreigabe.",
     h1: "Bauzeitenplan für den Brückenbau",
-    metaTitle: "Brückenbau — Bauzeitenplan-Vorlage",
+    metaTitle: "Brückenbau: Bauzeitenplan-Vorlage",
     metaDesc: "Kostenloser Bauzeitenplan für den Brückenbau: Baugrund, Genehmigungen, Gründung, Unterbau, Überbau, Belag, Probebelastung, Freigabe.",
-    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan einer Brücke</strong> entlang eines echten Ingenieurbauvorhabens — Baugrunduntersuchung und Planung, öffentlich-rechtliche Genehmigungen, Gründung und Pfähle, Unterbau, Überbaumontage, Belag und Kappen, Probebelastung und Verkehrsfreigabe. Laden Sie sie für ein Angebot oder den Bericht an den Bauherrn herunter oder verknüpfen Sie online die Sperrpausen und witterungsabhängigen Arbeiten, die den Termin tatsächlich bestimmen.",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan einer Brücke</strong> entlang eines echten Ingenieurbauvorhabens, Baugrunduntersuchung und Planung, öffentlich-rechtliche Genehmigungen, Gründung und Pfähle, Unterbau, Überbaumontage, Belag und Kappen, Probebelastung und Verkehrsfreigabe. Laden Sie sie für ein Angebot oder den Bericht an den Bauherrn herunter oder verknüpfen Sie online die Sperrpausen und witterungsabhängigen Arbeiten, die den Termin tatsächlich bestimmen.",
     intro: "Ein Brückenbauvorhaben wird von Dingen bestimmt, die Ihnen nicht gehören: dem Fluss, der Straße darunter, dem Wetter und der Genehmigungsbehörde. Die Vorlage gibt jedem davon einen sichtbaren Platz, statt es in einem Bauabschnittsbalken zu vergraben:",
     phases: [
       [
@@ -2694,7 +2694,7 @@ const T = {
       ],
       [
         "Gründung",
-        "Bohrpfähle an Widerlagern und Pfeilern, Pfahlprüfungen, Pfahlkopfplatten und Fundamentbeton — der Abschnitt mit dem größten Baugrund- und Hochwasserrisiko."
+        "Bohrpfähle an Widerlagern und Pfeilern, Pfahlprüfungen, Pfahlkopfplatten und Fundamentbeton, der Abschnitt mit dem größten Baugrund- und Hochwasserrisiko."
       ],
       [
         "Unterbau",
@@ -2709,18 +2709,18 @@ const T = {
         "Abdichtung, Fahrbahnbelag, Geländer und Schutzeinrichtungen, Entwässerung, Probebelastung, Restpunkte und Freigabe für den Verkehr. <em>Meilenstein: Verkehrsfreigabe.</em>"
       ]
     ],
-    callout: "Die Sperrpause ist der Terminplan. Der Einhub über eine befahrene Straße, eine Bahnstrecke oder eine Wasserstraße findet in aller Regel innerhalb einer Monate vorher beantragten Sperrung statt, die sich nicht verschieben lässt. Setzen Sie Antrag, Zusage und das Zeitfenster selbst als drei getrennte Vorgänge auf den Plan — alles davor existiert nur, um dieses Wochenende möglich zu machen.",
+    callout: "Die Sperrpause ist der Terminplan. Der Einhub über eine befahrene Straße, eine Bahnstrecke oder eine Wasserstraße findet in aller Regel innerhalb einer Monate vorher beantragten Sperrung statt, die sich nicht verschieben lässt. Setzen Sie Antrag, Zusage und das Zeitfenster selbst als drei getrennte Vorgänge auf den Plan, alles davor existiert nur, um dieses Wochenende möglich zu machen.",
     customize: [
       "Tragen Sie zuerst die bestätigten Sperrpausen ein und rechnen Sie rückwärts; fast jeder andere Termin eines Brückenbauvorhabens ordnet sich ihnen unter.",
       "Ergänzen Sie eine Zeile je Pfeiler und Widerlager, sobald die Bauabfolge des Unterbaus feststeht, damit Bohrpfähle und Betonagen einzeln verfolgt werden.",
-      "Kennzeichnen Sie witterungsabhängige Arbeiten — Betonagen der Fahrbahnplatte, Abdichtung und Belagseinbau haben Temperatur- und Niederschlagsgrenzen, die auf den Plan gehören.",
+      "Kennzeichnen Sie witterungsabhängige Arbeiten, Betonagen der Fahrbahnplatte, Abdichtung und Belagseinbau haben Temperatur- und Niederschlagsgrenzen, die auf den Plan gehören.",
       "Ziehen Sie den Balken für die behördliche Zustimmung auf die tatsächliche Prüfdauer Ihrer Behörde, einschließlich der Schleife für die Erwiderung auf die Prüfbemerkungen.",
       "Führen Sie die Planung der Behelfsbauwerke als eigenen Vorgang; Traggerüst, Verbau und Einhubkonzept müssen geprüft und freigegeben sein, bevor das Bauwerk selbst entsteht.",
       "Legen Sie Hochwasserzeiten oder Laichschonzeiten als gesperrte Balken ein, wenn Sie im Gewässer arbeiten."
     ],
     tips: [
       "<strong>Beantragen Sie Sperrpausen, bevor die Planung fertig ist.</strong> Vorlaufzeiten für Straßenvollsperrungen und Gleissperrungen liegen im Bereich von Monaten, und die Fenster gehen an den, der zuerst gebucht hat.",
-      "<strong>Behandeln Sie Behelfsbauwerke wie das Bauwerk selbst.</strong> Traggerüst, Verbau und Einhubsysteme brauchen Planung, Prüfung und Freigabe — und sie liegen direkt auf dem kritischen Pfad zum Überbau.",
+      "<strong>Behandeln Sie Behelfsbauwerke wie das Bauwerk selbst.</strong> Traggerüst, Verbau und Einhubsysteme brauchen Planung, Prüfung und Freigabe, und sie liegen direkt auf dem kritischen Pfad zum Überbau.",
       "<strong>Planen Sie keine Betonage, die Sie weder heizen noch kühlen können.</strong> Große Betonagen der Fahrbahnplatte, die in den tiefen Winter rutschen, werden regelmäßig am Morgen abgesagt; legen Sie sie in eine machbare Jahreszeit.",
       "<strong>Rechnen Sie mit dem Fluss, nicht mit dem Mittelwert.</strong> Arbeiten im Gewässer gehören um die historischen Hochwasserzeiten herum geplant, mit Puffer für einen verlorenen Monat statt für eine verlorene Woche.",
       "<strong>Lassen Sie echte Zeit für die Probebelastung.</strong> Belastungsversuch, Messtechnik und die anschließende Bescheinigung sind ein Tor zur Freigabe und keine Sichtkontrolle am Ende.",
@@ -2737,15 +2737,15 @@ const T = {
       ],
       [
         "Wie stelle ich eine Sperrpause im Plan dar?",
-        "Als drei Vorgänge: Antrag, Zusage und das Zeitfenster selbst — und der Einhub hängt vom Zeitfenster ab. So bedroht ein Verzug weiter vorne sichtbar einen Termin, den Sie nicht verschieben können."
+        "Als drei Vorgänge: Antrag, Zusage und das Zeitfenster selbst, und der Einhub hängt vom Zeitfenster ab. So bedroht ein Verzug weiter vorne sichtbar einen Termin, den Sie nicht verschieben können."
       ],
       [
         "Passt die Vorlage auch für eine Fußgängerbrücke oder einen Durchlass?",
-        "Ja. Behalten Sie Baugrund, Genehmigungen, Gründung und Überbau bei und kürzen Sie die Pfeilerzeilen — die Abfolge bleibt im kleineren Maßstab dieselbe."
+        "Ja. Behalten Sie Baugrund, Genehmigungen, Gründung und Überbau bei und kürzen Sie die Pfeilerzeilen, die Abfolge bleibt im kleineren Maßstab dieselbe."
       ],
       [
         "Ist die Vorlage für den Brückenbau kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -2753,10 +2753,10 @@ const T = {
   'trade-show-planning-timeline': {
     card: "Countdown zur Messe: Standfläche, Standbau, Logistik, Messetage, Leads.",
     h1: "Zeitplan für die Messeplanung",
-    metaTitle: "Messeplanung — Zeitplan-Vorlage",
+    metaTitle: "Messeplanung: Zeitplan-Vorlage",
     metaDesc: "Kostenlose Vorlage für die Messeplanung: Standfläche, Standbau, Logistik, Vorab-Marketing, Personal, Messetage und Leadnachverfolgung.",
-    lead: `Eine kostenlose <strong>Vorlage für den Zeitplan der Messeplanung</strong> als Countdown zur Messe — Flächenauswahl und Vertrag, Standgestaltung und Standbau, Fristen für Spedition und Standmontage, Vorab-Marketing und Terminvereinbarung, Personalplanung und Briefing, die Messetage selbst und die Leadnachverfolgung, die darüber entscheidet, ob sich das Ganze gerechnet hat. Für Veranstaltungen ohne Ausstellung siehe die allgemeine <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a>.`,
-    intro: "Ausstellen ist ein Countdown, kein Projekt. Drei oder vier Termine sind wirklich unverrückbar und alles andere ordnet sich darum herum — deshalb zeigt die Vorlage sie als Meilensteine und nicht als Vorgänge:",
+    lead: `Eine kostenlose <strong>Vorlage für den Zeitplan der Messeplanung</strong> als Countdown zur Messe, Flächenauswahl und Vertrag, Standgestaltung und Standbau, Fristen für Spedition und Standmontage, Vorab-Marketing und Terminvereinbarung, Personalplanung und Briefing, die Messetage selbst und die Leadnachverfolgung, die darüber entscheidet, ob sich das Ganze gerechnet hat. Für Veranstaltungen ohne Ausstellung siehe die allgemeine <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a>.`,
+    intro: "Ausstellen ist ein Countdown, kein Projekt. Drei oder vier Termine sind wirklich unverrückbar und alles andere ordnet sich darum herum, deshalb zeigt die Vorlage sie als Meilensteine und nicht als Vorgänge:",
     phases: [
       [
         "Flächenauswahl und Vertrag",
@@ -2789,29 +2789,29 @@ const T = {
     ],
     callout: "Drei Termine auf diesem Plan lassen sich nicht verschieben: der Stichtag der Flächenauswahl, der über Ihren Platz auf der nächsten Messe entscheidet, die Frist für den Frühbuchertarif, nach der jede Leistung mehr kostet, und die Anlieferfrist, nach der Ihr Stand zu spät oder gar nicht ankommt. Alles Übrige ist verhandelbar. Markieren Sie diese drei und lassen Sie den Rest der Planung sich darum herum ordnen.",
     customize: [
-      "Setzen Sie den Messebeginn und lassen Sie den gesamten Plan rückwärts davon zählen — so funktioniert Messeplanung tatsächlich.",
+      "Setzen Sie den Messebeginn und lassen Sie den gesamten Plan rückwärts davon zählen, so funktioniert Messeplanung tatsächlich.",
       "Ersetzen Sie die allgemeinen Fristen durch die echten Termine aus dem Ausstellerhandbuch, sobald es veröffentlicht ist.",
       "Ergänzen Sie eine Zeile je Sendung, wenn Stand, Exponate und Drucksachen getrennt versandt werden; sie haben unterschiedliche Fristen.",
       "Verlängern Sie den Balken für das Vorab-Marketing, wenn Sie auf vereinbarte Termine setzen; die Kalender füllen sich sechs bis acht Wochen vorher, nicht in der Woche davor.",
-      "Ergänzen Sie bei internationalen Messen einen Vorgang für Zoll und Carnet — er hat eine eigene Vorlaufzeit und kann einen Stand an der Grenze festsetzen.",
+      "Ergänzen Sie bei internationalen Messen einen Vorgang für Zoll und Carnet, er hat eine eigene Vorlaufzeit und kann einen Stand an der Grenze festsetzen.",
       "Halten Sie die Nachverfolgung mit datierten Vorgängen im Plan; Leads verlieren schnell an Wert, und ein undatierter Nachfassplan ist keiner."
     ],
     tips: [
-      "<strong>Buchen Sie das nächste Jahr auf der laufenden Messe.</strong> Die Flächenvergabe findet meist vor Ort statt und richtet sich nach Teilnahmedauer und Umsatz — deshalb steht sie in dieser Vorlage vorn und nicht am Ende.",
+      "<strong>Buchen Sie das nächste Jahr auf der laufenden Messe.</strong> Die Flächenvergabe findet meist vor Ort statt und richtet sich nach Teilnahmedauer und Umsatz, deshalb steht sie in dieser Vorlage vorn und nicht am Ende.",
       "<strong>Bestellen Sie zum Frühbuchertarif.</strong> Strom, Abhängungen und Internet nach der Frist bestellt kosten für exakt dieselbe Leistung regelmäßig deutlich mehr.",
       "<strong>Halten Sie die Anlieferfrist mit Reserve ein.</strong> Verspätete Sendungen landen hinten in der Warteschlange des Verkehrsleitsystems, und Ihr Aufbaufenster wartet nicht auf sie.",
       "<strong>Lassen Sie den Standentwurf früh von der Messegesellschaft genehmigen.</strong> Bauhöhe, Abhängungen und zweigeschossige Stände brauchen eine Genehmigung und werden vor Ort abgelehnt, wenn sie nie eingereicht wurden.",
       "<strong>Proben Sie die Vorführung vor der Abreise.</strong> Erst auf dem Messestand zu merken, dass die Demo eine Bandbreite braucht, die Sie nicht bestellt haben, ist ein Problem ohne Lösung vor Ort.",
-      "<strong>Fassen Sie innerhalb von 48 Stunden nach.</strong> Die Geschwindigkeit der Nachverfolgung ist der größte Hebel für den Messeerfolg — planen Sie sie vor der Abreise ein, nicht nach der Rückkehr."
+      "<strong>Fassen Sie innerhalb von 48 Stunden nach.</strong> Die Geschwindigkeit der Nachverfolgung ist der größte Hebel für den Messeerfolg, planen Sie sie vor der Abreise ein, nicht nach der Rückkehr."
     ],
     faq: [
       [
         "Wie früh sollte die Messeplanung beginnen?",
-        "Sechs bis neun Monate vor einer großen Messe, und früher, wenn Sie eine gute Lage in der Halle wollen — die Fläche für die nächste Ausgabe wird oft schon auf der laufenden vergeben. Diese Vorlage läuft rund acht Monate bis zum Messebeginn."
+        "Sechs bis neun Monate vor einer großen Messe, und früher, wenn Sie eine gute Lage in der Halle wollen, die Fläche für die nächste Ausgabe wird oft schon auf der laufenden vergeben. Diese Vorlage läuft rund acht Monate bis zum Messebeginn."
       ],
       [
         "Worin unterscheidet sich die Vorlage von der Veranstaltungsplanung?",
-        `Diese hier ist auf das Ausstellen zugeschnitten: Flächenverträge, Standbau, Speditions- und Anlieferfristen, Frühbucherbestellungen und Leadnachverfolgung. Die <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a> deckt die eigene Veranstaltung ab — Location, Programm, Referenten und Gäste.`
+        `Diese hier ist auf das Ausstellen zugeschnitten: Flächenverträge, Standbau, Speditions- und Anlieferfristen, Frühbucherbestellungen und Leadnachverfolgung. Die <a href="/de/templates/event-planning.html">Vorlage zur Veranstaltungsplanung</a> deckt die eigene Veranstaltung ab, Location, Programm, Referenten und Gäste.`
       ],
       [
         "Welche Termine sind beim Ausstellen unverrückbar?",
@@ -2831,9 +2831,9 @@ const T = {
   'recruitment-hiring-plan': {
     card: "Eine Stelle von der Freigabe über Interviews und Angebot bis zum Eintritt.",
     h1: "Vorlage für den Recruiting- und Einstellungsplan",
-    metaTitle: "Recruiting — Vorlage Einstellungsplan",
+    metaTitle: "Recruiting: Vorlage Einstellungsplan",
     metaDesc: "Kostenloser Recruiting- und Einstellungsplan: Stellenfreigabe, Sourcing, Screening, Interviews, Auswahl, Angebot, Kündigungsfrist, Eintritt.",
-    lead: `Eine kostenlose <strong>Vorlage für den Recruiting- und Einstellungsplan</strong> für eine einzelne Stelle von Anfang bis Ende — Stellenbeschreibung und Freigabe der Stelle, Sourcing, Screening, die Interviewrunden, Auswahl und Referenzen, Angebot und Verhandlung, die Kündigungsfrist der Kandidatin oder des Kandidaten und der Eintrittstermin. Sie endet genau dort, wo das <a href="/de/templates/employee-onboarding.html">Onboarding neuer Mitarbeitender</a> beginnt.`,
+    lead: `Eine kostenlose <strong>Vorlage für den Recruiting- und Einstellungsplan</strong> für eine einzelne Stelle von Anfang bis Ende, Stellenbeschreibung und Freigabe der Stelle, Sourcing, Screening, die Interviewrunden, Auswahl und Referenzen, Angebot und Verhandlung, die Kündigungsfrist der Kandidatin oder des Kandidaten und der Eintrittstermin. Sie endet genau dort, wo das <a href="/de/templates/employee-onboarding.html">Onboarding neuer Mitarbeitender</a> beginnt.`,
     intro: "Die meisten Einstellungspläne unterschätzen dieselben zwei Dinge: wie lange die Freigabe am Anfang dauert und wie lange die Kündigungsfrist am Ende. Die Vorlage gibt beiden einen echten Balken, damit der Eintrittstermin ehrlich ist:",
     phases: [
       [
@@ -2865,13 +2865,13 @@ const T = {
         "Kündigung beim bisherigen Arbeitgeber, Kontakthalten bis zum Eintritt, Ausstattung und Zugänge, dann der erste Tag. <em>Meilenstein: Eintrittstermin.</em>"
       ]
     ],
-    callout: "Die Kündigungsfrist ist keine Formalie — sie ist oft der längste einzelne Balken im Plan. Bei einer Führungsposition mit drei Monaten Frist bringt die heute freigegebene Stelle erst in fünf oder sechs Monaten einen arbeitenden Menschen. Pläne, die bei „Angebot angenommen“ enden, versprechen die Kapazität regelmäßig ein Quartal zu früh.",
+    callout: "Die Kündigungsfrist ist keine Formalie, sie ist oft der längste einzelne Balken im Plan. Bei einer Führungsposition mit drei Monaten Frist bringt die heute freigegebene Stelle erst in fünf oder sechs Monaten einen arbeitenden Menschen. Pläne, die bei „Angebot angenommen“ enden, versprechen die Kapazität regelmäßig ein Quartal zu früh.",
     customize: [
       "Rechnen Sie rückwärts ab dem Zeitpunkt, an dem die Person produktiv sein soll, nicht ab dem Zeitpunkt der Unterschrift.",
-      "Setzen Sie den Balken für die Kündigungsfrist auf das reale Maß für Rolle und Land — ein Monat, drei Monate und sechs Monate ergeben völlig unterschiedliche Pläne.",
+      "Setzen Sie den Balken für die Kündigungsfrist auf das reale Maß für Rolle und Land, ein Monat, drei Monate und sechs Monate ergeben völlig unterschiedliche Pläne.",
       "Duplizieren Sie die Phasen von Sourcing bis Angebot je Stelle, wenn Sie ein Team aufbauen, und staffeln Sie sie gegen die Kapazität der Interviewenden.",
       "Ergänzen Sie einen eigenen Strang mit Meilensteinen, wenn Sie mit Personalberatung arbeiten; Briefing- und Shortlist-Termine sind vertraglich vereinbart.",
-      "Nehmen Sie Visum und Arbeitserlaubnis als eigene Vorgänge auf, wo relevant — sie können die Kündigungsfrist übersteigen.",
+      "Nehmen Sie Visum und Arbeitserlaubnis als eigene Vorgänge auf, wo relevant, sie können die Kündigungsfrist übersteigen.",
       "Behalten Sie die Vorgänge zum Kontakthalten im Plan. Zwischen Unterschrift und Eintritt werden zugesagte Kandidaturen abgeworben."
     ],
     tips: [
@@ -2897,7 +2897,7 @@ const T = {
       ],
       [
         "Kann ich damit mehrere Stellen gleichzeitig planen?",
-        "Ja — duplizieren Sie die Phasen von Sourcing bis Angebot je Stelle und staffeln Sie die Interviewrunden, damit dasselbe Panel nicht zweimal in derselben Woche gebucht ist."
+        "Ja, duplizieren Sie die Phasen von Sourcing bis Angebot je Stelle und staffeln Sie die Interviewrunden, damit dasselbe Panel nicht zweimal in derselben Woche gebucht ist."
       ],
       [
         "Ist die Vorlage für den Einstellungsplan kostenlos?",
@@ -2909,9 +2909,9 @@ const T = {
   'internal-audit-plan': {
     card: "Jahresplanung, Prüfungshandlungen, Feststellungen, Bericht und Nachverfolgung.",
     h1: "Prüfungsplan der Internen Revision",
-    metaTitle: "Interne Revision — Prüfungsplan-Vorlage",
+    metaTitle: "Interne Revision: Prüfungsplan-Vorlage",
     metaDesc: "Kostenlose Vorlage für den Prüfungsplan der Internen Revision: Risikoanalyse, Prüfungshandlungen, Feststellungen, Bericht, Nachverfolgung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Prüfungsplan der Internen Revision</strong> über einen vollständigen Zyklus — jährliche Risikoanalyse und Prüfungsuniversum, Genehmigung des Plans durch den Prüfungsausschuss, Prüfungsplanung und Abgrenzung der Einzelprüfung, Prüfungshandlungen vor Ort, Feststellungen und Stellungnahme der Geschäftsführung, Berichtserteilung und Nachverfolgung der Maßnahmen. Laden Sie sie für die Ausschussunterlage herunter oder legen Sie online mehrere Prüfungen über ein Jahr nebeneinander.",
+    lead: "Eine kostenlose <strong>Vorlage für den Prüfungsplan der Internen Revision</strong> über einen vollständigen Zyklus, jährliche Risikoanalyse und Prüfungsuniversum, Genehmigung des Plans durch den Prüfungsausschuss, Prüfungsplanung und Abgrenzung der Einzelprüfung, Prüfungshandlungen vor Ort, Feststellungen und Stellungnahme der Geschäftsführung, Berichtserteilung und Nachverfolgung der Maßnahmen. Laden Sie sie für die Ausschussunterlage herunter oder legen Sie online mehrere Prüfungen über ein Jahr nebeneinander.",
     intro: "Ein Prüfungsplan hat zwei Ebenen: das Jahresprogramm und die einzelne Prüfung darin. Die Vorlage zeigt beide, damit der Ausschuss die Abdeckung sieht und das Team die Arbeit:",
     phases: [
       [
@@ -2943,10 +2943,10 @@ const T = {
         "Verfolgung der Umsetzung gegen die vereinbarten Termine, Nachprüfung der als erledigt gemeldeten Maßnahmen und Meldung überfälliger Punkte an den Ausschuss."
       ]
     ],
-    callout: "In der Nachverfolgung entsteht der Nutzen der Revision — und genau dort hören Prüfungspläne meist auf. Ein erteilter Bericht ohne datierte Nachprüfung ist eine Meinung; ein verfolgter Umsetzungstermin mit einer Nachprüfung im Plan ist eine Kontrolle, die sich tatsächlich verändert hat. Lassen Sie die Balken für die Nachverfolgung im Plan und hinterlegen Sie Kapazität dafür.",
+    callout: "In der Nachverfolgung entsteht der Nutzen der Revision, und genau dort hören Prüfungspläne meist auf. Ein erteilter Bericht ohne datierte Nachprüfung ist eine Meinung; ein verfolgter Umsetzungstermin mit einer Nachprüfung im Plan ist eine Kontrolle, die sich tatsächlich verändert hat. Lassen Sie die Balken für die Nachverfolgung im Plan und hinterlegen Sie Kapazität dafür.",
     customize: [
       "Legen Sie mehrere Prüfungen über das Jahr nebeneinander, um zu sehen, ob Ihr Team für alle tatsächlich verfügbar ist.",
-      "Tragen Sie zuerst die Sitzungstermine des Prüfungsausschusses ein — sie liegen fest, und jeder Berichtstermin rechnet von einem davon rückwärts.",
+      "Tragen Sie zuerst die Sitzungstermine des Prüfungsausschusses ein, sie liegen fest, und jeder Berichtstermin rechnet von einem davon rückwärts.",
       "Ergänzen Sie eine Zeile je Prüfungsobjekt, wenn Sie dem Ausschuss die Abdeckung des Prüfungsuniversums berichten.",
       "Verlängern Sie die Prüfungshandlungen bei Prüfungen mit Vor-Ort-Terminen oder Datenauszügen; beides dauert länger als Schreibtischprüfung.",
       "Sehen Sie eine Reserve für Sonderprüfungen vor; ungeplante Aufträge sind normal, und ungeplante Aufträge ohne Reserve zerlegen den Plan.",
@@ -2954,10 +2954,10 @@ const T = {
     ],
     tips: [
       "<strong>Bauen Sie den Plan auf Risiko und prüfen Sie danach die Abdeckung.</strong> Ein risikoorientierter Plan, der einen ganzen Bereich drei Jahre lang stillschweigend auslässt, ist die Feststellung, die die Abschlussprüfer über Sie treffen werden.",
-      "<strong>Kündigen Sie früh an und vereinbaren Sie die Prozessaufnahmen.</strong> Die Verfügbarkeit der Geprüften ist der häufigste Grund für überzogene Prüfungshandlungen — und vollständig vorhersehbar.",
+      "<strong>Kündigen Sie früh an und vereinbaren Sie die Prozessaufnahmen.</strong> Die Verfügbarkeit der Geprüften ist der häufigste Grund für überzogene Prüfungshandlungen, und vollständig vorhersehbar.",
       "<strong>Stimmen Sie Sachverhalte ab, bevor Sie Feststellungen einstufen.</strong> Ein Sachverhaltsfehler, der nach der Einstufung auffällt, kostet den Bericht seine Autorität und eine ganze Durchsichtsschleife.",
       "<strong>Lassen Sie die Stellungnahme nicht ausufern.</strong> Geben Sie ihr einen begrenzten Balken mit Frist; offene Rückmeldefristen sind der Weg, wie Berichte Ausschusstermine verpassen.",
-      "<strong>Nachprüfen statt nachfragen.</strong> Die Verifikation einer erledigten Maßnahme braucht Nachweise, und die brauchen Zeit im Plan — nicht nur eine Bestätigung per E-Mail.",
+      "<strong>Nachprüfen statt nachfragen.</strong> Die Verifikation einer erledigten Maßnahme braucht Nachweise, und die brauchen Zeit im Plan, nicht nur eine Bestätigung per E-Mail.",
       "<strong>Setzen Sie den Basisplan mit der Plangenehmigung.</strong> Verfolgen Sie die Abweichung gegen den genehmigten Plan, damit ungeplante Arbeit als Verdrängung sichtbar wird und nicht lautlos aufgesogen."
     ],
     faq: [
@@ -2987,9 +2987,9 @@ const T = {
   'hospital-department-opening': {
     card: "Businessplan, Ausbau, Medizintechnik, Hygienefreigabe, Inbetriebnahme.",
     h1: "Eröffnungsplan für eine Krankenhausabteilung",
-    metaTitle: "Krankenhaus — Eröffnungsplan Abteilung",
+    metaTitle: "Krankenhaus: Eröffnungsplan Abteilung",
     metaDesc: "Kostenloser Eröffnungsplan für eine Krankenhausabteilung: Planung, Ausbau, Medizintechnik, Hygienefreigabe, Personal, erste Patientin.",
-    lead: "Eine kostenlose <strong>Vorlage für den Eröffnungsplan einer Krankenhausabteilung</strong> über die gesamte Inbetriebnahme einer neuen Fachabteilung oder Station — Wirtschaftlichkeitsberechnung und Investitionsfreigabe, Planung nach den einschlägigen Bau- und Technikanforderungen, Rohbau und Ausbau, Beschaffung der Medizintechnik, Freigabe durch die Krankenhaushygiene, Personalgewinnung und Kompetenznachweis, Datenschutz und Dokumentation sowie der Anlauf bis zur ersten Patientin.",
+    lead: "Eine kostenlose <strong>Vorlage für den Eröffnungsplan einer Krankenhausabteilung</strong> über die gesamte Inbetriebnahme einer neuen Fachabteilung oder Station, Wirtschaftlichkeitsberechnung und Investitionsfreigabe, Planung nach den einschlägigen Bau- und Technikanforderungen, Rohbau und Ausbau, Beschaffung der Medizintechnik, Freigabe durch die Krankenhaushygiene, Personalgewinnung und Kompetenznachweis, Datenschutz und Dokumentation sowie der Anlauf bis zur ersten Patientin.",
     intro: "Die Eröffnung eines klinischen Bereichs ist kein Bauvorhaben mit einem medizinischen Anhängsel am Ende. Sie ist eine Folge von Freigabetoren, von denen jedes einzelne die Tür am geplanten Tag verschlossen halten kann. Die Vorlage gibt jedem Tor eine eigene sichtbare Zeile:",
     phases: [
       [
@@ -3025,21 +3025,21 @@ const T = {
         "Verfahrensanweisungen, Simulations- und Probetage, Anzeige bei der Behörde und Begehung, Go-/No-go-Entscheidung und erste Patientin. <em>Meilenstein: erste Patientin.</em>"
       ]
     ],
-    callout: "Validierung ist keine Restpunkteliste. Prüfung der Raumlufttechnik, Trinkwasserproben und die Abnahme der Medizintechnik finden alle nach dem Abzug der Handwerker statt und bevor jemand aufgenommen werden darf — und jede davon hat eine Laborlaufzeit, die Sie nicht steuern. Lassen Sie sechs bis acht Wochen zwischen der baulichen Fertigstellung und dem Eröffnungstermin und setzen Sie jede Prüfung als Vorgang mit Ergebnistermin auf den Plan.",
+    callout: "Validierung ist keine Restpunkteliste. Prüfung der Raumlufttechnik, Trinkwasserproben und die Abnahme der Medizintechnik finden alle nach dem Abzug der Handwerker statt und bevor jemand aufgenommen werden darf, und jede davon hat eine Laborlaufzeit, die Sie nicht steuern. Lassen Sie sechs bis acht Wochen zwischen der baulichen Fertigstellung und dem Eröffnungstermin und setzen Sie jede Prüfung als Vorgang mit Ergebnistermin auf den Plan.",
     customize: [
-      "Setzen Sie den geforderten Eröffnungstermin und rechnen Sie über die Freigabe der Hygiene zurück — dieses Tor gibt den Bereich frei, nicht die bauliche Fertigstellung.",
+      "Setzen Sie den geforderten Eröffnungstermin und rechnen Sie über die Freigabe der Hygiene zurück, dieses Tor gibt den Bereich frei, nicht die bauliche Fertigstellung.",
       "Ergänzen Sie eine Zeile je Abweichung, sobald die Planprüfung beginnt; jede ist eine dokumentierte Risikoübernahme mit benannter freigebender Person.",
-      "Weiten Sie die Phase Medizintechnik auf eine Zeile je Großgerät mit den tatsächlich angebotenen Lieferzeiten aus — Bildgebung und OP-Technik überholen den Bau regelmäßig.",
+      "Weiten Sie die Phase Medizintechnik auf eine Zeile je Großgerät mit den tatsächlich angebotenen Lieferzeiten aus, Bildgebung und OP-Technik überholen den Bau regelmäßig.",
       "Verlängern Sie die Rekrutierung, wenn Sie Fachpflege oder eine Oberarztstelle besetzen müssen; genau diese Stellen verzögern sich.",
       "Legen Sie das Zeitfenster für Anzeige und Begehung als festen Balken ein und hängen Sie die erste Patientin daran.",
-      "Halten Sie einen Simulations- oder Probetag vor der Eröffnung — es ist die günstigste Art, Prozesslücken zu finden."
+      "Halten Sie einen Simulations- oder Probetag vor der Eröffnung, es ist die günstigste Art, Prozesslücken zu finden."
     ],
     tips: [
       "<strong>Starten Sie den Spülplan an dem Tag, an dem die Leitungen befüllt werden.</strong> Spül- und Beprobungspläne laufen über Wochen, und eine auffällige Probe setzt die Uhr zurück, statt sie um einen Tag zu verschieben.",
       "<strong>Bestellen Sie Großgeräte gegen die Investitionsfreigabe, nicht gegen den Baubeginn.</strong> Wartet die Bestellung auf den Bau, kommt das Gerät nach der Fertigstellung der Station an.",
-      "<strong>Behandeln Sie Berechtigungen als Abhängigkeit.</strong> Wer keine Berechtigung hat, darf keine Patientinnen behandeln — so fertig die Abteilung auch ist.",
+      "<strong>Behandeln Sie Berechtigungen als Abhängigkeit.</strong> Wer keine Berechtigung hat, darf keine Patientinnen behandeln, so fertig die Abteilung auch ist.",
       "<strong>Beginnen Sie die Datenschutz-Folgenabschätzung früh.</strong> Die Systemkonfiguration geht schnell, die Freigabe darum herum nicht.",
-      "<strong>Führen Sie die Go-/No-go-Entscheidung mit den Verantwortlichen der Tore im Raum.</strong> Hygiene, Datenschutz, Technik und ärztliche Leitung haben je ein Vetorecht — diese Entscheidungen erst am Tag einzusammeln, ist der Weg zur verschobenen Eröffnung.",
+      "<strong>Führen Sie die Go-/No-go-Entscheidung mit den Verantwortlichen der Tore im Raum.</strong> Hygiene, Datenschutz, Technik und ärztliche Leitung haben je ein Vetorecht, diese Entscheidungen erst am Tag einzusammeln, ist der Weg zur verschobenen Eröffnung.",
       "<strong>Setzen Sie den Basisplan mit dem Einfrieren der Planung.</strong> Alles davor ist Schätzung; danach hat jede Änderung einen Preis und einen Genehmigungsweg."
     ],
     faq: [
@@ -3049,7 +3049,7 @@ const T = {
       ],
       [
         "Was verzögert die Eröffnung einer klinischen Abteilung am häufigsten?",
-        "Validierung und Freigaben, nicht der Bau — Prüfung der Raumlufttechnik, Trinkwasserproben, Geräteabnahmen, Berechtigungen und Datenschutzfreigabe liegen alle nach der baulichen Fertigstellung und haben jeweils eine externe Laufzeit."
+        "Validierung und Freigaben, nicht der Bau, Prüfung der Raumlufttechnik, Trinkwasserproben, Geräteabnahmen, Berechtigungen und Datenschutzfreigabe liegen alle nach der baulichen Fertigstellung und haben jeweils eine externe Laufzeit."
       ],
       [
         "Was ist in diesem Zusammenhang eine Abweichung?",
@@ -3057,11 +3057,11 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für die Sanierung einer Station statt einer neuen Abteilung?",
-        "Ja. Streichen Sie die Vorabmaßnahmen und die Auslagerung, wenn Sie keinen Betrieb verlegen, und behalten Sie Hygiene, Medizintechnik und die Freigabephasen — die sind in beiden Fällen identisch."
+        "Ja. Streichen Sie die Vorabmaßnahmen und die Auslagerung, wenn Sie keinen Betrieb verlegen, und behalten Sie Hygiene, Medizintechnik und die Freigabephasen, die sind in beiden Fällen identisch."
       ],
       [
         "Ist die Vorlage für die Abteilungseröffnung kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -3069,9 +3069,9 @@ const T = {
   'school-year-planning-calendar': {
     card: "Stundenplanung, Personal, Anmeldungen, Prüfungen, Zeugnisse, Haushalt.",
     h1: "Jahresplanungskalender für die Schule",
-    metaTitle: "Schuljahresplanung — Kalendervorlage",
+    metaTitle: "Schuljahresplanung: Kalendervorlage",
     metaDesc: "Kostenlose Vorlage zur Schuljahresplanung: Stundenplanung, Unterrichtsverteilung, Anmeldungen, Prüfungszeiträume, Zeugnisse, Haushalt.",
-    lead: "Eine kostenlose <strong>Vorlage für den Jahresplanungskalender einer Schule</strong> auf Ebene der Schulleitung statt des Klassenzimmers — Unterrichtsverteilung und Stundenplanbau, Personalplanung und Vertretung, Anmeldungen und Aufnahme, Ferien- und Termintafel, Leistungserhebungen und externe Prüfungszeiträume, Zeugnisse und Elternsprechtage, Evaluation und Gremienarbeit sowie der Haushaltszyklus, der unter allem mitläuft.",
+    lead: "Eine kostenlose <strong>Vorlage für den Jahresplanungskalender einer Schule</strong> auf Ebene der Schulleitung statt des Klassenzimmers, Unterrichtsverteilung und Stundenplanbau, Personalplanung und Vertretung, Anmeldungen und Aufnahme, Ferien- und Termintafel, Leistungserhebungen und externe Prüfungszeiträume, Zeugnisse und Elternsprechtage, Evaluation und Gremienarbeit sowie der Haushaltszyklus, der unter allem mitläuft.",
     intro: "Ein Schuljahr wird zweimal geplant: einmal im Frühjahr davor und dann noch einmal Woche für Woche, während es läuft. Die Vorlage zeigt beides, wobei die Planungsphasen vor dem ersten Schultag liegen:",
     phases: [
       [
@@ -3107,12 +3107,12 @@ const T = {
         "Mittelzuweisung, Haushaltsaufstellung und Beschluss, unterjährige Überwachung sowie der Jahresabschluss."
       ]
     ],
-    callout: "Stundenplanbau und Personalplanung sind ein Problem, nicht zwei. Sie können keinen Stundenplan fertigstellen, ohne zu wissen, wer unterrichtet, und Sie können den Stellenplan nicht bestätigen, ohne den Bedarf des Stundenplans zu kennen. Planen Sie beides als überlappende Balken mit gemeinsamem Termin und setzen Sie die Frist für Versetzungsanträge und Kündigungen auf den Plan — dieser eine Termin entscheidet, ob der Stundenplan einmal oder dreimal gebaut wird.",
+    callout: "Stundenplanbau und Personalplanung sind ein Problem, nicht zwei. Sie können keinen Stundenplan fertigstellen, ohne zu wissen, wer unterrichtet, und Sie können den Stellenplan nicht bestätigen, ohne den Bedarf des Stundenplans zu kennen. Planen Sie beides als überlappende Balken mit gemeinsamem Termin und setzen Sie die Frist für Versetzungsanträge und Kündigungen auf den Plan, dieser eine Termin entscheidet, ob der Stundenplan einmal oder dreimal gebaut wird.",
     customize: [
-      "Setzen Sie den Nullpunkt auf den Beginn Ihres Planungshalbjahres im Frühjahr, nicht auf den Schuljahresbeginn — die meisten Entscheidungen fallen vorher.",
+      "Setzen Sie den Nullpunkt auf den Beginn Ihres Planungshalbjahres im Frühjahr, nicht auf den Schuljahresbeginn, die meisten Entscheidungen fallen vorher.",
       "Ersetzen Sie die Prüfungszeiträume durch die Termine Ihrer Schulbehörde; die liegen extern fest, alles andere ordnet sich darum.",
       "Ergänzen Sie eine Zeile je Jahrgangsstufe, wenn sich Leistungserhebungen und Zeugnisrhythmen unterscheiden.",
-      "Tragen Sie die Sitzungstermine der Schulkonferenz als Meilensteine ein — sie sind die Beschlusstore für Haushalt und Konzepte.",
+      "Tragen Sie die Sitzungstermine der Schulkonferenz als Meilensteine ein, sie sind die Beschlusstore für Haushalt und Konzepte.",
       "Verlängern Sie die Anmeldephase, wenn Sie ein Auswahlverfahren mit Widerspruchszeitraum führen.",
       "Kennzeichnen Sie pädagogische Tage ausdrücklich, damit Fortbildung eingeplant wird und nicht dazwischengequetscht."
     ],
@@ -3135,7 +3135,7 @@ const T = {
       ],
       [
         "Lässt sich die Vorlage für eine Hochschule oder Berufsschule anpassen?",
-        "Ja. Behalten Sie den Aufbau bei und ersetzen Sie die Prüfungszeiträume durch Ihre Prüfungsausschusstermine und die Anmeldezeilen durch Ihr Immatrikulationsverfahren — die Form des Jahres bleibt gleich."
+        "Ja. Behalten Sie den Aufbau bei und ersetzen Sie die Prüfungszeiträume durch Ihre Prüfungsausschusstermine und die Anmeldezeilen durch Ihr Immatrikulationsverfahren, die Form des Jahres bleibt gleich."
       ],
       [
         "Wie bilde ich zwei oder drei Aufnahmetermine im Jahr ab?",
@@ -3151,10 +3151,10 @@ const T = {
   'nonprofit-fundraising-campaign': {
     card: "Machbarkeit, Interessentenauswahl, stille Phase, Auftakt, Danksagung.",
     h1: "Kampagnenplan für Fundraising",
-    metaTitle: "Spendenkampagne — Kampagnenplan",
+    metaTitle: "Spendenkampagne: Kampagnenplan",
     metaDesc: "Kostenloser Kampagnenplan für Fundraising: Machbarkeit, Interessenten, stille Phase, öffentlicher Auftakt, Matching, Dankmanagement.",
-    lead: "Eine kostenlose <strong>Vorlage für den Kampagnenplan einer gemeinnützigen Spendenkampagne</strong>, aufgebaut so, wie Kapital- und Großspendenkampagnen tatsächlich laufen — Machbarkeitsprüfung und Argumentationspapier, Recherche und Aufbau der Interessentenliste, Pflege der Großspenderkontakte in einer stillen Phase, der öffentliche Auftakt, Veranstaltungen und Matching-Zeiträume sowie das Dank- und Berichtswesen, das darüber entscheidet, ob erneut gespendet wird.",
-    intro: "Eine Kampagne ist kein Auftakt mit anschließenden Spenden. Der größte Teil der Summe ist zugesagt, bevor die Öffentlichkeit überhaupt davon hört — deshalb bekommt die stille Phase den größten Anteil am Plan:",
+    lead: "Eine kostenlose <strong>Vorlage für den Kampagnenplan einer gemeinnützigen Spendenkampagne</strong>, aufgebaut so, wie Kapital- und Großspendenkampagnen tatsächlich laufen, Machbarkeitsprüfung und Argumentationspapier, Recherche und Aufbau der Interessentenliste, Pflege der Großspenderkontakte in einer stillen Phase, der öffentliche Auftakt, Veranstaltungen und Matching-Zeiträume sowie das Dank- und Berichtswesen, das darüber entscheidet, ob erneut gespendet wird.",
+    intro: "Eine Kampagne ist kein Auftakt mit anschließenden Spenden. Der größte Teil der Summe ist zugesagt, bevor die Öffentlichkeit überhaupt davon hört, deshalb bekommt die stille Phase den größten Anteil am Plan:",
     phases: [
       [
         "Machbarkeit und Argumentationspapier",
@@ -3166,7 +3166,7 @@ const T = {
       ],
       [
         "Leitgremium und stille Phase",
-        "Aufbau des Kampagnenkuratoriums, Eigenbeteiligung des Vorstands, Ansprache für Leit- und Großspenden sowie die Dokumentation der Zusagen — alles vor jeder öffentlichen Ankündigung. <em>Meilenstein: Ziel der stillen Phase erreicht.</em>"
+        "Aufbau des Kampagnenkuratoriums, Eigenbeteiligung des Vorstands, Ansprache für Leit- und Großspenden sowie die Dokumentation der Zusagen, alles vor jeder öffentlichen Ankündigung. <em>Meilenstein: Ziel der stillen Phase erreicht.</em>"
       ],
       [
         "Öffentlicher Auftakt",
@@ -3187,15 +3187,15 @@ const T = {
     ],
     callout: "Gehen Sie nicht an die Öffentlichkeit, bevor die stille Phase den größten Teil des Ziels gesichert hat. Kampagnen, die bei vierzig Prozent ankündigen, verbringen die öffentliche Phase mit Erklärungen; Kampagnen, die bei siebzig Prozent ankündigen, verbringen sie mit Rückenwind. Der Auftakttermin soll aus der Zusagenlage folgen und nicht aus einem Marketingkalender.",
     customize: [
-      "Legen Sie zuerst die Spendenstufentabelle fest und bemessen Sie die stille Phase an der Zahl der Leitspendengespräche, die daraus folgt — diese Zahl bestimmt die Dauer.",
+      "Legen Sie zuerst die Spendenstufentabelle fest und bemessen Sie die stille Phase an der Zahl der Leitspendengespräche, die daraus folgt, diese Zahl bestimmt die Dauer.",
       "Ergänzen Sie eine Zeile je Leitinteressent, sobald die Betreuung zugeordnet ist, damit die Kontaktpflege verfolgt und nicht unterstellt wird.",
       "Verschieben Sie den Meilenstein des öffentlichen Auftakts auf den Punkt, an dem die stille Phase Ihre Schwelle tatsächlich überschreitet.",
       "Ziehen Sie den Balken für den Einzug der Zusagen auf Ihre tatsächliche Zusagedauer; mehrjährige Zusagen überleben die Kampagne um Jahre.",
-      "Ergänzen Sie Spendentage oder Jahresendaufrufe dort, wo sie in Ihrem Kalender liegen — diese Termine liegen fest, alles andere ordnet sich darum.",
+      "Ergänzen Sie Spendentage oder Jahresendaufrufe dort, wo sie in Ihrem Kalender liegen, diese Termine liegen fest, alles andere ordnet sich darum.",
       "Lassen Sie das Dankmanagement über den Abschlusstermin hinauslaufen; es ist die Vorbereitung der nächsten Kampagne."
     ],
     tips: [
-      "<strong>Machbarkeitsgespräche sind Kontaktpflege.</strong> Wen Sie um eine ehrliche Einschätzung des Ziels bitten, den bitten Sie meist später um eine Leitspende — planen Sie die Gespräche entsprechend.",
+      "<strong>Machbarkeitsgespräche sind Kontaktpflege.</strong> Wen Sie um eine ehrliche Einschätzung des Ziels bitten, den bitten Sie meist später um eine Leitspende, planen Sie die Gespräche entsprechend.",
       "<strong>Sprechen Sie von oben nach unten an.</strong> Leitspenden setzen den Maßstab für alle darunter; wer die mittlere Ebene zuerst fragt, deckelt die Kampagne auf deren Niveau.",
       "<strong>Sichern Sie das Matching, bevor Sie es bewerben.</strong> Ein angekündigtes Matching-Fenster ohne unterschriebene Zusage ist ein Versprechen, das Sie nicht halten können.",
       "<strong>Setzen Sie den Dank mit Frist auf den Plan.</strong> Innerhalb weniger Tage zu danken hat den höchsten Ertrag im Fundraising und ist das Erste, was in einer vollen Kampagne liegen bleibt.",
@@ -3217,7 +3217,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für einen Jahresaufruf statt einer Kapitalkampagne?",
-        "Ja. Kürzen Sie die stille Phase, streichen Sie die Zeilen zum Kuratorium und behalten Sie Aufrufe, Matching und Dankmanagement — das ist die Form eines Jahresaufrufs."
+        "Ja. Kürzen Sie die stille Phase, streichen Sie die Zeilen zum Kuratorium und behalten Sie Aufrufe, Matching und Dankmanagement, das ist die Form eines Jahresaufrufs."
       ],
       [
         "Ist die Vorlage für die Spendenkampagne kostenlos?",
@@ -3229,9 +3229,9 @@ const T = {
   'warehouse-setup-project-plan': {
     card: "Standort, Mietvertrag, Regalanlage, LVS, Flurförderzeuge, Umzug, Hochlauf.",
     h1: "Projektplan für den Aufbau eines Lagers",
-    metaTitle: "Lageraufbau — Projektplan-Vorlage",
+    metaTitle: "Lageraufbau: Projektplan-Vorlage",
     metaDesc: "Kostenloser Projektplan für den Lageraufbau: Standort, Mietvertrag, Regalanlage, LVS-Anbindung, Flurförderzeuge, Bestandsumzug, Hochlauf.",
-    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Lageraufbaus</strong> für einen neuen Distributions- oder Fulfillment-Standort von Anfang bis Ende — Netzwerkanalyse und Standortsuche, Mietvertrag und Ausbau durch den Vermieter, Planung und Montage der Regalanlage, Auswahl und Anbindung des Lagerverwaltungssystems (LVS), Beschaffung der Flurförderzeuge, Bestandsumzug vom alten Standort und ein Hochlauf, der Ihre Kunden nicht im Stich lässt.",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Lageraufbaus</strong> für einen neuen Distributions- oder Fulfillment-Standort von Anfang bis Ende, Netzwerkanalyse und Standortsuche, Mietvertrag und Ausbau durch den Vermieter, Planung und Montage der Regalanlage, Auswahl und Anbindung des Lagerverwaltungssystems (LVS), Beschaffung der Flurförderzeuge, Bestandsumzug vom alten Standort und ein Hochlauf, der Ihre Kunden nicht im Stich lässt.",
     intro: "Ein Lagerprojekt sind drei Projekte in einem Gebäude: der bauliche Ausbau, die Systemanbindung und der Bestandsumzug. Sie haben unterschiedliche Vorlaufzeiten und unterschiedliche Fehlerbilder, deshalb führt die Vorlage sie als getrennte Stränge:",
     phases: [
       [
@@ -3267,10 +3267,10 @@ const T = {
         "Bestandsbereinigung, Umzugswellen, Inventurübernahme und Zykluszählung, Parallelbetrieb, Umschaltung und Mengenhochlauf. <em>Meilenstein: volle Menge.</em>"
       ]
     ],
-    callout: "Die Funkausleuchtung ist eine Abhängigkeit, kein Detail. Jeder scannergestützte Prozess im Gebäude setzt Abdeckung in jeder Gasse bis zur vollen Regalhöhe voraus, und die Regalanlage verändert die Funkumgebung vollständig. Messen Sie nach der Regalmontage und vor der Inbetriebnahme, mit Zeit für zusätzliche Zugangspunkte — wer die leere Halle ausleuchtet, entdeckt die toten Gassen im ersten Spitzengeschäft.",
+    callout: "Die Funkausleuchtung ist eine Abhängigkeit, kein Detail. Jeder scannergestützte Prozess im Gebäude setzt Abdeckung in jeder Gasse bis zur vollen Regalhöhe voraus, und die Regalanlage verändert die Funkumgebung vollständig. Messen Sie nach der Regalmontage und vor der Inbetriebnahme, mit Zeit für zusätzliche Zugangspunkte, wer die leere Halle ausleuchtet, entdeckt die toten Gassen im ersten Spitzengeschäft.",
     customize: [
       "Verankern Sie den Plan an dem Termin, zu dem Sie den bisherigen Standort verlassen oder eine Kundenzusage einhalten müssen; das setzt die Inbetriebnahme, alles andere rechnet rückwärts.",
-      "Passen Sie die Fertigungszeit der Regalanlage an Ihr Angebot an — sie ist nach dem Mietvertrag häufig die längste Einzelposition.",
+      "Passen Sie die Fertigungszeit der Regalanlage an Ihr Angebot an, sie ist nach dem Mietvertrag häufig die längste Einzelposition.",
       "Ergänzen Sie eine Zeile je Schnittstelle (ERP, Versanddienstleister, Marktplätze, Retouren), sobald der LVS-Anbieter feststeht; jede hat ihren eigenen Testzyklus.",
       "Teilen Sie den Bestandsumzug nach Umschlaghäufigkeit in Wellen, damit die Schnelldreher zuerst ankommen und der Standort arbeiten kann, während der Rest folgt.",
       "Verlängern Sie den Parallelbetrieb, wenn Sie sich keine harte Umschaltung leisten können; zwei Standorte kosten Geld, schützen aber die Lieferfähigkeit.",
@@ -3281,7 +3281,7 @@ const T = {
       "<strong>Wählen Sie das LVS, bevor das Regallayout eingefroren wird.</strong> Lagerplatzvergabe, Platznummernlogik und Wegeoptimierung folgen dem System, und nachträglich lässt sich das in einer montierten Anlage nur teuer ändern.",
       "<strong>Bestellen Sie Flurförderzeuge gegen echte Lieferzeiten.</strong> Lieferfristen für Stapler und Schubmaststapler haben sich in den letzten Jahren auf viele Monate gedehnt; der Bestelltermin gehört auf den Plan.",
       "<strong>Fahren Sie hoch, statt umzuschalten.</strong> Planen Sie die ersten Wochen bewusst mit reduzierter Menge, damit Prozessprobleme auftauchen, solange noch Kapazität da ist, sie aufzufangen.",
-      "<strong>Bereinigen Sie den Bestand vor dem Umzug.</strong> Obsolete Ware kostet doppelt — einmal für den Transport und dann für die Lagerung.",
+      "<strong>Bereinigen Sie den Bestand vor dem Umzug.</strong> Obsolete Ware kostet doppelt, einmal für den Transport und dann für die Lagerung.",
       "<strong>Setzen Sie den Basisplan mit der Vertragsunterschrift.</strong> Davor ist alles optional; danach läuft die Miete und jede Woche Verzug hat eine Zahl."
     ],
     faq: [
@@ -3311,9 +3311,9 @@ const T = {
   'road-construction-schedule': {
     card: "Planung, Genehmigungen, Leitungsumlegungen, Erdbau, Deckschicht, Freigabe.",
     h1: "Bauzeitenplan für den Straßenbau",
-    metaTitle: "Straßenbau — Bauzeitenplan-Vorlage",
+    metaTitle: "Straßenbau: Bauzeitenplan-Vorlage",
     metaDesc: "Kostenloser Bauzeitenplan für den Straßenbau: Vermessung, Genehmigungen, Leitungsumlegungen, Erdbau, Trag- und Deckschicht, Freigabe.",
-    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan im Straßenbau</strong> entlang eines echten Straßenbauvorhabens — Vermessung und Planung, Grunderwerb und Genehmigungen, Leitungsumlegungen der Sparten, Erdbau und Entwässerung, Frostschutzschicht, Tragschichten und die gebundenen Deckschichten, Beschilderung und Markierung, die abschnittsweise Verkehrsführung sowie die Übergabe an den Baulastträger.",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitenplan im Straßenbau</strong> entlang eines echten Straßenbauvorhabens, Vermessung und Planung, Grunderwerb und Genehmigungen, Leitungsumlegungen der Sparten, Erdbau und Entwässerung, Frostschutzschicht, Tragschichten und die gebundenen Deckschichten, Beschilderung und Markierung, die abschnittsweise Verkehrsführung sowie die Übergabe an den Baulastträger.",
     intro: "Bei einem Straßenbauvorhaben ist die Fahrbahn der einfache Teil. Den Termin bestimmt, was sich bewegen muss, bevor Sie graben dürfen: die Leitungen der Versorger, Grundstücke, die Ihnen noch nicht gehören, und der Verkehr, der weiterlaufen muss. Die Vorlage gibt jedem davon einen eigenen Strang:",
     phases: [
       [
@@ -3326,7 +3326,7 @@ const T = {
       ],
       [
         "Leitungsumlegungen",
-        "Kostenschätzungen der einzelnen Versorger, Umlegungsplanung, Abstimmung der Termine mit den Sparten und die Umlegungen selbst — Gas, Wasser, Strom und Telekommunikation, jede auf ihrer eigenen Zeitachse."
+        "Kostenschätzungen der einzelnen Versorger, Umlegungsplanung, Abstimmung der Termine mit den Sparten und die Umlegungen selbst, Gas, Wasser, Strom und Telekommunikation, jede auf ihrer eigenen Zeitachse."
       ],
       [
         "Verkehrsführung",
@@ -3345,13 +3345,13 @@ const T = {
         "Markierung, Beschilderung und Schilderbrücken, Straßenbeleuchtung, Schutzeinrichtungen, abschließendes Sicherheitsaudit, Restpunkte und Übergabe an den Baulastträger. <em>Meilenstein: Verkehrsfreigabe.</em>"
       ]
     ],
-    callout: "Die Leitungsumlegungen sind der Terminplan. Die Versorgungsunternehmen arbeiten nach ihren eigenen Fristen, brauchen lange Vorlaufzeiten und stauchen nicht für Ihren Termin — und jede Sparte muss fertig sein, bevor Sie in diesem Abschnitt aufgraben dürfen. Fordern Sie die Kostenschätzungen bereits in der Planung an, nicht nach der Auftragsvergabe, und setzen Sie jeden Versorger als eigenen Balken mit eigener Dauer auf den Plan.",
+    callout: "Die Leitungsumlegungen sind der Terminplan. Die Versorgungsunternehmen arbeiten nach ihren eigenen Fristen, brauchen lange Vorlaufzeiten und stauchen nicht für Ihren Termin, und jede Sparte muss fertig sein, bevor Sie in diesem Abschnitt aufgraben dürfen. Fordern Sie die Kostenschätzungen bereits in der Planung an, nicht nach der Auftragsvergabe, und setzen Sie jeden Versorger als eigenen Balken mit eigener Dauer auf den Plan.",
     customize: [
       "Tragen Sie zuerst die bestätigten Zeitfenster für den Straßenraum ein; auf einer befahrenen Straße sind sie die Fixpunkte, um die sich der Rest ordnet.",
-      "Ergänzen Sie eine Zeile je Versorger — Gas, Wasser, Strom und jeder Telekommunikationsbetreiber haben unterschiedliche Fristen und unterschiedliche Kolonnen.",
+      "Ergänzen Sie eine Zeile je Versorger, Gas, Wasser, Strom und jeder Telekommunikationsbetreiber haben unterschiedliche Fristen und unterschiedliche Kolonnen.",
       "Teilen Sie die Maßnahme in Bauabschnitte oder Stationierungsbereiche, sobald die Verkehrsführung steht, damit Erdbau und Oberbau je Abschnitt verfolgt werden.",
       "Legen Sie den Deckschichteinbau möglichst außerhalb der Wintermonate; Binder- und Deckschicht haben Temperaturgrenzen, die den Einbau am Tag selbst stoppen.",
-      "Tragen Sie umweltfachliche Sperrzeiten ein — Brutzeit, Fledermausaktivität, Fischschonzeiten — wenn Ihre Zulassungen sie vorschreiben.",
+      "Tragen Sie umweltfachliche Sperrzeiten ein, Brutzeit, Fledermausaktivität, Fischschonzeiten, wenn Ihre Zulassungen sie vorschreiben.",
       "Behalten Sie beide Sicherheitsaudits im Plan; das Audit nach dem Bau ist ein Tor zur Freigabe und keine Nachbetrachtung."
     ],
     tips: [
@@ -3381,11 +3381,11 @@ const T = {
       ],
       [
         "Kann ich sie für eine Fahrbahnsanierung statt eines Neubaus nutzen?",
-        "Ja. Streichen Sie Grunderwerb, Genehmigungen und Erdbau und behalten Sie Verkehrsführung, Oberbau und Markierung — das ist die Form einer Sanierungsmaßnahme."
+        "Ja. Streichen Sie Grunderwerb, Genehmigungen und Erdbau und behalten Sie Verkehrsführung, Oberbau und Markierung, das ist die Form einer Sanierungsmaßnahme."
       ],
       [
         "Ist die Vorlage für den Straßenbau kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Anmeldung und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Anmeldung und ohne Wasserzeichen."
       ]
     ]
   },
@@ -3393,9 +3393,9 @@ const T = {
   'mobile-app-launch-plan': {
     card: "Release Candidate, Beta, Store-Eintrag, Prüfung, Rollout, Day-One-Patch.",
     h1: "Launchplan für eine Mobile App",
-    metaTitle: "Mobile App — Launchplan-Vorlage",
+    metaTitle: "Mobile App: Launchplan-Vorlage",
     metaDesc: "Kostenloser Launchplan für Mobile Apps: Stabilisierung, Beta, Store-Eintrag, App-Store-Prüfung, stufenweiser Rollout, Day-One-Patch.",
-    lead: "Eine kostenlose <strong>Vorlage für den Launchplan einer Mobile App</strong>, aufgebaut um die Store-Freigabe statt um allgemeines Marketing — Stabilisierung des Builds und Release Candidate, Beta über TestFlight und den internen Play-Track, Store-Eintrag und Screenshots, Einreichung bei App Store und Google Play, die Wartezeit der Prüfung selbst, stufenweiser Rollout und das Zeitfenster für den Day-One-Patch. Laden Sie sie für eine Release-Freigabe herunter oder öffnen Sie sie online, um zu sehen, was Ihren Termin tatsächlich bestimmt.",
+    lead: "Eine kostenlose <strong>Vorlage für den Launchplan einer Mobile App</strong>, aufgebaut um die Store-Freigabe statt um allgemeines Marketing, Stabilisierung des Builds und Release Candidate, Beta über TestFlight und den internen Play-Track, Store-Eintrag und Screenshots, Einreichung bei App Store und Google Play, die Wartezeit der Prüfung selbst, stufenweiser Rollout und das Zeitfenster für den Day-One-Patch. Laden Sie sie für eine Release-Freigabe herunter oder öffnen Sie sie online, um zu sehen, was Ihren Termin tatsächlich bestimmt.",
     intro: "Eine Mobile App auszuliefern ist etwas anderes, als Software auf einen Server zu bringen. Jemand anderes entscheidet, wann Ihr Build live geht, und der Plan muss das zeigen. Die Vorlage trennt die Arbeit, die Sie steuern, von der Wartezeit, die Sie nicht steuern:",
     phases: [
       [
@@ -3423,13 +3423,13 @@ const T = {
         "Beobachtung von Abstürzen und ANR-Fehlern, das reservierte Patch-Fenster, Antworten auf Store-Bewertungen und die Auswertung der Bindung in Woche eins."
       ]
     ],
-    callout: "Rechnen Sie mit einer Ablehnung. Erste Einreichungen werden oft genug abgelehnt, dass ein Plan ohne Puffer für die erneute Einreichung ein Münzwurf ist — und bei der erneuten Einreichung beginnt die Uhr wieder bei null. Setzen Sie Prüfwartezeit und Ablehnungspuffer als zwei getrennte Balken auf den Plan und legen Sie den Ankündigungstermin hinter den zweiten, nicht hinter den ersten.",
+    callout: "Rechnen Sie mit einer Ablehnung. Erste Einreichungen werden oft genug abgelehnt, dass ein Plan ohne Puffer für die erneute Einreichung ein Münzwurf ist, und bei der erneuten Einreichung beginnt die Uhr wieder bei null. Setzen Sie Prüfwartezeit und Ablehnungspuffer als zwei getrennte Balken auf den Plan und legen Sie den Ankündigungstermin hinter den zweiten, nicht hinter den ersten.",
     customize: [
-      "Setzen Sie den Einreichungstermin und rechnen Sie vorwärts, nicht rückwärts — die Prüfdauer können Sie nicht stauchen.",
+      "Setzen Sie den Einreichungstermin und rechnen Sie vorwärts, nicht rückwärts, die Prüfdauer können Sie nicht stauchen.",
       "Teilen Sie Einreichung und Prüfung je Store auf, wenn iOS und Android unterschiedlich takten; die Prüfdauern unterscheiden sich.",
       "Verlängern Sie den Ablehnungspuffer bei einer ersten Einreichung, bei Abo-Apps und bei allem, was Kontolöschung, Gesundheitsdaten oder nutzergenerierte Inhalte berührt.",
       "Passen Sie die Rolloutstufen an die Plattform an; der gestaffelte Rollout bei Google Play und die phasenweise Veröffentlichung im App Store laufen nicht identisch.",
-      "Halten Sie das Patch-Fenster mit namentlich benannten Personen im Plan — ein unbesetztes Patch-Fenster ist nur eine leere Woche.",
+      "Halten Sie das Patch-Fenster mit namentlich benannten Personen im Plan, ein unbesetztes Patch-Fenster ist nur eine leere Woche.",
       "Setzen Sie Release Candidate, Beta-Abschluss, Store-Freigabe und volle Verfügbarkeit als Meilensteine; nach diesen vier Terminen wird gefragt."
     ],
     tips: [
@@ -3451,15 +3451,15 @@ const T = {
       ],
       [
         "Worin unterscheidet sich das von einem Plan zur Produkteinführung?",
-        "Dieser Plan ist auf den Store zugeschnitten — Einreichung, Prüfung und gestaffelter Rollout stehen im Mittelpunkt. Für Preisgestaltung, Positionierung und Kampagnen nutzen Sie daneben die <a href=\"/de/templates/product-launch.html\">Vorlage zur Produkteinführung</a>."
+        "Dieser Plan ist auf den Store zugeschnitten, Einreichung, Prüfung und gestaffelter Rollout stehen im Mittelpunkt. Für Preisgestaltung, Positionierung und Kampagnen nutzen Sie daneben die <a href=\"/de/templates/product-launch.html\">Vorlage zur Produkteinführung</a>."
       ],
       [
         "Stufenweiser Rollout oder Veröffentlichung an alle?",
-        "Staffeln Sie, sofern nichts dagegen spricht. Eine gestaffelte Veröffentlichung lässt Sie bei 1 Prozent anhalten, wenn die absturzfreie Rate fällt — das ist deutlich günstiger als ein Notfall-Rollback für alle."
+        "Staffeln Sie, sofern nichts dagegen spricht. Eine gestaffelte Veröffentlichung lässt Sie bei 1 Prozent anhalten, wenn die absturzfreie Rate fällt, das ist deutlich günstiger als ein Notfall-Rollback für alle."
       ],
       [
         "Ist die Vorlage für den App-Launch kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -3467,10 +3467,10 @@ const T = {
   'iso-9001-certification-plan': {
     card: "Gap-Analyse, QM-Handbuch, internes Audit, Stufe 1 und 2, Zertifikat.",
     h1: "Projektplan zur ISO-9001-Zertifizierung",
-    metaTitle: "ISO 9001 — Zertifizierungsplan-Vorlage",
+    metaTitle: "ISO 9001: Zertifizierungsplan-Vorlage",
     metaDesc: "Kostenloser Plan zur ISO-9001-Zertifizierung: Gap-Analyse, QM-Handbuch, internes Audit, Managementbewertung, Stufe 1 und 2, Überwachung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Projektplan einer ISO-9001-Zertifizierung</strong> entlang des tatsächlichen Wegs zum Zertifikat — Gap-Analyse, Prozesslandkarte, QM-Dokumentation, Umsetzung und Schulung, der Zyklus des internen Audits, Managementbewertung und Korrekturmaßnahmen, danach das zweistufige externe Zertifizierungsaudit und das erste Überwachungsaudit. Laden Sie sie für die Unterlage zur Managementbewertung herunter oder verknüpfen Sie online die Tore, die sich nicht überspringen lassen.",
-    intro: "Eine ISO-9001-Zertifizierung ist kein Dokumentationsprojekt. Die Zertifizierungsstelle will Aufzeichnungen eines Systems sehen, das tatsächlich gelaufen ist — deshalb liegen internes Audit und Managementbewertung vor dem externen Audit und nicht daneben:",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan einer ISO-9001-Zertifizierung</strong> entlang des tatsächlichen Wegs zum Zertifikat, Gap-Analyse, Prozesslandkarte, QM-Dokumentation, Umsetzung und Schulung, der Zyklus des internen Audits, Managementbewertung und Korrekturmaßnahmen, danach das zweistufige externe Zertifizierungsaudit und das erste Überwachungsaudit. Laden Sie sie für die Unterlage zur Managementbewertung herunter oder verknüpfen Sie online die Tore, die sich nicht überspringen lassen.",
+    intro: "Eine ISO-9001-Zertifizierung ist kein Dokumentationsprojekt. Die Zertifizierungsstelle will Aufzeichnungen eines Systems sehen, das tatsächlich gelaufen ist, deshalb liegen internes Audit und Managementbewertung vor dem externen Audit und nicht daneben:",
     phases: [
       [
         "Gap-Analyse und Planung",
@@ -3505,13 +3505,13 @@ const T = {
         "Der Verbesserungszyklus, eine zweite Runde interner Audits und das Überwachungsaudit im ersten Jahr, das die Gültigkeit des Zertifikats erhält."
       ]
     ],
-    callout: "Der Abstand zwischen Stufe 1 und Stufe 2 ist der ganze Sinn des zweistufigen Audits, und die meisten Pläne setzen ihn falsch an. Stufe 1 sagt Ihnen, ob Ihr System reif ist; Stufe 2 prüft, ob es wirkt. Zertifizierungsstellen wollen regelmäßig mehrere Wochen dazwischen, damit Feststellungen geschlossen werden können — Stufe 2 zu dicht hinter Stufe 1 zu buchen, ist der Weg zu einem zusätzlichen kostenpflichtigen Besuch.",
+    callout: "Der Abstand zwischen Stufe 1 und Stufe 2 ist der ganze Sinn des zweistufigen Audits, und die meisten Pläne setzen ihn falsch an. Stufe 1 sagt Ihnen, ob Ihr System reif ist; Stufe 2 prüft, ob es wirkt. Zertifizierungsstellen wollen regelmäßig mehrere Wochen dazwischen, damit Feststellungen geschlossen werden können, Stufe 2 zu dicht hinter Stufe 1 zu buchen, ist der Weg zu einem zusätzlichen kostenpflichtigen Besuch.",
     customize: [
-      "Wählen Sie die Zertifizierungsstelle früh und tragen Sie deren tatsächliche Verfügbarkeit ein — Audittermine werden Monate im Voraus vergeben und setzen Ihren äußeren Termin.",
+      "Wählen Sie die Zertifizierungsstelle früh und tragen Sie deren tatsächliche Verfügbarkeit ein, Audittermine werden Monate im Voraus vergeben und setzen Ihren äußeren Termin.",
       "Verlängern Sie den Umsetzungszeitraum, wenn Ihre Prozesse lange Zyklen haben; Sie brauchen Aufzeichnungen über einen repräsentativen Zeitraum, nicht über zwei Wochen.",
       "Ergänzen Sie eine Zeile je Prozessbereich in Prozessaufnahme und internem Audit, damit die Abdeckung sichtbar und nicht unterstellt ist.",
       "Legen Sie je Hauptabweichung eine Korrekturmaßnahmenzeile an, sobald die Feststellungen aus Stufe 1 vorliegen; jede hat eigene Nachweise und einen eigenen Abschlusstermin.",
-      "Setzen Sie Dokumentationsfreigabe, bestätigte Auditreife, Abschluss von Stufe 2 und Zertifikatserteilung als Meilensteine — das sind die Termine für die Geschäftsführung.",
+      "Setzen Sie Dokumentationsfreigabe, bestätigte Auditreife, Abschluss von Stufe 2 und Zertifikatserteilung als Meilensteine, das sind die Termine für die Geschäftsführung.",
       "Wenn Sie bereits ein anderes Managementsystem zertifiziert haben, kürzen Sie die Dokumentationsphase und nutzen Sie die gemeinsamen Kapitel weiter, statt sie neu zu schreiben."
     ],
     tips: [
@@ -3549,9 +3549,9 @@ const T = {
   'soc2-compliance-timeline': {
     card: "Scoping, Kontrollen, Behebung, Nachweise, Beobachtungszeitraum, Bericht.",
     h1: "Zeitplan für SOC-2-Compliance",
-    metaTitle: "SOC 2 — Zeitplan-Vorlage für Compliance",
+    metaTitle: "SOC 2: Zeitplan-Vorlage für Compliance",
     metaDesc: "Kostenlose SOC-2-Zeitplan-Vorlage: Scoping, Kontrolldesign, Behebung, Nachweise, Readiness, Beobachtungszeitraum, Prüfung, Bericht.",
-    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer SOC-2-Compliance</strong> über das gesamte Vorhaben — Abgrenzung des Systems und Auswahl der Trust Services Criteria, Kontrolldesign, Behebung, Nachweiserhebung, die Readiness-Bewertung, der Beobachtungszeitraum für Type II, die Prüfungshandlungen des Wirtschaftsprüfers und die Berichtserteilung. Laden Sie sie für eine Sicherheitsprüfung durch Kunden herunter oder öffnen Sie sie online, um zu sehen, warum der Berichtstermin dort liegt, wo er liegt.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer SOC-2-Compliance</strong> über das gesamte Vorhaben, Abgrenzung des Systems und Auswahl der Trust Services Criteria, Kontrolldesign, Behebung, Nachweiserhebung, die Readiness-Bewertung, der Beobachtungszeitraum für Type II, die Prüfungshandlungen des Wirtschaftsprüfers und die Berichtserteilung. Laden Sie sie für eine Sicherheitsprüfung durch Kunden herunter oder öffnen Sie sie online, um zu sehen, warum der Berichtstermin dort liegt, wo er liegt.",
     intro: "Fast jede Frage zum SOC-2-Zeitplan ist in Wahrheit eine Frage zum Beobachtungszeitraum. Type I ist ein Urteil zu einem Stichtag; Type II deckt einen Zeitraum ab, in dem Ihre Kontrollen tatsächlich wirken müssen. Die Vorlage macht diesen Zeitraum zu einem sichtbaren Balken, damit niemand einen Bericht zusagt, den die Rechnung verbietet:",
     phases: [
       [
@@ -3564,7 +3564,7 @@ const T = {
       ],
       [
         "Behebung",
-        "Zugriffsverwaltung und Rezertifizierung, Freigabetore im Änderungsmanagement, Protokollierung und Überwachung, Lieferantenrisiko, Sicherheitsschulungen und ein Test der Notfallreaktion — die eigentliche technische Arbeit."
+        "Zugriffsverwaltung und Rezertifizierung, Freigabetore im Änderungsmanagement, Protokollierung und Überwachung, Lieferantenrisiko, Sicherheitsschulungen und ein Test der Notfallreaktion, die eigentliche technische Arbeit."
       ],
       [
         "Nachweise und Readiness",
@@ -3572,29 +3572,29 @@ const T = {
       ],
       [
         "Type-I-Bericht (optional)",
-        "Prüfungshandlungen zum Stichtag und ein Type-I-Bericht — hilfreich, wenn ein Kunde etwas in der Hand braucht, während der Beobachtungszeitraum läuft."
+        "Prüfungshandlungen zum Stichtag und ein Type-I-Bericht, hilfreich, wenn ein Kunde etwas in der Hand braucht, während der Beobachtungszeitraum läuft."
       ],
       [
         "Beobachtungszeitraum",
-        "Der Zeitraum, den das Type-II-Urteil abdeckt — durchgehend wirkende Kontrollen, monatliche Nachweisprüfpunkte und vierteljährliche Rezertifizierungen. Drei bis zwölf Monate, und nicht stauchbar."
+        "Der Zeitraum, den das Type-II-Urteil abdeckt, durchgehend wirkende Kontrollen, monatliche Nachweisprüfpunkte und vierteljährliche Rezertifizierungen. Drei bis zwölf Monate, und nicht stauchbar."
       ],
       [
         "Prüfung und Bericht",
         "Stichprobenanforderungen des Prüfers, Übergabe der Nachweise, Prüfungshandlungen, Abweichungen und Stellungnahme der Geschäftsführung, Durchsicht des Entwurfs und Berichtserteilung. <em>Meilenstein: Type-II-Bericht erteilt.</em>"
       ]
     ],
-    callout: "Den Beobachtungszeitraum können Sie nicht verkürzen. Ein Type-II-Bericht sagt aus, dass Ihre Kontrollen über einen Zeitraum gewirkt haben — drei Monate Beobachtungszeitraum sind also drei Monate Kalenderzeit, die kein Budget zurückkauft. Der einzige Hebel ist der Startzeitpunkt, weshalb die bestätigte Readiness und nicht der Berichtstermin der Meilenstein ist, um den es sich zu kämpfen lohnt.",
+    callout: "Den Beobachtungszeitraum können Sie nicht verkürzen. Ein Type-II-Bericht sagt aus, dass Ihre Kontrollen über einen Zeitraum gewirkt haben, drei Monate Beobachtungszeitraum sind also drei Monate Kalenderzeit, die kein Budget zurückkauft. Der einzige Hebel ist der Startzeitpunkt, weshalb die bestätigte Readiness und nicht der Berichtstermin der Meilenstein ist, um den es sich zu kämpfen lohnt.",
     customize: [
-      "Legen Sie zuerst die Länge des Beobachtungszeitraums fest — drei Monate für den ersten Bericht, sechs bis zwölf im Jahreszyklus — und setzen Sie den Balken entsprechend.",
+      "Legen Sie zuerst die Länge des Beobachtungszeitraums fest, drei Monate für den ersten Bericht, sechs bis zwölf im Jahreszyklus, und setzen Sie den Balken entsprechend.",
       "Streichen Sie die Type-I-Phase ganz, wenn kein Kunde einen Zwischenbericht braucht; viele Organisationen gehen direkt auf Type II.",
       "Ergänzen Sie eine Zeile je Kategorie über Security hinaus; Availability, Confidentiality, Processing Integrity und Privacy bringen jeweils zusätzliche Kontrollen und Nachweise mit.",
       "Weiten Sie die Behebung nach der Readiness-Bewertung auf eine Zeile je Lücke aus, damit die technische Arbeit verfolgt und nicht zusammengefasst wird.",
-      "Legen Sie die monatlichen Nachweisprüfpunkte als wiederkehrende Zeilen über den Zeitraum — fehlende Monate sind die häufigste Ursache für Abweichungen im Bericht.",
+      "Legen Sie die monatlichen Nachweisprüfpunkte als wiederkehrende Zeilen über den Zeitraum, fehlende Monate sind die häufigste Ursache für Abweichungen im Bericht.",
       "Setzen Sie Umfangsabstimmung, bestätigte Readiness, Beginn und Ende des Zeitraums sowie die Berichtserteilung als Meilensteine."
     ],
     tips: [
       "<strong>Starten Sie den Zeitraum erst, wenn die Behebung wirklich abgeschlossen ist.</strong> Eine im ersten Monat versagende Kontrolle ist eine Abweichung im Bericht; zwei Wochen später zu starten kostet zwei Wochen, zu früh zu starten kann den Bericht kosten.",
-      "<strong>Automatisieren Sie die Nachweiserhebung vor Beginn des Zeitraums, nicht währenddessen.</strong> Drei Monate Rezertifizierungen nachträglich zu rekonstruieren, ist die schmerzhafteste Aufgabe eines SOC 2 — und Prüfer merken es meist.",
+      "<strong>Automatisieren Sie die Nachweiserhebung vor Beginn des Zeitraums, nicht währenddessen.</strong> Drei Monate Rezertifizierungen nachträglich zu rekonstruieren, ist die schmerzhafteste Aufgabe eines SOC 2, und Prüfer merken es meist.",
       "<strong>Fassen Sie den Umfang beim ersten Bericht eng.</strong> Security allein ist ein gültiger Umfang und wird von den meisten Kunden akzeptiert; jede weitere Kategorie vervielfacht Kontrollen und verlängert jede Phase.",
       "<strong>Beauftragen Sie den Prüfer früh.</strong> Seine Verfügbarkeit für die Prüfungshandlungen ist eine echte Nebenbedingung, und eine erst zum Ende gebuchte Kanzlei beginnt nicht in der Woche des Abschlusses.",
       "<strong>Rechnen Sie mit Abweichungen.</strong> Fast jeder Bericht enthält welche; entscheidend ist die Stellungnahme der Geschäftsführung, und die braucht Zeit im Plan, bevor der Entwurf finalisiert wird.",
@@ -3615,7 +3615,7 @@ const T = {
       ],
       [
         "Geht ein SOC-2-Bericht auch schneller?",
-        "Sie können die Vorbereitung verkürzen und einen Type I erteilen lassen, während der Zeitraum läuft. Den Zeitraum selbst können Sie nicht verkürzen — das ist der Teil des Plans, den niemand steuert."
+        "Sie können die Vorbereitung verkürzen und einen Type I erteilen lassen, während der Zeitraum läuft. Den Zeitraum selbst können Sie nicht verkürzen, das ist der Teil des Plans, den niemand steuert."
       ],
       [
         "Ist die Vorlage für den SOC-2-Zeitplan kostenlos?",
@@ -3627,9 +3627,9 @@ const T = {
   'manufacturing-production-schedule': {
     card: "Bedarf, Materialverfügbarkeit, Rüstwechsel, Fertigungslose, Prüfung, Versand.",
     h1: "Produktionsplan für die Fertigung",
-    metaTitle: "Fertigung — Produktionsplan-Vorlage",
+    metaTitle: "Fertigung: Produktionsplan-Vorlage",
     metaDesc: "Kostenloser Produktionsplan für die Fertigung: Bedarfsplanung, Lieferzeiten, Losplanung, Rüstwechsel, Prüfung, Sperrbestand, Versand.",
-    lead: "Eine kostenlose <strong>Vorlage für den Produktionsplan einer Fertigung</strong> für die Stückfertigung — Bedarfsplan und Produktionsprogramm, Materialbeschaffung gegen echte Lieferzeiten, Reihenfolgeplanung und Rüstwechsel, die Fertigungslose selbst, fertigungsbegleitende und abschließende Prüfung, danach Verpackung und Versand. Laden Sie sie für die Planungsrunde herunter oder öffnen Sie sie online, um zu sehen, ob Ihr Material vor der freien Linie da ist.",
+    lead: "Eine kostenlose <strong>Vorlage für den Produktionsplan einer Fertigung</strong> für die Stückfertigung, Bedarfsplan und Produktionsprogramm, Materialbeschaffung gegen echte Lieferzeiten, Reihenfolgeplanung und Rüstwechsel, die Fertigungslose selbst, fertigungsbegleitende und abschließende Prüfung, danach Verpackung und Versand. Laden Sie sie für die Planungsrunde herunter oder öffnen Sie sie online, um zu sehen, ob Ihr Material vor der freien Linie da ist.",
     intro: "Ein Produktionsplan sind zwei Pläne, die zusammenkommen müssen: eintreffendes Material und verfügbare Kapazität. Die Vorlage führt beide als getrennte Stränge, damit der Zusammenstoß sichtbar wird, bevor er in der Fertigung passiert:",
     phases: [
       [
@@ -3657,12 +3657,12 @@ const T = {
         "Verpacken und Etikettieren, Palettierung und Ladeplanung, Speditionsavis und Versandpapiere. <em>Meilenstein: Auftrag versandt.</em>"
       ]
     ],
-    callout: "Rüstwechsel sind Produktionszeit. Ein Plan, der drei Lose direkt hintereinander und keine Rüstbalken zeigt, behauptet eine Kapazität, die es nicht gibt — und auf einer Linie mit häufigen Produktwechseln kann das Rüsten einen zweistelligen Anteil der verfügbaren Stunden ausmachen. Setzen Sie jeden Rüstwechsel mit seiner gemessenen Dauer auf den Plan, nicht mit der erhofften.",
+    callout: "Rüstwechsel sind Produktionszeit. Ein Plan, der drei Lose direkt hintereinander und keine Rüstbalken zeigt, behauptet eine Kapazität, die es nicht gibt, und auf einer Linie mit häufigen Produktwechseln kann das Rüsten einen zweistelligen Anteil der verfügbaren Stunden ausmachen. Setzen Sie jeden Rüstwechsel mit seiner gemessenen Dauer auf den Plan, nicht mit der erhofften.",
     customize: [
       "Tragen Sie die echten Lieferzeiten je Komponente ein; die längste davon, nicht die Linienbelegung, bestimmt meist den frühesten möglichen Start.",
       "Ergänzen Sie eine Zeile je Arbeitsplatz oder Linie, wenn Sie mehrere planen, damit Belegungskonflikte sichtbar werden.",
       "Setzen Sie Rüstzeiten nach tatsächlich gemessenen Werten und halten Sie sie von den Losen davor und danach getrennt.",
-      "Legen Sie einen Balken für den Sperrbestand ein, wo eine Charge auf die Entscheidung wartet — dieses Warten ist stillstehender Bestand.",
+      "Legen Sie einen Balken für den Sperrbestand ein, wo eine Charge auf die Entscheidung wartet, dieses Warten ist stillstehender Bestand.",
       "Ergänzen Sie Sicherheitsbestände oder Pufferbalken vor Losen, die eine feste Kundenzusage bedienen.",
       "Setzen Sie Materialverfügbarkeit, Erstmusterfreigabe, Chargenfreigabe und Versand als Meilensteine."
     ],
@@ -3681,11 +3681,11 @@ const T = {
       ],
       [
         "Wie stelle ich Rüstwechsel im Gantt-Diagramm dar?",
-        "Als eigene kurze Balken zwischen den Losen, wobei jedes Los vom Rüstwechsel davor abhängt. Das Rüsten im Losbalken zu verstecken überzeichnet Ihre verfügbare Kapazität — der häufigste Fehler in einem Produktionsplan."
+        "Als eigene kurze Balken zwischen den Losen, wobei jedes Los vom Rüstwechsel davor abhängt. Das Rüsten im Losbalken zu verstecken überzeichnet Ihre verfügbare Kapazität, der häufigste Fehler in einem Produktionsplan."
       ],
       [
         "Passt die Vorlage auch für die Prozessfertigung?",
-        "Am besten passt sie zur Stückfertigung — Chargen, Stück und Rüstwechsel. Für kontinuierliche Prozesse behalten Sie Beschaffung und Versand und ersetzen die Loszeilen durch Kampagnenbalken."
+        "Am besten passt sie zur Stückfertigung, Chargen, Stück und Rüstwechsel. Für kontinuierliche Prozesse behalten Sie Beschaffung und Versand und ersetzen die Loszeilen durch Kampagnenbalken."
       ],
       [
         "Worin unterscheidet sie sich vom Produktionskalender für Bekleidung?",
@@ -3701,10 +3701,10 @@ const T = {
   'website-redesign-project-plan': {
     card: "Analyse, Inhalte, Design, Umsetzung, Migration, Weiterleitungen, Launch.",
     h1: "Projektplan für den Website-Relaunch",
-    metaTitle: "Website-Relaunch — Projektplan",
+    metaTitle: "Website-Relaunch: Projektplan",
     metaDesc: "Kostenloser Projektplan für den Website-Relaunch: Analyse, Inhaltsaudit, Design, Umsetzung, Migration, Weiterleitungen, QA, Launch.",
-    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Website-Relaunchs</strong> über das gesamte Projekt — Analyse, Informationsarchitektur und Inhaltsaudit, Design, Umsetzung, Inhaltsmigration, Weiterleitungskonzept für die Suchmaschinen, Qualitätssicherung und die Beobachtung nach dem Launch. Laden Sie sie für ein Agenturangebot oder den internen Auftakt herunter oder geben Sie online der Weiterleitungsliste und der Migration den Platz, den sie wirklich brauchen.",
-    intro: "Relaunches scheitern selten am Design. Sie scheitern an den beiden unspektakulären Strängen, die niemand ausreichend besetzt — die Inhalte umziehen und die Adressen abbilden. Deshalb bekommen beide eine eigene Phase mit eigenen Abhängigkeiten:",
+    lead: "Eine kostenlose <strong>Vorlage für den Projektplan eines Website-Relaunchs</strong> über das gesamte Projekt, Analyse, Informationsarchitektur und Inhaltsaudit, Design, Umsetzung, Inhaltsmigration, Weiterleitungskonzept für die Suchmaschinen, Qualitätssicherung und die Beobachtung nach dem Launch. Laden Sie sie für ein Agenturangebot oder den internen Auftakt herunter oder geben Sie online der Weiterleitungsliste und der Migration den Platz, den sie wirklich brauchen.",
+    intro: "Relaunches scheitern selten am Design. Sie scheitern an den beiden unspektakulären Strängen, die niemand ausreichend besetzt, die Inhalte umziehen und die Adressen abbilden. Deshalb bekommen beide eine eigene Phase mit eigenen Abhängigkeiten:",
     phases: [
       [
         "Analyse",
@@ -3739,14 +3739,14 @@ const T = {
         "Go-/No-go-Entscheidung, DNS-Umstellung, Kontrolle der Weiterleitungen nach dem Launch, Einreichen der Sitemap und dreißig Tage Beobachtung von Crawl-Fehlern und Rankings."
       ]
     ],
-    callout: "Die Weiterleitungsliste ist das Projekt. Jede Adresse, die sich ohne 301-Weiterleitung ändert, ist Traffic, für den Sie bezahlt und den Sie dann weggeworfen haben — und der Schaden zeigt sich Wochen später, wenn die Rankings längst weg sind. Bauen Sie die Liste aus einem vollständigen Crawl der alten Website und nicht aus der neuen Sitemap, und testen Sie sie auf der Staging-Umgebung vor dem Launch, nicht danach.",
+    callout: "Die Weiterleitungsliste ist das Projekt. Jede Adresse, die sich ohne 301-Weiterleitung ändert, ist Traffic, für den Sie bezahlt und den Sie dann weggeworfen haben, und der Schaden zeigt sich Wochen später, wenn die Rankings längst weg sind. Bauen Sie die Liste aus einem vollständigen Crawl der alten Website und nicht aus der neuen Sitemap, und testen Sie sie auf der Staging-Umgebung vor dem Launch, nicht danach.",
     customize: [
       "Beginnen Sie das Adressverzeichnis in der ersten Woche; der Crawl der bestehenden Website ist die Eingabe für Inhaltsaudit, Migrationsliste und Weiterleitungen.",
-      "Ergänzen Sie eine Zeile je Inhaltstyp oder Bereich, wenn Sie tausende Seiten migrieren — ein einzelner Balken für die Migration versteckt immer einen Monat.",
+      "Ergänzen Sie eine Zeile je Inhaltstyp oder Bereich, wenn Sie tausende Seiten migrieren, ein einzelner Balken für die Migration versteckt immer einen Monat.",
       "Bemessen Sie die Textüberarbeitung ehrlich; sie ist meist der am stärksten unterschätzte Vorgang im ganzen Projekt und braucht Redaktion, nicht Entwicklung.",
       "Halten Sie einen Meilenstein für den Redaktionsstopp auf der alten Website, damit die Migration nicht einem beweglichen Ziel hinterherläuft.",
       "Machen Sie den Weiterleitungs-Crawl auf der Staging-Umgebung zum harten Vorgänger der Go-/No-go-Entscheidung statt zu einer Nettigkeit der Qualitätssicherung.",
-      "Ziehen Sie die Beobachtung nach dem Launch auf mindestens dreißig Tage — Suchmaschinen brauchen Wochen, um eine geänderte Website neu zu erfassen."
+      "Ziehen Sie die Beobachtung nach dem Launch auf mindestens dreißig Tage, Suchmaschinen brauchen Wochen, um eine geänderte Website neu zu erfassen."
     ],
     tips: [
       "<strong>Crawlen Sie die alte Website vor allem anderen.</strong> Sie können nichts auditieren, migrieren oder weiterleiten, was Sie nicht erfasst haben, und die meisten Organisationen haben deutlich mehr aktive Adressen als gedacht.",
@@ -3767,7 +3767,7 @@ const T = {
       ],
       [
         "Wann sollte die Inhaltsmigration beginnen?",
-        "Sobald das Inhaltsaudit steht und die Migrationsliste existiert — deutlich vor dem Ende der Umsetzung. Inhalte sind der lange Balken, und erst nach fertigen Templates zu beginnen kostet Monate."
+        "Sobald das Inhaltsaudit steht und die Migrationsliste existiert, deutlich vor dem Ende der Umsetzung. Inhalte sind der lange Balken, und erst nach fertigen Templates zu beginnen kostet Monate."
       ],
       [
         "Was sollte ich nach dem Launch beobachten?",
@@ -3775,7 +3775,7 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Website-Relaunch kostenlos?",
-        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online — ohne Konto und ohne Wasserzeichen."
+        "Ja. Kostenlose Downloads als Excel, PowerPoint und CSV sowie kostenloses Bearbeiten online, ohne Konto und ohne Wasserzeichen."
       ]
     ]
   },
@@ -3783,9 +3783,9 @@ const T = {
   'hotel-refurbishment-schedule': {
     card: "Etagenweise Schließungen, Zimmerausfall, Lärmfenster, Aufzüge, öffentliche Bereiche.",
     h1: "Terminplan für die Hotelsanierung im laufenden Betrieb",
-    metaTitle: "Hotelsanierung — Terminplan-Vorlage",
+    metaTitle: "Hotelsanierung: Terminplan-Vorlage",
     metaDesc: "Kostenloser Terminplan für die Hotelsanierung im laufenden Betrieb: Etagenschließungen, Zimmerausfall, Lärmfenster, Aufzüge, Abnahme.",
-    lead: "Eine kostenlose <strong>Terminplan-Vorlage für die Hotelsanierung</strong> für ein Haus, das während des Umbaus weiter verkauft — etagenweise Schließungen, der Zimmerausfall und der Erlös, den jede Schließung kostet, Lärmfenster rund um die Gästezeiten, die vertikale Abfolge von Steigeschächten und Aufzügen sowie die öffentlichen Bereiche in der Nebensaison. Laden Sie sie für Eigentümer oder Asset Management herunter oder öffnen Sie sie online, um zu sehen, wie viele Zimmer Sie Monat für Monat tatsächlich aus dem Verkauf nehmen.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für die Hotelsanierung</strong> für ein Haus, das während des Umbaus weiter verkauft, etagenweise Schließungen, der Zimmerausfall und der Erlös, den jede Schließung kostet, Lärmfenster rund um die Gästezeiten, die vertikale Abfolge von Steigeschächten und Aufzügen sowie die öffentlichen Bereiche in der Nebensaison. Laden Sie sie für Eigentümer oder Asset Management herunter oder öffnen Sie sie online, um zu sehen, wie viele Zimmer Sie Monat für Monat tatsächlich aus dem Verkauf nehmen.",
     intro: "Die Sanierung eines laufenden Hotels ist eine Baustelle mit einem mitlaufenden Erlöszähler daneben. Der Plan ordnet die Gewerke nach der Belegung, nicht nach der Verfügbarkeit der Firmen:",
     phases: [
       [
@@ -3798,7 +3798,7 @@ const T = {
       ],
       [
         "Back-of-House und Aufzüge",
-        "Aufmaß der Steigeschächte und Trassen, Aufzugsmodernisierung Kabine für Kabine mit Prüfung durch die zugelassene Überwachungsstelle nach BetrSichV, Personalbereiche, Technikzentrale und Kälteerzeugung — die Arbeiten, die jede Etage betreffen und die man kein zweites Mal macht."
+        "Aufmaß der Steigeschächte und Trassen, Aufzugsmodernisierung Kabine für Kabine mit Prüfung durch die zugelassene Überwachungsstelle nach BetrSichV, Personalbereiche, Technikzentrale und Kälteerzeugung, die Arbeiten, die jede Etage betreffen und die man kein zweites Mal macht."
       ],
       [
         "Etagenschließungen",
@@ -3813,17 +3813,17 @@ const T = {
         "Inbetriebnahme der Technik, förmliche Abnahme nach VOB/B, Schulung der Mannschaft auf das neue Produkt, Fotoproduktion, Neupositionierung der Raten und die Rückkehr zur vollen Kapazität. <em>Meilenstein: volle Zimmerverfügbarkeit.</em>"
       ]
     ],
-    callout: "Bewerten Sie jede Schließung in Zimmernächten, bevor Sie irgendetwas terminieren. Eine Etage mit 30 Zimmern, acht Wochen geschlossen, sind rund 1.700 Zimmernächte, die Sie nicht verkaufen — und diese Schließung von Juli in den Februar zu verlegen ist oft mehr wert als der gesamte Nachlass, den Sie gerade mit dem Bauunternehmen verhandeln. Das Ausfallmodell gehört an den Anfang des Terminplans, nicht in den Anhang.",
+    callout: "Bewerten Sie jede Schließung in Zimmernächten, bevor Sie irgendetwas terminieren. Eine Etage mit 30 Zimmern, acht Wochen geschlossen, sind rund 1.700 Zimmernächte, die Sie nicht verkaufen, und diese Schließung von Juli in den Februar zu verlegen ist oft mehr wert als der gesamte Nachlass, den Sie gerade mit dem Bauunternehmen verhandeln. Das Ausfallmodell gehört an den Anfang des Terminplans, nicht in den Anhang.",
     customize: [
       "Ersetzen Sie die Etagenzeilen durch Ihre echten Zimmerzahlen und Schließungsdauern und summieren Sie die ausgefallenen Zimmernächte je Monat gegen Ihre Prognose.",
-      "Legen Sie die öffentlichen Bereiche in Ihre tatsächliche Nebensaison — die ist bei den meisten Häusern deutlich kürzer, als die Jahresplanung glauben macht.",
+      "Legen Sie die öffentlichen Bereiche in Ihre tatsächliche Nebensaison, die ist bei den meisten Häusern deutlich kürzer, als die Jahresplanung glauben macht.",
       "Setzen Sie das Lärmfenster auf die Zeiten, die der Betrieb wirklich verteidigen kann, und halten Sie Bohren, Abbruch und Kernbohrungen konsequent darin.",
       "Führen Sie je Aufzug eine eigene Zeile; alle Kabinen gleichzeitig stillzulegen ist in einem laufenden Haus praktisch nie vertretbar.",
-      "Ergänzen Sie einen Umzugsplan, wenn Gäste während des Aufenthalts verlegt werden müssen, und besetzen Sie ihn — das ist echte Arbeit an der Rezeption, kein Rundungsfehler.",
+      "Ergänzen Sie einen Umzugsplan, wenn Gäste während des Aufenthalts verlegt werden müssen, und besetzen Sie ihn, das ist echte Arbeit an der Rezeption, kein Rundungsfehler.",
       "Markieren Sie Investitionsfreigabe, Musterzimmer, Übergabe der letzten Etage und volle Verfügbarkeit als Meilensteine."
     ],
     tips: [
-      "<strong>Bauen Sie das Musterzimmer, bevor Sie bestellen.</strong> Es ist die einzige günstige Gelegenheit zu merken, dass das Tischlerwerk nicht passt, die Steckdosen falsch sitzen und das Baddetail undicht ist — und der Betrieb sollte darin übernachten.",
+      "<strong>Bauen Sie das Musterzimmer, bevor Sie bestellen.</strong> Es ist die einzige günstige Gelegenheit zu merken, dass das Tischlerwerk nicht passt, die Steckdosen falsch sitzen und das Baddetail undicht ist, und der Betrieb sollte darin übernachten.",
       "<strong>Schließen Sie keine zwei Etagen übereinander, solange das Modell das nicht hergibt.</strong> Verdichtung über den Preis funktioniert genau so lange, bis keine Zimmer mehr da sind, in die verdichtet werden kann.",
       "<strong>Planen Sie vertikal, nicht horizontal.</strong> Steigeschächte, Abwasserstränge und Aufzugsschächte laufen durch alle Geschosse; führen Sie die Technikarbeiten als eine durchgehende vertikale Kampagne statt sie je Etage zu wiederholen.",
       "<strong>Schützen Sie den Gästeweg.</strong> Baustellenzugang, Einhausung, Entsorgung und Materialtransport brauchen einen Weg, der die Lobby während der Anreisezeiten nie kreuzt; diese Randbedingung gehört in den Plan, weil sie die Schichten bestimmt.",
@@ -3833,7 +3833,7 @@ const T = {
     faq: [
       [
         "Wie lange dauert eine Hotelsanierung im laufenden Betrieb?",
-        "Bei einem mittelgroßen Haus üblicherweise 12 bis 24 Monate, weil die Etagen nacheinander und nicht gleichzeitig geschlossen werden. Die Vorlage nutzt achtzehn Monate, die Sie durch mehr gleichzeitig geschlossene Zimmer stauchen können — zu einem Preis in Erlös."
+        "Bei einem mittelgroßen Haus üblicherweise 12 bis 24 Monate, weil die Etagen nacheinander und nicht gleichzeitig geschlossen werden. Die Vorlage nutzt achtzehn Monate, die Sie durch mehr gleichzeitig geschlossene Zimmer stauchen können, zu einem Preis in Erlös."
       ],
       [
         "Wäre eine Vollschließung nicht besser?",
@@ -3841,11 +3841,11 @@ const T = {
       ],
       [
         "Wie plane ich laute Arbeiten in einem belegten Haus?",
-        "Vereinbaren Sie ein festes Tagesfenster — meist später Vormittag bis später Nachmittag — und behandeln Sie es als harte Randbedingung des Bauablaufs, nicht als Bitte an die Firma. Lärm außerhalb dieses Fensters ist der Grund, warum Gäste den Preis mindern, und diese Minderung ist teurer als die eingesparte Bauzeit."
+        "Vereinbaren Sie ein festes Tagesfenster, meist später Vormittag bis später Nachmittag, und behandeln Sie es als harte Randbedingung des Bauablaufs, nicht als Bitte an die Firma. Lärm außerhalb dieses Fensters ist der Grund, warum Gäste den Preis mindern, und diese Minderung ist teurer als die eingesparte Bauzeit."
       ],
       [
         "Worin unterscheidet sie sich von der Pre-Opening-Vorlage?",
-        "Diese hier ist für ein Haus, das jetzt verkauft. Wenn Sie ein Neubauhotel ohne Gäste in Betrieb nehmen, nutzen Sie den <a href=\"/de/templates/hotel-pre-opening-critical-path.html\">Pre-Opening-Terminplan</a> — der ist um die Eröffnungsbereitschaft herum gebaut, nicht um Schließungen."
+        "Diese hier ist für ein Haus, das jetzt verkauft. Wenn Sie ein Neubauhotel ohne Gäste in Betrieb nehmen, nutzen Sie den <a href=\"/de/templates/hotel-pre-opening-critical-path.html\">Pre-Opening-Terminplan</a>, der ist um die Eröffnungsbereitschaft herum gebaut, nicht um Schließungen."
       ],
       [
         "Ist die Vorlage für die Hotelsanierung kostenlos?",
@@ -3857,9 +3857,9 @@ const T = {
   'port-terminal-construction-schedule': {
     card: "Baggern, Aufspülung, Kaimauer, Kranbahn, Containerbrücken, Lagerfläche, TOS.",
     h1: "Bauzeitenplan für ein Hafenterminal",
-    metaTitle: "Hafenterminal — Bauzeitenplan",
+    metaTitle: "Hafenterminal: Bauzeitenplan",
     metaDesc: "Kostenloser Bauzeitenplan Hafenterminal: Planfeststellung, Baggern, Kaimauer, Kranbahn, Containerbrücken, Lagerfläche und TOS. Excel oder online.",
-    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für ein Hafenterminal</strong>, die die wasserseitigen und die landseitigen Arbeiten zusammen führt — Planfeststellung und wasserrechtliche Genehmigungen, Nassbaggerung und Verbringung des Baggerguts, Aufspülung, Kaimauer, Bodenverbesserung und Kranbahn, Anlieferung und Inbetriebnahme der Containerbrücken, Flächenbefestigung und das Terminal Operating System. Laden Sie sie für die Vorlage im Aufsichtsrat oder bei der Hafenbehörde herunter oder öffnen Sie sie online, um die Gewerke gegen Ihre Wetterfenster zu legen.",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für ein Hafenterminal</strong>, die die wasserseitigen und die landseitigen Arbeiten zusammen führt, Planfeststellung und wasserrechtliche Genehmigungen, Nassbaggerung und Verbringung des Baggerguts, Aufspülung, Kaimauer, Bodenverbesserung und Kranbahn, Anlieferung und Inbetriebnahme der Containerbrücken, Flächenbefestigung und das Terminal Operating System. Laden Sie sie für die Vorlage im Aufsichtsrat oder bei der Hafenbehörde herunter oder öffnen Sie sie online, um die Gewerke gegen Ihre Wetterfenster zu legen.",
     intro: "Ein Containerterminal sind drei Projekte auf einer Fläche: ein Wasserbauprojekt, ein Tiefbauprojekt und ein Systemprojekt. Der Plan hält sie als getrennte Stränge sichtbar, weil sie von völlig verschiedenen Dingen abhängen:",
     phases: [
       [
@@ -3887,20 +3887,20 @@ const T = {
         "Konfiguration des Terminal Operating System, Anbindung von Torhaus und OCR, Zollschnittstelle zu ATLAS, Funk- und Netzabdeckung, Schulung, Probeanlauf und kommerzielle Eröffnung. <em>Meilenstein: erster kommerzieller Anlauf.</em>"
       ]
     ],
-    callout: "Der Bagger und das Schwergutschiff gehören Ihnen nicht. Beide sind Monate im Voraus in eine weltweite Flottenplanung eingebucht, beide brauchen ein Wetterfenster und einen Liegeplatz, der am Tag X fertig ist. Wer den Slot verpasst, wartet keine Woche, sondern auf die nächste Mobilisierung — und das kann eine Saison sein. Zeichnen Sie die Ankunftsfenster als feste Balken und entwickeln Sie die umliegenden Arbeiten rückwärts daraus.",
+    callout: "Der Bagger und das Schwergutschiff gehören Ihnen nicht. Beide sind Monate im Voraus in eine weltweite Flottenplanung eingebucht, beide brauchen ein Wetterfenster und einen Liegeplatz, der am Tag X fertig ist. Wer den Slot verpasst, wartet keine Woche, sondern auf die nächste Mobilisierung, und das kann eine Saison sein. Zeichnen Sie die Ankunftsfenster als feste Balken und entwickeln Sie die umliegenden Arbeiten rückwärts daraus.",
     customize: [
       "Legen Sie die Baggerkampagne in das reale saisonale Fenster Ihres Reviers und prüfen Sie dann, ob die Menge bei der Förderleistung des Geräts überhaupt hineinpasst.",
       "Verlängern Sie den Balken für Auflast und Setzung auf das, was das Baugrundgutachten verlangt; das ist ein physikalischer Vorgang, den Termindruck nicht beschleunigt.",
       "Führen Sie je Containerbrücke eine Zeile, wenn sie auf getrennten Reisen kommen, und markieren Sie jede Schiffsankunft als Meilenstein.",
       "Teilen Sie die Lagerfläche in Blöcke, wenn Sie abschnittsweise in Betrieb gehen statt das ganze Terminal auf einmal zu öffnen.",
-      "Ziehen Sie die TOS-Arbeiten nach vorn — die Software hängt an keinem Beton und wird regelmäßig viel zu spät begonnen.",
+      "Ziehen Sie die TOS-Arbeiten nach vorn, die Software hängt an keinem Beton und wird regelmäßig viel zu spät begonnen.",
       "Markieren Sie Planfeststellungsbeschluss, Liegeplatz verfügbar, Brücken abgenommen und ersten kommerziellen Anlauf als Meilensteine; das sind die vier Termine, die eine Hafenbehörde verfolgt."
     ],
     tips: [
       "<strong>Die Genehmigung steuert die Baggerung, und die Baggerung steuert alles Wasserseitige.</strong> Vor allem die Zulassung der Verbringungsfläche ist ein langes Verfahren bei Dritten ohne Beschleuniger und sollte beginnen, bevor die Planung fertig ist.",
       "<strong>Überlappen Sie das Schwergutschiff nicht mit der Fertigstellung der Kaimauer.</strong> Die Kranbahn muss eingemessen, ausgerichtet und belastungsgeprüft sein, bevor eine Brücke an Land laufen kann; diese Vermessung ist ein harter Vorgänger.",
       "<strong>Planen Sie die Setzung ein, statt sie zu unterstellen.</strong> Aufgespülter Boden unter einer Containerfläche braucht eine überwachte Auflastphase; wer zu früh befestigt, hat in zwei Jahren eine Fläche zum Sanieren.",
-      "<strong>Beginnen Sie die TOS-Konfiguration während des Tiefbaus.</strong> Ein Terminalsystem braucht Stammdaten, Flächenlayout, Torregeln sowie Schnittstellen zu Reedereien und Zoll — nichts davon hängt an der fertigen Fläche.",
+      "<strong>Beginnen Sie die TOS-Konfiguration während des Tiefbaus.</strong> Ein Terminalsystem braucht Stammdaten, Flächenlayout, Torregeln sowie Schnittstellen zu Reedereien und Zoll, nichts davon hängt an der fertigen Fläche.",
       "<strong>Planen Sie einen Probeanlauf.</strong> Ein geübter Anlauf mit einer wohlgesonnenen Reederei findet die Probleme an Tor, Brücke, System und Personal, die ein kommerzieller Erstanlauf teuer finden würde.",
       "<strong>Setzen Sie den Basisplan mit dem verfügbaren Liegeplatz.</strong> Der Wasserbau trägt die größte Schätzunsicherheit im Projekt; sobald der Liegeplatz steht, ist der landseitige Ablauf deutlich belastbarer."
     ],
@@ -3919,7 +3919,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für eine Terminalerweiterung?",
-        "Ja. Lassen Sie die Aufspülung weg und behalten Sie Hafensohle, Kranbahn, Kranlieferung und TOS — dort spielt sich eine Erweiterung überwiegend ab, mit der zusätzlichen Randbedingung des laufenden Betriebs nebenan."
+        "Ja. Lassen Sie die Aufspülung weg und behalten Sie Hafensohle, Kranbahn, Kranlieferung und TOS, dort spielt sich eine Erweiterung überwiegend ab, mit der zusätzlichen Randbedingung des laufenden Betriebs nebenan."
       ],
       [
         "Ist die Vorlage für das Hafenterminal kostenlos?",
@@ -3931,9 +3931,9 @@ const T = {
   'rail-signalling-upgrade-plan': {
     card: "Planung, Stellwerksdaten, Werksabnahme, Sperrpausen, Montage, Inbetriebnahme.",
     h1: "Projektplan für den Umbau der Leit- und Sicherungstechnik",
-    metaTitle: "Signaltechnik-Umbau — Projektplan",
+    metaTitle: "Signaltechnik-Umbau: Projektplan",
     metaDesc: "Kostenloser Projektplan für ESTW- und ETCS-Umbauten: Planung, Stellwerksdaten, Werksabnahme, Sperrpausen, Montage, Prüfung, Inbetriebnahme.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Umbau der Leit- und Sicherungstechnik</strong>, gebaut um die Sperrpausen — Vorplanung und Ausführungsplanung, Aufbereitung und unabhängige Prüfung der Stellwerksdaten, Werksabnahme, Anmeldung der Sperrpausen zum Fahrplanverfahren, Montage innerhalb der gebuchten Sperrpause, Prüfung und Inbetriebnahme sowie die Genehmigung durch das Eisenbahn-Bundesamt. Laden Sie sie für eine Quality-Gate-Vorlage herunter oder öffnen Sie sie online, um zu prüfen, ob die geplante Arbeit wirklich in die bewilligten Stunden passt.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Umbau der Leit- und Sicherungstechnik</strong>, gebaut um die Sperrpausen, Vorplanung und Ausführungsplanung, Aufbereitung und unabhängige Prüfung der Stellwerksdaten, Werksabnahme, Anmeldung der Sperrpausen zum Fahrplanverfahren, Montage innerhalb der gebuchten Sperrpause, Prüfung und Inbetriebnahme sowie die Genehmigung durch das Eisenbahn-Bundesamt. Laden Sie sie für eine Quality-Gate-Vorlage herunter oder öffnen Sie sie online, um zu prüfen, ob die geplante Arbeit wirklich in die bewilligten Stunden passt.",
     intro: "Ein Stellwerksprojekt ist ein Büroprojekt mit einer Handvoll Wochenenden in der Mitte, an denen alles Körperliche passiert. Der Plan behandelt diese Wochenenden als feste, unverrückbare Gefäße und ordnet alles andere darum herum:",
     phases: [
       [
@@ -3964,18 +3964,18 @@ const T = {
     callout: "Die Sperrpause ist der Terminplan. Betriebliche Sperrungen werden gegen die Fristen des Fahrplanverfahrens ein Jahr und mehr im Voraus angemeldet, und nach der Buchung lautet die Frage nicht mehr „wann bauen wir“, sondern „passt die Arbeit in die Stunden, die wir bekommen haben“. Planen Sie jede Sperrpause rückwärts vom Zeitpunkt der Streckenrückgabe, mit der Prüfung am Ende und einem festen Punkt, ab dem Sie abbrechen und die Strecke unabhängig vom Baufortschritt zurückgeben.",
     customize: [
       "Tragen Sie zuerst Ihre echten Sperrpausentermine ein und fixieren Sie sie; jeder andere Balken in diesem Plan verhandelt um sie herum.",
-      "Führen Sie je Sperrpause eine Zeile mit der tatsächlichen Dauer in Stunden statt in Tagen — ein 52-Stunden-Wochenende und ein 29-Stunden-Wochenende sind zwei verschiedene Projekte.",
+      "Führen Sie je Sperrpause eine Zeile mit der tatsächlichen Dauer in Stunden statt in Tagen, ein 52-Stunden-Wochenende und ein 29-Stunden-Wochenende sind zwei verschiedene Projekte.",
       "Verlagern Sie so viel wie möglich aus der Sperrpause heraus; alles, was vorverkabelt, vorgeprüft oder vormontiert werden kann, gehört nach draußen.",
-      "Verlängern Sie die Balken für Datenaufbereitung und Datenprüfung bei großen Stellbereichen — die unabhängige Prüfung ist ein vorgeschriebener, langsamer Vorgang und lässt sich nicht mit sich selbst parallelisieren.",
+      "Verlängern Sie die Balken für Datenaufbereitung und Datenprüfung bei großen Stellbereichen, die unabhängige Prüfung ist ein vorgeschriebener, langsamer Vorgang und lässt sich nicht mit sich selbst parallelisieren.",
       "Setzen Sie zwei Wochen vor jeder Inbetriebnahme ein formales Go-/No-go mit Werksabnahme, Prüfbereitschaft und Personalqualifikation als Vorgängern.",
       "Markieren Sie Planfreigabe, bestandene Werksabnahme, bestätigte Sperrpausen, Inbetriebnahme und Inbetriebnahmegenehmigung als Meilensteine."
     ],
     tips: [
       "<strong>Melden Sie die Sperrpausen an, bevor die Planung fertig ist.</strong> Die Anmeldefrist wartet nicht auf Ihren Projektfortschritt, und ein Vorhaben, das das Fahrplanfenster verpasst, verliert ein Jahr, nicht einen Monat.",
       "<strong>Prüfen Sie im Werk, nicht auf der Strecke.</strong> Jeder in der Werksabnahme gefundene Fehler ist ein Fehler, den Sie nicht um drei Uhr morgens mit näher rückender Rückgabezeit suchen müssen.",
-      "<strong>Schreiben Sie zuerst das Rückgabekonzept.</strong> Jede Sperrpause braucht einen definierten Punkt ohne Wiederkehr, ab dem Sie die Montage einstellen und den Altzustand wiederherstellen — das entscheidet man im Büro, nicht in der Nacht.",
+      "<strong>Schreiben Sie zuerst das Rückgabekonzept.</strong> Jede Sperrpause braucht einen definierten Punkt ohne Wiederkehr, ab dem Sie die Montage einstellen und den Altzustand wiederherstellen, das entscheidet man im Büro, nicht in der Nacht.",
       "<strong>Schützen Sie die Prinzipprüfung.</strong> Sie ist der sicherheitsrelevante Schritt, der bei Montageverzug am stärksten unter Druck gerät, und genau der, der niemals gekürzt werden darf.",
-      "<strong>Planen Sie die Streckenkenntnis früh.</strong> Qualifizierung und Einweisung brauchen Triebfahrzeugführer, die aus dem Dienstplan freigestellt werden — eine eigene Ressourcenverhandlung mit eigener Vorlaufzeit.",
+      "<strong>Planen Sie die Streckenkenntnis früh.</strong> Qualifizierung und Einweisung brauchen Triebfahrzeugführer, die aus dem Dienstplan freigestellt werden, eine eigene Ressourcenverhandlung mit eigener Vorlaufzeit.",
       "<strong>Setzen Sie den Basisplan mit den bestätigten Sperrpausen.</strong> Davor sind die Termine Absichten; danach sind die Fixpunkte real und die Abweichung dagegen ist die Zahl, die zählt."
     ],
     faq: [
@@ -3985,7 +3985,7 @@ const T = {
       ],
       [
         "Was ist eine Sperrpause?",
-        "Ein gebuchter Zeitraum, in dem ein Streckenabschnitt für den Verkehr gesperrt ist, damit daran gearbeitet werden kann. Sperrpausen werden gegen die Fristen der Fahrplan- und Baubetriebsplanung viele Monate im Voraus angemeldet — deshalb verhalten sie sich wie feste Randbedingungen und nicht wie planbare Vorgänge."
+        "Ein gebuchter Zeitraum, in dem ein Streckenabschnitt für den Verkehr gesperrt ist, damit daran gearbeitet werden kann. Sperrpausen werden gegen die Fristen der Fahrplan- und Baubetriebsplanung viele Monate im Voraus angemeldet, deshalb verhalten sie sich wie feste Randbedingungen und nicht wie planbare Vorgänge."
       ],
       [
         "Warum liegt die Aufbereitung der Stellwerksdaten auf dem kritischen Pfad?",
@@ -3993,7 +3993,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für einen Bahnübergang oder ein ETCS-Vorhaben?",
-        "Ja. Die Struktur um die Sperrpausen herum bleibt gleich — kürzen Sie die Datenzeilen und behalten Sie Planung, Baubetriebsplanung, Montage, Prüfung und Betriebsaufnahme. Für ETCS-Ausrüstungen kommen Streckenzentrale und Fahrzeugseite als eigene Stränge hinzu."
+        "Ja. Die Struktur um die Sperrpausen herum bleibt gleich, kürzen Sie die Datenzeilen und behalten Sie Planung, Baubetriebsplanung, Montage, Prüfung und Betriebsaufnahme. Für ETCS-Ausrüstungen kommen Streckenzentrale und Fahrzeugseite als eigene Stränge hinzu."
       ],
       [
         "Ist die Vorlage für die Leit- und Sicherungstechnik kostenlos?",
@@ -4005,9 +4005,9 @@ const T = {
   'pharma-product-launch-plan': {
     card: "Zulassung, Validierungschargen, Serialisierung, AMNOG-Verfahren, Marktsequenz.",
     h1: "Projektplan für den Launch eines Arzneimittels",
-    metaTitle: "Pharma-Launch — Projektplan-Vorlage",
+    metaTitle: "Pharma-Launch: Projektplan-Vorlage",
     metaDesc: "Kostenloser Launch-Plan Pharma: Zulassungsantrag, Validierungschargen, Serialisierung, AMNOG-Nutzenbewertung, Erstattungsbetrag, Marktsequenz.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Pharma-Launch</strong> für die Strecke zwischen abgeschlossener Studie und Produkt in der Apotheke — Zulassungsdossier und Einreichung, die Verfahrensuhr bei der Behörde, Maßstabsvergrößerung und Validierungschargen, Serialisierung und marktspezifische Kennzeichnung, Nutzendossier und Erstattungsverhandlung, Medical Affairs sowie die Reihenfolge der Ländermärkte. Laden Sie sie für ein Launch-Readiness-Review herunter oder öffnen Sie sie online, um zu sehen, wovon Ihr Termin im ersten Markt wirklich abhängt.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Pharma-Launch</strong> für die Strecke zwischen abgeschlossener Studie und Produkt in der Apotheke, Zulassungsdossier und Einreichung, die Verfahrensuhr bei der Behörde, Maßstabsvergrößerung und Validierungschargen, Serialisierung und marktspezifische Kennzeichnung, Nutzendossier und Erstattungsverhandlung, Medical Affairs sowie die Reihenfolge der Ländermärkte. Laden Sie sie für ein Launch-Readiness-Review herunter oder öffnen Sie sie online, um zu sehen, wovon Ihr Termin im ersten Markt wirklich abhängt.",
     intro: "Alles Kommerzielle an einem Pharma-Launch hängt an zwei Dingen, die Sie nicht steuern: einem Zulassungsbescheid und einer Erstattungsentscheidung. Der Plan stellt beide als Balken mit Nachfolgern dar statt als Annahmen auf einer Folie:",
     phases: [
       [
@@ -4035,10 +4035,10 @@ const T = {
         "Aufbau und Schulung des Außendienstes, Launch-Meeting, Markteinführung im ersten Markt, danach die zweite und dritte Welle, sobald Zulassungen und Erstattungsentscheidungen vorliegen. <em>Meilenstein: erster Umsatz.</em>"
       ]
     ],
-    callout: "Zulassung ist nicht Launch. In Deutschland darf ab dem Inverkehrbringen zwar sofort verkauft werden, aber die freie Preisbildung gilt nur noch für sechs Monate; danach greift der verhandelte Erstattungsbetrag, und die Nutzenbewertung dafür startet mit dem Dossier am Tag des Markteintritts. Planen Sie deshalb pro Markt zwei Termine — Zulassung und Erstattung — und lassen Sie eine Umsatzprognose nie stillschweigend annehmen, dass beide auf denselben Tag fallen.",
+    callout: "Zulassung ist nicht Launch. In Deutschland darf ab dem Inverkehrbringen zwar sofort verkauft werden, aber die freie Preisbildung gilt nur noch für sechs Monate; danach greift der verhandelte Erstattungsbetrag, und die Nutzenbewertung dafür startet mit dem Dossier am Tag des Markteintritts. Planen Sie deshalb pro Markt zwei Termine, Zulassung und Erstattung, und lassen Sie eine Umsatzprognose nie stillschweigend annehmen, dass beide auf denselben Tag fallen.",
     customize: [
       "Setzen Sie Ihr Einreichungsdatum und lassen Sie die Verfahrensuhr davon vorwärts laufen; die Dauer der Behörde ist gesetzt, nur Ihre Antwortzeiten darin gehören Ihnen.",
-      "Vervielfältigen Sie die Zeilen für Kennzeichnung, Erstattung und Launch je Markt — jeder hat eine eigene Behörde, eine eigene Sprache und einen eigenen Erstattungsweg.",
+      "Vervielfältigen Sie die Zeilen für Kennzeichnung, Erstattung und Launch je Markt, jeder hat eine eigene Behörde, eine eigene Sprache und einen eigenen Erstattungsweg.",
       "Beginnen Sie die Validierungschargen früher, wenn das Verfahren neu ist; drei erfolgreiche Chargen plus Stabilitätsdaten sind eine lange Kette ohne Abkürzung.",
       "Planen Sie ein echtes Zeitfenster für die Vorbereitung der GMP-Inspektion; eine Beanstandung am Standort ist der schnellste Weg, ein Launch-Quartal zu verlieren.",
       "Hängen Sie den Aufbau des Außendienstes an den Zulassungsmeilenstein, sofern Sie ein wartendes Team nicht tragen können oder wollen.",
@@ -4046,7 +4046,7 @@ const T = {
     ],
     tips: [
       "<strong>Produzieren Sie Launch-Ware vor der Zulassung und entscheiden Sie das Abschreibungsrisiko bewusst.</strong> Erst nach dem Bescheid zu produzieren kostet Monate leeres Regal; die frühe Festlegung sollte die Geschäftsführung ausdrücklich treffen und nicht der Terminplan nebenbei.",
-      "<strong>Bereiten Sie das Nutzendossier parallel zur Zulassungsprüfung vor.</strong> Die Evidenz überschneidet sich, die Adressaten nicht — und mit der Marktzugangsarbeit erst nach der Zulassung zu beginnen macht aus einem Launch ein Warten.",
+      "<strong>Bereiten Sie das Nutzendossier parallel zur Zulassungsprüfung vor.</strong> Die Evidenz überschneidet sich, die Adressaten nicht, und mit der Marktzugangsarbeit erst nach der Zulassung zu beginnen macht aus einem Launch ein Warten.",
       "<strong>Behandeln Sie die Serialisierung als Systemprojekt.</strong> Marktspezifische Codierung, Aggregation und die Anbindung an das Verifikationssystem müssen mit echten Packungen getestet werden; sie versagt leise und fällt erst bei der ersten Auslieferung auf.",
       "<strong>Wählen Sie die Marktreihenfolge bewusst.</strong> Ein früher Launch in einem Referenzpreisland kann die Preise anderswo für Jahre verankern, und diese Reihenfolge ist eine kommerzielle Entscheidung, die auf den Plan gehört.",
       "<strong>Halten Sie Medical Affairs vor dem Vertrieb.</strong> Publikationen, Advisory Boards und Fortbildung brauchen Vorlauf und lassen sich nicht in die Wochen nach der Zulassung pressen, in denen die Bewerbung beginnt.",
@@ -4071,7 +4071,7 @@ const T = {
       ],
       [
         "Welches Risiko hat die Produktion vor der Zulassung?",
-        "Die Abschreibung, falls nicht zugelassen wird oder sich die Fachinformation ändert. Die meisten Launches tragen einen Teil dieses Risikos, weil die Herstellungsvorlaufzeit länger ist als der Abstand zwischen Bescheid und erwarteten ersten Bestellungen — aber es sollte eine ausgesprochene Entscheidung mit einer Zahl daran sein."
+        "Die Abschreibung, falls nicht zugelassen wird oder sich die Fachinformation ändert. Die meisten Launches tragen einen Teil dieses Risikos, weil die Herstellungsvorlaufzeit länger ist als der Abstand zwischen Bescheid und erwarteten ersten Bestellungen, aber es sollte eine ausgesprochene Entscheidung mit einer Zahl daran sein."
       ],
       [
         "Ist die Vorlage für den Pharma-Launch kostenlos?",
@@ -4083,9 +4083,9 @@ const T = {
   'ma-due-diligence-timeline': {
     card: "NDA, Datenraum, parallele Prüfstränge, Red Flag Report, SPA, Signing, Closing.",
     h1: "Zeitplan für die Due Diligence bei einer Übernahme",
-    metaTitle: "M&A Due Diligence — Zeitplan",
+    metaTitle: "M&A Due Diligence: Zeitplan",
     metaDesc: "Kostenloser Zeitplan für die Due Diligence: NDA, Datenraum, Financial, Legal, Tax und IT, Red Flag Report, SPA, Signing und Closing.",
-    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Due Diligence</strong> vom ersten Kontakt bis zum Vollzug — Vertraulichkeitsvereinbarung, Teaser und Information Memorandum, Öffnung des Datenraums, die parallel laufenden Prüfstränge, Management-Präsentationen und Fragenprozess, Verhandlung des Unternehmenskaufvertrags, Signing sowie die Vollzugsbedingungen vor dem Closing. Laden Sie sie für die Vorlage im Investitionsausschuss herunter oder öffnen Sie sie online, um zu prüfen, ob jeder Strang innerhalb Ihrer Exklusivität fertig wird.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Due Diligence</strong> vom ersten Kontakt bis zum Vollzug, Vertraulichkeitsvereinbarung, Teaser und Information Memorandum, Öffnung des Datenraums, die parallel laufenden Prüfstränge, Management-Präsentationen und Fragenprozess, Verhandlung des Unternehmenskaufvertrags, Signing sowie die Vollzugsbedingungen vor dem Closing. Laden Sie sie für die Vorlage im Investitionsausschuss herunter oder öffnen Sie sie online, um zu prüfen, ob jeder Strang innerhalb Ihrer Exklusivität fertig wird.",
     intro: "Due Diligence ist keine Abfolge. Sie ist ein halbes Dutzend Stränge, die gleichzeitig denselben Datenraum lesen, gegen eine Uhr, die im Exklusivitätsschreiben gestellt wurde. Der Plan legt sie als parallele Spuren nebeneinander, damit der Engpass sichtbar wird:",
     phases: [
       [
@@ -4102,7 +4102,7 @@ const T = {
       ],
       [
         "Management und Fragenprozess",
-        "Management-Präsentationen, Standortbesichtigungen, die Fragenliste und Nachforderungen — der Vorgang, der bestimmt, wie schnell die Prüfstränge überhaupt fertig werden können."
+        "Management-Präsentationen, Standortbesichtigungen, die Fragenliste und Nachforderungen, der Vorgang, der bestimmt, wie schnell die Prüfstränge überhaupt fertig werden können."
       ],
       [
         "Feststellungen und Kaufpreislogik",
@@ -4113,14 +4113,14 @@ const T = {
         "Verhandlung des Unternehmenskaufvertrags, Disclosure Letter, notarielle Beurkundung beim Signing, Vollzugsbedingungen einschließlich Fusionskontrolle und Investitionsprüfung sowie der Vollzug. <em>Meilenstein: Closing.</em>"
       ]
     ],
-    callout: "Exklusivität ist ein Countdown, keine Zusicherung. Sie endet an einem festen Datum, unabhängig davon, ob der steuerliche Strang seine Antworten bekommen hat — und die Bitte um Verlängerung ist der Moment, in dem ein Verkäufer den Preis wieder aufmacht. Rechnen Sie rückwärts vom Ende der Exklusivität: Die Vertragsverhandlung braucht Wochen, der Red Flag Report Tage, und alles davor ist die Zeit, die die Prüfstränge tatsächlich haben.",
+    callout: "Exklusivität ist ein Countdown, keine Zusicherung. Sie endet an einem festen Datum, unabhängig davon, ob der steuerliche Strang seine Antworten bekommen hat, und die Bitte um Verlängerung ist der Moment, in dem ein Verkäufer den Preis wieder aufmacht. Rechnen Sie rückwärts vom Ende der Exklusivität: Die Vertragsverhandlung braucht Wochen, der Red Flag Report Tage, und alles davor ist die Zeit, die die Prüfstränge tatsächlich haben.",
     customize: [
-      "Setzen Sie zuerst das Ende der Exklusivität und legen Sie die Prüfstränge rückwärts davor — das ist die Randbedingung, in der der ganze Plan lebt.",
+      "Setzen Sie zuerst das Ende der Exklusivität und legen Sie die Prüfstränge rückwärts davor, das ist die Randbedingung, in der der ganze Plan lebt.",
       "Ergänzen oder streichen Sie Stränge je nach Transaktion; ein anlagenintensives Ziel braucht Umwelt und Immobilien, ein Softwareunternehmen IP und eine Open-Source-Prüfung.",
       "Geben Sie der Fragenliste eine eigene Zeile mit einem Verantwortlichen. Sie ist der gemeinsame Engpass zwischen allen Strängen und dem Verkäufer.",
       "Verlängern Sie den Balken der Vollzugsbedingungen, wenn Fusionskontrolle beim Bundeskartellamt oder eine Investitionsprüfung durch das Bundeswirtschaftsministerium nötig ist; diese Fristen setzt die Behörde, nicht die Parteien.",
       "Setzen Sie nach dem Red Flag Report einen formalen Abbruch- oder Weiterpunkt, damit eine schlechte Feststellung eine terminierte Entscheidung auslöst und keine Flurdiskussion.",
-      "Markieren Sie NDA, Beginn der Exklusivität, Gremienfreigabe, Signing und Closing als Meilensteine — das sind die Termine, die ein Transaktionsausschuss verfolgt."
+      "Markieren Sie NDA, Beginn der Exklusivität, Gremienfreigabe, Signing und Closing als Meilensteine, das sind die Termine, die ein Transaktionsausschuss verfolgt."
     ],
     tips: [
       "<strong>Befüllen Sie den Datenraum ordentlich, bevor die Prüfung startet.</strong> Ein halb gefüllter Raum bedeutet, dass jeder Strang seine erste Woche mit Nachforderungen statt mit Lesen verbringt, und diese Woche kommt nicht zurück.",
@@ -4128,7 +4128,7 @@ const T = {
       "<strong>Beginnen Sie mit dem Kaufvertrag, bevor die Prüfung endet.</strong> Die Anwälte können die Struktur bauen, während noch Feststellungen eintreffen; auf einen sauberen Bericht zu warten schiebt das Signing über die Exklusivität hinaus.",
       "<strong>Buchen Sie Management-Termine früh.</strong> Die Geschäftsführung des Zielunternehmens hat weiterhin ein Unternehmen zu führen, und ihre Verfügbarkeit ist meist die knappste Ressource im ganzen Prozess.",
       "<strong>Rechnen Sie den Notartermin ein.</strong> Bei GmbH-Anteilen ist die Übertragung beurkundungsbedürftig, und ein Beurkundungstermin mit vollständigen Anlagen ist ein eigener Vorgang, kein Formalakt am Rand.",
-      "<strong>Trennen Sie Signing und Closing im Plan.</strong> Zwischen beiden liegen die Vollzugsbedingungen — Freigaben, Zustimmungen, Finanzierung — und bei größeren Transaktionen sind das Monate."
+      "<strong>Trennen Sie Signing und Closing im Plan.</strong> Zwischen beiden liegen die Vollzugsbedingungen, Freigaben, Zustimmungen, Finanzierung, und bei größeren Transaktionen sind das Monate."
     ],
     faq: [
       [
@@ -4141,7 +4141,7 @@ const T = {
       ],
       [
         "Warum ist die Exklusivität für den Terminplan so wichtig?",
-        "Weil sie der einzige Zeitraum ist, in dem ein Käufer echtes Geld für Berater ausgeben kann, ohne im Wettbewerb zu stehen. Läuft sie aus, kann der Verkäufer den Prozess wieder öffnen oder neu bepreisen — die Prüfung ist damit faktisch ein Projekt mit fester Dauer."
+        "Weil sie der einzige Zeitraum ist, in dem ein Käufer echtes Geld für Berater ausgeben kann, ohne im Wettbewerb zu stehen. Läuft sie aus, kann der Verkäufer den Prozess wieder öffnen oder neu bepreisen, die Prüfung ist damit faktisch ein Projekt mit fester Dauer."
       ],
       [
         "Was ist der Unterschied zwischen Signing und Closing?",
@@ -4161,10 +4161,10 @@ const T = {
   'data-migration-project-plan': {
     card: "Profiling, Mapping, Bereinigung, Testmigrationen, Abgleich, Cutover, Prüfung.",
     h1: "Projektplan für die Datenmigration",
-    metaTitle: "Datenmigration — Projektplan",
+    metaTitle: "Datenmigration: Projektplan",
     metaDesc: "Kostenloser Projektplan für die Datenmigration: Profiling, Mapping, Bereinigung, Testmigrationen, Abgleich, Cutover und Prüfung. Excel oder online.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Datenmigration</strong> über den gesamten Arbeitsstrang — Analyse der Quellsysteme, Mapping und Transformationsregeln, Bereinigung, Bau der Ladestrecken, mehrere Testmigrationen, Abgleich, der eigentliche Cutover und die Prüfung danach. Das ist der Datenstrang, der innerhalb eines größeren Vorhabens läuft, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migration</a> — und meistens ist es der Strang, der über den Go-live-Termin entscheidet.",
-    intro: "Migrationspläne gehen schief, wenn die Ladung als eine Aufgabe am Ende behandelt wird. Sie ist keine Aufgabe — sie ist dieselbe Aufgabe, mehrfach ausgeführt, bis der Abgleich stimmt, und jeder Durchlauf kostet ein Wartungsfenster:",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Datenmigration</strong> über den gesamten Arbeitsstrang, Analyse der Quellsysteme, Mapping und Transformationsregeln, Bereinigung, Bau der Ladestrecken, mehrere Testmigrationen, Abgleich, der eigentliche Cutover und die Prüfung danach. Das ist der Datenstrang, der innerhalb eines größeren Vorhabens läuft, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migration</a>, und meistens ist es der Strang, der über den Go-live-Termin entscheidet.",
+    intro: "Migrationspläne gehen schief, wenn die Ladung als eine Aufgabe am Ende behandelt wird. Sie ist keine Aufgabe, sie ist dieselbe Aufgabe, mehrfach ausgeführt, bis der Abgleich stimmt, und jeder Durchlauf kostet ein Wartungsfenster:",
     phases: [
       [
         "Analyse und Profiling",
@@ -4176,7 +4176,7 @@ const T = {
       ],
       [
         "Bereinigung",
-        "Bereinigungsregeln, Nacharbeit durch die Fachbereiche für alles, was keine Regel heilen kann, und der Dublettenabgleich — Arbeit, die parallel läuft, weil sie nicht am Bau hängt."
+        "Bereinigungsregeln, Nacharbeit durch die Fachbereiche für alles, was keine Regel heilen kann, und der Dublettenabgleich, Arbeit, die parallel läuft, weil sie nicht am Bau hängt."
       ],
       [
         "Bau und Modultest",
@@ -4191,10 +4191,10 @@ const T = {
         "Einfrieren der Quelle, Delta-Extrakt, die Produktivladung, Freigabe des Abgleichs, fachliche Prüfung und die Rückfallentscheidung. <em>Meilenstein: Daten abgenommen.</em>"
       ]
     ],
-    callout: "Sie brauchen drei Testmigrationen, nicht eine, und jede kostet ein vollständiges Wartungsfenster. Die erste zeigt, dass das Mapping falsch ist. Die zweite zeigt, ob die Bereinigung gewirkt hat. Die dritte — mit Produktivmengen und von Anfang bis Ende gestoppt — zeigt, ob die Ladung in das Fenster passt, das Sie bekommen haben. Pläne mit einem einzigen Ladedurchlauf entdecken alle drei Probleme am Cutover-Wochenende, wenn für keines mehr Zeit ist.",
+    callout: "Sie brauchen drei Testmigrationen, nicht eine, und jede kostet ein vollständiges Wartungsfenster. Die erste zeigt, dass das Mapping falsch ist. Die zweite zeigt, ob die Bereinigung gewirkt hat. Die dritte, mit Produktivmengen und von Anfang bis Ende gestoppt, zeigt, ob die Ladung in das Fenster passt, das Sie bekommen haben. Pläne mit einem einzigen Ladedurchlauf entdecken alle drei Probleme am Cutover-Wochenende, wenn für keines mehr Zeit ist.",
     customize: [
       "Setzen Sie den Cutover-Termin zuerst und zählen Sie rückwärts; die letzte Testmigration muss mindestens zwei Wochen davor abgeschlossen sein.",
-      "Erweitern Sie die Objektzeilen auf eine Zeile je Datenobjekt — Kunden, Lieferanten, Artikel, offene Posten, Historie — sobald das Mapping beginnt.",
+      "Erweitern Sie die Objektzeilen auf eine Zeile je Datenobjekt, Kunden, Lieferanten, Artikel, offene Posten, Historie, sobald das Mapping beginnt.",
       "Buchen Sie jede Testmigration als echtes Wartungsfenster mit denselben Leuten, die auch den Cutover fahren, nicht mit einer Teilbesetzung.",
       "Ergänzen Sie eine Zeile für den Delta-Extrakt, wenn die Quelle zwischen der letzten Testmigration und dem Cutover weiterläuft.",
       "Halten Sie die Rückfallentscheidung als datierten Meilenstein mit benannten Kriterien fest, nicht als stillschweigende Option.",
@@ -4202,9 +4202,9 @@ const T = {
     ],
     tips: [
       "<strong>Die Abstimmungsregeln kommen vor dem Bau.</strong> Wer nicht sagen kann, wie er die Richtigkeit der Ladung nachweist, kann auch nicht wissen, wann sie fertig ist.",
-      "<strong>Stoppen Sie jede Testmigration von Anfang bis Ende.</strong> Die gesuchte Zahl ist nicht „hat funktioniert“, sondern „wie viele Stunden“ — denn danach wird das Cutover-Fenster bemessen.",
-      "<strong>Beginnen Sie früh mit der Bereinigung.</strong> Sie hängt am Profiling, nicht am Bau, und kann monatelang parallel laufen — und sie dauert immer länger als geplant, weil sie Fachbereiche braucht und nicht das Datenteam.",
-      "<strong>Migrieren Sie weniger.</strong> Die Historie ist der teuerste Teil jeder Migration; die Entscheidung, sie zu archivieren statt zu übernehmen, bringt mehr Termin als jede Optimierung — prüfen Sie dabei die Aufbewahrungsfristen und die Anforderungen an eine revisionssichere Ablage.",
+      "<strong>Stoppen Sie jede Testmigration von Anfang bis Ende.</strong> Die gesuchte Zahl ist nicht „hat funktioniert“, sondern „wie viele Stunden“, denn danach wird das Cutover-Fenster bemessen.",
+      "<strong>Beginnen Sie früh mit der Bereinigung.</strong> Sie hängt am Profiling, nicht am Bau, und kann monatelang parallel laufen, und sie dauert immer länger als geplant, weil sie Fachbereiche braucht und nicht das Datenteam.",
+      "<strong>Migrieren Sie weniger.</strong> Die Historie ist der teuerste Teil jeder Migration; die Entscheidung, sie zu archivieren statt zu übernehmen, bringt mehr Termin als jede Optimierung, prüfen Sie dabei die Aufbewahrungsfristen und die Anforderungen an eine revisionssichere Ablage.",
       "<strong>Denken Sie das Löschkonzept mit.</strong> Eine Migration ist der natürliche Moment, personenbezogene Daten ohne Zweck nicht mitzunehmen, und die Datenschutzprüfung gehört als Vorgang in den Plan statt als Nachfrage kurz vor dem Cutover.",
       "<strong>Setzen Sie den Basisplan mit der Mapping-Freigabe.</strong> Alles davor ist Schätzung; alles danach sollte als Abweichung verfolgt werden."
     ],
@@ -4219,7 +4219,7 @@ const T = {
       ],
       [
         "Unterscheidet sich das von den ERP- oder Cloud-Vorlagen?",
-        "Ja — dies ist der Datenstrang, der innerhalb beider läuft. Nutzen Sie den <a href=\"/de/templates/erp-implementation-schedule.html\">Projektplan für die ERP-Einführung</a> oder den <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migrationsplan</a> für das Gesamtvorhaben und diese Vorlage, wenn die Daten einen eigenen detaillierten Plan und einen eigenen Verantwortlichen brauchen."
+        "Ja, dies ist der Datenstrang, der innerhalb beider läuft. Nutzen Sie den <a href=\"/de/templates/erp-implementation-schedule.html\">Projektplan für die ERP-Einführung</a> oder den <a href=\"/de/templates/cloud-migration-project-plan.html\">Cloud-Migrationsplan</a> für das Gesamtvorhaben und diese Vorlage, wenn die Daten einen eigenen detaillierten Plan und einen eigenen Verantwortlichen brauchen."
       ],
       [
         "Woran scheitern Migrationstermine meistens?",
@@ -4235,9 +4235,9 @@ const T = {
   'conference-production-schedule': {
     card: "Location, Call for Papers, Referenten, Sponsoring, Ticketing, Technik, Ablauf.",
     h1: "Produktionsplan für eine Konferenz",
-    metaTitle: "Konferenz — Produktionsplan",
+    metaTitle: "Konferenz: Produktionsplan",
     metaDesc: "Kostenloser Zeitplan für die Konferenzplanung: Location, Call for Papers, Referenten, Sponsoring, Ticketstufen, Technik, Regieplan, Nachbereitung.",
-    lead: "Eine kostenlose <strong>Produktionsplan-Vorlage für eine Konferenz</strong> mit mehreren parallelen Strängen — Termin und Location, Call for Papers und Programmaufbau, Referentenbetreuung, Sponsoringvertrieb, Ticketstufen, Veranstaltungstechnik, der Regieplan und alles, was nach der letzten Session noch passieren muss. Laden Sie sie für die Sitzung des Programmkomitees herunter oder öffnen Sie sie online, um zu sehen, an welcher Frist Ihr Programm tatsächlich hängt.",
+    lead: "Eine kostenlose <strong>Produktionsplan-Vorlage für eine Konferenz</strong> mit mehreren parallelen Strängen, Termin und Location, Call for Papers und Programmaufbau, Referentenbetreuung, Sponsoringvertrieb, Ticketstufen, Veranstaltungstechnik, der Regieplan und alles, was nach der letzten Session noch passieren muss. Laden Sie sie für die Sitzung des Programmkomitees herunter oder öffnen Sie sie online, um zu sehen, an welcher Frist Ihr Programm tatsächlich hängt.",
     intro: "Eine Konferenz sind vier Betriebe gleichzeitig: ein Programm, eine Sponsoringpipeline, ein Ticketverkauf und ein Produktionsaufbau. Sie teilen sich ein Datum und sonst fast nichts, deshalb bekommt jeder eine eigene Spur:",
     phases: [
       [
@@ -4265,11 +4265,11 @@ const T = {
         "Briefing für Technik und Bühne, Raumspezifikation je Track, Beschilderung und Druck, Brandschutz- und Bestuhlungsnachweis nach der Versammlungsstättenverordnung, GEMA-Anmeldung, Personalplanung und Briefings, Aufbautage, die Veranstaltung selbst und die Nachbereitung. <em>Meilenstein: Türen offen.</em>"
       ]
     ],
-    callout: "Die Frist des Call for Papers bestimmt alles Nachgelagerte. Gutachterinnen und Gutachter brauchen Wochen, Referierende müssen Bescheid wissen, bevor sie Flüge buchen, und das Programm muss öffentlich sein, bevor der Frühbuchertarif endet — sonst verkaufen Sie weniger Tickets zum höheren Preis. Wer die Einreichungsfrist um einen Monat verschiebt, verliert nicht einen Monat, sondern das Frühbucherfenster, die Marketingstrecke und das Reisebudget der Referierenden auf einmal.",
+    callout: "Die Frist des Call for Papers bestimmt alles Nachgelagerte. Gutachterinnen und Gutachter brauchen Wochen, Referierende müssen Bescheid wissen, bevor sie Flüge buchen, und das Programm muss öffentlich sein, bevor der Frühbuchertarif endet, sonst verkaufen Sie weniger Tickets zum höheren Preis. Wer die Einreichungsfrist um einen Monat verschiebt, verliert nicht einen Monat, sondern das Frühbucherfenster, die Marketingstrecke und das Reisebudget der Referierenden auf einmal.",
     customize: [
       "Setzen Sie zuerst den Veranstaltungstermin und zählen Sie rückwärts; jede Frist hier ist eine Vorlaufzeit ab diesem Datum, keine Schätzung von heute nach vorn.",
       "Führen Sie je Track eine Zeile, wenn Sie parallele Programme mit eigenen Vorsitzen und eigenen Gutachterpools fahren.",
-      "Passen Sie die Termine der Ticketstufen an Ihre Preislogik an — die Vorlage arbeitet mit Frühbucher, Normal und Spättarif.",
+      "Passen Sie die Termine der Ticketstufen an Ihre Preislogik an, die Vorlage arbeitet mit Frühbucher, Normal und Spättarif.",
       "Erweitern Sie das Sponsoring auf eine Zeile je Stufe oder je benanntem Zielkunden, sobald die Ansprache beginnt.",
       "Teilen Sie die Aufbautage nach Räumen, wenn die Location die Flächen zu unterschiedlichen Zeiten übergibt.",
       "Ergänzen Sie Fristen für Abstracts oder Tagungsbände, wenn Ihre Konferenz Proceedings produziert, und bei Fachkongressen die Beantragung von Fortbildungspunkten."
@@ -4289,15 +4289,15 @@ const T = {
       ],
       [
         "Worin unterscheidet sie sich von der Vorlage für Eventplanung?",
-        "Die <a href=\"/de/templates/event-planning.html\">Vorlage für Eventplanung</a> ist allgemein und passt für jede einzelne Veranstaltung. Diese hier ist für eine mehrspurige Konferenz gebaut — Call for Papers, Begutachtung, Referentenbetreuung, Sponsoringstufen und Regieplan. Nehmen Sie jene für eine Feier oder einen Launch, diese, sobald Sie ein Programm haben."
+        "Die <a href=\"/de/templates/event-planning.html\">Vorlage für Eventplanung</a> ist allgemein und passt für jede einzelne Veranstaltung. Diese hier ist für eine mehrspurige Konferenz gebaut, Call for Papers, Begutachtung, Referentenbetreuung, Sponsoringstufen und Regieplan. Nehmen Sie jene für eine Feier oder einen Launch, diese, sobald Sie ein Programm haben."
       ],
       [
         "Und wenn ich ausstelle statt zu veranstalten?",
-        "Dann nutzen Sie den <a href=\"/de/templates/trade-show-planning-timeline.html\">Zeitplan für die Messeplanung</a> — der deckt Standbuchung, Standbau, Leaderfassung und Nachfassen ab. Diese Vorlage ist die Seite des Veranstalters."
+        "Dann nutzen Sie den <a href=\"/de/templates/trade-show-planning-timeline.html\">Zeitplan für die Messeplanung</a>, der deckt Standbuchung, Standbau, Leaderfassung und Nachfassen ab. Diese Vorlage ist die Seite des Veranstalters."
       ],
       [
         "Wann sollte der Call for Papers schließen?",
-        "Früh genug, dass Begutachtung, Zusagen, Programmveröffentlichung und die Reisebuchungen der Referierenden alle hineinpassen. Die Vorlage lässt rund fünf Monate zwischen Einreichungsfrist und Türöffnung — realistisch, wenn die Begutachtung ehrenamtlich passiert."
+        "Früh genug, dass Begutachtung, Zusagen, Programmveröffentlichung und die Reisebuchungen der Referierenden alle hineinpassen. Die Vorlage lässt rund fünf Monate zwischen Einreichungsfrist und Türöffnung, realistisch, wenn die Begutachtung ehrenamtlich passiert."
       ],
       [
         "Ist die Vorlage für den Konferenzplan kostenlos?",
@@ -4309,9 +4309,9 @@ const T = {
   'call-center-setup-plan': {
     card: "Betriebsmodell, Telefonie, Personalbedarf, Einstellungswellen, Schulung, Ramp-up.",
     h1: "Projektplan für den Aufbau eines Callcenters",
-    metaTitle: "Callcenter-Aufbau — Projektplan",
+    metaTitle: "Callcenter-Aufbau: Projektplan",
     metaDesc: "Kostenloser Projektplan für den Callcenter-Aufbau: CCaaS-Auswahl, Personalbedarf, Einstellungswellen, Schulung, Pilotbetrieb, Go-live und Ramp-up.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Aufbau eines Callcenters</strong> über den gesamten Aufbau — Betriebsmodell vor Ort oder remote, Auswahl von Telefonie und CCaaS-Plattform, Personalbedarfsrechnung und Einsatzplanung, Einstellungswellen, die Trainingsakademie, Aufbau der Wissensdatenbank, Pilotbetrieb, Go-live und der Ramp-up bis zum Regelbetrieb. Laden Sie sie für einen Lenkungskreis herunter oder öffnen Sie sie online, um Ihre Einstellungswellen gegen die Volumenkurve zu legen.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Aufbau eines Callcenters</strong> über den gesamten Aufbau, Betriebsmodell vor Ort oder remote, Auswahl von Telefonie und CCaaS-Plattform, Personalbedarfsrechnung und Einsatzplanung, Einstellungswellen, die Trainingsakademie, Aufbau der Wissensdatenbank, Pilotbetrieb, Go-live und der Ramp-up bis zum Regelbetrieb. Laden Sie sie für einen Lenkungskreis herunter oder öffnen Sie sie online, um Ihre Einstellungswellen gegen die Volumenkurve zu legen.",
     intro: "Ein Servicecenter steht und fällt damit, ob geschulte Leute in der Woche auf der Fläche sind, in der das Volumen kommt. Der Plan behandelt Einstellung und Schulung als treibende Kette und alles andere als Zuarbeit dafür:",
     phases: [
       [
@@ -4345,16 +4345,16 @@ const T = {
       "Überbuchen Sie jede Welle um die Abgangsquote, die Ihr Haus tatsächlich sieht, statt anzunehmen, dass alle zertifiziert werden.",
       "Ergänzen Sie eine Zeile je Kohorte, wenn Sie mehr als die drei gezeigten Wellen fahren.",
       "Passen Sie die Länge der begleiteten Einarbeitung an die Komplexität an; regulierte oder technische Warteschlangen brauchen länger am Telefon mit Begleitung.",
-      "Ziehen Sie die Rufnummernportierung nach vorn, wenn Sie bestehende Anschlüsse übernehmen — die Portierungsfristen liegen beim abgebenden Anbieter und lassen sich nicht kürzen.",
+      "Ziehen Sie die Rufnummernportierung nach vorn, wenn Sie bestehende Anschlüsse übernehmen, die Portierungsfristen liegen beim abgebenden Anbieter und lassen sich nicht kürzen.",
       "Planen Sie die Beteiligung des Betriebsrats als eigenen Vorgang ein: Gesprächsaufzeichnung, Qualitätsbewertung und Workforce-Management sind mitbestimmungspflichtig, und die Betriebsvereinbarung dazu ist ein Vorgänger des Pilotbetriebs, kein Nachtrag."
     ],
     tips: [
       "<strong>Portieren Sie Rufnummern früh.</strong> Die Portierung ist der einzige Punkt in diesem Plan mit einer Uhr bei Dritten, und sie blockiert jeden Routingtest, der die echte Nummer braucht.",
       "<strong>Bauen Sie die Wissensdatenbank vor der Schulung, nicht währenddessen.</strong> Trainerinnen, die Inhalte schreiben, während sie unterrichten, sind der Grund, warum Kohorte eins auf Material geschult wird, das Kohorte zwei nie sieht.",
       "<strong>Schützen Sie die begleitete Einarbeitung.</strong> In dieser Phase pendeln sich Bearbeitungszeit und Qualität tatsächlich ein; sie zu kürzen, um einen Termin zu halten, kommt als Servicelevel-Problem für ein Quartal zurück.",
-      "<strong>Klären Sie Aufzeichnung und Datenschutz vor dem Pilotbetrieb.</strong> Mitschnitte brauchen eine Rechtsgrundlage, einen Hinweis an die Anrufenden und eine Vereinbarung mit der Arbeitnehmervertretung — das ist ein Vorgang mit Vorlaufzeit, kein Häkchen in der Plattform.",
+      "<strong>Klären Sie Aufzeichnung und Datenschutz vor dem Pilotbetrieb.</strong> Mitschnitte brauchen eine Rechtsgrundlage, einen Hinweis an die Anrufenden und eine Vereinbarung mit der Arbeitnehmervertretung, das ist ein Vorgang mit Vorlaufzeit, kein Häkchen in der Plattform.",
       "<strong>Pilotieren Sie auf einer echten, aber begrenzten Warteschlange.</strong> Routing, Nachbearbeitungscodes und Eskalationswege scheitern erst richtig, wenn echte Anrufende in der Leitung sind.",
-      "<strong>Steigern Sie das Volumen in Stufen.</strong> Gehen Sie erst zur nächsten Stufe, wenn Qualität und Bearbeitungszeit auf der aktuellen halten — der Ramp-up ist eine Folge von Toren, keine Rampe."
+      "<strong>Steigern Sie das Volumen in Stufen.</strong> Gehen Sie erst zur nächsten Stufe, wenn Qualität und Bearbeitungszeit auf der aktuellen halten, der Ramp-up ist eine Folge von Toren, keine Rampe."
     ],
     faq: [
       [
@@ -4363,7 +4363,7 @@ const T = {
       ],
       [
         "Was bestimmt den Terminplan?",
-        "Einstellung und Schulung. Die Technik lässt sich parallel beschaffen und konfigurieren, aber eine Kohorte braucht Wochen zur Gewinnung und noch einmal Wochen für Schulung und Einarbeitung — deshalb liegt die Trainingsakademie auf dem kritischen Pfad zum Go-live."
+        "Einstellung und Schulung. Die Technik lässt sich parallel beschaffen und konfigurieren, aber eine Kohorte braucht Wochen zur Gewinnung und noch einmal Wochen für Schulung und Einarbeitung, deshalb liegt die Trainingsakademie auf dem kritischen Pfad zum Go-live."
       ],
       [
         "Wie groß sollte die erste Welle sein?",
@@ -4371,7 +4371,7 @@ const T = {
       ],
       [
         "Funktioniert die Vorlage auch für ein Remote- oder Hybridcenter?",
-        "Ja. Lassen Sie die Zeilen zum Standortausbau weg und behalten Sie Gerätelogistik, Anschlussprüfung und das Remote-Onboarding — die Abfolge aus Einstellung und Schulung ist identisch."
+        "Ja. Lassen Sie die Zeilen zum Standortausbau weg und behalten Sie Gerätelogistik, Anschlussprüfung und das Remote-Onboarding, die Abfolge aus Einstellung und Schulung ist identisch."
       ],
       [
         "Ist die Vorlage für den Callcenter-Aufbau kostenlos?",
@@ -4383,9 +4383,9 @@ const T = {
   'franchise-rollout-plan': {
     card: "Systemaufbau, Gebiete, Partnergewinnung, Standorte, Ausbau, Schulung, Wellen.",
     h1: "Rollout-Plan für ein Franchisesystem",
-    metaTitle: "Franchise-Rollout — Projektplan",
+    metaTitle: "Franchise-Rollout: Projektplan",
     metaDesc: "Kostenloser Rollout-Plan für Franchise: Systemhandbuch, Gebiete, Partnergewinnung, Standort, Ausbau, Schulung, Eröffnungsmarketing, Wellen.",
-    lead: "Eine kostenlose <strong>Rollout-Plan-Vorlage für ein Franchisesystem</strong>, gebaut um die Abfolge, die Sie für jeden Standort wiederholen — Gewinnung und Auswahl der Partnerinnen und Partner, Gebietszuschnitt, Standortsuche, Ausbau, Markenstandards und Systemhandbuch, Schulung, Eröffnungsmarketing, Eröffnung und die Betreuung danach. Die Vorlage zeigt die Systemarbeit einmal und danach drei überlappende Eröffnungswellen — so läuft ein Rollout tatsächlich.",
+    lead: "Eine kostenlose <strong>Rollout-Plan-Vorlage für ein Franchisesystem</strong>, gebaut um die Abfolge, die Sie für jeden Standort wiederholen, Gewinnung und Auswahl der Partnerinnen und Partner, Gebietszuschnitt, Standortsuche, Ausbau, Markenstandards und Systemhandbuch, Schulung, Eröffnungsmarketing, Eröffnung und die Betreuung danach. Die Vorlage zeigt die Systemarbeit einmal und danach drei überlappende Eröffnungswellen, so läuft ein Rollout tatsächlich.",
     intro: "Ein Franchise-Rollout ist kein Projekt, sondern eine Projektvorlage, die vielfach mit versetzten Startterminen ausgeführt wird. Das Diagramm trennt beides:",
     phases: [
       [
@@ -4415,17 +4415,17 @@ const T = {
     ],
     callout: "Der Engpass ist nicht die einzelne Eröffnung, sondern wie viele Eröffnungen Ihre Zentrale gleichzeitig tragen kann. Standortsuche, Baubegleitung, Schulung und Eröffnungswoche greifen alle auf dasselbe kleine Team zu, und jeder Standort braucht es wochenlang. Legen Sie die Wellen so, dass sich diese Fenster nicht stapeln. Ein Plan, der zehn Eröffnungen im Quartal mit einer Gebietsleitung verspricht, ist ein Plan, zehn Standorte schlecht zu eröffnen.",
     customize: [
-      "Setzen Sie die Abfolge je Standort zuerst auf Ihre echten Dauern und kopieren Sie sie dann je Welle — das Muster ist der wiederverwendbare Teil.",
+      "Setzen Sie die Abfolge je Standort zuerst auf Ihre echten Dauern und kopieren Sie sie dann je Welle, das Muster ist der wiederverwendbare Teil.",
       "Ändern Sie die Überlappung der Wellen entsprechend Ihrer Betreuungskapazität; mehr Leute im Feld erlauben einen engeren Versatz.",
       "Führen Sie eine Zeile je Standort statt je Welle, sobald konkrete Objekte feststehen.",
-      "Verlängern Sie die Dauern für Baugenehmigung, Nutzungsänderung und gegebenenfalls Gaststättenkonzession je Kommune — dieselbe Marke braucht in verschiedenen Städten sehr unterschiedlich lange.",
+      "Verlängern Sie die Dauern für Baugenehmigung, Nutzungsänderung und gegebenenfalls Gaststättenkonzession je Kommune, dieselbe Marke braucht in verschiedenen Städten sehr unterschiedlich lange.",
       "Halten Sie die Partnerschulung als harten Vorgänger der Eröffnung; sie ist die Zeile, die am häufigsten gestaucht wird, und die für Gäste am sichtbarsten ist.",
       "Führen Sie die Betreuungsbesuche nach der Eröffnung als echte terminierte Arbeit statt als unterstellte Fähigkeit."
     ],
     tips: [
       "<strong>Eröffnen Sie Welle 2 nicht, bevor Welle 1 einen Monat gelaufen ist.</strong> An den ersten Standorten lernen Sie, was am Systemhandbuch nicht stimmt, und dieses Lernen ist mehr wert als eine schnellere zweite Welle.",
       "<strong>Wählen Sie Partnerinnen und Partner langsam aus.</strong> Eine falsche Auswahl ist weit teurer als eine verschobene Eröffnung, und sie rückgängig zu machen dauert Jahre.",
-      "<strong>Klären Sie die vorvertragliche Aufklärung sauber.</strong> Ein gesetzlich vorgeschriebenes Offenlegungsdokument nach US-Vorbild gibt es hier nicht, dafür eine von der Rechtsprechung entwickelte Aufklärungspflicht über Rentabilität und Risiken — dokumentiert, mit Vorlauf vor der Unterschrift.",
+      "<strong>Klären Sie die vorvertragliche Aufklärung sauber.</strong> Ein gesetzlich vorgeschriebenes Offenlegungsdokument nach US-Vorbild gibt es hier nicht, dafür eine von der Rechtsprechung entwickelte Aufklärungspflicht über Rentabilität und Risiken, dokumentiert, mit Vorlauf vor der Unterschrift.",
       "<strong>Vollenden Sie das Systemhandbuch vor dem ersten Vertrag.</strong> Sie verkaufen ein System; ist das System nicht aufgeschrieben, erfindet jeder Standort sein eigenes.",
       "<strong>Planen Sie Vermieter- und Genehmigungsarbeit je Standort, nicht je Programm.</strong> Jedes Objekt hat seine eigene Genehmigungsuhr, und die laufen nicht synchron.",
       "<strong>Buchen Sie Unterstützung in der Eröffnungswoche je Standort.</strong> Die erste Handelswoche prägt die Gewohnheiten des Betriebs, und Fernbetreuung ersetzt niemanden auf der Fläche."
@@ -4437,7 +4437,7 @@ const T = {
       ],
       [
         "Wie viele Standorte gehören in eine Welle?",
-        "So viele, wie Ihr Team im Feld durch Standortsuche, Baubegleitung, Schulung und Eröffnungswoche gleichzeitig wirklich tragen kann — meist deutlich weniger, als die Vertriebsplanung möchte. Genau deshalb nutzt die Vorlage kleine Wellen."
+        "So viele, wie Ihr Team im Feld durch Standortsuche, Baubegleitung, Schulung und Eröffnungswoche gleichzeitig wirklich tragen kann, meist deutlich weniger, als die Vertriebsplanung möchte. Genau deshalb nutzt die Vorlage kleine Wellen."
       ],
       [
         "Was ist die Abfolge je Standort?",
@@ -4445,7 +4445,7 @@ const T = {
       ],
       [
         "Passt die Vorlage auch für eigene Filialen?",
-        "Ja. Lassen Sie Gewinnung und Auswahl der Partner weg und behalten Sie die Abfolge je Standort — für eine einzelne Filiale passt der <a href=\"/de/templates/retail-store-opening-timeline.html\">Zeitplan für die Ladeneröffnung</a> besser."
+        "Ja. Lassen Sie Gewinnung und Auswahl der Partner weg und behalten Sie die Abfolge je Standort, für eine einzelne Filiale passt der <a href=\"/de/templates/retail-store-opening-timeline.html\">Zeitplan für die Ladeneröffnung</a> besser."
       ],
       [
         "Ist die Vorlage für den Franchise-Rollout kostenlos?",
@@ -4457,9 +4457,9 @@ const T = {
   'okr-quarterly-planning': {
     card: "Entwurf, Abstimmung, Bewertung des Vorquartals, Commitment, Check-in, Retro.",
     h1: "Vorlage für die quartalsweise OKR-Planung",
-    metaTitle: "OKR-Quartalsplanung — Vorlage",
+    metaTitle: "OKR-Quartalsplanung: Vorlage",
     metaDesc: "Kostenlose Vorlage für die OKR-Quartalsplanung: Entwurf, Abstimmung, Bewertung des Vorquartals, Commitment, Check-in, Abschluss und Retro.",
-    lead: "Eine kostenlose <strong>Vorlage für die quartalsweise OKR-Planung</strong>, gezeichnet als der wiederkehrende Zyklus, der sie tatsächlich ist — Entwurf der Objectives, teamübergreifende Abstimmung, Bewertung des auslaufenden Quartals, Commitment und Veröffentlichung, der Check-in zur Quartalsmitte sowie Abschluss und Retrospektive, die in die nächste Runde münden. Laden Sie sie für den Planungsauftakt herunter oder öffnen Sie sie online, um zu sehen, wo der Abschluss dieses Quartals den Entwurf des nächsten überlappt.",
+    lead: "Eine kostenlose <strong>Vorlage für die quartalsweise OKR-Planung</strong>, gezeichnet als der wiederkehrende Zyklus, der sie tatsächlich ist, Entwurf der Objectives, teamübergreifende Abstimmung, Bewertung des auslaufenden Quartals, Commitment und Veröffentlichung, der Check-in zur Quartalsmitte sowie Abschluss und Retrospektive, die in die nächste Runde münden. Laden Sie sie für den Planungsauftakt herunter oder öffnen Sie sie online, um zu sehen, wo der Abschluss dieses Quartals den Entwurf des nächsten überlappt.",
     intro: "Der Grund, warum sich OKR-Planung immer gehetzt anfühlt: Sie beginnt nie auf einem leeren Blatt. Sie bewerten ein Quartal, während Sie das nächste entwerfen, und beides braucht dieselben Leute in denselben Wochen. Der Plan zeigt diese Überlappung, statt so zu tun, als wäre der Zyklus eine gerade Linie:",
     phases: [
       [
@@ -4468,7 +4468,7 @@ const T = {
       ],
       [
         "Abschluss des Vorquartals",
-        "Letzte Datenerhebung für die Key Results, Selbstbewertung der Teams, Kalibrierung über die Teams hinweg und die Vorstellung der Ergebnisse — parallel zum Entwurf des Folgequartals."
+        "Letzte Datenerhebung für die Key Results, Selbstbewertung der Teams, Kalibrierung über die Teams hinweg und die Vorstellung der Ergebnisse, parallel zum Entwurf des Folgequartals."
       ],
       [
         "Entwurf in den Teams",
@@ -4487,13 +4487,13 @@ const T = {
         "Wöchentliche Einschätzungen zur Zielerreichung, der Check-in zur Quartalsmitte, in dem Objectives angepasst oder gestrichen werden dürfen, sowie Abschluss und Retrospektive am Ende. <em>Meilenstein: Quartal abgeschlossen.</em>"
       ]
     ],
-    callout: "Der Zyklus überlappt sich selbst, und genau das ist das ganze Planungsproblem. Sie können das alte Quartal nicht nach dem Start des neuen bewerten, weil die Daten schal werden und sich niemand mehr an den Kontext erinnert — aber Sie können das neue auch nicht ohne die Bewertungen entwerfen. Also laufen beide rund drei Wochen nebeneinander, und dieselben Verantwortlichen werden für beides gebraucht. Buchen Sie diese Überlappung ausdrücklich. Wer Planung als zweitägigen Workshop in Woche eins behandelt, quetscht vier Wochen Arbeit in zwei Tage und nennt das Ergebnis dann ein Commitment.",
+    callout: "Der Zyklus überlappt sich selbst, und genau das ist das ganze Planungsproblem. Sie können das alte Quartal nicht nach dem Start des neuen bewerten, weil die Daten schal werden und sich niemand mehr an den Kontext erinnert, aber Sie können das neue auch nicht ohne die Bewertungen entwerfen. Also laufen beide rund drei Wochen nebeneinander, und dieselben Verantwortlichen werden für beides gebraucht. Buchen Sie diese Überlappung ausdrücklich. Wer Planung als zweitägigen Workshop in Woche eins behandelt, quetscht vier Wochen Arbeit in zwei Tage und nennt das Ergebnis dann ein Commitment.",
     customize: [
       "Setzen Sie Tag 0 auf etwa drei Wochen vor Quartalsende, dann liegt der ganze Zyklus richtig um die Quartalsgrenze.",
       "Ergänzen Sie eine Entwurfszeile je Team, damit Sie sehen, wer im Verzug ist, ohne hinterhertelefonieren zu müssen.",
-      "Verlegen Sie den Check-in auf die Taktung, die Sie wirklich fahren — monatlich funktioniert bei schnellen Teams besser als quartalsweise.",
+      "Verlegen Sie den Check-in auf die Taktung, die Sie wirklich fahren, monatlich funktioniert bei schnellen Teams besser als quartalsweise.",
       "Kürzen Sie die Abstimmungsphase bei weniger als fünf Teams; verlängern Sie sie deutlich, wenn sich Teams dieselbe Entwicklungskapazität teilen.",
-      "Lassen Sie Bewertung und Entwurf sichtbar überlappen, statt sie hintereinander zu legen — die Überlappung ist das ehrliche Bild.",
+      "Lassen Sie Bewertung und Entwurf sichtbar überlappen, statt sie hintereinander zu legen, die Überlappung ist das ehrliche Bild.",
       "Kopieren Sie den ganzen Block nach vorn, um das nächste Quartal zu bauen; der Zyklus ist jedes Mal derselbe."
     ],
     tips: [
@@ -4510,7 +4510,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sie sich von der Jahresplanung?",
-        "Der <a href=\"/de/templates/annual.html\">Jahresplan</a> deckt ein ganzes Geschäftsjahr ab. Dies ist der wiederkehrende Quartalsrhythmus darin — der vierwöchige Zyklus aus Entwerfen, Abstimmen, Festlegen, Nachhalten und Abschließen, der sich jedes Quartal wiederholt."
+        "Der <a href=\"/de/templates/annual.html\">Jahresplan</a> deckt ein ganzes Geschäftsjahr ab. Dies ist der wiederkehrende Quartalsrhythmus darin, der vierwöchige Zyklus aus Entwerfen, Abstimmen, Festlegen, Nachhalten und Abschließen, der sich jedes Quartal wiederholt."
       ],
       [
         "Wie verhält sie sich zur Produkt-Roadmap?",
@@ -4522,16 +4522,16 @@ const T = {
       ],
       [
         "Kann ich die Vorlage jedes Quartal wiederverwenden?",
-        "Ja — genau dafür ist sie gedacht. Kopieren Sie den Block, verschieben Sie die Termine um ein Quartal, und die Abfolge trägt. Nur die Ziele ändern sich."
+        "Ja, genau dafür ist sie gedacht. Kopieren Sie den Block, verschieben Sie die Termine um ein Quartal, und die Abfolge trägt. Nur die Ziele ändern sich."
       ]
     ]
   },
   'water-treatment-plant-construction-schedule': {
     card: "Erlaubnis, Tiefbau, Maschinentechnik, Probebetrieb, Impfschlamm, Leistungsnachweis.",
     h1: "Bauzeitenplan für den Bau einer Kläranlage",
-    metaTitle: "Kläranlage — Bauzeitenplan",
+    metaTitle: "Kläranlage: Bauzeitenplan",
     metaDesc: "Kostenloser Bauzeitenplan für die Kläranlage: Tiefbau, Maschinen- und Elektrotechnik, Probebetrieb, Impfschlamm und der Leistungsnachweis unter Aufsicht.",
-    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Bau einer Kläranlage</strong>, die den Probebetrieb als das eigentliche Projekt behandelt und nicht als zweiwöchigen Anhang — wasserrechtliche Erlaubnis und Verfahrensbemessung, Bauwerke und Dichtheitsprüfung, Maschinen- und Elektrotechnik, Funktionsprüfung mit Reinwasser, dann der nasse Probebetrieb mit Impfschlamm und schließlich der über Wochen laufende Leistungsnachweis unter behördlicher Begleitung, bevor jemand ein Abnahmeprotokoll unterschreibt. Laden Sie sie für eine Vorlage zur Stufenfreigabe herunter oder öffnen Sie sie online und ziehen Sie die Balken des Probebetriebs auf die Länge, die Ihr Verfahren wirklich braucht.",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Bau einer Kläranlage</strong>, die den Probebetrieb als das eigentliche Projekt behandelt und nicht als zweiwöchigen Anhang, wasserrechtliche Erlaubnis und Verfahrensbemessung, Bauwerke und Dichtheitsprüfung, Maschinen- und Elektrotechnik, Funktionsprüfung mit Reinwasser, dann der nasse Probebetrieb mit Impfschlamm und schließlich der über Wochen laufende Leistungsnachweis unter behördlicher Begleitung, bevor jemand ein Abnahmeprotokoll unterschreibt. Laden Sie sie für eine Vorlage zur Stufenfreigabe herunter oder öffnen Sie sie online und ziehen Sie die Balken des Probebetriebs auf die Länge, die Ihr Verfahren wirklich braucht.",
     intro: "Jedes andere Bauwerk wird übergeben, wenn die Mängelliste leer ist. Eine Kläranlage wird übergeben, wenn die Wasserbehörde gesehen hat, dass sie über Wochen hinweg durchgehend einen Ablauf innerhalb der Erlaubniswerte produziert. Der Plan ist von diesem Punkt aus rückwärts gebaut:",
     phases: [
       [
@@ -4540,7 +4540,7 @@ const T = {
       ],
       [
         "Tief- und Ingenieurbau",
-        "Erdarbeiten und Gründung, Zulaufbauwerk, Vorklärung, Belebungsbecken, Nachklärung, Filtergalerie und Schlammbehandlung — anschließend die Dichtheitsprüfung jedes einzelnen Beckens. <em>Meilenstein: Bauwerke dicht.</em>"
+        "Erdarbeiten und Gründung, Zulaufbauwerk, Vorklärung, Belebungsbecken, Nachklärung, Filtergalerie und Schlammbehandlung, anschließend die Dichtheitsprüfung jedes einzelnen Beckens. <em>Meilenstein: Bauwerke dicht.</em>"
       ],
       [
         "Maschinen- und Elektrotechnik",
@@ -4548,7 +4548,7 @@ const T = {
       ],
       [
         "Leittechnik und Reinwasserprüfung",
-        "Konfiguration des Prozessleitsystems, Schleifenprüfungen (SR-Prüfung), Motorläufe ohne Last und Funktionsprüfung mit Reinwasser — die Regelphilosophie wird bewiesen, bevor der erste Tropfen Rohabwasser in die Anlage läuft."
+        "Konfiguration des Prozessleitsystems, Schleifenprüfungen (SR-Prüfung), Motorläufe ohne Last und Funktionsprüfung mit Reinwasser, die Regelphilosophie wird bewiesen, bevor der erste Tropfen Rohabwasser in die Anlage läuft."
       ],
       [
         "Nasser Probebetrieb und Beimpfung",
@@ -4559,18 +4559,18 @@ const T = {
         "Hochfahren auf den Bemessungszufluss, der durchgehende Leistungsnachweis unter behördlicher Begleitung, amtliche Probenahme, ein Belastungslauf bei Spitzenzufluss, Schulung des Betriebspersonals und die förmliche Abnahme nach VOB/B. <em>Meilenstein: Abnahmeprotokoll unterzeichnet.</em>"
       ]
     ],
-    callout: "Einen Probebetrieb kann man nicht simulieren. Belebtschlamm ist eine Kultur, die beimpft und dann gezüchtet werden muss, und gerade die nitrifizierenden Bakterien verdoppeln sich langsam — rechnen Sie in Wochen, nicht in Tagen, und bei niedrigen Abwassertemperaturen im Winter in deutlich mehr. Darauf sitzt ein Leistungsnachweis, den die Behörde über einen längeren Zeitraum beim Bemessungszufluss begleitet. Diese beiden Balken sind physikalisch und vertraglich gesetzt, nicht verhandelbar, und sie gehören zu den längsten Vorgängen am rechten Ende Ihres Diagramms.",
+    callout: "Einen Probebetrieb kann man nicht simulieren. Belebtschlamm ist eine Kultur, die beimpft und dann gezüchtet werden muss, und gerade die nitrifizierenden Bakterien verdoppeln sich langsam, rechnen Sie in Wochen, nicht in Tagen, und bei niedrigen Abwassertemperaturen im Winter in deutlich mehr. Darauf sitzt ein Leistungsnachweis, den die Behörde über einen längeren Zeitraum beim Bemessungszufluss begleitet. Diese beiden Balken sind physikalisch und vertraglich gesetzt, nicht verhandelbar, und sie gehören zu den längsten Vorgängen am rechten Ende Ihres Diagramms.",
     customize: [
-      "Setzen Sie die Balken für Beimpfung und Biomasseaufbau auf die Werte Ihres Verfahrensplaners und auf die Jahreszeit, in der Sie anfahren — ein Start im Winter kann allein die Nitrifikation um mehrere Wochen verlängern.",
+      "Setzen Sie die Balken für Beimpfung und Biomasseaufbau auf die Werte Ihres Verfahrensplaners und auf die Jahreszeit, in der Sie anfahren, ein Start im Winter kann allein die Nitrifikation um mehrere Wochen verlängern.",
       "Ändern Sie die Dauer des Leistungsnachweises auf das, was Vertrag und Erlaubnis fordern; vier Wochen sind üblich, viele Vorhaben verlangen länger oder eine Wiederholung, wenn eine Probe reißt.",
       "Ergänzen Sie hinter dem Leistungsnachweis einen Balken für Nachbeprobung und Wiederholung. Von einem Bestehen im ersten Anlauf auszugehen ist der häufigste Terminfehler auf diesen Baustellen.",
-      "Zerlegen Sie die Dichtheitsprüfung in eine Zeile je Becken, wenn Sie nacheinander füllen — ein undichtes Becken muss leergefahren, getrocknet, saniert und erneut gefüllt werden.",
+      "Zerlegen Sie die Dichtheitsprüfung in eine Zeile je Becken, wenn Sie nacheinander füllen, ein undichtes Becken muss leergefahren, getrocknet, saniert und erneut gefüllt werden.",
       "Ziehen Sie die Konfiguration des Prozessleitsystems nach vorn; sie hängt an den R&I-Fließbildern, nicht am Beton, und wird regelmäßig viel zu spät begonnen.",
-      "Setzen Sie erteilte Erlaubnis, Dichtheit der Bauwerke, technische Fertigstellung, erste Beschickung und Abnahme als Meilensteine — das sind die Termine, die Aufsichtsrat und Wasserbehörde gleichermaßen verfolgen."
+      "Setzen Sie erteilte Erlaubnis, Dichtheit der Bauwerke, technische Fertigstellung, erste Beschickung und Abnahme als Meilensteine, das sind die Termine, die Aufsichtsrat und Wasserbehörde gleichermaßen verfolgen."
     ],
     tips: [
       "<strong>Melden Sie den Beginn des Leistungsnachweises früh und schriftlich bei der Wasserbehörde an.</strong> Die Begleitung hängt am Terminkalender der Behörde, nicht an Ihrem, und eine verspätete Anzeige kann die Abnahme um einen Monat schieben, obwohl die Anlage fertig dasteht.",
-      "<strong>Sichern Sie den Impfschlamm früh und vertraglich.</strong> Er kommt aus einer laufenden Nachbaranlage, braucht Saugwagen und ein Lieferfenster — eine Anlage, die voll Rohabwasser auf Schlamm wartet, verbrennt Puffer für nichts.",
+      "<strong>Sichern Sie den Impfschlamm früh und vertraglich.</strong> Er kommt aus einer laufenden Nachbaranlage, braucht Saugwagen und ein Lieferfenster, eine Anlage, die voll Rohabwasser auf Schlamm wartet, verbrennt Puffer für nichts.",
       "<strong>Beweisen Sie die Leittechnik zuerst mit Reinwasser.</strong> Einem falsch parametrierten Füllstandsgeber oder einer verkehrt herum wirkenden Armatur hinterherzujagen, während die Biologie sich stabilisieren soll, kostet weit mehr als die zwei Wochen, die die Reinwasserphase braucht.",
       "<strong>Legen Sie den Leistungsnachweis nicht über offene Restarbeiten.</strong> Eine Firma, die während des begleiteten Laufs noch Geländer montiert, liefert der Behörde einen bequemen Grund, den Lauf für ungültig zu erklären.",
       "<strong>Schauen Sie auf die Ablaufwerte, nicht auf den Durchflussmesser.</strong> Den Bemessungszufluss zu erreichen beweist die Hydraulik; nur eine durchgehende Beprobung innerhalb der Erlaubniswerte beweist das Verfahren, und nur Letzteres bringt Ihnen die Abnahme.",
@@ -4591,7 +4591,7 @@ const T = {
       ],
       [
         "Lässt sich der Probebetrieb durch früheres Beimpfen verkürzen?",
-        "Nur geringfügig. Sie können den Impfschlamm vorbestellen und die Saugwagen an dem Tag bereitstellen, an dem das Rohabwasser kommt — die Wachstumskurve selbst bleibt Biologie. Verkürzen lässt sich das Programm nur im Tiefbau und in der Montage."
+        "Nur geringfügig. Sie können den Impfschlamm vorbestellen und die Saugwagen an dem Tag bereitstellen, an dem das Rohabwasser kommt, die Wachstumskurve selbst bleibt Biologie. Verkürzen lässt sich das Programm nur im Tiefbau und in der Montage."
       ],
       [
         "Wie plane ich eine gerissene Probe ein?",
@@ -4606,9 +4606,9 @@ const T = {
   'airport-terminal-expansion-plan': {
     card: "Sperrfenster, Bauzäune, Ausweise, Kontrollkapazität, Gepäckanlage, ORAT, Umschaltung.",
     h1: "Projektplan für die Erweiterung eines Flughafenterminals",
-    metaTitle: "Terminalerweiterung — Projektplan",
+    metaTitle: "Terminalerweiterung: Projektplan",
     metaDesc: "Kostenloser Projektplan für die Terminalerweiterung: Sperrfenster, Bauzäune, Flughafenausweise, Kontrollkapazität, Gepäckanlage, ORAT und Umschaltung.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Erweiterung eines Flughafenterminals</strong> — für einen Bau an einem Gebäude, das nie schließt. Abschnittsweise Sperrfenster hinter Bauzäunen, Flughafenausweise und begleiteter Zugang zum Sicherheitsbereich, provisorische Fluggastführung, eine Kontrollkapazität, die über jede Umstellung hinweg auf Spitzenstundenniveau bleibt, Einbindung der Gepäckförderanlage, ORAT (Operational Readiness and Airport Transfer, die betriebliche Inbetriebnahme) und eine Umschaltung über Nacht. Laden Sie sie für die Programmsteuerung herunter oder öffnen Sie sie online und legen Sie die Sperrfenster gegen Ihre eigene Verkehrssaison.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die Erweiterung eines Flughafenterminals</strong>, für einen Bau an einem Gebäude, das nie schließt. Abschnittsweise Sperrfenster hinter Bauzäunen, Flughafenausweise und begleiteter Zugang zum Sicherheitsbereich, provisorische Fluggastführung, eine Kontrollkapazität, die über jede Umstellung hinweg auf Spitzenstundenniveau bleibt, Einbindung der Gepäckförderanlage, ORAT (Operational Readiness and Airport Transfer, die betriebliche Inbetriebnahme) und eine Umschaltung über Nacht. Laden Sie sie für die Programmsteuerung herunter oder öffnen Sie sie online und legen Sie die Sperrfenster gegen Ihre eigene Verkehrssaison.",
     intro: "Eine Erweiterung ist kein Projekt mit sechs Phasen, sondern eine Folge ausgehandelter Sperrfenster mitten im laufenden Betrieb. Der Plan hält diese betriebliche Nebenbedingung in jeder Phase sichtbar:",
     phases: [
       [
@@ -4620,11 +4620,11 @@ const T = {
         "Vorplanung und Ausführungsplanung, Brandschutzkonzept, Verlauf der Bauzäune und provisorische Wegeleitung, Leitungsumlegungen und die provisorischen Fluggastwege, die stehen müssen, bevor irgendetwas geschlossen wird. <em>Meilenstein: vorbereitende Maßnahmen abgeschlossen.</em>"
       ],
       [
-        "Sperrfenster 1 — Pier-Verlängerung",
+        "Sperrfenster 1, Pier-Verlängerung",
         "Bauzäune stellen, Umbau von Vorfeld und Abstellpositionen, Rohbau und Hülle des Piers, Fluggastbrücken und Gate-Bereiche, danach Rückgabe der Positionen an den Betrieb. <em>Meilenstein: Abstellpositionen wieder in Betrieb.</em>"
       ],
       [
-        "Sperrfenster 2 — Sicherheitskontrolle und Check-in",
+        "Sperrfenster 2, Sicherheitskontrolle und Check-in",
         "Zuerst der Nachweis der provisorischen Kontrollspuren in der Spitzenstunde, danach Rückbau des Check-in, neue Check-in-Inseln, Ausbau der zentralen Sicherheitskontrolle und Arbeiten in der Grenzkontrolle."
       ],
       [
@@ -4636,21 +4636,21 @@ const T = {
         "Betriebliche Inbetriebnahme, Einweisung des Personals, Probeabfertigung mit Statistinnen und Statisten, Räumungsübungen, Abnahme durch Luftsicherheits- und Bauaufsichtsbehörde und die Umschaltung über Nacht. <em>Meilenstein: Vollbetrieb.</em>"
       ]
     ],
-    callout: "Nehmen Sie niemals Kontrollkapazität weg, bevor der Ersatz in der Spitzenstunde nachgewiesen ist. Alles andere in einem laufenden Terminal lässt sich umgehen — ein längerer Weg, ein provisorisches Schild, ein verlegter Laden. Aber eine Warteschlange an der Sicherheitskontrolle, die ihre Zielzeit reißt, ist ein meldepflichtiges betriebliches Versagen, und sie beendet Ihr Sperrfenster binnen Tagen. Setzen Sie vor jede Umstellung, die die zentrale Kontrolle berührt, einen Meilenstein für den Kapazitätsnachweis.",
+    callout: "Nehmen Sie niemals Kontrollkapazität weg, bevor der Ersatz in der Spitzenstunde nachgewiesen ist. Alles andere in einem laufenden Terminal lässt sich umgehen, ein längerer Weg, ein provisorisches Schild, ein verlegter Laden. Aber eine Warteschlange an der Sicherheitskontrolle, die ihre Zielzeit reißt, ist ein meldepflichtiges betriebliches Versagen, und sie beendet Ihr Sperrfenster binnen Tagen. Setzen Sie vor jede Umstellung, die die zentrale Kontrolle berührt, einen Meilenstein für den Kapazitätsnachweis.",
     customize: [
       "Ersetzen Sie die beiden Sperrfenster durch Ihre eigenen und stimmen Sie Anfang und Ende jeweils mit dem Flughafenbetrieb ab, nicht mit der Baufirma.",
-      "Legen Sie die Sperrfenster in Ihre echte verkehrsschwache Zeit und rechnen Sie mit der Prognose, nicht mit dem Vorjahr — ein Fenster, das im Februar passt, passt im Juli nicht.",
+      "Legen Sie die Sperrfenster in Ihre echte verkehrsschwache Zeit und rechnen Sie mit der Prognose, nicht mit dem Vorjahr, ein Fenster, das im Februar passt, passt im Juli nicht.",
       "Ergänzen Sie eine Zeile je Personalwelle für Zuverlässigkeitsüberprüfung und Ausweisausgabe; die Überprüfung nach LuftSiG hat einen Vorlauf von Wochen und hat schon mehr Baustarts aufgehalten als fehlendes Material.",
       "Setzen Sie überall dort einen Balken für Nachtarbeit, wo die Arbeit nicht im laufenden Betrieb stattfinden kann, und besetzen Sie die dafür nötigen Begleitpersonen mit.",
       "Zerlegen Sie den Test der Gepäckanlage in Montage, Integration und Volumen- beziehungsweise Sortiertest; der letzte findet die Fehler, und genau er wird zusammengedrückt.",
       "Setzen Sie Sperrzeitenkalender, Rückgabe der Abstellpositionen, Kapazitätsnachweis der Kontrolle, Systemintegration und Vollbetrieb als Meilensteine."
     ],
     tips: [
-      "<strong>Der Sperrzeitenkalender ist das Programm.</strong> Sobald Flughafenbetrieb, Fluggesellschaften und Abfertiger ihn gezeichnet haben, leitet sich die Bauablauffolge aus ihm ab — und nicht umgekehrt.",
+      "<strong>Der Sperrzeitenkalender ist das Programm.</strong> Sobald Flughafenbetrieb, Fluggesellschaften und Abfertiger ihn gezeichnet haben, leitet sich die Bauablauffolge aus ihm ab, und nicht umgekehrt.",
       "<strong>Bauen Sie den provisorischen Weg, bevor Sie ihn brauchen, und gehen Sie ihn unter echter Last ab.</strong> Eine Wegeleitung, die auf dem Plan einleuchtet, versagt um sechs Uhr früh bei vollem Abflugwellenbetrieb und einer Familie mit drei Wagen.",
-      "<strong>Behandeln Sie den Zugang zum Sicherheitsbereich als Ressource mit Vorlaufzeit.</strong> Ausweise, Begleitungen, Fahrerlaubnisse für das Vorfeld und Fahrzeugprüfungen brauchen Wochen, und eine begleitete Kolonne arbeitet mit einem Bruchteil der Leistung einer Kolonne im öffentlichen Bereich — das gehört in die Dauern.",
+      "<strong>Behandeln Sie den Zugang zum Sicherheitsbereich als Ressource mit Vorlaufzeit.</strong> Ausweise, Begleitungen, Fahrerlaubnisse für das Vorfeld und Fahrzeugprüfungen brauchen Wochen, und eine begleitete Kolonne arbeitet mit einem Bruchteil der Leistung einer Kolonne im öffentlichen Bereich, das gehört in die Dauern.",
       "<strong>Lassen Sie die Einbindung der Gepäckanlage nicht erst nach dem Rohbau beginnen.</strong> Eine Gepäckförderanlage ist eine Maschine mit langer Testkurve; Sortier- und Abgleichtests brauchen Monate und liegen auf dem kritischen Pfad zur Eröffnung.",
-      "<strong>Fahren Sie eine echte Probeabfertigung mit Freiwilligen.</strong> Sie findet die Engstellen in der Schlange, die Lücken in der Anzeige und die Personallücken, die ein reiner Systemtest nie zeigt — und sie ist weit billiger, als sie am ersten Betriebstag zu finden.",
+      "<strong>Fahren Sie eine echte Probeabfertigung mit Freiwilligen.</strong> Sie findet die Engstellen in der Schlange, die Lücken in der Anzeige und die Personallücken, die ein reiner Systemtest nie zeigt, und sie ist weit billiger, als sie am ersten Betriebstag zu finden.",
       "<strong>Planen Sie die Umschaltung als Nachtbetrieb mit Abbruchpunkt.</strong> Legen Sie vorher fest, in welchem Zustand das Terminal zu welcher Stunde sein muss, damit umgeschaltet wird, und worauf Sie zurückfallen, wenn es das nicht ist."
     ],
     faq: [
@@ -4660,7 +4660,7 @@ const T = {
       ],
       [
         "Was ist ORAT, und wann sollte es beginnen?",
-        "ORAT — Operational Readiness and Airport Transfer — ist die betriebliche Inbetriebnahme: Verfahren, Personalplanung, Einweisung und Probebetrieb. Der Begriff wird in der Branche auch im Deutschen englisch verwendet. ORAT sollte starten, während noch gebaut wird, typischerweise sechs bis neun Monate vor der Eröffnung, nicht erst nach der Übergabe."
+        "ORAT, Operational Readiness and Airport Transfer, ist die betriebliche Inbetriebnahme: Verfahren, Personalplanung, Einweisung und Probebetrieb. Der Begriff wird in der Branche auch im Deutschen englisch verwendet. ORAT sollte starten, während noch gebaut wird, typischerweise sechs bis neun Monate vor der Eröffnung, nicht erst nach der Übergabe."
       ],
       [
         "Wie halten wir die Kontrollkapazität während der Bauzeit?",
@@ -4672,7 +4672,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sich das von einem Terminalneubau?",
-        "Ein Neubau hat keine Fluggäste zu schützen und kann rein nach Bauablaufeffizienz sortiert werden. Diese Vorlage ist um Sperrfenster, provisorische Wege und erhaltene Kapazität herum gebaut — genau das macht eine Erweiterung langsamer."
+        "Ein Neubau hat keine Fluggäste zu schützen und kann rein nach Bauablaufeffizienz sortiert werden. Diese Vorlage ist um Sperrfenster, provisorische Wege und erhaltene Kapazität herum gebaut, genau das macht eine Erweiterung langsamer."
       ],
       [
         "Ist die Vorlage für die Terminalerweiterung kostenlos?",
@@ -4683,9 +4683,9 @@ const T = {
   'fiber-broadband-rollout-plan': {
     card: "Wegerechte, Genehmigungen, Bestandsaufnahme, Ausbauwellen, Messung, Hausanschlüsse.",
     h1: "Projektplan für den Glasfaserausbau",
-    metaTitle: "Glasfaserausbau — Projektplan",
+    metaTitle: "Glasfaserausbau: Projektplan",
     metaDesc: "Kostenloser Projektplan für den Glasfaserausbau: Wegerechte, Aufgrabegenehmigungen, Ausbauwellen, OTDR-Messung, Betriebsbereitschaft, Hausanschlüsse.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Glasfaserausbau</strong>, gebaut so, wie ein FTTH-Programm tatsächlich läuft — eine wiederholbare Abfolge je Ausbaugebiet, ausgeführt in überlappenden Wellen, getaktet von Wegerechten, Aufgrabegenehmigungen und der Verfügbarkeit mitnutzbarer Leerrohre. Jedes Gebiet endet an seinem eigenen Meilenstein „betriebsbereit“ (Ready for Service), und erst danach beginnen Hausanschlüsse und Umsatz. Laden Sie sie für eine Gremien- oder Investorenvorlage herunter oder öffnen Sie sie online und ergänzen Sie so viele Gebietswellen, wie Ihr Ausbauplan braucht.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für den Glasfaserausbau</strong>, gebaut so, wie ein FTTH-Programm tatsächlich läuft, eine wiederholbare Abfolge je Ausbaugebiet, ausgeführt in überlappenden Wellen, getaktet von Wegerechten, Aufgrabegenehmigungen und der Verfügbarkeit mitnutzbarer Leerrohre. Jedes Gebiet endet an seinem eigenen Meilenstein „betriebsbereit“ (Ready for Service), und erst danach beginnen Hausanschlüsse und Umsatz. Laden Sie sie für eine Gremien- oder Investorenvorlage herunter oder öffnen Sie sie online und ergänzen Sie so viele Gebietswellen, wie Ihr Ausbauplan braucht.",
     intro: "Ein Glasfaserausbau ist kein langer Bau, sondern dieselben sechs Schritte über viele Gebiete hinweg, zeitlich versetzt. Der Plan zeigt dieses Muster ausdrücklich, damit Sie eine Welle kopieren, statt für jedes Gebiet einen neuen Plan zu erfinden:",
     phases: [
       [
@@ -4697,16 +4697,16 @@ const T = {
         "Wegenutzungsverträge mit den Kommunen, Aufgrabegenehmigungen und verkehrsrechtliche Anordnungen, Gestattungsverträge mit privaten Grundstückseigentümern, Eigentümerbeschlüsse in Mehrfamilienhäusern, Bestandsaufnahme mitnutzbarer Leerrohre und Masten sowie Mitnutzungsanträge nach TKG. <em>Meilenstein: Wegerechte für Welle 1 geklärt.</em>"
       ],
       [
-        "Gebiet A — Ausbauwelle 1",
+        "Gebiet A, Ausbauwelle 1",
         "Ausführungsplanung und Spleißplan, Freispülen der Leerrohre und Tiefbau, Einblasen der Kabel, Spleißen und Aufbau der Netzverteiler, OTDR-Messung und Übergabe der Bestandsdokumentation. <em>Meilenstein: Gebiet A betriebsbereit.</em>"
       ],
       [
-        "Gebiet B — Ausbauwelle 2",
+        "Gebiet B, Ausbauwelle 2",
         "Dieselbe Abfolge, gestartet, während Gebiet A noch im Tiefbau steckt, damit Kolonnen und Genehmigungen ohne Leerlauf durchlaufen. <em>Meilenstein: Gebiet B betriebsbereit.</em>"
       ],
       [
-        "Gebiet C — Ausbauwelle 3",
-        "Die dritte Welle, mit ihrem eigenen Vorlauf für die Wegerechte davor — genau der Schritt, den Teams beim Versetzen am häufigsten vergessen. <em>Meilenstein: Gebiet C betriebsbereit.</em>"
+        "Gebiet C, Ausbauwelle 3",
+        "Die dritte Welle, mit ihrem eigenen Vorlauf für die Wegerechte davor, genau der Schritt, den Teams beim Versetzen am häufigsten vergessen. <em>Meilenstein: Gebiet C betriebsbereit.</em>"
       ],
       [
         "Inbetriebnahme, Vermarktung und Hausanschlüsse",
@@ -4717,9 +4717,9 @@ const T = {
     customize: [
       "Kopieren Sie den Block „Gebiet A“ einmal je Ausbaugebiet und verschieben Sie den Versatz; die Abfolge ist bewusst identisch, damit sie dupliziert und nicht neu geschrieben wird.",
       "Setzen Sie die Balken für Wegerechte und Genehmigungen auf die tatsächlichen Bearbeitungs- und Anhörungsfristen Ihrer Kommunen und Straßenbaulastträger; die schwanken stark und lassen sich nicht dadurch verkürzen, dass man die Baufirma drängt.",
-      "Ergänzen Sie einen Balken für die Sanierung von Leerrohren mit realistischem Puffer — Verstopfungen und eingedrückte Rohre findet die Bestandsaufnahme, nicht die Planung, und sie führen zur Umtrassierung ganzer Straßenzüge.",
+      "Ergänzen Sie einen Balken für die Sanierung von Leerrohren mit realistischem Puffer, Verstopfungen und eingedrückte Rohre findet die Bestandsaufnahme, nicht die Planung, und sie führen zur Umtrassierung ganzer Straßenzüge.",
       "Trennen Sie Einblasen und Spleißen, wenn verschiedene Kolonnen das machen; sie haben unterschiedliche Tagessätze und unterschiedliche Wetterempfindlichkeit.",
-      "Fügen Sie dort, wo es passt, einen Teilplan für Mehrfamilienhäuser ein — Gestattungsverträge, Eigentümerbeschlüsse und Inhausverkabelung laufen auf einer völlig anderen Uhr als der Tiefbau in der Straße.",
+      "Fügen Sie dort, wo es passt, einen Teilplan für Mehrfamilienhäuser ein, Gestattungsverträge, Eigentümerbeschlüsse und Inhausverkabelung laufen auf einer völlig anderen Uhr als der Tiefbau in der Straße.",
       "Setzen Sie die Betriebsbereitschaft je Gebiet als Meilenstein und starten Sie den Anschlussbalken dieses Gebiets dort, damit das Diagramm zeigt, dass der Umsatz dem Bau folgt und nicht neben ihm herläuft."
     ],
     tips: [
@@ -4741,7 +4741,7 @@ const T = {
       ],
       [
         "Warum liegen Wegerechte auf dem kritischen Pfad?",
-        "Weil dahinter Dritte stehen — Kommunen, Straßenbaulastträger, private Eigentümer, Wohnungseigentümergemeinschaften —, die keinen Anlass haben, sich nach Ihrem Takt zu richten. Sie dauern in der Regel Monate, lassen sich nicht durch mehr Personal verkürzen, und eine einzige Verweigerung kann die Trassenplanung eines Gebiets kippen."
+        "Weil dahinter Dritte stehen, Kommunen, Straßenbaulastträger, private Eigentümer, Wohnungseigentümergemeinschaften, , die keinen Anlass haben, sich nach Ihrem Takt zu richten. Sie dauern in der Regel Monate, lassen sich nicht durch mehr Personal verkürzen, und eine einzige Verweigerung kann die Trassenplanung eines Gebiets kippen."
       ],
       [
         "Wie viele Wellen sollten gleichzeitig laufen?",
@@ -4749,7 +4749,7 @@ const T = {
       ],
       [
         "Warum liegen die angeschlossenen weit unter den erschlossenen Haushalten?",
-        "Weil der Anschluss von Vermarktung, Montagekapazität und den Laufzeiten bestehender Verträge abhängt — nichts davon passiert an dem Tag, an dem ein Gebiet betriebsbereit wird. Modellieren Sie die Anschlusskurve getrennt von der Baukurve."
+        "Weil der Anschluss von Vermarktung, Montagekapazität und den Laufzeiten bestehender Verträge abhängt, nichts davon passiert an dem Tag, an dem ein Gebiet betriebsbereit wird. Modellieren Sie die Anschlusskurve getrennt von der Baukurve."
       ],
       [
         "Ist die Vorlage für den Glasfaserausbau kostenlos?",
@@ -4760,10 +4760,10 @@ const T = {
   'stadium-construction-schedule': {
     card: "Rohbau, Tribünen, Dachhub, Ausbau, Rasenanwuchs, Gebrauchsabnahme, Eröffnungsspiel.",
     h1: "Bauzeitenplan für den Stadionbau",
-    metaTitle: "Stadionbau — Bauzeitenplan",
+    metaTitle: "Stadionbau: Bauzeitenplan",
     metaDesc: "Kostenloser Bauzeitenplan für den Stadionbau: Rohbau und Fertigteiltribünen, Dachhub, Ausbau, Rasenanwuchs, Gebrauchsabnahme und Eröffnungsspiel.",
-    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Stadionbau</strong>, rückwärts geplant von einem Termin, den niemand im Projekt in der Hand hat — dem Eröffnungsspiel im Rahmenterminkalender der Liga. Sie umfasst Rohbau und Fertigteiltribünen, Dachtragwerk und Seilnetz mit ihrem Wetterfenster für den großen Hub, den Ausbau von Umläufen und Hospitality, den Rasenaufbau mit seiner Anwuchszeit sowie die Belastungsproben und die Gebrauchsabnahme, die zwischen der Fertigstellung und einem vollen Haus stehen. Laden Sie sie für die Aufsichtsratsvorlage herunter oder öffnen Sie sie online und ziehen Sie den Spieltermin, um zu sehen, was zerbricht.",
-    intro: "Die meisten Bauzeitenpläne verhandeln ihr Ende. Dieser kann das nicht: Der Spielplan ist veröffentlicht, die Tickets sind verkauft, und zwei der längsten Vorgänge — Rasenanwuchs und Dachhub — hängen an Wetter und Biologie, nicht an der Zahl der Leute auf der Baustelle. Der Plan ist entsprechend sortiert:",
+    lead: "Eine kostenlose <strong>Bauzeitenplan-Vorlage für den Stadionbau</strong>, rückwärts geplant von einem Termin, den niemand im Projekt in der Hand hat, dem Eröffnungsspiel im Rahmenterminkalender der Liga. Sie umfasst Rohbau und Fertigteiltribünen, Dachtragwerk und Seilnetz mit ihrem Wetterfenster für den großen Hub, den Ausbau von Umläufen und Hospitality, den Rasenaufbau mit seiner Anwuchszeit sowie die Belastungsproben und die Gebrauchsabnahme, die zwischen der Fertigstellung und einem vollen Haus stehen. Laden Sie sie für die Aufsichtsratsvorlage herunter oder öffnen Sie sie online und ziehen Sie den Spieltermin, um zu sehen, was zerbricht.",
+    intro: "Die meisten Bauzeitenpläne verhandeln ihr Ende. Dieser kann das nicht: Der Spielplan ist veröffentlicht, die Tickets sind verkauft, und zwei der längsten Vorgänge, Rasenanwuchs und Dachhub, hängen an Wetter und Biologie, nicht an der Zahl der Leute auf der Baustelle. Der Plan ist entsprechend sortiert:",
     phases: [
       [
         "Planung, Genehmigungen und Baufeldfreimachung",
@@ -4792,15 +4792,15 @@ const T = {
     ],
     callout: "Zwei Balken in diesem Diagramm lassen sich nicht stauchen. Der Dachhub braucht ein Fenster mit ruhigem Wetter und einen Kran, der Monate vorher gebucht ist; der Rasen braucht eine Anwuchszeit, gemessen in Wochen mit der richtigen Temperatur und genug Licht, bevor er einem Spiel standhält. Beide liegen spät im Programm, beide sind saisonabhängig, und beide münden in einen Spieltermin, der sich nicht verschiebt. Planen Sie diese beiden zuerst und legen Sie den Rest der Arbeiten um sie herum.",
     customize: [
-      "Tragen Sie Ihren echten Termin für das Eröffnungsspiel ein und rechnen Sie rückwärts — die Vorlage ist bewusst so gebaut, dass der letzte Meilenstein fest steht und der Puffer weiter vorn sitzt.",
+      "Tragen Sie Ihren echten Termin für das Eröffnungsspiel ein und rechnen Sie rückwärts, die Vorlage ist bewusst so gebaut, dass der letzte Meilenstein fest steht und der Puffer weiter vorn sitzt.",
       "Setzen Sie den Anwuchsbalken auf Ihr Klima und Ihr Rasensystem; eine Verlegung im Frühjahr mit langen Tagen wächst weit schneller an als eine im Herbst, und dieser Unterschied kann ein ganzer Spieltag sein.",
       "Legen Sie den Dachhub in Ihre tatsächlich windarme Jahreszeit und hängen Sie einen Reservebalken dahinter; ein wetterbedingt abgesagter Hub rutscht nicht um einen Tag, sondern in das nächste Fenster.",
-      "Ergänzen Sie eine Zeile je Belastungsprobe, die Ihre Genehmigungsbehörde verlangt — meist ist es eine gestufte Reihe und nicht ein einzelner Test bei voller Auslastung.",
+      "Ergänzen Sie eine Zeile je Belastungsprobe, die Ihre Genehmigungsbehörde verlangt, meist ist es eine gestufte Reihe und nicht ein einzelner Test bei voller Auslastung.",
       "Zerlegen Sie den Ausbau nach Rang oder Tribüne, wenn das Stadion teilweise öffnen kann; manche Häuser erhalten die Abnahme zunächst für eine reduzierte Zuschauerzahl und bauen den Rest danach fertig.",
-      "Setzen Sie Spieltermin, Rohbau fertig, Hülle dicht, Rasenübergabe, Gebrauchsabnahme und Anpfiff als Meilensteine — nach genau diesen sechs Terminen fragt ein Vereinsgremium."
+      "Setzen Sie Spieltermin, Rohbau fertig, Hülle dicht, Rasenübergabe, Gebrauchsabnahme und Anpfiff als Meilensteine, nach genau diesen sechs Terminen fragt ein Vereinsgremium."
     ],
     tips: [
-      "<strong>Behandeln Sie den Spieltermin als Randbedingung, nicht als Ziel.</strong> Wenn die Rückwärtsrechnung sagt, dass der Dachhub vor dem Winter stattfinden muss, ist das die Antwort — darüber in der Baubesprechung zu streiten ändert den Wind nicht.",
+      "<strong>Behandeln Sie den Spieltermin als Randbedingung, nicht als Ziel.</strong> Wenn die Rückwärtsrechnung sagt, dass der Dachhub vor dem Winter stattfinden muss, ist das die Antwort, darüber in der Baubesprechung zu streiten ändert den Wind nicht.",
       "<strong>Bestellen Sie die Tribünenfertigteile peinlich früh.</strong> Die Fertigung ist eine Warteschlange im Werk, und die Tribünenelemente sind der Posten, der den Rohbau am ehesten aufhält, während alle auf das Dach schauen.",
       "<strong>Führen Sie den Rasenaufbau als eigenes Projekt im Plan, nicht als Zeile beim Garten- und Landschaftsbau.</strong> Dränage, Rasenheizung, Tragschicht und Anwuchs sind eine Abfolge von zwei bis drei Monaten mit einem Greenkeeper, nicht eine Woche Rollrasen.",
       "<strong>Belastungsproben sind Genehmigungsrecht, kein Marketing.</strong> Die Behörde will Ordnerdienst, Einlass, Auslass und Räumung bei steigender Belegung sehen, bevor sie freigibt, und sie kürzt diese Reihe nicht für einen Übertragungstermin.",
@@ -4818,7 +4818,7 @@ const T = {
       ],
       [
         "Was passiert, wenn wir das Eröffnungsspiel verpassen?",
-        "Vereine verlegen das Spiel in der Regel oder eröffnen mit reduzierter Kapazität — beides ist teuer und öffentlich sichtbar. Genau deshalb enthält die Vorlage eine gestufte Reihe von Belastungsproben und eine vorab getroffene Entscheidung über die Rückfallkapazität, statt beides dem Zufall zu überlassen."
+        "Vereine verlegen das Spiel in der Regel oder eröffnen mit reduzierter Kapazität, beides ist teuer und öffentlich sichtbar. Genau deshalb enthält die Vorlage eine gestufte Reihe von Belastungsproben und eine vorab getroffene Entscheidung über die Rückfallkapazität, statt beides dem Zufall zu überlassen."
       ],
       [
         "Wann sollte der Dachhub liegen?",
@@ -4839,7 +4839,7 @@ const T = {
     h1: "Zeitplan für die Ausstellungsplanung im Museum",
     metaTitle: "Ausstellungsplanung im Museum",
     metaDesc: "Kostenloser Zeitplan für die Ausstellungsplanung: Leihanfragen, Rückgabezusage, Restaurierung, Kuriertermine, Klimastabilisierung, Aufbau und Abbau.",
-    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Ausstellungsplanung im Museum</strong>, so geordnet, wie Ausstellungen tatsächlich laufen — um die Leihgaben herum. Leihanfragen und Antworten der Leihgeber, Facility Report und staatliche Ausfallgarantie, Versicherung und Kurierkalender, Restaurierung und Zustandsprotokolle, Klimastabilisierung des Saals, bevor auch nur ein Objekt eintrifft, dann der Aufbau unter Kurieraufsicht und ein feststehender Eröffnungstermin. Laden Sie sie für die Projektsteuerung herunter oder öffnen Sie sie online und setzen Sie Ihren eigenen Eröffnungsabend.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Ausstellungsplanung im Museum</strong>, so geordnet, wie Ausstellungen tatsächlich laufen, um die Leihgaben herum. Leihanfragen und Antworten der Leihgeber, Facility Report und staatliche Ausfallgarantie, Versicherung und Kurierkalender, Restaurierung und Zustandsprotokolle, Klimastabilisierung des Saals, bevor auch nur ein Objekt eintrifft, dann der Aufbau unter Kurieraufsicht und ein feststehender Eröffnungstermin. Laden Sie sie für die Projektsteuerung herunter oder öffnen Sie sie online und setzen Sie Ihren eigenen Eröffnungsabend.",
     intro: "Ein geliehenes Objekt kommt zu den Bedingungen des Leihgebers, in seiner Kiste, mit seinem Kurier, an einem Termin, der ihm passt. Jeder andere Termin der Ausstellung leitet sich daraus ab, also stellt der Plan Leihverkehr und Kuriere in die Mitte, statt sie als Logistik abzuhandeln:",
     phases: [
       [
@@ -4848,7 +4848,7 @@ const T = {
       ],
       [
         "Leihverkehr und Leihverträge",
-        "Formale Leihanfragen, Antworten und Ersatzobjekte, Facility Report — das international übliche Formular zu Klima, Sicherheit und Handhabung Ihres Hauses —, Versicherung und Wertermittlung, unterzeichnete Leihverträge, rechtsverbindliche Rückgabezusage nach dem Kulturgutschutzgesetz und die Kurierauflagen. <em>Meilenstein: Objektliste eingefroren.</em>"
+        "Formale Leihanfragen, Antworten und Ersatzobjekte, Facility Report, das international übliche Formular zu Klima, Sicherheit und Handhabung Ihres Hauses, , Versicherung und Wertermittlung, unterzeichnete Leihverträge, rechtsverbindliche Rückgabezusage nach dem Kulturgutschutzgesetz und die Kurierauflagen. <em>Meilenstein: Objektliste eingefroren.</em>"
       ],
       [
         "Gestaltung und Ausstellungsbau",
@@ -4867,17 +4867,17 @@ const T = {
         "Begehung, Pressevorbesichtigung, Eröffnung, Begleitprogramm, Überwachung der Lichtbelastung und Objektwechsel, danach Abbau und Rücktransport. <em>Meilenstein: Objekte an die Leihgeber zurückgegeben.</em>"
       ]
     ],
-    callout: "Der Saal muss klimatisch stabil sein, bevor Objekte hineinkommen, und Stabilität braucht Zeit. Frische Farbe gast aus, neue Vitrinen gasen aus, und relative Feuchte und Temperatur müssen über einen längeren Zeitraum am vereinbarten Sollwert aufgezeichnet werden, bevor der Kurier eines Leihgebers sein Objekt aus der Kiste lässt. Setzen Sie vor den Aufbau einen Meilenstein „Klimawerte aufgezeichnet und akzeptiert“ — rutscht der, stehen die Kuriere trotzdem in Ihrem Saal, und der Eröffnungstermin ist keinen Tag später geworden.",
+    callout: "Der Saal muss klimatisch stabil sein, bevor Objekte hineinkommen, und Stabilität braucht Zeit. Frische Farbe gast aus, neue Vitrinen gasen aus, und relative Feuchte und Temperatur müssen über einen längeren Zeitraum am vereinbarten Sollwert aufgezeichnet werden, bevor der Kurier eines Leihgebers sein Objekt aus der Kiste lässt. Setzen Sie vor den Aufbau einen Meilenstein „Klimawerte aufgezeichnet und akzeptiert“, rutscht der, stehen die Kuriere trotzdem in Ihrem Saal, und der Eröffnungstermin ist keinen Tag später geworden.",
     customize: [
       "Setzen Sie den Balken für die Leihanfragen auf mindestens zwölf bis achtzehn Monate vor der Eröffnung, wenn große internationale Häuser dabei sind; manche Institutionen haben Gremien, die nur wenige Male im Jahr tagen.",
       "Ergänzen Sie hinter den Antworten der Leihgeber eine Schleife für Ersatzobjekte. Absagen sind normal, und der Plan sollte zeigen, wie lange es dauert, ein Alternativobjekt zu finden und anzufragen.",
-      "Verlängern Sie die Klimastabilisierung, wenn Sie kurz vor dem Aufbau streichen oder neue Vitrinen stellen — die Ausgasung ist der Grund, warum Leihgeber die Klimaprotokolle sehen wollen.",
+      "Verlängern Sie die Klimastabilisierung, wenn Sie kurz vor dem Aufbau streichen oder neue Vitrinen stellen, die Ausgasung ist der Grund, warum Leihgeber die Klimaprotokolle sehen wollen.",
       "Führen Sie eine Zeile je Kurier, wenn die Objekte mit getrennten Flügen kommen; jeder braucht Begleitung, Unterkunft und ein eigenes Zeitfenster für das Zustandsprotokoll im Saal.",
       "Tragen Sie in die Laufzeit die Wechsel lichtempfindlicher Objekte ein, wo ein Werk nach den Lux- und Belastungsgrenzen seines Leihgebers nicht über die volle Dauer gezeigt werden darf.",
-      "Setzen Sie Eröffnungstermin, eingefrorene Objektliste, Objekte im Haus und Objekte zurückgegeben als Meilensteine — auf diese vier Termine schauen Registrarin und Direktion gleichermaßen."
+      "Setzen Sie Eröffnungstermin, eingefrorene Objektliste, Objekte im Haus und Objekte zurückgegeben als Meilensteine, auf diese vier Termine schauen Registrarin und Direktion gleichermaßen."
     ],
     tips: [
-      "<strong>Frieren Sie die Objektliste ein und verteidigen Sie sie dann.</strong> Jede späte Ergänzung startet Leihvertrag, Versicherung, Verpackung, Halterungsbau und Grafik neu — es ist die teuerste Art von Änderung, die eine Ausstellung kennt.",
+      "<strong>Frieren Sie die Objektliste ein und verteidigen Sie sie dann.</strong> Jede späte Ergänzung startet Leihvertrag, Versicherung, Verpackung, Halterungsbau und Grafik neu, es ist die teuerste Art von Änderung, die eine Ausstellung kennt.",
       "<strong>Schicken Sie den Facility Report früh und unaufgefordert.</strong> Leihgeber bewerten Ihr Haus, bevor sie Ihr Vorhaben bewerten, und ein veralteter Bericht ist eine häufige und vollständig vermeidbare Verzögerung.",
       "<strong>Buchen Sie Kuriere nach den Kalendern der Leihgeber, nicht nach Ihrem.</strong> Ein Kurier ist eine namentlich benannte Person aus dem leihgebenden Haus mit eigenem Terminplan; dass zwei Leihgeber dieselbe Woche wollen, ist eine reale und häufige Einschränkung.",
       "<strong>Bauen Sie Halterungen nach dem Einfrieren der Liste, nicht davor.</strong> Halterungen sind objektspezifische Einzelanfertigungen, und ein ausgetauschtes Werk bedeutet eine neue Halterung, für die im Plan keine Zeit steht.",
@@ -4891,7 +4891,7 @@ const T = {
       ],
       [
         "Was ist ein Facility Report?",
-        "Ein standardisiertes Formular, das Klimaführung, Sicherheit, Brandschutz und Handhabungsverfahren Ihres Hauses beschreibt. Der Begriff wird auch im deutschen Leihverkehr englisch verwendet. Leihgeber entscheiden daran, ob sie überhaupt verleihen — er sollte aktuell sein, bevor die Anfragen rausgehen."
+        "Ein standardisiertes Formular, das Klimaführung, Sicherheit, Brandschutz und Handhabungsverfahren Ihres Hauses beschreibt. Der Begriff wird auch im deutschen Leihverkehr englisch verwendet. Leihgeber entscheiden daran, ob sie überhaupt verleihen, er sollte aktuell sein, bevor die Anfragen rausgehen."
       ],
       [
         "Warum muss sich der Saal vor dem Aufbau einklimatisieren?",
@@ -4914,14 +4914,14 @@ const T = {
   'iso-27001-certification-plan': {
     card: "Anwendungsbereich, Risiken, SoA, Maßnahmen, internes Audit, Stufe 1 und Stufe 2.",
     h1: "Projektplan für die ISO-27001-Zertifizierung",
-    metaTitle: "ISO 27001 — Zertifizierungsplan",
+    metaTitle: "ISO 27001: Zertifizierungsplan",
     metaDesc: "Kostenloser Plan für die ISO-27001-Zertifizierung: Anwendungsbereich, Risikobewertung, SoA, Maßnahmen, internes Audit, Managementbewertung, Stufe 1 und 2.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-27001-Zertifizierung</strong>, aufgebaut so, wie eine Zertifizierungsstelle Sie tatsächlich bewertet — Anwendungsbereich des ISMS, Risikobewertung und Erklärung zur Anwendbarkeit, Umsetzung der Maßnahmen, eine Zeit echten Betriebs, die Nachweise erzeugt, dann internes Audit und Managementbewertung, die beide vor Stufe 2 abgeschlossen sein müssen, und schließlich das zweistufige Audit selbst. Wenn Sie parallel ein Qualitätsmanagementsystem aufbauen: Der <a href=\"/de/templates/iso-9001-certification-plan.html\">Projektplan für die ISO-9001-Zertifizierung</a> nutzt dieselbe Auditform.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-27001-Zertifizierung</strong>, aufgebaut so, wie eine Zertifizierungsstelle Sie tatsächlich bewertet, Anwendungsbereich des ISMS, Risikobewertung und Erklärung zur Anwendbarkeit, Umsetzung der Maßnahmen, eine Zeit echten Betriebs, die Nachweise erzeugt, dann internes Audit und Managementbewertung, die beide vor Stufe 2 abgeschlossen sein müssen, und schließlich das zweistufige Audit selbst. Wenn Sie parallel ein Qualitätsmanagementsystem aufbauen: Der <a href=\"/de/templates/iso-9001-certification-plan.html\">Projektplan für die ISO-9001-Zertifizierung</a> nutzt dieselbe Auditform.",
     intro: "Das Zertifizierungsaudit ist kein Termin, sondern eine Dokumentenprüfung, danach eine zwingende Lücke, in der Sie beheben, was sie gefunden hat, und erst dann ein vollständiges Nachweisaudit. Genau diese Lücke ist der Grund, warum sich ISO-27001-Pläne am Ende nicht zusammendrücken lassen:",
     phases: [
       [
         "Anwendungsbereich und Gap-Analyse",
-        "Grenzen des ISMS, interessierte Parteien und rechtliche Anforderungen, eine Gap-Analyse gegen die Maßnahmen aus Anhang A und die Auswahl der bei der DAkkS akkreditierten Zertifizierungsstelle — bei der Gelegenheit werden auch die beiden Audittermine gebucht. <em>Meilenstein: Anwendungsbereich und Ausgangslage abgestimmt.</em>"
+        "Grenzen des ISMS, interessierte Parteien und rechtliche Anforderungen, eine Gap-Analyse gegen die Maßnahmen aus Anhang A und die Auswahl der bei der DAkkS akkreditierten Zertifizierungsstelle, bei der Gelegenheit werden auch die beiden Audittermine gebucht. <em>Meilenstein: Anwendungsbereich und Ausgangslage abgestimmt.</em>"
       ],
       [
         "Risikobewertung und Erklärung zur Anwendbarkeit",
@@ -4946,19 +4946,19 @@ const T = {
     ],
     callout: "Stufe 1 und Stufe 2 sind mit Absicht getrennt, und der Abstand dazwischen ist kein Puffer. Stufe 1 prüft, ob Ihre ISMS-Dokumentation überhaupt zertifizierungsfähig ist; sie erzeugt fast immer Feststellungen, und Stufe 2 geht nicht durch, solange die offen sind. Planen Sie sechs bis acht Wochen zwischen die beiden Besuche und legen Sie echte Arbeit hinein. Die zweite unverrückbare Größe ist verstrichene Zeit: Im Audit der Stufe 2 zieht die Auditorin Stichproben aus Aufzeichnungen, und Aufzeichnungen entstehen nur, wenn die Maßnahmen gelaufen sind. Sie können keine Berechtigungsprüfung im März einführen und im April ein Jahr Nachweise vorlegen.",
     customize: [
-      "Beauftragen Sie die Zertifizierungsstelle früh und setzen Sie zuerst den Termin für Stufe 2 — alles davor ist ein Countdown, keine Schätzung.",
+      "Beauftragen Sie die Zertifizierungsstelle früh und setzen Sie zuerst den Termin für Stufe 2, alles davor ist ein Countdown, keine Schätzung.",
       "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2 für Korrekturmaßnahmen; diese Spanne zu kürzen ist die häufigste Ursache für ein nicht bestandenes Audit der Stufe 2.",
       "Zerlegen Sie die Umsetzung in eine Zeile je Themenblock aus Anhang A oder je einzelner Maßnahme, sobald die Erklärung zur Anwendbarkeit freigegeben ist.",
-      "Verlängern Sie die Betriebsphase, wenn Ihre Risikobehandlung an Maßnahmen mit quartalsweisem oder jährlichem Turnus hängt — Sie brauchen mindestens einen vollständigen Durchlauf als Nachweis.",
+      "Verlängern Sie die Betriebsphase, wenn Ihre Risikobehandlung an Maßnahmen mit quartalsweisem oder jährlichem Turnus hängt, Sie brauchen mindestens einen vollständigen Durchlauf als Nachweis.",
       "Ergänzen Sie Zeilen für jeden Ausschluss aus dem Anwendungsbereich, den Sie begründen müssen; genau daran wird Stufe 1 am härtesten bohren.",
       "Nehmen Sie das erste Überwachungsaudit im Folgejahr als datierte Zeile mit auf, damit das ISMS über die Zertifikatserteilung hinaus mit Personal hinterlegt ist."
     ],
     tips: [
-      "<strong>Die Erklärung zur Anwendbarkeit treibt alles, was danach kommt.</strong> Bis sie freigegeben ist, wissen Sie nicht, welche Maßnahmen Sie bauen — Aufwandsschätzungen vor diesem Punkt sind geraten.",
+      "<strong>Die Erklärung zur Anwendbarkeit treibt alles, was danach kommt.</strong> Bis sie freigegeben ist, wissen Sie nicht, welche Maßnahmen Sie bauen, Aufwandsschätzungen vor diesem Punkt sind geraten.",
       "<strong>Führen Sie das interne Audit ernsthaft.</strong> Ein weiches internes Audit, das nichts findet, verschiebt die Feststellungen nur nach Stufe 2, wo sie Sie den Zertifikatstermin kosten statt zwei Wochen.",
       "<strong>Halten Sie die Managementbewertung als protokollierte Sitzung ab.</strong> Sie ist eine ausdrückliche Anforderung mit festgelegten Eingaben, und Auditoren lesen das Protokoll, statt Ihnen zu glauben.",
       "<strong>Machen Sie die Übung zu Vorfall und Notbetrieb vor Stufe 2.</strong> Sie ist einer der wenigen Nachweise, die Sie terminieren können, statt auf sie zu warten.",
-      "<strong>Erwägen Sie die Variante ISO 27001 auf Basis von IT-Grundschutz.</strong> Wenn Sie ohnehin nach den BSI-Bausteinen arbeiten oder öffentliche Auftraggeber bedienen, ändert das Auditform und Vorbereitungsaufwand spürbar — das gehört vor die Auswahl der Zertifizierungsstelle, nicht danach.",
+      "<strong>Erwägen Sie die Variante ISO 27001 auf Basis von IT-Grundschutz.</strong> Wenn Sie ohnehin nach den BSI-Bausteinen arbeiten oder öffentliche Auftraggeber bedienen, ändert das Auditform und Vorbereitungsaufwand spürbar, das gehört vor die Auswahl der Zertifizierungsstelle, nicht danach.",
       "<strong>Vermengen Sie das nicht mit SOC 2.</strong> Die Maßnahmen überschneiden sich, die Mechanik nicht: ISO 27001 ist eine Zertifizierung mit Dreijahreszyklus und Überwachungsaudits, SOC 2 ist ein Prüfungsbericht (Attestation) einer US-Wirtschaftsprüfungsgesellschaft gegen die Trust Services Criteria des AICPA. Diese Begriffe bleiben englisch, weil sie eine US-Prüfungsordnung bezeichnen, für die es keine deutsche Entsprechung gibt."
     ],
     faq: [
@@ -4968,7 +4968,7 @@ const T = {
       ],
       [
         "Worin unterscheiden sich Stufe 1 und Stufe 2?",
-        "Stufe 1 ist eine Dokumenten- und Reifeprüfung — Anwendungsbereich, Richtlinien, Risikobewertung, Erklärung zur Anwendbarkeit sowie die Nachweise zu internem Audit und Managementbewertung. Stufe 2 ist das vollständige Audit der Frage, ob das ISMS tatsächlich gelebt wird. Feststellungen aus Stufe 1 müssen vor Stufe 2 geschlossen sein, und deshalb lässt die Vorlage ein Fenster für Korrekturmaßnahmen dazwischen."
+        "Stufe 1 ist eine Dokumenten- und Reifeprüfung, Anwendungsbereich, Richtlinien, Risikobewertung, Erklärung zur Anwendbarkeit sowie die Nachweise zu internem Audit und Managementbewertung. Stufe 2 ist das vollständige Audit der Frage, ob das ISMS tatsächlich gelebt wird. Feststellungen aus Stufe 1 müssen vor Stufe 2 geschlossen sein, und deshalb lässt die Vorlage ein Fenster für Korrekturmaßnahmen dazwischen."
       ],
       [
         "Brauche ich internes Audit und Managementbewertung vor Stufe 2?",
@@ -4991,9 +4991,9 @@ const T = {
   'crm-implementation-plan': {
     card: "Prozessdesign, Datenbereinigung, Konfiguration, Testmigrationen, Schulung, Umstellung.",
     h1: "Projektplan für die CRM-Einführung",
-    metaTitle: "CRM-Einführung — Projektplan",
+    metaTitle: "CRM-Einführung: Projektplan",
     metaDesc: "Kostenloser Projektplan für die CRM-Einführung: Prozessdesign, Datenbereinigung, Konfiguration, Testmigrationen, Schulung, Umstellung zum Quartalswechsel.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die CRM-Einführung</strong>, die die Arbeit dorthin legt, wo sie wirklich liegt — nicht in die Konfiguration von Objekten, sondern in das Prüfen, Entdoppeln und Abstimmen der Kundendaten, die Sie umziehen wollen, und in eine Umstellung an einem Punkt im Quartal, der die Prognose nicht zerlegt. Enthalten sind Prozessdesign, Datenbereinigung, Konfiguration und Schnittstellen, Testmigrationen, Schulungsgruppen, die Umstellung und der erste vollständige Prognosezyklus im neuen System.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die CRM-Einführung</strong>, die die Arbeit dorthin legt, wo sie wirklich liegt, nicht in die Konfiguration von Objekten, sondern in das Prüfen, Entdoppeln und Abstimmen der Kundendaten, die Sie umziehen wollen, und in eine Umstellung an einem Punkt im Quartal, der die Prognose nicht zerlegt. Enthalten sind Prozessdesign, Datenbereinigung, Konfiguration und Schnittstellen, Testmigrationen, Schulungsgruppen, die Umstellung und der erste vollständige Prognosezyklus im neuen System.",
     intro: "Für die Konfiguration plant jeder Budget ein, für die Daten niemand. Aber wer als Vertriebsmitarbeiterin das neue CRM öffnet und ihren größten Kunden dreimal darin findet, hört noch am selben Vormittag auf, es zu benutzen, und keine Schulung holt das zurück:",
     phases: [
       [
@@ -5021,15 +5021,15 @@ const T = {
         "Das Fenster am Quartalswechsel, Einfrieren des Altsystems, Produktivladung, Abgleich der Pipeline gegen das Altsystem, Produktivstart, intensive Betreuung und der erste vollständige Prognosezyklus im neuen CRM. <em>Meilenstein: Produktivstart.</em>"
       ]
     ],
-    callout: "Wählen Sie den Umstellungstermin aus dem Vertriebskalender, nicht aus dem Projektplan. Eine Migration mitten im Quartal heißt, dass jemand laufende Geschäfte mitten im Lauf auf die Zielerreichung neu erfassen soll, und eine Prognose, die zur Hälfte in jedem der beiden Systeme steht, ist eine Prognose, die niemand vor einem Gremium verteidigen kann. Stellen Sie in den ersten beiden Wochen eines neuen Quartals um, wenn die Pipeline gerade zurückgesetzt und abgestimmt ist — dann startet der erste Prognosezyklus im neuen CRM von einer Zahl aus, auf die sich beide Systeme geeinigt haben.",
+    callout: "Wählen Sie den Umstellungstermin aus dem Vertriebskalender, nicht aus dem Projektplan. Eine Migration mitten im Quartal heißt, dass jemand laufende Geschäfte mitten im Lauf auf die Zielerreichung neu erfassen soll, und eine Prognose, die zur Hälfte in jedem der beiden Systeme steht, ist eine Prognose, die niemand vor einem Gremium verteidigen kann. Stellen Sie in den ersten beiden Wochen eines neuen Quartals um, wenn die Pipeline gerade zurückgesetzt und abgestimmt ist, dann startet der erste Prognosezyklus im neuen CRM von einer Zahl aus, auf die sich beide Systeme geeinigt haben.",
     customize: [
       "Legen Sie die Umstellung in die ersten beiden Wochen eines Quartals und rechnen Sie von dort rückwärts; der letzte Probelauf sollte mindestens drei Wochen davor fertig sein.",
-      "Zerlegen Sie die Entdoppelung nach Objekt — Firmen, Kontakte, Interessenten, Verkaufschancen —, weil Abgleichschlüssel und Zuständige jeweils andere sind.",
+      "Zerlegen Sie die Entdoppelung nach Objekt, Firmen, Kontakte, Interessenten, Verkaufschancen, , weil Abgleichschlüssel und Zuständige jeweils andere sind.",
       "Schieben Sie die Schulung des Vertriebs so spät wie möglich, ohne mit der Umstellung zu kollidieren; sechs Wochen zu früh geschult heißt zweimal geschult.",
       "Ergänzen Sie Zeilen je Schnittstelle, wenn Angebotserstellung, ERP oder Marketingautomatisierung eigene Abhängigkeiten zu Dienstleistern haben.",
-      "Führen Sie die vom Vertrieb zu korrigierenden Datensätze als benannte Zeile mit benannter verantwortlicher Person — das ist Fachbereichsarbeit, keine Aufgabe des Datenteams.",
+      "Führen Sie die vom Vertrieb zu korrigierenden Datensätze als benannte Zeile mit benannter verantwortlicher Person, das ist Fachbereichsarbeit, keine Aufgabe des Datenteams.",
       "Nehmen Sie die Verhandlung der Betriebsvereinbarung als eigene Zeile auf, sobald das System Leistungsdaten auswertbar macht; ohne Zustimmung des Betriebsrats gibt es keinen Produktivstart, und diese Verhandlung dauert Monate.",
-      "Ergänzen Sie eine Zeile für die Entscheidung über die Historie; fünf Jahre E-Mails und Anrufe mitzunehmen ist meist die teuerste einzelne Entscheidung im Plan — und mit Blick auf Speicherfristen selten die zulässigste."
+      "Ergänzen Sie eine Zeile für die Entscheidung über die Historie; fünf Jahre E-Mails und Anrufe mitzunehmen ist meist die teuerste einzelne Entscheidung im Plan, und mit Blick auf Speicherfristen selten die zulässigste."
     ],
     tips: [
       "<strong>Entdoppeln Sie vor der Konfiguration, nicht danach.</strong> Doppelte Firmensätze zerlegen Gebietszuordnung, Prognoseverdichtung und Auswertung gleichzeitig, und jede dieser Arbeiten muss wiederholt werden, wenn sich die Daten darunter ändern.",
@@ -5037,7 +5037,7 @@ const T = {
       "<strong>Stimmen Sie am Umstellungstag den Pipelinewert gegen das Altsystem ab.</strong> Wenn die beiden Zahlen nicht übereinstimmen, bevor sich jemand anmeldet, streiten Sie das ganze Quartal darüber, welche stimmt.",
       "<strong>Schulen Sie Führungskräfte vor dem Vertrieb.</strong> Nutzung wird im Einzelgespräch durchgesetzt; wer seine eigene Pipeline-Durchsicht im neuen Werkzeug nicht führen kann, lässt das Team still weiter mit Tabellen arbeiten.",
       "<strong>Migrieren Sie weniger Historie.</strong> Offene Verkaufschancen und die letzten zwei Jahre Aktivität decken fast jeden realen Anwendungsfall; der Rest ist eine Archiv- und Löschfrage, keine Migrationsfrage.",
-      "<strong>Messen Sie Nutzung, nicht den Produktivstart.</strong> Anmeldungen beweisen nichts. Verfolgen Sie, ob Geschäfte nächste Schritte, Abschlusstermine und Phasenwechsel haben — daran hängt, ob die Pipeline belastbar ist."
+      "<strong>Messen Sie Nutzung, nicht den Produktivstart.</strong> Anmeldungen beweisen nichts. Verfolgen Sie, ob Geschäfte nächste Schritte, Abschlusstermine und Phasenwechsel haben, daran hängt, ob die Pipeline belastbar ist."
     ],
     faq: [
       [
@@ -5054,7 +5054,7 @@ const T = {
       ],
       [
         "Braucht die Einführung eine Betriebsvereinbarung?",
-        "In der Regel ja, sobald das System Leistungs- oder Verhaltensdaten auswertbar macht — das löst die Mitbestimmung nach §87 Abs. 1 Nr. 6 Betriebsverfassungsgesetz aus. Planen Sie die Verhandlung als mehrmonatigen Vorgang parallel zur Konfiguration, nicht als Formalie vor dem Start."
+        "In der Regel ja, sobald das System Leistungs- oder Verhaltensdaten auswertbar macht, das löst die Mitbestimmung nach §87 Abs. 1 Nr. 6 Betriebsverfassungsgesetz aus. Planen Sie die Verhandlung als mehrmonatigen Vorgang parallel zur Konfiguration, nicht als Formalie vor dem Start."
       ],
       [
         "Wie viele Testmigrationen brauchen wir?",
@@ -5062,7 +5062,7 @@ const T = {
       ],
       [
         "Wie hängt das mit der Vorlage für das Änderungsmanagement zusammen?",
-        "Dieser Plan deckt das System ab. Der <a href=\"/de/templates/change-management-plan.html\">Plan für das Veränderungsmanagement</a> deckt den Menschenstrang daneben ab — Betroffenheitsanalyse, Auftritte der Führung, Schulungsgruppen und die Verstetigung nach dem Start. Große CRM-Programme brauchen beides."
+        "Dieser Plan deckt das System ab. Der <a href=\"/de/templates/change-management-plan.html\">Plan für das Veränderungsmanagement</a> deckt den Menschenstrang daneben ab, Betroffenheitsanalyse, Auftritte der Führung, Schulungsgruppen und die Verstetigung nach dem Start. Große CRM-Programme brauchen beides."
       ],
       [
         "Ist die CRM-Vorlage kostenlos?",
@@ -5075,7 +5075,7 @@ const T = {
     h1: "Zeitplan für den IT-Notfallwiederherstellungsplan",
     metaTitle: "IT-Notfallplan (Disaster Recovery)",
     metaDesc: "Kostenloser Zeitplan für den IT-Notfallplan: Business Impact Analyse, RTO/RPO, Replikation, Notfallhandbücher, Planübung, Teil- und Vollumschaltung.",
-    lead: "Eine kostenlose <strong>Vorlage für den IT-Notfallwiederherstellungsplan</strong>, die als Ergebnis einen <em>geprüften</em> Plan versteht und nicht ein Dokument. Business Impact Analyse und die Ziele für RTO und RPO setzen die Architektur, die Architektur setzt den Aufbau, und die hintere Hälfte des Zeitplans ist die Prüffolge — Planübung, dann Teilumschaltung, dann eine Vollumschaltung mit fachlicher Prüfung, jede mit eigenem Wartungsfenster und eigenem Rückweg.",
+    lead: "Eine kostenlose <strong>Vorlage für den IT-Notfallwiederherstellungsplan</strong>, die als Ergebnis einen <em>geprüften</em> Plan versteht und nicht ein Dokument. Business Impact Analyse und die Ziele für RTO und RPO setzen die Architektur, die Architektur setzt den Aufbau, und die hintere Hälfte des Zeitplans ist die Prüffolge, Planübung, dann Teilumschaltung, dann eine Vollumschaltung mit fachlicher Prüfung, jede mit eigenem Wartungsfenster und eigenem Rückweg.",
     intro: "Ein ungeprüfter Notfallplan ist eine Vermutung. Der Zeitplan unten ist von der aufsteigenden Prüffolge geformt, weil jede Prüfung ein Wartungsfenster kostet und jede Dinge findet, die die vorherige nicht finden konnte:",
     phases: [
       [
@@ -5096,18 +5096,18 @@ const T = {
       ],
       [
         "Prüffolge",
-        "Zuerst die Planübung am Tisch, dann eine Teilumschaltung der Anwendungen der ersten Klasse mit Rückfall, dann eine Vollumschaltung mit fachlicher Prüfung und anschließender Rückführung — nach jeder Prüfung ist Zeit für die Behebung eingeplant. <em>Meilenstein: Vollumschaltung bestanden.</em>"
+        "Zuerst die Planübung am Tisch, dann eine Teilumschaltung der Anwendungen der ersten Klasse mit Rückfall, dann eine Vollumschaltung mit fachlicher Prüfung und anschließender Rückführung, nach jeder Prüfung ist Zeit für die Behebung eingeplant. <em>Meilenstein: Vollumschaltung bestanden.</em>"
       ],
       [
         "Freigabe und Pflege",
         "Prüfbericht und Restrisiko, Freigabe durch die Geschäftsleitung, Schulung der Bereitschaft, der Jahreskalender für die Wiederholungsprüfungen und die Verankerung im Änderungsprozess, die verhindert, dass neue Anwendungen still außerhalb des Plans landen. <em>Meilenstein: Plan freigegeben.</em>"
       ]
     ],
-    callout: "RTO und RPO sind keine Absichtserklärungen, sondern eine Rechnung. Ein RPO von fünfzehn Minuten bedeutet synchrone oder nahezu synchrone Replikation und die Speicherkosten, die dazugehören; ein RTO von vier Stunden bedeutet warm laufende Infrastruktur, die die meiste Zeit nichts tut. Einigen Sie sich mit dem Fachbereich auf die Zahlen, bevor Sie irgendetwas entwerfen, zeigen Sie dann, was jede Klasse kostet, und lassen Sie nachjustieren. Teams, die die Ziele nach der Architektur festlegen, landen bei einem Plan, der langsamer wiederherstellt als dem Geschäft versprochen wurde — und niemand merkt es bis zur Umschaltprüfung.",
+    callout: "RTO und RPO sind keine Absichtserklärungen, sondern eine Rechnung. Ein RPO von fünfzehn Minuten bedeutet synchrone oder nahezu synchrone Replikation und die Speicherkosten, die dazugehören; ein RTO von vier Stunden bedeutet warm laufende Infrastruktur, die die meiste Zeit nichts tut. Einigen Sie sich mit dem Fachbereich auf die Zahlen, bevor Sie irgendetwas entwerfen, zeigen Sie dann, was jede Klasse kostet, und lassen Sie nachjustieren. Teams, die die Ziele nach der Architektur festlegen, landen bei einem Plan, der langsamer wiederherstellt als dem Geschäft versprochen wurde, und niemand merkt es bis zur Umschaltprüfung.",
     customize: [
-      "Setzen Sie RTO und RPO je Dienst, nicht je Unternehmen — ein Zahlungsdienst und ein internes Wiki gehören nicht in dieselbe Klasse.",
-      "Buchen Sie beide Wartungsfenster früh; das Fenster für die Vollumschaltung braucht meist die Freigabe der Geschäftsleitung und eine geschäftsarme Zeit — das sind Kalenderbedingungen, keine technischen.",
-      "Halten Sie die Zeile für den Rückfall neben jeder Prüfung — eine Prüfung ohne geübten Rückweg ist eine Störung, die auf einen schlechten Tag wartet.",
+      "Setzen Sie RTO und RPO je Dienst, nicht je Unternehmen, ein Zahlungsdienst und ein internes Wiki gehören nicht in dieselbe Klasse.",
+      "Buchen Sie beide Wartungsfenster früh; das Fenster für die Vollumschaltung braucht meist die Freigabe der Geschäftsleitung und eine geschäftsarme Zeit, das sind Kalenderbedingungen, keine technischen.",
+      "Halten Sie die Zeile für den Rückfall neben jeder Prüfung, eine Prüfung ohne geübten Rückweg ist eine Störung, die auf einen schlechten Tag wartet.",
       "Ergänzen Sie Zeilen je Anwendungsklasse, wenn Sie in Gruppen umschalten statt alles auf einmal.",
       "Verlängern Sie das Behebungsfenster nach der Teilprüfung; dort tauchen die meisten echten Feststellungen auf.",
       "Nehmen Sie die jährliche Wiederholungsprüfung als datierte Zeilen auf, damit der Plan nicht zwölf Monate nach der Freigabe still verfällt.",
@@ -5119,7 +5119,7 @@ const T = {
       "<strong>Prüfen Sie fachlich, nicht mit einem Ping.</strong> Ein Dienst, der antwortet, ist kein Dienst, der funktioniert; lassen Sie echte Anwenderinnen während der Vollumschaltung echte Vorgänge abschließen.",
       "<strong>Überwachen Sie den Replikationsrückstand als laufende Kennzahl.</strong> Ein RPO, das Sie nicht dauernd messen, ist ein RPO, den Sie erst im Ernstfall überprüfen.",
       "<strong>Hängen Sie die Notfallvorsorge in den Änderungsprozess.</strong> Jede neue Anwendung ohne Wiederanlaufklasse vergrößert die Lücke zwischen Plan und Wirklichkeit, und diese Lücke wird nur bei der Prüfung sichtbar.",
-      "<strong>Nutzen Sie eine anerkannte Struktur.</strong> Wer sich am BSI-Standard 200-4 für das Notfallmanagement ausrichtet, bekommt Begriffe, Rollen und Nachweisdokumente geschenkt — und erspart sich die Diskussion, ob der eigene Plan prüffähig ist, wenn Aufsicht oder Versicherer fragen."
+      "<strong>Nutzen Sie eine anerkannte Struktur.</strong> Wer sich am BSI-Standard 200-4 für das Notfallmanagement ausrichtet, bekommt Begriffe, Rollen und Nachweisdokumente geschenkt, und erspart sich die Diskussion, ob der eigene Plan prüffähig ist, wenn Aufsicht oder Versicherer fragen."
     ],
     faq: [
       [
@@ -5128,7 +5128,7 @@ const T = {
       ],
       [
         "Worin unterscheiden sich RTO und RPO?",
-        "Das RTO ist, wie lange Sie ausfallen dürfen — die Zeit bis zur Wiederherstellung des Dienstes. Das RPO ist, wie viele Daten Sie verlieren dürfen — das Alter der letzten brauchbaren Kopie. Das RTO treibt die bereitgehaltene Infrastruktur, das RPO die Replikationshäufigkeit, und zusammen bestimmen sie den größten Teil der Kosten."
+        "Das RTO ist, wie lange Sie ausfallen dürfen, die Zeit bis zur Wiederherstellung des Dienstes. Das RPO ist, wie viele Daten Sie verlieren dürfen, das Alter der letzten brauchbaren Kopie. Das RTO treibt die bereitgehaltene Infrastruktur, das RPO die Replikationshäufigkeit, und zusammen bestimmen sie den größten Teil der Kosten."
       ],
       [
         "Warum drei Prüfungen statt einer?",
@@ -5136,11 +5136,11 @@ const T = {
       ],
       [
         "Brauchen die Prüfungen ein Wartungsfenster?",
-        "Für Teil- und Vollumschaltung ja — sie verschieben produktiven Verkehr und tragen echtes Risiko. Buchen Sie sie mit geübtem Rückfall und einem festgelegten Abbruchkriterium. Die Planübung braucht kein Fenster, und genau deshalb sollte sie zuerst ausgereizt werden."
+        "Für Teil- und Vollumschaltung ja, sie verschieben produktiven Verkehr und tragen echtes Risiko. Buchen Sie sie mit geübtem Rückfall und einem festgelegten Abbruchkriterium. Die Planübung braucht kein Fenster, und genau deshalb sollte sie zuerst ausgereizt werden."
       ],
       [
         "Wie verhält sich das zum Notfallmanagement insgesamt?",
-        "Die IT-Notfallwiederherstellung ist der technische Ausschnitt: Systeme und Daten zurückbringen. Das betriebliche Kontinuitätsmanagement ist weiter und umfasst Menschen, Gebäude und Prozesse — im BSI-Standard 200-4 ist die IT-Wiederherstellung ausdrücklich ein Teil davon. Diese Vorlage deckt den IT-Teil ab, wobei Krisenkommunikation und Auslösekriterien mit jedem Kontinuitätsplan geteilt werden."
+        "Die IT-Notfallwiederherstellung ist der technische Ausschnitt: Systeme und Daten zurückbringen. Das betriebliche Kontinuitätsmanagement ist weiter und umfasst Menschen, Gebäude und Prozesse, im BSI-Standard 200-4 ist die IT-Wiederherstellung ausdrücklich ein Teil davon. Diese Vorlage deckt den IT-Teil ab, wobei Krisenkommunikation und Auslösekriterien mit jedem Kontinuitätsplan geteilt werden."
       ],
       [
         "Ist die Notfallplan-Vorlage kostenlos?",
@@ -5151,14 +5151,14 @@ const T = {
   'rfp-procurement-timeline': {
     card: "Bedarf, Vergabeunterlagen, Bieterfragen, Angebotsfrist, Wertung, Wartefrist, Start.",
     h1: "Zeitplan für ein Vergabeverfahren",
-    metaTitle: "Vergabeverfahren — Zeitplan",
+    metaTitle: "Vergabeverfahren: Zeitplan",
     metaDesc: "Kostenloser Zeitplan für das Vergabeverfahren: Bedarf, Vergabeunterlagen, Bieterfragen, Angebotsfrist, Wertung, Wartefrist nach §134 GWB, Leistungsbeginn.",
-    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für ein Vergabeverfahren</strong> — von der Bedarfsfeststellung bis zum Leistungsbeginn. Bedarf und Wirtschaftlichkeitsbetrachtung, Zuschlagskriterien und Gewichtung, Vergabeunterlagen, die Angebotsphase mit Frist für Bieterfragen und fester Angebotsfrist, Wertung im Gremium und Vergabevermerk, Zuschlagsentscheidung mit der Informations- und Wartepflicht, dann Vertrag und Leistungsbeginn. Die meisten dieser Termine gehören anderen Leuten, und genau deshalb müssen sie in ein Diagramm.",
+    lead: "Eine kostenlose <strong>Zeitplan-Vorlage für ein Vergabeverfahren</strong>, von der Bedarfsfeststellung bis zum Leistungsbeginn. Bedarf und Wirtschaftlichkeitsbetrachtung, Zuschlagskriterien und Gewichtung, Vergabeunterlagen, die Angebotsphase mit Frist für Bieterfragen und fester Angebotsfrist, Wertung im Gremium und Vergabevermerk, Zuschlagsentscheidung mit der Informations- und Wartepflicht, dann Vertrag und Leistungsbeginn. Die meisten dieser Termine gehören anderen Leuten, und genau deshalb müssen sie in ein Diagramm.",
     intro: "Eine Ausschreibung ist ein Terminplan, der überwiegend aus der Zeit anderer Menschen besteht: Bieter, die Angebote schreiben, Wertungsgremien, die eine gemeinsame Woche finden, Juristinnen, die verhandeln, und ein Altdienstleister, der übergibt. Sie steuern den Starttermin und sonst herzlich wenig:",
     phases: [
       [
         "Bedarf und Wirtschaftlichkeitsbetrachtung",
-        "Anforderungen der Bedarfsträger, Wirtschaftlichkeitsbetrachtung und Haushaltsfreigabe, Wahl der Verfahrensart und Prüfung des EU-Schwellenwerts sowie Eignungs- und Zuschlagskriterien samt Gewichtung — die vor der Veröffentlichung feststehen müssen. <em>Meilenstein: Freigabe zur Bekanntmachung.</em>"
+        "Anforderungen der Bedarfsträger, Wirtschaftlichkeitsbetrachtung und Haushaltsfreigabe, Wahl der Verfahrensart und Prüfung des EU-Schwellenwerts sowie Eignungs- und Zuschlagskriterien samt Gewichtung, die vor der Veröffentlichung feststehen müssen. <em>Meilenstein: Freigabe zur Bekanntmachung.</em>"
       ],
       [
         "Markterkundung und Vergabeunterlagen",
@@ -5181,13 +5181,13 @@ const T = {
         "Auftaktbesprechung, Übergang vom Altdienstleister, Zugänge und Einweisung, Steuerungsstruktur und Kennzahlenberichte sowie der Tag, an dem die Leistung tatsächlich beginnt. <em>Meilenstein: Leistungsbeginn.</em>"
       ]
     ],
-    callout: "Die Zeit der Bieter gehört nicht Ihnen. Wenn Sie das Fenster zwischen der Veröffentlichung der Antworten auf Bieterfragen und der Angebotsfrist verkürzen, bekommen Sie kein schnelleres Verfahren, sondern weniger Angebote, schwächere Angebote und einen starken Anbieter, der absagt, weil er kein Team für eine ordentliche Antwort freistellen konnte. Am anderen Ende gilt dasselbe: Die Informations- und Wartepflicht nach §134 GWB besteht, damit unterlegene Bieter die Entscheidung überprüfen lassen können — sie läuft nach Kalendertagen, ganz gleich, wie dringend der Fachbereich mobilisieren will.",
+    callout: "Die Zeit der Bieter gehört nicht Ihnen. Wenn Sie das Fenster zwischen der Veröffentlichung der Antworten auf Bieterfragen und der Angebotsfrist verkürzen, bekommen Sie kein schnelleres Verfahren, sondern weniger Angebote, schwächere Angebote und einen starken Anbieter, der absagt, weil er kein Team für eine ordentliche Antwort freistellen konnte. Am anderen Ende gilt dasselbe: Die Informations- und Wartepflicht nach §134 GWB besteht, damit unterlegene Bieter die Entscheidung überprüfen lassen können, sie läuft nach Kalendertagen, ganz gleich, wie dringend der Fachbereich mobilisieren will.",
     customize: [
       "Setzen Sie zuerst Angebotsfrist und Leistungsbeginn; beide werden meist von außen bestimmt, und alles andere passt sich dazwischen ein.",
-      "Prüfen Sie die Mindestfristen Ihrer Verfahrensart, bevor Sie die gezeigten Dauern übernehmen — im offenen Verfahren oberhalb des Schwellenwerts sind es nach der Vergabeverordnung 35 Tage, unterhalb gilt die Unterschwellenvergabeordnung mit anderen Fristen.",
-      "Blocken Sie die Kalender des Wertungsgremiums zeitgleich mit der Bekanntmachung — nicht der Wertungsaufwand, sondern die Verfügbarkeit der Gremienmitglieder lässt diese Phase kippen.",
+      "Prüfen Sie die Mindestfristen Ihrer Verfahrensart, bevor Sie die gezeigten Dauern übernehmen, im offenen Verfahren oberhalb des Schwellenwerts sind es nach der Vergabeverordnung 35 Tage, unterhalb gilt die Unterschwellenvergabeordnung mit anderen Fristen.",
+      "Blocken Sie die Kalender des Wertungsgremiums zeitgleich mit der Bekanntmachung, nicht der Wertungsaufwand, sondern die Verfügbarkeit der Gremienmitglieder lässt diese Phase kippen.",
       "Ergänzen Sie Zeilen für Referenzbesuche oder Teststellungen, wenn Ihre Wertung sie vorsieht; sie brauchen die Verfügbarkeit von Bietern und Referenzkunden und sind damit terminierte Arbeit.",
-      "Verlängern Sie die Übergangsphase deutlich, wenn ein Altdienstleister Daten, Personal oder Anlagen übergibt — bei Personalübergang kommt ein Betriebsübergang nach §613a BGB mit eigener Informationsfrist hinzu.",
+      "Verlängern Sie die Übergangsphase deutlich, wenn ein Altdienstleister Daten, Personal oder Anlagen übergibt, bei Personalübergang kommt ein Betriebsübergang nach §613a BGB mit eigener Informationsfrist hinzu.",
       "Führen Sie eine Zeile je Los, wenn die Vergabe in Lose geteilt ist, da Wertung und Zuschlag je Los zu unterschiedlichen Zeitpunkten fertig werden können."
     ],
     tips: [
@@ -5195,7 +5195,7 @@ const T = {
       "<strong>Veröffentlichen Sie jede Antwort an alle Bieter.</strong> Einzelauskünfte erzeugen ein ungleiches Verfahren, und ungleiche Verfahren werden aufgehoben.",
       "<strong>Legen Sie die Angebotsfrist nicht neben die Ferienzeit.</strong> Sie erhalten dünne Angebote von genau den Anbietern, von denen Sie am liebsten gehört hätten.",
       "<strong>Bilden Sie einen Konsens und schreiben Sie die Begründung auf.</strong> Der Vergabevermerk ist das Dokument, auf das Sie sich bei der Bieterinformation und in einem Nachprüfungsverfahren stützen; Punktzahlen ohne Begründung sind nicht verteidigbar.",
-      "<strong>Halten Sie die Kommunikation nach Absendung der Information nach §134 GWB diszipliniert.</strong> Ein Zuschlag vor Ablauf der Wartefrist ist von Anfang an unwirksam — das ist keine Formalie, sondern der Verlust des Vertrags.",
+      "<strong>Halten Sie die Kommunikation nach Absendung der Information nach §134 GWB diszipliniert.</strong> Ein Zuschlag vor Ablauf der Wartefrist ist von Anfang an unwirksam, das ist keine Formalie, sondern der Verlust des Vertrags.",
       "<strong>Planen Sie echte Zeit zwischen Zuschlag und Leistungsbeginn ein.</strong> Mobilisierung braucht unterschriebene Verträge, erteilte Zugänge und eingestellte Leute; ein Zuschlagstermin ist kein Starttermin."
     ],
     faq: [
@@ -5205,7 +5205,7 @@ const T = {
       ],
       [
         "Wie viel Zeit sollten Bieter zum Antworten bekommen?",
-        "Genug, um nach der Veröffentlichung der Antworten auf Bieterfragen ein ernsthaftes Angebot zu schreiben — bei umfangreichen Vergaben typischerweise vier bis sechs Wochen, länger bei komplexen Leistungen oder wenn eine Übernahme kalkuliert werden muss. Oberhalb der EU-Schwellenwerte gelten gesetzliche Mindestfristen; prüfen Sie sie, bevor Sie kürzen."
+        "Genug, um nach der Veröffentlichung der Antworten auf Bieterfragen ein ernsthaftes Angebot zu schreiben, bei umfangreichen Vergaben typischerweise vier bis sechs Wochen, länger bei komplexen Leistungen oder wenn eine Übernahme kalkuliert werden muss. Oberhalb der EU-Schwellenwerte gelten gesetzliche Mindestfristen; prüfen Sie sie, bevor Sie kürzen."
       ],
       [
         "Wozu dient die Wartefrist nach §134 GWB?",
@@ -5217,7 +5217,7 @@ const T = {
       ],
       [
         "Kann ich die Vorlage für eine private Ausschreibung nutzen?",
-        "Ja. Lassen Sie die Zeilen zu Bekanntmachung und Wartefrist weg und behalten Sie die Abfolge — Fragefenster, feste Angebotsfrist, Wertung im Konsens, Verhandlung und Mobilisierung verhalten sich gleich. Die Disziplin, Antworten allen Bietern zu geben, lohnt sich in jedem Fall."
+        "Ja. Lassen Sie die Zeilen zu Bekanntmachung und Wartefrist weg und behalten Sie die Abfolge, Fragefenster, feste Angebotsfrist, Wertung im Konsens, Verhandlung und Mobilisierung verhalten sich gleich. Die Disziplin, Antworten allen Bietern zu geben, lohnt sich in jedem Fall."
       ],
       [
         "Ist die Vorlage für das Vergabeverfahren kostenlos?",
@@ -5228,9 +5228,9 @@ const T = {
   'change-management-plan': {
     card: "Betroffenheitsanalyse, Führung, Kommunikation, Schulung, Betreuung, Verstetigung.",
     h1: "Projektplan für das Veränderungsmanagement",
-    metaTitle: "Veränderungsmanagement — Plan",
+    metaTitle: "Veränderungsmanagement: Plan",
     metaDesc: "Kostenloser Plan für das Veränderungsmanagement: Betroffenheitsanalyse, Auftritte der Führung, Kommunikation, Schulungsgruppen, Betreuung, Verstetigung.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Veränderungsmanagement</strong> — für den Menschenstrang, der neben einem technischen Projekt läuft. Stakeholder- und Betroffenheitsanalyse, Rückhalt in der Führung und ein Netz aus Multiplikatoren, Kommunikation je Zielgruppe, Schulungsgruppen, die am Produktivstart ausgerichtet sind statt an der Bequemlichkeit des Kalenders, Startbereitschaft und Betreuung auf der Fläche, dann die Verstetigung nach dem Start, an der hängt, ob überhaupt etwas davon bleibt. Kombinieren Sie sie mit dem Systemplan, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/crm-implementation-plan.html\">CRM-Einführung</a>.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Veränderungsmanagement</strong>, für den Menschenstrang, der neben einem technischen Projekt läuft. Stakeholder- und Betroffenheitsanalyse, Rückhalt in der Führung und ein Netz aus Multiplikatoren, Kommunikation je Zielgruppe, Schulungsgruppen, die am Produktivstart ausgerichtet sind statt an der Bequemlichkeit des Kalenders, Startbereitschaft und Betreuung auf der Fläche, dann die Verstetigung nach dem Start, an der hängt, ob überhaupt etwas davon bleibt. Kombinieren Sie sie mit dem Systemplan, sei es eine <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführung</a> oder eine <a href=\"/de/templates/crm-implementation-plan.html\">CRM-Einführung</a>.",
     intro: "Veränderungsmanagement wird meist als ein Kasten mit der Aufschrift „Schulung“ neben den Produktivstart gemalt. Es ist kein Kasten. Es ist ein eigener Strang mit eigenen Abhängigkeiten, und die Hälfte, die am meisten zählt, beginnt in der Woche nach dem Start:",
     phases: [
       [
@@ -5258,15 +5258,15 @@ const T = {
         "Nutzungskennzahlen, Kurzbefragungen in Woche zwei und Monat drei, gezielte Auffrischungsschulungen, Begleitung der Führungskräfte, Anerkennung und die Nutzenbetrachtung. <em>Meilenstein: Übergabe in den Regelbetrieb.</em>"
       ]
     ],
-    callout: "Richten Sie die Schulung am Produktivstart aus, nicht am Kalender der Trainerin. Fertigkeiten verfallen schnell, und eine Gruppe, die sechs Wochen zu früh geschult wurde, hat das meiste vergessen und fragt still die Kollegin. Fahren Sie die Gruppen in Wellen, sodass die letzte wenige Tage vor dem Start endet, und geben Sie der Pilotgruppe genug Abstand, dass ihre Rückmeldung das Material noch verbessern kann. Schützen Sie danach die Verstetigung, denn sie wird als Erstes gestrichen und ist die einzige Phase, die langfristiges Verhalten ändert — die Auffrischung nach der ersten Kurzbefragung ist mehr wert als noch eine E-Mail vor dem Start.",
+    callout: "Richten Sie die Schulung am Produktivstart aus, nicht am Kalender der Trainerin. Fertigkeiten verfallen schnell, und eine Gruppe, die sechs Wochen zu früh geschult wurde, hat das meiste vergessen und fragt still die Kollegin. Fahren Sie die Gruppen in Wellen, sodass die letzte wenige Tage vor dem Start endet, und geben Sie der Pilotgruppe genug Abstand, dass ihre Rückmeldung das Material noch verbessern kann. Schützen Sie danach die Verstetigung, denn sie wird als Erstes gestrichen und ist die einzige Phase, die langfristiges Verhalten ändert, die Auffrischung nach der ersten Kurzbefragung ist mehr wert als noch eine E-Mail vor dem Start.",
     customize: [
       "Setzen Sie zuerst den Produktivstart, legen Sie die letzte Schulungsgruppe wenige Tage davor und rechnen Sie alle weiteren Gruppen von dort rückwärts.",
       "Ergänzen Sie eine Zeile für die Betroffenheitsanalyse je betroffener Gruppe; ein Team in den zentralen Diensten und ein Servicetechniker erleben nicht dieselbe Veränderung.",
       "Bemessen Sie das Multiplikatorennetz mit ungefähr einer Person je Team und hinterlegen Sie deren Zeit als vereinbarte Freistellung, nicht als Gefälligkeit.",
       "Ergänzen Sie Zeilen für die Auftritte der Führung je Region oder Bereich, wenn eine Runde nicht alle erreicht.",
       "Verlängern Sie die intensive Betreuung bei Schicht- oder Saisonbetrieb, damit jedes Schichtmodell in seiner ersten Produktivwoche Unterstützung bekommt.",
-      "Nehmen Sie die Beteiligung des Betriebsrats als eigene Zeile auf, wenn die Veränderung Arbeitsabläufe, Arbeitsplätze oder auswertbare Leistungsdaten berührt — die Beteiligung ist ein Vorgang mit Dauer, kein Haken.",
-      "Halten Sie Kurzbefragungen und Auffrischungen als datierte Zeilen nach dem Start — sie werden am häufigsten gelöscht und entscheiden über die tatsächliche Nutzung."
+      "Nehmen Sie die Beteiligung des Betriebsrats als eigene Zeile auf, wenn die Veränderung Arbeitsabläufe, Arbeitsplätze oder auswertbare Leistungsdaten berührt, die Beteiligung ist ein Vorgang mit Dauer, kein Haken.",
+      "Halten Sie Kurzbefragungen und Auffrischungen als datierte Zeilen nach dem Start, sie werden am häufigsten gelöscht und entscheiden über die tatsächliche Nutzung."
     ],
     tips: [
       "<strong>Betroffenheitsanalyse vor der Kommunikation.</strong> Sie können niemandem sagen, was sich für ihn ändert, bevor Sie es herausgearbeitet haben, und allgemeine Botschaften sind genau der Grund, warum Menschen annehmen, die Veränderung meine sie nicht.",
@@ -5310,7 +5310,7 @@ const T = {
   'tunnel-construction-schedule': {
     card: "Planfeststellung, TVM-Beschaffung, Startschacht, Vortrieb, Durchschlag, Ausbau.",
     h1: "Terminplan für den Tunnelbau",
-    metaTitle: "Tunnelbau — Terminplan",
+    metaTitle: "Tunnelbau: Terminplan",
     metaDesc: "Kostenloser Terminplan für den Tunnelbau: Planfeststellung, TVM-Fertigung, Startschacht, Vortriebsleistung, Querschläge, Durchschlag und Ausbau.",
     lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Tunnelbau</strong>, die um die Maschine herum aufgebaut ist und nicht um Phasen. Ausschreibung, Fertigung, Werksabnahme und Transport der Tunnelvortriebsmaschine als lange Vorlaufzeit, die beginnt, bevor der erste Spatenstich gesetzt ist; ein Startschacht, der fertig sein muss und nicht fast fertig, um sie aufzunehmen; eine Vortriebsleistung, die sich mit dem Baugrund ändert; Tübbingversorgung und Ausbruchtransport als Dauerleistungen, die den Vortrieb takten; danach Durchschlag, Innenschale und die Lüftungs- und Brandschutztechnik. Laden Sie sie für eine Lenkungskreisvorlage herunter oder öffnen Sie sie online und tragen Sie Ihre eigenen Meter pro Woche ein.",
     intro: "Ein Tunnelprojekt ist keine Abfolge von Gewerken. Es ist eine Maschine, die sich mit der Geschwindigkeit vorwärtsbewegt, die der Baugrund zulässt, und alles andere ist darauf ausgerichtet, sie in Bewegung zu halten. So ist die Vorlage gegliedert:",
@@ -5321,7 +5321,7 @@ const T = {
       ],
       [
         "Startschacht und Baustelleneinrichtung",
-        "Baustelleneinrichtungsfläche, Schlitzwände, Schachtaushub, Sohlplatte sowie Widerlager und Anfahrblock — dazu die Tübbingproduktion, die der Maschine am ersten Tag bereits voraus sein muss, und die Bestellung des SiGeKo mit dem Sicherheits- und Gesundheitsschutzplan. <em>Meilenstein: Startschacht bereit zur Aufnahme der TVM.</em>"
+        "Baustelleneinrichtungsfläche, Schlitzwände, Schachtaushub, Sohlplatte sowie Widerlager und Anfahrblock, dazu die Tübbingproduktion, die der Maschine am ersten Tag bereits voraus sein muss, und die Bestellung des SiGeKo mit dem Sicherheits- und Gesundheitsschutzplan. <em>Meilenstein: Startschacht bereit zur Aufnahme der TVM.</em>"
       ],
       [
         "Fertigung, Lieferung und Montage der TVM",
@@ -5340,14 +5340,14 @@ const T = {
         "Fluchtweg und Entwässerung, Kabeltrassen, Lüfter und Kanäle, Löschwasserleitung und Brandbekämpfungsanlage, Strom und Beleuchtung, Kommunikation und Leittechnik, dann ein Heißrauchversuch mit Feuerwehr und Rettungsdiensten, das Sicherheitskonzept und die förmliche Abnahme nach VOB/B. <em>Meilenstein: Übergabe an den Betrieb.</em>"
       ]
     ],
-    callout: "Die TVM ist der Terminplan. Wer sie zu spät bestellt, holt die Zeit danach nicht mehr auf: Konstruktion, Fertigung, Werksabnahme und Transport laufen bei einer maßgefertigten Maschine zwölf bis achtzehn Monate, und sie lässt sich nicht in einen unfertigen Schacht absenken. Die beiden Balken, die Tunnelprojekte ruinieren, sind eine zu spät beginnende Fertigung und ein Startschacht, der nach Ankunft der Maschine fertig wird — eine in Teilen an der Oberfläche liegende TVM kostet jeden Tag Geld und bringt nichts. Beide gehören am ersten Tag ins Diagramm und dürfen nie verrutschen.",
+    callout: "Die TVM ist der Terminplan. Wer sie zu spät bestellt, holt die Zeit danach nicht mehr auf: Konstruktion, Fertigung, Werksabnahme und Transport laufen bei einer maßgefertigten Maschine zwölf bis achtzehn Monate, und sie lässt sich nicht in einen unfertigen Schacht absenken. Die beiden Balken, die Tunnelprojekte ruinieren, sind eine zu spät beginnende Fertigung und ein Startschacht, der nach Ankunft der Maschine fertig wird, eine in Teilen an der Oberfläche liegende TVM kostet jeden Tag Geld und bringt nichts. Beide gehören am ersten Tag ins Diagramm und dürfen nie verrutschen.",
     customize: [
-      "Leiten Sie die Vortriebsleistung aus dem geotechnischen Gutachten ab, nicht aus der besten Woche Ihrer letzten Baustelle — und teilen Sie den Vortrieb in getrennte Balken je Baugrundabschnitt, damit ein schwieriger Abschnitt sichtbar wird statt im Mittelwert zu verschwinden.",
+      "Leiten Sie die Vortriebsleistung aus dem geotechnischen Gutachten ab, nicht aus der besten Woche Ihrer letzten Baustelle, und teilen Sie den Vortrieb in getrennte Balken je Baugrundabschnitt, damit ein schwieriger Abschnitt sichtbar wird statt im Mittelwert zu verschwinden.",
       "Geben Sie den ersten Hundert Metern einen eigenen kurzen, langsamen Balken. Jede TVM hat eine Einarbeitungskurve, in der sich Mannschaft, Verpressung und Ausbruchförderung einspielen, und wer sie mit voller Leistung plant, plant einen frühen Verzug.",
-      "Ergänzen Sie einen Balken für Druckluftarbeiten überall dort, wo das Gutachten abrasiven Baugrund erwartet — Werkzeugwechsel sind planbare Vorgänge mit bekannter Dauer, und erst die Entdeckung mitten im Vortrieb macht daraus einen Monat.",
+      "Ergänzen Sie einen Balken für Druckluftarbeiten überall dort, wo das Gutachten abrasiven Baugrund erwartet, Werkzeugwechsel sind planbare Vorgänge mit bekannter Dauer, und erst die Entdeckung mitten im Vortrieb macht daraus einen Monat.",
       "Bilden Sie die Tübbinglieferung als durchlaufenden Balken über die gesamte Vortriebslänge ab und prüfen Sie die Leistung des Fertigteilwerks gegen Ihre Spitzenwoche, nicht gegen den Durchschnitt.",
       "Zeigen Sie Ausbruchtransport und Entsorgungsweg ausdrücklich. Eine volle Bodenmiete oder eine entzogene Deponiegenehmigung stoppt die Maschine so wirksam wie ein Maschinenschaden.",
-      "Setzen Sie Planfeststellungsbeschluss, TVM-Auftrag, Startschacht fertig, TVM anfahrbereit und Durchschlag als Meilensteine — diese fünf Termine sind das gesamte Projekt in Kurzform."
+      "Setzen Sie Planfeststellungsbeschluss, TVM-Auftrag, Startschacht fertig, TVM anfahrbereit und Durchschlag als Meilensteine, diese fünf Termine sind das gesamte Projekt in Kurzform."
     ],
     tips: [
       "<strong>Bestellen Sie die Maschine, bevor die übrige Planung fertig ist.</strong> Die Schneidradkonfiguration hängt vom Baugrund ab, nicht von der Architektur der Stationen, und das Baugrundgutachten reicht in der Regel aus, um lange vor Abschluss der übrigen Planung zu vergeben.",
@@ -5355,7 +5355,7 @@ const T = {
       "<strong>Planen Sie Querschläge nie als Lückenfüller hinter der Maschine.</strong> Sie brauchen Baugrundverbesserung, sie sind auf den meisten Tunnelbaustellen die Tätigkeit mit dem höchsten Risiko, und sie hängen davon ab, dass die Ringe in diesem Abschnitt fertig und verpresst sind.",
       "<strong>Lassen Sie die Setzungsmessung von vor dem Anfahren bis weit nach der Vortriebspassage laufen.</strong> Nullmessungen nach Vortriebsbeginn sind wertlos, und eine Hebungsinjektion muss instrumentiert sein, bevor sie gebraucht wird.",
       "<strong>Der Durchschlag ist nicht das Ende.</strong> Bei den meisten Projekten dauern Ausbau, Lüftung und Brandschutztechnik nach dem Durchschlag länger als erwartet, und Heißrauchversuch und Sicherheitsnachweis liegen auf dem kritischen Pfad zur Inbetriebnahme.",
-      "<strong>Stimmen Sie den Brandversuch Monate im Voraus mit Feuerwehr und Rettungsdiensten ab.</strong> Der Heißrauchversuch braucht ihre Anwesenheit, und deren Kalender gehört Ihnen nicht — ein verpasster Termin schiebt die Übergabe um Wochen, obwohl der Tunnel körperlich fertig ist."
+      "<strong>Stimmen Sie den Brandversuch Monate im Voraus mit Feuerwehr und Rettungsdiensten ab.</strong> Der Heißrauchversuch braucht ihre Anwesenheit, und deren Kalender gehört Ihnen nicht, ein verpasster Termin schiebt die Übergabe um Wochen, obwohl der Tunnel körperlich fertig ist."
     ],
     faq: [
       [
@@ -5387,7 +5387,7 @@ const T = {
   'semiconductor-fab-construction-schedule': {
     card: "Rohbau, Reinraumprotokoll, Medienversorgung, Anlagenanschluss, Qualifizierung.",
     h1: "Terminplan für den Bau einer Halbleiterfabrik",
-    metaTitle: "Halbleiterfabrik — Bauterminplan",
+    metaTitle: "Halbleiterfabrik: Bauterminplan",
     metaDesc: "Kostenloser Terminplan für den Fab-Bau: Rohbau, Umstellung auf Reinraumprotokoll, Reinstwasser und Gase, Anlagenanschluss, Qualifizierung, erster Wafer.",
     lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Bau einer Halbleiterfabrik</strong>, die das Reinraumprotokoll dorthin setzt, wo es hingehört: in das Scharnier des Projekts. Standort, Genehmigungen und eine schwingungsentkoppelte Bodenplatte; Rohbau, Hülle und Reinraumraster; Reinstwasser, Grund- und Spezialgase, Abluft und Abgasreinigung, gebaut auf die Anschlusspunkte hin; dann eine harte Umstellung, mit der die Baustelle aufhört, eine Baustelle zu sein, und eine kontrollierte Umgebung wird, gefolgt von Anlageneinbringung, Anschluss, Qualifizierung und erstem Silizium. Laden Sie sie für eine Vorstandsvorlage herunter oder ordnen Sie die Anlagenwellen online Ihrer eigenen Medienverfügbarkeit zu.",
     intro: "Eine Fab ist nicht fertig, wenn das Gebäude fertig ist. Sie ist fertig, wenn Anlagen qualifiziert sind und Wafer laufen, und alles zwischen diesen beiden Punkten steht unter einem Protokoll. Die Vorlage folgt diesem Übergang:",
@@ -5402,7 +5402,7 @@ const T = {
       ],
       [
         "Medienversorgung und Abgasreinigung",
-        "Reinstwasseranlage und Spülung des Kreislaufs, Gasehof für Grund- und Spezialgase, Ventilschränke und Dichtheitsprüfung, Abluft und Wäscher sowie Zuschaltung der Umspannstation — alles auf die Anschlusspunkte hin getrieben, nicht auf ein allgemeines „fertig“. <em>Meilenstein: Medien an den Anschlusspunkten verfügbar.</em>"
+        "Reinstwasseranlage und Spülung des Kreislaufs, Gasehof für Grund- und Spezialgase, Ventilschränke und Dichtheitsprüfung, Abluft und Wäscher sowie Zuschaltung der Umspannstation, alles auf die Anschlusspunkte hin getrieben, nicht auf ein allgemeines „fertig“. <em>Meilenstein: Medien an den Anschlusspunkten verfügbar.</em>"
       ],
       [
         "Reinraumabnahme und Protokollumstellung",
@@ -5417,7 +5417,7 @@ const T = {
         "Anbindung von MES und Automatisierung, Einspielen der Rezepte, erster Wafer durch ein einzelnes Modul, das Pilotlos über die gesamte Prozesskette, Ausbeutelernkurve und Kundenqualifizierung. <em>Meilensteine: erstes Silizium, Freigabe für die Serienfertigung.</em>"
       ]
     ],
-    callout: "Es gibt einen Termin in einem Fab-Projekt, der für alle die Regeln ändert: die Umstellung auf das Reinraumprotokoll. Davor ist es eine Baustelle mit Helm und Schweißgerät. Danach ist jede Person eingekleidet, jedes Material wird durch eine Schleuse gewischt, und die Leistung je Gewerk bricht deutlich ein. Planen Sie die Arbeit beiderseits dieser Linie bewusst — alles, was schmutzig fertig werden kann, muss davor fertig sein, und jeder Balken, der sie kreuzt, braucht eine längere Dauer als dieselbe Arbeit außerhalb. Projekte, die das als gewöhnliche Übergabe behandeln, lernen es auf der Baustelle neu und verlieren dabei Monate.",
+    callout: "Es gibt einen Termin in einem Fab-Projekt, der für alle die Regeln ändert: die Umstellung auf das Reinraumprotokoll. Davor ist es eine Baustelle mit Helm und Schweißgerät. Danach ist jede Person eingekleidet, jedes Material wird durch eine Schleuse gewischt, und die Leistung je Gewerk bricht deutlich ein. Planen Sie die Arbeit beiderseits dieser Linie bewusst, alles, was schmutzig fertig werden kann, muss davor fertig sein, und jeder Balken, der sie kreuzt, braucht eine längere Dauer als dieselbe Arbeit außerhalb. Projekte, die das als gewöhnliche Übergabe behandeln, lernen es auf der Baustelle neu und verlieren dabei Monate.",
     customize: [
       "Frieren Sie die Anlagenliste früh ein und setzen Sie das als Meilenstein. Jede Mediengröße, jeder Durchbruch und jede Anschlusszeichnung leitet sich daraus ab, und ein später Anlagentausch läuft durch die gesamte Gebäudeplanung.",
       "Ordnen Sie die Anlagenwellen Ihrer eigenen Medienverfügbarkeit zu und nicht den Lieferterminen der Hersteller. Eine Anlage, die vor ihren Gasen und ihrer Abluft ankommt, belegt Fläche und qualifiziert nichts.",
@@ -5427,9 +5427,9 @@ const T = {
       "Legen Sie Schwingungs-, EMV- und Schallmessung vor die Einbringung der Lithografieanlagen. Ein Schwingungsproblem nach dem Aufstellen eines Steppers zu finden, ist die teuerste Entdeckung in diesem Plan."
     ],
     tips: [
-      "<strong>Der echte Meilenstein ist der Anschluss, nicht die Lieferung.</strong> Verfolgen Sie Anlagen nach dem Tag, an dem sie an laufende Medien angeschlossen und bestromt sind — eine Halle voller gelieferter Anlagen ist für den Qualifizierungsplan wertlos.",
+      "<strong>Der echte Meilenstein ist der Anschluss, nicht die Lieferung.</strong> Verfolgen Sie Anlagen nach dem Tag, an dem sie an laufende Medien angeschlossen und bestromt sind, eine Halle voller gelieferter Anlagen ist für den Qualifizierungsplan wertlos.",
       "<strong>Bauen Sie die Medien auf einen Anschlusspunkttermin hin.</strong> „Reinstwasseranlage fertig“ und „Reinstwasser am Anschlusspunkt der Lithozelle mit spezifikationsgerechtem Widerstand verfügbar“ liegen Monate auseinander, und nur das Zweite gibt eine Anlage frei.",
-      "<strong>Schützen Sie den Terminplan der Abgasreinigung.</strong> Abluft und Wäscher sind unscheinbar und werden regelmäßig zurückgestellt, und ohne sie lässt sich keine gasführende Anlage qualifizieren — sie liegen still auf dem kritischen Pfad zum ersten Silizium.",
+      "<strong>Schützen Sie den Terminplan der Abgasreinigung.</strong> Abluft und Wäscher sind unscheinbar und werden regelmäßig zurückgestellt, und ohne sie lässt sich keine gasführende Anlage qualifizieren, sie liegen still auf dem kritischen Pfad zum ersten Silizium.",
       "<strong>Messen Sie Schwingungen unter realen Bedingungen.</strong> Eine Messung vor dem Anlauf von Ventilatoren und Pumpen bildet nicht die Umgebung ab, in der die Lithoanlagen später stehen.",
       "<strong>Planen Sie die Ausbeutelernkurve nicht als festen Balken.</strong> Die Defektdichte sinkt entlang einer teilweise experimentellen Kurve; geben Sie ihr ein realistisches Fenster und eine Reserve statt eines Termins, den der Businessplan gern hätte.",
       "<strong>Beginnen Sie mit MES und Automatisierung während der Anlagenmontage, nicht danach.</strong> Rezept- und Materialflussanbindung ist Software mit eigenem Fehlerzyklus und ein häufiger Blocker beim ersten Pilotlos."
@@ -5468,7 +5468,7 @@ const T = {
   'oil-gas-pipeline-construction-schedule': {
     card: "Trasse, Genehmigung, Grunddienstbarkeiten, Zeitfenster, Schweißkolonne, Druckprobe.",
     h1: "Terminplan für den Bau einer Öl- und Gaspipeline",
-    metaTitle: "Pipelinebau — Terminplan",
+    metaTitle: "Pipelinebau: Terminplan",
     metaDesc: "Kostenloser Terminplan für den Pipelinebau: Planfeststellung, Grunddienstbarkeiten, Bauzeitenfenster, Schweißkolonne, Kreuzungen, Druckprobe, Einbindung.",
     lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Bau einer Öl- und Gaspipeline</strong>, geordnet nach den beiden Dingen, die die Termine wirklich setzen: Grund und Jahreszeit. Trassenerkundung, Umweltverträglichkeitsprüfung, Planfeststellung und der Erwerb von Grunddienstbarkeiten am Anfang; Brut- und Schonzeiten sowie die wasserrechtlich zugelassenen Bauzeitenfenster für Gewässerquerungen als feste Randbedingungen; die Rohrleitungskolonne als wandernde Fertigungsstraße aus Auslegen, Graben, Schweißen, Durchstrahlungsprüfung, Umhüllen, Einlegen und Verfüllen; Kreuzungen und Stationen parallel; danach Druckprobe, Einbindenähte und Inbetriebnahme. Laden Sie sie für den Lenkungskreis herunter oder tragen Sie online Ihre eigenen Fenstertermine ein.",
     intro: "Eine Pipeline wird von einer Fertigungsstraße gebaut, die durch einen Korridor wandert, der Ihnen noch nicht gehört, und zwar innerhalb von Jahreszeiten, die Sie nicht steuern. Die Vorlage hält beide Zwänge sichtbar:",
@@ -5487,7 +5487,7 @@ const T = {
       ],
       [
         "Rohrleitungskolonne auf der Strecke",
-        "Die Fertigungsstraße selbst — Auslegen, Graben, Feldbögen und Ausrichten, Schweißen, Durchstrahlungs- und Ultraschallprüfung, Nachumhüllung der Rundnähte mit Porenprüfung, Einlegen, Bettung, Verfüllen und kathodischer Korrosionsschutz. <em>Meilenstein: Streckenschweißung abgeschlossen.</em>"
+        "Die Fertigungsstraße selbst, Auslegen, Graben, Feldbögen und Ausrichten, Schweißen, Durchstrahlungs- und Ultraschallprüfung, Nachumhüllung der Rundnähte mit Porenprüfung, Einlegen, Bettung, Verfüllen und kathodischer Korrosionsschutz. <em>Meilenstein: Streckenschweißung abgeschlossen.</em>"
       ],
       [
         "Kreuzungen und Sonderbauwerke",
@@ -5502,13 +5502,13 @@ const T = {
     customize: [
       "Tragen Sie zuerst Ihre eigenen Bauzeitenfenster und Schonzeiten als feste Balken ein und ordnen Sie die Kolonne darum herum an, nicht umgekehrt.",
       "Teilen Sie die Strecke in je einen Satz Balken pro Kolonne, wenn Sie mit mehreren Mannschaften arbeiten, und geben Sie jeder Kolonne ihre eigene Leistung in Metern oder Nähten pro Tag.",
-      "Bilden Sie Schweißen, Prüfung und Umhüllung als überlappende Balken ab, die einander die Trasse entlang nachlaufen — es ist eine wandernde Fertigungsstraße und nicht drei aufeinanderfolgende Phasen, und eine sequenzielle Darstellung verbirgt, wo der Engpass wirklich sitzt.",
+      "Bilden Sie Schweißen, Prüfung und Umhüllung als überlappende Balken ab, die einander die Trasse entlang nachlaufen, es ist eine wandernde Fertigungsstraße und nicht drei aufeinanderfolgende Phasen, und eine sequenzielle Darstellung verbirgt, wo der Engpass wirklich sitzt.",
       "Ergänzen Sie einen Balken für Nahtreparatur und Wiederholungsprüfung. Die Annahme, jede Naht bestehe die Durchstrahlungsprüfung beim ersten Mal, ist der häufigste Optimismusfehler im Pipelinebau.",
       "Geben Sie dem Erwerb der Grunddienstbarkeiten einen langen Auslauf und eine Reserve für Verweigerer. Ein einziger Eigentümer, der nicht unterschreibt, hält eine sonst startbereite Kolonne auf.",
       "Zerlegen Sie die Druckprobe in Abschnitte, die zu Ihren Prüfarmaturen passen, und ergänzen Sie nach der Haltezeit einen Balken für Reparatur und Wiederholungsprüfung; ein durchgefallener Abschnitt muss gefunden, herausgetrennt, neu geschweißt und erneut geprüft werden."
     ],
     tips: [
-      "<strong>Beginnen Sie den Erwerb der Wegerechte, bevor die Planung fertig ist.</strong> Grund und Boden ist bei den meisten Pipelines der längste Vorlauf und liegt vollständig außerhalb der Kontrolle der Baufirma — behandeln Sie ihn wie eine Beschaffung, mit verantwortlicher Person und wöchentlichem Status.",
+      "<strong>Beginnen Sie den Erwerb der Wegerechte, bevor die Planung fertig ist.</strong> Grund und Boden ist bei den meisten Pipelines der längste Vorlauf und liegt vollständig außerhalb der Kontrolle der Baufirma, behandeln Sie ihn wie eine Beschaffung, mit verantwortlicher Person und wöchentlichem Status.",
       "<strong>Lassen Sie die Kolonne nicht dem Rohr davonlaufen.</strong> Der Lagerbestand vor der Mannschaft ist die beste Frühwarnkennzahl auf der Baustelle; wenn er sinkt, steht die Kolonne, bevor jemand ein Problem meldet.",
       "<strong>Binden Sie die Spülbohrmannschaft an das Fenster, nicht an die Kolonne.</strong> Spülbohrfirmen sind spezialisiert und knapp, und ein Gerät, das nach Schließen des Bauzeitenfensters ankommt, kostet ein Jahr Puffer.",
       "<strong>Behandeln Sie die Einbindenähte als eigenen, sorgfältig sequenzierten Vorgang.</strong> Sie entstehen nach der Druckprobe und lassen sich nicht auf dieselbe Weise mitprüfen, tragen also überproportionales Prüf- und Termingewicht.",
@@ -5522,7 +5522,7 @@ const T = {
       ],
       [
         "Was sind Bauzeitenfenster und warum wiegen sie so schwer?",
-        "Es sind rechtlich festgelegte Zeiträume, in denen Arbeiten im oder am Gewässer und in Brut- und Lebensstätten erlaubt oder untersagt sind — festgeschrieben in der wasserrechtlichen Erlaubnis und im Planfeststellungsbeschluss. Sie lassen sich weder verhandeln noch stauchen, und ein verpasstes Fenster schiebt den betroffenen Umfang meist um ein volles Jahr."
+        "Es sind rechtlich festgelegte Zeiträume, in denen Arbeiten im oder am Gewässer und in Brut- und Lebensstätten erlaubt oder untersagt sind, festgeschrieben in der wasserrechtlichen Erlaubnis und im Planfeststellungsbeschluss. Sie lassen sich weder verhandeln noch stauchen, und ein verpasstes Fenster schiebt den betroffenen Umfang meist um ein volles Jahr."
       ],
       [
         "Wie plane ich eine Rohrleitungskolonne?",
@@ -5545,7 +5545,7 @@ const T = {
   'theatre-production-schedule': {
     card: "Rückwärts von der Premiere: Besetzung, Proben, Bauprobe, Endproben, Voraufführungen.",
     h1: "Probenplan für eine Theaterproduktion",
-    metaTitle: "Theaterproduktion — Probenplan",
+    metaTitle: "Theaterproduktion: Probenplan",
     metaDesc: "Kostenloser Probenplan fürs Theater: rückwärts von der Premiere über Besetzung, Probenwochen, Einbau, Technikprobe, Hauptproben und Voraufführungen.",
     lead: "Eine kostenlose <strong>Probenplan-Vorlage für eine Theaterproduktion</strong>, die so funktioniert, wie Theaterpläne allein funktionieren können: rückwärts von der Premiere. Der Termin steht, die Karten sind verkauft und das Haus ist disponiert, also müssen Besetzung, Bauprobe und Freigabe des Bühnenbildes, Werkstattbau, Probenwochen im Probensaal, Einbau, Beleuchtungseinrichtung, Technische Probe, Hauptproben und Voraufführungen davor Platz finden. Laden Sie sie für die Produktionssitzung herunter oder schieben Sie online den Premierentermin und sehen Sie den ganzen Rückwärtsplan mitwandern.",
     intro: "Jedes andere Projekt fragt, wann es fertig sein wird. Eine Theaterproduktion weiß es auf die Stunde genau und arbeitet heraus, was vorher wahr sein muss. In dieser Richtung ist die Vorlage gebaut:",
@@ -5568,25 +5568,25 @@ const T = {
       ],
       [
         "Endprobenwoche",
-        "Stellprobe auf der Bühne, technische Probe Akt für Akt, Notizen und Neuplanung der Verwandlungen sowie zwei Hauptproben — der Engpass, der sich nicht dehnen lässt, weil das Haus disponiert ist. <em>Meilenstein: erstes Publikum.</em>"
+        "Stellprobe auf der Bühne, technische Probe Akt für Akt, Notizen und Neuplanung der Verwandlungen sowie zwei Hauptproben, der Engpass, der sich nicht dehnen lässt, weil das Haus disponiert ist. <em>Meilenstein: erstes Publikum.</em>"
       ],
       [
         "Voraufführungen, Premiere und Serie",
         "Voraufführungen mit Nachproben am Tag dazwischen, der Stopp aller Änderungen, die Premiere am vertraglich vereinbarten Termin, Kritiken und Nachsteuerung des Marketings, dann die Serie unter der Abendspielleitung. <em>Meilenstein: Premiere.</em>"
       ]
     ],
-    callout: "Die Premiere ist kein Ziel, sondern ein Vertrag. Kritikerinnen sind eingeladen, Karten sind verkauft, das Werbebudget ist ausgegeben und nach Ihnen kommt die nächste Produktion ins Haus. Alles rechnet deshalb rückwärts von ihr, und die Endprobenwoche — Stellprobe, technische Probe, Hauptproben — nimmt jede Verzögerung aus jeder Phase davor auf. Ein Kostüm, das zu spät kommt, eine Maschinerie, die nicht abgenommen wird, eine Verwandlung, die nie geschrieben wurde: alles landet in denselben sieben Tagen, und aus sieben Tagen werden keine acht.",
+    callout: "Die Premiere ist kein Ziel, sondern ein Vertrag. Kritikerinnen sind eingeladen, Karten sind verkauft, das Werbebudget ist ausgegeben und nach Ihnen kommt die nächste Produktion ins Haus. Alles rechnet deshalb rückwärts von ihr, und die Endprobenwoche, Stellprobe, technische Probe, Hauptproben, nimmt jede Verzögerung aus jeder Phase davor auf. Ein Kostüm, das zu spät kommt, eine Maschinerie, die nicht abgenommen wird, eine Verwandlung, die nie geschrieben wurde: alles landet in denselben sieben Tagen, und aus sieben Tagen werden keine acht.",
     customize: [
-      "Setzen Sie zuerst den Premierentermin und ziehen Sie alles andere davor. Wenn der Rückwärtsplan nicht passt, liegt die Lösung stromaufwärts — ein kleinerer Bau, frühere Besetzung, mehr Probenwochen — niemals in einer kürzeren Endprobenwoche.",
+      "Setzen Sie zuerst den Premierentermin und ziehen Sie alles andere davor. Wenn der Rückwärtsplan nicht passt, liegt die Lösung stromaufwärts, ein kleinerer Bau, frühere Besetzung, mehr Probenwochen, niemals in einer kürzeren Endprobenwoche.",
       "Passen Sie die Probenwochen Ihrem Haus an; sechs bis acht Wochen sind an Stadt- und Staatstheatern üblich, in der freien Szene oft weniger, und Zweitbesetzungen müssen hineinpassen.",
       "Verlängern oder verkürzen Sie Einbau und Einrichtung nach Ihrem Haus. Ein Repertoirebetrieb, der sonntags übergibt, ist eine völlig andere Randbedingung als ein Gastspielhaus, das Ihnen zwei Wochen gehört.",
-      "Teilen Sie die technische Probe nach Akten und ergänzen Sie einen eigenen Balken für Obermaschinerie oder Flugwerk, wenn die Produktion damit arbeitet — das sind die Sequenzen, die Technikzeit fressen.",
+      "Teilen Sie die technische Probe nach Akten und ergänzen Sie einen eigenen Balken für Obermaschinerie oder Flugwerk, wenn die Produktion damit arbeitet, das sind die Sequenzen, die Technikzeit fressen.",
       "Ergänzen Sie einen Balken für Nachproben zwischen den Voraufführungen. Voraufführungen sind nicht nur Vorstellungen, sondern die letzte Gelegenheit, die Inszenierung zu ändern, und die Proben sind angesetzte Arbeit für das Ensemble.",
       "Setzen Sie die Freigabe der Ausstattung als harten Meilenstein. Die Werkstätten können ohne sie nicht anfangen, und jeder Tag Verzug geht am anderen Ende direkt von Malerei und Anprobenzeit ab.",
-      "Nehmen Sie die Prüfung nach Versammlungsstättenverordnung als eigene Zeile auf, wenn das Bühnenbild Aufbauten, Praktikabel oder Pyrotechnik enthält — Brandschutzeinstufung der Dekoration und die Abnahme mit der Leiterin oder dem Leiter der Veranstaltungstechnik sind terminierte Vorgänge, kein Formblatt."
+      "Nehmen Sie die Prüfung nach Versammlungsstättenverordnung als eigene Zeile auf, wenn das Bühnenbild Aufbauten, Praktikabel oder Pyrotechnik enthält, Brandschutzeinstufung der Dekoration und die Abnahme mit der Leiterin oder dem Leiter der Veranstaltungstechnik sind terminierte Vorgänge, kein Formblatt."
     ],
     tips: [
-      "<strong>Geben Sie die Ausstattung früh genug frei, dass die Werkstätten ruhig bauen können.</strong> Eine späte Modellabnahme verschiebt die Premiere nicht — sie führt nur dazu, dass das Bühnenbild ungemalt ankommt und der Einbau in die technische Probe hineinläuft.",
+      "<strong>Geben Sie die Ausstattung früh genug frei, dass die Werkstätten ruhig bauen können.</strong> Eine späte Modellabnahme verschiebt die Premiere nicht, sie führt nur dazu, dass das Bühnenbild ungemalt ankommt und der Einbau in die technische Probe hineinläuft.",
       "<strong>Schützen Sie die Durchlaufprobe für die Leitung.</strong> Sie ist der letzte Moment, in dem die Inszenierung als Ganzes zu sehen ist, bevor das Haus alle Aufmerksamkeit schluckt, und sie für einen zusätzlichen Probentag zu streichen, ist fast immer ein schlechter Tausch.",
       "<strong>Schreiben Sie Licht und Ton vom Probensaal aus.</strong> Alles, was die Ausstattenden vor dem Einbau entscheiden können, ist Zeit, die Sie in der technischen Probe zurückgewinnen, und dort ist eine Stunde weit mehr wert.",
       "<strong>Stellen Sie das Ensemble nicht auf die Bühne, bevor der Einbau wirklich fertig ist.</strong> Eine Stellprobe, die sich die Bühne mit noch bauender Technik teilt, ist langsamer als warten, und dort passieren die Unfälle.",
@@ -5612,11 +5612,11 @@ const T = {
       ],
       [
         "Lässt sich die Endprobenwoche verlängern, wenn wir hinterherliegen?",
-        "So gut wie nie. Das Haus ist disponiert, die Voraufführungen sind im Verkauf und die Premiere ist vereinbart, die Bühnenzeit steht also fest. Aufholen muss man im Probensaal, in den Werkstätten oder bei der Freigabe der Ausstattung — alles liegt früher."
+        "So gut wie nie. Das Haus ist disponiert, die Voraufführungen sind im Verkauf und die Premiere ist vereinbart, die Bühnenzeit steht also fest. Aufholen muss man im Probensaal, in den Werkstätten oder bei der Freigabe der Ausstattung, alles liegt früher."
       ],
       [
         "Wann sollten Änderungen aufhören?",
-        "Meist ein bis zwei Vorstellungen vor der Premiere, damit das Ensemble die besprochene Fassung mindestens einmal spielt. Setzen Sie diesen Stopp ausdrücklich in den Plan — ein unausgesprochener Termin bedeutet, dass bis zum Premierenabend Änderungen eintreffen."
+        "Meist ein bis zwei Vorstellungen vor der Premiere, damit das Ensemble die besprochene Fassung mindestens einmal spielt. Setzen Sie diesen Stopp ausdrücklich in den Plan, ein unausgesprochener Termin bedeutet, dass bis zum Premierenabend Änderungen eintreffen."
       ],
       [
         "Ist die Vorlage für die Theaterproduktion kostenlos?",
@@ -5627,7 +5627,7 @@ const T = {
   'medical-clinic-opening-timeline': {
     card: "Bedarfsplanung, Zulassung, Approbation, Praxisausbau nach MPBetreibV, Abnahmen.",
     h1: "Zeitplan für die Eröffnung einer Arztpraxis",
-    metaTitle: "Praxiseröffnung — Zeitplan",
+    metaTitle: "Praxiseröffnung: Zeitplan",
     metaDesc: "Kostenloser Zeitplan für die Praxiseröffnung: Bedarfsplanung und Zulassung, Approbation und Arztregister, Praxisausbau, Hygiene, Abnahmen, erster Patient.",
     lead: "Eine kostenlose <strong>Zeitplan-Vorlage für die Eröffnung einer Arztpraxis</strong>, gebaut um die drei Uhren, die entscheiden, wann Sie tatsächlich behandeln dürfen: Zulassung, Abnahmen und die persönlichen Voraussetzungen der Ärztinnen und Ärzte. Konzept, Standort und die Klärung des Zulassungswegs, Eintragung ins Arztregister und das Verfahren beim Zulassungsausschuss als lange Uhr, die andere stellen, ein Ausbau mit Anforderungen an Hygiene, Lüftung und Medizinprodukte, die ein gewöhnlicher Büroausbau nicht kennt, Inbetriebnahme und Einweisung der Geräte, dann die Abnahmen und die Zulassung, die die Türen öffnen. Laden Sie sie für die Bankvorlage herunter oder tragen Sie online Ihre eigenen Fristen ein.",
     intro: "Eine Praxis, die gebaut, besetzt und ausgestattet ist, darf trotzdem niemanden behandeln, bevor mehrere getrennte Genehmigungen vorliegen. Die Vorlage macht daraus das Rückgrat statt eines Anhängsels:",
@@ -5657,31 +5657,31 @@ const T = {
         "Einstellung von medizinischen Fachangestellten und Empfang, Einarbeitung und Nachweis der Fachkunde, Beschaffung und Sterilgutlager, ein Probetag mit Testpatienten, Testabrechnung über die Kassenärztliche Vereinigung und die Vorstellung bei zuweisenden Praxen. <em>Meilensteine: erster Patient behandelt, volle Sprechstunde.</em>"
       ]
     ],
-    callout: "Die Uhr, die Sie am wenigsten steuern, ist die Zulassung — und in einem gesperrten Planungsbereich kann sie gar nicht laufen. Die Bedarfsplanung der Kassenärztlichen Vereinigung entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Sitz frei ist; ist er gesperrt, gibt es keinen Termin, den Sie beschleunigen könnten, sondern nur den Weg über die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung. Der Zulassungsausschuss tagt zudem in festen Sitzungsterminen mit vorgelagerter Antragsfrist, und ein unvollständiger Antrag rutscht in die nächste Sitzung. Klären Sie das, bevor Sie den Mietvertrag unterschreiben, nicht wenn der Ausbau fertig ist.",
+    callout: "Die Uhr, die Sie am wenigsten steuern, ist die Zulassung, und in einem gesperrten Planungsbereich kann sie gar nicht laufen. Die Bedarfsplanung der Kassenärztlichen Vereinigung entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Sitz frei ist; ist er gesperrt, gibt es keinen Termin, den Sie beschleunigen könnten, sondern nur den Weg über die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung. Der Zulassungsausschuss tagt zudem in festen Sitzungsterminen mit vorgelagerter Antragsfrist, und ein unvollständiger Antrag rutscht in die nächste Sitzung. Klären Sie das, bevor Sie den Mietvertrag unterschreiben, nicht wenn der Ausbau fertig ist.",
     customize: [
-      "Beginnen Sie den Zulassungsbalken am Tag der Entscheidung für den Standort und tragen Sie die tatsächlichen Sitzungstermine des Zulassungsausschusses als feste Punkte ein — dazwischen liegt die Antragsfrist, nicht der Sitzungstag.",
+      "Beginnen Sie den Zulassungsbalken am Tag der Entscheidung für den Standort und tragen Sie die tatsächlichen Sitzungstermine des Zulassungsausschusses als feste Punkte ein, dazwischen liegt die Antragsfrist, nicht der Sitzungstag.",
       "Ergänzen Sie eine Zeile je Ärztin und Arzt, wenn Sie zu mehreren eröffnen. Approbation, Facharztanerkennung und Arztregistereintrag laufen nicht gleichzeitig durch, und der Starttermin hängt an der langsamsten Person, nicht am Mittelwert.",
       "Trennen Sie Zulassung und Abrechnungsfähigkeit. Zugelassen zu sein und über die Kassenärztliche Vereinigung abrechnen zu können, sind zwei Vorgänge mit eigenen Uhren, und das Zweite entscheidet über Einnahmen, nicht über den Zugang.",
       "Führen Sie Anschluss an die Telematikinfrastruktur, Konnektor und elektronische Heilberufsausweise als eigene Balken; sie hängen an Lieferzeiten und Identifizierungsverfahren Dritter und blockieren sonst still die erste Abrechnung.",
-      "Halten Sie Aufbereitung von Medizinprodukten, Validierung des Sterilisators und Hygieneplan als eigene Zeilen — das Gesundheitsamt fragt bei der Begehung danach, und eine Nachbesserung kostet einen zweiten Termin.",
+      "Halten Sie Aufbereitung von Medizinprodukten, Validierung des Sterilisators und Hygieneplan als eigene Zeilen, das Gesundheitsamt fragt bei der Begehung danach, und eine Nachbesserung kostet einen zweiten Termin.",
       "Legen Sie den Probetag mit vollem Personal vor den Start. Es ist die einzige Übung, in der Anmeldung, Zimmerbelegung, Praxisverwaltungssystem, Geräte und Abrechnung einmal in einem Fluss zusammenkommen."
     ],
     tips: [
-      "<strong>Prüfen Sie die Bedarfsplanung, bevor Sie den Mietvertrag unterschreiben.</strong> Ob in Ihrer Arztgruppe im gewünschten Planungsbereich ein Sitz frei ist, ändert Standort, Rechtsform und Zeitplan vollständig — und ein gesperrter Bereich lässt sich nicht durch mehr Aufwand öffnen.",
-      "<strong>Reichen Sie Anträge vollständig ein oder gar nicht.</strong> Ein unvollständiger Antrag startet die Uhr nicht, sondern rutscht in die nächste Sitzung des Zulassungsausschusses — dieser eine Verwaltungsfehler ist die häufigste Ursache einer verschobenen Eröffnung.",
+      "<strong>Prüfen Sie die Bedarfsplanung, bevor Sie den Mietvertrag unterschreiben.</strong> Ob in Ihrer Arztgruppe im gewünschten Planungsbereich ein Sitz frei ist, ändert Standort, Rechtsform und Zeitplan vollständig, und ein gesperrter Bereich lässt sich nicht durch mehr Aufwand öffnen.",
+      "<strong>Reichen Sie Anträge vollständig ein oder gar nicht.</strong> Ein unvollständiger Antrag startet die Uhr nicht, sondern rutscht in die nächste Sitzung des Zulassungsausschusses, dieser eine Verwaltungsfehler ist die häufigste Ursache einer verschobenen Eröffnung.",
       "<strong>Planen Sie für die Begehung, nicht nur für den Handwerker.</strong> Trennung von rein und unrein, Handwaschplätze, Oberflächen und die Aufbereitungsräume werden vom Gesundheitsamt konkret geprüft, und eine Umplanung nach der Begehung kostet weit mehr, als es gleich richtig zu machen.",
       "<strong>Vereinbaren Sie Brandschutz- und Gesundheitsamtstermine früh und rechnen Sie mit einer Nachbegehung.</strong> Deren Kalender gehört Ihnen nicht, und ein Starttermin, der bei beiden auf Anhieb-Erfolg setzt, ist eine Wette, die Sie meist verlieren.",
-      "<strong>Nehmen Sie Geräte mit Einweisung und Dokumentation in Betrieb, nicht nur mit dem Lieferschein.</strong> Die Medizinprodukte-Betreiberverordnung verlangt Einweisung der Anwenderinnen und Anwender, ein Bestandsverzeichnis und ein Medizinproduktebuch für bestimmte Geräte sowie sicherheitstechnische Kontrollen — genau danach wird gefragt.",
+      "<strong>Nehmen Sie Geräte mit Einweisung und Dokumentation in Betrieb, nicht nur mit dem Lieferschein.</strong> Die Medizinprodukte-Betreiberverordnung verlangt Einweisung der Anwenderinnen und Anwender, ein Bestandsverzeichnis und ein Medizinproduktebuch für bestimmte Geräte sowie sicherheitstechnische Kontrollen, genau danach wird gefragt.",
       "<strong>Rechnen Sie Testfälle ab, bevor der erste echte Patient kommt.</strong> Eine falsch angelegte Betriebsstätte oder ein fehlender Heilberufsausweis fällt sonst im Quartalsabschluss auf, wenn die Leistungen bereits erbracht sind."
     ],
     faq: [
       [
         "Wie lange dauert es, eine Praxis zu eröffnen?",
-        "Zwölf bis sechzehn Monate sind für eine ausgebaute Praxis in Mieträumen üblich; ungefähr diesen Zeitraum nutzt die Vorlage. Der Ausbau ist selten der Engpass — Zulassung und Abnahmen sind es."
+        "Zwölf bis sechzehn Monate sind für eine ausgebaute Praxis in Mieträumen üblich; ungefähr diesen Zeitraum nutzt die Vorlage. Der Ausbau ist selten der Engpass, Zulassung und Abnahmen sind es."
       ],
       [
         "Was bedeutet die Bedarfsplanung für meinen Zeitplan?",
-        "Sie entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Vertragsarztsitz zu haben ist. In einem gesperrten Bereich gibt es keinen freien Sitz, sondern nur die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung bei einer bestehenden Praxis — jeweils mit eigenem Verfahren und eigener Dauer. Das ist keine Formalie am Rand, sondern die Randbedingung, die über den Standort entscheidet."
+        "Sie entscheidet, ob in Ihrer Arztgruppe und Ihrem Planungsbereich überhaupt ein Vertragsarztsitz zu haben ist. In einem gesperrten Bereich gibt es keinen freien Sitz, sondern nur die Nachbesetzung eines abgegebenen Sitzes, eine Sonderbedarfszulassung oder eine Anstellung bei einer bestehenden Praxis, jeweils mit eigenem Verfahren und eigener Dauer. Das ist keine Formalie am Rand, sondern die Randbedingung, die über den Standort entscheidet."
       ],
       [
         "Welche persönlichen Voraussetzungen brauchen die Ärztinnen und Ärzte?",
@@ -5689,7 +5689,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sich ein Praxisausbau von einem Büroausbau?",
-        "Trennung von reinen und unreinen Bereichen, Räume für die Aufbereitung von Medizinprodukten mit validiertem Verfahren, Anforderungen an Trinkwasserinstallation und Lüftung, abwischbare Oberflächen, Barrierefreiheit und Strahlenschutz für Röntgenräume — nichts davon kommt in einem gewöhnlichen Büroausbau vor."
+        "Trennung von reinen und unreinen Bereichen, Räume für die Aufbereitung von Medizinprodukten mit validiertem Verfahren, Anforderungen an Trinkwasserinstallation und Lüftung, abwischbare Oberflächen, Barrierefreiheit und Strahlenschutz für Röntgenräume, nichts davon kommt in einem gewöhnlichen Büroausbau vor."
       ],
       [
         "Welche Abnahmen und Anzeigen sind vor der Eröffnung nötig?",
@@ -5704,10 +5704,10 @@ const T = {
   'sap-s4hana-migration-plan': {
     card: "Brownfield-Konversion, Eigenentwicklungen, drei Testumstellungen, Freeze, Hypercare.",
     h1: "Projektplan für die SAP-S/4HANA-Migration",
-    metaTitle: "SAP S/4HANA — Migrationsplan",
+    metaTitle: "SAP S/4HANA: Migrationsplan",
     metaDesc: "Kostenloser Plan für die SAP-S/4HANA-Migration: Brownfield-Konversion, Anpassung der Eigenentwicklungen, drei Testumstellungen, Generalprobe, Freeze.",
     lead: "Eine kostenlose <strong>Projektplan-Vorlage für die SAP-S/4HANA-Migration</strong>, gebaut um die Entscheidung, die alles andere bestimmt: ob Sie ein bestehendes ECC-System an Ort und Stelle konvertieren (Brownfield) oder eine Neuimplementierung aufsetzen und dorthin migrieren (Greenfield). Dieser Plan zeigt den Weg der <em>Systemkonversion</em>, weil dessen Terminplan von der Anpassung der Eigenentwicklungen und von wiederholten Testumstellungen beherrscht wird und nicht von der Prozessgestaltung. Wenn Sie stattdessen ein ERP auf der grünen Wiese aufbauen, beginnen Sie beim <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a>.",
-    intro: "Eine Konversion endet nicht mit dem Produktivstart — sie endet, wenn das Freeze-Fenster schließt und die Bücher stimmen. Die Balken unten setzen Testumstellungen und Freeze dorthin, wo sie tatsächlich liegen:",
+    intro: "Eine Konversion endet nicht mit dem Produktivstart, sie endet, wenn das Freeze-Fenster schließt und die Bücher stimmen. Die Balken unten setzen Testumstellungen und Freeze dorthin, wo sie tatsächlich liegen:",
     phases: [
       [
         "Wegentscheidung und Bereitschaft",
@@ -5715,7 +5715,7 @@ const T = {
       ],
       [
         "Vorbereitung und Anpassung der Eigenentwicklungen",
-        "Der Teil, den niemand richtig schätzt: Analyse der kundeneigenen ABAP-Objekte gegen die Simplification-Datenbank, Anpassung in Wellen, Stilllegung nicht mehr genutzter Objekte und die Vorbereitung des Finanzdatenmodells, auf der die Konversion aufsetzt — Geschäftspartner-Umstellung und neue Anlagenbuchhaltung. <em>Meilenstein: Anpassung der Eigenentwicklungen abgeschlossen.</em>"
+        "Der Teil, den niemand richtig schätzt: Analyse der kundeneigenen ABAP-Objekte gegen die Simplification-Datenbank, Anpassung in Wellen, Stilllegung nicht mehr genutzter Objekte und die Vorbereitung des Finanzdatenmodells, auf der die Konversion aufsetzt, Geschäftspartner-Umstellung und neue Anlagenbuchhaltung. <em>Meilenstein: Anpassung der Eigenentwicklungen abgeschlossen.</em>"
       ],
       [
         "Sandbox- und Entwicklungskonversion",
@@ -5736,18 +5736,18 @@ const T = {
     ],
     callout: "Zwei Dinge versenken Konversionspläne. Das erste sind die Eigenentwicklungen: der Readiness Check listet Tausende Befunde, die meisten trivial und eine Handvoll strukturell, und bevor jemand sie bewertet hat, haben Sie keine Schätzung, sondern eine Objektzahl. Das zweite ist der Freeze im Geschäft. Teams planen ein Wochenende und stellen fest, dass der Freeze für Buchungen, Stammdatenänderungen und offene Vorgänge in Wahrheit mehrere Tage früher beginnt und erst endet, wenn die Abstimmung stimmt. Planen Sie den Freeze als Geschäftsereignis mit benannten Verantwortlichen, nicht als technisches Fenster, und lassen Sie die Testumstellungen sagen, wie lang er wirklich sein muss.",
     customize: [
-      "Wenn Sie neu implementieren statt zu konvertieren, streichen Sie die Phasen für Anpassung und Testumstellungen und bauen Sie um die Prozessgestaltung herum neu — die Formen unterscheiden sich wirklich.",
+      "Wenn Sie neu implementieren statt zu konvertieren, streichen Sie die Phasen für Anpassung und Testumstellungen und bauen Sie um die Prozessgestaltung herum neu, die Formen unterscheiden sich wirklich.",
       "Setzen Sie zuerst das Umstellungswochenende und rechnen Sie rückwärts; die Testumstellungen sind die einzige belastbare Schätzung der benötigten Dauer.",
       "Teilen Sie die Anpassung der Eigenentwicklungen in Wellen nach zuständigem Team, nicht nach Objektzahl, damit die Balken zu denen passen, die die Arbeit tatsächlich machen.",
       "Verlängern Sie das Freeze-Fenster bei hohen Buchungsvolumina zum Periodenende und vermeiden Sie eine Umstellung über eine Geschäftsjahres- oder Periodengrenze hinweg.",
-      "Nehmen Sie je Schnittstelle und Umsystem eine eigene Zeile auf — Konversionen brechen in der Regel Integrationen, bevor sie SAP selbst brechen.",
+      "Nehmen Sie je Schnittstelle und Umsystem eine eigene Zeile auf, Konversionen brechen in der Regel Integrationen, bevor sie SAP selbst brechen.",
       "Ergänzen Sie eine vierte Testumstellung, wenn die dritte noch nicht innerhalb des verfügbaren Fensters fertig geworden ist.",
       "Nehmen Sie den Betriebsrat als eigene Zeile auf, wenn sich Arbeitsabläufe oder auswertbare Leistungsdaten ändern; die Beteiligung ist ein Vorgang mit Wochen an Dauer und kein Haken vor dem Start."
     ],
     tips: [
       "<strong>Fahren Sie die erste Testumstellung früh und ruhig unsauber.</strong> Ihre Aufgabe ist herauszufinden, was im Drehbuch fehlt, nicht zu gelingen. Erst die späteren müssen sauber aussehen.",
       "<strong>Bewerten Sie den Readiness Check, zählen Sie ihn nicht.</strong> Tausend Befunde können zwei Wochen oder sechs Monate Arbeit sein, und nur die Bewertung sagt, welches von beidem.",
-      "<strong>Nehmen Sie die Generalprobe als echtes Tor.</strong> Wenn die Probe nicht in das geplante Fenster passt, passt die Produktivumstellung es auch nicht — genau dafür fährt man sie.",
+      "<strong>Nehmen Sie die Generalprobe als echtes Tor.</strong> Wenn die Probe nicht in das geplante Fenster passt, passt die Produktivumstellung es auch nicht, genau dafür fährt man sie.",
       "<strong>Frieren Sie das Geschäft ein, nicht nur das System.</strong> Veröffentlichen Sie für jeden Tag des Fensters, was erlaubt ist und was nicht, und zwar lange bevor es beginnt.",
       "<strong>Stimmen Sie ab, bevor Sie freigeben.</strong> Bestände, offene Posten und Salden gegen die Werte vor der Konversion validiert sind das tatsächliche Startkriterium, nicht ein grüner Bildschirm."
     ],
@@ -5762,7 +5762,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sich das vom ERP-Einführungsplan?",
-        "Der <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a> geht davon aus, dass Sie ein System auswählen und von Grund auf einführen — Auswahl, Prozessgestaltung, Customizing, Datenmigration und Schulung. Dieser Plan setzt voraus, dass SAP bereits läuft und Sie es konvertieren, weshalb die schweren Phasen die Anpassung der Eigenentwicklungen und die wiederholten Testumstellungen sind."
+        "Der <a href=\"/de/templates/erp-implementation-schedule.html\">ERP-Einführungsplan</a> geht davon aus, dass Sie ein System auswählen und von Grund auf einführen, Auswahl, Prozessgestaltung, Customizing, Datenmigration und Schulung. Dieser Plan setzt voraus, dass SAP bereits läuft und Sie es konvertieren, weshalb die schweren Phasen die Anpassung der Eigenentwicklungen und die wiederholten Testumstellungen sind."
       ],
       [
         "Wie viele Testumstellungen brauche ich?",
@@ -5781,14 +5781,14 @@ const T = {
   'iso-14001-certification-plan': {
     card: "Umweltaspekte, Rechtskataster, Ziele, Betriebsabläufe, Stufe 1 und Stufe 2.",
     h1: "Projektplan für die ISO-14001-Zertifizierung",
-    metaTitle: "ISO 14001 — Zertifizierungsplan",
+    metaTitle: "ISO 14001: Zertifizierungsplan",
     metaDesc: "Kostenloser Plan zur ISO-14001-Zertifizierung: Umweltaspekte, Rechtskataster, Umweltziele, Ablauflenkung, internes Audit, Stufe-1- und Stufe-2-Audit.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-14001-Zertifizierung</strong>, geordnet um die beiden Verzeichnisse, die die eigentliche Arbeit eines Umweltmanagementsystems ausmachen: das Verzeichnis der Umweltaspekte und Umweltauswirkungen und das Rechtskataster mit den bindenden Verpflichtungen. Alles Nachgelagerte — Ziele, Ablauflenkung, Überwachung, Schulung — leitet sich aus diesen beiden ab, weshalb Pläne, die mit Zielen beginnen, hängen bleiben. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-14001-Zertifizierung</strong>, geordnet um die beiden Verzeichnisse, die die eigentliche Arbeit eines Umweltmanagementsystems ausmachen: das Verzeichnis der Umweltaspekte und Umweltauswirkungen und das Rechtskataster mit den bindenden Verpflichtungen. Alles Nachgelagerte, Ziele, Ablauflenkung, Überwachung, Schulung, leitet sich aus diesen beiden ab, weshalb Pläne, die mit Zielen beginnen, hängen bleiben. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>.",
     intro: "Zertifizierungsstellen bewerten ein Umweltmanagementsystem in zwei Besuchen mit einem verpflichtenden Abstand dazwischen, und sie prüfen stichprobenartig Aufzeichnungen, die es nur gibt, wenn das System bereits läuft. Beides bilden die Balken ab:",
     phases: [
       [
         "Anwendungsbereich, Kontext und Gap-Analyse",
-        "Grenzen des Umweltmanagementsystems, interessierte Parteien, eine Gap-Analyse gegen die Norm, die Umweltpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle — der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
+        "Grenzen des Umweltmanagementsystems, interessierte Parteien, eine Gap-Analyse gegen die Norm, die Umweltpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle, der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
       ],
       [
         "Umweltaspekte, Auswirkungen und Rechtskataster",
@@ -5796,7 +5796,7 @@ const T = {
       ],
       [
         "Umweltziele, Zielwerte und Programme",
-        "Ziele, die aus den bedeutenden Umweltaspekten und den bindenden Verpflichtungen abgeleitet sind, mit Zielwerten, Kennzahlen, Ressourcen und benannten Verantwortlichen — keine Absichtserklärungen, die vor den Verzeichnissen geschrieben wurden. <em>Meilenstein: Ziele und Programme freigegeben.</em>"
+        "Ziele, die aus den bedeutenden Umweltaspekten und den bindenden Verpflichtungen abgeleitet sind, mit Zielwerten, Kennzahlen, Ressourcen und benannten Verantwortlichen, keine Absichtserklärungen, die vor den Verzeichnissen geschrieben wurden. <em>Meilenstein: Ziele und Programme freigegeben.</em>"
       ],
       [
         "Ablauflenkung und Notfallvorsorge",
@@ -5811,12 +5811,12 @@ const T = {
         "Das interne Audit, seine Abweichungen und Korrekturmaßnahmen, die Managementbewertung, danach Stufe 1, das Zeitfenster für Korrekturmaßnahmen und Stufe 2. <em>Meilenstein: Zertifikat erteilt.</em>"
       ]
     ],
-    callout: "Das Verzeichnis der Umweltaspekte ist das Dokument, das die auditierende Person zuerst öffnet, und ein dünnes Verzeichnis bringt den Rest des Systems zum Einsturz. Es muss den Normalbetrieb, abweichende Betriebszustände und Notfallsituationen abdecken, und die Bewertung der Bedeutung muss eine Methode sein, die Sie erklären können, und keine Farbe, die jemand gewählt hat. Das Rechtskataster ist das zweite tragende Dokument: Es führt Genehmigungen, Erlaubnisse, gesetzliche Pflichten und weitere Verpflichtungen auf, und die Norm verlangt eine regelmäßige Bewertung der Rechtskonformität dagegen — diese Bewertung muss also vor Stufe 2 stattgefunden haben und nicht danach geplant sein.",
+    callout: "Das Verzeichnis der Umweltaspekte ist das Dokument, das die auditierende Person zuerst öffnet, und ein dünnes Verzeichnis bringt den Rest des Systems zum Einsturz. Es muss den Normalbetrieb, abweichende Betriebszustände und Notfallsituationen abdecken, und die Bewertung der Bedeutung muss eine Methode sein, die Sie erklären können, und keine Farbe, die jemand gewählt hat. Das Rechtskataster ist das zweite tragende Dokument: Es führt Genehmigungen, Erlaubnisse, gesetzliche Pflichten und weitere Verpflichtungen auf, und die Norm verlangt eine regelmäßige Bewertung der Rechtskonformität dagegen, diese Bewertung muss also vor Stufe 2 stattgefunden haben und nicht danach geplant sein.",
     customize: [
       "Buchen Sie die Zertifizierungsstelle früh und legen Sie den Termin für Stufe 2 fest; alles davor ist danach ein Countdown und keine Schätzung.",
-      "Erweitern Sie die Zeilen zur Aspektermittlung auf eine Zeile je Standort, Prozess oder Tätigkeit — eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
+      "Erweitern Sie die Zeilen zur Aspektermittlung auf eine Zeile je Standort, Prozess oder Tätigkeit, eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
       "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2, damit die dort aufgenommenen Korrekturmaßnahmen wirklich geschlossen werden können.",
-      "Verlängern Sie die Betriebsphase, wenn eine Ihrer Verpflichtungen jährlich bewertet wird — Sie brauchen mindestens einen vollständigen Nachweiszyklus.",
+      "Verlängern Sie die Betriebsphase, wenn eine Ihrer Verpflichtungen jährlich bewertet wird, Sie brauchen mindestens einen vollständigen Nachweiszyklus.",
       "Ergänzen Sie Zeilen für Genehmigungsverlängerungen oder behördliche Überwachungen, die in das Fenster fallen, denn sie konkurrieren um dieselben Personen.",
       "Legen Sie für nach dem Bundes-Immissionsschutzgesetz genehmigungsbedürftige Anlagen eigene Zeilen an: Genehmigungsbescheid mit Nebenbestimmungen, Emissionserklärung und die Berichte der Betriebsbeauftragten sind Nachweise, die das Audit sehen will.",
       "Ergänzen Sie das Überwachungsaudit im ersten Jahr, damit das System auch nach Erhalt des Zertifikats mit Ressourcen hinterlegt bleibt."
@@ -5824,9 +5824,9 @@ const T = {
     tips: [
       "<strong>Bauen Sie die Verzeichnisse vor den Zielen.</strong> Zuerst geschriebene Ziele treffen fast immer unbedeutende Aspekte, und die auditierende Person wird fragen, wie Sie entschieden haben.",
       "<strong>Decken Sie abweichende Betriebszustände und Notfälle ab.</strong> An- und Abfahren, Leckagen und Brandszenarien sind die Stellen, an denen die meisten Aspektverzeichnisse sichtbar unvollständig sind.",
-      "<strong>Führen Sie eine echte Bewertung der Rechtskonformität durch.</strong> Die Norm erwartet eine regelmäßige Bewertung gegen Ihr Rechtskataster mit Aufzeichnungen — keine Erklärung, dass Sie konform seien.",
+      "<strong>Führen Sie eine echte Bewertung der Rechtskonformität durch.</strong> Die Norm erwartet eine regelmäßige Bewertung gegen Ihr Rechtskataster mit Aufzeichnungen, keine Erklärung, dass Sie konform seien.",
       "<strong>Machen Sie die Notfallübung vor Stufe 2.</strong> Sie gehört zu den wenigen Nachweisen, die Sie terminieren können, statt auf sie zu warten.",
-      "<strong>Halten Sie ISO 14001, ISO 9001 und ISO 27001 auseinander.</strong> Sie teilen dieselbe Grundstruktur und lassen sich gemeinsam auditieren, sind aber drei getrennte akkreditierte Zertifizierungen mit unterschiedlichem Inhalt — Umwelt, Qualität und Informationssicherheit.",
+      "<strong>Halten Sie ISO 14001, ISO 9001 und ISO 27001 auseinander.</strong> Sie teilen dieselbe Grundstruktur und lassen sich gemeinsam auditieren, sind aber drei getrennte akkreditierte Zertifizierungen mit unterschiedlichem Inhalt, Umwelt, Qualität und Informationssicherheit.",
       "<strong>Verwechseln Sie ISO 14001 nicht mit EMAS.</strong> EMAS ist das Umweltmanagementsystem der Europäischen Union mit eigener Verordnung; es setzt auf ISO 14001 auf, verlangt darüber hinaus aber eine geprüfte Umwelterklärung, den Nachweis der Rechtskonformität und die Registrierung bei einer Industrie- und Handelskammer. Wenn Sie beides wollen, planen Sie die zusätzlichen Schritte ein, statt anzunehmen, das Zertifikat genüge."
     ],
     faq: [
@@ -5836,7 +5836,7 @@ const T = {
       ],
       [
         "Was ist ein Verzeichnis der Umweltaspekte?",
-        "Eine strukturierte Aufstellung der Wechselwirkungen Ihrer Tätigkeiten, Produkte und Dienstleistungen mit der Umwelt — Emissionen, Einleitungen, Abfall, Ressourcen- und Flächenverbrauch — samt der daraus folgenden Auswirkungen, bewertet nach Bedeutung für Normalbetrieb, abweichende Zustände und Notfälle. Es ist die Eingangsgröße für nahezu alles Weitere, weshalb die Vorlage es vor die Ziele setzt."
+        "Eine strukturierte Aufstellung der Wechselwirkungen Ihrer Tätigkeiten, Produkte und Dienstleistungen mit der Umwelt, Emissionen, Einleitungen, Abfall, Ressourcen- und Flächenverbrauch, samt der daraus folgenden Auswirkungen, bewertet nach Bedeutung für Normalbetrieb, abweichende Zustände und Notfälle. Es ist die Eingangsgröße für nahezu alles Weitere, weshalb die Vorlage es vor die Ziele setzt."
       ],
       [
         "Worin unterscheidet sich ISO 14001 von ISO 9001?",
@@ -5852,7 +5852,7 @@ const T = {
       ],
       [
         "Was passiert zwischen Stufe 1 und Stufe 2?",
-        "Stufe 1 ist eine Dokumenten- und Bereitschaftsprüfung und bringt fast immer Feststellungen hervor — meist ein unvollständiges Aspektverzeichnis oder eine nicht durchgeführte Bewertung der Rechtskonformität. Stufe 2 prüft, ob das System tatsächlich wirkt. Die Vorlage lässt dazwischen ein Fenster für Korrekturmaßnahmen, weil Stufe 2 nicht besteht, solange die Feststellungen aus Stufe 1 offen sind."
+        "Stufe 1 ist eine Dokumenten- und Bereitschaftsprüfung und bringt fast immer Feststellungen hervor, meist ein unvollständiges Aspektverzeichnis oder eine nicht durchgeführte Bewertung der Rechtskonformität. Stufe 2 prüft, ob das System tatsächlich wirkt. Die Vorlage lässt dazwischen ein Fenster für Korrekturmaßnahmen, weil Stufe 2 nicht besteht, solange die Feststellungen aus Stufe 1 offen sind."
       ],
       [
         "Ist die Vorlage für ISO 14001 kostenlos?",
@@ -5863,18 +5863,18 @@ const T = {
   'product-recall-plan': {
     card: "Stunde null, Risikobewertung, Behördenmeldung, Rückholung, Wirksamkeit, Abschluss.",
     h1: "Ablaufplan für einen Produktrückruf",
-    metaTitle: "Produktrückruf — Ablaufplan",
+    metaTitle: "Produktrückruf: Ablaufplan",
     metaDesc: "Kostenloser Ablaufplan für den Produktrückruf: Stunde null, Risikobewertung, Meldung an die Marktüberwachungsbehörde, Rückholung, Wirksamkeit, Abschluss.",
     lead: "Eine kostenlose <strong>Ablaufplan-Vorlage für einen Produktrückruf</strong>, angelegt auf der einzigen Uhr, die zählt: der, die in dem Moment beginnt, in dem Ihnen Anhaltspunkte vorliegen, dass ein Produkt unsicher oder nicht konform ist. Rückrufpläne sind ungewöhnlich, weil ein großer Teil der Abfolge nicht in Ihrem Ermessen steht, sondern rechtlich vorgegeben ist: Meldepflichten, Aufbewahrungspflichten und Wirksamkeitsnachweise sind von Behörden gesetzt, und zu spät zu sein ist keine Verzögerung, sondern eine Haftungsfrage. Die Balken sind in Tagen ab Stunde null angelegt, damit Sie sehen, was in der ersten Woche geschehen muss.",
     intro: "Die frühen Zeilen sind Stunden, keine Wochen. Alles nach der Meldeentscheidung hängt daran, wie schnell die ersten drei Zeilen abgearbeitet sind:",
     phases: [
       [
-        "Stunde null — erkennen, sperren, einberufen",
+        "Stunde null, erkennen, sperren, einberufen",
         "Der Hinweis trifft ein, das Krisenteam wird einberufen, die Auslieferung wird gesperrt und die betroffenen Chargen und Losnummern werden zurückverfolgt. Diese Phase wird in Stunden gemessen. <em>Meilenstein: Krisenteam einberufen, Auslieferung gesperrt.</em>"
       ],
       [
         "Risikobewertung und Rückrufentscheidung",
-        "Gefahrencharakterisierung, Bewertung von Exposition und Schwere, Einstufung des Risikos, die Entscheidung über die Rückrufstufe — Endverbraucher, Handel oder Großhandel — und der förmliche Rückrufbeschluss. <em>Meilenstein: Rückrufentscheidung dokumentiert.</em>"
+        "Gefahrencharakterisierung, Bewertung von Exposition und Schwere, Einstufung des Risikos, die Entscheidung über die Rückrufstufe, Endverbraucher, Handel oder Großhandel, und der förmliche Rückrufbeschluss. <em>Meilenstein: Rückrufentscheidung dokumentiert.</em>"
       ],
       [
         "Behördenmeldung",
@@ -5893,15 +5893,15 @@ const T = {
         "Wirksamkeitsprüfungen in festgelegten Abständen, Ursachenanalyse und Korrekturmaßnahmen, Sachstandsberichte an die Behörde, der Abschlussbericht und die förmliche Beendigung. <em>Meilenstein: Rückruf behördlich abgeschlossen.</em>"
       ]
     ],
-    callout: "In Deutschland läuft ein Rückruf über die Marktüberwachungsbehörde des jeweiligen Bundeslandes. Bei Non-Food-Produkten ist das Produktsicherheitsgesetz die Grundlage, und die Behörde speist ernste Risiken über die europäische Meldekette in das Safety Gate der Europäischen Union ein; bei Lebensmitteln und Futtermitteln laufen die Meldungen über die Lebensmittelüberwachung der Länder und das Bundesamt für Verbraucherschutz und Lebensmittelsicherheit; bei Arzneimitteln und Medizinprodukten sind das Bundesinstitut für Arzneimittel und Medizinprodukte oder das Paul-Ehrlich-Institut zuständig. Die Meldefrist ist keine feste Zahl: Sie hängt von Produktklasse und Gefahrenschwere ab, und ein Produkt in mehreren Märkten kann mehreren Regimen gleichzeitig unterliegen. Daneben läuft die zivilrechtliche Seite mit — Produkthaftung nach dem Produkthaftungsgesetz und Verkehrssicherungspflichten des Herstellers —, und deren Umfang steht erst später fest.",
+    callout: "In Deutschland läuft ein Rückruf über die Marktüberwachungsbehörde des jeweiligen Bundeslandes. Bei Non-Food-Produkten ist das Produktsicherheitsgesetz die Grundlage, und die Behörde speist ernste Risiken über die europäische Meldekette in das Safety Gate der Europäischen Union ein; bei Lebensmitteln und Futtermitteln laufen die Meldungen über die Lebensmittelüberwachung der Länder und das Bundesamt für Verbraucherschutz und Lebensmittelsicherheit; bei Arzneimitteln und Medizinprodukten sind das Bundesinstitut für Arzneimittel und Medizinprodukte oder das Paul-Ehrlich-Institut zuständig. Die Meldefrist ist keine feste Zahl: Sie hängt von Produktklasse und Gefahrenschwere ab, und ein Produkt in mehreren Märkten kann mehreren Regimen gleichzeitig unterliegen. Daneben läuft die zivilrechtliche Seite mit, Produkthaftung nach dem Produkthaftungsgesetz und Verkehrssicherungspflichten des Herstellers, , und deren Umfang steht erst später fest.",
     customize: [
-      "Ersetzen Sie die Balken für die Meldung durch die Fristen, die für Ihre Produktklasse in jedem Markt tatsächlich gelten — anwaltlich geprüft, nicht angenommen.",
+      "Ersetzen Sie die Balken für die Meldung durch die Fristen, die für Ihre Produktklasse in jedem Markt tatsächlich gelten, anwaltlich geprüft, nicht angenommen.",
       "Nehmen Sie je Land eine eigene Meldezeile auf, wenn Sie grenzüberschreitend verkaufen; sie laufen parallel und verlangen unterschiedliche Inhalte.",
-      "Legen Sie die Rückrufstufe ausdrücklich als eigene Zeile fest — Endverbraucher, Handel oder Großhandel verändert die gesamte Rückholphase.",
+      "Legen Sie die Rückrufstufe ausdrücklich als eigene Zeile fest, Endverbraucher, Handel oder Großhandel verändert die gesamte Rückholphase.",
       "Passen Sie die Zeilen für die Wirksamkeitsprüfung an die Abstände an, die Ihre Behörde erwartet, und lassen Sie sie laufen, bis die Rücklaufquote nicht mehr steigt.",
       "Ergänzen Sie Zeilen für die Meldung an den Versicherer und, wenn Personenschäden im Raum stehen, für die Sicherung von Unterlagen und Rückstellmustern.",
       "Hinterlegen Sie eine Zeile für die Abstimmung mit der Behörde über den Wortlaut der öffentlichen Anzeige; sie wird in der Regel vorab abgestimmt und ist selten in einer Stunde erledigt.",
-      "Üben Sie diesen Plan mindestens jährlich als Rückrufübung an einer echten Chargennummer — eine Rückverfolgung, die Tage braucht, ist im Audit eine Abweichung."
+      "Üben Sie diesen Plan mindestens jährlich als Rückrufübung an einer echten Chargennummer, eine Rückverfolgung, die Tage braucht, ist im Audit eine Abweichung."
     ],
     tips: [
       "<strong>Verfolgen Sie zurück, bevor Sie veröffentlichen.</strong> Eine öffentliche Anzeige mit falschen Chargennummern muss neu veröffentlicht werden, und das kostet die Glaubwürdigkeit bei Behörde und Kunden.",
@@ -5914,7 +5914,7 @@ const T = {
     faq: [
       [
         "Wie schnell muss ein Produktrückruf den Behörden gemeldet werden?",
-        "Das hängt von Zuständigkeit, Produktklasse und Gefahrenschwere ab — Lebensmittel, Medizinprodukte, Fahrzeuge, Kosmetika und allgemeine Verbrauchsgüter unterliegen unterschiedlichen Regeln, und auch die Auslöser der Meldepflicht unterscheiden sich. Es gibt keine einheitliche Frist, und ein in mehreren Märkten verkauftes Produkt kann mehreren gleichzeitig unterliegen. Klären Sie die für Sie geltenden Pflichten vorab anwaltlich und schreiben Sie sie in den Plan, statt sich auf eine irgendwo gelesene Zahl zu verlassen."
+        "Das hängt von Zuständigkeit, Produktklasse und Gefahrenschwere ab, Lebensmittel, Medizinprodukte, Fahrzeuge, Kosmetika und allgemeine Verbrauchsgüter unterliegen unterschiedlichen Regeln, und auch die Auslöser der Meldepflicht unterscheiden sich. Es gibt keine einheitliche Frist, und ein in mehreren Märkten verkauftes Produkt kann mehreren gleichzeitig unterliegen. Klären Sie die für Sie geltenden Pflichten vorab anwaltlich und schreiben Sie sie in den Plan, statt sich auf eine irgendwo gelesene Zahl zu verlassen."
       ],
       [
         "Welche Behörde ist in Deutschland zuständig?",
@@ -5922,7 +5922,7 @@ const T = {
       ],
       [
         "Was ist eine Wirksamkeitsprüfung?",
-        "Eine strukturierte Überprüfung, ob die Rückrufinformation die Empfänger tatsächlich erreicht hat und ob gehandelt wurde — Stichproben bei Großhandel und Handel, Bestätigung, dass Ware aus dem Verkauf genommen wurde, und die Messung des Anteils der zurückgeholten oder anderweitig geklärten Menge. Behörden erwarten sie üblicherweise in festgelegten Abständen, weshalb die Vorlage mehrere ansetzt und nicht eine."
+        "Eine strukturierte Überprüfung, ob die Rückrufinformation die Empfänger tatsächlich erreicht hat und ob gehandelt wurde, Stichproben bei Großhandel und Handel, Bestätigung, dass Ware aus dem Verkauf genommen wurde, und die Messung des Anteils der zurückgeholten oder anderweitig geklärten Menge. Behörden erwarten sie üblicherweise in festgelegten Abständen, weshalb die Vorlage mehrere ansetzt und nicht eine."
       ],
       [
         "Was bedeutet die Rückrufstufe?",
@@ -5930,7 +5930,7 @@ const T = {
       ],
       [
         "Wie hoch ist das Haftungsrisiko?",
-        "Das lässt sich nicht in eine Zahl fassen. Neben der öffentlich-rechtlichen Seite steht die Produkthaftung nach dem Produkthaftungsgesetz sowie die deliktische Haftung für Verkehrssicherungspflichten, zu denen bei erkannten Gefahren auch die Pflicht zur Warnung und gegebenenfalls zum Rückruf zählt. Die Höhe hängt von Schadensbild, Stückzahl und Verschulden ab. Was der Plan leisten kann, ist die lückenlose Dokumentation von Kenntnisstand und Reaktionszeit — genau die beiden Punkte, an denen sich später entscheidet, ob rechtzeitig gehandelt wurde."
+        "Das lässt sich nicht in eine Zahl fassen. Neben der öffentlich-rechtlichen Seite steht die Produkthaftung nach dem Produkthaftungsgesetz sowie die deliktische Haftung für Verkehrssicherungspflichten, zu denen bei erkannten Gefahren auch die Pflicht zur Warnung und gegebenenfalls zum Rückruf zählt. Die Höhe hängt von Schadensbild, Stückzahl und Verschulden ab. Was der Plan leisten kann, ist die lückenlose Dokumentation von Kenntnisstand und Reaktionszeit, genau die beiden Punkte, an denen sich später entscheidet, ob rechtzeitig gehandelt wurde."
       ],
       [
         "Wie lange dauert ein Produktrückruf?",
@@ -5949,9 +5949,9 @@ const T = {
   'digital-transformation-roadmap': {
     card: "Wellen über Jahre: erst Daten und Identitäten, Nutzenmessung nach jeder Welle.",
     h1: "Fahrplan für die digitale Transformation",
-    metaTitle: "Digitale Transformation — Fahrplan",
+    metaTitle: "Digitale Transformation: Fahrplan",
     metaDesc: "Kostenloser Fahrplan für die digitale Transformation: mehrjährige Wellen, zuerst Daten und Identitäten, Nutzenmessung je Welle, tragfähige Steuerung.",
-    lead: "Eine kostenlose <strong>Fahrplan-Vorlage für die digitale Transformation</strong>, aufgebaut als Abfolge von Wellen statt als Programm mit Enddatum. Der leitende Gedanke ist abhängige Fähigkeit: Grundlagen für Daten, Identitäten und Integration müssen stehen, bevor das Sichtbare möglich wird, der Nutzen wird nach jeder Welle gemessen statt für eine Business-Case-Prüfung im dritten Jahr aufgespart, und die Steuerung ist so angelegt, dass sie den Weggang der auftraggebenden Person überlebt — was sie über drei Jahre hinweg vermutlich muss.",
+    lead: "Eine kostenlose <strong>Fahrplan-Vorlage für die digitale Transformation</strong>, aufgebaut als Abfolge von Wellen statt als Programm mit Enddatum. Der leitende Gedanke ist abhängige Fähigkeit: Grundlagen für Daten, Identitäten und Integration müssen stehen, bevor das Sichtbare möglich wird, der Nutzen wird nach jeder Welle gemessen statt für eine Business-Case-Prüfung im dritten Jahr aufgespart, und die Steuerung ist so angelegt, dass sie den Weggang der auftraggebenden Person überlebt, was sie über drei Jahre hinweg vermutlich muss.",
     intro: "Jede Welle liefert etwas Nutzbares, und auf jede folgt eine Nutzenbetrachtung, die den Inhalt der nächsten Welle verändern darf. Genau diese Rückkopplung ist der Zweck:",
     phases: [
       [
@@ -5959,19 +5959,19 @@ const T = {
         "Bestandsaufnahme, Reifegradbestimmung, Zielbild der Organisation, der Wertbeitrag mit Ausgangswerten sowie der Aufbau des Steuerungsrhythmus und eines Portfoliobüros, die einzelne Führungskräfte überdauern. <em>Meilenstein: Fahrplan und Steuerung freigegeben.</em>"
       ],
       [
-        "Welle 1 — Grundlagen",
+        "Welle 1, Grundlagen",
         "Die unspektakuläre Welle, von der alles andere abhängt: Identitäts- und Berechtigungsverwaltung, die Integrationsschicht, Datenplattform und Datenverantwortung, Cloud-Landezone und Sicherheitsgrundlinie. Hier wird nichts für Kundinnen und Kunden Sichtbares geliefert. <em>Meilenstein: Grundlagen produktiv.</em>"
       ],
       [
-        "Welle 2 — Digitalisierung der Kernprozesse",
+        "Welle 2, Digitalisierung der Kernprozesse",
         "Automatisierung in Finanzen, Einkauf und Personal, Vorgangs- und Dokumentenverwaltung sowie die Abschaltung der manuellen und tabellengestützten Abläufe, die dadurch ersetzt werden. <em>Meilenstein: Kernprozesse umgestellt.</em>"
       ],
       [
-        "Welle 3 — Angebote für Kundinnen und Kunden",
-        "Kundenportal, Selbstbedienung, mobile Nutzung, eine einheitliche Kundensicht und die Neugestaltung der Kundenreise — nur möglich, weil Welle 1 Identitäten und Integration darunter gebaut hat. <em>Meilenstein: Kundenangebot gestartet.</em>"
+        "Welle 3, Angebote für Kundinnen und Kunden",
+        "Kundenportal, Selbstbedienung, mobile Nutzung, eine einheitliche Kundensicht und die Neugestaltung der Kundenreise, nur möglich, weil Welle 1 Identitäten und Integration darunter gebaut hat. <em>Meilenstein: Kundenangebot gestartet.</em>"
       ],
       [
-        "Welle 4 — Auswertung und intelligente Automatisierung",
+        "Welle 4, Auswertung und intelligente Automatisierung",
         "Auswertungen zur Selbstbedienung, Prognosemodelle und die Automatisierung von Entscheidungen mit hohem Volumen, dazu die Modellsteuerung, um sie verantwortbar zu betreiben. <em>Meilenstein: Auswertungsfähigkeit genutzt.</em>"
       ],
       [
@@ -5981,13 +5981,13 @@ const T = {
     ],
     callout: "Der wiederkehrende Fehler ist, das Sichtbare zuerst zu bauen. Portale, Dashboards und Automatisierungsvorführungen sind das, wonach Auftraggeber fragen, aber jedes davon hängt still an Identitäten, Integration und verlässlichen Daten, und wer sie vor den Grundlagen baut, erzeugt eine Welle 3, die während Welle 4 leise neu gebaut wird. Der zweite Fehler ist, den Nutzen zu vertagen: Findet die erste Nutzenbetrachtung nach drei Jahren statt, ist niemand mehr da, der die ursprüngliche Zusage vertritt. Setzen Sie sie unmittelbar hinter jede Welle, veröffentlichen Sie die Zahl, ob sie schmeichelt oder nicht, und lassen Sie sie den Inhalt der nächsten Welle verändern.",
     customize: [
-      "Benennen Sie die Wellen in Ihre eigene Sprache um, behalten Sie aber die Grundlagen vorn — diese Reihenfolge ist der eigentliche Inhalt des Plans.",
+      "Benennen Sie die Wellen in Ihre eigene Sprache um, behalten Sie aber die Grundlagen vorn, diese Reihenfolge ist der eigentliche Inhalt des Plans.",
       "Wählen Sie die Wellenlänge nach dem, was Ihre Organisation verkraftet; sechs bis neun Monate je Welle sind üblich, und kürzere Wellen scheitern an der Veränderungsfähigkeit, nicht an der Lieferung.",
       "Setzen Sie nach jede Welle eine Zeile für die Nutzenbetrachtung, jeweils mit einer benannten Person, die schon dabei war, als der Nutzen zugesagt wurde.",
-      "Nehmen Sie die Abschaltung von Altsystemen ausdrücklich auf — Transformationen, die nie etwas abschalten, finanzieren am Ende zwei Landschaften.",
+      "Nehmen Sie die Abschaltung von Altsystemen ausdrücklich auf, Transformationen, die nie etwas abschalten, finanzieren am Ende zwei Landschaften.",
       "Fügen Sie bei jedem erwarteten Führungswechsel, Haushaltszyklus oder Umbau eine Zeile für das Nachjustieren der Steuerung ein.",
       "Zerlegen Sie jede Welle in Zeilen je Arbeitsstrang, sobald ihr Umfang steht; der einzelne Balken taugt nur auf Fahrplanebene.",
-      "Planen Sie die Beteiligung des Betriebsrats je Welle ein, nicht einmal zu Beginn — jede Welle, die Arbeitsabläufe oder auswertbare Leistungsdaten berührt, löst sie erneut aus, und Datenschutz-Folgenabschätzungen gehören daneben."
+      "Planen Sie die Beteiligung des Betriebsrats je Welle ein, nicht einmal zu Beginn, jede Welle, die Arbeitsabläufe oder auswertbare Leistungsdaten berührt, löst sie erneut aus, und Datenschutz-Folgenabschätzungen gehören daneben."
     ],
     tips: [
       "<strong>Sequenzieren Sie nach Abhängigkeit, nicht nach Begeisterung.</strong> Die richtige Frage für jeden Kandidaten in Welle 1 lautet, was in Welle 3 bricht, wenn es ihn nicht gibt.",
@@ -5999,7 +5999,7 @@ const T = {
     faq: [
       [
         "Wie lang ist ein Fahrplan für die digitale Transformation?",
-        "Typischerweise zwei bis vier Jahre über drei oder vier Wellen. Die Vorlage läuft rund drei Jahre. Kürzere Fahrpläne sind meist einzelne Programme; längere hören auf, Pläne zu sein, und werden Absichten — schreiben Sie deshalb jährlich fort, statt zu verlängern."
+        "Typischerweise zwei bis vier Jahre über drei oder vier Wellen. Die Vorlage läuft rund drei Jahre. Kürzere Fahrpläne sind meist einzelne Programme; längere hören auf, Pläne zu sein, und werden Absichten, schreiben Sie deshalb jährlich fort, statt zu verlängern."
       ],
       [
         "Warum müssen die Grundlagen zuerst kommen?",
@@ -6007,7 +6007,7 @@ const T = {
       ],
       [
         "Was ist Nutzenmessung und warum nach jeder Welle?",
-        "Es ist die Messung, ob der zugesagte Wert tatsächlich eingetreten ist — Kosten, Durchlaufzeit, Nutzung, Umsatz. Nach jeder Welle statt am Ende zu messen bedeutet, dass die Messung stattfindet, solange die Personen, die die Zusage gemacht haben, noch im Amt sind, und dass das Ergebnis den Inhalt der nächsten Welle verändern kann. Vertagte Nutzenbetrachtungen werden zuverlässig unwiderlegbar."
+        "Es ist die Messung, ob der zugesagte Wert tatsächlich eingetreten ist, Kosten, Durchlaufzeit, Nutzung, Umsatz. Nach jeder Welle statt am Ende zu messen bedeutet, dass die Messung stattfindet, solange die Personen, die die Zusage gemacht haben, noch im Amt sind, und dass das Ergebnis den Inhalt der nächsten Welle verändern kann. Vertagte Nutzenbetrachtungen werden zuverlässig unwiderlegbar."
       ],
       [
         "Wie halten wir die Steuerung über einen Führungswechsel hinweg?",
@@ -6026,9 +6026,9 @@ const T = {
   'qa-test-plan-schedule': {
     card: "Eintritts- und Austrittskriterien, Testumgebung, überlappende Phasen, Fehlerschleife.",
     h1: "Terminplan für den Testplan der Qualitätssicherung",
-    metaTitle: "Testplan QS — Terminplan",
+    metaTitle: "Testplan QS: Terminplan",
     metaDesc: "Kostenloser Terminplan für den QS-Testplan: Eintritts- und Austrittskriterien, Testumgebung, Testdaten, überlappende Testphasen, Fehlerschleife, Regression.",
-    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Testplan der Qualitätssicherung</strong>, deren Rückgrat Eintritts- und Austrittskriterien sind und keine Warteschlange von Phasen. Zwei Dinge steuern alles: eine stabile Testumgebung und bereitgestellte Testdaten. Danach überlappen sich die Phasen — der Integrationstest beginnt, während der Komponententest noch läuft, der Abnahmetest startet auf den Modulen, die fertig sind —, und der Kalender wird weniger von der Testdurchführung verbraucht als von der darunter laufenden Schleife aus Fehlerbewertung, Korrektur und Nachtest.",
+    lead: "Eine kostenlose <strong>Terminplan-Vorlage für den Testplan der Qualitätssicherung</strong>, deren Rückgrat Eintritts- und Austrittskriterien sind und keine Warteschlange von Phasen. Zwei Dinge steuern alles: eine stabile Testumgebung und bereitgestellte Testdaten. Danach überlappen sich die Phasen, der Integrationstest beginnt, während der Komponententest noch läuft, der Abnahmetest startet auf den Modulen, die fertig sind, , und der Kalender wird weniger von der Testdurchführung verbraucht als von der darunter laufenden Schleife aus Fehlerbewertung, Korrektur und Nachtest.",
     intro: "Achten Sie darauf, dass sich die Durchführungsbalken überlappen und dass die Fehlerschleife über ihre gesamte Länge läuft. So sieht ein echter Testplan aus:",
     phases: [
       [
@@ -6044,26 +6044,26 @@ const T = {
         "Entwurf von Testbedingungen und Testfällen, Nachverfolgbarkeit zu den Anforderungen, das Automatisierungsgerüst, Aufbau der Regressionssuite und die Skripte für den Lasttest. <em>Meilenstein: Testfälle durchführungsbereit.</em>"
       ],
       [
-        "Durchführung — Komponente, Integration, System",
+        "Durchführung, Komponente, Integration, System",
         "Überlappende Durchführungswellen statt einer Warteschlange: Komponenten- und Modultest, Integrations- und Schnittstellentest, danach System- und Sicherheitstest. <em>Meilenstein: Austrittskriterien des Systemtests erfüllt.</em>"
       ],
       [
         "Fehlerbewertung, Korrektur und Nachtest",
-        "Die Schleife, die den Kalender tatsächlich verbraucht — tägliche Fehlerbewertung, Einstufung nach Schwere, Korrekturzyklen, Nachtest und Regressionswirkung sowie die Entscheidungen über zurückgestellte Fehler. <em>Meilenstein: Fehlerschwellen erreicht.</em>"
+        "Die Schleife, die den Kalender tatsächlich verbraucht, tägliche Fehlerbewertung, Einstufung nach Schwere, Korrekturzyklen, Nachtest und Regressionswirkung sowie die Entscheidungen über zurückgestellte Fehler. <em>Meilenstein: Fehlerschwellen erreicht.</em>"
       ],
       [
         "Abnahmetest, Regression und Freigabereife",
         "Abnahmetest durch die Fachbereiche, vollständige Regression, Last- und Leistungsläufe, die Prüfung der Freigabereife und die Freigabe. <em>Meilenstein: Freigabe erteilt.</em>"
       ]
     ],
-    callout: "Der häufigste Planungsfehler in der Qualitätssicherung ist, Testumgebung und Testdaten als Vorgang zu behandeln statt als Tor. Ist die Umgebung instabil oder tragen die Daten die Szenarien nicht, buchen Testerinnen und Tester trotzdem Zeit, erzeugen dabei aber Fehler über die Umgebung statt über das Produkt — und diese Stunden sind unwiederbringlich. Schreiben Sie die Eintrittskriterien der Umgebung auf, prüfen Sie sie mit einem Rauchtest und beginnen Sie die Durchführung erst, wenn sie bestanden sind. Der zweite Fehler ist, die Fehlerschleife als Puffer zu planen. Korrektur und Nachtest sind kein Beiwerk um das Testen herum; in den meisten Projekten sind sie der längste Balken im Diagramm und sollten auch so gezeichnet werden.",
+    callout: "Der häufigste Planungsfehler in der Qualitätssicherung ist, Testumgebung und Testdaten als Vorgang zu behandeln statt als Tor. Ist die Umgebung instabil oder tragen die Daten die Szenarien nicht, buchen Testerinnen und Tester trotzdem Zeit, erzeugen dabei aber Fehler über die Umgebung statt über das Produkt, und diese Stunden sind unwiederbringlich. Schreiben Sie die Eintrittskriterien der Umgebung auf, prüfen Sie sie mit einem Rauchtest und beginnen Sie die Durchführung erst, wenn sie bestanden sind. Der zweite Fehler ist, die Fehlerschleife als Puffer zu planen. Korrektur und Nachtest sind kein Beiwerk um das Testen herum; in den meisten Projekten sind sie der längste Balken im Diagramm und sollten auch so gezeichnet werden.",
     customize: [
-      "Schreiben Sie echte Eintritts- und Austrittskriterien in die Notizen jeder Phasenzeile — Bestehensquote, offene Fehler nach Schwere, Abdeckung —, damit die Tore prüfbar sind und nicht rhetorisch.",
+      "Schreiben Sie echte Eintritts- und Austrittskriterien in die Notizen jeder Phasenzeile, Bestehensquote, offene Fehler nach Schwere, Abdeckung, , damit die Tore prüfbar sind und nicht rhetorisch.",
       "Überlappen Sie die Durchführungswellen entsprechend Ihrem Lieferrhythmus; sie hintereinanderzuhängen überschätzt fast immer die Gesamtdauer und unterschätzt das Risiko.",
       "Bemessen Sie die Fehlerschleife aus Ihren eigenen historischen Fund- und Korrekturraten, nicht als Prozentsatz des Testaufwands.",
       "Nehmen Sie je Schnittstelle oder angebundenem System eine eigene Zeile auf, wenn der Integrationstest von Partnern abhängt, die ihre eigenen Umgebungen steuern.",
       "Ziehen Sie den Abnahmetest je Modul vor, wenn Sie schrittweise ausliefern statt in einem Wurf.",
-      "Ergänzen Sie vor der Regression eine Zeile für den Code-Freeze und halten Sie die Regression danach — Regression gegen einen sich bewegenden Stand ist keine Regression.",
+      "Ergänzen Sie vor der Regression eine Zeile für den Code-Freeze und halten Sie die Regression danach, Regression gegen einen sich bewegenden Stand ist keine Regression.",
       "Nehmen Sie Personendaten in Testdaten ausdrücklich als eigene Zeile auf: Anonymisierung oder synthetische Daten sind nach der Datenschutz-Grundverordnung die Regel, und die Freigabe durch die Datenschutzbeauftragte hat eine Dauer."
     ],
     tips: [
@@ -6076,7 +6076,7 @@ const T = {
     faq: [
       [
         "Was sind Eintritts- und Austrittskriterien in einem Testplan?",
-        "Eintrittskriterien sind die Bedingungen, die vor Beginn einer Testphase erfüllt sein müssen — Umgebung stabil, Stand eingespielt, Testdaten geladen, Rauchtest bestanden. Austrittskriterien sind die Bedingungen, die vor der Erklärung des Abschlusses erfüllt sein müssen — Durchführungsabdeckung, Bestehensquote und offene Fehler nach Schwere. Beide sollten Zahlen sein, vor Beginn vereinbart und durchgesetzt werden."
+        "Eintrittskriterien sind die Bedingungen, die vor Beginn einer Testphase erfüllt sein müssen, Umgebung stabil, Stand eingespielt, Testdaten geladen, Rauchtest bestanden. Austrittskriterien sind die Bedingungen, die vor der Erklärung des Abschlusses erfüllt sein müssen, Durchführungsabdeckung, Bestehensquote und offene Fehler nach Schwere. Beide sollten Zahlen sein, vor Beginn vereinbart und durchgesetzt werden."
       ],
       [
         "Warum überlappen sich Testphasen statt aufeinanderzufolgen?",
@@ -6088,7 +6088,7 @@ const T = {
       ],
       [
         "Dürfen echte Produktivdaten als Testdaten dienen?",
-        "In aller Regel nicht ohne Weiteres. Enthalten sie Personendaten, braucht ihre Verwendung im Test eine Rechtsgrundlage nach der Datenschutz-Grundverordnung, und der übliche Weg sind Anonymisierung, Pseudonymisierung oder synthetische Daten. Planen Sie das als eigenen Vorgang mit Vorlauf und Freigabe ein, nicht als Nebenschritt der Bereitstellung — es ist einer der häufigsten stillen Blocker vor dem Eintrittstor."
+        "In aller Regel nicht ohne Weiteres. Enthalten sie Personendaten, braucht ihre Verwendung im Test eine Rechtsgrundlage nach der Datenschutz-Grundverordnung, und der übliche Weg sind Anonymisierung, Pseudonymisierung oder synthetische Daten. Planen Sie das als eigenen Vorgang mit Vorlauf und Freigabe ein, nicht als Nebenschritt der Bereitstellung, es ist einer der häufigsten stillen Blocker vor dem Eintrittstor."
       ],
       [
         "Was, wenn die Testumgebung nicht bereit ist?",
@@ -6096,7 +6096,7 @@ const T = {
       ],
       [
         "Wann sollte der Abnahmetest beginnen?",
-        "Wenn die Austrittskriterien des Systemtests für den Umfang erfüllt sind, den der Abnahmetest abdeckt — nicht wenn überall jeder Systemtest fertig ist. Der Abnahmetest ist fachliche Bestätigung, er braucht also einen stabilen Stand und realistisch geformte Daten; ihn gegen einen Stand laufen zu lassen, der noch Korrekturen erhält, verschwendet die Fachbereiche, und die sind die knappste Ressource im Plan."
+        "Wenn die Austrittskriterien des Systemtests für den Umfang erfüllt sind, den der Abnahmetest abdeckt, nicht wenn überall jeder Systemtest fertig ist. Der Abnahmetest ist fachliche Bestätigung, er braucht also einen stabilen Stand und realistisch geformte Daten; ihn gegen einen Stand laufen zu lassen, der noch Korrekturen erhält, verschwendet die Fachbereiche, und die sind die knappste Ressource im Plan."
       ],
       [
         "Ist die Vorlage für den QS-Testplan kostenlos?",
@@ -6109,8 +6109,8 @@ const T = {
     h1: "Bauzeitplan für eine Batteriezellfabrik",
     metaTitle: "Bauzeitplan Batteriezellfabrik",
     metaDesc: "Kostenloser Bauzeitplan für eine Batteriezellfabrik: Trockenraum-Qualifizierung, Anlagenmontage, Formierung und Reifung sowie der Ausbeutehochlauf.",
-    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitplan einer Batteriezellfabrik</strong>, geordnet um den Trockenraum statt um das Gebäude. Vorn der Freeze von Zellformat und Zellchemie, weil jede Maschine und jede Medienversorgung daraus dimensioniert wird; danach eine Hülle, die lange vor der ersten Anlage zu einer dichten, sorptionsgetrockneten Umgebung werden muss; Taupunktabsenkung und Haltetest als Tor für den Anlageneinzug; Montage und Qualifizierung der Anlagen als Tor für verkaufsfähige Ausbringung — und nicht die bauliche Fertigstellung; danach Formierung und Reifung, die je Zelle echte Kalendertage verbrauchen, und ein Ausbeutehochlauf, der eine Kurve ist und kein Meilenstein.",
-    intro: "Eine Zellfabrik ist nicht fertig, wenn das Dach dicht ist. Sie ist fertig, wenn Zellen mit einer Ausbeute vom Band laufen, für die jemand zahlt — und der Weg dorthin führt durch eine kontrollierte Atmosphäre. Die Balken folgen diesem Weg:",
+    lead: "Eine kostenlose <strong>Vorlage für den Bauzeitplan einer Batteriezellfabrik</strong>, geordnet um den Trockenraum statt um das Gebäude. Vorn der Freeze von Zellformat und Zellchemie, weil jede Maschine und jede Medienversorgung daraus dimensioniert wird; danach eine Hülle, die lange vor der ersten Anlage zu einer dichten, sorptionsgetrockneten Umgebung werden muss; Taupunktabsenkung und Haltetest als Tor für den Anlageneinzug; Montage und Qualifizierung der Anlagen als Tor für verkaufsfähige Ausbringung, und nicht die bauliche Fertigstellung; danach Formierung und Reifung, die je Zelle echte Kalendertage verbrauchen, und ein Ausbeutehochlauf, der eine Kurve ist und kein Meilenstein.",
+    intro: "Eine Zellfabrik ist nicht fertig, wenn das Dach dicht ist. Sie ist fertig, wenn Zellen mit einer Ausbeute vom Band laufen, für die jemand zahlt, und der Weg dorthin führt durch eine kontrollierte Atmosphäre. Die Balken folgen diesem Weg:",
     phases: [
       [
         "Standort, Genehmigungen und Zellprozessauslegung",
@@ -6137,7 +6137,7 @@ const T = {
         "Prozessfähigkeit und statistische Prozesslenkung je Station, Ausschussreduzierung von der Elektrode bis zur Montage, A-Muster an den Kunden, Missbrauchs- und Transportprüfungen, B-Muster-Freigabe und Produktionsteil-Abnahmeverfahren, danach der Hochlauf auf die Nennkapazität. <em>Meilensteine: Ausbeuteziel erreicht, Serienproduktion gestartet.</em>"
       ]
     ],
-    callout: "Der Trockenraum ist der Terminplan. Elektrodenhandhabung und Zellmontage brauchen Taupunkte um minus vierzig Grad, also muss das Gebäude zu einer dichten, sorptionsgetrockneten Umgebung werden, bevor eine einzige Anlage gestellt wird — und Hülle, Dampfsperre, Schleusen und Entfeuchtungsanlage liegen alle auf diesem Pfad. Dahinter zwei Dinge, die niemand stauchen kann: Formierung und Reifung verbrauchen je Zelle echte Kalendertage, gleich wie viele Menschen Sie einstellen, und die Ausbeute nach der ersten Zelle steigt auf einer Kurve, statt auf eine Zahl zu springen. Die bauliche Fertigstellung ist kein Tor für verkaufsfähige Ausbringung; die Anlagenqualifizierung und diese Kurve sind es.",
+    callout: "Der Trockenraum ist der Terminplan. Elektrodenhandhabung und Zellmontage brauchen Taupunkte um minus vierzig Grad, also muss das Gebäude zu einer dichten, sorptionsgetrockneten Umgebung werden, bevor eine einzige Anlage gestellt wird, und Hülle, Dampfsperre, Schleusen und Entfeuchtungsanlage liegen alle auf diesem Pfad. Dahinter zwei Dinge, die niemand stauchen kann: Formierung und Reifung verbrauchen je Zelle echte Kalendertage, gleich wie viele Menschen Sie einstellen, und die Ausbeute nach der ersten Zelle steigt auf einer Kurve, statt auf eine Zahl zu springen. Die bauliche Fertigstellung ist kein Tor für verkaufsfähige Ausbringung; die Anlagenqualifizierung und diese Kurve sind es.",
     customize: [
       "Frieren Sie Zellformat und Zellchemie früh ein und setzen Sie das als Meilenstein. Beschichterbreite, Kalanderlast, Gehäusemaße, Regallayout und die gesamte Medienauslegung folgen daraus; eine späte Änderung ist eine Neuplanung und keine Anpassung.",
       "Geben Sie Taupunktabsenkung und Haltetest eigene Balken nach der Montage der Entfeuchtungsanlage. Eine laufende Anlage ist nicht dasselbe wie eine dichte Hülle, und bei der Leckagesuche kommen späte Hüllenmängel ans Licht.",
@@ -6145,15 +6145,15 @@ const T = {
       "Bilden Sie Formierung und Reifung als Balken fester Dauer je Charge ab, nicht als Kapazität, der man Personal hinzufügen kann. Die Chemie setzt die Tage; der einzige Hebel ist die Zahl der Regale.",
       "Zeichnen Sie den Ausbeutehochlauf als langen Balken mit Zielmeilenstein am Ende, nicht als Sprung. Alles nach der ersten Zelle ist eine Lernkurve, und sie als Ereignis zu zeichnen verbirgt Monate echter Arbeit.",
       "Trennen Sie Anlagenqualifizierung und Linieninbetriebnahme. Ein Lieferant, der beweist, dass eine Station spezifikationsgemäß läuft, und Ihr Prozessteam, das beweist, dass die Linie eine gute Zelle macht, sind zwei Ereignisse mit zwei Verantwortlichen.",
-      "Legen Sie für die Genehmigung nach dem Bundes-Immissionsschutzgesetz einen eigenen Balken mit Öffentlichkeitsbeteiligung an, wenn Ihr Verfahren sie erfordert — sie hat eine gesetzlich getaktete Dauer, die Sie nicht verhandeln."
+      "Legen Sie für die Genehmigung nach dem Bundes-Immissionsschutzgesetz einen eigenen Balken mit Öffentlichkeitsbeteiligung an, wenn Ihr Verfahren sie erfordert, sie hat eine gesetzlich getaktete Dauer, die Sie nicht verhandeln."
     ],
     tips: [
       "<strong>Bauen Sie den Trockenraum, bevor Sie ihn brauchen.</strong> Abdichtung der Hülle, Schleusen und Absenkung laufen nacheinander und langsam, und jeder Tag dieser Kette liegt unmittelbar vor der ersten Zelle.",
-      "<strong>Kaufen Sie Formier- und Reifekapazität, nicht Termine.</strong> Dauert die Reifung drei Wochen je Charge, verkürzen nur mehr Regale und mehr Fläche den Hochlauf — kein Umsortieren ändert die Chemie.",
+      "<strong>Kaufen Sie Formier- und Reifekapazität, nicht Termine.</strong> Dauert die Reifung drei Wochen je Charge, verkürzen nur mehr Regale und mehr Fläche den Hochlauf, kein Umsortieren ändert die Chemie.",
       "<strong>Behandeln Sie Lösemittelrückgewinnung und Abluftreinigung als kritischen Pfad.</strong> Sie sind unscheinbar, werden regelmäßig zurückgestellt, und keine Beschichtungslinie darf ohne sie in Produktion gehen.",
-      "<strong>Verfolgen Sie den Ausschuss je Station ab dem ersten Versuch.</strong> Eine schlecht laufende Station weit vorn wirft Material weg, dem bereits Wert zugefügt wurde — der häufigste Grund für einen stockenden Hochlauf.",
+      "<strong>Verfolgen Sie den Ausschuss je Station ab dem ersten Versuch.</strong> Eine schlecht laufende Station weit vorn wirft Material weg, dem bereits Wert zugefügt wurde, der häufigste Grund für einen stockenden Hochlauf.",
       "<strong>Beginnen Sie die Kundenfreigabe früher, als Sie sich bereit fühlen.</strong> Missbrauchsprüfung, Transportzulassung und Produktionsteil-Abnahmeverfahren dauern Monate und laufen gegen frühe Zellen, während die Ausbeute noch steigt.",
-      "<strong>Setzen Sie die Trockenraumdisziplin als Schulung auf den Plan, nicht als Rundschreiben.</strong> Einschleusen, Materialtransfer und Feuchteschutz sind Gewohnheiten, die Wochen brauchen — eine Feuchteexkursion kostet mehr als die Schulung."
+      "<strong>Setzen Sie die Trockenraumdisziplin als Schulung auf den Plan, nicht als Rundschreiben.</strong> Einschleusen, Materialtransfer und Feuchteschutz sind Gewohnheiten, die Wochen brauchen, eine Feuchteexkursion kostet mehr als die Schulung."
     ],
     faq: [
       [
@@ -6170,7 +6170,7 @@ const T = {
       ],
       [
         "Was bestimmt tatsächlich die verkaufsfähige Ausbringung?",
-        "Anlagenqualifizierung und Ausbeute, nicht die bauliche Fertigstellung. Eine fertige Fabrik mit nicht qualifizierten Stationen produziert nichts Verkäufliches — deshalb liegt der Qualifizierungsmeilenstein in der Vorlage deutlich hinter dem Ausbau."
+        "Anlagenqualifizierung und Ausbeute, nicht die bauliche Fertigstellung. Eine fertige Fabrik mit nicht qualifizierten Stationen produziert nichts Verkäufliches, deshalb liegt der Qualifizierungsmeilenstein in der Vorlage deutlich hinter dem Ausbau."
       ],
       [
         "Wie stellt man den Ausbeutehochlauf im Gantt-Diagramm dar?",
@@ -6208,7 +6208,7 @@ const T = {
       ],
       [
         "Abbau von Reaktor und Primärkreis",
-        "Erprobung von Fernhantierung und Zerlegetechnik, Zuteilung des Dosisbudgets je Arbeitsbereich, Zerlegung und Volumenreduzierung des Primärkreises, Ausbau der Reaktoreinbauten unter Abschirmung — häufig nass —, Auswertung der Dosisleistung samt Schichtanpassung und der Abtrag des aktivierten Biologischen Schilds. <em>Meilenstein: Reaktorgebäude geräumt.</em>"
+        "Erprobung von Fernhantierung und Zerlegetechnik, Zuteilung des Dosisbudgets je Arbeitsbereich, Zerlegung und Volumenreduzierung des Primärkreises, Ausbau der Reaktoreinbauten unter Abschirmung, häufig nass, , Auswertung der Dosisleistung samt Schichtanpassung und der Abtrag des aktivierten Biologischen Schilds. <em>Meilenstein: Reaktorgebäude geräumt.</em>"
       ],
       [
         "Konditionierung, Verpackung und Abtransport",
@@ -6219,10 +6219,10 @@ const T = {
         "Abschließende Freimessung der Gebäudestrukturen, konventioneller Abriss der freigegebenen Bauwerke, Bewertung der Bodenqualität und Sanierung, das Abschlussgutachten mit Nachweispaket und die Entlassung des Standorts aus der atomrechtlichen Überwachung. <em>Meilenstein: Standort aus der Aufsicht entlassen.</em>"
       ]
     ],
-    callout: "Nicht die Mannschaftsstärke setzt das Tempo, sondern die Entsorgungskapazität. Jeder Kubikmeter, den Sie herausschneiden, muss irgendwohin, wo er angenommen wird, und die Annahmebedingungen bestimmen, wie der Abfall charakterisiert, konditioniert, deklariert und dokumentiert wird, bevor er sich bewegen darf. In Deutschland ist genau das die offene Flanke: Schwach- und mittelradioaktive Abfälle mit vernachlässigbarer Wärmeentwicklung sind für Schacht Konrad vorgesehen, dessen Inbetriebnahme sich wiederholt verschoben hat, und für hochradioaktive Abfälle läuft die Standortsuche noch. Was das für Ihren Plan bedeutet: Der Balken heißt Zwischenlagerung, nicht Endlagerung, er ist länger, als das erste Konzept annimmt, und wenn er voll ist, steht der Abbau mit Leuten daneben. Darüber liegt das Dosisbudget — das Minimierungsgebot begrenzt, wie viel Zeit jemand in einem Bereich verbringen darf — und jede Phase braucht ihre eigene Teilgenehmigung, bevor sie beginnt. Zeichnen Sie den Entsorgungsweg als Balken, nicht als Annahme.",
+    callout: "Nicht die Mannschaftsstärke setzt das Tempo, sondern die Entsorgungskapazität. Jeder Kubikmeter, den Sie herausschneiden, muss irgendwohin, wo er angenommen wird, und die Annahmebedingungen bestimmen, wie der Abfall charakterisiert, konditioniert, deklariert und dokumentiert wird, bevor er sich bewegen darf. In Deutschland ist genau das die offene Flanke: Schwach- und mittelradioaktive Abfälle mit vernachlässigbarer Wärmeentwicklung sind für Schacht Konrad vorgesehen, dessen Inbetriebnahme sich wiederholt verschoben hat, und für hochradioaktive Abfälle läuft die Standortsuche noch. Was das für Ihren Plan bedeutet: Der Balken heißt Zwischenlagerung, nicht Endlagerung, er ist länger, als das erste Konzept annimmt, und wenn er voll ist, steht der Abbau mit Leuten daneben. Darüber liegt das Dosisbudget, das Minimierungsgebot begrenzt, wie viel Zeit jemand in einem Bereich verbringen darf, und jede Phase braucht ihre eigene Teilgenehmigung, bevor sie beginnt. Zeichnen Sie den Entsorgungsweg als Balken, nicht als Annahme.",
     customize: [
       "Legen Sie die Balken für Annahmebedingungen und zugesagte Einlagerungskontingente an, bevor Sie irgendeinen Abbau takten. Enden sie später, als Ihr Zerlegen beginnt, ist der Terminplan falsch, wie gut der Abbauplan auch aussieht.",
-      "Geben Sie der Charakterisierung einen großzügigen, frühen Balken. Jede nachgelagerte Schätzung — Massen, Konditionierung, Dosis, Kosten — leitet sich daraus ab, und eine dünne Charakterisierung ist der zuverlässigste Vorbote einer Terminüberschreitung.",
+      "Geben Sie der Charakterisierung einen großzügigen, frühen Balken. Jede nachgelagerte Schätzung, Massen, Konditionierung, Dosis, Kosten, leitet sich daraus ab, und eine dünne Charakterisierung ist der zuverlässigste Vorbote einer Terminüberschreitung.",
       "Bilden Sie das Dosisbudget als Dauerrestriktion ab, nicht als Sicherheitshinweis. Lässt ein Bereich nur eine bestimmte Kollektivdosis je Kampagne zu, dauert die Arbeit so lange, wie sie dauert, und mehr Personal hilft nicht.",
       "Setzen Sie vor jede physische Phase einen Genehmigungsmeilenstein. Der Rückbau wird in Stufen genehmigt, und die Zustimmung als einmaliges Ereignis am Anfang zu behandeln, verzeichnet die tatsächlichen Tore.",
       "Trennen Sie Zwischenlagerung und Endlagerung. Material, das in ein standortnahes Zwischenlager geht, hat den Standort nicht verlassen, und nur eines von beidem verringert die Verbindlichkeit wirklich.",
@@ -6232,7 +6232,7 @@ const T = {
     tips: [
       "<strong>Charakterisieren Sie, bevor Sie planen, nicht während Sie abbauen.</strong> Ein auf angenommenem Inventar gebauter Terminplan wird neu aufgesetzt, sobald die erste Messung höher ausfällt als erwartet.",
       "<strong>Behandeln Sie Entsorgungskapazität wie eine Langläufer-Beschaffung.</strong> Kapazitäten sind jährlich begrenzt und haben eigene Warteschlangen; ein zugesagtes Kontingent ist ein Vermögenswert, ein fehlendes ein Stillstandsrisiko.",
-      "<strong>Zerlegen Sie für den Behälter.</strong> Die Volumenreduzierung richtet sich nach dem, was Behälter und Annahmebedingungen zulassen, nicht nach dem, was an der Schnittstelle bequem ist — aktiviertes Material nachzuschneiden ist teuer und dosisintensiv.",
+      "<strong>Zerlegen Sie für den Behälter.</strong> Die Volumenreduzierung richtet sich nach dem, was Behälter und Annahmebedingungen zulassen, nicht nach dem, was an der Schnittstelle bequem ist, aktiviertes Material nachzuschneiden ist teuer und dosisintensiv.",
       "<strong>Verfolgen Sie die Kollektivdosis wöchentlich gegen das Budget.</strong> Eine Dosisaufnahme über Plan ist ein Frühwarnzeichen für ein falsches Verfahren, und sie zeigt sich lange bevor der Termin rutscht.",
       "<strong>Nehmen Sie Asbest und konventionelle Gefahrstoffe ernst.</strong> In vielen älteren Anlagen treiben die nichtradiologischen Gefahren mehr vom frühen Programm als die radiologischen, und sie versperren den Zugang zu allem dahinter.",
       "<strong>Führen Sie das Nachweispaket laufend mit.</strong> Die Entlassung aus der Aufsicht hängt am Nachweis, dass der Zielzustand erreicht ist, und Mess- und Abgabeaufzeichnungen am Ende zu rekonstruieren ist langsamer, als sie aktuell zu halten."
@@ -6240,7 +6240,7 @@ const T = {
     faq: [
       [
         "Wie lange dauert der Rückbau eines Kernkraftwerks?",
-        "Die Vorlage umfasst rund 1.200 Tage für den direkten Rückbau einer Anlage, in der Praxis reichen deutsche Vorhaben aber von etwa fünfzehn Jahren bis zu mehreren Jahrzehnten — je nach Strategie, verfügbaren Entsorgungswegen und ob ein sicherer Einschluss zwischengeschaltet wird."
+        "Die Vorlage umfasst rund 1.200 Tage für den direkten Rückbau einer Anlage, in der Praxis reichen deutsche Vorhaben aber von etwa fünfzehn Jahren bis zu mehreren Jahrzehnten, je nach Strategie, verfügbaren Entsorgungswegen und ob ein sicherer Einschluss zwischengeschaltet wird."
       ],
       [
         "Warum steuert die Entsorgung den Terminplan?",
@@ -6256,7 +6256,7 @@ const T = {
       ],
       [
         "Was bedeutet Freigabe nach der Strahlenschutzverordnung?",
-        "Es ist das Verfahren, mit dem Material aus dem atomrechtlichen Regime entlassen wird, wenn seine Aktivität unter den festgelegten Freigabewerten liegt. Es setzt ein behördlich zugestimmtes Messkonzept, dokumentierte Freimessung und die Zustimmung der Aufsichtsbehörde voraus. Ein großer Teil der Gesamtmasse geht diesen Weg, weshalb er einen eigenen Balken verdient — er entlastet den Entsorgungspfad spürbar."
+        "Es ist das Verfahren, mit dem Material aus dem atomrechtlichen Regime entlassen wird, wenn seine Aktivität unter den festgelegten Freigabewerten liegt. Es setzt ein behördlich zugestimmtes Messkonzept, dokumentierte Freimessung und die Zustimmung der Aufsichtsbehörde voraus. Ein großer Teil der Gesamtmasse geht diesen Weg, weshalb er einen eigenen Balken verdient, er entlastet den Entsorgungspfad spürbar."
       ],
       [
         "Ist die atomrechtliche Zustimmung eine einzige Freigabe?",
@@ -6273,7 +6273,7 @@ const T = {
     h1: "Zeitplan für die Akkreditierung an einer Hochschule",
     metaTitle: "Zeitplan Hochschulakkreditierung",
     metaDesc: "Kostenloser Zeitplan für die Akkreditierung: Rückwärtsplanung ab Begehung und Sitzung des Akkreditierungsrats, Selbstbericht, Nachweise, Beteiligung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Hochschulakkreditierung</strong>, die dort beginnt, wo der echte Terminplan beginnt: bei zwei Terminen, die jemand anderes besitzt. Die beauftragte Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur wenige Male im Jahr stattfindet — es gibt also ein Einreichfenster, und es zu verpassen kostet einen Turnus und nicht einen Monat. Alles Weitere wird davon zurückgerechnet: Lenkungsgruppe und Arbeitsgruppen, eine Lückenanalyse gegen die Kriterien des Studienakkreditierungsstaatsvertrags, Daten aus Qualitätssicherung und Lehrevaluation, Beteiligung von Lehrenden, Studierenden und Hochschulleitung, danach Entwurf, interne Prüfung, Probebegehung und Einreichung.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Hochschulakkreditierung</strong>, die dort beginnt, wo der echte Terminplan beginnt: bei zwei Terminen, die jemand anderes besitzt. Die beauftragte Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur wenige Male im Jahr stattfindet, es gibt also ein Einreichfenster, und es zu verpassen kostet einen Turnus und nicht einen Monat. Alles Weitere wird davon zurückgerechnet: Lenkungsgruppe und Arbeitsgruppen, eine Lückenanalyse gegen die Kriterien des Studienakkreditierungsstaatsvertrags, Daten aus Qualitätssicherung und Lehrevaluation, Beteiligung von Lehrenden, Studierenden und Hochschulleitung, danach Entwurf, interne Prüfung, Probebegehung und Einreichung.",
     intro: "Die Akkreditierung ist das seltene Hochschulprojekt mit einer wirklich unverrückbaren Frist, die die Hochschule nicht selbst gewählt hat. Die Vorlage ist von hinten nach vorn gelegt:",
     phases: [
       [
@@ -6301,9 +6301,9 @@ const T = {
         "Organisation und Gesprächsplan, Probelauf auf dem Campus, Vorgespräch mit der Agentur und Nachforderung von Unterlagen, die Begehung durch das Gutachtergremium, der Entwurf des Gutachtens, die Stellungnahme der Hochschule, der Beschlussvorschlag der Agentur und die Sitzung des Akkreditierungsrats. <em>Meilenstein: Akkreditierung ausgesprochen.</em>"
       ]
     ],
-    callout: "Die beiden Termine, auf die es ankommt, gehören Ihnen nicht. Die Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur einige Male im Jahr zusammentritt — das Einreichfenster davor ist eng und hart. Wird es verpasst, rutscht das ganze Verfahren in den nächsten Turnus und nimmt Selbstbericht, Nachweise und guten Willen mit. Jeder andere Balken ist abgeleitet: der spätestmögliche Termin für den Beschluss der Hochschulleitung, für die Endfassung, für die Probebegehung, für den Evaluationszyklus, der mindestens einmal gelaufen sein muss. Fixieren Sie zuerst den Begehungstermin und lassen Sie den Rest zurückrechnen. Und klären Sie früh, welches Verfahren Sie führen: In der Programmakkreditierung wird jeder Studiengang einzeln begutachtet, in der Systemakkreditierung Ihr internes Qualitätsmanagementsystem, das anschließend selbst akkreditiert — zwei sehr verschiedene Terminpläne.",
+    callout: "Die beiden Termine, auf die es ankommt, gehören Ihnen nicht. Die Agentur setzt die Begehung, und die Entscheidung fällt in einer Sitzung des Akkreditierungsrats, die nur einige Male im Jahr zusammentritt, das Einreichfenster davor ist eng und hart. Wird es verpasst, rutscht das ganze Verfahren in den nächsten Turnus und nimmt Selbstbericht, Nachweise und guten Willen mit. Jeder andere Balken ist abgeleitet: der spätestmögliche Termin für den Beschluss der Hochschulleitung, für die Endfassung, für die Probebegehung, für den Evaluationszyklus, der mindestens einmal gelaufen sein muss. Fixieren Sie zuerst den Begehungstermin und lassen Sie den Rest zurückrechnen. Und klären Sie früh, welches Verfahren Sie führen: In der Programmakkreditierung wird jeder Studiengang einzeln begutachtet, in der Systemakkreditierung Ihr internes Qualitätsmanagementsystem, das anschließend selbst akkreditiert, zwei sehr verschiedene Terminpläne.",
     customize: [
-      "Tragen Sie Begehungstermin und Sitzungstermin des Akkreditierungsrats zuerst als feste Marken ein und ziehen Sie jeden anderen Balken rückwärts, bis es passt. Passt es nicht, lautet die Antwort früher mehr Ressourcen — niemals eine kürzere Schreibphase.",
+      "Tragen Sie Begehungstermin und Sitzungstermin des Akkreditierungsrats zuerst als feste Marken ein und ziehen Sie jeden anderen Balken rückwärts, bis es passt. Passt es nicht, lautet die Antwort früher mehr Ressourcen, niemals eine kürzere Schreibphase.",
       "Legen Sie in der Programmakkreditierung eine Arbeitsgruppenzeile je Studiengang oder Bündel an. Sie kommen nicht gleich schnell voran, und ein gemittelter Balken verbirgt die zwei Gruppen, die feststecken.",
       "Geben Sie dem Evaluations- und Qualitätsdatenzyklus ein volles Semester oder Studienjahr. Qualifikationsziele lassen sich nicht rückwirkend belegen, und dieser Balken wird am häufigsten zu spät entdeckt.",
       "Setzen Sie die Probebegehung früh genug an, um auf die Befunde reagieren zu können. Eine Generalprobe zwei Wochen vor dem Termin ist Theater; eine vor der Endredaktion ist ihr Geld wert.",
@@ -6313,9 +6313,9 @@ const T = {
     ],
     tips: [
       "<strong>Bestätigen Sie nicht nur die Begehung, sondern den Sitzungstermin.</strong> Die Begehung ist sichtbar; die Sitzung des Akkreditierungsrats ist der eigentliche Entscheidungspunkt und legt fest, wie viel Zeit für die Stellungnahme zum Gutachten bleibt.",
-      "<strong>Bauen Sie den Nachweisspeicher einmal, am Anfang.</strong> Dokumente zweimal zu suchen — erst für die Arbeitsgruppen, dann für die Anlagen — ist der größte vermeidbare Aufwand des ganzen Turnus.",
+      "<strong>Bauen Sie den Nachweisspeicher einmal, am Anfang.</strong> Dokumente zweimal zu suchen, erst für die Arbeitsgruppen, dann für die Anlagen, ist der größte vermeidbare Aufwand des ganzen Turnus.",
       "<strong>Schließen Sie Lücken früh genug, um Praxis zu zeigen.</strong> Eine im Monat vor der Begehung beschlossene Ordnung zeigt Problembewusstsein; eine ein Jahr zuvor beschlossene zeigt gelebte Praxis, und Gutachtergremien kennen den Unterschied.",
-      "<strong>Proben Sie die Gespräche mit denen, die wirklich im Raum sitzen.</strong> Das Gremium spricht mit Studiendekanen, Lehrbeauftragten, Studierenden und Verwaltung, nicht nur mit der Lenkungsgruppe — und unvorbereitete Ehrlichkeit ist die Quelle der meisten Auflagen.",
+      "<strong>Proben Sie die Gespräche mit denen, die wirklich im Raum sitzen.</strong> Das Gremium spricht mit Studiendekanen, Lehrbeauftragten, Studierenden und Verwaltung, nicht nur mit der Lenkungsgruppe, und unvorbereitete Ehrlichkeit ist die Quelle der meisten Auflagen.",
       "<strong>Halten Sie den Selbstbericht in einer Stimme.</strong> Zwölf Arbeitsgruppen erzeugen zwölf Stile; planen Sie echte Redaktionszeit ein, sonst liest sich das Dokument als Sammlung von Zulieferungen und nicht als Argument der Hochschule.",
       "<strong>Planen Sie das Fenster für die Stellungnahme.</strong> Sachliche Fehler vor der Sitzung zu korrigieren ist eine echte Gelegenheit, und es ist eine kurze Phase unter Druck, die einen eigenen Balken verdient."
     ],
@@ -6326,7 +6326,7 @@ const T = {
       ],
       [
         "Was ist der Unterschied zwischen Programm- und Systemakkreditierung?",
-        "In der Programmakkreditierung wird jeder Studiengang einzeln gegen die formalen und fachlich-inhaltlichen Kriterien begutachtet. In der Systemakkreditierung wird stattdessen Ihr internes Qualitätsmanagementsystem akkreditiert; die Hochschule akkreditiert ihre Studiengänge danach selbst, geprüft an Stichproben. Der Aufwand verschiebt sich damit von vielen kleinen Verfahren zu einem großen — und zu der Frage, ob Ihr internes System die Prüfung tatsächlich trägt."
+        "In der Programmakkreditierung wird jeder Studiengang einzeln gegen die formalen und fachlich-inhaltlichen Kriterien begutachtet. In der Systemakkreditierung wird stattdessen Ihr internes Qualitätsmanagementsystem akkreditiert; die Hochschule akkreditiert ihre Studiengänge danach selbst, geprüft an Stichproben. Der Aufwand verschiebt sich damit von vielen kleinen Verfahren zu einem großen, und zu der Frage, ob Ihr internes System die Prüfung tatsächlich trägt."
       ],
       [
         "Wer entscheidet über die Akkreditierung?",
@@ -6342,7 +6342,7 @@ const T = {
       ],
       [
         "Was passiert bei Auflagen?",
-        "Eine Akkreditierung mit Auflagen ist der Normalfall und kein Scheitern. Die Auflagen sind fristgebunden, und ihre Erfüllung muss der Agentur nachgewiesen werden — planen Sie diese Nachweisführung als eigene Balken hinter dem Beschluss ein, sonst fällt sie in die Zeit, in der alle Beteiligten das Verfahren für beendet halten."
+        "Eine Akkreditierung mit Auflagen ist der Normalfall und kein Scheitern. Die Auflagen sind fristgebunden, und ihre Erfüllung muss der Agentur nachgewiesen werden, planen Sie diese Nachweisführung als eigene Balken hinter dem Beschluss ein, sonst fällt sie in die Zeit, in der alle Beteiligten das Verfahren für beendet halten."
       ],
       [
         "Ist die Vorlage für die Hochschulakkreditierung kostenlos?",
@@ -6372,7 +6372,7 @@ const T = {
       ],
       [
         "Pflanzenschutz- und Düngeprogramm",
-        "Nachauflaufherbizid zur frühen Bestockung, die Stickstoffgaben innerhalb der ermittelten Obergrenze, Fungizid zum Schossen, zum Erscheinen des Fahnenblatts und zur Blüte — jeweils an ein Wachstumsstadium gebunden. Dazu die Pflichten, die mitlaufen: gültige Sachkunde im Pflanzenschutz, geprüfte Spritze, Abstandsauflagen zu Gewässern und Saumbiotopen sowie die einzuhaltenden Wartezeiten vor der Ernte. <em>Meilenstein: Behandlungsprogramm abgeschlossen.</em>"
+        "Nachauflaufherbizid zur frühen Bestockung, die Stickstoffgaben innerhalb der ermittelten Obergrenze, Fungizid zum Schossen, zum Erscheinen des Fahnenblatts und zur Blüte, jeweils an ein Wachstumsstadium gebunden. Dazu die Pflichten, die mitlaufen: gültige Sachkunde im Pflanzenschutz, geprüfte Spritze, Abstandsauflagen zu Gewässern und Saumbiotopen sowie die einzuhaltenden Wartezeiten vor der Ernte. <em>Meilenstein: Behandlungsprogramm abgeschlossen.</em>"
       ],
       [
         "Ernte und Feldlogistik",
@@ -6383,7 +6383,7 @@ const T = {
         "Durchsatz der Trocknung und Feuchtesteuerung, Befüllung des Lagers mit Belüftung und Temperaturüberwachung, Probenahme, Qualitätsbestimmung und Dokumentation für die Erzeugerrichtlinien, Vertragslieferungen, Stoppelbearbeitung und Zwischenfruchtaussaat innerhalb der Fristen sowie der Rückblick auf das Anbaujahr. <em>Meilenstein: Anbaujahr abgeschlossen.</em>"
       ]
     ],
-    callout: "Der Kalender gehört Ihnen nicht. Bodentemperatur und Befahrbarkeit entscheiden, wann gesät werden kann; die Wachstumsstadien entscheiden, wann jede Behandlung sitzt, und ein Fungizid eine Woche neben dem Stadium ist verbranntes Geld; die Kornfeuchte entscheidet, wann der Mähdrescher fahren darf. Dahinter steht eine zweite, härtere Grenze: Trocknungsdurchsatz und Lagerkapazität. Wer zwanzig Tonnen je Stunde trocknen kann, kann auf Dauer nicht schneller dreschen, egal wie viele Mähdrescher im Feld stehen. Und dann gibt es Termine, die nicht das Wetter setzt, sondern das Recht: Der Sammelantrag hat eine Ausschlussfrist, deren Versäumnis bares Geld kostet, und die Düngeverordnung schreibt Sperrfristen fest, in denen stickstoffhaltige Düngemittel schlicht nicht ausgebracht werden dürfen — auf Ackerland nach der Ernte der letzten Hauptfrucht bis Ende Januar, auf Grünland etwas anders, und in nitratbelasteten roten Gebieten mit zusätzlichen Auflagen und verlängerten Sperrzeiten. Diese Daten stehen im Kalender fest, bevor die Saison beginnt. Zeichnen Sie sie als graue Sperrbalken ein, gegen die die Ausbringungsbalken stoßen dürfen — sie sind die verlässlichsten Restriktionen im ganzen Plan.",
+    callout: "Der Kalender gehört Ihnen nicht. Bodentemperatur und Befahrbarkeit entscheiden, wann gesät werden kann; die Wachstumsstadien entscheiden, wann jede Behandlung sitzt, und ein Fungizid eine Woche neben dem Stadium ist verbranntes Geld; die Kornfeuchte entscheidet, wann der Mähdrescher fahren darf. Dahinter steht eine zweite, härtere Grenze: Trocknungsdurchsatz und Lagerkapazität. Wer zwanzig Tonnen je Stunde trocknen kann, kann auf Dauer nicht schneller dreschen, egal wie viele Mähdrescher im Feld stehen. Und dann gibt es Termine, die nicht das Wetter setzt, sondern das Recht: Der Sammelantrag hat eine Ausschlussfrist, deren Versäumnis bares Geld kostet, und die Düngeverordnung schreibt Sperrfristen fest, in denen stickstoffhaltige Düngemittel schlicht nicht ausgebracht werden dürfen, auf Ackerland nach der Ernte der letzten Hauptfrucht bis Ende Januar, auf Grünland etwas anders, und in nitratbelasteten roten Gebieten mit zusätzlichen Auflagen und verlängerten Sperrzeiten. Diese Daten stehen im Kalender fest, bevor die Saison beginnt. Zeichnen Sie sie als graue Sperrbalken ein, gegen die die Ausbringungsbalken stoßen dürfen, sie sind die verlässlichsten Restriktionen im ganzen Plan.",
     customize: [
       "Setzen Sie den Meilenstein für das Aussaatfenster aus Ihren eigenen Bodentemperaturaufzeichnungen, nicht aus dem Saattermin des Vorjahres, und lassen Sie die Aussaatbalken mitwandern.",
       "Legen Sie die Sperrfristen der Düngeverordnung als feste Sperrbalken über das ganze Jahr, getrennt nach Ackerland und Grünland. Jeder Ausbringungsbalken, der dagegen stößt, ist ein Planungsfehler, den Sie im Februar sehen und nicht im Oktober.",
@@ -6392,7 +6392,7 @@ const T = {
       "Hängen Sie jeden Behandlungsbalken an einen Wachstumsstadienbalken statt an ein Datum. Läuft die Saison früh oder spät, sollen die Termine automatisch mit dem Bestand wandern.",
       "Ergänzen Sie eine Zeile je Kultur, wenn Sie mehrere anbauen. Ihre Fenster überlappen und konkurrieren um dieselbe Drillmaschine, dieselbe Spritze und denselben Mähdrescher, und genau diese Konkurrenz ist der Sinn des Diagramms.",
       "Geben Sie dem Trocknungsdurchsatz einen eigenen Balken durch die Ernte hindurch. Ist er kürzer als die Erntebalken darüber, ist die Lagerung Ihre Restriktion, und der Plan soll das aussprechen.",
-      "Legen Sie eine Zeile für Wartezeiten zwischen der letzten Behandlung und dem Drusch an — sie ist mittelspezifisch, sie ist verbindlich, und sie kollidiert regelmäßig mit dem frühesten Termin, an dem die Feuchte passt."
+      "Legen Sie eine Zeile für Wartezeiten zwischen der letzten Behandlung und dem Drusch an, sie ist mittelspezifisch, sie ist verbindlich, und sie kollidiert regelmäßig mit dem frühesten Termin, an dem die Feuchte passt."
     ],
     tips: [
       "<strong>Säen Sie nach Bodenzustand, nicht nach Plan.</strong> Ein nass gedrilltes Saatbett kostet Ertrag über die ganze Saison, und die scheinbar gesparten Tage kommen als schlechte Etablierung zurück, aus der kein Pflanzenschutz herausführt.",
@@ -6406,23 +6406,23 @@ const T = {
     faq: [
       [
         "Wie baut man einen Anbau- und Erntezeitplan auf?",
-        "Beginnen Sie mit den Fenstern, die Sie nicht steuern — Bodentemperatur für die Aussaat, Kornfeuchte für die Ernte — und fügen Sie die Maschinenkette dazwischen ein. Legen Sie darüber die Termine, die das Fachrecht setzt: Sammelantragsfrist und Sperrfristen. Die agronomische Abfolge dazwischen bestimmt die Kultur, nicht die Vorliebe."
+        "Beginnen Sie mit den Fenstern, die Sie nicht steuern, Bodentemperatur für die Aussaat, Kornfeuchte für die Ernte, und fügen Sie die Maschinenkette dazwischen ein. Legen Sie darüber die Termine, die das Fachrecht setzt: Sammelantragsfrist und Sperrfristen. Die agronomische Abfolge dazwischen bestimmt die Kultur, nicht die Vorliebe."
       ],
       [
         "Warum hängen Behandlungstermine an Wachstumsstadien statt an Daten?",
-        "Weil ein Fungizid oder Herbizid nur in einem engen Fenster um ein bestimmtes Stadium wirkt, und weil die Zulassung die Anwendung häufig ausdrücklich an Stadien bindet. Läuft die Saison zwei Wochen früher, wandern die Termine zwei Wochen mit — deshalb hängt die Vorlage sie an die Stadienbalken."
+        "Weil ein Fungizid oder Herbizid nur in einem engen Fenster um ein bestimmtes Stadium wirkt, und weil die Zulassung die Anwendung häufig ausdrücklich an Stadien bindet. Läuft die Saison zwei Wochen früher, wandern die Termine zwei Wochen mit, deshalb hängt die Vorlage sie an die Stadienbalken."
       ],
       [
         "Was sind die Sperrfristen der Düngeverordnung und wie planen wir mit ihnen?",
-        "Es sind gesetzlich festgelegte Zeiträume, in denen stickstoff- oder phosphathaltige Düngemittel nicht ausgebracht werden dürfen — auf Ackerland im Kern zwischen der Ernte der letzten Hauptfrucht und dem Ende des Januars, auf Grünland in einem abweichenden Zeitraum, mit weiteren Einschränkungen auf gefrorenem, überschwemmtem oder schneebedecktem Boden. Weil sie datumsfest sind, sind sie die planbarste Restriktion des Jahres: Zeichnen Sie sie als Sperrbalken und legen Sie Herbst- und Frühjahrsgaben dagegen an. Die genauen Daten und die Abweichungen für einzelne Kulturen prüfen Sie bitte in der geltenden Fassung und bei Ihrer Landwirtschaftskammer."
+        "Es sind gesetzlich festgelegte Zeiträume, in denen stickstoff- oder phosphathaltige Düngemittel nicht ausgebracht werden dürfen, auf Ackerland im Kern zwischen der Ernte der letzten Hauptfrucht und dem Ende des Januars, auf Grünland in einem abweichenden Zeitraum, mit weiteren Einschränkungen auf gefrorenem, überschwemmtem oder schneebedecktem Boden. Weil sie datumsfest sind, sind sie die planbarste Restriktion des Jahres: Zeichnen Sie sie als Sperrbalken und legen Sie Herbst- und Frühjahrsgaben dagegen an. Die genauen Daten und die Abweichungen für einzelne Kulturen prüfen Sie bitte in der geltenden Fassung und bei Ihrer Landwirtschaftskammer."
       ],
       [
         "Was gilt zusätzlich in roten Gebieten?",
-        "In nitratbelasteten Gebieten kommen verschärfte Auflagen hinzu, typischerweise eine Absenkung des ermittelten Düngebedarfs, verlängerte Sperrfristen und Vorgaben zur Begrünung. Weil die Ausweisung dieser Gebiete durch die Länder erfolgt und sich ändern kann, gehört sie als eigene Prüfzeile in die Winterplanung und nicht in eine Fußnote — sie verändert sowohl die Mengen als auch die Termine."
+        "In nitratbelasteten Gebieten kommen verschärfte Auflagen hinzu, typischerweise eine Absenkung des ermittelten Düngebedarfs, verlängerte Sperrfristen und Vorgaben zur Begrünung. Weil die Ausweisung dieser Gebiete durch die Länder erfolgt und sich ändern kann, gehört sie als eigene Prüfzeile in die Winterplanung und nicht in eine Fußnote, sie verändert sowohl die Mengen als auch die Termine."
       ],
       [
         "Was begrenzt die Erntegeschwindigkeit?",
-        "Meist Trocknung und Lagerung, nicht die Drescherleistung. Ist der Durchsatz niedriger als die Rate, mit der Korn ankommt, muss langsamer gedroschen werden — deshalb gehört der Trocknungsbalken neben die Erntebalken."
+        "Meist Trocknung und Lagerung, nicht die Drescherleistung. Ist der Durchsatz niedriger als die Rate, mit der Korn ankommt, muss langsamer gedroschen werden, deshalb gehört der Trocknungsbalken neben die Erntebalken."
       ],
       [
         "Wann sollten Betriebsmittel und Lohnunternehmen gebucht werden?",
@@ -6439,7 +6439,7 @@ const T = {
     h1: "Zeitplan für die Eröffnung eines Fitnessstudios",
     metaTitle: "Zeitplan Fitnessstudio-Eröffnung",
     metaDesc: "Kostenloser Zeitplan für die Studioeröffnung: Ausbau, Gerätelieferzeiten, Vorverkauf an Gründungsmitglieder, Trainer-Lizenzen, Probebetrieb, Eröffnung.",
-    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Fitnessstudio-Eröffnung</strong>, geordnet um das, was tatsächlich entscheidet, ob ein Studio gut eröffnet: den Vorverkauf. Mitgliedschaften werden Monate vor der Öffnung verkauft, also laufen Marke, Website, Bauzaunwerbung und die Kampagne für Gründungsmitglieder vor dem Ausbau und nicht dahinter — und die Zielzahl an Gründungsmitgliedern ist ein Tor für die Eröffnungsentscheidung und keine Marketingzugabe. Dahinter: Mietvertrag, Gewerbeanmeldung und gegebenenfalls eine Nutzungsänderung, ein Ausbau mit echten Anforderungen an Deckenlast und Schallschutz, Geräte mit langen Fertigungsvorläufen, Trainerqualifikation, die vor der Montage nicht beginnen kann, und ein Kursplan, der geprobt werden muss.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan einer Fitnessstudio-Eröffnung</strong>, geordnet um das, was tatsächlich entscheidet, ob ein Studio gut eröffnet: den Vorverkauf. Mitgliedschaften werden Monate vor der Öffnung verkauft, also laufen Marke, Website, Bauzaunwerbung und die Kampagne für Gründungsmitglieder vor dem Ausbau und nicht dahinter, und die Zielzahl an Gründungsmitgliedern ist ein Tor für die Eröffnungsentscheidung und keine Marketingzugabe. Dahinter: Mietvertrag, Gewerbeanmeldung und gegebenenfalls eine Nutzungsänderung, ein Ausbau mit echten Anforderungen an Deckenlast und Schallschutz, Geräte mit langen Fertigungsvorläufen, Trainerqualifikation, die vor der Montage nicht beginnen kann, und ein Kursplan, der geprobt werden muss.",
     intro: "Ein Studio, das mit leerer Mitgliederliste öffnet, ist ab Woche eins in Schwierigkeiten. Die Vorlage stellt das Marketing deshalb vor den Bau und nicht dahinter:",
     phases: [
       [
@@ -6467,10 +6467,10 @@ const T = {
         "Brandschutzabnahme und Nutzungsfreigabe, Reinigung, Shop und Automaten, Zutrittskontrolle und Mitgliedsausweise, eine Probewoche für Gründungsmitglieder, Mängelabarbeitung, danach der Eröffnungstag und die erste Auswertung der Kündigungsquote. <em>Meilensteine: öffentliche Eröffnung, eingeschwungener Betrieb.</em>"
       ]
     ],
-    callout: "Der Vorverkauf ist der Kern. Die Wirtschaftlichkeit eines Studios hängt ab Monat eins an der Mitgliederzahl, und Mitgliedschaften werden verkauft, lange bevor jemand das Gebäude nutzen kann — Marke, Website, Zahlungsanbindung und die Kampagne für Gründungsmitglieder müssen also live sein, während die Fläche noch eingezäunt und staubig ist. Zeichnen Sie diese Balken vor die Fertigstellung des Ausbaus und behandeln Sie die Zielzahl der Gründungsmitglieder als Tor für die Eröffnungsentscheidung: Fehlt die Zahl, ist die richtige Antwort meist mehr Vorverkaufswochen und kein Eröffnungstag vor leerer Fläche. Dahinter liegen die Geräte mit Fertigungsvorläufen in Monaten, und Trainerqualifikation wie Kursprobe können erst beginnen, wenn die Technik verankert ist. Und prüfen Sie früh die baurechtliche Seite: Kommt aus Ihrer Fläche und der geplanten Belegung eine Versammlungsstätte im Sinne der Versammlungsstättenverordnung Ihres Landes, ändern sich Rettungswege, Brandschutz und Abnahme grundlegend — das ist eine Planungsfrage für den Monat des Mietvertrags, nicht für den Monat vor der Eröffnung.",
+    callout: "Der Vorverkauf ist der Kern. Die Wirtschaftlichkeit eines Studios hängt ab Monat eins an der Mitgliederzahl, und Mitgliedschaften werden verkauft, lange bevor jemand das Gebäude nutzen kann, Marke, Website, Zahlungsanbindung und die Kampagne für Gründungsmitglieder müssen also live sein, während die Fläche noch eingezäunt und staubig ist. Zeichnen Sie diese Balken vor die Fertigstellung des Ausbaus und behandeln Sie die Zielzahl der Gründungsmitglieder als Tor für die Eröffnungsentscheidung: Fehlt die Zahl, ist die richtige Antwort meist mehr Vorverkaufswochen und kein Eröffnungstag vor leerer Fläche. Dahinter liegen die Geräte mit Fertigungsvorläufen in Monaten, und Trainerqualifikation wie Kursprobe können erst beginnen, wenn die Technik verankert ist. Und prüfen Sie früh die baurechtliche Seite: Kommt aus Ihrer Fläche und der geplanten Belegung eine Versammlungsstätte im Sinne der Versammlungsstättenverordnung Ihres Landes, ändern sich Rettungswege, Brandschutz und Abnahme grundlegend, das ist eine Planungsfrage für den Monat des Mietvertrags, nicht für den Monat vor der Eröffnung.",
     customize: [
       "Starten Sie den Vorverkaufsbalken so früh, wie Zahlungsanbindung und Vertragsbedingungen es erlauben, und lassen Sie ihn parallel zum Ausbau laufen. Beginnt er nach der Übergabe, ist das Gründungsmitglieder-Fenster vollständig verloren.",
-      "Setzen Sie die Zielzahl der Gründungsmitglieder als ausdrücklichen Meilenstein mit einer Zahl und entscheiden Sie vorab, was bei Verfehlung passiert — den Vorverkauf zu verlängern ist eine Entscheidung, kein Scheitern.",
+      "Setzen Sie die Zielzahl der Gründungsmitglieder als ausdrücklichen Meilenstein mit einer Zahl und entscheiden Sie vorab, was bei Verfehlung passiert, den Vorverkauf zu verlängern ist eine Entscheidung, kein Scheitern.",
       "Ziehen Sie die Gerätebestellung vor die Ausbaubalken. Fertigung und Transport laufen häufig drei bis vier Monate, und nichts an einem fertigen Gebäude verkürzt sie.",
       "Behalten Sie Deckenlast und Schallschutz als eigenen Planungsbalken. Freihantelbereiche und Kursräume über oder neben anderen Mietern sind die häufigste späte und teure Überraschung im Studioausbau.",
       "Legen Sie eine eigene Zeile für die Klärung an, ob Ihre Fläche als Versammlungsstätte einzustufen ist, und führen Sie sie vor die Ausbauplanung. Die Antwort verändert Rettungswege, Brandschutz und Abnahmeweg.",
@@ -6492,11 +6492,11 @@ const T = {
       ],
       [
         "Wann sollte der Mitgliedervorverkauf beginnen?",
-        "Sobald Marke, Website und Zahlungsanbindung stehen und der Eröffnungstermin glaubwürdig ist — typischerweise drei bis vier Monate vor der Eröffnung, während die Fläche noch Baustelle ist. Genau deshalb lässt die Vorlage den Vorverkaufsbalken parallel zum Ausbau laufen."
+        "Sobald Marke, Website und Zahlungsanbindung stehen und der Eröffnungstermin glaubwürdig ist, typischerweise drei bis vier Monate vor der Eröffnung, während die Fläche noch Baustelle ist. Genau deshalb lässt die Vorlage den Vorverkaufsbalken parallel zum Ausbau laufen."
       ],
       [
         "Warum ist die Zahl der Gründungsmitglieder ein Tor für die Eröffnung?",
-        "Weil ein Studio mit zu wenigen Mitgliedern bei Eröffnung sein erstes Jahr kaum finanziert. Die Zielzahl als Meilenstein zu führen erzwingt eine ausdrückliche Entscheidung — Vorverkauf verlängern oder trotzdem öffnen — statt das Datum stillschweigend entscheiden zu lassen."
+        "Weil ein Studio mit zu wenigen Mitgliedern bei Eröffnung sein erstes Jahr kaum finanziert. Die Zielzahl als Meilenstein zu führen erzwingt eine ausdrückliche Entscheidung, Vorverkauf verlängern oder trotzdem öffnen, statt das Datum stillschweigend entscheiden zu lassen."
       ],
       [
         "Welche Anmeldungen und Genehmigungen braucht ein Studio in Deutschland?",
@@ -6519,18 +6519,18 @@ const T = {
   'iso-45001-certification-plan': {
     card: "Gefährdungsbeurteilung, Beteiligung der Beschäftigten, Ereignisnachweise, Stufe 1 und 2.",
     h1: "Projektplan für die ISO-45001-Zertifizierung",
-    metaTitle: "ISO 45001 — Zertifizierungsplan",
+    metaTitle: "ISO 45001: Zertifizierungsplan",
     metaDesc: "Kostenloser Plan zur ISO-45001-Zertifizierung: Gefährdungsbeurteilung, Beteiligung der Beschäftigten, Ereignisaufzeichnungen, Stufe-1- und Stufe-2-Audit.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-45001-Zertifizierung</strong>, die Konsultation und Beteiligung der Beschäftigten als terminierte Arbeit auf das Diagramm setzt, weil die Norm sie als Anforderung behandelt und nicht als Kommunikationsgeste. Das zweite Rückgrat ist die Gefährdungsbeurteilung: Ziele, Ablauflenkung und Schulung leiten sich daraus ab. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a>, der <a href=\"/de/templates/iso-14001-certification-plan.html\">ISO-14001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>. Wichtig für deutsche Betriebe: Das Zertifikat tritt nicht an die Stelle der Pflichten aus Arbeitsschutzgesetz, Arbeitssicherheitsgesetz und den Vorschriften Ihrer Berufsgenossenschaft — es baut auf ihnen auf.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für die ISO-45001-Zertifizierung</strong>, die Konsultation und Beteiligung der Beschäftigten als terminierte Arbeit auf das Diagramm setzt, weil die Norm sie als Anforderung behandelt und nicht als Kommunikationsgeste. Das zweite Rückgrat ist die Gefährdungsbeurteilung: Ziele, Ablauflenkung und Schulung leiten sich daraus ab. Die Auditmechanik hat dieselbe zweistufige Form wie der <a href=\"/de/templates/iso-9001-certification-plan.html\">ISO-9001-Zertifizierungsplan</a>, der <a href=\"/de/templates/iso-14001-certification-plan.html\">ISO-14001-Zertifizierungsplan</a> und der <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a>. Wichtig für deutsche Betriebe: Das Zertifikat tritt nicht an die Stelle der Pflichten aus Arbeitsschutzgesetz, Arbeitssicherheitsgesetz und den Vorschriften Ihrer Berufsgenossenschaft, es baut auf ihnen auf.",
     intro: "Beachten Sie, dass der Beteiligungsbalken fast über die volle Länge läuft und dass sich die Phase mit den Ereignisaufzeichnungen nicht stauchen lässt. Beides ist Absicht:",
     phases: [
       [
         "Anwendungsbereich, Kontext und Gap-Analyse",
-        "Grenzen des Arbeitsschutzmanagementsystems, die Beschäftigten und weiteren interessierten Parteien, eine Gap-Analyse gegen die Norm, die Arbeitsschutzpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle — der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
+        "Grenzen des Arbeitsschutzmanagementsystems, die Beschäftigten und weiteren interessierten Parteien, eine Gap-Analyse gegen die Norm, die Arbeitsschutzpolitik sowie die Auswahl einer bei der Deutschen Akkreditierungsstelle akkreditierten Zertifizierungsstelle, der Moment, in dem beide Audittermine gebucht werden. <em>Meilenstein: Anwendungsbereich und Politik freigegeben.</em>"
       ],
       [
         "Gefährdungsbeurteilung und Risikobewertung",
-        "Der Motor des Systems und zugleich die Pflicht aus § 5 Arbeitsschutzgesetz: Tätigkeiten und Arbeitsplätze erfassen, Gefährdungen im Regel- wie im Sonderbetrieb ermitteln, das Maßnahmenrangfolgeprinzip anwenden, psychische Belastungen einbeziehen und parallel das Verzeichnis der rechtlichen und sonstigen Anforderungen aufbauen — Arbeitsschutzgesetz, Verordnungen und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung. <em>Meilenstein: Gefährdungsbeurteilungen und Rechtsverzeichnis freigegeben.</em>"
+        "Der Motor des Systems und zugleich die Pflicht aus § 5 Arbeitsschutzgesetz: Tätigkeiten und Arbeitsplätze erfassen, Gefährdungen im Regel- wie im Sonderbetrieb ermitteln, das Maßnahmenrangfolgeprinzip anwenden, psychische Belastungen einbeziehen und parallel das Verzeichnis der rechtlichen und sonstigen Anforderungen aufbauen, Arbeitsschutzgesetz, Verordnungen und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung. <em>Meilenstein: Gefährdungsbeurteilungen und Rechtsverzeichnis freigegeben.</em>"
       ],
       [
         "Beteiligung der Beschäftigten und betriebliche Gremien",
@@ -6549,14 +6549,14 @@ const T = {
         "Das interne Audit und seine Korrekturmaßnahmen, die Managementbewertung, danach Stufe 1, das Zeitfenster für Korrekturmaßnahmen und Stufe 2. <em>Meilenstein: ISO-45001-Zertifikat erteilt.</em>"
       ]
     ],
-    callout: "Die Beteiligung ist der Punkt, an dem sich ISO 45001 am stärksten von den anderen Managementsystemnormen unterscheidet, und sie ist das, was Pläne am häufigsten zu einem Aushang schrumpfen lassen. Die Norm erwartet, dass Beschäftigte — ausdrücklich auch nicht führende Beschäftigte — zu bestimmten Dingen konsultiert werden und sich beteiligen: Gefährdungsermittlung, Risikobewertung, Festlegung der Maßnahmen, Untersuchung von Ereignissen. Das sind Sitzungen, Protokolle, benannte Personen und Nachweise, und das gehört mit Terminen auf das Diagramm. In Deutschland haben Sie dafür bereits einen Rahmen, den Sie nutzen statt daneben zu bauen: den Arbeitsschutzausschuss, die Sicherheitsbeauftragten, die Fachkraft für Arbeitssicherheit und den Betriebsarzt — und den Betriebsrat, dessen Mitbestimmung im Arbeitsschutz kein Beiwerk ist. Die zweite Falle ist der Zeitraum, der Aufzeichnungen erzeugt. Stufe 2 zieht Stichproben aus Unfallmeldungen, Beinaheereignissen, Untersuchungen und geschlossenen Maßnahmen; beginnt Ihre Meldekultur drei Wochen vor dem Audit, gibt es nichts zu ziehen und keinen Verlauf zu zeigen. Beginnen Sie früh und werten Sie eine steigende Zahl gemeldeter Beinaheereignisse als Erfolg, nicht als Misserfolg.",
+    callout: "Die Beteiligung ist der Punkt, an dem sich ISO 45001 am stärksten von den anderen Managementsystemnormen unterscheidet, und sie ist das, was Pläne am häufigsten zu einem Aushang schrumpfen lassen. Die Norm erwartet, dass Beschäftigte, ausdrücklich auch nicht führende Beschäftigte, zu bestimmten Dingen konsultiert werden und sich beteiligen: Gefährdungsermittlung, Risikobewertung, Festlegung der Maßnahmen, Untersuchung von Ereignissen. Das sind Sitzungen, Protokolle, benannte Personen und Nachweise, und das gehört mit Terminen auf das Diagramm. In Deutschland haben Sie dafür bereits einen Rahmen, den Sie nutzen statt daneben zu bauen: den Arbeitsschutzausschuss, die Sicherheitsbeauftragten, die Fachkraft für Arbeitssicherheit und den Betriebsarzt, und den Betriebsrat, dessen Mitbestimmung im Arbeitsschutz kein Beiwerk ist. Die zweite Falle ist der Zeitraum, der Aufzeichnungen erzeugt. Stufe 2 zieht Stichproben aus Unfallmeldungen, Beinaheereignissen, Untersuchungen und geschlossenen Maßnahmen; beginnt Ihre Meldekultur drei Wochen vor dem Audit, gibt es nichts zu ziehen und keinen Verlauf zu zeigen. Beginnen Sie früh und werten Sie eine steigende Zahl gemeldeter Beinaheereignisse als Erfolg, nicht als Misserfolg.",
     customize: [
       "Buchen Sie die Zertifizierungsstelle früh und legen Sie den Termin für Stufe 2 fest; alles davor ist danach ein Countdown und keine Schätzung.",
-      "Erweitern Sie die Zeilen zur Gefährdungsbeurteilung auf eine Zeile je Standort, Bereich oder Tätigkeit mit hohem Risiko — eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
+      "Erweitern Sie die Zeilen zur Gefährdungsbeurteilung auf eine Zeile je Standort, Bereich oder Tätigkeit mit hohem Risiko, eine einzelne Zeile verbirgt den tatsächlichen Aufwand.",
       "Legen Sie den Sitzungsrhythmus des Arbeitsschutzausschusses auf Ihren eigenen Takt, mindestens aber vierteljährlich, und lassen Sie den Balken über Stufe 2 hinauslaufen; das Audit sucht Kontinuität, keinen Schub.",
       "Lassen Sie mindestens sechs Wochen zwischen Stufe 1 und Stufe 2, damit die dort aufgenommenen Korrekturmaßnahmen wirklich geschlossen werden können.",
-      "Verlängern Sie die Betriebsphase, wenn Ihre Ereigniszahlen niedrig sind — Sie brauchen genug Aufzeichnungen, damit ein Verlauf sichtbar wird.",
-      "Ergänzen Sie Zeilen für die Besichtigung durch die Aufsichtsperson der Berufsgenossenschaft, für wiederkehrende Prüfungen befähigter Personen und für arbeitsmedizinische Vorsorgetermine, die in das Fenster fallen — sie konkurrieren um dieselben Personen.",
+      "Verlängern Sie die Betriebsphase, wenn Ihre Ereigniszahlen niedrig sind, Sie brauchen genug Aufzeichnungen, damit ein Verlauf sichtbar wird.",
+      "Ergänzen Sie Zeilen für die Besichtigung durch die Aufsichtsperson der Berufsgenossenschaft, für wiederkehrende Prüfungen befähigter Personen und für arbeitsmedizinische Vorsorgetermine, die in das Fenster fallen, sie konkurrieren um dieselben Personen.",
       "Nehmen Sie die psychische Belastung als eigene Zeile auf. Sie ist Teil der Gefährdungsbeurteilung nach dem Arbeitsschutzgesetz, sie braucht eine Erhebungsmethode und die Beteiligung des Betriebsrats, und sie ist die am häufigsten fehlende Zeile in deutschen Gefährdungsbeurteilungen."
     ],
     tips: [
@@ -6564,7 +6564,7 @@ const T = {
       "<strong>Decken Sie den Sonderbetrieb ab.</strong> Instandhaltung, Stillstände, Fremdfirmentätigkeiten und Notfälle sind die Stellen, an denen Gefährdungsbeurteilungen am sichtbarsten dünn sind.",
       "<strong>Wenden Sie die Maßnahmenrangfolge ausdrücklich an.</strong> Die auditierende Person wird fragen, warum Sie persönliche Schutzausrüstung gewählt haben statt Beseitigung oder Ersatz, und erwartet eine dokumentierte Antwort.",
       "<strong>Fördern Sie das Melden von Beinaheereignissen früh.</strong> Es sind genau die Aufzeichnungen, aus denen Stufe 2 Stichproben zieht, und sie sammeln sich ehrlich nur über Monate an.",
-      "<strong>Nutzen Sie den Arbeitsschutzausschuss als Nachweisquelle.</strong> Er existiert ohnehin gesetzlich, tagt vierteljährlich und produziert Protokolle — ein paralleles Beteiligungsgremium für das Audit aufzubauen erzeugt doppelte Arbeit und widersprüchliche Aufzeichnungen.",
+      "<strong>Nutzen Sie den Arbeitsschutzausschuss als Nachweisquelle.</strong> Er existiert ohnehin gesetzlich, tagt vierteljährlich und produziert Protokolle, ein paralleles Beteiligungsgremium für das Audit aufzubauen erzeugt doppelte Arbeit und widersprüchliche Aufzeichnungen.",
       "<strong>Halten Sie die vier ISO-Normen auseinander.</strong> ISO 45001, ISO 9001, ISO 14001 und ISO 27001 teilen eine gemeinsame Grundstruktur und lassen sich gemeinsam auditieren, sind aber vier getrennte akkreditierte Zertifizierungen mit unterschiedlichem Inhalt."
     ],
     faq: [
@@ -6574,23 +6574,23 @@ const T = {
       ],
       [
         "Ersetzt ISO 45001 die Pflichten aus dem Arbeitsschutzgesetz?",
-        "Nein, und das ist die wichtigste Klarstellung für deutsche Betriebe. Gefährdungsbeurteilung nach § 5, Unterweisung nach § 12, die Bestellung von Fachkraft für Arbeitssicherheit und Betriebsarzt nach dem Arbeitssicherheitsgesetz, der Arbeitsschutzausschuss, die Unfallmeldung an die Berufsgenossenschaft und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung gelten unabhängig davon, ob Sie zertifiziert sind. ISO 45001 ist eine freiwillige Norm, die diese Pflichten in ein Managementsystem einordnet und überprüfbar macht — sie hebt keine davon auf und ersetzt keine Aufsicht."
+        "Nein, und das ist die wichtigste Klarstellung für deutsche Betriebe. Gefährdungsbeurteilung nach § 5, Unterweisung nach § 12, die Bestellung von Fachkraft für Arbeitssicherheit und Betriebsarzt nach dem Arbeitssicherheitsgesetz, der Arbeitsschutzausschuss, die Unfallmeldung an die Berufsgenossenschaft und die Vorschriften der Deutschen Gesetzlichen Unfallversicherung gelten unabhängig davon, ob Sie zertifiziert sind. ISO 45001 ist eine freiwillige Norm, die diese Pflichten in ein Managementsystem einordnet und überprüfbar macht, sie hebt keine davon auf und ersetzt keine Aufsicht."
       ],
       [
         "Warum wird die Beteiligung der Beschäftigten als echte Arbeit terminiert?",
-        "Weil die Norm sie verlangt. ISO 45001 fordert, Beschäftigte einschließlich nicht führender Beschäftigter zu konsultieren und ihre Beteiligung zu ermöglichen — bei Gefährdungsermittlung, Risikobewertung, Festlegung von Maßnahmen und Untersuchung von Ereignissen — und Hindernisse für die Beteiligung abzubauen. Das bedeutet Vertretungen, ein Gremium, einen Sitzungsrhythmus und Aufzeichnungen, alles mit Terminen. Deshalb gibt die Vorlage dem Balken statt einer Kommunikationszeile."
+        "Weil die Norm sie verlangt. ISO 45001 fordert, Beschäftigte einschließlich nicht führender Beschäftigter zu konsultieren und ihre Beteiligung zu ermöglichen, bei Gefährdungsermittlung, Risikobewertung, Festlegung von Maßnahmen und Untersuchung von Ereignissen, und Hindernisse für die Beteiligung abzubauen. Das bedeutet Vertretungen, ein Gremium, einen Sitzungsrhythmus und Aufzeichnungen, alles mit Terminen. Deshalb gibt die Vorlage dem Balken statt einer Kommunikationszeile."
       ],
       [
         "Welche Rolle hat der Betriebsrat?",
-        "Eine starke. Im Arbeitsschutz hat der Betriebsrat Mitbestimmungsrechte nach dem Betriebsverfassungsgesetz, unter anderem bei Regelungen über den Gesundheitsschutz im Rahmen gesetzlicher Vorschriften und bei der Ausgestaltung der Gefährdungsbeurteilung. Praktisch heißt das: Methode und Instrumente der Beurteilung, Unterweisungskonzepte und Meldesysteme werden mit ihm vereinbart, häufig in einer Betriebsvereinbarung. Planen Sie diese Abstimmung als eigene Balken vor der Einführung ein — nachträglich eingeführte Systeme ohne Beteiligung sind der klassische Grund für Verzögerungen kurz vor Stufe 2."
+        "Eine starke. Im Arbeitsschutz hat der Betriebsrat Mitbestimmungsrechte nach dem Betriebsverfassungsgesetz, unter anderem bei Regelungen über den Gesundheitsschutz im Rahmen gesetzlicher Vorschriften und bei der Ausgestaltung der Gefährdungsbeurteilung. Praktisch heißt das: Methode und Instrumente der Beurteilung, Unterweisungskonzepte und Meldesysteme werden mit ihm vereinbart, häufig in einer Betriebsvereinbarung. Planen Sie diese Abstimmung als eigene Balken vor der Einführung ein, nachträglich eingeführte Systeme ohne Beteiligung sind der klassische Grund für Verzögerungen kurz vor Stufe 2."
       ],
       [
         "Worin unterscheidet sich ISO 45001 von ISO 9001, ISO 14001 und ISO 27001?",
-        "Sie teilen dieselbe Grundstruktur für Managementsysteme und dieselbe zweistufige Auditmechanik, der Inhalt unterscheidet sich vollständig: ISO 45001 ist Arbeits- und Gesundheitsschutz, ISO 9001 Qualität, ISO 14001 Umwelt, ISO 27001 Informationssicherheit. Alle vier sind eigenständige akkreditierte Zertifizierungen mit eigenem Anwendungsbereich und eigenem Zertifikat; Nachweise für eine erfüllen nicht die andere. Beachten Sie außerdem, dass SOC 2 ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA ist und überhaupt keine ISO-Norm — siehe die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, falls Sie das brauchen."
+        "Sie teilen dieselbe Grundstruktur für Managementsysteme und dieselbe zweistufige Auditmechanik, der Inhalt unterscheidet sich vollständig: ISO 45001 ist Arbeits- und Gesundheitsschutz, ISO 9001 Qualität, ISO 14001 Umwelt, ISO 27001 Informationssicherheit. Alle vier sind eigenständige akkreditierte Zertifizierungen mit eigenem Anwendungsbereich und eigenem Zertifikat; Nachweise für eine erfüllen nicht die andere. Beachten Sie außerdem, dass SOC 2 ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA ist und überhaupt keine ISO-Norm, siehe die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, falls Sie das brauchen."
       ],
       [
         "Können wir ein integriertes Managementsystem über mehrere Normen führen?",
-        "Ja. Ein integriertes Managementsystem führt die gemeinsamen Kapitel — Politik, Kontext, internes Audit, Managementbewertung, dokumentierte Information — einmal statt viermal, und Zertifizierungsstellen auditieren sie häufig in einem kombinierten Besuch. Es verschmilzt die Zertifizierungen aber nicht: Sie halten weiterhin getrennte Zertifikate gegen getrennte Normen mit getrennten Anwendungsbereichen, und die normspezifischen Inhalte bleiben ebenfalls getrennt."
+        "Ja. Ein integriertes Managementsystem führt die gemeinsamen Kapitel, Politik, Kontext, internes Audit, Managementbewertung, dokumentierte Information, einmal statt viermal, und Zertifizierungsstellen auditieren sie häufig in einem kombinierten Besuch. Es verschmilzt die Zertifizierungen aber nicht: Sie halten weiterhin getrennte Zertifikate gegen getrennte Normen mit getrennten Anwendungsbereichen, und die normspezifischen Inhalte bleiben ebenfalls getrennt."
       ],
       [
         "Wie viele Ereignisaufzeichnungen brauchen wir vor Stufe 2?",
@@ -6605,9 +6605,9 @@ const T = {
   'gdpr-compliance-timeline': {
     card: "Verarbeitungsverzeichnis zuerst, dann Rechtsgrundlagen, Löschfristen, Betroffenenrechte.",
     h1: "Zeitplan für die Umsetzung der Datenschutz-Grundverordnung",
-    metaTitle: "DSGVO-Umsetzung — Zeitplan",
+    metaTitle: "DSGVO-Umsetzung: Zeitplan",
     metaDesc: "Kostenloser DSGVO-Zeitplan: Verarbeitungsverzeichnis zuerst, dann Rechtsgrundlage, Löschkonzept, Drittlandtransfers, geübter Auskunfts- und Meldeprozess.",
-    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan zur Umsetzung der Datenschutz-Grundverordnung</strong>, gebaut für ein Programm, das einen verteidigungsfähigen Zustand erreicht und dann weiterläuft, statt fertig zu werden. Der Ordnungsgedanke: Das Verzeichnis von Verarbeitungstätigkeiten kommt zuerst — Rechtsgrundlage, Löschfristen, Übermittlungsmechanismen und Datenschutz-Folgenabschätzungen leiten sich alle daraus ab, dass Sie wissen, was Sie mit personenbezogenen Daten tatsächlich tun. Die beiden extern getakteten Uhren — die Frist für Betroffenenanfragen und die Meldefrist bei Datenschutzverletzungen — stehen als Prozesse auf dem Diagramm, die geübt werden, bevor sie jemand braucht. Ergänzend zur Verordnung gilt in Deutschland das Bundesdatenschutzgesetz, und zuständig ist in der Regel die Datenschutzaufsichtsbehörde des Landes, in dem Ihre Hauptniederlassung liegt.",
+    lead: "Eine kostenlose <strong>Vorlage für den Zeitplan zur Umsetzung der Datenschutz-Grundverordnung</strong>, gebaut für ein Programm, das einen verteidigungsfähigen Zustand erreicht und dann weiterläuft, statt fertig zu werden. Der Ordnungsgedanke: Das Verzeichnis von Verarbeitungstätigkeiten kommt zuerst, Rechtsgrundlage, Löschfristen, Übermittlungsmechanismen und Datenschutz-Folgenabschätzungen leiten sich alle daraus ab, dass Sie wissen, was Sie mit personenbezogenen Daten tatsächlich tun. Die beiden extern getakteten Uhren, die Frist für Betroffenenanfragen und die Meldefrist bei Datenschutzverletzungen, stehen als Prozesse auf dem Diagramm, die geübt werden, bevor sie jemand braucht. Ergänzend zur Verordnung gilt in Deutschland das Bundesdatenschutzgesetz, und zuständig ist in der Regel die Datenschutzaufsichtsbehörde des Landes, in dem Ihre Hauptniederlassung liegt.",
     intro: "Der Balken für das Verarbeitungsverzeichnis ist das Tor für fast alles danach, und die beiden Übungszeilen gibt es, weil ein Prozess, den niemand durchlaufen hat, kein Prozess ist:",
     phases: [
       [
@@ -6615,7 +6615,7 @@ const T = {
         "Verantwortliche Zuständigkeit, die Bestellung eines Datenschutzbeauftragten, wo Verordnung oder Bundesdatenschutzgesetz sie verlangen, die Einordnung je Tätigkeit als Verantwortlicher oder Auftragsverarbeiter, welche Gesellschaften und Länder im Anwendungsbereich liegen, die Feststellung der federführenden Aufsichtsbehörde, eine Reifegradbewertung und das Steuerungsgremium. <em>Meilenstein: Anwendungsbereich und Rollen geklärt.</em>"
       ],
       [
-        "Verzeichnis von Verarbeitungstätigkeiten — das Fundament",
+        "Verzeichnis von Verarbeitungstätigkeiten, das Fundament",
         "Erhebungsworkshops mit jedem Fachbereich, ein Systeminventar, die Abbildung von Verarbeitungstätigkeiten und Datenflüssen, Kennzeichnung besonderer Kategorien personenbezogener Daten und Beschäftigtendaten sowie die Abnahme des Verzeichnisses durch die Personen, denen die Verarbeitung tatsächlich gehört. <em>Meilenstein: Verarbeitungsverzeichnis als Basis festgeschrieben.</em>"
       ],
       [
@@ -6635,15 +6635,15 @@ const T = {
         "Prüfkriterien und Datenschutz-Folgenabschätzungen für risikoreiche Verarbeitung, Nachverhandlung der Auftragsverarbeitungsverträge, Betriebsvereinbarungen für Systeme, die der Mitbestimmung unterliegen, Schulungen und der Änderungsprozess, der das Verzeichnis aktuell hält, wenn das Programm kein Programm mehr ist. <em>Meilenstein: verteidigungsfähiger Zustand erreicht.</em>"
       ]
     ],
-    callout: "Zwei Zahlen stehen in der Verordnung selbst und sind es wert, genau wiedergegeben zu werden. Artikel 12 setzt die Frist für die Antwort auf einen Antrag einer betroffenen Person auf einen Monat ab Eingang, verlängerbar um weitere zwei Monate, wenn Anträge komplex oder zahlreich sind und die betroffene Person innerhalb des ersten Monats über die Verlängerung und deren Gründe unterrichtet wird. Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet — es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen; erfolgt die Meldung später, ist ihr eine Begründung der Verzögerung beizufügen. Beide Zahlen haben Bedingungen: wann die Frist beginnt, wann sie verlängert werden darf, wann keine Meldung nötig ist. Hinzu kommt eine deutsche Besonderheit, die den Zeitplan wirklich verändert: Führen Sie ein System ein, das zur Überwachung von Verhalten oder Leistung der Beschäftigten geeignet ist, hat der Betriebsrat ein Mitbestimmungsrecht nach § 87 Absatz 1 Nummer 6 Betriebsverfassungsgesetz. Praktisch heißt das, eine Betriebsvereinbarung kann die Einführung tatsächlich blockieren, bis sie geschlossen ist — sie gehört als eigener Balken vor den Rollout und nicht als Nacharbeit dahinter. Flachen Sie nichts davon zu einem Poster ab und klären Sie Ihre konkrete Lage anwaltlich statt anhand einer Zusammenfassung.",
+    callout: "Zwei Zahlen stehen in der Verordnung selbst und sind es wert, genau wiedergegeben zu werden. Artikel 12 setzt die Frist für die Antwort auf einen Antrag einer betroffenen Person auf einen Monat ab Eingang, verlängerbar um weitere zwei Monate, wenn Anträge komplex oder zahlreich sind und die betroffene Person innerhalb des ersten Monats über die Verlängerung und deren Gründe unterrichtet wird. Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet, es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen; erfolgt die Meldung später, ist ihr eine Begründung der Verzögerung beizufügen. Beide Zahlen haben Bedingungen: wann die Frist beginnt, wann sie verlängert werden darf, wann keine Meldung nötig ist. Hinzu kommt eine deutsche Besonderheit, die den Zeitplan wirklich verändert: Führen Sie ein System ein, das zur Überwachung von Verhalten oder Leistung der Beschäftigten geeignet ist, hat der Betriebsrat ein Mitbestimmungsrecht nach § 87 Absatz 1 Nummer 6 Betriebsverfassungsgesetz. Praktisch heißt das, eine Betriebsvereinbarung kann die Einführung tatsächlich blockieren, bis sie geschlossen ist, sie gehört als eigener Balken vor den Rollout und nicht als Nacharbeit dahinter. Flachen Sie nichts davon zu einem Poster ab und klären Sie Ihre konkrete Lage anwaltlich statt anhand einer Zusammenfassung.",
     customize: [
       "Teilen Sie die Erhebungs- und Verzeichniszeilen auf eine Zeile je Fachbereich oder Gesellschaft auf; eine einzelne Zeile verbirgt das größte Arbeitspaket im ganzen Plan.",
       "Sind Sie Auftragsverarbeiter und nicht Verantwortlicher, bauen Sie die Phasen zu Betroffenenrechten und Meldung um Ihre Pflicht zur Unterstützung und zur Benachrichtigung Ihrer Auftraggeber herum neu auf.",
-      "Legen Sie eine Zeile je Übermittlungsroute an, wenn Sie Daten in Drittländer geben — Mechanismus und Prüfung unterscheiden sich je Route und Zielland.",
+      "Legen Sie eine Zeile je Übermittlungsroute an, wenn Sie Daten in Drittländer geben, Mechanismus und Prüfung unterscheiden sich je Route und Zielland.",
       "Verlängern Sie die Phase zu den Betroffenenrechten, wenn Ihre Daten in vielen Systemen liegen; die Extraktionswerkzeuge sind fast immer der lange Balken, nicht die rechtliche Prüfung.",
-      "Ergänzen Sie Zeilen für laufende Verfahren mit der Aufsichtsbehörde, vorherige Konsultationen nach Artikel 36 oder offene Beschwerden — sie überholen den Plan.",
+      "Ergänzen Sie Zeilen für laufende Verfahren mit der Aufsichtsbehörde, vorherige Konsultationen nach Artikel 36 oder offene Beschwerden, sie überholen den Plan.",
       "Setzen Sie eine eigene Zeile für die Verhandlung von Betriebsvereinbarungen zu mitbestimmungspflichtigen Systemen und legen Sie sie vor den jeweiligen Rollout. Verhandlungen mit dem Betriebsrat haben eine echte Dauer, die nicht Ihrem Projektplan folgt.",
-      "Lassen Sie die letzte Phase über den Meilenstein hinauslaufen — das Verarbeitungsverzeichnis veraltet in dem Moment, in dem ein neues System oder ein neuer Dienstleister ankommt."
+      "Lassen Sie die letzte Phase über den Meilenstein hinauslaufen, das Verarbeitungsverzeichnis veraltet in dem Moment, in dem ein neues System oder ein neuer Dienstleister ankommt."
     ],
     tips: [
       "<strong>Bauen Sie das Verzeichnis vor den Richtlinien.</strong> Richtlinien, die vor der Kenntnis der Verarbeitung geschrieben werden, beschreiben eine Organisation, die Sie nicht haben, und die erste Anfrage zeigt es.",
@@ -6651,7 +6651,7 @@ const T = {
       "<strong>Üben Sie die Meldeentscheidung, nicht nur die technische Reaktion.</strong> Das Schwierige ist die Risikobewertung und die Entscheidung, ob gemeldet werden muss, und diese Entscheidung sollten Menschen treffen, die sie schon einmal getroffen haben.",
       "<strong>Halten Sie fest, warum Sie nicht gemeldet haben.</strong> Bewerten Sie eine Verletzung als nicht meldepflichtig, sind die Begründung und ihre Dokumentation das, was die Entscheidung später trägt.",
       "<strong>Binden Sie den Betriebsrat früh ein, nicht am Ende.</strong> Ein fertig konfiguriertes System, das der Mitbestimmung unterliegt, ist eine schlechtere Verhandlungsposition als ein Konzept, und die Verzögerung trifft den Rollout, nicht die Rechtsabteilung.",
-      "<strong>Klären Sie, welche Aufsichtsbehörde für Sie zuständig ist.</strong> In Deutschland sind die Aufsichtsbehörden je Land organisiert, und ihre Auslegungshinweise und Formulare unterscheiden sich — das ist eine Planungstatsache, kein Detail.",
+      "<strong>Klären Sie, welche Aufsichtsbehörde für Sie zuständig ist.</strong> In Deutschland sind die Aufsichtsbehörden je Land organisiert, und ihre Auslegungshinweise und Formulare unterscheiden sich, das ist eine Planungstatsache, kein Detail.",
       "<strong>Hängen Sie das Verzeichnis in den Änderungsprozess.</strong> Ein neuer Dienstleister, ein neues System oder eine neue Funktion soll das Verzeichnis routinemäßig aktualisieren, sonst bauen Sie es in zwei Jahren neu."
     ],
     faq: [
@@ -6661,11 +6661,11 @@ const T = {
       ],
       [
         "Welche Frist gilt für die Auskunft an eine betroffene Person?",
-        "Artikel 12 der Verordnung setzt die Frist auf einen Monat ab Eingang des Antrags. Sie kann um weitere zwei Monate verlängert werden, wenn dies unter Berücksichtigung der Komplexität und der Anzahl der Anträge erforderlich ist, und der Verantwortliche muss die betroffene Person innerhalb eines Monats nach Eingang über die Verlängerung und die Gründe unterrichten. Die praktischen Schwierigkeiten liegen darin, wann die Frist beginnt, wie die Identität geprüft wird und wie mit offenkundig unbegründeten oder exzessiven Anträgen umzugehen ist — lassen Sie Ihre konkrete Lage anwaltlich klären."
+        "Artikel 12 der Verordnung setzt die Frist auf einen Monat ab Eingang des Antrags. Sie kann um weitere zwei Monate verlängert werden, wenn dies unter Berücksichtigung der Komplexität und der Anzahl der Anträge erforderlich ist, und der Verantwortliche muss die betroffene Person innerhalb eines Monats nach Eingang über die Verlängerung und die Gründe unterrichten. Die praktischen Schwierigkeiten liegen darin, wann die Frist beginnt, wie die Identität geprüft wird und wie mit offenkundig unbegründeten oder exzessiven Anträgen umzugehen ist, lassen Sie Ihre konkrete Lage anwaltlich klären."
       ],
       [
         "Was besagt die 72-Stunden-Meldefrist?",
-        "Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet — es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen. Erfolgt die Meldung nicht binnen 72 Stunden, ist ihr eine Begründung für die Verzögerung beizufügen. Getrennt davon verlangt Artikel 34 die Benachrichtigung der betroffenen Personen, wenn die Verletzung voraussichtlich ein hohes Risiko für sie zur Folge hat. Ab wann etwas als bekannt gilt, ist eine Wertungsfrage — deshalb übt die Vorlage die Bewertung und nicht nur die technische Eindämmung."
+        "Artikel 33 verlangt, dass der Verantwortliche eine Verletzung des Schutzes personenbezogener Daten unverzüglich und möglichst binnen 72 Stunden, nachdem sie ihm bekannt wurde, der zuständigen Aufsichtsbehörde meldet, es sei denn, die Verletzung führt voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen. Erfolgt die Meldung nicht binnen 72 Stunden, ist ihr eine Begründung für die Verzögerung beizufügen. Getrennt davon verlangt Artikel 34 die Benachrichtigung der betroffenen Personen, wenn die Verletzung voraussichtlich ein hohes Risiko für sie zur Folge hat. Ab wann etwas als bekannt gilt, ist eine Wertungsfrage, deshalb übt die Vorlage die Bewertung und nicht nur die technische Eindämmung."
       ],
       [
         "Welche Aufsichtsbehörde ist in Deutschland zuständig?",
@@ -6673,7 +6673,7 @@ const T = {
       ],
       [
         "Wann braucht ein Unternehmen einen Datenschutzbeauftragten?",
-        "Die Verordnung verlangt ihn in bestimmten Fällen, etwa bei umfangreicher regelmäßiger Überwachung oder umfangreicher Verarbeitung besonderer Kategorien. Das Bundesdatenschutzgesetz geht darüber hinaus und verlangt ihn zusätzlich, wenn in der Regel eine bestimmte Zahl von Personen ständig mit automatisierter Verarbeitung beschäftigt ist, sowie in weiteren Fällen. Weil diese Schwelle mehrfach angepasst wurde, prüfen Sie die geltende Fassung, statt sich auf eine erinnerte Zahl zu verlassen — die Bestellung selbst ist schnell, der Aufbau der Position nicht."
+        "Die Verordnung verlangt ihn in bestimmten Fällen, etwa bei umfangreicher regelmäßiger Überwachung oder umfangreicher Verarbeitung besonderer Kategorien. Das Bundesdatenschutzgesetz geht darüber hinaus und verlangt ihn zusätzlich, wenn in der Regel eine bestimmte Zahl von Personen ständig mit automatisierter Verarbeitung beschäftigt ist, sowie in weiteren Fällen. Weil diese Schwelle mehrfach angepasst wurde, prüfen Sie die geltende Fassung, statt sich auf eine erinnerte Zahl zu verlassen, die Bestellung selbst ist schnell, der Aufbau der Position nicht."
       ],
       [
         "Warum kommt das Verarbeitungsverzeichnis vor allem anderen?",
@@ -6681,7 +6681,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sich das von ISO 27001 oder SOC 2?",
-        "Die Datenschutz-Grundverordnung ist Recht und gilt unabhängig davon, ob Sie jemand zertifiziert. ISO 27001 ist eine akkreditierte Zertifizierung gegen eine Norm für Informationssicherheitsmanagement, und SOC 2 ist ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA — keines von beidem ist eine Feststellung rechtlicher Konformität. Die Sicherheitsmaßnahmen überschneiden sich stark, die Nachweise sind also wiederverwendbar, aber ein Zertifikat ist keine Verteidigung. Siehe den <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a> und die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, wenn Sie das parallel betreiben."
+        "Die Datenschutz-Grundverordnung ist Recht und gilt unabhängig davon, ob Sie jemand zertifiziert. ISO 27001 ist eine akkreditierte Zertifizierung gegen eine Norm für Informationssicherheitsmanagement, und SOC 2 ist ein Prüfungsbericht nach dem Standard des amerikanischen Wirtschaftsprüferverbands AICPA, keines von beidem ist eine Feststellung rechtlicher Konformität. Die Sicherheitsmaßnahmen überschneiden sich stark, die Nachweise sind also wiederverwendbar, aber ein Zertifikat ist keine Verteidigung. Siehe den <a href=\"/de/templates/iso-27001-certification-plan.html\">ISO-27001-Zertifizierungsplan</a> und die <a href=\"/de/templates/soc2-compliance-timeline.html\">SOC-2-Zeitplanvorlage</a>, wenn Sie das parallel betreiben."
       ],
       [
         "Ist die DSGVO-Vorlage kostenlos?",
@@ -6694,7 +6694,7 @@ const T = {
     h1: "Projektplan für das Kunden-Onboarding",
     metaTitle: "Projektplan Kunden-Onboarding",
     metaDesc: "Kostenloser Onboarding-Plan: Kickoff, Kundenabhängigkeiten mit Terminen, schneller erster Nutzen, Datenmigration, Schnittstellen, Schulung, Go-live.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Kunden-Onboarding</strong>, die ehrlich damit umgeht, wem der Terminplan gehört. Die meisten Balken unten hängen am Kunden: an seinen Daten, seinen Zugangsdaten für Schnittstellen, seiner Sicherheitsprüfung, seinen Freigaben und den Kalendern seiner Leute. Der Plan ist so geordnet, dass ein nutzbares Ergebnis früh landet — die Zeit bis zum ersten Nutzen ist die Kennzahl, die die Verlängerung vorhersagt — statt jede Konfigurationsentscheidung zu takten, bevor sich überhaupt jemand anmelden darf.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für das Kunden-Onboarding</strong>, die ehrlich damit umgeht, wem der Terminplan gehört. Die meisten Balken unten hängen am Kunden: an seinen Daten, seinen Zugangsdaten für Schnittstellen, seiner Sicherheitsprüfung, seinen Freigaben und den Kalendern seiner Leute. Der Plan ist so geordnet, dass ein nutzbares Ergebnis früh landet, die Zeit bis zum ersten Nutzen ist die Kennzahl, die die Verlängerung vorhersagt, statt jede Konfigurationsentscheidung zu takten, bevor sich überhaupt jemand anmelden darf.",
     intro: "Die Zeilen, die dem Kunden gehören, sind als seine gekennzeichnet. Sehen Sie sich an, wie viele es sind und wo sie im Verhältnis zu Ihrer eigenen Arbeit liegen:",
     phases: [
       [
@@ -6722,11 +6722,11 @@ const T = {
         "Bereitschaftsprüfung, Umstellung vom Altprozess, intensive Betreuung nach dem Start, Messung von Zeit bis zum ersten Nutzen und Nutzungsgrad, Abschaltung des Altsystems und Übergabe an die Kundenbetreuung. <em>Meilenstein: Onboarding geschlossen und Konto im Regelbetrieb.</em>"
       ]
     ],
-    callout: "Wenn ein Onboarding zu spät läuft, liegt die Ursache fast immer vor dem Lieferteam: der Datenexport, den vorher nie jemand gemacht hat, das Zugangspasswort für die Schnittstelle bei einem externen Dienstleister, der Sicherheitsfragebogen, der in einer Warteschlange liegt, die Betriebsvereinbarung für ein System mit Leistungsbezug, die noch verhandelt wird, oder die Person, die genau in der Woche der Konfigurationsfreigabe im Urlaub ist. Das ist keine Entschuldigung für lockere Planung — es ist ein Argument dafür, diese Abhängigkeiten in den ersten zwei Wochen zu benennen, jeweils einen Namen des Kunden dahinterzuschreiben und sie in jedem Statustermin durchzugehen. Die zweite Lehre ist, mit dem Takten aufzuhören. Es gibt enormen Druck, alles zu konfigurieren, bevor der Kunde das Produkt anfasst, und das erzeugt zuverlässig eine lange stille Phase und danach einen Start, dem niemand traut. Bringen Sie im ersten Monat ein echtes Ergebnis zum Laufen, auch wenn es von Hand geladen und eng ist, und bauen Sie von etwas aus weiter, an das der Kunde schon glaubt.",
+    callout: "Wenn ein Onboarding zu spät läuft, liegt die Ursache fast immer vor dem Lieferteam: der Datenexport, den vorher nie jemand gemacht hat, das Zugangspasswort für die Schnittstelle bei einem externen Dienstleister, der Sicherheitsfragebogen, der in einer Warteschlange liegt, die Betriebsvereinbarung für ein System mit Leistungsbezug, die noch verhandelt wird, oder die Person, die genau in der Woche der Konfigurationsfreigabe im Urlaub ist. Das ist keine Entschuldigung für lockere Planung, es ist ein Argument dafür, diese Abhängigkeiten in den ersten zwei Wochen zu benennen, jeweils einen Namen des Kunden dahinterzuschreiben und sie in jedem Statustermin durchzugehen. Die zweite Lehre ist, mit dem Takten aufzuhören. Es gibt enormen Druck, alles zu konfigurieren, bevor der Kunde das Produkt anfasst, und das erzeugt zuverlässig eine lange stille Phase und danach einen Start, dem niemand traut. Bringen Sie im ersten Monat ein echtes Ergebnis zum Laufen, auch wenn es von Hand geladen und eng ist, und bauen Sie von etwas aus weiter, an das der Kunde schon glaubt.",
     customize: [
       "Kennzeichnen Sie jede kundenseitige Zeile deutlich und schreiben Sie eine namentlich benannte Person auf seiner Seite dahinter, keine Abteilung.",
       "Ziehen Sie den Meilenstein des ersten Nutzens vor, wenn Ihr Produkt es zulässt; vier Wochen sind ein üblicher Zielwert, und kürzer ist besser.",
-      "Legen Sie eine Zeile je Schnittstelle und je Datenquelle an — ein Sammelbalken verbirgt genau die Abhängigkeiten, die rutschen werden.",
+      "Legen Sie eine Zeile je Schnittstelle und je Datenquelle an, ein Sammelbalken verbirgt genau die Abhängigkeiten, die rutschen werden.",
       "Nehmen Sie bei größeren Kunden Sicherheitsprüfung, Einkauf und Rechtsprüfung ausdrücklich auf; sie dauern regelmäßig länger als die technische Arbeit.",
       "Ergänzen Sie bei mitbestimmten Betrieben eine Zeile für die Beteiligung des Betriebsrats. Systeme, die Verhalten oder Leistung erfassen können, brauchen häufig eine Betriebsvereinbarung, und die ist ein echtes Tor vor dem Rollout und keine Formalie.",
       "Verlängern Sie die Bereinigungsschleife, wenn der Probeimport voraussichtlich Probleme findet; eine Runde ist für die meisten Migrationen optimistisch.",
@@ -6747,7 +6747,7 @@ const T = {
       ],
       [
         "Was ist die Zeit bis zum ersten Nutzen?",
-        "Die verstrichene Zeit von Vertrag oder Kickoff bis zu dem Moment, in dem der Kunde ein echtes, nützliches Ergebnis aus dem Produkt zieht — keine Vorführung, keine Schulungsübung. Um diese Kennzahl ist die Vorlage gebaut, weil ein Kunde, der echten Nutzen gesehen hat, den Rest der Einführung erträgt, und einer, der ihn nicht gesehen hat, zu fragen beginnt, was er eigentlich gekauft hat."
+        "Die verstrichene Zeit von Vertrag oder Kickoff bis zu dem Moment, in dem der Kunde ein echtes, nützliches Ergebnis aus dem Produkt zieht, keine Vorführung, keine Schulungsübung. Um diese Kennzahl ist die Vorlage gebaut, weil ein Kunde, der echten Nutzen gesehen hat, den Rest der Einführung erträgt, und einer, der ihn nicht gesehen hat, zu fragen beginnt, was er eigentlich gekauft hat."
       ],
       [
         "Warum stellt der Plan ein schmales Ergebnis nach vorn?",
@@ -6759,7 +6759,7 @@ const T = {
       ],
       [
         "Worin unterscheidet sich das von einem Einarbeitungsplan für neue Mitarbeitende?",
-        "Trotz des ähnlichen Worts ein völlig anderer Plan. Die <a href=\"/de/templates/employee-onboarding.html\">Vorlage für die Einarbeitung neuer Mitarbeitender</a> deckt die ersten Wochen einer neuen Person ab — Ausstattung, Zugänge, Vorstellungen, Einarbeitung. Diese hier deckt die Einführung eines Produkts bei einem zahlenden Kunden ab, wo der Terminplan mit einer anderen Organisation geteilt wird und das meiste Risiko auf deren Seite liegt."
+        "Trotz des ähnlichen Worts ein völlig anderer Plan. Die <a href=\"/de/templates/employee-onboarding.html\">Vorlage für die Einarbeitung neuer Mitarbeitender</a> deckt die ersten Wochen einer neuen Person ab, Ausstattung, Zugänge, Vorstellungen, Einarbeitung. Diese hier deckt die Einführung eines Produkts bei einem zahlenden Kunden ab, wo der Terminplan mit einer anderen Organisation geteilt wird und das meiste Risiko auf deren Seite liegt."
       ],
       [
         "Ist die Onboarding-Vorlage kostenlos?",
@@ -6772,7 +6772,7 @@ const T = {
     h1: "Projektplan für einen Markenrelaunch",
     metaTitle: "Projektplan Markenrelaunch",
     metaDesc: "Kostenloser Plan für den Markenrelaunch: Namensfindung, Markenanmeldung beim DPMA, Identität, Produktion, gleichzeitige Umstellung und der lange Nachlauf.",
-    lead: "Eine kostenlose <strong>Projektplan-Vorlage für einen Markenrelaunch</strong>, geordnet um eine harte Tatsache: Die Enthüllung ist ein Moment, und in diesem Moment muss alles, was Sie kontrollieren, gemeinsam umschalten. Website, Produktoberfläche, E-Mail-Vorlagen, Profile in sozialen Netzwerken, Beschilderung, Präsentationen, Rechnungen. Davor liegt ein Langläufer, der einen Namen spät noch töten kann — Recherche, Anmeldung und Eintragung der Marke beim Deutschen Patent- und Markenamt und gegebenenfalls beim Amt der Europäischen Union für geistiges Eigentum, mit der Widerspruchsfrist danach. Dahinter liegt ein Nachlauf aus physischen und fremden Oberflächen, die am Tag selbst nicht umschalten können und nachgehalten werden müssen.",
+    lead: "Eine kostenlose <strong>Projektplan-Vorlage für einen Markenrelaunch</strong>, geordnet um eine harte Tatsache: Die Enthüllung ist ein Moment, und in diesem Moment muss alles, was Sie kontrollieren, gemeinsam umschalten. Website, Produktoberfläche, E-Mail-Vorlagen, Profile in sozialen Netzwerken, Beschilderung, Präsentationen, Rechnungen. Davor liegt ein Langläufer, der einen Namen spät noch töten kann, Recherche, Anmeldung und Eintragung der Marke beim Deutschen Patent- und Markenamt und gegebenenfalls beim Amt der Europäischen Union für geistiges Eigentum, mit der Widerspruchsfrist danach. Dahinter liegt ein Nachlauf aus physischen und fremden Oberflächen, die am Tag selbst nicht umschalten können und nachgehalten werden müssen.",
     intro: "Der Balken für die markenrechtliche Prüfung liegt aus gutem Grund unter der Gestaltungsarbeit, und der Nachlauf nach dem Umstellungstag ist länger, als die meisten Pläne zugeben:",
     phases: [
       [
@@ -6797,16 +6797,16 @@ const T = {
       ],
       [
         "Umstellungstag und der lange Nachlauf",
-        "Die gleichzeitige Umstellung, die Ankündigung, die Übernahme der Profilnamen — danach der Teil, den Pläne vergessen: Montage der Beschilderung an allen Standorten, Verpackungswechsel nach Abverkauf der Altbestände, Oberflächen von Partnern und ein Abschlussdurchgang, der die alte Marke aufspürt. <em>Meilenstein: Nachlauf geschlossen und alte Marke abgelegt.</em>"
+        "Die gleichzeitige Umstellung, die Ankündigung, die Übernahme der Profilnamen, danach der Teil, den Pläne vergessen: Montage der Beschilderung an allen Standorten, Verpackungswechsel nach Abverkauf der Altbestände, Oberflächen von Partnern und ein Abschlussdurchgang, der die alte Marke aufspürt. <em>Meilenstein: Nachlauf geschlossen und alte Marke abgelegt.</em>"
       ]
     ],
-    callout: "Zwei Dinge bringen Markenrelaunches zu Fall. Das erste ist, ein markenrechtliches Problem zu entdecken, nachdem die Identität freigegeben ist und die Produktion läuft. Die Prüfung ist keine Formalie und sie ist nicht schnell: Eine Identitätsrecherche ist billig und rasch, eine Ähnlichkeitsrecherche über mehrere Klassen und Länder ist beides nicht. In Deutschland kommt eine Besonderheit hinzu, die Sie einplanen müssen: Das Deutsche Patent- und Markenamt prüft von Amts wegen nur absolute Schutzhindernisse, nicht ältere Rechte Dritter. Nach der Eintragung läuft eine dreimonatige Widerspruchsfrist, und ein Widerspruch kann also Monate nach der Anmeldung eintreffen, wenn Ihre Verpackung längst gedruckt ist. Legen Sie die Risikoeinschätzung vor die Gestaltungsausgaben und lassen Sie niemanden den neuen Namen extern zeigen, bevor die anwaltliche Entscheidung steht. Das zweite ist, die Enthüllung als Marketingstart zu behandeln statt als Umstellung. Eine Kampagne kann man staffeln; eine Umstellung ist ein Zustandswechsel, und eine halb umgestellte Marke — neue Website, alte Rechnungen, alte Beschilderung, alter Eintrag im App-Store — liest sich als Unternehmen, das sich nicht im Griff hat. Bauen Sie die Prüfliste nach Oberflächen, geben Sie jeder eine verantwortliche Person und akzeptieren Sie, dass die physischen und fremden nachlaufen — halten Sie sie deshalb als benannte Liste nach statt zu hoffen.",
+    callout: "Zwei Dinge bringen Markenrelaunches zu Fall. Das erste ist, ein markenrechtliches Problem zu entdecken, nachdem die Identität freigegeben ist und die Produktion läuft. Die Prüfung ist keine Formalie und sie ist nicht schnell: Eine Identitätsrecherche ist billig und rasch, eine Ähnlichkeitsrecherche über mehrere Klassen und Länder ist beides nicht. In Deutschland kommt eine Besonderheit hinzu, die Sie einplanen müssen: Das Deutsche Patent- und Markenamt prüft von Amts wegen nur absolute Schutzhindernisse, nicht ältere Rechte Dritter. Nach der Eintragung läuft eine dreimonatige Widerspruchsfrist, und ein Widerspruch kann also Monate nach der Anmeldung eintreffen, wenn Ihre Verpackung längst gedruckt ist. Legen Sie die Risikoeinschätzung vor die Gestaltungsausgaben und lassen Sie niemanden den neuen Namen extern zeigen, bevor die anwaltliche Entscheidung steht. Das zweite ist, die Enthüllung als Marketingstart zu behandeln statt als Umstellung. Eine Kampagne kann man staffeln; eine Umstellung ist ein Zustandswechsel, und eine halb umgestellte Marke, neue Website, alte Rechnungen, alte Beschilderung, alter Eintrag im App-Store, liest sich als Unternehmen, das sich nicht im Griff hat. Bauen Sie die Prüfliste nach Oberflächen, geben Sie jeder eine verantwortliche Person und akzeptieren Sie, dass die physischen und fremden nachlaufen, halten Sie sie deshalb als benannte Liste nach statt zu hoffen.",
     customize: [
       "Legen Sie eine Recherchezeile je Land und je Waren- und Dienstleistungsklasse an; Dauer und Risiko unterscheiden sich, und ein Sammelbalken verbirgt, welches Land das Problem ist.",
-      "Ergänzen Sie einen eigenen Balken für die dreimonatige Widerspruchsfrist nach der Eintragung und lassen Sie ihn bewusst hinter den Umstellungstag laufen, wenn Sie nicht warten wollen — dann ist es eine bewusst getragene Restriktion und keine Überraschung.",
-      "Wenn Sie auffrischen statt umbenennen, streichen Sie Namensfindung und Markenprüfung und beginnen Sie bei der Gestaltung — der Plan wird um Monate kürzer.",
+      "Ergänzen Sie einen eigenen Balken für die dreimonatige Widerspruchsfrist nach der Eintragung und lassen Sie ihn bewusst hinter den Umstellungstag laufen, wenn Sie nicht warten wollen, dann ist es eine bewusst getragene Restriktion und keine Überraschung.",
+      "Wenn Sie auffrischen statt umbenennen, streichen Sie Namensfindung und Markenprüfung und beginnen Sie bei der Gestaltung, der Plan wird um Monate kürzer.",
       "Weiten Sie die Produktionsphase auf eine Zeile je Oberfläche aus, sobald die Inventur steht; die Zahl ist immer höher als die erste Schätzung.",
-      "Ergänzen Sie Zeilen für regulierte oder vertraglich gebundene Oberflächen — Produktkennzeichnung, Zertifikate, Zulassungen, Registereintragungen —, die ihre eigenen Freigabewege haben.",
+      "Ergänzen Sie Zeilen für regulierte oder vertraglich gebundene Oberflächen, Produktkennzeichnung, Zertifikate, Zulassungen, Registereintragungen, , die ihre eigenen Freigabewege haben.",
       "Prüfen Sie in einer eigenen Zeile, ob sich auch die Firmierung ändert. Handelsregisteränderung, Impressum, Pflichtangaben auf Geschäftsbriefen und Rechnungsangaben folgen dann ihrem eigenen, notariell und gerichtlich getakteten Weg und nicht Ihrem Kampagnenplan.",
       "Setzen Sie das Enthüllungsdatum erst nach der Zeile für den Probelauf und binden Sie die Ankündigungszeilen daran statt an einen Kalendermonat.",
       "Verlängern Sie den Balken für den Verpackungswechsel auf Ihre tatsächliche Lagerreichweite; er ist meist der längste Nachlaufposten und der sichtbarste."
@@ -6816,7 +6816,7 @@ const T = {
       "<strong>Inventarisieren Sie jede Oberfläche, die die Marke trägt.</strong> Rechnungen, Verträge, E-Mail-Signaturen, Stellenanzeigen, App-Store-Einträge und die Begrüßung am Empfang zählen alle, und keines davon steht im Kreativbriefing.",
       "<strong>Proben Sie die Umstellung.</strong> Ein Durchlauf in der Testumgebung findet das fest verdrahtete Logo, das zwischengespeicherte Symbol im Browsertab und die Vorlage eines Dritten, für die sich niemand zuständig fühlte.",
       "<strong>Schützen Sie die Sichtbarkeit in Suchmaschinen.</strong> Weiterleitungsplan und Kontinuität der Auswertung sind der Unterschied zwischen einem Relaunch und einem Neustart bei null im organischen Verkehr.",
-      "<strong>Denken Sie an die Pflichtangaben.</strong> Impressum, Handelsregisternummer, Umsatzsteuer-Identifikationsnummer und die Angaben auf Geschäftsbriefen hängen an der Firmierung, nicht an der Marke — verwechseln Sie beides nicht, und ändern Sie nur, was sich wirklich ändert.",
+      "<strong>Denken Sie an die Pflichtangaben.</strong> Impressum, Handelsregisternummer, Umsatzsteuer-Identifikationsnummer und die Angaben auf Geschäftsbriefen hängen an der Firmierung, nicht an der Marke, verwechseln Sie beides nicht, und ändern Sie nur, was sich wirklich ändert.",
       "<strong>Halten Sie den Nachlauf als Liste nach, nicht als Phase.</strong> Beschilderung, Verpackung und Partneroberflächen stellen über Wochen oder Monate um, und Nachlaufposten ohne Verantwortliche fallen noch ein Jahr später auf."
     ],
     faq: [
@@ -6830,15 +6830,15 @@ const T = {
       ],
       [
         "Wie läuft die Markenanmeldung in Deutschland ab?",
-        "Sie melden beim Deutschen Patent- und Markenamt in München an, mit Angabe der Waren- und Dienstleistungsklassen nach der Nizza-Klassifikation. Das Amt prüft absolute Schutzhindernisse — fehlende Unterscheidungskraft, beschreibende Angaben, Freihaltebedürfnis — aber es prüft nicht, ob ältere Rechte Dritter entgegenstehen. Nach der Eintragung und ihrer Veröffentlichung läuft eine dreimonatige Widerspruchsfrist, in der Inhaber älterer Marken Widerspruch einlegen können. Für den europaweiten Schutz melden Sie stattdessen oder zusätzlich eine Unionsmarke beim Amt der Europäischen Union für geistiges Eigentum in Alicante an. Welcher Weg passt, ist eine Frage Ihrer Märkte und gehört anwaltlich geklärt."
+        "Sie melden beim Deutschen Patent- und Markenamt in München an, mit Angabe der Waren- und Dienstleistungsklassen nach der Nizza-Klassifikation. Das Amt prüft absolute Schutzhindernisse, fehlende Unterscheidungskraft, beschreibende Angaben, Freihaltebedürfnis, aber es prüft nicht, ob ältere Rechte Dritter entgegenstehen. Nach der Eintragung und ihrer Veröffentlichung läuft eine dreimonatige Widerspruchsfrist, in der Inhaber älterer Marken Widerspruch einlegen können. Für den europaweiten Schutz melden Sie stattdessen oder zusätzlich eine Unionsmarke beim Amt der Europäischen Union für geistiges Eigentum in Alicante an. Welcher Weg passt, ist eine Frage Ihrer Märkte und gehört anwaltlich geklärt."
       ],
       [
         "Was bedeutet die Widerspruchsfrist für die Planung?",
-        "Sie bedeutet, dass die Eintragung nicht das Ende des Risikos ist. Ein Widerspruch kann Monate nach der Anmeldung kommen, also potenziell zu einem Zeitpunkt, an dem Verpackung gedruckt, Beschilderung bestellt und die Website gebaut ist. Zeichnen Sie die Frist als eigenen Balken. Dann entscheiden Sie bewusst, ob Sie den Umstellungstag dahinter legen oder das Risiko tragen — beides ist vertretbar, unbewusst hineinzulaufen nicht."
+        "Sie bedeutet, dass die Eintragung nicht das Ende des Risikos ist. Ein Widerspruch kann Monate nach der Anmeldung kommen, also potenziell zu einem Zeitpunkt, an dem Verpackung gedruckt, Beschilderung bestellt und die Website gebaut ist. Zeichnen Sie die Frist als eigenen Balken. Dann entscheiden Sie bewusst, ob Sie den Umstellungstag dahinter legen oder das Risiko tragen, beides ist vertretbar, unbewusst hineinzulaufen nicht."
       ],
       [
         "Müssen wir alles am selben Tag umstellen?",
-        "Alles, was Sie kontrollieren, ja — Website, Produktoberfläche, Profilnamen, E-Mail-Vorlagen, Signaturen, Vertriebsunterlagen und die Ankündigung. Eine halbe Umstellung auf den eigenen Oberflächen wirkt wie ein Fehler und nicht wie eine Entscheidung. Physische und fremde Oberflächen sind die Ausnahme, weil sie wirklich nicht sofort umschalten können — deshalb gibt die Vorlage ihnen einen nachgehaltenen Nachlauf, statt so zu tun, als landeten sie am Tag selbst."
+        "Alles, was Sie kontrollieren, ja, Website, Produktoberfläche, Profilnamen, E-Mail-Vorlagen, Signaturen, Vertriebsunterlagen und die Ankündigung. Eine halbe Umstellung auf den eigenen Oberflächen wirkt wie ein Fehler und nicht wie eine Entscheidung. Physische und fremde Oberflächen sind die Ausnahme, weil sie wirklich nicht sofort umschalten können, deshalb gibt die Vorlage ihnen einen nachgehaltenen Nachlauf, statt so zu tun, als landeten sie am Tag selbst."
       ],
       [
         "Was wird bei einem Markenrelaunch meist vergessen?",
@@ -6858,9 +6858,9 @@ const T = {
   'online-course-creation-plan': {
     card: "Von der Idee bis zum Launch: validieren, aufnehmen, schneiden, Plattform und Verkaufsseite.",
     h1: "Vorlage für die Erstellung eines Online-Kurses",
-    metaTitle: "Online-Kurs erstellen — Gantt-Vorlage",
+    metaTitle: "Online-Kurs erstellen: Gantt-Vorlage",
     metaDesc: "Kostenlose Vorlage zum Erstellen eines Online-Kurses: validieren, gliedern, aufnehmen, schneiden, Verkaufsseite bauen und launchen. Excel oder online.",
-    lead: "Eine kostenlose <strong>Vorlage für die Erstellung eines Online-Kurses</strong>, die den Weg von der Idee bis zum Launch abbildet — Thema validieren, Curriculum gliedern, Lektionen skripten und aufnehmen, schneiden und zusammenstellen, Plattform und Verkaufsseite aufsetzen und dann den Launch fahren. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
+    lead: "Eine kostenlose <strong>Vorlage für die Erstellung eines Online-Kurses</strong>, die den Weg von der Idee bis zum Launch abbildet, Thema validieren, Curriculum gliedern, Lektionen skripten und aufnehmen, schneiden und zusammenstellen, Plattform und Verkaufsseite aufsetzen und dann den Launch fahren. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
     intro: "Die meisten Kurse bleiben zwischen \"aufgenommen\" und \"verkauft\" stecken, weil Produktion und Launch nie gemeinsam terminiert wurden. Diese Vorlage legt den ganzen Aufbau auf eine Zeitachse, in den sechs Phasen, die ein Kurs tatsächlich durchläuft:",
     phases: [
       [
@@ -6888,19 +6888,19 @@ const T = {
         "Die E-Mail-Liste aufwärmen, Pre-Launch-Inhalte oder ein Webinar fahren, den Verkauf öffnen und danach nachfassen und Bewertungen sammeln. <em>Meilenstein: Launch abgeschlossen.</em>"
       ]
     ],
-    callout: "Validieren, bevor Sie aufnehmen. Der teuerste Fehler bei der Kurserstellung ist, zwanzig Lektionen zu einem Thema zu filmen, für das niemand zahlt — setzen Sie einen echten Validierungs-Meilenstein (Warteliste, Umfrage oder kleiner Vorverkauf) vor die Produktion und machen Sie die Aufnahme davon abhängig.",
+    callout: "Validieren, bevor Sie aufnehmen. Der teuerste Fehler bei der Kurserstellung ist, zwanzig Lektionen zu einem Thema zu filmen, für das niemand zahlt, setzen Sie einen echten Validierungs-Meilenstein (Warteliste, Umfrage oder kleiner Vorverkauf) vor die Produktion und machen Sie die Aufnahme davon abhängig.",
     customize: [
-      "Legen Sie zuerst den Launch-Termin fest und rechnen Sie rückwärts — die Aufnahme dehnt sich sonst auf jede verfügbare Zeit aus.",
+      "Legen Sie zuerst den Launch-Termin fest und rechnen Sie rückwärts, die Aufnahme dehnt sich sonst auf jede verfügbare Zeit aus.",
       "Fügen Sie unter Aufnehmen und Schneiden je Modul eine Zeile ein, damit ein langer Kurs den Fortschritt jeder Einheit einzeln zeigt.",
       "Beim Vorverkauf die Verkaufsseite und Kasse nach vorn ziehen, damit Sie Bestellungen annehmen können, bevor der Dreh fertig ist.",
-      "Die Aufnahme nach Setup bündeln (erst alle Talking-Head-Lektionen, dann alle Screencasts) statt in Kursreihenfolge — das ist deutlich schneller.",
+      "Die Aufnahme nach Setup bündeln (erst alle Talking-Head-Lektionen, dann alle Screencasts) statt in Kursreihenfolge, das ist deutlich schneller.",
       "Validierung, \"Kurs fertiggestellt\" und \"Shop live\" als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
     ],
     tips: [
-      "<strong>Halten Sie die Validierung auf dem kritischen Pfad.</strong> Alles danach — Skripte, Aufnahme, Schnitt — ist vergebens, wenn das Thema nicht gewollt ist, also machen Sie den ersten Meilenstein zu einer echten Go/No-go-Entscheidung.",
+      "<strong>Halten Sie die Validierung auf dem kritischen Pfad.</strong> Alles danach, Skripte, Aufnahme, Schnitt, ist vergebens, wenn das Thema nicht gewollt ist, also machen Sie den ersten Meilenstein zu einer echten Go/No-go-Entscheidung.",
       "<strong>Skripten Sie vor der Aufnahme.</strong> Eine Stunde Skripten spart mehrere Stunden Nachdreh und Schnitt; der Plan sollte die Aufnahme nie vor fertigen Skripten beginnen lassen.",
       "<strong>Schnitt und Arbeitsheft-Bau können parallel laufen.</strong> Sie haben verschiedene Verantwortliche und keine Abhängigkeit voneinander, überlappen Sie sie, um die Mitte des Plans zu verdichten.",
-      "<strong>Bauen Sie die Verkaufsseite während des Schnitts.</strong> Die Seite braucht nicht die fertigen Videos — nur das Versprechen und die Gliederung — und kann live sein, bevor der Kurs vollständig ist.",
+      "<strong>Bauen Sie die Verkaufsseite während des Schnitts.</strong> Die Seite braucht nicht die fertigen Videos, nur das Versprechen und die Gliederung, und kann live sein, bevor der Kurs vollständig ist.",
       "<strong>Behandeln Sie die Launch-Woche als eigene Abfolge.</strong> Aufwärmen, Verkauf öffnen, Verkauf schließen und Nachfassen haben jeweils ein Timing, das zählt; terminieren Sie sie, statt zu improvisieren."
     ],
     faq: [
@@ -6910,7 +6910,7 @@ const T = {
       ],
       [
         "Soll ich den Kurs vor oder nach dem Verkauf bauen?",
-        "Validieren — und idealerweise vorverkaufen —, bevor Sie aufnehmen. Die Vorlage setzt einen Validierungs-Meilenstein vor die Produktion, damit Sie Drehzeit erst binden, wenn es echte Nachfrage gibt; die Verkaufsseite lässt sich für Vorbestellungen nach vorn ziehen."
+        "Validieren, und idealerweise vorverkaufen, , bevor Sie aufnehmen. Die Vorlage setzt einen Validierungs-Meilenstein vor die Produktion, damit Sie Drehzeit erst binden, wenn es echte Nachfrage gibt; die Verkaufsseite lässt sich für Vorbestellungen nach vorn ziehen."
       ],
       [
         "Kann ich Abhängigkeiten zwischen den Kursaufgaben abbilden?",
@@ -6918,7 +6918,7 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Online-Kurs-Plan kostenlos?",
-        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+        "Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
   },
@@ -6926,9 +6926,9 @@ const T = {
   'book-launch-plan': {
     card: "Vom fertigen Manuskript zur Launch-Woche: Lektorat, Cover, ARC-Leser, Vorbestellung.",
     h1: "Vorlage für den Buch-Launch",
-    metaTitle: "Buch-Launch-Plan — Gantt-Vorlage",
+    metaTitle: "Buch-Launch-Plan: Gantt-Vorlage",
     metaDesc: "Kostenlose Buch-Launch-Vorlage für Autorinnen und Selfpublisher: Lektorat, Cover, ARC-Leser, Vorbestellung und Launch-Woche. Excel oder online.",
-    lead: "Eine kostenlose <strong>Vorlage für den Buch-Launch</strong> für Autorinnen und Selfpublisher, die vom fertigen Manuskript bis zur Launch-Woche reicht — Lektorat, Cover- und Innenteil-Produktion, ARC-Leser und Blurbs, Vorbestellung, Marketing und der Launch selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Erscheinungstermin zu sehen.",
+    lead: "Eine kostenlose <strong>Vorlage für den Buch-Launch</strong> für Autorinnen und Selfpublisher, die vom fertigen Manuskript bis zur Launch-Woche reicht, Lektorat, Cover- und Innenteil-Produktion, ARC-Leser und Blurbs, Vorbestellung, Marketing und der Launch selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Erscheinungstermin zu sehen.",
     intro: "Ein Buch-Launch sind eigentlich fünf Projekte, gestapelt auf einen Termin: Lektorat, Produktion, Pre-Launch, Marketing und das Erscheinen. Diese Vorlage legt sie auf eine einzige Zeitachse, damit nichts kollidiert, gegliedert in sechs Phasen:",
     phases: [
       [
@@ -6956,10 +6956,10 @@ const T = {
         "Das Buch veröffentlichen, Launch-Woche-Promotions fahren, Rezensionen und Bewertungen nachfassen und dann auswerten, was funktioniert hat. <em>Meilenstein: Launch abgeschlossen.</em>"
       ]
     ],
-    callout: "Die Vorbestellung ist der Termin, den der Rest des Plans schützt. Händler belohnen frühen Verkaufsschwung, und ARC-Leser brauchen Wochen zum Lesen und Rezensieren vor dem Erscheinen — legen Sie also zuerst Vorbestellungs- und Launch-Termin fest und prüfen Sie dann, ob Lektorat und Produktion dahinter rechtzeitig fertig werden.",
+    callout: "Die Vorbestellung ist der Termin, den der Rest des Plans schützt. Händler belohnen frühen Verkaufsschwung, und ARC-Leser brauchen Wochen zum Lesen und Rezensieren vor dem Erscheinen, legen Sie also zuerst Vorbestellungs- und Launch-Termin fest und prüfen Sie dann, ob Lektorat und Produktion dahinter rechtzeitig fertig werden.",
     customize: [
       "Den Launch-Termin festlegen und rückwärts rechnen; Lektorat und Cover-Gestaltung brauchen fast immer mehr Vorlauf, als Erstautorinnen erwarten.",
-      "Geben Sie ARC-Lesern mindestens drei bis vier Wochen vor dem Erscheinen — Rezensionen in der Launch-Woche zählen weit mehr als späte.",
+      "Geben Sie ARC-Lesern mindestens drei bis vier Wochen vor dem Erscheinen, Rezensionen in der Launch-Woche zählen weit mehr als späte.",
       "Die Produktion mit dem Ende des Lektorats überlappen: Die Cover-Gestaltung braucht nicht den finalen Korrekturdurchgang, also früh starten.",
       "Bei Verlagsveröffentlichung die Produktionsphase durch die Meilensteine Ihres Verlags ersetzen und die Marketing- und Launch-Phasen behalten.",
       "\"Manuskript final\", \"Dateien druckfertig\" und \"Vorbestellung live\" als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
@@ -6967,9 +6967,9 @@ const T = {
     tips: [
       "<strong>Das Lektorat ist meist der kritische Pfad.</strong> Inhalts- → Korrektorat → Korrektur ist eine strikte Abfolge, und Verzug hier schiebt alles; schützen Sie sie und starten Sie früh.",
       "<strong>Die Cover-Gestaltung kann parallel zum Lektorat laufen.</strong> Sie hängt vom Konzept ab, nicht vom finalen Text, sodass ein Überlappen Wochen im Plan zurückgewinnt.",
-      "<strong>Bauen Sie die E-Mail-Liste, bevor Sie sie brauchen.</strong> Eine Launch-Woche-Mail an eine engagierte Liste schlägt fast jede Anzeige, aber die Liste wächst über Monate — beginnen Sie in der Marketing-Phase, nicht in der Launch-Woche.",
+      "<strong>Bauen Sie die E-Mail-Liste, bevor Sie sie brauchen.</strong> Eine Launch-Woche-Mail an eine engagierte Liste schlägt fast jede Anzeige, aber die Liste wächst über Monate, beginnen Sie in der Marketing-Phase, nicht in der Launch-Woche.",
       "<strong>Verschicken Sie ARCs früh und verfolgen Sie sie.</strong> Rezensionen brauchen Lesezeit; eine Rezension am Erscheinungstag ist weit mehr wert als eine einen Monat später.",
-      "<strong>Terminieren Sie den Nachlauf.</strong> Die zwei Wochen nach dem Erscheinen — Rezensionen nachfassen, Anzeigen justieren, eine Auswertung — sind der Punkt, an dem viele Launches mangels Plan still an Schwung verlieren."
+      "<strong>Terminieren Sie den Nachlauf.</strong> Die zwei Wochen nach dem Erscheinen, Rezensionen nachfassen, Anzeigen justieren, eine Auswertung, sind der Punkt, an dem viele Launches mangels Plan still an Schwung verlieren."
     ],
     faq: [
       [
@@ -6978,7 +6978,7 @@ const T = {
       ],
       [
         "Wann sollte ich die Vorbestellung einrichten?",
-        "So früh, wie Ihr Händler es erlaubt — oft mehrere Wochen bis Monate vor dem Erscheinen. Die Vorlage macht die Vorbestellung zum Meilenstein, weil ARC-Rezensionen und Marketing-Schwung darauf getaktet sind und Händler frühe Verkäufe belohnen."
+        "So früh, wie Ihr Händler es erlaubt, oft mehrere Wochen bis Monate vor dem Erscheinen. Die Vorlage macht die Vorbestellung zum Meilenstein, weil ARC-Rezensionen und Marketing-Schwung darauf getaktet sind und Händler frühe Verkäufe belohnen."
       ],
       [
         "Kann ich Abhängigkeiten zwischen den Launch-Aufgaben abbilden?",
@@ -6986,16 +6986,16 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Buch-Launch-Plan kostenlos?",
-        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+        "Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
   },
   'go-to-market-plan': {
     card: "Sequenziert einen Launch von der Recherche bis zum Ergebnis: Positionierung, Pricing, Enablement, Launch.",
     h1: "Go-to-Market-Plan Vorlage",
-    metaTitle: "Go-to-Market-Plan (GTM) — Gantt-Vorlage",
+    metaTitle: "Go-to-Market-Plan (GTM): Gantt-Vorlage",
     metaDesc: "Kostenlose Go-to-Market-Vorlage: Recherche, Positionierung, Pricing, Enablement, Launch und Nachlauf auf einer Zeitachse. Excel, PowerPoint oder online.",
-    lead: "Eine kostenlose <strong>Go-to-Market-Plan Vorlage</strong>, die einen Launch von der Recherche bis zum Ergebnis sequenziert — Kunden- und Marktforschung, Positionierung und Messaging, Pricing und Packaging, Sales-Enablement und Assets, den Launch selbst und die Iteration danach. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
+    lead: "Eine kostenlose <strong>Go-to-Market-Plan Vorlage</strong>, die einen Launch von der Recherche bis zum Ergebnis sequenziert, Kunden- und Marktforschung, Positionierung und Messaging, Pricing und Packaging, Sales-Enablement und Assets, den Launch selbst und die Iteration danach. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Launch-Termin zu sehen.",
     intro: "Ein Go-to-Market-Plan scheitert, wenn Marketing, Produkt, Vertrieb und Pricing nach unterschiedlichen Uhren laufen. Diese Vorlage legt jeden Arbeitsstrang auf eine Zeitachse, in den sechs Phasen, die ein Launch tatsächlich durchläuft:",
     phases: [
       [
@@ -7020,28 +7020,28 @@ const T = {
       ],
       [
         "Nachlauf und Iteration",
-        "Funnel und KPIs messen, Win/Loss-Feedback sammeln und optimieren — ein Launch ist der Anfang des Plans, nicht das Ende. <em>Meilenstein: 30-Tage-Review.</em>"
+        "Funnel und KPIs messen, Win/Loss-Feedback sammeln und optimieren, ein Launch ist der Anfang des Plans, nicht das Ende. <em>Meilenstein: 30-Tage-Review.</em>"
       ]
     ],
-    callout: "Die Positionierung ist die Abhängigkeit, die alles andere erbt. Enablement, Website und Sales-Pitch kodieren allesamt Ihre Positionierung, geben Sie sie also als harten Meilenstein frei, bevor diese Assets gebaut werden — sie nach dem Launch zu überarbeiten, weil sich die Botschaft geändert hat, ist der teuerste GTM-Fehler.",
+    callout: "Die Positionierung ist die Abhängigkeit, die alles andere erbt. Enablement, Website und Sales-Pitch kodieren allesamt Ihre Positionierung, geben Sie sie also als harten Meilenstein frei, bevor diese Assets gebaut werden, sie nach dem Launch zu überarbeiten, weil sich die Botschaft geändert hat, ist der teuerste GTM-Fehler.",
     customize: [
       "Zuerst den Launch-Termin festlegen und rückwärts rechnen; Enablement und Asset-Produktion brauchen fast immer mehr Vorlauf als geplant.",
       "Unter Launch je Kanal eine Zeile ergänzen (Paid, Content, PR, Partnerschaften), damit jeder einen eigenen Verantwortlichen und Zeitplan hat.",
       "Wenn Sie über eine Warteliste oder Beta vorab launchen, Website und Anmeldungen früher ziehen und den vollen Launch hinter Readiness verriegeln.",
-      "Das Pricing auf einem eigenen Strang halten — es hängt von der Recherche ab, nicht vom Messaging, und kann daher parallel zur Positionierung laufen.",
+      "Das Pricing auf einem eigenen Strang halten, es hängt von der Recherche ab, nicht vom Messaging, und kann daher parallel zur Positionierung laufen.",
       "Recherche, Messaging, Pricing und \"Assets fertig\" als Meilensteine markieren, damit kein nachgelagerter Strang vor seinen Eingaben startet."
     ],
     tips: [
       "<strong>Die Positionierung liegt auf dem kritischen Pfad.</strong> Messaging, Enablement und jedes Asset hängen von ihr ab; eine Woche Verzug bei der Freigabe schiebt den ganzen Launch, also schützen Sie sie.",
-      "<strong>Enablement ist meist der Engpass.</strong> Vertriebsschulung, Unterlagen und Demo dauern länger als erwartet und verriegeln den Launch — starten Sie sie, sobald das Messaging freigegeben ist.",
+      "<strong>Enablement ist meist der Engpass.</strong> Vertriebsschulung, Unterlagen und Demo dauern länger als erwartet und verriegeln den Launch, starten Sie sie, sobald das Messaging freigegeben ist.",
       "<strong>Pricing parallel fahren, nicht in Reihe.</strong> Es braucht nur die Recherche, sodass eine Überlappung mit der Positionierung Wochen im Zeitplan zurückgewinnt.",
       "<strong>Internen und externen Launch trennen.</strong> Das Team muss bereit sein, bevor der Markt etwas hört; terminieren Sie den internen Go-live als eigenen Meilenstein.",
-      "<strong>Terminieren Sie das Post-Launch-Review.</strong> Die 30 Tage nach dem Launch — Funnel-Metriken, Win/Loss, Iteration — sind der Punkt, an dem ein Plan aufgeht oder mangels Nachfassen still stehen bleibt."
+      "<strong>Terminieren Sie das Post-Launch-Review.</strong> Die 30 Tage nach dem Launch, Funnel-Metriken, Win/Loss, Iteration, sind der Punkt, an dem ein Plan aufgeht oder mangels Nachfassen still stehen bleibt."
     ],
     faq: [
       [
         "Was ist ein Go-to-Market-Plan (GTM)?",
-        "Ein Go-to-Market-Plan ist die Zeitachse und die Arbeitsstränge, die ein Produkt in den Markt bringen — Recherche, Positionierung, Pricing, Enablement, Launch und Nachlauf. Diese Vorlage legt diese Phasen auf einen Zeitplan, sodass Marketing, Produkt und Vertrieb im Takt bleiben."
+        "Ein Go-to-Market-Plan ist die Zeitachse und die Arbeitsstränge, die ein Produkt in den Markt bringen, Recherche, Positionierung, Pricing, Enablement, Launch und Nachlauf. Diese Vorlage legt diese Phasen auf einen Zeitplan, sodass Marketing, Produkt und Vertrieb im Takt bleiben."
       ],
       [
         "Was sollte ein Go-to-Market-Plan enthalten?",
@@ -7053,16 +7053,16 @@ const T = {
       ],
       [
         "Ist die Go-to-Market-Plan Vorlage kostenlos?",
-        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+        "Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
   },
   'training-program-rollout': {
     card: "Führt ein Schulungsprogramm von der Bedarfsanalyse bis zum Ergebnis: Design, Entwicklung, Pilot, Rollout, Evaluation.",
     h1: "Vorlage für den Rollout eines Schulungsprogramms",
-    metaTitle: "Schulungsprogramm-Rollout — Gantt-Vorlage",
+    metaTitle: "Schulungsprogramm-Rollout: Gantt-Vorlage",
     metaDesc: "Kostenlose Vorlage für den Rollout eines Schulungsprogramms: Bedarfsanalyse, Design, Pilot, Rollout und Evaluation. Als Excel, PowerPoint oder online.",
-    lead: "Eine kostenlose <strong>Vorlage für den Rollout eines Schulungsprogramms</strong> für L&amp;D-Teams, die ein Programm von der Bedarfsanalyse bis zum Ergebnis führt — Bedarfsanalyse und Zielgruppe, Instructional Design, Content-Entwicklung, ein Pilot, der vollständige Rollout und die Evaluation. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Go-live zu sehen.",
+    lead: "Eine kostenlose <strong>Vorlage für den Rollout eines Schulungsprogramms</strong> für L&amp;D-Teams, die ein Programm von der Bedarfsanalyse bis zum Ergebnis führt, Bedarfsanalyse und Zielgruppe, Instructional Design, Content-Entwicklung, ein Pilot, der vollständige Rollout und die Evaluation. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrem Go-live zu sehen.",
     intro: "Ein Schulungs-Rollout gerät ins Stocken, wenn Content gebaut wird, bevor der Bedarf bestätigt ist, oder ausgerollt wird, bevor er pilotiert wurde. Diese Vorlage legt das ganze Programm auf eine Zeitachse, in den sechs Phasen, die Weiterbildung tatsächlich durchläuft:",
     phases: [
       [
@@ -7090,12 +7090,12 @@ const T = {
         "Ergebnisse gegen den Plan messen, mit Arbeitshilfen und Follow-up verstärken und das Programm zur Iteration überprüfen. <em>Meilenstein: 90-Tage-Review.</em>"
       ]
     ],
-    callout: "Der Pilot ist die günstigste Stelle, um sich zu irren. Ein Programm organisationsweit auszurollen, bevor ein Pilot Content, Timing und Moderation validiert hat, macht aus kleinen Korrekturen große Nacharbeit — behandeln Sie die Pilot-Freigabe als harten Meilenstein, von dem der vollständige Rollout abhängt.",
+    callout: "Der Pilot ist die günstigste Stelle, um sich zu irren. Ein Programm organisationsweit auszurollen, bevor ein Pilot Content, Timing und Moderation validiert hat, macht aus kleinen Korrekturen große Nacharbeit, behandeln Sie die Pilot-Freigabe als harten Meilenstein, von dem der vollständige Rollout abhängt.",
     customize: [
       "Den Go-live-Termin festlegen und rückwärts rechnen; Content-Entwicklung und LMS-Einrichtung dauern fast immer länger als geplant.",
       "Unter Rollout je Gruppe oder Region eine Zeile ergänzen, damit jede Welle einen eigenen Zeitplan und Verantwortlichen hat.",
       "Ist das Programm compliance-getrieben, die Frist als festen Meilenstein ergänzen und prüfen, dass der Rollout davor abschließt.",
-      "Die LMS-Einrichtung auf einem eigenen Strang halten — sie hängt vom Design ab, nicht vom fertigen Content, und kann daher parallel zur Entwicklung laufen.",
+      "Die LMS-Einrichtung auf einem eigenen Strang halten, sie hängt vom Design ab, nicht vom fertigen Content, und kann daher parallel zur Entwicklung laufen.",
       "Bedarf, Design, Content und Pilot-Freigabe als Meilensteine markieren, damit keine Phase vor ihren Eingaben startet."
     ],
     tips: [
@@ -7103,7 +7103,7 @@ const T = {
       "<strong>Der Pilot liegt auf dem kritischen Pfad zum Rollout.</strong> Der vollständige Rollout hängt von der Pilot-Freigabe ab, schützen Sie also das Pilotfenster, statt es zusammenzustauchen, um einen Termin zu treffen.",
       "<strong>Die LMS-Einrichtung parallel fahren.</strong> Sie braucht nur Design und Struktur, sodass eine Überlappung mit der Content-Entwicklung Wochen im Zeitplan zurückgewinnt.",
       "<strong>Nicht nur die Vermittlung terminieren, sondern auch die Verstärkung.</strong> Gelerntes verblasst ohne Follow-up; Arbeitshilfen und Auffrischungen gehören in den Plan, nicht in gute Vorsätze.",
-      "<strong>Gegen die gesetzten Ziele messen.</strong> Die Evaluation an die Erfolgskennzahlen aus der Designphase koppeln — ein Rollout, der Sitzungen geliefert hat, aber keine Ergebnisse, ist nicht fertig."
+      "<strong>Gegen die gesetzten Ziele messen.</strong> Die Evaluation an die Erfolgskennzahlen aus der Designphase koppeln, ein Rollout, der Sitzungen geliefert hat, aber keine Ergebnisse, ist nicht fertig."
     ],
     faq: [
       [
@@ -7120,16 +7120,16 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Schulungs-Rollout kostenlos?",
-        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+        "Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
   },
   'webinar-plan': {
     card: 'Vom Thema und den Sprechern bis zum Follow-up: Anmeldung, Promotion, Probe, Live-Event.',
     h1: 'Webinar-Plan Vorlage',
-    metaTitle: 'Webinar-Plan — Gantt-Vorlage',
+    metaTitle: 'Webinar-Plan: Gantt-Vorlage',
     metaDesc: 'Kostenlose Webinar-Plan-Vorlage: Thema und Sprecher, Anmeldung und Promotion, Generalprobe, Live-Event und Follow-up. Excel, PowerPoint oder online.',
-    lead: 'Eine kostenlose Vorlage für einen <strong>Webinar-Plan</strong>, die ein Webinar von der Idee bis zum Follow-up führt — Thema und Sprecher, die Anmeldeseite und die Promotion, die Generalprobe, das Live-Event und das Follow-up, das aus Teilnehmenden Leads macht. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Termin zu sehen.',
+    lead: 'Eine kostenlose Vorlage für einen <strong>Webinar-Plan</strong>, die ein Webinar von der Idee bis zum Follow-up führt, Thema und Sprecher, die Anmeldeseite und die Promotion, die Generalprobe, das Live-Event und das Follow-up, das aus Teilnehmenden Leads macht. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Termin zu sehen.',
     intro: 'Webinare scheitern an dem, was die Live-Stunde umgibt: zu wenig Vorlauf für die Promotion oder kein Follow-up-Plan. Diese Vorlage bringt das ganze Webinar auf einen Zeitstrahl, in den sechs Phasen, die es tatsächlich durchläuft:',
     phases: [
       ['Planung &amp; Thema', 'Ziel und Zielgruppe festlegen, Thema, Format und Termin wählen und Sprecher sowie Plattform bestätigen. <em>Meilenstein: Webinar bestätigt.</em>'],
@@ -7139,11 +7139,11 @@ const T = {
       ['Live-Event', 'Live gehen und moderieren sowie Fragen und Interaktion steuern. <em>Meilenstein: Webinar durchgeführt.</em>'],
       ['Follow-up', 'Die Aufzeichnung veröffentlichen, Follow-up-E-Mails senden, Leads an den Vertrieb übergeben und die Ergebnisse messen. <em>Meilenstein: Rückblick nach dem Webinar.</em>'],
     ],
-    callout: 'Der größte Teil des Werts eines Webinars entsteht nach der Live-Stunde. Teilnehmende wie No-Shows brauchen ein Follow-up — die Aufzeichnung, eine Nurturing-E-Mail und die Übergabe an den Vertrieb —, planen Sie es also vor dem Event und nicht in den müden Tagen danach, sonst kühlen die mühsam gewonnenen Leads ab.',
+    callout: 'Der größte Teil des Werts eines Webinars entsteht nach der Live-Stunde. Teilnehmende wie No-Shows brauchen ein Follow-up, die Aufzeichnung, eine Nurturing-E-Mail und die Übergabe an den Vertrieb, , planen Sie es also vor dem Event und nicht in den müden Tagen danach, sonst kühlen die mühsam gewonnenen Leads ab.',
     customize: [
       'Geben Sie der Promotion mindestens drei bis vier Wochen: Die meisten Anmeldungen kommen in der ersten und der letzten Woche, aber Sie brauchen den Vorlauf dazwischen.',
       'Setzen Sie das Anmeldeziel als Meilenstein und behalten Sie es im Blick; liegen Sie zur Halbzeit zurück, ergänzen Sie Promotion, statt zu hoffen.',
-      'Erstellen Sie die Folien parallel zur Anmeldeseite — sie haben unterschiedliche Verantwortliche und keine Abhängigkeit voneinander.',
+      'Erstellen Sie die Folien parallel zur Anmeldeseite, sie haben unterschiedliche Verantwortliche und keine Abhängigkeit voneinander.',
       'Fügen Sie pro Promotion-Kanal eine Zeile hinzu (E-Mail, Social, Partner, Paid), damit jeder seinen Verantwortlichen und Takt hat.',
       'Markieren Sie „Webinar bestätigt“, „Materialien fertig“ und „bereit für den Livegang“ als Meilensteine, damit nichts vor seinen Voraussetzungen startet.',
     ],
@@ -7151,24 +7151,24 @@ const T = {
       '<strong>Der Promotion-Vorlauf ist der kritische Pfad zur Teilnahme.</strong> Plätze füllen sich über Wochen, nicht Tage; schützen Sie das Promotion-Fenster, statt es für einen Termin zu stauchen.',
       '<strong>Führen Sie immer eine Generalprobe durch.</strong> Technikcheck und volle Probe fangen die Ton-, Bildschirmfreigabe- und Übergabeprobleme ab, die sonst live passieren; planen Sie sie als feste Hürde vor dem Livegang.',
       '<strong>Bereiten Sie das Follow-up vor dem Event vor.</strong> Aufzeichnung, Nurturing-E-Mails und Vertriebsübergabe sollten im Voraus verfasst sein, damit sie hinausgehen, solange das Interesse warm ist.',
-      '<strong>Versenden Sie Erinnerungen — sie steigern die Teilnahmequote.</strong> Eine Erinnerung am Vortag und eine eine Stunde vorher heben die Teilnahme oft deutlich; setzen Sie sie in den Plan, nicht ins Gedächtnis.',
+      '<strong>Versenden Sie Erinnerungen, sie steigern die Teilnahmequote.</strong> Eine Erinnerung am Vortag und eine eine Stunde vorher heben die Teilnahme oft deutlich; setzen Sie sie in den Plan, nicht ins Gedächtnis.',
       '<strong>Messen Sie am Ziel.</strong> Knüpfen Sie den Abschluss an die Anmelde- und Pipeline-Ziele aus dem Plan: Ein Webinar, das lief, aber kein Follow-up erzeugte, ist nicht fertig.',
     ],
     faq: [
-      ['Wie lange im Voraus sollte man ein Webinar planen?', 'Die meisten Webinare brauchen vier bis acht Wochen — genug Vorlauf für Promotion und Sprechervorbereitung. Die Vorlage verteilt Planung, Anmeldung, Promotion, Probe, Live-Event und Follow-up auf einen Zeitstrahl, damit Sie sehen, ob Ihr Termin realistisch ist.'],
+      ['Wie lange im Voraus sollte man ein Webinar planen?', 'Die meisten Webinare brauchen vier bis acht Wochen, genug Vorlauf für Promotion und Sprechervorbereitung. Die Vorlage verteilt Planung, Anmeldung, Promotion, Probe, Live-Event und Follow-up auf einen Zeitstrahl, damit Sie sehen, ob Ihr Termin realistisch ist.'],
       ['Was gehört in einen Webinar-Plan?', 'Mindestens: Ziel und Thema, Sprecher und Plattform, eine Anmeldeseite, eine Promotion-Strecke, eine Probe und ein Technikcheck, das Live-Event und ein Follow-up-Plan. Die Vorlage gibt jedem eine eigene Phase, mit Meilensteinen und Verantwortlichen.'],
       ['Kann ich Abhängigkeiten zwischen den Webinar-Aufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im kostenlosen <a href="/de/app.html">gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (bestätigen → erstellen → bewerben → proben → live gehen), sodass sich nachgelagerte Arbeit automatisch verschiebt und der kritische Pfad sichtbar bleibt.'],
-      ['Ist die Webinar-Plan-Vorlage kostenlos?', 'Ja — kostenlos als Excel, PowerPoint oder CSV herunterladen und kostenlos online bearbeiten, ohne Anmeldung.'],
+      ['Ist die Webinar-Plan-Vorlage kostenlos?', 'Ja, kostenlos als Excel, PowerPoint oder CSV herunterladen und kostenlos online bearbeiten, ohne Anmeldung.'],
     ],
   },
 
   'podcast-launch-plan': {
     card: "Von der Idee bis zum Launch-Tag: Konzept, Branding, Folgen aufnehmen, Verzeichnis-Einreichung.",
     h1: "Vorlage für den Podcast-Launch",
-    metaTitle: "Podcast-Launch-Plan — Gantt-Vorlage",
+    metaTitle: "Podcast-Launch-Plan: Gantt-Vorlage",
     metaDesc: "Kostenlose Podcast-Launch-Vorlage: Konzept, Branding, Folgen aufnehmen, Einreichung bei Apple Podcasts und Spotify sowie Launch-Tag. Excel oder online.",
-    lead: "Eine kostenlose <strong>Vorlage für den Podcast-Launch</strong>, die eine Show von der Idee bis zum Launch-Tag führt — Konzept und Zielgruppe, Branding und Technik, das Aufnehmen der Launch-Folgen, Schnitt, Einreichung im Verzeichnis und der Launch mit mehreren Folgen selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrer Veröffentlichung zu sehen.",
-    intro: "Die meisten Podcasts verstummen, weil sie mit einer einzigen Folge und ohne Vorlauf starten. Diese Vorlage plant den gesamten Launch auf einer Zeitachse — inklusive des Folgen-Stapels, der Sie konstant hält — in den sechs Phasen, die eine Show tatsächlich durchläuft:",
+    lead: "Eine kostenlose <strong>Vorlage für den Podcast-Launch</strong>, die eine Show von der Idee bis zum Launch-Tag führt, Konzept und Zielgruppe, Branding und Technik, das Aufnehmen der Launch-Folgen, Schnitt, Einreichung im Verzeichnis und der Launch mit mehreren Folgen selbst. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zu Ihrer Veröffentlichung zu sehen.",
+    intro: "Die meisten Podcasts verstummen, weil sie mit einer einzigen Folge und ohne Vorlauf starten. Diese Vorlage plant den gesamten Launch auf einer Zeitachse, inklusive des Folgen-Stapels, der Sie konstant hält, in den sechs Phasen, die eine Show tatsächlich durchläuft:",
     phases: [
       [
         "Konzept &amp; Plan",
@@ -7195,25 +7195,25 @@ const T = {
         "Die Launch-Folgen gemeinsam veröffentlichen, Promotion und Ansprache fahren, dann die Analytics auswerten und in einen Rhythmus finden. <em>Meilenstein: erster Monat ausgewertet.</em>"
       ]
     ],
-    callout: "Launchen Sie mit einem Stapel, nicht mit einer einzelnen Folge. Neue Shows werden teils nach früher Konstanz gerankt, und ein Ein-Folgen-Launch bricht ab, sobald der Alltag dazwischenkommt — nehmen Sie drei bis fünf Folgen vor dem Launch-Tag auf und behandeln Sie „Aufnahmen fertig“ als harte Hürde, bevor Sie in die Verzeichnisse einreichen.",
+    callout: "Launchen Sie mit einem Stapel, nicht mit einer einzelnen Folge. Neue Shows werden teils nach früher Konstanz gerankt, und ein Ein-Folgen-Launch bricht ab, sobald der Alltag dazwischenkommt, nehmen Sie drei bis fünf Folgen vor dem Launch-Tag auf und behandeln Sie „Aufnahmen fertig“ als harte Hürde, bevor Sie in die Verzeichnisse einreichen.",
     customize: [
       "Den Launch-Termin festlegen und rückwärts rechnen; Cover-Artwork und die Verzeichnis-Freigabe dauern beide länger, als Erst-Hosts erwarten.",
-      "Reichen Sie Ihren Feed mindestens eine Woche früher bei Apple und Spotify ein — die Freigabe kommt nicht sofort, und ohne sie können Sie nicht launchen.",
+      "Reichen Sie Ihren Feed mindestens eine Woche früher bei Apple und Spotify ein, die Freigabe kommt nicht sofort, und ohne sie können Sie nicht launchen.",
       "Unter Aufnehmen und Schnitt je Launch-Folge eine Zeile ergänzen, damit ein Launch mit mehreren Folgen den Fortschritt jeder einzelnen zeigt.",
-      "Das Branding auf einem eigenen Strang halten — Cover-Artwork und Musik hängen vom Konzept ab, nicht von den Aufnahmen, und können daher parallel laufen.",
+      "Das Branding auf einem eigenen Strang halten, Cover-Artwork und Musik hängen vom Konzept ab, nicht von den Aufnahmen, und können daher parallel laufen.",
       "Konzept, Setup, Aufnahmen und Verzeichnis-Freigabe als Meilensteine markieren, damit nichts Nachgelagertes vor seinen Eingaben startet."
     ],
     tips: [
-      "<strong>Die Verzeichnis-Freigabe liegt auf dem kritischen Pfad.</strong> Sie können nicht launchen, bevor Apple und Spotify Ihren Feed listen, und das kann Tage dauern — früh einreichen und als harte Abhängigkeit vor dem Launch-Tag behandeln.",
+      "<strong>Die Verzeichnis-Freigabe liegt auf dem kritischen Pfad.</strong> Sie können nicht launchen, bevor Apple und Spotify Ihren Feed listen, und das kann Tage dauern, früh einreichen und als harte Abhängigkeit vor dem Launch-Tag behandeln.",
       "<strong>Nehmen Sie vor dem Launch auf Vorrat auf.</strong> Drei bis fünf Folgen im Voraus zu produzieren ist das, was dauerhafte Shows von solchen unterscheidet, die im Podfade verstummen; der Zeitplan sollte den Launch an diesen Stapel koppeln.",
       "<strong>Branding parallel zu den Aufnahmen fahren.</strong> Cover-Artwork, Musik und Website brauchen nur das Konzept, sodass ein Überlappen mit der Produktion Wochen im Zeitplan zurückgewinnt.",
       "<strong>Den Trailer erst aufnehmen, wenn Folgen existieren.</strong> Ein Trailer, der einen Ton verspricht, den die Folgen nicht halten, schadet; terminieren Sie ihn nach den ersten Schnitten, nicht davor.",
-      "<strong>Terminieren Sie den Nachlauf.</strong> Der erste Monat — Promotion, Gäste-Ansprache, Analytics prüfen — ist der Punkt, an dem ein Launch Schwung aufbaut oder mangels Plan still stehen bleibt."
+      "<strong>Terminieren Sie den Nachlauf.</strong> Der erste Monat, Promotion, Gäste-Ansprache, Analytics prüfen, ist der Punkt, an dem ein Launch Schwung aufbaut oder mangels Plan still stehen bleibt."
     ],
     faq: [
       [
         "Wie lange dauert es, einen Podcast zu launchen?",
-        "Ein fokussierter Launch dauert typischerweise 8–12 Wochen vom Konzept bis zum Veröffentlichungstag. Die Vorlage verteilt Konzept, Branding, Aufnahmen, Schnitt, Verzeichnis-Einreichung und Launch über eine Zeitachse, sodass Sie sehen, ob Ihr Termin realistisch ist."
+        "Ein fokussierter Launch dauert typischerweise 8-12 Wochen vom Konzept bis zum Veröffentlichungstag. Die Vorlage verteilt Konzept, Branding, Aufnahmen, Schnitt, Verzeichnis-Einreichung und Launch über eine Zeitachse, sodass Sie sehen, ob Ihr Termin realistisch ist."
       ],
       [
         "Mit wie vielen Folgen sollte ich launchen?",
@@ -7225,7 +7225,7 @@ const T = {
       ],
       [
         "Ist die Vorlage für den Podcast-Launch-Plan kostenlos?",
-        "Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
+        "Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung."
       ]
     ]
   },
@@ -7235,36 +7235,36 @@ const T = {
     h1: 'Lernplan-Vorlage',
     metaTitle: 'Lernplan-Vorlage',
     metaDesc: 'Kostenlose Lernplan-Vorlage für Prüfungen: Themen, Wochenplan, Lernen, Üben, Schwächen wiederholen und Probeklausuren. Als Excel, PowerPoint oder online.',
-    lead: 'Eine kostenlose <strong>Lernplan-Vorlage</strong> — ein Wiederholungsplan, der Sie von der ersten Themenliste bis zum Prüfungstag führt: planen und einrichten, den Stoff lernen, mit alten Klausuren und aktivem Abruf üben, Ihre Schwächen wiederholen, Probeklausuren unter Zeit schreiben und vorbereitet in die Prüfung gehen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Prüfungstermin zu sehen.',
-    intro: 'Die meisten Prüfungsvorbereitungen scheitern nicht am Fleiß, sondern am fehlenden Plan: Man paukt die leichten Themen und hat für die schweren keine Zeit mehr. Diese Vorlage legt Ihre gesamte Wiederholung auf eine Zeitachse — in den sechs Phasen, die Sie wirklich prüfungsfertig machen:',
+    lead: 'Eine kostenlose <strong>Lernplan-Vorlage</strong>, ein Wiederholungsplan, der Sie von der ersten Themenliste bis zum Prüfungstag führt: planen und einrichten, den Stoff lernen, mit alten Klausuren und aktivem Abruf üben, Ihre Schwächen wiederholen, Probeklausuren unter Zeit schreiben und vorbereitet in die Prüfung gehen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Prüfungstermin zu sehen.',
+    intro: 'Die meisten Prüfungsvorbereitungen scheitern nicht am Fleiß, sondern am fehlenden Plan: Man paukt die leichten Themen und hat für die schweren keine Zeit mehr. Diese Vorlage legt Ihre gesamte Wiederholung auf eine Zeitachse, in den sechs Phasen, die Sie wirklich prüfungsfertig machen:',
     phases: [
       ['Planen &amp; einrichten', 'Fächer und Themen auflisten, Materialien sammeln, Stärken und Lücken ehrlich einschätzen und Prüfungstermine sowie Zielnoten festlegen. <em>Meilenstein: Lernplan steht.</em>'],
-      ['Lernen — erster Durchgang', 'Die Kernthemen zum ersten Mal durcharbeiten, dabei Notizen und Karteikarten anlegen und mit einer wöchentlichen Review aufholen. <em>Meilenstein: erster Durchgang fertig.</em>'],
+      ['Lernen, erster Durchgang', 'Die Kernthemen zum ersten Mal durcharbeiten, dabei Notizen und Karteikarten anlegen und mit einer wöchentlichen Review aufholen. <em>Meilenstein: erster Durchgang fertig.</em>'],
       ['Üben &amp; aktiver Abruf', 'Übungsaufgaben nach Thema lösen, Karteikarten mit verteilter Wiederholung durchgehen und die erste alte Klausur unter Zeit schreiben. <em>Meilenstein: Üben läuft.</em>'],
       ['Schwächen wiederholen', 'Die Themen mit den schlechtesten Ergebnissen erkennen und erneut lernen und sie zu Zusammenfassungen und Mindmaps verdichten. <em>Meilenstein: Schwächen aufgearbeitet.</em>'],
-      ['Probeklausuren &amp; letzte Review', 'Vollständige Probeklausuren unter Zeit schreiben, die Ergebnisse auswerten und die Zusammenfassungen fertigstellen — dann ausruhen. <em>Meilenstein: bereit für die Prüfungen.</em>'],
+      ['Probeklausuren &amp; letzte Review', 'Vollständige Probeklausuren unter Zeit schreiben, die Ergebnisse auswerten und die Zusammenfassungen fertigstellen, dann ausruhen. <em>Meilenstein: bereit für die Prüfungen.</em>'],
       ['Prüfungswoche', 'Die Logistik klären, die Prüfungen schreiben und abschließen. <em>Meilenstein: Prüfungen geschafft.</em>'],
     ],
-    callout: 'Wiederholen Sie Ihre schwachen Themen, nicht Ihre Lieblingsthemen. Lernzeit fühlt sich produktiv an, wenn man erneut liest, was man schon kann — planen Sie deshalb die schweren, schlecht benoteten Themen zuerst ein und schützen Sie diese Zeit: Die größten Notensprünge kommen aus dem Stoff, den Sie gemieden haben, nicht aus dem, der Ihnen Spaß macht.',
+    callout: 'Wiederholen Sie Ihre schwachen Themen, nicht Ihre Lieblingsthemen. Lernzeit fühlt sich produktiv an, wenn man erneut liest, was man schon kann, planen Sie deshalb die schweren, schlecht benoteten Themen zuerst ein und schützen Sie diese Zeit: Die größten Notensprünge kommen aus dem Stoff, den Sie gemieden haben, nicht aus dem, der Ihnen Spaß macht.',
     customize: [
       'Legen Sie zuerst Ihren Prüfungstermin fest und rechnen Sie rückwärts; drei bis acht Wochen sind üblich, aber blocken Sie die Tage, an denen Sie wirklich nicht lernen können.',
       'Fügen Sie unter Lernen und Üben je eine Zeile pro Fach (oder Thema) hinzu, damit ein Plan über mehrere Fächer den Fortschritt jedes einzelnen zeigt.',
-      'Ziehen Sie Ihre schwächsten Fächer vor — legen Sie die schweren Themen an den Anfang, wenn Energie und Vorlauf am größten sind.',
+      'Ziehen Sie Ihre schwächsten Fächer vor, legen Sie die schweren Themen an den Anfang, wenn Energie und Vorlauf am größten sind.',
       'Planen Sie Pausen und leichtere Tage ein; einen Plan ohne Erholung brechen Sie in der zweiten Woche ab.',
       'Markieren Sie Lernplan steht, erster Durchgang fertig und Schwächen aufgearbeitet als Meilensteine, um zu sehen, ob Sie im Plan liegen.',
     ],
     tips: [
-      '<strong>Aktiver Abruf schlägt erneutes Lesen.</strong> Sich selbst abzufragen — Karteikarten, Übungsaufgaben — bleibt weit besser haften als Markieren; der Plan sollte das Üben stark gewichten, nicht nur das Lesen.',
+      '<strong>Aktiver Abruf schlägt erneutes Lesen.</strong> Sich selbst abzufragen, Karteikarten, Übungsaufgaben, bleibt weit besser haften als Markieren; der Plan sollte das Üben stark gewichten, nicht nur das Lesen.',
       '<strong>Alte Klausuren sind die wertvollste Aufgabe.</strong> Eine alte Klausur unter Zeit zeigt zugleich, was Sie nicht können und wie Sie die Prüfungszeit einteilen; schreiben Sie die erste früh, nicht in der letzten Woche.',
       '<strong>Verteilen Sie die Wiederholung, häufen Sie sie nicht an.</strong> Ein Thema über mehrere Tage erneut anzugehen schlägt eine einzige lange Sitzung; deshalb läuft die Karteikarten-Spur durch den ganzen Plan.',
       '<strong>Werten Sie Ihre Probeklausuren aus, schreiben Sie sie nicht nur.</strong> Das Lernen steckt im Durchgehen der Fehler; planen Sie die Auswertung ein, nicht nur die Klausur.',
       '<strong>Schützen Sie die letzten Tage für die Erholung.</strong> Die Nacht davor zu pauken kostet mehr an Müdigkeit, als es an Erinnerung bringt; der Plan endet mit Wiederholung und Ruhe, nicht mit neuem Stoff.',
     ],
     faq: [
-      ['Wie früh sollte ich mit einem Lernplan beginnen?', 'Drei bis acht Wochen vor den Prüfungen sind üblich — genug Zeit für einen ersten Durchgang, Üben und Wiederholung, ohne auszubrennen. Die Vorlage verteilt Planung, Lernen, Üben, Wiederholung und Probeklausuren über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
+      ['Wie früh sollte ich mit einem Lernplan beginnen?', 'Drei bis acht Wochen vor den Prüfungen sind üblich, genug Zeit für einen ersten Durchgang, Üben und Wiederholung, ohne auszubrennen. Die Vorlage verteilt Planung, Lernen, Üben, Wiederholung und Probeklausuren über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
       ['Was gehört in einen Lernplan?', 'Eine Themenliste, ein Wochenplan, Zeit zum Lernen, Übung mit aktivem Abruf (Karteikarten und alte Klausuren), gezielte Wiederholung der Schwächen, Probeklausuren unter Zeit und Erholung. Die Vorlage gibt jeder Etappe eine eigene Phase mit nachverfolgbaren Meilensteinen.'],
       ['Kann ich Abhängigkeiten zwischen den Lernaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (lernen → üben → wiederholen → Probeklausur): Wenn Sie in Verzug geraten, verschiebt sich die spätere Arbeit von selbst und der kritische Pfad bis zum Prüfungstag bleibt sichtbar.'],
-      ['Ist die Lernplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+      ['Ist die Lernplan-Vorlage kostenlos?', 'Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
 
@@ -7273,8 +7273,8 @@ const T = {
     h1: 'Umzugsplan-Vorlage',
     metaTitle: 'Umzugsplan-Vorlage',
     metaDesc: 'Kostenlose Umzugsplan-Vorlage und Checkliste: Termin festlegen, Umzugsunternehmen buchen, ummelden, Raum für Raum packen und Umzugstag. Als Excel oder online.',
-    lead: 'Eine kostenlose <strong>Umzugsplan-Vorlage</strong> — eine Umzugs-Checkliste Woche für Woche, die Sie vom ersten Plan bis zur ersten Nacht in der neuen Wohnung führt: Termin und Budget festlegen, Umzugsunternehmen buchen, ummelden, Raum für Raum packen, den Umzugstag überstehen und sich einleben. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Umzugstag zu sehen.',
-    intro: 'Ein Umzug stresst, weil alles auf einmal kommt — und die Behördengänge (Strom, Post, Adressänderungen) haben unauffällig die längste Vorlaufzeit. Diese Vorlage verteilt den ganzen Umzug auf eine Zeitachse — in den sechs Phasen, die ein Umzug tatsächlich durchläuft:',
+    lead: 'Eine kostenlose <strong>Umzugsplan-Vorlage</strong>, eine Umzugs-Checkliste Woche für Woche, die Sie vom ersten Plan bis zur ersten Nacht in der neuen Wohnung führt: Termin und Budget festlegen, Umzugsunternehmen buchen, ummelden, Raum für Raum packen, den Umzugstag überstehen und sich einleben. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Umzugstag zu sehen.',
+    intro: 'Ein Umzug stresst, weil alles auf einmal kommt, und die Behördengänge (Strom, Post, Adressänderungen) haben unauffällig die längste Vorlaufzeit. Diese Vorlage verteilt den ganzen Umzug auf eine Zeitachse, in den sechs Phasen, die ein Umzug tatsächlich durchläuft:',
     phases: [
       ['Planen &amp; Budget', 'Umzugstermin und Budget festlegen, ein Inventar erstellen, mit dem Ausmisten beginnen und Angebote von Umzugsunternehmen einholen. <em>Meilenstein: Plan und Budget stehen.</em>'],
       ['Buchen &amp; abmelden', 'Umzugsunternehmen oder Transporter buchen, Urlaub und Helfer organisieren, die Wohnung kündigen oder zum Verkauf anbieten und Halteverbot sowie Zugang klären. <em>Meilenstein: Umzugsunternehmen gebucht.</em>'],
@@ -7283,7 +7283,7 @@ const T = {
       ['Umzugswoche', 'Mit dem Umzugsunternehmen bestätigen, den Kühlschrank abtauen, Zählerstände ablesen, die alte Wohnung putzen und den Umzugstag überstehen. <em>Meilenstein: eingezogen.</em>'],
       ['Einleben', 'Das Nötigste auspacken, Strom und Internet in Betrieb nehmen, Raum für Raum auspacken und die Ummeldung beim Bürgeramt erledigen. <em>Meilenstein: eingelebt.</em>'],
     ],
-    callout: 'Beginnen Sie früh mit den Behördengängen — sie haben die längste Vorlaufzeit. Ein gutes Umzugsunternehmen zu buchen, den Nachsendeauftrag einzurichten und Strom umzumelden dauert Tage oder Wochen bis zur Wirkung — Umzüge, die glattlaufen, sind die, bei denen der Papierkram sechs bis acht Wochen vorher startete, nicht am Wochenende vor dem Transporter.',
+    callout: 'Beginnen Sie früh mit den Behördengängen, sie haben die längste Vorlaufzeit. Ein gutes Umzugsunternehmen zu buchen, den Nachsendeauftrag einzurichten und Strom umzumelden dauert Tage oder Wochen bis zur Wirkung, Umzüge, die glattlaufen, sind die, bei denen der Papierkram sechs bis acht Wochen vorher startete, nicht am Wochenende vor dem Transporter.',
     customize: [
       'Legen Sie zuerst den Umzugstag fest und rechnen Sie rückwärts; sechs bis acht Wochen sind bequem, aber ein Umzug in zwei Wochen klappt, wenn Sie die Behördengänge verdichten.',
       'Fügen Sie unter Packen je eine Zeile pro Raum hinzu, damit ein Umzug der ganzen Wohnung den Fortschritt jedes Raums zeigt und nichts im Schrank bleibt.',
@@ -7292,17 +7292,17 @@ const T = {
       'Markieren Sie Umzugsunternehmen gebucht, Adressänderungen erledigt und Packen abgeschlossen als Meilensteine, um zu sehen, ob Sie im Plan für den Umzugstag liegen.',
     ],
     tips: [
-      '<strong>Misten Sie vor dem Packen aus, nicht danach.</strong> Jede Kiste, die Sie nicht umziehen, spart Zeit und Geld; fangen Sie früh mit Verkaufen und Spenden an, denn es zieht sich über Wochen — es ist die eine Aufgabe, die Sie am Ende nicht beschleunigen können.',
+      '<strong>Misten Sie vor dem Packen aus, nicht danach.</strong> Jede Kiste, die Sie nicht umziehen, spart Zeit und Geld; fangen Sie früh mit Verkaufen und Spenden an, denn es zieht sich über Wochen, es ist die eine Aufgabe, die Sie am Ende nicht beschleunigen können.',
       '<strong>Strom und Post haben die längste Vorlaufzeit.</strong> Strom und Internet umzumelden und die Post nachsenden zu lassen kann Tage oder Wochen bis zur Wirkung dauern; starten Sie die Adress-Behördengänge sechs Wochen vorher, nicht in der Umzugswoche.',
-      '<strong>Beschriften Sie Kisten nach Raum und Priorität.</strong> Eine Kiste mit der Aufschrift Küche — zuerst öffnen spart am Zielort Stunden; beschriften Sie beim Packen, nicht später aus dem Gedächtnis.',
-      '<strong>Lesen Sie am Umzugstag Zählerstände ab und machen Sie Fotos.</strong> Zählerstände und ein Foto jedes Raums schützen Ihre Kaution und schließen die letzten Nebenkostenabrechnungen ab — eine im Trubel leicht vergessene Aufgabe.',
-      '<strong>Packen Sie die Kiste mit dem Nötigsten zuletzt.</strong> Wasserkocher, Ladegeräte, Medikamente, Wechselkleidung und Bettwäsche — die erste Nacht ist viel leichter, wenn die eine Kiste, die Sie brauchen, die ist, die Sie finden.',
+      '<strong>Beschriften Sie Kisten nach Raum und Priorität.</strong> Eine Kiste mit der Aufschrift Küche, zuerst öffnen spart am Zielort Stunden; beschriften Sie beim Packen, nicht später aus dem Gedächtnis.',
+      '<strong>Lesen Sie am Umzugstag Zählerstände ab und machen Sie Fotos.</strong> Zählerstände und ein Foto jedes Raums schützen Ihre Kaution und schließen die letzten Nebenkostenabrechnungen ab, eine im Trubel leicht vergessene Aufgabe.',
+      '<strong>Packen Sie die Kiste mit dem Nötigsten zuletzt.</strong> Wasserkocher, Ladegeräte, Medikamente, Wechselkleidung und Bettwäsche, die erste Nacht ist viel leichter, wenn die eine Kiste, die Sie brauchen, die ist, die Sie finden.',
     ],
     faq: [
-      ['Wie früh sollte ich einen Umzug planen?', 'Sechs bis acht Wochen sind für einen Umzug bequem — genug Zeit, um das Umzugsunternehmen zu buchen, auszumisten und die Adress-Behördengänge zu erledigen, bevor das Packen alles einnimmt. Die Vorlage verteilt Planung, Buchung, Behördengänge, Packen, Umzugswoche und Einleben über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
+      ['Wie früh sollte ich einen Umzug planen?', 'Sechs bis acht Wochen sind für einen Umzug bequem, genug Zeit, um das Umzugsunternehmen zu buchen, auszumisten und die Adress-Behördengänge zu erledigen, bevor das Packen alles einnimmt. Die Vorlage verteilt Planung, Buchung, Behördengänge, Packen, Umzugswoche und Einleben über eine Zeitachse, sodass Sie sehen, ob Ihr Vorlauf realistisch ist.'],
       ['Was gehört auf eine Umzugs-Checkliste?', 'Ein Umzugstermin und Budget, Umzugsangebote, die Kündigung der Wohnung, ein Nachsendeauftrag, die Ummeldung von Strom, Gas und Internet, Adressaktualisierungen, das Packen Raum für Raum, eine Kiste mit dem Nötigsten, Zählerstände und ein Auspackplan. Die Vorlage gibt jeder Etappe eine eigene Phase mit nachverfolgbaren Meilensteinen.'],
       ['Kann ich Abhängigkeiten zwischen den Umzugsaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Umzugsunternehmen buchen → packen → Umzugstag → einleben): Verschiebt sich ein Termin, rückt die spätere Arbeit von selbst nach und der kritische Pfad bis zum Umzugstag bleibt sichtbar.'],
-      ['Ist die Umzugsplan-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+      ['Ist die Umzugsplan-Vorlage kostenlos?', 'Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
 
@@ -7311,8 +7311,8 @@ const T = {
     h1: 'Küchenumbau-Zeitplan-Vorlage',
     metaTitle: 'Küchenumbau-Zeitplan-Vorlage',
     metaDesc: 'Kostenlose Küchenumbau-Zeitplan-Vorlage: Planung, Schränke bestellen, Abriss, Rohinstallation, Arbeitsplatten und Endmontage. Als Excel oder online.',
-    lead: 'Eine kostenlose <strong>Küchenumbau-Zeitplan-Vorlage</strong> — ein Wochenplan, der Ihre Küche vom ersten Aufmaß bis zur Endabnahme führt: Planung und Budget, Bestellung der Schränke und Arbeitsplatten mit langer Lieferzeit, Abriss, Rohinstallation von Sanitär und Elektrik, Wände und Boden und zuletzt die Montage von Schränken, Arbeitsplatten und Geräten. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur fertigen Küche zu sehen.',
-    intro: 'Ein Küchenumbau zieht sich nicht, weil die Arbeit langsam wäre, sondern aus zwei Gründen: Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke stehen — und werden dann gefertigt. Diese Vorlage legt den ganzen Umbau auf eine Zeitachse, damit diese Bestellungen mit langer Lieferzeit früh starten und die Abfolge nie ins Stocken gerät:',
+    lead: 'Eine kostenlose <strong>Küchenumbau-Zeitplan-Vorlage</strong>, ein Wochenplan, der Ihre Küche vom ersten Aufmaß bis zur Endabnahme führt: Planung und Budget, Bestellung der Schränke und Arbeitsplatten mit langer Lieferzeit, Abriss, Rohinstallation von Sanitär und Elektrik, Wände und Boden und zuletzt die Montage von Schränken, Arbeitsplatten und Geräten. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur fertigen Küche zu sehen.',
+    intro: 'Ein Küchenumbau zieht sich nicht, weil die Arbeit langsam wäre, sondern aus zwei Gründen: Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke stehen, und werden dann gefertigt. Diese Vorlage legt den ganzen Umbau auf eine Zeitachse, damit diese Bestellungen mit langer Lieferzeit früh starten und die Abfolge nie ins Stocken gerät:',
     phases: [
       ['Planung &amp; Entwurf', 'Budget und Umfang festlegen, aufmessen und den Grundriss festzurren, Materialien und Oberflächen wählen, den Betrieb beauftragen und Genehmigungen einholen. <em>Meilenstein: Entwurf freigegeben.</em>'],
       ['Lange Lieferzeiten bestellen', 'Schränke bestellen (der Engpass von sechs bis acht Wochen), dazu Arbeitsplatten, Geräte, Bodenbelag und Fliesen, und eine provisorische Küche einrichten. <em>Meilenstein: Schränke geliefert.</em>'],
@@ -7321,26 +7321,26 @@ const T = {
       ['Wände, Boden &amp; Farbe', 'Den Trockenbau setzen und verspachteln, grundieren und streichen und den neuen Boden verlegen. <em>Meilenstein: Flächen fertig.</em>'],
       ['Montage &amp; Endausbau', 'Schränke montieren, Arbeitsplatten aufmessen und einbauen, die Rückwand fliesen, Geräte anschließen, Wasser und Strom anklemmen und die Endabnahme bestehen. <em>Meilenstein: Küche fertig.</em>'],
     ],
-    callout: 'Bestellen Sie zuerst die Schränke — alles wartet auf sie. Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und nach dem Abriss lässt sich ohne sie nichts fertigstellen: Arbeitsplatten können nicht einmal aufgemessen werden, bevor die Schränke montiert sind, und danach brauchen sie ein bis zwei Wochen Fertigung. Geben Sie diese Bestellung an dem Tag auf, an dem der Entwurf freigegeben wird, nicht nach dem Abriss, sonst steht der ganze Umbau still und die Küche ist unbenutzbar.',
+    callout: 'Bestellen Sie zuerst die Schränke, alles wartet auf sie. Schränke brauchen sechs bis acht Wochen bis zur Lieferung, und nach dem Abriss lässt sich ohne sie nichts fertigstellen: Arbeitsplatten können nicht einmal aufgemessen werden, bevor die Schränke montiert sind, und danach brauchen sie ein bis zwei Wochen Fertigung. Geben Sie diese Bestellung an dem Tag auf, an dem der Entwurf freigegeben wird, nicht nach dem Abriss, sonst steht der ganze Umbau still und die Küche ist unbenutzbar.',
     customize: [
       'Bestellen Sie Schränke und Arbeitsplatten, sobald der Entwurf freigegeben ist; ihre Lieferzeit, nicht die Arbeit, bestimmt Ihren Fertigstellungstermin.',
-      'Halten Sie die Schritte aufmessen → fertigen → einbauen der Arbeitsplatte als getrennte Aufgaben — diese ein bis zwei Wochen Fertigung vergessen die meisten einzuplanen.',
+      'Halten Sie die Schritte aufmessen → fertigen → einbauen der Arbeitsplatte als getrennte Aufgaben, diese ein bis zwei Wochen Fertigung vergessen die meisten einzuplanen.',
       'Richten Sie vor dem Abriss eine provisorische Küche ein (Mikrowelle, Wasserkocher, ein Waschbecken anderswo); Sie sind den größten Teil des Umbaus ohne Küche.',
       'Fügen Sie je eine Zeile pro Gewerk hinzu (Installateur, Elektriker, Fliesenleger), um zu sehen, wer jede Woche auf der Baustelle ist, und Kollisionen zu vermeiden.',
       'Markieren Sie Schränke geliefert, Rohinstallation abgenommen und Flächen fertig als Meilensteine, um zu sehen, ob die Montage rechtzeitig starten kann.',
     ],
     tips: [
-      '<strong>Die Schränke sind der kritische Pfad.</strong> Ihre Lieferzeit von sechs bis acht Wochen ist länger als die gesamte Arbeit vor Ort zusammen — das Wichtigste, das Sie steuern, ist also, wie früh Sie bestellen.',
+      '<strong>Die Schränke sind der kritische Pfad.</strong> Ihre Lieferzeit von sechs bis acht Wochen ist länger als die gesamte Arbeit vor Ort zusammen, das Wichtigste, das Sie steuern, ist also, wie früh Sie bestellen.',
       '<strong>Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke stehen.</strong> Die Abfolge aufmessen → fertigen → einbauen kostet ein bis zwei Wochen nach der Schrankmontage; planen Sie diese Lücke ein, statt die Platten am ersten Tag zu erwarten.',
       '<strong>Schließen Sie die Wände nicht vor der Abnahme der Rohinstallation.</strong> Nicht abgenommene Leitungen mit Trockenbau zu verkleiden ist die klassische Nacharbeit; die Abnahme ist eine harte Schranke vor dem Trockenbau.',
       '<strong>Legen Sie jede Auswahl vor dem Abriss fest.</strong> Eine Fliese oder eine Schrankfarbe mitten im Umbau zu ändern ist der Punkt, an dem Budget und Termine kippen; fixieren Sie die Entscheidungen in der Planungsphase.',
-      '<strong>Rechnen Sie damit, ohne Küche zu leben.</strong> Richten Sie eine provisorische Küche ein und planen Sie die Mahlzeiten darum herum — Arbeitsplatten, Spüle und Geräte gehören zu den Letzten, die zurückkommen.',
+      '<strong>Rechnen Sie damit, ohne Küche zu leben.</strong> Richten Sie eine provisorische Küche ein und planen Sie die Mahlzeiten darum herum, Arbeitsplatten, Spüle und Geräte gehören zu den Letzten, die zurückkommen.',
     ],
     faq: [
-      ['Wie lange dauert ein Küchenumbau?', 'Die meisten Küchenumbauten dauern 10 bis 16 Wochen vom Entwurf bis zur Endabnahme — und der Großteil ist Warten auf die Schränke (sechs bis acht Wochen) und die Fertigung der Arbeitsplatten (ein bis zwei Wochen nach der Schrankmontage), nicht die Arbeit vor Ort. Die Vorlage verteilt Planung, Bestellung, Abriss, Rohinstallation, Flächen und Montage über eine Zeitachse, sodass Sie sehen, wo die echten Wartezeiten liegen.'],
+      ['Wie lange dauert ein Küchenumbau?', 'Die meisten Küchenumbauten dauern 10 bis 16 Wochen vom Entwurf bis zur Endabnahme, und der Großteil ist Warten auf die Schränke (sechs bis acht Wochen) und die Fertigung der Arbeitsplatten (ein bis zwei Wochen nach der Schrankmontage), nicht die Arbeit vor Ort. Die Vorlage verteilt Planung, Bestellung, Abriss, Rohinstallation, Flächen und Montage über eine Zeitachse, sodass Sie sehen, wo die echten Wartezeiten liegen.'],
       ['Warum dauern Arbeitsplatten so lange?', 'Arbeitsplatten lassen sich erst aufmessen, wenn die Schränke montiert sind; danach wird das Material ein bis zwei Wochen in der Werkstatt gefertigt, bevor es eingebaut werden kann. Die Vorlage hält aufmessen → fertigen → einbauen als getrennte Schritte, damit diese Lücke sichtbar ist und Rückwand und Anschlüsse danach eingetaktet werden.'],
       ['Kann ich Abhängigkeiten zwischen den Umbauaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Abriss → Rohinstallation → Trockenbau → Schränke → Arbeitsplatten): Sind die Schränke spät, rückt alles Folgende von selbst nach und der kritische Pfad bis zur fertigen Küche bleibt sichtbar.'],
-      ['Ist die Küchenumbau-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+      ['Ist die Küchenumbau-Vorlage kostenlos?', 'Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
 
@@ -7349,8 +7349,8 @@ const T = {
     h1: 'Crowdfunding-Kampagnen-Vorlage',
     metaTitle: 'Crowdfunding-Kampagnen-Vorlage',
     metaDesc: 'Kostenlose Crowdfunding-Kampagnen-Vorlage für Kickstarter oder Indiegogo: Konzept, Video, Vorab-Publikum, Kampagne und Auslieferung. Als Excel oder online.',
-    lead: 'Eine kostenlose <strong>Crowdfunding-Kampagnen-Vorlage</strong> — eine Zeitachse, die ein Kickstarter- oder Indiegogo-Projekt von der Idee bis zu den ausgelieferten Belohnungen führt: Konzept und Belohnungen validieren, Pitch-Video und Seite erstellen, ein Vorab-Publikum aufbauen, die Live-Kampagne fahren und ausliefern. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Launch-Tag zu sehen.',
-    intro: 'Crowdfunding-Kampagnen werden vor dem Launch gewonnen: Die Projekte, die schnell finanziert sind, haben wochenlang eine E-Mail-Liste aufgebaut und Frühunterstützer gewonnen, damit der erste Tag Schwung hat. Diese Vorlage legt die ganze Kampagne auf eine Zeitachse — samt der langen Vorlaufphase — in den sechs Phasen, die eine Kampagne durchläuft:',
+    lead: 'Eine kostenlose <strong>Crowdfunding-Kampagnen-Vorlage</strong>, eine Zeitachse, die ein Kickstarter- oder Indiegogo-Projekt von der Idee bis zu den ausgelieferten Belohnungen führt: Konzept und Belohnungen validieren, Pitch-Video und Seite erstellen, ein Vorab-Publikum aufbauen, die Live-Kampagne fahren und ausliefern. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zum Launch-Tag zu sehen.',
+    intro: 'Crowdfunding-Kampagnen werden vor dem Launch gewonnen: Die Projekte, die schnell finanziert sind, haben wochenlang eine E-Mail-Liste aufgebaut und Frühunterstützer gewonnen, damit der erste Tag Schwung hat. Diese Vorlage legt die ganze Kampagne auf eine Zeitachse, samt der langen Vorlaufphase, in den sechs Phasen, die eine Kampagne durchläuft:',
     phases: [
       ['Konzept &amp; Validierung', 'Idee und Nutzenversprechen definieren, den Markt recherchieren, Finanzierungsziel und Budget festlegen, die Belohnungsstufen gestalten und die Plattform wählen. <em>Meilenstein: Konzept validiert.</em>'],
       ['Kampagnen-Assets bauen', 'Prototyp oder Muster bauen, das Pitch-Video schreiben und drehen, die Kampagnenseite texten und die Grafiken gestalten. <em>Meilenstein: Assets fertig.</em>'],
@@ -7359,7 +7359,7 @@ const T = {
       ['Live-Kampagne', 'Launchen, täglich mit Unterstützern austauschen, zur Mitte einen Presse-Schub fahren, Stretch-Goals ankündigen und den Endspurt der letzten 48 Stunden treiben. <em>Meilenstein: Kampagne finanziert.</em>'],
       ['Abschluss &amp; Auslieferung', 'Unterstützern danken, die Umfragen des Pledge-Managers verschicken, die Produktion abschließen und die Belohnungen ausliefern und versenden. <em>Meilenstein: Belohnungen ausgeliefert.</em>'],
     ],
-    callout: 'Bauen Sie Ihr Publikum vor dem Launch auf, nicht danach. Kampagnen werden teils nach dem frühen Schwung eingeordnet, und ein Projekt, das ohne E-Mail-Liste startet, bleibt am ersten Tag stehen. Nutzen Sie die Wochen vor dem Launch, um E-Mails zu sammeln und Frühzusagen im Wert von rund 20% des Ziels zu sichern, damit die Kampagne in den ersten 48 Stunden einen Teil ihres Ziels erreicht — der stärkste Indikator dafür, ob sie überhaupt finanziert wird.',
+    callout: 'Bauen Sie Ihr Publikum vor dem Launch auf, nicht danach. Kampagnen werden teils nach dem frühen Schwung eingeordnet, und ein Projekt, das ohne E-Mail-Liste startet, bleibt am ersten Tag stehen. Nutzen Sie die Wochen vor dem Launch, um E-Mails zu sammeln und Frühzusagen im Wert von rund 20% des Ziels zu sichern, damit die Kampagne in den ersten 48 Stunden einen Teil ihres Ziels erreicht, der stärkste Indikator dafür, ob sie überhaupt finanziert wird.',
     customize: [
       'Legen Sie zuerst den Launch-Termin fest und rechnen Sie rückwärts; eine ernsthafte Vorlaufphase dauert sechs bis zwölf Wochen, nicht ein paar Tage.',
       'Halten Sie die Aufgaben E-Mail-Liste und Early-Bird über Wochen aktiv: Der Aufbau des Vorab-Publikums finanziert die Kampagne wirklich, nicht der Post am Launch-Tag.',
@@ -7375,10 +7375,10 @@ const T = {
       '<strong>Halten Sie Unterstützer während der Kampagne auf dem Laufenden.</strong> Regelmäßige Updates und Antworten halten Schwung und Teilrate hoch; planen Sie den Austausch, statt nach dem Launch-Tag zu verstummen.',
     ],
     faq: [
-      ['Wie lange dauert die Planung einer Crowdfunding-Kampagne?', 'Die meisten erfolgreichen Kampagnen verbringen sechs bis zwölf Wochen mit dem Vorlauf — E-Mail-Liste, Assets und Frühzusagen aufbauen — vor einer 30-tägigen Live-Kampagne und danach Wochen oder Monate mit der Auslieferung. Die Vorlage verteilt Konzept, Assets, Vorlauf, Launch, Live-Kampagne und Auslieferung über eine Zeitachse, sodass Sie den echten Vorlauf sehen.'],
-      ['Warum ist die Vorlaufphase so wichtig?', 'Crowdfunding-Plattformen ordnen Projekte teils nach dem frühen Schwung ein, also erreicht eine Kampagne, die mit Publikum und Frühzusagen startet, in den ersten 48 Stunden einen Teil ihres Ziels — der stärkste Indikator für die Finanzierung. Die Vorlage gibt dem Publikumsaufbau eine eigene, wochenlange Phase, statt den Launch-Tag als Start zu behandeln.'],
+      ['Wie lange dauert die Planung einer Crowdfunding-Kampagne?', 'Die meisten erfolgreichen Kampagnen verbringen sechs bis zwölf Wochen mit dem Vorlauf, E-Mail-Liste, Assets und Frühzusagen aufbauen, vor einer 30-tägigen Live-Kampagne und danach Wochen oder Monate mit der Auslieferung. Die Vorlage verteilt Konzept, Assets, Vorlauf, Launch, Live-Kampagne und Auslieferung über eine Zeitachse, sodass Sie den echten Vorlauf sehen.'],
+      ['Warum ist die Vorlaufphase so wichtig?', 'Crowdfunding-Plattformen ordnen Projekte teils nach dem frühen Schwung ein, also erreicht eine Kampagne, die mit Publikum und Frühzusagen startet, in den ersten 48 Stunden einen Teil ihres Ziels, der stärkste Indikator für die Finanzierung. Die Vorlage gibt dem Publikumsaufbau eine eigene, wochenlange Phase, statt den Launch-Tag als Start zu behandeln.'],
       ['Kann ich Abhängigkeiten zwischen den Kampagnenaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Assets → Vorlauf → Launch → Auslieferung): Verzögert sich das Video, rücken Launch und alles Folgende von selbst nach und der kritische Pfad bis zum Launch-Tag bleibt sichtbar.'],
-      ['Ist die Crowdfunding-Kampagnen-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+      ['Ist die Crowdfunding-Kampagnen-Vorlage kostenlos?', 'Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
 
@@ -7387,8 +7387,8 @@ const T = {
     h1: 'Leistungsbeurteilungs-Vorlage',
     metaTitle: 'Leistungsbeurteilungs-Vorlage',
     metaDesc: 'Kostenlose Vorlage für den Leistungsbeurteilungszyklus: Rahmen, Selbsteinschätzungen, Beurteilungen, Kalibrierung und Übergabe. Als Excel oder online.',
-    lead: 'Eine kostenlose <strong>Leistungsbeurteilungs-Vorlage</strong> — eine Zeitachse, die einen Beurteilungszyklus vom Rahmen bis zu den abgeschlossenen Beurteilungen führt: Kriterien festlegen und Führungskräfte schulen, Selbsteinschätzungen und 360-Grad-Feedback einholen, die Beurteilungen der Führungskräfte schreiben, die Bewertungen kalibrieren, im Einzelgespräch übergeben und Entwicklungspläne festlegen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur Übergabe zu sehen.',
-    intro: 'Beurteilungen laufen schief, wenn sich die Phasen überschneiden: Führungskräfte schreiben, bevor die Selbsteinschätzungen da sind, oder Bewertungen werden vor der Kalibrierung übergeben. Diese Vorlage legt den ganzen Zyklus auf eine Zeitachse, in den sechs Phasen, die ein Beurteilungsprozess durchläuft — jährlich, halbjährlich oder quartalsweise:',
+    lead: 'Eine kostenlose <strong>Leistungsbeurteilungs-Vorlage</strong>, eine Zeitachse, die einen Beurteilungszyklus vom Rahmen bis zu den abgeschlossenen Beurteilungen führt: Kriterien festlegen und Führungskräfte schulen, Selbsteinschätzungen und 360-Grad-Feedback einholen, die Beurteilungen der Führungskräfte schreiben, die Bewertungen kalibrieren, im Einzelgespräch übergeben und Entwicklungspläne festlegen. Als Excel, PowerPoint oder CSV herunterladen oder online öffnen, um Abhängigkeiten zu verknüpfen und den kritischen Pfad bis zur Übergabe zu sehen.',
+    intro: 'Beurteilungen laufen schief, wenn sich die Phasen überschneiden: Führungskräfte schreiben, bevor die Selbsteinschätzungen da sind, oder Bewertungen werden vor der Kalibrierung übergeben. Diese Vorlage legt den ganzen Zyklus auf eine Zeitachse, in den sechs Phasen, die ein Beurteilungsprozess durchläuft, jährlich, halbjährlich oder quartalsweise:',
     phases: [
       ['Planen &amp; einrichten', 'Umfang und Zeitplan des Zyklus definieren, Kompetenzen und Bewertungsskala aktualisieren, das Tool einrichten, an die Organisation kommunizieren und Führungskräfte schulen. <em>Meilenstein: Zyklusrahmen steht.</em>'],
       ['Ziele &amp; Selbsteinschätzung', 'Die zu beurteilenden Ziele bestätigen, die Selbsteinschätzungen der Mitarbeitenden und 360-Grad-/Peer-Feedback einholen und die unterstützenden Leistungsdaten sammeln. <em>Meilenstein: Selbsteinschätzungen da.</em>'],
@@ -7397,7 +7397,7 @@ const T = {
       ['Übergabe', 'Die Beurteilungsunterlagen vorbereiten und die Beurteilungen im Einzelgespräch übergeben. <em>Meilenstein: Beurteilungen übergeben.</em>'],
       ['Entwicklung &amp; Abschluss', 'Ziele für den nächsten Zyklus setzen, Entwicklungspläne vereinbaren, Feedback zum Prozess einholen und den Zyklus abschließen und berichten. <em>Meilenstein: Zyklus abgeschlossen.</em>'],
     ],
-    callout: 'Kalibrieren Sie vor der Übergabe, nie danach. Eine an eine mitarbeitende Person übergebene Bewertung lässt sich nicht zurücknehmen, also muss sie über Teams hinweg normalisiert werden — in der Kalibrierung — bevor eine einzige Beurteilung übergeben wird. Der schädlichste Fehler eines Zyklus ist, dass eine Führungskraft eine Note teilt, die die Kalibrierung später ändert; behandeln Sie Bewertungen final als harte Schranke vor jedem Einzelgespräch.',
+    callout: 'Kalibrieren Sie vor der Übergabe, nie danach. Eine an eine mitarbeitende Person übergebene Bewertung lässt sich nicht zurücknehmen, also muss sie über Teams hinweg normalisiert werden, in der Kalibrierung, bevor eine einzige Beurteilung übergeben wird. Der schädlichste Fehler eines Zyklus ist, dass eine Führungskraft eine Note teilt, die die Kalibrierung später ändert; behandeln Sie Bewertungen final als harte Schranke vor jedem Einzelgespräch.',
     customize: [
       'Legen Sie zuerst die Übergabefrist fest und rechnen Sie rückwärts; ein voller Zyklus braucht sechs bis zehn Wochen, wenn Selbsteinschätzung, Beurteilungen und Kalibrierung sauber verkettet sind.',
       'Halten Sie die Selbsteinschätzung strikt vor den Beurteilungen der Führungskräfte: Der ganze Sinn ist, dass die Führungskraft mit dem Input der Person in der Hand schreibt, nicht im Nachhinein.',
@@ -7408,21 +7408,21 @@ const T = {
     tips: [
       '<strong>Selbsteinschätzungen sind die Schranke vor den Beurteilungen.</strong> Führungskräfte sollten mit Selbsteinschätzung und Peer-Feedback in der Hand schreiben; verketten Sie die Phasen so, dass keine Beurteilung vor ihren Eingaben entsteht.',
       '<strong>Die Kalibrierung macht Bewertungen fair.</strong> Sie über Teams hinweg vor der Übergabe zu normalisieren verhindert, dass eine milde oder strenge Führungskraft die Ergebnisse verzerrt; übergeben Sie nie eine unkalibrierte Bewertung.',
-      '<strong>Bewertungen sind nach der Übergabe unumkehrbar.</strong> Behandeln Sie Bewertungen final als harte Schranke — eine im Einzelgespräch geteilte und dann in der Kalibrierung geänderte Note zerstört das Vertrauen in den ganzen Prozess.',
+      '<strong>Bewertungen sind nach der Übergabe unumkehrbar.</strong> Behandeln Sie Bewertungen final als harte Schranke, eine im Einzelgespräch geteilte und dann in der Kalibrierung geänderte Note zerstört das Vertrauen in den ganzen Prozess.',
       '<strong>Schulen Sie Führungskräfte vor dem Start des Zyklus.</strong> Einheitliche Texte und Bewertungen hängen davon ab, dass Führungskräfte Skala und Kriterien vorab verstehen, nicht mitten im Zyklus.',
       '<strong>Schließen Sie den Kreis mit Entwicklungsplänen.</strong> Die Beurteilung ist der Input, nicht das Ergebnis; planen Sie Ziele für den nächsten Zyklus und Entwicklungspläne, damit der Zyklus Wachstum antreibt und nicht nur eine Note.',
     ],
     faq: [
-      ['Wie lange dauert ein Leistungsbeurteilungszyklus?', 'Ein voller Zyklus dauert typischerweise sechs bis zehn Wochen vom Öffnen des Rahmens bis zur Übergabe der Beurteilungen — länger in großen Organisationen, weil Kalibrierung und Übergabe mit der Belegschaft wachsen. Die Vorlage verteilt Einrichtung, Selbsteinschätzung, Beurteilungen, Kalibrierung, Übergabe und Entwicklung über eine Zeitachse, sodass Sie sehen, ob Ihre Termine realistisch sind.'],
+      ['Wie lange dauert ein Leistungsbeurteilungszyklus?', 'Ein voller Zyklus dauert typischerweise sechs bis zehn Wochen vom Öffnen des Rahmens bis zur Übergabe der Beurteilungen, länger in großen Organisationen, weil Kalibrierung und Übergabe mit der Belegschaft wachsen. Die Vorlage verteilt Einrichtung, Selbsteinschätzung, Beurteilungen, Kalibrierung, Übergabe und Entwicklung über eine Zeitachse, sodass Sie sehen, ob Ihre Termine realistisch sind.'],
       ['Welche Phasen hat ein Leistungsbeurteilungszyklus?', 'Die meisten Zyklen durchlaufen sechs Phasen: Rahmen und Schulung der Führungskräfte, Selbsteinschätzung und 360-Grad-Feedback, Beurteilungen und Entwurfsbewertungen, Kalibrierung, Übergabe im Einzelgespräch und Entwicklungsplanung. Die Vorlage gibt jeder eine eigene Phase mit Meilensteinen und passt für jährliche, halbjährliche oder quartalsweise Zyklen.'],
       ['Kann ich Abhängigkeiten zwischen den Zyklusaufgaben zeigen?', 'Ja. Öffnen Sie die Vorlage im <a href="/de/app.html">kostenlosen gantts.app-Editor</a>, um Ende-Anfang-Beziehungen zu verknüpfen (Selbsteinschätzungen → Beurteilungen → Kalibrierung → Übergabe): Verzögern sich die Selbsteinschätzungen, rückt alles Folgende von selbst nach und der kritische Pfad bis zur Übergabe bleibt sichtbar.'],
-      ['Ist die Leistungsbeurteilungs-Vorlage kostenlos?', 'Ja — kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
+      ['Ist die Leistungsbeurteilungs-Vorlage kostenlos?', 'Ja, kostenloser Download als Excel, PowerPoint oder CSV und kostenloses Bearbeiten online, ohne Anmeldung.'],
     ],
   },
 };
 
 /* Page furniture. Without this the German pages inherited the Spanish
-   UI block — German content under Spanish headings, which is worse than
+   UI block, German content under Spanish headings, which is worse than
    no translation at all. */
 const UI = {
   home: 'Start',
@@ -7437,7 +7437,7 @@ const UI = {
   related: 'Verwandte Vorlagen',
   browseAll: 'Alle Gantt-Diagramm-Vorlagen ansehen',
   faq: 'Häufige Fragen',
-  ctaH2: 'Online planen — kostenlos',
+  ctaH2: 'Online planen, kostenlos',
   ctaP: 'Öffnen Sie die Vorlage im Editor, ziehen Sie die Balken auf Ihre Termine und exportieren Sie als PDF, Excel oder PowerPoint. Ohne Konto, ohne Wasserzeichen.',
   ctaBtn: 'Kostenlosen Editor öffnen',
   imgAlt: 'Vorschau der Vorlage mit den Phasen auf einer Zeitachse',

@@ -1,5 +1,5 @@
 /* ============================================================
-   schedule.js — Critical Path Method (CPM) computation
+   schedule.js, Critical Path Method (CPM) computation
    Computes early/late start-finish, slack, and the critical set.
    Works on leaf tasks + milestones (groups are rollups).
    Exposes a global `Schedule`.
@@ -21,7 +21,7 @@
 
       /* When a working calendar is active the whole CPM runs in
          WORKING-DAY ordinals rather than calendar days. That keeps the
-         classic integer algorithm below completely unchanged — an
+         classic integer algorithm below completely unchanged, an
          offset of 5 means "5 working days", so weekends and holidays
          simply do not exist in this number space. Converting back at
          the end is what makes successors land on a Monday instead of a
@@ -46,7 +46,7 @@
         const id = queue.shift(); order.push(id);
         outAdj[id].forEach(e => { if (--indegC[e.to] === 0) queue.push(e.to); });
       }
-      // if cycle (shouldn't happen — guarded on add), fall back to array order
+      // if cycle (shouldn't happen, guarded on add), fall back to array order
       if (order.length !== nodes.length) nodes.forEach(n => { if (!order.includes(n.id)) order.push(n.id); });
 
       // Use day-offsets from a common origin for numeric CPM
@@ -100,7 +100,7 @@
       const inEdges = {}; nodes.forEach(n => inEdges[n.id] = []);
       edges.forEach(e => inEdges[e.to].push(e));
 
-      // forward pass — classic CPM.
+      // forward pass, classic CPM.
       // Tasks with NO predecessors are anchored at their placed start;
       // tasks WITH predecessors are driven purely by dependency constraints,
       // so the critical path traces the true longest dependency chain.
@@ -158,7 +158,7 @@
       return { critical, slack, edges, critEdges, projectEnd, origin,
         ES, EF, LS, LF, dur: id => dur(byId[id]),
         // Exposed so callers convert ordinals back the same way the
-        // forward pass created them — calendar-aware or not.
+        // forward pass created them, calendar-aware or not.
         dateAt, calOn, cal,
         /* Also exposed: the topological order and the date->ordinal
            projection. autoSchedule needs to redo the forward pass with
@@ -170,7 +170,7 @@
     // apply auto-scheduling: shift tasks to satisfy dependencies (respects lags)
     /* Pull every task back to the earliest date its dependencies allow.
        Owns its own undo snapshot and commit, so callers must NOT wrap
-       it in another — a second snapshot would make Ctrl+Z take two
+       it in another, a second snapshot would make Ctrl+Z take two
        presses to undo one action.
 
        @returns the number of tasks whose dates actually moved, so the
@@ -185,7 +185,7 @@
       /* compute() runs AS-PLACED CPM: its forward pass starts each task
          at max(placed start, dependency constraint), so ES can only ever
          push a task later. That is the right behaviour for reporting
-         float — a bar you dragged should stay where you put it — but it
+         float, a bar you dragged should stay where you put it, but it
          makes ES useless here, because "auto-schedule" means pulling
          work back to the earliest date its predecessors allow. Using
          info.ES directly produced a button that compacted nothing.
@@ -193,7 +193,7 @@
          So this recomputes starts with one rule changed: a task WITH
          predecessors is driven PURELY by its constraints, ignoring where
          it currently sits. Tasks with no predecessors keep their placed
-         start — they are the anchors, and yanking them to the project
+         start, they are the anchors, and yanking them to the project
          origin would be a rewrite nobody asked for.
 
          compute() is deliberately left alone; changing its semantics

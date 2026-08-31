@@ -1,12 +1,12 @@
 /* ============================================================
-   guide-cards.js — icons and one-line descriptions for guide cards.
+   guide-cards.js, icons and one-line descriptions for guide cards.
 
    WHY THIS EXISTS
 
    The English guides index renders each card as icon + title +
    description. The localized ones rendered title + "read the guide →"
    and nothing else: no icon, no description. Same failure as the
-   template cards — the localized page used a thinner markup vocabulary
+   template cards, the localized page used a thinner markup vocabulary
    than the English original, so it looked like a different, poorer
    product in every language but one.
 
@@ -35,7 +35,7 @@ const ICONS = {
 
 const DESC = {
   es: {
-    'what-is-a-gantt-chart': 'Qué es, para qué sirve y cuándo conviene usarlo — con las cuatro piezas explicadas.',
+    'what-is-a-gantt-chart': 'Qué es, para qué sirve y cuándo conviene usarlo, con las cuatro piezas explicadas.',
     'how-to-make-a-gantt-chart': 'Siete pasos, en el orden que funciona: tareas, duraciones, dependencias e hitos.',
     'critical-path-method': 'Pasada adelante, pasada atrás y holgura, con un ejemplo resuelto de cuatro tareas.',
     'gantt-chart-dependencies': 'Los cuatro tipos de enlace, cuándo usar cada uno y cómo funcionan los desfases.',
@@ -45,14 +45,14 @@ const DESC = {
     'gantt-chart-in-powerpoint': 'Gráfico o formas: dos caminos según cuánto control visual necesites.',
     'best-free-gantt-chart-software': 'Nueve herramientas comparadas: qué es gratis de verdad y qué es freemium.',
     'gantt-baseline-variance': 'Cómo congelar un plan, leer la desviación y cuándo rehacer la línea base.',
-    'gantt-chart-mistakes': 'Exceso de detalle, falta de dependencias, cero holgura — cada uno con su solución.',
+    'gantt-chart-mistakes': 'Exceso de detalle, falta de dependencias, cero holgura, cada uno con su solución.',
     'milestones-vs-tasks': 'En qué se diferencian, para qué sirven los hitos y cuántos debe tener un proyecto.',
     's-curve-project-management': 'Qué muestra la curva S, cómo leer plan frente a real y qué significan SPI y CPI.',
     '3-week-lookahead-schedule': 'Qué es una programación a 3 semanas, por qué se usa y cómo generarla desde el cronograma.',
     'mermaid-gantt-chart': 'La sintaxis de Mermaid gantt, sus trampas y cómo editar el diagrama visualmente.',
   },
   fr: {
-    'what-is-a-gantt-chart': 'Ce que c’est, à quoi ça sert et quand l’utiliser — les quatre éléments expliqués.',
+    'what-is-a-gantt-chart': 'Ce que c’est, à quoi ça sert et quand l’utiliser, les quatre éléments expliqués.',
     'how-to-make-a-gantt-chart': 'Sept étapes, dans l’ordre qui marche : tâches, durées, dépendances et jalons.',
     'critical-path-method': 'Passe avant, passe arrière et marge, avec un exemple résolu à quatre tâches.',
     'gantt-chart-dependencies': 'Les quatre types de liens, quand les utiliser et comment fonctionnent les décalages.',
@@ -62,31 +62,31 @@ const DESC = {
     'gantt-chart-in-powerpoint': 'Graphique ou formes : deux voies selon le contrôle visuel souhaité.',
     'best-free-gantt-chart-software': 'Neuf outils comparés : ce qui est vraiment gratuit et ce qui est freemium.',
     'gantt-baseline-variance': 'Figer un plan, lire l’écart, et savoir quand refaire la référence.',
-    'gantt-chart-mistakes': 'Trop de détail, pas de dépendances, aucune marge — chacun avec son correctif.',
+    'gantt-chart-mistakes': 'Trop de détail, pas de dépendances, aucune marge, chacun avec son correctif.',
     'milestones-vs-tasks': 'Ce qui les distingue, à quoi servent les jalons et combien en prévoir.',
     's-curve-project-management': 'Ce que montre la courbe en S, comment lire prévu contre réel, et ce que valent SPI et CPI.',
     '3-week-lookahead-schedule': "Ce qu'est un planning glissant à 3 semaines, à quoi il sert et comment le générer.",
     'mermaid-gantt-chart': 'La syntaxe Mermaid gantt, ses pièges, et comment éditer le diagramme visuellement.',
   },
   de: {
-    'what-is-a-gantt-chart': 'Was es ist, wozu es dient und wann es sich lohnt — die vier Bausteine erklärt.',
+    'what-is-a-gantt-chart': 'Was es ist, wozu es dient und wann es sich lohnt, die vier Bausteine erklärt.',
     'how-to-make-a-gantt-chart': 'Sieben Schritte in der Reihenfolge, die funktioniert: Aufgaben, Dauern, Abhängigkeiten, Meilensteine.',
     'critical-path-method': 'Vorwärts- und Rückwärtsrechnung samt Puffer, mit einem durchgerechneten Beispiel.',
     'gantt-chart-dependencies': 'Die vier Verknüpfungsarten, wann welche passt und wie Zeitabstände wirken.',
     'gantt-chart-examples': 'Acht Beispiele nach Branche, von der Baustelle bis zur Dissertation.',
-    'gantt-chart-in-excel': 'Die Methode mit gestapelten Balken Schritt für Schritt — und wo ihre Grenze liegt.',
+    'gantt-chart-in-excel': 'Die Methode mit gestapelten Balken Schritt für Schritt, und wo ihre Grenze liegt.',
     'gantt-chart-in-google-sheets': 'Drei Wege, darunter die native Zeitachsen-Funktion, und welcher wann passt.',
     'gantt-chart-in-powerpoint': 'Diagramm oder Formen: zwei Wege, je nach gewünschter Gestaltungsfreiheit.',
     'best-free-gantt-chart-software': 'Neun Werkzeuge im Vergleich: was wirklich kostenlos ist und was Freemium.',
     'gantt-baseline-variance': 'Einen Plan einfrieren, Abweichungen lesen und wissen, wann neu basiert wird.',
-    'gantt-chart-mistakes': 'Zu viel Detail, fehlende Abhängigkeiten, kein Puffer — jeweils mit der Korrektur.',
+    'gantt-chart-mistakes': 'Zu viel Detail, fehlende Abhängigkeiten, kein Puffer, jeweils mit der Korrektur.',
     'milestones-vs-tasks': 'Worin sie sich unterscheiden, wozu Meilensteine dienen und wie viele sinnvoll sind.',
     's-curve-project-management': 'Was die S-Kurve zeigt, wie Plan und Ist zu lesen sind und was SPI und CPI bedeuten.',
     '3-week-lookahead-schedule': 'Was eine 3-Wochen-Vorschau ist, wozu sie dient und wie sie aus dem Terminplan entsteht.',
     'mermaid-gantt-chart': 'Die Mermaid-Gantt-Syntax, ihre Fallstricke und wie sich das Diagramm visuell bearbeiten lässt.',
   },
   pt: {
-    'what-is-a-gantt-chart': 'O que é, para que serve e quando usar — com as quatro peças explicadas.',
+    'what-is-a-gantt-chart': 'O que é, para que serve e quando usar, com as quatro peças explicadas.',
     'how-to-make-a-gantt-chart': 'Sete passos na ordem que funciona: tarefas, durações, dependências e marcos.',
     'critical-path-method': 'Passagem para frente, para trás e folga, com um exemplo resolvido de quatro tarefas.',
     'gantt-chart-dependencies': 'Os quatro tipos de ligação, quando usar cada um e como funcionam os atrasos.',
@@ -96,14 +96,14 @@ const DESC = {
     'gantt-chart-in-powerpoint': 'Gráfico ou formas: dois caminhos conforme o controle visual necessário.',
     'best-free-gantt-chart-software': 'Nove ferramentas comparadas: o que é realmente grátis e o que é freemium.',
     'gantt-baseline-variance': 'Como congelar um plano, ler o desvio e quando refazer a linha de base.',
-    'gantt-chart-mistakes': 'Excesso de detalhe, falta de dependências, folga zero — cada um com a correção.',
+    'gantt-chart-mistakes': 'Excesso de detalhe, falta de dependências, folga zero, cada um com a correção.',
     'milestones-vs-tasks': 'No que diferem, para que servem os marcos e quantos um projeto deve ter.',
     's-curve-project-management': 'O que a curva S mostra, como ler planejado contra real e o que significam SPI e CPI.',
     '3-week-lookahead-schedule': 'O que é um lookahead de 3 semanas, para que serve e como gerá-lo a partir do cronograma.',
     'mermaid-gantt-chart': 'A sintaxe do Mermaid gantt, suas armadilhas e como editar o diagrama visualmente.',
   },
   zh: {
-    'what-is-a-gantt-chart': '是什么、有什么用、什么时候该用——四个核心要素逐一说明。',
+    'what-is-a-gantt-chart': '是什么、有什么用、什么时候该用, , 四个核心要素逐一说明。',
     'how-to-make-a-gantt-chart': '七个步骤，按真正有效的顺序：任务、工期、依赖与里程碑。',
     'critical-path-method': '正推、逆推与浮动时间，附一个四任务的完整算例。',
     'gantt-chart-dependencies': '四种依赖类型分别在什么场景用，以及提前量与延迟量怎么起作用。',
@@ -113,7 +113,7 @@ const DESC = {
     'gantt-chart-in-powerpoint': '用图表还是用图形：根据需要的排版自由度来选。',
     'best-free-gantt-chart-software': '九款工具横向对比：哪些真免费，哪些其实是增值收费。',
     'gantt-baseline-variance': '如何冻结计划、读懂偏差，以及什么时候该重设基准。',
-    'gantt-chart-mistakes': '过度细化、缺少依赖、毫无浮动时间——每条都给出对应的修正办法。',
+    'gantt-chart-mistakes': '过度细化、缺少依赖、毫无浮动时间, , 每条都给出对应的修正办法。',
     'milestones-vs-tasks': '两者的区别、里程碑的真正用途，以及一个项目该设几个。',
     's-curve-project-management': 'S 曲线展示什么、如何对比计划与实际，以及 SPI 与 CPI 的含义。',
     '3-week-lookahead-schedule': '什么是三周滚动计划、为何要用，以及如何直接从主进度计划生成。',

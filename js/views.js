@@ -1,5 +1,5 @@
 /* ============================================================
-   views.js — what the chart shows. Pure filtering, no DOM.
+   views.js, what the chart shows. Pure filtering, no DOM.
 
    Three modes over the same data:
 
@@ -12,7 +12,7 @@
    The "3-week lookahead" is a standing construction ritual: every
    Monday the site team pulls the next three weeks out of the master
    schedule and works only from that. Today it is done by retyping into
-   an Excel template — Smartsheet, Mastt and even a NAVFAC standard all
+   an Excel template, Smartsheet, Mastt and even a NAVFAC standard all
    publish one, and every one of them is a blank grid you fill in by
    hand. The schedule already contains the answer; nobody has made the
    window a view of it.
@@ -21,7 +21,7 @@
 
    The ritual is weekly and the meeting is Monday, so a window running
    Thursday-to-Thursday would be useless. `anchor` snaps back to the
-   week start. Weeks are counted in calendar weeks, not working weeks —
+   week start. Weeks are counted in calendar weeks, not working weeks, 
    "three weeks out" means a date, not 15 working days.
 
    OVERLAP, NOT CONTAINMENT
@@ -81,7 +81,7 @@
      * @param all   every task in the project (needed to walk parents)
      * @param view  from Views.of()
      * @param today ISO; injected so this stays pure and testable
-     * @returns {rows, window} — rows in the SAME order they came in
+     * @returns {rows, window}, rows in the SAME order they came in
      */
     apply(rows, all, view, today) {
       if (!Views.active(view)) return { rows, window: null };
@@ -100,7 +100,7 @@
       for (const t of rows) {
         if (!matches(t)) continue;
         keep.add(t.id);
-        /* Walk up. The guard is not paranoia — a corrupt parentId cycle
+        /* Walk up. The guard is not paranoia, a corrupt parentId cycle
            would otherwise hang the render loop, and this runs on every
            repaint including during a drag. */
         let p = t.parentId, guard = 0;
@@ -113,7 +113,7 @@
 
       const out = rows.filter(t => keep.has(t.id)).map(t => {
         if (t.type === 'group' || !matches(t)) {
-          /* Shallow copy so the flag never reaches the saved project —
+          /* Shallow copy so the flag never reaches the saved project, 
              a `_context` key persisted into storage would come back as
              a real field and slowly leak into exports. */
           return Object.assign({}, t, { _context: true });
@@ -124,12 +124,12 @@
       return { rows: out, window: win };
     },
 
-    /** A short human label, e.g. "3-week lookahead · 20 Jul – 9 Aug". */
+    /** A short human label, e.g. "3-week lookahead · 20 Jul, 9 Aug". */
     label(view, today) {
       if (!Views.active(view)) return '';
       if (view.mode === 'milestones') return 'Milestones only';
       const w = Views.window(view, today);
-      return `${w.weeks}-week lookahead · ${U.fmtShort(w.start)} – ${U.fmtShort(w.end)}`;
+      return `${w.weeks}-week lookahead · ${U.fmtShort(w.start)}, ${U.fmtShort(w.end)}`;
     },
   };
 

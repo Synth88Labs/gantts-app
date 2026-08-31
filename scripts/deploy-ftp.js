@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   deploy-ftp.js — upload deploy/ to the live server over FTPS.
+   deploy-ftp.js, upload deploy/ to the live server over FTPS.
 
    Credentials are read from a local .env that is gitignored and never
    leaves your machine. Nothing in this repo contains a password.
@@ -10,7 +10,7 @@
      npm run gen:templates     # download artefacts are not in git
 
    Deploy:
-     npm run deploy:check      # dry run — shows what WOULD change
+     npm run deploy:check      # dry run, shows what WOULD change
      npm run deploy            # upload for real
 
    Safety behaviour:
@@ -97,7 +97,7 @@ const html = files.filter(f => f.endsWith('.html')).length;
 const downloads = files.filter(f => f.startsWith('templates/files/')).length;
 
 if (!files.includes('index.html')) {
-  console.error('✗ deploy/index.html missing — the bundle looks wrong.\n');
+  console.error('✗ deploy/index.html missing, the bundle looks wrong.\n');
   process.exit(1);
 }
 if (downloads === 0) {
@@ -108,7 +108,7 @@ if (downloads === 0) {
 
 console.log(`\nBundle: ${files.length} files · ${html} HTML pages · ${downloads} template downloads`);
 console.log(`Target: ${env.FTP_USER}@${env.FTP_HOST}:${env.FTP_DIR}`);
-console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPLOAD\n');
+console.log(DRY ? 'Mode:   DRY RUN, nothing will be written\n' : 'Mode:   UPLOAD\n');
 
 (async () => {
   const client = new ftp.Client(30000);
@@ -121,7 +121,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
       port: Number(env.FTP_PORT || 21),
       secure: env.FTP_INSECURE === '1' ? false : true,
       // Certificate verification is ON. It only passes if FTP_HOST is the
-      // server's real name (e.g. businessNNN-N.the provider hostname) — the
+      // server's real name (e.g. businessNNN-N.the provider hostname), the
       // shared-hosting cert is issued for *.the provider hostname, so aliases
       // like ftp.gantts.app or ftp.cladd.store fail validation. Without
       // this, an attacker on the path could impersonate the server and
@@ -130,21 +130,21 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
       secureOptions: { rejectUnauthorized: env.FTP_ALLOW_BAD_CERT !== '1' },
     });
     if (env.FTP_INSECURE === '1') {
-      console.warn('⚠ Connected over PLAIN FTP — the password crossed the network in clear text.');
+      console.warn('⚠ Connected over PLAIN FTP, the password crossed the network in clear text.');
       console.warn('  Change it afterwards, and ask your host to enable FTPS.\n');
     }
 
     // A real document root already exists. If FTP_DIR has to be CREATED,
     // the account is almost certainly chrooted somewhere else and we are
     // about to build a nested folder inside the web root instead of
-    // uploading to it — which is exactly what happened on the first run
+    // uploading to it, which is exactly what happened on the first run
     // with FTP_DIR=/home/<user>/gantts.app on a chrooted account.
     if (env.FTP_DIR !== '/') {
       try {
         await client.cd(env.FTP_DIR);
       } catch (e) {
         console.error(`\n✗ ${env.FTP_DIR} does not exist on the server.`);
-        console.error('  Not creating it — a document root you have to create is a sign');
+        console.error('  Not creating it, a document root you have to create is a sign');
         console.error('  the FTP account is rooted elsewhere. Most the hosting control panel FTP accounts are');
         console.error('  chrooted to the docroot already, in which case FTP_DIR should be "/".');
         console.error('  Run  node scripts/ftp-inspect.js  to see the real layout.\n');
@@ -170,7 +170,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
     if (!names.includes('index.html') && remote.length > 0) {
       console.warn('\n⚠ This directory has content but no index.html.');
       console.warn('  Double-check it is the document root for gantts.app and not a');
-      console.warn('  subfolder — uploading to the wrong one deploys successfully and');
+      console.warn('  subfolder, uploading to the wrong one deploys successfully and');
       console.warn('  shows nothing on the website.');
     }
     if (suspicious) {
@@ -190,7 +190,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
     //
     // uploadFromDir() sends everything in one session and restarts from zero
     // if it fails. On this shared host the FTP CONTROL socket times out
-    // partway through 263 files, so it never finished — it died near the end
+    // partway through 263 files, so it never finished, it died near the end
     // twice and left templates.html missing.
     //
     // Instead: walk the tree, skip files already present at the right size,
@@ -291,7 +291,7 @@ console.log(DRY ? 'Mode:   DRY RUN — nothing will be written\n' : 'Mode:   UPL
       console.log('    a nonexistent URL → should show the styled 404 (proves .htaccess landed)');
       console.log('\n  Then:  npm run indexnow\n');
     } else {
-      console.error('✗ index.html or .htaccess not visible after upload — check the remote path.\n');
+      console.error('✗ index.html or .htaccess not visible after upload, check the remote path.\n');
       process.exitCode = 1;
     }
   } catch (e) {

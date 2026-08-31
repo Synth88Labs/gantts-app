@@ -4,7 +4,7 @@
   <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
        after the visitor accepts. Nothing is requested from Google
        before that. See scripts/add-analytics.js for why. -->
-  <script defer src="/js/consent.js?v=30"></script>
+  <script defer src="/js/consent.js?v=31"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mermaid 甘特图语法详解 | gantts.app</title>
@@ -48,8 +48,8 @@
   <meta name="twitter:description" content="Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。" />
   <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
 
-  <link rel="stylesheet" href="/css/site.css?v=30" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/mermaid-gantt-chart.html#post","headline":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","description":"Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。","url":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]},"isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","item":"https://gantts.app/zh/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Mermaid 里怎么写甘特图？","acceptedAnswer":{"@type":"Answer","text":"代码块以 gantt 开头，加上 dateFormat YYYY-MM-DD，然后写 section 标题，标题下按\"名称 :tag, id, start, duration\"的形式写任务行，例如 \"Research :done, res, 2026-01-05, 5d\"。"}},{"@type":"Question","name":"Mermaid 里的 5d 包含开始当天吗？","acceptedAnswer":{"@type":"Answer","text":"包含。从 5 号周一开始的 5d 任务在 9 号周五结束。这种含首日的计数方式是最常见的差一天错误来源。"}},{"@type":"Question","name":"Mermaid 甘特图里依赖关系怎么写？","acceptedAnswer":{"@type":"Answer","text":"在 start 字段写 \"after someId\"。它永远是无延时的完成—开始关系，开始—开始、完成—完成以及延时都无法表达。"}},{"@type":"Question","name":"Mermaid 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"不能，它只有 done 和 active 两个标签。把 active 读成某个具体百分比只能靠猜；gantts.app 取 50%，并且会明确告知。"}},{"@type":"Question","name":"Mermaid 甘特图在哪里能渲染？","acceptedAnswer":{"@type":"Answer","text":"GitHub、GitLab、Notion 和 Obsidian 都能在 Markdown 里原生渲染，mermaid.live 也可以在浏览器里渲染。"}},{"@type":"Question","name":"可以把 Mermaid 甘特图变成可编辑的图表吗？","acceptedAnswer":{"@type":"Answer","text":"可以。在 gantts.app 里打开 .mmd 或 Markdown 文件，可视化编辑之后用\"导出 ▸ Mermaid 甘特图\"把更新后的语法复制回去。"}}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css?v=31" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/mermaid-gantt-chart.html#post","headline":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","description":"Mermaid 甘特图语法讲解：section、标签、依赖、excludes，以及几个差一天的陷阱，还有如何可视化编辑后把代码粘回去。","url":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","inLanguage":"zh-Hans","datePublished":"2026-07-19","dateModified":"2026-07-19","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]},"isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/#org"},"mainEntityOfPage":"https://gantts.app/zh/blog/mermaid-gantt-chart.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返","item":"https://gantts.app/zh/blog/mermaid-gantt-chart.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Mermaid 里怎么写甘特图？","acceptedAnswer":{"@type":"Answer","text":"代码块以 gantt 开头，加上 dateFormat YYYY-MM-DD，然后写 section 标题，标题下按\"名称 :tag, id, start, duration\"的形式写任务行，例如 \"Research :done, res, 2026-01-05, 5d\"。"}},{"@type":"Question","name":"Mermaid 里的 5d 包含开始当天吗？","acceptedAnswer":{"@type":"Answer","text":"包含。从 5 号周一开始的 5d 任务在 9 号周五结束。这种含首日的计数方式是最常见的差一天错误来源。"}},{"@type":"Question","name":"Mermaid 甘特图里依赖关系怎么写？","acceptedAnswer":{"@type":"Answer","text":"在 start 字段写 \"after someId\"。它永远是无延时的完成, 开始关系，开始, 开始、完成, 完成以及延时都无法表达。"}},{"@type":"Question","name":"Mermaid 能显示完成百分比吗？","acceptedAnswer":{"@type":"Answer","text":"不能，它只有 done 和 active 两个标签。把 active 读成某个具体百分比只能靠猜；gantts.app 取 50%，并且会明确告知。"}},{"@type":"Question","name":"Mermaid 甘特图在哪里能渲染？","acceptedAnswer":{"@type":"Answer","text":"GitHub、GitLab、Notion 和 Obsidian 都能在 Markdown 里原生渲染，mermaid.live 也可以在浏览器里渲染。"}},{"@type":"Question","name":"可以把 Mermaid 甘特图变成可编辑的图表吗？","acceptedAnswer":{"@type":"Answer","text":"可以。在 gantts.app 里打开 .mmd 或 Markdown 文件，可视化编辑之后用\"导出 ▸ Mermaid 甘特图\"把更新后的语法复制回去。"}}]}]}</script>
 </head>
 <body>
   <header class="nav">
@@ -81,7 +81,7 @@
          the BreadcrumbList schema had no visible counterpart. -->
     <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返</div>
     <h1>Mermaid 甘特图：语法、坑，以及与可视化编辑器的往返</h1>
-    <p class="lead">Mermaid 的 gantt 代码块在 GitHub、GitLab、Notion 和 Obsidian 里都能原生渲染，这让它成为把进度计划放到工作现场最省事的方式。它同时也极其难<em>改</em>：动一个日期，下游每一条 <code>after</code> 链都得手工重新推算。本文讲语法、讲坑，也讲那个缺失的环节——可视化编辑之后把代码取回来。</p>
+    <p class="lead">Mermaid 的 gantt 代码块在 GitHub、GitLab、Notion 和 Obsidian 里都能原生渲染，这让它成为把进度计划放到工作现场最省事的方式。它同时也极其难<em>改</em>：动一个日期，下游每一条 <code>after</code> 链都得手工重新推算。本文讲语法、讲坑，也讲那个缺失的环节, , 可视化编辑之后把代码取回来。</p>
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
@@ -107,7 +107,7 @@
         <p class="takeaways-title"><strong>要点</strong></p>
         <ul>
           <li>Mermaid 是一种基于文本的语法，用纯代码就能渲染出甘特图，因此图表可以直接存在于 Markdown、文档或 Git 仓库里。</li>
-          <li>你用几个简单的关键字来定义分区、任务、日期或工期以及依赖关系——全程不用拖拽。</li>
+          <li>你用几个简单的关键字来定义分区、任务、日期或工期以及依赖关系, , 全程不用拖拽。</li>
           <li>它非常适合开发者和文档场景，因为它能像任何文本一样做差异对比和版本管理。</li>
           <li>若需要更丰富的编辑和导出，gantts.app 可以把可视化的计划转成 Mermaid 文本，也能反向转回来。</li>
         </ul>
@@ -117,10 +117,10 @@
       <p>一行任务是名称、一个冒号，然后是逗号分隔的字段：</p>
       <p><code>Task name :tag, id, start, duration</code></p>
       <ul>
-        <li><strong>标签</strong>——<code>done</code>、<code>active</code>、<code>crit</code>、<code>milestone</code> 中的任意一个，可省略。</li>
-        <li><strong>id</strong>——一个不带空格的词，只有当别处要引用这项任务时才需要。</li>
-        <li><strong>start</strong>——一个日期，或 <code>after someId</code>，或省略以接在上一项任务之后。</li>
-        <li><strong>duration</strong>——<code>5d</code>、<code>2w</code>，或者第二个日期。</li>
+        <li><strong>标签</strong>, , <code>done</code>、<code>active</code>、<code>crit</code>、<code>milestone</code> 中的任意一个，可省略。</li>
+        <li><strong>id</strong>, , 一个不带空格的词，只有当别处要引用这项任务时才需要。</li>
+        <li><strong>start</strong>, , 一个日期，或 <code>after someId</code>，或省略以接在上一项任务之后。</li>
+        <li><strong>duration</strong>, , <code>5d</code>、<code>2w</code>，或者第二个日期。</li>
       </ul>
       <p>值得记住的头部声明：<code>dateFormat</code>（<em>你的文件里</em>日期是怎么写的）、<code>excludes weekends</code>（跳过周六和周日）、<code>title</code>，以及 <code>axisFormat</code>（坐标轴标签怎么显示，用的是 strftime 风格的占位符）。缩进只是书写习惯，不是语法的一部分。字段是按<em>形状</em>识别的，不严格看位置，所以 <code>:done, res, 2026-01-05, 5d</code> 和 <code>:res, done, 2026-01-05, 5d</code> 都能解析。</p>
       <figure class="fig fig-inline"><svg viewBox="0 0 360 84" width="100%" role="img" aria-label="一行 Mermaid 任务上的每一个字段，以及哪些可以省略。"><rect x="0" y="18" width="96" height="24" rx="5" fill="#6c4cf1" opacity="0.16"/><text x="48" y="34" font-size="11" font-weight="700" fill="#6c4cf1" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">任务 A</text><rect x="102" y="18" width="78" height="24" rx="5" fill="#12a594" opacity="0.16"/><text x="141" y="34" font-size="11" font-weight="700" fill="#12a594" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:标识 a1</text><rect x="186" y="18" width="104" height="24" rx="5" fill="#9333ea" opacity="0.16"/><text x="238" y="34" font-size="11" font-weight="700" fill="#9333ea" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:2026-03-02</text><rect x="296" y="18" width="46" height="24" rx="5" fill="#e5484d" opacity="0.16"/><text x="319" y="34" font-size="11" font-weight="700" fill="#e5484d" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">:5d</text><line x1="48" y1="46" x2="48" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="48" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">任务</text><line x1="141" y1="46" x2="141" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="141" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">标识</text><line x1="238" y1="46" x2="238" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="238" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">开始</text><line x1="319" y1="46" x2="319" y2="58" stroke="#94a3b8" stroke-width="1"/><text x="319" y="72" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">工期</text></svg><figcaption>一行 Mermaid 任务上的每一个字段，以及哪些可以省略。</figcaption></figure>
@@ -150,18 +150,18 @@
     下线 v1             :dep, after beta, 2w</code></pre>
       <p>逐行读一遍：</p>
       <ul>
-        <li><code>dateFormat YYYY-MM-DD</code> 告诉 Mermaid 怎么<em>读</em>你打进去的日期。它管的是输入格式，不是输出——改它不会改变坐标轴。</li>
+        <li><code>dateFormat YYYY-MM-DD</code> 告诉 Mermaid 怎么<em>读</em>你打进去的日期。它管的是输入格式，不是输出, , 改它不会改变坐标轴。</li>
         <li><code>axisFormat %m-%d</code> 才是输出侧，坐标轴显示为"03-02"这样的形式。跨度超过一个季度时用 <code>%V</code> 显示周次更好读。</li>
-        <li><code>excludes weekends</code> 让所有横条跳过周六和周日，作用于整张图——没有针对单个任务的开关。</li>
-        <li>第二行 <code>excludes</code> 排除了 2026 年清明的三天。<strong>但要注意：调休上班的那个周六，Mermaid 没有办法表达。</strong>国内的法定节假日通常伴随调休，而这个格式只能减不能加——想让某个周六算成工作日，只能改成绝对日期硬写，或者干脆把排期交给真正的工作日历去算。</li>
-        <li><code>盘点 v1 接口 :done, audit, 2026-03-02, 5d</code>——标签、id、一个绝对开始日（周一）、五天。工期含首日，所以它在 3 月 6 日（周五）结束。</li>
-        <li><code>after audit</code> 意思是"<code>audit</code> 结束后开始"——因为排除了周末，它落在 3 月 9 日周一，而不是 7 号周六。</li>
-        <li><code>:crit, auth, ...</code> 把这条横条<em>涂</em>成关键路径的颜色。注意是"涂"——原因见下面那一节。</li>
+        <li><code>excludes weekends</code> 让所有横条跳过周六和周日，作用于整张图, , 没有针对单个任务的开关。</li>
+        <li>第二行 <code>excludes</code> 排除了 2026 年清明的三天。<strong>但要注意：调休上班的那个周六，Mermaid 没有办法表达。</strong>国内的法定节假日通常伴随调休，而这个格式只能减不能加, , 想让某个周六算成工作日，只能改成绝对日期硬写，或者干脆把排期交给真正的工作日历去算。</li>
+        <li><code>盘点 v1 接口 :done, audit, 2026-03-02, 5d</code>, , 标签、id、一个绝对开始日（周一）、五天。工期含首日，所以它在 3 月 6 日（周五）结束。</li>
+        <li><code>after audit</code> 意思是"<code>audit</code> 结束后开始", , 因为排除了周末，它落在 3 月 9 日周一，而不是 7 号周六。</li>
+        <li><code>:crit, auth, ...</code> 把这条横条<em>涂</em>成关键路径的颜色。注意是"涂", , 原因见下面那一节。</li>
         <li><code>资源类接口 :res, after auth, 12d</code> 完全没有标签，第一个字段只是一个 id。没有标签就表示尚未开始的工作。</li>
         <li><code>公测开放 :milestone, beta, 2026-05-04, 0d</code> 是固定日期上的一个零长度标记。里程碑和别的任务一样可以有 id，所以最后一行的 <code>after beta</code> 是合法的。</li>
         <li><code>2w</code> 是两周。Mermaid 也接受 <code>h</code> 和 <code>m</code>，在这里很少用得上。</li>
       </ul>
-      <p>section 之间的空行纯属装饰，Mermaid 会忽略，我们的导入器也忽略。但还是留着——一个四十行的代码块没有空行，在 diff 里根本没法看。</p>
+      <p>section 之间的空行纯属装饰，Mermaid 会忽略，我们的导入器也忽略。但还是留着, , 一个四十行的代码块没有空行，在 diff 里根本没法看。</p>
       </div>
       <h2 id="s3">任务行字段速查</h2>
 <p>每个字段和修饰符的作用，以及它实际长什么样。</p>
@@ -169,10 +169,10 @@
         <thead><tr><th>字段或修饰符</th><th>示例</th><th>作用</th></tr></thead>
         <tbody>
           <tr><td><code>id</code></td><td><code>audit</code></td><td>给任务起的一个名字，好让 <code>after</code> 能引用它。不能有空格和标点。除非有别的任务依赖它，否则可以不写。</td></tr>
-          <tr><td><code>after</code></td><td><code>after audit</code></td><td>在指定任务结束后开始。只有完成-开始，没有延时。可以写多个 id——<code>after a b</code> 等两者中较晚的那个。</td></tr>
-          <tr><td><code>done</code></td><td><code>:done, audit, …</code></td><td>把横条画成已完成。没有百分比——100% 和"基本做完了"看起来一模一样。</td></tr>
+          <tr><td><code>after</code></td><td><code>after audit</code></td><td>在指定任务结束后开始。只有完成-开始，没有延时。可以写多个 id, , <code>after a b</code> 等两者中较晚的那个。</td></tr>
+          <tr><td><code>done</code></td><td><code>:done, audit, …</code></td><td>把横条画成已完成。没有百分比, , 100% 和"基本做完了"看起来一模一样。</td></tr>
           <tr><td><code>active</code></td><td><code>:active, review, …</code></td><td>把横条画成进行中，同样不带任何数字。</td></tr>
-          <tr><td><code>crit</code></td><td><code>:crit, auth, …</code></td><td>把横条涂成关键色。它是你手打上去的一个断言，不是 Mermaid 推导出来的——没有任何东西拿它跟依赖关系核对。</td></tr>
+          <tr><td><code>crit</code></td><td><code>:crit, auth, …</code></td><td>把横条涂成关键色。它是你手打上去的一个断言，不是 Mermaid 推导出来的, , 没有任何东西拿它跟依赖关系核对。</td></tr>
           <tr><td><code>milestone</code></td><td><code>:milestone, beta, …</code></td><td>画成菱形而不是横条。和 <code>0d</code> 搭配使用。</td></tr>
           <tr><td>工期单位</td><td><code>5d</code> · <code>2w</code> · <code>8h</code></td><td>天、周、小时（还有 <code>m</code>）。含开始当天：周一起算的 <code>5d</code> 在周五结束。</td></tr>
           <tr><td>结束日期</td><td><code>2026-03-02, 2026-03-06</code></td><td>用第二个日期代替工期，适用于结束日被外部固定的情况。</td></tr>
@@ -198,18 +198,18 @@
         <li><strong>section 是平的。</strong>没有嵌套分组，所以超过一层的工作分解结构在导入时会被压平。</li>
       </ul>
       <p>这些都不说明它是个糟糕的格式，只说明它是一种<em>发布</em>格式：适合把一份进度计划展示出来，不适合把它推算出来。这正是往返转换重要的原因。</p>
-      <p>所以往返转换会有损耗，但损耗方式是已知且乏味的。导出时，gantts.app 把 100% 映射为 <code>done</code>，中间的任何值映射为 <code>active</code>；导入时把 <code>active</code> 读回为 50%——这是一个猜测，工具会明说，而不是让你在某份状态报告里才发现。写不成 <code>after</code> 的依赖关系会退化为绝对日期，这些日期依然正确，只是不再便于维护。</p>
-      <p>有一处刻意的不对称，而且它不是 bug：<strong><code>crit</code> 会被导出，但从不被导入。</strong>往外写的时候它是推导出来的——编辑器已经从依赖关系网络算出了关键路径，所以写下去的那个标签当时是真的。往里读的时候，它只是某个人在一份可能已经过期好几周的文件里打下的一个词，相信它就等于允许一张旧图把一条并不关键的链条涂成红色。所以它被写出、然后被无视：你在导入之后看到的关键路径，是重新算过的，不是被声明出来的。</p>
-      <p>顺带说明我们这边关键路径的口径：它是"按当前位置"计算的——一条依赖关系只能把任务往后推，永远不会把它往前拉；工具算的是<strong>总浮动时间</strong>，不算自由浮动时间。所以一份从 Mermaid 导进来、日期被作者手工排得很松的计划，导入后不会被自动压紧，关键路径反映的是这些横条实际所在的位置。</p>
+      <p>所以往返转换会有损耗，但损耗方式是已知且乏味的。导出时，gantts.app 把 100% 映射为 <code>done</code>，中间的任何值映射为 <code>active</code>；导入时把 <code>active</code> 读回为 50%, , 这是一个猜测，工具会明说，而不是让你在某份状态报告里才发现。写不成 <code>after</code> 的依赖关系会退化为绝对日期，这些日期依然正确，只是不再便于维护。</p>
+      <p>有一处刻意的不对称，而且它不是 bug：<strong><code>crit</code> 会被导出，但从不被导入。</strong>往外写的时候它是推导出来的, , 编辑器已经从依赖关系网络算出了关键路径，所以写下去的那个标签当时是真的。往里读的时候，它只是某个人在一份可能已经过期好几周的文件里打下的一个词，相信它就等于允许一张旧图把一条并不关键的链条涂成红色。所以它被写出、然后被无视：你在导入之后看到的关键路径，是重新算过的，不是被声明出来的。</p>
+      <p>顺带说明我们这边关键路径的口径：它是"按当前位置"计算的, , 一条依赖关系只能把任务往后推，永远不会把它往前拉；工具算的是<strong>总浮动时间</strong>，不算自由浮动时间。所以一份从 Mermaid 导进来、日期被作者手工排得很松的计划，导入后不会被自动压紧，关键路径反映的是这些横条实际所在的位置。</p>
       <h2 id="s6">可视化编辑，再把代码粘回去</h2>
-<p>能渲染 Mermaid 的工具不少。一直缺的是反方向——拖动横条，然后把语法拿回来。</p>
+<p>能渲染 Mermaid 的工具不少。一直缺的是反方向, , 拖动横条，然后把语法拿回来。</p>
       <ol>
-        <li>在 gantts.app 里粘贴或打开你的图——<code>.mmd</code> 文件，或含有代码围栏的 <code>.md</code> 文件，都可以。它按内容识别 gantt 代码块，而不是看扩展名。</li>
+        <li>在 gantts.app 里粘贴或打开你的图, , <code>.mmd</code> 文件，或含有代码围栏的 <code>.md</code> 文件，都可以。它按内容识别 gantt 代码块，而不是看扩展名。</li>
         <li>像编辑任何图表一样拖动、连线、改日期。<code>excludes weekends</code> 会把工作日历打开，因此产出的日期与它来源的那份文件一致。</li>
         <li>点<strong>⬇ 导出</strong>，选 <strong>🧜 Mermaid 甘特图（文本）</strong>，点<strong>复制到剪贴板</strong>或<strong>下载 .mmd</strong>，粘回你的 README，提交这个 diff。</li>
         <li>提交前先勾一下<strong>关键路径</strong>看一眼：导出的 <code>crit</code> 标签用的就是这一次计算的结果，所以你在图上看到什么，README 里写的就是什么。</li>
       </ol>
-      <p>对用大模型起草进度计划的人还有一个不错的副作用：让它输出 Mermaid gantt 语法，粘进来，你就得到一张真正可编辑、还带关键路径的图表——不需要 API 密钥，也不需要后端。</p>
+      <p>对用大模型起草进度计划的人还有一个不错的副作用：让它输出 Mermaid gantt 语法，粘进来，你就得到一张真正可编辑、还带关键路径的图表, , 不需要 API 密钥，也不需要后端。</p>
 
       <div class="callout">undefined</div>
 
@@ -217,7 +217,7 @@
       <div class="faq">
         <details open><summary>Mermaid 里怎么写甘特图？</summary><p>代码块以 gantt 开头，加上 dateFormat YYYY-MM-DD，然后写 section 标题，标题下按"名称 :tag, id, start, duration"的形式写任务行，例如 "Research :done, res, 2026-01-05, 5d"。</p></details>
         <details><summary>Mermaid 里的 5d 包含开始当天吗？</summary><p>包含。从 5 号周一开始的 5d 任务在 9 号周五结束。这种含首日的计数方式是最常见的差一天错误来源。</p></details>
-        <details><summary>Mermaid 甘特图里依赖关系怎么写？</summary><p>在 start 字段写 "after someId"。它永远是无延时的完成—开始关系，开始—开始、完成—完成以及延时都无法表达。</p></details>
+        <details><summary>Mermaid 甘特图里依赖关系怎么写？</summary><p>在 start 字段写 "after someId"。它永远是无延时的完成, 开始关系，开始, 开始、完成, 完成以及延时都无法表达。</p></details>
         <details><summary>Mermaid 能显示完成百分比吗？</summary><p>不能，它只有 done 和 active 两个标签。把 active 读成某个具体百分比只能靠猜；gantts.app 取 50%，并且会明确告知。</p></details>
         <details><summary>Mermaid 甘特图在哪里能渲染？</summary><p>GitHub、GitLab、Notion 和 Obsidian 都能在 Markdown 里原生渲染，mermaid.live 也可以在浏览器里渲染。</p></details>
         <details><summary>可以把 Mermaid 甘特图变成可编辑的图表吗？</summary><p>可以。在 gantts.app 里打开 .mmd 或 Markdown 文件，可视化编辑之后用"导出 ▸ Mermaid 甘特图"把更新后的语法复制回去。</p></details>
@@ -263,7 +263,7 @@
             <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
             <span class="brand-word">gantts<b>.app</b></span>
           </a>
-          <p>免费在线甘特图制作工具。无需注册、无需上传——数据只保存在你的浏览器中。</p>
+          <p>免费在线甘特图制作工具。无需注册、无需上传, , 数据只保存在你的浏览器中。</p>
           <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
           <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
         </div>
@@ -293,10 +293,10 @@
       </div>
       <div class="footer-bottom">
         <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
-        <span>纯静态网站——你规划的内容不会离开浏览器。</span>
+        <span>纯静态网站, , 你规划的内容不会离开浏览器。</span>
       </div>
     </div>
   </footer>
-  <script src="/js/site.js?v=30"></script>
+  <script src="/js/site.js?v=31"></script>
 </body>
 </html>

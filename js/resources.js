@@ -1,5 +1,5 @@
 /* ============================================================
-   resources.js — who is doing what, and when they are over-booked.
+   resources.js, who is doing what, and when they are over-booked.
 
    WHY THIS EXISTS
 
@@ -11,8 +11,8 @@
    TeamGantt puts workload on its Business tier and Instagantt on Teams.
 
    It is not expensive to compute. This is a sweep line over assignment
-   start/end events — O(A log A) for A assignments, single-digit
-   milliseconds for any realistic project — so it runs on every render
+   start/end events, O(A log A) for A assignments, single-digit
+   milliseconds for any realistic project, so it runs on every render
    rather than behind a "calculate" button.
 
    MODEL
@@ -24,7 +24,7 @@
    so counting them would double-count the work. Milestones take no
    time and are excluded too.
 
-   Non-working days are skipped when a calendar is active — nobody is
+   Non-working days are skipped when a calendar is active, nobody is
    over-booked on a Sunday they were never going to work.
    ============================================================ */
 (function () {
@@ -113,7 +113,7 @@
     },
 
     /* Which tasks collide for a person on a given day. Powers the
-       tooltip — "over-allocated" is useless without naming the culprits. */
+       tooltip, "over-allocated" is useless without naming the culprits. */
     tasksOn(tasks, name, iso) {
       return this.assignments(tasks).filter(t =>
         String(t.assignee).trim() === name &&

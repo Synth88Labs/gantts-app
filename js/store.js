@@ -1,12 +1,12 @@
 /* ============================================================
-   store.js — durable project storage.
+   store.js, durable project storage.
 
    WHY THIS EXISTS
 
    Projects used to live entirely in localStorage, which gives an origin
    about 5 MiB, shared by every project the user has ever made. Worse,
-   each project was written TWICE — once under a "current project" key
-   and again under its own key — so the real ceiling was half of that.
+   each project was written TWICE, once under a "current project" key
+   and again under its own key, so the real ceiling was half of that.
 
    When the quota was hit, setItem threw, model.js caught it, logged
    `console.warn('save failed')` and carried on. The user was told
@@ -28,7 +28,7 @@
      builds, or a blocked upgrade) it degrades to localStorage and says
      so via mode(), rather than pretending to have saved.
 
-   Data never leaves the browser here — IndexedDB is same-origin local
+   Data never leaves the browser here, IndexedDB is same-origin local
    storage, exactly like localStorage was.
    ============================================================ */
 (function () {
@@ -165,7 +165,7 @@
         console.warn('[store] IndexedDB unavailable, using localStorage', e);
       }
       // Ask the browser not to evict us. Without this, site data is
-      // "best effort" and can be cleared when the disk gets tight — and
+      // "best effort" and can be cleared when the disk gets tight, and
       // for a no-account app this storage IS the user's only copy.
       try {
         if (navigator.storage && navigator.storage.persist) {

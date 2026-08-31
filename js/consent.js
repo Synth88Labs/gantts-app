@@ -1,5 +1,5 @@
 /* ============================================================
-   consent.js — the analytics gate, and the banner that controls it.
+   consent.js, the analytics gate, and the banner that controls it.
 
    THE ORDER IS THE WHOLE POINT
 
@@ -10,7 +10,7 @@
    promise the site did not keep.
 
    So analytics is not loaded here at all until `granted` is on record.
-   Not loaded-but-denied, not cookieless pings — no request to Google.
+   Not loaded-but-denied, not cookieless pings, no request to Google.
    Declining costs a page nothing, because nothing was waiting on it.
 
    WHAT IS DELIBERATE
@@ -25,7 +25,7 @@
      trap focus or cover the page, because a cookie choice is not worth
      blocking someone from reading a guide.
    * The decision is withdrawable from the footer on every page, which
-     is a requirement rather than a courtesy — consent you cannot take
+     is a requirement rather than a courtesy, consent you cannot take
      back is not consent.
    * The record itself lives in localStorage, not a cookie. It is
      strictly necessary (it exists only to remember a refusal), and
@@ -107,11 +107,11 @@
   var T = {
     en: {
       title: 'Cookies for analytics',
-      body: 'We would like to set two Google Analytics cookies to see which guides and templates people actually use. Nothing about the plans you build is ever sent anywhere — your project data stays in your browser either way.',
+      body: 'We would like to set two Google Analytics cookies to see which guides and templates people actually use. Nothing about the plans you build is ever sent anywhere, your project data stays in your browser either way.',
       accept: 'Accept', decline: 'Decline', more: 'Privacy policy',
       settings: 'Cookie settings',
       onDecline: 'Analytics declined. Nothing was loaded.',
-      onAccept: 'Thanks — analytics enabled.',
+      onAccept: 'Thanks, analytics enabled.',
       reopen: 'Your choice was saved. You can change it any time from the footer.',
     },
     es: {
@@ -134,25 +134,25 @@
     },
     de: {
       title: 'Cookies für die Reichweitenmessung',
-      body: 'Wir würden gern zwei Google-Analytics-Cookies setzen, um zu sehen, welche Leitfäden und Vorlagen wirklich genutzt werden. Von Ihren Plänen wird nichts übertragen — Ihre Projektdaten bleiben so oder so in Ihrem Browser.',
+      body: 'Wir würden gern zwei Google-Analytics-Cookies setzen, um zu sehen, welche Leitfäden und Vorlagen wirklich genutzt werden. Von Ihren Plänen wird nichts übertragen, Ihre Projektdaten bleiben so oder so in Ihrem Browser.',
       accept: 'Akzeptieren', decline: 'Ablehnen', more: 'Datenschutzerklärung',
       settings: 'Cookie-Einstellungen',
       onDecline: 'Reichweitenmessung abgelehnt. Es wurde nichts geladen.',
-      onAccept: 'Danke — Reichweitenmessung aktiviert.',
+      onAccept: 'Danke, Reichweitenmessung aktiviert.',
       reopen: 'Ihre Auswahl wurde gespeichert. Sie können sie jederzeit über die Fußzeile ändern.',
     },
     pt: {
       title: 'Cookies de análise',
-      body: 'Gostaríamos de gravar dois cookies do Google Analytics para saber quais guias e modelos são realmente usados. Nada dos planos que você cria é enviado a lugar nenhum — seus dados continuam no seu navegador de qualquer forma.',
+      body: 'Gostaríamos de gravar dois cookies do Google Analytics para saber quais guias e modelos são realmente usados. Nada dos planos que você cria é enviado a lugar nenhum, seus dados continuam no seu navegador de qualquer forma.',
       accept: 'Aceitar', decline: 'Recusar', more: 'Política de privacidade',
       settings: 'Configurações de cookies',
       onDecline: 'Análise recusada. Nada foi carregado.',
-      onAccept: 'Obrigado — análise ativada.',
+      onAccept: 'Obrigado, análise ativada.',
       reopen: 'Sua escolha foi salva. Você pode alterá-la quando quiser no rodapé.',
     },
     zh: {
       title: '用于统计分析的 Cookie',
-      body: '我们希望设置两个 Google Analytics Cookie，以了解哪些指南和模板真正被使用。你制作的计划内容不会被发送到任何地方——无论是否同意，项目数据都只保存在你的浏览器里。',
+      body: '我们希望设置两个 Google Analytics Cookie，以了解哪些指南和模板真正被使用。你制作的计划内容不会被发送到任何地方, , 无论是否同意，项目数据都只保存在你的浏览器里。',
       accept: '接受', decline: '拒绝', more: '隐私政策',
       settings: 'Cookie 设置',
       onDecline: '已拒绝统计分析，未加载任何内容。',
@@ -174,7 +174,7 @@
   /* ---- styles, carried by the component ------------------------
      The banner first shipped with its CSS in site.css only. The editor
      at /app.html loads styles.css instead, so the banner appeared there
-     completely unstyled — a raw block of text and two default buttons
+     completely unstyled, a raw block of text and two default buttons
      shoved at the bottom of the document.
 
      Copying the rules into the second stylesheet would fix today and
@@ -193,7 +193,7 @@
         'padding:14px 0;font-family:var(--font,system-ui,-apple-system,Segoe UI,Roboto,sans-serif);' +
         'animation:consent-in .18s ease-out}' +
       /* Slide from 12px, not from 100%. If the animation never advances
-         — a throttled background tab at load, say — the element rests
+, a throttled background tab at load, say, the element rests
          wherever the "from" state puts it. At translateY(100%) that is
          entirely below the fold: the banner is invisible and the visitor
          is never actually asked. At 12px it is simply 12px low and fully
@@ -321,7 +321,7 @@
     /* Anyone who visited before this gate existed is carrying _ga
        cookies that were set WITHOUT being asked, because analytics used
        to load unconditionally. Having no record of consent, we have no
-       basis to keep them — and waiting for the visitor to click Decline
+       basis to keep them, and waiting for the visitor to click Decline
        would mean anyone who simply ignores the banner keeps cookies they
        never agreed to, indefinitely.
 

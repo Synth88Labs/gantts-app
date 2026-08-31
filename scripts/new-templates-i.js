@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-i.js — ninth batch of generated templates.
+   new-templates-i.js, ninth batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch I is about programmes whose shape is set by a
@@ -12,7 +12,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries
+   Picked on the same SERP evidence as earlier batches, queries
    where the ranking pages are consultancy posts, gated PDFs or
    vendor landing pages rather than a template anyone can edit.
    ============================================================ */
@@ -27,20 +27,20 @@ const T = {
     kw: 'data migration project plan template',
     metaTitle: 'Data Migration Project Plan Template',
     metaDesc: 'Free data migration project plan: profiling, mapping, cleansing, mock loads, reconciliation, cutover load and verification. Excel or edit online.',
-    lead: 'A free <strong>data migration project plan template</strong> covering the whole workstream — source profiling, mapping and transformation rules, cleansing, ETL build, successive mock loads, reconciliation, the cutover load itself and post-load verification. This is the data track that runs inside a larger programme, whether that is an <a href="/templates/erp-implementation-schedule.html">ERP implementation</a> or a <a href="/templates/cloud-migration-project-plan.html">cloud migration</a>, and it is usually the track that decides whether the go-live date holds.',
-    intro: 'Migration plans go wrong when the load is treated as one task at the end. It is not one task — it is the same task run several times until the reconciliation agrees, and each run costs an outage window:',
+    lead: 'A free <strong>data migration project plan template</strong> covering the whole workstream, source profiling, mapping and transformation rules, cleansing, ETL build, successive mock loads, reconciliation, the cutover load itself and post-load verification. This is the data track that runs inside a larger programme, whether that is an <a href="/templates/erp-implementation-schedule.html">ERP implementation</a> or a <a href="/templates/cloud-migration-project-plan.html">cloud migration</a>, and it is usually the track that decides whether the go-live date holds.',
+    intro: 'Migration plans go wrong when the load is treated as one task at the end. It is not one task, it is the same task run several times until the reconciliation agrees, and each run costs an outage window:',
     phases: [
       ['Discovery &amp; profiling', 'Source system inventory, data volumes, ownership, profiling for nulls, duplicates and format breaks, and the scope decision on what actually migrates. <em>Milestone: scope and sources agreed.</em>'],
       ['Mapping &amp; rules', 'Field-level mapping per object, transformation and default rules, reference data alignment and the reconciliation rules you will test against. <em>Milestone: mapping signed off.</em>'],
-      ['Cleansing', 'Cleansing rules, business owner remediation of records the rules cannot fix, and the deduplication pass — work that runs in parallel because it has no dependency on the build.'],
+      ['Cleansing', 'Cleansing rules, business owner remediation of records the rules cannot fix, and the deduplication pass, work that runs in parallel because it has no dependency on the build.'],
       ['Build &amp; unit test', 'ETL or migration tooling build per object, extract and load scripts, error handling, restart logic and the reconciliation reports themselves.'],
       ['Mock loads &amp; reconciliation', 'Three full mock loads with reconciliation and defect fix between each, plus the timed dress rehearsal that proves the load fits the outage window. <em>Milestone: dress rehearsal passed.</em>'],
       ['Cutover &amp; verification', 'Source freeze, delta extract, the production load, reconciliation sign-off, business verification and fallback decision. <em>Milestone: data accepted.</em>'],
     ],
-    callout: 'You need three mock loads, not one, and each one takes a full outage window to run. The first proves the mapping is wrong. The second proves the cleansing worked. The third — run against production-scale volumes and timed end to end — proves the load actually fits inside the window you have been given. Plans that budget one load discover all three problems on cutover weekend, when there is no time left to fix any of them.',
+    callout: 'You need three mock loads, not one, and each one takes a full outage window to run. The first proves the mapping is wrong. The second proves the cleansing worked. The third, run against production-scale volumes and timed end to end, proves the load actually fits inside the window you have been given. Plans that budget one load discover all three problems on cutover weekend, when there is no time left to fix any of them.',
     customize: [
       'Fix the cutover date first and count backwards; the last mock load needs to finish at least two weeks before it.',
-      'Expand the per-object rows to one line per data object — customers, vendors, products, open transactions, history — once mapping starts.',
+      'Expand the per-object rows to one line per data object, customers, vendors, products, open transactions, history, once mapping starts.',
       'Book each mock load as a real outage window with the same people who will run cutover, not a subset.',
       'Add a row for the delta extract if your source stays live between the final mock and cutover.',
       'Keep the fallback decision as a dated milestone with named criteria, not an implied option.',
@@ -49,7 +49,7 @@ const T = {
     tips: [
       '<strong>Reconciliation rules come before the build.</strong> If you cannot state how you will prove the load is correct, you cannot know when it is finished.',
       '<strong>Time every mock load end to end.</strong> The number you need is not "did it work" but "how many hours", because that is what the cutover window is sized against.',
-      '<strong>Start cleansing early.</strong> It depends on profiling, not on the build, so it can run for months in parallel — and it always takes longer than expected because it needs business people, not the data team.',
+      '<strong>Start cleansing early.</strong> It depends on profiling, not on the build, so it can run for months in parallel, and it always takes longer than expected because it needs business people, not the data team.',
       '<strong>Migrate less.</strong> History is the most expensive part of any migration; a decision to archive rather than migrate is worth more schedule than any tuning effort.',
       '<strong>Baseline at mapping sign-off.</strong> Everything before it is estimation; everything after it should be tracked as variance.',
     ],
@@ -57,7 +57,7 @@ const T = {
     faq: [
       ['How long does a data migration take?', 'For a mid-sized system replacement, commonly four to eight months from profiling to verified cutover. The template uses a roughly seven-month schedule; the mock load cycle at the end is the part that resists compression.'],
       ['How many mock loads do you need?', 'Three is the working minimum. The first tests the mapping, the second tests the cleansing, and the third is a timed dress rehearsal at production volumes that proves the load fits your outage window. Each needs its own window and its own reconciliation.'],
-      ['Is this different from the ERP or cloud migration templates?', 'Yes — this is the data workstream that runs inside either. Use the <a href="/templates/erp-implementation-schedule.html">ERP implementation schedule</a> or the <a href="/templates/cloud-migration-project-plan.html">cloud migration plan</a> for the whole programme, and this one when data needs its own detailed plan and its own owner.'],
+      ['Is this different from the ERP or cloud migration templates?', 'Yes, this is the data workstream that runs inside either. Use the <a href="/templates/erp-implementation-schedule.html">ERP implementation schedule</a> or the <a href="/templates/cloud-migration-project-plan.html">cloud migration plan</a> for the whole programme, and this one when data needs its own detailed plan and its own owner.'],
       ['What usually causes a migration to slip?', 'Data quality found late during the first mock load, and reconciliation differences nobody can explain. Both are found by loading early rather than by planning harder.'],
       ['Is the data migration template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
@@ -108,7 +108,7 @@ const T = {
     kw: 'conference planning timeline template',
     metaTitle: 'Conference Production Schedule Template',
     metaDesc: 'Free conference planning timeline: venue, call for papers, speakers, sponsorship, ticketing tiers, AV, run of show and post-event. Excel or edit online.',
-    lead: 'A free <strong>conference production schedule template</strong> for running a multi-track conference — venue and date lock, call for papers and programme build, speaker management, sponsorship sales, registration tiers, AV and production, the run of show and everything that has to happen after the last session. Download it for a committee pack, or open it online to see which deadline your programme actually hangs on.',
+    lead: 'A free <strong>conference production schedule template</strong> for running a multi-track conference, venue and date lock, call for papers and programme build, speaker management, sponsorship sales, registration tiers, AV and production, the run of show and everything that has to happen after the last session. Download it for a committee pack, or open it online to see which deadline your programme actually hangs on.',
     intro: 'A conference is four businesses running at once: a programme, a sponsorship pipeline, a ticket funnel and a production build. They share one date and almost nothing else, so the template gives each its own lane:',
     phases: [
       ['Venue &amp; dates', 'Date selection against the sector calendar, venue search and site visits, contract and deposit, room block and the capacity decision everything else is sized against. <em>Milestone: venue contracted.</em>'],
@@ -118,11 +118,11 @@ const T = {
       ['Registration &amp; marketing', 'Ticketing build, early-bird, standard and late tiers, launch campaign, email waves and the delegate communications sequence.'],
       ['Production &amp; run of show', 'AV and staging brief, room specs per track, signage and print, staffing and briefings, build days, the show itself and post-event. <em>Milestone: doors open.</em>'],
     ],
-    callout: 'The call for papers deadline sets everything downstream. Reviewers need weeks, speakers need to be told before they book flights, and the agenda has to be public before the early-bird tier closes or you sell fewer tickets at the higher price. Move the submission deadline one month late and you have not lost a month — you have lost the early-bird window, the marketing runway and the speaker travel budget all at once.',
+    callout: 'The call for papers deadline sets everything downstream. Reviewers need weeks, speakers need to be told before they book flights, and the agenda has to be public before the early-bird tier closes or you sell fewer tickets at the higher price. Move the submission deadline one month late and you have not lost a month, you have lost the early-bird window, the marketing runway and the speaker travel budget all at once.',
     customize: [
       'Set the event date first and count backwards; every deadline here is a lead time from that date, not a start-forward estimate.',
       'Add one row per track if you are running parallel programmes with separate chairs and separate review pools.',
-      'Adjust the ticket tier dates to your own pricing — the template uses early-bird, standard and late.',
+      'Adjust the ticket tier dates to your own pricing, the template uses early-bird, standard and late.',
       'Expand sponsorship into a row per tier or per named target account once outreach starts.',
       'Split build days by room if the venue hands over spaces at different times.',
       'Add abstract or paper publication deadlines if your conference produces proceedings.',
@@ -137,8 +137,8 @@ const T = {
     related: ['event-planning', 'trade-show-planning-timeline', 'marketing'],
     faq: [
       ['How far ahead should you plan a conference?', 'Twelve months is typical for a multi-track conference with a call for papers, and nine is tight. The template uses a twelve-month schedule anchored on the event date; venue and keynote lock happen first because everything else is sized against them.'],
-      ['How is this different from the event planning template?', 'The <a href="/templates/event-planning.html">event planning template</a> is generic and works for any single event. This one is built for running a multi-track conference — call for papers, review cycle, speaker management, sponsorship tiers and a run of show. Use that one for a party or a launch, this one when you have a programme.'],
-      ['What if I am exhibiting rather than running the event?', 'Use the <a href="/templates/trade-show-planning-timeline.html">trade show planning timeline</a> instead — that covers booking a stand, booth build, lead capture and follow-up. This template is for the organiser side.'],
+      ['How is this different from the event planning template?', 'The <a href="/templates/event-planning.html">event planning template</a> is generic and works for any single event. This one is built for running a multi-track conference, call for papers, review cycle, speaker management, sponsorship tiers and a run of show. Use that one for a party or a launch, this one when you have a programme.'],
+      ['What if I am exhibiting rather than running the event?', 'Use the <a href="/templates/trade-show-planning-timeline.html">trade show planning timeline</a> instead, that covers booking a stand, booth build, lead capture and follow-up. This template is for the organiser side.'],
       ['When should the call for papers close?', 'Far enough before the event that review, acceptance, agenda publication and speaker travel booking all fit. The template allows about five months between submission deadline and doors open, which is realistic when reviewers are volunteers.'],
       ['Is the conference schedule template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up and no watermark.'],
     ],
@@ -204,7 +204,7 @@ const T = {
     kw: 'call center implementation plan template',
     metaTitle: 'Call Center Setup Plan Template',
     metaDesc: 'Free call center setup plan: CCaaS procurement, forecasting, hiring waves, training cohorts, pilot calls, go-live and ramp. Excel or edit online.',
-    lead: 'A free <strong>call center setup plan template</strong> covering the whole stand-up — site or remote operating model, telephony and CCaaS procurement, workforce forecasting and scheduling, recruitment waves, the training academy, knowledge base build, pilot calls, go-live and the ramp to steady state. Download it for an operations steering pack, or open it online to line your hiring waves up against the volume curve.',
+    lead: 'A free <strong>call center setup plan template</strong> covering the whole stand-up, site or remote operating model, telephony and CCaaS procurement, workforce forecasting and scheduling, recruitment waves, the training academy, knowledge base build, pilot calls, go-live and the ramp to steady state. Download it for an operations steering pack, or open it online to line your hiring waves up against the volume curve.',
     intro: 'A contact centre stands or falls on whether trained people are on the floor the week volume arrives. The template treats hiring and training as the driving sequence and everything else as support for it:',
     phases: [
       ['Operating model &amp; site', 'Channel mix, hours of operation, on-site, remote or hybrid decision, location or work-from-home policy, and the headcount and cost model. <em>Milestone: operating model approved.</em>'],
@@ -217,10 +217,10 @@ const T = {
     callout: 'Work backwards from the volume curve, not forwards from today. A cohort takes weeks to recruit and weeks more to train and nest, so an agent who has to be productive in week one of go-live has to be offered a job roughly two months earlier. Attrition during training is normal, so each wave has to be over-recruited. If the hiring waves are not drawn on the same chart as the volume ramp, the gap only becomes visible on the day the queue does.',
     customize: [
       'Set your go-live and volume ramp dates first, then push each hiring wave back by the full recruit-plus-train-plus-nest duration.',
-      'Over-recruit each wave for training attrition — add the percentage your business actually sees rather than assuming everyone certifies.',
+      'Over-recruit each wave for training attrition, add the percentage your business actually sees rather than assuming everyone certifies.',
       'Add one row per cohort if you are running more than the three waves shown.',
       'Adjust nesting length to your product complexity; regulated or technical queues need longer live-call support.',
-      'Move number porting earlier if you are migrating existing lines — carrier porting is a third-party wait you cannot compress.',
+      'Move number porting earlier if you are migrating existing lines, carrier porting is a third-party wait you cannot compress.',
       'Add language or channel rows if you are launching chat and email alongside voice.',
     ],
     tips: [
@@ -228,14 +228,14 @@ const T = {
       '<strong>Build the knowledge base before training, not during.</strong> Trainers writing content while teaching is how cohort one ends up trained on material cohort two never sees.',
       '<strong>Protect nesting.</strong> The supervised live-call period is where handle time and quality actually settle; cutting it to hit a date reappears as a service-level problem for a quarter.',
       '<strong>Pilot on a real but limited queue.</strong> Routing, wrap-up codes and escalation paths only fail properly with live callers on the line.',
-      '<strong>Ramp volume in steps.</strong> Move to the next step only when quality and handle time hold at the current one — the ramp is a series of gates, not a slope.',
+      '<strong>Ramp volume in steps.</strong> Move to the next step only when quality and handle time hold at the current one, the ramp is a series of gates, not a slope.',
     ],
     related: ['recruitment-hiring-plan', 'employee-onboarding', 'warehouse-setup-project-plan'],
     faq: [
       ['How long does it take to set up a call center?', 'Commonly four to six months from operating model approval to go-live, with the ramp to steady state running a further two to three. The template uses a roughly six-month build and a staged ramp after it.'],
       ['What drives the timeline?', 'Hiring and training. Technology can be procured and configured in parallel, but a cohort takes weeks to recruit and weeks more to train and nest, so the training academy sits on the critical path to go-live.'],
       ['How many agents should be in the first wave?', 'Enough to cover the opening volume plus shrinkage and training attrition, which usually means recruiting meaningfully more than the seat count. The template shows three waves so later cohorts can be sized off what wave one actually taught you.'],
-      ['Does this work for a remote or hybrid centre?', 'Yes. Drop the site fit-out rows and keep the equipment logistics, connectivity checks and remote onboarding tasks — the hiring and training sequence is identical.'],
+      ['Does this work for a remote or hybrid centre?', 'Yes. Drop the site fit-out rows and keep the equipment logistics, connectivity checks and remote onboarding tasks, the hiring and training sequence is identical.'],
       ['Is the call center setup template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [
@@ -291,7 +291,7 @@ const T = {
     kw: 'franchise rollout plan template',
     metaTitle: 'Franchise Rollout Plan Template',
     metaDesc: 'Free franchise rollout plan: franchisee recruitment, territory mapping, site selection, fit-out, training, launch marketing and opening waves.',
-    lead: 'A free <strong>franchise rollout plan template</strong> built around the per-unit sequence you will repeat for every site — franchisee recruitment and approval, territory mapping, site selection, fit-out, brand standards and the operations manual, training, launch marketing, opening and post-opening support. The template shows the system-level work once and then three overlapping opening waves, which is how a rollout actually runs.',
+    lead: 'A free <strong>franchise rollout plan template</strong> built around the per-unit sequence you will repeat for every site, franchisee recruitment and approval, territory mapping, site selection, fit-out, brand standards and the operations manual, training, launch marketing, opening and post-opening support. The template shows the system-level work once and then three overlapping opening waves, which is how a rollout actually runs.',
     intro: 'A franchise rollout is not one project; it is one project template executed many times with the starts staggered. The chart separates the two:',
     phases: [
       ['System readiness', 'Franchise disclosure and legal pack, unit economics model, operations manual, brand standards, supplier agreements and the field support model. <em>Milestone: system ready to sell.</em>'],
@@ -301,12 +301,12 @@ const T = {
       ['Wave 3 units', 'The third cohort, sized off what waves 1 and 2 revealed about real per-unit duration and cost.'],
       ['Support &amp; system improvement', 'Post-opening field visits, performance reviews against the unit economics model, and manual and training updates fed back from what the early units learned.'],
     ],
-    callout: 'The constraint is not any one opening — it is how many openings your support team can carry at once. Site selection, construction oversight, training delivery and opening-week support all draw on the same small central team, and each unit needs them for weeks. Draw the waves so those windows do not stack. A rollout that promises ten openings in a quarter with one field manager is a plan to open ten units badly.',
+    callout: 'The constraint is not any one opening, it is how many openings your support team can carry at once. Site selection, construction oversight, training delivery and opening-week support all draw on the same small central team, and each unit needs them for weeks. Draw the waves so those windows do not stack. A rollout that promises ten openings in a quarter with one field manager is a plan to open ten units badly.',
     customize: [
-      'Set the per-unit sequence to your own real durations first, then copy it per wave — the pattern is the reusable part.',
+      'Set the per-unit sequence to your own real durations first, then copy it per wave, the pattern is the reusable part.',
       'Change the wave overlap to match your field support headcount; more support people means tighter stagger.',
       'Add a row per unit rather than per wave once specific sites are identified.',
-      'Extend permit and licence durations by jurisdiction — the same brand takes very different times in different cities.',
+      'Extend permit and licence durations by jurisdiction, the same brand takes very different times in different cities.',
       'Keep franchisee training as a hard predecessor to opening; it is the row most often compressed and the one most visible to customers.',
       'Track post-opening support visits as real scheduled work rather than as an assumed capability.',
     ],
@@ -320,9 +320,9 @@ const T = {
     related: ['retail-store-opening-timeline', 'restaurant-opening-timeline', 'employee-onboarding'],
     faq: [
       ['How long does a franchise rollout take?', 'System readiness typically takes four to six months, then each unit runs roughly six to nine months from franchisee approval to opening. The template shows a system build plus three overlapping waves across about two years.'],
-      ['How many units should be in a wave?', 'As many as your field support team can genuinely carry through site selection, fit-out oversight, training and opening week at once — usually far fewer than the commercial plan wants. The template uses small waves for that reason.'],
+      ['How many units should be in a wave?', 'As many as your field support team can genuinely carry through site selection, fit-out oversight, training and opening week at once, usually far fewer than the commercial plan wants. The template uses small waves for that reason.'],
       ['What is the per-unit sequence?', 'Franchisee approval, territory and site selection, lease, design and permits, fit-out, equipment, training, launch marketing, opening and post-opening support. It repeats identically per unit, which is what makes it schedulable.'],
-      ['Can I use this for company-owned expansion instead?', 'Yes. Drop the franchisee recruitment and approval rows and keep the per-unit sequence — for a single site the <a href="/templates/retail-store-opening-timeline.html">retail store opening timeline</a> is a closer fit.'],
+      ['Can I use this for company-owned expansion instead?', 'Yes. Drop the franchisee recruitment and approval rows and keep the per-unit sequence, for a single site the <a href="/templates/retail-store-opening-timeline.html">retail store opening timeline</a> is a closer fit.'],
       ['Is the franchise rollout template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
     ],
     tasks: [
@@ -379,23 +379,23 @@ const T = {
     kw: 'okr planning timeline template',
     metaTitle: 'OKR Quarterly Planning Template',
     metaDesc: 'Free OKR quarterly planning timeline: draft objectives, alignment, scoring last quarter, commitment, mid-quarter check-in, close and retro.',
-    lead: 'A free <strong>OKR quarterly planning template</strong> laid out as the recurring cycle it actually is — drafting objectives, cross-team alignment, scoring the quarter that is ending, commitment and publication, the mid-quarter check-in, and the close and retrospective that feed the next round. Download it for a planning kickoff, or open it online to see where this quarter\'s close overlaps next quarter\'s draft.',
+    lead: 'A free <strong>OKR quarterly planning template</strong> laid out as the recurring cycle it actually is, drafting objectives, cross-team alignment, scoring the quarter that is ending, commitment and publication, the mid-quarter check-in, and the close and retrospective that feed the next round. Download it for a planning kickoff, or open it online to see where this quarter\'s close overlaps next quarter\'s draft.',
     intro: 'The reason OKR planning feels rushed is that it is never a clean start. You are scoring one quarter while drafting the next, and both need the same people in the same weeks. The template shows that overlap rather than pretending the cycle is sequential:',
     phases: [
       ['Company direction', 'Leadership review of strategy and annual goals, the two or three company objectives for the quarter, and the guidance teams will draft against. <em>Milestone: company OKRs drafted.</em>'],
-      ['Closing the previous quarter', 'Final key result data collection, team self-scoring, calibration across teams and the scored results readout — running in parallel with next-quarter drafting.'],
+      ['Closing the previous quarter', 'Final key result data collection, team self-scoring, calibration across teams and the scored results readout, running in parallel with next-quarter drafting.'],
       ['Team drafting', 'Each team drafts objectives and key results against company direction, with a working session and a written first draft per team.'],
       ['Alignment', 'Cross-team review of dependencies, negotiation where two teams need the same capacity, and resolution of conflicts before commitment. <em>Milestone: alignment complete.</em>'],
       ['Commitment &amp; kickoff', 'Leadership review, final edits, publication in the tracking tool, all-hands kickoff and the first weekly check-in cadence. <em>Milestone: OKRs committed.</em>'],
       ['In-quarter execution', 'Weekly confidence updates, the mid-quarter check-in where objectives can be adjusted or dropped, and the close and retrospective at the end. <em>Milestone: quarter closed.</em>'],
     ],
-    callout: 'The cycle overlaps itself, and that is the whole scheduling problem. You cannot score last quarter after starting the next one, because the data goes stale and nobody remembers the context — but you cannot draft next quarter without the scores either. So the two run together for about three weeks, and the same leads are needed for both. Book that overlap explicitly. Teams that treat planning as a two-day offsite in week one are actually doing four weeks of work in two days and calling the result a commitment.',
+    callout: 'The cycle overlaps itself, and that is the whole scheduling problem. You cannot score last quarter after starting the next one, because the data goes stale and nobody remembers the context, but you cannot draft next quarter without the scores either. So the two run together for about three weeks, and the same leads are needed for both. Book that overlap explicitly. Teams that treat planning as a two-day offsite in week one are actually doing four weeks of work in two days and calling the result a commitment.',
     customize: [
       'Set day 0 to roughly three weeks before quarter end and the whole cycle lands correctly around the boundary.',
       'Add one drafting row per team so you can see who is late without chasing.',
-      'Move the mid-quarter check-in to whatever cadence you actually run — monthly works better than quarterly for fast-moving teams.',
+      'Move the mid-quarter check-in to whatever cadence you actually run, monthly works better than quarterly for fast-moving teams.',
       'Shorten the alignment phase if you have fewer than five teams; lengthen it substantially if teams share engineering capacity.',
-      'Keep scoring and drafting visibly overlapped rather than sequenced — the overlap is the honest picture.',
+      'Keep scoring and drafting visibly overlapped rather than sequenced, the overlap is the honest picture.',
       'Copy the whole block forward to build the next quarter; the cycle is identical every time.',
     ],
     tips: [
@@ -408,10 +408,10 @@ const T = {
     related: ['annual', 'product-roadmap', 'monthly'],
     faq: [
       ['When should quarterly OKR planning start?', 'About three to four weeks before the quarter begins. The template starts drafting while the previous quarter is still running, because company direction and team drafts both need time before commitment, and the scoring data is only fresh at the boundary.'],
-      ['How is this different from the annual planning template?', 'The <a href="/templates/annual.html">annual plan</a> covers a full year of business activity. This is the recurring quarterly rhythm inside it — the four-week cycle of drafting, aligning, committing, checking in and closing that repeats every quarter.'],
+      ['How is this different from the annual planning template?', 'The <a href="/templates/annual.html">annual plan</a> covers a full year of business activity. This is the recurring quarterly rhythm inside it, the four-week cycle of drafting, aligning, committing, checking in and closing that repeats every quarter.'],
       ['How does it relate to the product roadmap?', 'The <a href="/templates/product-roadmap.html">product roadmap</a> shows what you are building and when. OKRs are the outcomes you are committing to in a quarter. The roadmap is usually one of the inputs to team drafting rather than a replacement for it.'],
       ['Why do scoring and drafting overlap?', 'Because both need the same people and the same data at the same time. Scoring after drafting means committing blind; drafting after scoring means starting the quarter two weeks late. The template overlaps them by design and shows how much.'],
-      ['Can I reuse this every quarter?', 'Yes — that is the point. Copy the block, shift the dates by a quarter and the sequence holds. Only the objectives change.'],
+      ['Can I reuse this every quarter?', 'Yes, that is the point. Copy the block, shift the dates by a quarter and the sequence holds. Only the objectives change.'],
       ['Is the OKR planning template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [

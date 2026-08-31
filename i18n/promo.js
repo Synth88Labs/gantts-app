@@ -1,16 +1,16 @@
 /* ============================================================
-   promo.js — the ExcelGuru.io partner banner.
+   promo.js, the ExcelGuru.io partner banner.
 
    ONE definition of the markup, shared by the hand-authored English
    pages and the localized renderer, so the two cannot drift the way
    the template cards and guide chrome did.
 
-   LINK POLICY — deliberate, and the reason this file exists.
+   LINK POLICY, deliberate, and the reason this file exists.
 
    Google's link-spam policy requires advertising links to carry
    rel="sponsored" (or nofollow). An identical *followed* link repeated
    across ~190 pages is a site-wide footprint, and that pattern is what
-   gets both the linking and the linked site demoted — so shipping this
+   gets both the linking and the linked site demoted, so shipping this
    as a plain followed link everywhere would put excelguru.io at risk,
    not just gantts.app.
 
@@ -20,7 +20,7 @@
    keeps the footprint small enough to read as an editorial link rather
    than a site-wide placement.
 
-   If the arrangement is paid, FOLLOW_ON should be emptied — a paid
+   If the arrangement is paid, FOLLOW_ON should be emptied, a paid
    followed link is a policy violation regardless of how few pages it
    sits on.
    ============================================================ */
@@ -41,7 +41,7 @@ const COPY = {
   en: {
     tag: 'Advertisement',
     h: 'Gantt chart templates for Excel',
-    p: 'ExcelGuru.io keeps a free library of ready-made Gantt chart spreadsheets — formulas already wired up, no add-ons needed.',
+    p: 'ExcelGuru.io keeps a free library of ready-made Gantt chart spreadsheets, formulas already wired up, no add-ons needed.',
     cta: 'Browse the templates →',
   },
   es: {
@@ -59,7 +59,7 @@ const COPY = {
   de: {
     tag: 'Anzeige',
     h: 'Gantt-Vorlagen für Excel',
-    p: 'ExcelGuru.io führt eine kostenlose Sammlung fertiger Gantt-Tabellen — die Formeln sind bereits hinterlegt, Add-ins sind nicht nötig.',
+    p: 'ExcelGuru.io führt eine kostenlose Sammlung fertiger Gantt-Tabellen, die Formeln sind bereits hinterlegt, Add-ins sind nicht nötig.',
     cta: 'Vorlagen ansehen →',
   },
   pt: {

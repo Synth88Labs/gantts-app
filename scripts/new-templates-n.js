@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-n.js — fourteenth batch of generated templates.
+   new-templates-n.js, fourteenth batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch N is about programmes where the constraint is a
@@ -34,7 +34,7 @@ const T = {
       ['Line commissioning, first cell &amp; formation', 'MES and traceability integration, coating trials and web quality tuning, dry room operating discipline, the first assembled cell, then formation cycling, the aging and self-discharge window, and the teardown and failure-analysis loop. <em>Milestone: first cell off the line.</em>'],
       ['Yield ramp &amp; customer qualification', 'Process capability and SPC per station, scrap reduction from electrode to assembly, A-samples out, abuse and transport testing, B-sample qualification and PPAP, then the ramp to nameplate. <em>Milestones: yield target reached, start of production.</em>'],
     ],
-    callout: 'The dry room is the schedule. Electrode handling and cell assembly need dew points around minus forty, which means the building has to become a sealed, desiccant-dried environment before a single tool is set — and the envelope, the vapour barrier, the airlocks and the dehumidification plant are all on that path. Then two things nobody can compress: formation and aging take real calendar days per cell no matter how many people you hire, and yield after the first cell climbs on a curve rather than jumping to a number. Building completion does not gate saleable output; equipment qualification and that curve do.',
+    callout: 'The dry room is the schedule. Electrode handling and cell assembly need dew points around minus forty, which means the building has to become a sealed, desiccant-dried environment before a single tool is set, and the envelope, the vapour barrier, the airlocks and the dehumidification plant are all on that path. Then two things nobody can compress: formation and aging take real calendar days per cell no matter how many people you hire, and yield after the first cell climbs on a curve rather than jumping to a number. Building completion does not gate saleable output; equipment qualification and that curve do.',
     customize: [
       'Freeze the cell format and chemistry early and mark it as a milestone. Coater width, calender load, can dimensions, formation rack layout and the whole utility sizing derive from it, and a late change is a redesign, not a tweak.',
       'Give dew point pull-down and the hold test their own bars after the dehumidification plant is installed. A plant that runs is not the same as an envelope that holds, and the leak survey is where late envelope defects surface.',
@@ -45,7 +45,7 @@ const T = {
     ],
     tips: [
       '<strong>Build the dry room before you need it, not when the tools arrive.</strong> Envelope sealing, airlocks and pull-down are sequential and slow, and every day of that chain sits directly in front of first cell.',
-      '<strong>Buy formation and aging capacity, not schedule.</strong> If the aging window is three weeks per batch, the only way to shorten the ramp is more racks and more floor — no amount of resequencing changes the chemistry.',
+      '<strong>Buy formation and aging capacity, not schedule.</strong> If the aging window is three weeks per batch, the only way to shorten the ramp is more racks and more floor, no amount of resequencing changes the chemistry.',
       '<strong>Treat solvent recovery and abatement as critical path.</strong> They are unglamorous, routinely deprioritised, and no coating line can run in production without them.',
       '<strong>Track scrap rate by station from the first trial.</strong> A single station running badly upstream throws away material that has already had value added to it, and it is the most common reason a ramp stalls.',
       '<strong>Start customer qualification before you think you are ready.</strong> Abuse testing, transport certification and PPAP take months of elapsed time and can run against early cells while yield is still improving.',
@@ -53,7 +53,7 @@ const T = {
     ],
     related: ['semiconductor-fab-construction-schedule', 'manufacturing-production-schedule', 'wind-farm-construction-schedule'],
     faq: [
-      ['How long does it take to build a battery gigafactory?', 'A greenfield cell plant commonly runs 30–36 months from permits to start of production, which is roughly the span the template uses. The shell is predictable; dry room qualification, equipment qualification and the yield ramp carry the variance.'],
+      ['How long does it take to build a battery gigafactory?', 'A greenfield cell plant commonly runs 30-36 months from permits to start of production, which is roughly the span the template uses. The shell is predictable; dry room qualification, equipment qualification and the yield ramp carry the variance.'],
       ['Why does the dry room dominate the schedule?', 'Electrode handling and cell assembly need extremely low humidity, so the building has to be sealed, vapour-barriered and desiccant-dried before tools can be set. That turns a construction sequence into a controlled-environment sequence months before any equipment arrives.'],
       ['Can formation and aging be compressed?', 'No. Each cell needs a set number of hours or days of controlled charging and then a rest period for self-discharge screening. The only lever is more formation and aging capacity, which is capital and floor space, not scheduling.'],
       ['What actually gates saleable output?', 'Equipment qualification and yield, not building completion. A finished factory with unqualified stations produces nothing sellable, which is why the template puts the qualification milestone well after fit-out.'],
@@ -102,7 +102,7 @@ const T = {
       ['Teardown, metrology & failure analysis loop', 740, 50, 0, 'EF4444', { indent: 1, who: 'Quality', after: 'Formation cycling of first cell batches' }],
       ['Yield ramp & customer qualification', 765, 235, 0, '16A34A', { phase: true }],
       ['Process capability & SPC baseline per station', 765, 60, 0, '16A34A', { indent: 1, who: 'Process', after: 'Aging & self-discharge screening window' }],
-      ['Scrap rate reduction — electrode to assembly', 800, 110, 0, '4ADE80', { indent: 1, who: 'Process', after: 'Teardown, metrology & failure analysis loop' }],
+      ['Scrap rate reduction, electrode to assembly', 800, 110, 0, '4ADE80', { indent: 1, who: 'Process', after: 'Teardown, metrology & failure analysis loop' }],
       ['A-sample cells shipped to customer', 830, 30, 0, '16A34A', { indent: 1, who: 'Quality', after: 'Process capability & SPC baseline per station' }],
       ['Abuse, safety & transport certification testing', 850, 55, 0, '4ADE80', { indent: 1, who: 'Quality', after: 'A-sample cells shipped to customer' }],
       ['Customer B-sample qualification & PPAP', 905, 65, 0, '16A34A', { indent: 1, who: 'Quality', after: 'Abuse, safety & transport certification testing' }],
@@ -130,10 +130,10 @@ const T = {
       ['Waste packaging, consignment &amp; disposal', 'Segregation, assay and characterisation records, packaging into shielded containers, consignment to the disposal facility within its acceptance criteria, interim store loading and monitoring, and free-release clearance for material that can leave. <em>Milestone: all active waste consigned or stored.</em>'],
       ['Demolition, remediation &amp; delicensing', 'Final radiological survey of structures, conventional demolition of cleared buildings, land quality assessment and soil remediation, the end-state survey and records package, and the regulator delicensing decision. <em>Milestone: site delicensed.</em>'],
     ],
-    callout: 'Disposal capacity, not crew size, sets the pace. Every cubic metre you cut out has to go somewhere that will accept it, and the acceptance criteria of the disposal facility dictate how the waste is characterised, packaged, assayed and documented before it can move. If the route is not available, the material stays on site, the store fills, and dismantling stops with people standing around. Layer the dose budget on top — ALARP limits how much time anyone can spend in a given area — and each phase needs its own regulatory permission before it begins. Draw the waste route as a bar, not an assumption.',
+    callout: 'Disposal capacity, not crew size, sets the pace. Every cubic metre you cut out has to go somewhere that will accept it, and the acceptance criteria of the disposal facility dictate how the waste is characterised, packaged, assayed and documented before it can move. If the route is not available, the material stays on site, the store fills, and dismantling stops with people standing around. Layer the dose budget on top, ALARP limits how much time anyone can spend in a given area, and each phase needs its own regulatory permission before it begins. Draw the waste route as a bar, not an assumption.',
     customize: [
       'Put the waste acceptance criteria and consignment booking bars in before you sequence any dismantling. If they finish later than your cutting starts, the schedule is wrong regardless of how good the dismantling plan looks.',
-      'Give characterisation a generous, early bar. Every downstream estimate — volumes, packaging, dose, cost — is derived from it, and a thin characterisation is the single most reliable predictor of a decommissioning overrun.',
+      'Give characterisation a generous, early bar. Every downstream estimate, volumes, packaging, dose, cost, is derived from it, and a thin characterisation is the single most reliable predictor of a decommissioning overrun.',
       'Model dose budget as a constraint on duration, not as a safety note. If an area allows only a certain collective dose per campaign, the work takes as long as it takes and more people do not help.',
       'Add a regulatory permission milestone in front of each physical phase. Decommissioning is permissioned in stages, and treating consent as a single up-front event misrepresents the real gates.',
       'Split interim storage from disposal. Material going into an on-site store is not the same as material leaving the site, and only one of those two actually reduces the liability.',
@@ -142,7 +142,7 @@ const T = {
     tips: [
       '<strong>Characterise before you plan, not while you dismantle.</strong> A schedule built on assumed inventory is a schedule that will be rebaselined the first time a survey comes back higher than expected.',
       '<strong>Book disposal capacity like a long-lead procurement.</strong> Facilities have finite annual volumes and their own queues; a booked consignment slot is an asset and an unbooked one is a stop-work risk.',
-      '<strong>Design the cut for the container.</strong> Size reduction should be driven by what the package and the acceptance criteria allow, not by what is convenient at the cutting face — recutting active steel is expensive and dose-heavy.',
+      '<strong>Design the cut for the container.</strong> Size reduction should be driven by what the package and the acceptance criteria allow, not by what is convenient at the cutting face, recutting active steel is expensive and dose-heavy.',
       '<strong>Track collective dose weekly against the budget.</strong> Dose uptake running ahead of plan is an early warning that the method is wrong, and it shows up long before the schedule slips.',
       '<strong>Do not treat asbestos and conventional hazards as minor.</strong> On many older plants the non-radiological hazards drive more of the early programme than the radiological ones, and they block access to everything behind them.',
       '<strong>Build the records package as you go.</strong> Delicensing depends on evidence that the end state has been reached, and reconstructing survey and consignment records at the end is slower than keeping them current.',
@@ -213,7 +213,7 @@ const T = {
     kw: 'university accreditation timeline template',
     metaTitle: 'University Accreditation Timeline',
     metaDesc: 'Free university accreditation timeline: back-schedule from the site visit and commission meeting through self-study, evidence gathering and faculty buy-in.',
-    lead: 'A free <strong>university accreditation timeline template</strong> that starts where the real schedule starts — with two dates somebody else owns. The accrediting body sets the site visit, and the decision is taken at a commission meeting that happens only a few times a year, which means there is a submission window and missing it costs a cycle rather than a month. Everything else back-passes from there: steering committee and working groups, a gap analysis against each standard, assessment and institutional effectiveness data, faculty and board engagement, then drafting, internal review, a mock visit and submission. Download it for a cabinet pack, or open it online and drop your own visit date in.',
+    lead: 'A free <strong>university accreditation timeline template</strong> that starts where the real schedule starts, with two dates somebody else owns. The accrediting body sets the site visit, and the decision is taken at a commission meeting that happens only a few times a year, which means there is a submission window and missing it costs a cycle rather than a month. Everything else back-passes from there: steering committee and working groups, a gap analysis against each standard, assessment and institutional effectiveness data, faculty and board engagement, then drafting, internal review, a mock visit and submission. Download it for a cabinet pack, or open it online and drop your own visit date in.',
     intro: 'Accreditation is the rare institutional project with a genuinely immovable deadline that the institution did not choose. The template is laid out backwards from it:',
     phases: [
       ['Cycle scoping &amp; accreditor engagement', 'Reading the standards and the cycle calendar, confirming the site visit date and the commission meeting with the accrediting body, building the back-schedule from the submission deadline, and approving budget and release time. <em>Milestones: site visit date fixed, submission window confirmed.</em>'],
@@ -223,7 +223,7 @@ const T = {
       ['Self-study drafting, review &amp; submission', 'First full draft, campus comment period, a mock visit with external peer reviewers, final edit with appendices and evidence links, board approval, and submission inside the window. <em>Milestone: self-study submitted.</em>'],
       ['Site visit, response &amp; commission decision', 'Logistics and the interview schedule, campus rehearsal, the team chair call and document requests, the peer review team visit, the draft report, the institutional response, and the commission meeting. <em>Milestone: accreditation reaffirmed.</em>'],
     ],
-    callout: 'You do not own the two dates that matter. The accrediting body sets the site visit, and the decision is taken at a commission meeting that convenes only a handful of times a year — so the submission window in front of it is narrow and hard. Miss it and the whole exercise slips to the next cycle, taking the self-study, the evidence and the goodwill with it. Every other bar on this chart is derived: the latest possible date for board approval, for the final draft, for the mock visit, for the assessment cycle that has to have run at least once. Fix the visit date first and let the rest back-pass from it.',
+    callout: 'You do not own the two dates that matter. The accrediting body sets the site visit, and the decision is taken at a commission meeting that convenes only a handful of times a year, so the submission window in front of it is narrow and hard. Miss it and the whole exercise slips to the next cycle, taking the self-study, the evidence and the goodwill with it. Every other bar on this chart is derived: the latest possible date for board approval, for the final draft, for the mock visit, for the assessment cycle that has to have run at least once. Fix the visit date first and let the rest back-pass from it.',
     customize: [
       'Enter the site visit date and the commission meeting date first, as fixed markers, then pull every other bar backwards until the chain fits. If it does not fit, the answer is more resource earlier, never a shorter drafting phase.',
       'Add one working group bar per standard if your accreditor has many. They do not progress at the same rate, and a single averaged bar hides the two groups that are stuck.',
@@ -234,7 +234,7 @@ const T = {
     ],
     tips: [
       '<strong>Confirm the commission meeting date, not just the visit date.</strong> The visit is visible; the meeting is the actual decision point and it fixes how long the institution has to respond to a draft report.',
-      '<strong>Build the evidence repository once, at the start.</strong> Retrieving documents twice — first for the working groups, then for the appendices — is the largest avoidable cost in the whole cycle.',
+      '<strong>Build the evidence repository once, at the start.</strong> Retrieving documents twice, first for the working groups, then for the appendices, is the largest avoidable cost in the whole cycle.',
       '<strong>Close gaps with policy changes early enough to show a track record.</strong> A policy adopted the month before a visit demonstrates awareness; one adopted a year before demonstrates practice, and peer teams know the difference.',
       '<strong>Rehearse interviews with the people who will actually be in the room.</strong> Peer teams talk to chairs, adjuncts, students and staff, not only to the steering committee, and unprepared honesty is where findings come from.',
       '<strong>Keep the self-study written in one voice.</strong> Twelve working groups produce twelve styles; budget real editorial time or the document reads as an assembly of submissions rather than an institutional argument.',
@@ -312,11 +312,11 @@ const T = {
       ['Winter planning, agronomy &amp; inputs', 'Field-by-field cropping plan and rotation, soil sampling and nutrient results, seed, fertiliser and chemical ordering, machinery service and calibration, and labour and contractor bookings for the season. <em>Milestone: inputs delivered and stored.</em>'],
       ['Seedbed preparation &amp; planting window', 'Soil temperature and moisture monitoring, primary cultivation and seedbed preparation, pre-emergence herbicide and starter fertiliser, then drilling worked through early fields, the main block and the late and wet ground. <em>Milestones: planting window opens, drilling complete.</em>'],
       ['Emergence &amp; crop growth stages', 'Emergence counts and establishment assessment, tillering, stem extension and canopy closure, flowering and grain fill, with weekly crop walking and irrigation scheduling running the length of the season. <em>The growth stages are what the spray dates hang from.</em>'],
-      ['Spray &amp; nutrition programme', 'Post-emergence herbicide at early tillering, the nitrogen splits, T1 at stem extension, T2 at flag leaf and T3 at flowering — each tied to a growth stage rather than to a calendar date. <em>Milestone: spray programme complete.</em>'],
+      ['Spray &amp; nutrition programme', 'Post-emergence herbicide at early tillering, the nitrogen splits, T1 at stem extension, T2 at flag leaf and T3 at flowering, each tied to a growth stage rather than to a calendar date. <em>Milestone: spray programme complete.</em>'],
       ['Harvest &amp; field logistics', 'Grain moisture testing and harvest readiness, combine and cart fleet readiness, then harvest across early, main and late fields with carting and weighbridge logistics running alongside. <em>Milestones: harvest window opens at target moisture, harvest complete.</em>'],
       ['Drying, storage &amp; post-harvest', 'Continuous drier throughput and moisture control, store filling with aeration and temperature monitoring, sampling, grading and assurance records, contract deliveries, post-harvest cultivation and cover crop drilling, and the season review. <em>Milestone: crop year closed.</em>'],
     ],
-    callout: 'The calendar is not yours. Soil temperature and moisture decide when drilling can start; the crop\'s growth stages decide when each spray can be applied, and a fungicide applied a week off stage is money burned; grain moisture decides when the combine can move. Behind that sits a second, harder limit: drier throughput and storage capacity. If you can dry twenty tonnes an hour, you cannot cut faster than that for long, no matter how many combines are in the field. And because one fleet and one crew cover every field, the plan is really a sequencing problem — which block first, which machine where, and what happens when the window is short.',
+    callout: 'The calendar is not yours. Soil temperature and moisture decide when drilling can start; the crop\'s growth stages decide when each spray can be applied, and a fungicide applied a week off stage is money burned; grain moisture decides when the combine can move. Behind that sits a second, harder limit: drier throughput and storage capacity. If you can dry twenty tonnes an hour, you cannot cut faster than that for long, no matter how many combines are in the field. And because one fleet and one crew cover every field, the plan is really a sequencing problem, which block first, which machine where, and what happens when the window is short.',
     customize: [
       'Set the planting window milestone from your own soil temperature records, not from last year\'s drilling date, and let the drilling bars move with it.',
       'Split drilling into early, main and late field bars sized to your actual daily rate. That is what shows whether the fleet can finish inside the window or whether you need a contractor.',
@@ -335,7 +335,7 @@ const T = {
     ],
     related: ['manufacturing-production-schedule', 'apparel-production-calendar', 'annual'],
     faq: [
-      ['How do you build a planting and harvest schedule?', 'Start from the windows you do not control — soil temperature for drilling and grain moisture for harvest — then fit the fleet around them. The agronomic sequence between those two points is set by the crop, not by preference.'],
+      ['How do you build a planting and harvest schedule?', 'Start from the windows you do not control, soil temperature for drilling and grain moisture for harvest, then fit the fleet around them. The agronomic sequence between those two points is set by the crop, not by preference.'],
       ['Why are spray dates tied to growth stages rather than dates?', 'Because a fungicide or herbicide only works within a narrow window around a specific stage. If the season runs two weeks early, the spray dates move two weeks early with it, which is why the template hangs them off the growth-stage bars.'],
       ['What limits how fast we can harvest?', 'Usually drying and storage rather than combine capacity. If throughput is lower than the rate at which grain arrives, cutting has to slow down, so the drier bar belongs on the chart alongside the harvest bars.'],
       ['How should multiple crops be shown?', 'As parallel sets of bars sharing the same machinery. The value of the chart is showing where two crops want the drill, sprayer or combine in the same week, which is the real planning decision on a mixed farm.'],
@@ -355,10 +355,10 @@ const T = {
       ['Primary cultivation & seedbed preparation', 105, 30, 80, 'F59E0B', { indent: 1, who: 'Machinery', after: 'Machinery service, calibration & spare parts' }],
       ['Planting window opens', 130, 0, 0, 'EF4444', { milestone: true, after: 'Soil temperature & moisture monitoring' }],
       ['Pre-emergence herbicide & starter fertiliser', 128, 12, 30, 'B45309', { indent: 1, who: 'Sprayer', after: 'Primary cultivation & seedbed preparation' }],
-      ['Drilling — early fields', 130, 14, 20, 'F59E0B', { indent: 1, who: 'Machinery', after: 'Planting window opens' }],
-      ['Drilling — main block', 142, 18, 0, 'B45309', { indent: 1, who: 'Machinery', after: 'Drilling — early fields' }],
-      ['Drilling — late and wet fields', 158, 12, 0, 'F59E0B', { indent: 1, who: 'Machinery', after: 'Drilling — main block' }],
-      ['Drilling complete', 170, 0, 0, '10B981', { milestone: true, after: 'Drilling — late and wet fields' }],
+      ['Drilling, early fields', 130, 14, 20, 'F59E0B', { indent: 1, who: 'Machinery', after: 'Planting window opens' }],
+      ['Drilling, main block', 142, 18, 0, 'B45309', { indent: 1, who: 'Machinery', after: 'Drilling, early fields' }],
+      ['Drilling, late and wet fields', 158, 12, 0, 'F59E0B', { indent: 1, who: 'Machinery', after: 'Drilling, main block' }],
+      ['Drilling complete', 170, 0, 0, '10B981', { milestone: true, after: 'Drilling, late and wet fields' }],
       ['Emergence & crop growth stages', 170, 160, 0, '16A34A', { phase: true }],
       ['Emergence counts & establishment assessment', 170, 20, 0, '16A34A', { indent: 1, who: 'Agronomist', after: 'Drilling complete' }],
       ['Tillering and early vegetative growth', 190, 45, 0, '4ADE80', { indent: 1, who: 'Crop', after: 'Emergence counts & establishment assessment' }],
@@ -378,11 +378,11 @@ const T = {
       ['Combine, trailer & cart fleet readiness', 320, 15, 0, 'D97706', { indent: 1, who: 'Workshop', after: 'Weekly crop walking & pest scouting' }],
       ['Grain moisture testing & harvest readiness', 330, 15, 0, 'F59E0B', { indent: 1, who: 'Agronomist', after: 'Flowering and grain fill' }],
       ['Harvest window opens at target moisture', 345, 0, 0, 'EF4444', { milestone: true, after: 'Grain moisture testing & harvest readiness' }],
-      ['Harvest — early fields', 345, 12, 0, 'D97706', { indent: 1, who: 'Harvest crew', after: 'Harvest window opens at target moisture' }],
+      ['Harvest, early fields', 345, 12, 0, 'D97706', { indent: 1, who: 'Harvest crew', after: 'Harvest window opens at target moisture' }],
       ['Grain carting & weighbridge logistics', 345, 45, 0, 'F59E0B', { indent: 1, who: 'Logistics', after: 'Harvest window opens at target moisture' }],
-      ['Harvest — main block', 355, 20, 0, 'D97706', { indent: 1, who: 'Harvest crew', after: 'Harvest — early fields' }],
-      ['Harvest — late fields', 373, 15, 0, 'F59E0B', { indent: 1, who: 'Harvest crew', after: 'Harvest — main block' }],
-      ['Harvest complete', 390, 0, 0, '10B981', { milestone: true, after: 'Harvest — late fields' }],
+      ['Harvest, main block', 355, 20, 0, 'D97706', { indent: 1, who: 'Harvest crew', after: 'Harvest, early fields' }],
+      ['Harvest, late fields', 373, 15, 0, 'F59E0B', { indent: 1, who: 'Harvest crew', after: 'Harvest, main block' }],
+      ['Harvest complete', 390, 0, 0, '10B981', { milestone: true, after: 'Harvest, late fields' }],
       ['Drying, storage & post-harvest', 345, 110, 0, '7C3AED', { phase: true }],
       ['Continuous drier throughput & moisture control', 345, 50, 0, '7C3AED', { indent: 1, who: 'Store', after: 'Harvest window opens at target moisture' }],
       ['Store filling, aeration & temperature monitoring', 355, 60, 0, 'A78BFA', { indent: 1, who: 'Store', after: 'Continuous drier throughput & moisture control' }],
@@ -402,7 +402,7 @@ const T = {
     kw: 'gym opening timeline template',
     metaTitle: 'Gym Opening Timeline',
     metaDesc: 'Free gym opening timeline: fit-out, equipment lead times, founding-member pre-sale ahead of completion, staff certification, class rehearsal, launch day.',
-    lead: 'A free <strong>gym opening timeline template</strong> arranged around the thing that actually decides whether a gym opens well — the pre-sale. Memberships are sold months before the doors open, so brand, website, hoarding and the founding-member campaign run ahead of the fit-out rather than behind it, and the founding-member target is a gate on the launch decision rather than a marketing nice-to-have. Behind that: a lease and a change-of-use permit, a fit-out with real floor loading and acoustic requirements, equipment with long manufacturing lead times, trainer certification that cannot start before the kit is in, and a class timetable that has to be rehearsed. Download it for an investor pack, or open it online and set your own pre-sale dates.',
+    lead: 'A free <strong>gym opening timeline template</strong> arranged around the thing that actually decides whether a gym opens well, the pre-sale. Memberships are sold months before the doors open, so brand, website, hoarding and the founding-member campaign run ahead of the fit-out rather than behind it, and the founding-member target is a gate on the launch decision rather than a marketing nice-to-have. Behind that: a lease and a change-of-use permit, a fit-out with real floor loading and acoustic requirements, equipment with long manufacturing lead times, trainer certification that cannot start before the kit is in, and a class timetable that has to be rehearsed. Download it for an investor pack, or open it online and set your own pre-sale dates.',
     intro: 'A gym that opens with an empty membership list is a gym in trouble from week one. The template therefore runs marketing in front of construction, not after it:',
     phases: [
       ['Concept, site &amp; lease', 'Format and catchment analysis, the financial model and membership price ladder, site search and shortlist, heads of terms and lease signature, and funding, entity and insurance. <em>Milestone: lease signed.</em>'],
@@ -412,10 +412,10 @@ const T = {
       ['Staffing, certification &amp; programming', 'Manager and trainer recruitment, certification and insurance checks, equipment familiarisation, first aid and emergency drills, the class timetable built with instructors assigned, and a rehearsal of it. <em>Milestone: team ready to operate.</em>'],
       ['Inspections, soft launch &amp; opening', 'Fire safety and occupancy inspection, cleaning, retail and vending, access control and member cards, a founding-member soft launch week, snagging, then opening day and the first retention review. <em>Milestones: public opening day, steady-state operation.</em>'],
     ],
-    callout: 'The pre-sale is the point. A gym\'s economics depend on membership volume from month one, and memberships are sold long before anyone can use the building — which means brand, website, payment gateway and the founding-member campaign have to be live while the space is still hoarded off and full of dust. Draw those bars ahead of fit-out completion, and treat the founding-member target as a gate on the launch decision: if the number is not there, the right answer is usually more pre-sale weeks, not an opening day in front of an empty gym. Equipment sits behind it all with manufacturing lead times measured in months, and trainer certification and class rehearsal cannot start until the kit is bolted down.',
+    callout: 'The pre-sale is the point. A gym\'s economics depend on membership volume from month one, and memberships are sold long before anyone can use the building, which means brand, website, payment gateway and the founding-member campaign have to be live while the space is still hoarded off and full of dust. Draw those bars ahead of fit-out completion, and treat the founding-member target as a gate on the launch decision: if the number is not there, the right answer is usually more pre-sale weeks, not an opening day in front of an empty gym. Equipment sits behind it all with manufacturing lead times measured in months, and trainer certification and class rehearsal cannot start until the kit is bolted down.',
     customize: [
       'Start the pre-sale bar as early as your payment gateway and terms allow, and run it in parallel with fit-out. If it starts after handover you have lost the founding-member window entirely.',
-      'Set the founding-member target as an explicit milestone with a number attached, then decide in advance what happens if it is missed — extending pre-sale is a decision, not a failure.',
+      'Set the founding-member target as an explicit milestone with a number attached, then decide in advance what happens if it is missed, extending pre-sale is a decision, not a failure.',
       'Push the equipment order in front of the fit-out bars. Manufacture and shipping commonly run three to four months and nothing about a finished building shortens them.',
       'Keep floor loading and acoustic isolation as their own design bar. Free weight areas and studios above or beside other tenants are the most common late and expensive surprise in a gym fit-out.',
       'Sequence trainer certification and equipment familiarisation after installation, not before. Staff cannot be signed off on machines that are still in crates.',
@@ -432,8 +432,8 @@ const T = {
     related: ['restaurant-opening-timeline', 'retail-store-opening-timeline', 'medical-clinic-opening-timeline'],
     faq: [
       ['How long does it take to open a gym?', 'Roughly eleven to twelve months from concept to opening day in leased space, which is what the template uses. The fit-out is a few months; lease, permits, equipment lead times and the pre-sale campaign account for the rest.'],
-      ['When should the membership pre-sale start?', 'As soon as the brand, website and payment gateway are live and the opening date is credible — typically three to four months before opening, while the space is still a building site. The template runs the pre-sale bar in parallel with fit-out for exactly this reason.'],
-      ['Why does the founding-member target gate the launch?', 'Because a gym with too few members at opening struggles to fund its first year. Treating the target as a milestone forces an explicit decision — extend the pre-sale or open anyway — rather than letting the date decide by default.'],
+      ['When should the membership pre-sale start?', 'As soon as the brand, website and payment gateway are live and the opening date is credible, typically three to four months before opening, while the space is still a building site. The template runs the pre-sale bar in parallel with fit-out for exactly this reason.'],
+      ['Why does the founding-member target gate the launch?', 'Because a gym with too few members at opening struggles to fund its first year. Treating the target as a milestone forces an explicit decision, extend the pre-sale or open anyway, rather than letting the date decide by default.'],
       ['How far ahead should gym equipment be ordered?', 'Three to four months is common for cardio and strength manufacture and shipping, and rigs can be longer. The order needs to be placed during design, not after the fit-out, or installation becomes the critical path.'],
       ['What has to happen between equipment install and opening?', 'Safety inspection and asset registration, staff familiarisation on the specific machines, first aid and emergency drills, and a rehearsal of the real class timetable. None of that can begin while the kit is still in crates.'],
       ['Is the gym opening template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],

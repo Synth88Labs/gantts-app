@@ -1,11 +1,11 @@
 /* ============================================================
-   msproject.js — MS Project XML (MSPDI) import and export.
+   msproject.js, MS Project XML (MSPDI) import and export.
 
    WHY MSPDI AND NOT .MPP
 
    .mpp is an undocumented binary format. Every browser-side route to
    it ends at a third-party cloud service, which would mean uploading
-   the user's project file to someone else's server — the one thing
+   the user's project file to someone else's server, the one thing
    this app promises never to happen. MSPDI is Microsoft's own
    published XML schema, opens natively in MS Project via File > Open,
    and can be produced and parsed entirely in the browser. It is the
@@ -32,14 +32,14 @@
 
      0 = FF   1 = FS   2 = SF   3 = SS
 
-   Getting this wrong silently reverses dependencies — the plan still
+   Getting this wrong silently reverses dependencies, the plan still
    opens, still looks plausible, and is wrong. LINK_TYPE below is the
    single place that mapping lives, and the test asserts both
    directions against these exact numbers.
 
    Durations use the ISO-8601-ish PT#H#M#S form counted in WORKING
    hours at 8h/day, which is what MS Project expects. A 3-day task is
-   PT24H0M0S, not PT72H0M0S — it is 3 working days, not 3 elapsed days.
+   PT24H0M0S, not PT72H0M0S, it is 3 working days, not 3 elapsed days.
 
    LinkLag is expressed in TENTHS OF A MINUTE. A one-day lag at 8h/day
    is 4800, not 1. This is a documented MSPDI quirk and the most common
@@ -50,7 +50,7 @@
   const MINUTES_PER_DAY = HOURS_PER_DAY * 60;
 
   /* MS Project link type codes. Deliberately not alphabetical and not
-     the order these are usually listed in — see the header. */
+     the order these are usually listed in, see the header. */
   const LINK_TYPE = { FF: 0, FS: 1, SF: 2, SS: 3 };
   const LINK_TYPE_REV = { 0: 'FF', 1: 'FS', 2: 'SF', 3: 'SS' };
 
@@ -61,7 +61,7 @@
   /* MSPDI wants local date-times with no zone suffix. Appending Z (or
      an offset) makes MS Project shift every date by the user's offset,
      which shows up as a plan that is one day out for anyone west of
-     UTC — silent and very confusing. */
+     UTC, silent and very confusing. */
   const dt = (isoDate, endOfDay) =>
     `${isoDate}T${endOfDay ? '17:00:00' : '08:00:00'}`;
 
@@ -284,8 +284,8 @@ ${asgXml}
            empty name: real files name it after the project ("Office
            Fitout"), and only files written by tools that omit the name
            leave it blank. Matching on the blank name alone let the row
-           through, which imported a phantom top-level task AND — because
-           every real task sits at OutlineLevel 1, one deeper than 0 —
+           through, which imported a phantom top-level task AND, because
+           every real task sits at OutlineLevel 1, one deeper than 0, 
            reparented the entire plan underneath it. The plan still
            opened and still looked plausible, which is what made it worth
            a test of its own. */
@@ -308,7 +308,7 @@ ${asgXml}
           const typeRaw = text(p, 'Type');
           const type = LINK_TYPE_REV[typeRaw] || 'FS';
           if (typeRaw && !LINK_TYPE_REV[typeRaw]) {
-            warnings.push(`Unknown link type "${typeRaw}" on "${name}" — treated as Finish-to-Start.`);
+            warnings.push(`Unknown link type "${typeRaw}" on "${name}", treated as Finish-to-Start.`);
           }
           deps.push({ from: pu, type, lag: tenthsToLag(text(p, 'LinkLag')) });
         });
@@ -330,7 +330,7 @@ ${asgXml}
       });
 
       /* Rebuild the hierarchy from OutlineLevel. MSPDI has no parent
-         pointer — nesting is implied by a task's level relative to the
+         pointer, nesting is implied by a task's level relative to the
          rows above it, exactly like an indented outline. */
       const stack = [];
       pending.forEach(({ t, level }) => {

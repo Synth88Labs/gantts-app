@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /* ============================================================
-   fix-site-meta.js — sitewide footer links + schema for the
+   fix-site-meta.js, sitewide footer links + schema for the
    "normal" pages that had none.
 
-   SCHEMA STRATEGY (one type per page role — mixing them tells
+   SCHEMA STRATEGY (one type per page role, mixing them tells
    Google the wrong thing about what a URL is):
      app.html          -> SoftwareApplication   (the tool)
      templates.html    -> CollectionPage + ItemList (the hub)
@@ -16,7 +16,7 @@
 
    Also appends Contact / Terms / GitHub to every footer.
 
-   Idempotent — safe to run repeatedly.
+   Idempotent, safe to run repeatedly.
    Usage: node scripts/fix-site-meta.js
    ============================================================ */
 const fs = require('fs');
@@ -63,7 +63,7 @@ function crumbs(name, url) {
 // Only pages whose role was previously unlabelled.
 const NORMAL_PAGES = {
   'about.html': { type: 'AboutPage', name: 'About gantts.app', desc: 'Who builds gantts.app and why it is free.' },
-  'privacy.html': { type: 'WebPage', name: 'Privacy Policy — gantts.app', desc: 'How gantts.app handles your data: it never leaves your browser.' },
+  'privacy.html': { type: 'WebPage', name: 'Privacy Policy, gantts.app', desc: 'How gantts.app handles your data: it never leaves your browser.' },
 };
 
 let schemaAdded = 0, footersFixed = 0;
@@ -85,7 +85,7 @@ for (const rel of walk(ROOT)) {
       description: spec.desc,
       isPartOf: { '@type': 'WebSite', name: 'gantts.app', url: ORIGIN + '/' },
       publisher,
-      breadcrumb: crumbs(spec.name.split(' — ')[0], url),
+      breadcrumb: crumbs(spec.name.split(', ')[0], url),
     };
     const block = `  <script type="application/ld+json">\n  ${JSON.stringify(ld, null, 2).split('\n').join('\n  ')}\n  </script>\n`;
     html = html.replace(/(\s*<link rel="stylesheet")/, '\n' + block + '$1');

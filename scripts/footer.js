@@ -1,5 +1,5 @@
 /* ============================================================
-   footer.js — single source of truth for the English footer.
+   footer.js, single source of truth for the English footer.
 
    Previously the same markup was duplicated in fix-site-meta.js,
    gen-template-pages.js and gen-guide-pages.js. That is how the
@@ -27,7 +27,7 @@ const FOOTER = `  <footer class="footer">
             <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
             <span class="brand-word">gantts<b>.app</b></span>
           </a>
-          <p>The free Gantt chart maker that runs in your browser. No account, no upload — your plan stays on your machine.</p>
+          <p>The free Gantt chart maker that runs in your browser. No account, no upload, your plan stays on your machine.</p>
           <a class="footer-cta" href="/app.html">Open the Gantt maker →</a>
           <p class="footer-byline">A project by <a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a></p>
         </div>
@@ -60,7 +60,7 @@ const FOOTER = `  <footer class="footer">
       </div>
       <div class="footer-bottom">
         <span>© <span class="year">2026</span> gantts.app · Free forever, no sign up.</span>
-        <span>Built as a static site — nothing you plan leaves your browser.</span>
+        <span>Built as a static site, nothing you plan leaves your browser.</span>
       </div>
     </div>
   </footer>`;

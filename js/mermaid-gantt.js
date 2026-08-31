@@ -1,11 +1,11 @@
 /* ============================================================
-   mermaid-gantt.js — read and write Mermaid `gantt` diagrams.
+   mermaid-gantt.js, read and write Mermaid `gantt` diagrams.
 
    WHY
 
    Mermaid gantt blocks are how developers keep a schedule in a README,
    a GitHub issue, a Notion page or a design doc. The text is easy to
-   write and impossible to edit — nudging one date by two days means
+   write and impossible to edit, nudging one date by two days means
    re-reading the whole block and recomputing every `after` chain by
    hand. Round-tripping through a real editor is the missing step.
 
@@ -27,7 +27,7 @@
 
    WHAT IS LOSSY, AND WHY THAT IS FINE
 
-   Mermaid has no progress percentage — only the tags `done` and
+   Mermaid has no progress percentage, only the tags `done` and
    `active`. So the mapping is coarse and deliberate:
 
        export:  100%  -> done      1..99%  -> active      0%  -> (none)
@@ -40,7 +40,7 @@
    discover it in a status report.
 
    `crit` is NOT imported. Criticality is computed by schedule.js from
-   the dependency graph — accepting an asserted value would let a stale
+   the dependency graph, accepting an asserted value would let a stale
    diagram override the arithmetic and paint a non-critical chain red.
    We do emit it on export, where it is derived and therefore true.
 
@@ -113,7 +113,7 @@
       tasks.forEach(t => idOf.set(t.id, safeId(t.id, used)));
 
       /* Groups become sections. Mermaid sections are flat, so a nested
-         group is emitted as a section too and the nesting is lost —
+         group is emitted as a section too and the nesting is lost, 
          there is nowhere in the format to put it. */
       const kids = new Map();
       tasks.forEach(t => {
@@ -143,8 +143,8 @@
 
         /* Prefer `after <id>` for a plain finish-to-start link with no
            lag: it is what makes the diagram maintainable, since moving
-           the predecessor moves everything downstream. Anything else —
-           SS/FF/SF, or a lag — cannot be expressed, so we fall back to
+           the predecessor moves everything downstream. Anything else, 
+           SS/FF/SF, or a lag, cannot be expressed, so we fall back to
            the absolute date, which at least stays correct. */
         const dep = (t.deps || []).find(d => d.type === 'FS' && !d.lag && idOf.has(d.from));
         fields.push(dep ? 'after ' + idOf.get(dep.from) : t.start);
@@ -189,7 +189,7 @@
 
       const raw = body.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
       if (!raw.some(l => /^gantt\b/.test(l))) {
-        throw new Error('That does not look like a Mermaid gantt diagram — it should start with "gantt".');
+        throw new Error('That does not look like a Mermaid gantt diagram, it should start with "gantt".');
       }
 
       let title = '';
@@ -198,7 +198,7 @@
          and Mermaid does not require it to come first. Scan for it up
          front rather than picking it up mid-loop, which would schedule
          every task above the line on calendar days and everything below
-         it on working days — in one file. */
+         it on working days, in one file. */
       let excludesWeekends = /^\s*excludes\s+.*weekend/im.test(body);
       const tasks = [];
       const byMermaidId = new Map();   // mermaid id -> our task
@@ -206,7 +206,7 @@
       /* When the diagram excludes weekends, every date it implies is a
          working-day date. Resolving `after` with a plain +1 day put a
          successor on a Saturday whenever its predecessor ended on a
-         Friday — the file still rendered, and every downstream date was
+         Friday, the file still rendered, and every downstream date was
          wrong. Route the arithmetic through Cal so the import agrees
          with what Mermaid itself would draw. */
       const wcal = excludesWeekends
@@ -225,7 +225,7 @@
         if (/^title\s+/i.test(line)) { title = line.replace(/^title\s+/i, '').trim(); continue; }
         if (/^excludes\s+/i.test(line)) {
           if (/weekend/i.test(line)) excludesWeekends = true;
-          else warnings.push('Ignored an "excludes" rule for specific dates — add them as holidays in the calendar.');
+          else warnings.push('Ignored an "excludes" rule for specific dates, add them as holidays in the calendar.');
           continue;
         }
         if (/^(dateFormat|axisFormat|todayMarker|tickInterval|weekday|inclusiveEndDates)\b/i.test(line)) continue;
@@ -242,7 +242,7 @@
         }
 
         const colon = line.indexOf(':');
-        if (colon < 0) { warnings.push('Skipped a line with no ":" — ' + line.slice(0, 40)); continue; }
+        if (colon < 0) { warnings.push('Skipped a line with no ":", ' + line.slice(0, 40)); continue; }
 
         const name = line.slice(0, colon).trim() || 'Task';
         const fields = line.slice(colon + 1).split(',').map(f => f.trim()).filter(Boolean);
@@ -256,7 +256,7 @@
             if (low === 'milestone') isMilestone = true;
             else if (low === 'done') progress = 100;
             else if (low === 'active') { progress = 50; sawActive = true; }
-            // `crit` is deliberately ignored — see the header.
+            // `crit` is deliberately ignored, see the header.
             continue;
           }
           if (/^after\s+/i.test(f)) { dep = f.replace(/^after\s+/i, '').trim().split(/\s+/); continue; }
@@ -269,7 +269,7 @@
         }
 
         /* Resolve the start. Order matters: an explicit date wins, then
-           `after`, then "continue from the previous task" — which is
+           `after`, then "continue from the previous task", which is
            what Mermaid does when a task gives only a duration. */
         let resolvedStart = start;
         let deps = [];

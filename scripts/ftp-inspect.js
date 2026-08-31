@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* ftp-inspect.js — list remote directories, to work out where the FTP
+/* ftp-inspect.js, list remote directories, to work out where the FTP
    account is actually rooted. Read-only; writes nothing.
    Usage: node scripts/ftp-inspect.js [path ...] */
 const ftp = require('basic-ftp');
@@ -30,11 +30,11 @@ const paths = process.argv.slice(2).length ? process.argv.slice(2)
         const l = await c.list();
         const dirs = l.filter(f => f.isDirectory).map(f => f.name + '/');
         const files = l.filter(f => !f.isDirectory).map(f => f.name);
-        console.log(`\n${p}  — ${l.length} entries`);
+        console.log(`\n${p}, ${l.length} entries`);
         if (dirs.length) console.log('  dirs:  ' + dirs.slice(0, 14).join(' '));
         if (files.length) console.log('  files: ' + files.slice(0, 14).join(' '));
       } catch (e) {
-        console.log(`\n${p}  — ${e.message.split('\n')[0].slice(0, 60)}`);
+        console.log(`\n${p}, ${e.message.split('\n')[0].slice(0, 60)}`);
       }
     }
   } catch (e) {

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* ============================================================
-   add-verification.js — insert search-engine verification meta tags.
+   add-verification.js, insert search-engine verification meta tags.
 
    Both Google Search Console and Bing Webmaster Tools offer an
    HTML-meta-tag verification method. Paste the token values here and
    the tags go into index.html (site root is all either one checks).
 
-   These tokens are NOT secrets — they only prove you control the site,
+   These tokens are NOT secrets, they only prove you control the site,
    and they are publicly visible in the page source either way.
 
    Usage:
@@ -37,7 +37,7 @@ if (args.includes('--status') || !args.length) {
   console.log('\nVerification tag status in index.html:\n');
   for (const [k, p] of Object.entries(PROVIDERS)) {
     const m = html.match(new RegExp(`<meta\\s+name=["']${p.meta}["']\\s+content=["']([^"']*)["']`, 'i'));
-    console.log(`  ${p.label.padEnd(24)} ${m ? '✓ ' + m[1] : '— not set'}`);
+    console.log(`  ${p.label.padEnd(24)} ${m ? '✓ ' + m[1] : ', not set'}`);
   }
   console.log('\nUsage: node scripts/add-verification.js --google=TOKEN --bing=TOKEN\n');
   process.exit(0);
@@ -48,7 +48,7 @@ for (const [k, p] of Object.entries(PROVIDERS)) {
   const token = arg(k);
   if (!token) continue;
   if (/["'<>]/.test(token)) {
-    console.error(`✗ ${p.label}: token contains invalid characters — paste only the content="..." value.`);
+    console.error(`✗ ${p.label}: token contains invalid characters, paste only the content="..." value.`);
     process.exit(1);
   }
   const tag = `<meta name="${p.meta}" content="${token}" />`;

@@ -1,12 +1,12 @@
 /* ============================================================
-   guide-locales.js — which guides exist in which language.
+   guide-locales.js, which guides exist in which language.
 
    Same contract as i18n/template-locales.js, and for the same reason:
    the English page's reciprocal hreflang and the localized page must be
    computed from ONE source, or Google silently discards the cluster.
 
-   Note that the English guides are a mix — four are generated from
-   scripts/new-guides.js and eight are hand-authored HTML — so the
+   Note that the English guides are a mix, four are generated from
+   scripts/new-guides.js and eight are hand-authored HTML, so the
    reciprocal tags are injected by scripts/fix-guide-hreflang.js rather
    than only by the generator.
    ============================================================ */
@@ -19,7 +19,7 @@ const zh = require('./guides-zh.js');
 const BY_LOCALE = { es: es.G, de: de.G, fr: fr.G, pt: pt.G, zh: zh.G };
 /* Each locale supplies its OWN chrome. Writing `de: de.UI || es.UI` here
    would silently render German articles under Spanish headings the moment
-   a UI key were missing — the exact bug that was caught in
+   a UI key were missing, the exact bug that was caught in
    template-locales.js. No fallback: a missing UI block should break the
    build, not ship a bilingual page. */
 const UI = { es: es.UI, de: de.UI, fr: fr.UI, pt: pt.UI, zh: zh.UI };

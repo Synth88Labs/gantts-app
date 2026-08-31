@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   expand-blog-figures.js — figure tokens for the HAND-AUTHORED guides.
+   expand-blog-figures.js, figure tokens for the HAND-AUTHORED guides.
 
    The seven generated guides get their diagrams from the content model,
    expanded per locale by gen-guide-pages.js and gen-i18n.js. The other
@@ -18,7 +18,7 @@
    HTML. A one-shot replacer would have made these eight pages the only
    place a stale diagram could hide.
 
-   English only — these pages exist only in English. Their translations
+   English only, these pages exist only in English. Their translations
    are model entries and are handled by gen-i18n.js, which draws each
    diagram in the reader's language.
 
@@ -84,7 +84,7 @@ for (const f of fs.readdirSync(DIR)) {
 console.log(`\n  ${added} token(s) expanded, ${refreshed} existing figure(s) refreshed, ${files} file(s) ${DRY ? 'would change' : 'written'}`);
 
 if (unknown.length) {
-  console.error('\n✗ token(s) naming no archetype — these would ship as invisible comments:');
+  console.error('\n✗ token(s) naming no archetype, these would ship as invisible comments:');
   unknown.forEach((u) => console.error('    ' + u));
   process.exit(1);
 }

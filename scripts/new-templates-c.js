@@ -1,12 +1,12 @@
 /* ============================================================
-   new-templates-c.js — third batch of generated templates.
+   new-templates-c.js, third batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch 3 moves off heavy industry and into the operational
    and corporate programmes: regulated research, systems rollouts,
    openings, integrations and moves.
 
-   These were picked on the same SERP evidence as batches 1 and 2 —
+   These were picked on the same SERP evidence as batches 1 and 2, 
    queries where the ranking results are consultancy blog posts,
    gated PDF downloads or generic "project plan" pages rather than a
    template anyone can open and edit.
@@ -22,23 +22,23 @@ const T = {
     kw: 'clinical trial gantt chart template',
     metaTitle: 'Clinical Trial Gantt Chart Template',
     metaDesc: 'Free clinical trial Gantt chart template: protocol, IRB approval, site initiation, enrolment, data lock, analysis and reporting. Excel or edit online.',
-    lead: 'A free <strong>clinical trial Gantt chart template</strong> laid out along the real study lifecycle — protocol development, regulatory and ethics approval, site selection and initiation, recruitment and treatment, database lock, statistical analysis and the clinical study report. Download it for a grant application or protocol appendix, or open it online to link the approval gates that actually control your start date.',
+    lead: 'A free <strong>clinical trial Gantt chart template</strong> laid out along the real study lifecycle, protocol development, regulatory and ethics approval, site selection and initiation, recruitment and treatment, database lock, statistical analysis and the clinical study report. Download it for a grant application or protocol appendix, or open it online to link the approval gates that actually control your start date.',
     intro: 'A trial timeline is mostly a sequence of approvals with a recruitment period in the middle. The template separates them so the gates are visible rather than buried inside a single "study conduct" bar:',
     phases: [
       ['Protocol development', 'Concept, scientific review, protocol writing, statistical analysis plan, case report form design and budget. <em>Milestone: protocol final.</em>'],
-      ['Regulatory &amp; ethics', 'Regulatory submission, IRB or ethics committee review, response to queries and approval — a fixed dependency for everything downstream. <em>Milestone: ethics approved.</em>'],
+      ['Regulatory &amp; ethics', 'Regulatory submission, IRB or ethics committee review, response to queries and approval, a fixed dependency for everything downstream. <em>Milestone: ethics approved.</em>'],
       ['Site selection &amp; start-up', 'Feasibility, site contracts and budgets, essential documents, drug supply release and site initiation visits.'],
       ['Recruitment &amp; treatment', 'First participant in, enrolment ramp, treatment and follow-up visits, monitoring visits and safety reporting. <em>Milestone: last participant last visit.</em>'],
       ['Data management', 'Data entry, query resolution, medical coding, reconciliation and database lock. <em>Milestone: database locked.</em>'],
       ['Analysis &amp; reporting', 'Unblinding, statistical analysis, clinical study report, publication and regulatory submission.'],
     ],
-    callout: 'Recruitment is where trial timelines actually fail. A large share of studies miss their enrolment target date, usually because the plan assumed a steady accrual rate from day one. Model a ramp instead — slow first months while sites activate, then a plateau — and the schedule stops flattering itself.',
+    callout: 'Recruitment is where trial timelines actually fail. A large share of studies miss their enrolment target date, usually because the plan assumed a steady accrual rate from day one. Model a ramp instead, slow first months while sites activate, then a plateau, and the schedule stops flattering itself.',
     customize: [
-      'Set your ethics submission date first and let site start-up depend on approval — nothing legitimate can precede it.',
+      'Set your ethics submission date first and let site start-up depend on approval, nothing legitimate can precede it.',
       'Stretch the recruitment bar to match your realistic accrual rate per site per month, not the target rate.',
       'Add one row per site if you are running multi-centre and need activation tracked individually.',
       'Insert interim analysis or DSMB review points as milestones where the protocol requires them.',
-      'Mark first participant in, last participant last visit and database lock — these are the dates sponsors ask about.',
+      'Mark first participant in, last participant last visit and database lock, these are the dates sponsors ask about.',
     ],
     tips: [
       '<strong>Treat approvals as hard dependencies.</strong> Ethics and regulatory review are third-party durations you cannot compress, so link start-up to them rather than running the two in parallel.',
@@ -49,9 +49,9 @@ const T = {
     ],
     related: ['research', 'grant-proposal-gantt-chart', 'phd-research-gantt-chart'],
     faq: [
-      ['How long does a clinical trial take?', 'It varies enormously by phase and indication — a small Phase I study may run about a year, while a Phase III programme commonly runs three to five. This template uses a roughly two-year schedule you can compress or extend by moving the end date.'],
+      ['How long does a clinical trial take?', 'It varies enormously by phase and indication, a small Phase I study may run about a year, while a Phase III programme commonly runs three to five. This template uses a roughly two-year schedule you can compress or extend by moving the end date.'],
       ['What should a clinical trial Gantt chart include?', 'Protocol development, regulatory and ethics approval, site selection and initiation, recruitment and treatment, data management through database lock, and analysis and reporting. All six phases are pre-loaded with milestones on the gates.'],
-      ['Can I use this in a grant application?', 'Yes — that is one of the most common uses. Export to PDF or PNG from the <a href="/app.html">free editor</a> and drop it into the proposal, or download the PowerPoint version for a slide.'],
+      ['Can I use this in a grant application?', 'Yes, that is one of the most common uses. Export to PDF or PNG from the <a href="/app.html">free editor</a> and drop it into the proposal, or download the PowerPoint version for a slide.'],
       ['Is the clinical trial template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
     tasks: [
@@ -97,23 +97,23 @@ const T = {
     kw: 'erp implementation project plan template',
     metaTitle: 'ERP Implementation Schedule Template',
     metaDesc: 'Free ERP implementation project plan: discovery, design, build, data migration, testing, training, cutover and hypercare. Excel, PowerPoint or edit online.',
-    lead: 'A free <strong>ERP implementation schedule template</strong> covering the full rollout — discovery and fit-gap, solution design, configuration and development, data migration, integration and user acceptance testing, training, cutover weekend and hypercare. Download it for the steering committee pack, or open it online to link the dependencies that decide whether your go-live date survives.',
+    lead: 'A free <strong>ERP implementation schedule template</strong> covering the full rollout, discovery and fit-gap, solution design, configuration and development, data migration, integration and user acceptance testing, training, cutover weekend and hypercare. Download it for the steering committee pack, or open it online to link the dependencies that decide whether your go-live date survives.',
     intro: 'ERP programmes fail on data and testing far more often than on software. The template gives both their own tracks rather than hiding them inside a build phase:',
     phases: [
       ['Discovery &amp; fit-gap', 'Current-state process mapping, requirements, fit-gap analysis against standard functionality and the scope baseline. <em>Milestone: scope agreed.</em>'],
       ['Solution design', 'To-be process design, configuration workbooks, integration and reporting specifications, and the design sign-off gate.'],
       ['Build &amp; configuration', 'System configuration, extensions, integrations, reports and the security and role model.'],
-      ['Data migration', 'Data profiling, cleansing, mapping and successive mock loads — the workstream that most often forces a go-live to slip.'],
+      ['Data migration', 'Data profiling, cleansing, mapping and successive mock loads, the workstream that most often forces a go-live to slip.'],
       ['Testing', 'System integration testing, user acceptance testing, performance testing and defect resolution. <em>Milestone: UAT signed off.</em>'],
       ['Training, cutover &amp; hypercare', 'End-user training, cutover rehearsal, go/no-go decision, the cutover window itself and post-go-live support. <em>Milestone: go-live.</em>'],
     ],
     callout: 'Run at least three mock data loads, and put every one of them on the chart. The first proves the mapping is wrong, the second proves the cleansing worked, and the third proves the timing fits inside the cutover window. Programmes that budget for one load discover all three problems during go-live weekend.',
     customize: [
-      'Fix the go-live date and work backwards — most ERP dates are set by a fiscal or contractual boundary, not by the plan.',
+      'Fix the go-live date and work backwards, most ERP dates are set by a fiscal or contractual boundary, not by the plan.',
       'Add a row per module or per legal entity if you are rolling out in waves rather than big bang.',
       'Expand the data migration rows to one per data object (customers, vendors, materials, open orders) once mapping starts.',
       'Insert a formal go/no-go milestone a week before cutover, with testing and data sign-off as its predecessors.',
-      'Keep hypercare on the chart as real work — it needs named people who are not simultaneously starting the next phase.',
+      'Keep hypercare on the chart as real work, it needs named people who are not simultaneously starting the next phase.',
     ],
     tips: [
       '<strong>Protect UAT.</strong> It is the first phase squeezed when the build runs late, and it is the only one that finds the defects your users care about.',
@@ -124,9 +124,9 @@ const T = {
     ],
     related: ['software-development', 'project-management', 'employee-onboarding'],
     faq: [
-      ['How long does an ERP implementation take?', 'Typically 9–18 months for a mid-market single-instance rollout, and considerably longer for multi-entity or global programmes. The template uses a twelve-month schedule you can compress or extend from the go-live date.'],
+      ['How long does an ERP implementation take?', 'Typically 9-18 months for a mid-market single-instance rollout, and considerably longer for multi-entity or global programmes. The template uses a twelve-month schedule you can compress or extend from the go-live date.'],
       ['What phases should an ERP project plan have?', 'Discovery and fit-gap, solution design, build and configuration, data migration, testing, and training with cutover and hypercare. Data migration and testing are separate tracks here because they are the two that most often drive delay.'],
-      ['Does this work for a phased rollout rather than big bang?', 'Yes — duplicate the build, testing and cutover phases per wave and keep discovery and design shared. The template gives you the pattern for the first wave.'],
+      ['Does this work for a phased rollout rather than big bang?', 'Yes, duplicate the build, testing and cutover phases per wave and keep discovery and design shared. The template gives you the pattern for the first wave.'],
       ['Is the ERP implementation template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
     ],
     tasks: [
@@ -178,17 +178,17 @@ const T = {
     phases: [
       ['Site selection &amp; power', 'Site search, utility capacity confirmation, power reservation, fibre routes and land acquisition. <em>Milestone: power secured.</em>'],
       ['Design &amp; permitting', 'Concept and detailed design, redundancy topology (N+1, 2N), planning permission and building permits.'],
-      ['Long-lead procurement', 'Generators, UPS systems, switchgear, chillers and transformers — ordered against lead times that now routinely dominate the programme.'],
+      ['Long-lead procurement', 'Generators, UPS systems, switchgear, chillers and transformers, ordered against lead times that now routinely dominate the programme.'],
       ['Shell &amp; core', 'Earthworks, foundations, structure, envelope and roof, plus the raised floor and containment build-out.'],
       ['MEP fit-out', 'Electrical distribution, generators and UPS, cooling plant, fire suppression, security and the building management system.'],
-      ['Commissioning &amp; handover', 'Levels 1–5 commissioning, integrated systems testing, IT deployment and handover to operations. <em>Milestone: service ready.</em>'],
+      ['Commissioning &amp; handover', 'Levels 1-5 commissioning, integrated systems testing, IT deployment and handover to operations. <em>Milestone: service ready.</em>'],
     ],
-    callout: 'Long-lead electrical plant is the schedule. Switchgear, transformers and generators have lead times that can exceed the entire construction programme, so the order date — not the ground-breaking date — is what determines when the building can energize. Put those orders on the chart as tasks with their own dependencies.',
+    callout: 'Long-lead electrical plant is the schedule. Switchgear, transformers and generators have lead times that can exceed the entire construction programme, so the order date, not the ground-breaking date, is what determines when the building can energize. Put those orders on the chart as tasks with their own dependencies.',
     customize: [
       'Set the required service-ready date and work backwards; almost every data center date is driven by a customer or capacity commitment.',
       'Adjust long-lead durations to your actual quoted lead times, which have moved substantially in recent years.',
       'Add rows per data hall if you are building in phases and energizing halls sequentially.',
-      'Expand commissioning into its five levels once the equipment schedule is known — Level 5 integrated systems testing needs weeks, not days.',
+      'Expand commissioning into its five levels once the equipment schedule is known, Level 5 integrated systems testing needs weeks, not days.',
       'Mark power secured, building energized, IST complete and service ready as milestones.',
     ],
     tips: [
@@ -200,9 +200,9 @@ const T = {
     ],
     related: ['construction', 'project-management', 'solar-farm-construction-schedule'],
     faq: [
-      ['How long does it take to build a data center?', 'Commonly 18–30 months from site selection to service ready, with construction itself around 12–18 months. Long-lead electrical equipment and utility power availability are usually what set the outer bound.'],
+      ['How long does it take to build a data center?', 'Commonly 18-30 months from site selection to service ready, with construction itself around 12-18 months. Long-lead electrical equipment and utility power availability are usually what set the outer bound.'],
       ['What are the five levels of data center commissioning?', 'Broadly: factory testing, component verification on site, pre-functional checks, functional performance testing of each system, and integrated systems testing of everything together under simulated load. The template gives commissioning its own phase for that reason.'],
-      ['Can I use this for a colocation fit-out rather than a new build?', 'Yes — drop the shell and core rows and keep design, long-lead procurement, MEP fit-out and commissioning, which is where a fit-out programme lives.'],
+      ['Can I use this for a colocation fit-out rather than a new build?', 'Yes, drop the shell and core rows and keep design, long-lead procurement, MEP fit-out and commissioning, which is where a fit-out programme lives.'],
       ['Is the data center schedule template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, plus free online editing without an account.'],
     ],
     tasks: [
@@ -248,11 +248,11 @@ const T = {
     kw: 'restaurant opening timeline template',
     metaTitle: 'Restaurant Opening Timeline Template',
     metaDesc: 'Free restaurant opening timeline: lease, design, permits, build-out, equipment, licensing, hiring, menu testing and soft opening. Excel or edit online.',
-    lead: 'A free <strong>restaurant opening timeline template</strong> running from lease signature to opening night — design and permits, build-out, equipment delivery, licensing and inspections, hiring and training, menu development and the soft opening. Download it for your lender or landlord, or open it online to see which permit is holding up your opening date.',
+    lead: 'A free <strong>restaurant opening timeline template</strong> running from lease signature to opening night, design and permits, build-out, equipment delivery, licensing and inspections, hiring and training, menu development and the soft opening. Download it for your lender or landlord, or open it online to see which permit is holding up your opening date.',
     intro: 'Opening a restaurant is a permit project with a kitchen attached. The template puts licensing on its own track, because that is where most opening dates are actually lost:',
     phases: [
       ['Concept &amp; lease', 'Concept and menu direction, site search, financial model, lease negotiation and signature. <em>Milestone: lease signed.</em>'],
-      ['Design &amp; permits', 'Space planning, kitchen design, architectural drawings, permit submission and approval — the phase with the least predictable duration.'],
+      ['Design &amp; permits', 'Space planning, kitchen design, architectural drawings, permit submission and approval, the phase with the least predictable duration.'],
       ['Build-out', 'Demolition, MEP rough-in, kitchen infrastructure, finishes, millwork, front-of-house fit-out and the hood and fire suppression install.'],
       ['Equipment &amp; smallwares', 'Kitchen equipment ordered against lead times, delivery and installation, plus POS, furniture, and smallwares.'],
       ['Licensing &amp; inspections', 'Business licence, food service permit, liquor licence, health and fire inspections and the certificate of occupancy. <em>Milestone: cleared to open.</em>'],
@@ -260,10 +260,10 @@ const T = {
     ],
     callout: 'Start the liquor licence the week you sign the lease. In many jurisdictions it takes longer than the entire build-out and cannot be accelerated with money or effort, so an opening date set without it is a guess. It belongs on the chart as an early, long, independent bar.',
     customize: [
-      'Anchor the timeline to lease signature — rent is running from that date, which is what makes every downstream delay expensive.',
+      'Anchor the timeline to lease signature, rent is running from that date, which is what makes every downstream delay expensive.',
       'Extend the permit phase if you are in a jurisdiction with slow plan review; six to twelve weeks is common and not unusual.',
       'Set equipment orders against real quoted lead times, and place them before the build-out rows that depend on them.',
-      'Add a row per inspection (health, fire, building, hood) — each is a gate, not a formality.',
+      'Add a row per inspection (health, fire, building, hood), each is a gate, not a formality.',
       'Keep friends-and-family and soft opening as separate bars; they serve different purposes and both need staffing.',
     ],
     tips: [
@@ -271,13 +271,13 @@ const T = {
       '<strong>Order the hood early.</strong> Hood and fire suppression frequently gate both the build inspection and the kitchen finish work.',
       '<strong>Hire the chef before the menu.</strong> Menu costing, equipment needs and training all depend on that hire, so it is a dependency rather than a staffing detail.',
       '<strong>Protect the training window.</strong> Compressing training to protect an opening date is the fastest route to a bad opening month of reviews.',
-      '<strong>Track rent burn against the schedule.</strong> Every week of slippage after lease signature has a known cost — showing it next to the chart focuses decisions.',
+      '<strong>Track rent burn against the schedule.</strong> Every week of slippage after lease signature has a known cost, showing it next to the chart focuses decisions.',
     ],
     related: ['hotel-pre-opening-critical-path', 'home-renovation', 'event-planning'],
     faq: [
-      ['How long does it take to open a restaurant?', 'Commonly 6–12 months from lease signature to opening, with permits and build-out taking the largest share. The template uses a nine-month schedule you can compress or extend.'],
+      ['How long does it take to open a restaurant?', 'Commonly 6-12 months from lease signature to opening, with permits and build-out taking the largest share. The template uses a nine-month schedule you can compress or extend.'],
       ['What usually delays a restaurant opening?', 'Permit review and liquor licensing far more often than construction. Both are third-party durations, which is why the template puts licensing on its own parallel track from early on.'],
-      ['Can I use this for a café or a bar instead?', 'Yes. The structure is the same — drop the liquor rows for a café, or trim the kitchen build-out rows for a bar-led concept.'],
+      ['Can I use this for a café or a bar instead?', 'Yes. The structure is the same, drop the liquor rows for a café, or trim the kitchen build-out rows for a bar-led concept.'],
       ['Is the restaurant opening template free?', 'Yes. Free Excel, PowerPoint and CSV downloads and free online editing, with no account required.'],
     ],
     tasks: [
@@ -325,20 +325,20 @@ const T = {
     kw: 'post merger integration plan template',
     metaTitle: 'Post-Merger Integration Plan Template',
     metaDesc: 'Free post-merger integration plan: day one readiness, org design, systems, finance, customers and synergy tracking. Excel or edit online.',
-    lead: 'A free <strong>post-merger integration plan template</strong> organized the way integrations are actually run — by workstream. Day one readiness, organization design, finance, IT and systems, HR and payroll, customers and go-to-market, and synergy tracking each get their own lane across the first twelve months after close.',
+    lead: 'A free <strong>post-merger integration plan template</strong> organized the way integrations are actually run, by workstream. Day one readiness, organization design, finance, IT and systems, HR and payroll, customers and go-to-market, and synergy tracking each get their own lane across the first twelve months after close.',
     intro: 'Integrations fail in the gaps between functions. The template gives every workstream its own visible lane so nothing sits unowned between them:',
     phases: [
       ['Pre-close planning', 'Integration management office set up, workstream leads named, day one checklist, and the clean-team analysis permitted before close. <em>Milestone: close.</em>'],
       ['Day one readiness', 'Legal entity readiness, communications to staff and customers, access and payroll continuity, and the first-week operating rhythm.'],
-      ['Organization &amp; people', 'Org design, selection and retention decisions, consultation where required, and harmonization of terms — the workstream with the most legal exposure.'],
+      ['Organization &amp; people', 'Org design, selection and retention decisions, consultation where required, and harmonization of terms, the workstream with the most legal exposure.'],
       ['Finance &amp; reporting', 'Chart of accounts mapping, consolidated reporting, banking and treasury, and the first combined close. <em>Milestone: first combined month-end.</em>'],
       ['Systems &amp; data', 'Application rationalization, identity and email migration, ERP and CRM consolidation and data migration.'],
       ['Customers &amp; synergies', 'Customer and contract migration, brand and go-to-market alignment, and tracked delivery of the synergy case. <em>Milestone: synergy run-rate achieved.</em>'],
     ],
-    callout: 'Day one is a readiness deadline, not an integration deadline. Almost nothing needs to be integrated at close — people need to get paid, log in, and know who their manager is. Separating "day one must-haves" from "first year" is the single decision that keeps an integration plan honest.',
+    callout: 'Day one is a readiness deadline, not an integration deadline. Almost nothing needs to be integrated at close, people need to get paid, log in, and know who their manager is. Separating "day one must-haves" from "first year" is the single decision that keeps an integration plan honest.',
     customize: [
       'Set close as day zero and let every workstream count forward from it; pre-close work sits in negative time.',
-      'Name an owner on every workstream row — unowned lanes are how integrations lose months.',
+      'Name an owner on every workstream row, unowned lanes are how integrations lose months.',
       'Move HR consultation earlier and lengthen it if you operate in jurisdictions with statutory consultation periods.',
       'Add a row per synergy initiative once the case is broken down, so delivery is tracked rather than asserted.',
       'Mark close, first combined month-end, systems cutover and synergy run-rate as milestones.',
@@ -352,9 +352,9 @@ const T = {
     ],
     related: ['project-management', 'employee-onboarding', 'erp-implementation-schedule'],
     faq: [
-      ['How long does post-merger integration take?', 'Most integration programmes run 12–24 months, with day one readiness compressed into the weeks around close. This template covers the first twelve months, which is where the majority of the value is won or lost.'],
+      ['How long does post-merger integration take?', 'Most integration programmes run 12-24 months, with day one readiness compressed into the weeks around close. This template covers the first twelve months, which is where the majority of the value is won or lost.'],
       ['What workstreams belong in an integration plan?', 'Typically an integration management office, day one readiness, organization and people, finance, systems and data, and customers and go-to-market with synergy tracking. All are pre-loaded as separate lanes here.'],
-      ['How much can be done before the deal closes?', 'Planning and clean-team analysis, subject to legal advice and antitrust constraints — the template puts that work before the close milestone so the boundary stays explicit.'],
+      ['How much can be done before the deal closes?', 'Planning and clean-team analysis, subject to legal advice and antitrust constraints, the template puts that work before the close milestone so the boundary stays explicit.'],
       ['Is the integration plan template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [
@@ -401,23 +401,23 @@ const T = {
     kw: 'office relocation project plan template',
     metaTitle: 'Office Relocation Project Plan Template',
     metaDesc: 'Free office relocation project plan: requirements, site search, lease, design, fit-out, IT, move weekend and decommissioning. Excel or edit online.',
-    lead: 'A free <strong>office relocation project plan template</strong> covering the whole move — space requirements, site search and lease, design and fit-out, IT and connectivity, furniture, the move weekend itself, and handing the old space back in the condition your lease requires.',
+    lead: 'A free <strong>office relocation project plan template</strong> covering the whole move, space requirements, site search and lease, design and fit-out, IT and connectivity, furniture, the move weekend itself, and handing the old space back in the condition your lease requires.',
     intro: 'A relocation is two projects running at once: building the new space and exiting the old one. The template runs both, because dilapidations are where relocation budgets quietly break:',
     phases: [
       ['Requirements &amp; search', 'Headcount forecast, space and ways-of-working requirements, budget, site search and shortlisting.'],
       ['Lease &amp; legal', 'Heads of terms, due diligence, lease negotiation and signature, plus notice served on the existing lease. <em>Milestone: lease signed.</em>'],
       ['Design &amp; fit-out', 'Test fits, detailed design, landlord approvals, permits, construction, furniture install and snagging.'],
-      ['IT &amp; connectivity', 'Circuit orders, comms room build, cabling, AV and meeting rooms, and network cutover planning — the workstream with the longest external lead time.'],
+      ['IT &amp; connectivity', 'Circuit orders, comms room build, cabling, AV and meeting rooms, and network cutover planning, the workstream with the longest external lead time.'],
       ['Move planning &amp; communications', 'Move vendor selection, staff communications, floor plans and seat allocation, crate distribution and the move-day runbook.'],
       ['Move &amp; decommission', 'The move weekend, first-day floor support, old-site clearance and dilapidations settlement. <em>Milestone: old site handed back.</em>'],
     ],
     callout: 'Order the circuits the day the lease is signed. Business connectivity provisioning routinely takes longer than the entire fit-out, and unlike construction it cannot be accelerated by adding people. A relocation plan without a dated circuit order is a plan with an unexploded dependency in it.',
     customize: [
-      'Anchor the plan to your existing lease expiry — that date is fixed and everything else negotiates around it.',
+      'Anchor the plan to your existing lease expiry, that date is fixed and everything else negotiates around it.',
       'Add a break-clause or notice-period milestone; missing it is the most expensive mistake available on this project.',
       'Extend the IT phase to your provider\'s actual quoted lead time rather than a nominal one.',
       'Split the move weekend into departments or floors if you are moving more than a hundred people.',
-      'Keep dilapidations as visible tasks — settling the old lease is a real workstream with a real cost, not an afterthought.',
+      'Keep dilapidations as visible tasks, settling the old lease is a real workstream with a real cost, not an afterthought.',
     ],
     tips: [
       '<strong>Run the exit in parallel from day one.</strong> Dilapidations surveys and negotiations take months and are far cheaper handled early than under time pressure.',
@@ -428,7 +428,7 @@ const T = {
     ],
     related: ['project-management', 'home-renovation', 'employee-onboarding'],
     faq: [
-      ['How long does an office relocation take?', 'Typically 6–12 months from requirements to move-in for a mid-sized office, driven mainly by site search, lease negotiation and fit-out. The template uses a nine-month schedule you can adjust.'],
+      ['How long does an office relocation take?', 'Typically 6-12 months from requirements to move-in for a mid-sized office, driven mainly by site search, lease negotiation and fit-out. The template uses a nine-month schedule you can adjust.'],
       ['What is usually the longest lead time in an office move?', 'Telecoms and internet circuit provisioning at the new site, which frequently exceeds the fit-out duration. That is why IT and connectivity is a separate phase here rather than a line inside fit-out.'],
       ['Does the template cover exiting the old office?', 'Yes. Notice, dilapidations and clearance run as tasks in parallel with the new-site work, because the exit is where relocation budgets most often overrun.'],
       ['Is the office relocation template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],

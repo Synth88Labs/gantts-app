@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   preflight.js — refuse to deploy code that is not on GitHub.
+   preflight.js, refuse to deploy code that is not on GitHub.
 
    Workflow is: develop locally -> push to GitHub -> deploy to server.
    This enforces the middle step, so the live site always corresponds to
@@ -34,7 +34,7 @@ function fail(msg, fix) {
 try {
   sh('git rev-parse --is-inside-work-tree');
 } catch {
-  if (force) { console.warn('⚠ not a git repo — continuing (--force)\n'); process.exit(0); }
+  if (force) { console.warn('⚠ not a git repo, continuing (--force)\n'); process.exit(0); }
   fail('Not a git repository.', 'The deploy expects the site to be version-controlled.');
 }
 
@@ -43,7 +43,7 @@ if (dirty && !force) {
   const lines = dirty.split('\n').slice(0, 8);
   fail(
     `${dirty.split('\n').length} uncommitted change(s):\n    ` + lines.join('\n    '),
-    'Commit them first — the server should only ever run committed code.'
+    'Commit them first, the server should only ever run committed code.'
   );
 }
 
@@ -58,7 +58,7 @@ try {
 
 if (!remoteOk) {
   if (!force) fail('Could not reach origin to compare.', 'Check your connection, or use --force if you are offline on purpose.');
-  console.warn('⚠ origin unreachable — continuing (--force)');
+  console.warn('⚠ origin unreachable, continuing (--force)');
 } else {
   if (ahead && !force) {
     fail(`${ahead} commit(s) not pushed to GitHub.`, 'Run: git push origin main');
@@ -72,4 +72,4 @@ if (!remoteOk) {
 const head = sh('git rev-parse --short HEAD');
 const subject = sh('git log -1 --pretty=%s');
 console.log(`✓ preflight: working tree clean, in sync with origin`);
-console.log(`  deploying ${head} — ${subject.slice(0, 60)}${subject.length > 60 ? '…' : ''}`);
+console.log(`  deploying ${head}, ${subject.slice(0, 60)}${subject.length > 60 ? '…' : ''}`);

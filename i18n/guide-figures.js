@@ -1,5 +1,5 @@
 /* ============================================================
-   guide-figures.js — the feature diagram for every guide, in every
+   guide-figures.js, the feature diagram for every guide, in every
    language.
 
    TWO PROBLEMS THIS SOLVES
@@ -9,8 +9,8 @@
 
    2. The 4 that did have one were rendering the ENGLISH svg on the
       localized pages, because gen-i18n inherited `en.figure` verbatim.
-      Every label inside the diagram — "Finish → Start", "Today",
-      "Baseline" — stayed in English for German, Spanish, French,
+      Every label inside the diagram, "Finish → Start", "Today",
+      "Baseline", stayed in English for German, Spanish, French,
       Portuguese and Chinese readers. A translated article wrapped
       around an untranslated illustration reads worse than no
       illustration.
@@ -34,7 +34,7 @@ const CRIT = '#e5484d';
 const OK = '#12a594';
 const FONT = 'system-ui,-apple-system,Segoe UI,Roboto,sans-serif';
 
-/* Per-locale words used inside the diagrams. Deliberately short — a
+/* Per-locale words used inside the diagrams. Deliberately short, a
    label that wraps breaks the layout, and CJK runs about half the
    character count for the same meaning. */
 const LABELS = {
@@ -142,7 +142,7 @@ function figBars(L, aria) {
     { label: L.task + ' C', x: 160, w: 120, indent: true },
   ];
   let y = 34;
-  let s = txt(0, 14, L.week + ' 1–8', { size: 10.5, fill: INK_SOFT });
+  let s = txt(0, 14, L.week + ' 1-8', { size: 10.5, fill: INK_SOFT });
   // grid
   for (let i = 0; i <= 4; i++) s += `<line x1="${190 + i * 62}" y1="24" x2="${190 + i * 62}" y2="152" stroke="${INK_SOFT}" stroke-width="0.5" opacity="0.35"/>`;
   rows.forEach((r) => {
@@ -303,7 +303,7 @@ function figLookahead(L, aria) {
   return wrap('600 170', aria, inner);
 }
 
-/** Text on the left, bars on the right — the round trip. */
+/** Text on the left, bars on the right, the round trip. */
 function figMermaid(L, aria) {
   const code = ['gantt', '  section ' + L.phase, '  ' + L.task + ' :a, 5d', '  ' + L.task + ' :after a, 8d'];
   let inner = `<rect x="0" y="12" width="250" height="120" rx="8" fill="#0f172a"/>`;
@@ -331,7 +331,7 @@ function figMermaid(L, aria) {
    milestone was doing it in words alone; each of these replaces a
    paragraph the reader had to hold in their head. */
 
-/** FS with a waiting period between the two bars — lag, not slack. */
+/** FS with a waiting period between the two bars, lag, not slack. */
 function figLag(L, aria) {
   let s = txt(0, 12, L.fs + ' + ' + L.lag, { size: 12, weight: 700 });
   s += bar(0, 24, 130);
@@ -347,7 +347,7 @@ function figLag(L, aria) {
   return wrap('460 105', aria, s);
 }
 
-/** Total float vs free float on the same chain — routinely conflated. */
+/** Total float vs free float on the same chain, routinely conflated. */
 function figFloat(L, aria) {
   let s = bar(0, 20, 100);
   s += txt(106, 31, 'A', { size: 10.5, fill: INK_SOFT });
@@ -377,7 +377,7 @@ function figMilestone(L, aria) {
   return wrap('420 70', aria, s);
 }
 
-/** The lookahead window advancing a week — the rolling part of rolling. */
+/** The lookahead window advancing a week, the rolling part of rolling. */
 function figRolling(L, aria) {
   let s = '';
   for (let wk = 0; wk < 3; wk++) {
@@ -389,12 +389,12 @@ function figRolling(L, aria) {
     }
     s += `<rect x="${68 + wk * 62}" y="${y + 5}" width="${3 * 62 - 2}" height="24" rx="6" fill="none" stroke="${CRIT}" stroke-width="1.4"/>`;
   }
-  s += txt(70, 140, L.window + ' — ' + L.frozen + ' / ' + L.committed + ' / ' + L.planning,
+  s += txt(70, 140, L.window + ', ' + L.frozen + ' / ' + L.committed + ' / ' + L.planning,
     { size: 10, fill: INK_SOFT });
   return wrap('460 150', aria, s);
 }
 
-/** Schedule and cost variance as four quadrants — where you actually are. */
+/** Schedule and cost variance as four quadrants, where you actually are. */
 function figEvmQuad(L, aria) {
   const q = (x, y, w, h, fill, op) =>
     `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" opacity="${op}"/>`;
@@ -475,7 +475,7 @@ function figure(slug, code, aria) {
    and the generator swaps in the diagram DRAWN FOR THAT LOCALE.
 
    WHY A TOKEN AND NOT INLINE <svg>: this file exists because the
-   localized pages used to render the English diagram — every label
+   localized pages used to render the English diagram, every label
    inside it ("Finish → Start", "Today", "Baseline") stayed English for
    the German, Spanish, French, Portuguese and Chinese reader. If a
    translator pastes real <svg> into a section body, that bug returns
@@ -497,7 +497,7 @@ const FIG_TOKEN = /<!--\s*FIG:([a-z]+)\s*(?:\|([^>]*?))?\s*-->/g;
  * this locale. An optional caption follows a pipe:
  * `<!--FIG:lag|Lag is a wait, not slack.-->`
  *
- * An unknown name is left in place rather than silently dropped — a
+ * An unknown name is left in place rather than silently dropped, a
  * missing diagram should be visible in the checker, not invisible on
  * the page.
  *
@@ -519,7 +519,7 @@ function expand(html, code) {
   });
 }
 
-/** Names referenced by tokens in a body — used by the checker. */
+/** Names referenced by tokens in a body, used by the checker. */
 function tokensIn(html) {
   const out = [];
   String(html || '').replace(FIG_TOKEN, (w, n) => { out.push(n); return w; });

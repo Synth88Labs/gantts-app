@@ -1,5 +1,5 @@
 /* ============================================================
-   calendar.js — working-day arithmetic.
+   calendar.js, working-day arithmetic.
 
    WHY THIS EXISTS
 
@@ -7,7 +7,7 @@
    auto-scheduling and the critical path all counted plain calendar
    days, so a 10-day task starting on a Thursday finished on a
    Saturday and a successor started on a Sunday. Every date the CPM
-   produced was wrong by roughly the number of weekends it spanned —
+   produced was wrong by roughly the number of weekends it spanned, 
    which quietly undermined the scheduling features already shipped.
 
    This module owns the question "is this a working day?" and the
@@ -30,7 +30,7 @@
    HOLIDAY PRESETS
 
    Presets cover widely observed public holidays and are computed, not
-   hardcoded per year — including Easter via the Meeus/Jones/Butcher
+   hardcoded per year, including Easter via the Meeus/Jones/Butcher
    algorithm for the Western church. They are a STARTING POINT: regional
    and substitute-day rules vary, so every date is editable and the UI
    says to check against a local calendar. Better an honest starting
@@ -80,7 +80,7 @@
         if (Cal.isWorking(d, cal)) return d;
         d = U.addDays(d, step);
       }
-      return iso;   // no working day found — degrade rather than hang
+      return iso;   // no working day found, degrade rather than hang
     },
 
     /** Inclusive end date for `days` working days starting at `start`. */
@@ -122,7 +122,7 @@
       return d;
     },
 
-    /* Preserve a task's working-day length while moving its start —
+    /* Preserve a task's working-day length while moving its start, 
        what a user expects when dragging a bar sideways. */
     moveKeepingDuration(task, newStart, cal) {
       const days = Cal.duration(task.start, task.end, cal) || 1;

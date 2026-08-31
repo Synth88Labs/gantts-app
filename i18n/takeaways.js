@@ -1,4 +1,4 @@
-/* takeaways.js — GEO/AEO "key takeaways" answer-first block for guides.
+/* takeaways.js, GEO/AEO "key takeaways" answer-first block for guides.
 
    ONE source of truth for all 6 languages. Read by three render sites so the
    block is identical everywhere (see [[content-generation-split]]):
@@ -9,7 +9,7 @@
    Why: AI answer engines (Google AI Overviews, ChatGPT, Perplexity, Copilot)
    and featured snippets preferentially quote a short, self-contained answer
    near the top of a page. Each bullet is one factual, extractable sentence.
-   The block carries id="key-takeaways" — the Speakable cssSelector points at it.
+   The block carries id="key-takeaways", the Speakable cssSelector points at it.
 
    Content is authored per language (not machine-translated) to match the
    site's quality bar. `render()` returns '' when a guide/lang has no data, so
@@ -23,16 +23,16 @@ const HEADING = {
 
 const EN = {
   'what-is-a-gantt-chart': [
-    'A Gantt chart is a horizontal bar chart that plots project tasks against a timeline — each bar shows when a task starts, how long it runs, and when it ends.',
+    'A Gantt chart is a horizontal bar chart that plots project tasks against a timeline, each bar shows when a task starts, how long it runs, and when it ends.',
     'It makes overlaps, dependencies, and the overall schedule visible at a glance, which a plain to-do list or calendar cannot.',
     'It is named after Henry Gantt, who popularised it in the 1910s; it is now the default schedule view in project management.',
     'Modern Gantt charts layer dependencies, milestones, % complete, and the critical path on top of the basic bars.',
   ],
   'how-to-make-a-gantt-chart': [
-    'List your tasks, then give each one a start date and a duration — that alone produces a working Gantt chart.',
+    'List your tasks, then give each one a start date and a duration, that alone produces a working Gantt chart.',
     'Link dependent tasks (finish-to-start is the most common link) so the timeline reflows automatically when a date changes.',
     'Add milestones for fixed dates like kickoff or launch, and set % complete to track progress against the plan.',
-    'You can build one in a spreadsheet, but a dedicated maker like gantts.app handles dependencies and the critical path for you — free and with no sign-up.',
+    'You can build one in a spreadsheet, but a dedicated maker like gantts.app handles dependencies and the critical path for you, free and with no sign-up.',
   ],
   'critical-path-method': [
     'The critical path is the longest chain of dependent tasks, and its length equals the shortest time in which the project can finish.',
@@ -41,14 +41,14 @@ const EN = {
     'gantts.app recalculates and highlights the critical path automatically as you add or change dependencies.',
   ],
   'gantt-chart-dependencies': [
-    'A dependency links two tasks so one cannot start (or finish) until the other does — it is what turns a task list into a real schedule.',
+    'A dependency links two tasks so one cannot start (or finish) until the other does, it is what turns a task list into a real schedule.',
     'Finish-to-start (FS) is by far the most common type; start-to-start, finish-to-finish, and start-to-finish cover the rest.',
-    'Lead time pulls a successor earlier; lag time pushes it later — use them instead of padding durations.',
+    'Lead time pulls a successor earlier; lag time pushes it later, use them instead of padding durations.',
     'With dependencies in place, moving one task automatically reschedules everything downstream.',
   ],
   'milestones-vs-tasks': [
     'A task is work that takes time and has a duration; a milestone is a zero-duration marker for a key moment such as an approval or a launch.',
-    'Milestones do not consume effort — they flag that something important has been reached or is due.',
+    'Milestones do not consume effort, they flag that something important has been reached or is due.',
     'Use milestones for phase gates, deliverable deadlines, and external commitments you want to spot instantly on the timeline.',
     'A good plan mixes both: tasks show the work, milestones show the checkpoints that matter to stakeholders.',
   ],
@@ -60,48 +60,48 @@ const EN = {
   ],
   'gantt-baseline-variance': [
     'A baseline is a frozen snapshot of your original schedule; variance is the difference between that plan and where things actually stand.',
-    'Set the baseline once the plan is approved — before work starts — so later slippage can be measured against it.',
+    'Set the baseline once the plan is approved, before work starts, so later slippage can be measured against it.',
     'Positive schedule variance means ahead of plan; negative means behind. The same idea applies to cost.',
     'Without a baseline you can see today’s dates but not how far they have drifted from what you promised.',
   ],
   '3-week-lookahead-schedule': [
     'A three-week lookahead is a short, rolling slice of the master schedule covering roughly the next 15 working days.',
-    'It surfaces what must be ready — approvals, materials, crews — so blockers are cleared before they stall the work.',
+    'It surfaces what must be ready, approvals, materials, crews, so blockers are cleared before they stall the work.',
     'It is updated weekly, dropping the completed week and adding a new one, which keeps the team focused on the near term.',
     'It is common in construction and lean/last-planner workflows but works for any project with many moving parts.',
   ],
   'gantt-chart-mistakes': [
-    'The most common mistake is a task list with no dependencies — dates then do not move when reality changes.',
+    'The most common mistake is a task list with no dependencies, dates then do not move when reality changes.',
     'Over-detailing (hundreds of tiny tasks) makes a chart no one maintains; keep tasks at a manageable grain.',
     'Ignoring the critical path means you cannot tell which delays actually threaten the deadline.',
     'Never setting a baseline leaves you with no way to measure slippage against the original plan.',
   ],
   'mermaid-gantt-chart': [
     'Mermaid is a text-based syntax that renders a Gantt chart from plain code, so the chart lives in Markdown, docs, or a Git repo.',
-    'You define sections, tasks, dates or durations, and dependencies with simple keywords — no drag-and-drop.',
+    'You define sections, tasks, dates or durations, and dependencies with simple keywords, no drag-and-drop.',
     'It is ideal for developers and documentation because it diffs and version-controls like any other text.',
     'For richer editing and exports, gantts.app can turn a visual plan into Mermaid text and back.',
   ],
   'gantt-chart-examples': [
     'The same Gantt structure adapts to construction schedules, software sprints, event plans, marketing calendars, and research timelines.',
     'Every example shares the core parts: phased tasks, durations, dependencies, milestones, and owners.',
-    'Starting from an example close to your project is faster than a blank canvas — you adjust rather than invent.',
+    'Starting from an example close to your project is faster than a blank canvas, you adjust rather than invent.',
     'gantts.app ships 100+ ready-made examples you can open and edit in the browser for free.',
   ],
   'gantt-chart-in-excel': [
     'Excel has no native Gantt chart, but you can fake one with a stacked horizontal bar chart that hides the "start" series.',
     'It works for a static, small plan, but Excel does not model dependencies or a critical path, so dates will not reflow.',
     'Maintaining bar formulas and conditional formatting by hand gets fragile as the plan grows.',
-    'A dedicated maker like gantts.app gives you dependencies and exports back to Excel — without the manual charting.',
+    'A dedicated maker like gantts.app gives you dependencies and exports back to Excel, without the manual charting.',
   ],
   'gantt-chart-in-google-sheets': [
     'Google Sheets can approximate a Gantt chart with a stacked bar chart or conditional-formatting formulas across date columns.',
     'It is free and collaborative, but like Excel it has no dependencies, milestones, or automatic critical path.',
     'The formula approach breaks down once you have many tasks or shifting dates.',
-    'gantts.app builds a real Gantt chart in the browser and exports to Sheets-friendly formats — no formulas to maintain.',
+    'gantts.app builds a real Gantt chart in the browser and exports to Sheets-friendly formats, no formulas to maintain.',
   ],
   'gantt-chart-in-powerpoint': [
-    'PowerPoint Gantt charts are drawn by hand from shapes or SmartArt — fine for a one-slide summary, not for live planning.',
+    'PowerPoint Gantt charts are drawn by hand from shapes or SmartArt, fine for a one-slide summary, not for live planning.',
     'They do not calculate anything: every date change means moving boxes manually.',
     'Use them to present a schedule to stakeholders, not to manage it day to day.',
     'gantts.app exports a polished Gantt chart straight to PowerPoint, so you plan in the tool and present from the slide.',
@@ -114,7 +114,7 @@ const EN = {
   ],
 };
 
-// Filled by native-language passes; keys mirror EN. Empty is fine — render()
+// Filled by native-language passes; keys mirror EN. Empty is fine, render()
 // falls back to '' for any missing slug/lang.
 const ES = {
   'what-is-a-gantt-chart': [
@@ -125,7 +125,7 @@ const ES = {
   ],
   'how-to-make-a-gantt-chart': [
     'Enumera tus tareas y dale a cada una una fecha de inicio y una duración: con eso solo ya tienes un diagrama de Gantt que funciona.',
-    'Enlaza las tareas dependientes —el enlace fin-inicio es el más habitual— para que el calendario se recalcule solo cuando cambia una fecha.',
+    'Enlaza las tareas dependientes, el enlace fin-inicio es el más habitual, para que el calendario se recalcule solo cuando cambia una fecha.',
     'Añade hitos para las fechas fijas, como el arranque o el lanzamiento, y marca el porcentaje de avance para seguir el progreso frente al plan.',
     'Puedes construirlo en una hoja de cálculo, pero una herramienta específica como gantts.app gestiona por ti las dependencias y la ruta crítica, gratis y sin registro.',
   ],
@@ -161,7 +161,7 @@ const ES = {
   ],
   '3-week-lookahead-schedule': [
     'Un lookahead a tres semanas es un extracto corto y rodante del programa maestro que abarca aproximadamente los siguientes 15 días laborables.',
-    'Saca a la luz lo que tiene que estar listo —aprobaciones, materiales, cuadrillas— para resolver los bloqueos antes de que frenen el trabajo.',
+    'Saca a la luz lo que tiene que estar listo, aprobaciones, materiales, cuadrillas, para resolver los bloqueos antes de que frenen el trabajo.',
     'Se actualiza cada semana, quitando la semana ya cumplida y sumando una nueva, lo que mantiene al equipo centrado en el corto plazo.',
     'Es habitual en construcción y en los flujos lean o de último planificador, pero sirve para cualquier proyecto con muchas piezas en movimiento.',
   ],
@@ -219,7 +219,7 @@ const FR = {
     'Listez vos tâches, puis donnez à chacune une date de début et une durée : cela suffit à obtenir un diagramme de Gantt fonctionnel.',
     'Reliez les tâches dépendantes (le lien Fin-Début est le plus courant) pour que le planning se recalcule automatiquement dès qu\'une date change.',
     'Ajoutez des jalons pour les dates fixes comme le lancement ou la mise en ligne, et renseignez l\'avancement pour suivre la progression face au plan.',
-    'Un tableur peut en produire un, mais un outil dédié comme gantts.app gère les liens d\'antériorité et le chemin critique à votre place — gratuitement et sans inscription.',
+    'Un tableur peut en produire un, mais un outil dédié comme gantts.app gère les liens d\'antériorité et le chemin critique à votre place, gratuitement et sans inscription.',
   ],
   'critical-path-method': [
     'Le chemin critique est la plus longue chaîne de tâches liées, et sa longueur donne la durée minimale dans laquelle le projet peut s\'achever.',
@@ -230,7 +230,7 @@ const FR = {
   'gantt-chart-dependencies': [
     'Un lien d\'antériorité relie deux tâches de sorte que l\'une ne peut pas commencer (ou finir) avant l\'autre : c\'est ce qui transforme une liste de tâches en véritable planning.',
     'Le lien Fin-Début (FD) est de loin le plus courant ; les liens Début-Début, Fin-Fin et Début-Fin couvrent le reste.',
-    'Une avance rapproche le successeur ; un décalage l\'éloigne — mieux vaut y recourir plutôt que de gonfler les durées.',
+    'Une avance rapproche le successeur ; un décalage l\'éloigne, mieux vaut y recourir plutôt que de gonfler les durées.',
     'Une fois les liens posés, déplacer une tâche replanifie automatiquement tout ce qui se trouve en aval.',
   ],
   'milestones-vs-tasks': [
@@ -247,13 +247,13 @@ const FR = {
   ],
   'gantt-baseline-variance': [
     'Une référence est un instantané figé de votre planning initial ; l\'écart est la différence entre ce plan et la situation réelle.',
-    'Posez la référence une fois le plan validé — avant le début des travaux — afin de pouvoir y mesurer la dérive ultérieure.',
+    'Posez la référence une fois le plan validé, avant le début des travaux, afin de pouvoir y mesurer la dérive ultérieure.',
     'Un écart de délai positif signifie une avance sur le plan ; négatif, un retard. Le même principe s\'applique au coût.',
     'Sans référence, vous voyez les dates du jour, mais pas de combien elles ont dérivé par rapport à ce que vous aviez promis.',
   ],
   '3-week-lookahead-schedule': [
     'Un planning glissant à 3 semaines est un extrait court et roulant du planning directeur, couvrant environ les 15 prochains jours ouvrés.',
-    'Il fait ressortir ce qui doit être prêt — validations, matériaux, équipes — afin de lever les blocages avant qu\'ils n\'arrêtent le travail.',
+    'Il fait ressortir ce qui doit être prêt, validations, matériaux, équipes, afin de lever les blocages avant qu\'ils n\'arrêtent le travail.',
     'Il est actualisé chaque semaine, en retirant la semaine écoulée et en ajoutant une nouvelle, ce qui maintient l\'équipe concentrée sur le court terme.',
     'Courant dans le BTP et les démarches lean / last planner, il convient à tout projet comportant de nombreux éléments en mouvement.',
   ],
@@ -265,7 +265,7 @@ const FR = {
   ],
   'mermaid-gantt-chart': [
     'Mermaid est une syntaxe textuelle qui génère un diagramme de Gantt à partir de simple code, si bien que le diagramme vit dans du Markdown, une documentation ou un dépôt Git.',
-    'On y définit sections, tâches, dates ou durées et liens d\'antériorité à l\'aide de mots-clés simples — sans glisser-déposer.',
+    'On y définit sections, tâches, dates ou durées et liens d\'antériorité à l\'aide de mots-clés simples, sans glisser-déposer.',
     'Elle est idéale pour les développeurs et la documentation, car elle se compare et se versionne comme n\'importe quel texte.',
     'Pour une édition et des exports plus riches, gantts.app convertit un plan visuel en texte Mermaid, et inversement.',
   ],
@@ -279,16 +279,16 @@ const FR = {
     'Excel n\'a pas de type de graphique Gantt natif, mais on peut en simuler un avec un graphique à barres horizontales empilées dont on masque la série « début ».',
     'Cela suffit pour un petit plan figé, mais Excel ne modélise ni les liens d\'antériorité ni le chemin critique : les dates ne se recalculent pas.',
     'Entretenir à la main les formules des barres et la mise en forme conditionnelle devient fragile à mesure que le plan grossit.',
-    'Un outil dédié comme gantts.app vous apporte les liens d\'antériorité et réexporte vers Excel — sans le graphique à construire soi-même.',
+    'Un outil dédié comme gantts.app vous apporte les liens d\'antériorité et réexporte vers Excel, sans le graphique à construire soi-même.',
   ],
   'gantt-chart-in-google-sheets': [
     'Google Sheets peut approcher un diagramme de Gantt avec un graphique à barres empilées ou des formules de mise en forme conditionnelle réparties sur des colonnes de dates.',
     'Il est gratuit et collaboratif, mais comme Excel il n\'a ni liens d\'antériorité, ni jalons, ni chemin critique automatique.',
     'L\'approche par formules s\'effondre dès que les tâches se multiplient ou que les dates se décalent.',
-    'gantts.app construit un vrai diagramme de Gantt dans le navigateur et exporte vers des formats compatibles avec Sheets — aucune formule à entretenir.',
+    'gantts.app construit un vrai diagramme de Gantt dans le navigateur et exporte vers des formats compatibles avec Sheets, aucune formule à entretenir.',
   ],
   'gantt-chart-in-powerpoint': [
-    'Un diagramme de Gantt dans PowerPoint se dessine à la main à partir de formes ou de SmartArt — parfait pour un résumé sur une diapositive, pas pour de la planification vivante.',
+    'Un diagramme de Gantt dans PowerPoint se dessine à la main à partir de formes ou de SmartArt, parfait pour un résumé sur une diapositive, pas pour de la planification vivante.',
     'Il ne calcule rien : chaque changement de date oblige à déplacer les cases manuellement.',
     'Servez-vous-en pour présenter un planning aux parties prenantes, pas pour le piloter au quotidien.',
     'gantts.app exporte un diagramme de Gantt soigné directement vers PowerPoint : vous planifiez dans l\'outil et présentez depuis la diapositive.',
@@ -302,16 +302,16 @@ const FR = {
 };
 const DE = {
   'what-is-a-gantt-chart': [
-    'Ein Gantt-Diagramm ist ein horizontales Balkendiagramm, das Projektaufgaben auf einem Zeitstrahl abbildet – jeder Balken zeigt, wann eine Aufgabe beginnt, wie lange sie dauert und wann sie endet.',
+    'Ein Gantt-Diagramm ist ein horizontales Balkendiagramm, das Projektaufgaben auf einem Zeitstrahl abbildet, jeder Balken zeigt, wann eine Aufgabe beginnt, wie lange sie dauert und wann sie endet.',
     'Es macht Überschneidungen, Abhängigkeiten und den gesamten Terminplan auf einen Blick sichtbar, was eine einfache To-do-Liste oder ein Kalender nicht leisten.',
     'Benannt ist es nach Henry Gantt, der es in den 1910er-Jahren populär machte; heute ist es die Standardansicht für Terminpläne im Projektmanagement.',
     'Moderne Gantt-Diagramme ergänzen die einfachen Balken um Abhängigkeiten, Meilensteine, den Fertigstellungsgrad in Prozent und den kritischen Pfad.',
   ],
   'how-to-make-a-gantt-chart': [
-    'Listen Sie Ihre Aufgaben auf und geben Sie jeder ein Startdatum und eine Dauer – schon das ergibt ein funktionierendes Gantt-Diagramm.',
+    'Listen Sie Ihre Aufgaben auf und geben Sie jeder ein Startdatum und eine Dauer, schon das ergibt ein funktionierendes Gantt-Diagramm.',
     'Verknüpfen Sie abhängige Aufgaben (Ende-Anfang ist die häufigste Verknüpfung), damit sich der Zeitplan bei einer Datumsänderung automatisch neu berechnet.',
     'Fügen Sie Meilensteine für feste Termine wie Kickoff oder Launch hinzu und legen Sie den Fertigstellungsgrad in Prozent fest, um den Fortschritt gegen den Plan zu verfolgen.',
-    'Sie können eines in einer Tabellenkalkulation erstellen, doch ein spezialisierter Editor wie gantts.app übernimmt Abhängigkeiten und den kritischen Pfad für Sie – kostenlos und ohne Anmeldung.',
+    'Sie können eines in einer Tabellenkalkulation erstellen, doch ein spezialisierter Editor wie gantts.app übernimmt Abhängigkeiten und den kritischen Pfad für Sie, kostenlos und ohne Anmeldung.',
   ],
   'critical-path-method': [
     'Der kritische Pfad ist die längste Kette voneinander abhängiger Aufgaben, und seine Länge entspricht der kürzesten Zeit, in der das Projekt abgeschlossen werden kann.',
@@ -320,14 +320,14 @@ const DE = {
     'gantts.app berechnet den kritischen Pfad automatisch neu und hebt ihn hervor, sobald Sie Abhängigkeiten hinzufügen oder ändern.',
   ],
   'gantt-chart-dependencies': [
-    'Eine Abhängigkeit verknüpft zwei Aufgaben so, dass die eine erst beginnen (oder enden) kann, wenn die andere es tut – erst das macht aus einer Aufgabenliste einen echten Terminplan.',
+    'Eine Abhängigkeit verknüpft zwei Aufgaben so, dass die eine erst beginnen (oder enden) kann, wenn die andere es tut, erst das macht aus einer Aufgabenliste einen echten Terminplan.',
     'Ende-Anfang (EA) ist mit Abstand der häufigste Typ; Anfang-Anfang, Ende-Ende und Anfang-Ende decken den Rest ab.',
-    'Vorlaufzeit zieht eine Nachfolgeaufgabe nach vorn, Nachlaufzeit schiebt sie nach hinten – nutzen Sie diese, statt Dauern künstlich zu strecken.',
+    'Vorlaufzeit zieht eine Nachfolgeaufgabe nach vorn, Nachlaufzeit schiebt sie nach hinten, nutzen Sie diese, statt Dauern künstlich zu strecken.',
     'Sind die Abhängigkeiten hinterlegt, verschiebt das Umlegen einer Aufgabe automatisch alle nachgelagerten Aufgaben.',
   ],
   'milestones-vs-tasks': [
     'Eine Aufgabe ist Arbeit, die Zeit beansprucht und eine Dauer hat; ein Meilenstein ist ein Markierungspunkt ohne Dauer für einen wichtigen Moment wie eine Freigabe oder einen Launch.',
-    'Meilensteine verbrauchen keinen Aufwand – sie signalisieren, dass etwas Wichtiges erreicht wurde oder ansteht.',
+    'Meilensteine verbrauchen keinen Aufwand, sie signalisieren, dass etwas Wichtiges erreicht wurde oder ansteht.',
     'Nutzen Sie Meilensteine für Phasenübergänge, Liefertermine und externe Verpflichtungen, die Sie sofort auf dem Zeitstrahl erkennen wollen.',
     'Ein guter Plan verbindet beides: Aufgaben zeigen die Arbeit, Meilensteine zeigen die Kontrollpunkte, die für Stakeholder zählen.',
   ],
@@ -339,48 +339,48 @@ const DE = {
   ],
   'gantt-baseline-variance': [
     'Ein Basisplan ist eine eingefrorene Momentaufnahme Ihres ursprünglichen Terminplans; die Abweichung ist der Unterschied zwischen diesem Plan und dem tatsächlichen Stand.',
-    'Legen Sie den Basisplan fest, sobald der Plan genehmigt ist – vor Arbeitsbeginn –, damit sich spätere Verzögerungen daran messen lassen.',
+    'Legen Sie den Basisplan fest, sobald der Plan genehmigt ist, vor Arbeitsbeginn, , damit sich spätere Verzögerungen daran messen lassen.',
     'Eine positive Terminabweichung bedeutet, dass Sie dem Plan voraus sind, eine negative, dass Sie im Rückstand sind; dasselbe Prinzip gilt für die Kosten.',
     'Ohne Basisplan sehen Sie zwar die heutigen Termine, aber nicht, wie weit sie von dem abgewichen sind, was Sie zugesagt haben.',
   ],
   '3-week-lookahead-schedule': [
     'Eine Drei-Wochen-Vorschau ist ein kurzer, rollierender Ausschnitt aus dem Gesamtterminplan, der etwa die nächsten 15 Arbeitstage abdeckt.',
-    'Sie macht sichtbar, was bereitstehen muss – Freigaben, Material, Teams –, damit Hindernisse ausgeräumt werden, bevor sie die Arbeit blockieren.',
+    'Sie macht sichtbar, was bereitstehen muss, Freigaben, Material, Teams, , damit Hindernisse ausgeräumt werden, bevor sie die Arbeit blockieren.',
     'Sie wird wöchentlich aktualisiert, indem die abgeschlossene Woche entfällt und eine neue hinzukommt, was das Team auf die nahe Zukunft fokussiert hält.',
     'Verbreitet ist sie im Bauwesen und in Lean- bzw. Last-Planner-Abläufen, funktioniert aber für jedes Projekt mit vielen beweglichen Teilen.',
   ],
   'gantt-chart-mistakes': [
-    'Der häufigste Fehler ist eine Aufgabenliste ohne Abhängigkeiten – dann verschieben sich die Termine nicht, wenn sich die Realität ändert.',
+    'Der häufigste Fehler ist eine Aufgabenliste ohne Abhängigkeiten, dann verschieben sich die Termine nicht, wenn sich die Realität ändert.',
     'Zu viel Detailtiefe (Hunderte winziger Aufgaben) führt zu einem Diagramm, das niemand pflegt; halten Sie Aufgaben in einer handhabbaren Granularität.',
     'Wer den kritischen Pfad ignoriert, kann nicht erkennen, welche Verzögerungen den Endtermin tatsächlich gefährden.',
     'Wer nie einen Basisplan festlegt, hat keine Möglichkeit, Verzögerungen am ursprünglichen Plan zu messen.',
   ],
   'mermaid-gantt-chart': [
     'Mermaid ist eine textbasierte Syntax, die ein Gantt-Diagramm aus einfachem Code erzeugt, sodass das Diagramm in Markdown, Dokumentationen oder einem Git-Repository lebt.',
-    'Sie definieren Abschnitte, Aufgaben, Daten oder Dauern und Abhängigkeiten mit einfachen Schlüsselwörtern – ohne Drag-and-drop.',
+    'Sie definieren Abschnitte, Aufgaben, Daten oder Dauern und Abhängigkeiten mit einfachen Schlüsselwörtern, ohne Drag-and-drop.',
     'Für Entwickler und Dokumentationen ist das ideal, weil es sich wie jeder andere Text vergleichen und versionieren lässt.',
     'Für komfortableres Bearbeiten und für Exporte kann gantts.app einen visuellen Plan in Mermaid-Text umwandeln und wieder zurück.',
   ],
   'gantt-chart-examples': [
     'Dieselbe Gantt-Struktur passt sich an Bauzeitpläne, Software-Sprints, Veranstaltungspläne, Marketingkalender und Forschungszeitpläne an.',
     'Jedes Beispiel teilt die Kernbestandteile: in Phasen gegliederte Aufgaben, Dauern, Abhängigkeiten, Meilensteine und Verantwortliche.',
-    'Von einem Beispiel auszugehen, das Ihrem Projekt nahekommt, ist schneller als ein leeres Blatt – Sie passen an, statt zu erfinden.',
+    'Von einem Beispiel auszugehen, das Ihrem Projekt nahekommt, ist schneller als ein leeres Blatt, Sie passen an, statt zu erfinden.',
     'gantts.app liefert über 100 fertige Beispiele, die Sie kostenlos im Browser öffnen und bearbeiten können.',
   ],
   'gantt-chart-in-excel': [
     'Excel hat kein eigenes Gantt-Diagramm, aber Sie können eines mit einem gestapelten horizontalen Balkendiagramm nachbauen, das die „Start“-Reihe ausblendet.',
     'Für einen statischen, kleinen Plan funktioniert das, doch Excel bildet weder Abhängigkeiten noch einen kritischen Pfad ab, sodass sich Termine nicht neu berechnen.',
     'Balkenformeln und bedingte Formatierung von Hand zu pflegen, wird mit wachsendem Plan zunehmend fehleranfällig.',
-    'Ein spezialisierter Editor wie gantts.app liefert Ihnen Abhängigkeiten und exportiert zurück nach Excel – ohne das manuelle Diagrammbasteln.',
+    'Ein spezialisierter Editor wie gantts.app liefert Ihnen Abhängigkeiten und exportiert zurück nach Excel, ohne das manuelle Diagrammbasteln.',
   ],
   'gantt-chart-in-google-sheets': [
     'Google Sheets kann ein Gantt-Diagramm mit einem gestapelten Balkendiagramm oder mit Formeln zur bedingten Formatierung über Datumsspalten annähern.',
     'Es ist kostenlos und kollaborativ, hat aber wie Excel keine Abhängigkeiten, keine Meilensteine und keinen automatischen kritischen Pfad.',
     'Der Formelansatz stößt an seine Grenzen, sobald Sie viele Aufgaben oder sich verschiebende Termine haben.',
-    'gantts.app erstellt ein echtes Gantt-Diagramm im Browser und exportiert in Sheets-kompatible Formate – ganz ohne zu pflegende Formeln.',
+    'gantts.app erstellt ein echtes Gantt-Diagramm im Browser und exportiert in Sheets-kompatible Formate, ganz ohne zu pflegende Formeln.',
   ],
   'gantt-chart-in-powerpoint': [
-    'Gantt-Diagramme in PowerPoint werden von Hand aus Formen oder SmartArt gezeichnet – geeignet für eine Zusammenfassung auf einer Folie, nicht für die laufende Planung.',
+    'Gantt-Diagramme in PowerPoint werden von Hand aus Formen oder SmartArt gezeichnet, geeignet für eine Zusammenfassung auf einer Folie, nicht für die laufende Planung.',
     'Sie berechnen nichts: Jede Datumsänderung bedeutet, Kästchen manuell zu verschieben.',
     'Nutzen Sie sie, um Stakeholdern einen Terminplan zu präsentieren, nicht um ihn im Tagesgeschäft zu steuern.',
     'gantts.app exportiert ein ansprechendes Gantt-Diagramm direkt nach PowerPoint, sodass Sie im Tool planen und von der Folie aus präsentieren.',
@@ -394,16 +394,16 @@ const DE = {
 };
 const PT = {
   'what-is-a-gantt-chart': [
-    'Um gráfico de Gantt é um gráfico de barras horizontais que dispõe as tarefas do projeto ao longo de uma linha do tempo — cada barra mostra quando uma tarefa começa, quanto dura e quando termina.',
+    'Um gráfico de Gantt é um gráfico de barras horizontais que dispõe as tarefas do projeto ao longo de uma linha do tempo, cada barra mostra quando uma tarefa começa, quanto dura e quando termina.',
     'Ele torna visíveis, num relance, as sobreposições, as dependências e o cronograma como um todo, algo que uma simples lista de tarefas ou um calendário não conseguem.',
     'Leva o nome de Henry Gantt, que o popularizou na década de 1910; hoje é a visão de cronograma padrão na gestão de projetos.',
     'Os gráficos de Gantt modernos acrescentam dependências, marcos, percentual concluído e o caminho crítico sobre as barras básicas.',
   ],
   'how-to-make-a-gantt-chart': [
-    'Liste suas tarefas e dê a cada uma uma data de início e uma duração — só isso já produz um gráfico de Gantt funcional.',
+    'Liste suas tarefas e dê a cada uma uma data de início e uma duração, só isso já produz um gráfico de Gantt funcional.',
     'Ligue as tarefas dependentes (a ligação Término-Início é a mais comum) para que o cronograma se recalcule sozinho quando uma data muda.',
     'Acrescente marcos para datas fixas, como o pontapé inicial ou o lançamento, e defina o percentual concluído para acompanhar o avanço em relação ao plano.',
-    'Dá para montar um em planilha, mas uma ferramenta dedicada como o gantts.app cuida das dependências e do caminho crítico por você — de graça e sem cadastro.',
+    'Dá para montar um em planilha, mas uma ferramenta dedicada como o gantts.app cuida das dependências e do caminho crítico por você, de graça e sem cadastro.',
   ],
   'critical-path-method': [
     'O caminho crítico é a cadeia mais longa de tarefas dependentes, e seu comprimento é igual ao menor prazo em que o projeto pode terminar.',
@@ -412,14 +412,14 @@ const PT = {
     'O gantts.app recalcula e destaca o caminho crítico automaticamente à medida que você adiciona ou altera dependências.',
   ],
   'gantt-chart-dependencies': [
-    'Uma dependência liga duas tarefas de modo que uma só pode começar (ou terminar) quando a outra o faz — é o que transforma uma lista de tarefas num cronograma de verdade.',
+    'Uma dependência liga duas tarefas de modo que uma só pode começar (ou terminar) quando a outra o faz, é o que transforma uma lista de tarefas num cronograma de verdade.',
     'Término-Início (TI) é de longe o tipo mais comum; Início-Início, Término-Término e Início-Término cobrem o restante.',
-    'A antecipação puxa a sucessora para mais cedo; o retardo a empurra para mais tarde — use-os em vez de inflar as durações.',
+    'A antecipação puxa a sucessora para mais cedo; o retardo a empurra para mais tarde, use-os em vez de inflar as durações.',
     'Com as dependências no lugar, mover uma tarefa reprograma automaticamente tudo o que vem depois.',
   ],
   'milestones-vs-tasks': [
     'Uma tarefa é trabalho que leva tempo e tem duração; um marco é um sinal de duração zero para um momento-chave, como uma aprovação ou um lançamento.',
-    'Marcos não consomem esforço — apenas sinalizam que algo importante foi atingido ou está previsto.',
+    'Marcos não consomem esforço, apenas sinalizam que algo importante foi atingido ou está previsto.',
     'Use marcos para portões de fase, prazos de entregas e compromissos externos que você quer identificar num instante na linha do tempo.',
     'Um bom plano combina os dois: as tarefas mostram o trabalho, os marcos mostram os pontos de controle que importam para as partes interessadas.',
   ],
@@ -431,48 +431,48 @@ const PT = {
   ],
   'gantt-baseline-variance': [
     'A linha de base é uma fotografia congelada do seu cronograma original; o desvio é a diferença entre esse plano e a situação real.',
-    'Grave a linha de base assim que o plano for aprovado — antes de o trabalho começar — para que o atraso posterior possa ser medido em relação a ela.',
+    'Grave a linha de base assim que o plano for aprovado, antes de o trabalho começar, para que o atraso posterior possa ser medido em relação a ela.',
     'Variação de prazo positiva significa adiantado; negativa significa atrasado. A mesma ideia vale para o custo.',
     'Sem uma linha de base, você enxerga as datas de hoje, mas não o quanto elas se afastaram do que você prometeu.',
   ],
   '3-week-lookahead-schedule': [
     'O olhar de três semanas à frente é um recorte curto e móvel do cronograma-mestre, que cobre por volta dos próximos 15 dias úteis.',
-    'Ele revela o que precisa estar pronto — aprovações, materiais, equipes — para que os impedimentos sejam removidos antes de travarem o trabalho.',
+    'Ele revela o que precisa estar pronto, aprovações, materiais, equipes, para que os impedimentos sejam removidos antes de travarem o trabalho.',
     'É atualizado toda semana, descartando a semana concluída e acrescentando uma nova, o que mantém a equipe focada no curto prazo.',
     'É comum na construção e nos fluxos enxutos (lean/last-planner), mas serve para qualquer projeto com muitas frentes em movimento.',
   ],
   'gantt-chart-mistakes': [
-    'O erro mais comum é uma lista de tarefas sem dependências — aí as datas não se movem quando a realidade muda.',
+    'O erro mais comum é uma lista de tarefas sem dependências, aí as datas não se movem quando a realidade muda.',
     'Detalhar demais (centenas de tarefinhas) gera um gráfico que ninguém mantém; mantenha as tarefas num nível de detalhe gerenciável.',
     'Ignorar o caminho crítico faz com que você não saiba quais atrasos de fato ameaçam o prazo.',
     'Nunca gravar uma linha de base deixa você sem como medir o desvio em relação ao plano original.',
   ],
   'mermaid-gantt-chart': [
     'Mermaid é uma sintaxe baseada em texto que gera um gráfico de Gantt a partir de código simples, de modo que o gráfico vive em Markdown, em documentos ou num repositório Git.',
-    'Você define seções, tarefas, datas ou durações e dependências com palavras-chave simples — sem arrastar e soltar.',
+    'Você define seções, tarefas, datas ou durações e dependências com palavras-chave simples, sem arrastar e soltar.',
     'É ideal para desenvolvedores e documentação, porque entra no controle de versão e no diff como qualquer outro texto.',
     'Para edição mais rica e exportações, o gantts.app converte um plano visual em texto Mermaid e vice-versa.',
   ],
   'gantt-chart-examples': [
     'A mesma estrutura de Gantt se adapta a cronogramas de obra, sprints de software, planos de eventos, calendários de marketing e cronogramas de pesquisa.',
     'Todo exemplo compartilha as partes essenciais: tarefas em fases, durações, dependências, marcos e responsáveis.',
-    'Partir de um exemplo próximo do seu projeto é mais rápido do que uma tela em branco — você ajusta em vez de inventar.',
+    'Partir de um exemplo próximo do seu projeto é mais rápido do que uma tela em branco, você ajusta em vez de inventar.',
     'O gantts.app traz mais de 100 exemplos prontos que você pode abrir e editar no navegador de graça.',
   ],
   'gantt-chart-in-excel': [
     'O Excel não tem gráfico de Gantt nativo, mas dá para simular um com um gráfico de barras horizontais empilhadas que oculta a série \'de início\'.',
     'Funciona para um plano pequeno e estático, mas o Excel não modela dependências nem caminho crítico, então as datas não se recalculam.',
     'Manter à mão as fórmulas das barras e a formatação condicional fica frágil à medida que o plano cresce.',
-    'Uma ferramenta dedicada como o gantts.app dá a você dependências e exporta de volta para o Excel — sem o trabalho manual de montar o gráfico.',
+    'Uma ferramenta dedicada como o gantts.app dá a você dependências e exporta de volta para o Excel, sem o trabalho manual de montar o gráfico.',
   ],
   'gantt-chart-in-google-sheets': [
     'O Google Sheets consegue aproximar um gráfico de Gantt com um gráfico de barras empilhadas ou com fórmulas de formatação condicional ao longo das colunas de datas.',
     'É gratuito e colaborativo, mas, assim como o Excel, não tem dependências, marcos nem caminho crítico automático.',
     'A abordagem por fórmulas desmorona quando você passa a ter muitas tarefas ou datas que mudam.',
-    'O gantts.app monta um gráfico de Gantt de verdade no navegador e exporta para formatos compatíveis com o Sheets — sem fórmulas para manter.',
+    'O gantts.app monta um gráfico de Gantt de verdade no navegador e exporta para formatos compatíveis com o Sheets, sem fórmulas para manter.',
   ],
   'gantt-chart-in-powerpoint': [
-    'Os gráficos de Gantt no PowerPoint são desenhados à mão com formas ou SmartArt — bons para um resumo de um slide, não para planejar ao vivo.',
+    'Os gráficos de Gantt no PowerPoint são desenhados à mão com formas ou SmartArt, bons para um resumo de um slide, não para planejar ao vivo.',
     'Eles não calculam nada: cada mudança de data significa mover as caixas manualmente.',
     'Use-os para apresentar um cronograma às partes interessadas, não para gerenciá-lo no dia a dia.',
     'O gantts.app exporta um gráfico de Gantt caprichado direto para o PowerPoint, então você planeja na ferramenta e apresenta no slide.',
@@ -492,10 +492,10 @@ const ZH = {
     '现代甘特图在基本横条之上叠加了依赖关系、里程碑、进度百分比和关键路径。',
   ],
   'how-to-make-a-gantt-chart': [
-    '先列出任务，再给每项任务一个开始日期和一段工期——仅此就能得到一张可用的甘特图。',
+    '先列出任务，再给每项任务一个开始日期和一段工期, , 仅此就能得到一张可用的甘特图。',
     '把相互依赖的任务连起来（最常用的是完成-开始），这样某个日期一变，整条时间轴就会自动重排。',
     '为启动、上线这类固定时点加上里程碑，再填入进度百分比，就能对照计划跟踪实际进展。',
-    '用电子表格也能拼出一张，但像 gantts.app 这样的专用工具会替你算好依赖关系和关键路径——免费，且无需注册。',
+    '用电子表格也能拼出一张，但像 gantts.app 这样的专用工具会替你算好依赖关系和关键路径, , 免费，且无需注册。',
   ],
   'critical-path-method': [
     '关键路径是相互依赖的任务中最长的一条链，它的长度就等于项目最短可能的完工时间。',
@@ -504,9 +504,9 @@ const ZH = {
     '你每次添加或修改依赖关系时，gantts.app 都会自动重算并高亮关键路径。',
   ],
   'gantt-chart-dependencies': [
-    '依赖关系把两项任务连起来，让其中一项必须等另一项开始（或结束）后才能开始——正是它把一份任务清单变成真正的进度计划。',
+    '依赖关系把两项任务连起来，让其中一项必须等另一项开始（或结束）后才能开始, , 正是它把一份任务清单变成真正的进度计划。',
     '完成-开始（FS）是最常见的一种，其余场合由开始-开始、完成-完成和开始-完成补足。',
-    '提前量把后继任务往早拉，滞后量把它往后推——用它们来表达等待，而不是给工期注水。',
+    '提前量把后继任务往早拉，滞后量把它往后推, , 用它们来表达等待，而不是给工期注水。',
     '依赖关系连好之后，移动一项任务，其后所有任务都会自动重排。',
   ],
   'milestones-vs-tasks': [
@@ -529,42 +529,42 @@ const ZH = {
   ],
   '3-week-lookahead-schedule': [
     '三周前瞻计划是主进度计划中一段短小、滚动的切片，大致覆盖接下来的 15 个工作日。',
-    '它把必须提前就位的东西——审批、材料、班组——摆到明面上，好在障碍拖住工作之前就把它清除。',
+    '它把必须提前就位的东西, , 审批、材料、班组, , 摆到明面上，好在障碍拖住工作之前就把它清除。',
     '它每周更新一次，去掉已完成的一周、补进新的一周，让团队始终盯着眼前这段。',
     '它在工程施工和精益／末位计划者（last planner）的工作流程里很常见，但同样适用于任何头绪繁多的项目。',
   ],
   'gantt-chart-mistakes': [
-    '最常见的错误是一份没有依赖关系的任务清单——现实一变，日期却纹丝不动。',
+    '最常见的错误是一份没有依赖关系的任务清单, , 现实一变，日期却纹丝不动。',
     '拆得过细（几百个琐碎任务）会做出一张没人愿意维护的图；把任务保持在能管得过来的颗粒度。',
     '忽视关键路径，你就分不清哪些延误才真正威胁到交付期。',
     '从不设定基准，就没有任何办法拿实际延误去和原始计划做对照。',
   ],
   'mermaid-gantt-chart': [
     'Mermaid 是一种基于文本的语法，用纯代码就能渲染出甘特图，因此图表可以直接存在于 Markdown、文档或 Git 仓库里。',
-    '你用几个简单的关键字来定义分区、任务、日期或工期以及依赖关系——全程不用拖拽。',
+    '你用几个简单的关键字来定义分区、任务、日期或工期以及依赖关系, , 全程不用拖拽。',
     '它非常适合开发者和文档场景，因为它能像任何文本一样做差异对比和版本管理。',
     '若需要更丰富的编辑和导出，gantts.app 可以把可视化的计划转成 Mermaid 文本，也能反向转回来。',
   ],
   'gantt-chart-examples': [
     '同一套甘特图结构可以套用到工程进度、软件冲刺、活动策划、营销日历和研究计划上。',
     '每个示例都共享同样的核心要素：分阶段的任务、工期、依赖关系、里程碑和负责人。',
-    '从一个与你项目相近的示例开始，比从空白画布起步快得多——你只需调整，而不必从头设计。',
+    '从一个与你项目相近的示例开始，比从空白画布起步快得多, , 你只需调整，而不必从头设计。',
     'gantts.app 提供 100 多个现成示例，都能在浏览器里免费打开并编辑。',
   ],
   'gantt-chart-in-excel': [
     'Excel 没有内置的甘特图，但你可以用一张堆积条形图拼出来：把“开始”这个数据系列隐藏掉即可。',
     '这对静态的小型计划够用，但 Excel 不处理依赖关系，也没有关键路径，所以日期不会自动重排。',
     '随着计划变大，手工维护那些横条公式和条件格式会越来越容易出错。',
-    '像 gantts.app 这样的专用工具能给你依赖关系，还能导回 Excel——省掉全部手工作图的功夫。',
+    '像 gantts.app 这样的专用工具能给你依赖关系，还能导回 Excel, , 省掉全部手工作图的功夫。',
   ],
   'gantt-chart-in-google-sheets': [
     'Google 表格可以用堆积条形图，或在日期列上用条件格式公式，凑出一张近似的甘特图。',
     '它免费又便于协作，但和 Excel 一样，没有依赖关系、里程碑，也不会自动算关键路径。',
     '一旦任务变多或日期频繁变动，这种公式做法就撑不住了。',
-    'gantts.app 在浏览器里直接生成一张真正的甘特图，并能导出为表格友好的格式——不用维护任何公式。',
+    'gantts.app 在浏览器里直接生成一张真正的甘特图，并能导出为表格友好的格式, , 不用维护任何公式。',
   ],
   'gantt-chart-in-powerpoint': [
-    'PowerPoint 里的甘特图是用形状或 SmartArt 手工画出来的——用作一页幻灯片的概览还行，但不适合日常排程。',
+    'PowerPoint 里的甘特图是用形状或 SmartArt 手工画出来的, , 用作一页幻灯片的概览还行，但不适合日常排程。',
     '它们不做任何计算：每改一个日期，都得手工挪动那些方框。',
     '用它向相关方展示进度，而不是拿它做日常管理。',
     'gantts.app 能把一张精致的甘特图直接导出到 PowerPoint，于是你在工具里排程，用幻灯片去汇报。',

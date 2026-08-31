@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   gen-guide-pages.js — build guide posts from new-guides.js.
+   gen-guide-pages.js, build guide posts from new-guides.js.
 
    Mirrors the hand-authored posts in /blog/: same chrome, same schema
    role (BlogPosting + FAQPage + BreadcrumbList). Hand-written posts
@@ -17,7 +17,7 @@ const Takeaways = require('../i18n/takeaways.js');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'blog');
 const ORIGIN = 'https://gantts.app';
-const V = 'v=30';
+const V = 'v=31';
 const GH = 'https://github.com/Synth88Labs/gantts-app';
 // Same single source of truth the localized generator and the hreflang
 // injector read, so the switcher cannot disagree with what exists.
@@ -43,7 +43,7 @@ function tplTitle(slug) {
 }
 
 /* Two bugs lived in this one line. It addressed the localized blog index
-   as /<code>/blog/index.html, the non-public form of a directory index —
+   as /<code>/blog/index.html, the non-public form of a directory index, 
    the same duplicate-URL shape that / vs /index.html and /blog/ vs
    /blog/index.html already were. And it sent every locale to the blog
    index unconditionally, even for guides that ARE translated, so a
@@ -121,7 +121,7 @@ function schema(slug, d) {
 function page(slug, d) {
   const url = `${ORIGIN}/blog/${slug}.html`;
   /* Section bodies may carry <!--FIG:name--> tokens. They expand to a
-     diagram drawn for this locale — 'en' here, the locale code in
+     diagram drawn for this locale, 'en' here, the locale code in
      gen-i18n.js. Keeping the SVG out of the content model is what
      stops the localized pages from inheriting English diagram labels. */
   const body = d.sections.map(([h, html], i) =>
@@ -229,7 +229,7 @@ ${FOOTER}
 let n = 0;
 for (const [slug, d] of Object.entries(G)) {
   fs.writeFileSync(path.join(OUT, slug + '.html'), page(slug, d), 'utf8');
-  console.log(`  ✓ blog/${slug}.html — ${d.metaTitle}`);
+  console.log(`  ✓ blog/${slug}.html, ${d.metaTitle}`);
   n++;
 }
 console.log(`\n✓ ${n} guide(s) generated. Hand-authored posts untouched.\n`);

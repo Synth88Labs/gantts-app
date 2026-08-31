@@ -1,11 +1,11 @@
-/* inject-audience.js — insert the "Who uses this template" block into the
+/* inject-audience.js, insert the "Who uses this template" block into the
    HAND-AUTHORED English template pages the generators never touch (see
    [[content-generation-split]]). Generated English templates get it from
    gen-template-pages.js and localized ones from gen-i18n.js.
 
    Placement mirrors the generators: immediately before the first
    <div class="callout"> that follows the "What's included" section, which every
-   template page carries. Idempotent — skips any page already containing
+   template page carries. Idempotent, skips any page already containing
    id="who-uses-this", so it is safe on every build and leaves generated pages
    untouched.
 

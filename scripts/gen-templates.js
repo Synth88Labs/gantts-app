@@ -1,5 +1,5 @@
 /* ============================================================
-   gen-templates.js — generates downloadable Gantt templates:
+   gen-templates.js, generates downloadable Gantt templates:
    a styled visual .xlsx (ExcelJS), a shapes-based .pptx (pptxgenjs),
    and an app-importable .csv for each template slug.
    Run: node scripts/gen-templates.js
@@ -13,7 +13,7 @@ const OUT = path.join(__dirname, '..', 'templates', 'files');
 fs.mkdirSync(OUT, { recursive: true });
 
 const MS = 86400000;
-const BASE = new Date(2026, 7, 3); // Mon Aug 3 2026 — deterministic base
+const BASE = new Date(2026, 7, 3); // Mon Aug 3 2026, deterministic base
 function addDays(d, n) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
 function iso(d) { return d.toISOString().slice(0, 10); }
 function fmt(d) { return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); }
@@ -137,15 +137,15 @@ const C = {
     ['Post-launch review', 34, 5, 0, '64748B', { indent: 1, who: 'Team', after: 'Launch day' }],
   ]},
   'product-roadmap': { title: 'Product Roadmap', accent: '6C4CF1', tasks: [
-    ['Q1 — Foundation', 0, 60, 40, '6C4CF1', { phase: true }],
+    ['Q1, Foundation', 0, 60, 40, '6C4CF1', { phase: true }],
     ['Discovery & research', 0, 20, 80, '6C4CF1', { indent: 1, who: 'Product' }],
     ['Feature A: design & build', 15, 45, 30, '8B5CF6', { indent: 1, who: 'Eng' }],
     ['Q1 release', 60, 0, 0, 'EF4444', { milestone: true }],
-    ['Q2 — Growth', 60, 90, 0, '0EA5E9', { phase: true }],
+    ['Q2, Growth', 60, 90, 0, '0EA5E9', { phase: true }],
     ['Feature B: build', 60, 55, 0, '0EA5E9', { indent: 1, who: 'Eng' }],
     ['Feature C: beta', 90, 40, 0, '10B981', { indent: 1, who: 'Eng' }],
     ['Q2 release', 150, 0, 0, 'EF4444', { milestone: true }],
-    ['Q3 — Scale', 150, 90, 0, 'F59E0B', { phase: true }],
+    ['Q3, Scale', 150, 90, 0, 'F59E0B', { phase: true }],
     ['Platform & performance', 150, 60, 0, 'F59E0B', { indent: 1, who: 'Eng' }],
     ['Integrations', 180, 50, 0, 'EC4899', { indent: 1, who: 'Eng' }],
   ]},
@@ -153,12 +153,12 @@ const C = {
     ['Release planning', 0, 5, 100, '64748B', { phase: true }],
     ['Backlog & epics', 0, 5, 100, '64748B', { indent: 1, who: 'PO' }],
     ['Sprint 1', 5, 10, 100, '10B981', { phase: true, after: 'Backlog & epics' }],
-    ['Stories — Sprint 1', 5, 8, 100, '10B981', { indent: 1, who: 'Team' }],
+    ['Stories, Sprint 1', 5, 8, 100, '10B981', { indent: 1, who: 'Team' }],
     ['Sprint 1 review', 15, 0, 0, '0EA5E9', { milestone: true, indent: 1 }],
     ['Sprint 2', 15, 10, 60, '22C55E', { phase: true }],
-    ['Stories — Sprint 2', 15, 8, 60, '22C55E', { indent: 1, who: 'Team' }],
+    ['Stories, Sprint 2', 15, 8, 60, '22C55E', { indent: 1, who: 'Team' }],
     ['Sprint 3', 25, 10, 0, '0EA5E9', { phase: true }],
-    ['Stories — Sprint 3', 25, 8, 0, '0EA5E9', { indent: 1, who: 'Team' }],
+    ['Stories, Sprint 3', 25, 8, 0, '0EA5E9', { indent: 1, who: 'Team' }],
     ['Release', 35, 0, 0, 'EF4444', { milestone: true }],
   ]},
   'sprint': { title: 'Sprint Plan (2 weeks)', accent: '0EA5E9', tasks: [
@@ -172,21 +172,21 @@ const C = {
     ['Retrospective', 11, 1, 0, '64748B', { who: 'Team', after: 'Sprint review' }],
   ]},
   'weekly': { title: 'Weekly Plan', accent: '2563EB', tasks: [
-    ['Monday — kickoff & planning', 0, 1, 100, '2563EB', { who: 'You' }],
-    ['Tuesday — deep work', 1, 1, 60, '0EA5E9', { who: 'You' }],
-    ['Wednesday — build', 2, 2, 30, '8B5CF6', { who: 'Team' }],
-    ['Thursday — review', 3, 1, 0, 'F59E0B', { who: 'Team' }],
-    ['Friday — ship & wrap-up', 4, 1, 0, '10B981', { who: 'You' }],
+    ['Monday, kickoff & planning', 0, 1, 100, '2563EB', { who: 'You' }],
+    ['Tuesday, deep work', 1, 1, 60, '0EA5E9', { who: 'You' }],
+    ['Wednesday, build', 2, 2, 30, '8B5CF6', { who: 'Team' }],
+    ['Thursday, review', 3, 1, 0, 'F59E0B', { who: 'Team' }],
+    ['Friday, ship & wrap-up', 4, 1, 0, '10B981', { who: 'You' }],
     ['Week complete', 4, 0, 0, 'EF4444', { milestone: true }],
   ]},
   'monthly': { title: 'Monthly Plan', accent: '8B5CF6', tasks: [
-    ['Week 1 — Plan', 0, 5, 100, '8B5CF6', { phase: true }],
+    ['Week 1, Plan', 0, 5, 100, '8B5CF6', { phase: true }],
     ['Scope & goals', 0, 3, 100, '8B5CF6', { indent: 1, who: 'Lead' }],
-    ['Week 2 — Build', 7, 5, 40, '0EA5E9', { phase: true }],
+    ['Week 2, Build', 7, 5, 40, '0EA5E9', { phase: true }],
     ['Core work', 7, 5, 40, '0EA5E9', { indent: 1, who: 'Team', after: 'Scope & goals' }],
-    ['Week 3 — Build & test', 14, 5, 0, '2563EB', { phase: true }],
+    ['Week 3, Build & test', 14, 5, 0, '2563EB', { phase: true }],
     ['Finish & QA', 14, 5, 0, '2563EB', { indent: 1, who: 'Team', after: 'Core work' }],
-    ['Week 4 — Launch', 21, 5, 0, '10B981', { phase: true }],
+    ['Week 4, Launch', 21, 5, 0, '10B981', { phase: true }],
     ['Review & ship', 21, 3, 0, '10B981', { indent: 1, who: 'Team', after: 'Finish & QA' }],
     ['Month-end milestone', 27, 0, 0, 'EF4444', { milestone: true }],
   ]},
@@ -203,15 +203,15 @@ const C = {
     ['Year-end milestone', 358, 0, 0, 'EF4444', { milestone: true }],
   ]},
   '30-60-90-day-plan': { title: '30-60-90 Day Plan', accent: '0EA5E9', tasks: [
-    ['First 30 days — Learn', 0, 30, 60, '0EA5E9', { phase: true }],
+    ['First 30 days, Learn', 0, 30, 60, '0EA5E9', { phase: true }],
     ['Onboarding & systems', 0, 10, 100, '0EA5E9', { indent: 1, who: 'You' }],
     ['Meet the team & stakeholders', 2, 12, 70, '2563EB', { indent: 1, who: 'You' }],
     ['Learn the product/process', 5, 20, 40, '8B5CF6', { indent: 1, who: 'You' }],
     ['30-day review', 30, 0, 0, 'EF4444', { milestone: true }],
-    ['Days 31-60 — Contribute', 30, 30, 0, 'F59E0B', { phase: true }],
+    ['Days 31-60, Contribute', 30, 30, 0, 'F59E0B', { phase: true }],
     ['Own first tasks & quick wins', 30, 25, 0, 'F59E0B', { indent: 1, who: 'You', after: 'Learn the product/process' }],
     ['60-day review', 60, 0, 0, 'EF4444', { milestone: true }],
-    ['Days 61-90 — Lead', 60, 30, 0, '10B981', { phase: true }],
+    ['Days 61-90, Lead', 60, 30, 0, '10B981', { phase: true }],
     ['Own a project & propose improvements', 60, 28, 0, '10B981', { indent: 1, who: 'You' }],
     ['90-day review', 90, 0, 0, 'EF4444', { milestone: true }],
   ]},
@@ -348,7 +348,7 @@ async function writeXLSX(slug, def) {
     { header: 'End', key: 'end', width: 11 },
     { header: 'Days', key: 'days', width: 6 },
   ];
-  // widths only — do NOT pass `header` here, or ExcelJS auto-fills row 1 and
+  // widths only, do NOT pass `header` here, or ExcelJS auto-fills row 1 and
   // collides with our manual title/subtitle/header rows.
   ws.columns = leftCols.map(c => ({ width: c.width })).concat(Array.from({ length: weeks }, () => ({ width: 4.5 })));
 
@@ -358,7 +358,7 @@ async function writeXLSX(slug, def) {
   titleRow.getCell(1).font = { bold: true, size: 16, color: { argb: 'FF' + def.accent } };
   titleRow.height = 24;
   // subtitle
-  const sub = ws.addRow(['Made free at gantts.app — edit online and export to Excel, PDF, PNG or PowerPoint']);
+  const sub = ws.addRow(['Made free at gantts.app, edit online and export to Excel, PDF, PNG or PowerPoint']);
   ws.mergeCells(2, 1, 2, 6 + weeks);
   sub.getCell(1).font = { size: 10, italic: true, color: { argb: 'FF64748B' } };
 
@@ -455,7 +455,7 @@ async function writePPTX(slug, def) {
   const s3 = pptx.addSlide();
   s3.addText('Task Schedule', { x: 0.4, y: 0.25, w: 12, h: 0.5, fontSize: 22, bold: true, color: '1E293B' });
   const header = ['#', 'Task', 'Owner', 'Start', 'End', 'Days', '%'].map(h => ({ text: h, options: { bold: true, color: 'FFFFFF', fill: def.accent } }));
-  const body = rs.map(r => [r.wbs, '  '.repeat(r.indent) + r.name, r.who, iso(r.start), iso(r.end), r.milestone ? '—' : String(r.days), r.milestone ? '—' : (r.prog + '%')]);
+  const body = rs.map(r => [r.wbs, '  '.repeat(r.indent) + r.name, r.who, iso(r.start), iso(r.end), r.milestone ? ', ' : String(r.days), r.milestone ? ', ' : (r.prog + '%')]);
   s3.addTable([header, ...body], { x: 0.4, y: 0.9, w: 12.5, fontSize: 10, color: '1E293B', border: { type: 'solid', color: 'E2E8F0', pt: 0.5 }, autoPage: true });
 
   const buf = await pptx.write({ outputType: 'nodebuffer' });

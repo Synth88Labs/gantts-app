@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-f.js — sixth batch of generated templates.
+   new-templates-f.js, sixth batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch F covers the programmes that run on external gates:
@@ -10,7 +10,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries where
+   Picked on the same SERP evidence as earlier batches, queries where
    the ranking pages are consultancy posts, gated PDFs or generic
    "project plan" pages rather than a template anyone can open.
    ============================================================ */
@@ -25,7 +25,7 @@ const T = {
     kw: 'hospital department opening project plan template',
     metaTitle: 'Hospital Department Opening Plan',
     metaDesc: 'Free hospital department opening plan: business case, design, fit-out, equipment, IPC sign-off, staffing, IG and first patient. Excel or edit online.',
-    lead: 'A free <strong>hospital department opening plan template</strong> covering the commissioning of a new clinical department or ward — business case and capital approval, design and derogations against health building standards, construction and fit-out, medical equipment procurement, infection prevention sign-off, staffing and competency, information governance, and the run-up to first patient.',
+    lead: 'A free <strong>hospital department opening plan template</strong> covering the commissioning of a new clinical department or ward, business case and capital approval, design and derogations against health building standards, construction and fit-out, medical equipment procurement, infection prevention sign-off, staffing and competency, information governance, and the run-up to first patient.',
     intro: 'Opening a clinical area is not a construction project with a clinical bit at the end. It is a sequence of governance gates, each of which can stop the door opening on the day it is built. The template gives every gate its own visible row:',
     phases: [
       ['Business case &amp; approval', 'Clinical need and service model, activity and workforce modelling, capital business case, board and commissioner approval. <em>Milestone: business case approved.</em>'],
@@ -39,27 +39,27 @@ const T = {
     ],
     callout: 'Validation is not snagging. Ventilation verification, water sampling and equipment acceptance testing all happen after the builders leave and before a patient can be admitted, and each of them has a laboratory turnaround you do not control. Leave six to eight weeks between practical completion and the opening date, and put every test on the chart as a task with a result date.',
     customize: [
-      'Set the required opening date and work backwards through IPC sign-off — that gate, not construction completion, is what actually releases the space.',
+      'Set the required opening date and work backwards through IPC sign-off, that gate, not construction completion, is what actually releases the space.',
       'Add a row per derogation once design review starts; each is a documented risk acceptance with a named approver.',
-      'Expand the equipment phase to one row per capital item, with real quoted lead times — imaging and theatre kit routinely outrun the build.',
+      'Expand the equipment phase to one row per capital item, with real quoted lead times, imaging and theatre kit routinely outrun the build.',
       'Lengthen recruitment if you need specialist nursing or a substantive consultant appointment; those are the posts that slip.',
       'Insert your regulator\'s registration or inspection window as a fixed bar and make first patient depend on it.',
-      'Keep a simulation or dry-run day before opening — it is the cheapest way to find the process gaps.',
+      'Keep a simulation or dry-run day before opening, it is the cheapest way to find the process gaps.',
     ],
     tips: [
       '<strong>Start the water safety regime the day the pipework is charged.</strong> Flushing and sampling schedules run for weeks, and a failed sample resets the clock rather than delaying it by a day.',
       '<strong>Order long-lead equipment against the business case, not the build.</strong> If the order waits for construction to start, delivery lands after the ward is finished.',
       '<strong>Treat credentialing as a dependency.</strong> A consultant with no practising privileges cannot see patients, however finished the department is.',
       '<strong>Get the DPIA started early.</strong> Clinical systems configuration is quick; the governance approval around it is not.',
-      '<strong>Run the go/no-go with the actual gate owners in the room.</strong> IPC, IG, estates and the clinical director each hold a veto — collecting those decisions on the day is how openings get postponed.',
+      '<strong>Run the go/no-go with the actual gate owners in the room.</strong> IPC, IG, estates and the clinical director each hold a veto, collecting those decisions on the day is how openings get postponed.',
       '<strong>Baseline at design freeze.</strong> Everything before it is estimate; after it, every change has a cost and a governance route.',
     ],
     related: ['clinical-trial-gantt-chart', 'construction', 'iso-9001-certification-plan'],
     faq: [
-      ['How long does it take to open a new hospital department?', 'Commonly 18–24 months from business case to first patient for a refurbishment, and longer for a new build. The template uses an eighteen-month schedule you can compress or stretch by moving the opening date.'],
-      ['What usually delays a clinical department opening?', 'Validation and governance rather than construction — ventilation verification, water sampling, equipment acceptance testing, credentialing and IG sign-off all sit after the builders finish and each has an external turnaround.'],
+      ['How long does it take to open a new hospital department?', 'Commonly 18-24 months from business case to first patient for a refurbishment, and longer for a new build. The template uses an eighteen-month schedule you can compress or stretch by moving the opening date.'],
+      ['What usually delays a clinical department opening?', 'Validation and governance rather than construction, ventilation verification, water sampling, equipment acceptance testing, credentialing and IG sign-off all sit after the builders finish and each has an external turnaround.'],
       ['What is a derogation in this context?', 'A documented, approved departure from a health building or technical standard where the existing estate cannot comply. They need agreeing during design and signing by a named approver, so they appear as their own task rather than an assumption.'],
-      ['Can I use this for a ward refurbishment rather than a new department?', 'Yes. Drop the enabling works and decant rows if you are not moving a service, and keep the IPC, equipment and governance phases — those are identical either way.'],
+      ['Can I use this for a ward refurbishment rather than a new department?', 'Yes. Drop the enabling works and decant rows if you are not moving a service, and keep the IPC, equipment and governance phases, those are identical either way.'],
       ['Is the hospital department opening template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
     tasks: [
@@ -121,7 +121,7 @@ const T = {
     kw: 'school year planning calendar template',
     metaTitle: 'School Year Planning Calendar Template',
     metaDesc: 'Free school year planning calendar: timetabling, staffing, admissions, term dates, exams, reporting cycles, open days and the budget year. Free to edit.',
-    lead: 'A free <strong>school year planning calendar template</strong> laid out at institution level rather than classroom level — curriculum and timetable build, staffing and cover, admissions and enrolment, term dates and holidays, assessment and external exam windows, reporting to parents, inspections and open events, and the budget year that runs underneath all of it.',
+    lead: 'A free <strong>school year planning calendar template</strong> laid out at institution level rather than classroom level, curriculum and timetable build, staffing and cover, admissions and enrolment, term dates and holidays, assessment and external exam windows, reporting to parents, inspections and open events, and the budget year that runs underneath all of it.',
     intro: 'An academic year is planned twice: once in the spring before it starts, and once again week by week while it runs. The template shows both, with the planning phases sitting before day one of term:',
     phases: [
       ['Curriculum &amp; timetable', 'Curriculum model and option blocks, subject allocation, timetable build and validation, room and resource allocation. <em>Milestone: timetable published.</em>'],
@@ -133,12 +133,12 @@ const T = {
       ['Inspection &amp; governance', 'Self-evaluation, governor meeting cycle, inspection readiness, safeguarding audit and policy review dates.'],
       ['Budget cycle', 'Funding allocation, budget build and approval, in-year monitoring, and the year-end return.'],
     ],
-    callout: 'Timetable build and staffing are one problem, not two. You cannot finish a timetable without knowing who is teaching, and you cannot confirm staffing without knowing what the timetable demands. Schedule them as overlapping bars with a shared deadline, and put the resignation deadline on the chart — it is the single date that decides whether the timetable is built once or three times.',
+    callout: 'Timetable build and staffing are one problem, not two. You cannot finish a timetable without knowing who is teaching, and you cannot confirm staffing without knowing what the timetable demands. Schedule them as overlapping bars with a shared deadline, and put the resignation deadline on the chart, it is the single date that decides whether the timetable is built once or three times.',
     customize: [
-      'Set day zero at the start of your spring planning term, not the start of the academic year — most of the decisions are made before September.',
+      'Set day zero at the start of your spring planning term, not the start of the academic year, most of the decisions are made before September.',
       'Replace the exam windows with your own awarding body dates; those are fixed externally and everything around them negotiates.',
       'Add a row per key stage or year group where assessment and reporting cycles differ.',
-      'Insert your governor meeting dates as milestones — they are the approval gates for budget and policy.',
+      'Insert your governor meeting dates as milestones, they are the approval gates for budget and policy.',
       'Extend the admissions phase if you run a selective or oversubscribed process with an appeals season.',
       'Mark INSET days explicitly so training is planned into the calendar rather than squeezed around it.',
     ],
@@ -154,7 +154,7 @@ const T = {
     faq: [
       ['What should a school year planning calendar include?', 'Curriculum and timetable build, staffing, admissions and enrolment, term dates, assessment and external exam windows, reporting to parents, inspection and governance, and the budget cycle. All eight are pre-loaded as separate tracks.'],
       ['When should planning for the next academic year start?', 'Usually in the spring term of the year before, because the resignation deadline, option blocks and budget allocation all land months before September. The template starts there rather than in September.'],
-      ['Can I adapt this for a college or university?', 'Yes. Keep the structure and swap the exam series for your assessment boards, and the admissions rows for your clearing or intake process — the shape of the year is the same.'],
+      ['Can I adapt this for a college or university?', 'Yes. Keep the structure and swap the exam series for your assessment boards, and the admissions rows for your clearing or intake process, the shape of the year is the same.'],
       ['How do I handle two or three intakes a year?', 'Duplicate the admissions and enrolment rows per intake and keep a single timetable and budget track. The template gives you the pattern for the main intake.'],
       ['Is the school year planning template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
     ],
@@ -221,12 +221,12 @@ const T = {
     kw: 'nonprofit fundraising campaign plan template',
     metaTitle: 'Fundraising Campaign Plan Template',
     metaDesc: 'Free nonprofit fundraising campaign plan: case for support, prospect research, quiet phase, public launch, matched giving and stewardship. Free to edit.',
-    lead: 'A free <strong>nonprofit fundraising campaign plan template</strong> built around the way capital and major campaigns actually run — feasibility and the case for support, prospect research and pipeline build, major-gift cultivation through a quiet phase, the public launch, events and matched-giving windows, and the stewardship and reporting that decide whether donors give again.',
+    lead: 'A free <strong>nonprofit fundraising campaign plan template</strong> built around the way capital and major campaigns actually run, feasibility and the case for support, prospect research and pipeline build, major-gift cultivation through a quiet phase, the public launch, events and matched-giving windows, and the stewardship and reporting that decide whether donors give again.',
     intro: 'A campaign is not a launch followed by donations. Most of the money is committed before anyone hears about it publicly, which is why the quiet phase gets the largest share of the chart:',
     phases: [
       ['Feasibility &amp; case for support', 'Needs assessment, target setting, feasibility interviews with likely lead donors, campaign case document and board approval. <em>Milestone: target approved.</em>'],
       ['Prospect research &amp; pipeline', 'Database review, wealth and capacity screening, prospect rating, portfolio assignment and the gift range chart.'],
-      ['Leadership &amp; quiet phase', 'Campaign cabinet recruitment, board giving, lead and major-gift solicitation, and pledge documentation — all before any public announcement. <em>Milestone: quiet phase target reached.</em>'],
+      ['Leadership &amp; quiet phase', 'Campaign cabinet recruitment, board giving, lead and major-gift solicitation, and pledge documentation, all before any public announcement. <em>Milestone: quiet phase target reached.</em>'],
       ['Public launch', 'Launch materials and case summary, media and social plan, launch event, and the broad appeal to the wider donor base. <em>Milestone: public launch.</em>'],
       ['Events &amp; appeals', 'Gala or campaign events, direct mail and email appeals, community and peer-to-peer fundraising, and the giving-day pushes.'],
       ['Matched giving', 'Match sponsor secured, match window promotion, the match period itself and reconciliation of matched funds.'],
@@ -234,11 +234,11 @@ const T = {
     ],
     callout: 'Do not launch publicly until the quiet phase has secured most of the target. Campaigns that announce at forty per cent spend the public phase explaining why they are behind; campaigns that announce at seventy per cent spend it building momentum. The launch date should be a consequence of the pipeline, not a date in a marketing calendar.',
     customize: [
-      'Set your gift range chart first, then size the quiet phase to the number of lead-gift conversations it implies — that count drives the duration.',
+      'Set your gift range chart first, then size the quiet phase to the number of lead-gift conversations it implies, that count drives the duration.',
       'Add a row per lead prospect once portfolios are assigned, so cultivation is tracked rather than assumed.',
       'Move the public launch milestone to the point where your quiet-phase total actually crosses the threshold you set.',
       'Extend the pledge collection bar to your real pledge period; multi-year pledges outlive the campaign by years.',
-      'Add giving-day or year-end appeal rows where they fall in your calendar — those dates are fixed and everything else works around them.',
+      'Add giving-day or year-end appeal rows where they fall in your calendar, those dates are fixed and everything else works around them.',
       'Keep stewardship running past the close date; it is the pipeline for the next campaign.',
     ],
     tips: [
@@ -252,9 +252,9 @@ const T = {
     related: ['grant-proposal-gantt-chart', 'event-planning', 'marketing'],
     faq: [
       ['How long does a fundraising campaign take?', 'Major and capital campaigns commonly run two to three years including the quiet phase and pledge collection. The template uses a roughly two-year schedule you can compress for an annual appeal.'],
-      ['How much should be raised before the public launch?', 'Conventional practice is to have a substantial majority of the target committed in the quiet phase before announcing — often cited as around 70 per cent. The template places the launch milestone after the quiet-phase target rather than on a fixed date.'],
+      ['How much should be raised before the public launch?', 'Conventional practice is to have a substantial majority of the target committed in the quiet phase before announcing, often cited as around 70 per cent. The template places the launch milestone after the quiet-phase target rather than on a fixed date.'],
       ['What is a gift range chart and where does it fit?', 'A table of how many gifts at each level you need to hit the target. It belongs in the prospect research phase, because it tells you how many prospects to cultivate at each level before you can commit to the number.'],
-      ['Can I use this for an annual appeal instead of a capital campaign?', 'Yes. Shorten the quiet phase, drop the campaign cabinet rows, and keep the appeals, matched giving and stewardship phases — that is the shape of an annual campaign.'],
+      ['Can I use this for an annual appeal instead of a capital campaign?', 'Yes. Shorten the quiet phase, drop the campaign cabinet rows, and keep the appeals, matched giving and stewardship phases, that is the shape of an annual campaign.'],
       ['Is the fundraising campaign template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, plus free online editing with no account required.'],
     ],
     tasks: [
@@ -311,7 +311,7 @@ const T = {
     kw: 'warehouse setup project plan template',
     metaTitle: 'Warehouse Setup Project Plan Template',
     metaDesc: 'Free warehouse setup project plan: site selection, lease, racking, WMS integration, MHE procurement, inventory transfer and go-live ramp. Free to edit.',
-    lead: 'A free <strong>warehouse setup project plan template</strong> covering a new distribution or fulfilment site end to end — network study and site selection, lease and landlord works, racking design and installation, warehouse management system selection and integration, materials handling equipment procurement, inventory transfer from the old site, and a go-live ramp that does not strand your customers.',
+    lead: 'A free <strong>warehouse setup project plan template</strong> covering a new distribution or fulfilment site end to end, network study and site selection, lease and landlord works, racking design and installation, warehouse management system selection and integration, materials handling equipment procurement, inventory transfer from the old site, and a go-live ramp that does not strand your customers.',
     intro: 'A warehouse project is three projects sharing a building: the physical fit-out, the system integration, and the inventory move. They have different lead times and different failure modes, so the template runs them as separate tracks:',
     phases: [
       ['Requirements &amp; network study', 'Volume and SKU profiling, throughput modelling, network and location analysis, and the capital case. <em>Milestone: business case approved.</em>'],
@@ -323,10 +323,10 @@ const T = {
       ['Recruitment &amp; training', 'Site management hires, operative recruitment, WMS and equipment training, and licensed operator certification.'],
       ['Inventory transfer &amp; go-live', 'Stock cleanse, transfer waves, cycle counting, parallel running, cutover and the volume ramp. <em>Milestone: full volume.</em>'],
     ],
-    callout: 'The wireless survey is a dependency, not a detail. Every scan-driven process in the building assumes coverage in every aisle at full rack height, and racking changes the RF environment completely. Survey after racking is installed and before go-live, with time to add access points — teams that survey an empty shed discover the dead aisles during their first peak.',
+    callout: 'The wireless survey is a dependency, not a detail. Every scan-driven process in the building assumes coverage in every aisle at full rack height, and racking changes the RF environment completely. Survey after racking is installed and before go-live, with time to add access points, teams that survey an empty shed discover the dead aisles during their first peak.',
     customize: [
       'Anchor the plan to the date you must exit the current site or hit a customer commitment; that fixes go-live and everything works backwards.',
-      'Adjust racking manufacture lead time to your quoted figure — it is frequently the longest single item after the lease.',
+      'Adjust racking manufacture lead time to your quoted figure, it is frequently the longest single item after the lease.',
       'Add a row per integration (ERP, carriers, marketplace, returns) once the WMS vendor is chosen; each has its own test cycle.',
       'Split the inventory transfer into waves by SKU velocity so fast movers land first and the site can trade while the tail arrives.',
       'Extend the parallel running bar if you cannot afford a hard cutover; running both sites costs money but protects service.',
@@ -337,12 +337,12 @@ const T = {
       '<strong>Choose the WMS before the racking layout is frozen.</strong> Slotting, location naming and pick-path logic all follow the system, and retrofitting them into installed racking is expensive.',
       '<strong>Order MHE against real lead times.</strong> Forklift and reach truck delivery has stretched to many months in recent years; the order date belongs on the chart.',
       '<strong>Ramp, do not switch.</strong> Plan the first weeks at a deliberately reduced volume so process problems surface while there is still capacity to absorb them.',
-      '<strong>Cleanse stock before you move it.</strong> Transferring obsolete inventory costs money twice — once to move it and again to store it.',
+      '<strong>Cleanse stock before you move it.</strong> Transferring obsolete inventory costs money twice, once to move it and again to store it.',
       '<strong>Baseline at lease signature.</strong> Before that everything is optional; after it, rent is running and every week of slippage has a number.',
     ],
     related: ['office-relocation-project-plan', 'erp-implementation-schedule', 'manufacturing-production-schedule'],
     faq: [
-      ['How long does it take to set up a new warehouse?', 'Commonly 9–15 months from business case to go-live for a mid-sized distribution centre, driven mainly by site acquisition, racking lead time and WMS integration. The template uses a twelve-month schedule.'],
+      ['How long does it take to set up a new warehouse?', 'Commonly 9-15 months from business case to go-live for a mid-sized distribution centre, driven mainly by site acquisition, racking lead time and WMS integration. The template uses a twelve-month schedule.'],
       ['What is usually the longest lead time?', 'Racking manufacture and materials handling equipment, both of which are now measured in months. The lease itself often runs longer than either, which is why site selection starts the plan.'],
       ['Should the WMS go live at the same time as the building?', 'Not necessarily. Many sites run the new building on the existing system first, then cut the system over separately, so only one variable changes at a time. The template keeps the tracks separate so you can choose.'],
       ['How do I plan the inventory transfer?', 'In waves by SKU velocity, with cycle counting after each wave and a parallel running period before the old site closes. Those rows are pre-loaded in the final phase.'],
@@ -411,24 +411,24 @@ const T = {
     kw: 'road construction schedule template',
     metaTitle: 'Road Construction Schedule Template',
     metaDesc: 'Free road construction schedule: survey, consents, utility diversions, earthworks, drainage, pavement layers, traffic management and handover.',
-    lead: 'A free <strong>road construction schedule template</strong> laid out along a real highway programme — survey and design, land acquisition and consents, utility diversions, earthworks and drainage, capping, sub-base and the bound pavement layers, signage and road markings, staged traffic management, and handover to the maintaining authority.',
+    lead: 'A free <strong>road construction schedule template</strong> laid out along a real highway programme, survey and design, land acquisition and consents, utility diversions, earthworks and drainage, capping, sub-base and the bound pavement layers, signage and road markings, staged traffic management, and handover to the maintaining authority.',
     intro: 'On a road scheme the pavement is the easy part. What controls the date is what has to move before you can dig: statutory undertakers\' apparatus, land you do not yet own, and the traffic that has to keep flowing. The template gives each of those its own track:',
     phases: [
       ['Survey &amp; design', 'Topographic and ground investigation survey, utility record searches and trial holes, preliminary and detailed design, drainage design and road safety audit. <em>Milestone: design approved.</em>'],
       ['Land &amp; consents', 'Land referencing, acquisition or temporary possession, planning consent, environmental approvals and side road orders. <em>Milestone: consents in place.</em>'],
-      ['Utilities diversions', 'C3/C4 estimates from each statutory undertaker, diversion design, programming with the undertakers, and the diversions themselves — gas, water, power and telecoms, each on its own timeline.'],
+      ['Utilities diversions', 'C3/C4 estimates from each statutory undertaker, diversion design, programming with the undertakers, and the diversions themselves, gas, water, power and telecoms, each on its own timeline.'],
       ['Traffic management', 'TM design and approval, road space booking, diversion route agreement, and the staged closures, contraflows and lane restrictions the works are built inside.'],
       ['Earthworks &amp; drainage', 'Site clearance and topsoil strip, cut and fill, capping layer, carrier drains, gullies, attenuation and outfalls.'],
       ['Pavement construction', 'Sub-base, base course, binder course and surface course, kerbs, footways and ironwork adjustment. <em>Milestone: surfacing complete.</em>'],
       ['Signage, markings &amp; handover', 'Road markings, signs and gantries, street lighting, safety fencing, final road safety audit, snagging and handover to the maintaining authority. <em>Milestone: road open.</em>'],
     ],
-    callout: 'Utility diversions are the programme. Statutory undertakers work to their own timescales, need long notice periods, and will not compress for your date — and every one of them must finish before you can excavate through that section. Get the C3 estimates requested during design, not after contract award, and put each undertaker on the chart as a separate bar with its own duration.',
+    callout: 'Utility diversions are the programme. Statutory undertakers work to their own timescales, need long notice periods, and will not compress for your date, and every one of them must finish before you can excavate through that section. Get the C3 estimates requested during design, not after contract award, and put each undertaker on the chart as a separate bar with its own duration.',
     customize: [
       'Enter the confirmed road space booking dates first; on a live highway they are the fixed points the rest of the programme fits around.',
-      'Add a row per statutory undertaker — gas, water, electricity and each telecoms operator have different notice periods and different crews.',
+      'Add a row per statutory undertaker, gas, water, electricity and each telecoms operator have different notice periods and different crews.',
       'Split the scheme into sections or chainage ranges once the TM staging is known, so earthworks and pavement can be tracked per stage.',
       'Move surfacing out of the winter months where you can; binder and surface course laying has temperature limits that stop work on the day.',
-      'Insert environmental exclusion periods — nesting season, bat activity, fisheries windows — as blocked bars if your consents impose them.',
+      'Insert environmental exclusion periods, nesting season, bat activity, fisheries windows, as blocked bars if your consents impose them.',
       'Keep both road safety audits on the chart; the post-construction audit is a gate to opening, not a review afterwards.',
     ],
     tips: [
@@ -441,11 +441,11 @@ const T = {
     ],
     related: ['bridge-construction-schedule', 'construction', '3-week-lookahead-template'],
     faq: [
-      ['How long does a road construction project take?', 'A short urban improvement may run 6–9 months; a new link road or major widening runs two years or more. The template uses a roughly eighteen-month programme you can compress or extend from the opening date.'],
+      ['How long does a road construction project take?', 'A short urban improvement may run 6-9 months; a new link road or major widening runs two years or more. The template uses a roughly eighteen-month programme you can compress or extend from the opening date.'],
       ['What usually delays road schemes?', 'Utility diversions and consents far more often than construction. Both depend on third parties with their own timescales, which is why each gets a separate track rather than a line inside the works.'],
       ['How do I show traffic management on a Gantt chart?', 'As staged bars with the design and road space booking as predecessors, and each construction stage depending on its own TM stage. That way a refused or delayed booking visibly threatens the works it protects.'],
       ['Does this cover a bridge or structure within the scheme?', 'Only at summary level. If your scheme includes a structure, run our <a href="/templates/bridge-construction-schedule.html">bridge construction schedule</a> alongside it and link the possession windows.'],
-      ['Can I use it for resurfacing rather than new construction?', 'Yes. Drop the land, consents and earthworks phases and keep traffic management, pavement layers and markings — that is the shape of a resurfacing programme.'],
+      ['Can I use it for resurfacing rather than new construction?', 'Yes. Drop the land, consents and earthworks phases and keep traffic management, pavement layers and markings, that is the shape of a resurfacing programme.'],
       ['Is the road construction template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up or watermark.'],
     ],
     tasks: [

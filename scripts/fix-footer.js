@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   fix-footer.js — rewrite the footer on every English page.
+   fix-footer.js, rewrite the footer on every English page.
 
    The old footer had five defects, each repeated across 89 pages:
 
@@ -14,7 +14,7 @@
       entirely (Producto / Recursos / Empresa).
    3. Trust links lived in the bottom bar on English pages but in a
       grid column on localized ones.
-   4. No hub links — no way to reach /templates.html or /blog/ from
+   4. No hub links, no way to reach /templates.html or /blog/ from
       the columns that list their children.
    5. The 480px breakpoint duplicated the 820px one, so phones never
       got a single-column footer. (Fixed in site.css.)
@@ -62,4 +62,4 @@ const targets = [...FOOTER.matchAll(/href="([^"]+)"/g)].map(m => m[1]);
 const dupes = targets.filter((t, i) => targets.indexOf(t) !== i);
 
 console.log(`✓ footer rewritten on ${changed} page(s); ${skipped} without a matching footer.`);
-console.log(`  ${links} links, ${new Set(targets).size} unique targets` + (dupes.length ? ` — DUPLICATES: ${dupes}` : ', no duplicates'));
+console.log(`  ${links} links, ${new Set(targets).size} unique targets` + (dupes.length ? `, DUPLICATES: ${dupes}` : ', no duplicates'));

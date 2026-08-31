@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /* ============================================================
-   fix-lang-switcher.js — make every English content page use the
+   fix-lang-switcher.js, make every English content page use the
    navigating language switcher, and stop loading runtime i18n.
 
    WHY: content pages now have real localized URLs (/es/, /fr/, ...).
    Leaving i18n.js on the English pages meant a stored language
-   preference would repaint the chrome — so /index.html could serve
+   preference would repaint the chrome, so /index.html could serve
    lang="en" with a Spanish nav and an "Abrir la app" button, while
    its hreflang pointed elsewhere. One URL, one language.
 
@@ -109,4 +109,4 @@ for (const rel of walk(ROOT)) {
 }
 
 console.log(`✓ ${switchers} switcher(s) installed, ${refreshed} refreshed; i18n.js removed from ${i18nRemoved} content page(s).`);
-console.log('  app.html untouched — it keeps runtime i18n on purpose.');
+console.log('  app.html untouched, it keeps runtime i18n on purpose.');

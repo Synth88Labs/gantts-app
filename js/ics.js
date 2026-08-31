@@ -1,5 +1,5 @@
 /* ============================================================
-   ics.js — export a plan as an iCalendar (.ics) file. RFC 5545.
+   ics.js, export a plan as an iCalendar (.ics) file. RFC 5545.
 
    Pure string building, no DOM, so it can be tested.
 
@@ -10,7 +10,7 @@
 
    1. DTEND IS EXCLUSIVE FOR ALL-DAY EVENTS.
       A task running Mon-Fri inclusive has DTEND of the *Saturday*.
-      Use the Friday and the task shows as Mon-Thu — every event in the
+      Use the Friday and the task shows as Mon-Thu, every event in the
       file one day short, and it still looks like a valid calendar.
 
    2. LINES FOLD AT 75 OCTETS, AND OCTETS ARE NOT CHARACTERS.
@@ -34,7 +34,7 @@
    WHY VEVENT AND NOT VTODO
 
    VTODO is the semantically correct type for a task with a due date.
-   It is also poorly supported — Google Calendar ignores VTODO
+   It is also poorly supported, Google Calendar ignores VTODO
    entirely. An all-day VEVENT shows up everywhere, which is the whole
    point of exporting. Semantics lose to actually appearing.
 
@@ -48,7 +48,7 @@
 (function () {
   /* RFC 5545 §3.3.11: backslash, semicolon and comma are special
      inside a text value, and newlines become a literal \n. Order
-     matters — escaping the backslash after the others would double
+     matters, escaping the backslash after the others would double
      the backslashes we just inserted. */
   function escapeText(s) {
     return String(s == null ? '' : s)
@@ -132,7 +132,7 @@
 
         /* Rule 1: DTEND is the day AFTER the last day of the event.
            A milestone occupies its single day, so its DTEND is the
-           following day too — not the same day, which would be a
+           following day too, not the same day, which would be a
            zero-length event that some clients drop silently. */
         const dtStart = compact(t.start);
         const dtEnd = compact(U.addDays(t.end, 1));
@@ -141,7 +141,7 @@
         if (t.assignee) desc.push('Assignee: ' + t.assignee);
         if (Number(t.progress) > 0) desc.push('Progress: ' + Math.round(t.progress) + '%');
         if (t.notes) desc.push(t.notes);
-        desc.push('From the plan "' + pname + '" — gantts.app');
+        desc.push('From the plan "' + pname + '", gantts.app');
 
         lines.push('BEGIN:VEVENT');
         // Rule 4: derived from the task id, so a re-export updates in place.

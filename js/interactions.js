@@ -1,5 +1,5 @@
 /* ============================================================
-   interactions.js — bar drag/resize/progress, dependency drawing,
+   interactions.js, bar drag/resize/progress, dependency drawing,
    row drag-to-reorder. Exposes global `Interactions`.
 
    POINTER EVENTS, NOT MOUSE EVENTS
@@ -16,7 +16,7 @@
       For touch, the browser implicitly captures the pointer to the
       element that was first touched. Every mousemove here calls
       Render.render(), which rebuilds the bars layer and DESTROYS that
-      element — so the implicit capture dies with it and the drag stops
+      element, so the implicit capture dies with it and the drag stops
       after one frame. Mouse never showed this because the listeners
       were on window.
 
@@ -40,7 +40,7 @@
        WCAG 2.1.1 (Keyboard) and 2.5.7 (Dragging Movements) are two
        DIFFERENT obligations and one does not satisfy the other. 2.5.7
        is about people who use a pointer but cannot hold a precise drag
-       — tremor, a head-pointer, eye-gaze — and it is met by the task
+, tremor, a head-pointer, eye-gaze, and it is met by the task
        drawer, whose date fields and dependency picker reschedule with
        plain clicks. This function is the other half: 2.1.1, for people
        with no pointer at all.
@@ -128,7 +128,7 @@
       e.preventDefault();
       const fromSide = t.classList.contains('r') ? 'r' : 'l';
       Model.select(task.id);
-      // selecting re-renders the chart, which replaces this bar's DOM node —
+      // selecting re-renders the chart, which replaces this bar's DOM node, 
       // re-acquire the live element so geometry (ghost line, progress) is correct
       const fresh = Render.els.barsLayer.querySelector('.bar[data-id="' + (window.CSS && CSS.escape ? CSS.escape(task.id) : task.id) + '"]');
       if (fresh) barEl = fresh;
@@ -150,7 +150,7 @@
         Render.els.chartSvg.appendChild(drag.depGhost);
       }
 
-      /* Capture on the canvas, not the bar — see the header. The bar is
+      /* Capture on the canvas, not the bar, see the header. The bar is
          about to be replaced by the first re-render of the drag. */
       const cap = Render.els.chartCanvas;
       drag.cap = cap;

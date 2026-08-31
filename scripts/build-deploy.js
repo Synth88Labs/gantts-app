@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* ============================================================
-   build-deploy.js — assemble a clean upload bundle for the host.
+   build-deploy.js, assemble a clean upload bundle for the host.
 
    Copies only what the live site needs into deploy/, then writes
    deploy-gantts-app.zip for uploading via the hosting control panel File Manager.
 
    Deliberately EXCLUDES node_modules, scripts, docs, package files
-   and markdown — none of that should ever be publicly served.
+   and markdown, none of that should ever be publicly served.
 
    Usage:  node scripts/build-deploy.js
    ============================================================ */
@@ -24,7 +24,7 @@ const INCLUDE_DIRS = ['assets', 'blog', 'css', 'js', 'templates', 'es', 'fr', 'd
 /* Site pages come from the SAME registry the generator and the sitemap
    read. This list used to be hardcoded and had already drifted once:
    accessibility.html existed, was translated into five languages and
-   listed in the sitemap, and was simply never uploaded — so the English
+   listed in the sitemap, and was simply never uploaded, so the English
    original 404'd while every translation of it was live. */
 const { SITE_PAGES } = require('../i18n/site-pages.js');
 
@@ -36,7 +36,7 @@ const INCLUDE_FILES = [
   // Google's favicon crawler and many older clients only ever request
   // the root path, ignoring <link rel="icon">. Rebuild: npm run gen:favicon
   'favicon.ico',
-  // IndexNow ownership proof — must be reachable at the site root
+  // IndexNow ownership proof, must be reachable at the site root
   'b7dddc1da15c113759ec72b4e49e446c.txt',
 ];
 
@@ -86,7 +86,7 @@ if (missing.length) {
   process.exit(1);
 }
 
-// templates/files holds generated .xlsx/.pptx/.csv and is NOT in git —
+// templates/files holds generated .xlsx/.pptx/.csv and is NOT in git, 
 // they are build artefacts. A fresh clone therefore has none, and without
 // this guard the bundle would ship happily with every download 404ing.
 const filesDir = path.join(OUT, 'templates', 'files');

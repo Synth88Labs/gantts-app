@@ -1,5 +1,5 @@
 /* ============================================================
-   features.js — command palette, present mode, natural-language
+   features.js, command palette, present mode, natural-language
    "Paste to Gantt", dark mode, and the coach-mark tips tour.
    Exposes global `Features`. Initialized by App.init().
    ============================================================ */
@@ -74,7 +74,7 @@
         { icon: '✒', name: 'Export SVG (vector, for print)', run: () => E.run('svg') },
         { icon: '📤', name: 'Share chart…', run: () => E.run('share') },
         { icon: '📄', name: 'Export PDF (paper size, tiling, date range)', run: () => E.run('pdf') },
-        { icon: '🖨', name: 'Export PDF — quick, one page', run: () => E.run('pdf-quick') },
+        { icon: '🖨', name: 'Export PDF, quick, one page', run: () => E.run('pdf-quick') },
         { icon: '📊', name: 'Export Excel (.xlsx)', run: () => E.run('xlsx') },
         { icon: '📽', name: 'Export PowerPoint (.pptx)', run: () => E.run('pptx') },
         { icon: '📑', name: 'Export CSV', run: () => E.run('csv') },
@@ -87,12 +87,12 @@
         { icon: '{ }', name: 'Export JSON (raw)', run: () => E.run('json') },
         { icon: '🔗', name: 'Copy shareable link', run: () => E.run('link') },
         { icon: '🖨', name: 'Print', run: () => E.run('print') },
-        { icon: '📈', name: 'S-curve — planned vs actual progress', run: () => App.openSCurve() },
+        { icon: '📈', name: 'S-curve, planned vs actual progress', run: () => App.openSCurve() },
         { icon: '▤', name: 'View plan as a table (screen-reader friendly)', run: () => App.openTableView() },
-        { icon: '📅', name: 'Lookahead — show only the next 3 weeks', run: () => App.setViewMode('lookahead') },
-        { icon: '◆', name: 'Milestones only — executive view', run: () => App.setViewMode('milestones') },
+        { icon: '📅', name: 'Lookahead, show only the next 3 weeks', run: () => App.setViewMode('lookahead') },
+        { icon: '◆', name: 'Milestones only, executive view', run: () => App.setViewMode('milestones') },
         { icon: '▤', name: 'Show all tasks', run: () => App.setViewMode('all') },
-        { icon: '⚡', name: 'Auto-schedule — pull tasks to their earliest dates', run: () => App.autoSchedule() },
+        { icon: '⚡', name: 'Auto-schedule, pull tasks to their earliest dates', run: () => App.autoSchedule() },
         { icon: '🧜', name: 'Export Mermaid gantt (for README / GitHub)', run: () => E.run('mermaid') },
         { icon: '📅', name: 'Export calendar (.ics)', run: () => E.run('ics') },
         { icon: '💡', name: 'Show tips & tricks tour', run: () => this.startTour() },
@@ -225,7 +225,7 @@
     },
     openPaste() {
       App.openModal(App.T('ft.pasteTitle', '✨ Paste to Gantt'), (body) => {
-        body.appendChild(U.el('p', { class: 'muted' }, 'Paste or type a task list — one per line. We detect durations, phases, milestones and dependencies automatically.'));
+        body.appendChild(U.el('p', { class: 'muted' }, 'Paste or type a task list, one per line. We detect durations, phases, milestones and dependencies automatically.'));
         const help = U.el('div', { class: 'paste-help' }, [
           syntax('Design homepage (3d)', 'duration in days (d) or weeks (w)'),
           syntax('# Phase name', 'a heading (#) becomes a group/phase; indent tasks under it'),
@@ -249,7 +249,7 @@
         function update() { const r = Features.parsePaste(ta.value); count.textContent = r.tasks.length ? (r.tasks.length + ' tasks · ' + r.deps + ' dependencies') : ''; }
         function doInsert() {
           const r = Features.parsePaste(ta.value);
-          if (!r.tasks.length) { App.toast(App.T('ft.nothingToInsert', 'Nothing to insert — type some tasks first')); return; }
+          if (!r.tasks.length) { App.toast(App.T('ft.nothingToInsert', 'Nothing to insert, type some tasks first')); return; }
           Features.insertParsed(r);
           App.closeModal();
           App.toast(App.Tn('ft.addedN', 'Added {n} tasks', { n: r.tasks.length }));
@@ -286,7 +286,7 @@
         let after = null;
         const am = line.match(/\bafter[:\s]+(.+)$/i);
         if (am) { after = am[1].trim(); line = line.replace(am[0], '').trim(); }
-        const name = line.replace(/[-–•]\s*/, '').trim() || 'Task';
+        const name = line.replace(/[-, •]\s*/, '').trim() || 'Task';
         items.push({ indent, name, type: milestone ? 'milestone' : type, dur: dur, fixed, after });
       });
       // count deps resolvable
@@ -356,13 +356,13 @@
     // ---------------- TIPS / COACH TOUR ----------------
     tourSteps() {
       return [
-        { sel: '#addTaskBtn', title: 'Add tasks', text: 'Click <b>＋ Task</b> to add a row — or press <b>Insert</b>. Add milestones (◆) and phases (▣) too.' },
+        { sel: '#addTaskBtn', title: 'Add tasks', text: 'Click <b>＋ Task</b> to add a row, or press <b>Insert</b>. Add milestones (◆) and phases (▣) too.' },
         { sel: '#pasteBtn', title: 'Paste to Gantt ✨', text: 'Have a list already? Paste it and we auto-detect durations, phases, milestones and “after X” dependencies.' },
         { sel: '#barsLayer', title: 'Drag to schedule', text: 'Drag a bar to move it, or drag its edges to resize. To <b>link tasks</b>, hover a bar and drag the round <b>connector dot</b> on its edge onto another task.' },
-        { sel: '#toggleCritical', title: 'Critical path', text: 'Tick this to highlight (in <b>orange</b>) the chain of tasks that decides your finish date — a pro feature, free here.' },
+        { sel: '#toggleCritical', title: 'Critical path', text: 'Tick this to highlight (in <b>orange</b>) the chain of tasks that decides your finish date, a pro feature, free here.' },
         { sel: '#saveBtn', title: 'Save & re-open', text: 'Your work autosaves in this browser. Use <b>💾 Save</b> to download a <b>.gantts</b> file you can back up or reopen later with <b>📂 Open</b>.' },
         { sel: '#exportBtn', title: 'Export anywhere', text: 'Download to PDF, PNG, <b>Excel</b> and <b>PowerPoint</b>, or copy a shareable link. All free.' },
-        { sel: '#cmdkBtn', title: 'Command palette', text: 'Press <b>Ctrl/⌘ K</b> anytime to run any action by name — the fastest way to work.' },
+        { sel: '#cmdkBtn', title: 'Command palette', text: 'Press <b>Ctrl/⌘ K</b> anytime to run any action by name, the fastest way to work.' },
         { sel: '#presentBtn', title: 'Present mode', text: 'Hit <b>Present</b> (or press <b>F</b>) for a clean, full-screen timeline in meetings.' },
       ];
     },
@@ -425,7 +425,7 @@
         history.replaceState(null, '', location.pathname);
         return;
       }
-      // ?csv=<slug> — load a downloadable template file straight into the editor
+      // ?csv=<slug>, load a downloadable template file straight into the editor
       const c = location.search.match(/[?&]csv=([a-z0-9-]+)/i);
       if (c) {
         const slug = c[1];
@@ -437,25 +437,25 @@
         // Load into a NEW project instead: the request is honoured and
         // their existing plan is untouched and still in the project list.
         // importCSV goes through Model.loadProjectData, which mints a new
-        // project id — so an existing plan is left intact in the project
+        // project id, so an existing plan is left intact in the project
         // list rather than overwritten. No extra newProject() call: that
         // would leave an empty duplicate behind in the list.
         const fresh = !Model.project.tasks.length;
-        // Same fetch-and-import as the in-app picker — one path, so the
+        // Same fetch-and-import as the in-app picker, one path, so the
         // deep link and the picker cannot drift apart.
         Templates.loadCatalogSlug(slug, prettyName(slug))
           .then(() => {
             if (window.App) {
               App.toast(fresh
-                ? 'Template loaded — drag the bars to fit your dates'
+                ? 'Template loaded, drag the bars to fit your dates'
                 : 'Opened “' + Model.project.name + '” as a new project');
             }
           })
-          .catch(() => { if (window.App) App.toast(App.T('ft.tplFailed', 'Could not load that template — starting from a blank chart')); });
+          .catch(() => { if (window.App) App.toast(App.T('ft.tplFailed', 'Could not load that template, starting from a blank chart')); });
       }
       /* Title-case the slug, but leave acronyms alone. Blind
          capitalisation produced "Erp Implementation Schedule" and
-         "Ev Charging" — which is the first thing a user sees after
+         "Ev Charging", which is the first thing a user sees after
          clicking "edit online" from a template page. */
       function prettyName(s) {
         const ACRONYM = { erp: 'ERP', ev: 'EV', phd: 'PhD', mep: 'MEP', it: 'IT',

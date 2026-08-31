@@ -1,5 +1,5 @@
 /* ============================================================
-   exports.js — PNG / PDF / XLSX / PPTX / CSV / JSON / print / link
+   exports.js, PNG / PDF / XLSX / PPTX / CSV / JSON / print / link
    Exposes a global `Exports`.
    ============================================================ */
 (function () {
@@ -9,7 +9,7 @@
         /* Several of these are async (png, pdf, link). A sync try/catch
            does not see a rejected promise, so a failure inside them
            used to surface as an unhandled rejection in the console and
-           nothing at all in the interface — the user clicked Export and
+           nothing at all in the interface, the user clicked Export and
            watched it do nothing. Route any returned promise through the
            same reporting path. */
         const r = this._dispatch(kind);
@@ -54,11 +54,11 @@
     },
 
     /* Mermaid gantt text. Shown in a copyable box rather than only
-       downloaded — the whole point is pasting it into a README or an
+       downloaded, the whole point is pasting it into a README or an
        issue, and a file in the Downloads folder is one step further
        from that than the clipboard is. */
     mermaid() {
-      if (!window.MermaidGantt) throw new Error('Mermaid export is still loading — try again in a moment.');
+      if (!window.MermaidGantt) throw new Error('Mermaid export is still loading, try again in a moment.');
 
       /* Criticality is computed, never asserted, so it has to be
          derived here rather than read off the tasks. */
@@ -71,7 +71,7 @@
       const text = MermaidGantt.export(Model.project, { critical });
       App.openModal(App.T('ex.mermaidTitle', 'Mermaid gantt'), (body) => {
         body.appendChild(U.el('p', { class: 'muted' },
-          'Paste this into GitHub, GitLab, Notion or Obsidian — they render Mermaid natively.'));
+          'Paste this into GitHub, GitLab, Notion or Obsidian, they render Mermaid natively.'));
 
         const ta = U.el('textarea', { class: 'code-box', rows: 16, spellcheck: 'false' });
         ta.value = text;
@@ -100,10 +100,10 @@
     },
 
     /* Vector export, redrawn from the model rather than serialised
-       from the DOM — see the header of export-svg.js for why the
+       from the DOM, see the header of export-svg.js for why the
        obvious approaches do not work. */
     svg() {
-      if (!window.ExportSvg) throw new Error('SVG export is still loading — try again in a moment.');
+      if (!window.ExportSvg) throw new Error('SVG export is still loading, try again in a moment.');
 
       // Criticality is computed here, never read off the tasks.
       let critical = null;
@@ -122,19 +122,19 @@
         title: Model.project.name,
       });
 
-      if (r.empty) throw new Error(App.T('ex.svgEmpty', 'Nothing to export — this plan has no dated tasks yet.'));
+      if (r.empty) throw new Error(App.T('ex.svgEmpty', 'Nothing to export, this plan has no dated tasks yet.'));
 
       U.download(this.safeName('svg'), r.svg, 'image/svg+xml;charset=utf-8');
-      App.toast(App.T('ex.svgDone', 'SVG downloaded — vector, so it stays sharp at any size'));
+      App.toast(App.T('ex.svgDone', 'SVG downloaded, vector, so it stays sharp at any size'));
     },
 
-    /* iCalendar. One-shot file, not a subscribable feed — see ics.js. */
+    /* iCalendar. One-shot file, not a subscribable feed, see ics.js. */
     ics() {
-      if (!window.ICS) throw new Error('Calendar export is still loading — try again in a moment.');
+      if (!window.ICS) throw new Error('Calendar export is still loading, try again in a moment.');
       const { text, count } = ICS.build(Model.project, {});
-      if (!count) throw new Error('Nothing to export — this plan has no dated tasks yet.');
+      if (!count) throw new Error('Nothing to export, this plan has no dated tasks yet.');
       U.download(this.safeName('ics'), text, 'text/calendar;charset=utf-8');
-      App.toast(App.Tn('ex.icsDoneN', '{n} event(s) exported — import the file into your calendar', { n: count }));
+      App.toast(App.Tn('ex.icsDoneN', '{n} event(s) exported, import the file into your calendar', { n: count }));
     },
 
     // Build a full-size, unconstrained clone of the chart for image capture.
@@ -164,7 +164,7 @@
     },
 
     async capture(scale) {
-      if (!window.html2canvas) throw new Error('image library still loading — try again in a moment');
+      if (!window.html2canvas) throw new Error('image library still loading, try again in a moment');
       const node = this.buildExportNode();
       try {
         const canvas = await html2canvas(node, { scale: scale || 2, backgroundColor: '#ffffff', logging: false, windowWidth: node.scrollWidth, windowHeight: node.scrollHeight });
@@ -179,7 +179,7 @@
     },
 
     async pdf() {
-      if (!window.jspdf) throw new Error('PDF library still loading — try again in a moment');
+      if (!window.jspdf) throw new Error('PDF library still loading, try again in a moment');
       App.toast(App.T('ex.renderingPdf', 'Rendering PDF…'));
       const canvas = await this.capture(2);
       const img = canvas.toDataURL('image/png');
@@ -215,7 +215,7 @@
     },
 
     xlsx() {
-      if (!window.XLSX) throw new Error('Excel library still loading — try again in a moment');
+      if (!window.XLSX) throw new Error('Excel library still loading, try again in a moment');
       const rows = this.tableRows();
       const ws = XLSX.utils.json_to_sheet(rows);
       ws['!cols'] = [{ wch: 6 }, { wch: 34 }, { wch: 10 }, { wch: 12 }, { wch: 12 }, { wch: 6 }, { wch: 10 }, { wch: 16 }, { wch: 18 }, { wch: 30 }];
@@ -229,7 +229,7 @@
     },
 
     async pptx() {
-      if (!window.PptxGenJS) throw new Error('PowerPoint library still loading — try again in a moment');
+      if (!window.PptxGenJS) throw new Error('PowerPoint library still loading, try again in a moment');
       App.toast(App.T('ex.buildingPptx', 'Building PowerPoint…'));
       const canvas = await this.capture(2);
       const data = canvas.toDataURL('image/png');
@@ -259,7 +259,7 @@
       const tableRows = [header.map(h => ({ text: h, options: { bold: true, color: 'FFFFFF', fill: '2563EB' } })), ...body];
       s3.addTable(tableRows, { x: 0.4, y: 0.9, w: 12.5, fontSize: 10, border: { type: 'solid', color: 'E2E8F0', pt: 0.5 }, color: '1E293B' });
 
-      // Generate a blob and download it ourselves — more reliable across browsers
+      // Generate a blob and download it ourselves, more reliable across browsers
       // than pptx.writeFile (which can silently no-op in some sandboxed contexts).
       const blob = await pptx.write({ outputType: 'blob' });
       U.download(this.safeName('pptx'), blob, 'application/vnd.openxmlformats-officedocument.presentationml.presentation');
@@ -276,14 +276,14 @@
     },
 
     // Save the whole project as a .gantts file (JSON inside). Re-open it later
-    // with the "Open" button / Import — it restores everything exactly.
+    // with the "Open" button / Import, it restores everything exactly.
     // Legacy .gantt files still open fine (see Templates.importFile).
     /* Save in place where the browser allows it.
 
        showSaveFilePicker gives us a handle we can write to again, so
        the second save overwrites the first file instead of dropping
        plan(1).gantts, plan(2).gantts... into Downloads. The handle
-       lives for the session only — persisting it would need IndexedDB
+       lives for the session only, persisting it would need IndexedDB
        and a permission re-prompt on every reload, which is more
        friction than the feature saves.
 
@@ -309,11 +309,11 @@
           const w = await this._fileHandle.createWritable();
           await w.write(json);
           await w.close();
-          App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”',
+          App.toast(App.Tn('ex.savedToN', 'Saved to {f}, reopen it any time with “Open”',
             { f: this._fileHandle.name || name }));
           return;
         } catch (e) {
-          /* AbortError means the user dismissed the picker — that is a
+          /* AbortError means the user dismissed the picker, that is a
              decision, not a failure, so say nothing and do not fall
              back to a download they did not ask for. */
           if (e && e.name === 'AbortError') return;
@@ -322,7 +322,7 @@
       }
 
       U.download(name, json, 'application/json');
-      App.toast(App.Tn('ex.savedToN', 'Saved to {f} — reopen it any time with “Open”', { f: name }));
+      App.toast(App.Tn('ex.savedToN', 'Saved to {f}, reopen it any time with “Open”', { f: name }));
     },
 
     /* Copy the chart straight to the clipboard.
@@ -331,13 +331,13 @@
        Safari requires the ClipboardItem to be constructed with a
        PROMISE of the blob, synchronously inside the user gesture. Await
        the blob first and then call clipboard.write and Safari has
-       already decided the gesture expired — it rejects with
+       already decided the gesture expired, it rejects with
        NotAllowedError. Chrome accepts either form, so testing only in
        Chrome hides this completely. */
     async copyImage() {
       if (!navigator.clipboard || !window.ClipboardItem) {
         throw new Error(App.T('ex.noClipboard',
-          'This browser cannot copy images to the clipboard — use PNG export instead.'));
+          'This browser cannot copy images to the clipboard, use PNG export instead.'));
       }
       App.toast(App.T('ex.copying', 'Copying chart…'));
 
@@ -348,19 +348,19 @@
       try {
         // Note the promise is handed to ClipboardItem, not its result.
         await navigator.clipboard.write([new ClipboardItem({ 'image/png': blobPromise })]);
-        App.toast(App.T('ex.copied', 'Chart copied — paste it into any document or chat'));
+        App.toast(App.T('ex.copied', 'Chart copied, paste it into any document or chat'));
       } catch (e) {
         /* The clipboard can refuse for reasons that have nothing to do
            with this code: a permissions policy, an insecure context, a
            window that lost focus between the click and the write. The
-           user asked for their chart, so give them the chart — a
+           user asked for their chart, so give them the chart, a
            download is a worse answer than the clipboard but a far
            better one than an error message. */
         if (e && (e.name === 'NotAllowedError' || e.name === 'SecurityError')) {
           const blob = await blobPromise;
           U.download(this.safeName('png'), blob, 'image/png');
           App.toast(App.T('ex.clipboardBlocked',
-            'The browser blocked clipboard access — the image was downloaded instead'));
+            'The browser blocked clipboard access, the image was downloaded instead'));
           return;
         }
         throw e;
@@ -369,7 +369,7 @@
 
     /* The system share sheet, which on a phone is how anything actually
        leaves the device. canShare({files}) has to be asked before
-       share() — desktop Chrome exposes navigator.share and then refuses
+       share(), desktop Chrome exposes navigator.share and then refuses
        files, so feature-detecting on share() alone fails at the worst
        moment. */
     async shareImage() {
@@ -380,7 +380,7 @@
 
       if (!navigator.canShare || !navigator.canShare({ files: [file] })) {
         U.download(this.safeName('png'), blob, 'image/png');
-        App.toast(App.T('ex.noShare', 'Sharing is not available here — the image was downloaded instead'));
+        App.toast(App.T('ex.noShare', 'Sharing is not available here, the image was downloaded instead'));
         return;
       }
       try {
@@ -398,7 +398,7 @@
     mspdi() {
       if (!window.MSProject) throw new Error('MS Project export is unavailable.');
       U.download(this.safeName('xml'), MSProject.export(Model.project), 'application/xml');
-      App.toast(App.T('ex.mspdiDone', 'MS Project XML downloaded — open it in MS Project with File › Open'));
+      App.toast(App.T('ex.mspdiDone', 'MS Project XML downloaded, open it in MS Project with File › Open'));
     },
 
     json() {
@@ -414,7 +414,7 @@
       /* No inline onload here. A blank window opened this way is
          same-origin and inherits our Content Security Policy, so an
          inline handler would be blocked the moment the CSP is enforced
-         — and print would fail silently, since nothing else calls
+, and print would fail silently, since nothing else calls
          print(). Binding from this side keeps it working and keeps
          'unsafe-inline' out of script-src. */
       w.document.write(`<html><head><title>${U.escapeHtml(Model.project.name)}</title>
@@ -442,7 +442,7 @@
             `The link would be ${r.length.toLocaleString()} characters. Mail clients, chat apps and `
             + `some proxies truncate long URLs, so the person you send it to would open an empty editor.`));
           body.appendChild(U.el('p', { class: 'muted' },
-            'Send them the project file instead — it opens with the Open button and has no size limit.'));
+            'Send them the project file instead, it opens with the Open button and has no size limit.'));
           const row = U.el('div', { class: 'modal-actions' });
           row.appendChild(U.el('button', {
             class: 'btn btn-primary',
@@ -459,7 +459,7 @@
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(r.url).then(
-          () => App.toast(App.T('ex.linkCopied', 'Shareable link copied — anyone with it can open this plan')),
+          () => App.toast(App.T('ex.linkCopied', 'Shareable link copied, anyone with it can open this plan')),
           () => this._showLink(r.url)
         );
       } else {
@@ -468,7 +468,7 @@
     },
     _showLink(url) {
       App.openModal(App.T('ex.linkTitle', 'Shareable link'), (body) => {
-        body.appendChild(U.el('p', {}, 'Copy this link — it contains your whole chart (no server needed):'));
+        body.appendChild(U.el('p', {}, 'Copy this link, it contains your whole chart (no server needed):'));
         const ta = U.el('textarea', { style: { width: '100%', height: '90px' }, readonly: 'true' }, url);
         body.appendChild(ta); ta.select();
       });
@@ -486,10 +486,10 @@
       }
       const src = r.url + (r.url.indexOf('?') >= 0 ? '&' : '?') + 'embed=1';
       const snippet = '<iframe src="' + src + '" width="100%" height="480" loading="lazy" '
-        + 'style="border:1px solid #e2e8f0;border-radius:12px" title="Gantt chart — gantts.app"></iframe>';
+        + 'style="border:1px solid #e2e8f0;border-radius:12px" title="Gantt chart, gantts.app"></iframe>';
       App.openModal(App.T('ex.embedTitle', 'Embed this chart'), (body) => {
         body.appendChild(U.el('p', {}, App.T('ex.embedHint',
-          'Paste this into any web page. The chart is self-contained and read-only — no account or server needed:')));
+          'Paste this into any web page. The chart is self-contained and read-only, no account or server needed:')));
         const ta = U.el('textarea', { style: { width: '100%', height: '110px' }, readonly: 'true' }, snippet);
         body.appendChild(ta); ta.select();
         const note = U.el('p', { class: 'muted' }, App.T('ex.embedNote', 'Anyone who can load the page can see the chart; the whole plan travels inside the link.'));

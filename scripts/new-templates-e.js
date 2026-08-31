@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-e.js — fifth batch of generated templates.
+   new-templates-e.js, fifth batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch E covers the programmes that sit between the heavy
@@ -10,7 +10,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries where
+   Picked on the same SERP evidence as earlier batches, queries where
    the ranking pages are consultancy posts, gated PDFs or generic
    "project plan" pages rather than a template anyone can open.
    ============================================================ */
@@ -25,22 +25,22 @@ const T = {
     kw: 'bridge construction schedule template',
     metaTitle: 'Bridge Construction Schedule Template',
     metaDesc: 'Free bridge construction schedule: survey, approvals, piling, substructure, deck, surfacing, load testing and opening. Excel, PowerPoint or edit online.',
-    lead: 'A free <strong>bridge construction schedule template</strong> laid out along a real civil programme — ground investigation and design, statutory approvals, piling and foundations, substructure, deck erection, surfacing and parapets, load testing and opening to traffic. Download it for a tender submission or a client progress pack, or open it online to link the possession windows and weather-restricted operations that actually control the date.',
+    lead: 'A free <strong>bridge construction schedule template</strong> laid out along a real civil programme, ground investigation and design, statutory approvals, piling and foundations, substructure, deck erection, surfacing and parapets, load testing and opening to traffic. Download it for a tender submission or a client progress pack, or open it online to link the possession windows and weather-restricted operations that actually control the date.',
     intro: 'A bridge programme is governed by things you do not own: the river, the road below, the weather and the approving authority. The template gives each of them a visible place rather than burying them inside a construction bar:',
     phases: [
       ['Survey &amp; ground investigation', 'Topographic and hydrographic survey, boreholes and geotechnical interpretation, utility searches and the environmental baseline. <em>Milestone: GI report issued.</em>'],
       ['Design &amp; approvals', 'Preliminary and detailed design, temporary works design, technical approval by the highway or rail authority, environmental consents and river works licences. <em>Milestone: technical approval.</em>'],
       ['Enabling works &amp; possessions', 'Site set-up, access roads and haul routes, utility diversions, cofferdams or causeway, and the booked road or waterway possession windows.'],
-      ['Piling &amp; foundations', 'Piling to each pier and abutment, pile testing, pile caps and foundation concrete — the operation most exposed to ground risk and river levels.'],
+      ['Piling &amp; foundations', 'Piling to each pier and abutment, pile testing, pile caps and foundation concrete, the operation most exposed to ground risk and river levels.'],
       ['Substructure', 'Abutments, wing walls, piers and pier caps, bearing plinths and bearing installation. <em>Milestone: substructure complete.</em>'],
       ['Superstructure &amp; deck', 'Beam fabrication and delivery, crane or launch erection inside the possession, deck formwork, reinforcement and the deck pour.'],
       ['Surfacing, testing &amp; opening', 'Waterproofing, surfacing, parapets and safety barriers, drainage, load testing, snagging and opening to traffic. <em>Milestone: open to traffic.</em>'],
     ],
-    callout: 'The possession window is the schedule. Beam erection over a live road, railway or navigable river usually happens inside a booked closure that was applied for months earlier and cannot be moved. Put the application, the confirmation and the window itself on the chart as separate tasks — everything upstream exists to make that weekend achievable.',
+    callout: 'The possession window is the schedule. Beam erection over a live road, railway or navigable river usually happens inside a booked closure that was applied for months earlier and cannot be moved. Put the application, the confirmation and the window itself on the chart as separate tasks, everything upstream exists to make that weekend achievable.',
     customize: [
       'Enter the confirmed possession dates first and work backwards; almost every other date on a bridge programme negotiates around them.',
       'Add a row per pier and abutment once the substructure sequence is known, so piling and concrete pours are tracked individually.',
-      'Mark weather-restricted operations — deck pours, waterproofing and surfacing all have temperature or rainfall limits worth showing.',
+      'Mark weather-restricted operations, deck pours, waterproofing and surfacing all have temperature or rainfall limits worth showing.',
       'Extend the technical approval bar to your authority\'s real review period, including the response-to-comments loop.',
       'Keep temporary works design as its own task; falsework, cofferdam and launch scheme approvals gate the permanent works.',
       'Insert flood-season or fish-migration exclusion periods as blocked bars if you are working in a watercourse.',
@@ -55,10 +55,10 @@ const T = {
     ],
     related: ['construction', 'mining-project-schedule', '3-week-lookahead-template'],
     faq: [
-      ['How long does it take to build a bridge?', 'A small single-span highway bridge commonly runs 9–18 months from site start; a major river crossing runs several years. This template uses a roughly two-year programme you can compress or stretch by moving the opening date.'],
+      ['How long does it take to build a bridge?', 'A small single-span highway bridge commonly runs 9-18 months from site start; a major river crossing runs several years. This template uses a roughly two-year programme you can compress or stretch by moving the opening date.'],
       ['What usually delays a bridge project?', 'Ground conditions found during piling, technical approval loops with the highway or rail authority, and missed possession windows. All three are separate tracks here so the exposure is visible before it bites.'],
       ['How do I show a road or rail possession on the chart?', 'Add the application, the confirmation and the window itself as three tasks, and make deck erection depend on the window. That way a slipped upstream activity visibly threatens a date you cannot move.'],
-      ['Does this work for a footbridge or a culvert replacement?', 'Yes. Keep the survey, approvals, foundations and superstructure phases and trim the pier rows — the sequence is the same at smaller scale.'],
+      ['Does this work for a footbridge or a culvert replacement?', 'Yes. Keep the survey, approvals, foundations and superstructure phases and trim the pier rows, the sequence is the same at smaller scale.'],
       ['Is the bridge construction template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, plus free online editing with no account and no watermark.'],
     ],
     tasks: [
@@ -118,7 +118,7 @@ const T = {
     kw: 'new product development plan template',
     metaTitle: 'New Product Development Plan Template',
     metaDesc: 'Free new product development plan: concept, feasibility, prototyping, validation, tooling, pilot production and launch handover. Excel or edit online.',
-    lead: 'A free <strong>new product development plan template</strong> built as a stage-gate programme — concept, feasibility, detailed design, prototyping, validation and testing, tooling, pilot production and handover to launch. This is the engineering pipeline that produces something to sell; for the go-to-market side of the same programme see the <a href="/templates/product-launch.html">product launch plan</a>, and for the longer horizon the <a href="/templates/product-roadmap.html">product roadmap</a>.',
+    lead: 'A free <strong>new product development plan template</strong> built as a stage-gate programme, concept, feasibility, detailed design, prototyping, validation and testing, tooling, pilot production and handover to launch. This is the engineering pipeline that produces something to sell; for the go-to-market side of the same programme see the <a href="/templates/product-launch.html">product launch plan</a>, and for the longer horizon the <a href="/templates/product-roadmap.html">product roadmap</a>.',
     intro: 'NPD schedules go wrong at the gates, not in the tasks. The template separates each stage so a gate is a decision with evidence behind it rather than a date that quietly passes:',
     phases: [
       ['Concept', 'Opportunity definition, customer needs and requirements, concept sketches, initial business case and the concept gate. <em>Gate 1: concept approved.</em>'],
@@ -129,29 +129,29 @@ const T = {
       ['Tooling &amp; industrialization', 'Tool design and manufacture, first-article inspection, process development, fixtures and supplier qualification.'],
       ['Pilot production &amp; handover', 'Pilot run, production part approval, ramp plan, documentation pack and handover to operations and the launch team. <em>Gate 5: production release.</em>'],
     ],
-    callout: 'Design freeze is the expensive milestone. Every change after it costs tooling money, and every change after first-article inspection costs tooling money twice. Making the freeze a real gate — with test evidence behind it rather than an optimistic date — is the single decision that keeps an NPD budget intact.',
+    callout: 'Design freeze is the expensive milestone. Every change after it costs tooling money, and every change after first-article inspection costs tooling money twice. Making the freeze a real gate, with test evidence behind it rather than an optimistic date, is the single decision that keeps an NPD budget intact.',
     customize: [
       'Set the required production release date and work backwards; tooling lead time usually decides whether the plan is possible at all.',
       'Order long-lead tooling against real quoted lead times and place the order task before the design freeze if you are taking that risk deliberately.',
-      'Add a row per certification body if your product needs multiple approvals — they run in parallel and each has its own queue.',
+      'Add a row per certification body if your product needs multiple approvals, they run in parallel and each has its own queue.',
       'Expand prototyping into as many builds as you actually need; two is optimistic for anything with moving parts.',
-      'Keep supplier qualification visible — a qualified part from an unqualified supplier is not a releasable part.',
+      'Keep supplier qualification visible, a qualified part from an unqualified supplier is not a releasable part.',
       'Mark all five gates as milestones so the steering group sees decisions rather than progress bars.',
     ],
     tips: [
       '<strong>Do not overlap tooling with design changes.</strong> Cutting steel before the design is frozen is the most common way an NPD programme spends its contingency in a single week.',
       '<strong>Start certification early.</strong> Test-house queues and regulatory review are third-party durations you cannot compress by working harder, so book slots as soon as a testable build exists.',
-      '<strong>Give validation its own bar.</strong> Test time is real elapsed time — life testing in particular runs for weeks regardless of how many engineers you assign.',
+      '<strong>Give validation its own bar.</strong> Test time is real elapsed time, life testing in particular runs for weeks regardless of how many engineers you assign.',
       '<strong>Run supplier engagement during design, not after it.</strong> Manufacturability feedback arriving after design freeze becomes a change request rather than a design input.',
       '<strong>Separate this plan from the launch plan.</strong> Marketing dates should hang off production release, not off an engineering estimate made at concept stage.',
       '<strong>Baseline at design freeze.</strong> Track variance from the frozen design so late changes are visible as schedule cost, not absorbed silently.',
     ],
     related: ['product-launch', 'product-roadmap', 'software-development'],
     faq: [
-      ['How is this different from the product launch template?', 'This one is the engineering pipeline that ends at production release — concept through tooling and pilot production. The <a href="/templates/product-launch.html">product launch plan</a> starts roughly where this ends and covers positioning, pricing, channel readiness and the go-to-market campaign.'],
-      ['How long does new product development take?', 'It varies with complexity: a straightforward consumer accessory may run 6–9 months, while a regulated or heavily tooled product commonly runs 18–36. The template uses an eighteen-month programme you can compress or extend.'],
+      ['How is this different from the product launch template?', 'This one is the engineering pipeline that ends at production release, concept through tooling and pilot production. The <a href="/templates/product-launch.html">product launch plan</a> starts roughly where this ends and covers positioning, pricing, channel readiness and the go-to-market campaign.'],
+      ['How long does new product development take?', 'It varies with complexity: a straightforward consumer accessory may run 6-9 months, while a regulated or heavily tooled product commonly runs 18-36. The template uses an eighteen-month programme you can compress or extend.'],
       ['What are the stage gates in this template?', 'Concept approved, feasibility passed, design freeze, design validated and production release. Each is a milestone with its evidence-producing tasks as predecessors.'],
-      ['Can I use it for a software product?', 'Partly — the concept, feasibility, design and validation phases transfer well, but you would drop tooling and pilot production. For software the <a href="/templates/software-development.html">software development plan</a> is a closer fit.'],
+      ['Can I use it for a software product?', 'Partly, the concept, feasibility, design and validation phases transfer well, but you would drop tooling and pilot production. For software the <a href="/templates/software-development.html">software development plan</a> is a closer fit.'],
       ['Is the NPD plan template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account required.'],
     ],
     tasks: [
@@ -208,7 +208,7 @@ const T = {
     kw: 'trade show planning timeline template',
     metaTitle: 'Trade Show Planning Timeline Template',
     metaDesc: 'Free trade show planning timeline: space booking, stand design and build, shipping, pre-show marketing, staffing, show days and lead follow-up.',
-    lead: 'A free <strong>trade show planning timeline template</strong> counting down to the show — space selection and contract, stand design and build, freight and drayage deadlines, pre-show marketing and meeting booking, staffing and briefing, the show days themselves, and the lead follow-up that decides whether any of it paid for itself. For non-exhibition events see the general <a href="/templates/event-planning.html">event planning template</a>.',
+    lead: 'A free <strong>trade show planning timeline template</strong> counting down to the show, space selection and contract, stand design and build, freight and drayage deadlines, pre-show marketing and meeting booking, staffing and briefing, the show days themselves, and the lead follow-up that decides whether any of it paid for itself. For non-exhibition events see the general <a href="/templates/event-planning.html">event planning template</a>.',
     intro: 'Exhibiting is a countdown, not a project. Three or four dates are genuinely immovable and everything else arranges itself around them, so the template shows them as milestones rather than as tasks:',
     phases: [
       ['Space selection &amp; contract', 'Show selection, budget approval, floor-plan review, space selection at the priority-points deadline and contract signature. <em>Milestone: space contracted.</em>'],
@@ -221,11 +221,11 @@ const T = {
     ],
     callout: 'Three deadlines on this chart cannot move: the space selection date that sets where you stand for the next show, the advance-rate order deadline after which every service costs more, and the freight deadline after which your stand arrives late or not at all. Everything else is negotiable. Mark all three and let the rest of the plan fit around them.',
     customize: [
-      'Set the show open date and let the whole plan count backwards from it — that is how exhibition planning actually works.',
+      'Set the show open date and let the whole plan count backwards from it, that is how exhibition planning actually works.',
       'Replace the generic deadlines with the real dates from the exhibitor manual as soon as it is published.',
       'Add rows for each shipment if you are sending stand, product and literature separately; they have different deadlines.',
       'Extend the pre-show marketing bar if you rely on booked meetings; the calendar fills six to eight weeks out, not the week before.',
-      'Add a customs and carnet task for international shows — it has its own lead time and can strand a stand at the border.',
+      'Add a customs and carnet task for international shows, it has its own lead time and can strand a stand at the border.',
       'Keep follow-up on the chart with dated tasks; leads decay fast and an undated follow-up plan is not a plan.',
     ],
     tips: [
@@ -238,8 +238,8 @@ const T = {
     ],
     related: ['event-planning', 'marketing', 'product-launch'],
     faq: [
-      ['How far in advance should trade show planning start?', 'Six to nine months for a major show, and longer if you want good floor position — space for the next edition is often selected at the current one. This template runs about eight months to the show open.'],
-      ['How is this different from the event planning template?', 'This one is specific to exhibiting: space contracts, stand build, drayage and freight deadlines, advance-rate service orders and lead follow-up. The <a href="/templates/event-planning.html">event planning template</a> covers running your own event — venue, agenda, speakers and attendees.'],
+      ['How far in advance should trade show planning start?', 'Six to nine months for a major show, and longer if you want good floor position, space for the next edition is often selected at the current one. This template runs about eight months to the show open.'],
+      ['How is this different from the event planning template?', 'This one is specific to exhibiting: space contracts, stand build, drayage and freight deadlines, advance-rate service orders and lead follow-up. The <a href="/templates/event-planning.html">event planning template</a> covers running your own event, venue, agenda, speakers and attendees.'],
       ['What are the immovable deadlines when exhibiting?', 'Space selection, the advance-rate order deadline in the exhibitor manual, the freight and drayage deadline, and your assigned build slot. All four appear as milestones here.'],
       ['Can I use this for a conference booth as well as a big exhibition?', 'Yes. Keep the structure and trim the stand build rows if you are taking a shell scheme or a table-top presence.'],
       ['Is the trade show template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
@@ -297,7 +297,7 @@ const T = {
     kw: 'recruitment plan template',
     metaTitle: 'Recruitment and Hiring Plan Template',
     metaDesc: 'Free recruitment and hiring plan: role approval, sourcing, screening, interviews, assessment, offer, notice period and start date. Excel or edit online.',
-    lead: 'A free <strong>recruitment and hiring plan template</strong> covering a single requisition end to end — role definition and headcount approval, sourcing, screening, the interview loop, assessment and references, offer and negotiation, the candidate\'s notice period, and the start date. It ends exactly where <a href="/templates/employee-onboarding.html">employee onboarding</a> begins.',
+    lead: 'A free <strong>recruitment and hiring plan template</strong> covering a single requisition end to end, role definition and headcount approval, sourcing, screening, the interview loop, assessment and references, offer and negotiation, the candidate\'s notice period, and the start date. It ends exactly where <a href="/templates/employee-onboarding.html">employee onboarding</a> begins.',
     intro: 'Most hiring plans underestimate the same two things: how long approval takes at the front, and how long notice takes at the back. The template gives both real bars so the start date is honest:',
     phases: [
       ['Role definition &amp; approval', 'Business case, job description, level and salary banding, headcount approval and requisition opening. <em>Milestone: requisition approved.</em>'],
@@ -308,13 +308,13 @@ const T = {
       ['Offer &amp; negotiation', 'Compensation approval, verbal offer, written contract, negotiation and signature. <em>Milestone: offer accepted.</em>'],
       ['Notice period &amp; pre-start', 'Candidate resignation and notice, keep-warm contact, equipment and access setup, and day one. <em>Milestone: start date.</em>'],
     ],
-    callout: 'The notice period is not admin — it is often the longest single bar on the chart. A senior hire on three months\' notice means the requisition you approve today produces a working person five or six months from now. Plans that stop at "offer accepted" consistently promise capacity a quarter before it exists.',
+    callout: 'The notice period is not admin, it is often the longest single bar on the chart. A senior hire on three months\' notice means the requisition you approve today produces a working person five or six months from now. Plans that stop at "offer accepted" consistently promise capacity a quarter before it exists.',
     customize: [
       'Work backwards from when you need the person productive, not from when you want them to sign.',
-      'Set the notice bar to the real market norm for the role and country — one month, three months and six months produce very different plans.',
+      'Set the notice bar to the real market norm for the role and country, one month, three months and six months produce very different plans.',
       'Duplicate the sourcing through offer phases per role if you are hiring a team, and stagger them against interviewer capacity.',
       'Add an agency or search-firm track with its own milestones if you are using one; the briefing and shortlist dates are contractual.',
-      'Insert visa or right-to-work steps as their own tasks where relevant — they can exceed the notice period.',
+      'Insert visa or right-to-work steps as their own tasks where relevant, they can exceed the notice period.',
       'Keep the keep-warm tasks on the chart. Between signature and start is when accepted candidates get counter-offered away.',
     ],
     tips: [
@@ -327,10 +327,10 @@ const T = {
     ],
     related: ['employee-onboarding', '30-60-90-day-plan', 'project-management'],
     faq: [
-      ['How long does it take to hire someone?', 'Commonly 6–12 weeks from approved requisition to signed offer, plus the notice period on top. This template runs about five months from business case to start date, which is realistic for a role with a one to three month notice.'],
+      ['How long does it take to hire someone?', 'Commonly 6-12 weeks from approved requisition to signed offer, plus the notice period on top. This template runs about five months from business case to start date, which is realistic for a role with a one to three month notice.'],
       ['How does this fit with the onboarding template?', 'This plan ends at the start date; the <a href="/templates/employee-onboarding.html">employee onboarding template</a> picks up from day one through the first ninety days. Run them back to back for the full picture.'],
       ['What is the most common cause of a slow hiring process?', 'Interview scheduling and slow internal decisions, not sourcing. That is why the interview loop and debrief are separate tasks here rather than one block.'],
-      ['Can I use this to plan several hires at once?', 'Yes — duplicate the sourcing-to-offer phases per role and stagger the interview loops so you do not book the same panel twice in the same week.'],
+      ['Can I use this to plan several hires at once?', 'Yes, duplicate the sourcing-to-offer phases per role and stagger the interview loops so you do not book the same panel twice in the same week.'],
       ['Is the recruitment plan template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [
@@ -385,7 +385,7 @@ const T = {
     kw: 'internal audit plan template',
     metaTitle: 'Internal Audit Plan Template',
     metaDesc: 'Free internal audit plan template: annual risk assessment, scoping, fieldwork, testing, findings, management response, reporting and follow-up.',
-    lead: 'A free <strong>internal audit plan template</strong> covering a full cycle — annual risk assessment and audit universe, committee approval of the plan, engagement scoping and planning, fieldwork and control testing, findings and management response, report issue, and follow-up on remediation. Download it for the audit committee pack, or open it online to lay several engagements across one year.',
+    lead: 'A free <strong>internal audit plan template</strong> covering a full cycle, annual risk assessment and audit universe, committee approval of the plan, engagement scoping and planning, fieldwork and control testing, findings and management response, report issue, and follow-up on remediation. Download it for the audit committee pack, or open it online to lay several engagements across one year.',
     intro: 'An audit plan has two layers: the annual programme and the individual engagement inside it. The template shows both, so the committee sees coverage while the team sees the work:',
     phases: [
       ['Annual planning', 'Risk assessment, audit universe refresh, stakeholder interviews, resource and budget plan and the draft annual plan. <em>Milestone: plan approved by committee.</em>'],
@@ -399,7 +399,7 @@ const T = {
     callout: 'Follow-up is where audit value is realized and where audit plans usually stop. An issued report with no dated verification task behind it is an opinion; a tracked remediation date with a re-test on the chart is a control that actually changed. Keep the follow-up bars in the plan and resource them.',
     customize: [
       'Lay several engagements side by side across the year to see whether your team is genuinely available for all of them.',
-      'Set the audit committee meeting dates first — they are fixed, and every report date works backwards from one of them.',
+      'Set the audit committee meeting dates first, they are fixed, and every report date works backwards from one of them.',
       'Add a row per auditable entity if you report coverage of the audit universe to the committee.',
       'Extend fieldwork for engagements needing site visits or data extracts; both take longer than desk-based testing.',
       'Include a contingency or special-investigation allowance; unplanned work is normal and unbudgeted unplanned work destroys the plan.',
@@ -416,7 +416,7 @@ const T = {
     related: ['project-management', 'annual', 'post-merger-integration-plan'],
     faq: [
       ['What should an internal audit plan include?', 'A risk assessment and audit universe, a ranked list of engagements with resourcing, and for each engagement scoping, fieldwork, findings, management response, reporting and follow-up. All seven phases are pre-loaded.'],
-      ['How long does a single internal audit engagement take?', 'Commonly 6–12 weeks from announcement to issued report for a mid-sized review, with follow-up running for months afterwards. The engagement in this template runs about four months end to end.'],
+      ['How long does a single internal audit engagement take?', 'Commonly 6-12 weeks from announcement to issued report for a mid-sized review, with follow-up running for months afterwards. The engagement in this template runs about four months end to end.'],
       ['How often should the annual plan be refreshed?', 'Most functions approve the plan annually and revisit it at least half-yearly, since risk profiles and unplanned work both move. Leaving contingency in the plan is what makes that revisit manageable.'],
       ['Can I use this for an external audit or a certification audit?', 'Partly. Scoping, fieldwork, findings and follow-up map across well; you would replace the annual planning phase with the certification body\'s own audit cycle.'],
       ['Is the internal audit plan template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up required.'],

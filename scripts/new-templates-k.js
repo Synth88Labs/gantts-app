@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-k.js — eleventh batch of generated templates.
+   new-templates-k.js, eleventh batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch K is about plans whose dates are set by somebody
@@ -12,7 +12,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries
+   Picked on the same SERP evidence as earlier batches, queries
    where the ranking pages are consultancy posts, gated PDFs or
    vendor landing pages rather than a template anyone can edit.
    ============================================================ */
@@ -27,10 +27,10 @@ const T = {
     kw: 'iso 27001 implementation plan template',
     metaTitle: 'ISO 27001 Certification Plan Template',
     metaDesc: 'Free ISO 27001 certification plan: scope, risk assessment, SoA, controls, internal audit, management review, Stage 1 and Stage 2 audits.',
-    lead: 'A free <strong>ISO 27001 certification plan template</strong> laid out the way a certification body actually assesses you — ISMS scope, risk assessment and Statement of Applicability, control implementation, a period of genuine operation that generates records, then the internal audit and management review that must both be complete before Stage 2, and finally the two-stage audit itself. If you are also running a quality system, the <a href="/templates/iso-9001-certification-plan.html">ISO 9001 certification plan</a> uses the same audit shape.',
-    intro: 'The certification audit is not one event. It is a documentation review, then a mandatory gap in which you fix what it found, then a full evidence audit — and the gap is the reason ISO 27001 plans cannot be squeezed at the end:',
+    lead: 'A free <strong>ISO 27001 certification plan template</strong> laid out the way a certification body actually assesses you, ISMS scope, risk assessment and Statement of Applicability, control implementation, a period of genuine operation that generates records, then the internal audit and management review that must both be complete before Stage 2, and finally the two-stage audit itself. If you are also running a quality system, the <a href="/templates/iso-9001-certification-plan.html">ISO 9001 certification plan</a> uses the same audit shape.',
+    intro: 'The certification audit is not one event. It is a documentation review, then a mandatory gap in which you fix what it found, then a full evidence audit, and the gap is the reason ISO 27001 plans cannot be squeezed at the end:',
     phases: [
-      ['Scope &amp; gap analysis', 'ISMS boundaries, interested parties and legal obligations, a gap analysis against the Annex A controls, and certification body selection — which is also when the two audit dates get booked. <em>Milestone: scope and gap baseline agreed.</em>'],
+      ['Scope &amp; gap analysis', 'ISMS boundaries, interested parties and legal obligations, a gap analysis against the Annex A controls, and certification body selection, which is also when the two audit dates get booked. <em>Milestone: scope and gap baseline agreed.</em>'],
       ['Risk assessment &amp; SoA', 'Information asset inventory, the risk methodology, risk identification and evaluation, the risk treatment plan, and the Statement of Applicability that records which controls apply and why. <em>Milestone: SoA and risk treatment approved.</em>'],
       ['Control implementation', 'The policy set, access control and identity, supplier and cloud controls, secure development and change control, physical and people controls, and incident and continuity procedures. <em>Milestone: controls implemented.</em>'],
       ['Operate &amp; accumulate records', 'The phase that cannot be shortened: running the controls long enough that access reviews, log monitoring, supplier reviews and an incident exercise have actually happened and left records behind. <em>Milestone: three months of records available.</em>'],
@@ -39,10 +39,10 @@ const T = {
     ],
     callout: 'Stage 1 and Stage 2 are separated on purpose, and the gap between them is not slack. Stage 1 tests whether your ISMS documentation is capable of being certified; it almost always raises findings, and Stage 2 will not pass until they are closed. Book six to eight weeks between the two visits and plan real work into it. The other immovable is elapsed time: an auditor at Stage 2 samples records, and records only exist if the controls have been running. You cannot implement an access review in March and show a year of evidence in April.',
     customize: [
-      'Book the certification body early and set the Stage 2 date first — everything before it is a countdown, not an estimate.',
+      'Book the certification body early and set the Stage 2 date first, everything before it is a countdown, not an estimate.',
       'Keep at least six weeks between Stage 1 and Stage 2 for corrective action; shortening it is the most common cause of a failed Stage 2.',
       'Expand the control implementation rows to one line per Annex A theme, or per control, once the Statement of Applicability is approved.',
-      'Lengthen the operating phase if your risk treatment relies on controls with quarterly or annual cycles — you need at least one full cycle of evidence.',
+      'Lengthen the operating phase if your risk treatment relies on controls with quarterly or annual cycles, you need at least one full cycle of evidence.',
       'Add rows for any scope exclusions you have to justify, since those are what Stage 1 will probe hardest.',
       'Add the year-one surveillance audit as a dated row so the ISMS is resourced past the certificate.',
     ],
@@ -56,7 +56,7 @@ const T = {
     related: ['iso-9001-certification-plan', 'soc2-compliance-timeline', 'internal-audit-plan'],
     faq: [
       ['How long does ISO 27001 certification take?', 'Commonly twelve to eighteen months from a standing start for an organisation with no existing ISMS. The template uses roughly fifteen months. The parts that resist compression are the operating period that generates records and the mandatory gap between Stage 1 and Stage 2.'],
-      ['What is the difference between Stage 1 and Stage 2?', 'Stage 1 is a documentation and readiness review — scope, policies, risk assessment, Statement of Applicability, internal audit and management review evidence. Stage 2 is the full audit of whether the ISMS actually operates. Stage 1 findings must be closed before Stage 2, which is why the template leaves a corrective action window between them.'],
+      ['What is the difference between Stage 1 and Stage 2?', 'Stage 1 is a documentation and readiness review, scope, policies, risk assessment, Statement of Applicability, internal audit and management review evidence. Stage 2 is the full audit of whether the ISMS actually operates. Stage 1 findings must be closed before Stage 2, which is why the template leaves a corrective action window between them.'],
       ['Do I need an internal audit and management review before Stage 2?', 'Yes. Both are mandatory clauses of the standard and both are things the auditor will ask to see evidence of. The template puts them ahead of Stage 1 so the corrective actions they raise have time to be closed.'],
       ['Is ISO 27001 the same as SOC 2?', 'No. ISO 27001 is an international standard you are certified against by an accredited body, on a three-year cycle with annual surveillance audits. SOC 2 is an AICPA attestation performed by a CPA firm against the Trust Services Criteria, and a Type II report covers a defined observation window rather than granting a certificate. Use the <a href="/templates/soc2-compliance-timeline.html">SOC 2 compliance timeline</a> for that; the two plans overlap on controls but not on dates.'],
       ['How does this differ from the ISO 9001 plan?', 'The audit mechanics are the same two-stage shape, but the content is different: ISO 9001 is a quality management system, this is an information security management system built on a risk assessment and a Statement of Applicability. See the <a href="/templates/iso-9001-certification-plan.html">ISO 9001 certification plan</a> if you are certifying both.'],
@@ -118,7 +118,7 @@ const T = {
     kw: 'crm implementation plan template',
     metaTitle: 'CRM Implementation Plan Template',
     metaDesc: 'Free CRM implementation plan: process design, data cleanse and dedupe, configuration, migration rehearsals, training and a quarter-boundary cutover.',
-    lead: 'A free <strong>CRM implementation plan template</strong> that puts the work where it actually is — not in configuring objects, but in auditing, deduplicating and reconciling the customer data you are about to move, and in landing the cutover at a point in the quarter that does not wreck a forecast. Covers process design, data cleanse, configuration and integration, migration rehearsals, training cohorts, cutover and the first full forecast cycle in the new system.',
+    lead: 'A free <strong>CRM implementation plan template</strong> that puts the work where it actually is, not in configuring objects, but in auditing, deduplicating and reconciling the customer data you are about to move, and in landing the cutover at a point in the quarter that does not wreck a forecast. Covers process design, data cleanse, configuration and integration, migration rehearsals, training cohorts, cutover and the first full forecast cycle in the new system.',
     intro: 'Everybody budgets for configuration and nobody budgets for the data. But a rep who opens the new CRM and sees three copies of their biggest account stops using it that morning, and no amount of training recovers that:',
     phases: [
       ['Discovery &amp; process design', 'Sales process and stage definitions, pipeline and forecast definitions, field and object design, and the reporting requirements the whole configuration is sized against. <em>Milestone: design signed off.</em>'],
@@ -131,10 +131,10 @@ const T = {
     callout: 'Pick the cutover date off the sales calendar, not the project plan. Migrating mid-quarter means a rep is asked to re-enter live deals in the middle of the run to quota, and a forecast that half exists in each system is a forecast nobody can defend to a board. Cut over in the first fortnight of a new quarter, when the pipeline has just been reset and reconciled, and the first forecast cycle in the new CRM starts from a number both systems agreed on.',
     customize: [
       'Set the cutover in the first two weeks of a quarter, then count backwards; the final rehearsal should finish at least three weeks before it.',
-      'Break the dedupe rows out per object — accounts, contacts, leads, opportunities — because the match keys and the owners are different for each.',
+      'Break the dedupe rows out per object, accounts, contacts, leads, opportunities, because the match keys and the owners are different for each.',
       'Push rep training as late as it will go without colliding with cutover; training people six weeks early means training them twice.',
       'Add rows per integration if quoting, ERP or marketing automation have their own vendor dependencies.',
-      'Keep sales-owned record remediation as a named row with a named owner — it is business work, not a data team task.',
+      'Keep sales-owned record remediation as a named row with a named owner, it is business work, not a data team task.',
       'Add a row for the historical activity decision; migrating five years of emails and calls is usually the single most expensive choice in the plan.',
     ],
     tips: [
@@ -142,7 +142,7 @@ const T = {
       '<strong>Reconcile pipeline value against the legacy system on cutover day.</strong> If the two numbers do not match before anybody logs in, you will spend the quarter arguing about which one is real.',
       '<strong>Train managers before reps.</strong> Adoption is enforced in one-to-ones; a manager who cannot run their own pipeline review in the new tool will quietly let the team keep using spreadsheets.',
       '<strong>Migrate less history.</strong> Open opportunities and the last two years of activity cover almost every real use; the rest is an archive question, not a migration question.',
-      '<strong>Measure adoption, not go-live.</strong> Logins prove nothing. Track whether deals have next steps, close dates and stage movement — that is what makes the pipeline trustworthy.',
+      '<strong>Measure adoption, not go-live.</strong> Logins prove nothing. Track whether deals have next steps, close dates and stage movement, that is what makes the pipeline trustworthy.',
     ],
     related: ['erp-implementation-schedule', 'data-migration-project-plan', 'change-management-plan'],
     faq: [
@@ -150,7 +150,7 @@ const T = {
       ['Why is data migration the critical path rather than configuration?', 'Because configuration is bounded work you control and data is not. Profiling finds problems, deduplication needs business decisions, and sales-owned remediation runs at the speed of people who have quota. The template starts data work in month one for that reason.'],
       ['When should we cut over?', 'At a quarter boundary, in the first two weeks of a new quarter. Mid-quarter cutovers split the forecast across two systems, and a forecast nobody trusts is the fastest way to lose sales adoption permanently.'],
       ['How many migration rehearsals do we need?', 'At least two plus a timed run. The first tests the mapping, the second tests the deduplicated data with real sales validation, and the timed run at full volume proves the load fits the cutover window you have booked.'],
-      ['How does this relate to the change management template?', 'This plan covers the system. The <a href="/templates/change-management-plan.html">change management plan</a> covers the people workstream that runs alongside it — impact assessment, sponsor roadshows, training cohorts and post-launch reinforcement. Large CRM programmes need both.'],
+      ['How does this relate to the change management template?', 'This plan covers the system. The <a href="/templates/change-management-plan.html">change management plan</a> covers the people workstream that runs alongside it, impact assessment, sponsor roadshows, training cohorts and post-launch reinforcement. Large CRM programmes need both.'],
       ['Is the CRM implementation template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
     tasks: [
@@ -209,21 +209,21 @@ const T = {
     kw: 'disaster recovery plan project timeline',
     metaTitle: 'Disaster Recovery Plan Template',
     metaDesc: 'Free disaster recovery plan timeline: business impact analysis, RTO/RPO targets, replication build, runbooks, tabletop, partial and full failover tests.',
-    lead: 'A free <strong>disaster recovery plan template</strong> that treats the deliverable as a <em>tested</em> plan rather than a document. Business impact analysis and RTO/RPO targets set the architecture, the architecture sets the build, and the back half of the schedule is the test sequence — tabletop, then partial failover, then a full failover with business validation, each needing its own change window and its own rollback path.',
+    lead: 'A free <strong>disaster recovery plan template</strong> that treats the deliverable as a <em>tested</em> plan rather than a document. Business impact analysis and RTO/RPO targets set the architecture, the architecture sets the build, and the back half of the schedule is the test sequence, tabletop, then partial failover, then a full failover with business validation, each needing its own change window and its own rollback path.',
     intro: 'An untested DR plan is a hypothesis. The schedule below is shaped by the escalating test sequence, because each test costs a change window and each one finds things the previous one could not:',
     phases: [
       ['Business impact analysis', 'Application and service inventory, dependency mapping, the impact workshops, and the RTO and RPO targets each service is held to. Everything downstream is priced off these numbers. <em>Milestone: RTO/RPO baseline approved.</em>'],
       ['DR strategy &amp; architecture', 'Recovery tier assignment, DR site or region selection, replication and backup architecture, network and DNS failover design, and the cost review against the targets. <em>Milestone: architecture approved.</em>'],
       ['Build &amp; replication', 'DR infrastructure, storage and database replication, backup policy changes, identity and security controls at the DR site, and replication lag monitoring. <em>Milestone: replication steady state verified.</em>'],
       ['Runbooks &amp; documentation', 'A failover runbook per recovery tier, rollback and failback procedures, the crisis communication tree, and the declaration criteria that say who is allowed to call it. <em>Milestone: runbooks published.</em>'],
-      ['Test sequence', 'Tabletop first, then a partial failover of tier 1 applications with a rollback, then a full failover with business validation and a failback — with remediation time budgeted after each. <em>Milestone: full failover test passed.</em>'],
+      ['Test sequence', 'Tabletop first, then a partial failover of tier 1 applications with a rollback, then a full failover with business validation and a failback, with remediation time budgeted after each. <em>Milestone: full failover test passed.</em>'],
       ['Approval &amp; maintenance', 'Test report and residual risk, executive approval, responder training, the annual test calendar, and the change control hook that keeps new applications from silently landing outside the plan. <em>Milestone: plan approved.</em>'],
     ],
     callout: 'RTO and RPO are not aspirations, they are a bill. An RPO of fifteen minutes means synchronous or near-synchronous replication and the storage cost that comes with it; an RTO of four hours means warm infrastructure sitting there doing nothing. Agree the numbers with the business before you design anything, then show them what each tier costs and let them revise. Teams that set the targets after the architecture end up with a plan that recovers slower than the business was promised, and nobody finds out until the failover test.',
     customize: [
-      'Set the RTO and RPO per service, not per organisation — a payments service and an internal wiki should not share a tier.',
+      'Set the RTO and RPO per service, not per organisation, a payments service and an internal wiki should not share a tier.',
       'Book both change windows early; the full failover window usually needs executive sign-off and a quiet trading period, which are calendar constraints, not technical ones.',
-      'Keep the rollback row next to every test — a test with no rehearsed way back is an outage waiting for a bad day.',
+      'Keep the rollback row next to every test, a test with no rehearsed way back is an outage waiting for a bad day.',
       'Add rows per application tier if you are failing over in groups rather than all at once.',
       'Extend the remediation window after the partial test; that is where most of the real findings appear.',
       'Add the annual retest as dated rows so the plan does not quietly expire twelve months after approval.',
@@ -238,9 +238,9 @@ const T = {
     related: ['data-center-build-schedule', 'cloud-migration-project-plan', 'internal-audit-plan'],
     faq: [
       ['How long does it take to build and test a DR plan?', 'Commonly nine to fifteen months from business impact analysis to an approved, tested plan. The template uses about fifteen months. The build is predictable; the test sequence at the end is what stretches, because each test needs a change window and a remediation cycle after it.'],
-      ['What is the difference between RTO and RPO?', 'RTO is how long you can be down — the time to restore service. RPO is how much data you can afford to lose — the age of the last usable copy. RTO drives standby infrastructure, RPO drives replication frequency, and together they determine most of the cost of the plan.'],
+      ['What is the difference between RTO and RPO?', 'RTO is how long you can be down, the time to restore service. RPO is how much data you can afford to lose, the age of the last usable copy. RTO drives standby infrastructure, RPO drives replication frequency, and together they determine most of the cost of the plan.'],
       ['Why three tests rather than one?', 'Because they find different things. A tabletop finds gaps in the runbook and the decision chain for the price of a meeting room. A partial failover finds technical faults on a limited blast radius. A full failover with business validation is the only thing that proves the RTO. Each needs the previous one to have been fixed first.'],
-      ['Do we need a change window for the tests?', 'For the partial and full failover, yes — they move production traffic and carry real risk. Book them with a rehearsed rollback and a defined abort criterion. The tabletop needs no window, which is exactly why it should be exhausted first.'],
+      ['Do we need a change window for the tests?', 'For the partial and full failover, yes, they move production traffic and carry real risk. Book them with a rehearsed rollback and a defined abort criterion. The tabletop needs no window, which is exactly why it should be exhausted first.'],
       ['How does this relate to business continuity?', 'Disaster recovery is the technology subset: restoring systems and data. Business continuity is wider and covers people, premises and process. This template covers the DR side, though the crisis communication and declaration rows are shared with any continuity plan you run.'],
       ['Is the disaster recovery template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
@@ -300,21 +300,21 @@ const T = {
     kw: 'rfp process timeline template',
     metaTitle: 'RFP Procurement Timeline Template',
     metaDesc: 'Free RFP procurement timeline: requirements, tender documents, clarification deadline, submission date, evaluation panel, standstill and mobilisation.',
-    lead: 'A free <strong>RFP procurement timeline template</strong> for running a competitive tender from requirements through to service commencement — business case and evaluation criteria, tender pack, the open bidding period with its clarification deadline and fixed submission date, panel evaluation and moderation, award and standstill, then contract and mobilisation. Most of these dates belong to other people, which is exactly why they need to be on a chart.',
+    lead: 'A free <strong>RFP procurement timeline template</strong> for running a competitive tender from requirements through to service commencement, business case and evaluation criteria, tender pack, the open bidding period with its clarification deadline and fixed submission date, panel evaluation and moderation, award and standstill, then contract and mobilisation. Most of these dates belong to other people, which is exactly why they need to be on a chart.',
     intro: 'A tender is a schedule made mostly of other people\'s time: bidders writing responses, panel members finding a free week, lawyers negotiating and an incumbent handing over. You control the start date and very little else:',
     phases: [
-      ['Requirements &amp; business case', 'Stakeholder requirements, business case and budget approval, the procurement route and threshold check, and the evaluation criteria and weightings — which must be fixed before anything goes out. <em>Milestone: approval to go to market.</em>'],
+      ['Requirements &amp; business case', 'Stakeholder requirements, business case and budget approval, the procurement route and threshold check, and the evaluation criteria and weightings, which must be fixed before anything goes out. <em>Milestone: approval to go to market.</em>'],
       ['Market engagement &amp; documents', 'Market research, an optional RFI or prior information notice, the RFP document itself, contract terms and schedules, the scoring model, and confirming the evaluation panel and blocking their diaries. <em>Milestone: tender pack approved.</em>'],
       ['Open tender period', 'Issue, the bidder question window, a supplier briefing, the clarification deadline, published answers to all bidders, and the bid preparation time that follows. <em>Milestone: submission deadline.</em>'],
       ['Evaluation', 'Compliance check, technical and commercial evaluation in parallel, moderation to consensus scores, presentations, due diligence on the preferred bidder and the evaluation report. <em>Milestone: award recommendation approved.</em>'],
       ['Award, standstill &amp; contract', 'Award and regret letters, the standstill or notice period, debriefs, final negotiation and signature. <em>Milestone: contract awarded.</em>'],
       ['Mobilisation &amp; transition', 'Kickoff, transition from the incumbent, onboarding and access, governance and KPI reporting, and the date the service actually starts. <em>Milestone: service commencement.</em>'],
     ],
-    callout: 'Bidders\' time is not yours to compress. If you shorten the window between publishing clarification answers and the submission deadline, you do not get a faster tender — you get fewer bids, weaker bids, and a strong supplier who declines because they could not staff a proper response in time. The same applies at the other end: a standstill or notice period exists to let unsuccessful bidders challenge, and it runs on the calendar regardless of how urgently the business wants to mobilise.',
+    callout: 'Bidders\' time is not yours to compress. If you shorten the window between publishing clarification answers and the submission deadline, you do not get a faster tender, you get fewer bids, weaker bids, and a strong supplier who declines because they could not staff a proper response in time. The same applies at the other end: a standstill or notice period exists to let unsuccessful bidders challenge, and it runs on the calendar regardless of how urgently the business wants to mobilise.',
     customize: [
       'Fix the submission deadline and the service commencement date first; both are usually externally driven and everything else fits between them.',
       'Check the minimum tender period and standstill duration for your jurisdiction and procurement route before using the durations shown.',
-      'Block the evaluation panel\'s diaries at the same time you issue the RFP — panel availability, not evaluation effort, is what usually slips this phase.',
+      'Block the evaluation panel\'s diaries at the same time you issue the RFP, panel availability, not evaluation effort, is what usually slips this phase.',
       'Add rows for site visits or reference calls if your evaluation includes them; they need supplier and referee availability, so treat them as scheduled work.',
       'Extend the transition phase substantially if an incumbent supplier is handing over data, staff or assets.',
       'Add a row per lot if the tender is divided, since evaluation and award can complete at different times per lot.',
@@ -329,10 +329,10 @@ const T = {
     related: ['ma-due-diligence-timeline', 'internal-audit-plan', 'erp-implementation-schedule'],
     faq: [
       ['How long does an RFP process take?', 'Commonly six to twelve months from requirements to service commencement for a significant contract. The template uses roughly twelve months. The tender period and the evaluation phase are the two blocks people underestimate, because both depend on people outside the project team.'],
-      ['How long should bidders get to respond?', 'Long enough to write a serious response after the clarification answers are published — commonly four to six weeks for a substantial tender, and longer where the requirement is complex or the bidder must price a transition. Regulated procurements often have a statutory minimum; check yours before shortening it.'],
+      ['How long should bidders get to respond?', 'Long enough to write a serious response after the clarification answers are published, commonly four to six weeks for a substantial tender, and longer where the requirement is complex or the bidder must price a transition. Regulated procurements often have a statutory minimum; check yours before shortening it.'],
       ['What is the standstill period for?', 'It is the gap between telling bidders the outcome and signing the contract, during which an unsuccessful bidder can seek a debrief or challenge the decision. It is a fixed calendar period in many public procurement regimes and cannot be compressed to hit a mobilisation date.'],
       ['Why is the clarification deadline on the chart?', 'Because it drives two things: the date your team must have all answers drafted and published, and the point after which bidders are writing rather than asking. Move it late and you have silently shortened the bid preparation window.'],
-      ['Can I use this for a private-sector tender?', 'Yes. Drop the statutory notice rows and keep the sequence — question window, fixed submission date, moderated evaluation, negotiation and mobilisation all behave the same way. The discipline of publishing answers to all bidders is worth keeping regardless.'],
+      ['Can I use this for a private-sector tender?', 'Yes. Drop the statutory notice rows and keep the sequence, question window, fixed submission date, moderated evaluation, negotiation and mobilisation all behave the same way. The discipline of publishing answers to all bidders is worth keeping regardless.'],
       ['Is the RFP timeline template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up and no watermark.'],
     ],
     tasks: [
@@ -392,7 +392,7 @@ const T = {
     kw: 'change management plan template',
     metaTitle: 'Change Management Plan Template',
     metaDesc: 'Free change management plan: impact assessment, sponsor roadshows, communications, training cohorts timed to go-live, hypercare and reinforcement.',
-    lead: 'A free <strong>change management plan template</strong> for the people workstream that runs alongside a technical project — stakeholder and impact assessment, sponsor coalition and champion network, communications by audience, training cohorts timed to go-live rather than to convenience, readiness and floor support, then the reinforcement after launch that decides whether any of it sticks. Pair it with the system plan, whether that is an <a href="/templates/erp-implementation-schedule.html">ERP implementation</a> or a <a href="/templates/crm-implementation-plan.html">CRM rollout</a>.',
+    lead: 'A free <strong>change management plan template</strong> for the people workstream that runs alongside a technical project, stakeholder and impact assessment, sponsor coalition and champion network, communications by audience, training cohorts timed to go-live rather than to convenience, readiness and floor support, then the reinforcement after launch that decides whether any of it sticks. Pair it with the system plan, whether that is an <a href="/templates/erp-implementation-schedule.html">ERP implementation</a> or a <a href="/templates/crm-implementation-plan.html">CRM rollout</a>.',
     intro: 'Change management is usually drawn as a box labelled "training" next to go-live. It is not one box. It is a workstream with its own dependencies, and the half that matters most starts the week after launch:',
     phases: [
       ['Change strategy &amp; impact assessment', 'Stakeholder mapping, a change impact assessment by affected group, a readiness baseline, and the strategy that sets how much support each group needs. <em>Milestone: change strategy approved.</em>'],
@@ -402,14 +402,14 @@ const T = {
       ['Go-live readiness &amp; support', 'Readiness assessment by business unit, a second sponsor roadshow, the floor-walker and superuser rota, readiness sign-off and hypercare. <em>Milestone: go-live.</em>'],
       ['Reinforcement &amp; sustainment', 'Adoption metrics, pulse surveys at week two and month three, targeted refresher training, manager coaching, recognition, and the benefits review. <em>Milestone: handover to business as usual.</em>'],
     ],
-    callout: 'Time training to go-live, not to the trainer\'s calendar. Skills decay fast, and a cohort trained six weeks early will have forgotten most of it and will quietly ask a colleague instead. Run cohorts in waves so the last one finishes days before launch, and give the pilot group enough of a gap that their feedback can still improve the material. Then protect the reinforcement phase, because it is always the first thing cut and it is the only phase that changes long-term behaviour — the refresher training after the first pulse survey is worth more than another pre-launch email.',
+    callout: 'Time training to go-live, not to the trainer\'s calendar. Skills decay fast, and a cohort trained six weeks early will have forgotten most of it and will quietly ask a colleague instead. Run cohorts in waves so the last one finishes days before launch, and give the pilot group enough of a gap that their feedback can still improve the material. Then protect the reinforcement phase, because it is always the first thing cut and it is the only phase that changes long-term behaviour, the refresher training after the first pulse survey is worth more than another pre-launch email.',
     customize: [
       'Set go-live first, then place the final training cohort a few days before it and work every other cohort backwards from there.',
       'Add one impact assessment row per affected group; a shared services team and a field engineer do not experience the same change.',
       'Size the champion network to roughly one champion per team, and make their time an agreed allocation rather than a favour.',
       'Add sponsor roadshow rows per region or business unit if the sponsor cannot cover everyone in one round.',
       'Extend hypercare for shift-based or seasonal operations so every shift pattern gets support during its first live week.',
-      'Keep the pulse surveys and refresher training as dated rows after go-live — they are the rows most often deleted and the ones that determine adoption.',
+      'Keep the pulse surveys and refresher training as dated rows after go-live, they are the rows most often deleted and the ones that determine adoption.',
     ],
     tips: [
       '<strong>Impact assessment before communications.</strong> You cannot tell someone what changes for them until you have worked out what changes for them, and generic messaging is what makes people assume the change is not for them.',

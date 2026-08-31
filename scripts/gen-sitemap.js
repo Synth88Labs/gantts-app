@@ -1,5 +1,5 @@
 /* ============================================================
-   gen-sitemap.js — scan .html files and emit sitemap.xml
+   gen-sitemap.js, scan .html files and emit sitemap.xml
 
    Run: node scripts/gen-sitemap.js
 
@@ -16,7 +16,7 @@
       every time anything was deployed. Google only trusts lastmod when
       it is consistently accurate; a sitemap where all the dates move
       together teaches it to ignore the field entirely. Git's last
-      commit date for a file is the honest answer — and because the
+      commit date for a file is the honest answer, and because the
       generators rewrite files with identical content, git correctly
       reports no change when nothing actually changed.
 
@@ -39,7 +39,7 @@ const ROOT = path.join(__dirname, '..');
 const BASE = 'https://gantts.app';
 
 const LOCALE_RE = /^(es|fr|de|pt|zh)\//;
-// `deploy/` is a build artifact holding a full copy of the site —
+// `deploy/` is a build artifact holding a full copy of the site, 
 // walking it would list every URL twice.
 const SKIP = new Set(['node_modules', 'scripts', 'docs', '.git', 'deploy',
   'i18n', 'templates/files', 'templates/img', 'test']);
@@ -56,7 +56,7 @@ function gitDates() {
     out = execSync('git log --pretty=format:%cs --name-only --diff-filter=AM',
       { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   } catch (e) {
-    console.warn('  ⚠ git history unavailable — falling back to file mtime');
+    console.warn('  ⚠ git history unavailable, falling back to file mtime');
     return null;
   }
   let date = null;
@@ -118,7 +118,7 @@ function altLinks(rel) {
   if (!localizedSubs.has(sub)) return '';
   /* Must go through toUrl(), not string concatenation. `blog/index.html`
      is canonicalised to /blog/ in <loc>, so building the English
-     alternate by hand produced hreflang pointing at /blog/index.html —
+     alternate by hand produced hreflang pointing at /blog/index.html, 
      a URL that is not canonical and is not in the sitemap, which breaks
      the whole cluster. Caught by check-sitemap.js. */
   const enUrl = toUrl(sub === '' ? 'index.html' : sub);
@@ -150,7 +150,7 @@ const dates = {};
 pages.forEach(p => { const d = lastmod(p); dates[d] = (dates[d] || 0) + 1; });
 const spread = Object.keys(dates).sort();
 
-console.log(`sitemap.xml written — ${pages.length} URLs (${localized} localized, ${localizedSubs.size} hreflang cluster(s))`);
+console.log(`sitemap.xml written, ${pages.length} URLs (${localized} localized, ${localizedSubs.size} hreflang cluster(s))`);
 console.log(`  lastmod: ${spread.length} distinct date(s) ` +
-  (spread.length === 1 ? `(${spread[0]}) — expected once history diversifies` : `${spread[0]} … ${spread[spread.length - 1]}`));
+  (spread.length === 1 ? `(${spread[0]}), expected once history diversifies` : `${spread[0]} … ${spread[spread.length - 1]}`));
 if (!DATES) console.log('  (dates came from file mtime, not git)');

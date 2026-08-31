@@ -1,5 +1,5 @@
 /* ============================================================
-   bento-icons.js — the feature-grid icons and layout classes from
+   bento-icons.js, the feature-grid icons and layout classes from
    the English homepage.
 
    The localized homepages rendered the same six features as plain
@@ -9,12 +9,12 @@
 
    Icons are inline SVG and carry no text, so they are shared verbatim
    rather than duplicated per locale. b1 is deliberately iconless in
-   the English original — it is the wide feature cell — and that is
+   the English original, it is the wide feature cell, and that is
    preserved.
    ============================================================ */
 
-/* b1 carries a full illustration (.bento-visual) — a small Gantt-bars
-   figure — rather than a 24px icon. The first extraction recorded b1 as
+/* b1 carries a full illustration (.bento-visual), a small Gantt-bars
+   figure, rather than a 24px icon. The first extraction recorded b1 as
    "deliberately iconless" and stopped there, so every localized homepage
    lost the only piece of artwork in that section while English kept it.
    That was the visible half of "the other languages have no infographics".

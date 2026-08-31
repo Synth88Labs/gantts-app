@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /* ============================================================
-   indexnow.js — ping IndexNow with every URL in sitemap.xml.
+   indexnow.js, ping IndexNow with every URL in sitemap.xml.
 
    IndexNow is an open submission protocol: Bing, Yandex, Seznam and
-   Naver consume it. No account, no login, no API key exchange — the
+   Naver consume it. No account, no login, no API key exchange, the
    key file hosted at the site root IS the proof of ownership.
 
    Google does NOT support IndexNow. Google discovery still comes from
@@ -23,7 +23,7 @@ const https = require('https');
 
 /* The active IndexNow key. The file at https://<HOST>/<KEY>.txt is the
    ONLY proof of ownership in this protocol, so the key here and the
-   file at the site root must always agree — a mismatch is the usual
+   file at the site root must always agree, a mismatch is the usual
    cause of a 403.
 
    Both this key file and the previous one are kept in the repo and
@@ -45,7 +45,7 @@ function sitemapUrls() {
 
 /* IndexNow is per-URL and one-shot: a URL only needs submitting ONCE, when its
    content changes. Repeatedly re-submitting the whole sitemap is the "IndexNow
-   Batch Mode" that Bing Webmaster Tools flags — it reads as excessive load and
+   Batch Mode" that Bing Webmaster Tools flags, it reads as excessive load and
    can throttle crawling / delay indexing. So the whole-sitemap path is gated
    behind an explicit --all (for the one-time initial submission only); the
    normal path is passing just the URL(s) that actually changed. */
@@ -58,7 +58,7 @@ if (explicit.length) {
   console.error('✗ IndexNow: refusing to re-submit the whole sitemap.');
   console.error('  A URL only needs IndexNow once, when it changes. Repeated full-batch');
   console.error('  submits are the "IndexNow Batch Mode" Bing penalises (load + indexing delays).\n');
-  console.error('  Normal use — submit only the page(s) that changed:');
+  console.error('  Normal use, submit only the page(s) that changed:');
   console.error('    node scripts/indexnow.js https://' + HOST + '/<changed>.html [...]\n');
   console.error('  One-time initial submission of the whole sitemap:');
   console.error('    node scripts/indexnow.js --all');
@@ -73,7 +73,7 @@ if (!urlList.length) {
 // Guard against submitting URLs for a host we do not own.
 const foreign = urlList.filter(u => { try { return new URL(u).host !== HOST; } catch { return true; } });
 if (foreign.length) {
-  console.error('✗ Refusing to submit — these URLs are not on ' + HOST + ':');
+  console.error('✗ Refusing to submit, these URLs are not on ' + HOST + ':');
   foreign.slice(0, 5).forEach(u => console.error('   ' + u));
   process.exit(1);
 }
@@ -88,7 +88,7 @@ const payload = JSON.stringify({
 console.log(`IndexNow → ${urlList.length} URL(s) on ${HOST}`);
 if (dry) {
   urlList.forEach(u => console.log('   ' + u));
-  console.log('\n(dry run — nothing submitted)');
+  console.log('\n(dry run, nothing submitted)');
   process.exit(0);
 }
 
@@ -102,20 +102,20 @@ const req = https.request(ENDPOINT, {
     // 200 = accepted, 202 = accepted pending key validation
     if (res.statusCode === 200 || res.statusCode === 202) {
       console.log(`✓ Accepted (HTTP ${res.statusCode}). Submitted ${urlList.length} URL(s).`);
-      if (res.statusCode === 202) console.log('  202 means the key file is still being validated — normal on first run.');
+      if (res.statusCode === 202) console.log('  202 means the key file is still being validated, normal on first run.');
     } else {
-      console.error(`✗ HTTP ${res.statusCode}${body ? ' — ' + body.slice(0, 300) : ''}`);
+      console.error(`✗ HTTP ${res.statusCode}${body ? ', ' + body.slice(0, 300) : ''}`);
 
       /* 403 has two very different causes and the advice for them is
          opposite. Reading errorCode tells them apart instead of
-         guessing — the earlier version always blamed an unreachable key
+         guessing, the earlier version always blamed an unreachable key
          file, which sent you checking a file that was serving fine. */
       if (res.statusCode === 403) {
         let code = '';
         try { code = (JSON.parse(body) || {}).errorCode || ''; } catch { /* not JSON */ }
 
         if (/SiteVerificationNotCompleted/i.test(code)) {
-          console.error('\n  The key file is fine — this is the search engine still verifying it.');
+          console.error('\n  The key file is fine, this is the search engine still verifying it.');
           console.error('  A newly published key is not accepted immediately. Wait and re-run;');
           console.error('  it usually clears within minutes to a few hours of the file going live.');
           console.error('  Nothing to fix, and re-running is safe: submissions are idempotent.');

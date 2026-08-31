@@ -1,12 +1,12 @@
 /* ============================================================
-   template-cards.js — one-line card descriptions per locale.
+   template-cards.js, one-line card descriptions per locale.
 
    WHY THIS IS SEPARATE FROM templates-<lang>.js
 
    A full template translation (lead, phases, callout, tips, FAQ) is a
    page of work; a card blurb is one line. Tying them together meant a
    locale got a wall of bare labels on its hub until someone translated
-   all 41 pages — which is exactly what left the German hub at 35% of
+   all 41 pages, which is exactly what left the German hub at 35% of
    the English one and the French at 44%.
 
    Splitting them lets a locale get a usable hub immediately and richer
@@ -24,29 +24,29 @@ const CARDS = {
   de: {
     'project-management': 'Generischer Fünf-Phasen-Plan, vom Start bis zum Abschluss, mit Freigabe-Meilensteinen.',
     'simple': 'Wenige Zeilen, klare Termine, sonst nichts. Für kurze Pläne, die Sie wirklich pflegen.',
-    'construction': 'Genehmigungen, Gründung, Rohbau, Gewerke und Ausbau — samt Abnahmen.',
+    'construction': 'Genehmigungen, Gründung, Rohbau, Gewerke und Ausbau, samt Abnahmen.',
     'software-development': 'Discovery, Design, Sprints, Integration, QA und Deployment.',
     'home-renovation': 'Die echte Reihenfolge der Gewerke, damit keine Wand zweimal aufgeht.',
     'wedding-planning': 'Zwölf Monate, sortiert danach, was zuerst ausgebucht ist.',
-    'product-launch': 'Produkt, Material, Vertriebsbefähigung und Presse — alle auf denselben Tag.',
+    'product-launch': 'Produkt, Material, Vertriebsbefähigung und Presse, alle auf denselben Tag.',
     'event-planning': 'Location, Dienstleister, Anmeldungen, Aufbau und Abbau um ein festes Datum.',
     'research': 'Literatur, Design, Ethik, Datenerhebung, Auswertung und Veröffentlichung.',
     'marketing': 'Strategie, Kreation, Freigaben, Produktion, Launch und Auswertung.',
-    'content-calendar': 'Jeder Beitrag durchläuft Text, Redaktion, Design und Publikation — mit Verantwortlichem.',
+    'content-calendar': 'Jeder Beitrag durchläuft Text, Redaktion, Design und Publikation, mit Verantwortlichem.',
     'employee-onboarding': 'Preboarding, erster Tag, erste Woche und Reviews nach 30, 60 und 90 Tagen.',
     '30-60-90-day-plan': 'Lernen, beitragen, führen: die ersten drei Monate in einer neuen Rolle.',
     'product-roadmap': 'Initiativen nach Thema und Quartal, mit Releases und Abhängigkeiten.',
     'weekly': 'Fünf Tage auf einen Blick. Ein Fokus-Werkzeug, kein Planungswerkzeug.',
     'monthly': 'Vier Wochen nach Bereichen gruppiert, Lieferungen als Meilensteine.',
     'annual': 'Zwölf Monate nach Quartalen, externe Verpflichtungen als Meilensteine.',
-    'agile': 'Epics, Sprints und Releases auf einer Zeitachse — ohne das Board zu ersetzen.',
+    'agile': 'Epics, Sprints und Releases auf einer Zeitachse, ohne das Board zu ersetzen.',
     'sprint': 'Zwei Wochen mit den Zeremonien am richtigen Platz und QA parallel, nicht am Ende.',
     'refinery-turnaround-schedule': 'Kompletter Stillstandszyklus: Planung, Scope Freeze, Ausführung und Anfahren.',
     'solar-farm-construction-schedule': 'Machbarkeit, Netzanschluss, Genehmigungen, Montage und Inbetriebnahme.',
     'wind-farm-construction-schedule': 'Windmessung, Genehmigung, Netzanschluss, Fundamente, Montage und erster Strom.',
     'ev-charging-installation-schedule': 'Standortprüfung, Netzbetreiber, Tiefbau, Installation und Freischaltung.',
     'mining-project-schedule': 'Exploration, Bohrungen, Machbarkeitsstudien, Genehmigungen und Hochlauf.',
-    'shipbuilding-project-schedule': 'Blechzuschnitt, Kiellegung, Stapellauf und Ablieferung — mit Zahlungsmeilensteinen.',
+    'shipbuilding-project-schedule': 'Blechzuschnitt, Kiellegung, Stapellauf und Ablieferung, mit Zahlungsmeilensteinen.',
     'apparel-production-calendar': 'Time and Action: Tech Pack, Muster, Stoff, Zuschnitt, Näherei und Ex-Factory.',
     'hotel-pre-opening-critical-path': 'Sechs Monate Countdown nach Abteilung: Rooms, F&amp;B, Technik, HR und Sales.',
     'erp-implementation-schedule': 'Analyse, Design, Konfiguration, Datenmigration, Tests, Go-live und Hypercare.',
@@ -57,11 +57,11 @@ const CARDS = {
     'clinical-trial-gantt-chart': 'Protokoll, Ethikvotum, Zentren, Rekrutierung, Database Lock und Auswertung.',
     'dissertation-gantt-chart': 'Zwölf Monate: Exposé, Literatur, Ethik, Feldarbeit, Auswertung und Abgabe.',
     'phd-research-gantt-chart': 'Drei bis vier Jahre: Exposé, Empirie, Publikationen, Schreiben und Verteidigung.',
-    'grant-proposal-gantt-chart': 'Arbeitspakete, Deliverables und Meilensteine — so wie Gutachter sie erwarten.',
+    'grant-proposal-gantt-chart': 'Arbeitspakete, Deliverables und Meilensteine, so wie Gutachter sie erwarten.',
     'excel': 'Tabelle und Diagramm fertig eingerichtet: Daten ersetzen, fertig.',
     'google-sheets': 'CSV zum Importieren, kompatibel mit der Zeitachsen-Funktion.',
-    'powerpoint': 'Balken als native, bearbeitbare Formen — zum Präsentieren gemacht.',
-    'printable-gantt-chart': 'Klares Raster, hoher Kontrast — für die Wand oder das Schwarze Brett.',
+    'powerpoint': 'Balken als native, bearbeitbare Formen, zum Präsentieren gemacht.',
+    'printable-gantt-chart': 'Klares Raster, hoher Kontrast, für die Wand oder das Schwarze Brett.',
     'one-page-gantt-chart': 'Der ganze Plan auf Phasen und Meilensteine verdichtet, in DIN-A4-Größe.',
   },
 
@@ -83,7 +83,7 @@ const CARDS = {
     'weekly': 'Cinq jours en un coup d’œil. Un outil de concentration, pas de planification.',
     'monthly': 'Quatre semaines groupées par domaine, livrables en jalons.',
     'annual': 'Douze mois par trimestres, engagements externes en jalons.',
-    'agile': 'Épiques, sprints et releases sur une frise — sans remplacer le tableau.',
+    'agile': 'Épiques, sprints et releases sur une frise, sans remplacer le tableau.',
     'sprint': 'Deux semaines avec les cérémonies à leur place et la recette en parallèle.',
     'refinery-turnaround-schedule': 'Cycle complet d’arrêt : planification, gel du périmètre, exécution et redémarrage.',
     'solar-farm-construction-schedule': 'Faisabilité, raccordement, permis, structures et mise en service.',

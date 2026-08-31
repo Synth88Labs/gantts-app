@@ -1,4 +1,4 @@
-/* sw.js — service worker for gantts.app (offline app shell) */
+/* sw.js - service worker for gantts.app (offline app shell) */
 var CACHE = 'gantts-v49';
 var V = '?v=60';
 var SHELL = [

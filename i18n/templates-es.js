@@ -1,12 +1,12 @@
 /* ============================================================
-   i18n/templates-es.js — Spanish template detail pages.
+   i18n/templates-es.js, Spanish template detail pages.
 
    Same shape as scripts/new-templates.js, minus the task list (the
    schedule data is language-independent; only the prose is translated).
 
    Only slugs present here get a /es/templates/<slug>.html. A template
    with no entry keeps linking to its English page rather than getting a
-   machine-translated stand-in — a thin auto-translated page is worse
+   machine-translated stand-in, a thin auto-translated page is worse
    than an honest English one, both for the reader and under Google's
    spam policy on bulk translated content.
 
@@ -25,7 +25,7 @@ const T = {
     lead: 'Una <strong>plantilla gratuita de cronograma de parada de refinería</strong> construida sobre el ciclo real de una parada programada: planificación a largo plazo, congelación del alcance, desarrollo de paquetes de trabajo, aprovisionamiento de larga entrega, ejecución y arranque. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica que marca tu vuelta a servicio.',
     intro: 'Las paradas se planifican en meses y se miden en horas. La plantilla está organizada en las seis etapas por las que realmente pasa una parada programada:',
     phases: [
-      ['Planificación a largo plazo', 'Justificación, objetivos de la parada, presupuesto preliminar y ventana objetivo, normalmente abierta con 18–24 meses de antelación. <em>Hito: parada aprobada.</em>'],
+      ['Planificación a largo plazo', 'Justificación, objetivos de la parada, presupuesto preliminar y ventana objetivo, normalmente abierta con 18-24 meses de antelación. <em>Hito: parada aprobada.</em>'],
       ['Definición y congelación del alcance', 'Recopilación del listado de trabajos, sesiones de cuestionamiento, priorización por riesgo y la congelación en firme que corta las incorporaciones tardías. <em>Hito: alcance congelado.</em>'],
       ['Desarrollo de paquetes de trabajo', 'Planes de trabajo, estrategia de aislamiento y permisos, carga de recursos, alcance de contratistas y cronograma detallado de ejecución.'],
       ['Aprovisionamiento y larga entrega', 'Materiales, intercambiadores, catalizador, válvulas y servicios especializados pedidos según sus plazos de entrega, más andamiaje y movilización de equipos.'],
@@ -73,7 +73,7 @@ const T = {
     callout: 'El frente comercial es el que siempre se recorta y el que no debería. Ventas, distribución y conectividad de canales tienen que arrancar meses antes de abrir, porque un hotel que abre sin distribución abre vacío. Dale su propia línea en el gráfico en lugar de dejarlo para cuando la obra se calme.',
     customize: [
       'Fija la fecha de apertura y deja que cada línea cuente hacia atrás desde ahí: una preapertura es una cuenta atrás, no un plan hacia delante.',
-      'Ajusta el margen: 3 meses encaja con un hotel de servicio limitado; 6–9 con uno de servicio completo o un resort.',
+      'Ajusta el margen: 3 meses encaja con un hotel de servicio limitado; 6-9 con uno de servicio completo o un resort.',
       'Añade una fila por jefe de departamento para que cada línea tenga un responsable con nombre.',
       'Sitúa las oleadas de contratación antes de la formación, no antes de la apertura: contratar pronto cuesta nómina y contratar tarde deja gente sin formar.',
       'Marca cada licencia e inspección como hito: son barreras, no tareas.',
@@ -297,7 +297,7 @@ const T = {
       ['Despliegue', 'Preparación de entorno, migración de datos, ventana de despliegue y verificación posterior. <em>Hito: en producción.</em>'],
       ['Estabilización', 'Soporte reforzado, corrección de incidencias y traspaso a operaciones.'],
     ],
-    callout: 'Un Gantt no sustituye al tablero: lo complementa. Dentro del sprint manda el equipo; el diagrama existe para mostrar lo que el tablero no ve — dependencias externas, fechas contractuales y la ventana de despliegue.',
+    callout: 'Un Gantt no sustituye al tablero: lo complementa. Dentro del sprint manda el equipo; el diagrama existe para mostrar lo que el tablero no ve, dependencias externas, fechas contractuales y la ventana de despliegue.',
     customize: [
       'Ajusta la duración y el número de sprints; dos semanas por sprint es lo más habitual.',
       'Añade una fila por dependencia externa (API de terceros, aprobación legal, entrega de contenidos).',
@@ -368,11 +368,11 @@ const T = {
     lead: 'Una <strong>plantilla para organizar una boda</strong> repartida en doce meses, con las reservas ordenadas por lo que se agota antes. La fecha es fija, así que todo el plan cuenta hacia atrás desde ella.',
     intro: 'Doce meses divididos en las fases por las que pasa cualquier boda:',
     phases: [
-      ['12–10 meses: bases', 'Presupuesto, número de invitados, estilo y fecha. Reserva del lugar. <em>Hito: lugar confirmado.</em>'],
-      ['10–7 meses: proveedores clave', 'Catering, fotografía, música y vestuario: los que se reservan con más antelación.'],
-      ['7–4 meses: detalles', 'Invitaciones, flores, decoración, tarta, transporte y alojamiento de invitados.'],
-      ['4–2 meses: confirmaciones', 'Envío de invitaciones, seguimiento de confirmaciones, pruebas de vestuario y menú.'],
-      ['2 meses–1 semana: cierre', 'Distribución de mesas, ensayo, pagos finales y confirmación con todos los proveedores.'],
+      ['12-10 meses: bases', 'Presupuesto, número de invitados, estilo y fecha. Reserva del lugar. <em>Hito: lugar confirmado.</em>'],
+      ['10-7 meses: proveedores clave', 'Catering, fotografía, música y vestuario: los que se reservan con más antelación.'],
+      ['7-4 meses: detalles', 'Invitaciones, flores, decoración, tarta, transporte y alojamiento de invitados.'],
+      ['4-2 meses: confirmaciones', 'Envío de invitaciones, seguimiento de confirmaciones, pruebas de vestuario y menú.'],
+      ['2 meses, 1 semana: cierre', 'Distribución de mesas, ensayo, pagos finales y confirmación con todos los proveedores.'],
       ['Semana del evento', 'Montaje, ensayo, ceremonia y celebración. <em>Hito: ¡boda!</em>'],
     ],
     callout: 'Reserva primero lo que menos disponibilidad tiene. Lugar, fotógrafo y catering se agotan con un año de antelación en temporada alta; la decoración se puede decidir en cualquier momento. Ordenar por escasez, y no por importancia, es lo que evita quedarse sin opciones.',
@@ -620,9 +620,9 @@ const T = {
     lead: 'Un <strong>plan de 30-60-90 días</strong> estructura los tres primeros meses en un puesto nuevo: aprender, contribuir y liderar. Sirve tanto para presentarlo en una entrevista final como para organizarte una vez dentro.',
     intro: 'Tres tramos con propósitos distintos y objetivos medibles:',
     phases: [
-      ['Días 1–30: aprender', 'Entender producto, equipo, clientes y procesos. Reuniones con las áreas clave y primeras conclusiones. <em>Hito: revisión a 30 días.</em>'],
-      ['Días 31–60: contribuir', 'Asumir responsabilidades propias, primeras entregas y propuestas de mejora. <em>Hito: revisión a 60 días.</em>'],
-      ['Días 61–90: liderar', 'Tomar iniciativa, proponer plan a medio plazo y demostrar resultados. <em>Hito: revisión a 90 días.</em>'],
+      ['Días 1-30: aprender', 'Entender producto, equipo, clientes y procesos. Reuniones con las áreas clave y primeras conclusiones. <em>Hito: revisión a 30 días.</em>'],
+      ['Días 31-60: contribuir', 'Asumir responsabilidades propias, primeras entregas y propuestas de mejora. <em>Hito: revisión a 60 días.</em>'],
+      ['Días 61-90: liderar', 'Tomar iniciativa, proponer plan a medio plazo y demostrar resultados. <em>Hito: revisión a 90 días.</em>'],
     ],
     callout: 'La tentación es proponer cambios el primer mes. Los planes que funcionan invierten los treinta primeros días en escuchar: una propuesta hecha sin entender el contexto suele ser la razón por la que no se acepta.',
     customize: [
@@ -684,7 +684,7 @@ const T = {
     h1: 'Plantilla de plan semanal en diagrama de Gantt',
     metaTitle: 'Plantilla de plan semanal (Gantt)',
     metaDesc: 'Plantilla gratuita de plan semanal: cinco días, tareas por responsable y una vista que cabe en una hoja. Excel o edición online.',
-    lead: 'Un <strong>plan semanal</strong> en formato Gantt: cinco días, las tareas de la semana y quién hace cada una. No necesita dependencias ni ruta crítica — es una herramienta de foco.',
+    lead: 'Un <strong>plan semanal</strong> en formato Gantt: cinco días, las tareas de la semana y quién hace cada una. No necesita dependencias ni ruta crítica, es una herramienta de foco.',
     intro: 'Una rejilla de lunes a viernes con las tareas repartidas:',
     phases: [
       ['Lunes a martes', 'Arranque de la semana y trabajo que necesita más margen.'],
@@ -784,7 +784,7 @@ const T = {
     h1: 'Plantilla de diagrama de Gantt para proyectos ágiles',
     metaTitle: 'Plantilla de Gantt para proyectos ágiles',
     metaDesc: 'Plantilla gratuita para equipos ágiles: épicas, sprints, releases y dependencias externas en una línea de tiempo, sin sustituir al tablero.',
-    lead: 'Una <strong>plantilla de Gantt para proyectos ágiles</strong> que no compite con tu tablero: muestra épicas, sprints y releases en una línea de tiempo para responder lo que el tablero no responde — cuándo llega, y de qué depende.',
+    lead: 'Una <strong>plantilla de Gantt para proyectos ágiles</strong> que no compite con tu tablero: muestra épicas, sprints y releases en una línea de tiempo para responder lo que el tablero no responde, cuándo llega, y de qué depende.',
     intro: 'Épicas arriba, sprints debajo y releases como hitos:',
     phases: [
       ['Preparación', 'Visión, backlog inicial, estimación gruesa y definición de listo.'],
@@ -946,7 +946,7 @@ const T = {
     ],
     tips: [
       '<strong>La licencia social no es un trámite.</strong> Empieza pronto y dale duración real en el gráfico.',
-      '<strong>Los equipos de larga entrega</strong> —molinos, transformadores— se piden antes de terminar la obra.',
+      '<strong>Los equipos de larga entrega</strong>, molinos, transformadores, se piden antes de terminar la obra.',
       '<strong>Planifica la rampa de producción como fase</strong>: alcanzar la capacidad nominal lleva meses.',
       '<strong>Fija línea base en la decisión de inversión</strong>, no antes.',
     ],
@@ -999,7 +999,7 @@ const T = {
     h1: 'Plantilla de calendario de producción textil',
     metaTitle: 'Calendario de producción textil',
     metaDesc: 'Plantilla gratuita de calendario time and action para moda: ficha técnica, muestras, tejido, corte, confección, control de calidad y salida de fábrica.',
-    lead: 'Un <strong>calendario de producción textil</strong> —el clásico time and action— con la secuencia completa de una temporada: ficha técnica, muestras, aprobación de tejido, compra de materiales, corte, confección, acabado, control de calidad y salida de fábrica.',
+    lead: 'Un <strong>calendario de producción textil</strong>, el clásico time and action, con la secuencia completa de una temporada: ficha técnica, muestras, aprobación de tejido, compra de materiales, corte, confección, acabado, control de calidad y salida de fábrica.',
     intro: 'Cada fecha se cuenta hacia atrás desde la salida de fábrica:',
     phases: [
       ['Desarrollo', 'Diseño, ficha técnica, patronaje y primera muestra. <em>Hito: diseño congelado.</em>'],
@@ -1039,18 +1039,18 @@ const T = {
     intro: 'Los años de un doctorado, con los hitos institucionales marcados:',
     phases: [
       ['Año 1: propuesta y formación', 'Definición del tema, revisión bibliográfica, formación metodológica y propuesta. <em>Hito: propuesta aprobada.</em>'],
-      ['Año 1–2: diseño y ética', 'Metodología, instrumentos y aprobación del comité. <em>Hito: aprobación ética.</em>'],
-      ['Año 2–3: trabajo empírico', 'Recogida de datos, experimentos o archivo, y análisis.'],
-      ['Año 2–4: publicaciones', 'Artículos, congresos y revisión por pares, solapados con el resto.'],
-      ['Año 3–4: redacción', 'Capítulos, revisiones con dirección y formato final.'],
+      ['Año 1-2: diseño y ética', 'Metodología, instrumentos y aprobación del comité. <em>Hito: aprobación ética.</em>'],
+      ['Año 2-3: trabajo empírico', 'Recogida de datos, experimentos o archivo, y análisis.'],
+      ['Año 2-4: publicaciones', 'Artículos, congresos y revisión por pares, solapados con el resto.'],
+      ['Año 3-4: redacción', 'Capítulos, revisiones con dirección y formato final.'],
       ['Cierre', 'Depósito, informe de evaluadores, defensa y correcciones. <em>Hito: doctorado.</em>'],
     ],
-    callout: 'Las publicaciones no van al final: se solapan con todo. Empezar a publicar en el segundo año es lo que evita llegar al depósito con la tesis escrita y el currículum vacío — y la revisión por pares tarda meses que no controlas.',
+    callout: 'Las publicaciones no van al final: se solapan con todo. Empezar a publicar en el segundo año es lo que evita llegar al depósito con la tesis escrita y el currículum vacío, y la revisión por pares tarda meses que no controlas.',
     customize: [
       'Ajusta la duración total: tres o cuatro años según el sistema y la financiación.',
       'Añade una fila por artículo previsto, con su ciclo de revisión.',
       'Amplía el trabajo de campo con generosidad: la captación siempre lleva más.',
-      'Marca los hitos institucionales —evaluaciones anuales, depósito, defensa— tal como los exija tu programa.',
+      'Marca los hitos institucionales, evaluaciones anuales, depósito, defensa, tal como los exija tu programa.',
     ],
     tips: [
       '<strong>Cuenta con la latencia de dirección.</strong> Dos o tres semanas por capítulo se acumulan en años.',
@@ -1244,7 +1244,7 @@ const T = {
     ],
     related: [['construction', 'Construcción'], ['project-management', 'Gestión de proyectos'], ['solar-farm-construction-schedule', 'Planta solar']],
     faq: [
-      ['¿Cuánto se tarda en construir un centro de datos?', 'Habitualmente de 18 a 30 meses desde la selección del emplazamiento hasta el servicio, con la obra en torno a 12–18 meses. La disponibilidad de potencia y los equipos de larga entrega marcan el techo.'],
+      ['¿Cuánto se tarda en construir un centro de datos?', 'Habitualmente de 18 a 30 meses desde la selección del emplazamiento hasta el servicio, con la obra en torno a 12-18 meses. La disponibilidad de potencia y los equipos de larga entrega marcan el techo.'],
       ['¿Qué son los cinco niveles de comisionado?', 'A grandes rasgos: pruebas en fábrica, verificación de componentes en obra, comprobaciones prefuncionales, pruebas funcionales de cada sistema y pruebas integradas de todo el conjunto bajo carga simulada.'],
       ['¿Sirve para un fit-out en colocation?', 'Sí: elimina las filas de obra civil y estructura y conserva diseño, larga entrega, instalaciones y comisionado, que es donde vive un proyecto de fit-out.'],
       ['¿Es gratuita?', 'Sí, descarga en Excel, PowerPoint y CSV y edición online sin registro.'],
@@ -1303,7 +1303,7 @@ const T = {
       ['Gestión de datos', 'Entrada de datos, resolución de discrepancias, codificación y cierre. <em>Hito: base de datos cerrada.</em>'],
       ['Análisis y publicación', 'Apertura de ciego, análisis estadístico, informe clínico y publicación.'],
     ],
-    callout: 'El reclutamiento es donde fallan los ensayos. Buena parte de los estudios no llega a su fecha objetivo de inclusión porque el plan asumió un ritmo constante desde el primer día. Modela una curva —meses lentos mientras se activan los centros y después meseta— y el cronograma deja de engañarse.',
+    callout: 'El reclutamiento es donde fallan los ensayos. Buena parte de los estudios no llega a su fecha objetivo de inclusión porque el plan asumió un ritmo constante desde el primer día. Modela una curva, meses lentos mientras se activan los centros y después meseta, y el cronograma deja de engañarse.',
     customize: [
       'Fija primero la fecha de presentación a ética y haz depender de la aprobación el inicio de centros: nada legítimo puede precederla.',
       'Ajusta la barra de reclutamiento a tu tasa real por centro y mes, no a la tasa objetivo.',
@@ -1333,9 +1333,9 @@ const T = {
     lead: 'Una <strong>plantilla de programación a tres semanas vista</strong> montada tal y como se lleva la reunión del lunes en obra: esta semana, la siguiente y la de después, con oficios, inspecciones, restricciones y materiales de larga entrega visibles en cada una. Descárgala para el tablón de la caseta, o ábrela en el <a href="/es/app.html">editor gratuito</a> y usa <strong>Vista ▸ Próximas semanas</strong> para generar la ventana directamente desde tu cronograma maestro en lugar de reescribirla cada semana en una hoja de cálculo.',
     intro: 'Una programación a tres semanas vista no es un plan aparte: es un corte de tres semanas del cronograma maestro con las restricciones colgadas, actualizado cada semana. La plantilla está organizada así:',
     phases: [
-      ['Semana 1 — trabajo comprometido', 'Trabajo sin restricciones abiertas que se ejecuta esta semana. Cuadrillas, materiales y accesos ya confirmados. <em>Hito: inspección previa al hormigonado.</em>'],
-      ['Semana 2 — trabajo preparado', 'Trabajo con las restricciones ya liberadas pero aún sin empezar. Es el colchón que mantiene ocupadas a las cuadrillas cuando la semana 1 se retrasa.'],
-      ['Semana 3 — trabajo previsto', 'Trabajo todavía en preparación. Cualquier tarea de aquí con una restricción abierta es la razón de que exista la reunión.'],
+      ['Semana 1, trabajo comprometido', 'Trabajo sin restricciones abiertas que se ejecuta esta semana. Cuadrillas, materiales y accesos ya confirmados. <em>Hito: inspección previa al hormigonado.</em>'],
+      ['Semana 2, trabajo preparado', 'Trabajo con las restricciones ya liberadas pero aún sin empezar. Es el colchón que mantiene ocupadas a las cuadrillas cuando la semana 1 se retrasa.'],
+      ['Semana 3, trabajo previsto', 'Trabajo todavía en preparación. Cualquier tarea de aquí con una restricción abierta es la razón de que exista la reunión.'],
       ['Restricciones y plazos de entrega', 'Documentación técnica a aprobar, aprobaciones, suministros y permisos que deben llegar antes del trabajo que condicionan. Cruzan las tres semanas en lugar de vivir dentro de una.'],
       ['Inspecciones y puntos de parada', 'Conformidades de terceros que detienen el trabajo si se saltan: armaduras, enterrados, estructura. Cada una es un hito, no una tarea.'],
       ['Actualización semanal', 'El gráfico rueda cada lunes: entra el porcentaje completado, la ventana avanza una semana y se revisa el registro de restricciones.'],
@@ -1390,7 +1390,7 @@ const T = {
     tips: [
       '<strong>Lee el SPI, no la forma.</strong> Un SPI por debajo de 1,0 significa que has ganado menos valor del planificado a día de hoy. La tendencia de cuatro o cinco actualizaciones importa mucho más que una lectura suelta.',
       '<strong>Cuenta con un arranque lento.</strong> Una curva que sube con fuerza desde el primer día casi siempre está midiendo gasto o esfuerzo, no avance entregado.',
-      '<strong>Vigila el punto en que se aplana.</strong> Las curvas que se aplanan pronto, en el 85–90 %, son la firma clásica de un proyecto lleno de trabajo casi terminado.',
+      '<strong>Vigila el punto en que se aplana.</strong> Las curvas que se aplanan pronto, en el 85-90 %, son la firma clásica de un proyecto lleno de trabajo casi terminado.',
       '<strong>Actualiza con cadencia fija.</strong> Semanal o quincenal, siempre el mismo día: las actualizaciones irregulares hacen la curva ilegible.',
       '<strong>Acompaña la curva con el Gantt.</strong> La curva te dice que vas retrasado; el diagrama de barras te dice qué tareas lo provocaron. Deja las dos en el informe.',
     ],
@@ -1493,8 +1493,8 @@ const T = {
       ['Desarrollo', 'Versiones de guion, derechos y opciones, desglose de presupuesto y plan, financiación y luz verde. <em>Hito: luz verde.</em>'],
       ['Preproducción', 'Reparto, jefes de equipo, localizaciones y permisos, dirección de arte y construcción, vestuario, pruebas de cámara y el propio plan de rodaje.'],
       ['Rodaje', 'El rodaje, dividido en bloques de plató y localización, con la fecha de fin como centro inamovible de todo el plan. <em>Hito: fin de rodaje.</em>'],
-      ['Postproducción — imagen', 'Copiones y premontaje durante el rodaje, montaje de montador, montaje de director, notas y corte cerrado. <em>Hito: corte cerrado.</em>'],
-      ['Postproducción — sonido y acabado', 'Doblaje de sala, efectos de sala, diseño de sonido, banda sonora, mezcla, entrega de planos de VFX, etalonaje y conformado final.'],
+      ['Postproducción, imagen', 'Copiones y premontaje durante el rodaje, montaje de montador, montaje de director, notas y corte cerrado. <em>Hito: corte cerrado.</em>'],
+      ['Postproducción, sonido y acabado', 'Doblaje de sala, efectos de sala, diseño de sonido, banda sonora, mezcla, entrega de planos de VFX, etalonaje y conformado final.'],
       ['Entrega y distribución', 'DCP y másteres, control de calidad, subtitulado y localización, materiales de marketing, inscripciones a festivales y el paquete de entrega. <em>Hito: entrega aceptada.</em>'],
     ],
     callout: 'El rodaje es la única fase que no se puede alargar sin gastar dinero real por día. Todo lo anterior existe para hacerlo posible y todo lo posterior hereda lo que el rodaje haya producido. Fija primero las fechas de rodaje y después comprueba que la preproducción tiene pista suficiente por detrás, no al revés.',
@@ -2790,12 +2790,12 @@ const T = {
     phases: [
       ['Planificación, coordinación operativa y permisos', 'Modelización de flujos de pasajeros, acuerdo con compañías aéreas y agentes de asistencia en tierra, estrategia de fases y posesiones, autorizaciones de obra en plataforma y acreditaciones de contratistas. <em>Hito: calendario de posesiones acordado.</em>'],
       ['Proyecto y obras previas', 'Anteproyecto y proyecto de ejecución, estrategia de protección contra incendios, líneas de cerramiento y señalética provisional, desvíos de servicios y los itinerarios provisionales de pasajeros que tienen que existir antes de cerrar nada. <em>Hito: obras previas terminadas.</em>'],
-      ['Posesión 1 — ampliación del dique', 'Cerramientos montados, reconfiguración de plataforma y puestos de estacionamiento, estructura y envolvente del dique, pasarelas y salas de embarque, y devolución de los puestos a operaciones. <em>Hito: puestos devueltos al servicio.</em>'],
-      ['Posesión 2 — seguridad y facturación', 'Líneas de inspección provisionales demostradas primero en hora punta, y después demolición de facturación, nuevas islas, acondicionamiento del control central y obras en la sala de fronteras.'],
+      ['Posesión 1, ampliación del dique', 'Cerramientos montados, reconfiguración de plataforma y puestos de estacionamiento, estructura y envolvente del dique, pasarelas y salas de embarque, y devolución de los puestos a operaciones. <em>Hito: puestos devueltos al servicio.</em>'],
+      ['Posesión 2, seguridad y facturación', 'Líneas de inspección provisionales demostradas primero en hora punta, y después demolición de facturación, nuevas islas, acondicionamiento del control central y obras en la sala de fronteras.'],
       ['Equipajes e integración de sistemas', 'Montaje del sistema de tratamiento de equipajes, inspección del equipaje de bodega, pruebas de clasificación, sistemas de información al pasajero y megafonía, CCTV y control de accesos, y los sistemas compartidos de facturación de las aerolíneas. <em>Hito: integración de sistemas completada.</em>'],
       ['ORAT, ensayos y traspaso', 'Preparación operativa, familiarización del personal, operación en pruebas con pasajeros voluntarios, simulacros de evacuación, inspección de AESA y el cambio nocturno. <em>Hito: operación plena.</em>'],
     ],
-    callout: 'Nunca retires capacidad de filtro de seguridad antes de haber demostrado la sustituta en hora punta. En una terminal en servicio todo lo demás se puede sortear —un recorrido más largo, un cartel provisional, una tienda reubicada—, pero una cola de seguridad por encima de su objetivo es un incidente operativo reportable y te para la posesión en cuestión de días. Pon un hito de demostración de capacidad delante de cada cambio que toque el control central.',
+    callout: 'Nunca retires capacidad de filtro de seguridad antes de haber demostrado la sustituta en hora punta. En una terminal en servicio todo lo demás se puede sortear, un recorrido más largo, un cartel provisional, una tienda reubicada, , pero una cola de seguridad por encima de su objetivo es un incidente operativo reportable y te para la posesión en cuestión de días. Pon un hito de demostración de capacidad delante de cada cambio que toque el control central.',
     customize: [
       'Sustituye las dos posesiones por las tuyas, y dale a cada una fechas de inicio y fin acordadas con la dirección de operaciones del aeropuerto, no con el contratista.',
       'Sitúa las ventanas de posesión en tu temporada baja real y contrasta la previsión de tráfico, no la del año pasado: una posesión dimensionada para febrero no cabe en julio.',
@@ -2832,9 +2832,9 @@ const T = {
     phases: [
       ['Arranque del programa y diseño general', 'Estudio de demanda y priorización de zonas, diseño de red y ubicación de centrales, marco de contratación de instaladoras, compra de troncal y transporte, y el modelo de datos as-built del que depende todo lo que viene después. <em>Hito: plan de despliegue con línea base.</em>'],
       ['Licencias, dominio público y replanteo', 'Licencias municipales de obra o declaraciones responsables, autorizaciones de ocupación del dominio público, acuerdos con comunidades de propietarios para la ICT del edificio, replanteo de disponibilidad de canalizaciones y apoyos, y las solicitudes de acceso a infraestructura del operador incumbente. <em>Hito: permisos resueltos para la oleada 1.</em>'],
-      ['Zona A — oleada 1', 'Proyecto de detalle y plan de empalmes, desatasco de canalizaciones y obra civil, soplado de cable y tendido en apoyos, empalmes y montaje de la caja de distribución, pruebas OTDR y entrega de la documentación as-built. <em>Hito: zona A lista para servicio.</em>'],
-      ['Zona B — oleada 2', 'La secuencia idéntica, arrancada mientras la zona A sigue en obra civil para que las cuadrillas y las licencias fluyan sin parones. <em>Hito: zona B lista para servicio.</em>'],
-      ['Zona C — oleada 3', 'La tercera oleada, con su propio plazo de permisos por delante: el paso que los equipos olvidan desfasar con más frecuencia. <em>Hito: zona C lista para servicio.</em>'],
+      ['Zona A, oleada 1', 'Proyecto de detalle y plan de empalmes, desatasco de canalizaciones y obra civil, soplado de cable y tendido en apoyos, empalmes y montaje de la caja de distribución, pruebas OTDR y entrega de la documentación as-built. <em>Hito: zona A lista para servicio.</em>'],
+      ['Zona B, oleada 2', 'La secuencia idéntica, arrancada mientras la zona A sigue en obra civil para que las cuadrillas y las licencias fluyan sin parones. <em>Hito: zona B lista para servicio.</em>'],
+      ['Zona C, oleada 3', 'La tercera oleada, con su propio plazo de permisos por delante: el paso que los equipos olvidan desfasar con más frecuencia. <em>Hito: zona C lista para servicio.</em>'],
       ['Activación, comercialización y altas', 'Puesta en servicio de la central y del núcleo, integración de aprovisionamiento y facturación, precomercialización, escalado de las cuadrillas de instalación y las campañas de altas por zona que generan ingresos. <em>Hito: revisión de penetración y decisión de la siguiente oleada.</em>'],
     ],
     callout: 'Nada es facturable hasta que una zona está lista para servicio. Hogares pasados es una métrica de obra; hogares conectados es la de ingresos, y en el hueco entre las dos es donde mueren los planes de negocio de fibra. Pon un hito de zona lista en cada área, arranca desde ahí la barra de altas, y sé honesto: una comunidad de propietarios que dice que no o una canalización obstruida no retrasan una tarea, retrasan un trimestre de ingresos de toda una zona.',
@@ -2870,7 +2870,7 @@ const T = {
     metaTitle: 'Cronograma de construcción de un estadio',
     metaDesc: 'Cronograma gratuito de construcción de un estadio: estructura, izado de cubierta, acabados, césped, licencia de espectáculos y partido inaugural.',
     lead: 'Una <strong>plantilla gratuita de cronograma de construcción de un estadio</strong> planificada hacia atrás desde una fecha que nadie del proyecto controla: el partido inaugural del calendario de competición. Cubre el cuenco y el graderío prefabricado, la estructura metálica de cubierta y su izado con ventana meteorológica, el acabado de vomitorios y zonas de hospitalidad, la construcción del césped con su periodo de arraigo, y los partidos de prueba y la licencia de espectáculos públicos que separan la terminación de obra de un estadio lleno. Descárgala para un consejo, o ábrela online y arrastra la fecha del partido para ver qué se rompe.',
-    intro: 'La mayoría de los programas de obra negocian su fecha de fin. Este no puede: el calendario está publicado, las entradas vendidas, y dos de las partidas más largas —el arraigo del césped y el izado de la cubierta— dependen de la meteorología y de la biología, no de la mano de obra. La plantilla secuencia en consecuencia:',
+    intro: 'La mayoría de los programas de obra negocian su fecha de fin. Este no puede: el calendario está publicado, las entradas vendidas, y dos de las partidas más largas, el arraigo del césped y el izado de la cubierta, dependen de la meteorología y de la biología, no de la mano de obra. La plantilla secuencia en consecuencia:',
     phases: [
       ['Proyecto, licencias y obras previas', 'Programa de aforo, fecha fija de inauguración, licencia urbanística y estrategia de licencia de actividad y espectáculos, diseño del cuenco, paquete de estructura metálica y obras previas de solar. <em>Hito: fecha del partido inaugural fijada.</em>'],
       ['Cimentación y cuenco', 'Pilotaje y cimentaciones, sótano y galerías de servicio, estructura de hormigón in situ, fabricación de gradas prefabricadas y su montaje. <em>Hito: estructura del cuenco terminada.</em>'],
@@ -3008,7 +3008,7 @@ const T = {
     callout: 'Elige la fecha de salida en el calendario comercial, no en el plan de proyecto. Migrar a mitad de trimestre significa pedirle a un comercial que reintroduzca oportunidades vivas en plena carrera hacia su objetivo, y una previsión que existe a medias en cada sistema es una previsión que nadie puede defender ante un consejo. Sal en la primera quincena de un trimestre nuevo, cuando el embudo se acaba de reiniciar y conciliar, y el primer ciclo de previsión en el CRM nuevo arranca desde una cifra en la que los dos sistemas coincidían.',
     customize: [
       'Sitúa la salida en las dos primeras semanas de un trimestre y cuenta hacia atrás; el ensayo final debería terminar al menos tres semanas antes.',
-      'Desglosa las filas de deduplicación por objeto —cuentas, contactos, candidatos, oportunidades— porque las claves de coincidencia y los responsables son distintos en cada uno.',
+      'Desglosa las filas de deduplicación por objeto, cuentas, contactos, candidatos, oportunidades, porque las claves de coincidencia y los responsables son distintos en cada uno.',
       'Retrasa la formación de comerciales todo lo que puedas sin chocar con la salida; formarlos seis semanas antes es formarlos dos veces.',
       'Añade filas por integración si presupuestos, ERP o automatización de marketing tienen sus propias dependencias de proveedor.',
       'Mantén la corrección de registros a cargo de ventas como una fila con nombre y responsable: es trabajo de negocio, no una tarea del equipo de datos.',
@@ -4002,15 +4002,15 @@ const T = {
       'Marca la validación, «curso montado» y «tienda en marcha» como hitos para que nada posterior arranque antes de tener sus insumos listos.',
     ],
     tips: [
-      '<strong>Mantén la validación en la ruta crítica.</strong> Todo lo que viene después —guiones, grabación, edición— se desperdicia si el tema no interesa, así que haz del primer hito un verdadero sí/no.',
+      '<strong>Mantén la validación en la ruta crítica.</strong> Todo lo que viene después, guiones, grabación, edición, se desperdicia si el tema no interesa, así que haz del primer hito un verdadero sí/no.',
       '<strong>Guioniza antes de grabar.</strong> Una hora de guion ahorra varias horas de regrabaciones y edición; el cronograma nunca debería permitir empezar a grabar sin los guiones terminados.',
       '<strong>La edición y la creación de cuadernos pueden ir en paralelo.</strong> Tienen responsables distintos y no dependen entre sí, así que solápalas para comprimir la parte central del plan.',
-      '<strong>Monta la página de ventas mientras editas.</strong> La página no necesita los vídeos finales —solo la promesa y el temario—, así que puede estar en marcha antes de que el curso esté del todo montado.',
+      '<strong>Monta la página de ventas mientras editas.</strong> La página no necesita los vídeos finales, solo la promesa y el temario, , así que puede estar en marcha antes de que el curso esté del todo montado.',
       '<strong>Trata la semana de lanzamiento como su propia secuencia.</strong> Calentamiento, apertura del carrito, cierre y seguimiento tienen tiempos que importan: prográmalos en vez de improvisarlos.',
     ],
     faq: [
       ['¿Cuánto se tarda en crear un curso online?', 'Un curso individual y enfocado suele llevar de 8 a 12 semanas desde la idea validada hasta el lanzamiento. La plantilla reparte validación, guion, grabación, edición, montaje de plataforma y lanzamiento en una línea de tiempo para que veas si tu fecha objetivo es realista.'],
-      ['¿Creo el curso antes o después de venderlo?', 'Valida —e idealmente prevende— antes de grabar. La plantilla sitúa un hito de validación por delante de la producción para que solo comprometas tiempo de rodaje cuando haya demanda real; puedes adelantar la página de ventas para aceptar pedidos anticipados.'],
+      ['¿Creo el curso antes o después de venderlo?', 'Valida, e idealmente prevende, antes de grabar. La plantilla sitúa un hito de validación por delante de la producción para que solo comprometas tiempo de rodaje cuando haya demanda real; puedes adelantar la página de ventas para aceptar pedidos anticipados.'],
       ['¿Puedo mostrar dependencias entre las tareas del curso?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (validar → guionizar → grabar → editar → lanzar): el trabajo posterior se desplaza solo y la ruta crítica hasta tu lanzamiento se mantiene visible.'],
       ['¿La plantilla de plan de curso online es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
     ],
@@ -4044,7 +4044,7 @@ const T = {
       '<strong>El diseño de portada puede ir en paralelo a la edición.</strong> Depende del concepto, no del texto final, así que solaparlo recupera semanas en el cronograma.',
       '<strong>Construye la lista de correo antes de necesitarla.</strong> Un correo en la semana de lanzamiento a una lista comprometida rinde más que casi cualquier anuncio, pero la lista tarda meses en crecer: empiézala en la fase de marketing, no en la de lanzamiento.',
       '<strong>Envía los ARC pronto y hazles seguimiento.</strong> Las reseñas necesitan tiempo de lectura; una que se publica el día del lanzamiento vale mucho más que otra que llega un mes tarde.',
-      '<strong>Programa el seguimiento.</strong> Las dos semanas posteriores a la publicación —persecución de reseñas, ajuste de anuncios, una revisión posterior— son donde muchos lanzamientos pierden fuelle en silencio por falta de plan.',
+      '<strong>Programa el seguimiento.</strong> Las dos semanas posteriores a la publicación, persecución de reseñas, ajuste de anuncios, una revisión posterior, son donde muchos lanzamientos pierden fuelle en silencio por falta de plan.',
     ],
     faq: [
       ['¿Con cuánta antelación debo planificar un lanzamiento de libro?', 'La mayoría de los autoeditores trabajan hacia atrás entre tres y seis meses desde la fecha de publicación. La plantilla reparte edición, producción, prelanzamiento, marketing y semana de lanzamiento en una línea de tiempo para que veas si tu fecha deja margen suficiente para la edición y las reseñas.'],
@@ -4081,7 +4081,7 @@ const T = {
       '<strong>La habilitación suele ser el cuello de botella.</strong> La formación de ventas, los materiales y la demo llevan más de lo previsto y condicionan el lanzamiento: empiézalos en cuanto se aprueben los mensajes.',
       '<strong>Ejecuta los precios en paralelo, no en serie.</strong> Solo necesitan la investigación, así que solaparlos con el posicionamiento recupera semanas en el cronograma.',
       '<strong>Separa el lanzamiento interno del externo.</strong> El equipo tiene que estar preparado antes de que el mercado se entere de nada; programa la salida en vivo interna como su propio hito.',
-      '<strong>Programa la revisión posterior al lanzamiento.</strong> Los 30 días siguientes —métricas del embudo, ganados y perdidos, iteración— son donde un plan se multiplica o se estanca en silencio por falta de seguimiento.',
+      '<strong>Programa la revisión posterior al lanzamiento.</strong> Los 30 días siguientes, métricas del embudo, ganados y perdidos, iteración, son donde un plan se multiplica o se estanca en silencio por falta de seguimiento.',
     ],
     faq: [
       ['¿Qué es un plan de salida al mercado (go-to-market)?', 'Un plan de salida al mercado es la línea de tiempo y las líneas de trabajo que llevan un producto al mercado: investigación, posicionamiento, precios, habilitación, lanzamiento y poslanzamiento. Esta plantilla coloca esas etapas en un mismo cronograma para que marketing, producto y ventas vayan sincronizados.'],
@@ -4142,7 +4142,7 @@ const T = {
       ['Evento en directo', 'Sal en directo y modera, y gestiona las preguntas y la participación. <em>Hito: webinar impartido.</em>'],
       ['Seguimiento', 'Publica la grabación, envía los correos de seguimiento, pasa los leads a ventas y mide los resultados. <em>Hito: revisión posterior al webinar.</em>'],
     ],
-    callout: 'La mayor parte del valor de un seminario web se crea después de la hora en directo. Tanto los asistentes como los ausentes necesitan seguimiento —la grabación, un correo de nurturing y el traspaso a ventas—, así que planifica el seguimiento antes del evento, no en los cansados días posteriores, o los leads que tanto costó registrar se enfriarán.',
+    callout: 'La mayor parte del valor de un seminario web se crea después de la hora en directo. Tanto los asistentes como los ausentes necesitan seguimiento, la grabación, un correo de nurturing y el traspaso a ventas, , así que planifica el seguimiento antes del evento, no en los cansados días posteriores, o los leads que tanto costó registrar se enfriarán.',
     customize: [
       'Da a la promoción al menos tres o cuatro semanas: la mayoría de los registros llegan la primera y la última semana, pero necesitas el margen intermedio.',
       'Marca el objetivo de registros como hito y vigílalo; si vas por detrás a mitad de camino, añade promoción en lugar de confiar en la suerte.',
@@ -4171,7 +4171,7 @@ const T = {
     metaTitle: 'Plantilla de plan de lanzamiento de un pódcast',
     metaDesc: 'Plantilla gratuita para lanzar un pódcast: concepto, marca, grabación por lotes, edición, alta en Apple y Spotify y día de lanzamiento. Excel u online.',
     lead: 'Una <strong>plantilla gratuita de plan de lanzamiento de un pódcast</strong> que lleva un programa de la idea al día de lanzamiento: concepto y audiencia, marca y equipo, grabación de tus episodios de estreno, edición, alta en directorios y el propio lanzamiento de varios episodios. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta tu estreno.',
-    intro: 'La mayoría de los pódcast se apagan porque estrenan con un solo episodio y sin margen por delante. Esta plantilla planifica todo el lanzamiento en una sola línea de tiempo —incluido el lote de episodios que te mantiene constante— en las seis etapas por las que realmente pasa un programa:',
+    intro: 'La mayoría de los pódcast se apagan porque estrenan con un solo episodio y sin margen por delante. Esta plantilla planifica todo el lanzamiento en una sola línea de tiempo, incluido el lote de episodios que te mantiene constante, en las seis etapas por las que realmente pasa un programa:',
     phases: [
       ['Concepto y plan', 'Define tu nicho y tu audiencia, cierra el formato y el nombre del programa, y planifica una primera temporada para no ir improvisando cada episodio. <em>Hito: concepto cerrado.</em>'],
       ['Marca y montaje', 'Encarga el arte de portada, resuelve la música de entrada y salida, y elige tu plataforma de alojamiento, tu equipo y tu espacio de grabación. <em>Hito: montaje listo.</em>'],
@@ -4193,7 +4193,7 @@ const T = {
       '<strong>Graba por lotes antes de lanzar.</strong> Tener de tres a cinco episodios grabados de antemano es lo que separa a los programas que duran de los que se apagan; el cronograma debe condicionar el lanzamiento a ese lote.',
       '<strong>Lleva la marca en paralelo a la grabación.</strong> El arte de portada, la música y la web solo necesitan el concepto, así que solaparlos con la producción recupera semanas en el cronograma.',
       '<strong>Graba el tráiler cuando ya existan episodios.</strong> Un tráiler que promete un tono que los episodios no cumplen perjudica: prográmalo después de las primeras ediciones, no antes.',
-      '<strong>Programa el seguimiento.</strong> El primer mes —promoción, contacto con invitados, revisar las analíticas— es donde un lanzamiento coge impulso o se apaga en silencio por falta de plan.',
+      '<strong>Programa el seguimiento.</strong> El primer mes, promoción, contacto con invitados, revisar las analíticas, es donde un lanzamiento coge impulso o se apaga en silencio por falta de plan.',
     ],
     faq: [
       ['¿Cuánto se tarda en lanzar un pódcast?', 'Un lanzamiento enfocado suele llevar de 8 a 12 semanas desde el concepto hasta el día de estreno. La plantilla reparte concepto, marca, grabación, edición, alta en directorios y lanzamiento en una línea de tiempo para que veas si tu fecha es realista.'],
@@ -4208,11 +4208,11 @@ const T = {
     h1: 'Plantilla de plan de estudio',
     metaTitle: 'Plantilla de plan de estudio',
     metaDesc: 'Plantilla gratis de plan de estudio para exámenes: temas, calendario semanal, práctica, repaso de puntos débiles y simulacros. Excel, PowerPoint u online.',
-    lead: 'Una plantilla gratuita de <strong>plan de estudio</strong> —un calendario de repaso que te lleva de tu primera lista de temas al día del examen: planifica y organízate, aprende la materia, practica con exámenes anteriores y repaso activo, repasa tus puntos débiles, haz simulacros cronometrados y llega al examen preparado. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la fecha del examen.',
+    lead: 'Una plantilla gratuita de <strong>plan de estudio</strong>, un calendario de repaso que te lleva de tu primera lista de temas al día del examen: planifica y organízate, aprende la materia, practica con exámenes anteriores y repaso activo, repasa tus puntos débiles, haz simulacros cronometrados y llega al examen preparado. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la fecha del examen.',
     intro: 'La mayoría de los repasos fallan no por falta de esfuerzo, sino por falta de plan: se estudian los temas fáciles y se acaba el tiempo para los difíciles. Esta plantilla pone todo tu repaso en una sola línea de tiempo, en las seis etapas que de verdad te preparan para el examen:',
     phases: [
       ['Planificación y preparación', 'Enumera tus asignaturas y temas, reúne tus materiales, evalúa con honestidad tus puntos fuertes y débiles, y fija las fechas de examen y las notas objetivo. <em>Hito: plan de estudio listo.</em>'],
-      ['Aprender — primera vuelta', 'Trabaja los temas principales por primera vez, toma apuntes y haz fichas sobre la marcha, y usa un repaso semanal para ponerte al día. <em>Hito: primera vuelta completada.</em>'],
+      ['Aprender, primera vuelta', 'Trabaja los temas principales por primera vez, toma apuntes y haz fichas sobre la marcha, y usa un repaso semanal para ponerte al día. <em>Hito: primera vuelta completada.</em>'],
       ['Practicar y repaso activo', 'Haz ejercicios por tema, repasa las fichas con repetición espaciada y haz tu primer examen anterior cronometrado. <em>Hito: práctica en marcha.</em>'],
       ['Repasar los puntos débiles', 'Identifica y vuelve a estudiar los temas en los que peor rindes, y condénsalos en resúmenes y esquemas. <em>Hito: puntos débiles consolidados.</em>'],
       ['Simulacros y repaso final', 'Haz simulacros completos cronometrados, revisa los resultados y termina tus resúmenes; luego descansa. <em>Hito: listo para los exámenes.</em>'],
@@ -4227,7 +4227,7 @@ const T = {
       'Marca «plan de estudio listo», «primera vuelta completada» y «puntos débiles consolidados» como hitos para ver si vas a tiempo.',
     ],
     tips: [
-      '<strong>El repaso activo supera a la relectura.</strong> El tiempo dedicado a examinarte —fichas, ejercicios— se fija mucho mejor que subrayar; el calendario debe dar peso a la práctica, no solo a la lectura.',
+      '<strong>El repaso activo supera a la relectura.</strong> El tiempo dedicado a examinarte, fichas, ejercicios, se fija mucho mejor que subrayar; el calendario debe dar peso a la práctica, no solo a la lectura.',
       '<strong>Los exámenes anteriores son la tarea más valiosa.</strong> Un examen anterior cronometrado revela a la vez lo que no sabes y cómo gestionas el tiempo; haz el primero pronto, no la última semana.',
       '<strong>Espacia el repaso, no lo acumules.</strong> Volver sobre un tema a lo largo de varios días supera a una sola sesión larga; por eso el carril de fichas recorre todo el plan.',
       '<strong>Revisa los resultados de los simulacros, no solo los hagas.</strong> El aprendizaje está en repasar lo que fallaste; programa la revisión, no solo el simulacro.',
@@ -4246,8 +4246,8 @@ const T = {
     h1: 'Plantilla de planificación de mudanza',
     metaTitle: 'Plantilla de planificación de mudanza',
     metaDesc: 'Plantilla y checklist gratis de mudanza: fija la fecha, contrata la mudanza, cambia tu dirección y empaqueta por habitaciones. Excel, PowerPoint u online.',
-    lead: 'Una plantilla gratuita de <strong>planificación de mudanza</strong> —un checklist semana a semana que te lleva de tu primer plan a tu primera noche en la nueva casa: fija la fecha y el presupuesto, contrata la mudanza, cambia tu dirección, empaqueta habitación por habitación, supera el día de la mudanza e instálate. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día de la mudanza.',
-    intro: 'Mudarse estresa porque todo llega a la vez —y los trámites (suministros, correo, cambios de dirección) son, sin ruido, los de mayor plazo. Esta plantilla reparte toda la mudanza en una sola línea de tiempo, en las seis etapas por las que realmente pasa:',
+    lead: 'Una plantilla gratuita de <strong>planificación de mudanza</strong>, un checklist semana a semana que te lleva de tu primer plan a tu primera noche en la nueva casa: fija la fecha y el presupuesto, contrata la mudanza, cambia tu dirección, empaqueta habitación por habitación, supera el día de la mudanza e instálate. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día de la mudanza.',
+    intro: 'Mudarse estresa porque todo llega a la vez, y los trámites (suministros, correo, cambios de dirección) son, sin ruido, los de mayor plazo. Esta plantilla reparte toda la mudanza en una sola línea de tiempo, en las seis etapas por las que realmente pasa:',
     phases: [
       ['Planificar y presupuestar', 'Fija la fecha y el presupuesto de la mudanza, haz un inventario, empieza a vaciar y pide presupuestos a empresas de mudanzas. <em>Hito: plan y presupuesto listos.</em>'],
       ['Contratar y avisar', 'Contrata la mudanza o alquila una furgoneta, organiza los días libres y la ayuda, avisa al casero o pon la vivienda en venta, y gestiona el aparcamiento y el acceso. <em>Hito: mudanza contratada.</em>'],
@@ -4267,7 +4267,7 @@ const T = {
     tips: [
       '<strong>Vacía antes de empaquetar, no después.</strong> Cada caja que no mudas ahorra tiempo y dinero; empieza a vender y donar pronto, porque lleva semanas: es la única tarea que no puedes acelerar al final.',
       '<strong>Los suministros y el correo son los de mayor plazo.</strong> Cambiar la luz e internet y redirigir el correo puede tardar días o semanas en surtir efecto, así que empieza los trámites de dirección seis semanas antes, no la semana de la mudanza.',
-      '<strong>Etiqueta las cajas por habitación y por prioridad.</strong> Una caja marcada «cocina — abrir primero» ahorra horas en el destino; etiqueta al empaquetar, no de memoria después.',
+      '<strong>Etiqueta las cajas por habitación y por prioridad.</strong> Una caja marcada «cocina, abrir primero» ahorra horas en el destino; etiqueta al empaquetar, no de memoria después.',
       '<strong>Toma lecturas de contadores y fotos el día de la mudanza.</strong> Las lecturas y una foto de cada habitación protegen tu fianza y cierran las facturas finales de suministros: una tarea fácil de olvidar con las prisas.',
       '<strong>Empaqueta la caja de esenciales la última.</strong> Hervidor, cargadores, medicinas, una muda y ropa de cama: la primera noche es mucho más fácil cuando la única caja que necesitas es la que encuentras.',
     ],
@@ -4284,7 +4284,7 @@ const T = {
     h1: 'Plantilla de reforma de cocina',
     metaTitle: 'Plantilla de reforma de cocina',
     metaDesc: 'Plantilla y cronograma gratis de reforma de cocina: diseño, pedir muebles, demolición, instalaciones, encimeras y montaje final. Excel, PowerPoint u online.',
-    lead: 'Una plantilla gratuita de <strong>reforma de cocina</strong> —un cronograma semana a semana que lleva tu cocina de las primeras medidas a la inspección final: diseño y presupuesto, pedido de los muebles y encimeras de largo plazo, demolición, instalación de fontanería y electricidad, paredes y suelo, y por último el montaje de muebles, encimeras y electrodomésticos. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la cocina terminada.',
+    lead: 'Una plantilla gratuita de <strong>reforma de cocina</strong>, un cronograma semana a semana que lleva tu cocina de las primeras medidas a la inspección final: diseño y presupuesto, pedido de los muebles y encimeras de largo plazo, demolición, instalación de fontanería y electricidad, paredes y suelo, y por último el montaje de muebles, encimeras y electrodomésticos. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la cocina terminada.',
     intro: 'Una reforma de cocina se alarga no porque el trabajo sea lento, sino por dos cosas: los muebles tardan de seis a ocho semanas en llegar y las encimeras no se pueden medir hasta que los muebles están montados, y luego hay que fabricarlas. Esta plantilla pone toda la obra en una sola línea de tiempo para que esos pedidos de largo plazo empiecen pronto y la secuencia no se atasque:',
     phases: [
       ['Diseño y planificación', 'Fija el presupuesto y el alcance, toma medidas y cierra la distribución, elige materiales y acabados, contrata al reformista y saca las licencias. <em>Hito: diseño aprobado.</em>'],
@@ -4322,8 +4322,8 @@ const T = {
     h1: 'Plantilla de campaña de crowdfunding',
     metaTitle: 'Plantilla de campaña de crowdfunding',
     metaDesc: 'Plantilla gratis de campaña de crowdfunding para Kickstarter o Indiegogo: concepto, vídeo, audiencia previa, campaña en directo y entrega. Excel u online.',
-    lead: 'Una plantilla gratuita de <strong>campaña de crowdfunding</strong> —un cronograma que lleva un proyecto de Kickstarter o Indiegogo de la idea a las recompensas entregadas: valida el concepto y las recompensas, crea el vídeo y la página, construye una audiencia previa al lanzamiento, ejecuta la campaña en directo y cumple. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día del lanzamiento.',
-    intro: 'Las campañas de crowdfunding se ganan antes de lanzarse: los proyectos que se financian rápido son los que pasaron semanas construyendo una lista de correo y alineando mecenas tempranos para que el primer día tenga impulso. Esta plantilla pone toda la campaña en una sola línea de tiempo —con la larga fase previa incluida— en las seis etapas por las que pasa:',
+    lead: 'Una plantilla gratuita de <strong>campaña de crowdfunding</strong>, un cronograma que lleva un proyecto de Kickstarter o Indiegogo de la idea a las recompensas entregadas: valida el concepto y las recompensas, crea el vídeo y la página, construye una audiencia previa al lanzamiento, ejecuta la campaña en directo y cumple. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta el día del lanzamiento.',
+    intro: 'Las campañas de crowdfunding se ganan antes de lanzarse: los proyectos que se financian rápido son los que pasaron semanas construyendo una lista de correo y alineando mecenas tempranos para que el primer día tenga impulso. Esta plantilla pone toda la campaña en una sola línea de tiempo, con la larga fase previa incluida, en las seis etapas por las que pasa:',
     phases: [
       ['Concepto y validación', 'Define la idea y la propuesta de valor, investiga el mercado, fija tu objetivo de financiación y presupuesto, diseña los niveles de recompensa y elige la plataforma. <em>Hito: concepto validado.</em>'],
       ['Crear los materiales', 'Construye el prototipo o las muestras, guioniza y graba el vídeo de presentación, redacta la página de la campaña y diseña los gráficos. <em>Hito: materiales listos.</em>'],
@@ -4348,7 +4348,7 @@ const T = {
       '<strong>Mantén informados a los mecenas durante la campaña.</strong> Las actualizaciones y respuestas frecuentes mantienen el impulso y el ritmo de difusión; programa la interacción en lugar de callar tras el día de lanzamiento.',
     ],
     faq: [
-      ['¿Cuánto se tarda en planificar una campaña de crowdfunding?', 'La mayoría de las campañas de éxito dedican de seis a doce semanas a la fase previa —construir lista de correo, materiales y compromisos anticipados— antes de una campaña en directo de 30 días, y luego semanas o meses a la entrega. La plantilla reparte concepto, materiales, fase previa, lanzamiento, campaña en directo y entrega en una línea de tiempo para que veas el margen real.'],
+      ['¿Cuánto se tarda en planificar una campaña de crowdfunding?', 'La mayoría de las campañas de éxito dedican de seis a doce semanas a la fase previa, construir lista de correo, materiales y compromisos anticipados, antes de una campaña en directo de 30 días, y luego semanas o meses a la entrega. La plantilla reparte concepto, materiales, fase previa, lanzamiento, campaña en directo y entrega en una línea de tiempo para que veas el margen real.'],
       ['¿Por qué es tan importante la fase previa?', 'Las plataformas de crowdfunding posicionan los proyectos en parte por el impulso inicial, así que una campaña que abre con audiencia y compromisos anticipados alcanza una parte de su objetivo en las primeras 48 horas: el mejor predictor de la financiación. La plantilla da a la construcción de audiencia su propia fase de varias semanas en lugar de tratar el día de lanzamiento como el inicio.'],
       ['¿Puedo mostrar dependencias entre las tareas de la campaña?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (materiales → fase previa → lanzamiento → entrega): si el vídeo se retrasa, el lanzamiento y todo lo posterior se desplazan solos y la ruta crítica hasta el día del lanzamiento se mantiene visible.'],
       ['¿La plantilla de campaña de crowdfunding es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],
@@ -4360,8 +4360,8 @@ const T = {
     h1: 'Plantilla de ciclo de evaluación del desempeño',
     metaTitle: 'Ciclo de evaluación del desempeño',
     metaDesc: 'Plantilla gratis de ciclo de evaluación del desempeño: marco, autoevaluaciones, evaluaciones del manager, calibración y entrega. Excel, PowerPoint u online.',
-    lead: 'Una plantilla gratuita de <strong>ciclo de evaluación del desempeño</strong> —un cronograma que lleva un ciclo de evaluación del marco a las evaluaciones cerradas: fija los criterios y forma a los managers, recoge autoevaluaciones y feedback 360, redacta las evaluaciones de los managers, calibra las valoraciones, entrégalas en 1:1 y fija planes de desarrollo. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la entrega de las evaluaciones.',
-    intro: 'Las evaluaciones se tuercen cuando las etapas se solapan: managers que redactan antes de tener las autoevaluaciones, o valoraciones entregadas antes de calibrar. Esta plantilla pone todo el ciclo en una sola línea de tiempo, en las seis etapas por las que pasa un proceso de evaluación —anual, semestral o trimestral:',
+    lead: 'Una plantilla gratuita de <strong>ciclo de evaluación del desempeño</strong>, un cronograma que lleva un ciclo de evaluación del marco a las evaluaciones cerradas: fija los criterios y forma a los managers, recoge autoevaluaciones y feedback 360, redacta las evaluaciones de los managers, calibra las valoraciones, entrégalas en 1:1 y fija planes de desarrollo. Descárgala en Excel, PowerPoint o CSV, o ábrela online para enlazar dependencias y ver la ruta crítica hasta la entrega de las evaluaciones.',
+    intro: 'Las evaluaciones se tuercen cuando las etapas se solapan: managers que redactan antes de tener las autoevaluaciones, o valoraciones entregadas antes de calibrar. Esta plantilla pone todo el ciclo en una sola línea de tiempo, en las seis etapas por las que pasa un proceso de evaluación, anual, semestral o trimestral:',
     phases: [
       ['Planificar y preparar', 'Define el alcance y el calendario del ciclo, actualiza las competencias y la escala de valoración, configura la herramienta, comunícalo a la organización y forma a los managers. <em>Hito: marco del ciclo listo.</em>'],
       ['Objetivos y autoevaluación', 'Confirma los objetivos a evaluar, recoge las autoevaluaciones de los empleados y el feedback 360/de pares, y reúne los datos de desempeño de apoyo. <em>Hito: autoevaluaciones recibidas.</em>'],
@@ -4370,7 +4370,7 @@ const T = {
       ['Entrega', 'Prepara los informes de evaluación y entrega las evaluaciones en conversaciones 1:1. <em>Hito: evaluaciones entregadas.</em>'],
       ['Desarrollo y cierre', 'Fija los objetivos del próximo ciclo, acuerda planes de desarrollo, recoge feedback sobre el proceso y cierra y reporta el ciclo. <em>Hito: ciclo cerrado.</em>'],
     ],
-    callout: 'Calibra antes de entregar, nunca después. Una valoración comunicada a un empleado no se puede deshacer, así que hay que normalizarla entre equipos —en la calibración— antes de entregar una sola evaluación. El error más dañino de un ciclo es que un manager comparta una nota que la calibración cambie después, así que trata «valoraciones cerradas» como una barrera antes de cualquier 1:1.',
+    callout: 'Calibra antes de entregar, nunca después. Una valoración comunicada a un empleado no se puede deshacer, así que hay que normalizarla entre equipos, en la calibración, antes de entregar una sola evaluación. El error más dañino de un ciclo es que un manager comparta una nota que la calibración cambie después, así que trata «valoraciones cerradas» como una barrera antes de cualquier 1:1.',
     customize: [
       'Fija primero la fecha límite de entrega y trabaja hacia atrás; un ciclo completo necesita de seis a diez semanas si autoevaluación, evaluaciones y calibración se secuencian bien.',
       'Mantén la autoevaluación estrictamente antes de las evaluaciones del manager: la idea es que el manager redacte con la aportación del empleado en la mano, no después.',
@@ -4386,7 +4386,7 @@ const T = {
       '<strong>Cierra el círculo con planes de desarrollo.</strong> La evaluación es el insumo, no el resultado; programa objetivos del próximo ciclo y planes de desarrollo para que el ciclo impulse el crecimiento y no solo una nota.',
     ],
     faq: [
-      ['¿Cuánto dura un ciclo de evaluación del desempeño?', 'Un ciclo completo suele durar de seis a diez semanas desde que se abre el marco hasta que se entregan las evaluaciones —más en organizaciones grandes, porque la calibración y la entrega escalan con la plantilla. La plantilla reparte preparación, autoevaluación, evaluaciones del manager, calibración, entrega y desarrollo en una línea de tiempo para que veas si tus fechas son realistas.'],
+      ['¿Cuánto dura un ciclo de evaluación del desempeño?', 'Un ciclo completo suele durar de seis a diez semanas desde que se abre el marco hasta que se entregan las evaluaciones, más en organizaciones grandes, porque la calibración y la entrega escalan con la plantilla. La plantilla reparte preparación, autoevaluación, evaluaciones del manager, calibración, entrega y desarrollo en una línea de tiempo para que veas si tus fechas son realistas.'],
       ['¿Cuáles son las etapas de un ciclo de evaluación del desempeño?', 'La mayoría de los ciclos pasa por seis etapas: marco y formación de managers, autoevaluación y feedback 360, evaluaciones del manager y valoraciones borrador, calibración, entrega en 1:1 y planificación del desarrollo. La plantilla da a cada una su propia fase con hitos, y sirve para ciclos anuales, semestrales o trimestrales.'],
       ['¿Puedo mostrar dependencias entre las tareas del ciclo?', 'Sí. Abre la plantilla en el <a href="/es/app.html">editor gratuito de gantts.app</a> para enlazar relaciones fin-inicio (autoevaluaciones → evaluaciones del manager → calibración → entrega): si las autoevaluaciones se retrasan, todo lo posterior se desplaza solo y la ruta crítica hasta la entrega se mantiene visible.'],
       ['¿La plantilla de ciclo de evaluación del desempeño es gratuita?', 'Sí: descarga gratuita en Excel, PowerPoint o CSV, y edición online gratuita sin registro.'],

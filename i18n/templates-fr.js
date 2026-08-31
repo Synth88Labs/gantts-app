@@ -1,12 +1,12 @@
 /* ============================================================
-   templates-fr.js — French template detail pages.
+   templates-fr.js, French template detail pages.
 
    Written for French usage rather than translated: "rétroplanning" for
    the backwards-from-a-fixed-date pattern, "lot de travail" for work
    package, "réception" for handover on a construction site, "maîtrise
    d'ouvrage / maîtrise d'œuvre" where the distinction matters.
 
-   metaTitle budget is 47 characters — the renderer appends the 13-char
+   metaTitle budget is 47 characters, the renderer appends the 13-char
    " | gantts.app" suffix, and French runs long, so titles are checked
    against that rather than against 60.
    ============================================================ */
@@ -16,7 +16,7 @@ const T = {
 'project-management': {
   card: 'Plan générique en cinq phases, du lancement à la clôture.',
   h1: 'Modèle de diagramme de Gantt pour la gestion de projet',
-  metaTitle: 'Modèle de Gantt — gestion de projet',
+  metaTitle: 'Modèle de Gantt: gestion de projet',
   metaDesc: 'Modèle de diagramme de Gantt gratuit pour la gestion de projet : cadrage, planification, exécution, contrôle et clôture.',
   lead: 'Un <strong>modèle de gestion de projet</strong> générique, structuré en cinq phases classiques. Il convient quand le projet n’appartient à aucun secteur particulier et qu’il faut surtout un cadre propre pour démarrer.',
   intro: 'Cinq phases, du lancement à la clôture :',
@@ -27,7 +27,7 @@ const T = {
     ['Contrôle', 'Suivi des délais et du budget, arbitrages, demandes de modification.'],
     ['Clôture', 'Réception, documentation, bilan et retour d’expérience. <em>Jalon : projet clos.</em>'],
   ],
-  callout: 'Le contrôle n’est pas une phase qui suit l’exécution : il court en parallèle du début à la fin. Le représenter comme une barre séparée après l’exécution est l’erreur la plus fréquente sur ce modèle — et elle donne l’impression que le pilotage commence une fois le travail terminé.',
+  callout: 'Le contrôle n’est pas une phase qui suit l’exécution : il court en parallèle du début à la fin. Le représenter comme une barre séparée après l’exécution est l’erreur la plus fréquente sur ce modèle, et elle donne l’impression que le pilotage commence une fois le travail terminé.',
   customize: [
     'Renommer les phases selon votre méthodologie interne si elle impose un vocabulaire.',
     'Ajouter une ligne par lot de travail sous chaque phase.',
@@ -51,7 +51,7 @@ const T = {
 'product-launch': {
   card: 'Étude, préparation produit, supports, campagne et jour J.',
   h1: 'Modèle de diagramme de Gantt pour un lancement produit',
-  metaTitle: 'Modèle de Gantt — lancement produit',
+  metaTitle: 'Modèle de Gantt: lancement produit',
   metaDesc: 'Modèle gratuit pour un lancement produit : étude de marché, préparation produit, supports commerciaux, campagne et mise sur le marché.',
   lead: 'Un <strong>plan de lancement produit</strong> fonctionne en rétroplanning : tout se cale sur la date de mise sur le marché, parce que c’est la seule date que l’on ne déplace pas sans coût.',
   intro: 'Quatre phases convergeant vers le jour J :',
@@ -66,7 +66,7 @@ const T = {
     'Déplacer la date de lancement : tout le plan recule en conséquence.',
     'Ajouter une ligne par marché si le lancement est international et échelonné.',
     'Poser la formation des commerciaux avant la campagne, pas après.',
-    'Prévoir une phase de suivi post-lancement — elle est presque toujours oubliée.',
+    'Prévoir une phase de suivi post-lancement, elle est presque toujours oubliée.',
   ],
   tips: [
     '<strong>Planifiez à rebours depuis le jour J.</strong> C’est la date la moins négociable.',
@@ -85,23 +85,23 @@ const T = {
 'event-planning': {
   card: 'Lieu, prestataires, inscriptions, montage et démontage autour d’une date fixe.',
   h1: 'Modèle de diagramme de Gantt pour l’organisation d’un événement',
-  metaTitle: 'Modèle de Gantt — événement',
+  metaTitle: 'Modèle de Gantt: événement',
   metaDesc: 'Modèle gratuit pour organiser un événement : lieu, prestataires, programme, inscriptions, montage, déroulé et démontage.',
   lead: 'Un <strong>rétroplanning d’événement</strong> part d’une date qui ne bouge pas. Tout le plan se calcule à rebours depuis le jour de l’événement, parce que c’est la seule contrainte réellement non négociable.',
   intro: 'Six phases, du concept au démontage :',
   phases: [
     ['Concept et lieu', 'Objectifs, budget, jauge, date et réservation du lieu. <em>Jalon : lieu confirmé.</em>'],
-    ['Prestataires', 'Traiteur, technique, mobilier, sécurité, transport — commandés par ordre de rareté.'],
+    ['Prestataires', 'Traiteur, technique, mobilier, sécurité, transport, commandés par ordre de rareté.'],
     ['Programme et intervenants', 'Déroulé, confirmations, supports et répétitions.'],
     ['Communication et inscriptions', 'Site, campagne, ouverture des inscriptions et relances.'],
     ['Montage et répétition générale', 'Production, montage, test technique, filage. <em>Jalon : prêt.</em>'],
     ['Déroulé et démontage', 'Événement, démontage, facturation et enquête de satisfaction.'],
   ],
-  callout: 'Le test technique mérite sa propre barre, pas une note en marge. La panne la plus fréquente et la plus visible d’un événement concerne le son ou la projection — et elle se manifeste toujours au moment où il ne reste plus de temps.',
+  callout: 'Le test technique mérite sa propre barre, pas une note en marge. La panne la plus fréquente et la plus visible d’un événement concerne le son ou la projection, et elle se manifeste toujours au moment où il ne reste plus de temps.',
   customize: [
     'Changer la date de l’événement : tout le plan se recale automatiquement.',
     'Ajouter une ligne par salle si des sessions se déroulent en parallèle.',
-    'Poser la clôture des inscriptions comme jalon — elle conditionne le traiteur et le montage.',
+    'Poser la clôture des inscriptions comme jalon, elle conditionne le traiteur et le montage.',
     'Conserver démontage et facturation dans le plan : ils font partie du projet.',
   ],
   tips: [
@@ -135,7 +135,7 @@ const T = {
     'Ajouter une phase si le projet comporte une étape de validation externe.',
     'Renommer les phases avec le vocabulaire de votre équipe.',
     'Relier les tâches qui attendent réellement les unes les autres.',
-    'Supprimer sans hésiter ce qui ne sert pas — c’est l’intérêt d’un modèle simple.',
+    'Supprimer sans hésiter ce qui ne sert pas, c’est l’intérêt d’un modèle simple.',
   ],
   tips: [
     '<strong>Quinze à vingt-cinq tâches suffisent</strong> pour la plupart des projets courts.',
@@ -154,7 +154,7 @@ const T = {
 'construction': {
   card: 'Autorisations, terrassement, gros œuvre, second œuvre et réception.',
   h1: 'Modèle de planning de chantier (diagramme de Gantt)',
-  metaTitle: 'Planning de chantier — modèle Gantt',
+  metaTitle: 'Planning de chantier: modèle Gantt',
   metaDesc: 'Modèle gratuit de planning de chantier : études, autorisations, terrassement, gros œuvre, clos couvert, second œuvre et réception.',
   lead: 'Un <strong>planning de chantier</strong> se heurte presque toujours au même point : ce n’est pas la construction qui fixe la date, c’est le permis. La partie visible du projet est aussi la plus prévisible.',
   intro: 'Six phases, des études à la réception :',
@@ -181,7 +181,7 @@ const T = {
   ],
   faq: [
     ['Combien de temps dure un chantier ?', 'La construction elle-même dure souvent 8 à 18 mois pour un bâtiment courant. Avec les études et les autorisations, comptez bien davantage.'],
-    ['Qu’est-ce qui se trouve sur le chemin critique ?', 'Presque toujours les autorisations, puis l’enchaînement gros œuvre — clos couvert — second œuvre.'],
+    ['Qu’est-ce qui se trouve sur le chemin critique ?', 'Presque toujours les autorisations, puis l’enchaînement gros œuvre, clos couvert, second œuvre.'],
     ['Comment gérer la météo ?', 'En marquant les tâches concernées et en leur donnant une marge saisonnière, plutôt qu’en espérant une année sèche.'],
   ],
   related: [['home-renovation', 'Rénovation'], ['data-center-build-schedule', 'Centre de données'], ['office-relocation-project-plan', 'Déménagement de bureaux']],
@@ -190,18 +190,18 @@ const T = {
 'marketing': {
   card: 'Stratégie, création, production, validations, diffusion et bilan.',
   h1: 'Modèle de diagramme de Gantt pour une campagne marketing',
-  metaTitle: 'Modèle de Gantt — campagne marketing',
+  metaTitle: 'Modèle de Gantt: campagne marketing',
   metaDesc: 'Modèle gratuit pour une campagne marketing : stratégie, création, production, validations, diffusion multicanal et bilan.',
-  lead: 'Un <strong>plan de campagne marketing</strong> échoue rarement sur la création. Il échoue sur les validations — le temps mort entre une création finie et sa publication, que presque aucun plan ne prévoit.',
+  lead: 'Un <strong>plan de campagne marketing</strong> échoue rarement sur la création. Il échoue sur les validations, le temps mort entre une création finie et sa publication, que presque aucun plan ne prévoit.',
   intro: 'Cinq phases, de la stratégie au bilan :',
   phases: [
     ['Stratégie', 'Objectifs, cible, message, canaux et budget. <em>Jalon : brief validé.</em>'],
     ['Création', 'Concepts, déclinaisons, textes et visuels.'],
-    ['Production', 'Réalisation des supports par canal — chacun avec son propre délai.'],
+    ['Production', 'Réalisation des supports par canal, chacun avec son propre délai.'],
     ['Validations', 'Relecture, validation métier, juridique si nécessaire. <em>Le poste le plus sous-estimé.</em>'],
     ['Diffusion et bilan', 'Mise en ligne, achat média, suivi des performances, bilan. <em>Jalon : campagne lancée.</em>'],
   ],
-  callout: 'Donnez aux validations une barre visible. Dans la plupart des organisations, une création reste trois jours en attente d’une signature — ce n’est pas du temps de production, c’est du temps d’attente, et il doit apparaître dans le plan.',
+  callout: 'Donnez aux validations une barre visible. Dans la plupart des organisations, une création reste trois jours en attente d’une signature, ce n’est pas du temps de production, c’est du temps d’attente, et il doit apparaître dans le plan.',
   customize: [
     'Ajouter une ligne par canal : chacun a son délai de production propre.',
     'Placer les dates de diffusion comme contraintes fixes et remonter à rebours.',
@@ -225,7 +225,7 @@ const T = {
 'software-development': {
   card: 'Exigences, architecture, développement, recette et mise en production.',
   h1: 'Modèle de diagramme de Gantt pour un projet logiciel',
-  metaTitle: 'Modèle de Gantt — projet logiciel',
+  metaTitle: 'Modèle de Gantt: projet logiciel',
   metaDesc: 'Modèle gratuit pour un projet de développement logiciel : exigences, architecture, développement, intégration, recette, mise en production.',
   lead: 'Un <strong>plan de projet logiciel</strong> comporte un piège récurrent : la recette est planifiée comme une courte barre finale et prend le double. Tests et corrections forment une boucle, pas une ligne droite.',
   intro: 'Six phases, des exigences à la production :',
@@ -233,7 +233,7 @@ const T = {
     ['Exigences', 'Besoins, cas d’usage, critères d’acceptation. <em>Jalon : périmètre figé.</em>'],
     ['Architecture', 'Choix techniques, modèle de données, interfaces, environnements.'],
     ['Développement', 'Réalisation par itérations, revues de code, intégration continue.'],
-    ['Intégration et recette', 'Assemblage, tests fonctionnels, corrections — en boucle avec le développement.'],
+    ['Intégration et recette', 'Assemblage, tests fonctionnels, corrections, en boucle avec le développement.'],
     ['Migration des données', 'Reprise, correspondances, migrations à blanc. <em>Plusieurs passages, jamais un seul.</em>'],
     ['Mise en production', 'Bascule, surveillance renforcée, stabilisation. <em>Jalon : en production.</em>'],
   ],
@@ -241,7 +241,7 @@ const T = {
   customize: [
     'Ajouter une ligne par module ou par équipe si plusieurs travaillent en parallèle.',
     'Représenter la recette en boucle avec le développement, pas à la suite.',
-    'Prévoir une phase de stabilisation après la bascule — deux à six semaines.',
+    'Prévoir une phase de stabilisation après la bascule, deux à six semaines.',
     'Poser le gel du périmètre en jalon : ce qui arrive après décale la mise en production.',
   ],
   tips: [
@@ -261,21 +261,21 @@ const T = {
 'agile': {
   card: 'Itérations, incréments et jalons pour un projet agile.',
   h1: 'Modèle de diagramme de Gantt pour un projet agile',
-  metaTitle: 'Modèle de Gantt — projet agile',
+  metaTitle: 'Modèle de Gantt: projet agile',
   metaDesc: 'Modèle gratuit pour un projet agile : itérations, incréments, jalons de livraison et dépendances externes.',
-  lead: 'Un <strong>projet agile</strong> n’a pas besoin d’un Gantt pour piloter ses sprints — le tableau s’en charge. Il en a besoin pour ce que le tableau ne montre pas : les dépendances externes et les engagements de date.',
+  lead: 'Un <strong>projet agile</strong> n’a pas besoin d’un Gantt pour piloter ses sprints, le tableau s’en charge. Il en a besoin pour ce que le tableau ne montre pas : les dépendances externes et les engagements de date.',
   intro: 'Quatre niveaux qui cohabitent :',
   phases: [
     ['Cadrage', 'Vision, backlog initial, architecture de départ. <em>Jalon : équipe lancée.</em>'],
     ['Itérations', 'Sprints successifs de durée fixe, représentés comme des barres régulières.'],
     ['Incréments livrables', 'Ce qui sort réellement à la fin de chaque série de sprints. <em>Les jalons visibles pour l’extérieur.</em>'],
-    ['Dépendances externes', 'Fournisseurs, validations, autres équipes — la raison d’être de ce plan.'],
+    ['Dépendances externes', 'Fournisseurs, validations, autres équipes, la raison d’être de ce plan.'],
   ],
   callout: 'N’essayez pas de planifier le contenu des sprints à six mois. Ce plan sert à tenir les dates de livraison et les dépendances externes ; le contenu de chaque sprint se décide au dernier moment responsable, et c’est précisément l’intérêt de la méthode.',
   customize: [
     'Régler la durée des itérations sur celle de votre équipe.',
     'Ajouter une ligne par dépendance externe, avec le nom du responsable.',
-    'Poser les incréments livrables en jalons — ce sont eux qui intéressent la direction.',
+    'Poser les incréments livrables en jalons, ce sont eux qui intéressent la direction.',
     'Laisser le contenu des sprints lointains volontairement vide.',
   ],
   tips: [
@@ -295,17 +295,17 @@ const T = {
 'excel': {
   card: 'À télécharger en XLSX : tableau, barres et jalons prêts à l’emploi.',
   h1: 'Modèle de diagramme de Gantt pour Excel',
-  metaTitle: 'Modèle de Gantt pour Excel — gratuit',
+  metaTitle: 'Modèle de Gantt pour Excel: gratuit',
   metaDesc: 'Modèle de diagramme de Gantt gratuit pour Excel : fichier XLSX avec tableau de tâches, barres et jalons déjà en place.',
   lead: 'Un <strong>modèle de Gantt pour Excel</strong> prêt à remplir : le tableau de tâches, les colonnes intermédiaires et la mise en forme des barres sont déjà en place, il ne reste qu’à saisir vos dates.',
   intro: 'Ce que contient le fichier :',
   phases: [
-    ['Tableau des tâches', 'Tâche, début, durée et responsable — les colonnes dont tout le reste découle.'],
+    ['Tableau des tâches', 'Tâche, début, durée et responsable, les colonnes dont tout le reste découle.'],
     ['Colonnes intermédiaires', 'Le calcul d’écart au démarrage qui rend l’astuce des barres empilées possible.'],
     ['Graphique', 'L’histogramme empilé déjà formaté, première série masquée.'],
     ['Jalons', 'Une série distincte avec marqueur en losange.'],
   ],
-  callout: 'Excel ne recalcule pas les antériorités. Si une tâche glisse, chaque date de début suivante doit être reprise à la main — praticable jusqu’à une vingtaine de lignes, plus au-delà. Si le plan doit se recalculer seul, ouvrez-le directement dans l’éditeur.',
+  callout: 'Excel ne recalcule pas les antériorités. Si une tâche glisse, chaque date de début suivante doit être reprise à la main, praticable jusqu’à une vingtaine de lignes, plus au-delà. Si le plan doit se recalculer seul, ouvrez-le directement dans l’éditeur.',
   customize: [
     'Élargir la plage de dates de l’axe si votre projet dépasse la période du modèle.',
     'Ajouter une colonne d’avancement et une mise en forme conditionnelle si vous suivez le réalisé.',
@@ -335,7 +335,7 @@ const T = {
   intro: 'Ce que contient la diapositive :',
   phases: [
     ['Axe temporel', 'Une graduation par mois ou par trimestre, selon la durée du projet.'],
-    ['Barres de phase', 'Six à dix barres au maximum — au-delà, plus rien n’est lisible depuis la salle.'],
+    ['Barres de phase', 'Six à dix barres au maximum, au-delà, plus rien n’est lisible depuis la salle.'],
     ['Jalons', 'Trois losanges pour les moments qui comptent.'],
     ['Légende', 'Discrète, uniquement si les couleurs portent une information.'],
   ],
@@ -363,14 +363,14 @@ const T = {
 'weekly': {
   card: 'Une semaine en vue jour par jour, pour une équipe ou un projet court.',
   h1: 'Modèle de planning hebdomadaire (diagramme de Gantt)',
-  metaTitle: 'Planning hebdomadaire — modèle Gantt',
+  metaTitle: 'Planning hebdomadaire: modèle Gantt',
   metaDesc: 'Modèle gratuit de planning hebdomadaire en diagramme de Gantt : cinq jours, tâches par personne et jalons de fin de semaine.',
   lead: 'Un <strong>planning hebdomadaire</strong> en diagramme de Gantt montre ce qu’une liste ne montre pas : qui fait quoi en même temps, et quel jour la semaine est déjà pleine.',
   intro: 'Cinq jours, découpés par demi-journées :',
   phases: [
-    ['Lundi — cadrage', 'Point de lancement, priorités de la semaine, répartition.'],
-    ['Mardi à jeudi — production', 'Le cœur du travail, une barre par tâche et par personne.'],
-    ['Vendredi — clôture', 'Vérification, livraison, point de fin de semaine. <em>Jalon : semaine bouclée.</em>'],
+    ['Lundi, cadrage', 'Point de lancement, priorités de la semaine, répartition.'],
+    ['Mardi à jeudi, production', 'Le cœur du travail, une barre par tâche et par personne.'],
+    ['Vendredi, clôture', 'Vérification, livraison, point de fin de semaine. <em>Jalon : semaine bouclée.</em>'],
   ],
   callout: 'Ne remplissez pas les cinq jours à 100 %. Une semaine planifiée au maximum n’absorbe aucune urgence, et il y en a toujours une. Soixante-dix à quatre-vingts pour cent de charge planifiée est un rythme tenable.',
   customize: [
@@ -396,7 +396,7 @@ const T = {
 'monthly': {
   card: 'Un mois en semaines : jalons, échéances et charge par personne.',
   h1: 'Modèle de planning mensuel (diagramme de Gantt)',
-  metaTitle: 'Planning mensuel — modèle Gantt',
+  metaTitle: 'Planning mensuel: modèle Gantt',
   metaDesc: 'Modèle gratuit de planning mensuel en diagramme de Gantt : quatre à cinq semaines, jalons, échéances et charge.',
   lead: 'Un <strong>planning mensuel</strong> travaille en semaines. C’est la bonne maille pour coordonner une équipe : assez fine pour être actionnable, assez large pour tenir un mois sur une page.',
   intro: 'Quatre à cinq semaines et les échéances du mois :',
@@ -405,7 +405,7 @@ const T = {
     ['Semaines 2 et 3', 'Production, point de mi-mois, ajustement des priorités.'],
     ['Semaine 4', 'Finalisation, livraisons, clôture. <em>Jalon : échéances du mois tenues.</em>'],
   ],
-  callout: 'Placez les échéances fixes du mois avant tout le reste. Facturation, reporting, comités, clôtures comptables ne se déplacent pas — le travail se planifie autour d’eux, pas l’inverse.',
+  callout: 'Placez les échéances fixes du mois avant tout le reste. Facturation, reporting, comités, clôtures comptables ne se déplacent pas, le travail se planifie autour d’eux, pas l’inverse.',
   customize: [
     'Ajouter une ligne par personne ou par équipe pour visualiser la charge.',
     'Marquer les jours fériés et les congés comme périodes indisponibles.',
@@ -429,7 +429,7 @@ const T = {
 'employee-onboarding': {
   card: 'Avant le premier jour, première semaine, premier mois, 90 jours.',
   h1: 'Modèle de diagramme de Gantt pour l’intégration d’un nouvel arrivant',
-  metaTitle: 'Modèle de Gantt — intégration RH',
+  metaTitle: 'Modèle de Gantt: intégration RH',
   metaDesc: 'Modèle gratuit pour l’intégration d’un nouvel arrivant : préparation, première semaine, premier mois et 90 premiers jours.',
   lead: 'Un <strong>plan d’intégration</strong> est court mais à fort effet. L’essentiel se joue avant le premier jour : matériel, accès et interlocuteurs doivent être prêts à l’arrivée, pas commandés le matin même.',
   intro: 'Quatre étapes, de la préparation aux 90 jours :',
@@ -439,7 +439,7 @@ const T = {
     ['Premier mois', 'Montée en autonomie, formation métier, premiers dossiers suivis. <em>Jalon : point à 30 jours.</em>'],
     ['90 premiers jours', 'Prise de responsabilité, objectifs, entretien de fin de période d’essai. <em>Jalon : bilan à 90 jours.</em>'],
   ],
-  callout: 'Le matériel et les accès se commandent à la signature du contrat, pas à l’arrivée. Un nouvel arrivant qui passe sa première semaine sans ordinateur ni accès forme une impression durable de l’organisation — et c’est entièrement évitable.',
+  callout: 'Le matériel et les accès se commandent à la signature du contrat, pas à l’arrivée. Un nouvel arrivant qui passe sa première semaine sans ordinateur ni accès forme une impression durable de l’organisation, et c’est entièrement évitable.',
   customize: [
     'Adapter la durée si la période d’essai de votre pays ou de votre convention diffère.',
     'Ajouter une ligne par service pour les rencontres à prévoir.',
@@ -464,7 +464,7 @@ const T = {
   'refinery-turnaround-schedule': {
     card: "Arrêt, vidange, inspection, réparation et redémarrage, planifiés au poste.",
     h1: "Planning d’arrêt de raffinerie (grand arrêt)",
-    metaTitle: "Planning de grand arrêt — raffinerie",
+    metaTitle: "Planning de grand arrêt: raffinerie",
     metaDesc: "Modèle gratuit de planning de grand arrêt : préparation, arrêt, vidange, inspection, réparation et redémarrage.",
     lead: "Un <strong>planning de grand arrêt</strong> se distingue de tout autre planning industriel sur un point : l’unité ne produit rien pendant ce temps. Chaque jour de retard coûte de la production, ce qui impose de planifier au poste et non à la semaine.",
     intro: "Six phases, de la préparation à la remise au service exploitation :",
@@ -483,7 +483,7 @@ const T = {
       ],
       [
         "Réparation et remplacement",
-        "Catalyseur, échangeurs, robinetterie, tuyauterie — le chemin critique tient presque toujours à une seule colonne."
+        "Catalyseur, échangeurs, robinetterie, tuyauterie, le chemin critique tient presque toujours à une seule colonne."
       ],
       [
         "Épreuves et remise en état",
@@ -496,7 +496,7 @@ const T = {
     ],
     callout: "Planifiez le travail supplémentaire avant de le connaître. Entre 10 et 30 % des heures d’un grand arrêt naissent de constats faits à l’ouverture. Un planning sans cette réserve n’est pas optimiste, il est incomplet.",
     customize: [
-      "Passer en postes si le chantier tourne en 3×8 — la maille journalière est trop grossière.",
+      "Passer en postes si le chantier tourne en 3×8, la maille journalière est trop grossière.",
       "Une ligne par équipement ou par colonne : ils avancent en parallèle et se disputent les mêmes équipes.",
       "Représenter permis et consignation comme des tâches distinctes de l’arrêt, pas incluses dedans.",
       "Prévoir une ligne de réserve par phase et l’afficher ouvertement."
@@ -531,7 +531,7 @@ const T = {
   'hotel-pre-opening-critical-path': {
     card: "De la réception des travaux au premier client : personnel, systèmes, licences.",
     h1: "Planning de pré-ouverture d’un hôtel",
-    metaTitle: "Pré-ouverture d’hôtel — planning",
+    metaTitle: "Pré-ouverture d’hôtel: planning",
     metaDesc: "Modèle gratuit de planning de pré-ouverture hôtelière : licences, recrutement, systèmes, distribution, essais et ouverture.",
     lead: "Un <strong>planning de pré-ouverture</strong> commence là où s’arrête le planning de travaux. Entre un bâtiment terminé et le premier client payant, il reste six à neuf mois de travail qui doivent se dérouler en parallèle du chantier.",
     intro: "Six chantiers convergeant vers l’ouverture :",
@@ -546,7 +546,7 @@ const T = {
       ],
       [
         "Systèmes",
-        "PMS, caisse, channel manager, serrures, wifi, téléphonie — interfaces et réservations de test comprises."
+        "PMS, caisse, channel manager, serrures, wifi, téléphonie, interfaces et réservations de test comprises."
       ],
       [
         "Distribution et ventes",
@@ -561,7 +561,7 @@ const T = {
         "Tests par service, ouverture aux proches, levée des réserves. <em>Jalon : premier client.</em>"
       ]
     ],
-    callout: "Être réservable est un jalon précoce, pas tardif. Les chambres doivent se vendre des mois avant l’ouverture, faute de quoi l’hôtel démarre sa première saison avec un calendrier vide — l’erreur évitable la plus coûteuse d’une ouverture.",
+    callout: "Être réservable est un jalon précoce, pas tardif. Les chambres doivent se vendre des mois avant l’ouverture, faute de quoi l’hôtel démarre sa première saison avec un calendrier vide, l’erreur évitable la plus coûteuse d’une ouverture.",
     customize: [
       "Déplacer la date d’ouverture : la chaîne des licences montre aussitôt si elle tient.",
       "Ajouter une ligne de formation par service : réception, étages, cuisine, salle, technique.",
@@ -581,7 +581,7 @@ const T = {
       ],
       [
         "Qu’est-ce qui est sur le chemin critique ?",
-        "Le plus souvent la chaîne des autorisations ou l’intégration des systèmes — rarement le chantier, pourtant le plus visible."
+        "Le plus souvent la chaîne des autorisations ou l’intégration des systèmes, rarement le chantier, pourtant le plus visible."
       ],
       [
         "Une ouverture progressive est-elle nécessaire ?",
@@ -598,9 +598,9 @@ const T = {
   'solar-farm-construction-schedule': {
     card: "Foncier, raccordement, modules et mise en service, avec marges météo et réseau.",
     h1: "Planning de construction d’une centrale photovoltaïque",
-    metaTitle: "Planning centrale solaire — modèle",
+    metaTitle: "Planning centrale solaire: modèle",
     metaDesc: "Modèle gratuit de planning pour une centrale photovoltaïque : foncier, autorisations, raccordement, montage, mise en service.",
-    lead: "Un <strong>planning de centrale photovoltaïque</strong> est rarement gouverné par le montage. Poser des modules va vite ; l’autorisation et le raccordement prennent des années — et c’est là que se situe le chemin critique.",
+    lead: "Un <strong>planning de centrale photovoltaïque</strong> est rarement gouverné par le montage. Poser des modules va vite ; l’autorisation et le raccordement prennent des années, et c’est là que se situe le chemin critique.",
     intro: "Six phases, du foncier à l’injection :",
     phases: [
       [
@@ -609,7 +609,7 @@ const T = {
       ],
       [
         "Autorisations",
-        "Urbanisme, étude d’impact, espèces protégées, permis de construire — le poste le plus long et le plus incertain."
+        "Urbanisme, étude d’impact, espèces protégées, permis de construire, le poste le plus long et le plus incertain."
       ],
       [
         "Achats et financement",
@@ -628,7 +628,7 @@ const T = {
         "Raccordement, essais, attestations, mise en service. <em>Jalon : première injection.</em>"
       ]
     ],
-    callout: "Le raccordement est la tâche qui date le projet. L’accord du gestionnaire de réseau et la date de mise à disposition échappent à votre contrôle et se comptent souvent en années — planifiez tout le reste à rebours depuis cette date.",
+    callout: "Le raccordement est la tâche qui date le projet. L’accord du gestionnaire de réseau et la date de mise à disposition échappent à votre contrôle et se comptent souvent en années, planifiez tout le reste à rebours depuis cette date.",
     customize: [
       "Ajouter une ligne par tranche si la centrale se construit par phases.",
       "Marquer battage et tranchées comme sensibles à la météo et leur donner de la marge en hiver.",
@@ -665,7 +665,7 @@ const T = {
   'dissertation-gantt-chart': {
     card: "Projet, littérature, terrain, chapitres, corrections et soutenance.",
     h1: "Diagramme de Gantt pour une thèse",
-    metaTitle: "Planning de thèse — modèle Gantt",
+    metaTitle: "Planning de thèse: modèle Gantt",
     metaDesc: "Modèle gratuit de planning de thèse : projet de recherche, littérature, méthode, collecte, analyse, rédaction et soutenance.",
     lead: "Un <strong>planning de thèse</strong> pose un problème qu’aucun chantier ne connaît : vous êtes la seule ressource et l’échéance est à des années. Sans jalons intermédiaires, le retard ne se voit qu’une fois irrattrapable.",
     intro: "Six phases sur trois à quatre ans :",
@@ -676,7 +676,7 @@ const T = {
       ],
       [
         "Littérature et cadre théorique",
-        "Recherche systématique, état de l’art, cadrage — se poursuit en arrière-plan."
+        "Recherche systématique, état de l’art, cadrage, se poursuit en arrière-plan."
       ],
       [
         "Méthode et accès au terrain",
@@ -699,7 +699,7 @@ const T = {
     customize: [
       "Passer en semestres si la thèse est prévue sur quatre ans.",
       "Ajouter les charges d’enseignement et les colloques : ils coûtent des semaines réelles.",
-      "Poser l’avis éthique en antériorité de la collecte — c’est le délai le plus sous-estimé.",
+      "Poser l’avis éthique en antériorité de la collecte, c’est le délai le plus sous-estimé.",
       "Prévoir de la marge avant le dépôt : relecture et mise en forme prennent le double du prévu."
     ],
     tips: [
@@ -730,11 +730,11 @@ const T = {
   },
 
   'home-renovation': {
-    card: "Démolition, réseaux, cloisons, finitions — dans l’ordre qui évite les reprises.",
+    card: "Démolition, réseaux, cloisons, finitions, dans l’ordre qui évite les reprises.",
     h1: "Planning de rénovation d’un logement",
-    metaTitle: "Planning de rénovation — modèle",
+    metaTitle: "Planning de rénovation: modèle",
     metaDesc: "Modèle gratuit de planning de rénovation : démolition, réseaux, cloisons, revêtements et finitions, dans le bon ordre.",
-    lead: "Un <strong>planning de rénovation</strong> vaut surtout par son ordre. Poser le parquet avant de refaire l’électricité, c’est le refaire deux fois — et l’essentiel des dépassements vient de là, pas des prix.",
+    lead: "Un <strong>planning de rénovation</strong> vaut surtout par son ordre. Poser le parquet avant de refaire l’électricité, c’est le refaire deux fois, et l’essentiel des dépassements vient de là, pas des prix.",
     intro: "Six phases dans l’ordre qui évite les reprises :",
     phases: [
       [
@@ -747,12 +747,12 @@ const T = {
       ],
       [
         "Réseaux",
-        "Électricité, plomberie, chauffage, ventilation — avant toute fermeture. <em>Jalon : réseaux passés.</em>"
+        "Électricité, plomberie, chauffage, ventilation, avant toute fermeture. <em>Jalon : réseaux passés.</em>"
       ],
       ["Cloisons et supports", "Isolation, cloisons, ragréage, enduits, chapes."],
       [
         "Revêtements",
-        "Carrelage, parquet, peinture, faïence — dans cet ordre, du sol vers les murs selon les cas."
+        "Carrelage, parquet, peinture, faïence, dans cet ordre, du sol vers les murs selon les cas."
       ],
       [
         "Finitions et réception",
@@ -763,7 +763,7 @@ const T = {
     customize: [
       "Ajouter une ligne par pièce si vous rénovez pièce par pièce en restant sur place.",
       "Marquer les temps de séchage comme tâches visibles : chape, enduit, peinture.",
-      "Poser les délais de livraison de cuisine et menuiseries en tâches — ils dépassent souvent deux mois.",
+      "Poser les délais de livraison de cuisine et menuiseries en tâches, ils dépassent souvent deux mois.",
       "Prévoir 10 à 15 % de marge : une rénovation révèle toujours quelque chose."
     ],
     tips: [
@@ -796,9 +796,9 @@ const T = {
   'wedding-planning': {
     card: "Lieu, cérémonie, prestataires, invités et déroulé du jour J.",
     h1: "Rétroplanning de mariage (diagramme de Gantt)",
-    metaTitle: "Rétroplanning de mariage — modèle",
+    metaTitle: "Rétroplanning de mariage: modèle",
     metaDesc: "Modèle gratuit de rétroplanning de mariage : lieu, cérémonie, prestataires, invitations, tenues et déroulé du jour J.",
-    lead: "Un <strong>rétroplanning de mariage</strong> part d’une date fixe. Douze à dix-huit mois paraissent confortables — jusqu’à découvrir que les beaux lieux et les bons photographes se réservent deux ans à l’avance.",
+    lead: "Un <strong>rétroplanning de mariage</strong> part d’une date fixe. Douze à dix-huit mois paraissent confortables, jusqu’à découvrir que les beaux lieux et les bons photographes se réservent deux ans à l’avance.",
     intro: "Six phases, de la date au lendemain :",
     phases: [
       [
@@ -811,7 +811,7 @@ const T = {
       ],
       [
         "Prestataires",
-        "Photographe, traiteur, musique, fleurs, gâteau, transport — par ordre de rareté."
+        "Photographe, traiteur, musique, fleurs, gâteau, transport, par ordre de rareté."
       ],
       [
         "Invités et papeterie",
@@ -826,7 +826,7 @@ const T = {
         "Déroulé, confirmations, installation, mariage, rangement et restitutions."
       ]
     ],
-    callout: "Le jour J mérite son propre planning horaire, distinct du rétroplanning annuel. L’arrivée des fleurs, la séance photo, le vin d’honneur et le service dépendent les uns des autres à la minute — un déroulé à la maille hebdomadaire ne sert à personne.",
+    callout: "Le jour J mérite son propre planning horaire, distinct du rétroplanning annuel. L’arrivée des fleurs, la séance photo, le vin d’honneur et le service dépendent les uns des autres à la minute, un déroulé à la maille hebdomadaire ne sert à personne.",
     customize: [
       "Changer la date : tous les délais se recalent et les prestataires indisponibles apparaissent aussitôt.",
       "Une ligne par prestataire, avec acompte et solde en jalons.",
@@ -863,7 +863,7 @@ const T = {
   'research': {
     card: "Demande, éthique, collecte, analyse, publication et obligations de rapport.",
     h1: "Diagramme de Gantt pour un projet de recherche",
-    metaTitle: "Modèle de Gantt — projet de recherche",
+    metaTitle: "Modèle de Gantt: projet de recherche",
     metaDesc: "Modèle gratuit pour un projet de recherche : demande de financement, éthique, collecte, analyse, publications et rapports.",
     lead: "Un <strong>planning de projet de recherche</strong> doit porter deux calendriers à la fois : le déroulé scientifique et les obligations de rapport du financeur. Le second n’est pas négociable et se retrouve régulièrement oublié.",
     intro: "Six lots de travail, tels qu’une demande de financement les attend :",
@@ -878,7 +878,7 @@ const T = {
       ],
       [
         "Collecte",
-        "Instruments, pré-test, accès au terrain, recueil — souvent la phase la plus longue."
+        "Instruments, pré-test, accès au terrain, recueil, souvent la phase la plus longue."
       ],
       ["Analyse", "Traitement, analyse, validation et interprétation."],
       [
@@ -890,12 +890,12 @@ const T = {
         "Rapports intermédiaires, appels de fonds, justificatifs, archivage, rapport final."
       ]
     ],
-    callout: "L’évaluation par les pairs est une tâche avec une durée, pas un événement. Entre la soumission et l’acceptation s’écoulent six à douze mois et un à trois cycles de révision — un plan qui s’arrête à la publication s’arrête trop tôt.",
+    callout: "L’évaluation par les pairs est une tâche avec une durée, pas un événement. Entre la soumission et l’acceptation s’écoulent six à douze mois et un à trois cycles de révision, un plan qui s’arrête à la publication s’arrête trop tôt.",
     customize: [
       "Une ligne par lot de travail, calquée sur le découpage de la demande : le même plan sert alors de base aux rapports.",
       "Placer les échéances de rapport du financeur en jalons et planifier à rebours.",
       "Poser avis éthique et autorisation des données en antériorité de la collecte.",
-      "Ajouter les lignes de personnel si les contrats sont à durée déterminée — c’est la contrainte la plus dure."
+      "Ajouter les lignes de personnel si les contrats sont à durée déterminée, c’est la contrainte la plus dure."
     ],
     tips: [
       "<strong>Le calendrier de la demande devient le plan du projet.</strong> Construisez-le pour qu’il tienne.",
@@ -927,7 +927,7 @@ const T = {
   'content-calendar': {
     card: "Sujets, production, validations et publication, tous canaux confondus.",
     h1: "Calendrier éditorial en diagramme de Gantt",
-    metaTitle: "Calendrier éditorial — modèle Gantt",
+    metaTitle: "Calendrier éditorial: modèle Gantt",
     metaDesc: "Modèle gratuit de calendrier éditorial : sujets, production, validation, publication et mise à jour des contenus.",
     lead: "Un <strong>calendrier éditorial</strong> en diagramme de Gantt montre ce qu’un tableau masque : le temps de production avant chaque date de publication. La date de bouclage n’est pas le jour de mise en ligne, c’est deux semaines avant.",
     intro: "Cinq phases récurrentes par publication :",
@@ -938,7 +938,7 @@ const T = {
       ],
       [
         "Production",
-        "Brief, texte, visuel, vidéo ou infographie — chaque format avec son propre délai."
+        "Brief, texte, visuel, vidéo ou infographie, chaque format avec son propre délai."
       ],
       [
         "Validation",
@@ -953,7 +953,7 @@ const T = {
         "Audience, positions, retouches et actualisation des contenus anciens."
       ]
     ],
-    callout: "Donnez à la validation sa propre barre. Dans la plupart des équipes, un texte terminé attend trois jours une signature — ce n’est pas du temps de production, c’est du temps d’attente, et il doit être visible.",
+    callout: "Donnez à la validation sa propre barre. Dans la plupart des équipes, un texte terminé attend trois jours une signature, ce n’est pas du temps de production, c’est du temps d’attente, et il doit être visible.",
     customize: [
       "Une ligne par canal : blog, newsletter, LinkedIn, vidéo. Leurs délais diffèrent.",
       "Créer les formats récurrents en série et caler leur rythme dans le calendrier.",
@@ -990,25 +990,25 @@ const T = {
   '30-60-90-day-plan': {
     card: "Prise de poste en trois étapes : comprendre, contribuer, livrer.",
     h1: "Plan 30-60-90 jours en diagramme de Gantt",
-    metaTitle: "Plan 30-60-90 jours — modèle",
+    metaTitle: "Plan 30-60-90 jours: modèle",
     metaDesc: "Modèle gratuit de plan 30-60-90 jours : comprendre, contribuer puis prendre la responsabilité, avec des jalons de bilan.",
     lead: "Un <strong>plan 30-60-90 jours</strong> répond à une question posée à chaque prise de poste : que faites-vous en premier ? En diagramme de Gantt, il montre aussi ce qui avance en parallèle et ce qui s’enchaîne.",
     intro: "Trois étapes de nature très différente :",
     phases: [
       [
-        "Jour 1 à 30 — comprendre",
+        "Jour 1 à 30, comprendre",
         "Intégration, entretiens avec l’équipe et les interlocuteurs, produit, clients, chiffres, processus. <em>Jalon : état des lieux présenté.</em>"
       ],
       [
-        "Jour 31 à 60 — contribuer",
+        "Jour 31 à 60, contribuer",
         "Premiers dossiers, reprise de sujets en cours, propositions d’amélioration, premiers résultats visibles."
       ],
       [
-        "Jour 61 à 90 — livrer",
+        "Jour 61 à 90, livrer",
         "Sujets en propre, un chantier mené à terme, plan pour les six mois suivants. <em>Jalon : entretien de fin de période d’essai.</em>"
       ]
     ],
-    callout: "Résistez à l’envie de changer quelque chose dans les trente premiers jours. L’erreur la plus fréquente des nouveaux managers est une réorganisation décidée avant l’état des lieux — elle coûte plus de confiance que le résultat rapide n’en rapporte.",
+    callout: "Résistez à l’envie de changer quelque chose dans les trente premiers jours. L’erreur la plus fréquente des nouveaux managers est une réorganisation décidée avant l’état des lieux, elle coûte plus de confiance que le résultat rapide n’en rapporte.",
     customize: [
       "Trois à cinq objectifs par étape plutôt qu’une longue liste : on n’accomplit pas davantage en trente jours.",
       "Placer les entretiens avec les interlocuteurs clés en tâches, dans les deux premières semaines.",
@@ -1045,9 +1045,9 @@ const T = {
   'product-roadmap': {
     card: "Thèmes, versions et dépendances par trimestre plutôt que par semaine.",
     h1: "Feuille de route produit en diagramme de Gantt",
-    metaTitle: "Feuille de route produit — modèle",
+    metaTitle: "Feuille de route produit: modèle",
     metaDesc: "Modèle gratuit de feuille de route produit : thèmes, initiatives, versions, dépendances et planification trimestrielle.",
-    lead: "Une <strong>feuille de route produit</strong> n’est pas un plan de sprint. Elle travaille en trimestres et en thèmes, pas en tickets — et son intérêt réel est de montrer les dépendances entre initiatives avant qu’elles ne deviennent des problèmes.",
+    lead: "Une <strong>feuille de route produit</strong> n’est pas un plan de sprint. Elle travaille en trimestres et en thèmes, pas en tickets, et son intérêt réel est de montrer les dépendances entre initiatives avant qu’elles ne deviennent des problèmes.",
     intro: "Quatre niveaux qui structurent une roadmap :",
     phases: [
       [
@@ -1064,13 +1064,13 @@ const T = {
       ],
       [
         "Dépendances et prérequis",
-        "Travaux de plateforme, migrations, partenaires externes — tout ce qui bloque d’autres initiatives."
+        "Travaux de plateforme, migrations, partenaires externes, tout ce qui bloque d’autres initiatives."
       ]
     ],
     callout: "Ne datez pas au jour près les troisième et quatrième trimestres. Une roadmap qui promet des dates précises à douze mois sera soit rompue, soit tenue en réduisant discrètement le périmètre. Des barres approximatives sont plus honnêtes et tiennent plus longtemps.",
     customize: [
       "Un groupe par thème, avec ses initiatives en dessous.",
-      "Passer en maille trimestrielle — la semaine suggère une précision qui n’existe pas.",
+      "Passer en maille trimestrielle, la semaine suggère une précision qui n’existe pas.",
       "Relier les initiatives entre elles : les dépendances sont la première cause de décalage.",
       "Garder une ligne pour la plateforme et la maintenance, sinon elle disparaît du plan tout en consommant du temps."
     ],
@@ -1104,31 +1104,31 @@ const T = {
   'annual': {
     card: "Une année sur une page : trimestres, initiatives et échéances fixes.",
     h1: "Plan annuel en diagramme de Gantt",
-    metaTitle: "Plan annuel — modèle Gantt",
+    metaTitle: "Plan annuel: modèle Gantt",
     metaDesc: "Modèle gratuit de plan annuel : trimestres, initiatives, échéances fixes et jalons, sur une seule page.",
-    lead: "Un <strong>plan annuel</strong> tient douze mois sur une page. Il travaille en trimestres et en initiatives, pas en tâches — dès que des lots de travail apparaissent, ce n’est plus un plan annuel mais un planning illisible.",
+    lead: "Un <strong>plan annuel</strong> tient douze mois sur une page. Il travaille en trimestres et en initiatives, pas en tâches, dès que des lots de travail apparaissent, ce n’est plus un plan annuel mais un planning illisible.",
     intro: "Quatre trimestres et les blocs qui portent l’année :",
     phases: [
       [
-        "T1 — lancement et arbitrages",
+        "T1, lancement et arbitrages",
         "Objectifs, validation budgétaire, poursuite des chantiers en cours. <em>Jalon : plan adopté.</em>"
       ],
       [
-        "T2 — exécution",
+        "T2, exécution",
         "Les grandes initiatives démarrent ; premiers résultats et corrections de trajectoire."
       ],
       [
-        "T3 — mi-parcours",
+        "T3, mi-parcours",
         "Bilan semestriel, ajustement budgétaire, repriorisation pour la fin d’année."
       ],
       [
-        "T4 — clôture et préparation",
+        "T4, clôture et préparation",
         "Clôture, bilan, préparation de l’année suivante. <em>Jalon : plan de l’année suivante prêt.</em>"
       ]
     ],
     callout: "Restez au niveau des initiatives. Un plan annuel de 200 tâches n’est plus tenu en mars et plus cru en juin. Douze à vingt barres suffisent à raconter une année.",
     customize: [
-      "Passer en maille trimestrielle ou mensuelle — la semaine est trop fine pour une année.",
+      "Passer en maille trimestrielle ou mensuelle, la semaine est trop fine pour une année.",
       "Poser d’abord les dates fixes : salons, clôtures, pics saisonniers, congés.",
       "Ajouter une ligne par direction si le plan est transverse.",
       "Marquer les passages de trimestre en jalons : c’est là qu’on réoriente."
@@ -1163,9 +1163,9 @@ const T = {
   'sprint': {
     card: "Deux semaines, de la planification à la rétrospective.",
     h1: "Plan de sprint en diagramme de Gantt",
-    metaTitle: "Plan de sprint — modèle Gantt",
+    metaTitle: "Plan de sprint: modèle Gantt",
     metaDesc: "Modèle gratuit de plan de sprint : planification, développement, tests, revue et rétrospective sur deux semaines.",
-    lead: "Un <strong>plan de sprint</strong> au format Gantt ne remplace pas le tableau — il montre ce que le tableau ne montre pas : quelles tâches dépendent les unes des autres, et à quel moment les deux semaines deviennent réellement serrées.",
+    lead: "Un <strong>plan de sprint</strong> au format Gantt ne remplace pas le tableau, il montre ce que le tableau ne montre pas : quelles tâches dépendent les unes des autres, et à quel moment les deux semaines deviennent réellement serrées.",
     intro: "Un sprint de deux semaines avec ses rendez-vous fixes :",
     phases: [
       [
@@ -1178,14 +1178,14 @@ const T = {
       ],
       [
         "Intégration et tests (jours 7 à 9)",
-        "Assemblage, tests, corrections — volontairement en recouvrement avec le développement."
+        "Assemblage, tests, corrections, volontairement en recouvrement avec le développement."
       ],
       [
         "Revue et rétrospective (jour 10)",
         "Démonstration, retours, amélioration du fonctionnement. <em>Jalon : incrément accepté.</em>"
       ]
     ],
-    callout: "Ne remplissez pas les deux derniers jours. Chaque sprint apporte son imprévu, et un sprint sans réserve se termine régulièrement avec des tâches inachevées reportées sur le suivant — ce qui détruit la prévisibilité des deux.",
+    callout: "Ne remplissez pas les deux derniers jours. Chaque sprint apporte son imprévu, et un sprint sans réserve se termine régulièrement avec des tâches inachevées reportées sur le suivant, ce qui détruit la prévisibilité des deux.",
     customize: [
       "Ajuster la durée si vos sprints font une semaine ou trois.",
       "Une ligne par personne si vous voulez vérifier la charge.",
@@ -1222,7 +1222,7 @@ const T = {
   'wind-farm-construction-schedule': {
     card: "Autorisations, fondations, mâts, raccordement et mise en service.",
     h1: "Planning de construction d’un parc éolien",
-    metaTitle: "Planning parc éolien — modèle",
+    metaTitle: "Planning parc éolien: modèle",
     metaDesc: "Modèle gratuit de planning pour un parc éolien : développement, autorisations, fondations, montage, raccordement, mise en service.",
     lead: "Un <strong>planning de parc éolien</strong> est gouverné par trois éléments extérieurs au chantier : l’autorisation, le raccordement et la disponibilité des grues de levage.",
     intro: "Six phases, du foncier au premier kilowattheure :",
@@ -1233,7 +1233,7 @@ const T = {
       ],
       [
         "Autorisations",
-        "Autorisation environnementale, étude d’impact, espèces protégées, acoustique — le poste le plus long."
+        "Autorisation environnementale, étude d’impact, espèces protégées, acoustique, le poste le plus long."
       ],
       [
         "Achats et financement",
@@ -1241,7 +1241,7 @@ const T = {
       ],
       [
         "Infrastructures",
-        "Accès, plateformes de grutage, tranchées, poste de livraison — prêts avant la livraison des machines."
+        "Accès, plateformes de grutage, tranchées, poste de livraison, prêts avant la livraison des machines."
       ],
       [
         "Montage",
@@ -1252,7 +1252,7 @@ const T = {
         "Raccordement électrique, essais, période de test, réception. <em>Jalon : première injection.</em>"
       ]
     ],
-    callout: "Le montage dépend du vent, pas seulement de la météo. Au-delà d’environ 8 à 12 m/s à hauteur de moyeu, la grue s’arrête — sur un site choisi précisément parce qu’il y vente. Comptez ces journées d’arrêt au lieu de les traiter comme du retard.",
+    callout: "Le montage dépend du vent, pas seulement de la météo. Au-delà d’environ 8 à 12 m/s à hauteur de moyeu, la grue s’arrête, sur un site choisi précisément parce qu’il y vente. Comptez ces journées d’arrêt au lieu de les traiter comme du retard.",
     customize: [
       "Une ligne par éolienne : le montage se fait successivement, la grue se déplaçant de l’une à l’autre.",
       "Représenter le séchage des fondations comme une tâche (28 jours), pas comme un décalage caché.",
@@ -1289,9 +1289,9 @@ const T = {
   'ev-charging-installation-schedule': {
     card: "Site, raccordement, génie civil, pose et conformité métrologique.",
     h1: "Planning d’installation de bornes de recharge",
-    metaTitle: "Bornes de recharge — planning",
+    metaTitle: "Bornes de recharge: planning",
     metaDesc: "Modèle gratuit de planning pour des bornes de recharge : site, raccordement, génie civil, pose, conformité et mise en service.",
-    lead: "Un <strong>planning de bornes de recharge</strong> échoue rarement sur la technique. Il échoue sur le raccordement et sur la conformité métrologique — deux tâches à démarrer tôt et qui ne dépendent pas de l’installateur.",
+    lead: "Un <strong>planning de bornes de recharge</strong> échoue rarement sur la technique. Il échoue sur le raccordement et sur la conformité métrologique, deux tâches à démarrer tôt et qui ne dépendent pas de l’installateur.",
     intro: "Six phases, de l’étude de site à la mise en service :",
     phases: [
       [
@@ -1319,7 +1319,7 @@ const T = {
         "Vérification électrique, conformité métrologique, itinérance, charge de test. <em>Jalon : ouvert au public.</em>"
       ]
     ],
-    callout: "Le raccordement se demande au tout début, pas pendant les travaux. Entre la demande et l’accord de puissance s’écoulent trois à dix-huit mois selon le gestionnaire et la puissance — davantage que tout le reste du projet réuni.",
+    callout: "Le raccordement se demande au tout début, pas pendant les travaux. Entre la demande et l’accord de puissance s’écoulent trois à dix-huit mois selon le gestionnaire et la puissance, davantage que tout le reste du projet réuni.",
     customize: [
       "Un groupe de lignes par site si vous équipez plusieurs emplacements en parallèle.",
       "Poser les échéances de subvention en dates fixes : elles expirent et ne se décalent pas.",
@@ -1356,9 +1356,9 @@ const T = {
   'mining-project-schedule': {
     card: "Exploration, études de faisabilité, autorisations, développement et production.",
     h1: "Planning d’un projet minier",
-    metaTitle: "Projet minier — modèle de planning",
+    metaTitle: "Projet minier: modèle de planning",
     metaDesc: "Modèle gratuit de planning pour un projet minier : exploration, études de faisabilité, autorisations, développement, production.",
-    lead: "Un <strong>projet minier</strong> se déroule sur des décennies et se planifie par niveaux d’étude. Chaque niveau affine l’estimation et décide si l’on continue — le plan est donc une chaîne de points de décision, pas une séquence de travaux continue.",
+    lead: "Un <strong>projet minier</strong> se déroule sur des décennies et se planifie par niveaux d’étude. Chaque niveau affine l’estimation et décide si l’on continue, le plan est donc une chaîne de points de décision, pas une séquence de travaux continue.",
     intro: "Six niveaux, du premier sondage à la production :",
     phases: [
       [
@@ -1386,7 +1386,7 @@ const T = {
         "Découverture, essais, montée en régime. <em>Jalon : production commerciale.</em>"
       ]
     ],
-    callout: "Autorisations et acceptabilité sociale ne sont pas un chantier annexe. Elles sont la cause réelle de l’échec de la plupart des projets miniers abandonnés — pas la géologie, pas la technique. Planifiez-les avec le même sérieux que l’usine de traitement.",
+    callout: "Autorisations et acceptabilité sociale ne sont pas un chantier annexe. Elles sont la cause réelle de l’échec de la plupart des projets miniers abandonnés, pas la géologie, pas la technique. Planifiez-les avec le même sérieux que l’usine de traitement.",
     customize: [
       "Passer en années plutôt qu’en mois : un projet minier couvre une décennie.",
       "Poser les niveaux d’étude en jalons avec décision d’arrêt possible.",
@@ -1423,9 +1423,9 @@ const T = {
   'shipbuilding-project-schedule': {
     card: "Conception, blocs, armement, essais en mer et livraison.",
     h1: "Planning de construction navale",
-    metaTitle: "Construction navale — planning",
+    metaTitle: "Construction navale: planning",
     metaDesc: "Modèle gratuit de planning de construction navale : conception, blocs, prémontage, armement, essais en mer et livraison.",
-    lead: "Un <strong>projet de construction navale</strong> ne se planifie pas par espaces mais par blocs. Le navire naît en tronçons construits en parallèle puis assemblés — et c’est l’ordre de ces blocs qui constitue le vrai planning.",
+    lead: "Un <strong>projet de construction navale</strong> ne se planifie pas par espaces mais par blocs. Le navire naît en tronçons construits en parallèle puis assemblés, et c’est l’ordre de ces blocs qui constitue le vrai planning.",
     intro: "Six phases, du contrat à la livraison :",
     phases: [
       [
@@ -1438,7 +1438,7 @@ const T = {
       ],
       [
         "Fabrication des blocs",
-        "Découpe, panneaux, blocs, prééquipement — plus il est précoce, moins il coûte."
+        "Découpe, panneaux, blocs, prééquipement, plus il est précoce, moins il coûte."
       ],
       [
         "Assemblage",
@@ -1453,10 +1453,10 @@ const T = {
         "Essais, levée des réserves, réception par la classification. <em>Jalon : livraison à l’armateur.</em>"
       ]
     ],
-    callout: "Le prééquipement en bloc coûte une fraction de l’équipement dans un navire terminé. Ce qui n’est posé qu’après assemblage doit passer par des accès étroits, en espace confiné et souvent au-dessus de la tête — le taux de prééquipement est le levier le plus important de tout le planning.",
+    callout: "Le prééquipement en bloc coûte une fraction de l’équipement dans un navire terminé. Ce qui n’est posé qu’après assemblage doit passer par des accès étroits, en espace confiné et souvent au-dessus de la tête, le taux de prééquipement est le levier le plus important de tout le planning.",
     customize: [
       "Une ligne par bloc : ce sont les vraies unités de planification.",
-      "Traiter les délais du moteur, de l’hélice et du réducteur en tâches propres — un à deux ans.",
+      "Traiter les délais du moteur, de l’hélice et du réducteur en tâches propres, un à deux ans.",
       "Poser les visites de la société de classification en dates fixes.",
       "Vérifier l’occupation de la cale et des quais comme une ressource si plusieurs navires sont en cours."
     ],
@@ -1473,7 +1473,7 @@ const T = {
       ],
       [
         "Qu’est-ce que le prééquipement ?",
-        "La pose des tuyauteries, câbles et équipements dans le bloc avant son assemblage — bien moins coûteuse qu’ensuite."
+        "La pose des tuyauteries, câbles et équipements dans le bloc avant son assemblage, bien moins coûteuse qu’ensuite."
       ],
       [
         "Qu’est-ce qui est sur le chemin critique ?",
@@ -1490,9 +1490,9 @@ const T = {
   'apparel-production-calendar': {
     card: "De la collection aux prototypes, aux commandes puis à la livraison.",
     h1: "Calendrier de production pour la mode et l’habillement",
-    metaTitle: "Calendrier de production — mode",
+    metaTitle: "Calendrier de production: mode",
     metaDesc: "Modèle gratuit de calendrier de production textile : collection, prototypes, commandes, matières, fabrication et livraison.",
-    lead: "Un <strong>calendrier de production textile</strong> se calcule à rebours depuis la date de livraison aux magasins. Une collection qui rate sa fenêtre ne se vend pas plus tard — elle se démarque.",
+    lead: "Un <strong>calendrier de production textile</strong> se calcule à rebours depuis la date de livraison aux magasins. Une collection qui rate sa fenêtre ne se vend pas plus tard, elle se démarque.",
     intro: "Six phases par saison :",
     phases: [
       [
@@ -1501,7 +1501,7 @@ const T = {
       ],
       [
         "Design et prototypes",
-        "Croquis, patronage, prototypes, corrections d’essayage — plusieurs cycles sont normaux."
+        "Croquis, patronage, prototypes, corrections d’essayage, plusieurs cycles sont normaux."
       ],
       [
         "Échantillons et prise de commandes",
@@ -1509,7 +1509,7 @@ const T = {
       ],
       [
         "Achat des matières",
-        "Tissus, fournitures, étiquettes — les délais les plus longs de toute la chaîne."
+        "Tissus, fournitures, étiquettes, les délais les plus longs de toute la chaîne."
       ],
       ["Production", "Coupe, confection, finition, contrôle qualité en usine."],
       [
@@ -1517,12 +1517,12 @@ const T = {
         "Transport, douane, réception, répartition en magasin. <em>Jalon : en boutique.</em>"
       ]
     ],
-    callout: "L’achat des tissus démarre avant la clôture des commandes, pas après. Commander ensuite fait perdre six à dix semaines de délai et fait rater la fenêtre commerciale. Une part des matières s’achète donc sur prévision — avec le risque que cela comporte.",
+    callout: "L’achat des tissus démarre avant la clôture des commandes, pas après. Commander ensuite fait perdre six à dix semaines de délai et fait rater la fenêtre commerciale. Une part des matières s’achète donc sur prévision, avec le risque que cela comporte.",
     customize: [
       "Un groupe de lignes par collection : printemps-été et automne-hiver se chevauchent.",
       "Traiter le transport comme une tâche : quatre à six semaines par mer, quelques jours par air.",
       "Déclarer le Nouvel An chinois et les congés d’usine comme périodes indisponibles.",
-      "Prévoir un nombre réaliste de cycles d’essayage — généralement deux à trois."
+      "Prévoir un nombre réaliste de cycles d’essayage, généralement deux à trois."
     ],
     tips: [
       "<strong>Calculez à rebours depuis la livraison.</strong> La fenêtre commerciale ne se négocie pas.",
@@ -1554,37 +1554,37 @@ const T = {
   'phd-research-gantt-chart': {
     card: "Projet doctoral sur trois à quatre ans, avec jalons d’étape.",
     h1: "Diagramme de Gantt pour un projet doctoral",
-    metaTitle: "Planning doctoral — modèle Gantt",
+    metaTitle: "Planning doctoral: modèle Gantt",
     metaDesc: "Modèle gratuit de planning doctoral : projet, littérature, méthode, collecte, publications, enseignement et soutenance.",
     lead: "Un <strong>planning doctoral</strong> se distingue du planning de thèse en ce qu’il contient plus que le manuscrit : enseignement, colloques, publications et financements y figurent et coûtent des mois réels.",
     intro: "Six volets sur trois à quatre ans :",
     phases: [
       [
-        "Année 1 — fondations",
+        "Année 1, fondations",
         "Projet de recherche, convention d’encadrement, base bibliographique, formation méthodologique. <em>Jalon : inscription.</em>"
       ],
       [
-        "Années 1 à 2 — protocole",
+        "Années 1 à 2, protocole",
         "Design de recherche, avis éthique, instruments, pré-test et accès au terrain."
       ],
       [
-        "Années 2 à 3 — collecte et analyse",
+        "Années 2 à 3, collecte et analyse",
         "Recueil, mise en forme, analyse. <em>La phase la plus risquée.</em>"
       ],
       [
-        "En continu — publications",
+        "En continu, publications",
         "Communications et articles ; cœur du travail si la thèse est sur articles."
       ],
       [
-        "En continu — enseignement et charges",
-        "Service d’enseignement, commissions, encadrement de mémoires — prévisible et chronophage."
+        "En continu, enseignement et charges",
+        "Service d’enseignement, commissions, encadrement de mémoires, prévisible et chronophage."
       ],
       [
-        "Années 3 à 4 — achèvement",
+        "Années 3 à 4, achèvement",
         "Assemblage, dépôt, rapports, soutenance. <em>Jalon : soutenance.</em>"
       ]
     ],
-    callout: "Entre le dépôt et la soutenance s’écoulent des mois, pas des semaines. L’expertise prend trois à six mois dans la plupart des écoles doctorales — un plan qui s’arrête au dépôt s’arrête un semestre trop tôt.",
+    callout: "Entre le dépôt et la soutenance s’écoulent des mois, pas des semaines. L’expertise prend trois à six mois dans la plupart des écoles doctorales, un plan qui s’arrête au dépôt s’arrête un semestre trop tôt.",
     customize: [
       "Passer en semestres : la semaine n’a aucun sens sur quatre ans.",
       "Pour une thèse sur articles, un groupe de lignes par article avec soumission et révision.",
@@ -1621,29 +1621,29 @@ const T = {
   'grant-proposal-gantt-chart': {
     card: "Plan de travail pour un dossier : lots, jalons et livrables.",
     h1: "Diagramme de Gantt pour une demande de financement",
-    metaTitle: "Demande de financement — plan",
+    metaTitle: "Demande de financement: plan",
     metaDesc: "Modèle gratuit de plan de travail pour une demande de financement : lots de travail, jalons, livrables et rapports.",
-    lead: "Presque toute <strong>demande de financement</strong> exige un plan de travail sous forme de diagramme. Ce n’est pas une formalité : les évaluateurs y lisent si le projet a été pensé — et après attribution, c’est sur cette base que l’on rend compte.",
+    lead: "Presque toute <strong>demande de financement</strong> exige un plan de travail sous forme de diagramme. Ce n’est pas une formalité : les évaluateurs y lisent si le projet a été pensé, et après attribution, c’est sur cette base que l’on rend compte.",
     intro: "La structure attendue par la plupart des programmes :",
     phases: [
       [
-        "Lot 1 — coordination",
+        "Lot 1, coordination",
         "Pilotage, rapports, appels de fonds. Court sur toute la durée."
       ],
       [
-        "Lot 2 — conception et préparation",
+        "Lot 2, conception et préparation",
         "État de l’art, protocole, éthique et données personnelles, recrutement."
       ],
       [
-        "Lot 3 — réalisation",
+        "Lot 3, réalisation",
         "Le cœur scientifique, généralement découpé en sous-lots."
       ],
       [
-        "Lot 4 — analyse",
+        "Lot 4, analyse",
         "Traitement, validation, interprétation. <em>Jalon : résultats disponibles.</em>"
       ],
       [
-        "Lot 5 — valorisation",
+        "Lot 5, valorisation",
         "Publications, communication, archivage des données."
       ],
       [
@@ -1688,9 +1688,9 @@ const T = {
   'erp-implementation-schedule': {
     card: "Analyse, paramétrage, reprise de données, tests, formation et bascule.",
     h1: "Planning de déploiement d’un ERP",
-    metaTitle: "Déploiement ERP — planning type",
+    metaTitle: "Déploiement ERP: planning type",
     metaDesc: "Modèle gratuit de planning de déploiement ERP : analyse, conception, paramétrage, reprise de données, tests, formation, bascule.",
-    lead: "Un <strong>déploiement ERP</strong> n’est pas un projet informatique avec participation des métiers : c’est un projet d’organisation avec une part informatique. Le planning achoppe presque toujours aux deux mêmes endroits — la reprise de données et la disponibilité des métiers.",
+    lead: "Un <strong>déploiement ERP</strong> n’est pas un projet informatique avec participation des métiers : c’est un projet d’organisation avec une part informatique. Le planning achoppe presque toujours aux deux mêmes endroits, la reprise de données et la disponibilité des métiers.",
     intro: "Sept phases jusqu’à l’exploitation stabilisée :",
     phases: [
       [
@@ -1712,7 +1712,7 @@ const T = {
       ["Tests", "Tests unitaires, tests d’intégration, recette par les métiers."],
       [
         "Formation",
-        "Utilisateurs clés d’abord, puis les utilisateurs finaux — au plus près de la bascule."
+        "Utilisateurs clés d’abord, puis les utilisateurs finaux, au plus près de la bascule."
       ],
       [
         "Bascule et stabilisation",
@@ -1756,9 +1756,9 @@ const T = {
   'post-merger-integration-plan': {
     card: "Les 100 premiers jours après le closing, par fonction.",
     h1: "Plan d’intégration après une acquisition",
-    metaTitle: "Intégration post-acquisition — plan",
+    metaTitle: "Intégration post-acquisition: plan",
     metaDesc: "Modèle gratuit de plan d’intégration post-acquisition : Jour 1, 100 premiers jours, fonctions, systèmes et synergies.",
-    lead: "Un <strong>plan d’intégration</strong> ne commence pas au closing mais bien avant. Ce qui doit fonctionner au Jour 1 — paie, accès, communication client — se prépare des semaines à l’avance, souvent sous contrainte de droit de la concurrence.",
+    lead: "Un <strong>plan d’intégration</strong> ne commence pas au closing mais bien avant. Ce qui doit fonctionner au Jour 1, paie, accès, communication client, se prépare des semaines à l’avance, souvent sous contrainte de droit de la concurrence.",
     intro: "Six volets, de la préparation aux synergies :",
     phases: [
       [
@@ -1775,7 +1775,7 @@ const T = {
       ],
       [
         "Intégration fonctionnelle",
-        "Finance, RH, ventes, achats, production — chaque fonction à son rythme."
+        "Finance, RH, ventes, achats, production, chaque fonction à son rythme."
       ],
       [
         "Intégration des systèmes",
@@ -1786,7 +1786,7 @@ const T = {
         "Mise en œuvre, mesure par rapport au business case, passage en régime courant."
       ]
     ],
-    callout: "L’intégration culturelle n’est pas un sujet secondaire à traiter plus tard. La première cause d’échec d’une acquisition par rapport à son business case est le départ des personnes clés dans les six premiers mois — planifiez la rétention aussi concrètement que la migration des systèmes.",
+    callout: "L’intégration culturelle n’est pas un sujet secondaire à traiter plus tard. La première cause d’échec d’une acquisition par rapport à son business case est le départ des personnes clés dans les six premiers mois, planifiez la rétention aussi concrètement que la migration des systèmes.",
     customize: [
       "Un groupe de lignes par fonction, avec un responsable identifié.",
       "Traiter les tâches du Jour 1 dans une section horaire à part.",
@@ -1823,7 +1823,7 @@ const T = {
   'office-relocation-project-plan': {
     card: "Recherche, aménagement, informatique et déménagement le week-end.",
     h1: "Plan de projet pour un déménagement de bureaux",
-    metaTitle: "Déménagement de bureaux — plan",
+    metaTitle: "Déménagement de bureaux: plan",
     metaDesc: "Modèle gratuit de plan pour un déménagement de bureaux : recherche de locaux, bail, aménagement, informatique et déménagement.",
     lead: "Dans un <strong>déménagement de bureaux</strong>, c’est l’informatique qui fixe la date, pas le mobilier. Liaisons et raccordements se commandent des mois à l’avance, quand les bureaux se livrent en quelques jours.",
     intro: "Six phases, de la recherche au premier jour :",
@@ -1853,7 +1853,7 @@ const T = {
         "Déménagement le week-end, installation, réserves, restitution des anciens locaux. <em>Jalon : premier jour travaillé.</em>"
       ]
     ],
-    callout: "Commandez la liaison dès la signature du bail. C’est la seule tâche que l’argent n’accélère pas : huit à vingt semaines s’écoulent entre la commande et la mise à disposition selon le type de raccordement et le site — et sans elle, les locaux ne sont pas exploitables.",
+    callout: "Commandez la liaison dès la signature du bail. C’est la seule tâche que l’argent n’accélère pas : huit à vingt semaines s’écoulent entre la commande et la mise à disposition selon le type de raccordement et le site, et sans elle, les locaux ne sont pas exploitables.",
     customize: [
       "Une ligne par étage ou par service si le déménagement se fait par vagues.",
       "Poser le préavis des anciens locaux en date fixe et remonter à rebours.",
@@ -1890,9 +1890,9 @@ const T = {
   'data-center-build-schedule': {
     card: "Site, enveloppe, énergie, refroidissement et mise en service.",
     h1: "Planning de construction d’un centre de données",
-    metaTitle: "Centre de données — planning",
+    metaTitle: "Centre de données: planning",
     metaDesc: "Modèle gratuit de planning pour un centre de données : site, autorisations, gros œuvre, énergie, refroidissement, mise en service.",
-    lead: "La <strong>construction d’un centre de données</strong> est en grande partie un projet électrique dans un bâtiment. La date dépend du raccordement et des délais de transformateurs, groupes électrogènes et onduleurs — pas du béton.",
+    lead: "La <strong>construction d’un centre de données</strong> est en grande partie un projet électrique dans un bâtiment. La date dépend du raccordement et des délais de transformateurs, groupes électrogènes et onduleurs, pas du béton.",
     intro: "Six phases jusqu’à la remise à l’exploitation :",
     phases: [
       [
@@ -1905,7 +1905,7 @@ const T = {
       ],
       [
         "Achats",
-        "Transformateurs, onduleurs, groupes, production de froid — des délais de douze à vingt-quatre mois sont courants."
+        "Transformateurs, onduleurs, groupes, production de froid, des délais de douze à vingt-quatre mois sont courants."
       ],
       [
         "Gros œuvre et enveloppe",
@@ -1920,7 +1920,7 @@ const T = {
         "Essais intégrés jusqu’au niveau 5, tests en charge, scénarios de secours. <em>Jalon : prêt à exploiter.</em>"
       ]
     ],
-    callout: "La mise en service est une phase, pas une date de réception. Des essais intégrés complets sur les cinq niveaux — jusqu’à la coupure réseau simulée en charge — demandent des semaines à des mois. La planifier comme la dernière semaine avant la remise revient à livrer un centre de données non testé.",
+    callout: "La mise en service est une phase, pas une date de réception. Des essais intégrés complets sur les cinq niveaux, jusqu’à la coupure réseau simulée en charge, demandent des semaines à des mois. La planifier comme la dernière semaine avant la remise revient à livrer un centre de données non testé.",
     customize: [
       "Un groupe de lignes par salle si la construction se fait par tranches.",
       "Rendre visibles les délais des gros équipements comme tâches, avec leur date de commande.",
@@ -1940,7 +1940,7 @@ const T = {
       ],
       [
         "Qu’est-ce qui est sur le chemin critique ?",
-        "Le raccordement et l’approvisionnement en transformateurs, onduleurs et groupes — les plus longs délais du marché actuel."
+        "Le raccordement et l’approvisionnement en transformateurs, onduleurs et groupes, les plus longs délais du marché actuel."
       ],
       [
         "Que sont les essais intégrés ?",
@@ -1957,9 +1957,9 @@ const T = {
   'restaurant-opening-timeline': {
     card: "Concept, local, travaux, licences, équipe et ouverture progressive.",
     h1: "Planning d’ouverture d’un restaurant",
-    metaTitle: "Ouverture de restaurant — planning",
+    metaTitle: "Ouverture de restaurant: planning",
     metaDesc: "Modèle gratuit de planning d’ouverture de restaurant : concept, local, travaux, licences, recrutement et ouverture progressive.",
-    lead: "Pour une <strong>ouverture de restaurant</strong>, la cuisine est rarement le problème. La date dépend de la licence, de l’extraction et du recrutement — trois sujets à démarrer tôt et qu’aucun budget n’accélère.",
+    lead: "Pour une <strong>ouverture de restaurant</strong>, la cuisine est rarement le problème. La date dépend de la licence, de l’extraction et du recrutement, trois sujets à démarrer tôt et qu’aucun budget n’accélère.",
     intro: "Six phases, du concept au premier service :",
     phases: [
       [
@@ -2024,9 +2024,9 @@ const T = {
   'clinical-trial-gantt-chart': {
     card: "Protocole, éthique, centres, inclusions, analyse et rapport.",
     h1: "Diagramme de Gantt pour un essai clinique",
-    metaTitle: "Essai clinique — planning type",
+    metaTitle: "Essai clinique: planning type",
     metaDesc: "Modèle gratuit de planning d’essai clinique : protocole, avis éthique, ouverture des centres, inclusions, analyse et rapport.",
-    lead: "Le planning d’un <strong>essai clinique</strong> tient tout entier au recrutement. Toutes les autres phases se planifient ; la vitesse à laquelle les patients sont inclus, non — et c’est elle qui détermine la durée totale.",
+    lead: "Le planning d’un <strong>essai clinique</strong> tient tout entier au recrutement. Toutes les autres phases se planifient ; la vitesse à laquelle les patients sont inclus, non, et c’est elle qui détermine la durée totale.",
     intro: "Six phases, de la conception au rapport :",
     phases: [
       [
@@ -2054,7 +2054,7 @@ const T = {
         "Rapport d’étude, déclaration, enregistrement, publication."
       ]
     ],
-    callout: "Planifiez à la moitié de la vitesse de recrutement attendue. L’expérience de presque tous les centres est que les inclusions réelles restent nettement en deçà des prévisions — et un retard ici décale chaque phase suivante d’autant.",
+    callout: "Planifiez à la moitié de la vitesse de recrutement attendue. L’expérience de presque tous les centres est que les inclusions réelles restent nettement en deçà des prévisions, et un retard ici décale chaque phase suivante d’autant.",
     customize: [
       "Une ligne par centre pour l’ouverture et les inclusions : ils démarrent en décalé.",
       "Poser l’avis éthique en antériorité dure de toute activité sur patient.",
@@ -2098,7 +2098,7 @@ const T = {
     phases: [
       [
         "Tableau des tâches",
-        "Tâche, début, durée et responsable — les colonnes dont tout découle."
+        "Tâche, début, durée et responsable, les colonnes dont tout découle."
       ],
       ["Axe temporel", "Une barre par tâche sur les semaines du projet."],
       [
@@ -2107,7 +2107,7 @@ const T = {
       ],
       ["Jalons", "Des points fixes pour les validations et les livraisons."]
     ],
-    callout: "Google Sheets ne calcule pas les antériorités. Si une tâche glisse, chaque date de début suivante doit être reprise à la main — praticable à vingt lignes, plus au-delà. Si le plan doit se recalculer seul, ouvrez-le directement dans l’éditeur.",
+    callout: "Google Sheets ne calcule pas les antériorités. Si une tâche glisse, chaque date de début suivante doit être reprise à la main, praticable à vingt lignes, plus au-delà. Si le plan doit se recalculer seul, ouvrez-le directement dans l’éditeur.",
     customize: [
       "Après l’import, choisir Fichier → Importer → Importer un fichier puis « Remplacer la feuille de calcul ».",
       "Ajuster la largeur des colonnes de l’axe si le projet dépasse la période du modèle.",
@@ -2116,7 +2116,7 @@ const T = {
     ],
     tips: [
       "<strong>Sheets est fort pour le travail à plusieurs</strong>, faible pour les antériorités.",
-      "<strong>La vue Chronologie native n’est pas un Gantt</strong> — elle ignore les liens.",
+      "<strong>La vue Chronologie native n’est pas un Gantt</strong>, elle ignore les liens.",
       "<strong>Protégez les colonnes de calcul</strong> si beaucoup de personnes ont accès.",
       "<strong>Au-delà de vingt tâches</strong>, passez à un outil qui calcule."
     ],
@@ -2131,7 +2131,7 @@ const T = {
       ],
       [
         "Le modèle est-il gratuit ?",
-        "Oui, sans inscription et sans filigrane — en XLSX, CSV ou PowerPoint."
+        "Oui, sans inscription et sans filigrane, en XLSX, CSV ou PowerPoint."
       ]
     ],
     related: [
@@ -2146,12 +2146,12 @@ const T = {
     h1: "Diagramme de Gantt à imprimer",
     metaTitle: "Diagramme de Gantt à imprimer",
     metaDesc: "Modèle gratuit de diagramme de Gantt à imprimer : tient sur une page, lisible en noir et blanc, en PDF, Excel ou PowerPoint.",
-    lead: "Un <strong>diagramme de Gantt à imprimer</strong> n’a pas les mêmes contraintes qu’un diagramme à l’écran : il doit tenir sur une page, rester lisible en noir et blanc et se passer d’info-bulles — tout ce qui compte est sur le papier.",
+    lead: "Un <strong>diagramme de Gantt à imprimer</strong> n’a pas les mêmes contraintes qu’un diagramme à l’écran : il doit tenir sur une page, rester lisible en noir et blanc et se passer d’info-bulles, tout ce qui compte est sur le papier.",
     intro: "Le modèle est construit autour de ces quatre points :",
     phases: [
       [
         "Une page",
-        "Une vingtaine de lignes et un trimestre d’axe — la limite au-delà de laquelle un A4 paysage devient illisible."
+        "Une vingtaine de lignes et un trimestre d’axe, la limite au-delà de laquelle un A4 paysage devient illisible."
       ],
       [
         "Contraste plutôt que couleur",
@@ -2166,7 +2166,7 @@ const T = {
         "Marges et en-tête réglées pour que rien ne soit rogné."
       ]
     ],
-    callout: "Vérifiez la lisibilité en niveaux de gris avant de lancer cent exemplaires. Des couleurs bien distinctes à l’écran deviennent régulièrement trois gris presque identiques à l’impression — l’erreur la plus fréquente sur les plans destinés à être affichés.",
+    callout: "Vérifiez la lisibilité en niveaux de gris avant de lancer cent exemplaires. Des couleurs bien distinctes à l’écran deviennent régulièrement trois gris presque identiques à l’impression, l’erreur la plus fréquente sur les plans destinés à être affichés.",
     customize: [
       "Passer en A3 au-delà d’environ 25 lignes.",
       "Exporter en PDF plutôt qu’imprimer depuis le tableur : la pagination reste maîtrisée.",
@@ -2174,7 +2174,7 @@ const T = {
       "Mettre la date de version en en-tête, pour qu’un plan périmé ne reste pas au mur."
     ],
     tips: [
-      "<strong>Format paysage</strong> — un axe temporel a besoin de largeur.",
+      "<strong>Format paysage</strong>, un axe temporel a besoin de largeur.",
       "<strong>9 points minimum.</strong> Ce qui paraît petit à l’écran est illisible imprimé.",
       "<strong>Un trimestre par page.</strong> Une année entière sur A4 ne se lit pas.",
       "<strong>Affichez la date de version</strong>, sinon c’est le plan du mois dernier qui reste au mur."
@@ -2205,7 +2205,7 @@ const T = {
     h1: "Diagramme de Gantt sur une page",
     metaTitle: "Diagramme de Gantt sur une page",
     metaDesc: "Modèle gratuit de diagramme de Gantt sur une page : le projet entier au niveau des phases, pour direction et comité.",
-    lead: "Un <strong>diagramme de Gantt sur une page</strong> n’est pas un plan réduit : c’est un plan résumé. Il montre les phases et les jalons, et laisse le détail dans le planning de travail — parce qu’une page ne supporte pas les deux.",
+    lead: "Un <strong>diagramme de Gantt sur une page</strong> n’est pas un plan réduit : c’est un plan résumé. Il montre les phases et les jalons, et laisse le détail dans le planning de travail, parce qu’une page ne supporte pas les deux.",
     intro: "Ce que contient la page :",
     phases: [
       ["Phases", "Quatre à huit barres qui couvrent tout le projet."],
@@ -2253,21 +2253,21 @@ const T = {
   '3-week-lookahead-template': {
     card: "Planning glissant à trois semaines : travaux, contraintes et inspections.",
     h1: "Planning glissant à 3 semaines",
-    metaTitle: "Planning à 3 semaines — modèle",
+    metaTitle: "Planning à 3 semaines: modèle",
     metaDesc: "Modèle gratuit de planning glissant à 3 semaines : corps d’état, inspections, contraintes et délais d’approvisionnement, semaine par semaine.",
     lead: 'Un <strong>planning glissant à 3 semaines</strong> présenté comme se tient réellement la réunion de chantier du lundi : cette semaine, la suivante, celle d’après, avec les corps d’état, les inspections, les contraintes et les articles à long délai visibles sur chacune. Téléchargez-le pour l’afficher à la base vie, ou ouvrez-le dans l’<a href="/app.html">éditeur gratuit</a> et utilisez <strong>Vue ▸ Semaines à venir</strong> pour extraire la fenêtre directement de votre planning directeur, plutôt que de la ressaisir chaque semaine dans un tableur.',
     intro: "Un planning glissant n’est pas un plan séparé : c’est une tranche de trois semaines du planning directeur, assortie de ses contraintes et rafraîchie chaque semaine. Le modèle est organisé ainsi :",
     phases: [
       [
-        "Semaine 1 — travaux engagés",
+        "Semaine 1, travaux engagés",
         "Travaux entièrement libérés de contraintes, exécutés cette semaine. Équipes, matériaux et accès sont confirmés. <em>Jalon : inspection avant coulage.</em>"
       ],
       [
-        "Semaine 2 — travaux prêts",
+        "Semaine 2, travaux prêts",
         "Travaux dont les contraintes sont levées mais qui n’ont pas démarré. C’est le matelas qui occupe les équipes quand la semaine 1 dérape."
       ],
       [
-        "Semaine 3 — travaux prévus",
+        "Semaine 3, travaux prévus",
         "Travaux encore en cours de préparation. Toute ligne portant une contrainte ouverte est la raison d’être de la réunion."
       ],
       [
@@ -2276,14 +2276,14 @@ const T = {
       ],
       [
         "Inspections et points d’arrêt",
-        "Visas de tiers qui arrêtent les travaux s’ils sont manqués — ferraillage, réseaux enterrés, structure. Chacun est un jalon, pas une tâche."
+        "Visas de tiers qui arrêtent les travaux s’ils sont manqués, ferraillage, réseaux enterrés, structure. Chacun est un jalon, pas une tâche."
       ],
       [
         "Actualisation hebdomadaire",
         "Le planning avance chaque lundi : on saisit l’avancement, la fenêtre glisse d’une semaine, le registre des contraintes est repassé en revue."
       ]
     ],
-    callout: 'L’objet du planning glissant est la levée des contraintes, pas le reporting. Si une tâche de la semaine 3 attend un plan visé ou une livraison, c’est la seule chose qui mérite d’être discutée le lundi — le reste est déjà prêt. Notre <a href="/fr/blog/3-week-lookahead-schedule.html">guide du planning glissant à 3 semaines</a> explique comment mener la réunion à partir du diagramme.',
+    callout: 'L’objet du planning glissant est la levée des contraintes, pas le reporting. Si une tâche de la semaine 3 attend un plan visé ou une livraison, c’est la seule chose qui mérite d’être discutée le lundi, le reste est déjà prêt. Notre <a href="/fr/blog/3-week-lookahead-schedule.html">guide du planning glissant à 3 semaines</a> explique comment mener la réunion à partir du diagramme.',
     customize: [
       "Caler la fenêtre sur votre lundi de départ : la vue Semaines à venir s’ancre au lundi et accepte une fenêtre de 1 à 8 semaines.",
       "Une ligne par équipe ou par sous-traitant plutôt que par activité si le chantier est organisé par corps d’état : chaque chef d’équipe doit retrouver sa ligne.",
@@ -2325,14 +2325,14 @@ const T = {
   's-curve-template': {
     card: "Avancement cumulé prévu contre réel, du démarrage à la clôture.",
     h1: "Modèle de courbe en S (prévu vs réel)",
-    metaTitle: "Courbe en S — prévu vs réel",
+    metaTitle: "Courbe en S: prévu vs réel",
     metaDesc: "Modèle gratuit de courbe en S : posez une référence et lisez la valeur planifiée, la valeur acquise, l’écart de délai et l’IPD (SPI) intégrés.",
-    lead: 'Un <strong>modèle de courbe en S</strong> gratuit — un projet dont la forme rend la comparaison prévu / réel réellement parlante : démarrage lent, milieu chargé, longue traîne finale. Téléchargez-le pour un rapport d’avancement, ou ouvrez-le dans l’<a href="/app.html">éditeur gratuit</a>, posez une référence et ouvrez le panneau <strong>📈 Courbe en S</strong> pour lire la valeur planifiée, la valeur acquise, l’écart de délai et l’IPD à partir de vos propres dates et pourcentages d’avancement.',
+    lead: 'Un <strong>modèle de courbe en S</strong> gratuit, un projet dont la forme rend la comparaison prévu / réel réellement parlante : démarrage lent, milieu chargé, longue traîne finale. Téléchargez-le pour un rapport d’avancement, ou ouvrez-le dans l’<a href="/app.html">éditeur gratuit</a>, posez une référence et ouvrez le panneau <strong>📈 Courbe en S</strong> pour lire la valeur planifiée, la valeur acquise, l’écart de délai et l’IPD à partir de vos propres dates et pourcentages d’avancement.',
     intro: "Une courbe en S n’est rien d’autre que l’avancement cumulé tracé dans le temps. Elle prend cette forme parce qu’un projet monte lentement, chauffe au milieu et s’étire en phase d’essais. Le modèle fournit un planning qui a déjà cette allure :",
     phases: [
       [
         "Lancement et référence",
-        "Note de cadrage, périmètre, budget et pose de la référence — le pied plat de la courbe, où beaucoup de calendrier s’écoule pour très peu de valeur acquise. <em>Jalon : référence posée.</em>"
+        "Note de cadrage, périmètre, budget et pose de la référence, le pied plat de la courbe, où beaucoup de calendrier s’écoule pour très peu de valeur acquise. <em>Jalon : référence posée.</em>"
       ],
       [
         "Conception et études",
@@ -2352,7 +2352,7 @@ const T = {
       ],
       [
         "Réception et clôture",
-        "Dossier des ouvrages exécutés, levée des réserves, décompte final et retour d’expérience — les derniers pour-cent, toujours plus longs que prévu."
+        "Dossier des ouvrages exécutés, levée des réserves, décompte final et retour d’expérience, les derniers pour-cent, toujours plus longs que prévu."
       ]
     ],
     callout: 'Une courbe seule ne dit rien. Tout est dans l’écart entre la courbe prévue et la courbe réelle : si le réel passe sous le prévu, vous êtes en retard, la distance verticale étant l’écart de délai exprimé en valeur et la distance horizontale, approximativement, le retard en temps. Notre <a href="/fr/blog/s-curve-project-management.html">guide de la courbe en S</a> détaille la lecture de la valeur planifiée, de la valeur acquise, de l’écart et de l’IPD.',
@@ -2366,7 +2366,7 @@ const T = {
     tips: [
       "<strong>Lisez l’IPD, pas la silhouette.</strong> Un IPD inférieur à 1,0 signifie que vous avez acquis moins de valeur que prévu à ce jour. La tendance sur quatre ou cinq relevés compte bien plus qu’une valeur isolée.",
       "<strong>Attendez-vous à un démarrage lent.</strong> Une courbe qui monte franchement dès le premier jour mesure presque toujours la dépense ou la charge, pas l’avancement produit.",
-      "<strong>Surveillez le point d’aplatissement.</strong> Les courbes qui s’aplatissent dès 85–90 % signent un projet plein de travaux presque terminés.",
+      "<strong>Surveillez le point d’aplatissement.</strong> Les courbes qui s’aplatissent dès 85-90 % signent un projet plein de travaux presque terminés.",
       "<strong>Mettez à jour à rythme fixe.</strong> Chaque semaine ou tous les quinze jours, toujours le même jour : des relevés irréguliers rendent la courbe illisible.",
       "<strong>Associez la courbe au diagramme de Gantt.</strong> La courbe dit que vous êtes en retard ; les barres disent quelles tâches en sont responsables. Gardez les deux dans le rapport."
     ],
@@ -2401,14 +2401,14 @@ const T = {
   'cloud-migration-project-plan': {
     card: "Cadrage, socle cloud, vagues de migration, bascule et décommissionnement.",
     h1: "Plan de projet de migration vers le cloud",
-    metaTitle: "Migration cloud — planning type",
+    metaTitle: "Migration cloud: planning type",
     metaDesc: "Modèle gratuit de plan de migration cloud : cadrage, socle (landing zone), vagues, bascule, hypercare et décommissionnement du centre de données.",
-    lead: "Un <strong>plan de migration vers le cloud</strong> gratuit couvrant le déplacement des applications de bout en bout — inventaire et évaluation, construction du socle (landing zone), découpage en vagues, vague pilote puis vagues de production, bascule, période de support renforcé (hypercare) et décommissionnement de ce que vous laissez derrière vous. Téléchargez-le pour le comité de pilotage, ou ouvrez-le en ligne pour lier les vagues afin qu’un glissement sur l’une ne dévore pas silencieusement la suivante.",
+    lead: "Un <strong>plan de migration vers le cloud</strong> gratuit couvrant le déplacement des applications de bout en bout, inventaire et évaluation, construction du socle (landing zone), découpage en vagues, vague pilote puis vagues de production, bascule, période de support renforcé (hypercare) et décommissionnement de ce que vous laissez derrière vous. Téléchargez-le pour le comité de pilotage, ou ouvrez-le en ligne pour lier les vagues afin qu’un glissement sur l’une ne dévore pas silencieusement la suivante.",
     intro: "Une migration cloud n’est pas un projet unique : c’est un socle à construire, puis une vague qui se répète. Le modèle sépare les deux pour que le socle soit terminé avant que les vagues n’en dépendent :",
     phases: [
       [
         "Inventaire et évaluation",
-        "Inventaire applicatif, cartographie des dépendances, criticité métier et choix de trajectoire par application selon les 7R — rehost, replatform, refactor, repurchase, relocate, retire, retain. <em>Jalon : trajectoires arbitrées.</em>"
+        "Inventaire applicatif, cartographie des dépendances, criticité métier et choix de trajectoire par application selon les 7R, rehost, replatform, refactor, repurchase, relocate, retire, retain. <em>Jalon : trajectoires arbitrées.</em>"
       ],
       [
         "Socle cloud (landing zone)",
@@ -2453,7 +2453,7 @@ const T = {
       ],
       [
         "Que sont les 7R de la migration cloud ?",
-        "Rehost, replatform, refactor, repurchase, relocate, retire et retain — les trajectoires possibles attribuées à chaque application lors de l’évaluation. Les arbitrer tôt est ce qui rend le découpage en vagues possible."
+        "Rehost, replatform, refactor, repurchase, relocate, retire et retain, les trajectoires possibles attribuées à chaque application lors de l’évaluation. Les arbitrer tôt est ce qui rend le découpage en vagues possible."
       ],
       [
         "Comment ordonner les vagues de migration ?",
@@ -2473,9 +2473,9 @@ const T = {
   'new-product-development-plan': {
     card: "Programme à jalons de décision, du concept à la mise en production.",
     h1: "Plan de développement d’un nouveau produit",
-    metaTitle: "Développement produit — planning",
+    metaTitle: "Développement produit: planning",
     metaDesc: "Modèle gratuit de plan de développement produit : concept, faisabilité, conception, prototypes, validation, outillage, série pilote et lancement.",
-    lead: 'Un <strong>plan de développement de produit nouveau</strong> gratuit, construit comme un programme à jalons de décision — concept, faisabilité, conception détaillée, prototypage, validation et essais, outillage, série pilote et transfert au lancement. C’est la chaîne d’ingénierie qui produit quelque chose à vendre ; pour le volet commercial du même programme, voir le <a href="/templates/product-launch.html">plan de lancement produit</a>, et pour l’horizon long la <a href="/templates/product-roadmap.html">feuille de route produit</a>.',
+    lead: 'Un <strong>plan de développement de produit nouveau</strong> gratuit, construit comme un programme à jalons de décision, concept, faisabilité, conception détaillée, prototypage, validation et essais, outillage, série pilote et transfert au lancement. C’est la chaîne d’ingénierie qui produit quelque chose à vendre ; pour le volet commercial du même programme, voir le <a href="/templates/product-launch.html">plan de lancement produit</a>, et pour l’horizon long la <a href="/templates/product-roadmap.html">feuille de route produit</a>.',
     intro: "Les plannings de développement produit dérapent aux jalons, pas dans les tâches. Le modèle isole chaque étape pour qu’un jalon soit une décision étayée par des preuves plutôt qu’une date qui passe discrètement :",
     phases: [
       [
@@ -2507,7 +2507,7 @@ const T = {
         "Série pilote, accord sur les pièces de série, plan de montée en cadence, dossier documentaire et transfert à la production et à l’équipe de lancement. <em>Jalon 5 : mise en production.</em>"
       ]
     ],
-    callout: "Le gel de la conception est le jalon coûteux. Chaque modification après lui se paie en outillage, et chaque modification après le contrôle du premier article se paie deux fois. Faire du gel un véritable jalon — adossé à des résultats d’essais et non à une date optimiste — est la décision qui préserve le budget de développement.",
+    callout: "Le gel de la conception est le jalon coûteux. Chaque modification après lui se paie en outillage, et chaque modification après le contrôle du premier article se paie deux fois. Faire du gel un véritable jalon, adossé à des résultats d’essais et non à une date optimiste, est la décision qui préserve le budget de développement.",
     customize: [
       "Fixer la date de mise en production exigée et remonter à rebours : le délai d’outillage détermine souvent si le plan est simplement possible.",
       "Commander les outillages à long délai sur les délais réellement cotés, et placer la commande avant le gel de conception seulement si vous prenez ce risque en connaissance de cause.",
@@ -2527,7 +2527,7 @@ const T = {
     faq: [
       [
         "En quoi est-ce différent du plan de lancement produit ?",
-        'Celui-ci est la chaîne d’ingénierie qui s’achève à la mise en production — du concept à l’outillage et à la série pilote. Le <a href="/templates/product-launch.html">plan de lancement produit</a> démarre à peu près là où celui-ci finit et couvre le positionnement, le prix, la préparation des canaux et la campagne commerciale.'
+        'Celui-ci est la chaîne d’ingénierie qui s’achève à la mise en production, du concept à l’outillage et à la série pilote. Le <a href="/templates/product-launch.html">plan de lancement produit</a> démarre à peu près là où celui-ci finit et couvre le positionnement, le prix, la préparation des canaux et la campagne commerciale.'
       ],
       [
         "Combien de temps dure un développement de produit nouveau ?",
@@ -2551,9 +2551,9 @@ const T = {
   'retail-store-opening-timeline': {
     card: "Du bail à l’inauguration : travaux, licences, stock et recrutement.",
     h1: "Planning d’ouverture d’un magasin",
-    metaTitle: "Ouverture de magasin — planning",
+    metaTitle: "Ouverture de magasin: planning",
     metaDesc: "Modèle gratuit de planning d’ouverture de magasin : bail, agencement, licences, caisse, marchandisage, recrutement et inauguration.",
-    lead: "Un <strong>planning d’ouverture de magasin</strong> gratuit, du choix de l’emplacement à l’inauguration — bail et accords du bailleur, conception et agencement, licences et visites de conformité, caisse et systèmes, commande d’ouverture et marchandisage, recrutement et formation, puis les journées d’ouverture discrète et le week-end d’inauguration.",
+    lead: "Un <strong>planning d’ouverture de magasin</strong> gratuit, du choix de l’emplacement à l’inauguration, bail et accords du bailleur, conception et agencement, licences et visites de conformité, caisse et systèmes, commande d’ouverture et marchandisage, recrutement et formation, puis les journées d’ouverture discrète et le week-end d’inauguration.",
     intro: "Une ouverture de magasin, c’est un chantier, un recrutement et un cycle d’achat menés en même temps, tous pointés vers une date que le bailleur a déjà annoncée. Le modèle les traite comme des chemins parallèles :",
     phases: [
       [
@@ -2611,7 +2611,7 @@ const T = {
       ],
       [
         "Est-ce utilisable pour un éphémère ou un corner ?",
-        "Oui. Supprimez les lignes d’autorisation et de devanture pour un corner installé dans un magasin hôte, et comprimez la phase travaux — licences, systèmes, stock et recrutement restent identiques."
+        "Oui. Supprimez les lignes d’autorisation et de devanture pour un corner installé dans un magasin hôte, et comprimez la phase travaux, licences, systèmes, stock et recrutement restent identiques."
       ],
       [
         "Le modèle d’ouverture de magasin est-il gratuit ?",
@@ -2623,9 +2623,9 @@ const T = {
   'film-production-schedule': {
     card: "Développement, préparation, tournage, post-production et livraison.",
     h1: "Planning de production d’un film",
-    metaTitle: "Production d’un film — planning",
+    metaTitle: "Production d’un film: planning",
     metaDesc: "Modèle gratuit de planning de film : développement, préparation, tournage, post-production, son, étalonnage et livraison des masters.",
-    lead: "Un <strong>planning de production de film</strong> gratuit couvrant tout le film — développement et financement, préparation et distribution artistique, le tournage lui-même, le montage jusqu’à l’image définitive, le son et l’étalonnage, puis le dossier de livraison réellement exigé par le distributeur. Téléchargez-le pour un dossier de financement, ou ouvrez-le en ligne pour lier les antériorités qui décident si votre date de livraison tient.",
+    lead: "Un <strong>planning de production de film</strong> gratuit couvrant tout le film, développement et financement, préparation et distribution artistique, le tournage lui-même, le montage jusqu’à l’image définitive, le son et l’étalonnage, puis le dossier de livraison réellement exigé par le distributeur. Téléchargez-le pour un dossier de financement, ou ouvrez-le en ligne pour lier les antériorités qui décident si votre date de livraison tient.",
     intro: "Tous les départements travaillent pour les dates de tournage, et tout ce qui suit le tournage travaille pour la date de livraison. Le modèle pose ces deux points fixes sur le planning et laisse le reste s’organiser autour :",
     phases: [
       [
@@ -2641,11 +2641,11 @@ const T = {
         "Le tournage, découpé en blocs de studio et de décors naturels, avec la date de fin comme centre immuable de tout le plan. <em>Jalon : fin de tournage.</em>"
       ],
       [
-        "Post-production — image",
+        "Post-production, image",
         "Rushes et bout-à-bout pendant le tournage, montage monteur, montage réalisateur, retours et image définitive. <em>Jalon : image verrouillée.</em>"
       ],
       [
-        "Post-production — son et finition image",
+        "Post-production, son et finition image",
         "Postsynchronisation, bruitage, création sonore, musique, mixage, livraison des plans truqués, étalonnage et conformation."
       ],
       [
@@ -2653,7 +2653,7 @@ const T = {
         "DCP et masters, contrôle qualité, sous-titres et versions, matériel promotionnel, inscriptions en festivals et dossier de livraison. <em>Jalon : livraison acceptée.</em>"
       ]
     ],
-    callout: "Le tournage est la seule phase qu’on ne peut pas allonger sans dépenser de l’argent réel chaque jour. Tout ce qui précède existe pour le rendre possible, tout ce qui suit hérite de ce qu’il a produit. Fixez d’abord les dates de tournage, puis vérifiez que la préparation dispose d’assez de marge en amont — et non l’inverse.",
+    callout: "Le tournage est la seule phase qu’on ne peut pas allonger sans dépenser de l’argent réel chaque jour. Tout ce qui précède existe pour le rendre possible, tout ce qui suit hérite de ce qu’il a produit. Fixez d’abord les dates de tournage, puis vérifiez que la préparation dispose d’assez de marge en amont, et non l’inverse.",
     customize: [
       "Poser d’abord le début et la fin de tournage, et faire remonter la préparation à rebours.",
       "Une ligne par bloc de tournage ou par décor, pour rendre visibles les journées de déplacement : les changements de lieu non prévus mangent des jours de tournage.",
@@ -2671,7 +2671,7 @@ const T = {
     faq: [
       [
         "Combien de temps dure une production de film ?",
-        "Pour un long métrage indépendant, couramment 12 à 18 mois entre le feu vert et la livraison — environ deux à trois mois de préparation, quatre à huit semaines de tournage et six à neuf mois de post-production et de livraison. Le modèle se situe dans cette fourchette."
+        "Pour un long métrage indépendant, couramment 12 à 18 mois entre le feu vert et la livraison, environ deux à trois mois de préparation, quatre à huit semaines de tournage et six à neuf mois de post-production et de livraison. Le modèle se situe dans cette fourchette."
       ],
       [
         "Quelles sont les phases d’une production ?",
@@ -2695,9 +2695,9 @@ const T = {
   'bridge-construction-schedule': {
     card: "Reconnaissance, autorisations, fondations, appuis, tablier et mise en service.",
     h1: "Planning de construction d’un pont",
-    metaTitle: "Construction d’un pont — planning",
+    metaTitle: "Construction d’un pont: planning",
     metaDesc: "Modèle gratuit de planning d’ouvrage d’art : reconnaissance, autorisations, pieux, appuis, tablier, revêtement, épreuves et mise en service.",
-    lead: "Un <strong>planning de construction de pont</strong> gratuit, déroulé comme un vrai programme de travaux d’art — reconnaissance des sols et études, autorisations administratives, pieux et fondations, appuis, pose du tablier, étanchéité et dispositifs de retenue, épreuves de chargement et mise en service. Téléchargez-le pour une remise d’offre ou un point d’avancement client, ou ouvrez-le en ligne pour lier les fenêtres de coupure et les opérations soumises aux conditions météo qui commandent réellement la date.",
+    lead: "Un <strong>planning de construction de pont</strong> gratuit, déroulé comme un vrai programme de travaux d’art, reconnaissance des sols et études, autorisations administratives, pieux et fondations, appuis, pose du tablier, étanchéité et dispositifs de retenue, épreuves de chargement et mise en service. Téléchargez-le pour une remise d’offre ou un point d’avancement client, ou ouvrez-le en ligne pour lier les fenêtres de coupure et les opérations soumises aux conditions météo qui commandent réellement la date.",
     intro: "Un programme d’ouvrage d’art est gouverné par ce que vous ne maîtrisez pas : la rivière, la voie en dessous, la météo et l’autorité qui approuve. Le modèle donne à chacun une place visible plutôt que de les enfouir dans une barre de travaux :",
     phases: [
       [
@@ -2714,7 +2714,7 @@ const T = {
       ],
       [
         "Pieux et fondations",
-        "Pieux sous chaque appui et culée, essais de pieux, semelles et bétonnage des fondations — l’opération la plus exposée au risque géotechnique et au niveau de la rivière."
+        "Pieux sous chaque appui et culée, essais de pieux, semelles et bétonnage des fondations, l’opération la plus exposée au risque géotechnique et au niveau de la rivière."
       ],
       [
         "Appuis",
@@ -2733,10 +2733,10 @@ const T = {
     customize: [
       "Saisir d’abord les dates de coupure confirmées et remonter à rebours : presque toutes les autres dates d’un ouvrage d’art se négocient autour d’elles.",
       "Ajouter une ligne par pile et par culée dès que la séquence des appuis est connue, pour suivre individuellement pieux et bétonnages.",
-      "Signaler les opérations soumises aux conditions météo — bétonnage du hourdis, étanchéité et couche de roulement ont tous des limites de température ou de pluviométrie.",
+      "Signaler les opérations soumises aux conditions météo, bétonnage du hourdis, étanchéité et couche de roulement ont tous des limites de température ou de pluviométrie.",
       "Étendre la barre d’approbation technique au délai réel d’instruction de votre gestionnaire, boucle de réponse aux observations comprise.",
       "Garder les études d’ouvrages provisoires comme tâche propre : l’approbation des étaiements, du batardeau et du dispositif de lançage conditionne les ouvrages définitifs.",
-      "Insérer les périodes d’exclusion — crues saisonnières ou migration piscicole — sous forme de barres bloquées si vous intervenez en lit de cours d’eau."
+      "Insérer les périodes d’exclusion, crues saisonnières ou migration piscicole, sous forme de barres bloquées si vous intervenez en lit de cours d’eau."
     ],
     tips: [
       "<strong>Demandez les coupures avant la fin des études.</strong> Les délais d’obtention pour une fermeture de route ou une coupure ferroviaire se comptent en mois, et les créneaux vont au premier qui réserve.",
@@ -2773,9 +2773,9 @@ const T = {
   'trade-show-planning-timeline': {
     card: "Rétroplanning de salon : stand, logistique, équipe et relance des contacts.",
     h1: "Rétroplanning d’un salon professionnel",
-    metaTitle: "Salon professionnel — rétroplanning",
+    metaTitle: "Salon professionnel: rétroplanning",
     metaDesc: "Modèle gratuit de rétroplanning de salon : réservation, stand, logistique, marketing amont, équipe, jours de salon et relance des contacts.",
-    lead: 'Un <strong>rétroplanning de salon professionnel</strong> gratuit, construit en compte à rebours — choix et contrat de l’emplacement, conception et construction du stand, dates limites de transport et de manutention, marketing amont et prise de rendez-vous, équipe et briefing, les jours de salon eux-mêmes, puis la relance des contacts qui décide si l’opération s’est payée. Pour un événement qui n’est pas un salon, voir le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a>.',
+    lead: 'Un <strong>rétroplanning de salon professionnel</strong> gratuit, construit en compte à rebours, choix et contrat de l’emplacement, conception et construction du stand, dates limites de transport et de manutention, marketing amont et prise de rendez-vous, équipe et briefing, les jours de salon eux-mêmes, puis la relance des contacts qui décide si l’opération s’est payée. Pour un événement qui n’est pas un salon, voir le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a>.',
     intro: "Exposer relève du compte à rebours plus que du projet. Trois ou quatre dates sont réellement immuables et tout le reste s’organise autour : le modèle les affiche donc en jalons plutôt qu’en tâches :",
     phases: [
       [
@@ -2827,11 +2827,11 @@ const T = {
     faq: [
       [
         "Combien de temps à l’avance préparer un salon ?",
-        "Six à neuf mois pour un grand salon, davantage si vous visez un bon emplacement — l’espace de l’édition suivante se choisit souvent pendant l’édition en cours. Ce modèle couvre environ huit mois jusqu’à l’ouverture."
+        "Six à neuf mois pour un grand salon, davantage si vous visez un bon emplacement, l’espace de l’édition suivante se choisit souvent pendant l’édition en cours. Ce modèle couvre environ huit mois jusqu’à l’ouverture."
       ],
       [
         "En quoi diffère-t-il du modèle d’organisation d’événement ?",
-        'Celui-ci est propre à l’exposition : contrat d’emplacement, construction du stand, transport et manutention, commandes au tarif anticipé et relance des contacts. Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> couvre votre propre événement — lieu, programme, intervenants, participants.'
+        'Celui-ci est propre à l’exposition : contrat d’emplacement, construction du stand, transport et manutention, commandes au tarif anticipé et relance des contacts. Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> couvre votre propre événement, lieu, programme, intervenants, participants.'
       ],
       [
         "Quelles sont les échéances immuables quand on expose ?",
@@ -2851,9 +2851,9 @@ const T = {
   'recruitment-hiring-plan': {
     card: "D’une ouverture de poste à l’arrivée : sourcing, entretiens, offre, préavis.",
     h1: "Plan de recrutement",
-    metaTitle: "Plan de recrutement — modèle",
+    metaTitle: "Plan de recrutement: modèle",
     metaDesc: "Modèle gratuit de plan de recrutement : validation du poste, sourcing, présélection, entretiens, offre, préavis et date d’arrivée.",
-    lead: 'Un <strong>plan de recrutement</strong> gratuit couvrant un poste de bout en bout — définition du besoin et validation de l’effectif, sourcing, présélection, cycle d’entretiens, évaluation et références, offre et négociation, préavis du candidat, puis la date d’arrivée. Il s’arrête exactement là où commence l’<a href="/templates/employee-onboarding.html">intégration d’un nouveau collaborateur</a>.',
+    lead: 'Un <strong>plan de recrutement</strong> gratuit couvrant un poste de bout en bout, définition du besoin et validation de l’effectif, sourcing, présélection, cycle d’entretiens, évaluation et références, offre et négociation, préavis du candidat, puis la date d’arrivée. Il s’arrête exactement là où commence l’<a href="/templates/employee-onboarding.html">intégration d’un nouveau collaborateur</a>.',
     intro: "La plupart des plans de recrutement sous-estiment les deux mêmes choses : la durée de la validation au départ et celle du préavis à l’arrivée. Le modèle donne à chacune une vraie barre, pour que la date d’arrivée soit honnête :",
     phases: [
       [
@@ -2929,9 +2929,9 @@ const T = {
   'internal-audit-plan': {
     card: "Cycle complet : risques, cadrage, travaux de terrain, constats et suivi.",
     h1: "Plan d’audit interne",
-    metaTitle: "Plan d’audit interne — modèle",
+    metaTitle: "Plan d’audit interne: modèle",
     metaDesc: "Modèle gratuit de plan d’audit interne : évaluation des risques, cadrage, travaux de terrain, constats, réponse de la direction, rapport et suivi.",
-    lead: "Un <strong>plan d’audit interne</strong> gratuit couvrant un cycle complet — évaluation annuelle des risques et univers d’audit, approbation du plan par le comité, cadrage et préparation de la mission, travaux de terrain et tests de contrôle, constats et réponse de la direction, émission du rapport, puis suivi des recommandations. Téléchargez-le pour le dossier du comité d’audit, ou ouvrez-le en ligne pour étaler plusieurs missions sur une année.",
+    lead: "Un <strong>plan d’audit interne</strong> gratuit couvrant un cycle complet, évaluation annuelle des risques et univers d’audit, approbation du plan par le comité, cadrage et préparation de la mission, travaux de terrain et tests de contrôle, constats et réponse de la direction, émission du rapport, puis suivi des recommandations. Téléchargez-le pour le dossier du comité d’audit, ou ouvrez-le en ligne pour étaler plusieurs missions sur une année.",
     intro: "Un plan d’audit a deux niveaux : le programme annuel et la mission qui s’y loge. Le modèle montre les deux, pour que le comité voie la couverture pendant que l’équipe voit le travail :",
     phases: [
       [
@@ -3009,7 +3009,7 @@ const T = {
     h1: "Plan d’ouverture d’un service hospitalier",
     metaTitle: "Ouverture d’un service hospitalier",
     metaDesc: "Modèle gratuit d’ouverture de service hospitalier : dossier, conception, travaux, équipements, hygiène hospitalière, effectifs et premier patient.",
-    lead: "Un <strong>plan d’ouverture de service hospitalier</strong> gratuit couvrant la mise en service d’un nouveau service ou d’une nouvelle unité — dossier de projet et validation de l’investissement, conception et dérogations aux normes de construction hospitalière, travaux et aménagement, achat des dispositifs médicaux, validation par l’équipe d’hygiène hospitalière, recrutement et habilitations, sécurité des données de santé, et la dernière ligne droite jusqu’au premier patient.",
+    lead: "Un <strong>plan d’ouverture de service hospitalier</strong> gratuit couvrant la mise en service d’un nouveau service ou d’une nouvelle unité, dossier de projet et validation de l’investissement, conception et dérogations aux normes de construction hospitalière, travaux et aménagement, achat des dispositifs médicaux, validation par l’équipe d’hygiène hospitalière, recrutement et habilitations, sécurité des données de santé, et la dernière ligne droite jusqu’au premier patient.",
     intro: "Ouvrir un service de soins n’est pas un chantier avec un peu de clinique à la fin. C’est une suite de points de passage réglementaires, dont chacun peut empêcher l’ouverture le jour prévu. Le modèle donne à chacun sa propre ligne :",
     phases: [
       [
@@ -3049,7 +3049,7 @@ const T = {
     customize: [
       "Poser la date d’ouverture exigée et remonter à rebours depuis l’accord hygiène : c’est ce point de passage, et non la fin des travaux, qui libère réellement les locaux.",
       "Ajouter une ligne par dérogation dès le début de la revue de conception : chacune est une acceptation de risque documentée avec un approbateur nommé.",
-      "Détailler la phase équipements en une ligne par matériel lourd, avec les délais réellement annoncés — l’imagerie et le bloc dépassent régulièrement la durée du chantier.",
+      "Détailler la phase équipements en une ligne par matériel lourd, avec les délais réellement annoncés, l’imagerie et le bloc dépassent régulièrement la durée du chantier.",
       "Allonger le recrutement s’il vous faut des infirmiers spécialisés ou un praticien titulaire : ce sont les postes qui glissent.",
       "Insérer la visite de la commission de sécurité comme barre fixe et faire dépendre le premier patient de son avis.",
       "Conserver une journée de simulation avant l’ouverture : c’est la façon la moins coûteuse de repérer les trous dans les circuits."
@@ -3091,7 +3091,7 @@ const T = {
     h1: "Calendrier de l’année scolaire",
     metaTitle: "Calendrier de l’année scolaire",
     metaDesc: "Modèle gratuit de calendrier de l’année scolaire : emploi du temps, service, inscriptions, vacances, examens, conseils de classe et budget.",
-    lead: "Un <strong>calendrier de l’année scolaire</strong> gratuit, construit à l’échelle de l’établissement et non de la classe — offre de formation et construction de l’emploi du temps, répartition de service et remplacements, inscriptions et effectifs, dates de vacances et calendrier des événements, évaluations et périodes d’examens, conseils de classe et bulletins, inspection et instances, et l’exercice budgétaire qui court sous l’ensemble.",
+    lead: "Un <strong>calendrier de l’année scolaire</strong> gratuit, construit à l’échelle de l’établissement et non de la classe, offre de formation et construction de l’emploi du temps, répartition de service et remplacements, inscriptions et effectifs, dates de vacances et calendrier des événements, évaluations et périodes d’examens, conseils de classe et bulletins, inspection et instances, et l’exercice budgétaire qui court sous l’ensemble.",
     intro: "Une année scolaire se prépare deux fois : une première fois au printemps précédent, une seconde semaine après semaine pendant qu’elle se déroule. Le modèle montre les deux, les phases de préparation se plaçant avant le jour de la rentrée :",
     phases: [
       [
@@ -3171,9 +3171,9 @@ const T = {
   'nonprofit-fundraising-campaign': {
     card: "Phase silencieuse, lancement public, abondement et fidélisation des donateurs.",
     h1: "Plan de campagne de collecte de fonds",
-    metaTitle: "Campagne de collecte de fonds — plan",
+    metaTitle: "Campagne de collecte de fonds: plan",
     metaDesc: "Modèle gratuit de plan de campagne de collecte : argumentaire, prospection, phase silencieuse, lancement public, abondement et fidélisation.",
-    lead: "Un <strong>plan de campagne de collecte de fonds</strong> gratuit, construit comme se déroulent réellement les campagnes de grands donateurs — étude de faisabilité et argumentaire, recherche de prospects et constitution des portefeuilles, cultivation des grands dons pendant la phase silencieuse, lancement public, événements et fenêtres d’abondement, puis la reconnaissance et les comptes rendus qui décident si les donateurs redonneront.",
+    lead: "Un <strong>plan de campagne de collecte de fonds</strong> gratuit, construit comme se déroulent réellement les campagnes de grands donateurs, étude de faisabilité et argumentaire, recherche de prospects et constitution des portefeuilles, cultivation des grands dons pendant la phase silencieuse, lancement public, événements et fenêtres d’abondement, puis la reconnaissance et les comptes rendus qui décident si les donateurs redonneront.",
     intro: "Une campagne n’est pas un lancement suivi de dons. L’essentiel des montants est engagé avant que quiconque en entende parler publiquement, et c’est pourquoi la phase silencieuse occupe la plus grande part du planning :",
     phases: [
       [
@@ -3186,7 +3186,7 @@ const T = {
       ],
       [
         "Comité et phase silencieuse",
-        "Constitution du comité de campagne, don des administrateurs, sollicitation des dons principaux et des grands dons, formalisation des promesses de don — le tout avant toute annonce publique. <em>Jalon : objectif de la phase silencieuse atteint.</em>"
+        "Constitution du comité de campagne, don des administrateurs, sollicitation des dons principaux et des grands dons, formalisation des promesses de don, le tout avant toute annonce publique. <em>Jalon : objectif de la phase silencieuse atteint.</em>"
       ],
       [
         "Lancement public",
@@ -3229,7 +3229,7 @@ const T = {
       ],
       [
         "Quelle part faut-il avoir collectée avant le lancement public ?",
-        "L’usage est d’avoir engagé une large majorité de l’objectif en phase silencieuse avant d’annoncer — souvent cité autour de 70 pour cent. Le modèle place donc le jalon de lancement après l’objectif de phase silencieuse plutôt qu’à une date fixe."
+        "L’usage est d’avoir engagé une large majorité de l’objectif en phase silencieuse avant d’annoncer, souvent cité autour de 70 pour cent. Le modèle place donc le jalon de lancement après l’objectif de phase silencieuse plutôt qu’à une date fixe."
       ],
       [
         "Qu’est-ce qu’un tableau de répartition des dons et où se place-t-il ?",
@@ -3249,9 +3249,9 @@ const T = {
   'warehouse-setup-project-plan': {
     card: "Du choix du site à la montée en charge : rayonnages, WMS, transfert de stock.",
     h1: "Plan de projet d’ouverture d’un entrepôt",
-    metaTitle: "Ouverture d’un entrepôt — planning",
+    metaTitle: "Ouverture d’un entrepôt: planning",
     metaDesc: "Modèle gratuit de projet d’entrepôt : choix du site, bail, rayonnages, intégration WMS, chariots élévateurs, transfert de stock et montée en charge.",
-    lead: "Un <strong>plan de projet d’ouverture d’entrepôt</strong> gratuit couvrant un nouveau site de distribution de bout en bout — étude de schéma directeur et choix du site, bail et travaux du bailleur, conception et montage des rayonnages, choix et intégration du WMS (système de gestion d’entrepôt), achat des chariots élévateurs et des engins de manutention, transfert du stock depuis l’ancien site, et une montée en charge qui ne laisse pas vos clients sans livraison.",
+    lead: "Un <strong>plan de projet d’ouverture d’entrepôt</strong> gratuit couvrant un nouveau site de distribution de bout en bout, étude de schéma directeur et choix du site, bail et travaux du bailleur, conception et montage des rayonnages, choix et intégration du WMS (système de gestion d’entrepôt), achat des chariots élévateurs et des engins de manutention, transfert du stock depuis l’ancien site, et une montée en charge qui ne laisse pas vos clients sans livraison.",
     intro: "Un projet d’entrepôt, ce sont trois projets qui partagent un bâtiment : l’aménagement physique, l’intégration informatique et le déménagement du stock. Ils n’ont ni les mêmes délais ni les mêmes modes de défaillance, et le modèle les traite donc en chemins distincts :",
     phases: [
       [
@@ -3331,9 +3331,9 @@ const T = {
   'road-construction-schedule': {
     card: "Des études à la mise en service : réseaux, terrassements et couches de chaussée.",
     h1: "Planning de travaux routiers",
-    metaTitle: "Travaux routiers — planning",
+    metaTitle: "Travaux routiers: planning",
     metaDesc: "Modèle gratuit de planning de travaux routiers : études, autorisations, déviations de réseaux, terrassements, chaussée et mise en service.",
-    lead: "Un <strong>planning de travaux routiers</strong> gratuit, déroulé comme un vrai programme d’infrastructure — levés et études, acquisitions foncières et autorisations, déviations de réseaux des concessionnaires, terrassements et assainissement, couche de forme, grave-bitume et couche de roulement, signalisation et marquage, phasage de circulation, puis remise au gestionnaire de la voirie.",
+    lead: "Un <strong>planning de travaux routiers</strong> gratuit, déroulé comme un vrai programme d’infrastructure, levés et études, acquisitions foncières et autorisations, déviations de réseaux des concessionnaires, terrassements et assainissement, couche de forme, grave-bitume et couche de roulement, signalisation et marquage, phasage de circulation, puis remise au gestionnaire de la voirie.",
     intro: "Sur un chantier routier, la chaussée est la partie facile. Ce qui commande la date, c’est ce qui doit bouger avant de pouvoir terrasser : les réseaux des concessionnaires, le foncier que vous ne possédez pas encore, et la circulation qui doit continuer de passer. Le modèle donne à chacun son propre chemin :",
     phases: [
       [
@@ -3346,7 +3346,7 @@ const T = {
       ],
       [
         "Déviations de réseaux",
-        "Devis et études de chaque concessionnaire, conception des déviations, programmation avec les concessionnaires, puis les déviations elles-mêmes — gaz, eau, électricité et télécoms, chacune sur son propre calendrier."
+        "Devis et études de chaque concessionnaire, conception des déviations, programmation avec les concessionnaires, puis les déviations elles-mêmes, gaz, eau, électricité et télécoms, chacune sur son propre calendrier."
       ],
       [
         "Phasage de circulation",
@@ -3365,13 +3365,13 @@ const T = {
         "Marquage au sol, panneaux et portiques, éclairage public, dispositifs de retenue, audit de sécurité routière final, levée des réserves et remise au gestionnaire de la voirie. <em>Jalon : mise en service.</em>"
       ]
     ],
-    callout: "Les déviations de réseaux sont le planning. Les concessionnaires travaillent à leur propre rythme, exigent de longs préavis et ne se comprimeront pas pour votre date — et chacun doit avoir terminé avant que vous puissiez terrasser sa section. Demandez les devis pendant les études, pas après l’attribution du marché, et inscrivez chaque concessionnaire comme une barre distincte avec sa propre durée.",
+    callout: "Les déviations de réseaux sont le planning. Les concessionnaires travaillent à leur propre rythme, exigent de longs préavis et ne se comprimeront pas pour votre date, et chacun doit avoir terminé avant que vous puissiez terrasser sa section. Demandez les devis pendant les études, pas après l’attribution du marché, et inscrivez chaque concessionnaire comme une barre distincte avec sa propre durée.",
     customize: [
       "Saisir d’abord les créneaux d’occupation de la voirie confirmés : sur une route en service, ce sont les points fixes autour desquels le reste s’organise.",
-      "Ajouter une ligne par concessionnaire — gaz, eau, électricité et chaque opérateur télécom ont des préavis et des équipes différents.",
+      "Ajouter une ligne par concessionnaire, gaz, eau, électricité et chaque opérateur télécom ont des préavis et des équipes différents.",
       "Découper le chantier en sections ou en plages de points kilométriques une fois le phasage connu, pour suivre terrassements et chaussée par phase.",
       "Sortir le revêtement des mois d’hiver dans la mesure du possible : la mise en œuvre des enrobés a des limites de température qui arrêtent le chantier le jour même.",
-      "Insérer les périodes d’exclusion — nidification, chiroptères, fenêtres piscicoles — sous forme de barres bloquées si vos autorisations les imposent.",
+      "Insérer les périodes d’exclusion, nidification, chiroptères, fenêtres piscicoles, sous forme de barres bloquées si vos autorisations les imposent.",
       "Garder les deux audits de sécurité routière sur le planning : celui d’après travaux conditionne l’ouverture, ce n’est pas une revue postérieure."
     ],
     tips: [
@@ -3415,7 +3415,7 @@ const T = {
     h1: "Plan de lancement d’une application mobile",
     metaTitle: "Lancement d’une application mobile",
     metaDesc: "Modèle gratuit de lancement d’application mobile : stabilisation, bêta, fiche du store, validation App Store, déploiement progressif et correctif.",
-    lead: "Un <strong>plan de lancement d’application mobile</strong> gratuit, construit autour des exigences des stores plutôt que d’un marketing générique — stabilisation du build et version candidate, bêta TestFlight et piste interne Google Play, fiche du store et captures d’écran, dépôt sur l’App Store et Google Play, l’attente de validation elle-même, déploiement progressif et la fenêtre de correctif du jour un.",
+    lead: "Un <strong>plan de lancement d’application mobile</strong> gratuit, construit autour des exigences des stores plutôt que d’un marketing générique, stabilisation du build et version candidate, bêta TestFlight et piste interne Google Play, fiche du store et captures d’écran, dépôt sur l’App Store et Google Play, l’attente de validation elle-même, déploiement progressif et la fenêtre de correctif du jour un.",
     intro: "Publier une application mobile n’est pas déployer un logiciel sur un serveur : quelqu’un d’autre décide quand votre build sera en ligne, et le plan doit le montrer. Le modèle sépare le travail que vous maîtrisez de l’attente que vous ne maîtrisez pas :",
     phases: [
       [
@@ -3443,7 +3443,7 @@ const T = {
         "Surveillance des plantages et des blocages, la fenêtre de correctif réservée, réponses aux avis sur les stores et lecture de la rétention à une semaine."
       ]
     ],
-    callout: "Prévoyez un refus. Les premiers dépôts sont refusés assez souvent pour qu’un plan sans marge de nouveau dépôt soit un plan à pile ou face — et le délai repart de zéro au dépôt suivant. Inscrivez l’attente de validation et la marge de refus comme deux barres distinctes, puis fixez la date d’annonce après la seconde, pas après la première.",
+    callout: "Prévoyez un refus. Les premiers dépôts sont refusés assez souvent pour qu’un plan sans marge de nouveau dépôt soit un plan à pile ou face, et le délai repart de zéro au dépôt suivant. Inscrivez l’attente de validation et la marge de refus comme deux barres distinctes, puis fixez la date d’annonce après la seconde, pas après la première.",
     customize: [
       "Fixer la date de dépôt et avancer depuis là plutôt que de remonter à rebours : la durée de validation ne vous appartient pas.",
       "Dédoubler les lignes de dépôt et de validation par store si vos versions iOS et Android n’ont pas le même rythme : les délais de validation diffèrent.",
@@ -3471,7 +3471,7 @@ const T = {
       ],
       [
         "En quoi diffère-t-il d’un plan de lancement produit ?",
-        'Celui-ci est calé sur les stores : dépôt, validation et déploiement progressif. Pour le travail commercial plus large — prix, positionnement, campagnes — utilisez le <a href="/templates/product-launch.html">modèle de lancement de produit</a> en parallèle.'
+        'Celui-ci est calé sur les stores : dépôt, validation et déploiement progressif. Pour le travail commercial plus large, prix, positionnement, campagnes, utilisez le <a href="/templates/product-launch.html">modèle de lancement de produit</a> en parallèle.'
       ],
       [
         "Faut-il un déploiement progressif ou une diffusion à tous ?",
@@ -3487,9 +3487,9 @@ const T = {
   'iso-9001-certification-plan': {
     card: "Écarts, manuel qualité, audit interne, revue de direction, étapes 1 et 2.",
     h1: "Plan de certification ISO 9001",
-    metaTitle: "Certification ISO 9001 — plan",
+    metaTitle: "Certification ISO 9001: plan",
     metaDesc: "Modèle gratuit de plan de certification ISO 9001 : analyse des écarts, documentation, audit interne, revue de direction, audits étape 1 et étape 2.",
-    lead: "Un <strong>plan de certification ISO 9001</strong> gratuit, déroulé sur le vrai chemin qui mène au certificat — analyse des écarts, cartographie des processus, documentation du système de management de la qualité, mise en œuvre et formation, cycle d’audit interne, revue de direction et actions correctives, puis l’audit de certification en deux étapes et le premier audit de surveillance.",
+    lead: "Un <strong>plan de certification ISO 9001</strong> gratuit, déroulé sur le vrai chemin qui mène au certificat, analyse des écarts, cartographie des processus, documentation du système de management de la qualité, mise en œuvre et formation, cycle d’audit interne, revue de direction et actions correctives, puis l’audit de certification en deux étapes et le premier audit de surveillance.",
     intro: "La certification ISO 9001 n’est pas un projet documentaire. L’organisme certificateur doit voir les enregistrements d’un système qui a réellement fonctionné, et c’est pourquoi l’audit interne et la revue de direction se placent avant l’audit externe et non à côté :",
     phases: [
       [
@@ -3569,9 +3569,9 @@ const T = {
   'soc2-compliance-timeline': {
     card: "Cadrage, contrôles, remédiation, période d’observation Type II et rapport.",
     h1: "Planning de conformité SOC 2",
-    metaTitle: "Conformité SOC 2 — planning",
+    metaTitle: "Conformité SOC 2: planning",
     metaDesc: "Modèle gratuit de planning SOC 2 : cadrage, conception des contrôles, remédiation, préparation, période d’observation Type II et rapport.",
-    lead: "Un <strong>planning de conformité SOC 2</strong> gratuit couvrant toute la mission — cadrage et choix des Trust Services Criteria, conception des contrôles, remédiation, collecte des preuves, évaluation de préparation, la période d’observation du Type II, les travaux de l’auditeur et l’émission du rapport.",
+    lead: "Un <strong>planning de conformité SOC 2</strong> gratuit couvrant toute la mission, cadrage et choix des Trust Services Criteria, conception des contrôles, remédiation, collecte des preuves, évaluation de préparation, la période d’observation du Type II, les travaux de l’auditeur et l’émission du rapport.",
     intro: "Presque toutes les questions de délai sur un SOC 2 portent en réalité sur la période d’observation. Un Type I est une opinion à un instant donné ; un Type II couvre une période pendant laquelle vos contrôles doivent réellement fonctionner. Le modèle en fait une barre visible, pour que personne ne promette un rapport que l’arithmétique interdit :",
     phases: [
       [
@@ -3584,7 +3584,7 @@ const T = {
       ],
       [
         "Remédiation",
-        "Gestion et revue des accès, points de contrôle sur les changements, journalisation et supervision, risque fournisseurs, sensibilisation à la sécurité et test du plan de réponse aux incidents — le travail d’ingénierie proprement dit."
+        "Gestion et revue des accès, points de contrôle sur les changements, journalisation et supervision, risque fournisseurs, sensibilisation à la sécurité et test du plan de réponse aux incidents, le travail d’ingénierie proprement dit."
       ],
       [
         "Preuves et préparation",
@@ -3596,16 +3596,16 @@ const T = {
       ],
       [
         "Période d’observation",
-        "La période couverte par l’opinion Type II — contrôles fonctionnant en continu, points de contrôle mensuels sur les preuves et revues d’accès trimestrielles. De trois à douze mois, et non compressible."
+        "La période couverte par l’opinion Type II, contrôles fonctionnant en continu, points de contrôle mensuels sur les preuves et revues d’accès trimestrielles. De trois à douze mois, et non compressible."
       ],
       [
         "Travaux d’audit et rapport",
         "Demandes d’échantillons, transmission des preuves, tests, exceptions et réponses de la direction, revue du projet de rapport et émission. <em>Jalon : rapport Type II émis.</em>"
       ]
     ],
-    callout: "La période d’observation ne se raccourcit pas. Un rapport Type II atteste que vos contrôles ont fonctionné sur une période : trois mois de fenêtre, ce sont trois mois de calendrier réel qu’aucun budget ne rachètera. Le seul levier est la date de départ — et c’est pourquoi le jalon qui mérite qu’on se batte est la validation de la préparation, pas la date du rapport.",
+    callout: "La période d’observation ne se raccourcit pas. Un rapport Type II atteste que vos contrôles ont fonctionné sur une période : trois mois de fenêtre, ce sont trois mois de calendrier réel qu’aucun budget ne rachètera. Le seul levier est la date de départ, et c’est pourquoi le jalon qui mérite qu’on se batte est la validation de la préparation, pas la date du rapport.",
     customize: [
-      "Choisir d’abord la longueur de la période d’observation — trois mois pour un premier rapport, six à douze une fois dans un cycle annuel — et dimensionner la barre en conséquence.",
+      "Choisir d’abord la longueur de la période d’observation, trois mois pour un premier rapport, six à douze une fois dans un cycle annuel, et dimensionner la barre en conséquence.",
       "Retirer entièrement la phase Type I si aucun client n’a besoin d’un rapport intermédiaire : beaucoup d’organisations vont directement au Type II.",
       "Ajouter une ligne par catégorie de critères retenue au-delà de la sécurité : disponibilité, confidentialité, intégrité des traitements et vie privée ajoutent chacune des contrôles et des preuves.",
       "Détailler la remédiation en une ligne par écart dès que l’évaluation de préparation est rendue, pour suivre le travail d’ingénierie au lieu de l’agréger.",
@@ -3649,7 +3649,7 @@ const T = {
     h1: "Planning de production industrielle",
     metaTitle: "Planning de production industrielle",
     metaDesc: "Modèle gratuit de planning de production : prévisions, délais matière, ordonnancement, changements de série, contrôle qualité et expédition.",
-    lead: "Un <strong>planning de production industrielle</strong> gratuit pour la fabrication discrète — plan de charge et programme directeur, approvisionnements calés sur les délais réels des fournisseurs, ordonnancement des lignes et changements de série, les séries de production elles-mêmes, contrôle en cours et contrôle final, puis conditionnement et expédition.",
+    lead: "Un <strong>planning de production industrielle</strong> gratuit pour la fabrication discrète, plan de charge et programme directeur, approvisionnements calés sur les délais réels des fournisseurs, ordonnancement des lignes et changements de série, les séries de production elles-mêmes, contrôle en cours et contrôle final, puis conditionnement et expédition.",
     intro: "Un planning de production, ce sont deux plannings qui doivent se rejoindre : l’arrivée de la matière et la disponibilité de la capacité. Le modèle les traite en chemins distincts, pour que la collision se voie avant de se produire dans l’atelier :",
     phases: [
       [
@@ -3677,7 +3677,7 @@ const T = {
         "Emballage et étiquetage, palettisation et plan de chargement, réservation du transporteur et documents d’expédition. <em>Jalon : commande expédiée.</em>"
       ]
     ],
-    callout: "Un changement de série est du temps de production. Un planning qui affiche trois séries à la suite sans aucune barre de changement revendique une capacité qui n’existe pas — et sur une ligne à changements fréquents, ils peuvent représenter une part à deux chiffres des heures disponibles. Inscrivez chaque changement de série à sa durée mesurée, pas à sa durée souhaitée.",
+    callout: "Un changement de série est du temps de production. Un planning qui affiche trois séries à la suite sans aucune barre de changement revendique une capacité qui n’existe pas, et sur une ligne à changements fréquents, ils peuvent représenter une part à deux chiffres des heures disponibles. Inscrivez chaque changement de série à sa durée mesurée, pas à sa durée souhaitée.",
     customize: [
       "Saisir vos délais fournisseurs réels par composant : c’est le plus long d’entre eux, et non l’ordonnancement, qui fixe la date de début possible.",
       "Ajouter une ligne par poste de charge ou par ligne si vous en ordonnancez plusieurs, pour rendre les conflits visibles.",
@@ -3705,7 +3705,7 @@ const T = {
       ],
       [
         "Est-ce adapté à l’industrie de process ?",
-        "Le modèle vise d’abord la fabrication discrète — lots, unités et changements de série. Pour une production continue, gardez les phases approvisionnement et expédition et remplacez les lignes de série par des barres de campagne."
+        "Le modèle vise d’abord la fabrication discrète, lots, unités et changements de série. Pour une production continue, gardez les phases approvisionnement et expédition et remplacez les lignes de série par des barres de campagne."
       ],
       [
         "En quoi diffère-t-il du calendrier de production textile ?",
@@ -3721,10 +3721,10 @@ const T = {
   'website-redesign-project-plan': {
     card: "Du cadrage à la mise en ligne : contenu, design, migration et redirections.",
     h1: "Plan de projet de refonte de site web",
-    metaTitle: "Refonte de site web — plan projet",
+    metaTitle: "Refonte de site web: plan projet",
     metaDesc: "Modèle gratuit de refonte de site web : cadrage, audit de contenu, design, développement, migration, plan de redirections, recette et suivi.",
-    lead: "Un <strong>plan de projet de refonte de site web</strong> gratuit couvrant le projet complet — cadrage, arborescence et audit de contenu, design, développement, migration des contenus, plan de redirections SEO, recette et suivi après la mise en ligne.",
-    intro: "Les refontes échouent rarement sur le design. Elles échouent sur les deux chemins ingrats que personne ne dote correctement — déplacer le contenu et faire correspondre les URL — et le modèle leur donne donc chacun une phase avec ses propres antériorités :",
+    lead: "Un <strong>plan de projet de refonte de site web</strong> gratuit couvrant le projet complet, cadrage, arborescence et audit de contenu, design, développement, migration des contenus, plan de redirections SEO, recette et suivi après la mise en ligne.",
+    intro: "Les refontes échouent rarement sur le design. Elles échouent sur les deux chemins ingrats que personne ne dote correctement, déplacer le contenu et faire correspondre les URL, et le modèle leur donne donc chacun une phase avec ses propres antériorités :",
     phases: [
       [
         "Cadrage",
@@ -3759,7 +3759,7 @@ const T = {
         "Décision de mise en ligne, bascule DNS, vérification des redirections en production, envoi du sitemap et trente jours de suivi des erreurs d’exploration et des positions."
       ]
     ],
-    callout: "Le plan de redirections est le projet. Chaque URL qui change sans redirection 301 est du trafic que vous avez payé pour acquérir puis jeté, et les dégâts n’apparaissent que des semaines plus tard, quand les positions sont déjà perdues. Construisez le plan à partir d’une exploration complète de l’ancien site — pas du sitemap du nouveau — et testez-le en préproduction avant la mise en ligne, pas après.",
+    callout: "Le plan de redirections est le projet. Chaque URL qui change sans redirection 301 est du trafic que vous avez payé pour acquérir puis jeté, et les dégâts n’apparaissent que des semaines plus tard, quand les positions sont déjà perdues. Construisez le plan à partir d’une exploration complète de l’ancien site, pas du sitemap du nouveau, et testez-le en préproduction avant la mise en ligne, pas après.",
     customize: [
       "Lancer l’inventaire des URL dès la première semaine : l’exploration de l’existant alimente l’audit de contenu, le tableau de migration et le plan de redirections.",
       "Ajouter une ligne par type de contenu ou par rubrique si vous migrez des milliers de pages : une barre unique « migrer le contenu » cache toujours un mois.",
@@ -3803,9 +3803,9 @@ const T = {
   'hotel-refurbishment-schedule': {
     card: "Fermetures d’étages par phases, nuitées perdues, plages bruyantes et réception.",
     h1: "Planning de rénovation d’hôtel",
-    metaTitle: "Rénovation d’hôtel — planning de travaux",
+    metaTitle: "Rénovation d’hôtel: planning de travaux",
     metaDesc: "Modèle gratuit de planning de rénovation d’hôtel : fermetures d’étages par phases, nuitées perdues, plages bruyantes, ascenseurs et parties communes.",
-    lead: "Un <strong>planning de rénovation d’hôtel</strong> gratuit, pensé pour un établissement qui continue de vendre pendant qu’on le reconstruit — fermetures d’étages par phases, nuitées perdues sur chacune d’elles, plages de travaux bruyants encadrées par les horaires clients, ordonnancement des ascenseurs et des locaux techniques, et parties communes calées sur la basse saison. À télécharger pour un propriétaire ou un asset manager, ou à ouvrir en ligne pour voir combien de chambres vous sortez réellement du stock chaque mois.",
+    lead: "Un <strong>planning de rénovation d’hôtel</strong> gratuit, pensé pour un établissement qui continue de vendre pendant qu’on le reconstruit, fermetures d’étages par phases, nuitées perdues sur chacune d’elles, plages de travaux bruyants encadrées par les horaires clients, ordonnancement des ascenseurs et des locaux techniques, et parties communes calées sur la basse saison. À télécharger pour un propriétaire ou un asset manager, ou à ouvrir en ligne pour voir combien de chambres vous sortez réellement du stock chaque mois.",
     intro: "La rénovation d’un hôtel en exploitation est un chantier avec un compteur de recettes qui tourne à côté. Le modèle ordonne les travaux en fonction du taux d’occupation, et non de la disponibilité des entreprises :",
     phases: [
       [
@@ -3818,7 +3818,7 @@ const T = {
       ],
       [
         "Locaux techniques et ascenseurs",
-        "Relevé des gaines et des réseaux, modernisation des ascenseurs cabine par cabine, locaux du personnel, production de froid et centrales de traitement d’air — les travaux qui touchent tous les étages et qu’on ne refait pas deux fois."
+        "Relevé des gaines et des réseaux, modernisation des ascenseurs cabine par cabine, locaux du personnel, production de froid et centrales de traitement d’air, les travaux qui touchent tous les étages et qu’on ne refait pas deux fois."
       ],
       [
         "Fermetures des étages clients",
@@ -3836,14 +3836,14 @@ const T = {
     callout: "Chiffrez chaque fermeture en nuitées avant de séquencer quoi que ce soit. Un étage de 30 chambres fermé huit semaines représente environ 1 700 nuitées de stock perdu, et déplacer cette fermeture de juillet à février peut valoir bien davantage que la remise que vous étiez en train de négocier avec l’entreprise. Le modèle de nuitées perdues se place en tête du planning, pas en annexe du dossier.",
     customize: [
       "Remplacer les lignes d’étages par vos propres nombres de chambres et vos durées de fermeture réelles, puis totaliser les nuitées perdues par mois face au budget prévisionnel.",
-      "Décaler les parties communes vers votre vraie basse saison — pour la plupart des hôtels, la fenêtre est plus étroite que ne le laisse croire le budget annuel.",
+      "Décaler les parties communes vers votre vraie basse saison, pour la plupart des hôtels, la fenêtre est plus étroite que ne le laisse croire le budget annuel.",
       "Fixer la plage de travaux bruyants aux horaires que la direction d’exploitation peut réellement tenir, et y contenir tout percement et toute démolition.",
       "Ajouter une ligne par ascenseur : moderniser plusieurs cabines simultanément n’est presque jamais acceptable dans un hôtel qui tourne.",
       "Insérer un plan de relogement si vous devez déplacer des clients en cours de séjour, et le doter en personnel : c’est du vrai travail de réception, pas un arrondi.",
       "Marquer la validation de l’investissement, la chambre témoin, la restitution du dernier étage et le retour au stock complet comme jalons."
     ],
     tips: [
-      "<strong>Construisez la chambre témoin avant de commander quoi que ce soit.</strong> C’est la seule occasion peu coûteuse de découvrir que l’agencement ne rentre pas, que les prises sont mal placées et que le détail de salle de bains fuit — et l’équipe d’exploitation devrait y dormir une nuit.",
+      "<strong>Construisez la chambre témoin avant de commander quoi que ce soit.</strong> C’est la seule occasion peu coûteuse de découvrir que l’agencement ne rentre pas, que les prises sont mal placées et que le détail de salle de bains fuit, et l’équipe d’exploitation devrait y dormir une nuit.",
       "<strong>N’empilez pas deux fermetures d’étage si le modèle ne montre pas que vous savez vendre autour.</strong> La compression tarifaire fonctionne jusqu’au jour où il ne reste plus de chambres vers lesquelles comprimer.",
       "<strong>Séquencez verticalement, pas horizontalement.</strong> Gaines, chutes et cages d’ascenseur traversent tous les étages : traitez les réseaux comme une campagne verticale continue plutôt que comme une tâche répétée à chaque niveau.",
       "<strong>Protégez le parcours client.</strong> Accès des entreprises, palissades, évacuation des gravats et monte-matériaux ont besoin d’un chemin qui ne croise jamais le hall aux heures d’arrivée ; ces contraintes figurent sur le planning parce qu’elles dictent les horaires de chantier.",
@@ -3853,7 +3853,7 @@ const T = {
     faq: [
       [
         "Combien de temps dure une rénovation d’hôtel ?",
-        "Une rénovation par phases d’un hôtel de taille moyenne en exploitation court couramment sur 12 à 24 mois, parce que les étages ferment successivement et non tous en même temps. Le modèle propose dix-huit mois, que vous pouvez comprimer en fermant plus de chambres à la fois — au prix du chiffre d’affaires."
+        "Une rénovation par phases d’un hôtel de taille moyenne en exploitation court couramment sur 12 à 24 mois, parce que les étages ferment successivement et non tous en même temps. Le modèle propose dix-huit mois, que vous pouvez comprimer en fermant plus de chambres à la fois, au prix du chiffre d’affaires."
       ],
       [
         "Vaut-il mieux fermer complètement l’hôtel ?",
@@ -3861,7 +3861,7 @@ const T = {
       ],
       [
         "Comment programmer les travaux bruyants dans un hôtel ouvert ?",
-        "En convenant d’une plage quotidienne fixe — typiquement de la fin de matinée au milieu d’après-midi — et en la traitant comme une contrainte ferme du planning, non comme une demande faite à l’entreprise. Les percements, démolitions et carottages hors de cette plage sont la première cause de réclamations et de remises."
+        "En convenant d’une plage quotidienne fixe, typiquement de la fin de matinée au milieu d’après-midi, et en la traitant comme une contrainte ferme du planning, non comme une demande faite à l’entreprise. Les percements, démolitions et carottages hors de cette plage sont la première cause de réclamations et de remises."
       ],
       [
         "En quoi est-ce différent du modèle de pré-ouverture ?",
@@ -3877,9 +3877,9 @@ const T = {
   'port-terminal-construction-schedule': {
     card: "Dragage, terre-plein, quai, portiques de quai et système d’exploitation.",
     h1: "Planning de construction d’un terminal portuaire",
-    metaTitle: "Terminal portuaire — planning travaux",
+    metaTitle: "Terminal portuaire: planning travaux",
     metaDesc: "Planning gratuit de terminal portuaire : dragage, remblaiement, quai, voies de portiques, livraison des portiques, terre-plein et système d’exploitation.",
-    lead: "Un <strong>planning de construction de terminal portuaire</strong> gratuit qui tient ensemble les travaux maritimes et terrestres — levés et autorisations de dragage et d’immersion, remblaiement, construction du quai, amélioration des sols et voies de portiques, livraison et mise en service des portiques de quai, revêtement du terre-plein et système d’exploitation du terminal. À télécharger pour un dossier de concession, ou à ouvrir en ligne pour caler les travaux sur vos fenêtres météo.",
+    lead: "Un <strong>planning de construction de terminal portuaire</strong> gratuit qui tient ensemble les travaux maritimes et terrestres, levés et autorisations de dragage et d’immersion, remblaiement, construction du quai, amélioration des sols et voies de portiques, livraison et mise en service des portiques de quai, revêtement du terre-plein et système d’exploitation du terminal. À télécharger pour un dossier de concession, ou à ouvrir en ligne pour caler les travaux sur vos fenêtres météo.",
     intro: "Un terminal à conteneurs, ce sont trois projets qui partagent un site : un chantier maritime, un chantier de génie civil et un projet de systèmes. Le modèle les garde visibles comme des lignes distinctes, parce que leurs contraintes n’ont rien à voir :",
     phases: [
       [
@@ -3920,7 +3920,7 @@ const T = {
       "<strong>Les autorisations conditionnent le dragage, et le dragage conditionne tout le maritime.</strong> L’autorisation du site d’immersion, en particulier, est une procédure longue conduite par un tiers, sans accélérateur possible : elle doit démarrer avant la fin des études.",
       "<strong>Ne faites pas chevaucher l’arrivée du navire de charge lourde et l’achèvement du quai.</strong> Les rails doivent être relevés, alignés et éprouvés en charge avant qu’un portique puisse être débarqué, et ce relevé est une antériorité ferme.",
       "<strong>Programmez le tassement, ne le supposez pas.</strong> Un remblai sous un parc à conteneurs exige une période de surcharge instrumentée ; revêtir trop tôt produit un terre-plein qui se dégrade en deux ans.",
-      "<strong>Commencez le paramétrage pendant le génie civil.</strong> Le système d’exploitation a besoin de données de référence, d’un plan de parc, de règles d’accès et d’interfaces avec les compagnies maritimes et la douane — rien de tout cela n’attend la fin du revêtement.",
+      "<strong>Commencez le paramétrage pendant le génie civil.</strong> Le système d’exploitation a besoin de données de référence, d’un plan de parc, de règles d’accès et d’interfaces avec les compagnies maritimes et la douane, rien de tout cela n’attend la fin du revêtement.",
       "<strong>Prévoyez une escale d’essai.</strong> Une escale répétée avec une compagnie coopérative révèle les problèmes de portail, de portique, de système et de main-d’œuvre qu’une première escale commerciale révélerait beaucoup plus cher.",
       "<strong>Posez la référence à la disponibilité du poste à quai.</strong> Les travaux maritimes portent la plus large incertitude d’estimation du projet ; une fois le quai existant, la partie terrestre devient bien plus prévisible et mérite un suivi d’écart sur une référence figée."
     ],
@@ -3951,9 +3951,9 @@ const T = {
   'rail-signalling-upgrade-plan': {
     card: "Études, données d’enclenchement, essais en usine, plages travaux et mise en service.",
     h1: "Plan de modernisation de la signalisation ferroviaire",
-    metaTitle: "Signalisation ferroviaire — plan projet",
+    metaTitle: "Signalisation ferroviaire: plan projet",
     metaDesc: "Plan gratuit de modernisation de la signalisation : études, données d’enclenchement, essais en usine, plages travaux, essais et mise en exploitation.",
-    lead: "Un <strong>plan de modernisation de la signalisation ferroviaire</strong> gratuit, construit autour des plages travaux — études de conception, préparation des données d’enclenchement, essais en usine, réservation des interceptions, installation à l’intérieur de chaque plage, essais de principe et essais d’ensemble, puis mise en exploitation commerciale. À télécharger pour une revue de jalon, ou à ouvrir en ligne pour vérifier que les travaux prévus tiennent réellement dans les heures qui vous ont été accordées.",
+    lead: "Un <strong>plan de modernisation de la signalisation ferroviaire</strong> gratuit, construit autour des plages travaux, études de conception, préparation des données d’enclenchement, essais en usine, réservation des interceptions, installation à l’intérieur de chaque plage, essais de principe et essais d’ensemble, puis mise en exploitation commerciale. À télécharger pour une revue de jalon, ou à ouvrir en ligne pour vérifier que les travaux prévus tiennent réellement dans les heures qui vous ont été accordées.",
     intro: "Une opération de renouvellement de signalisation est un projet de bureau d’études avec, au milieu, quelques week-ends où tout le physique se passe. Le modèle traite ces week-ends comme des contenants fixes, non déplaçables, et organise tout le reste autour d’eux :",
     phases: [
       [
@@ -3984,9 +3984,9 @@ const T = {
     callout: "La plage travaux, c’est le planning. Les interceptions se demandent contre les échéances de l’horaire de service, un an ou plus à l’avance, et une fois la réservation faite, la question n’est plus « quand installe-t-on » mais « les travaux tiennent-ils dans les heures obtenues ». Programmez chaque plage en rétroplanning depuis l’heure de restitution, avec les essais à la fin et un plan de repli pour le moment où il faudra s’arrêter et rendre la voie, quoi qu’il arrive.",
     customize: [
       "Saisir d’abord vos dates réelles d’interception et les verrouiller : toutes les autres barres du planning négocient autour d’elles.",
-      "Ajouter une ligne par plage travaux avec sa durée réelle en heures plutôt qu’en jours — un week-end de 52 heures et un week-end de 29 heures sont deux projets différents.",
+      "Ajouter une ligne par plage travaux avec sa durée réelle en heures plutôt qu’en jours, un week-end de 52 heures et un week-end de 29 heures sont deux projets différents.",
       "Sortir de la plage tout ce qui peut en sortir, vers le travail de semaine ou l’atelier : tout ce qui peut être précâblé, préessayé ou préinstallé doit l’être.",
-      "Allonger les barres d’élaboration et de contrôle des données si votre poste est important — le contrôle indépendant est un processus lent, imposé par le référentiel, et il ne se parallélise pas avec lui-même.",
+      "Allonger les barres d’élaboration et de contrôle des données si votre poste est important, le contrôle indépendant est un processus lent, imposé par le référentiel, et il ne se parallélise pas avec lui-même.",
       "Insérer un feu vert formel quinze jours avant chaque plage de mise en service, avec les essais en usine, la préparation des essais et les habilitations comme antériorités.",
       "Marquer l’acceptation de la conception, les essais en usine, la confirmation des plages, la mise en service et la mise en exploitation commerciale comme jalons."
     ],
@@ -4025,9 +4025,9 @@ const T = {
   'pharma-product-launch-plan': {
     card: "AMM, lots de validation, sérialisation, prix et remboursement, vagues de pays.",
     h1: "Plan de lancement d’un médicament",
-    metaTitle: "Lancement de médicament — plan",
+    metaTitle: "Lancement de médicament: plan",
     metaDesc: "Plan de lancement gratuit : dossier et AMM, lots de validation, sérialisation, avis de la HAS, négociation du prix au CEPS et lancement par pays.",
-    lead: "Un <strong>plan de lancement de médicament</strong> gratuit qui couvre l’intervalle entre un essai terminé et un produit en pharmacie — constitution du dossier et dépôt, horloge d’évaluation, transposition d’échelle et lots de validation, sérialisation et étiquetage par marché, dossiers de prix et de remboursement, affaires médicales, et séquencement des lancements pays par pays. À télécharger pour une revue de préparation au lancement, ou à ouvrir en ligne pour voir de quoi dépend vraiment la date de votre premier marché.",
+    lead: "Un <strong>plan de lancement de médicament</strong> gratuit qui couvre l’intervalle entre un essai terminé et un produit en pharmacie, constitution du dossier et dépôt, horloge d’évaluation, transposition d’échelle et lots de validation, sérialisation et étiquetage par marché, dossiers de prix et de remboursement, affaires médicales, et séquencement des lancements pays par pays. À télécharger pour une revue de préparation au lancement, ou à ouvrir en ligne pour voir de quoi dépend vraiment la date de votre premier marché.",
     intro: "Tout ce qui est commercial dans un lancement pharmaceutique est conditionné par deux choses que vous ne maîtrisez pas : une autorisation de mise sur le marché et une décision de remboursement. Le modèle place les deux sur le planning comme des barres avec des successeurs, plutôt que comme des hypothèses sur une diapositive :",
     phases: [
       [
@@ -4044,7 +4044,7 @@ const T = {
       ],
       [
         "Prix et remboursement",
-        "Dépôt à la Commission de la transparence de la HAS, avis de service médical rendu et d’amélioration du service médical rendu, négociation du prix avec le CEPS, inscription sur la liste des spécialités remboursables et publication au Journal officiel — la phase qui décide si un produit autorisé est réellement disponible. <em>Jalon : première inscription au remboursement.</em>"
+        "Dépôt à la Commission de la transparence de la HAS, avis de service médical rendu et d’amélioration du service médical rendu, négociation du prix avec le CEPS, inscription sur la liste des spécialités remboursables et publication au Journal officiel, la phase qui décide si un produit autorisé est réellement disponible. <em>Jalon : première inscription au remboursement.</em>"
       ],
       [
         "Affaires médicales et données",
@@ -4055,7 +4055,7 @@ const T = {
         "Recrutement et formation du réseau, convention de lancement, premier marché, puis les vagues deux et trois à mesure que les autorisations et les inscriptions arrivent. <em>Jalon : première vente.</em>"
       ]
     ],
-    callout: "L’autorisation n’est pas le lancement. Sur la plupart des marchés européens, un produit ne se vend pas réellement tant qu’il n’a pas un prix et une inscription au remboursement, et cette procédure ne commence qu’après l’AMM, pour courir ensuite des mois selon son propre calendrier. Prévoyez deux dates par pays — autorisation et disponibilité — et ne laissez jamais une prévision commerciale supposer discrètement qu’il s’agit du même jour.",
+    callout: "L’autorisation n’est pas le lancement. Sur la plupart des marchés européens, un produit ne se vend pas réellement tant qu’il n’a pas un prix et une inscription au remboursement, et cette procédure ne commence qu’après l’AMM, pour courir ensuite des mois selon son propre calendrier. Prévoyez deux dates par pays, autorisation et disponibilité, et ne laissez jamais une prévision commerciale supposer discrètement qu’il s’agit du même jour.",
     customize: [
       "Fixer la date de dépôt et laisser l’horloge d’évaluation courir à partir d’elle : la durée réglementaire est imposée, seul votre temps de réponse à l’intérieur vous appartient.",
       "Dupliquer les lignes de prix, d’étiquetage et de lancement par marché, chacun ayant son autorité, sa langue et son parcours de remboursement.",
@@ -4091,7 +4091,7 @@ const T = {
       ],
       [
         "Quel est le risque de produire avant l’autorisation ?",
-        "La destruction du stock si le produit n’est pas autorisé ou si l’étiquetage change. La plupart des lancements acceptent une part de ce risque, parce que les délais de fabrication dépassent l’intervalle entre l’autorisation et les premières commandes — mais cela doit rester une décision assumée, avec un chiffre en face."
+        "La destruction du stock si le produit n’est pas autorisé ou si l’étiquetage change. La plupart des lancements acceptent une part de ce risque, parce que les délais de fabrication dépassent l’intervalle entre l’autorisation et les premières commandes, mais cela doit rester une décision assumée, avec un chiffre en face."
       ],
       [
         "Le modèle de lancement pharmaceutique est-il gratuit ?",
@@ -4103,9 +4103,9 @@ const T = {
   'ma-due-diligence-timeline': {
     card: "Confidentialité, data room, chantiers d’audit, exclusivité, signature et closing.",
     h1: "Calendrier de due diligence d’acquisition",
-    metaTitle: "Due diligence — calendrier d’acquisition",
+    metaTitle: "Due diligence: calendrier d’acquisition",
     metaDesc: "Calendrier gratuit de due diligence : confidentialité, data room, audits financier, juridique, fiscal et social, exclusivité, signature et closing.",
-    lead: "Un <strong>calendrier de due diligence d’acquisition</strong> gratuit qui couvre l’opération du premier contact à la réalisation — accord de confidentialité, teaser et mémorandum d’information, ouverture de la data room, chantiers d’audit menés en parallèle, présentations du management et questions-réponses, négociation du protocole de cession, signature et conditions suspensives avant le closing. À télécharger pour un comité d’investissement, ou à ouvrir en ligne pour vérifier que chaque chantier finit dans votre période d’exclusivité.",
+    lead: "Un <strong>calendrier de due diligence d’acquisition</strong> gratuit qui couvre l’opération du premier contact à la réalisation, accord de confidentialité, teaser et mémorandum d’information, ouverture de la data room, chantiers d’audit menés en parallèle, présentations du management et questions-réponses, négociation du protocole de cession, signature et conditions suspensives avant le closing. À télécharger pour un comité d’investissement, ou à ouvrir en ligne pour vérifier que chaque chantier finit dans votre période d’exclusivité.",
     intro: "La due diligence n’est pas une séquence. Ce sont six ou sept chantiers qui lisent la même data room en même temps, contre une horloge fixée dans la lettre d’exclusivité. Le modèle les dispose en couloirs parallèles pour que le goulot soit visible :",
     phases: [
       [
@@ -4122,7 +4122,7 @@ const T = {
       ],
       [
         "Management et questions-réponses",
-        "Présentations du management, visites de sites, journal des questions-réponses et demandes complémentaires — le processus qui détermine la vitesse réelle à laquelle les chantiers peuvent se terminer."
+        "Présentations du management, visites de sites, journal des questions-réponses et demandes complémentaires, le processus qui détermine la vitesse réelle à laquelle les chantiers peuvent se terminer."
       ],
       [
         "Conclusions et conditions de l’opération",
@@ -4135,12 +4135,12 @@ const T = {
     ],
     callout: "L’exclusivité est un compte à rebours, pas un confort. Elle expire à date fixe, que le chantier fiscal ait obtenu ses réponses ou non, et demander une prolongation est le moment précis où un cédant rouvre le prix. Travaillez en rétroplanning depuis la fin de l’exclusivité : la négociation du protocole demande des semaines, le rapport de points bloquants demande des jours, et le reste correspond au temps dont les chantiers disposent réellement.",
     customize: [
-      "Fixer d’abord la date de fin d’exclusivité et disposer les chantiers en remontant depuis elle — c’est la contrainte dans laquelle vit tout le plan.",
+      "Fixer d’abord la date de fin d’exclusivité et disposer les chantiers en remontant depuis elle, c’est la contrainte dans laquelle vit tout le plan.",
       "Ajouter ou retirer des couloirs selon l’opération : une cible industrielle appelle un audit environnemental et immobilier, une cible logicielle un examen de la propriété intellectuelle et des composants libres.",
       "Donner au journal des questions-réponses sa propre ligne et son propre responsable : c’est le goulot partagé entre tous les chantiers et le cédant.",
       "Insérer la procédure d’information-consultation du comité social et économique comme une barre à part entière : ses délais sont légaux et se déroulent avant la signature, pas après.",
       "Allonger la barre de conditions suspensives si l’opération requiert une autorisation de concentration : ces durées sont fixées par l’autorité, pas par les parties.",
-      "Marquer la confidentialité, le début d’exclusivité, l’accord du comité d’investissement, la signature et le closing comme jalons — ce sont les dates que suit un comité de direction."
+      "Marquer la confidentialité, le début d’exclusivité, l’accord du comité d’investissement, la signature et le closing comme jalons, ce sont les dates que suit un comité de direction."
     ],
     tips: [
       "<strong>Ouvrez une data room correctement alimentée avant le démarrage des audits.</strong> Une data room à moitié remplie fait brûler à chaque chantier sa première semaine en demandes plutôt qu’en lecture, et cette semaine ne revient jamais.",
@@ -4165,7 +4165,7 @@ const T = {
       ],
       [
         "Quelle différence entre la signature et le closing ?",
-        "La signature est le moment où les parties signent le protocole de cession ; le closing est celui où la propriété est effectivement transférée, une fois les conditions suspensives levées — autorisation de concentration, agréments, financement. Sur certaines opérations les deux tombent le même jour, sur d’autres plusieurs mois les séparent."
+        "La signature est le moment où les parties signent le protocole de cession ; le closing est celui où la propriété est effectivement transférée, une fois les conditions suspensives levées, autorisation de concentration, agréments, financement. Sur certaines opérations les deux tombent le même jour, sur d’autres plusieurs mois les séparent."
       ],
       [
         "Que se passe-t-il après le closing ?",
@@ -4181,9 +4181,9 @@ const T = {
   'data-migration-project-plan': {
     card: "Profilage, correspondances, nettoyage, jeux d’essai, bascule et réconciliation.",
     h1: "Plan de projet de reprise de données",
-    metaTitle: "Reprise de données — plan projet",
+    metaTitle: "Reprise de données: plan projet",
     metaDesc: "Plan gratuit de reprise de données : profilage, règles de correspondance, nettoyage, chargements à blanc, réconciliation, bascule et recette métier.",
-    lead: "Un <strong>plan de projet de reprise de données</strong> gratuit qui couvre tout le chantier — profilage des sources, correspondances et règles de transformation, nettoyage, développement des chargements, chargements à blanc successifs, réconciliation, bascule en production et vérification après chargement. C’est le chantier données qui tourne à l’intérieur d’un programme plus large, qu’il s’agisse d’une <a href=\"/templates/erp-implementation-schedule.html\">mise en place d’ERP</a> ou d’une <a href=\"/templates/cloud-migration-project-plan.html\">migration vers le cloud</a>, et c’est en général lui qui décide si la date de mise en production tient.",
+    lead: "Un <strong>plan de projet de reprise de données</strong> gratuit qui couvre tout le chantier, profilage des sources, correspondances et règles de transformation, nettoyage, développement des chargements, chargements à blanc successifs, réconciliation, bascule en production et vérification après chargement. C’est le chantier données qui tourne à l’intérieur d’un programme plus large, qu’il s’agisse d’une <a href=\"/templates/erp-implementation-schedule.html\">mise en place d’ERP</a> ou d’une <a href=\"/templates/cloud-migration-project-plan.html\">migration vers le cloud</a>, et c’est en général lui qui décide si la date de mise en production tient.",
     intro: "Les plans de reprise déraillent quand le chargement est traité comme une tâche unique à la fin. Ce n’est pas une tâche : c’est la même tâche rejouée plusieurs fois jusqu’à ce que la réconciliation tombe juste, et chaque exécution coûte une fenêtre d’indisponibilité :",
     phases: [
       [
@@ -4196,7 +4196,7 @@ const T = {
       ],
       [
         "Nettoyage",
-        "Règles de nettoyage, reprise manuelle par les propriétaires métier des enregistrements que les règles ne savent pas corriger, et passe de dédoublonnage — un travail parallèle, sans dépendance au développement."
+        "Règles de nettoyage, reprise manuelle par les propriétaires métier des enregistrements que les règles ne savent pas corriger, et passe de dédoublonnage, un travail parallèle, sans dépendance au développement."
       ],
       [
         "Développement et tests unitaires",
@@ -4211,10 +4211,10 @@ const T = {
         "Gel des sources, extraction du différentiel, chargement en production, validation de la réconciliation, recette métier et décision de repli. <em>Jalon : données acceptées.</em>"
       ]
     ],
-    callout: "Il vous faut trois chargements à blanc, pas un, et chacun consomme une fenêtre d’indisponibilité entière. Le premier prouve que les correspondances sont fausses. Le deuxième prouve que le nettoyage a fonctionné. Le troisième — joué sur des volumes de production et chronométré de bout en bout — prouve que le chargement tient réellement dans la fenêtre qu’on vous a accordée. Les plans qui budgètent un seul chargement découvrent les trois problèmes le week-end de bascule, quand il ne reste plus de temps pour en corriger aucun.",
+    callout: "Il vous faut trois chargements à blanc, pas un, et chacun consomme une fenêtre d’indisponibilité entière. Le premier prouve que les correspondances sont fausses. Le deuxième prouve que le nettoyage a fonctionné. Le troisième, joué sur des volumes de production et chronométré de bout en bout, prouve que le chargement tient réellement dans la fenêtre qu’on vous a accordée. Les plans qui budgètent un seul chargement découvrent les trois problèmes le week-end de bascule, quand il ne reste plus de temps pour en corriger aucun.",
     customize: [
       "Fixer d’abord la date de bascule et compter à rebours : le dernier chargement à blanc doit se terminer au moins deux semaines avant.",
-      "Développer les lignes en une ligne par objet de données — clients, fournisseurs, articles, en-cours, historique — dès que les correspondances démarrent.",
+      "Développer les lignes en une ligne par objet de données, clients, fournisseurs, articles, en-cours, historique, dès que les correspondances démarrent.",
       "Réserver chaque chargement à blanc comme une vraie fenêtre d’indisponibilité, avec les personnes qui tiendront la bascule, et non un sous-ensemble.",
       "Ajouter une ligne d’extraction du différentiel si votre source reste vivante entre le dernier chargement à blanc et la bascule.",
       "Garder la décision de repli comme un jalon daté avec des critères nommés, et non comme une option implicite.",
@@ -4223,7 +4223,7 @@ const T = {
     tips: [
       "<strong>Les règles de réconciliation viennent avant le développement.</strong> Si vous ne savez pas énoncer comment vous prouverez que le chargement est correct, vous ne saurez pas quand il est terminé.",
       "<strong>Chronométrez chaque chargement à blanc de bout en bout.</strong> Le chiffre dont vous avez besoin n’est pas « est-ce que ça a marché » mais « combien d’heures », car c’est lui qui dimensionne la fenêtre de bascule.",
-      "<strong>Commencez le nettoyage tôt.</strong> Il dépend du profilage et non du développement : il peut donc courir des mois en parallèle — et il prend toujours plus longtemps que prévu, parce qu’il mobilise des gens du métier, pas l’équipe données.",
+      "<strong>Commencez le nettoyage tôt.</strong> Il dépend du profilage et non du développement : il peut donc courir des mois en parallèle, et il prend toujours plus longtemps que prévu, parce qu’il mobilise des gens du métier, pas l’équipe données.",
       "<strong>Migrez moins.</strong> L’historique est le poste le plus coûteux de toute reprise ; décider de l’archiver plutôt que de le reprendre rapporte plus de planning que n’importe quel effort d’optimisation, et sert au passage la minimisation exigée par le RGPD.",
       "<strong>Posez la référence à la validation des correspondances.</strong> Tout ce qui précède relève de l’estimation ; tout ce qui suit se suit comme un écart."
     ],
@@ -4254,9 +4254,9 @@ const T = {
   'conference-production-schedule': {
     card: "Lieu, appel à communications, intervenants, sponsors, billetterie et régie.",
     h1: "Planning de production d’un colloque",
-    metaTitle: "Colloque — planning de production",
+    metaTitle: "Colloque: planning de production",
     metaDesc: "Planning gratuit de colloque : lieu, appel à communications, comité de programme, intervenants, sponsors, billetterie, régie et conduite technique.",
-    lead: "Un <strong>planning de production de colloque</strong> gratuit pour organiser un événement à sessions parallèles — réservation du lieu et de la date, appel à communications et construction du programme, gestion des intervenants, commercialisation des partenariats, paliers tarifaires de billetterie, audiovisuel et régie, conduite technique et tout ce qui doit arriver après la dernière session. À télécharger pour un comité d’organisation, ou à ouvrir en ligne pour voir de quelle échéance dépend réellement votre programme.",
+    lead: "Un <strong>planning de production de colloque</strong> gratuit pour organiser un événement à sessions parallèles, réservation du lieu et de la date, appel à communications et construction du programme, gestion des intervenants, commercialisation des partenariats, paliers tarifaires de billetterie, audiovisuel et régie, conduite technique et tout ce qui doit arriver après la dernière session. À télécharger pour un comité d’organisation, ou à ouvrir en ligne pour voir de quelle échéance dépend réellement votre programme.",
     intro: "Un colloque, ce sont quatre activités menées en même temps : un programme scientifique, un pipeline de partenariats, un tunnel de billetterie et une production technique. Elles partagent une date et presque rien d’autre : le modèle donne donc à chacune son propre couloir :",
     phases: [
       [
@@ -4288,7 +4288,7 @@ const T = {
     customize: [
       "Fixer d’abord la date de l’événement et compter à rebours : chaque échéance est ici un délai depuis cette date, pas une estimation en avant.",
       "Ajouter une ligne par session parallèle si vous faites tourner des programmes distincts avec leurs propres présidents et leurs propres relecteurs.",
-      "Adapter les dates des paliers tarifaires à votre grille — le modèle utilise tarif préférentiel, plein tarif et tarif tardif.",
+      "Adapter les dates des paliers tarifaires à votre grille, le modèle utilise tarif préférentiel, plein tarif et tarif tardif.",
       "Développer les partenariats en une ligne par niveau ou par compte cible dès que la prospection démarre.",
       "Découper le montage salle par salle si le lieu vous remet les espaces à des moments différents.",
       "Ajouter les échéances de remise des résumés ou des textes si votre colloque publie des actes, et les droits musicaux si vous diffusez des œuvres."
@@ -4307,7 +4307,7 @@ const T = {
       ],
       [
         "En quoi est-ce différent du modèle d’organisation d’événement ?",
-        'Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> est générique et convient à n’importe quel événement unique. Celui-ci est bâti pour un colloque à sessions parallèles — appel à communications, cycle de relecture, gestion des intervenants, niveaux de partenariat et conduite technique. Prenez l’autre pour une soirée ou un lancement, celui-ci quand vous avez un programme scientifique.'
+        'Le <a href="/templates/event-planning.html">modèle d’organisation d’événement</a> est générique et convient à n’importe quel événement unique. Celui-ci est bâti pour un colloque à sessions parallèles, appel à communications, cycle de relecture, gestion des intervenants, niveaux de partenariat et conduite technique. Prenez l’autre pour une soirée ou un lancement, celui-ci quand vous avez un programme scientifique.'
       ],
       [
         "Et si j’expose au lieu d’organiser ?",
@@ -4327,9 +4327,9 @@ const T = {
   'call-center-setup-plan': {
     card: "Modèle opérationnel, téléphonie, dimensionnement, vagues de recrutement et montée en charge.",
     h1: "Plan de création d’un centre de contacts",
-    metaTitle: "Centre de contacts — plan de création",
+    metaTitle: "Centre de contacts: plan de création",
     metaDesc: "Plan gratuit de création de centre de contacts : téléphonie et SVI, dimensionnement Erlang, vagues de recrutement, formation, pilote et montée en charge.",
-    lead: "Un <strong>plan de création de centre de contacts</strong> gratuit qui couvre toute la mise en place — modèle opérationnel sur site ou à distance, choix de la téléphonie et de la solution en mode service, prévision et dimensionnement des effectifs, vagues de recrutement, académie de formation, construction de la base de connaissances, appels pilotes, ouverture et montée en charge jusqu’au régime de croisière. À télécharger pour un comité d’exploitation, ou à ouvrir en ligne pour aligner vos vagues de recrutement sur la courbe de volume.",
+    lead: "Un <strong>plan de création de centre de contacts</strong> gratuit qui couvre toute la mise en place, modèle opérationnel sur site ou à distance, choix de la téléphonie et de la solution en mode service, prévision et dimensionnement des effectifs, vagues de recrutement, académie de formation, construction de la base de connaissances, appels pilotes, ouverture et montée en charge jusqu’au régime de croisière. À télécharger pour un comité d’exploitation, ou à ouvrir en ligne pour aligner vos vagues de recrutement sur la courbe de volume.",
     intro: "Un centre de contacts réussit ou échoue selon qu’il y a, ou non, des conseillers formés sur le plateau la semaine où le volume arrive. Le modèle traite le recrutement et la formation comme la séquence directrice et tout le reste comme son support :",
     phases: [
       [
@@ -4364,7 +4364,7 @@ const T = {
       "Intégrer les préavis : un conseiller expérimenté qui démissionne d’un autre poste n’arrive pas la semaine de sa signature.",
       "Ajouter une ligne par promotion si vous en organisez plus que les trois vagues montrées.",
       "Adapter la durée de la double écoute à la complexité de votre produit : les files techniques ou réglementées demandent un accompagnement plus long.",
-      "Avancer la portabilité des numéros si vous migrez des lignes existantes — le portage est une attente chez un tiers que vous ne comprimez pas."
+      "Avancer la portabilité des numéros si vous migrez des lignes existantes, le portage est une attente chez un tiers que vous ne comprimez pas."
     ],
     tips: [
       "<strong>Lancez le portage des numéros tôt.</strong> C’est le seul poste de ce plan dont l’horloge est tenue par un tiers, et il conditionne tous les tests de routage qui dépendent du vrai numéro.",
@@ -4400,9 +4400,9 @@ const T = {
   'franchise-rollout-plan': {
     card: "Tête de réseau, document précontractuel, recrutement des franchisés et vagues d’ouverture.",
     h1: "Plan de déploiement d’un réseau de franchise",
-    metaTitle: "Réseau de franchise — plan de déploiement",
+    metaTitle: "Réseau de franchise: plan de déploiement",
     metaDesc: "Plan gratuit de déploiement de franchise : manuel opératoire, document d’information précontractuelle, recrutement, sites, travaux et vagues d’ouverture.",
-    lead: "Un <strong>plan de déploiement de réseau de franchise</strong> gratuit, bâti autour de la séquence par point de vente que vous répéterez pour chaque site — recrutement et agrément des franchisés, découpage des zones, recherche de local, travaux d’aménagement, standards d’enseigne et manuel opératoire, formation, communication de lancement, ouverture et accompagnement après ouverture. Le modèle montre une fois le travail de tête de réseau, puis trois vagues d’ouverture qui se chevauchent, ce qui correspond au déroulement réel d’un déploiement.",
+    lead: "Un <strong>plan de déploiement de réseau de franchise</strong> gratuit, bâti autour de la séquence par point de vente que vous répéterez pour chaque site, recrutement et agrément des franchisés, découpage des zones, recherche de local, travaux d’aménagement, standards d’enseigne et manuel opératoire, formation, communication de lancement, ouverture et accompagnement après ouverture. Le modèle montre une fois le travail de tête de réseau, puis trois vagues d’ouverture qui se chevauchent, ce qui correspond au déroulement réel d’un déploiement.",
     intro: "Un déploiement de franchise n’est pas un projet : c’est un projet type exécuté de nombreuses fois, avec des démarrages décalés. Le planning sépare clairement les deux :",
     phases: [
       [
@@ -4430,7 +4430,7 @@ const T = {
         "Visites d’animation après ouverture, revues de performance face au modèle économique, et mises à jour du manuel et de la formation nourries par ce que les premiers sites ont appris."
       ]
     ],
-    callout: "La contrainte n’est jamais une ouverture en particulier — c’est le nombre d’ouvertures que votre équipe d’accompagnement peut porter simultanément. Recherche de local, suivi de chantier, formation et présence en semaine d’ouverture mobilisent la même petite équipe centrale, et chaque point de vente en a besoin pendant des semaines. Dessinez les vagues de manière à ce que ces fenêtres ne s’empilent pas. Un déploiement qui promet dix ouvertures en un trimestre avec un seul animateur est un plan pour ouvrir dix points de vente mal.",
+    callout: "La contrainte n’est jamais une ouverture en particulier, c’est le nombre d’ouvertures que votre équipe d’accompagnement peut porter simultanément. Recherche de local, suivi de chantier, formation et présence en semaine d’ouverture mobilisent la même petite équipe centrale, et chaque point de vente en a besoin pendant des semaines. Dessinez les vagues de manière à ce que ces fenêtres ne s’empilent pas. Un déploiement qui promet dix ouvertures en un trimestre avec un seul animateur est un plan pour ouvrir dix points de vente mal.",
     customize: [
       "Régler d’abord la séquence par point de vente sur vos durées réelles, puis la copier par vague : c’est le motif réutilisable.",
       "Modifier le chevauchement des vagues selon l’effectif d’animation : plus d’animateurs permet un décalage plus serré.",
@@ -4453,7 +4453,7 @@ const T = {
       ],
       [
         "Combien de points de vente par vague ?",
-        "Autant que votre équipe d’animation peut réellement accompagner en même temps sur la recherche de local, le suivi de chantier, la formation et la semaine d’ouverture — en général bien moins que ce que voudrait le plan commercial. C’est la raison pour laquelle le modèle utilise des vagues courtes."
+        "Autant que votre équipe d’animation peut réellement accompagner en même temps sur la recherche de local, le suivi de chantier, la formation et la semaine d’ouverture, en général bien moins que ce que voudrait le plan commercial. C’est la raison pour laquelle le modèle utilise des vagues courtes."
       ],
       [
         "Quelle est la séquence par point de vente ?",
@@ -4461,7 +4461,7 @@ const T = {
       ],
       [
         "Peut-on l’utiliser pour un développement en propre ?",
-        'Oui. Supprimez les lignes de recrutement et d’agrément des franchisés et conservez la séquence par point de vente — pour un site unique, le <a href="/templates/retail-store-opening-timeline.html">rétroplanning d’ouverture de magasin</a> est plus adapté.'
+        'Oui. Supprimez les lignes de recrutement et d’agrément des franchisés et conservez la séquence par point de vente, pour un site unique, le <a href="/templates/retail-store-opening-timeline.html">rétroplanning d’ouverture de magasin</a> est plus adapté.'
       ],
       [
         "Le modèle de déploiement de franchise est-il gratuit ?",
@@ -4473,9 +4473,9 @@ const T = {
   'okr-quarterly-planning': {
     card: "Cadrage, notation du trimestre écoulé, alignement, engagement et rétrospective.",
     h1: "Planning de cycle OKR trimestriel",
-    metaTitle: "OKR — planning trimestriel",
+    metaTitle: "OKR: planning trimestriel",
     metaDesc: "Planning gratuit de cycle OKR trimestriel : direction, notation du trimestre écoulé, rédaction, alignement, engagement, point à mi-trimestre et clôture.",
-    lead: "Un <strong>planning de cycle OKR trimestriel</strong> gratuit, présenté pour ce qu’il est réellement : un cycle qui se répète — rédaction des objectifs, alignement entre équipes, notation du trimestre qui s’achève, engagement et publication, point à mi-trimestre, puis clôture et rétrospective qui alimentent le tour suivant. À télécharger pour un lancement de planification, ou à ouvrir en ligne pour voir où la clôture de ce trimestre chevauche la rédaction du suivant.",
+    lead: "Un <strong>planning de cycle OKR trimestriel</strong> gratuit, présenté pour ce qu’il est réellement : un cycle qui se répète, rédaction des objectifs, alignement entre équipes, notation du trimestre qui s’achève, engagement et publication, point à mi-trimestre, puis clôture et rétrospective qui alimentent le tour suivant. À télécharger pour un lancement de planification, ou à ouvrir en ligne pour voir où la clôture de ce trimestre chevauche la rédaction du suivant.",
     intro: "Si la planification OKR paraît toujours précipitée, c’est qu’elle ne part jamais d’une page blanche. Vous notez un trimestre pendant que vous rédigez le suivant, et les deux réclament les mêmes personnes les mêmes semaines. Le modèle montre ce chevauchement au lieu de faire comme si le cycle était séquentiel :",
     phases: [
       [
@@ -4484,7 +4484,7 @@ const T = {
       ],
       [
         "Clôture du trimestre précédent",
-        "Collecte des dernières données de résultats clés, auto-notation par les équipes, calibrage entre équipes et restitution des résultats notés — le tout en parallèle de la rédaction du trimestre suivant."
+        "Collecte des dernières données de résultats clés, auto-notation par les équipes, calibrage entre équipes et restitution des résultats notés, le tout en parallèle de la rédaction du trimestre suivant."
       ],
       [
         "Rédaction par les équipes",
@@ -4503,11 +4503,11 @@ const T = {
         "Points de confiance hebdomadaires, point à mi-trimestre où les objectifs peuvent être ajustés ou abandonnés, puis clôture et rétrospective à la fin. <em>Jalon : trimestre clôturé.</em>"
       ]
     ],
-    callout: "Le cycle se chevauche lui-même, et c’est là tout le problème d’ordonnancement. Vous ne pouvez pas noter le trimestre écoulé après avoir démarré le suivant, parce que les données vieillissent et que plus personne ne se souvient du contexte — mais vous ne pouvez pas non plus rédiger le trimestre suivant sans les notes. Les deux tournent donc ensemble pendant environ trois semaines, avec les mêmes responsables des deux côtés. Réservez ce chevauchement explicitement. Les équipes qui traitent la planification comme un séminaire de deux jours en semaine 1 font en réalité quatre semaines de travail en deux jours, et appellent le résultat un engagement.",
+    callout: "Le cycle se chevauche lui-même, et c’est là tout le problème d’ordonnancement. Vous ne pouvez pas noter le trimestre écoulé après avoir démarré le suivant, parce que les données vieillissent et que plus personne ne se souvient du contexte, mais vous ne pouvez pas non plus rédiger le trimestre suivant sans les notes. Les deux tournent donc ensemble pendant environ trois semaines, avec les mêmes responsables des deux côtés. Réservez ce chevauchement explicitement. Les équipes qui traitent la planification comme un séminaire de deux jours en semaine 1 font en réalité quatre semaines de travail en deux jours, et appellent le résultat un engagement.",
     customize: [
       "Placer le jour 0 environ trois semaines avant la fin du trimestre : tout le cycle se cale alors correctement autour de la bascule.",
       "Ajouter une ligne de rédaction par équipe, pour voir qui est en retard sans avoir à relancer.",
-      "Déplacer le point à mi-trimestre à la fréquence que vous pratiquez réellement — mensuel fonctionne mieux que trimestriel pour les équipes qui bougent vite.",
+      "Déplacer le point à mi-trimestre à la fréquence que vous pratiquez réellement, mensuel fonctionne mieux que trimestriel pour les équipes qui bougent vite.",
       "Raccourcir la phase d’alignement si vous avez moins de cinq équipes, et l’allonger nettement si les équipes se partagent la même capacité de développement.",
       "Garder la notation et la rédaction visiblement superposées plutôt que mises bout à bout : le chevauchement est l’image honnête.",
       "Vérifier la position du cycle par rapport aux congés : un trimestre qui englobe août ou la fin décembre perd des semaines de disponibilité qu’aucun planning séquentiel ne montre."
@@ -4526,7 +4526,7 @@ const T = {
       ],
       [
         "En quoi est-ce différent du modèle de plan annuel ?",
-        'Le <a href="/templates/annual.html">plan annuel</a> couvre une année entière d’activité. Ceci est le rythme trimestriel qui vit à l’intérieur : le cycle de quatre semaines — rédiger, aligner, engager, faire le point, clôturer — qui se répète chaque trimestre.'
+        'Le <a href="/templates/annual.html">plan annuel</a> couvre une année entière d’activité. Ceci est le rythme trimestriel qui vit à l’intérieur : le cycle de quatre semaines, rédiger, aligner, engager, faire le point, clôturer, qui se répète chaque trimestre.'
       ],
       [
         "Quel rapport avec la feuille de route produit ?",
@@ -4550,18 +4550,18 @@ const T = {
   'water-treatment-plant-construction-schedule': {
     card: "Autorisation environnementale, génie civil, équipements, mise en eau et essais de garantie.",
     h1: "Planning de construction d’une station de traitement des eaux",
-    metaTitle: "Station de traitement des eaux — planning",
+    metaTitle: "Station de traitement des eaux: planning",
     metaDesc: "Planning gratuit de station de traitement des eaux : génie civil, équipements, mise en eau, ensemencement biologique et essais de garantie.",
-    lead: "Un <strong>planning de construction de station de traitement des eaux</strong> gratuit, qui traite la mise en service pour ce qu’elle est — le vrai projet, et non une queue de chantier de quinze jours. Autorisation environnementale au titre de la loi sur l’eau et conception process, ouvrages de génie civil et épreuves d’étanchéité, montage électromécanique, essais à l’eau claire, puis mise en eau avec ensemencement de la biomasse et essais de garantie constatés avant toute réception. À télécharger pour un dossier de revue de projet, ou à ouvrir en ligne pour allonger les barres de mise en service à la durée que votre filière exige réellement.",
+    lead: "Un <strong>planning de construction de station de traitement des eaux</strong> gratuit, qui traite la mise en service pour ce qu’elle est, le vrai projet, et non une queue de chantier de quinze jours. Autorisation environnementale au titre de la loi sur l’eau et conception process, ouvrages de génie civil et épreuves d’étanchéité, montage électromécanique, essais à l’eau claire, puis mise en eau avec ensemencement de la biomasse et essais de garantie constatés avant toute réception. À télécharger pour un dossier de revue de projet, ou à ouvrir en ligne pour allonger les barres de mise en service à la durée que votre filière exige réellement.",
     intro: "Tout autre bâtiment est réceptionné quand la liste des réserves est vide. Une station est réceptionnée quand elle a démontré, en continu et pendant des semaines, un rejet conforme à son arrêté d’autorisation. Le planning est construit à rebours de cette date :",
     phases: [
       [
         "Autorisations, conception et achats",
-        "Caractérisation de l’eau brute et essais pilotes, conception de la filière et bilan matière, études d’exécution, dossier loi sur l’eau et arrêté préfectoral d’autorisation de rejet — ou avis de l’ARS et de l’hydrogéologue agréé pour une usine d’eau potable — et commandes des équipements à long délai qui figent les dates de montage. <em>Jalon : arrêté d’autorisation obtenu.</em>"
+        "Caractérisation de l’eau brute et essais pilotes, conception de la filière et bilan matière, études d’exécution, dossier loi sur l’eau et arrêté préfectoral d’autorisation de rejet, ou avis de l’ARS et de l’hydrogéologue agréé pour une usine d’eau potable, et commandes des équipements à long délai qui figent les dates de montage. <em>Jalon : arrêté d’autorisation obtenu.</em>"
       ],
       [
         "Génie civil et ouvrages",
-        "Terrassements et fondations profondes, ouvrage d’entrée, décanteurs, bassins biologiques, galerie de filtration et files boues — puis épreuve d’étanchéité de chaque ouvrage par mise en eau. <em>Jalon : ouvrages étanches.</em>"
+        "Terrassements et fondations profondes, ouvrage d’entrée, décanteurs, bassins biologiques, galerie de filtration et files boues, puis épreuve d’étanchéité de chaque ouvrage par mise en eau. <em>Jalon : ouvrages étanches.</em>"
       ],
       [
         "Montage électromécanique",
@@ -4569,7 +4569,7 @@ const T = {
       ],
       [
         "Automatisme et essais à l’eau claire",
-        "Paramétrage de la supervision, contrôle des boucles de régulation, essais moteurs à vide et essais fonctionnels à l’eau claire — valider la philosophie de conduite avant que la moindre eau brute n’entre dans les ouvrages."
+        "Paramétrage de la supervision, contrôle des boucles de régulation, essais moteurs à vide et essais fonctionnels à l’eau claire, valider la philosophie de conduite avant que la moindre eau brute n’entre dans les ouvrages."
       ],
       [
         "Mise en eau et ensemencement biologique",
@@ -4585,7 +4585,7 @@ const T = {
       "Caler les barres d’ensemencement et de montée en biomasse sur les chiffres du concepteur de la filière et sur la saison de mise en service : un démarrage hivernal peut ajouter plusieurs semaines rien que sur la nitrification.",
       "Régler la durée des essais de garantie sur celle qu’imposent le marché et l’arrêté d’autorisation : vingt-huit jours est courant, mais beaucoup d’opérations exigent davantage, ou une reprise complète si un prélèvement sort des clous.",
       "Ajouter une barre de recontrôle après les essais de garantie. Supposer une réussite du premier coup est l’erreur de planning la plus fréquente sur ce type d’ouvrage.",
-      "Découper l’épreuve d’étanchéité en une ligne par ouvrage si vous les remplissez en séquence — un ouvrage recalé doit être vidangé, séché, repris et rerempli.",
+      "Découper l’épreuve d’étanchéité en une ligne par ouvrage si vous les remplissez en séquence, un ouvrage recalé doit être vidangé, séché, repris et rerempli.",
       "Avancer le paramétrage de la supervision : il dépend des schémas PID, pas du béton, et il est systématiquement démarré beaucoup trop tard.",
       "Marquer comme jalons l’arrêté d’autorisation, l’étanchéité des ouvrages, l’achèvement mécanique, la première eau brute et la réception : ce sont les dates que suivent à la fois le comité de pilotage du maître d’ouvrage et le service instructeur."
     ],
@@ -4608,7 +4608,7 @@ const T = {
       ],
       [
         "Que sont les essais de garantie ?",
-        "Une période continue au débit nominal pendant laquelle l’ouvrage doit produire un rejet conforme aux valeurs de son arrêté d’autorisation, avec prélèvements et constat contradictoire du maître d’ouvrage et du service de police de l’eau. C’est leur réussite — et non la fin des travaux — qui déclenche la réception."
+        "Une période continue au débit nominal pendant laquelle l’ouvrage doit produire un rejet conforme aux valeurs de son arrêté d’autorisation, avec prélèvements et constat contradictoire du maître d’ouvrage et du service de police de l’eau. C’est leur réussite, et non la fin des travaux, qui déclenche la réception."
       ],
       [
         "Peut-on raccourcir la mise en service en ensemençant plus tôt ?",
@@ -4630,7 +4630,7 @@ const T = {
     h1: "Plan d’extension d’un terminal aéroportuaire",
     metaTitle: "Extension de terminal aéroportuaire",
     metaDesc: "Plan gratuit d’extension de terminal : fenêtres d’intervention, palissades, badges côté piste, capacité de filtrage, tri bagages, ORAT et bascule.",
-    lead: "Un <strong>plan d’extension de terminal aéroportuaire</strong> gratuit, pensé pour un terminal qui ne ferme jamais — fenêtres d’intervention successives derrière palissades, autorisations de travaux côté piste et accès sous accompagnement, cheminements passagers provisoires, capacité de filtrage maintenue au niveau de l’heure de pointe à chaque changement de configuration, intégration du système de tri bagages, ORAT (préparation à l’exploitation) et bascule de nuit. À télécharger pour un comité de programme, ou à ouvrir en ligne pour aligner les fenêtres d’intervention sur votre propre saisonnalité de trafic.",
+    lead: "Un <strong>plan d’extension de terminal aéroportuaire</strong> gratuit, pensé pour un terminal qui ne ferme jamais, fenêtres d’intervention successives derrière palissades, autorisations de travaux côté piste et accès sous accompagnement, cheminements passagers provisoires, capacité de filtrage maintenue au niveau de l’heure de pointe à chaque changement de configuration, intégration du système de tri bagages, ORAT (préparation à l’exploitation) et bascule de nuit. À télécharger pour un comité de programme, ou à ouvrir en ligne pour aligner les fenêtres d’intervention sur votre propre saisonnalité de trafic.",
     intro: "Une extension n’est pas un projet en six phases : c’est une suite de fenêtres d’intervention négociées à l’intérieur d’une exploitation en service. Le planning garde la contrainte d’exploitation visible dans chaque phase :",
     phases: [
       [
@@ -4642,11 +4642,11 @@ const T = {
         "Esquisse et études d’exécution, notice de sécurité incendie, tracé des palissades et signalétique provisoire, dévoiement des réseaux et cheminements passagers provisoires qui doivent exister avant la moindre fermeture. <em>Jalon : travaux préparatoires terminés.</em>"
       ],
       [
-        "Fenêtre 1 — extension de jetée",
+        "Fenêtre 1, extension de jetée",
         "Pose des palissades, reconfiguration de l’aire de stationnement et des postes avions, structure et enveloppe de la jetée, passerelles télescopiques et salles d’embarquement, puis restitution des postes à l’exploitation. <em>Jalon : postes avions remis en service.</em>"
       ],
       [
-        "Fenêtre 2 — sûreté et enregistrement",
+        "Fenêtre 2, sûreté et enregistrement",
         "Lignes de filtrage provisoires démontrées à l’heure de pointe d’abord, puis dépose des banques d’enregistrement, nouveaux îlots, aménagement du poste d’inspection filtrage central et travaux en zone de contrôle transfrontalier."
       ],
       [
@@ -4658,7 +4658,7 @@ const T = {
         "Préparation à l’exploitation, familiarisation des personnels, exercices avec figurants passagers, essais d’évacuation, inspection de la DSAC et des services de l’État, puis la bascule de nuit. <em>Jalon : exploitation complète.</em>"
       ]
     ],
-    callout: "Ne retirez jamais de capacité de filtrage avant d’avoir démontré son remplacement à l’heure de pointe. Tout le reste se contourne dans un terminal en exploitation — un cheminement plus long, un panneau provisoire, une boutique déplacée — mais une file d’attente au poste d’inspection filtrage qui dépasse son objectif est un incident d’exploitation déclaré, et il fera arrêter votre fenêtre d’intervention en quelques jours. Placez un jalon de démonstration de capacité devant chaque changement de configuration qui touche au filtrage central.",
+    callout: "Ne retirez jamais de capacité de filtrage avant d’avoir démontré son remplacement à l’heure de pointe. Tout le reste se contourne dans un terminal en exploitation, un cheminement plus long, un panneau provisoire, une boutique déplacée, mais une file d’attente au poste d’inspection filtrage qui dépasse son objectif est un incident d’exploitation déclaré, et il fera arrêter votre fenêtre d’intervention en quelques jours. Placez un jalon de démonstration de capacité devant chaque changement de configuration qui touche au filtrage central.",
     customize: [
       "Remplacer les deux fenêtres d’intervention par les vôtres, et donner à chacune des dates de début et de fin validées avec l’exploitation aéroportuaire, pas avec l’entreprise de travaux.",
       "Caler les fenêtres sur votre véritable creux de saison et vérifier la prévision de trafic, pas celle de l’an dernier : une fenêtre dimensionnée pour février ne tient pas en juillet.",
@@ -4668,7 +4668,7 @@ const T = {
       "Marquer comme jalons le calendrier des fenêtres, la remise en service des postes avions, la démonstration de capacité de filtrage, l’intégration des systèmes et l’exploitation complète."
     ],
     tips: [
-      "<strong>Le calendrier des fenêtres d’intervention est le planning.</strong> Une fois signé par l’exploitation, les compagnies et les assistants en escale, c’est de lui que découle la séquence de travaux — et non l’inverse.",
+      "<strong>Le calendrier des fenêtres d’intervention est le planning.</strong> Une fois signé par l’exploitation, les compagnies et les assistants en escale, c’est de lui que découle la séquence de travaux, et non l’inverse.",
       "<strong>Construisez le cheminement provisoire avant d’en avoir besoin, et parcourez-le avec une vraie charge passagers.</strong> Une signalétique provisoire impeccable sur plan échoue à six heures du matin avec un gros-porteur complet et une famille poussant trois chariots.",
       "<strong>Traitez l’accès côté piste comme une ressource à délai.</strong> Titres de circulation, accompagnateurs, autorisations de conduite en zone réservée et contrôles de véhicules prennent des semaines, et une équipe accompagnée produit une fraction du rendement d’une équipe côté ville : intégrez-le aux durées.",
       "<strong>Ne laissez pas l’intégration bagages commencer une fois le bâtiment fini.</strong> Un système de tri est une machine à longue courbe d’essais ; le tri et la réconciliation demandent des mois et sont sur le chemin critique de l’ouverture.",
@@ -4682,7 +4682,7 @@ const T = {
       ],
       [
         "Qu’est-ce que l’ORAT et quand doit-il commencer ?",
-        "L’ORAT — operational readiness and airport transfer, soit la préparation à l’exploitation et au transfert — couvre les procédures, les effectifs, la familiarisation et les exercices. Il doit démarrer pendant que les travaux courent encore, typiquement six à neuf mois avant l’ouverture, et non après la réception."
+        "L’ORAT, operational readiness and airport transfer, soit la préparation à l’exploitation et au transfert, couvre les procédures, les effectifs, la familiarisation et les exercices. Il doit démarrer pendant que les travaux courent encore, typiquement six à neuf mois avant l’ouverture, et non après la réception."
       ],
       [
         "Comment maintenir la capacité de filtrage pendant les travaux ?",
@@ -4694,7 +4694,7 @@ const T = {
       ],
       [
         "En quoi est-ce différent d’un terminal neuf ?",
-        "Un terminal neuf n’a aucun passager à protéger et peut être ordonnancé pour l’efficacité de chantier. Ce modèle s’organise autour des fenêtres d’intervention, des cheminements provisoires et de la capacité préservée — c’est précisément ce qui rend une extension plus lente."
+        "Un terminal neuf n’a aucun passager à protéger et peut être ordonnancé pour l’efficacité de chantier. Ce modèle s’organise autour des fenêtres d’intervention, des cheminements provisoires et de la capacité préservée, c’est précisément ce qui rend une extension plus lente."
       ],
       [
         "Le modèle d’extension de terminal est-il gratuit ?",
@@ -4706,9 +4706,9 @@ const T = {
   'fiber-broadband-rollout-plan': {
     card: "Permissions de voirie, conventions, relevé du génie civil, vagues de plaques, mesures et ouverture commerciale.",
     h1: "Plan de déploiement de la fibre optique",
-    metaTitle: "Déploiement fibre optique — plan",
+    metaTitle: "Déploiement fibre optique: plan",
     metaDesc: "Plan gratuit de déploiement FTTH : permissions de voirie, conventions d’immeuble, génie civil, vagues de plaques, mesures et ouverture commerciale.",
-    lead: "Un <strong>plan de déploiement de la fibre optique</strong> gratuit, construit comme se déroule réellement un programme FTTH — une séquence par plaque, répétable, exécutée en vagues qui se chevauchent, conditionnée par les permissions de voirie, les conventions de servitude et d’immeuble et la disponibilité du génie civil, chaque plaque s’achevant sur son propre jalon d’ouverture commerciale, les raccordements et le chiffre d’affaires ne démarrant qu’après ce jalon. À télécharger pour un dossier d’investisseur ou de syndicat mixte, ou à ouvrir en ligne pour ajouter autant de vagues de plaques que votre plan de déploiement en compte.",
+    lead: "Un <strong>plan de déploiement de la fibre optique</strong> gratuit, construit comme se déroule réellement un programme FTTH, une séquence par plaque, répétable, exécutée en vagues qui se chevauchent, conditionnée par les permissions de voirie, les conventions de servitude et d’immeuble et la disponibilité du génie civil, chaque plaque s’achevant sur son propre jalon d’ouverture commerciale, les raccordements et le chiffre d’affaires ne démarrant qu’après ce jalon. À télécharger pour un dossier d’investisseur ou de syndicat mixte, ou à ouvrir en ligne pour ajouter autant de vagues de plaques que votre plan de déploiement en compte.",
     intro: "Un déploiement fibre n’est pas un chantier long : ce sont les mêmes six étapes répétées de plaque en plaque, décalées dans le temps. Le modèle rend ce motif explicite, pour que vous copiiez une vague plutôt que d’inventer un plan par plaque :",
     phases: [
       [
@@ -4720,16 +4720,16 @@ const T = {
         "Permissions de voirie et arrêtés de circulation, DT-DICT, négociation des conventions de servitude, conventions d’immeuble avec les syndics de copropriété, relevé de disponibilité des fourreaux et des appuis aériens, et commandes d’accès au génie civil de l’opérateur d’infrastructure. <em>Jalon : conventions purgées pour la vague 1.</em>"
       ],
       [
-        "Plaque A — vague 1",
+        "Plaque A, vague 1",
         "Études d’exécution et plan d’épissurage, aiguillage et débouchage des fourreaux, génie civil, portage de câble et pose sur appuis, raccordement optique et construction du SRO, mesures par réflectométrie et remise des plans de récolement. <em>Jalon : ouverture commerciale plaque A.</em>"
       ],
       [
-        "Plaque B — vague 2",
+        "Plaque B, vague 2",
         "La séquence à l’identique, lancée pendant que la plaque A est encore en génie civil, pour que les équipes et les autorisations s’enchaînent sans creux. <em>Jalon : ouverture commerciale plaque B.</em>"
       ],
       [
-        "Plaque C — vague 3",
-        "La troisième vague, avec son propre délai de conventions placé devant elle — l’étape que les équipes oublient le plus souvent de décaler. <em>Jalon : ouverture commerciale plaque C.</em>"
+        "Plaque C, vague 3",
+        "La troisième vague, avec son propre délai de conventions placé devant elle, l’étape que les équipes oublient le plus souvent de décaler. <em>Jalon : ouverture commerciale plaque C.</em>"
       ],
       [
         "Ouverture, commercialisation et raccordements",
@@ -4760,11 +4760,11 @@ const T = {
       ],
       [
         "Que signifie l’ouverture commerciale d’une plaque ?",
-        "C’est le moment où la plaque est construite, mesurée et chargée dans les systèmes de commande, de sorte que des clients peuvent réellement être raccordés — l’équivalent du RFS anglo-saxon. En France, elle suppose aussi la mise à disposition du point de mutualisation aux opérateurs commerciaux, assortie d’un préavis. C’est ce jalon qui déclenche le chiffre d’affaires, et il se suit plaque par plaque."
+        "C’est le moment où la plaque est construite, mesurée et chargée dans les systèmes de commande, de sorte que des clients peuvent réellement être raccordés, l’équivalent du RFS anglo-saxon. En France, elle suppose aussi la mise à disposition du point de mutualisation aux opérateurs commerciaux, assortie d’un préavis. C’est ce jalon qui déclenche le chiffre d’affaires, et il se suit plaque par plaque."
       ],
       [
         "Pourquoi les conventions sont-elles sur le chemin critique ?",
-        "Parce qu’elles engagent des tiers — propriétaires, bailleurs, copropriétés — qui n’ont aucune raison d’aller à votre rythme. Elles prennent des mois, ne se compriment pas en ajoutant des moyens, et un seul refus peut imposer une reprise d’ingénierie sur toute une plaque."
+        "Parce qu’elles engagent des tiers, propriétaires, bailleurs, copropriétés, qui n’ont aucune raison d’aller à votre rythme. Elles prennent des mois, ne se compriment pas en ajoutant des moyens, et un seul refus peut imposer une reprise d’ingénierie sur toute une plaque."
       ],
       [
         "Combien de vagues mener en parallèle ?",
@@ -4784,10 +4784,10 @@ const T = {
   'stadium-construction-schedule': {
     card: "Gradins préfabriqués, levage de la toiture, aménagements, pelouse, homologation et match d’ouverture.",
     h1: "Planning de construction d’un stade",
-    metaTitle: "Construction de stade — planning",
+    metaTitle: "Construction de stade: planning",
     metaDesc: "Planning gratuit de construction de stade : gros œuvre, gradins, levage de toiture, aménagements, pelouse, homologation et match d’ouverture.",
     lead: "Un <strong>planning de construction de stade</strong> gratuit, bâti à rebours d’une date que personne sur le projet ne maîtrise : le match d’ouverture inscrit au calendrier de la ligue. Il couvre la cuvette et les gradins préfabriqués, la charpente de toiture et son levage dans sa fenêtre météo, l’aménagement des coursives et des espaces d’hospitalité, la construction de la pelouse et sa période d’enracinement, puis les matchs tests et l’homologation qui séparent l’achèvement des travaux d’un stade plein. À télécharger pour un dossier de comité, ou à ouvrir en ligne pour déplacer la date du match et voir ce qui casse.",
-    intro: "La plupart des chantiers négocient leur date de fin. Celui-ci ne le peut pas : le calendrier est publié, les billets sont vendus, et deux des postes les plus longs — l’enracinement du gazon et le levage de la toiture — dépendent de la météo et de la biologie, pas de la main-d’œuvre. Le planning s’ordonne en conséquence :",
+    intro: "La plupart des chantiers négocient leur date de fin. Celui-ci ne le peut pas : le calendrier est publié, les billets sont vendus, et deux des postes les plus longs, l’enracinement du gazon et le levage de la toiture, dépendent de la météo et de la biologie, pas de la main-d’œuvre. Le planning s’ordonne en conséquence :",
     phases: [
       [
         "Conception, autorisations et travaux préparatoires",
@@ -4824,7 +4824,7 @@ const T = {
       "Marquer comme jalons la date du match, l’achèvement de la cuvette, la mise hors d’eau, la remise de la pelouse, l’homologation et le coup d’envoi : ce sont les six dates que réclame un conseil d’administration de club."
     ],
     tips: [
-      "<strong>Traitez la date du match comme une contrainte, pas comme un objectif.</strong> Si le calcul à rebours dit que le levage doit intervenir avant l’hiver, c’est la réponse — en débattre en réunion d’avancement ne change pas le vent.",
+      "<strong>Traitez la date du match comme une contrainte, pas comme un objectif.</strong> Si le calcul à rebours dit que le levage doit intervenir avant l’hiver, c’est la réponse, en débattre en réunion d’avancement ne change pas le vent.",
       "<strong>Commandez les gradins préfabriqués démesurément tôt.</strong> La fabrication est une file d’attente d’usine, et les éléments de gradins sont ce qui risque le plus de bloquer la cuvette pendant que tout le monde regarde la toiture.",
       "<strong>Faites entrer la construction de la pelouse dans le planning comme un projet, pas comme une ligne d’espaces verts.</strong> Drainage, chauffage, couche de croissance et enracinement forment une séquence de deux à trois mois pilotée par un jardinier de terrain, pas une semaine de pose de rouleaux.",
       "<strong>Les matchs tests relèvent de l’homologation, pas de la communication.</strong> La commission de sécurité veut voir l’encadrement, l’entrée, la sortie et l’évacuation à des charges croissantes avant de rendre un avis favorable, et elle n’abrègera pas cette séquence pour une échéance de diffuseur.",
@@ -4842,7 +4842,7 @@ const T = {
       ],
       [
         "Que se passe-t-il si le match d’ouverture est manqué ?",
-        "Les clubs délocalisent généralement la rencontre ou ouvrent à jauge réduite — deux options coûteuses et très visibles. C’est pourquoi le modèle inscrit dans le programme une série progressive de matchs tests et une décision de repli sur la jauge, plutôt que de les laisser au hasard."
+        "Les clubs délocalisent généralement la rencontre ou ouvrent à jauge réduite, deux options coûteuses et très visibles. C’est pourquoi le modèle inscrit dans le programme une série progressive de matchs tests et une décision de repli sur la jauge, plutôt que de les laisser au hasard."
       ],
       [
         "Quand programmer le levage de la toiture ?",
@@ -4862,14 +4862,14 @@ const T = {
   'museum-exhibition-planning-timeline': {
     card: "Demandes de prêt, garantie d’État, constats d’état, convoyeurs, climatisation des salles et montage.",
     h1: "Planning de préparation d’une exposition",
-    metaTitle: "Exposition — planning de préparation",
+    metaTitle: "Exposition: planning de préparation",
     metaDesc: "Planning gratuit d’exposition : demandes de prêt, garantie d’État, restauration, convoyeurs, stabilisation climatique des salles, montage et démontage.",
     lead: "Un <strong>planning de préparation d’exposition</strong> gratuit, organisé comme se déroulent vraiment les expositions : autour des prêts. Demandes de prêt et réponses des prêteurs, facility reports et garantie d’État, assurance et agendas des convoyeurs, restauration et constats d’état, stabilisation climatique des salles avant qu’une seule œuvre n’arrive, puis montage sous la surveillance des convoyeurs et une date de vernissage figée. À télécharger pour un comité de projet, ou à ouvrir en ligne pour poser votre propre date d’ouverture.",
     intro: "Une œuvre empruntée arrive aux conditions du prêteur, dans la caisse du prêteur, avec le convoyeur du prêteur, à une date qui arrange le prêteur. Toutes les autres dates de l’exposition en découlent : le modèle place donc les prêts et les convoyages au centre, au lieu de les traiter comme de la logistique :",
     phases: [
       [
         "Conception scientifique et programmation",
-        "Propos de l’exposition, liste d’œuvres souhaitées, validation du budget, demande de garantie d’État et, pour les prêts étrangers, demande d’insaisissabilité, ainsi que le catalogue — le délai le plus long de tout le projet. <em>Jalon : date d’ouverture arrêtée.</em>"
+        "Propos de l’exposition, liste d’œuvres souhaitées, validation du budget, demande de garantie d’État et, pour les prêts étrangers, demande d’insaisissabilité, ainsi que le catalogue, le délai le plus long de tout le projet. <em>Jalon : date d’ouverture arrêtée.</em>"
       ],
       [
         "Prêts et conventions",
@@ -4916,7 +4916,7 @@ const T = {
       ],
       [
         "Qu’est-ce qu’un facility report ?",
-        "Un document standardisé — le terme anglais reste d’usage courant dans les musées français — décrivant le contrôle climatique, la sûreté, la protection incendie et les procédures de manipulation de votre bâtiment. Les prêteurs s’en servent pour décider s’ils prêtent, il doit donc être à jour avant l’envoi des demandes."
+        "Un document standardisé, le terme anglais reste d’usage courant dans les musées français, décrivant le contrôle climatique, la sûreté, la protection incendie et les procédures de manipulation de votre bâtiment. Les prêteurs s’en servent pour décider s’ils prêtent, il doit donc être à jour avant l’envoi des demandes."
       ],
       [
         "Pourquoi les salles doivent-elles être stabilisées avant le montage ?",
@@ -4940,14 +4940,14 @@ const T = {
   'iso-27001-certification-plan': {
     card: "Périmètre du SMSI, appréciation des risques, déclaration d’applicabilité, audit interne et audit en deux étapes.",
     h1: "Plan de certification ISO 27001",
-    metaTitle: "ISO 27001 — plan de certification",
+    metaTitle: "ISO 27001: plan de certification",
     metaDesc: "Plan gratuit de certification ISO 27001 : périmètre, appréciation des risques, déclaration d’applicabilité, audit interne, revue de direction, audit final.",
-    lead: "Un <strong>plan de certification ISO 27001</strong> gratuit, organisé comme un organisme de certification vous évalue réellement — périmètre du SMSI, appréciation des risques et déclaration d’applicabilité, mise en œuvre des mesures de sécurité, une période de fonctionnement effectif qui produit des enregistrements, puis l’audit interne et la revue de direction qui doivent tous deux être achevés avant l’étape 2, et enfin l’audit initial en deux étapes lui-même. Si vous menez aussi un système qualité, le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> suit la même mécanique d’audit.",
-    intro: "L’audit de certification n’est pas un événement unique. C’est une revue documentaire, puis un intervalle obligatoire pendant lequel vous corrigez ce qu’elle a relevé, puis un audit complet sur preuves — et c’est cet intervalle qui interdit de comprimer un plan ISO 27001 par la fin :",
+    lead: "Un <strong>plan de certification ISO 27001</strong> gratuit, organisé comme un organisme de certification vous évalue réellement, périmètre du SMSI, appréciation des risques et déclaration d’applicabilité, mise en œuvre des mesures de sécurité, une période de fonctionnement effectif qui produit des enregistrements, puis l’audit interne et la revue de direction qui doivent tous deux être achevés avant l’étape 2, et enfin l’audit initial en deux étapes lui-même. Si vous menez aussi un système qualité, le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> suit la même mécanique d’audit.",
+    intro: "L’audit de certification n’est pas un événement unique. C’est une revue documentaire, puis un intervalle obligatoire pendant lequel vous corrigez ce qu’elle a relevé, puis un audit complet sur preuves, et c’est cet intervalle qui interdit de comprimer un plan ISO 27001 par la fin :",
     phases: [
       [
         "Périmètre et analyse d’écart",
-        "Frontières du SMSI, parties intéressées et obligations légales, analyse d’écart au regard des mesures de l’annexe A, et choix de l’organisme de certification accrédité — moment où se réservent aussi les deux dates d’audit. <em>Jalon : périmètre et écarts validés.</em>"
+        "Frontières du SMSI, parties intéressées et obligations légales, analyse d’écart au regard des mesures de l’annexe A, et choix de l’organisme de certification accrédité, moment où se réservent aussi les deux dates d’audit. <em>Jalon : périmètre et écarts validés.</em>"
       ],
       [
         "Appréciation des risques et déclaration d’applicabilité",
@@ -4984,7 +4984,7 @@ const T = {
       "<strong>Menez l’audit interne pour de vrai.</strong> Un audit interne complaisant qui ne trouve rien déplace simplement les constats vers l’étape 2, où ils coûtent la date de certification et non quinze jours.",
       "<strong>Tenez la revue de direction comme une réunion avec compte rendu.</strong> C’est une exigence explicite, aux éléments d’entrée définis, et les auditeurs lisent le compte rendu plutôt que de vous croire sur parole.",
       "<strong>Réalisez l’exercice d’incident et de continuité avant l’étape 2.</strong> C’est l’une des rares preuves que vous pouvez programmer au lieu d’attendre.",
-      "<strong>Ne mélangez pas cette démarche avec SOC 2.</strong> Elles partagent des mesures mais pas leur mécanique : ISO 27001 est une certification à cycle de trois ans avec audits de surveillance, tandis que SOC 2 est un rapport d’attestation américain, délivré par un cabinet de CPA selon les Trust Services Criteria de l’AICPA — un dispositif étranger qui n’a pas d’équivalent français et se désigne par son nom d’origine."
+      "<strong>Ne mélangez pas cette démarche avec SOC 2.</strong> Elles partagent des mesures mais pas leur mécanique : ISO 27001 est une certification à cycle de trois ans avec audits de surveillance, tandis que SOC 2 est un rapport d’attestation américain, délivré par un cabinet de CPA selon les Trust Services Criteria de l’AICPA, un dispositif étranger qui n’a pas d’équivalent français et se désigne par son nom d’origine."
     ],
     faq: [
       [
@@ -4993,7 +4993,7 @@ const T = {
       ],
       [
         "Quelle différence entre l’étape 1 et l’étape 2 ?",
-        "L’étape 1 est une revue documentaire et de maturité — périmètre, politiques, appréciation des risques, déclaration d’applicabilité, preuves d’audit interne et de revue de direction. L’étape 2 est l’audit complet du fonctionnement réel du SMSI. Les constats d’étape 1 doivent être soldés avant l’étape 2, d’où la fenêtre d’actions correctives que le modèle laisse entre les deux."
+        "L’étape 1 est une revue documentaire et de maturité, périmètre, politiques, appréciation des risques, déclaration d’applicabilité, preuves d’audit interne et de revue de direction. L’étape 2 est l’audit complet du fonctionnement réel du SMSI. Les constats d’étape 1 doivent être soldés avant l’étape 2, d’où la fenêtre d’actions correctives que le modèle laisse entre les deux."
       ],
       [
         "L’audit interne et la revue de direction sont-ils obligatoires avant l’étape 2 ?",
@@ -5005,7 +5005,7 @@ const T = {
       ],
       [
         "En quoi cela diffère-t-il du plan ISO 9001 ?",
-        "La mécanique d’audit est la même — deux étapes — mais le contenu diffère : ISO 9001 est un système de management de la qualité, celui-ci est un système de management de la sécurité de l’information bâti sur une appréciation des risques et une déclaration d’applicabilité. Voyez le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> si vous visez les deux."
+        "La mécanique d’audit est la même, deux étapes, mais le contenu diffère : ISO 9001 est un système de management de la qualité, celui-ci est un système de management de la sécurité de l’information bâti sur une appréciation des risques et une déclaration d’applicabilité. Voyez le <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> si vous visez les deux."
       ],
       [
         "Le modèle ISO 27001 est-il gratuit ?",
@@ -5017,9 +5017,9 @@ const T = {
   'crm-implementation-plan': {
     card: "Conception des processus, nettoyage et déduplication des données, paramétrage, répétitions de migration et bascule.",
     h1: "Plan de déploiement d’un CRM",
-    metaTitle: "CRM — plan de déploiement",
+    metaTitle: "CRM: plan de déploiement",
     metaDesc: "Plan gratuit de déploiement CRM : conception des processus, nettoyage et déduplication, paramétrage, répétitions de migration, formation et bascule.",
-    lead: "Un <strong>plan de déploiement de CRM</strong> gratuit, qui place l’effort là où il se trouve réellement : non pas dans le paramétrage des objets, mais dans l’audit, la déduplication et le rapprochement des données clients que vous vous apprêtez à déplacer — et dans le choix d’un moment de bascule dans le trimestre qui ne détruise pas les prévisions de vente. Il couvre la conception des processus, le nettoyage des données, le paramétrage et les interfaces, les répétitions de migration, les cohortes de formation, la bascule et le premier cycle complet de prévisions dans le nouvel outil.",
+    lead: "Un <strong>plan de déploiement de CRM</strong> gratuit, qui place l’effort là où il se trouve réellement : non pas dans le paramétrage des objets, mais dans l’audit, la déduplication et le rapprochement des données clients que vous vous apprêtez à déplacer, et dans le choix d’un moment de bascule dans le trimestre qui ne détruise pas les prévisions de vente. Il couvre la conception des processus, le nettoyage des données, le paramétrage et les interfaces, les répétitions de migration, les cohortes de formation, la bascule et le premier cycle complet de prévisions dans le nouvel outil.",
     intro: "Tout le monde budgète le paramétrage et personne ne budgète les données. Or un commercial qui ouvre le nouveau CRM et découvre trois exemplaires de son plus gros compte cesse de s’en servir le matin même, et aucune formation ne rattrape cela :",
     phases: [
       [
@@ -5050,7 +5050,7 @@ const T = {
     callout: "Choisissez la date de bascule sur le calendrier commercial, pas sur le plan projet. Migrer en milieu de trimestre revient à demander à un commercial de ressaisir des affaires en cours au milieu de sa course à l’objectif, et une prévision qui existe à moitié dans chaque système est une prévision que personne ne peut défendre devant un comité. Basculez dans la première quinzaine d’un nouveau trimestre, quand le pipeline vient d’être remis à zéro et rapproché : le premier cycle de prévision dans le nouveau CRM part alors d’un chiffre sur lequel les deux systèmes étaient d’accord.",
     customize: [
       "Placer la bascule dans les deux premières semaines d’un trimestre, puis remonter le temps : la dernière répétition doit se terminer au moins trois semaines avant.",
-      "Éclater les lignes de déduplication par objet — comptes, contacts, prospects, opportunités — parce que les clés de rapprochement et les responsables diffèrent pour chacun.",
+      "Éclater les lignes de déduplication par objet, comptes, contacts, prospects, opportunités, parce que les clés de rapprochement et les responsables diffèrent pour chacun.",
       "Repousser la formation des commerciaux aussi tard que possible sans percuter la bascule : former six semaines à l’avance revient à former deux fois.",
       "Ajouter une ligne par interface si le devis, l’ERP ou le marketing automation ont leurs propres dépendances éditeur.",
       "Garder la reprise des enregistrements confiée aux commerciaux comme ligne nommée avec un responsable nommé : c’est du travail métier, pas une tâche de l’équipe données.",
@@ -5060,7 +5060,7 @@ const T = {
       "<strong>Dédupliquez avant de paramétrer, pas après.</strong> Les comptes en double cassent d’un coup l’affectation des secteurs, la consolidation des prévisions et le reporting, et chacun de ces éléments est à refaire si les données changent en dessous.",
       "<strong>Rapprochez la valeur du pipeline avec l’ancien système le jour de la bascule.</strong> Si les deux chiffres ne concordent pas avant que quiconque se connecte, vous passerez le trimestre à débattre de celui qui est vrai.",
       "<strong>Formez les managers avant les commerciaux.</strong> L’appropriation se joue en entretien individuel ; un manager incapable de mener sa revue de pipeline dans le nouvel outil laissera discrètement son équipe revenir au tableur.",
-      "<strong>Migrez moins d’historique.</strong> Les opportunités ouvertes et deux ans d’activité couvrent presque tous les usages réels ; le reste relève de l’archivage, pas de la migration — et la minimisation des données n’est pas seulement une bonne pratique projet, c’est un principe du RGPD.",
+      "<strong>Migrez moins d’historique.</strong> Les opportunités ouvertes et deux ans d’activité couvrent presque tous les usages réels ; le reste relève de l’archivage, pas de la migration, et la minimisation des données n’est pas seulement une bonne pratique projet, c’est un principe du RGPD.",
       "<strong>Mesurez l’appropriation, pas la mise en service.</strong> Les connexions ne prouvent rien. Suivez si les affaires ont une prochaine étape, une date de signature et un mouvement d’étape : c’est ce qui rend le pipeline crédible."
     ],
     faq: [
@@ -5094,9 +5094,9 @@ const T = {
   'disaster-recovery-plan': {
     card: "Bilan d’impact sur l’activité, objectifs DMIA et PDMA, réplication, procédures et exercices de bascule.",
     h1: "Plan de reprise d’activité (PRA)",
-    metaTitle: "PRA — plan de reprise d’activité",
+    metaTitle: "PRA: plan de reprise d’activité",
     metaDesc: "Planning gratuit de PRA : bilan d’impact, objectifs DMIA et PDMA, réplication, procédures de bascule, exercice sur table et bascules partielle et complète.",
-    lead: "Un <strong>plan de reprise d’activité</strong> gratuit, qui traite le livrable comme un plan <em>éprouvé</em> et non comme un document. Le bilan d’impact sur l’activité et les objectifs de DMIA et de PDMA — durée maximale d’interruption admissible et perte de données maximale admissible, le RTO et le RPO du vocabulaire anglo-saxon — fixent l’architecture, l’architecture fixe la construction, et toute la seconde moitié du planning est la séquence d’exercices : exercice sur table, puis bascule partielle, puis bascule complète avec validation métier, chacun réclamant sa propre fenêtre de changement et son propre chemin de retour arrière.",
+    lead: "Un <strong>plan de reprise d’activité</strong> gratuit, qui traite le livrable comme un plan <em>éprouvé</em> et non comme un document. Le bilan d’impact sur l’activité et les objectifs de DMIA et de PDMA, durée maximale d’interruption admissible et perte de données maximale admissible, le RTO et le RPO du vocabulaire anglo-saxon, fixent l’architecture, l’architecture fixe la construction, et toute la seconde moitié du planning est la séquence d’exercices : exercice sur table, puis bascule partielle, puis bascule complète avec validation métier, chacun réclamant sa propre fenêtre de changement et son propre chemin de retour arrière.",
     intro: "Un PRA non testé est une hypothèse. Le planning ci-dessous est façonné par la montée en charge des exercices, parce que chacun coûte une fenêtre de changement et que chacun révèle ce que le précédent ne pouvait pas voir :",
     phases: [
       [
@@ -5117,7 +5117,7 @@ const T = {
       ],
       [
         "Séquence d’exercices",
-        "Exercice sur table d’abord, puis bascule partielle des applications de palier 1 avec retour arrière, puis bascule complète avec validation métier et retour à la normale — avec du temps de correction budgété après chacun. <em>Jalon : exercice de bascule complète réussi.</em>"
+        "Exercice sur table d’abord, puis bascule partielle des applications de palier 1 avec retour arrière, puis bascule complète avec validation métier et retour à la normale, avec du temps de correction budgété après chacun. <em>Jalon : exercice de bascule complète réussi.</em>"
       ],
       [
         "Approbation et maintien en condition",
@@ -5131,7 +5131,7 @@ const T = {
       "Garder la ligne de retour arrière collée à chaque exercice : un exercice sans chemin de retour répété est une panne qui attend son mauvais jour.",
       "Ajouter des lignes par palier applicatif si vous basculez par groupes plutôt que d’un bloc.",
       "Allonger la fenêtre de correction après l’exercice partiel : c’est là qu’apparaît l’essentiel des vraies découvertes.",
-      "Ajouter le réexercice annuel sous forme de lignes datées, pour que le plan ne se périme pas discrètement douze mois après son approbation — et, si vous relevez d’un régime sectoriel qui impose une fréquence de test, alignez ce calendrier sur elle."
+      "Ajouter le réexercice annuel sous forme de lignes datées, pour que le plan ne se périme pas discrètement douze mois après son approbation, et, si vous relevez d’un régime sectoriel qui impose une fréquence de test, alignez ce calendrier sur elle."
     ],
     tips: [
       "<strong>Testez le retour à la normale, pas seulement la bascule.</strong> Tourner sur le site de repli n’est que la moitié de l’exercice ; la plupart des organisations découvrent les problèmes coûteux sur le chemin du retour.",
@@ -5147,7 +5147,7 @@ const T = {
       ],
       [
         "Quelle différence entre DMIA et PDMA ?",
-        "La DMIA est la durée d’indisponibilité tolérable — le temps de rétablissement du service. La PDMA est le volume de données que vous pouvez vous permettre de perdre — l’ancienneté de la dernière copie exploitable. Elles correspondent au RTO et au RPO anglo-saxons. La première commande l’infrastructure en attente, la seconde la fréquence de réplication, et ensemble elles déterminent l’essentiel du coût du plan."
+        "La DMIA est la durée d’indisponibilité tolérable, le temps de rétablissement du service. La PDMA est le volume de données que vous pouvez vous permettre de perdre, l’ancienneté de la dernière copie exploitable. Elles correspondent au RTO et au RPO anglo-saxons. La première commande l’infrastructure en attente, la seconde la fréquence de réplication, et ensemble elles déterminent l’essentiel du coût du plan."
       ],
       [
         "Pourquoi trois exercices plutôt qu’un ?",
@@ -5171,14 +5171,14 @@ const T = {
   'rfp-procurement-timeline': {
     card: "Besoin, dossier de consultation, questions, remise des offres, analyse, délai de suspension et notification.",
     h1: "Planning de consultation d’un marché public",
-    metaTitle: "Marché public — planning de consultation",
+    metaTitle: "Marché public: planning de consultation",
     metaDesc: "Planning gratuit de consultation : besoin, dossier de consultation, questions, remise des offres, analyse, attribution, délai de suspension et démarrage.",
-    lead: "Un <strong>planning de consultation</strong> gratuit pour mener une mise en concurrence, de la définition du besoin au démarrage effectif de la prestation — dossier de justification et critères de jugement, dossier de consultation des entreprises, période de publicité avec sa date limite de questions et sa date limite de remise des offres, analyse des offres et rapport de présentation, attribution et délai de suspension, puis notification et démarrage. La plupart de ces dates appartiennent à d’autres que vous : c’est précisément pour cela qu’elles doivent figurer sur un planning.",
+    lead: "Un <strong>planning de consultation</strong> gratuit pour mener une mise en concurrence, de la définition du besoin au démarrage effectif de la prestation, dossier de justification et critères de jugement, dossier de consultation des entreprises, période de publicité avec sa date limite de questions et sa date limite de remise des offres, analyse des offres et rapport de présentation, attribution et délai de suspension, puis notification et démarrage. La plupart de ces dates appartiennent à d’autres que vous : c’est précisément pour cela qu’elles doivent figurer sur un planning.",
     intro: "Une consultation est un planning fait surtout du temps des autres : des candidats qui rédigent, des membres de commission qui trouvent une semaine libre, des juristes qui mettent au point et un titulaire sortant qui doit passer la main. Vous maîtrisez la date de lancement, et à peu près rien d’autre :",
     phases: [
       [
         "Définition du besoin et opportunité",
-        "Recueil du besoin auprès des services, note d’opportunité et validation budgétaire, choix de la procédure et vérification des seuils, allotissement, et les critères de jugement et leur pondération — qui doivent être figés avant toute publication. <em>Jalon : autorisation de lancer la consultation.</em>"
+        "Recueil du besoin auprès des services, note d’opportunité et validation budgétaire, choix de la procédure et vérification des seuils, allotissement, et les critères de jugement et leur pondération, qui doivent être figés avant toute publication. <em>Jalon : autorisation de lancer la consultation.</em>"
       ],
       [
         "Sourcing et dossier de consultation",
@@ -5224,7 +5224,7 @@ const T = {
       ],
       [
         "Combien de temps laisser aux candidats pour répondre ?",
-        "Assez pour rédiger une offre sérieuse après la publication des réponses aux questions — couramment quatre à six semaines pour une consultation substantielle, davantage si le besoin est complexe ou si le candidat doit chiffrer une reprise. Les procédures formalisées imposent en outre un délai minimal réglementaire : vérifiez celui qui s’applique avant de raccourcir."
+        "Assez pour rédiger une offre sérieuse après la publication des réponses aux questions, couramment quatre à six semaines pour une consultation substantielle, davantage si le besoin est complexe ou si le candidat doit chiffrer une reprise. Les procédures formalisées imposent en outre un délai minimal réglementaire : vérifiez celui qui s’applique avant de raccourcir."
       ],
       [
         "À quoi sert le délai de suspension ?",
@@ -5250,8 +5250,8 @@ const T = {
     h1: "Plan de conduite du changement",
     metaTitle: "Plan de conduite du changement",
     metaDesc: "Plan gratuit de conduite du changement : analyse d’impact, consultation du CSE, sponsors, communication, formation, accompagnement et ancrage.",
-    lead: "Un <strong>plan de conduite du changement</strong> gratuit pour le volet humain qui court à côté d’un projet technique — cartographie des parties prenantes et analyse d’impact, information-consultation des représentants du personnel, coalition de sponsors et réseau de référents, communication par public, cohortes de formation calées sur la mise en service et non sur les disponibilités du formateur, évaluation de la préparation et accompagnement de proximité, puis l’ancrage après le lancement qui décide si tout cela tient. À associer au plan système, qu’il s’agisse d’un <a href=\"/templates/erp-implementation-schedule.html\">déploiement d’ERP</a> ou d’un <a href=\"/templates/crm-implementation-plan.html\">déploiement de CRM</a>.",
-    intro: "La conduite du changement se dessine d’ordinaire comme une case « formation » posée à côté de la mise en service. Ce n’est pas une case. C’est un chantier avec ses propres dépendances — dont une qui n’est pas négociable en France, l’information-consultation du CSE — et la moitié qui compte le plus commence la semaine suivant le lancement :",
+    lead: "Un <strong>plan de conduite du changement</strong> gratuit pour le volet humain qui court à côté d’un projet technique, cartographie des parties prenantes et analyse d’impact, information-consultation des représentants du personnel, coalition de sponsors et réseau de référents, communication par public, cohortes de formation calées sur la mise en service et non sur les disponibilités du formateur, évaluation de la préparation et accompagnement de proximité, puis l’ancrage après le lancement qui décide si tout cela tient. À associer au plan système, qu’il s’agisse d’un <a href=\"/templates/erp-implementation-schedule.html\">déploiement d’ERP</a> ou d’un <a href=\"/templates/crm-implementation-plan.html\">déploiement de CRM</a>.",
+    intro: "La conduite du changement se dessine d’ordinaire comme une case « formation » posée à côté de la mise en service. Ce n’est pas une case. C’est un chantier avec ses propres dépendances, dont une qui n’est pas négociable en France, l’information-consultation du CSE, et la moitié qui compte le plus commence la semaine suivant le lancement :",
     phases: [
       [
         "Stratégie de changement et analyse d’impact",
@@ -5278,7 +5278,7 @@ const T = {
         "Indicateurs d’appropriation, enquêtes flash à deux semaines et à trois mois, sessions de rappel ciblées, accompagnement des managers, reconnaissance des équipes, et revue des bénéfices attendus. <em>Jalon : passage en régime courant.</em>"
       ]
     ],
-    callout: "Calez la formation sur la mise en service, pas sur l’agenda du formateur. Les acquis se dégradent vite : une cohorte formée six semaines à l’avance en aura oublié l’essentiel et ira discrètement demander à un collègue. Menez les cohortes par vagues pour que la dernière s’achève quelques jours avant le lancement, et laissez au groupe pilote assez d’avance pour que ses retours améliorent encore les supports. Protégez ensuite la phase d’ancrage : c’est toujours la première coupée, et c’est la seule qui change durablement les comportements — une session de rappel après la première enquête flash vaut mieux qu’un courriel de plus avant le lancement. Attention enfin au séquencement du dialogue social : engager la formation avant que le CSE ait rendu son avis fait courir un risque juridique au projet entier, et cette dépendance doit être visible sur le planning.",
+    callout: "Calez la formation sur la mise en service, pas sur l’agenda du formateur. Les acquis se dégradent vite : une cohorte formée six semaines à l’avance en aura oublié l’essentiel et ira discrètement demander à un collègue. Menez les cohortes par vagues pour que la dernière s’achève quelques jours avant le lancement, et laissez au groupe pilote assez d’avance pour que ses retours améliorent encore les supports. Protégez ensuite la phase d’ancrage : c’est toujours la première coupée, et c’est la seule qui change durablement les comportements, une session de rappel après la première enquête flash vaut mieux qu’un courriel de plus avant le lancement. Attention enfin au séquencement du dialogue social : engager la formation avant que le CSE ait rendu son avis fait courir un risque juridique au projet entier, et cette dépendance doit être visible sur le planning.",
     customize: [
       "Poser d’abord la mise en service, placer la dernière cohorte de formation quelques jours avant, puis remonter toutes les autres à partir de là.",
       "Ajouter une ligne d’analyse d’impact par population concernée : une équipe de services partagés et un technicien itinérant ne vivent pas le même changement.",
@@ -5332,7 +5332,7 @@ const T = {
     h1: "Planning de construction de tunnel",
     metaTitle: "Planning de construction de tunnel",
     metaDesc: "Planning gratuit de construction de tunnel : autorisations, tunnelier, puits d’attaque, avancement, percement, rameaux, ventilation et sécurité incendie.",
-    lead: "Un <strong>planning de construction de tunnel</strong> gratuit, construit autour de la machine plutôt qu’autour des phases — spécification, fabrication, essais en usine et transport du tunnelier comme approvisionnement long qui démarre avant le premier coup de pioche ; un puits d’attaque qui doit être terminé, et non presque terminé, pour recevoir la machine ; une vitesse d’avancement qui change avec le terrain ; l’approvisionnement en voussoirs et l’évacuation des déblais comme services continus qui conditionnent le creusement ; puis le percement, le revêtement définitif et les systèmes de ventilation et de sécurité incendie qui suivent. À télécharger pour un comité de pilotage, ou à ouvrir en ligne pour y poser vos propres mètres par semaine.",
+    lead: "Un <strong>planning de construction de tunnel</strong> gratuit, construit autour de la machine plutôt qu’autour des phases, spécification, fabrication, essais en usine et transport du tunnelier comme approvisionnement long qui démarre avant le premier coup de pioche ; un puits d’attaque qui doit être terminé, et non presque terminé, pour recevoir la machine ; une vitesse d’avancement qui change avec le terrain ; l’approvisionnement en voussoirs et l’évacuation des déblais comme services continus qui conditionnent le creusement ; puis le percement, le revêtement définitif et les systèmes de ventilation et de sécurité incendie qui suivent. À télécharger pour un comité de pilotage, ou à ouvrir en ligne pour y poser vos propres mètres par semaine.",
     intro: "Un chantier de tunnel n’est pas une succession de corps d’état. C’est une machine qui avance à la vitesse que le terrain autorise, et tout le reste est organisé pour qu’elle continue d’avancer. Le modèle suit cette logique :",
     phases: [
       [
@@ -5341,7 +5341,7 @@ const T = {
       ],
       [
         "Puits d’attaque et installation de chantier",
-        "Installations de chantier, désignation du coordonnateur SPS et rédaction du plan général de coordination, parois moulées, terrassement du puits, radier, mur de réaction et chambre de lancement — ainsi que la production des premiers anneaux de voussoirs, qui doit avoir de l’avance sur la machine dès le premier jour. <em>Jalon : puits d’attaque prêt à recevoir le tunnelier.</em>"
+        "Installations de chantier, désignation du coordonnateur SPS et rédaction du plan général de coordination, parois moulées, terrassement du puits, radier, mur de réaction et chambre de lancement, ainsi que la production des premiers anneaux de voussoirs, qui doit avoir de l’avance sur la machine dès le premier jour. <em>Jalon : puits d’attaque prêt à recevoir le tunnelier.</em>"
       ],
       [
         "Fabrication, livraison et montage du tunnelier",
@@ -5360,15 +5360,15 @@ const T = {
         "Cheminement et drainage, chemins de câbles, ventilateurs et gaines, colonne sèche et moyens d’extinction, distribution électrique et éclairage, télécommunications et supervision, puis un essai de fumées chaudes avec le SDIS et le dossier de sécurité soumis à l’autorité compétente. <em>Jalon : remise à l’exploitant.</em>"
       ]
     ],
-    callout: "Le tunnelier, c’est le planning. Commandez-le tard et rien de ce que vous ferez ensuite ne rattrapera le temps perdu : conception, fabrication, réception en usine et transport représentent couramment douze à dix-huit mois pour une machine sur mesure, et elle ne se descend pas dans un puits inachevé. Les deux barres qui ruinent les chantiers de tunnel sont celle de la fabrication qui démarre trop tard et celle du puits qui se termine après l’arrivée de la machine — un tunnelier en pièces détachées en surface coûte de l’argent chaque jour et n’achète rien. Posez-les toutes les deux dès le premier jour et ne les laissez jamais dériver.",
+    callout: "Le tunnelier, c’est le planning. Commandez-le tard et rien de ce que vous ferez ensuite ne rattrapera le temps perdu : conception, fabrication, réception en usine et transport représentent couramment douze à dix-huit mois pour une machine sur mesure, et elle ne se descend pas dans un puits inachevé. Les deux barres qui ruinent les chantiers de tunnel sont celle de la fabrication qui démarre trop tard et celle du puits qui se termine après l’arrivée de la machine, un tunnelier en pièces détachées en surface coûte de l’argent chaque jour et n’achète rien. Posez-les toutes les deux dès le premier jour et ne les laissez jamais dériver.",
     customize: [
-      "Tirez votre vitesse d’avancement du rapport géotechnique de référence, et non de la meilleure semaine du chantier précédent — puis découpez le creusement en barres distinctes par unité géologique, pour qu’un passage difficile soit visible au lieu d’être noyé dans une moyenne.",
+      "Tirez votre vitesse d’avancement du rapport géotechnique de référence, et non de la meilleure semaine du chantier précédent, puis découpez le creusement en barres distinctes par unité géologique, pour qu’un passage difficile soit visible au lieu d’être noyé dans une moyenne.",
       "Donnez aux premières centaines de mètres leur propre barre, courte et lente. Tout tunnelier connaît une montée en cadence pendant que l’équipe, l’injection et le marinage se calent, et les planifier au régime nominal garantit un retard précoce.",
       "Ajoutez une barre d’intervention hyperbare partout où le rapport prévoit un terrain abrasif. Le changement d’outils de coupe est un événement planifiable de durée connue ; le découvrir en cours de creusement le transforme en un mois.",
       "Représentez l’approvisionnement en voussoirs par une barre continue sur toute la durée du creusement, et confrontez la production de l’usine de préfabrication à votre pic hebdomadaire d’anneaux, pas à la moyenne.",
       "Faites apparaître explicitement l’évacuation des déblais et la filière de valorisation ou de stockage. Une aire saturée ou une filière perdue arrête la machine aussi sûrement qu’une avarie mécanique.",
       "Placez les DT-DICT avant tout terrassement et non dans une phase administrative de début de projet : les récépissés conditionnent l’ouverture du chantier, et leur oubli est un arrêt de travaux immédiat.",
-      "Posez comme jalons les autorisations obtenues, l’attribution du marché tunnelier, la disponibilité du puits, la mise en service de la machine et le percement — ces cinq dates résument tout le programme."
+      "Posez comme jalons les autorisations obtenues, l’attribution du marché tunnelier, la disponibilité du puits, la mise en service de la machine et le percement, ces cinq dates résument tout le programme."
     ],
     tips: [
       "<strong>Achetez la machine avant d’avoir terminé le reste des études.</strong> La configuration de la roue de coupe dépend du terrain, pas de l’architecture des stations, et le rapport géotechnique suffit généralement à passer commande bien avant que le reste soit figé.",
@@ -5424,7 +5424,7 @@ const T = {
       ],
       [
         "Utilités et traitement des effluents",
-        "Station d’eau ultrapure et rinçage de la boucle, parc de gaz vrac et de gaz spéciaux, armoires de distribution et essais d’étanchéité, extraction et laveurs, mise sous tension du poste de livraison — le tout piloté sur les points de raccordement, et non sur un « terminé » générique. <em>Jalon : utilités disponibles aux points de raccordement.</em>"
+        "Station d’eau ultrapure et rinçage de la boucle, parc de gaz vrac et de gaz spéciaux, armoires de distribution et essais d’étanchéité, extraction et laveurs, mise sous tension du poste de livraison, le tout piloté sur les points de raccordement, et non sur un « terminé » générique. <em>Jalon : utilités disponibles aux points de raccordement.</em>"
       ],
       [
         "Certification de la salle blanche et bascule de protocole",
@@ -5439,7 +5439,7 @@ const T = {
         "Intégration du MES et de l’automatisation, chargement des recettes, première plaquette sur un module isolé, lot pilote sur la gamme complète, montée en rendement et qualification client. <em>Jalons : premier silicium, autorisation de production en volume.</em>"
       ]
     ],
-    callout: "Il existe une date qui change les règles pour tout le monde sur un chantier de fab : la bascule du protocole salle blanche. Avant, c’est un chantier avec casques et soudure. Après, chaque personne est habillée en combinaison, chaque matériau entre par un sas après essuyage, et la productivité de chaque corps d’état chute nettement. Planifiez délibérément de part et d’autre de cette ligne — tout ce qui peut être terminé « en sale » doit l’être avant, et toute barre qui la franchit exige une durée plus longue que le même travail réalisé à l’extérieur. Les programmes qui la traitent comme une réception ordinaire perdent des mois à le réapprendre sur le terrain.",
+    callout: "Il existe une date qui change les règles pour tout le monde sur un chantier de fab : la bascule du protocole salle blanche. Avant, c’est un chantier avec casques et soudure. Après, chaque personne est habillée en combinaison, chaque matériau entre par un sas après essuyage, et la productivité de chaque corps d’état chute nettement. Planifiez délibérément de part et d’autre de cette ligne, tout ce qui peut être terminé « en sale » doit l’être avant, et toute barre qui la franchit exige une durée plus longue que le même travail réalisé à l’extérieur. Les programmes qui la traitent comme une réception ordinaire perdent des mois à le réapprendre sur le terrain.",
     customize: [
       "Gelez tôt la liste des équipements et posez-la comme jalon. Chaque dimensionnement d’utilité, chaque réservation et chaque plan de raccordement en découlent, et un changement tardif se propage à toute la conception du bâtiment.",
       "Réordonnez les vagues d’équipements selon votre disponibilité d’utilités plutôt que selon les dates de livraison des fournisseurs. Un équipement qui arrive avant que ses gaz et son extraction soient en service occupe de la surface et ne qualifie rien.",
@@ -5488,7 +5488,7 @@ const T = {
     h1: "Planning de construction d’un pipeline pétrolier ou gazier",
     metaTitle: "Planning de construction de pipeline",
     metaDesc: "Planning gratuit de construction de pipeline : servitudes, autorisations, fenêtres environnementales, soudage, franchissements et épreuve hydraulique.",
-    lead: "Un <strong>planning de construction de pipeline</strong> gratuit, organisé autour des deux éléments qui fixent réellement les dates : le foncier et les saisons. Étude de tracé, évaluation environnementale, autorisations et acquisition des servitudes en amont ; périodes de nidification et fenêtres d’intervention en lit de cours d’eau posées comme contraintes fermes ; le chantier mobile comme chaîne de production qui descend le tracé — bardage, tranchée, soudage, radiographie, revêtement, mise en fouille et remblaiement ; franchissements et stations en parallèle ; puis épreuve hydraulique, soudures de raboutage et mise en service. À télécharger pour un comité projet, ou à ouvrir en ligne pour y saisir vos propres dates de fenêtres.",
+    lead: "Un <strong>planning de construction de pipeline</strong> gratuit, organisé autour des deux éléments qui fixent réellement les dates : le foncier et les saisons. Étude de tracé, évaluation environnementale, autorisations et acquisition des servitudes en amont ; périodes de nidification et fenêtres d’intervention en lit de cours d’eau posées comme contraintes fermes ; le chantier mobile comme chaîne de production qui descend le tracé, bardage, tranchée, soudage, radiographie, revêtement, mise en fouille et remblaiement ; franchissements et stations en parallèle ; puis épreuve hydraulique, soudures de raboutage et mise en service. À télécharger pour un comité projet, ou à ouvrir en ligne pour y saisir vos propres dates de fenêtres.",
     intro: "Un pipeline est construit par une chaîne de production qui descend un couloir dont vous n’êtes pas encore propriétaire, à l’intérieur de saisons que vous ne contrôlez pas. Le modèle garde ces deux contraintes visibles :",
     phases: [
       [
@@ -5505,7 +5505,7 @@ const T = {
       ],
       [
         "Chantier mobile de pose",
-        "La chaîne de production elle-même — bardage, terrassement de la tranchée, cintrage et alignement, soudage, contrôle radiographique et ultrasonore, revêtement des joints et détection de défauts, mise en fouille, lit de pose, remblaiement et protection cathodique. <em>Jalon : soudage de la ligne achevé.</em>"
+        "La chaîne de production elle-même, bardage, terrassement de la tranchée, cintrage et alignement, soudage, contrôle radiographique et ultrasonore, revêtement des joints et détection de défauts, mise en fouille, lit de pose, remblaiement et protection cathodique. <em>Jalon : soudage de la ligne achevé.</em>"
       ],
       [
         "Franchissements et ouvrages particuliers",
@@ -5520,7 +5520,7 @@ const T = {
     customize: [
       "Saisissez d’abord vos propres dates de fenêtres en lit et de nidification, comme barres fixes, puis organisez le chantier autour d’elles et non l’inverse.",
       "Découpez la ligne en un jeu de barres par chantier mobile si vous faites travailler plusieurs équipes, et donnez à chacune sa propre cadence en mètres ou en joints par jour.",
-      "Représentez soudage, radiographie et revêtement par des barres qui se chevauchent et se suivent le long du tracé — c’est une seule chaîne de production en mouvement, pas trois phases successives, et les dessiner en série masque la véritable contrainte.",
+      "Représentez soudage, radiographie et revêtement par des barres qui se chevauchent et se suivent le long du tracé, c’est une seule chaîne de production en mouvement, pas trois phases successives, et les dessiner en série masque la véritable contrainte.",
       "Ajoutez une barre de réparation et de contre-radiographie des soudures. L’hypothèse d’un contrôle concluant du premier coup est l’erreur d’optimisme la plus fréquente sur ce type de chantier.",
       "Donnez à l’acquisition des servitudes une longue traîne et une provision pour propriétaire récalcitrant. Une seule signature manquante peut bloquer un chantier par ailleurs prêt à avancer.",
       "Découpez l’épreuve hydraulique en tronçons correspondant à vos collecteurs d’essai, et ajoutez une barre de réparation et de nouvelle épreuve après le palier de maintien : un tronçon défaillant doit être localisé, découpé, ressoudé puis réessayé."
@@ -5552,7 +5552,7 @@ const T = {
       ],
       [
         "Pourquoi l’acquisition des servitudes est-elle sur le chemin critique ?",
-        "Parce qu’on ne peut physiquement pas commencer sur un terrain sur lequel on ne dispose d’aucune servitude, et parce que le calendrier de négociation dépend de propriétaires individuels, pas de votre programme. Cela se comporte comme un achat à long délai et doit être suivi comme tel — y compris l’enquête publique et, le cas échéant, la déclaration d’utilité publique qui la précède."
+        "Parce qu’on ne peut physiquement pas commencer sur un terrain sur lequel on ne dispose d’aucune servitude, et parce que le calendrier de négociation dépend de propriétaires individuels, pas de votre programme. Cela se comporte comme un achat à long délai et doit être suivi comme tel, y compris l’enquête publique et, le cas échéant, la déclaration d’utilité publique qui la précède."
       ],
       [
         "Le modèle de planning de pipeline est-il gratuit ?",
@@ -5586,16 +5586,16 @@ const T = {
       ],
       [
         "Semaine technique",
-        "Répétition à l’italienne au plateau, conduite technique acte par acte, notes et reprises des changements à vue, et deux générales — le goulot d’étranglement qui ne peut pas être allongé parce que la salle est louée. <em>Jalon : première rencontre avec le public.</em>"
+        "Répétition à l’italienne au plateau, conduite technique acte par acte, notes et reprises des changements à vue, et deux générales, le goulot d’étranglement qui ne peut pas être allongé parce que la salle est louée. <em>Jalon : première rencontre avec le public.</em>"
       ],
       [
         "Avant-premières, première et exploitation",
         "Représentations d’avant-première avec des répétitions de reprise en journée entre elles, le gel du spectacle, la première de presse à la date contractée, les critiques et le réajustement de la communication, puis l’exploitation sous la conduite de la régie générale. <em>Jalon : première.</em>"
       ]
     ],
-    callout: "La première n’est pas un objectif : c’est un engagement. La presse est invitée, les billets sont vendus, l’achat d’espace est engagé et une autre production entre en salle après la vôtre. Tout se calcule donc à rebours, et la semaine technique — italienne, conduite, générales — absorbe le retard de toutes les phases qui la précèdent. Un costume en retard, une machinerie qui ne se met pas en service, un changement à vue qui n’a pas été réglé : tout arrive dans les mêmes sept jours, et ces sept jours ne peuvent pas en faire huit.",
+    callout: "La première n’est pas un objectif : c’est un engagement. La presse est invitée, les billets sont vendus, l’achat d’espace est engagé et une autre production entre en salle après la vôtre. Tout se calcule donc à rebours, et la semaine technique, italienne, conduite, générales, absorbe le retard de toutes les phases qui la précèdent. Un costume en retard, une machinerie qui ne se met pas en service, un changement à vue qui n’a pas été réglé : tout arrive dans les mêmes sept jours, et ces sept jours ne peuvent pas en faire huit.",
     customize: [
-      "Posez d’abord la date de première, puis tirez tout le reste devant elle. Si le rétroplanning ne tient pas, la correction est en amont — un décor plus modeste, une distribution plus précoce, davantage de semaines de répétition — jamais une semaine technique plus courte.",
+      "Posez d’abord la date de première, puis tirez tout le reste devant elle. Si le rétroplanning ne tient pas, la correction est en amont, un décor plus modeste, une distribution plus précoce, davantage de semaines de répétition, jamais une semaine technique plus courte.",
       "Calez les semaines de répétition sur votre convention collective et sur les contrats d’intermittents : quatre à six semaines sont courantes dans le spectacle subventionné, et les doublures doivent tenir à l’intérieur.",
       "Placez la négociation des droits SACD et la déclaration SACEM comme des tâches datées avec un responsable, et non comme une formalité administrative de fin de projet : une autorisation de représentation manquante bloque la vente comme la première.",
       "Allongez ou raccourcissez les barres de montage selon votre lieu. Une salle en alternance qui vous cède le plateau un dimanche est une contrainte radicalement différente d’un théâtre noir dont vous disposez quinze jours.",
@@ -5604,7 +5604,7 @@ const T = {
       "Posez la validation de la maquette comme jalon dur. L’atelier ne peut pas commencer sans elle, et chaque jour de glissement se prélève directement sur le temps de patine et d’essayage à l’autre bout."
     ],
     tips: [
-      "<strong>Validez la scénographie assez tôt pour que l’atelier construise sereinement.</strong> Une présentation de maquette tardive ne repousse pas la première — elle signifie seulement que le décor arrive sans patine et que le montage déborde sur la technique.",
+      "<strong>Validez la scénographie assez tôt pour que l’atelier construise sereinement.</strong> Une présentation de maquette tardive ne repousse pas la première, elle signifie seulement que le décor arrive sans patine et que le montage déborde sur la technique.",
       "<strong>Protégez le filage devant les producteurs.</strong> C’est le dernier moment où le spectacle se voit entier avant que le théâtre n’absorbe l’attention de tout le monde, et le sacrifier pour gagner un jour de répétition est presque toujours un mauvais échange.",
       "<strong>Bouclez les contrats d’intermittents avant l’entrée en répétition.</strong> Comédiens, techniciens et régisseurs sont engagés au cachet ou au service sur des périodes précises, ils travaillent souvent ailleurs jusqu’à la veille, et une date décalée n’est pas une date négociable : c’est une personne qui n’est plus disponible.",
       "<strong>Écrivez les conduites lumière et son depuis la salle de répétition, pas depuis le plateau.</strong> Tout ce que les concepteurs peuvent décider avant le montage est du temps gagné en technique, là où une heure vaut infiniment plus cher.",
@@ -5648,16 +5648,16 @@ const T = {
     h1: "Planning d’ouverture d’un centre de santé",
     metaTitle: "Planning d’ouverture d’un centre de santé",
     metaDesc: "Planning gratuit d’ouverture de centre de santé : autorisation ARS, inscription à l’Ordre, conventionnement, aménagement ERP, commission de sécurité.",
-    lead: "Un <strong>planning d’ouverture de centre de santé</strong> gratuit, construit autour des trois horloges qui décident du jour où vous pourrez réellement recevoir un patient : l’autorisation, la commission de sécurité et l’installation des praticiens. Étude d’opportunité et choix du régime — autorisation ou déclaration auprès de l’ARS ; inscription au tableau de l’Ordre des médecins et conventionnement avec l’Assurance Maladie, deux démarches longues et largement hors de votre contrôle ; un aménagement soumis aux fluides médicaux, aux règles d’hygiène et à l’accessibilité des établissements recevant du public ; la mise en service des équipements ; puis les contrôles qui autorisent l’ouverture des portes. À télécharger pour un dossier de financement, ou à ouvrir en ligne pour y poser vos propres délais.",
+    lead: "Un <strong>planning d’ouverture de centre de santé</strong> gratuit, construit autour des trois horloges qui décident du jour où vous pourrez réellement recevoir un patient : l’autorisation, la commission de sécurité et l’installation des praticiens. Étude d’opportunité et choix du régime, autorisation ou déclaration auprès de l’ARS ; inscription au tableau de l’Ordre des médecins et conventionnement avec l’Assurance Maladie, deux démarches longues et largement hors de votre contrôle ; un aménagement soumis aux fluides médicaux, aux règles d’hygiène et à l’accessibilité des établissements recevant du public ; la mise en service des équipements ; puis les contrôles qui autorisent l’ouverture des portes. À télécharger pour un dossier de financement, ou à ouvrir en ligne pour y poser vos propres délais.",
     intro: "Un cabinet construit, équipé et doté d’une équipe ne peut toujours soigner personne tant que trois autorisations distinctes ne sont pas arrivées. Le modèle en fait la colonne vertébrale plutôt que la queue de comète :",
     phases: [
       [
         "Projet de santé, local et régime d’autorisation",
-        "Définition de l’offre de soins et analyse des besoins du territoire, choix du local et signature du bail, confirmation auprès de l’ARS du régime applicable — autorisation, déclaration ou simple enregistrement selon la structure et les activités — dépôt du projet de santé, et les immatriculations, numéros FINESS et enregistrements RPPS sans lesquels rien n’avance en aval. <em>Jalons : bail signé, régime d’autorisation confirmé.</em>"
+        "Définition de l’offre de soins et analyse des besoins du territoire, choix du local et signature du bail, confirmation auprès de l’ARS du régime applicable, autorisation, déclaration ou simple enregistrement selon la structure et les activités, dépôt du projet de santé, et les immatriculations, numéros FINESS et enregistrements RPPS sans lesquels rien n’avance en aval. <em>Jalons : bail signé, régime d’autorisation confirmé.</em>"
       ],
       [
         "Installation des praticiens et conventionnement",
-        "Recrutement des médecins, inscription au tableau du conseil départemental de l’Ordre des médecins, vérification des diplômes et de l’assurance en responsabilité civile professionnelle, enregistrement du numéro RPPS, puis conventionnement avec l’Assurance Maladie et raccordement à la télétransmission — une horloge longue tenue par d’autres organismes. <em>Jalons : praticiens inscrits, conventionnement effectif.</em>"
+        "Recrutement des médecins, inscription au tableau du conseil départemental de l’Ordre des médecins, vérification des diplômes et de l’assurance en responsabilité civile professionnelle, enregistrement du numéro RPPS, puis conventionnement avec l’Assurance Maladie et raccordement à la télétransmission, une horloge longue tenue par d’autres organismes. <em>Jalons : praticiens inscrits, conventionnement effectif.</em>"
       ],
       [
         "Conception et aménagement réglementé",
@@ -5676,7 +5676,7 @@ const T = {
         "Recrutement des équipes soignantes et de l’accueil, formation et validation des compétences, approvisionnement et stock stérile, une journée de simulation avec de faux patients, des feuilles de soins d’essai transmises en télétransmission, et l’information des médecins adresseurs. <em>Jalons : premier patient reçu, planning complet ouvert.</em>"
       ]
     ],
-    callout: "Vous ne pouvez recevoir aucun patient tant que l’autorisation, le contrôle de sécurité et l’installation des praticiens ne sont pas tous arrivés — et c’est l’installation des praticiens que vous maîtrisez le moins. L’inscription au tableau de l’Ordre, la vérification des titres, l’enregistrement RPPS et le conventionnement avec l’Assurance Maladie avancent chacun dans la file d’attente de quelqu’un d’autre, et plusieurs mois à compter d’un dossier complet sont la norme. Engagez la démarche le jour où vous faites une proposition d’embauche, et non quand le bâtiment est fini : un cabinet parfaitement aménagé dont les médecins ne sont ni inscrits ni conventionnés est un local vide qui perd de l’argent.",
+    callout: "Vous ne pouvez recevoir aucun patient tant que l’autorisation, le contrôle de sécurité et l’installation des praticiens ne sont pas tous arrivés, et c’est l’installation des praticiens que vous maîtrisez le moins. L’inscription au tableau de l’Ordre, la vérification des titres, l’enregistrement RPPS et le conventionnement avec l’Assurance Maladie avancent chacun dans la file d’attente de quelqu’un d’autre, et plusieurs mois à compter d’un dossier complet sont la norme. Engagez la démarche le jour où vous faites une proposition d’embauche, et non quand le bâtiment est fini : un cabinet parfaitement aménagé dont les médecins ne sont ni inscrits ni conventionnés est un local vide qui perd de l’argent.",
     customize: [
       "Faites démarrer la barre d’installation à la date de la proposition d’embauche et donnez-lui le délai réellement observé auprès de votre conseil départemental et de votre caisse, pas le meilleur cas. Si elle se termine après l’autorisation, c’est elle votre chemin critique et le planning doit le dire.",
       "Ajoutez une ligne par praticien si vous ouvrez à plusieurs. Ils ne sont pas inscrits en même temps, et la date d’ouverture dépend du plus lent, pas de la moyenne.",
@@ -5692,7 +5692,7 @@ const T = {
       "<strong>Concevez pour l’instruction, pas seulement pour l’entreprise.</strong> Surfaces des pièces, points d’eau, cascades de pression, revêtements et accessibilité font l’objet d’exigences précises, et une reprise de conception après un avis coûte infiniment plus cher que de viser juste du premier coup.",
       "<strong>Sollicitez tôt la commission de sécurité et prévoyez une contre-visite.</strong> Son agenda n’est pas le vôtre, et programmer une ouverture en supposant un avis favorable du premier coup est un pari que l’on perd généralement.",
       "<strong>Réceptionnez et étalonnez les équipements avec un ingénieur biomédical, pas avec le seul fournisseur.</strong> Livraison et installation ne valent pas étalonnage, contrôle qualité et inscription à l’inventaire que le contrôleur demandera à voir.",
-      "<strong>Transmettez des feuilles de soins d’essai avant le premier vrai patient.</strong> Découvrir un paramétrage de télétransmission défaillant la première semaine, c’est soigner des patients que vous ne pouvez pas facturer — pire que d’ouvrir une semaine plus tard."
+      "<strong>Transmettez des feuilles de soins d’essai avant le premier vrai patient.</strong> Découvrir un paramétrage de télétransmission défaillant la première semaine, c’est soigner des patients que vous ne pouvez pas facturer, pire que d’ouvrir une semaine plus tard."
     ],
     faq: [
       [
@@ -5705,7 +5705,7 @@ const T = {
       ],
       [
         "En quoi un aménagement médical diffère-t-il d’un aménagement de bureaux ?",
-        "Réseaux de fluides médicaux avec vérification par un tiers, cascades de pression entre zones propres et zones souillées, cloisonnement et hygiène pendant les travaux, revêtements nettoyables, protection radiologique des salles d’imagerie et accessibilité au titre des établissements recevant du public — rien de tout cela n’apparaît dans un aménagement tertiaire ordinaire."
+        "Réseaux de fluides médicaux avec vérification par un tiers, cascades de pression entre zones propres et zones souillées, cloisonnement et hygiène pendant les travaux, revêtements nettoyables, protection radiologique des salles d’imagerie et accessibilité au titre des établissements recevant du public, rien de tout cela n’apparaît dans un aménagement tertiaire ordinaire."
       ],
       [
         "Peut-on ouvrir avant que le conventionnement soit effectif ?",
@@ -5754,7 +5754,7 @@ const T = {
         "La fenêtre de gel de gestion, la conversion de production elle-même, la validation et la réconciliation, la remise à disposition des utilisateurs, et la période d’hypercare avant le transfert au support. <em>Jalon : sortie d’hypercare.</em>"
       ]
     ],
-    callout: "Deux choses coulent les plannings de conversion. La première est le code spécifique : le rapport de <em>readiness check</em> listera des milliers de constats, pour la plupart triviaux et une poignée structurants, et tant que personne ne les a triés vous n’avez pas une estimation — vous avez un nombre d’objets. La seconde est le gel de gestion. Les équipes prévoient un week-end et découvrent que le gel des écritures, des données de base et des transactions ouvertes commence en réalité plusieurs jours plus tôt et ne se lève qu’une fois la réconciliation validée. Planifiez le gel comme un événement de gestion, avec des responsables nommés, et non comme une fenêtre technique — et laissez les bascules à blanc vous dire sa durée réelle plutôt que d’en décider à l’avance.",
+    callout: "Deux choses coulent les plannings de conversion. La première est le code spécifique : le rapport de <em>readiness check</em> listera des milliers de constats, pour la plupart triviaux et une poignée structurants, et tant que personne ne les a triés vous n’avez pas une estimation, vous avez un nombre d’objets. La seconde est le gel de gestion. Les équipes prévoient un week-end et découvrent que le gel des écritures, des données de base et des transactions ouvertes commence en réalité plusieurs jours plus tôt et ne se lève qu’une fois la réconciliation validée. Planifiez le gel comme un événement de gestion, avec des responsables nommés, et non comme une fenêtre technique, et laissez les bascules à blanc vous dire sa durée réelle plutôt que d’en décider à l’avance.",
     customize: [
       "S’il s’agit d’une nouvelle implémentation et non d’une conversion, supprimez les phases de remédiation et de bascule à blanc et reconstruisez autour de la conception des processus : les formes sont réellement différentes.",
       "Posez d’abord le week-end de bascule en production et remontez à rebours ; les bascules à blanc sont la seule estimation fiable de sa durée.",
@@ -5767,7 +5767,7 @@ const T = {
     tips: [
       "<strong>Menez la première bascule à blanc tôt et mal.</strong> Son rôle est de révéler ce qui manque au mode opératoire, pas de réussir. Ce sont les suivantes qui doivent être propres.",
       "<strong>Triez le rapport de readiness, ne le comptez pas.</strong> Mille constats peuvent représenter deux semaines de travail ou six mois, et seul le tri vous dira lequel.",
-      "<strong>Traitez la répétition générale comme un vrai point de passage.</strong> Si la répétition ne tient pas dans la fenêtre prévue, la bascule de production n’y tiendra pas davantage — c’est exactement pour cela qu’on la fait.",
+      "<strong>Traitez la répétition générale comme un vrai point de passage.</strong> Si la répétition ne tient pas dans la fenêtre prévue, la bascule de production n’y tiendra pas davantage, c’est exactement pour cela qu’on la fait.",
       "<strong>Gelez la gestion, pas seulement le système.</strong> Publiez ce que chacun peut et ne peut pas faire chaque jour de la fenêtre, bien avant qu’elle ne commence.",
       "<strong>Réconciliez avant de rendre la main.</strong> Soldes comptables, postes ouverts et quantités en stock validés au regard des chiffres d’avant conversion : voilà le vrai critère de mise en service, pas un écran vert."
     ],
@@ -5782,7 +5782,7 @@ const T = {
       ],
       [
         "En quoi cela diffère-t-il du planning de déploiement d’ERP ?",
-        "Le <a href=\"/templates/erp-implementation-schedule.html\">planning de déploiement d’ERP</a> suppose que vous sélectionnez et implémentez un système de zéro — choix de l’éditeur, conception des processus, paramétrage, reprise de données et formation. Ce plan-ci suppose que SAP tourne déjà et que vous le convertissez : les phases lourdes sont donc la remédiation du code spécifique et les bascules à blanc répétées."
+        "Le <a href=\"/templates/erp-implementation-schedule.html\">planning de déploiement d’ERP</a> suppose que vous sélectionnez et implémentez un système de zéro, choix de l’éditeur, conception des processus, paramétrage, reprise de données et formation. Ce plan-ci suppose que SAP tourne déjà et que vous le convertissez : les phases lourdes sont donc la remédiation du code spécifique et les bascules à blanc répétées."
       ],
       [
         "Combien de bascules à blanc faut-il ?",
@@ -5803,24 +5803,24 @@ const T = {
     h1: "Plan de certification ISO 14001",
     metaTitle: "Plan de certification ISO 14001",
     metaDesc: "Plan gratuit de certification ISO 14001 : analyse environnementale, veille réglementaire, objectifs, maîtrise opérationnelle, audits étape 1 et étape 2.",
-    lead: "Un <strong>plan de certification ISO 14001</strong> gratuit, organisé autour des deux registres qui constituent le travail réel d’un système de management environnemental : l’analyse environnementale — aspects et impacts — et le registre des obligations de conformité, alimenté par la veille réglementaire. Tout ce qui vient ensuite — objectifs, maîtrise opérationnelle, surveillance, formation — en découle, et c’est pour cela que les plans qui commencent par les objectifs s’enlisent. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
+    lead: "Un <strong>plan de certification ISO 14001</strong> gratuit, organisé autour des deux registres qui constituent le travail réel d’un système de management environnemental : l’analyse environnementale, aspects et impacts, et le registre des obligations de conformité, alimenté par la veille réglementaire. Tout ce qui vient ensuite, objectifs, maîtrise opérationnelle, surveillance, formation, en découle, et c’est pour cela que les plans qui commencent par les objectifs s’enlisent. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
     intro: "Un organisme certificateur accrédité évalue un SME en deux visites séparées par un intervalle obligatoire, et il échantillonne des enregistrements qui n’existent que si le système a réellement fonctionné. Les barres traduisent ces deux réalités :",
     phases: [
       [
         "Domaine d’application, contexte et diagnostic d’écart",
-        "Périmètre du SME, enjeux internes et externes, parties intéressées, diagnostic d’écart au regard de la norme, politique environnementale, et choix de l’organisme certificateur accrédité par le COFRAC — c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique approuvés.</em>"
+        "Périmètre du SME, enjeux internes et externes, parties intéressées, diagnostic d’écart au regard de la norme, politique environnementale, et choix de l’organisme certificateur accrédité par le COFRAC, c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique approuvés.</em>"
       ],
       [
         "Analyse environnementale et obligations de conformité",
-        "Le cœur du plan : identification des aspects environnementaux sur l’ensemble des activités, évaluation de leur significativité selon une méthode documentée, et construction en parallèle du registre des obligations légales et autres — arrêté préfectoral d’autorisation ou d’enregistrement ICPE lorsque le site est classé, autorisations de rejet, obligations déchets et responsabilité élargie du producteur — entretenu par une veille réglementaire datée. <em>Jalon : analyse environnementale et registre des obligations approuvés.</em>"
+        "Le cœur du plan : identification des aspects environnementaux sur l’ensemble des activités, évaluation de leur significativité selon une méthode documentée, et construction en parallèle du registre des obligations légales et autres, arrêté préfectoral d’autorisation ou d’enregistrement ICPE lorsque le site est classé, autorisations de rejet, obligations déchets et responsabilité élargie du producteur, entretenu par une veille réglementaire datée. <em>Jalon : analyse environnementale et registre des obligations approuvés.</em>"
       ],
       [
         "Objectifs, cibles et programmes",
-        "Des objectifs dérivés des aspects significatifs et des obligations, avec cibles, indicateurs, moyens et responsables nommés — et non des intentions rédigées avant que les registres n’existent. <em>Jalon : objectifs et programmes validés.</em>"
+        "Des objectifs dérivés des aspects significatifs et des obligations, avec cibles, indicateurs, moyens et responsables nommés, et non des intentions rédigées avant que les registres n’existent. <em>Jalon : objectifs et programmes validés.</em>"
       ],
       [
         "Maîtrise opérationnelle et situations d’urgence",
-        "Procédures de maîtrise opérationnelle pour les aspects significatifs, gestion des déchets, des rejets et des émissions, maîtrise des fournisseurs et des entreprises extérieures, compétence et sensibilisation du personnel, et l’exercice de situation d’urgence — un exercice de confinement de pollution accidentelle, par exemple. <em>Jalon : maîtrise opérationnelle en place.</em>"
+        "Procédures de maîtrise opérationnelle pour les aspects significatifs, gestion des déchets, des rejets et des émissions, maîtrise des fournisseurs et des entreprises extérieures, compétence et sensibilisation du personnel, et l’exercice de situation d’urgence, un exercice de confinement de pollution accidentelle, par exemple. <em>Jalon : maîtrise opérationnelle en place.</em>"
       ],
       [
         "Fonctionnement, surveillance et accumulation des enregistrements",
@@ -5831,20 +5831,20 @@ const T = {
         "L’audit interne, ses non-conformités et les actions correctives, la revue de direction, puis l’étape 1, l’intervalle de traitement des écarts, et l’étape 2. <em>Jalon : certificat délivré.</em>"
       ]
     ],
-    callout: "L’analyse environnementale est le document que l’auditeur ouvrira en premier, et si elle est mince tout le reste du système s’effondre avec elle. Elle doit couvrir les conditions normales, dégradées et d’urgence, et la cotation de significativité doit reposer sur une méthode que vous pouvez expliquer plutôt que sur une couleur choisie par quelqu’un. Le registre des obligations de conformité est le second document porteur : il recense les autorisations, arrêtés préfectoraux, prescriptions et engagements qui vous sont applicables, et la norme exige d’évaluer périodiquement votre conformité au regard de ce registre — l’évaluation doit donc avoir eu lieu avant l’étape 2, et non être planifiée après.",
+    callout: "L’analyse environnementale est le document que l’auditeur ouvrira en premier, et si elle est mince tout le reste du système s’effondre avec elle. Elle doit couvrir les conditions normales, dégradées et d’urgence, et la cotation de significativité doit reposer sur une méthode que vous pouvez expliquer plutôt que sur une couleur choisie par quelqu’un. Le registre des obligations de conformité est le second document porteur : il recense les autorisations, arrêtés préfectoraux, prescriptions et engagements qui vous sont applicables, et la norme exige d’évaluer périodiquement votre conformité au regard de ce registre, l’évaluation doit donc avoir eu lieu avant l’étape 2, et non être planifiée après.",
     customize: [
       "Choisissez l’organisme certificateur tôt et figez la date d’étape 2 ; tout ce qui précède devient un compte à rebours plutôt qu’une estimation.",
-      "Éclatez les lignes d’identification des aspects en une ligne par site, par procédé ou par activité — une ligne unique masque l’effort réel.",
+      "Éclatez les lignes d’identification des aspects en une ligne par site, par procédé ou par activité, une ligne unique masque l’effort réel.",
       "Laissez au moins six semaines entre l’étape 1 et l’étape 2 pour que les écarts relevés à l’étape 1 puissent réellement être soldés.",
       "Allongez la phase de fonctionnement si certaines de vos obligations s’évaluent annuellement : il vous faut au moins un cycle de preuves.",
       "Ajoutez des lignes pour les renouvellements d’autorisation et les inspections de l’inspection des installations classées qui tombent dans la fenêtre, puisqu’elles mobilisent les mêmes personnes.",
-      "Si vous visez aussi l’enregistrement EMAS, ajoutez les lignes propres au règlement européen — déclaration environnementale validée par un vérificateur et enregistrement auprès de l’autorité compétente — sans les fondre dans les barres ISO 14001 : ce sont deux dispositifs distincts.",
+      "Si vous visez aussi l’enregistrement EMAS, ajoutez les lignes propres au règlement européen, déclaration environnementale validée par un vérificateur et enregistrement auprès de l’autorité compétente, sans les fondre dans les barres ISO 14001 : ce sont deux dispositifs distincts.",
       "Ajoutez l’audit de surveillance de la première année pour que le SME reste doté de moyens une fois le certificat obtenu."
     ],
     tips: [
       "<strong>Construisez les registres avant les objectifs.</strong> Des objectifs rédigés d’abord visent presque toujours des aspects non significatifs, et l’auditeur vous demandera comment vous avez décidé.",
       "<strong>Couvrez les conditions dégradées et d’urgence.</strong> Démarrage, arrêt, déversement accidentel et incendie sont les scénarios où la plupart des analyses environnementales sont visiblement incomplètes.",
-      "<strong>Menez une véritable évaluation de conformité.</strong> La norme attend une évaluation périodique au regard de votre registre d’obligations, avec des enregistrements — pas une déclaration affirmant que vous êtes conforme.",
+      "<strong>Menez une véritable évaluation de conformité.</strong> La norme attend une évaluation périodique au regard de votre registre d’obligations, avec des enregistrements, pas une déclaration affirmant que vous êtes conforme.",
       "<strong>Faites l’exercice d’urgence avant l’étape 2.</strong> C’est l’une des rares preuves que vous pouvez programmer au lieu d’attendre.",
       "<strong>Tenez la veille réglementaire à jour et datée.</strong> Une veille dont la dernière mise à jour remonte à dix-huit mois est un écart en soi, indépendamment de votre conformité réelle.",
       "<strong>Gardez ISO 14001, ISO 9001 et ISO 27001 distinctes.</strong> Elles partagent la même structure de haut niveau et peuvent être auditées ensemble, mais ce sont trois certifications accréditées séparées, aux contenus différents : environnement, qualité et sécurité de l’information respectivement."
@@ -5856,7 +5856,7 @@ const T = {
       ],
       [
         "Qu’est-ce que l’analyse environnementale ?",
-        "Un inventaire structuré des façons dont vos activités, produits et services interagissent avec l’environnement — émissions, rejets, déchets, consommation de ressources, usage des sols — et des impacts qui en résultent, cotés en significativité dans des conditions normales, dégradées et d’urgence. C’est l’entrée de presque tout le reste du SME, et c’est pourquoi le modèle la place avant les objectifs."
+        "Un inventaire structuré des façons dont vos activités, produits et services interagissent avec l’environnement, émissions, rejets, déchets, consommation de ressources, usage des sols, et des impacts qui en résultent, cotés en significativité dans des conditions normales, dégradées et d’urgence. C’est l’entrée de presque tout le reste du SME, et c’est pourquoi le modèle la place avant les objectifs."
       ],
       [
         "En quoi ISO 14001 diffère-t-elle d’ISO 9001 ?",
@@ -5872,7 +5872,7 @@ const T = {
       ],
       [
         "Que se passe-t-il entre l’étape 1 et l’étape 2 ?",
-        "L’étape 1 est une revue documentaire et de maturité, et elle relève presque toujours des constats — le plus souvent une analyse environnementale incomplète ou une évaluation de conformité qui n’a pas été faite. L’étape 2 est l’audit complet du fonctionnement du SME. Le modèle laisse une fenêtre d’actions correctives entre les deux, parce que l’étape 2 ne sera pas concluante tant que les constats de l’étape 1 ne sont pas soldés."
+        "L’étape 1 est une revue documentaire et de maturité, et elle relève presque toujours des constats, le plus souvent une analyse environnementale incomplète ou une évaluation de conformité qui n’a pas été faite. L’étape 2 est l’audit complet du fonctionnement du SME. Le modèle laisse une fenêtre d’actions correctives entre les deux, parce que l’étape 2 ne sera pas concluante tant que les constats de l’étape 1 ne sont pas soldés."
       ],
       [
         "Le modèle ISO 14001 est-il gratuit ?",
@@ -5885,20 +5885,20 @@ const T = {
     h1: "Plan de rappel de produit",
     metaTitle: "Plan de rappel de produit",
     metaDesc: "Plan gratuit de rappel de produit : heure zéro, évaluation du risque, signalement à la DGCCRF, RappelConso, récupération, efficacité et clôture.",
-    lead: "Un <strong>plan de rappel de produit</strong> gratuit, posé sur la seule horloge qui compte : celle qui démarre à l’instant où vous détenez une information laissant penser qu’un produit est dangereux ou non conforme. Les plannings de rappel sont particuliers parce qu’une grande partie de la séquence relève de la loi et non de votre choix — délais de signalement, obligations de traçabilité et comptes rendus d’efficacité sont fixés par la réglementation, et être en retard est une exposition juridique et non un simple décalage. Les barres sont exprimées en jours depuis l’heure zéro, pour que l’on voie ce qui doit se produire dans la première semaine.",
+    lead: "Un <strong>plan de rappel de produit</strong> gratuit, posé sur la seule horloge qui compte : celle qui démarre à l’instant où vous détenez une information laissant penser qu’un produit est dangereux ou non conforme. Les plannings de rappel sont particuliers parce qu’une grande partie de la séquence relève de la loi et non de votre choix, délais de signalement, obligations de traçabilité et comptes rendus d’efficacité sont fixés par la réglementation, et être en retard est une exposition juridique et non un simple décalage. Les barres sont exprimées en jours depuis l’heure zéro, pour que l’on voie ce qui doit se produire dans la première semaine.",
     intro: "Les premières lignes se comptent en heures, pas en semaines. Tout ce qui suit la décision de signalement dépend de la rapidité avec laquelle les trois premières sont exécutées :",
     phases: [
       [
-        "Heure zéro — détecter, contenir, réunir",
+        "Heure zéro, détecter, contenir, réunir",
         "Le signal arrive, la cellule de crise se réunit, les expéditions sont bloquées, et les lots et numéros de série concernés sont tracés. C’est la phase qui se mesure en heures. <em>Jalon : cellule réunie et expéditions bloquées.</em>"
       ],
       [
         "Évaluation du risque et décision de rappel",
-        "Caractérisation du danger, évaluation de l’exposition et de la gravité, classement, décision sur le niveau de rappel — consommateur, détaillant ou grossiste — et décision formelle de rappel ou de simple retrait. <em>Jalon : décision de rappel consignée.</em>"
+        "Caractérisation du danger, évaluation de l’exposition et de la gravité, classement, décision sur le niveau de rappel, consommateur, détaillant ou grossiste, et décision formelle de rappel ou de simple retrait. <em>Jalon : décision de rappel consignée.</em>"
       ],
       [
         "Signalement aux autorités",
-        "Détermination des autorités compétentes selon la catégorie de produit et les marchés concernés — la DGCCRF pour les produits de consommation, l’ANSM pour les médicaments et les dispositifs médicaux, la DGAL et les services vétérinaires départementaux pour les denrées d’origine animale — constitution du dossier de signalement, dépôt dans le délai applicable, publication sur RappelConso, notification au Safety Gate de l’Union européenne lorsque le produit circule dans plusieurs États membres, et accord avec l’autorité sur la communication au public. <em>Jalon : autorités notifiées.</em>"
+        "Détermination des autorités compétentes selon la catégorie de produit et les marchés concernés, la DGCCRF pour les produits de consommation, l’ANSM pour les médicaments et les dispositifs médicaux, la DGAL et les services vétérinaires départementaux pour les denrées d’origine animale, constitution du dossier de signalement, dépôt dans le délai applicable, publication sur RappelConso, notification au Safety Gate de l’Union européenne lorsque le produit circule dans plusieurs États membres, et accord avec l’autorité sur la communication au public. <em>Jalon : autorités notifiées.</em>"
       ],
       [
         "Information des clients et du public",
@@ -5906,7 +5906,7 @@ const T = {
       ],
       [
         "Récupération, quarantaine et destination",
-        "Logistique de retour, réception et rapprochement avec les quantités mises en distribution, quarantaine physiquement sécurisée, et décision de destination — reconditionnement, destruction ou remise sur le marché. <em>Jalon : rapprochement des quantités achevé.</em>"
+        "Logistique de retour, réception et rapprochement avec les quantités mises en distribution, quarantaine physiquement sécurisée, et décision de destination, reconditionnement, destruction ou remise sur le marché. <em>Jalon : rapprochement des quantités achevé.</em>"
       ],
       [
         "Contrôles d’efficacité, cause racine et clôture",
@@ -5915,10 +5915,10 @@ const T = {
     ],
     callout: "Les délais de signalement sont fixés par la réglementation et ils varient selon la catégorie de produit, la gravité du danger et le marché concerné : une denrée alimentaire, un dispositif médical et un produit de consommation courante ne relèvent ni des mêmes textes ni des mêmes autorités, et un produit vendu dans plusieurs pays peut être soumis à plusieurs régimes simultanément. Ne planifiez pas contre un chiffre unique et universel. Tenez à jour la liste des autorités compétentes pour chaque marché et chaque catégorie que vous commercialisez, avec le fait générateur et le délai correspondants, et faites-la valider par votre conseil juridique avant l’incident plutôt que pendant. Les durées portées ci-dessous sont des marqueurs courts à remplacer par vos obligations vérifiées.",
     customize: [
-      "Remplacez les durées de signalement par les délais réellement applicables à votre catégorie de produit sur chaque marché — vérifiés avec votre conseil, pas supposés.",
+      "Remplacez les durées de signalement par les délais réellement applicables à votre catégorie de produit sur chaque marché, vérifiés avec votre conseil, pas supposés.",
       "Ajoutez une ligne de signalement par autorité et par pays si vous exportez : elles courent en parallèle et leurs exigences de contenu diffèrent.",
       "Ajoutez une ligne dédiée à la publication sur RappelConso et une autre à la notification au Safety Gate européen : ce sont deux démarches distinctes, avec des destinataires et des contenus différents.",
-      "Fixez explicitement la ligne de niveau de rappel — consommateur, détaillant ou grossiste : elle change entièrement la phase de récupération.",
+      "Fixez explicitement la ligne de niveau de rappel, consommateur, détaillant ou grossiste : elle change entièrement la phase de récupération.",
       "Distinguez le retrait du rappel. Retirer un produit de la vente et demander aux consommateurs de rapporter ce qu’ils détiennent déjà sont deux opérations aux logistiques et aux communications différentes.",
       "Étendez les contrôles d’efficacité aux intervalles attendus par l’autorité, et maintenez-les jusqu’à ce que le taux de retour se stabilise.",
       "Ajoutez des lignes pour la déclaration à l’assureur et, si le danger a causé des dommages corporels, pour la conservation des preuves en vue d’un contentieux.",
@@ -5934,7 +5934,7 @@ const T = {
     faq: [
       [
         "Sous quel délai faut-il signaler un rappel de produit aux autorités ?",
-        "Cela dépend du pays, de la catégorie de produit et de la gravité du danger — denrées alimentaires, dispositifs médicaux, véhicules, cosmétiques et produits de consommation courante relèvent de textes différents, et les faits générateurs de l’obligation diffèrent également. Il n’existe pas de délai universel unique, et un produit vendu dans plusieurs pays peut être soumis à plusieurs à la fois. Faites établir à l’avance par votre conseil juridique les obligations qui vous sont applicables et consignez-les dans le plan, plutôt que de vous fier à un chiffre lu quelque part."
+        "Cela dépend du pays, de la catégorie de produit et de la gravité du danger, denrées alimentaires, dispositifs médicaux, véhicules, cosmétiques et produits de consommation courante relèvent de textes différents, et les faits générateurs de l’obligation diffèrent également. Il n’existe pas de délai universel unique, et un produit vendu dans plusieurs pays peut être soumis à plusieurs à la fois. Faites établir à l’avance par votre conseil juridique les obligations qui vous sont applicables et consignez-les dans le plan, plutôt que de vous fier à un chiffre lu quelque part."
       ],
       [
         "À qui signale-t-on un rappel en France ?",
@@ -5942,7 +5942,7 @@ const T = {
       ],
       [
         "Qu’est-ce qu’un contrôle d’efficacité ?",
-        "Une vérification structurée du fait que les personnes qui devaient recevoir l’avis de rappel l’ont effectivement reçu et en ont tenu compte — contact d’un échantillon de distributeurs et d’enseignes, confirmation du retrait des rayons, et mesure de la part du produit distribué qui a été retournée ou justifiée. Les autorités les attendent généralement à intervalles définis, et le modèle en programme plusieurs plutôt qu’un seul."
+        "Une vérification structurée du fait que les personnes qui devaient recevoir l’avis de rappel l’ont effectivement reçu et en ont tenu compte, contact d’un échantillon de distributeurs et d’enseignes, confirmation du retrait des rayons, et mesure de la part du produit distribué qui a été retournée ou justifiée. Les autorités les attendent généralement à intervalles définis, et le modèle en programme plusieurs plutôt qu’un seul."
       ],
       [
         "Que signifie le niveau de rappel ?",
@@ -5967,7 +5967,7 @@ const T = {
     h1: "Feuille de route de transformation numérique",
     metaTitle: "Feuille de route de transformation numérique",
     metaDesc: "Feuille de route gratuite de transformation numérique : vagues pluriannuelles, socles données et identité, bénéfices mesurés et gouvernance durable.",
-    lead: "Une <strong>feuille de route de transformation numérique</strong> gratuite, construite comme une suite de vagues plutôt que comme un programme avec une date de fin. L’idée directrice est celle de capacité dépendante : les socles de données, d’identité et d’intégration doivent atterrir avant le travail visible, les bénéfices se mesurent après chaque vague au lieu d’être remis à une revue d’investissement en troisième année, et le rythme de gouvernance est conçu pour survivre au départ du sponsor — ce qui, sur trois ans, arrivera probablement.",
+    lead: "Une <strong>feuille de route de transformation numérique</strong> gratuite, construite comme une suite de vagues plutôt que comme un programme avec une date de fin. L’idée directrice est celle de capacité dépendante : les socles de données, d’identité et d’intégration doivent atterrir avant le travail visible, les bénéfices se mesurent après chaque vague au lieu d’être remis à une revue d’investissement en troisième année, et le rythme de gouvernance est conçu pour survivre au départ du sponsor, ce qui, sur trois ans, arrivera probablement.",
     intro: "Chaque vague livre quelque chose d’utilisable et chacune est suivie d’une revue de bénéfices qui peut modifier le contenu de la suivante. Cette boucle de rétroaction est tout l’intérêt de la démarche :",
     phases: [
       [
@@ -5975,19 +5975,19 @@ const T = {
         "Évaluation de l’existant, mesure de la maturité numérique, cible d’organisation, dossier de valeur, et mise en place du rythme de gouvernance et du bureau de portefeuille qui survivront aux personnes. <em>Jalon : feuille de route et gouvernance approuvées.</em>"
       ],
       [
-        "Vague 1 — les socles",
-        "La vague ingrate dont tout le reste dépend : identité et gestion des accès, couche d’intégration, plateforme de données et sa gouvernance — registre des traitements et conformité au RGPD compris — zone d’atterrissage cloud et socle de sécurité. Rien de visible pour le client ne sort ici. <em>Jalon : socles en service.</em>"
+        "Vague 1, les socles",
+        "La vague ingrate dont tout le reste dépend : identité et gestion des accès, couche d’intégration, plateforme de données et sa gouvernance, registre des traitements et conformité au RGPD compris, zone d’atterrissage cloud et socle de sécurité. Rien de visible pour le client ne sort ici. <em>Jalon : socles en service.</em>"
       ],
       [
-        "Vague 2 — numérisation des processus cœur",
+        "Vague 2, numérisation des processus cœur",
         "Automatisation des processus finance, achats et ressources humaines, gestion des flux et des documents, facturation électronique, et retrait des processus manuels et tableurs qu’ils remplacent. <em>Jalon : processus cœur migrés.</em>"
       ],
       [
-        "Vague 3 — capacités orientées client",
-        "Portail client, libre-service, expérience mobile, données client unifiées et refonte des parcours — livrables uniquement parce que la vague 1 a construit l’identité et l’intégration en dessous. <em>Jalon : capacités client lancées.</em>"
+        "Vague 3, capacités orientées client",
+        "Portail client, libre-service, expérience mobile, données client unifiées et refonte des parcours, livrables uniquement parce que la vague 1 a construit l’identité et l’intégration en dessous. <em>Jalon : capacités client lancées.</em>"
       ],
       [
-        "Vague 4 — analytique et automatisation intelligente",
+        "Vague 4, analytique et automatisation intelligente",
         "Analytique en libre-service, modèles prédictifs et automatisation des décisions à fort volume, avec la gouvernance des modèles nécessaire pour les exploiter de façon responsable. <em>Jalon : capacités analytiques adoptées.</em>"
       ],
       [
@@ -6023,7 +6023,7 @@ const T = {
       ],
       [
         "Qu’est-ce que la réalisation des bénéfices, et pourquoi après chaque vague ?",
-        "C’est la mesure de la valeur réellement obtenue — coût, délai de traitement, adoption, chiffre d’affaires. La faire après chaque vague plutôt qu’à la fin garantit que la mesure a lieu pendant que les personnes qui ont fait la promesse sont encore en poste, et que le résultat peut modifier le contenu de la vague suivante. Les revues de bénéfices repoussées deviennent immanquablement infalsifiables."
+        "C’est la mesure de la valeur réellement obtenue, coût, délai de traitement, adoption, chiffre d’affaires. La faire après chaque vague plutôt qu’à la fin garantit que la mesure a lieu pendant que les personnes qui ont fait la promesse sont encore en poste, et que le résultat peut modifier le contenu de la vague suivante. Les revues de bénéfices repoussées deviennent immanquablement infalsifiables."
       ],
       [
         "Comment faire tenir la gouvernance à travers les changements de direction ?",
@@ -6044,7 +6044,7 @@ const T = {
     h1: "Planning de plan de tests",
     metaTitle: "Planning de plan de tests logiciels",
     metaDesc: "Planning gratuit de plan de tests : critères d’entrée et de sortie, environnement et jeux de données, phases superposées, anomalies, non-régression.",
-    lead: "Un <strong>planning de plan de tests</strong> gratuit dont la colonne vertébrale est faite de critères d’entrée et de sortie, et non d’une file d’attente de phases. Deux choses conditionnent tout le reste : un environnement de test stable et des jeux de données provisionnés. Ensuite, les phases se superposent — les tests d’intégration démarrent alors que les tests unitaires s’achèvent, la recette utilisateur commence sur les modules déjà prêts — et le calendrier est consommé bien moins par l’exécution des tests que par la boucle de tri, de correction et de nouvelle exécution qui court en dessous de tout.",
+    lead: "Un <strong>planning de plan de tests</strong> gratuit dont la colonne vertébrale est faite de critères d’entrée et de sortie, et non d’une file d’attente de phases. Deux choses conditionnent tout le reste : un environnement de test stable et des jeux de données provisionnés. Ensuite, les phases se superposent, les tests d’intégration démarrent alors que les tests unitaires s’achèvent, la recette utilisateur commence sur les modules déjà prêts, et le calendrier est consommé bien moins par l’exécution des tests que par la boucle de tri, de correction et de nouvelle exécution qui court en dessous de tout.",
     intro: "Remarquez que les barres d’exécution se chevauchent et que la boucle d’anomalies court sur toute leur longueur. C’est à cela que ressemble un vrai planning de tests :",
     phases: [
       [
@@ -6053,28 +6053,28 @@ const T = {
       ],
       [
         "Disponibilité de l’environnement et des données",
-        "Le vrai point de passage. Construction de l’environnement, paramétrage et bouchons d’intégration, provisionnement et anonymisation des jeux de données — une exigence du RGPD dès qu’il s’agit d’un extrait de production — comptes et habilitations, et un test de fumée qui prouve l’environnement avant que quiconque y teste. <em>Jalon : critères d’entrée de l’environnement satisfaits.</em>"
+        "Le vrai point de passage. Construction de l’environnement, paramétrage et bouchons d’intégration, provisionnement et anonymisation des jeux de données, une exigence du RGPD dès qu’il s’agit d’un extrait de production, comptes et habilitations, et un test de fumée qui prouve l’environnement avant que quiconque y teste. <em>Jalon : critères d’entrée de l’environnement satisfaits.</em>"
       ],
       [
         "Conception des tests et automatisation",
         "Conception des conditions et des cas de test, traçabilité vers les exigences, cadre d’automatisation, constitution de la campagne de non-régression et scripts de tests de performance. <em>Jalon : cas de test prêts à l’exécution.</em>"
       ],
       [
-        "Exécution — unitaire, intégration, système",
+        "Exécution, unitaire, intégration, système",
         "Des vagues d’exécution qui se chevauchent plutôt qu’une file d’attente : tests unitaires et de composants, tests d’intégration et d’interfaces, puis tests système et tests de sécurité. <em>Jalon : critères de sortie des tests système satisfaits.</em>"
       ],
       [
         "Boucle de tri, correction et nouvelle exécution",
-        "La boucle qui consomme réellement le calendrier — comité de tri quotidien, affectation de gravité, cycles de correction, nouvelle exécution et impact sur la non-régression, et les décisions d’anomalies reportées. <em>Jalon : seuils d’anomalies atteints.</em>"
+        "La boucle qui consomme réellement le calendrier, comité de tri quotidien, affectation de gravité, cycles de correction, nouvelle exécution et impact sur la non-régression, et les décisions d’anomalies reportées. <em>Jalon : seuils d’anomalies atteints.</em>"
       ],
       [
         "Recette, non-régression et décision de mise en production",
         "Recette utilisateur par les métiers, non-régression complète, tirs de performance et de charge, revue de préparation à la mise en production et prononcé de la recette. <em>Jalon : mise en production prononcée.</em>"
       ]
     ],
-    callout: "L’échec de planning le plus fréquent en test consiste à traiter l’environnement et les jeux de données comme une tâche plutôt que comme un point de passage. Si l’environnement est instable ou si les données ne couvrent pas les scénarios, les testeurs consomment quand même leurs journées mais produisent des anomalies portant sur l’environnement et non sur le produit — et ces heures sont irrécupérables. Écrivez les critères d’entrée de l’environnement, déroulez un test de fumée contre eux, et refusez de démarrer l’exécution tant qu’ils ne passent pas. Le second échec consiste à planifier la boucle d’anomalies comme de la marge. La correction et la nouvelle exécution ne sont pas des frais généraux autour du test : sur la plupart des projets, c’est la plus longue barre du planning, et elle doit être dessinée comme telle.",
+    callout: "L’échec de planning le plus fréquent en test consiste à traiter l’environnement et les jeux de données comme une tâche plutôt que comme un point de passage. Si l’environnement est instable ou si les données ne couvrent pas les scénarios, les testeurs consomment quand même leurs journées mais produisent des anomalies portant sur l’environnement et non sur le produit, et ces heures sont irrécupérables. Écrivez les critères d’entrée de l’environnement, déroulez un test de fumée contre eux, et refusez de démarrer l’exécution tant qu’ils ne passent pas. Le second échec consiste à planifier la boucle d’anomalies comme de la marge. La correction et la nouvelle exécution ne sont pas des frais généraux autour du test : sur la plupart des projets, c’est la plus longue barre du planning, et elle doit être dessinée comme telle.",
     customize: [
-      "Inscrivez de vrais critères d’entrée et de sortie dans les notes de chaque ligne de phase — taux de réussite, nombre d’anomalies ouvertes par gravité, couverture — pour que les points de passage soient vérifiables et non rhétoriques.",
+      "Inscrivez de vrais critères d’entrée et de sortie dans les notes de chaque ligne de phase, taux de réussite, nombre d’anomalies ouvertes par gravité, couverture, pour que les points de passage soient vérifiables et non rhétoriques.",
       "Superposez les vagues d’exécution selon votre cadence de livraison ; les mettre bout à bout surestime presque toujours la durée totale et sous-estime le risque.",
       "Dimensionnez la boucle d’anomalies à partir de vos taux historiques de découverte et de correction, et non d’un pourcentage de la charge de test.",
       "Ajoutez une ligne par interface ou par système intégré si les tests d’intégration dépendent de partenaires qui maîtrisent leurs propres environnements.",
@@ -6092,7 +6092,7 @@ const T = {
     faq: [
       [
         "Que sont les critères d’entrée et de sortie d’un plan de tests ?",
-        "Les critères d’entrée sont les conditions à réunir avant qu’une phase puisse commencer — environnement stable, version déployée, jeux de données chargés, test de fumée concluant. Les critères de sortie sont les conditions à réunir avant de la déclarer terminée — couverture d’exécution, taux de réussite, anomalies ouvertes par gravité. Les uns comme les autres doivent être chiffrés, arrêtés avant le début de l’exécution, et réellement opposés."
+        "Les critères d’entrée sont les conditions à réunir avant qu’une phase puisse commencer, environnement stable, version déployée, jeux de données chargés, test de fumée concluant. Les critères de sortie sont les conditions à réunir avant de la déclarer terminée, couverture d’exécution, taux de réussite, anomalies ouvertes par gravité. Les uns comme les autres doivent être chiffrés, arrêtés avant le début de l’exécution, et réellement opposés."
       ],
       [
         "Pourquoi les phases de test se chevauchent-elles au lieu de s’enchaîner ?",
@@ -6108,7 +6108,7 @@ const T = {
       ],
       [
         "Quand la recette utilisateur doit-elle commencer ?",
-        "Une fois les critères de sortie des tests système satisfaits sur le périmètre que la recette couvrira — et non une fois tous les tests système terminés partout. La recette est une validation métier : elle exige une version stable et des données réalistes, et la dérouler sur une version qui reçoit encore des corrections gaspille les utilisateurs métier, qui sont la ressource la plus rare du plan."
+        "Une fois les critères de sortie des tests système satisfaits sur le périmètre que la recette couvrira, et non une fois tous les tests système terminés partout. La recette est une validation métier : elle exige une version stable et des données réalistes, et la dérouler sur une version qui reçoit encore des corrections gaspille les utilisateurs métier, qui sont la ressource la plus rare du plan."
       ],
       [
         "Le modèle de plan de tests est-il gratuit ?",
@@ -6149,7 +6149,7 @@ const T = {
         "Capabilité procédé et MSP par poste, réduction du rebut de l’électrode à l’assemblage, envoi des échantillons A, essais d’abus et certification transport, qualification des échantillons B et PPAP, puis montée à la capacité nominale. <em>Jalons : rendement cible atteint, démarrage de la production.</em>"
       ]
     ],
-    callout: "La salle sèche est le planning. La manipulation des électrodes et l’assemblage des cellules exigent des points de rosée de l’ordre de moins quarante degrés, ce qui oblige le bâtiment à devenir une enceinte étanche et déshydratée avant qu’un seul équipement ne soit posé — et l’enveloppe, le pare-vapeur, les sas et la centrale de déshumidification sont tous sur ce chemin. Viennent ensuite deux choses que personne ne comprime : la formation et la maturation consomment de vraies journées par cellule, quel que soit l’effectif embauché, et le rendement après la première cellule progresse selon une courbe plutôt qu’il ne saute à une valeur. L’achèvement du bâtiment ne conditionne pas la production vendable : la qualification des équipements et cette courbe s’en chargent.",
+    callout: "La salle sèche est le planning. La manipulation des électrodes et l’assemblage des cellules exigent des points de rosée de l’ordre de moins quarante degrés, ce qui oblige le bâtiment à devenir une enceinte étanche et déshydratée avant qu’un seul équipement ne soit posé, et l’enveloppe, le pare-vapeur, les sas et la centrale de déshumidification sont tous sur ce chemin. Viennent ensuite deux choses que personne ne comprime : la formation et la maturation consomment de vraies journées par cellule, quel que soit l’effectif embauché, et le rendement après la première cellule progresse selon une courbe plutôt qu’il ne saute à une valeur. L’achèvement du bâtiment ne conditionne pas la production vendable : la qualification des équipements et cette courbe s’en chargent.",
     customize: [
       "Gelez tôt le format de cellule et la chimie, et posez-le comme jalon. Largeur d’enduction, effort de calandrage, dimensions du boîtier, implantation des racks de formation et dimensionnement des utilités en découlent : un changement tardif est une reconception, pas un ajustement.",
       "Donnez à la descente en point de rosée et à l’essai de maintien leurs propres barres, après l’installation de la centrale de déshumidification. Une centrale qui tourne n’est pas une enceinte qui tient, et la recherche de fuites est l’endroit où les défauts tardifs d’enveloppe apparaissent.",
@@ -6160,7 +6160,7 @@ const T = {
     ],
     tips: [
       "<strong>Construisez la salle sèche avant d’en avoir besoin.</strong> L’étanchéité de l’enveloppe, les sas et la descente en point de rosée sont séquentiels et lents, et chaque journée de cette chaîne se place directement devant la première cellule.",
-      "<strong>Achetez de la capacité de formation et de maturation, pas du planning.</strong> Si la maturation dure trois semaines par lot, le seul moyen de raccourcir la montée en cadence est d’ajouter des racks et des mètres carrés — aucun reséquencement ne change la chimie.",
+      "<strong>Achetez de la capacité de formation et de maturation, pas du planning.</strong> Si la maturation dure trois semaines par lot, le seul moyen de raccourcir la montée en cadence est d’ajouter des racks et des mètres carrés, aucun reséquencement ne change la chimie.",
       "<strong>Traitez la récupération de solvant et le traitement des rejets comme du chemin critique.</strong> Ces postes n’ont rien de spectaculaire, ils passent systématiquement au second plan, et aucune ligne d’enduction ne peut produire sans eux.",
       "<strong>Suivez le taux de rebut par poste dès les premiers essais.</strong> Un seul poste amont qui dérive jette de la matière déjà valorisée, et c’est la raison la plus fréquente pour laquelle une montée en cadence s’enlise.",
       "<strong>Lancez la qualification client avant de vous croire prêt.</strong> Essais d’abus, certification transport et PPAP demandent des mois de calendrier et peuvent se dérouler sur les premières cellules pendant que le rendement progresse encore.",
@@ -6226,10 +6226,10 @@ const T = {
         "Contrôle radiologique final des structures, démolition conventionnelle des bâtiments assainis, diagnostic et dépollution des sols, dossier d’état final, puis la décision de déclassement de l’INB. <em>Jalon : installation déclassée.</em>"
       ]
     ],
-    callout: "C’est la capacité d’évacuation, et non l’effectif, qui donne le rythme. Chaque mètre cube découpé doit partir quelque part qui l’accepte, et les critères d’acceptation du centre de l’Andra dictent la façon dont le déchet est caractérisé, conditionné, mesuré et documenté avant de pouvoir bouger. Le CSA de Soulaines prend les déchets de faible et moyenne activité à vie courte, le Cires ceux de très faible activité — mais pour le graphite et plus largement les déchets de faible activité à vie longue, la filière n’est pas ouverte, et c’est une contrainte de planning au sens plein : ces colis partent en entreposage intermédiaire et la charge reste au bilan. Superposez la contrainte de dose, qui limite le temps passé en zone, et le fait que chaque phase physique demande sa propre autorisation. Dessinez la filière comme une barre datée, pas comme une hypothèse.",
+    callout: "C’est la capacité d’évacuation, et non l’effectif, qui donne le rythme. Chaque mètre cube découpé doit partir quelque part qui l’accepte, et les critères d’acceptation du centre de l’Andra dictent la façon dont le déchet est caractérisé, conditionné, mesuré et documenté avant de pouvoir bouger. Le CSA de Soulaines prend les déchets de faible et moyenne activité à vie courte, le Cires ceux de très faible activité, mais pour le graphite et plus largement les déchets de faible activité à vie longue, la filière n’est pas ouverte, et c’est une contrainte de planning au sens plein : ces colis partent en entreposage intermédiaire et la charge reste au bilan. Superposez la contrainte de dose, qui limite le temps passé en zone, et le fait que chaque phase physique demande sa propre autorisation. Dessinez la filière comme une barre datée, pas comme une hypothèse.",
     customize: [
       "Placez les barres de critères d’acceptation et de réservation d’expédition avant de séquencer le moindre démantèlement. Si elles se terminent après le début de vos découpes, le planning est faux, quelle que soit la qualité du plan de démantèlement.",
-      "Donnez à la caractérisation une barre large et précoce. Toutes les estimations en aval — volumes, colis, dose, coût — en dérivent, et une caractérisation légère est le meilleur prédicteur d’un dérapage de démantèlement.",
+      "Donnez à la caractérisation une barre large et précoce. Toutes les estimations en aval, volumes, colis, dose, coût, en dérivent, et une caractérisation légère est le meilleur prédicteur d’un dérapage de démantèlement.",
       "Modélisez la dose comme une contrainte de durée, et non comme une note de sécurité. Si une zone n’autorise qu’une dose collective donnée par campagne, le travail dure ce qu’il dure et ajouter des personnes n’y change rien.",
       "Placez un jalon d’autorisation devant chaque phase physique. Le démantèlement est autorisé par étapes, et traiter le consentement comme un évènement unique en début de programme fausse la représentation des vrais points de passage.",
       "Séparez l’entreposage intermédiaire du stockage définitif. Un colis qui entre dans un entreposage sur site n’est pas un colis qui quitte le site, et un seul des deux réduit réellement la charge future.",
@@ -6238,7 +6238,7 @@ const T = {
     tips: [
       "<strong>Caractérisez avant de planifier, pas pendant le démantèlement.</strong> Un planning bâti sur un inventaire supposé sera recalé dès le premier contrôle qui revient plus haut qu’attendu.",
       "<strong>Réservez la capacité d’évacuation comme un approvisionnement à long délai.</strong> Les centres ont des volumes annuels finis et leurs propres files d’attente : un créneau d’expédition réservé est un actif, un créneau absent est un risque d’arrêt de chantier.",
-      "<strong>Découpez pour le colis.</strong> La réduction de volume doit être dictée par ce que le colis et les critères d’acceptation autorisent, non par ce qui est commode au poste de découpe — recouper de l’acier activé coûte cher et coûte de la dose.",
+      "<strong>Découpez pour le colis.</strong> La réduction de volume doit être dictée par ce que le colis et les critères d’acceptation autorisent, non par ce qui est commode au poste de découpe, recouper de l’acier activé coûte cher et coûte de la dose.",
       "<strong>Suivez la dose collective chaque semaine par rapport à l’allocation.</strong> Une dosimétrie qui court devant le plan est un signal précoce que la méthode est mauvaise, et il apparaît bien avant le glissement du planning.",
       "<strong>Ne minimisez ni l’amiante ni les risques conventionnels.</strong> Sur beaucoup d’installations anciennes, ils pèsent plus lourd que le radiologique dans le programme initial et bloquent l’accès à tout ce qui se trouve derrière.",
       "<strong>Constituez le dossier de fin d’état au fil de l’eau.</strong> Le déclassement repose sur la preuve que l’état final est atteint, et reconstituer les contrôles et les bordereaux d’expédition à la fin est plus lent que de les tenir à jour."
@@ -6250,7 +6250,7 @@ const T = {
       ],
       [
         "Pourquoi les filières de déchets commandent-elles le planning ?",
-        "Parce que la matière déposée doit être caractérisée, conditionnée puis expédiée vers un centre qui l’accepte. Le CSA de Soulaines et le Cires ont chacun leurs critères d’acceptation et leurs capacités ; si la filière n’est pas ouverte — le cas du graphite et des déchets de faible activité à vie longue — la matière reste sur site, l’entreposage se remplit et la découpe s’arrête."
+        "Parce que la matière déposée doit être caractérisée, conditionnée puis expédiée vers un centre qui l’accepte. Le CSA de Soulaines et le Cires ont chacun leurs critères d’acceptation et leurs capacités ; si la filière n’est pas ouverte, le cas du graphite et des déchets de faible activité à vie longue, la matière reste sur site, l’entreposage se remplit et la découpe s’arrête."
       ],
       [
         "Comment la contrainte de dose agit-elle sur le plan ?",
@@ -6303,7 +6303,7 @@ const T = {
         "Logistique et calendrier des entretiens, préparation des personnes qui seront reçues, échanges préalables avec le président du comité et demandes de documents, visite du comité d’experts, rapport d’évaluation, observations de l’établissement en phase contradictoire, puis l’accréditation délivrée par le ministère. <em>Jalon : accréditation renouvelée.</em>"
       ]
     ],
-    callout: "Vous ne maîtrisez pas les deux dates qui comptent. Le Hcéres évalue par vagues : votre académie est rattachée à une vague, la vague fixe la période de visite du comité d’experts et la date de dépôt du rapport d’autoévaluation, et l’accréditation qui en découle est délivrée par le ministère pour la durée du contrat quinquennal. Manquer la fenêtre ne décale pas le dossier de quelques semaines : il attend la vague suivante, avec l’autoévaluation, les preuves et la bonne volonté qu’il emporte. Toutes les autres barres du diagramme se déduisent de là — date limite de validation par les conseils, d’édition finale, de répétition générale, du cycle de suivi qui doit avoir tourné au moins une fois. Posez d’abord la date de visite, et laissez le reste remonter.",
+    callout: "Vous ne maîtrisez pas les deux dates qui comptent. Le Hcéres évalue par vagues : votre académie est rattachée à une vague, la vague fixe la période de visite du comité d’experts et la date de dépôt du rapport d’autoévaluation, et l’accréditation qui en découle est délivrée par le ministère pour la durée du contrat quinquennal. Manquer la fenêtre ne décale pas le dossier de quelques semaines : il attend la vague suivante, avec l’autoévaluation, les preuves et la bonne volonté qu’il emporte. Toutes les autres barres du diagramme se déduisent de là, date limite de validation par les conseils, d’édition finale, de répétition générale, du cycle de suivi qui doit avoir tourné au moins une fois. Posez d’abord la date de visite, et laissez le reste remonter.",
     customize: [
       "Saisissez d’abord la période de visite et la date de dépôt comme repères fixes, puis tirez toutes les autres barres vers l’arrière jusqu’à ce que la chaîne tienne. Si elle ne tient pas, la réponse est plus de moyens plus tôt, jamais une phase de rédaction plus courte.",
       "Ajoutez une barre par champ de formations ou par domaine du référentiel. Les groupes n’avancent pas au même rythme, et une barre moyennée masque les deux qui sont bloqués.",
@@ -6314,7 +6314,7 @@ const T = {
     ],
     tips: [
       "<strong>Confirmez la vague, pas seulement la visite.</strong> La visite est visible ; c’est le calendrier de vague et la date de dépôt qui déterminent réellement combien de temps il reste, et de combien de temps vous disposerez pour la phase contradictoire.",
-      "<strong>Constituez l’espace de preuve une seule fois, au début.</strong> Aller chercher deux fois les mêmes documents — d’abord pour les groupes de travail, ensuite pour les annexes — est le plus gros coût évitable du cycle.",
+      "<strong>Constituez l’espace de preuve une seule fois, au début.</strong> Aller chercher deux fois les mêmes documents, d’abord pour les groupes de travail, ensuite pour les annexes, est le plus gros coût évitable du cycle.",
       "<strong>Comblez les écarts assez tôt pour montrer une pratique.</strong> Une modalité adoptée le mois précédant la visite montre une prise de conscience ; adoptée un an avant, elle montre un fonctionnement, et un comité d’experts fait parfaitement la différence.",
       "<strong>Préparez les entretiens avec les personnes qui seront réellement dans la salle.</strong> Le comité rencontre des responsables de mention, des vacataires, des étudiants et des personnels administratifs, pas seulement le comité de pilotage, et c’est là que naissent les remarques.",
       "<strong>Gardez une seule voix dans le rapport.</strong> Douze groupes de travail produisent douze styles : budgétez un vrai temps éditorial, faute de quoi le document se lit comme un assemblage de contributions et non comme l’argumentation d’un établissement.",
@@ -6369,7 +6369,7 @@ const T = {
       ],
       [
         "Programme de traitements et de fertilisation",
-        "Désherbage de postlevée au tallage, fractionnement des apports d’azote, T1 à montaison, T2 à dernière feuille étalée et T3 à floraison — chacun accroché à un stade et non à une date de calendrier — avec les conditions réglementaires d’application, les ZNT à respecter le long des points d’eau et des habitations, les délais avant récolte, les délais de rentrée et la tenue du registre phytosanitaire. <em>Jalon : programme de traitements terminé.</em>"
+        "Désherbage de postlevée au tallage, fractionnement des apports d’azote, T1 à montaison, T2 à dernière feuille étalée et T3 à floraison, chacun accroché à un stade et non à une date de calendrier, avec les conditions réglementaires d’application, les ZNT à respecter le long des points d’eau et des habitations, les délais avant récolte, les délais de rentrée et la tenue du registre phytosanitaire. <em>Jalon : programme de traitements terminé.</em>"
       ],
       [
         "Moisson et logistique de chantier",
@@ -6380,7 +6380,7 @@ const T = {
         "Débit du séchoir et maîtrise de l’humidité, remplissage des cellules avec ventilation et suivi des températures, échantillonnage, classement et enregistrements pour la certification, livraisons sous contrat, déchaumage et semis des couverts, puis bilan de campagne. <em>Jalon : campagne clôturée.</em>"
       ]
     ],
-    callout: "Le calendrier ne vous appartient pas. La température et l’état du sol décident du démarrage des semis ; les stades de la culture décident du moment de chaque traitement, et un fongicide passé une semaine à côté du stade est de l’argent brûlé ; l’humidité du grain décide du départ de la moissonneuse. S’y ajoutent des obligations datées que rien ne déplace : la déclaration PAC au printemps, dont le retard coûte des pénalités ; les conditions d’application fixées par l’arrêté — vent, ZNT le long des points d’eau et des riverains, délais avant récolte et délais de rentrée — qui ferment des journées entières de pulvérisation ; le Certiphyto de ceux qui appliquent, et le registre à tenir au fil de l’eau. Derrière tout cela, une limite plus dure encore : le débit du séchoir et la capacité de stockage. Si vous séchez vingt tonnes à l’heure, vous ne couperez pas plus vite très longtemps, quel que soit le nombre de moissonneuses dans la parcelle.",
+    callout: "Le calendrier ne vous appartient pas. La température et l’état du sol décident du démarrage des semis ; les stades de la culture décident du moment de chaque traitement, et un fongicide passé une semaine à côté du stade est de l’argent brûlé ; l’humidité du grain décide du départ de la moissonneuse. S’y ajoutent des obligations datées que rien ne déplace : la déclaration PAC au printemps, dont le retard coûte des pénalités ; les conditions d’application fixées par l’arrêté, vent, ZNT le long des points d’eau et des riverains, délais avant récolte et délais de rentrée, qui ferment des journées entières de pulvérisation ; le Certiphyto de ceux qui appliquent, et le registre à tenir au fil de l’eau. Derrière tout cela, une limite plus dure encore : le débit du séchoir et la capacité de stockage. Si vous séchez vingt tonnes à l’heure, vous ne couperez pas plus vite très longtemps, quel que soit le nombre de moissonneuses dans la parcelle.",
     customize: [
       "Fixez le jalon d’ouverture de semis à partir de vos propres relevés de température de sol, et non de la date de semis de l’an dernier, et laissez les barres de semis suivre.",
       "Découpez les semis en terres précoces, bloc principal et terres tardives, dimensionnés à votre débit de chantier réel. C’est ce qui montre si le parc matériel finit dans la fenêtre ou s’il faut une entreprise.",
@@ -6400,7 +6400,7 @@ const T = {
     faq: [
       [
         "Comment construire un calendrier de semis et de moisson ?",
-        "Partez des fenêtres que vous ne maîtrisez pas — température du sol pour les semis, humidité du grain pour la moisson — puis calez le parc matériel autour. Entre ces deux points, la séquence agronomique est fixée par la culture et non par la préférence, et les obligations datées comme la déclaration PAC s’y ajoutent telles quelles."
+        "Partez des fenêtres que vous ne maîtrisez pas, température du sol pour les semis, humidité du grain pour la moisson, puis calez le parc matériel autour. Entre ces deux points, la séquence agronomique est fixée par la culture et non par la préférence, et les obligations datées comme la déclaration PAC s’y ajoutent telles quelles."
       ],
       [
         "Pourquoi les dates de traitement sont-elles liées aux stades ?",
@@ -6457,7 +6457,7 @@ const T = {
         "Passage de la commission de sécurité et autorisation d’ouverture délivrée par le maire, nettoyage, corner boutique et distributeurs, contrôle d’accès et badges, semaine d’ouverture douce réservée aux membres fondateurs, levée des réserves, puis jour d’ouverture et première revue de rétention. <em>Jalons : ouverture au public, régime de croisière.</em>"
       ]
     ],
-    callout: "La prévente est le sujet. L’économie d’une salle dépend du volume d’abonnés dès le premier mois, et les abonnements se vendent bien avant que quiconque puisse utiliser le local — ce qui suppose une marque, un site, un encaissement et une campagne membres fondateurs actifs pendant que l’espace est encore derrière une palissade. Dessinez ces barres devant la fin des travaux, et traitez l’objectif de membres fondateurs comme un point de passage sur la décision d’ouvrir : si le compte n’y est pas, la bonne réponse est en général quelques semaines de prévente de plus, et non une ouverture devant une salle vide. Derrière, deux échéances que l’on ne comprime pas : les équipements, dont la fabrication et le transport se comptent en mois, et le passage de la commission de sécurité, dont l’avis conditionne l’autorisation d’ouverture délivrée par le maire — et qui demande souvent une seconde visite.",
+    callout: "La prévente est le sujet. L’économie d’une salle dépend du volume d’abonnés dès le premier mois, et les abonnements se vendent bien avant que quiconque puisse utiliser le local, ce qui suppose une marque, un site, un encaissement et une campagne membres fondateurs actifs pendant que l’espace est encore derrière une palissade. Dessinez ces barres devant la fin des travaux, et traitez l’objectif de membres fondateurs comme un point de passage sur la décision d’ouvrir : si le compte n’y est pas, la bonne réponse est en général quelques semaines de prévente de plus, et non une ouverture devant une salle vide. Derrière, deux échéances que l’on ne comprime pas : les équipements, dont la fabrication et le transport se comptent en mois, et le passage de la commission de sécurité, dont l’avis conditionne l’autorisation d’ouverture délivrée par le maire, et qui demande souvent une seconde visite.",
     customize: [
       "Démarrez la barre de prévente aussi tôt que votre solution d’encaissement et vos conditions générales le permettent, et faites-la courir en parallèle des travaux. Si elle commence après la livraison du local, la fenêtre membres fondateurs est perdue.",
       "Posez l’objectif membres fondateurs comme un jalon chiffré, puis décidez à l’avance de ce qui se passe s’il n’est pas atteint : prolonger la prévente est une décision, pas un échec.",
@@ -6482,7 +6482,7 @@ const T = {
       ],
       [
         "Quand lancer la prévente des abonnements ?",
-        "Dès que la marque, le site et l’encaissement sont en place et que la date d’ouverture est crédible — typiquement trois à quatre mois avant l’ouverture, alors que le local est encore un chantier. C’est exactement pour cela que le modèle fait courir la barre de prévente en parallèle des travaux."
+        "Dès que la marque, le site et l’encaissement sont en place et que la date d’ouverture est crédible, typiquement trois à quatre mois avant l’ouverture, alors que le local est encore un chantier. C’est exactement pour cela que le modèle fait courir la barre de prévente en parallèle des travaux."
       ],
       [
         "Quelles démarches réglementaires sont propres à une salle de sport ?",
@@ -6490,7 +6490,7 @@ const T = {
       ],
       [
         "Pourquoi l’objectif membres fondateurs conditionne-t-il le lancement ?",
-        "Parce qu’une salle qui ouvre avec trop peu d’adhérents peine à financer sa première année. En faire un jalon force une décision explicite — prolonger la prévente ou ouvrir quand même — au lieu de laisser la date décider par défaut."
+        "Parce qu’une salle qui ouvre avec trop peu d’adhérents peine à financer sa première année. En faire un jalon force une décision explicite, prolonger la prévente ou ouvrir quand même, au lieu de laisser la date décider par défaut."
       ],
       [
         "Combien de temps à l’avance commander les équipements ?",
@@ -6507,12 +6507,12 @@ const T = {
     h1: "Plan de certification ISO 45001",
     metaTitle: "Plan de certification ISO 45001",
     metaDesc: "Plan gratuit de certification ISO 45001 : dangers et risques, DUERP, consultation des travailleurs et du CSE, presque-accidents, audits étape 1 et étape 2.",
-    lead: "Un <strong>plan de certification ISO 45001</strong> gratuit qui porte au diagramme la consultation et la participation des travailleurs comme du travail planifié, parce que la norme en fait une exigence et non une attention de communication. L’autre colonne vertébrale est l’identification des dangers et l’évaluation des risques : les objectifs, les contrôles opérationnels et les formations en découlent. En France, ce travail s’articule avec des obligations qui existent de toute façon — le DUERP, les attributions du CSE et de sa CSSCT, le suivi par le service de prévention et de santé au travail. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a>, du <a href=\"/templates/iso-14001-certification-plan.html\">plan de certification ISO 14001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
+    lead: "Un <strong>plan de certification ISO 45001</strong> gratuit qui porte au diagramme la consultation et la participation des travailleurs comme du travail planifié, parce que la norme en fait une exigence et non une attention de communication. L’autre colonne vertébrale est l’identification des dangers et l’évaluation des risques : les objectifs, les contrôles opérationnels et les formations en découlent. En France, ce travail s’articule avec des obligations qui existent de toute façon, le DUERP, les attributions du CSE et de sa CSSCT, le suivi par le service de prévention et de santé au travail. La mécanique d’audit est la même que celle du <a href=\"/templates/iso-9001-certification-plan.html\">plan de certification ISO 9001</a>, du <a href=\"/templates/iso-14001-certification-plan.html\">plan de certification ISO 14001</a> et du <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a>.",
     intro: "Remarquez que la barre de consultation court presque sur toute la longueur du diagramme, et que la phase d’accumulation des enregistrements ne se comprime pas. Les deux sont voulus :",
     phases: [
       [
         "Périmètre, contexte et analyse d’écarts",
-        "Frontières du système de management de la santé et de la sécurité au travail, travailleurs et autres parties intéressées, analyse d’écarts par rapport à la norme, politique SST, et choix de l’organisme certificateur accrédité par le COFRAC — c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique SST approuvés.</em>"
+        "Frontières du système de management de la santé et de la sécurité au travail, travailleurs et autres parties intéressées, analyse d’écarts par rapport à la norme, politique SST, et choix de l’organisme certificateur accrédité par le COFRAC, c’est à ce moment que les deux dates d’audit se réservent. <em>Jalon : périmètre et politique SST approuvés.</em>"
       ],
       [
         "Identification des dangers et évaluation des risques",
@@ -6535,14 +6535,14 @@ const T = {
         "Audit interne sur le terrain et actions correctives, revue de direction, puis l’étape 1, l’intervalle de traitement des écarts, et l’étape 2. <em>Jalon : certificat ISO 45001 délivré.</em>"
       ]
     ],
-    callout: "La consultation est ce qui distingue le plus ISO 45001 des autres normes de système de management, et c’est ce que les plans réduisent le plus souvent à une affiche. La norme attend que les travailleurs — y compris ceux qui n’exercent pas de responsabilité d’encadrement — soient consultés et participent à des choses précises : identification des dangers, évaluation des risques, détermination des mesures, analyse des accidents. Cela signifie des réunions, des comptes rendus, des représentants et des preuves, et cela a donc des dates. Il faut aussi être net sur un point : la certification ne remplace rien. Le DUERP, les attributions du CSE et de la CSSCT, le suivi individuel par le service de prévention et de santé au travail et l’ensemble des obligations du code du travail s’imposent que vous soyez certifié ou non ; ISO 45001 organise ce travail et le rend auditable, il ne s’y substitue pas. Second piège : la période qui produit les enregistrements. L’étape 2 échantillonne déclarations, presque-accidents, enquêtes et actions soldées ; si la culture de remontée démarre trois semaines avant l’audit, il n’y a rien à échantillonner et aucune tendance à montrer.",
+    callout: "La consultation est ce qui distingue le plus ISO 45001 des autres normes de système de management, et c’est ce que les plans réduisent le plus souvent à une affiche. La norme attend que les travailleurs, y compris ceux qui n’exercent pas de responsabilité d’encadrement, soient consultés et participent à des choses précises : identification des dangers, évaluation des risques, détermination des mesures, analyse des accidents. Cela signifie des réunions, des comptes rendus, des représentants et des preuves, et cela a donc des dates. Il faut aussi être net sur un point : la certification ne remplace rien. Le DUERP, les attributions du CSE et de la CSSCT, le suivi individuel par le service de prévention et de santé au travail et l’ensemble des obligations du code du travail s’imposent que vous soyez certifié ou non ; ISO 45001 organise ce travail et le rend auditable, il ne s’y substitue pas. Second piège : la période qui produit les enregistrements. L’étape 2 échantillonne déclarations, presque-accidents, enquêtes et actions soldées ; si la culture de remontée démarre trois semaines avant l’audit, il n’y a rien à échantillonner et aucune tendance à montrer.",
     customize: [
       "Réservez tôt l’organisme certificateur et figez la date de l’étape 2 ; tout ce qui précède devient un compte à rebours plutôt qu’une estimation.",
-      "Déployez les lignes d’identification des dangers en une ligne par site, par service ou par activité à risque élevé — une ligne unique masque l’effort réel.",
+      "Déployez les lignes d’identification des dangers en une ligne par site, par service ou par activité à risque élevé, une ligne unique masque l’effort réel.",
       "Calez le cycle de réunions sur le vôtre, et faites courir la barre au-delà de l’étape 2 : l’auditeur cherchera une continuité, pas un pic.",
       "Alignez la mise à jour du DUERP et les consultations du CSE sur le calendrier du projet plutôt que de les traiter à part ; ce sont les mêmes personnes et souvent les mêmes preuves.",
       "Gardez au moins six semaines entre l’étape 1 et l’étape 2, pour que les écarts relevés à l’étape 1 puissent réellement être soldés.",
-      "Allongez la phase d’exploitation si votre volume d’évènements est faible — il faut assez d’enregistrements pour qu’une tendance soit visible.",
+      "Allongez la phase d’exploitation si votre volume d’évènements est faible, il faut assez d’enregistrements pour qu’une tendance soit visible.",
       "Ajoutez des lignes pour les vérifications périodiques obligatoires, les visites du service de santé au travail ou les contrôles de l’inspection du travail qui tombent dans la fenêtre, puisqu’ils mobilisent les mêmes personnes."
     ],
     tips: [
@@ -6560,7 +6560,7 @@ const T = {
       ],
       [
         "Pourquoi la consultation des travailleurs est-elle planifiée comme du travail réel ?",
-        "Parce que la norme l’exige. ISO 45001 demande de consulter les travailleurs, y compris ceux sans responsabilité d’encadrement, et de permettre leur participation à l’identification des dangers, à l’évaluation des risques, à la détermination des mesures et à l’analyse des évènements — et de lever ce qui fait obstacle à cette participation. Cela suppose des représentants, une instance, un cycle de réunions et des enregistrements, tous datés, d’où des barres plutôt qu’une ligne de communication."
+        "Parce que la norme l’exige. ISO 45001 demande de consulter les travailleurs, y compris ceux sans responsabilité d’encadrement, et de permettre leur participation à l’identification des dangers, à l’évaluation des risques, à la détermination des mesures et à l’analyse des évènements, et de lever ce qui fait obstacle à cette participation. Cela suppose des représentants, une instance, un cycle de réunions et des enregistrements, tous datés, d’où des barres plutôt qu’une ligne de communication."
       ],
       [
         "ISO 45001 remplace-t-il le DUERP et le CSE ?",
@@ -6568,11 +6568,11 @@ const T = {
       ],
       [
         "En quoi ISO 45001 diffère-t-il d’ISO 9001, ISO 14001 et ISO 27001 ?",
-        "Ces normes partagent la même structure de haut niveau et la même mécanique d’audit en deux étapes, mais leur contenu diffère entièrement. ISO 45001 porte sur la santé et la sécurité au travail, ISO 9001 sur la qualité, ISO 14001 sur l’environnement, ISO 27001 sur la sécurité de l’information. Ce sont quatre certifications accréditées distinctes, avec leur propre périmètre et leur propre certificat : les preuves de l’une ne satisfont pas l’autre. À noter également : SOC 2 n’est pas une norme ISO mais un rapport d’attestation de l’AICPA — voyez le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si c’est ce qu’il vous faut."
+        "Ces normes partagent la même structure de haut niveau et la même mécanique d’audit en deux étapes, mais leur contenu diffère entièrement. ISO 45001 porte sur la santé et la sécurité au travail, ISO 9001 sur la qualité, ISO 14001 sur l’environnement, ISO 27001 sur la sécurité de l’information. Ce sont quatre certifications accréditées distinctes, avec leur propre périmètre et leur propre certificat : les preuves de l’une ne satisfont pas l’autre. À noter également : SOC 2 n’est pas une norme ISO mais un rapport d’attestation de l’AICPA, voyez le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si c’est ce qu’il vous faut."
       ],
       [
         "Peut-on conduire un système de management intégré sur plusieurs normes ?",
-        "Oui. Un système intégré permet de traiter une seule fois les chapitres communs — politique, contexte, audit interne, revue de direction, informations documentées — au lieu de quatre, et les organismes certificateurs acceptent souvent de les auditer lors d’une visite combinée. Cela ne fusionne pas les certifications : vous conservez des certificats distincts, sur des périmètres distincts, et le contenu propre à chaque norme reste séparé."
+        "Oui. Un système intégré permet de traiter une seule fois les chapitres communs, politique, contexte, audit interne, revue de direction, informations documentées, au lieu de quatre, et les organismes certificateurs acceptent souvent de les auditer lors d’une visite combinée. Cela ne fusionne pas les certifications : vous conservez des certificats distincts, sur des périmètres distincts, et le contenu propre à chaque norme reste séparé."
       ],
       [
         "Combien d’enregistrements faut-il avant l’étape 2 ?",
@@ -6589,7 +6589,7 @@ const T = {
     h1: "Calendrier de mise en conformité RGPD",
     metaTitle: "Calendrier de conformité RGPD",
     metaDesc: "Calendrier gratuit de conformité RGPD : registre des traitements, base légale, conservation, transferts, exercice des droits testé, violations et AIPD.",
-    lead: "Un <strong>calendrier de mise en conformité RGPD</strong> gratuit, pensé pour un programme qui atteint une position défendable puis continue de tourner, et non pour un projet qui se termine. L’idée directrice est que le registre des traitements vient en premier : base légale, durées de conservation, encadrement des transferts et analyses d’impact en découlent tous, parce qu’ils supposent de savoir ce que vous faites réellement des données personnelles. Les deux horloges imposées de l’extérieur — le délai de réponse aux demandes d’exercice des droits et le délai de notification d’une violation — figurent au diagramme comme des procédures que l’on teste avant d’en avoir besoin.",
+    lead: "Un <strong>calendrier de mise en conformité RGPD</strong> gratuit, pensé pour un programme qui atteint une position défendable puis continue de tourner, et non pour un projet qui se termine. L’idée directrice est que le registre des traitements vient en premier : base légale, durées de conservation, encadrement des transferts et analyses d’impact en découlent tous, parce qu’ils supposent de savoir ce que vous faites réellement des données personnelles. Les deux horloges imposées de l’extérieur, le délai de réponse aux demandes d’exercice des droits et le délai de notification d’une violation, figurent au diagramme comme des procédures que l’on teste avant d’en avoir besoin.",
     intro: "La barre du registre des traitements conditionne presque tout ce qui la suit, et les deux lignes de répétition existent parce qu’une procédure que personne n’a jamais déroulée n’est pas une procédure :",
     phases: [
       [
@@ -6597,7 +6597,7 @@ const T = {
         "Responsabilités attribuées, désignation ou confirmation du délégué à la protection des données, qualification de responsable de traitement ou de sous-traitant pour chaque activité, entités et pays concernés, évaluation d’écarts et instance de pilotage. <em>Jalon : périmètre et rôles arrêtés.</em>"
       ],
       [
-        "Registre des traitements — la fondation",
+        "Registre des traitements, la fondation",
         "Ateliers de recensement avec chaque direction, inventaire des applications, description des activités de traitement et des flux, repérage des données sensibles et des données relatives aux condamnations, puis validation du registre avec ceux qui portent réellement les traitements. <em>Jalon : registre des traitements établi.</em>"
       ],
       [
@@ -6617,14 +6617,14 @@ const T = {
         "Critères de déclenchement et analyses d’impact relatives à la protection des données sur les traitements à risque élevé, mise en conformité des contrats de sous-traitance, sensibilisation, et le processus de gestion du changement qui maintient le registre à jour une fois le projet terminé. <em>Jalon : position défendable atteinte.</em>"
       ]
     ],
-    callout: "Deux durées viennent du règlement lui-même et méritent d’être citées exactement. L’article 12 fixe le délai de réponse à une demande d’exercice des droits à un mois à compter de la réception, prolongeable de deux mois supplémentaires compte tenu de la complexité et du nombre de demandes, à condition que la personne concernée soit informée de la prolongation et de ses motifs dans le premier mois. L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente — en France, la CNIL — dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance, à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques ; une notification tardive doit être accompagnée des motifs du retard. L’article 34 traite séparément de l’information des personnes en cas de risque élevé. Ces conditions font partie du texte : le point de départ du délai, les cas de prolongation, les cas de dispense. La CNIL publie par ailleurs ses propres lignes directrices et recommandations, et la loi Informatique et Libertés porte les dispositions nationales : ce sont des sources utiles, mais ce ne sont pas le règlement, et il ne faut pas les confondre. N’aplatissez ni l’un ni l’autre en slogan, et faites vérifier votre situation par un conseil.",
+    callout: "Deux durées viennent du règlement lui-même et méritent d’être citées exactement. L’article 12 fixe le délai de réponse à une demande d’exercice des droits à un mois à compter de la réception, prolongeable de deux mois supplémentaires compte tenu de la complexité et du nombre de demandes, à condition que la personne concernée soit informée de la prolongation et de ses motifs dans le premier mois. L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente, en France, la CNIL, dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance, à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques ; une notification tardive doit être accompagnée des motifs du retard. L’article 34 traite séparément de l’information des personnes en cas de risque élevé. Ces conditions font partie du texte : le point de départ du délai, les cas de prolongation, les cas de dispense. La CNIL publie par ailleurs ses propres lignes directrices et recommandations, et la loi Informatique et Libertés porte les dispositions nationales : ce sont des sources utiles, mais ce ne sont pas le règlement, et il ne faut pas les confondre. N’aplatissez ni l’un ni l’autre en slogan, et faites vérifier votre situation par un conseil.",
     customize: [
       "Découpez le recensement et le registre en une ligne par direction ou par entité ; une ligne unique masque le plus gros poste du plan.",
       "Si vous êtes sous-traitant et non responsable de traitement, reconstruisez les phases « droits » et « violations » autour de votre obligation d’assister et d’alerter vos responsables de traitement.",
-      "Ajoutez une ligne par flux si vous transférez des données hors Union européenne — le mécanisme d’encadrement et l’analyse diffèrent selon la destination.",
+      "Ajoutez une ligne par flux si vous transférez des données hors Union européenne, le mécanisme d’encadrement et l’analyse diffèrent selon la destination.",
       "Allongez la phase des droits si vos données vivent dans de nombreux systèmes ; l’outillage d’extraction est presque toujours le point dur, pas l’analyse juridique.",
       "Ajoutez des lignes pour toute procédure en cours avec la CNIL, consultation préalable ou plainte déjà déposée : elles passeront devant le plan.",
-      "Faites courir la dernière phase au-delà du jalon — le registre se périme dès qu’un nouveau système ou un nouveau sous-traitant arrive."
+      "Faites courir la dernière phase au-delà du jalon, le registre se périme dès qu’un nouveau système ou un nouveau sous-traitant arrive."
     ],
     tips: [
       "<strong>Construisez le registre avant les politiques.</strong> Une politique rédigée avant de savoir quels traitements existent décrit une organisation que vous n’avez pas, et la première demande le révélera.",
@@ -6645,7 +6645,7 @@ const T = {
       ],
       [
         "Que dit exactement la règle des 72 heures ?",
-        "L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance — à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques. Une notification au-delà de 72 heures doit être accompagnée des motifs du retard. L’article 34 impose séparément d’informer les personnes concernées lorsque la violation est susceptible d’engendrer un risque élevé pour elles. Le moment où l’on est réputé avoir « pris connaissance » relève de l’appréciation, et c’est pourquoi le modèle fait répéter la décision et pas seulement le confinement technique."
+        "L’article 33 impose au responsable de traitement de notifier une violation de données à caractère personnel à l’autorité de contrôle compétente dans les meilleurs délais et, si possible, au plus tard 72 heures après en avoir pris connaissance, à moins que la violation ne soit pas susceptible d’engendrer un risque pour les droits et libertés des personnes physiques. Une notification au-delà de 72 heures doit être accompagnée des motifs du retard. L’article 34 impose séparément d’informer les personnes concernées lorsque la violation est susceptible d’engendrer un risque élevé pour elles. Le moment où l’on est réputé avoir « pris connaissance » relève de l’appréciation, et c’est pourquoi le modèle fait répéter la décision et pas seulement le confinement technique."
       ],
       [
         "Pourquoi le registre des traitements passe-t-il avant tout le reste ?",
@@ -6653,11 +6653,11 @@ const T = {
       ],
       [
         "Quand faut-il une AIPD, et qui doit être désigné DPO ?",
-        "Le règlement impose une analyse d’impact relative à la protection des données lorsqu’un traitement est susceptible d’engendrer un risque élevé pour les droits et libertés des personnes, et la désignation d’un délégué à la protection des données dans les cas qu’il énumère — autorité ou organisme public, suivi systématique à grande échelle, traitement à grande échelle de données sensibles. Au-delà de ces cas, la CNIL publie ses propres listes et recommandations sur les traitements qu’elle considère comme soumis à AIPD : consultez-les, mais gardez la distinction entre le texte et sa lecture par l’autorité."
+        "Le règlement impose une analyse d’impact relative à la protection des données lorsqu’un traitement est susceptible d’engendrer un risque élevé pour les droits et libertés des personnes, et la désignation d’un délégué à la protection des données dans les cas qu’il énumère, autorité ou organisme public, suivi systématique à grande échelle, traitement à grande échelle de données sensibles. Au-delà de ces cas, la CNIL publie ses propres listes et recommandations sur les traitements qu’elle considère comme soumis à AIPD : consultez-les, mais gardez la distinction entre le texte et sa lecture par l’autorité."
       ],
       [
         "En quoi cela diffère-t-il d’ISO 27001 ou de SOC 2 ?",
-        "Le RGPD est un texte de droit : il s’applique que quiconque vous certifie ou non. ISO 27001 est une certification accréditée portant sur un système de management de la sécurité de l’information, et SOC 2 est un rapport d’attestation de l’AICPA produit par un auditeur — ni l’un ni l’autre n’est un constat de conformité juridique. Le recouvrement est fort sur les mesures de sécurité et les preuves sont réutilisables, mais un certificat n’est pas un moyen de défense. Voyez le <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a> et le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si vous les menez en parallèle."
+        "Le RGPD est un texte de droit : il s’applique que quiconque vous certifie ou non. ISO 27001 est une certification accréditée portant sur un système de management de la sécurité de l’information, et SOC 2 est un rapport d’attestation de l’AICPA produit par un auditeur, ni l’un ni l’autre n’est un constat de conformité juridique. Le recouvrement est fort sur les mesures de sécurité et les preuves sont réutilisables, mais un certificat n’est pas un moyen de défense. Voyez le <a href=\"/templates/iso-27001-certification-plan.html\">plan de certification ISO 27001</a> et le <a href=\"/templates/soc2-compliance-timeline.html\">calendrier de conformité SOC 2</a> si vous les menez en parallèle."
       ],
       [
         "Le modèle de calendrier RGPD est-il gratuit ?",
@@ -6670,7 +6670,7 @@ const T = {
     h1: "Plan d’intégration d’un nouveau client",
     metaTitle: "Plan d’intégration client",
     metaDesc: "Plan gratuit d’intégration client : lancement, dépendances côté client, chemin vers la première valeur, reprise de données, formation, mise en service.",
-    lead: "Un <strong>plan d’intégration client</strong> gratuit, honnête sur la question de savoir à qui appartient le planning. La plupart des barres ci-dessous dépendent du client : ses données, ses accès aux systèmes à intégrer, sa revue de sécurité, ses validations et les agendas de ses équipes. Le plan est agencé pour qu’un résultat exploitable tombe tôt — le délai jusqu’à la première valeur est l’indicateur qui prédit le renouvellement — plutôt que de séquencer chaque décision de paramétrage avant d’autoriser quiconque à se connecter.",
+    lead: "Un <strong>plan d’intégration client</strong> gratuit, honnête sur la question de savoir à qui appartient le planning. La plupart des barres ci-dessous dépendent du client : ses données, ses accès aux systèmes à intégrer, sa revue de sécurité, ses validations et les agendas de ses équipes. Le plan est agencé pour qu’un résultat exploitable tombe tôt, le délai jusqu’à la première valeur est l’indicateur qui prédit le renouvellement, plutôt que de séquencer chaque décision de paramétrage avant d’autoriser quiconque à se connecter.",
     intro: "Les lignes portées par le client sont signalées comme telles. Regardez combien il y en a, et où elles se situent par rapport à votre propre travail :",
     phases: [
       [
@@ -6702,7 +6702,7 @@ const T = {
     customize: [
       "Marquez clairement chaque ligne portée par le client et mettez en face une personne nommée de son côté, pas un service.",
       "Avancez le jalon de première valeur si votre produit le permet ; quatre semaines est une cible courante, et plus tôt vaut mieux.",
-      "Ajoutez une ligne par intégration et par source de données — une barre unique masque exactement les dépendances qui vont glisser.",
+      "Ajoutez une ligne par intégration et par source de données, une barre unique masque exactement les dépendances qui vont glisser.",
       "Faites apparaître explicitement la revue de sécurité, les achats et le juridique du client s’il s’agit d’un grand compte ; ces étapes prennent régulièrement plus de temps que le travail technique.",
       "Allongez la boucle de correction si l’import d’essai risque de révéler des problèmes : une seule passe est optimiste pour la plupart des reprises.",
       "Ajoutez des lignes pour l’accompagnement au changement côté client si vous remplacez un processus auquel les équipes tiennent."
@@ -6721,7 +6721,7 @@ const T = {
       ],
       [
         "Qu’appelle-t-on délai jusqu’à la première valeur ?",
-        "Le temps écoulé entre la signature ou le lancement et le moment où le client obtient du produit un résultat réel et utile — pas une démonstration, pas un exercice de formation. C’est l’indicateur autour duquel ce modèle est construit, parce qu’un client qui a vu une valeur réelle supporte le reste du déploiement, et qu’un client qui n’en a pas vu commence à se demander ce qu’il a acheté."
+        "Le temps écoulé entre la signature ou le lancement et le moment où le client obtient du produit un résultat réel et utile, pas une démonstration, pas un exercice de formation. C’est l’indicateur autour duquel ce modèle est construit, parce qu’un client qui a vu une valeur réelle supporte le reste du déploiement, et qu’un client qui n’en a pas vu commence à se demander ce qu’il a acheté."
       ],
       [
         "Pourquoi charger l’avant du plan avec un résultat étroit ?",
@@ -6733,7 +6733,7 @@ const T = {
       ],
       [
         "Quelle différence avec un plan d’intégration d’un nouveau salarié ?",
-        "Deux plans entièrement différents malgré le mot commun. Le <a href=\"/templates/employee-onboarding.html\">modèle d’intégration d’un nouveau collaborateur</a> couvre les premières semaines d’un salarié — matériel, accès, présentations, montée en compétence. Celui-ci couvre le déploiement d’un produit chez un client payant, où le planning est partagé avec une autre organisation et où l’essentiel du risque se trouve de son côté."
+        "Deux plans entièrement différents malgré le mot commun. Le <a href=\"/templates/employee-onboarding.html\">modèle d’intégration d’un nouveau collaborateur</a> couvre les premières semaines d’un salarié, matériel, accès, présentations, montée en compétence. Celui-ci couvre le déploiement d’un produit chez un client payant, où le planning est partagé avec une autre organisation et où l’essentiel du risque se trouve de son côté."
       ],
       [
         "Le modèle d’intégration client est-il gratuit ?",
@@ -6746,7 +6746,7 @@ const T = {
     h1: "Plan de changement de marque",
     metaTitle: "Plan de changement de marque",
     metaDesc: "Plan gratuit de changement de marque : antériorités et dépôt INPI, validation de l’identité, production des supports, bascule simultanée et longue traîne.",
-    lead: "Un <strong>plan de changement de marque</strong> gratuit, organisé autour d’un fait dur : la révélation est un instant, et à cet instant tout ce que vous maîtrisez doit basculer ensemble. Site, interface produit, modèles d’e-mails, comptes sociaux, enseignes, présentations, factures. Devant, un délai long qui peut tuer un nom tardivement — la recherche d’antériorités et le dépôt de marque, avec le délai d’opposition qui suit la publication. Derrière, une traîne de supports physiques et de surfaces détenues par des tiers, qui ne basculent pas le jour J et qu’il faut relancer une par une.",
+    lead: "Un <strong>plan de changement de marque</strong> gratuit, organisé autour d’un fait dur : la révélation est un instant, et à cet instant tout ce que vous maîtrisez doit basculer ensemble. Site, interface produit, modèles d’e-mails, comptes sociaux, enseignes, présentations, factures. Devant, un délai long qui peut tuer un nom tardivement, la recherche d’antériorités et le dépôt de marque, avec le délai d’opposition qui suit la publication. Derrière, une traîne de supports physiques et de surfaces détenues par des tiers, qui ne basculent pas le jour J et qu’il faut relancer une par une.",
     intro: "La barre de disponibilité juridique court sous le travail de création pour une raison, et la traîne après le jour J est plus longue que la plupart des plans ne l’admettent :",
     phases: [
       [
@@ -6771,15 +6771,15 @@ const T = {
       ],
       [
         "Jour J et longue traîne",
-        "La bascule simultanée, l’annonce, la reprise des comptes sociaux — puis la partie que les plans oublient : pose des enseignes site par site, écoulement des emballages à l’ancienne marque, surfaces détenues par des partenaires, et un audit de retrait de l’ancienne marque. <em>Jalon : traîne close et ancienne marque retirée.</em>"
+        "La bascule simultanée, l’annonce, la reprise des comptes sociaux, puis la partie que les plans oublient : pose des enseignes site par site, écoulement des emballages à l’ancienne marque, surfaces détenues par des partenaires, et un audit de retrait de l’ancienne marque. <em>Jalon : traîne close et ancienne marque retirée.</em>"
       ]
     ],
-    callout: "Deux choses tuent les changements de marque. La première est de découvrir un problème d’antériorité une fois l’identité validée et la production lancée. La recherche de disponibilité n’est ni une formalité ni une opération rapide : les recherches d’identiques sont bon marché et rapides, une recherche complète sur plusieurs marchés ne l’est pas, et en France une opposition peut être formée dans un délai de deux mois à compter de la publication de la demande — plus tard encore selon le territoire et la procédure. Placez l’avis de risque avant la dépense de création, et n’autorisez personne à présenter le nouveau nom à l’extérieur avant que le conseil n’ait tranché. La seconde est de traiter la révélation comme un lancement marketing plutôt que comme une bascule. Un lancement est une campagne que l’on phase ; une bascule est un changement d’état, et une marque à moitié basculée — nouveau site, anciennes factures, ancienne enseigne, ancienne fiche sur les places de marché — se lit comme une entreprise mal tenue. Construisez la liste surface par surface, attribuez un responsable à chacune, et acceptez que le physique et les tiers traînent : suivez-les comme une liste nommée plutôt qu’en espérant.",
+    callout: "Deux choses tuent les changements de marque. La première est de découvrir un problème d’antériorité une fois l’identité validée et la production lancée. La recherche de disponibilité n’est ni une formalité ni une opération rapide : les recherches d’identiques sont bon marché et rapides, une recherche complète sur plusieurs marchés ne l’est pas, et en France une opposition peut être formée dans un délai de deux mois à compter de la publication de la demande, plus tard encore selon le territoire et la procédure. Placez l’avis de risque avant la dépense de création, et n’autorisez personne à présenter le nouveau nom à l’extérieur avant que le conseil n’ait tranché. La seconde est de traiter la révélation comme un lancement marketing plutôt que comme une bascule. Un lancement est une campagne que l’on phase ; une bascule est un changement d’état, et une marque à moitié basculée, nouveau site, anciennes factures, ancienne enseigne, ancienne fiche sur les places de marché, se lit comme une entreprise mal tenue. Construisez la liste surface par surface, attribuez un responsable à chacune, et acceptez que le physique et les tiers traînent : suivez-les comme une liste nommée plutôt qu’en espérant.",
     customize: [
       "Ajoutez une ligne de recherche par territoire et par classe ; les durées et le risque diffèrent, et une barre unique masque le marché qui pose problème.",
       "Si vous faites évoluer l’identité sans changer de nom, supprimez les phases de nommage et de disponibilité et commencez à la création : le plan raccourcit de plusieurs mois.",
       "Déployez la production en une ligne par surface une fois l’inventaire établi ; le compte est toujours plus élevé que la première estimation.",
-      "Ajoutez des lignes pour les supports réglementés ou contractuels — étiquetage, certificats, agréments, mentions légales, dépôts — qui ont leurs propres circuits d’approbation.",
+      "Ajoutez des lignes pour les supports réglementés ou contractuels, étiquetage, certificats, agréments, mentions légales, dépôts, qui ont leurs propres circuits d’approbation.",
       "Ne fixez la date de révélation qu’après la ligne de répétition, et rattachez les prises de parole à cette date plutôt qu’à un mois du calendrier.",
       "Allongez la barre d’écoulement des emballages pour coller à votre couverture de stock réelle : c’est en général l’élément de traîne le plus long et le plus visible."
     ],
@@ -6802,11 +6802,11 @@ const T = {
       ],
       [
         "Où déposer, et quel délai d’opposition prévoir ?",
-        "Le dépôt se fait à l’INPI pour la France et à l’EUIPO pour une marque de l’Union européenne, par classe de produits et de services. Après publication, un tiers peut former opposition — deux mois à compter de la publication au Bulletin officiel de la propriété industrielle pour un dépôt français, avec des délais et des procédures différents devant l’EUIPO et à l’international. Traitez cette période comme un risque de planning à part entière et faites confirmer les délais applicables par votre conseil."
+        "Le dépôt se fait à l’INPI pour la France et à l’EUIPO pour une marque de l’Union européenne, par classe de produits et de services. Après publication, un tiers peut former opposition, deux mois à compter de la publication au Bulletin officiel de la propriété industrielle pour un dépôt français, avec des délais et des procédures différents devant l’EUIPO et à l’international. Traitez cette période comme un risque de planning à part entière et faites confirmer les délais applicables par votre conseil."
       ],
       [
         "Faut-il tout basculer le même jour ?",
-        "Tout ce que vous maîtrisez, oui — site, interface produit, comptes sociaux, modèles d’e-mails, signatures, supports commerciaux et l’annonce. Une bascule partielle sur les surfaces que vous détenez ressemble à une erreur plutôt qu’à une décision. Les supports physiques et les surfaces de tiers font exception, parce qu’ils ne peuvent réellement pas basculer instantanément : le modèle leur donne une traîne suivie plutôt que de prétendre qu’ils tombent le jour J."
+        "Tout ce que vous maîtrisez, oui, site, interface produit, comptes sociaux, modèles d’e-mails, signatures, supports commerciaux et l’annonce. Une bascule partielle sur les surfaces que vous détenez ressemble à une erreur plutôt qu’à une décision. Les supports physiques et les surfaces de tiers font exception, parce qu’ils ne peuvent réellement pas basculer instantanément : le modèle leur donne une traîne suivie plutôt que de prétendre qu’ils tombent le jour J."
       ],
       [
         "Qu’oublie-t-on le plus souvent ?",
@@ -6822,9 +6822,9 @@ const T = {
   'online-course-creation-plan': {
     card: 'De l’idée au lancement : valider, tourner, monter et vendre un cours en ligne.',
     h1: 'Modèle de plan de création de cours en ligne',
-    metaTitle: 'Plan de création de cours en ligne — modèle',
+    metaTitle: 'Plan de création de cours en ligne: modèle',
     metaDesc: 'Modèle gratuit de plan de création de cours en ligne : valider, structurer, scripter, tourner, monter, page de vente et lancement.',
-    lead: 'Un <strong>modèle de plan de création de cours en ligne</strong> gratuit qui suit un cours de l’idée au lancement — valider le sujet, structurer le programme, scripter et tourner les leçons, monter et assembler, configurer la plateforme et la page de vente, puis mener le lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
+    lead: 'Un <strong>modèle de plan de création de cours en ligne</strong> gratuit qui suit un cours de l’idée au lancement, valider le sujet, structurer le programme, scripter et tourner les leçons, monter et assembler, configurer la plateforme et la page de vente, puis mener le lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
     intro: 'La plupart des cours se bloquent entre « tourné » et « vendu » parce que production et lancement n’ont jamais été planifiés ensemble. Ce modèle pose tout le projet sur une seule frise, selon les six étapes qu’un cours traverse réellement :',
     phases: [
       ['Cadrer et valider', 'Définissez à qui s’adresse le cours et le résultat qu’il apporte, puis validez la demande par un sondage, une liste d’attente ou une prévente avant de tourner quoi que ce soit. <em>Jalon : sujet validé.</em>'],
@@ -6834,19 +6834,19 @@ const T = {
       ['Plateforme et page de vente', 'Choisissez une plateforme d’hébergement, mettez les leçons en ligne, fixez le prix et le paiement, et construisez la page de vente. <em>Jalon : boutique en ligne.</em>'],
       ['Lancement et promotion', 'Réchauffez la liste d’e-mails, diffusez du contenu de pré-lancement ou un webinaire, ouvrez les inscriptions, puis relancez et recueillez les avis. <em>Jalon : lancement terminé.</em>']
     ],
-    callout: 'Validez avant de tourner. L’erreur la plus coûteuse en création de cours, c’est de filmer vingt leçons sur un sujet que personne ne paiera — placez un vrai jalon de validation (liste d’attente, sondage ou petite prévente) avant la production, et faites dépendre le tournage de ce jalon.',
+    callout: 'Validez avant de tourner. L’erreur la plus coûteuse en création de cours, c’est de filmer vingt leçons sur un sujet que personne ne paiera, placez un vrai jalon de validation (liste d’attente, sondage ou petite prévente) avant la production, et faites dépendre le tournage de ce jalon.',
     customize: [
-      'Fixez d’abord votre date de lancement et remontez le fil — le tournage s’étale toujours jusqu’à occuper tout le temps qu’on lui laisse.',
+      'Fixez d’abord votre date de lancement et remontez le fil, le tournage s’étale toujours jusqu’à occuper tout le temps qu’on lui laisse.',
       'Ajoutez une ligne par module sous Tournage et Montage pour qu’un cours long montre l’avancement de chaque unité.',
       'Si vous êtes en prévente, avancez la page de vente et le paiement pour prendre des commandes avant la fin du tournage.',
-      'Groupez le tournage par configuration (toutes les leçons face caméra, puis toutes les captures d’écran) plutôt que dans l’ordre du cours — c’est bien plus rapide.',
+      'Groupez le tournage par configuration (toutes les leçons face caméra, puis toutes les captures d’écran) plutôt que dans l’ordre du cours, c’est bien plus rapide.',
       'Marquez la validation, « cours assemblé » et « boutique en ligne » comme des jalons pour que rien en aval ne démarre avant que ses entrées soient prêtes.'
     ],
     tips: [
-      '<strong>Gardez la validation sur le chemin critique.</strong> Tout ce qui vient après — scripts, tournage, montage — est perdu si le sujet n’intéresse personne : faites du premier jalon un vrai go/no-go.',
+      '<strong>Gardez la validation sur le chemin critique.</strong> Tout ce qui vient après, scripts, tournage, montage, est perdu si le sujet n’intéresse personne : faites du premier jalon un vrai go/no-go.',
       '<strong>Scriptez avant de tourner.</strong> Une heure de script économise plusieurs heures de reprises et de montage ; le planning ne doit jamais laisser le tournage démarrer avant que les scripts soient finis.',
       '<strong>Montage et création des supports peuvent avancer en parallèle.</strong> Ils ont des responsables différents et aucune dépendance mutuelle : chevauchez-les pour comprimer le milieu du plan.',
-      '<strong>Construisez la page de vente pendant le montage.</strong> La page n’a pas besoin des vidéos finales — seulement de la promesse et du programme — elle peut donc être en ligne avant que le cours soit entièrement assemblé.',
+      '<strong>Construisez la page de vente pendant le montage.</strong> La page n’a pas besoin des vidéos finales, seulement de la promesse et du programme, elle peut donc être en ligne avant que le cours soit entièrement assemblé.',
       '<strong>Traitez la semaine de lancement comme sa propre séquence.</strong> Réchauffe, ouverture, fermeture des inscriptions et relance ont chacun un tempo qui compte : planifiez-les au lieu d’improviser.'
     ],
     faq: [
@@ -6856,7 +6856,7 @@ const T = {
       ],
       [
         'Faut-il créer le cours avant ou après l’avoir vendu ?',
-        'Validez — et idéalement prévendez — avant de tourner. Le modèle place un jalon de validation avant la production pour n’engager le temps de tournage qu’une fois la demande réelle ; vous pouvez avancer la page de vente pour prendre des précommandes.'
+        'Validez, et idéalement prévendez, avant de tourner. Le modèle place un jalon de validation avant la production pour n’engager le temps de tournage qu’une fois la demande réelle ; vous pouvez avancer la page de vente pour prendre des précommandes.'
       ],
       [
         'Puis-je afficher les dépendances entre les tâches du cours ?',
@@ -6864,7 +6864,7 @@ const T = {
       ],
       [
         'Le modèle de plan de cours en ligne est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -6872,9 +6872,9 @@ const T = {
   'book-launch-plan': {
     card: 'Du manuscrit fini à la semaine de lancement : correction, couverture, ARC, précommande.',
     h1: 'Modèle de plan de lancement de livre',
-    metaTitle: 'Plan de lancement de livre — modèle',
+    metaTitle: 'Plan de lancement de livre: modèle',
     metaDesc: 'Modèle gratuit de plan de lancement de livre pour auteurs et autoéditeurs : correction, couverture, ARC, précommande et semaine de lancement.',
-    lead: 'Un <strong>modèle de plan de lancement de livre</strong> gratuit pour auteurs et autoéditeurs, du manuscrit terminé à la semaine de lancement — correction, couverture et mise en pages, lecteurs ARC et recommandations, précommande, marketing et le lancement lui-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de sortie.',
+    lead: 'Un <strong>modèle de plan de lancement de livre</strong> gratuit pour auteurs et autoéditeurs, du manuscrit terminé à la semaine de lancement, correction, couverture et mise en pages, lecteurs ARC et recommandations, précommande, marketing et le lancement lui-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de sortie.',
     intro: 'Un lancement de livre, c’est en réalité cinq projets empilés sur une même date : correction, fabrication, pré-lancement, marketing et la sortie. Ce modèle les pose sur une seule frise pour que rien n’entre en collision, en six étapes :',
     phases: [
       ['Manuscrit', 'Terminez le premier jet et faites une passe d’auto-correction pour que le manuscrit soit prêt à confier à un correcteur. <em>Jalon : manuscrit terminé.</em>'],
@@ -6884,10 +6884,10 @@ const T = {
       ['Marketing', 'Développez la plateforme d’auteur et la liste d’e-mails, constituez une équipe de lancement, et réservez promotions et publicités pour la semaine de lancement.'],
       ['Semaine de lancement et suivi', 'Publiez le livre, menez les promotions de la semaine de lancement, relancez pour les avis et les notes, puis analysez ce qui a marché. <em>Jalon : lancement terminé.</em>']
     ],
-    callout: 'La précommande est la date que tout le reste du plan protège. Les libraires récompensent l’élan des premières ventes, et les lecteurs ARC ont besoin de semaines pour lire et publier leur avis avant la sortie — fixez donc d’abord les dates de précommande et de lancement, puis vérifiez que correction et fabrication se terminent réellement à temps derrière elles.',
+    callout: 'La précommande est la date que tout le reste du plan protège. Les libraires récompensent l’élan des premières ventes, et les lecteurs ARC ont besoin de semaines pour lire et publier leur avis avant la sortie, fixez donc d’abord les dates de précommande et de lancement, puis vérifiez que correction et fabrication se terminent réellement à temps derrière elles.',
     customize: [
       'Fixez la date de lancement et remontez le fil ; correction et couverture demandent presque toujours plus de délai que les auteurs débutants ne l’imaginent.',
-      'Donnez aux lecteurs ARC au moins trois à quatre semaines avant la sortie — les avis qui tombent la semaine du lancement comptent bien plus que les tardifs.',
+      'Donnez aux lecteurs ARC au moins trois à quatre semaines avant la sortie, les avis qui tombent la semaine du lancement comptent bien plus que les tardifs.',
       'Chevauchez la fabrication avec la fin de la correction : la couverture n’a pas besoin de la relecture finale, alors commencez-la tôt.',
       'Si vous êtes édité à compte d’éditeur, remplacez la phase de fabrication par les jalons de votre éditeur et conservez les étapes marketing et lancement.',
       'Marquez « manuscrit définitif », « fichiers prêts à imprimer » et « précommande ouverte » comme des jalons pour que rien en aval ne démarre avant l’existence de ses entrées.'
@@ -6895,9 +6895,9 @@ const T = {
     tips: [
       '<strong>La correction est le chemin critique habituel.</strong> Éditoriale → style → relecture est une séquence stricte, et le moindre glissement pousse tout le reste ; protégez-la et commencez tôt.',
       '<strong>La couverture peut avancer en parallèle de la correction.</strong> Elle dépend du concept, pas du texte final, alors la chevaucher fait gagner des semaines sur le planning.',
-      '<strong>Constituez la liste d’e-mails avant d’en avoir besoin.</strong> Un e-mail de lancement à une liste engagée surpasse presque n’importe quelle publicité, mais la liste met des mois à croître — commencez dès la phase marketing, pas la semaine du lancement.',
+      '<strong>Constituez la liste d’e-mails avant d’en avoir besoin.</strong> Un e-mail de lancement à une liste engagée surpasse presque n’importe quelle publicité, mais la liste met des mois à croître, commencez dès la phase marketing, pas la semaine du lancement.',
       '<strong>Envoyez les ARC tôt et suivez-les.</strong> Les avis demandent du temps de lecture ; un avis publié le jour de la sortie vaut bien plus qu’un avis arrivé un mois plus tard.',
-      '<strong>Planifiez le suivi.</strong> Les deux semaines après la sortie — relance des avis, ajustement des publicités, bilan de lancement — sont là où bien des lancements perdent discrètement leur élan faute de plan.'
+      '<strong>Planifiez le suivi.</strong> Les deux semaines après la sortie, relance des avis, ajustement des publicités, bilan de lancement, sont là où bien des lancements perdent discrètement leur élan faute de plan.'
     ],
     faq: [
       [
@@ -6906,7 +6906,7 @@ const T = {
       ],
       [
         'Quand configurer la précommande ?',
-        'Dès que votre libraire le permet — souvent plusieurs semaines à plusieurs mois avant la sortie. Le modèle fait de la précommande un jalon parce que les avis ARC et l’élan marketing se calent dessus, et que les libraires récompensent les premières ventes.'
+        'Dès que votre libraire le permet, souvent plusieurs semaines à plusieurs mois avant la sortie. Le modèle fait de la précommande un jalon parce que les avis ARC et l’élan marketing se calent dessus, et que les libraires récompensent les premières ventes.'
       ],
       [
         'Puis-je afficher les dépendances entre les tâches du lancement ?',
@@ -6914,16 +6914,16 @@ const T = {
       ],
       [
         'Le modèle de plan de lancement de livre est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
   'go-to-market-plan': {
     card: 'De la recherche au lancement : positionnement, tarification, activation commerciale et bilan post-lancement.',
     h1: 'Modèle de plan go-to-market (GTM)',
-    metaTitle: 'Plan go-to-market (GTM) — modèle',
+    metaTitle: 'Plan go-to-market (GTM): modèle',
     metaDesc: 'Modèle gratuit de plan go-to-market : recherche, positionnement, tarification, activation, lancement et bilan. Excel, PowerPoint ou en ligne.',
-    lead: 'Un <strong>modèle de plan go-to-market</strong> gratuit qui séquence un lancement, de la recherche aux résultats — recherche client et marché, positionnement et message, tarification et offres, activation commerciale et supports, le lancement lui-même, puis l’itération post-lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
+    lead: 'Un <strong>modèle de plan go-to-market</strong> gratuit qui séquence un lancement, de la recherche aux résultats, recherche client et marché, positionnement et message, tarification et offres, activation commerciale et supports, le lancement lui-même, puis l’itération post-lancement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre date de lancement.',
     intro: 'Un plan go-to-market échoue quand marketing, produit, ventes et tarification avancent chacun à leur rythme. Ce modèle pose chaque chantier sur une seule frise, dans les six étapes que suit réellement un lancement :',
     phases: [
       ['Recherche marché et client', 'Définissez le profil client idéal et les personas, analysez la concurrence, et validez le problème et la disposition à payer avant d’arrêter un positionnement. <em>Jalon : recherche terminée.</em>'],
@@ -6931,27 +6931,27 @@ const T = {
       ['Tarification et offres', 'Choisissez le modèle tarifaire, les paliers et la composition des offres, et bâtissez l’analyse de rentabilité et les objectifs de revenus qui les sous-tendent. <em>Jalon : tarifs validés.</em>'],
       ['Activation et supports', 'Formez et outillez les ventes, construisez le site et les pages d’atterrissage, et produisez la démo, les supports et la documentation dont le lancement a besoin. <em>Jalon : supports prêts.</em>'],
       ['Lancement', 'Menez le lancement interne et le contrôle de préparation, passez en ligne à l’externe, et déclenchez ensemble campagnes, RP et prospection commerciale. <em>Jalon : lancement externe.</em>'],
-      ['Post-lancement et itération', 'Mesurez le tunnel et les KPI, recueillez les retours gagné/perdu, et optimisez — un lancement est le début du plan, pas la fin. <em>Jalon : bilan à 30 jours.</em>']
+      ['Post-lancement et itération', 'Mesurez le tunnel et les KPI, recueillez les retours gagné/perdu, et optimisez, un lancement est le début du plan, pas la fin. <em>Jalon : bilan à 30 jours.</em>']
     ],
-    callout: 'Le positionnement est la dépendance dont tout le reste hérite. L’activation, le site et le pitch commercial encodent tous votre positionnement : validez-le donc comme un jalon ferme avant de produire ces supports — les refaire après le lancement parce que le message a changé est l’erreur go-to-market la plus coûteuse.',
+    callout: 'Le positionnement est la dépendance dont tout le reste hérite. L’activation, le site et le pitch commercial encodent tous votre positionnement : validez-le donc comme un jalon ferme avant de produire ces supports, les refaire après le lancement parce que le message a changé est l’erreur go-to-market la plus coûteuse.',
     customize: [
       'Fixez d’abord la date de lancement et remontez le fil ; l’activation et la production des supports demandent presque toujours plus de délai que prévu.',
       'Ajoutez une ligne par canal sous Lancement (payant, contenu, RP, partenariats) pour que chacun ait son responsable et son calendrier.',
       'Si vous pré-lancez sur une liste d’attente ou une bêta, avancez le site et les inscriptions, et conditionnez le lancement complet à la préparation.',
-      'Gardez la tarification sur sa propre voie — elle dépend de la recherche, pas du message, elle peut donc avancer en parallèle du positionnement.',
+      'Gardez la tarification sur sa propre voie, elle dépend de la recherche, pas du message, elle peut donc avancer en parallèle du positionnement.',
       'Marquez recherche, message, tarifs et « supports prêts » comme des jalons pour qu’aucun chantier en aval ne démarre avant l’existence de ses entrées.'
     ],
     tips: [
       '<strong>Le positionnement est sur le chemin critique.</strong> Message, activation et chaque support en dépendent ; une semaine perdue à valider le positionnement décale tout le lancement, alors protégez-le.',
-      '<strong>L’activation est souvent le goulot d’étranglement.</strong> Formation des ventes, supports et démo prennent plus de temps que prévu et conditionnent le lancement — commencez-les dès que le message est validé.',
+      '<strong>L’activation est souvent le goulot d’étranglement.</strong> Formation des ventes, supports et démo prennent plus de temps que prévu et conditionnent le lancement, commencez-les dès que le message est validé.',
       '<strong>Menez la tarification en parallèle, pas en série.</strong> Elle n’a besoin que de la recherche, alors la chevaucher avec le positionnement fait regagner des semaines sur le planning.',
       '<strong>Séparez lancement interne et lancement externe.</strong> L’équipe doit être prête avant que le marché n’entende quoi que ce soit ; planifiez la mise en ligne interne comme un jalon distinct.',
-      '<strong>Planifiez le bilan post-lancement.</strong> Les 30 jours après le lancement — métriques du tunnel, gagné/perdu, itération — sont là où un plan se capitalise ou s’enlise discrètement faute de suivi.'
+      '<strong>Planifiez le bilan post-lancement.</strong> Les 30 jours après le lancement, métriques du tunnel, gagné/perdu, itération, sont là où un plan se capitalise ou s’enlise discrètement faute de suivi.'
     ],
     faq: [
       [
         'Qu’est-ce qu’un plan go-to-market (GTM) ?',
-        'Un plan go-to-market est la frise et l’ensemble des chantiers qui amènent un produit sur le marché — recherche, positionnement, tarification, activation, lancement et post-lancement. Ce modèle pose ces étapes sur un seul planning pour que marketing, produit et ventes restent synchronisés.'
+        'Un plan go-to-market est la frise et l’ensemble des chantiers qui amènent un produit sur le marché, recherche, positionnement, tarification, activation, lancement et post-lancement. Ce modèle pose ces étapes sur un seul planning pour que marketing, produit et ventes restent synchronisés.'
       ],
       [
         'Que doit contenir un plan go-to-market ?',
@@ -6963,16 +6963,16 @@ const T = {
       ],
       [
         'Le modèle de plan go-to-market est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
   'training-program-rollout': {
     card: 'De l’analyse des besoins aux résultats : conception, LMS, pilote et déploiement par vagues dans toute l’organisation.',
     h1: 'Modèle de plan de déploiement d’un programme de formation',
-    metaTitle: 'Plan de déploiement de formation — modèle',
+    metaTitle: 'Plan de déploiement de formation: modèle',
     metaDesc: 'Modèle gratuit de plan de déploiement de formation : analyse des besoins, conception, pilote, déploiement et évaluation. Excel, PowerPoint ou en ligne.',
-    lead: 'Un <strong>modèle de plan de déploiement de formation</strong> gratuit pour les équipes L&amp;D, qui mène un programme de l’analyse des besoins aux résultats — évaluation des besoins, conception pédagogique, développement des contenus, un pilote, le déploiement complet, puis l’évaluation. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre mise en service.',
+    lead: 'Un <strong>modèle de plan de déploiement de formation</strong> gratuit pour les équipes L&amp;D, qui mène un programme de l’analyse des besoins aux résultats, évaluation des besoins, conception pédagogique, développement des contenus, un pilote, le déploiement complet, puis l’évaluation. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre mise en service.',
     intro: 'Un déploiement de formation s’enlise quand le contenu est produit avant que le besoin soit confirmé, ou lancé avant d’être piloté. Ce modèle pose tout le programme sur une seule frise, dans les six étapes que suit réellement la formation :',
     phases: [
       ['Analyse des besoins', 'Évaluez le besoin de formation, définissez le public et les objectifs, et analysez l’écart de compétences pour que le programme réponde à un vrai problème. <em>Jalon : besoins validés.</em>'],
@@ -6982,12 +6982,12 @@ const T = {
       ['Déploiement', 'Planifiez les cohortes et la communication, inscrivez les apprenants, et diffusez la formation par vagues. <em>Jalon : déploiement terminé.</em>'],
       ['Évaluation et ancrage', 'Mesurez les résultats par rapport au plan, ancrez avec des aides à la tâche et un suivi, et passez le programme en revue pour itérer. <em>Jalon : bilan à 90 jours.</em>']
     ],
-    callout: 'Le pilote est l’endroit le moins coûteux pour se tromper. Déployer un programme à toute l’organisation avant qu’un pilote ait validé le contenu, le rythme et l’animation transforme de petits ajustements en refonte à grande échelle — traitez la validation du pilote comme un jalon ferme dont dépend le déploiement complet.',
+    callout: 'Le pilote est l’endroit le moins coûteux pour se tromper. Déployer un programme à toute l’organisation avant qu’un pilote ait validé le contenu, le rythme et l’animation transforme de petits ajustements en refonte à grande échelle, traitez la validation du pilote comme un jalon ferme dont dépend le déploiement complet.',
     customize: [
       'Fixez d’abord la date de mise en service et remontez le fil ; le développement des contenus et la configuration du LMS demandent presque toujours plus de délai que prévu.',
       'Ajoutez une ligne par cohorte ou par région sous Déploiement pour que chaque vague ait son propre calendrier et son responsable.',
       'Si le programme est réglementaire, ajoutez l’échéance comme jalon fixe et vérifiez que le déploiement se termine avant elle.',
-      'Gardez la configuration du LMS sur sa propre voie — elle dépend de la conception, pas du contenu fini, elle peut donc avancer en parallèle du développement.',
+      'Gardez la configuration du LMS sur sa propre voie, elle dépend de la conception, pas du contenu fini, elle peut donc avancer en parallèle du développement.',
       'Marquez la validation des besoins, de la conception, du contenu et du pilote comme des jalons pour qu’aucune phase ne démarre avant que ses entrées soient prêtes.'
     ],
     tips: [
@@ -6995,7 +6995,7 @@ const T = {
       '<strong>Le pilote est sur le chemin critique du déploiement.</strong> Le déploiement complet dépend de la validation du pilote, alors protégez la fenêtre du pilote plutôt que de la comprimer pour tenir une date.',
       '<strong>Menez la configuration du LMS en parallèle.</strong> Elle n’a besoin que de la conception et de la structure, alors la chevaucher avec le développement des contenus fait regagner des semaines sur le planning.',
       '<strong>Planifiez l’ancrage, pas seulement la diffusion.</strong> L’apprentissage se dissipe sans suivi ; les aides à la tâche et les piqûres de rappel ont leur place dans le plan, pas dans les bonnes intentions.',
-      '<strong>Mesurez par rapport aux objectifs fixés.</strong> Reliez l’évaluation aux indicateurs de réussite de la phase de conception — un déploiement qui a diffusé des sessions mais pas de résultats n’est pas terminé.'
+      '<strong>Mesurez par rapport aux objectifs fixés.</strong> Reliez l’évaluation aux indicateurs de réussite de la phase de conception, un déploiement qui a diffusé des sessions mais pas de résultats n’est pas terminé.'
     ],
     faq: [
       [
@@ -7012,7 +7012,7 @@ const T = {
       ],
       [
         'Le modèle de plan de déploiement de formation est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7031,7 +7031,7 @@ const T = {
       ['Événement en direct', 'Passez en direct et animez, et modérez les questions et l’engagement. <em>Jalon : webinaire diffusé.</em>'],
       ['Suivi', 'Publiez l’enregistrement, envoyez les e-mails de suivi, transmettez les leads aux ventes et mesurez les résultats. <em>Jalon : bilan post-webinaire.</em>'],
     ],
-    callout: 'L’essentiel de la valeur d’un webinaire se crée après l’heure en direct. Les participants comme les absents ont besoin d’un suivi — l’enregistrement, un e-mail de nurturing et la transmission aux ventes — alors planifiez le suivi avant l’événement, pas dans les jours de fatigue qui suivent, sinon les leads durement inscrits refroidissent.',
+    callout: 'L’essentiel de la valeur d’un webinaire se crée après l’heure en direct. Les participants comme les absents ont besoin d’un suivi, l’enregistrement, un e-mail de nurturing et la transmission aux ventes, alors planifiez le suivi avant l’événement, pas dans les jours de fatigue qui suivent, sinon les leads durement inscrits refroidissent.',
     customize: [
       'Accordez au moins trois à quatre semaines à la promotion : la plupart des inscriptions arrivent la première et la dernière semaine, mais il faut le délai entre les deux.',
       'Posez l’objectif d’inscriptions en jalon et surveillez-le ; si vous êtes en retard à mi-parcours, ajoutez de la promotion plutôt que d’espérer.',
@@ -7047,20 +7047,20 @@ const T = {
       '<strong>Mesurez par rapport à l’objectif.</strong> Reliez le bilan aux objectifs d’inscription et de pipeline du plan : un webinaire diffusé mais sans suivi n’est pas terminé.',
     ],
     faq: [
-      ['Combien de temps à l’avance planifier un webinaire ?', 'La plupart des webinaires demandent quatre à huit semaines — assez de délai pour la promotion et la préparation des intervenants. Le modèle répartit le cadrage, l’inscription, la promotion, la répétition, l’événement en direct et le suivi sur une ligne de temps pour voir si votre date est réaliste.'],
+      ['Combien de temps à l’avance planifier un webinaire ?', 'La plupart des webinaires demandent quatre à huit semaines, assez de délai pour la promotion et la préparation des intervenants. Le modèle répartit le cadrage, l’inscription, la promotion, la répétition, l’événement en direct et le suivi sur une ligne de temps pour voir si votre date est réaliste.'],
       ['Que doit contenir un plan de webinaire ?', 'Au minimum : objectif et sujet, intervenants et plateforme, une page d’inscription, une séquence de promotion, une répétition et un test technique, l’événement en direct et un plan de suivi. Le modèle donne à chacun sa propre étape, avec jalons et responsables.'],
       ['Puis-je afficher les dépendances entre les tâches du webinaire ?', 'Oui. Ouvrez le modèle dans l’<a href="/app.html">éditeur gratuit de gantts.app</a> pour relier des liens fin-début (confirmer → créer → promouvoir → répéter → diffuser) afin que le travail en aval se décale automatiquement et que le chemin critique reste visible.'],
-      ['Le modèle de plan de webinaire est-il gratuit ?', 'Oui — gratuit à télécharger en Excel, PowerPoint ou CSV, et gratuit à modifier en ligne sans inscription.'],
+      ['Le modèle de plan de webinaire est-il gratuit ?', 'Oui, gratuit à télécharger en Excel, PowerPoint ou CSV, et gratuit à modifier en ligne sans inscription.'],
     ],
   },
 
   'podcast-launch-plan': {
     card: 'De l’idée au jour du lancement : concept, identité, enregistrement en lot, flux RSS et sortie multi-épisodes.',
     h1: 'Modèle de plan de lancement de podcast',
-    metaTitle: 'Plan de lancement de podcast — modèle',
+    metaTitle: 'Plan de lancement de podcast: modèle',
     metaDesc: 'Modèle gratuit de plan de lancement de podcast : concept, identité, enregistrement, flux RSS, annuaires et jour du lancement. Excel, PowerPoint ou en ligne.',
-    lead: 'Un <strong>modèle de plan de lancement de podcast</strong> gratuit qui mène une émission de l’idée au jour du lancement — concept et audience, identité visuelle et matériel, enregistrement des épisodes de lancement, montage, soumission aux annuaires, et la sortie multi-épisodes elle-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre sortie.',
-    intro: 'La plupart des podcasts s’essoufflent parce qu’ils sortent avec un seul épisode et aucune réserve d’avance. Ce modèle planifie tout le lancement sur une seule frise — y compris le lot d’épisodes qui vous garde régulier — en six étapes que suit réellement une émission :',
+    lead: 'Un <strong>modèle de plan de lancement de podcast</strong> gratuit qui mène une émission de l’idée au jour du lancement, concept et audience, identité visuelle et matériel, enregistrement des épisodes de lancement, montage, soumission aux annuaires, et la sortie multi-épisodes elle-même. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à votre sortie.',
+    intro: 'La plupart des podcasts s’essoufflent parce qu’ils sortent avec un seul épisode et aucune réserve d’avance. Ce modèle planifie tout le lancement sur une seule frise, y compris le lot d’épisodes qui vous garde régulier, en six étapes que suit réellement une émission :',
     phases: [
       ['Concept &amp; plan', 'Définissez votre niche et votre audience, fixez le format et le nom de l’émission, et planifiez une première saison pour ne pas inventer chaque épisode à la dernière minute. <em>Jalon : concept validé.</em>'],
       ['Identité &amp; installation', 'Commandez la pochette, réglez la musique d’intro et d’outro, et choisissez votre hébergeur, votre matériel et votre espace d’enregistrement. <em>Jalon : installation prête.</em>'],
@@ -7069,20 +7069,20 @@ const T = {
       ['Soumission &amp; pré-lancement', 'Configurez votre flux RSS et soumettez-le à Apple Podcasts et Spotify, montez un site simple, et échauffez une audience. <em>Jalon : annuaires approuvés.</em>'],
       ['Lancement &amp; croissance', 'Publiez les épisodes de lancement ensemble, menez promotion et prospection, puis analysez les statistiques et installez un rythme. <em>Jalon : premier mois analysé.</em>']
     ],
-    callout: 'Lancez avec un lot, pas un seul épisode. Les nouvelles émissions sont classées en partie sur leur régularité initiale, et un lancement à un épisode cale dès que la vie s’accélère — enregistrez trois à cinq épisodes avant le jour du lancement et traitez « enregistrement terminé » comme une barrière ferme avant de soumettre aux annuaires.',
+    callout: 'Lancez avec un lot, pas un seul épisode. Les nouvelles émissions sont classées en partie sur leur régularité initiale, et un lancement à un épisode cale dès que la vie s’accélère, enregistrez trois à cinq épisodes avant le jour du lancement et traitez « enregistrement terminé » comme une barrière ferme avant de soumettre aux annuaires.',
     customize: [
       'Fixez votre date de lancement et remontez le fil ; la pochette et l’approbation des annuaires prennent tous deux plus de temps que les débutants ne l’imaginent.',
-      'Soumettez votre flux à Apple et Spotify au moins une semaine à l’avance — l’approbation n’est pas instantanée et vous ne pouvez pas lancer sans elle.',
+      'Soumettez votre flux à Apple et Spotify au moins une semaine à l’avance, l’approbation n’est pas instantanée et vous ne pouvez pas lancer sans elle.',
       'Ajoutez une ligne par épisode de lancement sous Enregistrement et Montage pour qu’une sortie multi-épisodes montre l’avancement de chacun.',
-      'Gardez l’identité sur sa propre voie — la pochette et la musique dépendent du concept, pas des enregistrements, elles peuvent donc avancer en parallèle.',
+      'Gardez l’identité sur sa propre voie, la pochette et la musique dépendent du concept, pas des enregistrements, elles peuvent donc avancer en parallèle.',
       'Marquez concept, installation, enregistrement et approbation des annuaires comme des jalons pour que rien en aval ne démarre avant que ses entrées soient prêtes.'
     ],
     tips: [
-      '<strong>L’approbation des annuaires est sur le chemin critique.</strong> Vous ne pouvez pas lancer tant qu’Apple et Spotify n’ont pas référencé votre flux, et cela peut prendre plusieurs jours — soumettez tôt et traitez-la comme une dépendance ferme avant le jour du lancement.',
+      '<strong>L’approbation des annuaires est sur le chemin critique.</strong> Vous ne pouvez pas lancer tant qu’Apple et Spotify n’ont pas référencé votre flux, et cela peut prendre plusieurs jours, soumettez tôt et traitez-la comme une dépendance ferme avant le jour du lancement.',
       '<strong>Enregistrez en lot avant de lancer.</strong> Enregistrer trois à cinq épisodes en amont distingue les émissions qui durent de celles qui s’éteignent ; le planning doit conditionner le lancement à ce lot.',
       '<strong>Menez l’identité en parallèle de l’enregistrement.</strong> Pochette, musique et site n’ont besoin que du concept, alors les chevaucher avec la production fait gagner des semaines sur le planning.',
       '<strong>Enregistrez la bande-annonce une fois les épisodes prêts.</strong> Une bande-annonce qui promet un ton que les épisodes ne tiennent pas nuit à l’émission ; planifiez-la après les premiers montages, pas avant.',
-      '<strong>Planifiez le suivi.</strong> Le premier mois — promotion, prospection d’invités, analyse des statistiques — est là où un lancement prend son élan ou s’essouffle discrètement faute de plan.'
+      '<strong>Planifiez le suivi.</strong> Le premier mois, promotion, prospection d’invités, analyse des statistiques, est là où un lancement prend son élan ou s’essouffle discrètement faute de plan.'
     ],
     faq: [
       [
@@ -7099,7 +7099,7 @@ const T = {
       ],
       [
         'Le modèle de plan de lancement de podcast est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7107,28 +7107,28 @@ const T = {
   'study-plan': {
     card: 'Listez les matières, bâtissez un planning de révision hebdomadaire, entraînez-vous sur les annales, revoyez vos points faibles et passez des examens blancs.',
     h1: 'Modèle de plan de révision',
-    metaTitle: 'Plan de révision — modèle',
+    metaTitle: 'Plan de révision: modèle',
     metaDesc: 'Modèle gratuit de plan de révision pour examens : matières, planning hebdomadaire, entraînement et examens blancs. Excel, PowerPoint ou en ligne.',
     lead: 'Un <strong>modèle de plan de révision</strong> gratuit qui vous mène de votre première liste de matières au jour de l’examen : organisez-vous, apprenez le cours, entraînez-vous sur les annales et par rappel actif, revoyez vos points faibles, passez des examens blancs chronométrés et arrivez préparé. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la date de l’examen.',
     intro: 'La plupart des révisions échouent non par manque de travail mais par manque de plan : on revoit les sujets faciles et le temps manque pour les difficiles. Ce modèle place toute votre révision sur une seule frise, en six étapes qui vous préparent réellement à l’examen :',
     phases: [
       ['Organisation &amp; préparation', 'Listez vos matières et vos chapitres, rassemblez vos supports, évaluez honnêtement vos forces et vos lacunes, et fixez vos dates d’examen et vos notes visées. <em>Jalon : plan de révision prêt.</em>'],
-      ['Apprendre — premier passage', 'Travaillez les chapitres principaux une première fois, prenez des notes et faites des fiches au fil de l’eau, et prévoyez une revue hebdomadaire pour rattraper. <em>Jalon : premier passage terminé.</em>'],
+      ['Apprendre, premier passage', 'Travaillez les chapitres principaux une première fois, prenez des notes et faites des fiches au fil de l’eau, et prévoyez une revue hebdomadaire pour rattraper. <em>Jalon : premier passage terminé.</em>'],
       ['Entraînement &amp; rappel actif', 'Faites des exercices par chapitre, révisez vos fiches en répétition espacée, et passez votre première annale chronométrée. <em>Jalon : entraînement lancé.</em>'],
       ['Revoir les points faibles', 'Repérez et retravaillez les chapitres où vous êtes le plus faible, et condensez-les en fiches de synthèse et cartes mentales. <em>Jalon : points faibles consolidés.</em>'],
-      ['Examens blancs &amp; revue finale', 'Passez des examens blancs complets et chronométrés, analysez les résultats et finissez vos synthèses — puis reposez-vous. <em>Jalon : prêt pour les examens.</em>'],
+      ['Examens blancs &amp; revue finale', 'Passez des examens blancs complets et chronométrés, analysez les résultats et finissez vos synthèses, puis reposez-vous. <em>Jalon : prêt pour les examens.</em>'],
       ['Semaine d’examens', 'Réglez la logistique, passez les examens et terminez. <em>Jalon : examens terminés.</em>']
     ],
     callout: 'Révisez vos points faibles, pas vos sujets préférés. Le temps de révision paraît productif quand on relit ce qu’on sait déjà, alors programmez d’abord les chapitres difficiles et mal notés et protégez ce temps : les plus grands gains de note viennent de la matière que vous évitiez, pas de celle que vous aimez.',
     customize: [
       'Fixez d’abord votre date d’examen et remontez le fil ; trois à huit semaines est courant, mais bloquez les jours où vous ne pouvez vraiment pas réviser.',
       'Ajoutez une ligne par matière (ou par chapitre) sous Apprendre et Entraînement pour qu’un plan multi-matières montre l’avancement de chacune.',
-      'Placez vos matières les plus faibles en premier — mettez les chapitres difficiles au début, quand votre énergie et votre marge sont au plus haut.',
+      'Placez vos matières les plus faibles en premier, mettez les chapitres difficiles au début, quand votre énergie et votre marge sont au plus haut.',
       'Prévoyez des pauses et des journées plus légères ; un plan sans repos est un plan que vous abandonnerez dès la deuxième semaine.',
       'Marquez « plan de révision prêt », « premier passage terminé » et « points faibles consolidés » comme des jalons pour voir si vous tenez le rythme.'
     ],
     tips: [
-      '<strong>Le rappel actif bat la relecture.</strong> Le temps passé à s’interroger — fiches, exercices — s’ancre bien mieux que le surlignage ; le planning doit donner du poids à l’entraînement, pas seulement à la lecture.',
+      '<strong>Le rappel actif bat la relecture.</strong> Le temps passé à s’interroger, fiches, exercices, s’ancre bien mieux que le surlignage ; le planning doit donner du poids à l’entraînement, pas seulement à la lecture.',
       '<strong>Les annales sont la tâche la plus rentable.</strong> Une annale chronométrée révèle à la fois ce que vous ne savez pas et votre gestion du temps ; faites la première tôt, pas la dernière semaine.',
       '<strong>Espacez vos révisions, ne les massez pas.</strong> Revenir sur un chapitre sur plusieurs jours l’emporte sur une seule longue séance ; c’est pourquoi la voie des fiches traverse tout le plan.',
       '<strong>Analysez vos examens blancs, ne vous contentez pas de les passer.</strong> L’apprentissage est dans la relecture de vos erreurs ; planifiez l’analyse, pas seulement l’épreuve.',
@@ -7137,7 +7137,7 @@ const T = {
     faq: [
       [
         'Combien de temps à l’avance commencer un plan de révision ?',
-        'Trois à huit semaines avant les examens est courant — assez pour un premier passage, de l’entraînement et une révision sans s’épuiser. Le modèle répartit organisation, apprentissage, entraînement, révision et examens blancs sur une frise pour voir si votre marge est réaliste.'
+        'Trois à huit semaines avant les examens est courant, assez pour un premier passage, de l’entraînement et une révision sans s’épuiser. Le modèle répartit organisation, apprentissage, entraînement, révision et examens blancs sur une frise pour voir si votre marge est réaliste.'
       ],
       [
         'Que doit contenir un plan de révision ?',
@@ -7149,7 +7149,7 @@ const T = {
       ],
       [
         'Le modèle de plan de révision est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7157,10 +7157,10 @@ const T = {
   'moving-house-timeline': {
     card: 'Planifiez un déménagement semaine par semaine : trier, réserver les déménageurs, changer d’adresse, emballer, jour J et installation.',
     h1: 'Modèle de planning de déménagement',
-    metaTitle: 'Planning de déménagement — modèle',
+    metaTitle: 'Planning de déménagement: modèle',
     metaDesc: 'Modèle et check-list gratuits de déménagement : fixez la date, réservez les déménageurs, changez d’adresse et emballez pièce par pièce. Excel ou en ligne.',
-    lead: 'Un <strong>planning de déménagement</strong> gratuit — une check-list semaine par semaine qui vous mène de votre premier plan à votre première nuit dans le nouveau logement : fixez la date et le budget, réservez les déménageurs, changez d’adresse, emballez pièce par pièce, passez le jour J et installez-vous. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du déménagement.',
-    intro: 'Déménager stresse parce que tout tombe en même temps — et les démarches (énergie, courrier, changements d’adresse) ont, sans bruit, les délais les plus longs. Ce modèle répartit tout le déménagement sur une seule frise, en six étapes qu’un déménagement traverse réellement :',
+    lead: 'Un <strong>planning de déménagement</strong> gratuit, une check-list semaine par semaine qui vous mène de votre premier plan à votre première nuit dans le nouveau logement : fixez la date et le budget, réservez les déménageurs, changez d’adresse, emballez pièce par pièce, passez le jour J et installez-vous. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du déménagement.',
+    intro: 'Déménager stresse parce que tout tombe en même temps, et les démarches (énergie, courrier, changements d’adresse) ont, sans bruit, les délais les plus longs. Ce modèle répartit tout le déménagement sur une seule frise, en six étapes qu’un déménagement traverse réellement :',
     phases: [
       ['Planifier &amp; budgéter', 'Fixez la date et le budget, faites un inventaire, commencez à trier et demandez des devis à des entreprises de déménagement. <em>Jalon : plan et budget prêts.</em>'],
       ['Réserver &amp; prévenir', 'Réservez les déménageurs ou un utilitaire, posez des congés et organisez de l’aide, donnez congé au propriétaire ou mettez le bien en vente, et gérez le stationnement et l’accès. <em>Jalon : déménageurs réservés.</em>'],
@@ -7169,7 +7169,7 @@ const T = {
       ['Semaine du déménagement', 'Confirmez avec les déménageurs, dégivrez le frigo, relevez les compteurs, faites le ménage de l’ancien logement et passez le jour J. <em>Jalon : emménagé.</em>'],
       ['S’installer', 'Déballez l’essentiel, mettez l’énergie et internet en service, déballez pièce par pièce et inscrivez-vous sur les listes électorales. <em>Jalon : installation terminée.</em>'],
     ],
-    callout: 'Commencez les démarches tôt : ce sont elles qui ont les délais les plus longs. Réserver une bonne entreprise de déménagement, faire suivre le courrier et changer l’énergie prennent des jours ou des semaines à prendre effet — les déménagements qui se passent bien sont ceux où la paperasse a démarré six à huit semaines avant, pas le week-end avant l’arrivée du camion.',
+    callout: 'Commencez les démarches tôt : ce sont elles qui ont les délais les plus longs. Réserver une bonne entreprise de déménagement, faire suivre le courrier et changer l’énergie prennent des jours ou des semaines à prendre effet, les déménagements qui se passent bien sont ceux où la paperasse a démarré six à huit semaines avant, pas le week-end avant l’arrivée du camion.',
     customize: [
       'Fixez d’abord le jour du déménagement et remontez le fil ; six à huit semaines est confortable, mais un déménagement en deux semaines fonctionne si vous compressez les démarches.',
       'Ajoutez une ligne par pièce sous Emballer pour qu’un déménagement de toute la maison montre l’avancement de chacune et que rien ne reste dans un placard.',
@@ -7178,16 +7178,16 @@ const T = {
       'Marquez « déménageurs réservés », « changements d’adresse faits » et « emballage terminé » comme des jalons pour voir si vous tenez le rythme jusqu’au jour J.',
     ],
     tips: [
-      '<strong>Triez avant d’emballer, pas après.</strong> Chaque carton que vous ne déménagez pas fait gagner du temps et de l’argent ; commencez à vendre et à donner tôt, car cela dure des semaines — c’est la seule tâche impossible à précipiter à la fin.',
+      '<strong>Triez avant d’emballer, pas après.</strong> Chaque carton que vous ne déménagez pas fait gagner du temps et de l’argent ; commencez à vendre et à donner tôt, car cela dure des semaines, c’est la seule tâche impossible à précipiter à la fin.',
       '<strong>L’énergie et le courrier ont les délais les plus longs.</strong> Changer d’énergie et d’internet et faire suivre le courrier peut prendre des jours ou des semaines à prendre effet ; démarrez les démarches d’adresse six semaines avant, pas la semaine du déménagement.',
-      '<strong>Étiquetez les cartons par pièce et par priorité.</strong> Un carton marqué « cuisine — à ouvrir en premier » fait gagner des heures à l’arrivée ; étiquetez en emballant, pas de mémoire ensuite.',
-      '<strong>Relevez les compteurs et prenez des photos le jour J.</strong> Les relevés et une photo de chaque pièce protègent votre caution et soldent les dernières factures d’énergie — une tâche facile à oublier dans la précipitation.',
-      '<strong>Emballez le carton d’essentiels en dernier.</strong> Bouilloire, chargeurs, médicaments, une tenue de rechange et le linge de lit — la première nuit est bien plus simple quand le seul carton dont vous avez besoin est celui que vous retrouvez.',
+      '<strong>Étiquetez les cartons par pièce et par priorité.</strong> Un carton marqué « cuisine, à ouvrir en premier » fait gagner des heures à l’arrivée ; étiquetez en emballant, pas de mémoire ensuite.',
+      '<strong>Relevez les compteurs et prenez des photos le jour J.</strong> Les relevés et une photo de chaque pièce protègent votre caution et soldent les dernières factures d’énergie, une tâche facile à oublier dans la précipitation.',
+      '<strong>Emballez le carton d’essentiels en dernier.</strong> Bouilloire, chargeurs, médicaments, une tenue de rechange et le linge de lit, la première nuit est bien plus simple quand le seul carton dont vous avez besoin est celui que vous retrouvez.',
     ],
     faq: [
       [
         'Combien de temps à l’avance faut-il planifier un déménagement ?',
-        'Six à huit semaines est confortable pour un déménagement — assez pour réserver les déménageurs, trier et faire les démarches d’adresse avant que l’emballage ne prenne le dessus. Le modèle répartit planification, réservation, démarches, emballage, semaine du déménagement et installation sur une frise pour voir si votre marge est réaliste.'
+        'Six à huit semaines est confortable pour un déménagement, assez pour réserver les déménageurs, trier et faire les démarches d’adresse avant que l’emballage ne prenne le dessus. Le modèle répartit planification, réservation, démarches, emballage, semaine du déménagement et installation sur une frise pour voir si votre marge est réaliste.'
       ],
       [
         'Que doit contenir une check-list de déménagement ?',
@@ -7199,7 +7199,7 @@ const T = {
       ],
       [
         'Le modèle de planning de déménagement est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7207,10 +7207,10 @@ const T = {
   'kitchen-remodel-timeline': {
     card: 'Planifiez une rénovation de cuisine semaine par semaine : conception, commande des meubles, démolition, réseaux, plans de travail et pose finale.',
     h1: 'Modèle de planning de rénovation de cuisine',
-    metaTitle: 'Rénovation de cuisine — modèle',
+    metaTitle: 'Rénovation de cuisine: modèle',
     metaDesc: 'Modèle et planning gratuits de rénovation de cuisine : conception, commande des meubles, démolition, réseaux et plans de travail. Excel ou en ligne.',
-    lead: 'Un <strong>planning de rénovation de cuisine</strong> gratuit — un calendrier semaine par semaine qui mène votre cuisine des premières mesures au contrôle final : conception et budget, commande des meubles et plans de travail à long délai, démolition, passage de la plomberie et de l’électricité, murs et sol, puis la pose des meubles, des plans de travail et de l’électroménager. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la cuisine terminée.',
-    intro: 'Une rénovation de cuisine s’étire non parce que le travail est lent, mais pour deux raisons : les meubles mettent six à huit semaines à arriver et les plans de travail ne peuvent être mesurés qu’une fois les meubles posés — puis fabriqués. Ce modèle place tout le chantier sur une seule frise pour que ces commandes à long délai partent tôt et que la séquence ne cale jamais :',
+    lead: 'Un <strong>planning de rénovation de cuisine</strong> gratuit, un calendrier semaine par semaine qui mène votre cuisine des premières mesures au contrôle final : conception et budget, commande des meubles et plans de travail à long délai, démolition, passage de la plomberie et de l’électricité, murs et sol, puis la pose des meubles, des plans de travail et de l’électroménager. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la cuisine terminée.',
+    intro: 'Une rénovation de cuisine s’étire non parce que le travail est lent, mais pour deux raisons : les meubles mettent six à huit semaines à arriver et les plans de travail ne peuvent être mesurés qu’une fois les meubles posés, puis fabriqués. Ce modèle place tout le chantier sur une seule frise pour que ces commandes à long délai partent tôt et que la séquence ne cale jamais :',
     phases: [
       ['Conception &amp; planification', 'Fixez le budget et le périmètre, prenez les mesures et arrêtez l’implantation, choisissez matériaux et finitions, engagez l’entreprise et obtenez les autorisations. <em>Jalon : conception validée.</em>'],
       ['Commander les longs délais', 'Commandez les meubles (le goulot de six à huit semaines), les plans de travail, l’électroménager, le sol et le carrelage, et installez une cuisine provisoire. <em>Jalon : meubles livrés.</em>'],
@@ -7237,7 +7237,7 @@ const T = {
     faq: [
       [
         'Combien de temps dure une rénovation de cuisine ?',
-        'La plupart des rénovations de cuisine durent 10 à 16 semaines de la conception au contrôle final — et l’essentiel, c’est l’attente des meubles (six à huit semaines) et de la fabrication des plans de travail (une à deux semaines après la pose des meubles), pas la main-d’œuvre. Le modèle répartit conception, commandes, démolition, réseaux, surfaces et pose sur une frise pour voir où sont les vraies attentes.'
+        'La plupart des rénovations de cuisine durent 10 à 16 semaines de la conception au contrôle final, et l’essentiel, c’est l’attente des meubles (six à huit semaines) et de la fabrication des plans de travail (une à deux semaines après la pose des meubles), pas la main-d’œuvre. Le modèle répartit conception, commandes, démolition, réseaux, surfaces et pose sur une frise pour voir où sont les vraies attentes.'
       ],
       [
         'Pourquoi les plans de travail sont-ils si longs ?',
@@ -7249,7 +7249,7 @@ const T = {
       ],
       [
         'Le modèle de rénovation de cuisine est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7257,10 +7257,10 @@ const T = {
   'crowdfunding-campaign-plan': {
     card: 'Planifiez une campagne de financement participatif de bout en bout : concept, vidéo, audience de pré-lancement, campagne en direct et livraison.',
     h1: 'Modèle de campagne de financement participatif',
-    metaTitle: 'Campagne de crowdfunding — modèle',
+    metaTitle: 'Campagne de crowdfunding: modèle',
     metaDesc: 'Modèle gratuit de campagne de financement participatif : concept, vidéo, audience de pré-lancement, campagne et livraison. Excel ou en ligne.',
-    lead: 'Un <strong>modèle de campagne de financement participatif</strong> gratuit — un calendrier qui mène un projet Kickstarter ou Indiegogo de l’idée aux contreparties livrées : validez le concept et les contreparties, réalisez la vidéo et la page, construisez une audience de pré-lancement, menez la campagne en direct et livrez. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du lancement.',
-    intro: 'Les campagnes de financement participatif se gagnent avant leur lancement : les projets qui financent vite sont ceux qui ont passé des semaines à construire une liste d’e-mails et à aligner des contributeurs de la première heure, pour que le premier jour ait de l’élan. Ce modèle place toute la campagne sur une seule frise — la longue phase de pré-lancement comprise — en six étapes :',
+    lead: 'Un <strong>modèle de campagne de financement participatif</strong> gratuit, un calendrier qui mène un projet Kickstarter ou Indiegogo de l’idée aux contreparties livrées : validez le concept et les contreparties, réalisez la vidéo et la page, construisez une audience de pré-lancement, menez la campagne en direct et livrez. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’au jour du lancement.',
+    intro: 'Les campagnes de financement participatif se gagnent avant leur lancement : les projets qui financent vite sont ceux qui ont passé des semaines à construire une liste d’e-mails et à aligner des contributeurs de la première heure, pour que le premier jour ait de l’élan. Ce modèle place toute la campagne sur une seule frise, la longue phase de pré-lancement comprise, en six étapes :',
     phases: [
       ['Concept &amp; validation', 'Définissez l’idée et la proposition de valeur, étudiez le marché, fixez votre objectif de collecte et le budget, concevez les paliers de contreparties et choisissez la plateforme. <em>Jalon : concept validé.</em>'],
       ['Créer les supports', 'Construisez le prototype ou les échantillons, écrivez et tournez la vidéo de présentation, rédigez la page de campagne et concevez les visuels. <em>Jalon : supports prêts.</em>'],
@@ -7269,7 +7269,7 @@ const T = {
       ['Campagne en direct', 'Lancez, échangez chaque jour avec les contributeurs, menez une relance presse à mi-parcours, annoncez des objectifs bonus et poussez le sprint des dernières 48 heures. <em>Jalon : campagne financée.</em>'],
       ['Clôture &amp; livraison', 'Remerciez vos contributeurs, envoyez les questionnaires du gestionnaire de contributions, finalisez la production et livrez et expédiez les contreparties. <em>Jalon : contreparties livrées.</em>'],
     ],
-    callout: 'Construisez votre audience avant de lancer, pas après. Les campagnes sont classées en partie sur l’élan initial, et un projet qui ouvre sans liste d’e-mails cale dès le premier jour. Consacrez les semaines avant le lancement à collecter des e-mails et à sécuriser des engagements anticipés valant environ 20% de l’objectif, pour que la campagne atteigne une part de sa cible dans les 48 premières heures — le meilleur indicateur de réussite du financement.',
+    callout: 'Construisez votre audience avant de lancer, pas après. Les campagnes sont classées en partie sur l’élan initial, et un projet qui ouvre sans liste d’e-mails cale dès le premier jour. Consacrez les semaines avant le lancement à collecter des e-mails et à sécuriser des engagements anticipés valant environ 20% de l’objectif, pour que la campagne atteigne une part de sa cible dans les 48 premières heures, le meilleur indicateur de réussite du financement.',
     customize: [
       'Fixez d’abord votre date de lancement et remontez le fil ; une vraie phase de pré-lancement dure six à douze semaines, pas quelques jours.',
       'Gardez les tâches liste d’e-mails et early bird actives pendant des semaines : la construction d’audience en amont est ce qui finance vraiment la campagne, pas la publication du jour de lancement.',
@@ -7287,11 +7287,11 @@ const T = {
     faq: [
       [
         'Combien de temps faut-il pour planifier une campagne de financement participatif ?',
-        'La plupart des campagnes réussies consacrent six à douze semaines au pré-lancement — construire une liste d’e-mails, les supports et des engagements anticipés — avant une campagne en direct de 30 jours, puis des semaines ou des mois à la livraison. Le modèle répartit concept, supports, pré-lancement, lancement, campagne en direct et livraison sur une frise pour voir la vraie marge.'
+        'La plupart des campagnes réussies consacrent six à douze semaines au pré-lancement, construire une liste d’e-mails, les supports et des engagements anticipés, avant une campagne en direct de 30 jours, puis des semaines ou des mois à la livraison. Le modèle répartit concept, supports, pré-lancement, lancement, campagne en direct et livraison sur une frise pour voir la vraie marge.'
       ],
       [
         'Pourquoi la phase de pré-lancement est-elle si importante ?',
-        'Les plateformes classent les projets en partie sur l’élan initial, donc une campagne qui ouvre avec une audience et des engagements anticipés atteint une part de son objectif dans les 48 premières heures — le meilleur indicateur de financement. Le modèle donne à la construction d’audience sa propre phase de plusieurs semaines au lieu de traiter le jour de lancement comme le départ.'
+        'Les plateformes classent les projets en partie sur l’élan initial, donc une campagne qui ouvre avec une audience et des engagements anticipés atteint une part de son objectif dans les 48 premières heures, le meilleur indicateur de financement. Le modèle donne à la construction d’audience sa propre phase de plusieurs semaines au lieu de traiter le jour de lancement comme le départ.'
       ],
       [
         'Puis-je afficher les dépendances entre les tâches de la campagne ?',
@@ -7299,7 +7299,7 @@ const T = {
       ],
       [
         'Le modèle de campagne de financement participatif est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7309,8 +7309,8 @@ const T = {
     h1: 'Modèle de cycle d’évaluation de la performance',
     metaTitle: 'Cycle d’évaluation de la performance',
     metaDesc: 'Modèle gratuit de cycle d’évaluation de la performance : cadre, auto-évaluations, évaluations des managers, calibrage et restitution. Excel ou en ligne.',
-    lead: 'Un <strong>modèle de cycle d’évaluation de la performance</strong> gratuit — un calendrier qui mène un cycle d’évaluation du cadre aux évaluations clôturées : fixez les critères et formez les managers, recueillez auto-évaluations et feedback 360, rédigez les évaluations des managers, calibrez les notes, restituez en entretien individuel et fixez des plans de développement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la restitution.',
-    intro: 'Les évaluations dérapent quand les étapes se chevauchent : des managers qui rédigent avant d’avoir les auto-évaluations, ou des notes restituées avant le calibrage. Ce modèle place tout le cycle sur une seule frise, en six étapes qu’un processus d’évaluation traverse — annuel, semestriel ou trimestriel :',
+    lead: 'Un <strong>modèle de cycle d’évaluation de la performance</strong> gratuit, un calendrier qui mène un cycle d’évaluation du cadre aux évaluations clôturées : fixez les critères et formez les managers, recueillez auto-évaluations et feedback 360, rédigez les évaluations des managers, calibrez les notes, restituez en entretien individuel et fixez des plans de développement. Téléchargez-le pour Excel, PowerPoint ou CSV, ou ouvrez-le en ligne pour relier les dépendances et visualiser le chemin critique jusqu’à la restitution.',
+    intro: 'Les évaluations dérapent quand les étapes se chevauchent : des managers qui rédigent avant d’avoir les auto-évaluations, ou des notes restituées avant le calibrage. Ce modèle place tout le cycle sur une seule frise, en six étapes qu’un processus d’évaluation traverse, annuel, semestriel ou trimestriel :',
     phases: [
       ['Préparer &amp; cadrer', 'Définissez le périmètre et le calendrier du cycle, mettez à jour les compétences et l’échelle de notation, configurez l’outil, communiquez à l’organisation et formez les managers. <em>Jalon : cadre du cycle prêt.</em>'],
       ['Objectifs &amp; auto-évaluation', 'Confirmez les objectifs évalués, recueillez les auto-évaluations des salariés et le feedback 360/des pairs, et rassemblez les données de performance à l’appui. <em>Jalon : auto-évaluations reçues.</em>'],
@@ -7319,7 +7319,7 @@ const T = {
       ['Restitution', 'Préparez les comptes rendus d’évaluation et restituez les évaluations en entretien individuel. <em>Jalon : évaluations restituées.</em>'],
       ['Développement &amp; clôture', 'Fixez les objectifs du prochain cycle, convenez des plans de développement, recueillez un retour sur le processus, et clôturez et rendez compte du cycle. <em>Jalon : cycle clôturé.</em>'],
     ],
-    callout: 'Calibrez avant de restituer, jamais après. Une note communiquée à un salarié ne peut être retirée, il faut donc la normaliser entre équipes — au calibrage — avant de restituer une seule évaluation. L’erreur la plus dommageable d’un cycle est qu’un manager partage une note que le calibrage change ensuite ; traitez « notes arrêtées » comme une barrière avant tout entretien.',
+    callout: 'Calibrez avant de restituer, jamais après. Une note communiquée à un salarié ne peut être retirée, il faut donc la normaliser entre équipes, au calibrage, avant de restituer une seule évaluation. L’erreur la plus dommageable d’un cycle est qu’un manager partage une note que le calibrage change ensuite ; traitez « notes arrêtées » comme une barrière avant tout entretien.',
     customize: [
       'Fixez d’abord la date limite de restitution et remontez le fil ; un cycle complet demande six à dix semaines une fois auto-évaluation, évaluations et calibrage bien enchaînés.',
       'Gardez l’auto-évaluation strictement avant les évaluations des managers : le but est que le manager rédige avec l’apport du salarié en main, pas après coup.',
@@ -7337,7 +7337,7 @@ const T = {
     faq: [
       [
         'Combien de temps dure un cycle d’évaluation de la performance ?',
-        'Un cycle complet dure généralement six à dix semaines, de l’ouverture du cadre à la restitution des évaluations — plus dans les grandes organisations, car le calibrage et la restitution croissent avec l’effectif. Le modèle répartit préparation, auto-évaluation, évaluations des managers, calibrage, restitution et développement sur une frise pour voir si vos dates sont réalistes.'
+        'Un cycle complet dure généralement six à dix semaines, de l’ouverture du cadre à la restitution des évaluations, plus dans les grandes organisations, car le calibrage et la restitution croissent avec l’effectif. Le modèle répartit préparation, auto-évaluation, évaluations des managers, calibrage, restitution et développement sur une frise pour voir si vos dates sont réalistes.'
       ],
       [
         'Quelles sont les étapes d’un cycle d’évaluation de la performance ?',
@@ -7349,7 +7349,7 @@ const T = {
       ],
       [
         'Le modèle de cycle d’évaluation de la performance est-il gratuit ?',
-        'Oui — téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
+        'Oui, téléchargement gratuit en Excel, PowerPoint ou CSV, et édition en ligne gratuite, sans inscription.'
       ]
     ]
   },
@@ -7368,11 +7368,11 @@ const UI = {
   related: 'Modèles associés',
   browseAll: 'Voir tous les modèles de diagramme de Gantt',
   faq: 'Questions fréquentes',
-  ctaH2: 'Planifiez en ligne — gratuitement',
+  ctaH2: 'Planifiez en ligne, gratuitement',
   ctaP: 'Ouvrez le modèle dans l’éditeur, ajustez les barres à vos dates et exportez en PDF, Excel ou PowerPoint. Sans compte et sans filigrane.',
   ctaBtn: 'Ouvrir l’éditeur gratuit',
   imgAlt: 'Aperçu du modèle avec les phases sur un axe temporel',
-  /* A function, not a string — it feeds the HowTo schema name and takes
+  /* A function, not a string, it feeds the HowTo schema name and takes
      the page h1. JSON.stringify hides functions, so an audit that dumps
      the UI block as JSON shows nothing here; omitting it throws at
      render time for every template page in the locale. */

@@ -1,5 +1,5 @@
 /* ============================================================
-   new-templates-g.js — seventh batch of generated templates.
+   new-templates-g.js, seventh batch of generated templates.
 
    Same shape as new-templates.js (see that file for the task tuple
    format). Batch G is about programmes governed by a third party you
@@ -11,7 +11,7 @@
    Task tuple: [name, startOffsetDays, durationDays, percentComplete,
                 hexColor, { phase|indent|who|after|milestone }]
 
-   Picked on the same SERP evidence as earlier batches — queries where
+   Picked on the same SERP evidence as earlier batches, queries where
    the ranking pages are consultancy posts, gated PDFs or vendor
    landing pages rather than a template anyone can open and edit.
    ============================================================ */
@@ -26,7 +26,7 @@ const T = {
     kw: 'mobile app launch plan template',
     metaTitle: 'Mobile App Launch Plan Template',
     metaDesc: 'Free mobile app launch plan: build hardening, TestFlight beta, store listing, App Store review, phased rollout and day-one patch. Excel or edit online.',
-    lead: 'A free <strong>mobile app launch plan template</strong> built around app store readiness rather than generic marketing — build hardening and release candidate, TestFlight and Play internal testing, store listing and screenshots, App Store and Google Play submission, the review wait itself, phased rollout and the day-one patch window. Download it for a release readiness review, or open it online to see what actually gates your ship date.',
+    lead: 'A free <strong>mobile app launch plan template</strong> built around app store readiness rather than generic marketing, build hardening and release candidate, TestFlight and Play internal testing, store listing and screenshots, App Store and Google Play submission, the review wait itself, phased rollout and the day-one patch window. Download it for a release readiness review, or open it online to see what actually gates your ship date.',
     intro: 'Shipping a mobile app is not shipping software to a server. Somebody else decides when your build goes live, and the plan has to show that. The template separates the work you control from the wait you do not:',
     phases: [
       ['Build hardening', 'Feature freeze, crash and ANR triage, performance and memory work, accessibility and device matrix testing, and the release candidate build. <em>Milestone: release candidate ready.</em>'],
@@ -36,13 +36,13 @@ const T = {
       ['Phased rollout', 'Staged release at 1%, 10% and 50% with crash-free rate checked at each step before expanding to full availability. <em>Milestone: full availability.</em>'],
       ['Day-one patch &amp; monitoring', 'Crash and ANR monitoring, the reserved patch window, store review responses and the week-one retention read.'],
     ],
-    callout: 'Budget for a rejection. First submissions are rejected often enough that a plan with no resubmission buffer is a plan with a coin flip in it — and the clock restarts from zero on resubmission. Put the review wait and a rejection buffer on the chart as two separate bars, then set your announcement date after the second one, not the first.',
+    callout: 'Budget for a rejection. First submissions are rejected often enough that a plan with no resubmission buffer is a plan with a coin flip in it, and the clock restarts from zero on resubmission. Put the review wait and a rejection buffer on the chart as two separate bars, then set your announcement date after the second one, not the first.',
     customize: [
-      'Set your review submission date and work forward, not backward — the review duration is not yours to compress.',
+      'Set your review submission date and work forward, not backward, the review duration is not yours to compress.',
       'Split the submission and review rows per store if your iOS and Android builds are on different cadences; the review durations differ.',
       'Extend the rejection buffer if this is a first submission, a subscription app, or anything touching account deletion, health data or user-generated content.',
       'Adjust the rollout percentages to your platform; Play staged rollout and App Store phased release do not step identically.',
-      'Keep the day-one patch window on the chart with named people on it — an unstaffed patch window is just an empty week.',
+      'Keep the day-one patch window on the chart with named people on it, an unstaffed patch window is just an empty week.',
       'Mark release candidate, beta exit, store approval and full availability as milestones; those are the four dates anyone asks about.',
     ],
     tips: [
@@ -57,7 +57,7 @@ const T = {
     faq: [
       ['How long does app store review take?', 'Most App Store reviews complete within a day or two, and Google Play reviews are often faster, but both can take considerably longer for a first submission or an app in a sensitive category. The template allows ten days plus a rejection buffer so an unlucky review does not break the plan.'],
       ['What should a mobile app launch plan include?', 'Build hardening, beta testing, store listing and assets, submission and review, phased rollout, and a day-one patch window. All six are pre-loaded here, with the review wait modelled as a dependency rather than an assumption.'],
-      ['How is this different from a product launch plan?', 'This one is app-store-shaped — it centres on submission, review and staged rollout. For the wider go-to-market work around pricing, positioning and campaigns, use the <a href="/templates/product-launch.html">product launch template</a> alongside it.'],
+      ['How is this different from a product launch plan?', 'This one is app-store-shaped, it centres on submission, review and staged rollout. For the wider go-to-market work around pricing, positioning and campaigns, use the <a href="/templates/product-launch.html">product launch template</a> alongside it.'],
       ['Should I do a phased rollout or release to everyone?', 'Phase it unless you have a reason not to. A staged release lets you stop at 1% when the crash-free rate drops, which is far cheaper than an emergency full-audience rollback.'],
       ['Is the mobile app launch template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],
@@ -115,7 +115,7 @@ const T = {
     kw: 'iso 9001 implementation plan template',
     metaTitle: 'ISO 9001 Certification Plan Template',
     metaDesc: 'Free ISO 9001 certification plan: gap analysis, QMS documentation, internal audit, management review, Stage 1 and Stage 2 audits and surveillance.',
-    lead: 'A free <strong>ISO 9001 certification plan template</strong> laid out along the real path to a certificate — gap analysis, process mapping, QMS documentation, implementation and training, the internal audit cycle, management review and corrective actions, then the two-stage external certification audit and the first surveillance visit. Download it for a management review pack, or open it online to link the gates you cannot skip.',
+    lead: 'A free <strong>ISO 9001 certification plan template</strong> laid out along the real path to a certificate, gap analysis, process mapping, QMS documentation, implementation and training, the internal audit cycle, management review and corrective actions, then the two-stage external certification audit and the first surveillance visit. Download it for a management review pack, or open it online to link the gates you cannot skip.',
     intro: 'ISO 9001 certification is not a documentation project. A certification body needs to see records of a system that has actually been running, which is why the internal audit and management review sit before the external audit rather than beside it:',
     phases: [
       ['Gap analysis &amp; planning', 'Scope and context of the organization, certification body selection, a structured gap analysis against the standard, and the project plan that comes out of it. <em>Milestone: gap analysis complete.</em>'],
@@ -129,11 +129,11 @@ const T = {
     ],
     callout: 'The gap between Stage 1 and Stage 2 is the whole point of the two-stage audit, and most plans get it wrong. Stage 1 tells you whether your system is ready; Stage 2 tests whether it works. Certification bodies routinely want weeks between them so findings can be closed, and booking Stage 2 too close to Stage 1 is how organizations end up paying for a repeat visit.',
     customize: [
-      'Pick your certification body early and enter their real availability — audit slots are booked months ahead and they set your outer date.',
+      'Pick your certification body early and enter their real availability, audit slots are booked months ahead and they set your outer date.',
       'Extend the implementation period if your processes have long cycles; you need records covering a representative period, not a fortnight.',
       'Add one row per process area during mapping and internal audit so coverage is visible rather than assumed.',
       'Insert a corrective action row per major nonconformity once Stage 1 findings land; each has its own evidence and closure date.',
-      'Mark documentation released, readiness confirmed, Stage 2 complete and certificate issued as milestones — those are the board-level dates.',
+      'Mark documentation released, readiness confirmed, Stage 2 complete and certificate issued as milestones, those are the board-level dates.',
       'If you already hold another management system certificate, shorten the documentation phase and reuse the shared clauses rather than rewriting them.',
     ],
     tips: [
@@ -146,7 +146,7 @@ const T = {
     ],
     related: ['internal-audit-plan', 'project-management', 'soc2-compliance-timeline'],
     faq: [
-      ['How long does ISO 9001 certification take?', 'Typically 6–12 months for an organization starting from scratch, and faster where a documented system already exists. This template runs about eighteen months because it carries through to the first surveillance audit; the certificate itself lands around month twelve.'],
+      ['How long does ISO 9001 certification take?', 'Typically 6-12 months for an organization starting from scratch, and faster where a documented system already exists. This template runs about eighteen months because it carries through to the first surveillance audit; the certificate itself lands around month twelve.'],
       ['What is the difference between a Stage 1 and Stage 2 audit?', 'Stage 1 is largely a documentation and readiness review that checks whether your QMS is capable of being audited. Stage 2 tests whether it is actually implemented and effective, using records and interviews. Both are separate phases here with a closure period between them.'],
       ['Do I need an internal audit before certification?', 'Yes. The standard requires internal audits and a management review to have been carried out, and a certification body will look for those records at Stage 1. That is why both sit before the external audit in this plan.'],
       ['What happens if the auditor raises a nonconformity?', 'Minor findings are usually closed with a corrective action plan and evidence within a set period; major findings can require another visit. The template includes a closure bar after each stage for exactly this.'],
@@ -209,24 +209,24 @@ const T = {
     kw: 'soc 2 compliance timeline template',
     metaTitle: 'SOC 2 Compliance Timeline Template',
     metaDesc: 'Free SOC 2 timeline template: scoping, control design, remediation, evidence, readiness, the Type II observation window, fieldwork and report.',
-    lead: 'A free <strong>SOC 2 compliance timeline template</strong> covering the whole engagement — scoping and trust services criteria selection, control design, remediation, evidence collection, the readiness assessment, the Type II observation window, auditor fieldwork and report issue. Download it for a customer security review, or open it online to see why the report date is where it is.',
+    lead: 'A free <strong>SOC 2 compliance timeline template</strong> covering the whole engagement, scoping and trust services criteria selection, control design, remediation, evidence collection, the readiness assessment, the Type II observation window, auditor fieldwork and report issue. Download it for a customer security review, or open it online to see why the report date is where it is.',
     intro: 'Almost every SOC 2 timeline question is really a question about the observation window. A Type I is a point-in-time opinion; a Type II covers a period during which your controls have to actually operate. The template makes that period a visible bar so nobody promises a report that arithmetic forbids:',
     phases: [
       ['Scoping &amp; criteria', 'System boundary definition, trust services criteria selection, auditor engagement and the Type I versus Type II decision. <em>Milestone: scope agreed.</em>'],
       ['Control design', 'Risk assessment, mapping controls to the selected criteria, drafting the policy set and assigning control owners. <em>Milestone: control matrix approved.</em>'],
-      ['Remediation', 'Access control and reviews, change management gates, logging and monitoring, vendor risk, security training and an incident response test — the actual engineering work.'],
+      ['Remediation', 'Access control and reviews, change management gates, logging and monitoring, vendor risk, security training and an incident response test, the actual engineering work.'],
       ['Evidence &amp; readiness', 'Evidence collection tooling, populating the repository, a readiness assessment and closing the gaps it finds. <em>Milestone: readiness sign-off.</em>'],
       ['Type I report (optional)', 'Point-in-time fieldwork and a Type I report, useful when a customer needs something in hand while the observation window runs.'],
-      ['Observation window', 'The period the Type II opinion covers — controls operating continuously, monthly evidence checkpoints and quarterly access reviews. Three to twelve months, and not compressible.'],
+      ['Observation window', 'The period the Type II opinion covers, controls operating continuously, monthly evidence checkpoints and quarterly access reviews. Three to twelve months, and not compressible.'],
       ['Fieldwork &amp; report', 'Auditor sample requests, evidence submission, testing, exceptions and management responses, draft review and report issue. <em>Milestone: Type II report issued.</em>'],
     ],
-    callout: 'You cannot shorten the observation window. A Type II report says your controls operated over a period, so a three-month window means three months of elapsed calendar time no amount of budget will buy back. The only lever is when it starts — which is why readiness sign-off, not the report date, is the milestone worth fighting for.',
+    callout: 'You cannot shorten the observation window. A Type II report says your controls operated over a period, so a three-month window means three months of elapsed calendar time no amount of budget will buy back. The only lever is when it starts, which is why readiness sign-off, not the report date, is the milestone worth fighting for.',
     customize: [
-      'Choose your observation period length first — three months for a first report, six to twelve once you are in an annual cycle — and set the window bar accordingly.',
+      'Choose your observation period length first, three months for a first report, six to twelve once you are in an annual cycle, and set the window bar accordingly.',
       'Drop the Type I phase entirely if no customer needs an interim report; many organizations go straight to Type II.',
       'Add a row per trust services category you include beyond Security; availability, confidentiality, processing integrity and privacy each add controls and evidence.',
       'Expand remediation into one row per control gap once the readiness assessment lands, so engineering work is tracked rather than lumped.',
-      'Set the monthly evidence checkpoints as recurring rows across the window — missing months are the most common source of audit exceptions.',
+      'Set the monthly evidence checkpoints as recurring rows across the window, missing months are the most common source of audit exceptions.',
       'Mark scope agreed, readiness sign-off, window start and window end, and report issue as milestones.',
     ],
     tips: [
@@ -239,10 +239,10 @@ const T = {
     ],
     related: ['iso-9001-certification-plan', 'internal-audit-plan', 'cloud-migration-project-plan'],
     faq: [
-      ['How long does SOC 2 compliance take?', 'For a first Type II, commonly 8–12 months end to end: three to six months of preparation and remediation, then a three to twelve month observation window, then fieldwork and reporting. The template uses roughly sixteen months with a six-month window.'],
+      ['How long does SOC 2 compliance take?', 'For a first Type II, commonly 8-12 months end to end: three to six months of preparation and remediation, then a three to twelve month observation window, then fieldwork and reporting. The template uses roughly sixteen months with a six-month window.'],
       ['What is the difference between SOC 2 Type I and Type II?', 'Type I is an opinion on control design at a single point in time; Type II is an opinion on operating effectiveness over a period. Type II requires the observation window, which is why it takes far longer and why the window has its own phase here.'],
       ['How long should the observation window be?', 'Three months is the usual minimum for a first Type II, and six to twelve months is standard once you are in an annual cycle. Shorter windows are quicker but some customers discount them.'],
-      ['Can I get a SOC 2 report faster?', 'You can shorten preparation, and you can issue a Type I while the window runs. You cannot shorten the window itself — that is the part of the timeline nobody controls.'],
+      ['Can I get a SOC 2 report faster?', 'You can shorten preparation, and you can issue a Type I while the window runs. You cannot shorten the window itself, that is the part of the timeline nobody controls.'],
       ['Is the SOC 2 timeline template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account.'],
     ],
     tasks: [
@@ -299,7 +299,7 @@ const T = {
     kw: 'manufacturing production schedule template',
     metaTitle: 'Manufacturing Production Schedule',
     metaDesc: 'Free manufacturing production schedule: demand plan, material lead times, line scheduling, changeovers, production runs, quality holds and dispatch.',
-    lead: 'A free <strong>manufacturing production schedule template</strong> for discrete manufacturing — demand plan and master schedule, material procurement against real supplier lead times, line sequencing and changeovers, the production runs themselves, in-process and final quality, then packing and dispatch. Download it for a planning meeting, or open it online to see whether your materials land before your line is free.',
+    lead: 'A free <strong>manufacturing production schedule template</strong> for discrete manufacturing, demand plan and master schedule, material procurement against real supplier lead times, line sequencing and changeovers, the production runs themselves, in-process and final quality, then packing and dispatch. Download it for a planning meeting, or open it online to see whether your materials land before your line is free.',
     intro: 'A production schedule is two schedules that have to meet: material arriving and capacity being available. The template runs both as separate tracks so the collision is visible before it happens on the shop floor:',
     phases: [
       ['Demand &amp; capacity planning', 'Forecast review, firm order intake, the master production schedule and a rough-cut capacity and labour check. <em>Milestone: capacity confirmed.</em>'],
@@ -309,12 +309,12 @@ const T = {
       ['Quality control', 'In-process inspection and SPC, nonconformance hold and disposition, final inspection and test, and batch release documentation. <em>Milestone: batch released.</em>'],
       ['Packing &amp; dispatch', 'Packing and labelling, palletizing and load planning, carrier booking and shipping documents. <em>Milestone: order shipped.</em>'],
     ],
-    callout: 'Changeovers are production time. A schedule that shows three runs back to back and no changeover bars is claiming capacity that does not exist — and on a line with frequent product switches, changeover can be a double-digit share of available hours. Put every changeover on the chart at its measured duration, not its aspirational one.',
+    callout: 'Changeovers are production time. A schedule that shows three runs back to back and no changeover bars is claiming capacity that does not exist, and on a line with frequent product switches, changeover can be a double-digit share of available hours. Put every changeover on the chart at its measured duration, not its aspirational one.',
     customize: [
       'Enter your real supplier lead times per component; the longest one, not the line schedule, usually sets the earliest possible start.',
       'Add a row per work centre or line if you are scheduling more than one, so contention is visible.',
       'Set changeover durations from actual measured times, and keep them separate from the runs on either side.',
-      'Insert a quality hold bar wherever a batch waits for disposition — that wait is real inventory sitting still.',
+      'Insert a quality hold bar wherever a batch waits for disposition, that wait is real inventory sitting still.',
       'Add safety stock or buffer bars ahead of runs that feed a firm customer commitment.',
       'Mark materials available, first article approved, batch released and order shipped as milestones.',
     ],
@@ -330,7 +330,7 @@ const T = {
     faq: [
       ['What should a production schedule include?', 'Demand and capacity planning, material procurement with real lead times, line scheduling and changeovers, the production runs, quality control and holds, and packing and dispatch. All six are pre-loaded here as separate phases.'],
       ['How do I show changeovers on a Gantt chart?', 'As their own short bars between runs, with each run depending on the changeover before it. Hiding changeover inside a run bar overstates your available capacity, which is the most common error in a production schedule.'],
-      ['Does this work for process manufacturing?', 'It works best for discrete manufacturing — batches, units and changeovers. For continuous or process operations, keep the procurement and dispatch phases and replace the run rows with campaign bars.'],
+      ['Does this work for process manufacturing?', 'It works best for discrete manufacturing, batches, units and changeovers. For continuous or process operations, keep the procurement and dispatch phases and replace the run rows with campaign bars.'],
       ['How is this different from the apparel production calendar?', 'The <a href="/templates/apparel-production-calendar.html">apparel calendar</a> is season-shaped, with sampling and fabric bookings against a retail drop date. This one is a general discrete manufacturing schedule built around lead times, changeovers and dispatch.'],
       ['Is the production schedule template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no sign-up.'],
     ],
@@ -385,8 +385,8 @@ const T = {
     kw: 'website redesign project plan template',
     metaTitle: 'Website Redesign Project Plan Template',
     metaDesc: 'Free website redesign project plan: discovery, content audit, design, build, content migration, SEO redirect mapping, QA and launch monitoring.',
-    lead: 'A free <strong>website redesign project plan template</strong> covering the full project — discovery, information architecture and content audit, design, build, content migration, SEO redirect mapping, QA and post-launch monitoring. Download it for an agency scope or an internal kick-off, or open it online to give the redirect map and the migration the room they actually need.',
-    intro: 'Redesigns rarely fail on design. They fail on the two unglamorous tracks nobody staffs properly — moving the content and mapping the URLs — so the template gives both their own phases with their own dependencies:',
+    lead: 'A free <strong>website redesign project plan template</strong> covering the full project, discovery, information architecture and content audit, design, build, content migration, SEO redirect mapping, QA and post-launch monitoring. Download it for an agency scope or an internal kick-off, or open it online to give the redirect map and the migration the room they actually need.',
+    intro: 'Redesigns rarely fail on design. They fail on the two unglamorous tracks nobody staffs properly, moving the content and mapping the URLs, so the template gives both their own phases with their own dependencies:',
     phases: [
       ['Discovery', 'Stakeholder interviews, analytics and Search Console review, competitor and user research, and agreed requirements and success metrics. <em>Milestone: discovery sign-off.</em>'],
       ['IA &amp; content audit', 'Full URL inventory and crawl, a keep/merge/retire decision on every page, sitemap and navigation design and wireframes for the key templates. <em>Milestone: IA approved.</em>'],
@@ -397,14 +397,14 @@ const T = {
       ['QA', 'Cross-browser and device testing, accessibility audit, Core Web Vitals, a full redirect crawl on staging and stakeholder UAT. <em>Milestone: QA sign-off.</em>'],
       ['Launch &amp; monitoring', 'Go/no-go, DNS cutover, post-launch redirect verification, sitemap submission and thirty days of crawl error and ranking monitoring.'],
     ],
-    callout: 'The redirect map is the project. Every URL that changes without a 301 in place is traffic you paid to acquire and then threw away, and the damage shows up weeks later when rankings have already gone. Build the map from a full crawl of the old site — not from the new sitemap — and test it on staging before launch, not after.',
+    callout: 'The redirect map is the project. Every URL that changes without a 301 in place is traffic you paid to acquire and then threw away, and the damage shows up weeks later when rankings have already gone. Build the map from a full crawl of the old site, not from the new sitemap, and test it on staging before launch, not after.',
     customize: [
       'Start the URL inventory in week one; the crawl of your existing site is the input to the content audit, the migration sheet and the redirect map.',
-      'Add a row per content type or section if you are migrating thousands of pages — a single "migrate content" bar always hides a month.',
+      'Add a row per content type or section if you are migrating thousands of pages, a single "migrate content" bar always hides a month.',
       'Extend the content rewriting bar honestly; it is usually the most underestimated task in the whole project, and it needs writers, not developers.',
       'Keep a content freeze milestone on the old site so the migration is not chasing a moving target.',
       'Set the redirect crawl on staging as a hard predecessor to go/no-go rather than a QA nicety.',
-      'Stretch the post-launch monitoring bar to at least thirty days — search engines take weeks to recrawl and reprocess a changed site.',
+      'Stretch the post-launch monitoring bar to at least thirty days, search engines take weeks to recrawl and reprocess a changed site.',
     ],
     tips: [
       '<strong>Crawl the old site before anything else.</strong> You cannot audit, migrate or redirect what you have not inventoried, and most organizations have significantly more live URLs than they think.',
@@ -416,9 +416,9 @@ const T = {
     ],
     related: ['marketing', 'content-calendar', 'software-development'],
     faq: [
-      ['How long does a website redesign take?', 'Typically 4–9 months for a mid-sized site, driven mainly by content volume rather than design or build. The template uses a roughly nine-month schedule you can compress by cutting scope, not by cutting migration time.'],
+      ['How long does a website redesign take?', 'Typically 4-9 months for a mid-sized site, driven mainly by content volume rather than design or build. The template uses a roughly nine-month schedule you can compress by cutting scope, not by cutting migration time.'],
       ['What is a redirect map and why does it matter?', 'It is a row-per-URL mapping of every old address to its new one, implemented as 301 redirects. Without it, every changed URL loses its accumulated search equity and any inbound links pointing at it. It gets its own phase here for that reason.'],
-      ['When should content migration start?', 'As soon as the content audit is done and the mapping sheet exists — well before the build is finished. Content is the long pole, and starting it after templates are ready adds months.'],
+      ['When should content migration start?', 'As soon as the content audit is done and the mapping sheet exists, well before the build is finished. Content is the long pole, and starting it after templates are ready adds months.'],
       ['What should I monitor after launch?', 'Crawl errors and 404s, index coverage, rankings for your priority terms and organic traffic against the pre-launch baseline, for at least thirty days. All four are on the chart as real tasks.'],
       ['Is the website redesign template free?', 'Yes. Free Excel, PowerPoint and CSV downloads, and free online editing with no account and no watermark.'],
     ],

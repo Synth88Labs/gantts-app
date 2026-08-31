@@ -1,5 +1,5 @@
 /* ============================================================
-   template-locales.js — which template detail pages exist in which
+   template-locales.js, which template detail pages exist in which
    language. Single source of truth for two scripts that must agree:
 
      gen-i18n.js          writes /<code>/templates/<slug>.html
@@ -10,7 +10,7 @@
    each other, so these two must never be computed independently.
 
    A locale appears for a slug only when a real translation exists.
-   Partial coverage is fine — a three-page cluster is valid; a cluster
+   Partial coverage is fine, a three-page cluster is valid; a cluster
    pointing at pages that do not exist is not.
    ============================================================ */
 const es = require('./templates-es.js');

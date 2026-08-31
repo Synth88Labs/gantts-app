@@ -1,5 +1,5 @@
 /* ============================================================
-   util.js — date math, ids, dom helpers, small utilities
+   util.js, date math, ids, dom helpers, small utilities
    Exposes a global `U`.
    ============================================================ */
 (function () {
@@ -41,7 +41,7 @@
       return Math.round((U.parse(b) - U.parse(a)) / MS_DAY);
     },
 
-    // inclusive duration in days (start..end counts both) — Gantt convention
+    // inclusive duration in days (start..end counts both), Gantt convention
     duration(start, end) {
       return U.diffDays(start, end) + 1;
     },
