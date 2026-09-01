@@ -92,7 +92,17 @@ function schema(slug, d) {
         datePublished: d.date, dateModified: d.date,
         speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead', '#key-takeaways'] },
         image: ORIGIN + '/assets/og-image.png',
-        author: { '@type': 'Organization', name: 'gantts.app', url: ORIGIN + '/' },
+        author: {
+          '@type': 'Person', '@id': ORIGIN + '/about.html#uttam-regmi',
+          name: 'Uttam Regmi', url: ORIGIN + '/about.html',
+          jobTitle: 'Founder, Synth88 Labs',
+          sameAs: [
+            'https://www.linkedin.com/in/uttam-regmi-373926370/',
+            'https://medium.com/@excelguru',
+            'https://www.pinterest.com/excelguru_io/',
+            'https://github.com/Synth88Labs/',
+          ],
+        },
         publisher: {
           '@type': 'Organization', '@id': ORIGIN + '/#org', name: 'gantts.app',
           url: ORIGIN + '/', logo: { '@type': 'ImageObject', url: ORIGIN + '/assets/logo-mark.svg' },
@@ -178,7 +188,7 @@ ${nav(slug)}
     <div class="crumbs"><a href="/">Home</a> › <a href="/blog/">Guides</a> › ${d.h1}</div>
     <h1>${d.h1}</h1>
     <p class="lead">${d.lead}</p>
-    <p class="post-meta"><time datetime="${d.date}">${dateLabel}</time> · gantts.app</p>
+    <p class="post-meta"><span>By <a href="/about.html">Uttam Regmi</a></span><span><time datetime="${d.date}">${dateLabel}</time></span></p>
 
     <figure class="fig">
       <figcaption>${d.figIntro}</figcaption>
@@ -208,6 +218,8 @@ ${related}
       <div class="faq">
 ${faq}
       </div>
+
+      <div class="callout author-box"><strong>Written by Uttam Regmi</strong>, founder of <a href="https://synth88.com" rel="noopener">Synth88 Labs</a>. An auditor by profession and a builder by passion, he creates privacy-first web and mobile apps from Dubai, UAE, gantts.app among them. <a href="/about.html">More about the maker</a> · <a href="https://www.linkedin.com/in/uttam-regmi-373926370/" rel="noopener">LinkedIn</a> · <a href="https://medium.com/@excelguru" rel="noopener">Medium</a> · <a href="https://github.com/Synth88Labs/" rel="noopener">GitHub</a></div>
     </div>
   </article>
 

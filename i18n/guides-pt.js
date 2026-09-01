@@ -1763,7 +1763,11 @@ const UI = {
   ctaBtn: 'Abrir o editor',
   enNote: 'Este artigo também está disponível em inglês.',
   readingTime: 'min de leitura',
-  byline: 'Redação gantts.app',
+  byline: 'Uttam Regmi',
+  byPrefix: 'Por',
+  authorLead: 'Escrito por',
+  authorTag: 'Fundador da Synth88 Labs, cria aplicações web e móveis focadas na privacidade a partir do Dubai.',
+  authorMore: 'Perfil completo',
   onThisPage: 'Nesta página',
 };
 

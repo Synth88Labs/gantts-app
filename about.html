@@ -34,43 +34,67 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About gantts.app",
-    "url": "https://gantts.app/about.html",
-    "description": "Who builds gantts.app and why it is free.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "gantts.app",
-      "url": "https://gantts.app/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "gantts.app",
-      "url": "https://gantts.app/",
-      "logo": "https://gantts.app/assets/logo-mark.svg",
-      "email": "synth88labs@gmail.com",
-      "sameAs": [
-        "https://github.com/Synth88Labs/gantts-app"
-      ],
-      "parentOrganization": { "@type": "Organization", "name": "Synth88 Labs", "url": "https://synth88.com" }
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://gantts.app/"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://gantts.app/about.html#uttam-regmi",
+        "name": "Uttam Regmi",
+        "url": "https://gantts.app/about.html",
+        "jobTitle": "Founder, Synth88 Labs",
+        "description": "Auditor by profession and builder by passion, creating privacy-first web and mobile apps from Dubai, UAE.",
+        "homeLocation": { "@type": "Place", "name": "Dubai, United Arab Emirates" },
+        "email": "synth88labs@gmail.com",
+        "worksFor": { "@type": "Organization", "name": "Synth88 Labs", "url": "https://synth88.com" },
+        "knowsAbout": ["Gantt charts", "project planning", "spreadsheets", "product design", "web development"],
+        "sameAs": [
+          "https://www.linkedin.com/in/uttam-regmi-373926370/",
+          "https://medium.com/@excelguru",
+          "https://www.pinterest.com/excelguru_io/",
+          "https://github.com/Synth88Labs/"
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "name": "About gantts.app",
+        "url": "https://gantts.app/about.html",
+        "description": "Who builds gantts.app and why it is free.",
+        "mainEntity": { "@id": "https://gantts.app/about.html#uttam-regmi" },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "gantts.app",
+          "url": "https://gantts.app/"
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About gantts.app",
-          "item": "https://gantts.app/about.html"
+        "publisher": {
+          "@type": "Organization",
+          "name": "gantts.app",
+          "url": "https://gantts.app/",
+          "logo": "https://gantts.app/assets/logo-mark.svg",
+          "email": "synth88labs@gmail.com",
+          "founder": { "@id": "https://gantts.app/about.html#uttam-regmi" },
+          "sameAs": [
+            "https://github.com/Synth88Labs/gantts-app"
+          ],
+          "parentOrganization": { "@type": "Organization", "name": "Synth88 Labs", "url": "https://synth88.com" }
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://gantts.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About gantts.app",
+              "item": "https://gantts.app/about.html"
+            }
+          ]
         }
-      ]
-    }
+      }
+    ]
   }
   </script>
 
@@ -120,6 +144,22 @@
 
       <h2>How is it free?</h2>
       <p>gantts.app is a lightweight static web app, there's no expensive backend to run, so we can offer it free. If it saves you time, the best thanks is to share it with a colleague or link to it from your blog.</p>
+
+      <h2 id="founder">Meet the founder</h2>
+      <p><strong>gantts.app is built by Uttam Regmi</strong>, founder of <a href="https://synth88.com" rel="noopener">Synth88 Labs</a>. A vibe coder and tech enthusiast who has loved creating things and solving problems since 2010, he is an auditor by profession and a tech nerd by passion. He builds and ships from Dubai, UAE, with a focus on privacy-first, user-focused, and genuinely useful web apps, mobile apps, and platforms.</p>
+      <p>You can reach him directly at <a href="mailto:synth88labs@gmail.com">synth88labs@gmail.com</a>, or follow the work here:</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/uttam-regmi-373926370/" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://medium.com/@excelguru" rel="me noopener">Medium</a></li>
+        <li><a href="https://www.pinterest.com/excelguru_io/" rel="me noopener">Pinterest</a></li>
+        <li><a href="https://github.com/Synth88Labs/" rel="me noopener">GitHub</a></li>
+      </ul>
+      <h3>Other things built under Synth88 Labs</h3>
+      <p>gantts.app is one of a family of privacy-first tools and apps:</p>
+      <ul>
+        <li><strong>Web apps:</strong> ExcelGuru, Lazytools, and gantts.app</li>
+        <li><strong>Mobile apps:</strong> Vetara (a pet health wallet), Glimra (design), Locodo (productivity), and the games Word Hunter and Palindrome</li>
+      </ul>
 
       <div class="callout"><strong>Ready to plan?</strong> Open the <a href="/app.html">free Gantt chart maker</a> or grab a <a href="/templates.html">ready-made template</a>, no sign up required.</div>
 

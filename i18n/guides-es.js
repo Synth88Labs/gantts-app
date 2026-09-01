@@ -2166,7 +2166,11 @@ const UI = {
   ctaBtn: 'Abrir el editor gratuito',
   enNote: 'Las guías que aún no se han traducido se abren en inglés.',
   readingTime: 'min de lectura',
-  byline: 'Equipo de gantts.app',
+  byline: 'Uttam Regmi',
+  byPrefix: 'Por',
+  authorLead: 'Escrito por',
+  authorTag: 'Fundador de Synth88 Labs, crea aplicaciones web y móviles centradas en la privacidad desde Dubái.',
+  authorMore: 'Perfil completo',
   onThisPage: 'En esta página',
 };
 

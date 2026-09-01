@@ -234,6 +234,28 @@ function footer(code) {
 */
 const ORG_ID = ORIGIN + '/#org';
 const SITE_ID = ORIGIN + '/#website';
+// The founder is a real, resolvable Person entity, not an anonymous "team".
+// Its @id lives on the About page (the human's canonical page); guides
+// reference it as author, and the org names it as founder, so authorship
+// signals attach to a person Google can corroborate via the sameAs profiles.
+const PERSON_ID = ORIGIN + '/about.html#uttam-regmi';
+
+function personNode() {
+  return {
+    '@type': 'Person', '@id': PERSON_ID,
+    name: 'Uttam Regmi', url: ORIGIN + '/about.html',
+    jobTitle: 'Founder, Synth88 Labs',
+    worksFor: { '@type': 'Organization', name: 'Synth88 Labs', url: 'https://synth88.com' },
+    description: 'Auditor by profession and builder by passion, creating privacy-first web and mobile apps from Dubai, UAE.',
+    knowsAbout: ['Gantt charts', 'project planning', 'spreadsheets', 'product design'],
+    sameAs: [
+      'https://www.linkedin.com/in/uttam-regmi-373926370/',
+      'https://medium.com/@excelguru',
+      'https://www.pinterest.com/excelguru_io/',
+      'https://github.com/Synth88Labs/',
+    ],
+  };
+}
 
 function orgNode() {
   return {
@@ -241,6 +263,7 @@ function orgNode() {
     name: 'gantts.app', url: ORIGIN + '/',
     logo: ORIGIN + '/assets/logo-mark.svg',
     email: 'synth88labs@gmail.com',
+    founder: { '@id': PERSON_ID },
     sameAs: ['https://github.com/Synth88Labs/gantts-app'],
     // Ties gantts.app to its parent brand as one entity graph, so signals
     // earned by either accrue to a recognisable organisation rather than
@@ -270,7 +293,7 @@ function breadcrumb(loc, trail) {
 }
 /* Wraps page-specific nodes in the shared entity graph. */
 function graph(loc, nodes) {
-  return JSON.stringify({ '@context': 'https://schema.org', '@graph': [orgNode(), siteNode(loc), ...nodes] });
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': [orgNode(), personNode(), siteNode(loc), ...nodes] });
 }
 
 function ogLocaleAlternates(loc, only) {
@@ -1000,7 +1023,7 @@ function renderGuide(loc, slug) {
       speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.lead', '#key-takeaways'] },
       isPartOf: { '@id': SITE_ID },
       publisher: { '@id': ORG_ID },
-      author: { '@id': ORG_ID },
+      author: { '@id': PERSON_ID },
       mainEntityOfPage: url,
       breadcrumb: breadcrumb(loc, [
         { name: ui.home, url: `${ORIGIN}/${code}/` },
@@ -1039,7 +1062,7 @@ function renderGuide(loc, slug) {
     <!-- English guides carry a byline/date/reading-time line and an
          on-this-page list; the localized ones had neither, so a reader
          landed on a wall of prose with no way to scan it. -->
-    <p class="post-meta"><span>${esc(ui.byline || 'gantts.app')}</span><span>${esc(ui.updated)} ${esc(longDate(code, d.date))}</span><span>${Math.max(3, Math.round(d.sections.reduce((n, sx) => n + String(sx[1]).replace(/<[^>]+>/g, ' ').split(/\s+/).length, 0) / 200))} ${esc(ui.readingTime)}</span></p>
+    <p class="post-meta"><span>${esc(ui.byPrefix || 'By')} <a href="/${code}/about.html">${esc(ui.byline || 'Uttam Regmi')}</a></span><span>${esc(ui.updated)} ${esc(longDate(code, d.date))}</span><span>${Math.max(3, Math.round(d.sections.reduce((n, sx) => n + String(sx[1]).replace(/<[^>]+>/g, ' ').split(/\s+/).length, 0) / 200))} ${esc(ui.readingTime)}</span></p>
     <div class="toc"><strong>${esc(ui.onThisPage || ui.related)}</strong>
       <ol>
 ${d.sections.map(([h], i) => `        <li><a href="#s${i + 1}">${esc(h)}</a></li>`).join('\n')}
@@ -1066,6 +1089,7 @@ ${promo(code, code + '/blog/' + slug + '.html', '      ')}
 ${related}
         <li><a href="/${code}/blog/">${esc(ui.backToGuides)}</a></li>
       </ul>
+      <div class="callout author-box"><strong>${esc(ui.authorLead || 'Written by')} Uttam Regmi</strong>. ${esc(ui.authorTag || 'Founder of Synth88 Labs, building privacy-first web and mobile apps from Dubai.')} <a href="/${code}/about.html">${esc(ui.authorMore || 'Full profile')}</a> · <a href="https://www.linkedin.com/in/uttam-regmi-373926370/" rel="noopener">LinkedIn</a> · <a href="https://medium.com/@excelguru" rel="noopener">Medium</a> · <a href="https://github.com/Synth88Labs/" rel="noopener">GitHub</a></div>
       <p class="crumbs"><small>${esc(ui.enNote)}</small></p>
     </div>
   </article>

@@ -1622,7 +1622,11 @@ const UI = {
   ctaBtn: 'Ouvrir l’outil',
   enNote: 'Cet article est également disponible en anglais.',
   readingTime: 'min de lecture',
-  byline: 'La rédaction gantts.app',
+  byline: 'Uttam Regmi',
+  byPrefix: 'Par',
+  authorLead: 'Écrit par',
+  authorTag: 'Fondateur de Synth88 Labs, il crée des applications web et mobiles axées sur la confidentialité depuis Dubaï.',
+  authorMore: 'Profil complet',
   onThisPage: 'Sommaire',
 };
 

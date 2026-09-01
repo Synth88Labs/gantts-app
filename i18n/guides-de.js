@@ -2179,7 +2179,11 @@ const UI = {
   ctaBtn: 'Planer öffnen',
   enNote: 'Dieser Artikel ist auch auf Englisch verfügbar.',
   readingTime: 'Min. Lesezeit',
-  byline: 'Redaktion gantts.app',
+  byline: 'Uttam Regmi',
+  byPrefix: 'Von',
+  authorLead: 'Geschrieben von',
+  authorTag: 'Gründer von Synth88 Labs, entwickelt datenschutzorientierte Web- und Mobil-Apps aus Dubai.',
+  authorMore: 'Vollständiges Profil',
   onThisPage: 'Inhalt',
 };
 

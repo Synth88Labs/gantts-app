@@ -1776,7 +1776,11 @@ const UI = {
   ctaBtn: '打开编辑器',
   enNote: '本文也提供英文版本。',
   readingTime: '分钟阅读',
-  byline: 'gantts.app 编辑部',
+  byline: 'Uttam Regmi',
+  byPrefix: '作者',
+  authorLead: '作者',
+  authorTag: 'Synth88 Labs 创始人，在迪拜打造注重隐私的网页与移动应用。',
+  authorMore: '完整简介',
   onThisPage: '本页内容',
 };
 
