@@ -49,7 +49,7 @@ const LABELS = {
     behind: 'behind plan', window: 'next 3 weeks', text: 'text', chart: 'chart', earned: 'Earned',
     lag: 'Lag', totalFloat: 'Total float', freeFloat: 'Free float', zero: 'zero duration',
     ahead: 'ahead', under: 'under budget', over: 'over budget', id: 'id',
-    cost: 'Cost', time: 'Time', frozen: 'frozen', committed: 'committed', planning: 'planning',
+    cost: 'Cost', time: 'Time', frozen: 'frozen', committed: 'committed', planning: 'planning', spacer: 'invisible spacer',
   },
   es: {
     task: 'Tarea', phase: 'Fase', milestone: 'Hito', today: 'Hoy',
@@ -62,7 +62,7 @@ const LABELS = {
     behind: 'retraso', window: 'próximas 3 semanas', text: 'texto', chart: 'gráfico', earned: 'Valor ganado',
     lag: 'Demora', totalFloat: 'Holgura total', freeFloat: 'Holgura libre', zero: 'duración cero',
     ahead: 'adelanto', under: 'bajo presupuesto', over: 'sobre presupuesto', id: 'id',
-    cost: 'Coste', time: 'Tiempo', frozen: 'congelada', committed: 'comprometida', planning: 'planificación',
+    cost: 'Coste', time: 'Tiempo', frozen: 'congelada', committed: 'comprometida', planning: 'planificación', spacer: 'espaciador invisible',
   },
   de: {
     task: 'Vorgang', phase: 'Phase', milestone: 'Meilenstein', today: 'Heute',
@@ -75,7 +75,7 @@ const LABELS = {
     behind: 'im Rückstand', window: 'nächste 3 Wochen', text: 'Text', chart: 'Diagramm', earned: 'Fertigstellungswert',
     lag: 'Wartezeit', totalFloat: 'Gesamtpuffer', freeFloat: 'Freier Puffer', zero: 'Dauer null',
     ahead: 'im Vorlauf', under: 'unter Budget', over: 'über Budget', id: 'ID',
-    cost: 'Kosten', time: 'Zeit', frozen: 'fixiert', committed: 'zugesagt', planning: 'Planung',
+    cost: 'Kosten', time: 'Zeit', frozen: 'fixiert', committed: 'zugesagt', planning: 'Planung', spacer: 'unsichtbarer Platzhalter',
   },
   fr: {
     task: 'Tâche', phase: 'Phase', milestone: 'Jalon', today: "Aujourd'hui",
@@ -88,7 +88,7 @@ const LABELS = {
     behind: 'en retard', window: '3 prochaines semaines', text: 'texte', chart: 'diagramme', earned: 'Valeur acquise',
     lag: 'Décalage', totalFloat: 'Marge totale', freeFloat: 'Marge libre', zero: 'durée nulle',
     ahead: "en avance", under: 'sous budget', over: 'hors budget', id: 'id',
-    cost: 'Coût', time: 'Temps', frozen: 'figée', committed: 'engagée', planning: 'planification',
+    cost: 'Coût', time: 'Temps', frozen: 'figée', committed: 'engagée', planning: 'planification', spacer: 'espaceur invisible',
   },
   pt: {
     task: 'Tarefa', phase: 'Fase', milestone: 'Marco', today: 'Hoje',
@@ -101,7 +101,7 @@ const LABELS = {
     behind: 'atrasado', window: 'próximas 3 semanas', text: 'texto', chart: 'gráfico', earned: 'Valor agregado',
     lag: 'Espera', totalFloat: 'Folga total', freeFloat: 'Folga livre', zero: 'duração zero',
     ahead: 'adiantado', under: 'abaixo do orçado', over: 'acima do orçado', id: 'id',
-    cost: 'Custo', time: 'Tempo', frozen: 'congelada', committed: 'comprometida', planning: 'planejamento',
+    cost: 'Custo', time: 'Tempo', frozen: 'congelada', committed: 'comprometida', planning: 'planejamento', spacer: 'espaçador invisível',
   },
   zh: {
     task: '任务', phase: '阶段', milestone: '里程碑', today: '今天',
@@ -114,7 +114,7 @@ const LABELS = {
     behind: '落后于计划', window: '未来 3 周', text: '文本', chart: '图表', earned: '挣值',
     lag: '延隔时间', totalFloat: '总浮动时间', freeFloat: '自由浮动时间', zero: '工期为零',
     ahead: '提前', under: '低于预算', over: '超出预算', id: '标识',
-    cost: '成本', time: '时间', frozen: '冻结', committed: '已承诺', planning: '规划',
+    cost: '成本', time: '时间', frozen: '冻结', committed: '已承诺', planning: '规划', spacer: '隐形占位',
   },
 };
 
@@ -482,8 +482,25 @@ function figure(slug, code, aria) {
    silently and no word-count check can see it. Keeping the geometry
    here and the words in LABELS makes the localized diagram the only
    thing that can be produced. check-guide-figures.js enforces it. */
+/** The "stacked bar" trick: an invisible spacer sets the start date, a visible bar is the duration. */
+function figStack(L, aria) {
+  return wrap('600 150', aria,
+    `<line x1="150" y1="24" x2="150" y2="130" stroke="${INK_SOFT}" stroke-width="1"/>`
+    + txt(150, 20, L.start, { size: 10, fill: INK_SOFT })
+    + txt(0, 57, L.task + ' A', { size: 11.5 })
+    + bar(150, 46, 190, { h: 16, fill: ACCENT })
+    + txt(348, 58, L.duration, { size: 10.5, fill: INK_SOFT })
+    + txt(0, 99, L.task + ' B', { size: 11.5 })
+    + `<rect x="150" y="88" width="90" height="16" rx="4" fill="none" stroke="${INK_SOFT}" stroke-width="1.2" stroke-dasharray="4 3"/>`
+    + bar(240, 88, 150, { h: 16, fill: ACCENT_SOFT })
+    + txt(398, 100, L.duration, { size: 10.5, fill: INK_SOFT })
+    + txt(150, 124, L.spacer, { size: 10.5, fill: INK_SOFT })
+  );
+}
+
 const BY_NAME = {
   bars: figBars, deps: figDeps, cpm: figCpm, baseline: figBaseline,
+  stack: figStack,
   steps: figSteps, tools: figTools, scurve: figSCurve,
   lookahead: figLookahead, mermaid: figMermaid,
   lag: figLag, float: figFloat, milestone: figMilestone,

@@ -373,7 +373,7 @@ const TEMPLATE_SLUGS = [
 const BLOG_SLUGS = [
   'what-is-a-gantt-chart', 'how-to-make-a-gantt-chart', 'critical-path-method',
   'gantt-chart-examples', 'gantt-chart-in-excel', 'gantt-chart-in-google-sheets',
-  'gantt-chart-in-powerpoint', 'best-free-gantt-chart-software',
+  'gantt-chart-in-powerpoint', 'gantt-chart-in-word', 'best-free-gantt-chart-software',
   'gantt-chart-dependencies', 'gantt-baseline-variance', 'gantt-chart-mistakes', 'milestones-vs-tasks',
 ];
 
@@ -555,7 +555,7 @@ const TEMPLATE_LABELS = {
    on the templates hub, so renderBlogIndex asserts against it. */
 const BLOG_GROUPS = [
   { key: 'gBasics',   slugs: ['what-is-a-gantt-chart', 'gantt-chart-examples', 'milestones-vs-tasks'] },
-  { key: 'gBuild',    slugs: ['how-to-make-a-gantt-chart', 'gantt-chart-in-excel', 'gantt-chart-in-google-sheets', 'gantt-chart-in-powerpoint'] },
+  { key: 'gBuild',    slugs: ['how-to-make-a-gantt-chart', 'gantt-chart-in-excel', 'gantt-chart-in-google-sheets', 'gantt-chart-in-powerpoint', 'gantt-chart-in-word'] },
   { key: 'gSchedule', slugs: ['critical-path-method', 'gantt-chart-dependencies', 'gantt-baseline-variance'] },
   { key: 'gPractice', slugs: ['gantt-chart-mistakes', 'best-free-gantt-chart-software'] },
 ];

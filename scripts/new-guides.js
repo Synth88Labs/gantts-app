@@ -32,6 +32,103 @@ const ARROW = (x1, y1, x2, y2, color = '#6c4cf1') =>
 const G = {
 
   // ---------------------------------------------------------------
+  'gantt-chart-in-word': {
+    h1: 'How to Make a Gantt Chart in Word: Three Methods, Step by Step',
+    metaTitle: 'How to Make a Gantt Chart in Word',
+    metaDesc: 'Three ways to build a Gantt chart in Microsoft Word: a stacked bar chart, a shaded table, or drawn shapes, with when each works and when to switch.',
+    date: '2026-08-26',
+    lead: 'Microsoft Word was built to write documents, not to schedule projects, yet a Gantt chart is often exactly what a report, a proposal or an assignment needs. You can build one in Word with no add-in, and there are three honest ways to do it. This guide walks through all three, shows the small trick that makes the bars line up, and is clear about the point where Word starts to fight you.',
+    figIntro: 'A five-task project on a Word Gantt chart, the result all three methods are aiming at:',
+    figure: `<svg viewBox="0 0 600 205" width="100%" role="img" aria-label="A five-task Gantt chart across six weeks as built in Microsoft Word: Research, Outline, First draft, Review and Revise as staggered bars, ending in a Publish milestone." font-family="system-ui,sans-serif">
+      <line x1="110" y1="26" x2="110" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="188" y1="26" x2="188" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="266" y1="26" x2="266" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="344" y1="26" x2="344" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="422" y1="26" x2="422" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="500" y1="26" x2="500" y2="192" stroke="#eef2f7" stroke-width="1"/><line x1="578" y1="26" x2="578" y2="192" stroke="#eef2f7" stroke-width="1"/>
+      <text x="112" y="20" font-size="10" fill="#94a3b8">W1</text><text x="190" y="20" font-size="10" fill="#94a3b8">W2</text><text x="268" y="20" font-size="10" fill="#94a3b8">W3</text><text x="346" y="20" font-size="10" fill="#94a3b8">W4</text><text x="424" y="20" font-size="10" fill="#94a3b8">W5</text><text x="502" y="20" font-size="10" fill="#94a3b8">W6</text>
+      <line x1="110" y1="26" x2="578" y2="26" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="0" y="53" font-size="11.5" fill="currentColor">Research</text><rect x="110" y="42" width="156" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="0" y="79" font-size="11.5" fill="currentColor">Outline</text><rect x="188" y="68" width="156" height="14" rx="4" fill="#8b7bf5"/>
+      <text x="0" y="105" font-size="11.5" fill="currentColor">First draft</text><rect x="266" y="94" width="234" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="0" y="131" font-size="11.5" fill="currentColor">Review</text><rect x="422" y="120" width="78" height="14" rx="4" fill="#8b7bf5"/>
+      <text x="0" y="157" font-size="11.5" fill="currentColor">Revise</text><rect x="500" y="146" width="78" height="14" rx="4" fill="#6c4cf1"/>
+      <text x="0" y="183" font-size="11.5" fill="currentColor">Publish</text><rect x="565" y="166" width="13" height="13" rx="2" fill="#0d9488" transform="rotate(45 571.5 172.5)"/>
+    </svg>`,
+    sections: [
+      ['Can you make a Gantt chart in Word?', `<p>Yes. Word has no Gantt chart button, but it has a chart engine, tables and drawing tools, and any one of them can produce a readable timeline. Which route is best depends on how many tasks you have and how often the plan will change.</p>
+      <p>Three methods cover almost every case:</p>
+      <ul>
+        <li><strong>A stacked bar chart</strong>, the closest thing to a real Gantt chart and the method most guides describe.</li>
+        <li><strong>A table you shade by hand</strong>, the fastest route for a handful of tasks in a document you are already writing.</li>
+        <li><strong>Drawn shapes</strong>, the most control and the most manual work.</li>
+      </ul>
+      <p>Whichever you pick, switch the page to landscape first (<em>Layout, Orientation, Landscape</em>) so the timeline has room to breathe. If you would rather skip the whole thing, a <a href="/app.html">free online Gantt maker</a> exports the finished chart straight into a Word document as a picture.</p>`],
+
+      ['Method 1: The stacked bar chart', `<p>This is the method worth learning, because it produces a chart that redraws when you edit its data. It rests on one trick: a Gantt bar is really two bars stacked end to end. The first is a spacer that pushes the bar out to its start date, and you make it invisible. The second is the visible bar, and its length is the task duration.</p>
+      <!--FIG:stack|The Start series is a spacer you hide, so only the Duration bars show, each starting on its own day.-->
+      <ol>
+        <li>On the <em>Insert</em> tab choose <em>Chart</em>, pick <em>Bar</em>, then <em>Stacked Bar</em>, and select OK. Word opens a small spreadsheet.</li>
+        <li>Replace the sample data with three columns: <strong>Task</strong>, <strong>Start</strong> (the offset in days from your project start) and <strong>Duration</strong> (the length in days). One task per row.</li>
+        <li>Close the data window. Click any bar in the <strong>Start</strong> series, the first coloured segment of every bar, then set its fill to <em>No Fill</em>. The spacers vanish and only the duration bars remain, each starting on the right day.</li>
+        <li>Click the vertical axis, open <em>Format Axis</em>, and tick <em>Categories in reverse order</em> so the first task sits at the top, the way a Gantt chart reads.</li>
+        <li>Tidy up: delete the legend, add a title or data labels, and recolour the bars by phase if you like.</li>
+      </ol>
+      <p>The pay-off is that changing a Start or Duration value in the chart data moves the bar. The cost is that Word measures the axis in plain numbers, not calendar dates, so you work in "days from the start" rather than real dates, and weekends do not exist. For the bigger picture on planning in a document versus a tool, see <a href="/blog/how-to-make-a-gantt-chart.html">how to make a Gantt chart</a>.</p>`],
+
+      ['Method 2: A table you shade by hand', `<p>When you have only a few tasks and the chart lives inside a document you are already writing, a table beats a chart. Each row is a task and each column is a time unit, a week or a day, and you fill the cells a task spans.</p>
+      <ol>
+        <li>Insert a table (<em>Insert, Table</em>) with one column for task names and one column per time period across the top.</li>
+        <li>Type the task names down the first column and the dates or week numbers across the header row.</li>
+        <li>For each task, select the cells it spans and apply a <em>Shading</em> colour from the <em>Table Design</em> tab.</li>
+        <li>Use a second colour, or a single character such as a diamond, to mark milestones and deadlines.</li>
+      </ol>
+      <p>A shaded table has no maths behind it, which is both its strength and its weakness. Nothing recalculates, so it never surprises you, but nothing moves when a date slips either: you re-shade by hand. It is a good fit for a student timeline or a one-page status update.</p>`],
+
+      ['Method 3: Drawn shapes for full control', `<p>The third method uses <em>Insert, Shapes</em> to draw a horizontal line for the axis and a rectangle for each task bar. You place and size every element yourself, so it can look exactly as you want, including the dependency arrows the other two methods cannot draw.</p>
+      <p>It is also the most laborious, and nothing holds the picture together: move one bar and the rest stay put. Reserve this for a polished one-off, a slide-style timeline for the front of a proposal, rather than a plan you expect to maintain. SmartArt has a couple of timeline layouts that automate part of it if you want a head start.</p>`],
+
+      ['Which method should you use?', `<p>The right method is the one whose weaknesses you can live with for this particular document.</p>
+      <table>
+        <thead><tr><th>Method</th><th>Best for</th><th>Effort</th><th>Main limitation</th></tr></thead>
+        <tbody>
+          <tr><td>Stacked bar chart</td><td>A real, editable chart in a report</td><td>Medium</td><td>Works in day-offsets, not calendar dates</td></tr>
+          <tr><td>Shaded table</td><td>A few tasks, a quick timeline</td><td>Low</td><td>No maths; every change is manual</td></tr>
+          <tr><td>Drawn shapes</td><td>A polished one-off with arrows</td><td>High</td><td>Nothing recalculates or aligns itself</td></tr>
+        </tbody>
+      </table>
+      <p>All three share the same ceiling, covered further down.</p>`],
+
+      ['Is there a Gantt chart template for Word?', `<p>There is no official Gantt chart template built into Word, and the timeline graphics sometimes offered as "templates" online are static pictures you cannot reschedule. In practice you have two realistic options.</p>
+      <p>The first is to build the stacked bar chart once and reuse it: save the file as a Word template (<em>.dotx</em>) so the chart, colours and layout are ready next time and you only swap the data. The second, faster if you want dependencies and a critical path already wired in, is to start from a <a href="/templates.html">ready-made Gantt chart template</a>, change the names and dates, and export the finished chart into your document. The <a href="/blog/gantt-chart-in-excel.html">Excel route</a> gives you a reusable, date-aware template in the same spirit.</p>`],
+
+      ['A worked example: turning dates into bar lengths', `<p>The stacked bar chart wants numbers, not dates, so the step that trips people up is converting a schedule into offsets and durations. Here is a six-task launch plan worked through.</p>
+      <p>Pick the earliest start as day 0. For every task, the <strong>Start</strong> value is the number of days from day 0 to that task, and the <strong>Duration</strong> is its length. Weekends count as ordinary days, because Word does not know about them.</p>
+      <div class="callout worked"><strong>Worked example: a plan running from 1 September.</strong>
+      <ul>
+        <li>Research, 1 to 5 Sep: Start 0, Duration 4</li>
+        <li>Outline, 6 to 9 Sep: Start 5, Duration 3</li>
+        <li>First draft, 10 to 20 Sep: Start 9, Duration 10</li>
+        <li>Review, 21 to 23 Sep: Start 20, Duration 2</li>
+        <li>Revise, 24 to 28 Sep: Start 23, Duration 4</li>
+        <li>Publish (milestone), 29 Sep: Start 28, Duration 0</li>
+      </ul>
+      Type those two number columns into the chart data and every bar lands on the correct day.</div>
+      <p>If recomputing those offsets by hand every time a date moves sounds tedious, that is the honest limitation of the approach, and the reason a purpose-built tool exists.</p>`],
+
+      ['What a Gantt chart in Word cannot do', `<p>Every method above draws a <em>picture</em> of a schedule. None of them <em>computes</em> one, and that is the real boundary. In Word there are no task <a href="/blog/gantt-chart-dependencies.html">dependencies</a>, so nothing links "testing" to the end of "development"; if development slips, testing sits exactly where you left it. There is no <a href="/blog/critical-path-method.html">critical path</a>, so the chart cannot tell you which tasks actually drive the finish date. And because the axis counts plain days, weekends and holidays are invisible.</p>
+      <p>The practical result: a Word Gantt chart is excellent for <em>communicating</em> a plan and poor for <em>maintaining</em> one. While the schedule is stable and you are mostly presenting it, Word is fine. Once dates start moving and you are re-shading cells or recomputing offsets, the document is working against you.</p>`],
+
+      ['A faster way, when Word starts to hurt', `<p>If the plan is going to change, build it somewhere that recalculates and export the result. A <a href="/app.html">free online Gantt maker</a> gives you drag-to-schedule bars, real dependencies and an automatic critical path, then exports to <a href="/blog/gantt-chart-in-powerpoint.html">PowerPoint</a>, PDF, PNG or <a href="/blog/gantt-chart-in-excel.html">Excel</a>. Drop the picture into your Word document in seconds: it stays a Word document, and only the chart is built where charts belong.</p>
+      <p>You can also start from a <a href="/templates.html">ready-made template</a> and change the names and dates, or read the sister guides on building a Gantt chart in <a href="/blog/gantt-chart-in-excel.html">Excel</a> and <a href="/blog/gantt-chart-in-google-sheets.html">Google Sheets</a>, both of which give you a proper date axis.</p>`],
+    ],
+    callout: 'Word draws a picture of a schedule; it does not compute one. That single fact explains every limitation here, and every reason to move the plan elsewhere once the dates start to shift.',
+    faq: [
+      ['Does Microsoft Word have a Gantt chart template?', 'Word has no built-in Gantt chart template, but it has the tools to make one: a stacked bar chart, a table, or drawn shapes. Office templates online occasionally offer a static timeline graphic, but it is not a true, editable Gantt chart.'],
+      ['Is it better to make a Gantt chart in Excel or Word?', 'Excel is better whenever dates will change, because it has a real date axis and formulas, so bar positions can be driven by start and end dates. Word is fine for a fixed timeline inside a written document. See the guide on making a Gantt chart in Excel.'],
+      ['How do I make the bars start on different dates in Word?', 'Use a stacked bar chart with two series: a Start series holding the offset in days from the project start, and a Duration series. Set the Start series fill to No Fill so it becomes an invisible spacer, and only the duration bars show, each beginning on its own date.'],
+      ['Can I show task dependencies in a Word Gantt chart?', 'Not automatically. The chart and table methods cannot draw dependency links, and the drawn-shapes method lets you add arrows by hand but they do not move with the tasks. For real dependencies and a critical path, use a dedicated Gantt tool.'],
+      ['How do I put a Gantt chart into a Word document quickly?', 'Build it in a free online Gantt maker, export it as a PNG or copy the chart, then paste it into your document. You get a clean, correctly dated chart without wrestling with the chart engine in Word.'],
+    ],
+    related: [['gantt-chart-in-excel', 'How to make a Gantt chart in Excel'], ['gantt-chart-in-powerpoint', 'How to make a Gantt chart in PowerPoint'], ['how-to-make-a-gantt-chart', 'How to make a Gantt chart (any tool)']],
+  },
+
+  // ---------------------------------------------------------------
   'gantt-chart-dependencies': {
     h1: 'Gantt Chart Dependencies Explained: FS, SS, FF and SF',
     metaTitle: 'Gantt Dependencies: FS, SS, FF, SF',
