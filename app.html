@@ -17,6 +17,7 @@
   <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/app.html" />
   <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/app.html" />
   <link rel="alternate" hreflang="x-default" href="https://gantts.app/app.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#6c4cf1" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
@@ -25,11 +26,22 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Free Gantt Chart Generator, Online Editor" />
   <meta property="og:description" content="Create a Gantt chart online free. Dependencies, critical path, export to PDF/PNG/Excel/PPT. No sign up." />
   <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
   <meta property="og:url" content="https://gantts.app/app.html" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Gantt Chart Generator, Online Editor" />
+  <meta name="twitter:description" content="Create a Gantt chart online free. Dependencies, critical path, export to PDF/PNG/Excel/PPT. No sign up." />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <!-- Warm up the export CDNs so the deferred export libraries below
+       connect without paying DNS + TLS on first use. -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
   <link rel="stylesheet" href="/css/styles.css?v=63" />
 
@@ -66,7 +78,12 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script type="application/ld+json">
-  { "@context":"https://schema.org","@type":"SoftwareApplication","name":"gantts.app Gantt Chart Maker","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://gantts.app/app.html" }
+  { "@context":"https://schema.org","@graph":[
+    { "@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","founder":{"@id":"https://gantts.app/about.html#uttam-regmi"},"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"} },
+    { "@type":"Person","@id":"https://gantts.app/about.html#uttam-regmi","name":"Uttam Regmi","url":"https://gantts.app/about.html","jobTitle":"Founder, Synth88 Labs","sameAs":["https://www.linkedin.com/in/uttam-regmi-373926370/","https://medium.com/@excelguru","https://www.pinterest.com/excelguru_io/","https://github.com/Synth88Labs/"] },
+    { "@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","publisher":{"@id":"https://gantts.app/#org"} },
+    { "@type":"SoftwareApplication","name":"gantts.app Gantt Chart Maker","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":"Interactive Gantt chart, task dependencies, critical path, milestones, deadlines, export to PDF, PNG, Excel and PowerPoint, free templates, no sign up","url":"https://gantts.app/app.html","publisher":{"@id":"https://gantts.app/#org"} }
+  ] }
   </script>
 </head>
 <body class="app-body">

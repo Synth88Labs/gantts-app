@@ -356,7 +356,7 @@ function homeTemplateCards(code) {
     const d = (TPL_I18N[code] || {})[sl];
     const blurb = (d && d.card) || ((TPL_CARDS[code] || {})[sl]) || '';
     const href = localesFor(sl).includes(code) ? `/${code}/templates/${sl}.html` : `/templates/${sl}.html`;
-    return `        <a class="tpl-card" href="${href}"><div class="tpl-thumb"><img src="/templates/img/${sl}.svg" alt="${esc(labels[sl])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[sl])}</h3><p>${blurb}</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>`;
+    return `        <a class="tpl-card" href="${href}"><div class="tpl-thumb"><img src="/templates/img/${sl}.svg" width="480" height="300" alt="${esc(labels[sl])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[sl])}</h3><p>${blurb}</p><div class="tpl-tags"><span class="tag excel">Excel</span> <span class="tag ppt">PPT</span> <span class="tag csv">CSV</span></div></div></a>`;
   }).join('\n');
 }
 
@@ -625,7 +625,7 @@ function renderTemplates(loc) {
        left-aligned), .tpl-body (the 16px/18px padding, i.e. the missing
        indent) and .tpl-body h3/p (the text colours, so both inherited
        the anchor's purple). The download badges were missing too. */
-    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags">${tagsFor(s)}</div></div></a>`).join('\n');
+    const cards = g.slugs.map(s => `          <a class="tpl-card" href="${cardHref(s)}"><div class="tpl-thumb"><img src="/templates/img/${s}.svg" width="480" height="300" alt="${esc(labels[s])}" loading="lazy"></div><div class="tpl-body"><h3>${esc(labels[s])}</h3><p>${blurb(s)}</p><div class="tpl-tags">${tagsFor(s)}</div></div></a>`).join('\n');
     /* .head-l is a flex row: heading on the left, note on the right.
        The note was being emitted on its own, so it kept the 380px
        max-width from .head-l-note but lost the layout, orphaning a
@@ -871,7 +871,7 @@ function renderTemplateDetail(loc, slug) {
           <a class="btn btn-primary" href="/${code}/app.html?csv=${slug}">✎ ${esc(ui.edit)}</a>
         </div>
       </div>
-      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" alt="${esc(ui.imgAlt)}" /></div>
+      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" width="480" height="300" alt="${esc(ui.imgAlt)}" /></div>
     </div>
   </section>
 
@@ -1299,12 +1299,16 @@ function renderApp(loc) {
     `<link rel="canonical" href="${url}" />
 ${hreflangTags(sub)}`);
 
-  // og/twitter should describe this locale's page
+  // og/twitter should describe this locale's page. The root app.html now
+  // carries og:type/og:site_name/og:locale, the full twitter card and a
+  // robots tag, so these are REPLACED in place (not appended) to avoid the
+  // locale copy ending up with two of each or English twitter text.
   h = h.replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${esc(a.title)}" />`);
   h = h.replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${esc(a.description)}" />`);
-  h = h.replace(/<meta property="og:url" content="[^"]*" \/>/,
-    `<meta property="og:url" content="${url}" />
-  <meta property="og:locale" content="${loc.ogLocale}" />`);
+  h = h.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`);
+  h = h.replace(/<meta property="og:locale" content="[^"]*" \/>/, `<meta property="og:locale" content="${loc.ogLocale}" />`);
+  h = h.replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${esc(a.title)}" />`);
+  h = h.replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${esc(a.description)}" />`);
 
   // home links stay inside the locale
   h = h.split('href="/"').join(`href="/${code}/"`);
@@ -1330,9 +1334,9 @@ ${hreflangTags(sub)}`);
     throw new Error(`renderApp(${code}): no switcher option for ${selfHref}, the language selector would show the wrong language.`);
   }
 
-  // The hand-authored app.html predates the localized-page SEO standard,
-  // so bring the copies up to it: robots, twitter card, og:locale
-  // alternates, and the shared entity graph with inLanguage.
+  // The localized entity graph carries inLanguage; the root already
+  // provides robots + the twitter card (localized above), so only the
+  // og:locale:alternate tags remain to add per locale.
   const ld = graph(loc, [
     {
       '@type': 'WebPage', '@id': url + '#webpage',
@@ -1352,14 +1356,7 @@ ${hreflangTags(sub)}`);
   h = h.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,
     `<script type="application/ld+json">${ld}</script>`);
 
-  const extra = [
-    `  <meta name="robots" content="index,follow,max-image-preview:large" />`,
-    ogLocaleAlternates(loc),
-    `  <meta name="twitter:title" content="${esc(a.title)}" />`,
-    `  <meta name="twitter:description" content="${esc(a.description)}" />`,
-    `  <meta name="twitter:image" content="${ORIGIN}/assets/og-image.png" />`,
-  ].join('\n');
-  h = h.replace('</head>', extra + '\n</head>');
+  h = h.replace('</head>', ogLocaleAlternates(loc) + '\n</head>');
 
   // navigating switcher, consistent with every other page on the site
   h = h.replace(/<select class="lang-select"[^>]*><\/select>/, langSwitcher(code, sub));

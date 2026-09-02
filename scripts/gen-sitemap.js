@@ -74,10 +74,42 @@ const mtime = (rel) => {
   try { return fs.statSync(path.join(ROOT, rel)).mtime.toISOString().slice(0, 10); }
   catch (e) { return new Date().toISOString().slice(0, 10); }
 };
-function lastmod(rel) {
+function gitDate(rel) {
   const key = rel.replace(/\\/g, '/');
   if (DATES && DATES[key]) return DATES[key];
   return mtime(key);   // untracked or brand new
+}
+
+/* lastmod that only moves on a REAL content change.
+   Git's per-file date is honest for genuine edits, but a site-wide asset
+   cache-bust (bumping ?v=NN on every page) rewrites all 800+ files at once
+   and would reset every lastmod together, exactly the "all dates move in
+   lockstep" signal Google learns to distrust and then ignores. So the date
+   is pinned to a CONTENT HASH with the volatile ?v= query strings stripped:
+   a page whose only diff is a cache-bust keeps its previous date. The
+   hash to date map persists in .lastmod.json (committed), seeded from git
+   the first time each page is seen, and stamped with today's UTC date on
+   any later real change. */
+const crypto = require('crypto');
+const SNAP_FILE = path.join(ROOT, '.lastmod.json');
+const TODAY = new Date().toISOString().slice(0, 10);
+let snap = {};
+try { snap = JSON.parse(fs.readFileSync(SNAP_FILE, 'utf8')); } catch (e) { snap = {}; }
+const nextSnap = {};
+function contentHash(rel) {
+  let html;
+  try { html = fs.readFileSync(path.join(ROOT, rel), 'utf8'); }
+  catch (e) { return null; }
+  return crypto.createHash('sha1').update(html.replace(/\?v=\d+/g, '?v=')).digest('hex');
+}
+function lastmod(rel) {
+  const key = rel.replace(/\\/g, '/');
+  const h = contentHash(key);
+  const prev = snap[key];
+  if (prev && prev.hash === h) { nextSnap[key] = prev; return prev.date; }
+  const date = prev ? TODAY : gitDate(key);   // seed from git on first sight, else stamp change day
+  nextSnap[key] = { hash: h, date };
+  return date;
 }
 
 function walk(dir, base) {
@@ -143,6 +175,12 @@ ${urls}
 </urlset>
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml);
+// Persist the content-hash -> date snapshot so the next build only bumps
+// lastmod for pages whose real content actually changed. Keys are sorted
+// for a stable, review-friendly diff.
+const sortedSnap = {};
+for (const k of Object.keys(nextSnap).sort()) sortedSnap[k] = nextSnap[k];
+fs.writeFileSync(SNAP_FILE, JSON.stringify(sortedSnap, null, 0) + '\n');
 
 // ---- report ----
 const localized = pages.filter(p => LOCALE_RE.test(p)).length;

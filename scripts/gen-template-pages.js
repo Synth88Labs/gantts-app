@@ -197,7 +197,7 @@ ${nav(slug)}
           <a class="btn btn-primary" href="/app.html?csv=${slug}">✎ Edit online free</a>
         </div>
       </div>
-      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" alt="Preview of the ${attr(strip(d.title).toLowerCase())} template showing phases across a timeline" /></div>
+      <div class="tpl-hero-media"><img src="/templates/img/${slug}.svg" width="480" height="300" alt="Preview of the ${attr(strip(d.title).toLowerCase())} template showing phases across a timeline" /></div>
     </div>
   </section>
 
