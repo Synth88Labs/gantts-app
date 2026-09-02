@@ -21,7 +21,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/accessibility.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/accessibility.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/accessibility.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/app.html</loc>
@@ -168,7 +168,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/"/>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/blog/mermaid-gantt-chart.html</loc>
@@ -223,7 +223,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/de/about.html</loc>
@@ -443,6 +443,17 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/de/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>
@@ -1722,6 +1733,17 @@
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>
+    <loc>https://gantts.app/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
     <loc>https://gantts.app/es/about.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/about.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/about.html"/>
@@ -1939,6 +1961,17 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/es/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>
@@ -3438,6 +3471,17 @@
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>
+    <loc>https://gantts.app/fr/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
     <loc>https://gantts.app/fr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/"/>
@@ -4733,7 +4777,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/privacy.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/pt/about.html</loc>
@@ -4953,6 +4997,17 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/pt/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>
@@ -6240,7 +6295,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/3-week-lookahead-template.html</loc>
@@ -6262,7 +6317,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/30-60-90-day-plan.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/30-60-90-day-plan.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/30-60-90-day-plan.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/agile.html</loc>
@@ -6273,7 +6328,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/agile.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/agile.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/agile.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/airport-terminal-expansion-plan.html</loc>
@@ -6295,7 +6350,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/annual.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/annual.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/annual.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/apparel-production-calendar.html</loc>
@@ -6416,7 +6471,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/construction.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/construction.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/content-calendar.html</loc>
@@ -6427,7 +6482,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/content-calendar.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/content-calendar.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/content-calendar.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/crm-implementation-plan.html</loc>
@@ -6537,7 +6592,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/employee-onboarding.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/employee-onboarding.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/employee-onboarding.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/erp-implementation-schedule.html</loc>
@@ -6570,7 +6625,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/event-planning.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/event-planning.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/excel.html</loc>
@@ -6581,7 +6636,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/excel.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/excel.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/fiber-broadband-rollout-plan.html</loc>
@@ -6647,7 +6702,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/google-sheets.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/google-sheets.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/google-sheets.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/grant-proposal-gantt-chart.html</loc>
@@ -6680,7 +6735,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/home-renovation.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/home-renovation.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/home-renovation.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/hospital-department-opening.html</loc>
@@ -6812,7 +6867,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/marketing.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/marketing.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/medical-clinic-opening-timeline.html</loc>
@@ -6856,7 +6911,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/monthly.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/monthly.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/monthly.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/moving-house-timeline.html</loc>
@@ -7043,7 +7098,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/powerpoint.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/powerpoint.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/powerpoint.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/printable-gantt-chart.html</loc>
@@ -7065,7 +7120,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/product-launch.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/product-launch.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/product-launch.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/product-recall-plan.html</loc>
@@ -7087,7 +7142,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/product-roadmap.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/product-roadmap.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/product-roadmap.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/project-management.html</loc>
@@ -7098,7 +7153,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/project-management.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/project-management.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/qa-test-plan-schedule.html</loc>
@@ -7153,7 +7208,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/research.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/research.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/research.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/restaurant-opening-timeline.html</loc>
@@ -7263,7 +7318,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/simple.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/simple.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/soc2-compliance-timeline.html</loc>
@@ -7285,7 +7340,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/software-development.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/software-development.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/solar-farm-construction-schedule.html</loc>
@@ -7307,7 +7362,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/sprint.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/sprint.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/sprint.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/stadium-construction-schedule.html</loc>
@@ -7439,7 +7494,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/wedding-planning.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/wedding-planning.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/wedding-planning.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/weekly.html</loc>
@@ -7450,7 +7505,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/templates/weekly.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/templates/weekly.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/templates/wind-farm-construction-schedule.html</loc>
@@ -7472,7 +7527,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/terms.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/terms.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/whats-new.html</loc>
@@ -7483,7 +7538,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/whats-new.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/whats-new.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/whats-new.html"/>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-02</lastmod>
   </url>
   <url>
     <loc>https://gantts.app/zh/about.html</loc>
@@ -7703,6 +7758,17 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/contact.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+  </url>
+  <url>
+    <loc>https://gantts.app/zh/editorial-standards.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gantts.app/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gantts.app/es/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://gantts.app/fr/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://gantts.app/de/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://gantts.app/pt/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/editorial-standards.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gantts.app/editorial-standards.html"/>
     <lastmod>2026-09-02</lastmod>
   </url>
   <url>

@@ -25,6 +25,20 @@ const SITE = {
         ['Sugiere una función', '<p>La mayor parte de lo que construimos empieza como una petición de un usuario. Si hay algo que te facilitaría planificar, dínoslo: leemos todos los mensajes.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idea%20gantts.app">Escríbenos a synth88labs@gmail.com</a></p>'],
       ],
     },
+    'editorial-standards': {
+      title: 'Estándares editoriales: gantts.app',
+      description: 'Cómo redactamos las guías de gantts.app, cómo las mantenemos al día y cómo el sitio se mantiene gratis, además de lo que nunca haremos.',
+      h1: 'Estándares editoriales',
+      lead: 'gantts.app publica guías y plantillas en las que la gente confía para planificar trabajo real. Estos son los principios detrás de ese contenido: quién lo escribe, cómo lo mantenemos preciso, cómo el sitio se mantiene gratis y las líneas que no cruzaremos.',
+      callout: '<strong>¿Has visto un error?</strong> La precisión nos importa. Si algo en una guía es incorrecto o está desactualizado, escríbenos a <a href="mailto:synth88labs@gmail.com?subject=Correcci%C3%B3n%20gantts.app">synth88labs@gmail.com</a> y lo corregiremos.',
+      body: [
+        ['Quién escribe gantts.app', '<p>Las guías y plantillas las escribe <a href="/es/about.html">Uttam Regmi</a>, fundador de <a href="https://synth88.com" rel="noopener">Synth88 Labs</a> y la persona que construye el propio editor. Es auditor de profesión y desarrolla software desde 2010, así que los consejos de planificación vienen de alguien que usa cronogramas en trabajo real, no de una redacción anónima.</p>'],
+        ['Cómo investigamos y escribimos', '<p>Cada guía se escribe usando el editor real de gantts.app. Cuando un artículo muestra un ejemplo, unas dependencias o una ruta crítica, se construyó y comprobó en la herramienta antes de publicarlo, para que los pasos coincidan con lo que verás en pantalla. Escribimos en lenguaje claro, explicamos el porqué y no generamos texto de relleno para alcanzar un número de palabras.</p>'],
+        ['Cómo mantenemos las guías al día', '<p>Cada guía lleva una fecha visible. Revisamos los artículos cuando la herramienta cambia, cuando vemos que la gente pregunta algo que no respondimos, o cuando encontramos una forma más clara de explicarlo, y no según un calendario artificial. Si un paso queda obsoleto, es un fallo que queremos corregir.</p>'],
+        ['Cómo se mantiene gratis gantts.app', '<p>gantts.app es una aplicación web estática y ligera, sin un servidor caro que mantener, y eso hace posible que sea gratis. Un único espacio discreto de patrocinio dentro de la app ayuda a cubrir los costes. No hay muro de pago, ni función bloqueada, ni cuenta, y como tus planes nunca salen de tu navegador, no hay datos que vender. Puedes leer el detalle en la <a href="/es/privacy.html">página de privacidad</a>.</p>'],
+        ['Lo que no haremos', '<ul><li>Nada de reseñas o valoraciones inventadas. Si algún día mostramos valoraciones, vendrán de usuarios reales.</li><li>Nada de recomendaciones pagadas disfrazadas de contenido editorial. Una recomendación está porque creemos que es la mejor opción.</li><li>Nada de patrones oscuros, cuentas atrás falsas ni urgencia fabricada.</li><li>Nada de copiar o republicar contenido de otros como propio. Las guías se escriben desde cero.</li></ul>'],
+      ],
+    },
     legalNote: 'Esta es una traducción de cortesía. En caso de discrepancia, prevalece la versión en inglés.',
     about: {
       title: 'Sobre gantts.app: creador de diagramas de Gantt',
@@ -108,6 +122,20 @@ const SITE = {
         ['Août 2026: Une bibliothèque de modèles plus large', '<p>Cinq nouveaux plans prêts à l’emploi, entièrement traduits dans les six langues : <a href="/fr/templates/study-plan.html">plan de révision</a>, <a href="/fr/templates/moving-house-timeline.html">déménagement</a>, <a href="/fr/templates/kitchen-remodel-timeline.html">rénovation de cuisine</a>, <a href="/fr/templates/crowdfunding-campaign-plan.html">campagne de financement participatif</a> et <a href="/fr/templates/performance-review-cycle.html">cycle d’évaluation de la performance</a>, portant la <a href="/fr/templates.html">bibliothèque</a> à plus de 100 modèles gratuits.</p>'],
         ['L’essentiel, toujours inclus et gratuit', '<p>Tout ce sur quoi l’éditeur repose, sans compte ni péage : dépendances entre tâches (fin-à-début et trois autres), <a href="/fr/blog/critical-path-method.html">chemin critique</a> automatique, courbe en S de la valeur acquise, lignes de base et écarts, calendrier ouvré avec week-ends et jours fériés, charge de travail, mode présentation, palette de commandes, contrôle complet au clavier, mode sombre et export vers PDF, PNG, Excel, PowerPoint, CSV, MS Project et Mermaid, en six langues.</p>'],
         ['Proposez une fonction', '<p>La plupart de ce que nous construisons commence par une demande d’utilisateur. S’il y a quelque chose qui faciliterait votre planification, dites-le-nous : nous lisons chaque message.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idée%20gantts.app">Écrivez-nous à synth88labs@gmail.com</a></p>'],
+      ],
+    },
+    'editorial-standards': {
+      title: 'Charte éditoriale : gantts.app',
+      description: 'Comment nous rédigeons les guides de gantts.app, comment nous les tenons à jour et comment le site reste gratuit, ainsi que ce que nous ne ferons jamais.',
+      h1: 'Charte éditoriale',
+      lead: 'gantts.app publie des guides et des modèles sur lesquels les gens comptent pour planifier un vrai travail. Voici les principes derrière ce contenu : qui le rédige, comment nous le gardons exact, comment le site reste gratuit et les limites que nous ne franchirons pas.',
+      callout: '<strong>Vous avez repéré une erreur ?</strong> La précision compte pour nous. Si quelque chose dans un guide est faux ou obsolète, écrivez à <a href="mailto:synth88labs@gmail.com?subject=Correction%20gantts.app">synth88labs@gmail.com</a> et nous le corrigerons.',
+      body: [
+        ['Qui rédige gantts.app', '<p>Les guides et les modèles sont rédigés par <a href="/fr/about.html">Uttam Regmi</a>, fondateur de <a href="https://synth88.com" rel="noopener">Synth88 Labs</a> et la personne qui construit l\'éditeur lui-même. Auditeur de profession, il développe des logiciels depuis 2010 : les conseils de planification viennent donc de quelqu\'un qui utilise des plannings dans un vrai travail, pas d\'une rédaction anonyme.</p>'],
+        ['Comment nous recherchons et rédigeons', '<p>Chaque guide est écrit à partir d\'une utilisation concrète de l\'éditeur gantts.app. Quand un article montre un exemple, des dépendances ou un chemin critique, il a été construit et vérifié dans l\'outil avant publication, pour que les étapes correspondent à ce que vous verrez à l\'écran. Nous écrivons dans un langage clair, expliquons le pourquoi, et ne produisons pas de texte de remplissage pour atteindre un nombre de mots.</p>'],
+        ['Comment nous gardons les guides à jour', '<p>Chaque guide porte une date visible. Nous révisons les articles quand l\'outil change, quand les gens demandent quelque chose que nous n\'avions pas traité, ou quand nous trouvons une façon plus claire de l\'expliquer, plutôt que selon un calendrier artificiel. Si une étape devient obsolète, c\'est un bug que nous voulons corriger.</p>'],
+        ['Comment gantts.app reste gratuit', '<p>gantts.app est une application web statique et légère, sans serveur coûteux à faire tourner, et c\'est ce qui rend le gratuit possible. Un unique emplacement de parrainage discret dans l\'app aide à couvrir les coûts. Pas de mur payant, pas de fonction verrouillée, pas de compte, et comme vos plans ne quittent jamais votre navigateur, aucune donnée à vendre. Le détail est sur la <a href="/fr/privacy.html">page de confidentialité</a>.</p>'],
+        ['Ce que nous ne ferons pas', '<ul><li>Pas de faux avis ni de notes inventées. Si nous affichons un jour des notes, elles viendront de vrais utilisateurs.</li><li>Pas de placement payant déguisé en contenu éditorial. Une recommandation est là parce que nous la jugeons réellement meilleure.</li><li>Pas de dark patterns, de faux comptes à rebours ni d\'urgence fabriquée.</li><li>Pas de reprise du contenu des autres comme le nôtre. Les guides sont rédigés de zéro.</li></ul>'],
       ],
     },
     legalNote: 'Ceci est une traduction de courtoisie. En cas de divergence, la version anglaise prévaut.',
@@ -195,6 +223,20 @@ const SITE = {
         ['Schlagen Sie eine Funktion vor', '<p>Das meiste, was wir bauen, beginnt als Nutzerwunsch. Wenn etwas Ihre Planung leichter machen würde, sagen Sie es uns, wir lesen jede Nachricht.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Idee%20gantts.app">Schreiben Sie an synth88labs@gmail.com</a></p>'],
       ],
     },
+    'editorial-standards': {
+      title: 'Redaktionsstandards: gantts.app',
+      description: 'Wie wir die Ratgeber von gantts.app schreiben, aktuell halten und wie die Website kostenlos bleibt, und was wir niemals tun werden.',
+      h1: 'Redaktionsstandards',
+      lead: 'gantts.app veröffentlicht Ratgeber und Vorlagen, auf die sich Menschen bei der Planung echter Arbeit verlassen. Das sind die Grundsätze hinter diesen Inhalten: wer sie schreibt, wie wir sie korrekt halten, wie die Website kostenlos bleibt und welche Grenzen wir nicht überschreiten.',
+      callout: '<strong>Einen Fehler entdeckt?</strong> Genauigkeit ist uns wichtig. Wenn etwas in einem Ratgeber falsch oder veraltet ist, schreiben Sie an <a href="mailto:synth88labs@gmail.com?subject=Korrektur%20gantts.app">synth88labs@gmail.com</a> und wir bringen es in Ordnung.',
+      body: [
+        ['Wer gantts.app schreibt', '<p>Die Ratgeber und Vorlagen schreibt <a href="/de/about.html">Uttam Regmi</a>, Gründer von <a href="https://synth88.com" rel="noopener">Synth88 Labs</a> und die Person, die den Editor selbst entwickelt. Er ist Auditor von Beruf und entwickelt seit 2010 Software, die Planungstipps stammen also von jemandem, der Zeitpläne in echter Arbeit nutzt, nicht von einer anonymen Redaktion.</p>'],
+        ['Wie wir recherchieren und schreiben', '<p>Jeder Ratgeber entsteht aus der praktischen Nutzung des echten gantts.app-Editors. Wenn ein Artikel ein Beispiel, Abhängigkeiten oder einen kritischen Pfad zeigt, wurde das vor der Veröffentlichung im Tool gebaut und geprüft, damit die Schritte zu dem passen, was Sie auf dem Bildschirm sehen. Wir schreiben in klarer Sprache, erklären das Warum und erzeugen keinen Fülltext, um eine Wortzahl zu erreichen.</p>'],
+        ['Wie wir die Ratgeber aktuell halten', '<p>Jeder Ratgeber trägt ein sichtbares Datum. Wir überarbeiten Artikel, wenn sich das Tool ändert, wenn wir sehen, dass Leute etwas fragen, das wir nicht beantwortet haben, oder wenn wir eine klarere Erklärung finden, statt nach einem künstlichen Zeitplan. Wird ein Schritt veraltet, ist das ein Fehler, den wir beheben wollen.</p>'],
+        ['Wie gantts.app kostenlos bleibt', '<p>gantts.app ist eine schlanke, statische Web-App ohne teures Backend, und genau das macht kostenlos möglich. Ein einziger dezenter Sponsoring-Platz in der App hilft, die geringen Kosten zu decken. Es gibt keine Bezahlschranke, keine gesperrte Funktion, kein Konto, und da Ihre Pläne Ihren Browser nie verlassen, gibt es keine Daten zu verkaufen. Die Details stehen auf der <a href="/de/privacy.html">Datenschutzseite</a>.</p>'],
+        ['Was wir nicht tun', '<ul><li>Keine erfundenen Bewertungen oder Sterne. Falls wir je Bewertungen zeigen, stammen sie von echten Nutzern.</li><li>Keine bezahlte Platzierung, die als Redaktion getarnt ist. Eine Empfehlung steht da, weil wir sie für die beste Option halten.</li><li>Keine Dark Patterns, falschen Countdowns oder künstliche Dringlichkeit.</li><li>Kein Übernehmen fremder Inhalte als eigene. Die Ratgeber sind von Grund auf selbst geschrieben.</li></ul>'],
+      ],
+    },
     legalNote: 'Dies ist eine Übersetzung zur Information. Im Zweifelsfall gilt die englische Fassung.',
     about: {
       title: 'Über gantts.app: Gantt-Diagramm-Generator',
@@ -278,6 +320,20 @@ const SITE = {
         ['Agosto de 2026: Uma biblioteca de modelos maior', '<p>Cinco novos planos prontos, totalmente traduzidos nos seis idiomas: <a href="/pt/templates/study-plan.html">plano de estudos</a>, <a href="/pt/templates/moving-house-timeline.html">mudança</a>, <a href="/pt/templates/kitchen-remodel-timeline.html">reforma de cozinha</a>, <a href="/pt/templates/crowdfunding-campaign-plan.html">campanha de crowdfunding</a> e <a href="/pt/templates/performance-review-cycle.html">ciclo de avaliação de desempenho</a>, levando a <a href="/pt/templates.html">biblioteca</a> a mais de 100 modelos gratuitos.</p>'],
         ['O essencial, sempre incluído e gratuito', '<p>Tudo em que o editor se apoia, sem conta e sem paywall: dependências entre tarefas (término-início e três outras), <a href="/pt/blog/critical-path-method.html">caminho crítico</a> automático, curva S de valor agregado, linhas de base e variação, calendário de trabalho com fins de semana e feriados, carga de trabalho, modo apresentação, paleta de comandos, controle total pelo teclado, modo escuro e exportação para PDF, PNG, Excel, PowerPoint, CSV, MS Project e Mermaid, em seis idiomas.</p>'],
         ['Sugira um recurso', '<p>A maior parte do que construímos começa como um pedido de usuário. Se há algo que facilitaria o seu planejamento, diga: lemos todas as mensagens.</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=Ideia%20gantts.app">Escreva para synth88labs@gmail.com</a></p>'],
+      ],
+    },
+    'editorial-standards': {
+      title: 'Padrões editoriais: gantts.app',
+      description: 'Como escrevemos os guias do gantts.app, como os mantemos atualizados e como o site permanece gratuito, além do que nunca faremos.',
+      h1: 'Padrões editoriais',
+      lead: 'O gantts.app publica guias e modelos em que as pessoas confiam para planear trabalho real. Estes são os princípios por trás desse conteúdo: quem o escreve, como o mantemos correto, como o site permanece gratuito e as linhas que não vamos cruzar.',
+      callout: '<strong>Encontrou um erro?</strong> A precisão é importante para nós. Se algo num guia estiver errado ou desatualizado, escreva para <a href="mailto:synth88labs@gmail.com?subject=Corre%C3%A7%C3%A3o%20gantts.app">synth88labs@gmail.com</a> e nós corrigimos.',
+      body: [
+        ['Quem escreve o gantts.app', '<p>Os guias e modelos são escritos por <a href="/pt/about.html">Uttam Regmi</a>, fundador da <a href="https://synth88.com" rel="noopener">Synth88 Labs</a> e a pessoa que constrói o próprio editor. É auditor de profissão e desenvolve software desde 2010, por isso os conselhos de planeamento vêm de alguém que usa cronogramas em trabalho real, não de uma redação anónima.</p>'],
+        ['Como pesquisamos e escrevemos', '<p>Cada guia é escrito a partir do uso concreto do editor real do gantts.app. Quando um artigo mostra um exemplo, dependências ou um caminho crítico, isso foi construído e verificado na ferramenta antes de publicar, para que os passos correspondam ao que verá no ecrã. Escrevemos em linguagem clara, explicamos o porquê e não geramos texto de enchimento para atingir um número de palavras.</p>'],
+        ['Como mantemos os guias atualizados', '<p>Cada guia tem uma data visível. Revemos os artigos quando a ferramenta muda, quando vemos que as pessoas perguntam algo que não respondemos, ou quando encontramos uma forma mais clara de explicar, e não segundo um calendário artificial. Se um passo fica desatualizado, é um erro que queremos corrigir.</p>'],
+        ['Como o gantts.app se mantém gratuito', '<p>O gantts.app é uma aplicação web estática e leve, sem um backend caro para manter, e é isso que torna o gratuito possível. Um único espaço discreto de patrocínio dentro da app ajuda a cobrir os custos. Não há paywall, nem função bloqueada, nem conta, e como os seus planos nunca saem do navegador, não há dados para vender. O detalhe está na <a href="/pt/privacy.html">página de privacidade</a>.</p>'],
+        ['O que não faremos', '<ul><li>Nada de avaliações ou classificações inventadas. Se algum dia mostrarmos classificações, virão de utilizadores reais.</li><li>Nada de colocação paga disfarçada de conteúdo editorial. Uma recomendação está lá porque a consideramos a melhor opção.</li><li>Nada de dark patterns, contagens decrescentes falsas ou urgência fabricada.</li><li>Nada de copiar ou republicar conteúdo de outros como nosso. Os guias são escritos de raiz.</li></ul>'],
       ],
     },
     legalNote: 'Esta é uma tradução de cortesia. Em caso de divergência, prevalece a versão em inglês.',
@@ -365,6 +421,20 @@ const SITE = {
         ['提个功能建议', '<p>我们所做的大多数功能，都始于一条用户请求。如果有什么能让你的规划更省心，告诉我们, , 每一条留言我们都会看。</p><p><a class="btn btn-primary" href="mailto:synth88labs@gmail.com?subject=gantts.app">来信 synth88labs@gmail.com</a></p>'],
       ],
     },
+    'editorial-standards': {
+      title: '编辑准则: gantts.app',
+      description: '我们如何撰写 gantts.app 的指南、如何保持内容准确、网站如何保持免费，以及我们绝不会做的事。',
+      h1: '编辑准则',
+      lead: 'gantts.app 发布的指南和模板，是人们用来规划真实工作的依据。这些是这些内容背后的原则：由谁撰写、我们如何保持准确、网站如何保持免费，以及我们不会逾越的底线。',
+      callout: '<strong>发现错误了吗？</strong>准确性对我们很重要。如果指南中有内容有误或过时，请写信到 <a href="mailto:synth88labs@gmail.com?subject=gantts.app%20correction">synth88labs@gmail.com</a>，我们会更正。',
+      body: [
+        ['谁在撰写 gantts.app', '<p>指南和模板由 <a href="/zh/about.html">Uttam Regmi</a> 撰写，他是 <a href="https://synth88.com" rel="noopener">Synth88 Labs</a> 的创始人，也是亲自开发这款编辑器的人。他职业是审计师，自 2010 年起从事软件开发，因此这里的规划建议来自一位在真实工作中使用进度计划的人，而不是匿名的内容团队。</p>'],
+        ['我们如何研究与写作', '<p>每一篇指南都基于对 gantts.app 编辑器的实际使用来撰写。当文章展示示例、依赖关系或关键路径时，都是在发布前先在工具中真正搭建并核对过的，这样步骤才会与你在屏幕上看到的一致。我们用平实的语言写作，解释原因而不只是操作，也不会为了凑字数而生成填充文字。</p>'],
+        ['我们如何保持指南更新', '<p>每篇指南都带有可见的日期。当工具发生变化、当我们发现用户在问我们尚未回答的问题、或当我们找到更清楚的解释方式时，我们就会修订文章，而不是按人为的时间表更新。如果某个步骤过时了，那就是我们想修复的问题。</p>'],
+        ['gantts.app 如何保持免费', '<p>gantts.app 是一个轻量的静态网页应用，没有昂贵的后端要维护，这正是免费得以实现的原因。应用内一个不显眼的赞助位帮助覆盖这些不高的成本。没有付费墙、没有锁定的功能、没有账户，而且由于你的计划永远不会离开浏览器，也没有可供出售的数据。详情见<a href="/zh/privacy.html">隐私页面</a>。</p>'],
+        ['我们不会做的事', '<ul><li>不会捏造评价或星级。如果哪天展示评分，也一定来自真实用户。</li><li>不会把付费推广伪装成编辑内容。指南中的推荐，是因为我们确实认为它是最好的选择。</li><li>不会使用暗黑模式设计、虚假倒计时或人为制造的紧迫感。</li><li>不会把他人的内容抄袭或转载为自己的。这里的指南都是从零写起。</li></ul>'],
+      ],
+    },
     legalNote: '本页面为参考翻译。如有歧义，以英文版本为准。',
     about: {
       title: '关于 gantts.app: 甘特图工具',
@@ -439,6 +509,6 @@ const SITE = {
 };
 
 // page key -> English URL, used for hreflang pairing
-const SITE_PAGES = ['about.html', 'contact.html', 'terms.html', 'privacy.html', 'accessibility.html', 'whats-new.html'];
+const SITE_PAGES = ['about.html', 'contact.html', 'terms.html', 'privacy.html', 'accessibility.html', 'whats-new.html', 'editorial-standards.html'];
 
 module.exports = { SITE, SITE_PAGES };

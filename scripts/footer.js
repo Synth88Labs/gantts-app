@@ -51,6 +51,7 @@ const FOOTER = `  <footer class="footer">
           <h4>Company</h4>
           ${link('/about.html', 'About')}
           ${link('/whats-new.html', 'What’s new')}
+          ${link('/editorial-standards.html', 'Editorial standards')}
           ${link('/contact.html', 'Contact')}
           ${link('/terms.html', 'Terms of use')}
           ${link('/privacy.html', 'Privacy')}

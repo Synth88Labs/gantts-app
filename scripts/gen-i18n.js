@@ -207,6 +207,7 @@ function footer(code) {
           <h4>${esc(c.footer.company)}</h4>
           ${L('about.html', c.footer.about)}
           ${L('whats-new.html', c.footer.whatsnew)}
+          ${L('editorial-standards.html', c.footer.editorial)}
           ${L('contact.html', c.footer.contact)}
           ${L('terms.html', c.footer.terms)}
           ${L('privacy.html', c.footer.privacy)}
