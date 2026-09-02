@@ -444,6 +444,7 @@ const FOR_SLUG = {
   'gantt-chart-in-excel': figTools,
   'gantt-chart-in-google-sheets': figTools,
   'gantt-chart-in-powerpoint': figTools,
+  'gantt-chart-in-word': figTools,
   'best-free-gantt-chart-software': figTools,
   'gantt-baseline-variance': figBaseline,
   'gantt-chart-mistakes': figBars,

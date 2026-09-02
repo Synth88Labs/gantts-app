@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
+       after the visitor accepts. Nothing is requested from Google
+       before that. See scripts/add-analytics.js for why. -->
+  <script defer src="/js/consent.js?v=31"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何在 Word 中制作甘特图 | gantts.app</title>
+  <meta name="description" content="在 Microsoft Word 中制作甘特图的三种方法：堆积条形图、手动上色的表格或绘制的形状，以及各自适合的场景。" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://gantts.app/zh/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="en" href="https://gantts.app/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="es" href="https://gantts.app/es/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="fr" href="https://gantts.app/fr/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="de" href="https://gantts.app/de/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="pt" href="https://gantts.app/pt/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://gantts.app/zh/blog/gantt-chart-in-word.html" />
+  <link rel="alternate" hreflang="x-default" href="https://gantts.app/blog/gantt-chart-in-word.html" />
+  <meta name="theme-color" content="#6c4cf1" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="gantts.app" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" content="如何在 Word 中制作甘特图 | gantts.app" />
+  <meta property="og:description" content="在 Microsoft Word 中制作甘特图的三种方法：堆积条形图、手动上色的表格或绘制的形状，以及各自适合的场景。" />
+  <meta property="og:url" content="https://gantts.app/zh/blog/gantt-chart-in-word.html" />
+  <meta property="og:image" content="https://gantts.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="如何在 Word 中制作甘特图：三种方法，逐步讲解" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="如何在 Word 中制作甘特图 | gantts.app" />
+  <meta name="twitter:description" content="在 Microsoft Word 中制作甘特图的三种方法：堆积条形图、手动上色的表格或绘制的形状，以及各自适合的场景。" />
+  <meta name="twitter:image" content="https://gantts.app/assets/og-image.png" />
+
+  <link rel="stylesheet" href="/css/site.css?v=31" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gantts.app/#org","name":"gantts.app","url":"https://gantts.app/","logo":"https://gantts.app/assets/logo-mark.svg","email":"synth88labs@gmail.com","founder":{"@id":"https://gantts.app/about.html#uttam-regmi"},"sameAs":["https://github.com/Synth88Labs/gantts-app"],"parentOrganization":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"}},{"@type":"Person","@id":"https://gantts.app/about.html#uttam-regmi","name":"Uttam Regmi","url":"https://gantts.app/about.html","jobTitle":"Founder, Synth88 Labs","worksFor":{"@type":"Organization","name":"Synth88 Labs","url":"https://synth88.com"},"description":"Auditor by profession and builder by passion, creating privacy-first web and mobile apps from Dubai, UAE.","knowsAbout":["Gantt charts","project planning","spreadsheets","product design"],"sameAs":["https://www.linkedin.com/in/uttam-regmi-373926370/","https://medium.com/@excelguru","https://www.pinterest.com/excelguru_io/","https://github.com/Synth88Labs/"]},{"@type":"WebSite","@id":"https://gantts.app/#website","url":"https://gantts.app/","name":"gantts.app","inLanguage":"zh-Hans","publisher":{"@id":"https://gantts.app/#org"}},{"@type":"BlogPosting","@id":"https://gantts.app/zh/blog/gantt-chart-in-word.html#post","headline":"如何在 Word 中制作甘特图：三种方法，逐步讲解","description":"在 Microsoft Word 中制作甘特图的三种方法：堆积条形图、手动上色的表格或绘制的形状，以及各自适合的场景。","url":"https://gantts.app/zh/blog/gantt-chart-in-word.html","inLanguage":"zh-Hans","datePublished":"2026-08-26","dateModified":"2026-08-26","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".lead","#key-takeaways"]},"isPartOf":{"@id":"https://gantts.app/#website"},"publisher":{"@id":"https://gantts.app/#org"},"author":{"@id":"https://gantts.app/about.html#uttam-regmi"},"mainEntityOfPage":"https://gantts.app/zh/blog/gantt-chart-in-word.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://gantts.app/zh/"},{"@type":"ListItem","position":2,"name":"指南","item":"https://gantts.app/zh/blog/"},{"@type":"ListItem","position":3,"name":"如何在 Word 中制作甘特图：三种方法，逐步讲解","item":"https://gantts.app/zh/blog/gantt-chart-in-word.html"}]}},{"@type":"FAQPage","inLanguage":"zh-Hans","mainEntity":[{"@type":"Question","name":"Microsoft Word 有甘特图模板吗？","acceptedAnswer":{"@type":"Answer","text":"Word 没有内置的甘特图模板，但它有做一个所需的工具：堆积条形图、表格或绘制的形状。网上的 Office 模板偶尔会提供一张静态时间线图形，但那不是真正可编辑的甘特图。"}},{"@type":"Question","name":"甘特图用 Excel 还是 Word 更好？","acceptedAnswer":{"@type":"Answer","text":"只要日期会变动，Excel 就更好，因为它有真正的日期坐标轴和公式，条形位置可以由开始和结束日期驱动。Word 适合写好的文档里一条固定的时间线。可参阅关于在 Excel 中制作甘特图的指南。"}},{"@type":"Question","name":"在 Word 里怎么让条形从不同日期开始？","acceptedAnswer":{"@type":"Answer","text":"用带两个系列的堆积条形图：一个\"开始\"系列存放相对项目开始的天数偏移，一个\"工期\"系列。把\"开始\"系列的填充设为无填充，让它成为透明的占位段，于是只显示工期条，每根都从自己的日期开始。"}},{"@type":"Question","name":"能在 Word 甘特图里显示任务依赖吗？","acceptedAnswer":{"@type":"Answer","text":"无法自动显示。图表法和表格法都画不出依赖连线，绘制形状法允许你手动加箭头，但它们不会随任务移动。要真正的依赖和关键路径，请使用专门的甘特工具。"}},{"@type":"Question","name":"怎样快速把甘特图放进 Word 文档？","acceptedAnswer":{"@type":"Answer","text":"在免费在线甘特图工具里做好，导出为 PNG 或复制图表，再粘贴进你的文档。你会得到一张干净、日期正确的图表，不必与 Word 的图表引擎较劲。"}}]}]}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+        <img class="brand-mark" src="/assets/logo-mark.svg" width="30" height="30" alt="" />
+        <span class="brand-word">gantts<b>.app</b></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="/zh/app.html">甘特图制作</a>
+        <a href="/zh/templates.html">模板</a>
+        <a href="/zh/blog/">指南</a>
+        <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+      </nav>
+      <div class="nav-spacer"></div>
+      <div class="nav-cta">
+        <select class="lang-select" data-lang-nav aria-label="语言"><option value="/blog/gantt-chart-in-word.html">English</option><option value="/es/blog/gantt-chart-in-word.html">Español</option><option value="/fr/blog/gantt-chart-in-word.html">Français</option><option value="/de/blog/gantt-chart-in-word.html">Deutsch</option><option value="/pt/blog/gantt-chart-in-word.html">Português</option><option value="/zh/blog/gantt-chart-in-word.html" selected>简体中文</option></select>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <a class="btn btn-primary" href="/zh/app.html">打开应用</a>
+        <button class="nav-burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <article class="container" style="padding-top:40px">
+    <!-- Three levels, matching the English guides: Home > Guides > this
+         post. The localized crumb stopped at Guides, so the trail never
+         told the reader which article they were on and the last step of
+         the BreadcrumbList schema had no visible counterpart. -->
+    <div class="crumbs"><a href="/zh/">首页</a> › <a href="/zh/blog/">指南</a> › 如何在 Word 中制作甘特图：三种方法，逐步讲解</div>
+    <h1>如何在 Word 中制作甘特图：三种方法，逐步讲解</h1>
+    <p class="lead">Microsoft Word 是为撰写文档而生的，并非为项目排期，但报告、方案或作业往往正需要一张甘特图。你无需任何加载项就能在 Word 中做出一张，而且有三种实在的做法。本指南逐一讲解这三种，展示让条形对齐的小技巧，并坦率指出 Word 开始变得吃力的那个点。</p>
+    <!-- English guides carry a byline/date/reading-time line and an
+         on-this-page list; the localized ones had neither, so a reader
+         landed on a wall of prose with no way to scan it. -->
+    <p class="post-meta"><span>作者 <a href="/zh/about.html">Uttam Regmi</a></span><span>更新于 2026年8月26日</span><span>3 分钟阅读</span></p>
+    <div class="toc"><strong>本页内容</strong>
+      <ol>
+        <li><a href="#s1">Word 能做甘特图吗？</a></li>
+        <li><a href="#s2">方法一：堆积条形图</a></li>
+        <li><a href="#s3">方法二：手动上色的表格</a></li>
+        <li><a href="#s4">方法三：用绘制的形状获得完全控制</a></li>
+        <li><a href="#s5">该用哪种方法？</a></li>
+        <li><a href="#s6">Word 有甘特图模板吗？</a></li>
+        <li><a href="#s7">一个算好的例子：把日期换算成条形长度</a></li>
+        <li><a href="#s8">Word 里的甘特图做不到什么</a></li>
+        <li><a href="#s9">当 Word 开始变吃力时，一条更快的路</a></li>
+      </ol>
+    </div>
+
+    <figure class="fig">
+      <figcaption>一个五项任务的项目在 Word 甘特图上的样子，这正是三种方法都想达到的结果：</figcaption>
+      <svg viewBox="0 0 520 110" width="100%" role="img" aria-label="一个五项任务的项目在 Word 甘特图上的样子，这正是三种方法都想达到的结果："><text x="0" y="44" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务s</text><text x="0" y="70" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">关键路径</text><text x="0" y="96" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">今天</text><text x="176" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">Excel</text><path d="M 168 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 169 60 l 14 14 M 183 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 169 86 l 14 14 M 183 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="268" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">表格</text><path d="M 260 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 261 60 l 14 14 M 275 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 261 86 l 14 14 M 275 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="360" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">幻灯片</text><path d="M 352 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 353 60 l 14 14 M 367 60 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M 353 86 l 14 14 M 367 86 l -14 14" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><text x="452" y="16" font-size="11" font-weight="700" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" text-anchor="middle">浏览器</text><path d="M 444 40 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 66 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/><path d="M 444 92 l 6 6 l 12 -13" fill="none" stroke="#12a594" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </figure>
+
+    <div class="prose">
+
+      <h2 id="s1">Word 能做甘特图吗？</h2>
+<p>能。Word 没有甘特图按钮，但它有图表引擎、表格和绘图工具，其中任何一个都能画出可读的时间线。哪条路最好，取决于你有多少任务、计划会多频繁地变动。</p><p>三种方法几乎覆盖所有情况：</p><ul><li><strong>堆积条形图</strong>：最接近真正甘特图的做法，也是多数教程介绍的方法。</li><li><strong>手动上色的表格</strong>：在你正在写的文档里处理少量任务时最快的方式。</li><li><strong>绘制的形状</strong>：控制力最强，手工也最多。</li></ul><p>无论选哪种，先把页面切换为横向（<em>布局、纸张方向、横向</em>），让时间线有足够空间。如果你想跳过这一切，一个<a href="/zh/app.html">免费在线甘特图工具</a>可以把做好的图表以图片形式直接导出到 Word 文档。</p>
+      <h2 id="s2">方法一：堆积条形图</h2>
+<p>这是值得学会的方法，因为它做出的图表会在你编辑数据时自动重绘。它靠一个技巧：一根甘特条其实是首尾相接的两根条。第一根是把条推到起始日期的占位段，你把它设为透明；第二根是可见的条，长度就是任务工期。</p><figure class="fig fig-inline"><svg viewBox="0 0 600 150" width="100%" role="img" aria-label=""开始"系列是你隐藏的占位段，于是只显示"工期"条，每根都从自己的那一天开始。"><line x1="150" y1="24" x2="150" y2="130" stroke="#94a3b8" stroke-width="1"/><text x="150" y="20" font-size="10" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">开始</text><text x="0" y="57" font-size="11.5" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 A</text><rect x="150" y="46" width="190" height="16" rx="4" fill="#6c4cf1"/><text x="348" y="58" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期</text><text x="0" y="99" font-size="11.5" font-weight="400" fill="currentColor" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">任务 B</text><rect x="150" y="88" width="90" height="16" rx="4" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/><rect x="240" y="88" width="150" height="16" rx="4" fill="#cbb8f5"/><text x="398" y="100" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">工期</text><text x="150" y="124" font-size="10.5" font-weight="400" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif">隐形占位</text></svg><figcaption>"开始"系列是你隐藏的占位段，于是只显示"工期"条，每根都从自己的那一天开始。</figcaption></figure><ol><li>在<em>插入</em>选项卡选择<em>图表</em>，选<em>条形图</em>，再选<em>堆积条形图</em>，确定。Word 会打开一个小表格。</li><li>把示例数据换成三列：<strong>任务</strong>、<strong>开始</strong>（相对项目开始的天数偏移）和<strong>工期</strong>（以天为单位的长度）。每行一个任务。</li><li>关闭数据窗口。点击<strong>开始</strong>系列中的任意一根条，也就是每根条最前面的那段颜色，把它的填充设为<em>无填充</em>。占位段消失，只剩下工期条，每根都从正确的那天开始。</li><li>点击纵轴，打开<em>设置坐标轴格式</em>，勾选<em>逆序类别</em>，让第一个任务排在最上面，符合甘特图的阅读方式。</li><li>收尾：删除图例，加上标题或数据标签，如愿的话再按阶段给条形换色。</li></ol><p>回报是：在图表数据里改一个"开始"或"工期"值，条形就会移动。代价是：Word 以纯数字而非日历日期来度量坐标轴，所以你用的是"距开始的天数"而不是真实日期，而且周末并不存在。关于在文档里规划与用工具规划的整体对比，见<a href="/zh/blog/how-to-make-a-gantt-chart.html">如何制作甘特图</a>。</p>
+      <h2 id="s3">方法二：手动上色的表格</h2>
+<p>当你只有寥寥几个任务，而图表又在你正写的文档里时，表格胜过图表。每行是一个任务，每列是一个时间单位（一周或一天），你把每个任务覆盖的单元格填上颜色。</p><ol><li>插入一个表格（<em>插入、表格</em>），最上面用一列放任务名称，其余每列对应一个时间段。</li><li>在第一列写下任务名称，在表头行写上日期或周次。</li><li>对每个任务，选中它覆盖的单元格，从<em>表设计</em>选项卡应用一种<em>底纹</em>颜色。</li><li>用第二种颜色，或一个像菱形这样的字符，来标注里程碑和截止日期。</li></ol><p>上色的表格背后没有任何运算，这既是它的长处也是短处。什么都不会重算，所以它绝不会给你意外；但日期推迟时也什么都不会动：你得重新手动上色。它很适合学生的时间线，或一页纸的状态更新。</p>
+      <h2 id="s4">方法三：用绘制的形状获得完全控制</h2>
+<p>第三种方法用<em>插入、形状</em>画一条横线作为坐标轴，再为每个任务条画一个矩形。每个元素的位置和大小都由你亲自决定，所以它可以完全按你想要的样子来，包括另外两种方法画不出的依赖箭头。</p><p>它也是最费工的，而且没有任何东西把画面绑在一起：你挪动一根条，其余的都原地不动。把它留给一次性的精修之作，比如放在方案首页、幻灯片风格的时间线，而不是你打算长期维护的计划。如果想要一个起点，SmartArt 有几种时间线版式能自动完成其中一部分。</p>
+      <h2 id="s5">该用哪种方法？</h2>
+<p>正确的方法，是那种你能为这份具体文档接受其弱点的方法。</p><table><thead><tr><th>方法</th><th>最适合</th><th>工作量</th><th>主要限制</th></tr></thead><tbody><tr><td>堆积条形图</td><td>报告里一张真正可编辑的图表</td><td>中</td><td>用的是天数偏移，而非日历日期</td></tr><tr><td>上色表格</td><td>少量任务、一条快速时间线</td><td>低</td><td>没有运算；每次改动都靠手工</td></tr><tr><td>绘制的形状</td><td>带箭头的精修一次性作品</td><td>高</td><td>什么都不会自动重算或对齐</td></tr></tbody></table><p>三者都有同一个上限，下面细说。</p>
+      <h2 id="s6">Word 有甘特图模板吗？</h2>
+<p>Word 里没有官方内置的甘特图模板，网上有时以"模板"名义提供的时间线图形，是无法重新排期的静态图片。实际上你有两个现实选择。</p><p>第一，把堆积条形图做好一次再重复使用：把文件另存为 Word 模板（<em>.dotx</em>），这样图表、配色和版式下次就已就绪，你只需替换数据。第二种更快，如果你想要已经接好依赖和关键路径的话：从一个<a href="/zh/templates.html">现成的甘特图模板</a>开始，改掉名称和日期，再把做好的图表导出到你的文档。<a href="/zh/blog/gantt-chart-in-excel.html">Excel 路线</a>本着同样的思路，给你一个可重用、能识别日期的模板。</p>
+      <h2 id="s7">一个算好的例子：把日期换算成条形长度</h2>
+<p>堆积条形图要的是数字而非日期，所以让人卡住的一步，是把进度换算成偏移和工期。这里有一个算好的六任务发布计划。</p><p>把最早的开始定为第 0 天。对每个任务，<strong>开始</strong>值是从第 0 天到该任务的天数，<strong>工期</strong>是它的长度。周末算作普通日子，因为 Word 并不知道有周末。</p><div class="callout worked"><strong>算好的例子：一个从 9 月 1 日开始的计划。</strong><ul><li>调研，9 月 1 至 5 日：开始 0，工期 4</li><li>提纲，9 月 6 至 9 日：开始 5，工期 3</li><li>初稿，9 月 10 至 20 日：开始 9，工期 10</li><li>审阅，9 月 21 至 23 日：开始 20，工期 2</li><li>修改，9 月 24 至 28 日：开始 23，工期 4</li><li>发布（里程碑），9 月 29 日：开始 28，工期 0</li></ul>把这两列数字填进图表数据，每根条就都落在正确的那天。</div><p>如果一想到每次日期变动都要手动重算这些偏移就觉得烦，那正是这种做法诚实的局限，也是为什么会有专门工具存在。</p>
+      <h2 id="s8">Word 里的甘特图做不到什么</h2>
+<p>上面每种方法画的都是进度的一张<em>图</em>，没有一种在<em>计算</em>进度，这才是真正的边界。在 Word 里没有任务<a href="/zh/blog/gantt-chart-dependencies.html">依赖关系</a>，所以没有任何东西把"测试"接到"开发"结束之后；开发一旦推迟，测试还停在你留下它的地方。也没有<a href="/zh/blog/critical-path-method.html">关键路径</a>，所以图表无法告诉你哪些任务真正决定完工日期。而且由于坐标轴数的是纯天数，周末和节假日都看不见。</p><p>实际结果是：Word 甘特图非常适合<em>沟通</em>一份计划，却不适合<em>维护</em>一份计划。只要进度稳定、你主要是在展示它，Word 就够用。一旦日期开始移动，你在重新给单元格上色或重算偏移，文档就开始跟你作对。</p>
+      <h2 id="s9">当 Word 开始变吃力时，一条更快的路</h2>
+<p>如果计划会变，就在一个会自动重算的地方搭建它，再导出结果。一个<a href="/zh/app.html">免费在线甘特图工具</a>给你可拖动排期的条形、真正的依赖关系和自动的关键路径，然后导出到 <a href="/zh/blog/gantt-chart-in-powerpoint.html">PowerPoint</a>、PDF、PNG 或 <a href="/zh/blog/gantt-chart-in-excel.html">Excel</a>。几秒钟就能把图片放进你的 Word 文档：它仍是一份 Word 文档，只有图表是在图表该在的地方做出来的。</p><p>你也可以从一个<a href="/zh/templates.html">现成模板</a>开始，改掉名称和日期，或阅读关于在 <a href="/zh/blog/gantt-chart-in-excel.html">Excel</a> 和 <a href="/zh/blog/gantt-chart-in-google-sheets.html">Google Sheets</a> 中制作甘特图的姊妹指南，这两者都给你一条真正的日期坐标轴。</p>
+
+      <div class="callout">Word 画出的是进度的一张图，而不是算出一份进度。这一点就解释了这里的每一处限制，以及一旦日期开始变动就该把计划挪到别处的每一个理由。</div>
+
+      <h2 id="faq">常见问题</h2>
+      <div class="faq">
+        <details open><summary>Microsoft Word 有甘特图模板吗？</summary><p>Word 没有内置的甘特图模板，但它有做一个所需的工具：堆积条形图、表格或绘制的形状。网上的 Office 模板偶尔会提供一张静态时间线图形，但那不是真正可编辑的甘特图。</p></details>
+        <details><summary>甘特图用 Excel 还是 Word 更好？</summary><p>只要日期会变动，Excel 就更好，因为它有真正的日期坐标轴和公式，条形位置可以由开始和结束日期驱动。Word 适合写好的文档里一条固定的时间线。可参阅关于在 Excel 中制作甘特图的指南。</p></details>
+        <details><summary>在 Word 里怎么让条形从不同日期开始？</summary><p>用带两个系列的堆积条形图：一个"开始"系列存放相对项目开始的天数偏移，一个"工期"系列。把"开始"系列的填充设为无填充，让它成为透明的占位段，于是只显示工期条，每根都从自己的日期开始。</p></details>
+        <details><summary>能在 Word 甘特图里显示任务依赖吗？</summary><p>无法自动显示。图表法和表格法都画不出依赖连线，绘制形状法允许你手动加箭头，但它们不会随任务移动。要真正的依赖和关键路径，请使用专门的甘特工具。</p></details>
+        <details><summary>怎样快速把甘特图放进 Word 文档？</summary><p>在免费在线甘特图工具里做好，导出为 PNG 或复制图表，再粘贴进你的文档。你会得到一张干净、日期正确的图表，不必与 Word 的图表引擎较劲。</p></details>
+      </div>
+
+      <aside class="promo">
+        <div class="promo-body">
+          <span class="promo-tag">广告</span>
+          <h3>Excel 甘特图模板</h3>
+          <p>ExcelGuru.io 提供一套免费的甘特图表格模板，公式已经配置好，无需额外插件。</p>
+        </div>
+        <a class="btn" href="https://excelguru.io/category/templates/gantt-chart/" rel="sponsored noopener" target="_blank">浏览模板 →</a>
+      </aside>
+
+      <h2 id="related">延伸阅读</h2>
+      <ul>
+        <li><a href="/zh/blog/gantt-chart-in-excel.html">如何在 Excel 中制作甘特图</a></li>
+        <li><a href="/zh/blog/gantt-chart-in-powerpoint.html">如何在 PowerPoint 中制作甘特图</a></li>
+        <li><a href="/zh/blog/how-to-make-a-gantt-chart.html">如何制作甘特图（任意工具）</a></li>
+        <li><a href="/zh/blog/">返回指南列表</a></li>
+      </ul>
+      <div class="callout author-box"><strong>作者 Uttam Regmi</strong>. Synth88 Labs 创始人，在迪拜打造注重隐私的网页与移动应用。 <a href="/zh/about.html">完整简介</a> · <a href="https://www.linkedin.com/in/uttam-regmi-373926370/" rel="noopener">LinkedIn</a> · <a href="https://medium.com/@excelguru" rel="noopener">Medium</a> · <a href="https://github.com/Synth88Labs/" rel="noopener">GitHub</a></div>
+      <p class="crumbs"><small>本文也提供英文版本。</small></p>
+    </div>
+  </article>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>免费创建你的甘特图</h2>
+      <p>在浏览器中直接使用，无需注册。数据保存在你自己的设备上。</p>
+      <a class="btn btn-white btn-lg" href="/zh/app.html">打开编辑器</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo" href="/zh/" aria-label="gantts.app">
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="28" height="28" />
+            <span class="brand-word">gantts<b>.app</b></span>
+          </a>
+          <p>免费在线甘特图制作工具。无需注册、无需上传, , 数据只保存在你的浏览器中。</p>
+          <a class="footer-cta" href="/zh/app.html">打开应用 →</a>
+          <p class="footer-byline"><a class="footer-ext" href="https://synth88.com" rel="noopener">Synth88 Labs</a> 出品</p>
+        </div>
+        <div>
+          <h4>模板</h4>
+          <a href="/zh/templates.html">全部模板</a>
+          <a href="/zh/templates/excel.html">Excel</a>
+          <a href="/zh/templates/powerpoint.html">PowerPoint</a>
+          <a href="/zh/templates/construction.html">工程施工</a>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <a href="/zh/blog/">全部指南</a>
+          <a href="/zh/blog/what-is-a-gantt-chart.html">什么是甘特图？</a>
+          <a href="/zh/blog/critical-path-method.html">关键路径法</a>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <a href="/zh/about.html">关于我们</a>
+          <a href="/zh/whats-new.html">更新日志</a>
+          <a href="/zh/editorial-standards.html">编辑准则</a>
+          <a href="/zh/contact.html">联系我们</a>
+          <a href="/zh/terms.html">使用条款</a>
+          <a href="/zh/privacy.html">隐私政策</a>
+          <a href="/zh/accessibility.html">无障碍</a>
+          <a class="footer-ext" href="https://github.com/Synth88Labs/gantts-app" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> gantts.app · 保留所有权利。</span>
+        <span>纯静态网站, , 你规划的内容不会离开浏览器。</span>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/site.js?v=31"></script>
+</body>
+</html>
