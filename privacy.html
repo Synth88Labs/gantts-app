@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google AdSense (ad monetisation). EEA/UK consent is handled by Google's
+       own consent message, set in the AdSense account. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1686812016442698" crossorigin="anonymous"></script>
   <!-- Analytics is gated on consent: js/consent.js loads gtag.js only
        after the visitor accepts. Nothing is requested from Google
        before that. See scripts/add-analytics.js for why. -->
@@ -109,7 +112,7 @@
   <article class="container" style="padding-top:44px">
     <div class="crumbs"><a href="/">Home</a> › Privacy</div>
     <h1>Privacy Policy</h1>
-    <p class="lead">Short version: gantts.app has no accounts and no server-side storage of your projects. Your Gantt charts live in your own browser. Last updated July 15, 2026.</p>
+    <p class="lead">Short version: gantts.app has no accounts and no server-side storage of your projects. Your Gantt charts live in your own browser. Last updated September 4, 2026.</p>
     <div class="prose">
       <h2>Your project data</h2>
       <p>When you create a Gantt chart, it is saved in your browser's <strong>local storage</strong> on your device. It is not transmitted to us or stored on our servers. If you clear your browser data, your projects are removed. You are in full control: you can export a JSON backup, a CSV, or a shareable link at any time.</p>
@@ -130,16 +133,21 @@
       <p><strong>It does not run unless you say yes.</strong> Analytics is off until you accept it on the banner. Until then, and permanently, if you decline, your browser makes <strong>no request to Google at all</strong>. We are not loading it in a disabled state or sending "cookieless" pings; the script is simply never fetched. Declining costs you nothing, because nothing on the page was waiting for it.</p>
       <p>If you accept, Google Analytics collects the usual page-level information, the page you are on, roughly where in the world you are, your browser and device type, and how you arrived. Google processes this data as described in <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>. You can change your mind at any time using <strong>Cookie settings</strong> at the bottom of any page; declining there also deletes the analytics cookies already on your device. You can additionally opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google's browser add-on</a> or any extension that blocks analytics, the tool works exactly the same either way.</p>
 
+      <h2>Advertising</h2>
+      <p>gantts.app shows ads through <strong>Google AdSense</strong> to keep the tool free. Unlike analytics, the AdSense script loads on every page as part of the site. Google, as a third-party vendor, may use cookies (such as <code>__gads</code> and <code>__eoi</code>) to serve ads, cap how often you see one, and measure whether they work.</p>
+      <p><strong>If you are in the EEA, the UK or Switzerland</strong>, Google shows you a consent choice before setting any personalised-advertising cookie, using Google's own certified consent message. You can change that choice at any time, and you can turn ad personalisation off entirely in <a href="https://adssettings.google.com" rel="noopener">Google Ad Settings</a>. Google's use of advertising data is described in <a href="https://policies.google.com/technologies/ads" rel="noopener">how Google uses cookies in advertising</a>.</p>
+      <p>We run no other ad network, and we never hand your project data to advertisers. Your plans never leave your browser, so there is nothing about them for anyone to target.</p>
+
       <h2>Third-party libraries</h2>
       <p>The app loads a few open-source libraries (for exporting to PDF, Excel and PowerPoint) from a public CDN. These requests are made by your browser to fetch code; they don't include your project data.</p>
 
       <h2>Cookies</h2>
-      <p><strong>If you decline, this site sets no cookies whatsoever.</strong> Not a reduced set, none.</p>
-      <p>If you accept, Google Analytics sets two: <code>_ga</code> and <code>_ga_3ZFCTKWL1D</code>, which distinguish one visitor from another so that ten pageviews from one person are not counted as ten people. They contain a random identifier, not your name or anything you typed. We set <strong>no advertising cookies</strong> and we do not sell or share this data.</p>
+      <p><strong>If you decline analytics, we set no analytics cookies.</strong> Not a reduced set, none. Advertising cookies are handled separately by Google (see <strong>Advertising</strong> above); in the EEA, UK and Switzerland they are set only after you make Google's consent choice.</p>
+      <p>If you accept analytics, Google Analytics sets two: <code>_ga</code> and <code>_ga_3ZFCTKWL1D</code>, which distinguish one visitor from another so that ten pageviews from one person are not counted as ten people. They contain a random identifier, not your name or anything you typed. Google AdSense may additionally set advertising cookies as described above. <strong>We do not sell your data</strong>, and no cookie here contains your name or anything you typed into a chart.</p>
       <p>Your answer itself is remembered in <strong>local storage</strong> rather than in a cookie, precisely so that declining leaves you with none. It records only "granted" or "denied" and the date.</p>
       <p>Everything else is also your browser's <strong>local storage</strong>, and never leaves your device: your projects, and preferences like light or dark theme. Clearing your browser data removes all of it, including your cookie choice, so we will ask again.</p>
       <p><button type="button" class="btn" data-consent-reset>Change your cookie choice</button></p>
-      <p class="muted"><small>Earlier versions of this page said gantts.app used no tracking cookies. That was true until we added Google Analytics on 19 July 2026, and this page was updated the same day. On 20 July 2026 analytics was moved behind a consent banner: it had been loading for everyone automatically, and now loads for nobody until they accept.</small></p>
+      <p class="muted"><small>Earlier versions of this page said gantts.app used no tracking cookies. That was true until we added Google Analytics on 19 July 2026, and this page was updated the same day. On 20 July 2026 analytics was moved behind a consent banner: it had been loading for everyone automatically, and now loads for nobody until they accept. On 4 September 2026 we added Google AdSense to keep the tool free, and added the Advertising section above the same day; EEA, UK and Swiss visitors are asked for consent by Google before any personalised-ad cookie is set.</small></p>
 
       <h2>Contact</h2>
       <p>Questions about privacy? This is a small, independent project, reach out via the site and we'll do our best to help.</p>

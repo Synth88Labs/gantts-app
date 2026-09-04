@@ -55,7 +55,20 @@ const OLD_TAG = new RegExp(
   'g'
 );
 
-let added = 0, already = 0, stripped = 0, noHead = [];
+/* Google AdSense, injected site-wide for ad monetisation. Unlike analytics
+   this is NOT consent-gated in the markup: AdSense needs the tag present for
+   account/site review, and Google's own consent message (configured in the
+   AdSense account) is what gates personalised ad cookies for EEA/UK visitors.
+   The ad-serving domains are allow-listed in the .htaccess CSP; without that
+   the browser would refuse to load this script. See privacy.html for the
+   advertising disclosure this makes necessary. */
+const ADSENSE_MARKER = 'adsbygoogle.js';
+const ADSENSE = `
+  <!-- Google AdSense (ad monetisation). EEA/UK consent is handled by Google's
+       own consent message, set in the AdSense account. -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1686812016442698" crossorigin="anonymous"></script>`;
+
+let added = 0, already = 0, stripped = 0, adsAdded = 0, noHead = [];
 
 function walk(dir) {
   for (const name of fs.readdirSync(dir)) {
@@ -76,14 +89,24 @@ function walk(dir) {
       stripped++;
     }
 
+    if (!/<head[^>]*>/i.test(html)) { noHead.push(rel); if (html !== before) fs.writeFileSync(abs, html, 'utf8'); continue; }
+
+    // Consent gate for analytics.
     if (html.includes(MARKER)) {
       already++;
     } else {
       const m = html.match(/<head[^>]*>/i);
-      if (!m) { noHead.push(rel); if (html !== before) fs.writeFileSync(abs, html, 'utf8'); continue; }
       const at = m.index + m[0].length;
       html = html.slice(0, at) + SNIPPET + html.slice(at);
       added++;
+    }
+
+    // AdSense tag (not gated in markup, see note above).
+    if (!html.includes(ADSENSE_MARKER)) {
+      const m = html.match(/<head[^>]*>/i);
+      const at = m.index + m[0].length;
+      html = html.slice(0, at) + ADSENSE + html.slice(at);
+      adsAdded++;
     }
 
     if (html !== before) fs.writeFileSync(abs, html, 'utf8');
@@ -92,9 +115,10 @@ function walk(dir) {
 
 walk(ROOT);
 
-console.log('Consent-gated analytics\n');
+console.log('Consent-gated analytics + AdSense\n');
 console.log(`  measurement ID ${ID}, loaded only after consent`);
 console.log(`  ${added} page(s) given the gate, ${already} already had it.`);
+console.log(`  ${adsAdded} page(s) given the AdSense tag.`);
 if (stripped) console.log(`  ${stripped} page(s) had the old unconditional gtag snippet removed.`);
 if (noHead.length) {
   console.log(`\n  ⚠ ${noHead.length} HTML file(s) have no <head> and were skipped:`);

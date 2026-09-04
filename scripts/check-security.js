@@ -35,14 +35,18 @@ console.log('\nSecurity check\n');
 /* ---- 1. every third-party script is pinned ---- */
 const html = fs.readFileSync(path.join(ROOT, 'app.html'), 'utf8');
 const tags = html.match(/<script[^>]*\bsrc="https?:\/\/[^"]+"[^>]*>/g) || [];
-/* Google's gtag.js CANNOT be pinned: it is deliberately unversioned and
-   its contents change without notice, so any hash we set would break
-   analytics the next time Google shipped. That is a real, accepted
-   trade-off rather than an oversight — it is an unpinned third-party
-   script with full access to every page — so it is reported on every
-   run instead of being silently whitelisted. If analytics is ever
-   dropped or self-hosted, delete this exception with it. */
-const UNPINNABLE = [/^https:\/\/www\.googletagmanager\.com\/gtag\/js/];
+/* Two Google scripts CANNOT be pinned: gtag.js (analytics) and
+   adsbygoogle.js (AdSense) are both deliberately unversioned and change
+   without notice, so any hash we set would break them the next time Google
+   shipped. That is a real, accepted trade-off rather than an oversight —
+   each is an unpinned third-party script with full access to every page —
+   so both are reported on every run instead of being silently whitelisted.
+   If analytics or ads are ever dropped or self-hosted, delete the matching
+   exception with it. */
+const UNPINNABLE = [
+  /^https:\/\/www\.googletagmanager\.com\/gtag\/js/,
+  /^https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/,
+];
 const accepted = [];
 
 let pinned = 0;
@@ -63,7 +67,7 @@ for (const tag of tags) {
 console.log(`  ${pinned} third-party script(s) pinned with SRI + crossorigin`);
 for (const src of accepted) {
   console.log(`  · accepted unpinnable: ${src}`);
-  console.log('    Google ships gtag.js unversioned, so SRI is impossible. It runs with');
+  console.log('    Google ships this unversioned, so SRI is impossible. It runs with');
   console.log('    full page access on every page. Reported, not hidden.');
 }
 if (!tags.length) err('no external script tags found in app.html — has the file moved?');
